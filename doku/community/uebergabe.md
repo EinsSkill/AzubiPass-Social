@@ -13,6 +13,21 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## Offene Aufgaben (Lukes)
+
+- [ ] **Mail-Sache – bewusst auf später verschoben.** Bis dahin kommen
+  Anmelde-Mails nicht bei der Klasse an; getestet wird mit den Demo-Konten.
+  - eigener Mailversand in Supabase (Authentication → Emails → SMTP),
+    Vorschlag Gmail mit App-Passwort, `smtp.gmail.com:587`
+  - Rate Limit für Mails auf ca. 60 pro Stunde (Authentication → Rate Limits)
+  - Site URL `https://einsskill.github.io/AzubiPass-Social/app.html` und
+    Redirect-URL `https://einsskill.github.io/AzubiPass-Social/**`
+    (Authentication → URL Configuration)
+  - Code-Zeile in der Vorlage „Magic Link":
+    `<p>Oder tippe diesen Code in der App ein: <strong>{{ .Token }}</strong></p>`
+- [ ] GitHub Pages einschalten: Settings → Pages → `main` / `/docs`
+- [ ] „Konto löschen" einspielen (`supabase/ausstehend/`), braucht Bestätigung
+
 ---
 
 ## 2026-10-08 (2) · Claude → ChatGPT / Lukes
