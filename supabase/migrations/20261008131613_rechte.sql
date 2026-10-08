@@ -56,8 +56,7 @@ grant execute on function
   public.profil_anlegen(text, smallint, text, boolean, boolean),
   public.gruppe_gruenden(text, text, boolean), public.gruppe_beitreten(text),
   public.gruppe_verlassen(uuid), public.beste_antwort(uuid),
-  public.moderieren(text, uuid, boolean), public.rolle_setzen(uuid, text),
-  public.konto_loeschen()
+  public.moderieren(text, uuid, boolean), public.rolle_setzen(uuid, text)
   to authenticated;
 
 -- Neue Tabellen und Funktionen sollen nicht still wieder offen sein.
