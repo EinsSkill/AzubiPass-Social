@@ -194,8 +194,19 @@
   function abmelden() {
     return mit(function (c) {
       profilCache = undefined;
-      return c.auth.signOut({ scope: "local" }).then(auspacken);
+      return c.auth.signOut({ scope: "local" }).then(auspacken).then(aufraeumenSpeicher);
     });
+  }
+
+  // Nach dem Abmelden bleibt nichts von der Anmeldung im Browser – auch keine
+  // Prüfwerte halb erledigter Mail-Anmeldungen. Der Lernstand (azubipass:…)
+  // hat einen anderen Namen und bleibt unberührt.
+  function aufraeumenSpeicher() {
+    try {
+      Object.keys(localStorage).forEach(function (k) {
+        if (k.indexOf(CFG.sitzung) === 0) localStorage.removeItem(k);
+      });
+    } catch (e) {}
   }
 
   function ich() {
@@ -207,24 +218,48 @@
 
   // Kam die Seite gerade aus einem Anmelde-Link? Dann sofort verbinden, damit
   // der Code eingelöst wird, und die Adresse danach aufräumen.
-  function linkEinloesen() {
+  /* Kam die Seite gerade aus einem Anmelde-Link? Dann sofort verbinden, damit
+     der Code eingelöst wird, und die Adresse danach aufräumen.
+
+     Mögliche Rückkehr aus der Mail:
+       ?anmeldung=1&code=…                   gültig – Code gegen Sitzung tauschen
+       ?…error_description=… oder #error…    abgelaufen, schon benutzt, ungültig
+     Mit PKCE gelingt der Tausch nur im Browser, in dem der Link angefordert
+     wurde. In einem anderen Browser bleibt die Sitzung leer – das melden wir
+     wie einen ungültigen Link; dort hilft der Code aus derselben Mail. */
+  var LINK_UNGUELTIG = "Dieser Anmeldelink ist nicht mehr gültig. Lass dir einen neuen Link schicken.";
+
+  function linkParameter() {
     var q = new URLSearchParams(location.search);
-    if (!q.has("code") && !q.has("error_description") && !q.has("anmeldung")) return Promise.resolve(null);
-    var meldung = q.get("error_description");
+    var h = /error_description=|error=/.test(location.hash)
+      ? new URLSearchParams(location.hash.replace(/^#/, "")) : new URLSearchParams("");
+    return {
+      code: q.has("code"),
+      fehler: q.get("error_description") || q.get("error") || h.get("error_description") || h.get("error"),
+      aus: q.has("code") || q.has("anmeldung") || q.has("error") || q.has("error_description") ||
+           h.has("error") || h.has("error_description")
+    };
+  }
+
+  function linkEinloesen() {
+    var p = linkParameter();
+    if (!p.aus) return Promise.resolve(null);
+    if (p.fehler) { aufraeumen(); return Promise.reject(fehler(LINK_UNGUELTIG, "anmeldung")); }
+    if (!p.code) { aufraeumen(); return Promise.resolve(null); }
     return verbinden().then(function (c) {
       return c.auth.getSession();
     }).then(function (r) {
       aufraeumen();
-      if (meldung) throw fehler(/expired/i.test(meldung)
-        ? "Der Anmelde-Link ist abgelaufen. Lass dir einen neuen schicken."
-        : "Der Anmelde-Link hat nicht funktioniert. Lass dir einen neuen schicken.", "anmeldung");
-      return r && r.data ? r.data.session : null;
+      var s = r && r.data ? r.data.session : null;
+      if (!s) throw fehler(LINK_UNGUELTIG, "anmeldung");
+      return s;
     }).catch(function (f) { aufraeumen(); throw uebersetzen(f); });
   }
 
   function aufraeumen() {
     try {
-      history.replaceState(null, "", location.pathname + (location.hash || "#community"));
+      var hash = /error/.test(location.hash) || !location.hash ? "#community" : location.hash;
+      history.replaceState(null, "", location.pathname + hash);
     } catch (e) {}
   }
 
@@ -654,8 +689,11 @@
     live: live
   };
 
-  // Aus einem Anmelde-Link geöffnet? Dann gleich einlösen.
-  if (/[?&](code|anmeldung|error_description)=/.test(location.search)) {
-    linkEinloesen().catch(function (f) { AP.community.letzterFehler = f; });
+  // Aus einem Anmelde-Link geöffnet? Dann gleich einlösen. Die Oberfläche
+  // wartet auf dieses Versprechen, bevor sie irgendetwas über die Sitzung sagt.
+  AP.community.linkEinloesung = null;
+  if (linkParameter().aus) {
+    AP.community.linkEinloesung = linkEinloesen();
+    AP.community.linkEinloesung.catch(function () {});
   }
 })();

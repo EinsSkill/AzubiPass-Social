@@ -24,7 +24,12 @@
      aus. Die Lupe daneben bleibt — sonst wäre die Suche von hier aus nicht mehr
      erreichbar, denn in der Leiste unten steht sie nicht. */
   var TITEL = { heute: "", lernen: "Lernfelder", ueben: "Üben",
-                suche: "Suche", ich: "Ich" };
+                suche: "Suche", ich: "Ich", community: "Community" };
+
+  /* Die Community hat keinen eigenen Tab: Sie hängt unter „Ich" (Entscheidung
+     vom 08.10.2026, doku/community/entscheidungen.md). */
+  var TAB_VON = { community: "ich" };
+  var hatCommunity = !!(window.AP && AP.communityAnsicht && AP.community);
 
   /* ================================================== Rechnen auf dem Konto */
 
@@ -394,6 +399,8 @@
       stand.uebernommen = false;
       sichern();
     }
+    /* Nach den eigenen Lernaktionen, nie davor. Lädt keine Community-Daten. */
+    if (hatCommunity) z.appendChild(AP.communityAnsicht.heuteAbschnitt());
     z.appendChild(einbauhinweis());
     return z;
   }
@@ -1419,6 +1426,8 @@
     standGruppe.appendChild(zahlen);
     s.appendChild(standGruppe);
 
+    if (hatCommunity) s.appendChild(AP.communityAnsicht.ichZeile());
+
     var lfGruppe = feldgruppe("Fortschritt je Lernfeld",
       inhalt.lernfelder.length + " Lernfelder");
     var ul = el("ul", "liste-schlicht");
@@ -1802,6 +1811,9 @@
 
   var bauer = { heute: zeigeHeute, lernen: zeigeLernen, ueben: zeigeUeben,
                 suche: zeigeSuche, ich: zeigeIch };
+  if (hatCommunity) {
+    bauer.community = function (s, teile) { AP.communityAnsicht.zeigen(s, teile.rest); };
+  }
 
   /* Die Adresse kann mehr sagen als den Bereich:
 
@@ -1823,15 +1835,17 @@
         if (t[0]) felder[t[0]] = decodeURIComponent((t[1] || "").replace(/\+/g, " "));
       });
     }
-    return { bereich: weg[0] || "", unter: weg[1] || "", felder: felder };
+    return { bereich: weg[0] || "", unter: weg[1] || "", rest: weg.slice(1).join("/"),
+             felder: felder };
   }
 
   function zeige(wunsch) {
     var teile = adresse(wunsch);
     var id = bauer[teile.bereich] ? teile.bereich : "heute";
     Object.keys(schirme).forEach(function (k) { schirme[k].hidden = k !== id; });
+    var tabId = TAB_VON[id] || id;
     document.querySelectorAll(".tab").forEach(function (t) {
-      var an = t.getAttribute("href") === "app.html#" + id;
+      var an = t.getAttribute("href") === "app.html#" + tabId;
       t.classList.toggle("an", an);
       if (an) t.setAttribute("aria-current", "page");
       else t.removeAttribute("aria-current");
@@ -1858,14 +1872,14 @@
       pkVorwahl = null;
       if (window.APK) window.APK.verlassen();
     }
-    bauer[id](schirme[id]);
+    bauer[id](schirme[id], teile);
     if (teile.bereich === id) window.scrollTo(0, 0);
   }
 
   function start() {
-    ["heute", "lernen", "ueben", "suche", "ich"].forEach(function (k) {
-      schirme[k] = document.getElementById(k);
-    });
+    ["heute", "lernen", "ueben", "suche", "ich"].concat(hatCommunity ? ["community"] : [])
+      .forEach(function (k) { schirme[k] = document.getElementById(k); });
+    if (hatCommunity) AP.communityAnsicht.init(inhalt);
     verteiler = AP.verteiler(zeige, "heute");
     erneuerung();
   }

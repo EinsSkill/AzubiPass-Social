@@ -28,3 +28,13 @@ selbst bietet nur die Anmeldung per Mail an.
 
     cd quellen
     COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… python3 community_test.py
+
+## Testkonten ohne Profil
+
+`quellen/community_zugang_test.py` braucht vier Konten **ohne** Profil
+(`COMMUNITY_TEST_NEU`); nach einem Lauf haben sie eins. Angelegt sind
+`test-neu1@…` bis `test-neu28@azubipass.invalid` (gleiches Passwort wie die
+Demo-Konten). Stand 08.10.2026 noch **ohne** Profil: 26, 27, 28 –
+alle anderen sind verbraucht (teilweise durch abgebrochene Läufe). Neue Konten lassen sich per SQL anlegen
+(Muster im Verlauf von `doku/community/uebergabe.md`). Alle Testkonten tragen
+in `raw_app_meta_data` den Eintrag `"demo": true`.

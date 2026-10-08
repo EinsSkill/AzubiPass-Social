@@ -737,7 +737,7 @@ def datenschutz(r, fehlt):
 
 # ---------------------------------------------------------------- App-Seite
 
-def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs):
+def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs):
     """Die Schale. Der Inhalt der fünf Schirme entsteht im Browser aus
     inhalt.json — hier steht nur das Gerüst, damit die Seite auch ohne
     JavaScript etwas Sinnvolles zeigt."""
@@ -750,7 +750,7 @@ def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs):
 <head>
 {kopf("Lernen", "Alle Lernfelder für Kaufleute für Büromanagement — Fortschritt, "
       "Karteikarten und Suche, auch ohne Netz.", stile=[stil],
-      skripte=[kernel, communityjs, aufgabenjs, appjs])}
+      skripte=[kernel, communityjs, ansichtjs, aufgabenjs, appjs])}
 </head>
 <body data-bereich="heute">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
@@ -770,6 +770,7 @@ def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs):
   <section class="schirm" id="ueben" hidden></section>
   <section class="schirm" id="suche" hidden></section>
   <section class="schirm" id="ich" hidden></section>
+  <section class="schirm" id="community" hidden></section>
   <noscript>
     <div class="schirm">
       <div class="schirm-kopf"><h1>{MARKE}</h1>
@@ -884,6 +885,37 @@ def service_worker(dateien):
             .replace("%DATEIEN%", json.dumps(sorted(dateien), ensure_ascii=False, indent=2)))
 
 
+# ---------------------------------------------------------------- Community-Regeln
+
+def community_regeln():
+    """Liest den freigegebenen Regeltext aus doku/community/03-community-regeln.md.
+
+    Eine Quelle: ChatGPT und Lukes pflegen den Text dort, die App zeigt genau
+    ihn – ab „## Unsere Community-Regeln", ohne die Metadaten darüber."""
+    datei = HIER.parent / "doku" / "community" / "03-community-regeln.md"
+    text = datei.read_text(encoding="utf-8")
+    if "## Unsere Community-Regeln" not in text:
+        raise SystemExit(f"{datei}: Abschnitt „## Unsere Community-Regeln“ fehlt.")
+    teil = text.split("## Unsere Community-Regeln", 1)[1]
+    einleitung, regeln, aktuell = [], [], None
+    for zeile in teil.splitlines():
+        z = zeile.strip()
+        if not z:
+            continue
+        m = re.match(r"^\d+\.\s+\*\*(.+?)\*\*\s*$", z)
+        if m:
+            aktuell = {"titel": m.group(1).strip(), "text": ""}
+            regeln.append(aktuell)
+        elif aktuell is not None:
+            aktuell["text"] = (aktuell["text"] + " " + z).strip()
+        else:
+            einleitung.append(z)
+    if len(regeln) != 8:
+        raise SystemExit(f"{datei}: erwartet 8 Regeln, gefunden {len(regeln)}.")
+    return {"einleitung": " ".join(einleitung), "regeln": regeln,
+            "quelle": "doku/community/03-community-regeln.md"}
+
+
 # ---------------------------------------------------------------- Aufbau
 
 def baue():
@@ -891,11 +923,11 @@ def baue():
         print("ACHTUNG: mittel/schriften.css fehlt — erst schriften.py laufen lassen.\n")
 
     MITTEL.mkdir(parents=True, exist_ok=True)
-    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, _ = veroeffentliche(
+    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, ansichtjs, _ = veroeffentliche(
         "azubipass.css", "kern.js", "app.js", "aufgaben.js", "azubipass.js",
         # supabase.js wird nicht eingebunden, sondern erst bei Bedarf von
         # community.js nachgeladen – liegt aber im Zwischenspeicher bereit.
-        "community.js", "supabase.js")
+        "community.js", "community-ansicht.js", "supabase.js")
 
     konten, konten_index = kontenplan_lesen()
     belege, belege_steuer = belegvorlagen()
@@ -948,6 +980,7 @@ def baue():
         "tests": tests,
         "begriffe": sorted(begriffe.values(), key=lambda e: e["titel"].lower()),
         "vokabeln": vokabelbloecke,
+        "communityRegeln": community_regeln(),
     }
     (MITTEL / "inhalt.json").write_text(
         json.dumps(inhalt, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -960,7 +993,7 @@ def baue():
     (AUSGABE / "manifest.webmanifest").write_text(manifest(), encoding="utf-8")
     # Direkt im Home-Menü starten, auch an der Wurzel der Projektseite.
     # app.html bleibt für bestehende Links und installierte Apps erhalten.
-    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs)
+    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs)
     for name in ("index.html", "app.html"):
         (AUSGABE / name).write_text(app, encoding="utf-8")
 

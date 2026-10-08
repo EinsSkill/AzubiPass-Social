@@ -1939,3 +1939,91 @@ a.hm-pflicht:hover{border-top-color:rgba(201,162,39,.6);}
 @media (prefers-reduced-motion:reduce){
   .pk--fortschritt span{transition:none;}
 }
+
+/* ================================================================= Community
+   Zugang zur Community (doku/community/02-anmeldung-profil.md). Dieselbe
+   grüne Hülle, dieselben Knöpfe, Haarlinien und Schriftrollen wie unter „Ich" –
+   nur ein Formular dazu. Keine Karten, keine Illustration.                   */
+
+.cm-rahmen{max-width:32rem;}
+.cm-zurueck{margin:0 0 26px;}
+.cm-kopf{margin-bottom:26px;}
+:root[data-bereich] .cm-kopf h1{font-size:clamp(30px,6.4vw,44px);}
+.cm-kopf h1:focus{outline:none;}
+.cm-kopf h1:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:4px;}
+
+.cm-form{display:flex;flex-direction:column;gap:22px;margin-top:8px;}
+.cm-feld{display:flex;flex-direction:column;gap:8px;}
+.cm-feld > label{font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--text);}
+.cm-eingabe{font-family:var(--sans);font-size:16px;color:var(--text);background:var(--feld);
+  border:1px solid var(--linie);border-radius:2px;padding:0 14px;min-height:48px;width:100%;}
+select.cm-eingabe{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
+                   linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:40px;}
+select.cm-eingabe option{background:#12301F;color:#F5F5F0;}
+.cm-eingabe:focus-visible{border-color:var(--tinte);outline:2px solid var(--hm-gold-hell);outline-offset:2px;}
+.cm-mono{font-family:var(--mono);letter-spacing:.06em;}
+.cm-hilfe{font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--text-sek);margin:0;}
+.cm-fehler{font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--warn-schrift);margin:0;
+  padding-left:10px;border-left:3px solid var(--warn-schrift);}
+.hat-fehler .cm-eingabe{border-color:var(--warn-schrift);}
+
+/* Bestätigungen: echte Checkboxen, die ganze Zeile ist Klickfläche. */
+.cm-haken{display:flex;align-items:flex-start;gap:14px;min-height:44px;padding:10px 0;cursor:pointer;
+  font-family:var(--sans);font-size:15px;line-height:1.45;color:var(--text);}
+.cm-haken input{flex:none;width:22px;height:22px;margin:0;accent-color:var(--hm-gold);cursor:pointer;}
+.cm-haken-feld{gap:4px;}
+
+.cm-haupt{min-height:48px;font-size:15px;align-self:flex-start;padding:12px 24px;}
+a.cm-haupt,a.cm-neben{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;}
+.cm-neben{min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;}
+.cm-reihe{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+.cm-form .cm-reihe{margin-top:4px;}
+/* Verweise, die wie Text aussehen, aber trotzdem 44 px hoch zu treffen sind. */
+.cm-verweis{display:inline-flex;align-items:center;min-height:44px;align-self:flex-start;
+  font-family:var(--sans);font-size:14.5px;color:var(--text);background:none;border:0;padding:0;
+  cursor:pointer;text-decoration:underline;text-decoration-color:var(--hm-gold);
+  text-underline-offset:4px;text-decoration-thickness:1px;}
+.cm-verweis:hover{text-decoration-thickness:2px;}
+.cm-leise{color:var(--text-sek);font-size:13.5px;}
+.cm-sichtbar{margin-top:-8px;}
+
+.cm-uebersicht{border-left:3px solid var(--warn-schrift);background:var(--warn-grund);padding:12px 16px;
+  font-family:var(--sans);font-size:14px;}
+.cm-uebersicht p{margin:0 0 6px;font-weight:600;}
+.cm-uebersicht ul{margin:0;padding-left:18px;}
+.cm-uebersicht a{color:var(--text);display:inline-flex;align-items:center;min-height:44px;}
+
+.cm-angaben{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0;
+  font-family:var(--sans);font-size:15px;}
+.cm-angaben dt{color:var(--text-sek);}
+.cm-angaben dd{margin:0;font-family:var(--serif);font-weight:600;font-size:17px;overflow-wrap:anywhere;}
+
+/* Regeln als ruhiger Dialog auf tiefem Grün. */
+.cm-dialog{border:1px solid var(--hm-linie);background:#12301F;color:#F5F5F0;padding:0;
+  width:min(36rem,calc(100vw - 32px));max-height:calc(100dvh - 48px);border-radius:2px;}
+.cm-dialog::backdrop{background:rgba(6,18,11,.72);}
+.cm-dialog-innen{padding:28px 24px 24px;}
+.cm-dialog h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.15;margin:0 0 14px;}
+.cm-dialog h2:focus{outline:none;}
+.cm-dialog p{font-family:var(--sans);font-size:15px;line-height:1.55;color:rgba(245,245,240,.82);margin:0 0 6px;}
+.cm-regelliste{margin:18px 0 24px;padding-left:22px;font-family:var(--sans);}
+.cm-regelliste li{margin-bottom:16px;}
+.cm-regelliste li::marker{font-family:var(--mono);color:#E3C558;}
+.cm-regelliste b{font-weight:600;font-size:15.5px;}
+
+/* Heute: der kleine Einstieg nach den eigenen Lernaktionen. */
+.hm-gemeinsam{margin-top:22px;}
+.hm-gemeinsam .hm-titelchen{margin-bottom:8px;}
+.hm-gemeinsam-link{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:52px;text-decoration:none;color:inherit;
+  border-top:1px solid var(--hm-linie);padding-top:16px;
+  font-family:var(--sans);font-size:15px;transition:border-color .18s ease-out;}
+.hm-gemeinsam-link:hover{border-top-color:rgba(201,162,39,.6);}
+@media (prefers-reduced-motion:reduce){.hm-gemeinsam-link{transition:none;}}
+
+@media (max-width:480px){
+  .cm-haupt{align-self:stretch;}
+}

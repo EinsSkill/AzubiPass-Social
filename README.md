@@ -54,6 +54,15 @@ python pruefe.py
 python funktionstest.py
 ```
 
+Community (AzubiPass Social, braucht Internet und die Demo-Konten – Zugangsdaten
+nicht im Repo, siehe `supabase/README.md`):
+
+```bash
+COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… python community_test.py
+COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… \
+  COMMUNITY_TEST_NEU=konto1,konto2,konto3,konto4 python community_zugang_test.py
+```
+
 Für die lokale Ansicht:
 
 ```bash
@@ -67,7 +76,10 @@ Projektvorstellung ist unter `landing.html` erreichbar.
 
 ## Rechtliches und Datenschutz
 
-- keine Nutzerkonten
+- Lernen und Üben ohne Konto: Der Lernfortschritt bleibt lokal im Browser
+- Nur die Community (AzubiPass Social, Beta) braucht ein Konto – Anmeldung per
+  Mail, Profil mit Beta-Zugangscode, Mindestalter 16, Internet. Ihre Daten liegen
+  bei Supabase (Region Frankfurt); der Lernfortschritt wird nicht hochgeladen
 - keine Werbung und kein Verkauf
 - kein Tracking
 - Lernfortschritt bleibt im Browser des jeweiligen Geräts
