@@ -1,0 +1,391 @@
+{
+  "id": "k3",
+  "lernfeld": "lf4",
+  "nummer": 3,
+  "titel": "Angebote vergleichen",
+  "untertitel": "Der Listenpreis sagt fast nichts. Der Einstandspreis alles.",
+  "minuten": 30,
+
+  "ausfuehrlich": {
+    "einleitung": "Ein Angebotsvergleich beginnt erst dann sinnvoll, wenn alle Angebote auf dieselbe wirtschaftliche Größe gebracht wurden. Danach ergänzt die Nutzwertanalyse den Preis um qualitative Kriterien wie Lieferzuverlässigkeit, Qualität und Service.",
+    "abschnitte": [
+      {
+        "abschnitt": "b1",
+        "vorauswissen": [
+          "Der Listenpreis ist nur der Ausgangspunkt der Bezugskalkulation.",
+          "Rabatt und Skonto werden nacheinander abgezogen, Bezugskosten anschließend addiert."
+        ],
+        "ablauf": [
+          "Listeneinkaufspreis feststellen.",
+          "Liefererrabatt abziehen und Zieleinkaufspreis bestimmen.",
+          "Liefererskonto vom bereits rabattierten Preis abziehen.",
+          "Bezugskosten addieren und den Einstandspreis vergleichen."
+        ],
+        "erklaerung": "Der Einstandspreis macht aus unterschiedlichen Angebotsbedingungen eine vergleichbare Zahl. Erst nach Rabatt, Skonto und Bezugskosten zeigt sich, welcher Betrag den Betrieb tatsächlich erreicht. Die Reihenfolge ist zwingend, weil der Skonto auf dem bereits rabattierten Zieleinkaufspreis berechnet wird.",
+        "beispiele": [
+          "Bei 1.050 € Listeneinkaufspreis, 10 % Rabatt, 2 % Skonto und 45 € Bezugskosten ergibt sich: 1.050 € − 105 € = 945 €, − 18,90 € = 926,10 €, + 45 € = 971,10 € Einstandspreis.",
+          "Ein Angebot ‚ab Werk‘ kann trotz niedrigem Listenpreis durch zusätzliche Fracht teurer sein als ein Angebot ‚frei Haus‘."
+        ],
+        "fallbeispiel": "Rechne das Beispiel der Kalkulationsgrafik vollständig: Listeneinkaufspreis 1.050 €. Rabatt 10 % = 105 €, Zieleinkaufspreis 945 €. Skonto 2 % von 945 € = 18,90 €, Bareinkaufspreis 926,10 €. Bezugskosten 45 € addieren. Ergebnis: 971,10 € Einstandspreis. Nur diese Endgröße darf mit dem Einstandspreis des zweiten Angebots verglichen werden.",
+        "typische_fehler": "Skonto wird vom Listenpreis oder Rabatt und Skonto werden einfach zu 12 % addiert. Bezugskosten werden besonders bei ‚ab Werk‘ überlesen.",
+        "verstaendnisfragen": [
+          "Warum wird Skonto vom Zieleinkaufspreis gerechnet? Weil der Rabatt den Ausgangspreis bereits verändert hat.",
+          "Warum sind nur Einstandspreise vergleichbar? Weil erst sie Preisnachlässe und zusätzliche Beschaffungskosten enthalten."
+        ],
+        "pruefungsbezug": "Das Schema als Spalte notieren und jede Zwischenstufe beschriften. Eine nachvollziehbare Rechnung zeigt auch bei einem Rechenfehler den Lösungsweg.",
+        "merksatz": "Listenpreis − Rabatt − Skonto + Bezugskosten = Einstandspreis."
+      },
+      {
+        "abschnitt": "b2",
+        "vorauswissen": [
+          "Rabatt wird beim Kauf gewährt; Skonto hängt von schneller Zahlung ab.",
+          "Bezugskosten gehören zu den tatsächlichen Beschaffungskosten."
+        ],
+        "erklaerung": "Rabatt und Skonto sehen beide wie Preisnachlässe aus, wirken aber zu unterschiedlichen Zeitpunkten. Der Rabatt mindert den Preis sofort. Skonto wird nur bei Zahlung innerhalb der Frist genutzt und wird deshalb auf dem bereits rabattierten Preis berechnet. Fracht, Verpackung, Versicherung und Zoll erhöhen dagegen den Einstandspreis.",
+        "beispiele": [
+          "Bei 2 % Skonto innerhalb von 10 Tagen und 30 Tagen Zahlungsziel werden 2 % für 20 Tage früheres Zahlen gespart; die vorhandene Überschlagsrechnung entspricht etwa 36 % Jahreszins.",
+          "Ein Angebot ‚frei Haus‘ enthält die Lieferung bereits, während beim Angebot ‚ab Werk‘ die Fracht noch als Bezugskosten ergänzt werden muss."
+        ],
+        "fallbeispiel": "Bei 2 % Skonto, zehn Tagen Skontofrist und 30 Tagen Zahlungsziel beträgt die verkürzte Zahlungszeit 20 Tage. Überschlag: 2 × 360 ÷ 20 = 36 % Jahreszins. Das erklärt, warum der Betrieb die Skontofrist wirtschaftlich prüfen sollte; die genaue Entscheidung hängt trotzdem von Liquidität und Zahlungsbedingungen ab.",
+        "typische_fehler": "Skonto wird als immer gewährter Rabatt behandelt oder Bezugskosten werden nicht berücksichtigt. Auch wird der Skontovorteil isoliert betrachtet, ohne zu prüfen, ob die Zahlung rechtzeitig möglich ist.",
+        "verstaendnisfragen": [
+          "Wann entsteht Skonto? Erst bei Zahlung innerhalb der vereinbarten Skontofrist.",
+          "Welche Kosten werden addiert? Fracht, Verpackung, Versicherung und Zoll als Bezugskosten."
+        ],
+        "pruefungsbezug": "Begriffe anhand des Zeitpunkts unterscheiden: sofortiger Nachlass = Rabatt, Nachlass für schnelle Zahlung = Skonto, Kosten bis zum Eintreffen = Bezugskosten.",
+        "merksatz": "Rabatt sofort, Skonto bei schneller Zahlung, Bezugskosten zusätzlich."
+      },
+      {
+        "abschnitt": "b3",
+        "vorauswissen": [
+          "Einstandspreis ist der quantitative Vergleich.",
+          "Qualitative Kriterien werden mit Punkten und Gewichtungen bewertet."
+        ],
+        "ablauf": [
+          "Kriterien und Gewichte vor dem Vergleich festlegen.",
+          "Jeden Lieferer je Kriterium mit Punkten bewerten.",
+          "Punkte mit dem Gewicht multiplizieren.",
+          "Gewichtete Werte addieren und den höchsten Nutzwert begründen."
+        ],
+        "erklaerung": "Die Nutzwertanalyse macht qualitative Überlegungen nachvollziehbar. Ein Lieferer kann beim Preis schlechter, bei Liefertreue und Qualität aber deutlich besser sein. Die Gewichtung muss vor dem Ergebnis feststehen, sonst wird die Rechnung nur nachträglich an den Wunschlieferer angepasst.",
+        "beispiele": [
+          "Lieferer A erhält beim Einstandspreis 8 Punkte bei 40 % Gewichtung: 8 × 0,40 = 3,2 Nutzwertpunkte.",
+          "In der vorhandenen Tabelle erreicht Lieferer A insgesamt 8,7 Punkte und Lieferer B 7,5, obwohl B beim Preis 10 Punkte erhält."
+        ],
+        "fallbeispiel": "Berechne Lieferer A aus der Tabelle: Einstandspreis 8 × 40 % = 3,2; Liefertreue 10 × 30 % = 3,0; Qualität 9 × 20 % = 1,8; Service 7 × 10 % = 0,7. Summe: 3,2 + 3,0 + 1,8 + 0,7 = 8,7. Lieferer B kommt auf 7,5. Nach dieser Gewichtung ist A die bessere Gesamtentscheidung, obwohl B beim Preis besser abschneidet.",
+        "typische_fehler": "Gewichtung und Punkte werden vertauscht oder erst nach Kenntnis des Ergebnisses festgelegt. Ein weiterer Fehler ist, nur den Preis zu betrachten und die qualitative Bewertung als ‚subjektiv‘ ohne nachvollziehbare Rechnung abzutun.",
+        "verstaendnisfragen": [
+          "Was bedeutet ein Gewicht von 40 %? Das Kriterium trägt 40 % zum Gesamtnutzwert bei.",
+          "Wann kann der höchste Nutzwert vom billigsten Lieferer abweichen? Wenn andere wichtige Kriterien, etwa Liefertreue oder Qualität, höher bewertet werden."
+        ],
+        "pruefungsbezug": "In Berechnungen jedes Kriterium einzeln multiplizieren und erst am Ende addieren. In der Begründung immer Preis und qualitative Kriterien gemeinsam nennen.",
+        "merksatz": "Nutzwert = Punkte mal Gewichtung; die Gewichte stehen fest, bevor die Lieferer bewertet werden."
+      }
+    ]
+  },
+  "lernziele": [
+    {
+      "id": "lz1",
+      "text": "Den Einstandspreis über die Bezugskalkulation berechnen",
+      "abschnitt": "b1"
+    },
+    {
+      "id": "lz2",
+      "text": "Skonto und Rabatt richtig einordnen",
+      "abschnitt": "b2"
+    },
+    {
+      "id": "lz3",
+      "text": "Angebote qualitativ mit einer Nutzwertanalyse bewerten",
+      "abschnitt": "b3"
+    }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "b1",
+      "titel": "Der Weg zum Einstandspreis",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Zwei Angebote nennen 2,10 € und 2,00 €. Welches ist günstiger? ==Ohne Rabatt, Skonto und Frachtkosten lässt sich das nicht beantworten.== Die {{begriff:bezugskalkulation|Bezugskalkulation}} rechnet beide Angebote auf dieselbe Größe herunter: den {{begriff:einstandspreis|Einstandspreis}}."
+        },
+        {
+          "typ": "grafik",
+          "variante": "kalkulationsleiter",
+          "kopf": "Die Leiter",
+          "titel": "Vom Listenpreis zum Einstandspreis",
+          "lead": "Ändere Rabatt, Skonto und Bezugskosten und sieh, wie sich der Einstandspreis verschiebt.",
+          "richtungen": [
+            "vorwaerts"
+          ],
+          "start": {
+            "id": "lep",
+            "name": "Listeneinkaufspreis",
+            "wert": 1050
+          },
+          "stufen": [
+            {
+              "id": "rabatt",
+              "name": "Liefererrabatt",
+              "art": "abzug",
+              "satz": 10,
+              "ergebnis": "Zieleinkaufspreis"
+            },
+            {
+              "id": "skonto",
+              "name": "Liefererskonto",
+              "art": "abzug",
+              "satz": 2,
+              "ergebnis": "Bareinkaufspreis"
+            },
+            {
+              "id": "bezug",
+              "name": "Bezugskosten (Fracht, Verpackung)",
+              "art": "zuschlag-absolut",
+              "betrag": 45,
+              "ergebnis": "Einstandspreis",
+              "marke": true
+            }
+          ],
+          "regel": "Reihenfolge merken: erst Rabatt, dann Skonto, dann Bezugskosten. Skonto wird vom bereits rabattierten Preis gerechnet — nie vom Listenpreis."
+        },
+        {
+          "typ": "achtung",
+          "text": "Die **Reihenfolge ist zwingend**. Wer Skonto vom Listeneinkaufspreis rechnet, bekommt ein zu niedriges Ergebnis. Rabatt und Skonto werden nacheinander abgezogen, nicht addiert und dann gemeinsam — 10 % und 2 % ergeben nicht 12 %."
+        },
+        {
+          "typ": "merke",
+          "text": "Listeneinkaufspreis **−** Rabatt **=** Zieleinkaufspreis **−** Skonto **=** Bareinkaufspreis **+** {{begriff:bezugskosten|Bezugskosten}} **=** Einstandspreis. Nur Einstandspreise sind vergleichbar.",
+          "karteikarte": "Wie lautet das Schema der Bezugskalkulation vom Listeneinkaufspreis bis zum Einstandspreis?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b2",
+      "titel": "Rabatt, Skonto, Bezugskosten",
+      "inhalt": [
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Größe",
+            "Wofür",
+            "Rechnerisch"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "{{begriff:rabatt|Rabatt}}",
+                "Preisnachlass beim Kauf",
+                "vom Listenpreis"
+              ],
+              "detail": "**Wird immer gewährt**, unabhängig vom Zahlungszeitpunkt. Mengenrabatt für große Abnahme, Treuerabatt für lange Geschäftsbeziehung, Wiederverkäuferrabatt für den Handel."
+            },
+            {
+              "zellen": [
+                "{{begriff:skonto|Skonto}}",
+                "Belohnung für schnelle Zahlung",
+                "vom Zieleinkaufspreis"
+              ],
+              "detail": "**Nur wenn innerhalb der Skontofrist gezahlt wird.** Skonto ist kein Rabatt, sondern ein Zins für die vorzeitige Zahlung — und ein sehr hoher noch dazu."
+            },
+            {
+              "zellen": [
+                "{{begriff:bezugskosten|Bezugskosten}}",
+                "Fracht, Verpackung, Versicherung, Zoll",
+                "werden addiert"
+              ],
+              "detail": "**Die am häufigsten vergessene Position.** Ein Angebot „ab Werk\" wirkt billiger als eines „frei Haus\" — bis die Frachtrechnung kommt."
+            }
+          ]
+        },
+        {
+          "typ": "absatz",
+          "text": "Skonto zu ziehen lohnt sich fast immer. Wer bei „2 % Skonto innerhalb 10 Tagen, Zahlungsziel 30 Tage\" früh zahlt, spart 2 % für 20 Tage früheres Zahlen. **Aufs Jahr gerechnet ist das ein zweistelliger Zinssatz** — mehr, als jeder Kontokorrentkredit kostet."
+        },
+        {
+          "typ": "vertiefung",
+          "titel": "Wie man den Jahreszins des Skontos überschlägt",
+          "absaetze": [
+            "Die gängige Überschlagsformel lautet: **Skontosatz × 360 ÷ (Zahlungsziel − Skontofrist)**. Bei 2 % Skonto, 10 Tagen Skontofrist und 30 Tagen Ziel sind das 2 × 360 ÷ 20 = 36 % im Jahr.",
+            "Der Wert ist bewusst grob: Er rechnet mit dem kaufmännischen Jahr zu 360 Tagen und bezieht den Skontosatz auf den vollen Rechnungsbetrag statt auf den tatsächlich gezahlten. Für die Entscheidung genügt das — die Größenordnung ist eindeutig.",
+            "Die kaufmännische Folgerung: Selbst wenn dafür der Kontokorrentkredit in Anspruch genommen werden muss, ist Skontoziehen meist günstiger. Nur wenn die Liquidität es überhaupt nicht hergibt, zahlt man erst am Ende des Ziels."
+          ]
+        },
+        {
+          "typ": "check",
+          "frage": "Listeneinkaufspreis 1.000 €, 20 % Rabatt, 3 % Skonto. Wie hoch ist der Bareinkaufspreis?",
+          "optionen": [
+            {
+              "text": "770,00 € — 20 % und 3 % ergeben zusammen 23 %",
+              "richtig": false,
+              "echo": "So darf man nicht rechnen. Die Sätze beziehen sich auf verschiedene Grundlagen: Der Rabatt geht vom Listenpreis, das Skonto vom bereits verminderten Zieleinkaufspreis."
+            },
+            {
+              "text": "776,00 €",
+              "richtig": true,
+              "echo": "Richtig gerechnet. 1.000 € − 200 € Rabatt = 800 € Zieleinkaufspreis. Davon 3 % Skonto sind 24 €, also 776 € Bareinkaufspreis. Kämen jetzt noch Bezugskosten dazu, ergäbe sich daraus der Einstandspreis."
+            },
+            {
+              "text": "800,00 € — Skonto zählt beim Vergleich nicht mit",
+              "richtig": false,
+              "echo": "Doch. Skonto senkt den tatsächlich gezahlten Betrag und gehört deshalb in die Kalkulation — vorausgesetzt, der Betrieb zahlt auch wirklich innerhalb der Frist."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b3",
+      "titel": "Wenn der Preis nicht alles ist",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Der Einstandspreis entscheidet den **quantitativen** Vergleich. Daneben steht der qualitative: Zuverlässigkeit, Qualität, Service, Umweltverhalten. Die {{begriff:nutzwertanalyse|Nutzwertanalyse}} macht ihn nachvollziehbar, statt ihn dem Bauchgefühl zu überlassen."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Kriterium",
+            "Gewicht",
+            "Lieferer A",
+            "Lieferer B"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Einstandspreis",
+                "40 %",
+                "8 Pkt → 3,2",
+                "10 Pkt → 4,0"
+              ],
+              "mono": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "zellen": [
+                "Liefertreue",
+                "30 %",
+                "10 Pkt → 3,0",
+                "5 Pkt → 1,5"
+              ],
+              "mono": [
+                1,
+                2,
+                3
+              ],
+              "detail": "**Hier kippt die Entscheidung.** Lieferer B ist billiger, liefert aber unzuverlässig. Bei einem A-Gut, das die Produktion versorgt, wiegt das schwerer als ein paar Cent."
+            },
+            {
+              "zellen": [
+                "Qualität",
+                "20 %",
+                "9 Pkt → 1,8",
+                "7 Pkt → 1,4"
+              ],
+              "mono": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "zellen": [
+                "Service",
+                "10 %",
+                "7 Pkt → 0,7",
+                "6 Pkt → 0,6"
+              ],
+              "mono": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "zellen": [
+                "**Nutzwert**",
+                "100 %",
+                "**8,7**",
+                "**7,5**"
+              ],
+              "mono": [
+                1,
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Nutzwert = Punkte **mal** Gewichtung, dann alles addieren. Der höchste Nutzwert gewinnt — auch wenn er nicht der billigste ist.",
+          "karteikarte": "Wie funktioniert eine Nutzwertanalyse, und wann führt sie zu einem anderen Ergebnis als der reine Preisvergleich?"
+        },
+        {
+          "typ": "praxistipp",
+          "text": "Die Gewichtung muss **vor** dem Vergleich festgelegt werden, nicht danach. Sonst schiebt man die Gewichte so lange hin und her, bis der Wunschlieferer oben steht — und die Analyse begründet nur noch eine längst getroffene Entscheidung."
+        },
+        {
+          "typ": "zuordnen",
+          "lead": "Quantitativ oder qualitativ?",
+          "kategorien": [
+            "Quantitativ",
+            "Qualitativ"
+          ],
+          "aufgaben": [
+            {
+              "text": "Der Einstandspreis je Stück beträgt 1,87 €.",
+              "loesung": "Quantitativ"
+            },
+            {
+              "text": "Der Lieferer hat in zwei Jahren nie zu spät geliefert.",
+              "loesung": "Qualitativ"
+            },
+            {
+              "text": "Die Frachtkosten betragen 45 € je Sendung.",
+              "loesung": "Quantitativ"
+            },
+            {
+              "text": "Bei Reklamationen antwortet der Lieferer am selben Tag.",
+              "loesung": "Qualitativ"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Nur Einstandspreise sind vergleichbar, nicht Listenpreise.",
+    "Schema: Listeneinkaufspreis − Rabatt = Zieleinkaufspreis − Skonto = Bareinkaufspreis + Bezugskosten = Einstandspreis.",
+    "Die Reihenfolge ist zwingend — Skonto wird nie vom Listenpreis gerechnet.",
+    "{{begriff:rabatt|Rabatt}} gibt es immer, {{begriff:skonto|Skonto}} nur bei Zahlung innerhalb der Frist.",
+    "{{begriff:bezugskosten|Bezugskosten}} sind Fracht, Verpackung, Versicherung und Zoll — sie werden addiert.",
+    "Skonto entspricht überschlägig einem sehr hohen Jahreszins und lohnt sich fast immer.",
+    "Die {{begriff:nutzwertanalyse|Nutzwertanalyse}} bewertet qualitative Kriterien mit Punkten mal Gewichtung.",
+    "Die Gewichtung wird vor dem Vergleich festgelegt, nicht danach."
+  ],
+  "selbsttest": [
+    {
+      "typ": "Berechnung",
+      "frage": "Listeneinkaufspreis 2.400 €, 15 % Liefererrabatt, 2 % Skonto, Bezugskosten 80 €. Berechne den Einstandspreis.",
+      "loesung": "Listeneinkaufspreis 2.400,00 € minus 15 % Rabatt (360,00 €) ergibt einen Zieleinkaufspreis von 2.040,00 €. Davon 2 % Skonto sind 40,80 €, also ein Bareinkaufspreis von 1.999,20 €. Zuzüglich 80,00 € Bezugskosten ergibt sich ein Einstandspreis von 2.079,20 €."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Warum reicht der Angebotspreis für einen Vergleich nicht aus?",
+      "loesung": "Weil er nur der Ausgangswert ist. Zwischen Listeneinkaufspreis und dem, was der Betrieb tatsächlich aufwendet, liegen Rabatt, Skonto und Bezugskosten. Ein Angebot mit höherem Listenpreis, aber hohem Rabatt und Lieferung frei Haus kann günstiger sein als ein billiges Angebot ab Werk, bei dem die Fracht noch dazukommt. Erst der Einstandspreis bringt alle Angebote auf dieselbe Grundlage. Zusätzlich sind qualitative Kriterien zu berücksichtigen, weil ein unzuverlässiger Lieferer Folgekosten verursacht, die im Preis nicht auftauchen."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Angebot A: 2,00 € je Stück, ab Werk, Fracht 120 € bei 500 Stück, kein Rabatt, 2 % Skonto. Angebot B: 2,20 € je Stück, frei Haus, 10 % Rabatt, kein Skonto. Welches ist günstiger?",
+      "loesung": "Angebot A: 500 × 2,00 € = 1.000,00 € Listeneinkaufspreis, kein Rabatt, also Zieleinkaufspreis 1.000,00 €. Abzüglich 2 % Skonto (20,00 €) ergibt 980,00 € Bareinkaufspreis. Zuzüglich 120,00 € Fracht ergibt sich ein Einstandspreis von 1.100,00 €, das sind 2,20 € je Stück. Angebot B: 500 × 2,20 € = 1.100,00 € Listeneinkaufspreis, abzüglich 10 % Rabatt (110,00 €) ergibt 990,00 €. Kein Skonto, keine Bezugskosten, weil frei Haus geliefert wird. Der Einstandspreis beträgt 990,00 €, das sind 1,98 € je Stück. Angebot B ist trotz des höheren Angebotspreises um 110,00 € günstiger — die Frachtkosten drehen das Ergebnis."
+    }
+  ],
+  "pruefungstipp": "Die Bezugskalkulation ist die sicherste Punktequelle des ganzen Lernfelds, weil sie immer gleich läuft. Schreib das Schema als Spalte untereinander und rechne Zeile für Zeile — dann kannst du dich schlecht verlaufen. Die beiden Klassiker unter den Fehlern: Skonto vom Listenpreis rechnen und Bezugskosten vergessen, wenn im Text unauffällig „ab Werk\" steht."
+}
