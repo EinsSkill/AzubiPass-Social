@@ -18,3 +18,13 @@ Projekt: `azubipass-social` (Region Frankfurt, eu-central-1).
   beste Antwort, Moderation) laufen als RPC-Funktionen mit eigener Rechteprüfung.
 - Zugangscodes stehen nur in der Datenbank, nie im Repo.
 - Die Rolle `team` wird nur direkt in der Datenbank vergeben.
+
+## Demo-Konten
+
+`demo-anna@azubipass.invalid` und `demo-ben@azubipass.invalid` haben ein
+Passwort (nicht im Repo), weil Anmelde-Mails ohne eigenen Mailversand nicht
+ankommen. Sie dienen `quellen/community_test.py` und der Präsentation. Die App
+selbst bietet nur die Anmeldung per Mail an.
+
+    cd quellen
+    COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… python3 community_test.py

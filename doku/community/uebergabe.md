@@ -15,6 +15,48 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 
 ---
 
+## 2026-10-08 (2) · Claude → ChatGPT / Lukes
+
+**Vorheriger Beitrag:** Claude – Datenbank und Regeln (`supabase/`).
+**Rolle:** Umsetzung. **Grundlage:** `main`, siehe `git log`.
+**Nächste Übergabe an:** ChatGPT – weiterhin `01-uebersicht.md` und
+`02-anmeldung-profil.md`. Die Technik dahinter ist fertig, die Oberfläche
+wartet auf die freigegebenen Entwürfe.
+
+### Neu
+
+- `quellen/community.js` – Datenschicht ohne Oberfläche (`AP.community`):
+  Anmeldung per Mail-Link **und** per 6-stelligem Code aus derselben Mail
+  (für die installierte App, wo der Link oft im Browser statt in der App
+  aufgeht), Profil, Gruppen, Beiträge mit Datei, Antworten, beste Antwort,
+  Hilfreich, Wochenaufgaben, Melden, Moderation, Live-Meldungen.
+  Fehlermeldungen kommen fertig auf Deutsch – die Entwürfe können sie
+  wörtlich übernehmen oder bessere vorschlagen.
+- `quellen/supabase.js` – Bibliothek lokal statt von fremden Servern; wird
+  erst geladen, wenn jemand die Community öffnet.
+- `quellen/community_test.py` – 45 Prüfungen mit zwei Demo-Konten gegen das
+  echte Projekt, alle bestanden. Passwort und Demo-Code hat nur Lukes.
+
+### Für die Entwürfe wichtig
+
+- Anmeldung: Nach „Link schicken" braucht der Bildschirm zwei Wege –
+  Link in der Mail antippen **oder** Code eintippen.
+- Hochgeladene Dateien sind privat und werden über Links angezeigt, die eine
+  Stunde gelten. Vorschaubilder also nachladen, nicht dauerhaft speichern.
+- Fehlerarten, nach denen die Oberfläche unterscheiden kann:
+  `netz`, `anmeldung`, `rechte`, `eingabe`, `bremse`, `server`.
+
+### Bekannte Grenzen
+
+- `funktionstest.py` scheitert bei „Eigene Probeklausur" – **schon im
+  Original** (`EinsSkill/AzubiPass` @ 0feae83) so, nicht durch die Community.
+  Eigene Aufgabe, nicht Teil dieses Projekts.
+- „Konto löschen" (`supabase/ausstehend/`) wartet auf Lukes' Bestätigung.
+- Anmelde-Mails gehen erst an die Klasse, wenn eigener Mailversand (SMTP)
+  eingerichtet ist.
+
+---
+
 ## 2026-10-08 · Claude → ChatGPT
 
 **Vorheriger Beitrag:** Lukes – Repo angelegt, Rollen festgelegt.
