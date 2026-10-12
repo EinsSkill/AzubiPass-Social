@@ -114,6 +114,16 @@ def main():
             def ist(erwartet):
                 return h1(erwartet) == erwartet
 
+            def profilseite():
+                """Seit C04 startet die Community mit „Beiträge“; Profil, Regeln
+                und Abmelden liegen unter #community/profil."""
+                seite.evaluate("location.hash = '#community/profil'")
+                return ist("Profil")
+
+            def abmelden_ui():
+                profilseite()
+                seite.click("#community >> text=Abmelden")
+
             def rest_anfragen():
                 return [a for a in anfragen if "/rest/v1/" in a[1]]
 
@@ -210,6 +220,9 @@ def main():
             # ---------------------------------------------------------- B · Code
             print("Mail-Code (B)")
             bild("05-postfach")
+            pflicht_code = seite.evaluate("document.querySelector('#community .cm-feld .cm-pflicht').textContent")
+            pruefe(pflicht_code == "Pflicht bei Anmeldung mit Code",
+                   "Code-Feld: „Pflicht bei Anmeldung mit Code“ (Entscheidung 12.10.)", pflicht_code)
             ziele_mindestens_44("Postfach")
             feld = "#community input[autocomplete=one-time-code]"
             pruefe(seite.get_attribute(feld, "inputmode") == "numeric", "Codefeld öffnet die Zifferntastatur")
@@ -316,18 +329,24 @@ def main():
             seite.fill("#community input[maxlength='60']", namen[0])
             vorher = len([a for a in anfragen if "rpc/profil_anlegen" in a[1]])
             seite.dblclick("text=Profil anlegen")
-            pruefe(ist("Community"), "Nach der Anlage: Community", h1())
+            pruefe(ist("Beiträge"), "Nach der Anlage: Beiträge (C04)", h1())
             pruefe(len([a for a in anfragen if "rpc/profil_anlegen" in a[1]]) - vorher == 1, "Doppelklick legt nur einmal an")
             pruefe(seite.is_visible("text=Dein Profil ist angelegt."), "Erfolgsmeldung")
-            pruefe(namen[0] in seite.inner_text("#community") and "2. Lehrjahr" in seite.inner_text("#community"),
-                   "Eigenes Profil wird gezeigt")
             pruefe(beta not in seite.content(), "Beta-Zugangscode steht nirgends mehr auf der Seite")
-            bild("09-drin")
-            ziele_mindestens_44("Community")
+            bild("09-beitraege")
+            ziele_mindestens_44("Beiträge")
+            pruefe(profilseite() and namen[0] in seite.inner_text("#community") and "2. Lehrjahr" in seite.inner_text("#community"),
+                   "Eigenes Profil unter „Profil“")
+            pruefe(seite.is_visible("text=Hier findest du dein Community-Profil und die Regeln.")
+                   and not seite.is_visible("text=noch nicht verfügbar")
+                   and seite.locator("#community a[href='#community']", has_text="Zu Beiträgen").count() == 1,
+                   "Profilseite: freigegebene Einleitung, keine Zwischenansicht mehr, Weg zu Beiträgen")
+            bild("09-profil")
+            ziele_mindestens_44("Profil")
 
             # Wiederkehrend: Neu laden, kein zweites Profil
             seite.reload()
-            pruefe(ist("Community") and not seite.is_visible("text=Beta-Zugangscode"), "Wiederkehrend: kein Beta-Code nötig")
+            pruefe(ist("Profil") and not seite.is_visible("text=Beta-Zugangscode"), "Wiederkehrend: kein Beta-Code nötig")
             # Unbekanntes Ziel nach Login
             seite.goto(basis + "app.html#community/gruppe/00000000-0000-0000-0000-000000000000")
             pruefe(ist("Community") and seite.is_visible("text=Dieser Inhalt ist für dich nicht verfügbar."), "Unbekanntes Ziel: neutraler Hinweis, keine Daten")
@@ -341,10 +360,10 @@ def main():
             pruefe(not seite.is_visible("text=Beta-Zugangscode"), "Profil-Lesefehler führt nicht zur Profilanlage")
             seite.unroute("**/rest/v1/profil?**")
             seite.click("text=Erneut versuchen")
-            pruefe(ist("Community"), "„Erneut versuchen“ lädt das Profil")
+            pruefe(ist("Beiträge"), "„Erneut versuchen“ lädt das Profil")
 
             # Abmelden
-            seite.click("#community >> text=Abmelden")
+            abmelden_ui()
             pruefe(ist("In der Community anmelden"), "Abmelden führt zur Anmeldung")
             pruefe(namen[0] not in seite.inner_text("body"), "Nach dem Abmelden kein Profilname mehr sichtbar")
             pruefe(not sitzung_schluessel(), "Sitzung aus dem Speicher entfernt", sitzung_schluessel())
@@ -366,10 +385,10 @@ def main():
             seite.wait_for_selector("text=Dein Profil ist angelegt.")
             zweite.click("text=Profil anlegen")
             zweite.wait_for_selector("text=Dein Profil ist angelegt.")
-            pruefe(namen[1] in zweite.inner_text("#community") and namen[1] + " b" not in zweite.inner_text("#community"),
-                   "Zweiter Tab übernimmt das Profil aus dem ersten, keine zweite Anlage")
+            zp = zweite.evaluate("AP.community.profil(true).then(p => p && p.anzeigename)")
+            pruefe(zp == namen[1], "Zweiter Tab übernimmt das Profil aus dem ersten, keine zweite Anlage", zp)
             zweite.close()
-            seite.click("#community >> text=Abmelden")
+            abmelden_ui()
             h1()
 
             # Antwort geht verloren, Profil entsteht trotzdem – Nachsehen findet es
@@ -389,7 +408,7 @@ def main():
             seite.wait_for_selector("text=Dein Profil ist angelegt.")
             pruefe(True, "Verlorene Antwort: Profil wird gefunden statt doppelt angelegt")
             seite.unroute("**/rest/v1/rpc/profil_anlegen**")
-            seite.click("#community >> text=Abmelden")
+            abmelden_ui()
             h1()
 
             # Antwort weg UND Nachsehen scheitert: ehrlich „unklar“
@@ -412,7 +431,7 @@ def main():
             seite.unroute("**/rest/v1/rpc/profil_anlegen**")
             seite.unroute("**/rest/v1/profil?**")
             seite.click("text=Profilstatus prüfen")
-            pruefe(ist("Community") and namen[3] in seite.inner_text("#community"), "„Profilstatus prüfen“ findet das Profil")
+            pruefe(ist("Beiträge") and profilseite() and namen[3] in seite.inner_text("#community"), "„Profilstatus prüfen“ findet das Profil")
             seite.click("#community >> text=Abmelden")
             h1()
 
@@ -568,16 +587,11 @@ def main():
                 gehalten[0].abort()           # … die Antwort geht unterwegs verloren
             seite.unroute("**/rest/v1/rpc/profil_anlegen**")
             ctx.set_offline(False)            # das online-Ereignis prüft neu
-            pruefe(titel_in(seite, "Community") and namen[7] in seite.inner_text("#community"),
+            pruefe(titel_in(seite, "Beiträge") and profilseite() and namen[7] in seite.inner_text("#community"),
                    "Nach der Unterbrechung: Profil gefunden, keine zweite Anlage")
             n_profile = seite.evaluate("""async () => { const c = await AP.community.verbinden();
                 const r = await c.from('profil').select('id').eq('anzeigename', %s); return (r.data || []).length; }""" % json.dumps(namen[7]))
             pruefe(n_profile == 1, "Profil genau einmal vorhanden", n_profile)
-            # Zwischenansicht mit freigegebenem Text
-            pruefe(seite.is_visible("text=Dein Community-Profil ist eingerichtet. Beiträge und Lerngruppen sind in dieser Beta noch nicht verfügbar.")
-                   and seite.is_visible("text=Hier findest du dein Community-Profil und die Regeln.")
-                   and seite.locator("#community a[href='app.html#lernen']", has_text="Zu Lernen").count() == 1,
-                   "Zwischenansicht mit freigegebenem Text und „Zu Lernen“")
 
             # Leeres Ergebnis ist kein Erfolg
             seite.click("#community >> text=Abmelden")

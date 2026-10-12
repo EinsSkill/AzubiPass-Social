@@ -8,7 +8,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-20261012-134041";
+var SPEICHER = "azubipass-20261012-144032";
 var VORRAT = [
   "./",
   "app.html",
@@ -37,6 +37,7 @@ var VORRAT = [
   "mittel/azubipass.css",
   "mittel/azubipass.js",
   "mittel/community-ansicht.js",
+  "mittel/community-beitraege.js",
   "mittel/community.js",
   "mittel/ibm-plex-mono-400-latin-ext.woff2",
   "mittel/ibm-plex-mono-400-latin.woff2",

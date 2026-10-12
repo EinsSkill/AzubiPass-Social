@@ -79,10 +79,7 @@
         }
       });
       client.auth.onAuthStateChange(function (ereignis, sitzung) {
-        if (ereignis === "SIGNED_OUT") profilCache = undefined;
-        if (ereignis === "SIGNED_IN" || ereignis === "TOKEN_REFRESHED") {
-          if (!sitzung || !profilCache || profilCache.id !== sitzung.user.id) profilCache = undefined;
-        }
+        kontoMerken(sitzung && sitzung.user ? sitzung.user.id : null);
         hoerer.forEach(function (h) { try { h(ereignis, sitzung); } catch (e) {} });
       });
       return client;
@@ -194,8 +191,15 @@
 
   function abmelden() {
     return mit(function (c) {
-      profilCache = undefined;
-      return c.auth.signOut({ scope: "local" }).then(auspacken).then(aufraeumenSpeicher);
+      wechsel();                      // Antworten, die jetzt noch kommen, gelten nicht mehr
+      var g = generation;
+      return c.auth.signOut({ scope: "local" }).then(auspacken).then(function () {
+        // Erlaubt ist höchstens das eigene SIGNED_OUT (g + 1). Ist inzwischen
+        // jemand anderes angemeldet, ist diese Antwort alt: nichts aufräumen,
+        // sonst verschwände die Sitzung des neuen Kontos.
+        if (generation > g + 1 || kontoId) throw VERALTET();
+        aufraeumenSpeicher();
+      });
     });
   }
 
@@ -215,6 +219,40 @@
       if (!s) throw fehler("Bitte melde dich zuerst an.", "anmeldung");
       return s.user;
     });
+  }
+
+  /* Kontobindung: Jede Abmeldung und jeder Wechsel zu einem anderen Konto
+     erhöht die Generation. Eine Antwort, die zu einer älteren Generation oder
+     einem anderen Konto gehört, wird verworfen – sie darf weder einen
+     Zwischenspeicher füllen noch als Ergebnis zurückkommen. */
+  var generation = 0, kontoId;        // kontoId: undefined = noch unbekannt
+
+  function wechsel() { generation++; profilCache = undefined; }
+
+  function kontoMerken(id) {
+    if (kontoId !== undefined && id !== kontoId) wechsel();
+    kontoId = id;
+  }
+
+  function VERALTET() {
+    return fehler("Du bist inzwischen mit einem anderen Konto angemeldet oder abgemeldet.", "veraltet");
+  }
+
+  function aktuell(g, uid) { return g === generation && (kontoId === undefined || kontoId === uid); }
+
+  // fn(u, client) läuft für das gerade angemeldete Konto; ihr Ergebnis kommt
+  // nur zurück, wenn sich das Konto in der Zwischenzeit nicht geändert hat.
+  function gebunden(fn) {
+    return verbinden().then(function () { return ich(); }).then(function (u) {
+      var g = generation;
+      return Promise.resolve(fn(u, client)).then(function (r) {
+        if (!aktuell(g, u.id)) throw VERALTET();
+        return r;
+      }, function (f) {
+        if (!aktuell(g, u.id)) throw VERALTET();
+        throw f;
+      });
+    }).catch(function (f) { throw uebersetzen(f); });
   }
 
   // Kam die Seite gerade aus einem Anmelde-Link? Dann sofort verbinden, damit
@@ -266,15 +304,23 @@
 
   /* ================================================== Profil */
 
-  var profilCache;                                    // undefined = unbekannt, null = keins
+  // { konto, wert } – wert: null = kein Profil. Gehört immer zu genau einem Konto.
+  var profilCache;
   var PROFIL = "id, anzeigename, lehrjahr, ueber_mich, rolle, erstellt_am";
 
   function profil(frisch) {
-    if (profilCache !== undefined && !frisch) return Promise.resolve(profilCache);
-    return ich().then(function (u) {
-      return client.from("profil").select(PROFIL).eq("id", u.id).maybeSingle().then(auspacken);
-    }).then(function (p) { profilCache = p || null; return profilCache; })
-      .catch(function (f) { throw uebersetzen(f); });
+    return gebunden(function (u, c) {
+      if (!frisch && profilCache && profilCache.konto === u.id) return profilCache;
+      return c.from("profil").select(PROFIL).eq("id", u.id).maybeSingle().then(auspacken)
+        .then(function (p) { return { konto: u.id, wert: p || null }; });
+    }).then(cacheFuellen);
+  }
+
+  // Nur füllen, wenn das Ergebnis noch zum angemeldeten Konto gehört.
+  function cacheFuellen(r) {
+    if (kontoId !== undefined && r.konto !== kontoId) throw VERALTET();
+    profilCache = r;
+    return r.wert;
   }
 
   function profilAnlegen(eingabe) {
@@ -287,7 +333,7 @@
     var jahr = e.lehrjahr ? Number(e.lehrjahr) : null;
     if (jahr !== null && [1, 2, 3].indexOf(jahr) < 0)
       return Promise.reject(fehler("Lehrjahr 1, 2 oder 3.", "eingabe"));
-    return mit(function (c) {
+    return gebunden(function (u, c) {
       return c.rpc("profil_anlegen", {
         p_anzeigename: name, p_lehrjahr: jahr, p_code: String(e.code || ""),
         p_mindestens_16: e.mindestens16 === true, p_regeln: e.regeln === true
@@ -300,10 +346,10 @@
     ["anzeigename", "lehrjahr", "ueber_mich"].forEach(function (k) {
       if (felder && Object.prototype.hasOwnProperty.call(felder, k)) erlaubt[k] = felder[k];
     });
-    return ich().then(function (u) {
-      return client.from("profil").update(erlaubt).eq("id", u.id).select(PROFIL).single().then(auspacken);
-    }).then(function (p) { profilCache = p; return p; })
-      .catch(function (f) { throw uebersetzen(f); });
+    return gebunden(function (u, c) {
+      return c.from("profil").update(erlaubt).eq("id", u.id).select(PROFIL).single().then(auspacken)
+        .then(function (p) { return { konto: u.id, wert: p }; });
+    }).then(cacheFuellen);
   }
 
   /* ================================================== Lerngruppen */
@@ -393,28 +439,55 @@
               "an_mentoren, geloest, versteckt, erstellt_am, bearbeitet_am, autor_name, autor_rolle, " +
               "autor_lehrjahr, gruppe_name, antworten, hilfreich_zahl, von_mir_hilfreich";
 
-  /* filter: { gruppe: id | "alle" (nur öffentliche) | undefined (alles Sichtbare),
+  /* filter: { gruppe: id | "alle" (nur allgemeine) | undefined (alles Sichtbare),
                art, lernfeld, kapitel, anMentoren, offen (nur ungelöste Fragen),
-               vor (ISO-Zeit für die nächste Seite), anzahl } */
+               ohneAusgeblendete (Autor:in und Team bekommen sonst auch
+               ausgeblendete Beiträge), nach ({ zeit, id } aus beitragSeite),
+               anzahl }
+     Reihenfolge: neueste zuerst, bei gleicher Zeit nach id – so ist die
+     nächste Seite eindeutig, auch wenn mehrere Beiträge dieselbe Zeit haben. */
+  function beitragAbfrage(c, f, anzahl) {
+    var q = c.from("beitrag_liste").select(LISTE)
+      .order("erstellt_am", { ascending: false }).order("id", { ascending: false }).limit(anzahl);
+    if (f.gruppe === "alle") q = q.is("gruppe_id", null);
+    else if (f.gruppe) q = q.eq("gruppe_id", f.gruppe);
+    if (f.art) q = q.eq("art", f.art);
+    if (f.lernfeld) q = q.eq("lernfeld", f.lernfeld);
+    if (f.kapitel) q = q.eq("kapitel", f.kapitel);
+    if (f.anMentoren) q = q.eq("an_mentoren", true);
+    if (f.offen) q = q.eq("geloest", false);
+    if (f.ohneAusgeblendete) q = q.eq("versteckt", false);
+    if (f.nach) {
+      var zeit = String(f.nach.zeit).replace(/"/g, ""), id = String(f.nach.id).replace(/[^0-9a-f-]/gi, "");
+      q = q.or('erstellt_am.lt."' + zeit + '",and(erstellt_am.eq."' + zeit + '",id.lt.' + id + ')');
+    }
+    return q;
+  }
+
   function beitraege(filter) {
     var f = filter || {};
-    return mit(function (c) {
-      var q = c.from("beitrag_liste").select(LISTE)
-        .order("erstellt_am", { ascending: false }).limit(f.anzahl || CFG.seite);
-      if (f.gruppe === "alle") q = q.is("gruppe_id", null);
-      else if (f.gruppe) q = q.eq("gruppe_id", f.gruppe);
-      if (f.art) q = q.eq("art", f.art);
-      if (f.lernfeld) q = q.eq("lernfeld", f.lernfeld);
-      if (f.kapitel) q = q.eq("kapitel", f.kapitel);
-      if (f.anMentoren) q = q.eq("an_mentoren", true);
-      if (f.offen) q = q.eq("geloest", false);
-      if (f.vor) q = q.lt("erstellt_am", f.vor);
-      return q.then(auspacken);
+    return gebunden(function (u, c) { return beitragAbfrage(c, f, f.anzahl || CFG.seite).then(auspacken); });
+  }
+
+  // Eine Seite samt Merkzeichen für die nächste: { zeilen, weiter: {zeit,id} | null }.
+  function beitragSeite(filter) {
+    var f = filter || {};
+    var n = Math.max(1, Math.min(f.anzahl || CFG.seite, 120));
+    return gebunden(function (u, c) {
+      return beitragAbfrage(c, f, n + 1).then(auspacken).then(function (zeilen) {
+        zeilen = zeilen || [];
+        var mehr = zeilen.length > n;
+        if (mehr) zeilen = zeilen.slice(0, n);
+        var letzte = zeilen[zeilen.length - 1];
+        return { zeilen: zeilen, weiter: mehr && letzte ? { zeit: letzte.erstellt_am, id: letzte.id } : null };
+      });
     });
   }
 
   function beitrag(id) {
-    return mit(function (c) { return c.from("beitrag_liste").select(LISTE).eq("id", id).maybeSingle().then(auspacken); });
+    return gebunden(function (u, c) {
+      return c.from("beitrag_liste").select(LISTE).eq("id", id).maybeSingle().then(auspacken);
+    });
   }
 
   function dateiPruefen(datei) {
@@ -478,35 +551,72 @@
     return mit(function (c) { return c.from("beitrag").update(erlaubt).eq("id", id).then(auspacken); });
   }
 
+  /* Löscht den Beitrag und danach seine Datei. Gelingt nur das Löschen der
+     Datei nicht, kommt ein Fehler der Art "datei" mit f.dateiPfad zurück –
+     dateiEntfernen(f.dateiPfad) versucht es erneut. Andere sehen die Datei
+     schon nach dem Löschen des Beitrags nicht mehr (die Leseregel verlangt
+     einen sichtbaren Beitrag); der Rest betrifft nur den eigenen Ordner. */
   function beitragLoeschen(id) {
     return mit(function (c) {
       return c.from("beitrag").select("datei_pfad").eq("id", id).maybeSingle().then(auspacken)
         .then(function (b) {
           return c.from("beitrag").delete().eq("id", id).then(auspacken).then(function () {
-            if (b && b.datei_pfad) return c.storage.from(CFG.bucket).remove([b.datei_pfad]).catch(function () {});
+            if (b && b.datei_pfad) return dateiEntfernen(b.datei_pfad);
           });
         });
     });
   }
 
-  // Dateien liegen privat. Angezeigt wird über einen Link, der eine Stunde gilt.
-  // Zwischengespeichert wird nur 60 Sekunden – sonst bliebe ein gelöschter
-  // oder ausgeblendeter Lernzettel über einen alten Link noch eine Weile sichtbar.
-  function dateiAdresse(pfad) {
-    return mit(function (c) {
-      return c.storage.from(CFG.bucket).createSignedUrl(pfad, 3600).then(auspacken)
-        .then(function (d) { return d.signedUrl; });
+  function dateiEntfernen(pfad) {
+    function nichtGeloescht(ursache) {
+      var e = fehler("Der Beitrag ist gelöscht, seine Datei aber noch nicht. Versuch es erneut.", "datei", ursache);
+      e.dateiPfad = pfad;
+      return e;
+    }
+    return verbinden().then(function (c) {
+      return c.storage.from(CFG.bucket).remove([pfad]);
+    }).then(function (r) {
+      if (r && r.error) throw nichtGeloescht(r.error);
+      // remove() meldet still „nichts gelöscht“, wenn die Regel es verbietet.
+      var weg = r && r.data ? r.data.length : 0;
+      if (!weg) throw nichtGeloescht();
+      return true;
+    }, function (f) { throw nichtGeloescht(f); });
+  }
+
+  /* Dateien liegen privat und kommen nur über den angemeldeten Abruf: Bei
+     jedem Abruf prüft die Speicherregel neu, ob der zugehörige Beitrag für
+     diese Person gerade sichtbar ist. Es gibt keine weitergebbaren Links.
+     Ergebnis: { blob, url, art } – url ist eine Adresse nur in diesem Tab
+     (blob:…); freigeben() gibt sie wieder frei. Grenzen stehen in
+     supabase/README.md („Dateizugriff“). */
+  function dateiLaden(pfad) {
+    if (!pfad) return Promise.reject(fehler("Zu diesem Beitrag gehört keine Datei.", "eingabe"));
+    return gebunden(function (u, c) {
+      return c.storage.from(CFG.bucket).download(pfad, { cacheNonce: String(Date.now()) }).then(function (r) {
+        if (r && r.error) {
+          var st = Number(r.error.statusCode || r.error.status || 0);
+          if (st === 400 || st === 404 || /not found|Object not found/i.test(String(r.error.message || "")))
+            throw fehler("Die Datei ist für dich nicht verfügbar.", "rechte", r.error);
+          throw r.error;
+        }
+        return r.data;
+      });
+    }).then(function (blob) {
+      return { blob: blob, url: URL.createObjectURL(blob), art: blob.type };
     });
   }
+
+  function dateiFreigeben(d) { try { if (d && d.url) URL.revokeObjectURL(d.url); } catch (e) {} }
 
   /* ================================================== Antworten und Hilfreich */
 
   function antworten(beitragId) {
-    return mit(function (c) {
+    return gebunden(function (u, c) {
       return c.from("antwort")
         .select("id, beitrag_id, autor_id, text, beste, versteckt, erstellt_am, autor:profil(anzeigename, rolle, lehrjahr)")
         .eq("beitrag_id", beitragId)
-        .order("beste", { ascending: false }).order("erstellt_am")
+        .order("beste", { ascending: false }).order("erstellt_am").order("id")
         .then(auspacken);
     });
   }
@@ -673,6 +783,10 @@
   AP.community = {
     CFG: CFG, GRUENDE: GRUENDE, ARTEN: ARTEN,
     verbinden: verbinden, beiAenderung: beiAenderung, linkEinloesen: linkEinloesen,
+    // Wer ist laut letztem Auth-Ereignis angemeldet? undefined = noch unbekannt, null = niemand.
+    kontoJetzt: function () { return kontoId; },
+    // Prüffunktion für eine Anfrage: true, solange Konto und Generation gleich sind.
+    bindung: function () { var g = generation, k = kontoId; return function () { return g === generation && k === kontoId; }; },
     anmeldenPerMail: anmeldenPerMail, codePruefen: codePruefen,
     sitzung: sitzung, abmelden: abmelden,
     profil: profil, profilAnlegen: profilAnlegen, profilAendern: profilAendern,
@@ -680,8 +794,9 @@
     gruppeBeitreten: gruppeBeitreten, offenerGruppeBeitreten: offenerGruppeBeitreten,
     gruppeVerlassen: gruppeVerlassen, gruppeAendern: gruppeAendern, gruppenCode: gruppenCode,
     mitglieder: mitglieder, mitgliedRolle: mitgliedRolle, mitgliedEntfernen: mitgliedEntfernen,
-    beitraege: beitraege, beitrag: beitrag, veroeffentlichen: veroeffentlichen,
-    beitragAendern: beitragAendern, beitragLoeschen: beitragLoeschen, dateiAdresse: dateiAdresse,
+    beitraege: beitraege, beitragSeite: beitragSeite, beitrag: beitrag, veroeffentlichen: veroeffentlichen,
+    beitragAendern: beitragAendern, beitragLoeschen: beitragLoeschen, dateiEntfernen: dateiEntfernen,
+    dateiLaden: dateiLaden, dateiFreigeben: dateiFreigeben,
     dateiPruefen: dateiPruefen,
     antworten: antworten, antwortSchreiben: antwortSchreiben, antwortAendern: antwortAendern,
     antwortLoeschen: antwortLoeschen, besteAntwort: besteAntwort, hilfreich: hilfreich,

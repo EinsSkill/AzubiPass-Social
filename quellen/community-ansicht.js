@@ -31,6 +31,7 @@
 
   var ZIEL_SCHLUESSEL = "azubipass-community-ziel";   // sessionStorage, kein Doppelpunkt
   var regeln = null;                                   // aus inhalt.json
+  var inhalt = null;                                   // Lernkatalog für Filter und Lernziele
   var schirm = null;
 
   /* Was bleibt, solange die Seite offen ist: welche Ansicht, welche Adresse,
@@ -44,7 +45,9 @@
     profil: null,
     nutzer: null,         // Konto, zu dem Profil und Formular gehören
     formular: leeresFormular(),
-    ziel: null
+    ziel: null,           // gemerktes Ziel von vor der Anmeldung
+    unter: "",            // was gerade hinter #community/ steht
+    vonListe: false       // Detail aus der Übersicht geöffnet: „Zurück" = history.back()
   };
 
   function leeresFormular() {
@@ -68,7 +71,10 @@
     z.formular = leeresFormular();
     z.ziel = null;
     z.laeuft = false;
+    z.vonListe = false;
     try { sessionStorage.removeItem(ZIEL_SCHLUESSEL); } catch (e) {}
+    // Beiträge, Filter, Position und geladene Dateien des alten Kontos auch.
+    if (AP.communityBeitraege) AP.communityBeitraege.vergessen();
   }
 
   // Zeichen zählen wie die Datenbank (char_length): Codepunkte, nicht UTF-16.
@@ -126,7 +132,7 @@
     var box = el("div", "cm-feld");
     var label = el("label", null, o.label);
     label.htmlFor = id;
-    if (o.pflicht) label.appendChild(el("span", "cm-pflicht", "Pflicht"));
+    if (o.pflicht) label.appendChild(el("span", "cm-pflicht", typeof o.pflicht === "string" ? o.pflicht : "Pflicht"));
     box.appendChild(label);
     var eingabe = o.select ? el("select") : el("input");
     eingabe.id = id;
@@ -302,13 +308,28 @@
                          fehler: true });
   }
 
-  // Zugang erteilt. Gibt es ein gemerktes Ziel, das wir (noch) nicht kennen,
-  // zeigen wir nichts davon – nur einen ehrlichen Rückweg.
+  /* Zugang erteilt: jetzt erst das Ziel anfassen. Bekannt sind
+       (leer)            C04 Beiträge
+       profil            eigenes Profil, Regeln, Abmelden
+       beitrag/<id>      C05 Beitrag
+     Alles andere (z. B. Gruppen, die es noch nicht gibt) bekommt nur den
+     neutralen Rückweg, ohne etwas über das Ziel zu verraten. */
+  var BEITRAG_ZIEL = /^beitrag\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i;
+
   function ankommen(hinweis) {
-    var ziel = z.ziel;
+    var weg = z.ziel !== null && z.ziel !== undefined ? z.ziel : z.unter;
     z.ziel = null;
     try { sessionStorage.removeItem(ZIEL_SCHLUESSEL); } catch (e) {}
-    setze(ziel ? "nichtda" : "drin", hinweis);
+    weg = String(weg || "");
+    if (weg !== z.unter) {
+      // Nach der Anmeldung zum gemerkten Ziel: Adresse anpassen, ohne neuen Verlaufseintrag.
+      z.unter = weg;
+      try { history.replaceState(null, "", location.pathname + location.search + "#community" + (weg ? "/" + weg : "")); } catch (e) {}
+    }
+    if (!weg) return setze("beitraege", hinweis);
+    if (weg === "profil") return setze("drin", hinweis);
+    if (BEITRAG_ZIEL.test(weg)) return setze("beitrag", hinweis);
+    setze("nichtda", hinweis);
   }
 
   /* Eine Anfrage starten: sperrt weitere Klicks und liefert eine Prüfung, ob
@@ -332,7 +353,9 @@
       pruefen: ansichtPruefen, anmeldung: ansichtAnmeldung, versendet: ansichtVersendet,
       profil: ansichtProfil, drin: ansichtDrin, offline: ansichtOffline,
       profilfehler: ansichtProfilfehler, unklar: ansichtUnklar, nichtda: ansichtNichtDa,
-      pruefFehler: ansichtPruefFehler
+      pruefFehler: ansichtPruefFehler,
+      beitraege: function (r) { AP.communityBeitraege.liste(r, kontext()); },
+      beitrag: function (r) { AP.communityBeitraege.detail(r, BEITRAG_ZIEL.exec(z.unter)[1], kontext()); }
     }[z.ansicht] || ansichtPruefen;
     bauer(rahmen);
     if (fokus && sichtbar()) {
@@ -340,6 +363,25 @@
       if (h) h.focus({ preventScroll: false });
       window.scrollTo(0, 0);
     }
+  }
+
+  /* Was die Beitragsansichten (community-beitraege.js) von hier bekommen.
+     gilt(): Die Antwort gehört noch zu dieser Ansicht, diesem Konto und
+     diesem Ziel – sonst wird sie verworfen. */
+  function kontext() {
+    var n = lauf, konto = z.nutzer, unter = z.unter, bindung = AP.community.bindung();
+    return {
+      konto: konto,
+      gilt: function () { return gilt(n) && z.nutzer === konto && z.unter === unter && bindung() && sichtbar(); },
+      kopf: kopf, feld: feld, hinweiszeile: hinweiszeile, zurueckKnopf: zurueckKnopf,
+      inhalt: function () { return inhalt; },
+      offline: offline,
+      offlineZeigen: function () { neuerLauf(); setze("offline"); },
+      abgelaufen: abgelaufen,
+      nichtDa: function () { setze("nichtda"); },
+      merkeHerkunft: function () { z.vonListe = true; },
+      vonListe: function () { var v = z.vonListe; z.vonListe = false; return v; }
+    };
   }
 
   /* ---------- C · Prüfen */
@@ -433,7 +475,7 @@
     var form = el("form", "cm-form");
     form.noValidate = true;
     var code = feld({
-      label: "Anmeldecode aus der E-Mail", pflicht: true,
+      label: "Anmeldecode aus der E-Mail", pflicht: "Pflicht bei Anmeldung mit Code",
       hilfe: "Du kannst auch den sechsstelligen Code aus derselben E-Mail hier eingeben. Das ist besonders praktisch in der installierten App.",
       attr: { autocomplete: "one-time-code", inputmode: "numeric", maxlength: "12",
               autocapitalize: "off", spellcheck: "false" }
@@ -692,6 +734,9 @@
       var passt = anfrage();
       sperren(b, "Abmelden …");
       AP.community.abmelden().then(function () {
+        // Das eigene SIGNED_OUT hat meist schon aufgeräumt (kontoWeg). Ist
+        // inzwischen ein anderes Konto da oder läuft etwas Neues, bleibt es dabei.
+        if (!passt() || AP.community.kontoJetzt()) return;
         // Alles vom alten Konto vergessen – der Lernstand bleibt, wo er ist.
         vergessen();
         neuerLauf();
@@ -706,13 +751,13 @@
     return b;
   }
 
-  /* ---------- Angemeldet mit Profil
-     Die Beiträge (C04) sind noch nicht freigegeben. Bis dahin zeigt die
-     Community nur das eigene Profil – nichts von anderen. Texte: Entscheidung
-     vom 12.10.2026 (doku/community/entscheidungen.md). */
+  /* ---------- Eigenes Profil (#community/profil)
+     Seit C04 ist die Übersicht der Beiträge der Startpunkt. Hier bleiben
+     Profil, Regeln und Abmelden (04-beitraege.md, Abschnitt 2). Einleitung:
+     Entscheidung vom 12.10.2026. */
   function ansichtDrin(r) {
     r.appendChild(zurueckKnopf());
-    r.appendChild(kopf("Community", "Hier findest du dein Community-Profil und die Regeln."));
+    r.appendChild(kopf("Profil", "Hier findest du dein Community-Profil und die Regeln."));
     r.appendChild(hinweiszeile());
     var p = z.profil || {};
     var g = el("section", "feldgruppe");
@@ -734,19 +779,18 @@
     reihe.appendChild(abmeldeKnopf(r));
     g.appendChild(reihe);
     r.appendChild(g);
-    var spaeter = el("div", "feldgruppe");
-    spaeter.appendChild(el("p", "cm-hilfe",
-      "Dein Community-Profil ist eingerichtet. Beiträge und Lerngruppen sind in dieser Beta noch nicht verfügbar."));
     var weg = el("div", "cm-reihe");
+    weg.appendChild(verweis("Zu Beiträgen", "#community", "kn-neben cm-neben"));
     weg.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
-    spaeter.appendChild(weg);
-    r.appendChild(spaeter);
+    r.appendChild(weg);
   }
 
   /* ---------- Offline */
   function ansichtOffline(r) {
-    r.appendChild(kopf("Community",
-      "Du bist offline. Zum Anmelden und Anlegen deines Profils brauchst du Internet. Lernen und Üben kannst du weiter nutzen."));
+    // Mit Profil ging es um Inhalte, ohne um Anmeldung und Profil.
+    r.appendChild(kopf("Community", z.profil
+      ? "Du bist offline. Für die Community brauchst du Internet. Lernen und Üben kannst du weiter nutzen."
+      : "Du bist offline. Zum Anmelden und Anlegen deines Profils brauchst du Internet. Lernen und Üben kannst du weiter nutzen."));
     var reihe = el("div", "cm-reihe");
     reihe.appendChild(knopf("Verbindung prüfen", "kn-haupt cm-haupt", function () { pruefen(); }));
     reihe.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
@@ -891,6 +935,8 @@
      Es wird gemerkt und erst nach der Zugangsprüfung angefasst. */
   function zeigen(s, unter) {
     schirm = s;
+    z.unter = String(unter || "").replace(/\/+$/, "");
+    if (AP.communityBeitraege) AP.communityBeitraege.dateienFreigeben();
     if (unter) {
       z.ziel = unter;
       try { sessionStorage.setItem(ZIEL_SCHLUESSEL, unter); } catch (e) {}
@@ -916,8 +962,9 @@
     else if (schirm) schirm.innerHTML = "";
   }
 
-  function init(inhalt) {
-    regeln = inhalt && inhalt.communityRegeln || null;
+  function init(daten) {
+    inhalt = daten || null;
+    regeln = daten && daten.communityRegeln || null;
     AP.community.beiAenderung(function (ereignis, sitzung) {
       if (ereignis === "SIGNED_OUT") { kontoWeg(); return; }
       if (ereignis !== "SIGNED_IN" || !sitzung) return;
@@ -938,7 +985,22 @@
       if (!sichtbar()) return;
       neuerLauf();
       z.laeuft = false;
+      // Keine Beiträge oder Dateien aus dem Speicher weiterzeigen.
+      if (AP.communityBeitraege) AP.communityBeitraege.dateienFreigeben();
       setze("offline");
+    });
+    // Zurück aus dem Hintergrund: Was man sieht, könnte inzwischen entzogen,
+    // ausgeblendet oder gelöscht sein. Nach mehr als einer Minute neu prüfen
+    // (Übersicht kommt mit Filtern und Position zurück).
+    var weg = 0;
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) { weg = Date.now(); return; }
+      if (!weg || Date.now() - weg < 60000) return;
+      weg = 0;
+      if (sichtbar() && !z.laeuft && (z.ansicht === "beitraege" || z.ansicht === "beitrag")) {
+        if (z.ansicht === "beitraege") AP.communityBeitraege.zurueckholen();
+        pruefen();
+      }
     });
   }
 

@@ -13,6 +13,103 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-12 (2) · Claude → ChatGPT (Review) → Lukes
+
+**Vorheriger Beitrag:** ChatGPT – Review von `a443607` (R1–R3) und Spec
+`04-beitraege.md` v1 (Ablage: `review/2026-10-12-chatgpt-review-a443607.md`);
+Lukes – fünf Entscheidungen vom 12.10. (zweiter Block in `entscheidungen.md`,
+alle Empfehlungen übernommen). **Rolle:** Umsetzung. **Grundlage:** Branch
+`community-zugang` @ `a443607`. **Nächste Übergabe an:** ChatGPT (Review),
+danach Lukes. **Nicht gemergt, nicht live.**
+
+### Korrektur einer früheren Aussage
+
+In der Übergabe an Lukes vom 12.10. stand sinngemäß „gelöschte Dateien sind über
+alte Links nach höchstens 60 Sekunden unzugänglich“. **Das war falsch.** Links
+galten 3600 s, `cacheControl: "60"` stand schon in `d752f1f`, und Cache-Dauer ist
+nicht Linkgültigkeit. Erledigt durch den neuen Dateizugriff (unten); die
+60-Sekunden-Zusage ist gestrichen (Entscheidung 12.10., Frage 4).
+
+### R1–R3
+
+| Befund | Umsetzung | Beleg |
+|---|---|---|
+| R1 Profil-Cache eines anderen Kontos | `community.js`: Generation + Konto-ID aus den Auth-Ereignissen; `gebunden()` verwirft jede Antwort, deren Konto oder Generation nicht mehr stimmt (`fehler.art = "veraltet"`). Cache ist `{konto, wert}`, Treffer nur fürs gleiche Konto; `profilAnlegen`/`profilAendern` gebunden. | `community_test.py` „Kontobindung des Profils (R1)“ – genau ChatGPTs Ablauf, echt gegen Supabase mit angehaltenem Abruf: späte Antwort für Anna verworfen, `profil()` liefert Ben, nach Abmelden kein Anna-Cache. |
+| R2 späte Abmelde-Antwort | Datenschicht: nach `signOut` nur aufräumen, wenn höchstens das eigene `SIGNED_OUT` dazwischen lag und niemand angemeldet ist – sonst `veraltet`, Sitzung des neuen Kontos bleibt. Oberfläche: Erfolgszweig prüft `passt()` **und** `kontoJetzt()`; das eigene `SIGNED_OUT` räumt wie bisher über `kontoWeg()` auf. | `community_beitraege_test.py` „Späte Abmeldeantwort (R2)“ [mock]: Abmelde-Promise angehalten, `SIGNED_OUT`, Ben angemeldet, alte Antwort freigegeben ⇒ Ben bleibt sichtbar und angemeldet. Normalfall und „ohne Serverantwort“ weiter im Zugangstest. |
+| R3 Dateien | Keine signierten Links mehr: `dateiLaden()` = angemeldeter `download` mit eigenem `cacheNonce`, Anzeige über blob:-Adresse, Freigabe bei Ansichts-/Kontowechsel und Offline. Speicherregel: Lesen nur mit freigeschaltetem Profil, auch im eigenen Ordner (Migration `20261012132518_dateien_rechte`, per `alter policy`). `beitragLoeschen()` meldet Datei-Löschfehler (`art "datei"`, `dateiPfad`), `dateiEntfernen()` wiederholt; `remove()` ohne gelöschte Datei gilt als Fehler. | `community_test.py` „Dateizugriff …“: Team blendet aus ⇒ Bens nächster Abruf scheitert **sofort**; Autorin sieht weiter; wieder eingeblendet ⇒ klappt; Löschfehler [mock] gemeldet, Wiederholung löscht, zweite Wiederholung meldet ehrlich. Grenzen: `supabase/README.md` „Dateizugriff“. |
+| Text Code-Feld | „Pflicht bei Anmeldung mit Code“ (Entscheidung 12.10.) | Zugangstest, Einzelprüfung |
+
+### C04/C05 – umgesetzt nach `04-beitraege.md` v1
+
+- Neues Modul `quellen/community-beitraege.js` (Übersicht, Detail);
+  `community-ansicht.js` entscheidet weiter über den Zugang und leitet danach:
+  `#community` → C04, `#community/beitrag/<id>` → C05, `#community/profil` →
+  Profil/Regeln/Abmelden (ersetzt die Zwischenansicht), alles andere → neutraler
+  Rückweg. Jede Navigation prüft Sitzung und Profil neu; Ziel aus der Zeit vor
+  der Anmeldung wird danach angesteuert.
+- C04: nur `gruppe_id = null`, ohne ausgeblendete; Filter Beitragsart/Lernfeld
+  (echter Katalog inkl. Buchführung = LF6), „Filter zurücksetzen“ nur bei
+  aktivem Filter; Zeile: Art, Zuordnung, Gelöst, An Mentor:innen, Titel-Link,
+  Name/Rolle/Datum, Antworten, hilfreich. Keine Bilder/Dateiabrufe.
+- Seiten: `beitragSeite()` mit Sortierung `erstellt_am desc, id desc` und
+  Cursor `(zeit, id)` per `or=(erstellt_am.lt.…,and(erstellt_am.eq.…,id.lt.…))`.
+  Die alte Zeitnavigation (`vor`) ist entfernt.
+- Zurück aus C05: Filter und Anzahl bleiben, die Zeilen werden **neu geladen**
+  (nichts Entzogenes aus altem Speicher), Fokus auf dem zuletzt geöffneten
+  Beitrag, Scrollposition zurück. Kontowechsel verwirft Filter und Stand.
+- C05: Kopf mit Art, „Für alle in der Community“, Zuordnung, Status; Text als
+  Klartext mit Umbrüchen; Datei (Bild mit Vorschau, PDF) erst nach gelungenem
+  berechtigtem Abruf mit „Bild öffnen“/„PDF öffnen“; Lernziel nur aus dem
+  geladenen Katalog; Antworten separat, beste zuerst, ausgeblendete nicht;
+  Hilfreich/Gelöst nur als Anzeige. Keine Schreib-, Melde-, Reaktionsknöpfe.
+- Zustände aus Abschnitt 5 mit den Texten aus Abschnitt 6.
+
+### Tests
+
+| Test | Ergebnis |
+|---|---|
+| `community_beitraege_test.py` (neu, Abnahmefälle der Spec; `[echt]`/`[mock]` getrennt) | 87/87 (73 echt, 14 mock) |
+| `community_test.py` (Datenschicht, +17 neue Fälle) | 56/56 |
+| `community_zugang_test.py` (9 neue Konten 26–46) | 102/103; der eine Fehlschlag war die neue Prüfung selbst (`inner_text` liest die CSS-Großschreibung); auf `textContent` korrigiert und einzeln bestätigt, ohne weitere Konten zu verbrauchen |
+| `pruefe.py` (alle Seiten) | 4 Fehler, alle „Umdrehen“-Kontrast in `buchfuehrung.html` – **identisch in `a443607`** (Gegenlauf `pruefe.py buchfuehrung.html --schnell` dort und hier je 1 Fehler); nichts in Community |
+| `funktionstest.py` | 188 OK, 2 Altfehler, Abbruch „Eigene Probeklausur“ – wie im Original `0feae83`. Ein Zwischenlauf unter Parallel-Last zeigte zusätzlich „Übernahme wird dem Nutzer gesagt“; einzeln nachgestellt besteht der Fall, im frischen Gesamtlauf ebenfalls |
+
+Echte Daten: Anna/Ben/Team-Testkonto legen „[Test] …“-Beiträge an (auch drei
+mit **identischer** Erstellungszeit per Sammel-Insert), der Test räumt sie ab.
+Gegenprobe im Test: Die alte Zeitnavigation hätte dort 1 von 5 verloren.
+
+### Von Claude festgelegt – bitte prüfen (nicht in Spec-Texten)
+
+1. Rückmeldungen: „1 Beitrag“ / „{n} Beiträge“ nach Filterwechsel,
+   „1 weiterer Beitrag geladen.“ / „{n} weitere Beiträge geladen.“
+2. „bearbeitet {Datum}“ in der Metazeile (nur bei anderem Tag als erstellt).
+3. Bild-Alternativtext „Bild zum Beitrag „{Titel}““.
+4. Profilseite: Überschrift „Profil“, Weg „Zu Beiträgen“; Augenbraue im Detail
+   „Ich · Community · Beiträge“; ausgeblendet: „Zur Community“, „Zu Lernen“.
+5. Gruppenbeiträge per Direktlink zeigen in dieser Phase „nicht verfügbar“ –
+   auch für Mitglieder (Spec: Gruppen erst mit eigener Spec).
+6. Rückkehr aus dem Hintergrund nach > 60 s prüft Zugang und Inhalt neu.
+7. Detail lädt die Datei (≤ 5 MB) sofort, damit die Aktion erst nach dem
+   Rechte-Abruf erscheint.
+8. Team-Testkonto `test-neu1` (Rolle `team`, nur Tests).
+
+### Offen / Grenzen
+
+- **Freigabe-Sperre:** Auf dem Branch ist C04/C05 für jedes Profil sichtbar.
+  Laut Entscheidung kommt das erst mit Schreiben/Antworten/Melden/Moderation in
+  die Klassen-Beta – vor einem Merge braucht es dafür entweder diese Pakete oder
+  eine Sperre. Bitte als Teil der nächsten Spec klären.
+- Screenreader, 200 % Schrift, Bildschirmtastatur: nicht geprüft (Tastatur-
+  reihenfolge und 44 px sind geprüft).
+- Live-Aktualisierung bei Löschen/Ausblenden gibt es nicht (Spec Abschnitt 5).
+- Team-Löschung fremder Beiträge lässt die Datei im Ordner der Autor:in (nur für
+  sie lesbar) → Moderationspaket.
+- Beitrags-/Antwortlängen zählen in `veroeffentlichen`/`antwortSchreiben` noch
+  UTF-16 → Paket „Erstellen/Antworten“.
+- Weiterhin: Mailzustellung, OTP-Länge 6, Datenschutzangaben, „Konto löschen“.
+
+Screenshots: `review/2026-10-12-beitraege/` (14 Bilder).
+
 ## 2026-10-12 · Claude → ChatGPT (Review) → Lukes
 
 **Vorheriger Beitrag:** ChatGPT – Review von `community-zugang` @ `d752f1f`

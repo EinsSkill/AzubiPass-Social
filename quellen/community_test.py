@@ -29,6 +29,7 @@ from playwright.sync_api import sync_playwright
 DOCS = Path(__file__).resolve().parent.parent / "docs"
 ANNA = "demo-anna@azubipass.invalid"
 BEN = "demo-ben@azubipass.invalid"
+TEAM = "test-neu1@azubipass.invalid"     # Testkonto mit Rolle „team“ (supabase/README.md)
 
 fehler = []
 
@@ -135,9 +136,8 @@ def main():
 
             b = ev("(id) => AP.community.beitrag(id)", l1.get("wert"))
             lz_pfad = b["datei_pfad"]
-            url = ev("(p) => AP.community.dateiAdresse(p)", lz_pfad)
-            status = ev("(u) => fetch(u).then(r => r.status)", url)
-            pruefe(status == 200, "Datei über befristeten Link abrufbar", status)
+            d = ev("(p) => T.versuch(async () => { const d = await AP.community.dateiLaden(p); return [d.url.slice(0, 5), d.blob.size, d.art]; })", lz_pfad)
+            pruefe(d["ok"] and d["wert"][0] == "blob:" and d["wert"][1] > 0, "Datei angemeldet abrufbar, nur als Adresse im Tab", d.get("wert") or d.get("fehler"))
 
             print("Ben")
             ev("() => AP.community.abmelden()")
@@ -211,6 +211,97 @@ def main():
             ev("(g) => AP.community.gruppeVerlassen(g)", gid)
             meine = ev("() => AP.community.gruppen(true)")
             pruefe(all(x["id"] != gid for x in meine), "Leere Gruppe ist verschwunden")
+            ev("() => AP.community.abmelden()")
+
+            # ------------------------------------------------ Review a443607 (12.10.)
+            print("Dateizugriff mit aktueller Rechteprüfung")
+            laden = "(p) => T.versuch(async () => { const d = await AP.community.dateiLaden(p); AP.community.dateiFreigeben(d); return d.blob.size; })"
+            ev("([m, p]) => T.anmelden(m, p)", [ANNA, pw])
+            l2 = ev("async () => T.versuch(async () => AP.community.veroeffentlichen({art:'lernzettel', titel:'Test Dateizugriff', datei: await T.bild()}))")
+            pruefe(l2["ok"], "Lernzettel für den Dateitest veröffentlicht", l2.get("fehler", ""))
+            pfad2 = ev("(id) => AP.community.beitrag(id)", l2["wert"])["datei_pfad"]
+            ev("() => AP.community.abmelden()")
+            ev("([m, p]) => T.anmelden(m, p)", [BEN, pw])
+            r = ev(laden, pfad2)
+            pruefe(r["ok"], "Ben lädt die Datei des sichtbaren Beitrags", r.get("fehler", ""))
+            ev("() => AP.community.abmelden()")
+            ev("([m, p]) => T.anmelden(m, p)", [TEAM, pw])
+            r = ev("(id) => T.versuch(() => AP.community.moderieren('beitrag', id, true))", l2["wert"])
+            pruefe(r["ok"], "Team blendet den Beitrag aus", r.get("fehler", ""))
+            ev("() => AP.community.abmelden()")
+            ev("([m, p]) => T.anmelden(m, p)", [BEN, pw])
+            r = ev(laden, pfad2)
+            pruefe(not r["ok"] and r["art"] == "rechte", "Gleich danach: Ben bekommt die Datei nicht mehr", r.get("fehler") or r.get("wert"))
+            pruefe(ev("(id) => AP.community.beitrag(id)", l2["wert"]) is None, "… und sieht den Beitrag nicht")
+            ev("() => AP.community.abmelden()")
+            ev("([m, p]) => T.anmelden(m, p)", [ANNA, pw])
+            r = ev(laden, pfad2)
+            pruefe(r["ok"], "Anna sieht ihre eigene Datei weiter", r.get("fehler", ""))
+            ev("() => AP.community.abmelden()")
+            ev("([m, p]) => T.anmelden(m, p)", [TEAM, pw])
+            ev("(id) => AP.community.moderieren('beitrag', id, false)", l2["wert"])
+            ev("() => AP.community.abmelden()")
+            ev("([m, p]) => T.anmelden(m, p)", [BEN, pw])
+            r = ev(laden, pfad2)
+            pruefe(r["ok"], "Wieder eingeblendet: Ben lädt die Datei wieder", r.get("fehler", ""))
+            ev("() => AP.community.abmelden()")
+
+            ev("([m, p]) => T.anmelden(m, p)", [ANNA, pw])
+            def loeschen_weg(route):
+                if route.request.method == "DELETE": route.abort()
+                else: route.continue_()
+            seite.route("**/storage/v1/object/lernzettel**", loeschen_weg)
+            r = ev("(id) => T.versuch(async () => { try { await AP.community.beitragLoeschen(id); return 'ok'; }"
+                   " catch (e) { return [e.art, e.dateiPfad]; } })", l2["wert"])
+            seite.unroute("**/storage/v1/object/lernzettel**")
+            pruefe(r["ok"] and r["wert"] == ["datei", pfad2], "Datei-Löschfehler wird gemeldet, nicht verschluckt", r.get("wert"))
+            r = ev("(p) => T.versuch(() => AP.community.dateiEntfernen(p))", pfad2)
+            pruefe(r["ok"] and r["wert"] is True, "Erneuter Versuch löscht die Datei", r.get("fehler", ""))
+            rest = ev("""async (pfad) => { const c = await AP.community.verbinden();
+                const [ordner, name] = pfad.split('/');
+                const r = await c.storage.from('lernzettel').list(ordner, { search: name });
+                return (r.data || []).length; }""", pfad2)
+            pruefe(rest == 0, "Datei ist danach aus dem Speicher weg", rest)
+            r = ev("(p) => T.versuch(() => AP.community.dateiEntfernen(p))", pfad2)
+            pruefe(not r["ok"] and r["art"] == "datei", "Schon gelöschte Datei: kein falsches „gelöscht“", r.get("fehler"))
+            ev("() => AP.community.abmelden()")
+
+            print("Kontobindung des Profils (R1)")
+            anna_id = ev("([m, p]) => T.anmelden(m, p)", [ANNA, pw])
+            gehalten = []
+            def profil_a(route):
+                if anna_id in route.request.url: gehalten.append(route)
+                else: route.continue_()
+            seite.route("**/rest/v1/profil?**", profil_a)
+            ev("() => { window.__a = T.versuch(() => AP.community.profil(true)); }")
+            for _ in range(50):
+                if gehalten: break
+                seite.wait_for_timeout(100)
+            pruefe(bool(gehalten), "Profilabruf für Anna hängt")
+            ben_id = ev("([m, p]) => T.anmelden(m, p)", [BEN, pw])
+            b = ev("() => AP.community.profil(true)")
+            pruefe(b and b["id"] == ben_id, "Ben ist angemeldet und geladen")
+            for g_ in gehalten: g_.continue_()
+            a = ev("() => window.__a")
+            pruefe(not a["ok"] and a["art"] == "veraltet", "Späte Antwort für Anna wird verworfen", a.get("fehler") or a.get("wert"))
+            b = ev("() => AP.community.profil()")
+            pruefe(b and b["id"] == ben_id, "Normaler Profilabruf liefert weiter Ben", b and b.get("id"))
+            # Dasselbe nach dem Abmelden
+            gehalten.clear()
+            ev("() => AP.community.abmelden()")
+            ev("([m, p]) => T.anmelden(m, p)", [ANNA, pw])
+            ev("() => { window.__a = T.versuch(() => AP.community.profil(true)); }")
+            for _ in range(50):
+                if gehalten: break
+                seite.wait_for_timeout(100)
+            ev("() => AP.community.abmelden()")
+            for g_ in gehalten: g_.continue_()
+            a = ev("() => window.__a")
+            pruefe(not a["ok"], "Späte Antwort nach dem Abmelden kommt nicht als Erfolg zurück", a.get("art"))
+            seite.unroute("**/rest/v1/profil?**")
+            ev("([m, p]) => T.anmelden(m, p)", [BEN, pw])
+            b = ev("() => AP.community.profil()")
+            pruefe(b and b["id"] == ben_id, "Danach kein Profil von Anna im Zwischenspeicher", b and b.get("id"))
             ev("() => AP.community.abmelden()")
 
             browser.close()

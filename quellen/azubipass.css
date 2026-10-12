@@ -2018,6 +2018,47 @@ a.cm-haupt,a.cm-neben{display:inline-flex;align-items:center;justify-content:cen
 .cm-regelliste li::marker{font-family:var(--mono);color:#E3C558;}
 .cm-regelliste b{font-weight:600;font-size:15.5px;}
 
+/* Beiträge (04-beitraege.md): offene Liste mit Haarlinien, keine Karten,
+   keine Bilder in der Übersicht. Status immer als Text. */
+.cm-oben{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin:0 0 26px;}
+.cm-oben .cm-zurueck{margin:0;}
+.cm-filter{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;align-items:end;margin:0 0 6px;}
+.cm-filter .cm-verweis{grid-column:1 / -1;}
+.cm-filter .cm-verweis[hidden]{display:none;}
+@media (max-width:520px){.cm-filter{grid-template-columns:1fr;}}
+.cm-ergebnis{min-height:1.5em;margin:6px 0 10px;}
+.cm-ergebnis:empty{min-height:0;margin:0 0 10px;}
+.cm-beitraege{border-top:1px solid var(--linie);}
+.cm-beitrag{border-bottom:1px solid var(--linie);padding:16px 0 15px;}
+.cm-zeile-oben{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0 0 6px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--gold-text);}
+.cm-zeile-titel{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.3;margin:0 0 6px;
+  overflow-wrap:anywhere;text-wrap:pretty;}
+.cm-zeile-titel a{color:var(--text);text-decoration:none;display:inline-block;min-height:44px;padding:9px 0;
+  margin:-9px 0;}
+.cm-zeile-titel a:hover{text-decoration:underline;text-decoration-color:var(--hm-gold);text-underline-offset:4px;}
+.cm-zeile-titel a:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:3px;}
+.cm-zeile-meta{font-family:var(--mono);font-size:11.5px;color:var(--text-sek);margin:2px 0 0;overflow-wrap:anywhere;}
+.cm-marke{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text);border:1px solid var(--linie);padding:1px 6px;border-radius:2px;}
+.cm-leer{font-family:var(--serif);font-size:18px;color:var(--text);margin:18px 0 6px;}
+.cm-mehr{margin-top:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.cm-fehlerbox{margin-top:12px;}
+:root[data-bereich] .cm-kopf p.cm-zeile-oben{font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  color:var(--gold-text);margin:0 0 10px;max-width:none;}
+:root[data-bereich] .cm-kopf h1{overflow-wrap:anywhere;hyphens:auto;}
+.cm-detail-meta{margin:-12px 0 0;}
+.cm-detail-hilfreich{margin:2px 0 22px;}
+.cm-text{font-family:var(--serif);font-size:18px;line-height:1.6;color:var(--text);white-space:pre-wrap;
+  overflow-wrap:anywhere;margin:0 0 22px;}
+.cm-datei{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin:0 0 22px;}
+.cm-bild{max-width:100%;height:auto;border:1px solid var(--linie);}
+.cm-antworten{border-top:1px solid var(--hm-linie);margin-top:30px;padding-top:24px;}
+.cm-abschnitt{font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 4px;}
+.cm-antwortliste{margin-top:14px;border-top:1px solid var(--linie);}
+.cm-antwort{border-bottom:1px solid var(--linie);padding:16px 0 14px;}
+.cm-antwort .cm-text{font-size:16.5px;margin:0 0 8px;}
+
 /* Heute: der kleine Einstieg nach den eigenen Lernaktionen. */
 .hm-gemeinsam{margin-top:22px;}
 .hm-gemeinsam .hm-titelchen{margin-bottom:8px;}

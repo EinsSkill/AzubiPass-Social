@@ -29,13 +29,21 @@ selbst bietet nur die Anmeldung per Mail an.
     cd quellen
     COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… python3 community_test.py
 
+## Team-Testkonto
+
+`test-neu1@azubipass.invalid` hat seit 12.10.2026 die Rolle `team` (direkt in
+der Datenbank gesetzt). Nur für Tests: `community_test.py` und
+`community_beitraege_test.py` blenden damit Testbeiträge aus und wieder ein.
+
+    cd quellen
+    COMMUNITY_TEST_PASSWORT=… python3 community_beitraege_test.py [--bilder ORDNER]
+
 ## Testkonten ohne Profil
 
 `quellen/community_zugang_test.py` braucht neun Konten **ohne** Profil
 (`COMMUNITY_TEST_NEU`); nach einem Lauf haben sie eins. Angelegt sind
-alle `@azubipass.invalid` (gleiches Passwort wie die Demo-Konten). Stand 12.10.2026: `test-neu1` bis `test-neu88`; noch **ohne** Profil: 26–28, 33,
-34, 37, 42, 43, 46, 51, 52, 55–88 (45 Konten). Der Zugangstest braucht seit dem
-12.10. neun davon je Lauf. Alle Testkonten tragen in `raw_app_meta_data` den Eintrag `"demo": true`.
+alle `@azubipass.invalid` (gleiches Passwort wie die Demo-Konten). Stand 12.10.2026 (abends): `test-neu1` bis `test-neu88`; noch **ohne** Profil: 51, 52,
+55–88 (36 Konten). Der Zugangstest braucht neun davon je Lauf. Alle Testkonten tragen in `raw_app_meta_data` den Eintrag `"demo": true`.
 Neue Konten im SQL-Editor anlegen (`<HASH>` = bcrypt-Hash des Testpassworts,
 steht nicht im Repo; `<VON>`/`<BIS>` = Nummernbereich):
 
@@ -58,9 +66,35 @@ select id::text, id, json_build_object('sub', id::text, 'email', email, 'email_v
        'email', now(), now(), now() from u;
 ```
 
-## Bekannte Grenzen
+## Dateizugriff (Entscheidung 12.10.2026)
 
-- Speicherregel „lernzettel: sehen …“ erlaubt das Lesen von Dateien im **eigenen**
-  Ordner ohne Profilprüfung. Relevant nur, wenn ein Profil entfernt wird, aber
-  Dateien bleiben. Hinweis aus ChatGPTs Review vom 12.10.2026; bewusst noch nicht
-  geändert (kein Auftrag für Regeländerungen).
+Die App holt Dateien nur noch **angemeldet** (`storage.download` mit der
+Sitzung der Person, `AP.community.dateiLaden`). Es gibt keine signierten,
+weitergebbaren Links mehr. Bei jedem Abruf prüft die Regel
+„lernzettel: sehen, wenn der Beitrag sichtbar ist“ neu:
+
+- freigeschaltetes Profil (seit `20261012132518_dateien_rechte`, auch für den
+  eigenen Ordner – die frühere Ausnahme ist damit geschlossen),
+- und eigener Ordner **oder** ein Beitrag mit diesem Pfad, den die Person laut
+  den Regeln von `beitrag` gerade sehen darf (ausgeblendet, gelöscht, fremde
+  Gruppe ⇒ kein Abruf).
+
+Belegt in `quellen/community_test.py`: ausblenden ⇒ der nächste Abruf einer
+anderen Person scheitert sofort; wieder einblenden ⇒ Abruf klappt; Autor:in
+sieht die eigene Datei weiter.
+
+Verbleibende Grenzen – ehrlich benannt:
+
+- Was schon im Browser angekommen ist, lässt sich nicht zurückholen: eine
+  angezeigte oder heruntergeladene Datei bleibt beim Gegenüber. Die App gibt
+  ihre blob:-Adressen beim Ansichtswechsel, Offline und Kontowechsel frei.
+- Jeder Abruf trägt einen eigenen `cacheNonce`, damit kein Zwischenspeicher
+  eine alte Antwort liefert. Der Browser darf die Antwort laut `cacheControl`
+  (60 s) trotzdem kurz vorhalten; die App fragt aber mit neuer Adresse.
+- Löscht das **Team** einen fremden Beitrag, bleibt die Datei im Ordner der
+  Autor:in liegen (Löschregel: nur eigener Ordner). Lesen kann sie dann nur
+  noch die Autor:in selbst. Gehört ins Paket Melden/Moderation.
+- Fehler beim Löschen der Datei werden gemeldet (`fehler.art = "datei"`,
+  `fehler.dateiPfad`); `AP.community.dateiEntfernen(pfad)` wiederholt.
+- Echte Uploads sind damit technisch abgesichert, aber erst mit dem Paket
+  „Beitrag erstellen“ freigegeben.

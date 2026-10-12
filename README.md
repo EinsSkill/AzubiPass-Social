@@ -60,7 +60,8 @@ nicht im Repo, siehe `supabase/README.md`):
 ```bash
 COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… python community_test.py
 COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… \
-  COMMUNITY_TEST_NEU=konto1,konto2,konto3,konto4 python community_zugang_test.py
+  COMMUNITY_TEST_NEU=konto1,…,konto9 python community_zugang_test.py   # neun Konten ohne Profil
+COMMUNITY_TEST_PASSWORT=… python community_beitraege_test.py            # Beiträge lesen (C04/C05)
 ```
 
 Für die lokale Ansicht:

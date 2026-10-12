@@ -18,3 +18,8 @@ hier steht. Format: Datum · Entscheidung · betroffene Datei/Version.
 | 2026-10-12 | Von Claude ergänzte Texte: ChatGPTs Änderungen übernehmen („Profilstatus prüfen“; „Die Anmeldung mit dem E-Mail-Code hat nicht geklappt. Versuch es erneut.“; Prüffehler mit Wiederholungsaktion), übrige Texte bleiben | Review ChatGPT 12.10., Vorschlag 2 |
 | 2026-10-12 | Datenschutzerklärung: ChatGPT-Entwurf in den Generator einbauen, fehlende Angaben sichtbar als Lücken markieren; nur auf dem Branch, nicht live | Review ChatGPT 12.10., Vorschlag 3 |
 | 2026-10-12 | Reihenfolge der nächsten Detail-Specs: 1 Beiträge-Übersicht und Detail, 2 Beitrag erstellen und Antworten, 3 Melden und Moderation (zusammen mit 1 und 2), 4 Gruppen, 5 Wochenaufgaben | Review ChatGPT 12.10., Vorschlag 4 |
+| 2026-10-12 | Feld „Anmeldecode aus der E-Mail“: Kennzeichnung „Pflicht bei Anmeldung mit Code“ statt „Pflicht“ | Review ChatGPT a443607, Texte 1 |
+| 2026-10-12 | Beiträge: drei Arten gemeinsam in einer ruhigen Liste mit Filter Beitragsart und Lernfeld; zunächst nur allgemeine Community-Beiträge, Gruppen später | `04-beitraege.md` v1, Frage 1 |
+| 2026-10-12 | „Weitere Beiträge laden“ mit stabiler Zeit-/ID-Seitennavigation | `04-beitraege.md` v1, Frage 2 |
+| 2026-10-12 | Übersicht und Lesedetail zuerst intern bauen; Klassen-Beta erst gemeinsam mit Schreiben, Antworten, Melden und Moderation | `04-beitraege.md` v1, Frage 3 |
+| 2026-10-12 | Dateizugriff mit aktueller Rechteprüfung statt pauschaler Widerrufszusage; 60-Sekunden-Zusage gestrichen; Claude belegt Technik und Grenzen vor Freigabe von Uploads | `04-beitraege.md` v1, Frage 4 |
