@@ -122,6 +122,13 @@
       }
     }
 
+    // Alles durch – egal, ob ein Verlauf da ist (Gesamtaudit A10: nach einer
+    // Sicherung ohne „zuletzt“ kam sonst wieder der erste Schritt).
+    if (!reihe.some(offen)) {
+      return { art: "fertig", zu: "app.html#ueben", titel: "Alle Kapitel durch.",
+               wo: "", knopf: "Prüfungstraining öffnen" };
+    }
+
     // Ohne eigenen Verlauf gibt es keine sinnvolle Empfehlung. Der erste
     // Besuch führt deshalb zur freien Themenwahl statt stillschweigend in LF1.
     if (!z || !z.zu) {

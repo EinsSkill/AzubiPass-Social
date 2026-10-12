@@ -910,6 +910,10 @@ def probeklausur_klausur(b, w):
     # Eine abgeschlossene Klausur kommt nicht als laufende zurück
     pg.reload(wait_until="networkidle")
     pg.wait_for_timeout(1300)
+    # Nach dem Neuladen steht die Adresse noch auf der Klausur; der Einstieg
+    # „Eigene Probeklausur“ liegt unter Üben (Gesamtaudit: veraltete Navigation).
+    pg.evaluate("location.hash = '#ueben'")
+    pg.wait_for_timeout(600)
     pg.get_by_text("Eigene Probeklausur").click()
     pg.wait_for_timeout(900)
     pruefe("Abgeschlossene Klausur wird nicht als laufende angezeigt",
@@ -942,6 +946,10 @@ def probeklausur_klausur(b, w):
     pg.evaluate("() => localStorage.setItem('azubipass:probeklausur:v1', '{kaputt')")
     pg.reload(wait_until="networkidle")
     pg.wait_for_timeout(1300)
+    # Nach dem Neuladen steht die Adresse noch auf der Klausur; der Einstieg
+    # „Eigene Probeklausur“ liegt unter Üben (Gesamtaudit: veraltete Navigation).
+    pg.evaluate("location.hash = '#ueben'")
+    pg.wait_for_timeout(600)
     pg.get_by_text("Eigene Probeklausur").click()
     pg.wait_for_timeout(900)
     pruefe("Beschädigter Klausurzustand führt zu einem verständlichen Zustand",

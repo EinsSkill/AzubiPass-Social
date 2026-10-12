@@ -2,7 +2,7 @@
 """
 AzubiPass · Regressionstests zum Gesamtaudit vom 12.10.2026
 
-    python3 lernkern_audit_test.py [--nur A01,A05,A04]
+    python3 lernkern_audit_test.py [--nur A01,A05,A04,A06,A07,A11,A09,A10,A08]
 
 Prüft die Korrekturen am Lernkern im echten Browser (Chromium), ohne Netz nach
 außen und ohne Konten:
@@ -15,6 +15,13 @@ außen und ohne Konten:
   A04  Der Zwischenspeicher installiert nur vollständig und mit passenden
        Prüfwerten, behält bei einem Fehlschlag die alte Fassung und füllt
        nichts aus einer anderen Fassung nach.
+  A06  Ketten und Vergleiche sind per Tastatur bedienbar (Knopf, Enter,
+       Leertaste, aria-expanded).
+  A07  „Zum Inhalt springen“ fokussiert den Inhalt, ohne die Adresse zu ändern.
+  A11  „Umdrehen“ auf der Kartenrückseite hat genug Kontrast.
+  A09  Alle Kapitel und die Rechtsseiten bei 320 px ohne seitlichen Überlauf.
+  A10  Alle Kapitel fertig, aber kein „zuletzt“: Heute bietet Prüfungstraining.
+  A08  Keine Preise auf der Landing Page; Logo-Link bleibt im Projektpfad.
 
 Rückgabewert 1 bei einem Fehler.
 """
@@ -75,7 +82,7 @@ def main():
         with sync_playwright() as p:
             b = p.chromium.launch()
 
-            nur = sys.argv[sys.argv.index("--nur") + 1].split(",") if "--nur" in sys.argv else ["A01", "A05", "A04"]
+            nur = sys.argv[sys.argv.index("--nur") + 1].split(",") if "--nur" in sys.argv else ["A01", "A05", "A04", "A06", "A07", "A11", "A09", "A10", "A08"]
 
             if "A01" in nur:
                 # ------------------------------------------------ A01
@@ -299,6 +306,118 @@ def main():
                 pruefe(ok1 and ok2, "Offline: zwei Tabs öffnen Kapitel aus dem Speicher")
                 k4.set_offline(False)
                 k4.close()
+
+            ktx = b.new_context(viewport={"width": 1280, "height": 720}, service_workers="block", locale="de-DE")
+            pg = ktx.new_page()
+
+            if "A06" in nur:
+                print("A06 · Grafiken per Tastatur")
+                pg.goto(f"{w}/lf1.html#k1")
+                pg.wait_for_selector(".kglied .kkopf")
+                k = pg.locator(".kglied .kkopf").first
+                k.focus()
+                pruefe(pg.evaluate("document.activeElement.classList.contains('kkopf')"), "Kette: erste Stufe per Fokus erreichbar")
+                pg.keyboard.press("Enter")
+                pruefe(k.get_attribute("aria-expanded") == "true"
+                       and pg.evaluate("document.querySelector('.kglied').classList.contains('offen')"),
+                       "Kette: Enter öffnet, aria-expanded = true")
+                zweite = pg.locator(".kglied .kkopf").nth(1)
+                pruefe(zweite.get_attribute("aria-disabled") is None, "Kette: nächste Stufe danach freigegeben")
+                zweite.focus(); pg.keyboard.press("Space")
+                pruefe(zweite.get_attribute("aria-expanded") == "true", "Kette: Leertaste öffnet die nächste Stufe")
+                gesperrt = pg.locator(".kglied:not(.frei) .kkopf")
+                if gesperrt.count():
+                    pruefe(gesperrt.first.get_attribute("aria-disabled") == "true", "Kette: gesperrte Stufe meldet aria-disabled")
+                pg.goto(f"{w}/lf1.html#k2")
+                pg.wait_for_selector(".vgl-punkt .vgl-knopf")
+                v = pg.locator(".vgl-punkt .vgl-knopf").first
+                v.focus(); pg.keyboard.press("Enter")
+                pruefe(v.get_attribute("aria-expanded") == "true"
+                       and pg.evaluate("document.querySelector('.vgl-punkt').classList.contains('auf')"),
+                       "Vergleich: Enter öffnet die Erklärung")
+                pg.keyboard.press("Enter")
+                pruefe(v.get_attribute("aria-expanded") == "false", "Vergleich: Enter schließt wieder")
+                ring = pg.evaluate("getComputedStyle(document.activeElement).outlineStyle")
+                pruefe(ring not in ("none", ""), "Fokus ist sichtbar", ring)
+                pg.mouse.click(10, 10)
+                pg.locator(".vgl-punkt").first.click()
+                pruefe(v.get_attribute("aria-expanded") == "true", "Maus funktioniert weiter")
+                anzahl = pg.evaluate("[...document.querySelectorAll('.kglied, .vgl-punkt')].filter(e => !e.querySelector('button')).length")
+                pruefe(anzahl == 0, "Kein Ketten- oder Vergleichseintrag ohne Knopf", anzahl)
+
+            if "A07" in nur:
+                print("A07 · Zum Inhalt springen")
+                for adresse in ("lf4.html#k6", "app.html#lernen", "app.html#ueben"):
+                    pg.goto(f"{w}/{adresse}")
+                    pg.wait_for_timeout(700)
+                    pg.focus("a.sprung")
+                    ist_sprung = pg.evaluate("document.activeElement.classList.contains('sprung')")
+                    pg.keyboard.press("Enter")
+                    pg.wait_for_timeout(300)
+                    akt = pg.evaluate("(() => { const a = document.activeElement; return [a.tagName, !!a.closest('main'), location.hash]; })()")
+                    pruefe(ist_sprung and akt[1] and akt[2] == "#" + adresse.split("#")[1],
+                           f"{adresse}: Sprunglink fokussiert den Inhalt, Adresse bleibt", akt)
+
+            if "A11" in nur:
+                print("A11 · Kontrast auf der Kartenrückseite")
+                pg.goto(f"{w}/buchfuehrung.html#k1")
+                pg.wait_for_selector(".karte .dreher")
+                pg.locator(".karte .seite:not(.rueck) .dreher").first.click()
+                pg.mouse.move(5, 5)
+                pg.wait_for_timeout(800)
+                kontrast = pg.evaluate("""() => {
+                  const b = document.querySelector('.karte .rueck .dreher');
+                  const farbe = s => s.match(/[0-9.]+/g).slice(0, 3).map(Number);
+                  const lum = c => { const [r, g, b] = c.map(v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); });
+                                     return .2126 * r + .7152 * g + .0722 * b; };
+                  const vorne = farbe(getComputedStyle(b).color);
+                  const hinten = farbe(getComputedStyle(b.closest('.rueck')).backgroundColor);
+                  const a = lum(vorne), c = lum(hinten);
+                  return Math.round(((Math.max(a, c) + .05) / (Math.min(a, c) + .05)) * 100) / 100; }""")
+                pruefe(kontrast >= 4.5, "„Umdrehen“ auf der Rückseite mindestens 4,5:1", kontrast)
+                vorne = pg.evaluate("getComputedStyle(document.querySelector('.karte .seite:not(.rueck) .dreher')).color")
+                pruefe(vorne == "rgb(108, 82, 8)", "Vorderseite behält ihre dunkle Schrift", vorne)
+
+            if "A10" in nur:
+                print("A10 · Alles fertig ohne zuletzt")
+                inhalt = json.loads((DOCS / "mittel" / "inhalt.json").read_text(encoding="utf-8"))
+                fertig = {f"{lf['id']}-{k['id']}": {"ziele": [], "checks": {}, "zuordnen": {}, "test": {}, "fertig": True}
+                          for lf in inhalt["lernfelder"] for k in lf["kapitel"]}
+                k10 = b.new_context(viewport={"width": 390, "height": 844}, service_workers="block", locale="de-DE")
+                k10.add_init_script("localStorage.setItem('azubipass:konto', %s)" % json.dumps(json.dumps(
+                    {"version": 3, "fortschritt": fertig, "zuletzt": None})))
+                p10 = k10.new_page()
+                p10.goto(f"{w}/app.html#heute")
+                p10.wait_for_timeout(1200)
+                t = p10.inner_text("#heute")
+                pruefe("Prüfungstraining öffnen" in t and "Dein erster Schritt" not in t,
+                       f"{len(fertig)} Kapitel fertig, kein zuletzt: Prüfungstraining", t[:80].replace("\n", " | "))
+                k10.close()
+
+            if "A08" in nur:
+                print("A08 · Landing Page")
+                land = (DOCS / "landing.html").read_text(encoding="utf-8")
+                pruefe("€" not in land and "gratis" not in land.lower() and "Endspurt" not in land,
+                       "Keine Preise und keine Bezahl-Andeutungen")
+                pruefe('href="/"' not in land, "Logo-Link bleibt im Projektpfad (kein href=\"/\")")
+
+            if "A09" in nur:
+                print("A09 · 320 px")
+                k9 = b.new_context(viewport={"width": 320, "height": 568}, service_workers="block", locale="de-DE")
+                p9 = k9.new_page()
+                inhalt = json.loads((DOCS / "mittel" / "inhalt.json").read_text(encoding="utf-8"))
+                breit = []
+                ziele = [f"{lf['seite']}#{k['id']}" for lf in inhalt["lernfelder"] for k in lf["kapitel"]]
+                ziele += ["datenschutz.html", "impressum.html", "landing.html", "app.html#heute", "app.html#ich"]
+                for z in ziele:
+                    p9.goto(f"{w}/{z}")
+                    p9.wait_for_timeout(250)
+                    br = p9.evaluate("document.documentElement.scrollWidth")
+                    if br > 320:
+                        breit.append((z, br))
+                pruefe(not breit, f"{len(ziele)} Ansichten bei 320 px ohne seitlichen Überlauf", breit[:6])
+                k9.close()
+            ktx.close()
             b.close()
 
     print()

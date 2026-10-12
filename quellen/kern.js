@@ -618,6 +618,28 @@ window.AP = (function () {
     return { jetzt: jetzt, geheZu: function (id) { location.hash = "#" + id; } };
   }
 
+  /* „Zum Inhalt springen“ (Gesamtaudit A07): Der Link zeigt auf #inhalt –
+     das ist aber auch die Adresse, an der der Verteiler die Ansicht abliest.
+     Deshalb hier abfangen: nicht die Adresse ändern, sondern den sichtbaren
+     Hauptinhalt fokussieren (erste sichtbare Überschrift, sonst <main>). */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.sprung");
+    if (!a) return;
+    e.preventDefault();
+    var main = document.getElementById("inhalt") || document.querySelector("main");
+    if (!main) return;
+    var ziel = null;
+    var kandidaten = main.querySelectorAll("h1, h2");
+    for (var i = 0; i < kandidaten.length; i++) {
+      var h = kandidaten[i];
+      if (h.offsetParent !== null && h.getClientRects().length) { ziel = h; break; }
+    }
+    ziel = ziel || main;
+    if (!ziel.hasAttribute("tabindex")) ziel.setAttribute("tabindex", "-1");
+    ziel.focus({ preventScroll: false });
+    if (ziel.scrollIntoView) ziel.scrollIntoView({ block: "start" });
+  });
+
   /* ================================================== Leiste unten */
 
   function leiste() {

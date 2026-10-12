@@ -38,10 +38,10 @@ def termine(cfg):
     return plan
 
 
-def preis(lf, cfg):
-    if lf["nr"] == 1:
-        return "kostenlos"
-    return cfg["preise"]["klein"] if lf["stunden"] <= 40 else cfg["preise"]["gross"]
+# Gesamtaudit A08 / Entscheidung 12.10.2026: Die Beta ist kostenlos, Preise
+# stehen nicht auf der Seite. Ein Geschäftsmodell wird später separat
+# entschieden – die Werte in landing.config.json ("preise") bleiben bis dahin
+# unbenutzt liegen.
 
 
 def lade_lernfeld(lf):
@@ -103,7 +103,7 @@ def katalog(cfg, plan):
     {titel}
     <span class="lf-meta">{lf['jahr']}. Lehrjahr · {lf['stunden']} Std · {lf['teil']}{zusatz and " · "}{zusatz}</span>
   </span>
-  <span class="lf-rechts">{marke}<span class="lf-preis">{preis(lf, cfg)}</span>{aktion}</span>
+  <span class="lf-rechts">{marke}{aktion}</span>
 </li>''')
     return "\n".join(zeilen), fertig, kapitel_gesamt
 
@@ -138,7 +138,7 @@ def baue():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AzubiPass — Lernzettel und Prüfungstraining für Kaufleute für Büromanagement</title>
-<meta name="description" content="Lernzettel, Übungen und Prüfungstraining für Kaufleute für Büromanagement nach der neuen Ausbildungsordnung 2025. Lernfeld 1 komplett kostenlos.">
+<meta name="description" content="Lernzettel, Übungen und Prüfungstraining für Kaufleute für Büromanagement nach der neuen Ausbildungsordnung 2025. In der Beta kostenlos.">
 <link rel="canonical" href="https://azubipass.de/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2312301F'/%3E%3Cpath d='M8 21l5-11h2l5 11h-2.4l-1.1-2.6h-5l-1.1 2.6zm4.3-4.6h3.4L14 12.2z' fill='%23C9A227'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
@@ -146,7 +146,7 @@ def baue():
 <meta property="og:locale" content="de_DE">
 <meta property="og:url" content="https://azubipass.de/">
 <meta property="og:title" content="AzubiPass — Bestehen. Nicht büffeln.">
-<meta property="og:description" content="Lernzettel für Kaufleute für Büromanagement nach der neuen AO 2025. Lernfeld 1 komplett gratis, bei allen anderen das erste Thema.">
+<meta property="og:description" content="Lernzettel für Kaufleute für Büromanagement nach der neuen AO 2025. In der Beta kostenlos.">
 <meta property="og:image" content="https://azubipass.de/teilen.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#12301F">
@@ -158,7 +158,7 @@ def baue():
 <body>
 
 <header class="kopf" id="kopf">
-  <a class="wortmarke" href="/">Azubi<i>Pass</i></a>
+  <a class="wortmarke" href="./">Azubi<i>Pass</i></a>
   <nav class="nav">
     <a href="#katalog">Lernfelder</a>
     <a href="#pruefung">Prüfung</a>
@@ -184,7 +184,7 @@ def baue():
     <ul class="hero-fakten">
       <li><b data-zaehl="13">0</b>Lernfelder</li>
       <li><b data-zaehl="{kapitel_gesamt}">0</b>Kapitel fertig</li>
-      <li><b>LF 1</b>komplett gratis</li>
+      <li><b>Beta</b>kostenlos</li>
     </ul>
   </div>
 
@@ -326,11 +326,10 @@ def baue():
         <p><b>Noch genug Zeit — oder schon knapp?</b></p>
         <p>
           Wenn du weniger als acht Wochen hast, brauchst du keinen kompletten Kurs,
-          sondern einen Plan. Dafür gibt es den Endspurt: alle Lernfelder deines
-          Prüfungsteils, Simulationen und einen Vier-Wochen-Plan für
-          {cfg['preise']['abo_endspurt']} — drei Monate, kein Abo danach.
+          sondern einen Plan. Prüfungstraining und eigene Probeklausuren findest du
+          in der App unter Üben.
         </p>
-        <a class="kn-gold" href="#katalog">Zum Endspurt{PFEIL}</a>
+        <a class="kn-gold" href="app.html#ueben">Zum Prüfungstraining{PFEIL}</a>
       </div>
     </div>
   </div>
@@ -343,8 +342,7 @@ def baue():
     <p class="unter rein">
       Sortiert wie deine Berufsschule — nach Lernfeld. {fertig} sind fertig und sofort
       lesbar, das erste und zweite Lehrjahr wird bis {datum(letzter)} vollständig.
-      Lernfeld 1 kriegst du komplett geschenkt. Bei allen anderen ist das erste Thema
-      frei — schau rein, dann weißt du, ob's was für dich ist.
+      In der Beta ist alles kostenlos — schau rein, dann weißt du, ob's was für dich ist.
     </p>
 
     <div class="filter rein" role="group" aria-label="Katalog filtern">
@@ -390,8 +388,8 @@ def baue():
 <!-- ============================ ABSCHLUSS ============================ -->
 <section class="band abschluss rein">
   <div class="mitte schmal">
-    <h2>Fang mit dem Gratis-Teil an.</h2>
-    <p class="gross">Wenn der dir nichts bringt, bringt dir der Rest auch nichts.</p>
+    <h2>Fang einfach an.</h2>
+    <p class="gross">Die Beta ist kostenlos.</p>
     <a class="kn-gold gross-kn" href="#demo">Kostenlos starten{PFEIL}</a>
     <p class="klein-grau">Kein Konto nötig. Keine Mail. Kein Abo im Hintergrund.</p>
   </div>
