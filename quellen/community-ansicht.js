@@ -42,9 +42,37 @@
     hinweis: null,        // { text, fehler } – eine Zeile oben in der Ansicht
     laeuft: false,        // eine Anfrage ist unterwegs: kein zweiter Klick
     profil: null,
-    formular: { code: "", name: "", lehrjahr: "", alter: false, regeln: false },
+    nutzer: null,         // Konto, zu dem Profil und Formular gehören
+    formular: leeresFormular(),
     ziel: null
   };
+
+  function leeresFormular() {
+    return { code: "", name: "", lehrjahr: "", alter: false, regeln: false };
+  }
+
+  /* Jede Prüfung, jede Anfrage und jeder Kontowechsel zieht eine neue Nummer.
+     Kommt eine Antwort an, deren Nummer nicht mehr die aktuelle ist, gehört sie
+     zu einem Konto oder einer Ansicht von vorhin und wird verworfen – sie darf
+     nichts mehr anzeigen und nichts mehr ändern. */
+  var lauf = 0;
+  function neuerLauf() { return ++lauf; }
+  function gilt(n) { return n === lauf; }
+
+  /* Alles vergessen, was zu einem Konto gehört: Profil, Formularentwurf samt
+     Bestätigungen, Adresse, gemerktes Ziel. Der Lernstand ist nicht betroffen. */
+  function vergessen() {
+    z.profil = null;
+    z.nutzer = null;
+    z.mail = "";
+    z.formular = leeresFormular();
+    z.ziel = null;
+    z.laeuft = false;
+    try { sessionStorage.removeItem(ZIEL_SCHLUESSEL); } catch (e) {}
+  }
+
+  // Zeichen zählen wie die Datenbank (char_length): Codepunkte, nicht UTF-16.
+  function zeichen(t) { return Array.from(String(t || "").trim()).length; }
 
   /* ================================================== Kleine Bauteile */
 
@@ -98,6 +126,7 @@
     var box = el("div", "cm-feld");
     var label = el("label", null, o.label);
     label.htmlFor = id;
+    if (o.pflicht) label.appendChild(el("span", "cm-pflicht", "Pflicht"));
     box.appendChild(label);
     var eingabe = o.select ? el("select") : el("input");
     eingabe.id = id;
@@ -113,6 +142,7 @@
       });
     }
     eingabe.value = o.wert || "";
+    if (o.pflicht) eingabe.setAttribute("aria-required", "true");
     box.appendChild(eingabe);
     var beschreibt = [];
     if (o.hilfe) {
@@ -130,7 +160,7 @@
     return { box: box, eingabe: eingabe, fehler: fehler, label: o.label };
   }
 
-  function haken(text, an) {
+  function haken(text, an, pflicht) {
     var id = "cm-f" + (++feldNr);
     var box = el("div", "cm-feld cm-haken-feld");
     var label = el("label", "cm-haken");
@@ -140,7 +170,12 @@
     eingabe.id = id;
     eingabe.checked = !!an;              // nie vorausgewählt: kommt nur aus dem eigenen Klick
     label.appendChild(eingabe);
-    label.appendChild(el("span", null, text));
+    var wort = el("span", null, text);
+    if (pflicht) {
+      wort.appendChild(el("span", "cm-pflicht", "Pflicht"));     // direkt hinter dem Text
+      eingabe.setAttribute("aria-required", "true");
+    }
+    label.appendChild(wort);
     box.appendChild(label);
     var fehler = el("p", "cm-fehler");
     fehler.id = id + "-e";
@@ -196,48 +231,73 @@
   /* ================================================== Ablauf */
 
   function setze(ansicht, hinweis) {
+    var neu = ansicht !== z.ansicht;
     z.ansicht = ansicht;
     z.hinweis = hinweis || null;
-    zeichnen(true);
+    zeichnen(neu || !!hinweis);
   }
 
   // Die eine Stelle, die entscheidet, was man sieht. Nie aus Vermutungen –
   // immer aus dem, was Supabase gerade über Sitzung und Profil sagt.
   function pruefen(hinweis) {
+    var n = neuerLauf();
+    z.laeuft = false;
     if (offline()) { setze("offline"); return; }
     var vorher = z.ansicht;
     z.ansicht = "pruefen";
-    zeichnen(false);
+    z.hinweis = null;
+    zeichnen(vorher !== "pruefen");
     var link = AP.community.linkEinloesung;
     AP.community.linkEinloesung = null;
     Promise.resolve(link)
       .then(function () { return AP.community.sitzung(); })
       .then(function (s) {
+        if (!gilt(n)) return;
         if (!s) {
+          if (z.nutzer) vergessen();                       // Sitzung ist weg
           // Wer gerade auf den Link wartet, bleibt dort – mit Adresse und Codefeld.
           setze(vorher === "versendet" && z.mail ? "versendet" : "anmeldung", hinweis);
           return;
         }
+        // Anderes Konto als vorhin (z. B. in einem anderen Tab gewechselt):
+        // nichts vom alten übernehmen.
+        if (z.nutzer && z.nutzer !== s.user.id) vergessen();
+        z.nutzer = s.user.id;
+        ladetext("Profil wird geladen …");
         return AP.community.profil(true).then(function (p) {
+          if (!gilt(n)) return;
           z.profil = p;
           if (!p) { setze("profil", hinweis); return; }
           ankommen(hinweis);
         }, function (f) {
+          if (!gilt(n)) return;
           if (f.art === "anmeldung") return abgelaufen();
           if (f.art === "netz" && offline()) return setze("offline");
           setze("profilfehler");
         });
       })
       .catch(function (f) {
+        if (!gilt(n)) return;
         if (f && f.art === "netz" && offline()) return setze("offline");
-        // Ungültiger, abgelaufener oder fremder Link: zurück zur Anmeldung.
-        setze("anmeldung", { text: f && f.art === "anmeldung"
-          ? "Dieser Anmeldelink ist nicht mehr gültig. Lass dir einen neuen Link schicken."
-          : "Die Anmeldung konnte nicht geprüft werden. Versuch es erneut.", fehler: true });
+        if (f && f.art === "anmeldung") {
+          // Ungültiger, abgelaufener oder fremder Link: zurück zur Anmeldung.
+          setze("anmeldung", { fehler: true,
+            text: "Dieser Anmeldelink ist nicht mehr gültig. Lass dir einen neuen Link schicken." });
+          return;
+        }
+        setze("pruefFehler");
       });
   }
 
+  // Nur den Text der Prüfansicht tauschen – kein neuer Fokus, kein Springen.
+  function ladetext(t) {
+    var h = schirm && schirm.querySelector(".cm-kopf h1");
+    if (h && z.ansicht === "pruefen") h.textContent = t;
+  }
+
   function abgelaufen() {
+    vergessen();
+    neuerLauf();
     setze("anmeldung", { text: "Deine Anmeldung ist abgelaufen. Lass dir einen neuen Link schicken.",
                          fehler: true });
   }
@@ -251,6 +311,15 @@
     setze(ziel ? "nichtda" : "drin", hinweis);
   }
 
+  /* Eine Anfrage starten: sperrt weitere Klicks und liefert eine Prüfung, ob
+     die Antwort, wenn sie kommt, noch zu Konto und Ansicht passt. */
+  function anfrage() {
+    var n = neuerLauf();
+    var konto = z.nutzer;
+    z.laeuft = true;
+    return function () { return gilt(n) && z.nutzer === konto; };
+  }
+
   /* ================================================== Zeichnen */
 
   function zeichnen(fokus) {
@@ -262,7 +331,8 @@
     var bauer = {
       pruefen: ansichtPruefen, anmeldung: ansichtAnmeldung, versendet: ansichtVersendet,
       profil: ansichtProfil, drin: ansichtDrin, offline: ansichtOffline,
-      profilfehler: ansichtProfilfehler, unklar: ansichtUnklar, nichtda: ansichtNichtDa
+      profilfehler: ansichtProfilfehler, unklar: ansichtUnklar, nichtda: ansichtNichtDa,
+      pruefFehler: ansichtPruefFehler
     }[z.ansicht] || ansichtPruefen;
     bauer(rahmen);
     if (fokus && sichtbar()) {
@@ -288,7 +358,7 @@
     var form = el("form", "cm-form");
     form.noValidate = true;
     var mail = feld({
-      label: "E-Mail-Adresse", typ: "email", wert: z.mail,
+      label: "E-Mail-Adresse", typ: "email", wert: z.mail, pflicht: true,
       hilfe: "Du brauchst kein Passwort. Halte deinen Beta-Zugangscode bereit, wenn du neu dabei bist.",
       attr: { autocomplete: "email", inputmode: "email", autocapitalize: "off", spellcheck: "false" }
     });
@@ -300,33 +370,44 @@
     form.appendChild(verweis("Datenschutzerklärung", "datenschutz.html", "cm-verweis cm-leise"));
     form.appendChild(verweis("Ohne Anmeldung weiterlernen", "app.html#lernen", "kn-neben cm-neben"));
 
+    function mailFehler(wert) {
+      if (!wert) return "Gib deine E-Mail-Adresse ein.";
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(wert)) return "Prüfe deine E-Mail-Adresse.";
+      return "";
+    }
+    // Nach dem ersten Absenden prüft das Feld bei jeder Korrektur mit.
+    var versucht = false;
+    mail.eingabe.addEventListener("input", function () {
+      z.mail = mail.eingabe.value.trim();
+      if (versucht) fehlerSetzen(mail, mailFehler(z.mail));
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (z.laeuft) return;
+      versucht = true;
       var wert = mail.eingabe.value.trim();
       z.mail = wert;
-      fehlerSetzen(mail, "");
-      if (!wert) { fehlerSetzen(mail, "Gib deine E-Mail-Adresse ein."); mail.eingabe.focus(); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(wert)) {
-        fehlerSetzen(mail, "Prüfe deine E-Mail-Adresse."); mail.eingabe.focus(); return;
-      }
+      var f = mailFehler(wert);
+      fehlerSetzen(mail, f);
+      if (f) { mail.eingabe.focus(); return; }
       if (offline()) { setze("offline"); return; }
-      z.laeuft = true;
+      var passt = anfrage();
       sperren(senden, "Anmeldelink wird gesendet …");
       AP.community.anmeldenPerMail(wert).then(function (a) {
+        if (!passt()) return;
         z.laeuft = false;
         z.mail = a;
         setze("versendet");
       }, function (f) {
+        if (!passt()) return;
         z.laeuft = false;
         freigeben(senden);
         if (f.art === "netz" && offline()) { setze("offline"); return; }
         if (f.art === "eingabe") { fehlerSetzen(mail, "Prüfe deine E-Mail-Adresse."); mail.eingabe.focus(); return; }
-        z.hinweis = { text: f.art === "bremse"
+        zeigeHinweis(r, { fehler: true, text: f.art === "bremse"
           ? "Du hast gerade einen Link angefordert. Warte kurz und versuch es erneut."
-          : "Der Link konnte nicht gesendet werden. Versuch es erneut.", fehler: true };
-        var alt = r.querySelector(".meldung");
-        alt.replaceWith(hinweiszeile());
+          : "Der Link konnte nicht gesendet werden. Versuch es erneut." });
         senden.focus();
       });
     });
@@ -337,7 +418,7 @@
   function ansichtVersendet(r) {
     r.appendChild(zurueckKnopf());
     // Geschützter Bindestrich (U+2011): sieht gleich aus, trennt aber nicht hinter „E-“.
-    var k = kopf("Schau in dein E\u2011Mail\u2011Postfach");
+    var k = kopf("Schau in dein E‑Mail‑Postfach");
     var text = el("p");
     // Adresse als Text, nicht als Markup – und nur hier, im privaten Anmeldeschritt.
     text.textContent = "Wir haben einen Anmeldelink an " + z.mail
@@ -352,7 +433,7 @@
     var form = el("form", "cm-form");
     form.noValidate = true;
     var code = feld({
-      label: "Anmeldecode aus der E-Mail",
+      label: "Anmeldecode aus der E-Mail", pflicht: true,
       hilfe: "Du kannst auch den sechsstelligen Code aus derselben E-Mail hier eingeben. Das ist besonders praktisch in der installierten App.",
       attr: { autocomplete: "one-time-code", inputmode: "numeric", maxlength: "12",
               autocapitalize: "off", spellcheck: "false" }
@@ -363,31 +444,37 @@
     mitCode.type = "submit";
     form.appendChild(mitCode);
 
+    // Leerzeichen aus dem Einfügen sind egal, führende Nullen bleiben stehen.
+    function codeWert() { return code.eingabe.value.replace(/\s+/g, ""); }
+    function codeFehler(w) { return /^\d{6}$/.test(w) ? "" : "Der Anmeldecode besteht aus sechs Ziffern."; }
+    var versucht = false;
+    code.eingabe.addEventListener("input", function () {
+      if (versucht) fehlerSetzen(code, codeFehler(codeWert()));
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (z.laeuft) return;
-      // Leerzeichen aus dem Einfügen sind egal, führende Nullen bleiben stehen.
-      var wert = code.eingabe.value.replace(/\s+/g, "");
-      fehlerSetzen(code, "");
-      if (!/^\d{6}$/.test(wert)) {
-        fehlerSetzen(code, "Der Anmeldecode besteht aus sechs Ziffern.");
-        code.eingabe.focus();
-        return;
-      }
+      versucht = true;
+      var wert = codeWert();
+      var fe = codeFehler(wert);
+      fehlerSetzen(code, fe);
+      if (fe) { code.eingabe.focus(); return; }
       if (offline()) { setze("offline"); return; }
-      z.laeuft = true;
+      var passt = anfrage();
       sperren(mitCode, "Anmeldung wird geprüft …");
       AP.community.codePruefen(z.mail, wert).then(function () {
-        z.laeuft = false;
+        if (!passt()) return;
         pruefen();
       }, function (f) {
+        if (!passt()) return;
         z.laeuft = false;
         freigeben(mitCode);
         if (f.art === "netz" && offline()) { setze("offline"); return; }
         fehlerSetzen(code, f.art === "bremse"
           ? "Zu viele Versuche in kurzer Zeit. Warte einen Moment und versuch es erneut."
           : f.art === "netz" || f.art === "server"
-            ? "Das hat gerade nicht geklappt. Versuch es erneut."
+            ? "Die Anmeldung mit dem E-Mail-Code hat nicht geklappt. Versuch es erneut."
             : "Der Code ist abgelaufen oder stimmt nicht. Lass dir einen neuen schicken.");
         code.eingabe.focus();
       });
@@ -398,13 +485,15 @@
     var nochmal = knopf("Link erneut senden", "kn-neben cm-neben", function () {
       if (z.laeuft) return;
       if (offline()) { setze("offline"); return; }
-      z.laeuft = true;
+      var passt = anfrage();
       sperren(nochmal, "Anmeldelink wird gesendet …");
       AP.community.anmeldenPerMail(z.mail).then(function () {
+        if (!passt()) return;
         z.laeuft = false;
         freigeben(nochmal);
         zeigeHinweis(r, { text: "Ein neuer Anmeldelink wurde gesendet." });
       }, function (f) {
+        if (!passt()) return;
         z.laeuft = false;
         freigeben(nochmal);
         if (f.art === "netz" && offline()) { setze("offline"); return; }
@@ -415,6 +504,7 @@
     });
     weitere.appendChild(nochmal);
     weitere.appendChild(knopf("E-Mail-Adresse ändern", "kn-neben cm-neben", function () {
+      if (z.laeuft) return;
       setze("anmeldung");
       var f = schirm.querySelector("input[type=email]");
       if (f) { f.focus(); f.select(); }
@@ -442,19 +532,21 @@
     form.appendChild(oben);
 
     var f = z.formular;
-    var code = feld({ label: "Beta-Zugangscode", wert: f.code,
+    var code = feld({ label: "Beta-Zugangscode", wert: f.code, pflicht: true,
       hilfe: "Den Code bekommst du vom Team für die Beta.",
       attr: { autocomplete: "off", autocapitalize: "characters", spellcheck: "false" } });
     code.eingabe.classList.add("cm-mono");
-    var name = feld({ label: "Anzeigename", wert: f.name,
+    var name = feld({ label: "Anzeigename", wert: f.name, pflicht: true,
       hilfe: "2 bis 30 Zeichen. Diesen Namen sehen andere Mitglieder bei deinen Beiträgen und Antworten.",
       attr: { autocomplete: "off", maxlength: "60", spellcheck: "false" } });
     var jahr = feld({ label: "Lehrjahr (optional)", wert: f.lehrjahr,
       select: [["", "Keine Angabe"], ["1", "1. Lehrjahr"], ["2", "2. Lehrjahr"], ["3", "3. Lehrjahr"]] });
-    var alter = haken("Ich bin mindestens 16 Jahre alt.", f.alter);
-    var regelnOk = haken("Ich akzeptiere die Community-Regeln.", f.regeln);
+    var alter = haken("Ich bin mindestens 16 Jahre alt.", f.alter, true);
+    var regelnOk = haken("Ich akzeptiere die Community-Regeln.", f.regeln, true);
+    var felder = { code: code, name: name, jahr: jahr, alter: alter, regeln: regelnOk };
+    var reihenfolge = ["code", "name", "jahr", "alter", "regeln"];
 
-    [code, name, jahr, alter, regelnOk].forEach(function (x) { form.appendChild(x.box); });
+    reihenfolge.forEach(function (k) { form.appendChild(felder[k].box); });
 
     var lesen = knopf("Community-Regeln lesen", "cm-verweis cm-regeln-lesen", function () {
       regelnZeigen(lesen);
@@ -472,14 +564,50 @@
     weitere.appendChild(abmeldeKnopf(r));
     form.appendChild(weitere);
 
+    /* Fehler kommen aus zwei Quellen: aus der Prüfung hier (Pflichtfeld,
+       Länge, Häkchen) und vom Server (Code ungültig, Name vergeben). Hier
+       geprüfte Fehler verschwinden, sobald sie behoben sind; ein Serverfehler
+       verschwindet, sobald man das betroffene Feld ändert. */
+    var versucht = false;
+    var serverFehler = {};
+
+    function lokaleFehler() {
+      var fe = {};
+      if (!f.code.trim()) fe.code = "Gib deinen Beta-Zugangscode ein.";
+      var n = zeichen(f.name);
+      if (n < 2 || n > 30) fe.name = "Dein Anzeigename muss 2 bis 30 Zeichen lang sein.";
+      if (["", "1", "2", "3"].indexOf(f.lehrjahr) < 0) fe.jahr = "Wähle ein Lehrjahr von 1 bis 3 oder Keine Angabe.";
+      if (!f.alter) fe.alter = "Die Community ist ab 16 Jahren. Lernen und Üben kannst du ohne Community-Profil nutzen.";
+      if (!f.regeln) fe.regeln = "Bitte lies und akzeptiere die Community-Regeln, um ein Profil anzulegen.";
+      return fe;
+    }
+
+    // Zeigt den aktuellen Stand aller Fehler und gibt die Felder mit Fehler zurück.
+    function fehlerZeigen() {
+      var lokal = lokaleFehler();
+      var mitFehler = [];
+      reihenfolge.forEach(function (k) {
+        var text = lokal[k] || serverFehler[k] || "";
+        fehlerSetzen(felder[k], text);
+        if (text) mitFehler.push(felder[k]);
+      });
+      oben.innerHTML = "";
+      if (mitFehler.length > 1) oben.appendChild(fehleruebersicht(mitFehler));
+      return mitFehler;
+    }
+
     // Was man eintippt, bleibt erhalten, solange die Seite offen ist – auch beim
     // Blick in die Regeln oder einem Fehler vom Server.
-    function merken() {
+    function merken(e) {
       f.code = code.eingabe.value;
       f.name = name.eingabe.value;
       f.lehrjahr = jahr.eingabe.value;
       f.alter = alter.eingabe.checked;
       f.regeln = regelnOk.eingabe.checked;
+      if (e && e.target) {
+        reihenfolge.forEach(function (k) { if (felder[k].eingabe === e.target) delete serverFehler[k]; });
+      }
+      if (versucht) fehlerZeigen();
     }
     form.addEventListener("input", merken);
     form.addEventListener("change", merken);
@@ -488,40 +616,24 @@
       e.preventDefault();
       if (z.laeuft) return;
       merken();
-      oben.innerHTML = "";
-      [code, name, jahr, alter, regelnOk].forEach(function (x) { fehlerSetzen(x, ""); });
-
-      var fehlerliste = [];
-      if (!f.code.trim()) { fehlerSetzen(code, "Gib deinen Beta-Zugangscode ein."); fehlerliste.push(code); }
-      var n = f.name.trim().length;
-      if (n < 2 || n > 30) { fehlerSetzen(name, "Dein Anzeigename muss 2 bis 30 Zeichen lang sein."); fehlerliste.push(name); }
-      if (["", "1", "2", "3"].indexOf(f.lehrjahr) < 0) {
-        fehlerSetzen(jahr, "Wähle ein Lehrjahr von 1 bis 3 oder Keine Angabe."); fehlerliste.push(jahr);
-      }
-      if (!f.alter) {
-        fehlerSetzen(alter, "Die Community ist ab 16 Jahren. Lernen und Üben kannst du ohne Community-Profil nutzen.");
-        fehlerliste.push(alter);
-      }
-      if (!f.regeln) {
-        fehlerSetzen(regelnOk, "Bitte lies und akzeptiere die Community-Regeln, um ein Profil anzulegen.");
-        fehlerliste.push(regelnOk);
-      }
-      if (fehlerliste.length) {
-        if (fehlerliste.length > 1) oben.appendChild(fehleruebersicht(fehlerliste));
-        fehlerliste[0].eingabe.focus();
-        return;
-      }
+      versucht = true;
+      var mitFehler = fehlerZeigen();
+      if (mitFehler.length) { mitFehler[0].eingabe.focus(); return; }
       if (offline()) { setze("offline"); return; }
 
-      z.laeuft = true;
+      var passt = anfrage();
       sperren(anlegen, "Profil wird angelegt …");
       AP.community.profilAnlegen({
         anzeigename: f.name.trim(), lehrjahr: f.lehrjahr ? Number(f.lehrjahr) : null,
         code: f.code, mindestens16: f.alter, regeln: f.regeln
       }).then(function (p) {
-        angelegt(p);
+        if (!passt()) return;
+        // Erfolg erst mit einem tatsächlich geladenen Profil – sonst nachsehen.
+        if (p && p.id) angelegt(p);
+        else nachFehler({ art: "server", message: "" }, passt);
       }, function (fehler) {
-        nachFehler(fehler);
+        if (!passt()) return;
+        nachFehler(fehler, passt);
       });
     });
 
@@ -529,40 +641,45 @@
       z.laeuft = false;
       z.profil = p;
       // Den Beta-Zugangscode nicht länger als nötig im Speicher halten.
-      z.formular = { code: "", name: "", lehrjahr: "", alter: false, regeln: false };
+      z.formular = leeresFormular();
       ankommen({ text: "Dein Profil ist angelegt." });
     }
 
     /* Nach jedem Fehler zuerst nachsehen, ob es das Profil inzwischen gibt –
        aus einem zweiten Tab oder weil nur die Antwort verloren ging. Erst wenn
        es sicher fehlt, gilt der Fehler. */
-    function nachFehler(fehler) {
+    function nachFehler(fehler, passt) {
+      if (fehler.art === "anmeldung") { abgelaufen(); return; }
+      if (fehler.art === "netz" && offline()) { setze("offline"); return; }
       AP.community.profil(true).then(function (p) {
-        if (p) { angelegt(p); return; }
+        if (!passt()) return;
+        if (p && p.id) { angelegt(p); return; }
         z.laeuft = false;
         freigeben(anlegen);
         var text = fehler.message || "";
-        if (fehler.art === "anmeldung") { abgelaufen(); return; }
-        if (/Zugangscode/.test(text)) {
-          fehlerSetzen(code, "Dieser Beta-Zugangscode ist nicht gültig oder nicht mehr verfügbar. Prüfe den Code oder frag das Team.");
-          code.eingabe.focus();
-        } else if (/Anzeigenamen|gibt es schon/.test(text)) {
-          fehlerSetzen(name, "Dieser Anzeigename ist schon vergeben. Wähle einen anderen.");
-          name.eingabe.focus();
-        } else if (/16/.test(text)) {
-          fehlerSetzen(alter, "Die Community ist ab 16 Jahren. Lernen und Üben kannst du ohne Community-Profil nutzen.");
-          alter.eingabe.focus();
-        } else if (/Regeln/.test(text)) {
-          fehlerSetzen(regelnOk, "Bitte lies und akzeptiere die Community-Regeln, um ein Profil anzulegen.");
-          regelnOk.eingabe.focus();
-        } else {
+        var feldname = /Zugangscode/.test(text) ? "code"
+          : /Anzeigenamen|gibt es schon/.test(text) ? "name"
+          : /16/.test(text) ? "alter"
+          : /Regeln/.test(text) ? "regeln" : null;
+        if (!feldname) {
           zeigeHinweis(r, { text: "Dein Profil konnte nicht angelegt werden. Versuch es erneut.", fehler: true });
           anlegen.focus();
+          return;
         }
+        serverFehler[feldname] = {
+          code: "Dieser Beta-Zugangscode ist nicht gültig oder nicht mehr verfügbar. Prüfe den Code oder frag das Team.",
+          name: "Dieser Anzeigename ist schon vergeben. Wähle einen anderen.",
+          alter: "Die Community ist ab 16 Jahren. Lernen und Üben kannst du ohne Community-Profil nutzen.",
+          regeln: "Bitte lies und akzeptiere die Community-Regeln, um ein Profil anzulegen."
+        }[feldname];
+        fehlerZeigen();
+        felder[feldname].eingabe.focus();
       }, function (pf) {
+        if (!passt()) return;
         // Wir wissen nicht, ob es geklappt hat. Nichts behaupten, nachsehen lassen.
         z.laeuft = false;
         if (pf.art === "anmeldung") { abgelaufen(); return; }
+        if (pf.art === "netz" && offline()) { setze("offline"); return; }
         setze("unklar");
       });
     }
@@ -572,18 +689,15 @@
   function abmeldeKnopf(r) {
     var b = knopf("Abmelden", "kn-neben cm-neben", function () {
       if (z.laeuft) return;
-      z.laeuft = true;
+      var passt = anfrage();
       sperren(b, "Abmelden …");
       AP.community.abmelden().then(function () {
-        z.laeuft = false;
         // Alles vom alten Konto vergessen – der Lernstand bleibt, wo er ist.
-        z.profil = null;
-        z.mail = "";
-        z.ziel = null;
-        z.formular = { code: "", name: "", lehrjahr: "", alter: false, regeln: false };
-        try { sessionStorage.removeItem(ZIEL_SCHLUESSEL); } catch (e) {}
+        vergessen();
+        neuerLauf();
         setze("anmeldung");
       }, function () {
+        if (!passt()) return;
         z.laeuft = false;
         freigeben(b);
         zeigeHinweis(r, { text: "Du konntest gerade nicht abgemeldet werden. Versuch es erneut.", fehler: true });
@@ -594,10 +708,11 @@
 
   /* ---------- Angemeldet mit Profil
      Die Beiträge (C04) sind noch nicht freigegeben. Bis dahin zeigt die
-     Community nur das eigene Profil – nichts von anderen. */
+     Community nur das eigene Profil – nichts von anderen. Texte: Entscheidung
+     vom 12.10.2026 (doku/community/entscheidungen.md). */
   function ansichtDrin(r) {
     r.appendChild(zurueckKnopf());
-    r.appendChild(kopf("Community", "Fragen stellen, Wissen teilen und gemeinsam lernen."));
+    r.appendChild(kopf("Community", "Hier findest du dein Community-Profil und die Regeln."));
     r.appendChild(hinweiszeile());
     var p = z.profil || {};
     var g = el("section", "feldgruppe");
@@ -619,7 +734,13 @@
     reihe.appendChild(abmeldeKnopf(r));
     g.appendChild(reihe);
     r.appendChild(g);
-    r.appendChild(el("p", "cm-hilfe", "Beiträge und Lerngruppen kommen mit der nächsten Version."));
+    var spaeter = el("div", "feldgruppe");
+    spaeter.appendChild(el("p", "cm-hilfe",
+      "Dein Community-Profil ist eingerichtet. Beiträge und Lerngruppen sind in dieser Beta noch nicht verfügbar."));
+    var weg = el("div", "cm-reihe");
+    weg.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
+    spaeter.appendChild(weg);
+    r.appendChild(spaeter);
   }
 
   /* ---------- Offline */
@@ -651,7 +772,19 @@
                   fehler: true };
     r.appendChild(hinweiszeile());
     var reihe = el("div", "cm-reihe");
-    reihe.appendChild(knopf("Status prüfen", "kn-haupt cm-haupt", function () { pruefen(); }));
+    reihe.appendChild(knopf("Profilstatus prüfen", "kn-haupt cm-haupt", function () { pruefen(); }));
+    reihe.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
+    r.appendChild(reihe);
+  }
+
+  /* ---------- Sitzung ließ sich nicht prüfen (kein Offline, kein Linkfehler) */
+  function ansichtPruefFehler(r) {
+    r.appendChild(zurueckKnopf());
+    r.appendChild(kopf("Community"));
+    z.hinweis = { text: "Die Anmeldung konnte nicht geprüft werden. Versuch es erneut.", fehler: true };
+    r.appendChild(hinweiszeile());
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(knopf("Erneut versuchen", "kn-haupt cm-haupt", function () { pruefen(); }));
     reihe.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
     r.appendChild(reihe);
   }
@@ -764,22 +897,49 @@
     } else if (z.ziel === null) {
       try { z.ziel = sessionStorage.getItem(ZIEL_SCHLUESSEL); } catch (e) {}
     }
-    // Läuft gerade eine Anfrage, nur neu zeichnen. Sonst immer frisch prüfen:
-    // Sitzung oder Profil können sich in einem anderen Tab geändert haben.
-    // Eingetippte Werte (Adresse, Profilformular) bleiben dabei erhalten.
-    if (z.laeuft) { zeichnen(false); return; }
+    // Läuft gerade eine Anfrage, bleibt die Ansicht stehen, wie sie ist (der
+    // Schirm war nur versteckt). Sonst immer frisch prüfen: Sitzung oder Profil
+    // können sich in einem anderen Tab geändert haben. Eingetippte Werte
+    // bleiben dabei erhalten – solange es dasselbe Konto ist.
+    if (z.laeuft && schirm.firstChild) return;
     pruefen();
+  }
+
+  // Abgemeldet (hier, in einem anderen Tab oder weil die Sitzung abgelaufen
+  // ist): alles vom Konto vergessen und nichts davon stehen lassen – auch
+  // nicht im versteckten Schirm.
+  function kontoWeg() {
+    vergessen();
+    neuerLauf();
+    z.ansicht = null;
+    if (sichtbar()) pruefen();
+    else if (schirm) schirm.innerHTML = "";
   }
 
   function init(inhalt) {
     regeln = inhalt && inhalt.communityRegeln || null;
-    // Meldet sich das Konto in einem anderen Tab an oder ab, hier nachziehen.
-    AP.community.beiAenderung(function (ereignis) {
-      if (!sichtbar() || z.laeuft) return;
-      if (ereignis === "SIGNED_OUT") { z.profil = null; pruefen(); }
-      if (ereignis === "SIGNED_IN" && (z.ansicht === "anmeldung" || z.ansicht === "versendet")) pruefen();
+    AP.community.beiAenderung(function (ereignis, sitzung) {
+      if (ereignis === "SIGNED_OUT") { kontoWeg(); return; }
+      if (ereignis !== "SIGNED_IN" || !sitzung) return;
+      var id = sitzung.user && sitzung.user.id;
+      if (z.nutzer && id !== z.nutzer) {
+        // Ein anderes Konto hat sich angemeldet (anderer Tab): Entwürfe und
+        // laufende Antworten des alten Kontos verwerfen.
+        kontoWeg();
+        return;
+      }
+      if (sichtbar() && !z.laeuft && (z.ansicht === "anmeldung" || z.ansicht === "versendet")) pruefen();
     });
     window.addEventListener("online", function () { if (sichtbar() && z.ansicht === "offline") pruefen(); });
+    // Verbindung weg, während die Community offen ist: sofort sagen – auch
+    // mitten in einer Anfrage. Deren Antwort wird danach nicht mehr angezeigt;
+    // ob sie angekommen ist, prüft die App, sobald das Netz zurück ist.
+    window.addEventListener("offline", function () {
+      if (!sichtbar()) return;
+      neuerLauf();
+      z.laeuft = false;
+      setze("offline");
+    });
   }
 
   AP.communityAnsicht = {

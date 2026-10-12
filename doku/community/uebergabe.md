@@ -13,6 +13,73 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-12 · Claude → ChatGPT (Review) → Lukes
+
+**Vorheriger Beitrag:** ChatGPT – Review von `community-zugang` @ `d752f1f`
+(„grundsätzlich passend, gezielte Nachbesserungen vor Freigabe“); Lukes –
+Entscheidungen vom 12.10. in `entscheidungen.md` (alle vier Vorschläge übernommen).
+**Rolle:** Umsetzung. **Grundlage:** Branch `community-zugang` @ `d752f1f`.
+**Nächste Übergabe an:** ChatGPT zum erneuten Review, danach Lukes.
+**Nicht gemergt, nicht live.**
+
+### Befunde aus dem Review → umgesetzt
+
+| Review-Befund | Umsetzung |
+|---|---|
+| Hoch: Profilentwurf kann in anderes Konto wandern | `vergessen()` leert Profil, Formular samt Häkchen, Adresse, Ziel. Läuft bei eigenem Abmelden, Abmelden in anderem Tab (`SIGNED_OUT`), abgelaufener Sitzung und **Kontowechsel** (andere Konto-ID bei `SIGNED_IN` oder bei der nächsten Prüfung). Versteckter Schirm wird beim Abmelden geleert. |
+| Hoch: verspätete Antworten nicht an Sitzung/Anfrage gebunden | Laufnummer: jede Prüfung, Anfrage und jeder Kontowechsel zieht eine neue Nummer; jede Antwort prüft vor der Anzeige Nummer **und** Konto (`anfrage()`/`gilt()`), sonst verworfen. Auth-Ereignisse werden nicht mehr während laufender Anfragen ignoriert. |
+| Feldfehler bleiben nach Korrektur | Nach dem ersten Absenden prüft das Formular bei jeder Eingabe lokal neu, Übersicht wird aktualisiert bzw. verschwindet; Serverfehler (Code, Name) verschwinden, sobald man das Feld ändert. Auch in A (E-Mail) und B (Code). Keine Namensabfrage je Tastendruck. |
+| Pflichtangaben nicht erklärt | Sichtbares „Pflicht“ am Label (E-Mail, Anmeldecode, Beta-Zugangscode, Anzeigename, beide Bestätigungen) plus `aria-required`; Lehrjahr bleibt „(optional)“. |
+| Lade-/Fokusführung | Prüfansicht zeigt erst „Anmeldung wird geprüft …“, dann „Profil wird geladen …“; Fokus springt bei jedem echten Ansichtswechsel auf die Überschrift. |
+| Kein `offline`-Listener | Verbindungsverlust schaltet die offene Community sofort auf den Offline-Hinweis, auch mitten in einer Anfrage; deren Antwort wird verworfen, nach Wiederverbindung wird neu geprüft. |
+| Namenslänge UTF-16 statt `char_length` | Zählung in Codepunkten (`Array.from`), in Oberfläche und Datenschicht. |
+| Leeres Ergebnis als Erfolg | Erfolg nur mit tatsächlich geladenem Profil (`p.id`), sonst Nachsehen wie bei Fehlern. |
+| Code-Prüfung Datenschicht ≠ Oberfläche | Datenschicht verlangt jetzt ebenfalls genau sechs Ziffern (nur Leerzeichen werden entfernt). |
+| Datenschutzerklärung im Generator | `build_app.py` erzeugt den ChatGPT-Entwurf; neue Felder `community.*` in `quellen/rechtliches.json`; fehlende Angaben stehen als Warnkasten und „— fehlt noch —“ auf der Seite und werden beim Bau gemeldet. Alte Fassung bleibt als `datenschutz_ohne_konten()` für `community.aktiv = false`. |
+| (Folge) „keine Nutzerkonten“ auf der Hinweisseite | Satz korrigiert: „Lernen und Üben funktionieren ohne Nutzerkonto; nur die Community-Beta braucht eins.“ – **von Claude formuliert**, bitte prüfen. |
+
+Texte nach Lukes' Entscheidung vom 12.10.: Zwischenansicht, „Profilstatus prüfen“,
+„Die Anmeldung mit dem E-Mail-Code hat nicht geklappt. Versuch es erneut.“, eigene
+Ansicht für Prüffehler mit „Erneut versuchen“. **Neu und nicht in 02:** das Wort
+„Pflicht“ an den Feldern.
+
+### Belege (Stand dieses Commits)
+
+| Prüfung | Ergebnis |
+|---|---|
+| `community_zugang_test.py` (jetzt 9 Konten je Lauf) | **101 von 101 OK** |
+| `community_test.py` | 39 von 39 OK |
+| `pruefe.py app.html datenschutz.html impressum.html` (2 Größen × 2 Stimmungen) | keine Fehler |
+| `funktionstest.py` | 188 OK, 2 FEHL, Abbruch „Eigene Probeklausur“ – identisch mit Original 0feae83 (Altfehler) |
+
+Neu im Zugangstest (gezielt zu den Lücken aus dem Review): Pflichtmarkierung ·
+Fehler verschwinden/aktualisieren sich nach Korrektur · 30/31 Zeichen außerhalb
+der Grundebene · Fokus bleibt im Regeldialog · **Abmelden in anderem Tab** löscht
+Entwurf, neues Konto bekommt leeres Formular · **Kontowechsel in anderem Tab**
+ohne Abmelden verwirft Entwurf · **späte Erfolgsantwort nach Abmelden** wird
+verworfen · **Verbindungsabbruch während Versand** (kein falscher Erfolg, kein
+Nachsenden) · **Verbindungsabbruch während Profilanlage**, Anlage kam an →
+Profil genau einmal, gefunden · leeres Ergebnis ist kein Erfolg · Direktlink und
+Neuladen ohne Profil → Profilanlage, keine Abrufe von Beiträgen/Gruppen/Aufgaben ·
+„Profil wird geladen …“ · Fokus auf neuer Überschrift · Profilformular bei 320 px ·
+Abmelden ohne Serverantwort meldet lokal trotzdem ab (supabase-js entfernt die
+lokale Sitzung auch ohne Antwort; „Abmeldung nicht bestätigt“ kann daher praktisch
+nicht eintreten). Screenshots: `doku/community/review/2026-10-12-nachbesserung/`.
+
+### Weiterhin nicht belegt (ehrlich offen)
+
+- Installierte App (Standalone-Modus) und echter Mail-Link Ende zu Ende – erst mit
+  SMTP und auf einem echten Gerät prüfbar.
+- Bildschirmleser, 200 % Textgröße und Bildschirmtastatur – nur auf echten Geräten.
+- Zwei Tabs, die **gleichzeitig** anlegen (getestet: nacheinander und verlorene
+  Antwort). Die Datenbank schützt durch Primärschlüssel; die Oberfläche prüft nach.
+- Fremde Gruppe als Ziel mit Login-Rückweg – Gruppen gibt es noch nicht.
+- Backend-Ausnahme (aus dem Review): Die Speicherregel „eigener Ordner“ erlaubt
+  Lesen eigener Dateien ohne Profilprüfung; nur relevant bei entferntem Profil mit
+  verbliebenen Dateien. Dokumentiert in `supabase/README.md`, nicht geändert.
+- Datenschutzerklärung: Anschrift, Kontakt, Supabase-Vertragspartner und
+  Garantien, Mailanbieter und Fristen fehlen (Lukes).
+
 ## 2026-10-08 (3) · Claude → ChatGPT (Review) → Lukes
 
 **Vorheriger Beitrag:** ChatGPT – `01-uebersicht.md` und `02-anmeldung-profil.md`

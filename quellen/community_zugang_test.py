@@ -16,7 +16,7 @@ wäre, wird die Antwort des Mailservers ersetzt:
     zurück, die vorher per Passwort für dasselbe Testkonto geholt wurde.
 
 Alles andere – Profil lesen, Profil anlegen, Zugangscode, Namensprüfung,
-Abmelden – geht unverändert an Supabase. COMMUNITY_TEST_NEU braucht vier
+Abmelden – geht unverändert an Supabase. COMMUNITY_TEST_NEU braucht neun
 Konten OHNE Profil; nach dem Lauf haben sie eins (Konten neu anlegen, siehe
 supabase/README.md).
 
@@ -72,8 +72,8 @@ def main():
     if "--bilder" in sys.argv:
         bilder = Path(sys.argv[sys.argv.index("--bilder") + 1])
         bilder.mkdir(parents=True, exist_ok=True)
-    if not pw or not beta or len(neu) < 4:
-        print("COMMUNITY_TEST_PASSWORT, COMMUNITY_TEST_CODE und vier Konten in COMMUNITY_TEST_NEU setzen.")
+    if not pw or not beta or len(neu) < 9:
+        print("COMMUNITY_TEST_PASSWORT, COMMUNITY_TEST_CODE und neun Konten ohne Profil in COMMUNITY_TEST_NEU setzen.")
         return 2
 
     # Anzeigenamen aus den Kontonamen ableiten – so bleibt jeder Lauf eindeutig.
@@ -180,9 +180,9 @@ def main():
             # Offline während des Versands
             seite.fill("#community input[type=email]", ANNA)
             otp_vorher = len([a for a in anfragen if "/auth/v1/otp" in a[1]])
-            ctx.set_offline(True)
-            seite.click("text=Anmeldelink senden")
-            pruefe(ist("Community") and seite.is_visible("text=Du bist offline. Zum Anmelden"), "Offline: kein Versand, sondern Hinweis")
+            ctx.set_offline(True)             # die Ansicht wechselt sofort, ohne Klick
+            pruefe(ist("Community") and seite.is_visible("text=Du bist offline. Zum Anmelden"),
+                   "Verbindung weg: sofort Offline-Hinweis statt Formular")
             pruefe(len([a for a in anfragen if "/auth/v1/otp" in a[1]]) == otp_vorher, "Offline geht keine Anfrage raus")
             bild("04-offline")
             # „Verbindung prüfen“ von Hand, solange noch offline: bleibt beim Hinweis
@@ -266,7 +266,10 @@ def main():
             folge = []
             for _ in range(8):
                 folge.append(seite.evaluate("""() => { const a = document.activeElement;
-                  return a.labels && a.labels[0] ? a.labels[0].textContent.trim() : a.textContent.trim(); }"""))
+                  const l = a.labels && a.labels[0];
+                  if (!l) return a.textContent.trim();
+                  const t = l.querySelector('span:not(.cm-pflicht)');
+                  return ((t ? t.firstChild : l.firstChild).textContent).trim(); }"""))
                 seite.keyboard.press("Tab")
             erwartet = ["Beta-Zugangscode", "Anzeigename", "Lehrjahr (optional)", "Ich bin mindestens 16 Jahre alt.",
                         "Ich akzeptiere die Community-Regeln.", "Community-Regeln lesen", "Profil anlegen",
@@ -408,10 +411,231 @@ def main():
             bild("10-unklar")
             seite.unroute("**/rest/v1/rpc/profil_anlegen**")
             seite.unroute("**/rest/v1/profil?**")
-            seite.click("text=Status prüfen")
-            pruefe(ist("Community") and namen[3] in seite.inner_text("#community"), "„Status prüfen“ findet das Profil")
+            seite.click("text=Profilstatus prüfen")
+            pruefe(ist("Community") and namen[3] in seite.inner_text("#community"), "„Profilstatus prüfen“ findet das Profil")
             seite.click("#community >> text=Abmelden")
             h1()
+
+            # ---------------------------------------------------------- Review 12.10.
+            print("Kontowechsel, späte Antworten, Unterbrechungen (Review 12.10.)")
+
+            def d_ausfuellen(s_, name, code=None):
+                s_.wait_for_selector("text=Dein Community-Profil")
+                s_.fill("#community input.cm-mono", code or beta)
+                s_.fill("#community input[maxlength='60']", name)
+                s_.check("text=Ich bin mindestens 16 Jahre alt.")
+                s_.check("text=Ich akzeptiere die Community-Regeln.")
+
+            def d_leer(s_):
+                return (s_.input_value("#community input.cm-mono") == ""
+                        and s_.input_value("#community input[maxlength='60']") == ""
+                        and not s_.is_checked("text=Ich bin mindestens 16 Jahre alt.")
+                        and not s_.is_checked("text=Ich akzeptiere die Community-Regeln."))
+
+            def titel_in(s_, erwartet, warte=20000):
+                try:
+                    s_.wait_for_function("(t) => { const h = document.querySelector('#community h1');"
+                                         " return h && h.textContent.trim() === t; }", arg=erwartet, timeout=warte)
+                    return True
+                except Exception:
+                    return False
+
+            # Pflichtangaben als Text und für Bildschirmleser
+            mit_passwort(neu[4])
+            seite.goto(basis + "app.html#heute")
+            seite.goto(basis + "app.html#community")
+            seite.wait_for_selector("text=Dein Community-Profil")
+            pflicht = seite.evaluate("""() => [...document.querySelectorAll('#community .cm-feld')].map(b => {
+                const e = b.querySelector('input, select');
+                return [b.textContent.includes('Pflicht'), e.getAttribute('aria-required') === 'true'];
+              })""")
+            pruefe(pflicht == [[True, True], [True, True], [False, False], [True, True], [True, True]],
+                   "Pflichtfelder textlich und per aria-required markiert, Lehrjahr nicht", pflicht)
+
+            # Fehler verschwinden nach der Korrektur
+            seite.click("text=Profil anlegen")
+            pruefe(seite.locator(".cm-uebersicht li").count() == 4, "Vier Fehler nach leerem Absenden")
+            seite.fill("#community input.cm-mono", "IRGENDWAS")
+            pruefe(seite.locator(".cm-uebersicht li").count() == 3
+                   and not seite.is_visible("text=Gib deinen Beta-Zugangscode ein."), "Code eingetragen: Fehler weg, Übersicht aktualisiert")
+            seite.check("text=Ich bin mindestens 16 Jahre alt.")
+            seite.check("text=Ich akzeptiere die Community-Regeln.")
+            pruefe(seite.locator(".cm-uebersicht").count() == 0
+                   and seite.is_visible("text=Dein Anzeigename muss 2 bis 30 Zeichen lang sein."),
+                   "Nur noch ein Fehler: Feldfehler bleibt, Übersicht verschwindet")
+            # Zeichen zählen wie die Datenbank: 30 Codepunkte, 60 UTF-16-Einheiten
+            seite.fill("#community input[maxlength='60']", "𝔄" * 30)
+            pruefe(not seite.is_visible("text=Dein Anzeigename muss 2 bis 30 Zeichen lang sein."),
+                   "30 Zeichen außerhalb der Grundebene gelten als 30, nicht 60")
+            # 31 Codepunkte in 60 UTF-16-Einheiten (mehr lässt maxlength nicht zu)
+            seite.fill("#community input[maxlength='60']", "𝔄" * 29 + "ab")
+            pruefe(seite.is_visible("text=Dein Anzeigename muss 2 bis 30 Zeichen lang sein."), "31 Zeichen sind zu viel")
+            seite.fill("#community input.cm-mono", "")
+            pruefe(seite.is_visible("text=Gib deinen Beta-Zugangscode ein."), "Geleertes Feld zeigt den Fehler wieder")
+
+            # Regeldialog hält den Fokus
+            seite.click("text=Community-Regeln lesen")
+            seite.wait_for_selector("dialog[open]")
+            for _ in range(6):
+                seite.keyboard.press("Tab")
+            pruefe(seite.evaluate("!!document.activeElement.closest('dialog')"), "Tab bleibt im Regeldialog")
+            seite.keyboard.press("Escape")
+            seite.wait_for_selector("dialog", state="detached")
+
+            # Abmelden in einem anderen Tab: Entwurf verschwindet
+            d_ausfuellen(seite, "Entwurf X")
+            zweite = ctx.new_page()
+            zweite.goto(basis + "app.html#heute")
+            zweite.wait_for_function("window.AP && AP.community")
+            zweite.evaluate("AP.community.abmelden()")
+            pruefe(titel_in(seite, "In der Community anmelden"), "Abmelden im anderen Tab: dieser Tab zeigt die Anmeldung")
+            pruefe("Entwurf X" not in seite.content(), "Entwurf des alten Kontos ist aus der Seite verschwunden")
+            mit_passwort(neu[5])
+            pruefe(titel_in(seite, "Dein Community-Profil") and d_leer(seite), "Anderes Konto bekommt ein leeres Formular")
+
+            # Kontowechsel ohne Abmelden (anderer Tab meldet ein anderes Konto an)
+            d_ausfuellen(seite, "Entwurf Y")
+            zweite.evaluate("""async ([m, p]) => { const c = await AP.community.verbinden();
+                const r = await c.auth.signInWithPassword({ email: m, password: p });
+                if (r.error) throw new Error(r.error.message); }""", [neu[6], pw])
+            seite.wait_for_timeout(1500)
+            pruefe(titel_in(seite, "Dein Community-Profil") and d_leer(seite) and "Entwurf Y" not in seite.content(),
+                   "Kontowechsel im anderen Tab: Entwurf wird verworfen")
+            zweite.close()
+
+            # Späte Antwort nach Abmelden darf nichts mehr anzeigen
+            gehalten = []
+            seite.route("**/rest/v1/rpc/profil_anlegen**", lambda r: gehalten.append(r))
+            d_ausfuellen(seite, namen[6])
+            seite.click("text=Profil anlegen")
+            seite.wait_for_function("() => true")
+            for _ in range(40):
+                if gehalten: break
+                seite.wait_for_timeout(100)
+            dritte = ctx.new_page()
+            dritte.goto(basis + "app.html#heute")
+            dritte.wait_for_function("window.AP && AP.community")
+            dritte.evaluate("AP.community.abmelden()")
+            dritte.close()
+            pruefe(titel_in(seite, "In der Community anmelden"), "Abmelden während der Anfrage: Anmeldung erscheint sofort")
+            if gehalten:
+                gehalten[0].continue_()
+            seite.wait_for_timeout(2500)
+            pruefe(ist("In der Community anmelden") and not seite.is_visible("text=Dein Profil ist angelegt."),
+                   "Späte Erfolgsantwort des alten Kontos wird verworfen")
+            seite.unroute("**/rest/v1/rpc/profil_anlegen**")
+
+            # Offline während des Versands
+            seite.route("**/auth/v1/otp**", lambda r: gehalten.append(r))
+            gehalten.clear()
+            seite.fill("#community input[type=email]", "jemand@azubipass.invalid")
+            seite.click("text=Anmeldelink senden")
+            for _ in range(40):
+                if gehalten: break
+                seite.wait_for_timeout(100)
+            ctx.set_offline(True)
+            try:
+                seite.wait_for_selector("text=Du bist offline. Zum Anmelden", timeout=3000)
+            except Exception:
+                pass
+            pruefe(seite.is_visible("text=Du bist offline. Zum Anmelden"), "Verbindung bricht beim Versand ab: sofort offline")
+            if gehalten:
+                gehalten[0].fulfill(status=200, content_type="application/json", body="{}")
+            seite.wait_for_timeout(800)
+            pruefe(not seite.is_visible("text=Schau in dein"), "Kein falscher Erfolg nach der Unterbrechung")
+            ctx.set_offline(False)
+            pruefe(titel_in(seite, "In der Community anmelden"), "Wieder online: kein automatisches Nachsenden")
+            seite.unroute("**/auth/v1/otp**")
+
+            # Offline während der Profilanlage – die Anlage kam aber an
+            mit_passwort(neu[7])
+            pruefe(titel_in(seite, "Dein Community-Profil"), "Neues Konto ohne Profil: Profilanlage")
+            gehalten.clear()
+            seite.route("**/rest/v1/rpc/profil_anlegen**", lambda r: gehalten.append(r))
+            d_ausfuellen(seite, namen[7])
+            seite.click("text=Profil anlegen")
+            for _ in range(40):
+                if gehalten: break
+                seite.wait_for_timeout(100)
+            ctx.set_offline(True)
+            try:
+                seite.wait_for_selector("text=Du bist offline. Zum Anmelden", timeout=3000)
+            except Exception:
+                pass
+            pruefe(seite.is_visible("text=Du bist offline. Zum Anmelden"), "Verbindung bricht bei der Anlage ab: sofort offline")
+            if gehalten:
+                gehalten[0].fetch()           # die Anlage erreicht den Server …
+                gehalten[0].abort()           # … die Antwort geht unterwegs verloren
+            seite.unroute("**/rest/v1/rpc/profil_anlegen**")
+            ctx.set_offline(False)            # das online-Ereignis prüft neu
+            pruefe(titel_in(seite, "Community") and namen[7] in seite.inner_text("#community"),
+                   "Nach der Unterbrechung: Profil gefunden, keine zweite Anlage")
+            n_profile = seite.evaluate("""async () => { const c = await AP.community.verbinden();
+                const r = await c.from('profil').select('id').eq('anzeigename', %s); return (r.data || []).length; }""" % json.dumps(namen[7]))
+            pruefe(n_profile == 1, "Profil genau einmal vorhanden", n_profile)
+            # Zwischenansicht mit freigegebenem Text
+            pruefe(seite.is_visible("text=Dein Community-Profil ist eingerichtet. Beiträge und Lerngruppen sind in dieser Beta noch nicht verfügbar.")
+                   and seite.is_visible("text=Hier findest du dein Community-Profil und die Regeln.")
+                   and seite.locator("#community a[href='app.html#lernen']", has_text="Zu Lernen").count() == 1,
+                   "Zwischenansicht mit freigegebenem Text und „Zu Lernen“")
+
+            # Leeres Ergebnis ist kein Erfolg
+            seite.click("#community >> text=Abmelden")
+            h1()
+            mit_passwort(neu[8])
+            titel_in(seite, "Dein Community-Profil")
+            seite.route("**/rest/v1/rpc/profil_anlegen**", lambda r: r.fulfill(status=200, content_type="application/json", body="null"))
+            leer_profil = {"n": 0}
+            def leeres_profil(r):
+                leer_profil["n"] += 1
+                r.fulfill(status=200, content_type="application/json", body="[]",
+                          headers={"content-range": "*/0"})
+            seite.route("**/rest/v1/profil?**", leeres_profil)
+            d_ausfuellen(seite, "Nie Angelegt")
+            seite.click("text=Profil anlegen")
+            seite.wait_for_selector("text=Dein Profil konnte nicht angelegt werden. Versuch es erneut.", timeout=20000)
+            pruefe(not seite.is_visible("text=Dein Profil ist angelegt."), "Ohne geladenes Profil kein Erfolg")
+            seite.unroute("**/rest/v1/rpc/profil_anlegen**")
+            seite.unroute("**/rest/v1/profil?**")
+
+            # Direktlink bei Sitzung ohne Profil: Profilanlage, keine Inhaltsabrufe
+            vorher_rest = len(rest_anfragen())
+            seite.goto(basis + "app.html#community/gruppe/00000000-0000-0000-0000-000000000000")
+            pruefe(titel_in(seite, "Dein Community-Profil"), "Direktlink ohne Profil führt zur Profilanlage")
+            seite.reload()
+            pruefe(titel_in(seite, "Dein Community-Profil"), "Auch nach Neuladen")
+            fremd = [a[1] for a in rest_anfragen()[vorher_rest:]
+                     if any(t in a[1] for t in ("/beitrag", "/gruppe", "/mitglied", "/antwort", "/wochenaufgabe", "/aufgabe"))]
+            pruefe(not fremd, "Keine Abrufe von Beiträgen, Gruppen oder Aufgaben", fremd[:3])
+
+            # Profil wird geladen … (unterscheidbar von der Sitzungsprüfung)
+            gehalten.clear()
+            seite.route("**/rest/v1/profil?**", lambda r: gehalten.append(r))
+            seite.goto(basis + "app.html#heute")
+            seite.goto(basis + "app.html#community")
+            for _ in range(50):
+                if gehalten: break
+                seite.wait_for_timeout(100)
+            pruefe(seite.inner_text("#community h1").strip() == "Profil wird geladen …", "Ladezustand „Profil wird geladen …“",
+                   seite.inner_text("#community h1").strip())
+            for g in gehalten:
+                g.continue_()
+            seite.unroute("**/rest/v1/profil?**")
+            pruefe(titel_in(seite, "Dein Community-Profil"), "Danach die passende Ansicht")
+            pruefe(seite.evaluate("document.activeElement.tagName") == "H1", "Fokus auf der neuen Überschrift")
+
+            # 320 px auch im Profilformular
+            seite.set_viewport_size({"width": 320, "height": 640})
+            ueber = seite.evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth")
+            pruefe(ueber <= 0, "Profilformular bei 320 px ohne seitliches Scrollen", ueber)
+            seite.set_viewport_size({"width": 390, "height": 844})
+
+            # Abmelden ohne Antwort vom Server
+            seite.route("**/auth/v1/logout**", lambda r: r.abort())
+            seite.click("#community >> text=Abmelden")
+            pruefe(titel_in(seite, "In der Community anmelden") and not sitzung_schluessel(),
+                   "Abmelden ohne Serverantwort meldet trotzdem lokal ab")
+            seite.unroute("**/auth/v1/logout**")
 
             # ---------------------------------------------------------- Mail-Link
             print("Mail-Link")

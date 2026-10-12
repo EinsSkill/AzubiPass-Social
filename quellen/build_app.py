@@ -560,7 +560,8 @@ def privatkasten():
     return ('<div class="box praxis"><div class="bk">Persönliches Open-Source-Lernprojekt</div>'
             '<p>Diese Seite und ihr Quellcode dürfen öffentlich angesehen, '
             'geteilt und als Projekt gezeigt werden. Es gibt keinen Verkauf, '
-            'keine Werbung, keine Nutzerkonten und kein Tracking.</p>'
+            'keine Werbung und kein Tracking. Lernen und Üben funktionieren ohne '
+            'Nutzerkonto; nur die Community-Beta braucht eins.</p>'
             '<p>Der Modus <code>nur_privat</code> ist ausschließlich für ein '
             'persönliches, nichtkommerzielles Angebot gedacht. Vor einer '
             'geschäftsmäßigen oder kommerziellen Veröffentlichung muss er in '
@@ -653,7 +654,151 @@ def impressum(r, fehlt):
 '''
 
 
+COMMUNITY_FELDER = ("supabase_vertragspartner", "supabase_garantien", "mailversand",
+                    "frist_unvollstaendig", "frist_protokolle", "frist_sicherungen")
+
+
+def community_luecken(r):
+    """Was für die Datenschutzerklärung der Community noch fehlt – unabhängig
+    von nur_privat: Sobald es Konten gibt, muss die Erklärung vollständig sein."""
+    c = r.get("community", {})
+    if not c.get("aktiv"):
+        return []
+    fehlt = [f"community.{k}" for k in COMMUNITY_FELDER
+             if not c.get(k) or c.get(k) == PLATZHALTER]
+    a = r.get("anbieter", {})
+    for feld in ("strasse", "plz_ort", "email"):
+        if not a.get(feld) or a.get(feld) == PLATZHALTER:
+            fehlt.append(f"anbieter.{feld}")
+    return fehlt
+
+
 def datenschutz(r, fehlt):
+    """Datenschutzerklärung. Mit Community nach dem Entwurf von ChatGPT
+    (doku/community/uebergabe.md, Review vom 12.10.2026), Lücken sichtbar
+    markiert. Ohne Community die bisherige Fassung."""
+    a = r.get("anbieter", {})
+    h = r.get("hosting", {})
+    auf = r.get("aufsicht", {})
+    c = r.get("community", {})
+
+    def wert(x):
+        return html.escape(x) if x and x != PLATZHALTER else \
+            '<em style="color:var(--warn-schrift)">— fehlt noch —</em>'
+
+    if not c.get("aktiv"):
+        return datenschutz_ohne_konten(r, fehlt)
+
+    luecken_c = community_luecken(r)
+    kasten = ""
+    if luecken_c:
+        kasten = ('<div class="box achtung"><div class="bk">Noch nicht veröffentlichungsfertig</div>'
+                  '<p>Für die Community fehlen in <code>quellen/rechtliches.json</code> noch: '
+                  + html.escape(", ".join(luecken_c)) +
+                  '. Bis dahin ist diese Erklärung unvollständig.</p></div>')
+
+    return warnkasten(fehlt) + kasten + f'''
+  <div class="schirm-kopf">
+    <h1>Datenschutz</h1>
+    <p>Datenschutzerklärung – AzubiPass und AzubiPass Social. Informationen nach
+       Art. 13 der Datenschutz-Grundverordnung.</p>
+  </div>
+
+  <h2>Verantwortlicher</h2>
+  <p>{wert(a.get("name"))}<br>{wert(a.get("strasse"))}<br>{wert(a.get("plz_ort"))}<br>
+     E-Mail: {wert(a.get("email"))}</p>
+
+  <h2>Lernen und Üben</h2>
+  <p>Lernen und Üben funktionieren ohne Community-Konto. Dein Lernstand bleibt im
+     lokalen Speicher deines Browsers und wird nicht automatisch an den
+     Community-Server übertragen. Dazu gehören beispielsweise bearbeitete Kapitel,
+     Antworten, Karteikarten und Lesezeichen.</p>
+  <p>Du kannst diese Daten unter „Ich" zurücksetzen oder durch Löschen der
+     Websitedaten entfernen. Sicherungsdateien werden auf deinem Gerät erzeugt.</p>
+
+  <h2>Aufruf der Website</h2>
+  <p>AzubiPass wird über {html.escape(h.get("dienst", "GitHub Pages"))} bereitgestellt
+     ({html.escape(h.get("anbieter", ""))}, {html.escape(h.get("anschrift", ""))}).
+     GitHub verarbeitet beim Seitenaufruf technische Zugriffsdaten, insbesondere
+     IP-Adresse und Informationen zur Anfrage und zum verwendeten Gerät. Dies dient
+     der Bereitstellung und Sicherheit der Website. Grundlage ist
+     {html.escape(h.get("grundlage", "Art. 6 Abs. 1 lit. f DSGVO"))}.</p>
+  <p>GitHub verarbeitet Daten auch in den USA und beschreibt hierfür unter anderem
+     das EU-US Data Privacy Framework in seiner Datenschutzerklärung. Die dort
+     erläuterten Aufbewahrungskriterien gelten für seine Verarbeitung.</p>
+
+  <h2>Community-Konto und Anmeldung</h2>
+  <p>Für die Community verarbeiten wir deine E-Mail-Adresse, eine interne Konto-ID
+     sowie technische Anmelde- und Sitzungsinformationen. Die Anmeldung erfolgt
+     über einen E-Mail-Link oder einen Anmeldecode aus der E-Mail.</p>
+  <p>Für das Community-Profil verarbeiten wir deinen Anzeigenamen, optional dein
+     Lehrjahr, deine Rolle, die Zuordnung zur Beta-Freischaltung sowie Angaben zur
+     Alters- und Regelbestätigung und zum Erstellungszeitpunkt.</p>
+  <p>Die erforderliche Kontoverarbeitung dient der Bereitstellung der von dir
+     gewünschten Community und beruht auf Art. 6 Abs. 1 lit. b DSGVO. Technische
+     Sicherheitsmaßnahmen dienen dem Schutz vor Missbrauch und beruhen auf
+     Art. 6 Abs. 1 lit. f DSGVO.</p>
+  <p>Ohne die erforderlichen Angaben ist kein Community-Profil möglich. Dein
+     Lehrjahr ist freiwillig. Lernen und Üben bleiben unabhängig davon nutzbar.</p>
+
+  <h2>Sichtbarkeit und Mindestalter</h2>
+  <p>Anzeigename, optionales Lehrjahr und Rolle sind für freigeschaltete
+     Community-Mitglieder lesbar. Deine E-Mail-Adresse, dein Beta-Zugang und deine
+     Altersbestätigung werden anderen Mitgliedern nicht angezeigt.</p>
+  <p>Die Community richtet sich an Personen ab 16 Jahren. Bei der Profilanlage
+     bestätigst du das Mindestalter. Ein Geburtsdatum wird hierfür nicht
+     abgefragt.</p>
+  <p>Beiträge und Lerngruppen sind im hier beschriebenen Zugangspaket noch nicht
+     verfügbar. Vor ihrer Einführung werden diese Informationen ergänzt.</p>
+
+  <h2>Supabase und E-Mail-Versand</h2>
+  <p>Für Konten, Anmeldung und Community-Profile verwenden wir Supabase. Die
+     Projektdatenbank befindet sich in {html.escape(c.get("datenbank_region", ""))}.</p>
+  <p>Vertragspartner: {wert(c.get("supabase_vertragspartner"))}. Supabase verarbeitet
+     Daten nach dem für das Projekt geltenden Auftragsverarbeitungsvertrag und setzt
+     Unterauftragnehmer ein. Internationale Verarbeitung kann trotz der gewählten
+     Datenbankregion stattfinden. Maßgebliche Garantien und weitere Informationen:
+     {wert(c.get("supabase_garantien"))}.</p>
+  <p>Anmeldemails werden über {wert(c.get("mailversand"))} versendet. Dafür erhält
+     der Anbieter die Empfängeradresse und die für Zustellung und Anmeldung
+     erforderlichen Informationen.</p>
+
+  <h2>Speicherung auf deinem Gerät</h2>
+  <p>Die App speichert Lernstand und erforderliche Sitzungsinformationen im Browser.
+     Die Sitzung ermöglicht, angemeldet zu bleiben. Das Abmelden entfernt die
+     lokalen Sitzungsinformationen; dein lokaler Lernstand bleibt erhalten.</p>
+  <p>Soweit diese Speicherung für die ausdrücklich gewünschten Funktionen unbedingt
+     erforderlich ist, erfolgt sie auf Grundlage von § 25 Abs. 2 Nr. 2 TDDDG.</p>
+
+  <h2>Speicherdauer und Löschung</h2>
+  <p>Konten und Profile werden für die Dauer der Community-Nutzung gespeichert. Für
+     unvollständige Registrierungen gilt {wert(c.get("frist_unvollstaendig"))}.
+     Technische Protokolle werden nach {wert(c.get("frist_protokolle"))} gelöscht;
+     Sicherungskopien nach {wert(c.get("frist_sicherungen"))}.</p>
+  <p>Eine Kontolöschung kannst du über die oben genannte Kontaktadresse anfordern.
+     Gesetzliche Aufbewahrungspflichten oder erforderliche Maßnahmen zur
+     Rechtsverteidigung können einer sofortigen vollständigen Löschung
+     entgegenstehen.</p>
+
+  <h2>Deine Rechte</h2>
+  <p>Du kannst nach den gesetzlichen Voraussetzungen Auskunft, Berichtigung,
+     Löschung, Einschränkung und Datenübertragbarkeit verlangen. Gegen
+     Verarbeitungen auf Grundlage berechtigter Interessen besteht ein
+     Widerspruchsrecht.</p>
+  <p>Du kannst dich bei einer Datenschutzaufsichtsbehörde beschweren,
+     beispielsweise der {html.escape(auf.get("name", ""))}
+     (<a href="{html.escape(auf.get("web", ""))}" rel="noopener noreferrer"
+      target="_blank">{html.escape(auf.get("web", ""))}</a>).</p>
+  <p>Die App verwendet keine Werbe- oder Reichweitenanalyse und trifft keine
+     automatisierten Entscheidungen mit rechtlicher oder vergleichbar erheblicher
+     Wirkung. Die Schriften werden lokal bereitgestellt.</p>
+
+  <p class="stand">Stand: {date.today().strftime("%d.%m.%Y")}</p>
+'''
+
+
+def datenschutz_ohne_konten(r, fehlt):
+    """Bisherige Fassung für den Fall ohne Community (community.aktiv = false)."""
     a = r.get("anbieter", {})
     h = r.get("hosting", {})
     auf = r.get("aufsicht", {})
@@ -1039,6 +1184,9 @@ def baue():
         print("  In quellen/rechtliches.json fehlt: " + ", ".join(fehlt))
         print("  Ohne diese Angaben darf sie nicht geschäftsmäßig betrieben werden.")
         return 1
+    luecken_c = community_luecken(r)
+    if luecken_c:
+        print("  Datenschutz (Community) unvollständig, es fehlt: " + ", ".join(luecken_c))
     if r.get("nur_privat"):
         print("\n  Hinweis: nur_privat steht auf true — öffentlich vorzeigbares,")
         print("  persönliches und nichtkommerzielles Lernprojekt. Vor geschäftsmäßiger")

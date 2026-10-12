@@ -176,8 +176,9 @@
   // Rückfall für installierte Apps: Der Link öffnet oft den Browser statt der
   // App. Dann tippt man den sechsstelligen Code aus derselben Mail hier ein.
   function codePruefen(adresse, code) {
-    var c6 = String(code || "").replace(/\D/g, "");
-    if (c6.length < 6) return Promise.reject(fehler("Der Code hat sechs Ziffern.", "eingabe"));
+    // Wie in der Oberfläche: Leerzeichen sind egal, sonst genau sechs Ziffern.
+    var c6 = String(code || "").replace(/\s+/g, "");
+    if (!/^\d{6}$/.test(c6)) return Promise.reject(fehler("Der Anmeldecode besteht aus sechs Ziffern.", "eingabe"));
     return mailPruefen(adresse).then(function (a) {
       return mit(function (c) {
         return c.auth.verifyOtp({ email: a, token: c6, type: "email" }).then(auspacken);
@@ -279,7 +280,9 @@
   function profilAnlegen(eingabe) {
     var e = eingabe || {};
     var name = String(e.anzeigename || "").trim();
-    if (name.length < 2 || name.length > 30)
+    // Zählen wie die Datenbank (char_length): Codepunkte, nicht UTF-16-Einheiten.
+    var laenge = Array.from(name).length;
+    if (laenge < 2 || laenge > 30)
       return Promise.reject(fehler("Der Anzeigename braucht 2 bis 30 Zeichen.", "eingabe"));
     var jahr = e.lehrjahr ? Number(e.lehrjahr) : null;
     if (jahr !== null && [1, 2, 3].indexOf(jahr) < 0)

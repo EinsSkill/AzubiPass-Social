@@ -31,10 +31,36 @@ selbst bietet nur die Anmeldung per Mail an.
 
 ## Testkonten ohne Profil
 
-`quellen/community_zugang_test.py` braucht vier Konten **ohne** Profil
+`quellen/community_zugang_test.py` braucht neun Konten **ohne** Profil
 (`COMMUNITY_TEST_NEU`); nach einem Lauf haben sie eins. Angelegt sind
-`test-neu1@…` bis `test-neu28@azubipass.invalid` (gleiches Passwort wie die
-Demo-Konten). Stand 08.10.2026 noch **ohne** Profil: 26, 27, 28 –
-alle anderen sind verbraucht (teilweise durch abgebrochene Läufe). Neue Konten lassen sich per SQL anlegen
-(Muster im Verlauf von `doku/community/uebergabe.md`). Alle Testkonten tragen
-in `raw_app_meta_data` den Eintrag `"demo": true`.
+alle `@azubipass.invalid` (gleiches Passwort wie die Demo-Konten). Stand 12.10.2026: `test-neu1` bis `test-neu88`; noch **ohne** Profil: 26–28, 33,
+34, 37, 42, 43, 46, 51, 52, 55–88 (45 Konten). Der Zugangstest braucht seit dem
+12.10. neun davon je Lauf. Alle Testkonten tragen in `raw_app_meta_data` den Eintrag `"demo": true`.
+Neue Konten im SQL-Editor anlegen (`<HASH>` = bcrypt-Hash des Testpassworts,
+steht nicht im Repo; `<VON>`/`<BIS>` = Nummernbereich):
+
+```sql
+with neu as (
+  select gen_random_uuid() as id, 'test-neu' || n || '@azubipass.invalid' as email
+  from generate_series(<VON>, <BIS>) n
+), u as (
+  insert into auth.users (instance_id, id, aud, role, email, encrypted_password, email_confirmed_at,
+    raw_app_meta_data, raw_user_meta_data, created_at, updated_at, confirmation_token, recovery_token,
+    email_change_token_new, email_change, email_change_token_current, reauthentication_token,
+    phone_change, phone_change_token)
+  select '00000000-0000-0000-0000-000000000000', id, 'authenticated', 'authenticated', email,
+    '<HASH>', now(), '{"provider":"email","providers":["email"],"demo":true}', '{}', now(), now(),
+    '', '', '', '', '', '', '', ''
+  from neu returning id, email
+)
+insert into auth.identities (provider_id, user_id, identity_data, provider, last_sign_in_at, created_at, updated_at)
+select id::text, id, json_build_object('sub', id::text, 'email', email, 'email_verified', true),
+       'email', now(), now(), now() from u;
+```
+
+## Bekannte Grenzen
+
+- Speicherregel „lernzettel: sehen …“ erlaubt das Lesen von Dateien im **eigenen**
+  Ordner ohne Profilprüfung. Relevant nur, wenn ein Profil entfernt wird, aber
+  Dateien bleiben. Hinweis aus ChatGPTs Review vom 12.10.2026; bewusst noch nicht
+  geändert (kein Auftrag für Regeländerungen).

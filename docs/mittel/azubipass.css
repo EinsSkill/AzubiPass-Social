@@ -1965,6 +1965,10 @@ select.cm-eingabe{appearance:none;-webkit-appearance:none;cursor:pointer;
 select.cm-eingabe option{background:#12301F;color:#F5F5F0;}
 .cm-eingabe:focus-visible{border-color:var(--tinte);outline:2px solid var(--hm-gold-hell);outline-offset:2px;}
 .cm-mono{font-family:var(--mono);letter-spacing:.06em;}
+/* Pflichtangabe als Text, nicht nur als Farbe oder Sternchen. */
+.cm-pflicht{font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--text-sek);margin-left:10px;white-space:nowrap;}
+.cm-haken .cm-pflicht{margin-left:8px;}
 .cm-hilfe{font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--text-sek);margin:0;}
 .cm-fehler{font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--warn-schrift);margin:0;
   padding-left:10px;border-left:3px solid var(--warn-schrift);}
