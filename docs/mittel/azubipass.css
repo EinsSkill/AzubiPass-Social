@@ -90,7 +90,11 @@ button{font:inherit;}
 .kapitel-auftakt{max-width:var(--mass);margin:0 auto;padding:120px 48px 56px;display:grid;grid-template-columns:180px 1fr;gap:48px;align-items:start;}
 .kapitel-nr{font-family:var(--serif);font-size:118px;line-height:.8;font-weight:700;color:var(--gold-gross);letter-spacing:-.04em;}
 .kapitel-nr small{display:block;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text-sek);margin-top:18px;}
-.kapitel-auftakt h2{font-size:42px;line-height:1.1;font-weight:700;letter-spacing:-.02em;margin:0 0 12px;}
+.kapitel-auftakt h2{font-size:42px;line-height:1.1;font-weight:700;letter-spacing:-.02em;margin:0 0 12px;
+  overflow-wrap:break-word;hyphens:auto;}
+/* Gesamtaudit A09: Rasterspalten dürfen schmaler werden als ihr längstes Wort –
+   sonst schieben „Betriebsabrechnungsbogen“ & Co. die Seite bei 320 px auf. */
+.kapitel-auftakt > *,.ziele > *,.lauf > *,.abschluss > *{min-width:0;}
 .kapitel-auftakt p{font-size:20px;color:var(--text-sek);margin:0;max-width:48ch;}
 .kapitel-werkzeuge{margin-top:22px;}
 .detail-schalter{min-height:44px;padding:11px 15px;border:1px solid var(--tinte);
@@ -404,6 +408,16 @@ tr.detail td strong{color:var(--gold);}
 .ksatz{font-family:var(--mono);font-size:12px;color:#D8B23A;margin-bottom:6px;}
 .ktext{font-family:var(--sans);font-size:14px;line-height:1.5;color:rgba(245,245,240,.65);max-height:0;overflow:hidden;transition:max-height .45s ease;}
 .kglied.offen .ktext{max-height:200px;}
+/* Gesamtaudit A06: Kopfzeilen sind echte Knöpfe, sehen aber aus wie vorher. */
+.kkopf,.vgl-knopf{display:block;width:100%;margin:0;padding:0;border:0;background:none;font:inherit;
+  color:inherit;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none;}
+.kkopf .ktitel,.kkopf .ksatz,.vgl-knopf .vgl-text{display:block;}
+/* Der Knopf trägt den Innenabstand, damit er selbst mindestens 44 px hoch ist. */
+.vgl-knopf{min-height:44px;padding:12px 0;display:flex;align-items:center;}
+.vgl-knopf .vgl-text{flex:1;}
+.vgl-punkt.auf .vgl-detail{padding-bottom:10px;}
+.kglied:not(.frei) .kkopf{cursor:default;}
+.kkopf:focus-visible,.vgl-knopf:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px;}
 
 /* Kalkulationsleiter */
 .leiter{font-family:var(--mono);font-size:13.5px;font-variant-numeric:tabular-nums;}
@@ -496,7 +510,7 @@ tr.detail td strong{color:var(--gold);}
 .vgl-seite.gold .vgl-kopf{color:var(--gold);border-color:var(--gold);}
 .vgl-seite.gruen .vgl-kopf{color:#7FC4A0;border-color:#7FC4A0;}
 .vgl-seite.rot .vgl-kopf{color:#E8A08F;border-color:#E8A08F;}
-.vgl-punkt{border-left:2px solid rgba(245,245,240,.18);padding:9px 0 9px 13px;margin-bottom:5px;cursor:pointer;transition:border-color .25s;}
+.vgl-punkt{border-left:2px solid rgba(245,245,240,.18);padding:0 0 0 13px;margin-bottom:5px;cursor:pointer;transition:border-color .25s;}
 .vgl-punkt:hover{border-left-color:var(--gold);}
 .vgl-punkt.auf{border-left-color:var(--gold);}
 .vgl-text{font-family:var(--sans);font-size:14px;line-height:1.45;color:rgba(245,245,240,.85);position:relative;padding-right:16px;}
@@ -817,7 +831,9 @@ tr.detail td strong{color:var(--gold);}
   color:#6C5208;margin-bottom:16px;}
 .tr-frage{font-family:var(--serif);font-size:23px;line-height:1.42;margin:0;font-weight:600;color:#1A1D1A;}
 .tr-seite .dreher{margin-top:26px;}
-.tr-seite > .dreher,.seite > .dreher{color:#6C5208;border-color:rgba(26,29,26,.28);}
+/* Gesamtaudit A11: Die dunkle Schrift gilt nur auf hellen Kartenseiten. Die
+   Rückseite (.rueck, tiefgrün) behält ihre helle Goldschrift. */
+.tr-seite > .dreher,.seite:not(.rueck) > .dreher{color:#6C5208;border-color:rgba(26,29,26,.28);}
 
 .tr-antwort{background:#F2EBD8;color:#1A1D1A;border-left:3px solid var(--gold);
   padding:24px 34px 22px;margin-top:2px;opacity:0;transform:translateY(-6px);
@@ -1939,6 +1955,11 @@ a.hm-pflicht:hover{border-top-color:rgba(201,162,39,.6);}
 @media (prefers-reduced-motion:reduce){
   .pk--fortschritt span{transition:none;}
 }
+
+/* Gesamtaudit A09: Rechtstexte nennen fehlende Angaben mit ihrem technischen
+   Schlüssel (community.supabase_vertragspartner …). Die dürfen umbrechen,
+   statt die Seite bei 320 px aufzuschieben. */
+.rechtstext{overflow-wrap:break-word;}
 
 /* ================================================================= Community
    Zugang zur Community (doku/community/02-anmeldung-profil.md). Dieselbe

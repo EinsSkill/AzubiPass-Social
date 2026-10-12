@@ -52,6 +52,7 @@ python build_landing.py
 ```bash
 python pruefe.py
 python funktionstest.py
+python lernkern_audit_test.py   # Korrekturen zum Gesamtaudit (A01–A11)
 ```
 
 Community (AzubiPass Social, braucht Internet und die Demo-Konten – Zugangsdaten

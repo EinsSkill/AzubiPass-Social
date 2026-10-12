@@ -127,6 +127,13 @@
       }
     }
 
+    // Alles durch – egal, ob ein Verlauf da ist (Gesamtaudit A10: nach einer
+    // Sicherung ohne „zuletzt“ kam sonst wieder der erste Schritt).
+    if (!reihe.some(offen)) {
+      return { art: "fertig", zu: "app.html#ueben", titel: "Alle Kapitel durch.",
+               wo: "", knopf: "Prüfungstraining öffnen" };
+    }
+
     // Ohne eigenen Verlauf gibt es keine sinnvolle Empfehlung. Der erste
     // Besuch führt deshalb zur freien Themenwahl statt stillschweigend in LF1.
     if (!z || !z.zu) {
@@ -1635,81 +1642,110 @@
           + "Nichts geändert.";
         return;
       }
-      var lokaleZeit = zeitstempel(stand.geaendertAm);
-      var fremdeZeit = zeitstempel(neu.geaendertAm);
-      var fremdeSicherungIstNeuer = fremdeZeit > lokaleZeit;
-      /* Zusammenführen statt überschreiben: Wer auf zwei Geräten gelernt hat,
-         soll nicht die Hälfte verlieren. Eine ältere Sicherung darf dabei
-         keinen neueren Kapitelstand zurücksetzen. */
-      Object.keys(neu.fortschritt || {}).forEach(function (k) {
-        if (!stand.fortschritt[k]) {
-          stand.fortschritt[k] = fortschrittZusammenfuehren({}, neu.fortschritt[k], true);
-        } else {
-          stand.fortschritt[k] = fortschrittZusammenfuehren(
-            stand.fortschritt[k], neu.fortschritt[k], fremdeSicherungIstNeuer);
-        }
-      });
-      Object.keys(neu.karten || {}).forEach(function (id) {
-        var alt = stand.karten[id];
-        if (!alt || (neu.karten[id].fach || 0) > (alt.fach || 0) ||
-            ((neu.karten[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
-          stand.karten[id] = neu.karten[id];
-        }
-      });
-      Object.keys(neu.vokabeln || {}).forEach(function (id) {
-        var alt = stand.vokabeln[id];
-        if (!alt || (neu.vokabeln[id].fach || 0) > (alt.fach || 0) ||
-            ((neu.vokabeln[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
-          stand.vokabeln[id] = neu.vokabeln[id];
-        }
-      });
-      stand.quiz = werteZusammenfuehren(stand.quiz, neu.quiz, fremdeSicherungIstNeuer);
-      (neu.aktivitaet || []).forEach(function (t) {
-        if (stand.aktivitaet.indexOf(t) === -1) stand.aktivitaet.push(t);
-      });
-      (neu.lesezeichen || []).forEach(function (e) {
-        if (!stand.lesezeichen.some(function (x) { return x.zu === e.zu; })) {
-          stand.lesezeichen.push(e);
-        }
-      });
-      /* Klausurergebnisse gehören zum Konto und müssen deshalb beim
-         Zusammenführen ebenfalls erhalten bleiben. Die laufende Klausur hat
-         weiterhin ihren eigenen Schlüssel; hier liegen nur abgeschlossene
-         Ergebniszusammenfassungen. */
-      (Array.isArray(neu.probeklausuren) ? neu.probeklausuren : []).forEach(function (e) {
-        if (!e || typeof e !== "object") return;
-        var id = probeklausurId(e);
-        var i = stand.probeklausuren.findIndex(function (x) {
-          return probeklausurId(x) === id;
-        });
-        if (i < 0) {
-          stand.probeklausuren.push(e);
-          return;
-        }
-        var alt = stand.probeklausuren[i];
-        var neuAbgeschlossen = e.status === "abgeschlossen";
-        var altAbgeschlossen = alt && alt.status === "abgeschlossen";
-        if ((neuAbgeschlossen && !altAbgeschlossen) ||
-            probeklausurZeit(e) >= probeklausurZeit(alt)) {
-          stand.probeklausuren[i] = e;
-        }
-      });
-      if (stand.probeklausuren.length > 50) stand.probeklausuren = stand.probeklausuren.slice(0, 50);
-      if (neu.zuletzt && (!stand.zuletzt || fremdeSicherungIstNeuer)) {
-        stand.zuletzt = neu.zuletzt;
+      /* Gesamtaudit A01: Erst die ganze Datei prüfen, dann in einer Kopie
+         zusammenführen und erst ganz am Ende in einem Schritt übernehmen.
+         Ein Fehler unterwegs lässt den Lernstand, wie er war. */
+      var probleme = AP.sicherungPruefen(neu);
+      if (probleme.length) {
+        meldung.className = "meldung fehler";
+        meldung.textContent = "Diese Sicherung ist beschädigt und wurde nicht eingespielt ("
+          + probleme.join(", ") + "). Nichts geändert.";
+        return;
       }
-      // Nur übernehmen, was der Countdown auch rechnen kann — sonst schleppt
-      // eine alte Sicherung einen kaputten Termin ins frische Konto.
-      if (AP.istDatum(neu.pruefungstermin) &&
-          (!stand.pruefungstermin || fremdeSicherungIstNeuer)) {
-        stand.pruefungstermin = neu.pruefungstermin;
+      var ziel;
+      try {
+        ziel = JSON.parse(JSON.stringify(stand));
+        zusammenfuehren(ziel, neu);
+      } catch (e) {
+        meldung.className = "meldung fehler";
+        meldung.textContent = "Diese Sicherung ließ sich nicht einspielen. Nichts geändert.";
+        return;
       }
-      sichern();
+      if (!AP.kontoErsetzen(ziel)) {
+        meldung.className = "meldung fehler";
+        meldung.textContent = "Eingespielt, aber dieser Browser hat es nicht gespeichert "
+          + "(Speicher voll oder gesperrt). Nach dem Neuladen ist es wieder weg.";
+        setTimeout(function () { zeigeIch(s); }, 1800);
+        return;
+      }
       meldung.className = "meldung";
       meldung.textContent = "Eingespielt und mit dem zusammengeführt, was schon hier war.";
       setTimeout(function () { zeigeIch(s); }, 900);
     };
     leser.readAsText(datei);
+  }
+
+  /* Führt eine geprüfte Sicherung in ziel (eine Kopie des Kontos) zusammen. */
+  function zusammenfuehren(stand, neu) {
+    var lokaleZeit = zeitstempel(stand.geaendertAm);
+    var fremdeZeit = zeitstempel(neu.geaendertAm);
+    var fremdeSicherungIstNeuer = fremdeZeit > lokaleZeit;
+    /* Zusammenführen statt überschreiben: Wer auf zwei Geräten gelernt hat,
+       soll nicht die Hälfte verlieren. Eine ältere Sicherung darf dabei
+       keinen neueren Kapitelstand zurücksetzen. */
+    Object.keys(neu.fortschritt || {}).forEach(function (k) {
+      if (!stand.fortschritt[k]) {
+        stand.fortschritt[k] = fortschrittZusammenfuehren({}, neu.fortschritt[k], true);
+      } else {
+        stand.fortschritt[k] = fortschrittZusammenfuehren(
+          stand.fortschritt[k], neu.fortschritt[k], fremdeSicherungIstNeuer);
+      }
+    });
+    Object.keys(neu.karten || {}).forEach(function (id) {
+      var alt = stand.karten[id];
+      if (!alt || (neu.karten[id].fach || 0) > (alt.fach || 0) ||
+          ((neu.karten[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
+        stand.karten[id] = neu.karten[id];
+      }
+    });
+    Object.keys(neu.vokabeln || {}).forEach(function (id) {
+      var alt = stand.vokabeln[id];
+      if (!alt || (neu.vokabeln[id].fach || 0) > (alt.fach || 0) ||
+          ((neu.vokabeln[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
+        stand.vokabeln[id] = neu.vokabeln[id];
+      }
+    });
+    stand.quiz = werteZusammenfuehren(stand.quiz, neu.quiz, fremdeSicherungIstNeuer);
+    (neu.aktivitaet || []).forEach(function (t) {
+      if (stand.aktivitaet.indexOf(t) === -1) stand.aktivitaet.push(t);
+    });
+    (neu.lesezeichen || []).forEach(function (e) {
+      if (!stand.lesezeichen.some(function (x) { return x.zu === e.zu; })) {
+        stand.lesezeichen.push(e);
+      }
+    });
+    /* Klausurergebnisse gehören zum Konto und müssen deshalb beim
+       Zusammenführen ebenfalls erhalten bleiben. Die laufende Klausur hat
+       weiterhin ihren eigenen Schlüssel; hier liegen nur abgeschlossene
+       Ergebniszusammenfassungen. */
+    (Array.isArray(neu.probeklausuren) ? neu.probeklausuren : []).forEach(function (e) {
+      if (!e || typeof e !== "object") return;
+      var id = probeklausurId(e);
+      var i = stand.probeklausuren.findIndex(function (x) {
+        return probeklausurId(x) === id;
+      });
+      if (i < 0) {
+        stand.probeklausuren.push(e);
+        return;
+      }
+      var alt = stand.probeklausuren[i];
+      var neuAbgeschlossen = e.status === "abgeschlossen";
+      var altAbgeschlossen = alt && alt.status === "abgeschlossen";
+      if ((neuAbgeschlossen && !altAbgeschlossen) ||
+          probeklausurZeit(e) >= probeklausurZeit(alt)) {
+        stand.probeklausuren[i] = e;
+      }
+    });
+    if (stand.probeklausuren.length > 50) stand.probeklausuren = stand.probeklausuren.slice(0, 50);
+    if (neu.zuletzt && (!stand.zuletzt || fremdeSicherungIstNeuer)) {
+      stand.zuletzt = neu.zuletzt;
+    }
+    // Nur übernehmen, was der Countdown auch rechnen kann — sonst schleppt
+    // eine alte Sicherung einen kaputten Termin ins frische Konto.
+    if (AP.istDatum(neu.pruefungstermin) &&
+        (!stand.pruefungstermin || fremdeSicherungIstNeuer)) {
+      stand.pruefungstermin = neu.pruefungstermin;
+    }
   }
 
   function zuruecksetzen(meldung, s) {
@@ -1787,8 +1823,12 @@
 
     if (!("serviceWorker" in navigator)) return;
     var laedtNeu = false;
+    // Neu laden nur, wenn eine alte Fassung abgelöst wird. Beim allerersten
+    // Besuch übernimmt der Zwischenspeicher die Seite nur – die Seite ist
+    // schon die aktuelle, ein Neuladen würde nur einmalige Hinweise schlucken.
+    var hatteFassung = !!navigator.serviceWorker.controller;
     navigator.serviceWorker.addEventListener("controllerchange", function () {
-      if (laedtNeu) return;
+      if (laedtNeu || !hatteFassung) { hatteFassung = true; return; }
       laedtNeu = true;
       location.reload();
     });

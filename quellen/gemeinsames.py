@@ -9,6 +9,7 @@ auseinander, schreibt ein Skript still etwas anderes — ohne Fehlermeldung. So
 etwas findet man erst, wenn eine Seite alt aussieht und niemand weiß, warum.
 """
 
+import hashlib
 import html
 import json
 import shutil
@@ -198,3 +199,113 @@ def fussleiste():
             '<a href="datenschutz.html">Datenschutz</a>'
             f'<span>{MARKE}</span>'
             '</footer>')
+
+
+# ---------------------------------------------------------------- Zwischenspeicher
+
+SW_VORLAGE = '''/* AzubiPass · Zwischenspeicher
+   Erzeugt von quellen/gemeinsames.py — nicht von Hand bearbeiten.
+
+   Eine Fassung = ein Speicher mit genau den Dateien dieses Baus. Jede Datei
+   hat einen Prüfwert (SHA-256). Installiert wird nur, wenn ALLE Dateien
+   ankommen und ALLE Prüfwerte stimmen – sonst bleibt die bisherige Fassung
+   unverändert in Betrieb, und beim nächsten Besuch wird es neu versucht.
+   Später wird nichts aus dem Netz in den Speicher einer Fassung nachgefüllt:
+   So kann es kein Gemisch aus zwei Fassungen geben (Gesamtaudit A04).
+
+   Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
+   sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
+
+var SPEICHER = "azubipass-%VERSION%";
+var VORRAT = %DATEIEN%;
+
+function hex(puffer) {
+  return Array.prototype.map.call(new Uint8Array(puffer), function (b) {
+    return ("0" + b.toString(16)).slice(-2);
+  }).join("");
+}
+
+function holen(pfad, pruefwert) {
+  return fetch(new Request(pfad, { cache: "reload" })).then(function (antwort) {
+    if (!antwort.ok) throw new Error(pfad + ": " + antwort.status);
+    return antwort.arrayBuffer().then(function (puffer) {
+      return crypto.subtle.digest("SHA-256", puffer).then(function (wert) {
+        if (hex(wert) !== pruefwert) throw new Error(pfad + ": andere Fassung");
+        return [pfad, new Response(puffer, { status: 200, headers: antwort.headers })];
+      });
+    });
+  });
+}
+
+self.addEventListener("install", function (e) {
+  var namen = Object.keys(VORRAT);
+  e.waitUntil(
+    Promise.all(namen.map(function (n) { return holen(n, VORRAT[n]); }))
+      .then(function (alle) {
+        return caches.open(SPEICHER).then(function (c) {
+          return Promise.all(alle.map(function (x) { return c.put(x[0], x[1]); }));
+        });
+      })
+      .catch(function (fehler) {
+        // Halbe Fassung wegwerfen; die Installation scheitert sichtbar.
+        return caches.delete(SPEICHER).then(function () { throw fehler; });
+      })
+  );
+});
+
+self.addEventListener("activate", function (e) {
+  e.waitUntil(caches.keys().then(function (namen) {
+    return Promise.all(namen.map(function (n) {
+      return n !== SPEICHER && n.indexOf("azubipass-") === 0 ? caches.delete(n) : null;
+    }));
+  }).then(function () { return self.clients.claim(); }));
+});
+
+self.addEventListener("message", function (e) {
+  if (e.data === "uebernehmen") self.skipWaiting();
+});
+
+self.addEventListener("fetch", function (e) {
+  var anfrage = e.request;
+  if (anfrage.method !== "GET") return;
+  var url = new URL(anfrage.url);
+  if (url.origin !== self.location.origin) return;
+
+  e.respondWith(caches.open(SPEICHER).then(function (c) {
+    // Nur aus der eigenen Fassung – nie aus einem anderen Speicher.
+    return c.match(anfrage, { ignoreSearch: true }).then(function (treffer) {
+      if (treffer) return treffer;
+      // Nicht im Vorrat: durchreichen, aber nicht in diese Fassung legen.
+      return fetch(anfrage).catch(function () {
+        return anfrage.mode === "navigate" ? c.match("app.html") : Response.error();
+      });
+    });
+  }));
+});
+'''
+
+
+def zwischenspeicher_schreiben():
+    """Schreibt docs/sw.js mit allen Dateien, die die App offline braucht,
+    jeweils mit SHA-256-Prüfwert. Läuft am Ende jedes Bauschritts, damit die
+    Prüfwerte zum tatsächlich geschriebenen Stand passen. Die Kennung der
+    Fassung folgt aus den Prüfwerten: gleicher Inhalt, gleiche Fassung."""
+    def wert(pfad):
+        return hashlib.sha256(pfad.read_bytes()).hexdigest()
+    vorrat = {}
+    for p in sorted(AUSGABE.glob("*.html")):
+        vorrat[p.name] = wert(p)
+    if (AUSGABE / "manifest.webmanifest").exists():
+        vorrat["manifest.webmanifest"] = wert(AUSGABE / "manifest.webmanifest")
+    if MITTEL.is_dir():
+        for p in sorted(MITTEL.iterdir()):
+            if p.is_file():
+                vorrat["mittel/" + p.name] = wert(p)
+    if "index.html" in vorrat:
+        vorrat["./"] = vorrat["index.html"]
+    fassung = hashlib.sha256(json.dumps(vorrat, sort_keys=True).encode()).hexdigest()[:16]
+    (AUSGABE / "sw.js").write_text(
+        SW_VORLAGE.replace("%VERSION%", fassung)
+                  .replace("%DATEIEN%", json.dumps(vorrat, ensure_ascii=False, indent=2, sort_keys=True)),
+        encoding="utf-8")
+    return list(vorrat)

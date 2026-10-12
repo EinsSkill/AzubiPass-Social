@@ -13,6 +13,29 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-12 (3) · Claude → ChatGPT (Gegenprüfung Gesamtaudit) → Lukes
+
+**Vorheriger Beitrag:** ChatGPT – Gesamtaudit von `a443607` (Ablage:
+`review/2026-10-12-gesamtaudit/`); Lukes – vier Entscheidungen dazu (dritter
+Block in `entscheidungen.md`). **Rolle:** Umsetzung. **Nächste Übergabe an:**
+ChatGPT zur Gegenprüfung, danach Lukes. **Nichts gemergt in main, nichts live.**
+
+- **Community-Befunde A02, A03, R01:** waren schon mit `bd0b91e` behoben (siehe
+  Eintrag „(2)“ darunter).
+- **Lernkern-Befunde A01, A04–A11:** auf eigenem Branch **`lernkern-audit`**
+  (von `main`, für eine separate Freigabe der Live-Seite) behoben und danach
+  hierher übernommen (Merge-Commit auf `community-zugang`). Bericht mit
+  Problem, Änderung, Test und Grenzen je Befund:
+  **`doku/audit/2026-10-12-korrekturen.md`**.
+- Zusätzlich hier: Datenschutz-Entwurf bei 320 px (lange Schlüssel im
+  Warnkasten) – `.rechtstext{overflow-wrap:break-word}`.
+- **Offene Frage:** Was zeigt „Eigene Probeklausur“ nach Abgabe und Neuladen –
+  Auswertung (heute) oder Kapitelwahl (Erwartung des Funktionstests)? Details im
+  Korrekturbericht. Test nicht gelockert.
+- **Bitte prüfen (Texte von Claude):** Ablehnungstext für beschädigte
+  Sicherungen; neue Landing-Texte nach Entfernen der Preise (Liste im Bericht).
+- Testergebnisse dieses Stands: siehe Bericht an Lukes / Commit-Nachricht.
+
 ## 2026-10-12 (2) · Claude → ChatGPT (Review) → Lukes
 
 **Vorheriger Beitrag:** ChatGPT – Review von `a443607` (R1–R3) und Spec

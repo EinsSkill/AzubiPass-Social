@@ -30,7 +30,7 @@ from pathlib import Path
 from build import karten_sammeln, option_ids
 from gemeinsames import (AUSGABE, LUPE, MARKE, MITTEL, fussleiste, kopf, lade,
                          lernfeld_dateien, rechtliches, schriften_lokal,
-                         tableiste, veroeffentliche)
+                         tableiste, veroeffentliche, zwischenspeicher_schreiben)
 
 HIER = Path(__file__).parent
 PLATZHALTER = "BITTE_AUSFUELLEN"
@@ -962,72 +962,7 @@ def manifest():
     }, ensure_ascii=False, indent=2)
 
 
-SW_VORLAGE = '''/* AzubiPass · Zwischenspeicher
-   Erzeugt von build_app.py — nicht von Hand bearbeiten.
-
-   Der Name des Speichers trägt das Baudatum. Ein neuer Bau legt deshalb einen
-   neuen an und räumt die alten weg; ein halb altes, halb neues Gemisch kann es
-   nicht geben.
-
-   Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
-   sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
-
-var SPEICHER = "azubipass-%VERSION%";
-var VORRAT = %DATEIEN%;
-
-self.addEventListener("install", function (e) {
-  e.waitUntil(caches.open(SPEICHER).then(function (c) {
-    // Einzeln statt addAll: Eine fehlende Datei soll nicht die ganze
-    // Installation scheitern lassen — dann liefe gar nichts offline.
-    return Promise.all(VORRAT.map(function (u) {
-      return c.add(new Request(u, { cache: "reload" })).catch(function () {});
-    }));
-  }));
-});
-
-self.addEventListener("activate", function (e) {
-  e.waitUntil(caches.keys().then(function (namen) {
-    return Promise.all(namen.map(function (n) {
-      return n !== SPEICHER && n.indexOf("azubipass-") === 0 ? caches.delete(n) : null;
-    }));
-  }).then(function () { return self.clients.claim(); }));
-});
-
-self.addEventListener("message", function (e) {
-  if (e.data === "uebernehmen") self.skipWaiting();
-});
-
-self.addEventListener("fetch", function (e) {
-  var anfrage = e.request;
-  if (anfrage.method !== "GET") return;
-  var url = new URL(anfrage.url);
-  if (url.origin !== self.location.origin) return;
-
-  e.respondWith(
-    caches.match(anfrage, { ignoreSearch: true }).then(function (treffer) {
-      if (treffer) return treffer;
-      return fetch(anfrage).then(function (antwort) {
-        if (antwort && antwort.ok && antwort.type === "basic") {
-          var kopie = antwort.clone();
-          caches.open(SPEICHER).then(function (c) { c.put(anfrage, kopie); });
-        }
-        return antwort;
-      }).catch(function () {
-        // Ohne Netz und ohne Vorrat: Wenigstens die App statt eines
-        // Browserfehlers, damit man von dort weiterkommt.
-        return anfrage.mode === "navigate" ? caches.match("app.html") : Response.error();
-      });
-    })
-  );
-});
-'''
-
-
-def service_worker(dateien):
-    version = datetime.now().strftime("%Y%m%d-%H%M%S")
-    return (SW_VORLAGE
-            .replace("%VERSION%", version)
-            .replace("%DATEIEN%", json.dumps(sorted(dateien), ensure_ascii=False, indent=2)))
+# Der Zwischenspeicher (sw.js) entsteht in gemeinsames.py, nach jedem Bauschritt.
 
 
 # ---------------------------------------------------------------- Community-Regeln
@@ -1162,11 +1097,10 @@ def baue():
         rechtsseite("Datenschutz", "Wie diese Seite mit Daten umgeht.",
                     datenschutz(r, fehlt), stil, kernel), encoding="utf-8")
 
-    # Vorrat für den Zwischenspeicher: alles, was die App offline braucht
-    dateien = ["./", "app.html", "manifest.webmanifest"]
-    dateien += [p.name for p in sorted(AUSGABE.glob("*.html"))]
-    dateien += ["mittel/" + p.name for p in sorted(MITTEL.iterdir()) if p.is_file()]
-    (AUSGABE / "sw.js").write_text(service_worker(dateien), encoding="utf-8")
+    # Vorrat für den Zwischenspeicher: alles, was die App offline braucht –
+    # mit Prüfwert je Datei (Gesamtaudit A04). build_landing.py schreibt ihn
+    # nach seinem Teil erneut, damit die Prüfwerte zum fertigen Stand passen.
+    dateien = zwischenspeicher_schreiben()
 
     gewicht = sum((AUSGABE / d).stat().st_size for d in dateien
                   if d != "./" and (AUSGABE / d).exists())
