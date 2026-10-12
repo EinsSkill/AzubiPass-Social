@@ -14,7 +14,7 @@ import html
 from datetime import date, timedelta
 from pathlib import Path
 
-from gemeinsames import AUSGABE, schriftkopf, veroeffentliche
+from gemeinsames import AUSGABE, schriftkopf, veroeffentliche, zwischenspeicher_schreiben
 
 HIER = Path(__file__).parent
 MONATE = ["Jan.", "Feb.", "März", "April", "Mai", "Juni",
@@ -422,6 +422,8 @@ def baue():
     print(f"  Fertigstellung des letzten Lernfelds berechnet auf {letzter.isoformat()}")
     if cfg["pruefung"].get("pruefen"):
         print(f"  ACHTUNG: {cfg['pruefung']['pruefen']}")
+    # Die Landing Page gehört zum Offline-Vorrat: Prüfwerte neu schreiben.
+    zwischenspeicher_schreiben()
     return ziel
 
 

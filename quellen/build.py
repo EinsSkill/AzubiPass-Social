@@ -16,7 +16,8 @@ import sys
 from pathlib import Path
 
 from gemeinsames import (AUSGABE, LUPE, fussleiste, kopf, lade, lernfeld_dateien,
-                         schriften_lokal, tableiste, veroeffentliche)
+                         schriften_lokal, tableiste, veroeffentliche,
+                         zwischenspeicher_schreiben)
 
 HIER = Path(__file__).parent
 
@@ -685,3 +686,6 @@ if __name__ == "__main__":
     for datei in dateien:
         print(f"· {Path(datei).name}")
         baue(datei)
+    # Geänderte Kapitelseiten: Prüfwerte im Offline-Vorrat nachziehen.
+    if (AUSGABE / "sw.js").exists():
+        zwischenspeicher_schreiben()
