@@ -1814,8 +1814,12 @@
 
     if (!("serviceWorker" in navigator)) return;
     var laedtNeu = false;
+    // Neu laden nur, wenn eine alte Fassung abgelöst wird. Beim allerersten
+    // Besuch übernimmt der Zwischenspeicher die Seite nur – die Seite ist
+    // schon die aktuelle, ein Neuladen würde nur einmalige Hinweise schlucken.
+    var hatteFassung = !!navigator.serviceWorker.controller;
     navigator.serviceWorker.addEventListener("controllerchange", function () {
-      if (laedtNeu) return;
+      if (laedtNeu || !hatteFassung) { hatteFassung = true; return; }
       laedtNeu = true;
       location.reload();
     });

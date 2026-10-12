@@ -918,7 +918,8 @@ def probeklausur_klausur(b, w):
     pg.wait_for_timeout(900)
     pruefe("Abgeschlossene Klausur wird nicht als laufende angezeigt",
            pg.locator("#pk-uhr").count() == 0
-           and pg.locator("#ueben .pk--kapitel").count() > 0)
+           and pg.locator("#ueben .pk--kapitel").count() > 0,
+           " | ".join(pg.locator("#ueben").inner_text().split("\n")[:4]))
 
     # Verwerfen betrifft nur den Klausurzustand
     pg.evaluate("""() => {

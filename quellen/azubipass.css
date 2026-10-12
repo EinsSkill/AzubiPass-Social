@@ -412,6 +412,10 @@ tr.detail td strong{color:var(--gold);}
 .kkopf,.vgl-knopf{display:block;width:100%;margin:0;padding:0;border:0;background:none;font:inherit;
   color:inherit;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none;}
 .kkopf .ktitel,.kkopf .ksatz,.vgl-knopf .vgl-text{display:block;}
+/* Der Knopf trägt den Innenabstand, damit er selbst mindestens 44 px hoch ist. */
+.vgl-knopf{min-height:44px;padding:12px 0;display:flex;align-items:center;}
+.vgl-knopf .vgl-text{flex:1;}
+.vgl-punkt.auf .vgl-detail{padding-bottom:10px;}
 .kglied:not(.frei) .kkopf{cursor:default;}
 .kkopf:focus-visible,.vgl-knopf:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px;}
 
@@ -506,7 +510,7 @@ tr.detail td strong{color:var(--gold);}
 .vgl-seite.gold .vgl-kopf{color:var(--gold);border-color:var(--gold);}
 .vgl-seite.gruen .vgl-kopf{color:#7FC4A0;border-color:#7FC4A0;}
 .vgl-seite.rot .vgl-kopf{color:#E8A08F;border-color:#E8A08F;}
-.vgl-punkt{border-left:2px solid rgba(245,245,240,.18);padding:9px 0 9px 13px;margin-bottom:5px;cursor:pointer;transition:border-color .25s;}
+.vgl-punkt{border-left:2px solid rgba(245,245,240,.18);padding:0 0 0 13px;margin-bottom:5px;cursor:pointer;transition:border-color .25s;}
 .vgl-punkt:hover{border-left-color:var(--gold);}
 .vgl-punkt.auf{border-left-color:var(--gold);}
 .vgl-text{font-family:var(--sans);font-size:14px;line-height:1.45;color:rgba(245,245,240,.85);position:relative;padding-right:16px;}
