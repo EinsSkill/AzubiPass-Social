@@ -23,3 +23,7 @@ hier steht. Format: Datum · Entscheidung · betroffene Datei/Version.
 | 2026-10-12 | „Weitere Beiträge laden“ mit stabiler Zeit-/ID-Seitennavigation | `04-beitraege.md` v1, Frage 2 |
 | 2026-10-12 | Übersicht und Lesedetail zuerst intern bauen; Klassen-Beta erst gemeinsam mit Schreiben, Antworten, Melden und Moderation | `04-beitraege.md` v1, Frage 3 |
 | 2026-10-12 | Dateizugriff mit aktueller Rechteprüfung statt pauschaler Widerrufszusage; 60-Sekunden-Zusage gestrichen; Claude belegt Technik und Grenzen vor Freigabe von Uploads | `04-beitraege.md` v1, Frage 4 |
+| 2026-10-12 | Die Beta ist kostenlos. Preise auf der Landingpage ganz entfernen; ein Geschäftsmodell wird später separat entschieden | Gesamtaudit A08 |
+| 2026-10-12 | Reihenfolge: erst die Audit-Korrekturen (A01, A05, A04, dann A06/A07/A11/A09/A10), danach die nächste Community-Spec | Gesamtaudit Abschnitt 8 |
+| 2026-10-12 | Lernkern-Korrekturen auf eigenem Branch von main, separate Freigabe durch Lukes; danach in den Community-Branch übernehmen | Gesamtaudit |
+| 2026-10-12 | In die Klasse kommen Lernkern und Community; vorher nötig: Mailversand, Datenschutzangaben, Melden und Moderation | Gesamtaudit Abschnitt 10 |
