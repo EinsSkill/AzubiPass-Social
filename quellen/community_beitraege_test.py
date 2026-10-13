@@ -18,6 +18,9 @@ Passwort steht bewusst nicht im Repo. Rückgabewert 1 bei einem Fehler.
 
 import functools
 import http.server
+import json
+import re
+import urllib.parse
 import os
 import socketserver
 import sys
@@ -497,6 +500,78 @@ def main():
                 seite.keyboard.press("Tab")
                 folge.append(seite.evaluate("(document.activeElement.textContent || document.activeElement.tagName).trim().slice(0, 25)"))
             pruefe(folge[0] in ("ALLE ARTEN", "Alle ArtenLernzettelFrageTipp") or folge[0].startswith("Alle"), "Nach der Überschrift folgt der Filter", folge)
+
+            # ------------------------------------------------ G02 [mock]: Rückkehr nach >120 Beiträgen
+            print("Rückkehr nach mehr als 120 Beiträgen (G02)")
+            # 150 simulierte Beiträge, je drei mit gleicher Erstellungszeit. Der
+            # Server wird für die Liste nachgebildet: Sortierung erstellt_am, id
+            # absteigend, limit und or-Cursor wie PostgREST.
+            import uuid as _uuid
+            unecht = []
+            for i in range(150):
+                t = "2026-10-01T10:%02d:00+00:00" % (59 - i // 3)
+                unecht.append({"id": str(_uuid.UUID(int=10**6 + i)), "autor_id": "00000000-0000-4000-8000-0000000000aa",
+                               "gruppe_id": None, "art": "tipp", "titel": "Auditbeitrag %d" % (i + 1), "text": "",
+                               "lernfeld": None, "kapitel": None, "datei_pfad": None, "datei_art": None,
+                               "an_mentoren": False, "geloest": False, "versteckt": False, "erstellt_am": t,
+                               "bearbeitet_am": None, "autor_name": "Test", "autor_rolle": "azubi", "autor_lehrjahr": None,
+                               "gruppe_name": None, "antworten": 0, "hilfreich_zahl": 0, "von_mir_hilfreich": False})
+            unecht.sort(key=lambda z: (z["erstellt_am"], z["id"]), reverse=True)
+            def liste_unecht(route):
+                url = urllib.parse.urlparse(route.request.url)
+                q = urllib.parse.parse_qs(url.query)
+                if "id" in q:
+                    zid = q["id"][0].replace("eq.", "")
+                    z = [x for x in unecht if x["id"] == zid]
+                    einzeln = "vnd.pgrst.object" in (route.request.headers.get("accept") or "")
+                    route.fulfill(status=200, content_type="application/json",
+                                  body=json.dumps((z[0] if z else None) if einzeln else z))
+                    return
+                zeilen = list(unecht)
+                if "or" in q:
+                    m = re.search(r'erstellt_am\.lt\."([^"]+)",and\(erstellt_am\.eq\."([^"]+)",id\.lt\.([0-9a-f-]+)\)', q["or"][0])
+                    zeit, _, zid = m.group(1), m.group(2), m.group(3)
+                    zeilen = [z for z in zeilen if z["erstellt_am"] < zeit or (z["erstellt_am"] == zeit and z["id"] < zid)]
+                n = int(q.get("limit", ["30"])[0])
+                route.fulfill(status=200, content_type="application/json", body=json.dumps(zeilen[:n]))
+            seite.route("**/rest/v1/beitrag_liste?**", liste_unecht)
+            seite.route("**/rest/v1/antwort?**", lambda r: r.fulfill(status=200, content_type="application/json", body="[]"))
+            oeffne("#community/profil")
+            titel("Profil")
+            oeffne("#community")
+            titel("Beiträge")
+            warte_liste()
+            for _ in range(4):
+                vorher_n = len(zeilen())
+                seite.click("text=Weitere Beiträge laden")
+                seite.wait_for_function("(n) => document.querySelectorAll('#community .cm-beitraege a[data-id]').length > n", arg=vorher_n)
+            z150 = zeilen()
+            pruefe(len(z150) == 150 and len(set(z150)) == 150 and not seite.is_visible("text=Weitere Beiträge laden"),
+                   "150 Beiträge über fünf Seiten, keiner doppelt", len(z150), art="mock")
+            seite.click("#community .cm-beitraege a:text-is('Auditbeitrag 140')")
+            titel("Auditbeitrag 140")
+            seite.click("text=‹ Zurück zu Beiträgen")
+            titel("Beiträge")
+            warte_liste()
+            seite.wait_for_timeout(400)
+            z_nachher = zeilen()
+            pruefe(len(z_nachher) == 150 and z_nachher == z150, "Nach der Rückkehr wieder alle 150 in gleicher Reihenfolge", len(z_nachher), art="mock")
+            pruefe(seite.evaluate("document.activeElement.textContent") == "Auditbeitrag 140",
+                   "Fokus auf dem zuletzt geöffneten Beitrag 140", seite.evaluate("document.activeElement.textContent"), art="mock")
+            # Leer-Zustand mit Filter: einmal sichtbar, für Bildschirmleser angesagt
+            seite.unroute("**/rest/v1/beitrag_liste?**")
+            seite.unroute("**/rest/v1/antwort?**")
+            seite.select_option("#community select >> nth=0", "lernzettel")
+            seite.select_option("#community select >> nth=1", "lf13")
+            warte_liste()
+            sichtbar = seite.evaluate("""() => [...document.querySelectorAll('#community *')].filter(e => e.children.length === 0
+                && e.textContent.trim() === 'Zu diesen Filtern gibt es keine Beiträge.'
+                && e.getBoundingClientRect().width > 2).length""")
+            status = seite.evaluate("document.querySelector('#community .cm-ergebnis').textContent")
+            pruefe(sichtbar == 1 and status == "Zu diesen Filtern gibt es keine Beiträge.",
+                   "Leer mit Filter: einmal sichtbar, Status für Bildschirmleser gesetzt", (sichtbar, status))
+            seite.click("#community .cm-filter >> text=Filter zurücksetzen")
+            warte_liste()
 
             # ------------------------------------------------ Abmelden: späte Antwort (R2) [mock]
             print("Späte Abmeldeantwort (R2)")

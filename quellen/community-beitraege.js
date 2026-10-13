@@ -166,35 +166,50 @@
     lf.eingabe.addEventListener("change", function () { filterGeaendert(lf.eingabe); });
 
     // Erste Seite (oder beim Zurückkommen: so viele Zeilen wie vorher).
+    /* Erste Seite – beim Zurückkommen so viele Seiten, bis wieder so viele
+       Zeilen da sind wie vorher (Gegenprüfung G02: früher höchstens 120).
+       Jede Seite kommt frisch vom Server über die stabile Zeit-/ID-Navigation;
+       Entzogenes taucht deshalb nicht wieder auf. */
     function laden(meldenNachher, fokus) {
       var n = ++nr;
-      var anzahl = Math.max(AP.community.CFG.seite, Math.min(stand.geladen || 0, 120));
+      var CFG = AP.community.CFG;
+      var ziel = Math.max(CFG.seite, stand.geladen || 0);
       bereich.innerHTML = "";
       mehrBox.innerHTML = "";
       bereich.setAttribute("aria-busy", "true");
       bereich.appendChild(el("p", "cm-hilfe", "Beiträge werden geladen …"));
-      var q = abfrage();
-      q.anzahl = anzahl;
-      AP.community.beitragSeite(q).then(function (seite) {
-        if (!ctx.gilt() || n !== nr) return;
+      var gesammelt = [];
+      function seiteHolen(nach) {
+        var q = abfrage();
+        q.anzahl = Math.min(Math.max(ziel - gesammelt.length, CFG.seite), 120);
+        if (nach) q.nach = nach;
+        return AP.community.beitragSeite(q).then(function (seite) {
+          if (!ctx.gilt() || n !== nr) return null;
+          gesammelt = gesammelt.concat(seite.zeilen);
+          if (seite.weiter && gesammelt.length < ziel) return seiteHolen(seite.weiter);
+          return { zeilen: gesammelt, weiter: seite.weiter };
+        });
+      }
+      seiteHolen(null).then(function (seite) {
+        if (!seite || !ctx.gilt() || n !== nr) return;
         bereich.removeAttribute("aria-busy");
         bereich.innerHTML = "";
         zeilen = 0;
         weiter = seite.weiter;
         if (!seite.zeilen.length) {
           leer();
-          meldung.textContent = aktiv() ? "Zu diesen Filtern gibt es keine Beiträge." : "";
           return;
         }
         var ul = el("ul", "liste-schlicht cm-beitraege");
         bereich.appendChild(ul);
         anhaengen(ul, seite.zeilen);
         mehrZeigen();
+        meldung.classList.remove("cm-nur-vorlesen");
         if (fokus) meldung.textContent = zeilen === 1 ? "1 Beitrag" : zeilen + " Beiträge";
         if (stand.zurueck) {
           stand.zurueck = false;
-          var ziel = stand.zuletzt && bereich.querySelector('a[data-id="' + stand.zuletzt + '"]');
-          if (ziel) ziel.focus({ preventScroll: true });
+          var ziel2 = stand.zuletzt && bereich.querySelector('a[data-id="' + stand.zuletzt + '"]');
+          if (ziel2) ziel2.focus({ preventScroll: true });
           window.scrollTo(0, stand.scroll || 0);
         }
       }, function (f) {
@@ -219,12 +234,16 @@
     function leer() {
       if (aktiv()) {
         bereich.appendChild(el("p", "cm-leer", "Zu diesen Filtern gibt es keine Beiträge."));
+        // Einmal sichtbar, für Bildschirmleser über die Statuszeile angesagt.
+        meldung.textContent = "Zu diesen Filtern gibt es keine Beiträge.";
+        meldung.classList.add("cm-nur-vorlesen");
         var reihe = el("div", "cm-reihe");
         reihe.appendChild(knopf("Filter zurücksetzen", "kn-neben cm-neben", function () {
           art.eingabe.value = ""; lf.eingabe.value = ""; filterGeaendert(art.eingabe);
         }));
         bereich.appendChild(reihe);
       } else {
+        meldung.textContent = "";
         // „Stell eine Frage …" und „Beitrag schreiben" erst mit freigegebenem C06.
         bereich.appendChild(el("p", "cm-leer", "Hier gibt es noch keine Beiträge."));
       }
