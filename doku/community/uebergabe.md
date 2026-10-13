@@ -13,6 +13,82 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-13 · Claude → ChatGPT (Review Spec 05) → Lukes
+
+**Vorheriger Beitrag:** ChatGPT – Gegenprüfung `review/2026-10-13-chatgpt-gegenpruefung.md`
+und Spec `05-schreiben-antworten.md` v1; Lukes – Entscheidungen vom 13.10.
+(Q1–Q4, Barrierefreiheit, Klausur, Landing-Satz) und „Ja, einspielen“ für
+`05-technik-plan.md`. **Rolle:** Umsetzung. **Nächste Übergabe an:** ChatGPT
+zum Review, danach Lukes. **Nichts gemergt in main, nichts live, Sperre zu.**
+
+### Umgesetzt
+
+- **Gegenprüfung G01** (Service Worker füllt nur noch hashgeprüft nach) und
+  **G02** (Rückkehr nach mehr als 120 Beiträgen): `93166bf`, `d85f835`, Merge `c5c8059`.
+- **Datenbank** nach dem freigegebenen Technik-Plan, vier Migrationen
+  `20261013151435` … `20261013151520`: Paketsperre (`freigabe`,
+  `beitraege_tester`, `beitraege_frei()`, Regeln für `beitrag` und Speicher),
+  RPCs `beitrag_veroeffentlichen` / `antwort_senden` mit Vorgangskennung,
+  strengere `beste_antwort`. Keine neuen fachlichen Felder. Beschreibung und
+  SQL zum späteren Öffnen: `supabase/README.md` („Paketsperre Beiträge“).
+- **Datenschicht** (`community.js`): Codepunkt-Zählung, Vorgangskennung,
+  Kontobindung zwischen Upload und Veröffentlichen, unklarer Ausgang als
+  eigene Fehlerart (`"unklar"`), Statusprüfung `beitragStatus` / `antwortStatus`,
+  Datei nur nach sicherer Ablehnung **und** Status ohne Treffer gelöscht,
+  `beitraegeFrei()`, `besteAntwort` kontogebunden.
+- **Oberfläche:** Paketsperre nach der Zugangsprüfung (`community-ansicht.js`,
+  Ansicht `gesperrt`: Sperrtext, Zu Lernen, Profil, Regeln, Abmelden; auch für
+  Direktlinks, ohne eine einzige Beitragsabfrage). **C06** `#community/schreiben`,
+  **Antwortformular** und **beste Antwort** im C05-Detail
+  (`community-beitraege.js`), Texte wörtlich aus Spec 05 Abschnitt 5/6.
+
+### Tests (Stand dieses Commits)
+
+Siehe Abschnitt „Belege“ im Commit-Bericht; neue Datei
+`quellen/community_schreiben_test.py` (echte Fälle und Mocks getrennt
+markiert). `community_zugang_test.py` erwartet für neue Klassenkonten jetzt
+die gesperrte Ansicht statt „Beiträge“ (so im Technik-Plan angekündigt).
+
+### Von Claude festgelegt – bitte prüfen (nicht in den Spec-Texten)
+
+- Prüfansicht vor C04/C05/C06: „Zugang wird geprüft …“.
+- Scheitert die Freigabeprüfung (kein Offline): „Der Zugang zu den Beiträgen
+  konnte nicht geprüft werden. Versuch es erneut.“ mit „Erneut versuchen“,
+  Profil, Zu Lernen – das Paket bleibt zu.
+- Uploadhinweis, Zusatz zur Prüfung von Bildern/PDFs: wörtlich aus Regel 4
+  der Community-Regeln („Prüfe auch Bilder, Screenshots und Dokumente vor dem
+  Hochladen.“).
+- Dateizeile „Ausgewählt: ‹Name› · ‹Größe›“ bzw. „Keine Datei ausgewählt.“;
+  Kapitel-Hinweis „Das Kapitel wurde zurückgesetzt, weil du das Lernfeld
+  gewechselt hast.“; Auswahl „Kein Lernfeld“ / „Kein Kapitel“;
+  „Status wird geprüft …“.
+- Artwechsel weg von Lernzettel: Die Datei bleibt im Entwurf, wird aber
+  nicht gesendet; Hinweis „Die ausgewählte Datei wird bei dieser Beitragsart
+  nicht veröffentlicht.“ sichtbar und angesagt. Zurück zu Lernzettel ⇒ wieder da.
+- Bei unklarem Ausgang ist „Beitrag veröffentlichen“/„Antwort senden“
+  gesperrt, bis „Status prüfen“ geklärt hat. „Abbrechen“/„Zurück“ verwerfen
+  in diesem Zustand nichts (der Entwurf bleibt bis zur Klärung).
+- Nach dem Veröffentlichen ersetzt C05 den Verlaufseintrag von C06 – „Zurück“
+  führt zur Übersicht, nicht ins leere Formular.
+- Beste Antwort: keine eigene Erfolgsmeldung; nach Serverbestätigung wird
+  neu geladen, der Fokus bleibt am Knopf derselben Antwort (dessen neue
+  Beschriftung den Zustand nennt), „Gelöst“ im Kopf kommt aus dem frisch
+  geladenen Beitrag.
+- Tab schließen/neu laden mit ungesendeten Eingaben: Browser-Rückfrage
+  (`beforeunload`), so weit der Browser sie zeigt.
+- Freigabeprüfung vor dem Senden nur bei C06 (Spec 4.11); Antworten verlassen
+  sich auf die Prüfung in `antwort_senden`.
+
+### Offen / Grenzen
+
+- Echte Geräte, Screenreader, 200 % Text und Bildschirmtastatur: nicht
+  geprüft (nur Headless-Chromium, axe, Tippziele, Tastaturreihenfolge).
+- Spam-Bremse und Sperre-vom-Server nur als Mock geprüft (echte Grenze 20/h).
+- Siehe „Bekannte Grenze“ in `supabase/README.md` (geänderte Eingaben nach
+  unklarem Ausgang, verwaiste Datei nach Kontowechsel).
+- Hilfreich, eigene Inhalte bearbeiten/löschen, Melden/Moderation: nicht Teil
+  dieses Pakets. Die Sperre bleibt zu, bis Lukes sie gesondert öffnet.
+
 ## 2026-10-12 (3) · Claude → ChatGPT (Gegenprüfung Gesamtaudit) → Lukes
 
 **Vorheriger Beitrag:** ChatGPT – Gesamtaudit von `a443607` (Ablage:

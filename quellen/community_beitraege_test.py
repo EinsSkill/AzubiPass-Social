@@ -229,7 +229,8 @@ def main():
             pruefe("AN MENTOR:INNEN" in zeile_m.upper() and "0 Antworten" in zeile_m, "„An Mentor:innen“ als Text", zeile_m.replace("\n", " | "))
             pruefe(not seite.locator("#community img").count(), "Keine Bilder in der Übersicht")
             pruefe(not any("/storage/v1/" in u for _, u in anfragen[ab_hier:]), "Keine Dateiabrufe für die Übersicht")
-            pruefe(not seite.is_visible("text=Beitrag schreiben"), "Kein „Beitrag schreiben“ ohne freigegebenes C06")
+            pruefe(seite.get_attribute("#community a.cm-haupt:has-text('Beitrag schreiben')", "href") == "#community/schreiben",
+                   "„Beitrag schreiben“ führt zu C06 (Spec 05)")
             pruefe(not seite.is_visible("#community >> text=Filter zurücksetzen"), "Ohne Filter kein „Filter zurücksetzen“")
             bild("01-beitraege")
 
@@ -499,7 +500,8 @@ def main():
             for _ in range(5):
                 seite.keyboard.press("Tab")
                 folge.append(seite.evaluate("(document.activeElement.textContent || document.activeElement.tagName).trim().slice(0, 25)"))
-            pruefe(folge[0] in ("ALLE ARTEN", "Alle ArtenLernzettelFrageTipp") or folge[0].startswith("Alle"), "Nach der Überschrift folgt der Filter", folge)
+            pruefe(folge[0] == "Beitrag schreiben" and folge[1].startswith("Alle"),
+                   "Nach der Überschrift: „Beitrag schreiben“, dann der Filter", folge)
 
             # ------------------------------------------------ G02 [mock]: Rückkehr nach >120 Beiträgen
             print("Rückkehr nach mehr als 120 Beiträgen (G02)")

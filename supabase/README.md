@@ -98,3 +98,57 @@ Verbleibende Grenzen – ehrlich benannt:
   `fehler.dateiPfad`); `AP.community.dateiEntfernen(pfad)` wiederholt.
 - Echte Uploads sind damit technisch abgesichert, aber erst mit dem Paket
   „Beitrag erstellen“ freigegeben.
+
+## Paketsperre Beiträge (Entscheidung 13.10.2026, Spec 05)
+
+Das ganze Beiträge-Paket (Übersicht, Detail, Schreiben, Antworten, Dateien)
+startet **geschlossen**. Technik und Begründung: `doku/community/05-technik-plan.md`.
+
+- Schalter `public.freigabe` (`schalter = 'beitraege'`, `offen = false`). Nur
+  die Datenbankverwaltung ändert ihn.
+- Ausnahmen: `public.beitraege_tester` – ausdrücklich benannte interne
+  Testkonten (`demo-anna`, `demo-ben`, `test-neu1`). Keine Policy, keine
+  Rechte für `anon`/`authenticated`: Nur die Datenbankverwaltung pflegt sie.
+- `public.beitraege_frei()` ist Teil der Regeln für `beitrag` (lesen,
+  anlegen) und `storage.objects` im Bucket `lernzettel` (lesen, hochladen).
+  Antworten, Hilfreich und Meldungen hängen über „Beitrag sichtbar“ mit dran.
+  `beitrag_veroeffentlichen`, `antwort_senden` und `beste_antwort` prüfen die
+  Sperre selbst.
+
+Weiteres internes Testkonto (z. B. für eine Vorführung) aufnehmen:
+
+```sql
+insert into public.beitraege_tester (nutzer_id)
+select id from auth.users where email = '…';
+```
+
+**Öffnen nur nach gesonderter Freigabe von Lukes** (Spec 05, Abschnitt 2:
+C04/C05, C06/Antworten, Melden und Moderation gemeinsam geprüft, Mailversand
+und Datenschutz bereit):
+
+```sql
+update public.freigabe set offen = true, geaendert_am = now() where schalter = 'beitraege';
+```
+
+Belegt in `quellen/community_schreiben_test.py` (Klassenkonto `test-neu2`):
+kein Lesen, kein Veröffentlichen (RPC und alter Insert), keine Antwort, kein
+Upload in den eigenen Ordner; die Oberfläche fragt bei gesperrtem Konto keine
+Beiträge, Antworten oder Dateien ab.
+
+## Verlässliches Senden (Spec 05)
+
+`beitrag_veroeffentlichen(p_vorgang, …)` und `antwort_senden(p_vorgang, …)`
+nehmen eine Vorgangskennung aus der App, die zur ID der neuen Zeile wird
+(`on conflict do nothing`). Ein zweiter Versuch mit derselben Kennung liefert
+dieselbe ID, nie eine zweite Zeile. Statusprüfung = normaler Lesezugriff auf
+die eigene Zeile mit dieser ID. Dateien liegen unter `‹konto›/‹vorgang›.‹endung›`;
+gelöscht wird eine Datei nur nach sicherer Ablehnung **und** Statusprüfung ohne
+Treffer.
+
+Bekannte Grenze: Nach einem unklaren Ausgang, einer Statusprüfung ohne
+Treffer **und** geänderten Eingaben nimmt die App eine neue Kennung. Hat der
+Server den ersten Versuch doch noch (sehr spät) angelegt, gäbe es dann zwei
+Beiträge; eine Datei des ersten Versuchs bliebe im eigenen Ordner liegen
+(für andere unsichtbar). Unveränderte Wiederholungen nutzen immer dieselbe
+Kennung. Ebenso bleibt bei einem Kontowechsel zwischen Upload und
+Veröffentlichen die schon hochgeladene Datei im Ordner des alten Kontos.

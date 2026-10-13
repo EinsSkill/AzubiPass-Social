@@ -2085,6 +2085,30 @@ a.cm-haupt,a.cm-neben{display:inline-flex;align-items:center;justify-content:cen
 .cm-antwortliste{margin-top:14px;border-top:1px solid var(--linie);}
 .cm-antwort{border-bottom:1px solid var(--linie);padding:16px 0 14px;}
 .cm-antwort .cm-text{font-size:16.5px;margin:0 0 8px;}
+.cm-antwort .cm-loesen{margin-top:10px;}
+.cm-antwort .cm-loesen-fehler{margin:10px 0 0;}
+.cm-antwort:focus{outline:none;}
+.cm-antwort:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:4px;}
+.cm-antwort-meldung:not(:empty){margin-top:18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.cm-antwort-form{margin-top:22px;}
+.cm-antwortform{margin-top:0;}
+
+/* C06 Beitrag schreiben (05-schreiben-antworten.md): dieselben Felder wie im Profil. */
+.cm-schreiben-reihe{margin:0 0 22px;}
+.cm-arten{border:0;margin:0;padding:0;min-width:0;}
+.cm-arten legend{font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--text);padding:0;margin:0 0 4px;}
+.cm-wahl{padding:8px 0;}
+.cm-wahl input{border-radius:50%;}
+textarea.cm-eingabe{padding:12px 14px;line-height:1.5;resize:vertical;min-height:120px;}
+input[type=file].cm-eingabe{padding:10px 14px;min-height:48px;}
+.cm-zaehler{font-family:var(--mono);font-size:11.5px;}
+.cm-schreib-status:not(:empty),.cm-antwort-status:not(:empty){display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.meldung:focus{outline:none;}
+.meldung:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:3px;}
+.cm-uebersicht:focus{outline:none;}
+.cm-uebersicht:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:3px;}
+.cm-dialog h2.cm-dialog-frage{font-size:22px;line-height:1.25;}
+.cm-dialog .cm-dialog-neben{color:#F5F5F0;border-color:rgba(245,245,240,.5);}
 
 /* Heute: der kleine Einstieg nach den eigenen Lernaktionen. */
 .hm-gemeinsam{margin-top:22px;}

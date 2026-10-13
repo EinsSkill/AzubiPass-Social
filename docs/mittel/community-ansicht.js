@@ -38,7 +38,8 @@
      was im Formular stand. Nichts davon landet im dauerhaften Speicher. */
   var z = {
     ansicht: null,        // anmeldung | versendet | pruefen | profil | drin | offline |
-                          // profilfehler | unklar | nichtda
+                          // profilfehler | unklar | nichtda | gesperrt | freigabeFehler |
+                          // beitraege | beitrag | schreiben
     mail: "",
     hinweis: null,        // { text, fehler } – eine Zeile oben in der Ansicht
     laeuft: false,        // eine Anfrage ist unterwegs: kein zweiter Klick
@@ -47,7 +48,8 @@
     formular: leeresFormular(),
     ziel: null,           // gemerktes Ziel von vor der Anmeldung
     unter: "",            // was gerade hinter #community/ steht
-    vonListe: false       // Detail aus der Übersicht geöffnet: „Zurück" = history.back()
+    vonListe: false,      // Detail aus der Übersicht geöffnet: „Zurück" = history.back()
+    frei: null            // Paketsperre (Spec 05): true/false nach der letzten Prüfung, null = unbekannt
   };
 
   function leeresFormular() {
@@ -72,6 +74,7 @@
     z.ziel = null;
     z.laeuft = false;
     z.vonListe = false;
+    z.frei = null;
     try { sessionStorage.removeItem(ZIEL_SCHLUESSEL); } catch (e) {}
     // Beiträge, Filter, Position und geladene Dateien des alten Kontos auch.
     if (AP.communityBeitraege) AP.communityBeitraege.vergessen();
@@ -312,8 +315,12 @@
        (leer)            C04 Beiträge
        profil            eigenes Profil, Regeln, Abmelden
        beitrag/<id>      C05 Beitrag
+       schreiben         C06 Beitrag schreiben
      Alles andere (z. B. Gruppen, die es noch nicht gibt) bekommt nur den
-     neutralen Rückweg, ohne etwas über das Ziel zu verraten. */
+     neutralen Rückweg, ohne etwas über das Ziel zu verraten.
+     Vor C04/C05/C06 fragt die App die serverseitige Paketsperre ab (Spec 05,
+     Entscheidung 13.10.2026). Gesperrt: keine einzige Beitragsabfrage, auch
+     nicht über Direktlinks. Scheitert die Prüfung, bleibt das Paket zu. */
   var BEITRAG_ZIEL = /^beitrag\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i;
 
   function ankommen(hinweis) {
@@ -326,10 +333,23 @@
       z.unter = weg;
       try { history.replaceState(null, "", location.pathname + location.search + "#community" + (weg ? "/" + weg : "")); } catch (e) {}
     }
-    if (!weg) return setze("beitraege", hinweis);
     if (weg === "profil") return setze("drin", hinweis);
-    if (BEITRAG_ZIEL.test(weg)) return setze("beitrag", hinweis);
-    setze("nichtda", hinweis);
+    var ziel = !weg ? "beitraege" : weg === "schreiben" ? "schreiben"
+      : BEITRAG_ZIEL.test(weg) ? "beitrag" : null;
+    if (!ziel) return setze("nichtda", hinweis);
+    var n = lauf, konto = z.nutzer;
+    ladetext("Zugang wird geprüft …");
+    AP.community.beitraegeFrei().then(function (frei) {
+      if (!gilt(n) || z.nutzer !== konto) return;
+      z.frei = frei;
+      setze(frei ? ziel : "gesperrt", hinweis);
+    }, function (f) {
+      if (!gilt(n) || z.nutzer !== konto) return;
+      if (f && f.art === "veraltet") return;
+      if (f && f.art === "anmeldung") return abgelaufen();
+      if (f && f.art === "netz" && offline()) return setze("offline");
+      setze("freigabeFehler", hinweis);
+    });
   }
 
   /* Eine Anfrage starten: sperrt weitere Klicks und liefert eine Prüfung, ob
@@ -355,7 +375,9 @@
       profilfehler: ansichtProfilfehler, unklar: ansichtUnklar, nichtda: ansichtNichtDa,
       pruefFehler: ansichtPruefFehler,
       beitraege: function (r) { AP.communityBeitraege.liste(r, kontext()); },
-      beitrag: function (r) { AP.communityBeitraege.detail(r, BEITRAG_ZIEL.exec(z.unter)[1], kontext()); }
+      gesperrt: ansichtGesperrt, freigabeFehler: ansichtFreigabeFehler,
+      beitrag: function (r) { AP.communityBeitraege.detail(r, BEITRAG_ZIEL.exec(z.unter)[1], kontext()); },
+      schreiben: function (r) { AP.communityBeitraege.schreiben(r, kontext()); }
     }[z.ansicht] || ansichtPruefen;
     bauer(rahmen);
     if (fokus && sichtbar()) {
@@ -373,12 +395,15 @@
     return {
       konto: konto,
       gilt: function () { return gilt(n) && z.nutzer === konto && z.unter === unter && bindung() && sichtbar(); },
-      kopf: kopf, feld: feld, hinweiszeile: hinweiszeile, zurueckKnopf: zurueckKnopf,
+      kopf: kopf, feld: feld, haken: haken, hinweiszeile: hinweiszeile, zurueckKnopf: zurueckKnopf,
+      fehlerSetzen: fehlerSetzen, fehleruebersicht: fehleruebersicht, sperren: sperren, freigeben: freigeben,
       inhalt: function () { return inhalt; },
       offline: offline,
       offlineZeigen: function () { neuerLauf(); setze("offline"); },
       abgelaufen: abgelaufen,
       nichtDa: function () { setze("nichtda"); },
+      // Der Server meldet die Paketsperre (z. B. inzwischen geschlossen).
+      gesperrt: function () { neuerLauf(); z.frei = false; setze("gesperrt"); },
       merkeHerkunft: function () { z.vonListe = true; },
       vonListe: function () { var v = z.vonListe; z.vonListe = false; return v; }
     };
@@ -780,7 +805,7 @@
     g.appendChild(reihe);
     r.appendChild(g);
     var weg = el("div", "cm-reihe");
-    weg.appendChild(verweis("Zu Beiträgen", "#community", "kn-neben cm-neben"));
+    if (z.frei !== false) weg.appendChild(verweis("Zu Beiträgen", "#community", "kn-neben cm-neben"));
     weg.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
     r.appendChild(weg);
   }
@@ -788,7 +813,10 @@
   /* ---------- Offline */
   function ansichtOffline(r) {
     // Mit Profil ging es um Inhalte, ohne um Anmeldung und Profil.
-    r.appendChild(kopf("Community", z.profil
+    var entwurf = z.profil && AP.communityBeitraege && AP.communityBeitraege.hatEntwurf(z.nutzer);
+    r.appendChild(kopf("Community", entwurf
+      ? "Du bist offline. Für die Community brauchst du Internet. Deine Eingaben bleiben in diesem geöffneten Tab."
+      : z.profil
       ? "Du bist offline. Für die Community brauchst du Internet. Lernen und Üben kannst du weiter nutzen."
       : "Du bist offline. Zum Anmelden und Anlegen deines Profils brauchst du Internet. Lernen und Üben kannst du weiter nutzen."));
     var reihe = el("div", "cm-reihe");
@@ -829,6 +857,33 @@
     r.appendChild(hinweiszeile());
     var reihe = el("div", "cm-reihe");
     reihe.appendChild(knopf("Erneut versuchen", "kn-haupt cm-haupt", function () { pruefen(); }));
+    reihe.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
+    r.appendChild(reihe);
+  }
+
+  /* ---------- Paketsperre (Spec 05): Profil, Regeln und Abmelden bleiben */
+  function ansichtGesperrt(r) {
+    r.appendChild(zurueckKnopf());
+    r.appendChild(kopf("Community", "Beiträge sind für die Klassen-Beta noch nicht freigeschaltet."));
+    r.appendChild(hinweiszeile());
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-haupt cm-haupt"));
+    reihe.appendChild(verweis("Profil", "#community/profil", "kn-neben cm-neben"));
+    var lesen = knopf("Community-Regeln lesen", "kn-neben cm-neben", function () { regelnZeigen(lesen); });
+    reihe.appendChild(lesen);
+    reihe.appendChild(abmeldeKnopf(r));
+    r.appendChild(reihe);
+  }
+
+  /* ---------- Freigabe ließ sich nicht prüfen: Paket bleibt zu */
+  function ansichtFreigabeFehler(r) {
+    r.appendChild(zurueckKnopf());
+    r.appendChild(kopf("Community"));
+    z.hinweis = { text: "Der Zugang zu den Beiträgen konnte nicht geprüft werden. Versuch es erneut.", fehler: true };
+    r.appendChild(hinweiszeile());
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(knopf("Erneut versuchen", "kn-haupt cm-haupt", function () { pruefen(); }));
+    reihe.appendChild(verweis("Profil", "#community/profil", "kn-neben cm-neben"));
     reihe.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
     r.appendChild(reihe);
   }
@@ -997,7 +1052,7 @@
       if (document.hidden) { weg = Date.now(); return; }
       if (!weg || Date.now() - weg < 60000) return;
       weg = 0;
-      if (sichtbar() && !z.laeuft && (z.ansicht === "beitraege" || z.ansicht === "beitrag")) {
+      if (sichtbar() && !z.laeuft && (z.ansicht === "beitraege" || z.ansicht === "beitrag" || z.ansicht === "gesperrt")) {
         if (z.ansicht === "beitraege") AP.communityBeitraege.zurueckholen();
         pruefen();
       }

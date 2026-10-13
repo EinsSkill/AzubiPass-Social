@@ -116,6 +116,8 @@
       return fehler("Der Code ist abgelaufen oder stimmt nicht. Lass dir einen neuen schicken.", "anmeldung", f);
     if (/JWT|not authenticated|Auth session missing|refresh token/i.test(text))
       return fehler("Du bist nicht mehr angemeldet. Bitte melde dich neu an.", "anmeldung", f);
+    if (/noch nicht freigeschaltet/i.test(text))                  // Paketsperre (Spec 05)
+      return fehler("Beiträge sind für die Klassen-Beta noch nicht freigeschaltet.", "gesperrt", f);
     if (code === "P0001")                                         // raise exception
       return fehler(text.replace(/^ERROR:\s*/, ""), /durchatmen|zu viele/i.test(text) ? "bremse" : "eingabe", f);
     if (code === "23505") return fehler("Das gibt es schon.", "eingabe", f);
@@ -503,22 +505,98 @@
     return Date.now().toString(36) + Math.random().toString(36).slice(2);
   }
 
-  /* e: { art, titel, text, lernfeld, kapitel, gruppe, anMentoren, datei (File) } */
+  // Zeichen zählen wie SQL char_length: Codepunkte, nicht UTF-16-Einheiten.
+  function laenge(t) { return Array.from(String(t || "")).length; }
+
+  function neueVorgangskennung() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    var h = Array.from({ length: 32 }, function () { return Math.floor(Math.random() * 16).toString(16); }).join("");
+    return h.slice(0, 8) + "-" + h.slice(8, 12) + "-4" + h.slice(13, 16) + "-a" + h.slice(17, 20) + "-" + h.slice(20, 32);
+  }
+
+  // Gilt der Beitragsteil für dieses Konto? (serverseitige Paketsperre, Spec 05)
+  function beitraegeFrei() {
+    return gebunden(function (u, c) { return c.rpc("beitraege_frei").then(auspacken); })
+      .then(function (r) { return r === true; });
+  }
+
+  function unklar(meldung, vorgang, ursache) {
+    var e = fehler(meldung, "unklar", ursache);
+    e.vorgang = vorgang;
+    return e;
+  }
+
+  /* e: { vorgang, art, titel, text, lernfeld, kapitel, anMentoren, datei (File),
+          schritt (optional: wird nach dem Hochladen mit "veroeffentlichen" gerufen) }
+     Spec 05: Jeder Vorgang hat eine Kennung, die zur Beitrags-ID wird. Wer mit
+     derselben Kennung erneut sendet, bekommt denselben Beitrag – nie zwei.
+     Ergebnis: Beitrags-ID. Fehlerarten: "eingabe", "bremse", "rechte" … =
+     sicher nicht veröffentlicht; "unklar" = Antwort ging verloren, Status
+     prüfen (beitragStatus) statt blind neu senden. Ziel ist immer „für alle“.
+     Mit e.gruppe bleibt der alte direkte Weg (nur Datenschicht-Tests). */
   function veroeffentlichen(e) {
     e = e || {};
     if (ARTEN.indexOf(e.art) < 0) return Promise.reject(fehler("Unbekannte Beitragsart.", "eingabe"));
     var titel = String(e.titel || "").trim();
-    if (titel.length < 3 || titel.length > 120)
+    if (laenge(titel) < 3 || laenge(titel) > 120)
       return Promise.reject(fehler("Der Titel braucht 3 bis 120 Zeichen.", "eingabe"));
-    if (String(e.text || "").length > 4000)
+    if (laenge(e.text) > 4000)
       return Promise.reject(fehler("Der Text darf höchstens 4000 Zeichen lang sein.", "eingabe"));
     if (e.kapitel && !e.lernfeld)
       return Promise.reject(fehler("Zum Kapitel gehört ein Lernfeld.", "eingabe"));
     if (e.art === "lernzettel" && !e.datei)
       return Promise.reject(fehler("Ein Lernzettel braucht eine Datei.", "eingabe"));
-    var dateiFehler = dateiPruefen(e.datei);
+    var datei = e.art === "lernzettel" ? e.datei : null;    // nie als Anhang einer Frage/eines Tipps
+    var dateiFehler = dateiPruefen(datei);
     if (dateiFehler) return Promise.reject(dateiFehler);
+    if (e.gruppe) return veroeffentlichenDirekt(e, titel);
 
+    var vorgang = e.vorgang || neueVorgangskennung();
+    var pfad = null, dateiArt = null;
+    return gebunden(function (u, c) {
+      var g = generation;
+      function nochGleich() { if (g !== generation || (kontoId !== undefined && kontoId !== u.id)) throw VERALTET(); }
+      var hoch = Promise.resolve();
+      if (datei) {
+        var art = CFG.dateiArten[datei.type];
+        pfad = u.id + "/" + vorgang + "." + art[1];
+        dateiArt = art[0];
+        hoch = c.storage.from(CFG.bucket)
+          .upload(pfad, datei, { contentType: datei.type, upsert: false, cacheControl: "60" })
+          .then(function (r) {
+            // Schon da (zweiter Versuch desselben Vorgangs): gilt als hochgeladen.
+            if (r && r.error && !/exists|Duplicate/i.test(String(r.error.message || r.error.error || ""))
+                && Number(r.error.statusCode) !== 409) throw r.error;
+          });
+      }
+      return hoch.then(function () {
+        nochGleich();
+        if (datei && typeof e.schritt === "function") { try { e.schritt("veroeffentlichen"); } catch (x) {} }
+        return c.rpc("beitrag_veroeffentlichen", {
+          p_vorgang: vorgang, p_art: e.art, p_titel: titel, p_text: String(e.text || ""),
+          p_lernfeld: e.lernfeld || null, p_kapitel: e.kapitel || null,
+          p_an_mentoren: e.art === "frage" && e.anMentoren === true,
+          p_datei_pfad: pfad, p_datei_art: dateiArt
+        }).then(function (r) {
+          if (r.error) {
+            var f = uebersetzen(r.error);
+            if (f.art === "netz") throw unklar("Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.", vorgang, r.error);
+            // Sicher abgelehnt: Datei nur entfernen, wenn kein Beitrag sie benutzt.
+            if (pfad) return beitragStatus(vorgang).then(function (id) {
+              if (!id) return dateiEntfernen(pfad).catch(function () {});
+            }, function () {}).then(function () { throw f; });
+            throw f;
+          }
+          return r.data;
+        }, function (f) {
+          throw unklar("Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.", vorgang, f);
+        });
+      });
+    });
+  }
+
+  // Alter, direkter Weg – nur noch für Gruppenbeiträge der Datenschicht-Tests.
+  function veroeffentlichenDirekt(e, titel) {
     var pfad = null, dateiArt = null;
     return ich().then(function (u) {
       if (!e.datei) return null;
@@ -537,10 +615,16 @@
       }).select("id").single().then(auspacken);
     }).then(function (d) { return d.id; })
       .catch(function (f) {
-        // Ohne Beitrag soll keine verwaiste Datei liegen bleiben.
         if (pfad) client.storage.from(CFG.bucket).remove([pfad]).catch(function () {});
         throw uebersetzen(f);
       });
+  }
+
+  // Gibt es den Beitrag zu dieser Vorgangskennung? id oder null.
+  function beitragStatus(vorgang) {
+    return gebunden(function (u, c) {
+      return c.from("beitrag").select("id").eq("id", vorgang).eq("autor_id", u.id).maybeSingle().then(auspacken);
+    }).then(function (d) { return d ? d.id : null; });
   }
 
   function beitragAendern(id, felder) {
@@ -621,14 +705,29 @@
     });
   }
 
-  function antwortSchreiben(beitragId, text) {
+  /* Spec 05: wie veroeffentlichen mit Vorgangskennung; "unklar" heißt Status
+     prüfen (antwortStatus), nicht blind neu senden. */
+  function antwortSchreiben(beitragId, text, vorgang) {
     var t = String(text || "").trim();
-    if (!t) return Promise.reject(fehler("Die Antwort ist leer.", "eingabe"));
-    if (t.length > 2000) return Promise.reject(fehler("Die Antwort darf höchstens 2000 Zeichen lang sein.", "eingabe"));
-    return mit(function (c) {
-      return c.from("antwort").insert({ beitrag_id: beitragId, text: t }).select("id").single()
-        .then(auspacken).then(function (d) { return d.id; });
+    if (!t) return Promise.reject(fehler("Die Antwort braucht 1 bis 2000 Zeichen.", "eingabe"));
+    if (laenge(t) > 2000) return Promise.reject(fehler("Die Antwort braucht 1 bis 2000 Zeichen.", "eingabe"));
+    var v = vorgang || neueVorgangskennung();
+    return gebunden(function (u, c) {
+      return c.rpc("antwort_senden", { p_vorgang: v, p_beitrag: beitragId, p_text: t }).then(function (r) {
+        if (r.error) {
+          var f = uebersetzen(r.error);
+          if (f.art === "netz") throw unklar("Wir konnten nicht prüfen, ob deine Antwort gesendet wurde.", v, r.error);
+          throw f;
+        }
+        return r.data;
+      }, function (f) { throw unklar("Wir konnten nicht prüfen, ob deine Antwort gesendet wurde.", v, f); });
     });
+  }
+
+  function antwortStatus(vorgang) {
+    return gebunden(function (u, c) {
+      return c.from("antwort").select("id").eq("id", vorgang).eq("autor_id", u.id).maybeSingle().then(auspacken);
+    }).then(function (d) { return d ? d.id : null; });
   }
 
   function antwortAendern(id, text) {
@@ -639,8 +738,9 @@
     return mit(function (c) { return c.from("antwort").delete().eq("id", id).then(auspacken); });
   }
 
+  // Setzt oder nimmt zurück (zweiter Aufruf auf dieselbe Antwort). Konto-gebunden.
   function besteAntwort(antwortId) {
-    return mit(function (c) { return c.rpc("beste_antwort", { p_antwort: antwortId }).then(auspacken); });
+    return gebunden(function (u, c) { return c.rpc("beste_antwort", { p_antwort: antwortId }).then(auspacken); });
   }
 
   // Gibt den neuen Zustand zurück: true = jetzt hilfreich markiert.
@@ -795,10 +895,11 @@
     gruppeVerlassen: gruppeVerlassen, gruppeAendern: gruppeAendern, gruppenCode: gruppenCode,
     mitglieder: mitglieder, mitgliedRolle: mitgliedRolle, mitgliedEntfernen: mitgliedEntfernen,
     beitraege: beitraege, beitragSeite: beitragSeite, beitrag: beitrag, veroeffentlichen: veroeffentlichen,
+    beitragStatus: beitragStatus, beitraegeFrei: beitraegeFrei, neueVorgangskennung: neueVorgangskennung, laenge: laenge,
     beitragAendern: beitragAendern, beitragLoeschen: beitragLoeschen, dateiEntfernen: dateiEntfernen,
     dateiLaden: dateiLaden, dateiFreigeben: dateiFreigeben,
     dateiPruefen: dateiPruefen,
-    antworten: antworten, antwortSchreiben: antwortSchreiben, antwortAendern: antwortAendern,
+    antworten: antworten, antwortSchreiben: antwortSchreiben, antwortStatus: antwortStatus, antwortAendern: antwortAendern,
     antwortLoeschen: antwortLoeschen, besteAntwort: besteAntwort, hilfreich: hilfreich,
     aufgaben: aufgaben, aufgabeStellen: aufgabeStellen, aufgabeLoeschen: aufgabeLoeschen,
     erledigt: erledigt, erledigtVon: erledigtVon,

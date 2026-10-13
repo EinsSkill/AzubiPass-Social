@@ -114,6 +114,11 @@ def main():
             def ist(erwartet):
                 return h1(erwartet) == erwartet
 
+            def gesperrt_da():
+                """Seit Spec 05 (13.10.2026): Neue Klassenkonten stehen nicht in
+                beitraege_tester – nach der Zugangsprüfung kommt die Paketsperre."""
+                return ist("Community") and seite.is_visible("text=Beiträge sind für die Klassen-Beta noch nicht freigeschaltet.")
+
             def profilseite():
                 """Seit C04 startet die Community mit „Beiträge“; Profil, Regeln
                 und Abmelden liegen unter #community/profil."""
@@ -329,7 +334,7 @@ def main():
             seite.fill("#community input[maxlength='60']", namen[0])
             vorher = len([a for a in anfragen if "rpc/profil_anlegen" in a[1]])
             seite.dblclick("text=Profil anlegen")
-            pruefe(ist("Beiträge"), "Nach der Anlage: Beiträge (C04)", h1())
+            pruefe(gesperrt_da(), "Nach der Anlage: Paketsperre (Klassenkonto)", h1())
             pruefe(len([a for a in anfragen if "rpc/profil_anlegen" in a[1]]) - vorher == 1, "Doppelklick legt nur einmal an")
             pruefe(seite.is_visible("text=Dein Profil ist angelegt."), "Erfolgsmeldung")
             pruefe(beta not in seite.content(), "Beta-Zugangscode steht nirgends mehr auf der Seite")
@@ -339,8 +344,8 @@ def main():
                    "Eigenes Profil unter „Profil“")
             pruefe(seite.is_visible("text=Hier findest du dein Community-Profil und die Regeln.")
                    and not seite.is_visible("text=noch nicht verfügbar")
-                   and seite.locator("#community a[href='#community']", has_text="Zu Beiträgen").count() == 1,
-                   "Profilseite: freigegebene Einleitung, keine Zwischenansicht mehr, Weg zu Beiträgen")
+                   and seite.locator("#community a[href='#community']", has_text="Zu Beiträgen").count() == 0,
+                   "Profilseite: freigegebene Einleitung; bei Paketsperre kein Weg in die Beiträge")
             bild("09-profil")
             ziele_mindestens_44("Profil")
 
@@ -360,7 +365,7 @@ def main():
             pruefe(not seite.is_visible("text=Beta-Zugangscode"), "Profil-Lesefehler führt nicht zur Profilanlage")
             seite.unroute("**/rest/v1/profil?**")
             seite.click("text=Erneut versuchen")
-            pruefe(ist("Beiträge"), "„Erneut versuchen“ lädt das Profil")
+            pruefe(gesperrt_da(), "„Erneut versuchen“ lädt das Profil")
 
             # Abmelden
             abmelden_ui()
@@ -431,7 +436,7 @@ def main():
             seite.unroute("**/rest/v1/rpc/profil_anlegen**")
             seite.unroute("**/rest/v1/profil?**")
             seite.click("text=Profilstatus prüfen")
-            pruefe(ist("Beiträge") and profilseite() and namen[3] in seite.inner_text("#community"), "„Profilstatus prüfen“ findet das Profil")
+            pruefe(gesperrt_da() and profilseite() and namen[3] in seite.inner_text("#community"), "„Profilstatus prüfen“ findet das Profil")
             seite.click("#community >> text=Abmelden")
             h1()
 
@@ -587,7 +592,7 @@ def main():
                 gehalten[0].abort()           # … die Antwort geht unterwegs verloren
             seite.unroute("**/rest/v1/rpc/profil_anlegen**")
             ctx.set_offline(False)            # das online-Ereignis prüft neu
-            pruefe(titel_in(seite, "Beiträge") and profilseite() and namen[7] in seite.inner_text("#community"),
+            pruefe(gesperrt_da() and profilseite() and namen[7] in seite.inner_text("#community"),
                    "Nach der Unterbrechung: Profil gefunden, keine zweite Anlage")
             n_profile = seite.evaluate("""async () => { const c = await AP.community.verbinden();
                 const r = await c.from('profil').select('id').eq('anzeigename', %s); return (r.data || []).length; }""" % json.dumps(namen[7]))

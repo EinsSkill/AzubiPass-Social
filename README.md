@@ -63,6 +63,7 @@ COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… python community_test.p
 COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… \
   COMMUNITY_TEST_NEU=konto1,…,konto9 python community_zugang_test.py   # neun Konten ohne Profil
 COMMUNITY_TEST_PASSWORT=… python community_beitraege_test.py            # Beiträge lesen (C04/C05)
+COMMUNITY_TEST_PASSWORT=… AXE_PFAD=…/axe.min.js python community_schreiben_test.py   # Schreiben, Antworten, Sperre (Spec 05)
 ```
 
 Für die lokale Ansicht:

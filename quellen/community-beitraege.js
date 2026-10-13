@@ -7,8 +7,13 @@
      – Filter Beitragsart und Lernfeld, neueste zuerst
      – „Weitere Beiträge laden" mit stabiler Zeit-/ID-Navigation
      – Dateien nur über den angemeldeten Abruf (aktuelle Rechteprüfung)
-     – keine Schreib-, Melde- oder Reaktionsknöpfe: Das kommt mit den
-       eigenen Specs. Hilfreich und „Gelöst" sind hier reine Anzeigen.
+     – keine Melde- oder Reaktionsknöpfe: Das kommt mit den eigenen Specs.
+       Hilfreich ist hier eine reine Anzeige.
+
+   Dazu seit 13.10.2026 nach doku/community/05-schreiben-antworten.md (v1):
+     C06 Beitrag schreiben (#community/schreiben), Antworten im Detail und
+     „beste Antwort" für die Person, die gefragt hat. Gesendet wird mit
+     Vorgangskennung – ein zweiter Versuch legt nichts doppelt an.
 
    Der Zugang (Sitzung, Profil) ist vorher geprüft – das macht
    community-ansicht.js. Jede Antwort vom Server wird nur angezeigt, wenn
@@ -29,6 +34,9 @@
      Speicher gezeigt), nur Filter, Anzahl und Position bleiben. */
   var stand = leererStand(null);
   var dateien = [];          // geladene Dateien (blob:-Adressen) zum Freigeben
+  var entwurf = null;        // C06-Entwurf, nur im Arbeitsspeicher, an ein Konto gebunden
+  var antwortEntwurf = null; // { konto, beitrag, text, vorgang }
+  var gerade = null;         // { id, text } – Bestätigung nach dem Veröffentlichen
 
   function leererStand(konto) {
     return { konto: konto, art: "", lernfeld: "", geladen: 0, scroll: 0, zuletzt: null, zurueck: false };
@@ -36,6 +44,9 @@
 
   function vergessen() {
     stand = leererStand(null);
+    entwurf = null;
+    antwortEntwurf = null;
+    gerade = null;
     dateienFreigeben();
   }
 
@@ -113,6 +124,15 @@
     r.appendChild(oben);
     r.appendChild(kopf);
     r.appendChild(ctx.hinweiszeile());
+    var schreibReihe = el("div", "cm-reihe cm-schreiben-reihe");
+    var schreibLink = verweis("Beitrag schreiben", "#community/schreiben", "kn-haupt cm-haupt");
+    schreibLink.addEventListener("click", function () {
+      stand.scroll = window.scrollY;
+      stand.zurueck = true;
+      ctx.merkeHerkunft();
+    });
+    schreibReihe.appendChild(schreibLink);
+    r.appendChild(schreibReihe);
 
     // Filter: dauerhaft beschriftet, kein Absenden nötig.
     var filter = el("div", "cm-filter");
@@ -217,6 +237,7 @@
         bereich.removeAttribute("aria-busy");
         if (f && f.art === "veraltet") return;
         if (f && f.art === "anmeldung") return ctx.abgelaufen();
+        if (f && f.art === "gesperrt") return ctx.gesperrt();
         if (f && f.art === "netz" && ctx.offline()) return ctx.offlineZeigen();
         bereich.innerHTML = "";
         var box = el("div", "cm-fehlerbox");
@@ -244,8 +265,8 @@
         bereich.appendChild(reihe);
       } else {
         meldung.textContent = "";
-        // „Stell eine Frage …" und „Beitrag schreiben" erst mit freigegebenem C06.
         bereich.appendChild(el("p", "cm-leer", "Hier gibt es noch keine Beiträge."));
+        bereich.appendChild(el("p", "cm-hilfe", "Stell eine Frage oder teile einen Lernzettel oder Tipp."));
       }
     }
 
@@ -351,26 +372,39 @@
     var inhalt = el("div", "cm-detail");
     r.appendChild(inhalt);
 
+    var bestaetigt = gerade && gerade.id === id && gerade.konto === ctx.konto ? gerade : null;
+    gerade = null;
+
     function laden() {
       AP.community.beitrag(id).then(function (b) {
         if (!ctx.gilt()) return;
         // Nicht vorhanden, nicht erlaubt oder (noch) in einer Gruppe: neutral.
         if (!b || b.gruppe_id) return ctx.nichtDa();
         zeigen(b);
+        if (bestaetigt) {
+          var ok = el("p", "meldung", bestaetigt.text);
+          ok.setAttribute("role", "status");
+          inhalt.insertBefore(ok, inhalt.firstChild);
+          bestaetigt = null;
+        }
       }, function (f) {
         if (!ctx.gilt()) return;
         if (f && f.art === "veraltet") return;
         if (f && f.art === "anmeldung") return ctx.abgelaufen();
+        if (f && f.art === "gesperrt") return ctx.gesperrt();
         if (f && f.art === "netz" && ctx.offline()) return ctx.offlineZeigen();
         var h = r.querySelector("h1");
         h.textContent = "Beitrag";
         h.removeAttribute("aria-live");
         inhalt.innerHTML = "";
-        var p = el("p", "meldung fehler", "Der Beitrag konnte nicht geladen werden. Versuch es erneut.");
+        // Gerade veröffentlicht, aber nicht anzeigbar: Erfolg nicht zurücknehmen.
+        var p = el("p", "meldung fehler", bestaetigt
+          ? "Dein Beitrag wurde veröffentlicht. Er konnte noch nicht angezeigt werden."
+          : "Der Beitrag konnte nicht geladen werden. Versuch es erneut.");
         p.setAttribute("role", "alert");
         inhalt.appendChild(p);
         var reihe = el("div", "cm-reihe");
-        reihe.appendChild(knopf("Erneut versuchen", "kn-haupt cm-haupt", function () {
+        reihe.appendChild(knopf(bestaetigt ? "Beitrag erneut laden" : "Erneut versuchen", "kn-haupt cm-haupt", function () {
           h.textContent = "Beitrag wird geladen …";
           inhalt.innerHTML = "";
           laden();
@@ -380,26 +414,35 @@
       });
     }
 
-    function zeigen(b) {
+    // Kopfzeile über dem Titel: Art, Zuordnung, Status – als Text, nicht nur Farbe.
+    function kopfZeile(b) {
       var h = r.querySelector("h1");
-      h.removeAttribute("aria-live");
-      // Kopfzeile über dem Titel: Art, Zuordnung, Status – als Text, nicht nur Farbe.
+      var alt = kopf.querySelector(".cm-zeile-oben");
+      if (alt) alt.remove();
       var zo = zuordnung(ctx, b);
-      var aug = kopf.querySelector(".schirm-augenbraue");
       var zeileOben = el("p", "cm-zeile-oben");
       zeileOben.appendChild(el("span", null, ARTNAME[b.art] || ""));
       zeileOben.appendChild(el("span", null, "Für alle in der Community"));
       if (zo) zeileOben.appendChild(el("span", null, zuordnungText(zo)));
       if (b.art === "frage" && b.geloest) zeileOben.appendChild(marke("Gelöst"));
       if (b.an_mentoren) zeileOben.appendChild(marke("An Mentor:innen"));
+      if (b.versteckt) zeileOben.appendChild(marke("Ausgeblendet"));
       kopf.insertBefore(zeileOben, h);
+      return zeileOben;
+    }
+
+    function zeigen(b) {
+      var h = r.querySelector("h1");
+      h.removeAttribute("aria-live");
+      var zo = zuordnung(ctx, b);
+      var aug = kopf.querySelector(".schirm-augenbraue");
+      kopfZeile(b);
       if (aug) aug.textContent = "Ich · Community · Beiträge";
       h.textContent = b.titel;
       inhalt.innerHTML = "";
 
       if (b.versteckt) {
         // Nur Autor:in oder Team bekommen ausgeblendete Beiträge überhaupt zu sehen.
-        zeileOben.appendChild(marke("Ausgeblendet"));
         inhalt.appendChild(el("p", "meldung", "Dieser Beitrag ist ausgeblendet."));
         var reihe = el("div", "cm-reihe");
         reihe.appendChild(verweis("Zur Community", "#community"));
@@ -470,6 +513,10 @@
       return box;
     }
 
+    /* Antworten lesen, schreiben (Spec 05) und – nur für die Person, die
+       gefragt hat – die beste Antwort setzen oder zurücknehmen. Die Liste
+       kommt immer frisch vom Server; ein Erfolg wird erst nach der
+       Serverbestätigung gezeigt. */
     function antwortBereich(b) {
       var box = el("section", "cm-antworten");
       var h = el("h2", "cm-abschnitt", "Antworten");
@@ -478,7 +525,28 @@
       box.appendChild(zahl);
       var liste = el("div");
       box.appendChild(liste);
-      function laden() {
+      var meldungBox = el("div", "cm-antwort-meldung");
+      box.appendChild(meldungBox);
+      var formBox = el("div", "cm-antwort-form");
+      box.appendChild(formBox);
+      var darfLoesen = b.art === "frage" && !!ctx.konto && b.autor_id === ctx.konto;
+      var markiert = false;          // eine Lösungsänderung läuft
+
+      function melden(text, fehler, knopfText, beiKlick) {
+        meldungBox.innerHTML = "";
+        if (!text) return null;
+        var p = el("p", fehler ? "meldung fehler" : "meldung", text);
+        p.setAttribute("role", fehler ? "alert" : "status");
+        p.tabIndex = -1;
+        meldungBox.appendChild(p);
+        if (knopfText) meldungBox.appendChild(knopf(knopfText, "kn-neben cm-neben", beiKlick));
+        return p;
+      }
+
+      /* nach: { neu: Antwort-ID } nach eigenem Senden, { loesung: Antwort-ID }
+         nach Lösungsänderung – dann bekommt der Knopf derselben Antwort den Fokus. */
+      function laden(nach) {
+        nach = nach || {};
         zahl.textContent = "";
         liste.innerHTML = "";
         var st = el("p", "cm-hilfe", "Antworten werden geladen …");
@@ -490,35 +558,777 @@
           var sichtbar = (alle || []).filter(function (a) { return !a.versteckt; });
           liste.innerHTML = "";
           zahl.textContent = anzahlAntworten(sichtbar.length);
+          if (nach.neu) melden("Deine Antwort wurde gesendet.", false);
           if (!sichtbar.length) { liste.appendChild(el("p", "cm-leer", "Noch keine Antworten.")); return; }
           var ol = el("ol", "liste-schlicht cm-antwortliste");
           sichtbar.forEach(function (a) {
             var li = el("li", "cm-antwort");
+            li.dataset.id = a.id;
             if (a.beste) li.appendChild(el("p", "cm-zeile-oben", "")).appendChild(marke("Beste Antwort"));
             li.appendChild(el("div", "cm-text", a.text));
             var p = a.autor || {};
             li.appendChild(el("p", "cm-zeile-meta",
               [personText(p.anzeigename, p.rolle, p.lehrjahr), datum(a.erstellt_am)].join(" · ")));
+            if (darfLoesen && !b.versteckt) li.appendChild(loesenKnopf(a));
             ol.appendChild(li);
           });
           liste.appendChild(ol);
+          var ziel = nach.neu ? ol.querySelector('li[data-id="' + nach.neu + '"]')
+            : nach.loesung ? ol.querySelector('li[data-id="' + nach.loesung + '"] .cm-loesen') : null;
+          if (ziel) {
+            if (nach.neu) ziel.tabIndex = -1;
+            ziel.focus({ preventScroll: false });
+          }
         }, function (f) {
           if (!ctx.gilt()) return;
           if (f && f.art === "veraltet") return;
           if (f && f.art === "anmeldung") return ctx.abgelaufen();
+          if (f && f.art === "gesperrt") return ctx.gesperrt();
           liste.innerHTML = "";
-          var p = el("p", "meldung fehler", "Die Antworten konnten nicht geladen werden.");
+          // Bestätigt gesendet, nur das Nachladen klappt nicht: Erfolg bleibt stehen.
+          var p = el("p", "meldung fehler", nach.neu
+            ? "Deine Antwort wurde gesendet. Die Antworten konnten noch nicht neu geladen werden."
+            : "Die Antworten konnten nicht geladen werden.");
           p.setAttribute("role", "alert");
           liste.appendChild(p);
-          liste.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", laden));
+          liste.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", function () { laden(); }));
+          if (nach.neu) meldungBox.innerHTML = "";
         });
       }
+
+      function loesenKnopf(a) {
+        var kb = knopf(a.beste ? "Markierung entfernen" : "Als beste Antwort markieren", "kn-neben cm-neben cm-loesen", function () {
+          if (markiert || kb.disabled) return;
+          markiert = true;
+          kb.disabled = true;
+          kb.setAttribute("aria-busy", "true");
+          var alt = kb.parentNode.querySelector(".cm-loesen-fehler");
+          if (alt) alt.remove();
+          AP.community.besteAntwort(a.id).then(function () {
+            markiert = false;
+            if (!ctx.gilt()) return;
+            // Bestätigten Lösungsstatus und Antworten frisch holen.
+            AP.community.beitrag(b.id).then(function (neu) {
+              if (!ctx.gilt()) return;
+              if (!neu) return ctx.nichtDa();
+              b.geloest = neu.geloest;
+              kopfZeile(neu);
+            }, function () {});
+            laden({ loesung: a.id });
+          }, function (f) {
+            markiert = false;
+            if (!ctx.gilt()) return;
+            kb.disabled = false;
+            kb.removeAttribute("aria-busy");
+            if (f && f.art === "veraltet") return;
+            if (f && f.art === "anmeldung") return ctx.abgelaufen();
+            if (f && f.art === "gesperrt") return ctx.gesperrt();
+            // Alter, bestätigter Zustand bleibt stehen.
+            var p = el("p", "meldung fehler cm-loesen-fehler", "Die Markierung konnte nicht geändert werden. Versuch es erneut.");
+            p.setAttribute("role", "alert");
+            kb.parentNode.insertBefore(p, kb);
+          });
+        });
+        return kb;
+      }
+
+      /* ---------- Antwortformular */
+      function meinEntwurf() {
+        var a = antwortEntwurf;
+        return a && a.konto === ctx.konto && a.beitrag === b.id ? a : null;
+      }
+
+      function formular(fokus) {
+        formBox.innerHTML = "";
+        if (b.versteckt) return;
+        var ae = meinEntwurf();
+        if (!ae || !ae.offen) {
+          var oeffnen = knopf("Antwort schreiben", "kn-haupt cm-haupt", function () {
+            if (!meinEntwurf()) antwortEntwurf = neuerAntwortEntwurf(ctx.konto, b.id);
+            antwortEntwurf.offen = true;
+            formular("feld");
+          });
+          formBox.appendChild(oeffnen);
+          if (fokus === "knopf") oeffnen.focus();
+          return;
+        }
+        var form = el("form", "cm-form cm-antwortform");
+        form.noValidate = true;
+        var feld = mehrzeilig(ctx, { label: "Deine Antwort", pflicht: true, wert: ae.text, zeilen: 5 });
+        var z = zaehler(feld, GRENZE.antwort, function (drueber) {
+          grenzMeldung(feld, drueber, "Die Antwort braucht 1 bis 2000 Zeichen.", ansage);
+        });
+        var ansage = vorlesen();
+        form.appendChild(feld.box);
+        form.appendChild(ansage);
+        var platz = el("div", "cm-antwort-status");
+        form.appendChild(platz);
+        var reihe = el("div", "cm-reihe");
+        var senden = el("button", "kn-haupt cm-haupt", "Antwort senden");
+        senden.type = "submit";
+        var abbr = knopf("Abbrechen", "kn-neben cm-neben", function () {
+          if (ae.zustand === "sendet" || ae.zustand === "pruefen") return;
+          function zu() {
+            if (antwortEntwurf === ae) antwortEntwurf = ae.zustand === "unklar" ? ae : null;
+            ae.offen = false;
+            formular("knopf");
+          }
+          // Solange offen ist, ob sie angekommen ist, wird nichts verworfen.
+          if (ae.zustand === "unklar" || !ae.text.trim()) return zu();
+          verwerfenFragen(abbr, zu);
+        });
+        reihe.appendChild(senden);
+        reihe.appendChild(abbr);
+        form.appendChild(reihe);
+        formBox.appendChild(form);
+        var versucht = false;
+
+        feld.eingabe.addEventListener("input", function () {
+          ae.text = feld.eingabe.value;
+          ae.veraendert = true;
+          if (versucht) pruefe();
+        });
+
+        function pruefe() {
+          var n = laenge(ae.text.trim());
+          var falsch = n < 1 || n > GRENZE.antwort;
+          ctx.fehlerSetzen(feld, falsch ? "Die Antwort braucht 1 bis 2000 Zeichen." : "");
+          return !falsch;
+        }
+
+        var gezeigt = null;
+        function darstellen(fokusMeldung) {
+          var laeuft = ae.zustand === "sendet" || ae.zustand === "pruefen";
+          if (ae.zustand === "sendet") ctx.sperren(senden, "Antwort wird gesendet …");
+          else {
+            ctx.freigeben(senden);
+            senden.disabled = ae.zustand === "unklar" || ae.zustand === "pruefen";
+          }
+          abbr.disabled = laeuft;
+          if (gezeigt === ae.meldung && ae.zustand !== "pruefen") return;
+          gezeigt = ae.meldung;
+          platz.innerHTML = "";
+          if (!ae.meldung) return;
+          var p = el("p", ae.meldung.fehler ? "meldung fehler" : "meldung", ae.meldung.text);
+          p.setAttribute("role", ae.meldung.fehler ? "alert" : "status");
+          p.tabIndex = -1;
+          platz.appendChild(p);
+          if (ae.zustand === "unklar" || ae.zustand === "pruefen") {
+            var sp = knopf("Status prüfen", "kn-neben cm-neben", statusPruefen);
+            if (ae.zustand === "pruefen") ctx.sperren(sp, "Status wird geprüft …");
+            platz.appendChild(sp);
+          }
+          if (fokusMeldung) p.focus();
+        }
+        ae.anzeigen = function (fokusMeldung) { if (ctx.gilt() && document.contains(form)) darstellen(fokusMeldung); };
+
+        function gesendet(id) {
+          if (antwortEntwurf === ae) antwortEntwurf = null;
+          ae.zustand = null;
+          if (!ctx.gilt() || !document.contains(form)) return;
+          formular();
+          laden({ neu: id });
+        }
+
+        function fehlgeschlagen(f) {
+          if (antwortEntwurf !== ae) return;
+          if (f && f.art === "veraltet") return;
+          if (f && f.art === "unklar") {
+            ae.zustand = "unklar";
+            ae.meldung = { text: "Wir konnten nicht prüfen, ob deine Antwort gesendet wurde. Prüfe den Status, bevor du erneut sendest.", fehler: true };
+            return ae.anzeigen(true);
+          }
+          ae.zustand = null;
+          var lebt = ctx.gilt();
+          if (f && f.art === "anmeldung") return lebt ? ctx.abgelaufen() : null;
+          if (f && f.art === "gesperrt") return lebt ? ctx.gesperrt() : null;
+          ae.meldung = { fehler: true, text:
+            f && f.art === "bremse" ? "Du hast gerade viele Antworten gesendet. Versuch es später erneut."
+            : f && (f.art === "rechte" || /nicht beantworten/.test(f.message || ""))
+              ? "Du kannst diesen Beitrag gerade nicht bearbeiten oder beantworten."
+            : "Deine Antwort wurde nicht gesendet. Deine Eingabe ist noch da." };
+          if (f && f.art === "netz" && ctx.offline() && lebt) return ctx.offlineZeigen();
+          ae.anzeigen(true);
+        }
+
+        function statusPruefen() {
+          if (ae.zustand !== "unklar") return;
+          ae.zustand = "pruefen";
+          ae.anzeigen();
+          AP.community.antwortStatus(ae.vorgang).then(function (id) {
+            if (antwortEntwurf !== ae) return;
+            if (id) return gesendet(id);
+            ae.zustand = null;
+            ae.meldung = { text: "Deine Antwort wurde nicht gesendet. Deine Eingabe ist noch da.", fehler: true };
+            ae.anzeigen(true);
+          }, function (f) {
+            if (antwortEntwurf !== ae) return;
+            if (f && f.art === "veraltet") return;
+            ae.zustand = "unklar";
+            if (f && f.art === "anmeldung" && ctx.gilt()) return ctx.abgelaufen();
+            ae.meldung = { text: "Wir konnten nicht prüfen, ob deine Antwort gesendet wurde. Prüfe den Status, bevor du erneut sendest.", fehler: true };
+            ae.anzeigen(true);
+          });
+        }
+
+        form.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          if (ae.zustand) return;                 // läuft, wird geprüft oder ist unklar
+          versucht = true;
+          if (!pruefe()) { feld.eingabe.focus(); return; }
+          if (ctx.offline()) return ctx.offlineZeigen();
+          // Dieselbe Kennung für eine Wiederholung derselben Eingabe – nie doppelt.
+          if (!ae.vorgang || ae.veraendert) ae.vorgang = AP.community.neueVorgangskennung();
+          ae.veraendert = false;
+          ae.zustand = "sendet";
+          ae.meldung = null;
+          meldungBox.innerHTML = "";
+          darstellen();
+          AP.community.antwortSchreiben(b.id, ae.text, ae.vorgang).then(gesendet, fehlgeschlagen);
+        });
+
+        darstellen();
+        if (fokus === "feld") feld.eingabe.focus();
+      }
+
       laden();
+      formular();
       return box;
     }
 
     laden();
   }
+
+  /* ================================================== Formularteile (Spec 05) */
+
+  var GRENZE = { titel: 120, text: 4000, antwort: 2000 };
+  var DATEI_MAX = 5242880;                        // 5 MiB
+  var DATEI_TYPEN = ["image/jpeg", "image/png", "image/webp", "application/pdf"];
+
+  function laenge(t) { return AP.community.laenge(t); }
+
+  // Unsichtbare Statuszeile: sagt Grenzverletzungen an, nicht jedes Zeichen.
+  function vorlesen() {
+    var p = el("p", "cm-ergebnis cm-nur-vorlesen");
+    p.setAttribute("role", "status");
+    return p;
+  }
+
+  function beschreibtDazu(eingabe, id) {
+    var alt = eingabe.getAttribute("aria-describedby");
+    eingabe.setAttribute("aria-describedby", (alt ? alt + " " : "") + id);
+  }
+
+  // Mehrzeiliges Feld mit denselben Labels/Hilfen wie ctx.feld.
+  function mehrzeilig(ctx, o) {
+    var f = ctx.feld(o);
+    var t = el("textarea", "cm-eingabe cm-mehrzeilig");
+    ["id", "aria-describedby", "aria-required"].forEach(function (k) {
+      var v = f.eingabe.getAttribute(k);
+      if (v !== null) t.setAttribute(k, v);
+    });
+    t.rows = o.zeilen || 6;
+    t.value = o.wert || "";
+    f.box.replaceChild(t, f.eingabe);
+    f.eingabe = t;
+    return f;
+  }
+
+  // „{n} / 120 Zeichen“ – gezählt wie die Datenbank (Codepunkte, ohne äußere Leerzeichen).
+  function zaehler(f, grenze, beiGrenze) {
+    var p = el("p", "cm-hilfe cm-zaehler");
+    p.id = f.eingabe.id + "-z";
+    f.box.insertBefore(p, f.fehler);
+    beschreibtDazu(f.eingabe, p.id);
+    var war = false;
+    function neu() {
+      var n = laenge(String(f.eingabe.value || "").trim());
+      p.textContent = n + " / " + grenze + " Zeichen";
+      var drueber = n > grenze;
+      if (drueber !== war) { war = drueber; beiGrenze(drueber); }
+    }
+    f.eingabe.addEventListener("input", neu);
+    neu();
+    return { box: p, neu: neu };
+  }
+
+  function grenzMeldung(f, drueber, text, ansage) {
+    if (drueber) {
+      f.fehler.textContent = text;
+      f.fehler.hidden = false;
+      f.eingabe.setAttribute("aria-invalid", "true");
+      f.box.classList.add("hat-fehler");
+      if (ansage) ansage.textContent = text;
+    } else if (f.fehler.textContent === text) {
+      f.fehler.textContent = "";
+      f.fehler.hidden = true;
+      f.eingabe.removeAttribute("aria-invalid");
+      f.box.classList.remove("hat-fehler");
+    }
+  }
+
+  function groesse(bytes) {
+    if (bytes < 1024 * 1024) return Math.max(1, Math.round(bytes / 1024)) + " KB";
+    return (bytes / 1024 / 1024).toFixed(1).replace(".", ",") + " MB";
+  }
+
+  function dateiFehlerText(d) {
+    if (!d) return "";
+    if (DATEI_TYPEN.indexOf(d.type) < 0) return "Erlaubt sind JPG, PNG, WebP oder PDF.";
+    if (d.size > DATEI_MAX) return "Die Datei darf höchstens 5 MiB groß sein.";
+    return "";
+  }
+
+  /* Rückfrage vor dem Verwerfen: echter Dialog, Escape = weiter schreiben,
+     Fokus zurück zum Auslöser. */
+  function verwerfenFragen(ausloeser, verwerfen) {
+    var d = el("dialog", "cm-dialog");
+    d.setAttribute("aria-labelledby", "cm-verwerfen-titel");
+    var innen = el("div", "cm-dialog-innen");
+    var h = el("h2", "cm-dialog-frage", "Deine Eingaben wurden noch nicht gesendet. Möchtest du sie verwerfen?");
+    h.id = "cm-verwerfen-titel";
+    h.tabIndex = -1;
+    innen.appendChild(h);
+    var entschieden = false;
+    var reihe = el("div", "cm-reihe");
+    var weiter = knopf("Weiter schreiben", "kn-haupt cm-haupt", function () { d.close(); });
+    reihe.appendChild(weiter);
+    reihe.appendChild(knopf("Eingaben verwerfen", "kn-neben cm-neben cm-dialog-neben", function () {
+      entschieden = true;
+      d.close();
+    }));
+    innen.appendChild(reihe);
+    d.appendChild(innen);
+    d.addEventListener("close", function () {
+      d.remove();
+      if (entschieden) verwerfen();
+      else if (ausloeser && document.contains(ausloeser)) ausloeser.focus();
+    });
+    document.body.appendChild(d);
+    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+    weiter.focus();
+  }
+
+  function neuerEntwurf(konto) {
+    return { konto: konto, art: "frage", titel: "", text: "", datei: null, dateiFehler: "",
+             lernfeld: "", kapitel: "", mentor: false,
+             geaendert: false,   // überhaupt etwas eingegeben
+             veraendert: false,  // seit dem letzten Sendeversuch geändert → neue Vorgangskennung
+             vorgang: null, zustand: null /* sendet | unklar | pruefen */, schritt: null,
+             meldung: null, ergebnis: null, ctx: null, anzeigen: null };
+  }
+
+  function neuerAntwortEntwurf(konto, beitrag) {
+    return { konto: konto, beitrag: beitrag, text: "", offen: false, vorgang: null,
+             veraendert: false, zustand: null, meldung: null, anzeigen: function () {} };
+  }
+
+  // Gibt es ungesendete Eingaben dieses Kontos? (Offline-Hinweis, Tab schließen)
+  function hatEntwurf(konto) {
+    if (!konto) return false;
+    var e = entwurf, a = antwortEntwurf;
+    return !!((e && e.konto === konto && (e.geaendert || e.zustand)) ||
+              (a && a.konto === konto && (a.text.trim() || a.zustand)));
+  }
+
+  /* ================================================== C06 · Beitrag schreiben */
+
+  /* Der Entwurf lebt nur im Arbeitsspeicher dieses Tabs und gehört einem
+     Konto (vergessen() bei Abmeldung/Kontowechsel). Ablauf beim Absenden:
+     lokale Prüfung → Freigabe prüfen → (Datei hochladen →) veröffentlichen.
+     Jede Antwort landet im Entwurf, auch wenn die Ansicht inzwischen eine
+     andere ist; gezeigt wird sie, sobald C06 wieder offen ist. */
+  function schreiben(r, ctx) {
+    dateienFreigeben();
+    if (!entwurf || entwurf.konto !== ctx.konto) entwurf = neuerEntwurf(ctx.konto);
+    var e = entwurf;
+    e.ctx = ctx;
+    if (e.ergebnis) return fertig(e);
+
+    var oben = el("div", "cm-oben");
+    var zurueck = knopf("‹ Zurück zu Beiträgen", "kn-neben cm-zurueck", function () { abbrechen(zurueck, true); });
+    oben.appendChild(zurueck);
+    r.appendChild(oben);
+    var kopf = ctx.kopf("Beitrag schreiben", "Stell eine Frage oder teile einen Lernzettel oder Tipp.");
+    var aug = kopf.querySelector(".schirm-augenbraue");
+    if (aug) aug.textContent = "Ich · Community · Beiträge";
+    var ziel = el("p", "cm-zeile-oben");
+    ziel.appendChild(el("span", null, "Für alle in der Community"));
+    kopf.insertBefore(ziel, kopf.lastChild);
+    r.appendChild(kopf);
+
+    var form = el("form", "cm-form cm-schreiben");
+    form.noValidate = true;
+    var uebersichtPlatz = el("div");
+    form.appendChild(uebersichtPlatz);
+    var ansage = vorlesen();
+
+    // Beitragsart
+    var arten = el("fieldset", "cm-feld cm-arten");
+    var legende = el("legend", null, "Beitragsart");
+    legende.appendChild(el("span", "cm-pflicht", "Pflicht"));
+    arten.appendChild(legende);
+    var radios = {};
+    [["frage", "Frage"], ["lernzettel", "Lernzettel"], ["tipp", "Tipp"]].forEach(function (w) {
+      var lab = el("label", "cm-haken cm-wahl");
+      var i = el("input");
+      i.type = "radio";
+      i.name = "cm-beitragsart";
+      i.value = w[0];
+      i.checked = e.art === w[0];
+      i.addEventListener("change", function () { if (i.checked) artGewechselt(w[0]); });
+      lab.appendChild(i);
+      lab.appendChild(el("span", null, w[1]));
+      arten.appendChild(lab);
+      radios[w[0]] = i;
+    });
+    var artHinweis = el("p", "cm-hilfe", "Die ausgewählte Datei wird bei dieser Beitragsart nicht veröffentlicht.");
+    arten.appendChild(artHinweis);
+    form.appendChild(arten);
+
+    // Titel
+    var titel = ctx.feld({ label: "Titel", pflicht: true, wert: e.titel, attr: { autocomplete: "off" } });
+    zaehler(titel, GRENZE.titel, function (d) { grenzMeldung(titel, d, "Der Titel braucht 3 bis 120 Zeichen.", ansage); });
+    form.appendChild(titel.box);
+
+    // Text / Beschreibung
+    var text = mehrzeilig(ctx, { label: "Text", pflicht: true, wert: e.text, zeilen: 8 });
+    zaehler(text, GRENZE.text, function (d) { grenzMeldung(text, d, "Der Text darf höchstens 4000 Zeichen lang sein.", ansage); });
+    form.appendChild(text.box);
+
+    // Datei (nur Lernzettel) – Auswahl nur lokal, hochgeladen wird erst beim Veröffentlichen.
+    var datei = ctx.feld({ label: "Datei", pflicht: true, typ: "file", hilfe: "JPG, PNG, WebP oder PDF, höchstens 5 MiB.",
+      attr: { accept: ".jpg,.jpeg,.png,.webp,.pdf,image/jpeg,image/png,image/webp,application/pdf" } });
+    var auswahl = el("p", "cm-hilfe cm-auswahl");
+    auswahl.id = datei.eingabe.id + "-a";
+    datei.box.insertBefore(auswahl, datei.fehler);
+    beschreibtDazu(datei.eingabe, auswahl.id);
+    var entfernen = knopf("Datei entfernen", "kn-neben cm-neben", function () {
+      e.datei = null;
+      e.dateiFehler = "";
+      merke();
+      datei.eingabe.value = "";
+      dateiAnzeigen();
+      if (versucht) pruefeAlles();
+      datei.eingabe.focus();
+    });
+    datei.box.insertBefore(entfernen, datei.fehler);
+    var hochHinweis = el("p", "cm-hilfe",
+      "Lade nur Inhalte hoch, die du teilen darfst. Keine echten IHK-Prüfungsaufgaben und keine persönlichen Daten anderer Personen. " +
+      "Prüfe auch Bilder, Screenshots und Dokumente vor dem Hochladen.");
+    datei.box.appendChild(hochHinweis);
+    datei.eingabe.addEventListener("change", function () {
+      var d = datei.eingabe.files && datei.eingabe.files[0];
+      if (!d) return;                       // Auswahl abgebrochen: bisherige Datei bleibt
+      var fehler = dateiFehlerText(d);
+      if (fehler) {
+        e.datei = null;
+        e.dateiFehler = fehler;
+        datei.eingabe.value = "";
+        ctx.fehlerSetzen(datei, fehler);
+        ansage.textContent = fehler;
+      } else {
+        e.datei = d;
+        e.dateiFehler = "";
+        ctx.fehlerSetzen(datei, "");
+      }
+      merke();
+      dateiAnzeigen();
+      if (versucht) pruefeAlles();
+    });
+    form.appendChild(datei.box);
+
+    function dateiAnzeigen() {
+      auswahl.textContent = e.datei ? "Ausgewählt: " + e.datei.name + " · " + groesse(e.datei.size) : "Keine Datei ausgewählt.";
+      entfernen.hidden = !e.datei;
+      artHinweis.hidden = !(e.datei && e.art !== "lernzettel");
+    }
+    // Nach dem Neuzeichnen die gewählte Datei wieder ins Feld setzen, wo der Browser das kann.
+    if (e.datei) {
+      try { var dt = new DataTransfer(); dt.items.add(e.datei); datei.eingabe.files = dt.files; } catch (x) {}
+    }
+
+    // Lernfeld / Kapitel – nur aus dem geladenen Katalog.
+    if (e.lernfeld && !lernfeldVon(ctx, e.lernfeld)) { e.lernfeld = ""; e.kapitel = ""; }
+    var lfWahl = [["", "Kein Lernfeld"]].concat(lernfelder(ctx).map(function (x) { return [x.id, x.kurz + " · " + x.titel]; }));
+    var lf = ctx.feld({ label: "Lernfeld (optional)", wert: e.lernfeld, select: lfWahl });
+    form.appendChild(lf.box);
+    var kap = ctx.feld({ label: "Kapitel (optional)", select: [["", "Kein Kapitel"]] });
+    var kapHinweis = el("p", "cm-hilfe", "Das Kapitel wurde zurückgesetzt, weil du das Lernfeld gewechselt hast.");
+    kapHinweis.id = kap.eingabe.id + "-r";
+    kapHinweis.hidden = true;
+    kap.box.insertBefore(kapHinweis, kap.fehler);
+    beschreibtDazu(kap.eingabe, kapHinweis.id);
+    form.appendChild(kap.box);
+    function kapitelFuellen() {
+      var x = e.lernfeld ? lernfeldVon(ctx, e.lernfeld) : null;
+      kap.eingabe.innerHTML = "";
+      [["", "Kein Kapitel"]].concat(((x && x.kapitel) || []).map(function (k) {
+        return [k.id, "Kapitel " + k.nummer + " · " + k.titel];
+      })).forEach(function (w) {
+        var o = el("option", null, w[1]);
+        o.value = w[0];
+        kap.eingabe.appendChild(o);
+      });
+      if (e.kapitel && !((x && x.kapitel) || []).some(function (k) { return k.id === e.kapitel; })) e.kapitel = "";
+      kap.eingabe.value = e.kapitel || "";
+      kap.box.hidden = !x;
+    }
+    kapitelFuellen();
+    lf.eingabe.addEventListener("change", function () {
+      var hatte = !!e.kapitel;
+      e.lernfeld = lf.eingabe.value;
+      e.kapitel = "";
+      merke();
+      kapitelFuellen();
+      kapHinweis.hidden = !(hatte && e.lernfeld);
+      if (hatte) ansage.textContent = "Das Kapitel wurde zurückgesetzt, weil du das Lernfeld gewechselt hast.";
+    });
+    kap.eingabe.addEventListener("change", function () {
+      e.kapitel = kap.eingabe.value;
+      kapHinweis.hidden = true;
+      merke();
+    });
+
+    // Mentor:innen (nur Frage)
+    var mentor = ctx.haken("Frage an Mentor:innen richten", e.mentor, false);
+    var mHilfe = el("p", "cm-hilfe", "Das kennzeichnet deine Frage für Mentor:innen. Eine Antwort ist nicht garantiert.");
+    mHilfe.id = mentor.eingabe.id + "-h";
+    mentor.box.insertBefore(mHilfe, mentor.fehler);
+    beschreibtDazu(mentor.eingabe, mHilfe.id);
+    mentor.eingabe.addEventListener("change", function () { e.mentor = mentor.eingabe.checked; merke(); });
+    form.appendChild(mentor.box);
+
+    // Status und Aktionen
+    var platz = el("div", "cm-schreib-status");
+    form.appendChild(platz);
+    form.appendChild(ansage);
+    var reihe = el("div", "cm-reihe");
+    var senden = el("button", "kn-haupt cm-haupt", "Beitrag veröffentlichen");
+    senden.type = "submit";
+    var abbr = knopf("Abbrechen", "kn-neben cm-neben", function () { abbrechen(abbr, false); });
+    reihe.appendChild(senden);
+    reihe.appendChild(abbr);
+    form.appendChild(reihe);
+    r.appendChild(form);
+
+    var versucht = false;
+
+    function merke() {
+      e.titel = titel.eingabe.value;
+      e.text = text.eingabe.value;
+      e.geaendert = true;
+      e.veraendert = true;
+    }
+    [titel, text].forEach(function (f) {
+      f.eingabe.addEventListener("input", function () { merke(); if (versucht) pruefeAlles(); });
+    });
+
+    function artAnzeigen() {
+      var lz = e.art === "lernzettel";
+      var label = text.box.querySelector("label");
+      label.textContent = lz ? "Beschreibung (optional)" : "Text";
+      if (!lz) label.appendChild(el("span", "cm-pflicht", "Pflicht"));
+      if (lz) text.eingabe.removeAttribute("aria-required");
+      else text.eingabe.setAttribute("aria-required", "true");
+      datei.box.hidden = !lz;
+      mentor.box.hidden = e.art !== "frage";
+      dateiAnzeigen();
+    }
+
+    function artGewechselt(neu) {
+      var alt = e.art;
+      e.art = neu;
+      merke();
+      artAnzeigen();
+      if (alt === "lernzettel" && e.datei) ansage.textContent = "Die ausgewählte Datei wird bei dieser Beitragsart nicht veröffentlicht.";
+      if (versucht) pruefeAlles();
+    }
+
+    // Prüft alle Felder, setzt die Fehler und gibt die fehlerhaften Felder zurück.
+    function pruefeAlles() {
+      var t = laenge(e.titel.trim());
+      var tx = e.text.trim();
+      var paare = [
+        [titel, t < 3 || t > GRENZE.titel ? "Der Titel braucht 3 bis 120 Zeichen." : ""],
+        [text, laenge(tx) > GRENZE.text ? "Der Text darf höchstens 4000 Zeichen lang sein."
+          : !tx && e.art === "frage" ? "Gib einen Text für deine Frage ein."
+          : !tx && e.art === "tipp" ? "Gib einen Text für deinen Tipp ein." : ""],
+        [datei, e.art !== "lernzettel" ? ""
+          : e.datei ? dateiFehlerText(e.datei)
+          : e.dateiFehler || "Wähle eine Datei für deinen Lernzettel."]
+      ];
+      var falsch = [];
+      paare.forEach(function (p) {
+        ctx.fehlerSetzen(p[0], p[1]);
+        if (p[1]) falsch.push(p[0]);
+      });
+      // Übersicht nur verkleinern, nie neu ansagen.
+      var box = uebersichtPlatz.firstChild;
+      if (box) {
+        var ids = falsch.map(function (f) { return f.eingabe.id; });
+        Array.prototype.forEach.call(box.querySelectorAll("li"), function (li) {
+          var a = li.querySelector("a");
+          var id = a.getAttribute("href").slice(1);
+          var i = ids.indexOf(id);
+          if (i < 0) li.remove();
+          else a.textContent = falsch[i].fehler.textContent;
+        });
+        if (!box.querySelector("li")) uebersichtPlatz.innerHTML = "";
+      }
+      return falsch;
+    }
+
+    var gezeigt = null;
+    function darstellen(fokusMeldung) {
+      var laeuft = e.zustand === "sendet" || e.zustand === "pruefen";
+      if (e.zustand === "sendet") {
+        ctx.sperren(senden, e.art === "lernzettel" && e.datei && e.schritt !== "veroeffentlichen"
+          ? "Datei wird hochgeladen …" : "Beitrag wird veröffentlicht …");
+      } else {
+        ctx.freigeben(senden);
+        senden.disabled = e.zustand === "unklar" || e.zustand === "pruefen";
+      }
+      abbr.disabled = laeuft;
+      if (gezeigt === e.meldung && e.zustand !== "pruefen") return;
+      gezeigt = e.meldung;
+      platz.innerHTML = "";
+      if (!e.meldung) return;
+      var p = el("p", e.meldung.fehler ? "meldung fehler" : "meldung", e.meldung.text);
+      p.setAttribute("role", e.meldung.fehler ? "alert" : "status");
+      p.tabIndex = -1;
+      platz.appendChild(p);
+      if (e.zustand === "unklar" || e.zustand === "pruefen") {
+        var sp = knopf("Status prüfen", "kn-neben cm-neben", statusPruefen);
+        if (e.zustand === "pruefen") ctx.sperren(sp, "Status wird geprüft …");
+        platz.appendChild(sp);
+      }
+      if (fokusMeldung) p.focus();
+    }
+    e.anzeigen = function (fokusMeldung) {
+      if (ctx.gilt() && document.contains(form)) darstellen(fokusMeldung);
+    };
+
+    function abbrechen(ausloeser, istZurueck) {
+      function weg() {
+        if (ctx.vonListe()) history.back();
+        else location.hash = "#community";
+      }
+      // Während des Sendens: zurück geht, abgebrochen wird nichts.
+      if (e.zustand === "sendet" || e.zustand === "pruefen") { if (istZurueck) weg(); return; }
+      // Ausgang offen: Entwurf bleibt, bis der Status geklärt ist.
+      if (e.zustand === "unklar") return weg();
+      if (!e.geaendert) { if (entwurf === e) entwurf = null; return weg(); }
+      verwerfenFragen(ausloeser, function () {
+        if (entwurf === e) entwurf = null;
+        weg();
+      });
+    }
+
+    function statusPruefen() {
+      if (e.zustand !== "unklar") return;
+      e.zustand = "pruefen";
+      e.anzeigen();
+      AP.community.beitragStatus(e.vorgang).then(function (id) {
+        if (entwurf !== e) return;
+        if (id) return erfolg(e, id);
+        e.zustand = null;
+        e.meldung = { text: "Dein Beitrag wurde nicht veröffentlicht. Deine Eingaben sind noch da.", fehler: true };
+        e.anzeigen(true);
+      }, function (f) {
+        if (entwurf !== e) return;
+        if (f && f.art === "veraltet") return;
+        e.zustand = "unklar";
+        if (f && f.art === "anmeldung" && e.ctx.gilt()) return e.ctx.abgelaufen();
+        e.meldung = { text: "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde. Prüfe den Status, bevor du erneut sendest.", fehler: true };
+        e.anzeigen(true);
+      });
+    }
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (e.zustand) return;                   // läuft, wird geprüft oder ist unklar
+      e.titel = titel.eingabe.value;
+      e.text = text.eingabe.value;
+      versucht = true;
+      var falsch = pruefeAlles();
+      if (falsch.length) {
+        uebersichtPlatz.innerHTML = "";
+        var box = ctx.fehleruebersicht(falsch);
+        box.tabIndex = -1;
+        uebersichtPlatz.appendChild(box);
+        box.focus();
+        return;
+      }
+      uebersichtPlatz.innerHTML = "";
+      if (ctx.offline()) return ctx.offlineZeigen();
+      // Dieselbe Kennung nur für eine unveränderte Wiederholung – nie doppelt.
+      if (!e.vorgang || e.veraendert) e.vorgang = AP.community.neueVorgangskennung();
+      e.veraendert = false;
+      e.zustand = "sendet";
+      e.schritt = null;
+      e.meldung = null;
+      darstellen();
+      var g = e;
+      AP.community.beitraegeFrei().then(function (frei) {
+        if (entwurf !== g) return;
+        if (!frei) return fehlschlag(g, { art: "gesperrt" });
+        return AP.community.veroeffentlichen({
+          vorgang: g.vorgang, art: g.art, titel: g.titel, text: g.text.trim(),
+          lernfeld: g.lernfeld || null, kapitel: g.kapitel || null,
+          anMentoren: g.art === "frage" && g.mentor,
+          datei: g.art === "lernzettel" ? g.datei : null,
+          schritt: function (s) { g.schritt = s; if (g.zustand === "sendet") g.anzeigen(); }
+        }).then(function (id) { erfolg(g, id); }, function (f) { fehlschlag(g, f); });
+      }, function (f) { fehlschlag(g, f); });
+    });
+
+    artAnzeigen();
+    darstellen();
+  }
+
+  function erfolg(g, id) {
+    if (entwurf !== g) return;
+    g.zustand = null;
+    g.ergebnis = id;
+    if (g.ctx && g.ctx.gilt()) fertig(g);
+  }
+
+  // Bestätigte ID: Entwurf erst jetzt löschen und C05 des eigenen Beitrags öffnen.
+  function fertig(g) {
+    if (entwurf === g) entwurf = null;
+    gerade = { id: g.ergebnis, konto: g.konto, text: "Dein Beitrag wurde veröffentlicht." };
+    location.replace(location.pathname + location.search + "#community/beitrag/" + g.ergebnis);
+  }
+
+  function fehlschlag(g, f) {
+    if (entwurf !== g) return;
+    if (f && f.art === "veraltet") return;     // Konto gewechselt: alles schon vergessen
+    var ctx = g.ctx, lebt = ctx && ctx.gilt();
+    if (f && f.art === "unklar") {
+      g.zustand = "unklar";
+      g.meldung = { text: "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde. Prüfe den Status, bevor du erneut sendest.", fehler: true };
+      return g.anzeigen(true);
+    }
+    g.zustand = null;
+    g.schritt = null;
+    if (f && f.art === "anmeldung") return lebt ? ctx.abgelaufen() : null;
+    if (f && f.art === "gesperrt") return lebt ? ctx.gesperrt() : null;
+    var text = "Dein Beitrag wurde nicht veröffentlicht. Deine Eingaben sind noch da.";
+    if (f && f.art === "bremse") text = "Du hast gerade viele Beiträge veröffentlicht. Versuch es später erneut.";
+    else if (f && f.art === "eingabe" && f.message) text += " " + f.message;
+    g.meldung = { text: text, fehler: true };
+    if (f && f.art === "netz" && lebt && ctx.offline()) return ctx.offlineZeigen();
+    g.anzeigen(true);
+  }
+
+  // Tab schließen oder neu laden mit ungesendeten Eingaben: so weit der Browser es kann.
+  window.addEventListener("beforeunload", function (ev) {
+    var konto = AP.community && AP.community.kontoJetzt ? AP.community.kontoJetzt() : null;
+    if (!hatEntwurf(konto)) return;
+    ev.preventDefault();
+    ev.returnValue = "";
+  });
 
   // Die Übersicht wird gleich neu gezeichnet: Filter und Position mitnehmen.
   function zurueckholen() {
@@ -526,6 +1336,7 @@
     stand.zurueck = true;
   }
 
-  AP.communityBeitraege = { liste: liste, detail: detail, vergessen: vergessen,
+  AP.communityBeitraege = { liste: liste, detail: detail, schreiben: schreiben, vergessen: vergessen,
+                            hatEntwurf: hatEntwurf,
                             dateienFreigeben: dateienFreigeben, zurueckholen: zurueckholen };
 })();
