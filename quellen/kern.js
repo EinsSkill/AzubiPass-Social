@@ -640,6 +640,23 @@ window.AP = (function () {
     if (ziel.scrollIntoView) ziel.scrollIntoView({ block: "start" });
   });
 
+  /* Breite Tabellen scrollen seitlich in ihrer Hülle. Wer nur die Tastatur
+     benutzt, braucht dafür einen Fokus auf der Hülle – aber nur, wenn sie
+     wirklich scrollt; sonst wäre es ein leerer Tab-Halt (Scan 13.10.2026). */
+  function tabellenFokus() {
+    var h = document.querySelectorAll(".tab-huelle");
+    for (var i = 0; i < h.length; i++) {
+      var scrollt = h[i].scrollWidth > h[i].clientWidth + 1;
+      if (scrollt) h[i].setAttribute("tabindex", "0");
+      else h[i].removeAttribute("tabindex");
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tabellenFokus);
+  else tabellenFokus();
+  window.addEventListener("resize", tabellenFokus);
+  window.addEventListener("hashchange", function () { setTimeout(tabellenFokus, 50); });
+  window.addEventListener("load", tabellenFokus);
+
   /* ================================================== Leiste unten */
 
   function leiste() {

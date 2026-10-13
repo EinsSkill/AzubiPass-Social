@@ -22,6 +22,8 @@ außen und ohne Konten:
   A09  Alle Kapitel und die Rechtsseiten bei 320 px ohne seitlichen Überlauf.
   A10  Alle Kapitel fertig, aber kein „zuletzt“: Heute bietet Prüfungstraining.
   A08  Keine Preise auf der Landing Page; Logo-Link bleibt im Projektpfad.
+  BF   Barrierefreiheits-Scan 13.10.: scrollbare Tabellen per Tastatur, Kontrast
+       Tab-Leiste und Landing (Knopf in der Navigation, Fußzeile).
 
 Rückgabewert 1 bei einem Fehler.
 """
@@ -82,7 +84,7 @@ def main():
         with sync_playwright() as p:
             b = p.chromium.launch()
 
-            nur = sys.argv[sys.argv.index("--nur") + 1].split(",") if "--nur" in sys.argv else ["A01", "A05", "A04", "A06", "A07", "A11", "A09", "A10", "A08"]
+            nur = sys.argv[sys.argv.index("--nur") + 1].split(",") if "--nur" in sys.argv else ["A01", "A05", "A04", "A06", "A07", "A11", "A09", "A10", "A08", "BF"]
 
             if "A01" in nur:
                 # ------------------------------------------------ A01
@@ -280,6 +282,35 @@ def main():
                     const r = await c.match('lf13.html'); return r ? (await r.text()).includes('AUDIT-FASSUNG-ZWEI') : null; }""", speicher_alt)
                 pruefe(gemischt is False, "Keine Datei einer anderen Fassung im Speicher", gemischt)
 
+                # 3b. G01 (Gegenprüfung 13.10.): Eintrag fehlt im aktiven Speicher
+                weg = p4.evaluate("""async (n) => (await caches.open(n)).delete('lf13.html')""", speicher_alt)
+                antwort = p4.evaluate("""async () => { const r = await fetch('lf13.html', { cache: 'reload' });
+                    return [r.status, (await r.text()).includes('AUDIT-FASSUNG-ZWEI')]; }""")
+                pruefe(weg and antwort == [503, False],
+                       "Fehlender Eintrag + fremde Datei vom Server: keine andere Fassung, klarer 503", antwort)
+                p4.goto(f"{w}/lf13.html")
+                p4.wait_for_timeout(600)
+                pruefe("Diese Seite fehlt im Offline-Speicher" in p4.content() and "AUDIT-FASSUNG-ZWEI" not in p4.content(),
+                       "… beim Öffnen: Hinweis statt fremder Seite")
+                Diener.ersatz = {}
+                antwort = p4.evaluate("""async (n) => { const r = await fetch('lf13.html');
+                    const da = !!(await (await caches.open(n)).match('lf13.html')); return [r.status, da]; }""", speicher_alt)
+                pruefe(antwort == [200, True], "Passende Datei vom Server: ausgeliefert und wieder im Speicher", antwort)
+                # Ganzer aktiver Speicher fehlt
+                p4.goto(f"{w}/app.html#heute")
+                p4.evaluate("""async (n) => caches.delete(n)""", speicher_alt)
+                Diener.ersatz = {"/lf13.html": (200, original.replace(b"</body>", b"<!-- AUDIT-FASSUNG-ZWEI --></body>"), "text/html")}
+                antwort = p4.evaluate("""async () => { const r = await fetch('lf13.html');
+                    return [r.status, (await r.text()).includes('AUDIT-FASSUNG-ZWEI')]; }""")
+                pruefe(antwort == [503, False], "Ganzer Speicher fehlt + fremde Datei: keine andere Fassung", antwort)
+                Diener.ersatz = {}
+                antwort = p4.evaluate("""async () => { const r = await fetch('mittel/kern.js'); return r.status; }""")
+                pruefe(antwort == 200, "Ganzer Speicher fehlt + passende Datei: wird geprüft ausgeliefert", antwort)
+                # Speicher für die folgenden Schritte wiederherstellen
+                p4.evaluate("""async () => { for (const n of %s) { try { await fetch(n); } catch (e) {} } }""" % json.dumps(list(vorrat)))
+                z = sw_zustand(p4)
+                pruefe(list(z["speicher"].values()) == [len(vorrat)], "Speicher repariert sich mit geprüften Dateien", z)
+
                 # 4. Neue Fassung, bei der eine Datei nicht zum Prüfwert passt: alte bleibt
                 neu_vorrat = dict(vorrat)
                 neu_vorrat["lf13.html"] = "0" * 64           # neue Fassung erwartet eine andere lf13.html
@@ -417,6 +448,41 @@ def main():
                         breit.append((z, br))
                 pruefe(not breit, f"{len(ziele)} Ansichten bei 320 px ohne seitlichen Überlauf", breit[:6])
                 k9.close()
+
+            if "BF" in nur:
+                print("BF · Barrierefreiheit (Scan 13.10.)")
+                kbf = b.new_context(viewport={"width": 390, "height": 844}, service_workers="block", locale="de-DE")
+                pb = kbf.new_page()
+                kontrast_js = """(sel) => { const e = document.querySelector(sel); if (!e) return null;
+                  const f = s => s.match(/[0-9.]+/g).map(Number);
+                  let fg = f(getComputedStyle(e).color), el = e, bg = null;
+                  while (el && !bg) { const c = f(getComputedStyle(el).backgroundColor); if ((c[3] === undefined || c[3] > 0.9) && c.length) bg = c; el = el.parentElement; }
+                  bg = bg || [245, 245, 240];
+                  const a = fg[3] === undefined ? 1 : fg[3];
+                  const mix = [0, 1, 2].map(i => fg[i] * a + bg[i] * (1 - a));
+                  let o = 1; el = e; while (el) { o *= Number(getComputedStyle(el).opacity); el = el.parentElement; }
+                  const vorne = [0, 1, 2].map(i => mix[i] * o + bg[i] * (1 - o));
+                  const lum = c => { const [r, g, b] = c.map(v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); });
+                                     return .2126 * r + .7152 * g + .0722 * b; };
+                  const x = lum(vorne), y = lum(bg);
+                  return Math.round(((Math.max(x, y) + .05) / (Math.min(x, y) + .05)) * 100) / 100; }"""
+                pb.goto(f"{w}/lf4.html#k6")
+                pb.wait_for_timeout(700)
+                info = pb.evaluate("""() => [...document.querySelectorAll('.tab-huelle')].filter(h => h.offsetParent !== null)
+                    .map(h => [h.scrollWidth > h.clientWidth + 1, h.getAttribute('tabindex'), h.getAttribute('role'), !!h.getAttribute('aria-label')])""")
+                pruefe(info and all((not x[0] or x[1] == "0") and x[2] == "region" and x[3] for x in info)
+                       and any(x[0] for x in info), "Scrollende Tabellen sind per Tab erreichbar und benannt", info[:3])
+                pruefe(all(x[0] or x[1] is None for x in info), "Nicht scrollende Tabellen sind kein leerer Tab-Halt")
+                pb.goto(f"{w}/lf1.html")
+                pb.wait_for_timeout(500)
+                tab = pb.evaluate("getComputedStyle(document.querySelector('.tableiste .tab:not(.an)')).color")
+                pruefe(tab == "rgb(92, 97, 88)", "Tab-Leiste auf hellen Seiten mit dunklerer Schrift (#5C6158)", tab)
+                pb.goto(f"{w}/landing.html")
+                pb.wait_for_timeout(500)
+                k1 = pb.evaluate(kontrast_js, ".nav a.kn-gold")
+                k2 = pb.evaluate(kontrast_js, ".fuss nav a")
+                pruefe(k1 and k1 >= 4.5 and k2 and k2 >= 4.5, "Landing: Navigationsknopf und Fußzeile mindestens 4,5:1", (k1, k2))
+                kbf.close()
             ktx.close()
             b.close()
 

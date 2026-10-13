@@ -11,32 +11,32 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-16f443ef71379028";
+var SPEICHER = "azubipass-b1b684437d13e839";
 var VORRAT = {
   "./": "2c349d93e051eec71a1f8b1234031795f40b60fd1ea5f82113beb0923a6d0626",
   "app.html": "2c349d93e051eec71a1f8b1234031795f40b60fd1ea5f82113beb0923a6d0626",
-  "buchfuehrung.html": "aa1d04776ab371a2b0bf7c11161d4fb6be80d2d472ff01ca198e618bcd9d7b30",
-  "datenschutz.html": "f8646adcc82164a9ca49d6c4bbace02117d3f4e5c63b24ad6bc0a4ccd678b349",
+  "buchfuehrung.html": "a6559ad41089f4a12eb1a1b4f2e4dda863371f8dd87d4bfce9a81114fef07a2a",
+  "datenschutz.html": "86308697e6efb46dd566a0c85d3db408c1dc825539109b046b2ff506b2fe210a",
   "impressum.html": "160b6f78a3220f9aea81c1727447b483dfb2ffc3a6aa719e5ede40c35b57f460",
   "index.html": "2c349d93e051eec71a1f8b1234031795f40b60fd1ea5f82113beb0923a6d0626",
-  "landing.html": "6df54d38005a56190df4ad1a60e1db2ec3d9627ab9290b097493ae8f644912ef",
-  "lf1.html": "087f117500da18b7dcc3464d74b9ec4497ae2d9f0fbe47c2e245b422eddde173",
-  "lf10.html": "42f6ba6a3de45f3a25f9bf63da803a9e8f1aeb47c81dce4cada70645122f180d",
-  "lf11.html": "80e7a6ce212fc72fd568aad70a71c83b2b3bae5856b5a5856a2dc359892daeba",
-  "lf12.html": "ce2e7f870692ddad8dea239ff3cde79f120ea1ef30e361040a2790b24ed9a900",
-  "lf13.html": "0bd08765ad0fb042c95cc01241295781b000f7a2ad7f1036abd4cc997903e9b8",
-  "lf2.html": "65cff44940997febd1fa4bbd46d991f772f4ada76cc6963de86e9ed36d52fd68",
-  "lf3.html": "2ad82d5084f3d5a011ef7599745ae84cbd66c61eec28d9bfae3a06b75eeea026",
-  "lf4.html": "be32a9cdb404f278c54239664350d414612ffa4e8e0a6e8f6100e940d0498bcf",
-  "lf5.html": "96049f7df78d8192c0aa39e6d66cfc7d975f2956e1874da52f13c2d0db178b7c",
-  "lf7.html": "84d35421c05bdcd8ed4dd0cb2b68cfa49a2bcc56a1daa37c827211c63484935a",
-  "lf8.html": "b5203fd53a1c57717109228a5efdd2d07b8b095a6b77899f02edf007967626bb",
-  "lf9.html": "6b6bb0e2d81b90053f865f4aac55d8fce978c8a71b0f39b99c54906a66694c42",
+  "landing.html": "c9dddc4ca00df876007bc21a3c069fa37dc19339e5bca4bf9bab9d3d730c8f0c",
+  "lf1.html": "db34bc71214339686e76d871cab821cd54515544b272dfdd3a13ad02b96e6ab3",
+  "lf10.html": "ba87a7232841953b60f10867fe7411171708ce0d183246ddb76c4be5357cf796",
+  "lf11.html": "bd8bdfe0ae4cc1e6d474056ce8e9c96443105f12f37a2e21d2904cc1548de8fd",
+  "lf12.html": "0f37c882686054ab83d70cb830b58c7262f40e18d2a854d73b820661b59cc35c",
+  "lf13.html": "b6bf17878640c55091a4f7e7f05de24849a3b1da18c5d3605591c9d086d3cdfb",
+  "lf2.html": "e6e8f28b7afe1b042989fcb99e72ac458a7f55238ee1e41f2cffc19590a68a1e",
+  "lf3.html": "84f9f8220bea51ab1d3d7fae49b96260c3df0d5250476da4e95db0ea1fbeab95",
+  "lf4.html": "c09c8a279eb3941c50e7d126e80e45a5927888692e69ec5a2f682964c651b256",
+  "lf5.html": "331064aa22e8d2cc52ee3e9a61142d751f33eca5b7d0d617e547516b5efbc98e",
+  "lf7.html": "8e380fdda2a5245caa3a62d514cc90ac24538bace7762aaf6ca29b02c7b0d476",
+  "lf8.html": "e7fa1f78e93de0181eb8d5e7c98973629b00408994774e7581f837619e1dcb9e",
+  "lf9.html": "6774aa582097ee6a6d8111c7dc94b61cc3f969bca4ad1b9b0adbc67191e57ac1",
   "manifest.webmanifest": "1a5dbb48c799333f7f316780c6384a62e365767e94163efd5999c5b1ffdabb30",
   "mittel/app.js": "efb030e18573bd05f023dc243c733d0257175efd33f423a24a9649dc1295f84b",
   "mittel/aufgaben.js": "7952f59103ce5788077a3088db4ef5fc465bb0cb3af76d375c69bd30e00acbb6",
-  "mittel/aufgaben.json": "0b124a69b4f44b7b813ddb441ff3a74a07ab8be6562c81f4706fb8852d27f836",
-  "mittel/azubipass.css": "fd2fed40fa676a7c5468399fc3d7db2ad549c0f5001b5fdc1c3731b1c68897b2",
+  "mittel/aufgaben.json": "c350eddf0c7216080b65e8298eba7f86ef3a2e7c7cb033e9b02aa31afd1ccb4a",
+  "mittel/azubipass.css": "4dd977f2d1a0670e68c79b99e3ba691adb594b662ff2a10a9feca25849d11d16",
   "mittel/azubipass.js": "9ede6fe34c9633efca35edeb1bb652d14a0dc9d1d28525a4d47e8b516f22e644",
   "mittel/community.js": "559f00e3dcaafb4669edc46b1e21744cb469eec29a261e18509331f6348f6943",
   "mittel/ibm-plex-mono-400-latin-ext.woff2": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
@@ -49,9 +49,9 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "6a14a27083ba929e0ce70d57117de244b1074d2bd6b82c4d3776018e221d0e20",
-  "mittel/kern.js": "cc1407c5f73788333c2fc882947379c4190d8974515ed92ed4928f4c25c15f90",
-  "mittel/landing.css": "1e71506f41a1d31bf915931569dd36dc5f74cdefbc42bfdb3331937c049c5c8f",
+  "mittel/inhalt.json": "1c20ca926ad91cef43d987db03d446edde04f89a3a6a205e1d84c2e96d97518f",
+  "mittel/kern.js": "0d2d49706c2c4051219b2f1bf63562f28c92615418b660fb94504f6bda9ed093",
+  "mittel/landing.css": "1fdb11f9aa0073f44b5918efae16093d11222d96f435349de8304caab72bb31a",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",
   "mittel/schriften.css": "751fec1c351de1ff2d2d9274f9d5fa1ef3578751b4ad664489fbed92144a69b1",
   "mittel/source-serif-4-400-latin-ext.woff2": "155f6e701097cc269cf8d5d7ac86795f263f1afbeb47c14d1d747108c9335389",
@@ -116,16 +116,52 @@ self.addEventListener("message", function (e) {
   if (e.data === "uebernehmen") self.skipWaiting();
 });
 
+/* Weg einer Anfrage relativ zum Geltungsbereich, so wie er im VORRAT steht
+   ("./" für die Startseite). null = gehört nicht zu dieser App. */
+function vorratsName(url) {
+  var basis = new URL(self.registration.scope).pathname;
+  if (url.pathname.indexOf(basis) !== 0) return null;
+  var rest = decodeURIComponent(url.pathname.slice(basis.length));
+  return rest === "" ? "./" : rest;
+}
+
+/* Gesamtaudit G01: Eine Datei, die zu dieser Fassung gehört, aber im Speicher
+   fehlt (entfernt, Speicher geleert), kommt nur aus dem Netz, wenn ihr
+   Prüfwert genau passt – dann wird sie auch wieder abgelegt. Sonst gibt es
+   einen klaren Hinweis statt einer Datei aus einer anderen Fassung. */
+function fehltImSpeicher(c, anfrage, name) {
+  return holen(name, VORRAT[name]).then(function (x) {
+    return c.put(x[0], x[1].clone()).then(function () { return x[1]; }, function () { return x[1]; });
+  }).catch(function () {
+    if (anfrage.mode === "navigate") {
+      return new Response(
+        '<!doctype html><html lang="de"><meta charset="utf-8">' +
+        '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+        '<title>AzubiPass</title><body style="font-family:system-ui,sans-serif;max-width:32rem;margin:15vh auto;padding:0 20px;line-height:1.5">' +
+        '<h1 style="font-size:1.4rem">Diese Seite fehlt im Offline-Speicher</h1>' +
+        '<p>Die gespeicherte Fassung der App ist unvollständig. Öffne die App mit Internetverbindung neu, dann wird sie wieder vollständig geladen.</p>' +
+        '<p><a href="./">Zur Startseite</a></p></body></html>',
+        { status: 503, headers: { "Content-Type": "text/html; charset=utf-8" } });
+    }
+    return new Response("", { status: 503, statusText: "Nicht in dieser Fassung verfuegbar" });
+  });
+}
+
 self.addEventListener("fetch", function (e) {
   var anfrage = e.request;
   if (anfrage.method !== "GET") return;
   var url = new URL(anfrage.url);
   if (url.origin !== self.location.origin) return;
+  var name = vorratsName(url);
 
   e.respondWith(caches.open(SPEICHER).then(function (c) {
     // Nur aus der eigenen Fassung – nie aus einem anderen Speicher.
     return c.match(anfrage, { ignoreSearch: true }).then(function (treffer) {
       if (treffer) return treffer;
+      // Gehört zur Fassung, fehlt aber: nur mit passendem Prüfwert.
+      if (name !== null && Object.prototype.hasOwnProperty.call(VORRAT, name)) {
+        return fehltImSpeicher(c, anfrage, name);
+      }
       // Nicht im Vorrat: durchreichen, aber nicht in diese Fassung legen.
       return fetch(anfrage).catch(function () {
         return anfrage.mode === "navigate" ? c.match("app.html") : Response.error();

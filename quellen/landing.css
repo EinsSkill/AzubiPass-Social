@@ -39,6 +39,8 @@ h1,h2,h3{letter-spacing:-.02em;margin:0;}
 .nav{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:14px;}
 .nav a{text-decoration:none;opacity:.82;display:inline-flex;align-items:center;min-height:44px;}
 .nav a:hover{opacity:1;}
+/* Der goldene Knopf in der Navigation bleibt voll deckend (Kontrast, Scan 13.10.2026). */
+.nav a.kn-gold{opacity:1;}
 
 /* Knöpfe */
 .kn-gold,.kn-leer,.kn-dunkel,.kn-text{font-family:var(--sans);font-weight:600;border-radius:2px;cursor:pointer;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s,opacity .2s;}
@@ -224,14 +226,14 @@ h2{font-size:clamp(30px,3.4vw,42px);font-weight:700;line-height:1.12;}
 .abschluss .klein-grau{color:rgba(245,245,240,.42);}
 
 /* Fuß */
-.fuss{background:var(--tinte-tief);color:rgba(245,245,240,.5);padding:34px 0 46px;border-top:1px solid rgba(245,245,240,.12);font-family:var(--sans);font-size:13px;}
+.fuss{background:var(--tinte-tief);color:rgba(245,245,240,.64);padding:34px 0 46px;border-top:1px solid rgba(245,245,240,.12);font-family:var(--sans);font-size:13px;}
 .fuss .mitte{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;}
 .fuss .wortmarke{color:var(--creme);}
 .fuss nav{display:flex;gap:20px;flex-wrap:wrap;}
 .fuss nav a{display:inline-flex;align-items:center;min-height:44px;}
 .fuss a{text-decoration:none;}
 .fuss a:hover{color:var(--gold);}
-.fuss p{width:100%;margin:0;font-size:12px;opacity:.6;line-height:1.6;}
+.fuss p{width:100%;margin:0;font-size:12px;line-height:1.6;}
 
 /* Scroll-Auftritt */
 .rein{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1);}

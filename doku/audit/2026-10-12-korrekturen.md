@@ -59,3 +59,18 @@ Innenabstand liegt jetzt auf dem Knopf (≥ 44 px), Optik fast unverändert
 
 Nicht Teil dieser Korrekturen: E01/E02 (Gestaltung), die acht offenen
 fachlichen Prüfmarker, Screenreader/OS-Zoom/echte Geräte.
+
+
+## Nachtrag 13.10.2026 · Gegenprüfung ChatGPT
+
+| Punkt | Änderung | Test |
+|---|---|---|
+| G01 Cache-Miss einer erwarteten Datei | Fetch-Handler prüft den Pfad gegen `VORRAT`. Fehlt ein erwarteter Eintrag (oder der ganze Speicher), wird die Datei nur mit **passendem SHA-256** aus dem Netz genommen und wieder abgelegt; sonst Hinweisseite (Navigation) bzw. 503 – nie eine Datei aus einer anderen Fassung. Nicht zum Vorrat Gehörendes wird wie bisher durchgereicht. | Eintrag fehlt + fremde Datei → 503/Hinweis; passende Datei → ausgeliefert und repariert; ganzer Speicher fehlt + fremde/passende Datei; Speicher repariert sich. |
+| Klausur nach Abgabe | Entscheidung Lukes: Auswertung bleibt. In `doku/eigene-probeklausur.md` festgehalten. Funktionstest prüft jetzt: keine Uhr/kein Abgeben, Auswertung offen, Antworten und Selbstbewertung erhalten, „Auswahl ändern“ und „Neue Variante erstellen“ führen zur Vorbereitung. | Funktionstest |
+| Landing-Satz | „In der Beta kannst du alle verfügbaren Lerninhalte und Übungen kostenlos nutzen.“ (Entscheidung Lukes) | A08 |
+| Barrierefreiheit | siehe `2026-10-13-barrierefreiheit.md` (Tabellen per Tastatur, Kontraste) | Abschnitt BF |
+
+Neuer Text von Claude, bitte prüfen: Hinweisseite „Diese Seite fehlt im
+Offline-Speicher / Die gespeicherte Fassung der App ist unvollständig. Öffne die
+App mit Internetverbindung neu, dann wird sie wieder vollständig geladen. / Zur
+Startseite“.

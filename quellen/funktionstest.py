@@ -907,7 +907,14 @@ def probeklausur_klausur(b, w):
     pruefe("Auswertung bietet eine neue Variante an",
            pg.get_by_role("button", name="Neue Variante erstellen").count() == 1)
 
-    # Eine abgeschlossene Klausur kommt nicht als laufende zurück
+    # Eine abgeschlossene Klausur kommt nicht als laufende zurück – sondern als
+    # Auswertung (Entscheidung Lukes 13.10.2026, doku/eigene-probeklausur.md):
+    # keine Uhr, Antworten und Selbstbewertung bleiben, neue Vorbereitung geht.
+    haken = pg.locator("#ueben .pk--kriterium input[type=checkbox]")
+    hatte_haken = haken.count() > 0
+    if hatte_haken:
+        haken.first.check()
+        pg.wait_for_timeout(300)
     pg.reload(wait_until="networkidle")
     pg.wait_for_timeout(1300)
     # Nach dem Neuladen steht die Adresse noch auf der Klausur; der Einstieg
@@ -916,10 +923,31 @@ def probeklausur_klausur(b, w):
     pg.wait_for_timeout(600)
     pg.get_by_text("Eigene Probeklausur").click()
     pg.wait_for_timeout(900)
+    text = pg.locator("#ueben").inner_text()
     pruefe("Abgeschlossene Klausur wird nicht als laufende angezeigt",
            pg.locator("#pk-uhr").count() == 0
-           and pg.locator("#ueben .pk--kapitel").count() > 0,
-           " | ".join(pg.locator("#ueben").inner_text().split("\n")[:4]))
+           and pg.get_by_role("button", name="Jetzt abgeben").count() == 0)
+    pruefe("Nach der Abgabe öffnet die letzte Auswertung",
+           "auswertung" in text.lower() and pg.locator("#pk-kapitel .reihe").count() > 0,
+           " | ".join(text.split("\n")[:2]))
+    pruefe("Antworten und Selbstbewertung bleiben erhalten",
+           "1234,56" in json.dumps(pg.evaluate(
+               "() => JSON.parse(localStorage.getItem('azubipass:probeklausur:v1')).antworten"))
+           and (not hatte_haken or pg.locator("#ueben .pk--kriterium input[type=checkbox]").first.is_checked()))
+    pg.get_by_role("button", name="Auswahl ändern").click()
+    pg.wait_for_timeout(700)
+    pruefe("„Auswahl ändern“ führt zur neuen Vorbereitung",
+           pg.locator("#ueben .pk--kapitel").count() > 0 and pg.locator("#pk-uhr").count() == 0)
+    pg.reload(wait_until="networkidle")
+    pg.wait_for_timeout(1300)
+    pg.evaluate("location.hash = '#ueben'")
+    pg.wait_for_timeout(600)
+    pg.get_by_text("Eigene Probeklausur").click()
+    pg.wait_for_timeout(900)
+    pg.get_by_role("button", name="Neue Variante erstellen").click()
+    pg.wait_for_timeout(700)
+    pruefe("„Neue Variante erstellen“ führt zur Vorbereitung vor dem Start",
+           pg.get_by_role("button", name="Probeklausur starten").count() == 1 and pg.locator("#pk-uhr").count() == 0)
 
     # Verwerfen betrifft nur den Klausurzustand
     pg.evaluate("""() => {
