@@ -265,16 +265,52 @@ self.addEventListener("message", function (e) {
   if (e.data === "uebernehmen") self.skipWaiting();
 });
 
+/* Weg einer Anfrage relativ zum Geltungsbereich, so wie er im VORRAT steht
+   ("./" für die Startseite). null = gehört nicht zu dieser App. */
+function vorratsName(url) {
+  var basis = new URL(self.registration.scope).pathname;
+  if (url.pathname.indexOf(basis) !== 0) return null;
+  var rest = decodeURIComponent(url.pathname.slice(basis.length));
+  return rest === "" ? "./" : rest;
+}
+
+/* Gesamtaudit G01: Eine Datei, die zu dieser Fassung gehört, aber im Speicher
+   fehlt (entfernt, Speicher geleert), kommt nur aus dem Netz, wenn ihr
+   Prüfwert genau passt – dann wird sie auch wieder abgelegt. Sonst gibt es
+   einen klaren Hinweis statt einer Datei aus einer anderen Fassung. */
+function fehltImSpeicher(c, anfrage, name) {
+  return holen(name, VORRAT[name]).then(function (x) {
+    return c.put(x[0], x[1].clone()).then(function () { return x[1]; }, function () { return x[1]; });
+  }).catch(function () {
+    if (anfrage.mode === "navigate") {
+      return new Response(
+        '<!doctype html><html lang="de"><meta charset="utf-8">' +
+        '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+        '<title>AzubiPass</title><body style="font-family:system-ui,sans-serif;max-width:32rem;margin:15vh auto;padding:0 20px;line-height:1.5">' +
+        '<h1 style="font-size:1.4rem">Diese Seite fehlt im Offline-Speicher</h1>' +
+        '<p>Die gespeicherte Fassung der App ist unvollständig. Öffne die App mit Internetverbindung neu, dann wird sie wieder vollständig geladen.</p>' +
+        '<p><a href="./">Zur Startseite</a></p></body></html>',
+        { status: 503, headers: { "Content-Type": "text/html; charset=utf-8" } });
+    }
+    return new Response("", { status: 503, statusText: "Nicht in dieser Fassung verfuegbar" });
+  });
+}
+
 self.addEventListener("fetch", function (e) {
   var anfrage = e.request;
   if (anfrage.method !== "GET") return;
   var url = new URL(anfrage.url);
   if (url.origin !== self.location.origin) return;
+  var name = vorratsName(url);
 
   e.respondWith(caches.open(SPEICHER).then(function (c) {
     // Nur aus der eigenen Fassung – nie aus einem anderen Speicher.
     return c.match(anfrage, { ignoreSearch: true }).then(function (treffer) {
       if (treffer) return treffer;
+      // Gehört zur Fassung, fehlt aber: nur mit passendem Prüfwert.
+      if (name !== null && Object.prototype.hasOwnProperty.call(VORRAT, name)) {
+        return fehltImSpeicher(c, anfrage, name);
+      }
       // Nicht im Vorrat: durchreichen, aber nicht in diese Fassung legen.
       return fetch(anfrage).catch(function () {
         return anfrage.mode === "navigate" ? c.match("app.html") : Response.error();

@@ -7,6 +7,7 @@
   --gold-gross:#A38219;
   --creme:#F5F5F0; --grund:#F5F5F0; --papier:#FBFBF8;
   --text:#1A1D1A; --text-sek:#63685F; --linie:#DDDCD2;
+  --tab-text:#5C6158;                  /* Tab-Leiste auf hellen Seiten: 5,0:1 statt 4,49:1 */
   --warn:#8C3A2B; --gut:#2A6B4A;
   --warn-grund:#FBF0ED; --warn-schrift:#8C3A2B; --gut-grund:#EDF5F0;
   --kopf-zeile:#1B4332; --insel-zus:#1B4332;
@@ -234,6 +235,7 @@ mark{padding:.08em .2em;color:inherit;
 
 /* Tabellen */
 .tab-huelle{max-width:100%;overflow-x:auto;margin:0 0 28px;}
+.tab-huelle:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
 table{border-collapse:collapse;width:100%;max-width:var(--lese);font-size:16px;}
 thead th{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:left;background:var(--kopf-zeile);color:var(--creme);padding:11px 14px;}
 tbody td{padding:12px 14px;border-bottom:1px solid var(--linie);vertical-align:top;}
@@ -960,7 +962,7 @@ tr.detail td strong{color:var(--gold);}
 .tableiste.weg{transform:translateY(110%);}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:3px;min-height:var(--leiste);padding:8px 4px 7px;text-decoration:none;
-  color:var(--text-sek);font-family:var(--sans);font-size:10.5px;letter-spacing:.02em;
+  color:var(--tab-text,var(--text-sek));font-family:var(--sans);font-size:10.5px;letter-spacing:.02em;
   transition:color .2s;}
 .tab span{line-height:1;}
 .tab svg{transition:transform .28s cubic-bezier(.22,1,.36,1);}
@@ -1269,6 +1271,7 @@ tr.detail td strong{color:var(--gold);}
   --grund:#12301F;
   --text:#F5F5F0;
   --text-sek:rgba(245,245,240,.66);
+  --tab-text:rgba(245,245,240,.66);
   --linie:rgba(245,245,240,.17);
   --papier:rgba(245,245,240,.045);
   --feld:rgba(245,245,240,.06);

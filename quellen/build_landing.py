@@ -342,7 +342,7 @@ def baue():
     <p class="unter rein">
       Sortiert wie deine Berufsschule — nach Lernfeld. {fertig} sind fertig und sofort
       lesbar, das erste und zweite Lehrjahr wird bis {datum(letzter)} vollständig.
-      In der Beta ist alles kostenlos — schau rein, dann weißt du, ob's was für dich ist.
+      In der Beta kannst du alle verfügbaren Lerninhalte und Übungen kostenlos nutzen.
     </p>
 
     <div class="filter rein" role="group" aria-label="Katalog filtern">
