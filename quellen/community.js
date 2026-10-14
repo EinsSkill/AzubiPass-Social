@@ -526,17 +526,25 @@
     return e;
   }
 
-  /* G03: Steht fest, dass der Server die Anfrage nicht ausgeführt oder
-     zurückgerollt hat? Nur bei einem Postgres-Fehlercode (Transaktion beendet)
-     oder einer Ablehnung vor der Ausführung (PostgREST-Prüfung, Anmeldung,
-     Bremse). Alles andere – Verbindungsabbruch, HTTP 5xx, Gateway, unbekannte
-     Antworten – heißt: Ausgang unklar. r = { error, status } von supabase-js. */
+  /* G03/C01: Steht fest, dass der Server die Anfrage nicht ausgeführt oder
+     zurückgerollt hat? Nur bei einem Postgres-Fehlercode (die Transaktion ist
+     beendet) oder einem einzeln aufgeführten PostgREST-Code, der vor der
+     Ausführung entsteht: Anfrage nicht lesbar (PGRST100–108, 117), Funktion
+     oder Spalte nicht im Schema (PGRST200–205), Anmeldung ungültig
+     (PGRST300–303). Bewusst NICHT dabei: Fehler bei der Antwortbildung
+     (z. B. PGRST111, 112, 116, 121) und jeder unbekannte Code – auch aus
+     derselben Gruppe. Alles andere, Verbindungsabbruch, HTTP 5xx und Gateway
+     inklusive, heißt: Ausgang unklar. r = { error, status } von supabase-js. */
+  var VOR_AUSFUEHRUNG = ["PGRST100", "PGRST101", "PGRST102", "PGRST103", "PGRST105", "PGRST106",
+                         "PGRST107", "PGRST108", "PGRST117", "PGRST200", "PGRST201", "PGRST202",
+                         "PGRST203", "PGRST204", "PGRST205", "PGRST300", "PGRST301", "PGRST302",
+                         "PGRST303"];
   function sicherAbgelehnt(r) {
     var e = (r && r.error) || {};
     var code = String(e.code || "");
     var st = Number((r && r.status) || 0);
     if (/^(P0001|22\w{3}|23\w{3}|42\w{3}|40001|40P01|57014)$/.test(code)) return true;
-    if (/^PGRST[123]\d\d$/.test(code)) return true;
+    if (VOR_AUSFUEHRUNG.indexOf(code) >= 0 && st > 0 && st < 500) return true;
     if (!code && (st === 401 || st === 403 || st === 429)) return true;
     return false;
   }

@@ -545,43 +545,52 @@
 
       /* nach: { neu: Antwort-ID } nach eigenem Senden, { loesung: Antwort-ID }
          nach Lösungsänderung – dann bekommt der Knopf derselben Antwort den Fokus. */
+      /* Zeichnet einen geladenen Antwortstand. mitKnoepfen = false: Der Stand
+         ist nicht gemeinsam mit dem Kopf bestätigt – keine Lösungsaktionen (G07). */
+      function zeichnen(alle, nach, mitKnoepfen) {
+        // Ausgeblendete Antworten gehören nicht in die normale Ansicht.
+        var sichtbar = (alle || []).filter(function (a) { return !a.versteckt; });
+        liste.innerHTML = "";
+        zahl.textContent = anzahlAntworten(sichtbar.length);
+        if (nach.neu) melden("Deine Antwort wurde gesendet.", false);
+        if (!sichtbar.length) { liste.appendChild(el("p", "cm-leer", "Noch keine Antworten.")); return; }
+        var ol = el("ol", "liste-schlicht cm-antwortliste");
+        sichtbar.forEach(function (a) {
+          var li = el("li", "cm-antwort");
+          li.dataset.id = a.id;
+          if (a.beste) li.appendChild(el("p", "cm-zeile-oben", "")).appendChild(marke("Beste Antwort"));
+          li.appendChild(el("div", "cm-text", a.text));
+          var p = a.autor || {};
+          li.appendChild(el("p", "cm-zeile-meta",
+            [personText(p.anzeigename, p.rolle, p.lehrjahr), datum(a.erstellt_am)].join(" · ")));
+          if (mitKnoepfen && darfLoesen && !b.versteckt) li.appendChild(loesenKnopf(a));
+          ol.appendChild(li);
+        });
+        liste.appendChild(ol);
+        var ziel = nach.neu ? ol.querySelector('li[data-id="' + nach.neu + '"]')
+          : nach.loesung ? ol.querySelector('li[data-id="' + nach.loesung + '"] .cm-loesen') : null;
+        if (ziel) {
+          if (nach.neu) ziel.tabIndex = -1;
+          ziel.focus({ preventScroll: false });
+        }
+      }
+
+      // Nur der jüngste Ladevorgang darf zeichnen.
+      var ladeNr = 0;
+
       function laden(nach) {
         nach = nach || {};
+        var nr = ++ladeNr;
         zahl.textContent = "";
         liste.innerHTML = "";
         var st = el("p", "cm-hilfe", "Antworten werden geladen …");
         st.setAttribute("role", "status");
         liste.appendChild(st);
         AP.community.antworten(b.id).then(function (alle) {
-          if (!ctx.gilt()) return;
-          // Ausgeblendete Antworten gehören nicht in die normale Ansicht.
-          var sichtbar = (alle || []).filter(function (a) { return !a.versteckt; });
-          liste.innerHTML = "";
-          zahl.textContent = anzahlAntworten(sichtbar.length);
-          if (nach.neu) melden("Deine Antwort wurde gesendet.", false);
-          if (!sichtbar.length) { liste.appendChild(el("p", "cm-leer", "Noch keine Antworten.")); return; }
-          var ol = el("ol", "liste-schlicht cm-antwortliste");
-          sichtbar.forEach(function (a) {
-            var li = el("li", "cm-antwort");
-            li.dataset.id = a.id;
-            if (a.beste) li.appendChild(el("p", "cm-zeile-oben", "")).appendChild(marke("Beste Antwort"));
-            li.appendChild(el("div", "cm-text", a.text));
-            var p = a.autor || {};
-            li.appendChild(el("p", "cm-zeile-meta",
-              [personText(p.anzeigename, p.rolle, p.lehrjahr), datum(a.erstellt_am)].join(" · ")));
-            if (darfLoesen && !b.versteckt) li.appendChild(loesenKnopf(a));
-            ol.appendChild(li);
-          });
-          liste.appendChild(ol);
-          if (nach.unklar && pruefHinweis && meldungBox.contains(pruefHinweis)) { meldungBox.innerHTML = ""; pruefHinweis = null; }
-          var ziel = nach.neu ? ol.querySelector('li[data-id="' + nach.neu + '"]')
-            : nach.loesung ? ol.querySelector('li[data-id="' + nach.loesung + '"] .cm-loesen') : null;
-          if (ziel) {
-            if (nach.neu) ziel.tabIndex = -1;
-            ziel.focus({ preventScroll: false });
-          }
+          if (!ctx.gilt() || nr !== ladeNr) return;
+          zeichnen(alle, nach, true);
         }, function (f) {
-          if (!ctx.gilt()) return;
+          if (!ctx.gilt() || nr !== ladeNr) return;
           if (f && f.art === "veraltet") return;
           if (f && f.art === "anmeldung") return ctx.abgelaufen();
           if (f && f.art === "gesperrt") return ctx.gesperrt();
@@ -598,28 +607,37 @@
         });
       }
 
-      /* G05: Nach Bestätigung oder unklarem Ausgang Kopf und Antworten frisch
-         holen. Die Beschriftung jedes Knopfs folgt danach dem geladenen,
-         bestätigten Zustand. Scheitert das Nachladen, bleibt es sichtbar; die
-         Knöpfe kommen erst mit einem geladenen Stand zurück. */
+      /* G05/G07: Nach Bestätigung oder unklarem Ausgang Kopf und Antworten als
+         EIN Stand frisch holen. Lösungsaktionen gibt es erst wieder, wenn beide
+         Abrufe gelungen sind. Scheitert einer, bleibt der Fehler mit „Erneut
+         laden“ sichtbar; ein gelungener Teil wird ohne Lösungsaktionen gezeigt. */
       var pruefHinweis = null;
+      function ergebnis(p) {
+        return p.then(function (d) { return { ok: true, d: d }; }, function (f) { return { ok: false, f: f }; });
+      }
       function loesungNeuLaden(antwortId, unklar) {
-        AP.community.beitrag(b.id).then(function (neu) {
-          if (!ctx.gilt()) return;
-          if (!neu) return ctx.nichtDa();
-          b.geloest = neu.geloest;
-          kopfZeile(neu);
-        }, function (f) {
-          if (!ctx.gilt()) return;
-          if (f && f.art === "veraltet") return;
-          if (f && f.art === "anmeldung") return ctx.abgelaufen();
-          if (f && f.art === "gesperrt") return ctx.gesperrt();
+        var nr = ++ladeNr;
+        Array.prototype.forEach.call(liste.querySelectorAll(".cm-loesen"), function (k) { k.disabled = true; });
+        Promise.all([ergebnis(AP.community.beitrag(b.id)), ergebnis(AP.community.antworten(b.id))]).then(function (r) {
+          if (!ctx.gilt() || nr !== ladeNr) return;
+          var kopf = r[0], ant = r[1];
+          var fehlerArt = function (x) { return !x.ok && x.f ? x.f.art : null; };
+          if (fehlerArt(kopf) === "veraltet" || fehlerArt(ant) === "veraltet") return;
+          if (fehlerArt(kopf) === "anmeldung" || fehlerArt(ant) === "anmeldung") return ctx.abgelaufen();
+          if (fehlerArt(kopf) === "gesperrt" || fehlerArt(ant) === "gesperrt") return ctx.gesperrt();
+          if (kopf.ok && !kopf.d) return ctx.nichtDa();
+          if (kopf.ok) { b.geloest = kopf.d.geloest; kopfZeile(kopf.d); }
+          if (pruefHinweis && meldungBox.contains(pruefHinweis)) meldungBox.innerHTML = "";
           pruefHinweis = null;
+          if (kopf.ok && ant.ok) {
+            meldungBox.innerHTML = "";
+            return zeichnen(ant.d, { loesung: antwortId, unklar: unklar }, true);
+          }
+          if (ant.ok) zeichnen(ant.d, {}, false);
           var p = melden("Der aktuelle Stand konnte nicht geladen werden.", true, "Erneut laden",
                          function () { meldungBox.innerHTML = ""; loesungNeuLaden(antwortId, unklar); });
           if (p) p.focus();
         });
-        laden({ loesung: antwortId, unklar: unklar });
       }
 
       function loesenKnopf(a) {
@@ -1367,8 +1385,27 @@
       if (e.zustand === "unklar") return weg();
       if (!e.geaendert) { if (entwurf === e) entwurf = null; return weg(); }
       verwerfenFragen(ausloeser, function () {
-        if (entwurf === e) entwurf = null;
-        weg();
+        if (entwurf !== e) return weg();
+        if (!e.vorgang) { entwurf = null; return weg(); }
+        // G08: Es gab schon einen (sicher abgelehnten) Versuch, vielleicht mit
+        // hochgeladener Datei. Erst endgültig klären: „verworfen“ entfernt die
+        // Datei dieses Vorgangs, „angelegt“ heißt, der Beitrag ist doch da.
+        e.zustand = "klaeren";
+        e.meldung = null;
+        e.anzeigen();
+        AP.community.vorgangKlaeren(e.vorgang, "beitrag", e.versand && e.versand.datei).then(function (z) {
+          if (entwurf !== e) return;
+          if (z === "angelegt") return erfolg(e, e.vorgang);
+          entwurf = null;
+          weg();
+        }, function (f) {
+          if (entwurf !== e) return;
+          if (f && f.art === "veraltet") return;
+          e.zustand = null;
+          if (f && f.art === "anmeldung" && e.ctx.gilt()) return e.ctx.abgelaufen();
+          e.meldung = { text: "Deine Eingaben konnten noch nicht verworfen werden. Versuch es erneut.", fehler: true };
+          e.anzeigen(true);
+        });
       });
     }
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AzubiPass · Korrekturen G03–G05 nach dem ChatGPT-Review von Spec 05
+AzubiPass · Korrekturen G03–G05 und Restbefunde G07, G08, C01 (ChatGPT-Reviews)
 
     AXE_PFAD=…/axe.min.js python3 community_korrekturen_test.py [--bilder ORDNER]
 
@@ -67,7 +67,7 @@ FAKE_JS = r"""
   const F = window.FAKE = {
     db: { profil: [{ id: ICH.id, anzeigename: "Anna", lehrjahr: 2, ueber_mich: "", rolle: "azubi", erstellt_am: jetzt() }],
           beitrag: [], antwort: [], vorgang: {}, dateien: {} },
-    plan: {}, tabFehler: {}, aufrufe: {}, entfernt: [], spaet: [], gehalten: {},
+    plan: {}, tabFehler: {}, tabHalten: {}, aufrufe: {}, entfernt: [], spaet: [], gehalten: {},
     spaetAusfuehren() { const s = F.spaet.splice(0); return s.map(f => f()); },
     freigeben(name) { const g = F.gehalten[name] || []; F.gehalten[name] = []; g.forEach(f => f()); return g.length; }
   };
@@ -139,6 +139,8 @@ FAKE_JS = r"""
     if (schritt === "503-ausgefuehrt") { logik(); return Promise.resolve({ data: null, error: { message: "Service Unavailable", code: "" }, status: 503 }); }
     if (schritt === "bremse") return Promise.resolve(p0001("Kurz durchatmen: zu viele Beiträge in kurzer Zeit."));
     if (schritt === "halten") return new Promise(ja => (F.gehalten[name] = F.gehalten[name] || []).push(() => ja(logik())));
+    if (schritt && typeof schritt === "object")          // C01: beliebiger Fehlercode/HTTP-Status
+      return Promise.resolve({ data: null, error: { message: "Fehler " + schritt.code, code: schritt.code }, status: schritt.status });
     return Promise.resolve(logik());
   }
 
@@ -152,6 +154,10 @@ FAKE_JS = r"""
       eq(k, v) { filter.push([k, v]); return q; },
       maybeSingle() { einzeln = "vielleicht"; return q; }, single() { einzeln = "genau"; return q; },
       then(ja, nein) {
+        if (F.tabHalten[name] > 0) {                        // Abruf anhalten bis F.freigeben(name)
+          F.tabHalten[name]--;
+          return new Promise(weiter => (F.gehalten[name] = F.gehalten[name] || []).push(weiter)).then(() => q.then(ja, nein));
+        }
         if (F.tabFehler[name] > 0) { F.tabFehler[name]--; return Promise.resolve(fetchFehler()).then(ja, nein); }
         let r = tabelle(name).filter(z => filter.every(([k, v]) => z[k] === v));
         const d = einzeln ? (r[0] || null) : r;
@@ -423,6 +429,118 @@ def main():
             s.get_by_text("Gelöst").first.wait_for()
             pruefe(s.get_by_text("Der aktuelle Stand konnte nicht geladen werden.").count() == 0, "Erneut laden stellt den Stand her")
             ctx.close()
+
+            print("G07 · gemeinsamer Nachladestand nach Lösungsänderung")
+            FRAGE = """(() => { const b = '00000000-0000-4000-a000-0000000f0003';
+                FAKE.db.beitrag.push({ id: b, autor_id: FAKE.ICH, art: 'frage', titel: 'Meine Frage G07', text: 'x', erstellt_am: new Date().toISOString() });
+                FAKE.db.antwort.push({ id: '00000000-0000-4000-a000-0000000a0011', beitrag_id: b, autor_id: FAKE.BEN, text: 'Antwort eins', beste: false, versteckt: false, erstellt_am: '2026-10-14T08:00:00Z' });
+                FAKE.db.antwort.push({ id: '00000000-0000-4000-a000-0000000a0012', beitrag_id: b, autor_id: FAKE.BEN, text: 'Antwort zwei', beste: false, versteckt: false, erstellt_am: '2026-10-14T09:00:00Z' });
+                location.hash = '#community/beitrag/' + b; })()"""
+            AKTIV = "[...document.querySelectorAll('.cm-loesen')].filter(k => !k.disabled).length"
+            for tabelle, name in (("beitrag_liste", "nur Kopf scheitert"), ("antwort", "nur Antworten scheitern")):
+                ctx, s = neue_seite("")
+                ev(s, FRAGE)
+                s.get_by_role("button", name="Als beste Antwort markieren").first.wait_for()
+                ev(s, f"FAKE.tabFehler['{tabelle}'] = 1")
+                s.get_by_role("button", name="Als beste Antwort markieren").first.click()
+                warte_text(s, "Der aktuelle Stand konnte nicht geladen werden.")
+                pruefe(ev(s, AKTIV) == 0, f"{name}: keine aktive Lösungsaktion neben dem Fehler", ev(s, AKTIV))
+                pruefe(s.get_by_role("button", name="Erneut laden").count() == 1
+                       and s.get_by_role("button", name="Erneut versuchen").count() == 0,
+                       f"{name}: ein gemeinsamer Weg „Erneut laden“")
+                if tabelle == "beitrag_liste":
+                    axe(s, "C05 Kopf-Nachladefehler ohne Lösungsaktionen")
+                s.get_by_role("button", name="Erneut laden").click()
+                s.get_by_role("button", name="Markierung entfernen").wait_for()
+                pruefe(ev(s, AKTIV) == 2 and s.get_by_text("Der aktuelle Stand konnte nicht geladen werden.").count() == 0,
+                       f"{name}: nach „Erneut laden“ wieder beide Aktionen aus bestätigtem Stand")
+                pruefe(ev(s, "FAKE.aufrufe.beste_antwort_setzen.length") == 1, f"{name}: Erneut laden schreibt nichts")
+                ctx.close()
+            for zuerst, danach in (("beitrag_liste", "antwort"), ("antwort", "beitrag_liste")):
+                ctx, s = neue_seite("")
+                ev(s, FRAGE)
+                s.get_by_role("button", name="Als beste Antwort markieren").first.wait_for()
+                ev(s, f"FAKE.tabHalten['{zuerst}'] = 1; FAKE.tabHalten['{danach}'] = 1")
+                s.get_by_role("button", name="Als beste Antwort markieren").first.click()
+                s.wait_for_function(f"(FAKE.gehalten['{zuerst}'] || []).length === 1 && (FAKE.gehalten['{danach}'] || []).length === 1")
+                pruefe(ev(s, AKTIV) == 0, f"Reihenfolge {zuerst} zuerst: während des Ladens keine Aktion frei")
+                ev(s, f"FAKE.freigeben('{zuerst}')")
+                s.wait_for_timeout(150)
+                pruefe(ev(s, AKTIV) == 0, f"Reihenfolge {zuerst} zuerst: nach halbem Stand weiter gesperrt")
+                ev(s, f"FAKE.freigeben('{danach}')")
+                s.get_by_role("button", name="Markierung entfernen").wait_for()
+                pruefe(ev(s, AKTIV) == 2, f"Reihenfolge {zuerst} zuerst: erst mit beiden Teilen frei")
+                ctx.close()
+            ctx, s = neue_seite("")
+            ev(s, FRAGE)
+            s.get_by_role("button", name="Als beste Antwort markieren").first.wait_for()
+            ev(s, "FAKE.plan.beste_antwort_setzen = ['verlieren']; FAKE.tabFehler.antwort = 1")
+            s.get_by_role("button", name="Als beste Antwort markieren").first.click()
+            warte_text(s, "Der aktuelle Stand konnte nicht geladen werden.")
+            pruefe(ev(s, AKTIV) == 0 and s.get_by_text("Wir prüfen, ob die Markierung").count() == 0,
+                   "Verlorene Bestätigung + Antwortfehler: Prüfhinweis ersetzt, keine Aktion frei")
+            s.get_by_role("button", name="Erneut laden").click()
+            s.get_by_role("button", name="Markierung entfernen").wait_for()
+            pruefe(ev(s, "FAKE.db.antwort.filter(a => a.beste).length") == 1, "Verlorene Bestätigung: genau eine Markierung")
+            ctx.close()
+
+            print("G08 · Verwerfen nach sicherer Ablehnung")
+            for klaeren, name in ((None, "Klärung gelingt"), ("verlieren", "Klärung unklar")):
+                ctx, s = neue_seite("")
+                c06(s, titel="Lernzettel G08", text="", art="Lernzettel")
+                s.locator("form.cm-schreiben input[type=file]").set_input_files(
+                    files=[{"name": "zettel.png", "mimeType": "image/png", "buffer": PNG}])
+                ev(s, "FAKE.plan.beitrag_veroeffentlichen = ['bremse']")
+                senden_c06(s)
+                warte_text(s, "Du hast gerade viele Beiträge veröffentlicht.")
+                v = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen[0].p_vorgang")
+                pfad = f"{ev(s, 'FAKE.ICH')}/{v}.png"
+                pruefe(ev(s, f"!!FAKE.db.dateien['{pfad}']"), f"{name}: Datei nach Ablehnung noch da (Ausgangslage)")
+                if klaeren:
+                    ev(s, f"FAKE.plan.vorgang_klaeren = ['{klaeren}']")
+                s.get_by_role("button", name="Abbrechen").click()
+                s.get_by_role("button", name="Eingaben verwerfen").click()
+                if not klaeren:
+                    s.wait_for_function("location.hash.indexOf('#community/schreiben') !== 0")
+                    k = ev(s, "FAKE.aufrufe.vorgang_klaeren")
+                    pruefe(k and k[0]["p_vorgang"] == v, "Verwerfen klärt zuerst den abgelehnten Vorgang")
+                    pruefe(ev(s, "FAKE.entfernt") == [pfad] and ev(s, f"FAKE.db.vorgang['{v}']") == "verworfen",
+                           "Bei „verworfen“ wird genau die Datei dieses Vorgangs entfernt")
+                    pruefe(ev(s, "FAKE.db.beitrag.length") == 0, "Kein Beitrag entstanden")
+                else:
+                    warte_text(s, "Deine Eingaben konnten noch nicht verworfen werden. Versuch es erneut.")
+                    pruefe(ev(s, "location.hash") == "#community/schreiben", "Unklare Klärung: Formular bleibt, kein Abbruch behauptet")
+                    pruefe(ev(s, "FAKE.entfernt.length") == 0, "Unklare Klärung: Client entfernt nichts")
+                    pruefe(s.get_by_label("Titel").evaluate("e => e.readOnly") is False, "Unklare Klärung: Eingaben wieder bedienbar")
+                    axe(s, "C06 Verwerfen nicht bestätigt")
+                ctx.close()
+            ctx, s = neue_seite("")
+            c06(s, titel="Doch schon angekommen")
+            ev(s, "FAKE.plan.beitrag_veroeffentlichen = ['bremse']")
+            senden_c06(s)
+            warte_text(s, "Du hast gerade viele Beiträge veröffentlicht.")
+            v = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen[0].p_vorgang")
+            ev(s, f"FAKE.db.beitrag.push({{ id: '{v}', autor_id: FAKE.ICH, art: 'frage', titel: 'Doch schon angekommen', text: '', erstellt_am: new Date().toISOString() }})")
+            s.get_by_role("button", name="Abbrechen").click()
+            s.get_by_role("button", name="Eingaben verwerfen").click()
+            s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0")
+            pruefe(ev(s, "location.hash").endswith(v), "Klärung „angelegt“: Beitrag wird als gesendet geöffnet")
+            ctx.close()
+
+            print("C01 · Fehlereinstufung")
+            for code, status, sicher in (("PGRST202", 404, True), ("PGRST301", 401, True), ("PGRST199", 503, False),
+                                         ("PGRST116", 406, False), ("PGRST111", 500, False), ("PGRST000", 503, False),
+                                         ("PGRST202", 503, False)):
+                ctx, s = neue_seite("")
+                c06(s, titel=f"Einstufung {code}")
+                ev(s, f"FAKE.plan.beitrag_veroeffentlichen = [{{ code: '{code}', status: {status} }}]")
+                senden_c06(s)
+                if sicher:
+                    warte_text(s, "Dein Beitrag wurde nicht veröffentlicht.")
+                else:
+                    warte_text(s, "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.")
+                pruefe(True, f"{code}/HTTP {status} gilt als {'sicher abgelehnt' if sicher else 'unklar'}")
+                ctx.close()
 
             browser.close()
 

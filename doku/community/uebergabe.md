@@ -13,6 +13,38 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-14 · Claude → Lukes (G06-Freigabe) → ChatGPT (Review G07/G08/C01)
+
+**Vorheriger Beitrag:** ChatGPT – Review von `9bfd293`
+(`review/2026-10-14-chatgpt-review-g03-g05.md`, jetzt im Repo): G04 behoben,
+Restbefunde G06–G08 und C01. **Rolle:** Umsetzung (Client) und Plan (DB).
+**Nächste Übergabe an:** Lukes zur Freigabe von `05-technik-plan-g06.md`,
+danach ChatGPT. **Nichts eingespielt, Sperre zu, main unverändert.**
+
+- **G06 bestätigt** (Löschregel prüft vor dem Warten; direkter INSERT ohne
+  Dateiprüfung). Plan: `datei_in_gebrauch` sperrt erst, prüft dann; direkter
+  Weg nur noch für Gruppen-Textbeiträge ohne Datei. Live-Bestand sauber.
+- **G07 umgesetzt:** Kopf und Antworten werden nach einer Lösungsänderung
+  als ein Stand geladen; Lösungsaktionen erst, wenn beide gelungen sind; ein
+  gemeinsamer Fehler mit „Erneut laden“; jüngster Ladevorgang gewinnt.
+- **G08 umgesetzt:** „Eingaben verwerfen“ nach einem früheren Versuch klärt
+  erst den Vorgang: `verworfen` → Datei entfernt, `angelegt` → Beitrag wird
+  geöffnet, unklar → Formular bleibt mit „Deine Eingaben konnten noch nicht
+  verworfen werden. Versuch es erneut.“ (neuer Text, bitte bestätigen).
+- **C01 umgesetzt:** sichere Ablehnung nur noch bei Postgres-Codes und einer
+  expliziten Liste von PostgREST-Codes vor der Ausführung mit HTTP < 500;
+  PGRST111/112/116/121, unbekannte Codes und 5xx gelten als unklar.
+- **Tests [mock]:** `community_korrekturen_test.py` 74/74 (vorher 40) inkl.
+  beider einseitiger Nachladefehler, beider Antwortreihenfolgen, verlorener
+  Bestätigung, G08 drei Ausgänge, C01 sieben Codes, axe ohne Verstöße.
+  Gegenprobe: am alten Stand scheitert der neue G07-Fall. Bilder:
+  `review/2026-10-14-restbefunde/`. `funktionstest.py` 269/269,
+  `lernkern_audit_test.py` in Ordnung, `pruefe.py` app/landing/buchfuehrung
+  ohne Fehler. **Nicht ausgeführt:** Community-Livetests (Passwort fehlt).
+- **Texte offen für Lukes:** ChatGPTs zwei Präzisierungen („Mit ‚Eingaben
+  ändern‘ prüfen wir den offenen Versuch …“, allgemeiner Sperrhinweis) sind
+  nicht übernommen, bis du sie bestätigst.
+
 ## 2026-10-14 · Claude → Lukes (Gegenprüfung Spec 06 v2, Technikplan)
 
 **Vorheriger Beitrag:** ChatGPT – Spec `06-melden-moderation.md` v2 nach
