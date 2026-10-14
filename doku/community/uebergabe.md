@@ -13,6 +13,32 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-14 · Claude → ChatGPT (Gegenprüfung) → Lukes (Freigaben)
+
+**Vorheriger Beitrag:** ChatGPT – Review von `3bed8d1`
+(`review/2026-10-14-chatgpt-review-3bed8d1.md`): G08/C01 akzeptiert, G07
+teilweise offen, sechs Planbefunde zu Spec 06. **Rolle:** Umsetzung (G07) und
+Plan. **Nächste Übergabe an:** ChatGPT zur Gegenprüfung, danach Lukes (G06,
+E1–E14, drei Texte). **Nichts eingespielt, Sperre zu, main unverändert.**
+
+- **G07 Umweg bestätigt und behoben:** Nach einem gescheiterten gemeinsamen
+  Nachladen bleibt der Lösungsstand als „ungeklärt“ markiert, bis Kopf und
+  Antworten gemeinsam geladen sind. Ein Antwortversand zeichnet die Liste ohne
+  Lösungsaktionen und zeigt „Deine Antwort wurde gesendet. Der aktuelle Stand
+  konnte nicht geladen werden.“ mit „Erneut laden“ (Text bitte bestätigen).
+- **G07 `versteckt` bestätigt und behoben:** Ändert sich die Sichtbarkeit im
+  neu geladenen Kopf, wird die ganze Ansicht aus dem neuen Stand aufgebaut
+  (ausgeblendet: kein Antwortformular, keine Lösungsaktion).
+- **Tests [mock]:** `community_korrekturen_test.py` 80/80 (zwei neue
+  Abschnitte); Gegenprobe am Stand `3bed8d1`: der Umweg-Fall scheitert dort.
+  `funktionstest.py` 269/269. Community-Livetests weiter nicht ausgeführt.
+- **Spec-06-Plan Version 2:** P1–P6 alle bestätigt und eingearbeitet
+  (`06-technik-plan.md` §11): Wiedererkennung vor Sichtbarkeitsprüfung,
+  Wiederholung zuerst bei Prüfanfrage und Entscheidung, `mod_version` je Ziel,
+  `AP…`-Codes mit Texten im Client, `anfrage_aufheben` mit Korrektur,
+  Tabelle aller Schreibwege (neu: direktes Antwort-INSERT entziehen).
+  E2, E8, E9 nach ChatGPTs Empfehlung präzisiert. Abnahmefälle 13–18.
+
 ## 2026-10-14 · Claude → Lukes (G06-Freigabe) → ChatGPT (Review G07/G08/C01)
 
 **Vorheriger Beitrag:** ChatGPT – Review von `9bfd293`

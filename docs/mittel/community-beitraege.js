@@ -531,6 +531,11 @@
       box.appendChild(formBox);
       var darfLoesen = b.art === "frage" && !!ctx.konto && b.autor_id === ctx.konto;
       var markiert = false;          // eine Lösungsänderung läuft
+      // G07: Nach einer Lösungsänderung ist der Stand ungeklärt, bis Kopf und
+      // Antworten GEMEINSAM neu geladen sind. Kein anderer Ladeweg (etwa nach
+      // dem Senden einer Antwort) hebt das auf.
+      var standOffen = false;
+      var STAND_FEHLER = "Der aktuelle Stand konnte nicht geladen werden.";
 
       function melden(text, fehler, knopfText, beiKlick) {
         meldungBox.innerHTML = "";
@@ -552,7 +557,7 @@
         var sichtbar = (alle || []).filter(function (a) { return !a.versteckt; });
         liste.innerHTML = "";
         zahl.textContent = anzahlAntworten(sichtbar.length);
-        if (nach.neu) melden("Deine Antwort wurde gesendet.", false);
+        if (nach.neu && !standOffen) melden("Deine Antwort wurde gesendet.", false);
         if (!sichtbar.length) { liste.appendChild(el("p", "cm-leer", "Noch keine Antworten.")); return; }
         var ol = el("ol", "liste-schlicht cm-antwortliste");
         sichtbar.forEach(function (a) {
@@ -563,7 +568,7 @@
           var p = a.autor || {};
           li.appendChild(el("p", "cm-zeile-meta",
             [personText(p.anzeigename, p.rolle, p.lehrjahr), datum(a.erstellt_am)].join(" · ")));
-          if (mitKnoepfen && darfLoesen && !b.versteckt) li.appendChild(loesenKnopf(a));
+          if (mitKnoepfen && !standOffen && darfLoesen && !b.versteckt) li.appendChild(loesenKnopf(a));
           ol.appendChild(li);
         });
         liste.appendChild(ol);
@@ -589,6 +594,7 @@
         AP.community.antworten(b.id).then(function (alle) {
           if (!ctx.gilt() || nr !== ladeNr) return;
           zeichnen(alle, nach, true);
+          if (standOffen) standFehler(nach.neu ? "Deine Antwort wurde gesendet. " + STAND_FEHLER : STAND_FEHLER, false);
         }, function (f) {
           if (!ctx.gilt() || nr !== ladeNr) return;
           if (f && f.art === "veraltet") return;
@@ -615,8 +621,14 @@
       function ergebnis(p) {
         return p.then(function (d) { return { ok: true, d: d }; }, function (f) { return { ok: false, f: f }; });
       }
+      // Fehler zum ungeklärten Stand mit dem einzigen Wiederholungsweg.
+      function standFehler(text, fokus) {
+        var p = melden(text, true, "Erneut laden", function () { meldungBox.innerHTML = ""; loesungNeuLaden(null, false); });
+        if (p && fokus) p.focus();
+      }
       function loesungNeuLaden(antwortId, unklar) {
         var nr = ++ladeNr;
+        standOffen = true;
         Array.prototype.forEach.call(liste.querySelectorAll(".cm-loesen"), function (k) { k.disabled = true; });
         Promise.all([ergebnis(AP.community.beitrag(b.id)), ergebnis(AP.community.antworten(b.id))]).then(function (r) {
           if (!ctx.gilt() || nr !== ladeNr) return;
@@ -626,17 +638,19 @@
           if (fehlerArt(kopf) === "anmeldung" || fehlerArt(ant) === "anmeldung") return ctx.abgelaufen();
           if (fehlerArt(kopf) === "gesperrt" || fehlerArt(ant) === "gesperrt") return ctx.gesperrt();
           if (kopf.ok && !kopf.d) return ctx.nichtDa();
+          // Inzwischen ausgeblendet oder wieder sichtbar: die ganze Ansicht aus
+          // dem neuen Stand aufbauen – keine Aktion nach altem Zustand anbieten.
+          if (kopf.ok && !!kopf.d.versteckt !== !!b.versteckt) return zeigen(kopf.d);
           if (kopf.ok) { b.geloest = kopf.d.geloest; kopfZeile(kopf.d); }
           if (pruefHinweis && meldungBox.contains(pruefHinweis)) meldungBox.innerHTML = "";
           pruefHinweis = null;
           if (kopf.ok && ant.ok) {
+            standOffen = false;
             meldungBox.innerHTML = "";
             return zeichnen(ant.d, { loesung: antwortId, unklar: unklar }, true);
           }
           if (ant.ok) zeichnen(ant.d, {}, false);
-          var p = melden("Der aktuelle Stand konnte nicht geladen werden.", true, "Erneut laden",
-                         function () { meldungBox.innerHTML = ""; loesungNeuLaden(antwortId, unklar); });
-          if (p) p.focus();
+          standFehler(STAND_FEHLER, true);
         });
       }
 

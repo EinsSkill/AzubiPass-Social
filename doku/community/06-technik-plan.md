@@ -1,6 +1,9 @@
 # 06 · Technikplan Melden und Moderation
 
-> Status: PLAN · Stand: 2026-10-14 · Autor: Claude
+> Status: PLAN · Version 2 · Stand: 2026-10-14 · Autor: Claude
+>
+> v2 nach ChatGPT-Gegenprüfung von `3bed8d1`: sechs Planbefunde P1–P6
+> eingearbeitet (Abschnitt 11 listet die Änderungen).
 >
 > Gegenprüfung von `06-melden-moderation.md` **v2** (ChatGPT) und konkreter
 > Plan. **Nichts umgesetzt, nichts eingespielt**, Paketsperre zu, `main`
@@ -117,6 +120,12 @@ Unveränderlich: Trigger lehnt UPDATE/DELETE ab, außer dem `set null` auf
   nur über die Entscheidung setzbar, bleibt bei späterem Rollenwechsel
   erhalten); `bearbeitet_am timestamptz` + Trigger wie beim Beitrag;
   optional `bezug_antwort_id uuid null` (E7).
+- `beitrag` und `antwort`: `mod_version integer not null default 0` (kein
+  Grant). Jede Änderung am Moderationsstand **oder** am Inhalt erhöht sie in
+  derselben Transaktion: Meldung, automatische Ausblendung, Prüfanfrage, jede
+  Teamentscheidung inklusive `erklaerung_aendern`, und per Before-Update-Trigger
+  jede Änderung an Titel/Text/Lernfeld/Kapitel/Datei (P3). Der Client liest
+  sie mit dem Fall und schickt sie als `p_version` zurück.
 - `vorgang.art` um `entscheidung` und `pruefanfrage` erweitern, damit der
   bestehende Klärweg aus G03 (`vorgang_klaeren`) auch hier „verworfen“
   endgültig machen kann.
@@ -153,10 +162,30 @@ Damit gilt:
 - **Zwei Teamentscheidungen gleichzeitig:** Die zweite wartet auf die Sperre
   und scheitert dann an der veränderten Ausblendungs-ID oder Meldungsmenge
   (`APF01`). Kein stilles Überschreiben.
-- **Bearbeiteter Inhalt:** `p_stand` = gesehenes `bearbeitet_am`
-  (bzw. `erstellt_am`, falls nie bearbeitet); Abweichung → `APF01`.
+- **Ein Vergleichswert statt mehrerer (P3):** Die Entscheidung vergleicht
+  nach der Sperre `p_version` mit `mod_version` des Ziels. Jede Abweichung –
+  neue Meldung, neue Anfrage, zweite Erklärungskorrektur, Inhaltsänderung,
+  parallele Entscheidung – ergibt `APF01`. Zwei gleichzeitige
+  `erklaerung_aendern` mit derselben gelesenen Version: die zweite scheitert.
+  Die Prüfung der Meldungsmenge bleibt als zweite Sicherung bestehen.
 - Feste Reihenfolge Beitrag → Antwort → Ausblendung → Meldung/Anfrage: keine
   Verklemmung mit `beste_antwort_setzen`.
+
+**Alle erlaubten Schreibwege (P6)** – nach Umsetzung von E10, E11 und den
+Grant-Änderungen unten:
+
+| Weg | Sperrt | Zusammenspiel mit einer Entscheidung |
+|---|---|---|
+| Autor:in ändert Beitrag (direktes UPDATE) | Beitragszeile (implizit) | Konflikt mit `for update` der Entscheidung → strikt nacheinander. Kommt die Änderung zuerst, erhöht der Trigger `mod_version` → Entscheidung `APF01`. Kommt sie danach, ändert sie einen schon entschiedenen Stand und erhöht die Version für den nächsten Fall. |
+| Autor:in ändert Antwort (direktes UPDATE) | nur Antwortzeile | Die Entscheidung sperrt bei Antwortzielen **Beitrag und danach Antwort** `for update` und liest die Antwort erst nach der Sperre → gleiches Ergebnis wie oben. |
+| Autor:in löscht Beitrag/Antwort (direktes DELETE) | Zeile | Vorher: Entscheidung findet das Ziel nicht → `APZ01`. Nachher: Löschen wartet, löscht danach; Protokoll bleibt (kein FK). |
+| Antwort senden (`antwort_senden`) | Beitrag `key share` über FK | wartet während einer Entscheidung, prüft danach „Beitrag sichtbar“ neu (RPC liest nach dem Warten). |
+| Direktes Antwort-INSERT | Beitrag `key share` | **Vorschlag: Grant entziehen** (wie G06 beim Beitrag). Die Insert-Regel prüft „Beitrag sichtbar“ vor dem Warten und würde eine Antwort unter einem gerade ausgeblendeten Beitrag zulassen. Der Client nutzt nur noch `antwort_senden`. |
+| Hilfreich markieren | Beitrag `key share` | ändert keinen Moderationsstand, keine Versionsänderung. |
+| `beste_antwort_setzen` | Beitrag `for update` | nacheinander; Ausblenden der besten Antwort setzt `beste`/`geloest` im selben Schritt zurück. |
+| Team löscht fremde Inhalte | – | entfällt mit E10. |
+| `geloest` direkt setzen | – | entfällt mit E11. |
+| Meldung, Prüfanfrage, Entscheidung | Beitrag (+ Antwort) `for update` | über die RPCs, erhöhen `mod_version`. |
 
 Fehlercodes (eigene SQLSTATE, damit der Client sicher unterscheidet):
 `APF01` Fall geändert · `APZ01` Ziel fehlt/nicht im Umfang · `APR01` Recht
@@ -177,12 +206,22 @@ Nutzlast. Umfang dieser Phase: nur `gruppe_id is null`.
 meldung_senden(p_art text, p_ziel uuid, p_grund text, p_hinweis text)
   returns table (meldung_id uuid, status text, neu boolean, gleich boolean)
 ```
-Ablauf: Ziel nach der Sperre mit denselben Sichtbarkeitsbedingungen wie die
-Leseregel prüfen (sonst `APZ01`) → vorhandene eigene Meldung zum Ziel?
-dann `neu = false`, `gleich` = Grund/Hinweis identisch (Wiederholung vs.
-echtes „bereits gemeldet“) → sonst Bremse (30/h, `APB01`) → Insert →
-automatische Ausblendung prüfen. Natürlicher Schlüssel (Konto, Ziel) ersetzt
-eine Vorgangskennung.
+Ablauf (P1 – Wiedererkennung **vor** der Sichtbarkeitsprüfung):
+1. Sitzung, Profil, Paketsperre prüfen.
+2. **Eigene Meldung zu (Konto, Art, Ziel-ID) suchen.** Vorhanden →
+   `neu = false`, `gleich` = Grund/Hinweis identisch, Status zurück. Es kommen
+   nur Werte zurück, die der Client schon hat (seine Meldungs-ID, Grund,
+   Status) – nie Titel, Text oder Sichtbarkeit des Ziels. So erkennt eine
+   Wiederholung nach verlorener Bestätigung ihre Meldung auch dann, wenn
+   genau diese dritte Meldung den Inhalt ausgeblendet hat.
+3. Erst dann: Thread sperren, Ziel mit den Bedingungen der Leseregel prüfen
+   (sonst `APZ01` „Dieser Inhalt ist für dich nicht verfügbar.“), Bremse (30/h,
+   `APB01`), Insert, automatische Ausblendung, `mod_version` erhöhen.
+
+Natürlicher Schlüssel (Konto, Ziel) ersetzt eine Vorgangskennung. Zwei
+gleichzeitige Erstversuche desselben Kontos: der zweite wartet auf die Sperre,
+findet danach aber Schritt 2 nicht erneut → Eindeutigkeitsindex `23505` →
+die RPC fängt ihn ab und liefert die vorhandene Meldung (`neu = false`).
 
 ```
 meldung_status(p_art text, p_ziel uuid) returns table (meldung_id, status, erstellt_am)
@@ -203,7 +242,7 @@ moderation_entscheiden(
   p_meldungen uuid[],      -- gesehene offene Meldungen (leer erlaubt)
   p_pruefanfrage uuid,     -- gesehene offene Anfrage oder null
   p_ausblendung uuid,      -- gesehene aktive Ausblendung oder null
-  p_stand timestamptz,     -- gesehener Bearbeitungsstand
+  p_version int,           -- gesehene mod_version (P3)
   p_intern text,           -- interne Begründung (optional, s. E4)
   p_autor_text text,       -- Erklärung für die Autor:in
   p_kategorie text,        -- gewählte Vorlagenkategorie
@@ -211,10 +250,12 @@ moderation_entscheiden(
 ) returns jsonb   -- {entscheidung_id, versteckt, ausblendung_id, korrektur_antwort_id, wiederholung}
 ```
 
-Idempotenz: Vorgangszeile `('entscheidung', 'angelegt')` zuerst. Existiert
-schon eine Protokollzeile mit `p_id` → **ihr Ergebnis** zurückgeben
+Idempotenz: **Vor jeder Zustandsprüfung** (Sichtbarkeit, Version, offene
+Anfrage) die Protokollzeile mit `p_id` suchen. Existiert sie → **ihr Ergebnis**
+zurückgeben
 (`wiederholung = true`), wenn Ziel und Aktion gleich sind, sonst `APV01`.
-Ist der Vorgang `verworfen` → `APV01`. Damit erzeugt eine Wiederholung keine
+Erst danach Vorgangszeile `('entscheidung', 'angelegt')`; ist der Vorgang
+`verworfen` → `APV01`. Damit erzeugt eine Wiederholung keine
 zweite Entscheidung, keine zweite Teamantwort und kein neues Anfragerecht.
 
 | Zustand (nach Sperre) | `p_aktion` | Pflicht | Wirkung |
@@ -226,14 +267,14 @@ zweite Entscheidung, keine zweite Teamantwort und kein neues Anfragerecht.
 | ausgeblendet bestätigt, neue Meldungen | `weiter_ausblenden` | intern | Meldungen schließen, Ausblendung unverändert |
 | ausgeblendet | `einblenden` | intern; korrektur optional | Ausblendung aufheben; optional zugleich Teamkorrektur (s. 8.2) |
 | ausgeblendet | `erklaerung_aendern` | autor_text | Text ersetzen, alter Text ins Protokoll |
-| offene Prüfanfrage | `anfrage_aufheben` | autor_text (Ergebnis) | aufheben, Anfrage `aufgehoben` |
+| offene Prüfanfrage | `anfrage_aufheben` | autor_text (Ergebnis); korrektur optional | aufheben, optional Teamkorrektur, Anfrage `aufgehoben`, gesehene Meldungen schließen – alles in einer Transaktion (P5) |
 | offene Prüfanfrage | `anfrage_bestaetigen` | autor_text (Ergebnis) | bleibt verborgen, Anfrage `bestaetigt` |
 
 Gültigkeitsregeln: unpassende Aktion zum aktuellen Zustand → `APF01`;
 `sichtbar_lassen` ohne Meldungen → `APE01`; bei offener Prüfanfrage sind nur
 die beiden Anfrage-Aktionen erlaubt (sonst würde eine Anfrage still liegen
 bleiben); Teamkorrektur nur, wenn der Elternbeitrag sichtbar ist (bzw. nach
-`einblenden` sichtbar wird). Alle Meldungen in `p_meldungen` bekommen
+`einblenden` bzw. `anfrage_aufheben` sichtbar wird). Alle Meldungen in `p_meldungen` bekommen
 `status = erledigt`, `erledigt_durch = p_id`, `erledigt_am = now()` – im
 selben Statement mit Prüfung der betroffenen Zeilenzahl.
 
@@ -283,11 +324,40 @@ pruefanfrage_status(p_ausblendung uuid) returns jsonb
   `begruendung_autor`, Zeit nur bei `quelle = team` bzw. nach Bestätigung,
   eigene Anfrage. Vom fremden Elternbeitrag: **nichts** außer „ausgeblendet“.
   Keine Meldungen, keine Melder, kein internes Protokoll.
-- `pruefanfrage_senden` bindet an die übergebene **Ausblendungs-ID**, nicht an
-  das Ziel: ist sie nicht mehr aktiv oder nicht bestätigt → `APF01`; gehört
-  sie nicht der Person → `APR01`; existiert schon eine Anfrage → mit gleicher
-  `p_id` Ergebnis zurück (Wiederholung), sonst `APD01` „bereits angefragt“.
+- `pruefanfrage_senden` (P2 – Wiederholung **zuerst**):
+  1. Sitzung, Profil, Paketsperre.
+  2. Anfrage mit `id = p_id` suchen. Vorhanden und eigene → ihr gespeicherter
+     Stand zurück (`status`, `ergebnis`, `ergebnis_begruendung`) – auch wenn sie
+     längst abgeschlossen und die Ausblendung aufgehoben ist. Vorhanden mit
+     anderer `ausblendung_id` oder fremd → `APV01`.
+  3. Erst dann die Bedingungen für eine **neue** Anfrage: Thread sperren,
+     Ausblendung aktiv und bestätigt (sonst `APF01`), eigene (sonst `APR01`),
+     noch keine Anfrage zu dieser Ausblendung (sonst `APD01` „bereits
+     angefragt“), Begründung 1–500 (sonst `APE01`), Insert, `mod_version` erhöhen.
 - Eigene Datei: bestehende Speicherregel (eigener Ordner) reicht.
+
+### 4.5 Eigene Fehlercodes im Client (P4)
+
+Alle `AP…`-Codes werden per `raise exception … using errcode` vor dem Ende der
+Transaktion ausgelöst; PostgREST rollt zurück und antwortet mit HTTP 4xx. Sie
+kommen als **einzeln aufgeführte** Werte in die Liste sicherer Ablehnungen von
+`sicherAbgelehnt` (kein Muster `AP\w+`), nur mit HTTP < 500. Unbekannte
+`AP…`-Codes bleiben „unklar“.
+
+| Code | Bedeutung | Text in der Oberfläche |
+|---|---|---|
+| `APF01` | Fall/Stand geändert | Der Fall hat sich geändert. Prüfe die aktuellen Meldungen erneut. · Prüfanfrage: Die Ausblendung hat sich geändert. Lade die Seite neu. |
+| `APZ01` | Ziel fehlt/nicht verfügbar | Dieser Inhalt ist für dich nicht verfügbar. |
+| `APR01` | Recht fehlt | Dieser Bereich ist für dich nicht verfügbar. |
+| `APP01` | Paket zu | bestehender Sperrtext aus Spec 05 |
+| `APD01` | Anfrage schon gestellt | Du hast für diese Ausblendung bereits eine Prüfung angefragt. |
+| `APV01` | Vorgangskennung verworfen/vergeben | Dieser Vorgang wurde bereits abgeschlossen. Lade die Seite neu. |
+| `APB01` | Bremse | Du hast gerade viele Meldungen gesendet. Versuch es später erneut. |
+| `APE01` | Eingabe ungültig | feldbezogen: „Gib eine kurze Begründung ein.“ / „Die Begründung darf höchstens 500 Zeichen lang sein.“ usw. aus Spec v2 §5 |
+
+Die Spam-Bremse der Meldungen wechselt von `P0001` auf `APB01`, damit der
+Client sie sicher von anderen `P0001`-Fehlern unterscheidet. Bestehende
+Bremsen für Beiträge/Antworten bleiben unverändert.
 
 ## 5. Rechte und Regeln
 
@@ -301,6 +371,8 @@ pruefanfrage_status(p_ausblendung uuid) returns jsonb
 | `grant execute` der neuen RPCs an `authenticated` | Rechteprüfung innen |
 | optional: Teamanteil der Löschregeln entfernen | B8 / E10 |
 | optional: `revoke update (geloest)` auf `beitrag` | B9 / E11 |
+| `revoke insert` auf `antwort` (Client nutzt nur `antwort_senden`) | P6, wie G06 |
+| Trigger `mod_version_inhalt` (before update) auf `beitrag`, `antwort` | P3 |
 
 Bestehende Leseregeln für `beitrag`/`antwort` bleiben **unverändert**; die
 Eigenansicht unter fremdem ausgeblendetem Beitrag läuft ausschließlich über
@@ -358,9 +430,10 @@ Teambegründung verbrauchen (E1).
 ### 8.2 Aktionsmatrix fehlt eine Kombination
 Abnahmefall v2: „Drei fachliche Meldungen → vorläufig ausgeblendet;
 Teamprüfung → Wiedereinblenden **mit** Korrektur“. Die Matrix kennt nur
-getrennte Aktionen. Vorschlag: `einblenden` mit optionaler Korrektur in
-**einer** Entscheidung (Knopf „Wieder einblenden und korrigieren“), damit
-Sichtbarkeit, Teamantwort und Meldungsabschluss konsistent sind (E2).
+getrennte Aktionen. Vorschlag: `einblenden` **und `anfrage_aufheben`** mit optionaler Korrektur
+in **einer** Entscheidung (Knöpfe „Wieder einblenden und korrigieren“ /
+„Ausblendung aufheben und korrigieren“), damit Sichtbarkeit, Teamantwort,
+Anfrageabschluss, Meldungsabschluss und Protokoll konsistent sind (E2, P5).
 
 ### 8.3 Vorlagentexte
 - „Fachlich falsch“ spricht in der Ich-Form („erläutere ich hier“) und
@@ -410,7 +483,7 @@ Gleichzeitig offene Meldungen und Anfrage → höhere Stufe.
   aus „Meine Meldungen“. v2 nennt nur entzogenes Leserecht. Vorschlag:
   akzeptieren und so dokumentieren.
 - **Bearbeiten während der Ausblendung:** Autor:innen dürfen ausgeblendete
-  Inhalte heute bearbeiten. Die Entscheidung erkennt das über `p_stand`.
+  Inhalte heute bearbeiten. Die Entscheidung erkennt das über `mod_version` (P3).
   Vorschlag: erlaubt lassen (Fehler lassen sich so beheben, die Prüfanfrage
   sieht den aktuellen Stand) (E12).
 - **Teamkonto:** Einziges Teamprofil ist `test-neu1`. Für D01 muss Lukes
@@ -422,14 +495,14 @@ Gleichzeitig offene Meldungen und Anfrage → höhere Stufe.
 | Nr. | Frage | Empfehlung |
 |---|---|---|
 | E1 | Prüfanfrage erst nach Teambestätigung einer automatischen Ausblendung | Ja |
-| E2 | „Wieder einblenden und korrigieren“ als eine Entscheidung | Ja |
+| E2 | „Wieder einblenden/Ausblendung aufheben und korrigieren“ als eine Entscheidung | Ja |
 | E3 | Neutrale Fassung der Vorlage „Fachlich falsch“ | Ja |
 | E4 | Internes Feld optional, wenn Autortext vorhanden | Ja |
 | E5 | Vorlagenverwaltung nicht in diesem Paket | Ja |
 | E6 | Eigene Antworten unter fremdem ausgeblendeten Beitrag in der Eigenansicht | Ja |
 | E7 | Bezug „zur Antwort von …“ an der Teamkorrektur | Optional, eher ja |
-| E8 | Teamkorrektur mit Namen oder nur „Team“ | Nur „Team“ |
-| E9 | Aufbewahrung des Protokolls | bis Ende der Beta, dann neu entscheiden |
+| E8 | Teamkorrektur mit Namen oder nur „Team“ | Öffentlich nur „Team · Fachliche Korrektur“, intern das handelnde Konto; keine Anonymität gegenüber direkten Datenabfragen versprechen |
+| E9 | Aufbewahrung des Protokolls | fester Prüftermin (Vorschlag: Ende der Klassen-Beta, spätestens 31.12.2026), dann Entscheidung Löschen/Behalten; bis dahin keine automatische Löschung |
 | E10 | Team darf fremde Inhalte nicht mehr direkt löschen | Ja |
 | E11 | `geloest` nicht mehr frei änderbar | Ja |
 | E12 | Bearbeiten ausgeblendeter eigener Inhalte bleibt erlaubt | Ja |
@@ -471,6 +544,40 @@ Echte Datenbank (`supabase/tests/moderation_test.sql`, rollt zurück):
 12. Protokoll: UPDATE/DELETE durch Team abgelehnt; Kontolöschung setzt nur
     `akteur_id` auf null.
 
+Zusätzlich für v2 des Plans:
+
+13. **P1:** Dritte Meldung blendet aus, Bestätigung geht verloren, Wiederholung
+    → `neu = false`, `gleich = true`, kein Titel/Text im Ergebnis; Konto ohne
+    Meldung zum ausgeblendeten Ziel → `APZ01`. Zwei gleichzeitige Erstversuche
+    desselben Kontos → eine Meldung.
+14. **P2:** Anfrage senden, Bestätigung verloren, Team hebt auf, dann
+    Wiederholung mit gleicher `p_id` → gespeichertes Ergebnis `aufgehoben`,
+    kein Fehler, keine zweite Zeile.
+15. **P3:** Zwei Sitzungen lesen dieselbe Version und senden je
+    `erklaerung_aendern` → genau eine gelingt, die andere `APF01`; Protokoll
+    hat eine Zeile. Autor:in ändert Text zwischen Lesen und Entscheiden → `APF01`.
+16. **P4 [mock]:** Jeder `AP…`-Code mit HTTP 400 → sichere Ablehnung mit dem
+    Text aus 4.5; derselbe Code mit HTTP 503 und ein unbekannter `AP99`
+    → unklar.
+17. **P5:** `anfrage_aufheben` mit Korrektur: Sichtbarkeit, eine Teamantwort,
+    Anfrage `aufgehoben`, Meldungen geschlossen, ein Protokolleintrag; Abbruch
+    mitten drin (erzwungener Fehler nach der Teamantwort) → nichts davon bleibt.
+18. **P6:** Je ein Durchlauf pro Zeile der Schreibwege-Tabelle in zwei
+    Sitzungen, beide Reihenfolgen (Antwort ändern/löschen, Beitrag ändern/
+    löschen, Antwort senden während Ausblenden); direktes Antwort-INSERT nach
+    `revoke` → abgelehnt.
+
 Client: Mock-Tests nach dem Muster von `community_korrekturen_test.py`
 (unklarer Ausgang, Doppelklick, Kontowechsel, Fokus, axe) und – mit
 `COMMUNITY_TEST_PASSWORT` – Livetests. Echte und simulierte Fälle getrennt.
+
+## 11. Änderungen in Version 2 (ChatGPT-Gegenprüfung von `3bed8d1`)
+
+| Nr. | Befund | Bewertung | Änderung |
+|---|---|---|---|
+| P1 | Wiederholung einer Meldung nach automatischer Ausblendung scheitert an der Sichtbarkeitsprüfung | bestätigt | eigene Meldung zuerst suchen (4.1), Fall 13 |
+| P2 | Wiederholung einer Prüfanfrage nach Aufhebung scheitert an den Neuanlage-Bedingungen | bestätigt | Wiederholung zuerst (4.4); dasselbe Prinzip ausdrücklich auch bei Entscheidungen (4.2), Fall 14 |
+| P3 | Zwei Erklärungskorrekturen werden nicht erkannt | bestätigt | `mod_version` je Ziel (2.4, 3), Fall 15 |
+| P4 | `AP…`-Codes gelten im Client als unklar | bestätigt | Liste und Texte (4.5), Fall 16 |
+| P5 | Aufheben einer Prüfanfrage ohne Korrekturkombination | bestätigt | Matrix 4.2, 8.2, Fall 17 |
+| P6 | Sperrstrategie deckt nicht alle Schreibwege | bestätigt | Tabelle der Schreibwege (3), `revoke insert` auf `antwort`, Fall 18 |

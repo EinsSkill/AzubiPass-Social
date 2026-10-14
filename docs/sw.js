@@ -11,7 +11,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-059bdb9b589365f4";
+var SPEICHER = "azubipass-345607412109ff43";
 var VORRAT = {
   "./": "f658030841846927ffa3d5213980d53830bbfda17c8db6504ff939652b675aaa",
   "app.html": "f658030841846927ffa3d5213980d53830bbfda17c8db6504ff939652b675aaa",
@@ -35,11 +35,11 @@ var VORRAT = {
   "manifest.webmanifest": "1a5dbb48c799333f7f316780c6384a62e365767e94163efd5999c5b1ffdabb30",
   "mittel/app.js": "821192f36e10f533504b020b950c78b1f0f9f09970bac3a2efd5a6b394ac393d",
   "mittel/aufgaben.js": "7952f59103ce5788077a3088db4ef5fc465bb0cb3af76d375c69bd30e00acbb6",
-  "mittel/aufgaben.json": "c70e3d99247ef2d6f57972889fd70e4030bbd2441bd0ce44fbcab60732bae04f",
+  "mittel/aufgaben.json": "4a97cf2cd9f4eaa097faf2ab4de25bf7558590a8ca33b452dec99caeb6869d8a",
   "mittel/azubipass.css": "49c2358eaf844f3e44e09afcb45cdff6407e95753968cdccc0a2c9ec79e87332",
   "mittel/azubipass.js": "9ede6fe34c9633efca35edeb1bb652d14a0dc9d1d28525a4d47e8b516f22e644",
   "mittel/community-ansicht.js": "1e13a4871809c86f6a3a0e4195c0748770d72c85633842a413189d1d5f5257dd",
-  "mittel/community-beitraege.js": "5527f2391853f44f9b93ded90ba979702181ec56af25bdad6132329afbb5a7e5",
+  "mittel/community-beitraege.js": "03e3c72dab6dbc58a4a3411b4ce801cf3b853eb304c70db448a436bc9b69c201",
   "mittel/community.js": "07db1c051e1a83975d60e618d77fb8ce2e4aba96b97653469d0d1c546595d5c9",
   "mittel/ibm-plex-mono-400-latin-ext.woff2": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
   "mittel/ibm-plex-mono-400-latin.woff2": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
@@ -51,7 +51,7 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "c0471ea2422a8e643cd8fed85afca12456ece2698ee7e7a2f6931ccbaef4b266",
+  "mittel/inhalt.json": "4f577f1404c7348f71fec114030e56084fac961d839ca8d965109e628dc62341",
   "mittel/kern.js": "0d2d49706c2c4051219b2f1bf63562f28c92615418b660fb94504f6bda9ed093",
   "mittel/landing.css": "1fdb11f9aa0073f44b5918efae16093d11222d96f435349de8304caab72bb31a",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",
