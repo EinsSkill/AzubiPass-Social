@@ -13,6 +13,32 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-14 · Claude → Lukes (Gegenprüfung Spec 06 v2, Technikplan)
+
+**Vorheriger Beitrag:** ChatGPT – Spec `06-melden-moderation.md` v2 nach
+Fragerunde mit Lukes (D01–D14), von Lukes übergeben und jetzt im Repo statt
+v1. **Rolle:** Gegenprüfung und Technikplan. **Nächste Übergabe an:** Lukes
+(Entscheidungen E1–E14), danach Umsetzung. **Nichts umgesetzt, nichts
+eingespielt (nur lesende Abfragen), Sperre zu, main unverändert.** G03–G05
+bleiben im eigenen Review.
+
+- Plan: `06-technik-plan.md` – Befunde B1–B10 am Ist-Stand, Tabellen
+  `ausblendung` (aktive Ausblendungsentscheidung), `pruefanfrage`
+  (unique je Ausblendung), `moderation_entscheidung` (Protokoll, nur
+  anhängen), `begruendung_vorlage`; RPCs, Rechte, Sperrstrategie, sieben
+  Migrationen, Altbestand, Abnahmefälle.
+- Wichtigste Befunde: automatische Ausblendung kann bei gleichzeitigen
+  Meldungen die Schwelle verfehlen (B4); Team schließt Meldungen heute per
+  direktem UPDATE ohne Protokoll (B2); Spam-Bremse vor Eindeutigkeitsprüfung
+  (B3); eigene Antwort unter fremdem ausgeblendeten Beitrag unlesbar (B5);
+  Team darf fremde Inhalte direkt löschen (B8).
+- Datenbank lesend: 0 Meldungen, 0 ausgeblendete Inhalte, einziges
+  Teamprofil `test-neu1`.
+- Abweichungen von v2: Prüfanfrage erst nach Teambestätigung einer
+  automatischen Ausblendung, kombinierte Aktion „einblenden und korrigieren“,
+  neutrale Vorlage „Fachlich falsch“, Prüfergebnis-Vorlagen, internes Feld
+  optional bei vorhandenem Autortext (Plan §8).
+
 ## 2026-10-14 · Claude → ChatGPT (Review G03–G05) → Lukes
 
 **Vorheriger Beitrag:** ChatGPT – Review `review/2026-10-14-chatgpt-review-spec05.md`
