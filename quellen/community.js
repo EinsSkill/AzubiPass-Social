@@ -526,13 +526,62 @@
     return e;
   }
 
+  /* G03: Steht fest, dass der Server die Anfrage nicht ausgeführt oder
+     zurückgerollt hat? Nur bei einem Postgres-Fehlercode (Transaktion beendet)
+     oder einer Ablehnung vor der Ausführung (PostgREST-Prüfung, Anmeldung,
+     Bremse). Alles andere – Verbindungsabbruch, HTTP 5xx, Gateway, unbekannte
+     Antworten – heißt: Ausgang unklar. r = { error, status } von supabase-js. */
+  function sicherAbgelehnt(r) {
+    var e = (r && r.error) || {};
+    var code = String(e.code || "");
+    var st = Number((r && r.status) || 0);
+    if (/^(P0001|22\w{3}|23\w{3}|42\w{3}|40001|40P01|57014)$/.test(code)) return true;
+    if (/^PGRST[123]\d\d$/.test(code)) return true;
+    if (!code && (st === 401 || st === 403 || st === 429)) return true;
+    return false;
+  }
+
+  // Ergebnis einer Schreib-RPC: Daten, sichere Ablehnung oder "unklar".
+  function rpcErgebnis(r, vorgang, unklarText) {
+    if (!r.error) return r.data;
+    if (sicherAbgelehnt(r)) throw uebersetzen(r.error);
+    throw unklar(unklarText, vorgang, r.error);
+  }
+
+  function dateiPfad(konto, vorgang, datei) {
+    var art = datei && CFG.dateiArten[datei.type];
+    return art ? konto + "/" + vorgang + "." + art[1] : null;
+  }
+
+  /* G03: Klärt einen Vorgang endgültig. Ergebnis "angelegt" (Inhalt existiert
+     oder wird gerade festgeschrieben) oder "verworfen" (kann nie mehr
+     ankommen). Erst bei "verworfen" wird die Datei des Vorgangs entfernt; ein
+     Fehler dabei lässt sie im eigenen privaten Ordner liegen. Wiederholbar. */
+  function vorgangKlaeren(vorgang, art, datei) {
+    if (!vorgang || (art !== "beitrag" && art !== "antwort"))
+      return Promise.reject(fehler("Vorgangskennung fehlt.", "eingabe"));
+    var text = "Wir konnten nicht prüfen, ob der Vorgang abgeschlossen ist.";
+    return gebunden(function (u, c) {
+      return c.rpc("vorgang_klaeren", { p_vorgang: vorgang, p_art: art }).then(function (r) {
+        var zustand = rpcErgebnis(r, vorgang, text);
+        var pfad = zustand === "verworfen" ? dateiPfad(u.id, vorgang, datei) : null;
+        if (!pfad) return zustand;
+        return c.storage.from(CFG.bucket).remove([pfad]).then(function () { return zustand; },
+                                                             function () { return zustand; });
+      }, function (f) { throw unklar(text, vorgang, f); });
+    });
+  }
+
   /* e: { vorgang, art, titel, text, lernfeld, kapitel, anMentoren, datei (File),
           schritt (optional: wird nach dem Hochladen mit "veroeffentlichen" gerufen) }
      Spec 05: Jeder Vorgang hat eine Kennung, die zur Beitrags-ID wird. Wer mit
      derselben Kennung erneut sendet, bekommt denselben Beitrag – nie zwei.
      Ergebnis: Beitrags-ID. Fehlerarten: "eingabe", "bremse", "rechte" … =
-     sicher nicht veröffentlicht; "unklar" = Antwort ging verloren, Status
-     prüfen (beitragStatus) statt blind neu senden. Ziel ist immer „für alle“.
+     sicher nicht veröffentlicht (sicherAbgelehnt); "unklar" = Ausgang offen:
+     Status lesen (beitragStatus), unverändert mit derselben Kennung wiederholen
+     oder mit vorgangKlaeren endgültig klären. Nach einem Fehler wird die Datei
+     hier nie entfernt (G03) – das macht nur vorgangKlaeren bei "verworfen".
+     Ziel ist immer „für alle“.
      Mit e.gruppe bleibt der alte direkte Weg (nur Datenschicht-Tests). */
   function veroeffentlichen(e) {
     e = e || {};
@@ -578,16 +627,7 @@
           p_an_mentoren: e.art === "frage" && e.anMentoren === true,
           p_datei_pfad: pfad, p_datei_art: dateiArt
         }).then(function (r) {
-          if (r.error) {
-            var f = uebersetzen(r.error);
-            if (f.art === "netz") throw unklar("Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.", vorgang, r.error);
-            // Sicher abgelehnt: Datei nur entfernen, wenn kein Beitrag sie benutzt.
-            if (pfad) return beitragStatus(vorgang).then(function (id) {
-              if (!id) return dateiEntfernen(pfad).catch(function () {});
-            }, function () {}).then(function () { throw f; });
-            throw f;
-          }
-          return r.data;
+          return rpcErgebnis(r, vorgang, "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.");
         }, function (f) {
           throw unklar("Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.", vorgang, f);
         });
@@ -714,12 +754,7 @@
     var v = vorgang || neueVorgangskennung();
     return gebunden(function (u, c) {
       return c.rpc("antwort_senden", { p_vorgang: v, p_beitrag: beitragId, p_text: t }).then(function (r) {
-        if (r.error) {
-          var f = uebersetzen(r.error);
-          if (f.art === "netz") throw unklar("Wir konnten nicht prüfen, ob deine Antwort gesendet wurde.", v, r.error);
-          throw f;
-        }
-        return r.data;
+        return rpcErgebnis(r, v, "Wir konnten nicht prüfen, ob deine Antwort gesendet wurde.");
       }, function (f) { throw unklar("Wir konnten nicht prüfen, ob deine Antwort gesendet wurde.", v, f); });
     });
   }
@@ -738,9 +773,18 @@
     return mit(function (c) { return c.from("antwort").delete().eq("id", id).then(auspacken); });
   }
 
-  // Setzt oder nimmt zurück (zweiter Aufruf auf dieselbe Antwort). Konto-gebunden.
-  function besteAntwort(antwortId) {
-    return gebunden(function (u, c) { return c.rpc("beste_antwort", { p_antwort: antwortId }).then(auspacken); });
+  /* G05: setzt den gewünschten Zustand (beste = true/false), schaltet nie um.
+     Eine Wiederholung nach verlorener Bestätigung bewirkt nichts Gegenteiliges.
+     "unklar" = Zustand neu lesen, bevor erneut geklickt werden kann. */
+  function besteAntwort(antwortId, beste) {
+    if (typeof beste !== "boolean")
+      return Promise.reject(fehler("Gewünschter Zustand fehlt.", "eingabe"));
+    var text = "Wir konnten nicht prüfen, ob die Markierung geändert wurde.";
+    return gebunden(function (u, c) {
+      return c.rpc("beste_antwort_setzen", { p_antwort: antwortId, p_beste: beste }).then(function (r) {
+        return rpcErgebnis(r, antwortId, text);
+      }, function (f) { throw unklar(text, antwortId, f); });
+    });
   }
 
   // Gibt den neuen Zustand zurück: true = jetzt hilfreich markiert.
@@ -896,6 +940,7 @@
     mitglieder: mitglieder, mitgliedRolle: mitgliedRolle, mitgliedEntfernen: mitgliedEntfernen,
     beitraege: beitraege, beitragSeite: beitragSeite, beitrag: beitrag, veroeffentlichen: veroeffentlichen,
     beitragStatus: beitragStatus, beitraegeFrei: beitraegeFrei, neueVorgangskennung: neueVorgangskennung, laenge: laenge,
+    vorgangKlaeren: vorgangKlaeren, sicherAbgelehnt: sicherAbgelehnt,
     beitragAendern: beitragAendern, beitragLoeschen: beitragLoeschen, dateiEntfernen: dateiEntfernen,
     dateiLaden: dateiLaden, dateiFreigeben: dateiFreigeben,
     dateiPruefen: dateiPruefen,

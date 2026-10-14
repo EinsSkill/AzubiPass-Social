@@ -158,7 +158,7 @@ def main():
             pruefe(len(liste) == 1 and liste[0]["autor_name"] == "Anna (Demo)", "Gruppenfrage jetzt sichtbar, mit Autorin", len(liste))
             a1 = ev("(b) => T.versuch(() => AP.community.antwortSchreiben(b, 'Skonto mindert die Anschaffungskosten.'))", f1["wert"])
             pruefe(a1["ok"], "Antwort geschrieben", a1.get("fehler", ""))
-            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a))", a1.get("wert"))
+            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a, true))", a1.get("wert"))
             pruefe(not r["ok"], "Ben kann nicht selbst die beste Antwort wählen", r.get("fehler"))
             r = ev("(b) => AP.community.hilfreich(b, true)", f1["wert"])
             pruefe(r is True, "Als hilfreich markiert")
@@ -174,7 +174,7 @@ def main():
             print("Wieder Anna")
             ev("() => AP.community.abmelden()")
             ev("([m, p]) => T.anmelden(m, p)", [ANNA, pw])
-            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a))", a1["wert"])
+            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a, true))", a1["wert"])
             pruefe(r["ok"], "Anna wählt die beste Antwort", r.get("fehler", ""))
             b = ev("(id) => AP.community.beitrag(id)", f1["wert"])
             pruefe(b["geloest"] and b["antworten"] == 1 and b["hilfreich_zahl"] == 1, "Frage gelöst, 1 Antwort, 1× hilfreich",

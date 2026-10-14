@@ -430,7 +430,7 @@ def main():
             except Exception:
                 bild_da = False
             pruefe(bild_da and not entfernt, "Lernzettel: Datei bleibt bei unklarem Ausgang, Bild lädt", art="mock")
-            # Nicht angekommen → Status „nicht veröffentlicht“, gleiche Kennung beim Wiederholen
+            # Nicht angekommen → leerer Status bleibt unklar (G03), „Erneut senden“ mit derselben Kennung
             c06()
             T_nicht = PRAEFIX + "Kam nie an"
             feld("Titel").fill(T_nicht)
@@ -441,9 +441,10 @@ def main():
             seite.unroute(RPC_B)
             erste = [json.loads(b)["p_vorgang"] for m, u, b in anfragen if "rpc/beitrag_veroeffentlichen" in u and b][-1]
             seite.click("#community button:has-text('Status prüfen')")
-            pruefe(text_da("Dein Beitrag wurde nicht veröffentlicht. Deine Eingaben sind noch da.")
-                   and feld("Titel").input_value() == T_nicht, "Status ohne Treffer: sicher nicht veröffentlicht, Eingaben bleiben", art="mock")
-            senden()
+            pruefe(text_da("Der Beitrag wurde noch nicht gefunden. Der Ausgang ist weiterhin unklar.")
+                   and feld("Titel").input_value() == T_nicht and seite.is_disabled("#community button[type=submit]"),
+                   "Status ohne Treffer: Ausgang bleibt unklar, Eingaben bleiben gesperrt (G03)", art="mock")
+            seite.click("#community button:has-text('Erneut senden')")
             seite.wait_for_function("() => location.hash.startsWith('#community/beitrag/')", timeout=20000)
             pruefe(detail_id() == erste and zahl_beitraege(T_nicht) == 1, "Wiederholung mit derselben Vorgangskennung", art="mock")
             # Sichere Ablehnung mit Datei: Datei wird bereinigt
@@ -460,7 +461,7 @@ def main():
             hoch = [u for m, u, _ in anfragen if m == "POST" and "/storage/v1/object/lernzettel/" in u][-1]
             name = hoch.split("/lernzettel/")[1]
             liste = ev("(n) => T.roh(async (c) => (await c.storage.from('lernzettel').list(n.split('/')[0], { search: n.split('/')[1] })).data.length)", name)
-            pruefe(liste == 0, "Sicher abgelehnt: hochgeladene Datei wieder entfernt", art="mock")
+            pruefe(liste == 1, "Sicher abgelehnt: Datei bleibt bis zur Klärung des Vorgangs (G03)", art="mock")
             # Spam-Bremse und Sperre vom Server
             seite.route(RPC_B, lambda r: r.fulfill(status=400, content_type="application/json",
                         body=json.dumps({"code": "P0001", "message": "Du hast in der letzten Stunde schon 20 Beiträge veröffentlicht. Kurz durchatmen."})))
@@ -469,6 +470,8 @@ def main():
             senden()
             pruefe(text_da("Du hast gerade viele Beiträge veröffentlicht. Versuch es später erneut.") and feld("Titel").input_value() != "",
                    "Spam-Bremse: eigener Text, Eingaben bleiben", art="mock")
+            liste = ev("(n) => T.roh(async (c) => (await c.storage.from('lernzettel').list(n.split('/')[0], { search: n.split('/')[1] })).data.length)", name)
+            pruefe(liste == 0, "Geänderte Eingaben: alter Vorgang verworfen, seine Datei entfernt (G03)", art="mock")
             seite.unroute(RPC_B)
             seite.route(RPC_B, lambda r: r.fulfill(status=400, content_type="application/json",
                         body=json.dumps({"code": "P0001", "message": "Beiträge sind für die Klassen-Beta noch nicht freigeschaltet."})))
@@ -576,7 +579,7 @@ def main():
             antworten = ev("(id) => T.roh(async (c) => (await c.from('antwort').select('id, text').eq('beitrag_id', id)).data)", P_frage)
             pruefe(len(antworten) == 3, "Drei Antworten in der Datenbank", len(antworten))
             A_eins = [a["id"] for a in antworten if a["text"].startswith("Skonto")][0]
-            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a))", A_eins)
+            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a, true))", A_eins)
             pruefe(not r["ok"], "Direkte API: Ben darf bei Annas Frage keine beste Antwort setzen", r.get("fehler"))
             ev("(b) => AP.community.antwortSchreiben(b, 'Antwort auf einen Tipp')", P_tipp)
             ab()
@@ -590,11 +593,13 @@ def main():
             pruefe(seite.locator("#community button:has-text('Als beste Antwort markieren')").count() == 3,
                    "Fragestellerin: Knopf an jeder sichtbaren Antwort")
             knopf = seite.locator(f"#community li[data-id='{A_eins}'] .cm-loesen")
-            seite.route("**/rest/v1/rpc/beste_antwort*", lambda r: r.abort("failed"))
+            seite.route("**/rest/v1/rpc/beste_antwort_setzen*", lambda r: r.abort("failed"))
             knopf.click()
-            pruefe(text_da("Die Markierung konnte nicht geändert werden. Versuch es erneut.")
-                   and "GELÖST" not in seite.inner_text("#community .cm-kopf").upper(), "Fehler: alter Zustand bleibt", art="mock")
-            seite.unroute("**/rest/v1/rpc/beste_antwort*")
+            # G05: Abbruch heißt „unklar“ – der Stand wird neu geladen, die Beschriftung folgt ihm.
+            seite.wait_for_function("(id) => { const b = document.querySelector(`#community li[data-id='${id}'] .cm-loesen`);"
+                                    " return b && !b.disabled && b.textContent === 'Als beste Antwort markieren'; }", arg=A_eins, timeout=15000)
+            pruefe("GELÖST" not in seite.inner_text("#community .cm-kopf").upper(), "Abbruch vor Ausführung: Stand neu geladen, unverändert", art="mock")
+            seite.unroute("**/rest/v1/rpc/beste_antwort_setzen*")
             knopf.click()
             seite.wait_for_function("(id) => { const b = document.querySelector(`#community li[data-id='${id}'] .cm-loesen`);"
                                     " return b && b.textContent === 'Markierung entfernen'; }", arg=A_eins, timeout=15000)
@@ -615,14 +620,14 @@ def main():
             text_da("1 Antwort")
             pruefe(seite.locator("#community .cm-loesen").count() == 0, "Tipp: keine beste Antwort")
             tipp_a = ev("(id) => T.roh(async (c) => (await c.from('antwort').select('id').eq('beitrag_id', id)).data[0].id)", P_tipp)
-            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a))", tipp_a)
+            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a, true))", tipp_a)
             pruefe(not r["ok"] and "nur bei Fragen" in (r.get("fehler") or ""), "Direkte API: beste Antwort nur bei Fragen", r.get("fehler"))
             ab()
             als(TEAM)
             ev("(a) => AP.community.moderieren('antwort', a, true)", A_eins)
             ab()
             als(ANNA)
-            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a))", A_eins)
+            r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a, true))", A_eins)
             pruefe(not r["ok"] and "Ausgeblendete" in (r.get("fehler") or ""), "Direkte API: ausgeblendete Antwort nicht markierbar", r.get("fehler"))
             neu_laden("#community/beitrag/" + P_frage)
             text_da("2 Antworten")

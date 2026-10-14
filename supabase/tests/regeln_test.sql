@@ -18,6 +18,8 @@ begin
     (a, 'a@test.invalid', 'authenticated', 'authenticated'),
     (b, 'b@test.invalid', 'authenticated', 'authenticated'),
     (c, 'c@test.invalid', 'authenticated', 'authenticated');
+  -- Seit der Paketsperre (13.10.) brauchen Testkonten die benannte Freigabe.
+  insert into public.beitraege_tester (nutzer_id) values (a), (b), (c);
   execute 'set local role authenticated';
 
   perform set_config('request.jwt.claims', json_build_object('sub', a, 'role','authenticated')::text, true);
@@ -48,12 +50,12 @@ begin
   perform public.gruppe_beitreten(lower(code));
   select count(*) into n from public.beitrag_liste; r := r || ' B_nachBeitritt=' || n;
   insert into public.antwort (beitrag_id, text) values (post, 'Antwort von Ben') returning id into ant;
-  begin perform public.beste_antwort(ant); r := r || ' FEHLER:B-beste';
+  begin perform public.beste_antwort_setzen(ant, true); r := r || ' FEHLER:B-beste';
   exception when others then r := r || ' besteDurchFremde=verboten'; end;
   insert into public.hilfreich (beitrag_id) values (post);
 
   perform set_config('request.jwt.claims', json_build_object('sub', a, 'role','authenticated')::text, true);
-  perform public.beste_antwort(ant);
+  perform public.beste_antwort_setzen(ant, true);
   select geloest::text into code from public.beitrag where id = post; r := r || ' geloest=' || code;
   begin perform public.moderieren('beitrag', post, true); r := r || ' FEHLER:moderiert';
   exception when others then r := r || ' moderierenOhneTeam=verboten'; end;

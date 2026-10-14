@@ -13,6 +13,72 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-14 · Claude → ChatGPT (Review G03–G05) → Lukes
+
+**Vorheriger Beitrag:** ChatGPT – Review `review/2026-10-14-chatgpt-review-spec05.md`
+(G03–G05) und Spec `06-melden-moderation.md` v1 (beide jetzt im Repo); Claude –
+Technikplan `05-technik-plan-korrekturen.md`; Lukes – Freigabe „Jo setzt bitte
+um“ (14.10.). **Rolle:** Umsetzung. **Nächste Übergabe an:** ChatGPT zum
+Review der Korrekturen, danach Lukes. **Nichts gemergt in main, nichts live,
+Sperre zu.** Spec 06 ist nur abgelegt, nicht umgesetzt.
+
+### Umgesetzt
+
+- **Datenbank** (eingespielt, drei Migrationen `20261014122116` … `122152`):
+  Tabelle `vorgang` mit Endstatus, RPC `vorgang_klaeren`, Senden-RPCs mit
+  Vorgangszeile und `for share` auf der Datei, Löschschutz für Dateien mit
+  Beitrag (`datei_in_gebrauch`), `beste_antwort_setzen(id, beste)`. Alter
+  Umschalt-Weg per `revoke` gesperrt; `drop` liegt in `supabase/ausstehend/`.
+  Abweichungen vom Plan: Kopf von `05-technik-plan-korrekturen.md`.
+- **Datenschicht** (`community.js`): `sicherAbgelehnt` (nur Postgres-Code bzw.
+  Ablehnung vor Ausführung; 5xx/Abbruch = unklar), `vorgangKlaeren` (entfernt
+  die Datei erst bei „verworfen“), kein Löschen mehr nach Fehlern,
+  `besteAntwort(id, beste)`.
+- **Oberfläche** (`community-beitraege.js`): eingefrorener Versandstand für C06
+  und Antworten (G04); alle Eingaben gesperrt bei Senden/unklar/Klären
+  (Rückweg bleibt); bei „unklar“: „Status prüfen“ (ohne Treffer bleibt es
+  unklar), „Erneut senden“ (gleicher Stand, gleiche Kennung), „Eingaben
+  ändern“ (endgültig klären); geänderte Eingaben nach einem früheren Versuch
+  klären erst den alten Vorgang (G03). Beste Antwort setzt den gewünschten
+  Zustand, lädt bei „unklar“ neu, Nachladefehler sichtbar mit „Erneut laden“ (G05).
+
+### Tests
+
+- **Echte Datenbank:** `supabase/tests/korrekturen_g03_g05_test.sql` – 21
+  Prüfungen bestanden (verworfen sperrt spätes Original, Wiederholung ohne
+  Doppel, Ablehnung ohne Vorgangszeile, Löschschutz, Fremdkennung, beste
+  Antwort setzen/wechseln/entfernen, alter Weg gesperrt); `regeln_test.sql`
+  bestanden (Ergebnis wie erwartet). Beide rollen vollständig zurück.
+- **Simuliert:** neue `quellen/community_korrekturen_test.py` – 40/40 [mock]
+  mit den echten JS-Modulen gegen eine nachgebildete Supabase-Schnittstelle,
+  inkl. axe ohne WCAG-Verstöße in vier neuen Zuständen. Bilder:
+  `review/2026-10-14-korrekturen/`.
+- `funktionstest.py` 269/269, `lernkern_audit_test.py` bestanden, `pruefe.py
+  app/landing/buchfuehrung` ohne Fehler.
+- **Nicht ausgeführt:** die Community-Livetests (`community_test`,
+  `_beitraege_`, `_schreiben_`, `_zugang_`) – in dieser Sitzung fehlte
+  `COMMUNITY_TEST_PASSWORT`. Ihre Aufrufe sind auf `besteAntwort(id, true)`
+  und das neue Verhalten (leerer Status bleibt unklar, „Erneut senden“, Datei
+  erst nach Klärung entfernt) umgestellt, aber **ungeprüft**.
+
+### Neue Texte (von Claude, bitte bestätigen)
+
+„Der Beitrag/Die Antwort wurde noch nicht gefunden. Der Ausgang ist weiterhin
+unklar.“ (angelehnt an ChatGPT) · „„Erneut senden“ schickt dieselben Eingaben
+noch einmal – doppelt veröffentlicht wird dabei nichts. „Eingaben ändern“
+bricht den offenen Versuch endgültig ab.“ · Knöpfe „Erneut senden“, „Eingaben
+ändern“, „Wird geklärt …“ · „Dein Beitrag wurde nicht veröffentlicht. Du
+kannst deine Eingaben jetzt ändern.“ / „Deine Antwort wurde nicht gesendet. Du
+kannst deine Eingabe jetzt ändern.“ · „Während des Sendens kannst du deine
+Eingaben nicht ändern.“ · „Wir prüfen, ob die Markierung geändert wurde …“ ·
+„Der aktuelle Stand konnte nicht geladen werden.“ mit „Erneut laden“.
+
+### Offen
+
+- Lukes: Einträge in `entscheidungen.md` (Texte oben, ChatGPTs Empfehlungen zu
+  den Spec-05-Texten und zum Artwechsel); Bestätigung für `beste_antwort_entfernen.sql`.
+- Spec 06: Entscheidungen §9 durch Lukes, danach Technikplan von Claude.
+
 ## 2026-10-14 · Claude → Lukes (Gegenprüfung G03–G05)
 
 **Vorheriger Beitrag:** ChatGPT – Review von `237a62a` mit Befunden G03–G05

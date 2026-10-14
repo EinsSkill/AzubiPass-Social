@@ -1,8 +1,25 @@
 # 05 · Technik-Plan Korrekturen G03–G05
 
 Stand 14.10.2026 · Claude · Gegenprüfung des ChatGPT-Reviews zu Spec 05 und
-Plan zur Freigabe durch Lukes **vor** dem Einspielen. Nichts eingespielt,
-nichts umgesetzt, Sperre zu.
+Plan zur Freigabe durch Lukes **vor** dem Einspielen.
+
+> **Freigegeben und umgesetzt (14.10.2026, Lukes: „Jo setzt bitte um“).**
+> Eingespielt als `20261014122116_vorgang_endstatus`, `…122131_senden_mit_endstatus`,
+> `…122152_beste_antwort_setzen`. Abweichungen vom Plan:
+> 1. `drop function beste_antwort(uuid)` hat das Supabase-MCP ohne Bestätigung
+>    abgebrochen. Stattdessen `revoke` für alle Konten; das Entfernen liegt in
+>    `supabase/ausstehend/beste_antwort_entfernen.sql`.
+> 2. Löschschutz über die Hilfsfunktion `datei_in_gebrauch` (security definer,
+>    volatile) statt eines einfachen `exists` in der Regel – sonst sähe die
+>    Autor:in bei geschlossener Paketsperre den eigenen Beitrag nicht, und die
+>    Regel liefe ins Leere.
+> 3. RPCs prüfen nach `on conflict do nothing` mit `returning`, ob die
+>    Vorgangszeile neu ist; ein gleichzeitiger erster Versuch, der inzwischen
+>    festgeschrieben hat, liefert dessen ID statt „abgebrochen“.
+> 4. Texte an ChatGPTs Vorschlag angeglichen: „Der Beitrag/Die Antwort wurde
+>    noch nicht gefunden. Der Ausgang ist weiterhin unklar.“
+> 5. `regeln_test.sql` trägt die drei Testkonten jetzt in `beitraege_tester`
+>    ein (lief seit der Paketsperre vom 13.10. sonst nicht mehr durch).
 
 **Geprüfter Stand:** `community-zugang` @ `237a62a` – unverändert seit dem
 Review, keine fremden Änderungen. `main` unverändert `0c472bb`.

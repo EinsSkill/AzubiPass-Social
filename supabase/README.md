@@ -135,20 +135,43 @@ kein Lesen, kein Veröffentlichen (RPC und alter Insert), keine Antwort, kein
 Upload in den eigenen Ordner; die Oberfläche fragt bei gesperrtem Konto keine
 Beiträge, Antworten oder Dateien ab.
 
-## Verlässliches Senden (Spec 05)
+## Verlässliches Senden (Spec 05, Korrekturen G03/G05 vom 14.10.2026)
 
 `beitrag_veroeffentlichen(p_vorgang, …)` und `antwort_senden(p_vorgang, …)`
-nehmen eine Vorgangskennung aus der App, die zur ID der neuen Zeile wird
-(`on conflict do nothing`). Ein zweiter Versuch mit derselben Kennung liefert
-dieselbe ID, nie eine zweite Zeile. Statusprüfung = normaler Lesezugriff auf
-die eigene Zeile mit dieser ID. Dateien liegen unter `‹konto›/‹vorgang›.‹endung›`;
-gelöscht wird eine Datei nur nach sicherer Ablehnung **und** Statusprüfung ohne
-Treffer.
+nehmen eine Vorgangskennung aus der App, die zur ID der neuen Zeile wird. Ein
+zweiter Versuch mit derselben Kennung liefert dieselbe ID, nie eine zweite
+Zeile. Dateien liegen unter `‹konto›/‹vorgang›.‹endung›`.
 
-Bekannte Grenze: Nach einem unklaren Ausgang, einer Statusprüfung ohne
-Treffer **und** geänderten Eingaben nimmt die App eine neue Kennung. Hat der
-Server den ersten Versuch doch noch (sehr spät) angelegt, gäbe es dann zwei
-Beiträge; eine Datei des ersten Versuchs bliebe im eigenen Ordner liegen
-(für andere unsichtbar). Unveränderte Wiederholungen nutzen immer dieselbe
-Kennung. Ebenso bleibt bei einem Kontowechsel zwischen Upload und
-Veröffentlichen die schon hochgeladene Datei im Ordner des alten Kontos.
+**Endstatus** (`public.vorgang`, nur über Funktionen erreichbar): Das Senden
+trägt vor dem Anlegen `angelegt` ein, `vorgang_klaeren(p_vorgang, p_art)`
+trägt `verworfen` ein, falls noch nichts da ist. Der Primärschlüssel
+serialisiert beide; wer zuerst kommt, gewinnt. Ein verworfener Vorgang kann
+nie mehr veröffentlicht werden („Dieser Vorgang wurde abgebrochen.“). Eine
+sichere Ablehnung rollt die Vorgangszeile mit zurück. Inhalte aus der Zeit vor
+der Tabelle gelten beim Klären als `angelegt`.
+
+**App:** Nur ein Postgres-Fehlercode (oder eine Ablehnung vor der Ausführung)
+gilt als sicher abgelehnt; Abbruch, HTTP 5xx und Gateway-Fehler sind „unklar“.
+Bei „unklar“ sind die Eingaben gesperrt; „Status prüfen“ liest nur (ohne
+Treffer bleibt der Ausgang offen), „Erneut senden“ schickt denselben
+eingefrorenen Stand mit derselben Kennung, „Eingaben ändern“ klärt endgültig.
+Geänderte Eingaben bekommen erst nach `verworfen` eine neue Kennung. Die
+Datei eines Vorgangs wird nur nach `verworfen` entfernt.
+
+**Löschschutz:** Die Speicherregel „lernzettel: eigene löschen“ verbietet das
+Löschen einer Datei, auf die ein Beitrag zeigt (`datei_in_gebrauch`, security
+definer, auch bei geschlossener Paketsperre). `beitrag_veroeffentlichen`
+sperrt die Dateizeile (`for share`) bis zum Festschreiben.
+
+**Beste Antwort:** `beste_antwort_setzen(p_antwort, p_beste)` setzt den
+gewünschten Zustand, schaltet nie um; die Beitragszeile wird gesperrt.
+Der alte Umschalt-Weg `beste_antwort(uuid)` ist für Konten gesperrt (revoke);
+das endgültige Entfernen liegt in `ausstehend/beste_antwort_entfernen.sql`
+(das Supabase-MCP verlangt für `drop` eine eigene Bestätigung).
+
+Prüfung gegen die echte Datenbank: `tests/korrekturen_g03_g05_test.sql`
+(rollt alles zurück). Bekannte Grenzen: Die Tabelle `vorgang` wächst um eine
+Zeile pro Sendung (Aufräumen später). Bei einem Kontowechsel zwischen Upload
+und Veröffentlichen bleibt die hochgeladene Datei im Ordner des alten Kontos.
+Schlägt das Entfernen nach `verworfen` fehl, bleibt die Datei im eigenen,
+privaten Ordner.

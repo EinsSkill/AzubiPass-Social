@@ -573,6 +573,7 @@
             ol.appendChild(li);
           });
           liste.appendChild(ol);
+          if (nach.unklar && pruefHinweis && meldungBox.contains(pruefHinweis)) { meldungBox.innerHTML = ""; pruefHinweis = null; }
           var ziel = nach.neu ? ol.querySelector('li[data-id="' + nach.neu + '"]')
             : nach.loesung ? ol.querySelector('li[data-id="' + nach.loesung + '"] .cm-loesen') : null;
           if (ziel) {
@@ -585,6 +586,7 @@
           if (f && f.art === "anmeldung") return ctx.abgelaufen();
           if (f && f.art === "gesperrt") return ctx.gesperrt();
           liste.innerHTML = "";
+          if (pruefHinweis && meldungBox.contains(pruefHinweis)) { meldungBox.innerHTML = ""; pruefHinweis = null; }
           // Bestätigt gesendet, nur das Nachladen klappt nicht: Erfolg bleibt stehen.
           var p = el("p", "meldung fehler", nach.neu
             ? "Deine Antwort wurde gesendet. Die Antworten konnten noch nicht neu geladen werden."
@@ -596,7 +598,32 @@
         });
       }
 
+      /* G05: Nach Bestätigung oder unklarem Ausgang Kopf und Antworten frisch
+         holen. Die Beschriftung jedes Knopfs folgt danach dem geladenen,
+         bestätigten Zustand. Scheitert das Nachladen, bleibt es sichtbar; die
+         Knöpfe kommen erst mit einem geladenen Stand zurück. */
+      var pruefHinweis = null;
+      function loesungNeuLaden(antwortId, unklar) {
+        AP.community.beitrag(b.id).then(function (neu) {
+          if (!ctx.gilt()) return;
+          if (!neu) return ctx.nichtDa();
+          b.geloest = neu.geloest;
+          kopfZeile(neu);
+        }, function (f) {
+          if (!ctx.gilt()) return;
+          if (f && f.art === "veraltet") return;
+          if (f && f.art === "anmeldung") return ctx.abgelaufen();
+          if (f && f.art === "gesperrt") return ctx.gesperrt();
+          pruefHinweis = null;
+          var p = melden("Der aktuelle Stand konnte nicht geladen werden.", true, "Erneut laden",
+                         function () { meldungBox.innerHTML = ""; loesungNeuLaden(antwortId, unklar); });
+          if (p) p.focus();
+        });
+        laden({ loesung: antwortId, unklar: unklar });
+      }
+
       function loesenKnopf(a) {
+        var ziel = !a.beste;          // gewünschter Zustand aus dem zuletzt geladenen Stand
         var kb = knopf(a.beste ? "Markierung entfernen" : "Als beste Antwort markieren", "kn-neben cm-neben cm-loesen", function () {
           if (markiert || kb.disabled) return;
           markiert = true;
@@ -604,25 +631,23 @@
           kb.setAttribute("aria-busy", "true");
           var alt = kb.parentNode.querySelector(".cm-loesen-fehler");
           if (alt) alt.remove();
-          AP.community.besteAntwort(a.id).then(function () {
+          AP.community.besteAntwort(a.id, ziel).then(function () {
             markiert = false;
             if (!ctx.gilt()) return;
-            // Bestätigten Lösungsstatus und Antworten frisch holen.
-            AP.community.beitrag(b.id).then(function (neu) {
-              if (!ctx.gilt()) return;
-              if (!neu) return ctx.nichtDa();
-              b.geloest = neu.geloest;
-              kopfZeile(neu);
-            }, function () {});
-            laden({ loesung: a.id });
+            loesungNeuLaden(a.id, false);
           }, function (f) {
             markiert = false;
             if (!ctx.gilt()) return;
-            kb.disabled = false;
-            kb.removeAttribute("aria-busy");
             if (f && f.art === "veraltet") return;
             if (f && f.art === "anmeldung") return ctx.abgelaufen();
             if (f && f.art === "gesperrt") return ctx.gesperrt();
+            if (f && f.art === "unklar") {
+              // Kein Freigeben mit alter Beschriftung: erst den Stand vom Server holen.
+              pruefHinweis = melden("Wir prüfen, ob die Markierung geändert wurde …", false);
+              return loesungNeuLaden(a.id, true);
+            }
+            kb.disabled = false;
+            kb.removeAttribute("aria-busy");
             // Alter, bestätigter Zustand bleibt stehen.
             var p = el("p", "meldung fehler cm-loesen-fehler", "Die Markierung konnte nicht geändert werden. Versuch es erneut.");
             p.setAttribute("role", "alert");
@@ -667,7 +692,7 @@
         var senden = el("button", "kn-haupt cm-haupt", "Antwort senden");
         senden.type = "submit";
         var abbr = knopf("Abbrechen", "kn-neben cm-neben", function () {
-          if (ae.zustand === "sendet" || ae.zustand === "pruefen") return;
+          if (ae.zustand === "sendet" || ae.zustand === "pruefen" || ae.zustand === "klaeren") return;
           function zu() {
             if (antwortEntwurf === ae) antwortEntwurf = ae.zustand === "unklar" ? ae : null;
             ae.offen = false;
@@ -677,6 +702,9 @@
           if (ae.zustand === "unklar" || !ae.text.trim()) return zu();
           verwerfenFragen(abbr, zu);
         });
+        var sperrHinweis = el("p", "cm-hilfe", TEXT_GESPERRT);
+        sperrHinweis.hidden = true;
+        form.insertBefore(sperrHinweis, platz);
         reihe.appendChild(senden);
         reihe.appendChild(abbr);
         form.appendChild(reihe);
@@ -684,6 +712,7 @@
         var versucht = false;
 
         feld.eingabe.addEventListener("input", function () {
+          if (ae.zustand) { feld.eingabe.value = ae.text; return; }   // gesperrt (G04)
           ae.text = feld.eingabe.value;
           ae.veraendert = true;
           if (versucht) pruefe();
@@ -696,31 +725,35 @@
           return !falsch;
         }
 
-        var gezeigt = null;
+        var gezeigt = null, gezeigtZ = null;
         function darstellen(fokusMeldung) {
-          var laeuft = ae.zustand === "sendet" || ae.zustand === "pruefen";
-          if (ae.zustand === "sendet") ctx.sperren(senden, "Antwort wird gesendet …");
+          var z = ae.zustand;
+          if (z === "sendet") ctx.sperren(senden, "Antwort wird gesendet …");
           else {
             ctx.freigeben(senden);
-            senden.disabled = ae.zustand === "unklar" || ae.zustand === "pruefen";
+            senden.disabled = !!z;
           }
-          abbr.disabled = laeuft;
-          if (gezeigt === ae.meldung && ae.zustand !== "pruefen") return;
+          abbr.disabled = z === "sendet" || z === "pruefen" || z === "klaeren";
+          eingabenSperren(form, !!z);
+          sperrHinweis.hidden = !(z === "sendet" || (z === "klaeren" && !ae.meldung));
+          if (gezeigt === ae.meldung && gezeigtZ === z) return;
+          var hatteFokus = platz.contains(document.activeElement);
           gezeigt = ae.meldung;
+          gezeigtZ = z;
           platz.innerHTML = "";
           if (!ae.meldung) return;
           var p = el("p", ae.meldung.fehler ? "meldung fehler" : "meldung", ae.meldung.text);
           p.setAttribute("role", ae.meldung.fehler ? "alert" : "status");
           p.tabIndex = -1;
           platz.appendChild(p);
-          if (ae.zustand === "unklar" || ae.zustand === "pruefen") {
-            var sp = knopf("Status prüfen", "kn-neben cm-neben", statusPruefen);
-            if (ae.zustand === "pruefen") ctx.sperren(sp, "Status wird geprüft …");
-            platz.appendChild(sp);
-          }
+          if (offenerAusgang(z))
+            klaerung(ctx, platz, z, { pruefen: statusPruefen, erneut: erneutSenden, aendern: eingabenAendern },
+                     hatteFokus && !fokusMeldung);
           if (fokusMeldung) p.focus();
         }
         ae.anzeigen = function (fokusMeldung) { if (ctx.gilt() && document.contains(form)) darstellen(fokusMeldung); };
+
+        var UNKLAR = "Wir konnten nicht prüfen, ob deine Antwort gesendet wurde. Prüfe den Status, bevor du erneut sendest.";
 
         function gesendet(id) {
           if (antwortEntwurf === ae) antwortEntwurf = null;
@@ -735,7 +768,7 @@
           if (f && f.art === "veraltet") return;
           if (f && f.art === "unklar") {
             ae.zustand = "unklar";
-            ae.meldung = { text: "Wir konnten nicht prüfen, ob deine Antwort gesendet wurde. Prüfe den Status, bevor du erneut sendest.", fehler: true };
+            ae.meldung = { text: UNKLAR, fehler: true };
             return ae.anzeigen(true);
           }
           ae.zustand = null;
@@ -751,6 +784,7 @@
           ae.anzeigen(true);
         }
 
+        /* G03: Ein leerer Status beweist nichts – der Ausgang bleibt offen. */
         function statusPruefen() {
           if (ae.zustand !== "unklar") return;
           ae.zustand = "pruefen";
@@ -758,33 +792,91 @@
           AP.community.antwortStatus(ae.vorgang).then(function (id) {
             if (antwortEntwurf !== ae) return;
             if (id) return gesendet(id);
-            ae.zustand = null;
-            ae.meldung = { text: "Deine Antwort wurde nicht gesendet. Deine Eingabe ist noch da.", fehler: true };
+            ae.zustand = "unklar";
+            ae.meldung = { text: "Die Antwort wurde noch nicht gefunden. Der Ausgang ist weiterhin unklar.", fehler: true };
             ae.anzeigen(true);
           }, function (f) {
             if (antwortEntwurf !== ae) return;
             if (f && f.art === "veraltet") return;
             ae.zustand = "unklar";
             if (f && f.art === "anmeldung" && ctx.gilt()) return ctx.abgelaufen();
-            ae.meldung = { text: "Wir konnten nicht prüfen, ob deine Antwort gesendet wurde. Prüfe den Status, bevor du erneut sendest.", fehler: true };
+            ae.meldung = { text: UNKLAR, fehler: true };
+            ae.anzeigen(true);
+          });
+        }
+
+        // Denselben, beim ersten Senden festgehaltenen Stand mit derselben Kennung.
+        function abschicken(versand) {
+          ae.zustand = "sendet";
+          ae.meldung = null;
+          meldungBox.innerHTML = "";
+          darstellen();
+          AP.community.antwortSchreiben(b.id, versand.text, versand.vorgang).then(gesendet, fehlgeschlagen);
+        }
+
+        function erneutSenden() {
+          if (ae.zustand !== "unklar" || !ae.versand) return;
+          if (ctx.offline()) return ctx.offlineZeigen();
+          abschicken(ae.versand);
+        }
+
+        // Endgültig klären: angelegt ⇒ Erfolg; verworfen ⇒ Eingabe wieder frei.
+        function eingabenAendern() {
+          if (ae.zustand !== "unklar") return;
+          if (ctx.offline()) return ctx.offlineZeigen();
+          ae.zustand = "klaeren";
+          ae.anzeigen();
+          AP.community.vorgangKlaeren(ae.vorgang, "antwort").then(function (z) {
+            if (antwortEntwurf !== ae) return;
+            if (z === "angelegt") return gesendet(ae.vorgang);
+            ae.zustand = null;
+            ae.vorgang = null;
+            ae.versand = null;
+            ae.meldung = { text: "Deine Antwort wurde nicht gesendet. Du kannst deine Eingabe jetzt ändern.", fehler: true };
+            ae.anzeigen(true);
+          }, function (f) {
+            if (antwortEntwurf !== ae) return;
+            if (f && f.art === "veraltet") return;
+            ae.zustand = "unklar";
+            if (f && f.art === "anmeldung" && ctx.gilt()) return ctx.abgelaufen();
+            ae.meldung = { text: UNKLAR, fehler: true };
             ae.anzeigen(true);
           });
         }
 
         form.addEventListener("submit", function (ev) {
           ev.preventDefault();
-          if (ae.zustand) return;                 // läuft, wird geprüft oder ist unklar
+          if (ae.zustand) return;                 // läuft, wird geklärt oder ist unklar
           versucht = true;
           if (!pruefe()) { feld.eingabe.focus(); return; }
           if (ctx.offline()) return ctx.offlineZeigen();
-          // Dieselbe Kennung für eine Wiederholung derselben Eingabe – nie doppelt.
-          if (!ae.vorgang || ae.veraendert) ae.vorgang = AP.community.neueVorgangskennung();
-          ae.veraendert = false;
-          ae.zustand = "sendet";
+          function los() {
+            // Unveränderte Wiederholung nach sicherer Ablehnung: dieselbe Kennung.
+            if (!ae.vorgang) ae.vorgang = AP.community.neueVorgangskennung();
+            ae.versand = Object.freeze({ vorgang: ae.vorgang, text: ae.text });
+            ae.veraendert = false;
+            abschicken(ae.versand);
+          }
+          if (!ae.vorgang || !ae.veraendert) return los();
+          // Eingabe nach einem früheren Versuch geändert: den alten Vorgang erst
+          // endgültig schließen, dann mit neuer Kennung senden (G03).
+          ae.zustand = "klaeren";
           ae.meldung = null;
-          meldungBox.innerHTML = "";
           darstellen();
-          AP.community.antwortSchreiben(b.id, ae.text, ae.vorgang).then(gesendet, fehlgeschlagen);
+          AP.community.vorgangKlaeren(ae.vorgang, "antwort").then(function (z) {
+            if (antwortEntwurf !== ae) return;
+            if (z === "angelegt") return gesendet(ae.vorgang);
+            ae.zustand = null;
+            ae.vorgang = null;
+            los();
+          }, function (f) {
+            if (antwortEntwurf !== ae) return;
+            if (f && f.art === "veraltet") return;
+            ae.zustand = null;
+            if (f && f.art === "anmeldung" && ctx.gilt()) return ctx.abgelaufen();
+            ae.meldung = { text: "Deine Antwort wurde nicht gesendet. Deine Eingabe ist noch da.", fehler: true };
+            ae.anzeigen(true);
+          });
         });
 
         darstellen();
@@ -806,6 +898,46 @@
   var DATEI_TYPEN = ["image/jpeg", "image/png", "image/webp", "application/pdf"];
 
   function laenge(t) { return AP.community.laenge(t); }
+
+  /* G04: Eingaben gegen Bearbeitung sperren, solange ein Vorgang läuft oder
+     sein Ausgang offen ist. Textfelder bleiben lesbar und fokussierbar
+     (readOnly), Auswahlfelder und Dateiknöpfe werden deaktiviert. Knöpfe der
+     Klasse cm-sperrbar gehören zur Eingabe (z. B. „Datei entfernen“). */
+  function eingabenSperren(form, an) {
+    Array.prototype.forEach.call(form.querySelectorAll("input, textarea, select"), function (x) {
+      if (x.type === "submit" || x.type === "button") return;
+      if (x.tagName === "TEXTAREA" || x.type === "text" || x.type === "search") {
+        x.readOnly = an;
+        if (an) x.setAttribute("aria-readonly", "true"); else x.removeAttribute("aria-readonly");
+      } else {
+        x.disabled = an;
+      }
+    });
+    Array.prototype.forEach.call(form.querySelectorAll(".cm-sperrbar"), function (k) { k.disabled = an; });
+  }
+
+  var TEXT_GESPERRT = "Während des Sendens kannst du deine Eingaben nicht ändern.";
+  var TEXT_KLAERUNG = "„Erneut senden“ schickt dieselben Eingaben noch einmal – doppelt veröffentlicht wird dabei nichts. " +
+                      "„Eingaben ändern“ bricht den offenen Versuch endgültig ab.";
+
+  function offenerAusgang(z) { return z === "unklar" || z === "pruefen" || z === "klaeren"; }
+
+  /* G03: Aktionen bei offenem Ausgang. „Status prüfen“ liest nur, „Erneut
+     senden“ schickt denselben Versandstand mit derselben Kennung, „Eingaben
+     ändern“ klärt den Vorgang endgültig. Ein laufender Schritt sperrt alle drei. */
+  function klaerung(ctx, platz, z, a, hatteFokus) {
+    var reihe = el("div", "cm-reihe cm-klaerung");
+    var sp = knopf("Status prüfen", "kn-neben cm-neben", a.pruefen);
+    var er = knopf("Erneut senden", "kn-neben cm-neben", a.erneut);
+    var ae = knopf("Eingaben ändern", "kn-neben cm-neben", a.aendern);
+    [sp, er, ae].forEach(function (k) { reihe.appendChild(k); });
+    platz.appendChild(el("p", "cm-hilfe", TEXT_KLAERUNG));
+    platz.appendChild(reihe);
+    if (z === "pruefen") ctx.sperren(sp, "Status wird geprüft …");
+    if (z === "klaeren") ctx.sperren(ae, "Wird geklärt …");
+    if (z !== "unklar") [sp, er, ae].forEach(function (k) { k.disabled = true; });
+    if (hatteFokus) (z === "klaeren" ? ae : sp).focus();
+  }
 
   // Unsichtbare Statuszeile: sagt Grenzverletzungen an, nicht jedes Zeichen.
   function vorlesen() {
@@ -913,13 +1045,14 @@
     return { konto: konto, art: "frage", titel: "", text: "", datei: null, dateiFehler: "",
              lernfeld: "", kapitel: "", mentor: false,
              geaendert: false,   // überhaupt etwas eingegeben
-             veraendert: false,  // seit dem letzten Sendeversuch geändert → neue Vorgangskennung
-             vorgang: null, zustand: null /* sendet | unklar | pruefen */, schritt: null,
+             veraendert: false,  // seit dem letzten Sendeversuch geändert → alten Vorgang klären, neue Kennung
+             vorgang: null, versand: null /* eingefrorener Versandstand (G04) */,
+             zustand: null /* sendet | unklar | pruefen | klaeren */, schritt: null,
              meldung: null, ergebnis: null, ctx: null, anzeigen: null };
   }
 
   function neuerAntwortEntwurf(konto, beitrag) {
-    return { konto: konto, beitrag: beitrag, text: "", offen: false, vorgang: null,
+    return { konto: konto, beitrag: beitrag, text: "", offen: false, vorgang: null, versand: null,
              veraendert: false, zustand: null, meldung: null, anzeigen: function () {} };
   }
 
@@ -976,7 +1109,7 @@
       i.name = "cm-beitragsart";
       i.value = w[0];
       i.checked = e.art === w[0];
-      i.addEventListener("change", function () { if (i.checked) artGewechselt(w[0]); });
+      i.addEventListener("change", function () { if (i.checked && !e.zustand) artGewechselt(w[0]); });
       lab.appendChild(i);
       lab.appendChild(el("span", null, w[1]));
       arten.appendChild(lab);
@@ -1003,7 +1136,8 @@
     auswahl.id = datei.eingabe.id + "-a";
     datei.box.insertBefore(auswahl, datei.fehler);
     beschreibtDazu(datei.eingabe, auswahl.id);
-    var entfernen = knopf("Datei entfernen", "kn-neben cm-neben", function () {
+    var entfernen = knopf("Datei entfernen", "kn-neben cm-neben cm-sperrbar", function () {
+      if (e.zustand) return;                // gesperrt (G04)
       e.datei = null;
       e.dateiFehler = "";
       merke();
@@ -1018,6 +1152,7 @@
       "Prüfe auch Bilder, Screenshots und Dokumente vor dem Hochladen.");
     datei.box.appendChild(hochHinweis);
     datei.eingabe.addEventListener("change", function () {
+      if (e.zustand) return;                // gesperrt (G04)
       var d = datei.eingabe.files && datei.eingabe.files[0];
       if (!d) return;                       // Auswahl abgebrochen: bisherige Datei bleibt
       var fehler = dateiFehlerText(d);
@@ -1076,6 +1211,7 @@
     }
     kapitelFuellen();
     lf.eingabe.addEventListener("change", function () {
+      if (e.zustand) return;
       var hatte = !!e.kapitel;
       e.lernfeld = lf.eingabe.value;
       e.kapitel = "";
@@ -1085,6 +1221,7 @@
       if (hatte) ansage.textContent = "Das Kapitel wurde zurückgesetzt, weil du das Lernfeld gewechselt hast.";
     });
     kap.eingabe.addEventListener("change", function () {
+      if (e.zustand) return;
       e.kapitel = kap.eingabe.value;
       kapHinweis.hidden = true;
       merke();
@@ -1096,10 +1233,13 @@
     mHilfe.id = mentor.eingabe.id + "-h";
     mentor.box.insertBefore(mHilfe, mentor.fehler);
     beschreibtDazu(mentor.eingabe, mHilfe.id);
-    mentor.eingabe.addEventListener("change", function () { e.mentor = mentor.eingabe.checked; merke(); });
+    mentor.eingabe.addEventListener("change", function () { if (e.zustand) return; e.mentor = mentor.eingabe.checked; merke(); });
     form.appendChild(mentor.box);
 
     // Status und Aktionen
+    var sperrHinweis = el("p", "cm-hilfe", TEXT_GESPERRT);
+    sperrHinweis.hidden = true;
+    form.appendChild(sperrHinweis);
     var platz = el("div", "cm-schreib-status");
     form.appendChild(platz);
     form.appendChild(ansage);
@@ -1115,6 +1255,11 @@
     var versucht = false;
 
     function merke() {
+      if (e.zustand) {                       // gesperrt (G04): Felder zeigen den Versandstand
+        titel.eingabe.value = e.titel;
+        text.eingabe.value = e.text;
+        return;
+      }
       e.titel = titel.eingabe.value;
       e.text = text.eingabe.value;
       e.geaendert = true;
@@ -1179,30 +1324,32 @@
       return falsch;
     }
 
-    var gezeigt = null;
+    var gezeigt = null, gezeigtZ = null;
     function darstellen(fokusMeldung) {
-      var laeuft = e.zustand === "sendet" || e.zustand === "pruefen";
-      if (e.zustand === "sendet") {
-        ctx.sperren(senden, e.art === "lernzettel" && e.datei && e.schritt !== "veroeffentlichen"
+      var z = e.zustand, v = e.versand;
+      if (z === "sendet") {
+        ctx.sperren(senden, v && v.datei && e.schritt !== "veroeffentlichen"
           ? "Datei wird hochgeladen …" : "Beitrag wird veröffentlicht …");
       } else {
         ctx.freigeben(senden);
-        senden.disabled = e.zustand === "unklar" || e.zustand === "pruefen";
+        senden.disabled = !!z;
       }
-      abbr.disabled = laeuft;
-      if (gezeigt === e.meldung && e.zustand !== "pruefen") return;
+      abbr.disabled = z === "sendet" || z === "pruefen" || z === "klaeren";
+      eingabenSperren(form, !!z);
+      sperrHinweis.hidden = !(z === "sendet" || (z === "klaeren" && !e.meldung));
+      if (gezeigt === e.meldung && gezeigtZ === z) return;
+      var hatteFokus = platz.contains(document.activeElement);
       gezeigt = e.meldung;
+      gezeigtZ = z;
       platz.innerHTML = "";
       if (!e.meldung) return;
       var p = el("p", e.meldung.fehler ? "meldung fehler" : "meldung", e.meldung.text);
       p.setAttribute("role", e.meldung.fehler ? "alert" : "status");
       p.tabIndex = -1;
       platz.appendChild(p);
-      if (e.zustand === "unklar" || e.zustand === "pruefen") {
-        var sp = knopf("Status prüfen", "kn-neben cm-neben", statusPruefen);
-        if (e.zustand === "pruefen") ctx.sperren(sp, "Status wird geprüft …");
-        platz.appendChild(sp);
-      }
+      if (offenerAusgang(z))
+        klaerung(ctx, platz, z, { pruefen: statusPruefen, erneut: erneutSenden, aendern: eingabenAendern },
+                 hatteFokus && !fokusMeldung);
       if (fokusMeldung) p.focus();
     }
     e.anzeigen = function (fokusMeldung) {
@@ -1215,7 +1362,7 @@
         else location.hash = "#community";
       }
       // Während des Sendens: zurück geht, abgebrochen wird nichts.
-      if (e.zustand === "sendet" || e.zustand === "pruefen") { if (istZurueck) weg(); return; }
+      if (e.zustand === "sendet" || e.zustand === "pruefen" || e.zustand === "klaeren") { if (istZurueck) weg(); return; }
       // Ausgang offen: Entwurf bleibt, bis der Status geklärt ist.
       if (e.zustand === "unklar") return weg();
       if (!e.geaendert) { if (entwurf === e) entwurf = null; return weg(); }
@@ -1225,6 +1372,7 @@
       });
     }
 
+    /* G03: Ein leerer Status beweist nichts – der Ausgang bleibt offen. */
     function statusPruefen() {
       if (e.zustand !== "unklar") return;
       e.zustand = "pruefen";
@@ -1232,22 +1380,53 @@
       AP.community.beitragStatus(e.vorgang).then(function (id) {
         if (entwurf !== e) return;
         if (id) return erfolg(e, id);
-        e.zustand = null;
-        e.meldung = { text: "Dein Beitrag wurde nicht veröffentlicht. Deine Eingaben sind noch da.", fehler: true };
+        e.zustand = "unklar";
+        e.meldung = { text: "Der Beitrag wurde noch nicht gefunden. Der Ausgang ist weiterhin unklar.", fehler: true };
         e.anzeigen(true);
       }, function (f) {
         if (entwurf !== e) return;
         if (f && f.art === "veraltet") return;
         e.zustand = "unklar";
         if (f && f.art === "anmeldung" && e.ctx.gilt()) return e.ctx.abgelaufen();
-        e.meldung = { text: "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde. Prüfe den Status, bevor du erneut sendest.", fehler: true };
+        e.meldung = { text: UNKLAR_BEITRAG, fehler: true };
+        e.anzeigen(true);
+      });
+    }
+
+    function erneutSenden() {
+      if (e.zustand !== "unklar" || !e.versand) return;
+      if (ctx.offline()) return ctx.offlineZeigen();
+      abschicken(e, false);
+    }
+
+    // Endgültig klären: angelegt ⇒ Erfolg; verworfen ⇒ Eingaben wieder frei,
+    // die Datei dieses Vorgangs wird entfernt.
+    function eingabenAendern() {
+      if (e.zustand !== "unklar") return;
+      if (ctx.offline()) return ctx.offlineZeigen();
+      e.zustand = "klaeren";
+      e.anzeigen();
+      AP.community.vorgangKlaeren(e.vorgang, "beitrag", e.versand && e.versand.datei).then(function (z) {
+        if (entwurf !== e) return;
+        if (z === "angelegt") return erfolg(e, e.vorgang);
+        e.zustand = null;
+        e.vorgang = null;
+        e.versand = null;
+        e.meldung = { text: "Dein Beitrag wurde nicht veröffentlicht. Du kannst deine Eingaben jetzt ändern.", fehler: true };
+        e.anzeigen(true);
+      }, function (f) {
+        if (entwurf !== e) return;
+        if (f && f.art === "veraltet") return;
+        e.zustand = "unklar";
+        if (f && f.art === "anmeldung" && e.ctx.gilt()) return e.ctx.abgelaufen();
+        e.meldung = { text: UNKLAR_BEITRAG, fehler: true };
         e.anzeigen(true);
       });
     }
 
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
-      if (e.zustand) return;                   // läuft, wird geprüft oder ist unklar
+      if (e.zustand) return;                   // läuft, wird geklärt oder ist unklar
       e.titel = titel.eingabe.value;
       e.text = text.eingabe.value;
       versucht = true;
@@ -1262,29 +1441,67 @@
       }
       uebersichtPlatz.innerHTML = "";
       if (ctx.offline()) return ctx.offlineZeigen();
-      // Dieselbe Kennung nur für eine unveränderte Wiederholung – nie doppelt.
-      if (!e.vorgang || e.veraendert) e.vorgang = AP.community.neueVorgangskennung();
-      e.veraendert = false;
-      e.zustand = "sendet";
-      e.schritt = null;
+      function los() {
+        // Unveränderte Wiederholung nach sicherer Ablehnung: dieselbe Kennung.
+        if (!e.vorgang) e.vorgang = AP.community.neueVorgangskennung();
+        // G04: Genau dieser geprüfte Stand wird gesendet – auch bei jeder Wiederholung.
+        e.versand = Object.freeze({
+          vorgang: e.vorgang, art: e.art, titel: e.titel, text: e.text.trim(),
+          lernfeld: e.lernfeld || null, kapitel: e.kapitel || null,
+          anMentoren: e.art === "frage" && e.mentor,
+          datei: e.art === "lernzettel" ? e.datei : null
+        });
+        e.veraendert = false;
+        abschicken(e, true);
+      }
+      if (!e.vorgang || !e.veraendert) return los();
+      // Eingaben nach einem früheren Versuch geändert: den alten Vorgang erst
+      // endgültig schließen (und seine Datei entfernen), dann neue Kennung (G03).
+      e.zustand = "klaeren";
       e.meldung = null;
       darstellen();
-      var g = e;
-      AP.community.beitraegeFrei().then(function (frei) {
-        if (entwurf !== g) return;
-        if (!frei) return fehlschlag(g, { art: "gesperrt" });
-        return AP.community.veroeffentlichen({
-          vorgang: g.vorgang, art: g.art, titel: g.titel, text: g.text.trim(),
-          lernfeld: g.lernfeld || null, kapitel: g.kapitel || null,
-          anMentoren: g.art === "frage" && g.mentor,
-          datei: g.art === "lernzettel" ? g.datei : null,
-          schritt: function (s) { g.schritt = s; if (g.zustand === "sendet") g.anzeigen(); }
-        }).then(function (id) { erfolg(g, id); }, function (f) { fehlschlag(g, f); });
-      }, function (f) { fehlschlag(g, f); });
+      var alt = e.versand;
+      AP.community.vorgangKlaeren(e.vorgang, "beitrag", alt && alt.datei).then(function (z) {
+        if (entwurf !== e) return;
+        if (z === "angelegt") return erfolg(e, e.vorgang);
+        e.zustand = null;
+        e.vorgang = null;
+        los();
+      }, function (f) {
+        if (entwurf !== e) return;
+        if (f && f.art === "veraltet") return;
+        e.zustand = null;
+        if (f && f.art === "anmeldung" && e.ctx.gilt()) return e.ctx.abgelaufen();
+        e.meldung = { text: "Dein Beitrag wurde nicht veröffentlicht. Deine Eingaben sind noch da.", fehler: true };
+        e.anzeigen(true);
+      });
     });
 
     artAnzeigen();
     darstellen();
+  }
+
+  var UNKLAR_BEITRAG = "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde. Prüfe den Status, bevor du erneut sendest.";
+
+  /* Sendet den festgehaltenen Versandstand g.versand. pruefen: vorher die
+     Paketfreigabe abfragen (erster Versuch); eine Wiederholung aus dem
+     unklaren Zustand verlässt sich auf die Prüfung in der RPC. */
+  function abschicken(g, pruefen) {
+    var v = g.versand;
+    g.zustand = "sendet";
+    g.schritt = null;
+    g.meldung = null;
+    g.anzeigen();
+    var frei = pruefen ? AP.community.beitraegeFrei() : Promise.resolve(true);
+    frei.then(function (ok) {
+      if (entwurf !== g) return;
+      if (!ok) return fehlschlag(g, { art: "gesperrt" });
+      return AP.community.veroeffentlichen({
+        vorgang: v.vorgang, art: v.art, titel: v.titel, text: v.text,
+        lernfeld: v.lernfeld, kapitel: v.kapitel, anMentoren: v.anMentoren, datei: v.datei,
+        schritt: function (s) { g.schritt = s; if (g.zustand === "sendet") g.anzeigen(); }
+      }).then(function (id) { erfolg(g, id); }, function (f) { fehlschlag(g, f); });
+    }, function (f) { fehlschlag(g, f); });
   }
 
   function erfolg(g, id) {
@@ -1307,7 +1524,7 @@
     var ctx = g.ctx, lebt = ctx && ctx.gilt();
     if (f && f.art === "unklar") {
       g.zustand = "unklar";
-      g.meldung = { text: "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde. Prüfe den Status, bevor du erneut sendest.", fehler: true };
+      g.meldung = { text: UNKLAR_BEITRAG, fehler: true };
       return g.anzeigen(true);
     }
     g.zustand = null;

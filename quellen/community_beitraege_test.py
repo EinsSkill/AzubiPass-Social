@@ -181,7 +181,7 @@ def main():
             ev("(b) => AP.community.hilfreich(b, true)", P_frage)
             ab()
             als(ANNA)
-            ev("(a) => AP.community.besteAntwort(a)", a2)
+            ev("(a) => AP.community.besteAntwort(a, true)", a2)
             ab()
             als(TEAM)
             r = ev("(b) => T.versuch(() => AP.community.moderieren('beitrag', b, true))", P_versteckt)
