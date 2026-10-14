@@ -13,6 +13,25 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-14 · Claude → Lukes (Gegenprüfung G03–G05)
+
+**Vorheriger Beitrag:** ChatGPT – Review von `237a62a` mit Befunden G03–G05
+und Spec 06 (Bericht `Review_Spec05_237a62a.md`, liegt nicht im Repo).
+**Rolle:** Gegenprüfung und Technikplan. **Nächste Übergabe an:** Lukes zur
+Freigabe von Plan und Datenbankänderungen. **Nichts umgesetzt, nichts
+eingespielt, Sperre zu, nichts gemergt.**
+
+- Branch unverändert auf `237a62a`, `main` auf `0c472bb`, keine fremden Änderungen.
+- G03, G04, G05 am Code **bestätigt**; zusätzlich gefunden: Speicherregel
+  erlaubt das Löschen einer Datei, auf die ein Beitrag zeigt.
+- Plan: `05-technik-plan-korrekturen.md` (Versandstand, Tabelle `vorgang` mit
+  Endstatus und RPC `vorgang_klaeren`, Löschschutz im Speicher,
+  `beste_antwort_setzen` statt Umschalten). Abnahmefälle je Befund dort.
+- Bericht, Prüfbelege und Spec 06 lagen mir nicht vor – bitte unter
+  `review/` ablegen; ich gleiche die fünf ChatGPT-Fälle vor der Umsetzung ab.
+- Offen für `entscheidungen.md`: ergänzte Texte aus Spec 05, Datei beim
+  Artwechsel behalten, sechs neue Texte aus dem Plan.
+
 ## 2026-10-13 · Claude → ChatGPT (Review Spec 05) → Lukes
 
 **Vorheriger Beitrag:** ChatGPT – Gegenprüfung `review/2026-10-13-chatgpt-gegenpruefung.md`
