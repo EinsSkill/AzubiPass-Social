@@ -606,6 +606,8 @@
     var datei = e.art === "lernzettel" ? e.datei : null;    // nie als Anhang einer Frage/eines Tipps
     var dateiFehler = dateiPruefen(datei);
     if (dateiFehler) return Promise.reject(dateiFehler);
+    // G06: Der direkte Weg nimmt nur Gruppen-Textbeiträge ohne Datei an.
+    if (e.gruppe && datei) return Promise.reject(fehler("Lernzettel in Gruppen kommen mit der Gruppen-Spec.", "eingabe"));
     if (e.gruppe) return veroeffentlichenDirekt(e, titel);
 
     var vorgang = e.vorgang || neueVorgangskennung();
@@ -643,7 +645,7 @@
     });
   }
 
-  // Alter, direkter Weg – nur noch für Gruppenbeiträge der Datenschicht-Tests.
+  // Alter, direkter Weg – nur noch für Gruppen-Textbeiträge der Datenschicht-Tests (G06).
   function veroeffentlichenDirekt(e, titel) {
     var pfad = null, dateiArt = null;
     return ich().then(function (u) {

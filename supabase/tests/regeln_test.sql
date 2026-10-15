@@ -4,9 +4,9 @@
 -- ist, wird alles zurückgerollt. Es bleibt also nichts in der Datenbank.
 -- Jede Prüfung muss „verboten", „abgelehnt", „geschuetzt" oder die
 -- erwartete Zahl zeigen; ein „FEHLER:" bedeutet eine Lücke.
--- Erwartet: ohneProfil:profile=0 falscherCode=abgelehnt code=8 rolleSetzen=verboten
+-- Erwartet: ohneProfil:profile=0 falscherCode=abgelehnt code=8 allgemeinDirekt=verboten rolleSetzen=verboten
 --   verstecktSetzen=verboten B_sieht=1 B_codes=0 zugangSpalte=geschuetzt
---   B_nachBeitritt=2 besteDurchFremde=verboten geloest=true
+--   B_nachBeitritt=2 besteDurchFremde=verboten geloest=true (nach code=8 neu: allgemeinDirekt=verboten)
 --   moderierenOhneTeam=verboten C_sieht=0 anon=verboten B_rolle=leitung
 do $t$
 declare
@@ -31,7 +31,10 @@ begin
   select gc.code into code from public.gruppe_code gc where gruppe_id = g;
   r := r || ' code=' || coalesce(length(code)::text,'null');
   insert into public.beitrag (gruppe_id, art, titel, text) values (g, 'frage', 'Geheime Gruppenfrage', 'x') returning id into post;
-  insert into public.beitrag (art, titel, text, lernfeld, kapitel) values ('tipp', 'Öffentlicher Tipp', 'y', 'lf2', 'k1');
+  -- Seit G06 (15.10.) nur noch über die RPC; der direkte Weg ist auf Gruppen-Textbeiträge begrenzt.
+  perform public.beitrag_veroeffentlichen(gen_random_uuid(), 'tipp', 'Öffentlicher Tipp', 'y', 'lf2', 'k1', false, null, null);
+  begin insert into public.beitrag (art, titel, text) values ('tipp', 'Direkt allgemein', 'z'); r := r || ' FEHLER:allgemeinDirekt';
+  exception when others then r := r || ' allgemeinDirekt=verboten'; end;
   begin update public.profil set rolle = 'team' where id = a; r := r || ' FEHLER:rolle-geaendert';
   exception when others then r := r || ' rolleSetzen=verboten'; end;
   begin insert into public.beitrag (art, titel, versteckt) values ('tipp','Versteckt-Hack', true); r := r || ' FEHLER:versteckt';
