@@ -13,6 +13,47 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## Übergaben über GitHub (von Lukes am 15.10.2026 freigegeben)
+
+- Diese Datei ist der gemeinsame Einstieg. Vor jeder Phase den neuesten Abschnitt lesen; nach der Phase einen eigenen Abschnitt oben ergänzen.
+- Vollständige Reviews liegen unter `doku/community/review/` mit Datum und geprüftem Commit im Dateinamen. Von hier relativ darauf verlinken; vorhandene Berichte bleiben erhalten.
+- Vor der Übergabe Dokumentation auf dem vereinbarten Arbeitsbranch committen und pushen. Im Chat genügen GitHub-Link, Branch und Commit. Die empfangende KI liest die Dateien selbst; der Text muss nicht zwischen Chats kopiert werden.
+- Geprüften Anwendungsstand und nachfolgenden Dokumentationscommit unterscheiden. Jede Übergabe nennt Vorgänger, eigene Rolle, Umfang, Grundlage, Testbelege, Grenzen und nächsten erlaubten Schritt.
+- ChatGPT darf Reviews, Übergaben und ausdrücklich von Lukes getroffene Entscheidungen im Repository dokumentieren. Die fachlichen Entscheidungen bleiben Lukes vorbehalten; Claude bleibt Umsetzungseigner für `quellen/`, `supabase/` und `docs/`.
+- Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
+- GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
+
+## 2026-10-15 · ChatGPT → Claude (Freigabe und Umsetzung)
+
+**Vorheriger Beitrag:** Claude – `e3a7456241409f9b7cb306c3f4816d69c39eb36c`, R01 korrigiert, R02/R03 im Plan ergänzt. ChatGPT hat diesen Stand gegengeprüft: **87/87 Mockprüfungen unabhängig bestanden**, R01-Gegenprobe gegen `89968be` bestätigt; keine weiteren blockierenden Befunde in den geprüften Änderungen. Vollständiger Bericht: [Review e3a7456](review/2026-10-15-chatgpt-review-e3a7456.md).
+
+**Freigabe durch Lukes:** Am 15.10.2026 im Chat: „Okay dann gebe ich jetzt hiermit meine Freigabe, bereite die Übergabe für Claude vor und können wir es so machen das die Übergabe datein immer über github weitergegeben werden?“ Die Freigabe bezieht sich auf den unmittelbar zuvor vorgelegten Review samt dokumentierten Empfehlungen. Die getroffenen Entscheidungen und Texte sind in [entscheidungen.md](entscheidungen.md) im Auftrag von Lukes festgehalten.
+
+**Rolle jetzt:** Claude – Umsetzung und Abnahme. **Anwendungsbasis:** `e3a7456`; vor Beginn aktuellen `community-zugang` einschließlich dieses Dokumentationscommits lesen. **Nächste Rückgabe:** an ChatGPT zum Review, anschließend an Lukes für Merge/Live. `main` wurde zuletzt auf `0c472bb20b602e46d154af0828502bed41b636d4` bestätigt.
+
+### Freigegebener Auftrag
+
+1. **G06:** [05-technik-plan-g06.md](05-technik-plan-g06.md) umsetzen. Speicherobjekt zuerst sperren, danach Verwendung prüfen; direkten Beitrags-Insert auf Gruppen-Textbeiträge ohne Datei begrenzen. Echte Konkurrenztests beider Reihenfolgen, geschlossene Paketsperre und tatsächlichen Storage-API-Weg prüfen. Einschränkungen der API-Konkurrenzprobe offen benennen.
+2. **R03 separat:** [06-technik-plan.md §12.2](06-technik-plan.md#122-r03--antwort_senden-sperrt-vor-der-prüfung) umsetzen. Wiederholung bereits angelegter Antwort zuerst erkennen; Beitrag `FOR SHARE` vor der Sichtbarkeitsprüfung; Reihenfolge Beitrag → Vorgang → Antwort. Eigene Migration. Abnahmefälle 20–23 mit echten Verbindungen, einschließlich Gegenprobe am alten Stand und Wiederholung nach späterer Ausblendung.
+3. **Spec 06:** Den geprüften [Technikplan](06-technik-plan.md) auf Stand `e3a7456` umsetzen und seine vorgesehenen Migrationen nach den geplanten Prüfungen einspielen. E1–E12 gemäß Review-Empfehlungen und E14 sind freigegeben; E13 bleibt die einzige fehlende Kontoangabe. R02 muss die eigene Meldung nach der Thread-Sperre mit einer eigenen Anweisung erneut suchen, vor Sichtbarkeit und Bremse. Abnahmefall 19 sowie die übrigen Moderations-Abnahmefälle ausführen.
+4. **Vier Texte:** Die in `entscheidungen.md` vollständig bestätigten Texte in den vorgesehenen Zuständen übernehmen.
+5. **GitHub-Übergaben:** Ab jetzt den oben dokumentierten Ablauf verwenden. Reviewberichte und die nächste Übergabe selbst ins Repository schreiben.
+
+Die Freigabe umfasst die benannten Implementierungen und Datenbankmigrationen. Für genau diesen Umfang keine erneute pauschale Freigabe anfordern. **Nicht enthalten:** Merge nach `main`, Website-Deployment, Öffnen der Paketsperre, ungeplante Löschungen oder gesondert zurückgestellte `DROP`-Dateien.
+
+### E13 – Teamkonto weiterhin offen
+
+Lukes hat in seiner Freigabe **keine konkrete Konto-ID oder Mailadresse genannt**. Keine Adresse aus Profil, Memory, GitHub-Identität oder Drive ableiten; `test-neu1` nicht automatisch übernehmen. Umsetzung und Tests mit vorhandenen berechtigten Testkonten dürfen fortgesetzt werden. Die Zuweisung von `team`/`beitraege_tester` an Lukes' eigentliches Konto bleibt bis zu seiner ausdrücklichen Benennung ausgesetzt. In der Rückgabe die eine fehlende Kontoangabe nennen.
+
+### Belege und Rückgabe
+
+- Vor dem Schreiben `git status --short` und Branch/HEAD prüfen; fremde Änderungen nicht übernehmen oder überschreiben.
+- Tatsächliche Migrationen, Einspielstand und Testbefehle nennen. Echte Datenbank-, Storage-API-, Browser-Mock- und Livetests getrennt ausweisen. R02/R03 sind bis zur Umsetzung Planänderungen, keine behobenen Livefehler.
+- Relevante bestehende Prüfungen gemäß `README.md` ausführen. Die 269/269 Funktionstests im letzten Review stammen aus Claudes Bericht; ChatGPT hat zuletzt 87/87 Mockprüfungen und die gezielte R01-Gegenprobe ausgeführt.
+- Wenn Zugangsdaten für Livetests fehlen, verfügbare Prüfungen abschließen und die konkrete Lücke dokumentieren. Fehlende Livetests nicht als bestanden führen.
+- R01 kann im geprüften Umfang geschlossen werden. Danach Reviewbericht/Abnahmebelege committen und pushen, diesen Briefkasten oben ergänzen und Lukes einen GitHub-Link samt Branch/Commit zur Rückgabe an ChatGPT geben.
+- Diese Dokumentationsübergabe selbst verändert weder Anwendungscode noch produktive Datenbank; der aktuelle Sperrstatus wurde hier nicht live erneut abgefragt.
+
 ## 2026-10-15 · Claude → ChatGPT (Gegenprüfung) → Lukes (Freigaben)
 
 **Vorheriger Beitrag:** ChatGPT – Gegenprüfung von `89968be`

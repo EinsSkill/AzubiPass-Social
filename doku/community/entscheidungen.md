@@ -1,7 +1,9 @@
 # Entscheidungen · AzubiPass Social
 
-Hier trägt **nur Lukes** ein, was freigegeben ist. Claude setzt nur um, was
-hier steht. Format: Datum · Entscheidung · betroffene Datei/Version.
+Hier stehen **nur von Lukes getroffene Entscheidungen**. Eine KI darf seine
+im Chat ausdrücklich erteilte Freigabe im Auftrag dokumentieren und muss die
+Quelle und den Umfang nennen. Claude setzt nur um, was hier freigegeben ist.
+Format: Datum · Entscheidung · betroffene Datei/Version.
 
 | Datum | Entscheidung | Bezug |
 |---|---|---|
@@ -31,3 +33,53 @@ hier steht. Format: Datum · Entscheidung · betroffene Datei/Version.
 | 2026-10-13 | Spec 05: Bei Frage und Tipp sind Titel und Text Pflicht, beim Lernzettel Beschreibung optional, Frage vorausgewählt; Antworten direkt im Beitragsdetail; beste Antwort setzen/zurücknehmen im selben Paket | `05-schreiben-antworten.md` v1, Fragen 1 und 2 |
 | 2026-10-13 | Spec 05: serverseitige Paketsperre für Beiträge, anfangs geschlossen, nur benannte interne Testkonten; öffnen erst nach komplettem Paket und Lukes' Freigabe. API-/RPC-Anpassungen für Kontobindung, Idempotenz und Statusprüfung freigegeben, ohne neue fachliche Felder; Claude benennt die Datenbank-/Rechteänderungen vor dem Einspielen | `05-schreiben-antworten.md` v1, Fragen 3 und 4 |
 | 2026-10-13 | Barrierefreiheit: scrollbare Tabellen per Tastatur erreichbar machen, Kontrast der Tab-Leiste auf Deckblatt/Landing korrigieren; Landing-Satz „In der Beta kannst du alle verfügbaren Lerninhalte und Übungen kostenlos nutzen.“ | Barrierefreiheits-Scan 13.10., Gegenprüfung ChatGPT |
+
+| 2026-10-15 | G06 umsetzen und nach den vorgesehenen Prüfungen einspielen: Speicherobjekt vor Verwendungsprüfung sperren; direkter Beitrags-Insert nur für Gruppen-Textbeiträge ohne Datei. | 05-technik-plan-g06.md |
+| 2026-10-15 | R03 als eigene Migration umsetzen und nach den vorgesehenen Prüfungen einspielen: bereits angelegte Antwort zuerst erkennen; Beitrag FOR SHARE vor der Sichtbarkeitsprüfung; Reihenfolge Beitrag → Vorgang → Antwort. | 06-technik-plan.md §12.2 |
+| 2026-10-15 | E1: Prüfanfrage erst nach erster Teambestätigung einer automatischen Ausblendung. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E2: Wiedereinblenden bzw. Aufheben einer Prüfanfrage mit optionaler Korrektur in einer atomaren Entscheidung. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E3: Neutrale fachliche Vorlage verwenden und die betroffene Aussage konkret benennen. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E4: Internes Feld darf leer sein, wenn der Server den vorhandenen Autortext übernimmt. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E5: Vorlagenverwaltung später; Texte je Entscheidung anpassbar. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E6: Eigene Antworten unter fremden ausgeblendeten Beiträgen in der Eigenansicht zugänglich halten. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E7: Antwortbezug an Teamkorrekturen mit aktueller Sichtbarkeitsprüfung aufnehmen. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E8: Öffentlich „Team · Fachliche Korrektur“, intern handelndes Konto; keine Anonymität gegenüber direkten Datenabfragen versprechen. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E9: Protokoll bis Ende der Klassen-Beta, spätestens 31.12.2026, behalten; dann über Behalten/Löschen entscheiden. Bis dahin keine automatische Löschung. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E10: Direkte Teamlöschung fremder Inhalte entfernen. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E11: geloest nur über kontrollierte Abläufe setzen. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E12: Bearbeitung eigener ausgeblendeter Inhalte weiter erlauben; aktuellen Stand vor Entscheidung prüfen. | 06-technik-plan.md / Review e3a7456 |
+| 2026-10-15 | E14: Geprüften Spec-06-Technikplan auf Stand e3a7456 mit diesen Entscheidungen umsetzen und die vorgesehenen Migrationen nach den geplanten Prüfungen einspielen. E13-Kontozuweisung bleibt ausgesetzt, bis Lukes das konkrete Konto benennt. | 06-technik-plan.md, Stand e3a7456 |
+| 2026-10-15 | Vier offene Texte einschließlich Antwortvariante bestätigt; vollständiger Wortlaut im Abschnitt unten. | Review e3a7456 §5 |
+| 2026-10-15 | Übergaben und Reviews künftig direkt auf dem Arbeitsbranch über GitHub weitergeben; ChatGPT darf diese Dokumentation und ausdrücklich getroffene Nutzerentscheidungen im Auftrag committen und pushen. Merge, Deployment und Öffnen der Paketsperre bleiben gesondert freizugeben. | AGENTS.md; uebergabe.md |
+
+## Freigabequelle 15.10.2026
+
+Von Lukes im Chat nach der Gegenprüfung von `e3a7456`: „Okay dann gebe ich
+jetzt hiermit meine Freigabe, bereite die Übergabe für Claude vor und können
+wir es so machen das die Übergabe datein immer über github weitergegeben
+werden?“
+
+Im Auftrag von Lukes durch ChatGPT übertragen. Bezug ist der unmittelbar
+zuvor vorgelegte [Review e3a7456](review/2026-10-15-chatgpt-review-e3a7456.md)
+mit den dort dokumentierten Empfehlungen und vier Texten. Die Freigabe
+umfasst G06, R03 und Spec 06 wie oben festgehalten; keine eigenständigen
+zusätzlichen Produktentscheidungen durch ChatGPT.
+
+**E13 bleibt offen:** Keine konkrete Konto-ID oder Mailadresse genannt.
+Keine Rolle oder Testerfreigabe für ein geratenes Konto setzen; `test-neu1`
+nicht automatisch übernehmen. Die übrige freigegebene Arbeit darf laufen.
+
+## Bestätigte Texte vom 15.10.2026
+
+1. „Mit ‚Eingaben ändern‘ prüfen wir den offenen Versuch. Wurde noch nichts veröffentlicht, wird er endgültig verworfen. Wurde dein Beitrag bereits veröffentlicht, öffnen wir ihn.“
+
+   Antwortvariante: „Mit ‚Eingaben ändern‘ prüfen wir den offenen Versuch. Wurde noch nichts gesendet, wird er endgültig verworfen. Wurde deine Antwort bereits gesendet, zeigen wir sie.“
+
+2. „Solange der Versand läuft oder sein Ergebnis unklar ist, kannst du deine Eingaben nicht ändern.“
+
+3. „Deine Eingaben konnten noch nicht verworfen werden. Versuch es erneut.“
+
+4. „Deine Antwort wurde gesendet. Der aktuelle Stand konnte nicht geladen werden.“ – mit „Erneut laden“.
+
+Merge nach `main`, Deployment, Öffnen der Paketsperre und zuvor gesondert
+zurückgestellte `DROP`-Dateien sind mit dieser Freigabe nicht freigegeben.
