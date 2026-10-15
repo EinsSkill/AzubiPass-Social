@@ -1,0 +1,29 @@
+MIGRATIONS 42 PASS
+moderation_test.sql ERGEBNIS: erste=true/true wiederholt=false/true anderer=false/false nachZwei=false nachDrei=true auto=1 protokollAuto=1 wiederholtVersteckt=false/true fremdVersteckt=APZ01 ohnePaket=APP01 ohneProfil=APR01 bremseWiederholt=false bremse=APB01 hinweis501=APE01 hinweis500=true azubi=APR01 mentor=APR01 teamOhnePaket=APP01 direktMelden=42501 direktAntwort=42501 direktErledigt=42501 ausblendungLesen=42501 alterWeg=42501 teamLoescht=0 vorlaeufig=true/ohne anfrageVorlaeufig=APF01 fallMeldungen=3 ohneText=APE01 bestaetigt=true erledigt=3 wiederholung=true andereAktion=APV01 protokollEins=1 anfrageMoeglich=true anfrage=offen anfrageWiederholt=true zweiteAnfrage=APD01 fremdeAnfrage=APR01 erklaerungBeiAnfrage=APF01 alteVersion=APF01 bestaetigtGleicheId=true nachBestaetigung=APD01 zweiteErklaerung=APF01 ausblendungen=1 alteErklaerung=1 nachErklaerung=APD01 eingeblendet=false korrektur=1 q1Gespeichert=bestaetigt neueId=true aufgehoben=false/true q4Gespeichert=aufgehoben frueheresSichtbar=aufgehoben bezug=1 antwortOffen=0 sichtbarLassen=false neueMeldung=APF01 bearbeitet=APF01 klaeren=verworfen spaetNachVerworfen=APV01 besteManuell=false/false besteNachEinblenden=false besteAutomatisch=true/false/false eltern=true/ohneId/ohneTitel direktLesbar=0 eigeneListe=1 fremderInhalt=APZ01 meineOhneTitel=2 sicht=42501 zaehler=true seitenGesamt=true hochZuerst=Seite 7,Seite 33 protokollAendern=verboten protokollLoeschen=verboten abbruchUnveraendert=true/offen kontoGeloescht=true invariante=0
+regeln_test.sql ERGEBNIS: ohneProfil:profile=0 falscherCode=abgelehnt code=8 allgemeinDirekt=verboten rolleSetzen=verboten verstecktSetzen=verboten B_sieht=1 B_codes=0 zugangSpalte=geschuetzt B_nachBeitritt=2 antwortDirekt=verboten besteDurchFremde=verboten geloest=true moderierenOhneTeam=verboten C_sieht=0 anon=verboten B_rolle=leitung
+korrekturen_g03_g05_test.sql ERGEBNIS: verworfen=verworfen spaeterOriginal=abgebrochen angelegt=1 klaeren=angelegt wiederholt=1 artFalsch=vergeben abgelehnt=ohneZeile danachKlaeren=verworfen altInhalt=angelegt dateiVorher=false dateiGeschuetzt=true regel=1 fremdeDatei=false fremdKlaeren=vergeben antwortAngelegt=angelegt antwortVerworfen=abgebrochen fremdBeste=verboten besteZweimal=1 geloest=true wechsel=v8 entfernt=0 geloestDanach=false altUmschalten=verboten
+G06 publish-first wait true
+G06 deleted 0
+G06 delete-first wait true
+G06 publish { error: 'Die Datei ist nicht hochgeladen.' }
+R03 wait true
+R03 result { error: 'Du kannst diesen Beitrag gerade nicht beantworten.' }
+R02 wait true
+R02 [
+  {
+    meldung_id: '82195015-55c1-4908-9208-643c481b5c12',
+    status: 'offen',
+    neu: true,
+    gleich: true
+  }
+] [
+  {
+    meldung_id: '82195015-55c1-4908-9208-643c481b5c12',
+    status: 'offen',
+    neu: false,
+    gleich: true
+  }
+]
+DIFFERENT_TARGET wait true
+DIFFERENT_TARGET {"requested":"831eb224-2923-4367-a7f6-86ba87f4859d","original":"95bd042a-7ab5-4044-9e5c-266326a50475","result":{"ok":{"aktion":"korrektur","versteckt":false,"wiederholung":true,"ausblendung_id":null,"entscheidung_id":"f807d23e-fd95-4343-a98b-187f3f204f76","pruefanfrage_id":null,"korrektur_antwort_id":"1a1c6b4a-f46e-414a-bb41-76dc93fdfd24"}}}
+REPORT_LIMIT [ { n: '31' } ]

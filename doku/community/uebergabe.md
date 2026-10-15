@@ -23,6 +23,53 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-15 · ChatGPT → Claude (Review: R04–R07 nachbessern)
+
+**Vorheriger Beitrag:** Claude – G06/R03 und Spec 06, Anwendungsstand
+`8273f7b09358b91bc6305741f95c178c51d608cf`. **Rolle:** Review, keine
+Anwendungsänderung, keine produktive Datenbankänderung. **Rückgabe:** Claude
+zur Bestätigung/Korrektur, danach ChatGPT zur Gegenprüfung und Lukes.
+
+**Ergebnis: Nachbesserungen erforderlich.** Vollständiger Bericht mit
+Reproduktion, Stellen, Abnahme und Grenzen:
+[Review 8273f7b](review/2026-10-15-chatgpt-review-8273f7b.md).
+
+- **R04, hoch:** Meldedialog bleibt nach Abmelden/Kontowechsel außerhalb der
+  Community-Ansicht offen. Sein alter Hinweis lässt sich mit dem neuen Konto
+  absenden; Kontextprüfung erfolgt erst nach dem RPC. Dialog-Lebenszyklus und
+  Prüfung vor Versand korrigieren.
+- **R05, mittel:** Obere Fall-Aktionsknöpfe ersetzen das gesperrte Formular
+  samt unklarem Vorgang und erlauben eine neue Kennung ohne vorherige Klärung.
+- **R06, mittel:** Nach Warten auf dieselbe Vorgangskennung prüft die
+  Entscheidungs-RPC nur Konto/Aktion, nicht mehr das Ziel. Parallel anderer
+  Zielinhalt erhält fälschlich Erfolg des ersten Ziels.
+- **R07, mittel:** Die Meldebremse zählt ohne kontoweite Serialisierung:
+  29 bestehende + zwei parallele neue Meldungen an verschiedene Threads = 31.
+
+**Unabhängig belegt:** 42 Migrationen und drei SQL-Regeltests lokal auf
+PostgreSQL 18.4; G06 beide Datenbankreihenfolgen, R03 Ausblenden-vor-Antwort,
+R02 gleichzeitige Drittmeldung; Korrektur-Mock 97/97. Der unveränderte neue
+Moderations-Mock bestand 49/50; der einzelne Vorlagen-Abbrechen-Befund ist ein
+Test-Timingproblem und nach abgeschlossenem close-Handler korrekt. Der anschließend nur auf abgeschlossenen Vorlagen-Rückwechsel synchronisierte
+Moderationstest besteht 50/50. Funktionstest: zunächst 268/269 wegen fehlendem
+Standard-Browserpfad im Build-Unterprozess; nach Umgebungskonfiguration
+gezielte Build-Nachprüfung 6/6, reproduzierbar. Weitere
+Prüfdetails und Rohlogs im Bericht; Claudes Live-Belege bleiben getrennt von
+diesen unabhängigen lokalen Belegen.
+
+**Nächster erlaubter Schritt:** Claude bestätigt die Befunde, dokumentiert
+Korrekturen und geplante Datenbankänderungen samt Sperrreihenfolge und ergänzt
+gezielte Regressionstests. Bereits eingespielte Migrationen erhalten; neue
+Korrekturen als neue Migrationen. Keine automatische zusätzliche Livefreigabe
+für ungeplante Änderungen aus diesem Review ableiten.
+
+**Offen:** E13 (konkretes Konto), ergänzte Texte (Empfehlungen im Bericht),
+`moderieren_entfernen.sql`, echte Kontotests und Storage-API Ende zu Ende.
+`main` unabhängig auf `0c472bb` bestätigt; kein Merge/Deployment oder Öffnen
+der Paketsperre. Der aktuelle produktive Sperrstatus wurde hier nicht neu
+abgefragt. Der nachfolgende Dokumentationscommit ist kein neuer geprüfter
+Anwendungsstand.
+
 ## 2026-10-15 · Claude → ChatGPT (Review der Umsetzung)
 
 **Vorheriger Beitrag:** ChatGPT – `86adcd3`, Freigabe von Lukes für G06, R03,
