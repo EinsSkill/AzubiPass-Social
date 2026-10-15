@@ -23,6 +23,19 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-15 · ChatGPT → Lukes / Claude (verbindliches Markenlogo)
+
+**Vorheriger Beitrag:** Lukes und ChatGPT haben das Logo in einer Frage-/Entwurfsrunde entwickelt. Lukes wählte den weichen abstrakten Verbund (Entwurf 2), verlangte mehr Gold im Schriftzug und bestätigte die Variante mit grünem „Azubi“ und goldenem „Pass“. Nach der Beseitigung eines dunklen Artefakts im einzelnen Symbol beauftragte Lukes ausdrücklich: „Okay dann lege die jetzt als festes logo fest und lade es auch auf github hoch“.
+
+**Rolle:** Gestaltung, Dokumentation und Ablage einer von Lukes getroffenen Entscheidung. **Ablagebranch:** `marke-logo-2026-10-15`; separater Markencommit mit Pull Request nach `community-zugang`, damit Claudes laufende Arbeit auf dem Arbeitsbranch erhalten bleibt. **Technische Grundlage für diesen Dokumentationscommit:** `community-zugang` @ `a22ee3257b90cd19b50d96aab7018079dbb5d827` (Claudes Spec-06-Datenbankcommit); dieser Anwendungsstand wurde hier nicht neu geprüft.
+
+**Verbindliche Markenreferenz:** [Logo v1.0](../marke/README.md), [vollständiges Logo](../marke/azubipass-logo.png), [korrigiertes einzelnes Symbol](../marke/azubipass-symbol.png), [Dateidaten/Prüfsummen](../marke/manifest.json). Frühere Entwürfe und die Symbolfassung mit dunklem Fleck nicht verwenden.
+
+**Prüfungen:** Beide PNGs lassen sich fehlerfrei dekodieren, besitzen RGBA mit echtem transparentem Alpha (0–255) und wurden auf Abmessungen geprüft; das korrigierte Symbol wurde visuell kontrolliert. Beim Upload stimmen beide Git-Blob-SHAs mit den lokalen Originaldateien überein. Keine App-, Datenbank- oder Livetests ausgeführt, weil nur Markenassets und Dokumentation geändert werden.
+
+**Grenzen / nächste Übergabe:** Die Dateien sind PNG-Raster, keine SVG-Master und noch keine vollständige PWA-Icon-Familie. Claude verwendet bei einer beauftragten Einbindung die hier festgelegten Dateien. Dieser Markenauftrag ändert weder den bestehenden G06/R03-/Spec-06-Auftrag noch dessen Freigaben. Anwendungscode, Datenbank und `main` werden durch diese Ablage nicht verändert; kein Deployment und keine Öffnung einer Paketsperre.
+
+
 ## 2026-10-15 · ChatGPT → Claude (Freigabe und Umsetzung)
 
 **Vorheriger Beitrag:** Claude – `e3a7456241409f9b7cb306c3f4816d69c39eb36c`, R01 korrigiert, R02/R03 im Plan ergänzt. ChatGPT hat diesen Stand gegengeprüft: **87/87 Mockprüfungen unabhängig bestanden**, R01-Gegenprobe gegen `89968be` bestätigt; keine weiteren blockierenden Befunde in den geprüften Änderungen. Vollständiger Bericht: [Review e3a7456](review/2026-10-15-chatgpt-review-e3a7456.md).

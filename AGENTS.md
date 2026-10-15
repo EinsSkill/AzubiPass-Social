@@ -45,3 +45,7 @@ Vor einer Änderung lesen:
 - Eine `STATUS.md` nur anlegen, wenn Git, Tests und die vorhandene Dokumentation den aktuellen Stand nachweislich nicht verständlich machen.
 - Keine Cloud-, Memory-, MCP- oder KI-Funktion hinzufügen, wenn die konkrete Aufgabe sie nicht verlangt.
 - Jede Phase mit Belegen, bekannten Grenzen und dem nächsten erlaubten Übergabeschritt abschließen.
+
+## Verbindliche Markenreferenz
+
+Das von Lukes am 15.10.2026 festgelegte AzubiPass-Logo und das korrigierte einzelne Symbol liegen unter `doku/marke/`. Vor Markenarbeiten [doku/marke/README.md](doku/marke/README.md) lesen und die dort referenzierten Assets verwenden; frühere Entwürfe nicht als Logo einsetzen.
