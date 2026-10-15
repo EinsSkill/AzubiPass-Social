@@ -53,6 +53,9 @@ button{font:inherit;}
 .kopf.auf-papier .wortmarke i{color:var(--gold-text);}
 .wortmarke{background:none;border:0;padding:0;cursor:pointer;color:inherit;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em;}
 .wortmarke i{font-style:normal;color:var(--gold);}
+.markenlogo{display:block;width:220px;height:52px;object-fit:cover;}
+.markenfuss{display:inline-flex;background:var(--creme);padding:0 8px;border-radius:2px;}
+.markenfuss .markenlogo{width:170px;height:44px;}
 .kopf-meta{font-family:var(--mono);font-size:12px;opacity:.75;}
 
 /* HERO */
@@ -1457,10 +1460,10 @@ mark.such-treffer{padding:.06em .26em;color:var(--hm-grund);background:var(--hm-
    bleibt. Der alte Zeitschriftentrick: Man sieht, dass da noch etwas ist. */
 .hm-ankunft{min-height:calc(100svh - var(--leiste) - var(--rand-unten) - 150px);
   padding-top:calc(74px + var(--rand-oben));display:flex;flex-direction:column;}
-.hm-kopf{display:flex;justify-content:space-between;align-items:center;gap:16px;
+.hm-kopf{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;
   font-family:var(--mono);font-size:11px;color:var(--hm-matt);min-height:44px;}
-.hm-marke{font-size:10px;letter-spacing:.15em;text-transform:uppercase;
-  color:rgba(245,245,240,.78);}
+.hm-marke{display:inline-flex;flex-shrink:0;background:var(--creme);padding:0 8px;border-radius:2px;}
+.hm-marke .markenlogo{width:190px;height:44px;}
 .hm-zaehler{text-align:right;text-wrap:balance;}
 a.hm-zaehler-handeln{display:inline-flex;align-items:center;min-height:44px;
   color:var(--hm-gold);text-decoration:none;

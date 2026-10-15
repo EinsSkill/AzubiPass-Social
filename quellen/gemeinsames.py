@@ -54,9 +54,23 @@ def veroeffentliche(*namen):
     kostet den Browser vierzehn Downloads für eine Datei, die sich nie
     unterscheidet."""
     MITTEL.mkdir(parents=True, exist_ok=True)
+    # Die freigegebenen Originale bleiben an genau einer Stelle im Repository.
+    for name in ("azubipass-logo.png", "azubipass-symbol.png"):
+        shutil.copyfile(HIER.parent / "doku" / "marke" / name, MITTEL / name)
     for name in namen:
         shutil.copyfile(HIER / name, MITTEL / name)
     return [f"mittel/{name}" for name in namen]
+
+
+def markenbild():
+    return ('<img class="markenlogo" src="mittel/azubipass-logo.png" '
+            'width="2172" height="724" alt="AzubiPass">')
+
+
+def symbolkopf():
+    return '''<link rel="icon" href="mittel/symbol-v1-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="mittel/symbol-v1-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="mittel/symbol-v1-180.png">'''
 
 
 def schriftkopf():
@@ -90,8 +104,7 @@ def kopf(titel, beschreibung, stile=(), skripte=()):
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="{FARBE_HELL}">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="mittel/symbol.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="mittel/symbol-180.png">
+{symbolkopf()}
 <meta name="apple-mobile-web-app-title" content="{MARKE}">
 {schriftkopf()}
 {verweise}
@@ -197,7 +210,7 @@ def fussleiste():
     return ('<footer class="fussleiste">'
             f'<a href="impressum.html">{erste}</a>'
             '<a href="datenschutz.html">Datenschutz</a>'
-            f'<span>{MARKE}</span>'
+            f'<span class="markenfuss">{markenbild()}</span>'
             '</footer>')
 
 

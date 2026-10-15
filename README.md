@@ -38,6 +38,12 @@ Inhalt und Darstellung sind getrennt. Ein neues Kapitel wird als strukturierte Q
 ## Lokal bauen
 
 Voraussetzung: Python 3.
+Für App-Icons und Browserprüfungen werden außerdem Playwright und Chromium benötigt:
+
+```bash
+python -m pip install playwright
+python -m playwright install chromium
+```
 
 ```bash
 cd quellen
@@ -90,6 +96,12 @@ Projektvorstellung ist unter `landing.html` erreichbar.
 - Schriften werden lokal ausgeliefert
 
 Vor einer geschäftsmäßigen oder kommerziellen Veröffentlichung müssten die rechtlichen Angaben angepasst werden.
+
+## Markenlogo
+
+Das freigegebene Logo und das korrigierte Symbol liegen in
+[doku/marke/](doku/marke/README.md). Die Builds übernehmen diese Originale in
+die Website; `build_app.py` erzeugt daraus Browser-, Apple- und PWA-Icons.
 
 ---
 

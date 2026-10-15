@@ -14,7 +14,8 @@ import html
 from datetime import date, timedelta
 from pathlib import Path
 
-from gemeinsames import AUSGABE, schriftkopf, veroeffentliche, zwischenspeicher_schreiben
+from gemeinsames import (AUSGABE, markenbild, schriftkopf, symbolkopf,
+                         veroeffentliche, zwischenspeicher_schreiben)
 
 HIER = Path(__file__).parent
 MONATE = ["Jan.", "Feb.", "März", "April", "Mai", "Juni",
@@ -140,7 +141,8 @@ def baue():
 <title>AzubiPass — Lernzettel und Prüfungstraining für Kaufleute für Büromanagement</title>
 <meta name="description" content="Lernzettel, Übungen und Prüfungstraining für Kaufleute für Büromanagement nach der neuen Ausbildungsordnung 2025. In der Beta kostenlos.">
 <link rel="canonical" href="https://azubipass.de/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2312301F'/%3E%3Cpath d='M8 21l5-11h2l5 11h-2.4l-1.1-2.6h-5l-1.1 2.6zm4.3-4.6h3.4L14 12.2z' fill='%23C9A227'/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+{symbolkopf()}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AzubiPass">
 <meta property="og:locale" content="de_DE">
@@ -158,7 +160,7 @@ def baue():
 <body>
 
 <header class="kopf" id="kopf">
-  <a class="wortmarke" href="./">Azubi<i>Pass</i></a>
+  <a class="wortmarke" href="./">{markenbild()}</a>
   <nav class="nav">
     <a href="#katalog">Lernfelder</a>
     <a href="#pruefung">Prüfung</a>
@@ -397,7 +399,7 @@ def baue():
 
 <footer class="fuss">
   <div class="mitte">
-    <span class="wortmarke">Azubi<i>Pass</i></span>
+    <span class="wortmarke">{markenbild()}</span>
     <nav>
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>

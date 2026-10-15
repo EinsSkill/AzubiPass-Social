@@ -336,7 +336,14 @@
     var z = el("section", "hm-zone hm-ankunft");
 
     var kopf = el("div", "hm-kopf");
-    kopf.appendChild(el("span", "hm-marke", "AzubiPass"));
+    var marke = el("span", "hm-marke");
+    var logo = el("img", "markenlogo");
+    logo.src = "mittel/azubipass-logo.png";
+    logo.alt = "AzubiPass";
+    logo.width = 2172;
+    logo.height = 724;
+    marke.appendChild(logo);
+    kopf.appendChild(marke);
     var cd = countdown();
     if (cd.handeln) {
       var knopf = el("a", "hm-zaehler hm-zaehler-handeln", cd.text);
