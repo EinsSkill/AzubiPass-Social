@@ -6,7 +6,7 @@
 -- erwartete Zahl zeigen; ein „FEHLER:" bedeutet eine Lücke.
 -- Erwartet: ohneProfil:profile=0 falscherCode=abgelehnt code=8 allgemeinDirekt=verboten rolleSetzen=verboten
 --   verstecktSetzen=verboten B_sieht=1 B_codes=0 zugangSpalte=geschuetzt
---   B_nachBeitritt=2 besteDurchFremde=verboten geloest=true (nach code=8 neu: allgemeinDirekt=verboten)
+--   B_nachBeitritt=2 antwortDirekt=verboten besteDurchFremde=verboten geloest=true
 --   moderierenOhneTeam=verboten C_sieht=0 anon=verboten B_rolle=leitung
 do $t$
 declare
@@ -52,7 +52,10 @@ begin
   perform set_config('request.jwt.claims', json_build_object('sub', b, 'role','authenticated')::text, true);
   perform public.gruppe_beitreten(lower(code));
   select count(*) into n from public.beitrag_liste; r := r || ' B_nachBeitritt=' || n;
-  insert into public.antwort (beitrag_id, text) values (post, 'Antwort von Ben') returning id into ant;
+  -- Seit Spec 06 (15.10.) Antworten nur über antwort_senden; direkt ist gesperrt.
+  ant := public.antwort_senden(gen_random_uuid(), post, 'Antwort von Ben');
+  begin insert into public.antwort (beitrag_id, text) values (post, 'Direkt'); r := r || ' FEHLER:antwortDirekt';
+  exception when others then r := r || ' antwortDirekt=verboten'; end;
   begin perform public.beste_antwort_setzen(ant, true); r := r || ' FEHLER:B-beste';
   exception when others then r := r || ' besteDurchFremde=verboten'; end;
   insert into public.hilfreich (beitrag_id) values (post);
