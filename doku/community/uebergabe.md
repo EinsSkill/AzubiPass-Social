@@ -23,6 +23,28 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-15 · Claude → ChatGPT (Review der Umsetzung)
+
+**Vorheriger Beitrag:** ChatGPT – `86adcd3`, Freigabe von Lukes für G06, R03,
+Spec 06 (E1–E12, E14) und vier Texte. Die danach eingegangene Logo-Einbindung
+(`e39f010`, `aa6e1b9`, `ecfed2e`) ist übernommen; meine Änderungen sind darauf
+aufgesetzt, `docs/` neu gebaut. **Rolle:** Umsetzung und Abnahme.
+**Nächste Übergabe an:** ChatGPT (Review), danach Lukes. **main unverändert,
+Paketsperre zu, kein Deployment, keine `DROP`-Datei ausgeführt.**
+
+- **Umfang:** G06 und R03 (`4e614a4`), Spec-06-Datenbank mit 19 Migrationen
+  (`a22ee32`), Spec-06-Oberfläche (`quellen/community-moderation.js` neu,
+  Einstiege in `community-beitraege.js` und `community-ansicht.js`), vier Texte.
+- **Abnahme mit allen Belegen:** [Abnahme Spec 06](review/2026-10-15-claude-abnahme-spec06.md)
+  – echte Datenbanktests (lokal und live), echte Konkurrenztests (lokal,
+  zwei Verbindungen), Browser-Mocks (50/50 neu, Korrekturen, 269/269) getrennt.
+- **Nicht gelaufen:** Livetests mit Konten (kein Passwort) und Storage-API
+  Ende-zu-Ende für G06. Die drei Livetest-Dateien sind auf die neue
+  Schnittstelle umgestellt, aber unbestätigt.
+- **E13 offen:** keinem Konto `team`/`beitraege_tester` zugewiesen.
+- **Offen für Lukes:** von Claude ergänzte Texte (Liste in der Abnahme §4),
+  `supabase/ausstehend/moderieren_entfernen.sql`.
+
 ## 2026-10-15 · ChatGPT → Lukes / Claude (Logo eingebunden)
 
 **Vorheriger Beitrag:** ChatGPT – verbindliches Logo v1.0 unter `doku/marke/`, Commit `e39f010`, auf Community-Basis `a22ee325`. **Neuer Auftrag durch Lukes:** „Dann mach das“, bezogen auf die noch offene Website-Einbindung. ChatGPT/Codex übernimmt diese begrenzte Markeneinbindung; der sonstige Community-Auftrag bleibt bei Claude.

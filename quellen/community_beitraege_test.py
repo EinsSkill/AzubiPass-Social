@@ -184,7 +184,7 @@ def main():
             ev("(a) => AP.community.besteAntwort(a, true)", a2)
             ab()
             als(TEAM)
-            r = ev("(b) => T.versuch(() => AP.community.moderieren('beitrag', b, true))", P_versteckt)
+            r = ev("(b) => T.versuch(() => (async () => { const f = await AP.community.moderationFall('beitrag', b);   return AP.community.entscheiden({ id: AP.community.neueVorgangskennung(), art: 'beitrag', ziel: b, aktion: \"ausblenden\",     meldungen: f.meldungen.map(m => m.id), version: f.version, intern: \"Testinhalt (automatischer Test)\",     autorText: \"Dein Testinhalt wurde für einen automatischen Test ausgeblendet.\", kategorie: \"sonstiges\" }); })())", P_versteckt)
             pruefe(r["ok"], "Team blendet einen Testbeitrag aus", r.get("fehler", ""))
             ab()
 

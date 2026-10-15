@@ -7,7 +7,7 @@ AzubiPass · Community-Test gegen das echte Supabase-Projekt
 Spielt mit den beiden Demo-Konten (demo-anna@…, demo-ben@…) im echten
 Browser einmal alles durch, was die Datenschicht community.js kann:
 Profil, Gruppe gründen und beitreten, Beiträge mit Datei, Antworten,
-beste Antwort, Hilfreich, Wochenaufgabe, Melden, Abmelden – und räumt am
+beste Antwort, Hilfreich, Wochenaufgabe, Melden (Spec 06), Abmelden – und räumt am
 Ende wieder auf. Passwort und Demo-Code stehen bewusst nicht im Repo.
 
 Die Demo-Konten haben ein Passwort, weil Anmelde-Mails ohne eigenen
@@ -164,10 +164,10 @@ def main():
             pruefe(r is True, "Als hilfreich markiert")
             r = ev("(b) => AP.community.hilfreich(b, true)", f1["wert"])
             pruefe(r is True, "Doppelt markieren schadet nicht")
-            r = ev("(b) => T.versuch(() => AP.community.melden({beitrag:b, grund:'spam', hinweis:'Test'}))", l1["wert"])
-            pruefe(r["ok"], "Beitrag gemeldet", r.get("fehler", ""))
-            r = ev("(b) => T.versuch(() => AP.community.melden({beitrag:b, grund:'spam'}))", l1["wert"])
-            pruefe(not r["ok"] and "schon gemeldet" in r["fehler"], "Zweite Meldung abgefangen", r.get("fehler"))
+            r = ev("(b) => T.versuch(() => AP.community.meldungSenden({art:'beitrag', ziel:b, grund:'spam', hinweis:'Test'}))", l1["wert"])
+            pruefe(r["ok"] and r["wert"]["neu"], "Beitrag gemeldet (Spec 06: meldung_senden)", r.get("fehler", ""))
+            r = ev("(b) => T.versuch(() => AP.community.meldungSenden({art:'beitrag', ziel:b, grund:'spam'}))", l1["wert"])
+            pruefe(r["ok"] and not r["wert"]["neu"], "Zweite Meldung legt nichts an", r.get("wert"))
             r = ev("(g) => T.versuch(() => AP.community.aufgabeStellen({titel:'Fünf Buchungssätze', gruppe:g}))", gid)
             pruefe(not r["ok"] and r["art"] == "rechte", "Mitglied darf keine Wochenaufgabe stellen", r.get("fehler"))
 
@@ -189,8 +189,8 @@ def main():
             pruefe(len(auf) == 1 and auf[0]["erledigt_zahl"] == 1 and auf[0]["von_mir_erledigt"], "Laufende Aufgabe mit 1× erledigt")
             mg = ev("(g) => AP.community.mitglieder(g)", gid)
             pruefe(len(mg) == 2 and mg[0]["rolle"] == "leitung", "Zwei Mitglieder, Anna leitet", [m["profil"]["anzeigename"] for m in mg])
-            r = ev("T.versuch(() => AP.community.moderieren('beitrag', '00000000-0000-0000-0000-000000000000', true))")
-            pruefe(not r["ok"], "Ohne Team-Rolle keine Moderation")
+            r = ev("T.versuch(() => AP.community.moderationZaehler())")
+            pruefe(not r["ok"] and r["art"] in ("rechte", "gesperrt"), "Ohne Team-Rolle keine Moderation", r.get("art"))
 
             print("Aufräumen")
             r = ev("(id) => T.versuch(() => AP.community.beitragLoeschen(id))", l1["wert"])
@@ -226,7 +226,7 @@ def main():
             pruefe(r["ok"], "Ben lädt die Datei des sichtbaren Beitrags", r.get("fehler", ""))
             ev("() => AP.community.abmelden()")
             ev("([m, p]) => T.anmelden(m, p)", [TEAM, pw])
-            r = ev("(id) => T.versuch(() => AP.community.moderieren('beitrag', id, true))", l2["wert"])
+            r = ev("(id) => T.versuch(() => (async () => { const f = await AP.community.moderationFall('beitrag', id); return AP.community.entscheiden({ id: AP.community.neueVorgangskennung(), art: 'beitrag', ziel: id, aktion: 'ausblenden', meldungen: f.meldungen.map(m => m.id), ausblendung: f.ausblendung ? f.ausblendung.id : null, version: f.version, intern: 'Automatischer Test', autorText: 'Dein Testinhalt wurde für einen automatischen Test ausgeblendet.', kategorie: 'sonstiges' }); })())", l2["wert"])
             pruefe(r["ok"], "Team blendet den Beitrag aus", r.get("fehler", ""))
             ev("() => AP.community.abmelden()")
             ev("([m, p]) => T.anmelden(m, p)", [BEN, pw])
@@ -239,7 +239,7 @@ def main():
             pruefe(r["ok"], "Anna sieht ihre eigene Datei weiter", r.get("fehler", ""))
             ev("() => AP.community.abmelden()")
             ev("([m, p]) => T.anmelden(m, p)", [TEAM, pw])
-            ev("(id) => AP.community.moderieren('beitrag', id, false)", l2["wert"])
+            ev("(id) => (async () => { const f = await AP.community.moderationFall('beitrag', id); return AP.community.entscheiden({ id: AP.community.neueVorgangskennung(), art: 'beitrag', ziel: id, aktion: 'einblenden', meldungen: f.meldungen.map(m => m.id), ausblendung: f.ausblendung ? f.ausblendung.id : null, version: f.version, intern: 'Automatischer Test', autorText: null, kategorie: null }); })()", l2["wert"])
             ev("() => AP.community.abmelden()")
             ev("([m, p]) => T.anmelden(m, p)", [BEN, pw])
             r = ev(laden, pfad2)

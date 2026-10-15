@@ -7,8 +7,9 @@
      – Filter Beitragsart und Lernfeld, neueste zuerst
      – „Weitere Beiträge laden" mit stabiler Zeit-/ID-Navigation
      – Dateien nur über den angemeldeten Abruf (aktuelle Rechteprüfung)
-     – keine Melde- oder Reaktionsknöpfe: Das kommt mit den eigenen Specs.
-       Hilfreich ist hier eine reine Anzeige.
+     – Hilfreich ist hier eine reine Anzeige. Melden, Teamkorrekturen und
+       eigene ausgeblendete Inhalte kommen seit 15.10.2026 mit Spec 06
+       (community-moderation.js); hier stehen nur die Einstiege.
 
    Dazu seit 13.10.2026 nach doku/community/05-schreiben-antworten.md (v1):
      C06 Beitrag schreiben (#community/schreiben), Antworten im Detail und
@@ -132,6 +133,8 @@
       ctx.merkeHerkunft();
     });
     schreibReihe.appendChild(schreibLink);
+    // D10: offene Fälle nur als Hinweis für das Team; das Recht prüft der Server.
+    if (ctx.rolle() === "team") schreibReihe.appendChild(AP.communityModeration.zaehlerVerweis(ctx));
     r.appendChild(schreibReihe);
 
     // Filter: dauerhaft beschriftet, kein Absenden nötig.
@@ -431,6 +434,43 @@
       return zeileOben;
     }
 
+    /* C13/D13: „… melden“ für fremde Inhalte, „Inhalt ausblenden“ für das
+       Team. Die Rückmeldung erscheint direkt unter den Knöpfen. */
+    function meldeReihe(art, id, autorId, kontextText, text, label) {
+      var box = el("div", "cm-melde-box");
+      var reihe = el("div", "cm-reihe cm-melde-reihe");
+      var platz = el("div");
+      if (autorId !== ctx.konto) {
+        var k = knopf(text, "cm-verweis cm-melden-knopf", function () {
+          platz.innerHTML = "";
+          AP.communityModeration.meldenDialog({ ctx: ctx, art: art, ziel: id, kontext: kontextText, ausloeser: k,
+            fertig: function (t) {
+              if (!ctx.gilt()) return;
+              var p = el("p", "meldung", t);
+              p.setAttribute("role", "status");
+              p.tabIndex = -1;
+              platz.innerHTML = "";
+              platz.appendChild(p);
+              p.focus();
+            } });
+        });
+        k.setAttribute("aria-label", label);
+        reihe.appendChild(k);
+      }
+      if (ctx.rolle() === "team") {
+        var a = knopf("Inhalt ausblenden", "cm-verweis", function () {
+          AP.communityModeration.vorwahl(ctx.konto, art, id, "ausblenden");
+          location.hash = "#community/moderation/fall/" + art + "/" + id;
+        });
+        a.setAttribute("aria-label", label.replace(/ melden$/, " ausblenden"));
+        reihe.appendChild(a);
+      }
+      if (!reihe.childNodes.length) return box;
+      box.appendChild(reihe);
+      box.appendChild(platz);
+      return box;
+    }
+
     function zeigen(b) {
       var h = r.querySelector("h1");
       h.removeAttribute("aria-live");
@@ -445,6 +485,13 @@
         // Nur Autor:in oder Team bekommen ausgeblendete Beiträge überhaupt zu sehen.
         inhalt.appendChild(el("p", "meldung", "Dieser Beitrag ist ausgeblendet."));
         var reihe = el("div", "cm-reihe");
+        if (b.autor_id === ctx.konto) {
+          // Eigener Beitrag: Status, Begründung und Prüfanfrage direkt hier (Spec 06 §7).
+          AP.communityModeration.eigenerInhalt(inhalt, ctx, "beitrag", b.id, true);
+          reihe.appendChild(verweis("Inhalt und Begründung ansehen", "#community/eigener-inhalt/beitrag/" + b.id, "kn-neben cm-neben"));
+        } else if (ctx.rolle() === "team") {
+          reihe.appendChild(verweis("In der Moderation prüfen", "#community/moderation/fall/beitrag/" + b.id, "kn-neben cm-neben"));
+        }
         reihe.appendChild(verweis("Zur Community", "#community"));
         reihe.appendChild(verweis("Zu Lernen", "app.html#lernen"));
         inhalt.appendChild(reihe);
@@ -461,6 +508,9 @@
       if (b.text) inhalt.appendChild(el("div", "cm-text", b.text));   // textContent, Zeilenumbrüche per CSS
 
       if (b.datei_pfad) inhalt.appendChild(dateiBereich(b));
+
+      inhalt.appendChild(meldeReihe("beitrag", b.id, b.autor_id, "Beitrag: " + b.titel,
+        "Beitrag melden", "Beitrag „" + b.titel + "“ melden"));
 
       if (zo) {
         var lern = el("div", "cm-reihe");
@@ -553,22 +603,51 @@
       /* Zeichnet einen geladenen Antwortstand. mitKnoepfen = false: Der Stand
          ist nicht gemeinsam mit dem Kopf bestätigt – keine Lösungsaktionen (G07). */
       function zeichnen(alle, nach, mitKnoepfen) {
-        // Ausgeblendete Antworten gehören nicht in die normale Ansicht.
+        // Ausgeblendete Antworten gehören nicht in die normale Ansicht. Eigene
+        // (und fürs Team alle) erscheinen nur als Platzhalter mit Weg zum Status.
         var sichtbar = (alle || []).filter(function (a) { return !a.versteckt; });
+        var team = ctx.rolle() === "team";
+        var gezeigt = (alle || []).filter(function (a) { return !a.versteckt || a.autor_id === ctx.konto || team; });
+        var nachId = {};
+        sichtbar.forEach(function (a) { nachId[a.id] = a; });
         liste.innerHTML = "";
         zahl.textContent = anzahlAntworten(sichtbar.length);
         if (nach.neu && !standOffen) melden("Deine Antwort wurde gesendet.", false);
-        if (!sichtbar.length) { liste.appendChild(el("p", "cm-leer", "Noch keine Antworten.")); return; }
+        if (!gezeigt.length) { liste.appendChild(el("p", "cm-leer", "Noch keine Antworten.")); return; }
         var ol = el("ol", "liste-schlicht cm-antwortliste");
-        sichtbar.forEach(function (a) {
+        gezeigt.forEach(function (a) {
           var li = el("li", "cm-antwort");
           li.dataset.id = a.id;
-          if (a.beste) li.appendChild(el("p", "cm-zeile-oben", "")).appendChild(marke("Beste Antwort"));
-          li.appendChild(el("div", "cm-text", a.text));
+          if (a.versteckt) {
+            li.classList.add("cm-antwort-aus");
+            var eigen = a.autor_id === ctx.konto;
+            li.appendChild(el("p", "cm-hilfe", eigen ? "Deine Antwort ist ausgeblendet." : "Ausgeblendete Antwort"));
+            li.appendChild(verweis(eigen ? "Inhalt und Begründung ansehen" : "In der Moderation prüfen",
+              eigen ? "#community/eigener-inhalt/antwort/" + a.id : "#community/moderation/fall/antwort/" + a.id, "cm-verweis"));
+            ol.appendChild(li);
+            return;
+          }
           var p = a.autor || {};
-          li.appendChild(el("p", "cm-zeile-meta",
-            [personText(p.anzeigename, p.rolle, p.lehrjahr), datum(a.erstellt_am)].join(" · ")));
+          var name = a.team_korrektur ? "Team" : (p.anzeigename || "");
+          if (a.beste || a.team_korrektur) {
+            var zo = li.appendChild(el("p", "cm-zeile-oben", ""));
+            if (a.team_korrektur) zo.appendChild(marke("Team · Fachliche Korrektur"));
+            if (a.beste) zo.appendChild(marke("Beste Antwort"));
+          }
+          // Bezug nur nennen, wenn die gemeinte Antwort hier sichtbar ist.
+          var bezug = a.bezug_antwort_id && nachId[a.bezug_antwort_id];
+          if (bezug) {
+            var bp = bezug.autor || {};
+            li.appendChild(el("p", "cm-hilfe", "Bezieht sich auf die Antwort von " +
+              (bezug.team_korrektur ? "Team" : bp.anzeigename || "") + "."));
+          }
+          li.appendChild(el("div", "cm-text", a.text));
+          // Teamkorrekturen nennen öffentlich nur „Team“, keine Person.
+          li.appendChild(el("p", "cm-zeile-meta", a.team_korrektur ? ["Team", datum(a.erstellt_am)].join(" · ")
+            : [personText(p.anzeigename, p.rolle, p.lehrjahr), datum(a.erstellt_am)].join(" · ")));
           if (mitKnoepfen && !standOffen && darfLoesen && !b.versteckt) li.appendChild(loesenKnopf(a));
+          li.appendChild(meldeReihe("antwort", a.id, a.autor_id, "Antwort von " + name,
+            "Antwort melden", "Antwort von " + name + " melden"));
           ol.appendChild(li);
         });
         liste.appendChild(ol);
@@ -772,7 +851,7 @@
           }
           abbr.disabled = z === "sendet" || z === "pruefen" || z === "klaeren";
           eingabenSperren(form, !!z);
-          sperrHinweis.hidden = !(z === "sendet" || (z === "klaeren" && !ae.meldung));
+          sperrHinweis.hidden = !z;
           if (gezeigt === ae.meldung && gezeigtZ === z) return;
           var hatteFokus = platz.contains(document.activeElement);
           gezeigt = ae.meldung;
@@ -785,7 +864,7 @@
           platz.appendChild(p);
           if (offenerAusgang(z))
             klaerung(ctx, platz, z, { pruefen: statusPruefen, erneut: erneutSenden, aendern: eingabenAendern },
-                     hatteFokus && !fokusMeldung);
+                     hatteFokus && !fokusMeldung, "antwort");
           if (fokusMeldung) p.focus();
         }
         ae.anzeigen = function (fokusMeldung) { if (ctx.gilt() && document.contains(form)) darstellen(fokusMeldung); };
@@ -953,22 +1032,28 @@
     Array.prototype.forEach.call(form.querySelectorAll(".cm-sperrbar"), function (k) { k.disabled = an; });
   }
 
-  var TEXT_GESPERRT = "Während des Sendens kannst du deine Eingaben nicht ändern.";
-  var TEXT_KLAERUNG = "„Erneut senden“ schickt dieselben Eingaben noch einmal – doppelt veröffentlicht wird dabei nichts. " +
-                      "„Eingaben ändern“ bricht den offenen Versuch endgültig ab.";
+  // Bestätigte Texte vom 15.10.2026 (entscheidungen.md, Texte 1 und 2).
+  var TEXT_GESPERRT = "Solange der Versand läuft oder sein Ergebnis unklar ist, kannst du deine Eingaben nicht ändern.";
+  var TEXT_ERNEUT = "„Erneut senden“ schickt dieselben Eingaben noch einmal – doppelt veröffentlicht wird dabei nichts. ";
+  var TEXT_AENDERN = {
+    beitrag: "Mit ‚Eingaben ändern‘ prüfen wir den offenen Versuch. Wurde noch nichts veröffentlicht, wird er " +
+             "endgültig verworfen. Wurde dein Beitrag bereits veröffentlicht, öffnen wir ihn.",
+    antwort: "Mit ‚Eingaben ändern‘ prüfen wir den offenen Versuch. Wurde noch nichts gesendet, wird er " +
+             "endgültig verworfen. Wurde deine Antwort bereits gesendet, zeigen wir sie."
+  };
 
   function offenerAusgang(z) { return z === "unklar" || z === "pruefen" || z === "klaeren"; }
 
   /* G03: Aktionen bei offenem Ausgang. „Status prüfen“ liest nur, „Erneut
      senden“ schickt denselben Versandstand mit derselben Kennung, „Eingaben
      ändern“ klärt den Vorgang endgültig. Ein laufender Schritt sperrt alle drei. */
-  function klaerung(ctx, platz, z, a, hatteFokus) {
+  function klaerung(ctx, platz, z, a, hatteFokus, art) {
     var reihe = el("div", "cm-reihe cm-klaerung");
     var sp = knopf("Status prüfen", "kn-neben cm-neben", a.pruefen);
     var er = knopf("Erneut senden", "kn-neben cm-neben", a.erneut);
     var ae = knopf("Eingaben ändern", "kn-neben cm-neben", a.aendern);
     [sp, er, ae].forEach(function (k) { reihe.appendChild(k); });
-    platz.appendChild(el("p", "cm-hilfe", TEXT_KLAERUNG));
+    platz.appendChild(el("p", "cm-hilfe", TEXT_ERNEUT + TEXT_AENDERN[art || "beitrag"]));
     platz.appendChild(reihe);
     if (z === "pruefen") ctx.sperren(sp, "Status wird geprüft …");
     if (z === "klaeren") ctx.sperren(ae, "Wird geklärt …");
@@ -1373,7 +1458,7 @@
       }
       abbr.disabled = z === "sendet" || z === "pruefen" || z === "klaeren";
       eingabenSperren(form, !!z);
-      sperrHinweis.hidden = !(z === "sendet" || (z === "klaeren" && !e.meldung));
+      sperrHinweis.hidden = !z;
       if (gezeigt === e.meldung && gezeigtZ === z) return;
       var hatteFokus = platz.contains(document.activeElement);
       gezeigt = e.meldung;
@@ -1386,7 +1471,7 @@
       platz.appendChild(p);
       if (offenerAusgang(z))
         klaerung(ctx, platz, z, { pruefen: statusPruefen, erneut: erneutSenden, aendern: eingabenAendern },
-                 hatteFokus && !fokusMeldung);
+                 hatteFokus && !fokusMeldung, "beitrag");
       if (fokusMeldung) p.focus();
     }
     e.anzeigen = function (fokusMeldung) {
@@ -1609,7 +1694,13 @@
     stand.zurueck = true;
   }
 
+  // Gemeinsame Bausteine für community-moderation.js (Spec 06).
+  var teile = { knopf: knopf, verweis: verweis, datum: datum, personText: personText, marke: marke,
+                mehrzeilig: mehrzeilig, zaehler: zaehler, grenzMeldung: grenzMeldung, vorlesen: vorlesen,
+                eingabenSperren: eingabenSperren, verwerfenFragen: verwerfenFragen,
+                dateiMerken: function (d) { dateien.push(d); } };
+
   AP.communityBeitraege = { liste: liste, detail: detail, schreiben: schreiben, vergessen: vergessen,
-                            hatEntwurf: hatEntwurf,
+                            hatEntwurf: hatEntwurf, teile: teile,
                             dateienFreigeben: dateienFreigeben, zurueckholen: zurueckholen };
 })();

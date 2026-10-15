@@ -78,6 +78,7 @@
     try { sessionStorage.removeItem(ZIEL_SCHLUESSEL); } catch (e) {}
     // Beiträge, Filter, Position und geladene Dateien des alten Kontos auch.
     if (AP.communityBeitraege) AP.communityBeitraege.vergessen();
+    if (AP.communityModeration) AP.communityModeration.vergessen();
   }
 
   // Zeichen zählen wie die Datenbank (char_length): Codepunkte, nicht UTF-16.
@@ -322,6 +323,23 @@
      Entscheidung 13.10.2026). Gesperrt: keine einzige Beitragsabfrage, auch
      nicht über Direktlinks. Scheitert die Prüfung, bleibt das Paket zu. */
   var BEITRAG_ZIEL = /^beitrag\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i;
+  // Spec 06: Moderation (Team), eigene Meldungen und eigene ausgeblendete Inhalte.
+  var UUID = "([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})";
+  var MOD_ZIEL = /^moderation(?:\/(ausgeblendet|protokoll))?$/;
+  var FALL_ZIEL = new RegExp("^moderation\\/fall\\/(beitrag|antwort)\\/" + UUID + "$", "i");
+  var EIGEN_ZIEL = new RegExp("^eigener-inhalt\\/(beitrag|antwort)\\/" + UUID + "$", "i");
+
+  function zielArt(weg) {
+    if (!weg) return "beitraege";
+    if (weg === "schreiben") return "schreiben";
+    if (BEITRAG_ZIEL.test(weg)) return "beitrag";
+    if (MOD_ZIEL.test(weg)) return "moderation";
+    if (FALL_ZIEL.test(weg)) return "fall";
+    if (weg === "meine-meldungen") return "meineMeldungen";
+    if (weg === "eigene-ausblendungen") return "eigeneListe";
+    if (EIGEN_ZIEL.test(weg)) return "eigenerInhalt";
+    return null;
+  }
 
   function ankommen(hinweis) {
     var weg = z.ziel !== null && z.ziel !== undefined ? z.ziel : z.unter;
@@ -334,8 +352,7 @@
       try { history.replaceState(null, "", location.pathname + location.search + "#community" + (weg ? "/" + weg : "")); } catch (e) {}
     }
     if (weg === "profil") return setze("drin", hinweis);
-    var ziel = !weg ? "beitraege" : weg === "schreiben" ? "schreiben"
-      : BEITRAG_ZIEL.test(weg) ? "beitrag" : null;
+    var ziel = zielArt(weg);
     if (!ziel) return setze("nichtda", hinweis);
     var n = lauf, konto = z.nutzer;
     ladetext("Zugang wird geprüft …");
@@ -377,7 +394,12 @@
       beitraege: function (r) { AP.communityBeitraege.liste(r, kontext()); },
       gesperrt: ansichtGesperrt, freigabeFehler: ansichtFreigabeFehler,
       beitrag: function (r) { AP.communityBeitraege.detail(r, BEITRAG_ZIEL.exec(z.unter)[1], kontext()); },
-      schreiben: function (r) { AP.communityBeitraege.schreiben(r, kontext()); }
+      schreiben: function (r) { AP.communityBeitraege.schreiben(r, kontext()); },
+      moderation: function (r) { AP.communityModeration.moderation(r, kontext(), MOD_ZIEL.exec(z.unter)[1] || ""); },
+      fall: function (r) { var m = FALL_ZIEL.exec(z.unter); AP.communityModeration.fall(r, kontext(), m[1], m[2].toLowerCase()); },
+      meineMeldungen: function (r) { AP.communityModeration.meineMeldungen(r, kontext()); },
+      eigeneListe: function (r) { AP.communityModeration.eigeneListe(r, kontext()); },
+      eigenerInhalt: function (r) { var m = EIGEN_ZIEL.exec(z.unter); AP.communityModeration.eigenerInhalt(r, kontext(), m[1], m[2].toLowerCase()); }
     }[z.ansicht] || ansichtPruefen;
     bauer(rahmen);
     if (fokus && sichtbar()) {
@@ -394,6 +416,8 @@
     var n = lauf, konto = z.nutzer, unter = z.unter, bindung = AP.community.bindung();
     return {
       konto: konto,
+      // Nur Anzeige von Einstiegen; Rechte prüft immer die Datenbank.
+      rolle: function () { return z.profil && z.profil.rolle || "azubi"; },
       gilt: function () { return gilt(n) && z.nutzer === konto && z.unter === unter && bindung() && sichtbar(); },
       kopf: kopf, feld: feld, haken: haken, hinweiszeile: hinweiszeile, zurueckKnopf: zurueckKnopf,
       fehlerSetzen: fehlerSetzen, fehleruebersicht: fehleruebersicht, sperren: sperren, freigeben: freigeben,
@@ -804,6 +828,19 @@
     reihe.appendChild(abmeldeKnopf(r));
     g.appendChild(reihe);
     r.appendChild(g);
+    if (z.frei !== false) {
+      // Spec 06: eigene Meldungen, eigene ausgeblendete Inhalte, Moderation fürs Team.
+      var m = el("section", "feldgruppe");
+      var mh = el("h2");
+      mh.appendChild(el("span", null, "Meldungen und Moderation"));
+      m.appendChild(mh);
+      var mr = el("div", "cm-reihe");
+      mr.appendChild(verweis("Meine Meldungen", "#community/meine-meldungen", "kn-neben cm-neben"));
+      mr.appendChild(verweis("Eigene ausgeblendete Inhalte", "#community/eigene-ausblendungen", "kn-neben cm-neben"));
+      if (p.rolle === "team") mr.appendChild(AP.communityModeration.zaehlerVerweis(kontext()));
+      m.appendChild(mr);
+      r.appendChild(m);
+    }
     var weg = el("div", "cm-reihe");
     if (z.frei !== false) weg.appendChild(verweis("Zu Beiträgen", "#community", "kn-neben cm-neben"));
     weg.appendChild(verweis("Zu Lernen", "app.html#lernen", "kn-neben cm-neben"));
@@ -1052,7 +1089,7 @@
       if (document.hidden) { weg = Date.now(); return; }
       if (!weg || Date.now() - weg < 60000) return;
       weg = 0;
-      if (sichtbar() && !z.laeuft && (z.ansicht === "beitraege" || z.ansicht === "beitrag" || z.ansicht === "gesperrt")) {
+      if (sichtbar() && !z.laeuft && ["beitraege", "beitrag", "gesperrt", "moderation", "meineMeldungen", "eigeneListe"].indexOf(z.ansicht) >= 0) {
         if (z.ansicht === "beitraege") AP.communityBeitraege.zurueckholen();
         pruefen();
       }

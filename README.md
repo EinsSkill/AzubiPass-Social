@@ -71,6 +71,7 @@ COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… \
 COMMUNITY_TEST_PASSWORT=… python community_beitraege_test.py            # Beiträge lesen (C04/C05)
 COMMUNITY_TEST_PASSWORT=… AXE_PFAD=…/axe.min.js python community_schreiben_test.py   # Schreiben, Antworten, Sperre (Spec 05)
 AXE_PFAD=…/axe.min.js python community_korrekturen_test.py            # G03–G05, simulierte Serverantworten, ohne Zugangsdaten
+AXE_PFAD=…/axe.min.js python community_moderation_test.py            # Spec 06 Melden/Moderation, simuliert, ohne Zugangsdaten
 ```
 
 Für die lokale Ansicht:

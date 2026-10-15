@@ -132,7 +132,8 @@ FAKE_JS = r"""
   function rpc(name, args) {
     (F.aufrufe[name] = F.aufrufe[name] || []).push(JSON.parse(JSON.stringify(args || {})));
     const schritt = (F.plan[name] || []).shift();
-    const logik = () => LOGIK[name] ? LOGIK[name](args || {}) : ok(null);
+    const eigen = F.logik && F.logik[name];          // Erweiterung aus anderen Tests (Spec 06)
+    const logik = () => eigen ? eigen(args || {}) : LOGIK[name] ? LOGIK[name](args || {}) : ok(null);
     if (schritt === "verlieren") { logik(); return Promise.resolve(fetchFehler()); }
     if (schritt === "spaet") { F.spaet.push(logik); return Promise.resolve(fetchFehler()); }
     if (schritt === "503") return Promise.resolve({ data: null, error: { message: "Service Unavailable", code: "" }, status: 503 });
@@ -186,7 +187,8 @@ FAKE_JS = r"""
     }) }
   };
   window.supabase = { createClient: () => client };
-  F.ICH = ICH.id; F.BEN = BEN;
+  F.ICH = ICH.id; F.BEN = BEN; F.ok = ok; F.logik = {};
+  F.fehler = (code, m, status) => ({ data: null, error: { message: m, details: null, hint: null, code: code }, status: status || 400 });
 })();
 """
 
@@ -352,7 +354,8 @@ def main():
               return els.every(x => x.readOnly || x.disabled);
             }""")
             pruefe(gesperrt, "Alle Eingaben während der Freigabeprüfung gesperrt")
-            pruefe(s.get_by_text("Während des Sendens kannst du deine Eingaben nicht ändern.").is_visible(), "Sperrhinweis sichtbar")
+            pruefe(s.get_by_text("Solange der Versand läuft oder sein Ergebnis unklar ist, kannst du deine Eingaben nicht ändern.").is_visible(),
+                   "Sperrhinweis sichtbar (bestätigter Text 1)")
             s.locator("form.cm-schreiben textarea").focus()
             s.keyboard.type(" Nach dem Absenden ergänzt")
             ev(s, """() => { const t = document.querySelector('form.cm-schreiben textarea');
@@ -594,16 +597,29 @@ def main():
             print("C01 · Fehlereinstufung")
             for code, status, sicher in (("PGRST202", 404, True), ("PGRST301", 401, True), ("PGRST199", 503, False),
                                          ("PGRST116", 406, False), ("PGRST111", 500, False), ("PGRST000", 503, False),
-                                         ("PGRST202", 503, False)):
+                                         ("PGRST202", 503, False),
+                                         # P4 (Spec 06): eigene Codes nur unter HTTP 500 sicher, fremde AP-Codes nie.
+                                         ("APF01", 400, True), ("APZ01", 400, True), ("APR01", 400, True),
+                                         ("APP01", 400, True), ("APD01", 400, True), ("APV01", 400, True),
+                                         ("APB01", 400, True), ("APE01", 400, True),
+                                         ("APF01", 503, False), ("AP999", 400, False)):
                 ctx, s = neue_seite("")
                 c06(s, titel=f"Einstufung {code}")
                 ev(s, f"FAKE.plan.beitrag_veroeffentlichen = [{{ code: '{code}', status: {status} }}]")
                 senden_c06(s)
-                if sicher:
-                    warte_text(s, "Dein Beitrag wurde nicht veröffentlicht.")
-                else:
+                if not sicher:
                     warte_text(s, "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.")
-                pruefe(True, f"{code}/HTTP {status} gilt als {'sicher abgelehnt' if sicher else 'unklar'}")
+                    pruefe(True, f"{code}/HTTP {status} gilt als unklar")
+                elif code.startswith("PGRST"):
+                    warte_text(s, "Dein Beitrag wurde nicht veröffentlicht.")
+                    pruefe(True, f"{code}/HTTP {status} gilt als sicher abgelehnt")
+                else:
+                    # Eigene Codes: jeweils eigene Meldung oder Ansicht – entscheidend ist: nie „unklar“.
+                    s.wait_for_function("(FAKE.aufrufe.beitrag_veroeffentlichen || []).length === 1 && "
+                                        "!document.querySelector('[aria-busy=true]')")
+                    s.wait_for_timeout(150)
+                    pruefe(s.get_by_text("Wir konnten nicht prüfen").count() == 0,
+                           f"{code}/HTTP {status} gilt als sicher abgelehnt")
                 ctx.close()
 
             browser.close()

@@ -2113,6 +2113,36 @@ input[type=file].cm-eingabe{padding:10px 14px;min-height:48px;}
 .cm-dialog h2.cm-dialog-frage{font-size:22px;line-height:1.25;}
 .cm-dialog .cm-dialog-neben{color:#F5F5F0;border-color:rgba(245,245,240,.5);}
 
+/* Spec 06 · Melden und Moderation. Der Meldedialog nutzt dieselben Felder
+   wie das Schreiben, auf dem Grün der übrigen Dialoge. */
+.cm-dialog.cm-melden .cm-melden-kontext{font-family:var(--mono);font-size:12px;color:#E3C558;
+  overflow-wrap:anywhere;margin:-6px 0 12px;}
+.cm-dialog.cm-melden .cm-form{display:flex;flex-direction:column;gap:16px;margin-top:12px;}
+.cm-melde-box{margin:0 0 18px;}
+.cm-antwort .cm-melde-box{margin:6px 0 0;}
+.cm-melde-reihe{margin-top:0;gap:4px 22px;}
+.cm-melde-box .meldung{margin-top:6px;}
+.cm-antwort-aus{color:var(--text-sek);}
+.cm-lokalnav ul{display:flex;flex-wrap:wrap;gap:4px 22px;margin:0 0 18px;padding:0;}
+.cm-lokalnav-ziel{display:inline-flex;align-items:center;min-height:44px;font-family:var(--sans);font-size:15px;
+  color:var(--text);text-decoration:none;border-bottom:2px solid transparent;}
+.cm-lokalnav-ziel[aria-current="page"]{border-bottom-color:var(--hm-gold);font-weight:600;}
+.cm-lokalnav-ziel:hover{text-decoration:underline;text-decoration-color:var(--hm-gold);text-underline-offset:4px;}
+.cm-mod-status:not(:empty){margin:0 0 14px;}
+.cm-mod-liste .cm-mod-pruefen{margin-top:8px;}
+.cm-auszug{overflow-wrap:anywhere;margin:0 0 4px;}
+.cm-mod-teil{border-top:1px solid var(--linie);margin-top:22px;padding-top:16px;}
+.cm-mod-teil h3,.cm-mod-form h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 8px;}
+.cm-mod-form h3:focus,.cm-eigen h3:focus{outline:none;}
+.cm-mod-teil ul{margin:0;padding:0;}
+.cm-mod-meldung{padding:10px 0;border-bottom:1px solid var(--linie);}
+.cm-mod-meldung:last-child{border-bottom:0;}
+.cm-mod-grund{font-size:16px;margin:4px 0 8px;}
+.cm-mod-entscheidung:not(:empty){margin-top:18px;}
+.cm-mod-form{display:flex;flex-direction:column;gap:16px;}
+.cm-vorschau{border-left:3px solid var(--hm-gold);background:var(--feld);padding:12px 16px;}
+.cm-vorschau .cm-text{font-size:16px;margin:0;}
+
 /* Heute: der kleine Einstieg nach den eigenen Lernaktionen. */
 .hm-gemeinsam{margin-top:22px;}
 .hm-gemeinsam .hm-titelchen{margin-bottom:8px;}

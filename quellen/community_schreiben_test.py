@@ -624,7 +624,7 @@ def main():
             pruefe(not r["ok"] and "nur bei Fragen" in (r.get("fehler") or ""), "Direkte API: beste Antwort nur bei Fragen", r.get("fehler"))
             ab()
             als(TEAM)
-            ev("(a) => AP.community.moderieren('antwort', a, true)", A_eins)
+            ev("(a) => (async () => { const f = await AP.community.moderationFall('antwort', a);   return AP.community.entscheiden({ id: AP.community.neueVorgangskennung(), art: 'antwort', ziel: a, aktion: \"ausblenden\",     meldungen: f.meldungen.map(m => m.id), version: f.version, intern: \"Testinhalt (automatischer Test)\",     autorText: \"Dein Testinhalt wurde für einen automatischen Test ausgeblendet.\", kategorie: \"sonstiges\" }); })()", A_eins)
             ab()
             als(ANNA)
             r = ev("(a) => T.versuch(() => AP.community.besteAntwort(a, true))", A_eins)

@@ -88,6 +88,13 @@
 
   /* ================================================== Fehler */
 
+  /* Spec 06 (P4): eigene Fehlercodes der Moderations-Funktionen. Alle werden
+     vor dem Ende der Transaktion ausgelöst – die Datenbank hat nichts
+     geändert. Einzeln aufgeführt, kein Muster: Unbekannte AP-Codes bleiben
+     „unklar“. */
+  var MOD_ARTEN = { APF01: "geaendert", APZ01: "nichtda", APR01: "rechte", APP01: "gesperrt",
+                    APD01: "doppelt", APV01: "vorgang", APB01: "bremse", APE01: "eingabe" };
+
   function fehler(meldung, art, ursache) {
     var e = new Error(meldung);
     e.art = art || "server";
@@ -116,6 +123,8 @@
       return fehler("Der Code ist abgelaufen oder stimmt nicht. Lass dir einen neuen schicken.", "anmeldung", f);
     if (/JWT|not authenticated|Auth session missing|refresh token/i.test(text))
       return fehler("Du bist nicht mehr angemeldet. Bitte melde dich neu an.", "anmeldung", f);
+    if (MOD_ARTEN[code])                                          // Spec 06: eigene SQLSTATE
+      return fehler(text.replace(/^ERROR:\s*/, ""), MOD_ARTEN[code], f);
     if (/noch nicht freigeschaltet/i.test(text))                  // Paketsperre (Spec 05)
       return fehler("Beiträge sind für die Klassen-Beta noch nicht freigeschaltet.", "gesperrt", f);
     if (code === "P0001")                                         // raise exception
@@ -545,6 +554,7 @@
     var st = Number((r && r.status) || 0);
     if (/^(P0001|22\w{3}|23\w{3}|42\w{3}|40001|40P01|57014)$/.test(code)) return true;
     if (VOR_AUSFUEHRUNG.indexOf(code) >= 0 && st > 0 && st < 500) return true;
+    if (MOD_ARTEN[code] && st > 0 && st < 500) return true;
     if (!code && (st === 401 || st === 403 || st === 429)) return true;
     return false;
   }
@@ -566,7 +576,7 @@
      ankommen). Erst bei "verworfen" wird die Datei des Vorgangs entfernt; ein
      Fehler dabei lässt sie im eigenen privaten Ordner liegen. Wiederholbar. */
   function vorgangKlaeren(vorgang, art, datei) {
-    if (!vorgang || (art !== "beitrag" && art !== "antwort"))
+    if (!vorgang || ["beitrag", "antwort", "entscheidung", "pruefanfrage"].indexOf(art) < 0)
       return Promise.reject(fehler("Vorgangskennung fehlt.", "eingabe"));
     var text = "Wir konnten nicht prüfen, ob der Vorgang abgeschlossen ist.";
     return gebunden(function (u, c) {
@@ -679,7 +689,8 @@
 
   function beitragAendern(id, felder) {
     var erlaubt = {};
-    ["titel", "text", "lernfeld", "kapitel", "an_mentoren", "geloest"].forEach(function (k) {
+    // „geloest“ nur noch über beste_antwort_setzen und die Moderation (E11).
+    ["titel", "text", "lernfeld", "kapitel", "an_mentoren"].forEach(function (k) {
       if (felder && Object.prototype.hasOwnProperty.call(felder, k)) erlaubt[k] = felder[k];
     });
     return mit(function (c) { return c.from("beitrag").update(erlaubt).eq("id", id).then(auspacken); });
@@ -748,7 +759,8 @@
   function antworten(beitragId) {
     return gebunden(function (u, c) {
       return c.from("antwort")
-        .select("id, beitrag_id, autor_id, text, beste, versteckt, erstellt_am, autor:profil(anzeigename, rolle, lehrjahr)")
+        .select("id, beitrag_id, autor_id, text, beste, versteckt, erstellt_am, team_korrektur, bezug_antwort_id, " +
+                "autor:profil(anzeigename, rolle, lehrjahr)")
         .eq("beitrag_id", beitragId)
         .order("beste", { ascending: false }).order("erstellt_am").order("id")
         .then(auspacken);
@@ -875,40 +887,87 @@
 
   /* ================================================== Melden und Moderation */
 
-  /* e: { beitrag | antwort, grund, hinweis } */
-  function melden(e) {
+  /* ================================================== Spec 06 · Melden und Moderation
+     Alles über Funktionen in der Datenbank; Konto, Rolle und Zeit bestimmt
+     der Server. Schreibende Aufrufe unterscheiden wie Spec 05: sichere
+     Ablehnung (Fehlerart), „unklar“ (Status prüfen), Erfolg. */
+
+  function lesen(name, args) {
+    return gebunden(function (u, c) { return c.rpc(name, args || {}).then(auspacken); });
+  }
+
+  function schreiben(name, args, vorgang, unklarText) {
+    return gebunden(function (u, c) {
+      return c.rpc(name, args).then(function (r) { return rpcErgebnis(r, vorgang, unklarText); },
+                                    function (f) { throw unklar(unklarText, vorgang, f); });
+    });
+  }
+
+  /* e: { art: "beitrag"|"antwort", ziel, grund, hinweis }. Ergebnis
+     { meldung_id, status, neu, gleich }. Wiederholen ist sicher: Konto und
+     Ziel sind eindeutig, eine zweite Meldung entsteht nie. */
+  function meldungSenden(e) {
     e = e || {};
-    if (GRUENDE.indexOf(e.grund) < 0) return Promise.reject(fehler("Bitte wähle einen Grund.", "eingabe"));
-    if (!!e.beitrag === !!e.antwort) return Promise.reject(fehler("Was soll gemeldet werden?", "eingabe"));
-    return mit(function (c) {
-      return c.from("meldung").insert({
-        beitrag_id: e.beitrag || null, antwort_id: e.antwort || null,
-        grund: e.grund, hinweis: String(e.hinweis || "").slice(0, 500)
-      }).then(function (r) {
-        if (r.error && r.error.code === "23505") throw fehler("Das hast du schon gemeldet. Das Team schaut es sich an.", "eingabe");
-        return auspacken(r);
-      });
-    });
+    if (GRUENDE.indexOf(e.grund) < 0) return Promise.reject(fehler("Wähle einen Grund für deine Meldung.", "eingabe"));
+    if ((e.art !== "beitrag" && e.art !== "antwort") || !e.ziel)
+      return Promise.reject(fehler("Was soll gemeldet werden?", "eingabe"));
+    var h = String(e.hinweis || "").trim();
+    if (laenge(h) > 500) return Promise.reject(fehler("Der Hinweis darf höchstens 500 Zeichen lang sein.", "eingabe"));
+    return schreiben("meldung_senden", { p_art: e.art, p_ziel: e.ziel, p_grund: e.grund, p_hinweis: h }, null,
+      "Wir konnten nicht prüfen, ob deine Meldung gesendet wurde.").then(function (z) { return (z || [])[0] || null; });
   }
 
-  function offeneMeldungen() {
-    return mit(function (c) {
-      return c.from("meldung")
-        .select("id, grund, hinweis, status, erstellt_am, beitrag_id, antwort_id, " +
-                "beitrag(id, titel, art, versteckt), antwort(id, text, versteckt, beitrag_id)")
-        .eq("status", "offen").order("erstellt_am").then(auspacken);
-    });
+  function meldungStatus(art, ziel) {
+    return lesen("meldung_status", { p_art: art, p_ziel: ziel }).then(function (z) { return (z || [])[0] || null; });
   }
 
-  function moderieren(art, id, versteckt) {
-    return mit(function (c) {
-      return c.rpc("moderieren", { p_art: art, p_id: id, p_versteckt: versteckt === true }).then(auspacken);
-    });
+  // nach: { zeit, id } der letzten geladenen Meldung oder null.
+  function meineMeldungen(nach, anzahl) {
+    return lesen("meine_meldungen", { p_nach_zeit: nach ? nach.zeit : null, p_nach_id: nach ? nach.id : null,
+                                      p_anzahl: anzahl || 30 });
   }
 
-  function meldungErledigt(id) {
-    return mit(function (c) { return c.from("meldung").update({ status: "erledigt" }).eq("id", id).then(auspacken); });
+  function moderationZaehler() { return lesen("moderation_zaehler"); }
+  function moderationFaelle(filter, nach, anzahl) {
+    return lesen("moderation_faelle", { p_filter: filter || "alle", p_nach: nach || null, p_anzahl: anzahl || 25 });
   }
+  function moderationFall(art, ziel) { return lesen("moderation_fall", { p_art: art, p_ziel: ziel }); }
+  function moderationAusgeblendet(nach, anzahl) {
+    return lesen("moderation_ausgeblendet", { p_nach: nach || null, p_anzahl: anzahl || 25 });
+  }
+  function moderationProtokoll(nach, anzahl) {
+    return lesen("moderation_protokoll", { p_nach: nach || null, p_anzahl: anzahl || 25 });
+  }
+  function moderationVorlagen() { return lesen("moderation_vorlagen"); }
+
+  /* e: { id (Vorgangskennung), art, ziel, aktion, meldungen, pruefanfrage,
+     ausblendung, version, intern, autorText, kategorie, korrektur }.
+     Gleiche Kennung = gleiche Entscheidung: Wiederholen liefert das
+     gespeicherte Ergebnis (wiederholung: true). */
+  function entscheiden(e) {
+    e = e || {};
+    if (!e.id) return Promise.reject(fehler("Vorgangskennung fehlt.", "eingabe"));
+    return schreiben("moderation_entscheiden", {
+      p_id: e.id, p_art: e.art, p_ziel: e.ziel, p_aktion: e.aktion, p_meldungen: e.meldungen || [],
+      p_pruefanfrage: e.pruefanfrage || null, p_ausblendung: e.ausblendung || null, p_version: e.version,
+      p_intern: e.intern || null, p_autor_text: e.autorText || null, p_kategorie: e.kategorie || null,
+      p_korrektur: e.korrektur || null
+    }, e.id, "Wir konnten nicht prüfen, ob die Entscheidung gespeichert wurde.");
+  }
+
+  function entscheidungStatus(id) { return lesen("entscheidung_status", { p_id: id }); }
+  function eigeneAusblendungen() { return lesen("eigene_ausblendungen"); }
+  function eigenerInhalt(art, id) { return lesen("eigener_inhalt", { p_art: art, p_id: id }); }
+
+  function pruefanfrageSenden(id, ausblendung, begruendung) {
+    var t = String(begruendung || "").trim();
+    if (!t) return Promise.reject(fehler("Gib eine kurze Begründung ein.", "eingabe"));
+    if (laenge(t) > 500) return Promise.reject(fehler("Die Begründung darf höchstens 500 Zeichen lang sein.", "eingabe"));
+    return schreiben("pruefanfrage_senden", { p_id: id, p_ausblendung: ausblendung, p_begruendung: t }, id,
+      "Wir konnten nicht prüfen, ob deine Prüfanfrage gesendet wurde.");
+  }
+
+  function pruefanfrageStatus(ausblendung) { return lesen("pruefanfrage_status", { p_ausblendung: ausblendung }); }
 
   function rolleSetzen(nutzerId, rolle) {
     return mit(function (c) { return c.rpc("rolle_setzen", { p_nutzer: nutzerId, p_rolle: rolle }).then(auspacken); });
@@ -958,8 +1017,13 @@
     antwortLoeschen: antwortLoeschen, besteAntwort: besteAntwort, hilfreich: hilfreich,
     aufgaben: aufgaben, aufgabeStellen: aufgabeStellen, aufgabeLoeschen: aufgabeLoeschen,
     erledigt: erledigt, erledigtVon: erledigtVon,
-    melden: melden, offeneMeldungen: offeneMeldungen, moderieren: moderieren,
-    meldungErledigt: meldungErledigt, rolleSetzen: rolleSetzen,
+    meldungSenden: meldungSenden, meldungStatus: meldungStatus, meineMeldungen: meineMeldungen,
+    moderationZaehler: moderationZaehler, moderationFaelle: moderationFaelle, moderationFall: moderationFall,
+    moderationAusgeblendet: moderationAusgeblendet, moderationProtokoll: moderationProtokoll,
+    moderationVorlagen: moderationVorlagen, entscheiden: entscheiden, entscheidungStatus: entscheidungStatus,
+    eigeneAusblendungen: eigeneAusblendungen, eigenerInhalt: eigenerInhalt,
+    pruefanfrageSenden: pruefanfrageSenden, pruefanfrageStatus: pruefanfrageStatus,
+    rolleSetzen: rolleSetzen,
     live: live
   };
 

@@ -11,14 +11,14 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-6e84309f478ead49";
+var SPEICHER = "azubipass-76b46aa2e4753315";
 var VORRAT = {
-  "./": "584a89ef234f96f58cb0118c6652035a51b2189c740ca88385c822537f99c875",
-  "app.html": "584a89ef234f96f58cb0118c6652035a51b2189c740ca88385c822537f99c875",
+  "./": "a480509c120492f7d73a81a007a46911b9a60c3180e83f8ada5f7e51c7b71e4c",
+  "app.html": "a480509c120492f7d73a81a007a46911b9a60c3180e83f8ada5f7e51c7b71e4c",
   "buchfuehrung.html": "c256842895cd38f2f3d8dd1c34ca4d49db6fb77a9832695a04bc2189baaa3a4b",
   "datenschutz.html": "57fa71e59a9b45a81710ef56e57ebc82e566bc95a92d40df7afcca4d5b4aaf2a",
   "impressum.html": "5c7dddb5aae1ce5ee624d064dd310364d8c59549bb94bf84e0cc551cb8cc0548",
-  "index.html": "584a89ef234f96f58cb0118c6652035a51b2189c740ca88385c822537f99c875",
+  "index.html": "a480509c120492f7d73a81a007a46911b9a60c3180e83f8ada5f7e51c7b71e4c",
   "landing.html": "ae2f8488c7c19fd7a482c984bdc3c72eabe8eb61c1329bb9b5adb72d357a1a93",
   "lf1.html": "30b6a18ec1ab94452fd2e5bd401e8729ed56e4b74485b6eebfcd140661fe5b8c",
   "lf10.html": "a999b17c96002dea72991588fccab05156185f064fcca62d4b96ceaa7dba2aec",
@@ -35,14 +35,15 @@ var VORRAT = {
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "0e90c93a497b33b4d15f2126db507b54063642801e9dcd8ecc09b42549b62b75",
   "mittel/aufgaben.js": "7952f59103ce5788077a3088db4ef5fc465bb0cb3af76d375c69bd30e00acbb6",
-  "mittel/aufgaben.json": "f3800dbb85a9f5568c5c2f4e4f4b185fd888671b3669089fe6f666cada96db37",
+  "mittel/aufgaben.json": "7dc5ac4b0d3fadfff4d0c498220f0afdd96c3a6f943a9b6124a411da91353708",
   "mittel/azubipass-logo.png": "6fbfaa65da67de20b628b6d5415a8a46c95ceeaa5c6638492e2860e7d6e98973",
   "mittel/azubipass-symbol.png": "82cddbb695cbba0a09d3b933eb4b178e221463e015b962d8013cdff580d4a692",
-  "mittel/azubipass.css": "92671c351ccd1398fcf497d7ff96e9de99a1b55a267fd1eae12f8a4880d5196f",
+  "mittel/azubipass.css": "808bc6f93b1170c39a5b12e41736d53e06f715064081ba72c787b52ce02a8aaa",
   "mittel/azubipass.js": "9ede6fe34c9633efca35edeb1bb652d14a0dc9d1d28525a4d47e8b516f22e644",
-  "mittel/community-ansicht.js": "1e13a4871809c86f6a3a0e4195c0748770d72c85633842a413189d1d5f5257dd",
-  "mittel/community-beitraege.js": "e355dbc68417bd0a1acea2f818e345cb7d2e4b8312bdf5302acce19ba511a219",
-  "mittel/community.js": "219081681788548403bb9e5bfce88c2fcc9d3ee010288306f75bfbb0288678af",
+  "mittel/community-ansicht.js": "c24419190b0f5e88c40d716d6e209ff929d823e616e657cdbb271dc40e4245df",
+  "mittel/community-beitraege.js": "8bb3a734c6d9d3b68d6e834243ff37332fd3dc25668d8ef829a320ea65440e66",
+  "mittel/community-moderation.js": "dd7e415fb80c2546b9c9ffe7449876cc6ed0d26734a327d40c96395d35df10a3",
+  "mittel/community.js": "7b69bdc6cfaf32f61b228a833b312eb4ec52731474db9fdb9f0c2175a7468372",
   "mittel/ibm-plex-mono-400-latin-ext.woff2": "6bc0f226a5b7884a8170e3f62c63d7675609d4631bdc5931b5cdab81821f00eb",
   "mittel/ibm-plex-mono-400-latin.woff2": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
   "mittel/ibm-plex-mono-500-latin-ext.woff2": "6bb06407c97584b0867a959e05e8874693bfeb8c317de190811c51598f2d99ea",
@@ -53,7 +54,7 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "4bde890d052117428d8c2a79847d777f81310faf8920588f2ee5050a0449e722",
+  "mittel/inhalt.json": "ac571ba18f5521a7ccd9746d6b3bcf35ef98cb2414d33e1b042f59c52d681e6c",
   "mittel/kern.js": "0d2d49706c2c4051219b2f1bf63562f28c92615418b660fb94504f6bda9ed093",
   "mittel/landing.css": "c1d299ad11bd6a3fd4b8515d08334b45741b6616da271a4899acf51353596f45",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",
@@ -68,10 +69,10 @@ var VORRAT = {
   "mittel/source-serif-4-700-latin.woff2": "f2ea9c12d2fe9bd3a9589b02ad2c0909da88f30938c91adc838c4f4098f9f9e0",
   "mittel/suche.json": "a34ed7197d7ab9d1980957a1d98673e7d6a7668a22de095371ec6dead0c6dc5f",
   "mittel/supabase.js": "50db96e85947966782e7a3f4252a59dd8285f1ca00c1718a4079ed621e10bae1",
-  "mittel/symbol-v1-180.png": "f8d66c2295ba13a64031e955ad077570f99a70fafede1212034faa1fb9c242b4",
-  "mittel/symbol-v1-192.png": "811def8d5e9cc50e4fede30d481ed8569dde46574127b698cda9a4b30b049491",
-  "mittel/symbol-v1-32.png": "900366bda76c32b88c70e3a4579fa90adb136aec1b2ece28735557b7a114f6a2",
-  "mittel/symbol-v1-512.png": "de6e044beb9d0389980016837f513279630e5e1ee87b0afe62ace2a164237391"
+  "mittel/symbol-v1-180.png": "f14f43e7cfbea4027a315422543530209aabb5f6a8ef73a219956c06c34ab0de",
+  "mittel/symbol-v1-192.png": "a7b93cd17439685ad3cdc1a547faf83f6c14c41f4240c4c835d219a05c30684c",
+  "mittel/symbol-v1-32.png": "88536423b076b6241792e1c01b447ad9800b1047fe4d257b955d1569f914b1bb",
+  "mittel/symbol-v1-512.png": "e8e1643bf38baf16b18fad478da4aa2bf708bd7c019ba138d272599325bfea0a"
 };
 
 function hex(puffer) {
