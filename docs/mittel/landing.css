@@ -33,9 +33,10 @@ h1,h2,h3{letter-spacing:-.02em;margin:0;}
    während gescrollt wird. Der Farbübergang trägt die Bewegung ohnehin. */
 .kopf{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;color:var(--creme);transition:background .4s,color .4s,border-color .4s;border-bottom:1px solid transparent;}
 .kopf.fest{background:var(--kopf-grund);backdrop-filter:blur(10px);color:var(--text);border-bottom-color:var(--linie);padding-top:11px;padding-bottom:11px;}
-.kopf.fest .wortmarke i{color:var(--gold-text);}
-.wortmarke{font-family:var(--serif);font-size:21px;font-weight:600;text-decoration:none;letter-spacing:-.015em;display:inline-flex;align-items:center;min-height:44px;}
-.wortmarke i{font-style:normal;color:var(--gold);}
+.wortmarke{display:inline-flex;align-items:center;min-height:44px;
+  flex-shrink:0;background:var(--creme);padding:0 8px;border-radius:2px;}
+/* Der Anzeigerahmen blendet nur den transparenten Außenrand aus. */
+.markenlogo{display:block;width:220px;height:52px;object-fit:cover;}
 .nav{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:14px;}
 .nav a{text-decoration:none;opacity:.82;display:inline-flex;align-items:center;min-height:44px;}
 .nav a:hover{opacity:1;}
@@ -251,6 +252,7 @@ h2{font-size:clamp(30px,3.4vw,42px);font-weight:700;line-height:1.12;}
   .mitte{padding:0 24px;}
   .band{padding:64px 0;}
   .kopf{padding:12px 20px;}
+  .wortmarke .markenlogo{width:170px;height:44px;}
   .nav a:not(.kn-gold){display:none;}
   .lf{grid-template-columns:52px 1fr;gap:12px;}
   .lf-rechts{grid-column:2;justify-content:flex-start;}

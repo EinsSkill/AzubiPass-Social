@@ -40,10 +40,10 @@ Die freigegebenen PNGs sind die verbindlichen Bilddateien. Die Farbreferenzen de
 
 ## Verwendung und Änderungen
 
-- Seitenverhältnis beibehalten; nicht verzerren, beschneiden oder neu generieren.
+- Seitenverhältnis beibehalten; das Zeichen nicht verzerren, beschneiden oder neu generieren. Anzeigerahmen dürfen den transparenten Außenrand ausblenden.
 - Das vollständige Logo auf hellen, vorzugsweise cremefarbenen Flächen einsetzen. Der transparente Hintergrund gehört zur Datei.
 - Keine neuen Symbole oder zusätzlichen Motive hinzufügen.
-- App-Icon-Exporte bei der späteren Einbindung aus dem freigegebenen Symbol ableiten; dieses Paket enthält noch keine vollständige PWA-Icon-Familie.
+- App-Icon-Exporte werden beim Build aus dem freigegebenen Symbol abgeleitet: `symbol-v1-32.png` (Browser), `symbol-v1-180.png` (Apple), `symbol-v1-192.png` und `symbol-v1-512.png` (PWA, auch maskable). Cremefarbene Flächen sichern den Kontrast; die Originaldatei bleibt unverändert.
 - Geliefert sind PNG-Rasterdateien. Eine echte SVG-/Vektormasterdatei ist damit nicht erstellt.
 - Gestalterische Änderungen am verbindlichen Logo benötigen eine neue Entscheidung von Lukes; Varianten als neue Versionen ablegen.
 
@@ -55,4 +55,6 @@ Nach der Korrektur des einzelnen Symbols folgte der Auftrag:
 
 ChatGPT/Codex übernimmt in dieser Phase die Gestaltung, Dokumentation und Ablage der freigegebenen Assets. Claude bleibt Umsetzungseigner für `quellen/`, `supabase/` und `docs/`; bei einer beauftragten Markeneinbindung ist dieses Paket die Grundlage.
 
-Dieser Commit enthält nur Markenassets und Dokumentation. Er integriert das Logo nicht in die gebaute App und stellt keine Merge- oder Live-Freigabe dar.
+Die Erstfestlegung `e39f010` enthielt nur Markenassets und Dokumentation. Danach beauftragte Lukes auf die noch offene Website-Einbindung hin ausdrücklich: „Dann mach das“. ChatGPT/Codex setzt damit in diesem klar begrenzten Folgeauftrag die Logo-Einbindung um; die sonstige Community-Umsetzung bleibt bei Claude.
+
+Die Einbindung umfasst die App-Startansicht, Projektseite, gemeinsamen Fußleisten, Browser-/Apple-/PWA-Icons und den Offline-Vorrat. Sie erfolgt über die Quellen und den regulären Build. Die Originaldateien werden unverändert übernommen. Siehe [Einbindung und Prüfbelege](einbindung.md).

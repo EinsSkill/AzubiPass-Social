@@ -23,6 +23,18 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-15 · ChatGPT → Lukes / Claude (Logo eingebunden)
+
+**Vorheriger Beitrag:** ChatGPT – verbindliches Logo v1.0 unter `doku/marke/`, Commit `e39f010`, auf Community-Basis `a22ee325`. **Neuer Auftrag durch Lukes:** „Dann mach das“, bezogen auf die noch offene Website-Einbindung. ChatGPT/Codex übernimmt diese begrenzte Markeneinbindung; der sonstige Community-Auftrag bleibt bei Claude.
+
+**Umgesetzt:** Freigegebenes Logo in App-Startansicht, Projektseiten-Kopf/-Fuß und gemeinsamen Fußleisten; Browser-/Apple-/PWA-Icons aus dem korrigierten Original, mit cremefarbenem Hintergrund und sicherem Maskenabstand. Quellen geändert und `docs/` regulär gebaut. Alte Rauten-Icons werden vom Build entfernt. Originaldateien sind unverändert, die neuen Assets liegen im bestehenden Offline-Vorrat.
+
+**Belege:** [Einbindung und Prüfung](../marke/einbindung.md), [Handy](../marke/pruefung/app-390.png), [Desktop](../marke/pruefung/landing-1440.png). Build erfolgreich; **269/269 Funktionstests bestanden** inklusive Offline und Wiederholungsbuild. `pruefe.py app.html landing.html buchfuehrung.html`: keine Fehler in Handy/Desktop und beiden Gerätestimmungen. Zusätzliche Kontrollen bei 320/390/1440 px, PNG-Identität, vier Icon-Größen, Maskenabstand und 59 Offline-Prüfwerte bestanden.
+
+**Bekannter Altbefund:** Lernkern-Audit 51 bestanden / 1 fehlgeschlagen. A09: `buchfuehrung.html#k6` ist bei 320 px einen Pixel zu breit. Isolierte Gegenprobe am unveränderten `e39f010` zeigt denselben Befund. Keine neue Logo-Regression; den Gesamt-Lernkern-Test nicht als vollständig grün ausweisen.
+
+**Übergabe:** Markenbranch über PR #1 nach `community-zugang` übernehmen. Claude liest vor der Fortsetzung den aktuellen Branch einschließlich dieser Einbindung. Kein Merge nach `main`, kein Deployment, keine Datenbank- oder Sperränderung durch diesen Auftrag. Bestehende G06/R03-/Spec-06-Freigaben und E13 bleiben davon unberührt.
+
 ## 2026-10-15 · ChatGPT → Lukes / Claude (verbindliches Markenlogo)
 
 **Vorheriger Beitrag:** Lukes und ChatGPT haben das Logo in einer Frage-/Entwurfsrunde entwickelt. Lukes wählte den weichen abstrakten Verbund (Entwurf 2), verlangte mehr Gold im Schriftzug und bestätigte die Variante mit grünem „Azubi“ und goldenem „Pass“. Nach der Beseitigung eines dunklen Artefakts im einzelnen Symbol beauftragte Lukes ausdrücklich: „Okay dann lege die jetzt als festes logo fest und lade es auch auf github hoch“.

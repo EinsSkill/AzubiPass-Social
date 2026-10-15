@@ -20,6 +20,7 @@ Ein eigener Schritt und kein zweites Bausystem: Er liest nur, was die
 Kapiteldateien ohnehin enthalten.
 """
 
+import base64
 import html
 import json
 import re
@@ -459,32 +460,18 @@ def aufgaben_schreiben(kapitel, bausteine, konten, vorlagen):
 
 # ---------------------------------------------------------------- Symbol
 
-SYMBOL = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img"
-     aria-label="AzubiPass">
-  <rect width="512" height="512" rx="114" fill="#12301F"/>
-  <rect x="148" y="148" width="216" height="216" transform="rotate(45 256 256)"
-        fill="none" stroke="#C9A227" stroke-width="24"/>
-  <rect x="217" y="217" width="78" height="78" transform="rotate(45 256 256)"
-        fill="#C9A227"/>
-</svg>'''
-
-
 def symbole():
-    """Schreibt das Zeichen einmal als SVG und rendert daraus die PNG-Größen,
-    die iOS und der Homescreen brauchen.
+    """Leitet Browser-/PWA-Icons aus dem freigegebenen Original ab.
 
-    Gerendert wird mit Playwright — das ist für pruefe.py ohnehin da. Eine
-    Bildbibliothek nur für drei Symbole wäre eine Abhängigkeit zu viel."""
-    (MITTEL / "symbol.svg").write_text(SYMBOL, encoding="utf-8")
-    groessen = [("symbol-192.png", 192), ("symbol-512.png", 512), ("symbol-180.png", 180)]
-    if all((MITTEL / name).exists() for name, _ in groessen):
-        return True
+    Creme trägt das grüne Zeichen auch unter einer Systemmaske. Der Abstand
+    hält die sichtbare Form innerhalb des sicheren Maskable-Bereichs.
+    Immer neu rendern: Vorhandene PNGs dürfen keine alte Marke festhalten."""
+    daten = base64.b64encode((MITTEL / "azubipass-symbol.png").read_bytes()).decode("ascii")
+    groessen = [(f"symbol-v1-{px}.png", px) for px in (32, 180, 192, 512)]
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        print("  Hinweis: Playwright fehlt — die PNG-Symbole bleiben aus.")
-        print("           Auf dem iPhone zeigt der Homescreen dann ein Vorschaubild.")
-        return False
+        raise SystemExit("Playwright fehlt — die freigegebenen App-Icons konnten nicht gebaut werden.")
 
     with sync_playwright() as p:
         b = p.chromium.launch()
@@ -492,11 +479,17 @@ def symbole():
             seite = b.new_page(viewport={"width": px, "height": px},
                                device_scale_factor=1)
             seite.set_content(
-                f'<body style="margin:0">{SYMBOL.replace("512", str(px), 2)}</body>')
-            seite.screenshot(path=str(MITTEL / name), omit_background=True)
+                '<body style="margin:0;background:#F5F5F0;display:grid;'
+                'place-items:center;width:100vw;height:100vh">'
+                f'<img src="data:image/png;base64,{daten}" alt="" '
+                'style="display:block;width:84%;height:84%;object-fit:contain"></body>')
+            seite.locator("img").evaluate("img => img.decode()")
+            seite.screenshot(path=str(MITTEL / name))
             seite.close()
         b.close()
-    print(f"  Symbole: svg + {len(groessen)} PNG")
+    for alt in ("symbol.svg", "symbol-180.png", "symbol-192.png", "symbol-512.png"):
+        (MITTEL / alt).unlink(missing_ok=True)
+    print(f"  Markensymbole: {len(groessen)} PNG aus der freigegebenen Symboldatei")
     return True
 
 
@@ -948,10 +941,9 @@ def manifest():
         "theme_color": "#12301F",
         "categories": ["education"],
         "icons": [
-            {"src": "mittel/symbol.svg", "sizes": "any", "type": "image/svg+xml"},
-            {"src": "mittel/symbol-192.png", "sizes": "192x192", "type": "image/png",
+            {"src": "mittel/symbol-v1-192.png", "sizes": "192x192", "type": "image/png",
              "purpose": "any maskable"},
-            {"src": "mittel/symbol-512.png", "sizes": "512x512", "type": "image/png",
+            {"src": "mittel/symbol-v1-512.png", "sizes": "512x512", "type": "image/png",
              "purpose": "any maskable"},
         ],
         "shortcuts": [
