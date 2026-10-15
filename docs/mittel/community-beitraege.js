@@ -602,6 +602,11 @@
           if (f && f.art === "gesperrt") return ctx.gesperrt();
           liste.innerHTML = "";
           if (pruefHinweis && meldungBox.contains(pruefHinweis)) { meldungBox.innerHTML = ""; pruefHinweis = null; }
+          // R01: Ist der Lösungsstand ungeklärt, gibt es nur den gemeinsamen Weg –
+          // „Erneut laden“ holt Kopf und Antworten zusammen.
+          if (standOffen) {
+            return standFehler(nach.neu ? "Deine Antwort wurde gesendet. " + STAND_FEHLER : STAND_FEHLER, false);
+          }
           // Bestätigt gesendet, nur das Nachladen klappt nicht: Erfolg bleibt stehen.
           var p = el("p", "meldung fehler", nach.neu
             ? "Deine Antwort wurde gesendet. Die Antworten konnten noch nicht neu geladen werden."

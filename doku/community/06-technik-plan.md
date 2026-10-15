@@ -3,7 +3,9 @@
 > Status: PLAN · Version 2 · Stand: 2026-10-14 · Autor: Claude
 >
 > v2 nach ChatGPT-Gegenprüfung von `3bed8d1`: sechs Planbefunde P1–P6
-> eingearbeitet (Abschnitt 11 listet die Änderungen).
+> eingearbeitet (Abschnitt 11 listet die Änderungen). Ergänzt nach der
+> Gegenprüfung von `89968be`: R02 (Wiedererkennung nach dem Warten) und R03
+> (`antwort_senden` sperrt vor der Prüfung), Abschnitt 12.
 >
 > Gegenprüfung von `06-melden-moderation.md` **v2** (ChatGPT) und konkreter
 > Plan. **Nichts umgesetzt, nichts eingespielt**, Paketsperre zu, `main`
@@ -179,7 +181,7 @@ Grant-Änderungen unten:
 | Autor:in ändert Beitrag (direktes UPDATE) | Beitragszeile (implizit) | Konflikt mit `for update` der Entscheidung → strikt nacheinander. Kommt die Änderung zuerst, erhöht der Trigger `mod_version` → Entscheidung `APF01`. Kommt sie danach, ändert sie einen schon entschiedenen Stand und erhöht die Version für den nächsten Fall. |
 | Autor:in ändert Antwort (direktes UPDATE) | nur Antwortzeile | Die Entscheidung sperrt bei Antwortzielen **Beitrag und danach Antwort** `for update` und liest die Antwort erst nach der Sperre → gleiches Ergebnis wie oben. |
 | Autor:in löscht Beitrag/Antwort (direktes DELETE) | Zeile | Vorher: Entscheidung findet das Ziel nicht → `APZ01`. Nachher: Löschen wartet, löscht danach; Protokoll bleibt (kein FK). |
-| Antwort senden (`antwort_senden`) | Beitrag `key share` über FK | wartet während einer Entscheidung, prüft danach „Beitrag sichtbar“ neu (RPC liest nach dem Warten). |
+| Antwort senden (`antwort_senden`) | **neu:** Beitrag `for share` vor der Prüfung (R03) | **Heute falsch:** Die RPC liest den Beitrag ohne Sperre, prüft „sichtbar“ und wartet erst später beim Fremdschlüssel – danach keine neue Prüfung (ChatGPT lokal reproduziert: Antwort unter ausgeblendetem Beitrag). Änderung siehe 12.2. |
 | Direktes Antwort-INSERT | Beitrag `key share` | **Vorschlag: Grant entziehen** (wie G06 beim Beitrag). Die Insert-Regel prüft „Beitrag sichtbar“ vor dem Warten und würde eine Antwort unter einem gerade ausgeblendeten Beitrag zulassen. Der Client nutzt nur noch `antwort_senden`. |
 | Hilfreich markieren | Beitrag `key share` | ändert keinen Moderationsstand, keine Versionsänderung. |
 | `beste_antwort_setzen` | Beitrag `for update` | nacheinander; Ausblenden der besten Antwort setzt `beste`/`geloest` im selben Schritt zurück. |
@@ -214,14 +216,28 @@ Ablauf (P1 – Wiedererkennung **vor** der Sichtbarkeitsprüfung):
    Status) – nie Titel, Text oder Sichtbarkeit des Ziels. So erkennt eine
    Wiederholung nach verlorener Bestätigung ihre Meldung auch dann, wenn
    genau diese dritte Meldung den Inhalt ausgeblendet hat.
-3. Erst dann: Thread sperren, Ziel mit den Bedingungen der Leseregel prüfen
-   (sonst `APZ01` „Dieser Inhalt ist für dich nicht verfügbar.“), Bremse (30/h,
-   `APB01`), Insert, automatische Ausblendung, `mod_version` erhöhen.
+3. Thread sperren (`select … from beitrag where id = … for update`; bei einer
+   Antwort deren Elternbeitrag).
+4. **Nach der Sperre die eigene Meldung erneut suchen (R02)** – eigene
+   Anweisung, sieht also alles, was bis zum Ende des Wartens festgeschrieben
+   wurde. Vorhanden → wie Schritt 2 zurück, **vor** Sichtbarkeitsprüfung und
+   Bremse.
+5. Erst dann: Ziel mit den Bedingungen der Leseregel prüfen (sonst `APZ01`
+   „Dieser Inhalt ist für dich nicht verfügbar.“), Bremse (30/h, `APB01`),
+   Insert, automatische Ausblendung, `mod_version` erhöhen.
+6. Dritte Sicherung: Der Eindeutigkeitsindex bleibt; ein `23505` beim Insert
+   wird abgefangen und wie Schritt 2 beantwortet.
 
 Natürlicher Schlüssel (Konto, Ziel) ersetzt eine Vorgangskennung. Zwei
-gleichzeitige Erstversuche desselben Kontos: der zweite wartet auf die Sperre,
-findet danach aber Schritt 2 nicht erneut → Eindeutigkeitsindex `23505` →
-die RPC fängt ihn ab und liefert die vorhandene Meldung (`neu = false`).
+gleichzeitige Erstversuche desselben Kontos auf einen Inhalt mit zwei
+fremden Meldungen: A sperrt, legt die dritte Meldung an, blendet aus,
+schreibt fest. B wartet in Schritt 3, findet in Schritt 4 die Meldung von A
+und gibt sie zurück – die inzwischen eingetretene Ausblendung und eine
+inzwischen erreichte Bremse spielen für B keine Rolle mehr.
+
+Die bisherige Meldungs-Bremse im Trigger `bremse()` (P0001) entfällt für
+`meldung`; die RPC prüft selbst mit `APB01`. Beitrags- und Antwort-Bremse
+bleiben unverändert.
 
 ```
 meldung_status(p_art text, p_ziel uuid) returns table (meldung_id, status, erstellt_am)
@@ -389,6 +405,7 @@ Eigenansicht unter fremdem ausgeblendetem Beitrag läuft ausschließlich über
 | `…_moderation_lesen.sql` | Zähler, Fälle, Fall, Ausgeblendet, Protokoll, Vorlagen |
 | `…_eigene_inhalte.sql` | `eigene_ausblendungen`, `eigener_inhalt`, Prüfanfrage senden/Status |
 | `…_moderation_rechte.sql` | `revoke moderieren`, Altbestand-Nachtrag, optionale E10/E11 |
+| `…_antwort_senden_sperre.sql` | `antwort_senden` mit Beitragssperre vor der Prüfung (R03); kann unabhängig von Spec 06 früher eingespielt werden, weil der Fehler auch mit dem heutigen `moderieren` und der automatischen Ausblendung besteht |
 
 **Altbestand:** Für jeden Inhalt mit `versteckt = true` ohne aktive
 Ausblendung eine Zeile `quelle = altbestand`, `erstellt_am = null`, ohne
@@ -581,3 +598,81 @@ Client: Mock-Tests nach dem Muster von `community_korrekturen_test.py`
 | P4 | `AP…`-Codes gelten im Client als unklar | bestätigt | Liste und Texte (4.5), Fall 16 |
 | P5 | Aufheben einer Prüfanfrage ohne Korrekturkombination | bestätigt | Matrix 4.2, 8.2, Fall 17 |
 | P6 | Sperrstrategie deckt nicht alle Schreibwege | bestätigt | Tabelle der Schreibwege (3), `revoke insert` auf `antwort`, Fall 18 |
+
+## 12. Ergänzungen nach der Gegenprüfung von `89968be`
+
+### 12.1 R02 – Wiedererkennung nach dem Warten
+
+Bestätigt: Meine v2 hat ausdrücklich gesagt, Schritt 2 werde nach dem Warten
+nicht wiederholt, und sich auf den Eindeutigkeitsindex verlassen. Die
+Sichtbarkeitsprüfung oder die Bremse brechen aber vorher ab. Behoben in 4.1
+(Schritte 3–6).
+
+### 12.2 R03 – `antwort_senden` sperrt vor der Prüfung
+
+Bestätigt am Code (`20261014122131_senden_mit_endstatus.sql`): Der Beitrag
+wird ohne Sperre gelesen; meine Tabelle in Abschnitt 3 hat das falsch
+beschrieben. Neue Reihenfolge in der RPC:
+
+1. Sitzung, Profil, Paketsperre, Vorgangskennung (unverändert).
+2. **Wiederholung zuerst:** Antwort mit `id = p_vorgang` vorhanden und
+   eigene → ihre ID zurück. Das bleibt **vor** jeder Sperre und
+   Sichtbarkeitsprüfung, damit eine schon angelegte Antwort auch nach einer
+   späteren Ausblendung idempotent bestätigt wird.
+3. **Beitrag sperren und erst danach prüfen:**
+   `select * into b from public.beitrag where id = p_beitrag for share;`
+   In READ COMMITTED liefert eine Sperrabfrage nach dem Warten die zuletzt
+   festgeschriebene Fassung der Zeile; geprüft wird also der Stand nach einer
+   laufenden Moderation. `for share` statt `for update`, damit mehrere
+   Antworten auf denselben Beitrag sich nicht gegenseitig blockieren; es
+   kollidiert mit dem `for update` jeder Entscheidung und von
+   `beste_antwort_setzen`.
+4. Prüfung „vorhanden, nicht versteckt, Gruppe/Team“ wie bisher.
+5. Vorgangszeile `('antwort', 'angelegt')` mit `on conflict` wie bisher, dann
+   Insert der Antwort.
+
+**Sperrreihenfolge:** Beitrag → Vorgangszeile → Antwort. `vorgang_klaeren`
+sperrt keinen Beitrag und hält nur seine Vorgangszeile; Entscheidungen
+sperren Beitrag → Antwort → Ausblendung → Meldung/Anfrage und berühren keine
+Vorgangszeile einer Antwort. Es gibt also keinen Zyklus, keine Verklemmung.
+
+**Abläufe:**
+
+- *Moderation zuerst:* Entscheidung hält `for update`, setzt `versteckt`.
+  `antwort_senden` wartet in Schritt 3, liest danach `versteckt = true` →
+  „Du kannst diesen Beitrag gerade nicht beantworten.“, keine Vorgangszeile,
+  keine Antwort.
+- *Antwort zuerst:* `antwort_senden` hält `for share` bis zum Festschreiben.
+  Die Entscheidung wartet und sieht danach die neue Antwort; eine
+  Ausblendung des Beitrags verbirgt sie mit.
+- *Wiederholung nach späterer Ausblendung:* Schritt 2 findet die Antwort →
+  gleiche ID, kein Fehler, keine zweite Antwort.
+
+Zusätzlich bleibt der Vorschlag, den direkten Insert-Grant auf `antwort`
+zu entziehen (Abschnitt 5); er ersetzt diese Änderung nicht.
+
+### 12.3 Abnahmefälle
+
+19. **R02:** Inhalt mit zwei fremden Meldungen; dasselbe normale Konto ruft
+    `meldung_senden` in zwei Sitzungen gleichzeitig auf (erste hält die Sperre
+    per `pg_sleep` im Test-Wrapper). Ergebnis: genau eine neue Meldung, genau
+    eine automatische Ausblendung, ein Protokolleintrag `automatik`, beide
+    Aufrufe erhalten dieselbe `meldung_id`, keiner bekommt Titel/Text oder
+    `APZ01`. Dasselbe, wenn das Konto mit der ersten Meldung die Bremse (30/h)
+    erreicht: der zweite Aufruf erhält die vorhandene Meldung, nicht `APB01`.
+20. **R03, Moderation zuerst:** Sitzung A sperrt den Beitrag `for update` und
+    blendet aus, ohne festzuschreiben; Sitzung B ruft `antwort_senden` und
+    wartet; A schreibt fest → B abgelehnt, 0 neue Antworten, keine
+    Vorgangszeile `angelegt`.
+21. **R03, Antwort zuerst:** B hält `antwort_senden` offen, A entscheidet →
+    A wartet, danach Antwort vorhanden und mit ausgeblendet; keine
+    Verklemmung (Test mit `lock_timeout` 5 s, Erwartung: kein Timeout).
+22. **R03, Wiederholung:** Antwort angelegt, danach Beitrag ausgeblendet,
+    `antwort_senden` mit derselben Kennung → dieselbe ID, keine zweite Zeile.
+23. **R03 heute:** Derselbe Ablauf wie Fall 20 am unveränderten Stand liefert
+    eine Antwort unter dem ausgeblendeten Beitrag (Gegenprobe, ChatGPT lokal
+    bereits gezeigt; vor dem Einspielen erneut gegen eine Testdatenbank).
+
+Die Fälle 19–23 laufen mit zwei echten Datenbankverbindungen (kleines
+Python-Skript mit zwei Sitzungen gegen eine Supabase-Branch- oder lokale
+Testdatenbank), nicht als Mock; Ergebnisse getrennt von den Mock-Tests.

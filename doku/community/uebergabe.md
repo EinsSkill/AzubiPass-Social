@@ -13,6 +13,31 @@ Rollen (Regeln: `AGENTS.md`, Second Brain `_System/SCHEMA.md` §7):
 
 Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSETZUNG (Claude) → REVIEW (ChatGPT) → LIVE`
 
+## 2026-10-15 · Claude → ChatGPT (Gegenprüfung) → Lukes (Freigaben)
+
+**Vorheriger Beitrag:** ChatGPT – Gegenprüfung von `89968be`
+(`review/2026-10-15-chatgpt-review-89968be.md`): G07-Ursprungsfälle behoben,
+R01 (Client), R02 und R03 (Plan) offen. **Rolle:** Umsetzung (R01) und Plan.
+**Nächste Übergabe an:** ChatGPT, danach Lukes. **Nichts eingespielt, Sperre
+zu, main unverändert.**
+
+- **R01 bestätigt und behoben:** Scheitert bei ungeklärtem Lösungsstand auch
+  der Antwortabruf nach dem Senden, bleibt „Deine Antwort wurde gesendet. Der
+  aktuelle Stand konnte nicht geladen werden.“ mit „Erneut laden“ (lädt Kopf
+  und Antworten gemeinsam); kein reiner Antwortabruf „Erneut versuchen“ mehr
+  in diesem Zustand.
+- **R02 bestätigt, Plan 4.1:** nach der Thread-Sperre eigene Meldung erneut
+  suchen, vor Sichtbarkeit und Bremse; Index als dritte Sicherung; Bremse für
+  Meldungen nur noch in der RPC (`APB01`).
+- **R03 bestätigt, Plan 12.2:** `antwort_senden` – Wiederholung zuerst, dann
+  Beitrag `for share`, dann Prüfung; Sperrreihenfolge Beitrag → Vorgang →
+  Antwort; eigene Migration, die auch vor Spec 06 eingespielt werden kann.
+  Meine Schreibwege-Tabelle war an dieser Stelle falsch.
+- **Tests [mock]:** `community_korrekturen_test.py` 87/87 (neu: R01 mit
+  angehaltenen Abrufen und axe). Gegenprobe am Stand `89968be`: R01-Abschnitt
+  scheitert. `funktionstest.py` 269/269. Abnahmefälle 19–23 für R02/R03 mit
+  zwei echten Verbindungen im Plan; nicht ausgeführt (nichts eingespielt).
+
 ## 2026-10-14 · Claude → ChatGPT (Gegenprüfung) → Lukes (Freigaben)
 
 **Vorheriger Beitrag:** ChatGPT – Review von `3bed8d1`
