@@ -23,6 +23,51 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-19 · ChatGPT → Claude (Freigabe R06/R07 und R04-Abschluss)
+
+**Auftrag von Lukes:** Übergabe mit Freigabe an Claude im Anschluss an die Gegenprüfung.
+Quelle und Umfang sind in [entscheidungen.md](entscheidungen.md#freigabequelle-19102026) dokumentiert.
+**Vorheriger Beitrag:** ChatGPT – Review-/Übergabecommit `fc2761933daaa0593dc8c5b809871ef8f62000c1`.
+**Geprüfter Anwendungsstand:** `128914078930afb5a2ca1b87d97fb0c79b870d3e`.
+**Rolle jetzt:** Claude – begrenzter R04-Abschluss und Einspielung des geprüften R06/R07-Pakets.
+**Danach:** ChatGPT – gezielte R04-Gegenprüfung, Lukes – verbleibende Betriebsentscheidungen.
+Dieser neue Dokumentationscommit ist keine weitere Anwendungsprüfung.
+
+### Jetzt freigegeben ausführen
+
+1. **R04-Routenrest beheben:** [Review 1289140](review/2026-10-19-chatgpt-review-1289140.md)
+   samt Probe lesen. Dialoge und Entwürfe auch beim Verlassen der Community nach Heute,
+   Lernen, Üben oder Ich entfernen; Rückfragen ohne Folgeaktion schließen. Offen/sendend/unklar
+   sowie Zurück/Vorwärts prüfen, späte Ergebnisse still verwerfen. Regressionstest ergänzen,
+   regulär bauen und die beiden betroffenen Mock-Suiten ausführen. Separat nachvollziehbar committen.
+2. **R06/R07 ins Supabase-Projekt einspielen:** Die positive Datenbankgegenprüfung liegt vor
+   (58/58 Konkurrenztests, drei SQL-Suiten, Altstand-Gegenproben). Genau das Paket
+   [06-korrektur-r06-r07.md](06-korrektur-r06-r07.md) in dieser Reihenfolge:
+   - `20261019120000_entscheiden_wiederholung_1.sql`
+   - `20261019120005_entscheiden_wiederholung_2.sql`
+   - `20261019120100_meldebremse_konto.sql`
+   Vorher tatsächlichen Migrationsstand abgleichen; bereits vorhandene Migrationen nicht erneut
+   einspielen oder umschreiben. Danach `moderation_test.sql` live mit vorgesehenem Rollback
+   ausführen; Migrationsgleichheit, Invariante und weiterhin geschlossene Paketsperre belegen.
+   Dafür ist keine erneute pauschale Einspielfreigabe nötig.
+
+Die Clientkorrektur und die geprüften Datenbankmigrationen sind getrennte Schritte.
+R05–R07 nicht neu entwerfen. Fehlende Kontozugangsdaten hindern diese beiden freigegebenen
+Arbeiten nicht; echte Konto-/Storage-API-Tests nur mit sicher bereitgestellten Zugangsdaten
+ausführen, andernfalls weiterhin ausdrücklich als offen ausweisen.
+
+### Rückgabe und Grenzen
+
+Einen Abschlussbericht mit neuem Anwendungscommit, R04-Abnahme und getrennten Mock-/lokalen/
+Live-Belegen auf GitHub hinterlegen und oben übergeben. Restliste aus Claudes Abschlussbericht
+§3 aktualisieren: R06/R07 erst nach tatsächlicher Einspielung als erledigt markieren.
+E13, SMTP, Kontotests/Storage, Datenschutzangaben und ergänzte Texte bleiben offen, soweit
+Lukes sie nicht gesondert entschieden bzw. bereitgestellt hat.
+
+**Nicht freigegeben:** Merge nach `main`, Deployment, Paketöffnung, geratenes Teamkonto,
+`moderieren_entfernen.sql` oder andere zurückgestellte DROP-Bereinigungen.
+Die neue Freigabe bestätigt keine zusätzlichen Texte und keine fehlenden Datenschutzwerte.
+
 ## 2026-10-19 · ChatGPT → Claude / Lukes (Gegenprüfung 1289140)
 
 **Vorheriger Beitrag:** Claude – Abschluss R04–R07, `128914078930afb5a2ca1b87d97fb0c79b870d3e`.

@@ -52,6 +52,27 @@ Format: Datum · Entscheidung · betroffene Datei/Version.
 | 2026-10-15 | Vier offene Texte einschließlich Antwortvariante bestätigt; vollständiger Wortlaut im Abschnitt unten. | Review e3a7456 §5 |
 | 2026-10-15 | Übergaben und Reviews künftig direkt auf dem Arbeitsbranch über GitHub weitergeben; ChatGPT darf diese Dokumentation und ausdrücklich getroffene Nutzerentscheidungen im Auftrag committen und pushen. Merge, Deployment und Öffnen der Paketsperre bleiben gesondert freizugeben. | AGENTS.md; uebergabe.md |
 
+## Freigabequelle 19.10.2026
+
+Lukes im Chat, unmittelbar nach der positiven Gegenprüfung von R05–R07 und dem
+Hinweis auf den R04-Rest: „okay also jetzt übergabe mit freigqbe qn clqude?“
+
+Im Auftrag dokumentierter Umfang dieser Übergabe mit Freigabe:
+
+- **R06/R07 einspielen:** die drei unveränderten, lokal und unabhängig geprüften
+  Migrationen aus `06-korrektur-r06-r07.md` ins verbundene Supabase-Projekt einspielen
+  und die vorgesehenen Live-Prüfungen durchführen; Paketsperre geschlossen lassen.
+- **R04 abschließen:** den verbliebenen Dialog beim Verlassen der Community beheben,
+  gezielt testen und regulär bauen; Claude bleibt Umsetzungseigner.
+- **Übergabe über GitHub:** Auftrag, Belege und Ergebnis auf `community-zugang`
+  dokumentieren; anschließend gezielte Rückgabe an ChatGPT.
+
+Grundlage: [Review 1289140](review/2026-10-19-chatgpt-review-1289140.md),
+Dokumentationscommit `fc27619`, geprüfter Anwendungsstand `1289140`.
+Dies erweitert die Einspielfreigabe gezielt auf R06/R07. Keine Freigabe für
+Merge/Deployment, Paketöffnung, E13 ohne konkretes Konto, ergänzte Texte,
+fehlende Datenschutzangaben oder zurückgestellte DROP-Dateien.
+
 ## Freigabequelle 15.10.2026
 
 Von Lukes im Chat nach der Gegenprüfung von `e3a7456`: „Okay dann gebe ich
