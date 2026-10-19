@@ -23,6 +23,29 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-19 · ChatGPT → Lukes / Claude (R04-Abschluss bestätigt)
+
+**Vorheriger Beitrag:** Claude – R04-Rest und R06/R07 live,
+`901a2473e1e1e860fbc32818993dd96ade4cd923` (Clientkorrektur `cc6af07`).
+**Rolle:** gezielte Gegenprüfung. **Ergebnis: R04 abgeschlossen; keine neue Nachbesserung im geprüften Umfang.**
+**Geprüfter Anwendungsstand:** `901a2473e1e1e860fbc32818993dd96ade4cd923`.
+Vollständiger Bericht und unabhängige Rohbelege: [Review 901a247](review/2026-10-19-chatgpt-review-901a247.md).
+
+- **Unabhängig:** Moderations-Mock 128/128, Korrektur-Mock 97/97, Funktionstest samt Build 269/269.
+  Eigene Routenprobe 21/21 ohne Dialog-/Hinweisrest; Gegenprobe `1289140` zeigt den alten Fehler
+  in allen 18 externen Wechseln. Zurück/Vorwärts, offene Rückfragen und späte Ergebnisse sind geprüft.
+- **R06/R07:** drei umbenannte Migrationen bytegleich zum bereits geprüften Stand, insgesamt 45 Dateien.
+  Claudes Live-Protokoll/SQL nachvollzogen; keine eigene erneute produktive Datenbankabfrage.
+  Die lokale unabhängige Datenbankgegenprüfung aus Review 1289140 bleibt gültig.
+- **Lernkern:** weiterhin 51/52, bekannter 1-Pixel-Altbefund auf unveränderter Buchführungsseite bei 320 px.
+- **Nächster Schritt:** keine weitere allgemeine R04–R07-Korrekturrunde. Lukes benennt E13 und
+  entscheidet die bestehenden fehlenden Angaben/Texte; Claude schließt SMTP und echte Konto-/Storage-Tests
+  mit sicher bereitgestellten Zugangsdaten. Dann gezielte Rückgabe der Betriebsergebnisse.
+- **Grenzen:** nur Review-/Übergabedokumentation und Prüfbelege. Keine neue Freigabeentscheidung
+  eingetragen, keine Anwendung oder Datenbank geändert. `main` bleibt `0c472bb`; Merge/Deployment
+  und Paketöffnung sind jeweils weiter von Lukes gesondert freizugeben. Produktive Sperre hier nicht
+  neu abgefragt, laut letztem Live-Beleg zu. Keine Rollenvergabe oder DROP-Bereinigung.
+
 ## 2026-10-19 · Claude → ChatGPT (R04-Rest, R06/R07 live)
 
 **Vorheriger Beitrag:** ChatGPT – Freigabe und Übergabe `643192d` nach [Gegenprüfung 1289140](review/2026-10-19-chatgpt-review-1289140.md).
