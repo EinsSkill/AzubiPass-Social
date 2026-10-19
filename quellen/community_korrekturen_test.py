@@ -65,9 +65,10 @@ FAKE_JS = r"""
   const BEN = "00000000-0000-4000-a000-00000000b001";
   const jetzt = () => new Date().toISOString();
   const F = window.FAKE = {
-    db: { profil: [{ id: ICH.id, anzeigename: "Anna", lehrjahr: 2, ueber_mich: "", rolle: "azubi", erstellt_am: jetzt() }],
+    db: { profil: [{ id: ICH.id, anzeigename: "Anna", lehrjahr: 2, ueber_mich: "", rolle: "azubi", erstellt_am: jetzt() },
+                   { id: BEN, anzeigename: "Ben", lehrjahr: 2, ueber_mich: "", rolle: "azubi", erstellt_am: jetzt() }],
           beitrag: [], antwort: [], vorgang: {}, dateien: {} },
-    plan: {}, tabFehler: {}, tabHalten: {}, aufrufe: {}, entfernt: [], spaet: [], gehalten: {},
+    plan: {}, tabFehler: {}, tabHalten: {}, aufrufe: {}, konten: {}, entfernt: [], spaet: [], gehalten: {},
     spaetAusfuehren() { const s = F.spaet.splice(0); return s.map(f => f()); },
     freigeben(name) { const g = F.gehalten[name] || []; F.gehalten[name] = []; g.forEach(f => f()); return g.length; }
   };
@@ -131,6 +132,7 @@ FAKE_JS = r"""
 
   function rpc(name, args) {
     (F.aufrufe[name] = F.aufrufe[name] || []).push(JSON.parse(JSON.stringify(args || {})));
+    (F.konten[name] = F.konten[name] || []).push(aktuell ? aktuell.id : null);   // R04: welches Konto sendet
     const schritt = (F.plan[name] || []).shift();
     const eigen = F.logik && F.logik[name];          // Erweiterung aus anderen Tests (Spec 06)
     const logik = () => eigen ? eigen(args || {}) : LOGIK[name] ? LOGIK[name](args || {}) : ok(null);
@@ -168,13 +170,22 @@ FAKE_JS = r"""
     return q;
   }
 
-  const sitzung = { user: ICH, access_token: "x", expires_at: 9999999999 };
+  // Sitzung umschaltbar (R04): F.anmelden(null) = SIGNED_OUT, F.anmelden(F.BEN_KONTO) = SIGNED_IN
+  // als anderes Konto – über die registrierten Auth-Callbacks wie bei supabase-js.
+  let aktuell = ICH;
+  const hoerer = [];
+  const sitz = (u) => u ? { user: u, access_token: "x", expires_at: 9999999999 } : null;
+  F.anmelden = (u) => {
+    aktuell = u;
+    hoerer.forEach(cb => cb(u ? "SIGNED_IN" : "SIGNED_OUT", sitz(u)));
+  };
   const client = {
     auth: {
-      getSession: () => Promise.resolve({ data: { session: sitzung }, error: null }),
-      getUser: () => Promise.resolve({ data: { user: ICH }, error: null }),
+      getSession: () => Promise.resolve({ data: { session: sitz(aktuell) }, error: null }),
+      getUser: () => Promise.resolve(aktuell ? { data: { user: aktuell }, error: null }
+                                             : { data: { user: null }, error: { message: "Auth session missing!" } }),
       // Wie supabase-js: INITIAL_SESSION kommt vor dem ersten getSession-Ergebnis.
-      onAuthStateChange(cb) { cb("INITIAL_SESSION", sitzung); return { data: { subscription: { unsubscribe() {} } } }; },
+      onAuthStateChange(cb) { hoerer.push(cb); cb("INITIAL_SESSION", sitz(aktuell)); return { data: { subscription: { unsubscribe() {} } } }; },
       signOut: () => Promise.resolve({ error: null })
     },
     from: abfrage,
@@ -188,6 +199,7 @@ FAKE_JS = r"""
   };
   window.supabase = { createClient: () => client };
   F.ICH = ICH.id; F.BEN = BEN; F.ok = ok; F.logik = {};
+  F.BEN_KONTO = { id: BEN, email: "ben@test.invalid" };
   F.fehler = (code, m, status) => ({ data: null, error: { message: m, details: null, hint: null, code: code }, status: status || 400 });
 })();
 """

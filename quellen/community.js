@@ -253,8 +253,11 @@
 
   // fn(u, client) läuft für das gerade angemeldete Konto; ihr Ergebnis kommt
   // nur zurück, wenn sich das Konto in der Zwischenzeit nicht geändert hat.
-  function gebunden(fn) {
+  /* konto (optional, R04): Der Aufruf gehört zu genau diesem Konto. Ist
+     inzwischen ein anderes angemeldet, wird nichts gesendet. */
+  function gebunden(fn, konto) {
     return verbinden().then(function () { return ich(); }).then(function (u) {
+      if (konto && u.id !== konto) throw VERALTET();
       var g = generation;
       return Promise.resolve(fn(u, client)).then(function (r) {
         if (!aktuell(g, u.id)) throw VERALTET();
@@ -575,7 +578,7 @@
      oder wird gerade festgeschrieben) oder "verworfen" (kann nie mehr
      ankommen). Erst bei "verworfen" wird die Datei des Vorgangs entfernt; ein
      Fehler dabei lässt sie im eigenen privaten Ordner liegen. Wiederholbar. */
-  function vorgangKlaeren(vorgang, art, datei) {
+  function vorgangKlaeren(vorgang, art, datei, konto) {
     if (!vorgang || ["beitrag", "antwort", "entscheidung", "pruefanfrage"].indexOf(art) < 0)
       return Promise.reject(fehler("Vorgangskennung fehlt.", "eingabe"));
     var text = "Wir konnten nicht prüfen, ob der Vorgang abgeschlossen ist.";
@@ -587,7 +590,7 @@
         return c.storage.from(CFG.bucket).remove([pfad]).then(function () { return zustand; },
                                                              function () { return zustand; });
       }, function (f) { throw unklar(text, vorgang, f); });
-    });
+    }, konto);
   }
 
   /* e: { vorgang, art, titel, text, lernfeld, kapitel, anMentoren, datei (File),
@@ -896,11 +899,11 @@
     return gebunden(function (u, c) { return c.rpc(name, args || {}).then(auspacken); });
   }
 
-  function schreiben(name, args, vorgang, unklarText) {
+  function schreiben(name, args, vorgang, unklarText, konto) {
     return gebunden(function (u, c) {
       return c.rpc(name, args).then(function (r) { return rpcErgebnis(r, vorgang, unklarText); },
                                     function (f) { throw unklar(unklarText, vorgang, f); });
-    });
+    }, konto);
   }
 
   /* e: { art: "beitrag"|"antwort", ziel, grund, hinweis }. Ergebnis
@@ -914,7 +917,7 @@
     var h = String(e.hinweis || "").trim();
     if (laenge(h) > 500) return Promise.reject(fehler("Der Hinweis darf höchstens 500 Zeichen lang sein.", "eingabe"));
     return schreiben("meldung_senden", { p_art: e.art, p_ziel: e.ziel, p_grund: e.grund, p_hinweis: h }, null,
-      "Wir konnten nicht prüfen, ob deine Meldung gesendet wurde.").then(function (z) { return (z || [])[0] || null; });
+      "Wir konnten nicht prüfen, ob deine Meldung gesendet wurde.", e.konto).then(function (z) { return (z || [])[0] || null; });
   }
 
   function meldungStatus(art, ziel) {
@@ -952,19 +955,19 @@
       p_pruefanfrage: e.pruefanfrage || null, p_ausblendung: e.ausblendung || null, p_version: e.version,
       p_intern: e.intern || null, p_autor_text: e.autorText || null, p_kategorie: e.kategorie || null,
       p_korrektur: e.korrektur || null
-    }, e.id, "Wir konnten nicht prüfen, ob die Entscheidung gespeichert wurde.");
+    }, e.id, "Wir konnten nicht prüfen, ob die Entscheidung gespeichert wurde.", e.konto);
   }
 
   function entscheidungStatus(id) { return lesen("entscheidung_status", { p_id: id }); }
   function eigeneAusblendungen() { return lesen("eigene_ausblendungen"); }
   function eigenerInhalt(art, id) { return lesen("eigener_inhalt", { p_art: art, p_id: id }); }
 
-  function pruefanfrageSenden(id, ausblendung, begruendung) {
+  function pruefanfrageSenden(id, ausblendung, begruendung, konto) {
     var t = String(begruendung || "").trim();
     if (!t) return Promise.reject(fehler("Gib eine kurze Begründung ein.", "eingabe"));
     if (laenge(t) > 500) return Promise.reject(fehler("Die Begründung darf höchstens 500 Zeichen lang sein.", "eingabe"));
     return schreiben("pruefanfrage_senden", { p_id: id, p_ausblendung: ausblendung, p_begruendung: t }, id,
-      "Wir konnten nicht prüfen, ob deine Prüfanfrage gesendet wurde.");
+      "Wir konnten nicht prüfen, ob deine Prüfanfrage gesendet wurde.", konto);
   }
 
   function pruefanfrageStatus(ausblendung) { return lesen("pruefanfrage_status", { p_ausblendung: ausblendung }); }

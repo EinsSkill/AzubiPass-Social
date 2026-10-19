@@ -155,6 +155,15 @@ def main():
                     { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] })).violations.map(x => x.id + ':' + x.nodes.length)""", wurzel)
                 pruefe(not v, f"axe ohne WCAG-Verstöße: {name}", ", ".join(v))
 
+            def warte_bis(s, js, text, ms=4000):
+                # Begrenzte Wartezeit: Bleibt der Zustand aus, ist das ein Befund, kein Abbruch.
+                try:
+                    s.wait_for_function(js, timeout=ms)
+                    return True
+                except Exception:
+                    pruefe(False, text + " (Zustand nicht erreicht)")
+                    return False
+
             def dialog(s):
                 return s.locator("dialog[open]").last
 
@@ -314,7 +323,10 @@ def main():
             form.get_by_label("Vorlage").select_option(label="Spam")
             dialog(s).get_by_role("heading", name="Deine Begründung ersetzen?").wait_for()
             dialog(s).get_by_role("button", name="Abbrechen").click()
-            s.wait_for_function("!document.querySelector('dialog[open]')")
+            # Abgeschlossener Zustandswechsel: Der close-Handler entfernt den Dialog,
+            # stellt die Vorlage zurück und gibt erst danach den Fokus an die Auswahl.
+            s.wait_for_function("!document.querySelector('dialog') && "
+                                "document.activeElement === document.querySelector('form.cm-mod-form select')")
             pruefe(form.get_by_label("Vorlage").input_value() == "v1" and "zweiter Absatz" in
                    form.locator("textarea").first.input_value(),
                    "Abbrechen behält eigenen Text und bisherige Vorlage",
@@ -361,6 +373,206 @@ def main():
             pruefe(ev(s, "location.hash") == "#community/moderation/fall/beitrag/" + B1 and
                    s.locator("form.cm-mod-form h3").text_content() == "Inhalt ausblenden",
                    "Fallansicht öffnet direkt das Formular „Inhalt ausblenden“")
+            ctx.close()
+
+
+            # ------------------------------------------------------------ R04
+            HINWEIS = "Privater Hinweis von Anna"
+            spuren_js = f"""() => [...document.querySelectorAll('textarea, input')].some(x => (x.value || '').includes('{HINWEIS}'))
+                           || document.body.textContent.includes('{HINWEIS}')"""
+            for zustand in ("offen", "sendet", "unklar"):
+                for weg in ("abmelden", "wechsel"):
+                    print(f"R04 · Meldedialog {zustand} × {weg}")
+                    ctx, s = neue_seite("beitrag/" + B1)
+                    warte(s, "Skonto ist ein Preisnachlass")
+                    s.get_by_role("button", name="Antwort von Ben melden").click()
+                    d = dialog(s)
+                    d.get_by_label("Spam").check()
+                    d.locator("textarea").fill(HINWEIS)
+                    if zustand == "sendet":
+                        ev(s, "FAKE.plan.meldung_senden = ['halten']")
+                        d.get_by_role("button", name="Meldung senden").click()
+                        s.wait_for_function("(FAKE.gehalten.meldung_senden || []).length === 1")
+                    elif zustand == "unklar":
+                        ev(s, "FAKE.plan.meldung_senden = ['spaet']")
+                        d.get_by_role("button", name="Meldung senden").click()
+                        warte(s, "Wir konnten nicht prüfen, ob deine Meldung gesendet wurde.")
+                    vorher = len(ev(s, "FAKE.aufrufe.meldung_senden || []"))
+                    ev(s, "FAKE.anmelden(null)" if weg == "abmelden" else "FAKE.anmelden(FAKE.BEN_KONTO)")
+                    geschlossen = warte_bis(s, "!document.querySelector('dialog')", f"{zustand}/{weg}: Dialog geschlossen")
+                    pruefe(not ev(s, spuren_js), f"{zustand}/{weg}: Dialog und alter Hinweis entfernt")
+                    if not geschlossen:
+                        # Gegenprobe-Pfad: verbliebenen Dialog wie im Review erneut absenden.
+                        knopf = s.locator("dialog[open] button[type=submit]").last
+                        if knopf.count() and knopf.is_enabled():
+                            knopf.click()
+                            s.wait_for_timeout(300)
+                    # Späte Antwort des alten Versands darf nichts mehr anzeigen.
+                    if zustand == "sendet":
+                        ev(s, "FAKE.freigeben('meldung_senden')")
+                    if zustand == "unklar":
+                        ev(s, "FAKE.spaetAusfuehren()")
+                    s.wait_for_timeout(200)
+                    pruefe(s.get_by_text("Danke. Das Team prüft deine Meldung.").count() == 0,
+                           f"{zustand}/{weg}: kein verspäteter Erfolg im neuen Kontext")
+                    konten = ev(s, "FAKE.konten.meldung_senden || []")
+                    pruefe(len(konten) == vorher and all(k == ev(s, "FAKE.ICH") for k in konten),
+                           f"{zustand}/{weg}: kein Versand aus dem alten Entwurf als neues Konto", konten)
+                    if weg == "wechsel":
+                        # Neues Konto hat eine frische Ansicht; der alte Entwurf taucht nicht wieder auf.
+                        s.wait_for_function("document.querySelector('#community h1')")
+                        pruefe(not ev(s, spuren_js), f"{zustand}/{weg}: neues Konto sieht keinen alten Entwurf")
+                    ctx.close()
+
+            print("R04 · Datenschicht bindet den Schreibaufruf an das Konto")
+            ctx, s = neue_seite("beitrag/" + B1)
+            warte(s, "Skonto ist ein Preisnachlass")
+            ev(s, "FAKE.anmelden(FAKE.BEN_KONTO)")
+            r = ev(s, f"""async () => {{ try {{ await AP.community.meldungSenden({{ art: 'beitrag', ziel: '{B1}', grund: 'spam',
+                        hinweis: 'x', konto: FAKE.ICH }}); return 'gesendet'; }} catch (f) {{ return f.art; }} }}""")
+            pruefe(r == "veraltet" and not ev(s, "FAKE.aufrufe.meldung_senden"),
+                   "Aufruf für Anna, angemeldet ist Ben: nichts gesendet", r)
+            ctx.close()
+
+            print("R04 · Rückfragen im Moderationsfall bei Kontowechsel")
+            ctx, s = neue_seite("moderation/fall/beitrag/" + B1, team=True)
+            warte(s, "1 offene Meldung")
+            s.get_by_role("button", name="Inhalt ausblenden").first.click()
+            form = s.locator("form.cm-mod-form")
+            form.get_by_label("Vorlage").select_option(label="Spam")
+            form.locator("textarea").first.fill("Dein Inhalt wurde als Spam ausgeblendet. Eigener Zusatz.")
+            form.get_by_role("button", name="Inhalt ausblenden").click()
+            dialog(s).get_by_role("heading", name="Diesen Inhalt ausblenden?").wait_for()
+            ev(s, "FAKE.anmelden(FAKE.BEN_KONTO)")
+            warte_bis(s, "!document.querySelector('dialog')", "Bestätigungsfrage geschlossen")
+            pruefe(not ev(s, "FAKE.aufrufe.moderation_entscheiden") and s.locator("form.cm-mod-form").count() == 0,
+                   "Bestätigungsfrage verworfen, keine Entscheidung, kein altes Formular")
+            ctx.close()
+            ctx, s = neue_seite("moderation/fall/beitrag/" + B1, team=True)
+            warte(s, "1 offene Meldung")
+            s.get_by_role("button", name="Inhalt ausblenden").first.click()
+            form = s.locator("form.cm-mod-form")
+            form.get_by_label("Vorlage").select_option(label="Spam")
+            form.locator("textarea").first.fill("Mein eigener Text")
+            form.get_by_label("Vorlage").select_option(label="Persönliche Daten")
+            dialog(s).get_by_role("heading", name="Deine Begründung ersetzen?").wait_for()
+            ev(s, "FAKE.anmelden(null)")
+            warte_bis(s, "!document.querySelector('dialog')", "Vorlagen-Rückfrage geschlossen")
+            pruefe(s.get_by_text("Mein eigener Text").count() == 0 and s.locator("form.cm-mod-form").count() == 0,
+                   "Vorlagen-Rückfrage samt Formular nach Abmeldung entfernt")
+            ctx.close()
+
+            print("R04 · Offline während des Meldedialogs")
+            ctx, s = neue_seite("beitrag/" + B1)
+            warte(s, "Skonto ist ein Preisnachlass")
+            s.get_by_role("button", name="Antwort von Ben melden").click()
+            dialog(s).locator("textarea").fill(HINWEIS)
+            ctx.set_offline(True)
+            warte_bis(s, "!document.querySelector('dialog')", "Offline: Dialog geschlossen")
+            pruefe(not ev(s, spuren_js), "Offline: Dialog geschlossen, Hinweis nicht über der Offline-Ansicht")
+            ctx.set_offline(False)
+            ctx.close()
+
+            # ------------------------------------------------------------ R05
+            print("R05 · Ein Vorgang pro Fall: angehaltene Antwort")
+            ctx, s = neue_seite("moderation/fall/beitrag/" + B1, team=True)
+            warte(s, "1 offene Meldung")
+            # Obere Fallaktionen (über die Überschrift gefunden, damit die Gegenprobe am alten Stand greift).
+            oben = "(() => [...[...document.querySelectorAll('section.cm-mod-teil')].find(x => (x.querySelector('h3') || {}).textContent === 'Entscheidung').querySelectorAll('.cm-reihe button')])()"
+            s.get_by_role("button", name="Fachliche Korrektur ergänzen").first.click()
+            form = s.locator("form.cm-mod-form")
+            form.get_by_label("Interne Begründung").fill("Präzisierung")
+            form.get_by_label("Fachliche Korrektur").fill("Korrektur A")
+            ev(s, "FAKE.plan.moderation_entscheiden = ['halten']")
+            form.get_by_role("button", name="Fachliche Korrektur ergänzen").click()
+            s.wait_for_function("(FAKE.gehalten.moderation_entscheiden || []).length === 1")
+            gesperrt = ev(s, f"{oben}.map(b => b.disabled)")
+            pruefe(gesperrt and all(gesperrt), "Während des Versands sind alle oberen Aktionen gesperrt", gesperrt)
+            pruefe(s.get_by_text("Solange die Entscheidung gespeichert wird oder ihr Ergebnis unklar ist").is_visible(),
+                   "Hinweis erklärt die Sperre")
+            ev(s, f"""() => {oben}.forEach(b => {{ b.disabled = false; b.click(); }})""")
+            pruefe(s.locator("form.cm-mod-form").count() == 1 and
+                   s.locator("form.cm-mod-form textarea").last.input_value() == "Korrektur A",
+                   "Auch erzwungene Klicks ersetzen das laufende Formular nicht")
+            ev(s, "FAKE.freigeben('moderation_entscheiden')")
+            warte_bis(s, "location.hash === '#community/moderation'", "Erfolg nach Freigabe")
+            pruefe(len(ev(s, "FAKE.aufrufe.moderation_entscheiden")) == 1, "Genau ein Versand")
+            ctx.close()
+
+            print("R05 · Ein Vorgang pro Fall: unklares Ergebnis")
+            ctx, s = neue_seite("moderation/fall/beitrag/" + B1, team=True)
+            warte(s, "1 offene Meldung")
+            s.get_by_role("button", name="Fachliche Korrektur ergänzen").first.click()
+            form = s.locator("form.cm-mod-form")
+            form.get_by_label("Interne Begründung").fill("Präzisierung")
+            form.get_by_label("Fachliche Korrektur").fill("Korrektur A")
+            ev(s, "FAKE.plan.moderation_entscheiden = [{ code: '', status: 503 }]")
+            form.get_by_role("button", name="Fachliche Korrektur ergänzen").click()
+            warte(s, "Wir konnten nicht prüfen, ob die Entscheidung gespeichert wurde.")
+            namen = ev(s, f"{oben}.map(b => b.textContent)")
+            for n in namen:
+                ev(s, f"""() => {{ const b = {oben}.find(x => x.textContent === {n!r});
+                                  b.disabled = false; b.click(); }}""")
+            pruefe(s.locator("form.cm-mod-form").count() == 1 and
+                   s.get_by_role("button", name="Status prüfen").count() == 1 and
+                   s.locator("form.cm-mod-form textarea").last.input_value() == "Korrektur A",
+                   f"Alle {len(namen)} oberen Aktionen lassen Klärleiste und Versandstand stehen", namen)
+            s.get_by_role("button", name="Erneut senden").click()
+            warte(s, "Die Teamkorrektur wurde veröffentlicht.")
+            ids = [a["p_id"] for a in ev(s, "FAKE.aufrufe.moderation_entscheiden")]
+            pruefe(len(ids) == 2 and ids[0] == ids[1], "Erneut senden: dieselbe Kennung, kein zweiter Vorgang", ids)
+            ctx.close()
+
+            print("R05 · Nach bestätigtem „verworfen“ neue Kennung erlaubt")
+            ctx, s = neue_seite("moderation/fall/beitrag/" + B1, team=True)
+            warte(s, "1 offene Meldung")
+            s.get_by_role("button", name="Fachliche Korrektur ergänzen").first.click()
+            form = s.locator("form.cm-mod-form")
+            form.get_by_label("Interne Begründung").fill("Präzisierung")
+            form.get_by_label("Fachliche Korrektur").fill("Korrektur A")
+            ev(s, "FAKE.plan.moderation_entscheiden = [{ code: '', status: 503 }]")
+            form.get_by_role("button", name="Fachliche Korrektur ergänzen").click()
+            warte(s, "Wir konnten nicht prüfen, ob die Entscheidung gespeichert wurde.")
+            s.get_by_role("button", name="Eingaben ändern").click()
+            warte(s, "Die Entscheidung wurde nicht gespeichert. Du kannst deine Eingaben jetzt ändern.")
+            k = ev(s, "FAKE.aufrufe.vorgang_klaeren")
+            pruefe(k and k[0]["p_art"] == "entscheidung" and k[0]["p_vorgang"] == ev(s, "FAKE.aufrufe.moderation_entscheiden[0].p_id"),
+                   "Klärung mit der Kennung des offenen Vorgangs")
+            gesperrt = ev(s, f"{oben}.map(b => b.disabled)")
+            pruefe(not any(gesperrt), "Nach „verworfen“ sind die Aktionen wieder frei")
+            form.get_by_label("Fachliche Korrektur").fill("Korrektur B")
+            form.get_by_role("button", name="Fachliche Korrektur ergänzen").click()
+            warte(s, "Die Teamkorrektur wurde veröffentlicht.")
+            a = ev(s, "FAKE.aufrufe.moderation_entscheiden")
+            pruefe(a[0]["p_id"] != a[1]["p_id"] and a[1]["p_korrektur"] == "Korrektur B",
+                   "Geänderte Eingaben erst nach Verwerfen mit neuer Kennung")
+            ctx.close()
+
+            print("R05 · Ungesendete Eingaben gehen beim Aktionswechsel nicht verloren")
+            ctx, s = neue_seite("moderation/fall/beitrag/" + B1, team=True)
+            warte(s, "1 offene Meldung")
+            s.get_by_role("button", name="Fachliche Korrektur ergänzen").first.click()
+            s.locator("form.cm-mod-form").get_by_label("Fachliche Korrektur").fill("Ungesendeter Entwurf")
+            s.get_by_role("button", name="Inhalt ausblenden").first.click()
+            if warte_bis(s, "!!document.querySelector('dialog[open]')", "Aktionswechsel fragt vor dem Verwerfen"):
+                dialog(s).get_by_role("button", name="Weiter schreiben").click()
+                s.wait_for_function("!document.querySelector('dialog')")
+            pruefe(s.locator("form.cm-mod-form").get_by_label("Fachliche Korrektur").input_value() == "Ungesendeter Entwurf",
+                   "„Weiter schreiben“ behält den Entwurf")
+            s.locator("form.cm-mod-form").get_by_role("button", name="Abbrechen").click()
+            if warte_bis(s, "!!document.querySelector('dialog[open]')", "Abbrechen mit Eingaben fragt vor dem Verwerfen"):
+                dialog(s).get_by_role("button", name="Weiter schreiben").click()
+                s.wait_for_function("!document.querySelector('dialog')")
+            pruefe(s.locator("form.cm-mod-form").count() == 1, "Abbrechen mit Eingaben fragt vorher")
+            if s.locator("form.cm-mod-form").count() == 0:
+                s.get_by_role("button", name="Fachliche Korrektur ergänzen").first.click()
+                s.locator("form.cm-mod-form").get_by_label("Fachliche Korrektur").fill("Ungesendeter Entwurf")
+            s.get_by_role("button", name="Inhalt ausblenden").first.click()
+            if warte_bis(s, "!!document.querySelector('dialog[open]')", "Wechsel fragt vor dem Verwerfen"):
+                dialog(s).get_by_role("button", name="Eingaben verwerfen").click()
+            s.wait_for_function("document.querySelector('form.cm-mod-form h3')?.textContent === 'Inhalt ausblenden'")
+            pruefe(True, "Nach „Eingaben verwerfen“ öffnet die gewählte Aktion")
+            axe(s, "R05 Fall mit Formular")
             ctx.close()
 
             browser.close()

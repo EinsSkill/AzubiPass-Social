@@ -113,10 +113,13 @@
     d.appendChild(innen);
     d.addEventListener("close", function () {
       d.remove();
+      // R04: Beim Kontowechsel/Ansichtswechsel verworfen – keine Folgeaktion.
+      if (verworfen()) return;
       if (entschieden) return beiJa();
       if (beiNein) beiNein();
       if (ausloeser && document.contains(ausloeser)) ausloeser.focus();
     });
+    var verworfen = AP.communityDialoge.merken(d);
     document.body.appendChild(d);
     if (d.showModal) d.showModal(); else d.setAttribute("open", "");
     h.focus();
@@ -204,6 +207,7 @@
     d.addEventListener("cancel", function (ev) { ev.preventDefault(); abbrechen(); });
     d.addEventListener("close", function () {
       d.remove();
+      if (verworfen()) return;
       if (ergebnis && o.fertig) o.fertig(ergebnis);
       else if (o.ausloeser && document.contains(o.ausloeser)) o.ausloeser.focus();
     });
@@ -244,6 +248,8 @@
     }
 
     function abschicken() {
+      // R04: Vor JEDEM Versand (auch „Erneut senden“) Konto und Ansicht prüfen.
+      if (!ctx.gilt()) return zu();
       if (ctx.offline()) {
         return darstellen("Du bist offline. Für die Community brauchst du Internet. Deine Eingaben bleiben in diesem geöffneten Tab.", true);
       }
@@ -251,7 +257,8 @@
       e.zustand = "sendet";
       e.versuche++;
       darstellen();
-      AP.community.meldungSenden({ art: o.art, ziel: o.ziel, grund: e.versand.grund, hinweis: e.versand.hinweis })
+      AP.community.meldungSenden({ art: o.art, ziel: o.ziel, grund: e.versand.grund, hinweis: e.versand.hinweis,
+                                   konto: ctx.konto })
         .then(function (m) {
           if (!ctx.gilt()) return zu();
           e.zustand = null;
@@ -285,6 +292,7 @@
 
     function statusPruefen() {
       if (e.zustand !== "unklar") return;
+      if (!ctx.gilt()) return zu();
       e.zustand = "pruefen";
       darstellen("Status wird geprüft …", false, true);
       AP.community.meldungStatus(o.art, o.ziel).then(function (m) {
@@ -318,6 +326,13 @@
       abschicken();
     });
 
+    // R04: Dialog und Entwurf gehören zu Konto und Ansicht. Wechselt eines
+    // davon, wird beides geleert und der Dialog ohne Folgeaktion entfernt.
+    var verworfen = AP.communityDialoge.merken(d, function () {
+      e = { grund: "", hinweis: "", zustand: "weg", versand: null, versuche: 0 };
+      form.reset();
+      hinweis.eingabe.value = "";
+    });
     document.body.appendChild(d);
     if (d.showModal) d.showModal(); else d.setAttribute("open", "");
     h.focus();
@@ -651,17 +666,37 @@
       }
 
       var formPlatz = el("div", "cm-mod-entscheidung");
-      var aktionen = el("section", "cm-mod-teil");
+      var aktionen = el("section", "cm-mod-teil cm-mod-aktionen");
       aktionen.appendChild(el("h3", null, "Entscheidung"));
       var reihe = el("div", "cm-reihe");
+      /* R05: Pro Fall gibt es genau einen Vorgang. Solange er läuft oder sein
+         Ausgang offen ist, sind die anderen Aktionen gesperrt – Versandstand
+         und Kennung bleiben, bis „Status prüfen“ den Erfolg bestätigt oder
+         „Eingaben ändern“ den Vorgang endgültig verworfen hat. Ungesendete
+         Eingaben gehen beim Wechsel nicht still verloren. */
+      var offen = null, knoepfe = [];
+      var sperrHinweis = el("p", "cm-hilfe",
+        "Solange die Entscheidung gespeichert wird oder ihr Ergebnis unklar ist, kannst du keine andere Aktion wählen.");
+      sperrHinweis.hidden = true;
+      function zustand(gebunden) {
+        knoepfe.forEach(function (b) { b.disabled = gebunden; });
+        sperrHinweis.hidden = !gebunden;
+      }
       aktionenFuer(f).forEach(function (x) {
         var k = T().knopf(x[1], x[2] ? "kn-haupt cm-haupt" : "kn-neben cm-neben", function () {
-          formular(formPlatz, ctx, f, x[0], x[3], k, laden);
+          if (offen && offen.gebunden()) return;
+          function oeffnen() {
+            offen = formular(formPlatz, ctx, f, x[0], x[3], k, laden, zustand, function () { offen = null; });
+          }
+          if (offen && offen.hatEingaben()) return T().verwerfenFragen(k, oeffnen);
+          oeffnen();
         });
+        knoepfe.push(k);
         reihe.appendChild(k);
         if (vor && vor.aktion === x[0] && !vor.offen) { vor.offen = true; setTimeout(function () { k.click(); }, 0); }
       });
       aktionen.appendChild(reihe);
+      aktionen.appendChild(sperrHinweis);
       box.appendChild(aktionen);
       box.appendChild(formPlatz);
     }
@@ -735,7 +770,13 @@
     });
   }
 
-  function formular(platz, ctx, f, aktion, mitKorrektur, ausloeser, neuLaden) {
+  function gebundenZustand(z) { return z === "sendet" || z === "unklar" || z === "pruefen" || z === "klaeren"; }
+
+  /* Gibt { gebunden(), hatEingaben() } zurück. beiZustand(gebunden) meldet
+     jeden Zustandswechsel an die Fallansicht (R05), beiZu() das Schließen. */
+  function formular(platz, ctx, f, aktion, mitKorrektur, ausloeser, neuLaden, beiZustand, beiZu) {
+    beiZustand = beiZustand || function () {};
+    beiZu = beiZu || function () {};
     platz.innerHTML = "";
     var braucheAutor = aktion === "ausblenden" || aktion === "erklaerung_aendern" ||
       aktion === "anfrage_aufheben" || aktion === "anfrage_bestaetigen" ||
@@ -746,6 +787,7 @@
     var mitKorr = korrekturPflicht || !!mitKorrektur;
     var e = { id: null, zustand: null, versand: null, kategorie: "", autor: "", intern: "", korrektur: "", bearbeitet: false };
     if (aktion === "erklaerung_aendern" && f.ausblendung) e.autor = f.ausblendung.begruendung_autor || "";
+    var startAutor = e.autor;
 
     var form = el("form", "cm-form cm-mod-form");
     form.noValidate = true;
@@ -848,11 +890,19 @@
     var senden = el("button", "kn-haupt cm-haupt", titel);
     senden.type = "submit";
     var abbr = T().knopf("Abbrechen", "kn-neben cm-neben", function () {
-      if (e.zustand === "sendet" || e.zustand === "pruefen" || e.zustand === "klaeren") return;
-      if (e.zustand === "unklar") return;      // erst klären
-      platz.innerHTML = "";
-      if (ausloeser && document.contains(ausloeser)) ausloeser.focus();
+      if (gebundenZustand(e.zustand)) return;      // erst klären
+      function zu() {
+        platz.innerHTML = "";
+        beiZustand(false);
+        beiZu();
+        if (ausloeser && document.contains(ausloeser)) ausloeser.focus();
+      }
+      if (hatEingaben()) return T().verwerfenFragen(abbr, zu);
+      zu();
     });
+    function hatEingaben() {
+      return !!((e.autor !== startAutor && e.autor.trim()) || e.intern.trim() || e.korrektur.trim());
+    }
     reihe.appendChild(senden);
     reihe.appendChild(abbr);
     form.appendChild(reihe);
@@ -860,6 +910,7 @@
     h.focus();
 
     function darstellen(text, fehler, klaeren) {
+      beiZustand(gebundenZustand(e.zustand));
       if (e.zustand === "sendet") ctx.sperren(senden, "Entscheidung wird gespeichert …");
       else { ctx.freigeben(senden); senden.disabled = !!e.zustand; }
       abbr.disabled = !!e.zustand;
@@ -874,7 +925,7 @@
         var er = T().knopf("Erneut senden", "kn-neben cm-neben", function () { if (e.zustand === "unklar") abschicken(); });
         var ae = T().knopf("Eingaben ändern", "kn-neben cm-neben", eingabenAendern);
         [sp, er, ae].forEach(function (x) { k.appendChild(x); if (e.zustand !== "unklar") x.disabled = true; });
-        status.appendChild(el("p", "cm-hilfe", "„Erneut senden“ speichert dieselbe Entscheidung noch einmal – doppelt gespeichert wird dabei nichts. " +
+        status.appendChild(el("p", "cm-hilfe", "Mit ‚Erneut senden‘ wiederholen wir denselben Vorgang. Eine zweite Entscheidung wird dabei nicht angelegt. " +
           "Mit ‚Eingaben ändern‘ prüfen wir den offenen Versuch. Wurde noch nichts gespeichert, wird er endgültig verworfen."));
         status.appendChild(k);
       }
@@ -907,9 +958,10 @@
     }
 
     function erfolg(z) {
+      // R04: Ein spätes Ergebnis darf keine neue Ansicht oder ein anderes Konto erreichen.
+      if (!ctx.gilt()) return;
       e.zustand = null;
       nachEntscheidung = { konto: ctx.konto, text: ERFOLG[aktion] || "Die Entscheidung wurde gespeichert." };
-      if (!ctx.gilt()) return;
       location.hash = "#community/moderation";
     }
 
@@ -939,14 +991,15 @@
     }
 
     function abschicken() {
+      if (!ctx.gilt()) return;
       if (ctx.offline()) return ctx.offlineZeigen();
       e.zustand = "sendet";
       darstellen();
-      AP.community.entscheiden(e.versand).then(erfolg, fehlgeschlagen);
+      AP.community.entscheiden(Object.assign({ konto: ctx.konto }, e.versand)).then(erfolg, fehlgeschlagen);
     }
 
     function statusPruefen() {
-      if (e.zustand !== "unklar") return;
+      if (e.zustand !== "unklar" || !ctx.gilt()) return;
       e.zustand = "pruefen";
       darstellen("Status wird geprüft …", false, true);
       AP.community.entscheidungStatus(e.id).then(function (z) {
@@ -963,11 +1016,11 @@
     }
 
     function eingabenAendern() {
-      if (e.zustand !== "unklar") return;
+      if (e.zustand !== "unklar" || !ctx.gilt()) return;
       if (ctx.offline()) return ctx.offlineZeigen();
       e.zustand = "klaeren";
       darstellen("Wird geklärt …", false, true);
-      AP.community.vorgangKlaeren(e.id, "entscheidung").then(function (z) {
+      AP.community.vorgangKlaeren(e.id, "entscheidung", null, ctx.konto).then(function (z) {
         if (!ctx.gilt()) return;
         if (z === "angelegt") return erfolg();
         e.zustand = null; e.id = null; e.versand = null;
@@ -985,6 +1038,7 @@
       if (e.zustand) return;
       if (!pruefe()) return;
       function los() {
+        if (!ctx.gilt() || e.zustand) return;
         if (!e.id) e.id = AP.community.neueVorgangskennung();
         e.versand = Object.freeze({
           id: e.id, art: f.art, ziel: f.ziel, aktion: aktion,
@@ -1003,6 +1057,7 @@
       }
       los();
     });
+    return { gebunden: function () { return gebundenZustand(e.zustand); }, hatEingaben: hatEingaben };
   }
 
   /* ================================================== Meine Meldungen (D12) */
@@ -1208,7 +1263,7 @@
           var er = T().knopf("Erneut senden", "kn-neben cm-neben", function () { if (entwurf.zustand === "unklar") abschicken(); });
           var ae = T().knopf("Eingaben ändern", "kn-neben cm-neben", eingabenAendern);
           [sp, er, ae].forEach(function (x) { k.appendChild(x); if (entwurf.zustand !== "unklar") x.disabled = true; });
-          status.appendChild(el("p", "cm-hilfe", "„Erneut senden“ schickt dieselbe Anfrage noch einmal – doppelt gesendet wird dabei nichts. " +
+          status.appendChild(el("p", "cm-hilfe", "Mit ‚Erneut senden‘ wiederholen wir dieselbe Anfrage. Eine zweite Prüfanfrage wird dabei nicht angelegt. " +
             "Mit ‚Eingaben ändern‘ prüfen wir den offenen Versuch. Wurde noch nichts gesendet, wird er endgültig verworfen."));
           status.appendChild(k);
         }
@@ -1235,13 +1290,14 @@
         darstellen("Deine Prüfanfrage wurde nicht gesendet. Deine Eingaben sind noch da.", true);
       }
       function abschicken() {
+        if (!ctx.gilt()) return;
         if (ctx.offline()) return ctx.offlineZeigen();
         entwurf.zustand = "sendet";
         darstellen();
-        AP.community.pruefanfrageSenden(entwurf.versand.id, a.id, entwurf.versand.text).then(gesendet, fehlgeschlagen);
+        AP.community.pruefanfrageSenden(entwurf.versand.id, a.id, entwurf.versand.text, ctx.konto).then(gesendet, fehlgeschlagen);
       }
       function statusPruefen() {
-        if (entwurf.zustand !== "unklar") return;
+        if (entwurf.zustand !== "unklar" || !ctx.gilt()) return;
         entwurf.zustand = "pruefen";
         darstellen("Status wird geprüft …", false, true);
         AP.community.pruefanfrageStatus(a.id).then(function (q) {
@@ -1257,11 +1313,11 @@
         });
       }
       function eingabenAendern() {
-        if (entwurf.zustand !== "unklar") return;
+        if (entwurf.zustand !== "unklar" || !ctx.gilt()) return;
         if (ctx.offline()) return ctx.offlineZeigen();
         entwurf.zustand = "klaeren";
         darstellen("Wird geklärt …", false, true);
-        AP.community.vorgangKlaeren(entwurf.id, "pruefanfrage").then(function (z) {
+        AP.community.vorgangKlaeren(entwurf.id, "pruefanfrage", null, ctx.konto).then(function (z) {
           if (!ctx.gilt()) return;
           if (z === "angelegt") return gesendet();
           entwurf.zustand = null; entwurf.id = null; entwurf.versand = null;

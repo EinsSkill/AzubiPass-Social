@@ -62,11 +62,38 @@
      nichts mehr anzeigen und nichts mehr ändern. */
   var lauf = 0;
   function neuerLauf() { return ++lauf; }
+
+  /* R04: Dialoge hängen an document.body, also außerhalb des Schirms. Sie
+     gehören trotzdem zu Konto und Ansicht: Bei Abmeldung, Kontowechsel,
+     Offline oder jedem Ansichtswechsel werden alle geschlossen, entfernt und
+     ihr Inhalt geleert – ohne dass ihre Folgeaktionen (Senden, Verwerfen,
+     Bestätigen) noch laufen. merken() liefert die Prüfung „verworfen?“ für den
+     eigenen close-Handler. */
+  var dialoge = [];
+  function dialogMerken(d, beiVerwerfen) {
+    var eintrag = { d: d, weg: false, bei: beiVerwerfen };
+    dialoge.push(eintrag);
+    d.addEventListener("close", function () {
+      var i = dialoge.indexOf(eintrag);
+      if (i >= 0) dialoge.splice(i, 1);
+    });
+    return function () { return eintrag.weg; };
+  }
+  function dialogeSchliessen() {
+    dialoge.splice(0).forEach(function (x) {
+      x.weg = true;
+      try { if (x.bei) x.bei(); } catch (e) {}
+      try { if (x.d.open) x.d.close(); } catch (e) {}
+      x.d.remove();
+    });
+  }
+  AP.communityDialoge = { merken: dialogMerken, schliessen: dialogeSchliessen };
   function gilt(n) { return n === lauf; }
 
   /* Alles vergessen, was zu einem Konto gehört: Profil, Formularentwurf samt
      Bestätigungen, Adresse, gemerktes Ziel. Der Lernstand ist nicht betroffen. */
   function vergessen() {
+    dialogeSchliessen();
     z.profil = null;
     z.nutzer = null;
     z.mail = "";
@@ -382,6 +409,7 @@
 
   function zeichnen(fokus) {
     if (!schirm) return;
+    dialogeSchliessen();             // R04: neue Ansicht – keine alten Dialoge darüber
     feldNr = 0;
     schirm.innerHTML = "";
     var rahmen = el("div", "cm-rahmen");
@@ -963,8 +991,10 @@
     d.appendChild(innen);
     d.addEventListener("close", function () {
       d.remove();
+      if (verworfen()) return;
       if (ausloeser && document.contains(ausloeser)) ausloeser.focus();
     });
+    var verworfen = dialogMerken(d);
     // Klick auf den abgedunkelten Rand schließt auch.
     d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
     document.body.appendChild(d);

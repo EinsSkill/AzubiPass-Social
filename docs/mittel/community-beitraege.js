@@ -1155,9 +1155,11 @@
     d.appendChild(innen);
     d.addEventListener("close", function () {
       d.remove();
+      if (verworfen()) return;        // R04: mit Konto/Ansicht verworfen
       if (entschieden) verwerfen();
       else if (ausloeser && document.contains(ausloeser)) ausloeser.focus();
     });
+    var verworfen = AP.communityDialoge.merken(d);
     document.body.appendChild(d);
     if (d.showModal) d.showModal(); else d.setAttribute("open", "");
     weiter.focus();
