@@ -5,6 +5,33 @@ im Chat ausdrücklich erteilte Freigabe im Auftrag dokumentieren und muss die
 Quelle und den Umfang nennen. Claude setzt nur um, was hier freigegeben ist.
 Format: Datum · Entscheidung · betroffene Datei/Version.
 
+## E13 · konkretes Teamkonto benannt · 19.10.2026
+
+**Quelle:** Lukes hat im Chat am 19.10.2026 direkt auf die Frage nach seinem
+Community-Konto dessen konkrete E-Mail-Adresse genannt. Die bisher fehlende
+Kontowahl ist damit entschieden. Die eigentliche Rollenvergabe ist noch auszuführen.
+
+**Kontokennung für Claude:** SHA-256 der kleingeschriebenen, außen getrimmten
+E-Mail-Adresse (UTF-8):
+
+`37c238031ab7b79f296907a89b878625cb97a5fda778d70c1a196110873679f4`
+
+Das Repository ist öffentlich; die vollständige private Mailadresse wird hier deshalb
+nicht veröffentlicht. Claude gleicht diese Kennung mit den vorhandenen Konten in
+`auth.users` ab. Nur bei genau einem Treffer und einem zugehörigen Community-Profil
+dieses konkrete Konto verwenden. Keine andere Adresse, kein Demo-Teamkonto und kein
+neu geratenes Konto als Ersatz einsetzen. Fehlt Konto oder Profil, den fehlenden
+Einrichtungsschritt konkret zurückmelden.
+
+**Ausführen:** Für dieses verifizierte Konto `public.profil.rolle = 'team'`
+setzen und es bei weiter geschlossener Paketsperre in `public.beitraege_tester`
+aufnehmen. Bestehende Rechte/Einträge erhalten, idempotent arbeiten und anschließend
+Kontozuordnung, Rolle und Testerfreigabe lesend prüfen. E13 erst danach als umgesetzt
+ausweisen. Keine Zugangsdaten oder vollständigen Kontolisten ins Repository schreiben.
+
+Diese Kontowahl bestätigt weder weitere Texte/Datenschutzwerte noch SMTP-Versand,
+Merge/Deployment oder Paketöffnung. Die übrige Betriebsrestliste bleibt bestehen.
+
 | Datum | Entscheidung | Bezug |
 |---|---|---|
 | 2026-10-08 | Eigenes Repo AzubiPass-Social, Original bleibt unverändert | – |
@@ -86,7 +113,7 @@ mit den dort dokumentierten Empfehlungen und vier Texten. Die Freigabe
 umfasst G06, R03 und Spec 06 wie oben festgehalten; keine eigenständigen
 zusätzlichen Produktentscheidungen durch ChatGPT.
 
-**E13 bleibt offen:** Keine konkrete Konto-ID oder Mailadresse genannt.
+**Historischer Stand am 15.10.2026 – inzwischen durch E13 oben ergänzt:** Damals war keine konkrete Konto-ID oder Mailadresse genannt.
 Keine Rolle oder Testerfreigabe für ein geratenes Konto setzen; `test-neu1`
 nicht automatisch übernehmen. Die übrige freigegebene Arbeit darf laufen.
 

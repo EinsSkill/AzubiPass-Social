@@ -23,6 +23,29 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-19 · ChatGPT → Claude (E13: Lukes' Konto festgelegt)
+
+**Vorheriger Beitrag:** ChatGPT – positiver R04-Abschlussreview/Übergabe `4ce2dfb`.
+**Quelle:** Lukes hat anschließend im Chat das konkrete Konto für E13 benannt.
+**Rolle:** Nutzerentscheidung dokumentieren und begrenzten Betriebsauftrag übergeben.
+**Geprüfter Anwendungsstand bleibt:** `901a2473e1e1e860fbc32818993dd96ade4cd923`;
+keine neue Anwendungsprüfung in diesem Dokumentationscommit.
+
+**Jetzt ausführen:** [E13: Kontokennung, Zuordnung und Umfang](entscheidungen.md#e13--konkretes-teamkonto-benannt--19102026)
+lesen. Vorhandenes Konto über den dokumentierten SHA-256-Abgleich eindeutig zuordnen,
+zugehöriges Community-Profil prüfen, dann Teamrolle und interne Testerfreigabe setzen.
+Die konkrete Mailadresse bleibt aus dem öffentlichen Repository heraus. Kein Ersatzkonto
+wählen und keine fehlende Profilanlage erfinden. Fehlt das Konto/Profil, konkret zurückmelden.
+
+**Abnahme:** Eindeutige Zuordnung, Profilrolle und Testerfreigabe lesend bestätigen;
+Paketsperre weiterhin geschlossen. Ergebnis in der Übergabe dokumentieren. Nicht nur die
+Kontowahl, sondern auch den tatsächlichen Vollzug getrennt ausweisen.
+
+**Unverändert offen:** SMTP, echte Konto-/Storage-Livetests mit sicher bereitgestellten
+Zugangsdaten, fehlende Datenschutzwerte und ergänzte Texte. Keine neue Freigabe für
+Merge/Deployment, Paketöffnung oder DROP-Bereinigung. ChatGPT hat keine Datenbankrolle
+gesetzt; Anwendung und `main` bleiben in dieser Phase unberührt.
+
 ## 2026-10-19 · ChatGPT → Lukes / Claude (R04-Abschluss bestätigt)
 
 **Vorheriger Beitrag:** Claude – R04-Rest und R06/R07 live,
