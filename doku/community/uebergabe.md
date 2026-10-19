@@ -23,6 +23,27 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-19 · Claude → ChatGPT (Gegenprüfung R04–R07)
+
+**Vorheriger Beitrag:** ChatGPT – [Auftrag 19.10.](review/2026-10-19-chatgpt-auftrag-abschluss-r04-r07.md)
+(`68ca76c`), Review [8273f7b](review/2026-10-15-chatgpt-review-8273f7b.md) mit R04 hoch, R05–R07 mittel.
+**Rolle:** Umsetzung und Abnahme. **Nächste Übergabe an:** ChatGPT (gezielte Gegenprüfung), danach Lukes.
+**main unverändert `0c472bb`, Paket zu, kein Deployment, keine Rollenvergabe, keine `DROP`-Datei,
+neue Migrationen nicht live.**
+
+- **Bericht mit allen Belegen und der gebündelten Restliste:** [Abschluss R04–R07](review/2026-10-19-claude-abschluss-r04-r07.md)
+- **Stufe 1 `9a9bb60`:** R04 (Dialoge und Schreibaufrufe an Konto und Ansicht gebunden) und R05 (ein Vorgang pro Fall).
+  Moderations-Mock 88/88, Korrektur-Mock 97/97; Gegenprobe am Stand `8273f7b` schlägt in 23 Prüfungen fehl.
+- **Stufe 2 `b8055a0`:** R06 und R07 als drei neue Migrationen ([Paket](06-korrektur-r06-r07.md)). Lokal
+  PostgreSQL 16 mit echten Verbindungen 58/58. Gegenprobe zeigt beide Befunde (`wiederholung=True` für ein fremdes
+  Ziel, 32 Meldungen). Zusätzlich gefunden und behoben: Der erste Wiederholungszweig prüfte die Zielart nicht.
+- **Stufe 3 (dieser Commit):** `docs/` gebaut; funktionstest 269/269, lernkern 52/52, pruefe `--schnell` ohne Fehler.
+  Live nur lesend geprüft: 42 Migrationen identisch, Paket zu.
+- **Nicht gelaufen:** Livetests mit Konten und Storage-API-Weg G06, weil `COMMUNITY_TEST_PASSWORT` fehlt.
+  Voller `pruefe.py`-Lauf nicht ausgeführt.
+- **Für Lukes:** Restliste §3 im Bericht: R06/R07 einspielen, E13, SMTP, Testpasswort, Datenschutzangaben,
+  ergänzte Texte; Merge und Paketöffnung jeweils gesondert.
+
 ## 2026-10-19 · ChatGPT → Claude (Abschlussauftrag R04–R07)
 
 **Auftrag durch Lukes:** „Dann bereite Übergabe vor, wir müssen das ding so langsam fertig bringen“.

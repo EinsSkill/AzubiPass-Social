@@ -1,0 +1,113 @@
+G03 · unklarer Ausgang, Beitrag
+  OK   [mock] Titel ist im Zustand „unklar“ gesperrt
+  OK   [mock] Veröffentlichen gesperrt
+  OK   [mock] Leerer Status behauptet keinen Fehlschlag
+  OK   [mock] Nach leerem Status weiter gesperrt
+  OK   [mock] axe ohne WCAG-Verstöße: C06 unklar mit Klärungsaktionen
+  OK   [mock] Wiederholung sendet denselben Stand mit derselben Kennung
+  OK   [mock] Verspätetes Original + Wiederholung = genau ein Beitrag
+G03 · Eingaben ändern nach unklarem Ausgang
+  OK   [mock] Nach „verworfen“ wieder bearbeitbar
+  OK   [mock] Verspätetes Original nach „verworfen“ wird abgelehnt
+  OK   [mock] Kein Beitrag aus dem verworfenen Vorgang
+  OK   [mock] Geänderte Eingaben bekommen erst nach Klärung eine neue Kennung
+  OK   [mock] Genau ein Beitrag mit dem geänderten Titel
+G03 · HTTP 503 und Datei
+  OK   [mock] 503-ausgefuehrt: Datei nach 503 nicht entfernt
+  OK   [mock] 503-ausgefuehrt: Dateiauswahl gesperrt
+  OK   [mock] 503 nach Festschreiben: Status findet den Beitrag, Datei bleibt
+  OK   [mock] 503: Datei nach 503 nicht entfernt
+  OK   [mock] 503: Dateiauswahl gesperrt
+  OK   [mock] 503 ohne Ausführung: Datei erst nach „verworfen“ entfernt
+G03 · sichere Ablehnung (Spam-Bremse)
+  OK   [mock] Nach sicherer Ablehnung bearbeitbar
+  OK   [mock] Unveränderte Wiederholung: dieselbe Kennung, keine Klärung nötig
+  OK   [mock] Geändert nach Ablehnung: alter Vorgang geklärt, dann neue Kennung
+G04 · Eingaben während des Sendens
+  OK   [mock] Alle Eingaben während der Freigabeprüfung gesperrt
+  OK   [mock] Sperrhinweis sichtbar (bestätigter Text 1)
+  OK   [mock] Rückweg bleibt bedienbar
+  OK   [mock] axe ohne WCAG-Verstöße: C06 gesperrt während des Sendens
+  OK   [mock] Gesendet wird der validierte Stand  Ursprünglicher Text
+G03/G04 · Antworten
+  OK   [mock] Antwortfeld während des Sendens gesperrt
+  OK   [mock] Gesendet wurde „Antwort A“
+  OK   [mock] Antwort nach leerem Status weiter gesperrt
+  OK   [mock] axe ohne WCAG-Verstöße: Antwort unklar
+  OK   [mock] Antwort: Wiederholung mit derselben Kennung und demselben Text
+  OK   [mock] Antwort: genau eine Antwort
+G05 · beste Antwort
+  OK   [mock] Markieren sendet p_beste = true
+  OK   [mock] Verlorene Bestätigung: kein falscher Fehler, Stand neu geladen
+  OK   [mock] Kopf zeigt „Gelöst“ aus dem geladenen Stand
+  OK   [mock] Entfernen sendet p_beste = false
+  OK   [mock] Kein unbeabsichtigtes Umschalten
+  OK   [mock] Nachladefehler sichtbar mit „Erneut laden“
+  OK   [mock] axe ohne WCAG-Verstöße: C05 Nachladefehler beste Antwort
+  OK   [mock] Erneut laden stellt den Stand her
+G07 · gemeinsamer Nachladestand nach Lösungsänderung
+  OK   [mock] nur Kopf scheitert: keine aktive Lösungsaktion neben dem Fehler  0
+  OK   [mock] nur Kopf scheitert: ein gemeinsamer Weg „Erneut laden“
+  OK   [mock] axe ohne WCAG-Verstöße: C05 Kopf-Nachladefehler ohne Lösungsaktionen
+  OK   [mock] nur Kopf scheitert: nach „Erneut laden“ wieder beide Aktionen aus bestätigtem Stand
+  OK   [mock] nur Kopf scheitert: Erneut laden schreibt nichts
+  OK   [mock] nur Antworten scheitern: keine aktive Lösungsaktion neben dem Fehler  0
+  OK   [mock] nur Antworten scheitern: ein gemeinsamer Weg „Erneut laden“
+  OK   [mock] nur Antworten scheitern: nach „Erneut laden“ wieder beide Aktionen aus bestätigtem Stand
+  OK   [mock] nur Antworten scheitern: Erneut laden schreibt nichts
+  OK   [mock] Reihenfolge beitrag_liste zuerst: während des Ladens keine Aktion frei
+  OK   [mock] Reihenfolge beitrag_liste zuerst: nach halbem Stand weiter gesperrt
+  OK   [mock] Reihenfolge beitrag_liste zuerst: erst mit beiden Teilen frei
+  OK   [mock] Reihenfolge antwort zuerst: während des Ladens keine Aktion frei
+  OK   [mock] Reihenfolge antwort zuerst: nach halbem Stand weiter gesperrt
+  OK   [mock] Reihenfolge antwort zuerst: erst mit beiden Teilen frei
+  OK   [mock] Verlorene Bestätigung + Antwortfehler: Prüfhinweis ersetzt, keine Aktion frei
+  OK   [mock] Verlorene Bestätigung: genau eine Markierung
+G07 · Antwort senden hebt den ungeklärten Stand nicht auf
+  OK   [mock] Nach Antwortversand weiter keine Lösungsaktion  0
+  OK   [mock] „Erneut laden“ bleibt nach Antwortversand
+  OK   [mock] Erst gemeinsames Nachladen gibt die Aktionen frei  3
+R01 · Antwortversand und Antwortabruf scheitern bei ungeklärtem Stand
+  OK   [mock] R01: keine Lösungsaktion  0
+  OK   [mock] R01: gemeinsamer Weg „Erneut laden“ bleibt, kein reiner Antwortabruf
+  OK   [mock] R01: „Erneut laden“ ruft Kopf und Antworten ab
+  OK   [mock] R01: nur Antworten geladen – weiter gesperrt
+  OK   [mock] R01: erst gemeinsamer Erfolg gibt frei, nichts geschrieben
+  OK   [mock] R01: Antwort genau einmal angelegt
+  OK   [mock] axe ohne WCAG-Verstöße: C05 R01 nach gemeinsamem Nachladen
+G07 · Beitrag währenddessen ausgeblendet
+  OK   [mock] Ausgeblendet: keine Lösungsaktion nach altem Stand
+  OK   [mock] Ausgeblendet: kein Antwortformular
+  OK   [mock] Kopf zeigt „Ausgeblendet“
+G08 · Verwerfen nach sicherer Ablehnung
+  OK   [mock] Klärung gelingt: Datei nach Ablehnung noch da (Ausgangslage)
+  OK   [mock] Verwerfen klärt zuerst den abgelehnten Vorgang
+  OK   [mock] Bei „verworfen“ wird genau die Datei dieses Vorgangs entfernt
+  OK   [mock] Kein Beitrag entstanden
+  OK   [mock] Klärung unklar: Datei nach Ablehnung noch da (Ausgangslage)
+  OK   [mock] Unklare Klärung: Formular bleibt, kein Abbruch behauptet
+  OK   [mock] Unklare Klärung: Client entfernt nichts
+  OK   [mock] Unklare Klärung: Eingaben wieder bedienbar
+  OK   [mock] axe ohne WCAG-Verstöße: C06 Verwerfen nicht bestätigt
+  OK   [mock] Klärung „angelegt“: Beitrag wird als gesendet geöffnet
+C01 · Fehlereinstufung
+  OK   [mock] PGRST202/HTTP 404 gilt als sicher abgelehnt
+  OK   [mock] PGRST301/HTTP 401 gilt als sicher abgelehnt
+  OK   [mock] PGRST199/HTTP 503 gilt als unklar
+  OK   [mock] PGRST116/HTTP 406 gilt als unklar
+  OK   [mock] PGRST111/HTTP 500 gilt als unklar
+  OK   [mock] PGRST000/HTTP 503 gilt als unklar
+  OK   [mock] PGRST202/HTTP 503 gilt als unklar
+  OK   [mock] APF01/HTTP 400 gilt als sicher abgelehnt
+  OK   [mock] APZ01/HTTP 400 gilt als sicher abgelehnt
+  OK   [mock] APR01/HTTP 400 gilt als sicher abgelehnt
+  OK   [mock] APP01/HTTP 400 gilt als sicher abgelehnt
+  OK   [mock] APD01/HTTP 400 gilt als sicher abgelehnt
+  OK   [mock] APV01/HTTP 400 gilt als sicher abgelehnt
+  OK   [mock] APB01/HTTP 400 gilt als sicher abgelehnt
+  OK   [mock] APE01/HTTP 400 gilt als sicher abgelehnt
+  OK   [mock] APF01/HTTP 503 gilt als unklar
+  OK   [mock] AP999/HTTP 400 gilt als unklar
+
+Alles bestanden
+exit 0
