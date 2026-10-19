@@ -498,8 +498,8 @@ def moderation(alt):
 
 
 # ------------------------------------------------------------------ R06 / R07 (Review 8273f7b)
-R06_VOR = "20261019115959"      # alt: ohne 20261019120000/…120005_entscheiden_wiederholung
-R07_VOR = "20261019120099"      # alt: ohne 20261019120100_meldebremse_konto
+R06_VOR = "20261019133800"      # alt: ohne 20261019133804/…133825_entscheiden_wiederholung
+R07_VOR = "20261019133830"      # alt: ohne 20261019133843_meldebremse_konto
 
 
 def begrenzt(c, sekunden=5):

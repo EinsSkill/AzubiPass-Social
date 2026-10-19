@@ -23,6 +23,23 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-19 · Claude → ChatGPT (R04-Rest, R06/R07 live)
+
+**Vorheriger Beitrag:** ChatGPT – Freigabe und Übergabe `643192d` nach [Gegenprüfung 1289140](review/2026-10-19-chatgpt-review-1289140.md).
+**Rolle:** Umsetzung und Einspielung. **Nächste Übergabe an:** ChatGPT (gezielte R04-Gegenprüfung), danach Lukes.
+**main unverändert `0c472bb`, Paket zu, kein Merge/Deployment, keine Rollenvergabe, keine `DROP`-Datei.**
+
+- **Bericht mit Belegen und aktualisierter Restliste:** [R04-Rest und R06/R07 live](review/2026-10-19-claude-r04-rest-und-live.md)
+- **R04-Rest `cc6af07`:** `app.js` ruft beim Verlassen der Community den vorhandenen Dialogabbau auf
+  (Tab, Zurück/Vorwärts, Adresse). Moderations-Mock **128/128** (neu: 4 Bereiche × 3 Zustände, Zurück/Vorwärts,
+  Bestätigungs- und Verwerfen-Rückfragen, späte Antworten still), Korrektur-Mock 97/97, Funktionstest 269/269.
+  Gegenprobe am Build `1289140`: 52 FEHL, nur im neuen Routenteil.
+- **R06/R07 live (dieser Commit):** drei Migrationen eingespielt; live 45 = Repo 45 (Dateien auf die vergebenen
+  Versionen umbenannt, Inhalt gleich). Funktionsdefinitionen live/lokal md5-gleich; `moderation_test.sql` live ohne
+  FEHLER (vier Löschprüfungen ausgelassen), Invariante 0, Rollback ohne Rückstände, Paket zu.
+- **Weiter offen:** Livetests mit Konten und Storage-API (kein Testpasswort), E13, SMTP, Datenschutzangaben,
+  ergänzte Texte; Merge und Paketöffnung jeweils gesondert.
+
 ## 2026-10-19 · ChatGPT → Claude (Freigabe R06/R07 und R04-Abschluss)
 
 **Auftrag von Lukes:** Übergabe mit Freigabe an Claude im Anschluss an die Gegenprüfung.

@@ -2,8 +2,10 @@
 
 **Stand:** 19.10.2026, Claude. **Grundlage:** [Review 8273f7b](review/2026-10-15-chatgpt-review-8273f7b.md),
 [Auftrag 19.10.](review/2026-10-19-chatgpt-auftrag-abschluss-r04-r07.md).
-**Status: lokal umgesetzt und geprüft, NICHT live eingespielt.** Die Einspielung ins
-Supabase-Projekt braucht Lukes' ausdrückliches „einspielen“ (siehe Abschlussbericht).
+**Status: live eingespielt am 19.10.2026** nach Lukes' Freigabe (entscheidungen.md,
+„Freigabequelle 19.10.2026“). Live-Prüfung: [Bericht 19.10.](review/2026-10-19-claude-r04-rest-und-live.md).
+Die Dateien tragen seitdem die vom Einspielwerkzeug vergebenen Versionsnummern
+(Inhalt unverändert; der Kommentar in Teil 2 nennt noch den früheren Dateinamen von Teil 1).
 
 Bereits eingespielte Migrationsdateien bleiben unverändert. Die Korrektur ersetzt
 zwei Funktionen per `create or replace`; Rechte (`grant execute … to authenticated`)
@@ -13,9 +15,9 @@ bleiben dabei erhalten. Jede Datei liegt unter 5 KB (Grenze des Einspielwerkzeug
 
 | Datei | Größe | Wirkung |
 |---|---|---|
-| `supabase/migrations/20261019120000_entscheiden_wiederholung_1.sql` | 1,0 KB | Neue interne Funktion `mod_gleicher_vorgang(e, konto, aktion, art, ziel)` – gleicher Vorgang nur bei gleichem Konto, gleicher Aktion, gleicher Ziel-ID **und** gleicher Zielart. Keine Rechte für Konten. |
-| `supabase/migrations/20261019120005_entscheiden_wiederholung_2.sql` | 4,9 KB | `moderation_entscheiden`: beide Wiederholungszweige (vor dem Einfügen in `vorgang` und nach dem Warten am Konflikt) nutzen `mod_gleicher_vorgang`; jede Abweichung ergibt `APV01`. Sonst Wort für Wort wie `20261015130645_entscheiden_2.sql`. |
-| `supabase/migrations/20261019120100_meldebremse_konto.sql` | 3,9 KB | `meldung_senden`: transaktionsgebundene Kontosperre `pg_advisory_xact_lock(hashtextextended('azubipass.meldung:' || konto, 0))` direkt vor Zählung und Anlage. Sonst Wort für Wort wie in `20261015130525_melden_2.sql`. |
+| `supabase/migrations/20261019133804_entscheiden_wiederholung_1.sql` | 1,0 KB | Neue interne Funktion `mod_gleicher_vorgang(e, konto, aktion, art, ziel)` – gleicher Vorgang nur bei gleichem Konto, gleicher Aktion, gleicher Ziel-ID **und** gleicher Zielart. Keine Rechte für Konten. |
+| `supabase/migrations/20261019133825_entscheiden_wiederholung_2.sql` | 4,9 KB | `moderation_entscheiden`: beide Wiederholungszweige (vor dem Einfügen in `vorgang` und nach dem Warten am Konflikt) nutzen `mod_gleicher_vorgang`; jede Abweichung ergibt `APV01`. Sonst Wort für Wort wie `20261015130645_entscheiden_2.sql`. |
+| `supabase/migrations/20261019133843_meldebremse_konto.sql` | 3,9 KB | `meldung_senden`: transaktionsgebundene Kontosperre `pg_advisory_xact_lock(hashtextextended('azubipass.meldung:' || konto, 0))` direkt vor Zählung und Anlage. Sonst Wort für Wort wie in `20261015130525_melden_2.sql`. |
 
 ## R06 · Was sich ändert
 
@@ -69,4 +71,4 @@ nur unnötig serialisieren, nie Grenzen aufweichen.
 
 Rohprotokolle: [review/2026-10-19-claude-abschluss/](review/2026-10-19-claude-abschluss/).
 
-**Nicht geprüft:** Supabase live (nicht eingespielt), Verhalten unter realer Last.
+**Live (19.10.):** eingespielt, `moderation_test.sql` live ohne FEHLER, Funktionsdefinitionen live und lokal md5-gleich. **Nicht geprüft:** Verhalten unter realer Last; Konkurrenz nur lokal.
