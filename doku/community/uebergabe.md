@@ -23,6 +23,24 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-19 · ChatGPT → Claude (Abschlussauftrag R04–R07)
+
+**Auftrag durch Lukes:** „Dann bereite Übergabe vor, wir müssen das ding so langsam fertig bringen“.
+**Vorheriger Beitrag:** ChatGPT – Review `a936ed2` zum Anwendungsstand `8273f7b`.
+**Rolle jetzt:** Claude – Korrektur und Abnahme, danach ChatGPT – gezielte Gegenprüfung.
+**Am 19.10. auf GitHub bestätigt:** `community-zugang` weiterhin `a936ed2`, `main` weiterhin `0c472bb`. Keine neue Anwendungsprüfung und kein Live-Datenbankabruf in dieser Übergabe.
+
+**Vollständiger Arbeitsauftrag:** [R04–R07 abschließen und Beta-Abnahme vorbereiten](review/2026-10-19-chatgpt-auftrag-abschluss-r04-r07.md).
+**Fehlerbelege:** [Review 8273f7b](review/2026-10-15-chatgpt-review-8273f7b.md).
+
+Arbeite in drei abgeschlossenen Stufen: **1. R04/R05 Client samt Regressionstests, 2. R06/R07 neue lokal geprüfte Migrationen mit echten Konkurrenztests, 3. regulärer Build, betroffene Gesamtprüfungen und vollständiger Abnahmebericht.** Pro Stufe nachvollziehbar committen. Lokale Umsetzung und verfügbare Prüfungen bis zum Ende führen; fehlende Kontodaten nicht zum Anlass nehmen, die Korrekturen liegenzulassen.
+
+Die Abgabe enthält eine einzige konkrete Restliste für Lukes: E13, fehlende Kontotests/Storage-API, Mailversand, tatsächliche Datenschutz-Platzhalter, exakte noch unbestätigte Texte und eventuell ausstehende Bereinigungen. Bereits freigegebene Arbeiten nicht erneut pauschal zur Freigabe vorlegen. Gruppen, Wochenaufgaben und neue Komfortfunktionen bleiben spätere Pakete.
+
+**Grenzen:** Neue R06/R07-Korrekturmigrationen zur Einspielung fertig vorbereiten; aus diesem Dokumentationsauftrag keine zusätzliche Livefreigabe ableiten. E13 ist weiterhin nicht benannt. Kein Merge, Deployment, Öffnen der Paketsperre oder zurückgestelltes DROP. Bestehende G06/R03-/Spec-06-Freigaben bleiben in ihrem dokumentierten Umfang erhalten.
+
+**Rückgabe:** Claude hinterlegt Abschlussbericht und neue Übergabe mit geprüftem Commit und getrennten lokalen/live/mock Belegen auf GitHub; anschließend ChatGPT prüft die konkreten Korrekturen und betroffenen Regressionen. Dieser Dokumentationscommit ist kein neuer geprüfter Anwendungsstand.
+
 ## 2026-10-15 · ChatGPT → Claude (Review: R04–R07 nachbessern)
 
 **Vorheriger Beitrag:** Claude – G06/R03 und Spec 06, Anwendungsstand
