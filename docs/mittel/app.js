@@ -1889,6 +1889,11 @@
   function zeige(wunsch) {
     var teile = adresse(wunsch);
     var id = bauer[teile.bereich] ? teile.bereich : "heute";
+    /* R04: Wer die Community verlässt (Tab, Zurück/Vorwärts, Adresse), lässt
+       keine Community-Dialoge über dem neuen Bereich stehen. Sie werden samt
+       Entwurf entfernt, ohne Folgeaktion; späte Antworten verwirft die
+       Ansicht selbst, weil sie nicht mehr sichtbar ist. */
+    if (hatCommunity && id !== "community") AP.communityAnsicht.verlassen();
     Object.keys(schirme).forEach(function (k) { schirme[k].hidden = k !== id; });
     var tabId = TAB_VON[id] || id;
     document.querySelectorAll(".tab").forEach(function (t) {

@@ -1127,7 +1127,7 @@
   }
 
   AP.communityAnsicht = {
-    init: init, zeigen: zeigen, heuteAbschnitt: heuteAbschnitt, ichZeile: ichZeile,
+    init: init, zeigen: zeigen, verlassen: dialogeSchliessen, heuteAbschnitt: heuteAbschnitt, ichZeile: ichZeile,
     regelnZeigen: regelnZeigen,
     _zustand: function () { return JSON.parse(JSON.stringify({ ansicht: z.ansicht, ziel: z.ziel })); }
   };

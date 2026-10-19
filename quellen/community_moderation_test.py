@@ -575,6 +575,116 @@ def main():
             axe(s, "R05 Fall mit Formular")
             ctx.close()
 
+
+            # ------------------------------------------------------------ R04-Routenrest
+            def melden_offen(s, zustand):
+                warte(s, "Skonto ist ein Preisnachlass")
+                s.get_by_role("button", name="Antwort von Ben melden").click()
+                d = dialog(s)
+                d.get_by_label("Spam").check()
+                d.locator("textarea").fill(HINWEIS)
+                if zustand == "sendet":
+                    ev(s, "FAKE.plan.meldung_senden = ['halten']")
+                    d.get_by_role("button", name="Meldung senden").click()
+                    s.wait_for_function("(FAKE.gehalten.meldung_senden || []).length === 1")
+                elif zustand == "unklar":
+                    ev(s, "FAKE.plan.meldung_senden = ['spaet']")
+                    d.get_by_role("button", name="Meldung senden").click()
+                    warte(s, "Wir konnten nicht prüfen, ob deine Meldung gesendet wurde.")
+
+            def nach_verlassen(s, text, bereich, zustand):
+                warte_bis(s, f"document.documentElement.dataset.bereich === '{bereich}'", f"{text}: Bereich {bereich} sichtbar")
+                warte_bis(s, "!document.querySelector('dialog')", f"{text}: kein Dialog über {bereich}")
+                pruefe(not ev(s, spuren_js), f"{text}: alter Hinweis weg")
+                vorher = len(ev(s, "FAKE.aufrufe.meldung_senden || []"))
+                if zustand == "sendet":
+                    ev(s, "FAKE.freigeben('meldung_senden')")
+                if zustand == "unklar":
+                    ev(s, "FAKE.spaetAusfuehren()")
+                s.wait_for_timeout(200)
+                pruefe(s.get_by_text("Danke. Das Team prüft deine Meldung.").count() == 0
+                       and s.get_by_text("Du hast diesen Inhalt bereits gemeldet").count() == 0
+                       and len(ev(s, "FAKE.aufrufe.meldung_senden || []")) == vorher
+                       and not ev(s, "!!document.querySelector('dialog')"),
+                       f"{text}: späte Antwort bleibt still, kein neuer Versand")
+
+            for zustand in ("offen", "sendet", "unklar"):
+                for ziel in ("heute", "lernen", "ueben", "ich"):
+                    print(f"R04 · Community verlassen: Meldedialog {zustand} → #{ziel}")
+                    ctx, s = neue_seite("beitrag/" + B1)
+                    melden_offen(s, zustand)
+                    ev(s, f"location.hash = '#{ziel}'")
+                    nach_verlassen(s, f"{zustand}/#{ziel}", ziel, zustand)
+                    ctx.close()
+
+            for zustand in ("offen", "sendet", "unklar"):
+                print(f"R04 · Zurück aus der Community: Meldedialog {zustand}")
+                ctx, s = neue_seite("beitrag/" + B1)
+                ev(s, "location.hash = '#heute'")
+                s.wait_for_function("document.documentElement.dataset.bereich === 'heute'")
+                ev(s, f"location.hash = '#community/beitrag/{B1}'")
+                melden_offen(s, zustand)
+                ev(s, "history.back()")
+                nach_verlassen(s, f"Zurück/{zustand}", "heute", zustand)
+                ctx.close()
+
+                print(f"R04 · Vorwärts aus der Community: Meldedialog {zustand}")
+                ctx, s = neue_seite("beitrag/" + B1)
+                warte(s, "Skonto ist ein Preisnachlass")
+                ev(s, "location.hash = '#lernen'")
+                s.wait_for_function("document.documentElement.dataset.bereich === 'lernen'")
+                ev(s, "history.back()")
+                melden_offen(s, zustand)
+                ev(s, "history.forward()")
+                nach_verlassen(s, f"Vorwärts/{zustand}", "lernen", zustand)
+                ctx.close()
+
+            print("R04 · Community verlassen mit offener Bestätigungsfrage")
+            ctx, s = neue_seite("moderation/fall/beitrag/" + B1, team=True)
+            warte(s, "1 offene Meldung")
+            s.get_by_role("button", name="Inhalt ausblenden").first.click()
+            form = s.locator("form.cm-mod-form")
+            form.get_by_label("Vorlage").select_option(label="Spam")
+            form.get_by_role("button", name="Inhalt ausblenden").click()
+            dialog(s).get_by_role("heading", name="Diesen Inhalt ausblenden?").wait_for()
+            ev(s, "location.hash = '#ueben'")
+            warte_bis(s, "!document.querySelector('dialog')", "Bestätigungsfrage nach #ueben entfernt")
+            s.wait_for_timeout(200)
+            pruefe(not ev(s, "FAKE.aufrufe.moderation_entscheiden") and ev(s, "document.documentElement.dataset.bereich") == "ueben",
+                   "Keine Entscheidung ohne Bestätigung, Üben sichtbar")
+            ctx.close()
+
+            print("R04 · Community verlassen mit offener Verwerfen-Rückfrage")
+            ctx, s = neue_seite("moderation/fall/beitrag/" + B1, team=True)
+            warte(s, "1 offene Meldung")
+            s.get_by_role("button", name="Fachliche Korrektur ergänzen").first.click()
+            s.locator("form.cm-mod-form").get_by_label("Fachliche Korrektur").fill("Privater Entwurf im Fall")
+            s.get_by_role("button", name="Inhalt ausblenden").first.click()
+            dialog(s).get_by_role("button", name="Eingaben verwerfen").wait_for()
+            ev(s, "location.hash = '#ich'")
+            warte_bis(s, "!document.querySelector('dialog')", "Verwerfen-Rückfrage nach #ich entfernt")
+            pruefe(ev(s, "document.documentElement.dataset.bereich") == "ich"
+                   and not ev(s, "[...document.querySelectorAll('dialog')].length"),
+                   "Ich sichtbar, keine Rückfrage darüber")
+            ev(s, f"location.hash = '#community/moderation/fall/beitrag/{B1}'")
+            warte(s, "1 offene Meldung")
+            pruefe(s.locator("form.cm-mod-form").count() == 0, "Zurück in der Community: frische Fallansicht, kein Folgeformular")
+            ctx.close()
+
+            print("R04 · Rückfrage im Schreibformular beim Verlassen")
+            ctx, s = neue_seite("schreiben")
+            s.get_by_label("Titel").wait_for()
+            s.get_by_label("Titel").fill("Entwurfstitel")
+            s.get_by_role("button", name="Abbrechen").click()
+            dialog(s).get_by_role("button", name="Eingaben verwerfen").wait_for()
+            ev(s, "location.hash = '#lernen'")
+            warte_bis(s, "!document.querySelector('dialog')", "Verwerfen-Rückfrage im Schreiben nach #lernen entfernt")
+            ev(s, "location.hash = '#community/schreiben'")
+            s.get_by_label("Titel").wait_for()
+            pruefe(s.get_by_label("Titel").input_value() == "Entwurfstitel",
+                   "Verwerfen lief nicht als Folgeaktion: Entwurf desselben Kontos bleibt erhalten")
+            ctx.close()
+
             browser.close()
 
     print()
