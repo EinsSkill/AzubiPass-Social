@@ -1,0 +1,29 @@
+G06 Fall A · Veröffentlichen zuerst, Löschen wartet
+  OK   [lokal-sql] Löschen wartet auf die laufende Veröffentlichung
+  OK   [lokal-sql] Gegenprobe alter Stand: Beitrag ohne Datei (Lücke vorhanden)  geloescht=1 beitraege=1 objekte=0
+G06 Fall B · Löschen zuerst, Veröffentlichen wartet
+  OK   [lokal-sql] Veröffentlichen wartet auf das laufende Löschen
+  OK   [lokal-sql] Veröffentlichen abgelehnt: Datei nicht hochgeladen  Die Datei ist nicht hochgeladen.
+CONTEXT:  PL/pgSQL function public.beitrag_vero
+  OK   [lokal-sql] Kein Beitrag, keine Datei
+G06 Fall C · geschlossene Paketsperre (Konto ohne Testerfreigabe)
+  OK   [lokal-sql] Veröffentlichen bei geschlossener Sperre abgelehnt  Beiträge sind für die Klassen-Beta noch nicht freigeschaltet
+  OK   [lokal-sql] Bei geschlossener Sperre: eigene Datei weder lesbar noch löschbar (unverändert)  0
+G06 Fall D · direkter Beitrags-Insert
+  OK   [lokal-sql] Gegenprobe alter Stand: allgemein und mit Datei direkt möglich  ok ok
+  OK   [lokal-sql] Gruppen-Textbeitrag ohne Datei weiter möglich  ok
+R03 Fall 20/23 · Moderation zuerst, Antwort wartet
+  OK   [lokal-sql] Antwort wartet auf die laufende Ausblendung
+  OK   [lokal-sql] Gegenprobe alter Stand: Antwort unter ausgeblendetem Beitrag (Lücke vorhanden)  antworten=1
+R03 Fall 21 · Antwort zuerst, Moderation wartet, keine Verklemmung
+  OK   [lokal-sql] Moderation wartet auf die laufende Antwort
+  OK   [lokal-sql] Kein Sperr-Timeout, keine Verklemmung
+  OK   [lokal-sql] Antwort vorhanden, Beitrag danach ausgeblendet
+R03 Fall 22 · Wiederholung nach späterer Ausblendung
+  OK   [lokal-sql] Gleiche Kennung ⇒ dieselbe ID, keine zweite Antwort
+R03 · zwei Antworten gleichzeitig blockieren sich nicht
+  OK   [lokal-sql] Zweite Antwort läuft ohne Warten durch
+Fall 1 · Meldung 2 und 3 gleichzeitig (zwei Konten) → genau eine Ausblendung
+  OK   [lokal-sql] Gegenprobe alter Stand: drei Meldungen, nicht ausgeblendet (B4)  gewartet=False versteckt=0
+
+Alles bestanden

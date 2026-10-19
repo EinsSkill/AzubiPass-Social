@@ -140,6 +140,13 @@ begin
   begin perform public.moderation_entscheiden(e1, 'beitrag', f, 'einblenden', '{}', null, aus1, ver + 1, 'x', null, null, null);
     r := r || ' FEHLER:andereAktion';
   exception when others then r := r || ' andereAktion=' || sqlstate; end;
+  -- R06: gleiche Kennung, gleiche Aktion, aber andere Zielart bzw. anderes Ziel
+  begin perform public.moderation_entscheiden(e1, 'antwort', f, 'weiter_ausblenden', ids, null, aus1, ver, '', 'x', 'falsch', null);
+    r := r || ' FEHLER:andereArt';
+  exception when others then r := r || ' andereArt=' || sqlstate; end;
+  begin perform public.moderation_entscheiden(e1, 'beitrag', gen_random_uuid(), 'weiter_ausblenden', ids, null, aus1, ver, '', 'x', 'falsch', null);
+    r := r || ' FEHLER:anderesZiel';
+  exception when others then r := r || ' anderesZiel=' || sqlstate; end;
   perform pg_temp.root(); select count(*) into n from public.moderation_entscheidung where id = e1; r := r || ' protokollEins=' || n;
 
   perform pg_temp.als(a);

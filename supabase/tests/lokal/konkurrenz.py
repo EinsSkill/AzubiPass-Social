@@ -2,7 +2,7 @@
 """
 AzubiPass Social · Konkurrenztests mit zwei echten Datenbankverbindungen.
 
-    PGHOST=/var/tmp/pgtest PGPORT=54329 python3 konkurrenz.py g06 [--alt]
+    PGHOST=/var/tmp/pgtest PGPORT=54329 python3 konkurrenz.py [g06] [r03] [moderation] [r06] [r07] [--alt]
 
 Läuft gegen die LOKALE Testdatenbank (supabase_grundlage.sql + echte
 Migrationen, aufgebaut mit aufbauen.sh). --alt baut nur bis vor die zu
@@ -35,6 +35,9 @@ def pruefe(bed, text, wert=""):
 
 def aufbauen(bis=None, neu_dateien=()):
     """Alle Migrationen (oder nur bis einschließlich `bis`), danach optionale neue Dateien."""
+    # Offene Verbindungen früherer Fälle beenden, sonst scheitert das Neuanlegen der Datenbank.
+    with psycopg.connect(dbname="postgres", user="postgres", autocommit=True) as w:
+        w.execute("select pg_terminate_backend(pid) from pg_stat_activity where datname = %s and pid <> pg_backend_pid()", (DB,))
     subprocess.run(["sh", str(HIER / "aufbauen.sh")] + ([bis] if bis else []), check=True,
                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, env=dict(os.environ, PGDATABASE=DB))
     for f in neu_dateien:
@@ -333,7 +336,8 @@ def entscheiden(c, team, f, aktion, autor=None, intern=None, kategorie=None, kor
 def moderation(alt):
     global ALT_MELDEN
     ALT_MELDEN = alt
-    aufbauen(None, [] if alt else moderation_dateien())
+    # alt: Stand vor Spec 06 (ohne 20261015130421_moderation_tabellen_1 und Folgende)
+    aufbauen("20261015130420" if alt else None, [] if alt else moderation_dateien())
     ids = nutzer_anlegen("TEST-MOD-K1", "anna", "ben", "cem", "dana", "team")
     a, b, c_, d, t = (ids[n] for n in ("anna", "ben", "cem", "dana", "team"))
     with verbindung() as c:
@@ -493,7 +497,248 @@ def moderation(alt):
     c1.close(); c2.close()
 
 
-FAELLE = {"g06": g06, "r03": r03, "moderation": moderation}
+# ------------------------------------------------------------------ R06 / R07 (Review 8273f7b)
+R06_VOR = "20261019115959"      # alt: ohne 20261019120000/…120005_entscheiden_wiederholung
+R07_VOR = "20261019120099"      # alt: ohne 20261019120100_meldebremse_konto
+
+
+def begrenzt(c, sekunden=5):
+    """Begrenzte Wartezeit: Eine Verklemmung oder ein Hänger endet als Fehler, nicht als Stillstand."""
+    c.execute(f"set lock_timeout = '{sekunden}s'")
+    c.commit()
+
+
+def sperrart(pid):
+    with psycopg.connect(dbname=DB, user="postgres", autocommit=True) as w:
+        r = w.execute("select l.locktype from pg_locks l where l.pid = %s and not l.granted limit 1", (pid,)).fetchone()
+        return r[0] if r else None
+
+
+def r06(alt):
+    aufbauen(R06_VOR if alt else None)
+    ids = nutzer_anlegen("TEST-R06", "anna", "team", "zweit")
+    a, t, t2 = ids["anna"], ids["team"], ids["zweit"]
+    with verbindung() as c:
+        c.execute("update public.profil set rolle = 'team' where id = any(%s)", ([t, t2],))
+        c.commit()
+
+    def neuer():
+        with verbindung() as c:
+            return frage(c, a)
+
+    def korrektur(c, wer, kennung, art, ziel, version, aktion="korrektur"):
+        als(c, wer)
+        return c.execute("select public.moderation_entscheiden(%s, %s, %s, %s, '{}'::uuid[], null, null, %s, 'Präzisierung', null, null, %s)",
+                         (kennung, art, ziel, aktion, version,
+                          "Teamkorrektur" if aktion == "korrektur" else None)).fetchone()[0]
+
+    def parallel(text, zweiter, erwartet):
+        p, q = neuer(), neuer()
+        vp, vq = fall(t, "beitrag", p)["version"], fall(t, "beitrag", q)["version"]
+        x = uuid.uuid4()
+        c1, c2 = verbindung(), verbindung()
+        begrenzt(c1); begrenzt(c2)
+        korrektur(c1, t, x, "beitrag", p, vp)
+        t_, erg = im_hintergrund(lambda: zweiter(c2, x, p, q, vp, vq))
+        gew = wartet(c2.info.backend_pid)
+        c1.commit(); t_.join(10)
+        f = erg.get("fehler"); w = erg.get("wert")
+        c2.rollback()
+        q_korr = zaehle("select count(*) from public.antwort where beitrag_id = %s and team_korrektur", q)
+        q_ver = zaehle("select mod_version from public.beitrag where id = %s", q)
+        ergebnis = getattr(f, "sqlstate", None) or (("wiederholung=" + str(w.get("wiederholung"))) if w else str(f))
+        if alt:
+            print(f"  ---- [lokal-sql] Gegenprobe {text}: gewartet={gew} Ergebnis={ergebnis} Ziel2-Korrekturen={q_korr}")
+        else:
+            pruefe(gew, f"{text}: zweiter Aufruf wartet auf die Kennung")
+            pruefe(ergebnis == erwartet and q_korr == 0 and q_ver == vq, f"{text}: {erwartet}, keine Wirkung auf Ziel 2",
+                   f"{ergebnis} korrekturen={q_korr} version={q_ver}/{vq}")
+        c1.close(); c2.close()
+        return ergebnis
+
+    print("R06 · gleiche Kennung, gleiches Konto, gleiche Aktion, gleiches Ziel (parallel)")
+    p = neuer()
+    vp = fall(t, "beitrag", p)["version"]
+    x = uuid.uuid4()
+    c1, c2 = verbindung(), verbindung()
+    begrenzt(c1); begrenzt(c2)
+    r1 = korrektur(c1, t, x, "beitrag", p, vp)
+    t_, erg = im_hintergrund(lambda: korrektur(c2, t, x, "beitrag", p, vp))
+    gew = wartet(c2.info.backend_pid)
+    c1.commit(); t_.join(10); c2.commit()
+    r2 = erg.get("wert") or {}
+    if not alt:
+        pruefe(gew and r2.get("wiederholung") is True and r2.get("entscheidung_id") == r1.get("entscheidung_id")
+               and r2.get("korrektur_antwort_id") == r1.get("korrektur_antwort_id")
+               and zaehle("select count(*) from public.moderation_entscheidung where id = %s", x) == 1
+               and zaehle("select count(*) from public.antwort where beitrag_id = %s and team_korrektur", p) == 1,
+               "Eine Entscheidung, eine Korrektur, beide Aufrufe dasselbe Ergebnis", str(erg.get("fehler", ""))[:60])
+    c1.close(); c2.close()
+
+    print("R06 · gleiche Kennung, anderes Ziel (parallel)")
+    parallel("anderes Ziel", lambda c, x, p, q, vp, vq: korrektur(c, t, x, "beitrag", q, vq), "APV01")
+    print("R06 · gleiche Kennung, gleiche Ziel-ID, andere Zielart (parallel)")
+    parallel("andere Zielart", lambda c, x, p, q, vp, vq: korrektur(c, t, x, "antwort", p, vp), "APV01")
+    print("R06 · gleiche Kennung, fremdes Teamkonto (parallel)")
+    parallel("fremdes Konto", lambda c, x, p, q, vp, vq: korrektur(c, t2, x, "beitrag", p, vp), "APV01")
+    print("R06 · gleiche Kennung, andere Aktion (parallel)")
+    parallel("andere Aktion", lambda c, x, p, q, vp, vq: korrektur(c, t, x, "beitrag", p, vp, aktion="sichtbar_lassen"), "APV01")
+
+    print("R06 · sequentielle Wiederholung und Kollisionen")
+    p, q = neuer(), neuer()
+    vp, vq = fall(t, "beitrag", p)["version"], fall(t, "beitrag", q)["version"]
+    x = uuid.uuid4()
+    with verbindung() as c:
+        r1 = korrektur(c, t, x, "beitrag", p, vp); c.commit()
+        r2 = korrektur(c, t, x, "beitrag", p, vp); c.commit()
+        ergebnisse = []
+        for wer, art, ziel, aktion in ((t, "beitrag", q, "korrektur"), (t, "antwort", p, "korrektur"),
+                                       (t2, "beitrag", p, "korrektur"), (t, "beitrag", p, "sichtbar_lassen")):
+            try:
+                korrektur(c, wer, x, art, ziel, vp, aktion=aktion); ergebnisse.append("erfolg")
+            except psycopg.Error as e:
+                ergebnisse.append(e.sqlstate)
+            c.rollback()
+    if alt:
+        print(f"  ---- [lokal-sql] Gegenprobe sequentiell: {ergebnisse}")
+    else:
+        pruefe(r2.get("wiederholung") is True and r2.get("entscheidung_id") == r1.get("entscheidung_id"),
+               "Sequentielle Wiederholung liefert das gespeicherte Ergebnis")
+        pruefe(ergebnisse == ["APV01"] * 4, "Anderes Ziel, andere Art, fremdes Konto, andere Aktion: APV01", ergebnisse)
+
+
+def r07(alt):
+    aufbauen(R07_VOR if alt else None)
+    ids = nutzer_anlegen("TEST-R07", "anna", "bea", "cem", "dana", "emil", "team")
+    a, bea, cem, dana, emil, t = (ids[n] for n in ("anna", "bea", "cem", "dana", "emil", "team"))
+    with verbindung() as c:
+        c.execute("update public.profil set rolle = 'team' where id = %s", (t,))
+        c.commit()
+
+    def neuer():
+        with verbindung() as c:
+            return frage(c, a)
+
+    def neunundzwanzig(wer):
+        with verbindung() as c:
+            c.execute("insert into public.beitrag (autor_id, art, titel, text) select %s, 'tipp', 'R07 ' || %s || ' ' || g, '' "
+                      "from generate_series(1, 29) g", (wer, str(wer)))      # Füllbeiträge vom meldenden Konto selbst
+            c.execute("insert into public.meldung (melder_id, beitrag_id, grund) select %s, id, 'spam' from public.beitrag "
+                      "where titel like %s", (wer, f"R07 {wer} %"))
+            c.commit()
+
+    def anzahl(wer):
+        return zaehle("select count(*) from public.meldung where melder_id = %s and erstellt_am > now() - interval '1 hour'", wer)
+
+    def versuch(c, wer, ziel):
+        try:
+            r = melden(c, wer, "beitrag", ziel)
+            return ("neu" if r[1] else "vorhanden", r)
+        except psycopg.Error as e:
+            return (e.sqlstate, None)
+
+    print("R07 · 29 Meldungen + drei parallele neue Ziele ⇒ höchstens eine weitere")
+    neunundzwanzig(bea)
+    p, q, r = neuer(), neuer(), neuer()
+    c1, c2, c3 = verbindung(), verbindung(), verbindung()
+    for c in (c1, c2, c3):
+        begrenzt(c)
+    e1 = versuch(c1, bea, p)                                    # Meldung 30, offen
+    t2, g2 = im_hintergrund(lambda: versuch(c2, bea, q))
+    t3, g3 = im_hintergrund(lambda: versuch(c3, bea, r))
+    w2, w3 = wartet(c2.info.backend_pid), wartet(c3.info.backend_pid)
+    art2 = sperrart(c2.info.backend_pid)
+    c1.commit(); t2.join(10); t3.join(10)
+    ergebnisse = [e1[0], g2.get("wert", ("?",))[0], g3.get("wert", ("?",))[0]]
+    c2.commit(); c3.commit()
+    gesamt = anzahl(bea)
+    if alt:
+        print(f"  ---- [lokal-sql] Gegenprobe: gewartet={w2}/{w3} Ergebnisse={ergebnisse} Meldungen in der Stunde={gesamt}")
+    else:
+        pruefe(w2 and w3 and art2 == "advisory", "Parallele neue Meldungen warten auf die Kontosperre", f"{w2}/{w3} {art2}")
+        pruefe(sorted(ergebnisse) == ["APB01", "APB01", "neu"] and gesamt == 30, "Eine neue, zwei APB01, insgesamt 30",
+               f"{ergebnisse} gesamt={gesamt}")
+    for c in (c1, c2, c3):
+        c.close()
+    if alt:
+        return
+
+    print("R07 · Wiederholung vorhandener Meldungen an der Grenze")
+    with verbindung() as c:
+        begrenzt(c)
+        e = versuch(c, bea, p); c.commit()
+    pruefe(e[0] == "vorhanden", "Erneute Meldung desselben Ziels bei 30: vorhandene Meldung statt APB01", e[0])
+    c1, c2 = verbindung(), verbindung()
+    begrenzt(c1); begrenzt(c2)
+    s = neuer()
+    e1 = versuch(c1, bea, s)                                     # neues Ziel → APB01 (Transaktion endet im Fehler)
+    e2 = versuch(c2, bea, p)                                     # Wiederholung parallel
+    c1.rollback(); c2.commit()
+    pruefe(e1[0] == "APB01" and e2[0] == "vorhanden", "Parallel: neues Ziel APB01, Wiederholung erfolgreich", f"{e1[0]}/{e2[0]}")
+
+    print("R07 · dritte Meldung blendet automatisch aus, während dasselbe Konto ein anderes Ziel meldet")
+    neunundzwanzig(emil)
+    p, q = neuer(), neuer()
+    with verbindung() as c:
+        melden(c, cem, "beitrag", p); c.commit()
+        melden(c, dana, "beitrag", p); c.commit()
+    c1, c2 = verbindung(), verbindung()
+    begrenzt(c1); begrenzt(c2)
+    e1 = versuch(c1, emil, p)                                    # Meldung 30 des Kontos = dritte für p
+    t2, g2 = im_hintergrund(lambda: versuch(c2, emil, q))
+    w = wartet(c2.info.backend_pid)
+    c1.commit(); t2.join(10)
+    e2 = g2.get("wert", ("?",))[0]
+    c2.rollback()
+    pruefe(w and e1[0] == "neu" and e2 == "APB01", "Konto: Meldung 30 angelegt, parallele Meldung APB01", f"{w} {e1[0]}/{e2}")
+    pruefe(zaehle("select versteckt::int from public.beitrag where id = %s", p) == 1
+           and zaehle("select count(*) from public.ausblendung where beitrag_id = %s", p) == 1
+           and zaehle("select count(*) from public.moderation_entscheidung where beitrag_id = %s and akteur = 'automatik'", p) == 1,
+           "Dritte Meldung blendet aus: eine Ausblendung, ein Automatik-Protokoll")
+    c1.close(); c2.close()
+
+    print("R07 · kreuzende Meldungen zweier Konten und Entscheidung im selben Thread ohne Verklemmung")
+    p, q = neuer(), neuer()
+    vp = fall(t, "beitrag", p)["version"]
+    cs = [verbindung() for _ in range(5)]
+    for c in cs:
+        begrenzt(c)
+    aufgaben = [lambda: versuch(cs[0], cem, p), lambda: versuch(cs[1], dana, q),
+                lambda: versuch(cs[2], cem, q), lambda: versuch(cs[3], dana, p),
+                lambda: (als(cs[4], t), cs[4].execute(
+                    "select public.moderation_entscheiden(%s, 'beitrag', %s, 'korrektur', '{}'::uuid[], null, null, %s, 'x', null, null, 'Korrektur')",
+                    (uuid.uuid4(), p, vp)).fetchone()[0])[1]]
+    def mit_commit(f, c):
+        def lauf():
+            try:
+                r = f()
+                c.commit()            # jede Transaktion endet selbst – wer wartet, wartet nur auf echte Sperren
+                return r
+            except Exception:
+                c.rollback()
+                raise
+        return lauf
+    laeufe = [im_hintergrund(mit_commit(f, c)) for f, c in zip(aufgaben, cs)]
+    for th, _ in laeufe:
+        th.join(15)
+    fehlercodes = []
+    for (th, erg), c in zip(laeufe, cs):
+        f = erg.get("fehler")
+        if f is not None:
+            fehlercodes.append(getattr(f, "sqlstate", str(f)))
+        w = erg.get("wert")
+        if isinstance(w, tuple) and w[0] not in ("neu", "vorhanden"):
+            fehlercodes.append(w[0])
+        c.close()
+    haengt = [th.is_alive() for th, _ in laeufe]
+    pruefe(not any(haengt) and "40P01" not in fehlercodes and "55P03" not in fehlercodes,
+           "Alle fünf Transaktionen enden, keine Verklemmung (40P01) und kein Sperr-Timeout (55P03)",
+           f"hängt={haengt} fehler={fehlercodes}")
+    pruefe(zaehle("select count(*) from public.meldung where melder_id = any(%s) and beitrag_id = any(%s)", [cem, dana], [p, q]) == 4,
+           "Alle vier kreuzenden Meldungen angelegt")
+
+
+FAELLE = {"g06": g06, "r03": r03, "moderation": moderation, "r06": r06, "r07": r07}
 
 if __name__ == "__main__":
     welche = [a for a in sys.argv[1:] if not a.startswith("--")] or list(FAELLE)
