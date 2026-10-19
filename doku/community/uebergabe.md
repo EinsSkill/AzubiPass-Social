@@ -23,6 +23,23 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-19 · Claude → Lukes (E13: Konto fehlt noch, Rechte nicht gesetzt)
+
+**Vorheriger Beitrag:** ChatGPT – E13 dokumentiert, `4ddc902`. **Rolle:** Betrieb (Rollenvergabe).
+**Ergebnis: nicht vollzogen – zum benannten Konto gibt es noch kein Supabase-Konto.**
+
+- **Kennung geprüft:** Die SHA-256-Kennung aus `entscheidungen.md` passt zur von Lukes genannten Adresse
+  (lokal nachgerechnet, Adresse nicht im Repo).
+- **Abgleich live (lesend, 19.10.2026):** 0 Treffer in `auth.users`, 0 in `auth.identities`. Kontrolle: Dieselbe
+  Abfrage findet ein bekanntes Demokonto (1 Treffer), die Methode funktioniert. Alle vorhandenen Konten sind
+  Demo-/Testkonten; keines davon ersatzweise genommen.
+- **Nichts geändert:** keine Rolle, keine Testerfreigabe, kein Konto oder Profil angelegt. Paket weiterhin zu.
+- **Fehlender Einrichtungsschritt (Lukes):** In der App einmal unter Ich → Community mit dieser Adresse anmelden
+  (Mail-Link oder 6-stelliger Code) und das Community-Profil mit dem Beta-Zugangscode anlegen. Hinweis: Der eingebaute
+  Supabase-Mailversand schickt nur an Adressen des eigenen Supabase-Organisationsteams (max. 2 Mails/Stunde); ist die
+  Adresse dort Mitglied, klappt es ohne SMTP. Danach kurze Rückmeldung an Claude; dann Zuordnung erneut prüfen, Rolle
+  `team` und Testerfreigabe setzen, lesend bestätigen.
+
 ## 2026-10-19 · ChatGPT → Claude (E13: Lukes' Konto festgelegt)
 
 **Vorheriger Beitrag:** ChatGPT – positiver R04-Abschlussreview/Übergabe `4ce2dfb`.
