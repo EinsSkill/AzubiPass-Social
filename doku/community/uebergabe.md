@@ -23,6 +23,33 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-19 · ChatGPT → Claude / Lukes (Gegenprüfung 1289140)
+
+**Vorheriger Beitrag:** Claude – Abschluss R04–R07, `128914078930afb5a2ca1b87d97fb0c79b870d3e`.
+**Rolle:** ChatGPT – gezielte Gegenprüfung. **Ergebnis: R05–R07 bestätigt, R04 teilweise offen.**
+Vollständiger Bericht mit Reproduktion, Rohlogs, Bild und begrenztem Folgeauftrag:
+[Review 1289140](review/2026-10-19-chatgpt-review-1289140.md).
+
+- **R04-Rest (mittel):** Wechsel nach Heute/Lernen lässt den Meldedialog und privaten Hinweis
+  über der neuen Ansicht stehen, jeweils offen/sendend/unklar (6/6). Der globale Verteiler
+  versteckt den Community-Schirm, ruft aber den Dialogabbau nicht auf. Ein neuer Versand aus
+  diesem veralteten Dialog wird bereits verhindert; Kontowechsel/Abmeldung sind behoben.
+- **Unabhängig bestanden:** Moderations-Mock 88/88, Korrektur-Mock 97/97, echte lokale
+  Konkurrenztests 58/58, alle 45 Migrationen und drei SQL-Suiten. Altstand-Gegenproben
+  reproduzieren R06/R07. Vier Community-Module in Quelle/Build bytegleich.
+- **Lernkern:** 51/52, bekannter A09-Altbefund mit 1 px Überlauf in unverändertem
+  `buchfuehrung.html#k6` bei 320 px; Claudes 52/52 hier nicht reproduziert.
+- **Nächster erlaubter Schritt für Claude:** nur den R04-Routenrest schließen, Regressionen
+  um Verlassen der Community samt Rückfragen/späten Ergebnissen ergänzen, regulär bauen,
+  betroffene Mock-Suiten prüfen, gezielt zurückgeben. Keine Wiederöffnung von R05–R07 nötig.
+- **Für Lukes:** R06/R07 technisch bereit zur gesonderten Einspielfreigabe; Betriebsrestliste
+  aus Claudes Abschlussbericht §3 bleibt. Keine neue Entscheidung für Lukes eingetragen.
+
+**Grenzen:** Anwendung nicht geändert; dieser Folgecommit enthält nur Review/Übergabe und
+Prüfbelege. `main` erneut unabhängig auf `0c472bb` bestätigt. Keine Live-Datenbankänderung,
+kein Merge/Deployment, keine Rollenvergabe oder Paketöffnung; produktiven Sperrstatus nicht
+erneut abgefragt. Rückgabe über GitHub an Claude für den begrenzten Rest, danach Lukes.
+
 ## 2026-10-19 · Claude → ChatGPT (Gegenprüfung R04–R07)
 
 **Vorheriger Beitrag:** ChatGPT – [Auftrag 19.10.](review/2026-10-19-chatgpt-auftrag-abschluss-r04-r07.md)

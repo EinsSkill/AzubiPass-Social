@@ -1,0 +1,15 @@
+R06 · gleiche Kennung, gleiches Konto, gleiche Aktion, gleiches Ziel (parallel)
+R06 · gleiche Kennung, anderes Ziel (parallel)
+  ---- [lokal-sql] Gegenprobe anderes Ziel: gewartet=True Ergebnis=wiederholung=True Ziel2-Korrekturen=0
+R06 · gleiche Kennung, gleiche Ziel-ID, andere Zielart (parallel)
+  ---- [lokal-sql] Gegenprobe andere Zielart: gewartet=True Ergebnis=wiederholung=True Ziel2-Korrekturen=0
+R06 · gleiche Kennung, fremdes Teamkonto (parallel)
+  ---- [lokal-sql] Gegenprobe fremdes Konto: gewartet=True Ergebnis=APV01 Ziel2-Korrekturen=0
+R06 · gleiche Kennung, andere Aktion (parallel)
+  ---- [lokal-sql] Gegenprobe andere Aktion: gewartet=True Ergebnis=APV01 Ziel2-Korrekturen=0
+R06 · sequentielle Wiederholung und Kollisionen
+  ---- [lokal-sql] Gegenprobe sequentiell: ['APV01', 'erfolg', 'APV01', 'APV01']
+R07 · 29 Meldungen + drei parallele neue Ziele ⇒ höchstens eine weitere
+  ---- [lokal-sql] Gegenprobe: gewartet=False/False Ergebnisse=['neu', 'neu', 'neu'] Meldungen in der Stunde=32
+
+Alles bestanden
