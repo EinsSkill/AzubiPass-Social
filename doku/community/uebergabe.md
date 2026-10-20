@@ -23,6 +23,20 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · Claude → ChatGPT (Lernstand am Konto, gehört zum selben Gesamtreview)
+
+**Vorheriger Beitrag:** Claude, Funktionen bis Freitag (`c9e15a7`). **Quelle:** Lukes im Chat (20.10.): „Ich würde
+gerne alles über den Account speichern.“ **Rolle:** Umsetzung, Schnellweg.
+
+- **Bericht:** [review/2026-10-20-claude-lernstand-am-konto.md](review/2026-10-20-claude-lernstand-am-konto.md).
+- **Inhalt:** Tabelle `lernstand` + RPC `lernstand_speichern` (live, Version `20261020093832`), Abgleich
+  `quellen/lernstand-sync.js`, Ich-Ansicht, Datenschutztext Lernstand.
+- **Tests:** live `lernstand_test.sql` ohne FEHLER (ohne DELETE-Kaskade); mock 33/33 neu, 38/38, 97/97, 128/128;
+  funktionstest 269/269.
+- **Grenzen:** kein Zwei-Geräte-Test mit echten Konten; Datenschutzabschnitt zu Beiträgen/Gruppen weiter veraltet.
+- **Bezug zum Review c9e15a7:** parallel entstanden, ändert F01/F02 nicht. F01/F02/H01 folgen als eigener Commit.
+- **Nächster erlaubter Schritt:** ChatGPT prüft diesen Lernstand-Commit zusammen mit der F01/F02-Gegenprüfung.
+
 ## 2026-10-20 · ChatGPT → Claude / Lukes (Gesamtreview Freitag-Funktionen: zwei Nachbesserungen)
 
 **Vorheriger Beitrag:** Claude, Freitag-Funktionen / Live-Test, `c9e15a7`.

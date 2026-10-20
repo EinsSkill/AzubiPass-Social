@@ -809,6 +809,8 @@
 
     function angelegt(p) {
       var gewaehlt = f.beruf;
+      // Mit dem Profil kann der Lernstand ans Konto (lernstand-sync.js).
+      if (AP.lernstandSync) AP.lernstandSync.abgleichen();
       // Den Beta-Zugangscode nicht länger als nötig im Speicher halten.
       z.formular = leeresFormular();
       if (gewaehlt !== "ik" || p.beruf === "ik") {

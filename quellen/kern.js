@@ -349,8 +349,12 @@ window.AP = (function () {
     }
   }
 
+  // Lernstand-Abgleich mit dem Konto (lernstand-sync.js, nur in der App).
+  function gemeldet() { try { if (window.AP && window.AP.nachSichern) window.AP.nachSichern(); } catch (e) {} }
+
   function sichern() {
     stand.geaendertAm = new Date().toISOString();
+    gemeldet();
     if (wartet) return;
     var seit = Date.now() - geschriebenUm;
     if (seit >= BUENDEL) { schreiben(); return; }
@@ -360,6 +364,7 @@ window.AP = (function () {
   // Jetzt schreiben, auch wenn gerade gebündelt wird. true = gespeichert.
   function sofortSichern() {
     stand.geaendertAm = new Date().toISOString();
+    gemeldet();
     return schreiben();
   }
 

@@ -1491,11 +1491,53 @@
     s.appendChild(termin);
 
     /* Sicherung */
-    var daten = feldgruppe("Deine Daten", "nur auf diesem Gerät");
-    var erklaerung = el("p", "leise-text");
-    erklaerung.textContent = "Dein Lernstand liegt nur in diesem Browser. Löschst du die "
-      + "Websitedaten oder wechselst das Gerät, ist er weg — außer du sicherst ihn hier.";
+    var sync = AP.lernstandSync;
+    var daten = feldgruppe("Deine Daten", "Lernstand");
+    var erklaerung = el("p", "leise-text lernsync");
+    erklaerung.setAttribute("role", "status");
     daten.appendChild(erklaerung);
+    var abgleich = el("button", "kn-neben", "Jetzt abgleichen");
+    abgleich.hidden = true;
+    abgleich.addEventListener("click", function () { if (sync) sync.abgleichen(); });
+    daten.appendChild(abgleich);
+    /* Lernstand am Konto (20.10.2026): Der Satz sagt, wo der Lernstand gerade
+       liegt. Die Sicherungsdatei bleibt als zweiter Weg erhalten. */
+    function syncText(st) {
+      var art = st && st.art;
+      var an = !!sync && art !== "lokal";
+      abgleich.hidden = !an || art === "sendet" || art === "ohneProfil";
+      if (!sync || art === "lokal") {
+        erklaerung.textContent = "Dein Lernstand liegt nur in diesem Browser. Melde dich unter "
+          + "„Community“ an, dann wird er in deinem Konto gespeichert und ist auf jedem Gerät da. "
+          + "Ohne Anmeldung ist er weg, wenn du die Websitedaten löschst oder das Gerät wechselst – "
+          + "außer du sicherst ihn hier.";
+      } else if (art === "aktuell") {
+        erklaerung.textContent = "Dein Lernstand ist in deinem Konto gespeichert und auf jedem Gerät "
+          + "da, auf dem du angemeldet bist. Zuletzt abgeglichen um "
+          + String(st.um.getHours()).padStart(2, "0") + ":" + String(st.um.getMinutes()).padStart(2, "0")
+          + " Uhr. Eine laufende Probeklausur bleibt bis zur Abgabe auf diesem Gerät.";
+      } else if (art === "sendet") {
+        erklaerung.textContent = "Dein Lernstand wird mit deinem Konto abgeglichen …";
+      } else if (art === "offline") {
+        erklaerung.textContent = "Gerade keine Verbindung. Dein Lernstand ist auf diesem Gerät "
+          + "gespeichert und wird mit deinem Konto abgeglichen, sobald du wieder online bist.";
+      } else if (art === "ohneProfil") {
+        erklaerung.textContent = "Du bist angemeldet, hast aber noch kein Community-Profil. Lege es "
+          + "unter „Community“ an, dann wird dein Lernstand in deinem Konto gespeichert.";
+      } else {
+        erklaerung.textContent = (st.text || "Der Abgleich hat nicht geklappt.")
+          + " Dein Lernstand bleibt auf diesem Gerät gespeichert.";
+      }
+    }
+    if (sync) {
+      var weg_ = sync.beiStatus(function (st) {
+        if (!erklaerung.isConnected && erklaerung.dataset.gesetzt) { weg_ && weg_(); return; }
+        erklaerung.dataset.gesetzt = "1";
+        syncText(st);
+      });
+    } else {
+      syncText(null);
+    }
 
     var meldung = el("p", "meldung");
     var knoepfe = el("div", "knopfreihe-weit");
@@ -1563,7 +1605,7 @@
     links.appendChild(el("b", null, "Prüfungstermin"));
     links.appendChild(el("small", null,
       "Nur ein eigener Termin erscheint als Countdown auf „Heute“. "
-      + "Er bleibt nur auf diesem Gerät gespeichert."));
+      + "Er gehört zu deinem Lernstand."));
     if (!stand.pruefungstermin && AP.istDatum(inhalt.pruefung)) {
       links.appendChild(el("small", null,
         "Es ist noch kein persönlicher Termin gesetzt. Der Inhalt nennt als "
@@ -1756,8 +1798,11 @@
   }
 
   function zuruecksetzen(meldung, s) {
+    var imKonto = AP.lernstandSync && AP.lernstandSync.status().art !== "lokal";
     if (!window.confirm("Wirklich alles zurücksetzen? Fortschritt, Karteikarten, "
-        + "Lesezeichen und Notizen sind dann weg. Das lässt sich nicht rückgängig machen.")) {
+        + "Lesezeichen und Notizen sind dann weg"
+        + (imKonto ? " – auch in deinem Konto und auf deinen anderen Geräten" : "")
+        + ". Das lässt sich nicht rückgängig machen.")) {
       return;
     }
     var neu = AP.frisch();
@@ -1935,6 +1980,19 @@
     verteiler = AP.verteiler(zeige, "heute");
     erneuerung();
   }
+
+  /* Lernstand am Konto (lernstand-sync.js): dieselbe Zusammenführung wie beim
+     Einspielen einer Sicherung, und nach einer Übernahme vom Konto die
+     sichtbare Ansicht neu aufbauen. Üben und Community nicht: Dort würde ein
+     Neuaufbau eine laufende Übung oder Eingabe unterbrechen. */
+  AP.lernstandZusammenfuehren = zusammenfuehren;
+  AP.appNeuZeichnen = function () {
+    if (!inhalt || !verteiler) return;
+    var id = adresse(location.hash.slice(1)).bereich || "heute";
+    if (["heute", "lernen", "ich"].indexOf(id) >= 0 && schirme[id] && !schirme[id].hidden) {
+      bauer[id](schirme[id], adresse(location.hash.slice(1)));
+    }
+  };
 
   fetch("mittel/inhalt.json")
     .then(function (a) { return a.json(); })

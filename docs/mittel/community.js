@@ -843,6 +843,26 @@
     });
   }
 
+  /* ================================================== Lernstand am Konto
+
+     Der Lernstand aus kern.js als ein JSON-Eintrag je Konto. Lesen über die
+     eigene Zeile (RLS), Schreiben nur über lernstand_speichern mit der zuletzt
+     gesehenen Version als Basis. Beide Aufrufe sind an das Konto gebunden, für
+     das der Abgleich gestartet wurde. */
+  function lernstandHolen(konto) {
+    return gebunden(function (u, c) {
+      return c.from("lernstand").select("daten, version").eq("nutzer_id", u.id).maybeSingle()
+        .then(auspacken).then(function (d) { return { konto: u.id, eintrag: d || null }; });
+    }, konto);
+  }
+
+  // → { ok: true, version } oder { ok: false, version, daten } (Server hat einen anderen Stand)
+  function lernstandSpeichern(daten, basis, konto) {
+    return gebunden(function (u, c) {
+      return c.rpc("lernstand_speichern", { p_daten: daten, p_basis: basis || 0 }).then(auspacken);
+    }, konto);
+  }
+
   // Liegt eine gespeicherte Sitzung vor? Nur lokal nachsehen – lädt nichts (Heute).
   function hatGespeicherteSitzung() {
     try { return !!localStorage.getItem(CFG.sitzung); } catch (e) { return false; }
@@ -1022,6 +1042,7 @@
     antwortLoeschen: antwortLoeschen, besteAntwort: besteAntwort, hilfreich: hilfreich,
     aufgaben: aufgaben, aufgabe: aufgabe, aufgabeStellen: aufgabeStellen, aufgabeLoeschen: aufgabeLoeschen,
     hatGespeicherteSitzung: hatGespeicherteSitzung,
+    lernstandHolen: lernstandHolen, lernstandSpeichern: lernstandSpeichern,
     erledigt: erledigt, erledigtVon: erledigtVon,
     meldungSenden: meldungSenden, meldungStatus: meldungStatus, meineMeldungen: meineMeldungen,
     moderationZaehler: moderationZaehler, moderationFaelle: moderationFaelle, moderationFall: moderationFall,

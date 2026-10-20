@@ -702,12 +702,20 @@ def datenschutz(r, fehlt):
      E-Mail: {wert(a.get("email"))}</p>
 
   <h2>Lernen und Üben</h2>
-  <p>Lernen und Üben funktionieren ohne Community-Konto. Dein Lernstand bleibt im
-     lokalen Speicher deines Browsers und wird nicht automatisch an den
-     Community-Server übertragen. Dazu gehören beispielsweise bearbeitete Kapitel,
-     Antworten, Karteikarten und Lesezeichen.</p>
-  <p>Du kannst diese Daten unter „Ich" zurücksetzen oder durch Löschen der
-     Websitedaten entfernen. Sicherungsdateien werden auf deinem Gerät erzeugt.</p>
+  <p>Lernen und Üben funktionieren ohne Community-Konto. Ohne Anmeldung bleibt dein
+     Lernstand im lokalen Speicher deines Browsers. Dazu gehören beispielsweise
+     bearbeitete Kapitel, Antworten in Selbsttests, Karteikarten, Lesezeichen,
+     Ergebnisse von Probeklausuren und dein Prüfungstermin.</p>
+  <p>Bist du mit einem Community-Konto angemeldet und hast ein Community-Profil,
+     speichern wir deinen Lernstand zusätzlich in deinem Konto, damit er auf allen
+     Geräten verfügbar ist, auf denen du angemeldet bist. Andere Mitglieder sehen ihn
+     nicht. Eine laufende Probeklausur bleibt bis zur Abgabe auf deinem Gerät. Die
+     Speicherung dient der von dir gewünschten Funktion und beruht auf
+     Art. 6 Abs. 1 lit. b DSGVO. Wird dein Konto gelöscht, wird auch dieser Lernstand
+     gelöscht.</p>
+  <p>Du kannst deinen Lernstand unter „Ich" zurücksetzen; angemeldet gilt das auch
+     für den Stand in deinem Konto. Ohne Anmeldung entfernst du ihn auch durch Löschen
+     der Websitedaten. Sicherungsdateien werden auf deinem Gerät erzeugt.</p>
 
   <h2>Aufruf der Website</h2>
   <p>AzubiPass wird über {html.escape(h.get("dienst", "GitHub Pages"))} bereitgestellt
@@ -745,7 +753,8 @@ def datenschutz(r, fehlt):
      verfügbar. Vor ihrer Einführung werden diese Informationen ergänzt.</p>
 
   <h2>Supabase und E-Mail-Versand</h2>
-  <p>Für Konten, Anmeldung und Community-Profile verwenden wir Supabase. Die
+  <p>Für Konten, Anmeldung, Community-Profile und den im Konto gespeicherten
+     Lernstand verwenden wir Supabase. Die
      Projektdatenbank befindet sich in {html.escape(c.get("datenbank_region", ""))}.</p>
   <p>Vertragspartner: {wert(c.get("supabase_vertragspartner"))}. Supabase verarbeitet
      Daten nach dem für das Projekt geltenden Auftragsverarbeitungsvertrag und setzt
@@ -875,7 +884,7 @@ def datenschutz_ohne_konten(r, fehlt):
 
 # ---------------------------------------------------------------- App-Seite
 
-def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs):
+def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs):
     """Die Schale. Der Inhalt der fünf Schirme entsteht im Browser aus
     inhalt.json — hier steht nur das Gerüst, damit die Seite auch ohne
     JavaScript etwas Sinnvolles zeigt."""
@@ -888,7 +897,7 @@ def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtj
 <head>
 {kopf("Lernen", "Alle Lernfelder für Kaufleute für Büromanagement — Fortschritt, "
       "Karteikarten und Suche, auch ohne Netz.", stile=[stil],
-      skripte=[kernel, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, aufgabenjs, appjs])}
+      skripte=[kernel, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, aufgabenjs, appjs, syncjs])}
 </head>
 <body data-bereich="heute">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
@@ -995,11 +1004,11 @@ def baue():
         print("ACHTUNG: mittel/schriften.css fehlt — erst schriften.py laufen lassen.\n")
 
     MITTEL.mkdir(parents=True, exist_ok=True)
-    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, _ = veroeffentliche(
+    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs, _ = veroeffentliche(
         "azubipass.css", "kern.js", "app.js", "aufgaben.js", "azubipass.js",
         # supabase.js wird nicht eingebunden, sondern erst bei Bedarf von
         # community.js nachgeladen – liegt aber im Zwischenspeicher bereit.
-        "community.js", "community-ansicht.js", "community-beitraege.js", "community-moderation.js", "community-gruppen.js", "supabase.js")
+        "community.js", "community-ansicht.js", "community-beitraege.js", "community-moderation.js", "community-gruppen.js", "lernstand-sync.js", "supabase.js")
 
     konten, konten_index = kontenplan_lesen()
     belege, belege_steuer = belegvorlagen()
@@ -1065,7 +1074,7 @@ def baue():
     (AUSGABE / "manifest.webmanifest").write_text(manifest(), encoding="utf-8")
     # Direkt im Home-Menü starten, auch an der Wurzel der Projektseite.
     # app.html bleibt für bestehende Links und installierte Apps erhalten.
-    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs)
+    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs)
     for name in ("index.html", "app.html"):
         (AUSGABE / name).write_text(app, encoding="utf-8")
 
