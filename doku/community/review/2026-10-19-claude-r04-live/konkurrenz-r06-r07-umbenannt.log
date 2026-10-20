@@ -1,0 +1,31 @@
+R06 · gleiche Kennung, gleiches Konto, gleiche Aktion, gleiches Ziel (parallel)
+  OK   [lokal-sql] Eine Entscheidung, eine Korrektur, beide Aufrufe dasselbe Ergebnis
+R06 · gleiche Kennung, anderes Ziel (parallel)
+  OK   [lokal-sql] anderes Ziel: zweiter Aufruf wartet auf die Kennung
+  OK   [lokal-sql] anderes Ziel: APV01, keine Wirkung auf Ziel 2  APV01 korrekturen=0 version=0/0
+R06 · gleiche Kennung, gleiche Ziel-ID, andere Zielart (parallel)
+  OK   [lokal-sql] andere Zielart: zweiter Aufruf wartet auf die Kennung
+  OK   [lokal-sql] andere Zielart: APV01, keine Wirkung auf Ziel 2  APV01 korrekturen=0 version=0/0
+R06 · gleiche Kennung, fremdes Teamkonto (parallel)
+  OK   [lokal-sql] fremdes Konto: zweiter Aufruf wartet auf die Kennung
+  OK   [lokal-sql] fremdes Konto: APV01, keine Wirkung auf Ziel 2  APV01 korrekturen=0 version=0/0
+R06 · gleiche Kennung, andere Aktion (parallel)
+  OK   [lokal-sql] andere Aktion: zweiter Aufruf wartet auf die Kennung
+  OK   [lokal-sql] andere Aktion: APV01, keine Wirkung auf Ziel 2  APV01 korrekturen=0 version=0/0
+R06 · sequentielle Wiederholung und Kollisionen
+  OK   [lokal-sql] Sequentielle Wiederholung liefert das gespeicherte Ergebnis
+  OK   [lokal-sql] Anderes Ziel, andere Art, fremdes Konto, andere Aktion: APV01  ['APV01', 'APV01', 'APV01', 'APV01']
+R07 · 29 Meldungen + drei parallele neue Ziele ⇒ höchstens eine weitere
+  OK   [lokal-sql] Parallele neue Meldungen warten auf die Kontosperre  True/True advisory
+  OK   [lokal-sql] Eine neue, zwei APB01, insgesamt 30  ['neu', 'APB01', 'APB01'] gesamt=30
+R07 · Wiederholung vorhandener Meldungen an der Grenze
+  OK   [lokal-sql] Erneute Meldung desselben Ziels bei 30: vorhandene Meldung statt APB01  vorhanden
+  OK   [lokal-sql] Parallel: neues Ziel APB01, Wiederholung erfolgreich  APB01/vorhanden
+R07 · dritte Meldung blendet automatisch aus, während dasselbe Konto ein anderes Ziel meldet
+  OK   [lokal-sql] Konto: Meldung 30 angelegt, parallele Meldung APB01  True neu/APB01
+  OK   [lokal-sql] Dritte Meldung blendet aus: eine Ausblendung, ein Automatik-Protokoll
+R07 · kreuzende Meldungen zweier Konten und Entscheidung im selben Thread ohne Verklemmung
+  OK   [lokal-sql] Alle fünf Transaktionen enden, keine Verklemmung (40P01) und kein Sperr-Timeout (55P03)  hängt=[False, False, False, False, False] fehler=['APF01']
+  OK   [lokal-sql] Alle vier kreuzenden Meldungen angelegt
+
+Alles bestanden

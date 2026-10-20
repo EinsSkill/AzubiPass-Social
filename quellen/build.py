@@ -16,7 +16,8 @@ import sys
 from pathlib import Path
 
 from gemeinsames import (AUSGABE, LUPE, fussleiste, kopf, lade, lernfeld_dateien,
-                         schriften_lokal, tableiste, veroeffentliche)
+                         schriften_lokal, tableiste, veroeffentliche,
+                         zwischenspeicher_schreiben)
 
 HIER = Path(__file__).parent
 
@@ -102,8 +103,11 @@ def tabelle(b, lf):
                 f'<tr class="detail"><td colspan="{len(b["spalten"])}">'
                 f'{inline(z["detail"], lf)}</td></tr>'
             )
-    return ('<div class="tab-huelle rein"><table><thead><tr>'
-            f'{kopf}</tr></thead><tbody>{"".join(zeilen)}</tbody></table></div>')
+    # Barrierefreiheit (Scan 13.10.2026): Die Hülle ist ein benannter Bereich;
+    # per Tastatur erreichbar wird sie in kern.js, sobald sie wirklich scrollt.
+    name = ", ".join(re.sub(r"[*_`\[\]{}]", "", str(x)) for x in b["spalten"])[:90]
+    return (f'<div class="tab-huelle rein" role="region" aria-label="Tabelle: {html.escape(name, quote=True)}">'
+            f'<table><thead><tr>{kopf}</tr></thead><tbody>{"".join(zeilen)}</tbody></table></div>')
 
 
 def merke(b, lf, kennung):
@@ -685,3 +689,6 @@ if __name__ == "__main__":
     for datei in dateien:
         print(f"· {Path(datei).name}")
         baue(datei)
+    # Geänderte Kapitelseiten: Prüfwerte im Offline-Vorrat nachziehen.
+    if (AUSGABE / "sw.js").exists():
+        zwischenspeicher_schreiben()

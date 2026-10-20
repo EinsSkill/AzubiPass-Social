@@ -4,9 +4,9 @@
 -- ist, wird alles zurückgerollt. Es bleibt also nichts in der Datenbank.
 -- Jede Prüfung muss „verboten", „abgelehnt", „geschuetzt" oder die
 -- erwartete Zahl zeigen; ein „FEHLER:" bedeutet eine Lücke.
--- Erwartet: ohneProfil:profile=0 falscherCode=abgelehnt code=8 rolleSetzen=verboten
+-- Erwartet: ohneProfil:profile=0 falscherCode=abgelehnt code=8 allgemeinDirekt=verboten rolleSetzen=verboten
 --   verstecktSetzen=verboten B_sieht=1 B_codes=0 zugangSpalte=geschuetzt
---   B_nachBeitritt=2 besteDurchFremde=verboten geloest=true
+--   B_nachBeitritt=2 antwortDirekt=verboten besteDurchFremde=verboten geloest=true
 --   moderierenOhneTeam=verboten C_sieht=0 anon=verboten B_rolle=leitung
 do $t$
 declare
@@ -18,6 +18,8 @@ begin
     (a, 'a@test.invalid', 'authenticated', 'authenticated'),
     (b, 'b@test.invalid', 'authenticated', 'authenticated'),
     (c, 'c@test.invalid', 'authenticated', 'authenticated');
+  -- Seit der Paketsperre (13.10.) brauchen Testkonten die benannte Freigabe.
+  insert into public.beitraege_tester (nutzer_id) values (a), (b), (c);
   execute 'set local role authenticated';
 
   perform set_config('request.jwt.claims', json_build_object('sub', a, 'role','authenticated')::text, true);
@@ -29,7 +31,10 @@ begin
   select gc.code into code from public.gruppe_code gc where gruppe_id = g;
   r := r || ' code=' || coalesce(length(code)::text,'null');
   insert into public.beitrag (gruppe_id, art, titel, text) values (g, 'frage', 'Geheime Gruppenfrage', 'x') returning id into post;
-  insert into public.beitrag (art, titel, text, lernfeld, kapitel) values ('tipp', 'Öffentlicher Tipp', 'y', 'lf2', 'k1');
+  -- Seit G06 (15.10.) nur noch über die RPC; der direkte Weg ist auf Gruppen-Textbeiträge begrenzt.
+  perform public.beitrag_veroeffentlichen(gen_random_uuid(), 'tipp', 'Öffentlicher Tipp', 'y', 'lf2', 'k1', false, null, null);
+  begin insert into public.beitrag (art, titel, text) values ('tipp', 'Direkt allgemein', 'z'); r := r || ' FEHLER:allgemeinDirekt';
+  exception when others then r := r || ' allgemeinDirekt=verboten'; end;
   begin update public.profil set rolle = 'team' where id = a; r := r || ' FEHLER:rolle-geaendert';
   exception when others then r := r || ' rolleSetzen=verboten'; end;
   begin insert into public.beitrag (art, titel, versteckt) values ('tipp','Versteckt-Hack', true); r := r || ' FEHLER:versteckt';
@@ -47,13 +52,16 @@ begin
   perform set_config('request.jwt.claims', json_build_object('sub', b, 'role','authenticated')::text, true);
   perform public.gruppe_beitreten(lower(code));
   select count(*) into n from public.beitrag_liste; r := r || ' B_nachBeitritt=' || n;
-  insert into public.antwort (beitrag_id, text) values (post, 'Antwort von Ben') returning id into ant;
-  begin perform public.beste_antwort(ant); r := r || ' FEHLER:B-beste';
+  -- Seit Spec 06 (15.10.) Antworten nur über antwort_senden; direkt ist gesperrt.
+  ant := public.antwort_senden(gen_random_uuid(), post, 'Antwort von Ben');
+  begin insert into public.antwort (beitrag_id, text) values (post, 'Direkt'); r := r || ' FEHLER:antwortDirekt';
+  exception when others then r := r || ' antwortDirekt=verboten'; end;
+  begin perform public.beste_antwort_setzen(ant, true); r := r || ' FEHLER:B-beste';
   exception when others then r := r || ' besteDurchFremde=verboten'; end;
   insert into public.hilfreich (beitrag_id) values (post);
 
   perform set_config('request.jwt.claims', json_build_object('sub', a, 'role','authenticated')::text, true);
-  perform public.beste_antwort(ant);
+  perform public.beste_antwort_setzen(ant, true);
   select geloest::text into code from public.beitrag where id = post; r := r || ' geloest=' || code;
   begin perform public.moderieren('beitrag', post, true); r := r || ' FEHLER:moderiert';
   exception when others then r := r || ' moderierenOhneTeam=verboten'; end;

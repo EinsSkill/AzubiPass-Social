@@ -9,6 +9,7 @@ auseinander, schreibt ein Skript still etwas anderes — ohne Fehlermeldung. So
 etwas findet man erst, wenn eine Seite alt aussieht und niemand weiß, warum.
 """
 
+import hashlib
 import html
 import json
 import shutil
@@ -53,9 +54,23 @@ def veroeffentliche(*namen):
     kostet den Browser vierzehn Downloads für eine Datei, die sich nie
     unterscheidet."""
     MITTEL.mkdir(parents=True, exist_ok=True)
+    # Die freigegebenen Originale bleiben an genau einer Stelle im Repository.
+    for name in ("azubipass-logo.png", "azubipass-symbol.png"):
+        shutil.copyfile(HIER.parent / "doku" / "marke" / name, MITTEL / name)
     for name in namen:
         shutil.copyfile(HIER / name, MITTEL / name)
     return [f"mittel/{name}" for name in namen]
+
+
+def markenbild():
+    return ('<img class="markenlogo" src="mittel/azubipass-logo.png" '
+            'width="2172" height="724" alt="AzubiPass">')
+
+
+def symbolkopf():
+    return '''<link rel="icon" href="mittel/symbol-v1-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="mittel/symbol-v1-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="mittel/symbol-v1-180.png">'''
 
 
 def schriftkopf():
@@ -89,8 +104,7 @@ def kopf(titel, beschreibung, stile=(), skripte=()):
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="{FARBE_HELL}">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="mittel/symbol.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="mittel/symbol-180.png">
+{symbolkopf()}
 <meta name="apple-mobile-web-app-title" content="{MARKE}">
 {schriftkopf()}
 {verweise}
@@ -196,5 +210,151 @@ def fussleiste():
     return ('<footer class="fussleiste">'
             f'<a href="impressum.html">{erste}</a>'
             '<a href="datenschutz.html">Datenschutz</a>'
-            f'<span>{MARKE}</span>'
+            f'<span class="markenfuss">{markenbild()}</span>'
             '</footer>')
+
+
+# ---------------------------------------------------------------- Zwischenspeicher
+
+SW_VORLAGE = '''/* AzubiPass · Zwischenspeicher
+   Erzeugt von quellen/gemeinsames.py — nicht von Hand bearbeiten.
+
+   Eine Fassung = ein Speicher mit genau den Dateien dieses Baus. Jede Datei
+   hat einen Prüfwert (SHA-256). Installiert wird nur, wenn ALLE Dateien
+   ankommen und ALLE Prüfwerte stimmen – sonst bleibt die bisherige Fassung
+   unverändert in Betrieb, und beim nächsten Besuch wird es neu versucht.
+   Später wird nichts aus dem Netz in den Speicher einer Fassung nachgefüllt:
+   So kann es kein Gemisch aus zwei Fassungen geben (Gesamtaudit A04).
+
+   Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
+   sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
+
+var SPEICHER = "azubipass-%VERSION%";
+var VORRAT = %DATEIEN%;
+
+function hex(puffer) {
+  return Array.prototype.map.call(new Uint8Array(puffer), function (b) {
+    return ("0" + b.toString(16)).slice(-2);
+  }).join("");
+}
+
+function holen(pfad, pruefwert) {
+  return fetch(new Request(pfad, { cache: "reload" })).then(function (antwort) {
+    if (!antwort.ok) throw new Error(pfad + ": " + antwort.status);
+    return antwort.arrayBuffer().then(function (puffer) {
+      return crypto.subtle.digest("SHA-256", puffer).then(function (wert) {
+        if (hex(wert) !== pruefwert) throw new Error(pfad + ": andere Fassung");
+        return [pfad, new Response(puffer, { status: 200, headers: antwort.headers })];
+      });
+    });
+  });
+}
+
+self.addEventListener("install", function (e) {
+  var namen = Object.keys(VORRAT);
+  e.waitUntil(
+    Promise.all(namen.map(function (n) { return holen(n, VORRAT[n]); }))
+      .then(function (alle) {
+        return caches.open(SPEICHER).then(function (c) {
+          return Promise.all(alle.map(function (x) { return c.put(x[0], x[1]); }));
+        });
+      })
+      .catch(function (fehler) {
+        // Halbe Fassung wegwerfen; die Installation scheitert sichtbar.
+        return caches.delete(SPEICHER).then(function () { throw fehler; });
+      })
+  );
+});
+
+self.addEventListener("activate", function (e) {
+  e.waitUntil(caches.keys().then(function (namen) {
+    return Promise.all(namen.map(function (n) {
+      return n !== SPEICHER && n.indexOf("azubipass-") === 0 ? caches.delete(n) : null;
+    }));
+  }).then(function () { return self.clients.claim(); }));
+});
+
+self.addEventListener("message", function (e) {
+  if (e.data === "uebernehmen") self.skipWaiting();
+});
+
+/* Weg einer Anfrage relativ zum Geltungsbereich, so wie er im VORRAT steht
+   ("./" für die Startseite). null = gehört nicht zu dieser App. */
+function vorratsName(url) {
+  var basis = new URL(self.registration.scope).pathname;
+  if (url.pathname.indexOf(basis) !== 0) return null;
+  var rest = decodeURIComponent(url.pathname.slice(basis.length));
+  return rest === "" ? "./" : rest;
+}
+
+/* Gesamtaudit G01: Eine Datei, die zu dieser Fassung gehört, aber im Speicher
+   fehlt (entfernt, Speicher geleert), kommt nur aus dem Netz, wenn ihr
+   Prüfwert genau passt – dann wird sie auch wieder abgelegt. Sonst gibt es
+   einen klaren Hinweis statt einer Datei aus einer anderen Fassung. */
+function fehltImSpeicher(c, anfrage, name) {
+  return holen(name, VORRAT[name]).then(function (x) {
+    return c.put(x[0], x[1].clone()).then(function () { return x[1]; }, function () { return x[1]; });
+  }).catch(function () {
+    if (anfrage.mode === "navigate") {
+      return new Response(
+        '<!doctype html><html lang="de"><meta charset="utf-8">' +
+        '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+        '<title>AzubiPass</title><body style="font-family:system-ui,sans-serif;max-width:32rem;margin:15vh auto;padding:0 20px;line-height:1.5">' +
+        '<h1 style="font-size:1.4rem">Diese Seite fehlt im Offline-Speicher</h1>' +
+        '<p>Die gespeicherte Fassung der App ist unvollständig. Öffne die App mit Internetverbindung neu, dann wird sie wieder vollständig geladen.</p>' +
+        '<p><a href="./">Zur Startseite</a></p></body></html>',
+        { status: 503, headers: { "Content-Type": "text/html; charset=utf-8" } });
+    }
+    return new Response("", { status: 503, statusText: "Nicht in dieser Fassung verfuegbar" });
+  });
+}
+
+self.addEventListener("fetch", function (e) {
+  var anfrage = e.request;
+  if (anfrage.method !== "GET") return;
+  var url = new URL(anfrage.url);
+  if (url.origin !== self.location.origin) return;
+  var name = vorratsName(url);
+
+  e.respondWith(caches.open(SPEICHER).then(function (c) {
+    // Nur aus der eigenen Fassung – nie aus einem anderen Speicher.
+    return c.match(anfrage, { ignoreSearch: true }).then(function (treffer) {
+      if (treffer) return treffer;
+      // Gehört zur Fassung, fehlt aber: nur mit passendem Prüfwert.
+      if (name !== null && Object.prototype.hasOwnProperty.call(VORRAT, name)) {
+        return fehltImSpeicher(c, anfrage, name);
+      }
+      // Nicht im Vorrat: durchreichen, aber nicht in diese Fassung legen.
+      return fetch(anfrage).catch(function () {
+        return anfrage.mode === "navigate" ? c.match("app.html") : Response.error();
+      });
+    });
+  }));
+});
+'''
+
+
+def zwischenspeicher_schreiben():
+    """Schreibt docs/sw.js mit allen Dateien, die die App offline braucht,
+    jeweils mit SHA-256-Prüfwert. Läuft am Ende jedes Bauschritts, damit die
+    Prüfwerte zum tatsächlich geschriebenen Stand passen. Die Kennung der
+    Fassung folgt aus den Prüfwerten: gleicher Inhalt, gleiche Fassung."""
+    def wert(pfad):
+        return hashlib.sha256(pfad.read_bytes()).hexdigest()
+    vorrat = {}
+    for p in sorted(AUSGABE.glob("*.html")):
+        vorrat[p.name] = wert(p)
+    if (AUSGABE / "manifest.webmanifest").exists():
+        vorrat["manifest.webmanifest"] = wert(AUSGABE / "manifest.webmanifest")
+    if MITTEL.is_dir():
+        for p in sorted(MITTEL.iterdir()):
+            if p.is_file():
+                vorrat["mittel/" + p.name] = wert(p)
+    if "index.html" in vorrat:
+        vorrat["./"] = vorrat["index.html"]
+    fassung = hashlib.sha256(json.dumps(vorrat, sort_keys=True).encode()).hexdigest()[:16]
+    (AUSGABE / "sw.js").write_text(
+        SW_VORLAGE.replace("%VERSION%", fassung)
+                  .replace("%DATEIEN%", json.dumps(vorrat, ensure_ascii=False, indent=2, sort_keys=True)),
+        encoding="utf-8")
+    return list(vorrat)

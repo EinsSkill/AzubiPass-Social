@@ -192,7 +192,102 @@ window.AP = (function () {
     if (!Array.isArray(neu.probeklausuren)) neu.probeklausuren = [];
     if (typeof neu.geaendertAm !== "string") neu.geaendertAm = null;
     neu.uebernommen = neu.uebernommen === true;
+
+    /* Auch die einzelnen Einträge prüfen (Gesamtaudit A01): Ein einziges
+       null in einer Liste hat sonst die Ich-Ansicht samt Wiederherstellung
+       lahmgelegt. Unbrauchbares fällt weg, Brauchbares wird ergänzt. */
+    Object.keys(neu.fortschritt).forEach(function (id) {
+      var f = neu.fortschritt[id];
+      f.ziele = f.ziele.filter(einfacherWert);
+    });
+    ["karten", "vokabeln"].forEach(function (feld) {
+      Object.keys(neu[feld]).forEach(function (id) {
+        var k = neu[feld][id];
+        if (!istObjekt(k)) { delete neu[feld][id]; return; }
+        k.fach = ganzzahl(k.fach, 1, 1);
+        if (!istDatum(k.faellig)) k.faellig = tagesschluessel();
+        k.fehler = ganzzahl(k.fehler, 0, 0);
+      });
+    });
+    Object.keys(neu.quiz).forEach(function (id) {
+      if (!istObjekt(neu.quiz[id])) delete neu.quiz[id];
+    });
+    var gesehen = {};
+    neu.lesezeichen = neu.lesezeichen.filter(function (e) {
+      if (!istObjekt(e) || typeof e.zu !== "string" || !e.zu || gesehen[e.zu]) return false;
+      gesehen[e.zu] = true;
+      if (typeof e.titel !== "string") e.titel = "";
+      if (typeof e.lernfeld !== "string") e.lernfeld = "";
+      return true;
+    });
+    var tage = {};
+    neu.aktivitaet = neu.aktivitaet.filter(function (t) {
+      if (!istDatum(t) || tage[t]) return false;
+      tage[t] = true;
+      return true;
+    }).slice(-400);
+    neu.probeklausuren = neu.probeklausuren.filter(istObjekt).slice(0, 50);
+    if (!istObjekt(neu.zuletzt) || typeof neu.zuletzt.zu !== "string" || !neu.zuletzt.zu) neu.zuletzt = null;
+    if (!istDatum(neu.pruefungstermin)) neu.pruefungstermin = null;
+    if (typeof neu.stimmung !== "string") neu.stimmung = "hell";
     return neu;
+  }
+
+  function istObjekt(w) { return !!w && typeof w === "object" && !Array.isArray(w); }
+  function einfacherWert(w) { return typeof w === "string" || (typeof w === "number" && isFinite(w)); }
+  function ganzzahl(w, standard, min) {
+    return typeof w === "number" && isFinite(w) && w >= min ? Math.floor(w) : standard;
+  }
+
+  /* Prüft eine Sicherung, bevor irgendetwas davon übernommen wird. Gibt eine
+     Liste der Probleme zurück – leer heißt: brauchbar. Streng mit den Typen,
+     großzügig mit fehlenden Feldern: Ältere Sicherungen (v1, v2) haben nicht
+     alles, was es heute gibt, und sollen trotzdem eingespielt werden können. */
+  function sicherungPruefen(k) {
+    var p = [];
+    function nennen(was) { if (p.indexOf(was) < 0) p.push(was); }
+    if (!istObjekt(k) || !istObjekt(k.fortschritt)) return ["kein Lernstand"];
+    Object.keys(k.fortschritt).forEach(function (id) {
+      var f = k.fortschritt[id];
+      if (!istObjekt(f)) return nennen("Kapitelfortschritt");
+      if ("ziele" in f && !(Array.isArray(f.ziele) && f.ziele.every(einfacherWert))) nennen("Lernziele");
+      ["checks", "zuordnen", "test"].forEach(function (feld) {
+        if (feld in f && !istObjekt(f[feld])) nennen("Kapitelfortschritt");
+      });
+      if ("fertig" in f && typeof f.fertig !== "boolean") nennen("Kapitelfortschritt");
+    });
+    [["karten", "Karteikarten"], ["vokabeln", "Vokabeln"]].forEach(function (x) {
+      if (!(x[0] in k)) return;
+      if (!istObjekt(k[x[0]])) return nennen(x[1]);
+      Object.keys(k[x[0]]).forEach(function (id) {
+        var e = k[x[0]][id];
+        if (!istObjekt(e) || ("fach" in e && typeof e.fach !== "number") ||
+            ("faellig" in e && typeof e.faellig !== "string") ||
+            ("fehler" in e && typeof e.fehler !== "number")) nennen(x[1]);
+      });
+    });
+    if ("quiz" in k && !(istObjekt(k.quiz) &&
+        Object.keys(k.quiz).every(function (id) { return istObjekt(k.quiz[id]); }))) nennen("Übungsfragen");
+    if ("lesezeichen" in k && !(Array.isArray(k.lesezeichen) && k.lesezeichen.every(function (e) {
+      return istObjekt(e) && typeof e.zu === "string" && e.zu;
+    }))) nennen("Lesezeichen");
+    if ("aktivitaet" in k && !(Array.isArray(k.aktivitaet) &&
+        k.aktivitaet.every(function (t) { return typeof t === "string"; }))) nennen("Lerntage");
+    if ("probeklausuren" in k && !(Array.isArray(k.probeklausuren) &&
+        k.probeklausuren.every(istObjekt))) nennen("Probeklausuren");
+    if ("zuletzt" in k && k.zuletzt !== null &&
+        !(istObjekt(k.zuletzt) && typeof k.zuletzt.zu === "string")) nennen("zuletzt geöffnetes Kapitel");
+    if ("geaendertAm" in k && k.geaendertAm !== null && typeof k.geaendertAm !== "string") nennen("Zeitstempel");
+    return p;
+  }
+
+  /* Ersetzt den Inhalt des Kontos in einem Schritt – das Objekt bleibt
+     dasselbe, weil alle Ansichten es festhalten – und schreibt sofort. */
+  function kontoErsetzen(neu) {
+    var sauber = normalisieren(neu);
+    Object.keys(stand).forEach(function (k) { delete stand[k]; });
+    Object.keys(sauber).forEach(function (k) { stand[k] = sauber[k]; });
+    return sofortSichern();
   }
 
   /* Der alte Bestand: ein Eintrag je Lernzettel, benannt azubipass:<lernfeld>.
@@ -235,20 +330,47 @@ window.AP = (function () {
     return normalisieren(neu);
   }
 
-  var wartet = false;
+  /* Speichern (Gesamtaudit A05): Früher wartete jede Änderung 400 ms – wer
+     direkt danach neu lud, verlor sie. Jetzt wird die erste Änderung sofort
+     geschrieben; erst weitere Änderungen in kurzer Folge (Tippen im Selbsttest)
+     werden gebündelt. Beim Verlassen, Neuladen oder Wechsel in den
+     Hintergrund wird Ausstehendes sofort geschrieben. */
+  var wartet = null, geschriebenUm = 0, BUENDEL = 400;
+
+  function schreiben() {
+    if (wartet) { clearTimeout(wartet); wartet = null; }
+    geschriebenUm = Date.now();
+    try {
+      localStorage.setItem(SCHLUESSEL, JSON.stringify(stand));
+      return true;
+    } catch (e) {
+      // Speicher voll oder gesperrt. Nichts kaputtmachen, nichts behaupten.
+      return false;
+    }
+  }
+
   function sichern() {
     stand.geaendertAm = new Date().toISOString();
     if (wartet) return;
-    wartet = true;
-    setTimeout(function () {
-      wartet = false;
-      try {
-        localStorage.setItem(SCHLUESSEL, JSON.stringify(stand));
-      } catch (e) {
-        // Speicher voll oder gesperrt. Nichts kaputtmachen, nichts behaupten.
-      }
-    }, 400);
+    var seit = Date.now() - geschriebenUm;
+    if (seit >= BUENDEL) { schreiben(); return; }
+    wartet = setTimeout(schreiben, BUENDEL - seit);
   }
+
+  // Jetzt schreiben, auch wenn gerade gebündelt wird. true = gespeichert.
+  function sofortSichern() {
+    stand.geaendertAm = new Date().toISOString();
+    return schreiben();
+  }
+
+  function ausstehendSchreiben() { if (wartet) schreiben(); }
+  try {
+    window.addEventListener("pagehide", ausstehendSchreiben);
+    window.addEventListener("beforeunload", ausstehendSchreiben);
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "hidden") ausstehendSchreiben();
+    });
+  } catch (e) {}
 
   /* Eine abgegebene Probeklausur ist ein Ergebnis des Lernstands. Antworten
      und Eingaben bleiben im separaten Klausurbogen; im Konto genügt die
@@ -496,6 +618,45 @@ window.AP = (function () {
     return { jetzt: jetzt, geheZu: function (id) { location.hash = "#" + id; } };
   }
 
+  /* „Zum Inhalt springen“ (Gesamtaudit A07): Der Link zeigt auf #inhalt –
+     das ist aber auch die Adresse, an der der Verteiler die Ansicht abliest.
+     Deshalb hier abfangen: nicht die Adresse ändern, sondern den sichtbaren
+     Hauptinhalt fokussieren (erste sichtbare Überschrift, sonst <main>). */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.sprung");
+    if (!a) return;
+    e.preventDefault();
+    var main = document.getElementById("inhalt") || document.querySelector("main");
+    if (!main) return;
+    var ziel = null;
+    var kandidaten = main.querySelectorAll("h1, h2");
+    for (var i = 0; i < kandidaten.length; i++) {
+      var h = kandidaten[i];
+      if (h.offsetParent !== null && h.getClientRects().length) { ziel = h; break; }
+    }
+    ziel = ziel || main;
+    if (!ziel.hasAttribute("tabindex")) ziel.setAttribute("tabindex", "-1");
+    ziel.focus({ preventScroll: false });
+    if (ziel.scrollIntoView) ziel.scrollIntoView({ block: "start" });
+  });
+
+  /* Breite Tabellen scrollen seitlich in ihrer Hülle. Wer nur die Tastatur
+     benutzt, braucht dafür einen Fokus auf der Hülle – aber nur, wenn sie
+     wirklich scrollt; sonst wäre es ein leerer Tab-Halt (Scan 13.10.2026). */
+  function tabellenFokus() {
+    var h = document.querySelectorAll(".tab-huelle");
+    for (var i = 0; i < h.length; i++) {
+      var scrollt = h[i].scrollWidth > h[i].clientWidth + 1;
+      if (scrollt) h[i].setAttribute("tabindex", "0");
+      else h[i].removeAttribute("tabindex");
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tabellenFokus);
+  else tabellenFokus();
+  window.addEventListener("resize", tabellenFokus);
+  window.addEventListener("hashchange", function () { setTimeout(tabellenFokus, 50); });
+  window.addEventListener("load", tabellenFokus);
+
   /* ================================================== Leiste unten */
 
   function leiste() {
@@ -567,6 +728,7 @@ window.AP = (function () {
     istDatum: istDatum, datumsformat: datumsformat,
     stand: stand, sichern: sichern, kapitelfach: kapitelfach, abdruck: abdruck,
     heuteGelernt: heuteGelernt, frisch: frisch, SCHLUESSEL: SCHLUESSEL,
+    sofortSichern: sofortSichern, sicherungPruefen: sicherungPruefen, kontoErsetzen: kontoErsetzen,
     PROBEKLAUSUR_SCHLUESSEL: PROBEKLAUSUR_SCHLUESSEL,
     probeklausurErgebnisSpeichern: probeklausurErgebnisSpeichern,
     probeklausurZuruecksetzen: probeklausurZuruecksetzen,

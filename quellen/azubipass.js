@@ -977,22 +977,41 @@
 
   /* ---------- 4 · Abschlusskette ---------- */
 
+  /* Gesamtaudit A06: Jede Stufe hat einen echten Knopf – mit Tab erreichbar,
+     Enter/Leertaste wie Klick, aria-expanded sagt, ob sie offen ist. Noch
+     gesperrte Stufen bleiben erreichbar, melden sich aber als nicht
+     verfügbar (aria-disabled), damit man weiß, dass es weitergeht. */
+  var aufNr = 0;
   function gKette(buehne, d) {
     var kette = el("div", "kette");
     var frei = 1;
+    var knoepfe = [];
     d.schritte.forEach(function (s, i) {
       var g = el("div", "kglied" + (i === 0 ? " frei" : ""));
       g.appendChild(el("div", "knr", String(s.nr)));
       var rechts = el("div");
-      rechts.appendChild(el("div", "ktitel", s.titel));
-      rechts.appendChild(el("div", "ksatz", s.satz));
-      rechts.appendChild(mkEl("div", "ktext", s.text));
+      var k = el("button", "kkopf");
+      k.type = "button";
+      k.appendChild(el("span", "ktitel", s.titel));
+      k.appendChild(el("span", "ksatz", s.satz));
+      var text = mkEl("div", "ktext", s.text);
+      text.id = "ap-auf-" + (++aufNr);
+      text.setAttribute("aria-hidden", "true");
+      k.setAttribute("aria-controls", text.id);
+      k.setAttribute("aria-expanded", "false");
+      if (i !== 0) k.setAttribute("aria-disabled", "true");
+      rechts.appendChild(k);
+      rechts.appendChild(text);
       g.appendChild(rechts);
+      knoepfe.push(k);
       g.addEventListener("click", function () {
         if (!g.classList.contains("frei")) return;
-        g.classList.toggle("offen");
+        var offen = g.classList.toggle("offen");
+        k.setAttribute("aria-expanded", offen ? "true" : "false");
+        text.setAttribute("aria-hidden", offen ? "false" : "true");
         if (i + 1 === frei && frei < d.schritte.length) {
           kette.children[frei].classList.add("frei");
+          knoepfe[frei].removeAttribute("aria-disabled");
           frei++;
         }
       });
@@ -1971,9 +1990,22 @@
       sp.appendChild(el("div", "vgl-kopf", s.name));
       s.punkte.forEach(function (p) {
         var box = el("div", "vgl-punkt");
-        box.appendChild(mkEl("div", "vgl-text", p.text));
-        box.appendChild(mkEl("div", "vgl-detail", p.detail || ""));
-        box.addEventListener("click", function () { box.classList.toggle("auf"); });
+        // Gesamtaudit A06: echter Knopf statt klickbarer Fläche.
+        var k = el("button", "vgl-knopf");
+        k.type = "button";
+        k.appendChild(mkEl("span", "vgl-text", p.text));
+        var detail = mkEl("div", "vgl-detail", p.detail || "");
+        detail.id = "ap-auf-" + (++aufNr);
+        detail.setAttribute("aria-hidden", "true");
+        k.setAttribute("aria-controls", detail.id);
+        k.setAttribute("aria-expanded", "false");
+        box.appendChild(k);
+        box.appendChild(detail);
+        box.addEventListener("click", function () {
+          var auf = box.classList.toggle("auf");
+          k.setAttribute("aria-expanded", auf ? "true" : "false");
+          detail.setAttribute("aria-hidden", auf ? "false" : "true");
+        });
         sp.appendChild(box);
       });
       gitter.appendChild(sp);

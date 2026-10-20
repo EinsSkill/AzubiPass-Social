@@ -20,6 +20,7 @@ Ein eigener Schritt und kein zweites Bausystem: Er liest nur, was die
 Kapiteldateien ohnehin enthalten.
 """
 
+import base64
 import html
 import json
 import re
@@ -30,7 +31,7 @@ from pathlib import Path
 from build import karten_sammeln, option_ids
 from gemeinsames import (AUSGABE, LUPE, MARKE, MITTEL, fussleiste, kopf, lade,
                          lernfeld_dateien, rechtliches, schriften_lokal,
-                         tableiste, veroeffentliche)
+                         tableiste, veroeffentliche, zwischenspeicher_schreiben)
 
 HIER = Path(__file__).parent
 PLATZHALTER = "BITTE_AUSFUELLEN"
@@ -459,32 +460,18 @@ def aufgaben_schreiben(kapitel, bausteine, konten, vorlagen):
 
 # ---------------------------------------------------------------- Symbol
 
-SYMBOL = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img"
-     aria-label="AzubiPass">
-  <rect width="512" height="512" rx="114" fill="#12301F"/>
-  <rect x="148" y="148" width="216" height="216" transform="rotate(45 256 256)"
-        fill="none" stroke="#C9A227" stroke-width="24"/>
-  <rect x="217" y="217" width="78" height="78" transform="rotate(45 256 256)"
-        fill="#C9A227"/>
-</svg>'''
-
-
 def symbole():
-    """Schreibt das Zeichen einmal als SVG und rendert daraus die PNG-Größen,
-    die iOS und der Homescreen brauchen.
+    """Leitet Browser-/PWA-Icons aus dem freigegebenen Original ab.
 
-    Gerendert wird mit Playwright — das ist für pruefe.py ohnehin da. Eine
-    Bildbibliothek nur für drei Symbole wäre eine Abhängigkeit zu viel."""
-    (MITTEL / "symbol.svg").write_text(SYMBOL, encoding="utf-8")
-    groessen = [("symbol-192.png", 192), ("symbol-512.png", 512), ("symbol-180.png", 180)]
-    if all((MITTEL / name).exists() for name, _ in groessen):
-        return True
+    Creme trägt das grüne Zeichen auch unter einer Systemmaske. Der Abstand
+    hält die sichtbare Form innerhalb des sicheren Maskable-Bereichs.
+    Immer neu rendern: Vorhandene PNGs dürfen keine alte Marke festhalten."""
+    daten = base64.b64encode((MITTEL / "azubipass-symbol.png").read_bytes()).decode("ascii")
+    groessen = [(f"symbol-v1-{px}.png", px) for px in (32, 180, 192, 512)]
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        print("  Hinweis: Playwright fehlt — die PNG-Symbole bleiben aus.")
-        print("           Auf dem iPhone zeigt der Homescreen dann ein Vorschaubild.")
-        return False
+        raise SystemExit("Playwright fehlt — die freigegebenen App-Icons konnten nicht gebaut werden.")
 
     with sync_playwright() as p:
         b = p.chromium.launch()
@@ -492,11 +479,17 @@ def symbole():
             seite = b.new_page(viewport={"width": px, "height": px},
                                device_scale_factor=1)
             seite.set_content(
-                f'<body style="margin:0">{SYMBOL.replace("512", str(px), 2)}</body>')
-            seite.screenshot(path=str(MITTEL / name), omit_background=True)
+                '<body style="margin:0;background:#F5F5F0;display:grid;'
+                'place-items:center;width:100vw;height:100vh">'
+                f'<img src="data:image/png;base64,{daten}" alt="" '
+                'style="display:block;width:84%;height:84%;object-fit:contain"></body>')
+            seite.locator("img").evaluate("img => img.decode()")
+            seite.screenshot(path=str(MITTEL / name))
             seite.close()
         b.close()
-    print(f"  Symbole: svg + {len(groessen)} PNG")
+    for alt in ("symbol.svg", "symbol-180.png", "symbol-192.png", "symbol-512.png"):
+        (MITTEL / alt).unlink(missing_ok=True)
+    print(f"  Markensymbole: {len(groessen)} PNG aus der freigegebenen Symboldatei")
     return True
 
 
@@ -560,7 +553,8 @@ def privatkasten():
     return ('<div class="box praxis"><div class="bk">Persönliches Open-Source-Lernprojekt</div>'
             '<p>Diese Seite und ihr Quellcode dürfen öffentlich angesehen, '
             'geteilt und als Projekt gezeigt werden. Es gibt keinen Verkauf, '
-            'keine Werbung, keine Nutzerkonten und kein Tracking.</p>'
+            'keine Werbung und kein Tracking. Lernen und Üben funktionieren ohne '
+            'Nutzerkonto; nur die Community-Beta braucht eins.</p>'
             '<p>Der Modus <code>nur_privat</code> ist ausschließlich für ein '
             'persönliches, nichtkommerzielles Angebot gedacht. Vor einer '
             'geschäftsmäßigen oder kommerziellen Veröffentlichung muss er in '
@@ -653,7 +647,151 @@ def impressum(r, fehlt):
 '''
 
 
+COMMUNITY_FELDER = ("supabase_vertragspartner", "supabase_garantien", "mailversand",
+                    "frist_unvollstaendig", "frist_protokolle", "frist_sicherungen")
+
+
+def community_luecken(r):
+    """Was für die Datenschutzerklärung der Community noch fehlt – unabhängig
+    von nur_privat: Sobald es Konten gibt, muss die Erklärung vollständig sein."""
+    c = r.get("community", {})
+    if not c.get("aktiv"):
+        return []
+    fehlt = [f"community.{k}" for k in COMMUNITY_FELDER
+             if not c.get(k) or c.get(k) == PLATZHALTER]
+    a = r.get("anbieter", {})
+    for feld in ("strasse", "plz_ort", "email"):
+        if not a.get(feld) or a.get(feld) == PLATZHALTER:
+            fehlt.append(f"anbieter.{feld}")
+    return fehlt
+
+
 def datenschutz(r, fehlt):
+    """Datenschutzerklärung. Mit Community nach dem Entwurf von ChatGPT
+    (doku/community/uebergabe.md, Review vom 12.10.2026), Lücken sichtbar
+    markiert. Ohne Community die bisherige Fassung."""
+    a = r.get("anbieter", {})
+    h = r.get("hosting", {})
+    auf = r.get("aufsicht", {})
+    c = r.get("community", {})
+
+    def wert(x):
+        return html.escape(x) if x and x != PLATZHALTER else \
+            '<em style="color:var(--warn-schrift)">— fehlt noch —</em>'
+
+    if not c.get("aktiv"):
+        return datenschutz_ohne_konten(r, fehlt)
+
+    luecken_c = community_luecken(r)
+    kasten = ""
+    if luecken_c:
+        kasten = ('<div class="box achtung"><div class="bk">Noch nicht veröffentlichungsfertig</div>'
+                  '<p>Für die Community fehlen in <code>quellen/rechtliches.json</code> noch: '
+                  + html.escape(", ".join(luecken_c)) +
+                  '. Bis dahin ist diese Erklärung unvollständig.</p></div>')
+
+    return warnkasten(fehlt) + kasten + f'''
+  <div class="schirm-kopf">
+    <h1>Datenschutz</h1>
+    <p>Datenschutzerklärung – AzubiPass und AzubiPass Social. Informationen nach
+       Art. 13 der Datenschutz-Grundverordnung.</p>
+  </div>
+
+  <h2>Verantwortlicher</h2>
+  <p>{wert(a.get("name"))}<br>{wert(a.get("strasse"))}<br>{wert(a.get("plz_ort"))}<br>
+     E-Mail: {wert(a.get("email"))}</p>
+
+  <h2>Lernen und Üben</h2>
+  <p>Lernen und Üben funktionieren ohne Community-Konto. Dein Lernstand bleibt im
+     lokalen Speicher deines Browsers und wird nicht automatisch an den
+     Community-Server übertragen. Dazu gehören beispielsweise bearbeitete Kapitel,
+     Antworten, Karteikarten und Lesezeichen.</p>
+  <p>Du kannst diese Daten unter „Ich" zurücksetzen oder durch Löschen der
+     Websitedaten entfernen. Sicherungsdateien werden auf deinem Gerät erzeugt.</p>
+
+  <h2>Aufruf der Website</h2>
+  <p>AzubiPass wird über {html.escape(h.get("dienst", "GitHub Pages"))} bereitgestellt
+     ({html.escape(h.get("anbieter", ""))}, {html.escape(h.get("anschrift", ""))}).
+     GitHub verarbeitet beim Seitenaufruf technische Zugriffsdaten, insbesondere
+     IP-Adresse und Informationen zur Anfrage und zum verwendeten Gerät. Dies dient
+     der Bereitstellung und Sicherheit der Website. Grundlage ist
+     {html.escape(h.get("grundlage", "Art. 6 Abs. 1 lit. f DSGVO"))}.</p>
+  <p>GitHub verarbeitet Daten auch in den USA und beschreibt hierfür unter anderem
+     das EU-US Data Privacy Framework in seiner Datenschutzerklärung. Die dort
+     erläuterten Aufbewahrungskriterien gelten für seine Verarbeitung.</p>
+
+  <h2>Community-Konto und Anmeldung</h2>
+  <p>Für die Community verarbeiten wir deine E-Mail-Adresse, eine interne Konto-ID
+     sowie technische Anmelde- und Sitzungsinformationen. Die Anmeldung erfolgt
+     über einen E-Mail-Link oder einen Anmeldecode aus der E-Mail.</p>
+  <p>Für das Community-Profil verarbeiten wir deinen Anzeigenamen, optional dein
+     Lehrjahr, deine Rolle, die Zuordnung zur Beta-Freischaltung sowie Angaben zur
+     Alters- und Regelbestätigung und zum Erstellungszeitpunkt.</p>
+  <p>Die erforderliche Kontoverarbeitung dient der Bereitstellung der von dir
+     gewünschten Community und beruht auf Art. 6 Abs. 1 lit. b DSGVO. Technische
+     Sicherheitsmaßnahmen dienen dem Schutz vor Missbrauch und beruhen auf
+     Art. 6 Abs. 1 lit. f DSGVO.</p>
+  <p>Ohne die erforderlichen Angaben ist kein Community-Profil möglich. Dein
+     Lehrjahr ist freiwillig. Lernen und Üben bleiben unabhängig davon nutzbar.</p>
+
+  <h2>Sichtbarkeit und Mindestalter</h2>
+  <p>Anzeigename, optionales Lehrjahr und Rolle sind für freigeschaltete
+     Community-Mitglieder lesbar. Deine E-Mail-Adresse, dein Beta-Zugang und deine
+     Altersbestätigung werden anderen Mitgliedern nicht angezeigt.</p>
+  <p>Die Community richtet sich an Personen ab 16 Jahren. Bei der Profilanlage
+     bestätigst du das Mindestalter. Ein Geburtsdatum wird hierfür nicht
+     abgefragt.</p>
+  <p>Beiträge und Lerngruppen sind im hier beschriebenen Zugangspaket noch nicht
+     verfügbar. Vor ihrer Einführung werden diese Informationen ergänzt.</p>
+
+  <h2>Supabase und E-Mail-Versand</h2>
+  <p>Für Konten, Anmeldung und Community-Profile verwenden wir Supabase. Die
+     Projektdatenbank befindet sich in {html.escape(c.get("datenbank_region", ""))}.</p>
+  <p>Vertragspartner: {wert(c.get("supabase_vertragspartner"))}. Supabase verarbeitet
+     Daten nach dem für das Projekt geltenden Auftragsverarbeitungsvertrag und setzt
+     Unterauftragnehmer ein. Internationale Verarbeitung kann trotz der gewählten
+     Datenbankregion stattfinden. Maßgebliche Garantien und weitere Informationen:
+     {wert(c.get("supabase_garantien"))}.</p>
+  <p>Anmeldemails werden über {wert(c.get("mailversand"))} versendet. Dafür erhält
+     der Anbieter die Empfängeradresse und die für Zustellung und Anmeldung
+     erforderlichen Informationen.</p>
+
+  <h2>Speicherung auf deinem Gerät</h2>
+  <p>Die App speichert Lernstand und erforderliche Sitzungsinformationen im Browser.
+     Die Sitzung ermöglicht, angemeldet zu bleiben. Das Abmelden entfernt die
+     lokalen Sitzungsinformationen; dein lokaler Lernstand bleibt erhalten.</p>
+  <p>Soweit diese Speicherung für die ausdrücklich gewünschten Funktionen unbedingt
+     erforderlich ist, erfolgt sie auf Grundlage von § 25 Abs. 2 Nr. 2 TDDDG.</p>
+
+  <h2>Speicherdauer und Löschung</h2>
+  <p>Konten und Profile werden für die Dauer der Community-Nutzung gespeichert. Für
+     unvollständige Registrierungen gilt {wert(c.get("frist_unvollstaendig"))}.
+     Technische Protokolle werden nach {wert(c.get("frist_protokolle"))} gelöscht;
+     Sicherungskopien nach {wert(c.get("frist_sicherungen"))}.</p>
+  <p>Eine Kontolöschung kannst du über die oben genannte Kontaktadresse anfordern.
+     Gesetzliche Aufbewahrungspflichten oder erforderliche Maßnahmen zur
+     Rechtsverteidigung können einer sofortigen vollständigen Löschung
+     entgegenstehen.</p>
+
+  <h2>Deine Rechte</h2>
+  <p>Du kannst nach den gesetzlichen Voraussetzungen Auskunft, Berichtigung,
+     Löschung, Einschränkung und Datenübertragbarkeit verlangen. Gegen
+     Verarbeitungen auf Grundlage berechtigter Interessen besteht ein
+     Widerspruchsrecht.</p>
+  <p>Du kannst dich bei einer Datenschutzaufsichtsbehörde beschweren,
+     beispielsweise der {html.escape(auf.get("name", ""))}
+     (<a href="{html.escape(auf.get("web", ""))}" rel="noopener noreferrer"
+      target="_blank">{html.escape(auf.get("web", ""))}</a>).</p>
+  <p>Die App verwendet keine Werbe- oder Reichweitenanalyse und trifft keine
+     automatisierten Entscheidungen mit rechtlicher oder vergleichbar erheblicher
+     Wirkung. Die Schriften werden lokal bereitgestellt.</p>
+
+  <p class="stand">Stand: {date.today().strftime("%d.%m.%Y")}</p>
+'''
+
+
+def datenschutz_ohne_konten(r, fehlt):
+    """Bisherige Fassung für den Fall ohne Community (community.aktiv = false)."""
     a = r.get("anbieter", {})
     h = r.get("hosting", {})
     auf = r.get("aufsicht", {})
@@ -737,7 +875,7 @@ def datenschutz(r, fehlt):
 
 # ---------------------------------------------------------------- App-Seite
 
-def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs):
+def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs):
     """Die Schale. Der Inhalt der fünf Schirme entsteht im Browser aus
     inhalt.json — hier steht nur das Gerüst, damit die Seite auch ohne
     JavaScript etwas Sinnvolles zeigt."""
@@ -750,7 +888,7 @@ def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs):
 <head>
 {kopf("Lernen", "Alle Lernfelder für Kaufleute für Büromanagement — Fortschritt, "
       "Karteikarten und Suche, auch ohne Netz.", stile=[stil],
-      skripte=[kernel, communityjs, aufgabenjs, appjs])}
+      skripte=[kernel, communityjs, ansichtjs, beitraegejs, moderationjs, aufgabenjs, appjs])}
 </head>
 <body data-bereich="heute">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
@@ -770,6 +908,7 @@ def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs):
   <section class="schirm" id="ueben" hidden></section>
   <section class="schirm" id="suche" hidden></section>
   <section class="schirm" id="ich" hidden></section>
+  <section class="schirm" id="community" hidden></section>
   <noscript>
     <div class="schirm">
       <div class="schirm-kopf"><h1>{MARKE}</h1>
@@ -802,10 +941,9 @@ def manifest():
         "theme_color": "#12301F",
         "categories": ["education"],
         "icons": [
-            {"src": "mittel/symbol.svg", "sizes": "any", "type": "image/svg+xml"},
-            {"src": "mittel/symbol-192.png", "sizes": "192x192", "type": "image/png",
+            {"src": "mittel/symbol-v1-192.png", "sizes": "192x192", "type": "image/png",
              "purpose": "any maskable"},
-            {"src": "mittel/symbol-512.png", "sizes": "512x512", "type": "image/png",
+            {"src": "mittel/symbol-v1-512.png", "sizes": "512x512", "type": "image/png",
              "purpose": "any maskable"},
         ],
         "shortcuts": [
@@ -816,72 +954,38 @@ def manifest():
     }, ensure_ascii=False, indent=2)
 
 
-SW_VORLAGE = '''/* AzubiPass · Zwischenspeicher
-   Erzeugt von build_app.py — nicht von Hand bearbeiten.
-
-   Der Name des Speichers trägt das Baudatum. Ein neuer Bau legt deshalb einen
-   neuen an und räumt die alten weg; ein halb altes, halb neues Gemisch kann es
-   nicht geben.
-
-   Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
-   sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
-
-var SPEICHER = "azubipass-%VERSION%";
-var VORRAT = %DATEIEN%;
-
-self.addEventListener("install", function (e) {
-  e.waitUntil(caches.open(SPEICHER).then(function (c) {
-    // Einzeln statt addAll: Eine fehlende Datei soll nicht die ganze
-    // Installation scheitern lassen — dann liefe gar nichts offline.
-    return Promise.all(VORRAT.map(function (u) {
-      return c.add(new Request(u, { cache: "reload" })).catch(function () {});
-    }));
-  }));
-});
-
-self.addEventListener("activate", function (e) {
-  e.waitUntil(caches.keys().then(function (namen) {
-    return Promise.all(namen.map(function (n) {
-      return n !== SPEICHER && n.indexOf("azubipass-") === 0 ? caches.delete(n) : null;
-    }));
-  }).then(function () { return self.clients.claim(); }));
-});
-
-self.addEventListener("message", function (e) {
-  if (e.data === "uebernehmen") self.skipWaiting();
-});
-
-self.addEventListener("fetch", function (e) {
-  var anfrage = e.request;
-  if (anfrage.method !== "GET") return;
-  var url = new URL(anfrage.url);
-  if (url.origin !== self.location.origin) return;
-
-  e.respondWith(
-    caches.match(anfrage, { ignoreSearch: true }).then(function (treffer) {
-      if (treffer) return treffer;
-      return fetch(anfrage).then(function (antwort) {
-        if (antwort && antwort.ok && antwort.type === "basic") {
-          var kopie = antwort.clone();
-          caches.open(SPEICHER).then(function (c) { c.put(anfrage, kopie); });
-        }
-        return antwort;
-      }).catch(function () {
-        // Ohne Netz und ohne Vorrat: Wenigstens die App statt eines
-        // Browserfehlers, damit man von dort weiterkommt.
-        return anfrage.mode === "navigate" ? caches.match("app.html") : Response.error();
-      });
-    })
-  );
-});
-'''
+# Der Zwischenspeicher (sw.js) entsteht in gemeinsames.py, nach jedem Bauschritt.
 
 
-def service_worker(dateien):
-    version = datetime.now().strftime("%Y%m%d-%H%M%S")
-    return (SW_VORLAGE
-            .replace("%VERSION%", version)
-            .replace("%DATEIEN%", json.dumps(sorted(dateien), ensure_ascii=False, indent=2)))
+# ---------------------------------------------------------------- Community-Regeln
+
+def community_regeln():
+    """Liest den freigegebenen Regeltext aus doku/community/03-community-regeln.md.
+
+    Eine Quelle: ChatGPT und Lukes pflegen den Text dort, die App zeigt genau
+    ihn – ab „## Unsere Community-Regeln", ohne die Metadaten darüber."""
+    datei = HIER.parent / "doku" / "community" / "03-community-regeln.md"
+    text = datei.read_text(encoding="utf-8")
+    if "## Unsere Community-Regeln" not in text:
+        raise SystemExit(f"{datei}: Abschnitt „## Unsere Community-Regeln“ fehlt.")
+    teil = text.split("## Unsere Community-Regeln", 1)[1]
+    einleitung, regeln, aktuell = [], [], None
+    for zeile in teil.splitlines():
+        z = zeile.strip()
+        if not z:
+            continue
+        m = re.match(r"^\d+\.\s+\*\*(.+?)\*\*\s*$", z)
+        if m:
+            aktuell = {"titel": m.group(1).strip(), "text": ""}
+            regeln.append(aktuell)
+        elif aktuell is not None:
+            aktuell["text"] = (aktuell["text"] + " " + z).strip()
+        else:
+            einleitung.append(z)
+    if len(regeln) != 8:
+        raise SystemExit(f"{datei}: erwartet 8 Regeln, gefunden {len(regeln)}.")
+    return {"einleitung": " ".join(einleitung), "regeln": regeln,
+            "quelle": "doku/community/03-community-regeln.md"}
 
 
 # ---------------------------------------------------------------- Aufbau
@@ -891,11 +995,11 @@ def baue():
         print("ACHTUNG: mittel/schriften.css fehlt — erst schriften.py laufen lassen.\n")
 
     MITTEL.mkdir(parents=True, exist_ok=True)
-    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, _ = veroeffentliche(
+    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, ansichtjs, beitraegejs, moderationjs, _ = veroeffentliche(
         "azubipass.css", "kern.js", "app.js", "aufgaben.js", "azubipass.js",
         # supabase.js wird nicht eingebunden, sondern erst bei Bedarf von
         # community.js nachgeladen – liegt aber im Zwischenspeicher bereit.
-        "community.js", "supabase.js")
+        "community.js", "community-ansicht.js", "community-beitraege.js", "community-moderation.js", "supabase.js")
 
     konten, konten_index = kontenplan_lesen()
     belege, belege_steuer = belegvorlagen()
@@ -948,6 +1052,7 @@ def baue():
         "tests": tests,
         "begriffe": sorted(begriffe.values(), key=lambda e: e["titel"].lower()),
         "vokabeln": vokabelbloecke,
+        "communityRegeln": community_regeln(),
     }
     (MITTEL / "inhalt.json").write_text(
         json.dumps(inhalt, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -960,7 +1065,7 @@ def baue():
     (AUSGABE / "manifest.webmanifest").write_text(manifest(), encoding="utf-8")
     # Direkt im Home-Menü starten, auch an der Wurzel der Projektseite.
     # app.html bleibt für bestehende Links und installierte Apps erhalten.
-    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs)
+    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs)
     for name in ("index.html", "app.html"):
         (AUSGABE / name).write_text(app, encoding="utf-8")
 
@@ -984,11 +1089,10 @@ def baue():
         rechtsseite("Datenschutz", "Wie diese Seite mit Daten umgeht.",
                     datenschutz(r, fehlt), stil, kernel), encoding="utf-8")
 
-    # Vorrat für den Zwischenspeicher: alles, was die App offline braucht
-    dateien = ["./", "app.html", "manifest.webmanifest"]
-    dateien += [p.name for p in sorted(AUSGABE.glob("*.html"))]
-    dateien += ["mittel/" + p.name for p in sorted(MITTEL.iterdir()) if p.is_file()]
-    (AUSGABE / "sw.js").write_text(service_worker(dateien), encoding="utf-8")
+    # Vorrat für den Zwischenspeicher: alles, was die App offline braucht –
+    # mit Prüfwert je Datei (Gesamtaudit A04). build_landing.py schreibt ihn
+    # nach seinem Teil erneut, damit die Prüfwerte zum fertigen Stand passen.
+    dateien = zwischenspeicher_schreiben()
 
     gewicht = sum((AUSGABE / d).stat().st_size for d in dateien
                   if d != "./" and (AUSGABE / d).exists())
@@ -1006,6 +1110,9 @@ def baue():
         print("  In quellen/rechtliches.json fehlt: " + ", ".join(fehlt))
         print("  Ohne diese Angaben darf sie nicht geschäftsmäßig betrieben werden.")
         return 1
+    luecken_c = community_luecken(r)
+    if luecken_c:
+        print("  Datenschutz (Community) unvollständig, es fehlt: " + ", ".join(luecken_c))
     if r.get("nur_privat"):
         print("\n  Hinweis: nur_privat steht auf true — öffentlich vorzeigbares,")
         print("  persönliches und nichtkommerzielles Lernprojekt. Vor geschäftsmäßiger")

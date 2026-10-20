@@ -7,6 +7,7 @@
   --gold-gross:#A38219;
   --creme:#F5F5F0; --grund:#F5F5F0; --papier:#FBFBF8;
   --text:#1A1D1A; --text-sek:#63685F; --linie:#DDDCD2;
+  --tab-text:#5C6158;                  /* Tab-Leiste auf hellen Seiten: 5,0:1 statt 4,49:1 */
   --warn:#8C3A2B; --gut:#2A6B4A;
   --warn-grund:#FBF0ED; --warn-schrift:#8C3A2B; --gut-grund:#EDF5F0;
   --kopf-zeile:#1B4332; --insel-zus:#1B4332;
@@ -52,6 +53,9 @@ button{font:inherit;}
 .kopf.auf-papier .wortmarke i{color:var(--gold-text);}
 .wortmarke{background:none;border:0;padding:0;cursor:pointer;color:inherit;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em;}
 .wortmarke i{font-style:normal;color:var(--gold);}
+.markenlogo{display:block;width:220px;height:52px;object-fit:cover;}
+.markenfuss{display:inline-flex;background:var(--creme);padding:0 8px;border-radius:2px;}
+.markenfuss .markenlogo{width:170px;height:44px;}
 .kopf-meta{font-family:var(--mono);font-size:12px;opacity:.75;}
 
 /* HERO */
@@ -90,7 +94,11 @@ button{font:inherit;}
 .kapitel-auftakt{max-width:var(--mass);margin:0 auto;padding:120px 48px 56px;display:grid;grid-template-columns:180px 1fr;gap:48px;align-items:start;}
 .kapitel-nr{font-family:var(--serif);font-size:118px;line-height:.8;font-weight:700;color:var(--gold-gross);letter-spacing:-.04em;}
 .kapitel-nr small{display:block;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text-sek);margin-top:18px;}
-.kapitel-auftakt h2{font-size:42px;line-height:1.1;font-weight:700;letter-spacing:-.02em;margin:0 0 12px;}
+.kapitel-auftakt h2{font-size:42px;line-height:1.1;font-weight:700;letter-spacing:-.02em;margin:0 0 12px;
+  overflow-wrap:break-word;hyphens:auto;}
+/* Gesamtaudit A09: Rasterspalten dürfen schmaler werden als ihr längstes Wort –
+   sonst schieben „Betriebsabrechnungsbogen“ & Co. die Seite bei 320 px auf. */
+.kapitel-auftakt > *,.ziele > *,.lauf > *,.abschluss > *{min-width:0;}
 .kapitel-auftakt p{font-size:20px;color:var(--text-sek);margin:0;max-width:48ch;}
 .kapitel-werkzeuge{margin-top:22px;}
 .detail-schalter{min-height:44px;padding:11px 15px;border:1px solid var(--tinte);
@@ -230,6 +238,7 @@ mark{padding:.08em .2em;color:inherit;
 
 /* Tabellen */
 .tab-huelle{max-width:100%;overflow-x:auto;margin:0 0 28px;}
+.tab-huelle:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
 table{border-collapse:collapse;width:100%;max-width:var(--lese);font-size:16px;}
 thead th{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:left;background:var(--kopf-zeile);color:var(--creme);padding:11px 14px;}
 tbody td{padding:12px 14px;border-bottom:1px solid var(--linie);vertical-align:top;}
@@ -404,6 +413,16 @@ tr.detail td strong{color:var(--gold);}
 .ksatz{font-family:var(--mono);font-size:12px;color:#D8B23A;margin-bottom:6px;}
 .ktext{font-family:var(--sans);font-size:14px;line-height:1.5;color:rgba(245,245,240,.65);max-height:0;overflow:hidden;transition:max-height .45s ease;}
 .kglied.offen .ktext{max-height:200px;}
+/* Gesamtaudit A06: Kopfzeilen sind echte Knöpfe, sehen aber aus wie vorher. */
+.kkopf,.vgl-knopf{display:block;width:100%;margin:0;padding:0;border:0;background:none;font:inherit;
+  color:inherit;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none;}
+.kkopf .ktitel,.kkopf .ksatz,.vgl-knopf .vgl-text{display:block;}
+/* Der Knopf trägt den Innenabstand, damit er selbst mindestens 44 px hoch ist. */
+.vgl-knopf{min-height:44px;padding:12px 0;display:flex;align-items:center;}
+.vgl-knopf .vgl-text{flex:1;}
+.vgl-punkt.auf .vgl-detail{padding-bottom:10px;}
+.kglied:not(.frei) .kkopf{cursor:default;}
+.kkopf:focus-visible,.vgl-knopf:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px;}
 
 /* Kalkulationsleiter */
 .leiter{font-family:var(--mono);font-size:13.5px;font-variant-numeric:tabular-nums;}
@@ -496,7 +515,7 @@ tr.detail td strong{color:var(--gold);}
 .vgl-seite.gold .vgl-kopf{color:var(--gold);border-color:var(--gold);}
 .vgl-seite.gruen .vgl-kopf{color:#7FC4A0;border-color:#7FC4A0;}
 .vgl-seite.rot .vgl-kopf{color:#E8A08F;border-color:#E8A08F;}
-.vgl-punkt{border-left:2px solid rgba(245,245,240,.18);padding:9px 0 9px 13px;margin-bottom:5px;cursor:pointer;transition:border-color .25s;}
+.vgl-punkt{border-left:2px solid rgba(245,245,240,.18);padding:0 0 0 13px;margin-bottom:5px;cursor:pointer;transition:border-color .25s;}
 .vgl-punkt:hover{border-left-color:var(--gold);}
 .vgl-punkt.auf{border-left-color:var(--gold);}
 .vgl-text{font-family:var(--sans);font-size:14px;line-height:1.45;color:rgba(245,245,240,.85);position:relative;padding-right:16px;}
@@ -817,7 +836,9 @@ tr.detail td strong{color:var(--gold);}
   color:#6C5208;margin-bottom:16px;}
 .tr-frage{font-family:var(--serif);font-size:23px;line-height:1.42;margin:0;font-weight:600;color:#1A1D1A;}
 .tr-seite .dreher{margin-top:26px;}
-.tr-seite > .dreher,.seite > .dreher{color:#6C5208;border-color:rgba(26,29,26,.28);}
+/* Gesamtaudit A11: Die dunkle Schrift gilt nur auf hellen Kartenseiten. Die
+   Rückseite (.rueck, tiefgrün) behält ihre helle Goldschrift. */
+.tr-seite > .dreher,.seite:not(.rueck) > .dreher{color:#6C5208;border-color:rgba(26,29,26,.28);}
 
 .tr-antwort{background:#F2EBD8;color:#1A1D1A;border-left:3px solid var(--gold);
   padding:24px 34px 22px;margin-top:2px;opacity:0;transform:translateY(-6px);
@@ -944,7 +965,7 @@ tr.detail td strong{color:var(--gold);}
 .tableiste.weg{transform:translateY(110%);}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:3px;min-height:var(--leiste);padding:8px 4px 7px;text-decoration:none;
-  color:var(--text-sek);font-family:var(--sans);font-size:10.5px;letter-spacing:.02em;
+  color:var(--tab-text,var(--text-sek));font-family:var(--sans);font-size:10.5px;letter-spacing:.02em;
   transition:color .2s;}
 .tab span{line-height:1;}
 .tab svg{transition:transform .28s cubic-bezier(.22,1,.36,1);}
@@ -1253,6 +1274,7 @@ tr.detail td strong{color:var(--gold);}
   --grund:#12301F;
   --text:#F5F5F0;
   --text-sek:rgba(245,245,240,.66);
+  --tab-text:rgba(245,245,240,.66);
   --linie:rgba(245,245,240,.17);
   --papier:rgba(245,245,240,.045);
   --feld:rgba(245,245,240,.06);
@@ -1438,10 +1460,10 @@ mark.such-treffer{padding:.06em .26em;color:var(--hm-grund);background:var(--hm-
    bleibt. Der alte Zeitschriftentrick: Man sieht, dass da noch etwas ist. */
 .hm-ankunft{min-height:calc(100svh - var(--leiste) - var(--rand-unten) - 150px);
   padding-top:calc(74px + var(--rand-oben));display:flex;flex-direction:column;}
-.hm-kopf{display:flex;justify-content:space-between;align-items:center;gap:16px;
+.hm-kopf{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;
   font-family:var(--mono);font-size:11px;color:var(--hm-matt);min-height:44px;}
-.hm-marke{font-size:10px;letter-spacing:.15em;text-transform:uppercase;
-  color:rgba(245,245,240,.78);}
+.hm-marke{display:inline-flex;flex-shrink:0;background:var(--creme);padding:0 8px;border-radius:2px;}
+.hm-marke .markenlogo{width:190px;height:44px;}
 .hm-zaehler{text-align:right;text-wrap:balance;}
 a.hm-zaehler-handeln{display:inline-flex;align-items:center;min-height:44px;
   color:var(--hm-gold);text-decoration:none;
@@ -1938,4 +1960,199 @@ a.hm-pflicht:hover{border-top-color:rgba(201,162,39,.6);}
 
 @media (prefers-reduced-motion:reduce){
   .pk--fortschritt span{transition:none;}
+}
+
+/* Gesamtaudit A09: Rechtstexte nennen fehlende Angaben mit ihrem technischen
+   Schlüssel (community.supabase_vertragspartner …). Die dürfen umbrechen,
+   statt die Seite bei 320 px aufzuschieben. */
+.rechtstext{overflow-wrap:break-word;}
+
+/* ================================================================= Community
+   Zugang zur Community (doku/community/02-anmeldung-profil.md). Dieselbe
+   grüne Hülle, dieselben Knöpfe, Haarlinien und Schriftrollen wie unter „Ich" –
+   nur ein Formular dazu. Keine Karten, keine Illustration.                   */
+
+.cm-rahmen{max-width:32rem;}
+.cm-zurueck{margin:0 0 26px;}
+.cm-kopf{margin-bottom:26px;}
+:root[data-bereich] .cm-kopf h1{font-size:clamp(30px,6.4vw,44px);}
+.cm-kopf h1:focus{outline:none;}
+.cm-kopf h1:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:4px;}
+
+.cm-form{display:flex;flex-direction:column;gap:22px;margin-top:8px;}
+.cm-feld{display:flex;flex-direction:column;gap:8px;}
+.cm-feld > label{font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--text);}
+.cm-eingabe{font-family:var(--sans);font-size:16px;color:var(--text);background:var(--feld);
+  border:1px solid var(--linie);border-radius:2px;padding:0 14px;min-height:48px;width:100%;}
+select.cm-eingabe{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
+                   linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:40px;}
+select.cm-eingabe option{background:#12301F;color:#F5F5F0;}
+.cm-eingabe:focus-visible{border-color:var(--tinte);outline:2px solid var(--hm-gold-hell);outline-offset:2px;}
+.cm-mono{font-family:var(--mono);letter-spacing:.06em;}
+/* Pflichtangabe als Text, nicht nur als Farbe oder Sternchen. */
+.cm-pflicht{font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--text-sek);margin-left:10px;white-space:nowrap;}
+.cm-haken .cm-pflicht{margin-left:8px;}
+.cm-hilfe{font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--text-sek);margin:0;}
+.cm-fehler{font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--warn-schrift);margin:0;
+  padding-left:10px;border-left:3px solid var(--warn-schrift);}
+.hat-fehler .cm-eingabe{border-color:var(--warn-schrift);}
+
+/* Bestätigungen: echte Checkboxen, die ganze Zeile ist Klickfläche. */
+.cm-haken{display:flex;align-items:flex-start;gap:14px;min-height:44px;padding:10px 0;cursor:pointer;
+  font-family:var(--sans);font-size:15px;line-height:1.45;color:var(--text);}
+.cm-haken input{flex:none;width:22px;height:22px;margin:0;accent-color:var(--hm-gold);cursor:pointer;}
+.cm-haken-feld{gap:4px;}
+
+.cm-haupt{min-height:48px;font-size:15px;align-self:flex-start;padding:12px 24px;}
+a.cm-haupt,a.cm-neben{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;}
+.cm-neben{min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;}
+.cm-reihe{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+.cm-form .cm-reihe{margin-top:4px;}
+/* Verweise, die wie Text aussehen, aber trotzdem 44 px hoch zu treffen sind. */
+.cm-verweis{display:inline-flex;align-items:center;min-height:44px;align-self:flex-start;
+  font-family:var(--sans);font-size:14.5px;color:var(--text);background:none;border:0;padding:0;
+  cursor:pointer;text-decoration:underline;text-decoration-color:var(--hm-gold);
+  text-underline-offset:4px;text-decoration-thickness:1px;}
+.cm-verweis:hover{text-decoration-thickness:2px;}
+.cm-leise{color:var(--text-sek);font-size:13.5px;}
+.cm-sichtbar{margin-top:-8px;}
+
+.cm-uebersicht{border-left:3px solid var(--warn-schrift);background:var(--warn-grund);padding:12px 16px;
+  font-family:var(--sans);font-size:14px;}
+.cm-uebersicht p{margin:0 0 6px;font-weight:600;}
+.cm-uebersicht ul{margin:0;padding-left:18px;}
+.cm-uebersicht a{color:var(--text);display:inline-flex;align-items:center;min-height:44px;}
+
+.cm-angaben{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0;
+  font-family:var(--sans);font-size:15px;}
+.cm-angaben dt{color:var(--text-sek);}
+.cm-angaben dd{margin:0;font-family:var(--serif);font-weight:600;font-size:17px;overflow-wrap:anywhere;}
+
+/* Regeln als ruhiger Dialog auf tiefem Grün. */
+.cm-dialog{border:1px solid var(--hm-linie);background:#12301F;color:#F5F5F0;padding:0;
+  width:min(36rem,calc(100vw - 32px));max-height:calc(100dvh - 48px);border-radius:2px;}
+.cm-dialog::backdrop{background:rgba(6,18,11,.72);}
+.cm-dialog-innen{padding:28px 24px 24px;}
+.cm-dialog h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.15;margin:0 0 14px;}
+.cm-dialog h2:focus{outline:none;}
+.cm-dialog p{font-family:var(--sans);font-size:15px;line-height:1.55;color:rgba(245,245,240,.82);margin:0 0 6px;}
+.cm-regelliste{margin:18px 0 24px;padding-left:22px;font-family:var(--sans);}
+.cm-regelliste li{margin-bottom:16px;}
+.cm-regelliste li::marker{font-family:var(--mono);color:#E3C558;}
+.cm-regelliste b{font-weight:600;font-size:15.5px;}
+
+/* Beiträge (04-beitraege.md): offene Liste mit Haarlinien, keine Karten,
+   keine Bilder in der Übersicht. Status immer als Text. */
+.cm-oben{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin:0 0 26px;}
+.cm-oben .cm-zurueck{margin:0;}
+.cm-filter{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;align-items:end;margin:0 0 6px;}
+.cm-filter .cm-verweis{grid-column:1 / -1;}
+.cm-filter .cm-verweis[hidden]{display:none;}
+@media (max-width:520px){.cm-filter{grid-template-columns:1fr;}}
+.cm-ergebnis{min-height:1.5em;margin:6px 0 10px;}
+/* Nur für Bildschirmleser – der gleiche Text steht schon sichtbar darunter. */
+.cm-ergebnis.cm-nur-vorlesen{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0;min-height:0;}
+.cm-ergebnis:empty{min-height:0;margin:0 0 10px;}
+.cm-beitraege{border-top:1px solid var(--linie);}
+.cm-beitrag{border-bottom:1px solid var(--linie);padding:16px 0 15px;}
+.cm-zeile-oben{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0 0 6px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--gold-text);}
+.cm-zeile-titel{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.3;margin:0 0 6px;
+  overflow-wrap:anywhere;text-wrap:pretty;}
+.cm-zeile-titel a{color:var(--text);text-decoration:none;display:inline-block;min-height:44px;padding:9px 0;
+  margin:-9px 0;}
+.cm-zeile-titel a:hover{text-decoration:underline;text-decoration-color:var(--hm-gold);text-underline-offset:4px;}
+.cm-zeile-titel a:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:3px;}
+.cm-zeile-meta{font-family:var(--mono);font-size:11.5px;color:var(--text-sek);margin:2px 0 0;overflow-wrap:anywhere;}
+.cm-marke{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text);border:1px solid var(--linie);padding:1px 6px;border-radius:2px;}
+.cm-leer{font-family:var(--serif);font-size:18px;color:var(--text);margin:18px 0 6px;}
+.cm-mehr{margin-top:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.cm-fehlerbox{margin-top:12px;}
+:root[data-bereich] .cm-kopf p.cm-zeile-oben{font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  color:var(--gold-text);margin:0 0 10px;max-width:none;}
+:root[data-bereich] .cm-kopf h1{overflow-wrap:anywhere;hyphens:auto;}
+.cm-detail-meta{margin:-12px 0 0;}
+.cm-detail-hilfreich{margin:2px 0 22px;}
+.cm-text{font-family:var(--serif);font-size:18px;line-height:1.6;color:var(--text);white-space:pre-wrap;
+  overflow-wrap:anywhere;margin:0 0 22px;}
+.cm-datei{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin:0 0 22px;}
+.cm-bild{max-width:100%;height:auto;border:1px solid var(--linie);}
+.cm-antworten{border-top:1px solid var(--hm-linie);margin-top:30px;padding-top:24px;}
+.cm-abschnitt{font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 4px;}
+.cm-antwortliste{margin-top:14px;border-top:1px solid var(--linie);}
+.cm-antwort{border-bottom:1px solid var(--linie);padding:16px 0 14px;}
+.cm-antwort .cm-text{font-size:16.5px;margin:0 0 8px;}
+.cm-antwort .cm-loesen{margin-top:10px;}
+.cm-antwort .cm-loesen-fehler{margin:10px 0 0;}
+.cm-antwort:focus{outline:none;}
+.cm-antwort:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:4px;}
+.cm-antwort-meldung:not(:empty){margin-top:18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.cm-antwort-form{margin-top:22px;}
+.cm-antwortform{margin-top:0;}
+
+/* C06 Beitrag schreiben (05-schreiben-antworten.md): dieselben Felder wie im Profil. */
+.cm-schreiben-reihe{margin:0 0 22px;}
+.cm-arten{border:0;margin:0;padding:0;min-width:0;}
+.cm-arten legend{font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--text);padding:0;margin:0 0 4px;}
+.cm-wahl{padding:8px 0;}
+.cm-wahl input{border-radius:50%;}
+textarea.cm-eingabe{padding:12px 14px;line-height:1.5;resize:vertical;min-height:120px;}
+input[type=file].cm-eingabe{padding:10px 14px;min-height:48px;}
+.cm-zaehler{font-family:var(--mono);font-size:11.5px;}
+.cm-schreib-status:not(:empty),.cm-antwort-status:not(:empty){display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.meldung:focus{outline:none;}
+.meldung:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:3px;}
+.cm-uebersicht:focus{outline:none;}
+.cm-uebersicht:focus-visible{outline:2px solid var(--hm-gold-hell);outline-offset:3px;}
+.cm-dialog h2.cm-dialog-frage{font-size:22px;line-height:1.25;}
+.cm-dialog .cm-dialog-neben{color:#F5F5F0;border-color:rgba(245,245,240,.5);}
+
+/* Spec 06 · Melden und Moderation. Der Meldedialog nutzt dieselben Felder
+   wie das Schreiben, auf dem Grün der übrigen Dialoge. */
+.cm-dialog.cm-melden .cm-melden-kontext{font-family:var(--mono);font-size:12px;color:#E3C558;
+  overflow-wrap:anywhere;margin:-6px 0 12px;}
+.cm-dialog.cm-melden .cm-form{display:flex;flex-direction:column;gap:16px;margin-top:12px;}
+.cm-melde-box{margin:0 0 18px;}
+.cm-antwort .cm-melde-box{margin:6px 0 0;}
+.cm-melde-reihe{margin-top:0;gap:4px 22px;}
+.cm-melde-box .meldung{margin-top:6px;}
+.cm-antwort-aus{color:var(--text-sek);}
+.cm-lokalnav ul{display:flex;flex-wrap:wrap;gap:4px 22px;margin:0 0 18px;padding:0;}
+.cm-lokalnav-ziel{display:inline-flex;align-items:center;min-height:44px;font-family:var(--sans);font-size:15px;
+  color:var(--text);text-decoration:none;border-bottom:2px solid transparent;}
+.cm-lokalnav-ziel[aria-current="page"]{border-bottom-color:var(--hm-gold);font-weight:600;}
+.cm-lokalnav-ziel:hover{text-decoration:underline;text-decoration-color:var(--hm-gold);text-underline-offset:4px;}
+.cm-mod-status:not(:empty){margin:0 0 14px;}
+.cm-mod-liste .cm-mod-pruefen{margin-top:8px;}
+.cm-auszug{overflow-wrap:anywhere;margin:0 0 4px;}
+.cm-mod-teil{border-top:1px solid var(--linie);margin-top:22px;padding-top:16px;}
+.cm-mod-teil h3,.cm-mod-form h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 8px;}
+.cm-mod-form h3:focus,.cm-eigen h3:focus{outline:none;}
+.cm-mod-teil ul{margin:0;padding:0;}
+.cm-mod-meldung{padding:10px 0;border-bottom:1px solid var(--linie);}
+.cm-mod-meldung:last-child{border-bottom:0;}
+.cm-mod-grund{font-size:16px;margin:4px 0 8px;}
+.cm-mod-entscheidung:not(:empty){margin-top:18px;}
+.cm-mod-form{display:flex;flex-direction:column;gap:16px;}
+.cm-vorschau{border-left:3px solid var(--hm-gold);background:var(--feld);padding:12px 16px;}
+.cm-vorschau .cm-text{font-size:16px;margin:0;}
+
+/* Heute: der kleine Einstieg nach den eigenen Lernaktionen. */
+.hm-gemeinsam{margin-top:22px;}
+.hm-gemeinsam .hm-titelchen{margin-bottom:8px;}
+.hm-gemeinsam-link{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:52px;text-decoration:none;color:inherit;
+  border-top:1px solid var(--hm-linie);padding-top:16px;
+  font-family:var(--sans);font-size:15px;transition:border-color .18s ease-out;}
+.hm-gemeinsam-link:hover{border-top-color:rgba(201,162,39,.6);}
+@media (prefers-reduced-motion:reduce){.hm-gemeinsam-link{transition:none;}}
+
+@media (max-width:480px){
+  .cm-haupt{align-self:stretch;}
 }

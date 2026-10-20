@@ -13,6 +13,13 @@ Du arbeitest nicht allein, sondern in einer Kette mit Claude, ChatGPT/Codex, Gem
 
 Unterstütze vorhandene Arbeit und ergänze sie gezielt. Berichte anderer KIs sind Kontext, aber kein Ersatz für Git, Dateien und Tests. Es schreibt immer nur eine KI gleichzeitig. Fremde uncommitted oder untracked Dateien nicht überschreiben, aufnehmen oder entfernen.
 
+## Übergaben über GitHub
+
+- Gemeinsamer Einstieg für AzubiPass Social: `doku/community/uebergabe.md`; vor jeder Phase den neuesten Abschnitt lesen und nach der Phase ergänzen.
+- Reviews unter `doku/community/review/` mit Datum und geprüftem Commit ablegen. Übergabedateien auf dem Arbeitsbranch committen und pushen; im Chat GitHub-Link, Branch und Commit weitergeben.
+- ChatGPT darf Dokumentation und ausdrücklich von Lukes getroffene Entscheidungen im Auftrag dokumentieren. Fachliche Freigaben bleiben Lukes vorbehalten; Claude bleibt Umsetzungseigner für `quellen/`, `supabase/` und `docs/`.
+- Ein Dokumentationscommit ist keine neue Anwendungsprüfung und keine Merge-/Live-Freigabe. Den vollständigen Ablauf regelt `doku/community/uebergabe.md`.
+
 Vor einer Änderung lesen:
 
 1. `README.md` – Aufbau, Build, Tests und rechtliche Grenzen
@@ -38,3 +45,7 @@ Vor einer Änderung lesen:
 - Eine `STATUS.md` nur anlegen, wenn Git, Tests und die vorhandene Dokumentation den aktuellen Stand nachweislich nicht verständlich machen.
 - Keine Cloud-, Memory-, MCP- oder KI-Funktion hinzufügen, wenn die konkrete Aufgabe sie nicht verlangt.
 - Jede Phase mit Belegen, bekannten Grenzen und dem nächsten erlaubten Übergabeschritt abschließen.
+
+## Verbindliche Markenreferenz
+
+Das von Lukes am 15.10.2026 festgelegte AzubiPass-Logo und das korrigierte einzelne Symbol liegen unter `doku/marke/`. Vor Markenarbeiten [doku/marke/README.md](doku/marke/README.md) lesen und die dort referenzierten Assets verwenden; frühere Entwürfe nicht als Logo einsetzen.

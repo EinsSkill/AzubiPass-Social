@@ -1,0 +1,146 @@
+C13 · Beitrag melden
+  OK   [mock] Fremder Beitrag hat „Beitrag melden“ mit Kontext im Namen
+  OK   [mock] Antwort trägt „Antwort von Ben melden“
+  OK   [mock] Ohne Teamrolle kein „Inhalt ausblenden“
+  OK   [mock] Teamkorrektur gekennzeichnet
+  OK   [mock] Bezug auf sichtbare Antwort genannt
+  OK   [mock] Teamkorrektur nennt öffentlich nur „Team“  Team · 14.10.2026
+  OK   [mock] Eigene ausgeblendete Antwort als Platzhalter
+  OK   [mock] Text der ausgeblendeten Antwort steht nicht in der Liste
+  OK   [mock] Antwortzahl zählt nur sichtbare Antworten
+  OK   [mock] Fokus auf dem Dialogtitel
+  OK   [mock] Ohne Grund wird nichts gesendet
+  ---- [mock] axe übersprungen (C13 Meldedialog mit Fehler): AXE_PFAD fehlt
+  OK   [mock] Dialog schließt nach Bestätigung
+  OK   [mock] Gesendet: Art, Ziel, Grund
+  OK   [mock] Rückmeldung am Ursprung bekommt den Fokus
+  OK   [mock] Zweite Meldung legt nichts an
+C13 · unklarer Ausgang und sichere Ablehnungen
+  OK   [mock] Bei unklarem Ausgang sind Grund und Hinweis gesperrt
+  ---- [mock] axe übersprungen (C13 Meldung unklar): AXE_PFAD fehlt
+  OK   [mock] Erneut senden schickt denselben festen Versandstand
+  OK   [mock] Verspätetes Original + Wiederholung = eine Meldung
+  OK   [mock] APB01: sichere Ablehnung, kein „unklar“
+  OK   [mock] APZ01: sichere Ablehnung, kein „unklar“
+Meine Meldungen und eigene ausgeblendete Inhalte
+  OK   [mock] Ohne Teamrolle kein Moderationszähler im Profil
+  OK   [mock] Status als Text „Offen“
+  ---- [mock] axe übersprungen (Meine Meldungen): AXE_PFAD fehlt
+  OK   [mock] Status klar benannt
+  OK   [mock] Leere Begründung wird nicht gesendet
+  ---- [mock] axe übersprungen (Eigener Inhalt mit Prüfanfrage): AXE_PFAD fehlt
+  OK   [mock] Nach der Anfrage kein zweites Anfragerecht
+  OK   [mock] Genau eine Prüfanfrage
+Eigener ausgeblendeter Beitrag im Detail
+  OK   [mock] Hinweis bleibt
+  OK   [mock] Prüfanfrage direkt im Detail
+C14 · Rechte ohne Teamrolle
+  OK   [mock] Keine Fälle ohne Teamrecht
+C14 · Zähler
+  OK   [mock] Zähler „Moderation · 2 offene Fälle“ im Profil
+  OK   [mock] Ladefehler zeigt keine erfundene 0
+C14 · Fälle und Entscheidung „Inhalt ausblenden“
+  OK   [mock] Schädliche Fälle zuerst, als Text markiert
+  OK   [mock] Liste nennt keine Meldenden
+  ---- [mock] axe übersprungen (C14 Offene Fälle): AXE_PFAD fehlt
+  OK   [mock] Hinweis der Meldung sichtbar, ohne Namen
+  OK   [mock] Vorlage füllt die Begründung
+  OK   [mock] Vorschau „Das sieht die betroffene Person“
+  ---- [mock] axe übersprungen (C14 Entscheidung mit Fehler): AXE_PFAD fehlt
+  OK   [mock] Abbrechen behält eigenen Text und bisherige Vorlage  ['v1', 'offene Stelle: zweiter Absatz.']
+  OK   [mock] Unklar: Eingaben gesperrt
+  OK   [mock] Entscheidung mit Version, gesehenen Meldungen, Kategorie und Begründung
+  OK   [mock] Zurück in der Liste
+C14 · Fall hat sich geändert (APF01)
+  OK   [mock] Weg: Fall neu laden
+  OK   [mock] APF01 ist kein „unklar“
+  OK   [mock] Fall wurde frisch geladen
+C14 · Direktweg vom Beitrag (D13)
+  OK   [mock] Fallansicht öffnet direkt das Formular „Inhalt ausblenden“
+R04 · Meldedialog offen × abmelden
+  FEHL [mock] offen/abmelden: Dialog geschlossen (Zustand nicht erreicht)
+  FEHL [mock] offen/abmelden: Dialog und alter Hinweis entfernt
+  OK   [mock] offen/abmelden: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] offen/abmelden: kein Versand aus dem alten Entwurf als neues Konto  []
+R04 · Meldedialog offen × wechsel
+  FEHL [mock] offen/wechsel: Dialog geschlossen (Zustand nicht erreicht)
+  FEHL [mock] offen/wechsel: Dialog und alter Hinweis entfernt
+  OK   [mock] offen/wechsel: kein verspäteter Erfolg im neuen Kontext
+  FEHL [mock] offen/wechsel: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000b001']
+  OK   [mock] offen/wechsel: neues Konto sieht keinen alten Entwurf
+R04 · Meldedialog sendet × abmelden
+  FEHL [mock] sendet/abmelden: Dialog geschlossen (Zustand nicht erreicht)
+  FEHL [mock] sendet/abmelden: Dialog und alter Hinweis entfernt
+  OK   [mock] sendet/abmelden: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] sendet/abmelden: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000a001']
+R04 · Meldedialog sendet × wechsel
+  FEHL [mock] sendet/wechsel: Dialog geschlossen (Zustand nicht erreicht)
+  FEHL [mock] sendet/wechsel: Dialog und alter Hinweis entfernt
+  OK   [mock] sendet/wechsel: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] sendet/wechsel: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000a001']
+  OK   [mock] sendet/wechsel: neues Konto sieht keinen alten Entwurf
+R04 · Meldedialog unklar × abmelden
+  FEHL [mock] unklar/abmelden: Dialog geschlossen (Zustand nicht erreicht)
+  FEHL [mock] unklar/abmelden: Dialog und alter Hinweis entfernt
+  OK   [mock] unklar/abmelden: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] unklar/abmelden: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000a001']
+R04 · Meldedialog unklar × wechsel
+  FEHL [mock] unklar/wechsel: Dialog geschlossen (Zustand nicht erreicht)
+  FEHL [mock] unklar/wechsel: Dialog und alter Hinweis entfernt
+  OK   [mock] unklar/wechsel: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] unklar/wechsel: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000a001']
+  FEHL [mock] unklar/wechsel: neues Konto sieht keinen alten Entwurf
+R04 · Datenschicht bindet den Schreibaufruf an das Konto
+  FEHL [mock] Aufruf für Anna, angemeldet ist Ben: nichts gesendet  gesendet
+R04 · Rückfragen im Moderationsfall bei Kontowechsel
+  FEHL [mock] Bestätigungsfrage geschlossen (Zustand nicht erreicht)
+  OK   [mock] Bestätigungsfrage verworfen, keine Entscheidung, kein altes Formular
+  FEHL [mock] Vorlagen-Rückfrage geschlossen (Zustand nicht erreicht)
+  OK   [mock] Vorlagen-Rückfrage samt Formular nach Abmeldung entfernt
+R04 · Offline während des Meldedialogs
+  FEHL [mock] Offline: Dialog geschlossen (Zustand nicht erreicht)
+  FEHL [mock] Offline: Dialog geschlossen, Hinweis nicht über der Offline-Ansicht
+R05 · Ein Vorgang pro Fall: angehaltene Antwort
+  FEHL [mock] Während des Versands sind alle oberen Aktionen gesperrt  [False, False, False]
+  FEHL [mock] Hinweis erklärt die Sperre
+  FEHL [mock] Auch erzwungene Klicks ersetzen das laufende Formular nicht
+  OK   [mock] Genau ein Versand
+R05 · Ein Vorgang pro Fall: unklares Ergebnis
+  FEHL [mock] Alle 3 oberen Aktionen lassen Klärleiste und Versandstand stehen  ['Meldungen abschließen', 'Inhalt ausblenden', 'Fachliche Korrektur ergänzen']
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+    import community_moderation_test as m; m.main()
+                                           ~~~~~~^^
+  File "/home/claude/azubipass-social/quellen/community_moderation_test.py", line 520, in main
+    s.get_by_role("button", name="Erneut senden").click()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/sync_api/_generated.py", line 15573, in click
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.click(
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        )
+        ^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_frame.py", line 549, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name="Erneut senden")
+

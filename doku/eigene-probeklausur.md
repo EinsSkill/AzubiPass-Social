@@ -124,6 +124,12 @@ Neuladen setzt ihn nicht zurück. Läuft er ab, werden die Eingaben gesichert,
 der Ablauf wird deutlich gesagt und die Klausur führt kontrolliert zur Abgabe.
 Nichts wird gelöscht.
 
+**Nach der Abgabe** (Entscheidung Lukes, 13.10.2026): Öffnet man „Eigene
+Probeklausur“ wieder – auch nach dem Neuladen –, erscheint die letzte
+**Auswertung**: ohne Uhr, ohne erneute Bearbeitung der abgegebenen Klausur,
+offene Selbstbewertungen bleiben erreichbar. „Neue Variante erstellen“ und
+„Auswahl ändern“ führen ausdrücklich zu einer neuen Vorbereitung.
+
 ## Bewertung
 
 Automatisch bewertet wird alles, was sich zuverlässig bewerten lässt: Auswahl

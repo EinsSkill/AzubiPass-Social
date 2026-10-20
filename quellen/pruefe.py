@@ -268,7 +268,7 @@ def pruefe_seite(pg, wurzel, datei, marke, befunde, gesehen):
 
     if datei == "app.html":
         # Die App hat keine [data-zu]-Kapitel, sondern fünf Schirme
-        stellen = ["heute", "lernen", "ueben", "suche", "ich"]
+        stellen = ["heute", "lernen", "ueben", "suche", "ich", "community"]
     else:
         stellen = pg.evaluate(
             "() => [...new Set([...document.querySelectorAll('[data-zu]')]"
@@ -277,7 +277,8 @@ def pruefe_seite(pg, wurzel, datei, marke, befunde, gesehen):
     for kap in stellen:
         if kap and datei == "app.html":
             pg.evaluate("id => { location.hash = '#' + id; }", kap)
-            pg.wait_for_timeout(400)
+            # Die Community lädt erst ihre Bibliothek und prüft die Sitzung.
+            pg.wait_for_timeout(1800 if kap == "community" else 400)
         elif kap:
             try:
                 pg.locator(f'[data-zu="{kap}"]').first.click(timeout=4000)

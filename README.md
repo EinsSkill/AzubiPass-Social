@@ -38,6 +38,12 @@ Inhalt und Darstellung sind getrennt. Ein neues Kapitel wird als strukturierte Q
 ## Lokal bauen
 
 Voraussetzung: Python 3.
+Für App-Icons und Browserprüfungen werden außerdem Playwright und Chromium benötigt:
+
+```bash
+python -m pip install playwright
+python -m playwright install chromium
+```
 
 ```bash
 cd quellen
@@ -52,6 +58,20 @@ python build_landing.py
 ```bash
 python pruefe.py
 python funktionstest.py
+python lernkern_audit_test.py   # Korrekturen zum Gesamtaudit (A01–A11)
+```
+
+Community (AzubiPass Social, braucht Internet und die Demo-Konten – Zugangsdaten
+nicht im Repo, siehe `supabase/README.md`):
+
+```bash
+COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… python community_test.py
+COMMUNITY_TEST_PASSWORT=… COMMUNITY_TEST_CODE=DEMO-… \
+  COMMUNITY_TEST_NEU=konto1,…,konto9 python community_zugang_test.py   # neun Konten ohne Profil
+COMMUNITY_TEST_PASSWORT=… python community_beitraege_test.py            # Beiträge lesen (C04/C05)
+COMMUNITY_TEST_PASSWORT=… AXE_PFAD=…/axe.min.js python community_schreiben_test.py   # Schreiben, Antworten, Sperre (Spec 05)
+AXE_PFAD=…/axe.min.js python community_korrekturen_test.py            # G03–G05, simulierte Serverantworten, ohne Zugangsdaten
+AXE_PFAD=…/axe.min.js python community_moderation_test.py            # Spec 06 Melden/Moderation, simuliert, ohne Zugangsdaten
 ```
 
 Für die lokale Ansicht:
@@ -67,13 +87,22 @@ Projektvorstellung ist unter `landing.html` erreichbar.
 
 ## Rechtliches und Datenschutz
 
-- keine Nutzerkonten
+- Lernen und Üben ohne Konto: Der Lernfortschritt bleibt lokal im Browser
+- Nur die Community (AzubiPass Social, Beta) braucht ein Konto – Anmeldung per
+  Mail, Profil mit Beta-Zugangscode, Mindestalter 16, Internet. Ihre Daten liegen
+  bei Supabase (Region Frankfurt); der Lernfortschritt wird nicht hochgeladen
 - keine Werbung und kein Verkauf
 - kein Tracking
 - Lernfortschritt bleibt im Browser des jeweiligen Geräts
 - Schriften werden lokal ausgeliefert
 
 Vor einer geschäftsmäßigen oder kommerziellen Veröffentlichung müssten die rechtlichen Angaben angepasst werden.
+
+## Markenlogo
+
+Das freigegebene Logo und das korrigierte Symbol liegen in
+[doku/marke/](doku/marke/README.md). Die Builds übernehmen diese Originale in
+die Website; `build_app.py` erzeugt daraus Browser-, Apple- und PWA-Icons.
 
 ---
 
