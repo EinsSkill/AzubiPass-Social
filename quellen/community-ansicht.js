@@ -106,6 +106,7 @@
     // Beiträge, Filter, Position und geladene Dateien des alten Kontos auch.
     if (AP.communityBeitraege) AP.communityBeitraege.vergessen();
     if (AP.communityModeration) AP.communityModeration.vergessen();
+    if (AP.communityGruppen) AP.communityGruppen.vergessen();
   }
 
   // Zeichen zählen wie die Datenbank (char_length): Codepunkte, nicht UTF-16.
@@ -355,6 +356,11 @@
   var MOD_ZIEL = /^moderation(?:\/(ausgeblendet|protokoll))?$/;
   var FALL_ZIEL = new RegExp("^moderation\\/fall\\/(beitrag|antwort)\\/" + UUID + "$", "i");
   var EIGEN_ZIEL = new RegExp("^eigener-inhalt\\/(beitrag|antwort)\\/" + UUID + "$", "i");
+  // Lerngruppen und Wochenaufgaben (20.10.2026).
+  var GRUPPE_ZIEL = new RegExp("^gruppe\\/" + UUID + "$", "i");
+  var GRUPPE_SCHREIBEN = new RegExp("^gruppe\\/" + UUID + "\\/schreiben$", "i");
+  var GRUPPE_AUFGABE = new RegExp("^gruppe\\/" + UUID + "\\/aufgabe$", "i");
+  var AUFGABE_ZIEL = new RegExp("^aufgabe\\/" + UUID + "$", "i");
 
   function zielArt(weg) {
     if (!weg) return "beitraege";
@@ -365,6 +371,14 @@
     if (weg === "meine-meldungen") return "meineMeldungen";
     if (weg === "eigene-ausblendungen") return "eigeneListe";
     if (EIGEN_ZIEL.test(weg)) return "eigenerInhalt";
+    if (weg === "gruppen") return "gruppen";
+    if (weg === "gruppen/neu") return "gruppeNeu";
+    if (weg === "gruppen/beitreten") return "gruppeBeitreten";
+    if (GRUPPE_ZIEL.test(weg)) return "gruppe";
+    if (GRUPPE_SCHREIBEN.test(weg)) return "gruppeSchreiben";
+    if (GRUPPE_AUFGABE.test(weg)) return "gruppeAufgabe";
+    if (weg === "aufgabe-neu") return "aufgabeNeu";
+    if (AUFGABE_ZIEL.test(weg)) return "aufgabe";
     return null;
   }
 
@@ -427,7 +441,37 @@
       fall: function (r) { var m = FALL_ZIEL.exec(z.unter); AP.communityModeration.fall(r, kontext(), m[1], m[2].toLowerCase()); },
       meineMeldungen: function (r) { AP.communityModeration.meineMeldungen(r, kontext()); },
       eigeneListe: function (r) { AP.communityModeration.eigeneListe(r, kontext()); },
-      eigenerInhalt: function (r) { var m = EIGEN_ZIEL.exec(z.unter); AP.communityModeration.eigenerInhalt(r, kontext(), m[1], m[2].toLowerCase()); }
+      eigenerInhalt: function (r) { var m = EIGEN_ZIEL.exec(z.unter); AP.communityModeration.eigenerInhalt(r, kontext(), m[1], m[2].toLowerCase()); },
+      gruppen: function (r) { AP.communityGruppen.liste(r, kontext()); },
+      gruppeNeu: function (r) { AP.communityGruppen.gruenden(r, kontext()); },
+      gruppeBeitreten: function (r) { AP.communityGruppen.beitreten(r, kontext()); },
+      gruppe: function (r) { AP.communityGruppen.gruppe(r, kontext(), GRUPPE_ZIEL.exec(z.unter)[1].toLowerCase()); },
+      gruppeAufgabe: function (r) { AP.communityGruppen.aufgabeNeu(r, kontext(), GRUPPE_AUFGABE.exec(z.unter)[1].toLowerCase()); },
+      aufgabeNeu: function (r) {
+        var c = kontext();
+        if (c.rolle() !== "team") return ansichtNichtDa(r);
+        AP.communityGruppen.aufgabeNeu(r, c, null);
+      },
+      aufgabe: function (r) { AP.communityGruppen.aufgabe(r, kontext(), AUFGABE_ZIEL.exec(z.unter)[1].toLowerCase()); },
+      gruppeSchreiben: function (r) {
+        // Erst prüfen, ob man Mitglied ist; dann das Formular mit festem Ziel.
+        var c = kontext(), id = GRUPPE_SCHREIBEN.exec(z.unter)[1].toLowerCase();
+        r.appendChild(kopf("Beitrag schreiben"));
+        AP.community.gruppe(id).then(function (g) {
+          if (!c.gilt()) return;
+          if (!g || !g.meine_rolle) return c.nichtDa();
+          r.innerHTML = "";
+          AP.communityBeitraege.schreiben(r, c, { gruppe: id, gruppeName: g.name });
+          var h = r.querySelector("h1");
+          if (h) h.focus();
+        }, function (f) {
+          if (!c.gilt()) return;
+          if (f && f.art === "anmeldung") return c.abgelaufen();
+          if (f && f.art === "netz" && c.offline()) return c.offlineZeigen();
+          z.hinweis = { text: "Die Gruppe konnte nicht geladen werden. Versuch es erneut.", fehler: true };
+          r.appendChild(hinweiszeile());
+        });
+      }
     }[z.ansicht] || ansichtPruefen;
     bauer(rahmen);
     if (fokus && sichtbar()) {
@@ -1027,6 +1071,12 @@
     a.appendChild(lbl);
     a.appendChild(wert);
     box.appendChild(a);
+    // Höchstens eine laufende, noch offene Wochenaufgabe (01-uebersicht, Heute).
+    if (AP.communityGruppen) {
+      var platz = el("div", "hm-aufgabe-platz");
+      box.appendChild(platz);
+      try { AP.communityGruppen.heuteAufgabe(platz); } catch (e) {}
+    }
     return box;
   }
 
@@ -1119,7 +1169,7 @@
       if (document.hidden) { weg = Date.now(); return; }
       if (!weg || Date.now() - weg < 60000) return;
       weg = 0;
-      if (sichtbar() && !z.laeuft && ["beitraege", "beitrag", "gesperrt", "moderation", "meineMeldungen", "eigeneListe"].indexOf(z.ansicht) >= 0) {
+      if (sichtbar() && !z.laeuft && ["beitraege", "beitrag", "gesperrt", "moderation", "meineMeldungen", "eigeneListe", "gruppen", "gruppe", "aufgabe"].indexOf(z.ansicht) >= 0) {
         if (z.ansicht === "beitraege") AP.communityBeitraege.zurueckholen();
         pruefen();
       }

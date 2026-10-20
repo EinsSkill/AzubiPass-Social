@@ -875,7 +875,7 @@ def datenschutz_ohne_konten(r, fehlt):
 
 # ---------------------------------------------------------------- App-Seite
 
-def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs):
+def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs):
     """Die Schale. Der Inhalt der fünf Schirme entsteht im Browser aus
     inhalt.json — hier steht nur das Gerüst, damit die Seite auch ohne
     JavaScript etwas Sinnvolles zeigt."""
@@ -888,7 +888,7 @@ def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtj
 <head>
 {kopf("Lernen", "Alle Lernfelder für Kaufleute für Büromanagement — Fortschritt, "
       "Karteikarten und Suche, auch ohne Netz.", stile=[stil],
-      skripte=[kernel, communityjs, ansichtjs, beitraegejs, moderationjs, aufgabenjs, appjs])}
+      skripte=[kernel, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, aufgabenjs, appjs])}
 </head>
 <body data-bereich="heute">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
@@ -995,11 +995,11 @@ def baue():
         print("ACHTUNG: mittel/schriften.css fehlt — erst schriften.py laufen lassen.\n")
 
     MITTEL.mkdir(parents=True, exist_ok=True)
-    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, ansichtjs, beitraegejs, moderationjs, _ = veroeffentliche(
+    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, _ = veroeffentliche(
         "azubipass.css", "kern.js", "app.js", "aufgaben.js", "azubipass.js",
         # supabase.js wird nicht eingebunden, sondern erst bei Bedarf von
         # community.js nachgeladen – liegt aber im Zwischenspeicher bereit.
-        "community.js", "community-ansicht.js", "community-beitraege.js", "community-moderation.js", "supabase.js")
+        "community.js", "community-ansicht.js", "community-beitraege.js", "community-moderation.js", "community-gruppen.js", "supabase.js")
 
     konten, konten_index = kontenplan_lesen()
     belege, belege_steuer = belegvorlagen()
@@ -1065,7 +1065,7 @@ def baue():
     (AUSGABE / "manifest.webmanifest").write_text(manifest(), encoding="utf-8")
     # Direkt im Home-Menü starten, auch an der Wurzel der Projektseite.
     # app.html bleibt für bestehende Links und installierte Apps erhalten.
-    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs)
+    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs)
     for name in ("index.html", "app.html"):
         (AUSGABE / name).write_text(app, encoding="utf-8")
 

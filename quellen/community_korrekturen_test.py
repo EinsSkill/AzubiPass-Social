@@ -83,6 +83,7 @@ FAKE_JS = r"""
       autor_rolle: "azubi", autor_lehrjahr: 2, gruppe_name: null, hilfreich_zahl: 0, von_mir_hilfreich: false }, b, { antworten: zahl });
   }
   function tabelle(name) {
+    if (F.sicht && F.sicht[name]) return F.sicht[name]();       // Erweiterung (Lerngruppen-Test)
     if (name === "beitrag_liste") return F.db.beitrag.map(zeile);
     if (name === "antwort") return F.db.antwort.map(a => Object.assign({}, a,
       { autor: { anzeigename: a.autor_id === ICH.id ? "Anna" : "Ben", rolle: "azubi", lehrjahr: 2 } }));
@@ -149,11 +150,13 @@ FAKE_JS = r"""
 
   function abfrage(name) {
     const filter = [];
-    let einzeln = null;
+    let einzeln = null, modus = null;
     const q = {
       select() { return q; }, order() { return q; }, limit() { return q; }, range() { return q; },
       or() { return q; }, lt() { return q; }, gt() { return q; }, lte() { return q; }, gte() { return q; },
-      is() { return q; }, neq() { return q; }, in() { return q; },
+      is(k, v) { if (v === null) filter.push([k, null]); return q; }, neq() { return q; }, in() { return q; }, not() { return q; },
+      insert(z) { modus = ["insert", z]; return q; }, delete() { modus = ["delete"]; return q; },
+      update(v) { modus = ["update", v]; return q; },
       eq(k, v) { filter.push([k, v]); return q; },
       maybeSingle() { einzeln = "vielleicht"; return q; }, single() { einzeln = "genau"; return q; },
       then(ja, nein) {
@@ -162,7 +165,14 @@ FAKE_JS = r"""
           return new Promise(weiter => (F.gehalten[name] = F.gehalten[name] || []).push(weiter)).then(() => q.then(ja, nein));
         }
         if (F.tabFehler[name] > 0) { F.tabFehler[name]--; return Promise.resolve(fetchFehler()).then(ja, nein); }
-        let r = tabelle(name).filter(z => filter.every(([k, v]) => z[k] === v));
+        if (modus) {                                         // Schreiben (Lerngruppen-Test)
+          (F.aufrufe["tab:" + name + ":" + modus[0]] = F.aufrufe["tab:" + name + ":" + modus[0]] || []).push(modus[1] || filter);
+          const plan = (F.plan["tab:" + name] || []).shift();
+          if (plan && typeof plan === "object") return Promise.resolve({ data: null, error: { message: "Fehler", code: plan.code }, status: plan.status }).then(ja, nein);
+          const erg = F.aendern ? F.aendern(name, modus, filter) : ok(null);
+          return Promise.resolve(erg).then(ja, nein);
+        }
+        let r = tabelle(name).filter(z => filter.every(([k, v]) => v === null ? z[k] == null : z[k] === v));
         const d = einzeln ? (r[0] || null) : r;
         return Promise.resolve(ok(d)).then(ja, nein);
       }
@@ -198,7 +208,8 @@ FAKE_JS = r"""
     }) }
   };
   window.supabase = { createClient: () => client };
-  F.ICH = ICH.id; F.BEN = BEN; F.ok = ok; F.logik = {};
+  F.ICH = ICH.id; F.BEN = BEN; F.ok = ok; F.logik = {}; F.sicht = {}; F.aendern = null;
+  F.aktuell = () => aktuell;
   F.BEN_KONTO = { id: BEN, email: "ben@test.invalid" };
   F.fehler = (code, m, status) => ({ data: null, error: { message: m, details: null, hint: null, code: code }, status: status || 400 });
 })();

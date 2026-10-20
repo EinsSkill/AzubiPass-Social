@@ -3,7 +3,8 @@
    C04 Übersicht und C05 Lesedetail nach doku/community/04-beitraege.md
    (Version 1) und den Entscheidungen vom 12.10.2026:
 
-     – nur allgemeine Beiträge (gruppe_id = null), Gruppen kommen später
+     – Übersicht: nur allgemeine Beiträge (gruppe_id = null); Gruppenbeiträge
+       stehen in der Gruppe (community-gruppen.js) und öffnen dasselbe Detail
      – Filter Beitragsart und Lernfeld, neueste zuerst
      – „Weitere Beiträge laden" mit stabiler Zeit-/ID-Navigation
      – Dateien nur über den angemeldeten Abruf (aktuelle Rechteprüfung)
@@ -125,6 +126,7 @@
     r.appendChild(oben);
     r.appendChild(kopf);
     r.appendChild(ctx.hinweiszeile());
+    if (AP.communityGruppen) r.appendChild(AP.communityGruppen.lokalnav("beitraege"));
     var schreibReihe = el("div", "cm-reihe cm-schreiben-reihe");
     var schreibLink = verweis("Beitrag schreiben", "#community/schreiben", "kn-haupt cm-haupt");
     schreibLink.addEventListener("click", function () {
@@ -364,10 +366,12 @@
   function detail(r, id, ctx) {
     dateienFreigeben();
     var oben = el("div", "cm-oben");
-    oben.appendChild(knopf("‹ Zurück zu Beiträgen", "kn-neben cm-zurueck", function () {
+    var gruppeVon = null;          // Gruppenbeitrag: Rückweg zur Gruppe
+    var zurueckKnopf = knopf("‹ Zurück zu Beiträgen", "kn-neben cm-zurueck", function () {
       if (ctx.vonListe()) history.back();
-      else location.hash = "#community";
-    }));
+      else location.hash = gruppeVon ? "#community/gruppe/" + gruppeVon : "#community";
+    });
+    oben.appendChild(zurueckKnopf);
     r.appendChild(oben);
     var kopf = ctx.kopf("Beitrag wird geladen …");
     kopf.querySelector("h1").setAttribute("aria-live", "polite");
@@ -382,7 +386,7 @@
       AP.community.beitrag(id).then(function (b) {
         if (!ctx.gilt()) return;
         // Nicht vorhanden, nicht erlaubt oder (noch) in einer Gruppe: neutral.
-        if (!b || b.gruppe_id) return ctx.nichtDa();
+        if (!b) return ctx.nichtDa();
         zeigen(b);
         if (bestaetigt) {
           var ok = el("p", "meldung", bestaetigt.text);
@@ -425,7 +429,8 @@
       var zo = zuordnung(ctx, b);
       var zeileOben = el("p", "cm-zeile-oben");
       zeileOben.appendChild(el("span", null, ARTNAME[b.art] || ""));
-      zeileOben.appendChild(el("span", null, "Für alle in der Community"));
+      zeileOben.appendChild(el("span", null, b.gruppe_id ? "Gruppe „" + (b.gruppe_name || "") + "“" : "Für alle in der Community"));
+      if (b.gruppe_id) { gruppeVon = b.gruppe_id; zurueckKnopf.textContent = "‹ Zurück zur Gruppe"; }
       if (zo) zeileOben.appendChild(el("span", null, zuordnungText(zo)));
       if (b.art === "frage" && b.geloest) zeileOben.appendChild(marke("Gelöst"));
       if (b.an_mentoren) zeileOben.appendChild(marke("An Mentor:innen"));
@@ -471,6 +476,65 @@
       return box;
     }
 
+    /* „Hilfreich“ (20.10.2026): eigene Markierung setzen oder zurücknehmen.
+       Nur bei fremden Beiträgen; die Zahl kommt nach jeder Änderung frisch vom
+       Server – auch nach einem Fehler, damit nie ein geratener Stand steht. */
+    function hilfreichBereich(b) {
+      var box = el("div", "cm-hilfreich");
+      var zahl = el("p", "cm-zeile-meta cm-detail-hilfreich");
+      box.appendChild(zahl);
+      var meldung = el("p", "meldung fehler cm-hilfreich-fehler");
+      meldung.setAttribute("role", "alert");
+      meldung.hidden = true;
+      var k = null;
+      function anzeigen(x) {
+        var n = Number(x.hilfreich_zahl) || 0;
+        zahl.textContent = n + " hilfreich";
+        if (k) {
+          k.setAttribute("aria-pressed", x.von_mir_hilfreich ? "true" : "false");
+          k.textContent = x.von_mir_hilfreich ? "Hilfreich markiert" : "Als hilfreich markieren";
+        }
+      }
+      if (b.autor_id !== ctx.konto) {
+        k = knopf("Als hilfreich markieren", "kn-neben cm-neben cm-hilfreich-knopf", function () {
+          if (k.disabled || !ctx.gilt()) return;
+          var ziel = k.getAttribute("aria-pressed") !== "true";
+          k.disabled = true;
+          k.setAttribute("aria-busy", "true");
+          meldung.hidden = true;
+          function neuLaden(fehlerText) {
+            AP.community.beitrag(b.id).then(function (x) {
+              if (!ctx.gilt()) return;
+              k.disabled = false;
+              k.removeAttribute("aria-busy");
+              if (x) { b.hilfreich_zahl = x.hilfreich_zahl; b.von_mir_hilfreich = x.von_mir_hilfreich; anzeigen(x); }
+              if (fehlerText) { meldung.textContent = fehlerText; meldung.hidden = false; }
+            }, function (f) {
+              if (!ctx.gilt()) return;
+              k.disabled = false;
+              k.removeAttribute("aria-busy");
+              if (f && f.art === "anmeldung") return ctx.abgelaufen();
+              meldung.textContent = fehlerText || "Der aktuelle Stand konnte nicht geladen werden.";
+              meldung.hidden = false;
+            });
+          }
+          AP.community.hilfreich(b.id, ziel).then(function () {
+            if (!ctx.gilt()) return;
+            neuLaden(null);
+          }, function (f) {
+            if (!ctx.gilt()) return;
+            if (f && f.art === "anmeldung") return ctx.abgelaufen();
+            if (f && f.art === "gesperrt") return ctx.gesperrt();
+            neuLaden("Die Markierung konnte nicht gespeichert werden. Versuch es erneut.");
+          });
+        });
+        box.appendChild(k);
+      }
+      box.appendChild(meldung);
+      anzeigen(b);
+      return box;
+    }
+
     function zeigen(b) {
       var h = r.querySelector("h1");
       h.removeAttribute("aria-live");
@@ -503,7 +567,7 @@
         meta.push("bearbeitet " + datum(b.bearbeitet_am));
       inhalt.appendChild(el("p", "cm-zeile-meta cm-detail-meta", meta.join(" · ")));
       // Hilfreich nur als Zahl – Markieren kommt mit der eigenen Spec.
-      inhalt.appendChild(el("p", "cm-zeile-meta cm-detail-hilfreich", (Number(b.hilfreich_zahl) || 0) + " hilfreich"));
+      inhalt.appendChild(hilfreichBereich(b));
 
       if (b.text) inhalt.appendChild(el("div", "cm-text", b.text));   // textContent, Zeilenumbrüche per CSS
 
@@ -1172,7 +1236,7 @@
              veraendert: false,  // seit dem letzten Sendeversuch geändert → alten Vorgang klären, neue Kennung
              vorgang: null, versand: null /* eingefrorener Versandstand (G04) */,
              zustand: null /* sendet | unklar | pruefen | klaeren */, schritt: null,
-             meldung: null, ergebnis: null, ctx: null, anzeigen: null };
+             meldung: null, ergebnis: null, ctx: null, anzeigen: null, gruppe: null };
   }
 
   function neuerAntwortEntwurf(konto, beitrag) {
@@ -1195,22 +1259,34 @@
      lokale Prüfung → Freigabe prüfen → (Datei hochladen →) veröffentlichen.
      Jede Antwort landet im Entwurf, auch wenn die Ansicht inzwischen eine
      andere ist; gezeigt wird sie, sobald C06 wieder offen ist. */
-  function schreiben(r, ctx) {
+  /* opts.gruppe / opts.gruppeName (Lerngruppen, 20.10.2026): Beitrag nur für
+     diese Gruppe – Frage oder Tipp, keine Datei. Der Entwurf gehört Konto UND
+     Ziel; ein Entwurf für ein anderes Ziel wird nicht übernommen. */
+  function schreiben(r, ctx, opts) {
+    opts = opts || {};
+    var zielGruppe = opts.gruppe || null;
     dateienFreigeben();
-    if (!entwurf || entwurf.konto !== ctx.konto) entwurf = neuerEntwurf(ctx.konto);
+    if (!entwurf || entwurf.konto !== ctx.konto || entwurf.gruppe !== zielGruppe) {
+      entwurf = neuerEntwurf(ctx.konto);
+      entwurf.gruppe = zielGruppe;
+    }
     var e = entwurf;
+    if (zielGruppe && e.art === "lernzettel") e.art = "frage";
     e.ctx = ctx;
     if (e.ergebnis) return fertig(e);
 
     var oben = el("div", "cm-oben");
-    var zurueck = knopf("‹ Zurück zu Beiträgen", "kn-neben cm-zurueck", function () { abbrechen(zurueck, true); });
+    var zurueck = knopf(zielGruppe ? "‹ Zurück zur Gruppe" : "‹ Zurück zu Beiträgen", "kn-neben cm-zurueck",
+                        function () { abbrechen(zurueck, true); });
     oben.appendChild(zurueck);
     r.appendChild(oben);
-    var kopf = ctx.kopf("Beitrag schreiben", "Stell eine Frage oder teile einen Lernzettel oder Tipp.");
+    var kopf = ctx.kopf("Beitrag schreiben", zielGruppe ? "Stell eine Frage oder teile einen Tipp mit deiner Gruppe."
+                                                        : "Stell eine Frage oder teile einen Lernzettel oder Tipp.");
     var aug = kopf.querySelector(".schirm-augenbraue");
-    if (aug) aug.textContent = "Ich · Community · Beiträge";
+    if (aug) aug.textContent = zielGruppe ? "Ich · Community · Lerngruppen" : "Ich · Community · Beiträge";
     var ziel = el("p", "cm-zeile-oben");
-    ziel.appendChild(el("span", null, "Für alle in der Community"));
+    ziel.appendChild(el("span", null, zielGruppe ? "Nur für die Gruppe „" + (opts.gruppeName || "Gruppe") + "“"
+                                                 : "Für alle in der Community"));
     kopf.insertBefore(ziel, kopf.lastChild);
     r.appendChild(kopf);
 
@@ -1226,7 +1302,8 @@
     legende.appendChild(el("span", "cm-pflicht", "Pflicht"));
     arten.appendChild(legende);
     var radios = {};
-    [["frage", "Frage"], ["lernzettel", "Lernzettel"], ["tipp", "Tipp"]].forEach(function (w) {
+    (zielGruppe ? [["frage", "Frage"], ["tipp", "Tipp"]]
+                : [["frage", "Frage"], ["lernzettel", "Lernzettel"], ["tipp", "Tipp"]]).forEach(function (w) {
       var lab = el("label", "cm-haken cm-wahl");
       var i = el("input");
       i.type = "radio";
@@ -1483,7 +1560,7 @@
     function abbrechen(ausloeser, istZurueck) {
       function weg() {
         if (ctx.vonListe()) history.back();
-        else location.hash = "#community";
+        else location.hash = zielGruppe ? "#community/gruppe/" + zielGruppe : "#community";
       }
       // Während des Sendens: zurück geht, abgebrochen wird nichts.
       if (e.zustand === "sendet" || e.zustand === "pruefen" || e.zustand === "klaeren") { if (istZurueck) weg(); return; }
@@ -1592,7 +1669,8 @@
           vorgang: e.vorgang, art: e.art, titel: e.titel, text: e.text.trim(),
           lernfeld: e.lernfeld || null, kapitel: e.kapitel || null,
           anMentoren: e.art === "frage" && e.mentor,
-          datei: e.art === "lernzettel" ? e.datei : null
+          datei: e.art === "lernzettel" ? e.datei : null,
+          gruppe: e.gruppe || null
         });
         e.veraendert = false;
         abschicken(e, true);
@@ -1642,6 +1720,7 @@
       return AP.community.veroeffentlichen({
         vorgang: v.vorgang, art: v.art, titel: v.titel, text: v.text,
         lernfeld: v.lernfeld, kapitel: v.kapitel, anMentoren: v.anMentoren, datei: v.datei,
+        gruppe: v.gruppe || undefined, konto: g.konto,
         schritt: function (s) { g.schritt = s; if (g.zustand === "sendet") g.anzeigen(); }
       }).then(function (id) { erfolg(g, id); }, function (f) { fehlschlag(g, f); });
     }, function (f) { fehlschlag(g, f); });

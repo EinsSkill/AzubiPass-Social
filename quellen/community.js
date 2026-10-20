@@ -320,7 +320,7 @@
 
   // { konto, wert } – wert: null = kein Profil. Gehört immer zu genau einem Konto.
   var profilCache;
-  var PROFIL = "id, anzeigename, lehrjahr, ueber_mich, rolle, erstellt_am";
+  var PROFIL = "id, anzeigename, lehrjahr, ueber_mich, rolle, beruf, erstellt_am";
 
   function profil(frisch) {
     return gebunden(function (u, c) {
@@ -357,7 +357,7 @@
 
   function profilAendern(felder) {
     var erlaubt = {};
-    ["anzeigename", "lehrjahr", "ueber_mich"].forEach(function (k) {
+    ["anzeigename", "lehrjahr", "ueber_mich", "beruf"].forEach(function (k) {
       if (felder && Object.prototype.hasOwnProperty.call(felder, k)) erlaubt[k] = felder[k];
     });
     return gebunden(function (u, c) {
@@ -619,9 +619,10 @@
     var datei = e.art === "lernzettel" ? e.datei : null;    // nie als Anhang einer Frage/eines Tipps
     var dateiFehler = dateiPruefen(datei);
     if (dateiFehler) return Promise.reject(dateiFehler);
-    // G06: Der direkte Weg nimmt nur Gruppen-Textbeiträge ohne Datei an.
-    if (e.gruppe && datei) return Promise.reject(fehler("Lernzettel in Gruppen kommen mit der Gruppen-Spec.", "eingabe"));
-    if (e.gruppe) return veroeffentlichenDirekt(e, titel);
+    // Lerngruppen (20.10.2026): Fragen und Tipps ohne Datei, eigener RPC mit Vorgangskennung.
+    if (e.gruppe && (datei || e.art === "lernzettel"))
+      return Promise.reject(fehler("In Gruppen gibt es Fragen und Tipps.", "eingabe"));
+    if (e.gruppe) return gruppeVeroeffentlichen(e, titel);
 
     var vorgang = e.vorgang || neueVorgangskennung();
     var pfad = null, dateiArt = null;
@@ -658,29 +659,16 @@
     });
   }
 
-  // Alter, direkter Weg – nur noch für Gruppen-Textbeiträge der Datenschicht-Tests (G06).
-  function veroeffentlichenDirekt(e, titel) {
-    var pfad = null, dateiArt = null;
-    return ich().then(function (u) {
-      if (!e.datei) return null;
-      var art = CFG.dateiArten[e.datei.type];
-      pfad = u.id + "/" + zufallsname() + "." + art[1];
-      dateiArt = art[0];
-      return client.storage.from(CFG.bucket)
-        .upload(pfad, e.datei, { contentType: e.datei.type, upsert: false, cacheControl: "60" })
-        .then(auspacken);
-    }).then(function () {
-      return client.from("beitrag").insert({
-        art: e.art, titel: titel, text: String(e.text || ""),
-        lernfeld: e.lernfeld || null, kapitel: e.kapitel || null,
-        gruppe_id: e.gruppe || null, an_mentoren: e.anMentoren === true,
-        datei_pfad: pfad, datei_art: dateiArt
-      }).select("id").single().then(auspacken);
-    }).then(function (d) { return d.id; })
-      .catch(function (f) {
-        if (pfad) client.storage.from(CFG.bucket).remove([pfad]).catch(function () {});
-        throw uebersetzen(f);
-      });
+  function gruppeVeroeffentlichen(e, titel) {
+    var vorgang = e.vorgang || neueVorgangskennung();
+    var text = "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.";
+    return gebunden(function (u, c) {
+      return c.rpc("gruppe_beitrag_veroeffentlichen", {
+        p_vorgang: vorgang, p_gruppe: e.gruppe, p_art: e.art, p_titel: titel, p_text: String(e.text || ""),
+        p_lernfeld: e.lernfeld || null, p_kapitel: e.kapitel || null
+      }).then(function (r) { return rpcErgebnis(r, vorgang, text); },
+              function (f) { throw unklar(text, vorgang, f); });
+    }, e.konto);
   }
 
   // Gibt es den Beitrag zu dieser Vorgangskennung? id oder null.
@@ -844,6 +832,19 @@
       }
       return q.then(auspacken);
     });
+  }
+
+  function aufgabe(id) {
+    return mit(function (c) {
+      return c.from("aufgabe_liste")
+        .select("id, gruppe_id, gruppe_name, titel, beschreibung, lernfeld, kapitel, beginn, ende, erstellt_von, erstellt_am, erledigt_zahl, von_mir_erledigt")
+        .eq("id", id).maybeSingle().then(auspacken);
+    });
+  }
+
+  // Liegt eine gespeicherte Sitzung vor? Nur lokal nachsehen – lädt nichts (Heute).
+  function hatGespeicherteSitzung() {
+    try { return !!localStorage.getItem(CFG.sitzung); } catch (e) { return false; }
   }
 
   function aufgabeStellen(e) {
@@ -1018,7 +1019,8 @@
     dateiPruefen: dateiPruefen,
     antworten: antworten, antwortSchreiben: antwortSchreiben, antwortStatus: antwortStatus, antwortAendern: antwortAendern,
     antwortLoeschen: antwortLoeschen, besteAntwort: besteAntwort, hilfreich: hilfreich,
-    aufgaben: aufgaben, aufgabeStellen: aufgabeStellen, aufgabeLoeschen: aufgabeLoeschen,
+    aufgaben: aufgaben, aufgabe: aufgabe, aufgabeStellen: aufgabeStellen, aufgabeLoeschen: aufgabeLoeschen,
+    hatGespeicherteSitzung: hatGespeicherteSitzung,
     erledigt: erledigt, erledigtVon: erledigtVon,
     meldungSenden: meldungSenden, meldungStatus: meldungStatus, meineMeldungen: meineMeldungen,
     moderationZaehler: moderationZaehler, moderationFaelle: moderationFaelle, moderationFall: moderationFall,
