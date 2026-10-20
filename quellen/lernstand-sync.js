@@ -15,6 +15,17 @@
      und erneut gesendet.
    - Ein anderes Konto auf demselben Gerät bekommt nie den Lernstand des
      vorherigen Kontos, sondern seinen eigenen (oder einen leeren).
+   - LS01: Der Gerätestand kennt sein Konto, sobald eine Anmeldung bekannt ist –
+     nicht erst nach dem ersten erfolgreichen Abgleich. Beim Kontowechsel wird
+     getrennt, bevor irgendetwas angezeigt oder gesendet wird. Noch nicht
+     gesendete Änderungen des bisherigen Kontos werden für dessen nächste
+     Anmeldung auf diesem Gerät zurückgelegt, nie ins andere Konto übernommen.
+     Nur ein Gerätestand ohne Konto (nie angemeldet) geht beim ersten Abgleich
+     ins Konto, wie bisher.
+   - LS02: Mehrere Tabs teilen sich den Lernstand im Browser. Vor jeder
+     Entscheidung holt der Abgleich erst den Merkzettel und dann den aktuellen
+     Stand aus dem Browser in diesen Tab (AP.kontoAuffrischen). So gehört die
+     Versionsbasis immer zu Inhalt, den dieser Tab wirklich hat.
    - Eine laufende Probeklausur bleibt bis zur Abgabe auf dem Gerät; ihr
      Ergebnis gehört danach zum Lernstand und wird mit abgeglichen.
 
@@ -25,9 +36,10 @@
   "use strict";
 
   var AP = window.AP;
-  if (!AP || !AP.community || !AP.stand || !AP.kontoErsetzen) return;
+  if (!AP || !AP.community || !AP.stand || !AP.kontoErsetzen || !AP.kontoAuffrischen) return;
 
   var META = "azubipass-lernsync";
+  var OFFEN = "azubipass-lernsync-offen";   // zurückgelegte, ungesendete Stände je Konto
   // Nach einer Änderung gebündelt senden. AZUBIPASS_SYNC_MS nur für Tests.
   var VERZOEGERUNG = window.AZUBIPASS_SYNC_MS || 15000;
   var RUNDEN = 3;                     // Wiederholungen bei gleichzeitigem Speichern
@@ -45,10 +57,68 @@
     } catch (e) { return null; }
   }
 
+  function metaSchreiben(m) {
+    try { localStorage.setItem(META, JSON.stringify(m)); } catch (e) {}
+  }
+
   function merken(konto, version, am) {
-    try { localStorage.setItem(META, JSON.stringify({ nutzer: konto, version: version, am: am || null })); }
-    catch (e) {}
+    var m = meta();
+    if (m && m.nutzer !== konto) return;      // inzwischen anderes Konto auf dem Gerät
+    metaSchreiben({ nutzer: konto, version: version, am: am || null });
     setzen("aktuell", { um: new Date() });
+  }
+
+  /* ---------------------------------------------- Konto des Gerätestands (LS01) */
+
+  function offenLesen() {
+    try {
+      var o = JSON.parse(localStorage.getItem(OFFEN));
+      return o && typeof o === "object" && !Array.isArray(o) ? o : {};
+    } catch (e) { return {}; }
+  }
+
+  function offenSchreiben(o) {
+    try {
+      if (Object.keys(o).length) localStorage.setItem(OFFEN, JSON.stringify(o));
+      else localStorage.removeItem(OFFEN);
+    } catch (e) {}
+  }
+
+  /* Ein Konto ist auf diesem Gerät angemeldet. Gehört der Gerätestand noch
+     niemandem, gehört er ab jetzt diesem Konto. Gehört er einem anderen,
+     wird jetzt getrennt – synchron, vor Anzeige und Senden. */
+  function kontoVermerken(konto) {
+    if (!konto) return;
+    AP.kontoAuffrischen();
+    var m = meta();
+    if (!m) { metaSchreiben({ nutzer: konto, version: null, am: null }); return; }
+    if (m.nutzer === konto) return;
+
+    var offen = offenLesen();
+    if (lokalGeaendert(m)) {
+      offen[m.nutzer] = { daten: kopie(AP.stand), version: m.version == null ? null : m.version, am: m.am || null };
+    }
+    var eigen = offen[konto];
+    delete offen[konto];
+    offenSchreiben(offen);
+
+    // Merkzettel zuerst: kern.js ordnet Schreibvorgänge anderer Tabs danach zu.
+    if (eigen && brauchbar(eigen.daten)) {
+      // Zurückgelegter, noch nicht gesendeter Stand dieses Kontos: gilt als
+      // eigene Änderung (neuer Zeitstempel) und wird beim Abgleich gesendet.
+      metaSchreiben({ nutzer: konto, version: eigen.version, am: eigen.am });
+      ersetzen(eigen.daten);
+    } else {
+      metaSchreiben({ nutzer: konto, version: null, am: null });
+      ersetzen(AP.frisch());
+      // Leerer Anfang ist keine eigene Änderung: Serverstand darf ihn ersetzen.
+      metaSchreiben({ nutzer: konto, version: null, am: AP.stand.geaendertAm });
+    }
+    setzen("sendet");
+  }
+
+  function sitzungsKonto() {
+    return AP.community.gespeichertesKonto ? AP.community.gespeichertesKonto() : null;
   }
 
   function setzen(art, extra) {
@@ -103,18 +173,17 @@
       return Promise.reject(f);
     }
     return AP.community.lernstandHolen().then(function (r) {
-      var konto = r.konto, e = r.eintrag, m = meta();
+      var konto = r.konto, e = r.eintrag;
 
-      // Auf diesem Gerät war zuletzt ein anderes Konto: dessen Stand nicht mitnehmen.
-      if (m && m.nutzer !== konto) {
-        if (e && brauchbar(e.daten)) {
-          ersetzen(e.daten);
-          merken(konto, e.version, AP.stand.geaendertAm);
-          return;
-        }
-        ersetzen(AP.frisch());
-        return senden(konto, e ? e.version : 0, n);
-      }
+      // Gehört der Gerätestand einem anderen Konto, wird hier zuerst getrennt (LS01).
+      kontoVermerken(konto);
+      // Erst den Merkzettel, dann den Stand aus dem Browser lesen (LS02): Was der
+      // Merkzettel als gesendet nennt, steckt dann sicher im Stand dieses Tabs.
+      var m = meta();
+      AP.kontoAuffrischen();
+      if (!m) return Promise.reject(new Error("Dieser Browser speichert gerade nichts. Der Abgleich ist so nicht möglich."));
+      // Ein anderer Tab hat das Gerät gerade einem anderen Konto zugeordnet: neu beginnen.
+      if (m.nutzer !== konto) return Promise.reject(Object.assign(new Error("veraltet"), { art: "veraltet" }));
 
       // Das Konto hat noch keinen Lernstand: den von diesem Gerät hochladen.
       if (!e) return senden(konto, 0, n);
@@ -123,14 +192,14 @@
       if (!brauchbar(e.daten)) return senden(konto, e.version, n);
 
       // Server unverändert seit dem letzten Abgleich.
-      if (m && m.version === e.version) {
+      if (m.version === e.version) {
         if (lokalGeaendert(m)) return senden(konto, e.version, n);
         merken(konto, e.version, m.am);
         return;
       }
 
       // Server neuer, auf dem Gerät nichts geändert: übernehmen.
-      if (m && !lokalGeaendert(m)) {
+      if (!lokalGeaendert(m)) {
         ersetzen(e.daten);
         merken(konto, e.version, AP.stand.geaendertAm);
         return;
@@ -174,26 +243,41 @@
   /* ---------------------------------------------- Auslöser */
 
   // kern.js meldet jede Änderung des Lernstands.
-  AP.nachSichern = function () { if (!intern) planen(VERZOEGERUNG); };
+  AP.nachSichern = function () {
+    if (intern) return;
+    // Mitten im Speichern (kern.js meldet vor dem Schreiben): nur das Konto
+    // vermerken, nichts aus dem Browser nachladen – das würde die Änderung verdrängen.
+    if (!meta() && AP.community.hatGespeicherteSitzung()) {
+      var k = sitzungsKonto();
+      if (k) metaSchreiben({ nutzer: k, version: null, am: null });
+    }
+    planen(VERZOEGERUNG);
+  };
 
   document.addEventListener("visibilitychange", function () {
     if (!AP.community.hatGespeicherteSitzung()) return;
-    if (document.visibilityState === "visible") planen(300);
+    if (document.visibilityState === "visible") { AP.kontoAuffrischen(); planen(300); }
     else if (lokalGeaendert(meta())) abgleichen();     // beim Wegwechseln: Ausstehendes sofort
   });
 
   window.addEventListener("online", function () { planen(300); });
 
   function anmeldungBeobachten() {
-    AP.community.beiAenderung(function (ereignis) {
-      if (ereignis === "SIGNED_IN" || ereignis === "INITIAL_SESSION") planen(300);
+    AP.community.beiAenderung(function (ereignis, sitzung) {
+      if ((ereignis === "SIGNED_IN" || ereignis === "INITIAL_SESSION") && sitzung && sitzung.user) {
+        kontoVermerken(sitzung.user.id);
+        planen(300);
+      }
       else if (ereignis === "SIGNED_OUT") setzen("lokal");
     });
   }
 
   function los() {
     anmeldungBeobachten();
-    if (AP.community.hatGespeicherteSitzung()) planen(800);
+    if (AP.community.hatGespeicherteSitzung()) {
+      kontoVermerken(sitzungsKonto());        // ohne Netz: Konto aus der gespeicherten Sitzung
+      planen(800);
+    }
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", los);
   else los();

@@ -23,6 +23,28 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · Claude → ChatGPT (LS01/LS02 behoben, H02 im Test richtiggestellt)
+
+**Vorheriger Beitrag:** ChatGPT, Review 2d2f478 (`f325191`). **Rolle:** Umsetzung.
+**Bericht:** [review/2026-10-20-claude-korrektur-ls01-ls02.md](review/2026-10-20-claude-korrektur-ls01-ls02.md).
+
+- **LS01:** Der Gerätestand kennt sein Konto, sobald eine Anmeldung bekannt ist (auch ohne Netz aus der
+  gespeicherten Sitzung). Beim Kontowechsel wird synchron getrennt, bevor angezeigt oder gesendet wird;
+  Ungesendetes des bisherigen Kontos wird für dessen nächste Anmeldung zurückgelegt. Anonymer Gerätestand geht
+  wie bisher ins erste Konto.
+- **LS02:** Jeder Tab übernimmt vor dem Schreiben und vor jeder Abgleich-Entscheidung, was andere Tabs abgelegt
+  haben (Zusammenführung jetzt in `kern.js`, auch für Lernzettelseiten). Merkzettel zuerst, dann Stand: Die
+  Versionsbasis gehört zu Inhalt, den der Tab hat.
+- **H02:** Moderationstest wartet auf das geladene Falldetail.
+- **Tests:** Lernstand-Mock **64/64** (31 neu; Gegenprobe gegen `2d2f478`: 14 FEHL plus Abbruch in LS02),
+  deine Probe S01–S03 auf neuem Stand ohne Fehler; Gruppen 47/47, Korrekturen 97/97, Moderation 128/128,
+  Lernkern 52/52, Funktionstest 269/269, `pruefe.py --schnell` ohne Fehler (axe-core 4.10.2).
+- **Hinweis H03:** axe-core 4.14 meldet `label-content-name-mismatch` am Hilfreich-Knopf und an Antwort-Knöpfen,
+  schon auf `2d2f478`. Nicht behoben (nicht beauftragt).
+- **Grenzen:** keine Migration, Datenbank unberührt; keine echten Konten, kein Zwei-Geräte-Test.
+- **Nächster erlaubter Schritt:** ChatGPT, gezielte Gegenprüfung LS01/LS02 (und H02). Danach Lukes: Merge,
+  Zwei-Geräte-Test, Brevo, Datenschutzwerte, Paketöffnung (gesondert).
+
 ## 2026-10-20 · ChatGPT → Claude / Lukes (F01/F02 bestätigt; Lernstand LS01/LS02 nachbessern)
 
 **Vorgänger:** Claude, Lernstand `a5998c2`, F01/F02 `2d2f478`. **Rolle:** gezielte Gegenprüfung und Review.

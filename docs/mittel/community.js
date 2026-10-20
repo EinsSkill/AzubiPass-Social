@@ -870,6 +870,17 @@
     try { return !!localStorage.getItem(CFG.sitzung); } catch (e) { return false; }
   }
 
+  /* Zu welchem Konto gehört die gespeicherte Sitzung? Nur lokal, ohne Netz
+     (LS01: Der Lernstand muss sein Konto kennen, auch wenn der erste Abgleich
+     scheitert). null, wenn keine Sitzung oder kein Konto darin steht. */
+  function gespeichertesKonto() {
+    try {
+      var s = JSON.parse(localStorage.getItem(CFG.sitzung));
+      var u = s && (s.user || (s.currentSession && s.currentSession.user));
+      return u && typeof u.id === "string" ? u.id : null;
+    } catch (e) { return null; }
+  }
+
   function aufgabeStellen(e) {
     e = e || {};
     var titel = String(e.titel || "").trim();
@@ -1044,6 +1055,7 @@
     antwortLoeschen: antwortLoeschen, besteAntwort: besteAntwort, hilfreich: hilfreich,
     aufgaben: aufgaben, aufgabe: aufgabe, aufgabeStellen: aufgabeStellen, aufgabeLoeschen: aufgabeLoeschen,
     hatGespeicherteSitzung: hatGespeicherteSitzung,
+    gespeichertesKonto: gespeichertesKonto,
     lernstandHolen: lernstandHolen, lernstandSpeichern: lernstandSpeichern,
     erledigt: erledigt, erledigtVon: erledigtVon,
     meldungSenden: meldungSenden, meldungStatus: meldungStatus, meineMeldungen: meineMeldungen,

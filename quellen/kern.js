@@ -281,14 +281,157 @@ window.AP = (function () {
     return p;
   }
 
-  /* Ersetzt den Inhalt des Kontos in einem Schritt – das Objekt bleibt
-     dasselbe, weil alle Ansichten es festhalten – und schreibt sofort. */
-  function kontoErsetzen(neu) {
-    var sauber = normalisieren(neu);
+  /* Setzt einen fertigen Lernstand ein, ohne die Objekte auszutauschen, die
+     Ansichten festhalten: das Konto selbst und – für die Lernzettelseiten,
+     die sich ihr Kapitelfach merken – jeden Kapitelstand. Schreibt nichts. */
+  function einsetzen(sauber) {
+    var altFort = stand.fortschritt || {};
     Object.keys(stand).forEach(function (k) { delete stand[k]; });
     Object.keys(sauber).forEach(function (k) { stand[k] = sauber[k]; });
-    return sofortSichern();
+    Object.keys(stand.fortschritt).forEach(function (id) {
+      var f = altFort[id], n = stand.fortschritt[id];
+      if (!f || f === n || !n || typeof n !== "object") return;
+      Object.keys(f).forEach(function (x) { delete f[x]; });
+      Object.keys(n).forEach(function (x) { f[x] = n[x]; });
+      stand.fortschritt[id] = f;
+    });
   }
+
+  /* Ersetzt den Inhalt des Kontos in einem Schritt und schreibt sofort.
+     Bewusst ohne Abgleich mit anderen Tabs: Wer ersetzt, hat entschieden. */
+  function kontoErsetzen(neu) {
+    einsetzen(normalisieren(neu));
+    stand.geaendertAm = new Date().toISOString();
+    gemeldet();
+    return schreiben(true);
+  }
+
+  /* ================================================== Zusammenführen
+
+     Dieselbe Regel für das Einspielen einer Sicherung, den Abgleich mit dem
+     Konto und – neu (LS02) – für Änderungen aus einem anderen Tab. Liegt in
+     kern.js, weil auch die Lernzettelseiten sie brauchen. */
+  function probeklausurId(e) {
+    return e && (e.id || [e.ende, e.seed, e.prozent].join("|"));
+  }
+
+  function probeklausurZeit(e) {
+    if (!e) return 0;
+    var t = Date.parse(e.aktualisiertAm || e.beendetAm || "");
+    return isNaN(t) ? 0 : t;
+  }
+
+  function zeitstempel(wert) {
+    var t = Date.parse(wert || "");
+    return isNaN(t) ? 0 : t;
+  }
+
+  function objekt(wert) {
+    return wert && typeof wert === "object" && !Array.isArray(wert) ? wert : {};
+  }
+
+  function werteZusammenfuehren(lokal, fremd, fremdIstNeuer) {
+    var alt = objekt(lokal), neu = objekt(fremd), raus = {};
+    Object.keys(alt).forEach(function (id) { raus[id] = alt[id]; });
+    Object.keys(neu).forEach(function (id) {
+      if (!Object.prototype.hasOwnProperty.call(raus, id) || fremdIstNeuer) {
+        raus[id] = neu[id];
+      }
+    });
+    return raus;
+  }
+
+  function fortschrittZusammenfuehren(lokal, fremd, fremdIstNeuer) {
+    var alt = objekt(lokal), neu = objekt(fremd);
+    var raus = {
+      ziele: Array.isArray(alt.ziele) ? alt.ziele.slice() : [],
+      checks: werteZusammenfuehren(alt.checks, neu.checks, fremdIstNeuer),
+      zuordnen: werteZusammenfuehren(alt.zuordnen, neu.zuordnen, fremdIstNeuer),
+      test: werteZusammenfuehren(alt.test, neu.test, fremdIstNeuer),
+      fertig: alt.fertig === true
+    };
+    (Array.isArray(neu.ziele) ? neu.ziele : []).forEach(function (ziel) {
+      if (raus.ziele.indexOf(ziel) === -1) raus.ziele.push(ziel);
+    });
+    if (fremdIstNeuer && typeof neu.fertig === "boolean") raus.fertig = neu.fertig;
+    else if (neu.fertig === true) raus.fertig = true;
+    return raus;
+  }
+
+  /* Führt eine geprüfte Sicherung in ziel (eine Kopie des Kontos) zusammen. */
+  function zusammenfuehren(stand, neu) {
+    var lokaleZeit = zeitstempel(stand.geaendertAm);
+    var fremdeZeit = zeitstempel(neu.geaendertAm);
+    var fremdeSicherungIstNeuer = fremdeZeit > lokaleZeit;
+    /* Zusammenführen statt überschreiben: Wer auf zwei Geräten gelernt hat,
+       soll nicht die Hälfte verlieren. Eine ältere Sicherung darf dabei
+       keinen neueren Kapitelstand zurücksetzen. */
+    Object.keys(neu.fortschritt || {}).forEach(function (k) {
+      if (!stand.fortschritt[k]) {
+        stand.fortschritt[k] = fortschrittZusammenfuehren({}, neu.fortschritt[k], true);
+      } else {
+        stand.fortschritt[k] = fortschrittZusammenfuehren(
+          stand.fortschritt[k], neu.fortschritt[k], fremdeSicherungIstNeuer);
+      }
+    });
+    Object.keys(neu.karten || {}).forEach(function (id) {
+      var alt = stand.karten[id];
+      if (!alt || (neu.karten[id].fach || 0) > (alt.fach || 0) ||
+          ((neu.karten[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
+        stand.karten[id] = neu.karten[id];
+      }
+    });
+    Object.keys(neu.vokabeln || {}).forEach(function (id) {
+      var alt = stand.vokabeln[id];
+      if (!alt || (neu.vokabeln[id].fach || 0) > (alt.fach || 0) ||
+          ((neu.vokabeln[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
+        stand.vokabeln[id] = neu.vokabeln[id];
+      }
+    });
+    stand.quiz = werteZusammenfuehren(stand.quiz, neu.quiz, fremdeSicherungIstNeuer);
+    (neu.aktivitaet || []).forEach(function (t) {
+      if (stand.aktivitaet.indexOf(t) === -1) stand.aktivitaet.push(t);
+    });
+    (neu.lesezeichen || []).forEach(function (e) {
+      if (!stand.lesezeichen.some(function (x) { return x.zu === e.zu; })) {
+        stand.lesezeichen.push(e);
+      }
+    });
+    /* Klausurergebnisse gehören zum Konto und müssen deshalb beim
+       Zusammenführen ebenfalls erhalten bleiben. Die laufende Klausur hat
+       weiterhin ihren eigenen Schlüssel; hier liegen nur abgeschlossene
+       Ergebniszusammenfassungen. */
+    (Array.isArray(neu.probeklausuren) ? neu.probeklausuren : []).forEach(function (e) {
+      if (!e || typeof e !== "object") return;
+      var id = probeklausurId(e);
+      var i = stand.probeklausuren.findIndex(function (x) {
+        return probeklausurId(x) === id;
+      });
+      if (i < 0) {
+        stand.probeklausuren.push(e);
+        return;
+      }
+      var alt = stand.probeklausuren[i];
+      var neuAbgeschlossen = e.status === "abgeschlossen";
+      var altAbgeschlossen = alt && alt.status === "abgeschlossen";
+      if ((neuAbgeschlossen && !altAbgeschlossen) ||
+          probeklausurZeit(e) >= probeklausurZeit(alt)) {
+        stand.probeklausuren[i] = e;
+      }
+    });
+    if (stand.probeklausuren.length > 50) stand.probeklausuren = stand.probeklausuren.slice(0, 50);
+    if (neu.zuletzt && (!stand.zuletzt || fremdeSicherungIstNeuer)) {
+      stand.zuletzt = neu.zuletzt;
+    }
+    // Nur übernehmen, was der Countdown auch rechnen kann — sonst schleppt
+    // eine alte Sicherung einen kaputten Termin ins frische Konto.
+    if (istDatum(neu.pruefungstermin) &&
+        (!stand.pruefungstermin || fremdeSicherungIstNeuer)) {
+      stand.pruefungstermin = neu.pruefungstermin;
+    }
+  }
+
+  function lernstandZusammenfuehren(ziel, neu) { zusammenfuehren(ziel, neu); }
 
   /* Der alte Bestand: ein Eintrag je Lernzettel, benannt azubipass:<lernfeld>.
      Die Haken, Checks, Zuordnungen und Selbsttest-Texte lassen sich sauber
@@ -337,17 +480,97 @@ window.AP = (function () {
      Hintergrund wird Ausstehendes sofort geschrieben. */
   var wartet = null, geschriebenUm = 0, BUENDEL = 400;
 
-  function schreiben() {
+  /* Mehrere Tabs (LS02): App und Lernzettelseiten teilen sich einen Eintrag
+     im Browser, halten den Lernstand aber jeweils im eigenen Arbeitsspeicher.
+     Früher schrieb jeder Tab blind seinen Stand – ein länger offener Tab hat
+     so neuere Änderungen eines anderen überschrieben, im Browser und über den
+     Abgleich auch im Konto. Jetzt merkt sich jeder Tab, was er zuletzt
+     gelesen oder geschrieben hat. Hat ein anderer Tab seitdem geschrieben,
+     wird das vor dem eigenen Schreiben übernommen (ohne eigene Änderung) oder
+     zusammengeführt (mit eigener, noch nicht geschriebener Änderung).
+
+     Gehört der fremde Stand inzwischen einem anderen Konto (Wechsel im
+     anderen Tab, LS01), gilt er ohne Zusammenführung: Reste dieses Tabs
+     gehören zum vorherigen Konto und dürfen nicht hinüberwandern. Ein Stand
+     ohne Besitzer (nie angemeldet) darf dagegen wie bisher ins erste Konto. */
+  var BESITZ = "azubipass-lernsync";        // Merkzettel aus lernstand-sync.js
+  var zuletztRoh = (function () {
+    try { return localStorage.getItem(SCHLUESSEL); } catch (e) { return null; }
+  })();
+  var besitzer = besitzerLesen();
+
+  function besitzerLesen() {
+    try {
+      var m = JSON.parse(localStorage.getItem(BESITZ));
+      return m && typeof m.nutzer === "string" ? m.nutzer : null;
+    } catch (e) { return null; }
+  }
+
+  // Was ein anderer Tab seit unserem letzten Lesen/Schreiben abgelegt hat, oder null.
+  function fremderStand() {
+    var roh = localStorage.getItem(SCHLUESSEL);
+    if (roh === null || roh === zuletztRoh) return null;
+    try { return { roh: roh, stand: normalisieren(JSON.parse(roh)) }; }
+    catch (e) { return null; }
+  }
+
+  function uebernommen(roh) { zuletztRoh = roh; besitzer = besitzerLesen(); }
+
+  function schreiben(erzwingen) {
     if (wartet) { clearTimeout(wartet); wartet = null; }
     geschriebenUm = Date.now();
     try {
-      localStorage.setItem(SCHLUESSEL, JSON.stringify(stand));
+      if (!erzwingen) {
+        var fremd = fremderStand();
+        var jetzt = besitzerLesen();
+        if (fremd && besitzer !== null && jetzt !== besitzer) {
+          einsetzen(fremd.stand);              // anderes Konto: dessen Stand gilt
+          uebernommen(fremd.roh);
+          gemeldet();
+          return true;
+        }
+        if (fremd) {
+          var eigeneZeit = stand.geaendertAm;
+          var ziel = JSON.parse(JSON.stringify(stand));
+          zusammenfuehren(ziel, fremd.stand);
+          ziel.geaendertAm = String(eigeneZeit || "") > String(fremd.stand.geaendertAm || "")
+            ? eigeneZeit : fremd.stand.geaendertAm;
+          einsetzen(normalisieren(ziel));
+        }
+      }
+      var roh = JSON.stringify(stand);
+      localStorage.setItem(SCHLUESSEL, roh);
+      uebernommen(roh);
       return true;
     } catch (e) {
       // Speicher voll oder gesperrt. Nichts kaputtmachen, nichts behaupten.
       return false;
     }
   }
+
+  /* Holt Änderungen anderer Tabs in diesen Tab. Hat dieser Tab selbst noch
+     Ungeschriebenes, wird zusammengeführt und geschrieben. true = geändert.
+     lernstand-sync.js ruft das vor jeder Entscheidung über den Abgleich. */
+  function kontoAuffrischen() {
+    try {
+      if (wartet) { var vorher = zuletztRoh; schreiben(); return zuletztRoh !== vorher; }
+      var fremd = fremderStand();
+      if (!fremd) return false;
+      einsetzen(fremd.stand);
+      uebernommen(fremd.roh);
+      return true;
+    } catch (e) { return false; }
+  }
+
+  function nachFremdemSchreiben() {
+    if (!kontoAuffrischen()) return;
+    try { if (window.AP && window.AP.appNeuZeichnen) window.AP.appNeuZeichnen(); } catch (e) {}
+  }
+  try {
+    window.addEventListener("storage", function (e) {
+      if (e.key === SCHLUESSEL || e.key === null) nachFremdemSchreiben();
+    });
+  } catch (e) {}
 
   // Lernstand-Abgleich mit dem Konto (lernstand-sync.js, nur in der App).
   function gemeldet() { try { if (window.AP && window.AP.nachSichern) window.AP.nachSichern(); } catch (e) {} }
@@ -734,6 +957,8 @@ window.AP = (function () {
     stand: stand, sichern: sichern, kapitelfach: kapitelfach, abdruck: abdruck,
     heuteGelernt: heuteGelernt, frisch: frisch, SCHLUESSEL: SCHLUESSEL,
     sofortSichern: sofortSichern, sicherungPruefen: sicherungPruefen, kontoErsetzen: kontoErsetzen,
+    kontoAuffrischen: kontoAuffrischen, lernstandZusammenfuehren: lernstandZusammenfuehren,
+    probeklausurId: probeklausurId, probeklausurZeit: probeklausurZeit,
     PROBEKLAUSUR_SCHLUESSEL: PROBEKLAUSUR_SCHLUESSEL,
     probeklausurErgebnisSpeichern: probeklausurErgebnisSpeichern,
     probeklausurZuruecksetzen: probeklausurZuruecksetzen,

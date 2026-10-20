@@ -1329,57 +1329,14 @@
     return g;
   }
 
-  function probeklausurId(e) {
-    return e && (e.id || [e.ende, e.seed, e.prozent].join("|"));
-  }
-
-  function probeklausurZeit(e) {
-    if (!e) return 0;
-    var t = Date.parse(e.aktualisiertAm || e.beendetAm || "");
-    return isNaN(t) ? 0 : t;
-  }
+  // Zusammenführung und Klausur-Helfer liegen in kern.js (auch Lernzettelseiten brauchen sie).
+  var probeklausurId = AP.probeklausurId, probeklausurZeit = AP.probeklausurZeit;
+  var zusammenfuehren = AP.lernstandZusammenfuehren;
 
   function probeklausurProzent(e) {
     return e && typeof e.prozent === "number"
       ? String(e.prozent).replace(".", ",") + " %"
       : "—";
-  }
-
-  function zeitstempel(wert) {
-    var t = Date.parse(wert || "");
-    return isNaN(t) ? 0 : t;
-  }
-
-  function objekt(wert) {
-    return wert && typeof wert === "object" && !Array.isArray(wert) ? wert : {};
-  }
-
-  function werteZusammenfuehren(lokal, fremd, fremdIstNeuer) {
-    var alt = objekt(lokal), neu = objekt(fremd), raus = {};
-    Object.keys(alt).forEach(function (id) { raus[id] = alt[id]; });
-    Object.keys(neu).forEach(function (id) {
-      if (!Object.prototype.hasOwnProperty.call(raus, id) || fremdIstNeuer) {
-        raus[id] = neu[id];
-      }
-    });
-    return raus;
-  }
-
-  function fortschrittZusammenfuehren(lokal, fremd, fremdIstNeuer) {
-    var alt = objekt(lokal), neu = objekt(fremd);
-    var raus = {
-      ziele: Array.isArray(alt.ziele) ? alt.ziele.slice() : [],
-      checks: werteZusammenfuehren(alt.checks, neu.checks, fremdIstNeuer),
-      zuordnen: werteZusammenfuehren(alt.zuordnen, neu.zuordnen, fremdIstNeuer),
-      test: werteZusammenfuehren(alt.test, neu.test, fremdIstNeuer),
-      fertig: alt.fertig === true
-    };
-    (Array.isArray(neu.ziele) ? neu.ziele : []).forEach(function (ziel) {
-      if (raus.ziele.indexOf(ziel) === -1) raus.ziele.push(ziel);
-    });
-    if (fremdIstNeuer && typeof neu.fertig === "boolean") raus.fertig = neu.fertig;
-    else if (neu.fertig === true) raus.fertig = true;
-    return raus;
   }
 
   function zeigeProbeklausuren(s) {
@@ -1724,79 +1681,6 @@
     leser.readAsText(datei);
   }
 
-  /* Führt eine geprüfte Sicherung in ziel (eine Kopie des Kontos) zusammen. */
-  function zusammenfuehren(stand, neu) {
-    var lokaleZeit = zeitstempel(stand.geaendertAm);
-    var fremdeZeit = zeitstempel(neu.geaendertAm);
-    var fremdeSicherungIstNeuer = fremdeZeit > lokaleZeit;
-    /* Zusammenführen statt überschreiben: Wer auf zwei Geräten gelernt hat,
-       soll nicht die Hälfte verlieren. Eine ältere Sicherung darf dabei
-       keinen neueren Kapitelstand zurücksetzen. */
-    Object.keys(neu.fortschritt || {}).forEach(function (k) {
-      if (!stand.fortschritt[k]) {
-        stand.fortschritt[k] = fortschrittZusammenfuehren({}, neu.fortschritt[k], true);
-      } else {
-        stand.fortschritt[k] = fortschrittZusammenfuehren(
-          stand.fortschritt[k], neu.fortschritt[k], fremdeSicherungIstNeuer);
-      }
-    });
-    Object.keys(neu.karten || {}).forEach(function (id) {
-      var alt = stand.karten[id];
-      if (!alt || (neu.karten[id].fach || 0) > (alt.fach || 0) ||
-          ((neu.karten[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
-        stand.karten[id] = neu.karten[id];
-      }
-    });
-    Object.keys(neu.vokabeln || {}).forEach(function (id) {
-      var alt = stand.vokabeln[id];
-      if (!alt || (neu.vokabeln[id].fach || 0) > (alt.fach || 0) ||
-          ((neu.vokabeln[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
-        stand.vokabeln[id] = neu.vokabeln[id];
-      }
-    });
-    stand.quiz = werteZusammenfuehren(stand.quiz, neu.quiz, fremdeSicherungIstNeuer);
-    (neu.aktivitaet || []).forEach(function (t) {
-      if (stand.aktivitaet.indexOf(t) === -1) stand.aktivitaet.push(t);
-    });
-    (neu.lesezeichen || []).forEach(function (e) {
-      if (!stand.lesezeichen.some(function (x) { return x.zu === e.zu; })) {
-        stand.lesezeichen.push(e);
-      }
-    });
-    /* Klausurergebnisse gehören zum Konto und müssen deshalb beim
-       Zusammenführen ebenfalls erhalten bleiben. Die laufende Klausur hat
-       weiterhin ihren eigenen Schlüssel; hier liegen nur abgeschlossene
-       Ergebniszusammenfassungen. */
-    (Array.isArray(neu.probeklausuren) ? neu.probeklausuren : []).forEach(function (e) {
-      if (!e || typeof e !== "object") return;
-      var id = probeklausurId(e);
-      var i = stand.probeklausuren.findIndex(function (x) {
-        return probeklausurId(x) === id;
-      });
-      if (i < 0) {
-        stand.probeklausuren.push(e);
-        return;
-      }
-      var alt = stand.probeklausuren[i];
-      var neuAbgeschlossen = e.status === "abgeschlossen";
-      var altAbgeschlossen = alt && alt.status === "abgeschlossen";
-      if ((neuAbgeschlossen && !altAbgeschlossen) ||
-          probeklausurZeit(e) >= probeklausurZeit(alt)) {
-        stand.probeklausuren[i] = e;
-      }
-    });
-    if (stand.probeklausuren.length > 50) stand.probeklausuren = stand.probeklausuren.slice(0, 50);
-    if (neu.zuletzt && (!stand.zuletzt || fremdeSicherungIstNeuer)) {
-      stand.zuletzt = neu.zuletzt;
-    }
-    // Nur übernehmen, was der Countdown auch rechnen kann — sonst schleppt
-    // eine alte Sicherung einen kaputten Termin ins frische Konto.
-    if (AP.istDatum(neu.pruefungstermin) &&
-        (!stand.pruefungstermin || fremdeSicherungIstNeuer)) {
-      stand.pruefungstermin = neu.pruefungstermin;
-    }
-  }
-
   function zuruecksetzen(meldung, s) {
     var imKonto = AP.lernstandSync && AP.lernstandSync.status().art !== "lokal";
     if (!window.confirm("Wirklich alles zurücksetzen? Fortschritt, Karteikarten, "
@@ -1985,7 +1869,6 @@
      Einspielen einer Sicherung, und nach einer Übernahme vom Konto die
      sichtbare Ansicht neu aufbauen. Üben und Community nicht: Dort würde ein
      Neuaufbau eine laufende Übung oder Eingabe unterbrechen. */
-  AP.lernstandZusammenfuehren = zusammenfuehren;
   AP.appNeuZeichnen = function () {
     if (!inhalt || !verteiler) return;
     var id = adresse(location.hash.slice(1)).bereich || "heute";

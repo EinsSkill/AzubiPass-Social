@@ -218,6 +218,193 @@ def main():
             axe(s, "Ich nach Abgleich")
             ctx.close()
 
+            # ------------------------------------------------------------------
+            # LS01 · Kontotrennung auch vor dem ersten erfolgreichen Abgleich
+            # (Review 2d2f478). A = Anna (FAKE.ICH), B = Ben (FAKE.BEN).
+
+            BEN_PROFIL = "FAKE.db.profil.push({ id: FAKE.BEN, anzeigename: 'Ben', rolle: 'azubi' });"
+
+            def server_lz(s, u):
+                z = ev(s, f"(FAKE.db.lernstand.find(z => z.nutzer_id === FAKE.{u}) || null)")
+                return None if z is None else sorted(e["zu"] for e in z["daten"]["lesezeichen"])
+
+            def lernen(s, zu, sofort=True):
+                ev(s, f"AP.stand.lesezeichen.push({{ zu: '{zu}', titel: '{zu}', lernfeld: 'lf1' }}); AP.{'sofortSichern' if sofort else 'sichern'}();")
+
+            def a_lernt_offline(nachher, erster_fehler="FAKE.tabFehler.lernstand = 1;"):
+                ctx, s = neue_seite(geraet([]), nachher=erster_fehler + BEN_PROFIL + nachher)
+                warte_status(s, "offline")
+                lernen(s, "A-privat")
+                return ctx, s
+
+            def nach_wechsel_zu_ben(s):
+                ev(s, "FAKE.anmelden(FAKE.BEN_KONTO)")
+                s.wait_for_function("AP.lernstandSync.status().art === 'aktuell' && JSON.parse(localStorage.getItem('azubipass-lernsync')).nutzer === FAKE.BEN", timeout=6000)
+
+            print("LS01: Erstabruf scheitert, A lernt, Wechsel zu B mit Serverstand")
+            ctx, s = a_lernt_offline("FAKE.serverStand(FAKE.BEN, ['B-eigen'], 1);")
+            m = ev(s, "JSON.parse(localStorage.getItem('azubipass-lernsync'))")
+            pruefe(m and m["nutzer"] == ev(s, "FAKE.ICH"), "Gerätestand gehört schon vor dem ersten Erfolg zu A", m)
+            nach_wechsel_zu_ben(s)
+            pruefe(lz(s) == ["B-eigen"], "Anzeige in B nur mit Bs Stand", lz(s))
+            pruefe(server_lz(s, "BEN") == ["B-eigen"], "Bs Server ohne Daten von A", server_lz(s, "BEN"))
+            pruefe(all("A-privat" not in json.dumps(c) for c in ev(s, "FAKE.aufrufe.lernstand_speichern || []")),
+                   "Kein Upload mit Daten von A")
+            print("LS01: zurück zu A – zurückgelegter Stand kommt in As Konto")
+            ev(s, "FAKE.anmelden({ id: FAKE.ICH, email: 'anna@test.invalid' })")
+            s.wait_for_function("AP.lernstandSync.status().art === 'aktuell' && JSON.parse(localStorage.getItem('azubipass-lernsync')).nutzer === FAKE.ICH", timeout=6000)
+            pruefe(lz(s) == ["A-privat"], "A sieht seinen offline gelernten Stand wieder", lz(s))
+            pruefe(server_lz(s, "ICH") == ["A-privat"], "As Server hat ihn jetzt", server_lz(s, "ICH"))
+            pruefe(server_lz(s, "BEN") == ["B-eigen"], "Bs Server weiter unverändert")
+            pruefe(ev(s, "localStorage.getItem('azubipass-lernsync-offen')") is None, "Zurückgelegter Stand danach aufgeräumt")
+            ctx.close()
+
+            print("LS01: Erstabruf scheitert, Wechsel zu B ohne Serverstand")
+            ctx, s = a_lernt_offline("")
+            nach_wechsel_zu_ben(s)
+            pruefe(lz(s) == [], "B beginnt leer", lz(s))
+            pruefe(server_lz(s, "BEN") == [], "Bs erster Upload ohne Daten von A", server_lz(s, "BEN"))
+            ctx.close()
+
+            print("LS01: erste Speicherantwort verloren")
+            ctx, s = neue_seite(geraet([]), nachher="FAKE.plan.lernstand_speichern = ['verlieren'];" + BEN_PROFIL + "FAKE.serverStand(FAKE.BEN, ['B-eigen'], 1);")
+            warte_status(s, "offline")
+            pruefe(server_lz(s, "ICH") == [], "Server hat As ersten Stand, Antwort kam nicht an")
+            lernen(s, "A-privat")
+            nach_wechsel_zu_ben(s)
+            pruefe(lz(s) == ["B-eigen"] and server_lz(s, "BEN") == ["B-eigen"], "B weder angezeigt noch gesendet mit Daten von A", lz(s))
+            ev(s, "FAKE.anmelden({ id: FAKE.ICH, email: 'anna@test.invalid' })")
+            s.wait_for_function("AP.lernstandSync.status().art === 'aktuell' && JSON.parse(localStorage.getItem('azubipass-lernsync')).nutzer === FAKE.ICH", timeout=6000)
+            pruefe(server_lz(s, "ICH") == ["A-privat"], "A: verlorene Antwort aufgelöst, Stand im Konto", server_lz(s, "ICH"))
+            ctx.close()
+
+            print("LS01: Abmelden, dann anderes Konto")
+            ctx, s = a_lernt_offline("FAKE.serverStand(FAKE.BEN, ['B-eigen'], 1);")
+            ev(s, "FAKE.anmelden(null)")
+            warte_status(s, "lokal")
+            lernen(s, "nach-abmeldung")
+            nach_wechsel_zu_ben(s)
+            pruefe(lz(s) == ["B-eigen"] and server_lz(s, "BEN") == ["B-eigen"], "B ohne As Stand nach Abmelden", lz(s))
+            ctx.close()
+
+            print("LS01: Neustart nach dem Fehler, gespeicherte Sitzung gehört schon B")
+            meta_a = {"nutzer": "00000000-0000-4000-a000-00000000a001", "version": None, "am": None}
+            sitz_b = "localStorage.setItem('azubipass-sitzung', JSON.stringify({ user: { id: '00000000-0000-4000-a000-00000000b001' } }));"
+            ctx, s = neue_seite(geraet(["A-privat"], meta=meta_a) + sitz_b,
+                                nachher="FAKE.anmelden(FAKE.BEN_KONTO); FAKE.tabFehler.lernstand = 1;" + BEN_PROFIL)
+            pruefe(lz(s) == [], "Ohne Netz: B sieht sofort nichts von A", lz(s))
+            warte_status(s, "offline")
+            pruefe(lz(s) == [] and server_lz(s, "BEN") is None, "Nichts von A in B, nichts gesendet")
+            ctx.close()
+
+            print("LS01: tatsächlich anonymer Gerätestand geht weiter ins erste Konto")
+            ctx, s = neue_seite(geraet(["anonym"]))
+            warte_status(s, "aktuell")
+            pruefe(server_lz(s, "ICH") == ["anonym"], "Erstübernahme wie bisher", server_lz(s, "ICH"))
+            ctx.close()
+
+            # ------------------------------------------------------------------
+            # LS02 · Mehrere Tabs teilen sich den Lernstand im Browser
+
+            def kontext():
+                ctx = browser.new_context(viewport={"width": 390, "height": 844}, service_workers="block", locale="de-DE")
+                ctx.add_init_script(basis.FAKE_JS)
+                ctx.add_init_script(LERN_JS)
+                return ctx
+
+            def app_tab(ctx, vorher=""):
+                s = ctx.new_page()
+                if vorher:
+                    s.add_init_script(vorher)
+                s.goto(url + "app.html#ich")
+                s.wait_for_function("window.AP && AP.lernstandSync")
+                return s
+
+            def lokal_lz(s):
+                return sorted(e["zu"] for e in ev(s, "JSON.parse(localStorage.getItem('azubipass:konto')).lesezeichen"))
+
+            print("LS02: Lernzettelseite bei offenem App-Tab")
+            ctx = kontext()
+            s = app_tab(ctx, geraet(["Start"]))
+            warte_status(s, "aktuell")
+            t2 = ctx.new_page()
+            t2.goto(url + "lf1.html")
+            t2.wait_for_function("window.AP && AP.stand")
+            lernen(t2, "Kapitel-neu")
+            s.wait_for_function("AP.stand.lesezeichen.some(e => e.zu === 'Kapitel-neu')", timeout=3000)
+            pruefe(True, "App-Tab übernimmt die Änderung der Lernzettelseite")
+            ev(s, "AP.lernstandSync.abgleichen()")
+            s.wait_for_function("(FAKE.db.lernstand[0] || {}).version === 2", timeout=5000)
+            pruefe(server_lz(s, "ICH") == ["Kapitel-neu", "Start"], "Jetzt abgleichen sendet sie", server_lz(s, "ICH"))
+            lernen(s, "App-neu")
+            s.wait_for_function("(FAKE.db.lernstand[0] || {}).version === 3", timeout=5000)
+            pruefe(server_lz(s, "ICH") == ["App-neu", "Kapitel-neu", "Start"] and lokal_lz(s) == ["App-neu", "Kapitel-neu", "Start"],
+                   "Nächste App-Änderung verdrängt nichts", (server_lz(s, "ICH"), lokal_lz(s)))
+            t2.reload(); t2.wait_for_function("window.AP && AP.stand")
+            pruefe(lz(t2) == ["App-neu", "Kapitel-neu", "Start"], "Lernzettelseite nach Neuladen vollständig", lz(t2))
+            ctx.close()
+
+            print("LS02: zwei App-Tabs, Tab 2 speichert zuerst erfolgreich")
+            ctx = kontext()
+            s = app_tab(ctx, geraet(["Start"]))
+            warte_status(s, "aktuell")
+            t2 = app_tab(ctx, "FAKE.db.lernstand = " + json.dumps(ev(s, "FAKE.db.lernstand")) + ";")
+            warte_status(t2, "aktuell")
+            lernen(t2, "Tab2-neu")
+            t2.wait_for_function("(FAKE.db.lernstand[0] || {}).version >= 2", timeout=5000)
+            ev(s, "rows => { FAKE.db.lernstand = rows; }", ev(t2, "FAKE.db.lernstand"))   # beide Tabs: ein Server
+            ev(s, "AP.lernstandSync.abgleichen()")
+            warte_status(s, "aktuell")
+            pruefe(lz(s) == ["Start", "Tab2-neu"], "Tab 1 zeigt nach dem Abgleich auch Tab2-neu", lz(s))
+            lernen(s, "Tab1-neu")
+            s.wait_for_function("(FAKE.db.lernstand[0] || {}).version >= 3", timeout=5000)
+            pruefe(server_lz(s, "ICH") == ["Start", "Tab1-neu", "Tab2-neu"], "Server behält beide Änderungen", server_lz(s, "ICH"))
+            # Neu geöffneter Tab (ohne erneute Test-Saat aus dem Init-Skript) = Neuladen
+            n = ctx.new_page(); n.goto(url + "lf1.html"); n.wait_for_function("window.AP && AP.stand")
+            pruefe(lz(n) == ["Start", "Tab1-neu", "Tab2-neu"], "Nach Neuladen beide da", lz(n))
+            ctx.close()
+
+            print("LS02: gleichzeitige lokale Änderungen in zwei Tabs")
+            ctx = kontext()
+            s = app_tab(ctx, geraet(["Start"]))
+            warte_status(s, "aktuell")
+            t2 = ctx.new_page(); t2.goto(url + "lf1.html"); t2.wait_for_function("window.AP && AP.stand")
+            lernen(s, "eins")
+            lernen(s, "zwei", sofort=False)                        # noch gebündelt, nicht geschrieben
+            pruefe(ev(s, "JSON.parse(localStorage.getItem('azubipass:konto')).lesezeichen.length") == 2, "zwei wartet noch im Tab")
+            lernen(t2, "drei")
+            s.wait_for_timeout(700)
+            pruefe(lokal_lz(s) == ["Start", "drei", "eins", "zwei"] and lz(s) == ["Start", "drei", "eins", "zwei"],
+                   "Beide Änderungen im Browser und im Tab", (lokal_lz(s), lz(s)))
+            lernen(t2, "vier")
+            s.wait_for_function("AP.stand.lesezeichen.length === 5", timeout=3000)
+            pruefe(True, "Weitere Änderung der Lernzettelseite kommt an")
+            print("LS02: Rückkehr aus dem Hintergrund und Neustart")
+            ev(s, """() => { const k = JSON.parse(localStorage.getItem('azubipass:konto'));
+                k.lesezeichen.push({ zu: 'verpasst', titel: 'verpasst', lernfeld: 'lf1' });
+                k.geaendertAm = new Date().toISOString();
+                localStorage.setItem('azubipass:konto', JSON.stringify(k));
+                document.dispatchEvent(new Event('visibilitychange')); }""")
+            pruefe("verpasst" in lz(s), "Rückkehr holt verpasste Änderung in den Tab", lz(s))
+            s.wait_for_function("FAKE.db.lernstand[0].daten.lesezeichen.length === 6", timeout=6000)
+            pruefe(server_lz(s, "ICH") == ["Start", "drei", "eins", "verpasst", "vier", "zwei"], "Server hat alles", server_lz(s, "ICH"))
+            s.close()
+            n = ctx.new_page(); n.goto(url + "app.html#ich"); n.wait_for_function("window.AP && AP.stand")
+            pruefe(len(lz(n)) == 6, "Nach Neustart alles da", lz(n))
+            ctx.close()
+
+            print("LS02: Kontowechsel im anderen Tab – Reste wandern nicht mit")
+            ctx = kontext()
+            s = app_tab(ctx, geraet(["Start"], sitzung=False) + "localStorage.setItem('azubipass-lernsync', JSON.stringify({ nutzer: '00000000-0000-4000-a000-00000000a001', version: null, am: null }));")
+            t2 = ctx.new_page(); t2.goto(url + "lf1.html"); t2.wait_for_function("window.AP && AP.stand")
+            lernen(t2, "A-eins")
+            lernen(t2, "A-rest", sofort=False)                     # noch gebündelt
+            ev(s, """() => { localStorage.setItem('azubipass-lernsync', JSON.stringify({ nutzer: '00000000-0000-4000-a000-00000000b001', version: null, am: null }));
+                AP.kontoErsetzen({ lesezeichen: [{ zu: 'B', titel: 'B', lernfeld: 'lf1' }] }); }""")
+            t2.wait_for_timeout(700)
+            pruefe(lokal_lz(t2) == ["B"] and lz(t2) == ["B"], "Bündel von A landet nicht im Stand von B", (lokal_lz(t2), lz(t2)))
+            ctx.close()
+
             browser.close()
 
     print()
