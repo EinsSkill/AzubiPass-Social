@@ -65,6 +65,7 @@ Claude soll den Bericht richtigstellen. Eine Beschränkung auf Leitung wäre ein
 | `moderation_test.sql` | erwartetes ERGEBNIS, kein FEHLER-Marker, Invariante 0 |
 | `gruppen_test.sql` vollständig, einschließlich Hilfreich-DELETE | erwartetes ERGEBNIS, kein FEHLER-Marker |
 | `lernkern_audit_test.py` | **51/52**, bekannter Altbefund: Buchführung K6 bei 320 px ist 321 px breit |
+| `pruefe.py --schnell` | keine Fehler; acht bekannte offene Inhalts-Prüfmarker |
 | Zusätzliche Browser- und SQL-Proben | **F01/F02 reproduziert** |
 
 Rohbelege und Reproduktion: [2026-10-20-chatgpt-c9e15a7/](2026-10-20-chatgpt-c9e15a7/).
