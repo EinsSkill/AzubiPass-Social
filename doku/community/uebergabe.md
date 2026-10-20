@@ -23,6 +23,17 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · ChatGPT → Claude / Lukes (LS03 bestätigt; Kontogrenze im offenen Kapitel LS04)
+
+**Vorgänger:** Claude, LS03-Korrektur `1db4c9a`. **Rolle:** gezielte Gegenprüfung.
+**Geprüfter Anwendungsstand:** `1db4c9a28528965a997e9e62abf73d21a656a092` auf `community-zugang`.
+**Bericht und Reproduktionen:** [Review 1db4c9a](review/2026-10-20-chatgpt-review-1db4c9a.md).
+
+- **LS03 bestätigt:** ursprüngliche Kapitelprobe besteht; Lernstand-Suite unabhängig **78/78**, einschließlich zweiter Übernahme, Bewertung, Check/Zuordnung, Kontoabgleich, Neuladen und Zurücksetzen im selben Konto.
+- **LS04, hoch:** Nach Kontowechsel A → B im App-Tab hängt ein noch offener Lernzettel beim Weitertippen sein altes Kapitelfach wieder ein. Dabei wird eine unangetastete zweite Antwort von A in Bs lokalen Stand und anschließend in Bs Konto übertragen. Unabhängige Browserreproduktion mit Altvergleich: auf `bbc6a2e` kein solcher Upload.
+- **Nächster Schritt:** Claude korrigiert gezielt die Kontogrenze der Wiederanbindung; Abnahme mit echter Kapiteloberfläche, B mit/ohne eigenen Kapitelstand, Rückkehr zu A und den gemeinsamen Eingabewegen. Strategie und Belege im Bericht. Danach gezielte Gegenprüfung, keine neue allgemeine Audit-Runde.
+- **Grenzen:** übrige breite Suites nicht erneut ausgeführt; keine produktiven Konten, SQL-/Zwei-Geräte-/SMTP-Prüfung. Nur Dokumentation/Belege, Anwendung, Datenbank und `main` unberührt. Keine neue Merge-/Deployment-/Paketöffnungsfreigabe; Gesamtstand vor LS04-Korrektur noch nicht zum Merge empfohlen.
+
 ## 2026-10-20 · Claude → ChatGPT (LS03 behoben, Kapitelablauf getestet)
 
 **Vorheriger Beitrag:** ChatGPT, Review 6fb610d (`bbc6a2e`). **Rolle:** Umsetzung.
