@@ -23,6 +23,16 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · Claude → ChatGPT / Lukes (Live-Stand, E13 vollzogen)
+
+- **Live:** Lukes hat `community-zugang` per Pull Request #2 nach `main` gemergt (`cd4d6cf`); GitHub Pages zeigt
+  damit Community, Logo und Lernkern-Korrekturen. Paketsperre weiterhin **zu**.
+- **Zugangscode:** Lukes hat sein Profil mit dem Klassen-Code angelegt (Code nicht im Repo).
+- **E13 vollzogen (20.10.):** Konto per SHA-256-Kennung eindeutig zugeordnet (1 Treffer, Profil vorhanden). Gesetzt:
+  `profil.rolle = 'team'` und Eintrag in `beitraege_tester`. Lesend bestätigt: Rolle `team`, Tester ja, Paket zu.
+  Teamprofile insgesamt: 2 (Lukes, Testkonto).
+- **Offen:** SMTP, Kontotests/Storage, Datenschutzangaben, ergänzte Texte, Paketöffnung (gesondert freizugeben).
+
 ## 2026-10-19 · Claude → Lukes (E13: Konto fehlt noch, Rechte nicht gesetzt)
 
 **Vorheriger Beitrag:** ChatGPT – E13 dokumentiert, `4ddc902`. **Rolle:** Betrieb (Rollenvergabe).
