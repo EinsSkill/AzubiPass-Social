@@ -20,7 +20,7 @@ Rohprotokolle: [2026-10-20-claude-freitag/](2026-10-20-claude-freitag/).
 ## 1 · Was neu ist
 
 **Lerngruppen** (C07–C10, C16): Übersicht „Meine Gruppen“ und offene Gruppen, gründen (offen oder mit Code),
-mit Code beitreten, Gruppenseite mit Beiträgen, Wochenaufgaben, Code (nur für Gründende sichtbar), Mitgliedern
+mit Code beitreten, Gruppenseite mit Beiträgen, Wochenaufgaben, Code (sichtbar für alle Mitglieder, wie die bestehende Regel `gruppe_code: nur Mitglieder`; Korrektur H01 aus Review c9e15a7 – vorher stand hier fälschlich „nur für Gründende“), Mitgliedern
 und „Gruppe verlassen“ (Rückfrage im registrierten Dialog). In Gruppen nur **Frage** und **Tipp**, keine
 Lernzettel und keine Dateien. Gruppenbeiträge laufen über die neue RPC `gruppe_beitrag_veroeffentlichen` mit
 Vorgangskennung (Wiederholung liefert denselben Beitrag) und Kontobindung wie beim normalen Veröffentlichen.

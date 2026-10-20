@@ -819,9 +819,11 @@
 
   /* ================================================== Wochenaufgaben */
 
-  function aufgaben(filter) {
+  // Kontogebunden (Review c9e15a7, F01): Antworten eines abgemeldeten oder
+  // gewechselten Kontos kommen nicht zurück.
+  function aufgaben(filter, konto) {
     var f = filter || {};
-    return mit(function (c) {
+    return gebunden(function (u, c) {
       var q = c.from("aufgabe_liste")
         .select("id, gruppe_id, gruppe_name, titel, beschreibung, lernfeld, kapitel, beginn, ende, erstellt_am, erledigt_zahl, von_mir_erledigt")
         .order("ende", { ascending: true });
@@ -832,15 +834,15 @@
         q = q.lte("beginn", heute).gte("ende", heute);
       }
       return q.then(auspacken);
-    });
+    }, konto);
   }
 
-  function aufgabe(id) {
-    return mit(function (c) {
+  function aufgabe(id, konto) {
+    return gebunden(function (u, c) {
       return c.from("aufgabe_liste")
         .select("id, gruppe_id, gruppe_name, titel, beschreibung, lernfeld, kapitel, beginn, ende, erstellt_von, erstellt_am, erledigt_zahl, von_mir_erledigt")
         .eq("id", id).maybeSingle().then(auspacken);
-    });
+    }, konto);
   }
 
   /* ================================================== Lernstand am Konto

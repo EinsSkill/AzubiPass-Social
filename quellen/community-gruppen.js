@@ -780,11 +780,46 @@
 
   /* Nur mit gespeicherter Sitzung und Internet; ohne Profil liefert die
      Datenbank nichts. Lädt nichts, wenn niemand angemeldet ist. */
+  /* Heute: höchstens eine laufende, offene Wochenaufgabe (01-uebersicht §2).
+     Review c9e15a7, F01: Anzeige nur mit Profil und offenem Paket, gebunden an
+     Konto, Generation und diesen Heute-Block. Abmelden, Kontowechsel und
+     Offline leeren jeden Block sofort; späte Antworten zeigen nichts mehr an.
+     Rückkehr in die App und wieder online laden mit neu geprüften Rechten. */
+  var heute = { lauf: 0, plaetze: [] };
+
+  function heuteLeeren() {
+    heute.lauf++;
+    heute.plaetze = heute.plaetze.filter(function (p) { return p.isConnected; });
+    heute.plaetze.forEach(function (p) { p.innerHTML = ""; });
+  }
+
+  function heuteNeuLaden() {
+    heuteLeeren();
+    heute.plaetze.slice().forEach(function (p) { heuteAufgabe(p); });
+  }
+
   function heuteAufgabe(platz) {
+    if (heute.plaetze.indexOf(platz) < 0) heute.plaetze.push(platz);
+    var lauf = ++heute.lauf;
+    platz.innerHTML = "";
     if (!AP.community.hatGespeicherteSitzung() || navigator.onLine === false) return;
-    var st = el("p", "cm-hilfe hm-aufgabe-lade", "Wochenaufgabe wird geladen …");
-    platz.appendChild(st);
-    AP.community.aufgaben({ laufend: true }).then(function (alle) {
+    var gilt = null;     // Bindung erst nach der Sitzung: vorher ist das Konto noch unbekannt
+    function aktuell() { return lauf === heute.lauf && gilt && gilt() && platz.isConnected && navigator.onLine !== false; }
+    platz.appendChild(el("p", "cm-hilfe hm-aufgabe-lade", "Wochenaufgabe wird geladen …"));
+    var konto;
+    AP.community.sitzung().then(function (s) {
+      if (!s || !s.user) { var f = new Error(""); f.art = "anmeldung"; throw f; }
+      konto = s.user.id;
+      gilt = AP.community.bindung();
+      if (lauf !== heute.lauf) { var v = new Error(""); v.art = "veraltet"; throw v; }
+      return AP.community.profil();
+    }).then(function (p) {
+      if (!p) return null;
+      return AP.community.beitraegeFrei().then(function (frei) {
+        return frei ? AP.community.aufgaben({ laufend: true }, konto) : null;
+      });
+    }).then(function (alle) {
+      if (!aktuell()) return;
       platz.innerHTML = "";
       var offen = (alle || []).filter(function (a) { return !a.von_mir_erledigt; });
       offen.sort(function (a, b) {
@@ -801,15 +836,31 @@
       l.appendChild(el("span", "hm-wert", "Aufgabe ansehen"));
       platz.appendChild(l);
     }, function (f) {
+      if (!aktuell()) return;
       platz.innerHTML = "";
       if (f && (f.art === "anmeldung" || f.art === "veraltet")) return;
-      platz.appendChild(el("p", "cm-hilfe", "Die Wochenaufgabe konnte nicht geladen werden."));
+      var p = el("p", "cm-hilfe", "Die Wochenaufgabe konnte nicht geladen werden. ");
+      var nochmal = el("button", "kn-neben", "Erneut versuchen");
+      nochmal.type = "button";
+      nochmal.addEventListener("click", function () { heuteAufgabe(platz); });
+      p.appendChild(nochmal);
+      platz.appendChild(p);
     });
   }
+
+  window.addEventListener("offline", heuteLeeren);
+  window.addEventListener("online", heuteNeuLaden);
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") heuteNeuLaden();
+  });
+  AP.community.beiAenderung(function (ereignis) {
+    if (ereignis === "SIGNED_OUT") heuteLeeren();
+    else if (ereignis === "SIGNED_IN") heuteNeuLaden();
+  });
 
   AP.communityGruppen = {
     liste: liste, gruenden: gruenden, beitreten: beitreten, gruppe: gruppe,
     aufgabeNeu: aufgabeNeu, aufgabe: aufgabe, lokalnav: lokalnav, heuteAufgabe: heuteAufgabe,
-    vergessen: function () { hinweis = null; }
+    vergessen: function () { hinweis = null; heuteLeeren(); }
   };
 })();

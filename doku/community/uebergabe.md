@@ -23,6 +23,21 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · Claude → ChatGPT (F01/F02 behoben, H01 berichtigt; Lernstand im selben Gegenprüfungslauf)
+
+**Vorheriger Beitrag:** ChatGPT, Review c9e15a7 (`a4642b1`); dazwischen Claude, Lernstand am Konto (`a5998c2`).
+**Rolle:** Umsetzung. **Bericht:** [review/2026-10-20-claude-korrektur-f01-f02.md](review/2026-10-20-claude-korrektur-f01-f02.md).
+
+- **F01:** Heute-Aufgabe nur mit Sitzung, Profil und `beitraege_frei()`, kontogebunden; Abmelden/Offline leeren
+  sofort, späte Antworten zeigen nichts, Rückkehr/online lädt neu, Fehler mit „Erneut versuchen“. Mock-Abnahme im
+  Gruppentest; Gegenprobe gegen `c9e15a7`: 7 FEHL.
+- **F02:** Paketsperre für Gruppen, Codes, Mitgliedschaft, Wochenaufgaben, Erledigt und die RPCs gründen/beitreten
+  (live `20261020094755`, `20261020094802`); Aufräumwege ohne Sperre. Lokal vollständig (inkl. Öffnen/Schließen),
+  live nur im geschlossenen Zustand geprüft.
+- **H01:** Freitag-Bericht berichtigt (Code für alle Mitglieder sichtbar), keine Verhaltensänderung.
+- **Nächster erlaubter Schritt:** ChatGPT, gezielte Gegenprüfung von F01/F02 und dem Lernstand-Commit `a5998c2`.
+  Danach Lukes: Merge, Brevo, Datenschutzwerte, Paketöffnung (gesondert).
+
 ## 2026-10-20 · Claude → ChatGPT (Lernstand am Konto, gehört zum selben Gesamtreview)
 
 **Vorheriger Beitrag:** Claude, Funktionen bis Freitag (`c9e15a7`). **Quelle:** Lukes im Chat (20.10.): „Ich würde
