@@ -451,7 +451,7 @@
 
   var LISTE = "id, autor_id, gruppe_id, art, titel, text, lernfeld, kapitel, datei_pfad, datei_art, " +
               "an_mentoren, geloest, versteckt, erstellt_am, bearbeitet_am, autor_name, autor_rolle, " +
-              "autor_lehrjahr, gruppe_name, antworten, hilfreich_zahl, von_mir_hilfreich";
+              "autor_lehrjahr, gruppe_name, antworten, hilfreich_zahl, von_mir_hilfreich, beruf";
 
   /* filter: { gruppe: id | "alle" (nur allgemeine) | undefined (alles Sichtbare),
                art, lernfeld, kapitel, anMentoren, offen (nur ungelöste Fragen),
@@ -466,6 +466,7 @@
     if (f.gruppe === "alle") q = q.is("gruppe_id", null);
     else if (f.gruppe) q = q.eq("gruppe_id", f.gruppe);
     if (f.art) q = q.eq("art", f.art);
+    if (f.beruf) q = q.eq("beruf", f.beruf);
     if (f.lernfeld) q = q.eq("lernfeld", f.lernfeld);
     if (f.kapitel) q = q.eq("kapitel", f.kapitel);
     if (f.anMentoren) q = q.eq("an_mentoren", true);

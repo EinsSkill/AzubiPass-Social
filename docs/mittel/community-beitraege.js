@@ -81,27 +81,47 @@
 
   function anzahlAntworten(n) { return n === 1 ? "1 Antwort" : n + " Antworten"; }
 
-  function lernfelder(ctx) {
+  /* Industriekaufleute (Lukes, 20.10.2026): Lernfelder nach dem KMK-Rahmenlehrplan
+     vom 15.12.2023 (Ausbildungsordnung ab 1.8.2024). Lerninhalte dazu gibt es
+     in der App noch nicht – daher keine Kapitel und kein Link nach Lernen. */
+  var LERNFELDER_IK = [
+    "Das Unternehmen vorstellen und die eigene Rolle mitgestalten", "Projekte planen und durchführen",
+    "Kundenaufträge bearbeiten und überwachen", "Beschaffungsprozesse planen und steuern",
+    "Wertströme buchhalterisch dokumentieren und auswerten", "Leistungserstellung planen, steuern und kontrollieren",
+    "Logistik- und Lagerprozesse koordinieren, umsetzen und überwachen",
+    "Kosten- und Leistungsrechnung zur Vorbereitung unternehmerischer Entscheidungen durchführen",
+    "Marketingkonzepte planen und umsetzen", "Jahresabschluss vorbereiten, auswerten und für Finanzierungsentscheidungen nutzen",
+    "Geschäftsprozesse an gesamtwirtschaftlichen Rahmenbedingungen ausrichten", "Personalprozesse planen, steuern und kontrollieren",
+    "Betriebliche Problemlösungsprozesse innovativ durchführen"
+  ].map(function (titel, i) { return { id: "lf" + (i + 1), nummer: i + 1, kurz: "LF" + (i + 1), titel: titel, kapitel: [] }; });
+  var BERUF_KURZ = { kfb: "Büromanagement", ik: "Industrie" };
+
+  function eigenerBeruf(ctx) { return ctx && ctx.beruf ? ctx.beruf() : "kfb"; }
+
+  function lernfelder(ctx, beruf) {
+    if ((beruf || eigenerBeruf(ctx)) === "ik") return LERNFELDER_IK;
     var lf = (ctx.inhalt() && ctx.inhalt().lernfelder) || [];
     return lf.slice().sort(function (a, b) { return (a.nummer || 99) - (b.nummer || 99); });
   }
 
-  function lernfeldVon(ctx, id) {
-    return lernfelder(ctx).filter(function (x) { return x.id === id; })[0] || null;
+  function lernfeldVon(ctx, id, beruf) {
+    return lernfelder(ctx, beruf).filter(function (x) { return x.id === id; })[0] || null;
   }
 
-  // Zuordnung nur aus dem tatsächlich geladenen Katalog – veraltete Kennungen
-  // werden weggelassen, nicht als toter Verweis gezeigt.
+  // Zuordnung nur aus dem tatsächlich geladenen Katalog des Berufs, zu dem der
+  // Beitrag gehört – veraltete Kennungen werden weggelassen, nicht als toter Verweis gezeigt.
   function zuordnung(ctx, b) {
-    var lf = b.lernfeld ? lernfeldVon(ctx, b.lernfeld) : null;
+    var beruf = b.beruf === "ik" ? "ik" : "kfb";
+    var lf = b.lernfeld ? lernfeldVon(ctx, b.lernfeld, beruf) : null;
     if (!lf) return null;
     var k = b.kapitel ? (lf.kapitel || []).filter(function (x) { return x.id === b.kapitel; })[0] : null;
-    return { lf: lf, k: k || null };
+    return { lf: lf, k: k || null, ik: beruf === "ik" };
   }
 
   function zuordnungText(z) {
     if (!z) return "";
-    return z.k ? z.lf.kurz + ", Kapitel " + z.k.nummer + " " + z.k.titel : z.lf.kurz;
+    var t = z.k ? z.lf.kurz + ", Kapitel " + z.k.nummer + " " + z.k.titel : z.lf.kurz;
+    return z.ik ? "Industrie · " + t : t;
   }
 
   function personText(name, rolle, lehrjahr) {
@@ -143,9 +163,15 @@
     var filter = el("div", "cm-filter");
     var art = ctx.feld({ label: "Beitragsart", wert: stand.art,
       select: [["", "Alle Arten"], ["lernzettel", "Lernzettel"], ["frage", "Frage"], ["tipp", "Tipp"]] });
-    var lfWahl = [["", "Alle Lernfelder"]].concat(lernfelder(ctx).map(function (lf) {
-      return [lf.id, lf.kurz + " · " + lf.titel];
-    }));
+    // Lernfeld-Filter über beide Ausbildungen; der eigene Beruf steht oben.
+    var berufe = eigenerBeruf(ctx) === "ik" ? ["ik", "kfb"] : ["kfb", "ik"];
+    var lfWahl = [["", "Alle Lernfelder"]];
+    berufe.forEach(function (bf) {
+      lernfelder(ctx, bf).forEach(function (lf) {
+        lfWahl.push([bf + ":" + lf.id, BERUF_KURZ[bf] + " · " + lf.kurz + " · " + lf.titel]);
+      });
+    });
+    if (stand.lernfeld && stand.lernfeld.indexOf(":") < 0) stand.lernfeld = "";
     var lf = ctx.feld({ label: "Lernfeld", wert: stand.lernfeld, select: lfWahl });
     filter.appendChild(art.box);
     filter.appendChild(lf.box);
@@ -173,8 +199,9 @@
 
     function aktiv() { return !!(stand.art || stand.lernfeld); }
     function abfrage() {
-      return { gruppe: "alle", ohneAusgeblendete: true,
-               art: stand.art || undefined, lernfeld: stand.lernfeld || undefined };
+      var teil = (stand.lernfeld || "").split(":");
+      return { gruppe: "alle", ohneAusgeblendete: true, art: stand.art || undefined,
+               beruf: teil[1] ? teil[0] : undefined, lernfeld: teil[1] || undefined };
     }
     function zuruecksetzenZeigen() { zuruecksetzen.hidden = !aktiv(); }
     zuruecksetzenZeigen();
@@ -566,7 +593,6 @@
       if (b.bearbeitet_am && datum(b.bearbeitet_am) !== datum(b.erstellt_am))
         meta.push("bearbeitet " + datum(b.bearbeitet_am));
       inhalt.appendChild(el("p", "cm-zeile-meta cm-detail-meta", meta.join(" · ")));
-      // Hilfreich nur als Zahl – Markieren kommt mit der eigenen Spec.
       inhalt.appendChild(hilfreichBereich(b));
 
       if (b.text) inhalt.appendChild(el("div", "cm-text", b.text));   // textContent, Zeilenumbrüche per CSS
@@ -576,7 +602,7 @@
       inhalt.appendChild(meldeReihe("beitrag", b.id, b.autor_id, "Beitrag: " + b.titel,
         "Beitrag melden", "Beitrag „" + b.titel + "“ melden"));
 
-      if (zo) {
+      if (zo && zo.lf.seite) {          // Industrie-Lernfelder haben (noch) keine Lernseite
         var lern = el("div", "cm-reihe");
         lern.appendChild(zo.k
           ? verweis("Kapitel in Lernen öffnen", zo.lf.seite + "#" + zo.k.id)
@@ -1408,7 +1434,7 @@
       });
       if (e.kapitel && !((x && x.kapitel) || []).some(function (k) { return k.id === e.kapitel; })) e.kapitel = "";
       kap.eingabe.value = e.kapitel || "";
-      kap.box.hidden = !x;
+      kap.box.hidden = !x || !(x.kapitel || []).length;
     }
     kapitelFuellen();
     lf.eingabe.addEventListener("change", function () {

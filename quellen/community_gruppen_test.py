@@ -68,7 +68,7 @@ GRUPPEN_JS = r"""
       return F.ok(z);
     }
     if (modus[0] === "delete") { F.db[tab] = liste.filter(z => !passt(z, filter)); return F.ok(null); }
-    if (modus[0] === "update") { liste.filter(z => passt(z, filter)).forEach(z => Object.assign(z, modus[1])); return F.ok(null); }
+    if (modus[0] === "update") { const t = liste.filter(z => passt(z, filter)); t.forEach(z => Object.assign(z, modus[1])); return F.ok(t[0] || null); }
     return F.ok(null);
   };
   Object.assign(F.logik, {
@@ -282,6 +282,45 @@ def main():
             ctx, s = neue_seite("community/aufgabe-neu")
             warte(s, "Dieser Inhalt ist für dich nicht verfügbar.")
             pruefe(True, "Ohne Team: Aufgabe für alle nicht erreichbar")
+            ctx.close()
+
+
+            print("Beruf · Industriekaufleute")
+            ctx, s = neue_seite("community/profil")
+            s.get_by_label("Ausbildung ändern").wait_for()
+            s.get_by_label("Ausbildung ändern").select_option("ik")
+            s.get_by_role("button", name="Ausbildung speichern").click()
+            warte(s, "Deine Ausbildung ist gespeichert: Industriekaufleute.")
+            pruefe(ev(s, "FAKE.db.profil[0].beruf") == "ik", "Beruf im Profil gespeichert")
+            axe(s, "Profil mit Ausbildung")
+            ev(s, "location.hash = '#community/schreiben'")
+            s.get_by_label("Lernfeld (optional)").wait_for()
+            opts = ev(s, "[...document.querySelectorAll('form.cm-schreiben select')].find(x => x.closest('.cm-feld').textContent.includes('Lernfeld')).options.length")
+            texte = ev(s, "[...[...document.querySelectorAll('form.cm-schreiben select')].find(x => x.closest('.cm-feld').textContent.includes('Lernfeld')).options].map(o => o.textContent)")
+            pruefe(opts == 14 and any("Marketingkonzepte planen und umsetzen" in t for t in texte), "Schreiben: 13 IK-Lernfelder", opts)
+            s.get_by_label("Lernfeld (optional)").select_option("lf9")
+            pruefe(not s.get_by_label("Kapitel (optional)").is_visible(), "IK: keine Kapitelauswahl")
+            ev(s, "location.hash = '#community'")
+            s.get_by_label("Lernfeld").wait_for()
+            texte = ev(s, "[...document.querySelector('.cm-filter select:last-of-type') ? [...document.querySelectorAll('.cm-filter select')][1].options : []].map(o => o.value)")
+            pruefe(texte[1].startswith("ik:") and "kfb:lf1" in texte, "Filter: eigene Ausbildung zuerst, beide wählbar", texte[:3])
+            ctx.close()
+            ctx, s = neue_seite("community/beitrag/" + B1, vorher=f"Object.assign(window.FAKE.db.beitrag.find(b => b.id === '{B1}'), {{ beruf: 'ik', lernfeld: 'lf8' }});")
+            warte(s, "Industrie · LF8")
+            pruefe(s.get_by_role("link", name="Lernfeld in Lernen öffnen").count() == 0, "IK-Beitrag: kein Link nach Lernen")
+            ctx.close()
+            ctx, s = neue_seite("community", vorher="window.FAKE.db.profil = window.FAKE.db.profil.filter(p => p.id !== window.FAKE.ICH);")
+            s.get_by_label("Ausbildung").wait_for()
+            s.get_by_label("Beta-Zugangscode").fill("KLASSE-TEST")
+            s.get_by_label("Anzeigename").fill("Ida")
+            s.get_by_label("Ausbildung").select_option("ik")
+            s.get_by_label("Ich bin mindestens 16 Jahre alt.").check()
+            s.get_by_label("Ich akzeptiere die Community-Regeln.").check()
+            ev(s, """void (FAKE.logik = FAKE.logik || {}), void (FAKE.logik.profil_anlegen = (a) => { FAKE.db.profil.push({ id: FAKE.ICH, anzeigename: a.p_anzeigename, lehrjahr: null,
+                     ueber_mich: '', rolle: 'azubi', beruf: 'kfb', erstellt_am: new Date().toISOString() }); return { data: null, error: null }; })""")
+            s.get_by_role("button", name="Profil anlegen").click()
+            warte(s, "Dein Profil ist angelegt.")
+            pruefe(ev(s, "FAKE.db.profil.find(p => p.id === FAKE.ICH).beruf") == "ik", "Neues Profil mit Industriekaufleute")
             ctx.close()
 
             browser.close()

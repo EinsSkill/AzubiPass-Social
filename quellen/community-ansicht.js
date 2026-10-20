@@ -52,8 +52,11 @@
     frei: null            // Paketsperre (Spec 05): true/false nach der letzten Prüfung, null = unbekannt
   };
 
+  var BERUFE = [["kfb", "Kaufleute für Büromanagement"], ["ik", "Industriekaufleute"]];
+  function berufName(b) { return b === "ik" ? "Industriekaufleute" : "Kaufleute für Büromanagement"; }
+
   function leeresFormular() {
-    return { code: "", name: "", lehrjahr: "", alter: false, regeln: false };
+    return { code: "", name: "", lehrjahr: "", beruf: "kfb", alter: false, regeln: false };
   }
 
   /* Jede Prüfung, jede Anfrage und jeder Kontowechsel zieht eine neue Nummer.
@@ -490,6 +493,7 @@
       konto: konto,
       // Nur Anzeige von Einstiegen; Rechte prüft immer die Datenbank.
       rolle: function () { return z.profil && z.profil.rolle || "azubi"; },
+      beruf: function () { return z.profil && z.profil.beruf === "ik" ? "ik" : "kfb"; },
       gilt: function () { return gilt(n) && z.nutzer === konto && z.unter === unter && bindung() && sichtbar(); },
       kopf: kopf, feld: feld, haken: haken, hinweiszeile: hinweiszeile, zurueckKnopf: zurueckKnopf,
       fehlerSetzen: fehlerSetzen, fehleruebersicht: fehleruebersicht, sperren: sperren, freigeben: freigeben,
@@ -704,10 +708,12 @@
       attr: { autocomplete: "off", maxlength: "60", spellcheck: "false" } });
     var jahr = feld({ label: "Lehrjahr (optional)", wert: f.lehrjahr,
       select: [["", "Keine Angabe"], ["1", "1. Lehrjahr"], ["2", "2. Lehrjahr"], ["3", "3. Lehrjahr"]] });
+    var beruf = feld({ label: "Ausbildung", wert: f.beruf || "kfb", select: BERUFE,
+      hilfe: "Danach richten sich die Lernfelder, denen du Beiträge zuordnest. Du kannst das später im Profil ändern." });
     var alter = haken("Ich bin mindestens 16 Jahre alt.", f.alter, true);
     var regelnOk = haken("Ich akzeptiere die Community-Regeln.", f.regeln, true);
-    var felder = { code: code, name: name, jahr: jahr, alter: alter, regeln: regelnOk };
-    var reihenfolge = ["code", "name", "jahr", "alter", "regeln"];
+    var felder = { code: code, name: name, jahr: jahr, beruf: beruf, alter: alter, regeln: regelnOk };
+    var reihenfolge = ["code", "name", "jahr", "beruf", "alter", "regeln"];
 
     reihenfolge.forEach(function (k) { form.appendChild(felder[k].box); });
 
@@ -765,6 +771,7 @@
       f.code = code.eingabe.value;
       f.name = name.eingabe.value;
       f.lehrjahr = jahr.eingabe.value;
+      f.beruf = beruf.eingabe.value === "ik" ? "ik" : "kfb";
       f.alter = alter.eingabe.checked;
       f.regeln = regelnOk.eingabe.checked;
       if (e && e.target) {
@@ -801,11 +808,27 @@
     });
 
     function angelegt(p) {
-      z.laeuft = false;
-      z.profil = p;
+      var gewaehlt = f.beruf;
       // Den Beta-Zugangscode nicht länger als nötig im Speicher halten.
       z.formular = leeresFormular();
-      ankommen({ text: "Dein Profil ist angelegt." });
+      if (gewaehlt !== "ik" || p.beruf === "ik") {
+        z.laeuft = false;
+        z.profil = p;
+        return ankommen({ text: "Dein Profil ist angelegt." });
+      }
+      // Ausbildung als zweiter Schritt (profil_anlegen kennt den Beruf nicht).
+      var konto = z.nutzer;
+      AP.community.profilAendern({ beruf: "ik" }).then(function (neu) {
+        if (z.nutzer !== konto) return;
+        z.laeuft = false;
+        z.profil = neu || p;
+        ankommen({ text: "Dein Profil ist angelegt." });
+      }, function () {
+        if (z.nutzer !== konto) return;
+        z.laeuft = false;
+        z.profil = p;
+        ankommen({ text: "Dein Profil ist angelegt. Die Ausbildung konnte nicht gespeichert werden – ändere sie bitte im Profil.", fehler: true });
+      });
     }
 
     /* Nach jedem Fehler zuerst nachsehen, ob es das Profil inzwischen gibt –
@@ -892,8 +915,42 @@
     }
     angabe("Anzeigename", p.anzeigename || "");
     angabe("Lehrjahr", p.lehrjahr ? p.lehrjahr + ". Lehrjahr" : "Keine Angabe");
+    angabe("Ausbildung", berufName(p.beruf));
     if (p.rolle && p.rolle !== "azubi") angabe("Rolle", p.rolle === "mentor" ? "Mentor:in" : "Team");
     g.appendChild(liste);
+    // Ausbildung ändern (20.10.2026): bestimmt die Lernfelder beim Schreiben und Filtern.
+    var bForm = el("form", "cm-form cm-beruf-form");
+    bForm.noValidate = true;
+    var bFeld = feld({ label: "Ausbildung ändern", wert: p.beruf || "kfb", select: BERUFE });
+    bForm.appendChild(bFeld.box);
+    var bStatus = el("div");
+    var bSpeichern = el("button", "kn-neben cm-neben", "Ausbildung speichern");
+    bSpeichern.type = "submit";
+    bForm.appendChild(bSpeichern);
+    bForm.appendChild(bStatus);
+    bForm.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (z.laeuft || bFeld.eingabe.value === (z.profil && z.profil.beruf)) return;
+      if (offline()) return setze("offline");
+      var passt = anfrage();
+      sperren(bSpeichern, "Wird gespeichert …");
+      AP.community.profilAendern({ beruf: bFeld.eingabe.value === "ik" ? "ik" : "kfb" }).then(function (neu) {
+        if (!passt()) return;
+        z.laeuft = false;
+        z.profil = neu;
+        setze("drin", { text: "Deine Ausbildung ist gespeichert: " + berufName(neu.beruf) + "." });
+      }, function (fe) {
+        if (!passt()) return;
+        z.laeuft = false;
+        freigeben(bSpeichern);
+        if (fe && fe.art === "anmeldung") return abgelaufen();
+        bStatus.innerHTML = "";
+        var m = el("p", "meldung fehler", "Die Ausbildung konnte nicht gespeichert werden. Versuch es erneut.");
+        m.setAttribute("role", "alert");
+        bStatus.appendChild(m);
+      });
+    });
+    g.appendChild(bForm);
     var reihe = el("div", "cm-reihe");
     var lesen = knopf("Community-Regeln lesen", "kn-neben cm-neben", function () { regelnZeigen(lesen); });
     reihe.appendChild(lesen);
