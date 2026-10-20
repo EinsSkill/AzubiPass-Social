@@ -1,0 +1,45 @@
+Ohne Anmeldung
+  OK   [mock] Status lokal
+  OK   [mock] Ich: nur in diesem Browser, Hinweis auf Anmeldung  Dein Lernstand liegt nur in diesem Browser. Melde dich unter
+  OK   [mock] Nichts gesendet
+  OK   [mock] Kein Abgleich-Knopf
+  OK   [mock] axe ohne WCAG-Verstöße: Ich ohne Anmeldung
+Erste Anmeldung: Gerätestand hochladen
+  OK   [mock] Server hat den Gerätestand, Version 1
+  OK   [mock] Basis 0
+  OK   [mock] Merkzettel: Konto und Version  {'nutzer': '00000000-0000-4000-a000-00000000a001', 'version': 1, 'am': '2026-10-20T08:00:00.000Z'}
+  OK   [mock] Merkzettel nicht im alten Lernstand-Namensraum
+  OK   [mock] Ich: in deinem Konto gespeichert
+  OK   [mock] Abgleich-Knopf sichtbar
+  OK   [mock] axe ohne WCAG-Verstöße: Ich angemeldet
+Änderung wird gebündelt gesendet
+  OK   [mock] Server Version 2 mit neuer Änderung
+  OK   [mock] Ohne Änderung kein erneutes Senden
+Zurücksetzen gilt auch im Konto
+  OK   [mock] Rückfrage nennt das Konto  ['Wirklich alles zurücksetzen? Fortschritt, Karteikarten, Lesezeichen und Notizen sind dann weg – auch in deinem Konto und auf deinen anderen Geräten. Das lässt sich nicht rückgängig machen.']
+  OK   [mock] Server nach Zurücksetzen leer
+Anderes Gerät war neuer, hier nichts geändert: übernehmen
+  OK   [mock] Gerät hat den Serverstand  ['a', 'x', 'y']
+  OK   [mock] Nichts gesendet
+Beide geändert: zusammenführen
+  OK   [mock] Gerät: beide Stände vereint  ['a', 'dort', 'hier']
+  OK   [mock] Server Version 4 vereint
+  OK   [mock] Gesendet mit Basis 3
+Gleichzeitig gespeichert: neu holen, zusammenführen, erneut senden
+  OK   [mock] Gerät hat alle drei  ['a', 's1', 's2']
+  OK   [mock] Basis 1 abgelehnt, dann Basis 2  [1, 2]
+  OK   [mock] Server Version 3
+Anderes Konto auf diesem Gerät
+  OK   [mock] Eigener Stand statt des vorherigen Kontos  ['annas-stand']
+  OK   [mock] Vorheriger Stand nicht ins Konto geschrieben
+  OK   [mock] Konto ohne Stand: leer beginnen, nichts übernommen
+Kontowechsel während der Sitzung
+  OK   [mock] Nach Wechsel zu Ben: Bens Stand
+  OK   [mock] Annas Konto unverändert
+Ohne Profil, ohne Netz
+  OK   [mock] Gerätestand bleibt
+  OK   [mock] Gerätestand bleibt offline
+  OK   [mock] Jetzt abgleichen holt nach
+  OK   [mock] axe ohne WCAG-Verstöße: Ich nach Abgleich
+
+Alles bestanden

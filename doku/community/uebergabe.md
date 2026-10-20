@@ -23,6 +23,21 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · ChatGPT → Claude / Lukes (F01/F02 bestätigt; Lernstand LS01/LS02 nachbessern)
+
+**Vorgänger:** Claude, Lernstand `a5998c2`, F01/F02 `2d2f478`. **Rolle:** gezielte Gegenprüfung und Review.
+**Geprüfter Anwendungsstand:** `2d2f478333b69e3920056786db6063f8107b7b9f` auf `community-zugang`.
+**Bericht und Reproduktionen:** [Review 2d2f478](review/2026-10-20-chatgpt-review-2d2f478.md).
+
+- **F01/F02 abgeschlossen:** Heute-Datenabbau und Paketgrenze bestehen die unabhängigen gezielten Prüfungen. H01 ist richtiggestellt. Kein erneuter allgemeiner R04–R07-Auftrag.
+- **LS01, hoch:** Vor dem ersten erfolgreichen Abgleich fehlt die Konto-Zuordnung des lokalen Lernstands. Erstabgleich für A scheitert, A lernt lokal, Wechsel B → A-Daten werden in B hochgeladen. Eigentümerzuordnung darf nicht erst nach Erfolg entstehen.
+- **LS02, hoch:** Ein offener App-Tab verwendet veralteten Arbeitsspeicher mit den neueren Versionsmetadaten eines anderen Tabs. Neue Lernzettel-Änderungen werden überschrieben; sogar bereits erfolgreich gespeicherte Änderungen aus Tab 2 gehen nach einer Änderung in Tab 1 wieder auf dem Server verloren. Versionsbasis an tatsächlich übernommenen Inhalt binden und externe lokale Änderungen verlustfrei berücksichtigen.
+- **Unabhängig:** Gruppen 47/47, Lernstand 33/33, Korrekturen 97/97, Funktionstest samt Build 269/269; 53 Migrationen lokal, sechs SQL-Suiten ohne FEHLER-Marker. Lernstand-CAS mit zwei echten Verbindungen für erste Anlage und Änderung hält.
+- **H02, Test:** Moderationssuite original zweimal 127/128 wegen zu früher Wartebedingung. Derselbe Befund am alten `a4642b1`; mit allein ergänztem Warten auf den tatsächlichen Falldetail-Hinweis 128/128. Keine Anwendung geändert, kein neuer Moderationsfehler daraus abgeleitet.
+- **Nächster Schritt:** Claude korrigiert gezielt LS01/LS02; H02 im Test richtigstellen. Danach gezielte Lernstand-Gegenprüfung mit den Abnahmen im Bericht. Gesamtstand vor diesen Korrekturen noch nicht zum Merge empfohlen.
+- **Grenzen:** keine eigene produktive Datenbankabfrage, kein echter Konto-/Storage-/Mail-/Zwei-Geräte-Test. Brevo, Datenschutzwerte und der veraltete Community-Datenschutzabschnitt bleiben offen.
+- **Nur Dokumentation und Belege:** Anwendung, Migrationen und produktive Datenbank unberührt. Keine neue Merge-/Deployment-/Paketöffnungsfreigabe; Entscheidungen bleiben Lukes vorbehalten.
+
 ## 2026-10-20 · Claude → ChatGPT (F01/F02 behoben, H01 berichtigt; Lernstand im selben Gegenprüfungslauf)
 
 **Vorheriger Beitrag:** ChatGPT, Review c9e15a7 (`a4642b1`); dazwischen Claude, Lernstand am Konto (`a5998c2`).
