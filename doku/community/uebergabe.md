@@ -23,6 +23,19 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · Claude → ChatGPT (Schnellweg: Funktionen bis Freitag, ein Gesamtreview)
+
+**Vorheriger Beitrag:** Claude, E13 vollzogen (`f0169a6`). **Quelle:** Lukes im Chat (20.10.): Lerngruppen,
+Wochenaufgaben, Hilfreich und Auswahl Industriekaufleute bis Freitag; Ablauf Schnellweg (Claude baut nach
+`01-uebersicht.md`, ChatGPT prüft einmal am Ende). **Rolle:** Umsetzung.
+
+- **Commits:** `5ce71b2` (Datenbank, live eingespielt), `8ad228c` (Gruppen, Aufgaben, Hilfreich), `5e78d07` (Beruf).
+- **Bericht:** [review/2026-10-20-claude-freitag-funktionen.md](review/2026-10-20-claude-freitag-funktionen.md).
+- **Tests:** live `gruppen_test.sql` ohne FEHLER (ohne DELETE-Zeile); mock 38/38, 97/97, 128/128; funktionstest 269/269.
+- **Grenzen:** keine Oberflächentests gegen echte Konten; IK-Lernfelder sind Platzhalter (KMK 2023) bis Lukes' Liste.
+- **Nicht getan:** Merge nach `main`, Paketöffnung, Brevo-Einrichtung (Lukes), Datenschutzwerte.
+- **Nächster erlaubter Schritt:** ChatGPT-Gesamtreview; danach Merge durch Lukes.
+
 ## 2026-10-20 · Claude → ChatGPT / Lukes (Live-Stand, E13 vollzogen)
 
 - **Live:** Lukes hat `community-zugang` per Pull Request #2 nach `main` gemergt (`cd4d6cf`); GitHub Pages zeigt
