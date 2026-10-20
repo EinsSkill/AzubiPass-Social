@@ -311,7 +311,10 @@ window.AP = (function () {
      Kapitelfach und – falls genannt – der bearbeitete Aufgabeneintrag noch im
      Lernstand hängen. Nur nötig, wenn ein anderer Tab den Eintrag inzwischen
      entfernt hat (z. B. Zurücksetzen): Dann gilt, was auf dem Bildschirm steht. */
-  function kapitelfachBinden(lernfeld, kapitel, f, art, id, eintrag) {
+  function kapitelfachBinden(lernfeld, kapitel, f, art, id, eintrag, gen) {
+    // LS04: Nach einem Kontowechsel gehört das festgehaltene Fach dem vorherigen
+    // Konto. Nichts wieder anhängen – sonst wandern dessen Antworten mit.
+    if (gen !== undefined && gen !== generation) return false;
     var s = lernfeld + "-" + kapitel;
     var jetzt = stand.fortschritt[s];
     if (jetzt !== f) {
@@ -334,6 +337,7 @@ window.AP = (function () {
       if (!schlicht(f[art])) f[art] = {};
       if (f[art][id] !== eintrag) f[art][id] = eintrag;
     }
+    return true;
   }
 
   /* Ersetzt den Inhalt des Kontos in einem Schritt und schreibt sofort.
@@ -553,7 +557,35 @@ window.AP = (function () {
     catch (e) { return null; }
   }
 
-  function uebernommen(roh) { zuletztRoh = roh; besitzer = besitzerLesen(); }
+  /* LS04: Kontogeneration. Wechselt der Besitzer des Gerätestands von einem
+     Konto zu einem anderen, zählt sie hoch. Ansichten, die Teile des
+     Lernstands festhalten (Lernzettelseiten), binden sich an die Generation
+     ihres Aufbaus und hängen nach einem Wechsel nichts mehr an; sie werden
+     neu aufgebaut. Ohne Besitzer → erstes Konto ist kein Wechsel. */
+  var generation = 0, wechselHoerer = [];
+
+  function besitzPruefen() {
+    var jetzt = besitzerLesen();
+    if (besitzer !== null && jetzt !== besitzer) {
+      besitzer = jetzt;
+      generation++;
+      // Noch nicht Geschriebenes gehört dem vorherigen Konto: verwerfen, nicht
+      // später in den Stand des neuen Kontos zusammenführen.
+      if (wartet) { clearTimeout(wartet); wartet = null; }
+      try {
+        var fremd = fremderStand();
+        if (fremd) { einsetzen(fremd.stand); zuletztRoh = fremd.roh; }
+      } catch (e) {}
+      setTimeout(function () {
+        wechselHoerer.slice().forEach(function (h) { try { h(); } catch (e) {} });
+      }, 0);
+    } else besitzer = jetzt;
+  }
+
+  function kontoGeneration() { return generation; }
+  function beiKontowechsel(h) { wechselHoerer.push(h); }
+
+  function uebernommen(roh) { zuletztRoh = roh; besitzPruefen(); }
 
   function schreiben(erzwingen) {
     if (wartet) { clearTimeout(wartet); wartet = null; }
@@ -601,13 +633,18 @@ window.AP = (function () {
     } catch (e) { return false; }
   }
 
+  var fremdHoerer = [];
+  function beiFremdemStand(h) { fremdHoerer.push(h); }
+
   function nachFremdemSchreiben() {
     if (!kontoAuffrischen()) return;
+    fremdHoerer.slice().forEach(function (h) { try { h(); } catch (e) {} });
     try { if (window.AP && window.AP.appNeuZeichnen) window.AP.appNeuZeichnen(); } catch (e) {}
   }
   try {
     window.addEventListener("storage", function (e) {
       if (e.key === SCHLUESSEL || e.key === null) nachFremdemSchreiben();
+      if (e.key === BESITZ || e.key === null) besitzPruefen();
     });
   } catch (e) {}
 
@@ -997,7 +1034,8 @@ window.AP = (function () {
     heuteGelernt: heuteGelernt, frisch: frisch, SCHLUESSEL: SCHLUESSEL,
     sofortSichern: sofortSichern, sicherungPruefen: sicherungPruefen, kontoErsetzen: kontoErsetzen,
     kontoAuffrischen: kontoAuffrischen, lernstandZusammenfuehren: lernstandZusammenfuehren,
-    kapitelfachBinden: kapitelfachBinden,
+    kapitelfachBinden: kapitelfachBinden, kontoGeneration: kontoGeneration, beiKontowechsel: beiKontowechsel,
+    beiFremdemStand: beiFremdemStand,
     probeklausurId: probeklausurId, probeklausurZeit: probeklausurZeit,
     PROBEKLAUSUR_SCHLUESSEL: PROBEKLAUSUR_SCHLUESSEL,
     probeklausurErgebnisSpeichern: probeklausurErgebnisSpeichern,

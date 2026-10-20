@@ -475,6 +475,97 @@ def main():
             pruefe(any(e.get("z") == "luecke" for e in kap_roh(k)["test"].values()), "Als Lücke markiert gespeichert")
             ctx.close()
 
+            # ------------------------------------------------------------------
+            # LS04 · Offenes Kapitel und Kontowechsel im App-Tab (Review 1db4c9a)
+
+            def ls04_aufbau(b_server):
+                ctx = kontext()
+                s = app_tab(ctx, "localStorage.setItem('azubipass-sitzung', '{}');" + BEN_PROFIL + b_server)
+                warte_status(s, "aktuell")
+                k = ctx.new_page(); k.goto(url + "lf1.html#k3")
+                felder = k.locator("#k3 .frage textarea")
+                felder.first.wait_for()
+                felder.nth(0).fill("A private Antwort")
+                felder.nth(1).fill("A weitere private Antwort")
+                k.locator("#k3 .check .opt").first.click()
+                k.locator("#k3 .zuordnen .zu-reihe").first.locator(".zu-btn").first.click()
+                k.wait_for_timeout(500)
+                s.wait_for_function("AP.stand.fortschritt['lf1-k3'] && Object.values(AP.stand.fortschritt['lf1-k3'].test).some(e => e.t === 'A weitere private Antwort')", timeout=3000)
+                ev(s, "AP.lernstandSync.abgleichen()")
+                s.wait_for_function("FAKE.db.lernstand.some(z => z.nutzer_id === FAKE.ICH && z.daten.fortschritt['lf1-k3'] && Object.values(z.daten.fortschritt['lf1-k3'].test).some(e => e.t === 'A weitere private Antwort'))", timeout=6000)
+                ev(s, "FAKE.anmelden(FAKE.BEN_KONTO)")
+                s.wait_for_function("AP.lernstandSync.status().art === 'aktuell' && JSON.parse(localStorage.getItem('azubipass-lernsync')).nutzer === FAKE.BEN", timeout=6000)
+                k.wait_for_function("document.readyState === 'complete' && window.AP && AP.kontoGeneration && performance.getEntriesByType('navigation')[0].type === 'reload'", timeout=5000)
+                k.wait_for_timeout(1500)                 # Neuaufbau, sobald Bs Stand angekommen ist
+                k.locator("#k3 .frage textarea").first.wait_for()
+                return ctx, s, k
+
+            def b_daten(s):
+                z = ev(s, "(FAKE.db.lernstand.find(z => z.nutzer_id === FAKE.BEN) || {}).daten || null")
+                return json.dumps(z or {}, ensure_ascii=False)
+
+            def b_nach_abgleich(s):
+                s.wait_for_timeout(600)
+                ev(s, "AP.kontoAuffrischen(); AP.lernstandSync.abgleichen()")
+                warte_status(s, "aktuell")
+                return b_daten(s)
+
+            print("LS04: Wechsel zu B ohne Kapitelstand, dann im offenen Kapitel weiter")
+            ctx, s, k = ls04_aufbau("FAKE.serverStand(FAKE.BEN, ['B-eigen'], 1);")
+            werte = k.locator("#k3 .frage textarea").evaluate_all("els => els.map(e => e.value)")
+            pruefe(werte == ["", "", ""], "Kapitel zeigt nach dem Wechsel Bs Stand (keine A-Antworten)", werte)
+            pruefe(k.locator("#k3 .check .opt.richtig, #k3 .check .opt.falsch").count() == 0, "Check von A nicht mehr sichtbar")
+            k.locator("#k3 .frage textarea").first.fill("B neue Antwort")
+            k.locator("#k3 .check .opt").first.click()
+            k.locator("#k3 .zuordnen .zu-reihe").first.locator(".zu-btn").nth(1).click()
+            lokal = json.dumps(kap_roh(k), ensure_ascii=False)
+            pruefe("A private" not in lokal and "A weitere" not in lokal and "B neue Antwort" in lokal,
+                   "Lokaler B-Stand: nur Bs Eingabe, keine A-Antwort", lokal[:160])
+            server_b = b_nach_abgleich(s)
+            pruefe("A weitere private Antwort" not in server_b and "A private Antwort" not in server_b and "B neue Antwort" in server_b,
+                   "Bs Konto nach Abgleich ohne A-Antworten", server_b[:200])
+            zb = ev(s, "FAKE.db.lernstand.find(z => z.nutzer_id === FAKE.BEN).daten.fortschritt['lf1-k3']")
+            pruefe(len([e for e in zb["checks"].values() if e.get("o")]) == 1 and len([e for e in zb["zuordnen"].values() if e.get("w")]) == 1,
+                   "Check und Zuordnung in B nur aus Bs Eingabe", zb)
+            print("LS04: Rückkehr zu A")
+            ev(s, "FAKE.anmelden({ id: FAKE.ICH, email: 'anna@test.invalid' })")
+            s.wait_for_function("AP.lernstandSync.status().art === 'aktuell' && JSON.parse(localStorage.getItem('azubipass-lernsync')).nutzer === FAKE.ICH", timeout=6000)
+            za = ev(s, "FAKE.db.lernstand.find(z => z.nutzer_id === FAKE.ICH).daten.fortschritt['lf1-k3']")
+            pruefe(antworten(za) == ["A private Antwort", "A weitere private Antwort"] and "B neue" not in json.dumps(za, ensure_ascii=False),
+                   "As Konto unbeschädigt", antworten(za))
+            k.wait_for_timeout(1500)
+            k.wait_for_function("(document.querySelectorAll('#k3 .frage textarea')[1] || {}).value === 'A weitere private Antwort'", timeout=5000)
+            pruefe(k.locator("#k3 .frage textarea").nth(1).input_value() == "A weitere private Antwort", "Kapitel zeigt wieder As Antwort")
+            ctx.close()
+
+            print("LS04: Wechsel zu B mit eigenem Kapitelstand")
+            b_kapitel = """FAKE.db.lernstand.push({ nutzer_id: FAKE.BEN, version: 1, daten: { version: 3, lesezeichen: [],
+                geaendertAm: '2026-10-20T07:00:00.000Z', fortschritt: { 'lf1-k3': { ziele: [], checks: {}, zuordnen: {}, fertig: false,
+                test: { 'lf1-k3-t1': { a: -820558439, t: 'B eigene Antwort' } } } } } });"""
+            ctx, s, k = ls04_aufbau(b_kapitel)
+            werte = k.locator("#k3 .frage textarea").evaluate_all("els => els.map(e => e.value)")
+            pruefe(werte[0] == "B eigene Antwort" and "A weitere private Antwort" not in werte, "Kapitel zeigt Bs eigene Antwort", werte)
+            k.locator("#k3 .frage textarea").nth(2).fill("B dritte Antwort")
+            server_b = b_nach_abgleich(s)
+            pruefe("A weitere private Antwort" not in server_b and "A private Antwort" not in server_b, "Bs Konto ohne A-Antworten", server_b[:200])
+            pruefe("B eigene Antwort" in server_b and "B dritte Antwort" in server_b, "Bs eigene und neue Antwort erhalten")
+            ctx.close()
+
+            print("LS04: festgehaltenes Fach des vorherigen Kontos wird nicht wieder angehängt")
+            ctx = kontext()
+            s = app_tab(ctx, geraet([], sitzung=False) + "localStorage.setItem('azubipass-lernsync', JSON.stringify({ nutzer: '00000000-0000-4000-a000-00000000a001', version: null, am: null }));")
+            t2 = app_tab(ctx)
+            ev(t2, """() => { window.g0 = AP.kontoGeneration(); window.altFach = AP.kapitelfach('lf1', 'k9');
+                altFach.test['x'] = { a: 1, t: 'A' }; altFach.ziele.push('z1'); AP.sofortSichern(); }""")
+            ev(s, """() => { localStorage.setItem('azubipass-lernsync', JSON.stringify({ nutzer: '00000000-0000-4000-a000-00000000b001', version: null, am: null }));
+                AP.kontoErsetzen({ lesezeichen: [] }); }""")
+            t2.wait_for_function("AP.kontoGeneration() === g0 + 1 && !AP.stand.fortschritt['lf1-k9']", timeout=3000)
+            r = ev(t2, "AP.kapitelfachBinden('lf1', 'k9', altFach, 'test', 'x', altFach.test.x, g0)")
+            pruefe(r is False and ev(t2, "!AP.stand.fortschritt['lf1-k9']"), "Wiederanbindung nach Kontowechsel abgelehnt")
+            r = ev(t2, "(() => { const f = AP.kapitelfach('lf1', 'k8'); AP.kontoErsetzen({ lesezeichen: [] }); f.test.y = { a: 2, t: 'gleich' }; return AP.kapitelfachBinden('lf1', 'k8', f, 'test', 'y', f.test.y, AP.kontoGeneration()); })()")
+            pruefe(r is True and ev(t2, "AP.stand.fortschritt['lf1-k8'].test.y.t") == "gleich", "Im selben Konto weiter erlaubt (Zurücksetzen)")
+            ctx.close()
+
             browser.close()
 
     print()

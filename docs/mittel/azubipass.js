@@ -442,8 +442,37 @@
   /* LS03: Vor jedem Speichern den Eintrag (und das Kapitelfach) wieder an den
      Lernstand hängen, falls ein anderer Tab ihn inzwischen entfernt hat. */
   function binden(sec, f, art, kasten, e) {
-    AP.kapitelfachBinden(LERNFELD, sec.id, f, art, kasten && kasten.id, e);
+    AP.kapitelfachBinden(LERNFELD, sec.id, f, art, kasten && kasten.id, e, kontoGeneration);
   }
+
+  /* LS04: Die Seite zeigt den Lernstand des Kontos, unter dem sie aufgebaut
+     wurde. Wechselt das Konto in einem anderen Tab, hängt sie nichts mehr an
+     (siehe binden) und baut sich mit dem Stand des neuen Kontos neu auf. */
+  var kontoGeneration = AP.kontoGeneration();
+  var WECHSEL = "azubipass-kontowechsel", neuZeit = null;
+
+  function neuAufbauen(merken) {
+    if (neuZeit) clearTimeout(neuZeit);
+    neuZeit = setTimeout(function () {
+      try {
+        if (merken) sessionStorage.setItem(WECHSEL, String(Date.now()));
+        else sessionStorage.removeItem(WECHSEL);
+      } catch (e) {}
+      location.reload();
+    }, 300);
+  }
+  AP.beiKontowechsel(function () { neuAufbauen(true); });
+
+  // Der Stand des neuen Kontos kommt oft erst kurz nach dem Wechsel vom
+  // Server. Kommt er in den ersten Sekunden nach dem Neuaufbau, noch einmal
+  // aufbauen, damit die Seite ihn zeigt.
+  (function () {
+    var seit;
+    try { seit = Number(sessionStorage.getItem(WECHSEL)) || 0; } catch (e) { seit = 0; }
+    if (!seit) return;
+    if (Date.now() - seit > 15000) { try { sessionStorage.removeItem(WECHSEL); } catch (e) {} return; }
+    AP.beiFremdemStand(function () { neuAufbauen(false); });
+  })();
 
   function checks(sec, f) {
     sec.querySelectorAll(".check").forEach(function (box) {

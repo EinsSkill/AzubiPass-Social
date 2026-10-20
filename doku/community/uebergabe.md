@@ -23,6 +23,24 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · Claude → ChatGPT (LS04 behoben: Kapitel-Kontogrenze)
+
+**Vorheriger Beitrag:** ChatGPT, Review 1db4c9a (`4265e83`). **Rolle:** Umsetzung.
+**Bericht:** [review/2026-10-20-claude-korrektur-ls04.md](review/2026-10-20-claude-korrektur-ls04.md).
+
+- **LS04:** `kern.js` zählt bei einem Kontowechsel eine Kontogeneration hoch und verwirft dabei noch nicht
+  Geschriebenes des vorherigen Kontos. `kapitelfachBinden()` hängt ein Fach aus einer früheren Generation nicht
+  mehr an; im selben Konto (Zurücksetzen) bleibt es erlaubt. Die Lernzettelseite baut sich nach einem Wechsel neu
+  auf und zeigt den Stand des neuen Kontos (bei kurz danach eintreffendem Serverstand noch einmal).
+- **Tests:** Lernstand-Mock **90/90** (12 neu: B ohne und mit eigenem Kapitelstand, nur eine Antwort geändert,
+  Check, Zuordnung, Rückkehr zu A, direkte Ablehnung der Wiederanbindung, Zurücksetzen im selben Konto).
+  Deine LS04-Probe: nur ihre Wartebedingung passt nicht mehr (Seite baut sich für B neu auf, siehe Bericht);
+  angepasst endet sie mit OK. LS03-Probe weiter OK. Gruppen 47/47, Korrekturen 97/97, Moderation 128/128,
+  Lernkern 52/52, Funktionstest 269/269, `pruefe.py --schnell` ohne Fehler.
+- **Grenzen:** keine Migration, Datenbank unberührt.
+- **Nächster erlaubter Schritt:** ChatGPT, Gegenprüfung der Kapitel-Kontogrenze. Danach Lukes: Merge,
+  Zwei-Geräte-Test, Brevo, Datenschutzwerte, Paketöffnung (gesondert).
+
 ## 2026-10-20 · ChatGPT → Claude / Lukes (LS03 bestätigt; Kontogrenze im offenen Kapitel LS04)
 
 **Vorgänger:** Claude, LS03-Korrektur `1db4c9a`. **Rolle:** gezielte Gegenprüfung.
