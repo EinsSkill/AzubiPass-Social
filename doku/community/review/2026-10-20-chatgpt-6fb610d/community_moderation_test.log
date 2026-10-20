@@ -1,0 +1,173 @@
+C13 · Beitrag melden
+  OK   [mock] Fremder Beitrag hat „Beitrag melden“ mit Kontext im Namen
+  OK   [mock] Antwort trägt „Antwort von Ben melden“
+  OK   [mock] Ohne Teamrolle kein „Inhalt ausblenden“
+  OK   [mock] Teamkorrektur gekennzeichnet
+  OK   [mock] Bezug auf sichtbare Antwort genannt
+  OK   [mock] Teamkorrektur nennt öffentlich nur „Team“  Team · 14.10.2026
+  OK   [mock] Eigene ausgeblendete Antwort als Platzhalter
+  OK   [mock] Text der ausgeblendeten Antwort steht nicht in der Liste
+  OK   [mock] Antwortzahl zählt nur sichtbare Antworten
+  OK   [mock] Fokus auf dem Dialogtitel
+  OK   [mock] Ohne Grund wird nichts gesendet
+  OK   [mock] axe ohne WCAG-Verstöße: C13 Meldedialog mit Fehler
+  OK   [mock] Dialog schließt nach Bestätigung
+  OK   [mock] Gesendet: Art, Ziel, Grund
+  OK   [mock] Rückmeldung am Ursprung bekommt den Fokus
+  OK   [mock] Zweite Meldung legt nichts an
+C13 · unklarer Ausgang und sichere Ablehnungen
+  OK   [mock] Bei unklarem Ausgang sind Grund und Hinweis gesperrt
+  OK   [mock] axe ohne WCAG-Verstöße: C13 Meldung unklar
+  OK   [mock] Erneut senden schickt denselben festen Versandstand
+  OK   [mock] Verspätetes Original + Wiederholung = eine Meldung
+  OK   [mock] APB01: sichere Ablehnung, kein „unklar“
+  OK   [mock] APZ01: sichere Ablehnung, kein „unklar“
+Meine Meldungen und eigene ausgeblendete Inhalte
+  OK   [mock] Ohne Teamrolle kein Moderationszähler im Profil
+  OK   [mock] Status als Text „Offen“
+  OK   [mock] axe ohne WCAG-Verstöße: Meine Meldungen
+  OK   [mock] Status klar benannt
+  OK   [mock] Leere Begründung wird nicht gesendet
+  OK   [mock] axe ohne WCAG-Verstöße: Eigener Inhalt mit Prüfanfrage
+  OK   [mock] Nach der Anfrage kein zweites Anfragerecht
+  OK   [mock] Genau eine Prüfanfrage
+Eigener ausgeblendeter Beitrag im Detail
+  OK   [mock] Hinweis bleibt
+  OK   [mock] Prüfanfrage direkt im Detail
+C14 · Rechte ohne Teamrolle
+  OK   [mock] Keine Fälle ohne Teamrecht
+C14 · Zähler
+  OK   [mock] Zähler „Moderation · 2 offene Fälle“ im Profil
+  OK   [mock] Ladefehler zeigt keine erfundene 0
+C14 · Fälle und Entscheidung „Inhalt ausblenden“
+  OK   [mock] Schädliche Fälle zuerst, als Text markiert
+  OK   [mock] Liste nennt keine Meldenden
+  OK   [mock] axe ohne WCAG-Verstöße: C14 Offene Fälle
+  OK   [mock] Hinweis der Meldung sichtbar, ohne Namen
+  OK   [mock] Vorlage füllt die Begründung
+  OK   [mock] Vorschau „Das sieht die betroffene Person“
+  OK   [mock] axe ohne WCAG-Verstöße: C14 Entscheidung mit Fehler
+  OK   [mock] Abbrechen behält eigenen Text und bisherige Vorlage  ['v1', 'offene Stelle: zweiter Absatz.']
+  OK   [mock] Unklar: Eingaben gesperrt
+  OK   [mock] Entscheidung mit Version, gesehenen Meldungen, Kategorie und Begründung
+  OK   [mock] Zurück in der Liste
+C14 · Fall hat sich geändert (APF01)
+  OK   [mock] Weg: Fall neu laden
+  OK   [mock] APF01 ist kein „unklar“
+  OK   [mock] Fall wurde frisch geladen
+C14 · Direktweg vom Beitrag (D13)
+  OK   [mock] Fallansicht öffnet direkt das Formular „Inhalt ausblenden“
+R04 · Meldedialog offen × abmelden
+  OK   [mock] offen/abmelden: Dialog und alter Hinweis entfernt
+  OK   [mock] offen/abmelden: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] offen/abmelden: kein Versand aus dem alten Entwurf als neues Konto  []
+R04 · Meldedialog offen × wechsel
+  OK   [mock] offen/wechsel: Dialog und alter Hinweis entfernt
+  OK   [mock] offen/wechsel: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] offen/wechsel: kein Versand aus dem alten Entwurf als neues Konto  []
+  OK   [mock] offen/wechsel: neues Konto sieht keinen alten Entwurf
+R04 · Meldedialog sendet × abmelden
+  OK   [mock] sendet/abmelden: Dialog und alter Hinweis entfernt
+  OK   [mock] sendet/abmelden: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] sendet/abmelden: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000a001']
+R04 · Meldedialog sendet × wechsel
+  OK   [mock] sendet/wechsel: Dialog und alter Hinweis entfernt
+  OK   [mock] sendet/wechsel: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] sendet/wechsel: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000a001']
+  OK   [mock] sendet/wechsel: neues Konto sieht keinen alten Entwurf
+R04 · Meldedialog unklar × abmelden
+  OK   [mock] unklar/abmelden: Dialog und alter Hinweis entfernt
+  OK   [mock] unklar/abmelden: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] unklar/abmelden: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000a001']
+R04 · Meldedialog unklar × wechsel
+  OK   [mock] unklar/wechsel: Dialog und alter Hinweis entfernt
+  OK   [mock] unklar/wechsel: kein verspäteter Erfolg im neuen Kontext
+  OK   [mock] unklar/wechsel: kein Versand aus dem alten Entwurf als neues Konto  ['00000000-0000-4000-a000-00000000a001']
+  OK   [mock] unklar/wechsel: neues Konto sieht keinen alten Entwurf
+R04 · Datenschicht bindet den Schreibaufruf an das Konto
+  OK   [mock] Aufruf für Anna, angemeldet ist Ben: nichts gesendet  veraltet
+R04 · Rückfragen im Moderationsfall bei Kontowechsel
+  OK   [mock] Bestätigungsfrage verworfen, keine Entscheidung, kein altes Formular
+  OK   [mock] Vorlagen-Rückfrage samt Formular nach Abmeldung entfernt
+R04 · Offline während des Meldedialogs
+  OK   [mock] Offline: Dialog geschlossen, Hinweis nicht über der Offline-Ansicht
+R05 · Ein Vorgang pro Fall: angehaltene Antwort
+  OK   [mock] Während des Versands sind alle oberen Aktionen gesperrt  [True, True, True]
+  OK   [mock] Hinweis erklärt die Sperre
+  OK   [mock] Auch erzwungene Klicks ersetzen das laufende Formular nicht
+  OK   [mock] Genau ein Versand
+R05 · Ein Vorgang pro Fall: unklares Ergebnis
+  OK   [mock] Alle 3 oberen Aktionen lassen Klärleiste und Versandstand stehen  ['Meldungen abschließen', 'Inhalt ausblenden', 'Fachliche Korrektur ergänzen']
+  OK   [mock] Erneut senden: dieselbe Kennung, kein zweiter Vorgang  ['5061bdf0-f65d-427a-8416-3b1cb54542d4', '5061bdf0-f65d-427a-8416-3b1cb54542d4']
+R05 · Nach bestätigtem „verworfen“ neue Kennung erlaubt
+  OK   [mock] Klärung mit der Kennung des offenen Vorgangs
+  OK   [mock] Nach „verworfen“ sind die Aktionen wieder frei
+  OK   [mock] Geänderte Eingaben erst nach Verwerfen mit neuer Kennung
+R05 · Ungesendete Eingaben gehen beim Aktionswechsel nicht verloren
+  OK   [mock] „Weiter schreiben“ behält den Entwurf
+  OK   [mock] Abbrechen mit Eingaben fragt vorher
+  OK   [mock] Nach „Eingaben verwerfen“ öffnet die gewählte Aktion
+  OK   [mock] axe ohne WCAG-Verstöße: R05 Fall mit Formular
+R04 · Community verlassen: Meldedialog offen → #heute
+  OK   [mock] offen/#heute: alter Hinweis weg
+  OK   [mock] offen/#heute: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog offen → #lernen
+  OK   [mock] offen/#lernen: alter Hinweis weg
+  OK   [mock] offen/#lernen: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog offen → #ueben
+  OK   [mock] offen/#ueben: alter Hinweis weg
+  OK   [mock] offen/#ueben: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog offen → #ich
+  OK   [mock] offen/#ich: alter Hinweis weg
+  OK   [mock] offen/#ich: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog sendet → #heute
+  OK   [mock] sendet/#heute: alter Hinweis weg
+  OK   [mock] sendet/#heute: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog sendet → #lernen
+  OK   [mock] sendet/#lernen: alter Hinweis weg
+  OK   [mock] sendet/#lernen: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog sendet → #ueben
+  OK   [mock] sendet/#ueben: alter Hinweis weg
+  OK   [mock] sendet/#ueben: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog sendet → #ich
+  OK   [mock] sendet/#ich: alter Hinweis weg
+  OK   [mock] sendet/#ich: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog unklar → #heute
+  OK   [mock] unklar/#heute: alter Hinweis weg
+  OK   [mock] unklar/#heute: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog unklar → #lernen
+  OK   [mock] unklar/#lernen: alter Hinweis weg
+  OK   [mock] unklar/#lernen: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog unklar → #ueben
+  OK   [mock] unklar/#ueben: alter Hinweis weg
+  OK   [mock] unklar/#ueben: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen: Meldedialog unklar → #ich
+  OK   [mock] unklar/#ich: alter Hinweis weg
+  OK   [mock] unklar/#ich: späte Antwort bleibt still, kein neuer Versand
+R04 · Zurück aus der Community: Meldedialog offen
+  OK   [mock] Zurück/offen: alter Hinweis weg
+  OK   [mock] Zurück/offen: späte Antwort bleibt still, kein neuer Versand
+R04 · Vorwärts aus der Community: Meldedialog offen
+  OK   [mock] Vorwärts/offen: alter Hinweis weg
+  OK   [mock] Vorwärts/offen: späte Antwort bleibt still, kein neuer Versand
+R04 · Zurück aus der Community: Meldedialog sendet
+  OK   [mock] Zurück/sendet: alter Hinweis weg
+  OK   [mock] Zurück/sendet: späte Antwort bleibt still, kein neuer Versand
+R04 · Vorwärts aus der Community: Meldedialog sendet
+  OK   [mock] Vorwärts/sendet: alter Hinweis weg
+  OK   [mock] Vorwärts/sendet: späte Antwort bleibt still, kein neuer Versand
+R04 · Zurück aus der Community: Meldedialog unklar
+  OK   [mock] Zurück/unklar: alter Hinweis weg
+  OK   [mock] Zurück/unklar: späte Antwort bleibt still, kein neuer Versand
+R04 · Vorwärts aus der Community: Meldedialog unklar
+  OK   [mock] Vorwärts/unklar: alter Hinweis weg
+  OK   [mock] Vorwärts/unklar: späte Antwort bleibt still, kein neuer Versand
+R04 · Community verlassen mit offener Bestätigungsfrage
+  OK   [mock] Keine Entscheidung ohne Bestätigung, Üben sichtbar
+R04 · Community verlassen mit offener Verwerfen-Rückfrage
+  OK   [mock] Ich sichtbar, keine Rückfrage darüber
+  OK   [mock] Zurück in der Community: frische Fallansicht, kein Folgeformular
+R04 · Rückfrage im Schreibformular beim Verlassen
+  OK   [mock] Verwerfen lief nicht als Folgeaktion: Entwurf desselben Kontos bleibt erhalten
+
+Alles bestanden

@@ -23,6 +23,19 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · ChatGPT → Claude / Lukes (LS01 und S01–S03 bestätigt; Kapitel-Regression LS03)
+
+**Vorgänger:** Claude, LS01/LS02/H02 `6fb610d`. **Rolle:** gezielte Gegenprüfung.
+**Geprüfter Anwendungsstand:** `6fb610d2e3eb1577879e6457e4e518ccf1ba42da` auf `community-zugang`.
+**Bericht und Reproduktionen:** [Review 6fb610d](review/2026-10-20-chatgpt-review-6fb610d.md).
+
+- **Bestätigt:** LS01 und die bisherigen Lesezeichen-Nachstellungen S01–S03 bestehen; H02 ist im Test richtiggestellt. F01/F02 bleiben abgeschlossen.
+- **LS03, hoch, neuer Restfehler im Kapitel:** Die neue Übernahme erhält das äußere Kapitelobjekt, tauscht aber die Aufgabenobjekte aus. Bereits gebundene Selbsttest-Eingaben schreiben danach in die alte Closure statt in den gespeicherten Stand. Echte Browserprobe: Kapitelantwort tippen → anderes Tab setzt Lesezeichen → im offenen Kapitel neue Antwort tippen/speichern → nach Neuladen alte Antwort. Identischer Altvergleich `2d2f478` erhält die neue Antwort.
+- **Nächster Schritt:** Claude korrigiert gezielt LS03 und ergänzt die Abnahme mit echter Kapiteloberfläche, einschließlich erneuter Übernahme, Bewertung, Checks/Zuordnungen und anschließendem Kontoabgleich. Strategie und genaue Abnahmen stehen im Bericht. Danach gezielte Gegenprüfung; kein neuer allgemeiner R04–R07-Auftrag.
+- **Unabhängig:** Lernstand 64/64, Gruppen 47/47, Korrekturen 97/97, Moderation 128/128, Funktionstest samt Build 269/269, `pruefe.py --schnell` ohne Fehler. Lernkern 51/52, allein bereits bekannter 1-Pixel-Altbefund auf Buchführung K6. Die zusätzliche Kapitelprobe erkennt LS03 trotz dieser grünen regulären Fälle.
+- **Grenzen:** kein Eingriff in Anwendung/Datenbank/`main`, keine Migration, keine eigene Live-Konto-/Zwei-Geräte-/SMTP-Prüfung. H03 bleibt dokumentierter Nebenbefund.
+- **Freigabe:** Gesamtstand vor LS03-Korrektur noch nicht zum Merge empfohlen. Keine neue Merge-/Deployment-/Paketöffnungsfreigabe; Entscheidungen bleiben Lukes vorbehalten.
+
 ## 2026-10-20 · Claude → ChatGPT (LS01/LS02 behoben, H02 im Test richtiggestellt)
 
 **Vorheriger Beitrag:** ChatGPT, Review 2d2f478 (`f325191`). **Rolle:** Umsetzung.
