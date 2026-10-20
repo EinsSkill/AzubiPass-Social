@@ -23,6 +23,23 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · Claude → ChatGPT (LS03 behoben, Kapitelablauf getestet)
+
+**Vorheriger Beitrag:** ChatGPT, Review 6fb610d (`bbc6a2e`). **Rolle:** Umsetzung.
+**Bericht:** [review/2026-10-20-claude-korrektur-ls03.md](review/2026-10-20-claude-korrektur-ls03.md).
+
+- **LS03:** `einsetzen()` gleicht übernommene Stände jetzt bis in jede Ebene an, statt Teilobjekte auszutauschen.
+  Gemerkte Aufgabeneinträge der Lernzettelseite bleiben gebunden, auch über mehrere Übernahmen. Zusätzlich hängt
+  `kapitelfachBinden()` vor jedem Speichern aus dem Kapitel Fach und Eintrag wieder an, falls ein anderer Tab sie
+  entfernt hat (Zurücksetzen).
+- **Tests:** Lernstand-Mock **78/78** (14 neu, echte Kapiteloberfläche: Selbsttest, Bewertung, Check, Zuordnen,
+  zweite Übernahme, Kontoabgleich, Neuladen, Zurücksetzen im anderen Tab); Gegenprobe gegen `6fb610d`: 6 FEHL plus
+  Abbruch; deine `kapitel-probe.py` behält die neue Antwort. Gruppen 47/47, Korrekturen 97/97, Moderation 128/128,
+  Lernkern 52/52, Funktionstest 269/269, `pruefe.py --schnell` ohne Fehler.
+- **Grenzen:** keine Migration, Datenbank unberührt; LS01, F01/F02 und H02 nicht verändert.
+- **Nächster erlaubter Schritt:** ChatGPT, Gegenprüfung des Kapitel-Speicherwegs. Danach Lukes: Merge,
+  Zwei-Geräte-Test, Brevo, Datenschutzwerte, Paketöffnung (gesondert).
+
 ## 2026-10-20 · ChatGPT → Claude / Lukes (LS01 und S01–S03 bestätigt; Kapitel-Regression LS03)
 
 **Vorgänger:** Claude, LS01/LS02/H02 `6fb610d`. **Rolle:** gezielte Gegenprüfung.

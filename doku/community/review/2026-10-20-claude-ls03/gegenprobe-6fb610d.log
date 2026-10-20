@@ -1,0 +1,131 @@
+Ohne Anmeldung
+  OK   [mock] Status lokal
+  OK   [mock] Ich: nur in diesem Browser, Hinweis auf Anmeldung  Dein Lernstand liegt nur in diesem Browser. Melde dich unter
+  OK   [mock] Nichts gesendet
+  OK   [mock] Kein Abgleich-Knopf
+  OK   [mock] axe ohne WCAG-Verstöße: Ich ohne Anmeldung
+Erste Anmeldung: Gerätestand hochladen
+  OK   [mock] Server hat den Gerätestand, Version 1
+  OK   [mock] Basis 0
+  OK   [mock] Merkzettel: Konto und Version  {'nutzer': '00000000-0000-4000-a000-00000000a001', 'version': 1, 'am': '2026-10-20T08:00:00.000Z'}
+  OK   [mock] Merkzettel nicht im alten Lernstand-Namensraum
+  OK   [mock] Ich: in deinem Konto gespeichert
+  OK   [mock] Abgleich-Knopf sichtbar
+  OK   [mock] axe ohne WCAG-Verstöße: Ich angemeldet
+Änderung wird gebündelt gesendet
+  OK   [mock] Server Version 2 mit neuer Änderung
+  OK   [mock] Ohne Änderung kein erneutes Senden
+Zurücksetzen gilt auch im Konto
+  OK   [mock] Rückfrage nennt das Konto  ['Wirklich alles zurücksetzen? Fortschritt, Karteikarten, Lesezeichen und Notizen sind dann weg – auch in deinem Konto und auf deinen anderen Geräten. Das lässt sich nicht rückgängig machen.']
+  OK   [mock] Server nach Zurücksetzen leer
+Anderes Gerät war neuer, hier nichts geändert: übernehmen
+  OK   [mock] Gerät hat den Serverstand  ['a', 'x', 'y']
+  OK   [mock] Nichts gesendet
+Beide geändert: zusammenführen
+  OK   [mock] Gerät: beide Stände vereint  ['a', 'dort', 'hier']
+  OK   [mock] Server Version 4 vereint
+  OK   [mock] Gesendet mit Basis 3
+Gleichzeitig gespeichert: neu holen, zusammenführen, erneut senden
+  OK   [mock] Gerät hat alle drei  ['a', 's1', 's2']
+  OK   [mock] Basis 1 abgelehnt, dann Basis 2  [1, 2]
+  OK   [mock] Server Version 3
+Anderes Konto auf diesem Gerät
+  OK   [mock] Eigener Stand statt des vorherigen Kontos  ['annas-stand']
+  OK   [mock] Vorheriger Stand nicht ins Konto geschrieben
+  OK   [mock] Konto ohne Stand: leer beginnen, nichts übernommen
+Kontowechsel während der Sitzung
+  OK   [mock] Nach Wechsel zu Ben: Bens Stand
+  OK   [mock] Annas Konto unverändert
+Ohne Profil, ohne Netz
+  OK   [mock] Gerätestand bleibt
+  OK   [mock] Gerätestand bleibt offline
+  OK   [mock] Jetzt abgleichen holt nach
+  OK   [mock] axe ohne WCAG-Verstöße: Ich nach Abgleich
+LS01: Erstabruf scheitert, A lernt, Wechsel zu B mit Serverstand
+  OK   [mock] Gerätestand gehört schon vor dem ersten Erfolg zu A  {'nutzer': '00000000-0000-4000-a000-00000000a001', 'version': None, 'am': None}
+  OK   [mock] Anzeige in B nur mit Bs Stand  ['B-eigen']
+  OK   [mock] Bs Server ohne Daten von A  ['B-eigen']
+  OK   [mock] Kein Upload mit Daten von A
+LS01: zurück zu A – zurückgelegter Stand kommt in As Konto
+  OK   [mock] A sieht seinen offline gelernten Stand wieder  ['A-privat']
+  OK   [mock] As Server hat ihn jetzt  ['A-privat']
+  OK   [mock] Bs Server weiter unverändert
+  OK   [mock] Zurückgelegter Stand danach aufgeräumt
+LS01: Erstabruf scheitert, Wechsel zu B ohne Serverstand
+  OK   [mock] B beginnt leer  []
+  OK   [mock] Bs erster Upload ohne Daten von A  []
+LS01: erste Speicherantwort verloren
+  OK   [mock] Server hat As ersten Stand, Antwort kam nicht an
+  OK   [mock] B weder angezeigt noch gesendet mit Daten von A  ['B-eigen']
+  OK   [mock] A: verlorene Antwort aufgelöst, Stand im Konto  ['A-privat']
+LS01: Abmelden, dann anderes Konto
+  OK   [mock] B ohne As Stand nach Abmelden  ['B-eigen']
+LS01: Neustart nach dem Fehler, gespeicherte Sitzung gehört schon B
+  OK   [mock] Ohne Netz: B sieht sofort nichts von A  []
+  OK   [mock] Nichts von A in B, nichts gesendet
+LS01: tatsächlich anonymer Gerätestand geht weiter ins erste Konto
+  OK   [mock] Erstübernahme wie bisher  ['anonym']
+LS02: Lernzettelseite bei offenem App-Tab
+  OK   [mock] App-Tab übernimmt die Änderung der Lernzettelseite
+  OK   [mock] Jetzt abgleichen sendet sie  ['Kapitel-neu', 'Start']
+  OK   [mock] Nächste App-Änderung verdrängt nichts  (['App-neu', 'Kapitel-neu', 'Start'], ['App-neu', 'Kapitel-neu', 'Start'])
+  OK   [mock] Lernzettelseite nach Neuladen vollständig  ['App-neu', 'Kapitel-neu', 'Start']
+LS02: zwei App-Tabs, Tab 2 speichert zuerst erfolgreich
+  OK   [mock] Tab 1 zeigt nach dem Abgleich auch Tab2-neu  ['Start', 'Tab2-neu']
+  OK   [mock] Server behält beide Änderungen  ['Start', 'Tab1-neu', 'Tab2-neu']
+  OK   [mock] Nach Neuladen beide da  ['Start', 'Tab1-neu', 'Tab2-neu']
+LS02: gleichzeitige lokale Änderungen in zwei Tabs
+  OK   [mock] zwei wartet noch im Tab
+  OK   [mock] Beide Änderungen im Browser und im Tab  (['Start', 'drei', 'eins', 'zwei'], ['Start', 'drei', 'eins', 'zwei'])
+  OK   [mock] Weitere Änderung der Lernzettelseite kommt an
+LS02: Rückkehr aus dem Hintergrund und Neustart
+  OK   [mock] Rückkehr holt verpasste Änderung in den Tab  ['Start', 'drei', 'eins', 'verpasst', 'vier', 'zwei']
+  OK   [mock] Server hat alles  ['Start', 'drei', 'eins', 'verpasst', 'vier', 'zwei']
+  OK   [mock] Nach Neustart alles da  ['Start', 'drei', 'eins', 'verpasst', 'vier', 'zwei']
+LS02: Kontowechsel im anderen Tab – Reste wandern nicht mit
+  OK   [mock] Bündel von A landet nicht im Stand von B  (['B'], ['B'])
+LS03: Selbsttest, Bewertung, Check, Zuordnen nach Übernahme
+  FEHL [mock] Arbeitsspeicher hat die neue Antwort  ['Antwort vor Abgleich']
+  FEHL [mock] Browser-Speicher hat die neue Antwort  ['Antwort vor Abgleich']
+  FEHL [mock] Selbsttest-Bewertung gespeichert
+  FEHL [mock] Check-Antwort gespeichert  {'lf1-k3-c3-c1': {'a': -168324909}}
+  FEHL [mock] Zuordnung gespeichert  {'lf1-k3-c3-z1': {'a': -1773691246, 'w': {}}}
+  OK   [mock] Änderung des anderen Tabs bleibt erhalten
+LS03: zweite Übernahme löst die Bindung nicht
+  FEHL [mock] Gespeichert nach zweiter Übernahme  ['Antwort vor Abgleich']
+  OK   [mock] Beide fremden Änderungen erhalten  ['extern-1', 'extern-2']
+LS03: nächster Kontoabgleich und Neuladen
+Traceback (most recent call last):
+  File "<alter Stand 6fb610d>/quellen/lernstand_sync_test.py", line 486, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<alter Stand 6fb610d>/quellen/lernstand_sync_test.py", line 454, in main
+    s.wait_for_function("AP.stand.fortschritt['lf1-k3'] && Object.values(AP.stand.fortschritt['lf1-k3'].test).some(e => e.t === 'Antwort nach zweiter Übernahme')", timeout=3000)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright/sync_api/_generated.py", line 11559, in wait_for_function
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.wait_for_function(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        )
+        ^
+    )
+    ^
+  File "playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "playwright/_impl/_page.py", line 1112, in wait_for_function
+    return await self._main_frame.wait_for_function(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "playwright/_impl/_frame.py", line 860, in wait_for_function
+    await self._channel.send("waitForFunction", self._timeout, params)
+  File "playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.wait_for_function: Timeout 3000ms exceeded.

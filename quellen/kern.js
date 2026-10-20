@@ -281,20 +281,59 @@ window.AP = (function () {
     return p;
   }
 
-  /* Setzt einen fertigen Lernstand ein, ohne die Objekte auszutauschen, die
-     Ansichten festhalten: das Konto selbst und – für die Lernzettelseiten,
-     die sich ihr Kapitelfach merken – jeden Kapitelstand. Schreibt nichts. */
-  function einsetzen(sauber) {
-    var altFort = stand.fortschritt || {};
-    Object.keys(stand).forEach(function (k) { delete stand[k]; });
-    Object.keys(sauber).forEach(function (k) { stand[k] = sauber[k]; });
-    Object.keys(stand.fortschritt).forEach(function (id) {
-      var f = altFort[id], n = stand.fortschritt[id];
-      if (!f || f === n || !n || typeof n !== "object") return;
-      Object.keys(f).forEach(function (x) { delete f[x]; });
-      Object.keys(n).forEach(function (x) { f[x] = n[x]; });
-      stand.fortschritt[id] = f;
+  /* Setzt einen fertigen Lernstand ein, ohne Objekte auszutauschen, die
+     Ansichten festhalten (LS03). Nicht nur das Konto und die Kapitelstände:
+     Lernzettelseiten merken sich auch die einzelnen Aufgabeneinträge
+     (Selbsttest, Checks, Zuordnen) und schreiben später hinein. Deshalb wird
+     bis in jede Ebene angeglichen: Objekte, die es weiter gibt, bleiben
+     dieselben und bekommen nur neue Werte; Listen behalten ihr Objekt und
+     bekommen neuen Inhalt. Schreibt nichts. */
+  function schlicht(o) { return !!o && typeof o === "object" && !Array.isArray(o); }
+
+  function angleichen(ziel, quelle) {
+    Object.keys(ziel).forEach(function (k) {
+      if (!Object.prototype.hasOwnProperty.call(quelle, k)) delete ziel[k];
     });
+    Object.keys(quelle).forEach(function (k) {
+      var a = ziel[k], b = quelle[k];
+      if (a === b) return;
+      if (schlicht(a) && schlicht(b)) angleichen(a, b);
+      else if (Array.isArray(a) && Array.isArray(b)) {
+        a.length = 0;
+        b.forEach(function (x) { a.push(x); });
+      } else ziel[k] = b;
+    });
+  }
+
+  function einsetzen(sauber) { angleichen(stand, sauber); }
+
+  /* Für Lernzettelseiten (LS03): Vor dem Speichern sicherstellen, dass das
+     Kapitelfach und – falls genannt – der bearbeitete Aufgabeneintrag noch im
+     Lernstand hängen. Nur nötig, wenn ein anderer Tab den Eintrag inzwischen
+     entfernt hat (z. B. Zurücksetzen): Dann gilt, was auf dem Bildschirm steht. */
+  function kapitelfachBinden(lernfeld, kapitel, f, art, id, eintrag) {
+    var s = lernfeld + "-" + kapitel;
+    var jetzt = stand.fortschritt[s];
+    if (jetzt !== f) {
+      if (schlicht(jetzt)) {
+        // Inzwischen neu angelegt: Einträge, die nur dort stehen, mitnehmen.
+        ["checks", "zuordnen", "test"].forEach(function (x) {
+          if (!schlicht(f[x])) f[x] = {};
+          Object.keys(schlicht(jetzt[x]) ? jetzt[x] : {}).forEach(function (id2) {
+            if (!(id2 in f[x])) f[x][id2] = jetzt[x][id2];
+          });
+        });
+        if (!Array.isArray(f.ziele)) f.ziele = [];
+        (Array.isArray(jetzt.ziele) ? jetzt.ziele : []).forEach(function (z) {
+          if (f.ziele.indexOf(z) === -1) f.ziele.push(z);
+        });
+      }
+      stand.fortschritt[s] = f;
+    }
+    if (art && id && eintrag) {
+      if (!schlicht(f[art])) f[art] = {};
+      if (f[art][id] !== eintrag) f[art][id] = eintrag;
+    }
   }
 
   /* Ersetzt den Inhalt des Kontos in einem Schritt und schreibt sofort.
@@ -958,6 +997,7 @@ window.AP = (function () {
     heuteGelernt: heuteGelernt, frisch: frisch, SCHLUESSEL: SCHLUESSEL,
     sofortSichern: sofortSichern, sicherungPruefen: sicherungPruefen, kontoErsetzen: kontoErsetzen,
     kontoAuffrischen: kontoAuffrischen, lernstandZusammenfuehren: lernstandZusammenfuehren,
+    kapitelfachBinden: kapitelfachBinden,
     probeklausurId: probeklausurId, probeklausurZeit: probeklausurZeit,
     PROBEKLAUSUR_SCHLUESSEL: PROBEKLAUSUR_SCHLUESSEL,
     probeklausurErgebnisSpeichern: probeklausurErgebnisSpeichern,

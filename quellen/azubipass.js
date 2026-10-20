@@ -259,7 +259,7 @@
     }).length;
     var fertig = (!ziele || f.ziele.length >= ziele) &&
                  (!fragen || beantwortet >= fragen);
-    if (fertig !== f.fertig) { f.fertig = fertig; sichern(); }
+    if (fertig !== f.fertig) { f.fertig = fertig; binden(sec, f); sichern(); }
   }
 
   function einblenden(sec) {
@@ -382,6 +382,7 @@
           li.classList.add("erledigt");
           anzeige.textContent = ++n;
           f.ziele.push(kurz);
+          binden(sec, f);
           AP.heuteGelernt();
           sichern();
           kapitelstandPruefen(sec, f);
@@ -438,6 +439,12 @@
     return e;
   }
 
+  /* LS03: Vor jedem Speichern den Eintrag (und das Kapitelfach) wieder an den
+     Lernstand hängen, falls ein anderer Tab ihn inzwischen entfernt hat. */
+  function binden(sec, f, art, kasten, e) {
+    AP.kapitelfachBinden(LERNFELD, sec.id, f, art, kasten && kasten.id, e);
+  }
+
   function checks(sec, f) {
     sec.querySelectorAll(".check").forEach(function (box) {
       var echo = box.querySelector(".check-echo");
@@ -471,6 +478,7 @@
           gemerkt.o = opt.dataset.optionId || opt.textContent;
           gemerkt.r = !!opt.dataset.richtig;
           delete gemerkt.w;
+          binden(sec, f, "checks", box, gemerkt);
           AP.heuteGelernt();
           sichern();
         });
@@ -521,8 +529,10 @@
         knoepfe.forEach(function (btn, k) {
           btn.addEventListener("click", function () {
             waehle(btn);
+            if (!gemerkt.w) gemerkt.w = {};
             gemerkt.w[j] = k;
             gemerkt.f = (gemerkt.f || 0) + (btn.dataset.w === loesung ? 0 : 1);
+            binden(sec, f, "zuordnen", box, gemerkt);
             AP.heuteGelernt();
             sichern();
           });
@@ -546,7 +556,7 @@
       var gemerkt = aufgabenstand(f, "test", frage, text ? text.textContent : frage.id);
       var gezaehlt = false;
 
-      function merken() { AP.heuteGelernt(); sichern(); kapitelstandPruefen(sec, f); }
+      function merken() { binden(sec, f, "test", frage, gemerkt); AP.heuteGelernt(); sichern(); kapitelstandPruefen(sec, f); }
 
       function zaehlen() { if (!gezaehlt) { gezaehlt = true; anzeige.textContent = ++n; } }
 
@@ -576,6 +586,7 @@
         }
         haupt.disabled = feld.value.trim().length < 3;
         gemerkt.t = feld.value;
+        binden(sec, f, "test", frage, gemerkt);
         sichern();
         kapitelstandPruefen(sec, f);
       });

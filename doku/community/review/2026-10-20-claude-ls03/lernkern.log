@@ -1,0 +1,64 @@
+A01 · Sicherung einspielen
+  OK   lesezeichen-null.json: abgelehnt, Speicher unverändert, kein Skriptfehler  Diese Sicherung ist beschädigt und wurde nicht eingespielt (Lesezeichen). Nichts geändert.
+  OK   aktivitaet-zahl.json: abgelehnt, Speicher unverändert, kein Skriptfehler  Diese Sicherung ist beschädigt und wurde nicht eingespielt (Lerntage). Nichts geändert.
+  OK   karte-null.json: abgelehnt, Speicher unverändert, kein Skriptfehler  Diese Sicherung ist beschädigt und wurde nicht eingespielt (Karteikarten). Nichts geändert
+  OK   fortschritt-null.json: abgelehnt, Speicher unverändert, kein Skriptfehler  Diese Sicherung ist beschädigt und wurde nicht eingespielt (Kapitelfortschritt). Nichts ge
+  OK   ziele-objekt.json: abgelehnt, Speicher unverändert, kein Skriptfehler  Diese Sicherung ist beschädigt und wurde nicht eingespielt (Lernziele). Nichts geändert.
+  OK   zuletzt-zahl.json: abgelehnt, Speicher unverändert, kein Skriptfehler  Diese Sicherung ist beschädigt und wurde nicht eingespielt (zuletzt geöffnetes Kapitel). N
+  OK   keine-sicherung.json: abgelehnt, Speicher unverändert, kein Skriptfehler  Das sieht nicht nach einer AzubiPass-Sicherung aus. Nichts geändert.
+  OK   kein-json.json: abgelehnt, Speicher unverändert, kein Skriptfehler  Das sieht nicht nach einer AzubiPass-Sicherung aus. Nichts geändert.
+  OK   Ich und Import bleiben nach Ablehnungen erreichbar
+  OK   Gültige Sicherung: Fortschritt, Karten, Vokabeln, Lesezeichen übernommen (sofort gespeichert)
+  OK   Alte v1-Sicherung wird zusammengeführt und auf v3 gebracht  ['lf4.html#k6', 'lf2.html#k1']
+  OK   Kaputter gespeicherter Stand: Ich und Heute ohne Skriptfehler  []
+  OK   … und wird beim Laden bereinigt  {"version":3,"fortschritt":{"lf1-k1":{"ziele":["b1"],"fertig":false,"checks":{},"zuordnen":{},"test":{}}},"karten":{"y":{"fach":1,"faellig":"2026-10-20","fehler
+A05 · Speichern bei sofortigem Neuladen
+  OK   Lesezeichen bleibt nach Neuladen nach 0 ms  1
+  OK   Lesezeichen bleibt nach Neuladen nach 100 ms  1
+  OK   Zweite Änderung kurz danach wird beim Verlassen der Seite geschrieben
+A04 · Zwischenspeicher
+  OK   Jede Datei im Vorrat hat einen SHA-256-Prüfwert  62
+  OK   Fehlende Datei bei der Erstinstallation: keine halbe Fassung aktiv  {'aktiv': False, 'wartet': False, 'speicher': {}}
+  OK   Danach vollständig installiert: alle Dateien im Speicher  {'aktiv': True, 'wartet': False, 'speicher': {'azubipass-62f35474cbfe91cc': 62}}
+  OK   Online geöffnet: das Kapitel kommt aus der eigenen Fassung
+  OK   Keine Datei einer anderen Fassung im Speicher  False
+  OK   Fehlender Eintrag + fremde Datei vom Server: keine andere Fassung, klarer 503  [503, False]
+  OK   … beim Öffnen: Hinweis statt fremder Seite
+  OK   Passende Datei vom Server: ausgeliefert und wieder im Speicher  [200, True]
+  OK   Ganzer Speicher fehlt + fremde Datei: keine andere Fassung  [503, False]
+  OK   Ganzer Speicher fehlt + passende Datei: wird geprüft ausgeliefert  200
+  OK   Speicher repariert sich mit geprüften Dateien  {'aktiv': True, 'wartet': False, 'speicher': {'azubipass-62f35474cbfe91cc': 62}}
+  OK   Fehlschlag der neuen Fassung: alte Fassung bleibt intakt und aktiv  {'aktiv': True, 'wartet': False, 'speicher': {'azubipass-62f35474cbfe91cc': 62}}
+  OK   Offline: zwei Tabs öffnen Kapitel aus dem Speicher
+A06 · Grafiken per Tastatur
+  OK   Kette: erste Stufe per Fokus erreichbar
+  OK   Kette: Enter öffnet, aria-expanded = true
+  OK   Kette: nächste Stufe danach freigegeben
+  OK   Kette: Leertaste öffnet die nächste Stufe
+  OK   Kette: gesperrte Stufe meldet aria-disabled
+  OK   Vergleich: Enter öffnet die Erklärung
+  OK   Vergleich: Enter schließt wieder
+  OK   Fokus ist sichtbar  solid
+  OK   Maus funktioniert weiter
+  OK   Kein Ketten- oder Vergleichseintrag ohne Knopf  0
+A07 · Zum Inhalt springen
+  OK   lf4.html#k6: Sprunglink fokussiert den Inhalt, Adresse bleibt  ['H2', True, '#k6']
+  OK   app.html#lernen: Sprunglink fokussiert den Inhalt, Adresse bleibt  ['H1', True, '#lernen']
+  OK   app.html#ueben: Sprunglink fokussiert den Inhalt, Adresse bleibt  ['H1', True, '#ueben']
+A11 · Kontrast auf der Kartenrückseite
+  OK   „Umdrehen“ auf der Rückseite mindestens 4,5:1  5.91
+  OK   Vorderseite behält ihre dunkle Schrift  rgb(108, 82, 8)
+A10 · Alles fertig ohne zuletzt
+  OK   75 Kapitel fertig, kein zuletzt: Prüfungstraining  Prüfungstermin festlegen | Alle Kapitel durch. | Prüfungstraining öffnen | 139 neue Ka
+A08 · Landing Page
+  OK   Keine Preise und keine Bezahl-Andeutungen
+  OK   Logo-Link bleibt im Projektpfad (kein href="/")
+A09 · 320 px
+  OK   80 Ansichten bei 320 px ohne seitlichen Überlauf  []
+BF · Barrierefreiheit (Scan 13.10.)
+  OK   Scrollende Tabellen sind per Tab erreichbar und benannt  [[True, '0', 'region', True], [True, '0', 'region', True], [True, '0', 'region', True]]
+  OK   Nicht scrollende Tabellen sind kein leerer Tab-Halt
+  OK   Tab-Leiste auf hellen Seiten mit dunklerer Schrift (#5C6158)  rgb(92, 97, 88)
+  OK   Landing: Navigationsknopf und Fußzeile mindestens 4,5:1  (5.91, 6.24)
+
+Alles in Ordnung.

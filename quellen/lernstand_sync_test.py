@@ -405,6 +405,76 @@ def main():
             pruefe(lokal_lz(t2) == ["B"] and lz(t2) == ["B"], "Bündel von A landet nicht im Stand von B", (lokal_lz(t2), lz(t2)))
             ctx.close()
 
+            # ------------------------------------------------------------------
+            # LS03 · Offenes Kapitel nach Übernahme aus einem anderen Tab
+            # (Review 6fb610d): echte Kapiteloberfläche, echte Eingabe-Ereignisse.
+
+            def kap_roh(seite):
+                seite.wait_for_timeout(500)      # kern.js bündelt Schreibvorgänge kurz hintereinander (400 ms)
+                return ev(seite, "(JSON.parse(localStorage.getItem('azubipass:konto')).fortschritt || {})['lf1-k3'] || null")
+
+            def kap_mem(seite):
+                return ev(seite, "JSON.parse(JSON.stringify(AP.stand.fortschritt['lf1-k3'] || null))")
+
+            def antworten(f):
+                return sorted(e.get("t") for e in ((f or {}).get("test") or {}).values() if e.get("t"))
+
+            def extern(s, t2, zu):
+                lernen(s, zu)
+                t2.wait_for_function(f"AP.stand.lesezeichen.some(e => e.zu === '{zu}')", timeout=3000)
+
+            print("LS03: Selbsttest, Bewertung, Check, Zuordnen nach Übernahme")
+            ctx = kontext()
+            k = ctx.new_page(); k.goto(url + "lf1.html#k3")
+            feld = k.locator("#k3 .frage textarea").first
+            feld.wait_for()
+            feld.fill("Antwort vor Abgleich")
+            s = app_tab(ctx, "localStorage.setItem('azubipass-sitzung', '{}');")
+            warte_status(s, "aktuell")
+            extern(s, k, "extern-1")
+            feld.fill("Neue Antwort nach Abgleich")
+            pruefe(antworten(kap_mem(k)) == ["Neue Antwort nach Abgleich"], "Arbeitsspeicher hat die neue Antwort", antworten(kap_mem(k)))
+            pruefe(antworten(kap_roh(k)) == ["Neue Antwort nach Abgleich"], "Browser-Speicher hat die neue Antwort", antworten(kap_roh(k)))
+            k.locator("#k3 .frage .kn-haupt").first.click()
+            pruefe(any(e.get("z") == "haupt" for e in kap_roh(k)["test"].values()), "Selbsttest-Bewertung gespeichert")
+            k.locator("#k3 .check .opt").first.click()
+            pruefe(any(e.get("o") for e in (kap_roh(k).get("checks") or {}).values()), "Check-Antwort gespeichert", kap_roh(k).get("checks"))
+            k.locator("#k3 .zuordnen .zu-reihe").first.locator(".zu-btn").first.click()
+            pruefe(any((e.get("w") or {}).get("0") is not None for e in (kap_roh(k).get("zuordnen") or {}).values()),
+                   "Zuordnung gespeichert", kap_roh(k).get("zuordnen"))
+            pruefe("extern-1" in lokal_lz(k), "Änderung des anderen Tabs bleibt erhalten")
+
+            print("LS03: zweite Übernahme löst die Bindung nicht")
+            extern(s, k, "extern-2")
+            feld.fill("Antwort nach zweiter Übernahme")
+            pruefe(antworten(kap_roh(k)) == ["Antwort nach zweiter Übernahme"], "Gespeichert nach zweiter Übernahme", antworten(kap_roh(k)))
+            pruefe(lokal_lz(k) == ["extern-1", "extern-2"], "Beide fremden Änderungen erhalten", lokal_lz(k))
+
+            print("LS03: nächster Kontoabgleich und Neuladen")
+            s.wait_for_function("AP.stand.fortschritt['lf1-k3'] && Object.values(AP.stand.fortschritt['lf1-k3'].test).some(e => e.t === 'Antwort nach zweiter Übernahme')", timeout=3000)
+            ev(s, "AP.lernstandSync.abgleichen()")
+            s.wait_for_function("""(() => { const z = FAKE.db.lernstand[0]; const f = z && z.daten.fortschritt['lf1-k3'];
+                return f && Object.values(f.test).some(e => e.t === 'Antwort nach zweiter Übernahme'); })()""", timeout=6000)
+            z = ev(s, "FAKE.db.lernstand[0].daten.fortschritt['lf1-k3']")
+            pruefe(any(e.get("o") for e in z["checks"].values()) and any(e.get("w") for e in z["zuordnen"].values()),
+                   "Konto hat Antwort, Check und Zuordnung", z)
+            n = ctx.new_page(); n.goto(url + "lf1.html#k3")
+            n.locator("#k3 .frage textarea").first.wait_for()
+            pruefe(n.locator("#k3 .frage textarea").first.input_value() == "Antwort nach zweiter Übernahme", "Nach Neuladen: neue Antwort im Feld",
+                   n.locator("#k3 .frage textarea").first.input_value())
+            pruefe(n.locator("#k3 .check .opt.richtig, #k3 .check .opt.falsch").count() >= 1, "Nach Neuladen: Check beantwortet")
+            pruefe(n.locator("#k3 .zuordnen .zu-btn.richtig, #k3 .zuordnen .zu-btn.falsch").count() >= 1, "Nach Neuladen: Zuordnung da")
+            n.close()
+
+            print("LS03: anderer Tab setzt zurück, dann weiter tippen")
+            ev(s, "AP.kontoErsetzen({ lesezeichen: [] })")
+            k.wait_for_function("!AP.stand.fortschritt['lf1-k3']", timeout=3000)
+            feld.fill("Nach Zuruecksetzen getippt")
+            pruefe(antworten(kap_roh(k)) == ["Nach Zuruecksetzen getippt"], "Eintrag wird wieder angehängt und gespeichert", antworten(kap_roh(k)))
+            k.locator("#k3 .frage .kn-neben").first.click()
+            pruefe(any(e.get("z") == "luecke" for e in kap_roh(k)["test"].values()), "Als Lücke markiert gespeichert")
+            ctx.close()
+
             browser.close()
 
     print()
