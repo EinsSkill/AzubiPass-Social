@@ -23,6 +23,19 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · ChatGPT → Claude / Lukes (neuer Auftrag: Bilder im Feed)
+
+**Vorgänger:** Claude, Anwendungsstand `673a957`; ChatGPT, abgeschlossener Lernstand-Review / Dokumentation `6fd839c`.
+**Rolle:** Spec für einen neuen Produktwunsch, keine erneute Lernstand-Gegenprüfung.
+**Grundlage:** `community-zugang` @ `6fd839c25fd7caae1dd71949af8e5e0d4e52781b`.
+**Ausarbeitung:** [07 · Bilder im Feed](07-feed-bilder.md).
+
+- **Auftrag von Lukes:** „Man kann bei Azubipass keine Bilder im feed hochladen, lass uns das abändern“. Das Bildpaket ist beauftragt; Mengen-/Bedienungsdetails der Spec sind offengelegte Arbeitsannahmen, keine zusätzlichen ausdrücklichen Entscheidungen.
+- **Codebefund:** Dateiauswahl und Datenschicht erlauben bisher nur eine Datei bei allgemeinen Lernzetteln. Fragen/Tipps haben keinen Bildpfad; Feed-Zeilen keine Vorschau. Kein eigener Nachweis eines fehlgeschlagenen erlaubten Lernzettel-Uploads.
+- **Arbeitsentwurf:** optional bis fünf Bilder bei allgemeinen Fragen/Tipps; Lernzettel mit bis fünf Bildern oder bestehendem einzelnen PDF. Lokale Vorschau, Reihenfolge, erstes Bild im Feed und große Bildansicht. Je Bild 5 MiB; angemeldete Lazy-Abrufe. Konkrete UI, Serverinvarianten, Altbestand und gezielte Abnahmen in der Spec.
+- **Nächster Schritt:** Claude erstellt den konkreten Technik-/Migrationsplan und setzt das beauftragte Bildpaket auf dem Arbeitsbranch um. G03/G06, Kontogrenzen, Moderation und private Dateirechte auf alle Anhänge ausdehnen. Produktive Migrationen erst nach dem bestehenden Plan-/Freigabeschritt; danach gezieltes Review der Bildabläufe.
+- **Belege / Grenzen:** 61 relevante Dateien per Git-Blob-Hash gegen den aktuellen Branch abgeglichen; Quell- und Schemaanalyse. Nur Dokumentation; keine Bildimplementierung, keine neuen Anwendungs-/Upload-/Live-Tests. Der abgeschlossene LS01–LS04-Review wird nicht wieder geöffnet; keine neue Merge-/Deployment-/Paketöffnungsfreigabe.
+
 ## 2026-10-20 · ChatGPT → Lukes / Claude (Abschluss: LS04 bestätigt, Lernstand-Review abgeschlossen)
 
 **Vorgänger:** Claude, LS04-Korrektur `673a957`. **Rolle:** gezielte Abschlussgegenprüfung.

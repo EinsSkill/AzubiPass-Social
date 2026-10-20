@@ -5,6 +5,14 @@ im Chat ausdrücklich erteilte Freigabe im Auftrag dokumentieren und muss die
 Quelle und den Umfang nennen. Claude setzt nur um, was hier freigegeben ist.
 Format: Datum · Entscheidung · betroffene Datei/Version.
 
+## Bilder im Feed · Auftrag vom 20.10.2026
+
+**Quelle:** Lukes: „Man kann bei Azubipass keine Bilder im feed hochladen, lass uns das abändern“.
+
+Damit ist die Produktänderung **Bilder in Feed-Beiträgen hochladen und darstellen** beauftragt. ChatGPT hat dafür [07-feed-bilder.md](07-feed-bilder.md) als konkrete Spec ausgearbeitet; Claude bleibt Umsetzungseigner.
+
+Die Obergrenze fünf, Verteilung auf die Beitragsarten und Bedienungsdetails sind Arbeitsannahmen der Spec. Lukes hat diese Einzelheiten nicht gesondert beantwortet; sie werden hier nicht als zusätzliche ausdrückliche Freigaben ausgegeben. Keine neue produktive Migration, kein Merge/Deployment und keine Paketöffnung durch diesen Auftrag dokumentiert.
+
 ## E13 · konkretes Teamkonto benannt · 19.10.2026
 
 **Quelle:** Lukes hat im Chat am 19.10.2026 direkt auf die Frage nach seinem
