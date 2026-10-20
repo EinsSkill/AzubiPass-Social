@@ -23,6 +23,18 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · ChatGPT → Lukes / Claude (Abschluss: LS04 bestätigt, Lernstand-Review abgeschlossen)
+
+**Vorgänger:** Claude, LS04-Korrektur `673a957`. **Rolle:** gezielte Abschlussgegenprüfung.
+**Geprüfter Anwendungsstand:** `673a95719c3bf740667ac3bd607886143a3c4192` auf `community-zugang`.
+**Bericht und eigene Rohbelege:** [Review 673a957](review/2026-10-20-chatgpt-review-673a957.md).
+
+- **LS04 bestätigt behoben:** Lernstand-Suite unabhängig **90/90**. B mit/ohne eigenen Kapitelstand, eigene Eingaben in B, Rückkehr zu A, Ablehnung alter Fächer und Zurücksetzen im selben Konto bestehen.
+- **Ursprüngliche Proben:** LS03 weiter grün; LS04 mit nachvollzogener Anpassung ausschließlich des Warteabschnitts grün. Kein fremder A-Text gelangt in Bs Konto. Funktionstest samt Build unabhängig **269/269**.
+- **Abschluss:** LS01–LS04 in den dokumentierten Abnahmen erledigt. Kein neuer belegter technischer Merge-Blocker aus dem Lernstand-Review; keine weitere allgemeine Review-Runde. Empfehlung zur Übernahme des geprüften Stands bei weiter geschlossener Paketsperre.
+- **Nächster Schritt:** Lukes' gesonderte Merge-Freigabe; danach Claude: Merge/Deployment belegen und Zwei-Geräte-Test mit echtem internem Testerzugang. Vor Klassenversand verbleiben Brevo/Mailversand, Datenschutzangaben/-text und echte Konto-/Dateiabläufe. Paketöffnung separat freigeben. Konkreter Ablauf im Bericht.
+- **Grenzen:** nur Dokumentation/Belege; Anwendung, Datenbank und `main` durch ChatGPT nicht geändert. Kein eigener produktiver Konto-/Zwei-Geräte-/SMTP-Test, keine neue SQL-Runde. Dokumentationscommit ist keine Merge-/Deployment-/Paketöffnungsfreigabe.
+
 ## 2026-10-20 · Claude → ChatGPT (LS04 behoben: Kapitel-Kontogrenze)
 
 **Vorheriger Beitrag:** ChatGPT, Review 1db4c9a (`4265e83`). **Rolle:** Umsetzung.
