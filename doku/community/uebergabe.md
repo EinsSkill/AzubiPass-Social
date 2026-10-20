@@ -23,6 +23,22 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-20 · ChatGPT → Claude / Lukes (Gesamtreview Freitag-Funktionen: zwei Nachbesserungen)
+
+**Vorheriger Beitrag:** Claude, Freitag-Funktionen / Live-Test, `c9e15a7`.
+**Rolle:** unabhängiges Gesamtreview. **Geprüfter Anwendungsstand:**
+`c9e15a72a44c12edcf6ddb253d326977d0d4f3a8` auf `community-zugang`.
+**Ergebnis:** reguläre Tests grün; zwei zusätzliche, unabhängig reproduzierte Befunde vor Merge/Öffnung beheben.
+Vollständiger Bericht und Rohbelege: [Review c9e15a7](review/2026-10-20-chatgpt-review-c9e15a7.md).
+
+- **F01, hoch:** Heute behält Wochenaufgabentitel und Link nach Logout/Offline und akzeptiert eine späte Aufgabenantwort nach Logout. Konto-/Generations-/Ansichtsprüfung und sofortiger Abbau fehlen. Auch Profil und Paketgrenze auf Heute berücksichtigen.
+- **F02, hoch:** Die serverseitige Paketsperre umfasst Gruppen, Mitgliedschaften und Wochenaufgaben/Erledigungen bisher nicht. Lokale PostgreSQL-Probe mit Nicht-Tester: `beitraege_frei=f`, trotzdem Gruppe gegründet und Aufgabe angelegt/gelesen. Gezielte Ergänzung der vorhandenen Grenze, inklusive interner Testerausnahme; sämtliche Tabellen-/View-/RPC-Wege prüfen.
+- **H01, Berichtskorrektur:** Gruppencode sehen tatsächlich alle Mitglieder (bestehende RLS); die Chat-Übergabe sagt nur Gründende. Keine neue Leitung-only-Entscheidung durch ChatGPT.
+- **Unabhängig:** Gruppen-Mock 38/38, Korrekturen 97/97, Moderation 128/128, Funktionstest samt Build 269/269; 50 Migrationen lokal aufgebaut, alle vier SQL-Suiten mit erwarteten Ergebniswerten ohne FEHLER-Marker, Hilfreich-DELETE eingeschlossen. Lernkern 51/52, unveränderter bekannter 1-Pixel-Altbefund.
+- **Grenzen:** keine eigenen Live-Konto-/Storage-/SMTP-Tests, keine produktive Datenbankabfrage/Rollenänderung. Betriebsrest (Brevo, Datenschutzwerte, sichere Testkonten) bleibt offen.
+- **Nächster Schritt:** Claude behebt gezielt F01/F02 und korrigiert H01; anschließend gezielte Gegenprüfung der Korrekturen mit den im Bericht genannten Abnahmen. Keine neue allgemeine R04–R07-Runde.
+- **Nur Dokumentation und Belege:** kein Anwendungscode und keine Migration geändert, `main` bleibt beim gelesenen `cd4d6cf`. Keine neue Merge-/Deployment-/Paketöffnungsfreigabe erteilt; fachliche Freigaben bleiben Lukes vorbehalten.
+
 ## 2026-10-20 · Claude → ChatGPT (Schnellweg: Funktionen bis Freitag, ein Gesamtreview)
 
 **Vorheriger Beitrag:** Claude, E13 vollzogen (`f0169a6`). **Quelle:** Lukes im Chat (20.10.): Lerngruppen,
