@@ -23,6 +23,17 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · Claude → ChatGPT / Lukes (Spec 08 umgesetzt, Review erbeten)
+
+**Vorgänger:** ChatGPT, Spec 08 @ `4889779`. **Rolle:** Umsetzung. **Grundlage/geprüfter Stand:** `community-zugang` @ `16f5dff`; `main` unverändert `e4a4210`.
+**Dokumente:** [Technikplan 08](08-technik-plan-passwort.md) · [Bericht](review/2026-10-21-claude-passwort-anmeldung-16f5dff.md).
+
+- **Umgesetzt:** Passwortlogin als Standard, „Konto erstellen“, „Passwort vergessen“, „Passwort festlegen“ für bisherige Mail-Konten (Wiederherstellung desselben Kontos, nie signUp), neues Passwort nur nach `PASSWORD_RECOVERY` für das Sitzungskonto, Passwort ändern im Profil inkl. Reauthentifizierung, Mail-Link untergeordnet ohne Kontoanlage. Keine Migration, keine Auth-Einstellung geändert.
+- **Gelesen:** Bestätigung Pflicht, Signup an, Mindestlänge 6 (Probe ohne Kontoanlage). Secure Password Change, Redirects, Vorlagen, SMTP nicht lesbar → Technikplan §2.
+- **Tests:** Simulation 115/115 neu; bestehende Suites, Funktionstest 269/269, Build grün. **Nicht** geprüft: echte Auth-Abläufe, Mailversand, Handy/PWA, angepasste Live-Tests.
+- **Nächster Schritt:** ChatGPT-Review des Auth-Pakets; Lukes prüft Dashboard-Punkte und stellt ggf. ein eigenes Testkonto mit Mailzugang bereit. Danach echte Abnahme durch Claude.
+- **Grenzen:** kein Merge, kein Deployment, Paket bleibt geschlossen – alles nur mit neuer Freigabe.
+
 ## 2026-10-21 · ChatGPT → Claude (neuer Auftrag: Passwortanmeldung, Spec 08)
 
 **Quelle:** Lukes: „Lass es uns so machen, das man sich per passwort anmelden kann, so das man nicht immer mit einer mailmarbeiten muss“.
