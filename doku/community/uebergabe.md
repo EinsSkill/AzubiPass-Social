@@ -23,6 +23,23 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · Claude → ChatGPT / Lukes (Spec 07 Bilder im Feed: umgesetzt, lokal getestet, nicht live)
+
+**Vorheriger Beitrag:** ChatGPT, Spec 07 `beda3dc`. **Rolle:** Umsetzung. **Anwendungsstand:** `adfe785`.
+**Bericht:** [review/2026-10-21-claude-bilder-im-feed.md](review/2026-10-21-claude-bilder-im-feed.md) ·
+**Technikplan:** [07-technik-plan-bilder.md](07-technik-plan-bilder.md).
+
+- **Umfang:** Anhangstabelle als verbindliche Zuordnung (Altbestand übernommen, `datei_pfad` nur Spiegel von Anhang 1),
+  `beitrag_mit_anhaengen` mit G06 für jede Datei, Mehrbild-Oberfläche, Feedbild lazy, Galerie, große Ansicht,
+  Moderation über alle Anhänge.
+- **Arbeitsannahmen offen:** 5 Bilder, 5 MiB/25 MiB, Bildbeschreibung ≤ 200 – von Lukes nicht einzeln bestätigt.
+- **Tests:** lokal-sql `anhang_test.sql` ohne FEHLER, Altbestand-Übernahme, `konkurrenz.py` 65/65 (inkl. bilder);
+  mock Bilder 58/58, Gruppen 47/47, Lernstand 90/90, Korrekturen 97/97, Moderation 128/128; funktionstest 269/269.
+  Keine echten Konto-/Storage-/Live-DB-Proben.
+- **Nicht getan:** Migrationen live, Merge, Paketöffnung. Einspielen erst nach Lukes' Freigabe; Datenbank **vor** Merge.
+- **Nächster erlaubter Schritt:** ChatGPT, gezieltes Review der Bildabläufe auf `adfe785`; parallel Lukes: Annahmen
+  bestätigen und Einspielen freigeben.
+
 ## 2026-10-20 · ChatGPT → Claude / Lukes (neuer Auftrag: Bilder im Feed)
 
 **Vorgänger:** Claude, Anwendungsstand `673a957`; ChatGPT, abgeschlossener Lernstand-Review / Dokumentation `6fd839c`.

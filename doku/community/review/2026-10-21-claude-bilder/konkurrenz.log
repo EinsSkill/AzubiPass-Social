@@ -1,0 +1,98 @@
+G06 Fall A · Veröffentlichen zuerst, Löschen wartet
+  OK   [lokal-sql] Löschen wartet auf die laufende Veröffentlichung
+  OK   [lokal-sql] 0 gelöscht, Beitrag und Datei vorhanden  geloescht=0 beitraege=1 objekte=1
+G06 Fall B · Löschen zuerst, Veröffentlichen wartet
+  OK   [lokal-sql] Veröffentlichen wartet auf das laufende Löschen
+  OK   [lokal-sql] Veröffentlichen abgelehnt: Datei nicht hochgeladen  Die Datei ist nicht hochgeladen.
+CONTEXT:  PL/pgSQL function public.beitrag_vero
+  OK   [lokal-sql] Kein Beitrag, keine Datei
+G06 Fall C · geschlossene Paketsperre (Konto ohne Testerfreigabe)
+  OK   [lokal-sql] Veröffentlichen bei geschlossener Sperre abgelehnt  Beiträge sind für die Klassen-Beta noch nicht freigeschaltet
+  OK   [lokal-sql] Bei geschlossener Sperre: eigene Datei weder lesbar noch löschbar (unverändert)  0
+G06 Fall D · direkter Beitrags-Insert
+  OK   [lokal-sql] Allgemeiner Beitrag direkt abgelehnt  abgelehnt
+  OK   [lokal-sql] Gruppenbeitrag mit Datei direkt abgelehnt  abgelehnt
+  OK   [lokal-sql] Gruppen-Textbeitrag ohne Datei weiter möglich  ok
+R03 Fall 20/23 · Moderation zuerst, Antwort wartet
+  OK   [lokal-sql] Antwort wartet auf die laufende Ausblendung
+  OK   [lokal-sql] Antwort nach dem Warten abgelehnt  Du kannst diesen Beitrag gerade nicht beantworten.
+CONTEXT: 
+  OK   [lokal-sql] Keine Antwort, keine Vorgangszeile  antworten=0 vorgang=0
+R03 Fall 21 · Antwort zuerst, Moderation wartet, keine Verklemmung
+  OK   [lokal-sql] Moderation wartet auf die laufende Antwort
+  OK   [lokal-sql] Kein Sperr-Timeout, keine Verklemmung
+  OK   [lokal-sql] Antwort vorhanden, Beitrag danach ausgeblendet
+R03 Fall 22 · Wiederholung nach späterer Ausblendung
+  OK   [lokal-sql] Gleiche Kennung ⇒ dieselbe ID, keine zweite Antwort
+R03 · zwei Antworten gleichzeitig blockieren sich nicht
+  OK   [lokal-sql] Zweite Antwort läuft ohne Warten durch
+Fall 1 · Meldung 2 und 3 gleichzeitig (zwei Konten) → genau eine Ausblendung
+  OK   [lokal-sql] Meldung 3 wartet auf die laufende Meldung 2
+  OK   [lokal-sql] Ausgeblendet, eine Ausblendung, ein Protokolleintrag
+Fall 19 · R02: dasselbe Konto meldet doppelt gleichzeitig, dritte Meldung blendet aus
+  OK   [lokal-sql] Zweiter Aufruf wartet auf die Sperre
+  OK   [lokal-sql] Beide Aufrufe: dieselbe Meldung, kein APZ01  (UUID('8d6c48a2-2846-4cde-a5b9-4e7c430d9edc'), False)
+  OK   [lokal-sql] Genau eine Meldung, eine Ausblendung
+Fall 19b · R02 mit Bremse: erster Aufruf erreicht die 30, zweiter erkennt die Meldung
+  OK   [lokal-sql] Zweiter Aufruf wartet
+  OK   [lokal-sql] Danach greift die Bremse für neue Ziele  APB01
+  OK   [lokal-sql] Zweiter Aufruf: vorhandene Meldung statt APB01  (UUID('c0b1db7a-8cc5-4266-87e2-62ce52872560'), False)
+Fall 15 · P3: zwei Erklärungskorrekturen auf dieselbe Version
+  OK   [lokal-sql] Zweite Korrektur wartet
+  OK   [lokal-sql] Zweite scheitert mit APF01  APF01
+  OK   [lokal-sql] Genau ein Protokolleintrag
+Fall 18 · P6: Autor:in ändert die Antwort während einer Entscheidung
+  OK   [lokal-sql] Entscheidung wartet auf die laufende Änderung
+  OK   [lokal-sql] Änderung zuerst ⇒ Entscheidung APF01  APF01
+  OK   [lokal-sql] Änderung wartet auf die laufende Entscheidung
+  OK   [lokal-sql] Danach geändert, Version zweimal erhöht
+Fall 18 · P6: Autor:in löscht den Beitrag während einer Entscheidung
+  OK   [lokal-sql] Löschen wartet auf die Entscheidung
+  OK   [lokal-sql] Beitrag gelöscht, Protokoll bleibt
+  OK   [lokal-sql] Entscheidung wartet auf das Löschen
+  OK   [lokal-sql] Gelöscht zuerst ⇒ APZ01  APZ01
+Fall 6 · gleiche Kennung gleichzeitig ⇒ eine Entscheidung
+  OK   [lokal-sql] Zweiter Aufruf wartet
+  OK   [lokal-sql] Zweiter erhält das gespeicherte Ergebnis
+R06 · gleiche Kennung, gleiches Konto, gleiche Aktion, gleiches Ziel (parallel)
+  OK   [lokal-sql] Eine Entscheidung, eine Korrektur, beide Aufrufe dasselbe Ergebnis
+R06 · gleiche Kennung, anderes Ziel (parallel)
+  OK   [lokal-sql] anderes Ziel: zweiter Aufruf wartet auf die Kennung
+  OK   [lokal-sql] anderes Ziel: APV01, keine Wirkung auf Ziel 2  APV01 korrekturen=0 version=0/0
+R06 · gleiche Kennung, gleiche Ziel-ID, andere Zielart (parallel)
+  OK   [lokal-sql] andere Zielart: zweiter Aufruf wartet auf die Kennung
+  OK   [lokal-sql] andere Zielart: APV01, keine Wirkung auf Ziel 2  APV01 korrekturen=0 version=0/0
+R06 · gleiche Kennung, fremdes Teamkonto (parallel)
+  OK   [lokal-sql] fremdes Konto: zweiter Aufruf wartet auf die Kennung
+  OK   [lokal-sql] fremdes Konto: APV01, keine Wirkung auf Ziel 2  APV01 korrekturen=0 version=0/0
+R06 · gleiche Kennung, andere Aktion (parallel)
+  OK   [lokal-sql] andere Aktion: zweiter Aufruf wartet auf die Kennung
+  OK   [lokal-sql] andere Aktion: APV01, keine Wirkung auf Ziel 2  APV01 korrekturen=0 version=0/0
+R06 · sequentielle Wiederholung und Kollisionen
+  OK   [lokal-sql] Sequentielle Wiederholung liefert das gespeicherte Ergebnis
+  OK   [lokal-sql] Anderes Ziel, andere Art, fremdes Konto, andere Aktion: APV01  ['APV01', 'APV01', 'APV01', 'APV01']
+R07 · 29 Meldungen + drei parallele neue Ziele ⇒ höchstens eine weitere
+  OK   [lokal-sql] Parallele neue Meldungen warten auf die Kontosperre  True/True advisory
+  OK   [lokal-sql] Eine neue, zwei APB01, insgesamt 30  ['neu', 'APB01', 'APB01'] gesamt=30
+R07 · Wiederholung vorhandener Meldungen an der Grenze
+  OK   [lokal-sql] Erneute Meldung desselben Ziels bei 30: vorhandene Meldung statt APB01  vorhanden
+  OK   [lokal-sql] Parallel: neues Ziel APB01, Wiederholung erfolgreich  APB01/vorhanden
+R07 · dritte Meldung blendet automatisch aus, während dasselbe Konto ein anderes Ziel meldet
+  OK   [lokal-sql] Konto: Meldung 30 angelegt, parallele Meldung APB01  True neu/APB01
+  OK   [lokal-sql] Dritte Meldung blendet aus: eine Ausblendung, ein Automatik-Protokoll
+R07 · kreuzende Meldungen zweier Konten und Entscheidung im selben Thread ohne Verklemmung
+  OK   [lokal-sql] Alle fünf Transaktionen enden, keine Verklemmung (40P01) und kein Sperr-Timeout (55P03)  hängt=[False, False, False, False, False] fehler=['APF01']
+  OK   [lokal-sql] Alle vier kreuzenden Meldungen angelegt
+Bilder Fall A · Veröffentlichen (3 Bilder) zuerst, Löschen von Bild 2 wartet
+  OK   [lokal-sql] Löschen von Bild 2 wartet auf die Veröffentlichung
+  OK   [lokal-sql] 0 gelöscht, Beitrag mit 3 Anhängen und alle Dateien vorhanden  geloescht=0
+Bilder Fall B · Löschen von Bild 3 zuerst, Veröffentlichen wartet
+  OK   [lokal-sql] Veröffentlichen wartet auf das laufende Löschen
+  OK   [lokal-sql] Veröffentlichen abgelehnt: Datei nicht hochgeladen  Die Datei ist nicht hochgeladen.
+CONTEXT:  PL/pgSQL function public.anhaenge_pru
+  OK   [lokal-sql] Kein (halber) Beitrag, keine Anhänge
+Bilder Fall C · dieselbe Vorgangskennung zweimal gleichzeitig
+  OK   [lokal-sql] Zweiter Aufruf wartet auf den ersten
+  OK   [lokal-sql] Ein Beitrag, zwei Anhänge, zweiter Aufruf liefert denselben Beitrag  None
+
+Alles bestanden
