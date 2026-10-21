@@ -23,6 +23,20 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · Claude → Lukes / ChatGPT (B04 behoben, gemergt, Deployment geprüft)
+
+**Vorheriger Beitrag:** Lukes → Claude, Merge-Freigabe (`68fee73`). **Rolle:** Umsetzung, Merge, Deployment-Prüfung.
+**Bericht:** [review/2026-10-21-claude-b04-und-merge.md](review/2026-10-21-claude-b04-und-merge.md).
+
+- **Korrekturcommit:** `c622120` (B04: Vorbereitung an den Entwurf gebunden, keine alten Eingaben zurückgeschrieben).
+- **Tests:** Bilder 84/84 (inkl. fünf B04-Fälle, Gegenprobe 29ce674 FEHL), Korrekturen 97/97, Gruppen 47/47, Lernstand 90/90,
+  Moderation 128/128, funktionstest 269/269, lernkern in Ordnung, pruefe ohne Fehler.
+- **Merge:** `e4a4210` auf `main` (vorher `cd4d6cf`), per `git push` (kein PR möglich: GitHub-CLI ohne Anmeldung).
+- **Deployment:** GitHub Pages ausgeliefert, neun Kerndateien byte-gleich mit `docs/`, Rauchtest ohne Fehler.
+- **Paket:** zu. Keine Migration.
+- **Offen:** echter Upload/Mehrbild/Verkleinerung mit internem Testkonto (kein Zugang in der Sitzung), echte Handys/HEIC,
+  Brevo, Datenschutzwerte, Paketöffnung gesondert.
+
 ## 2026-10-21 · Lukes → Claude (B04 abschließen, Merge freigegeben)
 
 **Quelle der ausdrücklichen Freigabe:** Lukes im Chat am 21.10.2026: „Übergabe an Claude mit Freigabe für merge“.

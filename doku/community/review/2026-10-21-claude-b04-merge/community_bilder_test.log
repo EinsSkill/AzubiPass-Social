@@ -1,0 +1,99 @@
+Frage ohne Bild / mit 1 Bild / Tipp mit 5 Bildern
+  OK   [mock] Ohne Bild: kein Upload, leere Anhangsliste
+  OK   [mock] Vorschau mit Name, Zähler
+  OK   [mock] Kein Upload bei der Auswahl
+  OK   [mock] axe ohne WCAG-Verstöße: Formular mit einem Bild
+  OK   [mock] Pfad ‹konto›/‹vorgang›-1.png
+  OK   [mock] Alternativtext ohne Beschreibung neutral
+  OK   [mock] Erneute Auswahl ergänzt  ['b1.png', 'b2.png', 'b3.png', 'b4.png', 'b5.png']
+  OK   [mock] Bei 5 Bildern keine weitere Auswahl
+  OK   [mock] „Nach vorn“ zweimal: b3 ist Bild 1  ['b3.png', 'b1.png', 'b2.png', 'b4.png', 'b5.png']
+  OK   [mock] Fokus bleibt bei den Bildaktionen
+  OK   [mock] Entfernen und Hin-und-zurück  ['b3.png', 'b1.png', 'b2.png', 'b4.png']
+  OK   [mock] Während des Sendens: Auswahl, Reihenfolge und Beschreibung gesperrt
+  OK   [mock] axe ohne WCAG-Verstöße: Formular beim Hochladen
+  OK   [mock] Fortschritt „Bild 2 von 5 …“  ['Beitrag wird veröffentlicht …', 'Bild 1 von 5 wird hochgeladen …', 'Bild 2 von 5 wird hochgeladen …']
+  OK   [mock] Fünf Anhänge mit Beschreibung an Bild 1
+  OK   [mock] Hochgeladen in der gewählten Reihenfolge
+Grenzen in der Oberfläche
+  OK   [mock] 6 Bilder: 5 übernommen, Hinweis
+  OK   [mock] Format und nicht lesbares Bild mit Grund abgelehnt  anim.gif: Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP. kaputt.png: Dieses Bild konnte nicht gelesen werden. Wähle ein anderes Bild. | Das kennzeichnet deine Frage für Mentor:innen. Eine Antwort ist nicht garantiert. | anim.gif: Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP. kaputt.png: Dieses Bild konnte nicht gelesen werden. Wähle ein anderes Bild.
+  OK   [mock] Exakt 5 MiB unverändert; 5 MiB + 1 Byte automatisch verkleinert; gültige Auswahl bleibt  ['x1.png', 'x2.png', 'x3.png', 'genau.png', 'zu-gross.jpg']
+  OK   [mock] Hinweis „Automatisch verkleinert“ nur am verkleinerten Bild
+  OK   [mock] axe ohne WCAG-Verstöße: Formular mit Bildfehlern
+Automatische Verkleinerung eines großen Fotos
+  OK   [mock] Foto über 5 MiB angenommen und als JPEG vorbereitet  [5853143, ['handyfoto.jpg']]
+  OK   [mock] Sichtbarer Hinweis mit Bitte, die Lesbarkeit zu prüfen
+  OK   [mock] Hochgeladen als ‹vorgang›-1.jpg  00000000-0000-4000-a000-00000000a001/645d4862-87da-45de-bab3-3d5b1be719b0-1.jpg
+Lernzettel: Bilder, PDF, ohne Anhang, Artwechsel
+  OK   [mock] Ohne Anhang abgelehnt, nichts gesendet
+  OK   [mock] Frage → Lernzettel: Bilder bleiben
+  OK   [mock] Abbrechen: Bilder bleiben, Modus Bilder  [1, ['f1.png', 'f2.png']]
+  OK   [mock] Bestätigt: Bilder entfernt, PDF-Auswahl sichtbar  [[], 1, 0]
+  OK   [mock] axe ohne WCAG-Verstöße: Rückfrage PDF entfernen
+  OK   [mock] Escape: Lernzettel und PDF bleiben  [True, 1]
+  OK   [mock] PDF-Lernzettel gesendet
+  OK   [mock] Detail: PDF wie bisher („PDF öffnen“)
+Teilupload, Wiederholung, unklarer Ausgang
+  OK   [mock] Kein Beitrag, Auswahl noch da
+  OK   [mock] Zweiter Versuch: dieselbe Kennung, ein Beitrag mit drei Anhängen
+  OK   [mock] Unklar: keine Datei entfernt
+  OK   [mock] „Verworfen“: alle drei Dateien entfernt  ['00000000-0000-4000-a000-00000000a001/e7798000-fc4d-4afb-8d33-8001b119fb0b-1.png', '00000000-0000-4000-a000-00000000a001/e7798000-fc4d-4afb-8d33-8001b119fb0b-2.png', '00000000-0000-4000-a000-00000000a001/e7798000-fc4d-4afb-8d33-8001b119fb0b-3.png']
+B02 · Bereinigung schlägt fehl: Wiederholungsweg bleibt
+  OK   [mock] fehler: Reste bleiben sichtbar mit „Jetzt entfernen“  3
+  OK   [mock] fehler: Wiederholung entfernt alle Reste, Dateien des neuen Beitrags bleiben  [0, 3]
+  OK   [mock] fehler: Merkzettel leer, kein Schlüssel im Lernstand-Namensraum
+  OK   [mock] ablehnen: Reste bleiben sichtbar mit „Jetzt entfernen“  3
+  OK   [mock] ablehnen: Wiederholung entfernt alle Reste, Dateien des neuen Beitrags bleiben  [0, 3]
+  OK   [mock] ablehnen: Merkzettel leer, kein Schlüssel im Lernstand-Namensraum
+  OK   [mock] still: Reste bleiben sichtbar mit „Jetzt entfernen“  3
+  OK   [mock] still: Wiederholung entfernt alle Reste, Dateien des neuen Beitrags bleiben  [0, 3]
+  OK   [mock] still: Merkzettel leer, kein Schlüssel im Lernstand-Namensraum
+  OK   [mock] Doppelklick: ein Upload, ein Aufruf
+Kontowechsel während des Uploads
+  OK   [mock] Nach Wechsel: kein weiterer Upload, keine Veröffentlichung
+  OK   [mock] Vorschauadressen von Konto A freigegeben
+Feed: Vorschau, Lazy-Abruf, große Ansicht
+  OK   [mock] Nur Bilder nahe am sichtbaren Bereich geladen  2
+  OK   [mock] Höchstens zwei Abrufe gleichzeitig  2
+  OK   [mock] Im Feed nur das erste Bild je Beitrag
+  OK   [mock] Mehrere Bilder: „1 / 3“
+  OK   [mock] Bildplatz reserviert (gleiche Höhe vor/nach dem Laden)  [220, 220, 220]
+  OK   [mock] axe ohne WCAG-Verstöße: Feed mit Bildern
+  OK   [mock] Beim Scrollen werden weitere geladen  5
+  OK   [mock] Bildknopf mit Textnamen  Kontenrahmen als Foto (1 von 3) – groß ansehen
+  OK   [mock] Antippen öffnet Beitrag und große Ansicht
+  OK   [mock] axe ohne WCAG-Verstöße: Große Ansicht
+  OK   [mock] Escape schließt, Fokus zurück zum Bild
+  OK   [mock] Galerie steht auf dem zuletzt gesehenen Bild
+  OK   [mock] axe ohne WCAG-Verstöße: Detail mit Galerie
+  OK   [mock] Zurück: Fokus auf dem Ursprungsbeitrag
+Detail: weitere Bilder erst bei Auswahl, Bildfehler
+  OK   [mock] Nur Bild 1 geladen
+  OK   [mock] Beschreibung als Alternativtext
+  OK   [mock] Bildfehler betrifft nur den Bildbereich
+  OK   [mock] Erneut versuchen lädt Bild 3 neu
+Teamfall und eigener ausgeblendeter Beitrag: alle Anhänge erst auf „Datei prüfen“
+  OK   [mock] Fallüberblick lädt keine Datei automatisch
+  OK   [mock] Team: alle drei Anhänge geprüft
+  OK   [mock] Eigener ausgeblendeter Beitrag: beide Anhänge über den Sonderweg
+B03 · Download gelingt, Bild nicht darstellbar
+  OK   [mock] Feed: Fehlermeldung und „Erneut versuchen“
+  OK   [mock] Feed: neuer angemeldeter Abruf, Bild dekodiert (naturalWidth > 0)
+  OK   [mock] Große Ansicht: Fehlerzustand, Erneut versuchen lädt neu
+  OK   [mock] Galerie: Fehlerzustand, Erneut versuchen lädt neu
+B04 · Vorbereitung läuft, Formular wird verlassen und neu geöffnet
+  OK   [mock] Wieder geöffnet: laufende Vorbereitung sichtbar, Senden gesperrt
+  OK   [mock] Nach Abschluss: Bild im aktuellen Formular, Senden frei  ['gross.jpg']
+  OK   [mock] Neuer Titel bleibt
+  OK   [mock] Nach erneutem Öffnen: neuer Titel und Bild erhalten
+  OK   [mock] Gesendet wird der neue Titel
+  OK   [mock] Rückkehr nach Abschluss: Bild, Senden frei, Titel unverändert
+  OK   [mock] Dekodierfehler: Grund im aktuellen Formular, Senden frei, Titel bleibt
+  OK   [mock] Kontowechsel: Ben sieht kein Bild und keinen Titel von Anna, nichts hochgeladen
+  OK   [mock] Verworfen: neues Formular leer, kein spät eintreffendes Bild
+320 px
+  OK   [mock] Kein waagerechtes Scrollen bei 320 px  320
+  OK   [mock] Bildaktionen mindestens 44 × 44 px  [[124, 48], [126, 48], [258, 48]]
+
+Alles bestanden
