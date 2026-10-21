@@ -5,6 +5,18 @@ im Chat ausdrücklich erteilte Freigabe im Auftrag dokumentieren und muss die
 Quelle und den Umfang nennen. Claude setzt nur um, was hier freigegeben ist.
 Format: Datum · Entscheidung · betroffene Datei/Version.
 
+<a id="merge-freigabe-2026-10-21"></a>
+
+## Merge-Freigabe · 21.10.2026
+
+**Quelle:** Lukes im Chat: „Übergabe an Claude mit Freigabe für merge“.
+
+Lukes gibt Claude den Merge von `community-zugang` nach `main` frei. Grundlage sind der geprüfte Anwendungsstand `29ce674` und ChatGPTs Review/Übergabe `1660598`, ergänzt um die gezielte Behebung des dort noch offenen **B04**. B01–B03 sind abgeschlossen.
+
+**Reihenfolge:** B04 beheben und die konkreten Abnahmen aus [Review 29ce674](review/2026-10-21-chatgpt-review-29ce674.md) sowie die erforderlichen betroffenen Tests/Builds bestehen lassen; danach mergen und das reguläre Deployment prüfen. Eine erneute gesonderte Merge-Freigabe ist nach dieser belegten Korrektur nicht nötig. Neue konkrete Blocker zurückmelden; keine zusätzliche allgemeine Audit-Runde.
+
+**Nicht umfasst:** Öffnung der Klassen-Beta bzw. der bestehenden Paketsperre. Echte Upload-/Handyproben bleiben gesondert als durchgeführt oder offen zu dokumentieren. Für B04 ist keine neue Datenbankmigration erforderlich. Ausführung und Belege liegen bei Claude; diese Datei hält Lukes' Freigabe fest.
+
 ## Bilder im Feed · Auftrag vom 20.10.2026
 
 **Quelle:** Lukes: „Man kann bei Azubipass keine Bilder im feed hochladen, lass uns das abändern“.

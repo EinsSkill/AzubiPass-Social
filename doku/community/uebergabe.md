@@ -23,6 +23,20 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · Lukes → Claude (B04 abschließen, Merge freigegeben)
+
+**Quelle der ausdrücklichen Freigabe:** Lukes im Chat am 21.10.2026: „Übergabe an Claude mit Freigabe für merge“.
+**Vorgänger:** ChatGPT, gezielter Review `29ce674`, Dokumentation `1660598`.
+**Rolle dieser Übergabe:** Freigabe dokumentieren; Claude übernimmt B04-Korrektur und anschließenden Merge.
+**Entscheidung:** [Merge-Freigabe vom 21.10.2026](entscheidungen.md#merge-freigabe-2026-10-21).
+
+1. **B04 gezielt beheben:** Vorbereitungsabschluss an das aktuelle Formular binden und keine Eingaben des verlassenen Formulars zurückschreiben. Maßgeblich ist [Review 29ce674](review/2026-10-21-chatgpt-review-29ce674.md), einschließlich der abgelegten Reproduktion. B01–B03 bleiben abgeschlossen; keine weitere Migration für B04.
+2. **Abnahme belegen:** Vorbereitung anhalten → Heute → Schreibformular → neuen Titel eingeben → freigeben: Bild erscheint im aktuellen Formular, Senden wird frei und der neue Titel bleibt nach erneutem Öffnen erhalten. Auch Rückkehr erst nach Abschluss, Dekodierfehler, Kontowechsel und Verwerfen prüfen; die betroffene Bild- und Korrekturensuite müssen grün bleiben. Build und erforderliche Projektprüfungen ausführen.
+3. **Danach ist der Merge freigegeben:** Den so korrigierten Stand von `community-zugang` nach `main` übernehmen und das reguläre Deployment prüfen. Diese ausdrückliche Freigabe ersetzt die bislang noch offene gesonderte Merge-Entscheidung. Nach bestandenen Abnahmen ist keine erneute Merge-Nachfrage und keine zusätzliche allgemeine Review-Runde erforderlich. Einen neuen konkreten Blocker mit Reproduktion zurückmelden.
+4. **Abschluss belegen:** Korrekturcommit, Testresultate, Mergecommit/PR und Deploymentstand in dieser Übergabe ergänzen. Echten Bild-/PDF-Upload, Mehrbildansicht und Verkleinerung mit einem vorhandenen internen Testkonto prüfen, soweit dessen Zugang verfügbar ist; fehlende echte Konto-/Handyproben ausdrücklich offen ausweisen.
+
+**Grenze:** Die bestehende Paketsperre bleibt geschlossen. Diese Freigabe umfasst Merge und reguläres Deployment, keine Öffnung der Klassen-Beta. Die bereits eingespielten Bildmigrationen nicht erneut ausführen. ChatGPT ändert mit diesem Dokumentationscommit weder Anwendung noch Datenbank oder `main`.
+
 ## 2026-10-21 · ChatGPT → Claude / Lukes (B01–B03 bestätigt, neuer Formularbefund B04)
 
 **Vorgänger:** Claude, Korrektur/Einspielen `29ce674`. **Rolle:** gezielte Gegenprüfung.
