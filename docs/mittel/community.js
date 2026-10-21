@@ -641,26 +641,74 @@
         (Array.isArray(anhaenge) ? anhaenge : []).forEach(function (x, i) {
           pfade.push(anhangPfad(u.id, vorgang, i + 1, x && x.datei));
         });
-        return vorgangsDateienEntfernen(c, u.id, vorgang, pfade.filter(Boolean)).then(function () { return zustand; });
+        // Endstatus steht fest ("verworfen"); die Bereinigung ist davon getrennt (B02):
+        // Bleibt etwas liegen, merkt sich das Konto den Vorgang für „Jetzt entfernen“.
+        return vorgangAufraeumen(c, u.id, vorgang, pfade.filter(Boolean)).then(function (sauber) {
+          if (!sauber) resteMerken(u.id, vorgang, true);
+          return zustand;
+        });
       }, function (f) { throw unklar(text, vorgang, f); });
     }, konto);
   }
 
-  function vorgangsDateienEntfernen(c, konto, vorgang, pfade) {
-    var liste = c.storage.from(CFG.bucket).list
-      ? c.storage.from(CFG.bucket).list(konto, { search: vorgang, limit: 20 }).then(function (r) {
-          ((r && r.data) || []).forEach(function (o) {
-            if (o && o.name && o.name.indexOf(vorgang) === 0) pfade.push(konto + "/" + o.name);
-          });
-        }, function () {})
-      : Promise.resolve();
-    return liste.then(function () {
-      var einmal = pfade.filter(function (p, i) { return pfade.indexOf(p) === i; });
-      return einmal.reduce(function (kette, p) {
+  /* Entfernt alle Dateien eines verworfenen Vorgangs im eigenen Ordner, einzeln.
+     Maßgeblich ist, was der Speicher danach noch auflistet: Fehlerobjekt,
+     abgelehnter Aufruf und still nicht gelöschtes Objekt zählen gleich.
+     true = nichts mehr übrig; false = Reste (oder Prüfung nicht möglich). */
+  function vorgangAufraeumen(c, konto, vorgang, bekannt) {
+    var speicher = c.storage.from(CFG.bucket);
+    function auflisten() {
+      if (!speicher.list) return Promise.resolve(null);
+      return speicher.list(konto, { search: vorgang, limit: 100 }).then(function (r) {
+        if (r && r.error) throw r.error;
+        return ((r && r.data) || []).filter(function (o) { return o && o.name && o.name.indexOf(vorgang) === 0; })
+          .map(function (o) { return konto + "/" + o.name; });
+      });
+    }
+    return auflisten().then(function (da) {
+      var pfade = da === null ? bekannt.slice() : da;
+      return pfade.reduce(function (kette, p) {
+        return kette.then(function () { return speicher.remove([p]).then(function () {}, function () {}); });
+      }, Promise.resolve()).then(auflisten).then(function (rest) {
+        return rest === null ? true : rest.length === 0;
+      });
+    }).then(null, function () { return false; });
+  }
+
+  /* Reste verworfener Vorgänge je Konto (B02). Nur Vorgangskennungen, keine
+     Inhalte; Schlüssel ohne „azubipass:“, sonst hielte kern.js ihn für Lernstand. */
+  var RESTE = "azubipass-reste";
+  function resteLesen() {
+    try { var x = JSON.parse(localStorage.getItem(RESTE) || "{}"); return x && typeof x === "object" ? x : {}; }
+    catch (e) { return {}; }
+  }
+  function resteMerken(konto, vorgang, an) {
+    var x = resteLesen();
+    var l = (x[konto] || []).filter(function (v) { return v !== vorgang; });
+    if (an) l.push(vorgang);
+    if (l.length) x[konto] = l.slice(-50); else delete x[konto];
+    try { localStorage.setItem(RESTE, JSON.stringify(x)); } catch (e) {}
+    resteHoerer.forEach(function (h) { try { h(); } catch (e) {} });
+  }
+  var resteHoerer = [];
+  function beiResten(h) {
+    resteHoerer.push(h);
+    return function () { resteHoerer = resteHoerer.filter(function (x) { return x !== h; }); };
+  }
+  // Anzahl offener Reste für das angemeldete Konto (ohne Server).
+  function resteZahl() {
+    if (!kontoId) return 0;
+    return (resteLesen()[kontoId] || []).length;
+  }
+  // Erneut entfernen; Ergebnis: Anzahl der Vorgänge, bei denen noch etwas liegt.
+  function resteEntfernen() {
+    return gebunden(function (u, c) {
+      var offen = (resteLesen()[u.id] || []).slice();
+      return offen.reduce(function (kette, v) {
         return kette.then(function () {
-          return c.storage.from(CFG.bucket).remove([p]).then(function () {}, function () {});
+          return vorgangAufraeumen(c, u.id, v, []).then(function (sauber) { if (sauber) resteMerken(u.id, v, false); });
         });
-      }, Promise.resolve());
+      }, Promise.resolve()).then(function () { return (resteLesen()[u.id] || []).length; });
     });
   }
 
@@ -1155,6 +1203,7 @@
     aufgaben: aufgaben, aufgabe: aufgabe, aufgabeStellen: aufgabeStellen, aufgabeLoeschen: aufgabeLoeschen,
     hatGespeicherteSitzung: hatGespeicherteSitzung,
     gespeichertesKonto: gespeichertesKonto,
+    resteZahl: resteZahl, resteEntfernen: resteEntfernen, beiResten: beiResten,
     lernstandHolen: lernstandHolen, lernstandSpeichern: lernstandSpeichern,
     erledigt: erledigt, erledigtVon: erledigtVon,
     meldungSenden: meldungSenden, meldungStatus: meldungStatus, meineMeldungen: meineMeldungen,

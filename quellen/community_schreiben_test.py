@@ -243,8 +243,8 @@ def main():
             pruefe(text_da("Für alle in der Community") and text_da("Stell eine Frage oder teile einen Lernzettel oder Tipp."),
                    "Ziel und Einleitung")
             pruefe(seite.is_checked("#community input[value=frage]"), "Frage ist vorausgewählt")
-            pruefe(seite.is_visible("text=Frage an Mentor:innen richten") and not feld("Datei").is_visible(),
-                   "Bei Frage: Mentor:innen-Option, keine Datei")
+            pruefe(seite.is_visible("text=Frage an Mentor:innen richten") and feld("Bilder hinzufügen (optional)").is_visible()
+                   and not feld("PDF-Datei").is_visible(), "Bei Frage: Mentor:innen-Option, Bilder optional, kein PDF")
             ab_hier = len(anfragen)
             senden()
             seite.wait_for_selector("#community .cm-uebersicht")
@@ -274,29 +274,27 @@ def main():
             pruefe(text_da("Gib einen Text für deinen Tipp ein."), "Tipp: Text nur aus Leerzeichen ist leer")
             # Lernzettel
             art("lernzettel")
-            pruefe(seite.is_visible("text=Beschreibung (optional)") and feld("Datei").is_visible()
-                   and not seite.is_visible("text=Frage an Mentor:innen richten"), "Lernzettel: Beschreibung optional, Datei, keine Mentor:innen")
+            # Spec 07: Lernzettel mit Bildern (Standard) oder einem PDF
+            pruefe(seite.is_visible("text=Beschreibung (optional)") and feld("Bilder").is_visible()
+                   and not seite.is_visible("text=Frage an Mentor:innen richten"), "Lernzettel: Beschreibung optional, Bilder, keine Mentor:innen")
             pruefe(feld("Beschreibung (optional)").get_attribute("aria-required") is None, "Beschreibung ohne aria-required")
-            pruefe(text_da("JPG, PNG, WebP oder PDF, höchstens 5 MiB.") and text_da("Keine echten IHK-Prüfungsaufgaben"), "Datei-Hilfe und Uploadhinweis")
+            pruefe(text_da("Bis zu 5 Bilder. JPG, PNG oder WebP") and text_da("Keine echten IHK-Prüfungsaufgaben"), "Bild-Hilfe und Uploadhinweis")
             senden()
-            pruefe(text_da("Wähle eine Datei für deinen Lernzettel."), "Lernzettel ohne Datei: Fehler")
+            pruefe(text_da("Wähle mindestens ein Bild für deinen Lernzettel oder wechsle zu PDF."), "Lernzettel ohne Anhang: Fehler")
             ab_hier = len(anfragen)
-            feld("Datei").set_input_files({"name": "notiz.txt", "mimeType": "text/plain", "buffer": b"hallo"})
-            pruefe(text_da("Erlaubt sind JPG, PNG, WebP oder PDF."), "Falscher Typ: Fehler")
-            feld("Datei").set_input_files({"name": "gross.png", "mimeType": "image/png", "buffer": b"\0" * 5242881})
-            pruefe(text_da("Die Datei darf höchstens 5 MiB groß sein."), "5 MiB + 1 Byte: Fehler")
-            feld("Datei").set_input_files({"name": "genau.pdf", "mimeType": "application/pdf", "buffer": b"%PDF" + b"\0" * (5242880 - 4)})
-            pruefe(text_da("Ausgewählt: genau.pdf") and feld("Datei").get_attribute("aria-invalid") is None, "Exakt 5 MiB: zulässig")
+            feld("Bilder").set_input_files({"name": "notiz.txt", "mimeType": "text/plain", "buffer": b"hallo"})
+            pruefe(text_da("notiz.txt: Dieses Bildformat wird nicht unterstützt."), "Falscher Typ: Fehler mit Dateiname")
+            feld("Bilder").set_input_files({"name": "kontenrahmen.png", "mimeType": "image/png", "buffer": PNG})
+            pruefe(text_da("1 von 5 Bildern ausgewählt."), "Bild ausgewählt, Vorschau")
+            seite.check("#community input[name=cm-lz-modus][value=pdf]")
+            seite.click("dialog button:has-text('Bilder entfernen')")
+            feld("PDF-Datei").set_input_files({"name": "genau.pdf", "mimeType": "application/pdf", "buffer": b"%PDF" + b"\0" * (5242880 - 4)})
+            pruefe(text_da("Ausgewählt: genau.pdf") and feld("PDF-Datei").get_attribute("aria-invalid") is None, "PDF exakt 5 MiB: zulässig")
             pruefe(not [u for m, u, _ in anfragen[ab_hier:] if "/storage/v1/" in u], "Kein Upload bei Dateiauswahl")
-            # Art wechseln mit Datei
-            art("tipp")
-            pruefe(seite.is_visible("text=Die ausgewählte Datei wird bei dieser Beitragsart nicht veröffentlicht."),
-                   "Artwechsel mit Datei: klarer Hinweis")
-            art("lernzettel")
-            pruefe(text_da("Ausgewählt: genau.pdf"), "Zurück zu Lernzettel: Datei ist noch gewählt")
-            seite.click("#community button:has-text('Datei entfernen')")
+            seite.click("#community button:has-text('PDF entfernen')")
             pruefe(text_da("Keine Datei ausgewählt.") and ev("() => document.activeElement.type") == "file",
-                   "Datei entfernen, Fokus auf der Dateiauswahl")
+                   "PDF entfernen, Fokus auf der Dateiauswahl")
+            seite.check("#community input[name=cm-lz-modus][value=bilder]")
             # Lernfeld / Kapitel
             pruefe(not feld("Kapitel (optional)").is_visible(), "Kapitel erst nach Lernfeld")
             feld("Lernfeld (optional)").select_option("buchfuehrung")
@@ -373,13 +371,13 @@ def main():
             art("lernzettel")
             T_lz = PRAEFIX + "Lernzettel Kontenrahmen"
             feld("Titel").fill(T_lz)
-            feld("Datei").set_input_files({"name": "kontenrahmen.png", "mimeType": "image/png", "buffer": PNG})
+            feld("Bilder").set_input_files({"name": "kontenrahmen.png", "mimeType": "image/png", "buffer": PNG})
             senden()
             seite.wait_for_function("() => location.hash.startsWith('#community/beitrag/')", timeout=30000)
             P_lz = detail_id()
             seite.wait_for_selector("#community img.cm-bild", timeout=20000)
-            pfad = ev("(id) => T.roh(async (c) => (await c.from('beitrag').select('datei_pfad').eq('id', id).single()).data.datei_pfad)", P_lz)
-            pruefe(pfad.endswith("/" + P_lz + ".png"), "Lernzettel: Datei unter ‹konto›/‹vorgang›.png, Bild sichtbar", pfad)
+            pfad = ev("(id) => T.roh(async (c) => (await c.from('anhang').select('pfad').eq('beitrag_id', id).eq('position', 1).single()).data.pfad)", P_lz)
+            pruefe(pfad.endswith("/" + P_lz + "-1.png"), "Lernzettel: Anhang 1 unter ‹konto›/‹vorgang›-1.png, Bild sichtbar", pfad)
             # Doppelklick
             c06()
             T_doppel = PRAEFIX + "Doppelklick-Frage"
@@ -415,7 +413,7 @@ def main():
             art("lernzettel")
             T_lzv = PRAEFIX + "Lernzettel, Antwort verloren"
             feld("Titel").fill(T_lzv)
-            feld("Datei").set_input_files({"name": "z.png", "mimeType": "image/png", "buffer": PNG})
+            feld("Bilder").set_input_files({"name": "z.png", "mimeType": "image/png", "buffer": PNG})
             seite.route(RPC_B, verlieren)
             ab_hier = len(anfragen)
             senden()
@@ -451,7 +449,7 @@ def main():
             c06()
             art("lernzettel")
             feld("Titel").fill(PRAEFIX + "Wird abgelehnt")
-            feld("Datei").set_input_files({"name": "a.png", "mimeType": "image/png", "buffer": PNG})
+            feld("Bilder").set_input_files({"name": "a.png", "mimeType": "image/png", "buffer": PNG})
             seite.route(RPC_B, lambda r: r.fulfill(status=400, content_type="application/json",
                         body=json.dumps({"code": "P0001", "message": "Die Datei ist nicht hochgeladen.", "details": None, "hint": None})))
             senden()
@@ -487,7 +485,7 @@ def main():
             art("lernzettel")
             T_wechsel = PRAEFIX + "Darf nie unter Ben erscheinen"
             feld("Titel").fill(T_wechsel)
-            feld("Datei").set_input_files({"name": "w.png", "mimeType": "image/png", "buffer": PNG})
+            feld("Bilder").set_input_files({"name": "w.png", "mimeType": "image/png", "buffer": PNG})
             gehalten = []
             seite.route(SPEICHER, lambda r: gehalten.append(r) if r.request.method == "POST" else r.continue_())
             ab_hier = len(anfragen)

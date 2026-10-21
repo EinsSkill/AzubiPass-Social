@@ -1,0 +1,122 @@
+Ohne Anmeldung
+  OK   [mock] Status lokal
+  OK   [mock] Ich: nur in diesem Browser, Hinweis auf Anmeldung  Dein Lernstand liegt nur in diesem Browser. Melde dich unter
+  OK   [mock] Nichts gesendet
+  OK   [mock] Kein Abgleich-Knopf
+  OK   [mock] axe ohne WCAG-Verstöße: Ich ohne Anmeldung
+Erste Anmeldung: Gerätestand hochladen
+  OK   [mock] Server hat den Gerätestand, Version 1
+  OK   [mock] Basis 0
+  OK   [mock] Merkzettel: Konto und Version  {'nutzer': '00000000-0000-4000-a000-00000000a001', 'version': 1, 'am': '2026-10-20T08:00:00.000Z'}
+  OK   [mock] Merkzettel nicht im alten Lernstand-Namensraum
+  OK   [mock] Ich: in deinem Konto gespeichert
+  OK   [mock] Abgleich-Knopf sichtbar
+  OK   [mock] axe ohne WCAG-Verstöße: Ich angemeldet
+Änderung wird gebündelt gesendet
+  OK   [mock] Server Version 2 mit neuer Änderung
+  OK   [mock] Ohne Änderung kein erneutes Senden
+Zurücksetzen gilt auch im Konto
+  OK   [mock] Rückfrage nennt das Konto  ['Wirklich alles zurücksetzen? Fortschritt, Karteikarten, Lesezeichen und Notizen sind dann weg – auch in deinem Konto und auf deinen anderen Geräten. Das lässt sich nicht rückgängig machen.']
+  OK   [mock] Server nach Zurücksetzen leer
+Anderes Gerät war neuer, hier nichts geändert: übernehmen
+  OK   [mock] Gerät hat den Serverstand  ['a', 'x', 'y']
+  OK   [mock] Nichts gesendet
+Beide geändert: zusammenführen
+  OK   [mock] Gerät: beide Stände vereint  ['a', 'dort', 'hier']
+  OK   [mock] Server Version 4 vereint
+  OK   [mock] Gesendet mit Basis 3
+Gleichzeitig gespeichert: neu holen, zusammenführen, erneut senden
+  OK   [mock] Gerät hat alle drei  ['a', 's1', 's2']
+  OK   [mock] Basis 1 abgelehnt, dann Basis 2  [1, 2]
+  OK   [mock] Server Version 3
+Anderes Konto auf diesem Gerät
+  OK   [mock] Eigener Stand statt des vorherigen Kontos  ['annas-stand']
+  OK   [mock] Vorheriger Stand nicht ins Konto geschrieben
+  OK   [mock] Konto ohne Stand: leer beginnen, nichts übernommen
+Kontowechsel während der Sitzung
+  OK   [mock] Nach Wechsel zu Ben: Bens Stand
+  OK   [mock] Annas Konto unverändert
+Ohne Profil, ohne Netz
+  OK   [mock] Gerätestand bleibt
+  OK   [mock] Gerätestand bleibt offline
+  OK   [mock] Jetzt abgleichen holt nach
+  OK   [mock] axe ohne WCAG-Verstöße: Ich nach Abgleich
+LS01: Erstabruf scheitert, A lernt, Wechsel zu B mit Serverstand
+  OK   [mock] Gerätestand gehört schon vor dem ersten Erfolg zu A  {'nutzer': '00000000-0000-4000-a000-00000000a001', 'version': None, 'am': None}
+  OK   [mock] Anzeige in B nur mit Bs Stand  ['B-eigen']
+  OK   [mock] Bs Server ohne Daten von A  ['B-eigen']
+  OK   [mock] Kein Upload mit Daten von A
+LS01: zurück zu A – zurückgelegter Stand kommt in As Konto
+  OK   [mock] A sieht seinen offline gelernten Stand wieder  ['A-privat']
+  OK   [mock] As Server hat ihn jetzt  ['A-privat']
+  OK   [mock] Bs Server weiter unverändert
+  OK   [mock] Zurückgelegter Stand danach aufgeräumt
+LS01: Erstabruf scheitert, Wechsel zu B ohne Serverstand
+  OK   [mock] B beginnt leer  []
+  OK   [mock] Bs erster Upload ohne Daten von A  []
+LS01: erste Speicherantwort verloren
+  OK   [mock] Server hat As ersten Stand, Antwort kam nicht an
+  OK   [mock] B weder angezeigt noch gesendet mit Daten von A  ['B-eigen']
+  OK   [mock] A: verlorene Antwort aufgelöst, Stand im Konto  ['A-privat']
+LS01: Abmelden, dann anderes Konto
+  OK   [mock] B ohne As Stand nach Abmelden  ['B-eigen']
+LS01: Neustart nach dem Fehler, gespeicherte Sitzung gehört schon B
+  OK   [mock] Ohne Netz: B sieht sofort nichts von A  []
+  OK   [mock] Nichts von A in B, nichts gesendet
+LS01: tatsächlich anonymer Gerätestand geht weiter ins erste Konto
+  OK   [mock] Erstübernahme wie bisher  ['anonym']
+LS02: Lernzettelseite bei offenem App-Tab
+  OK   [mock] App-Tab übernimmt die Änderung der Lernzettelseite
+  OK   [mock] Jetzt abgleichen sendet sie  ['Kapitel-neu', 'Start']
+  OK   [mock] Nächste App-Änderung verdrängt nichts  (['App-neu', 'Kapitel-neu', 'Start'], ['App-neu', 'Kapitel-neu', 'Start'])
+  OK   [mock] Lernzettelseite nach Neuladen vollständig  ['App-neu', 'Kapitel-neu', 'Start']
+LS02: zwei App-Tabs, Tab 2 speichert zuerst erfolgreich
+  OK   [mock] Tab 1 zeigt nach dem Abgleich auch Tab2-neu  ['Start', 'Tab2-neu']
+  OK   [mock] Server behält beide Änderungen  ['Start', 'Tab1-neu', 'Tab2-neu']
+  OK   [mock] Nach Neuladen beide da  ['Start', 'Tab1-neu', 'Tab2-neu']
+LS02: gleichzeitige lokale Änderungen in zwei Tabs
+  OK   [mock] zwei wartet noch im Tab
+  OK   [mock] Beide Änderungen im Browser und im Tab  (['Start', 'drei', 'eins', 'zwei'], ['Start', 'drei', 'eins', 'zwei'])
+  OK   [mock] Weitere Änderung der Lernzettelseite kommt an
+LS02: Rückkehr aus dem Hintergrund und Neustart
+  OK   [mock] Rückkehr holt verpasste Änderung in den Tab  ['Start', 'drei', 'eins', 'verpasst', 'vier', 'zwei']
+  OK   [mock] Server hat alles  ['Start', 'drei', 'eins', 'verpasst', 'vier', 'zwei']
+  OK   [mock] Nach Neustart alles da  ['Start', 'drei', 'eins', 'verpasst', 'vier', 'zwei']
+LS02: Kontowechsel im anderen Tab – Reste wandern nicht mit
+  OK   [mock] Bündel von A landet nicht im Stand von B  (['B'], ['B'])
+LS03: Selbsttest, Bewertung, Check, Zuordnen nach Übernahme
+  OK   [mock] Arbeitsspeicher hat die neue Antwort  ['Neue Antwort nach Abgleich']
+  OK   [mock] Browser-Speicher hat die neue Antwort  ['Neue Antwort nach Abgleich']
+  OK   [mock] Selbsttest-Bewertung gespeichert
+  OK   [mock] Check-Antwort gespeichert  {'lf1-k3-c3-c1': {'a': -168324909, 'o': 'lf1-k3-c3-c1-o086d54d95595', 'r': False}}
+  OK   [mock] Zuordnung gespeichert  {'lf1-k3-c3-z1': {'a': -1773691246, 'w': {'0': 0}, 'f': 0}}
+  OK   [mock] Änderung des anderen Tabs bleibt erhalten
+LS03: zweite Übernahme löst die Bindung nicht
+  OK   [mock] Gespeichert nach zweiter Übernahme  ['Antwort nach zweiter Übernahme']
+  OK   [mock] Beide fremden Änderungen erhalten  ['extern-1', 'extern-2']
+LS03: nächster Kontoabgleich und Neuladen
+  OK   [mock] Konto hat Antwort, Check und Zuordnung  {'ziele': [], 'checks': {'lf1-k3-c3-c1': {'a': -168324909, 'o': 'lf1-k3-c3-c1-o086d54d95595', 'r': False}}, 'zuordnen': {'lf1-k3-c3-z1': {'a': -1773691246, 'w': {'0': 0}, 'f': 0}}, 'test': {'lf1-k3-t1': {'a': -820558439, 't': 'Antwort nach zweiter Übernahme', 'z': None}, 'lf1-k3-t2': {'a': -716882003}, 'lf1-k3-t3': {'a': 72212860}}, 'fertig': False}
+  OK   [mock] Nach Neuladen: neue Antwort im Feld  Antwort nach zweiter Übernahme
+  OK   [mock] Nach Neuladen: Check beantwortet
+  OK   [mock] Nach Neuladen: Zuordnung da
+LS03: anderer Tab setzt zurück, dann weiter tippen
+  OK   [mock] Eintrag wird wieder angehängt und gespeichert  ['Nach Zuruecksetzen getippt']
+  OK   [mock] Als Lücke markiert gespeichert
+LS04: Wechsel zu B ohne Kapitelstand, dann im offenen Kapitel weiter
+  OK   [mock] Kapitel zeigt nach dem Wechsel Bs Stand (keine A-Antworten)  ['', '', '']
+  OK   [mock] Check von A nicht mehr sichtbar
+  OK   [mock] Lokaler B-Stand: nur Bs Eingabe, keine A-Antwort  {"ziele": [], "checks": {"lf1-k3-c3-c1": {"a": -168324909, "o": "lf1-k3-c3-c1-o66d3e54d7f91", "r": true}}, "zuordnen": {"lf1-k3-c3-z1": {"a": -1773691246, "w": 
+  OK   [mock] Bs Konto nach Abgleich ohne A-Antworten  {"version": 3, "fortschritt": {"lf1-k3": {"ziele": [], "checks": {"lf1-k3-c3-c1": {"a": -168324909, "o": "lf1-k3-c3-c1-o66d3e54d7f91", "r": true}}, "zuordnen": {"lf1-k3-c3-z1": {"a": -1773691246, "w":
+  OK   [mock] Check und Zuordnung in B nur aus Bs Eingabe  {'ziele': [], 'checks': {'lf1-k3-c3-c1': {'a': -168324909, 'o': 'lf1-k3-c3-c1-o66d3e54d7f91', 'r': True}}, 'zuordnen': {'lf1-k3-c3-z1': {'a': -1773691246, 'w': {'0': 1}, 'f': 1}}, 'test': {'lf1-k3-t1': {'a': -820558439, 't': 'B neue Antwort'}, 'lf1-k3-t2': {'a': -716882003}, 'lf1-k3-t3': {'a': 72212860}}, 'fertig': False}
+LS04: Rückkehr zu A
+  OK   [mock] As Konto unbeschädigt  ['A private Antwort', 'A weitere private Antwort']
+  OK   [mock] Kapitel zeigt wieder As Antwort
+LS04: Wechsel zu B mit eigenem Kapitelstand
+  OK   [mock] Kapitel zeigt Bs eigene Antwort  ['B eigene Antwort', '', '']
+  OK   [mock] Bs Konto ohne A-Antworten  {"version": 3, "fortschritt": {"lf1-k3": {"ziele": [], "checks": {"lf1-k3-c3-c1": {"a": -168324909}}, "zuordnen": {"lf1-k3-c3-z1": {"a": -1773691246, "w": {}}}, "fertig": false, "test": {"lf1-k3-t1": 
+  OK   [mock] Bs eigene und neue Antwort erhalten
+LS04: festgehaltenes Fach des vorherigen Kontos wird nicht wieder angehängt
+  OK   [mock] Wiederanbindung nach Kontowechsel abgelehnt
+  OK   [mock] Im selben Konto weiter erlaubt (Zurücksetzen)
+
+Alles bestanden

@@ -1,4 +1,4 @@
--- AzubiPass Social · Bilder im Feed (Spec 07), Teil 2: Anhänge prüfen (intern).
+-- AzubiPass Social · Bilder im Feed (Spec 07), Teil 3: Anhänge prüfen (intern).
 -- Sperrt alle Speicherobjekte in fester Reihenfolge (nach Name, G06) und prüft dann
 -- Pfad, Format, Größe und Kombination. Art/Größe kommen aus storage.objects, nicht vom Client.
 -- Ergebnis: geordnete Liste [{pos, pfad, art, groesse, beschreibung}]. Kein Ausführrecht für Konten.

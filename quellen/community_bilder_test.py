@@ -12,8 +12,12 @@ Die Serverseite prüfen supabase/tests/anhang_test.sql und konkurrenz.py bilder.
 Keine Zugangsdaten, kein echtes Konto, kein echter Speicher.
 """
 
+import base64
 import functools
+import os
 import socketserver
+import struct
+import zlib
 import sys
 import threading
 
@@ -29,7 +33,8 @@ SPEICHER_JS = r"""
   const c = window.supabase.createClient();
   const orig = c.storage.from;
   F.hoch = { reihe: [], halten: 0, gehalten: [], scheitern: {} };      // scheitern[nr] = true → n-ter Upload schlägt fehl
-  F.runter = { anzahl: 0, jetzt: 0, max: 0, pfade: [], scheitern: 0, verzoegerung: 60 };
+  F.runter = { anzahl: 0, jetzt: 0, max: 0, pfade: [], scheitern: 0, kaputt: 0, verzoegerung: 60 };
+  F.loeschen = { modus: null, anzahl: 0, versuche: 0 };      // modus: "fehler" | "ablehnen" | "still"
   let hochNr = 0;
   c.storage.from = (b) => {
     const o = orig(b);
@@ -44,12 +49,25 @@ SPEICHER_JS = r"""
       if (F.hoch.halten > 0) { F.hoch.halten--; return new Promise(ja => F.hoch.gehalten.push(() => ja(weiter()))); }
       return weiter();
     };
+    const rm = o.remove;
+    o.remove = (pfade) => {
+      F.loeschen.versuche++;
+      if (F.loeschen.anzahl > 0) {
+        F.loeschen.anzahl--;
+        if (F.loeschen.modus === "fehler") return Promise.resolve({ data: null, error: { message: "Interner Fehler", statusCode: "500" } });
+        if (F.loeschen.modus === "ablehnen") return Promise.reject(new TypeError("Failed to fetch"));
+        if (F.loeschen.modus === "still") return Promise.resolve({ data: [], error: null });
+      }
+      return rm(pfade);
+    };
     o.download = (pfad) => {
       F.runter.anzahl++; F.runter.jetzt++; F.runter.max = Math.max(F.runter.max, F.runter.jetzt); F.runter.pfade.push(pfad);
       return new Promise(ja => setTimeout(() => {
         F.runter.jetzt--;
         if (F.runter.scheitern > 0) { F.runter.scheitern--; ja({ data: null, error: { message: "Fehler", statusCode: "500" } }); return; }
-        ja({ data: new Blob(["x"], { type: "image/png" }), error: null });
+        // Normalfall: gültige PNG-Bytes (B03); F.runter.kaputt = n → n nicht darstellbare Antworten.
+        if (F.runter.kaputt > 0) { F.runter.kaputt--; ja({ data: new Blob(["kein bild"], { type: "image/png" }), error: null }); return; }
+        ja({ data: new Blob([Uint8Array.from(atob("%PNG64%"), ch => ch.charCodeAt(0))], { type: "image/png" }), error: null });
       }, F.runter.verzoegerung));
     };
     return o;
@@ -66,6 +84,16 @@ SPEICHER_JS = r"""
 """
 
 
+def rauschen_png(w, h):
+    """Großes, schlecht komprimierbares PNG (> 5 MiB) für die automatische Verkleinerung."""
+    roh = b"".join(b"\x00" + os.urandom(w * 3) for _ in range(h))
+
+    def stueck(t, d):
+        return struct.pack(">I", len(d)) + t + d + struct.pack(">I", zlib.crc32(t + d) & 0xffffffff)
+    return (b"\x89PNG\r\n\x1a\n" + stueck(b"IHDR", struct.pack(">IIBBBBB", w, h, 8, 2, 0, 0, 0))
+            + stueck(b"IDAT", zlib.compress(roh, 1)) + stueck(b"IEND", b""))
+
+
 def main():
     PNG = basis.png()
     GROSS = PNG + b"\0" * (5242880 - len(PNG))          # exakt 5 MiB
@@ -79,7 +107,7 @@ def main():
             def neue_seite(ziel="heute", vorher="", breite=390):
                 ctx = browser.new_context(viewport={"width": breite, "height": 844}, service_workers="block", locale="de-DE")
                 ctx.add_init_script(basis.FAKE_JS)
-                ctx.add_init_script(SPEICHER_JS)
+                ctx.add_init_script(SPEICHER_JS.replace("%PNG64%", base64.b64encode(PNG).decode()))
                 if vorher:
                     ctx.add_init_script(vorher)
                 s = ctx.new_page()
@@ -116,6 +144,9 @@ def main():
 
             def bilder_waehlen(s, dateien):
                 s.locator("form.cm-schreiben input[type=file][multiple]").set_input_files(files=dateien)
+                # Auswahl wird jetzt dekodiert und ggf. verkleinert (asynchron).
+                s.wait_for_function("(() => { const v = document.querySelector('.cm-vorbereitung'); return !v || v.hidden; })()",
+                                    timeout=30000)
 
             def namen(s):
                 return ev(s, "[...document.querySelectorAll('.cm-bildwahl-name')].map(x => x.textContent.split(' · ')[1])")
@@ -197,11 +228,29 @@ def main():
             pruefe(len(namen(s)) == 5 and s.get_by_text("Du kannst höchstens 5 Bilder hinzufügen.").count() >= 1, "6 Bilder: 5 übernommen, Hinweis")
             s.get_by_role("button", name="Bild 5 entfernen").click()
             s.get_by_role("button", name="Bild 4 entfernen").click()
-            bilder_waehlen(s, [bild("anim.gif", typ="image/gif"), bild("genau.png", GROSS), bild("zu-gross.png", GROSS + b"\0")])
+            bilder_waehlen(s, [bild("anim.gif", typ="image/gif"), bild("kaputt.png", b"kein bild"), bild("genau.png", GROSS),
+                               bild("zu-gross.png", GROSS + b"\0")])
             pruefe(s.get_by_text("anim.gif: Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP.").count() >= 1
-                   and s.get_by_text("zu-gross.png: Dieses Bild ist größer als 5 MiB.").count() >= 1, "Format und +1 Byte mit Grund abgelehnt")
-            pruefe(namen(s) == ["x1.png", "x2.png", "x3.png", "genau.png"], "Exakt 5 MiB zulässig, gültige Auswahl bleibt", namen(s))
+                   and s.get_by_text("kaputt.png: Dieses Bild konnte nicht gelesen werden.").count() >= 1,
+                   "Format und nicht lesbares Bild mit Grund abgelehnt", ev(s, "document.querySelector('.cm-schreiben .cm-feld .cm-fehler, .cm-schreiben [id$=-f]') && [...document.querySelectorAll('.cm-schreiben p')].map(p => p.textContent).filter(t => t.includes(':')).join(' | ')"))
+            pruefe(namen(s) == ["x1.png", "x2.png", "x3.png", "genau.png", "zu-gross.jpg"],
+                   "Exakt 5 MiB unverändert; 5 MiB + 1 Byte automatisch verkleinert; gültige Auswahl bleibt", namen(s))
+            pruefe(s.get_by_text("Automatisch verkleinert (vorher 5,0 MB)").count() == 1, "Hinweis „Automatisch verkleinert“ nur am verkleinerten Bild")
             axe(s, "Formular mit Bildfehlern")
+            ctx.close()
+
+            print("Automatische Verkleinerung eines großen Fotos")
+            GROSSFOTO = rauschen_png(1500, 1300)
+            ctx, s = neue_seite()
+            formular(s, "Großes Foto")
+            bilder_waehlen(s, [bild("handyfoto.png", GROSSFOTO)])
+            pruefe(len(GROSSFOTO) > 5242880 and namen(s) == ["handyfoto.jpg"], "Foto über 5 MiB angenommen und als JPEG vorbereitet",
+                   [len(GROSSFOTO), namen(s)])
+            pruefe(s.locator(".cm-verkleinert").count() == 1, "Sichtbarer Hinweis mit Bitte, die Lesbarkeit zu prüfen")
+            senden(s)
+            s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0", timeout=20000)
+            a = rpc(s)
+            pruefe(a["p_anhaenge"][0]["pfad"].endswith("-1.jpg"), "Hochgeladen als ‹vorgang›-1.jpg", a["p_anhaenge"][0]["pfad"])
             ctx.close()
 
             print("Lernzettel: Bilder, PDF, ohne Anhang, Artwechsel")
@@ -270,6 +319,39 @@ def main():
             pruefe(sorted(ev(s, "FAKE.entfernt")) == [f"{ich}/{v}-{i}.png" for i in (1, 2, 3)], "„Verworfen“: alle drei Dateien entfernt",
                    ev(s, "FAKE.entfernt"))
             ctx.close()
+            print("B02 · Bereinigung schlägt fehl: Wiederholungsweg bleibt")
+            for modus in ("fehler", "ablehnen", "still"):
+                ctx, s = neue_seite()
+                formular(s, f"Bereinigung {modus}")
+                bilder_waehlen(s, [bild("r1.png"), bild("r2.png"), bild("r3.png")])
+                ev(s, "FAKE.plan.beitrag_mit_anhaengen = ['503']")
+                senden(s)
+                warte(s, "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.")
+                ev(s, f"FAKE.loeschen.modus = '{modus}'; FAKE.loeschen.anzahl = 3")
+                s.get_by_role("button", name="Eingaben ändern").click()
+                warte(s, "Du kannst deine Eingaben jetzt ändern.")
+                v, ich = rpc(s)["p_vorgang"], ev(s, "FAKE.ICH")
+                reste = ev(s, f"Object.keys(FAKE.db.dateien).filter(p => p.indexOf('{ich}/{v}') === 0).length")
+                pruefe(reste == 3 and s.get_by_role("button", name="Jetzt entfernen").count() == 1,
+                       f"{modus}: Reste bleiben sichtbar mit „Jetzt entfernen“", reste)
+                # neue Veröffentlichung mit neuer Kennung, danach Reste weiterhin erreichbar
+                s.get_by_label("Titel").fill(f"Bereinigung {modus} – neu")
+                senden(s)
+                s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0")
+                neu_id = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen.slice(-1)[0].p_vorgang")
+                ev(s, "location.hash = '#community'")
+                s.get_by_role("button", name="Jetzt entfernen").wait_for()
+                s.get_by_role("button", name="Jetzt entfernen").click()
+                warte(s, "Die Dateien wurden entfernt.")
+                weg = ev(s, f"Object.keys(FAKE.db.dateien).filter(p => p.indexOf('{ich}/{v}') === 0).length")
+                bleibt = ev(s, f"Object.keys(FAKE.db.dateien).filter(p => p.indexOf('{ich}/{neu_id}') === 0).length")
+                pruefe(weg == 0 and bleibt == 3, f"{modus}: Wiederholung entfernt alle Reste, Dateien des neuen Beitrags bleiben",
+                       [weg, bleibt])
+                pruefe(ev(s, "localStorage.getItem('azubipass-reste')") in (None, "{}") and
+                       ev(s, "Object.keys(localStorage).every(k => k.indexOf('azubipass:') !== 0 || k === 'azubipass:konto')"),
+                       f"{modus}: Merkzettel leer, kein Schlüssel im Lernstand-Namensraum")
+                ctx.close()
+
             ctx, s = neue_seite()
             formular(s, "Doppelklick")
             bilder_waehlen(s, [bild("d1.png")])
@@ -364,7 +446,7 @@ def main():
               F.logik.eigener_inhalt = (a) => {{ const r = altEigen(a); if (r.data) {{ r.data.datei_pfad = F.ICH + '/{mod.B2}-1.png'; r.data.datei_art = 'bild'; }} return r; }};
             }})();"""
             ctx = browser.new_context(viewport={"width": 390, "height": 844}, service_workers="block", locale="de-DE")
-            for skript in (basis.FAKE_JS, SPEICHER_JS, mod.MOD_JS, mod.TEAM_JS, ANH):
+            for skript in (basis.FAKE_JS, SPEICHER_JS.replace("%PNG64%", base64.b64encode(PNG).decode()), mod.MOD_JS, mod.TEAM_JS, ANH):
                 ctx.add_init_script(skript)
             s = ctx.new_page()
             s.goto(url + "app.html#community/moderation/fall/beitrag/" + mod.B1)
@@ -375,7 +457,7 @@ def main():
             pruefe(ev(s, "FAKE.runter.anzahl") == 3 and s.locator(".cm-datei img.cm-bild").count() == 3, "Team: alle drei Anhänge geprüft")
             ctx.close()
             ctx = browser.new_context(viewport={"width": 390, "height": 844}, service_workers="block", locale="de-DE")
-            for skript in (basis.FAKE_JS, SPEICHER_JS, mod.MOD_JS, ANH):
+            for skript in (basis.FAKE_JS, SPEICHER_JS.replace("%PNG64%", base64.b64encode(PNG).decode()), mod.MOD_JS, ANH):
                 ctx.add_init_script(skript)
             s = ctx.new_page()
             s.goto(url + "app.html#community/eigener-inhalt/beitrag/" + mod.B2)
@@ -383,6 +465,31 @@ def main():
             s.get_by_role("button", name="Datei prüfen").click()
             s.get_by_role("link", name="Bild 2 öffnen").wait_for()
             pruefe(ev(s, "FAKE.runter.anzahl") == 2, "Eigener ausgeblendeter Beitrag: beide Anhänge über den Sonderweg")
+            ctx.close()
+
+            print("B03 · Download gelingt, Bild nicht darstellbar")
+            ctx, s = neue_seite("community", vorher="FAKE.bildBeitrag('00000000-0000-4000-a000-0000000d0001', 3, 'Kaputtes Bild'); FAKE.runter.kaputt = 1;")
+            warte(s, "Das Bild konnte nicht geladen werden.")
+            pruefe(s.locator(".cm-feedbild-fehler button").count() == 1, "Feed: Fehlermeldung und „Erneut versuchen“")
+            vorher = ev(s, "FAKE.runter.anzahl")
+            s.locator(".cm-feedbild-fehler").get_by_role("button", name="Erneut versuchen").click()
+            s.wait_for_function("(() => { const i = document.querySelector('.cm-feedbild-img'); return i && i.complete && i.naturalWidth > 0; })()")
+            pruefe(ev(s, "FAKE.runter.anzahl") == vorher + 1, "Feed: neuer angemeldeter Abruf, Bild dekodiert (naturalWidth > 0)")
+            ev(s, "FAKE.runter.kaputt = 2")          # Galerie und große Ansicht holen Bild 1 gleichzeitig
+            s.locator(".cm-feedbild-knopf").first.click()
+            s.locator("dialog.cm-grossbild").wait_for()
+            s.locator("dialog.cm-grossbild").get_by_text("Das Bild konnte nicht geladen werden.").wait_for()
+            s.locator("dialog.cm-grossbild").get_by_role("button", name="Erneut versuchen").click()
+            s.wait_for_function("(() => { const i = document.querySelector('.cm-grossbild-img'); return i && i.complete && i.naturalWidth > 0; })()")
+            pruefe(True, "Große Ansicht: Fehlerzustand, Erneut versuchen lädt neu")
+            s.keyboard.press("Escape")
+            s.wait_for_function("!document.querySelector('dialog')")
+            ev(s, "FAKE.runter.kaputt = 1")
+            s.get_by_role("button", name="Bild 2", exact=True).click()
+            s.locator(".cm-galerie").get_by_text("Das Bild konnte nicht geladen werden.").wait_for()
+            s.locator(".cm-galerie").get_by_role("button", name="Erneut versuchen").click()
+            s.wait_for_function("(() => { const i = document.querySelector('.cm-galerie img.cm-bild'); return i && i.complete && i.naturalWidth > 0; })()")
+            pruefe(True, "Galerie: Fehlerzustand, Erneut versuchen lädt neu")
             ctx.close()
 
             print("320 px")

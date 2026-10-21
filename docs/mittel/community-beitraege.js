@@ -132,6 +132,45 @@
     return x.beschreibung ? x.beschreibung : "Bild " + (i + 1) + " von " + n + " zum Beitrag „" + titel + "“";
   }
 
+  /* B02: Hochgeladene Dateien eines verworfenen Versuchs, die nicht entfernt
+     werden konnten. Sichtbar mit erreichbarem Wiederholungsweg; die Dateien
+     sind privat (eigener Ordner) und gehören zu keinem Beitrag. */
+  function restHinweis(ctx) {
+    var box = el("div", "cm-rest");
+    box.setAttribute("role", "status");
+    var abmelden = null;
+    function zeigen(text, fehler) {
+      box.innerHTML = "";
+      var n = AP.community.resteZahl ? AP.community.resteZahl() : 0;
+      if (!n && !text) { box.hidden = true; return; }
+      box.hidden = false;
+      if (n) {
+        box.appendChild(el("p", "meldung" + (fehler ? " fehler" : ""), (text ? text + " " : "") +
+          "Von einem abgebrochenen Versuch liegen noch hochgeladene Dateien in deinem privaten Speicher. Sie gehören zu keinem Beitrag und sind für andere nicht sichtbar."));
+        var k = knopf("Jetzt entfernen", "kn-neben cm-neben", function () {
+          k.disabled = true;
+          k.setAttribute("aria-busy", "true");
+          AP.community.resteEntfernen().then(function (rest) {
+            if (!ctx.gilt()) return;
+            zeigen(rest ? "Es konnten noch nicht alle Dateien entfernt werden. Versuch es später erneut." : "Die Dateien wurden entfernt.", !!rest);
+          }, function () {
+            if (!ctx.gilt()) return;
+            zeigen("Es konnten noch nicht alle Dateien entfernt werden. Versuch es später erneut.", true);
+          });
+        });
+        box.appendChild(k);
+      } else {
+        box.appendChild(el("p", "meldung", text));
+      }
+    }
+    zeigen();
+    if (AP.community.beiResten) abmelden = AP.community.beiResten(function () {
+      if (!box.isConnected) { abmelden(); return; }
+      zeigen();
+    });
+    return box;
+  }
+
   var grossNachLaden = null;   // { id, index } – nach Antippen im Feed die große Ansicht öffnen
 
   /* ================================================== Hilfen */
@@ -223,6 +262,7 @@
     r.appendChild(oben);
     r.appendChild(kopf);
     r.appendChild(ctx.hinweiszeile());
+    r.appendChild(restHinweis(ctx));
     if (AP.communityGruppen) r.appendChild(AP.communityGruppen.lokalnav("beitraege"));
     var schreibReihe = el("div", "cm-reihe cm-schreiben-reihe");
     var schreibLink = verweis("Beitrag schreiben", "#community/schreiben", "kn-haupt cm-haupt");
@@ -445,11 +485,28 @@
       function laden() {
         fehlerPlatz.innerHTML = "";
         rahmen.classList.add("laedt");
-        bildHolen(anh[0].pfad, function () { return ctx.gilt() && rahmen.isConnected; }).then(function (d) {
+        function fehlschlag() {
           rahmen.classList.remove("laedt");
+          rahmen.innerHTML = "";
+          fehlerPlatz.innerHTML = "";
+          var p = el("p", "meldung fehler", "Das Bild konnte nicht geladen werden.");
+          fehlerPlatz.appendChild(p);
+          // Neuer angemeldeter Abruf, nicht dieselbe (kaputte) Objektadresse.
+          fehlerPlatz.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", laden));
+        }
+        bildHolen(anh[0].pfad, function () { return ctx.gilt() && rahmen.isConnected; }).then(function (d) {
           var img = el("img", "cm-feedbild-img");
           img.alt = "";
           img.decoding = "async";
+          // B03: Download gelungen, Bild aber nicht darstellbar → derselbe Fehlerzustand.
+          img.addEventListener("error", function () {
+            var i = feed.bilder.indexOf(x);
+            if (i >= 0) feed.bilder.splice(i, 1);
+            AP.community.dateiFreigeben(d);
+            x.d = null;
+            if (ctx.gilt() && rahmen.isConnected) fehlschlag();
+          });
+          img.addEventListener("load", function () { rahmen.classList.remove("laedt"); });
           img.src = d.url;
           rahmen.innerHTML = "";
           rahmen.appendChild(img);
@@ -458,9 +515,7 @@
         }, function (f) {
           rahmen.classList.remove("laedt");
           if (!ctx.gilt() || !rahmen.isConnected || (f && f.art === "veraltet")) return;
-          var p = el("p", "meldung fehler", "Das Bild konnte nicht geladen werden.");
-          fehlerPlatz.appendChild(p);
-          fehlerPlatz.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", laden));
+          fehlschlag();
         });
       }
       function beobachten() {
@@ -792,6 +847,13 @@
         nav.appendChild(zur);
         box.appendChild(nav);
       }
+      // Nicht darstellbares Bild: Adresse freigeben, damit der nächste Versuch neu abruft.
+      function vergessenBild(i, d) {
+        if (geladen[i] === d) delete geladen[i];
+        var k = dateien.indexOf(d);
+        if (k >= 0) dateien.splice(k, 1);
+        AP.community.dateiFreigeben(d);
+      }
       function holen(i) {
         if (geladen[i]) return Promise.resolve(geladen[i]);
         return bildHolen(bilder[i].pfad, function () { return ctx.gilt(); }).then(function (d) {
@@ -812,22 +874,31 @@
         fehlerPlatz.innerHTML = "";
         rahmen.innerHTML = "";
         rahmen.classList.add("laedt");
-        holen(i).then(function (d) {
-          if (!ctx.gilt() || jetzt !== i) return;
+        function fehlschlag() {
           rahmen.classList.remove("laedt");
-          var img = el("img", "cm-bild");
-          img.alt = bildAlt(bilder[i], i, n, b.titel);
-          img.src = d.url;
-          rahmen.appendChild(img);
-        }, function (f) {
-          if (!ctx.gilt() || jetzt !== i || (f && f.art === "veraltet")) return;
-          rahmen.classList.remove("laedt");
-          if (f && f.art === "anmeldung") return ctx.abgelaufen();
+          rahmen.innerHTML = "";
+          fehlerPlatz.innerHTML = "";
           var p = el("p", "meldung fehler", "Das Bild konnte nicht geladen werden.");
           p.setAttribute("role", "alert");
           fehlerPlatz.appendChild(p);
           // Wiederholen heißt: Rechte neu prüfen lassen, nicht alte Adresse nehmen.
           fehlerPlatz.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", function () { zeige(i); }));
+        }
+        holen(i).then(function (d) {
+          if (!ctx.gilt() || jetzt !== i) return;
+          rahmen.classList.remove("laedt");
+          var img = el("img", "cm-bild");
+          img.alt = bildAlt(bilder[i], i, n, b.titel);
+          img.addEventListener("error", function () {
+            vergessenBild(i, d);
+            if (ctx.gilt() && jetzt === i && document.contains(img)) fehlschlag();
+          });
+          img.src = d.url;
+          rahmen.appendChild(img);
+        }, function (f) {
+          if (!ctx.gilt() || jetzt !== i || (f && f.art === "veraltet")) return;
+          if (f && f.art === "anmeldung") return ctx.abgelaufen();
+          fehlschlag();
         });
       }
       buehne.addEventListener("click", function () { grossAnsicht(jetzt); });
@@ -861,18 +932,25 @@
           if (gn) gn.disabled = i === n - 1;
           platz.innerHTML = "";
           platz.appendChild(el("p", "cm-hilfe", "Bild wird geladen …"));
+          function fehlschlag() {
+            platz.innerHTML = "";
+            platz.appendChild(el("p", "meldung fehler", "Das Bild konnte nicht geladen werden."));
+            platz.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", function () { gz(i); }));
+          }
           holen(i).then(function (dd) {
             if (!ctx.gilt() || g !== i || !d.isConnected) return;
             platz.innerHTML = "";
             var img = el("img", "cm-grossbild-img");
             img.alt = bildAlt(bilder[i], i, n, b.titel);
+            img.addEventListener("error", function () {
+              vergessenBild(i, dd);
+              if (ctx.gilt() && g === i && d.isConnected) fehlschlag();
+            });
             img.src = dd.url;
             platz.appendChild(img);
           }, function (f) {
             if (!ctx.gilt() || g !== i || !d.isConnected || (f && f.art === "veraltet")) return;
-            platz.innerHTML = "";
-            platz.appendChild(el("p", "meldung fehler", "Das Bild konnte nicht geladen werden."));
-            platz.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", function () { gz(i); }));
+            fehlschlag();
           });
         }
         d.addEventListener("close", function () {
@@ -1524,6 +1602,63 @@
     return "";
   }
 
+  /* Bild vorbereiten (Lukes 21.10.2026: höchstens 5 MiB nach automatischer
+     Verkleinerung). Jedes Bild wird einmal dekodiert – was der Browser nicht
+     lesen kann, wird gleich abgelehnt. Bilder bis 5 MiB bleiben unverändert.
+     Größere werden als JPEG neu kodiert: zuerst nur mit etwas Kompression bei
+     langer Kante bis 3200 px (Schrift auf Fotos bleibt lesbar), erst danach
+     kleiner. HEIC (iPhone) wird umgewandelt, wenn der Browser es lesen kann.
+     Ergebnis: { datei, vorher } (vorher = Originalgröße, wenn verkleinert). */
+  var STUFEN = [[3200, 0.9], [3200, 0.82], [2560, 0.85], [2560, 0.75], [2048, 0.75], [1600, 0.7]];
+  function dekodieren(d) {
+    function perBild() {
+      return new Promise(function (ja, nein) {
+        var url = URL.createObjectURL(d), img = new Image();
+        img.onload = function () { ja({ quelle: img, breite: img.naturalWidth, hoehe: img.naturalHeight, frei: function () { URL.revokeObjectURL(url); } }); };
+        img.onerror = function () { URL.revokeObjectURL(url); nein(new Error("dekodieren")); };
+        img.src = url;
+      });
+    }
+    if (!window.createImageBitmap) return perBild();
+    return createImageBitmap(d).then(function (b) {
+      return { quelle: b, breite: b.width, hoehe: b.height, frei: function () { try { b.close(); } catch (x) {} } };
+    }, perBild);
+  }
+  function alsJpeg(bild, kante, qualitaet) {
+    var f = Math.min(1, kante / Math.max(bild.breite, bild.hoehe));
+    var c = document.createElement("canvas");
+    c.width = Math.max(1, Math.round(bild.breite * f));
+    c.height = Math.max(1, Math.round(bild.hoehe * f));
+    var g = c.getContext("2d");
+    g.fillStyle = "#FFFFFF";                    // Transparenz wird weiß statt schwarz
+    g.fillRect(0, 0, c.width, c.height);
+    g.drawImage(bild.quelle, 0, 0, c.width, c.height);
+    return new Promise(function (ja) { c.toBlob(ja, "image/jpeg", qualitaet); });
+  }
+  function bildVorbereiten(d) {
+    var heic = /^image\/hei[cf]$/.test(d.type) || /\.hei[cf]$/i.test(d.name || "");
+    if (!heic && BILD_TYPEN.indexOf(d.type) < 0)
+      return Promise.reject(new Error("Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP."));
+    return dekodieren(d).then(function (bild) {
+      if (!heic && d.size <= DATEI_MAX) { bild.frei(); return { datei: d, vorher: null }; }
+      var i = 0;
+      function versuch() {
+        if (i >= STUFEN.length) { bild.frei(); throw new Error("Dieses Bild ist größer als 5 MiB."); }
+        var st = STUFEN[i++];
+        return alsJpeg(bild, st[0], st[1]).then(function (blob) {
+          if (!blob || blob.size > DATEI_MAX) return versuch();
+          bild.frei();
+          var name = String(d.name || "bild").replace(/\.[^.]+$/, "") + ".jpg";
+          return { datei: new File([blob], name, { type: "image/jpeg" }), vorher: d.size };
+        });
+      }
+      return versuch();
+    }, function () {
+      throw new Error(heic ? "Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP."
+                           : "Dieses Bild konnte nicht gelesen werden. Wähle ein anderes Bild.");
+    });
+  }
+
   /* Rückfrage mit eigener Bestätigung (Spec 07: PDF/Bilder beim Wechsel entfernen).
      Escape oder „Abbrechen“ = nichts ändern; Fokus zurück zum Auslöser. */
   function rueckfrage(ausloeser, frage, jaText, ja, nein) {
@@ -1587,7 +1722,7 @@
 
   function neuerEntwurf(konto) {
     return { konto: konto, art: "frage", titel: "", text: "",
-             bilder: [] /* Spec 07: [{ id, datei, beschreibung, url }] */, pdf: null, lzModus: "bilder",
+             bilder: [] /* Spec 07: [{ id, datei, beschreibung, url, vorher }] */, pdf: null, lzModus: "bilder", vorbereiten: 0,
              lernfeld: "", kapitel: "", mentor: false,
              geaendert: false,   // überhaupt etwas eingegeben
              veraendert: false,  // seit dem letzten Sendeversuch geändert → alten Vorgang klären, neue Kennung
@@ -1652,6 +1787,7 @@
     form.noValidate = true;
     var uebersichtPlatz = el("div");
     form.appendChild(uebersichtPlatz);
+    if (!zielGruppe) form.appendChild(restHinweis(ctx));
     var ansage = vorlesen();
 
     // Beitragsart
@@ -1715,8 +1851,8 @@
 
     // Bilder
     var bildFeld = ctx.feld({ label: "Bilder hinzufügen (optional)", typ: "file",
-      hilfe: "Bis zu 5 Bilder. JPG, PNG oder WebP, jeweils höchstens 5 MiB.",
-      attr: { accept: ".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp", multiple: "" } });
+      hilfe: "Bis zu 5 Bilder. JPG, PNG oder WebP, jeweils höchstens 5 MiB – größere Fotos werden automatisch verkleinert.",
+      attr: { accept: ".jpg,.jpeg,.png,.webp,.heic,.heif,image/jpeg,image/png,image/webp,image/heic,image/heif", multiple: "" } });
     var bildZahl = el("p", "cm-hilfe cm-auswahl");
     bildZahl.id = bildFeld.eingabe.id + "-a";
     bildFeld.box.insertBefore(bildZahl, bildFeld.fehler);
@@ -1727,26 +1863,59 @@
     var bildFelder = [];      // je Bild { box, eingabe, fehler } für Beschreibungsfehler
 
     bildFeld.eingabe.addEventListener("change", function () {
-      if (e.zustand) return;                // gesperrt (G04)
+      if (e.zustand || e.vorbereiten) return;   // gesperrt (G04) bzw. vorige Auswahl läuft noch
       var neu = Array.prototype.slice.call(bildFeld.eingabe.files || []);
       bildFeld.eingabe.value = "";          // Abbrechen ändert nichts; erneute Auswahl ergänzt
       if (!neu.length) return;
       var fehlerTexte = [];
       var zuViele = false;
-      neu.forEach(function (d) {
-        var f = bildFehlerText(d);
-        if (f) { fehlerTexte.push(d.name + ": " + f); return; }
-        if (e.bilder.length >= BILDER_MAX) { zuViele = true; return; }
-        e.bilder.push({ id: "b" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
-                        datei: d, beschreibung: "", url: URL.createObjectURL(d) });
+      e.vorbereiten = neu.length;
+      vorbereitenAnzeigen();
+      // Nacheinander: nie mehr als ein großes Bild gleichzeitig im Speicher.
+      neu.reduce(function (kette, d) {
+        return kette.then(function () {
+          if (entwurf !== e) return;
+          // Platz zählt nur für gültige Bilder; erst bei voller Auswahl wird abgewiesen.
+          if (e.bilder.length >= BILDER_MAX) { zuViele = true; e.vorbereiten--; return; }
+          return bildVorbereiten(d).then(function (x) {
+            if (entwurf !== e) return;
+            if (e.bilder.length >= BILDER_MAX) { zuViele = true; return; }
+            e.bilder.push({ id: "b" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+                            datei: x.datei, beschreibung: "", url: URL.createObjectURL(x.datei), vorher: x.vorher });
+          }, function (f) { fehlerTexte.push(d.name + ": " + f.message); }).then(function () {
+            if (entwurf !== e) return;
+            e.vorbereiten--;
+          });
+        });
+      }, Promise.resolve()).then(function () {
+        if (entwurf !== e) {                // Konto gewechselt oder verworfen: nichts behalten
+          return;
+        }
+        e.vorbereiten = 0;
+        if (zuViele) fehlerTexte.unshift("Du kannst höchstens 5 Bilder hinzufügen.");
+        merke();
+        bilderAnzeigen();
+        vorbereitenAnzeigen();
+        var t = fehlerTexte.join(" ");
+        if (!document.contains(form)) return;
+        ctx.fehlerSetzen(bildFeld, t);
+        var verkl = e.bilder.filter(function (b) { return b.vorher; }).length;
+        ansage.textContent = t || ((e.bilder.length === 1 ? "1 Bild ausgewählt." : e.bilder.length + " Bilder ausgewählt.")
+          + (verkl ? " Große Bilder wurden automatisch verkleinert." : ""));
       });
-      if (zuViele) fehlerTexte.unshift("Du kannst höchstens 5 Bilder hinzufügen.");
-      merke();
-      bilderAnzeigen();
-      var t = fehlerTexte.join(" ");
-      ctx.fehlerSetzen(bildFeld, t);
-      ansage.textContent = t || (e.bilder.length === 1 ? "1 Bild ausgewählt." : e.bilder.length + " Bilder ausgewählt.");
     });
+
+    var vorbereitung = el("p", "cm-hilfe cm-vorbereitung");
+    vorbereitung.setAttribute("role", "status");
+    bildFeld.box.insertBefore(vorbereitung, bildListe);
+    function vorbereitenAnzeigen() {
+      vorbereitung.textContent = e.vorbereiten ? "Bilder werden vorbereitet …" : "";
+      vorbereitung.hidden = !e.vorbereiten;
+      if (!e.zustand) {
+        senden.disabled = !!e.vorbereiten;
+        bildFeld.eingabe.disabled = !!e.vorbereiten || e.bilder.length >= BILDER_MAX;
+      }
+    }
 
     function bildVerschieben(i, nach, wer) {
       if (e.zustand) return;
@@ -1788,6 +1957,7 @@
         li.appendChild(img);
         var info = el("div", "cm-bildwahl-info");
         info.appendChild(el("p", "cm-bildwahl-name", "Bild " + (i + 1) + " von " + n + " · " + b.datei.name + " · " + groesse(b.datei.size)));
+        if (b.vorher) info.appendChild(el("p", "cm-hilfe cm-verkleinert", "Automatisch verkleinert (vorher " + groesse(b.vorher) + "). Prüfe in der Vorschau, ob Schrift noch lesbar ist."));
         var bf = ctx.feld({ label: "Bildbeschreibung (optional)", wert: b.beschreibung, attr: { autocomplete: "off" },
                             hilfe: "Wird vorgelesen, wenn das Bild nicht zu sehen ist. Höchstens 200 Zeichen." });
         bf.eingabe.setAttribute("aria-label", "Bildbeschreibung für Bild " + (i + 1) + " (optional)");
@@ -2086,7 +2256,7 @@
         if (senden.textContent !== senden.dataset.zuletzt) { senden.dataset.zuletzt = senden.textContent; fortschritt.textContent = senden.textContent; }
       } else {
         ctx.freigeben(senden);
-        senden.disabled = !!z;
+        senden.disabled = !!z || !!e.vorbereiten;
       }
       abbr.disabled = z === "sendet" || z === "pruefen" || z === "klaeren";
       eingabenSperren(form, !!z);
@@ -2202,7 +2372,7 @@
 
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
-      if (e.zustand) return;                   // läuft, wird geklärt oder ist unklar
+      if (e.zustand || e.vorbereiten) return;  // läuft, wird geklärt, ist unklar oder Bilder werden vorbereitet
       e.titel = titel.eingabe.value;
       e.text = text.eingabe.value;
       versucht = true;

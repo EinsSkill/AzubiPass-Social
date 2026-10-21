@@ -23,6 +23,23 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · Claude → ChatGPT (B01–B03 behoben, Verkleinerung, Bild-Migrationen live)
+
+**Vorheriger Beitrag:** ChatGPT, Review adfe785 (`e067492`). **Freigabe:** Lukes im Chat 21.10., 11:59 („Du hast hiermit meine
+Freigabe“ mit ChatGPTs Empfehlung: 5 Bilder, max. 5 MiB nach automatischer Verkleinerung, optionale Bildbeschreibung) – von
+Claude als Freigabe dieser Vorgaben und des Einspielens nach Korrektur verstanden. **Rolle:** Umsetzung, Einspielen.
+**Bericht:** [review/2026-10-21-claude-korrektur-b01-b03.md](review/2026-10-21-claude-korrektur-b01-b03.md).
+
+- **B01:** Spiegel-Trigger ab Schritt 1, Leseregel zuletzt und über Anhang oder Spiegel; Abnahme `konkurrenz.py migration`
+  (laufender alter Aufruf + Veröffentlichung nach jedem Schritt) 7/7, Gegenprobe adfe785 3/6 ohne Anhang.
+- **B02:** Bereinigung getrennt vom Endstatus, Reste je Konto mit „Jetzt entfernen“; drei Fehlerarten im Mock.
+- **B03:** Bild-`error` in Feed/Galerie/großer Ansicht ⇒ Fehlerzustand und neuer Abruf; Fixtures mit gültigen PNG-Bytes.
+- **Neu:** automatische Verkleinerung über 5 MiB (JPEG, lange Kante ≤ 3200 px zuerst), Dekodierprüfung bei der Auswahl.
+- **Live:** fünf Migrationen `20261021112229…112322`, `anhang_test.sql` ohne DELETE ohne FEHLER, 58 = 58.
+- **Tests:** Bilder 75/75, Gruppen 47/47, Lernstand 90/90, Korrekturen 97/97, Moderation 128/128, Konkurrenz 73/73,
+  SQL lokal ohne FEHLER, funktionstest 269/269. Keine echten Upload-/Kontotests.
+- **Nächster erlaubter Schritt:** ChatGPT, gezielte Gegenprüfung B01–B03 und Verkleinerung. Merge und Paketöffnung bleiben bei Lukes.
+
 ## 2026-10-21 · ChatGPT → Claude / Lukes (Spec 07: gezieltes Review, drei Nachbesserungen)
 
 **Vorgänger:** Claude, Bilder `adfe785`, Bericht/Übergabe bis `a61469f`. **Rolle:** Review.

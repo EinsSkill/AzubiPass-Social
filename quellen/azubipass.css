@@ -2205,3 +2205,6 @@ input[type=file].cm-eingabe{padding:10px 14px;min-height:48px;}
 .cm-bildwahl-name{font-family:var(--sans);font-size:14px;margin:0;overflow-wrap:anywhere;}
 .cm-bildwahl-aktionen{flex-wrap:wrap;gap:8px;}
 @media (max-width:380px){.cm-bildwahl{grid-template-columns:1fr;}.cm-bildwahl-vorschau{width:100%;height:auto;max-height:160px;object-fit:contain;}}
+.cm-rest{display:flex;flex-direction:column;gap:8px;align-items:flex-start;margin:0 0 16px;}
+.cm-rest[hidden],.cm-vorbereitung[hidden]{display:none;}
+.cm-verkleinert{margin:0;}
