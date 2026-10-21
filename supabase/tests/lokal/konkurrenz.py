@@ -2,7 +2,7 @@
 """
 AzubiPass Social · Konkurrenztests mit zwei echten Datenbankverbindungen.
 
-    PGHOST=/var/tmp/pgtest PGPORT=54329 python3 konkurrenz.py [g06] [r03] [moderation] [r06] [r07] [--alt]
+    PGHOST=/var/tmp/pgtest PGPORT=54329 python3 konkurrenz.py [g06] [r03] [moderation] [r06] [r07] [bilder] [--alt]
 
 Läuft gegen die LOKALE Testdatenbank (supabase_grundlage.sql + echte
 Migrationen, aufgebaut mit aufbauen.sh). --alt baut nur bis vor die zu
@@ -738,7 +738,78 @@ def r07(alt):
            "Alle vier kreuzenden Meldungen angelegt")
 
 
-FAELLE = {"g06": g06, "r03": r03, "moderation": moderation, "r06": r06, "r07": r07}
+# ------------------------------------------------------------------ Bilder (Spec 07): G06 für jede Datei
+def bild(nutzer, vorgang, k):
+    pfad = f"{nutzer}/{vorgang}-{k}.png"
+    with verbindung() as c:
+        c.execute("insert into storage.objects (bucket_id, name, owner, metadata) values ('lernzettel', %s, %s, %s)",
+                  (pfad, nutzer, json.dumps({"size": 1000, "mimetype": "image/png"})))
+        c.commit()
+    return pfad
+
+
+def mit_bildern(c, vorgang, pfade):
+    c.execute("select public.beitrag_mit_anhaengen(%s, 'frage', 'Frage mit Bildern', 'Text', null, null, false, %s)",
+              (vorgang, json.dumps([{"pfad": p, "beschreibung": ""} for p in pfade])))
+
+
+def bilder(alt):
+    if alt:
+        print("Bilder: keine Gegenprobe – den Mehrbild-Weg gibt es vor 20261021100000 nicht.")
+        return
+    aufbauen()
+    a = nutzer_anlegen("TEST-BLD-01", "anna")["anna"]
+    loeschen = "delete from storage.objects where bucket_id = 'lernzettel' and name = %s"
+
+    print("Bilder Fall A · Veröffentlichen (3 Bilder) zuerst, Löschen von Bild 2 wartet")
+    v = uuid.uuid4()
+    pf = [bild(a, v, k) for k in (1, 2, 3)]
+    c1, c2 = verbindung(), verbindung()
+    als(c1, a); mit_bildern(c1, v, pf)
+    als(c2, a)
+    t, erg = im_hintergrund(lambda: c2.execute(loeschen, (pf[1],)).rowcount)
+    pruefe(wartet(c2.info.backend_pid), "Löschen von Bild 2 wartet auf die Veröffentlichung")
+    c1.commit(); t.join(10); c2.commit()
+    pruefe(erg.get("wert") == 0 and zaehle("select count(*) from public.anhang where beitrag_id = %s", v) == 3
+           and zaehle("select count(*) from storage.objects where name = any(%s)", pf) == 3,
+           "0 gelöscht, Beitrag mit 3 Anhängen und alle Dateien vorhanden", f"geloescht={erg.get('wert')}")
+    c1.close(); c2.close()
+
+    print("Bilder Fall B · Löschen von Bild 3 zuerst, Veröffentlichen wartet")
+    v = uuid.uuid4()
+    pf = [bild(a, v, k) for k in (1, 2, 3)]
+    c1, c2 = verbindung(), verbindung()
+    als(c2, a)
+    n = c2.execute(loeschen, (pf[2],)).rowcount
+    als(c1, a)
+    t, erg = im_hintergrund(lambda: mit_bildern(c1, v, pf))
+    pruefe(n == 1 and wartet(c1.info.backend_pid), "Veröffentlichen wartet auf das laufende Löschen")
+    c2.commit(); t.join(10)
+    f = erg.get("fehler"); c1.rollback()
+    pruefe(f is not None and "nicht hochgeladen" in str(f), "Veröffentlichen abgelehnt: Datei nicht hochgeladen", str(f)[:80])
+    pruefe(zaehle("select count(*) from public.beitrag where id = %s", v) == 0
+           and zaehle("select count(*) from public.anhang where beitrag_id = %s", v) == 0,
+           "Kein (halber) Beitrag, keine Anhänge")
+    c1.close(); c2.close()
+
+    print("Bilder Fall C · dieselbe Vorgangskennung zweimal gleichzeitig")
+    v = uuid.uuid4()
+    pf = [bild(a, v, k) for k in (1, 2)]
+    c1, c2 = verbindung(), verbindung()
+    als(c1, a); mit_bildern(c1, v, pf)
+    als(c2, a)
+    t, erg = im_hintergrund(lambda: mit_bildern(c2, v, pf))
+    pruefe(wartet(c2.info.backend_pid), "Zweiter Aufruf wartet auf den ersten")
+    c1.commit(); t.join(10)
+    ok = "fehler" not in erg
+    c2.commit() if ok else c2.rollback()
+    pruefe(ok and zaehle("select count(*) from public.beitrag where id = %s", v) == 1
+           and zaehle("select count(*) from public.anhang where beitrag_id = %s", v) == 2,
+           "Ein Beitrag, zwei Anhänge, zweiter Aufruf liefert denselben Beitrag", str(erg.get("fehler"))[:80])
+    c1.close(); c2.close()
+
+
+FAELLE = {"g06": g06, "r03": r03, "moderation": moderation, "r06": r06, "r07": r07, "bilder": bilder}
 
 if __name__ == "__main__":
     welche = [a for a in sys.argv[1:] if not a.startswith("--")] or list(FAELLE)

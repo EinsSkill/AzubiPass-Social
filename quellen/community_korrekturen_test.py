@@ -78,7 +78,7 @@ FAKE_JS = r"""
 
   function zeile(b) {
     const zahl = F.db.antwort.filter(a => a.beitrag_id === b.id && !a.versteckt).length;
-    return Object.assign({ gruppe_id: null, lernfeld: null, kapitel: null, datei_pfad: null, datei_art: null,
+    return Object.assign({ anhaenge: [], gruppe_id: null, lernfeld: null, kapitel: null, datei_pfad: null, datei_art: null,
       an_mentoren: false, geloest: false, versteckt: false, bearbeitet_am: null, autor_name: b.autor_id === ICH.id ? "Anna" : "Ben",
       autor_rolle: "azubi", autor_lehrjahr: 2, gruppe_name: null, hilfreich_zahl: 0, von_mir_hilfreich: false }, b, { antworten: zahl });
   }
@@ -101,6 +101,21 @@ FAKE_JS = r"""
       F.db.beitrag.push({ id: a.p_vorgang, autor_id: ICH.id, art: a.p_art, titel: a.p_titel, text: a.p_text,
         lernfeld: a.p_lernfeld, kapitel: a.p_kapitel, an_mentoren: a.p_an_mentoren,
         datei_pfad: a.p_datei_pfad, datei_art: a.p_datei_art, erstellt_am: jetzt() });
+      return ok(a.p_vorgang);
+    },
+    // Spec 07: Beitrag mit 0–5 Anhängen (Pfad <konto>/<vorgang>-<n>.<endung>)
+    beitrag_mit_anhaengen: (a) => {
+      const v = F.db.vorgang[a.p_vorgang];
+      const da = F.db.beitrag.find(b => b.id === a.p_vorgang);
+      if (da) return ok(da.id);
+      if (v === "verworfen") return p0001("Dieser Vorgang wurde abgebrochen.");
+      const liste = (a.p_anhaenge || []);
+      if (liste.some(x => !F.db.dateien[x.pfad])) return p0001("Die Datei ist nicht hochgeladen.");
+      F.db.vorgang[a.p_vorgang] = "angelegt";
+      const anh = liste.map((x, i) => ({ position: i + 1, pfad: x.pfad, art: /\.pdf$/.test(x.pfad) ? "pdf" : "bild", beschreibung: x.beschreibung || "" }));
+      F.db.beitrag.push({ id: a.p_vorgang, autor_id: (F.aktuell() || ICH).id, art: a.p_art, titel: a.p_titel, text: a.p_text,
+        lernfeld: a.p_lernfeld, kapitel: a.p_kapitel, an_mentoren: a.p_an_mentoren,
+        datei_pfad: anh[0] ? anh[0].pfad : null, datei_art: anh[0] ? anh[0].art : null, anhaenge: anh, erstellt_am: jetzt() });
       return ok(a.p_vorgang);
     },
     antwort_senden: (a) => {
@@ -203,6 +218,8 @@ FAKE_JS = r"""
     storage: { from: () => ({
       upload(pfad, datei) { if (F.db.dateien[pfad]) return Promise.resolve({ data: null, error: { message: "The resource already exists", statusCode: "409" } });
                             F.db.dateien[pfad] = true; return Promise.resolve({ data: { path: pfad }, error: null }); },
+      list(ordner, o) { const v = (o && o.search) || ""; return Promise.resolve({ data: Object.keys(F.db.dateien)
+        .filter(p => p.indexOf(ordner + "/" + v) === 0).map(p => ({ name: p.slice(ordner.length + 1) })), error: null }); },
       remove(pfade) { pfade.forEach(p => { F.entfernt.push(p); delete F.db.dateien[p]; }); return Promise.resolve({ data: pfade.map(n => ({ name: n })), error: null }); },
       download() { return Promise.resolve({ data: new Blob(["x"], { type: "image/png" }), error: null }); }
     }) }
@@ -272,7 +289,7 @@ def main():
             print("G03 · unklarer Ausgang, Beitrag")
             ctx, s = neue_seite("")
             c06(s)
-            ev(s, "FAKE.plan.beitrag_veroeffentlichen = ['spaet']")
+            ev(s, "FAKE.plan.beitrag_mit_anhaengen = ['spaet']")
             senden_c06(s)
             warte_text(s, "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.")
             titel = s.get_by_label("Titel")
@@ -287,7 +304,7 @@ def main():
             ev(s, "FAKE.spaetAusfuehren()")                       # Original kommt verspätet an
             s.get_by_role("button", name="Erneut senden").click()
             s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0")
-            a = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen")
+            a = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen")
             pruefe(len(a) == 2 and a[0] == a[1], "Wiederholung sendet denselben Stand mit derselben Kennung")
             pruefe(zahl(s, "FAKE.db.beitrag.length") == 1, "Verspätetes Original + Wiederholung = genau ein Beitrag")
             ctx.close()
@@ -295,7 +312,7 @@ def main():
             print("G03 · Eingaben ändern nach unklarem Ausgang")
             ctx, s = neue_seite("")
             c06(s, titel="Erster Titel")
-            ev(s, "FAKE.plan.beitrag_veroeffentlichen = ['spaet']")
+            ev(s, "FAKE.plan.beitrag_mit_anhaengen = ['spaet']")
             senden_c06(s)
             warte_text(s, "Wir konnten nicht prüfen")
             s.get_by_role("button", name="Eingaben ändern").click()
@@ -308,7 +325,7 @@ def main():
             s.get_by_label("Titel").fill("Geänderter Titel")
             senden_c06(s)
             s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0")
-            a = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen")
+            a = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen")
             pruefe(a[0]["p_vorgang"] != a[1]["p_vorgang"], "Geänderte Eingaben bekommen erst nach Klärung eine neue Kennung")
             pruefe(zahl(s, "FAKE.db.beitrag.length") == 1 and ev(s, "FAKE.db.beitrag[0].titel") == "Geänderter Titel",
                    "Genau ein Beitrag mit dem geänderten Titel")
@@ -318,13 +335,13 @@ def main():
             for plan, erwartet in (("503-ausgefuehrt", "gefunden"), ("503", "verworfen")):
                 ctx, s = neue_seite("")
                 c06(s, titel="Lernzettel Skonto", text="", art="Lernzettel")
-                s.locator("form.cm-schreiben input[type=file]").set_input_files(
+                s.locator("form.cm-schreiben input[type=file][multiple]").set_input_files(
                     files=[{"name": "zettel.png", "mimeType": "image/png", "buffer": PNG}])
-                ev(s, f"FAKE.plan.beitrag_veroeffentlichen = ['{plan}']")
+                ev(s, f"FAKE.plan.beitrag_mit_anhaengen = ['{plan}']")
                 senden_c06(s)
                 warte_text(s, "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.")
                 pruefe(ev(s, "FAKE.entfernt.length") == 0, f"{plan}: Datei nach 503 nicht entfernt")
-                pruefe(s.locator("form.cm-schreiben input[type=file]").is_disabled(), f"{plan}: Dateiauswahl gesperrt")
+                pruefe(s.locator("form.cm-schreiben input[type=file][multiple]").is_disabled(), f"{plan}: Dateiauswahl gesperrt")
                 if erwartet == "gefunden":
                     s.get_by_role("button", name="Status prüfen").click()
                     s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0")
@@ -333,33 +350,33 @@ def main():
                 else:
                     s.get_by_role("button", name="Eingaben ändern").click()
                     warte_text(s, "Du kannst deine Eingaben jetzt ändern.")
-                    v = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen[0].p_vorgang")
-                    pruefe(ev(s, "FAKE.entfernt") == [f"{ev(s, 'FAKE.ICH')}/{v}.png"],
+                    v = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen[0].p_vorgang")
+                    pruefe(ev(s, "FAKE.entfernt") == [f"{ev(s, 'FAKE.ICH')}/{v}-1.png"],
                            "503 ohne Ausführung: Datei erst nach „verworfen“ entfernt")
                 ctx.close()
 
             print("G03 · sichere Ablehnung (Spam-Bremse)")
             ctx, s = neue_seite("")
             c06(s)
-            ev(s, "FAKE.plan.beitrag_veroeffentlichen = ['bremse']")
+            ev(s, "FAKE.plan.beitrag_mit_anhaengen = ['bremse']")
             senden_c06(s)
             warte_text(s, "Du hast gerade viele Beiträge veröffentlicht.")
             pruefe(s.get_by_label("Titel").evaluate("e => e.readOnly") is False, "Nach sicherer Ablehnung bearbeitbar")
             senden_c06(s)                                       # unverändert: dieselbe Kennung
             s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0")
-            a = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen")
+            a = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen")
             pruefe(a[0]["p_vorgang"] == a[1]["p_vorgang"] and not ev(s, "FAKE.aufrufe.vorgang_klaeren"),
                    "Unveränderte Wiederholung: dieselbe Kennung, keine Klärung nötig")
             ctx.close()
             ctx, s = neue_seite("")
             c06(s)
-            ev(s, "FAKE.plan.beitrag_veroeffentlichen = ['bremse']")
+            ev(s, "FAKE.plan.beitrag_mit_anhaengen = ['bremse']")
             senden_c06(s)
             warte_text(s, "Du hast gerade viele Beiträge veröffentlicht.")
             s.get_by_label("Titel").fill("Neuer Titel nach Ablehnung")
             senden_c06(s)
             s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0")
-            a = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen")
+            a = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen")
             k = ev(s, "FAKE.aufrufe.vorgang_klaeren")
             pruefe(k and k[0]["p_vorgang"] == a[0]["p_vorgang"] and a[1]["p_vorgang"] != a[0]["p_vorgang"],
                    "Geändert nach Ablehnung: alter Vorgang geklärt, dann neue Kennung")
@@ -387,7 +404,7 @@ def main():
             axe(s, "C06 gesperrt während des Sendens")
             ev(s, "FAKE.freigeben('beitraege_frei')")
             s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0")
-            a = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen[0]")
+            a = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen[0]")
             pruefe(a["p_text"] == "Ursprünglicher Text" and a["p_titel"] == "Ursprünglicher Titel",
                    "Gesendet wird der validierte Stand", a["p_text"])
             ctx.close()
@@ -578,13 +595,13 @@ def main():
             for klaeren, name in ((None, "Klärung gelingt"), ("verlieren", "Klärung unklar")):
                 ctx, s = neue_seite("")
                 c06(s, titel="Lernzettel G08", text="", art="Lernzettel")
-                s.locator("form.cm-schreiben input[type=file]").set_input_files(
+                s.locator("form.cm-schreiben input[type=file][multiple]").set_input_files(
                     files=[{"name": "zettel.png", "mimeType": "image/png", "buffer": PNG}])
-                ev(s, "FAKE.plan.beitrag_veroeffentlichen = ['bremse']")
+                ev(s, "FAKE.plan.beitrag_mit_anhaengen = ['bremse']")
                 senden_c06(s)
                 warte_text(s, "Du hast gerade viele Beiträge veröffentlicht.")
-                v = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen[0].p_vorgang")
-                pfad = f"{ev(s, 'FAKE.ICH')}/{v}.png"
+                v = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen[0].p_vorgang")
+                pfad = f"{ev(s, 'FAKE.ICH')}/{v}-1.png"
                 pruefe(ev(s, f"!!FAKE.db.dateien['{pfad}']"), f"{name}: Datei nach Ablehnung noch da (Ausgangslage)")
                 if klaeren:
                     ev(s, f"FAKE.plan.vorgang_klaeren = ['{klaeren}']")
@@ -606,10 +623,10 @@ def main():
                 ctx.close()
             ctx, s = neue_seite("")
             c06(s, titel="Doch schon angekommen")
-            ev(s, "FAKE.plan.beitrag_veroeffentlichen = ['bremse']")
+            ev(s, "FAKE.plan.beitrag_mit_anhaengen = ['bremse']")
             senden_c06(s)
             warte_text(s, "Du hast gerade viele Beiträge veröffentlicht.")
-            v = ev(s, "FAKE.aufrufe.beitrag_veroeffentlichen[0].p_vorgang")
+            v = ev(s, "FAKE.aufrufe.beitrag_mit_anhaengen[0].p_vorgang")
             ev(s, f"FAKE.db.beitrag.push({{ id: '{v}', autor_id: FAKE.ICH, art: 'frage', titel: 'Doch schon angekommen', text: '', erstellt_am: new Date().toISOString() }})")
             s.get_by_role("button", name="Abbrechen").click()
             s.get_by_role("button", name="Eingaben verwerfen").click()
@@ -628,7 +645,7 @@ def main():
                                          ("APF01", 503, False), ("AP999", 400, False)):
                 ctx, s = neue_seite("")
                 c06(s, titel=f"Einstufung {code}")
-                ev(s, f"FAKE.plan.beitrag_veroeffentlichen = [{{ code: '{code}', status: {status} }}]")
+                ev(s, f"FAKE.plan.beitrag_mit_anhaengen = [{{ code: '{code}', status: {status} }}]")
                 senden_c06(s)
                 if not sicher:
                     warte_text(s, "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.")
@@ -638,7 +655,7 @@ def main():
                     pruefe(True, f"{code}/HTTP {status} gilt als sicher abgelehnt")
                 else:
                     # Eigene Codes: jeweils eigene Meldung oder Ansicht – entscheidend ist: nie „unklar“.
-                    s.wait_for_function("(FAKE.aufrufe.beitrag_veroeffentlichen || []).length === 1 && "
+                    s.wait_for_function("(FAKE.aufrufe.beitrag_mit_anhaengen || []).length === 1 && "
                                         "!document.querySelector('[aria-busy=true]')")
                     s.wait_for_timeout(150)
                     pruefe(s.get_by_text("Wir konnten nicht prüfen").count() == 0,

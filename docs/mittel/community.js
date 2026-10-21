@@ -33,7 +33,11 @@
       "image/jpeg": ["bild", "jpg"], "image/png": ["bild", "png"],
       "image/webp": ["bild", "webp"], "application/pdf": ["pdf", "pdf"]
     },
-    seite: 30
+    seite: 30,
+    // Spec 07 (Bilder im Feed): Arbeitsannahmen, serverseitig ebenso geprüft.
+    bilderMax: 5,
+    bildArten: { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" },
+    anhaengeGesamt: 26214400
   };
 
   var GRUENDE = ["falsch", "urheberrecht", "beleidigung", "spam", "persoenliche_daten", "sonstiges"];
@@ -451,7 +455,7 @@
 
   var LISTE = "id, autor_id, gruppe_id, art, titel, text, lernfeld, kapitel, datei_pfad, datei_art, " +
               "an_mentoren, geloest, versteckt, erstellt_am, bearbeitet_am, autor_name, autor_rolle, " +
-              "autor_lehrjahr, gruppe_name, antworten, hilfreich_zahl, von_mir_hilfreich, beruf";
+              "autor_lehrjahr, gruppe_name, antworten, hilfreich_zahl, von_mir_hilfreich, beruf, anhaenge";
 
   /* filter: { gruppe: id | "alle" (nur allgemeine) | undefined (alles Sichtbare),
                art, lernfeld, kapitel, anMentoren, offen (nur ungelöste Fragen),
@@ -511,6 +515,45 @@
     if (!art) return fehler("Erlaubt sind nur JPG, PNG, WebP oder PDF.", "eingabe");
     if (datei.size > CFG.dateiGroesse) return fehler("Die Datei ist größer als 5 MB.", "eingabe");
     return null;
+  }
+
+  // Spec 07: Texte für einzelne Bilder (null = in Ordnung).
+  function bildPruefen(datei) {
+    if (!datei) return null;
+    if (!CFG.bildArten[datei.type]) return fehler("Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP.", "eingabe");
+    if (datei.size > CFG.dateiGroesse) return fehler("Dieses Bild ist größer als 5 MiB.", "eingabe");
+    return null;
+  }
+
+  /* Anhänge eines Beitrags vereinheitlichen: [{ datei, beschreibung }].
+     Alte Aufrufer geben noch e.datei (genau eine Datei bei Lernzetteln). */
+  function anhangListe(e) {
+    if (Array.isArray(e.anhaenge)) return e.anhaenge.filter(function (x) { return x && x.datei; });
+    return e.art === "lernzettel" && e.datei ? [{ datei: e.datei, beschreibung: "" }] : [];
+  }
+
+  function anhaengePruefen(art, liste) {
+    if (liste.length > CFG.bilderMax) return fehler("Du kannst höchstens 5 Bilder hinzufügen.", "eingabe");
+    var pdf = liste.filter(function (x) { return x.datei.type === "application/pdf"; });
+    if (pdf.length && (art !== "lernzettel" || liste.length !== 1))
+      return fehler("Ein PDF gibt es nur als einzelnen Anhang eines Lernzettels.", "eingabe");
+    if (art === "lernzettel" && !liste.length) return fehler("Ein Lernzettel braucht Bilder oder ein PDF.", "eingabe");
+    var summe = 0;
+    for (var i = 0; i < liste.length; i++) {
+      var f = pdf.length ? dateiPruefen(liste[i].datei) : bildPruefen(liste[i].datei);
+      if (f) return f;
+      if (laenge(String(liste[i].beschreibung || "").trim()) > 200)
+        return fehler("Eine Bildbeschreibung darf höchstens 200 Zeichen lang sein.", "eingabe");
+      summe += liste[i].datei.size;
+    }
+    if (summe > CFG.anhaengeGesamt) return fehler("Alle Bilder zusammen dürfen höchstens 25 MiB groß sein.", "eingabe");
+    return null;
+  }
+
+  // Stabile Dateikennung je Vorgang und Position: <konto>/<vorgang>-<n>.<endung>
+  function anhangPfad(konto, vorgang, nr, datei) {
+    var endung = datei && (CFG.bildArten[datei.type] || (datei.type === "application/pdf" ? "pdf" : null));
+    return endung ? konto + "/" + vorgang + "-" + nr + "." + endung : null;
   }
 
   function zufallsname() {
@@ -579,19 +622,46 @@
      oder wird gerade festgeschrieben) oder "verworfen" (kann nie mehr
      ankommen). Erst bei "verworfen" wird die Datei des Vorgangs entfernt; ein
      Fehler dabei lässt sie im eigenen privaten Ordner liegen. Wiederholbar. */
-  function vorgangKlaeren(vorgang, art, datei, konto) {
+  /* anhaenge: Liste [{ datei }] des Versandstands (Spec 07) oder – alter Weg –
+     eine einzelne Datei. Bei "verworfen" werden alle Dateien dieses Vorgangs
+     im eigenen Ordner entfernt: die bekannten Pfade und alles, was mit der
+     Vorgangskennung beginnt (Teiluploads). Einzeln nacheinander, damit keine
+     Sammellöschung mit einer Veröffentlichung um Sperren konkurriert. Ein
+     Fehler lässt Dateien liegen; der nächste Aufruf versucht es erneut. */
+  function vorgangKlaeren(vorgang, art, anhaenge, konto) {
     if (!vorgang || ["beitrag", "antwort", "entscheidung", "pruefanfrage"].indexOf(art) < 0)
       return Promise.reject(fehler("Vorgangskennung fehlt.", "eingabe"));
     var text = "Wir konnten nicht prüfen, ob der Vorgang abgeschlossen ist.";
     return gebunden(function (u, c) {
       return c.rpc("vorgang_klaeren", { p_vorgang: vorgang, p_art: art }).then(function (r) {
         var zustand = rpcErgebnis(r, vorgang, text);
-        var pfad = zustand === "verworfen" ? dateiPfad(u.id, vorgang, datei) : null;
-        if (!pfad) return zustand;
-        return c.storage.from(CFG.bucket).remove([pfad]).then(function () { return zustand; },
-                                                             function () { return zustand; });
+        if (zustand !== "verworfen" || art !== "beitrag") return zustand;
+        var pfade = [];
+        if (anhaenge && !Array.isArray(anhaenge)) pfade.push(dateiPfad(u.id, vorgang, anhaenge));
+        (Array.isArray(anhaenge) ? anhaenge : []).forEach(function (x, i) {
+          pfade.push(anhangPfad(u.id, vorgang, i + 1, x && x.datei));
+        });
+        return vorgangsDateienEntfernen(c, u.id, vorgang, pfade.filter(Boolean)).then(function () { return zustand; });
       }, function (f) { throw unklar(text, vorgang, f); });
     }, konto);
+  }
+
+  function vorgangsDateienEntfernen(c, konto, vorgang, pfade) {
+    var liste = c.storage.from(CFG.bucket).list
+      ? c.storage.from(CFG.bucket).list(konto, { search: vorgang, limit: 20 }).then(function (r) {
+          ((r && r.data) || []).forEach(function (o) {
+            if (o && o.name && o.name.indexOf(vorgang) === 0) pfade.push(konto + "/" + o.name);
+          });
+        }, function () {})
+      : Promise.resolve();
+    return liste.then(function () {
+      var einmal = pfade.filter(function (p, i) { return pfade.indexOf(p) === i; });
+      return einmal.reduce(function (kette, p) {
+        return kette.then(function () {
+          return c.storage.from(CFG.bucket).remove([p]).then(function () {}, function () {});
+        });
+      }, Promise.resolve());
+    });
   }
 
   /* e: { vorgang, art, titel, text, lernfeld, kapitel, anMentoren, datei (File),
@@ -615,49 +685,59 @@
       return Promise.reject(fehler("Der Text darf höchstens 4000 Zeichen lang sein.", "eingabe"));
     if (e.kapitel && !e.lernfeld)
       return Promise.reject(fehler("Zum Kapitel gehört ein Lernfeld.", "eingabe"));
-    if (e.art === "lernzettel" && !e.datei)
-      return Promise.reject(fehler("Ein Lernzettel braucht eine Datei.", "eingabe"));
-    var datei = e.art === "lernzettel" ? e.datei : null;    // nie als Anhang einer Frage/eines Tipps
-    var dateiFehler = dateiPruefen(datei);
-    if (dateiFehler) return Promise.reject(dateiFehler);
+    var liste = anhangListe(e);
     // Lerngruppen (20.10.2026): Fragen und Tipps ohne Datei, eigener RPC mit Vorgangskennung.
-    if (e.gruppe && (datei || e.art === "lernzettel"))
+    if (e.gruppe && (liste.length || e.datei || e.art === "lernzettel"))
       return Promise.reject(fehler("In Gruppen gibt es Fragen und Tipps.", "eingabe"));
     if (e.gruppe) return gruppeVeroeffentlichen(e, titel);
+    var anhFehler = anhaengePruefen(e.art, liste);
+    if (anhFehler) return Promise.reject(anhFehler);
 
     var vorgang = e.vorgang || neueVorgangskennung();
-    var pfad = null, dateiArt = null;
+    var UNKLAR_TEXT = "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.";
+    var HOCH_TEXT = liste.length === 1 && liste[0].datei.type === "application/pdf"
+      ? "Die Datei konnte nicht hochgeladen werden. Deine Auswahl ist noch da."
+      : "Die Bilder konnten nicht vollständig hochgeladen werden. Deine Auswahl ist noch da.";
+    function schritt(x) { if (typeof e.schritt === "function") { try { e.schritt(x); } catch (y) {} } }
     return gebunden(function (u, c) {
       var g = generation;
       function nochGleich() { if (g !== generation || (kontoId !== undefined && kontoId !== u.id)) throw VERALTET(); }
-      var hoch = Promise.resolve();
-      if (datei) {
-        var art = CFG.dateiArten[datei.type];
-        pfad = u.id + "/" + vorgang + "." + art[1];
-        dateiArt = art[0];
-        hoch = c.storage.from(CFG.bucket)
-          .upload(pfad, datei, { contentType: datei.type, upsert: false, cacheControl: "60" })
-          .then(function (r) {
-            // Schon da (zweiter Versuch desselben Vorgangs): gilt als hochgeladen.
-            if (r && r.error && !/exists|Duplicate/i.test(String(r.error.message || r.error.error || ""))
-                && Number(r.error.statusCode) !== 409) throw r.error;
-          });
-      }
-      return hoch.then(function () {
+      var pfade = liste.map(function (x, i) { return anhangPfad(u.id, vorgang, i + 1, x.datei); });
+      // Nacheinander hochladen; nach jedem Bild prüfen, ob noch dasselbe Konto angemeldet ist.
+      var hoch = liste.reduce(function (kette, x, i) {
+        return kette.then(function () {
+          nochGleich();
+          schritt({ hochladen: i + 1, von: liste.length });
+          return c.storage.from(CFG.bucket)
+            .upload(pfade[i], x.datei, { contentType: x.datei.type, upsert: false, cacheControl: "60" })
+            .then(function (r) {
+              // Schon da (Wiederholung desselben Vorgangs): gilt als hochgeladen.
+              if (r && r.error && !/exists|Duplicate/i.test(String(r.error.message || r.error.error || ""))
+                  && Number(r.error.statusCode) !== 409) throw r.error;
+            }, function (f) { throw f; });
+        });
+      }, Promise.resolve());
+      return hoch.then(null, function (f) {
+        if (f && f.art === "veraltet") throw f;
+        var ueb = uebersetzen(f);
+        if (ueb.art === "netz" && navigator.onLine === false) throw ueb;
+        // Veröffentlicht wurde sicher noch nichts: die RPC lief nicht.
+        throw fehler(HOCH_TEXT, "hochladen", f);
+      }).then(function () {
         nochGleich();
-        if (datei && typeof e.schritt === "function") { try { e.schritt("veroeffentlichen"); } catch (x) {} }
-        return c.rpc("beitrag_veroeffentlichen", {
+        schritt("veroeffentlichen");
+        return c.rpc("beitrag_mit_anhaengen", {
           p_vorgang: vorgang, p_art: e.art, p_titel: titel, p_text: String(e.text || ""),
           p_lernfeld: e.lernfeld || null, p_kapitel: e.kapitel || null,
           p_an_mentoren: e.art === "frage" && e.anMentoren === true,
-          p_datei_pfad: pfad, p_datei_art: dateiArt
+          p_anhaenge: liste.map(function (x, i) { return { pfad: pfade[i], beschreibung: String(x.beschreibung || "").trim() }; })
         }).then(function (r) {
-          return rpcErgebnis(r, vorgang, "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.");
+          return rpcErgebnis(r, vorgang, UNKLAR_TEXT);
         }, function (f) {
-          throw unklar("Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde.", vorgang, f);
+          throw unklar(UNKLAR_TEXT, vorgang, f);
         });
       });
-    });
+    }, e.konto);
   }
 
   function gruppeVeroeffentlichen(e, titel) {
@@ -695,30 +775,49 @@
      einen sichtbaren Beitrag); der Rest betrifft nur den eigenen Ordner. */
   function beitragLoeschen(id) {
     return mit(function (c) {
-      return c.from("beitrag").select("datei_pfad").eq("id", id).maybeSingle().then(auspacken)
-        .then(function (b) {
-          return c.from("beitrag").delete().eq("id", id).then(auspacken).then(function () {
-            if (b && b.datei_pfad) return dateiEntfernen(b.datei_pfad);
-          });
+      return Promise.all([
+        c.from("beitrag").select("datei_pfad").eq("id", id).maybeSingle().then(auspacken),
+        c.from("anhang").select("pfad").eq("beitrag_id", id).then(auspacken)
+      ]).then(function (x) {
+        var pfade = ((x[1] || []).map(function (a) { return a.pfad; }));
+        if (x[0] && x[0].datei_pfad && pfade.indexOf(x[0].datei_pfad) < 0) pfade.push(x[0].datei_pfad);
+        return c.from("beitrag").delete().eq("id", id).then(auspacken).then(function () {
+          if (pfade.length) return dateiEntfernen(pfade);
         });
+      });
     });
   }
 
+  /* pfad: ein Pfad oder eine Liste (Spec 07). Nacheinander; was nicht
+     gelöscht werden konnte, steht in f.dateiPfade (und f.dateiPfad = erster). */
   function dateiEntfernen(pfad) {
-    function nichtGeloescht(ursache) {
-      var e = fehler("Der Beitrag ist gelöscht, seine Datei aber noch nicht. Versuch es erneut.", "datei", ursache);
-      e.dateiPfad = pfad;
-      return e;
-    }
+    var pfade = Array.isArray(pfad) ? pfad.slice() : [pfad];
+    var offen = [];
     return verbinden().then(function (c) {
-      return c.storage.from(CFG.bucket).remove([pfad]);
-    }).then(function (r) {
-      if (r && r.error) throw nichtGeloescht(r.error);
-      // remove() meldet still „nichts gelöscht“, wenn die Regel es verbietet.
-      var weg = r && r.data ? r.data.length : 0;
-      if (!weg) throw nichtGeloescht();
-      return true;
-    }, function (f) { throw nichtGeloescht(f); });
+      return pfade.reduce(function (kette, p) {
+        return kette.then(function () {
+          return c.storage.from(CFG.bucket).remove([p]).then(function (r) {
+            // remove() meldet still „nichts gelöscht“, wenn die Regel es verbietet.
+            if ((r && r.error) || !(r && r.data && r.data.length)) offen.push(p);
+          }, function () { offen.push(p); });
+        });
+      }, Promise.resolve());
+    }, function () { offen = pfade; }).then(function () {
+      if (!offen.length) return true;
+      var e = fehler(offen.length === 1 ? "Der Beitrag ist gelöscht, seine Datei aber noch nicht. Versuch es erneut."
+                                        : "Der Beitrag ist gelöscht, einige Dateien aber noch nicht. Versuch es erneut.", "datei");
+      e.dateiPfad = offen[0];
+      e.dateiPfade = offen;
+      throw e;
+    });
+  }
+
+  // Anhänge eines Beitrags (Moderation, eigene ausgeblendete Inhalte): Regeln wie der Beitrag.
+  function anhaenge(beitragId) {
+    return gebunden(function (u, c) {
+      return c.from("anhang").select("position, pfad, art, beschreibung").eq("beitrag_id", beitragId)
+        .order("position", { ascending: true }).then(auspacken);
+    }).then(function (l) { return l || []; });
   }
 
   /* Dateien liegen privat und kommen nur über den angemeldeten Abruf: Bei
@@ -1050,7 +1149,7 @@
     vorgangKlaeren: vorgangKlaeren, sicherAbgelehnt: sicherAbgelehnt,
     beitragAendern: beitragAendern, beitragLoeschen: beitragLoeschen, dateiEntfernen: dateiEntfernen,
     dateiLaden: dateiLaden, dateiFreigeben: dateiFreigeben,
-    dateiPruefen: dateiPruefen,
+    dateiPruefen: dateiPruefen, bildPruefen: bildPruefen, anhaengePruefen: anhaengePruefen, anhaenge: anhaenge,
     antworten: antworten, antwortSchreiben: antwortSchreiben, antwortStatus: antwortStatus, antwortAendern: antwortAendern,
     antwortLoeschen: antwortLoeschen, besteAntwort: besteAntwort, hilfreich: hilfreich,
     aufgaben: aufgaben, aufgabe: aufgabe, aufgabeStellen: aufgabeStellen, aufgabeLoeschen: aufgabeLoeschen,

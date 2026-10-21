@@ -38,7 +38,7 @@ BEN = "demo-ben@azubipass.invalid"
 TEAM = "test-neu1@azubipass.invalid"
 KLASSE = "test-neu2@azubipass.invalid"     # Profil, aber nicht freigeschaltet
 PRAEFIX = "[Test05] "
-RPC_B = "**/rest/v1/rpc/beitrag_veroeffentlichen*"
+RPC_B = "**/rest/v1/rpc/beitrag_mit_anhaengen*"
 RPC_A = "**/rest/v1/rpc/antwort_senden*"
 SPEICHER = "**/storage/v1/object/lernzettel/**"
 
@@ -351,7 +351,7 @@ def main():
             pruefe(text_da("Zeile <b>zwei</b>") and seite.locator("#community .cm-text b").count() == 0, "Text als Klartext")
             pruefe("AN MENTOR:INNEN" in seite.inner_text("#community .cm-kopf").upper(), "Mentor:innen-Kennzeichnung gesendet")
             pruefe(zahl_beitraege(T_frage) == 1, "Genau ein Beitrag in der Datenbank")
-            body = [json.loads(b) for m, u, b in anfragen if "rpc/beitrag_veroeffentlichen" in u and b]
+            body = [json.loads(b) for m, u, b in anfragen if "rpc/beitrag_mit_anhaengen" in u and b]
             pruefe(body and body[-1]["p_vorgang"] == P_frage and body[-1]["p_an_mentoren"] is True,
                    "Vorgangskennung ist die Beitrags-ID")
             seite.go_back()
@@ -366,7 +366,7 @@ def main():
             senden()
             seite.wait_for_function("() => location.hash.startsWith('#community/beitrag/')", timeout=20000)
             P_tipp = detail_id()
-            body = [json.loads(b) for m, u, b in anfragen if "rpc/beitrag_veroeffentlichen" in u and b][-1]
+            body = [json.loads(b) for m, u, b in anfragen if "rpc/beitrag_mit_anhaengen" in u and b][-1]
             pruefe(body["p_an_mentoren"] is False and body["p_art"] == "tipp", "Mentor:innen-Option bei Tipp nicht mitgesendet")
             # Lernzettel mit Bild
             c06()
@@ -439,7 +439,7 @@ def main():
             senden()
             text_da("Wir konnten nicht prüfen")
             seite.unroute(RPC_B)
-            erste = [json.loads(b)["p_vorgang"] for m, u, b in anfragen if "rpc/beitrag_veroeffentlichen" in u and b][-1]
+            erste = [json.loads(b)["p_vorgang"] for m, u, b in anfragen if "rpc/beitrag_mit_anhaengen" in u and b][-1]
             seite.click("#community button:has-text('Status prüfen')")
             pruefe(text_da("Der Beitrag wurde noch nicht gefunden. Der Ausgang ist weiterhin unklar.")
                    and feld("Titel").input_value() == T_nicht and seite.is_disabled("#community button[type=submit]"),
@@ -501,7 +501,7 @@ def main():
             gehalten[0].continue_()
             seite.wait_for_timeout(2500)
             seite.unroute(SPEICHER)
-            rpc = [u for m, u, _ in anfragen[ab_hier:] if "rpc/beitrag_veroeffentlichen" in u]
+            rpc = [u for m, u, _ in anfragen[ab_hier:] if "rpc/beitrag_mit_anhaengen" in u]
             pruefe(not rpc and zahl_beitraege(T_wechsel) == 0, "Kontowechsel nach Upload: kein Veröffentlichen", art="mock")
             pruefe(not text_da(T_wechsel, 300), "Ben sieht keinen Entwurf von Anna", art="mock")
             c06()

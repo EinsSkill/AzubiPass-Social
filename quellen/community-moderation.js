@@ -613,7 +613,7 @@
       box.appendChild(el("p", "cm-hilfe", "Aktueller Inhalt. Er kann vom gemeldeten Stand abweichen."));
       var text = art === "beitrag" ? b.text : a.text;
       if (text) box.appendChild(el("div", "cm-text", text));
-      if (art === "beitrag" && b.datei_pfad) box.appendChild(dateiPruefen(ctx, b.datei_pfad, b.datei_art, b.titel));
+      if (art === "beitrag" && b.datei_pfad) box.appendChild(dateiPruefen(ctx, b.datei_pfad, b.datei_art, b.titel, b.id));
 
       // Meldungen (ohne Meldernamen)
       var ms = f.meldungen || [];
@@ -724,30 +724,49 @@
     return v;
   }
 
-  function dateiPruefen(ctx, pfad, dateiArt, titel) {
+  /* Spec 07: Ein Beitrag kann bis zu fünf Anhänge haben. Abgerufen wird erst
+     auf „Datei prüfen“ (nicht im Fallüberblick); die Liste kommt mit denselben
+     Regeln wie der Beitrag, jede Datei einzeln über den angemeldeten Abruf.
+     Moderationsaktionen betreffen immer den ganzen Beitrag mit allen Bildern. */
+  function dateiPruefen(ctx, pfad, dateiArt, titel, beitragId) {
     var box = el("section", "cm-datei");
-    box.setAttribute("aria-label", dateiArt === "pdf" ? "PDF" : "Bild");
-    function los() {
-      box.innerHTML = "";
-      var st = el("p", "cm-hilfe", "Datei wird geladen …");
+    box.setAttribute("aria-label", dateiArt === "pdf" ? "PDF" : "Anhänge");
+    function eine(liste, i, platz) {
+      var x = liste[i];
+      var teil = el("div", "cm-datei-teil");
+      platz.appendChild(teil);
+      var st = el("p", "cm-hilfe", liste.length > 1 ? "Datei " + (i + 1) + " von " + liste.length + " wird geladen …" : "Datei wird geladen …");
       st.setAttribute("role", "status");
-      box.appendChild(st);
-      AP.community.dateiLaden(pfad).then(function (d) {
+      teil.appendChild(st);
+      return AP.community.dateiLaden(x.pfad).then(function (d) {
         if (!ctx.gilt()) { AP.community.dateiFreigeben(d); return; }
         T().dateiMerken(d);
-        box.innerHTML = "";
-        if (dateiArt === "bild") {
+        teil.innerHTML = "";
+        if (x.art === "bild") {
           var img = el("img", "cm-bild");
           img.src = d.url;
-          img.alt = "Datei zu „" + (titel || "Inhalt") + "“";
-          box.appendChild(img);
+          img.alt = x.beschreibung || ((liste.length > 1 ? "Bild " + (i + 1) + " von " + liste.length + " zu " : "Datei zu ") + "„" + (titel || "Inhalt") + "“");
+          teil.appendChild(img);
         }
-        var a = el("a", "kn-neben cm-neben", dateiArt === "pdf" ? "PDF öffnen" : "Bild öffnen");
+        var a = el("a", "kn-neben cm-neben", x.art === "pdf" ? "PDF öffnen" : (liste.length > 1 ? "Bild " + (i + 1) + " öffnen" : "Bild öffnen"));
         a.href = d.url;
         a.target = "_blank";
         a.rel = "noopener";
-        box.appendChild(a);
-      }, function (f) {
+        teil.appendChild(a);
+      });
+    }
+    function los() {
+      box.innerHTML = "";
+      var st = el("p", "cm-hilfe", "Dateien werden geladen …");
+      st.setAttribute("role", "status");
+      box.appendChild(st);
+      var liste = beitragId ? AP.community.anhaenge(beitragId) : Promise.resolve([]);
+      liste.then(function (l) {
+        if (!ctx.gilt()) return;
+        if (!l.length) l = [{ pfad: pfad, art: dateiArt, beschreibung: "" }];
+        box.innerHTML = "";
+        return l.reduce(function (k, x, i) { return k.then(function () { if (ctx.gilt()) return eine(l, i, box); }); }, Promise.resolve());
+      }).then(null, function (f) {
         if (!ctx.gilt()) return;
         if (lesefehler(ctx, f)) return;
         box.innerHTML = "";
@@ -1198,7 +1217,7 @@
         if (x.bearbeitet_am) meta.push("bearbeitet " + T().datum(x.bearbeitet_am));
         box.appendChild(el("p", "cm-zeile-meta", meta.join(" · ")));
         if (x.text) box.appendChild(el("div", "cm-text", x.text));
-        if (x.datei_pfad) box.appendChild(dateiPruefen(ctx, x.datei_pfad, x.datei_art, x.titel));
+        if (x.datei_pfad) box.appendChild(dateiPruefen(ctx, x.datei_pfad, x.datei_art, x.titel, art === "beitrag" ? id : null));
         if (art === "antwort" && x.eltern_id) box.appendChild(T().verweis("Zum Beitrag", "#community/beitrag/" + x.eltern_id, "cm-verweis"));
       }
       if (a && a.anfrage_moeglich) anfrageBereich(a);
