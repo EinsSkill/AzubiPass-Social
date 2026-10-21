@@ -36,7 +36,7 @@ Feedbild. Gruppenbeiträge und Antworten ohne Anhänge.
 | lokal-sql | Altbestand: Stand vor den Migrationen mit Bild- und PDF-Lernzettel, dann einspielen | beide als Anhang 1, Invariante 0 ([Log](2026-10-21-claude-bilder/altbestand-uebernahme.log)) |
 | lokal-sql | `konkurrenz.py` alle Fälle inkl. **bilder** (zwei echte Verbindungen): Veröffentlichen zuerst → Löschen von Bild 2 wartet, 0 gelöscht; Löschen von Bild 3 zuerst → Veröffentlichen wartet, abgelehnt, kein halber Beitrag; gleiche Kennung parallel → ein Beitrag | **65/65** ([Log](2026-10-21-claude-bilder/konkurrenz.log)) |
 | lokal-sql | übrige sechs SQL-Suiten | ohne FEHLER |
-| mock | `community_bilder_test.py` (neu) | **58/58**, axe ohne Verstöße in 9 Zuständen ([Log](2026-10-21-claude-bilder/community_bilder_test.log)) |
+| mock | `community_bilder_test.py` (neu) | **58/58**, axe ohne Verstöße in 7 Zuständen ([Log](2026-10-21-claude-bilder/community_bilder_test.log)) |
 | mock | Gruppen / Lernstand / Korrekturen / Moderation | **47/47**, **90/90**, **97/97**, **128/128** |
 | lokal | `funktionstest.py` / `lernkern_audit_test.py` / `pruefe.py --schnell` | **269/269** / in Ordnung / keine Fehler |
 

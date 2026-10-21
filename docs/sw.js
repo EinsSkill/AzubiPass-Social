@@ -11,7 +11,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-8a78bfeb5c219318";
+var SPEICHER = "azubipass-e1b3fde523d4db82";
 var VORRAT = {
   "./": "2543b5b4c69c908e7c23051ce37ddf31b15d09c82e1ad18873bbd4b905b4af56",
   "app.html": "2543b5b4c69c908e7c23051ce37ddf31b15d09c82e1ad18873bbd4b905b4af56",
@@ -35,7 +35,7 @@ var VORRAT = {
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "f659e08002f4be07169b6a737f1cc32c2c46db9d6b2f05471d17def25e113a18",
   "mittel/aufgaben.js": "7952f59103ce5788077a3088db4ef5fc465bb0cb3af76d375c69bd30e00acbb6",
-  "mittel/aufgaben.json": "3e959442a35c56a0e334222866c3cdd8dbe6df73ebbefc7f99e454904bdac6f2",
+  "mittel/aufgaben.json": "72aa5494f30261c0bb3377c1dbb2d8da988a5cef57ed41cf34b368ce936ff824",
   "mittel/azubipass-logo.png": "6fbfaa65da67de20b628b6d5415a8a46c95ceeaa5c6638492e2860e7d6e98973",
   "mittel/azubipass-symbol.png": "82cddbb695cbba0a09d3b933eb4b178e221463e015b962d8013cdff580d4a692",
   "mittel/azubipass.css": "d490b3adc1b4469a83427beebde387fa5c32b9eeffea3c4cc28b275672f49caa",
@@ -55,7 +55,7 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "afd22abe31f571ff3c5f89a56474f4caa5ddf5786488dbb1bc1d42152f1c39b8",
+  "mittel/inhalt.json": "4ae907e460f9cc06703fe88bb9c24f42458488c5666ebc4e8633300378435809",
   "mittel/kern.js": "9eda07039cb34d36dffe5431a867cc21d80cf80ff9bb2baa03f619ea0fcf8336",
   "mittel/landing.css": "c1d299ad11bd6a3fd4b8515d08334b45741b6616da271a4899acf51353596f45",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",
