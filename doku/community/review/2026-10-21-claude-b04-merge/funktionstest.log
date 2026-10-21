@@ -1,0 +1,637 @@
+
+· Lernzettel lf10
+  OK   Deckblatt sichtbar
+  OK   Kapitel per Adresse erreichbar
+  OK   Adresse hat sich geändert  http://127.0.0.1:40667/lf10.html#k1
+  OK   Zurück-Taste führt aufs Deckblatt
+  OK   Lesezeichen gesetzt
+  OK   Rechenfeld nimmt Zahlentastatur
+  OK   Komma wird gerechnet  1.429,02 €
+  OK   Check-Antwort im Konto gespeichert
+  OK   Genau ein Speichereintrag  ['azubipass:konto']
+  OK   Karten hängen an Kennungen
+  OK   Trainer zeigt eine Karte
+  OK   Nur die bewertete Karte wird eingetragen  {'lf10-k6-b2-m1': {'fach': 2, 'faellig': '2026-10-22', 'fehler': 0}}
+  OK   Karte rückt ein Fach vor  {'fach': 2, 'faellig': '2026-10-22', 'fehler': 0}
+  OK   Karte bekommt ein Fälligkeitsdatum in der Zukunft  2026-10-22
+
+· App
+  OK   Direkter Home-Einstieg über /
+  OK   Direkter Home-Einstieg über /index.html
+  OK   Hauptaktion führt ins zuletzt gelesene Kapitel  ['Prüfungstermin festlegen', 'LF10 · KAPITEL 4', 'Kalkulieren mit Zuschlagssätzen', 'Kapitel fortsetzen']
+  OK   Ohne eigenen Termin kein persönlicher Countdown
+  OK   Keine Begrüßungsfloskel mehr
+  OK   Schirm lernen baut sich auf
+  OK   Schirm ueben baut sich auf
+  OK   Schirm suche baut sich auf
+  OK   Schirm ich baut sich auf
+  OK   Suche findet Treffer  37 Zeilen
+  OK   Trefferzahl wird angezeigt  37 Treffer
+  OK   Lesezeichen erscheint unter Ich
+  OK   Sicherung wird heruntergeladen  azubipass-fortschritt-2026-10-21.json
+  OK   Farbauswahl wurde entfernt
+  OK   Alte dunkle Einstellung bleibt auf dunklem Gerät hell  rgb(245, 245, 240)
+  OK   Alte Farbe wird im Konto auf hell umgestellt
+
+· Übernahme des alten Bestands
+  OK   Alter Fortschritt wird übernommen
+  OK   Alte Lernziele bleiben erhalten
+  OK   Verrutschter Kartenstand wird NICHT mitgenommen
+  OK   Übernahme wird dem Nutzer gesagt
+
+· Startbildschirm · welches Kapitel ist dran
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 59340)
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 687, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 694, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 896, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 59348)
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 687, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 694, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 896, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 59358)
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 687, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 694, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 896, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 59366)
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 687, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 694, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 896, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+  OK   Neuer Nutzer: aktuelles Thema wählen
+  OK   Neuer Nutzer: kein stiller LF1-Vorschlag  Das System der dualen Ausbildung
+  OK   Neuer Nutzer: Fortschritt 0  von 75 Kapiteln abgeschlossen
+
+Diese Woche
+
+Do
+Fr
+Sa
+So
+Mo
+Di
+Mi
+
+An 0 von 7 Tagen gelernt
+  OK   Neuer Nutzer: keine erfundene Aktivität
+  OK   Aktiver Nutzer: Kapitel fortsetzen
+  OK   Aktiver Nutzer: genau das offene Kapitel  Der Ausbildungsvertrag
+  OK   Titel kommt aus inhalt.json, nicht aus dem Konto
+  OK   Hauptaktion zeigt auf dieses Kapitel
+  OK   Fertiges letztes Kapitel: nächstes Kapitel starten
+  OK   Kein Rücksprung in ein fertiges Kapitel
+  OK   Ungültiger Verweis zerlegt den Schirm nicht
+  OK   Ungültiger Verweis fällt auf das erste offene Kapitel zurück  ['Prüfungstermin festlegen', 'LF1 · KAPITEL 1', 'Das System der dualen Ausbildung']
+  OK   Ungültiges Ziel wird nicht verlinkt
+  OK   Alle Kapitel fertig: Prüfungstraining öffnen
+  OK   Alle fertig: Ziel ist der Übungsteil
+  OK   Alle fertig: Bilanz stimmt
+
+· Startbildschirm · Fortschrittsfeld
+  OK   Eine Reihe je Lernfeld  13
+  OK   Ein Strich je Kapitel  75
+  OK   Abgeschlossenes Kapitel erscheint in LF6  {'kuerzel': 'LF6', 'gesamt': 9, 'voll': 1}
+  OK   Und NICHT im ersten Lernfeld  {'kuerzel': 'LF1', 'gesamt': 7, 'voll': 0}
+  OK   Fortschrittsfeld hat eine sprechende Beschriftung  Fortschritt: 1 von 75 Kapiteln abgeschlossen.
+
+· Startbildschirm · fällige Karten
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 47822)
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 687, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 694, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 896, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 47826)
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 687, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 694, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 896, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 47840)
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 687, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 694, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 896, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 47856)
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 687, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 694, in do_GET
+    self.copyfile(f, self.wfile)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/http/server.py", line 896, in copyfile
+    shutil.copyfileobj(source, outputfile)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+  OK   0 fällige Karten: »Heute keine Wiederholungen fällig«
+  OK   0 fällige Karten: kein toter Knopf
+  OK   1 fällige Karten: »1 Wiederholung wartet«
+  OK   1 fällige Karten: Link  1
+  OK   12 fällige Karten: »12 Wiederholungen warten«
+  OK   12 fällige Karten: Link  1
+
+· Prüfungstermin
+  OK   Ohne eigenen Termin bleibt der Countdown offen
+  OK   Eigener Termin wirkt ohne Neuladen  ['Abschlussprüfung Teil 2 · noch 40 Tage', 'DEIN ERSTER SCHRITT']
+  OK   Eigener Termin übersteht das Neuladen
+  OK   Eigener Termin liegt im bestehenden Konto
+  OK   Kein zweiter Speichereintrag
+  OK   Persönlicher Termin lässt sich entfernen
+  OK   Nach dem Entfernen bleibt der persönliche Countdown offen
+  OK   Vergangener Termin: Aufforderung statt Zahl
+  OK   Vergangener Termin: keine negative Tageszahl  ['Prüfungstermin aktualisieren', 'DEIN ERSTER SCHRITT']
+  OK   Vergangener Termin führt zu den Einstellungen
+  OK   Ungültiges Datum wird ignoriert, Countdown bleibt offen
+
+· Sicherung mit Prüfungstermin
+  OK   Prüfungstermin steht in der Sicherungsdatei  2026-12-15
+  OK   Eingespielte Sicherung bringt den Termin mit
+  OK   Eingespielter Termin rechnet auf Heute
+  OK   Alles zurücksetzen entfernt den eigenen Termin
+
+· Farben
+  OK   Heute ist dunkelgrün (light)  rgb(18, 48, 31)
+  OK   Lernen ist dieselbe grüne Welt (light)  rgb(18, 48, 31)
+  OK   Ueben ist dieselbe grüne Welt (light)  rgb(18, 48, 31)
+  OK   Ich ist dieselbe grüne Welt (light)  rgb(18, 48, 31)
+  OK   Zurück auf Heute wieder grün (light)
+  OK   Kapitel bleibt hell (light)  rgb(245, 245, 240)
+  OK   Heute ist dunkelgrün (dark)  rgb(18, 48, 31)
+  OK   Lernen ist dieselbe grüne Welt (dark)  rgb(18, 48, 31)
+  OK   Ueben ist dieselbe grüne Welt (dark)  rgb(18, 48, 31)
+  OK   Ich ist dieselbe grüne Welt (dark)  rgb(18, 48, 31)
+  OK   Zurück auf Heute wieder grün (dark)
+  OK   Kapitel bleibt hell (dark)  rgb(245, 245, 240)
+
+· Inhalt nicht ladbar
+  OK   Fehlende Inhalte erzeugen eine verständliche Meldung  ['Inhalt nicht gefunden']
+  OK   Fehlermeldung steht nicht auf dunklem Grund
+
+· Probeklausur · Aufgabenbestand
+  OK   mittel/aufgaben.json wurde gebaut
+  OK   Neun Buchführungskapitel mit Aufgaben  9
+  OK   45 eindeutige Baustein-Kennungen  45 Bausteine, 45 verschieden
+  OK   Jeder Baustein hat Punkte und Dauer
+  OK   Jedes Kapitel hat mindestens fünf Bausteine
+  OK   Jedes Kapitel deckt mindestens zwei Anforderungsbereiche ab
+  OK   Jede Kontonummer oder Kontenbezeichnung ist auflösbar
+  OK   Jede Belegreferenz hat eine Vorlage
+  OK   Belegvorlagen sind mitgebaut  ['eingangsrechnung', 'kontoauszug']
+  OK   Alle Begriffs- und Paragraphenverweise sind auflösbar
+  OK   Keine hinweis_konto-Merkzettel mehr im Bestand
+  OK   Alle vorkommenden Block-Typen kennt der Renderer
+
+· Probeklausur · Inhalt aller Lernfelder
+  OK   Alle Baustein-Kennungen sind eindeutig
+  OK   Mindestens 243 Bausteine im Bestand  243
+  OK   Alle 75 Kapitel haben Aufgaben
+  OK   Jede Kapitelreferenz zeigt auf ein echtes Kapitel
+  OK   Jeder Baustein hat alle Pflichtfelder
+  OK   Jedes Kapitel deckt AFB I, II und III ab
+  OK   Jeder Anforderungsbereich ist I, II oder III
+  OK   Punkte und Dauer stehen in plausiblem Verhältnis
+  OK   Punkte und Dauer liegen im sinnvollen Bereich
+  OK   Jede automatisch bewertete Eingabe hat eine Lösung
+  OK   Freitext steht nur in selbst bewerteten Aufgaben
+  OK   Jede offene Aufgabe hat Musterlösung und Punkteraster
+  OK   Jedes Punkteraster ergibt genau die Punkte der Aufgabe
+  OK   Der Bestand ist durchgehend auf die Musterfirma bezogen  204 von 243 Bausteinen nennen MAKEL
+
+· Probeklausur · Rechner, Ziehungen, Zusammensteller
+  OK   100 Ziehungen je variablem Baustein ohne Fehler
+  OK   Keine negativen oder unplausiblen Werte
+  OK   Schrittweiten werden eingehalten
+  OK   Abgeleitete Werte stimmen
+  OK   Prüfbedingungen werden eingehalten
+  OK   Derselbe Seed erzeugt dieselben Werte
+  OK   Unbekannte Ausdrücke werden abgelehnt
+  OK   Der Rechner rechnet richtig
+  OK   abrunden schneidet ab, ohne glatte Werte zu verändern
+  OK   aufrunden hebt an, ohne glatte Werte zu verändern
+  OK   Break-Even und kritische Menge sind ganze Stückzahlen
+  OK   Die Stückzahl liegt echt oberhalb der Schwelle
+  OK   Die Stückzahl liegt nicht weiter als nötig darüber
+  OK   Geprüft wurden krumme und glatt aufgehende Fälle  krumm 241, glatt 159
+  OK   Nur Aufgaben aus gewählten Kapiteln
+  OK   Keine Aufgabe doppelt
+  OK   Alle gewählten Kapitel kommen vor
+  OK   Dauerziel wird nicht überschritten
+  OK   Dauerziel wird weitgehend ausgenutzt
+  OK   Sinnvolle Typenmischung
+  OK   Nie drei gleichartige Aufgaben hintereinander  weit 0, eng 0 von je 40 Laeufen (40 gewertet)
+  OK   Drei Kapitel ergeben eine vollständige Klausur
+  OK   Drei Kapitel ergeben verschiedene Aufgabenarten
+  OK   Drei Kapitel ergeben gemischte Anforderungsbereiche
+  OK   Zu kurze Dauer wird ehrlich gemeldet
+  OK   Leere Auswahl lässt sich nicht starten
+  OK   Identischer Seed erzeugt identische Klausur
+  OK   Neuer Seed erzeugt eine andere Variante
+  OK   Zahlen mit Komma und Punkt werden gelesen
+  OK   Konto über die Nummer auflösbar
+  OK   Konto über die Bezeichnung auflösbar
+  OK   Konto über die Schulbezeichnung auflösbar
+  OK   Konto aus der Vervollständigung auflösbar
+  OK   Unbekanntes Konto bleibt unbekannt
+
+· Probeklausur · Bewertung
+  OK   Zahlenbewertung einschließlich Dezimalkomma
+  OK   Folgefehler wird anerkannt
+  OK   Auswahl richtig gibt volle Punkte
+  OK   Auswahl falsch gibt keine Punkte
+  OK   Zuordnung mit Teilpunkten
+  OK   Reihenfolge richtig gibt volle Punkte
+  OK   Falsche Reihenfolge gibt weniger
+  OK   Buchungssatz vollständig richtig
+  OK   Vertauschte Buchungszeilen kosten nichts
+  OK   Buchungssatz mit fehlendem Betrag gibt Teilpunkte
+  OK   Offene Antwort zählt ohne Selbstbewertung null
+  OK   Selbstbewertung zählt genau die abgehakten Kriterien
+  OK   Kapitelwerte ergeben zusammen den Gesamtwert
+  OK   Ohne Antworten gibt es keine Punkte
+
+· Probeklausur · Klausurmodus
+  OK   Einstieg unter Üben führt zur Kapitelwahl
+  OK   Nur Lernfelder mit Aufgaben stehen zur Wahl  13 Gruppen, 13 Lernfelder
+  OK   Auswahl prüfen ist erst mit Kapiteln möglich
+  OK   Zusammenfassung nennt Aufgaben, Punkte und Zeit
+  OK   Zusammenfassung sagt, dass keine Lösungen gezeigt werden
+  OK   Der Timer läuft vor dem Start noch nicht
+  OK   Die Klausur beginnt mit Aufgabe 1
+  OK   Der Timer läuft
+  OK   Üben bleibt trotz offener Klausur die Übersicht
+  OK   Klausur lässt sich bewusst fortsetzen
+  OK   Keine Musterlösung vor der Abgabe
+  OK   Keine Erklärung vor der Abgabe
+  OK   Keine Richtigkeitsanzeige während der Bearbeitung
+  OK   Antworten bleiben beim Aufgabenwechsel erhalten
+  OK   Markierung wird gesetzt
+  OK   Neuladen stellt die laufende Klausur wieder her  ['PROBEKLAUSUR', '89:54', 'Übersicht']
+  OK   Antwort übersteht das Neuladen
+  OK   Markierung übersteht das Neuladen
+  OK   Der Timer wird durch Neuladen nicht zurückgesetzt  89:54
+  OK   Abgelaufene Zeit wird deutlich gesagt
+  OK   Abgelaufene Zeit löscht keine Eingaben
+  OK   Nach der Abgabe erscheint die Auswertung
+  OK   Auswertung nennt Punkte und Prozent
+  OK   Auswertung nennt keine Note
+  OK   Auswertung führt Kapitel einzeln auf  9
+  OK   Auswertung bietet eine neue Variante an
+  OK   Abgeschlossene Klausur wird nicht als laufende angezeigt
+  OK   Nach der Abgabe öffnet die letzte Auswertung  Auswertung | OFFENE ANTWORTEN SELBST BEWERTEN
+  OK   Antworten und Selbstbewertung bleiben erhalten
+  OK   „Auswahl ändern“ führt zur neuen Vorbereitung
+  OK   „Neue Variante erstellen“ führt zur Vorbereitung vor dem Start
+  OK   Verwerfen entfernt nur den Klausurzustand  ['azubipass:konto']
+  OK   azubipass:konto bleibt unverändert erhalten
+  OK   Beschädigter Klausurzustand führt zu einem verständlichen Zustand
+
+· Probeklausur · Weg aus dem Kapitel
+  OK   Kapitel bietet 'Dieses Kapitel als Probeklausur üben'  1
+  OK   Die Aktion zeigt auf die Kapitelroute  app.html#ueben/probeklausur?kapitel=buchfuehrung:k3
+  OK   Gültige Kennung öffnet die Probeklausur
+  OK   Genau das gemeinte Kapitel ist vorgewählt  ['K3']
+  OK   Die Vorwahl wird sichtbar gesagt
+  OK   Die Auswahl nennt die ungefähre Aufgabenzahl  1 Kapitel · 60 Min. · ca. 5 Aufgaben
+  OK   Unbekannte Kennung öffnet die normale Auswahl
+  OK   Unbekannte Kennung wählt nichts vor
+  OK   Unbekannte Kennung sagt nichts von einer Vorwahl
+  OK   Unbekannte Kennung erzeugt keinen Fehler
+  OK   Unbekannte Kennung ändert keine Nutzerdaten
+  OK   Ohne Kapitel kann keine Klausur beginnen
+  OK   Der Üben-Reiter führt aus der Probeklausur zur Übersicht
+  OK   Genau vier Haupttabs (app.html)  4
+  OK   Genau vier Haupttabs (buchfuehrung.html)  4
+  OK   Kein fünfter Kapitel-Tab  ['Heute', 'Lernen', 'Üben', 'Ich']
+
+· Kapitel · Hervorhebungen
+  OK   Eine wichtige Aussage ist im Kapitel vorhanden
+  OK   Kein halbhoher Verlauf mehr  none
+  OK   Die Fläche liegt unter der ganzen Phrase  color(srgb 0.788235 0.635294 0.152941 / 0.23)
+  OK   Die Fläche bricht mit der Zeile mit  clone
+  OK   Höchstens 2 px Radius  2
+  OK   Kleiner waagerechter Innenabstand  3.6
+  OK   Ein anklickbarer Begriff ist vorhanden
+  OK   Begriff ohne gepunktete Linie  solid|none
+  OK   Begriff ist halbfett  600
+  OK   Begriff hat ein 44-px-Bedienziel  44
+  OK   Eine Paragraphenkennung ist vorhanden
+  OK   Paragraph ohne gepunktete Linie  solid
+  OK   Paragraph steht in Mono  "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace
+  OK   Paragraph hat eine eigene Fläche  color(srgb 0.105882 0.262745 0.196078 / 0.1)
+  OK   Paragraph hat ein 44-px-Bedienziel  44
+  OK   Suchtreffer haben eine eigene Klasse
+  OK   Suchtreffer sind eine kräftige Vollfläche  rgb(201, 162, 39)
+
+· Kapitel · Fuehrung und Grafiken
+  OK   Das Kapitel hat eine Inhaltsnavigation
+  OK   Am Schreibtisch steht sie fest ohne Knopf
+  OK   Am Schreibtisch ist die Liste sichtbar
+  OK   Die Abschnittsposition laeuft mit  ['1', '2', '3']
+  OK   Der aktuelle Abschnitt ist auch fuer Screenreader markiert
+  OK   Jede Fachgrafik hat genau ein Zuruecksetzen  1 von 1
+  OK   Zuruecksetzen stellt den Ausgangszustand her
+  OK   Zuruecksetzen verdoppelt sich nicht
+  OK   Zuruecksetzen ist 44 px hoch zu treffen  44
+  OK   Am Handy fuehrt ein Knopf zur Inhaltsnavigation
+  OK   Zugeklappt ist die Liste nicht zu sehen
+  OK   Der Knopf sagt, dass er offen ist
+  OK   Aufgeklappt ist die Liste zu sehen
+  OK   Escape schliesst die Inhaltsnavigation
+  OK   Der Fokus kehrt zum Knopf zurueck
+  OK   Die Fuehrung erzeugt keinen Fehler
+
+· Probeklausur · Aufgabendaten fehlen
+  OK   Aufgabendaten fehlend: verständliche Meldung statt leerer Seite  ‹ übersicht
+aufgaben nicht gefunden
+
+mittel/aufgaben.json ließ sich ni
+  OK   Aufgabendaten fehlend: ein Weg zurück bleibt
+  OK   Aufgabendaten fehlend: azubipass:konto bleibt unberührt
+  OK   Aufgabendaten fehlend: kein unbehandelter Fehler
+  OK   Aufgabendaten beschaedigt: verständliche Meldung statt leerer Seite  ‹ übersicht
+aufgaben nicht gefunden
+
+mittel/aufgaben.json ließ sich ni
+  OK   Aufgabendaten beschaedigt: ein Weg zurück bleibt
+  OK   Aufgabendaten beschaedigt: azubipass:konto bleibt unberührt
+  OK   Aufgabendaten beschaedigt: kein unbehandelter Fehler
+
+· Schriften
+  OK   Keine Schriftanfrage nach außen
+  OK   Source Serif 4 wird örtlich ausgeliefert
+  OK   IBM Plex Sans wird örtlich ausgeliefert
+  OK   IBM Plex Mono wird örtlich ausgeliefert
+
+· Offline
+  OK   Zwischenspeicher übernimmt
+  OK   Home-Einstieg / lädt ohne Netz
+  OK   Home-Einstieg /index.html lädt ohne Netz
+  OK   Lernzettel lädt ohne Netz
+
+· Probeklausur · Build und Offline
+  OK   Aufgabenbestand steht im Offline-Vorrat
+  OK   Renderer steht im Offline-Vorrat
+  OK   Kein Verweis auf den Wegwerf-Prototyp
+  OK   App bindet den Renderer ein
+  OK   Build läuft ohne Fehler durch
+  OK   Build ist reproduzierbar
+
+  269 von 269 bestanden.

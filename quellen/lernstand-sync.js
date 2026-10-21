@@ -264,7 +264,10 @@
 
   function anmeldungBeobachten() {
     AP.community.beiAenderung(function (ereignis, sitzung) {
-      if ((ereignis === "SIGNED_IN" || ereignis === "INITIAL_SESSION") && sitzung && sitzung.user) {
+      // Spec 08: Auch eine Passwort-Wiederherstellung meldet ein Konto an – ist es
+      // ein anderes, trennt kontoVermerken sofort (LS01), bevor gesendet wird.
+      if ((ereignis === "SIGNED_IN" || ereignis === "INITIAL_SESSION" || ereignis === "PASSWORD_RECOVERY") &&
+          sitzung && sitzung.user) {
         kontoVermerken(sitzung.user.id);
         planen(300);
       }

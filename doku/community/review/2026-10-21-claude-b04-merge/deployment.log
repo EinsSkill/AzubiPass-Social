@@ -1,0 +1,13 @@
+Merge und Deployment, 21.10.2026 (Freigabe Lukes, entscheidungen.md#merge-freigabe-2026-10-21)
+
+main vorher: cd4d6cf · Merge-Commit: e4a4210 (community-zugang @ c622120, --no-ff, konfliktfrei) · git push origin main
+GitHub Pages: neue Dateien nach ca. 1 Minute ausgeliefert (community.js enthält beitrag_mit_anhaengen).
+SHA-256 (erste 12 Zeichen) lokal docs/ = live:
+  app.html 2543b5b4c69c · sw.js 72f143baafac · mittel/community.js 2914f1e0b608 · mittel/community-beitraege.js 3b5e08ef5991
+  mittel/lernstand-sync.js 8bf5416a4b48 · mittel/kern.js 9eda07039cb3 · mittel/app.js f659e08002f4
+  mittel/azubipass.css ef8f8662aaaf · datenschutz.html e172f9d9914c  → alle gleich
+Rauchtest live (Chromium, ohne Anmeldung): Heute sichtbar, Community zeigt Anmeldung, AP.lernstandSync und
+AP.community.bildPruefen vorhanden, keine Konsolen- oder Seitenfehler.
+Datenbank: Paket zu (freigabe.beitraege.offen = false), 58 Migrationen, keine Migration für B04.
+Nicht geprüft: echter Bild-/PDF-Upload, Mehrbildansicht und Verkleinerung mit internem Testkonto (kein Zugang in der
+Sitzung), echte Handys/HEIC.

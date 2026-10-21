@@ -20,6 +20,11 @@ Abmelden – geht unverändert an Supabase. COMMUNITY_TEST_NEU braucht neun
 Konten OHNE Profil; nach dem Lauf haben sie eins (Konten neu anlegen, siehe
 supabase/README.md).
 
+Seit Spec 08 (21.10.2026) prüft dieser Test den untergeordneten Mail-Link-Weg
+(„Alternativ per E-Mail anmelden“). Nach der Anpassung noch nicht wieder gegen
+das echte Projekt gelaufen (kein Testpasswort in der Sitzung). Die
+Passwortabläufe prüft community_passwort_test.py (Simulation).
+
 Rückgabewert 1 bei einem Fehler.
 """
 
@@ -138,6 +143,13 @@ def main():
             def sitzung_schluessel():
                 return seite.evaluate("Object.keys(localStorage).filter(k => k.indexOf('azubipass-sitzung') === 0)")
 
+            # Spec 08: Standard ist jetzt die Passwortanmeldung. Der Mail-Link-Weg,
+            # den dieser Test prüft, liegt unter „Alternativ per E-Mail anmelden“.
+            def zum_mail():
+                if seite.get_by_role("button", name="Alternativ per E-Mail anmelden").count():
+                    seite.get_by_role("button", name="Alternativ per E-Mail anmelden").click()
+                    seite.wait_for_selector("#community h1:has-text('Per E-Mail anmelden')")
+
             def mit_passwort(mail):
                 seite.evaluate("""async ([m, p]) => { const c = await AP.community.verbinden();
                   const r = await c.auth.signInWithPassword({ email: m, password: p });
@@ -185,10 +197,12 @@ def main():
             pruefe(seite.evaluate("document.activeElement.tagName") == "H1", "Fokus auf der Überschrift")
             bild("03-anmeldung")
             ziele_mindestens_44("Anmeldung")
+            zum_mail()
             seite.click("text=Anmeldelink senden")
             pruefe(seite.is_visible("text=Gib deine E-Mail-Adresse ein."), "Leere Adresse wird erklärt")
             pruefe(seite.evaluate("document.activeElement.type") == "email", "Fokus springt ins E-Mail-Feld")
             seite.fill("#community input[type=email]", "kein-at-zeichen")
+            zum_mail()
             seite.click("text=Anmeldelink senden")
             pruefe(seite.is_visible("text=Prüfe deine E-Mail-Adresse."), "Ungültige Adresse wird erklärt")
 
@@ -211,12 +225,14 @@ def main():
             seite.route("**/auth/v1/otp**", lambda r: r.fulfill(status=429, content_type="application/json",
                         body=json.dumps({"code": 429, "error_code": "over_email_send_rate_limit",
                                          "msg": "email rate limit exceeded"})))
+            zum_mail()
             seite.click("text=Anmeldelink senden")
             seite.wait_for_selector("text=Du hast gerade einen Link angefordert. Warte kurz und versuch es erneut.")
             pruefe(True, "Zu häufiger Versand wird verständlich gemeldet")
             seite.unroute("**/auth/v1/otp**")
             seite.route("**/auth/v1/otp**", lambda r: r.fulfill(status=200, content_type="application/json", body="{}"))
             otp_vorher = len([a for a in anfragen if "/auth/v1/otp" in a[1]])
+            zum_mail()
             seite.dblclick("text=Anmeldelink senden")
             pruefe(ist("Schau in dein E\u2011Mail\u2011Postfach"), "Nach dem Versand: Postfach-Hinweis", h1())
             pruefe(len([a for a in anfragen if "/auth/v1/otp" in a[1]]) - otp_vorher == 1, "Doppelklick sendet nur einen Link")
@@ -255,7 +271,7 @@ def main():
             pruefe(True, "Zu viele Code-Versuche werden gemeldet")
             seite.unroute("**/auth/v1/verify**")
             seite.click("text=E-Mail-Adresse ändern")
-            pruefe(ist("In der Community anmelden") and seite.input_value("#community input[type=email]") == ANNA,
+            pruefe(ist("Per E-Mail anmelden") and seite.input_value("#community input[type=email]") == ANNA,
                    "„Adresse ändern“ führt mit Adresse zurück")
 
             # Erfolgreicher Code: echte Sitzung für ein Konto ohne Profil
@@ -263,6 +279,7 @@ def main():
             sitzung1 = echte_sitzung(n1, pw)
             seite.fill("#community input[type=email]", n1)
             seite.route("**/auth/v1/otp**", lambda r: r.fulfill(status=200, content_type="application/json", body="{}"))
+            zum_mail()
             seite.click("text=Anmeldelink senden")
             h1()
             seite.route("**/auth/v1/verify**", lambda r: r.fulfill(status=200, content_type="application/json", body=sitzung1))
@@ -553,6 +570,7 @@ def main():
             seite.route("**/auth/v1/otp**", lambda r: gehalten.append(r))
             gehalten.clear()
             seite.fill("#community input[type=email]", "jemand@azubipass.invalid")
+            zum_mail()
             seite.click("text=Anmeldelink senden")
             for _ in range(40):
                 if gehalten: break
@@ -660,10 +678,10 @@ def main():
             print("Mail-Link")
             seite.goto(basis + "app.html?anmeldung=1&error=access_denied&error_code=otp_expired"
                        "&error_description=Email+link+is+invalid+or+has+expired#community")
-            seite.wait_for_selector("text=Dieser Anmeldelink ist nicht mehr gültig. Lass dir einen neuen Link schicken.")
+            seite.wait_for_selector("text=Dieser Anmeldelink ist nicht mehr gültig. Melde dich mit deinem Passwort an oder lass dir einen neuen Link schicken.")
             pruefe("error" not in seite.url and "#community" in seite.url, "Abgelaufener Link: Hinweis, Adresse aufgeräumt", seite.url)
             seite.goto(basis + "app.html?anmeldung=1&code=00000000-0000-0000-0000-000000000000#community")
-            seite.wait_for_selector("text=Dieser Anmeldelink ist nicht mehr gültig. Lass dir einen neuen Link schicken.")
+            seite.wait_for_selector("text=Dieser Anmeldelink ist nicht mehr gültig. Melde dich mit deinem Passwort an oder lass dir einen neuen Link schicken.")
             pruefe("code=" not in seite.url, "Link aus anderem Browser oder schon benutzt: klarer Rückweg", seite.url)
             pruefe(ist("In der Community anmelden"), "Keine Endlosschleife, Anmeldung steht bereit")
 

@@ -37,10 +37,13 @@
   /* Was bleibt, solange die Seite offen ist: welche Ansicht, welche Adresse,
      was im Formular stand. Nichts davon landet im dauerhaften Speicher. */
   var z = {
-    ansicht: null,        // anmeldung | versendet | pruefen | profil | drin | offline |
+    ansicht: null,        // anmeldung | registrieren | bestaetigen | vergessen | linkVersendet |
+                          // neuesPasswort | mailLogin | versendet | pruefen | profil | drin | offline |
                           // profilfehler | unklar | nichtda | gesperrt | freigabeFehler |
                           // beitraege | beitrag | schreiben
     mail: "",
+    pwZweck: "vergessen", // Spec 08: Wiederherstellung als „vergessen“ oder „festlegen“ (Mail-Konto)
+    kontoMail: "",        // Adresse der jetzigen Sitzung, nur für „Neues Passwort festlegen“
     hinweis: null,        // { text, fehler } – eine Zeile oben in der Ansicht
     laeuft: false,        // eine Anfrage ist unterwegs: kein zweiter Klick
     profil: null,
@@ -100,6 +103,7 @@
     z.profil = null;
     z.nutzer = null;
     z.mail = "";
+    z.kontoMail = "";
     z.formular = leeresFormular();
     z.ziel = null;
     z.laeuft = false;
@@ -296,14 +300,20 @@
         if (!gilt(n)) return;
         if (!s) {
           if (z.nutzer) vergessen();                       // Sitzung ist weg
-          // Wer gerade auf den Link wartet, bleibt dort – mit Adresse und Codefeld.
-          setze(vorher === "versendet" && z.mail ? "versendet" : "anmeldung", hinweis);
+          // Wer gerade in einem Anmeldeschritt ist (z. B. auf den Link wartet),
+          // bleibt dort – Passwortfelder sind beim Neuzeichnen leer.
+          setze(VOR_ANMELDUNG.indexOf(vorher) >= 0 && (z.mail || ["registrieren", "vergessen", "mailLogin"].indexOf(vorher) >= 0)
+            ? vorher : "anmeldung", hinweis);
           return;
         }
         // Anderes Konto als vorhin (z. B. in einem anderen Tab gewechselt):
         // nichts vom alten übernehmen.
         if (z.nutzer && z.nutzer !== s.user.id) vergessen();
         z.nutzer = s.user.id;
+        z.kontoMail = s.user.email || "";
+        // Spec 08: Bestätigte Wiederherstellung für genau dieses Konto zuerst –
+        // vor Profil, Ziel und Paketprüfung.
+        if (AP.community.wiederherstellungOffen(s.user.id)) { setze("neuesPasswort", hinweis); return; }
         ladetext("Profil wird geladen …");
         return AP.community.profil(true).then(function (p) {
           if (!gilt(n)) return;
@@ -321,9 +331,11 @@
         if (!gilt(n)) return;
         if (f && f.art === "netz" && offline()) return setze("offline");
         if (f && f.art === "anmeldung") {
-          // Ungültiger, abgelaufener oder fremder Link: zurück zur Anmeldung.
-          setze("anmeldung", { fehler: true,
-            text: "Dieser Anmeldelink ist nicht mehr gültig. Lass dir einen neuen Link schicken." });
+          // Ungültiger, abgelaufener, verbrauchter oder fremder Link (Spec 08):
+          // Wiederherstellung → neuen Link anfordern; sonst zur Anmeldung.
+          var text = f.message || "Dieser Anmeldelink ist nicht mehr gültig. Melde dich mit deinem Passwort an oder lass dir einen neuen Link schicken.";
+          if (f.zweck === "passwort") { z.pwZweck = "vergessen"; setze("vergessen", { fehler: true, text: text }); return; }
+          setze("anmeldung", { fehler: true, text: text });
           return;
         }
         setze("pruefFehler");
@@ -339,9 +351,11 @@
   function abgelaufen() {
     vergessen();
     neuerLauf();
-    setze("anmeldung", { text: "Deine Anmeldung ist abgelaufen. Lass dir einen neuen Link schicken.",
-                         fehler: true });
+    setze("anmeldung", { text: "Deine Anmeldung ist abgelaufen. Melde dich erneut an.", fehler: true });
   }
+
+  // Ansichten vor der Anmeldung (ohne Konto).
+  var VOR_ANMELDUNG = ["anmeldung", "registrieren", "bestaetigen", "vergessen", "linkVersendet", "mailLogin", "versendet"];
 
   /* Zugang erteilt: jetzt erst das Ziel anfassen. Bekannt sind
        (leer)            C04 Beiträge
@@ -433,6 +447,8 @@
     schirm.appendChild(rahmen);
     var bauer = {
       pruefen: ansichtPruefen, anmeldung: ansichtAnmeldung, versendet: ansichtVersendet,
+      registrieren: ansichtRegistrieren, bestaetigen: ansichtBestaetigen, vergessen: ansichtVergessen,
+      linkVersendet: ansichtLinkVersendet, neuesPasswort: ansichtNeuesPasswort, mailLogin: ansichtMailLogin,
       profil: ansichtProfil, drin: ansichtDrin, offline: ansichtOffline,
       profilfehler: ansichtProfilfehler, unklar: ansichtUnklar, nichtda: ansichtNichtDa,
       pruefFehler: ansichtPruefFehler,
@@ -515,81 +531,557 @@
     r.querySelector("h1").setAttribute("aria-live", "polite");
   }
 
-  /* ---------- A · Anmeldung */
-  function ansichtAnmeldung(r) {
-    r.appendChild(zurueckKnopf());
-    r.appendChild(kopf("In der Community anmelden",
-      "Stell Fragen, teile Lernzettel und lerne mit anderen. Zum Anmelden schicken wir dir einen Link per E-Mail."));
-    r.appendChild(hinweiszeile());
+  /* ================================================== Spec 08 · Anmeldung mit Passwort
 
-    var form = el("form", "cm-form");
-    form.noValidate = true;
-    var mail = feld({
-      label: "E-Mail-Adresse", typ: "email", wert: z.mail, pflicht: true,
-      hilfe: "Du brauchst kein Passwort. Halte deinen Beta-Zugangscode bereit, wenn du neu dabei bist.",
-      attr: { autocomplete: "email", inputmode: "email", autocapitalize: "off", spellcheck: "false" }
+     Passwörter stehen nur in den Eingabefeldern – nie in z, nie im Speicher,
+     nie in einer Meldung. Jeder Ansichtswechsel baut den Schirm neu; damit
+     sind sie weg. Die E-Mail-Adresse darf in z.mail für die nächste Ansicht
+     bleiben. */
+
+  var ERFOLG_PASSWORT = "Dein Passwort wurde gespeichert. Du kannst dich jetzt mit E-Mail-Adresse und Passwort anmelden.";
+
+  function mindestens() { return AP.community.CFG.passwortMin; }
+
+  function mailFeld(hilfe, autocomplete) {
+    return feld({
+      label: "E-Mail-Adresse", typ: "email", wert: z.mail, pflicht: true, hilfe: hilfe,
+      attr: { autocomplete: autocomplete || "email", inputmode: "email", autocapitalize: "off", spellcheck: "false" }
     });
-    form.appendChild(mail.box);
+  }
 
-    var senden = el("button", "kn-haupt cm-haupt", "Anmeldelink senden");
-    senden.type = "submit";
-    form.appendChild(senden);
-    form.appendChild(verweis("Datenschutzerklärung", "datenschutz.html", "cm-verweis cm-leise"));
-    form.appendChild(verweis("Ohne Anmeldung weiterlernen", "app.html#lernen", "kn-neben cm-neben"));
+  function mailFehler(wert) {
+    if (!wert) return "Gib deine E-Mail-Adresse ein.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(wert)) return "Prüfe deine E-Mail-Adresse.";
+    return "";
+  }
 
-    function mailFehler(wert) {
-      if (!wert) return "Gib deine E-Mail-Adresse ein.";
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(wert)) return "Prüfe deine E-Mail-Adresse.";
-      return "";
-    }
-    // Nach dem ersten Absenden prüft das Feld bei jeder Korrektur mit.
+  function passwortFeld(label, neu, hilfe) {
+    return feld({
+      label: label, typ: "password", pflicht: true, hilfe: hilfe,
+      attr: { autocomplete: neu ? "new-password" : "current-password",
+              autocapitalize: "off", autocorrect: "off", spellcheck: "false" }
+    });
+  }
+
+  // Neue Passwörter: Länge wie angezeigt (Codepunkte); entscheiden tut der Server.
+  function neuesPasswortFehler(w) {
+    if (!w) return "Gib ein Passwort ein.";
+    if (Array.from(w).length < mindestens()) return "Das Passwort muss mindestens " + mindestens() + " Zeichen lang sein.";
+    return "";
+  }
+
+  /* Ein Knopf für alle Passwortfelder des Formulars. Wert, Fokus und Cursor
+     bleiben, wo sie sind; die Beschriftung sagt, was ein Klick tut. */
+  function anzeigenKnopf(felder) {
+    var b = knopf("Passwort anzeigen", "cm-verweis cm-anzeigen");
+    b.setAttribute("aria-controls", felder.map(function (f) { return f.eingabe.id; }).join(" "));
+    b.addEventListener("mousedown", function (e) { e.preventDefault(); });
+    b.addEventListener("click", function () {
+      var an = felder[0].eingabe.type === "password";
+      felder.forEach(function (f) {
+        var e = f.eingabe, aktiv = document.activeElement === e;
+        var von = e.selectionStart, bis = e.selectionEnd;
+        e.type = an ? "text" : "password";
+        if (aktiv) {
+          // Manche Browser setzen den Cursor beim Typwechsel zurück – auch erst danach.
+          var zurueck = function () { try { e.setSelectionRange(von, bis); } catch (x) {} };
+          zurueck();
+          setTimeout(zurueck, 0);
+        }
+      });
+      b.textContent = an ? "Passwort verbergen" : "Passwort anzeigen";
+    });
+    return b;
+  }
+
+  function authHinweis(f, standard) {
+    if (f && f.art === "bremse") return "Zu viele Versuche in kurzer Zeit. Warte einen Moment und versuch es erneut.";
+    if (f && f.art === "netz") return "Keine Verbindung zum Server. Prüfe dein Internet und versuch es erneut.";
+    if (f && (f.art === "vorhanden" || f.art === "server") && f.message && !/^Da ist etwas/.test(f.message)) return f.message;
+    return standard;
+  }
+
+  function wechseln(ansicht, zweck) {
+    if (z.laeuft) return;
+    if (zweck) z.pwZweck = zweck;
+    setze(ansicht);
+  }
+
+  /* Ein Formular: Feldfehler nach dem ersten Absenden, danach bei jeder
+     Korrektur neu; kein zweites Absenden, solange eins läuft; die Antwort
+     zählt nur, wenn Ansicht und Konto noch dieselben sind. */
+  function formularLauf(form, o) {
     var versucht = false;
-    mail.eingabe.addEventListener("input", function () {
-      z.mail = mail.eingabe.value.trim();
-      if (versucht) fehlerSetzen(mail, mailFehler(z.mail));
-    });
-
+    function pruefe() {
+      var mit = [];
+      o.felder.forEach(function (x) {
+        var t = x.pruef();
+        fehlerSetzen(x.f, t);
+        if (t) mit.push(x.f);
+      });
+      if (o.oben) {
+        o.oben.innerHTML = "";
+        if (mit.length > 1) o.oben.appendChild(fehleruebersicht(mit));
+      }
+      return mit;
+    }
+    form.addEventListener("input", function () { if (versucht) pruefe(); });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (z.laeuft) return;
       versucht = true;
-      var wert = mail.eingabe.value.trim();
-      z.mail = wert;
-      var f = mailFehler(wert);
-      fehlerSetzen(mail, f);
-      if (f) { mail.eingabe.focus(); return; }
+      var mit = pruefe();
+      if (mit.length) { mit[0].eingabe.focus(); return; }
       if (offline()) { setze("offline"); return; }
       var passt = anfrage();
-      sperren(senden, "Anmeldelink wird gesendet …");
-      AP.community.anmeldenPerMail(wert).then(function (a) {
+      sperren(o.knopf, o.laufText);
+      Promise.resolve().then(o.senden).then(function (r) {
         if (!passt()) return;
         z.laeuft = false;
-        z.mail = a;
-        setze("versendet");
+        o.ok(r);
       }, function (f) {
         if (!passt()) return;
         z.laeuft = false;
-        freigeben(senden);
-        if (f.art === "netz" && offline()) { setze("offline"); return; }
+        freigeben(o.knopf);
+        if (f && f.art === "netz" && offline()) { setze("offline"); return; }
+        o.fehler(f || {});
+      });
+    });
+  }
+
+  // Ein Knopf, der eine Mail anfordert (erneut senden).
+  function mailKnopf(r, text, aktion, erfolg, fehltext) {
+    var b = knopf(text, "kn-neben cm-neben", function () {
+      if (z.laeuft) return;
+      if (offline()) { setze("offline"); return; }
+      var passt = anfrage();
+      sperren(b, "Link wird gesendet …");
+      aktion().then(function () {
+        if (!passt()) return;
+        z.laeuft = false;
+        freigeben(b);
+        zeigeHinweis(r, { text: erfolg });
+      }, function (f) {
+        if (!passt()) return;
+        z.laeuft = false;
+        freigeben(b);
+        if (f && f.art === "netz" && offline()) { setze("offline"); return; }
+        zeigeHinweis(r, { fehler: true, text: authHinweis(f, fehltext) });
+      });
+    });
+    return b;
+  }
+
+  function bestaetigungKnopf(r) {
+    return mailKnopf(r, "Bestätigungs-Mail erneut senden",
+      function () { return AP.community.bestaetigungSenden(z.mail); },
+      "Falls die Registrierung noch nicht bestätigt ist, ist eine neue E-Mail unterwegs.",
+      "Die E-Mail konnte nicht gesendet werden. Versuch es erneut.");
+  }
+
+  function unten(r) {
+    var u = el("div", "cm-reihe");
+    u.appendChild(verweis("Datenschutzerklärung", "datenschutz.html", "cm-verweis cm-leise"));
+    u.appendChild(verweis("Ohne Anmeldung weiterlernen", "app.html#lernen", "kn-neben cm-neben"));
+    r.appendChild(u);
+  }
+
+  /* ---------- A · Anmelden (Standard) */
+  function ansichtAnmeldung(r) {
+    r.appendChild(zurueckKnopf());
+    r.appendChild(kopf("In der Community anmelden",
+      "Melde dich mit deiner E-Mail-Adresse und deinem Passwort an."));
+    r.appendChild(hinweiszeile());
+
+    var form = el("form", "cm-form");
+    form.noValidate = true;
+    var mail = mailFeld(null, "username");
+    var pw = passwortFeld("Passwort", false);
+    form.appendChild(mail.box);
+    form.appendChild(pw.box);
+    form.appendChild(anzeigenKnopf([pw]));
+    var los = el("button", "kn-haupt cm-haupt", "Anmelden");
+    los.type = "submit";
+    form.appendChild(los);
+    var danach = el("div");                    // Platz für „Bestätigung erneut senden“
+    form.appendChild(danach);
+    mail.eingabe.addEventListener("input", function () { z.mail = mail.eingabe.value.trim(); });
+
+    formularLauf(form, {
+      felder: [
+        { f: mail, pruef: function () { return mailFehler(mail.eingabe.value.trim()); } },
+        // Beim Login nur „nicht leer“: alte, kürzere Passwörter entscheidet der Server.
+        { f: pw, pruef: function () { return pw.eingabe.value ? "" : "Gib dein Passwort ein."; } }
+      ],
+      knopf: los, laufText: "Anmeldung wird geprüft …",
+      senden: function () {
+        z.mail = mail.eingabe.value.trim();
+        danach.innerHTML = "";
+        return AP.community.anmeldenMitPasswort(z.mail, pw.eingabe.value);
+      },
+      ok: function () { pruefen(); },
+      fehler: function (f) {
+        if (f.art === "eingabe") {
+          if (/Passwort/.test(f.message)) { fehlerSetzen(pw, f.message); pw.eingabe.focus(); }
+          else { fehlerSetzen(mail, "Prüfe deine E-Mail-Adresse."); mail.eingabe.focus(); }
+          return;
+        }
+        if (f.art === "zugang") { zeigeHinweis(r, { fehler: true, text: f.message }); pw.eingabe.focus(); return; }
+        if (f.art === "unbestaetigt") {
+          zeigeHinweis(r, { fehler: true, text: f.message });
+          danach.appendChild(bestaetigungKnopf(r));
+          return;
+        }
+        zeigeHinweis(r, { fehler: true, text: authHinweis(f, "Die Anmeldung hat nicht geklappt. Versuch es erneut.") });
+        los.focus();
+      }
+    });
+    r.appendChild(form);
+
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(knopf("Passwort vergessen?", "kn-neben cm-neben", function () { wechseln("vergessen", "vergessen"); }));
+    reihe.appendChild(knopf("Konto erstellen", "kn-neben cm-neben", function () { wechseln("registrieren"); }));
+    r.appendChild(reihe);
+
+    var alt = el("div", "cm-reihe cm-alternativ");
+    alt.appendChild(knopf("Bisher nur per E-Mail angemeldet? Passwort festlegen", "cm-verweis",
+      function () { wechseln("vergessen", "festlegen"); }));
+    alt.appendChild(knopf("Alternativ per E-Mail anmelden", "cm-verweis", function () { wechseln("mailLogin"); }));
+    r.appendChild(alt);
+    unten(r);
+  }
+
+  /* ---------- A2 · Konto erstellen */
+  function ansichtRegistrieren(r) {
+    r.appendChild(zurueckKnopf());
+    r.appendChild(kopf("Konto erstellen",
+      "Erstelle dein Konto mit E-Mail-Adresse und Passwort. Danach legst du mit deinem Beta-Zugangscode dein Community-Profil an."));
+    r.appendChild(hinweiszeile());
+
+    var form = el("form", "cm-form");
+    form.noValidate = true;
+    var oben = el("div");
+    form.appendChild(oben);
+    var mail = mailFeld(null, "email");
+    var pw1 = passwortFeld("Passwort", true, "Mindestens " + mindestens() + " Zeichen.");
+    var pw2 = passwortFeld("Passwort wiederholen", true);
+    [mail, pw1, pw2].forEach(function (f) { form.appendChild(f.box); });
+    form.appendChild(anzeigenKnopf([pw1, pw2]));
+    var los = el("button", "kn-haupt cm-haupt", "Konto erstellen");
+    los.type = "submit";
+    form.appendChild(los);
+    mail.eingabe.addEventListener("input", function () { z.mail = mail.eingabe.value.trim(); });
+
+    formularLauf(form, {
+      oben: oben,
+      felder: [
+        { f: mail, pruef: function () { return mailFehler(mail.eingabe.value.trim()); } },
+        { f: pw1, pruef: function () { return neuesPasswortFehler(pw1.eingabe.value); } },
+        { f: pw2, pruef: function () {
+          if (!pw2.eingabe.value) return "Wiederhole dein Passwort.";
+          return pw2.eingabe.value === pw1.eingabe.value ? "" : "Die Passwörter stimmen nicht überein.";
+        } }
+      ],
+      knopf: los, laufText: "Konto wird erstellt …",
+      senden: function () {
+        z.mail = mail.eingabe.value.trim();
+        return AP.community.registrieren(z.mail, pw1.eingabe.value);
+      },
+      // Sitzung nur, wenn Supabase sie wirklich liefert; sonst Mail bestätigen.
+      ok: function (e) { if (e && e.sitzung) pruefen(); else setze("bestaetigen"); },
+      fehler: function (f) {
+        if (f.art === "eingabe") { fehlerSetzen(mail, "Prüfe deine E-Mail-Adresse."); mail.eingabe.focus(); return; }
+        if (f.art === "passwort") { fehlerSetzen(pw1, f.message); pw1.eingabe.focus(); return; }
+        zeigeHinweis(r, { fehler: true, text: authHinweis(f, "Das Konto konnte nicht erstellt werden. Versuch es erneut.") });
+        los.focus();
+      }
+    });
+    r.appendChild(form);
+
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(knopf("Schon ein Konto? Anmelden", "kn-neben cm-neben", function () { wechseln("anmeldung"); }));
+    r.appendChild(reihe);
+    unten(r);
+  }
+
+  /* ---------- A3 · Registrierung bestätigen */
+  function ansichtBestaetigen(r) {
+    r.appendChild(zurueckKnopf());
+    // Geschützter Bindestrich (U+2011): trennt nicht hinter „E-“.
+    var k = kopf("Schau in dein E‑Mail‑Postfach",
+      "Prüfe dein E-Mail-Postfach, um die Registrierung abzuschließen. Falls du schon ein Konto hast, melde dich an oder setze dein Passwort zurück.");
+    k.appendChild(el("p", null, "Keine E-Mail angekommen? Schau auch im Spam-Ordner nach."));
+    k.appendChild(el("p", null, "Öffne den Link am besten in diesem Browser. Geht er woanders auf, melde dich nach der Bestätigung hier mit E-Mail-Adresse und Passwort an."));
+    r.appendChild(k);
+    r.appendChild(hinweiszeile());
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(knopf("Zur Anmeldung", "kn-haupt cm-haupt", function () { wechseln("anmeldung"); }));
+    reihe.appendChild(bestaetigungKnopf(r));
+    reihe.appendChild(knopf("Passwort vergessen?", "kn-neben cm-neben", function () { wechseln("vergessen", "vergessen"); }));
+    r.appendChild(reihe);
+    unten(r);
+  }
+
+  /* ---------- A4 · Passwort vergessen / für ein bisheriges Mail-Konto festlegen
+     Beides ist dieselbe Wiederherstellung des bestehenden Kontos. */
+  function ansichtVergessen(r) {
+    var festlegen = z.pwZweck === "festlegen";
+    r.appendChild(zurueckKnopf());
+    r.appendChild(festlegen
+      ? kopf("Passwort festlegen", "Du legst ein Passwort für dein bestehendes Konto fest. Profil, Lernstand und Beiträge bleiben erhalten.")
+      : kopf("Passwort vergessen", "Wir schicken dir einen Link, mit dem du ein neues Passwort festlegst."));
+    r.appendChild(hinweiszeile());
+
+    var form = el("form", "cm-form");
+    form.noValidate = true;
+    var mail = mailFeld(festlegen
+      ? "Die E-Mail-Adresse, mit der du dich bisher per Link angemeldet hast."
+      : null, "email");
+    form.appendChild(mail.box);
+    var los = el("button", "kn-haupt cm-haupt", festlegen ? "Link zum Festlegen senden" : "Link zum Zurücksetzen senden");
+    los.type = "submit";
+    form.appendChild(los);
+    mail.eingabe.addEventListener("input", function () { z.mail = mail.eingabe.value.trim(); });
+
+    formularLauf(form, {
+      felder: [{ f: mail, pruef: function () { return mailFehler(mail.eingabe.value.trim()); } }],
+      knopf: los, laufText: "Link wird gesendet …",
+      senden: function () {
+        z.mail = mail.eingabe.value.trim();
+        return AP.community.passwortLinkSenden(z.mail);
+      },
+      ok: function (a) { z.mail = a; setze("linkVersendet"); },
+      fehler: function (f) {
+        if (f.art === "eingabe") { fehlerSetzen(mail, "Prüfe deine E-Mail-Adresse."); mail.eingabe.focus(); return; }
+        zeigeHinweis(r, { fehler: true, text: authHinweis(f, "Der Link konnte nicht gesendet werden. Versuch es erneut.") });
+        los.focus();
+      }
+    });
+    r.appendChild(form);
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(knopf("Zur Anmeldung", "kn-neben cm-neben", function () { wechseln("anmeldung"); }));
+    r.appendChild(reihe);
+    unten(r);
+  }
+
+  /* ---------- A5 · Link zum Zurücksetzen/Festlegen versendet (neutral) */
+  function ansichtLinkVersendet(r) {
+    r.appendChild(zurueckKnopf());
+    var k = kopf("Schau in dein E‑Mail‑Postfach",
+      "Falls für diese E-Mail-Adresse ein Konto besteht, erhältst du eine E-Mail mit den nächsten Schritten.");
+    k.appendChild(el("p", null, "Keine E-Mail angekommen? Schau auch im Spam-Ordner nach."));
+    // PKCE: Der Link gilt nur in dem Browser, in dem er angefordert wurde.
+    k.appendChild(el("p", null, "Öffne den Link in diesem Browser."));
+    r.appendChild(k);
+    r.appendChild(hinweiszeile());
+
+    var form = el("form", "cm-form");
+    form.noValidate = true;
+    var code = feld({
+      label: "Code aus der E-Mail", pflicht: "Pflicht bei Bestätigung mit Code",
+      hilfe: "Steht in der E-Mail ein Code, kannst du ihn hier eingeben – praktisch, wenn der Link in einem anderen Browser oder außerhalb der installierten App aufgeht.",
+      attr: { autocomplete: "one-time-code", inputmode: "numeric", maxlength: "12", autocapitalize: "off", spellcheck: "false" }
+    });
+    code.eingabe.classList.add("cm-mono");
+    form.appendChild(code.box);
+    var los = el("button", "kn-haupt cm-haupt", "Code bestätigen");
+    los.type = "submit";
+    form.appendChild(los);
+    formularLauf(form, {
+      felder: [{ f: code, pruef: function () {
+        return /^\d{6,10}$/.test(code.eingabe.value.replace(/\s+/g, "")) ? "" : "Gib den Code aus der E-Mail ein (nur Ziffern).";
+      } }],
+      knopf: los, laufText: "Code wird geprüft …",
+      senden: function () { return AP.community.wiederherstellungsCode(z.mail, code.eingabe.value); },
+      ok: function () { pruefen(); },
+      fehler: function (f) {
+        fehlerSetzen(code, f.art === "code" || f.art === "eingabe" ? f.message
+          : authHinweis(f, "Der Code konnte nicht geprüft werden. Versuch es erneut."));
+        code.eingabe.focus();
+      }
+    });
+    r.appendChild(form);
+
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(mailKnopf(r, "Link erneut senden",
+      function () { return AP.community.passwortLinkSenden(z.mail); },
+      "Falls für diese E-Mail-Adresse ein Konto besteht, ist ein neuer Link unterwegs.",
+      "Der Link konnte nicht gesendet werden. Versuch es erneut."));
+    reihe.appendChild(knopf("Zur Anmeldung", "kn-neben cm-neben", function () { wechseln("anmeldung"); }));
+    r.appendChild(reihe);
+    unten(r);
+  }
+
+  /* ---------- A6 · Neues Passwort nach bestätigter Wiederherstellung
+     Nur erreichbar, wenn Supabase PASSWORD_RECOVERY für genau das Konto der
+     jetzigen Sitzung gemeldet hat (community.js). Profil- und Zielprüfung
+     kommen erst danach. Nach dem Speichern bleibt man mit dieser Sitzung
+     angemeldet; beim nächsten Mal gilt das neue Passwort. */
+  function ansichtNeuesPasswort(r) {
+    var k = kopf("Neues Passwort festlegen", "Du legst ein neues Passwort für dein Konto fest.");
+    if (z.kontoMail) {
+      var p = el("p");
+      p.textContent = "Konto: " + z.kontoMail;
+      k.appendChild(p);
+    }
+    r.appendChild(k);
+    r.appendChild(hinweiszeile());
+    passwortFormular(r, { konto: z.nutzer, fertig: function () { pruefen({ text: ERFOLG_PASSWORT }); } });
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(abmeldeKnopf(r));
+    r.appendChild(reihe);
+  }
+
+  /* Passwort setzen/ändern für das angemeldete Konto (o.konto). Verlangt
+     Supabase eine erneute Bestätigung (Secure Password Change), erscheint ein
+     Codefeld; der Code kommt per Mail. Nichts wird als Erfolg gemeldet, bevor
+     Supabase das Update für dasselbe Konto bestätigt hat. */
+  function passwortFormular(r, o) {
+    var form = el("form", "cm-form cm-passwort-form");
+    form.noValidate = true;
+    var oben = el("div");
+    form.appendChild(oben);
+    var pw1 = passwortFeld("Neues Passwort", true, "Mindestens " + mindestens() + " Zeichen.");
+    var pw2 = passwortFeld("Neues Passwort wiederholen", true);
+    form.appendChild(pw1.box);
+    form.appendChild(pw2.box);
+    form.appendChild(anzeigenKnopf([pw1, pw2]));
+    var nachweisBox = el("div");
+    form.appendChild(nachweisBox);
+    var speichern = el("button", "kn-haupt cm-haupt", "Passwort speichern");
+    speichern.type = "submit";
+    form.appendChild(speichern);
+    var status = el("div");
+    form.appendChild(status);
+
+    function melden(text, istFehler) {
+      status.innerHTML = "";
+      var m = el("p", istFehler ? "meldung fehler" : "meldung", text);
+      m.setAttribute("role", istFehler ? "alert" : "status");
+      status.appendChild(m);
+    }
+
+    var felder = [
+      { f: pw1, pruef: function () { return neuesPasswortFehler(pw1.eingabe.value); } },
+      { f: pw2, pruef: function () {
+        if (!pw2.eingabe.value) return "Wiederhole dein neues Passwort.";
+        return pw2.eingabe.value === pw1.eingabe.value ? "" : "Die Passwörter stimmen nicht überein.";
+      } }
+    ];
+
+    var nachweis = null;
+    function codeSenden(b) {
+      if (z.laeuft) return;
+      var passt = anfrage();
+      if (b) sperren(b, "Code wird gesendet …");
+      AP.community.nachweisSenden(o.konto).then(function () {
+        if (!passt()) return;
+        z.laeuft = false;
+        if (b) freigeben(b);
+        melden("Wir haben dir einen Bestätigungscode an deine E-Mail-Adresse geschickt.");
+      }, function (f) {
+        if (!passt()) return;
+        z.laeuft = false;
+        if (b) freigeben(b);
+        if (f && f.art === "anmeldung") return abgelaufen();
+        melden(authHinweis(f, "Der Bestätigungscode konnte nicht gesendet werden. Versuch es erneut."), true);
+      });
+    }
+    function nachweisZeigen() {
+      if (nachweis) return;
+      nachweis = feld({
+        label: "Bestätigungscode aus der E-Mail", pflicht: true,
+        hilfe: "Zur Sicherheit verlangt die Anmeldung einen Code aus deinem E-Mail-Postfach. Gib ihn ein und speichere erneut.",
+        attr: { autocomplete: "one-time-code", inputmode: "numeric", maxlength: "12", autocapitalize: "off", spellcheck: "false" }
+      });
+      nachweis.eingabe.classList.add("cm-mono");
+      nachweisBox.appendChild(nachweis.box);
+      var nochmal = knopf("Code erneut senden", "cm-verweis", function () { codeSenden(nochmal); });
+      nachweisBox.appendChild(nochmal);
+      felder.push({ f: nachweis, pruef: function () {
+        return /^\d{6,10}$/.test(nachweis.eingabe.value.replace(/\s+/g, "")) ? "" : "Gib den Bestätigungscode aus der E-Mail ein.";
+      } });
+    }
+
+    formularLauf(form, {
+      oben: oben, felder: felder, knopf: speichern, laufText: "Passwort wird gespeichert …",
+      senden: function () {
+        status.innerHTML = "";
+        return AP.community.passwortSetzen(pw1.eingabe.value, nachweis ? nachweis.eingabe.value : null, o.konto);
+      },
+      ok: function () { o.fertig(); },
+      fehler: function (f) {
+        if (f.art === "veraltet") return;                 // anderes Konto: dessen Ansicht kommt
+        if (f.art === "anmeldung") return abgelaufen();
+        if (f.art === "passwort" || f.art === "eingabe") { fehlerSetzen(pw1, f.message); pw1.eingabe.focus(); return; }
+        if (f.art === "nachweis") {
+          var neu = !nachweis;
+          nachweisZeigen();
+          if (neu) codeSenden(null);
+          nachweis.eingabe.focus();
+          return;
+        }
+        if (f.art === "code" && nachweis) { fehlerSetzen(nachweis, f.message); nachweis.eingabe.focus(); return; }
+        if (f.art === "unklar") {
+          melden("Wir wissen nicht, ob dein neues Passwort gespeichert wurde. Versuch es erneut – oder melde dich ab und mit dem neuen Passwort an.", true);
+          return;
+        }
+        melden(authHinweis(f, "Das Passwort konnte nicht gespeichert werden. Versuch es erneut."), true);
+      }
+    });
+    r.appendChild(form);
+    return form;
+  }
+
+  /* ---------- B · Alternativ per E-Mail anmelden (bisheriger Weg, nur vorhandene Konten) */
+  function ansichtMailLogin(r) {
+    r.appendChild(zurueckKnopf());
+    r.appendChild(kopf("Per E-Mail anmelden",
+      "Für bestehende Konten: Wir schicken dir einen Anmeldelink und einen Code. Ein neues Konto erstellst du mit „Konto erstellen“."));
+    r.appendChild(hinweiszeile());
+
+    var form = el("form", "cm-form");
+    form.noValidate = true;
+    var mail = mailFeld(null, "email");
+    form.appendChild(mail.box);
+    var senden = el("button", "kn-haupt cm-haupt", "Anmeldelink senden");
+    senden.type = "submit";
+    form.appendChild(senden);
+    mail.eingabe.addEventListener("input", function () { z.mail = mail.eingabe.value.trim(); });
+
+    formularLauf(form, {
+      felder: [{ f: mail, pruef: function () { return mailFehler(mail.eingabe.value.trim()); } }],
+      knopf: senden, laufText: "Anmeldelink wird gesendet …",
+      senden: function () {
+        z.mail = mail.eingabe.value.trim();
+        return AP.community.anmeldenPerMail(z.mail);
+      },
+      ok: function (a) { z.mail = a; setze("versendet"); },
+      fehler: function (f) {
         if (f.art === "eingabe") { fehlerSetzen(mail, "Prüfe deine E-Mail-Adresse."); mail.eingabe.focus(); return; }
         zeigeHinweis(r, { fehler: true, text: f.art === "bremse"
           ? "Du hast gerade einen Link angefordert. Warte kurz und versuch es erneut."
-          : "Der Link konnte nicht gesendet werden. Versuch es erneut." });
+          : authHinweis(f, "Der Link konnte nicht gesendet werden. Versuch es erneut.") });
         senden.focus();
-      });
+      }
     });
     r.appendChild(form);
+    var reihe = el("div", "cm-reihe");
+    reihe.appendChild(knopf("Mit Passwort anmelden", "kn-neben cm-neben", function () { wechseln("anmeldung"); }));
+    r.appendChild(reihe);
+    unten(r);
   }
 
-  /* ---------- B · Mail versendet – Link oder Code */
+  /* ---------- B2 · Mail versendet – Link oder Code */
   function ansichtVersendet(r) {
     r.appendChild(zurueckKnopf());
     // Geschützter Bindestrich (U+2011): sieht gleich aus, trennt aber nicht hinter „E-“.
     var k = kopf("Schau in dein E‑Mail‑Postfach");
     var text = el("p");
     // Adresse als Text, nicht als Markup – und nur hier, im privaten Anmeldeschritt.
-    text.textContent = "Wir haben einen Anmeldelink an " + z.mail
-      + " geschickt. Öffne den Link, um weiterzumachen.";
+    // Neutral: Ob es zur Adresse ein Konto gibt, verrät die App nicht.
+    text.textContent = "Falls für " + z.mail
+      + " ein Konto besteht, haben wir einen Anmeldelink geschickt. Öffne den Link, um weiterzumachen.";
     k.appendChild(text);
     k.appendChild(el("p", null, "Keine E-Mail angekommen? Schau auch im Spam-Ordner nach."));
     // Nötig, weil der Link nur in dem Browser gilt, der ihn angefordert hat (PKCE).
@@ -613,69 +1105,34 @@
 
     // Leerzeichen aus dem Einfügen sind egal, führende Nullen bleiben stehen.
     function codeWert() { return code.eingabe.value.replace(/\s+/g, ""); }
-    function codeFehler(w) { return /^\d{6}$/.test(w) ? "" : "Der Anmeldecode besteht aus sechs Ziffern."; }
-    var versucht = false;
-    code.eingabe.addEventListener("input", function () {
-      if (versucht) fehlerSetzen(code, codeFehler(codeWert()));
-    });
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (z.laeuft) return;
-      versucht = true;
-      var wert = codeWert();
-      var fe = codeFehler(wert);
-      fehlerSetzen(code, fe);
-      if (fe) { code.eingabe.focus(); return; }
-      if (offline()) { setze("offline"); return; }
-      var passt = anfrage();
-      sperren(mitCode, "Anmeldung wird geprüft …");
-      AP.community.codePruefen(z.mail, wert).then(function () {
-        if (!passt()) return;
-        pruefen();
-      }, function (f) {
-        if (!passt()) return;
-        z.laeuft = false;
-        freigeben(mitCode);
-        if (f.art === "netz" && offline()) { setze("offline"); return; }
+    formularLauf(form, {
+      felder: [{ f: code, pruef: function () { return /^\d{6}$/.test(codeWert()) ? "" : "Der Anmeldecode besteht aus sechs Ziffern."; } }],
+      knopf: mitCode, laufText: "Anmeldung wird geprüft …",
+      senden: function () { return AP.community.codePruefen(z.mail, codeWert()); },
+      ok: function () { pruefen(); },
+      fehler: function (f) {
         fehlerSetzen(code, f.art === "bremse"
           ? "Zu viele Versuche in kurzer Zeit. Warte einen Moment und versuch es erneut."
           : f.art === "netz" || f.art === "server"
             ? "Die Anmeldung mit dem E-Mail-Code hat nicht geklappt. Versuch es erneut."
             : "Der Code ist abgelaufen oder stimmt nicht. Lass dir einen neuen schicken.");
         code.eingabe.focus();
-      });
+      }
     });
     r.appendChild(form);
 
     var weitere = el("div", "cm-reihe");
-    var nochmal = knopf("Link erneut senden", "kn-neben cm-neben", function () {
-      if (z.laeuft) return;
-      if (offline()) { setze("offline"); return; }
-      var passt = anfrage();
-      sperren(nochmal, "Anmeldelink wird gesendet …");
-      AP.community.anmeldenPerMail(z.mail).then(function () {
-        if (!passt()) return;
-        z.laeuft = false;
-        freigeben(nochmal);
-        zeigeHinweis(r, { text: "Ein neuer Anmeldelink wurde gesendet." });
-      }, function (f) {
-        if (!passt()) return;
-        z.laeuft = false;
-        freigeben(nochmal);
-        if (f.art === "netz" && offline()) { setze("offline"); return; }
-        zeigeHinweis(r, { fehler: true, text: f.art === "bremse"
-          ? "Du hast gerade einen Link angefordert. Warte kurz und versuch es erneut."
-          : "Der Link konnte nicht gesendet werden. Versuch es erneut." });
-      });
-    });
-    weitere.appendChild(nochmal);
+    weitere.appendChild(mailKnopf(r, "Link erneut senden",
+      function () { return AP.community.anmeldenPerMail(z.mail); },
+      "Falls für diese E-Mail-Adresse ein Konto besteht, ist ein neuer Anmeldelink unterwegs.",
+      "Der Link konnte nicht gesendet werden. Versuch es erneut."));
     weitere.appendChild(knopf("E-Mail-Adresse ändern", "kn-neben cm-neben", function () {
       if (z.laeuft) return;
-      setze("anmeldung");
+      setze("mailLogin");
       var f = schirm.querySelector("input[type=email]");
       if (f) { f.focus(); f.select(); }
     }));
+    weitere.appendChild(knopf("Mit Passwort anmelden", "kn-neben cm-neben", function () { wechseln("anmeldung"); }));
     weitere.appendChild(verweis("Ohne Anmeldung weiterlernen", "app.html#lernen", "kn-neben cm-neben"));
     r.appendChild(weitere);
   }
@@ -732,6 +1189,9 @@
     weitere.appendChild(verweis("Später weiterlernen", "app.html#lernen", "kn-neben cm-neben"));
     weitere.appendChild(abmeldeKnopf(r));
     form.appendChild(weitere);
+    // Spec 08, Abschnitt 2: Kontowechsel statt Zusammenführen.
+    form.appendChild(el("p", "cm-hilfe cm-sichtbar",
+      "Schon mit einem anderen Konto registriert? Melde dich ab und mit dessen E-Mail-Adresse an."));
 
     /* Fehler kommen aus zwei Quellen: aus der Prüfung hier (Pflichtfeld,
        Länge, Häkchen) und vom Server (Code ungültig, Name vergeben). Hier
@@ -959,6 +1419,22 @@
     reihe.appendChild(abmeldeKnopf(r));
     g.appendChild(reihe);
     r.appendChild(g);
+    // Spec 08: Passwort festlegen oder ändern – dasselbe Konto, dasselbe Profil.
+    var pg = el("section", "feldgruppe");
+    var ph = el("h2");
+    ph.appendChild(el("span", null, "Passwort"));
+    pg.appendChild(ph);
+    pg.appendChild(el("p", "cm-hilfe cm-sichtbar",
+      "Mit einem Passwort meldest du dich ohne Link aus dem Postfach an. Profil, Lernstand und Beiträge bleiben dieselben."));
+    var oeffnen = knopf("Passwort festlegen oder ändern", "kn-neben cm-neben", function () {
+      if (z.laeuft) return;
+      oeffnen.remove();
+      passwortFormular(pg, { konto: z.nutzer, fertig: function () { setze("drin", { text: ERFOLG_PASSWORT }); } });
+      var erstes = pg.querySelector("input");
+      if (erstes) erstes.focus();
+    });
+    pg.appendChild(oeffnen);
+    r.appendChild(pg);
     if (z.frei !== false) {
       // Spec 06: eigene Meldungen, eigene ausgeblendete Inhalte, Moderation fürs Team.
       var m = el("section", "feldgruppe");
@@ -1198,7 +1674,8 @@
     regeln = daten && daten.communityRegeln || null;
     AP.community.beiAenderung(function (ereignis, sitzung) {
       if (ereignis === "SIGNED_OUT") { kontoWeg(); return; }
-      if (ereignis !== "SIGNED_IN" || !sitzung) return;
+      // Spec 08: PASSWORD_RECOVERY meldet ebenfalls ein (vielleicht anderes) Konto an.
+      if ((ereignis !== "SIGNED_IN" && ereignis !== "PASSWORD_RECOVERY") || !sitzung) return;
       var id = sitzung.user && sitzung.user.id;
       if (z.nutzer && id !== z.nutzer) {
         // Ein anderes Konto hat sich angemeldet (anderer Tab): Entwürfe und
@@ -1206,7 +1683,7 @@
         kontoWeg();
         return;
       }
-      if (sichtbar() && !z.laeuft && (z.ansicht === "anmeldung" || z.ansicht === "versendet")) pruefen();
+      if (sichtbar() && !z.laeuft && VOR_ANMELDUNG.indexOf(z.ansicht) >= 0) pruefen();
     });
     window.addEventListener("online", function () { if (sichtbar() && z.ansicht === "offline") pruefen(); });
     // Verbindung weg, während die Community offen ist: sofort sagen – auch

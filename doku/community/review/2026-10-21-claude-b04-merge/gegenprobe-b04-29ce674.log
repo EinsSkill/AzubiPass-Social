@@ -1,0 +1,15 @@
+  OK   [mock] Große Ansicht: Fehlerzustand, Erneut versuchen lädt neu
+  OK   [mock] Galerie: Fehlerzustand, Erneut versuchen lädt neu
+B04 · Vorbereitung läuft, Formular wird verlassen und neu geöffnet
+  FEHL [mock] Wieder geöffnet: laufende Vorbereitung sichtbar, Senden gesperrt
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/75b01437-af96-5e0b-a54a-e4e0ef1f787e/scratchpad/alt3/quellen/community_bilder_test.py", line 617, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/tmp/claude-0/-home-claude/75b01437-af96-5e0b-a54a-e4e0ef1f787e/scratchpad/alt3/quellen/community_bilder_test.py", line 536, in main
+    fertig(s)
+    ~~~~~~^^^
+  File "/tmp/claude-0/-home-claude/75b01437-af96-5e0b-a54a-e4e0ef1f787e/scratchpad/alt3/quellen/community_bilder_test.py", line 525, in fertig
+    s.wait_for_function("(() => { const v = document.querySelector('.cm-vorbereitung'); return v && v.hidden; })()", timeout=20000)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/sync_api/_generated.py", line 11559, in wait_for_function

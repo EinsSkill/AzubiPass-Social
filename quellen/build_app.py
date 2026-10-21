@@ -731,7 +731,10 @@ def datenschutz(r, fehlt):
   <h2>Community-Konto und Anmeldung</h2>
   <p>Für die Community verarbeiten wir deine E-Mail-Adresse, eine interne Konto-ID
      sowie technische Anmelde- und Sitzungsinformationen. Die Anmeldung erfolgt
-     über einen E-Mail-Link oder einen Anmeldecode aus der E-Mail.</p>
+     mit E-Mail-Adresse und Passwort. Das Passwort wird nur als Hashwert
+     gespeichert, nicht im Klartext. Für die Bestätigung neuer Konten, das
+     Festlegen oder Zurücksetzen eines Passworts und alternativ zur
+     Passwortanmeldung senden wir E-Mails mit Link oder Code.</p>
   <p>Für das Community-Profil verarbeiten wir deinen Anzeigenamen, optional dein
      Lehrjahr, deine Rolle, die Zuordnung zur Beta-Freischaltung sowie Angaben zur
      Alters- und Regelbestätigung und zum Erstellungszeitpunkt.</p>
