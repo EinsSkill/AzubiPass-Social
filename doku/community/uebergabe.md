@@ -23,6 +23,14 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · Claude → Lukes / ChatGPT (Spec 08 auf main, zum Testen)
+
+**Quelle:** Lukes im Chat: „Pack es auf den main stand so das ich es testen kann“. **Vorgänger:** Claude, Spec 08 @ `16f5dff` / Übergabe `7249377`.
+- **Getan:** `community-zugang` nach `main` gemergt (Merge-Commit `3119c8d`, per git push). GitHub Pages ausgeliefert: `community.js`, `community-ansicht.js`, `lernstand-sync.js`, `sw.js`, `app.html`, `datenschutz.html` byte-gleich live; Live-Seite zeigt ohne Sitzung „In der Community anmelden“ mit Passwortfeld, keine Konsolenfehler. Paketsperre geprüft: `beitraege.offen = false`.
+- **Nicht getan:** keine Auth-Einstellung, keine Migration, keine Paketöffnung. ChatGPT-Review steht noch aus (Lukes wollte vorher selbst testen).
+- **Für Lukes' Test wichtig:** Redirect-URLs im Dashboard müssen `…/app.html?anmeldung=1&zweck=…` zulassen (Eintrag mit `**`), sonst führen Bestätigungs- und Reset-Links auf die Site URL ohne Zweck. Mails gehen ohne Brevo nur an Team-Adressen. Details: [Technikplan 08](08-technik-plan-passwort.md) §2.
+- **Nächster Schritt:** Lukes testet echt (Bestandskonto nachrüsten, Login, Registrierung, Vergessen); Rückmeldung an Claude. Parallel ChatGPT-Review des Auth-Pakets.
+
 ## 2026-10-21 · Claude → ChatGPT / Lukes (Spec 08 umgesetzt, Review erbeten)
 
 **Vorgänger:** ChatGPT, Spec 08 @ `4889779`. **Rolle:** Umsetzung. **Grundlage/geprüfter Stand:** `community-zugang` @ `16f5dff`; `main` unverändert `e4a4210`.

@@ -104,6 +104,7 @@
     z.nutzer = null;
     z.mail = "";
     z.kontoMail = "";
+    z.pwOffen = false;
     z.formular = leeresFormular();
     z.ziel = null;
     z.laeuft = false;
@@ -294,8 +295,9 @@
     zeichnen(vorher !== "pruefen");
     var link = AP.community.linkEinloesung;
     AP.community.linkEinloesung = null;
+    var linkInfo = null;
     Promise.resolve(link)
-      .then(function () { return AP.community.sitzung(); })
+      .then(function (l) { linkInfo = l; return AP.community.sitzung(); })
       .then(function (s) {
         if (!gilt(n)) return;
         if (!s) {
@@ -314,6 +316,13 @@
         // Spec 08: Bestätigte Wiederherstellung für genau dieses Konto zuerst –
         // vor Profil, Ziel und Paketprüfung.
         if (AP.community.wiederherstellungOffen(s.user.id)) { setze("neuesPasswort", hinweis); return; }
+        // Passwort-Link hier nicht bestätigt, aber angemeldet: direkt im Profil festlegen.
+        if (linkInfo && linkInfo.unbestaetigt && linkInfo.sitzung && linkInfo.sitzung.user.id === s.user.id) {
+          z.ziel = "profil";
+          z.pwOffen = true;
+          hinweis = { text: "Der Link konnte in diesem Browser nicht bestätigt werden. Du bist hier aber als "
+            + (s.user.email || "dein Konto") + " angemeldet und kannst dein Passwort unten direkt festlegen." };
+        }
         ladetext("Profil wird geladen …");
         return AP.community.profil(true).then(function (p) {
           if (!gilt(n)) return;
@@ -595,6 +604,7 @@
   }
 
   function authHinweis(f, standard) {
+    if (f && f.art === "mailLimit") return f.message;
     if (f && f.art === "bremse") return "Zu viele Versuche in kurzer Zeit. Warte einen Moment und versuch es erneut.";
     if (f && f.art === "netz") return "Keine Verbindung zum Server. Prüfe dein Internet und versuch es erneut.";
     if (f && (f.art === "vorhanden" || f.art === "server") && f.message && !/^Da ist etwas/.test(f.message)) return f.message;
@@ -871,7 +881,7 @@
       "Falls für diese E-Mail-Adresse ein Konto besteht, erhältst du eine E-Mail mit den nächsten Schritten.");
     k.appendChild(el("p", null, "Keine E-Mail angekommen? Schau auch im Spam-Ordner nach."));
     // PKCE: Der Link gilt nur in dem Browser, in dem er angefordert wurde.
-    k.appendChild(el("p", null, "Öffne den Link in diesem Browser."));
+    k.appendChild(el("p", null, "Wichtig: Öffne den Link auf diesem Gerät und in diesem Browser – auf einem anderen Gerät funktioniert er nicht."));
     r.appendChild(k);
     r.appendChild(hinweiszeile());
 
@@ -1426,14 +1436,22 @@
     pg.appendChild(ph);
     pg.appendChild(el("p", "cm-hilfe cm-sichtbar",
       "Mit einem Passwort meldest du dich ohne Link aus dem Postfach an. Profil, Lernstand und Beiträge bleiben dieselben."));
-    var oeffnen = knopf("Passwort festlegen oder ändern", "kn-neben cm-neben", function () {
-      if (z.laeuft) return;
-      oeffnen.remove();
+    function formularOeffnen() {
       passwortFormular(pg, { konto: z.nutzer, fertig: function () { setze("drin", { text: ERFOLG_PASSWORT }); } });
-      var erstes = pg.querySelector("input");
-      if (erstes) erstes.focus();
-    });
-    pg.appendChild(oeffnen);
+    }
+    if (z.pwOffen) {
+      z.pwOffen = false;
+      formularOeffnen();
+    } else {
+      var oeffnen = knopf("Passwort festlegen oder ändern", "kn-neben cm-neben", function () {
+        if (z.laeuft) return;
+        oeffnen.remove();
+        formularOeffnen();
+        var erstes = pg.querySelector("input");
+        if (erstes) erstes.focus();
+      });
+      pg.appendChild(oeffnen);
+    }
     r.appendChild(pg);
     if (z.frei !== false) {
       // Spec 06: eigene Meldungen, eigene ausgeblendete Inhalte, Moderation fürs Team.

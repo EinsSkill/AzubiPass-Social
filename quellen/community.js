@@ -201,6 +201,10 @@
   function authFehler(f) {
     if (!f || f.art) return uebersetzen(f);
     var code = String(f.code || ""), text = String(f.message || f.msg || "");
+    // Mail-Kontingent des Projekts erschöpft (ohne eigenen Mailversand nur
+    // wenige Mails pro Stunde) – kein „kurz warten“, sondern bis zu einer Stunde.
+    if (code === "over_email_send_rate_limit" || /email rate limit/i.test(text))
+      return fehler("Gerade wurden zu viele E-Mails verschickt. Versuch es in etwa einer Stunde erneut. Bist du auf einem anderen Gerät schon angemeldet, kannst du dort im Profil ohne E-Mail ein Passwort festlegen.", "mailLimit");
     if (code === "invalid_credentials" || /Invalid login credentials/i.test(text))
       return fehler("E-Mail-Adresse oder Passwort stimmen nicht.", "zugang");
     if (code === "email_not_confirmed" || /Email not confirmed/i.test(text))
@@ -542,8 +546,11 @@
       if (!s) throw linkFehler(p.zweck);
       // Nur ein Ereignis aus diesem Seitenaufruf zählt, kein alter Vermerk.
       var w = wiederherstellung === s.user.id;
-      if (p.zweck === "passwort" && !w) throw linkFehler("passwort");
-      return { sitzung: s, zweck: p.zweck, wiederherstellung: w };
+      /* Link nicht bestätigt, aber schon angemeldet (typisch: Mail auf dem
+         Handy geöffnet, dort ist man eingeloggt, der Prüfwert liegt am PC).
+         Keine Passwortansicht – die Oberfläche bietet das Ändern im Profil
+         für das angemeldete Konto an, mit Hinweis, welches das ist. */
+      return { sitzung: s, zweck: p.zweck, wiederherstellung: w, unbestaetigt: p.zweck === "passwort" && !w };
     }).catch(function (f) { aufraeumen(); throw f && f.zweck ? f : uebersetzen(f); });
   }
 

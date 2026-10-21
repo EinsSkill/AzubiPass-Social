@@ -486,6 +486,15 @@ def main():
             pruefe(aufrufe(s, "signUp") == vor, "Nachrüsten nie über signUp")
             axe(s, "p11-festlegen")
 
+            print("P11b · Mail-Kontingent erschöpft (429 over_email_send_rate_limit)")
+            s.evaluate("""() => { const a = window.supabase.createClient().auth, alt = a.resetPasswordForEmail;
+                a.resetPasswordForEmail = () => { a.resetPasswordForEmail = alt; return Promise.resolve({ data: {}, error:
+                  { name: 'AuthApiError', code: 'over_email_send_rate_limit', message: 'email rate limit exceeded', status: 429 } }); }; }""")
+            knopf(s, "Link erneut senden").click()
+            pruefe(text_da(s, "Gerade wurden zu viele E-Mails verschickt. Versuch es in etwa einer Stunde erneut."),
+                   "Mail-Limit: ehrliche Wartezeit statt „kurz warten“")
+            pruefe(s.get_by_text("Warte einen Moment").count() == 0, "Kein „Warte einen Moment“ beim Mail-Limit")
+
             print("P12 · Code aus der Wiederherstellungs-Mail")
             s.get_by_label("Code aus der E-Mail").fill("000000")
             knopf(s, "Code bestätigen").click()
@@ -546,8 +555,10 @@ def main():
             s.evaluate("FAKE.anmeldenAls('anna@test.invalid')")
             s.goto(basis + "app.html?anmeldung=1&zweck=passwort&code=recovery:ben@test.invalid#community/profil")
             s.wait_for_function("window.AP && AP.communityAnsicht")
-            pruefe(text_da(s, "Dieser Link konnte nicht bestätigt werden."), "Sitzung A + fremder Link: Fehler")
-            pruefe(s.get_by_text("Neues Passwort festlegen").count() == 0, "A bekommt keine Passwortansicht")
+            pruefe(text_da(s, "Der Link konnte in diesem Browser nicht bestätigt werden. Du bist hier aber als anna@test.invalid angemeldet"),
+                   "Sitzung A + nicht bestätigter Link: Hinweis mit angemeldetem Konto")
+            pruefe(h1(s, "Profil") and pw_neu(s, 0).count() == 1, "Profil mit geöffnetem Passwortformular für A")
+            pruefe(s.get_by_text("Neues Passwort festlegen").count() == 0, "A bekommt keine Wiederherstellungsansicht")
             pruefe(s.evaluate("(FAKE.aufrufe.updateUser || []).length") == 0, "Kein updateUser")
             # ?zweck=passwort ohne Code beweist nichts
             s.goto(basis + "app.html?anmeldung=1&zweck=passwort#community/profil")
