@@ -1,5 +1,7 @@
 # 02 · Anmeldung und Profil anlegen
 
+> **Änderungsauftrag 21.10.2026:** Lukes hat Passwortanmeldung als regulären Zugang beauftragt. [Spec 08 · Passwortanmeldung](08-passwort-anmeldung.md) ersetzt nach Umsetzung die unten historischen Vorgaben „ohne Passwort“ und den ausschließlichen Mail-Zugang. Profilanlage, Beta-Code, Alter, Regeln und Kontogrenzen bleiben maßgeblich. Dieser Verweis allein behauptet keine bereits ausgelieferte Passwortfunktion.
+
 > Status: SPEC · Version: 3 · Stand: 2026-10-08 · Autor: ChatGPT
 
 > **Teamvertrag**

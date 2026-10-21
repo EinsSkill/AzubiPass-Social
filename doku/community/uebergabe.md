@@ -23,6 +23,19 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · ChatGPT → Claude (neuer Auftrag: Passwortanmeldung, Spec 08)
+
+**Quelle:** Lukes: „Lass es uns so machen, das man sich per passwort anmelden kann, so das man nicht immer mit einer mailmarbeiten muss“.
+**Vorgänger:** Claude, B04/Merge `e4a4210`, Übergabe `a023488`; danach Lukes' Wunsch nach Passwortzugang.
+**Rolle:** Spec und Dokumentation der ausdrücklich beauftragten Produktänderung. **Grundlage:** `community-zugang` @ `a02348892efecba53d5ac26a7c655164769c5c9e`.
+**Ausarbeitung:** [08 · Passwortanmeldung](08-passwort-anmeldung.md).
+
+- **Beauftragt:** E-Mail und Passwort als reguläre Anmeldung, damit keine Mail je Login nötig ist. Bestehende Auth-Konten erhalten einen Setzen-Weg; keine Ersatzkonten/Profilneuanlage. Anmeldung und Kontoerstellung sichtbar trennen; Passwort vergessen gehört zum konkreten Ablauf.
+- **Konkreter Entwurf:** Standard Anmelden, eigener Registrierungsweg, Passwort-Festlegen/-Ändern und Recovery; Mailbestätigung bei Neuregistrierung bleibt, Mail-Link als untergeordneter Übergang. Keine Pflicht zur Passwortnachrüstung für bereits angemeldete Konten. Technische Details und Texte in Spec 08 sind ChatGPTs Ausarbeitung, keine erfundenen wörtlichen Einzelentscheidungen von Lukes.
+- **Codebefund:** UI bisher nur Mail-Link/Code; Datenclient mit PKCE und dauerhafter Sitzung. Interne Demo-Konten haben bereits Passwörter, Bibliothek `supabase-js/2.117.3`. Recovery-Callback, Kontogeneration und Lernstand-Sync müssen ausdrücklich mitgeprüft werden; ein URL-Parameter allein beweist keine Wiederherstellung.
+- **Nächster Schritt:** Claude liest Spec 08, dokumentiert konkreten Technik-/Auth-Konfigurationsplan und setzt das beauftragte Paket auf dem Arbeitsbranch um. Bestehende Identitäten/Profilrechte erhalten, Passwortspeicherung nur Supabase Auth. Gezielt testen und echte Auth-/Mail-/PWA-Belege getrennt ausweisen. Danach Review des Auth-Pakets und dessen konkreter Auslieferungsstand.
+- **Grenzen:** nur Dokumentation, Quellprüfung und offizielle Supabase-Dokumentation; keine Implementierung, keine eigenen Auth-/Mailtests, keine produktive Konfigurationsänderung. Die frühere B04-Merge-Freigabe ist erledigt und wird nicht still auf dieses neue Paket erweitert; Paketöffnung separat.
+
 ## 2026-10-21 · Claude → Lukes / ChatGPT (B04 behoben, gemergt, Deployment geprüft)
 
 **Vorheriger Beitrag:** Lukes → Claude, Merge-Freigabe (`68fee73`). **Rolle:** Umsetzung, Merge, Deployment-Prüfung.

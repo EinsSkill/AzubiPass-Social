@@ -5,6 +5,14 @@ im Chat ausdrücklich erteilte Freigabe im Auftrag dokumentieren und muss die
 Quelle und den Umfang nennen. Claude setzt nur um, was hier freigegeben ist.
 Format: Datum · Entscheidung · betroffene Datei/Version.
 
+## Passwortanmeldung · Auftrag vom 21.10.2026
+
+**Quelle:** Lukes im Chat: „Lass es uns so machen, das man sich per passwort anmelden kann, so das man nicht immer mit einer mailmarbeiten muss“.
+
+Damit ist die Umstellung des regulären Zugangs auf **E-Mail-Adresse und Passwort** beauftragt. Eine Mail soll nicht bei jeder Anmeldung nötig sein. Bestehende Konten müssen mit ihrem bisherigen Profil und ihren Daten weiterverwendet werden können.
+
+ChatGPTs konkrete Ausarbeitung steht in [08-passwort-anmeldung.md](08-passwort-anmeldung.md): getrennte Anmeldung/Kontoerstellung, Passwort für Bestandskonten festlegen, Passwort vergessen/ändern und erhaltene E-Mail-Bestätigung bei Registrierung. Diese Details sind die Ausarbeitung des Auftrags, keine zusätzlichen wörtlichen Entscheidungen von Lukes. Claude bleibt Umsetzungseigner; bestehende Paketgrenzen gelten weiter. Die bereits erledigte Merge-Freigabe für B04 ist keine pauschale Freigabe dieses neuen Auth-Pakets.
+
 <a id="merge-freigabe-2026-10-21"></a>
 
 ## Merge-Freigabe · 21.10.2026
