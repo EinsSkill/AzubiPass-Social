@@ -1,0 +1,14 @@
+Live, Supabase pjbxozskvuhxtrotqpkr, 21.10.2026 – nach Lukes' Freigabe (Chat 11:59) und Behebung B01–B03.
+
+Eingespielt in dieser Reihenfolge (Werkzeug vergibt die Versionen):
+  20261021112229 anhang_1 · 20261021112241 anhang_2 · 20261021112301 anhang_3 · 20261021112317 anhang_4 · 20261021112322 anhang_5
+
+supabase/tests/anhang_test.sql ohne die vier DELETE-Prüfungen (das Werkzeug bricht Anweisungen mit DELETE ab), Rollback:
+ERGEBNIS: ohneBild=0 reihenfolge=3,1,2,4,5 spiegel=true/bild liste=5/Drittes zuerst wiederholt=true anhaengeDanach=5
+sechs=P0001 plusEinByte=P0001 format=P0001 pdfFrage=P0001 pdfUndBild=P0001 lzOhne=P0001 fremd=P0001 andererVorgang=P0001
+teil=P0001 teilBeitrag=0 teilVorgang=0 lzBilder=5 lzPdf=pdf alterWeg=1/700 inGebrauch=true direkt=42501 bSieht=5 bDatei5=1
+paketZu=0 paketZuDatei=0 verstecktFremd=0 verstecktDatei=0 verstecktAutor=5 verstecktTeam=5 teamDatei=1 invariante=0
+
+Danach: Beiträge mit Datei 0 (kein Altbestand live), Anhänge 0, ohne Anhang 0, Invariante 0, Testcodes 0, Testkonten 0,
+Paket zu, 58 Migrationen = 58 Dateien, anon darf beitrag_mit_anhaengen nicht, authenticated darf anhaenge_pruefen nicht,
+Trigger beitrag_anhang_aus_spiegel vorhanden.

@@ -1,0 +1,34 @@
+Frage ohne Bild / mit 1 Bild / Tipp mit 5 Bildern
+  OK   [mock] Ohne Bild: kein Upload, leere Anhangsliste
+  OK   [mock] Vorschau mit Name, Zähler
+  OK   [mock] Kein Upload bei der Auswahl
+  OK   [mock] axe ohne WCAG-Verstöße: Formular mit einem Bild
+  OK   [mock] Pfad ‹konto›/‹vorgang›-1.png
+  OK   [mock] Alternativtext ohne Beschreibung neutral
+  OK   [mock] Erneute Auswahl ergänzt  ['b1.png', 'b2.png', 'b3.png', 'b4.png', 'b5.png']
+  OK   [mock] Bei 5 Bildern keine weitere Auswahl
+  OK   [mock] „Nach vorn“ zweimal: b3 ist Bild 1  ['b3.png', 'b1.png', 'b2.png', 'b4.png', 'b5.png']
+  OK   [mock] Fokus bleibt bei den Bildaktionen
+  OK   [mock] Entfernen und Hin-und-zurück  ['b3.png', 'b1.png', 'b2.png', 'b4.png']
+  OK   [mock] Während des Sendens: Auswahl, Reihenfolge und Beschreibung gesperrt
+  OK   [mock] axe ohne WCAG-Verstöße: Formular beim Hochladen
+  OK   [mock] Fortschritt „Bild 2 von 5 …“  ['Beitrag wird veröffentlicht …', 'Bild 1 von 5 wird hochgeladen …', 'Bild 2 von 5 wird hochgeladen …']
+  OK   [mock] Fünf Anhänge mit Beschreibung an Bild 1
+  OK   [mock] Hochgeladen in der gewählten Reihenfolge
+Grenzen in der Oberfläche
+  OK   [mock] 6 Bilder: 5 übernommen, Hinweis
+  FEHL [mock] Format und nicht lesbares Bild mit Grund abgelehnt  anim.gif: Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP. zu-gross.png: Dieses Bild ist größer als 5 MiB. | Das kennzeichnet deine Frage für Mentor:innen. Eine Antwort ist nicht garantiert. | anim.gif: Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP. zu-gross.png: Dieses Bild ist größer als 5 MiB.
+  FEHL [mock] Exakt 5 MiB unverändert; 5 MiB + 1 Byte automatisch verkleinert; gültige Auswahl bleibt  ['x1.png', 'x2.png', 'x3.png', 'kaputt.png', 'genau.png']
+  FEHL [mock] Hinweis „Automatisch verkleinert“ nur am verkleinerten Bild
+  OK   [mock] axe ohne WCAG-Verstöße: Formular mit Bildfehlern
+Automatische Verkleinerung eines großen Fotos
+  FEHL [mock] Foto über 5 MiB angenommen und als JPEG vorbereitet  [5853143, []]
+  FEHL [mock] Sichtbarer Hinweis mit Bitte, die Lesbarkeit zu prüfen
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/75b01437-af96-5e0b-a54a-e4e0ef1f787e/scratchpad/alt2/quellen/community_bilder_test.py", line 512, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/tmp/claude-0/-home-claude/75b01437-af96-5e0b-a54a-e4e0ef1f787e/scratchpad/alt2/quellen/community_bilder_test.py", line 253, in main
+    pruefe(a["p_anhaenge"][0]["pfad"].endswith("-1.jpg"), "Hochgeladen als ‹vorgang›-1.jpg", a["p_anhaenge"][0]["pfad"])
+           ~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range

@@ -1,0 +1,7 @@
+S01 vor Wechsel: {'meta': None, 'lokal': ['A-privat'], 'serverA': []}
+S01 B-Server nach Wechsel: ['A-privat', 'B-eigen'] FREMDER_STAND_UEBERTRAGEN= True
+S02 nach Kapiteländerung: ['Start', 'Kapitel-neu']
+S02 App nach manuellem Abgleich: ['Start']
+S02 nach nächster App-Änderung: {'lokal': ['Start', 'App-neu'], 'server': ['Start', 'App-neu']} KAPITELAENDERUNG_VERLOREN= True
+S03 Tab1 nach Abgleich mit gemeinsamem Stand v2: {'stand': ['Start'], 'meta': {'nutzer': '00000000-0000-4000-a000-00000000a001', 'version': 2, 'am': '2026-10-20T10:17:14.683Z'}}
+S03 Server nach Änderung in Tab1: ['Start', 'Tab1-neu'] TAB2_SERVERAENDERUNG_VERLOREN= True

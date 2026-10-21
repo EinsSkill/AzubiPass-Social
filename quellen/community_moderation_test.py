@@ -305,6 +305,8 @@ def main():
             axe(s, "C14 Offene Fälle")
             s.get_by_role("link", name="Prüfen: Wie buche ich Skonto?").click()
             warte(s, "1 offene Meldung")
+            # H02: „1 offene Meldung“ steht schon in der Fallliste – erst auf das geladene Falldetail warten.
+            warte(s, "Telefonnummer im Text")
             pruefe(s.get_by_text("Telefonnummer im Text").count() == 1, "Hinweis der Meldung sichtbar, ohne Namen")
             s.get_by_role("button", name="Inhalt ausblenden").first.click()
             form = s.locator("form.cm-mod-form")

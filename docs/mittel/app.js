@@ -1329,57 +1329,14 @@
     return g;
   }
 
-  function probeklausurId(e) {
-    return e && (e.id || [e.ende, e.seed, e.prozent].join("|"));
-  }
-
-  function probeklausurZeit(e) {
-    if (!e) return 0;
-    var t = Date.parse(e.aktualisiertAm || e.beendetAm || "");
-    return isNaN(t) ? 0 : t;
-  }
+  // Zusammenführung und Klausur-Helfer liegen in kern.js (auch Lernzettelseiten brauchen sie).
+  var probeklausurId = AP.probeklausurId, probeklausurZeit = AP.probeklausurZeit;
+  var zusammenfuehren = AP.lernstandZusammenfuehren;
 
   function probeklausurProzent(e) {
     return e && typeof e.prozent === "number"
       ? String(e.prozent).replace(".", ",") + " %"
       : "—";
-  }
-
-  function zeitstempel(wert) {
-    var t = Date.parse(wert || "");
-    return isNaN(t) ? 0 : t;
-  }
-
-  function objekt(wert) {
-    return wert && typeof wert === "object" && !Array.isArray(wert) ? wert : {};
-  }
-
-  function werteZusammenfuehren(lokal, fremd, fremdIstNeuer) {
-    var alt = objekt(lokal), neu = objekt(fremd), raus = {};
-    Object.keys(alt).forEach(function (id) { raus[id] = alt[id]; });
-    Object.keys(neu).forEach(function (id) {
-      if (!Object.prototype.hasOwnProperty.call(raus, id) || fremdIstNeuer) {
-        raus[id] = neu[id];
-      }
-    });
-    return raus;
-  }
-
-  function fortschrittZusammenfuehren(lokal, fremd, fremdIstNeuer) {
-    var alt = objekt(lokal), neu = objekt(fremd);
-    var raus = {
-      ziele: Array.isArray(alt.ziele) ? alt.ziele.slice() : [],
-      checks: werteZusammenfuehren(alt.checks, neu.checks, fremdIstNeuer),
-      zuordnen: werteZusammenfuehren(alt.zuordnen, neu.zuordnen, fremdIstNeuer),
-      test: werteZusammenfuehren(alt.test, neu.test, fremdIstNeuer),
-      fertig: alt.fertig === true
-    };
-    (Array.isArray(neu.ziele) ? neu.ziele : []).forEach(function (ziel) {
-      if (raus.ziele.indexOf(ziel) === -1) raus.ziele.push(ziel);
-    });
-    if (fremdIstNeuer && typeof neu.fertig === "boolean") raus.fertig = neu.fertig;
-    else if (neu.fertig === true) raus.fertig = true;
-    return raus;
   }
 
   function zeigeProbeklausuren(s) {
@@ -1491,11 +1448,53 @@
     s.appendChild(termin);
 
     /* Sicherung */
-    var daten = feldgruppe("Deine Daten", "nur auf diesem Gerät");
-    var erklaerung = el("p", "leise-text");
-    erklaerung.textContent = "Dein Lernstand liegt nur in diesem Browser. Löschst du die "
-      + "Websitedaten oder wechselst das Gerät, ist er weg — außer du sicherst ihn hier.";
+    var sync = AP.lernstandSync;
+    var daten = feldgruppe("Deine Daten", "Lernstand");
+    var erklaerung = el("p", "leise-text lernsync");
+    erklaerung.setAttribute("role", "status");
     daten.appendChild(erklaerung);
+    var abgleich = el("button", "kn-neben", "Jetzt abgleichen");
+    abgleich.hidden = true;
+    abgleich.addEventListener("click", function () { if (sync) sync.abgleichen(); });
+    daten.appendChild(abgleich);
+    /* Lernstand am Konto (20.10.2026): Der Satz sagt, wo der Lernstand gerade
+       liegt. Die Sicherungsdatei bleibt als zweiter Weg erhalten. */
+    function syncText(st) {
+      var art = st && st.art;
+      var an = !!sync && art !== "lokal";
+      abgleich.hidden = !an || art === "sendet" || art === "ohneProfil";
+      if (!sync || art === "lokal") {
+        erklaerung.textContent = "Dein Lernstand liegt nur in diesem Browser. Melde dich unter "
+          + "„Community“ an, dann wird er in deinem Konto gespeichert und ist auf jedem Gerät da. "
+          + "Ohne Anmeldung ist er weg, wenn du die Websitedaten löschst oder das Gerät wechselst – "
+          + "außer du sicherst ihn hier.";
+      } else if (art === "aktuell") {
+        erklaerung.textContent = "Dein Lernstand ist in deinem Konto gespeichert und auf jedem Gerät "
+          + "da, auf dem du angemeldet bist. Zuletzt abgeglichen um "
+          + String(st.um.getHours()).padStart(2, "0") + ":" + String(st.um.getMinutes()).padStart(2, "0")
+          + " Uhr. Eine laufende Probeklausur bleibt bis zur Abgabe auf diesem Gerät.";
+      } else if (art === "sendet") {
+        erklaerung.textContent = "Dein Lernstand wird mit deinem Konto abgeglichen …";
+      } else if (art === "offline") {
+        erklaerung.textContent = "Gerade keine Verbindung. Dein Lernstand ist auf diesem Gerät "
+          + "gespeichert und wird mit deinem Konto abgeglichen, sobald du wieder online bist.";
+      } else if (art === "ohneProfil") {
+        erklaerung.textContent = "Du bist angemeldet, hast aber noch kein Community-Profil. Lege es "
+          + "unter „Community“ an, dann wird dein Lernstand in deinem Konto gespeichert.";
+      } else {
+        erklaerung.textContent = (st.text || "Der Abgleich hat nicht geklappt.")
+          + " Dein Lernstand bleibt auf diesem Gerät gespeichert.";
+      }
+    }
+    if (sync) {
+      var weg_ = sync.beiStatus(function (st) {
+        if (!erklaerung.isConnected && erklaerung.dataset.gesetzt) { weg_ && weg_(); return; }
+        erklaerung.dataset.gesetzt = "1";
+        syncText(st);
+      });
+    } else {
+      syncText(null);
+    }
 
     var meldung = el("p", "meldung");
     var knoepfe = el("div", "knopfreihe-weit");
@@ -1563,7 +1562,7 @@
     links.appendChild(el("b", null, "Prüfungstermin"));
     links.appendChild(el("small", null,
       "Nur ein eigener Termin erscheint als Countdown auf „Heute“. "
-      + "Er bleibt nur auf diesem Gerät gespeichert."));
+      + "Er gehört zu deinem Lernstand."));
     if (!stand.pruefungstermin && AP.istDatum(inhalt.pruefung)) {
       links.appendChild(el("small", null,
         "Es ist noch kein persönlicher Termin gesetzt. Der Inhalt nennt als "
@@ -1682,82 +1681,12 @@
     leser.readAsText(datei);
   }
 
-  /* Führt eine geprüfte Sicherung in ziel (eine Kopie des Kontos) zusammen. */
-  function zusammenfuehren(stand, neu) {
-    var lokaleZeit = zeitstempel(stand.geaendertAm);
-    var fremdeZeit = zeitstempel(neu.geaendertAm);
-    var fremdeSicherungIstNeuer = fremdeZeit > lokaleZeit;
-    /* Zusammenführen statt überschreiben: Wer auf zwei Geräten gelernt hat,
-       soll nicht die Hälfte verlieren. Eine ältere Sicherung darf dabei
-       keinen neueren Kapitelstand zurücksetzen. */
-    Object.keys(neu.fortschritt || {}).forEach(function (k) {
-      if (!stand.fortschritt[k]) {
-        stand.fortschritt[k] = fortschrittZusammenfuehren({}, neu.fortschritt[k], true);
-      } else {
-        stand.fortschritt[k] = fortschrittZusammenfuehren(
-          stand.fortschritt[k], neu.fortschritt[k], fremdeSicherungIstNeuer);
-      }
-    });
-    Object.keys(neu.karten || {}).forEach(function (id) {
-      var alt = stand.karten[id];
-      if (!alt || (neu.karten[id].fach || 0) > (alt.fach || 0) ||
-          ((neu.karten[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
-        stand.karten[id] = neu.karten[id];
-      }
-    });
-    Object.keys(neu.vokabeln || {}).forEach(function (id) {
-      var alt = stand.vokabeln[id];
-      if (!alt || (neu.vokabeln[id].fach || 0) > (alt.fach || 0) ||
-          ((neu.vokabeln[id].fach || 0) === (alt.fach || 0) && fremdeSicherungIstNeuer)) {
-        stand.vokabeln[id] = neu.vokabeln[id];
-      }
-    });
-    stand.quiz = werteZusammenfuehren(stand.quiz, neu.quiz, fremdeSicherungIstNeuer);
-    (neu.aktivitaet || []).forEach(function (t) {
-      if (stand.aktivitaet.indexOf(t) === -1) stand.aktivitaet.push(t);
-    });
-    (neu.lesezeichen || []).forEach(function (e) {
-      if (!stand.lesezeichen.some(function (x) { return x.zu === e.zu; })) {
-        stand.lesezeichen.push(e);
-      }
-    });
-    /* Klausurergebnisse gehören zum Konto und müssen deshalb beim
-       Zusammenführen ebenfalls erhalten bleiben. Die laufende Klausur hat
-       weiterhin ihren eigenen Schlüssel; hier liegen nur abgeschlossene
-       Ergebniszusammenfassungen. */
-    (Array.isArray(neu.probeklausuren) ? neu.probeklausuren : []).forEach(function (e) {
-      if (!e || typeof e !== "object") return;
-      var id = probeklausurId(e);
-      var i = stand.probeklausuren.findIndex(function (x) {
-        return probeklausurId(x) === id;
-      });
-      if (i < 0) {
-        stand.probeklausuren.push(e);
-        return;
-      }
-      var alt = stand.probeklausuren[i];
-      var neuAbgeschlossen = e.status === "abgeschlossen";
-      var altAbgeschlossen = alt && alt.status === "abgeschlossen";
-      if ((neuAbgeschlossen && !altAbgeschlossen) ||
-          probeklausurZeit(e) >= probeklausurZeit(alt)) {
-        stand.probeklausuren[i] = e;
-      }
-    });
-    if (stand.probeklausuren.length > 50) stand.probeklausuren = stand.probeklausuren.slice(0, 50);
-    if (neu.zuletzt && (!stand.zuletzt || fremdeSicherungIstNeuer)) {
-      stand.zuletzt = neu.zuletzt;
-    }
-    // Nur übernehmen, was der Countdown auch rechnen kann — sonst schleppt
-    // eine alte Sicherung einen kaputten Termin ins frische Konto.
-    if (AP.istDatum(neu.pruefungstermin) &&
-        (!stand.pruefungstermin || fremdeSicherungIstNeuer)) {
-      stand.pruefungstermin = neu.pruefungstermin;
-    }
-  }
-
   function zuruecksetzen(meldung, s) {
+    var imKonto = AP.lernstandSync && AP.lernstandSync.status().art !== "lokal";
     if (!window.confirm("Wirklich alles zurücksetzen? Fortschritt, Karteikarten, "
-        + "Lesezeichen und Notizen sind dann weg. Das lässt sich nicht rückgängig machen.")) {
+        + "Lesezeichen und Notizen sind dann weg"
+        + (imKonto ? " – auch in deinem Konto und auf deinen anderen Geräten" : "")
+        + ". Das lässt sich nicht rückgängig machen.")) {
       return;
     }
     var neu = AP.frisch();
@@ -1935,6 +1864,18 @@
     verteiler = AP.verteiler(zeige, "heute");
     erneuerung();
   }
+
+  /* Lernstand am Konto (lernstand-sync.js): dieselbe Zusammenführung wie beim
+     Einspielen einer Sicherung, und nach einer Übernahme vom Konto die
+     sichtbare Ansicht neu aufbauen. Üben und Community nicht: Dort würde ein
+     Neuaufbau eine laufende Übung oder Eingabe unterbrechen. */
+  AP.appNeuZeichnen = function () {
+    if (!inhalt || !verteiler) return;
+    var id = adresse(location.hash.slice(1)).bereich || "heute";
+    if (["heute", "lernen", "ich"].indexOf(id) >= 0 && schirme[id] && !schirme[id].hidden) {
+      bauer[id](schirme[id], adresse(location.hash.slice(1)));
+    }
+  };
 
   fetch("mittel/inhalt.json")
     .then(function (a) { return a.json(); })

@@ -52,8 +52,11 @@
     frei: null            // Paketsperre (Spec 05): true/false nach der letzten Prüfung, null = unbekannt
   };
 
+  var BERUFE = [["kfb", "Kaufleute für Büromanagement"], ["ik", "Industriekaufleute"]];
+  function berufName(b) { return b === "ik" ? "Industriekaufleute" : "Kaufleute für Büromanagement"; }
+
   function leeresFormular() {
-    return { code: "", name: "", lehrjahr: "", alter: false, regeln: false };
+    return { code: "", name: "", lehrjahr: "", beruf: "kfb", alter: false, regeln: false };
   }
 
   /* Jede Prüfung, jede Anfrage und jeder Kontowechsel zieht eine neue Nummer.
@@ -106,6 +109,7 @@
     // Beiträge, Filter, Position und geladene Dateien des alten Kontos auch.
     if (AP.communityBeitraege) AP.communityBeitraege.vergessen();
     if (AP.communityModeration) AP.communityModeration.vergessen();
+    if (AP.communityGruppen) AP.communityGruppen.vergessen();
   }
 
   // Zeichen zählen wie die Datenbank (char_length): Codepunkte, nicht UTF-16.
@@ -355,6 +359,11 @@
   var MOD_ZIEL = /^moderation(?:\/(ausgeblendet|protokoll))?$/;
   var FALL_ZIEL = new RegExp("^moderation\\/fall\\/(beitrag|antwort)\\/" + UUID + "$", "i");
   var EIGEN_ZIEL = new RegExp("^eigener-inhalt\\/(beitrag|antwort)\\/" + UUID + "$", "i");
+  // Lerngruppen und Wochenaufgaben (20.10.2026).
+  var GRUPPE_ZIEL = new RegExp("^gruppe\\/" + UUID + "$", "i");
+  var GRUPPE_SCHREIBEN = new RegExp("^gruppe\\/" + UUID + "\\/schreiben$", "i");
+  var GRUPPE_AUFGABE = new RegExp("^gruppe\\/" + UUID + "\\/aufgabe$", "i");
+  var AUFGABE_ZIEL = new RegExp("^aufgabe\\/" + UUID + "$", "i");
 
   function zielArt(weg) {
     if (!weg) return "beitraege";
@@ -365,6 +374,14 @@
     if (weg === "meine-meldungen") return "meineMeldungen";
     if (weg === "eigene-ausblendungen") return "eigeneListe";
     if (EIGEN_ZIEL.test(weg)) return "eigenerInhalt";
+    if (weg === "gruppen") return "gruppen";
+    if (weg === "gruppen/neu") return "gruppeNeu";
+    if (weg === "gruppen/beitreten") return "gruppeBeitreten";
+    if (GRUPPE_ZIEL.test(weg)) return "gruppe";
+    if (GRUPPE_SCHREIBEN.test(weg)) return "gruppeSchreiben";
+    if (GRUPPE_AUFGABE.test(weg)) return "gruppeAufgabe";
+    if (weg === "aufgabe-neu") return "aufgabeNeu";
+    if (AUFGABE_ZIEL.test(weg)) return "aufgabe";
     return null;
   }
 
@@ -427,7 +444,37 @@
       fall: function (r) { var m = FALL_ZIEL.exec(z.unter); AP.communityModeration.fall(r, kontext(), m[1], m[2].toLowerCase()); },
       meineMeldungen: function (r) { AP.communityModeration.meineMeldungen(r, kontext()); },
       eigeneListe: function (r) { AP.communityModeration.eigeneListe(r, kontext()); },
-      eigenerInhalt: function (r) { var m = EIGEN_ZIEL.exec(z.unter); AP.communityModeration.eigenerInhalt(r, kontext(), m[1], m[2].toLowerCase()); }
+      eigenerInhalt: function (r) { var m = EIGEN_ZIEL.exec(z.unter); AP.communityModeration.eigenerInhalt(r, kontext(), m[1], m[2].toLowerCase()); },
+      gruppen: function (r) { AP.communityGruppen.liste(r, kontext()); },
+      gruppeNeu: function (r) { AP.communityGruppen.gruenden(r, kontext()); },
+      gruppeBeitreten: function (r) { AP.communityGruppen.beitreten(r, kontext()); },
+      gruppe: function (r) { AP.communityGruppen.gruppe(r, kontext(), GRUPPE_ZIEL.exec(z.unter)[1].toLowerCase()); },
+      gruppeAufgabe: function (r) { AP.communityGruppen.aufgabeNeu(r, kontext(), GRUPPE_AUFGABE.exec(z.unter)[1].toLowerCase()); },
+      aufgabeNeu: function (r) {
+        var c = kontext();
+        if (c.rolle() !== "team") return ansichtNichtDa(r);
+        AP.communityGruppen.aufgabeNeu(r, c, null);
+      },
+      aufgabe: function (r) { AP.communityGruppen.aufgabe(r, kontext(), AUFGABE_ZIEL.exec(z.unter)[1].toLowerCase()); },
+      gruppeSchreiben: function (r) {
+        // Erst prüfen, ob man Mitglied ist; dann das Formular mit festem Ziel.
+        var c = kontext(), id = GRUPPE_SCHREIBEN.exec(z.unter)[1].toLowerCase();
+        r.appendChild(kopf("Beitrag schreiben"));
+        AP.community.gruppe(id).then(function (g) {
+          if (!c.gilt()) return;
+          if (!g || !g.meine_rolle) return c.nichtDa();
+          r.innerHTML = "";
+          AP.communityBeitraege.schreiben(r, c, { gruppe: id, gruppeName: g.name });
+          var h = r.querySelector("h1");
+          if (h) h.focus();
+        }, function (f) {
+          if (!c.gilt()) return;
+          if (f && f.art === "anmeldung") return c.abgelaufen();
+          if (f && f.art === "netz" && c.offline()) return c.offlineZeigen();
+          z.hinweis = { text: "Die Gruppe konnte nicht geladen werden. Versuch es erneut.", fehler: true };
+          r.appendChild(hinweiszeile());
+        });
+      }
     }[z.ansicht] || ansichtPruefen;
     bauer(rahmen);
     if (fokus && sichtbar()) {
@@ -446,6 +493,7 @@
       konto: konto,
       // Nur Anzeige von Einstiegen; Rechte prüft immer die Datenbank.
       rolle: function () { return z.profil && z.profil.rolle || "azubi"; },
+      beruf: function () { return z.profil && z.profil.beruf === "ik" ? "ik" : "kfb"; },
       gilt: function () { return gilt(n) && z.nutzer === konto && z.unter === unter && bindung() && sichtbar(); },
       kopf: kopf, feld: feld, haken: haken, hinweiszeile: hinweiszeile, zurueckKnopf: zurueckKnopf,
       fehlerSetzen: fehlerSetzen, fehleruebersicht: fehleruebersicht, sperren: sperren, freigeben: freigeben,
@@ -660,10 +708,12 @@
       attr: { autocomplete: "off", maxlength: "60", spellcheck: "false" } });
     var jahr = feld({ label: "Lehrjahr (optional)", wert: f.lehrjahr,
       select: [["", "Keine Angabe"], ["1", "1. Lehrjahr"], ["2", "2. Lehrjahr"], ["3", "3. Lehrjahr"]] });
+    var beruf = feld({ label: "Ausbildung", wert: f.beruf || "kfb", select: BERUFE,
+      hilfe: "Danach richten sich die Lernfelder, denen du Beiträge zuordnest. Du kannst das später im Profil ändern." });
     var alter = haken("Ich bin mindestens 16 Jahre alt.", f.alter, true);
     var regelnOk = haken("Ich akzeptiere die Community-Regeln.", f.regeln, true);
-    var felder = { code: code, name: name, jahr: jahr, alter: alter, regeln: regelnOk };
-    var reihenfolge = ["code", "name", "jahr", "alter", "regeln"];
+    var felder = { code: code, name: name, jahr: jahr, beruf: beruf, alter: alter, regeln: regelnOk };
+    var reihenfolge = ["code", "name", "jahr", "beruf", "alter", "regeln"];
 
     reihenfolge.forEach(function (k) { form.appendChild(felder[k].box); });
 
@@ -721,6 +771,7 @@
       f.code = code.eingabe.value;
       f.name = name.eingabe.value;
       f.lehrjahr = jahr.eingabe.value;
+      f.beruf = beruf.eingabe.value === "ik" ? "ik" : "kfb";
       f.alter = alter.eingabe.checked;
       f.regeln = regelnOk.eingabe.checked;
       if (e && e.target) {
@@ -757,11 +808,29 @@
     });
 
     function angelegt(p) {
-      z.laeuft = false;
-      z.profil = p;
+      var gewaehlt = f.beruf;
+      // Mit dem Profil kann der Lernstand ans Konto (lernstand-sync.js).
+      if (AP.lernstandSync) AP.lernstandSync.abgleichen();
       // Den Beta-Zugangscode nicht länger als nötig im Speicher halten.
       z.formular = leeresFormular();
-      ankommen({ text: "Dein Profil ist angelegt." });
+      if (gewaehlt !== "ik" || p.beruf === "ik") {
+        z.laeuft = false;
+        z.profil = p;
+        return ankommen({ text: "Dein Profil ist angelegt." });
+      }
+      // Ausbildung als zweiter Schritt (profil_anlegen kennt den Beruf nicht).
+      var konto = z.nutzer;
+      AP.community.profilAendern({ beruf: "ik" }).then(function (neu) {
+        if (z.nutzer !== konto) return;
+        z.laeuft = false;
+        z.profil = neu || p;
+        ankommen({ text: "Dein Profil ist angelegt." });
+      }, function () {
+        if (z.nutzer !== konto) return;
+        z.laeuft = false;
+        z.profil = p;
+        ankommen({ text: "Dein Profil ist angelegt. Die Ausbildung konnte nicht gespeichert werden – ändere sie bitte im Profil.", fehler: true });
+      });
     }
 
     /* Nach jedem Fehler zuerst nachsehen, ob es das Profil inzwischen gibt –
@@ -848,8 +917,42 @@
     }
     angabe("Anzeigename", p.anzeigename || "");
     angabe("Lehrjahr", p.lehrjahr ? p.lehrjahr + ". Lehrjahr" : "Keine Angabe");
+    angabe("Ausbildung", berufName(p.beruf));
     if (p.rolle && p.rolle !== "azubi") angabe("Rolle", p.rolle === "mentor" ? "Mentor:in" : "Team");
     g.appendChild(liste);
+    // Ausbildung ändern (20.10.2026): bestimmt die Lernfelder beim Schreiben und Filtern.
+    var bForm = el("form", "cm-form cm-beruf-form");
+    bForm.noValidate = true;
+    var bFeld = feld({ label: "Ausbildung ändern", wert: p.beruf || "kfb", select: BERUFE });
+    bForm.appendChild(bFeld.box);
+    var bStatus = el("div");
+    var bSpeichern = el("button", "kn-neben cm-neben", "Ausbildung speichern");
+    bSpeichern.type = "submit";
+    bForm.appendChild(bSpeichern);
+    bForm.appendChild(bStatus);
+    bForm.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (z.laeuft || bFeld.eingabe.value === (z.profil && z.profil.beruf)) return;
+      if (offline()) return setze("offline");
+      var passt = anfrage();
+      sperren(bSpeichern, "Wird gespeichert …");
+      AP.community.profilAendern({ beruf: bFeld.eingabe.value === "ik" ? "ik" : "kfb" }).then(function (neu) {
+        if (!passt()) return;
+        z.laeuft = false;
+        z.profil = neu;
+        setze("drin", { text: "Deine Ausbildung ist gespeichert: " + berufName(neu.beruf) + "." });
+      }, function (fe) {
+        if (!passt()) return;
+        z.laeuft = false;
+        freigeben(bSpeichern);
+        if (fe && fe.art === "anmeldung") return abgelaufen();
+        bStatus.innerHTML = "";
+        var m = el("p", "meldung fehler", "Die Ausbildung konnte nicht gespeichert werden. Versuch es erneut.");
+        m.setAttribute("role", "alert");
+        bStatus.appendChild(m);
+      });
+    });
+    g.appendChild(bForm);
     var reihe = el("div", "cm-reihe");
     var lesen = knopf("Community-Regeln lesen", "kn-neben cm-neben", function () { regelnZeigen(lesen); });
     reihe.appendChild(lesen);
@@ -1027,6 +1130,12 @@
     a.appendChild(lbl);
     a.appendChild(wert);
     box.appendChild(a);
+    // Höchstens eine laufende, noch offene Wochenaufgabe (01-uebersicht, Heute).
+    if (AP.communityGruppen) {
+      var platz = el("div", "hm-aufgabe-platz");
+      box.appendChild(platz);
+      try { AP.communityGruppen.heuteAufgabe(platz); } catch (e) {}
+    }
     return box;
   }
 
@@ -1119,7 +1228,7 @@
       if (document.hidden) { weg = Date.now(); return; }
       if (!weg || Date.now() - weg < 60000) return;
       weg = 0;
-      if (sichtbar() && !z.laeuft && ["beitraege", "beitrag", "gesperrt", "moderation", "meineMeldungen", "eigeneListe"].indexOf(z.ansicht) >= 0) {
+      if (sichtbar() && !z.laeuft && ["beitraege", "beitrag", "gesperrt", "moderation", "meineMeldungen", "eigeneListe", "gruppen", "gruppe", "aufgabe"].indexOf(z.ansicht) >= 0) {
         if (z.ansicht === "beitraege") AP.communityBeitraege.zurueckholen();
         pruefen();
       }

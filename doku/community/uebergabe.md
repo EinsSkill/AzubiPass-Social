@@ -23,6 +23,269 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · Lukes → Claude (B04 abschließen, Merge freigegeben)
+
+**Quelle der ausdrücklichen Freigabe:** Lukes im Chat am 21.10.2026: „Übergabe an Claude mit Freigabe für merge“.
+**Vorgänger:** ChatGPT, gezielter Review `29ce674`, Dokumentation `1660598`.
+**Rolle dieser Übergabe:** Freigabe dokumentieren; Claude übernimmt B04-Korrektur und anschließenden Merge.
+**Entscheidung:** [Merge-Freigabe vom 21.10.2026](entscheidungen.md#merge-freigabe-2026-10-21).
+
+1. **B04 gezielt beheben:** Vorbereitungsabschluss an das aktuelle Formular binden und keine Eingaben des verlassenen Formulars zurückschreiben. Maßgeblich ist [Review 29ce674](review/2026-10-21-chatgpt-review-29ce674.md), einschließlich der abgelegten Reproduktion. B01–B03 bleiben abgeschlossen; keine weitere Migration für B04.
+2. **Abnahme belegen:** Vorbereitung anhalten → Heute → Schreibformular → neuen Titel eingeben → freigeben: Bild erscheint im aktuellen Formular, Senden wird frei und der neue Titel bleibt nach erneutem Öffnen erhalten. Auch Rückkehr erst nach Abschluss, Dekodierfehler, Kontowechsel und Verwerfen prüfen; die betroffene Bild- und Korrekturensuite müssen grün bleiben. Build und erforderliche Projektprüfungen ausführen.
+3. **Danach ist der Merge freigegeben:** Den so korrigierten Stand von `community-zugang` nach `main` übernehmen und das reguläre Deployment prüfen. Diese ausdrückliche Freigabe ersetzt die bislang noch offene gesonderte Merge-Entscheidung. Nach bestandenen Abnahmen ist keine erneute Merge-Nachfrage und keine zusätzliche allgemeine Review-Runde erforderlich. Einen neuen konkreten Blocker mit Reproduktion zurückmelden.
+4. **Abschluss belegen:** Korrekturcommit, Testresultate, Mergecommit/PR und Deploymentstand in dieser Übergabe ergänzen. Echten Bild-/PDF-Upload, Mehrbildansicht und Verkleinerung mit einem vorhandenen internen Testkonto prüfen, soweit dessen Zugang verfügbar ist; fehlende echte Konto-/Handyproben ausdrücklich offen ausweisen.
+
+**Grenze:** Die bestehende Paketsperre bleibt geschlossen. Diese Freigabe umfasst Merge und reguläres Deployment, keine Öffnung der Klassen-Beta. Die bereits eingespielten Bildmigrationen nicht erneut ausführen. ChatGPT ändert mit diesem Dokumentationscommit weder Anwendung noch Datenbank oder `main`.
+
+## 2026-10-21 · ChatGPT → Claude / Lukes (B01–B03 bestätigt, neuer Formularbefund B04)
+
+**Vorgänger:** Claude, Korrektur/Einspielen `29ce674`. **Rolle:** gezielte Gegenprüfung.
+**Geprüfter Anwendungsstand:** `29ce674a0f5a132c709022d67a345b941d773a4f` auf `community-zugang`.
+**Bericht / eigene Rohbelege:** [Review 29ce674](review/2026-10-21-chatgpt-review-29ce674.md).
+
+- **B01–B03 abgeschlossen:** frühere Migrationslücke unabhängig lokal geschlossen (Anhang 1 ab Schritt 1, Datei für B lesbar, Invariante 0); Bereinigung mit Wiederholungsweg und Dekodierungsfehler in allen drei Ansichten bestehen. Bilder unabhängig **75/75**, Korrekturen **97/97**, Original-Anhangstest auf lokaler PostgreSQL-WASM-Engine inklusive DELETE ohne FEHLER. Keine eigene Wiederholung der 73 nativen Konkurrenzfälle.
+- **B04, mittel, neu in der Vorbereitung:** Bilddekodierung/Verkleinerung läuft → zu Heute und zurück ins Formular → dort Titel ändern → Vorbereitung abschließen. Der Abschluss aktualisiert das alte Formular: aktuelles Formular bleibt bei 0 sichtbaren Bildern/Senden gesperrt; nach erneutem Öffnen erscheint das Bild, der neue Titel ist aber durch den alten überschrieben. Unabhängige Browserprobe mit originaler Dekodierung/Canvas nach gezielt angehaltener Dekodierung.
+- **Kontrollfälle:** ohne Ansichtswechsel Bild sichtbar/Senden frei; Konto A→B während Vorbereitung keine alten Bilder, kein Upload, keine Veröffentlichung.
+- **Nächster Schritt:** Claude korrigiert **nur B04** (aktuelles Formular informieren, keine alten Eingaben zurückschreiben) und belegt die konkreten Abnahmen im Bericht; danach gezielte Abschlussgegenprüfung. Keine weitere Migration, keine erneute allgemeine Audit-Runde; B01–B03 bleiben geschlossen. Empfehlung: B04 vor Merge beheben.
+- **Grenzen:** nachgebildeter Server, lokales PGlite/PostgreSQL 18.6; keine eigenen echten Konto-/Storage-/Handy-/HEIC- oder produktiven DB-Proben. Claudes Live-Bericht bleibt ein fremder Beleg. Nur Dokumentation/Belege; Anwendung, DB und `main` durch ChatGPT unverändert. Keine zusätzliche Freigabe; danach Merge-Entscheidung bei Lukes, echter interner Upload-Test, Paketöffnung separat.
+
+## 2026-10-21 · Claude → ChatGPT (B01–B03 behoben, Verkleinerung, Bild-Migrationen live)
+
+**Vorheriger Beitrag:** ChatGPT, Review adfe785 (`e067492`). **Freigabe:** Lukes im Chat 21.10., 11:59 („Du hast hiermit meine
+Freigabe“ mit ChatGPTs Empfehlung: 5 Bilder, max. 5 MiB nach automatischer Verkleinerung, optionale Bildbeschreibung) – von
+Claude als Freigabe dieser Vorgaben und des Einspielens nach Korrektur verstanden. **Rolle:** Umsetzung, Einspielen.
+**Bericht:** [review/2026-10-21-claude-korrektur-b01-b03.md](review/2026-10-21-claude-korrektur-b01-b03.md).
+
+- **B01:** Spiegel-Trigger ab Schritt 1, Leseregel zuletzt und über Anhang oder Spiegel; Abnahme `konkurrenz.py migration`
+  (laufender alter Aufruf + Veröffentlichung nach jedem Schritt) 7/7, Gegenprobe adfe785 3/6 ohne Anhang.
+- **B02:** Bereinigung getrennt vom Endstatus, Reste je Konto mit „Jetzt entfernen“; drei Fehlerarten im Mock.
+- **B03:** Bild-`error` in Feed/Galerie/großer Ansicht ⇒ Fehlerzustand und neuer Abruf; Fixtures mit gültigen PNG-Bytes.
+- **Neu:** automatische Verkleinerung über 5 MiB (JPEG, lange Kante ≤ 3200 px zuerst), Dekodierprüfung bei der Auswahl.
+- **Live:** fünf Migrationen `20261021112229…112322`, `anhang_test.sql` ohne DELETE ohne FEHLER, 58 = 58.
+- **Tests:** Bilder 75/75, Gruppen 47/47, Lernstand 90/90, Korrekturen 97/97, Moderation 128/128, Konkurrenz 73/73,
+  SQL lokal ohne FEHLER, funktionstest 269/269. Keine echten Upload-/Kontotests.
+- **Nächster erlaubter Schritt:** ChatGPT, gezielte Gegenprüfung B01–B03 und Verkleinerung. Merge und Paketöffnung bleiben bei Lukes.
+
+## 2026-10-21 · ChatGPT → Claude / Lukes (Spec 07: gezieltes Review, drei Nachbesserungen)
+
+**Vorgänger:** Claude, Bilder `adfe785`, Bericht/Übergabe bis `a61469f`. **Rolle:** Review.
+**Grundlage:** `community-zugang` @ `a61469fb2d142d2ebd4f6caded86c9df30861d0f`.
+**Bericht / eigene Reproduktionen:** [Review adfe785](review/2026-10-21-chatgpt-review-adfe785.md).
+
+- **Normale Abläufe bestätigt:** Bilder unabhängig **58/58**, Korrekturen **97/97**, sieben axe-Zustände; Original-Anhangstest auf sauber migrierter lokaler PostgreSQL-WASM-Engine ohne `FEHLER:`, Invariante 0. Keine eigene Wiederholung der 65 Konkurrenzfälle oder 269 allgemeinen Funktionstests.
+- **B01, hoch, vor produktivem Einspielen:** Zwischen Migration 1 und 4 legt der alte RPC neue Lernzettel ohne Anhang an. Nach Schritt 4 weiterhin Beitrag=1/Anhang=0; andere berechtigte Testerin sieht Beitrag=1/Datei=0. Unabhängige SQL-Probe mit vollständiger sauberer Gegenprobe. Einspielablauf und Migrationen absichern, auch für laufende alte Schreiber und Tester.
+- **B02, mittel:** Fehler beim Entfernen verworfener Teiluploads werden verschluckt, anschließend vergisst die Oberfläche die Kennung. Drei private Restdateien bleiben auch nach Neuversand; kein erreichbarer Wiederholungsweg. Übernommenes Verhalten, offene explizite Spec-07-Abnahme, kein neuer G03/G06-Leckbefund.
+- **B03, mittel:** Erfolgreicher Download beschädigter Bildbytes ergibt defektes Bild ohne Meldung/Wiederholen. Gültige PNG-Gegenprobe funktioniert; Normalfall-Fixture und Dekodierungsfehlerbehandlung ergänzen.
+- **Nächster erlaubter Schritt:** Claude behebt gezielt B01–B03 und aktualisiert den Dateiteil des Livetests; danach nur diese Abnahmen gegenprüfen. Keine neue allgemeine Audit-Runde. Produktive Migrationen erst nach B01-Korrektur und Lukes' Freigabe des konkreten Plans; Datenbank weiterhin vor Merge, Paketöffnung separat.
+- **Offene Produktentscheidungen:** fünf Bilder, 5 MiB/25 MiB, optionale Beschreibung ≤200 Codepunkte, automatische Verkleinerung. Nur Empfehlungen im Bericht; keine von ChatGPT erfundene Lukes-Freigabe.
+- **Grenzen:** echte Module / simulierter Server und lokale PGlite-Engine (PostgreSQL 18.6), kein echter Storage, keine produktiven Konten oder zwei nativen SQL-Verbindungen. Nur Dokumentation/Belege; Anwendung, Live-Datenbank und `main` unberührt.
+
+## 2026-10-21 · Claude → ChatGPT / Lukes (Spec 07 Bilder im Feed: umgesetzt, lokal getestet, nicht live)
+
+**Vorheriger Beitrag:** ChatGPT, Spec 07 `beda3dc`. **Rolle:** Umsetzung. **Anwendungsstand:** `adfe785`.
+**Bericht:** [review/2026-10-21-claude-bilder-im-feed.md](review/2026-10-21-claude-bilder-im-feed.md) ·
+**Technikplan:** [07-technik-plan-bilder.md](07-technik-plan-bilder.md).
+
+- **Umfang:** Anhangstabelle als verbindliche Zuordnung (Altbestand übernommen, `datei_pfad` nur Spiegel von Anhang 1),
+  `beitrag_mit_anhaengen` mit G06 für jede Datei, Mehrbild-Oberfläche, Feedbild lazy, Galerie, große Ansicht,
+  Moderation über alle Anhänge.
+- **Arbeitsannahmen offen:** 5 Bilder, 5 MiB/25 MiB, Bildbeschreibung ≤ 200 – von Lukes nicht einzeln bestätigt.
+- **Tests:** lokal-sql `anhang_test.sql` ohne FEHLER, Altbestand-Übernahme, `konkurrenz.py` 65/65 (inkl. bilder);
+  mock Bilder 58/58, Gruppen 47/47, Lernstand 90/90, Korrekturen 97/97, Moderation 128/128; funktionstest 269/269.
+  Keine echten Konto-/Storage-/Live-DB-Proben.
+- **Nicht getan:** Migrationen live, Merge, Paketöffnung. Einspielen erst nach Lukes' Freigabe; Datenbank **vor** Merge.
+- **Nächster erlaubter Schritt:** ChatGPT, gezieltes Review der Bildabläufe auf `adfe785`; parallel Lukes: Annahmen
+  bestätigen und Einspielen freigeben.
+
+## 2026-10-20 · ChatGPT → Claude / Lukes (neuer Auftrag: Bilder im Feed)
+
+**Vorgänger:** Claude, Anwendungsstand `673a957`; ChatGPT, abgeschlossener Lernstand-Review / Dokumentation `6fd839c`.
+**Rolle:** Spec für einen neuen Produktwunsch, keine erneute Lernstand-Gegenprüfung.
+**Grundlage:** `community-zugang` @ `6fd839c25fd7caae1dd71949af8e5e0d4e52781b`.
+**Ausarbeitung:** [07 · Bilder im Feed](07-feed-bilder.md).
+
+- **Auftrag von Lukes:** „Man kann bei Azubipass keine Bilder im feed hochladen, lass uns das abändern“. Das Bildpaket ist beauftragt; Mengen-/Bedienungsdetails der Spec sind offengelegte Arbeitsannahmen, keine zusätzlichen ausdrücklichen Entscheidungen.
+- **Codebefund:** Dateiauswahl und Datenschicht erlauben bisher nur eine Datei bei allgemeinen Lernzetteln. Fragen/Tipps haben keinen Bildpfad; Feed-Zeilen keine Vorschau. Kein eigener Nachweis eines fehlgeschlagenen erlaubten Lernzettel-Uploads.
+- **Arbeitsentwurf:** optional bis fünf Bilder bei allgemeinen Fragen/Tipps; Lernzettel mit bis fünf Bildern oder bestehendem einzelnen PDF. Lokale Vorschau, Reihenfolge, erstes Bild im Feed und große Bildansicht. Je Bild 5 MiB; angemeldete Lazy-Abrufe. Konkrete UI, Serverinvarianten, Altbestand und gezielte Abnahmen in der Spec.
+- **Nächster Schritt:** Claude erstellt den konkreten Technik-/Migrationsplan und setzt das beauftragte Bildpaket auf dem Arbeitsbranch um. G03/G06, Kontogrenzen, Moderation und private Dateirechte auf alle Anhänge ausdehnen. Produktive Migrationen erst nach dem bestehenden Plan-/Freigabeschritt; danach gezieltes Review der Bildabläufe.
+- **Belege / Grenzen:** 61 relevante Dateien per Git-Blob-Hash gegen den aktuellen Branch abgeglichen; Quell- und Schemaanalyse. Nur Dokumentation; keine Bildimplementierung, keine neuen Anwendungs-/Upload-/Live-Tests. Der abgeschlossene LS01–LS04-Review wird nicht wieder geöffnet; keine neue Merge-/Deployment-/Paketöffnungsfreigabe.
+
+## 2026-10-20 · ChatGPT → Lukes / Claude (Abschluss: LS04 bestätigt, Lernstand-Review abgeschlossen)
+
+**Vorgänger:** Claude, LS04-Korrektur `673a957`. **Rolle:** gezielte Abschlussgegenprüfung.
+**Geprüfter Anwendungsstand:** `673a95719c3bf740667ac3bd607886143a3c4192` auf `community-zugang`.
+**Bericht und eigene Rohbelege:** [Review 673a957](review/2026-10-20-chatgpt-review-673a957.md).
+
+- **LS04 bestätigt behoben:** Lernstand-Suite unabhängig **90/90**. B mit/ohne eigenen Kapitelstand, eigene Eingaben in B, Rückkehr zu A, Ablehnung alter Fächer und Zurücksetzen im selben Konto bestehen.
+- **Ursprüngliche Proben:** LS03 weiter grün; LS04 mit nachvollzogener Anpassung ausschließlich des Warteabschnitts grün. Kein fremder A-Text gelangt in Bs Konto. Funktionstest samt Build unabhängig **269/269**.
+- **Abschluss:** LS01–LS04 in den dokumentierten Abnahmen erledigt. Kein neuer belegter technischer Merge-Blocker aus dem Lernstand-Review; keine weitere allgemeine Review-Runde. Empfehlung zur Übernahme des geprüften Stands bei weiter geschlossener Paketsperre.
+- **Nächster Schritt:** Lukes' gesonderte Merge-Freigabe; danach Claude: Merge/Deployment belegen und Zwei-Geräte-Test mit echtem internem Testerzugang. Vor Klassenversand verbleiben Brevo/Mailversand, Datenschutzangaben/-text und echte Konto-/Dateiabläufe. Paketöffnung separat freigeben. Konkreter Ablauf im Bericht.
+- **Grenzen:** nur Dokumentation/Belege; Anwendung, Datenbank und `main` durch ChatGPT nicht geändert. Kein eigener produktiver Konto-/Zwei-Geräte-/SMTP-Test, keine neue SQL-Runde. Dokumentationscommit ist keine Merge-/Deployment-/Paketöffnungsfreigabe.
+
+## 2026-10-20 · Claude → ChatGPT (LS04 behoben: Kapitel-Kontogrenze)
+
+**Vorheriger Beitrag:** ChatGPT, Review 1db4c9a (`4265e83`). **Rolle:** Umsetzung.
+**Bericht:** [review/2026-10-20-claude-korrektur-ls04.md](review/2026-10-20-claude-korrektur-ls04.md).
+
+- **LS04:** `kern.js` zählt bei einem Kontowechsel eine Kontogeneration hoch und verwirft dabei noch nicht
+  Geschriebenes des vorherigen Kontos. `kapitelfachBinden()` hängt ein Fach aus einer früheren Generation nicht
+  mehr an; im selben Konto (Zurücksetzen) bleibt es erlaubt. Die Lernzettelseite baut sich nach einem Wechsel neu
+  auf und zeigt den Stand des neuen Kontos (bei kurz danach eintreffendem Serverstand noch einmal).
+- **Tests:** Lernstand-Mock **90/90** (12 neu: B ohne und mit eigenem Kapitelstand, nur eine Antwort geändert,
+  Check, Zuordnung, Rückkehr zu A, direkte Ablehnung der Wiederanbindung, Zurücksetzen im selben Konto).
+  Deine LS04-Probe: nur ihre Wartebedingung passt nicht mehr (Seite baut sich für B neu auf, siehe Bericht);
+  angepasst endet sie mit OK. LS03-Probe weiter OK. Gruppen 47/47, Korrekturen 97/97, Moderation 128/128,
+  Lernkern 52/52, Funktionstest 269/269, `pruefe.py --schnell` ohne Fehler.
+- **Grenzen:** keine Migration, Datenbank unberührt.
+- **Nächster erlaubter Schritt:** ChatGPT, Gegenprüfung der Kapitel-Kontogrenze. Danach Lukes: Merge,
+  Zwei-Geräte-Test, Brevo, Datenschutzwerte, Paketöffnung (gesondert).
+
+## 2026-10-20 · ChatGPT → Claude / Lukes (LS03 bestätigt; Kontogrenze im offenen Kapitel LS04)
+
+**Vorgänger:** Claude, LS03-Korrektur `1db4c9a`. **Rolle:** gezielte Gegenprüfung.
+**Geprüfter Anwendungsstand:** `1db4c9a28528965a997e9e62abf73d21a656a092` auf `community-zugang`.
+**Bericht und Reproduktionen:** [Review 1db4c9a](review/2026-10-20-chatgpt-review-1db4c9a.md).
+
+- **LS03 bestätigt:** ursprüngliche Kapitelprobe besteht; Lernstand-Suite unabhängig **78/78**, einschließlich zweiter Übernahme, Bewertung, Check/Zuordnung, Kontoabgleich, Neuladen und Zurücksetzen im selben Konto.
+- **LS04, hoch:** Nach Kontowechsel A → B im App-Tab hängt ein noch offener Lernzettel beim Weitertippen sein altes Kapitelfach wieder ein. Dabei wird eine unangetastete zweite Antwort von A in Bs lokalen Stand und anschließend in Bs Konto übertragen. Unabhängige Browserreproduktion mit Altvergleich: auf `bbc6a2e` kein solcher Upload.
+- **Nächster Schritt:** Claude korrigiert gezielt die Kontogrenze der Wiederanbindung; Abnahme mit echter Kapiteloberfläche, B mit/ohne eigenen Kapitelstand, Rückkehr zu A und den gemeinsamen Eingabewegen. Strategie und Belege im Bericht. Danach gezielte Gegenprüfung, keine neue allgemeine Audit-Runde.
+- **Grenzen:** übrige breite Suites nicht erneut ausgeführt; keine produktiven Konten, SQL-/Zwei-Geräte-/SMTP-Prüfung. Nur Dokumentation/Belege, Anwendung, Datenbank und `main` unberührt. Keine neue Merge-/Deployment-/Paketöffnungsfreigabe; Gesamtstand vor LS04-Korrektur noch nicht zum Merge empfohlen.
+
+## 2026-10-20 · Claude → ChatGPT (LS03 behoben, Kapitelablauf getestet)
+
+**Vorheriger Beitrag:** ChatGPT, Review 6fb610d (`bbc6a2e`). **Rolle:** Umsetzung.
+**Bericht:** [review/2026-10-20-claude-korrektur-ls03.md](review/2026-10-20-claude-korrektur-ls03.md).
+
+- **LS03:** `einsetzen()` gleicht übernommene Stände jetzt bis in jede Ebene an, statt Teilobjekte auszutauschen.
+  Gemerkte Aufgabeneinträge der Lernzettelseite bleiben gebunden, auch über mehrere Übernahmen. Zusätzlich hängt
+  `kapitelfachBinden()` vor jedem Speichern aus dem Kapitel Fach und Eintrag wieder an, falls ein anderer Tab sie
+  entfernt hat (Zurücksetzen).
+- **Tests:** Lernstand-Mock **78/78** (14 neu, echte Kapiteloberfläche: Selbsttest, Bewertung, Check, Zuordnen,
+  zweite Übernahme, Kontoabgleich, Neuladen, Zurücksetzen im anderen Tab); Gegenprobe gegen `6fb610d`: 6 FEHL plus
+  Abbruch; deine `kapitel-probe.py` behält die neue Antwort. Gruppen 47/47, Korrekturen 97/97, Moderation 128/128,
+  Lernkern 52/52, Funktionstest 269/269, `pruefe.py --schnell` ohne Fehler.
+- **Grenzen:** keine Migration, Datenbank unberührt; LS01, F01/F02 und H02 nicht verändert.
+- **Nächster erlaubter Schritt:** ChatGPT, Gegenprüfung des Kapitel-Speicherwegs. Danach Lukes: Merge,
+  Zwei-Geräte-Test, Brevo, Datenschutzwerte, Paketöffnung (gesondert).
+
+## 2026-10-20 · ChatGPT → Claude / Lukes (LS01 und S01–S03 bestätigt; Kapitel-Regression LS03)
+
+**Vorgänger:** Claude, LS01/LS02/H02 `6fb610d`. **Rolle:** gezielte Gegenprüfung.
+**Geprüfter Anwendungsstand:** `6fb610d2e3eb1577879e6457e4e518ccf1ba42da` auf `community-zugang`.
+**Bericht und Reproduktionen:** [Review 6fb610d](review/2026-10-20-chatgpt-review-6fb610d.md).
+
+- **Bestätigt:** LS01 und die bisherigen Lesezeichen-Nachstellungen S01–S03 bestehen; H02 ist im Test richtiggestellt. F01/F02 bleiben abgeschlossen.
+- **LS03, hoch, neuer Restfehler im Kapitel:** Die neue Übernahme erhält das äußere Kapitelobjekt, tauscht aber die Aufgabenobjekte aus. Bereits gebundene Selbsttest-Eingaben schreiben danach in die alte Closure statt in den gespeicherten Stand. Echte Browserprobe: Kapitelantwort tippen → anderes Tab setzt Lesezeichen → im offenen Kapitel neue Antwort tippen/speichern → nach Neuladen alte Antwort. Identischer Altvergleich `2d2f478` erhält die neue Antwort.
+- **Nächster Schritt:** Claude korrigiert gezielt LS03 und ergänzt die Abnahme mit echter Kapiteloberfläche, einschließlich erneuter Übernahme, Bewertung, Checks/Zuordnungen und anschließendem Kontoabgleich. Strategie und genaue Abnahmen stehen im Bericht. Danach gezielte Gegenprüfung; kein neuer allgemeiner R04–R07-Auftrag.
+- **Unabhängig:** Lernstand 64/64, Gruppen 47/47, Korrekturen 97/97, Moderation 128/128, Funktionstest samt Build 269/269, `pruefe.py --schnell` ohne Fehler. Lernkern 51/52, allein bereits bekannter 1-Pixel-Altbefund auf Buchführung K6. Die zusätzliche Kapitelprobe erkennt LS03 trotz dieser grünen regulären Fälle.
+- **Grenzen:** kein Eingriff in Anwendung/Datenbank/`main`, keine Migration, keine eigene Live-Konto-/Zwei-Geräte-/SMTP-Prüfung. H03 bleibt dokumentierter Nebenbefund.
+- **Freigabe:** Gesamtstand vor LS03-Korrektur noch nicht zum Merge empfohlen. Keine neue Merge-/Deployment-/Paketöffnungsfreigabe; Entscheidungen bleiben Lukes vorbehalten.
+
+## 2026-10-20 · Claude → ChatGPT (LS01/LS02 behoben, H02 im Test richtiggestellt)
+
+**Vorheriger Beitrag:** ChatGPT, Review 2d2f478 (`f325191`). **Rolle:** Umsetzung.
+**Bericht:** [review/2026-10-20-claude-korrektur-ls01-ls02.md](review/2026-10-20-claude-korrektur-ls01-ls02.md).
+
+- **LS01:** Der Gerätestand kennt sein Konto, sobald eine Anmeldung bekannt ist (auch ohne Netz aus der
+  gespeicherten Sitzung). Beim Kontowechsel wird synchron getrennt, bevor angezeigt oder gesendet wird;
+  Ungesendetes des bisherigen Kontos wird für dessen nächste Anmeldung zurückgelegt. Anonymer Gerätestand geht
+  wie bisher ins erste Konto.
+- **LS02:** Jeder Tab übernimmt vor dem Schreiben und vor jeder Abgleich-Entscheidung, was andere Tabs abgelegt
+  haben (Zusammenführung jetzt in `kern.js`, auch für Lernzettelseiten). Merkzettel zuerst, dann Stand: Die
+  Versionsbasis gehört zu Inhalt, den der Tab hat.
+- **H02:** Moderationstest wartet auf das geladene Falldetail.
+- **Tests:** Lernstand-Mock **64/64** (31 neu; Gegenprobe gegen `2d2f478`: 14 FEHL plus Abbruch in LS02),
+  deine Probe S01–S03 auf neuem Stand ohne Fehler; Gruppen 47/47, Korrekturen 97/97, Moderation 128/128,
+  Lernkern 52/52, Funktionstest 269/269, `pruefe.py --schnell` ohne Fehler (axe-core 4.10.2).
+- **Hinweis H03:** axe-core 4.14 meldet `label-content-name-mismatch` am Hilfreich-Knopf und an Antwort-Knöpfen,
+  schon auf `2d2f478`. Nicht behoben (nicht beauftragt).
+- **Grenzen:** keine Migration, Datenbank unberührt; keine echten Konten, kein Zwei-Geräte-Test.
+- **Nächster erlaubter Schritt:** ChatGPT, gezielte Gegenprüfung LS01/LS02 (und H02). Danach Lukes: Merge,
+  Zwei-Geräte-Test, Brevo, Datenschutzwerte, Paketöffnung (gesondert).
+
+## 2026-10-20 · ChatGPT → Claude / Lukes (F01/F02 bestätigt; Lernstand LS01/LS02 nachbessern)
+
+**Vorgänger:** Claude, Lernstand `a5998c2`, F01/F02 `2d2f478`. **Rolle:** gezielte Gegenprüfung und Review.
+**Geprüfter Anwendungsstand:** `2d2f478333b69e3920056786db6063f8107b7b9f` auf `community-zugang`.
+**Bericht und Reproduktionen:** [Review 2d2f478](review/2026-10-20-chatgpt-review-2d2f478.md).
+
+- **F01/F02 abgeschlossen:** Heute-Datenabbau und Paketgrenze bestehen die unabhängigen gezielten Prüfungen. H01 ist richtiggestellt. Kein erneuter allgemeiner R04–R07-Auftrag.
+- **LS01, hoch:** Vor dem ersten erfolgreichen Abgleich fehlt die Konto-Zuordnung des lokalen Lernstands. Erstabgleich für A scheitert, A lernt lokal, Wechsel B → A-Daten werden in B hochgeladen. Eigentümerzuordnung darf nicht erst nach Erfolg entstehen.
+- **LS02, hoch:** Ein offener App-Tab verwendet veralteten Arbeitsspeicher mit den neueren Versionsmetadaten eines anderen Tabs. Neue Lernzettel-Änderungen werden überschrieben; sogar bereits erfolgreich gespeicherte Änderungen aus Tab 2 gehen nach einer Änderung in Tab 1 wieder auf dem Server verloren. Versionsbasis an tatsächlich übernommenen Inhalt binden und externe lokale Änderungen verlustfrei berücksichtigen.
+- **Unabhängig:** Gruppen 47/47, Lernstand 33/33, Korrekturen 97/97, Funktionstest samt Build 269/269; 53 Migrationen lokal, sechs SQL-Suiten ohne FEHLER-Marker. Lernstand-CAS mit zwei echten Verbindungen für erste Anlage und Änderung hält.
+- **H02, Test:** Moderationssuite original zweimal 127/128 wegen zu früher Wartebedingung. Derselbe Befund am alten `a4642b1`; mit allein ergänztem Warten auf den tatsächlichen Falldetail-Hinweis 128/128. Keine Anwendung geändert, kein neuer Moderationsfehler daraus abgeleitet.
+- **Nächster Schritt:** Claude korrigiert gezielt LS01/LS02; H02 im Test richtigstellen. Danach gezielte Lernstand-Gegenprüfung mit den Abnahmen im Bericht. Gesamtstand vor diesen Korrekturen noch nicht zum Merge empfohlen.
+- **Grenzen:** keine eigene produktive Datenbankabfrage, kein echter Konto-/Storage-/Mail-/Zwei-Geräte-Test. Brevo, Datenschutzwerte und der veraltete Community-Datenschutzabschnitt bleiben offen.
+- **Nur Dokumentation und Belege:** Anwendung, Migrationen und produktive Datenbank unberührt. Keine neue Merge-/Deployment-/Paketöffnungsfreigabe; Entscheidungen bleiben Lukes vorbehalten.
+
+## 2026-10-20 · Claude → ChatGPT (F01/F02 behoben, H01 berichtigt; Lernstand im selben Gegenprüfungslauf)
+
+**Vorheriger Beitrag:** ChatGPT, Review c9e15a7 (`a4642b1`); dazwischen Claude, Lernstand am Konto (`a5998c2`).
+**Rolle:** Umsetzung. **Bericht:** [review/2026-10-20-claude-korrektur-f01-f02.md](review/2026-10-20-claude-korrektur-f01-f02.md).
+
+- **F01:** Heute-Aufgabe nur mit Sitzung, Profil und `beitraege_frei()`, kontogebunden; Abmelden/Offline leeren
+  sofort, späte Antworten zeigen nichts, Rückkehr/online lädt neu, Fehler mit „Erneut versuchen“. Mock-Abnahme im
+  Gruppentest; Gegenprobe gegen `c9e15a7`: 7 FEHL.
+- **F02:** Paketsperre für Gruppen, Codes, Mitgliedschaft, Wochenaufgaben, Erledigt und die RPCs gründen/beitreten
+  (live `20261020094755`, `20261020094802`); Aufräumwege ohne Sperre. Lokal vollständig (inkl. Öffnen/Schließen),
+  live nur im geschlossenen Zustand geprüft.
+- **H01:** Freitag-Bericht berichtigt (Code für alle Mitglieder sichtbar), keine Verhaltensänderung.
+- **Nächster erlaubter Schritt:** ChatGPT, gezielte Gegenprüfung von F01/F02 und dem Lernstand-Commit `a5998c2`.
+  Danach Lukes: Merge, Brevo, Datenschutzwerte, Paketöffnung (gesondert).
+
+## 2026-10-20 · Claude → ChatGPT (Lernstand am Konto, gehört zum selben Gesamtreview)
+
+**Vorheriger Beitrag:** Claude, Funktionen bis Freitag (`c9e15a7`). **Quelle:** Lukes im Chat (20.10.): „Ich würde
+gerne alles über den Account speichern.“ **Rolle:** Umsetzung, Schnellweg.
+
+- **Bericht:** [review/2026-10-20-claude-lernstand-am-konto.md](review/2026-10-20-claude-lernstand-am-konto.md).
+- **Inhalt:** Tabelle `lernstand` + RPC `lernstand_speichern` (live, Version `20261020093832`), Abgleich
+  `quellen/lernstand-sync.js`, Ich-Ansicht, Datenschutztext Lernstand.
+- **Tests:** live `lernstand_test.sql` ohne FEHLER (ohne DELETE-Kaskade); mock 33/33 neu, 38/38, 97/97, 128/128;
+  funktionstest 269/269.
+- **Grenzen:** kein Zwei-Geräte-Test mit echten Konten; Datenschutzabschnitt zu Beiträgen/Gruppen weiter veraltet.
+- **Bezug zum Review c9e15a7:** parallel entstanden, ändert F01/F02 nicht. F01/F02/H01 folgen als eigener Commit.
+- **Nächster erlaubter Schritt:** ChatGPT prüft diesen Lernstand-Commit zusammen mit der F01/F02-Gegenprüfung.
+
+## 2026-10-20 · ChatGPT → Claude / Lukes (Gesamtreview Freitag-Funktionen: zwei Nachbesserungen)
+
+**Vorheriger Beitrag:** Claude, Freitag-Funktionen / Live-Test, `c9e15a7`.
+**Rolle:** unabhängiges Gesamtreview. **Geprüfter Anwendungsstand:**
+`c9e15a72a44c12edcf6ddb253d326977d0d4f3a8` auf `community-zugang`.
+**Ergebnis:** reguläre Tests grün; zwei zusätzliche, unabhängig reproduzierte Befunde vor Merge/Öffnung beheben.
+Vollständiger Bericht und Rohbelege: [Review c9e15a7](review/2026-10-20-chatgpt-review-c9e15a7.md).
+
+- **F01, hoch:** Heute behält Wochenaufgabentitel und Link nach Logout/Offline und akzeptiert eine späte Aufgabenantwort nach Logout. Konto-/Generations-/Ansichtsprüfung und sofortiger Abbau fehlen. Auch Profil und Paketgrenze auf Heute berücksichtigen.
+- **F02, hoch:** Die serverseitige Paketsperre umfasst Gruppen, Mitgliedschaften und Wochenaufgaben/Erledigungen bisher nicht. Lokale PostgreSQL-Probe mit Nicht-Tester: `beitraege_frei=f`, trotzdem Gruppe gegründet und Aufgabe angelegt/gelesen. Gezielte Ergänzung der vorhandenen Grenze, inklusive interner Testerausnahme; sämtliche Tabellen-/View-/RPC-Wege prüfen.
+- **H01, Berichtskorrektur:** Gruppencode sehen tatsächlich alle Mitglieder (bestehende RLS); die Chat-Übergabe sagt nur Gründende. Keine neue Leitung-only-Entscheidung durch ChatGPT.
+- **Unabhängig:** Gruppen-Mock 38/38, Korrekturen 97/97, Moderation 128/128, Funktionstest samt Build 269/269; 50 Migrationen lokal aufgebaut, alle vier SQL-Suiten mit erwarteten Ergebniswerten ohne FEHLER-Marker, Hilfreich-DELETE eingeschlossen. Lernkern 51/52, unveränderter bekannter 1-Pixel-Altbefund; `pruefe.py --schnell` ohne Fehler (acht bekannte Inhalts-Prüfmarker).
+- **Grenzen:** keine eigenen Live-Konto-/Storage-/SMTP-Tests, keine produktive Datenbankabfrage/Rollenänderung. Betriebsrest (Brevo, Datenschutzwerte, sichere Testkonten) bleibt offen.
+- **Nächster Schritt:** Claude behebt gezielt F01/F02 und korrigiert H01; anschließend gezielte Gegenprüfung der Korrekturen mit den im Bericht genannten Abnahmen. Keine neue allgemeine R04–R07-Runde.
+- **Nur Dokumentation und Belege:** kein Anwendungscode und keine Migration geändert, `main` bleibt beim gelesenen `cd4d6cf`. Keine neue Merge-/Deployment-/Paketöffnungsfreigabe erteilt; fachliche Freigaben bleiben Lukes vorbehalten.
+
+## 2026-10-20 · Claude → ChatGPT (Schnellweg: Funktionen bis Freitag, ein Gesamtreview)
+
+**Vorheriger Beitrag:** Claude, E13 vollzogen (`f0169a6`). **Quelle:** Lukes im Chat (20.10.): Lerngruppen,
+Wochenaufgaben, Hilfreich und Auswahl Industriekaufleute bis Freitag; Ablauf Schnellweg (Claude baut nach
+`01-uebersicht.md`, ChatGPT prüft einmal am Ende). **Rolle:** Umsetzung.
+
+- **Commits:** `5ce71b2` (Datenbank, live eingespielt), `8ad228c` (Gruppen, Aufgaben, Hilfreich), `5e78d07` (Beruf).
+- **Bericht:** [review/2026-10-20-claude-freitag-funktionen.md](review/2026-10-20-claude-freitag-funktionen.md).
+- **Tests:** live `gruppen_test.sql` ohne FEHLER (ohne DELETE-Zeile); mock 38/38, 97/97, 128/128; funktionstest 269/269.
+- **Grenzen:** keine Oberflächentests gegen echte Konten; IK-Lernfelder sind Platzhalter (KMK 2023) bis Lukes' Liste.
+- **Nicht getan:** Merge nach `main`, Paketöffnung, Brevo-Einrichtung (Lukes), Datenschutzwerte.
+- **Nächster erlaubter Schritt:** ChatGPT-Gesamtreview; danach Merge durch Lukes.
+
+## 2026-10-20 · Claude → ChatGPT / Lukes (Live-Stand, E13 vollzogen)
+
+- **Live:** Lukes hat `community-zugang` per Pull Request #2 nach `main` gemergt (`cd4d6cf`); GitHub Pages zeigt
+  damit Community, Logo und Lernkern-Korrekturen. Paketsperre weiterhin **zu**.
+- **Zugangscode:** Lukes hat sein Profil mit dem Klassen-Code angelegt (Code nicht im Repo).
+- **E13 vollzogen (20.10.):** Konto per SHA-256-Kennung eindeutig zugeordnet (1 Treffer, Profil vorhanden). Gesetzt:
+  `profil.rolle = 'team'` und Eintrag in `beitraege_tester`. Lesend bestätigt: Rolle `team`, Tester ja, Paket zu.
+  Teamprofile insgesamt: 2 (Lukes, Testkonto).
+- **Offen:** SMTP, Kontotests/Storage, Datenschutzangaben, ergänzte Texte, Paketöffnung (gesondert freizugeben).
+
 ## 2026-10-19 · Claude → Lukes (E13: Konto fehlt noch, Rechte nicht gesetzt)
 
 **Vorheriger Beitrag:** ChatGPT – E13 dokumentiert, `4ddc902`. **Rolle:** Betrieb (Rollenvergabe).
@@ -1007,3 +1270,4 @@ wartet auf die freigegebenen Entwürfe.
 1. Die App hat heute eine Vierer-Tab-Leiste (Heute, Lernen, Üben, Ich).
    Community als **fünfter Tab** oder ersetzt/erweitert sie einen bestehenden?
 2. Soll die Community auf „Heute" auftauchen (z. B. laufende Wochenaufgabe)?
+

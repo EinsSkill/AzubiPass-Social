@@ -259,7 +259,7 @@
     }).length;
     var fertig = (!ziele || f.ziele.length >= ziele) &&
                  (!fragen || beantwortet >= fragen);
-    if (fertig !== f.fertig) { f.fertig = fertig; sichern(); }
+    if (fertig !== f.fertig) { f.fertig = fertig; binden(sec, f); sichern(); }
   }
 
   function einblenden(sec) {
@@ -382,6 +382,7 @@
           li.classList.add("erledigt");
           anzeige.textContent = ++n;
           f.ziele.push(kurz);
+          binden(sec, f);
           AP.heuteGelernt();
           sichern();
           kapitelstandPruefen(sec, f);
@@ -438,6 +439,41 @@
     return e;
   }
 
+  /* LS03: Vor jedem Speichern den Eintrag (und das Kapitelfach) wieder an den
+     Lernstand hängen, falls ein anderer Tab ihn inzwischen entfernt hat. */
+  function binden(sec, f, art, kasten, e) {
+    AP.kapitelfachBinden(LERNFELD, sec.id, f, art, kasten && kasten.id, e, kontoGeneration);
+  }
+
+  /* LS04: Die Seite zeigt den Lernstand des Kontos, unter dem sie aufgebaut
+     wurde. Wechselt das Konto in einem anderen Tab, hängt sie nichts mehr an
+     (siehe binden) und baut sich mit dem Stand des neuen Kontos neu auf. */
+  var kontoGeneration = AP.kontoGeneration();
+  var WECHSEL = "azubipass-kontowechsel", neuZeit = null;
+
+  function neuAufbauen(merken) {
+    if (neuZeit) clearTimeout(neuZeit);
+    neuZeit = setTimeout(function () {
+      try {
+        if (merken) sessionStorage.setItem(WECHSEL, String(Date.now()));
+        else sessionStorage.removeItem(WECHSEL);
+      } catch (e) {}
+      location.reload();
+    }, 300);
+  }
+  AP.beiKontowechsel(function () { neuAufbauen(true); });
+
+  // Der Stand des neuen Kontos kommt oft erst kurz nach dem Wechsel vom
+  // Server. Kommt er in den ersten Sekunden nach dem Neuaufbau, noch einmal
+  // aufbauen, damit die Seite ihn zeigt.
+  (function () {
+    var seit;
+    try { seit = Number(sessionStorage.getItem(WECHSEL)) || 0; } catch (e) { seit = 0; }
+    if (!seit) return;
+    if (Date.now() - seit > 15000) { try { sessionStorage.removeItem(WECHSEL); } catch (e) {} return; }
+    AP.beiFremdemStand(function () { neuAufbauen(false); });
+  })();
+
   function checks(sec, f) {
     sec.querySelectorAll(".check").forEach(function (box) {
       var echo = box.querySelector(".check-echo");
@@ -471,6 +507,7 @@
           gemerkt.o = opt.dataset.optionId || opt.textContent;
           gemerkt.r = !!opt.dataset.richtig;
           delete gemerkt.w;
+          binden(sec, f, "checks", box, gemerkt);
           AP.heuteGelernt();
           sichern();
         });
@@ -521,8 +558,10 @@
         knoepfe.forEach(function (btn, k) {
           btn.addEventListener("click", function () {
             waehle(btn);
+            if (!gemerkt.w) gemerkt.w = {};
             gemerkt.w[j] = k;
             gemerkt.f = (gemerkt.f || 0) + (btn.dataset.w === loesung ? 0 : 1);
+            binden(sec, f, "zuordnen", box, gemerkt);
             AP.heuteGelernt();
             sichern();
           });
@@ -546,7 +585,7 @@
       var gemerkt = aufgabenstand(f, "test", frage, text ? text.textContent : frage.id);
       var gezaehlt = false;
 
-      function merken() { AP.heuteGelernt(); sichern(); kapitelstandPruefen(sec, f); }
+      function merken() { binden(sec, f, "test", frage, gemerkt); AP.heuteGelernt(); sichern(); kapitelstandPruefen(sec, f); }
 
       function zaehlen() { if (!gezaehlt) { gezaehlt = true; anzeige.textContent = ++n; } }
 
@@ -576,6 +615,7 @@
         }
         haupt.disabled = feld.value.trim().length < 3;
         gemerkt.t = feld.value;
+        binden(sec, f, "test", frage, gemerkt);
         sichern();
         kapitelstandPruefen(sec, f);
       });

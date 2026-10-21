@@ -1,0 +1,59 @@
+Lerngruppen · Übersicht und lokale Navigation
+  OK   [mock] Beiträge-Übersicht: lokale Navigation mit aktivem Bereich
+  OK   [mock] Meine Gruppen leer
+  OK   [mock] Fremde geschlossene Gruppe unsichtbar
+  OK   [mock] Ohne Team keine Aufgabe für alle
+  OK   [mock] axe ohne WCAG-Verstöße: Lerngruppen Übersicht
+Lerngruppen · gründen
+  OK   [mock] axe ohne WCAG-Verstöße: Gruppe gründen Fehler
+  OK   [mock] Gegründet: Name, geschlossen
+  OK   [mock] Leitung sieht Aufgabe stellen
+  OK   [mock] axe ohne WCAG-Verstöße: Gruppe Detail Leitung
+Lerngruppen · mit Code beitreten
+  OK   [mock] Nach Beitritt in der Gruppe
+  OK   [mock] Mitglied stellt keine Aufgaben
+Lerngruppen · offener Gruppe beitreten, Beitrag in der Gruppe
+  OK   [mock] In Gruppen kein Lernzettel
+  OK   [mock] Ziel klar: nur die Gruppe
+  OK   [mock] Detail führt zurück zur Gruppe
+  OK   [mock] Gruppen-RPC mit Gruppe und Art
+  OK   [mock] Beitrag erscheint in der Gruppe
+  OK   [mock] axe ohne WCAG-Verstöße: Gruppe Detail Mitglied
+Wochenaufgaben · stellen, abhaken, Heute
+  OK   [mock] axe ohne WCAG-Verstöße: Wochenaufgabe stellen Fehler
+  OK   [mock] Aufgabe gehört zur Gruppe
+  OK   [mock] Zahl erledigt: 1
+  OK   [mock] axe ohne WCAG-Verstöße: Wochenaufgabe
+  OK   [mock] Zurückgenommen: 0
+  OK   [mock] Heute zeigt die laufende Aufgabe mit Link
+  OK   [mock] Ohne gespeicherte Sitzung lädt Heute nichts
+Heute · F01: Abmelden, Kontowechsel, Offline, späte Antwort, Profil, Paket
+  OK   [mock] Abmelden leert den Heute-Block
+  OK   [mock] Kontowechsel leert sofort
+  OK   [mock] Offline leert den Heute-Block
+  OK   [mock] Wieder online: neu geladen
+  OK   [mock] Späte Antwort nach Abmelden zeigt nichts
+  OK   [mock] Späte Antwort nach Offline zeigt nichts
+  OK   [mock] Ohne Profil keine Aufgabe
+  OK   [mock] Paket zu: keine Aufgabe
+  OK   [mock] Fehler: Erneut versuchen lädt die Aufgabe
+Hilfreich
+  OK   [mock] Markiert: Zahl 1, aria-pressed
+  OK   [mock] Zurückgenommen: 0
+  OK   [mock] Nach Fehler: Stand neu gelesen, nichts geraten
+  FEHL [mock] axe ohne WCAG-Verstöße: Hilfreich  label-content-name-mismatch:1
+Lerngruppen · verlassen
+  OK   [mock] Zurück in der Übersicht
+Team · Aufgabe für alle
+  OK   [mock] Aufgabe für alle ohne Gruppe
+  OK   [mock] Ohne Team: Aufgabe für alle nicht erreichbar
+Beruf · Industriekaufleute
+  OK   [mock] Beruf im Profil gespeichert
+  OK   [mock] axe ohne WCAG-Verstöße: Profil mit Ausbildung
+  OK   [mock] Schreiben: 13 IK-Lernfelder  14
+  OK   [mock] IK: keine Kapitelauswahl
+  OK   [mock] Filter: eigene Ausbildung zuerst, beide wählbar  ['', 'ik:lf1', 'ik:lf2']
+  OK   [mock] IK-Beitrag: kein Link nach Lernen
+  OK   [mock] Neues Profil mit Industriekaufleute
+
+1 Fehler

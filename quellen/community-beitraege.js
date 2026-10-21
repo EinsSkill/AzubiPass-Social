@@ -3,7 +3,8 @@
    C04 Übersicht und C05 Lesedetail nach doku/community/04-beitraege.md
    (Version 1) und den Entscheidungen vom 12.10.2026:
 
-     – nur allgemeine Beiträge (gruppe_id = null), Gruppen kommen später
+     – Übersicht: nur allgemeine Beiträge (gruppe_id = null); Gruppenbeiträge
+       stehen in der Gruppe (community-gruppen.js) und öffnen dasselbe Detail
      – Filter Beitragsart und Lernfeld, neueste zuerst
      – „Weitere Beiträge laden" mit stabiler Zeit-/ID-Navigation
      – Dateien nur über den angemeldeten Abruf (aktuelle Rechteprüfung)
@@ -43,9 +44,19 @@
     return { konto: konto, art: "", lernfeld: "", geladen: 0, scroll: 0, zuletzt: null, zurueck: false };
   }
 
+  // Spec 07: lokale Bildvorschauen (blob:) eines Entwurfs freigeben.
+  function vorschauenFreigeben(e) {
+    ((e && e.bilder) || []).forEach(function (b) { try { if (b.url) URL.revokeObjectURL(b.url); } catch (x) {} b.url = null; });
+  }
+
+  function entwurfWeg(e) {
+    vorschauenFreigeben(e);
+    if (entwurf === e) entwurf = null;
+  }
+
   function vergessen() {
     stand = leererStand(null);
-    entwurf = null;
+    entwurfWeg(entwurf);
     antwortEntwurf = null;
     gerade = null;
     dateienFreigeben();
@@ -54,7 +65,113 @@
   function dateienFreigeben() {
     dateien.forEach(function (d) { AP.community.dateiFreigeben(d); });
     dateien = [];
+    feedBilderFreigeben();
   }
+
+  /* ================================================== Bilder (Spec 07) */
+
+  /* Angemeldeter Abruf mit höchstens zwei gleichzeitigen Downloads. Jeder Auftrag
+     trägt eine Prüffunktion: Gilt die Ansicht nicht mehr, wird er übersprungen
+     oder seine Datei sofort freigegeben. */
+  var lader = { aktiv: 0, warte: [], MAX: 2 };
+  function bildHolen(pfad, gilt) {
+    return new Promise(function (ja, nein) {
+      lader.warte.push({ pfad: pfad, gilt: gilt, ja: ja, nein: nein });
+      ladeWeiter();
+    });
+  }
+  function ladeWeiter() {
+    while (lader.aktiv < lader.MAX && lader.warte.length) {
+      var a = lader.warte.shift();
+      if (!a.gilt()) { a.nein({ art: "veraltet" }); continue; }
+      lader.aktiv++;
+      (function (a) {
+        AP.community.dateiLaden(a.pfad).then(function (d) {
+          lader.aktiv--;
+          if (!a.gilt()) { AP.community.dateiFreigeben(d); a.nein({ art: "veraltet" }); }
+          else a.ja(d);
+          ladeWeiter();
+        }, function (f) { lader.aktiv--; a.nein(f); ladeWeiter(); });
+      })(a);
+    }
+  }
+
+  // Feedvorschauen: begrenzter Bestand an blob:-Adressen (älteste ferne zuerst frei).
+  var feed = { bilder: [], beobachter: null, MAX: 24 };
+  function feedBilderFreigeben() {
+    feed.bilder.forEach(function (x) { AP.community.dateiFreigeben(x.d); });
+    feed.bilder = [];
+    if (feed.beobachter) { feed.beobachter.disconnect(); feed.beobachter = null; }
+    lader.warte = lader.warte.filter(function (a) {
+      if (a.gilt()) return true;
+      a.nein({ art: "veraltet" });
+      return false;
+    });
+  }
+  function feedBildMerken(x) {
+    feed.bilder.push(x);
+    if (feed.bilder.length <= feed.MAX) return;
+    var hoehe = window.innerHeight || 800;
+    for (var i = 0; i < feed.bilder.length - 1 && feed.bilder.length > feed.MAX; i++) {
+      var r = feed.bilder[i].rahmen.getBoundingClientRect();
+      if (r.bottom < -2 * hoehe || r.top > 3 * hoehe || !feed.bilder[i].rahmen.isConnected) {
+        var weg = feed.bilder.splice(i, 1)[0];
+        i--;
+        AP.community.dateiFreigeben(weg.d);
+        if (weg.rahmen.isConnected) weg.leeren();
+      }
+    }
+  }
+
+  function anhaengeVon(b) {
+    if (Array.isArray(b.anhaenge) && b.anhaenge.length) return b.anhaenge;
+    return b.datei_pfad ? [{ position: 1, pfad: b.datei_pfad, art: b.datei_art, beschreibung: "" }] : [];
+  }
+
+  function bildAlt(x, i, n, titel) {
+    return x.beschreibung ? x.beschreibung : "Bild " + (i + 1) + " von " + n + " zum Beitrag „" + titel + "“";
+  }
+
+  /* B02: Hochgeladene Dateien eines verworfenen Versuchs, die nicht entfernt
+     werden konnten. Sichtbar mit erreichbarem Wiederholungsweg; die Dateien
+     sind privat (eigener Ordner) und gehören zu keinem Beitrag. */
+  function restHinweis(ctx) {
+    var box = el("div", "cm-rest");
+    box.setAttribute("role", "status");
+    var abmelden = null;
+    function zeigen(text, fehler) {
+      box.innerHTML = "";
+      var n = AP.community.resteZahl ? AP.community.resteZahl() : 0;
+      if (!n && !text) { box.hidden = true; return; }
+      box.hidden = false;
+      if (n) {
+        box.appendChild(el("p", "meldung" + (fehler ? " fehler" : ""), (text ? text + " " : "") +
+          "Von einem abgebrochenen Versuch liegen noch hochgeladene Dateien in deinem privaten Speicher. Sie gehören zu keinem Beitrag und sind für andere nicht sichtbar."));
+        var k = knopf("Jetzt entfernen", "kn-neben cm-neben", function () {
+          k.disabled = true;
+          k.setAttribute("aria-busy", "true");
+          AP.community.resteEntfernen().then(function (rest) {
+            if (!ctx.gilt()) return;
+            zeigen(rest ? "Es konnten noch nicht alle Dateien entfernt werden. Versuch es später erneut." : "Die Dateien wurden entfernt.", !!rest);
+          }, function () {
+            if (!ctx.gilt()) return;
+            zeigen("Es konnten noch nicht alle Dateien entfernt werden. Versuch es später erneut.", true);
+          });
+        });
+        box.appendChild(k);
+      } else {
+        box.appendChild(el("p", "meldung", text));
+      }
+    }
+    zeigen();
+    if (AP.community.beiResten) abmelden = AP.community.beiResten(function () {
+      if (!box.isConnected) { abmelden(); return; }
+      zeigen();
+    });
+    return box;
+  }
+
+  var grossNachLaden = null;   // { id, index } – nach Antippen im Feed die große Ansicht öffnen
 
   /* ================================================== Hilfen */
 
@@ -80,27 +197,47 @@
 
   function anzahlAntworten(n) { return n === 1 ? "1 Antwort" : n + " Antworten"; }
 
-  function lernfelder(ctx) {
+  /* Industriekaufleute (Lukes, 20.10.2026): Lernfelder nach dem KMK-Rahmenlehrplan
+     vom 15.12.2023 (Ausbildungsordnung ab 1.8.2024). Lerninhalte dazu gibt es
+     in der App noch nicht – daher keine Kapitel und kein Link nach Lernen. */
+  var LERNFELDER_IK = [
+    "Das Unternehmen vorstellen und die eigene Rolle mitgestalten", "Projekte planen und durchführen",
+    "Kundenaufträge bearbeiten und überwachen", "Beschaffungsprozesse planen und steuern",
+    "Wertströme buchhalterisch dokumentieren und auswerten", "Leistungserstellung planen, steuern und kontrollieren",
+    "Logistik- und Lagerprozesse koordinieren, umsetzen und überwachen",
+    "Kosten- und Leistungsrechnung zur Vorbereitung unternehmerischer Entscheidungen durchführen",
+    "Marketingkonzepte planen und umsetzen", "Jahresabschluss vorbereiten, auswerten und für Finanzierungsentscheidungen nutzen",
+    "Geschäftsprozesse an gesamtwirtschaftlichen Rahmenbedingungen ausrichten", "Personalprozesse planen, steuern und kontrollieren",
+    "Betriebliche Problemlösungsprozesse innovativ durchführen"
+  ].map(function (titel, i) { return { id: "lf" + (i + 1), nummer: i + 1, kurz: "LF" + (i + 1), titel: titel, kapitel: [] }; });
+  var BERUF_KURZ = { kfb: "Büromanagement", ik: "Industrie" };
+
+  function eigenerBeruf(ctx) { return ctx && ctx.beruf ? ctx.beruf() : "kfb"; }
+
+  function lernfelder(ctx, beruf) {
+    if ((beruf || eigenerBeruf(ctx)) === "ik") return LERNFELDER_IK;
     var lf = (ctx.inhalt() && ctx.inhalt().lernfelder) || [];
     return lf.slice().sort(function (a, b) { return (a.nummer || 99) - (b.nummer || 99); });
   }
 
-  function lernfeldVon(ctx, id) {
-    return lernfelder(ctx).filter(function (x) { return x.id === id; })[0] || null;
+  function lernfeldVon(ctx, id, beruf) {
+    return lernfelder(ctx, beruf).filter(function (x) { return x.id === id; })[0] || null;
   }
 
-  // Zuordnung nur aus dem tatsächlich geladenen Katalog – veraltete Kennungen
-  // werden weggelassen, nicht als toter Verweis gezeigt.
+  // Zuordnung nur aus dem tatsächlich geladenen Katalog des Berufs, zu dem der
+  // Beitrag gehört – veraltete Kennungen werden weggelassen, nicht als toter Verweis gezeigt.
   function zuordnung(ctx, b) {
-    var lf = b.lernfeld ? lernfeldVon(ctx, b.lernfeld) : null;
+    var beruf = b.beruf === "ik" ? "ik" : "kfb";
+    var lf = b.lernfeld ? lernfeldVon(ctx, b.lernfeld, beruf) : null;
     if (!lf) return null;
     var k = b.kapitel ? (lf.kapitel || []).filter(function (x) { return x.id === b.kapitel; })[0] : null;
-    return { lf: lf, k: k || null };
+    return { lf: lf, k: k || null, ik: beruf === "ik" };
   }
 
   function zuordnungText(z) {
     if (!z) return "";
-    return z.k ? z.lf.kurz + ", Kapitel " + z.k.nummer + " " + z.k.titel : z.lf.kurz;
+    var t = z.k ? z.lf.kurz + ", Kapitel " + z.k.nummer + " " + z.k.titel : z.lf.kurz;
+    return z.ik ? "Industrie · " + t : t;
   }
 
   function personText(name, rolle, lehrjahr) {
@@ -125,6 +262,8 @@
     r.appendChild(oben);
     r.appendChild(kopf);
     r.appendChild(ctx.hinweiszeile());
+    r.appendChild(restHinweis(ctx));
+    if (AP.communityGruppen) r.appendChild(AP.communityGruppen.lokalnav("beitraege"));
     var schreibReihe = el("div", "cm-reihe cm-schreiben-reihe");
     var schreibLink = verweis("Beitrag schreiben", "#community/schreiben", "kn-haupt cm-haupt");
     schreibLink.addEventListener("click", function () {
@@ -141,9 +280,15 @@
     var filter = el("div", "cm-filter");
     var art = ctx.feld({ label: "Beitragsart", wert: stand.art,
       select: [["", "Alle Arten"], ["lernzettel", "Lernzettel"], ["frage", "Frage"], ["tipp", "Tipp"]] });
-    var lfWahl = [["", "Alle Lernfelder"]].concat(lernfelder(ctx).map(function (lf) {
-      return [lf.id, lf.kurz + " · " + lf.titel];
-    }));
+    // Lernfeld-Filter über beide Ausbildungen; der eigene Beruf steht oben.
+    var berufe = eigenerBeruf(ctx) === "ik" ? ["ik", "kfb"] : ["kfb", "ik"];
+    var lfWahl = [["", "Alle Lernfelder"]];
+    berufe.forEach(function (bf) {
+      lernfelder(ctx, bf).forEach(function (lf) {
+        lfWahl.push([bf + ":" + lf.id, BERUF_KURZ[bf] + " · " + lf.kurz + " · " + lf.titel]);
+      });
+    });
+    if (stand.lernfeld && stand.lernfeld.indexOf(":") < 0) stand.lernfeld = "";
     var lf = ctx.feld({ label: "Lernfeld", wert: stand.lernfeld, select: lfWahl });
     filter.appendChild(art.box);
     filter.appendChild(lf.box);
@@ -171,8 +316,9 @@
 
     function aktiv() { return !!(stand.art || stand.lernfeld); }
     function abfrage() {
-      return { gruppe: "alle", ohneAusgeblendete: true,
-               art: stand.art || undefined, lernfeld: stand.lernfeld || undefined };
+      var teil = (stand.lernfeld || "").split(":");
+      return { gruppe: "alle", ohneAusgeblendete: true, art: stand.art || undefined,
+               beruf: teil[1] ? teil[0] : undefined, lernfeld: teil[1] || undefined };
     }
     function zuruecksetzenZeigen() { zuruecksetzen.hidden = !aktiv(); }
     zuruecksetzenZeigen();
@@ -303,11 +449,91 @@
       });
       h.appendChild(a);
       li.appendChild(h);
+      var anh = anhaengeVon(b);
+      if (anh.length && anh[0].art === "pdf") li.appendChild(el("p", "cm-zeile-meta cm-pdf-hinweis", "PDF-Lernzettel"));
+      else if (anh.length) li.appendChild(feedBild(b, anh));
       li.appendChild(el("p", "cm-zeile-meta",
         [personText(b.autor_name, b.autor_rolle, null), datum(b.erstellt_am)].join(" · ")));
       var zahl = Number(b.antworten) || 0, hilf = Number(b.hilfreich_zahl) || 0;
       li.appendChild(el("p", "cm-zeile-meta", anzahlAntworten(zahl) + " · " + hilf + " hilfreich"));
       return li;
+    }
+
+    /* Spec 07: erstes Bild in reserviertem Rahmen, geladen erst nahe am sichtbaren
+       Bereich. Antippen öffnet den Beitrag mit der großen Ansicht. */
+    function feedBild(b, anh) {
+      var box = el("div", "cm-feedbild");
+      var k = el("button", "cm-feedbild-knopf");
+      k.type = "button";
+      var n = anh.length;
+      k.setAttribute("aria-label", bildAlt(anh[0], 0, n, b.titel) + (n > 1 ? " (1 von " + n + ")" : "") + " – groß ansehen");
+      var rahmen = el("span", "cm-feedbild-rahmen");
+      k.appendChild(rahmen);
+      if (n > 1) k.appendChild(el("span", "cm-feedbild-zahl", "1 / " + n));
+      box.appendChild(k);
+      var fehlerPlatz = el("div", "cm-feedbild-fehler");
+      box.appendChild(fehlerPlatz);
+      k.addEventListener("click", function () {
+        stand.scroll = window.scrollY;
+        stand.zuletzt = b.id;
+        stand.zurueck = true;
+        ctx.merkeHerkunft();
+        grossNachLaden = { id: b.id, index: 0, konto: ctx.konto };
+        location.hash = "#community/beitrag/" + b.id;
+      });
+      var x = { rahmen: rahmen, d: null, leeren: function () { rahmen.innerHTML = ""; beobachten(); } };
+      function laden() {
+        fehlerPlatz.innerHTML = "";
+        rahmen.classList.add("laedt");
+        function fehlschlag() {
+          rahmen.classList.remove("laedt");
+          rahmen.innerHTML = "";
+          fehlerPlatz.innerHTML = "";
+          var p = el("p", "meldung fehler", "Das Bild konnte nicht geladen werden.");
+          fehlerPlatz.appendChild(p);
+          // Neuer angemeldeter Abruf, nicht dieselbe (kaputte) Objektadresse.
+          fehlerPlatz.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", laden));
+        }
+        bildHolen(anh[0].pfad, function () { return ctx.gilt() && rahmen.isConnected; }).then(function (d) {
+          var img = el("img", "cm-feedbild-img");
+          img.alt = "";
+          img.decoding = "async";
+          // B03: Download gelungen, Bild aber nicht darstellbar → derselbe Fehlerzustand.
+          img.addEventListener("error", function () {
+            var i = feed.bilder.indexOf(x);
+            if (i >= 0) feed.bilder.splice(i, 1);
+            AP.community.dateiFreigeben(d);
+            x.d = null;
+            if (ctx.gilt() && rahmen.isConnected) fehlschlag();
+          });
+          img.addEventListener("load", function () { rahmen.classList.remove("laedt"); });
+          img.src = d.url;
+          rahmen.innerHTML = "";
+          rahmen.appendChild(img);
+          x.d = d;
+          feedBildMerken(x);
+        }, function (f) {
+          rahmen.classList.remove("laedt");
+          if (!ctx.gilt() || !rahmen.isConnected || (f && f.art === "veraltet")) return;
+          fehlschlag();
+        });
+      }
+      function beobachten() {
+        if (!("IntersectionObserver" in window)) return laden();
+        if (!feed.beobachter) {
+          feed.beobachter = new IntersectionObserver(function (eintraege) {
+            eintraege.forEach(function (en) {
+              if (!en.isIntersecting) return;
+              feed.beobachter.unobserve(en.target);
+              if (en.target._laden) en.target._laden();
+            });
+          }, { rootMargin: "300px 0px" });
+        }
+        rahmen._laden = laden;
+        feed.beobachter.observe(rahmen);
+      }
+      beobachten();
+      return box;
     }
 
     function mehrZeigen() {
@@ -364,10 +590,12 @@
   function detail(r, id, ctx) {
     dateienFreigeben();
     var oben = el("div", "cm-oben");
-    oben.appendChild(knopf("‹ Zurück zu Beiträgen", "kn-neben cm-zurueck", function () {
+    var gruppeVon = null;          // Gruppenbeitrag: Rückweg zur Gruppe
+    var zurueckKnopf = knopf("‹ Zurück zu Beiträgen", "kn-neben cm-zurueck", function () {
       if (ctx.vonListe()) history.back();
-      else location.hash = "#community";
-    }));
+      else location.hash = gruppeVon ? "#community/gruppe/" + gruppeVon : "#community";
+    });
+    oben.appendChild(zurueckKnopf);
     r.appendChild(oben);
     var kopf = ctx.kopf("Beitrag wird geladen …");
     kopf.querySelector("h1").setAttribute("aria-live", "polite");
@@ -382,7 +610,7 @@
       AP.community.beitrag(id).then(function (b) {
         if (!ctx.gilt()) return;
         // Nicht vorhanden, nicht erlaubt oder (noch) in einer Gruppe: neutral.
-        if (!b || b.gruppe_id) return ctx.nichtDa();
+        if (!b) return ctx.nichtDa();
         zeigen(b);
         if (bestaetigt) {
           var ok = el("p", "meldung", bestaetigt.text);
@@ -425,7 +653,8 @@
       var zo = zuordnung(ctx, b);
       var zeileOben = el("p", "cm-zeile-oben");
       zeileOben.appendChild(el("span", null, ARTNAME[b.art] || ""));
-      zeileOben.appendChild(el("span", null, "Für alle in der Community"));
+      zeileOben.appendChild(el("span", null, b.gruppe_id ? "Gruppe „" + (b.gruppe_name || "") + "“" : "Für alle in der Community"));
+      if (b.gruppe_id) { gruppeVon = b.gruppe_id; zurueckKnopf.textContent = "‹ Zurück zur Gruppe"; }
       if (zo) zeileOben.appendChild(el("span", null, zuordnungText(zo)));
       if (b.art === "frage" && b.geloest) zeileOben.appendChild(marke("Gelöst"));
       if (b.an_mentoren) zeileOben.appendChild(marke("An Mentor:innen"));
@@ -471,6 +700,65 @@
       return box;
     }
 
+    /* „Hilfreich“ (20.10.2026): eigene Markierung setzen oder zurücknehmen.
+       Nur bei fremden Beiträgen; die Zahl kommt nach jeder Änderung frisch vom
+       Server – auch nach einem Fehler, damit nie ein geratener Stand steht. */
+    function hilfreichBereich(b) {
+      var box = el("div", "cm-hilfreich");
+      var zahl = el("p", "cm-zeile-meta cm-detail-hilfreich");
+      box.appendChild(zahl);
+      var meldung = el("p", "meldung fehler cm-hilfreich-fehler");
+      meldung.setAttribute("role", "alert");
+      meldung.hidden = true;
+      var k = null;
+      function anzeigen(x) {
+        var n = Number(x.hilfreich_zahl) || 0;
+        zahl.textContent = n + " hilfreich";
+        if (k) {
+          k.setAttribute("aria-pressed", x.von_mir_hilfreich ? "true" : "false");
+          k.textContent = x.von_mir_hilfreich ? "Hilfreich markiert" : "Als hilfreich markieren";
+        }
+      }
+      if (b.autor_id !== ctx.konto) {
+        k = knopf("Als hilfreich markieren", "kn-neben cm-neben cm-hilfreich-knopf", function () {
+          if (k.disabled || !ctx.gilt()) return;
+          var ziel = k.getAttribute("aria-pressed") !== "true";
+          k.disabled = true;
+          k.setAttribute("aria-busy", "true");
+          meldung.hidden = true;
+          function neuLaden(fehlerText) {
+            AP.community.beitrag(b.id).then(function (x) {
+              if (!ctx.gilt()) return;
+              k.disabled = false;
+              k.removeAttribute("aria-busy");
+              if (x) { b.hilfreich_zahl = x.hilfreich_zahl; b.von_mir_hilfreich = x.von_mir_hilfreich; anzeigen(x); }
+              if (fehlerText) { meldung.textContent = fehlerText; meldung.hidden = false; }
+            }, function (f) {
+              if (!ctx.gilt()) return;
+              k.disabled = false;
+              k.removeAttribute("aria-busy");
+              if (f && f.art === "anmeldung") return ctx.abgelaufen();
+              meldung.textContent = fehlerText || "Der aktuelle Stand konnte nicht geladen werden.";
+              meldung.hidden = false;
+            });
+          }
+          AP.community.hilfreich(b.id, ziel).then(function () {
+            if (!ctx.gilt()) return;
+            neuLaden(null);
+          }, function (f) {
+            if (!ctx.gilt()) return;
+            if (f && f.art === "anmeldung") return ctx.abgelaufen();
+            if (f && f.art === "gesperrt") return ctx.gesperrt();
+            neuLaden("Die Markierung konnte nicht gespeichert werden. Versuch es erneut.");
+          });
+        });
+        box.appendChild(k);
+      }
+      box.appendChild(meldung);
+      anzeigen(b);
+      return box;
+    }
+
     function zeigen(b) {
       var h = r.querySelector("h1");
       h.removeAttribute("aria-live");
@@ -502,17 +790,18 @@
       if (b.bearbeitet_am && datum(b.bearbeitet_am) !== datum(b.erstellt_am))
         meta.push("bearbeitet " + datum(b.bearbeitet_am));
       inhalt.appendChild(el("p", "cm-zeile-meta cm-detail-meta", meta.join(" · ")));
-      // Hilfreich nur als Zahl – Markieren kommt mit der eigenen Spec.
-      inhalt.appendChild(el("p", "cm-zeile-meta cm-detail-hilfreich", (Number(b.hilfreich_zahl) || 0) + " hilfreich"));
+      inhalt.appendChild(hilfreichBereich(b));
 
       if (b.text) inhalt.appendChild(el("div", "cm-text", b.text));   // textContent, Zeilenumbrüche per CSS
 
-      if (b.datei_pfad) inhalt.appendChild(dateiBereich(b));
+      var anh = anhaengeVon(b);
+      if (anh.length && anh[0].art === "pdf") inhalt.appendChild(dateiBereich(b, anh[0]));
+      else if (anh.length) inhalt.appendChild(galerie(b, anh));
 
       inhalt.appendChild(meldeReihe("beitrag", b.id, b.autor_id, "Beitrag: " + b.titel,
         "Beitrag melden", "Beitrag „" + b.titel + "“ melden"));
 
-      if (zo) {
+      if (zo && zo.lf.seite) {          // Industrie-Lernfelder haben (noch) keine Lernseite
         var lern = el("div", "cm-reihe");
         lern.appendChild(zo.k
           ? verweis("Kapitel in Lernen öffnen", zo.lf.seite + "#" + zo.k.id)
@@ -523,7 +812,172 @@
       inhalt.appendChild(antwortBereich(b));
     }
 
-    function dateiBereich(b) {
+    /* Spec 07: Bilder im Detail. Bild 1 sofort, weitere erst bei Auswahl.
+       Antippen öffnet die große Ansicht (Dialog, Escape, Fokus zurück). */
+    function galerie(b, bilder) {
+      var n = bilder.length;
+      var box = el("section", "cm-galerie");
+      box.setAttribute("aria-label", n === 1 ? "Bild" : n + " Bilder");
+      var geladen = {};             // Position → { url }
+      var jetzt = 0;
+      var buehne = el("button", "cm-galerie-buehne");
+      buehne.type = "button";
+      var rahmen = el("span", "cm-galerie-rahmen");
+      buehne.appendChild(rahmen);
+      box.appendChild(buehne);
+      var fehlerPlatz = el("div");
+      box.appendChild(fehlerPlatz);
+      var unter = el("p", "cm-hilfe cm-galerie-text");
+      unter.setAttribute("aria-live", "polite");
+      box.appendChild(unter);
+      var nav = null, vor = null, zur = null, nummern = [];
+      if (n > 1) {
+        nav = el("div", "cm-reihe cm-galerie-nav");
+        vor = knopf("Vorheriges Bild", "kn-neben cm-neben", function () { zeige(jetzt - 1); });
+        nav.appendChild(vor);
+        for (var i = 0; i < n; i++) {
+          (function (i) {
+            var k = knopf(String(i + 1), "kn-neben cm-neben cm-galerie-nummer", function () { zeige(i); });
+            k.setAttribute("aria-label", "Bild " + (i + 1));
+            nummern.push(k);
+            nav.appendChild(k);
+          })(i);
+        }
+        zur = knopf("Nächstes Bild", "kn-neben cm-neben", function () { zeige(jetzt + 1); });
+        nav.appendChild(zur);
+        box.appendChild(nav);
+      }
+      // Nicht darstellbares Bild: Adresse freigeben, damit der nächste Versuch neu abruft.
+      function vergessenBild(i, d) {
+        if (geladen[i] === d) delete geladen[i];
+        var k = dateien.indexOf(d);
+        if (k >= 0) dateien.splice(k, 1);
+        AP.community.dateiFreigeben(d);
+      }
+      function holen(i) {
+        if (geladen[i]) return Promise.resolve(geladen[i]);
+        return bildHolen(bilder[i].pfad, function () { return ctx.gilt(); }).then(function (d) {
+          dateien.push(d);
+          geladen[i] = d;
+          return d;
+        });
+      }
+      function zeige(i) {
+        if (i < 0 || i >= n) return;
+        jetzt = i;
+        nummern.forEach(function (k, j) { k.setAttribute("aria-pressed", j === i ? "true" : "false"); });
+        if (vor) vor.disabled = i === 0;
+        if (zur) zur.disabled = i === n - 1;
+        buehne.setAttribute("aria-label", bildAlt(bilder[i], i, n, b.titel) + " – groß ansehen");
+        unter.textContent = (n > 1 ? "Bild " + (i + 1) + " von " + n : "") +
+          (bilder[i].beschreibung ? (n > 1 ? ": " : "") + bilder[i].beschreibung : "");
+        fehlerPlatz.innerHTML = "";
+        rahmen.innerHTML = "";
+        rahmen.classList.add("laedt");
+        function fehlschlag() {
+          rahmen.classList.remove("laedt");
+          rahmen.innerHTML = "";
+          fehlerPlatz.innerHTML = "";
+          var p = el("p", "meldung fehler", "Das Bild konnte nicht geladen werden.");
+          p.setAttribute("role", "alert");
+          fehlerPlatz.appendChild(p);
+          // Wiederholen heißt: Rechte neu prüfen lassen, nicht alte Adresse nehmen.
+          fehlerPlatz.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", function () { zeige(i); }));
+        }
+        holen(i).then(function (d) {
+          if (!ctx.gilt() || jetzt !== i) return;
+          rahmen.classList.remove("laedt");
+          var img = el("img", "cm-bild");
+          img.alt = bildAlt(bilder[i], i, n, b.titel);
+          img.addEventListener("error", function () {
+            vergessenBild(i, d);
+            if (ctx.gilt() && jetzt === i && document.contains(img)) fehlschlag();
+          });
+          img.src = d.url;
+          rahmen.appendChild(img);
+        }, function (f) {
+          if (!ctx.gilt() || jetzt !== i || (f && f.art === "veraltet")) return;
+          if (f && f.art === "anmeldung") return ctx.abgelaufen();
+          fehlschlag();
+        });
+      }
+      buehne.addEventListener("click", function () { grossAnsicht(jetzt); });
+
+      function grossAnsicht(start) {
+        var d = el("dialog", "cm-dialog cm-grossbild");
+        var hid = "cm-grossbild-titel";
+        d.setAttribute("aria-labelledby", hid);
+        var innen = el("div", "cm-dialog-innen");
+        var h = el("h2", "cm-grossbild-titel");
+        h.id = hid;
+        innen.appendChild(h);
+        var platz = el("div", "cm-grossbild-platz");
+        innen.appendChild(platz);
+        var text = el("p", "cm-hilfe");
+        innen.appendChild(text);
+        var reihe = el("div", "cm-reihe");
+        var gv = n > 1 ? knopf("Vorheriges Bild", "kn-neben cm-neben", function () { gz(g - 1); }) : null;
+        var gn = n > 1 ? knopf("Nächstes Bild", "kn-neben cm-neben", function () { gz(g + 1); }) : null;
+        var zu = knopf("Schließen", "kn-haupt cm-haupt", function () { d.close(); });
+        [gv, gn, zu].forEach(function (k) { if (k) reihe.appendChild(k); });
+        innen.appendChild(reihe);
+        d.appendChild(innen);
+        var g = start;
+        function gz(i) {
+          if (i < 0 || i >= n) return;
+          g = i;
+          h.textContent = n > 1 ? "Bild " + (i + 1) + " von " + n : "Bild";
+          text.textContent = bilder[i].beschreibung || "";
+          if (gv) gv.disabled = i === 0;
+          if (gn) gn.disabled = i === n - 1;
+          platz.innerHTML = "";
+          platz.appendChild(el("p", "cm-hilfe", "Bild wird geladen …"));
+          function fehlschlag() {
+            platz.innerHTML = "";
+            platz.appendChild(el("p", "meldung fehler", "Das Bild konnte nicht geladen werden."));
+            platz.appendChild(knopf("Erneut versuchen", "kn-neben cm-neben", function () { gz(i); }));
+          }
+          holen(i).then(function (dd) {
+            if (!ctx.gilt() || g !== i || !d.isConnected) return;
+            platz.innerHTML = "";
+            var img = el("img", "cm-grossbild-img");
+            img.alt = bildAlt(bilder[i], i, n, b.titel);
+            img.addEventListener("error", function () {
+              vergessenBild(i, dd);
+              if (ctx.gilt() && g === i && d.isConnected) fehlschlag();
+            });
+            img.src = dd.url;
+            platz.appendChild(img);
+          }, function (f) {
+            if (!ctx.gilt() || g !== i || !d.isConnected || (f && f.art === "veraltet")) return;
+            fehlschlag();
+          });
+        }
+        d.addEventListener("close", function () {
+          d.remove();
+          if (verworfen()) return;
+          if (g !== jetzt) zeige(g);
+          if (document.contains(buehne)) buehne.focus();
+        });
+        var verworfen = AP.communityDialoge.merken(d);
+        document.body.appendChild(d);
+        gz(start);
+        if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+        zu.focus();
+      }
+
+      zeige(0);
+      if (grossNachLaden && grossNachLaden.id === b.id && grossNachLaden.konto === ctx.konto) {
+        var start = grossNachLaden.index || 0;
+        grossNachLaden = null;
+        setTimeout(function () { if (ctx.gilt() && document.contains(buehne)) grossAnsicht(start); }, 0);
+      }
+      return box;
+    }
+
+    function dateiBereich(b, x) {
+      x = x || { pfad: b.datei_pfad, art: b.datei_art };
+      b = { titel: b.titel, datei_pfad: x.pfad, datei_art: x.art };
       var box = el("section", "cm-datei");
       box.setAttribute("aria-label", b.datei_art === "pdf" ? "PDF" : "Bild");
       function laden() {
@@ -1133,6 +1587,107 @@
     return "";
   }
 
+  function pdfFehlerText(d) {
+    if (!d) return "";
+    if (d.type !== "application/pdf") return "Wähle eine PDF-Datei.";
+    if (d.size > DATEI_MAX) return "Die Datei darf höchstens 5 MiB groß sein.";
+    return "";
+  }
+
+  var BILD_TYPEN = ["image/jpeg", "image/png", "image/webp"];
+  var BILDER_MAX = 5;
+  function bildFehlerText(d) {
+    if (BILD_TYPEN.indexOf(d.type) < 0) return "Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP.";
+    if (d.size > DATEI_MAX) return "Dieses Bild ist größer als 5 MiB.";
+    return "";
+  }
+
+  /* Bild vorbereiten (Lukes 21.10.2026: höchstens 5 MiB nach automatischer
+     Verkleinerung). Jedes Bild wird einmal dekodiert – was der Browser nicht
+     lesen kann, wird gleich abgelehnt. Bilder bis 5 MiB bleiben unverändert.
+     Größere werden als JPEG neu kodiert: zuerst nur mit etwas Kompression bei
+     langer Kante bis 3200 px (Schrift auf Fotos bleibt lesbar), erst danach
+     kleiner. HEIC (iPhone) wird umgewandelt, wenn der Browser es lesen kann.
+     Ergebnis: { datei, vorher } (vorher = Originalgröße, wenn verkleinert). */
+  var STUFEN = [[3200, 0.9], [3200, 0.82], [2560, 0.85], [2560, 0.75], [2048, 0.75], [1600, 0.7]];
+  function dekodieren(d) {
+    function perBild() {
+      return new Promise(function (ja, nein) {
+        var url = URL.createObjectURL(d), img = new Image();
+        img.onload = function () { ja({ quelle: img, breite: img.naturalWidth, hoehe: img.naturalHeight, frei: function () { URL.revokeObjectURL(url); } }); };
+        img.onerror = function () { URL.revokeObjectURL(url); nein(new Error("dekodieren")); };
+        img.src = url;
+      });
+    }
+    if (!window.createImageBitmap) return perBild();
+    return createImageBitmap(d).then(function (b) {
+      return { quelle: b, breite: b.width, hoehe: b.height, frei: function () { try { b.close(); } catch (x) {} } };
+    }, perBild);
+  }
+  function alsJpeg(bild, kante, qualitaet) {
+    var f = Math.min(1, kante / Math.max(bild.breite, bild.hoehe));
+    var c = document.createElement("canvas");
+    c.width = Math.max(1, Math.round(bild.breite * f));
+    c.height = Math.max(1, Math.round(bild.hoehe * f));
+    var g = c.getContext("2d");
+    g.fillStyle = "#FFFFFF";                    // Transparenz wird weiß statt schwarz
+    g.fillRect(0, 0, c.width, c.height);
+    g.drawImage(bild.quelle, 0, 0, c.width, c.height);
+    return new Promise(function (ja) { c.toBlob(ja, "image/jpeg", qualitaet); });
+  }
+  function bildVorbereiten(d) {
+    var heic = /^image\/hei[cf]$/.test(d.type) || /\.hei[cf]$/i.test(d.name || "");
+    if (!heic && BILD_TYPEN.indexOf(d.type) < 0)
+      return Promise.reject(new Error("Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP."));
+    return dekodieren(d).then(function (bild) {
+      if (!heic && d.size <= DATEI_MAX) { bild.frei(); return { datei: d, vorher: null }; }
+      var i = 0;
+      function versuch() {
+        if (i >= STUFEN.length) { bild.frei(); throw new Error("Dieses Bild ist größer als 5 MiB."); }
+        var st = STUFEN[i++];
+        return alsJpeg(bild, st[0], st[1]).then(function (blob) {
+          if (!blob || blob.size > DATEI_MAX) return versuch();
+          bild.frei();
+          var name = String(d.name || "bild").replace(/\.[^.]+$/, "") + ".jpg";
+          return { datei: new File([blob], name, { type: "image/jpeg" }), vorher: d.size };
+        });
+      }
+      return versuch();
+    }, function () {
+      throw new Error(heic ? "Dieses Bildformat wird nicht unterstützt. Wähle JPG, PNG oder WebP."
+                           : "Dieses Bild konnte nicht gelesen werden. Wähle ein anderes Bild.");
+    });
+  }
+
+  /* Rückfrage mit eigener Bestätigung (Spec 07: PDF/Bilder beim Wechsel entfernen).
+     Escape oder „Abbrechen“ = nichts ändern; Fokus zurück zum Auslöser. */
+  function rueckfrage(ausloeser, frage, jaText, ja, nein) {
+    var d = el("dialog", "cm-dialog");
+    var hid = "cm-rueckfrage-" + Date.now();
+    d.setAttribute("aria-labelledby", hid);
+    var innen = el("div", "cm-dialog-innen");
+    var h = el("h2", "cm-dialog-frage", frage);
+    h.id = hid;
+    innen.appendChild(h);
+    var bestaetigt = false;
+    var reihe = el("div", "cm-reihe");
+    var abbr = knopf("Abbrechen", "kn-haupt cm-haupt", function () { d.close(); });
+    reihe.appendChild(abbr);
+    reihe.appendChild(knopf(jaText, "kn-neben cm-neben cm-dialog-neben", function () { bestaetigt = true; d.close(); }));
+    innen.appendChild(reihe);
+    d.appendChild(innen);
+    d.addEventListener("close", function () {
+      d.remove();
+      if (verworfen()) return;
+      if (bestaetigt) ja(); else if (nein) nein();
+      if (ausloeser && document.contains(ausloeser)) ausloeser.focus();
+    });
+    var verworfen = AP.communityDialoge.merken(d);
+    document.body.appendChild(d);
+    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+    abbr.focus();
+  }
+
   /* Rückfrage vor dem Verwerfen: echter Dialog, Escape = weiter schreiben,
      Fokus zurück zum Auslöser. */
   function verwerfenFragen(ausloeser, verwerfen) {
@@ -1166,13 +1721,14 @@
   }
 
   function neuerEntwurf(konto) {
-    return { konto: konto, art: "frage", titel: "", text: "", datei: null, dateiFehler: "",
+    return { konto: konto, art: "frage", titel: "", text: "",
+             bilder: [] /* Spec 07: [{ id, datei, beschreibung, url, vorher }] */, pdf: null, lzModus: "bilder", vorbereiten: 0,
              lernfeld: "", kapitel: "", mentor: false,
              geaendert: false,   // überhaupt etwas eingegeben
              veraendert: false,  // seit dem letzten Sendeversuch geändert → alten Vorgang klären, neue Kennung
              vorgang: null, versand: null /* eingefrorener Versandstand (G04) */,
              zustand: null /* sendet | unklar | pruefen | klaeren */, schritt: null,
-             meldung: null, ergebnis: null, ctx: null, anzeigen: null };
+             meldung: null, ergebnis: null, ctx: null, anzeigen: null, gruppe: null };
   }
 
   function neuerAntwortEntwurf(konto, beitrag) {
@@ -1195,22 +1751,35 @@
      lokale Prüfung → Freigabe prüfen → (Datei hochladen →) veröffentlichen.
      Jede Antwort landet im Entwurf, auch wenn die Ansicht inzwischen eine
      andere ist; gezeigt wird sie, sobald C06 wieder offen ist. */
-  function schreiben(r, ctx) {
+  /* opts.gruppe / opts.gruppeName (Lerngruppen, 20.10.2026): Beitrag nur für
+     diese Gruppe – Frage oder Tipp, keine Datei. Der Entwurf gehört Konto UND
+     Ziel; ein Entwurf für ein anderes Ziel wird nicht übernommen. */
+  function schreiben(r, ctx, opts) {
+    opts = opts || {};
+    var zielGruppe = opts.gruppe || null;
     dateienFreigeben();
-    if (!entwurf || entwurf.konto !== ctx.konto) entwurf = neuerEntwurf(ctx.konto);
+    if (!entwurf || entwurf.konto !== ctx.konto || entwurf.gruppe !== zielGruppe) {
+      vorschauenFreigeben(entwurf);
+      entwurf = neuerEntwurf(ctx.konto);
+      entwurf.gruppe = zielGruppe;
+    }
     var e = entwurf;
+    if (zielGruppe && e.art === "lernzettel") e.art = "frage";
     e.ctx = ctx;
     if (e.ergebnis) return fertig(e);
 
     var oben = el("div", "cm-oben");
-    var zurueck = knopf("‹ Zurück zu Beiträgen", "kn-neben cm-zurueck", function () { abbrechen(zurueck, true); });
+    var zurueck = knopf(zielGruppe ? "‹ Zurück zur Gruppe" : "‹ Zurück zu Beiträgen", "kn-neben cm-zurueck",
+                        function () { abbrechen(zurueck, true); });
     oben.appendChild(zurueck);
     r.appendChild(oben);
-    var kopf = ctx.kopf("Beitrag schreiben", "Stell eine Frage oder teile einen Lernzettel oder Tipp.");
+    var kopf = ctx.kopf("Beitrag schreiben", zielGruppe ? "Stell eine Frage oder teile einen Tipp mit deiner Gruppe."
+                                                        : "Stell eine Frage oder teile einen Lernzettel oder Tipp.");
     var aug = kopf.querySelector(".schirm-augenbraue");
-    if (aug) aug.textContent = "Ich · Community · Beiträge";
+    if (aug) aug.textContent = zielGruppe ? "Ich · Community · Lerngruppen" : "Ich · Community · Beiträge";
     var ziel = el("p", "cm-zeile-oben");
-    ziel.appendChild(el("span", null, "Für alle in der Community"));
+    ziel.appendChild(el("span", null, zielGruppe ? "Nur für die Gruppe „" + (opts.gruppeName || "Gruppe") + "“"
+                                                 : "Für alle in der Community"));
     kopf.insertBefore(ziel, kopf.lastChild);
     r.appendChild(kopf);
 
@@ -1218,6 +1787,7 @@
     form.noValidate = true;
     var uebersichtPlatz = el("div");
     form.appendChild(uebersichtPlatz);
+    if (!zielGruppe) form.appendChild(restHinweis(ctx));
     var ansage = vorlesen();
 
     // Beitragsart
@@ -1226,21 +1796,20 @@
     legende.appendChild(el("span", "cm-pflicht", "Pflicht"));
     arten.appendChild(legende);
     var radios = {};
-    [["frage", "Frage"], ["lernzettel", "Lernzettel"], ["tipp", "Tipp"]].forEach(function (w) {
+    (zielGruppe ? [["frage", "Frage"], ["tipp", "Tipp"]]
+                : [["frage", "Frage"], ["lernzettel", "Lernzettel"], ["tipp", "Tipp"]]).forEach(function (w) {
       var lab = el("label", "cm-haken cm-wahl");
       var i = el("input");
       i.type = "radio";
       i.name = "cm-beitragsart";
       i.value = w[0];
       i.checked = e.art === w[0];
-      i.addEventListener("change", function () { if (i.checked && !e.zustand) artGewechselt(w[0]); });
+      i.addEventListener("change", function () { if (i.checked && !e.zustand) artGewechselt(w[0], i); });
       lab.appendChild(i);
       lab.appendChild(el("span", null, w[1]));
       arten.appendChild(lab);
       radios[w[0]] = i;
     });
-    var artHinweis = el("p", "cm-hilfe", "Die ausgewählte Datei wird bei dieser Beitragsart nicht veröffentlicht.");
-    arten.appendChild(artHinweis);
     form.appendChild(arten);
 
     // Titel
@@ -1253,17 +1822,195 @@
     zaehler(text, GRENZE.text, function (d) { grenzMeldung(text, d, "Der Text darf höchstens 4000 Zeichen lang sein.", ansage); });
     form.appendChild(text.box);
 
-    // Datei (nur Lernzettel) – Auswahl nur lokal, hochgeladen wird erst beim Veröffentlichen.
-    var datei = ctx.feld({ label: "Datei", pflicht: true, typ: "file", hilfe: "JPG, PNG, WebP oder PDF, höchstens 5 MiB.",
-      attr: { accept: ".jpg,.jpeg,.png,.webp,.pdf,image/jpeg,image/png,image/webp,application/pdf" } });
+    /* Anhänge (Spec 07) – Auswahl, Vorschau und Reihenfolge nur lokal; hochgeladen
+       wird erst beim Veröffentlichen. Frage/Tipp: 0–5 Bilder. Lernzettel: 1–5 Bilder
+       oder genau ein PDF. In Gruppen keine Anhänge. */
+    var anh = el("div", "cm-anhaenge");
+    var hochHinweis = el("p", "cm-hilfe",
+      "Lade nur Inhalte hoch, die du teilen darfst. Keine echten IHK-Prüfungsaufgaben und keine persönlichen Daten anderer Personen. " +
+      "Prüfe auch Bilder, Screenshots und Dokumente vor dem Hochladen.");
+
+    // Lernzettel: Bilder oder PDF
+    var modus = el("fieldset", "cm-feld cm-arten cm-lz-modus");
+    modus.appendChild(el("legend", null, "Anhang des Lernzettels"));
+    var modusRadios = {};
+    [["bilder", "Bilder"], ["pdf", "PDF"]].forEach(function (w) {
+      var lab = el("label", "cm-haken cm-wahl");
+      var i = el("input");
+      i.type = "radio";
+      i.name = "cm-lz-modus";
+      i.value = w[0];
+      i.checked = e.lzModus === w[0];
+      i.addEventListener("change", function () { if (i.checked && !e.zustand) modusGewechselt(w[0], i); });
+      lab.appendChild(i);
+      lab.appendChild(el("span", null, w[1]));
+      modus.appendChild(lab);
+      modusRadios[w[0]] = i;
+    });
+    anh.appendChild(modus);
+
+    // Bilder
+    var bildFeld = ctx.feld({ label: "Bilder hinzufügen (optional)", typ: "file",
+      hilfe: "Bis zu 5 Bilder. JPG, PNG oder WebP, jeweils höchstens 5 MiB – größere Fotos werden automatisch verkleinert.",
+      attr: { accept: ".jpg,.jpeg,.png,.webp,.heic,.heif,image/jpeg,image/png,image/webp,image/heic,image/heif", multiple: "" } });
+    var bildZahl = el("p", "cm-hilfe cm-auswahl");
+    bildZahl.id = bildFeld.eingabe.id + "-a";
+    bildFeld.box.insertBefore(bildZahl, bildFeld.fehler);
+    beschreibtDazu(bildFeld.eingabe, bildZahl.id);
+    var bildListe = el("ol", "cm-bildwahl-liste");
+    bildFeld.box.appendChild(bildListe);
+    anh.appendChild(bildFeld.box);
+    var bildFelder = [];      // je Bild { box, eingabe, fehler } für Beschreibungsfehler
+
+    bildFeld.eingabe.addEventListener("change", function () {
+      if (e.zustand || e.vorbereiten) return;   // gesperrt (G04) bzw. vorige Auswahl läuft noch
+      var neu = Array.prototype.slice.call(bildFeld.eingabe.files || []);
+      bildFeld.eingabe.value = "";          // Abbrechen ändert nichts; erneute Auswahl ergänzt
+      if (!neu.length) return;
+      var fehlerTexte = [];
+      var zuViele = false;
+      e.vorbereiten = neu.length;
+      vorbereitenAnzeigen();
+      // Nacheinander: nie mehr als ein großes Bild gleichzeitig im Speicher.
+      neu.reduce(function (kette, d) {
+        return kette.then(function () {
+          if (entwurf !== e) return;
+          // Platz zählt nur für gültige Bilder; erst bei voller Auswahl wird abgewiesen.
+          if (e.bilder.length >= BILDER_MAX) { zuViele = true; e.vorbereiten--; return; }
+          return bildVorbereiten(d).then(function (x) {
+            if (entwurf !== e) return;
+            if (e.bilder.length >= BILDER_MAX) { zuViele = true; return; }
+            e.bilder.push({ id: "b" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+                            datei: x.datei, beschreibung: "", url: URL.createObjectURL(x.datei), vorher: x.vorher });
+          }, function (f) { fehlerTexte.push(d.name + ": " + f.message); }).then(function () {
+            if (entwurf !== e) return;
+            e.vorbereiten--;
+          });
+        });
+      }, Promise.resolve()).then(function () {
+        if (entwurf !== e) {                // Konto gewechselt oder verworfen: nichts behalten
+          return;
+        }
+        /* B04: Das Ergebnis gehört dem Entwurf, nicht diesem Formular. Keine
+           Eingaben aus dem (vielleicht schon verlassenen) Formular zurücklesen;
+           angezeigt wird es im gerade offenen Formular – oder beim nächsten Öffnen. */
+        e.vorbereiten = 0;
+        if (zuViele) fehlerTexte.unshift("Du kannst höchstens 5 Bilder hinzufügen.");
+        e.geaendert = true;
+        e.veraendert = true;
+        e.vorbereitungsText = fehlerTexte.join(" ");
+        if (e.nachVorbereitung) e.nachVorbereitung();
+      });
+    });
+
+    // Gilt nur für dieses Formular; jedes neu aufgebaute Formular setzt seine eigene Fassung.
+    e.nachVorbereitung = function () {
+      if (!ctx.gilt() || !document.contains(form)) return;
+      bilderAnzeigen();
+      vorbereitenAnzeigen();
+      var t = e.vorbereitungsText || "";
+      e.vorbereitungsText = null;
+      ctx.fehlerSetzen(bildFeld, t);
+      var verkl = e.bilder.filter(function (b) { return b.vorher; }).length;
+      ansage.textContent = t || ((e.bilder.length === 1 ? "1 Bild ausgewählt." : e.bilder.length + " Bilder ausgewählt.")
+        + (verkl ? " Große Bilder wurden automatisch verkleinert." : ""));
+    };
+
+    var vorbereitung = el("p", "cm-hilfe cm-vorbereitung");
+    vorbereitung.setAttribute("role", "status");
+    bildFeld.box.insertBefore(vorbereitung, bildListe);
+    function vorbereitenAnzeigen() {
+      vorbereitung.textContent = e.vorbereiten ? "Bilder werden vorbereitet …" : "";
+      vorbereitung.hidden = !e.vorbereiten;
+      if (!e.zustand) {
+        senden.disabled = !!e.vorbereiten;
+        bildFeld.eingabe.disabled = !!e.vorbereiten || e.bilder.length >= BILDER_MAX;
+      }
+    }
+
+    function bildVerschieben(i, nach, wer) {
+      if (e.zustand) return;
+      var j = i + nach;
+      if (j < 0 || j >= e.bilder.length) return;
+      var b = e.bilder.splice(i, 1)[0];
+      e.bilder.splice(j, 0, b);
+      merke();
+      bilderAnzeigen();
+      ansage.textContent = "Bild „" + b.datei.name + "“ ist jetzt Bild " + (j + 1) + " von " + e.bilder.length + ".";
+      var ziel = bildListe.children[j] && bildListe.children[j].querySelector('[data-aktion="' + wer + '"]:not([disabled])');
+      (ziel || (bildListe.children[j] && bildListe.children[j].querySelector("button:not([disabled])")) || bildFeld.eingabe).focus();
+    }
+
+    function bildEntfernen(i) {
+      if (e.zustand) return;
+      var b = e.bilder.splice(i, 1)[0];
+      try { URL.revokeObjectURL(b.url); } catch (x) {}
+      merke();
+      bilderAnzeigen();
+      ansage.textContent = "Bild „" + b.datei.name + "“ entfernt.";
+      var nachbar = bildListe.children[Math.min(i, e.bilder.length - 1)];
+      (nachbar ? nachbar.querySelector('[data-aktion="entfernen"]') : bildFeld.eingabe).focus();
+      if (versucht) pruefeAlles();
+    }
+
+    function bilderAnzeigen() {
+      bildListe.innerHTML = "";
+      bildFelder = [];
+      var n = e.bilder.length;
+      bildZahl.textContent = n ? (n === 1 ? "1 von 5 Bildern ausgewählt. Das erste Bild erscheint im Feed."
+                                          : n + " von 5 Bildern ausgewählt. Das erste Bild erscheint im Feed.")
+                               : "Keine Bilder ausgewählt.";
+      e.bilder.forEach(function (b, i) {
+        var li = el("li", "cm-bildwahl");
+        var img = el("img", "cm-bildwahl-vorschau");
+        img.src = b.url || "";
+        img.alt = "";
+        li.appendChild(img);
+        var info = el("div", "cm-bildwahl-info");
+        info.appendChild(el("p", "cm-bildwahl-name", "Bild " + (i + 1) + " von " + n + " · " + b.datei.name + " · " + groesse(b.datei.size)));
+        if (b.vorher) info.appendChild(el("p", "cm-hilfe cm-verkleinert", "Automatisch verkleinert (vorher " + groesse(b.vorher) + "). Prüfe in der Vorschau, ob Schrift noch lesbar ist."));
+        var bf = ctx.feld({ label: "Bildbeschreibung (optional)", wert: b.beschreibung, attr: { autocomplete: "off" },
+                            hilfe: "Wird vorgelesen, wenn das Bild nicht zu sehen ist. Höchstens 200 Zeichen." });
+        bf.eingabe.setAttribute("aria-label", "Bildbeschreibung für Bild " + (i + 1) + " (optional)");
+        bf.eingabe.addEventListener("input", function () {
+          if (e.zustand) { bf.eingabe.value = b.beschreibung; return; }
+          b.beschreibung = bf.eingabe.value;
+          merke();
+          if (versucht) pruefeAlles();
+        });
+        info.appendChild(bf.box);
+        bildFelder.push(bf);
+        var reihe = el("div", "cm-reihe cm-bildwahl-aktionen");
+        var weg = knopf("Entfernen", "kn-neben cm-neben cm-sperrbar", function () { bildEntfernen(i); });
+        weg.dataset.aktion = "entfernen";
+        weg.setAttribute("aria-label", "Bild " + (i + 1) + " entfernen");
+        var vor = knopf("Nach vorn", "kn-neben cm-neben cm-sperrbar", function () { bildVerschieben(i, -1, "vor"); });
+        vor.dataset.aktion = "vor";
+        vor.setAttribute("aria-label", "Bild " + (i + 1) + " nach vorn");
+        vor.disabled = i === 0;
+        var zur = knopf("Nach hinten", "kn-neben cm-neben cm-sperrbar", function () { bildVerschieben(i, 1, "zurueck"); });
+        zur.dataset.aktion = "zurueck";
+        zur.setAttribute("aria-label", "Bild " + (i + 1) + " nach hinten");
+        zur.disabled = i === n - 1;
+        [weg, vor, zur].forEach(function (k) { reihe.appendChild(k); });
+        info.appendChild(reihe);
+        li.appendChild(info);
+        bildListe.appendChild(li);
+      });
+      bildFeld.eingabe.disabled = !!e.zustand || n >= BILDER_MAX;
+      if (e.zustand) eingabenSperren(bildListe, true);
+    }
+
+    // PDF (nur Lernzettel im PDF-Modus)
+    var datei = ctx.feld({ label: "PDF-Datei", pflicht: true, typ: "file", hilfe: "Ein PDF, höchstens 5 MiB.",
+      attr: { accept: ".pdf,application/pdf" } });
     var auswahl = el("p", "cm-hilfe cm-auswahl");
     auswahl.id = datei.eingabe.id + "-a";
     datei.box.insertBefore(auswahl, datei.fehler);
     beschreibtDazu(datei.eingabe, auswahl.id);
-    var entfernen = knopf("Datei entfernen", "kn-neben cm-neben cm-sperrbar", function () {
+    var entfernen = knopf("PDF entfernen", "kn-neben cm-neben cm-sperrbar", function () {
       if (e.zustand) return;                // gesperrt (G04)
-      e.datei = null;
-      e.dateiFehler = "";
+      e.pdf = null;
       merke();
       datei.eingabe.value = "";
       dateiAnzeigen();
@@ -1271,41 +2018,36 @@
       datei.eingabe.focus();
     });
     datei.box.insertBefore(entfernen, datei.fehler);
-    var hochHinweis = el("p", "cm-hilfe",
-      "Lade nur Inhalte hoch, die du teilen darfst. Keine echten IHK-Prüfungsaufgaben und keine persönlichen Daten anderer Personen. " +
-      "Prüfe auch Bilder, Screenshots und Dokumente vor dem Hochladen.");
-    datei.box.appendChild(hochHinweis);
     datei.eingabe.addEventListener("change", function () {
       if (e.zustand) return;                // gesperrt (G04)
       var d = datei.eingabe.files && datei.eingabe.files[0];
       if (!d) return;                       // Auswahl abgebrochen: bisherige Datei bleibt
-      var fehler = dateiFehlerText(d);
+      var fehler = pdfFehlerText(d);
       if (fehler) {
-        e.datei = null;
-        e.dateiFehler = fehler;
         datei.eingabe.value = "";
         ctx.fehlerSetzen(datei, fehler);
         ansage.textContent = fehler;
       } else {
-        e.datei = d;
-        e.dateiFehler = "";
+        e.pdf = d;
         ctx.fehlerSetzen(datei, "");
       }
       merke();
       dateiAnzeigen();
       if (versucht) pruefeAlles();
     });
-    form.appendChild(datei.box);
+    anh.appendChild(datei.box);
+    anh.appendChild(hochHinweis);
+    form.appendChild(anh);
 
     function dateiAnzeigen() {
-      auswahl.textContent = e.datei ? "Ausgewählt: " + e.datei.name + " · " + groesse(e.datei.size) : "Keine Datei ausgewählt.";
-      entfernen.hidden = !e.datei;
-      artHinweis.hidden = !(e.datei && e.art !== "lernzettel");
+      auswahl.textContent = e.pdf ? "Ausgewählt: " + e.pdf.name + " · " + groesse(e.pdf.size) : "Keine Datei ausgewählt.";
+      entfernen.hidden = !e.pdf;
     }
-    // Nach dem Neuzeichnen die gewählte Datei wieder ins Feld setzen, wo der Browser das kann.
-    if (e.datei) {
-      try { var dt = new DataTransfer(); dt.items.add(e.datei); datei.eingabe.files = dt.files; } catch (x) {}
+    // Nach dem Neuzeichnen das gewählte PDF wieder ins Feld setzen, wo der Browser das kann.
+    if (e.pdf) {
+      try { var dt = new DataTransfer(); dt.items.add(e.pdf); datei.eingabe.files = dt.files; } catch (x) {}
     }
+    bilderAnzeigen();
 
     // Lernfeld / Kapitel – nur aus dem geladenen Katalog.
     if (e.lernfeld && !lernfeldVon(ctx, e.lernfeld)) { e.lernfeld = ""; e.kapitel = ""; }
@@ -1331,7 +2073,7 @@
       });
       if (e.kapitel && !((x && x.kapitel) || []).some(function (k) { return k.id === e.kapitel; })) e.kapitel = "";
       kap.eingabe.value = e.kapitel || "";
-      kap.box.hidden = !x;
+      kap.box.hidden = !x || !(x.kapitel || []).length;
     }
     kapitelFuellen();
     lf.eingabe.addEventListener("change", function () {
@@ -1366,6 +2108,9 @@
     form.appendChild(sperrHinweis);
     var platz = el("div", "cm-schreib-status");
     form.appendChild(platz);
+    var fortschritt = el("p", "cm-nur-vorlesen");
+    fortschritt.setAttribute("role", "status");
+    form.appendChild(fortschritt);
     form.appendChild(ansage);
     var reihe = el("div", "cm-reihe");
     var senden = el("button", "kn-haupt cm-haupt", "Beitrag veröffentlichen");
@@ -1400,18 +2145,70 @@
       if (!lz) label.appendChild(el("span", "cm-pflicht", "Pflicht"));
       if (lz) text.eingabe.removeAttribute("aria-required");
       else text.eingabe.setAttribute("aria-required", "true");
-      datei.box.hidden = !lz;
+      var pdfModus = lz && e.lzModus === "pdf";
+      anh.hidden = !!zielGruppe;
+      modus.hidden = !lz;
+      bildFeld.box.hidden = pdfModus;
+      datei.box.hidden = !pdfModus;
+      var bl = bildFeld.box.querySelector("label");
+      bl.textContent = lz ? "Bilder" : "Bilder hinzufügen (optional)";
+      if (lz) { bl.appendChild(el("span", "cm-pflicht", "Pflicht")); bildFeld.eingabe.setAttribute("aria-required", "true"); }
+      else bildFeld.eingabe.removeAttribute("aria-required");
       mentor.box.hidden = e.art !== "frage";
       dateiAnzeigen();
     }
 
-    function artGewechselt(neu) {
+    // Spec 07 §3.6: Gültige Bilder bleiben beim Artwechsel; ein PDF geht nur nach Rückfrage verloren.
+    function artGewechselt(neu, radio) {
       var alt = e.art;
-      e.art = neu;
-      merke();
-      artAnzeigen();
-      if (alt === "lernzettel" && e.datei) ansage.textContent = "Die ausgewählte Datei wird bei dieser Beitragsart nicht veröffentlicht.";
-      if (versucht) pruefeAlles();
+      function wechseln() {
+        e.art = neu;
+        merke();
+        artAnzeigen();
+        if (versucht) pruefeAlles();
+      }
+      if (alt === "lernzettel" && neu !== "lernzettel" && e.lzModus === "pdf" && e.pdf) {
+        rueckfrage(radio, "Fragen und Tipps haben nur Bilder. Die ausgewählte PDF-Datei „" + e.pdf.name + "“ wird entfernt.",
+          "PDF entfernen und wechseln", function () {
+            e.pdf = null;
+            datei.eingabe.value = "";
+            e.lzModus = "bilder";
+            modusRadios.bilder.checked = true;
+            wechseln();
+          }, function () { radios[alt].checked = true; });
+        return;
+      }
+      if (neu !== "lernzettel" && e.lzModus === "pdf") { e.lzModus = "bilder"; modusRadios.bilder.checked = true; }
+      wechseln();
+    }
+
+    function modusGewechselt(neu, radio) {
+      var alt = e.lzModus;
+      function wechseln() {
+        e.lzModus = neu;
+        merke();
+        artAnzeigen();
+        if (versucht) pruefeAlles();
+      }
+      if (neu === "bilder" && e.pdf) {
+        rueckfrage(radio, "Die ausgewählte PDF-Datei „" + e.pdf.name + "“ wird entfernt.", "PDF entfernen", function () {
+          e.pdf = null;
+          datei.eingabe.value = "";
+          wechseln();
+        }, function () { modusRadios[alt].checked = true; });
+        return;
+      }
+      if (neu === "pdf" && e.bilder.length) {
+        rueckfrage(radio, e.bilder.length === 1 ? "Das ausgewählte Bild wird entfernt." : "Die " + e.bilder.length + " ausgewählten Bilder werden entfernt.",
+          "Bilder entfernen", function () {
+            vorschauenFreigeben(e);
+            e.bilder = [];
+            bilderAnzeigen();
+            wechseln();
+          }, function () { modusRadios[alt].checked = true; });
+        return;
+      }
+      wechseln();
     }
 
     // Prüft alle Felder, setzt die Fehler und gibt die fehlerhaften Felder zurück.
@@ -1423,10 +2220,17 @@
         [text, laenge(tx) > GRENZE.text ? "Der Text darf höchstens 4000 Zeichen lang sein."
           : !tx && e.art === "frage" ? "Gib einen Text für deine Frage ein."
           : !tx && e.art === "tipp" ? "Gib einen Text für deinen Tipp ein." : ""],
-        [datei, e.art !== "lernzettel" ? ""
-          : e.datei ? dateiFehlerText(e.datei)
-          : e.dateiFehler || "Wähle eine Datei für deinen Lernzettel."]
+        [datei, e.art !== "lernzettel" || e.lzModus !== "pdf" ? ""
+          : e.pdf ? pdfFehlerText(e.pdf) : "Wähle eine PDF-Datei für deinen Lernzettel."],
+        [bildFeld, e.art === "lernzettel" && e.lzModus === "bilder" && !e.bilder.length
+          ? "Wähle mindestens ein Bild für deinen Lernzettel oder wechsle zu PDF." : ""]
       ];
+      if (!(e.art === "lernzettel" && e.lzModus === "pdf")) {
+        e.bilder.forEach(function (b, i) {
+          if (bildFelder[i]) paare.push([bildFelder[i], laenge(String(b.beschreibung || "").trim()) > 200
+            ? "Die Bildbeschreibung zu Bild " + (i + 1) + " darf höchstens 200 Zeichen lang sein." : ""]);
+        });
+      }
       var falsch = [];
       paare.forEach(function (p) {
         ctx.fehlerSetzen(p[0], p[1]);
@@ -1448,18 +2252,28 @@
       return falsch;
     }
 
-    var gezeigt = null, gezeigtZ = null;
+    var gezeigt = null, gezeigtZ = null, warGesperrt = false;
     function darstellen(fokusMeldung) {
       var z = e.zustand, v = e.versand;
       if (z === "sendet") {
-        ctx.sperren(senden, v && v.datei && e.schritt !== "veroeffentlichen"
-          ? "Datei wird hochgeladen …" : "Beitrag wird veröffentlicht …");
+        var st = e.schritt;
+        var istPdf = v && v.anhaenge.length === 1 && v.anhaenge[0].datei.type === "application/pdf";
+        var t = st && st.hochladen
+          ? (istPdf ? "Datei wird hochgeladen …" : "Bild " + st.hochladen + " von " + st.von + " wird hochgeladen …")
+          : "Beitrag wird veröffentlicht …";
+        // Schon gesperrt: nur den Text wechseln, sonst merkt sich sperren() den Fortschritt als Beschriftung.
+        if (senden.getAttribute("aria-busy") === "true") senden.textContent = t;
+        else ctx.sperren(senden, t);
+        if (senden.textContent !== senden.dataset.zuletzt) { senden.dataset.zuletzt = senden.textContent; fortschritt.textContent = senden.textContent; }
       } else {
         ctx.freigeben(senden);
-        senden.disabled = !!z;
+        senden.disabled = !!z || !!e.vorbereiten;
       }
       abbr.disabled = z === "sendet" || z === "pruefen" || z === "klaeren";
       eingabenSperren(form, !!z);
+      // Nach dem Entsperren Reihenfolge-Knöpfe (erstes/letztes Bild) wieder richtig setzen.
+      if (!z && warGesperrt) bilderAnzeigen();
+      warGesperrt = !!z;
       sperrHinweis.hidden = !z;
       if (gezeigt === e.meldung && gezeigtZ === z) return;
       var hatteFokus = platz.contains(document.activeElement);
@@ -1483,26 +2297,26 @@
     function abbrechen(ausloeser, istZurueck) {
       function weg() {
         if (ctx.vonListe()) history.back();
-        else location.hash = "#community";
+        else location.hash = zielGruppe ? "#community/gruppe/" + zielGruppe : "#community";
       }
       // Während des Sendens: zurück geht, abgebrochen wird nichts.
       if (e.zustand === "sendet" || e.zustand === "pruefen" || e.zustand === "klaeren") { if (istZurueck) weg(); return; }
       // Ausgang offen: Entwurf bleibt, bis der Status geklärt ist.
       if (e.zustand === "unklar") return weg();
-      if (!e.geaendert) { if (entwurf === e) entwurf = null; return weg(); }
+      if (!e.geaendert) { entwurfWeg(e); return weg(); }
       verwerfenFragen(ausloeser, function () {
         if (entwurf !== e) return weg();
-        if (!e.vorgang) { entwurf = null; return weg(); }
+        if (!e.vorgang) { entwurfWeg(e); return weg(); }
         // G08: Es gab schon einen (sicher abgelehnten) Versuch, vielleicht mit
         // hochgeladener Datei. Erst endgültig klären: „verworfen“ entfernt die
         // Datei dieses Vorgangs, „angelegt“ heißt, der Beitrag ist doch da.
         e.zustand = "klaeren";
         e.meldung = null;
         e.anzeigen();
-        AP.community.vorgangKlaeren(e.vorgang, "beitrag", e.versand && e.versand.datei).then(function (z) {
+        AP.community.vorgangKlaeren(e.vorgang, "beitrag", e.versand && e.versand.anhaenge).then(function (z) {
           if (entwurf !== e) return;
           if (z === "angelegt") return erfolg(e, e.vorgang);
-          entwurf = null;
+          entwurfWeg(e);
           weg();
         }, function (f) {
           if (entwurf !== e) return;
@@ -1549,7 +2363,7 @@
       if (ctx.offline()) return ctx.offlineZeigen();
       e.zustand = "klaeren";
       e.anzeigen();
-      AP.community.vorgangKlaeren(e.vorgang, "beitrag", e.versand && e.versand.datei).then(function (z) {
+      AP.community.vorgangKlaeren(e.vorgang, "beitrag", e.versand && e.versand.anhaenge).then(function (z) {
         if (entwurf !== e) return;
         if (z === "angelegt") return erfolg(e, e.vorgang);
         e.zustand = null;
@@ -1569,7 +2383,7 @@
 
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
-      if (e.zustand) return;                   // läuft, wird geklärt oder ist unklar
+      if (e.zustand || e.vorbereiten) return;  // läuft, wird geklärt, ist unklar oder Bilder werden vorbereitet
       e.titel = titel.eingabe.value;
       e.text = text.eingabe.value;
       versucht = true;
@@ -1592,7 +2406,10 @@
           vorgang: e.vorgang, art: e.art, titel: e.titel, text: e.text.trim(),
           lernfeld: e.lernfeld || null, kapitel: e.kapitel || null,
           anMentoren: e.art === "frage" && e.mentor,
-          datei: e.art === "lernzettel" ? e.datei : null
+          anhaenge: Object.freeze(e.gruppe ? []
+            : e.art === "lernzettel" && e.lzModus === "pdf" ? (e.pdf ? [Object.freeze({ datei: e.pdf, beschreibung: "" })] : [])
+            : e.bilder.map(function (b) { return Object.freeze({ datei: b.datei, beschreibung: String(b.beschreibung || "").trim() }); })),
+          gruppe: e.gruppe || null
         });
         e.veraendert = false;
         abschicken(e, true);
@@ -1604,7 +2421,7 @@
       e.meldung = null;
       darstellen();
       var alt = e.versand;
-      AP.community.vorgangKlaeren(e.vorgang, "beitrag", alt && alt.datei).then(function (z) {
+      AP.community.vorgangKlaeren(e.vorgang, "beitrag", alt && alt.anhaenge).then(function (z) {
         if (entwurf !== e) return;
         if (z === "angelegt") return erfolg(e, e.vorgang);
         e.zustand = null;
@@ -1622,6 +2439,13 @@
 
     artAnzeigen();
     darstellen();
+    // B04: Läuft beim Öffnen noch eine Vorbereitung, zeigt und sperrt dieses Formular sie;
+    // ein bereits fertiges, noch nicht angezeigtes Ergebnis (Hinweise) wird jetzt gezeigt.
+    vorbereitenAnzeigen();
+    if (e.vorbereitungsText) {
+      ctx.fehlerSetzen(bildFeld, e.vorbereitungsText);
+      e.vorbereitungsText = null;
+    }
   }
 
   var UNKLAR_BEITRAG = "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde. Prüfe den Status, bevor du erneut sendest.";
@@ -1641,7 +2465,8 @@
       if (!ok) return fehlschlag(g, { art: "gesperrt" });
       return AP.community.veroeffentlichen({
         vorgang: v.vorgang, art: v.art, titel: v.titel, text: v.text,
-        lernfeld: v.lernfeld, kapitel: v.kapitel, anMentoren: v.anMentoren, datei: v.datei,
+        lernfeld: v.lernfeld, kapitel: v.kapitel, anMentoren: v.anMentoren, anhaenge: v.anhaenge.slice(),
+        gruppe: v.gruppe || undefined, konto: g.konto,
         schritt: function (s) { g.schritt = s; if (g.zustand === "sendet") g.anzeigen(); }
       }).then(function (id) { erfolg(g, id); }, function (f) { fehlschlag(g, f); });
     }, function (f) { fehlschlag(g, f); });
@@ -1656,7 +2481,7 @@
 
   // Bestätigte ID: Entwurf erst jetzt löschen und C05 des eigenen Beitrags öffnen.
   function fertig(g) {
-    if (entwurf === g) entwurf = null;
+    entwurfWeg(g);
     gerade = { id: g.ergebnis, konto: g.konto, text: "Dein Beitrag wurde veröffentlicht." };
     location.replace(location.pathname + location.search + "#community/beitrag/" + g.ergebnis);
   }
@@ -1676,6 +2501,7 @@
     if (f && f.art === "gesperrt") return lebt ? ctx.gesperrt() : null;
     var text = "Dein Beitrag wurde nicht veröffentlicht. Deine Eingaben sind noch da.";
     if (f && f.art === "bremse") text = "Du hast gerade viele Beiträge veröffentlicht. Versuch es später erneut.";
+    else if (f && f.art === "hochladen") text = f.message;
     else if (f && f.art === "eingabe" && f.message) text += " " + f.message;
     g.meldung = { text: text, fehler: true };
     if (f && f.art === "netz" && lebt && ctx.offline()) return ctx.offlineZeigen();
