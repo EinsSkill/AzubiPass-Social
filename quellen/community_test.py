@@ -11,7 +11,7 @@ beste Antwort, Hilfreich, Wochenaufgabe, Melden (Spec 06), Abmelden – und räu
 Ende wieder auf. Passwort und Demo-Code stehen bewusst nicht im Repo.
 
 Die Demo-Konten haben ein Passwort, weil Anmelde-Mails ohne eigenen
-Mailversand nicht ankommen. Die App selbst bietet nur den Mail-Link an.
+Mailversand nicht ankommen. Die App bietet seit Spec 08 selbst Passwortanmeldung an.
 
 Rückgabewert 1 bei einem Fehler.
 """

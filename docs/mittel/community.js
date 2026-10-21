@@ -27,6 +27,13 @@
     schluessel: "sb_publishable_USAutB__rzLYPaBkbOJ6WQ_K13tabfq",
     bibliothek: "mittel/supabase.js",
     sitzung: "azubipass-sitzung",
+    // Spec 08: Mindestlänge neuer Passwörter laut Supabase-Auth des Projekts,
+    // gelesen am 21.10.2026 (Antwort weak_password: „at least 6 characters“).
+    // Nur Hinweis und Vorprüfung beim Setzen; entscheiden tut der Server.
+    passwortMin: 6,
+    // sessionStorage: Für dieses Konto ist eine Passwort-Wiederherstellung
+    // bestätigt (Ereignis PASSWORD_RECOVERY). Enthält nur die Konto-ID.
+    wiederherstellung: "azubipass-wiederherstellung",
     bucket: "lernzettel",
     dateiGroesse: 5 * 1024 * 1024,
     dateiArten: {
@@ -83,7 +90,12 @@
         }
       });
       client.auth.onAuthStateChange(function (ereignis, sitzung) {
-        kontoMerken(sitzung && sitzung.user ? sitzung.user.id : null);
+        var id = sitzung && sitzung.user ? sitzung.user.id : null;
+        // Spec 08: Nur das echte Ereignis belegt eine Wiederherstellung – und
+        // nur für das Konto, das der Link oder Code tatsächlich bestätigt hat.
+        if (ereignis === "PASSWORD_RECOVERY" && id) wiederherstellungMerken(id);
+        else if (!id || id !== wiederherstellungKonto()) wiederherstellungMerken(null);
+        kontoMerken(id);
         hoerer.forEach(function (h) { try { h(ereignis, sitzung); } catch (e) {} });
       });
       return client;
@@ -162,9 +174,14 @@
     return function () { hoerer = hoerer.filter(function (x) { return x !== h; }); };
   }
 
-  // Wohin der Link aus der Mail zurückführt: dieselbe Seite, Community-Tab.
-  function rueckweg() {
-    return location.origin + location.pathname.replace(/[^/]*$/, "") + "app.html?anmeldung=1#community";
+  /* Wohin der Link aus der Mail zurückführt: dieselbe Seite, Community-Tab.
+     zweck (Spec 08) sagt nur, welcher Hinweis bei einem Fehler passt
+     („registrierung“, „passwort“). Er beweist nichts: Ob ein Link eine
+     Wiederherstellung bestätigt hat, sagt allein das Ereignis PASSWORD_RECOVERY.
+     Feste Werte, nie aus der Adresse übernommen. */
+  function rueckweg(zweck) {
+    return location.origin + location.pathname.replace(/[^/]*$/, "") + "app.html?anmeldung=1" +
+      (zweck === "registrierung" || zweck === "passwort" ? "&zweck=" + zweck : "") + "#community";
   }
 
   function mailPruefen(adresse) {
@@ -174,13 +191,202 @@
     return Promise.resolve(a);
   }
 
+  /* ---------- Spec 08: Passwort
+
+     Passwörter gehen unverändert an Supabase Auth (kein trim, keine
+     Kleinschreibung) und werden nirgends gespeichert, geloggt oder in einen
+     Fehler kopiert. Prüfung und Speicherung macht allein Supabase. */
+
+  // Fehler der Auth-Schnittstelle in Texte aus Spec 08, Abschnitt 6.
+  function authFehler(f) {
+    if (!f || f.art) return uebersetzen(f);
+    var code = String(f.code || ""), text = String(f.message || f.msg || "");
+    if (code === "invalid_credentials" || /Invalid login credentials/i.test(text))
+      return fehler("E-Mail-Adresse oder Passwort stimmen nicht.", "zugang");
+    if (code === "email_not_confirmed" || /Email not confirmed/i.test(text))
+      return fehler("Bestätige zuerst deine E-Mail-Adresse.", "unbestaetigt");
+    if (code === "weak_password" || f.reasons || f.weak_password)
+      return fehler(passwortRegel(f), "passwort");
+    if (code === "same_password")
+      return fehler("Das neue Passwort muss sich von deinem bisherigen unterscheiden.", "passwort");
+    if (code === "reauthentication_needed")
+      return fehler("Zur Sicherheit brauchst du einen Bestätigungscode aus deinem E-Mail-Postfach.", "nachweis");
+    if (code === "reauthentication_not_valid")
+      return fehler("Der Bestätigungscode ist abgelaufen oder stimmt nicht. Lass dir einen neuen schicken.", "code");
+    if (code === "otp_disabled" || /Signups not allowed for otp/i.test(text))
+      return fehler("Kein Konto.", "keinKonto");                // nie anzeigen (neutral behandeln)
+    if (code === "signup_disabled" || /Signups not allowed/i.test(text))
+      return fehler("Neue Konten können gerade nicht erstellt werden. Sag dem AzubiPass-Team Bescheid.", "server");
+    if (code === "user_already_exists" || code === "email_exists" || /already registered/i.test(text))
+      return fehler("Mit dieser E-Mail-Adresse gibt es schon ein Konto. Melde dich an oder setze dein Passwort zurück.", "vorhanden");
+    if (code === "session_not_found" || code === "user_not_found")
+      return fehler("Du bist nicht mehr angemeldet. Bitte melde dich neu an.", "anmeldung");
+    return uebersetzen(f);
+  }
+
+  // Die tatsächlich geltende Regel aus der Serverantwort, sonst die gelesene.
+  function passwortRegel(f) {
+    var gruende = f.reasons || (f.weak_password && f.weak_password.reasons) || [];
+    if (gruende.indexOf("pwned") >= 0)
+      return "Dieses Passwort ist aus Datenlecks bekannt. Wähle ein anderes.";
+    if (gruende.indexOf("characters") >= 0)
+      return "Das Passwort braucht weitere Zeichenarten, zum Beispiel Groß- und Kleinbuchstaben, Ziffern und Sonderzeichen.";
+    var m = /at least (\d+) characters/i.exec(String(f.message || f.msg || ""));
+    return "Das Passwort muss mindestens " + (m ? Number(m[1]) : CFG.passwortMin) + " Zeichen lang sein.";
+  }
+
+  function passwortDa(pw) {
+    return typeof pw === "string" && pw.length > 0
+      ? Promise.resolve(pw)
+      : Promise.reject(fehler("Gib dein Passwort ein.", "eingabe"));
+  }
+
+  // Regulärer Login. Kein Rückfall auf Mail oder Registrierung.
+  function anmeldenMitPasswort(adresse, pw) {
+    return mailPruefen(adresse).then(function (a) {
+      return passwortDa(pw).then(function () {
+        return verbinden().then(function (c) {
+          return c.auth.signInWithPassword({ email: a, password: pw });
+        }).then(function (r) {
+          if (r.error) throw authFehler(r.error);
+          if (!r.data || !r.data.session) throw fehler("Die Anmeldung hat nicht geklappt. Versuch es erneut.", "server");
+          return r.data.session;
+        }).catch(function (f) { throw authFehler(f); });
+      });
+    });
+  }
+
+  /* Neues Konto. Ergebnis { sitzung } – null, wenn erst die Mail bestätigt
+     werden muss. Bei schon vorhandener Adresse antwortet Supabase mit
+     bestätigungspflichtigem Projekt genauso (ohne Sitzung): Daraus wird weder
+     ein Erfolg noch eine Kontoaussage abgeleitet. */
+  function registrieren(adresse, pw) {
+    return mailPruefen(adresse).then(function (a) {
+      return passwortDa(pw).then(function () {
+        return verbinden().then(function (c) {
+          return c.auth.signUp({ email: a, password: pw, options: { emailRedirectTo: rueckweg("registrierung") } });
+        }).then(function (r) {
+          if (r.error) throw authFehler(r.error);
+          return { mail: a, sitzung: (r.data && r.data.session) || null };
+        }).catch(function (f) { throw authFehler(f); });
+      });
+    });
+  }
+
+  function bestaetigungSenden(adresse) {
+    return mailPruefen(adresse).then(function (a) {
+      return verbinden().then(function (c) {
+        return c.auth.resend({ type: "signup", email: a, options: { emailRedirectTo: rueckweg("registrierung") } });
+      }).then(function (r) {
+        if (r.error) throw authFehler(r.error);
+        return a;
+      }).catch(function (f) { throw authFehler(f); });
+    });
+  }
+
+  /* „Passwort vergessen“ und „Passwort festlegen“ (bisherige Mail-Konten)
+     nutzen dieselbe Wiederherstellung des bestehenden Kontos – nie signUp. */
+  function passwortLinkSenden(adresse) {
+    return mailPruefen(adresse).then(function (a) {
+      return verbinden().then(function (c) {
+        return c.auth.resetPasswordForEmail(a, { redirectTo: rueckweg("passwort") });
+      }).then(function (r) {
+        if (r.error) throw authFehler(r.error);
+        return a;
+      }).catch(function (f) { throw authFehler(f); });
+    });
+  }
+
+  /* Code aus der Wiederherstellungs-Mail (falls die Vorlage einen enthält):
+     hilft, wenn der Link in einem anderen Browser aufgeht (PKCE). Supabase
+     meldet danach selbst PASSWORD_RECOVERY für genau dieses Konto. */
+  function wiederherstellungsCode(adresse, code) {
+    var c6 = String(code || "").replace(/\s+/g, "");
+    if (!/^\d{6,10}$/.test(c6)) return Promise.reject(fehler("Gib den Code aus der E-Mail ein (nur Ziffern).", "eingabe"));
+    return mailPruefen(adresse).then(function (a) {
+      return verbinden().then(function (c) {
+        return c.auth.verifyOtp({ email: a, token: c6, type: "recovery" });
+      }).then(function (r) {
+        if (r.error) throw authFehler(r.error);
+        if (!r.data || !r.data.session) throw fehler(LINK_NICHT_BESTAETIGT, "anmeldung");
+        return r.data.session;
+      }).catch(function (f) {
+        f = authFehler(f);
+        if (f.art === "anmeldung") f = fehler("Der Code ist abgelaufen oder stimmt nicht. Fordere einen neuen Link an.", "code");
+        throw f;
+      });
+    });
+  }
+
+  /* Passwort setzen oder ändern – für das angemeldete Konto, und nur, solange
+     es dasselbe ist (konto). nonce: Bestätigungscode, falls Supabase eine
+     erneute Bestätigung verlangt (Secure Password Change). Erfolg erst mit
+     der bestätigten Antwort für dieselbe Nutzer-ID. */
+  function passwortSetzen(pw, nonce, konto) {
+    if (typeof pw !== "string" || !pw) return Promise.reject(fehler("Gib ein neues Passwort ein.", "eingabe"));
+    return gebunden(function (u, c) {
+      var daten = { password: pw };
+      if (nonce) daten.nonce = String(nonce).replace(/\s+/g, "");
+      // Antwort verloren oder Serverfehler: Ob gespeichert wurde, wissen wir nicht.
+      // supabase-js meldet Netzfehler als { error }, nicht als Ausnahme.
+      function unklar(f) {
+        f = authFehler(f);
+        if (f.art === "netz" || f.art === "server") f.art = "unklar";
+        return f;
+      }
+      return c.auth.updateUser(daten).then(function (r) {
+        if (r.error) throw unklar(r.error);
+        if (!r.data || !r.data.user || r.data.user.id !== u.id) throw fehler("Unklar.", "unklar");
+        if (wiederherstellungKonto() === u.id) wiederherstellungMerken(null);
+        return true;
+      }, function (f) { throw unklar(f); });
+    }, konto).catch(function (f) { throw authFehler(f); });
+  }
+
+  // Schickt den Bestätigungscode für passwortSetzen(…, nonce) an das Konto.
+  function nachweisSenden(konto) {
+    return gebunden(function (u, c) {
+      return c.auth.reauthenticate().then(function (r) {
+        if (r.error) throw authFehler(r.error);
+        return true;
+      });
+    }, konto).catch(function (f) { throw authFehler(f); });
+  }
+
+  // Bestätigte Wiederherstellung: im Speicher und für Reloads im Tab.
+  var wiederherstellung = null;
+  function wiederherstellungMerken(id) {
+    wiederherstellung = id || null;
+    try {
+      if (id) sessionStorage.setItem(CFG.wiederherstellung, id);
+      else sessionStorage.removeItem(CFG.wiederherstellung);
+    } catch (e) {}
+  }
+  function wiederherstellungKonto() {
+    if (wiederherstellung) return wiederherstellung;
+    try { return sessionStorage.getItem(CFG.wiederherstellung) || null; } catch (e) { return null; }
+  }
+  // Für genau dieses Konto (aktuelle Sitzung) offen?
+  function wiederherstellungOffen(id) { return !!id && wiederherstellungKonto() === id; }
+
+  /* Bisheriger Zugang per Mail-Link und Code – nur noch untergeordnet und nur
+     für vorhandene Konten (Spec 08: shouldCreateUser false). Ob es die
+     Adresse gibt, verrät die Oberfläche nicht: „kein Konto“ zählt wie
+     versendet. */
   function anmeldenPerMail(adresse) {
     return mailPruefen(adresse).then(function (a) {
-      return mit(function (c) {
+      return verbinden().then(function (c) {
         return c.auth.signInWithOtp({
           email: a,
-          options: { emailRedirectTo: rueckweg(), shouldCreateUser: true }
-        }).then(auspacken).then(function () { return a; });
+          options: { emailRedirectTo: rueckweg(), shouldCreateUser: false }
+        });
+      }).then(function (r) {
+        if (r.error) throw authFehler(r.error);
+        return a;
+      }).catch(function (f) {
+        f = authFehler(f);
+        if (f.art === "keinKonto") return a;
+        throw f;
       });
     });
   }
@@ -284,33 +490,61 @@
      Mit PKCE gelingt der Tausch nur im Browser, in dem der Link angefordert
      wurde. In einem anderen Browser bleibt die Sitzung leer – das melden wir
      wie einen ungültigen Link; dort hilft der Code aus derselben Mail. */
-  var LINK_UNGUELTIG = "Dieser Anmeldelink ist nicht mehr gültig. Lass dir einen neuen Link schicken.";
+  var LINK_UNGUELTIG = "Dieser Anmeldelink ist nicht mehr gültig. Melde dich mit deinem Passwort an oder lass dir einen neuen Link schicken.";
+  var LINK_NICHT_BESTAETIGT = "Dieser Link konnte nicht bestätigt werden. Fordere einen neuen Link an.";
+  var BESTAETIGUNG_UNGUELTIG = "Dieser Bestätigungslink konnte nicht verwendet werden. Melde dich mit E-Mail-Adresse und Passwort an. Ist deine Adresse noch nicht bestätigt, kannst du die Bestätigung erneut anfordern.";
 
   function linkParameter() {
     var q = new URLSearchParams(location.search);
     var h = /error_description=|error=/.test(location.hash)
       ? new URLSearchParams(location.hash.replace(/^#/, "")) : new URLSearchParams("");
+    var zweck = q.get("zweck");
     return {
       code: q.has("code"),
+      zweck: zweck === "passwort" || zweck === "registrierung" ? zweck : null,
       fehler: q.get("error_description") || q.get("error") || h.get("error_description") || h.get("error"),
       aus: q.has("code") || q.has("anmeldung") || q.has("error") || q.has("error_description") ||
            h.has("error") || h.has("error_description")
     };
   }
 
+  function linkFehler(zweck) {
+    var f = fehler(zweck === "passwort" ? LINK_NICHT_BESTAETIGT
+      : zweck === "registrierung" ? BESTAETIGUNG_UNGUELTIG : LINK_UNGUELTIG, "anmeldung");
+    f.zweck = zweck || "anmeldung";
+    return f;
+  }
+
+  // Supabase meldet PASSWORD_RECOVERY nach dem Codetausch in einem eigenen
+  // Takt (setTimeout 0) – erst danach steht fest, was der Link bestätigt hat.
+  function naechsterTakt() {
+    return new Promise(function (ok) { setTimeout(ok, 0); }).then(function () {
+      return new Promise(function (ok) { setTimeout(ok, 20); });
+    });
+  }
+
+  /* Ergebnis: null (kein Link) oder { sitzung, zweck, wiederherstellung }.
+     wiederherstellung ist nur true, wenn PASSWORD_RECOVERY genau für das
+     Konto der jetzigen Sitzung kam. Mit Sitzung A und einem gescheiterten
+     Link für B bleibt A angemeldet – und bekommt keine Passwortansicht. */
   function linkEinloesen() {
     var p = linkParameter();
     if (!p.aus) return Promise.resolve(null);
-    if (p.fehler) { aufraeumen(); return Promise.reject(fehler(LINK_UNGUELTIG, "anmeldung")); }
+    if (p.fehler) { aufraeumen(); return Promise.reject(linkFehler(p.zweck)); }
     if (!p.code) { aufraeumen(); return Promise.resolve(null); }
     return verbinden().then(function (c) {
       return c.auth.getSession();
     }).then(function (r) {
+      return naechsterTakt().then(function () { return r; });
+    }).then(function (r) {
       aufraeumen();
       var s = r && r.data ? r.data.session : null;
-      if (!s) throw fehler(LINK_UNGUELTIG, "anmeldung");
-      return s;
-    }).catch(function (f) { aufraeumen(); throw uebersetzen(f); });
+      if (!s) throw linkFehler(p.zweck);
+      // Nur ein Ereignis aus diesem Seitenaufruf zählt, kein alter Vermerk.
+      var w = wiederherstellung === s.user.id;
+      if (p.zweck === "passwort" && !w) throw linkFehler("passwort");
+      return { sitzung: s, zweck: p.zweck, wiederherstellung: w };
+    }).catch(function (f) { aufraeumen(); throw f && f.zweck ? f : uebersetzen(f); });
   }
 
   function aufraeumen() {
@@ -1186,6 +1420,12 @@
     // Prüffunktion für eine Anfrage: true, solange Konto und Generation gleich sind.
     bindung: function () { var g = generation, k = kontoId; return function () { return g === generation && k === kontoId; }; },
     anmeldenPerMail: anmeldenPerMail, codePruefen: codePruefen,
+    // Spec 08: Passwort
+    anmeldenMitPasswort: anmeldenMitPasswort, registrieren: registrieren, bestaetigungSenden: bestaetigungSenden,
+    passwortLinkSenden: passwortLinkSenden, wiederherstellungsCode: wiederherstellungsCode,
+    passwortSetzen: passwortSetzen, nachweisSenden: nachweisSenden,
+    wiederherstellungOffen: wiederherstellungOffen,
+    wiederherstellungBeenden: function () { wiederherstellungMerken(null); },
     sitzung: sitzung, abmelden: abmelden,
     profil: profil, profilAnlegen: profilAnlegen, profilAendern: profilAendern,
     gruppen: gruppen, gruppe: gruppe, gruppeGruenden: gruppeGruenden,
