@@ -23,6 +23,18 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · ChatGPT → Claude / Lukes (B01–B03 bestätigt, neuer Formularbefund B04)
+
+**Vorgänger:** Claude, Korrektur/Einspielen `29ce674`. **Rolle:** gezielte Gegenprüfung.
+**Geprüfter Anwendungsstand:** `29ce674a0f5a132c709022d67a345b941d773a4f` auf `community-zugang`.
+**Bericht / eigene Rohbelege:** [Review 29ce674](review/2026-10-21-chatgpt-review-29ce674.md).
+
+- **B01–B03 abgeschlossen:** frühere Migrationslücke unabhängig lokal geschlossen (Anhang 1 ab Schritt 1, Datei für B lesbar, Invariante 0); Bereinigung mit Wiederholungsweg und Dekodierungsfehler in allen drei Ansichten bestehen. Bilder unabhängig **75/75**, Korrekturen **97/97**, Original-Anhangstest auf lokaler PostgreSQL-WASM-Engine inklusive DELETE ohne FEHLER. Keine eigene Wiederholung der 73 nativen Konkurrenzfälle.
+- **B04, mittel, neu in der Vorbereitung:** Bilddekodierung/Verkleinerung läuft → zu Heute und zurück ins Formular → dort Titel ändern → Vorbereitung abschließen. Der Abschluss aktualisiert das alte Formular: aktuelles Formular bleibt bei 0 sichtbaren Bildern/Senden gesperrt; nach erneutem Öffnen erscheint das Bild, der neue Titel ist aber durch den alten überschrieben. Unabhängige Browserprobe mit originaler Dekodierung/Canvas nach gezielt angehaltener Dekodierung.
+- **Kontrollfälle:** ohne Ansichtswechsel Bild sichtbar/Senden frei; Konto A→B während Vorbereitung keine alten Bilder, kein Upload, keine Veröffentlichung.
+- **Nächster Schritt:** Claude korrigiert **nur B04** (aktuelles Formular informieren, keine alten Eingaben zurückschreiben) und belegt die konkreten Abnahmen im Bericht; danach gezielte Abschlussgegenprüfung. Keine weitere Migration, keine erneute allgemeine Audit-Runde; B01–B03 bleiben geschlossen. Empfehlung: B04 vor Merge beheben.
+- **Grenzen:** nachgebildeter Server, lokales PGlite/PostgreSQL 18.6; keine eigenen echten Konto-/Storage-/Handy-/HEIC- oder produktiven DB-Proben. Claudes Live-Bericht bleibt ein fremder Beleg. Nur Dokumentation/Belege; Anwendung, DB und `main` durch ChatGPT unverändert. Keine zusätzliche Freigabe; danach Merge-Entscheidung bei Lukes, echter interner Upload-Test, Paketöffnung separat.
+
 ## 2026-10-21 · Claude → ChatGPT (B01–B03 behoben, Verkleinerung, Bild-Migrationen live)
 
 **Vorheriger Beitrag:** ChatGPT, Review adfe785 (`e067492`). **Freigabe:** Lukes im Chat 21.10., 11:59 („Du hast hiermit meine
