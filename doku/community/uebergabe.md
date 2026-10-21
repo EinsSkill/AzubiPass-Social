@@ -23,6 +23,20 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · ChatGPT → Claude / Lukes (Spec 07: gezieltes Review, drei Nachbesserungen)
+
+**Vorgänger:** Claude, Bilder `adfe785`, Bericht/Übergabe bis `a61469f`. **Rolle:** Review.
+**Grundlage:** `community-zugang` @ `a61469fb2d142d2ebd4f6caded86c9df30861d0f`.
+**Bericht / eigene Reproduktionen:** [Review adfe785](review/2026-10-21-chatgpt-review-adfe785.md).
+
+- **Normale Abläufe bestätigt:** Bilder unabhängig **58/58**, Korrekturen **97/97**, sieben axe-Zustände; Original-Anhangstest auf sauber migrierter lokaler PostgreSQL-WASM-Engine ohne `FEHLER:`, Invariante 0. Keine eigene Wiederholung der 65 Konkurrenzfälle oder 269 allgemeinen Funktionstests.
+- **B01, hoch, vor produktivem Einspielen:** Zwischen Migration 1 und 4 legt der alte RPC neue Lernzettel ohne Anhang an. Nach Schritt 4 weiterhin Beitrag=1/Anhang=0; andere berechtigte Testerin sieht Beitrag=1/Datei=0. Unabhängige SQL-Probe mit vollständiger sauberer Gegenprobe. Einspielablauf und Migrationen absichern, auch für laufende alte Schreiber und Tester.
+- **B02, mittel:** Fehler beim Entfernen verworfener Teiluploads werden verschluckt, anschließend vergisst die Oberfläche die Kennung. Drei private Restdateien bleiben auch nach Neuversand; kein erreichbarer Wiederholungsweg. Übernommenes Verhalten, offene explizite Spec-07-Abnahme, kein neuer G03/G06-Leckbefund.
+- **B03, mittel:** Erfolgreicher Download beschädigter Bildbytes ergibt defektes Bild ohne Meldung/Wiederholen. Gültige PNG-Gegenprobe funktioniert; Normalfall-Fixture und Dekodierungsfehlerbehandlung ergänzen.
+- **Nächster erlaubter Schritt:** Claude behebt gezielt B01–B03 und aktualisiert den Dateiteil des Livetests; danach nur diese Abnahmen gegenprüfen. Keine neue allgemeine Audit-Runde. Produktive Migrationen erst nach B01-Korrektur und Lukes' Freigabe des konkreten Plans; Datenbank weiterhin vor Merge, Paketöffnung separat.
+- **Offene Produktentscheidungen:** fünf Bilder, 5 MiB/25 MiB, optionale Beschreibung ≤200 Codepunkte, automatische Verkleinerung. Nur Empfehlungen im Bericht; keine von ChatGPT erfundene Lukes-Freigabe.
+- **Grenzen:** echte Module / simulierter Server und lokale PGlite-Engine (PostgreSQL 18.6), kein echter Storage, keine produktiven Konten oder zwei nativen SQL-Verbindungen. Nur Dokumentation/Belege; Anwendung, Live-Datenbank und `main` unberührt.
+
 ## 2026-10-21 · Claude → ChatGPT / Lukes (Spec 07 Bilder im Feed: umgesetzt, lokal getestet, nicht live)
 
 **Vorheriger Beitrag:** ChatGPT, Spec 07 `beda3dc`. **Rolle:** Umsetzung. **Anwendungsstand:** `adfe785`.
@@ -1213,3 +1227,4 @@ wartet auf die freigegebenen Entwürfe.
 1. Die App hat heute eine Vierer-Tab-Leiste (Heute, Lernen, Üben, Ich).
    Community als **fünfter Tab** oder ersetzt/erweitert sie einen bestehenden?
 2. Soll die Community auf „Heute" auftauchen (z. B. laufende Wochenaufgabe)?
+
