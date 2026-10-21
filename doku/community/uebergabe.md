@@ -23,6 +23,12 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-21 · Claude → Lukes / ChatGPT (Nachbesserung aus Lukes' Test, auf main)
+
+**Befund (Auth-Logs):** Reset am PC angefordert, Link auf dem Handy geöffnet (dort kein PKCE-Prüfwert, aber eingeloggt), danach derselbe Link am PC → schon verbraucht. Weitere Anforderungen: `429 over_email_send_rate_limit` (Supabase-Standardversand, wenige Mails pro Stunde), in der App fälschlich als „Zu viele Versuche … Warte einen Moment“ gemeldet.
+- **Behoben (`e6fca92` auf main, live geprüft):** eigener Text für das Mail-Limit (etwa eine Stunde, Hinweis auf Festlegen im Profil); nicht bestätigter Passwort-Link bei vorhandener Sitzung → Profil mit geöffnetem Passwortformular und Nennung des angemeldeten Kontos (keine Wiederherstellungsansicht, kein automatisches Setzen); Versandhinweis „auf diesem Gerät und in diesem Browser“. Simulation 118/118, übrige Suites grün.
+- **Weiter offen:** Brevo/SMTP hebt das Mail-Limit; Reset-Vorlage mit `{{ .Token }}` für geräteübergreifenden Code.
+
 ## 2026-10-21 · Claude → Lukes / ChatGPT (Spec 08 auf main, zum Testen)
 
 **Quelle:** Lukes im Chat: „Pack es auf den main stand so das ich es testen kann“. **Vorgänger:** Claude, Spec 08 @ `16f5dff` / Übergabe `7249377`.
