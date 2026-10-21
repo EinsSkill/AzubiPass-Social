@@ -492,6 +492,111 @@ def main():
             pruefe(True, "Galerie: Fehlerzustand, Erneut versuchen lädt neu")
             ctx.close()
 
+            print("B04 · Vorbereitung läuft, Formular wird verlassen und neu geöffnet")
+            HALTEN = """(() => { const orig = window.createImageBitmap.bind(window); const F = window.FAKE;
+              F.dekodier = { halten: false, warte: [], scheitern: false };
+              window.createImageBitmap = (d) => {
+                if (!F.dekodier.halten) return orig(d);
+                return new Promise((ja, nein) => F.dekodier.warte.push(() => F.dekodier.scheitern ? nein(new Error('x')) : orig(d).then(ja, nein)));
+              };
+              F.dekodierFreigeben = () => { F.dekodier.halten = false; const w = F.dekodier.warte; F.dekodier.warte = []; w.forEach(f => f()); };
+              // Fallback über <img> soll beim Scheitern ebenfalls scheitern
+              const Bild = window.Image; window.Image = function () { const i = new Bild(); if (F.dekodier.scheitern) setTimeout(() => i.onerror && i.onerror(), 0); return i; };
+            })();"""
+
+            def oeffnen(s):
+                ev(s, "location.hash = '#community/schreiben'")
+                s.get_by_label("Titel").wait_for()
+
+            def weg_und_zurueck(s):
+                ev(s, "location.hash = '#heute'")
+                s.wait_for_function("document.documentElement.dataset.bereich === 'heute'")
+                oeffnen(s)
+
+            def anhalten_und_waehlen(s, titel="Foto wird vorbereitet"):
+                oeffnen(s)
+                s.get_by_label("Titel").fill(titel)
+                s.locator("form.cm-schreiben textarea").fill("Text dazu.")
+                ev(s, "FAKE.dekodier.halten = true")
+                s.locator("form.cm-schreiben input[type=file][multiple]").set_input_files(files=[bild("gross.png", GROSS + b"\0")])
+                s.wait_for_function("FAKE.dekodier.warte.length === 1")
+
+            def fertig(s):
+                s.wait_for_function("(() => { const v = document.querySelector('.cm-vorbereitung'); return v && v.hidden; })()", timeout=20000)
+
+            # 1. zurück während der Vorbereitung, Titel ändern, dann freigeben
+            ctx, s = neue_seite(vorher=HALTEN)
+            anhalten_und_waehlen(s)
+            weg_und_zurueck(s)
+            pruefe(s.get_by_text("Bilder werden vorbereitet …").is_visible()
+                   and s.get_by_role("button", name="Beitrag veröffentlichen").is_disabled(),
+                   "Wieder geöffnet: laufende Vorbereitung sichtbar, Senden gesperrt")
+            s.get_by_label("Titel").fill("Neuer Titel im wieder geöffneten Formular")
+            ev(s, "FAKE.dekodierFreigeben()")
+            fertig(s)
+            pruefe(namen(s) == ["gross.jpg"] and s.get_by_role("button", name="Beitrag veröffentlichen").is_enabled(),
+                   "Nach Abschluss: Bild im aktuellen Formular, Senden frei", namen(s))
+            pruefe(s.get_by_label("Titel").input_value() == "Neuer Titel im wieder geöffneten Formular", "Neuer Titel bleibt")
+            weg_und_zurueck(s)
+            pruefe(s.get_by_label("Titel").input_value() == "Neuer Titel im wieder geöffneten Formular" and namen(s) == ["gross.jpg"],
+                   "Nach erneutem Öffnen: neuer Titel und Bild erhalten")
+            senden(s)
+            s.wait_for_function("location.hash.indexOf('#community/beitrag/') === 0", timeout=20000)
+            pruefe(rpc(s)["p_titel"] == "Neuer Titel im wieder geöffneten Formular", "Gesendet wird der neue Titel")
+            ctx.close()
+
+            # 2. Rückkehr erst nach Abschluss
+            ctx, s = neue_seite(vorher=HALTEN)
+            anhalten_und_waehlen(s, "Titel bleibt")
+            ev(s, "location.hash = '#heute'")
+            s.wait_for_function("document.documentElement.dataset.bereich === 'heute'")
+            ev(s, "FAKE.dekodierFreigeben()")
+            s.wait_for_timeout(1500)
+            oeffnen(s)
+            pruefe(namen(s) == ["gross.jpg"] and s.get_by_role("button", name="Beitrag veröffentlichen").is_enabled()
+                   and s.get_by_label("Titel").input_value() == "Titel bleibt" and not s.get_by_text("Bilder werden vorbereitet …").is_visible(),
+                   "Rückkehr nach Abschluss: Bild, Senden frei, Titel unverändert")
+            ctx.close()
+
+            # 3. Dekodierung scheitert, während das Formular verlassen ist
+            ctx, s = neue_seite(vorher=HALTEN)
+            anhalten_und_waehlen(s, "Kaputtes Foto")
+            ev(s, "FAKE.dekodier.scheitern = true")
+            weg_und_zurueck(s)
+            ev(s, "FAKE.dekodierFreigeben()")
+            fertig(s)
+            pruefe(namen(s) == [] and s.get_by_text("gross.png: Dieses Bild konnte nicht gelesen werden.").count() >= 1
+                   and s.get_by_role("button", name="Beitrag veröffentlichen").is_enabled()
+                   and s.get_by_label("Titel").input_value() == "Kaputtes Foto",
+                   "Dekodierfehler: Grund im aktuellen Formular, Senden frei, Titel bleibt")
+            ctx.close()
+
+            # 4. Kontowechsel während der Vorbereitung
+            ctx, s = neue_seite(vorher=HALTEN)
+            anhalten_und_waehlen(s, "Annas Foto")
+            ev(s, "FAKE.db.profil.push({ id: FAKE.BEN, anzeigename: 'Ben', rolle: 'azubi' }); FAKE.anmelden(FAKE.BEN_KONTO)")
+            s.wait_for_timeout(300)
+            ev(s, "FAKE.dekodierFreigeben()")
+            s.wait_for_timeout(1500)
+            oeffnen(s)
+            pruefe(namen(s) == [] and s.get_by_label("Titel").input_value() == "" and ev(s, "FAKE.hoch.reihe.length") == 0
+                   and rpc(s) is None, "Kontowechsel: Ben sieht kein Bild und keinen Titel von Anna, nichts hochgeladen")
+            ctx.close()
+
+            # 5. Verwerfen während der Vorbereitung
+            ctx, s = neue_seite(vorher=HALTEN)
+            anhalten_und_waehlen(s, "Wird verworfen")
+            s.get_by_role("button", name="Abbrechen").click()
+            s.locator("dialog").get_by_role("button", name="Eingaben verwerfen").click()
+            s.wait_for_function("location.hash.indexOf('#community/schreiben') !== 0")
+            ev(s, "FAKE.dekodierFreigeben()")
+            s.wait_for_timeout(1500)
+            oeffnen(s)
+            pruefe(namen(s) == [] and s.get_by_label("Titel").input_value() == "" and
+                   s.get_by_role("button", name="Beitrag veröffentlichen").is_enabled(),
+                   "Verworfen: neues Formular leer, kein spät eintreffendes Bild")
+            ctx.close()
+
             print("320 px")
             ctx, s = neue_seite(breite=320)
             formular(s, "Schmal")

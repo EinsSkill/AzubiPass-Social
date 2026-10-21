@@ -1891,19 +1891,30 @@
         if (entwurf !== e) {                // Konto gewechselt oder verworfen: nichts behalten
           return;
         }
+        /* B04: Das Ergebnis gehört dem Entwurf, nicht diesem Formular. Keine
+           Eingaben aus dem (vielleicht schon verlassenen) Formular zurücklesen;
+           angezeigt wird es im gerade offenen Formular – oder beim nächsten Öffnen. */
         e.vorbereiten = 0;
         if (zuViele) fehlerTexte.unshift("Du kannst höchstens 5 Bilder hinzufügen.");
-        merke();
-        bilderAnzeigen();
-        vorbereitenAnzeigen();
-        var t = fehlerTexte.join(" ");
-        if (!document.contains(form)) return;
-        ctx.fehlerSetzen(bildFeld, t);
-        var verkl = e.bilder.filter(function (b) { return b.vorher; }).length;
-        ansage.textContent = t || ((e.bilder.length === 1 ? "1 Bild ausgewählt." : e.bilder.length + " Bilder ausgewählt.")
-          + (verkl ? " Große Bilder wurden automatisch verkleinert." : ""));
+        e.geaendert = true;
+        e.veraendert = true;
+        e.vorbereitungsText = fehlerTexte.join(" ");
+        if (e.nachVorbereitung) e.nachVorbereitung();
       });
     });
+
+    // Gilt nur für dieses Formular; jedes neu aufgebaute Formular setzt seine eigene Fassung.
+    e.nachVorbereitung = function () {
+      if (!ctx.gilt() || !document.contains(form)) return;
+      bilderAnzeigen();
+      vorbereitenAnzeigen();
+      var t = e.vorbereitungsText || "";
+      e.vorbereitungsText = null;
+      ctx.fehlerSetzen(bildFeld, t);
+      var verkl = e.bilder.filter(function (b) { return b.vorher; }).length;
+      ansage.textContent = t || ((e.bilder.length === 1 ? "1 Bild ausgewählt." : e.bilder.length + " Bilder ausgewählt.")
+        + (verkl ? " Große Bilder wurden automatisch verkleinert." : ""));
+    };
 
     var vorbereitung = el("p", "cm-hilfe cm-vorbereitung");
     vorbereitung.setAttribute("role", "status");
@@ -2428,6 +2439,13 @@
 
     artAnzeigen();
     darstellen();
+    // B04: Läuft beim Öffnen noch eine Vorbereitung, zeigt und sperrt dieses Formular sie;
+    // ein bereits fertiges, noch nicht angezeigtes Ergebnis (Hinweise) wird jetzt gezeigt.
+    vorbereitenAnzeigen();
+    if (e.vorbereitungsText) {
+      ctx.fehlerSetzen(bildFeld, e.vorbereitungsText);
+      e.vorbereitungsText = null;
+    }
   }
 
   var UNKLAR_BEITRAG = "Wir konnten nicht prüfen, ob dein Beitrag veröffentlicht wurde. Prüfe den Status, bevor du erneut sendest.";
