@@ -11,8 +11,92 @@
   var AP = window.AP;
   var el = AP.el, mkEl = AP.mkEl, stand = AP.stand, sichern = AP.sichern;
 
-  var inhalt = null;
+  var inhalt = null;                          // Sicht auf den aktiven Beruf
+  var alles = null;                           // mittel/inhalt.json, alle Berufe
   var suchdaten = null;                       // wird erst beim Suchen geholt
+
+  /* ================================================== Ausbildungsgang
+
+     inhalt.json enthält alle Berufe; jeder Eintrag trägt seinen Beruf. Die
+     Ansichten arbeiten weiter mit `inhalt` – das ist aber nur noch die Sicht
+     auf den aktiven Beruf. So sieht Büromanagement genau den bisherigen
+     Bestand, und kein Bildschirm kann versehentlich eine Karte oder ein
+     Kapitel des anderen Berufs zählen (doku/industriekaufleute/03 §4).
+     Ein älterer Bau ohne Berufsangaben gehört komplett zu Büromanagement. */
+  function berufVonEintrag(e) { return (e && e.beruf) || "kfb"; }
+
+  function berufsinfo(b) {
+    return ((alles && alles.berufe) || []).filter(function (x) { return x.kurz === b; })[0]
+      || { kurz: "kfb", name: "Kaufleute für Büromanagement", kurzname: "Büromanagement",
+           pruefung: alles && alles.pruefung, pruefungName: alles && alles.pruefungName };
+  }
+
+  function sichtFuer(b) {
+    function meins(e) { return berufVonEintrag(e) === b; }
+    var info = berufsinfo(b);
+    var sicht = {};
+    Object.keys(alles).forEach(function (k) { sicht[k] = alles[k]; });
+    sicht.beruf = info;
+    sicht.lernfelder = (alles.lernfelder || []).filter(meins);
+    sicht.karten = (alles.karten || []).filter(meins);
+    sicht.quiz = (alles.quiz || []).filter(meins);
+    sicht.tests = (alles.tests || []).filter(meins);
+    sicht.begriffe = (alles.begriffe || []).filter(meins);
+    sicht.vokabeln = (alles.vokabeln || []).filter(function (v) {
+      return v.beruf === "alle" || berufVonEintrag(v) === b;
+    });
+    sicht.pruefung = info.pruefung || null;
+    sicht.pruefungName = info.pruefungName || "Abschlussprüfung";
+    return sicht;
+  }
+
+  function berufAnwenden() {
+    var b = AP.beruf ? AP.beruf() : "kfb";
+    if (!(alles.berufe || []).some(function (x) { return x.kurz === b; })) b = "kfb";
+    inhalt = sichtFuer(b);
+    kapitelreihe = null;
+    return b;
+  }
+
+  /* Umschalten: Filter, die nur im alten Beruf gültig waren, auf einen
+     gültigen Zustand zurücksetzen – keine leeren Listen durch veraltete
+     Auswahl (Plan §1). */
+  function berufWechseln(b) {
+    if (!AP.berufSetzen) return;
+    AP.berufSetzen(b);
+    berufAnwenden();
+    kartenWahl.lernfeld = "alle";
+    vokabelWahl.block = "alle";
+  }
+
+  function berufswahl(beiWechsel) {
+    var berufe = (alles && alles.berufe || []).filter(function (b) { return b.lernfelder > 0; });
+    if (berufe.length < 2) return null;
+    var box = el("div", "berufswahl");
+    box.setAttribute("role", "group");
+    box.setAttribute("aria-label", "Ausbildungsgang wählen");
+    var aktiv = inhalt.beruf.kurz;
+    berufe.forEach(function (b) {
+      var k = el("button", "berufswahl-knopf" + (b.kurz === aktiv ? " an" : ""), b.kurzname);
+      k.type = "button";
+      k.setAttribute("aria-pressed", b.kurz === aktiv ? "true" : "false");
+      k.addEventListener("click", function () {
+        if (b.kurz === inhalt.beruf.kurz) return;
+        berufWechseln(b.kurz);
+        if (beiWechsel) beiWechsel();
+      });
+      box.appendChild(k);
+    });
+    return box;
+  }
+
+  function aufbauHinweis() {
+    var info = inhalt.beruf;
+    if (!info || !info.geplant || info.lernfelder >= info.geplant) return null;
+    return el("p", "berufs-hinweis",
+      "Im Aufbau: " + info.lernfelder + " von " + info.geplant
+      + " Lernfeldern sind schon da. Die übrigen folgen.");
+  }
   var schirme = {};
   var verteiler = null;
 
@@ -105,7 +189,7 @@
 
     function offen(k) { return !kapitelFertig(k.lernfeld, k.kapitel); }
 
-    var z = stand.zuletzt;
+    var z = AP.zuletzt ? AP.zuletzt() : stand.zuletzt;
     var stelle = -1;
     if (z && z.zu) {
       // kapitel steht erst seit dem einen Konto drin; bei übernommenen
@@ -160,7 +244,7 @@
   function zielAus(k, art) {
     return {
       art: art, zu: k.zu, titel: k.titel, lernfeld: k.lernfeld,
-      wo: k.lernfeld.toUpperCase() + " · Kapitel " + k.nummer,
+      wo: kuerzel(k.lernfeld) + " · Kapitel " + k.nummer,
       knopf: KNOPFTEXT[art]
     };
   }
@@ -172,8 +256,8 @@
      verstellt oder aus einer alten Fassung übrig — wird ignoriert, statt den
      Countdown zu zerlegen. */
   function pruefungsdatum() {
-    if (AP.istDatum(stand.pruefungstermin)) return stand.pruefungstermin;
-    return null;
+    var t = AP.pruefungstermin ? AP.pruefungstermin() : stand.pruefungstermin;
+    return AP.istDatum(t) ? t : null;
   }
 
   /* In landing.config.json steht „AP2 · schriftliche Prüfung am 24. und 25.
@@ -497,8 +581,12 @@
     s.appendChild(kopfzeile("Lernfelder",
       "Alles an einem Ort. Dein Fortschritt zeigt dir, wo du weitermachst — "
       + "nicht, was du versäumt hast.",
-      "Deine Ausbildung",
+      inhalt.beruf.name,
       "Gesamtfortschritt", g.fertig + " / " + g.gesamt + " Kapitel"));
+    var wahl = berufswahl(function () { zeigeLernen(s); });
+    if (wahl) s.appendChild(wahl);
+    var hinweis = aufbauHinweis();
+    if (hinweis) s.appendChild(hinweis);
 
     /* Wo es weitergeht, steht auf Heute — und ab jetzt auch hier, weil Lernen
        der Ort ist, an dem man sucht. Es ist dasselbe Lernfeld, nicht ein
@@ -1249,6 +1337,7 @@
       });
 
       suchdaten.forEach(function (e) {
+        if (berufVonEintrag(e) !== inhalt.beruf.kurz) return;
         var heu = (e.t + " " + e.x).toLowerCase();
         if (worte.every(function (w) { return heu.indexOf(w) !== -1; })) {
           treffer.push({ art: "text", e: e,
@@ -1339,9 +1428,19 @@
       : "—";
   }
 
+  /* Ergebnisse ohne Berufsangabe stammen aus der Zeit vor Fassung 4 oder
+     aus Büromanagement. Mit Kapitelliste lässt sich der Beruf ablesen. */
+  function probeklausurBeruf(e) {
+    if (e && e.beruf) return e.beruf;
+    var k = e && Array.isArray(e.kapitel) && e.kapitel[0];
+    return k && AP.berufVon ? AP.berufVon(String(k).split(":")[0]) : "kfb";
+  }
+
   function zeigeProbeklausuren(s) {
     var ergebnisse = Array.isArray(stand.probeklausuren)
-      ? stand.probeklausuren.slice().sort(function (a, b) {
+      ? stand.probeklausuren.filter(function (e) {
+          return probeklausurBeruf(e) === inhalt.beruf.kurz;
+        }).sort(function (a, b) {
           return probeklausurZeit(b) - probeklausurZeit(a);
         })
       : [];
@@ -1384,15 +1483,25 @@
     var g = gesamtstand();
     s.appendChild(kopfzeile("Ich",
       "Fortschritt, Prüfung und lokale Daten — ruhig und verständlich an einem Ort.",
-      "Dein Bereich",
+      inhalt.beruf.name,
       "Insgesamt", Math.round(g.anteil * 100) + " %"));
+    var wahl = berufswahl(function () { zeigeIch(s); });
+    if (wahl) {
+      var wg = feldgruppe("Ausbildungsgang");
+      wg.appendChild(wahl);
+      wg.appendChild(el("small", "berufs-erklaerung",
+        "Lernen, Üben, Suche und Prüfungstermin zeigen den gewählten Beruf. "
+        + "Der Lernstand beider Berufe bleibt getrennt erhalten."));
+      s.appendChild(wg);
+    }
 
     var standGruppe = feldgruppe("Dein Stand");
     var zahlen = el("div", "zahlenreihe");
     zahlen.appendChild(zahlenfeld(g.fertig, " / " + g.gesamt, "Kapitel geschafft"));
     zahlen.appendChild(zahlenfeld(
-      Object.keys(stand.karten).filter(function (id) {
-        return stand.karten[id].fach >= AP.FAECHER;
+      inhalt.karten.filter(function (k) {
+        var st = stand.karten[k.id];
+        return st && st.fach >= AP.FAECHER;
       }).length, " / " + inhalt.karten.length, "Karten sitzen"));
     standGruppe.appendChild(zahlen);
     s.appendChild(standGruppe);
@@ -1421,14 +1530,17 @@
     zeigeProbeklausuren(s);
 
     /* Lesezeichen */
+    var meineZeichen = stand.lesezeichen.filter(function (e) {
+      return !AP.berufVon || AP.berufVon(e.lernfeld) === inhalt.beruf.kurz;
+    });
     var lzGruppe = feldgruppe("Lesezeichen",
-      stand.lesezeichen.length ? String(stand.lesezeichen.length) : null);
-    if (!stand.lesezeichen.length) {
+      meineZeichen.length ? String(meineZeichen.length) : null);
+    if (!meineZeichen.length) {
       lzGruppe.appendChild(leerkasten("Noch keine. Im Kapitel oben rechts auf das Zeichen "
         + "tippen, dann steht es hier."));
     } else {
       var lz = el("ul", "liste-schlicht");
-      stand.lesezeichen.slice().reverse().forEach(function (e) {
+      meineZeichen.slice().reverse().forEach(function (e) {
         var li = el("li");
         li.appendChild(reihe(e.zu, function (a) {
           var oben = el("div", "reihe-oben");
@@ -1563,7 +1675,7 @@
     links.appendChild(el("small", null,
       "Nur ein eigener Termin erscheint als Countdown auf „Heute“. "
       + "Er gehört zu deinem Lernstand."));
-    if (!stand.pruefungstermin && AP.istDatum(inhalt.pruefung)) {
+    if (!pruefungsdatum() && AP.istDatum(inhalt.pruefung)) {
       links.appendChild(el("small", null,
         "Es ist noch kein persönlicher Termin gesetzt. Der Inhalt nennt als "
         + "Orientierung den " + AP.datumsformat.format(new Date(inhalt.pruefung + "T12:00:00"))
@@ -1575,8 +1687,7 @@
     feld.type = "date";
     feld.className = "terminfeld";
     feld.setAttribute("aria-label", "Dein Prüfungstermin");
-    feld.value = AP.istDatum(stand.pruefungstermin) ? stand.pruefungstermin
-                                                    : (pruefungsdatum() || "");
+    feld.value = pruefungsdatum() || "";
 
     var speichern = el("button", "kn-haupt", "Termin speichern");
     var zurueck = el("button", "kn-neben", "Termin entfernen");
@@ -1593,8 +1704,8 @@
         melden("Das ist kein gültiges Datum. Nichts geändert.", true);
         return;
       }
-      stand.pruefungstermin = feld.value;
-      sichern();
+      if (AP.pruefungsterminSetzen) AP.pruefungsterminSetzen(inhalt.beruf.kurz, feld.value);
+      else { stand.pruefungstermin = feld.value; sichern(); }
       var cd = countdown();
       melden(speicherGeht()
         ? "Termin gespeichert — auf „Heute“ steht jetzt: " + cd.text
@@ -1604,8 +1715,8 @@
     });
 
     zurueck.addEventListener("click", function () {
-      stand.pruefungstermin = null;
-      sichern();
+      if (AP.pruefungsterminSetzen) AP.pruefungsterminSetzen(inhalt.beruf.kurz, null);
+      else { stand.pruefungstermin = null; sichern(); }
       feld.value = "";
       melden("Persönlicher Countdown deaktiviert.", false);
     });
@@ -1860,7 +1971,10 @@
   function start() {
     ["heute", "lernen", "ueben", "suche", "ich"].concat(hatCommunity ? ["community"] : [])
       .forEach(function (k) { schirme[k] = document.getElementById(k); });
-    if (hatCommunity) AP.communityAnsicht.init(inhalt);
+    /* Die Community hat ihren eigenen Lernfeldkatalog je Beruf
+       (community-beitraege.js) und bekommt wie bisher den
+       Büromanagement-Bestand – unabhängig vom gewählten Lernberuf. */
+    if (hatCommunity) AP.communityAnsicht.init(sichtFuer("kfb"));
     verteiler = AP.verteiler(zeige, "heute");
     erneuerung();
   }
@@ -1871,6 +1985,7 @@
      Neuaufbau eine laufende Übung oder Eingabe unterbrechen. */
   AP.appNeuZeichnen = function () {
     if (!inhalt || !verteiler) return;
+    berufAnwenden();          // ein übernommener Stand kann den Beruf ändern
     var id = adresse(location.hash.slice(1)).bereich || "heute";
     if (["heute", "lernen", "ich"].indexOf(id) >= 0 && schirme[id] && !schirme[id].hidden) {
       bauer[id](schirme[id], adresse(location.hash.slice(1)));
@@ -1879,7 +1994,7 @@
 
   fetch("mittel/inhalt.json")
     .then(function (a) { return a.json(); })
-    .then(function (d) { inhalt = d; start(); })
+    .then(function (d) { alles = d; berufAnwenden(); start(); })
     .catch(function () {
       var h = document.getElementById("heute");
       h.appendChild(kopfzeile("Inhalt nicht gefunden",

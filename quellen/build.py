@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 from gemeinsames import (AUSGABE, LUPE, fussleiste, kopf, lade, lernfeld_dateien,
+                         lernfeld_eintrag, registry,
                          schriften_lokal, tableiste, veroeffentliche,
                          zwischenspeicher_schreiben)
 
@@ -540,6 +541,16 @@ def trainer(karten):
 </section>'''
 
 
+def berufsmarke(lf):
+    """Vorsilbe für Lernzettel eines weiteren Berufs: Zwei verschiedene
+    „Lernfeld 1“ sollen schon auf dem Deckblatt unterscheidbar sein. Für
+    Büromanagement bleibt das Deckblatt wie bisher."""
+    b, e = lernfeld_eintrag(lf["id"])
+    if not b or b["kurz"] == registry().get("standard", "kfb"):
+        return ""
+    return f'{b.get("kurzname", b["name"])} · LF {e["nr"]} · '
+
+
 def start(lf, kapitel_daten, karten_zahl=0):
     zeilen = "".join(
         f'<li data-zu="{k["id"]}"><span class="kn">K{k["nummer"]}</span>'
@@ -552,7 +563,7 @@ def start(lf, kapitel_daten, karten_zahl=0):
     fakten = "".join(f"<span>{html.escape(f)}</span>" for f in h["fakten"])
     return f'''<section class="hero kapitel" id="start">
   <div class="hero-links">
-    <div class="augenbraue">Lernfeld · {html.escape(lf["titel"])}</div>
+    <div class="augenbraue">{html.escape(berufsmarke(lf))}Lernfeld · {html.escape(lf["titel"])}</div>
     <h1>{ueberschrift}</h1>
     <p class="hero-lead">{html.escape(h["lead"])}</p>
     <div class="hero-fakten">{fakten}</div>

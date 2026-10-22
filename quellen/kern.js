@@ -112,7 +112,18 @@ window.AP = (function () {
   /* Das Konto bleibt unter demselben localStorage-Schlüssel erreichbar. Die
      Fassung steht im Inhalt, damit wir vorhandene Spielstände kontrolliert
      weiterentwickeln können, ohne die alten Daten still zu verwerfen. */
-  var FASSUNG = 3;
+  var FASSUNG = 4;
+
+  /* Fassung 4 (Industriekaufleute, 22.10.2026): Ein Konto kann zwei
+     Ausbildungsgänge enthalten. Fortschritt, Karten, Quiz und Vokabeln bleiben
+     gemeinsame Sammlungen – ihre Kennungen sind je Beruf verschieden
+     (lf1-… gegenüber ik2024-lf01-…). Was es pro Beruf nur einmal gibt
+     (zuletzt gelesenes Kapitel, eigener Prüfungstermin), liegt für
+     Büromanagement weiter oben im Konto und für jeden weiteren Beruf unter
+     berufe[kurz]. Ein Konto der Fassung 3 gehört damit ohne Umdeuten zu
+     Büromanagement (doku/industriekaufleute/03-umsetzung-und-abnahme.md §3). */
+  var STANDARDBERUF = "kfb";
+  var BERUFE = ["kfb", "ik"];
 
   var leer = {
     version: FASSUNG,
@@ -127,7 +138,9 @@ window.AP = (function () {
     geaendertAm: null,    // ISO-Zeitpunkt der letzten lokalen Kontenänderung
     stimmung: "hell",
     uebernommen: false,
-    probeklausuren: []    // abgeschlossene Ergebnisse; laufende Klausur bleibt separat
+    probeklausuren: [],   // abgeschlossene Ergebnisse; laufende Klausur bleibt separat
+    beruf: "kfb",         // aktiver Ausbildungsgang (Fassung 4)
+    berufe: {}            // "ik" → { zuletzt, pruefungstermin } (Fassung 4)
   };
 
   function frisch() { return JSON.parse(JSON.stringify(leer)); }
@@ -230,7 +243,77 @@ window.AP = (function () {
     if (!istObjekt(neu.zuletzt) || typeof neu.zuletzt.zu !== "string" || !neu.zuletzt.zu) neu.zuletzt = null;
     if (!istDatum(neu.pruefungstermin)) neu.pruefungstermin = null;
     if (typeof neu.stimmung !== "string") neu.stimmung = "hell";
+    if (BERUFE.indexOf(neu.beruf) < 0) neu.beruf = STANDARDBERUF;
+    var berufeRoh = istObjekt(neu.berufe) ? neu.berufe : {};
+    neu.berufe = {};
+    Object.keys(berufeRoh).forEach(function (b) {
+      if (b === STANDARDBERUF || BERUFE.indexOf(b) < 0 || !istObjekt(berufeRoh[b])) return;
+      var e = berufeRoh[b];
+      neu.berufe[b] = {
+        zuletzt: istObjekt(e.zuletzt) && typeof e.zuletzt.zu === "string" && e.zuletzt.zu
+          ? e.zuletzt : null,
+        pruefungstermin: istDatum(e.pruefungstermin) ? e.pruefungstermin : null
+      };
+    });
     return neu;
+  }
+
+  /* ================================================== Ausbildungsgang
+
+     Zu welchem Beruf ein Lernfeld gehört, steht in seiner Kennung: Neue
+     Berufe haben ein Präfix (ik2024-…), Büromanagement nicht. So ordnet eine
+     Lernzettelseite ihre Aktionen dem geöffneten Inhalt zu – auch wenn in
+     einem anderen Tab gerade der Beruf gewechselt wurde (Plan §3). */
+  function berufVon(lernfeld) {
+    return /^ik2024-/.test(String(lernfeld || "")) ? "ik" : STANDARDBERUF;
+  }
+
+  function aktiverBeruf() {
+    return BERUFE.indexOf(stand.beruf) >= 0 ? stand.beruf : STANDARDBERUF;
+  }
+
+  function berufSetzen(b) {
+    if (BERUFE.indexOf(b) < 0 || stand.beruf === b) return false;
+    stand.beruf = b;
+    sichern();
+    return true;
+  }
+
+  function berufsfach(b, anlegen) {
+    if (!istObjekt(stand.berufe)) stand.berufe = {};
+    if (!stand.berufe[b] && anlegen) stand.berufe[b] = { zuletzt: null, pruefungstermin: null };
+    return stand.berufe[b] || null;
+  }
+
+  function zuletzt(b) {
+    b = b || aktiverBeruf();
+    if (b === STANDARDBERUF) return stand.zuletzt;
+    var f = berufsfach(b, false);
+    return f ? f.zuletzt : null;
+  }
+
+  /* Das zuletzt geöffnete Kapitel – beim Beruf des Kapitels, nicht beim
+     gerade aktiven. */
+  function zuletztSetzen(eintrag) {
+    var b = berufVon(eintrag && eintrag.lernfeld);
+    if (b === STANDARDBERUF) stand.zuletzt = eintrag;
+    else berufsfach(b, true).zuletzt = eintrag;
+    sichern();
+  }
+
+  function pruefungstermin(b) {
+    b = b || aktiverBeruf();
+    var wert = b === STANDARDBERUF ? stand.pruefungstermin
+                                   : (berufsfach(b, false) || {}).pruefungstermin;
+    return istDatum(wert) ? wert : null;
+  }
+
+  function pruefungsterminSetzen(b, wert) {
+    b = b || aktiverBeruf();
+    var neu = istDatum(wert) ? wert : null;
+    if (b === STANDARDBERUF) stand.pruefungstermin = neu;
+    else berufsfach(b, true).pruefungstermin = neu;
+    sichern();
   }
 
   function istObjekt(w) { return !!w && typeof w === "object" && !Array.isArray(w); }
@@ -278,6 +361,7 @@ window.AP = (function () {
     if ("zuletzt" in k && k.zuletzt !== null &&
         !(istObjekt(k.zuletzt) && typeof k.zuletzt.zu === "string")) nennen("zuletzt geöffnetes Kapitel");
     if ("geaendertAm" in k && k.geaendertAm !== null && typeof k.geaendertAm !== "string") nennen("Zeitstempel");
+    if ("berufe" in k && !istObjekt(k.berufe)) nennen("Ausbildungsgänge");
     return p;
   }
 
@@ -472,6 +556,19 @@ window.AP = (function () {
         (!stand.pruefungstermin || fremdeSicherungIstNeuer)) {
       stand.pruefungstermin = neu.pruefungstermin;
     }
+    /* Fassung 4: Dieselbe Regel für jeden weiteren Beruf. Eine alte
+       Sicherung ohne berufe löscht nichts, was neuer ist. */
+    if (!istObjekt(stand.berufe)) stand.berufe = {};
+    Object.keys(istObjekt(neu.berufe) ? neu.berufe : {}).forEach(function (b) {
+      var fremd = neu.berufe[b];
+      if (b === STANDARDBERUF || BERUFE.indexOf(b) < 0 || !istObjekt(fremd)) return;
+      var hier = stand.berufe[b] || (stand.berufe[b] = { zuletzt: null, pruefungstermin: null });
+      if (istObjekt(fremd.zuletzt) && typeof fremd.zuletzt.zu === "string" &&
+          (!hier.zuletzt || fremdeSicherungIstNeuer)) hier.zuletzt = fremd.zuletzt;
+      if (istDatum(fremd.pruefungstermin) &&
+          (!hier.pruefungstermin || fremdeSicherungIstNeuer)) hier.pruefungstermin = fremd.pruefungstermin;
+    });
+    if (BERUFE.indexOf(neu.beruf) >= 0 && fremdeSicherungIstNeuer) stand.beruf = neu.beruf;
   }
 
   function lernstandZusammenfuehren(ziel, neu) { zusammenfuehren(ziel, neu); }
@@ -700,8 +797,25 @@ window.AP = (function () {
     return true;
   }
 
+  /* Jeder Beruf hat seinen eigenen laufenden Klausurbogen. Büromanagement
+     behält den bisherigen Schlüssel, damit ein laufender Bogen das Update
+     übersteht; eine begonnene Klausur wird beim Berufswechsel weder
+     abgegeben noch überschrieben (Plan §3). */
+  var PROBEKLAUSUR_SCHLUESSEL_BERUF = { ik: "azubipass:probeklausur:industriekaufleute-2024:v1" };
+
+  function probeklausurSchluessel(b) {
+    b = b || aktiverBeruf();
+    return PROBEKLAUSUR_SCHLUESSEL_BERUF[b] || PROBEKLAUSUR_SCHLUESSEL;
+  }
+
+  /* Zurücksetzen erfasst die Bögen aller Berufe. */
   function probeklausurZuruecksetzen() {
-    try { localStorage.removeItem(PROBEKLAUSUR_SCHLUESSEL); } catch (e) {}
+    try {
+      localStorage.removeItem(PROBEKLAUSUR_SCHLUESSEL);
+      Object.keys(PROBEKLAUSUR_SCHLUESSEL_BERUF).forEach(function (b) {
+        localStorage.removeItem(PROBEKLAUSUR_SCHLUESSEL_BERUF[b]);
+      });
+    } catch (e) {}
   }
 
   /* Fach eines Kapitels. Kein Textabdruck mehr auf dieser Ebene — der sitzt
@@ -1038,6 +1152,10 @@ window.AP = (function () {
     beiFremdemStand: beiFremdemStand,
     probeklausurId: probeklausurId, probeklausurZeit: probeklausurZeit,
     PROBEKLAUSUR_SCHLUESSEL: PROBEKLAUSUR_SCHLUESSEL,
+    probeklausurSchluessel: probeklausurSchluessel,
+    berufVon: berufVon, beruf: aktiverBeruf, berufSetzen: berufSetzen,
+    zuletzt: zuletzt, zuletztSetzen: zuletztSetzen,
+    pruefungstermin: pruefungstermin, pruefungsterminSetzen: pruefungsterminSetzen,
     probeklausurErgebnisSpeichern: probeklausurErgebnisSpeichern,
     probeklausurZuruecksetzen: probeklausurZuruecksetzen,
     FASSUNG: FASSUNG,

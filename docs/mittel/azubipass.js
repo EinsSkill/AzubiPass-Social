@@ -9,6 +9,11 @@
   var geld = function (n) { return eur.format(Math.round(n * 100) / 100) + " €"; };
 
   var LERNFELD = document.body.dataset.lernfeld || "seite";
+  /* Wer eine Lernzettelseite eines Berufs öffnet (auch per direktem Link),
+     arbeitet in diesem Beruf: Zurück zur App zeigt dann dessen Lernfelder.
+     Geschrieben wird ohnehin unter den Kennungen dieser Seite. */
+  if (AP.berufVon && document.body.dataset.lernfeld &&
+      AP.beruf() !== AP.berufVon(LERNFELD)) AP.berufSetzen(AP.berufVon(LERNFELD));
 
   /* ================================================== Navigation */
 
@@ -42,14 +47,18 @@
     /* Wo war ich? Genau das beantwortet der Startbildschirm der App. */
     if (nr) {
       var titel = aktuell.querySelector(".kapitel-auftakt h2");
-      stand.zuletzt = {
+      /* Beim Beruf dieses Lernfelds ablegen, nicht beim gerade aktiven:
+         Ein Industriekapitel darf das Büromanagement-„Weiter“ nicht
+         verstellen (Fassung 4). */
+      var eintrag = {
         zu: LERNFELD + ".html#" + id,
         lernfeld: LERNFELD,
         kapitel: id,
         titel: titel ? titel.textContent : "",
         nummer: nr.childNodes[0].textContent.trim()
       };
-      sichern();
+      if (AP.zuletztSetzen) AP.zuletztSetzen(eintrag);
+      else { stand.zuletzt = eintrag; sichern(); }
     }
 
     lesezeichenStellen(id, nr);

@@ -1,0 +1,168 @@
+{
+  "_hinweis": "Berufsregistry (doku/industriekaufleute/03-umsetzung-und-abnahme.md §2). Reihenfolge, Lehrjahr und Kurzform der Lernfelder kommen von hier – nicht aus Ziffern im Dateinamen. 'kurz' ist die interne Kennung, die im Lernstand und in inhalt.json steht; 'kennung' ist die sprechende Metadaten-ID. Büromanagement: Buchführung steht als LF 6 am Ende der Liste, damit die gewohnte Reihenfolge der App unverändert bleibt.",
+  "standard": "kfb",
+  "berufe": [
+    {
+      "kurz": "kfb",
+      "kennung": "bueromanagement-2025",
+      "name": "Kaufleute für Büromanagement",
+      "kurzname": "Büromanagement",
+      "ordnung": "Büromanagementkaufleute-Ausbildungsverordnung vom 25.02.2025",
+      "quelle": "KMK-Rahmenlehrplan vom 27.09.2013 i. d. F. vom 20.03.2025",
+      "gemeinsam": "gemeinsam.json",
+      "pruefung_aus_landing": true,
+      "lernfelder": [
+        {
+          "id": "lf1",
+          "nr": 1,
+          "lehrjahr": 1
+        },
+        {
+          "id": "lf2",
+          "nr": 2,
+          "lehrjahr": 1
+        },
+        {
+          "id": "lf3",
+          "nr": 3,
+          "lehrjahr": 1
+        },
+        {
+          "id": "lf4",
+          "nr": 4,
+          "lehrjahr": 1
+        },
+        {
+          "id": "lf5",
+          "nr": 5,
+          "lehrjahr": 1
+        },
+        {
+          "id": "lf7",
+          "nr": 7,
+          "lehrjahr": 2
+        },
+        {
+          "id": "lf8",
+          "nr": 8,
+          "lehrjahr": 2
+        },
+        {
+          "id": "lf9",
+          "nr": 9,
+          "lehrjahr": 2
+        },
+        {
+          "id": "lf10",
+          "nr": 10,
+          "lehrjahr": 2
+        },
+        {
+          "id": "lf11",
+          "nr": 11,
+          "lehrjahr": 3
+        },
+        {
+          "id": "lf12",
+          "nr": 12,
+          "lehrjahr": 3
+        },
+        {
+          "id": "lf13",
+          "nr": 13,
+          "lehrjahr": 3
+        },
+        {
+          "id": "buchfuehrung",
+          "nr": 6,
+          "lehrjahr": 2,
+          "aliases": [
+            "LF6",
+            "Lernfeld 6",
+            "Rechnungswesen",
+            "Buchhaltung",
+            "FiBu"
+          ]
+        }
+      ]
+    },
+    {
+      "kurz": "ik",
+      "kennung": "industriekaufleute-2024",
+      "name": "Industriekaufleute",
+      "kurzname": "Industriekaufleute",
+      "ordnung": "Industriekaufleuteausbildungsverordnung vom 12.03.2024",
+      "quelle": "KMK-Rahmenlehrplan für Industriekaufmann und Industriekauffrau vom 15.12.2023",
+      "gemeinsam": "ik2024-gemeinsam.json",
+      "pruefung_aus_landing": false,
+      "pruefungName": "Abschlussprüfung Teil 1",
+      "lernfelder": [
+        {
+          "id": "ik2024-lf01",
+          "nr": 1,
+          "lehrjahr": 1
+        },
+        {
+          "id": "ik2024-lf02",
+          "nr": 2,
+          "lehrjahr": 1
+        },
+        {
+          "id": "ik2024-lf03",
+          "nr": 3,
+          "lehrjahr": 1
+        },
+        {
+          "id": "ik2024-lf04",
+          "nr": 4,
+          "lehrjahr": 1
+        },
+        {
+          "id": "ik2024-lf05",
+          "nr": 5,
+          "lehrjahr": 1
+        },
+        {
+          "id": "ik2024-lf06",
+          "nr": 6,
+          "lehrjahr": 2
+        },
+        {
+          "id": "ik2024-lf07",
+          "nr": 7,
+          "lehrjahr": 2
+        },
+        {
+          "id": "ik2024-lf08",
+          "nr": 8,
+          "lehrjahr": 2
+        },
+        {
+          "id": "ik2024-lf09",
+          "nr": 9,
+          "lehrjahr": 2
+        },
+        {
+          "id": "ik2024-lf10",
+          "nr": 10,
+          "lehrjahr": 3
+        },
+        {
+          "id": "ik2024-lf11",
+          "nr": 11,
+          "lehrjahr": 3
+        },
+        {
+          "id": "ik2024-lf12",
+          "nr": 12,
+          "lehrjahr": 3
+        },
+        {
+          "id": "ik2024-lf13",
+          "nr": 13,
+          "lehrjahr": 3
+        }
+      ]
+    }
+  ]
+}

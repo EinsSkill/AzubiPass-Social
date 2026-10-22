@@ -2208,3 +2208,18 @@ input[type=file].cm-eingabe{padding:10px 14px;min-height:48px;}
 .cm-rest{display:flex;flex-direction:column;gap:8px;align-items:flex-start;margin:0 0 16px;}
 .cm-rest[hidden],.cm-vorbereitung[hidden]{display:none;}
 .cm-verkleinert{margin:0;}
+
+/* ---------------------------------------------------------------- Ausbildungsgang
+   Umschalter zwischen Büromanagement und Industriekaufleute (Lernen und Ich).
+   Zwei gleich breite Knöpfe; der aktive trägt die Hauptfarbe. Lange Namen
+   brechen um statt die Zeile zu sprengen (ab 320 px). */
+.berufswahl{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0 0 14px;
+  border:1px solid var(--linie);border-radius:2px;overflow:hidden;}
+.berufswahl-knopf{font-family:var(--sans);font-size:13.5px;font-weight:600;line-height:1.25;
+  min-height:44px;padding:10px 12px;background:transparent;color:var(--text-sek);
+  border:0;cursor:pointer;overflow-wrap:anywhere;}
+.berufswahl-knopf + .berufswahl-knopf{border-left:1px solid var(--linie);}
+.berufswahl-knopf.an{background:var(--tinte);color:var(--grund);}
+.berufswahl-knopf:focus-visible{outline:2px solid var(--gold);outline-offset:-3px;}
+.berufs-hinweis{font-family:var(--sans);font-size:13px;color:var(--text-sek);margin:0 0 16px;}
+.berufs-erklaerung{display:block;font-family:var(--sans);font-size:12.5px;color:var(--text-sek);margin-top:8px;}
