@@ -139,6 +139,7 @@
       "verjaehrung",
       "vollkostenrechnung",
       "vorsteuer",
+      "wirtschaftskreislauf",
       "zahllast",
       "zahlungsbedingungen",
       "zahlungsverzug",
@@ -233,6 +234,10 @@
       "titel": "Ereignisgesteuerte Prozesskette (EPK)",
       "text": "Grafische Darstellung eines Ablaufs aus Ereignissen (Sechsecke) und Funktionen (abgerundete Rechtecke), die sich abwechseln. Sie beginnt und endet mit einem Ereignis; Verzweigungen zeigen UND-, ODER- und XOR-Konnektoren."
     },
+    "ezb": {
+      "titel": "Europäische Zentralbank (EZB)",
+      "text": "Zentralbank des Euroraums mit Sitz in Frankfurt am Main. Vorrangiges Ziel ist Preisstabilität; die EZB strebt mittelfristig eine Inflationsrate von 2 % an und steuert vor allem über die Leitzinsen."
+    },
     "fertigungsart": {
       "titel": "Fertigungsart",
       "text": "Einteilung der Fertigung nach der Menge gleicher Erzeugnisse: Einzel-, Serien-, Sorten-, Massen- und Chargenfertigung. Davon zu unterscheiden ist der Organisationstyp (Werkstatt-, Fließ-, Gruppen-, Baustellenfertigung), der die räumliche Anordnung beschreibt."
@@ -257,6 +262,10 @@
       "titel": "Gesamtkostenverfahren",
       "text": "Gliederung der GuV nach Aufwandsarten (Material, Personal, Abschreibungen usw.). Weil alle Aufwendungen der Periode erfasst werden, gleichen Bestandsveränderungen an fertigen und unfertigen Erzeugnissen den Unterschied zwischen Produktion und Absatz aus."
     },
+    "gleichgewichtspreis": {
+      "titel": "Gleichgewichtspreis",
+      "text": "Der Preis, bei dem angebotene und nachgefragte Menge übereinstimmen. Liegt der Preis darüber, entsteht ein Angebotsüberhang, darunter ein Nachfrageüberhang."
+    },
     "jahresabschluss": {
       "titel": "Jahresabschluss",
       "text": "Der Abschluss eines Geschäftsjahres: bei allen Kaufleuten Bilanz und Gewinn- und Verlustrechnung, bei Kapitalgesellschaften zusätzlich der Anhang. Mittelgroße und große Kapitalgesellschaften stellen außerdem einen Lagebericht auf."
@@ -273,9 +282,17 @@
       "titel": "Kapitalgesellschaft",
       "text": "Gesellschaft mit eigener Rechtspersönlichkeit, bei der das Kapital im Vordergrund steht, etwa GmbH oder AG. Gegenüber Gläubigern haftet das Gesellschaftsvermögen, nicht das Privatvermögen der Gesellschafter."
     },
+    "kartell": {
+      "titel": "Kartell",
+      "text": "Absprache oder abgestimmtes Verhalten von Unternehmen, das den Wettbewerb beschränkt, etwa über Preise, Gebiete oder Kunden. Nach § 1 GWB und Art. 101 AEUV grundsätzlich verboten; bestimmte Kooperationen können im Einzelfall freigestellt sein."
+    },
     "kommissionieren": {
       "titel": "Kommissionieren",
       "text": "Artikel aus dem Lager nach Aufträgen zusammenstellen. Auftragsorientiert wird jeder Auftrag einzeln bearbeitet, serienorientiert werden Artikel mehrerer Aufträge gesammelt entnommen und anschließend verteilt."
+    },
+    "konjunktur": {
+      "titel": "Konjunktur",
+      "text": "Schwankungen der gesamtwirtschaftlichen Aktivität um den langfristigen Wachstumstrend. Vereinfacht in vier Phasen: Aufschwung, Boom, Abschwung, Tiefstand. Abgelesen an Früh-, Präsenz- und Spätindikatoren."
     },
     "leistungsprogramm": {
       "titel": "Leistungsprogramm",
@@ -285,9 +302,17 @@
       "titel": "Leitbild",
       "text": "Schriftlich formuliertes Selbstverständnis eines Unternehmens: Werte, Ziele und Grundsätze im Umgang mit Kunden, Beschäftigten und Umwelt. Es beschreibt einen Anspruch; ob er eingelöst wird, zeigt das tatsächliche Handeln."
     },
+    "leitzins": {
+      "titel": "Leitzins",
+      "text": "Zinssätze, zu denen sich Geschäftsbanken bei der Zentralbank Geld leihen oder dort anlegen können. Änderungen wirken verzögert über die Kreditzinsen der Banken auf Investitionen, Nachfrage und Preise."
+    },
     "los": {
       "titel": "Los",
       "text": "Die Menge gleicher Erzeugnisse, die ohne Unterbrechung durch Umrüsten hintereinander gefertigt wird. Je Los fallen einmal Rüstkosten an."
+    },
+    "magisches-viereck": {
+      "titel": "Magisches Viereck",
+      "text": "Die vier gesamtwirtschaftlichen Ziele aus dem Stabilitäts- und Wachstumsgesetz von 1967: Stabilität des Preisniveaus, hoher Beschäftigungsstand, außenwirtschaftliches Gleichgewicht sowie stetiges und angemessenes Wachstum. „Magisch“, weil sie nicht gleichzeitig vollständig erreichbar sind."
     },
     "maschinenstundensatz": {
       "titel": "Maschinenstundensatz",
@@ -316,6 +341,10 @@
     "smart": {
       "titel": "SMART-Regel",
       "text": "Prüfraster für Ziele: spezifisch, messbar, attraktiv beziehungsweise akzeptiert, realistisch und terminiert. Ein SMART-Ziel beschreibt ein überprüfbares Ergebnis, keine Tätigkeit."
+    },
+    "soziale-marktwirtschaft": {
+      "titel": "Soziale Marktwirtschaft",
+      "text": "Wirtschaftsordnung in Deutschland: Märkte und Preise koordinieren, der Staat schützt den Wettbewerb und sorgt für sozialen Ausgleich, etwa über Sozialversicherung, Schutzrechte und progressive Steuern."
     },
     "spediteur": {
       "titel": "Spediteur",
@@ -367,6 +396,11 @@
       "titel": "§ 5 GmbHG",
       "text": "Das Stammkapital der Gesellschaft muss mindestens 25.000 Euro betragen. Jeder Gesellschafter übernimmt bei der Errichtung einen oder mehrere Geschäftsanteile. (Sinngemäß)",
       "kurz": "Mindeststammkapital 25.000 Euro."
+    },
+    "gwb-1": {
+      "titel": "§ 1 GWB — Kartellverbot",
+      "text": "Vereinbarungen zwischen Unternehmen, Beschlüsse von Unternehmensvereinigungen und aufeinander abgestimmte Verhaltensweisen, die eine Verhinderung, Einschränkung oder Verfälschung des Wettbewerbs bezwecken oder bewirken, sind verboten. (Sinngemäß)",
+      "kurz": "Wettbewerbsbeschränkende Vereinbarungen sind verboten."
     },
     "hgb-252": {
       "titel": "§ 252 HGB",

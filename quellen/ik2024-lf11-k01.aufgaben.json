@@ -1,0 +1,93 @@
+{
+  "lernfeld": "ik2024-lf11",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf11-k01-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Luca Petrelli ordnet Vorgänge rund um die MAKEL Studio GmbH im Wirtschaftskreislauf ein." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welcher Strom liegt vor?",
+          "ziele": ["Realer Strom", "Monetärer Strom"],
+          "elemente": [
+            { "text": "Jonas Weidner arbeitet im Lager", "loesung": "Realer Strom" },
+            { "text": "MAKEL überweist die Gehälter", "loesung": "Monetärer Strom" },
+            { "text": "MAKEL liefert Shirts an die Stadt", "loesung": "Realer Strom" },
+            { "text": "MAKEL zahlt Gewerbesteuer", "loesung": "Monetärer Strom" },
+            { "text": "Ein Kunde bezahlt im Store einen Hoodie", "loesung": "Monetärer Strom" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Reale Ströme sind Güter und Leistungen, monetäre Ströme Zahlungen. Steuern sind monetäre Ströme ohne direkte Gegenleistung.",
+      "quelle": "ik2024-lf11-k01, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf11-k01-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "export": { "von": 1500, "bis": 1700, "schritt": 50 },
+        "import": { "von": 1200, "bis": 1400, "schritt": 50 }
+      },
+      "abgeleitet": {
+        "beitrag": "export - import"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Für eine Übung im Rahmen der Planung bei MAKEL sind für eine fiktive Volkswirtschaft gegeben: Exporte von Waren und Dienstleistungen {export} Mrd. €, Importe {import} Mrd. €." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Außenbeitrag", "einheit": "Mrd. €", "loesung": "beitrag", "toleranz": 0 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Außenbeitrag = Exporte − Importe. Ein positiver Wert heißt: Es wird mehr ins Ausland verkauft als von dort bezogen.",
+      "quelle": "ik2024-lf11-k01, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf11-k01-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "In einer Teamrunde der MAKEL Studio GmbH sagt Luca Petrelli: „Ob die Leute sparen oder der Staat Steuern erhöht, betrifft uns nicht. Wir verkaufen an Firmen, nicht an Privatleute.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie Lucas Aussage mithilfe des erweiterten Wirtschaftskreislaufs und nennen Sie die Grenzen Ihrer Argumentation.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Aussage greift zu kurz. Auch Geschäftskunden hängen von Haushalten ab: Sparen Haushalte mehr oder sinkt ihr verfügbares Einkommen durch höhere Steuern, verkaufen die Kunden von MAKEL weniger und kürzen Werbe- und Eventbudgets — MAKEL erhält weniger Aufträge. Umgekehrt können höhere Ersparnisse über Banken Investitionen finanzieren, und staatliche Ausgaben können als Aufträge zurückfließen. Grenzen: Das Kreislaufmodell zeigt Zusammenhänge, keine exakten Wirkungen; ob und wie stark MAKEL betroffen ist, hängt von Branche, Kunden und Zeitpunkt ab.",
+        "raster": [
+          { "kriterium": "Indirekte Abhängigkeit über Geschäftskunden erklärt", "punkte": 1 },
+          { "kriterium": "Wirkung von Sparen bzw. Steuern auf Nachfrage dargestellt", "punkte": 1 },
+          { "kriterium": "Gegenläufige Effekte (Investitionen, Staatsaufträge) erwähnt", "punkte": 1 },
+          { "kriterium": "Grenzen des Modells benannt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Im Kreislauf ist jedes Unternehmen mittelbar mit allen Sektoren verbunden.",
+      "quelle": "ik2024-lf11-k01, Abschnitte a2 und a4"
+    }
+  ]
+}

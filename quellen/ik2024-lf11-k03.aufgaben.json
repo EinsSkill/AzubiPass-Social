@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf11",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf11-k03-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Marlene Voss beschreibt Märkte, auf denen die MAKEL Studio GmbH tätig ist." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Marktform liegt vor?",
+          "ziele": ["Polypol", "Angebotsoligopol", "Angebotsmonopol", "Nachfrageoligopol"],
+          "elemente": [
+            { "text": "Sehr viele Druckereien und Online-Shops verkaufen Teamshirts an sehr viele Firmen", "loesung": "Polypol" },
+            { "text": "Drei Hersteller liefern Lasergravurstationen an viele Betriebe", "loesung": "Angebotsoligopol" },
+            { "text": "Ein einziger Anbieter vertreibt eine patentierte Spezialfolie", "loesung": "Angebotsmonopol" },
+            { "text": "Viele kleine Nähereien verkaufen an wenige große Modeketten", "loesung": "Nachfrageoligopol" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Entscheidend ist die Zahl der Anbieter und Nachfrager auf dem jeweiligen relevanten Markt.",
+      "quelle": "ik2024-lf11-k03, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf11-k03-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "pstar": { "von": 8, "bis": 14, "schritt": 1 },
+        "b": { "von": 20, "bis": 40, "schritt": 10 },
+        "d": { "von": 20, "bis": 40, "schritt": 10 },
+        "c": { "von": 100, "bis": 200, "schritt": 50 }
+      },
+      "abgeleitet": {
+        "a": "c + (b + d) * pstar",
+        "menge": "c + d * pstar"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Für den regionalen Markt für Bio-Baumwollrohlinge, auf dem MAKEL einkauft, gelten vereinfacht: Nachfrage N = {a} − {b} · p, Angebot A = {c} + {d} · p (p in € je Stück, Mengen in Stück pro Woche)." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Gleichgewichtspreis", "einheit": "€", "loesung": "pstar", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Gleichgewichtsmenge", "einheit": "Stück", "loesung": "menge", "toleranz": 0, "punkte": 2, "folgefehler_aus": ["pstar"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Im Gleichgewicht gilt N = A. Gleichsetzen und nach p auflösen; die Menge ergibt sich durch Einsetzen in eine der beiden Gleichungen.",
+      "quelle": "ik2024-lf11-k03, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf11-k03-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die Einkaufspreise für Rohlinge steigen um 8 %. Tobias Renner will alle Verkaufspreise der MAKEL Studio GmbH ebenfalls um 8 % erhöhen. Das Sortiment: Standard-Shirts (viele Online-Wettbewerber), Premium-Stick mit 5-Tage-Lieferung (wenige vergleichbare Anbieter), Taschen mit Lasergravur (neu, kaum Konkurrenz in der Region)." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Vorschlag unter Berücksichtigung der Marktsituation und entwickeln Sie eine differenzierte Alternative.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Eine pauschale Erhöhung übersieht, dass der Preisspielraum je Markt verschieden ist. Bei Standard-Shirts (Polypol, viele Ersatzangebote) droht Kundenabwanderung; hier eher Kosten senken, Mindestmengen oder Pakete anbieten und die Erhöhung moderat halten. Beim Premium-Stick und bei Taschen mit Gravur hebt sich MAKEL ab; dort ist eine Erhöhung eher durchsetzbar. Alternative: differenzierte Preisanpassung, Kommunikation des Mehrwerts, Beobachtung von Absatz und Kundenreaktion. Grenze: Ohne Daten zur Nachfragereaktion lässt sich die Wirkung nicht exakt beziffern.",
+        "raster": [
+          { "kriterium": "Unterschiedliche Marktsituationen je Produkt erkannt", "punkte": 1 },
+          { "kriterium": "Risiko der Abwanderung im Polypol begründet", "punkte": 1 },
+          { "kriterium": "Höherer Spielraum bei abgegrenzten Angeboten begründet", "punkte": 1 },
+          { "kriterium": "Differenzierte Alternative mit Beobachtung bzw. Datenbedarf", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Kostensteigerungen lassen sich nur so weit weitergeben, wie Markt und Nachfrage es zulassen.",
+      "quelle": "ik2024-lf11-k03, Abschnitte a2 und a3"
+    }
+  ]
+}

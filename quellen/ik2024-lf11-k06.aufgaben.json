@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf11",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf11-k06-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Deniz Aydın erklärt Luca Petrelli, welche Institutionen den Rahmen für die Einkäufe der MAKEL Studio GmbH prägen." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Institution ist gemeint?",
+          "ziele": ["EZB", "EU", "WTO", "IWF"],
+          "elemente": [
+            { "text": "Legt die Leitzinsen im Euroraum fest", "loesung": "EZB" },
+            { "text": "Sorgt für zollfreien Warenverkehr zwischen den Mitgliedstaaten", "loesung": "EU" },
+            { "text": "Vereinbart Regeln für den Welthandel und schlichtet Handelsstreitigkeiten", "loesung": "WTO" },
+            { "text": "Unterstützt Staaten in Zahlungsbilanzkrisen", "loesung": "IWF" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "EZB: Geldpolitik; EU: Binnenmarkt und Zollunion; WTO: Welthandelsregeln; IWF: Währungsstabilität und Krisenhilfe.",
+      "quelle": "ik2024-lf11-k06, Abschnitte a1 und a3"
+    },
+
+    {
+      "id": "ik2024-lf11-k06-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "kredit": { "von": 40000, "bis": 100000, "schritt": 20000 },
+        "z_alt": { "von": 3, "bis": 4, "schritt": 1 },
+        "punkte": { "von": 1, "bis": 3, "schritt": 1 },
+        "usd": { "von": 6000, "bis": 12000, "schritt": 2000 }
+      },
+      "abgeleitet": {
+        "mehr": "kredit * punkte / 100",
+        "euro": "runde(usd / 1.25, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "(1) Der variable Zins eines endfälligen Kredits der MAKEL Studio GmbH über {kredit} € steigt von {z_alt} % um {punkte} Prozentpunkte. (2) Eine Rechnung eines US-Garnlieferanten lautet über {usd} USD; der Kurs beträgt 1,25 USD je Euro." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Jährliche Zinsmehrbelastung", "einheit": "€", "loesung": "mehr", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Rechnungsbetrag in Euro", "einheit": "€", "loesung": "euro", "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Mehrbelastung = Kredit × Anstieg in Prozentpunkten ÷ 100. Euro-Betrag = USD-Betrag ÷ Kurs (USD je Euro).",
+      "quelle": "ik2024-lf11-k06, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf11-k06-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Für die Laserstation bietet die Bank der MAKEL Studio GmbH zwei Varianten: (A) variabler Zins, derzeit 0,6 Prozentpunkte günstiger, (B) Festzins für fünf Jahre. Gleichzeitig ist der Dollar zuletzt stark gefallen, und Deniz Aydın will den gesamten Garnbedarf für zwei Jahre jetzt in USD einkaufen." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie beide Entscheidungen unter Berücksichtigung von Zins- und Wechselkursrisiko und geben Sie eine Empfehlung.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Variante A ist zunächst günstiger, aber Zinserhöhungen der EZB können über die Bank auf variable Kredite durchschlagen; die Belastung ist nicht planbar. Variante B kostet mehr, schafft aber Planungssicherheit über die Nutzungsdauer — bei knapper Liquidität und einer langfristigen Investition meist vorzuziehen. Der Großeinkauf in USD nutzt den günstigen Kurs, bindet aber Kapital und Lagerfläche für zwei Jahre, birgt Qualitäts- und Modellrisiken und setzt auf eine Kursprognose. Empfehlung: Festzins oder Mischung; Garn nur für einen begrenzten Zeitraum vorziehen bzw. Preise vertraglich fixieren und eine Euro-Bezugsquelle testen.",
+        "raster": [
+          { "kriterium": "Zinsänderungsrisiko des variablen Kredits erkannt", "punkte": 1 },
+          { "kriterium": "Planungssicherheit des Festzinses gegen Mehrkosten abgewogen", "punkte": 1 },
+          { "kriterium": "Großeinkauf mit Kapitalbindung und Prognoserisiko beurteilt", "punkte": 1 },
+          { "kriterium": "Begründete, abgewogene Empfehlung", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Wer Risiken absichert, zahlt einen Preis; wer spekuliert, kann gewinnen oder verlieren — die Entscheidung muss zur Lage des Unternehmens passen.",
+      "quelle": "ik2024-lf11-k06, Abschnitte a1, a2 und a4"
+    }
+  ]
+}
