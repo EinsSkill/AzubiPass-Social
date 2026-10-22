@@ -1,0 +1,100 @@
+{
+  "lernfeld": "ik2024-lf02",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf02-k01-01",
+      "operator": "Unterscheiden Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "In der Personalabteilung der MAKEL Studio GmbH fallen zwei Aufgaben an: (A) jede Woche die Anwesenheitsliste der Veredelung pflegen, (B) bis zum 15. Januar ein neues Onboarding-Paket für neue Beschäftigte entwickeln." }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Unterscheiden Sie beide Aufgaben anhand von drei Projektmerkmalen.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Einmaligkeit: B ist ein einmaliges Vorhaben, A wiederholt sich jede Woche. Befristung und Ergebnis: B endet am 15. Januar mit einem eigenen Ergebnis (dem Onboarding-Paket), A hat kein Ende und kein neues Ergebnis. Begrenzte Mittel und Abstimmung: B braucht ein eigenes Zeit- und Kostenbudget und die Zusammenarbeit mehrerer Abteilungen; A ist eine eingespielte Routine einer Stelle. B ist deshalb ein Projekt, A eine Routineaufgabe.",
+        "raster": [
+          { "kriterium": "Einmaligkeit gegenüber Wiederholung", "punkte": 1 },
+          { "kriterium": "Befristung bzw. eigenes Ergebnis", "punkte": 1 },
+          { "kriterium": "Begrenzte Mittel oder Abstimmungsbedarf", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Projekte sind einmalig, befristet, ergebnisorientiert und mit begrenzten Mitteln ausgestattet.",
+      "quelle": "ik2024-lf02-k01, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf02-k01-02",
+      "operator": "Formulieren Sie",
+      "anforderungsbereich": 3,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Im Entwurf des Projektauftrags steht als Ziel: „Das Onboarding soll besser werden.“ Vereinbart sind: Termin 15. Januar, acht Pflichtinformationen für neue Beschäftigte und ein Probelauf mit zwei neuen Beschäftigten, die drei festgelegte Einstiegsaufgaben erledigen sollen." }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Formulieren Sie das Ziel so um, dass es überprüfbar ist.",
+          "zeilen": 4
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "„Bis zum 15. Januar liegt eine erprobte Checkliste mit allen acht vereinbarten Pflichtinformationen vor; im Probelauf erledigen zwei neue Beschäftigte damit die drei festgelegten Einstiegsaufgaben ohne zusätzliche Rückfrage.“",
+        "raster": [
+          { "kriterium": "Ergebnis statt Tätigkeit beschrieben", "punkte": 1 },
+          { "kriterium": "Prüfbares Merkmal (Pflichtinformationen, Probelauf) enthalten", "punkte": 1 },
+          { "kriterium": "Termin genannt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "SMART: spezifisch, messbar, akzeptiert, realistisch, terminiert — als Ergebnis formuliert.",
+      "quelle": "ik2024-lf02-k01, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf02-k01-03",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Während des Onboarding-Projekts schlägt ein Teammitglied vor, zusätzlich ein Lernvideo zu drehen. Laut Projektauftrag gehört ein Video nicht zum Umfang." }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Wie geht die Projektleitung sachgerecht vor?",
+          "mehrfach": false,
+          "optionen": [
+            { "text": "Das Video wird zusätzlich begonnen, weil es das Ergebnis verbessert.", "richtig": false, "echo": "Ohne Abstimmung wächst der Umfang — Termin und Kernergebnis geraten in Gefahr." },
+            { "text": "Die Idee wird festgehalten und mit der Auftraggeberin besprochen; sie entscheidet über eine Erweiterung oder ein Folgeprojekt.", "richtig": true, "echo": "Richtig. Änderungen am Umfang entscheidet die Auftraggeberin." },
+            { "text": "Die Idee wird verworfen, weil sie nicht im Auftrag steht.", "richtig": false, "echo": "Verwerfen ist unnötig. Die Idee kann für ein Folgeprojekt wertvoll sein — sie gehört nur nicht ungefragt in dieses." }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "erklaerung": "Nichtziele schützen vor schleichender Ausweitung; Erweiterungen werden mit der Auftraggeberin abgestimmt.",
+      "quelle": "ik2024-lf02-k01, Abschnitt a4"
+    }
+  ]
+}

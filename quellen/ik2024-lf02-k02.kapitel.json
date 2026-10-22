@@ -1,0 +1,260 @@
+{
+  "id": "k02",
+  "lernfeld": "ik2024-lf02",
+  "nummer": 2,
+  "titel": "Aufgaben, Zeit und Zusammenarbeit planen",
+  "untertitel": "Vom Ziel zu Arbeitspaketen, von Arbeitspaketen zum Terminplan — und wann ein agiles Vorgehen besser passt.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Ein großes Ziel wird erst handhabbar, wenn man es zerlegt.",
+          "Die Zerlegung zeigt der Projektstrukturplan."
+        ],
+        "erklaerung": "Der Projektstrukturplan zerlegt das Projekt in Teilaufgaben und diese in Arbeitspakete. Ein Arbeitspaket ist eine abgrenzbare Aufgabe mit einer verantwortlichen Person, einem geschätzten Aufwand und einem überprüfbaren Ergebnis. Der Strukturplan beantwortet die Frage, was zu tun ist — noch ohne Reihenfolge und Termine. Die Zerlegung ist fertig, wenn jedes Paket so klein ist, dass eine Person es verantworten und sein Ergebnis prüfen kann.",
+        "beispiele": [
+          "Teilaufgabe ‚Inhalte‘: Arbeitspakete ‚Pflichtinformationen bei Abteilungen einholen‘, ‚Checkliste schreiben‘, ‚Inhalte freigeben lassen‘.",
+          "Teilaufgabe ‚Gestaltung‘: Arbeitspakete ‚Layout im Corporate Design‘, ‚Lageplan zeichnen‘."
+        ],
+        "fallbeispiel": "Das Onboarding-Paket wird zerlegt in die Teilaufgaben Inhalte, Gestaltung und Probelauf. Für ‚Inhalte einholen‘ ist Luca verantwortlich (Ergebnis: Rückmeldungen aller fünf Abteilungen liegen vor), für ‚Layout‘ seine Kollegin (Ergebnis: freigegebene Druckvorlage), für den Probelauf beide (Ergebnis: Protokoll mit zwei Testpersonen).",
+        "typische_fehler": "Arbeitspakete werden zu groß geschnitten (‚Onboarding machen‘) oder ohne verantwortliche Person und prüfbares Ergebnis angelegt.",
+        "verstaendnisfragen": [
+          "Was gehört zu einem Arbeitspaket? Eine abgrenzbare Aufgabe, eine verantwortliche Person, ein geschätzter Aufwand und ein überprüfbares Ergebnis.",
+          "Was zeigt der Projektstrukturplan nicht? Reihenfolge und Termine — das zeigt der Ablauf- und Terminplan."
+        ],
+        "pruefungsbezug": "Bei Strukturplan-Aufgaben Teilaufgaben und Arbeitspakete hierarchisch ordnen und je Paket ein Ergebnis nennen.",
+        "merksatz": "Der Projektstrukturplan zerlegt das Projekt in Arbeitspakete mit Verantwortlichem, Aufwand und prüfbarem Ergebnis — ohne Reihenfolge und Termine."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Im Team braucht jede Aufgabe eine verantwortliche Person.",
+          "Absprachen müssen für alle sichtbar sein."
+        ],
+        "erklaerung": "Rollen machen klar, wer entscheidet, wer verantwortet und wer mitarbeitet. Eine einfache Verantwortungsmatrix ordnet jedem Arbeitspaket genau eine verantwortliche Person zu. Für die Kommunikation werden Weg und Takt vereinbart: Wo liegen die Dateien? Wann trifft sich das Team? Wie werden Entscheidungen festgehalten? Wer Regeln vorher festlegt, muss Konflikte später seltener lösen.",
+        "beispiele": [
+          "Ein gemeinsamer Aufgabenplan zeigt für jedes Paket Verantwortliche, Termin und Status.",
+          "Feste kurze Abstimmung jeden Dienstag 15 Minuten; Entscheidungen werden im Aufgabenplan notiert."
+        ],
+        "fallbeispiel": "Im Onboarding-Team schreiben beide Azubis an der Checkliste, keiner fühlt sich für die Freigabe verantwortlich. Ergebnis: Die Freigabe durch die Abteilungen fehlt am Ende. Lösung für die nächste Planung: Jedes Arbeitspaket bekommt genau eine verantwortliche Person; die Freigabe wird als eigenes Paket mit Termin geplant.",
+        "typische_fehler": "Mehrere Personen sind ‚gemeinsam verantwortlich‘. Dann fühlt sich am Ende niemand zuständig.",
+        "verstaendnisfragen": [
+          "Warum sollte jedes Arbeitspaket genau eine verantwortliche Person haben? Damit klar ist, wer für das Ergebnis einsteht und nachhält.",
+          "Was gehört zu einer Kommunikationsvereinbarung im Team? Ablageort, Besprechungstakt und die Art, wie Entscheidungen festgehalten werden."
+        ],
+        "pruefungsbezug": "Wenn nach Ursachen für Verzögerungen gefragt wird, an fehlende Verantwortlichkeiten und ungeklärte Kommunikationswege denken.",
+        "merksatz": "Jedes Arbeitspaket hat genau eine verantwortliche Person; Ablageort, Besprechungstakt und Entscheidungsdokumentation werden im Team vereinbart."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Manche Arbeitspakete können erst beginnen, wenn andere fertig sind.",
+          "Dauer und Aufwand sind nicht dasselbe."
+        ],
+        "erklaerung": "Der Terminplan bringt die Arbeitspakete in eine Reihenfolge und ordnet ihnen Dauern zu. Abhängigkeiten bestimmen, was nacheinander laufen muss. Die längste Kette ohne Puffer ist der kritische Pfad — verzögert sich ein Vorgang darauf, verschiebt sich das Projektende. Wichtig ist der Unterschied zwischen Dauer (wie lange dauert es im Kalender?) und Aufwand (wie viele Personenstunden kostet es?). Zwei Personen können einen Aufwand von zwei Personentagen in einem Kalendertag erledigen — wenn die Arbeit teilbar ist.",
+        "beispiele": [
+          "Inhalte zwei Arbeitstage, Layout einen, Probelauf einen; alles nacheinander: Mindestdauer vier Arbeitstage.",
+          "Arbeiten zwei Personen gleichzeitig am Layout, kann die Dauer kürzer werden — der Aufwand in Personentagen bleibt gleich."
+        ],
+        "fallbeispiel": "Die Pakete ‚Inhalte einholen‘ (3 Tage), ‚Lageplan zeichnen‘ (2 Tage, unabhängig), ‚Checkliste schreiben‘ (2 Tage, nach Inhalten), ‚Layout‘ (1 Tag, nach Checkliste und Lageplan), ‚Probelauf‘ (1 Tag, nach Layout). Kritischer Pfad: Inhalte → Checkliste → Layout → Probelauf = 7 Tage. Der Lageplan hat 3 Tage Puffer.",
+        "typische_fehler": "Dauer, Aufwand und Personenzahl werden gleichgesetzt. Vier Tage Dauer sind nicht automatisch vier Personentage Aufwand.",
+        "verstaendnisfragen": [
+          "Was ist der kritische Pfad? Die Folge von Vorgängen ohne Puffer, die das Projektende bestimmt.",
+          "Worin unterscheiden sich Dauer und Aufwand? Dauer ist Kalenderzeit, Aufwand die eingesetzte Arbeitszeit in Personenstunden oder -tagen."
+        ],
+        "pruefungsbezug": "Bei Terminrechnungen zuerst die Abhängigkeiten notieren, dann die längste Kette suchen.",
+        "merksatz": "Abhängigkeiten bestimmen die Reihenfolge; die längste Kette ohne Puffer ist der kritische Pfad — und Dauer ist nicht dasselbe wie Aufwand."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Nicht jedes Projekt lässt sich vorab vollständig planen.",
+          "Agile Verfahren arbeiten in kurzen Schleifen mit Rückmeldung."
+        ],
+        "erklaerung": "Klassisches Vorgehen plant zu Beginn vollständig und arbeitet die Phasen nacheinander ab. Es passt, wenn die Anforderungen stabil und bekannt sind. Agiles Vorgehen — etwa nach Scrum — arbeitet in kurzen Zyklen: Ein kleines nutzbares Ergebnis entsteht, wird gezeigt, bewertet und verbessert. Es passt, wenn sich Anforderungen erst während der Arbeit klären. In beiden Fällen bleiben Rollen, Verantwortlichkeiten und Ziele klar; agil heißt nicht ungeplant.",
+        "beispiele": [
+          "Druck des fertigen Onboarding-Pakets mit festem Termin und bekanntem Inhalt: klassisch planbar.",
+          "Gestaltung einer digitalen Willkommensseite, bei der unklar ist, was neue Beschäftigte wirklich brauchen: agil mit kurzen Testschleifen."
+        ],
+        "fallbeispiel": "Ayla weiß noch nicht genau, welche Informationen neue Beschäftigte zuerst brauchen. Das Team entscheidet sich für zwei kurze Schleifen: erste Checkliste nach einer Woche, Test mit einer neuen Kollegin, Überarbeitung, zweite Fassung nach einer weiteren Woche. Der Druck danach wird klassisch geplant, weil Inhalt und Termin dann feststehen.",
+        "typische_fehler": "Agil wird mit ‚ohne Plan‘ verwechselt. Auch agile Projekte haben Ziele, Rollen und feste Takte.",
+        "verstaendnisfragen": [
+          "Wann passt klassisches Vorgehen? Wenn Anforderungen stabil und bekannt sind und wenig Abstimmung im Verlauf nötig ist.",
+          "Was kennzeichnet agiles Vorgehen? Kurze Zyklen mit nutzbaren Zwischenergebnissen, Rückmeldung und Anpassung."
+        ],
+        "pruefungsbezug": "Die Wahl des Vorgehens immer an der Stabilität der Anforderungen und am Abstimmungsbedarf begründen.",
+        "merksatz": "Klassisch bei stabilen Anforderungen, agil bei Anforderungen, die sich erst klären — in beiden Fällen mit klaren Rollen und Zielen."
+      }
+    ]
+  },
+
+  "lernziele": [
+    { "id": "lz1", "text": "Arbeitspakete und Verantwortlichkeiten festlegen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Abhängigkeiten in einen Terminplan übersetzen", "abschnitt": "a3" },
+    { "id": "lz3", "text": "Eine geeignete Vorgehensweise begründet wählen", "abschnitt": "a4" },
+    { "id": "lz4", "text": "Zusammenarbeit und Kommunikation im Team vereinbaren", "abschnitt": "a2" }
+  ],
+
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Vom Ergebnis zu Arbeitspaketen",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Der {{begriff:projektstrukturplan|Projektstrukturplan}} zerlegt das Projekt in Teilaufgaben und {{begriff:arbeitspaket|Arbeitspakete}}. Er sagt, was zu tun ist — noch nicht wann."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Teilaufgabe", "Arbeitspaket", "Ergebnis"],
+          "zeilen": [
+            { "zellen": ["Inhalte", "Pflichtinformationen bei Abteilungen einholen", "Rückmeldungen aller fünf Abteilungen liegen vor"] },
+            { "zellen": ["Inhalte", "Checkliste schreiben", "Entwurf mit acht Pflichtinformationen"] },
+            { "zellen": ["Gestaltung", "Lageplan zeichnen", "Lageplan von Studio, Lager und Verwaltung"] },
+            { "zellen": ["Gestaltung", "Layout im Corporate Design", "Freigegebene Druckvorlage"] },
+            { "zellen": ["Probelauf", "Test mit zwei neuen Beschäftigten", "Protokoll mit Verbesserungen"] }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Der Projektstrukturplan zerlegt das Projekt in **Arbeitspakete** mit Verantwortlichem, Aufwand und prüfbarem Ergebnis — ohne Reihenfolge und Termine.",
+          "karteikarte": "Was enthält ein Arbeitspaket, und was zeigt der Projektstrukturplan noch nicht?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Rollen und Zusammenarbeit",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Wer entscheidet, wer verantwortet, wer arbeitet mit? ==Jedes Arbeitspaket braucht genau eine verantwortliche Person.== Dazu kommen Regeln für Ablage, Besprechungen und Entscheidungen."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Vereinbarung", "Onboarding-Team"],
+          "zeilen": [
+            { "zellen": ["Ablage", "Gemeinsamer Projektordner, nur dienstliche Daten"] },
+            { "zellen": ["Takt", "Dienstags 15 Minuten Abstimmung"] },
+            { "zellen": ["Entscheidungen", "Im Aufgabenplan mit Datum festgehalten"] },
+            { "zellen": ["Eskalation", "Bei Terminrisiko sofort Info an Ayla Brandt"] }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Jedes Arbeitspaket hat **genau eine** verantwortliche Person; Ablage, Besprechungstakt und Entscheidungsdokumentation werden im Team vereinbart.",
+          "karteikarte": "Warum braucht jedes Arbeitspaket genau eine verantwortliche Person, und was sollte ein Team außerdem vereinbaren?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Termine und Abhängigkeiten",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Im {{begriff:balkenplan|Balkenplan}} werden die Pakete auf einer Zeitachse angeordnet. Die längste Kette ohne Puffer ist der {{begriff:kritischer-pfad|kritische Pfad}}."
+        },
+        {
+          "typ": "grafik",
+          "variante": "balkenplan",
+          "kopf": "Der Terminplan",
+          "titel": "Onboarding-Paket bis zum Probelauf",
+          "lead": "Vorgang anklicken und verzögern. Manche verschieben das Ende, andere nicht.",
+          "einheit": "Tage",
+          "einheit_eins": "Tag",
+          "plan": 9,
+          "vorgaenge": [
+            { "id": "inhalte", "name": "Inhalte bei Abteilungen einholen", "dauer": 3, "nach": [] },
+            { "id": "lageplan", "name": "Lageplan zeichnen", "dauer": 2, "nach": [] },
+            { "id": "checkliste", "name": "Checkliste schreiben", "dauer": 2, "nach": ["inhalte"] },
+            { "id": "layout", "name": "Layout im Corporate Design", "dauer": 1, "nach": ["checkliste", "lageplan"] },
+            { "id": "probelauf", "name": "Probelauf mit zwei neuen Beschäftigten", "dauer": 1, "nach": ["layout"] }
+          ],
+          "regel": "Der kritische Pfad läuft über Inhalte, Checkliste, Layout und Probelauf: sieben Tage. Der Lageplan hat drei Tage Puffer — eine Verzögerung dort kostet nichts, solange sie nicht größer wird."
+        },
+        {
+          "typ": "achtung",
+          "text": "Dauer ist nicht Aufwand. Vier Tage im Kalender können ein Personentag Arbeit sein (Warten auf Rückmeldungen) oder acht Personentage (zwei Personen ganztägig)."
+        },
+        {
+          "typ": "merke",
+          "text": "Abhängigkeiten bestimmen die Reihenfolge; die längste Kette ohne Puffer ist der **kritische Pfad** — und Dauer ist nicht dasselbe wie Aufwand.",
+          "karteikarte": "Was ist der kritische Pfad, und warum muss man Dauer und Aufwand unterscheiden?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Klassisch oder agil?",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Klassisch wird vorab vollständig geplant und Phase für Phase abgearbeitet. {{begriff:agil|Agil}} wird in kurzen Schleifen gearbeitet: zeigen, bewerten, verbessern."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["", "Klassisch", "Agil"],
+          "zeilen": [
+            { "zellen": ["Passt, wenn …", "Anforderungen stabil und bekannt sind", "Anforderungen sich erst während der Arbeit klären"] },
+            { "zellen": ["Planung", "Zu Beginn vollständig", "Grob vorab, fein je Schleife"] },
+            { "zellen": ["Rückmeldung", "Vor allem am Ende (Abnahme)", "Nach jeder kurzen Schleife"] },
+            { "zellen": ["Beispiel MAKEL", "Druck des fertigen Pakets zum festen Termin", "Digitale Willkommensseite mit Testnutzern"] }
+          ]
+        },
+        {
+          "typ": "check",
+          "frage": "Ayla Brandt weiß noch nicht genau, welche Informationen neue Beschäftigte zuerst brauchen. Welches Vorgehen passt für die Inhalte?",
+          "optionen": [
+            { "text": "Klassisch, weil ein fester Termin vorgegeben ist", "richtig": false, "echo": "Ein fester Termin spricht nicht gegen agiles Vorgehen. Entscheidend ist, dass die Anforderungen noch unklar sind." },
+            { "text": "Agil mit kurzen Testschleifen, weil sich die Anforderungen erst klären", "richtig": true, "echo": "Richtig. Eine erste Fassung zeigen, testen, verbessern — so wird sichtbar, was wirklich gebraucht wird." },
+            { "text": "Gar nicht planen und einfach anfangen", "richtig": false, "echo": "Agil heißt nicht ungeplant. Ziele, Rollen und Takte bleiben festgelegt." }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Klassisch** bei stabilen Anforderungen, **agil** bei Anforderungen, die sich erst klären — in beiden Fällen mit klaren Rollen und Zielen.",
+          "karteikarte": "Wann passt klassisches, wann agiles Projektvorgehen?"
+        }
+      ]
+    }
+  ],
+
+  "zusammenfassung": [
+    "Der Projektstrukturplan zerlegt in Teilaufgaben und Arbeitspakete.",
+    "Arbeitspakete haben eine verantwortliche Person, einen Aufwand und ein prüfbares Ergebnis.",
+    "Team-Vereinbarungen: Ablage, Takt, Entscheidungen, Eskalation.",
+    "Der Terminplan berücksichtigt Abhängigkeiten; der kritische Pfad bestimmt das Projektende.",
+    "Dauer (Kalenderzeit) und Aufwand (Personenzeit) sind verschieden.",
+    "Klassisch bei stabilen, agil bei sich klärenden Anforderungen."
+  ],
+
+  "selbsttest": [
+    {
+      "typ": "Rechnung",
+      "frage": "Inhaltserstellung dauert zwei Arbeitstage, Layout einen und der anschließende Probelauf einen. Alle Schritte laufen nacheinander, Wartezeiten gibt es nicht. Wie lange dauert das Projekt mindestens?",
+      "loesung": "Vier Arbeitstage (2 + 1 + 1). Das ist die Dauer. Wie viele Personentage Aufwand das sind, lässt sich ohne Angabe zur Besetzung nicht sagen."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Im Team sind zwei Personen ‚gemeinsam‘ für die Freigabe der Inhalte verantwortlich. Am Ende fehlt die Freigabe. Was änderst du in der Planung?",
+      "loesung": "Die Freigabe wird als eigenes Arbeitspaket mit genau einer verantwortlichen Person und einem Termin geplant und im gemeinsamen Aufgabenplan sichtbar gemacht."
+    },
+    {
+      "typ": "Anwendung",
+      "frage": "Begründe für den Druck des fertigen Onboarding-Pakets das passende Vorgehen.",
+      "loesung": "Klassisch: Inhalt, Menge, Gestaltung und Liefertermin stehen fest, die Anforderungen ändern sich nicht mehr. Der Ablauf (Druckdaten, Angebot, Bestellung, Lieferung) lässt sich vorab vollständig planen."
+    }
+  ],
+
+  "pruefungstipp": "Terminaufgaben folgen einem Schema: Abhängigkeiten notieren, Ketten bilden, die längste suchen. Achte darauf, ob nach Dauer oder nach Aufwand gefragt ist — und ob die Besetzung angegeben ist."
+}

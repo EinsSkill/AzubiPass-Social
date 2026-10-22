@@ -11,15 +11,16 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-e116338e68f84d44";
+var SPEICHER = "azubipass-5038049fb0259a22";
 var VORRAT = {
-  "./": "756affbdcd297473890e7f21a9660b3e37a3641440897aa44cb99ac7d8837366",
-  "app.html": "756affbdcd297473890e7f21a9660b3e37a3641440897aa44cb99ac7d8837366",
+  "./": "080253b7188920e4da04173ec57842fe54113ebac03f0cad21da02763aefb642",
+  "app.html": "080253b7188920e4da04173ec57842fe54113ebac03f0cad21da02763aefb642",
   "buchfuehrung.html": "c256842895cd38f2f3d8dd1c34ca4d49db6fb77a9832695a04bc2189baaa3a4b",
   "datenschutz.html": "ec8dfe8053b69ca6e70973f7c300714b763e285d29c06b2f9b6ee09d1cd86253",
   "ik2024-lf01.html": "e2f47b8f51df2a3aebf4dccf81d9092d018ab2758dfbc0e7990429452565571c",
+  "ik2024-lf02.html": "f2111b08bfb905effbb8e52fdf159ac0f27612728643bf2c596b231905ae0ade",
   "impressum.html": "5c7dddb5aae1ce5ee624d064dd310364d8c59549bb94bf84e0cc551cb8cc0548",
-  "index.html": "756affbdcd297473890e7f21a9660b3e37a3641440897aa44cb99ac7d8837366",
+  "index.html": "080253b7188920e4da04173ec57842fe54113ebac03f0cad21da02763aefb642",
   "landing.html": "ae2f8488c7c19fd7a482c984bdc3c72eabe8eb61c1329bb9b5adb72d357a1a93",
   "lf1.html": "30b6a18ec1ab94452fd2e5bd401e8729ed56e4b74485b6eebfcd140661fe5b8c",
   "lf10.html": "a999b17c96002dea72991588fccab05156185f064fcca62d4b96ceaa7dba2aec",
@@ -36,7 +37,7 @@ var VORRAT = {
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "49e2f946051d0f3e1dfb60f5f7ea5ee3ec1db923636b71f29f1a848c269cdfd5",
   "mittel/aufgaben.js": "3da2279f3048ff8233db6f053e2ac066cc5b31b8e17c21e6ed7f6c8c9b1022f3",
-  "mittel/aufgaben.json": "97b6a758276c500d660fe01a36991e12712b4e8b1ad56e01436b08f8c94d3323",
+  "mittel/aufgaben.json": "de3564a70b4943e1ea108f660fe7590df4195bba4704ae94f96d0cd8cb3d8b92",
   "mittel/azubipass-logo.png": "6fbfaa65da67de20b628b6d5415a8a46c95ceeaa5c6638492e2860e7d6e98973",
   "mittel/azubipass-symbol.png": "82cddbb695cbba0a09d3b933eb4b178e221463e015b962d8013cdff580d4a692",
   "mittel/azubipass.css": "7d7c88c815cb1ecfb359a93bf842cce1cb9b3f0ed63aab18168bd9ec9253e992",
@@ -56,7 +57,7 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "9d79577e1bb4558667a4cbff07ed0143d20e0aada129ca5601f73ad38b5b012d",
+  "mittel/inhalt.json": "bab22162e453b6f4b9c9b0de5ab98449d88056a51c4eb91c2103b88318d1ae27",
   "mittel/kern.js": "fe047655aad844758254282a3d4a0d3e8942970b8eafc0d606c6076aaef74bef",
   "mittel/landing.css": "c1d299ad11bd6a3fd4b8515d08334b45741b6616da271a4899acf51353596f45",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",
@@ -70,7 +71,7 @@ var VORRAT = {
   "mittel/source-serif-4-600-latin.woff2": "f2ea9c12d2fe9bd3a9589b02ad2c0909da88f30938c91adc838c4f4098f9f9e0",
   "mittel/source-serif-4-700-latin-ext.woff2": "155f6e701097cc269cf8d5d7ac86795f263f1afbeb47c14d1d747108c9335389",
   "mittel/source-serif-4-700-latin.woff2": "f2ea9c12d2fe9bd3a9589b02ad2c0909da88f30938c91adc838c4f4098f9f9e0",
-  "mittel/suche.json": "24548bdfe8f1f970e10ba9c75c62fe62b7f3e378ae9ff96e6d6d8a3ffca0d67c",
+  "mittel/suche.json": "c4d5effb6eee5fbc193f087683fab0c1b7427550377b62d18c9be62bd5df7b16",
   "mittel/supabase.js": "50db96e85947966782e7a3f4252a59dd8285f1ca00c1718a4079ed621e10bae1",
   "mittel/symbol-v1-180.png": "f14f43e7cfbea4027a315422543530209aabb5f6a8ef73a219956c06c34ab0de",
   "mittel/symbol-v1-192.png": "a7b93cd17439685ad3cdc1a547faf83f6c14c41f4240c4c835d219a05c30684c",
