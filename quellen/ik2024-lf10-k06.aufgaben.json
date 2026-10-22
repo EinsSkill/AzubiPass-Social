@@ -1,0 +1,130 @@
+{
+  "lernfeld": "ik2024-lf10",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf10-k06-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Sandra Koslowski stellt den Liquiditätsplan der MAKEL Studio GmbH für das erste Quartal auf." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Wie wird der Vorgang im Liquiditätsplan erfasst?",
+          "ziele": ["Einzahlung", "Auszahlung", "Nicht im Plan"],
+          "elemente": [
+            { "text": "Eine Agentur begleicht eine Rechnung", "loesung": "Einzahlung" },
+            { "text": "Gehälter für Januar", "loesung": "Auszahlung" },
+            { "text": "Abschreibung der Transferpresse", "loesung": "Nicht im Plan" },
+            { "text": "Kauf der Laserstation gegen Überweisung", "loesung": "Auszahlung" },
+            { "text": "Bestandserhöhung an fertigen Erzeugnissen", "loesung": "Nicht im Plan" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Im Liquiditätsplan stehen nur tatsächliche Zahlungen. Abschreibungen und Bestandsveränderungen sind Erfolgsgrößen ohne Zahlung.",
+      "quelle": "ik2024-lf10-k06, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf10-k06-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "taeglich": { "von": 1500, "bis": 3000, "schritt": 500 },
+        "rohlager": { "von": 8, "bis": 14, "schritt": 2 },
+        "fertigung": { "von": 3, "bis": 6, "schritt": 1 },
+        "fertiglager": { "von": 10, "bis": 20, "schritt": 5 },
+        "kundenziel": { "von": 30, "bis": 45, "schritt": 15 },
+        "lieferziel": { "von": 10, "bis": 30, "schritt": 10 }
+      },
+      "abgeleitet": {
+        "tage": "rohlager + fertigung + fertiglager + kundenziel - lieferziel",
+        "bedarf": "taeglich * tage"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Für eine neue Taschenkollektion der MAKEL Studio GmbH gelten: Lagerdauer der Rohstoffe {rohlager} Tage, Fertigungsdauer {fertigung} Tage, Lagerdauer der fertigen Taschen {fertiglager} Tage, Zahlungsziel der Kunden {kundenziel} Tage, Zahlungsziel der Lieferanten {lieferziel} Tage. Die durchschnittlichen täglichen Auszahlungen betragen {taeglich} €." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Kapitalbindungsdauer", "einheit": "Tage", "loesung": "tage", "toleranz": 0, "punkte": 2 },
+        { "block": "zahl", "label": "Kapitalbedarf für das Umlaufvermögen", "einheit": "€", "loesung": "bedarf", "toleranz": 0.01, "punkte": 2, "folgefehler_aus": ["tage"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Kapitalbindungsdauer = Rohstofflager + Fertigung + Fertiglager + Kundenziel − Lieferantenziel. Kapitalbedarf = tägliche Auszahlungen × Bindungsdauer.",
+      "quelle": "ik2024-lf10-k06, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf10-k06-03",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "ab": { "von": 5000, "bis": 10000, "schritt": 1000 },
+        "ein1": { "von": 20000, "bis": 25000, "schritt": 1000 },
+        "aus1": { "von": 40000, "bis": 45000, "schritt": 1000 },
+        "ein2": { "von": 55000, "bis": 65000, "schritt": 2000 },
+        "aus2": { "von": 25000, "bis": 30000, "schritt": 1000 }
+      },
+      "abgeleitet": {
+        "luecke": "aus1 - ab - ein1",
+        "feb": "ein2 - aus2 - luecke"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Liquiditätsplan der MAKEL Studio GmbH: Anfangsbestand am 1. Januar {ab} €. Januar: Einzahlungen {ein1} €, Auszahlungen {aus1} €. Februar: Einzahlungen {ein2} €, Auszahlungen {aus2} €. Ein Kredit wird zunächst nicht eingeplant." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Unterdeckung Ende Januar (als positiver Betrag)", "einheit": "€", "loesung": "luecke", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Endbestand Ende Februar", "einheit": "€", "loesung": "feb", "toleranz": 0.01, "punkte": 2, "folgefehler_aus": ["luecke"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Januar: Anfangsbestand + Einzahlungen − Auszahlungen ergibt einen negativen Endbestand (Unterdeckung). Er wird als negativer Anfangsbestand in den Februar übernommen.",
+      "quelle": "ik2024-lf10-k06, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf10-k06-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Der Liquiditätsplan der MAKEL Studio GmbH zeigt für März eine Unterdeckung von 12.000 €, ab April Überschüsse. Vorschläge: (A) Marlene Voss: Großkunden ab sofort 60 statt 30 Tage Zahlungsziel geben, um mehr Aufträge zu gewinnen. (B) Jonas Weidner: Rohlinge in Restfarben abverkaufen und den Sicherheitsbestand senken. (C) Tobias Renner: die Rechnung eines Stofflieferanten (2 % Skonto bis 10 Tage, netto 30 Tage) erst am 30. Tag bezahlen. (D) Luca Petrelli: die Laserstation trotzdem im März kaufen und das Konto überziehen." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die vier Vorschläge im Hinblick auf die Lücke im März und empfehlen Sie ein Maßnahmenbündel.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "(A) verschärft die Lücke: Einzahlungen kommen später, die Kapitalbindung steigt. (B) hilft: Abverkauf bringt Einzahlungen, ein niedrigerer Bestand bindet weniger Kapital — Lieferfähigkeit im Blick behalten. (C) hilft kurzfristig, verzichtet aber auf Skonto; als Überbrückung im März vertretbar, ab April bei Überschuss wieder Skonto nutzen. (D) ist riskant: Die Überziehung ist teuer und kann die Kreditlinie sprengen; der Kauf sollte in den April verschoben oder mit einem passenden Darlehen finanziert werden. Empfehlung: B und C kombinieren, Laserstation verschieben, Kontokorrentrahmen nur als Reserve; A ablehnen oder nur gegen Ausgleich (z. B. Preisaufschlag) zulassen.",
+        "raster": [
+          { "kriterium": "Wirkung von A als Verschärfung erkannt", "punkte": 1 },
+          { "kriterium": "B und C als geeignete Überbrückung mit Nachteil (Lieferfähigkeit bzw. Skontoverlust) beurteilt", "punkte": 1 },
+          { "kriterium": "D als riskant erkannt und Alternative genannt", "punkte": 1 },
+          { "kriterium": "Schlüssiges Maßnahmenbündel", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Bei einer Lücke zählen Zeitpunkt und Kosten jeder Maßnahme; Überziehung ist der teuerste Weg.",
+      "quelle": "ik2024-lf10-k06, Abschnitte a2 bis a4"
+    }
+  ]
+}

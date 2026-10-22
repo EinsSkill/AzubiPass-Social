@@ -1,0 +1,124 @@
+{
+  "lernfeld": "ik2024-lf10",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf10-k03-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 4,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Sandra Koslowski sortiert zum 31. Dezember Vorgänge der MAKEL Studio GmbH rund um den Jahreswechsel." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welcher Bilanzposten entsteht zum Stichtag?",
+          "ziele": ["Aktive Rechnungsabgrenzung", "Passive Rechnungsabgrenzung", "Sonstige Verbindlichkeit", "Sonstige Forderung", "Rückstellung"],
+          "elemente": [
+            { "text": "Im Dezember für das ganze nächste Jahr bezahlte Softwarelizenz", "loesung": "Aktive Rechnungsabgrenzung" },
+            { "text": "Im Dezember erhaltene Januarmiete eines Untermieters", "loesung": "Passive Rechnungsabgrenzung" },
+            { "text": "Dezemberzinsen für das Darlehen, Belastung am 15. Januar", "loesung": "Sonstige Verbindlichkeit" },
+            { "text": "Zinsen auf ein Festgeld für Dezember, Gutschrift im Januar", "loesung": "Sonstige Forderung" },
+            { "text": "Schadensersatzforderung eines Kunden, Höhe noch offen", "loesung": "Rückstellung" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Zahlung im alten, Erfolg im neuen Jahr: Rechnungsabgrenzung. Erfolg im alten, Zahlung im neuen Jahr: sonstige Forderung bzw. Verbindlichkeit. Ungewisse Höhe: Rückstellung.",
+      "quelle": "ik2024-lf10-k03, Abschnitte a1 bis a4"
+    },
+
+    {
+      "id": "ik2024-lf10-k03-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "betrag": { "von": 1200, "bis": 3600, "schritt": 1200 },
+        "monate_alt": { "von": 1, "bis": 6, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "monatlich": "betrag / 12",
+        "ara": "monatlich * (12 - monate_alt)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH hat im laufenden Jahr {betrag} € Versicherungsbeitrag für zwölf Monate im Voraus bezahlt und vollständig als Aufwand gebucht. Von den zwölf Monaten entfallen {monate_alt} auf das laufende Geschäftsjahr, der Rest auf das nächste." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Beitrag je Monat", "einheit": "€", "loesung": "monatlich", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Aktive Rechnungsabgrenzung zum 31.12.", "einheit": "€", "loesung": "ara", "toleranz": 0.01, "punkte": 3, "folgefehler_aus": ["monatlich"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Monatsbeitrag = Jahresbeitrag ÷ 12. Abzugrenzen ist der Anteil der Monate des nächsten Jahres: Monatsbeitrag × (12 − Monate im alten Jahr).",
+      "quelle": "ik2024-lf10-k03, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf10-k03-03",
+      "operator": "Buchen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "zins": { "von": 300, "bis": 900, "schritt": 150 }
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die Hausbank belastet die Darlehenszinsen der MAKEL Studio GmbH für das vierte Quartal ({zins} €) erst am 15. Januar. Buchen Sie zum 31. Dezember." }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            { "soll": "7500", "haben": null, "betrag": "zins" },
+            { "soll": null, "haben": "4830", "betrag": "zins" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4, "punkte_je_zeile": 2 },
+      "erklaerung": "Der Zinsaufwand gehört ins alte Jahr, gezahlt wird im neuen: Zinsaufwendungen an Sonstige Verbindlichkeiten. Im Januar wird nur die Verbindlichkeit über die Bank ausgeglichen.",
+      "quelle": "ik2024-lf10-k03, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf10-k03-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Luca Petrelli sieht in der vorläufigen Bilanz der MAKEL Studio GmbH 8.000 € sonstige Rückstellungen und schlägt vor: „Davon können wir doch die neue Transferpresse bezahlen — das Geld ist ja zurückgelegt.“ Außerdem möchte er eine Rückstellung für die geplante Messe im nächsten Jahr bilden, „damit der Gewinn nicht so hoch aussieht“." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie beide Aussagen und erläutern Sie, was Rückstellungen sind.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Rückstellungen sind keine zurückgelegten Geldbeträge, sondern Passivposten für ungewisse Verpflichtungen gegenüber Dritten (§ 249 HGB). Ihnen steht kein eigenes Bankkonto gegenüber; ob für die Presse genug Liquidität da ist, zeigt der Finanzplan, nicht die Rückstellung. Die geplante Messe ist keine Verpflichtung, die im alten Jahr verursacht wurde, sondern eine künftige Entscheidung von MAKEL — eine Rückstellung dafür ist unzulässig. Rückstellungen zu bilden, um den Gewinn zu drücken, widerspricht dem Ziel eines zutreffenden Bildes; Bank, Gesellschafter und Finanzamt würden falsch informiert.",
+        "raster": [
+          { "kriterium": "Rückstellung als Verpflichtung, nicht als Geldreserve erklärt", "punkte": 1 },
+          { "kriterium": "Liquidität über Finanzplan statt Rückstellung", "punkte": 1 },
+          { "kriterium": "Messe-Rückstellung als unzulässig begründet (keine Verpflichtung gegenüber Dritten)", "punkte": 1 },
+          { "kriterium": "Gewinnsteuerung als Täuschung der Adressaten erkannt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Rückstellungen setzen eine Verpflichtung voraus; sie sind Schulden mit ungewisser Höhe, kein Sparkonto.",
+      "quelle": "ik2024-lf10-k03, Abschnitt a4"
+    }
+  ]
+}

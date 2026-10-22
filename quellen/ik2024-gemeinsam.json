@@ -14,6 +14,7 @@
       "anlagevermoegen",
       "annahme",
       "antrag",
+      "arap",
       "arbeitspaket",
       "aufbauorganisation",
       "aufbewahrungsfrist",
@@ -23,6 +24,7 @@
       "ausbildungsordnung",
       "ausbildungsplan",
       "ausbildungsrahmenplan",
+      "aussenfinanzierung",
       "bab",
       "balkenplan",
       "bedarfsermittlung",
@@ -34,6 +36,9 @@
       "break-even",
       "buchungssatz",
       "buchwert",
+      "buergschaft",
+      "cashflow",
+      "darlehen",
       "datensparsamkeit",
       "deckungsbeitrag",
       "distributionspolitik",
@@ -48,6 +53,7 @@
       "erfolgskonto",
       "ergonomie",
       "ertrag",
+      "factoring",
       "feedback",
       "fixkosten",
       "fremdkapital",
@@ -56,27 +62,34 @@
       "geschaeftsprozess",
       "geschaeftsvorfall",
       "gestreckte-pruefung",
+      "grundschuld",
       "guv",
       "haben",
       "handlungsvollmacht",
       "hoechstbestand",
       "ich-botschaft",
+      "innenfinanzierung",
       "interkulturelle-kommunikation",
+      "jahresueberschuss",
       "jav",
       "just-in-time",
       "kaeufermarkt",
       "kaufvertrag",
       "kommunikationspolitik",
+      "kontokorrentkredit",
       "kostenartenrechnung",
       "kostenstellenrechnung",
       "kostentraegerrechnung",
       "kreditwuerdigkeit",
       "kritischer-pfad",
       "kundenbindung",
+      "leasing",
       "lieferantenbewertung",
       "lieferbedingungen",
       "lieferschein",
       "lieferungsverzug",
+      "liquiditaet",
+      "liquiditaetsplan",
       "mahnbescheid",
       "mahnung",
       "marketing-mix",
@@ -90,7 +103,9 @@
       "oekonomisches-prinzip",
       "optimale-bestellmenge",
       "organigramm",
+      "periodenabgrenzung",
       "personenbezogene-daten",
+      "prap",
       "preispolitik",
       "primaerforschung",
       "probezeit",
@@ -106,11 +121,13 @@
       "rechnung",
       "reinvermoegen",
       "rentabilitaet",
+      "rueckstellung",
       "ruegepflicht",
       "sachmangel",
       "saldo",
       "schnittstelle",
       "sekundaerforschung",
+      "sicherungsuebereignung",
       "skonto",
       "soll",
       "t-konto",
@@ -150,11 +167,16 @@
       "bgb-437",
       "bgb-439",
       "bgb-449",
+      "bgb-765",
+      "bgb-766",
+      "bgb-771",
       "dsgvo-5",
       "hgb-238",
       "hgb-240",
       "hgb-242",
+      "hgb-249",
       "hgb-257",
+      "hgb-350",
       "hgb-377",
       "hgb-54",
       "ustg-14",
@@ -195,6 +217,10 @@
       "titel": "Bezugskosten",
       "text": "Kosten, die beim Beschaffen zusätzlich anfallen und dem eingekauften Gut einzeln zugerechnet werden können: Fracht, Verpackung, Zoll, Transportversicherung. Sie erhöhen die Anschaffungskosten von Material, Handelswaren oder Anlagegütern."
     },
+    "eigenfinanzierung": {
+      "titel": "Eigenfinanzierung",
+      "text": "Finanzierung mit Eigenkapital: Der Geldgeber ist oder wird Eigentümer. Von außen durch Einlagen und neue Gesellschafter (Beteiligungsfinanzierung), von innen durch einbehaltene Gewinne (Selbstfinanzierung). Kein fester Zins, keine Rückzahlungspflicht."
+    },
     "eigentum": {
       "titel": "Eigentum",
       "text": "Die rechtliche Herrschaft über eine Sache: Der Eigentümer darf mit ihr nach Belieben verfahren, soweit Gesetze nicht entgegenstehen. Bei beweglichen Sachen geht Eigentum durch Einigung und Übergabe über."
@@ -222,6 +248,18 @@
     "frachtfuehrer": {
       "titel": "Frachtführer",
       "text": "Wer sich vertraglich verpflichtet, Güter zu befördern und beim Empfänger abzuliefern, und die Beförderung selbst durchführt, etwa ein Transportunternehmen mit eigenen Lkw (§ 407 HGB)."
+    },
+    "fremdfinanzierung": {
+      "titel": "Fremdfinanzierung",
+      "text": "Finanzierung mit Fremdkapital: Der Geldgeber wird Gläubiger mit Anspruch auf Zins und Rückzahlung. Von außen durch Kredite, von innen etwa durch Rückstellungen, deren Mittel bis zur Inanspruchnahme im Betrieb arbeiten."
+    },
+    "gesamtkostenverfahren": {
+      "titel": "Gesamtkostenverfahren",
+      "text": "Gliederung der GuV nach Aufwandsarten (Material, Personal, Abschreibungen usw.). Weil alle Aufwendungen der Periode erfasst werden, gleichen Bestandsveränderungen an fertigen und unfertigen Erzeugnissen den Unterschied zwischen Produktion und Absatz aus."
+    },
+    "jahresabschluss": {
+      "titel": "Jahresabschluss",
+      "text": "Der Abschluss eines Geschäftsjahres: bei allen Kaufleuten Bilanz und Gewinn- und Verlustrechnung, bei Kapitalgesellschaften zusätzlich der Anhang. Mittelgroße und große Kapitalgesellschaften stellen außerdem einen Lagebericht auf."
     },
     "kalkulatorische-kosten": {
       "titel": "Kalkulatorische Kosten",
@@ -330,6 +368,11 @@
       "text": "Das Stammkapital der Gesellschaft muss mindestens 25.000 Euro betragen. Jeder Gesellschafter übernimmt bei der Errichtung einen oder mehrere Geschäftsanteile. (Sinngemäß)",
       "kurz": "Mindeststammkapital 25.000 Euro."
     },
+    "hgb-252": {
+      "titel": "§ 252 HGB",
+      "text": "Allgemeine Bewertungsgrundsätze, unter anderem: Die Eröffnungsbilanz muss mit der Schlussbilanz des Vorjahres übereinstimmen; es ist von der Fortführung des Unternehmens auszugehen; Vermögensgegenstände und Schulden sind einzeln zu bewerten; es ist vorsichtig zu bewerten — Gewinne nur, wenn sie realisiert sind, vorhersehbare Risiken und Verluste dagegen schon; Aufwendungen und Erträge sind dem Geschäftsjahr zuzurechnen, zu dem sie gehören, unabhängig vom Zahlungszeitpunkt. (Sinngemäß, Auszug aus Abs. 1)",
+      "kurz": "Bewertungsgrundsätze: Fortführung, Einzelbewertung, Vorsicht, Periodenabgrenzung."
+    },
     "hgb-253": {
       "titel": "§ 253 HGB",
       "text": "Vermögensgegenstände sind höchstens mit den Anschaffungs- oder Herstellungskosten anzusetzen, vermindert um Abschreibungen. Bei Vermögensgegenständen des Anlagevermögens, deren Nutzung zeitlich begrenzt ist, sind die Anschaffungs- oder Herstellungskosten um planmäßige Abschreibungen zu vermindern; der Plan muss die Kosten auf die Geschäftsjahre verteilen, in denen der Vermögensgegenstand voraussichtlich genutzt werden kann. (Sinngemäß, Auszug aus Abs. 1 und 3)",
@@ -339,6 +382,21 @@
       "titel": "§ 255 HGB",
       "text": "Anschaffungskosten sind die Aufwendungen, die geleistet werden, um einen Vermögensgegenstand zu erwerben und ihn in einen betriebsbereiten Zustand zu versetzen, soweit sie ihm einzeln zugeordnet werden können. Dazu gehören auch die Nebenkosten sowie die nachträglichen Anschaffungskosten. Anschaffungspreisminderungen, die dem Vermögensgegenstand einzeln zugeordnet werden können, sind abzusetzen. (Sinngemäß, Auszug aus Abs. 1)",
       "kurz": "Anschaffungskosten = Preis + Nebenkosten bis zur Betriebsbereitschaft − Preisminderungen."
+    },
+    "hgb-264": {
+      "titel": "§ 264 HGB",
+      "text": "Die gesetzlichen Vertreter einer Kapitalgesellschaft haben den Jahresabschluss um einen Anhang zu erweitern, der mit Bilanz und Gewinn- und Verlustrechnung eine Einheit bildet, sowie einen Lagebericht aufzustellen. Kleine Kapitalgesellschaften brauchen keinen Lagebericht aufzustellen. Der Abschluss hat ein den tatsächlichen Verhältnissen entsprechendes Bild der Vermögens-, Finanz- und Ertragslage zu vermitteln. (Sinngemäß, Auszug aus Abs. 1 und 2)",
+      "kurz": "Kapitalgesellschaft: Bilanz, GuV, Anhang; Lagebericht außer bei kleinen."
+    },
+    "hgb-266": {
+      "titel": "§ 266 HGB",
+      "text": "Die Bilanz einer Kapitalgesellschaft ist in Kontoform aufzustellen. Aktivseite: A. Anlagevermögen, B. Umlaufvermögen, C. Rechnungsabgrenzungsposten (ggf. weitere Posten). Passivseite: A. Eigenkapital, B. Rückstellungen, C. Verbindlichkeiten, D. Rechnungsabgrenzungsposten (ggf. weitere Posten). Kleine Kapitalgesellschaften dürfen eine verkürzte Bilanz aufstellen. (Sinngemäß, Auszug)",
+      "kurz": "Bilanzgliederung für Kapitalgesellschaften."
+    },
+    "hgb-275": {
+      "titel": "§ 275 HGB",
+      "text": "Die Gewinn- und Verlustrechnung ist in Staffelform nach dem Gesamtkostenverfahren oder dem Umsatzkostenverfahren aufzustellen. Das Gesamtkostenverfahren beginnt mit den Umsatzerlösen, berücksichtigt Bestandsveränderungen und andere aktivierte Eigenleistungen und zieht die Aufwendungen nach Arten ab. (Sinngemäß, Auszug)",
+      "kurz": "GuV in Staffelform; Gesamt- oder Umsatzkostenverfahren."
     },
     "hgb-407": {
       "titel": "§ 407 HGB",

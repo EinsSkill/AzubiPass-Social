@@ -1,0 +1,100 @@
+{
+  "lernfeld": "ik2024-lf10",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf10-k05-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Tobias Renner möchte wissen, welche Kennzahl der MAKEL Studio GmbH welche Frage beantwortet." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Kennzahl passt zur Frage?",
+          "ziele": ["Eigenkapitalquote", "Anlagendeckung II", "Liquidität 2. Grades", "Umsatzrentabilität", "Cashflow"],
+          "elemente": [
+            { "text": "Wie unabhängig sind wir von Gläubigern?", "loesung": "Eigenkapitalquote" },
+            { "text": "Ist die Maschine fristengerecht finanziert?", "loesung": "Anlagendeckung II" },
+            { "text": "Decken liquide Mittel und Forderungen die kurzfristigen Schulden?", "loesung": "Liquidität 2. Grades" },
+            { "text": "Wie viel Gewinn bleibt von jedem Euro Umsatz?", "loesung": "Umsatzrentabilität" },
+            { "text": "Wie viel Geld erwirtschaften wir selbst für Tilgung und Investitionen?", "loesung": "Cashflow" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Jede Kennzahl beantwortet eine bestimmte Frage: Unabhängigkeit, Fristenkongruenz, kurzfristige Deckung, Gewinnspanne, Innenfinanzierungskraft.",
+      "quelle": "ik2024-lf10-k05, Abschnitte a2 bis a4"
+    },
+
+    {
+      "id": "ik2024-lf10-k05-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "ek": { "von": 100000, "bis": 150000, "schritt": 10000 },
+        "lfk": { "von": 150000, "bis": 200000, "schritt": 10000 },
+        "kfk": { "von": 80000, "bis": 120000, "schritt": 10000 },
+        "liquide": { "von": 20000, "bis": 40000, "schritt": 5000 },
+        "ford": { "von": 70000, "bis": 110000, "schritt": 10000 }
+      },
+      "abgeleitet": {
+        "gk": "ek + lfk + kfk",
+        "quote": "runde(ek / gk * 100, 1)",
+        "l2": "runde((liquide + ford) / kfk * 100, 1)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Aufbereitete Bilanz der MAKEL Studio GmbH zum 31.12.: Eigenkapital {ek} €, langfristiges Fremdkapital {lfk} €, kurzfristiges Fremdkapital {kfk} €. Auf der Aktivseite stehen unter anderem liquide Mittel von {liquide} € und Forderungen von {ford} €. Runden Sie Prozentwerte auf eine Nachkommastelle." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Gesamtkapital", "einheit": "€", "loesung": "gk", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Eigenkapitalquote", "einheit": "%", "loesung": "quote", "toleranz": 0.1, "punkte": 2, "folgefehler_aus": ["gk"] },
+        { "block": "zahl", "label": "Liquidität 2. Grades", "einheit": "%", "loesung": "l2", "toleranz": 0.1, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 5 },
+      "erklaerung": "Gesamtkapital = Eigenkapital + Fremdkapital. Eigenkapitalquote = EK ÷ GK × 100. Liquidität 2. Grades = (liquide Mittel + Forderungen) ÷ kurzfristiges FK × 100.",
+      "quelle": "ik2024-lf10-k05, Abschnitte a2 und a3"
+    },
+
+    {
+      "id": "ik2024-lf10-k05-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Kennzahlen der MAKEL Studio GmbH (Vorjahr → Berichtsjahr): Eigenkapitalquote 24 % → 30 %; Anlagendeckung II 140 % → 167 %; Liquidität 2. Grades 95 % → 130 %; Umsatzrentabilität 6,9 % → 3,7 %. Die Bank fragt, ob MAKEL ein weiteres Darlehen über 50.000 € für eine Laserstation tragen kann." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die Entwicklung und formulieren Sie eine begründete Einschätzung für das Bankgespräch.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Stärken: Die Eigenkapitalquote steigt deutlich, die Anlagendeckung II liegt klar über 100 % (goldene Bilanzregel erfüllt), die Liquidität 2. Grades hat sich von unter auf über 100 % verbessert. Schwäche: Die Umsatzrentabilität hat sich fast halbiert; aus dem laufenden Geschäft bleibt weniger Gewinn je Euro Umsatz. Für ein weiteres Darlehen spricht die solide Struktur; dagegen spricht, dass Zins und Tilgung aus dem Ergebnis bzw. Cashflow bezahlt werden müssen. Einschätzung: Ein Darlehen ist vertretbar, wenn MAKEL mit einem Finanzplan zeigt, dass die Laserstation zusätzliche Deckungsbeiträge bringt und der Kapitaldienst aus dem Cashflow gedeckt ist; zugleich sollte die Ursache der gesunkenen Rentabilität (Materialaufwand) angegangen werden.",
+        "raster": [
+          { "kriterium": "Positive Entwicklung von Struktur und Liquidität richtig gedeutet", "punkte": 1 },
+          { "kriterium": "Gesunkene Rentabilität als Schwachpunkt erkannt", "punkte": 1 },
+          { "kriterium": "Kapitaldienst aus Cashflow bzw. Ergebnis als Kriterium genannt", "punkte": 1 },
+          { "kriterium": "Begründete Einschätzung mit Bedingung (Finanzplan, Wirkung der Investition)", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Gute Struktur und schwache Rentabilität schließen sich nicht aus; eine Kreditentscheidung braucht beides und einen Blick nach vorn.",
+      "quelle": "ik2024-lf10-k05, Abschnitte a1 bis a4"
+    }
+  ]
+}
