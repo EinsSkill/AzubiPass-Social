@@ -1,0 +1,245 @@
+{
+  "id": "k03",
+  "lernfeld": "ik2024-lf03",
+  "nummer": 3,
+  "titel": "Verkaufspreise und Angebote",
+  "untertitel": "Von vorgegebenen Selbstkosten zum Listenverkaufspreis — und wie daraus ein vollständiges Angebot wird.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Selbstkosten sind alle Kosten, die für ein Produkt bis zum Verkauf anfallen.",
+          "Wie sie genau entstehen, ist Thema von Lernfeld 8."
+        ],
+        "erklaerung": "In diesem Kapitel sind die Selbstkosten vorgegeben. Sie umfassen Material, Fertigung sowie Verwaltung und Vertrieb — für einen bedruckten Hoodie also Rohling, Druck und den anteiligen Aufwand für Büro und Versand. Der Verkaufspreis muss die Selbstkosten decken und einen Gewinn enthalten, sonst verliert MAKEL an jedem verkauften Stück Geld. Die vollständige Herleitung der Selbstkosten über Einzel- und Gemeinkosten folgt in Lernfeld 8.",
+        "beispiele": [
+          "Vorgegebene Selbstkosten je bedrucktem Hoodie: 40,00 €.",
+          "Im Fallpaket P1 der Kostenrechnung liegen die Selbstkosten bei 30,00 € je Stück — die Zahl hängt immer vom konkreten Auftrag ab."
+        ],
+        "fallbeispiel": "Tobias Renner gibt für den Agenturauftrag Selbstkosten von 40,00 € je Hoodie vor. Marlene soll daraus den Angebotspreis kalkulieren. Sie übernimmt die 40,00 € als Ausgangswert und fragt nicht nach, wie sie entstanden sind — das ist für die Verkaufskalkulation hier nicht ihre Aufgabe.",
+        "typische_fehler": "Der Verkaufspreis wird aus dem Einkaufspreis des Rohlings abgeleitet und vergisst dabei Druck, Verwaltung und Vertrieb.",
+        "verstaendnisfragen": [
+          "Was enthalten die Selbstkosten? Alle Kosten bis zum Verkauf: Material, Fertigung, Verwaltung und Vertrieb.",
+          "Warum muss der Verkaufspreis über den Selbstkosten liegen? Damit ein Gewinn entsteht und die Kosten gedeckt sind."
+        ],
+        "pruefungsbezug": "Lies genau, welcher Ausgangswert gegeben ist: Selbstkosten oder Einkaufspreis? Danach richtet sich, wo die Kalkulation beginnt.",
+        "merksatz": "Die Verkaufskalkulation beginnt hier bei vorgegebenen Selbstkosten; der Preis muss sie decken und einen Gewinn enthalten."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Gewinn wird auf die Selbstkosten aufgeschlagen.",
+          "Skonto und Rabatt zieht der Kunde später vom Preis ab."
+        ],
+        "erklaerung": "Selbstkosten plus Gewinnzuschlag (vom Hundert auf die Selbstkosten) ergeben den Barverkaufspreis. Weil der Kunde später Skonto abzieht, muss der Preis vorher so erhöht werden, dass nach Abzug noch der Barverkaufspreis bleibt. Deshalb wird Skonto ‚im Hundert‘ eingerechnet: Barverkaufspreis ÷ (1 − Skontosatz) = Zielverkaufspreis. Ebenso beim Kundenrabatt: Zielverkaufspreis ÷ (1 − Rabattsatz) = Listenverkaufspreis. Gerundet wird erst am Ende.",
+        "beispiele": [
+          "Selbstkosten 40,00 € + 20 % Gewinn = 48,00 € Barverkaufspreis.",
+          "48,00 € ÷ 0,98 = 48,98 € Zielverkaufspreis; 48,9796 € ÷ 0,90 = 54,42 € Listenverkaufspreis (netto)."
+        ],
+        "fallbeispiel": "Selbstkosten 40,00 €, Gewinnzuschlag 20 %, Kundenskonto 2 %, Kundenrabatt 10 %. Rechnung: 40,00 × 1,20 = 48,00 € (Barverkaufspreis). 48,00 ÷ 0,98 = 48,9796 € (Zielverkaufspreis). 48,9796 ÷ 0,90 = 54,4218 € ≈ 54,42 € (Listenverkaufspreis netto). Probe: 54,42 − 10 % = 48,98; 48,98 − 2 % = 48,00. Würde man stattdessen 12 % auf 48,00 € aufschlagen, käme 53,76 € heraus — zu wenig.",
+        "typische_fehler": "Skonto und Rabatt werden als Aufschlag vom Hundert gerechnet oder einfach addiert. Weil der Kunde sie vom höheren Preis abzieht, reicht ein Aufschlag in gleicher Höhe nicht.",
+        "verstaendnisfragen": [
+          "Warum wird der Kundenskonto ‚im Hundert‘ eingerechnet? Weil der Kunde ihn vom Zielverkaufspreis abzieht — dieser ist also die 100 Prozent.",
+          "Ist ein Gewinnzuschlag von 20 % auf die Selbstkosten eine Gewinnmarge von 20 % des Verkaufspreises? Nein. 8 € Gewinn sind 20 % von 40 €, aber nur rund 16,7 % von 48 €."
+        ],
+        "pruefungsbezug": "Kalkulationsschema sauber mit Bezugsgrößen aufschreiben; Rundung erst am Ende; eine Probe rückwärts sichert Punkte.",
+        "merksatz": "Gewinn wird vom Hundert auf die Selbstkosten aufgeschlagen, Kundenskonto und Kundenrabatt werden im Hundert eingerechnet — durch (1 − Satz) teilen, nicht addieren."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Ein Angebot ist rechtlich ein Antrag.",
+          "Es muss so bestimmt sein, dass ein einfaches Ja genügt."
+        ],
+        "erklaerung": "Ein vollständiges Angebot nennt: Artikel und Ausführung (Qualität, Farbe, Druck), Menge und Größenverteilung, Preis je Stück und Gesamtpreis (netto, Umsatzsteuer, brutto), Liefertermin, Liefer- und Zahlungsbedingungen, gegebenenfalls Bindefrist und Verweis auf AGB. Mengenrabatte werden ausgewiesen, damit der Kunde den Preis nachvollziehen kann. Umsatzsteuer wird im B2B-Angebot üblicherweise netto plus Steuer angegeben.",
+        "beispiele": [
+          "100 Hoodies × 54,42 € = 5.442,00 € netto; 19 % Umsatzsteuer 1.033,98 €; brutto 6.475,98 €.",
+          "‚An dieses Angebot halten wir uns bis zum 31. März gebunden.‘"
+        ],
+        "fallbeispiel": "Marlene erstellt das Angebot an die Agentur: 100 Hoodies, Farbe schwarz, Größen laut Liste, Logo-Druck Brust einfarbig; Listenpreis 54,42 € netto je Stück; abzüglich 10 % Rabatt; zahlbar innerhalb von 8 Tagen mit 2 % Skonto oder 30 Tage netto; Lieferung frei Haus bis 15. Mai; Angebot gültig bis 31. März.",
+        "typische_fehler": "Das Angebot nennt nur einen Stückpreis ohne Angabe, ob netto oder brutto, und ohne Termin. Dann ist unklar, wozu der Kunde Ja sagt.",
+        "verstaendnisfragen": [
+          "Warum wird im B2B-Angebot netto plus Umsatzsteuer angegeben? Weil Unternehmen die Vorsteuer in der Regel abziehen können und mit Nettopreisen kalkulieren.",
+          "Was bewirkt eine Bindefrist? Bis zu ihrem Ablauf kann der Kunde annehmen; danach ist MAKEL nicht mehr gebunden."
+        ],
+        "pruefungsbezug": "Bei Angebotsaufgaben die Pflichtbestandteile vollständig abhaken und Netto, Steuer und Brutto sauber trennen.",
+        "merksatz": "Ein vollständiges Angebot nennt Ware, Menge, Preis netto mit Umsatzsteuer, Termin sowie Liefer- und Zahlungsbedingungen — so bestimmt, dass ein Ja genügt."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Kunden vergleichen nicht nur Preise.",
+          "Bedingungen und Service können ein Angebot attraktiver machen."
+        ],
+        "erklaerung": "Neben dem Preis entscheiden Liefertermin, Lieferbedingungen, Zahlungsbedingungen und Serviceleistungen. Serviceangebote bei MAKEL können sein: Musterteil vor der Serie, Einzelverpackung mit Namensetikett, Nachlieferung einzelner Größen, Lagerung bis zum Abruf. Jede Zusatzleistung kostet etwas und muss entweder im Preis kalkuliert oder gesondert berechnet werden. Ein großzügiges Zahlungsziel ist ebenfalls eine Leistung, weil MAKEL den Kunden länger finanziert.",
+        "beispiele": [
+          "Musterteil vor Serienstart gegen 25 € Aufpreis, der bei Bestellung verrechnet wird.",
+          "Nachlieferung einzelner Größen innerhalb von vier Wochen zum gleichen Stückpreis."
+        ],
+        "fallbeispiel": "Die Agentur möchte vor der Bestellung ein Musterteil sehen und fragt nach 60 Tagen Zahlungsziel. Marlene bietet das Muster gegen Aufpreis an, der bei Auftrag verrechnet wird. 60 Tage Ziel lehnt sie ab, weil es für einen Neukunden ohne Bonitätsauskunft nicht vorgesehen ist, und bietet die Standardbedingung mit Skonto an.",
+        "typische_fehler": "Serviceleistungen werden kostenlos zugesagt, ohne sie zu kalkulieren — der Gewinn schrumpft unbemerkt.",
+        "verstaendnisfragen": [
+          "Warum ist ein langes Zahlungsziel eine Leistung an den Kunden? Weil MAKEL den Kaufpreis länger vorfinanziert.",
+          "Wie werden Serviceleistungen berücksichtigt? Im Preis einkalkuliert oder gesondert berechnet."
+        ],
+        "pruefungsbezug": "Wenn nach kundenorientierten Bedingungen gefragt ist, Nutzen für den Kunden und Folgen für MAKEL (Kosten, Risiko) gegenüberstellen.",
+        "merksatz": "Bedingungen und Service gehören zum Angebot; jede Zusatzleistung und jedes längere Zahlungsziel kostet etwas und wird kalkuliert oder berechnet."
+      }
+    ]
+  },
+
+  "lernziele": [
+    { "id": "lz1", "text": "Vorgegebene Selbstkosten für eine Verkaufskalkulation verwenden", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Zuschläge und Abzüge mit korrekten Bezugsgrößen berechnen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Ein Angebot mit passenden Bedingungen nachvollziehbar aufbauen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Service- und Zahlungsbedingungen kundenorientiert und kostenbewusst festlegen", "abschnitt": "a4" }
+  ],
+
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Was Selbstkosten hier bedeuten",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die Selbstkosten umfassen Material, Fertigung, Verwaltung und Vertrieb. In diesem Kapitel sind sie vorgegeben; wie sie entstehen, zeigt Lernfeld 8. ==Der Verkaufspreis muss die Selbstkosten decken und einen Gewinn enthalten.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Bestandteil der Selbstkosten", "Beim bedruckten Hoodie"],
+          "zeilen": [
+            { "zellen": ["Material", "Rohling, Druckfarbe, Verpackung"] },
+            { "zellen": ["Fertigung", "Maschinenzeit und Arbeitszeit in der Veredelung"] },
+            { "zellen": ["Verwaltung und Vertrieb", "Anteil an Büro, Angebot, Versandabwicklung"] }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Die Verkaufskalkulation beginnt hier bei **vorgegebenen Selbstkosten**; der Preis muss sie decken und einen Gewinn enthalten.",
+          "karteikarte": "Womit beginnt die Verkaufskalkulation, wenn Selbstkosten vorgegeben sind, und was muss der Preis leisten?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Gewinn, Skonto und Rabatt",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Gewinn wird vom Hundert aufgeschlagen, {{begriff:skonto|Kundenskonto}} und {{begriff:rabatt|Kundenrabatt}} im Hundert eingerechnet — weil der Kunde sie später vom höheren Preis abzieht."
+        },
+        {
+          "typ": "grafik",
+          "variante": "kalkulationsleiter",
+          "kopf": "Die Leiter",
+          "titel": "Von den Selbstkosten zum Listenverkaufspreis",
+          "lead": "Ändere die Prozentsätze und sieh zu, wie sich der Preis verschiebt. Unten lässt sich auf Rückwärtsrechnung umschalten.",
+          "richtungen": ["vorwaerts", "rueckwaerts"],
+          "start": { "id": "sk", "name": "Selbstkosten", "wert": 40 },
+          "stufen": [
+            { "id": "gewinn", "name": "Gewinnzuschlag", "art": "aufschlag", "satz": 20, "ergebnis": "Barverkaufspreis", "marke": true },
+            { "id": "kd-skonto", "name": "Kundenskonto", "art": "im-hundert", "satz": 2, "ergebnis": "Zielverkaufspreis" },
+            { "id": "kd-rabatt", "name": "Kundenrabatt", "art": "im-hundert", "satz": 10, "ergebnis": "Listenverkaufspreis (netto)" }
+          ],
+          "regel": "Kundenskonto und Kundenrabatt werden durch (1 − Satz) geteilt: 48,00 ÷ 0,98 ÷ 0,90 = 54,42 €. Ein einfacher Aufschlag von 12 % ergäbe nur 53,76 € — nach Abzug von Rabatt und Skonto blieben dann keine 48 € übrig.",
+          "einheit": "€"
+        },
+        {
+          "typ": "merke",
+          "text": "Gewinn wird **vom Hundert** auf die Selbstkosten aufgeschlagen, Kundenskonto und Kundenrabatt werden **im Hundert** eingerechnet — durch (1 − Satz) teilen, nicht addieren.",
+          "karteikarte": "Wie werden Gewinnzuschlag, Kundenskonto und Kundenrabatt in der Verkaufskalkulation verrechnet?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Mengen, Preise und Angebotsunterlagen",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Ein Angebot ist rechtlich ein Antrag und muss so bestimmt sein, dass ein einfaches Ja genügt."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Position", "Betrag"],
+          "zeilen": [
+            { "zellen": ["100 Hoodies × 54,42 € (Listenpreis netto)", "5.442,00 €"], "mono": [1] },
+            { "zellen": ["− 10 % Kundenrabatt", "544,20 €"], "mono": [1] },
+            { "zellen": ["Zielverkaufspreis netto", "4.897,80 €"], "mono": [1] },
+            { "zellen": ["+ 19 % Umsatzsteuer", "930,58 €"], "mono": [1] },
+            { "zellen": ["Rechnungsbetrag brutto", "5.828,38 €"], "mono": [1],
+              "detail": "Zahlt die Agentur innerhalb der Skontofrist, darf sie 2 % abziehen. Netto bleiben dann 4.799,84 € — das sind die kalkulierten 48,00 € je Stück, bis auf eine Rundungsdifferenz von 16 Cent." }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Ein vollständiges Angebot nennt Ware, Menge, Preis netto mit Umsatzsteuer, Termin sowie Liefer- und Zahlungsbedingungen — so bestimmt, dass ein Ja genügt.",
+          "karteikarte": "Welche Angaben gehören in ein vollständiges Angebot an einen Geschäftskunden?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Liefer-, Zahlungs- und Servicebedingungen",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Kunden vergleichen mehr als den Preis. Service und Bedingungen machen ein Angebot attraktiv — kosten aber auch etwas."
+        },
+        {
+          "typ": "check",
+          "frage": "Ein Neukunde ohne Bonitätsauskunft wünscht 60 Tage Zahlungsziel und ein kostenloses Musterteil. Welche Antwort ist kaufmännisch sinnvoll?",
+          "optionen": [
+            { "text": "Beides zusagen, um den Auftrag sicher zu bekommen", "richtig": false, "echo": "Beides kostet MAKEL etwas: Das Muster Material und Zeit, das Ziel zwei Monate Vorfinanzierung bei unbekannter Bonität." },
+            { "text": "Muster gegen Aufpreis, der bei Auftrag verrechnet wird; Standardzahlungsbedingung mit Skonto statt 60 Tagen", "richtig": true, "echo": "Richtig. Der Kunde bekommt, was ihm wichtig ist, und MAKEL bleibt bei kalkulierten Kosten und begrenztem Risiko." },
+            { "text": "Beides ablehnen und keine Alternative anbieten", "richtig": false, "echo": "Das ist sicher, aber nicht kundenorientiert. Eine Alternative hält das Geschäft offen." }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Bedingungen und Service gehören zum Angebot; jede Zusatzleistung und jedes längere Zahlungsziel **kostet etwas** und wird kalkuliert oder berechnet.",
+          "karteikarte": "Warum müssen Serviceleistungen und lange Zahlungsziele in einem Angebot kalkuliert werden?"
+        }
+      ]
+    }
+  ],
+
+  "zusammenfassung": [
+    "Selbstkosten + Gewinnzuschlag (vom Hundert) = Barverkaufspreis.",
+    "Barverkaufspreis ÷ (1 − Skontosatz) = Zielverkaufspreis.",
+    "Zielverkaufspreis ÷ (1 − Rabattsatz) = Listenverkaufspreis (netto).",
+    "Rundung erst am Ende; Probe rückwärts.",
+    "Gewinnzuschlag auf Selbstkosten ist nicht dasselbe wie Marge vom Verkaufspreis.",
+    "Angebot: Ware, Menge, Preis netto + Umsatzsteuer, Termin, Liefer- und Zahlungsbedingungen.",
+    "Service und Zahlungsziele kosten Geld und werden kalkuliert."
+  ],
+
+  "selbsttest": [
+    {
+      "typ": "Rechnung",
+      "frage": "Selbstkosten je Stück 40 €; Gewinnzuschlag 20 % auf die Selbstkosten; keine Rabatte, kein Skonto. Wie hoch ist der Nettoverkaufspreis?",
+      "loesung": "40 × 1,20 = 48,00 €. Das ist ein Zuschlag von 20 % auf die Kosten; als Anteil am Verkaufspreis sind 8 € nur rund 16,7 %."
+    },
+    {
+      "typ": "Rechnung",
+      "frage": "Barverkaufspreis 48 € netto; einkalkuliert werden 2 % Kundenskonto und 10 % Kundenrabatt. Berechne den Listenverkaufspreis.",
+      "loesung": "Zielverkaufspreis 48 ÷ 0,98 = 48,9796 €; Listenverkaufspreis 48,9796 ÷ 0,90 = 54,4218 € ≈ 54,42 € netto. Gerundet wird erst am Ende."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Ein Kollege rechnet: 48 € + 12 % = 53,76 € Listenpreis. Was ist falsch?",
+      "loesung": "Er addiert Skonto und Rabatt und schlägt sie vom Hundert auf. Weil der Kunde beide vom höheren Preis abzieht, bleiben dann nach Abzug weniger als 48 € übrig (53,76 − 10 % = 48,38; − 2 % = 47,42 €). Richtig ist, durch 0,98 und 0,90 zu teilen."
+    }
+  ],
+
+  "pruefungstipp": "Verkaufskalkulation ist Punktelieferant: Schema hinschreiben, Bezugsgrößen benennen (vom Hundert oder im Hundert), erst am Ende runden und eine kurze Probe rechnen."
+}

@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf03",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf03-k06-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "betrag": { "von": 1000, "bis": 6000, "schritt": 500 },
+        "zins": { "von": 8, "bis": 12, "schritt": 1 },
+        "tage": { "von": 15, "bis": 60, "schritt": 15 }
+      },
+      "abgeleitet": {
+        "zinsen": "runde(betrag * zins * tage / 36000, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Ein Geschäftskunde der MAKEL Studio GmbH ist mit einer Forderung von {betrag} € seit {tage} Tagen in Verzug. Für diese Übung gelten ein Zinssatz von {zins} % pro Jahr und die kaufmännische Zinsrechnung mit 30 Tagen je Monat und 360 Tagen je Jahr. Berechnen Sie die Verzugszinsen auf zwei Nachkommastellen." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Verzugszinsen", "einheit": "€", "loesung": "zinsen", "toleranz": 0.01 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Zinsen = Kapital × Zinssatz × Tage ÷ (100 × 360). Der Übungszinssatz ist keine Aussage über den aktuellen gesetzlichen Verzugszins.",
+      "quelle": "ik2024-lf03-k06, Abschnitt a4"
+    },
+
+    {
+      "id": "ik2024-lf03-k06-02",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH hat einer Boutique am 2. Juni eine Rechnung über 3.570,00 € geschickt (Zugang am 3. Juni). Zahlungsbedingung: „8 Tage 3 % Skonto, 30 Tage netto“. Ein Kalenderdatum für die Zahlung ist nicht genannt. Am 10. Juli ist noch keine Zahlung eingegangen; gemahnt wurde bisher nicht." }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie, ob sich die Boutique am 10. Juli in Zahlungsverzug befindet, und nennen Sie, wie MAKEL den Verzug sofort herbeiführen kann.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Forderung ist seit dem 2. Juli fällig (30 Tage netto). Für Verzug braucht es nach § 286 BGB zusätzlich eine Mahnung, da kein Kalendertermin vereinbart ist. Eine Mahnung liegt nicht vor. Die 30-Tage-Regel für Entgeltforderungen greift erst 30 Tage nach Fälligkeit und Zugang der Rechnung, also Anfang August. Am 10. Juli liegt daher noch kein Verzug vor. MAKEL kann den Verzug durch eine Mahnung herbeiführen; er tritt mit deren Zugang ein.",
+        "raster": [
+          { "kriterium": "Fälligkeit zutreffend bestimmt", "punkte": 1 },
+          { "kriterium": "Fehlende Mahnung und fehlender Kalendertermin erkannt", "punkte": 1 },
+          { "kriterium": "30-Tage-Regel geprüft (greift noch nicht)", "punkte": 1 },
+          { "kriterium": "Mahnung als Mittel zur Herbeiführung des Verzugs genannt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Fälligkeit ist nicht Verzug. Verzug: Fälligkeit + Mahnung, Kalendertermin oder 30 Tage nach Fälligkeit und Rechnungszugang.",
+      "quelle": "ik2024-lf03-k06, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf03-k06-03",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Eine Kaufpreisforderung der MAKEL Studio GmbH gegen einen Geschäftskunden ist am 20. August 2026 entstanden. MAKEL kannte Anspruch und Schuldner von Anfang an." }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Wann tritt nach der regelmäßigen Verjährungsfrist die Verjährung ein?",
+          "mehrfach": false,
+          "optionen": [
+            { "text": "Mit Ablauf des 20. August 2029", "richtig": false, "echo": "Die Frist beginnt nicht mit dem Entstehungstag, sondern mit dem Schluss des Jahres." },
+            { "text": "Mit Ablauf des 31. Dezember 2029", "richtig": true, "echo": "Richtig. Drei Jahre (§ 195 BGB), Beginn mit dem Schluss des Jahres 2026 (§ 199 BGB)." },
+            { "text": "Mit Ablauf des 31. Dezember 2028", "richtig": false, "echo": "Das wären nur zwei volle Jahre nach Jahresende. Die regelmäßige Frist beträgt drei Jahre." }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "erklaerung": "Regelmäßige Verjährung: drei Jahre, beginnend mit dem Schluss des Jahres der Entstehung und Kenntnis.",
+      "quelle": "ik2024-lf03-k06, Abschnitt a4"
+    }
+  ]
+}

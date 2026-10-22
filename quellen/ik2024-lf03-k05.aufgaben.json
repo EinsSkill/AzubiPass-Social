@@ -1,0 +1,95 @@
+{
+  "lernfeld": "ik2024-lf03",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf03-k05-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "geliefert": { "von": 80, "bis": 200, "schritt": 20 },
+        "quote": { "von": 5, "bis": 20, "schritt": 5 }
+      },
+      "abgeleitet": {
+        "fehler": "geliefert * quote / 100"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH hat {geliefert} bedruckte Hoodies an einen Geschäftskunden geliefert. Bei der Prüfung stellt der Kunde fest, dass {fehler} Hoodies mit einem falschen Motiv bedruckt sind. Berechnen Sie die Mangelquote in Prozent." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Mangelquote", "einheit": "%", "loesung": "quote", "toleranz": 0.01 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "erklaerung": "Mangelquote = mangelhafte Stück ÷ gelieferte Stück × 100. Sie beschreibt den Umfang, ersetzt aber nicht die rechtliche Prüfung.",
+      "quelle": "ik2024-lf03-k05, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf03-k05-02",
+      "operator": "Bringen Sie in die richtige Reihenfolge",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Ein Geschäftskunde der MAKEL Studio GmbH hat eine mangelhafte Lieferung erhalten. Prüfen Sie seine Rechte in der Reihenfolge, die das Gesetz vorsieht." }
+      ],
+      "eingabe": [
+        {
+          "block": "reihenfolge",
+          "lead": "Bringen Sie die Prüfschritte in die richtige Reihenfolge.",
+          "elemente": [
+            { "text": "Nacherfüllung nach Wahl des Käufers", "position": 2 },
+            { "text": "Schadensersatz, wenn der Verkäufer den Mangel zu vertreten hat", "position": 4 },
+            { "text": "Rechtzeitige Mängelrüge beim Handelskauf", "position": 1 },
+            { "text": "Rücktritt oder Minderung nach erfolgloser Frist zur Nacherfüllung", "position": 3 }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Rüge (§ 377 HGB) → Nacherfüllung (§ 439 BGB) → Rücktritt oder Minderung → Schadensersatz bei Vertretenmüssen.",
+      "quelle": "ik2024-lf03-k05, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf03-k05-03",
+      "operator": "Entwerfen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Eine Eventagentur schreibt der MAKEL Studio GmbH am Tag nach der Lieferung: „Auf etlichen Hoodies aus Auftrag 2026-0377 ist unser altes Logo gedruckt! So können wir die Teile auf unserem Fest nicht verteilen.“ Fotos sind beigefügt." }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Entwerfen Sie die erste Antwort von Marlene Voß an die Agentur.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Sehr geehrte Damen und Herren, vielen Dank für Ihre Nachricht und die Fotos. Sie schreiben, dass auf einem Teil der Hoodies aus Auftrag 2026-0377 das alte Logo gedruckt ist. Damit wir schnell handeln können, nennen Sie uns bitte die genaue Anzahl und die betroffenen Größen. Wir prüfen den Fall sofort und melden uns bis morgen, 12 Uhr, mit einem Lösungsvorschlag, damit die Teile rechtzeitig zu Ihrem Fest vorliegen. Freundliche Grüße, Marlene Voß",
+        "raster": [
+          { "kriterium": "Eingang bestätigt und Problem konkret benannt", "punkte": 1 },
+          { "kriterium": "Fehlende Angaben (Anzahl, Größen) erfragt", "punkte": 1 },
+          { "kriterium": "Nächster Schritt mit Termin genannt", "punkte": 1 },
+          { "kriterium": "Weder pauschale Ablehnung noch ungeprüfte Zusage einer Rechtsfolge", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Die erste Antwort bestätigt, benennt, fragt nach und nennt einen Termin.",
+      "quelle": "ik2024-lf03-k05, Abschnitt a4"
+    }
+  ]
+}

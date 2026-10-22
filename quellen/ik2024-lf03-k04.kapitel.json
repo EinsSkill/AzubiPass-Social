@@ -1,0 +1,252 @@
+{
+  "id": "k04",
+  "lernfeld": "ik2024-lf03",
+  "nummer": 4,
+  "titel": "Auftrag erfassen und Lieferung abstimmen",
+  "untertitel": "Vom bestätigten Auftrag zur freigegebenen Produktion — mit sauberen Daten, abgestimmter Kapazität und klaren Nachrichten, auch auf Englisch.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Nach der Bestellung wird der Auftrag im System erfasst und bestätigt.",
+          "Fehler bei der Erfassung wandern durch alle Abteilungen."
+        ],
+        "erklaerung": "Die Auftragsbestätigung hält fest, was vereinbart ist: Kunde, Artikel, Ausführung, Menge und Größen, Preis, Termin, Liefer- und Zahlungsbedingungen. Im Warenwirtschaftssystem wird der Auftrag mit denselben Daten angelegt. Datenqualität heißt: vollständig, richtig, eindeutig und aktuell. Personenbezogene Daten des Kunden (etwa Ansprechpartner) werden nur so weit erfasst, wie der Auftrag sie braucht.",
+        "beispiele": [
+          "Die Größenverteilung fehlt im System: Das Lager kann keine Rohlinge kommissionieren.",
+          "Die Lieferadresse ist eine alte Adresse: Die Ware geht an die falsche Stelle."
+        ],
+        "fallbeispiel": "Marlene erfasst den Agenturauftrag: 120 Hoodies schwarz, Größen S 20 / M 40 / L 40 / XL 20, Logo einfarbig Brust, Liefertermin 15. Mai frei Haus, Preis laut Bestätigung. Sie vergleicht die Erfassung mit der Bestellung und der Auftragsbestätigung, bevor sie den Auftrag weitergibt.",
+        "typische_fehler": "Eine erfasste Bestellung wird mit einer freigegebenen Produktion gleichgesetzt. Erfasst heißt nur: Der Auftrag steht im System.",
+        "verstaendnisfragen": [
+          "Was bedeutet Datenqualität bei der Auftragserfassung? Die Daten sind vollständig, richtig, eindeutig und aktuell.",
+          "Warum wird die Erfassung mit der Bestellung abgeglichen? Damit Abweichungen nicht unbemerkt in Produktion und Versand gelangen."
+        ],
+        "pruefungsbezug": "Bei Erfassungsfällen die Pflichtangaben abhaken und Abweichungen zur Bestellung benennen.",
+        "merksatz": "Die Auftragserfassung übernimmt alle vereinbarten Angaben vollständig, richtig und eindeutig; erfasst heißt noch nicht zur Produktion freigegeben."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Die Veredelung hat begrenzte Maschinen- und Personalkapazität.",
+          "Der Vertrieb muss vor der Terminzusage wissen, was machbar ist."
+        ],
+        "erklaerung": "Bevor ein Termin zugesagt oder ein Auftrag freigegeben wird, prüft der Vertrieb mit der Veredelung: Sind Rohlinge vorhanden oder rechtzeitig lieferbar? Ist Druckkapazität frei? Liegt eine freigegebene Druckdatei vor? Erst wenn alle Pflichtangaben geklärt sind, wird der Auftrag zur Produktion freigegeben. Fehlt eine Pflichtangabe — etwa die Freigabe des Druckmotivs —, wird nicht ‚auf Verdacht‘ produziert.",
+        "beispiele": [
+          "Im Fallpaket P1 ist die Druckmaschine im Planungszeitraum mit 21 von 24 Stunden belegt. Ein weiterer Auftrag mit 6 Stunden Maschinenzeit passt nicht mehr hinein.",
+          "Die Druckdatei ist da, aber vom Kunden nicht freigegeben: Druck nicht starten."
+        ],
+        "fallbeispiel": "Der Liefertermin 15. Mai steht, die Druckdatei ist noch nicht freigegeben. Die Veredelung braucht nach Freigabe drei Arbeitstage. Marlene und Deniz legen fest: Spätester Freigabetermin ist der 8. Mai. Marlene informiert die Agentur darüber; bis dahin wird nur vorbereitet (Rohlinge bereitstellen), nicht gedruckt.",
+        "typische_fehler": "Es wird gedruckt, bevor die Druckdatei freigegeben ist, ‚damit der Termin hält‘. Ein Fehldruck kostet dann Rohlinge, Zeit und Vertrauen.",
+        "verstaendnisfragen": [
+          "Welche Angaben müssen vor der Produktionsfreigabe geklärt sein? Menge, Größen, Ausführung, freigegebenes Motiv und Termin.",
+          "Warum wird ohne Druckfreigabe nicht produziert? Weil ein Fehldruck Material und Zeit kostet und nicht dem Vertrag entspricht."
+        ],
+        "pruefungsbezug": "Machbarkeitsfragen beziehen Material, Kapazität und Freigaben ein — nicht nur den Wunschtermin.",
+        "merksatz": "Freigegeben wird erst, wenn Material, Kapazität und alle Pflichtangaben einschließlich der Druckfreigabe geklärt sind."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Ein Auftrag durchläuft mehrere Stationen.",
+          "Jede Station sollte wissen, wo der Auftrag gerade steht."
+        ],
+        "erklaerung": "Ein gemeinsamer Auftragsstatus im System — etwa ‚erfasst‘, ‚freigegeben‘, ‚in Veredelung‘, ‚versandbereit‘, ‚versendet‘ — macht den Stand für alle sichtbar. Lieferunterlagen sind Lieferschein (Inhalt und Menge, ohne Preise), gegebenenfalls Versandetikett und Packliste. Der Vertrieb überwacht wichtige Termine und meldet Abweichungen früh an den Kunden.",
+        "beispiele": [
+          "Status ‚versandbereit‘ am 13. Mai: Der Versand weiß, dass er die Tour einplanen kann.",
+          "Packliste je Karton mit Größen: Der Kunde kann die Lieferung schnell prüfen."
+        ],
+        "fallbeispiel": "Die Agentur ruft an: ‚Wo steht unser Auftrag?‘ Marlene sieht im System den Status ‚in Veredelung, 80 von 120 gedruckt‘ und den geplanten Versandtag. Sie gibt eine verlässliche Auskunft, statt in der Veredelung nachzufragen.",
+        "typische_fehler": "Der Status wird nur mündlich weitergegeben. Dann gibt der Vertrieb widersprüchliche Auskünfte.",
+        "verstaendnisfragen": [
+          "Welche Angaben enthält ein Lieferschein? Lieferant, Empfänger, Artikel und Mengen — keine Preise.",
+          "Wozu dient ein gemeinsamer Auftragsstatus? Damit alle Beteiligten denselben, aktuellen Stand sehen und Auskünfte übereinstimmen."
+        ],
+        "pruefungsbezug": "Bei Schnittstellenproblemen einen gemeinsamen, gepflegten Status mit Verantwortlichkeit als Lösung nennen.",
+        "merksatz": "Ein gemeinsamer Auftragsstatus macht den Stand für alle sichtbar; Lieferschein und Packliste begleiten die Ware, ohne Preise."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Geschäftskunden erwarten klare, höfliche und knappe Nachrichten.",
+          "Mit internationalen Kunden wird oft auf Englisch kommuniziert."
+        ],
+        "erklaerung": "Eine gute Rückfrage oder Bestätigung nennt das Thema im Betreff, bezieht sich auf den Auftrag, sagt klar, was fehlt oder was gilt, nennt eine Frist und erklärt kurz die Folge. Auf Englisch gilt dasselbe; höfliche Standardformeln helfen: ‚Could you please confirm …?‘, ‚We need your approval by …‘, ‚Otherwise, the delivery date may be delayed.‘ Bei internationalen Kunden auf Datumsformat (15 May 2026 statt 05/15) und Zeitzonen achten.",
+        "beispiele": [
+          "Subject: Order 2026-0412 – print approval needed",
+          "‚To keep the delivery date of 15 May, we need your approval of the print file by 8 May.‘"
+        ],
+        "fallbeispiel": "Ein Kunde aus Amsterdam hat 200 Shirts bestellt; die Druckfreigabe fehlt. Marlene schreibt: ‚Dear Ms de Vries, thank you for your order no. 2026-0412. To start printing, we still need your approval of the attached print proof. Could you please confirm it by 8 May? Otherwise we cannot guarantee the delivery date of 15 May. Kind regards, Marlene Voß‘",
+        "typische_fehler": "Die Nachricht beschreibt nur ein Problem, aber keine Frist und keine Folge. Dann antwortet der Kunde zu spät oder gar nicht.",
+        "verstaendnisfragen": [
+          "Welche Elemente gehören in eine Rückfrage zur fehlenden Freigabe? Bezug auf den Auftrag, was fehlt, bis wann, und was passiert, wenn es fehlt.",
+          "Warum schreibt man im internationalen Verkehr ‚15 May 2026‘? Weil Zahlenformate wie 05/06 in verschiedenen Ländern unterschiedlich gelesen werden."
+        ],
+        "pruefungsbezug": "Bei Formulierungsaufgaben zählt der Inhalt: fehlende Information, Frist, Folge — in höflicher Form. Es gibt mehrere richtige Formulierungen.",
+        "merksatz": "Eine Rückfrage nennt Auftrag, fehlende Information, Frist und Folge — auch auf Englisch klar, höflich und mit eindeutigem Datum."
+      }
+    ]
+  },
+
+  "lernziele": [
+    { "id": "lz1", "text": "Benötigte Auftragsdaten vollständig erfassen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Übergaben zwischen Vertrieb, Produktion und Versand begründen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Eine klare Rückfrage oder Bestätigung formulieren, auch auf Englisch", "abschnitt": "a4" },
+    { "id": "lz4", "text": "Lieferunterlagen und Auftragsstatus zur Überwachung nutzen", "abschnitt": "a3" }
+  ],
+
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Auftragsbestätigung und Datenqualität",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:auftragsbestaetigung|Auftragsbestätigung}} hält das Vereinbarte fest, die Erfassung im System übernimmt es. ==Erfasst heißt noch nicht freigegeben.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Angabe", "Agenturauftrag"],
+          "zeilen": [
+            { "zellen": ["Artikel und Ausführung", "Hoodie schwarz, Logo einfarbig Brust"] },
+            { "zellen": ["Menge und Größen", "120 Stück: S 20, M 40, L 40, XL 20"] },
+            { "zellen": ["Termin und Lieferung", "15. Mai, frei Haus"] },
+            { "zellen": ["Preis und Zahlung", "laut Auftragsbestätigung, 8 Tage 2 % Skonto, 30 Tage netto"] },
+            { "zellen": ["Freigabestatus", "Druckdatei liegt vor, Freigabe des Kunden fehlt"] }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Die Auftragserfassung übernimmt alle vereinbarten Angaben **vollständig, richtig und eindeutig**; erfasst heißt noch nicht zur Produktion freigegeben.",
+          "karteikarte": "Was bedeutet Datenqualität bei der Auftragserfassung, und warum ist ein erfasster Auftrag noch nicht freigegeben?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Machbarkeit und Kapazität",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Vor der Freigabe prüfen Vertrieb und Veredelung gemeinsam Material, Kapazität und Freigaben. An dieser {{begriff:schnittstelle|Schnittstelle}} entscheidet sich, ob der Termin hält."
+        },
+        {
+          "typ": "zuordnen",
+          "lead": "Muss das vor der Produktionsfreigabe geklärt sein?",
+          "kategorien": ["Zwingend vorher klären", "Kann später folgen"],
+          "aufgaben": [
+            { "text": "Freigabe des Druckmotivs durch den Kunden", "loesung": "Zwingend vorher klären" },
+            { "text": "Größenverteilung der 120 Hoodies", "loesung": "Zwingend vorher klären" },
+            { "text": "Rechnungsnummer", "loesung": "Kann später folgen" },
+            { "text": "Freie Druckkapazität bis zum Termin", "loesung": "Zwingend vorher klären" },
+            { "text": "Name der Person, die die Lieferung beim Kunden entgegennimmt", "loesung": "Kann später folgen" }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Freigegeben wird erst, wenn **Material, Kapazität und alle Pflichtangaben** einschließlich der Druckfreigabe geklärt sind.",
+          "karteikarte": "Was muss geklärt sein, bevor ein Druckauftrag zur Produktion freigegeben wird?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Lieferunterlagen und Statusüberwachung",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Ein gemeinsamer Auftragsstatus macht für alle sichtbar, wo der Auftrag steht. Der {{begriff:lieferschein|Lieferschein}} begleitet die Ware."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Status", "Bedeutung", "Wer setzt ihn"],
+          "zeilen": [
+            { "zellen": ["erfasst", "Auftrag steht im System", "Vertrieb"] },
+            { "zellen": ["freigegeben", "Alle Pflichtangaben geklärt", "Vertrieb nach Abstimmung mit Veredelung"] },
+            { "zellen": ["in Veredelung", "Druck läuft", "Veredelung"] },
+            { "zellen": ["versandbereit", "Geprüft und verpackt", "Veredelung bzw. Lager"] },
+            { "zellen": ["versendet", "An Transportunternehmen übergeben", "Versand"] }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Ein **gemeinsamer Auftragsstatus** macht den Stand für alle sichtbar; Lieferschein und Packliste begleiten die Ware, ohne Preise.",
+          "karteikarte": "Wozu dient ein gemeinsamer Auftragsstatus, und welche Unterlagen begleiten die Lieferung?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Zielgerichtet kommunizieren, auch auf Englisch",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Eine Rückfrage nennt Auftrag, fehlende Information, Frist und Folge. Mit internationalen Kunden gelten dieselben Regeln — dazu ein eindeutiges Datumsformat und Rücksicht auf {{begriff:interkulturelle-kommunikation|kulturelle Unterschiede}}."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Baustein", "Englische Formulierung"],
+          "zeilen": [
+            { "zellen": ["Bezug", "Thank you for your order no. 2026-0412."] },
+            { "zellen": ["Was fehlt", "To start printing, we still need your approval of the attached print proof."] },
+            { "zellen": ["Bitte mit Frist", "Could you please confirm it by 8 May 2026?"] },
+            { "zellen": ["Folge", "Otherwise we cannot guarantee the delivery date of 15 May."] },
+            { "zellen": ["Gruß", "Kind regards"] }
+          ]
+        },
+        {
+          "typ": "check",
+          "frage": "Welche Rückfrage an einen Kunden ist am besten geeignet?",
+          "optionen": [
+            { "text": "‚Die Freigabe fehlt noch.‘", "richtig": false, "echo": "Es fehlen Bezug, Frist und Folge. Der Kunde weiß nicht, bis wann er handeln muss." },
+            { "text": "‚Für Auftrag 2026-0412 benötigen wir Ihre Freigabe des Druckmusters bis 8. Mai, damit der Liefertermin 15. Mai gehalten werden kann.‘", "richtig": true, "echo": "Richtig. Bezug, fehlende Information, Frist und Folge sind klar benannt." },
+            { "text": "‚Bitte melden Sie sich bei Gelegenheit wegen des Drucks.‘", "richtig": false, "echo": "Höflich, aber unklar: Was genau fehlt, und bis wann?" }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Eine Rückfrage nennt **Auftrag, fehlende Information, Frist und Folge** — auch auf Englisch klar, höflich und mit eindeutigem Datum.",
+          "karteikarte": "Welche vier Bausteine gehören in eine Rückfrage an einen Kunden wegen einer fehlenden Freigabe?"
+        }
+      ]
+    }
+  ],
+
+  "zusammenfassung": [
+    "Auftragsbestätigung und Erfassung übernehmen alle vereinbarten Angaben vollständig und richtig.",
+    "Erfasst ist nicht freigegeben.",
+    "Vor der Freigabe: Material, Kapazität, Freigabe des Motivs, Termin klären.",
+    "Ohne Druckfreigabe wird nicht produziert.",
+    "Ein gemeinsamer Auftragsstatus verhindert widersprüchliche Auskünfte.",
+    "Rückfragen: Auftrag, fehlende Information, Frist, Folge — auch auf Englisch."
+  ],
+
+  "selbsttest": [
+    {
+      "typ": "Wissen",
+      "frage": "Nenne Informationen, die vor der Produktionsfreigabe eines Druckauftrags zwingend geklärt sein müssen.",
+      "loesung": "Menge und Größenverteilung, Ausführung (Artikel, Farbe, Druckposition), freigegebenes Druckmotiv, verfügbares Material und Kapazität sowie der Liefertermin. Ohne diese Pflichtangaben wird nicht produziert."
+    },
+    {
+      "typ": "Anwendung",
+      "frage": "Formuliere eine kurze englische Rückfrage zur fehlenden Druckfreigabe für Auftrag 2026-0412 (Freigabe nötig bis 8. Mai, Liefertermin 15. Mai).",
+      "loesung": "Zum Beispiel: ‚Dear Ms de Vries, thank you for your order no. 2026-0412. To start printing, we still need your approval of the attached print proof. Could you please confirm it by 8 May 2026? Otherwise we cannot guarantee the delivery date of 15 May. Kind regards, Marlene Voß‘ — Andere Formulierungen sind richtig, wenn Auftrag, fehlende Freigabe, Frist und Folge klar sind."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Ein Kollege möchte schon drucken, obwohl die Freigabe fehlt, ‚damit der Termin hält‘. Bewerte das.",
+      "loesung": "Nicht sachgerecht. Ohne Freigabe kann das Motiv vom Vertrag abweichen; ein Fehldruck kostet Rohlinge, Zeit und Vertrauen. Richtig ist, Rohlinge und Maschine vorzubereiten, die Freigabe mit Frist anzufragen und den Kunden über die Folge für den Termin zu informieren."
+    }
+  ],
+
+  "pruefungstipp": "Englische Formulierungsaufgaben werden nach Inhalt bewertet: Bezug, Problem, Bitte mit Frist, Folge. Kurze, klare Sätze sind besser als komplizierte Wendungen."
+}

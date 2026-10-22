@@ -1,0 +1,69 @@
+{
+  "lernfeld": "ik2024-lf03",
+  "kapitel": "k07",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf03-k07-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "auftraege": { "von": 60, "bis": 120, "schritt": 20 },
+        "verspaetet": { "von": 2, "bis": 10, "schritt": 2 },
+        "reklam": { "von": 2, "bis": 6, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "termintreue": "runde((auftraege - verspaetet) * 100 / auftraege, 2)",
+        "quote": "runde(reklam * 100 / auftraege, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Im letzten Quartal hat die MAKEL Studio GmbH {auftraege} Wholesale-Aufträge ausgeliefert. {verspaetet} davon wurden nach dem bestätigten Liefertag geliefert, alle anderen termingerecht. Bei {reklam} Aufträgen ging jeweils eine Reklamation ein. Berechnen Sie Termintreue und auftragsbezogene Reklamationsquote in Prozent (zwei Nachkommastellen)." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Termintreue", "einheit": "%", "loesung": "termintreue", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Reklamationsquote", "einheit": "%", "loesung": "quote", "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Termintreue = termingerechte Aufträge ÷ alle Aufträge × 100. Reklamationsquote = Aufträge mit Reklamation ÷ alle Aufträge × 100.",
+      "quelle": "ik2024-lf03-k07, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf03-k07-02",
+      "operator": "Schlagen Sie vor",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Kunden der MAKEL Studio GmbH beklagen widersprüchliche Lieferauskünfte. Eine Stichprobe von 20 Anfragen zeigt: In 7 Fällen wich die Auskunft des Vertriebs vom tatsächlichen Versandstand ab. Ursache: Der Versand setzt den Status im System nur einmal täglich; Änderungen dazwischen werden mündlich weitergegeben." }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Schlagen Sie eine Maßnahme vor (was, wer, ab wann) und bestimmen Sie eine messbare Erfolgskontrolle.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Maßnahme: Der Versand setzt den Auftragsstatus im System bei jeder Änderung sofort (versandbereit, versendet, verzögert); der Vertrieb gibt Auskünfte nur noch aus dem Systemstatus. Verantwortlich für die Statuspflege ist Jonas Weidner, für die Auskunftsregel Marlene Voß; Start zum 1. des Folgemonats. Erfolgskontrolle: Im Folgemonat erneut 20 Anfragen nach derselben Definition prüfen; Ziel: höchstens 1 widersprüchliche Auskunft statt 7.",
+        "raster": [
+          { "kriterium": "Maßnahme setzt an der belegten Ursache an (laufender gemeinsamer Status)", "punkte": 1 },
+          { "kriterium": "Verantwortliche Person genannt", "punkte": 1 },
+          { "kriterium": "Termin genannt", "punkte": 1 },
+          { "kriterium": "Messbare Erfolgskontrolle mit gleicher Definition und Vergleichswert", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Maßnahmen setzen an der belegten Ursache an und werden mit gleicher Messmethode kontrolliert.",
+      "quelle": "ik2024-lf03-k07, Abschnitte a3 und a4"
+    }
+  ]
+}
