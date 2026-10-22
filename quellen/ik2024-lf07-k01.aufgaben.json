@@ -1,0 +1,152 @@
+{
+  "lernfeld": "ik2024-lf07",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf07-k01-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine Lieferung Hoodie-Rohlinge durchläuft bei MAKEL mehrere Schritte."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche logistische Grundaufgabe liegt vor?",
+          "ziele": [
+            "Transport",
+            "Umschlag",
+            "Lagerung"
+          ],
+          "elemente": [
+            {
+              "text": "Lkw-Fahrt vom Lieferanten nach MAKEL",
+              "loesung": "Transport"
+            },
+            {
+              "text": "Entladen an der Rampe auf den Hubwagen",
+              "loesung": "Umschlag"
+            },
+            {
+              "text": "Aufbewahren im Regal bis zum Produktionsstart",
+              "loesung": "Lagerung"
+            },
+            {
+              "text": "Fahrt mit dem Hubwagen vom Lager in die Veredelung",
+              "loesung": "Transport"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Transport überbrückt Raum (auch innerbetrieblich), Umschlag wechselt das Transportmittel, Lagerung überbrückt Zeit.",
+      "quelle": "ik2024-lf07-k01, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf07-k01-02",
+      "operator": "Beschreiben Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Der Rohlingslieferant der MAKEL Studio GmbH hat per Versandmeldung 100 Kartons Rohlinge angekündigt. Beim Abladen zählt Jonas Weidner 90 Kartons. Für Freitag ist ein Veredelungsauftrag eingeplant, der die volle Menge benötigt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beschreiben Sie, wie Jonas vorgehen und wen er informieren sollte.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Jonas vermerkt die Abweichung (90 statt 100 Kartons) auf dem Lieferschein bzw. Frachtbrief und lässt sie vom Fahrer bestätigen. Er prüft die angekommenen Kartons äußerlich und bucht im System nur die tatsächlich angenommenen 90 Kartons ein, zugeordnet zur Bestellung. Dann informiert er den Einkauf (Deniz), damit dieser beim Lieferanten den Verbleib der 10 Kartons klärt, und die Produktionsplanung, weil der Auftrag am Freitag gefährdet sein kann.",
+        "raster": [
+          {
+            "kriterium": "Abweichung dokumentiert und quittieren lassen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Nur tatsächliche Menge eingebucht",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Einkauf zur Klärung mit dem Lieferanten informiert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Produktionsplanung wegen des Auftrags informiert",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Material- und Informationsfluss müssen übereinstimmen; Abweichungen werden dokumentiert und an alle Betroffenen gemeldet.",
+      "quelle": "ik2024-lf07-k01, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf07-k01-03",
+      "operator": "Analysieren Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei MAKEL läuft der Wareneingang so: Der Lieferant mailt eine Versandmeldung an den Einkauf. Das Lager erfährt erst bei Ankunft des Lkw von der Lieferung. Lieferscheine werden auf Papier abgezeichnet und am Folgetag von einer Aushilfe ins System abgetippt. Die Produktion fragt mehrmals täglich telefonisch, ob Material da ist."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Analysieren Sie die Schwachstellen dieses Ablaufs und schlagen Sie Verbesserungen vor.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Schwachstelle 1: Die Versandmeldung erreicht das Lager nicht — Rampe und Personal können nicht geplant werden. Verbesserung: Avis automatisch im System sichtbar machen, Tagesvorschau für das Lager. Schwachstelle 2: Medienbruch durch Abtippen am Folgetag — Fehler und Zeitverzug; der Bestand ist einen Tag lang nicht verfügbar. Verbesserung: Wareneingang direkt per Scan buchen. Schwachstelle 3: Die Produktion hat keinen aktuellen Bestandsstatus und muss telefonieren. Verbesserung: Nach der Buchung sieht die Produktion den verfügbaren Bestand im System; Abweichungen werden aktiv gemeldet.",
+        "raster": [
+          {
+            "kriterium": "Fehlende Weitergabe der Versandmeldung erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Medienbruch und Zeitverzug erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Fehlende Bestandstransparenz für die Produktion erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Passende Verbesserungen vorgeschlagen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Ein Logistikkonzept wird an Übergaben und Informationsflüssen geprüft; dort entstehen Wartezeiten und Fehler.",
+      "quelle": "ik2024-lf07-k01, Abschnitte a3 und a4"
+    }
+  ]
+}

@@ -4,35 +4,54 @@
     "begriffe": [
       "abc-analyse",
       "ablauforganisation",
+      "afa",
       "agb",
       "alpen-methode",
       "anfrage",
       "angebot",
+      "anlagevermoegen",
       "annahme",
       "antrag",
       "arbeitspaket",
       "aufbauorganisation",
+      "aufbewahrungsfrist",
       "auftragsbearbeitung",
       "auftragsbestaetigung",
+      "aufwand",
       "ausbildungsordnung",
       "ausbildungsplan",
       "ausbildungsrahmenplan",
       "balkenplan",
       "bedarfsermittlung",
       "beschwerdemanagement",
+      "bestandskonto",
       "bestellung",
       "betriebsrat",
       "bezugskalkulation",
+      "break-even",
+      "buchungssatz",
+      "buchwert",
       "datensparsamkeit",
+      "deckungsbeitrag",
+      "doppelte-buchfuehrung",
       "duale-ausbildung",
+      "durchlaufzeit",
+      "eigenkapital",
       "eigentumsvorbehalt",
       "einstandspreis",
       "eisenhower",
+      "erfolgskonto",
       "ergonomie",
+      "ertrag",
       "feedback",
+      "fixkosten",
+      "fremdkapital",
       "gefaehrdungsbeurteilung",
       "geschaeftsprozess",
+      "geschaeftsvorfall",
       "gestreckte-pruefung",
+      "guv",
+      "haben",
       "handlungsvollmacht",
       "hoechstbestand",
       "ich-botschaft",
@@ -49,10 +68,12 @@
       "lieferungsverzug",
       "mahnbescheid",
       "mahnung",
+      "medienbruch",
       "meilenstein",
       "meldebestand",
       "mindestbestand",
       "nacherfuellung",
+      "nutzungsdauer",
       "nutzwertanalyse",
       "oekonomisches-prinzip",
       "optimale-bestellmenge",
@@ -67,19 +88,28 @@
       "rabatt",
       "rahmenlehrplan",
       "rechnung",
+      "reinvermoegen",
       "rentabilitaet",
       "ruegepflicht",
       "sachmangel",
+      "saldo",
       "schnittstelle",
       "skonto",
+      "soll",
+      "t-konto",
+      "umlaufvermoegen",
+      "umsatzsteuer",
       "urheberrecht",
+      "variable-kosten",
       "verjaehrung",
       "vorsteuer",
+      "zahllast",
       "zahlungsbedingungen",
       "zahlungsverzug",
       "zustaendige-stelle"
     ],
     "paragraphen": [
+      "ao-147",
       "arbschg-5",
       "bbig-10",
       "bbig-11",
@@ -101,8 +131,13 @@
       "bgb-439",
       "bgb-449",
       "dsgvo-5",
+      "hgb-238",
+      "hgb-240",
+      "hgb-242",
+      "hgb-257",
       "hgb-377",
-      "hgb-54"
+      "hgb-54",
+      "ustg-14"
     ]
   },
   "begriffe": {
@@ -114,9 +149,17 @@
       "titel": "Anspruchsgruppen",
       "text": "Alle, die Erwartungen an ein Unternehmen haben oder von seinen Entscheidungen betroffen sind (englisch Stakeholder): Eigentümer, Beschäftigte, Kunden, Lieferanten, Kreditgeber, Staat und Öffentlichkeit. Ihre Interessen können sich widersprechen."
     },
+    "arbeitsplan": {
+      "titel": "Arbeitsplan",
+      "text": "Beschreibt, wie ein Erzeugnis hergestellt wird: Arbeitsgänge in ihrer Reihenfolge, Arbeitsplatz oder Maschine, Rüstzeit je Los und Ausführungszeit je Stück, oft auch Dateien und Prüfanweisungen. Die Materialien stehen dagegen in der Stückliste."
+    },
     "ausbildungsvertrag": {
       "titel": "Ausbildungsvertrag",
       "text": "Der Vertrag zwischen Ausbildendem und Auszubildendem. Sein wesentlicher Inhalt muss spätestens vor Beginn der Ausbildung in Textform niedergelegt werden; danach trägt die zuständige Stelle ihn in das Verzeichnis der Ausbildungsverhältnisse ein."
+    },
+    "beleg": {
+      "titel": "Beleg",
+      "text": "Der Nachweis eines Geschäftsfalls, etwa Rechnung, Kontoauszug oder Materialentnahmeschein. Grundregel der Buchführung: keine Buchung ohne Beleg. Fremdbelege kommen von außen, Eigenbelege entstehen im Unternehmen. Buchungsbelege sind acht Jahre aufzubewahren (Stand 2026)."
     },
     "berichtsheft": {
       "titel": "Ausbildungsnachweis",
@@ -126,6 +169,10 @@
       "titel": "Besitz",
       "text": "Die tatsächliche Herrschaft über eine Sache: Wer sie hat und benutzen kann, ist Besitzer. Besitz sagt nichts darüber, wem die Sache gehört."
     },
+    "bezugskosten": {
+      "titel": "Bezugskosten",
+      "text": "Kosten, die beim Beschaffen zusätzlich anfallen und dem eingekauften Gut einzeln zugerechnet werden können: Fracht, Verpackung, Zoll, Transportversicherung. Sie erhöhen die Anschaffungskosten von Material, Handelswaren oder Anlagegütern."
+    },
     "eigentum": {
       "titel": "Eigentum",
       "text": "Die rechtliche Herrschaft über eine Sache: Der Eigentümer darf mit ihr nach Belieben verfahren, soweit Gesetze nicht entgegenstehen. Bei beweglichen Sachen geht Eigentum durch Einigung und Übergabe über."
@@ -134,13 +181,33 @@
       "titel": "Ereignisgesteuerte Prozesskette (EPK)",
       "text": "Grafische Darstellung eines Ablaufs aus Ereignissen (Sechsecke) und Funktionen (abgerundete Rechtecke), die sich abwechseln. Sie beginnt und endet mit einem Ereignis; Verzweigungen zeigen UND-, ODER- und XOR-Konnektoren."
     },
+    "fertigungsart": {
+      "titel": "Fertigungsart",
+      "text": "Einteilung der Fertigung nach der Menge gleicher Erzeugnisse: Einzel-, Serien-, Sorten-, Massen- und Chargenfertigung. Davon zu unterscheiden ist der Organisationstyp (Werkstatt-, Fließ-, Gruppen-, Baustellenfertigung), der die räumliche Anordnung beschreibt."
+    },
     "fertigungstiefe": {
       "titel": "Fertigungstiefe",
       "text": "Anteil der Wertschöpfung, den ein Unternehmen selbst erbringt. Bei hoher Fertigungstiefe wird vieles im eigenen Haus hergestellt, bei geringer vieles zugekauft oder fremd gefertigt."
     },
+    "fifo": {
+      "titel": "FIFO (first in, first out)",
+      "text": "Einlagerungs- und Entnahmeprinzip: Was zuerst eingelagert wurde, wird zuerst entnommen. So veralten Bestände nicht, etwa Saisonware oder Material mit Haltbarkeit."
+    },
+    "frachtfuehrer": {
+      "titel": "Frachtführer",
+      "text": "Wer sich vertraglich verpflichtet, Güter zu befördern und beim Empfänger abzuliefern, und die Beförderung selbst durchführt, etwa ein Transportunternehmen mit eigenen Lkw (§ 407 HGB)."
+    },
+    "kapazitaet": {
+      "titel": "Kapazität",
+      "text": "Das Leistungsvermögen eines Arbeitsplatzes oder einer Maschine in einem Zeitraum, meist in Stunden. Die Auslastung setzt den Kapazitätsbedarf ins Verhältnis zur verfügbaren Kapazität."
+    },
     "kapitalgesellschaft": {
       "titel": "Kapitalgesellschaft",
       "text": "Gesellschaft mit eigener Rechtspersönlichkeit, bei der das Kapital im Vordergrund steht, etwa GmbH oder AG. Gegenüber Gläubigern haftet das Gesellschaftsvermögen, nicht das Privatvermögen der Gesellschafter."
+    },
+    "kommissionieren": {
+      "titel": "Kommissionieren",
+      "text": "Artikel aus dem Lager nach Aufträgen zusammenstellen. Auftragsorientiert wird jeder Auftrag einzeln bearbeitet, serienorientiert werden Artikel mehrerer Aufträge gesammelt entnommen und anschließend verteilt."
     },
     "leistungsprogramm": {
       "titel": "Leistungsprogramm",
@@ -150,13 +217,33 @@
       "titel": "Leitbild",
       "text": "Schriftlich formuliertes Selbstverständnis eines Unternehmens: Werte, Ziele und Grundsätze im Umgang mit Kunden, Beschäftigten und Umwelt. Es beschreibt einen Anspruch; ob er eingelöst wird, zeigt das tatsächliche Handeln."
     },
+    "los": {
+      "titel": "Los",
+      "text": "Die Menge gleicher Erzeugnisse, die ohne Unterbrechung durch Umrüsten hintereinander gefertigt wird. Je Los fallen einmal Rüstkosten an."
+    },
+    "produktionsprogramm": {
+      "titel": "Produktionsprogramm",
+      "text": "Legt fest, welche Erzeugnisse in welcher Menge in welchem Zeitraum hergestellt werden. Programmbreite = Zahl der Produktlinien, Programmtiefe = Zahl der Varianten innerhalb einer Linie."
+    },
     "produktivitaet": {
       "titel": "Produktivität",
       "text": "Mengenmäßiges Verhältnis von Ausbringung zu Einsatz, etwa Stück je Arbeitsstunde oder je Maschinenstunde. Sie wird immer mit Einheit angegeben und sagt nichts über Kosten oder Gewinn."
     },
+    "ruestzeit": {
+      "titel": "Rüstzeit",
+      "text": "Die Zeit, um eine Maschine oder einen Arbeitsplatz für einen Auftrag einzurichten und danach wieder abzurüsten. Sie fällt je Los einmal an, unabhängig von der Stückzahl; die dafür entstehenden Kosten heißen Rüstkosten."
+    },
     "smart": {
       "titel": "SMART-Regel",
       "text": "Prüfraster für Ziele: spezifisch, messbar, attraktiv beziehungsweise akzeptiert, realistisch und terminiert. Ein SMART-Ziel beschreibt ein überprüfbares Ergebnis, keine Tätigkeit."
+    },
+    "spediteur": {
+      "titel": "Spediteur",
+      "text": "Wer sich verpflichtet, die Versendung von Gütern zu besorgen: Er organisiert den Transport und schließt dafür Verträge mit Frachtführern, statt selbst zu fahren (§ 453 HGB)."
+    },
+    "stueckliste": {
+      "titel": "Stückliste",
+      "text": "Verzeichnis der Materialien und Baugruppen, aus denen ein Erzeugnis besteht, mit der Menge je Einheit. Arten: Mengenübersichts-, Struktur-, Baukasten- und Variantenstückliste."
     },
     "werkstoffe": {
       "titel": "Werkstoffe",
@@ -196,6 +283,36 @@
       "titel": "§ 5 GmbHG",
       "text": "Das Stammkapital der Gesellschaft muss mindestens 25.000 Euro betragen. Jeder Gesellschafter übernimmt bei der Errichtung einen oder mehrere Geschäftsanteile. (Sinngemäß)",
       "kurz": "Mindeststammkapital 25.000 Euro."
+    },
+    "hgb-253": {
+      "titel": "§ 253 HGB",
+      "text": "Vermögensgegenstände sind höchstens mit den Anschaffungs- oder Herstellungskosten anzusetzen, vermindert um Abschreibungen. Bei Vermögensgegenständen des Anlagevermögens, deren Nutzung zeitlich begrenzt ist, sind die Anschaffungs- oder Herstellungskosten um planmäßige Abschreibungen zu vermindern; der Plan muss die Kosten auf die Geschäftsjahre verteilen, in denen der Vermögensgegenstand voraussichtlich genutzt werden kann. (Sinngemäß, Auszug aus Abs. 1 und 3)",
+      "kurz": "Höchstwert Anschaffungskosten; abnutzbares Anlagevermögen planmäßig abschreiben."
+    },
+    "hgb-255": {
+      "titel": "§ 255 HGB",
+      "text": "Anschaffungskosten sind die Aufwendungen, die geleistet werden, um einen Vermögensgegenstand zu erwerben und ihn in einen betriebsbereiten Zustand zu versetzen, soweit sie ihm einzeln zugeordnet werden können. Dazu gehören auch die Nebenkosten sowie die nachträglichen Anschaffungskosten. Anschaffungspreisminderungen, die dem Vermögensgegenstand einzeln zugeordnet werden können, sind abzusetzen. (Sinngemäß, Auszug aus Abs. 1)",
+      "kurz": "Anschaffungskosten = Preis + Nebenkosten bis zur Betriebsbereitschaft − Preisminderungen."
+    },
+    "hgb-407": {
+      "titel": "§ 407 HGB",
+      "text": "Durch den Frachtvertrag wird der Frachtführer verpflichtet, das Gut zum Bestimmungsort zu befördern und dort an den Empfänger abzuliefern. Der Absender wird verpflichtet, die vereinbarte Fracht zu zahlen. (Sinngemäß, Auszug)",
+      "kurz": "Frachtvertrag: Frachtführer befördert, Absender zahlt die Fracht."
+    },
+    "hgb-453": {
+      "titel": "§ 453 HGB",
+      "text": "Durch den Speditionsvertrag wird der Spediteur verpflichtet, die Versendung des Gutes zu besorgen. Der Versender wird verpflichtet, die vereinbarte Vergütung zu zahlen. (Sinngemäß, Auszug)",
+      "kurz": "Speditionsvertrag: Spediteur besorgt die Versendung."
+    },
+    "ustg-12": {
+      "titel": "§ 12 UStG",
+      "text": "Die Steuer beträgt für jeden steuerpflichtigen Umsatz 19 Prozent der Bemessungsgrundlage. Für bestimmte, im Gesetz abschließend aufgezählte Umsätze ermäßigt sie sich auf 7 Prozent. (Sinngemäß)",
+      "kurz": "Regelsteuersatz 19 %, ermäßigter Satz 7 %."
+    },
+    "ustg-15": {
+      "titel": "§ 15 UStG",
+      "text": "Der Unternehmer kann die gesetzlich geschuldete Steuer für Lieferungen und sonstige Leistungen, die von einem anderen Unternehmer für sein Unternehmen ausgeführt worden sind, als Vorsteuer abziehen. Voraussetzung ist, dass er eine nach §§ 14, 14a UStG ausgestellte Rechnung besitzt. (Sinngemäß, Auszug aus Abs. 1)",
+      "kurz": "Vorsteuerabzug nur für Unternehmenszwecke und mit ordnungsgemäßer Rechnung."
     }
   }
 }

@@ -2,7 +2,6 @@
   "lernfeld": "ik2024-lf01",
   "kapitel": "k05",
   "verweise_im_klausurmodus": "ausblenden",
-
   "bausteine": [
     {
       "id": "ik2024-lf01-k05-01",
@@ -14,7 +13,10 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Die MAKEL Studio GmbH entscheidet zwischen zwei Hoodie-Rohlingen: Rohling A kostet 18,00 € netto, Herkunft und Arbeitsbedingungen beim Hersteller sind nicht dokumentiert. Rohling B kostet 21,00 € netto, ist zertifiziert, und der Hersteller legt seine Lieferkette offen." }
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH entscheidet zwischen zwei Hoodie-Rohlingen: Rohling A kostet 18,00 € netto, Herkunft und Arbeitsbedingungen beim Hersteller sind nicht dokumentiert. Rohling B kostet 21,00 € netto, ist zertifiziert, und der Hersteller legt seine Lieferkette offen."
+        }
       ],
       "eingabe": [
         {
@@ -27,15 +29,23 @@
         "art": "selbstbewertung",
         "musterloesung": "Beschäftigte in der Veredelung: ein Rohling mit gleichbleibender Qualität, der sich zuverlässig bedrucken lässt und wenig Nacharbeit verursacht. Kunden: gute Qualität zu einem angemessenen Preis; ein Teil der Kunden legt Wert auf nachvollziehbare Herkunft. Gesellschafter: eine ausreichende Marge und ein Markenimage, das langfristig den Unternehmenswert sichert. Wichtig ist, dass die Interessen zum Fall passen und nicht jeder Gruppe nur ein einziges, stereotypes Ziel unterstellt wird.",
         "raster": [
-          { "kriterium": "Zum Fall passendes Interesse der Beschäftigten", "punkte": 1 },
-          { "kriterium": "Zum Fall passendes Interesse der Kunden", "punkte": 1 },
-          { "kriterium": "Zum Fall passendes Interesse der Gesellschafter", "punkte": 1 }
+          {
+            "kriterium": "Zum Fall passendes Interesse der Beschäftigten",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zum Fall passendes Interesse der Kunden",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zum Fall passendes Interesse der Gesellschafter",
+            "punkte": 1
+          }
         ]
       },
       "erklaerung": "Anspruchsgruppen haben unterschiedliche, teils widersprüchliche Interessen; Antworten müssen sich auf die konkrete Entscheidung beziehen.",
       "quelle": "ik2024-lf01-k05, Abschnitt a3"
     },
-
     {
       "id": "ik2024-lf01-k05-02",
       "operator": "Ordnen Sie zu",
@@ -46,25 +56,43 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Die Geschäftsführung der MAKEL Studio GmbH prüft drei Maßnahmen." }
+        {
+          "block": "text",
+          "inhalt": "Die Geschäftsführung der MAKEL Studio GmbH prüft drei Maßnahmen."
+        }
       ],
       "eingabe": [
         {
           "block": "zuordnung",
           "lead": "Welche Zielbeziehung liegt jeweils vor?",
-          "ziele": ["Zielharmonie", "Zielkonflikt", "Zielneutralität"],
+          "ziele": [
+            "Zielharmonie",
+            "Zielkonflikt",
+            "Zielneutralität"
+          ],
           "elemente": [
-            { "text": "Ein neues Material senkt laut Vorgabe den Ausschuss in der Veredelung und zugleich die Gesamtkosten (Ressourcenschonung und Wirtschaftlichkeit).", "loesung": "Zielharmonie" },
-            { "text": "Bessere Absauganlagen verbessern die Arbeitsbedingungen, erhöhen aber die Kosten (soziales Ziel und Kostenminimierung).", "loesung": "Zielkonflikt" },
-            { "text": "Die Farbe der Versandkartons wird geändert; die Kartons kosten gleich viel (Markenauftritt und Lagerkosten).", "loesung": "Zielneutralität" }
+            {
+              "text": "Ein neues Material senkt laut Vorgabe den Ausschuss in der Veredelung und zugleich die Gesamtkosten (Ressourcenschonung und Wirtschaftlichkeit).",
+              "loesung": "Zielharmonie"
+            },
+            {
+              "text": "Bessere Absauganlagen verbessern die Arbeitsbedingungen, erhöhen aber die Kosten (soziales Ziel und Kostenminimierung).",
+              "loesung": "Zielkonflikt"
+            },
+            {
+              "text": "Die Farbe der Versandkartons wird geändert; die Kartons kosten gleich viel (Markenauftritt und Lagerkosten).",
+              "loesung": "Zielneutralität"
+            }
           ]
         }
       ],
-      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
       "erklaerung": "Harmonie: Ein Ziel fördert das andere. Konflikt: Ein Ziel behindert das andere. Neutralität: Die Ziele berühren sich nicht.",
       "quelle": "ik2024-lf01-k05, Abschnitt a3"
     },
-
     {
       "id": "ik2024-lf01-k05-03",
       "operator": "Kreuzen Sie an",
@@ -75,7 +103,10 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Ein Stofflieferant der MAKEL Studio GmbH fragt, wer für offene Rechnungen der GmbH haftet." }
+        {
+          "block": "text",
+          "inhalt": "Ein Stofflieferant der MAKEL Studio GmbH fragt, wer für offene Rechnungen der GmbH haftet."
+        }
       ],
       "eingabe": [
         {
@@ -83,15 +114,77 @@
           "frage": "Welche Aussage trifft zu?",
           "mehrfach": false,
           "optionen": [
-            { "text": "Die Gesellschafter haften unbeschränkt mit ihrem Privatvermögen.", "richtig": false, "echo": "So ist es bei der OHG. In der GmbH haftet gegenüber Gläubigern grundsätzlich nur das Gesellschaftsvermögen." },
-            { "text": "Den Gläubigern haftet das Gesellschaftsvermögen der GmbH.", "richtig": true, "echo": "Richtig (§ 13 GmbHG). Die Gesellschafter riskieren ihre Einlage, haften aber grundsätzlich nicht privat." },
-            { "text": "Die GmbH haftet nur bis zur Höhe des Stammkapitals von 100.000 €.", "richtig": false, "echo": "Die GmbH haftet mit ihrem gesamten Vermögen. Beschränkt ist die Haftung der Gesellschafter, nicht die der Gesellschaft." }
+            {
+              "text": "Die Gesellschafter haften unbeschränkt mit ihrem Privatvermögen.",
+              "richtig": false,
+              "echo": "So ist es bei der OHG. In der GmbH haftet gegenüber Gläubigern grundsätzlich nur das Gesellschaftsvermögen."
+            },
+            {
+              "text": "Den Gläubigern haftet das Gesellschaftsvermögen der GmbH.",
+              "richtig": true,
+              "echo": "Richtig (§ 13 GmbHG). Die Gesellschafter riskieren ihre Einlage, haften aber grundsätzlich nicht privat."
+            },
+            {
+              "text": "Die GmbH haftet nur bis zur Höhe des Stammkapitals von 100.000 €.",
+              "richtig": false,
+              "echo": "Die GmbH haftet mit ihrem gesamten Vermögen. Beschränkt ist die Haftung der Gesellschafter, nicht die der Gesellschaft."
+            }
           ]
         }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
       "erklaerung": "In der GmbH haftet den Gläubigern das Gesellschaftsvermögen; die Haftung der Gesellschafter ist beschränkt.",
       "quelle": "ik2024-lf01-k05, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf01-k05-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die Geschäftsführung der MAKEL Studio GmbH diskutiert zwei Ziele für das nächste Jahr: „Umsatz um 15 % steigern“ und „Nur noch Rohlinge aus zertifizierter Bio-Baumwolle einsetzen“. Bio-Rohlinge kosten je Stück rund 2 € mehr."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie die Beziehung der beiden Ziele zueinander und nennen Sie zwei Anspruchsgruppen mit ihrem jeweiligen Interesse.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Ziele können konkurrieren: Höhere Materialkosten drücken die Marge oder erfordern höhere Preise, was den Absatz und damit das Umsatzwachstum bremsen kann. Sie können aber auch harmonieren, wenn Kunden Bio-Ware nachfragen und dafür höhere Preise zahlen — das hängt von Marktdaten ab, die erst zu prüfen sind. Anspruchsgruppen sind zum Beispiel Kunden (Qualität, Preis, Nachhaltigkeit), die Gesellschafterin (Gewinn, Markenimage), Lieferanten (Abnahmemengen) und Beschäftigte (sichere Arbeitsplätze).",
+        "raster": [
+          {
+            "kriterium": "Mögliche Zielkonkurrenz begründet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Mögliche Zielharmonie mit Bedingung erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Erste Anspruchsgruppe mit Interesse",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zweite Anspruchsgruppe mit Interesse",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Zielbeziehungen hängen von Bedingungen ab; eine gute Beurteilung nennt sie ausdrücklich.",
+      "quelle": "ik2024-lf01-k05, Abschnitt a3"
     }
   ]
 }

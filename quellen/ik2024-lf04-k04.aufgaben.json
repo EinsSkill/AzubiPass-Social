@@ -2,7 +2,6 @@
   "lernfeld": "ik2024-lf04",
   "kapitel": "k04",
   "verweise_im_klausurmodus": "ausblenden",
-
   "bausteine": [
     {
       "id": "ik2024-lf04-k04-01",
@@ -13,27 +12,62 @@
       "schwierigkeit": 2,
       "passt_zu": [],
       "variablen": {
-        "lep": { "von": 800, "bis": 1400, "schritt": 100 },
-        "rabatt": { "von": 5, "bis": 15, "schritt": 5 },
-        "skonto": { "von": 2, "bis": 3, "schritt": 1 },
-        "fracht": { "von": 20, "bis": 60, "schritt": 10 }
+        "lep": {
+          "von": 800,
+          "bis": 1400,
+          "schritt": 100
+        },
+        "rabatt": {
+          "von": 5,
+          "bis": 15,
+          "schritt": 5
+        },
+        "skonto": {
+          "von": 2,
+          "bis": 3,
+          "schritt": 1
+        },
+        "fracht": {
+          "von": 20,
+          "bis": 60,
+          "schritt": 10
+        }
       },
       "abgeleitet": {
         "zep": "lep * (1 - rabatt / 100)",
         "bezug": "runde(lep * (1 - rabatt / 100) * (1 - skonto / 100) + fracht, 2)"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Ein Lieferant bietet der MAKEL Studio GmbH 100 Hoodie-Rohlinge zu einem Listenpreis von {lep} € netto an. Er gewährt {rabatt} % Rabatt und bei Zahlung innerhalb von 10 Tagen {skonto} % Skonto auf den rabattierten Warenwert. Für Fracht berechnet er {fracht} €, die weder rabattiert noch skontiert werden. MAKEL zahlt innerhalb der Skontofrist. Berechnen Sie Zieleinkaufspreis und Bezugspreis." }
+        {
+          "block": "text",
+          "inhalt": "Ein Lieferant bietet der MAKEL Studio GmbH 100 Hoodie-Rohlinge zu einem Listenpreis von {lep} € netto an. Er gewährt {rabatt} % Rabatt und bei Zahlung innerhalb von 10 Tagen {skonto} % Skonto auf den rabattierten Warenwert. Für Fracht berechnet er {fracht} €, die weder rabattiert noch skontiert werden. MAKEL zahlt innerhalb der Skontofrist. Berechnen Sie Zieleinkaufspreis und Bezugspreis."
+        }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Zieleinkaufspreis", "einheit": "€", "loesung": "zep", "toleranz": 0.01, "punkte": 1 },
-        { "block": "zahl", "label": "Bezugspreis", "einheit": "€", "loesung": "bezug", "toleranz": 0.01, "punkte": 3 }
+        {
+          "block": "zahl",
+          "label": "Zieleinkaufspreis",
+          "einheit": "€",
+          "loesung": "zep",
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Bezugspreis",
+          "einheit": "€",
+          "loesung": "bezug",
+          "toleranz": 0.01,
+          "punkte": 3
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
       "erklaerung": "Listenpreis − Rabatt = Zieleinkaufspreis; − Skonto (auf den Zielpreis) = Bareinkaufspreis; + Bezugskosten = Bezugspreis.",
       "quelle": "ik2024-lf04-k04, Abschnitt a2"
     },
-
     {
       "id": "ik2024-lf04-k04-02",
       "operator": "Berechnen Sie",
@@ -43,22 +77,37 @@
       "schwierigkeit": 1,
       "passt_zu": [],
       "variablen": {
-        "usd": { "von": 2200, "bis": 8800, "schritt": 1100 }
+        "usd": {
+          "von": 2200,
+          "bis": 8800,
+          "schritt": 1100
+        }
       },
       "abgeleitet": {
         "eur": "runde(usd / 1.1, 2)"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Ein Hersteller außerhalb der EU bietet Rohlinge für {usd} USD an. Für die Aufgabe gilt der Kurs 1 € = 1,10 USD. Weitere Kosten bleiben unberücksichtigt. Rechnen Sie den Angebotspreis in Euro um." }
+        {
+          "block": "text",
+          "inhalt": "Ein Hersteller außerhalb der EU bietet der MAKEL Studio GmbH Rohlinge für {usd} USD an. Für die Aufgabe gilt der Kurs 1 € = 1,10 USD. Weitere Kosten bleiben unberücksichtigt. Rechnen Sie den Angebotspreis in Euro um."
+        }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Angebotspreis", "einheit": "€", "loesung": "eur", "toleranz": 0.01 }
+        {
+          "block": "zahl",
+          "label": "Angebotspreis",
+          "einheit": "€",
+          "loesung": "eur",
+          "toleranz": 0.01
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
       "erklaerung": "Mengennotierung: 1 € = 1,10 USD. Euro-Betrag = Dollar-Betrag ÷ 1,10.",
       "quelle": "ik2024-lf04-k04, Abschnitt a3"
     },
-
     {
       "id": "ik2024-lf04-k04-03",
       "operator": "Führen Sie durch",
@@ -69,28 +118,73 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Deniz Aydın bewertet zwei Rohlingslieferanten mit einer Nutzwertanalyse. Punkte von 1 bis 10, höher ist besser." },
+        {
+          "block": "text",
+          "inhalt": "Deniz Aydın aus dem Einkauf der MAKEL Studio GmbH bewertet zwei Rohlingslieferanten mit einer Nutzwertanalyse. Punkte von 1 bis 10, höher ist besser."
+        },
         {
           "block": "anlage",
           "titel": "Anlage 1: Kriterien, Gewichte und Punkte",
           "zugeklappt": false,
           "inhalt": {
             "block": "tabelle",
-            "spalten": ["Kriterium", "Gewicht", "Lieferant A", "Lieferant B"],
+            "spalten": [
+              "Kriterium",
+              "Gewicht",
+              "Lieferant A",
+              "Lieferant B"
+            ],
             "zeilen": [
-              ["Preis", "40 %", "9", "7"],
-              ["Qualität", "30 %", "7", "8"],
-              ["Lieferzuverlässigkeit", "20 %", "5", "9"],
-              ["Nachhaltigkeit", "10 %", "4", "8"]
+              [
+                "Preis",
+                "40 %",
+                "9",
+                "7"
+              ],
+              [
+                "Qualität",
+                "30 %",
+                "7",
+                "8"
+              ],
+              [
+                "Lieferzuverlässigkeit",
+                "20 %",
+                "5",
+                "9"
+              ],
+              [
+                "Nachhaltigkeit",
+                "10 %",
+                "4",
+                "8"
+              ]
             ]
           }
         }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Nutzwert Lieferant A", "einheit": "Punkte", "loesung": 7.1, "toleranz": 0.01, "punkte": 2 },
-        { "block": "zahl", "label": "Nutzwert Lieferant B", "einheit": "Punkte", "loesung": 7.8, "toleranz": 0.01, "punkte": 2 }
+        {
+          "block": "zahl",
+          "label": "Nutzwert Lieferant A",
+          "einheit": "Punkte",
+          "loesung": 7.1,
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Nutzwert Lieferant B",
+          "einheit": "Punkte",
+          "loesung": 7.8,
+          "toleranz": 0.01,
+          "punkte": 2
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
       "erklaerung": "A: 9 × 0,4 + 7 × 0,3 + 5 × 0,2 + 4 × 0,1 = 7,1. B: 7 × 0,4 + 8 × 0,3 + 9 × 0,2 + 8 × 0,1 = 7,8. B hat den höheren Nutzwert, vor allem wegen Zuverlässigkeit und Nachhaltigkeit.",
       "quelle": "ik2024-lf04-k04, Abschnitt a4"
     }

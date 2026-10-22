@@ -1,0 +1,197 @@
+{
+  "id": "k08",
+  "lernfeld": "ik2024-lf05",
+  "nummer": 8,
+  "titel": "Bestände abstimmen und Ergebnisse erklären",
+  "untertitel": "Buch- und Istbestand vergleichen, Differenzen belegt korrigieren und das Ergebnis der Buchführung richtig deuten.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Die Konten zeigen den Buchbestand, die Inventur den tatsächlichen Bestand.",
+          "Beide sollten übereinstimmen."
+        ],
+        "erklaerung": "Der Buchbestand ergibt sich aus Anfangsbestand plus gebuchten Zugängen minus gebuchten Abgängen. Der Istbestand wird durch Inventur festgestellt. Weichen beide voneinander ab, gibt es typische Ursachen: nicht oder falsch gebuchte Belege (etwa ein vergessener Entnahmeschein), Zählfehler, Schwund durch Diebstahl oder Verderb, Bruch, Verwechslungen beim Wareneingang. Maßgeblich für die Bilanz ist der durch Inventur festgestellte Istbestand — aber eine Differenz darf nicht einfach ausgebucht werden, bevor ihre Ursache geprüft ist.",
+        "beispiele": [
+          "Buchbestand Rohstoffe 800 €, Istbestand 750 €: Differenz 50 €.",
+          "Kassenbestand laut Kassenbuch 412 €, gezählt 402 €: Kassendifferenz 10 €."
+        ],
+        "fallbeispiel": "Bei der Monatsinventur zählt Jonas Weidner Rohlinge im Wert von 750 €, das Konto Rohstoffe zeigt 800 €. Sandra fragt zuerst nicht ‚Wie buchen wir das weg?‘, sondern ‚Woher kommt die Differenz?‘.",
+        "typische_fehler": "Eine Differenz sofort als Schwund ausbuchen, damit die Zahlen passen.",
+        "verstaendnisfragen": [
+          "Wie entsteht der Buchbestand? Anfangsbestand plus gebuchte Zugänge minus gebuchte Abgänge.",
+          "Nenne zwei mögliche Ursachen einer Inventurdifferenz. Zum Beispiel ein nicht gebuchter Entnahmeschein und ein Zählfehler."
+        ],
+        "pruefungsbezug": "Ursachen von Inventurdifferenzen nennen und prüfen, bevor korrigiert wird.",
+        "merksatz": "Buchbestand und Istbestand können abweichen; zuerst die Ursache klären, dann korrigieren."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Jede Buchung braucht einen Beleg.",
+          "Bei der Bestandsmethode wird Materialverbrauch über Entnahmescheine gebucht."
+        ],
+        "erklaerung": "Zur Ursachenklärung werden die Unterlagen durchgesehen: Entnahmescheine, Lieferscheine, Wareneingangsprotokolle, Rücksendungen, Zählprotokolle. Findet sich ein geprüfter, aber nicht gebuchter Beleg, wird er nachgebucht — mit dem Buchungssatz, der von Anfang an richtig gewesen wäre. Lässt sich keine Ursache belegen, wird die Differenz dokumentiert und nach der betrieblichen Regelung als Bestandsminderung erfasst; wiederholte oder hohe Differenzen sind ein Anlass, Abläufe zu verbessern. Nachträgliche Korrekturen müssen nachvollziehbar bleiben: Falsche Buchungen werden nicht überschrieben, sondern storniert oder per Korrekturbuchung berichtigt.",
+        "beispiele": [
+          "Nicht gebuchter Entnahmeschein über 50 €: Aufwendungen für Rohstoffe 50 € an Rohstoffe 50 €.",
+          "Doppelt gebuchte Eingangsrechnung: Stornobuchung mit vertauschten Seiten, mit Verweis auf die Originalbuchung."
+        ],
+        "fallbeispiel": "Jonas findet in der Veredelung einen ausgefüllten, von der Schichtleitung abgezeichneten Entnahmeschein über Rohlinge im Wert von 50 €, der nie in die Buchhaltung gelangt ist. Sandra prüft ihn und bucht: Aufwendungen für Rohstoffe 50 € an Rohstoffe 50 €. Buchbestand und Istbestand stimmen jetzt überein.",
+        "typische_fehler": "Ohne Beleg einfach einen Verbrauch unterstellen oder eine Buchung im System unkenntlich überschreiben.",
+        "verstaendnisfragen": [
+          "Was wird gebucht, wenn ein nicht erfasster Entnahmeschein gefunden wird? Die Verbrauchsbuchung: Aufwendungen für Rohstoffe an Rohstoffe.",
+          "Wie wird eine falsche Buchung berichtigt? Durch Storno oder Korrekturbuchung, nicht durch Überschreiben."
+        ],
+        "pruefungsbezug": "Belegte Korrekturen buchen und die Nachvollziehbarkeit (GoB) begründen.",
+        "merksatz": "Belegte Ursache → richtige Buchung nachholen; Fehler werden storniert oder korrigiert, nie unkenntlich überschrieben."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Fehler in der Buchführung führen zu falschen Entscheidungen.",
+          "Viele Fehler lassen sich mit einfachen Kontrollen finden."
+        ],
+        "erklaerung": "Plausibilitätsprüfungen helfen, Fehler früh zu finden: Stimmt die Summe der Soll- und Habenbuchungen überein? Haben Bestandskonten einen plausiblen Saldo (etwa keine negative Kasse)? Stimmt der Saldo des Bankkontos mit dem Kontoauszug, der Saldo der Forderungen mit der Offene-Posten-Liste überein? Passt die Zahllast zu den Umsätzen? Jede Prüfung und Korrektur wird dokumentiert: wer, wann, welcher Beleg, welche Begründung. So bleibt die Buchführung für Prüfer nachvollziehbar.",
+        "beispiele": [
+          "Das Konto Kasse zeigt einen Habensaldo: unmöglich, ein Fehler liegt vor.",
+          "Der Bankkontensaldo weicht vom Kontoauszug um eine noch nicht gebuchte Lastschrift ab."
+        ],
+        "fallbeispiel": "Bei der Monatsabstimmung vergleicht Luca den Saldo des Kontos Forderungen mit der Offene-Posten-Liste. Es fehlen 238 €. Er findet die Ursache: Eine Gutschrift an eine Boutique wurde in der Liste erfasst, aber noch nicht gebucht. Er bucht sie mit Verweis auf den Beleg nach und vermerkt die Abstimmung im Abstimmprotokoll.",
+        "typische_fehler": "Nur auf rechnerische Gleichheit von Soll und Haben achten. Auch eine vollständig falsche Buchung ist rechnerisch ausgeglichen.",
+        "verstaendnisfragen": [
+          "Warum reicht es nicht, dass Soll und Haben gleich sind? Weil auch falsche Buchungen ausgeglichen sein können, etwa auf dem falschen Konto.",
+          "Womit stimmt man das Bankkonto ab? Mit dem Kontoauszug zum selben Stichtag."
+        ],
+        "pruefungsbezug": "Kontrollmöglichkeiten nennen und begründen, warum Dokumentation zu den GoB gehört.",
+        "merksatz": "Konten regelmäßig mit externen Nachweisen abstimmen, Auffälligkeiten prüfen und jede Korrektur dokumentieren."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Gewinn = Erträge − Aufwendungen.",
+          "Zahlungen und Erfolg fallen oft auseinander."
+        ],
+        "erklaerung": "Das Ergebnis der Buchführung wird für unterschiedliche Adressaten erklärt. Der Gewinn sagt, ob das Eigenkapital durch die Geschäftstätigkeit gewachsen ist. Er sagt nicht, wie viel Geld auf dem Konto ist: Erträge können als Forderungen offen sein, Material kann eingekauft, aber noch nicht verbraucht sein, Abschreibungen mindern den Gewinn ohne Auszahlung, Tilgungen mindern das Bankguthaben ohne Aufwand. Wer Zahlungsfähigkeit beurteilen will, muss zusätzlich Bestände und Zahlungsströme betrachten.",
+        "beispiele": [
+          "Gewinn 800 €, aber 1.500 € Forderungen noch offen: Das Bankguthaben kann sogar gesunken sein.",
+          "Hohe Abschreibungen: niedriger Gewinn, aber kein entsprechender Geldabfluss im laufenden Jahr."
+        ],
+        "fallbeispiel": "Für einen Mini-Monat sind alle Erträge mit 6.000 € und alle Aufwendungen mit 5.200 € angegeben. Luca sagt zu Tobias Renner: ‚Damit haben wir 800 € mehr auf dem Konto.‘ Sandra korrigiert: ‚Der Gewinn beträgt 800 €. Ob mehr Geld da ist, hängt davon ab, was schon bezahlt wurde, was noch offen ist und welche erfolgsneutralen Zahlungen es gab.‘",
+        "typische_fehler": "Aus dem Gewinn direkt auf den Bankbestand schließen.",
+        "verstaendnisfragen": [
+          "Was sagt ein Gewinn von 800 € aus? Dass das Eigenkapital durch die Geschäftstätigkeit um 800 € gestiegen ist.",
+          "Nenne einen Grund, warum der Kontostand trotz Gewinn sinken kann. Zum Beispiel offene Kundenforderungen oder eine Darlehenstilgung."
+        ],
+        "pruefungsbezug": "In Fallaufgaben eine Aussage zu Gewinn und Liquidität beurteilen und begründen.",
+        "merksatz": "Gewinn zeigt die Veränderung des Eigenkapitals, nicht den Kontostand; für Zahlungsfähigkeit Bestände und Zahlungen betrachten."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Buch- und Istbestand vergleichen und Ursachen von Differenzen nennen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Eine belegte Ursache korrekt nachbuchen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Plausibilitätsprüfungen durchführen und Korrekturen dokumentieren", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Erfolgsaussagen von Aussagen zur Zahlungsfähigkeit trennen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Warum Buch und Bestand abweichen",
+      "inhalt": [
+        { "typ": "absatz", "text": "Buchbestand = Anfangsbestand + gebuchte Zugänge − gebuchte Abgänge. Der Istbestand kommt aus der Inventur. ==Eine Differenz ist zuerst eine Frage, keine Buchung.==" },
+        { "typ": "tabelle", "spalten": ["Mögliche Ursache", "Wie prüfen?"], "zeilen": [
+          { "zellen": ["Beleg nicht gebucht", "Entnahmescheine, Lieferscheine, Gutschriften durchsehen"] },
+          { "zellen": ["Zählfehler", "Nachzählen, Zählprotokoll prüfen"] },
+          { "zellen": ["Verwechslung beim Wareneingang", "Wareneingangsprotokoll mit Bestellung abgleichen"] },
+          { "zellen": ["Schwund, Bruch, Verderb", "Erst nach Ausschluss der anderen Ursachen annehmen"] }
+        ] },
+        { "typ": "merke", "text": "Buchbestand und Istbestand können abweichen; **zuerst die Ursache klären**, dann korrigieren.", "karteikarte": "Wie gehst du vor, wenn Buch- und Istbestand voneinander abweichen?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Belegte Korrekturen",
+      "inhalt": [
+        { "typ": "absatz", "text": "Findet sich ein geprüfter Beleg, wird die Buchung nachgeholt, die von Anfang an richtig gewesen wäre." },
+        { "typ": "tabelle", "mono": true, "spalten": ["Rohstoffe", "Betrag"], "zeilen": [
+          { "zellen": ["Buchbestand", "800 €"] },
+          { "zellen": ["Istbestand laut Inventur", "750 €"] },
+          { "zellen": ["Nicht gebuchter Entnahmeschein", "50 €"] },
+          { "zellen": ["Buchung", "Aufwendungen für Rohstoffe 50 € an Rohstoffe 50 €"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "Buchbestand Rohstoffe 800 €, Inventur 750 €. Es gibt keinen Beleg und noch keine Ursachenprüfung. Was tust du?",
+          "optionen": [
+            { "text": "Sofort Aufwendungen für Rohstoffe 50 € an Rohstoffe 50 € buchen", "richtig": false, "echo": "Ohne Nachweis wird ein Verbrauch nur unterstellt. Erst Ursachen prüfen — vielleicht ist es ein Zählfehler." },
+            { "text": "Ursache anhand von Entnahmescheinen, Lieferscheinen und Nachzählung prüfen, dokumentieren und dann belegt korrigieren", "richtig": true, "echo": "Genau. Die Korrektur folgt der geklärten Ursache, nicht umgekehrt." },
+            { "text": "Nichts tun, die Differenz ist gering", "richtig": false, "echo": "Auch kleine Differenzen werden geklärt. Für die Bilanz gilt der Istbestand, und wiederkehrende Differenzen deuten auf Ablaufprobleme." }
+          ]
+        },
+        { "typ": "merke", "text": "**Belegte Ursache → richtige Buchung nachholen**; Fehler werden storniert oder korrigiert, nie unkenntlich überschrieben.", "karteikarte": "Wie korrigierst du eine Bestandsdifferenz mit belegter Ursache, und wie gehst du mit Fehlbuchungen um?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Plausibel prüfen, sauber dokumentieren",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Konto", "Abstimmen mit"], "zeilen": [
+          { "zellen": ["Guthaben bei Kreditinstituten", "Kontoauszug zum Stichtag"] },
+          { "zellen": ["Kasse", "gezähltem Kassenbestand, Kassenbericht"] },
+          { "zellen": ["Forderungen / Verbindlichkeiten LuL", "Offene-Posten-Liste"] },
+          { "zellen": ["Roh-, Hilfs-, Betriebsstoffe", "Inventur und Lagerbuchhaltung"] },
+          { "zellen": ["Umsatzsteuer / Vorsteuer", "Umsätzen und Eingangsrechnungen des Zeitraums"] }
+        ] },
+        { "typ": "achtung", "text": "Soll gleich Haben beweist nur, dass rechnerisch nichts fehlt. Eine Buchung auf dem **falschen Konto** ist trotzdem ausgeglichen." },
+        { "typ": "merke", "text": "Konten regelmäßig mit **externen Nachweisen** abstimmen, Auffälligkeiten prüfen und jede Korrektur dokumentieren.", "karteikarte": "Womit stimmst du Bank, Kasse und Forderungen ab, und warum genügt ‚Soll gleich Haben‘ nicht?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Ergebnis richtig erklären",
+      "inhalt": [
+        {
+          "typ": "grafik",
+          "variante": "vergleich",
+          "kopf": "Gewinn oder Geld?",
+          "titel": "Zwei Fragen, zwei Antworten",
+          "lead": "Links die Erfolgsrechnung, rechts die Zahlungsströme. Beide sind richtig — sie beantworten nur unterschiedliche Fragen.",
+          "seiten": [
+            { "name": "Erfolg (GuV)", "ton": "gruen", "punkte": [
+              { "text": "Erträge − Aufwendungen", "detail": "Zeigt, ob das Eigenkapital durch die Geschäftstätigkeit gewachsen ist." },
+              { "text": "Verkauf auf Ziel zählt sofort", "detail": "Der Ertrag entsteht mit der Rechnung, auch wenn der Kunde noch nicht gezahlt hat." },
+              { "text": "Abschreibung mindert den Gewinn", "detail": "Aufwand ohne Auszahlung im laufenden Jahr." }
+            ] },
+            { "name": "Zahlungen (Bank, Kasse)", "ton": "gold", "punkte": [
+              { "text": "Einzahlungen − Auszahlungen", "detail": "Zeigt, wie sich der Geldbestand verändert hat." },
+              { "text": "Kundenzahlung zählt erst bei Eingang", "detail": "Bank an Forderungen — Geld ja, Ertrag nein." },
+              { "text": "Darlehenstilgung mindert das Geld", "detail": "Auszahlung ohne Aufwand." }
+            ] }
+          ],
+          "regel": "Wer nach Zahlungsfähigkeit fragt, braucht Bestände und Zahlungen — der Gewinn allein reicht nicht."
+        },
+        { "typ": "merke", "text": "**Gewinn** zeigt die Veränderung des Eigenkapitals, **nicht den Kontostand**; für Zahlungsfähigkeit Bestände und Zahlungen betrachten.", "karteikarte": "Warum folgt aus einem Gewinn von 800 € nicht, dass 800 € mehr auf dem Konto sind?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Buchbestand = Anfangsbestand + Zugänge − Abgänge; Istbestand aus der Inventur.",
+    "Differenzen erst klären, dann belegt korrigieren.",
+    "Nicht gebuchter Entnahmeschein: Aufwendungen für Rohstoffe an Rohstoffe.",
+    "Fehler werden storniert oder korrigiert, nicht überschrieben.",
+    "Konten mit Kontoauszug, Kassenbestand und Offene-Posten-Liste abstimmen.",
+    "Gewinn ist nicht gleich Geld auf dem Konto."
+  ],
+  "selbsttest": [
+    { "typ": "Buchen", "frage": "Buchbestand Rohstoffe 800 €, Istbestand 750 €. Ein geprüfter, nicht verbuchter Entnahmeschein weist Verbrauch von 50 € nach. Buchung?", "loesung": "Aufwendungen für Rohstoffe 50 € an Rohstoffe 50 € nach der Bestandsmethode. Ohne diesen Nachweis dürfte die Differenz nicht einfach als Verbrauch unterstellt werden." },
+    { "typ": "Beurteilen", "frage": "Erträge 6.000 €, Aufwendungen 5.200 €. Jemand behauptet: ‚Damit muss MAKEL 800 € mehr auf dem Bankkonto haben.‘", "loesung": "Der Gewinn beträgt 800 €, die Bankbehauptung folgt daraus nicht. Erträge und Aufwendungen können zeitlich von Zahlungen abweichen (offene Forderungen und Verbindlichkeiten, Abschreibungen), und erfolgsneutrale Zahlungen wie Tilgungen oder Materialeinkäufe auf Lager verändern den Kontostand zusätzlich." },
+    { "typ": "Wissen", "frage": "Womit stimmst du das Konto Forderungen aus Lieferungen und Leistungen ab?", "loesung": "Mit der Offene-Posten-Liste der Kunden zum selben Stichtag. Abweichungen werden mit den Belegen geklärt und dokumentiert." }
+  ],
+  "pruefungstipp": "Bei Differenzaufgaben punktet, wer zuerst die Ursache prüft und dann mit Beleg bucht. Bei Aussagen zu Gewinn und Geld immer mindestens zwei Gründe nennen, warum beides auseinanderfallen kann."
+}

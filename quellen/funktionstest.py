@@ -44,8 +44,14 @@ def pruefe(name, bedingung, zusatz=""):
 # wird das Konto direkt gesetzt und danach geprüft, was die App daraus macht.
 
 INHALT = json.loads((SEITE / "mittel" / "inhalt.json").read_text(encoding="utf-8"))
+# Die App zeigt immer nur die Lernfelder des aktiven Ausbildungsgangs. Ein
+# frisches Konto steht auf dem Standardberuf; dessen Lernfelder sind die
+# Grundlage für alle Prüfungen des Startbildschirms und der Kapitelwahl.
+STANDARDBERUF = INHALT.get("standardBeruf", "kfb")
+LERNFELDER = [lf for lf in INHALT["lernfelder"]
+              if lf.get("beruf", STANDARDBERUF) == STANDARDBERUF]
 KAPITEL = [(lf["id"], k["id"], lf["titel"], k["titel"])
-           for lf in INHALT["lernfelder"] for k in lf["kapitel"]]
+           for lf in LERNFELDER for k in lf["kapitel"]]
 
 AUFGABEN_DATEI = SEITE / "mittel" / "aufgaben.json"
 AUFGABEN = json.loads(AUFGABEN_DATEI.read_text(encoding="utf-8")) \
@@ -781,8 +787,8 @@ def probeklausur_klausur(b, w):
     # feste Zahl, damit die Prüfung beim nächsten Ausbau nicht wieder veraltet.
     gruppen = pg.locator("#ueben .pk--gruppe").count()
     pruefe("Nur Lernfelder mit Aufgaben stehen zur Wahl",
-           gruppen == len(INHALT["lernfelder"]),
-           f'{gruppen} Gruppen, {len(INHALT["lernfelder"])} Lernfelder')
+           gruppen == len(LERNFELDER),
+           f'{gruppen} Gruppen, {len(LERNFELDER)} Lernfelder')
 
     # „Ganzes Lernfeld" gibt es jetzt je Gruppe einmal. Gewählt wird die
     # Buchführung: Der weitere Ablauf prüft unter anderem ein Zahlenfeld, und
@@ -1556,7 +1562,7 @@ def main():
             .map(r => ({ kuerzel: r.querySelector('.hm-kuerzel').textContent,
                          gesamt: r.querySelectorAll('.hm-strich').length,
                          voll: r.querySelectorAll('.hm-strich.voll').length }))""")
-        pruefe("Eine Reihe je Lernfeld", len(reihen) == len(INHALT["lernfelder"]),
+        pruefe("Eine Reihe je Lernfeld", len(reihen) == len(LERNFELDER),
                len(reihen))
         pruefe("Ein Strich je Kapitel",
                sum(r["gesamt"] for r in reihen) == len(KAPITEL),

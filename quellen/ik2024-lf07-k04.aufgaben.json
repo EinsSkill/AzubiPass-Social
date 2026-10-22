@@ -1,0 +1,155 @@
+{
+  "lernfeld": "ik2024-lf07",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf07-k04-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ordnen Sie die Abläufe bei MAKEL dem Push- oder Pull-Prinzip zu."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Push oder Pull?",
+          "ziele": [
+            "Push",
+            "Pull"
+          ],
+          "elemente": [
+            {
+              "text": "Weiße Standard-Rohlinge werden nach Jahresprognose bestellt",
+              "loesung": "Push"
+            },
+            {
+              "text": "Ein Logo wird erst nach Eingang des Kundenauftrags gestickt",
+              "loesung": "Pull"
+            },
+            {
+              "text": "Eine leere Kanban-Box mit Etiketten löst die Nachbestellung aus",
+              "loesung": "Pull"
+            },
+            {
+              "text": "Die Sommerkollektion wird im Frühjahr auf Lager gedruckt",
+              "loesung": "Push"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Push: Auslöser ist eine Prognose. Pull: Auslöser ist der tatsächliche Bedarf oder Auftrag.",
+      "quelle": "ik2024-lf07-k04, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf07-k04-02",
+      "operator": "Erläutern Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Im Frühjahr stieg die Nachfrage der Boutiquen nach schwarzen Hoodies um 20 %. MAKEL bestellte daraufhin 40 % mehr Rohlinge, der Lieferant produzierte 60 % mehr. Zwei Monate später lagen auf allen Stufen hohe Restbestände."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Erläutern Sie den beschriebenen Effekt und zwei Maßnahmen, die ihn künftig dämpfen.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Es handelt sich um den Peitschen- oder Bullwhip-Effekt: Eine moderate Nachfrageänderung beim Kunden schaukelt sich über die Stufen auf, weil jede Stufe nur die Bestellungen der nächsten sieht und mit Sicherheitszuschlägen reagiert. Maßnahmen: Absatz- und Bestandsdaten mit dem Lieferanten teilen, damit er den echten Endkundenbedarf sieht; kürzere Bestellzyklen und kleinere, häufigere Bestellungen; Rahmenverträge mit flexiblen Abrufen; Veredelung erst nach Auftrag (Pull), damit nur Rohlinge, nicht fertige Ware auf Vorrat liegen.",
+        "raster": [
+          {
+            "kriterium": "Effekt benannt (Peitscheneffekt)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Ursache (Aufschaukeln durch Zuschläge, fehlende Sicht auf Endbedarf) erklärt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Erste geeignete Maßnahme",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zweite geeignete Maßnahme",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Der Peitscheneffekt entsteht durch fehlende gemeinsame Informationen; geteilte Daten und kürzere Zyklen dämpfen ihn.",
+      "quelle": "ik2024-lf07-k04, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf07-k04-03",
+      "operator": "Planen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Montagmorgen meldet der Rohlingslieferant der MAKEL Studio GmbH, dass die für Dienstag zugesagte Lieferung schwarzer Rohlinge erst am Montag der Folgewoche kommt. Im Lager liegen 250 schwarze Rohlinge. Eingeplant sind: ein Eventauftrag über 200 Hoodies (Liefertermin Freitag, Vertragsstrafe) und zwei Boutiqueaufträge über je 150 Hoodies (Liefertermin Donnerstag bzw. Freitag)."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Planen Sie das Vorgehen von der Prüfung bis zur Kundeninformation. Nennen Sie Zuständigkeiten und Prioritäten.",
+          "zeilen": 8
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "1. Prüfen (Einkauf/Lager): 250 Rohlinge reichen für den Eventauftrag (200) plus 50 Stück; Bedarf insgesamt 500. 2. Priorisieren (Produktionsplanung): Eventauftrag wegen Vertragsstrafe zuerst aus Bestand fertigen; die verbleibenden 50 Rohlinge für eine Teillieferung an eine Boutique nutzen, falls diese zustimmt. 3. Maßnahmen (Einkauf): beim Lieferanten Teillieferung oder Expressversand anfragen, Ersatzlieferanten prüfen. 4. Kundeninformation (Vertrieb): Boutiquen heute noch mit realistischem neuem Termin informieren — Teillieferung anbieten, Rest nach Eingang der Rohlinge plus Produktionszeit. 5. Dokumentieren: Verzug für die Lieferantenbewertung festhalten; Statusdaten im System aktualisieren.",
+        "raster": [
+          {
+            "kriterium": "Bestand mit Bedarf abgeglichen (250 gegen 500)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Eventauftrag begründet priorisiert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Maßnahmen gegenüber Lieferant bzw. Ersatzlieferant",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Kundeninformation durch Vertrieb mit realistischem Termin",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zuständigkeiten und Dokumentation benannt",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Bei Störungen in der Lieferkette zuerst Wirkung prüfen, dann begründet priorisieren, Maßnahmen ergreifen, zuständig informieren und dokumentieren.",
+      "quelle": "ik2024-lf07-k04, Abschnitt a4"
+    }
+  ]
+}

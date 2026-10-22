@@ -1,0 +1,155 @@
+{
+  "lernfeld": "ik2024-lf06",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf06-k05-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "bedarf": {
+          "von": 6000,
+          "bis": 12000,
+          "schritt": 1000
+        },
+        "los": {
+          "von": 200,
+          "bis": 1000,
+          "schritt": 200
+        },
+        "ruest": {
+          "von": 40,
+          "bis": 80,
+          "schritt": 10
+        }
+      },
+      "abgeleitet": {
+        "lose": "bedarf / los",
+        "ruestkosten": "runde(bedarf / los * ruest, 2)",
+        "bestand": "los / 2"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für das Basis-Shirt rechnet MAKEL mit einem gleichmäßigen Jahresbedarf von {bedarf} Stück. Gefertigt wird in Losen von {los} Stück; jeder Rüstvorgang kostet {ruest} €."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Rüstkosten pro Jahr",
+          "einheit": "€",
+          "loesung": "ruestkosten",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Durchschnittlicher Lagerbestand",
+          "einheit": "Stück",
+          "loesung": "bestand",
+          "toleranz": 0.01,
+          "punkte": 1
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Anzahl Lose = Jahresbedarf ÷ Losgröße; Rüstkosten pro Jahr = Anzahl Lose × Rüstkosten je Los. Durchschnittsbestand bei gleichmäßigem Abgang = Losgröße ÷ 2.",
+      "quelle": "ik2024-lf06-k05, Abschnitte a1 und a2"
+    },
+    {
+      "id": "ik2024-lf06-k05-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Im vereinfachten Losgrößenmodell (konstanter Bedarf, sofortige Bereitstellung des Loses, keine Engpässe) gelten für ein Shirt-Motiv der MAKEL Studio GmbH: Jahresbedarf D = 7.200 Stück, Rüstkosten S = 60 € je Los, Lagerkosten h = 1,50 € je Stück und Jahr. Nutzen Sie q* = √(2 · D · S ÷ h)."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Optimale Losgröße",
+          "einheit": "Stück",
+          "loesung": 758.95,
+          "toleranz": 1,
+          "punkte": 3
+        },
+        {
+          "block": "zahl",
+          "label": "Anzahl Lose pro Jahr (eine Nachkommastelle)",
+          "einheit": "Lose",
+          "loesung": 9.5,
+          "toleranz": 0.1,
+          "punkte": 1
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "q* = √(2 · 7.200 · 60 ÷ 1,5) = √576.000 ≈ 759 Stück. Anzahl Lose = 7.200 ÷ 759 ≈ 9,5.",
+      "quelle": "ik2024-lf06-k05, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf06-k05-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Deniz Aydın hat für ein Weihnachtsmotiv eine optimale Losgröße von 1.200 Stück berechnet. Der erwartete Absatz bis Ende Dezember liegt bei 900 Stück; danach ist das Motiv kaum noch verkäuflich. Die Stickmaschine ist im November zu 95 % ausgelastet."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie, ob MAKEL 1.200 Stück in einem Los fertigen sollte.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Nein. Das Modell setzt konstanten, fortlaufenden Bedarf voraus; bei einem Saisonmotiv trifft das nicht zu. Bei 900 Stück erwartetem Absatz blieben rund 300 Stück übrig, die nach Weihnachten kaum verkäuflich sind — die tatsächlichen Lagerkosten (Veralterung) sind viel höher als im Modell. Außerdem ist die Maschine im November fast ausgelastet; ein großes Los kann andere Aufträge verdrängen. Sinnvoll: Losgröße am erwarteten Absatz ausrichten (etwa 900 Stück oder in zwei Teillosen, das zweite nach Abverkaufsdaten) und den Kapazitätsplan einbeziehen.",
+        "raster": [
+          {
+            "kriterium": "Verletzte Modellannahme (kein konstanter Bedarf) erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Restbestandsrisiko beziffert oder begründet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Kapazitätsauslastung einbezogen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Alternative vorgeschlagen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Die rechnerische Losgröße gilt nur unter ihren Annahmen; bei Saisonware und Engpässen wird sie angepasst.",
+      "quelle": "ik2024-lf06-k05, Abschnitte a3 und a4"
+    }
+  ]
+}

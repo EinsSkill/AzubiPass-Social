@@ -1,0 +1,173 @@
+{
+  "lernfeld": "ik2024-lf07",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf07-k05-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "ab": {
+          "von": 14000,
+          "bis": 22000,
+          "schritt": 2000
+        },
+        "eb": {
+          "von": 16000,
+          "bis": 24000,
+          "schritt": 2000
+        },
+        "umschlag": {
+          "von": 4,
+          "bis": 9,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "bestand": "(ab + eb) / 2",
+        "verbrauch": "(ab + eb) / 2 * umschlag",
+        "dauer": "runde(360 / umschlag, 1)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für das Rohstofflager der MAKEL Studio GmbH gelten: Anfangsbestand {ab} €, Endbestand {eb} €, Materialverbrauch im Jahr {verbrauch} € (alle Werte zu Einstandspreisen). Rechnen Sie mit 360 Tagen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Durchschnittlicher Lagerbestand",
+          "einheit": "€",
+          "loesung": "bestand",
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Umschlagshäufigkeit",
+          "einheit": "",
+          "loesung": "umschlag",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Durchschnittliche Lagerdauer (eine Nachkommastelle)",
+          "einheit": "Tage",
+          "loesung": "dauer",
+          "toleranz": 0.05,
+          "punkte": 2
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 5
+      },
+      "erklaerung": "Ø Bestand = (AB + EB) ÷ 2. Umschlag = Verbrauch ÷ Ø Bestand. Lagerdauer = 360 ÷ Umschlag.",
+      "quelle": "ik2024-lf07-k05, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf07-k05-02",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 1,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli, Auszubildender der MAKEL Studio GmbH, soll die Umschlagshäufigkeit des Rohstofflagers berechnen. Ihm liegen Umsatzerlöse, Materialverbrauch zu Einstandspreisen und der durchschnittliche Lagerbestand zu Einstandspreisen vor."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Werte setzt er ins Verhältnis?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Materialverbrauch ÷ durchschnittlicher Lagerbestand",
+              "richtig": true,
+              "echo": "Richtig. Beide Größen sind zu Einstandspreisen bewertet."
+            },
+            {
+              "text": "Umsatzerlöse ÷ durchschnittlicher Lagerbestand",
+              "richtig": false,
+              "echo": "Umsatzerlöse sind zu Verkaufspreisen bewertet und passen nicht zum Bestand zu Einstandspreisen."
+            },
+            {
+              "text": "Durchschnittlicher Lagerbestand ÷ Materialverbrauch",
+              "richtig": false,
+              "echo": "Vertauscht — das ergibt einen Bruchteil, keine Häufigkeit."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Umschlagshäufigkeit = Verbrauch ÷ Ø Bestand; Zähler und Nenner gleich bewerten.",
+      "quelle": "ik2024-lf07-k05, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf07-k05-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "MAKEL hat drei Monate kleinere Versandkartons getestet. Ergebnis: Verpackungskosten sanken von 1.000 € auf 850 € im Quartal. Die Schadensquote stieg von 0,5 % auf 2 % bei rund 4.000 Sendungen im Quartal. Jede beschädigte Sendung verursacht durchschnittlich 18 € für Ersatzware und Versand. Tobias Renner möchte die Maßnahme als „nachhaltige Einsparung“ beibehalten."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie die Maßnahme rechnerisch und qualitativ und geben Sie eine Empfehlung.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Einsparung Verpackung: 150 € im Quartal. Zusätzliche Schäden: 1,5 % von 4.000 = 60 Sendungen × 18 € = 1.080 € im Quartal. Die Maßnahme verursacht also rund 930 € Mehrkosten. Ökologisch werden 15 % Verpackungsmaterial gespart, aber Ersatzware und zusätzliche Transporte verursachen Material- und Emissionen; dazu kommt der Imageschaden bei Kunden. Als ‚nachhaltige Einsparung‘ ist die Maßnahme nicht haltbar. Empfehlung: zur alten Kartongröße zurückkehren oder eine bessere Polsterung testen, mit festem Ziel (Schadensquote ≤ 0,5 %) und erneuter Messung.",
+        "raster": [
+          {
+            "kriterium": "Einsparung Verpackung richtig (150 €)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Schadenskosten richtig (60 Sendungen, 1.080 €)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Gesamtbilanz negativ erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Ökologische und Kundenwirkung einbezogen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Empfehlung mit messbarem Ziel",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Nachhaltigkeit und Wirtschaftlichkeit werden an der Gesamtwirkung gemessen, nicht an einer einzelnen Kennzahl.",
+      "quelle": "ik2024-lf07-k05, Abschnitte a2 bis a4"
+    }
+  ]
+}

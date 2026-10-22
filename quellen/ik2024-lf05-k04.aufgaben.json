@@ -1,0 +1,278 @@
+{
+  "lernfeld": "ik2024-lf05",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf05-k04-01",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 6,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "netto": {
+          "von": 800,
+          "bis": 4000,
+          "schritt": 100
+        }
+      },
+      "abgeleitet": {
+        "steuer": "runde(netto * 0.19, 2)",
+        "brutto": "netto + steuer"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Deniz Aydın legt Ihnen die geprüfte Eingangsrechnung für Hoodie-Rohlinge vor. MAKEL erfasst eingekaufte Rohstoffe nach der Bestandsmethode auf dem Konto Rohstoffe. Voller Vorsteuerabzug ist gegeben."
+        },
+        {
+          "block": "anlage",
+          "titel": "Anlage 1: Eingangsrechnung",
+          "zugeklappt": true,
+          "beleg": "eingangsrechnung",
+          "daten": {
+            "lieferant": "Textilwerk Brandner GmbH",
+            "rechnungsnummer": "R-26-1187",
+            "position": "Hoodie-Rohling schwarz, 380 g/m²",
+            "netto": "{netto}",
+            "steuersatz": 19,
+            "steuer": "{steuer}",
+            "brutto": "{brutto}",
+            "bedingung": "30 Tage netto"
+          }
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "2000",
+              "haben": null,
+              "betrag": "netto"
+            },
+            {
+              "soll": "2600",
+              "haben": null,
+              "betrag": "steuer"
+            },
+            {
+              "soll": null,
+              "haben": "4400",
+              "betrag": "brutto"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 6,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Rohstoffe werden netto als Bestand erfasst, die Steuer läuft als Forderung ans Finanzamt über das Vorsteuerkonto, die Verbindlichkeit entspricht dem Rechnungsbetrag brutto.",
+      "quelle": "ik2024-lf05-k04, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf05-k04-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "netto_basis": {
+          "von": 1000,
+          "bis": 5000,
+          "schritt": 100
+        }
+      },
+      "abgeleitet": {
+        "brutto": "runde(netto_basis * 1.19, 2)",
+        "netto": "netto_basis",
+        "steuer": "runde(netto_basis * 0.19, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Marlene Voss aus dem Vertrieb der MAKEL Studio GmbH hat einer Boutique eigene Erzeugnisse in Rechnung gestellt. Der Rechnungsbetrag lautet {brutto} € einschließlich 19 % Umsatzsteuer."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Nettobetrag",
+          "einheit": "€",
+          "loesung": "netto",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Umsatzsteuer",
+          "einheit": "€",
+          "loesung": "steuer",
+          "toleranz": 0.01,
+          "punkte": 1
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Netto = Brutto ÷ 1,19. Die Umsatzsteuer ist die Differenz zwischen Brutto und Netto. 19 % vom Bruttobetrag abzuziehen ergibt einen falschen, zu niedrigen Nettobetrag.",
+      "quelle": "ik2024-lf05-k04, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf05-k04-03",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 6,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "netto": {
+          "von": 1000,
+          "bis": 5000,
+          "schritt": 200
+        }
+      },
+      "abgeleitet": {
+        "steuer": "runde(netto * 0.19, 2)",
+        "brutto": "netto + steuer"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH verkauft bedruckte Hoodies (eigene Erzeugnisse) auf Ziel an die Boutique „Faden & Form“: netto {netto} € zuzüglich 19 % Umsatzsteuer."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "2400",
+              "haben": null,
+              "betrag": "brutto"
+            },
+            {
+              "soll": null,
+              "haben": "5000",
+              "betrag": "netto"
+            },
+            {
+              "soll": null,
+              "haben": "4800",
+              "betrag": "steuer"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 6,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Die Forderung entsteht brutto. Der Erlös wird netto gebucht, die Umsatzsteuer ist eine Schuld gegenüber dem Finanzamt (Haben).",
+      "quelle": "ik2024-lf05-k04, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf05-k04-04",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "ust": {
+          "von": 2000,
+          "bis": 4000,
+          "schritt": 50
+        },
+        "vst": {
+          "von": 800,
+          "bis": 1900,
+          "schritt": 50
+        }
+      },
+      "abgeleitet": {
+        "zahllast": "ust - vst"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Zum Monatsende stehen bei der MAKEL Studio GmbH auf dem Konto Umsatzsteuer {ust} € und auf dem Konto Vorsteuer {vst} €."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Zahllast",
+          "einheit": "€",
+          "loesung": "zahllast",
+          "toleranz": 0.01
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Zahllast = Umsatzsteuer − Vorsteuer. Gebucht wird erst Umsatzsteuer an Vorsteuer, dann Umsatzsteuer an Bank.",
+      "quelle": "ik2024-lf05-k04, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k04-05",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Auf einer Eingangsrechnung der MAKEL Studio GmbH über Druckfarbe (netto 800 €, 152 € Umsatzsteuer) fehlen die Steuernummer bzw. USt-IdNr. des Lieferanten und das Lieferdatum. Luca will die 152 € trotzdem sofort als Vorsteuer buchen: „Die Rechnung ist doch eindeutig von denen.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Vorgehen und beschreiben Sie das richtige Vorgehen.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Der Vorsteuerabzug setzt eine Rechnung mit allen Pflichtangaben nach § 14 UStG voraus (§ 15 UStG). Fehlen Steuernummer bzw. USt-IdNr. und Lieferdatum, ist der Abzug gefährdet; bei einer Prüfung könnte das Finanzamt die Vorsteuer zurückfordern. Richtig: Rechnung prüfen, beim Lieferanten eine berichtigte Rechnung anfordern, den Vorgang dokumentieren und die Vorsteuer erst mit der ordnungsgemäßen Rechnung geltend machen. Die Rechnung selbst kann sachlich geprüft und intern freigegeben werden.",
+        "raster": [
+          {
+            "kriterium": "Pflichtangaben als Voraussetzung des Vorsteuerabzugs erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Risiko der Rückforderung genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Berichtigte Rechnung anfordern",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Dokumentation und späterer Abzug",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Ohne ordnungsgemäße Rechnung kein sicherer Vorsteuerabzug.",
+      "quelle": "ik2024-lf05-k04, Abschnitte a2 und a4"
+    }
+  ]
+}

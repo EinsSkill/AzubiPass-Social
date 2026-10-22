@@ -2,7 +2,6 @@
   "lernfeld": "ik2024-lf04",
   "kapitel": "k02",
   "verweise_im_klausurmodus": "ausblenden",
-
   "bausteine": [
     {
       "id": "ik2024-lf04-k02-01",
@@ -13,24 +12,47 @@
       "schwierigkeit": 1,
       "passt_zu": [],
       "variablen": {
-        "verbrauch": { "von": 20, "bis": 80, "schritt": 10 },
-        "lieferzeit": { "von": 3, "bis": 10, "schritt": 1 },
-        "sicherheit": { "von": 50, "bis": 200, "schritt": 50 }
+        "verbrauch": {
+          "von": 20,
+          "bis": 80,
+          "schritt": 10
+        },
+        "lieferzeit": {
+          "von": 3,
+          "bis": 10,
+          "schritt": 1
+        },
+        "sicherheit": {
+          "von": 50,
+          "bis": 200,
+          "schritt": 50
+        }
       },
       "abgeleitet": {
         "melde": "verbrauch * lieferzeit + sicherheit"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Die MAKEL Studio GmbH verbraucht täglich {verbrauch} Hoodie-Rohlinge. Die Lieferzeit beträgt {lieferzeit} Arbeitstage, der Sicherheitsbestand {sicherheit} Stück. Verbrauch und Lieferzeit sind gleichmäßig. Berechnen Sie den Meldebestand." }
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH verbraucht täglich {verbrauch} Hoodie-Rohlinge. Die Lieferzeit beträgt {lieferzeit} Arbeitstage, der Sicherheitsbestand {sicherheit} Stück. Verbrauch und Lieferzeit sind gleichmäßig. Berechnen Sie den Meldebestand."
+        }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Meldebestand", "einheit": "Stück", "loesung": "melde", "toleranz": 0 }
+        {
+          "block": "zahl",
+          "label": "Meldebestand",
+          "einheit": "Stück",
+          "loesung": "melde",
+          "toleranz": 0
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
       "erklaerung": "Meldebestand = Tagesverbrauch × Lieferzeit + Sicherheitsbestand.",
       "quelle": "ik2024-lf04-k02, Abschnitt a2"
     },
-
     {
       "id": "ik2024-lf04-k02-02",
       "operator": "Berechnen Sie",
@@ -41,16 +63,27 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Für schwarze Hoodie-Rohlinge gelten bei der MAKEL Studio GmbH: Jahresbedarf 10.000 Stück, Kosten je Bestellung 50 €, jährliche Lagerkosten 2 € je Stück (bezogen auf den durchschnittlichen Bestand). Im vereinfachten Modell gilt q* = √(2 × Jahresbedarf × Bestellkosten ÷ Lagerkosten je Stück). Berechnen Sie die optimale Bestellmenge, gerundet auf ganze Stück." }
+        {
+          "block": "text",
+          "inhalt": "Für schwarze Hoodie-Rohlinge gelten bei der MAKEL Studio GmbH: Jahresbedarf 10.000 Stück, Kosten je Bestellung 50 €, jährliche Lagerkosten 2 € je Stück (bezogen auf den durchschnittlichen Bestand). Im vereinfachten Modell gilt q* = √(2 × Jahresbedarf × Bestellkosten ÷ Lagerkosten je Stück). Berechnen Sie die optimale Bestellmenge, gerundet auf ganze Stück."
+        }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Optimale Bestellmenge", "einheit": "Stück", "loesung": 707, "toleranz": 1 }
+        {
+          "block": "zahl",
+          "label": "Optimale Bestellmenge",
+          "einheit": "Stück",
+          "loesung": 707,
+          "toleranz": 1
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
       "erklaerung": "q* = √(2 × 10.000 × 50 ÷ 2) = √500.000 ≈ 707 Stück. Das Modell setzt gleichmäßigen Verbrauch, feste Preise ohne Rabatt und unbegrenzten Lagerplatz voraus.",
       "quelle": "ik2024-lf04-k02, Abschnitt a4"
     },
-
     {
       "id": "ik2024-lf04-k02-03",
       "operator": "Begründen Sie",
@@ -61,7 +94,10 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Die optimale Bestellmenge für Rohlinge beträgt nach der Andler-Formel rund 707 Stück. Der Lieferant liefert nur in Kartons zu 50 Stück und gewährt ab 1.000 Stück einen Mengenrabatt von 3 %." }
+        {
+          "block": "text",
+          "inhalt": "Die optimale Bestellmenge der MAKEL Studio GmbH für Rohlinge beträgt nach der Andler-Formel rund 707 Stück. Der Lieferant liefert nur in Kartons zu 50 Stück und gewährt ab 1.000 Stück einen Mengenrabatt von 3 %."
+        }
       ],
       "eingabe": [
         {
@@ -74,9 +110,18 @@
         "art": "selbstbewertung",
         "musterloesung": "Die Formel liefert einen Richtwert unter vereinfachten Annahmen: konstante Preise ohne Mengenrabatt, gleichmäßiger Verbrauch, unbegrenzter Lagerplatz. Gebinde und Rabatt sind darin nicht berücksichtigt. Vorgehen: auf Gebinde runden (700 Stück) und die Variante 1.000 Stück mit 3 % Rabatt dagegenrechnen — jeweils Bestell-, Lager- und Materialkosten pro Jahr. Dazu Lagerplatz und Kapitalbindung prüfen. Die günstigere Gesamtvariante wird gewählt.",
         "raster": [
-          { "kriterium": "Modellannahmen bzw. Grenzen genannt", "punkte": 1 },
-          { "kriterium": "Rundung auf Gebinde berücksichtigt", "punkte": 1 },
-          { "kriterium": "Gesamtkostenvergleich mit Rabattvariante als Vorgehen", "punkte": 1 }
+          {
+            "kriterium": "Modellannahmen bzw. Grenzen genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Rundung auf Gebinde berücksichtigt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Gesamtkostenvergleich mit Rabattvariante als Vorgehen",
+            "punkte": 1
+          }
         ]
       },
       "erklaerung": "Die Andler-Formel berücksichtigt keine Mengenrabatte und keine Gebindegrößen.",

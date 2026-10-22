@@ -1,0 +1,193 @@
+{
+  "id": "k04",
+  "lernfeld": "ik2024-lf05",
+  "nummer": 4,
+  "titel": "Umsatzsteuer aus Belegen erfassen",
+  "untertitel": "Netto, Steuer und brutto auseinanderhalten, Vorsteuer und Umsatzsteuer richtig buchen und die Zahllast ermitteln.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Auf fast jeder Rechnung steht ein Nettobetrag, ein Steuerbetrag und ein Bruttobetrag.",
+          "Der Regelsteuersatz beträgt 19 Prozent, der ermäßigte 7 Prozent."
+        ],
+        "erklaerung": "Die Umsatzsteuer wird auf das Entgelt, also den Nettobetrag, aufgeschlagen: Netto × 19 % = Steuer, Netto + Steuer = Brutto, also Brutto = Netto × 1,19. Ist nur der Bruttobetrag bekannt, rechnet man zurück: Netto = Brutto ÷ 1,19, Steuer = Brutto − Netto. Ein häufiger Fehler ist, 19 Prozent vom Bruttobetrag abzuziehen — das ergibt einen zu niedrigen Nettobetrag, weil die 19 Prozent sich auf den Nettobetrag beziehen. Für die Übungen dieses Kapitels gilt: inländischer, normal steuerpflichtiger Fall mit 19 Prozent und vollem Vorsteuerabzug.",
+        "beispiele": [
+          "Netto 1.000 € → Steuer 190 € → Brutto 1.190 €.",
+          "Brutto 2.380 € → Netto 2.380 € ÷ 1,19 = 2.000 € → Steuer 380 €."
+        ],
+        "fallbeispiel": "Luca rechnet bei einer Bruttorechnung über 2.380 € ‚2.380 € minus 19 Prozent‘ und erhält 1.927,80 €. Sandra lässt ihn nachrechnen: 1.927,80 € × 1,19 = 2.294,08 € — das passt nicht zum Rechnungsbetrag. Richtig ist 2.380 € ÷ 1,19 = 2.000 €.",
+        "typische_fehler": "19 Prozent vom Bruttobetrag abziehen, statt durch 1,19 zu teilen.",
+        "verstaendnisfragen": [
+          "Wie berechnest du aus brutto 1.190 € den Nettobetrag? 1.190 € ÷ 1,19 = 1.000 €.",
+          "Worauf beziehen sich die 19 Prozent Umsatzsteuer? Auf den Nettobetrag."
+        ],
+        "pruefungsbezug": "Rückrechnung vom Brutto auf Netto ist eine der häufigsten Rechenaufgaben.",
+        "merksatz": "Brutto = Netto × 1,19; Netto = Brutto ÷ 1,19 — nie 19 Prozent vom Bruttobetrag abziehen."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "MAKEL kauft Material bei Lieferanten, die Umsatzsteuer berechnen.",
+          "Ein Unternehmer darf diese Steuer unter Voraussetzungen vom Finanzamt zurückfordern."
+        ],
+        "erklaerung": "Die Umsatzsteuer auf Eingangsrechnungen heißt aus Sicht von MAKEL Vorsteuer. MAKEL darf sie vom Finanzamt zurückfordern (Vorsteuerabzug, § 15 UStG), wenn eine ordnungsgemäße Rechnung mit den Pflichtangaben nach § 14 UStG vorliegt und die Leistung für das Unternehmen bezogen wurde. Die Vorsteuer ist deshalb eine Forderung gegenüber dem Finanzamt und wird auf dem Aktivkonto 2600 Vorsteuer im Soll gebucht. Das Material selbst wird mit dem Nettobetrag erfasst; die Verbindlichkeit beim Lieferanten mit dem Bruttobetrag.",
+        "beispiele": [
+          "Rohstoffeinkauf netto 1.000 € auf Ziel: Rohstoffe 1.000 €, Vorsteuer 190 € an Verbindlichkeiten LuL 1.190 €.",
+          "Fehlt auf der Rechnung die Steuernummer oder USt-IdNr. des Lieferanten, wird eine korrigierte Rechnung angefordert, bevor die Vorsteuer geltend gemacht wird."
+        ],
+        "fallbeispiel": "Deniz Aydın gibt eine Rechnung über Baumwoll-Rohlinge frei: netto 1.000 €, 19 % Umsatzsteuer 190 €, Rechnungsbetrag 1.190 €. Sandra prüft die Pflichtangaben und bucht nach der bei MAKEL gewählten Bestandsmethode: Rohstoffe 1.000 € und Vorsteuer 190 € an Verbindlichkeiten aus Lieferungen und Leistungen 1.190 €.",
+        "typische_fehler": "Die Vorsteuer als Teil der Materialkosten buchen. Bei vollem Vorsteuerabzug gehört sie auf das Vorsteuerkonto.",
+        "verstaendnisfragen": [
+          "Warum ist die Vorsteuer ein Aktivkonto? Weil MAKEL sie vom Finanzamt zurückfordern kann — sie ist eine Forderung.",
+          "Mit welchem Betrag steht das Material im Konto Rohstoffe? Mit dem Nettobetrag."
+        ],
+        "pruefungsbezug": "Eingangsrechnungen werden fast immer als zusammengesetzter Buchungssatz mit Vorsteuer abgefragt.",
+        "merksatz": "Eingangsrechnung: Material netto und Vorsteuer im Soll, Verbindlichkeit brutto im Haben."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "MAKEL verkauft veredelte Textilien an Boutiquen und Endkunden.",
+          "Auf Ausgangsrechnungen berechnet MAKEL selbst Umsatzsteuer."
+        ],
+        "erklaerung": "Auf Ausgangsrechnungen stellt MAKEL dem Kunden Umsatzsteuer in Rechnung. Diesen Betrag schuldet MAKEL dem Finanzamt; er ist eine Verbindlichkeit und wird auf dem Passivkonto 4800 Umsatzsteuer im Haben gebucht. Der Umsatzerlös wird netto erfasst, die Forderung gegenüber dem Kunden brutto. Vorsteuer (Einkauf) und Umsatzsteuer (Verkauf) laufen über getrennte Konten — beide heißen umgangssprachlich ‚Mehrwertsteuer‘, sind buchhalterisch aber Forderung und Schuld.",
+        "beispiele": [
+          "Verkauf eigener Erzeugnisse netto 2.000 € auf Ziel: Forderungen LuL 2.380 € an Umsatzerlöse 2.000 € und Umsatzsteuer 380 €.",
+          "Barverkauf im Store, brutto 119 €: Kasse 119 € an Umsatzerlöse 100 € und Umsatzsteuer 19 €."
+        ],
+        "fallbeispiel": "Marlene Voss schreibt eine Rechnung an die Boutique ‚Faden & Form‘ über bedruckte Hoodies: netto 2.000 €, Umsatzsteuer 380 €, brutto 2.380 €. Sandra bucht: Forderungen aus Lieferungen und Leistungen 2.380 € an Umsatzerlöse für eigene Erzeugnisse 2.000 € und Umsatzsteuer 380 €.",
+        "typische_fehler": "Beim Verkauf das Vorsteuerkonto verwenden. Verkauf → Umsatzsteuer (Haben), Einkauf → Vorsteuer (Soll).",
+        "verstaendnisfragen": [
+          "Warum ist die Umsatzsteuer ein Passivkonto? Weil MAKEL sie an das Finanzamt abführen muss — sie ist eine Schuld.",
+          "Mit welchem Betrag wird der Umsatzerlös gebucht? Mit dem Nettobetrag."
+        ],
+        "pruefungsbezug": "Ausgangsrechnungen mit Umsatzsteuer buchen und Vorsteuer und Umsatzsteuer sicher trennen.",
+        "merksatz": "Ausgangsrechnung: Forderung brutto im Soll, Umsatzerlös netto und Umsatzsteuer im Haben."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Auf dem Vorsteuerkonto sammeln sich Forderungen gegen das Finanzamt, auf dem Umsatzsteuerkonto Schulden.",
+          "Unternehmen geben regelmäßig eine Umsatzsteuer-Voranmeldung ab."
+        ],
+        "erklaerung": "Zum Ende des Voranmeldungszeitraums (monatlich oder vierteljährlich) werden Vorsteuer und Umsatzsteuer verrechnet. Die Differenz heißt Zahllast: Umsatzsteuer − Vorsteuer. Ist sie positiv, überweist MAKEL sie ans Finanzamt; ist sie negativ, entsteht ein Erstattungsanspruch. Gebucht wird zuerst die Verrechnung (Umsatzsteuer an Vorsteuer), dann die Zahlung (Umsatzsteuer an Bank). Vor jeder Buchung steht die Belegkontrolle: Pflichtangaben, Rechenweg, Steuersatz und Zuordnung zur richtigen Seite.",
+        "beispiele": [
+          "Umsatzsteuer 380 €, Vorsteuer 190 €: Zahllast 190 €.",
+          "Umsatzsteuer 500 €, Vorsteuer 800 €: Erstattungsanspruch 300 €."
+        ],
+        "fallbeispiel": "Am Monatsende stehen bei MAKEL 380 € Umsatzsteuer und 190 € Vorsteuer auf den Konten. Sandra bucht: Umsatzsteuer 190 € an Vorsteuer 190 € (Verrechnung), dann Umsatzsteuer 190 € an Guthaben bei Kreditinstituten 190 € (Zahlung). Beide Steuerkonten stehen danach auf null.",
+        "typische_fehler": "Die Umsatzsteuer als Ertrag oder die Vorsteuer als Aufwand betrachten. Für MAKEL ist die Umsatzsteuer im Regelfall erfolgsneutral — sie wird nur durchgereicht.",
+        "verstaendnisfragen": [
+          "Wie berechnet sich die Zahllast? Umsatzsteuer minus Vorsteuer.",
+          "Was passiert, wenn die Vorsteuer höher ist als die Umsatzsteuer? Das Finanzamt erstattet die Differenz."
+        ],
+        "pruefungsbezug": "Zahllast berechnen und die Verrechnung samt Zahlung buchen.",
+        "merksatz": "Zahllast = Umsatzsteuer − Vorsteuer; erst verrechnen (USt an VSt), dann zahlen (USt an Bank)."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Aus Brutto- oder Nettowerten die fehlenden Größen berechnen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Eingangsrechnungen mit Vorsteuer buchen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Ausgangsrechnungen mit Umsatzsteuer buchen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Die Zahllast ermitteln und buchen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Netto, Steuer und brutto",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die {{begriff:umsatzsteuer|Umsatzsteuer}} wird auf den Nettobetrag aufgeschlagen ({{par:ustg-12|§ 12 UStG}}). ==Rückwärts wird geteilt, nicht abgezogen.==" },
+        { "typ": "tabelle", "mono": true, "spalten": ["Gegeben", "Rechnung", "Ergebnis"], "zeilen": [
+          { "zellen": ["Netto 1.000 €", "1.000 € × 0,19", "Steuer 190 €, brutto 1.190 €"] },
+          { "zellen": ["Brutto 2.380 €", "2.380 € ÷ 1,19", "Netto 2.000 €, Steuer 380 €"] },
+          { "zellen": ["Steuer 57 €", "57 € ÷ 0,19", "Netto 300 €, brutto 357 €"] }
+        ] },
+        { "typ": "achtung", "text": "2.380 € − 19 % = 1.927,80 € ist **falsch**. Die 19 % beziehen sich auf den Nettobetrag, nicht auf den Bruttobetrag." },
+        { "typ": "merke", "text": "**Brutto = Netto × 1,19**; **Netto = Brutto ÷ 1,19** — nie 19 Prozent vom Bruttobetrag abziehen.", "karteikarte": "Wie rechnest du von brutto auf netto zurück, und welcher Fehler ist typisch?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Eingangsbeleg und Vorsteuer",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die Steuer auf Eingangsrechnungen ist für MAKEL {{begriff:vorsteuer|Vorsteuer}} — eine Forderung ans Finanzamt ({{par:ustg-15|§ 15 UStG}}). Voraussetzung ist eine Rechnung mit allen Pflichtangaben nach {{par:ustg-14|§ 14 UStG}}." },
+        { "typ": "tabelle", "mono": true, "spalten": ["Soll", "", "Haben"], "zeilen": [
+          { "zellen": ["2000 Rohstoffe 1.000 €", "", ""] },
+          { "zellen": ["2600 Vorsteuer 190 €", "an", "4400 Verbindlichkeiten LuL 1.190 €"] }
+        ] },
+        { "typ": "merke", "text": "Eingangsrechnung: **Material netto und Vorsteuer im Soll**, Verbindlichkeit brutto im Haben.", "karteikarte": "Wie buchst du eine Eingangsrechnung für Rohstoffe mit 19 % Umsatzsteuer?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Ausgangsbeleg und Umsatzsteuer",
+      "inhalt": [
+        { "typ": "absatz", "text": "Auf Ausgangsrechnungen schuldet MAKEL dem Finanzamt die Umsatzsteuer — eine Verbindlichkeit." },
+        {
+          "typ": "grafik",
+          "variante": "t-konto",
+          "kopf": "Buchen, live",
+          "titel": "Ein Monat mit Umsatzsteuer",
+          "lead": "Einkaufen, verkaufen, verrechnen, zahlen. Die Steuerkonten stehen am Ende auf null.",
+          "konten": [
+            { "id": "roh", "name": "Rohstoffe", "art": "aktiv", "ab": 0 },
+            { "id": "vst", "name": "Vorsteuer", "art": "aktiv", "ab": 0 },
+            { "id": "verb", "name": "Verbindlichkeiten LuL", "art": "passiv", "ab": 0 },
+            { "id": "ford", "name": "Forderungen LuL", "art": "aktiv", "ab": 0 },
+            { "id": "erl", "name": "Umsatzerlöse", "art": "ertrag", "ab": 0 },
+            { "id": "ust", "name": "Umsatzsteuer", "art": "passiv", "ab": 0 },
+            { "id": "bank", "name": "Bank", "art": "aktiv", "ab": 15000 }
+          ],
+          "vorfaelle": [
+            { "text": "Rohstoffe auf Ziel, 1.000 € netto", "satz": "Rohstoffe 1.000 € + Vorsteuer 190 € an Verbindlichkeiten LuL 1.190 €", "soll": [{ "konto": "roh", "betrag": 1000 }, { "konto": "vst", "betrag": 190 }], "haben": [{ "konto": "verb", "betrag": 1190 }], "echo": "Das Material steht netto im Bestand. Die 190 € holt sich MAKEL vom Finanzamt zurück — deshalb ein eigenes Aktivkonto." },
+            { "text": "Hoodies auf Ziel verkauft, 2.000 € netto", "satz": "Forderungen LuL 2.380 € an Umsatzerlöse 2.000 € + Umsatzsteuer 380 €", "soll": [{ "konto": "ford", "betrag": 2380 }], "haben": [{ "konto": "erl", "betrag": 2000 }, { "konto": "ust", "betrag": 380 }], "echo": "Der Kunde schuldet 2.380 €, verdient hat MAKEL 2.000 €. Die 380 € gehören dem Finanzamt." },
+            { "text": "Vorsteuer mit Umsatzsteuer verrechnen", "satz": "Umsatzsteuer 190 € an Vorsteuer 190 €", "soll": [{ "konto": "ust", "betrag": 190 }], "haben": [{ "konto": "vst", "betrag": 190 }], "echo": "Die Forderung ans Finanzamt wird gegen die Schuld aufgerechnet. Übrig bleibt die Zahllast: 190 € auf dem Umsatzsteuerkonto." },
+            { "text": "Zahllast überweisen", "satz": "Umsatzsteuer 190 € an Bank 190 €", "soll": [{ "konto": "ust", "betrag": 190 }], "haben": [{ "konto": "bank", "betrag": 190 }], "echo": "Jetzt stehen beide Steuerkonten auf null. Die Umsatzsteuer war für MAKEL kein Aufwand und kein Ertrag." }
+          ],
+          "regel": "Einkauf → Vorsteuer im Soll. Verkauf → Umsatzsteuer im Haben. Zahllast = Umsatzsteuer − Vorsteuer."
+        },
+        { "typ": "merke", "text": "Ausgangsrechnung: **Forderung brutto im Soll**, Umsatzerlös netto und Umsatzsteuer im Haben.", "karteikarte": "Wie buchst du eine Ausgangsrechnung über eigene Erzeugnisse mit 19 % Umsatzsteuer?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Zahllast und Belegkontrolle",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die {{begriff:zahllast|Zahllast}} ist die Differenz der beiden Steuerkonten. Sie wird mit der Umsatzsteuer-Voranmeldung ans Finanzamt gemeldet und überwiesen." },
+        {
+          "typ": "check",
+          "frage": "Im März: Umsatzsteuer 2.850 €, Vorsteuer 1.140 €. Was gilt?",
+          "optionen": [
+            { "text": "MAKEL überweist 1.710 € ans Finanzamt", "richtig": true, "echo": "Richtig: 2.850 € − 1.140 € = 1.710 € Zahllast." },
+            { "text": "MAKEL überweist 2.850 €, die Vorsteuer kommt später zurück", "richtig": false, "echo": "Vorsteuer und Umsatzsteuer werden in der Voranmeldung verrechnet; gezahlt wird nur die Differenz." },
+            { "text": "Das Finanzamt erstattet 1.710 €", "richtig": false, "echo": "Eine Erstattung gibt es nur, wenn die Vorsteuer größer ist als die Umsatzsteuer." }
+          ]
+        },
+        { "typ": "achtung", "text": "Fehlen auf einer Eingangsrechnung Pflichtangaben, ist der Vorsteuerabzug gefährdet. Erst eine korrigierte Rechnung anfordern, dann die Vorsteuer geltend machen." },
+        { "typ": "merke", "text": "**Zahllast = Umsatzsteuer − Vorsteuer**; erst verrechnen (USt an VSt), dann zahlen (USt an Bank).", "karteikarte": "Wie wird die Zahllast berechnet und gebucht?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Brutto = Netto × 1,19; Netto = Brutto ÷ 1,19.",
+    "Einkauf: Vorsteuer ist eine Forderung ans Finanzamt (Aktivkonto, Soll).",
+    "Verkauf: Umsatzsteuer ist eine Schuld ans Finanzamt (Passivkonto, Haben).",
+    "Material und Erlöse netto, Verbindlichkeiten und Forderungen brutto.",
+    "Vorsteuerabzug nur mit ordnungsgemäßer Rechnung (§§ 14, 15 UStG).",
+    "Zahllast = Umsatzsteuer − Vorsteuer; Verrechnung, dann Zahlung."
+  ],
+  "selbsttest": [
+    { "typ": "Buchen", "frage": "Materialeinkauf auf Ziel, netto 1.000 €, 19 % Umsatzsteuer. Steuerbetrag, Rechnungsbetrag und Buchungssatz?", "loesung": "Vorsteuer 190 €, Rechnungsbetrag 1.190 €. Rohstoffe 1.000 € und Vorsteuer 190 € an Verbindlichkeiten aus Lieferungen und Leistungen 1.190 €." },
+    { "typ": "Rechnen", "frage": "Eine Verkaufsrechnung lautet über brutto 2.380 € einschließlich 19 % Umsatzsteuer. Netto und Steuer?", "loesung": "Netto 2.380 € ÷ 1,19 = 2.000 €, Umsatzsteuer 380 €. Nicht 19 % vom Bruttobetrag abziehen." },
+    { "typ": "Wissen", "frage": "Warum werden Vorsteuer und Umsatzsteuer auf getrennten Konten gebucht?", "loesung": "Die Vorsteuer ist eine Forderung (Aktivkonto), die Umsatzsteuer eine Verbindlichkeit (Passivkonto) gegenüber dem Finanzamt. Erst zum Voranmeldungstermin werden sie verrechnet." }
+  ],
+  "pruefungstipp": "Bei jeder Rechnung zuerst fragen: Einkauf oder Verkauf? Daraus folgt das Steuerkonto. Dann netto und brutto sauber trennen — Material und Erlöse netto, Forderungen und Verbindlichkeiten brutto."
+}

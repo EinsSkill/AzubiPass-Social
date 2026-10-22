@@ -2,7 +2,6 @@
   "lernfeld": "ik2024-lf01",
   "kapitel": "k03",
   "verweise_im_klausurmodus": "ausblenden",
-
   "bausteine": [
     {
       "id": "ik2024-lf01-k03-01",
@@ -14,26 +13,48 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Die MAKEL Studio GmbH bedruckt für einen Geschäftskunden 400 Hoodies. Deniz Aydın bittet Sie, die eingesetzten Produktionsfaktoren für eine Schulung zu ordnen." }
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH bedruckt für einen Geschäftskunden 400 Hoodies. Deniz Aydın bittet Sie, die eingesetzten Produktionsfaktoren für eine Schulung zu ordnen."
+        }
       ],
       "eingabe": [
         {
           "block": "zuordnung",
           "lead": "Ordnen Sie jedem Einsatz den passenden Produktionsfaktor zu.",
-          "ziele": ["Rohstoff", "Hilfsstoff", "Betriebsmittel", "Ausführende Arbeit"],
+          "ziele": [
+            "Rohstoff",
+            "Hilfsstoff",
+            "Betriebsmittel",
+            "Ausführende Arbeit"
+          ],
           "elemente": [
-            { "text": "400 zugekaufte Hoodie-Rohlinge", "loesung": "Rohstoff" },
-            { "text": "Druckfarbe für das Logo", "loesung": "Hilfsstoff" },
-            { "text": "Siebdruckmaschine der Veredelung", "loesung": "Betriebsmittel" },
-            { "text": "Arbeitszeit des Druckteams", "loesung": "Ausführende Arbeit" }
+            {
+              "text": "400 zugekaufte Hoodie-Rohlinge",
+              "loesung": "Rohstoff"
+            },
+            {
+              "text": "Druckfarbe für das Logo",
+              "loesung": "Hilfsstoff"
+            },
+            {
+              "text": "Siebdruckmaschine der Veredelung",
+              "loesung": "Betriebsmittel"
+            },
+            {
+              "text": "Arbeitszeit des Druckteams",
+              "loesung": "Ausführende Arbeit"
+            }
           ]
         }
       ],
-      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
       "erklaerung": "Der Rohling ist Hauptbestandteil des Produkts (Rohstoff), die Druckfarbe Nebenbestandteil (Hilfsstoff). Die Maschine wird wiederholt genutzt (Betriebsmittel), das Drucken ist ausführende Arbeit.",
       "quelle": "ik2024-lf01-k03, Abschnitt a2"
     },
-
     {
       "id": "ik2024-lf01-k03-02",
       "operator": "Ordnen Sie zu",
@@ -44,28 +65,55 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Bei einem Auftrag über 400 bedruckte Hoodies finden zwischen einem Rohlingslieferanten, der MAKEL Studio GmbH und einem Geschäftskunden die folgenden Vorgänge statt." }
+        {
+          "block": "text",
+          "inhalt": "Bei einem Auftrag über 400 bedruckte Hoodies finden zwischen einem Rohlingslieferanten, der MAKEL Studio GmbH und einem Geschäftskunden die folgenden Vorgänge statt."
+        }
       ],
       "eingabe": [
         {
           "block": "zuordnung",
           "lead": "Um welche Art von Strom handelt es sich jeweils?",
-          "ziele": ["Güterstrom", "Geldstrom", "Informationsstrom"],
+          "ziele": [
+            "Güterstrom",
+            "Geldstrom",
+            "Informationsstrom"
+          ],
           "elemente": [
-            { "text": "Der Geschäftskunde bestellt per E-Mail.", "loesung": "Informationsstrom" },
-            { "text": "MAKEL bestellt 400 Rohlinge beim Lieferanten.", "loesung": "Informationsstrom" },
-            { "text": "Der Lieferant liefert die Rohlinge.", "loesung": "Güterstrom" },
-            { "text": "MAKEL überweist den Rechnungsbetrag an den Lieferanten.", "loesung": "Geldstrom" },
-            { "text": "MAKEL versendet die bedruckten Hoodies.", "loesung": "Güterstrom" },
-            { "text": "Der Geschäftskunde bezahlt die Rechnung.", "loesung": "Geldstrom" }
+            {
+              "text": "Der Geschäftskunde bestellt per E-Mail.",
+              "loesung": "Informationsstrom"
+            },
+            {
+              "text": "MAKEL bestellt 400 Rohlinge beim Lieferanten.",
+              "loesung": "Informationsstrom"
+            },
+            {
+              "text": "Der Lieferant liefert die Rohlinge.",
+              "loesung": "Güterstrom"
+            },
+            {
+              "text": "MAKEL überweist den Rechnungsbetrag an den Lieferanten.",
+              "loesung": "Geldstrom"
+            },
+            {
+              "text": "MAKEL versendet die bedruckten Hoodies.",
+              "loesung": "Güterstrom"
+            },
+            {
+              "text": "Der Geschäftskunde bezahlt die Rechnung.",
+              "loesung": "Geldstrom"
+            }
           ]
         }
       ],
-      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
       "erklaerung": "Bestellungen sind Informationen, Lieferungen Güterströme, Zahlungen Geldströme. Jedem Güterstrom steht ein Geldstrom in Gegenrichtung gegenüber.",
       "quelle": "ik2024-lf01-k03, Abschnitt a4"
     },
-
     {
       "id": "ik2024-lf01-k03-03",
       "operator": "Beurteilen Sie",
@@ -76,7 +124,10 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "In einem Entwurf für die Website der MAKEL Studio GmbH steht: „Jedes MAKEL-Teil wird vollständig in unserer eigenen Fabrik in Düsseldorf hergestellt.“ Tatsächlich fertigt MAKEL Muster und veredelt Rohlinge im eigenen Haus; die Serienteile der Kollektion fertigt ein externer Lohnfertiger." }
+        {
+          "block": "text",
+          "inhalt": "In einem Entwurf für die Website der MAKEL Studio GmbH steht: „Jedes MAKEL-Teil wird vollständig in unserer eigenen Fabrik in Düsseldorf hergestellt.“ Tatsächlich fertigt MAKEL Muster und veredelt Rohlinge im eigenen Haus; die Serienteile der Kollektion fertigt ein externer Lohnfertiger."
+        }
       ],
       "eingabe": [
         {
@@ -89,13 +140,68 @@
         "art": "selbstbewertung",
         "musterloesung": "Die Aussage ist falsch, weil sie die externe Serienfertigung als eigene Produktion ausgibt. MAKEL hat eine mittlere Fertigungstiefe: Musterfertigung, Veredelung und Qualitätskontrolle finden im Haus statt, die Serie fertigt ein Lohnfertiger nach MAKELs Vorgaben. Eine zutreffende Formulierung wäre: „Wir entwickeln und veredeln unsere Teile in Düsseldorf und lassen die Serie nach unseren Schnitten bei einem Partnerbetrieb fertigen.“",
         "raster": [
-          { "kriterium": "Aussage als unzutreffend erkannt", "punkte": 1 },
-          { "kriterium": "Eigene Schritte und Fremdfertigung korrekt unterschieden", "punkte": 1 },
-          { "kriterium": "Zutreffende Alternative formuliert", "punkte": 1 }
+          {
+            "kriterium": "Aussage als unzutreffend erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Eigene Schritte und Fremdfertigung korrekt unterschieden",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zutreffende Alternative formuliert",
+            "punkte": 1
+          }
         ]
       },
       "erklaerung": "Fremdfertigung ist zu steuern, aber keine eigene Produktion.",
       "quelle": "ik2024-lf01-k03, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf01-k03-04",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 1,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "In der Veredelung der MAKEL Studio GmbH wird eine Stickmaschine eingesetzt, um Logos auf Hoodie-Rohlinge zu sticken."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Zu welchem Produktionsfaktor gehört die Stickmaschine?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Werkstoff",
+              "richtig": false,
+              "echo": "Werkstoffe gehen ins Produkt ein oder werden verbraucht, etwa Rohling und Garn."
+            },
+            {
+              "text": "Betriebsmittel",
+              "richtig": true,
+              "echo": "Richtig. Die Maschine wird wiederholt genutzt und geht nicht ins Produkt ein."
+            },
+            {
+              "text": "Dispositive Arbeit",
+              "richtig": false,
+              "echo": "Dispositive Arbeit plant und leitet — das ist eine Tätigkeit von Menschen."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Betriebsmittel werden wiederholt genutzt; Werkstoffe gehen ein oder werden verbraucht.",
+      "quelle": "ik2024-lf01-k03, Abschnitt a2"
     }
   ]
 }

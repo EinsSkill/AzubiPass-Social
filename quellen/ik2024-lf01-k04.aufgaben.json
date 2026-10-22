@@ -145,6 +145,53 @@
       },
       "erklaerung": "Stabsstellen beraten ohne Weisungsrecht; sie werden seitlich an die Linie gezeichnet.",
       "quelle": "ik2024-lf01-k04, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf01-k04-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei MAKEL gibt es immer wieder widersprüchliche Anweisungen an Auszubildende: Vertrieb und Versand fordern gleichzeitig Unterschiedliches. Yuki Bergmann überlegt, eine Stabsstelle „Ausbildungskoordination“ einzurichten, die Auszubildenden verbindliche Anweisungen erteilt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie den Vorschlag und schlagen Sie eine bessere Regelung vor.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Eine Stabsstelle berät und unterstützt, hat aber kein Weisungsrecht. Würde sie Auszubildenden verbindliche Anweisungen erteilen, entstünde eine weitere Weisungslinie und damit noch mehr Widersprüche — das Problem der Mehrlinienorganisation würde verschärft. Besser: Für jeden Einsatz ist genau eine Person weisungsbefugt (der jeweilige Ausbildungsbeauftragte); Konflikte zwischen Abteilungen werden über deren Vorgesetzte geklärt. Eine Stabsstelle Ausbildungskoordination kann dabei Einsatzpläne vorbereiten und beraten.",
+        "raster": [
+          {
+            "kriterium": "Fehlendes Weisungsrecht von Stäben erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Gefahr zusätzlicher Widersprüche begründet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Eindeutige Weisungsbefugnis je Einsatz vorgeschlagen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sinnvolle beratende Rolle des Stabs beschrieben",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Stäbe beraten, Linienstellen weisen an; widersprüchliche Anweisungen löst eine klare Weisungslinie, nicht eine zusätzliche.",
+      "quelle": "ik2024-lf01-k04, Abschnitt a2"
     }
   ]
 }

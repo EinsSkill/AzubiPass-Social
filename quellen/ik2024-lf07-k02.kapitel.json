@@ -1,0 +1,193 @@
+{
+  "id": "k02",
+  "lernfeld": "ik2024-lf07",
+  "nummer": 2,
+  "titel": "Lager gestalten und Aufträge kommissionieren",
+  "untertitel": "Wozu gelagert wird, welche Lagersysteme und Platzvergaben es gibt und wie Aufträge zuverlässig zusammengestellt werden.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Lagerung überbrückt Zeit.",
+          "Lagerbestände binden Kapital (LF 4)."
+        ],
+        "erklaerung": "Lager erfüllen verschiedene Aufgaben: Sicherung (Lieferausfälle und Bedarfsschwankungen abfedern), Ausgleich (zeitliche und mengenmäßige Unterschiede zwischen Beschaffung, Produktion und Absatz), Sortimentsbildung (Kundenaufträge aus vielen Artikeln zusammenstellen) und manchmal Veredelung oder Reifung. Nach der Stellung im Ablauf unterscheidet man Eingangslager (Rohstoffe), Zwischenlager (halbfertige Teile) und Fertigwarenlager. Welche Lagerorganisation passt, hängt von der Artikelstruktur ab: Anzahl der Artikel und Varianten, Größe und Gewicht, Umschlagshäufigkeit, Empfindlichkeit.",
+        "beispiele": [
+          "Rohlinge in 6 Farben × 6 Größen: 36 Varianten, kleine Kartons, mittlere Umschlagshäufigkeit.",
+          "Fertige Kundenaufträge warten im Fertigwarenlager auf die Abholung durch den Paketdienst."
+        ],
+        "fallbeispiel": "Jonas Weidner beschreibt sein Lager: vorne das Eingangslager mit Rohlingen in vielen Farben und Größen, hinten das Fertigwarenlager mit gepackten Aufträgen. Dazwischen stehen halbfertige Hoodies, die auf den zweiten Druck warten — ein Zwischenlager, das eigentlich niemand geplant hat.",
+        "typische_fehler": "Lager nur als Kostenfaktor sehen und seine Sicherungs- und Ausgleichsfunktion übersehen.",
+        "verstaendnisfragen": [
+          "Nenne zwei Aufgaben eines Lagers. Zum Beispiel Sicherung und Ausgleich.",
+          "Welche Merkmale der Artikel beeinflussen die Lagerorganisation? Zahl der Varianten, Größe, Gewicht, Umschlagshäufigkeit, Empfindlichkeit."
+        ],
+        "pruefungsbezug": "Lageraufgaben und Lagerarten an einem Betrieb beschreiben.",
+        "merksatz": "Lager sichern, gleichen aus und bilden Sortimente; die Artikelstruktur bestimmt die passende Organisation."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Ware muss schnell auffindbar sein.",
+          "Lagerfläche ist begrenzt."
+        ],
+        "erklaerung": "Lagersysteme reichen vom Bodenlager (Stapeln auf dem Boden) über Fachbodenregale für Kleinteile und Kartons, Palettenregale für schwere Ladeeinheiten und Durchlaufregale (Einlagern hinten, Entnahme vorne, automatisch FIFO) bis zum automatischen Hochregallager. Für die Lagerplatzvergabe gibt es zwei Grundformen. Feste Lagerplätze: Jeder Artikel hat immer denselben Platz — leicht zu finden, aber Fläche bleibt ungenutzt, wenn der Bestand klein ist. Dynamische (chaotische) Lagerplätze: Ware kommt auf einen gerade freien Platz, das System merkt sich den Ort — gute Flächennutzung, aber nur mit konsequenter Buchung und Systemunterstützung. Das FIFO-Prinzip (first in, first out) sorgt dafür, dass ältere Ware zuerst verbraucht wird.",
+        "beispiele": [
+          "Kartons mit Rohlingen im Fachbodenregal, Lagerplatz 03-B-2.",
+          "Dynamische Lagerplätze: Neue Lieferung kommt auf freien Platz 05-A-1, Scan bucht den Ort."
+        ],
+        "fallbeispiel": "MAKEL hat feste Lagerplätze je Farbe und Größe. In der Saison sind manche Fächer übervoll, andere leer. Jonas überlegt, auf dynamische Lagerplätze umzustellen. Voraussetzung: Jeder Ein- und Auslagerungsvorgang wird gescannt, sonst findet niemand mehr etwas.",
+        "typische_fehler": "Eine hohe Flächenauslastung automatisch für die beste Lagerorganisation halten.",
+        "verstaendnisfragen": [
+          "Welchen Vorteil haben feste Lagerplätze? Artikel sind leicht und ohne System auffindbar.",
+          "Was ist die Voraussetzung für dynamische Lagerplätze? Konsequente Buchung jedes Lagervorgangs und Systemunterstützung."
+        ],
+        "pruefungsbezug": "Feste und dynamische Lagerplatzvergabe vergleichen und eine begründete Empfehlung geben.",
+        "merksatz": "Feste Plätze sind einfach, dynamische nutzen Fläche besser — aber nur mit Scan-Disziplin und System; FIFO verbraucht Älteres zuerst."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Kundenaufträge bestehen aus mehreren Positionen.",
+          "Eine Position ist eine Zeile im Auftrag (Artikel mit Menge)."
+        ],
+        "erklaerung": "Kommissionieren heißt, Artikel aus dem Lager nach Aufträgen zusammenzustellen. Beim Prinzip ‚Person zur Ware‘ geht die Kommissioniererin durch das Lager, bei ‚Ware zur Person‘ kommt die Ware automatisch zum Arbeitsplatz. Auftragsorientiert (einstufig) wird jeder Auftrag einzeln abgearbeitet. Serienorientiert (zweistufig) werden die Artikel mehrerer Aufträge gesammelt entnommen und anschließend auf die Aufträge verteilt — das spart Wege bei vielen kleinen Aufträgen. Die Leistung misst man zum Beispiel in Positionen je Stunde. Auftrag, Position und Stück sind dabei verschiedene Größen.",
+        "beispiele": [
+          "120 Positionen in 6 Stunden: 20 Positionen je Stunde.",
+          "Ein Auftrag mit 3 Positionen: 10 × Hoodie M schwarz, 5 × Hoodie L schwarz, 2 × Tasche = 17 Stück."
+        ],
+        "fallbeispiel": "Vor Weihnachten kommen täglich 80 Onlinebestellungen mit je ein bis drei Positionen. Jonas lässt morgens alle Aufträge sammeln, die Artikel in einer Runde entnehmen und dann am Packtisch auf die Aufträge verteilen. Die Laufwege sinken deutlich.",
+        "typische_fehler": "Positionen, Stück und Aufträge gleichsetzen, wenn man die Leistung misst.",
+        "verstaendnisfragen": [
+          "Was unterscheidet auftrags- und serienorientiertes Kommissionieren? Einzelner Auftrag gegenüber gesammelter Entnahme für mehrere Aufträge mit anschließender Verteilung.",
+          "Was ist eine Position? Eine Zeile im Auftrag, also ein Artikel mit Menge."
+        ],
+        "pruefungsbezug": "Kommissionierverfahren unterscheiden und Kommissionierleistung berechnen.",
+        "merksatz": "Kommissionieren stellt Aufträge zusammen — einzeln oder gesammelt; Leistung in Positionen je Stunde, nicht in Stück."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Falsch gelieferte Ware verursacht Retouren und Ärger.",
+          "Viele Varianten sehen sich ähnlich."
+        ],
+        "erklaerung": "Kommissionierfehler entstehen durch Verwechslungen (falsche Größe oder Farbe), falsche Mengen oder vergessene Positionen. Vermeiden lassen sie sich durch eindeutige Kennzeichnung von Lagerplätzen und Artikeln, Scannen bei Entnahme (Pick-by-Scan), Lichtsignale am Fach (Pick-by-Light), Kontrollwiegen oder eine Sichtprüfung beim Packen. Die Kommissionierfehlerquote (fehlerhafte Positionen ÷ kommissionierte Positionen) macht die Qualität messbar. Ergonomie gehört dazu: schwere, häufig benötigte Artikel auf Griffhöhe, kurze Wege für Schnelldreher.",
+        "beispiele": [
+          "Größe M und L schwarz liegen nebeneinander: unterschiedliche Fachfarben und Scan-Pflicht.",
+          "Schnelldreher (Basis-Shirt weiß M) in Griffhöhe nahe am Packtisch."
+        ],
+        "fallbeispiel": "Im November gab es 12 Reklamationen wegen falscher Größen bei 1.500 kommissionierten Positionen: Fehlerquote 0,8 %. Jonas führt Pick-by-Scan ein; das Handgerät meldet sofort, wenn ein falscher Artikel gescannt wird. Im Dezember sinkt die Quote auf 0,1 %.",
+        "typische_fehler": "Fehler allein auf Unaufmerksamkeit schieben, statt Kennzeichnung und Ablauf zu verbessern.",
+        "verstaendnisfragen": [
+          "Wie wird die Kommissionierfehlerquote berechnet? Fehlerhafte Positionen ÷ kommissionierte Positionen × 100.",
+          "Nenne zwei technische Hilfen gegen Verwechslungen. Zum Beispiel Pick-by-Scan und Pick-by-Light."
+        ],
+        "pruefungsbezug": "Maßnahmen gegen Kommissionierfehler begründen und ihre Wirkung messen.",
+        "merksatz": "Fehler vermeiden durch Kennzeichnung, Scan und Kontrolle; Wirkung mit der Kommissionierfehlerquote messen."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Lagerzweck und Artikelstruktur beschreiben", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Lagersysteme und Lagerplatzvergabe anhand von Anforderungen vergleichen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Kommissioniermethoden unterscheiden", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Eine geeignete Organisation zur Fehlervermeidung begründen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Lagerzweck und Artikelstruktur",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Aufgabe", "Beispiel MAKEL"], "zeilen": [
+          { "zellen": ["Sicherung", "Rohlinge für zwei Wochen Produktion, falls der Lieferant ausfällt"] },
+          { "zellen": ["Ausgleich", "Großbestellung beim Lieferanten, Verbrauch über Wochen"] },
+          { "zellen": ["Sortimentsbildung", "Online-Aufträge aus vielen Farben und Größen zusammenstellen"] }
+        ] },
+        { "typ": "merke", "text": "Lager **sichern, gleichen aus und bilden Sortimente**; die Artikelstruktur bestimmt die passende Organisation.", "karteikarte": "Welche Aufgaben erfüllt ein Lager?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Lagersysteme und Lagerplätze",
+      "inhalt": [
+        {
+          "typ": "grafik",
+          "variante": "vergleich",
+          "kopf": "Zwei Arten der Platzvergabe",
+          "titel": "Feste und dynamische Lagerplätze",
+          "lead": "Welche Form passt, hängt von Variantenvielfalt, Schwankungen und Systemunterstützung ab.",
+          "seiten": [
+            { "name": "Feste Lagerplätze", "ton": "gold", "punkte": [
+              { "text": "Jeder Artikel hat immer denselben Platz", "detail": "Auch ohne System schnell auffindbar." },
+              { "text": "Einfach einzuarbeiten", "detail": "Aushilfen finden sich schnell zurecht." },
+              { "text": "Fläche bleibt bei kleinem Bestand ungenutzt", "detail": "Der Platz ist für die Höchstmenge reserviert." }
+            ] },
+            { "name": "Dynamische Lagerplätze", "ton": "gruen", "punkte": [
+              { "text": "Ware kommt auf einen gerade freien Platz", "detail": "Das System speichert den Ort." },
+              { "text": "Sehr gute Flächennutzung", "detail": "Besonders bei schwankenden Beständen und vielen Varianten." },
+              { "text": "Nur mit Scan-Disziplin", "detail": "Eine fehlende Buchung — und die Ware ist ‚verschwunden‘." }
+            ] }
+          ],
+          "regel": "Dynamisch lohnt sich, wenn Bestände stark schwanken und jeder Lagervorgang verlässlich gebucht wird."
+        },
+        { "typ": "absatz", "text": "Das {{begriff:fifo|FIFO-Prinzip}} sorgt dafür, dass ältere Ware zuerst entnommen wird — wichtig bei Saisonartikeln und Druckfarben mit Haltbarkeit." },
+        { "typ": "merke", "text": "**Feste Plätze** sind einfach, **dynamische** nutzen Fläche besser — aber nur mit Scan-Disziplin und System; FIFO verbraucht Älteres zuerst.", "karteikarte": "Was unterscheidet feste und dynamische Lagerplatzvergabe?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Kommissionierablauf",
+      "inhalt": [
+        { "typ": "absatz", "text": "{{begriff:kommissionieren|Kommissionieren}} heißt, Artikel nach Aufträgen zusammenzustellen. ==Leistung misst man in Positionen je Stunde.==" },
+        { "typ": "tabelle", "spalten": ["Verfahren", "Ablauf", "Geeignet für"], "zeilen": [
+          { "zellen": ["Auftragsorientiert (einstufig)", "ein Auftrag nach dem anderen", "wenige, große Aufträge"] },
+          { "zellen": ["Serienorientiert (zweistufig)", "Artikel mehrerer Aufträge gesammelt entnehmen, dann verteilen", "viele kleine Aufträge"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "In 6 Stunden werden 120 Positionen mit insgesamt 900 Stück kommissioniert. Wie hoch ist die Kommissionierleistung in Positionen je Stunde?",
+          "optionen": [
+            { "text": "20 Positionen je Stunde", "richtig": true, "echo": "Richtig: 120 ÷ 6 = 20." },
+            { "text": "150 Positionen je Stunde", "richtig": false, "echo": "Das sind 900 Stück ÷ 6 — Stück je Stunde, nicht Positionen." },
+            { "text": "7,5 Positionen je Stunde", "richtig": false, "echo": "Hier wurde 900 durch 120 geteilt: Stück je Position." }
+          ]
+        },
+        { "typ": "merke", "text": "Kommissionieren stellt Aufträge zusammen — **einzeln oder gesammelt**; Leistung in Positionen je Stunde, nicht in Stück.", "karteikarte": "Welche Kommissionierverfahren gibt es, und wie misst man die Leistung?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Fehlervermeidung und Kennzeichnung",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Maßnahme", "Wirkt gegen"], "zeilen": [
+          { "zellen": ["Eindeutige Platz- und Artikelkennzeichnung", "Verwechslungen"] },
+          { "zellen": ["Pick-by-Scan", "falscher Artikel, falsche Variante"] },
+          { "zellen": ["Kontrollwiegen", "falsche Menge"] },
+          { "zellen": ["Schnelldreher in Griffhöhe nahe Packtisch", "lange Wege, Belastung"] }
+        ] },
+        { "typ": "achtung", "text": "Wer Fehler nur auf Unaufmerksamkeit schiebt, ändert nichts. Wirksam sind Kennzeichnung, Technik und klare Abläufe." },
+        { "typ": "merke", "text": "Fehler vermeiden durch **Kennzeichnung, Scan und Kontrolle**; Wirkung mit der Kommissionierfehlerquote messen.", "karteikarte": "Wie lassen sich Kommissionierfehler vermeiden und messen?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Lageraufgaben: Sicherung, Ausgleich, Sortimentsbildung.",
+    "Lagersysteme vom Bodenlager bis zum Hochregallager.",
+    "Feste Plätze einfach, dynamische flächeneffizient mit System.",
+    "FIFO: ältere Ware zuerst.",
+    "Kommissionieren auftrags- oder serienorientiert; Leistung in Positionen je Stunde.",
+    "Fehler vermeiden durch Kennzeichnung, Scan, Kontrolle; Fehlerquote messen."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "120 Positionen werden in 6 Stunden kommissioniert. Positionen je Stunde?", "loesung": "20 Positionen je Stunde. Auftrag, Stück und Position sind nicht automatisch identisch." },
+    { "typ": "Vergleich", "frage": "Vergleiche feste und dynamische Lagerplätze bei häufig wechselnden Varianten.", "loesung": "Feste Plätze: einfach auffindbar, aber Fläche bleibt bei wechselnden Beständen ungenutzt. Dynamische Plätze: gute Flächennutzung, erfordern aber Buchungsdisziplin und Systemunterstützung. Empfehlung: dynamisch, wenn jeder Lagervorgang gescannt wird; sonst feste Plätze für Schnelldreher, dynamische für den Rest." },
+    { "typ": "Wissen", "frage": "Was bedeutet FIFO?", "loesung": "First in, first out: Die zuerst eingelagerte Ware wird zuerst entnommen. So veraltet nichts im Lager." }
+  ],
+  "pruefungstipp": "Bei Lagerfragen lohnt sich die Gegenfrage ‚Was ist die Voraussetzung?‘ — dynamische Plätze brauchen Scan-Disziplin, serienorientiertes Kommissionieren braucht einen Verteilplatz. Wer Voraussetzungen nennt, begründet überzeugend."
+}

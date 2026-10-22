@@ -109,6 +109,8 @@ def aufgaben_pruefen(lf, ch, gesehen):
     pruefe(d.get("lernfeld") == lf["id"] and d.get("kapitel") == ch["id"],
            f"{wo}: Aufgabendatei verweist auf falsches Kapitel")
     pruefe(len(d.get("bausteine", [])) >= 2, f"{wo}: weniger als zwei Aufgaben")
+    afb = {b.get("anforderungsbereich") for b in d.get("bausteine", [])}
+    pruefe({1, 2, 3} <= afb, f"{wo}: Aufgaben decken nicht AFB I, II und III ab ({sorted(afb)})")
     for b in d.get("bausteine", []):
         bid = b.get("id", "")
         pruefe(bid.startswith(f'{lf["id"]}-{ch["id"]}-'), f"{wo}: Aufgabenkennung {bid} ohne Präfix")
@@ -116,6 +118,8 @@ def aufgaben_pruefen(lf, ch, gesehen):
         gesehen.add(bid)
         pruefe(bool(b.get("erklaerung")), f"{wo}/{bid}: Erklärung fehlt")
         bew = b.get("bewertung", {})
+        for vn, vd in (b.get("variablen") or {}).items():
+            pruefe(set(vd) <= {"von", "bis", "schritt"}, f"{wo}/{bid}: Variable {vn} mit unbekannten Feldern {sorted(set(vd))}")
         for e in b.get("eingabe", []):
             if e["block"] == "auswahl":
                 r = sum(1 for o in e["optionen"] if o.get("richtig"))
@@ -126,6 +130,36 @@ def aufgaben_pruefen(lf, ch, gesehen):
                        f"{wo}/{bid}: Zuordnung mit unbekanntem Ziel")
             if e["block"] == "zahl":
                 pruefe("label" in e, f"{wo}/{bid}: Zahlfeld ohne label")
+                pruefe("{" not in e.get("label", ""),
+                       f"{wo}/{bid}: Platzhalter im label werden nicht gefüllt")
+                ff = e.get("folgefehler_aus")
+                if ff is not None:
+                    pruefe(isinstance(ff, list) and all(
+                        any(x.get("block") == "zahl" and x.get("loesung") == n for x in b["eingabe"])
+                        for n in ff), f"{wo}/{bid}: folgefehler_aus muss eine Liste vorhandener Zahlfeld-Lösungen sein")
+                    # Folgefehler greift nur, wenn das Ergebnis rechnerisch auf
+                    # dem Zwischenwert aufbaut — sonst läuft die Regel ins Leere.
+                    abg = b.get("abgeleitet") or {}
+
+                    def haengt_ab(name, ziel, tiefe=0):
+                        f = abg.get(name, "")
+                        if tiefe > 10 or not f:
+                            return False
+                        namen = set(re.findall(r"[a-z_][a-z0-9_]*", f))
+                        return ziel in namen or any(haengt_ab(n, ziel, tiefe + 1) for n in namen if n in abg)
+                    if isinstance(ff, list):
+                        pruefe(all(haengt_ab(e.get("loesung"), n) for n in ff),
+                               f"{wo}/{bid}: Lösung {e.get('loesung')} baut nicht auf {ff} auf")
+            if e["block"] == "buchungssatz":
+                zeilen = e.get("loesung") or []
+                pruefe(len(zeilen) >= 2 and e.get("zeilen", 0) >= len(zeilen),
+                       f"{wo}/{bid}: Buchungssatz braucht mindestens zwei Lösungszeilen und genug Eingabezeilen")
+                pruefe(all((z.get("soll") is None) != (z.get("haben") is None) for z in zeilen),
+                       f"{wo}/{bid}: jede Buchungszeile hat genau eine Seite")
+                je = bew.get("punkte_je_zeile")
+                if je is not None:
+                    pruefe(abs(je * len(zeilen) - b["punkte"]) < 1e-9 or len(b["eingabe"]) > 1,
+                           f"{wo}/{bid}: punkte_je_zeile × Zeilen ≠ Punkte")
             if e["block"] == "textfeld":
                 pruefe(bew.get("art") == "selbstbewertung" and bew.get("musterloesung")
                        and bew.get("raster"), f"{wo}/{bid}: Textfeld ohne Musterlösung und Raster")

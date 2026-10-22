@@ -1,0 +1,159 @@
+{
+  "lernfeld": "ik2024-lf06",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf06-k03-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "menge": {
+          "von": 200,
+          "bis": 600,
+          "schritt": 50
+        },
+        "garn": {
+          "von": 10,
+          "bis": 20,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "garn_kg": "menge * garn / 1000",
+        "vlies": "runde(menge * 0.04, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für einen Auftrag der MAKEL Studio GmbH über {menge} Hoodies mit Logo-Stick gilt die freigegebene Stückliste: je Stück 1 Rohling, {garn} g Stickgarn, 0,04 m² Stickvlies, 1 Etikett, 1 Versandbeutel. Ein Ausschusszuschlag ist nicht vorgegeben."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Bedarf Stickgarn",
+          "einheit": "kg",
+          "loesung": "garn_kg",
+          "toleranz": 0.001,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Bedarf Stickvlies",
+          "einheit": "m²",
+          "loesung": "vlies",
+          "toleranz": 0.01,
+          "punkte": 2
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Bedarf = Auftragsmenge × Menge je Stück. Garn: Gramm durch 1.000 teilen, um Kilogramm zu erhalten.",
+      "quelle": "ik2024-lf06-k03, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf06-k03-02",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli, Auszubildender der MAKEL Studio GmbH, sucht für die Auftragsplanung verschiedene Informationen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "In welchem Dokument steht die Information?",
+          "ziele": [
+            "Stückliste",
+            "Arbeitsplan"
+          ],
+          "elemente": [
+            {
+              "text": "0,04 m² Stickvlies je Hoodie",
+              "loesung": "Stückliste"
+            },
+            {
+              "text": "Rüstzeit der Stickmaschine je Los",
+              "loesung": "Arbeitsplan"
+            },
+            {
+              "text": "Reihenfolge der Arbeitsgänge",
+              "loesung": "Arbeitsplan"
+            },
+            {
+              "text": "Ein Versandbeutel je Stück",
+              "loesung": "Stückliste"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Materialien und Mengen stehen in der Stückliste, Arbeitsgänge, Betriebsmittel und Zeiten im Arbeitsplan.",
+      "quelle": "ik2024-lf06-k03, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf06-k03-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für den Artikel „Hoodie Logo-Stick“ findet Deniz Aydın aus dem Einkauf der MAKEL Studio GmbH zwei Stücklisten: Version 2 mit Polyestergarn, Version 3 mit recyceltem Garn, gültig ab 1. Oktober. Ein Auftrag über 300 Stück soll am 20. September gefertigt werden. Luca schlägt vor: „Wir nehmen Version 3, die ist neuer — und bestellen sicherheitshalber beide Garne.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Vorschlag und beschreiben Sie das richtige Vorgehen.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Lucas Vorschlag ist nicht richtig. Maßgeblich ist die Version, die zum Fertigungstermin gültig ist: Am 20. September gilt Version 2, Version 3 erst ab 1. Oktober. ‚Neuer‘ ist kein Kriterium. Beide Garne zu bestellen erhöht Kosten und Lagerbestand ohne Grund und kann zu Verwechslungen in der Produktion führen. Richtig: Version 2 verwenden. Wünscht der Kunde ausdrücklich recyceltes Garn, wird mit der Produktentwicklung geklärt, ob Version 3 vorzeitig freigegeben werden kann; die Entscheidung wird dokumentiert.",
+        "raster": [
+          {
+            "kriterium": "Gültigkeitsdatum als Maßstab erkannt (Version 2 gilt)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "‚Neuer‘ als falsches Kriterium beurteilt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Nachteile der Doppelbestellung genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Klärung und Dokumentation bei Sonderwunsch",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Stücklisten gelten nach Version und Gültigkeitsdatum; Abweichungen werden über Freigaben geregelt, nicht durch Vermutungen.",
+      "quelle": "ik2024-lf06-k03, Abschnitt a4"
+    }
+  ]
+}

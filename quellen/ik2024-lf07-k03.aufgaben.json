@@ -1,0 +1,180 @@
+{
+  "lernfeld": "ik2024-lf07",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf07-k03-01",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 1,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "MAKEL beauftragt ein Unternehmen, das den Versand von 20 Paletten nach Italien organisiert und dafür selbst einen Transportunternehmer mit der Fahrt beauftragt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Wie heißt das beauftragte Unternehmen?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Spediteur",
+              "richtig": true,
+              "echo": "Richtig. Der Spediteur besorgt die Versendung und beauftragt Frachtführer."
+            },
+            {
+              "text": "Frachtführer",
+              "richtig": false,
+              "echo": "Der Frachtführer führt die Beförderung selbst durch — hier ist das der beauftragte Transportunternehmer."
+            },
+            {
+              "text": "Lagerhalter",
+              "richtig": false,
+              "echo": "Ein Lagerhalter lagert Güter ein; um Lagerung geht es hier nicht."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Spediteur organisiert, Frachtführer befördert.",
+      "quelle": "ik2024-lf07-k03, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf07-k03-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "grund_a": {
+          "von": 150,
+          "bis": 250,
+          "schritt": 50
+        },
+        "stk_a": {
+          "von": 2,
+          "bis": 3,
+          "schritt": 1
+        },
+        "grund_b": {
+          "von": 30,
+          "bis": 60,
+          "schritt": 10
+        },
+        "mehr_b": {
+          "von": 2,
+          "bis": 3,
+          "schritt": 1
+        },
+        "menge": {
+          "von": 80,
+          "bis": 160,
+          "schritt": 20
+        }
+      },
+      "abgeleitet": {
+        "stk_b": "stk_a + mehr_b",
+        "kosten_a": "grund_a + stk_a * menge",
+        "kosten_b": "grund_b + (stk_a + mehr_b) * menge",
+        "grenze": "runde((grund_a - grund_b) / mehr_b, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für den wöchentlichen Versand der MAKEL Studio GmbH an Boutiquen liegen zwei Angebote mit gleichem Leistungsumfang vor. Dienstleister A: {grund_a} € Grundpreis plus {stk_a} € je Packstück. Dienstleister B: {grund_b} € Grundpreis plus {stk_b} € je Packstück. Diese Woche sind {menge} Packstücke zu versenden."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Kosten bei Dienstleister A",
+          "einheit": "€",
+          "loesung": "kosten_a",
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Kosten bei Dienstleister B",
+          "einheit": "€",
+          "loesung": "kosten_b",
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Packstückzahl, bei der beide gleich teuer sind (zwei Nachkommastellen)",
+          "einheit": "Stück",
+          "loesung": "grenze",
+          "toleranz": 0.01,
+          "punkte": 2
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Kosten = Grundpreis + Stückpreis × Menge. Gleichsetzen: Grund A + Stück A × x = Grund B + Stück B × x → x = (Grund A − Grund B) ÷ (Stück B − Stück A).",
+      "quelle": "ik2024-lf07-k03, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf07-k03-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für den Boutiquenversand ist Dienstleister A pro Woche 50 € günstiger als B. A hatte im letzten Quartal eine Termintreue von 91 % und 1,5 % beschädigte Sendungen, B 98 % und 0,3 %. Mehrere Boutiquen haben sich zuletzt über verspätete Lieferungen beschwert. B bietet außerdem eine Sendungsverfolgung für Kunden an."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie, welchen Dienstleister MAKEL wählen sollte.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Rein preislich spricht A für sich: rund 50 € pro Woche, etwa 2.600 € im Jahr. Dagegen stehen deutlich schlechtere Termintreue (91 % gegen 98 %) und eine fünfmal so hohe Schadensquote. Verspätungen und Schäden verursachen Folgekosten: Ersatzlieferungen, Gutschriften, Bearbeitungsaufwand und vor allem unzufriedene Boutiquen, die bereits reklamieren. Die Sendungsverfolgung von B verbessert zusätzlich den Kundenservice. Empfehlung: B wählen oder zumindest testen, wenn die Folgekosten der Mängel die 2.600 € im Jahr voraussichtlich übersteigen; die Entscheidung mit einer gewichteten Nutzwertanalyse belegen und nach einem Quartal überprüfen.",
+        "raster": [
+          {
+            "kriterium": "Preisvorteil von A eingeordnet (auch auf das Jahr)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Termintreue und Schadensquote verglichen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folgekosten und Kundenwirkung berücksichtigt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Empfehlung mit Überprüfung",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Der günstigste Transport ist nicht automatisch der wirtschaftlichste; Qualität und Folgekosten gehören in die Bewertung.",
+      "quelle": "ik2024-lf07-k03, Abschnitt a3"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "k05",
+  "lernfeld": "ik2024-lf06",
+  "nummer": 5,
+  "titel": "Die passende Losgröße bestimmen",
+  "untertitel": "Warum große Lose Rüstkosten sparen, aber Lager kosten — und wo die Rechnung an Termine und Kapazitäten stößt.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Vor jedem Auftrag wird eine Maschine eingerichtet (Rüsten).",
+          "Gleichartige Aufträge kann man zusammenfassen."
+        ],
+        "erklaerung": "Ein Los ist die Menge gleicher Erzeugnisse, die ohne Unterbrechung durch Umrüsten hintereinander gefertigt wird. Für jedes Los fallen Rüstkosten an: Arbeitszeit für das Einrichten, Stillstand der Maschine, Probedrucke oder Teststiche, Materialverlust beim Einfahren. Diese Kosten sind je Los fix, unabhängig davon, ob 50 oder 500 Stück folgen. Je größer das Los, desto kleiner der Anteil Rüstkosten je Stück.",
+        "beispiele": [
+          "Rüstkosten 50 € je Los: bei 50 Stück 1,00 € je Stück, bei 500 Stück 0,10 € je Stück.",
+          "Fünf Boutiquen bestellen dasselbe Motiv: Zusammengefasst wird nur einmal gerüstet."
+        ],
+        "fallbeispiel": "Marlene Voss erhält über die Woche verteilt fünf Bestellungen für das Basis-Shirt ‚MAKEL Logo weiß‘ mit je 60 Stück. Deniz Aydın rechnet: Fünfmal rüsten kostet 5 × 50 € = 250 €, einmal rüsten für 300 Stück nur 50 €. Er bündelt die Aufträge zu einem Los am Donnerstag.",
+        "typische_fehler": "Rüstkosten wie Stückkosten behandeln, die mit jedem Teil anfallen.",
+        "verstaendnisfragen": [
+          "Was ist ein Los? Die Menge gleicher Erzeugnisse, die ohne Umrüsten hintereinander gefertigt wird.",
+          "Warum sinken die Rüstkosten je Stück mit der Losgröße? Weil die fixen Rüstkosten je Los auf mehr Stück verteilt werden."
+        ],
+        "pruefungsbezug": "Rüstkosten je Stück bei verschiedenen Losgrößen berechnen.",
+        "merksatz": "Rüstkosten fallen je Los an; größere Lose verteilen sie auf mehr Stück."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Was produziert, aber noch nicht gebraucht wird, liegt im Lager.",
+          "Lagerbestände binden Kapital und kosten Platz."
+        ],
+        "erklaerung": "Große Lose erzeugen große Lagerbestände, weil die Menge erst nach und nach verbraucht oder verkauft wird. Bei gleichmäßigem Abgang liegt im Durchschnitt die halbe Losgröße auf Lager. Lagerkosten entstehen für Zinsen auf das gebundene Kapital, Raum, Versicherung, Schwund und Veralterung. Damit gibt es einen Kostenkonflikt: Mit steigender Losgröße sinken die Rüstkosten pro Jahr (weniger Lose), die Lagerkosten steigen (mehr Bestand). Die günstigste Losgröße liegt dort, wo die Summe beider Kosten am kleinsten ist.",
+        "beispiele": [
+          "Losgröße 500, gleichmäßiger Abgang: durchschnittlich 250 Stück auf Lager.",
+          "Ein Shirt mit Saisonmotiv kann im Lager veralten — die Lagerkosten sind dann höher als die bloßen Raumkosten."
+        ],
+        "fallbeispiel": "Deniz überlegt, das Basis-Shirt nur noch zweimal im Jahr in Losen von 5.000 Stück zu drucken. Sandra Koslowski rechnet dagegen: Im Durchschnitt lägen dann 2.500 Shirts im Lager, das bindet Kapital, braucht ein zusätzliches Regal und birgt das Risiko, dass sich das Motiv ändert.",
+        "typische_fehler": "Nur die Rüstkosten betrachten und Lagerkosten ignorieren.",
+        "verstaendnisfragen": [
+          "Wie hoch ist der durchschnittliche Lagerbestand bei gleichmäßigem Abgang? Die halbe Losgröße.",
+          "Welche Kosten steigen mit der Losgröße? Die Lagerkosten."
+        ],
+        "pruefungsbezug": "Den Kostenkonflikt zwischen Rüst- und Lagerkosten erklären.",
+        "merksatz": "Mit steigender Losgröße sinken die Rüstkosten pro Jahr und steigen die Lagerkosten; das Optimum liegt beim Minimum der Summe."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Aus LF 4 kennst du die optimale Bestellmenge.",
+          "Modelle vereinfachen die Wirklichkeit durch Annahmen."
+        ],
+        "erklaerung": "Im vereinfachten Losgrößenmodell (nach Andler) gelten Annahmen: konstanter Jahresbedarf, feste Rüstkosten je Los, Lagerkosten proportional zum Durchschnittsbestand, das Los steht sofort vollständig zur Verfügung, keine Engpässe. Dann gilt q* = √(2 · D · S ÷ h), mit D = Jahresbedarf, S = Rüstkosten je Los und h = Lagerkosten je Stück und Jahr. Im Optimum sind Rüstkosten und Lagerkosten pro Jahr gleich hoch. Das Ergebnis ist eine Orientierung, kein Befehl — die Annahmen treffen selten vollständig zu.",
+        "beispiele": [
+          "D = 10.000 Stück, S = 50 €, h = 2 €: q* = √(2 · 10.000 · 50 ÷ 2) = √500.000 ≈ 707 Stück.",
+          "Im Optimum: Rüstkosten 10.000 ÷ 707 × 50 € ≈ 707 €, Lagerkosten 707 ÷ 2 × 2 € ≈ 707 €."
+        ],
+        "fallbeispiel": "Für das Basis-Shirt erwartet MAKEL einen gleichmäßigen Jahresbedarf von 10.000 Stück. Rüsten kostet 50 € je Los, ein Shirt auf Lager kostet 2 € pro Jahr. Deniz rechnet q* ≈ 707 Stück, also etwa 14 Lose im Jahr. Er rundet auf 700 Stück, weil Kartons zu 50 Stück gepackt werden.",
+        "typische_fehler": "Die Formel ohne Prüfung der Annahmen anwenden oder Einheiten mischen (Lagerkosten je Monat statt je Jahr).",
+        "verstaendnisfragen": [
+          "Was bedeuten D, S und h in der Formel? Jahresbedarf, Rüstkosten je Los, Lagerkosten je Stück und Jahr.",
+          "Was gilt im Optimum für Rüst- und Lagerkosten? Sie sind pro Jahr gleich hoch."
+        ],
+        "pruefungsbezug": "Die optimale Losgröße unter vorgegebenen Annahmen berechnen und das Modell benennen.",
+        "merksatz": "Optimale Losgröße q* = √(2DS ÷ h) — nur unter den Modellannahmen; im Optimum sind Rüst- und Lagerkosten gleich."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Kunden haben feste Liefertermine.",
+          "Kapazität und Lagerplatz sind begrenzt."
+        ],
+        "erklaerung": "Die rechnerische Losgröße wird betrieblich überprüft. Termine: Braucht ein Kunde 200 Stück morgen, wird nicht gewartet, bis 707 Stück sinnvoll sind. Kapazität: Ein großes Los kann die Maschine so lange belegen, dass andere Aufträge zu spät kommen. Lagerplatz und Haltbarkeit: Saisonmotive veralten. Finanzierung: Material für große Lose muss vorfinanziert werden. Häufig gilt in der Praxis eine Mindest- oder Höchstlosgröße, und Aufträge werden zu sinnvollen Losen gebündelt oder geteilt.",
+        "beispiele": [
+          "Eilauftrag über 200 Stück: als eigenes Los fertigen, auch wenn es rechnerisch zu klein ist.",
+          "Saisonmotiv: kleinere Lose trotz höherer Rüstkosten, um Restbestände zu vermeiden."
+        ],
+        "fallbeispiel": "Ein Kunde braucht bereits morgen 200 Basis-Shirts. Die rechnerische Losgröße ist 707. Deniz prüft: Am Lager sind 150 Stück, die Maschine ist heute Nachmittag frei. Er fertigt ein Los von 200 Stück für den Kunden und plant das nächste große Los wie vorgesehen in der kommenden Woche.",
+        "typische_fehler": "Die optimale Bestellmenge aus dem Einkauf und jedes Fertigungslos ohne Prüfung gleichsetzen.",
+        "verstaendnisfragen": [
+          "Darf die rechnerische Losgröße einen Liefertermin ersetzen? Nein, Termin, Kapazität und Lager müssen zusätzlich geprüft werden.",
+          "Warum können kleinere Lose bei Saisonartikeln sinnvoll sein? Weil Restbestände veralten und Lagerkosten dann höher sind."
+        ],
+        "pruefungsbezug": "Ein Rechenergebnis betrieblich einordnen und Abweichungen begründen.",
+        "merksatz": "Die rechnerische Losgröße ist Orientierung; Termine, Kapazität, Lager und Haltbarkeit entscheiden mit."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Los und Rüstvorgang erklären", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Den Zusammenhang von Rüst- und Lagerkosten erklären", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Eine Losgröße unter angegebenen Modellannahmen berechnen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Ein rechnerisches Ergebnis betrieblich einordnen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Los und Rüstvorgang",
+      "inhalt": [
+        { "typ": "absatz", "text": "Ein {{begriff:los|Los}} wird ohne Umrüsten gefertigt. ==Die {{begriff:ruestzeit|Rüstkosten}} fallen je Los an, nicht je Stück.==" },
+        { "typ": "tabelle", "mono": true, "spalten": ["Losgröße", "Rüstkosten je Los", "Rüstkosten je Stück"], "zeilen": [
+          { "zellen": ["50", "50 €", "1,00 €"] },
+          { "zellen": ["100", "50 €", "0,50 €"] },
+          { "zellen": ["500", "50 €", "0,10 €"] }
+        ] },
+        { "typ": "merke", "text": "**Rüstkosten fallen je Los an**; größere Lose verteilen sie auf mehr Stück.", "karteikarte": "Was ist ein Los, und wie verhalten sich die Rüstkosten je Stück bei steigender Losgröße?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Der Kostenkonflikt",
+      "inhalt": [
+        { "typ": "absatz", "text": "Jahresbedarf 10.000 Stück, Rüstkosten 50 € je Los, Lagerkosten 2 € je Stück und Jahr, gleichmäßiger Abgang:" },
+        { "typ": "tabelle", "mono": true, "spalten": ["Losgröße", "Lose/Jahr", "Rüstkosten/Jahr", "Ø Bestand", "Lagerkosten/Jahr", "Summe"], "zeilen": [
+          { "zellen": ["250", "40", "2.000 €", "125", "250 €", "2.250 €"] },
+          { "zellen": ["500", "20", "1.000 €", "250", "500 €", "1.500 €"] },
+          { "zellen": ["707", "≈ 14,1", "≈ 707 €", "≈ 354", "≈ 707 €", "≈ 1.414 €"] },
+          { "zellen": ["1.000", "10", "500 €", "500", "1.000 €", "1.500 €"] },
+          { "zellen": ["2.000", "5", "250 €", "1.000", "2.000 €", "2.250 €"] }
+        ] },
+        { "typ": "merke", "text": "Mit steigender Losgröße **sinken die Rüstkosten** pro Jahr und **steigen die Lagerkosten**; das Optimum liegt beim Minimum der Summe.", "karteikarte": "Welcher Kostenkonflikt steckt hinter der Losgrößenentscheidung?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Das vereinfachte Losgrößenmodell",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["Formel", "Einsetzen", "Ergebnis"], "zeilen": [
+          { "zellen": ["q* = √(2 · D · S ÷ h)", "√(2 · 10.000 · 50 ÷ 2)", "√500.000 ≈ 707 Stück"] }
+        ] },
+        { "typ": "absatz", "text": "Annahmen: konstanter Bedarf, feste Rüstkosten, Lagerkosten proportional zum Durchschnittsbestand, sofortige Bereitstellung des ganzen Loses, keine Engpässe." },
+        {
+          "typ": "check",
+          "frage": "Jahresbedarf 4.000 Stück, Rüstkosten 40 € je Los, Lagerkosten 2 € je Stück und Jahr. Wie groß ist die optimale Losgröße im vereinfachten Modell?",
+          "optionen": [
+            { "text": "400 Stück", "richtig": true, "echo": "Richtig: √(2 · 4.000 · 40 ÷ 2) = √160.000 = 400." },
+            { "text": "160.000 Stück", "richtig": false, "echo": "Das ist der Wert unter der Wurzel — die Wurzel fehlt noch." },
+            { "text": "80 Stück", "richtig": false, "echo": "Hier ist etwas schiefgelaufen: Der Faktor 2 im Zähler und die Division durch h müssen beide angewandt werden." }
+          ]
+        },
+        { "typ": "merke", "text": "Optimale Losgröße **q* = √(2DS ÷ h)** — nur unter den Modellannahmen; im Optimum sind Rüst- und Lagerkosten gleich.", "karteikarte": "Wie lautet die Formel für die optimale Losgröße, und was bedeuten D, S und h?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Grenzen durch Termine und Ressourcen",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Grenze", "Folge für die Losgröße"], "zeilen": [
+          { "zellen": ["Fester Kundentermin", "eigenes, ggf. kleineres Los"] },
+          { "zellen": ["Begrenzte Maschinenkapazität", "großes Los kann andere Aufträge verdrängen"] },
+          { "zellen": ["Lagerplatz, Saisonmotiv", "kleinere Lose, um Restbestände zu vermeiden"] },
+          { "zellen": ["Finanzierung", "großes Los bindet Geld für Material"] }
+        ] },
+        { "typ": "achtung", "text": "Die optimale **Bestellmenge** aus dem Einkauf und die optimale **Losgröße** der Fertigung sind verwandte Modelle — aber nicht automatisch dieselbe Zahl." },
+        { "typ": "merke", "text": "Die rechnerische Losgröße ist **Orientierung**; Termine, Kapazität, Lager und Haltbarkeit entscheiden mit.", "karteikarte": "Warum wird die rechnerische Losgröße in der Praxis oft nicht genau umgesetzt?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Ein Los wird ohne Umrüsten gefertigt; Rüstkosten fallen je Los an.",
+    "Ø Lagerbestand bei gleichmäßigem Abgang = halbe Losgröße.",
+    "Große Lose: weniger Rüstkosten, mehr Lagerkosten — und umgekehrt.",
+    "q* = √(2DS ÷ h) im vereinfachten Modell.",
+    "Im Optimum sind Rüst- und Lagerkosten gleich.",
+    "Termine, Kapazität, Lager und Haltbarkeit begrenzen die Rechnung."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "Im vereinfachten Modell gelten D = 10.000 Stück, S = 50 € und h = 2 € je Stück und Jahr. Optimale Losgröße?", "loesung": "q* = √(2 · 10.000 · 50 ÷ 2) = √500.000 ≈ 707 Stück. Modell und Einheiten benennen; nicht automatisch auf andere Modellannahmen übertragen." },
+    { "typ": "Fall", "frage": "Ein Kunde benötigt bereits morgen 200 Stück. Darf die rechnerische Losgröße den Liefertermin ersetzen?", "loesung": "Nein. Termin, Kapazität, Lagerbestand und verfügbare Auftragsmenge werden zusätzlich geprüft; eine eigene kleinere Fertigung für den Kunden ist begründbar." },
+    { "typ": "Wissen", "frage": "Warum liegt der durchschnittliche Lagerbestand bei der halben Losgröße?", "loesung": "Nach Fertigstellung ist das ganze Los auf Lager, bei gleichmäßigem Abgang sinkt der Bestand linear auf null; der Durchschnitt liegt in der Mitte." }
+  ],
+  "pruefungstipp": "Schreib bei Losgrößenaufgaben die Formel mit Einheiten hin und prüfe, ob die Lagerkosten je Jahr gegeben sind. Bei Bewertungsfragen mindestens eine betriebliche Grenze der Rechnung nennen."
+}

@@ -1,0 +1,193 @@
+{
+  "id": "k04",
+  "lernfeld": "ik2024-lf07",
+  "nummer": 4,
+  "titel": "Lieferketten abstimmen",
+  "untertitel": "Vom Lieferanten bis zum Kunden als ein System denken — Push und Pull, Informationsaustausch und Reaktion auf Störungen.",
+  "minuten": 20,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "MAKEL ist nur ein Glied zwischen Lieferanten und Kunden.",
+          "Störungen bei einem Partner wirken auf alle anderen."
+        ],
+        "erklaerung": "Eine Lieferkette (Supply Chain) umfasst alle Unternehmen und Schritte vom Rohstoff bis zum Endkunden: Baumwollproduzent, Textilhersteller, Rohlingslieferant, MAKEL, Paketdienst, Boutique, Endkunde. Supply-Chain-Management (SCM) heißt, Material-, Informations- und Geldflüsse über diese Unternehmen hinweg abzustimmen, statt dass jeder nur für sich optimiert. Ein bekanntes Problem ist der Peitscheneffekt (Bullwhip-Effekt): Kleine Nachfrageschwankungen beim Endkunden schaukeln sich über jede Stufe auf, weil jede Stufe mit Sicherheitszuschlägen bestellt. Gemeinsame Bedarfsdaten dämpfen ihn.",
+        "beispiele": [
+          "Eine Boutique bestellt wegen eines Trends 20 % mehr; MAKEL bestellt vorsichtshalber 40 % mehr Rohlinge; der Rohlingslieferant erhöht seine Produktion um 60 %.",
+          "MAKEL teilt seine Absatzprognose mit dem Rohlingslieferanten, der damit besser planen kann."
+        ],
+        "fallbeispiel": "Im Frühjahr waren schwarze Hoodies plötzlich gefragt. Boutiquen bestellten mehr, MAKEL bestellte noch mehr Rohlinge, der Lieferant fuhr Sonderschichten. Zwei Monate später lagen überall zu viele schwarze Rohlinge. Deniz Aydın vereinbart mit dem Lieferanten, künftig monatlich Verkaufsdaten und Prognosen auszutauschen.",
+        "typische_fehler": "Eine lokale Optimierung (etwa möglichst wenig Lager bei MAKEL) beurteilen, ohne die Wirkung auf die ganze Lieferkette zu betrachten.",
+        "verstaendnisfragen": [
+          "Was ist Supply-Chain-Management? Die Abstimmung von Material-, Informations- und Geldflüssen über alle Unternehmen einer Lieferkette.",
+          "Wie entsteht der Peitscheneffekt? Nachfrageschwankungen schaukeln sich über die Stufen auf, weil jede mit Sicherheitszuschlägen bestellt."
+        ],
+        "pruefungsbezug": "Wirkungen einer Entscheidung auf vor- und nachgelagerte Partner beschreiben.",
+        "merksatz": "SCM stimmt Flüsse über alle Partner ab; geteilte Bedarfsdaten dämpfen den Peitscheneffekt."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Man kann auf Vorrat oder auf tatsächlichen Bedarf hin produzieren und liefern.",
+          "Aus Kapitel 1 von LF 6 kennst du Lager- und Kundenauftragsfertigung."
+        ],
+        "erklaerung": "Beim Push-Prinzip wird auf Basis einer Prognose produziert und in Richtung Kunde ‚gedrückt‘: Ware liegt bereit, wenn der Kunde bestellt, aber Fehlprognosen führen zu Restbeständen. Beim Pull-Prinzip löst erst der tatsächliche Verbrauch oder Auftrag den Nachschub aus — Ware wird ‚gezogen‘. Das senkt Bestände, verlangt aber kurze, verlässliche Lieferzeiten. Ein Beispiel für Pull ist Kanban: Ist ein Behälter leer, wird die Karte zum Nachfüllauftrag. In der Praxis gibt es Mischformen, etwa Basisartikel auf Vorrat (Push) und Veredelung erst nach Auftrag (Pull).",
+        "beispiele": [
+          "Basis-Rohlinge werden nach Jahresprognose beschafft: Push.",
+          "Ein leeres Fach mit Etikettenrollen löst über eine Karte automatisch die Nachbestellung aus: Pull (Kanban)."
+        ],
+        "fallbeispiel": "MAKEL kombiniert beide Prinzipien: Schwarze und weiße Rohlinge in Standardgrößen werden nach Prognose eingekauft (Push). Bedruckt oder bestickt wird erst, wenn ein Kundenauftrag eingeht (Pull). So hat MAKEL kurze Lieferzeiten, ohne fertig veredelte Ware auf Vorrat zu riskieren.",
+        "typische_fehler": "Push und Pull als ausschließliche Alternativen sehen, statt Mischformen zu erkennen.",
+        "verstaendnisfragen": [
+          "Was löst beim Pull-Prinzip den Nachschub aus? Der tatsächliche Verbrauch oder Auftrag.",
+          "Welches Risiko hat das Push-Prinzip? Restbestände bei falschen Prognosen."
+        ],
+        "pruefungsbezug": "Push und Pull begründet zuordnen und Mischformen erkennen.",
+        "merksatz": "Push produziert nach Prognose, Pull nach tatsächlichem Bedarf; oft sinnvoll kombiniert."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Jede Lieferung braucht Dokumente.",
+          "Daten können elektronisch ausgetauscht werden."
+        ],
+        "erklaerung": "Abgestimmte Lieferketten brauchen verlässliche, frühe Informationen: Bestellungen und Auftragsbestätigungen, Lieferavis, Sendungsstatus, Bestands- und Prognosedaten. Elektronischer Datenaustausch (EDI) überträgt solche Nachrichten in festen Formaten direkt zwischen den Systemen — ohne Abtippen. Begleitdokumente sichern die Abwicklung: Lieferschein, Frachtbrief (im grenzüberschreitenden Straßenverkehr oft der CMR-Frachtbrief), Packliste und bei Lieferungen aus Drittländern außerhalb der EU Handelsrechnung und Zollunterlagen. Fehlen Dokumente oder stimmen Daten nicht, steht die Ware — auch wenn sie physisch da ist.",
+        "beispiele": [
+          "Container aus einem Drittland: Ohne vollständige Zollunterlagen wird die Ware nicht freigegeben.",
+          "Der Rohlingslieferant sendet Lieferavis per EDI; das Lager sieht die Ankunft im System."
+        ],
+        "fallbeispiel": "Eine Containerlieferung Rohlinge aus Asien steht im Hafen fest, weil in der Handelsrechnung das Gewicht falsch angegeben ist. Deniz lässt sie vom Lieferanten korrigieren; die Ware kommt drei Tage später. MAKEL nimmt die Prüfung der Dokumente vor Abfahrt in die Lieferantenvereinbarung auf.",
+        "typische_fehler": "Davon ausgehen, dass physisch vorhandene Ware auch verfügbar ist, obwohl Dokumente oder Buchungen fehlen.",
+        "verstaendnisfragen": [
+          "Was leistet EDI? Den direkten elektronischen Austausch von Geschäftsnachrichten in festen Formaten zwischen Systemen.",
+          "Welche Dokumente sind bei Lieferungen aus Drittländern zusätzlich nötig? Unter anderem Handelsrechnung und Zollunterlagen."
+        ],
+        "pruefungsbezug": "Notwendige Informationen und Begleitdokumente einer Lieferung benennen.",
+        "merksatz": "Lieferketten laufen auf Informationen: früh, elektronisch, vollständig — sonst steht die Ware."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Lieferverzug eines Lieferanten gefährdet Kundenaufträge.",
+          "Mehrere Abteilungen sind betroffen."
+        ],
+        "erklaerung": "Kommt es zu einer Störung, wird die Wirkung entlang der Kette geprüft: Welche Bestände reichen noch? Welche Produktionsaufträge sind betroffen? Welche Kundentermine sind gefährdet? Dann werden Einkauf, Produktionsplanung, Lager und Vertrieb mit belastbaren Statusdaten koordiniert. Mögliche Maßnahmen: Teilmengen vorziehen, Ersatzlieferanten nutzen, Prioritäten in der Produktion ändern, Kunden frühzeitig informieren. Die Kundeninformation gibt die zuständige Stelle frei — mit einem realistischen neuen Termin, nicht mit Vermutungen. Alles wird dokumentiert, damit das Lieferantenmanagement daraus lernen kann.",
+        "beispiele": [
+          "Lieferverzug Rohlinge 5 Tage: Bestand reicht für 3 Tage; zwei Aufträge verschieben, Eventauftrag mit Vorrat priorisieren.",
+          "Vertrieb informiert die betroffene Boutique mit neuem Termin, freigegeben nach Rücksprache mit der Produktion."
+        ],
+        "fallbeispiel": "Der Rohlingslieferant meldet fünf Tage Verzug. Deniz prüft mit Jonas den Bestand (reicht drei Tage) und mit der Produktionsplanung die Aufträge. Der Eventauftrag mit Vertragsstrafe wird aus Lagerbestand gefertigt, zwei Boutiqueaufträge rutschen um vier Tage. Marlene Voss informiert die Boutiquen mit dem bestätigten neuen Termin. Deniz dokumentiert den Verzug für die Lieferantenbewertung.",
+        "typische_fehler": "Kunden einen Termin nennen, bevor Bestand und Produktion geprüft sind.",
+        "verstaendnisfragen": [
+          "Was wird bei einer Lieferstörung zuerst geprüft? Die Auswirkung auf Bestand, Produktion und Kundentermine.",
+          "Wer informiert den Kunden? Die zuständige Stelle, meist der Vertrieb, nach Abstimmung mit Produktion und Einkauf."
+        ],
+        "pruefungsbezug": "Eine Informationskette bei Lieferverzug planen und begründen.",
+        "merksatz": "Bei Störungen Wirkung entlang der Kette prüfen, Bereiche mit belastbaren Daten koordinieren, Kunden zuständig und realistisch informieren."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Lieferkettenübergreifende Abhängigkeiten erkennen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Push und Pull erklären", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Informationen und Begleitdokumente einer Lieferkette benennen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Maßnahmen digital nachvollziehbar koordinieren", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Supply-Chain-Management",
+      "inhalt": [
+        { "typ": "grafik", "variante": "stufen", "kopf": "Der Peitscheneffekt", "titel": "Wie sich eine kleine Schwankung aufschaukelt", "lead": "Jede Stufe bestellt mit Sicherheitszuschlag — und verstärkt so die Schwankung.", "stufen": [
+          { "name": "Boutique", "text": "Ein Trend: Die Boutique bestellt **20 % mehr** schwarze Hoodies." },
+          { "name": "MAKEL", "text": "MAKEL sieht mehr Aufträge und bestellt vorsichtshalber **40 % mehr** Rohlinge." },
+          { "name": "Rohlingslieferant", "text": "Der Lieferant sieht die Großbestellung und erhöht seine Produktion um **60 %**." },
+          { "name": "Gegenmittel", "text": "Gemeinsame Absatz- und Bestandsdaten: Jede Stufe sieht den **echten Endkundenbedarf**." }
+        ] },
+        { "typ": "merke", "text": "SCM stimmt Flüsse über **alle Partner** ab; geteilte Bedarfsdaten dämpfen den Peitscheneffekt.", "karteikarte": "Was ist Supply-Chain-Management, und was hilft gegen den Peitscheneffekt?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Push und Pull",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["", "Push", "Pull"], "zeilen": [
+          { "zellen": ["Auslöser", "Prognose", "tatsächlicher Bedarf, Auftrag"] },
+          { "zellen": ["Bestand", "höher", "niedriger"] },
+          { "zellen": ["Risiko", "Restbestände", "Lieferengpass bei langen Wiederbeschaffungszeiten"] },
+          { "zellen": ["MAKEL", "Standard-Rohlinge", "Veredelung, Kanban für Etiketten"] }
+        ] },
+        {
+          "typ": "zuordnen",
+          "lead": "Push oder Pull?",
+          "kategorien": ["Push", "Pull"],
+          "aufgaben": [
+            { "text": "Rohlinge werden nach der Jahresprognose bestellt", "loesung": "Push" },
+            { "text": "Ein leerer Kanban-Behälter löst die Nachlieferung aus", "loesung": "Pull" },
+            { "text": "Bestickt wird erst nach Eingang des Kundenauftrags", "loesung": "Pull" },
+            { "text": "Vor der Saison wird die Weihnachtskollektion auf Vorrat gedruckt", "loesung": "Push" }
+          ]
+        },
+        { "typ": "merke", "text": "**Push** produziert nach Prognose, **Pull** nach tatsächlichem Bedarf; oft sinnvoll kombiniert.", "karteikarte": "Was unterscheidet Push- und Pull-Prinzip?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Informationen und Begleitdokumente",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Information/Dokument", "Zweck"], "zeilen": [
+          { "zellen": ["Bestellung, Auftragsbestätigung", "Vereinbarung festhalten"] },
+          { "zellen": ["Lieferavis, Sendungsstatus", "Ankunft planen"] },
+          { "zellen": ["Lieferschein, Packliste", "Inhalt prüfen"] },
+          { "zellen": ["Frachtbrief", "Beförderungsvertrag, Übergabe dokumentieren"] },
+          { "zellen": ["Handelsrechnung, Zollunterlagen", "Einfuhr aus Drittländern"] }
+        ] },
+        { "typ": "achtung", "text": "Physisch da heißt nicht verfügbar. Ohne Zollfreigabe, Wareneingangsbuchung oder Qualitätsfreigabe ist die Ware blockiert." },
+        { "typ": "merke", "text": "Lieferketten laufen auf Informationen: **früh, elektronisch, vollständig** — sonst steht die Ware.", "karteikarte": "Welche Informationen und Dokumente braucht eine Lieferkette?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Abstimmung bei Störungen",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Schritt", "Wer", "Was"], "zeilen": [
+          { "zellen": ["1. Auswirkung prüfen", "Einkauf, Lager", "Wie lange reicht der Bestand?"] },
+          { "zellen": ["2. Aufträge bewerten", "Produktionsplanung", "Welche Aufträge sind betroffen, welche haben Vorrang?"] },
+          { "zellen": ["3. Maßnahmen", "Einkauf, Produktion", "Ersatzlieferant, Teilmengen, Umplanung"] },
+          { "zellen": ["4. Kunden informieren", "Vertrieb", "Bestätigter neuer Termin"] },
+          { "zellen": ["5. Dokumentieren", "Einkauf", "Lieferantenbewertung"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "Der Rohlingslieferant meldet fünf Tage Verzug. Was sollte Marlene Voss als Erstes tun, bevor sie eine Boutique informiert?",
+          "optionen": [
+            { "text": "Sofort einen Termin fünf Tage später zusagen", "richtig": false, "echo": "Ohne Prüfung von Bestand und Produktion kann der Termin falsch sein — vielleicht ist der Auftrag gar nicht betroffen." },
+            { "text": "Mit Einkauf und Produktion klären, ob und wie stark der Auftrag betroffen ist", "richtig": true, "echo": "Genau. Erst die belastbare Statusinformation, dann eine realistische Kundeninformation." },
+            { "text": "Abwarten, bis die Ware da ist", "richtig": false, "echo": "Abwarten verhindert eine frühe Information des Kunden und mögliche Gegenmaßnahmen." }
+          ]
+        },
+        { "typ": "merke", "text": "Bei Störungen **Wirkung entlang der Kette** prüfen, Bereiche mit belastbaren Daten koordinieren, Kunden zuständig und realistisch informieren.", "karteikarte": "Wie gehst du bei einer Lieferstörung vor, die einen Kundenauftrag betrifft?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Lieferkette: alle Partner vom Rohstoff bis zum Endkunden.",
+    "SCM stimmt Material-, Informations- und Geldflüsse ab.",
+    "Peitscheneffekt: Schwankungen schaukeln sich auf; geteilte Daten helfen.",
+    "Push nach Prognose, Pull nach Bedarf; oft Mischformen.",
+    "EDI, Avis, Frachtbrief, Zollunterlagen: Informationen sichern den Fluss.",
+    "Störung: Wirkung prüfen, koordinieren, Kunden zuständig informieren."
+  ],
+  "selbsttest": [
+    { "typ": "Vergleich", "frage": "Vergleiche Produktion auf Prognose mit Nachschub auf einen tatsächlich gemeldeten Verbrauch.", "loesung": "Produktion auf Prognose ist Push, Nachschub nach gemeldetem Verbrauch ist Pull. Push hält Ware bereit, riskiert aber Restbestände; Pull senkt Bestände, braucht aber kurze, verlässliche Lieferzeiten. Echte Abläufe enthalten oft Mischformen." },
+    { "typ": "Fall", "frage": "Ein Lieferverzug betrifft einen zugesagten Kundenauftrag. Plane die Informationskette.", "loesung": "Auswirkung auf Bestand, Produktion und Versand prüfen; Einkauf, Produktionsplanung und Vertrieb mit belastbaren Statusdaten koordinieren; Gegenmaßnahmen festlegen; Kundeninformation durch die zuständige Stelle mit bestätigtem neuem Termin; Verzug für die Lieferantenbewertung dokumentieren." },
+    { "typ": "Wissen", "frage": "Was ist der Peitscheneffekt?", "loesung": "Kleine Nachfrageschwankungen beim Endkunden verstärken sich über jede Stufe der Lieferkette, weil jede Stufe mit Sicherheitszuschlägen bestellt." }
+  ],
+  "pruefungstipp": "Lieferkettenfälle verlangen fast immer eine Reihenfolge: prüfen, koordinieren, handeln, informieren, dokumentieren. Nenne zu jedem Schritt die zuständige Stelle."
+}

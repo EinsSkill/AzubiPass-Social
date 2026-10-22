@@ -1,0 +1,164 @@
+{
+  "lernfeld": "ik2024-lf07",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf07-k02-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "stunden": {
+          "von": 4,
+          "bis": 8,
+          "schritt": 1
+        },
+        "je_stunde": {
+          "von": 15,
+          "bis": 30,
+          "schritt": 5
+        },
+        "fehler": {
+          "von": 1,
+          "bis": 4,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "positionen": "stunden * je_stunde",
+        "quote": "runde(fehler / (stunden * je_stunde) * 100, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine Kommissioniererin im MAKEL-Lager hat in {stunden} Stunden {positionen} Positionen zusammengestellt. Bei der Kontrolle am Packtisch fallen {fehler} fehlerhafte Positionen auf."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Kommissionierleistung",
+          "einheit": "Positionen je Stunde",
+          "loesung": "je_stunde",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Kommissionierfehlerquote (zwei Nachkommastellen)",
+          "einheit": "%",
+          "loesung": "quote",
+          "toleranz": 0.01,
+          "punkte": 1
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Leistung = Positionen ÷ Stunden. Fehlerquote = fehlerhafte ÷ kommissionierte Positionen × 100.",
+      "quelle": "ik2024-lf07-k02, Abschnitte a3 und a4"
+    },
+    {
+      "id": "ik2024-lf07-k02-02",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Jonas Weidner aus dem Lager der MAKEL Studio GmbH überlegt, welches Kommissionierverfahren für welche Situation passt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welches Verfahren passt besser?",
+          "ziele": [
+            "Auftragsorientiert (einstufig)",
+            "Serienorientiert (zweistufig)"
+          ],
+          "elemente": [
+            {
+              "text": "Vor Weihnachten 80 Onlinebestellungen am Tag mit je ein bis drei Positionen",
+              "loesung": "Serienorientiert (zweistufig)"
+            },
+            {
+              "text": "Ein einzelner Großauftrag einer Boutique mit 40 Positionen",
+              "loesung": "Auftragsorientiert (einstufig)"
+            },
+            {
+              "text": "Eilauftrag, der in 30 Minuten raus muss",
+              "loesung": "Auftragsorientiert (einstufig)"
+            },
+            {
+              "text": "Viele kleine Aufträge mit überwiegend denselben Schnelldrehern",
+              "loesung": "Serienorientiert (zweistufig)"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Bei vielen kleinen, ähnlichen Aufträgen spart die gesammelte Entnahme Wege; große oder eilige Einzelaufträge werden direkt abgearbeitet.",
+      "quelle": "ik2024-lf07-k02, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf07-k02-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "MAKEL lagert Rohlinge in 8 Farben und 6 Größen auf festen Lagerplätzen. In der Saison sind einige Fächer übervoll, andere fast leer; Kartons stehen dann im Gang. Jonas schlägt dynamische Lagerplätze vor. Im Lager arbeiten in der Saison mehrere Aushilfen; Handscanner sind vorhanden, werden aber nicht immer genutzt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Jonas' Vorschlag und geben Sie eine begründete Empfehlung.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Für dynamische Plätze spricht die stark schwankende Belegung: Fläche würde besser genutzt, Kartons im Gang (Unfallgefahr, Suchzeiten) entfielen. Dagegen spricht, dass Scanner nicht konsequent genutzt werden und Aushilfen wechseln — bei dynamischen Plätzen ist eine nicht gebuchte Einlagerung praktisch nicht mehr auffindbar. Empfehlung: Umstellung nur mit Scan-Pflicht bei jedem Ein- und Auslagern, Einweisung der Aushilfen und Kontrolle (Stichproben-Inventur). Alternativ eine Mischform: feste Plätze für Schnelldreher, dynamische Plätze für Saisonüberhänge.",
+        "raster": [
+          {
+            "kriterium": "Vorteil Flächennutzung bzw. Ordnung erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Risiko fehlender Scan-Disziplin erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Voraussetzungen für die Umstellung genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Empfehlung (ggf. Mischform)",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Dynamische Lagerplätze lohnen sich nur, wenn jeder Lagervorgang verlässlich gebucht wird; Mischformen verbinden die Vorteile.",
+      "quelle": "ik2024-lf07-k02, Abschnitt a2"
+    }
+  ]
+}

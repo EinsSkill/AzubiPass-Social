@@ -1,0 +1,198 @@
+{
+  "lernfeld": "ik2024-lf05",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf05-k03-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "ertraege": {
+          "von": 1000,
+          "bis": 3000,
+          "schritt": 100
+        },
+        "aufwand_anteil": {
+          "von": 40,
+          "bis": 80,
+          "schritt": 10
+        }
+      },
+      "abgeleitet": {
+        "aufwendungen": "ertraege * aufwand_anteil / 100",
+        "gewinn": "ertraege - ertraege * aufwand_anteil / 100"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für einen Mini-Monat der MAKEL Studio GmbH sind alle Erträge mit {ertraege} € und alle Aufwendungen mit {aufwendungen} € angegeben. Weitere Erfolgsvorgänge gibt es nicht."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Erfolg (Gewinn positiv, Verlust negativ)",
+          "einheit": "€",
+          "loesung": "gewinn",
+          "toleranz": 0.01
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Erfolg = Erträge − Aufwendungen. Über das Bankguthaben sagt das Ergebnis nichts aus.",
+      "quelle": "ik2024-lf05-k03, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf05-k03-02",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "betrag": {
+          "von": 500,
+          "bis": 3000,
+          "schritt": 100
+        }
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Auf dem Kontoauszug der MAKEL Studio GmbH sehen Sie: Die Boutique „Faden & Form“ hat {betrag} € überwiesen. Die zugehörige Ausgangsrechnung aus dem Vormonat wurde bereits gebucht."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "2800",
+              "haben": null,
+              "betrag": "betrag"
+            },
+            {
+              "soll": null,
+              "haben": "2400",
+              "betrag": "betrag"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Die Forderung wird zu Geld: Bank an Forderungen aus Lieferungen und Leistungen. Ein Umsatzerlös wäre doppelt — er wurde bei der Rechnungsstellung gebucht.",
+      "quelle": "ik2024-lf05-k03, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k03-03",
+      "operator": "Entscheiden Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli legt Ihnen vier Geschäftsfälle vor. Umsatzsteuer bleibt unberücksichtigt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Geschäftsfälle verändern den Erfolg der MAKEL Studio GmbH? Mehrere Antworten sind richtig.",
+          "mehrfach": true,
+          "optionen": [
+            {
+              "text": "Miete für die Veredelungshalle wird überwiesen",
+              "richtig": true,
+              "echo": "Aufwand: Das Eigenkapital sinkt."
+            },
+            {
+              "text": "Eine Darlehensrate (nur Tilgung) wird abgebucht",
+              "richtig": false,
+              "echo": "Tilgung ist erfolgsneutral: Bank und Schuld sinken gleich."
+            },
+            {
+              "text": "Die Bank schreibt Guthabenzinsen gut",
+              "richtig": true,
+              "echo": "Ertrag: Das Eigenkapital steigt."
+            },
+            {
+              "text": "Ein Kunde bezahlt eine offene Rechnung",
+              "richtig": false,
+              "echo": "Aktivtausch: Die Forderung wird zu Geld; der Ertrag entstand beim Verkauf."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Erfolgswirksam sind nur Vorgänge, die das Eigenkapital ändern: Aufwendungen und Erträge. Tilgungen und Zahlungseingänge auf Forderungen sind reine Bestandsvorgänge.",
+      "quelle": "ik2024-lf05-k03, Abschnitte a1 und a4"
+    },
+    {
+      "id": "ik2024-lf05-k03-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Im März hat MAKEL Erträge von 48.000 € und Aufwendungen von 41.000 € gebucht. Auf dem Bankkonto ist der Bestand im selben Monat aber um 3.000 € gesunken. Tobias Renner fragt: „Wie passt das zusammen?“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Erklären und beurteilen Sie den scheinbaren Widerspruch mit mindestens zwei möglichen Ursachen.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Ein Widerspruch liegt nicht vor: Der Gewinn von 7.000 € zeigt die Veränderung des Eigenkapitals, nicht des Bankbestands. Mögliche Ursachen: Ein Teil der Erträge ist als Forderung noch offen (Verkauf auf Ziel); MAKEL hat Lieferantenrechnungen aus Vormonaten bezahlt; es wurde ein Darlehen getilgt; es wurde Material auf Lager oder eine Maschine gekauft und bezahlt, deren Aufwand erst später über Verbrauch oder Abschreibung entsteht. Um die Zahlungsfähigkeit zu beurteilen, braucht Tobias zusätzlich eine Betrachtung der Zahlungsströme.",
+        "raster": [
+          {
+            "kriterium": "Gewinn korrekt ermittelt und vom Bankbestand abgegrenzt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Erste plausible Ursache erläutert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zweite plausible Ursache erläutert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folgerung für die Beurteilung der Zahlungsfähigkeit",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Erfolg und Zahlung fallen zeitlich und sachlich auseinander.",
+      "quelle": "ik2024-lf05-k03, Abschnitt a4"
+    }
+  ]
+}

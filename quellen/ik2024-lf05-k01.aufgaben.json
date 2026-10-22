@@ -1,0 +1,215 @@
+{
+  "lernfeld": "ik2024-lf05",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf05-k01-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "material": {
+          "von": 400,
+          "bis": 900,
+          "schritt": 100
+        },
+        "bank": {
+          "von": 3000,
+          "bis": 6000,
+          "schritt": 500
+        },
+        "schulden": {
+          "von": 1000,
+          "bis": 2500,
+          "schritt": 500
+        }
+      },
+      "abgeleitet": {
+        "vermoegen": "material + bank",
+        "eigenkapital": "vermoegen - schulden"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für einen vereinfachten Ausschnitt der MAKEL Studio GmbH liegen folgende Werte vor: Rohstoffbestand {material} €, Bankguthaben {bank} €, Verbindlichkeiten gegenüber Lieferanten {schulden} €. Weitere Bilanzposten gibt es in diesem Ausschnitt nicht."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Vermögen",
+          "einheit": "€",
+          "loesung": "vermoegen",
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Eigenkapital",
+          "einheit": "€",
+          "loesung": "eigenkapital",
+          "toleranz": 0.01,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "vermoegen"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Vermögen = Summe der Aktivposten. Eigenkapital = Vermögen − Schulden. Die Bilanzsumme ist auf beiden Seiten gleich dem Vermögen.",
+      "quelle": "ik2024-lf05-k01, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k01-02",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski, Leiterin der Buchhaltung der MAKEL Studio GmbH, bereitet mit Ihnen den Jahresabschluss vor."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welcher Begriff passt?",
+          "ziele": [
+            "Inventur",
+            "Inventar",
+            "Bilanz"
+          ],
+          "elemente": [
+            {
+              "text": "Jonas zählt die Hoodie-Rohlinge im Lager",
+              "loesung": "Inventur"
+            },
+            {
+              "text": "Das Bankguthaben wird mit dem Kontoauszug zum Stichtag festgestellt",
+              "loesung": "Inventur"
+            },
+            {
+              "text": "Verzeichnis aller Vermögensteile und Schulden mit Mengen und Werten",
+              "loesung": "Inventar"
+            },
+            {
+              "text": "Verdichtete Gegenüberstellung von Aktiva und Passiva in Kontenform",
+              "loesung": "Bilanz"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Zählen und Feststellen anhand von Unterlagen sind Inventur (körperlich bzw. Buchinventur). Das ausführliche Verzeichnis ist das Inventar, die Kurzfassung in Kontenform die Bilanz.",
+      "quelle": "ik2024-lf05-k01, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf05-k01-03",
+      "operator": "Erläutern Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli, Auszubildender der MAKEL Studio GmbH, meint: „Buchführung machen wir doch nur, weil das Finanzamt es verlangt. Und für 12 Euro Porto ohne Quittung brauchen wir auch keinen Beleg.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Erläutern Sie Luca zwei weitere Zwecke der Buchführung und wie mit der Barzahlung ohne Quittung umzugehen ist.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Buchführung dient nicht nur dem Finanzamt: Sie informiert die Geschäftsführung über Gewinn und Zahlungsfähigkeit, liefert Zahlen für Kalkulationen, ist Grundlage für Kreditentscheidungen der Bank und dient als Beweismittel. Nach den GoB gilt: keine Buchung ohne Beleg. Fehlt eine Quittung, wird ein Eigenbeleg mit Datum, Betrag, Zweck und Unterschrift erstellt und abgelegt.",
+        "raster": [
+          {
+            "kriterium": "Erster weiterer Zweck mit Adressat genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zweiter weiterer Zweck mit Adressat genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Grundsatz ‚keine Buchung ohne Beleg‘ angewendet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Eigenbeleg mit wesentlichen Angaben als Lösung",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Buchführung ist das Informationssystem des Unternehmens. Fehlende Fremdbelege werden durch Eigenbelege ersetzt.",
+      "quelle": "ik2024-lf05-k01, Abschnitte a1 und a2"
+    },
+    {
+      "id": "ik2024-lf05-k01-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei der Jahresinventur ist es spät geworden. Luca Petrelli, Auszubildender der MAKEL Studio GmbH, schlägt vor: „Die Rohlinge im Lager zählen wir nicht, wir übernehmen einfach den Bestand aus dem Warenwirtschaftssystem. Und das Bankguthaben schätzen wir, der Auszug kommt erst nächste Woche.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Vorschlag.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Der Vorschlag ist nicht zulässig. Die Inventur soll gerade prüfen, ob der Buchbestand mit dem tatsächlichen Bestand übereinstimmt; wer den Systembestand übernimmt, findet Schwund, Zählfehler oder nicht gebuchte Entnahmen nicht. Körperliche Gegenstände werden deshalb gezählt, gemessen oder gewogen. Das Bankguthaben wird nicht geschätzt, sondern per Buchinventur mit dem Kontoauszug zum Stichtag belegt; notfalls wird der Auszug abgewartet oder online abgerufen. Nur so ist das Inventar vollständig und richtig (§ 240 HGB).",
+        "raster": [
+          {
+            "kriterium": "Zweck der Inventur (Abgleich Buch–Ist) erklärt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Körperliche Inventur der Rohlinge gefordert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Buchinventur der Bank mit Kontoauszug statt Schätzung",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Bezug zur gesetzlichen Inventurpflicht",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Inventur heißt tatsächlich erfassen: körperlich zählen oder anhand von Belegen nachweisen — nicht übernehmen oder schätzen.",
+      "quelle": "ik2024-lf05-k01, Abschnitt a3"
+    }
+  ]
+}
