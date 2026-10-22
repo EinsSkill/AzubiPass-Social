@@ -1,0 +1,73 @@
+{
+  "lernfeld": "ik2024-lf04",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf04-k03-01",
+      "operator": "Vergleichen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH bezieht schwarze Hoodie-Rohlinge. Lieferant A bietet 2 % Rabatt, wenn MAKEL den gesamten Bedarf bei ihm kauft; im Vorjahr hatte A eine dreiwöchige Lieferunterbrechung, in der die Veredelung stillstand. Lieferant B ist 1,5 % teurer als A ohne Rabatt und kann bis zu 30 % des Bedarfs liefern; seine Lieferungen waren bisher termingerecht." }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Vergleichen Sie die Beschaffung nur bei A mit einer Aufteilung auf A und B und geben Sie eine begründete Empfehlung.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Nur A: 2 % Rabatt auf den gesamten Bedarf, ein Ansprechpartner, einheitliche Qualität — aber volle Abhängigkeit; die Lieferunterbrechung im Vorjahr zeigt, dass ein Ausfall die Veredelung stilllegen kann. Aufteilung A/B: geringere Abhängigkeit, B ist bisher zuverlässig; dafür entfällt der Rabatt (bzw. wird neu verhandelt), B ist etwas teurer, es entsteht mehr Abstimmungsaufwand und möglicherweise Qualitätsunterschiede beim Druck. Empfehlung zum Beispiel: Aufteilung etwa 70/30, weil die Kosten eines erneuten Stillstands den Preisvorteil voraussichtlich übersteigen; vorher Druckverhalten der B-Rohlinge testen und mit A über Konditionen bei 70 % verhandeln.",
+        "raster": [
+          { "kriterium": "Konditionen und Aufwand bei einem Lieferanten genannt", "punkte": 1 },
+          { "kriterium": "Abhängigkeit und Ausfallrisiko mit Bezug auf den Fall bewertet", "punkte": 1 },
+          { "kriterium": "Nachteile der Aufteilung genannt (Kosten, Aufwand, Qualität)", "punkte": 1 },
+          { "kriterium": "Begründete Empfehlung ohne pauschale Überlegenheit einer Strategie", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Abhängigkeit, Ausfallrisiko, Konditionen und Abstimmungsaufwand abwägen; keine Strategie ist generell überlegen.",
+      "quelle": "ik2024-lf04-k03, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf04-k03-02",
+      "operator": "Formulieren Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Deniz Aydın möchte bei einem Hersteller in Portugal ein Angebot über schwarze Hoodie-Rohlinge einholen: 100 % Baumwolle, 380 g/m², Größen S bis XL, Mengen 1.000 und 2.000 Stück, Lieferung nach Düsseldorf. Das Angebot soll bis 15. März vorliegen." }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Formulieren Sie die Anfrage auf Englisch.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Subject: Enquiry – black hoodie blanks\n\nDear Sir or Madam,\n\nwe are interested in black hoodie blanks (100 % cotton, 380 g/m², sizes S–XL). Please send us your quotation for 1,000 and 2,000 pieces, including prices, delivery time to Düsseldorf, delivery terms and payment terms, by 15 March.\n\nKind regards\nDeniz Aydın\nMAKEL Studio GmbH",
+        "raster": [
+          { "kriterium": "Artikel und Spezifikation vollständig", "punkte": 1 },
+          { "kriterium": "Mengen genannt", "punkte": 1 },
+          { "kriterium": "Erbetene Angaben (Preis, Lieferzeit, Bedingungen) und Lieferort", "punkte": 1 },
+          { "kriterium": "Frist genannt und keine Bestellformulierung", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Eine Anfrage bittet um ein Angebot; sie ist unverbindlich und nennt alle Angaben, die für vergleichbare Angebote nötig sind.",
+      "quelle": "ik2024-lf04-k03, Abschnitt a4"
+    }
+  ]
+}

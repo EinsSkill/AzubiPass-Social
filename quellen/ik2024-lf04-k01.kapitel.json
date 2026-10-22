@@ -1,0 +1,248 @@
+{
+  "id": "k01",
+  "lernfeld": "ik2024-lf04",
+  "nummer": 1,
+  "titel": "Materialbedarf und Versorgung",
+  "untertitel": "Welches Material wird gebraucht, wie viel fehlt tatsächlich, welches Material verdient besondere Aufmerksamkeit — und muss es auf Lager liegen?",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Jeder Produktionsauftrag braucht bestimmtes Material.",
+          "Die Mengen ergeben sich aus Auftrag und Verbrauch je Stück."
+        ],
+        "erklaerung": "Die Bedarfsermittlung beginnt beim Auftrag: Was soll in welcher Menge hergestellt werden, und was braucht ein Stück? Bei MAKEL werden zwei Bedarfe getrennt geführt: Für die eigene Veredelung braucht es Rohlinge, Druckmaterial und Verpackung; für die externe Serienfertigung werden Stoffe und Zutaten beschafft und dem Lohnfertiger bereitgestellt oder von ihm selbst gekauft. Aus der Menge je Stück und der Stückzahl ergibt sich der Bruttobedarf.",
+        "beispiele": [
+          "400 bedruckte Hoodies: 400 Rohlinge, 400 × 20 g = 8 kg Druckmaterial, 400 Verpackungen.",
+          "500 Shirts mit 20 g Druckmaterial je Stück: 10 kg Druckmaterial."
+        ],
+        "fallbeispiel": "Für einen Veredelungsauftrag über 500 Shirts braucht jedes Shirt laut Arbeitsplan 20 g Druckmaterial. Bruttobedarf Druckmaterial: 500 × 20 g = 10.000 g = 10 kg. Dazu kommen 500 Rohlinge und 500 Verpackungen. Ein Ausschusszuschlag ist in diesem Fall nicht vorgesehen.",
+        "typische_fehler": "Einheiten werden nicht angeglichen — Gramm je Stück und Kilogramm im Lager werden direkt miteinander verrechnet.",
+        "verstaendnisfragen": [
+          "Wie ergibt sich der Bruttobedarf? Aus Stückzahl mal Verbrauch je Stück, gegebenenfalls plus Ausschusszuschlag.",
+          "Warum trennt MAKEL den Bedarf für Veredelung und Serienfertigung? Weil die Materialien, Lieferwege und Verantwortlichkeiten verschieden sind."
+        ],
+        "pruefungsbezug": "Bei Bedarfsrechnungen Einheiten vor dem Rechnen angleichen und das Ergebnis mit Einheit angeben.",
+        "merksatz": "Der Bruttobedarf ergibt sich aus Stückzahl mal Verbrauch je Stück; Einheiten werden vorher angeglichen."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Nicht der ganze Bruttobedarf muss bestellt werden.",
+          "Was schon verfügbar ist, wird abgezogen."
+        ],
+        "erklaerung": "Der Nettobedarf ist der Bruttobedarf abzüglich des verfügbaren Bestands. Verfügbar ist nur, was tatsächlich frei ist: Lagerbestand minus Reservierungen für andere Aufträge minus Sicherheitsbestand, plus bereits bestellte, sicher eintreffende Mengen. Das Ergebnis ist die Menge, die zusätzlich beschafft werden muss.",
+        "beispiele": [
+          "Bruttobedarf 10 kg, verwendbarer und nicht reservierter Bestand 3 kg, keine offenen Bestellungen: Nettobedarf 7 kg.",
+          "Lagerbestand 600 Rohlinge, davon 250 für einen anderen Auftrag reserviert: verfügbar 350."
+        ],
+        "fallbeispiel": "Für den Shirt-Auftrag liegen 5 kg Druckmaterial im Lager, davon sind 2 kg für einen anderen Auftrag reserviert. Verfügbar sind also 3 kg. Offene Bestellungen gibt es nicht. Nettobedarf: 10 kg − 3 kg = 7 kg. Bei den Rohlingen sind 600 Stück auf Lager, 250 reserviert: 350 verfügbar, Nettobedarf 500 − 350 = 150 Rohlinge.",
+        "typische_fehler": "Der gesamte Lagerbestand wird abgezogen, obwohl ein Teil für andere Aufträge reserviert ist. Dann fehlt das Material später an anderer Stelle.",
+        "verstaendnisfragen": [
+          "Was ist der Nettobedarf? Bruttobedarf minus verfügbarer Bestand (Lager minus Reservierungen und Sicherheitsbestand, plus sichere offene Bestellungen).",
+          "Warum werden Reservierungen abgezogen? Weil reserviertes Material bereits einem anderen Auftrag zugesagt ist."
+        ],
+        "pruefungsbezug": "Bei Nettobedarfsrechnungen die Position ‚verfügbar‘ genau aus den Angaben ableiten.",
+        "merksatz": "Nettobedarf = Bruttobedarf minus verfügbarer Bestand; verfügbar ist nur, was weder reserviert noch als Sicherheit gebunden ist."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Nicht jedes Material ist gleich wichtig.",
+          "Wichtigkeit hat eine Wert- und eine Verbrauchsseite."
+        ],
+        "erklaerung": "Die ABC-Analyse ordnet Materialien nach ihrem Anteil am gesamten Beschaffungswert. A-Güter haben einen hohen Wertanteil bei oft geringem Mengenanteil und werden besonders sorgfältig geplant, verhandelt und überwacht. C-Güter sind viele Positionen mit geringem Wert, bei denen sich vereinfachte Beschaffung lohnt. Die XYZ-Analyse betrachtet dagegen die Regelmäßigkeit des Verbrauchs: X gleichmäßig, Y schwankend, Z unregelmäßig. Beide Analysen beantworten verschiedene Fragen; die Klassengrenzen legt jeder Betrieb selbst fest.",
+        "beispiele": [
+          "Rohlinge machen bei MAKEL einen hohen Teil des Beschaffungswerts aus: typisches A-Gut, genau zu planen.",
+          "Klebeband und Versandetiketten: viele Positionen, wenig Wert — C-Güter mit einfacher Nachbestellung."
+        ],
+        "fallbeispiel": "Ein Material bindet 60 % des jährlichen Beschaffungswerts, macht aber nur 10 % der Mengeneinheiten aus. Daraus folgt: Es hat hohe wertmäßige Bedeutung und verdient genaue Planung und Verhandlung. Ob es ein A-Gut ist, hängt von den betrieblichen Klassengrenzen ab. Ob es gleichmäßig verbraucht wird, sagt der Wertanteil nicht — dafür braucht es die Verbrauchswerte über die Zeit.",
+        "typische_fehler": "Aus einem hohen Wertanteil wird auf gleichmäßigen Verbrauch geschlossen. Wertanteil und Verbrauchsverhalten sind verschiedene Merkmale.",
+        "verstaendnisfragen": [
+          "Was ordnet die ABC-Analyse? Materialien nach ihrem Anteil am Beschaffungswert.",
+          "Was ordnet die XYZ-Analyse? Materialien nach der Regelmäßigkeit ihres Verbrauchs."
+        ],
+        "pruefungsbezug": "ABC und XYZ nie verwechseln; Klassengrenzen nur verwenden, wenn sie vorgegeben sind.",
+        "merksatz": "ABC ordnet nach Wertanteil, XYZ nach Verbrauchsregelmäßigkeit; ein hoher Wertanteil sagt nichts über gleichmäßigen Verbrauch."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Material kann auf Vorrat liegen oder erst bei Bedarf beschafft werden.",
+          "Beides hat Vor- und Nachteile."
+        ],
+        "erklaerung": "Bei der Vorratsbeschaffung liegt Material im Lager und ist sofort verfügbar; das bindet Kapital und kostet Lagerfläche, schützt aber vor Engpässen. Bei der Einzelbeschaffung im Bedarfsfall wird erst nach Auftragseingang bestellt; das spart Lagerkosten, verlängert aber die Lieferzeit und erhöht das Risiko. Bei der fertigungssynchronen Beschaffung (Just in Time) liefert der Lieferant genau dann, wenn das Material gebraucht wird — das verlangt sehr verlässliche Lieferanten und enge Abstimmung.",
+        "beispiele": [
+          "Schwarze Hoodie-Rohlinge in Standardgrößen: regelmäßiger Bedarf, Vorrat sinnvoll.",
+          "Sonderfarbe für ein einmaliges Kundenmotiv: Einzelbeschaffung nach Auftrag."
+        ],
+        "fallbeispiel": "Ein Kunde bestellt 50 Shirts in einer seltenen Farbe. MAKEL hat sie nicht auf Lager und wird sie voraussichtlich nicht wieder brauchen. Einzelbeschaffung ist sinnvoll: Die Rohlinge werden nach Auftragseingang bestellt, die Lieferzeit wird im Angebot berücksichtigt. Für schwarze Standard-Rohlinge, die fast täglich gebraucht werden, hält MAKEL dagegen einen Vorrat.",
+        "typische_fehler": "Just in Time wird als grundsätzlich überlegen dargestellt. Es spart Lagerkosten, macht aber anfällig für Lieferstörungen.",
+        "verstaendnisfragen": [
+          "Welchen Nachteil hat Vorratsbeschaffung? Kapitalbindung, Lagerkosten und Risiko von Veralten oder Schwund.",
+          "Wann passt Einzelbeschaffung? Bei seltenen, auftragsbezogenen Materialien, deren Lieferzeit im Auftrag berücksichtigt werden kann."
+        ],
+        "pruefungsbezug": "Bereitstellungsverfahren immer mit Kosten, Risiko und Art des Materials begründen.",
+        "merksatz": "Vorrat sichert Verfügbarkeit gegen Kapitalbindung, Einzelbeschaffung spart Lager gegen längere Lieferzeit, Just in Time verlangt sehr verlässliche Lieferanten."
+      }
+    ]
+  },
+
+  "lernziele": [
+    { "id": "lz1", "text": "Eine Bedarfsanforderung aus einem einfachen Produktionsauftrag ableiten", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Wertanteile und Verbrauchsverhalten unterscheiden", "abschnitt": "a3" },
+    { "id": "lz3", "text": "Vorrats- und auftragsbezogene Beschaffung begründet vergleichen", "abschnitt": "a4" },
+    { "id": "lz4", "text": "Den Nettobedarf aus Bestand und Reservierungen bestimmen", "abschnitt": "a2" }
+  ],
+
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Welches Material wird benötigt?",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:bedarfsermittlung|Bedarfsermittlung}} beginnt beim Auftrag. Stückzahl mal Verbrauch je Stück ergibt den Bruttobedarf. ==Einheiten werden vor dem Rechnen angeglichen.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Material", "je Shirt", "500 Shirts"],
+          "zeilen": [
+            { "zellen": ["Rohling", "1 Stück", "500 Stück"], "mono": [1, 2] },
+            { "zellen": ["Druckmaterial", "20 g", "10.000 g = 10 kg"], "mono": [1, 2] },
+            { "zellen": ["Verpackung", "1 Stück", "500 Stück"], "mono": [1, 2] }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Der **Bruttobedarf** ergibt sich aus Stückzahl mal Verbrauch je Stück; Einheiten werden vorher angeglichen.",
+          "karteikarte": "Wie ermittelt man den Bruttobedarf an Material für einen Produktionsauftrag?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Bedarf, Bestand und Reservierungen",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Zusätzlich beschafft werden muss nur der Nettobedarf: Bruttobedarf minus verfügbarer Bestand."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Rechenschritt", "Druckmaterial", "Rohlinge"],
+          "zeilen": [
+            { "zellen": ["Bruttobedarf", "10 kg", "500 Stück"], "mono": [1, 2] },
+            { "zellen": ["Lagerbestand", "5 kg", "600 Stück"], "mono": [1, 2] },
+            { "zellen": ["− reserviert für andere Aufträge", "2 kg", "250 Stück"], "mono": [1, 2] },
+            { "zellen": ["= verfügbar", "3 kg", "350 Stück"], "mono": [1, 2] },
+            { "zellen": ["Nettobedarf", "7 kg", "150 Stück"], "mono": [1, 2],
+              "detail": "Bereits bestellte, sicher eintreffende Mengen würden den Nettobedarf weiter senken. Ein Sicherheitsbestand würde ihn erhöhen, weil er nicht verbraucht werden soll." }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Nettobedarf = Bruttobedarf − verfügbarer Bestand**; verfügbar ist nur, was weder reserviert noch als Sicherheit gebunden ist.",
+          "karteikarte": "Wie berechnet man den Nettobedarf, und was zählt als verfügbarer Bestand?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Welches Material verdient besondere Aufmerksamkeit?",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:abc-analyse|ABC-Analyse}} ordnet nach Wertanteil, die {{begriff:xyz-analyse|XYZ-Analyse}} nach Regelmäßigkeit des Verbrauchs. Beide beantworten verschiedene Fragen."
+        },
+        {
+          "typ": "zuordnen",
+          "lead": "Welche Analyse beantwortet die Frage?",
+          "kategorien": ["ABC-Analyse", "XYZ-Analyse"],
+          "aufgaben": [
+            { "text": "Welche Materialien binden den größten Teil des Beschaffungswerts?", "loesung": "ABC-Analyse" },
+            { "text": "Welche Materialien werden gleichmäßig verbraucht?", "loesung": "XYZ-Analyse" },
+            { "text": "Wo lohnt sich intensives Verhandeln über den Preis am meisten?", "loesung": "ABC-Analyse" },
+            { "text": "Für welche Materialien eignet sich eine verbrauchsgesteuerte Nachbestellung?", "loesung": "XYZ-Analyse" }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**ABC** ordnet nach Wertanteil, **XYZ** nach Verbrauchsregelmäßigkeit; ein hoher Wertanteil sagt nichts über gleichmäßigen Verbrauch.",
+          "karteikarte": "Was unterscheidet die ABC-Analyse von der XYZ-Analyse?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Bereitstellung mit und ohne Vorrat",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Material kann auf Vorrat liegen, nach Auftrag beschafft oder fertigungssynchron geliefert werden ({{begriff:just-in-time|Just in Time}})."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Verfahren", "Vorteil", "Nachteil", "Passt bei MAKEL für …"],
+          "zeilen": [
+            { "zellen": ["Vorratsbeschaffung", "Sofort verfügbar", "Kapitalbindung, Lagerkosten", "Schwarze Standard-Rohlinge"] },
+            { "zellen": ["Einzelbeschaffung", "Kein Lager nötig", "Längere Lieferzeit", "Sonderfarbe für ein einmaliges Motiv"] },
+            { "zellen": ["Just in Time", "Minimale Bestände", "Anfällig für Lieferstörungen", "Kaum: MAKEL ist dafür zu klein und zu saisonal"] }
+          ]
+        },
+        {
+          "typ": "check",
+          "frage": "Ein Kunde bestellt 50 Shirts in einer Sonderfarbe, die MAKEL voraussichtlich nie wieder braucht. Welches Bereitstellungsverfahren passt?",
+          "optionen": [
+            { "text": "Vorratsbeschaffung, damit die Farbe künftig verfügbar ist", "richtig": false, "echo": "Ohne absehbaren Wiederholbedarf bindet ein Vorrat nur Kapital und Lagerplatz." },
+            { "text": "Einzelbeschaffung nach Auftragseingang, Lieferzeit im Angebot berücksichtigen", "richtig": true, "echo": "Richtig. Seltenes, auftragsbezogenes Material wird erst bei Bedarf beschafft." },
+            { "text": "Just in Time mit täglicher Anlieferung", "richtig": false, "echo": "Für einen einmaligen kleinen Bedarf ist fertigungssynchrone Anlieferung unverhältnismäßig aufwendig." }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Vorrat sichert Verfügbarkeit gegen Kapitalbindung, Einzelbeschaffung spart Lager gegen längere Lieferzeit, **Just in Time** verlangt sehr verlässliche Lieferanten.",
+          "karteikarte": "Welche Vor- und Nachteile haben Vorratsbeschaffung, Einzelbeschaffung und Just in Time?"
+        }
+      ]
+    }
+  ],
+
+  "zusammenfassung": [
+    "Bruttobedarf = Stückzahl × Verbrauch je Stück (+ Ausschusszuschlag, falls vorgegeben).",
+    "Nettobedarf = Bruttobedarf − verfügbarer Bestand.",
+    "Verfügbar: Lager minus Reservierungen und Sicherheitsbestand, plus sichere offene Bestellungen.",
+    "Bedarf für eigene Veredelung und externe Serie getrennt führen.",
+    "ABC = Wertanteil, XYZ = Verbrauchsregelmäßigkeit.",
+    "Vorrat, Einzelbeschaffung und Just in Time je nach Material, Kosten und Risiko wählen."
+  ],
+
+  "selbsttest": [
+    {
+      "typ": "Rechnung",
+      "frage": "Für 500 Shirts sind 20 g Druckmaterial je Shirt nötig. Verwendbarer, nicht reservierter Bestand: 3 kg. Kein Ausschusszuschlag, keine offenen Lieferungen. Berechne Brutto- und Nettobedarf.",
+      "loesung": "Bruttobedarf: 500 × 20 g = 10.000 g = 10 kg. Nettobedarf: 10 kg − 3 kg = 7 kg. Die Einheiten werden vor der Subtraktion angeglichen."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Ein Material bindet 60 % des jährlichen Beschaffungswerts, macht aber nur 10 % der Mengeneinheiten aus. Was folgt daraus?",
+      "loesung": "Das Material hat hohe wertmäßige Bedeutung und sollte sorgfältig geplant, verhandelt und überwacht werden. Eine feste ABC-Klasse lässt sich ohne vorgegebene Klassengrenzen nicht sicher behaupten, und über die Regelmäßigkeit des Verbrauchs sagt der Wertanteil nichts — dafür bräuchte man eine XYZ-Betrachtung."
+    },
+    {
+      "typ": "Anwendung",
+      "frage": "Begründe, warum MAKEL schwarze Standard-Rohlinge auf Vorrat hält, eine Sonderfarbe aber erst nach Auftrag beschafft.",
+      "loesung": "Schwarze Standard-Rohlinge werden regelmäßig gebraucht; ein Vorrat sichert schnelle Lieferfähigkeit, und das gebundene Kapital wird bald wieder frei. Die Sonderfarbe wird voraussichtlich nicht wieder gebraucht; ein Vorrat würde Kapital und Lagerplatz binden und könnte veralten. Die längere Lieferzeit wird im Angebot berücksichtigt."
+    }
+  ],
+
+  "pruefungstipp": "Bedarfsrechnungen verlieren Punkte an zwei Stellen: Einheiten und Reservierungen. Und bei ABC/XYZ: Die Analysen nie vermischen, Klassengrenzen nur verwenden, wenn sie gegeben sind."
+}

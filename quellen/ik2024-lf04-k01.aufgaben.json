@@ -1,0 +1,69 @@
+{
+  "lernfeld": "ik2024-lf04",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf04-k01-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "stueck": { "von": 300, "bis": 800, "schritt": 100 },
+        "gramm": { "von": 15, "bis": 25, "schritt": 5 },
+        "bestand": { "von": 1, "bis": 4, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "brutto": "stueck * gramm / 1000",
+        "netto": "stueck * gramm / 1000 - bestand"
+      },
+      "pruefung_variablen": "stueck * gramm / 1000 - bestand > 0",
+      "anzeige": [
+        { "block": "text", "inhalt": "Für einen Veredelungsauftrag der MAKEL Studio GmbH über {stueck} Shirts werden laut Arbeitsplan {gramm} g Druckmaterial je Shirt benötigt. Im Lager liegen {bestand} kg verwendbares, nicht reserviertes Druckmaterial. Es gibt keinen Ausschusszuschlag und keine offenen Bestellungen. Berechnen Sie Brutto- und Nettobedarf in Kilogramm." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Bruttobedarf", "einheit": "kg", "loesung": "brutto", "toleranz": 0.001, "punkte": 2 },
+        { "block": "zahl", "label": "Nettobedarf", "einheit": "kg", "loesung": "netto", "toleranz": 0.001, "punkte": 2, "folgefehler_aus": ["brutto"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Bruttobedarf = Stückzahl × Verbrauch je Stück (in kg umgerechnet). Nettobedarf = Bruttobedarf − verfügbarer Bestand.",
+      "quelle": "ik2024-lf04-k01, Abschnitte a1 und a2"
+    },
+
+    {
+      "id": "ik2024-lf04-k01-02",
+      "operator": "Erläutern Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Deniz Aydın hat ausgewertet: Die Hoodie-Rohlinge binden 60 % des jährlichen Beschaffungswerts der MAKEL Studio GmbH, machen aber nur 10 % der beschafften Mengeneinheiten aus. Ein Kollege folgert: „Dann sind das A-Güter und werden gleichmäßig verbraucht.“" }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Erläutern Sie, was aus den Angaben folgt und was nicht.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Es folgt, dass die Rohlinge eine hohe wertmäßige Bedeutung haben und deshalb sorgfältig geplant, verhandelt und überwacht werden sollten. Ob sie formal A-Güter sind, hängt von den betrieblich festgelegten Klassengrenzen ab, die hier nicht genannt sind. Über die Regelmäßigkeit des Verbrauchs sagt der Wertanteil nichts; dafür wäre eine XYZ-Analyse mit Verbrauchswerten über die Zeit nötig.",
+        "raster": [
+          { "kriterium": "Hohe wertmäßige Bedeutung und Konsequenz erläutert", "punkte": 1 },
+          { "kriterium": "Klassenzuordnung nur mit vorgegebenen Grenzen möglich", "punkte": 1 },
+          { "kriterium": "Wertanteil sagt nichts über Verbrauchsregelmäßigkeit (XYZ)", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "ABC ordnet nach Wertanteil, XYZ nach Verbrauchsregelmäßigkeit.",
+      "quelle": "ik2024-lf04-k01, Abschnitt a3"
+    }
+  ]
+}

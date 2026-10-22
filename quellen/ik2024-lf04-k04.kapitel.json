@@ -1,0 +1,250 @@
+{
+  "id": "k04",
+  "lernfeld": "ik2024-lf04",
+  "nummer": 4,
+  "titel": "Angebote nachvollziehbar vergleichen",
+  "untertitel": "Bezugspreise auf eine gemeinsame Grundlage bringen, fremde Währungen umrechnen und mit einer Nutzwertanalyse mehr als nur den Preis bewerten.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Angebote unterscheiden sich in Preis, Abzügen und Nebenkosten.",
+          "Vergleichbar wird es erst, wenn alle auf denselben Endwert gerechnet sind."
+        ],
+        "erklaerung": "Für den Preisvergleich rechnet man jedes Angebot bis zum Bezugspreis (Einstandspreis): dem Betrag, den das Material frei Lager MAKEL tatsächlich kostet. Dafür werden dieselbe Menge, dieselbe Qualität und dieselbe Netto-Betrachtung zugrunde gelegt. Unterschiedliche Mengen oder Qualitäten machen einen Vergleich wertlos. Die Umsatzsteuer bleibt beim Bezugspreis außen vor, weil MAKEL sie als Vorsteuer abziehen kann.",
+        "beispiele": [
+          "Angebot A über 1.000 Stück, Angebot B über 800 Stück: Erst auf dieselbe Menge umrechnen oder Stückpreise vergleichen.",
+          "Angebot A ‚frei Haus‘, Angebot B ‚ab Werk zuzüglich 40 € Fracht‘: Fracht bei B addieren."
+        ],
+        "fallbeispiel": "Zwei Rohlingsangebote liegen vor. A: 1.000 € Listenpreis für 100 Stück, 10 % Rabatt, 2 % Skonto, 40 € Fracht. B: 930 € für 100 Stück einschließlich Fracht, ohne Abzüge. Beide gelten für dieselbe Qualität. Deniz rechnet A auf den Bezugspreis, bevor er vergleicht — der Listenpreis allein würde A teurer aussehen lassen, als es ist.",
+        "typische_fehler": "Listenpreise werden direkt verglichen, ohne Rabatte, Skonto und Bezugskosten einzurechnen.",
+        "verstaendnisfragen": [
+          "Was ist der Bezugspreis? Der Betrag, den das Material frei Lager tatsächlich kostet — nach Abzügen und mit Bezugskosten, ohne Umsatzsteuer.",
+          "Warum bleibt die Umsatzsteuer beim Angebotsvergleich außen vor? Weil MAKEL sie als Vorsteuer vom Finanzamt zurückerhält."
+        ],
+        "pruefungsbezug": "Vor dem Rechnen prüfen, ob Menge, Qualität und Netto-Betrachtung gleich sind.",
+        "merksatz": "Angebote werden über den Bezugspreis verglichen — gleiche Menge, gleiche Qualität, netto, mit allen Abzügen und Bezugskosten."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Die Bezugskalkulation führt vom Listenpreis zum Bezugspreis.",
+          "Die Reihenfolge der Schritte ist festgelegt."
+        ],
+        "erklaerung": "Schema der Bezugskalkulation: Listeneinkaufspreis − Lieferrabatt = Zieleinkaufspreis − Lieferskonto = Bareinkaufspreis + Bezugskosten = Bezugspreis. Rabatt wird vom Listenpreis abgezogen, Skonto vom Zieleinkaufspreis — also auf den bereits rabattierten Betrag. Bezugskosten (Fracht, Rollgeld, Verpackung, Versicherung) kommen am Ende dazu und werden in der Regel nicht rabattiert oder skontiert, es sei denn, das Angebot sagt etwas anderes.",
+        "beispiele": [
+          "1.000 € − 10 % Rabatt = 900 €; − 2 % Skonto = 882 €; + 40 € Fracht = 922 € Bezugspreis.",
+          "Würde man Skonto vom Listenpreis rechnen, käme 880 € heraus — falsch, weil Skonto auf den Zielpreis bezogen ist."
+        ],
+        "fallbeispiel": "Angebot A: 1.000 × 0,90 = 900 €; 900 × 0,98 = 882 €; + 40 € = 922 € Bezugspreis. Angebot B: 930 € einschließlich Fracht, keine Abzüge. A ist rein preislich 8 € günstiger. Dabei ist vorausgesetzt, dass MAKEL die Skontofrist nutzt — sonst läge A bei 940 € und wäre teurer.",
+        "typische_fehler": "Bezugskosten werden mit rabattiert, oder Rabatt und Skonto werden addiert und auf einmal abgezogen (12 % statt 10 % und dann 2 %).",
+        "verstaendnisfragen": [
+          "Worauf wird der Lieferskonto berechnet? Auf den Zieleinkaufspreis, also nach Abzug des Rabatts.",
+          "Warum hängt der Vergleich davon ab, ob Skonto genutzt wird? Weil ohne Skonto der Bareinkaufspreis gleich dem Zieleinkaufspreis ist und das Angebot teurer wird."
+        ],
+        "pruefungsbezug": "Schema Zeile für Zeile aufschreiben und bei Skonto die Bedingung (Zahlung in der Frist) nennen.",
+        "merksatz": "Listenpreis − Rabatt = Zielpreis − Skonto = Barpreis + Bezugskosten = Bezugspreis; Skonto bezieht sich auf den rabattierten Betrag."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Angebote aus dem Ausland lauten oft auf fremde Währung.",
+          "Wechselkurse schwanken."
+        ],
+        "erklaerung": "Wechselkurse werden in Deutschland als Mengennotierung angegeben: 1 Euro = x Fremdwährung. Aus Fremdwährung in Euro rechnet man deshalb durch Division: Euro-Betrag = Fremdwährungsbetrag ÷ Kurs. Zwischen Angebot und Zahlung kann sich der Kurs ändern; steigt der Euro (mehr Dollar je Euro), wird die Rechnung in Euro billiger, fällt er, wird sie teurer. Dieses Wechselkursrisiko lässt sich etwa durch Rechnung in Euro oder Kurssicherungsgeschäfte der Bank begrenzen.",
+        "beispiele": [
+          "1.100 USD bei 1 € = 1,10 USD: 1.100 ÷ 1,10 = 1.000 €.",
+          "Fällt der Kurs bis zur Zahlung auf 1 € = 1,00 USD, kostet dieselbe Rechnung 1.100 €."
+        ],
+        "fallbeispiel": "Ein Hersteller außerhalb der EU bietet 1.000 Rohlinge für 8.800 USD an, Zahlung bei Lieferung in acht Wochen. Aktueller Kurs: 1 € = 1,10 USD, also 8.000 €. Sinkt der Kurs bis zur Zahlung auf 1,05, kostet die Rechnung rund 8.380,95 € — fast 400 € mehr. Deniz fragt deshalb, ob der Lieferant in Euro fakturieren kann, oder spricht mit der Bank über eine Kurssicherung.",
+        "typische_fehler": "Mit dem Kurs multipliziert statt dividiert. Bei der Mengennotierung steht die Fremdwährung je Euro — also teilen.",
+        "verstaendnisfragen": [
+          "Wie rechnet man 1.100 USD bei 1 € = 1,10 USD in Euro um? 1.100 ÷ 1,10 = 1.000 €.",
+          "Was ist das Wechselkursrisiko? Die Gefahr, dass sich der Kurs bis zur Zahlung ungünstig entwickelt und die Rechnung in Euro teurer wird."
+        ],
+        "pruefungsbezug": "Kursangabe lesen (wie viel Fremdwährung je Euro?) und die Rechenrichtung begründen.",
+        "merksatz": "Bei Mengennotierung (1 € = x Fremdwährung) wird ein Fremdwährungsbetrag durch den Kurs geteilt; Kursänderungen bis zur Zahlung sind ein Risiko."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Der Preis ist nur ein Kriterium.",
+          "Qualität, Zuverlässigkeit und Nachhaltigkeit lassen sich nicht direkt in Euro ausdrücken."
+        ],
+        "erklaerung": "Die Nutzwertanalyse bewertet Angebote nach mehreren Kriterien. Schritte: Kriterien festlegen (zum Beispiel Preis, Qualität, Lieferzuverlässigkeit, Nachhaltigkeit), Gewichtung festlegen (Summe 100 %), jedes Angebot je Kriterium mit Punkten bewerten (zum Beispiel 1 bis 10, höher ist besser), Punkte mit der Gewichtung multiplizieren, Summen vergleichen. Wichtig: Die Skala muss einheitlich sein — wer bei einem Kriterium Schulnoten verwendet (1 = gut), verfälscht das Ergebnis. Die Analyse macht die Entscheidung nachvollziehbar, bleibt aber von den gewählten Gewichten abhängig.",
+        "beispiele": [
+          "Ökologisches Kriterium: zertifizierte Baumwolle, kurze Transportwege.",
+          "Soziales Kriterium: nachgewiesene Arbeitsbedingungen beim Hersteller."
+        ],
+        "fallbeispiel": "Deniz bewertet A und B mit Gewichtung Preis 40 %, Qualität 30 %, Lieferzuverlässigkeit 20 %, Nachhaltigkeit 10 % und Punkten von 1 bis 10. A: 9, 7, 5, 4 → 3,6 + 2,1 + 1,0 + 0,4 = 7,1. B: 7, 8, 9, 8 → 2,8 + 2,4 + 1,8 + 0,8 = 7,8. Trotz höheren Preises liegt B vorn, vor allem wegen der Zuverlässigkeit.",
+        "typische_fehler": "Die Gewichte ergeben nicht 100 %, oder eine Skala wird umgekehrt verwendet. Dann ist das Ergebnis nicht aussagekräftig.",
+        "verstaendnisfragen": [
+          "Was muss für die Gewichtung gelten? Sie summiert sich auf 100 % und spiegelt die betriebliche Bedeutung der Kriterien.",
+          "Warum ist die Nutzwertanalyse nicht ‚objektiv‘? Weil Kriterien, Gewichte und Punktvergabe auf Einschätzungen beruhen — sie werden aber offengelegt und damit nachvollziehbar."
+        ],
+        "pruefungsbezug": "Rechenweg je Kriterium zeigen (Punkte × Gewicht), Summen bilden und das Ergebnis mit Blick auf die Gewichtung deuten.",
+        "merksatz": "Die Nutzwertanalyse bewertet mehrere Kriterien mit Gewichten (Summe 100 %) und einheitlicher Punktskala; sie macht die Entscheidung nachvollziehbar, nicht objektiv."
+      }
+    ]
+  },
+
+  "lernziele": [
+    { "id": "lz1", "text": "Vergleichbare Bezugspreise berechnen", "abschnitt": "a2" },
+    { "id": "lz2", "text": "Einen vorgegebenen Wechselkurs korrekt anwenden", "abschnitt": "a3" },
+    { "id": "lz3", "text": "Eine Nutzwertanalyse mit transparenter Gewichtung erstellen", "abschnitt": "a4" },
+    { "id": "lz4", "text": "Angebote auf eine gemeinsame Vergleichsgrundlage bringen", "abschnitt": "a1" }
+  ],
+
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Angebote auf dieselbe Grundlage bringen",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Verglichen wird der Bezugspreis: gleiche Menge, gleiche Qualität, netto. Die {{begriff:vorsteuer|Vorsteuer}} bleibt außen vor, weil MAKEL sie zurückerhält."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Prüffrage", "Warum"],
+          "zeilen": [
+            { "zellen": ["Gleiche Menge?", "Sonst sind Gesamtbeträge nicht vergleichbar"] },
+            { "zellen": ["Gleiche Qualität?", "Ein billigerer, dünnerer Rohling ist kein gleichwertiges Angebot"] },
+            { "zellen": ["Netto?", "Umsatzsteuer ist durchlaufender Posten"] },
+            { "zellen": ["Alle Abzüge und Nebenkosten?", "Rabatt, Skonto, Fracht, Verpackung verändern den Endpreis"] }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Angebote werden über den **Bezugspreis** verglichen — gleiche Menge, gleiche Qualität, netto, mit allen Abzügen und Bezugskosten.",
+          "karteikarte": "Welche Voraussetzungen müssen erfüllt sein, damit Lieferantenangebote vergleichbar sind?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Rabatt, Skonto und Bezugskosten",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:bezugskalkulation|Bezugskalkulation}} führt Schritt für Schritt zum {{begriff:einstandspreis|Bezugspreis}}."
+        },
+        {
+          "typ": "grafik",
+          "variante": "kalkulationsleiter",
+          "kopf": "Die Leiter",
+          "titel": "Angebot A bis zum Bezugspreis",
+          "lead": "Ändere Rabatt, Skonto und Fracht und vergleiche mit Angebot B (930 € frei Haus).",
+          "richtungen": ["vorwaerts"],
+          "start": { "id": "lep", "name": "Listeneinkaufspreis", "wert": 1000 },
+          "stufen": [
+            { "id": "rabatt", "name": "Lieferrabatt", "art": "abzug", "satz": 10, "ergebnis": "Zieleinkaufspreis" },
+            { "id": "skonto", "name": "Lieferskonto", "art": "abzug", "satz": 2, "ergebnis": "Bareinkaufspreis" },
+            { "id": "fracht", "name": "Bezugskosten", "art": "zuschlag-absolut", "betrag": 40, "ergebnis": "Bezugspreis", "marke": true }
+          ],
+          "regel": "1.000 × 0,90 × 0,98 + 40 = 922 €. Angebot A ist 8 € günstiger als B — aber nur, wenn MAKEL innerhalb der Skontofrist zahlt.",
+          "einheit": "€"
+        },
+        {
+          "typ": "merke",
+          "text": "**Listenpreis − Rabatt = Zielpreis − Skonto = Barpreis + Bezugskosten = Bezugspreis**; Skonto bezieht sich auf den rabattierten Betrag.",
+          "karteikarte": "Wie lautet das Schema der Bezugskalkulation, und worauf wird der Skonto berechnet?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Währungen und Kursrisiko",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Kurse werden als Mengennotierung angegeben: 1 € = x Fremdwährung. ==Fremdwährung in Euro: durch den Kurs teilen.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Angebot", "Kurs", "Rechnung", "Euro"],
+          "zeilen": [
+            { "zellen": ["1.100 USD", "1 € = 1,10 USD", "1.100 ÷ 1,10", "1.000,00 €"], "mono": [0, 2, 3] },
+            { "zellen": ["8.800 USD", "1 € = 1,10 USD", "8.800 ÷ 1,10", "8.000,00 €"], "mono": [0, 2, 3] },
+            { "zellen": ["8.800 USD", "1 € = 1,05 USD", "8.800 ÷ 1,05", "8.380,95 €"], "mono": [0, 2, 3],
+              "detail": "Fällt der Euro bis zur Zahlung, wird dieselbe Dollar-Rechnung in Euro teurer. Rechnung in Euro oder eine Kurssicherung über die Bank begrenzen dieses Risiko." }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Bei **Mengennotierung** (1 € = x Fremdwährung) wird ein Fremdwährungsbetrag **durch den Kurs geteilt**; Kursänderungen bis zur Zahlung sind ein Risiko.",
+          "karteikarte": "Wie rechnet man einen Dollarbetrag bei Mengennotierung in Euro um, und was ist das Wechselkursrisiko?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Nutzwertanalyse mit Nachhaltigkeit",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:nutzwertanalyse|Nutzwertanalyse}} bewertet mehr als den Preis — auch ökologische und soziale Kriterien."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Kriterium", "Gewicht", "A: Punkte", "A: gewichtet", "B: Punkte", "B: gewichtet"],
+          "zeilen": [
+            { "zellen": ["Preis", "40 %", "9", "3,6", "7", "2,8"], "mono": [1, 2, 3, 4, 5] },
+            { "zellen": ["Qualität", "30 %", "7", "2,1", "8", "2,4"], "mono": [1, 2, 3, 4, 5] },
+            { "zellen": ["Lieferzuverlässigkeit", "20 %", "5", "1,0", "9", "1,8"], "mono": [1, 2, 3, 4, 5] },
+            { "zellen": ["Nachhaltigkeit", "10 %", "4", "0,4", "8", "0,8"], "mono": [1, 2, 3, 4, 5] },
+            { "zellen": ["Summe", "100 %", "", "7,1", "", "7,8"], "mono": [1, 3, 5],
+              "detail": "Punkte von 1 bis 10, höher ist besser. B liegt trotz höheren Preises vorn — vor allem wegen der Lieferzuverlässigkeit." }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Nie Skalen mischen: Werden bei einem Kriterium Schulnoten vergeben (1 = sehr gut), kehrt sich die Wertung dort um und das Ergebnis ist falsch."
+        },
+        {
+          "typ": "merke",
+          "text": "Die Nutzwertanalyse bewertet mehrere Kriterien mit **Gewichten (Summe 100 %)** und **einheitlicher Punktskala**; sie macht die Entscheidung nachvollziehbar, nicht objektiv.",
+          "karteikarte": "Wie läuft eine Nutzwertanalyse ab, und welche Fehler machen sie wertlos?"
+        }
+      ]
+    }
+  ],
+
+  "zusammenfassung": [
+    "Verglichen wird der Bezugspreis: gleiche Menge, gleiche Qualität, netto.",
+    "Listenpreis − Rabatt = Zielpreis − Skonto = Barpreis + Bezugskosten = Bezugspreis.",
+    "Skonto auf den rabattierten Betrag; Bezugskosten in der Regel nicht rabattiert.",
+    "Mengennotierung: Fremdwährung ÷ Kurs = Euro.",
+    "Wechselkursrisiko bis zur Zahlung; Absicherung durch Euro-Rechnung oder Kurssicherung.",
+    "Nutzwertanalyse: Kriterien, Gewichte (100 %), einheitliche Punkte, gewichtete Summe."
+  ],
+
+  "selbsttest": [
+    {
+      "typ": "Rechnung",
+      "frage": "Netto, ohne Umsatzsteuer: A bietet 1.000 € Listenpreis, 10 % Rabatt, 2 % Skonto auf den rabattierten Warenwert und 40 € nicht skontierbare Bezugskosten. B bietet 930 € einschließlich Bezugskosten ohne Abzüge. Welches Angebot ist preislich günstiger?",
+      "loesung": "A: 1.000 × 0,90 = 900; × 0,98 = 882; + 40 = 922 €. B: 930 €. A ist rein preislich 8 € günstiger — vorausgesetzt, die Skontofrist wird genutzt. Eine vollständige Lieferantenentscheidung folgt daraus noch nicht."
+    },
+    {
+      "typ": "Rechnung",
+      "frage": "Ein Angebot lautet auf 1.100 USD. Vorgegebener Kurs: 1 € = 1,10 USD. Rechne in Euro um und nenne ein Kriterium für eine Nutzwertanalyse, das über den Preis hinausgeht.",
+      "loesung": "1.100 ÷ 1,10 = 1.000 €. Bei Mengennotierung wird durch den Kurs geteilt. Weitere Kriterien sind zum Beispiel Lieferzuverlässigkeit, Qualität, Nachhaltigkeit des Materials oder Arbeitsbedingungen beim Hersteller."
+    },
+    {
+      "typ": "Fall",
+      "frage": "In einer Nutzwertanalyse ergeben die Gewichte zusammen 120 %. Was ist zu tun?",
+      "loesung": "Die Gewichte müssen auf 100 % angepasst werden, zum Beispiel proportional gekürzt oder neu festgelegt. Sonst sind die gewichteten Summen nicht vergleichbar mit der vorgesehenen Skala und die Gewichtung ist nicht nachvollziehbar."
+    }
+  ],
+
+  "pruefungstipp": "Angebotsvergleiche bringen viele Punkte: Schema der Bezugskalkulation sauber aufschreiben, Skonto auf den rabattierten Betrag, Bezugskosten am Ende. Bei Nutzwertanalysen Gewichte prüfen (100 %) und Rechenweg je Kriterium zeigen."
+}
