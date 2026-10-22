@@ -6,7 +6,9 @@
       "ablauforganisation",
       "afa",
       "agb",
+      "aida",
       "alpen-methode",
+      "amortisation",
       "anfrage",
       "angebot",
       "anlagevermoegen",
@@ -21,6 +23,7 @@
       "ausbildungsordnung",
       "ausbildungsplan",
       "ausbildungsrahmenplan",
+      "bab",
       "balkenplan",
       "bedarfsermittlung",
       "beschwerdemanagement",
@@ -33,12 +36,14 @@
       "buchwert",
       "datensparsamkeit",
       "deckungsbeitrag",
+      "distributionspolitik",
       "doppelte-buchfuehrung",
       "duale-ausbildung",
       "durchlaufzeit",
       "eigenkapital",
       "eigentumsvorbehalt",
       "einstandspreis",
+      "einzelkosten",
       "eisenhower",
       "erfolgskonto",
       "ergonomie",
@@ -47,6 +52,7 @@
       "fixkosten",
       "fremdkapital",
       "gefaehrdungsbeurteilung",
+      "gemeinkosten",
       "geschaeftsprozess",
       "geschaeftsvorfall",
       "gestreckte-pruefung",
@@ -58,7 +64,12 @@
       "interkulturelle-kommunikation",
       "jav",
       "just-in-time",
+      "kaeufermarkt",
       "kaufvertrag",
+      "kommunikationspolitik",
+      "kostenartenrechnung",
+      "kostenstellenrechnung",
+      "kostentraegerrechnung",
       "kreditwuerdigkeit",
       "kritischer-pfad",
       "kundenbindung",
@@ -68,6 +79,7 @@
       "lieferungsverzug",
       "mahnbescheid",
       "mahnung",
+      "marketing-mix",
       "medienbruch",
       "meilenstein",
       "meldebestand",
@@ -79,8 +91,12 @@
       "optimale-bestellmenge",
       "organigramm",
       "personenbezogene-daten",
+      "preispolitik",
+      "primaerforschung",
       "probezeit",
       "produktionsfaktoren",
+      "produktlebenszyklus",
+      "produktpolitik",
       "projekt",
       "projektauftrag",
       "projektstrukturplan",
@@ -94,18 +110,22 @@
       "sachmangel",
       "saldo",
       "schnittstelle",
+      "sekundaerforschung",
       "skonto",
       "soll",
       "t-konto",
+      "teilkostenrechnung",
       "umlaufvermoegen",
       "umsatzsteuer",
       "urheberrecht",
       "variable-kosten",
       "verjaehrung",
+      "vollkostenrechnung",
       "vorsteuer",
       "zahllast",
       "zahlungsbedingungen",
       "zahlungsverzug",
+      "zuschlagssatz",
       "zustaendige-stelle"
     ],
     "paragraphen": [
@@ -137,7 +157,9 @@
       "hgb-257",
       "hgb-377",
       "hgb-54",
-      "ustg-14"
+      "ustg-14",
+      "uwg-5",
+      "uwg-7"
     ]
   },
   "begriffe": {
@@ -177,6 +199,10 @@
       "titel": "Eigentum",
       "text": "Die rechtliche Herrschaft über eine Sache: Der Eigentümer darf mit ihr nach Belieben verfahren, soweit Gesetze nicht entgegenstehen. Bei beweglichen Sachen geht Eigentum durch Einigung und Übergabe über."
     },
+    "engpass": {
+      "titel": "Engpass",
+      "text": "Eine Ressource, deren Kapazität nicht für alle nachgefragten Mengen reicht — etwa Maschinenzeit, Fachpersonal oder Material. Bei einem Engpass entscheidet der Deckungsbeitrag je Engpasseinheit (relativer Deckungsbeitrag) über die Rangfolge der Produkte."
+    },
     "epk": {
       "titel": "Ereignisgesteuerte Prozesskette (EPK)",
       "text": "Grafische Darstellung eines Ablaufs aus Ereignissen (Sechsecke) und Funktionen (abgerundete Rechtecke), die sich abwechseln. Sie beginnt und endet mit einem Ereignis; Verzweigungen zeigen UND-, ODER- und XOR-Konnektoren."
@@ -196,6 +222,10 @@
     "frachtfuehrer": {
       "titel": "Frachtführer",
       "text": "Wer sich vertraglich verpflichtet, Güter zu befördern und beim Empfänger abzuliefern, und die Beförderung selbst durchführt, etwa ein Transportunternehmen mit eigenen Lkw (§ 407 HGB)."
+    },
+    "kalkulatorische-kosten": {
+      "titel": "Kalkulatorische Kosten",
+      "text": "Kosten, die die Kostenrechnung anders oder zusätzlich zum Aufwand der Finanzbuchhaltung ansetzt. Zusatzkosten steht kein Aufwand gegenüber (etwa kalkulatorische Zinsen auf das Eigenkapital), Anderskosten werden anders bewertet als der Aufwand (etwa kalkulatorische Abschreibung vom Wiederbeschaffungswert)."
     },
     "kapazitaet": {
       "titel": "Kapazität",
@@ -221,6 +251,18 @@
       "titel": "Los",
       "text": "Die Menge gleicher Erzeugnisse, die ohne Unterbrechung durch Umrüsten hintereinander gefertigt wird. Je Los fallen einmal Rüstkosten an."
     },
+    "maschinenstundensatz": {
+      "titel": "Maschinenstundensatz",
+      "text": "Maschinenabhängige Fertigungsgemeinkosten einer Periode (kalkulatorische Abschreibung und Zinsen, Raum, Energie, Instandhaltung) geteilt durch die geplanten Laufstunden. Damit werden Maschinenkosten nach der tatsächlichen Maschinenzeit eines Auftrags verrechnet."
+    },
+    "neutraler-aufwand": {
+      "titel": "Neutraler Aufwand",
+      "text": "Aufwand, der nicht als Kosten in die Kostenrechnung übernommen wird, weil er betriebsfremd (Spende), periodenfremd (Steuernachzahlung für ein Vorjahr) oder außerordentlich (Brandschaden) ist."
+    },
+    "portfolio": {
+      "titel": "Portfolioanalyse (BCG-Matrix)",
+      "text": "Ordnet Produkte nach Marktwachstum und relativem Marktanteil in vier Felder: Fragezeichen, Stars, Cash Cows und Poor Dogs. Daraus folgen Normstrategien wie investieren, halten, abschöpfen oder aufgeben — als Orientierung, nicht als Automatismus."
+    },
     "produktionsprogramm": {
       "titel": "Produktionsprogramm",
       "text": "Legt fest, welche Erzeugnisse in welcher Menge in welchem Zeitraum hergestellt werden. Programmbreite = Zahl der Produktlinien, Programmtiefe = Zahl der Varianten innerhalb einer Linie."
@@ -244,6 +286,10 @@
     "stueckliste": {
       "titel": "Stückliste",
       "text": "Verzeichnis der Materialien und Baugruppen, aus denen ein Erzeugnis besteht, mit der Menge je Einheit. Arten: Mengenübersichts-, Struktur-, Baukasten- und Variantenstückliste."
+    },
+    "swot": {
+      "titel": "SWOT-Analyse",
+      "text": "Ordnet interne Stärken (Strengths) und Schwächen (Weaknesses) sowie externe Chancen (Opportunities) und Risiken (Threats). Aus der Verbindung der Felder werden Strategien abgeleitet, etwa Stärken nutzen, um Chancen zu ergreifen."
     },
     "werkstoffe": {
       "titel": "Werkstoffe",

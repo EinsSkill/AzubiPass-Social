@@ -1,0 +1,95 @@
+{
+  "lernfeld": "ik2024-lf09",
+  "kapitel": "k07",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf09-k07-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Marlene Voss sortiert die Maßnahmen des Marketingkonzepts der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Zu welchem Instrument des Marketing-Mix gehört die Maßnahme?",
+          "ziele": ["Produktpolitik", "Preispolitik", "Kommunikationspolitik", "Distributionspolitik"],
+          "elemente": [
+            { "text": "Designberatung als Teil des Event-Pakets", "loesung": "Produktpolitik" },
+            { "text": "Staffelpreise ab 100 Stück", "loesung": "Preispolitik" },
+            { "text": "Stand auf einer Event-Fachmesse", "loesung": "Kommunikationspolitik" },
+            { "text": "Bestellung über ein Onlineformular mit persönlichem Rückruf", "loesung": "Distributionspolitik" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Produkt (was), Preis (zu welchen Bedingungen), Kommunikation (wie bekannt machen), Distribution (auf welchem Weg).",
+      "quelle": "ik2024-lf09-k07, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf09-k07-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "budget": { "von": 4000, "bis": 8000, "schritt": 1000 },
+        "gestaltung": { "von": 1000, "bis": 2000, "schritt": 500 },
+        "ausspielung": { "von": 1500, "bis": 2500, "schritt": 500 },
+        "muster": { "von": 400, "bis": 800, "schritt": 200 }
+      },
+      "abgeleitet": {
+        "reserve": "budget - gestaltung - ausspielung - muster"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Das Kampagnenbudget der MAKEL Studio GmbH beträgt {budget} €. Geplant sind {gestaltung} € für Gestaltung, {ausspielung} € für die Ausspielung von Anzeigen und {muster} € für Musterpakete; der Rest ist Reserve." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Reserve", "einheit": "€", "loesung": "reserve", "toleranz": 0.01 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Reserve = Gesamtbudget − Summe der geplanten Posten.",
+      "quelle": "ik2024-lf09-k07, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf09-k07-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Ziel der Kampagne der MAKEL Studio GmbH: 10 neue Agenturbestellungen in drei Monaten. Ergebnis nach drei Monaten: Klickrate von 1 % auf 3 %, Musteranfragen von 10 auf 35, Bestellungen von 4 auf 5. Rückmeldungen: Angebote kamen im Schnitt nach sieben Tagen; mehrere Agenturen fanden den Preis ohne Mengenrabatt zu hoch. Kosten: 4.300 €." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die Zielerreichung und leiten Sie Verbesserungen ab.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Das Ziel (10 neue Bestellungen) ist klar verfehlt: nur eine zusätzliche Bestellung. Die Kampagne wirkt bei Aufmerksamkeit und Interesse (Klickrate verdreifacht, Anfragen mehr als verdreifacht), die Wirkungskette bricht aber zwischen Anfrage und Bestellung. Ursachen laut Rückmeldungen: langsame Angebotsabgabe (sieben Tage) und fehlende Mengenstaffel. Kosten je zusätzlicher Bestellung derzeit sehr hoch (4.300 €). Verbesserungen: Angebote innerhalb von 48 Stunden, Staffelpreise im Angebot sichtbar machen, Nachfassen nach Musterversand; Verantwortliche und Termin festlegen; nach sechs Wochen erneut messen (Bestellungen, Conversion Anfrage→Bestellung, Kosten je Neukunde).",
+        "raster": [
+          { "kriterium": "Zielverfehlung am richtigen Maßstab festgestellt", "punkte": 1 },
+          { "kriterium": "Bruch in der Wirkungskette erkannt", "punkte": 1 },
+          { "kriterium": "Ursachen aus den Rückmeldungen abgeleitet", "punkte": 1 },
+          { "kriterium": "Passende Verbesserungen vorgeschlagen", "punkte": 1 },
+          { "kriterium": "Erneute Messung mit Kennzahlen festgelegt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Kampagnen werden am Ziel gemessen; Brüche in der Wirkungskette zeigen, wo nachgesteuert werden muss.",
+      "quelle": "ik2024-lf09-k07, Abschnitt a4"
+    }
+  ]
+}

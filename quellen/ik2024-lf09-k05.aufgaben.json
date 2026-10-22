@@ -1,0 +1,97 @@
+{
+  "lernfeld": "ik2024-lf09",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf09-k05-01",
+      "operator": "Bringen Sie in die richtige Reihenfolge",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Marlene Voss prüft die Kampagne der MAKEL Studio GmbH für Eventagenturen mit dem AIDA-Modell." }
+      ],
+      "eingabe": [
+        {
+          "block": "reihenfolge",
+          "lead": "Ordnen Sie die Kampagnenelemente den AIDA-Stufen in der richtigen Reihenfolge zu.",
+          "elemente": [
+            { "text": "Auffällige Suchanzeige mit Teamfoto", "position": 1 },
+            { "text": "Landingpage mit Referenzen und Lieferzeit", "position": 2 },
+            { "text": "Vorschau mit dem eigenen Logo der Agentur", "position": 3 },
+            { "text": "Formular „Musterpaket anfordern“", "position": 4 }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Attention (Anzeige), Interest (Informationen), Desire (persönlicher Nutzen), Action (konkrete Handlung).",
+      "quelle": "ik2024-lf09-k05, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf09-k05-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "impr": { "von": 40000, "bis": 80000, "schritt": 10000 },
+        "ctr": { "von": 1, "bis": 3, "schritt": 1 },
+        "conv": { "von": 2, "bis": 5, "schritt": 1 },
+        "budget": { "von": 600, "bis": 1200, "schritt": 200 }
+      },
+      "abgeleitet": {
+        "klicks": "impr * ctr / 100",
+        "anfragen": "impr * ctr / 100 * conv / 100",
+        "kosten_anfrage": "runde(budget / (impr * ctr / 100 * conv / 100), 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die Online-Kampagne der MAKEL Studio GmbH erzielte {impr} Impressionen und {klicks} Klicks. {anfragen} Klicks führten zu einer Musteranfrage. Die Kampagne kostete {budget} €. Die Conversionrate ist als Anfragen ÷ Klicks definiert." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Klickrate", "einheit": "%", "loesung": "ctr", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Conversionrate", "einheit": "%", "loesung": "conv", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Kosten je Musteranfrage (zwei Nachkommastellen)", "einheit": "€", "loesung": "kosten_anfrage", "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Klickrate = Klicks ÷ Impressionen × 100; Conversionrate = Anfragen ÷ Klicks × 100; Kosten je Anfrage = Budget ÷ Anfragen.",
+      "quelle": "ik2024-lf09-k05, Abschnitt a4"
+    },
+
+    {
+      "id": "ik2024-lf09-k05-03",
+      "operator": "Prüfen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Für eine Kampagne der MAKEL Studio GmbH liegen vor: (1) Ein Foto eines Teams in Hoodies, gefunden über eine Bildersuche; (2) der Slogan „Klimaneutral bestickt“; (3) eine gekaufte Liste mit 2.000 E-Mail-Adressen von Eventagenturen für einen Newsletter; (4) ein bezahlter Beitrag einer Event-Influencerin ohne Hinweis auf die Bezahlung." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Prüfen Sie die vier Elemente auf rechtliche Risiken und schlagen Sie jeweils eine zulässige Alternative vor.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "(1) Ohne Nutzungsrecht verletzt die Verwendung das Urheberrecht; abgebildete Personen müssen zudem einwilligen. Alternative: lizenziertes Bild oder eigenes Foto mit Einwilligung. (2) ‚Klimaneutral‘ ist eine Umweltaussage, die belegt sein muss; ohne Nachweis droht Irreführung. Alternative: konkrete, belegbare Angabe, etwa zum zertifizierten Material. (3) Werbe-E-Mails brauchen grundsätzlich eine vorherige ausdrückliche Einwilligung (§ 7 UWG); eine gekaufte Liste liefert sie nicht, außerdem stellen sich Datenschutzfragen. Alternative: Newsletter mit Double-Opt-in, persönliche Ansprache auf Messen, Suchanzeigen. (4) Bezahlte Beiträge müssen als Werbung erkennbar sein. Alternative: deutliche Kennzeichnung. Die konkreten Formulierungen werden vor Veröffentlichung anhand der aktuellen Rechtslage geprüft.",
+        "raster": [
+          { "kriterium": "Bild: Nutzungsrecht und Einwilligung", "punkte": 1 },
+          { "kriterium": "Slogan: Belegpflicht für Umweltaussagen", "punkte": 1 },
+          { "kriterium": "E-Mail-Liste: Einwilligung und Datenschutz", "punkte": 1 },
+          { "kriterium": "Influencer-Beitrag: Kennzeichnung als Werbung", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Werbemaßnahmen werden vor Veröffentlichung auf Wahrheit, Einwilligung, Kennzeichnung, Nutzungsrechte und Datenschutz geprüft.",
+      "quelle": "ik2024-lf09-k05, Abschnitt a3"
+    }
+  ]
+}

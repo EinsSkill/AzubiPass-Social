@@ -1,0 +1,181 @@
+{
+  "id": "k08",
+  "lernfeld": "ik2024-lf08",
+  "nummer": 8,
+  "titel": "Investitionen rechnerisch vergleichen",
+  "untertitel": "Kosten-, Gewinn- und Rentabilitätsvergleich sowie Amortisationsrechnung — und warum keine Kennzahl allein entscheidet.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Eine Investition bindet Kapital über mehrere Jahre.",
+          "Kalkulatorische Abschreibung und Zinsen kennst du aus Kapitel 4."
+        ],
+        "erklaerung": "Statische Investitionsrechnungen vergleichen Alternativen anhand von Durchschnittswerten einer Periode, ohne den Zeitpunkt der Zahlungen zu berücksichtigen. Beim Kostenvergleich werden die durchschnittlichen jährlichen Kosten der Alternativen gegenübergestellt: fixe Kosten (kalkulatorische Abschreibung, kalkulatorische Zinsen, Raum, Wartung) und variable Kosten (Material, Energie, Löhne je Stück). Bei gleicher Leistung gewinnt die günstigere Alternative; bei unterschiedlicher Leistungsmenge vergleicht man die Kosten je Stück. Unterscheiden sich auch die Erlöse, braucht man den Gewinnvergleich: durchschnittlicher Gewinn = Erlöse − Kosten.",
+        "beispiele": [
+          "Maschine A: 9.000 € fix + 2 € je Stück; Maschine B: 6.000 € fix + 3 € je Stück. Bei 4.000 Stück: A 17.000 €, B 18.000 €.",
+          "Kritische Menge: 9.000 + 2x = 6.000 + 3x → x = 3.000 Stück."
+        ],
+        "fallbeispiel": "MAKEL vergleicht zwei Stickmaschinen mit vergleichbarer Qualität. Maschine A ist teurer (höhere fixe Kosten), stickt aber energiesparender und schneller (niedrigere variable Kosten). Bei der geplanten Jahresmenge von 4.000 Stickereien ist A um 1.000 € günstiger; unter 3.000 Stück wäre B günstiger.",
+        "typische_fehler": "Nur die Anschaffungspreise vergleichen und laufende Kosten übersehen.",
+        "verstaendnisfragen": [
+          "Wann reicht ein Kostenvergleich? Wenn die Alternativen dieselbe Leistung und dieselben Erlöse haben.",
+          "Wann braucht man einen Gewinnvergleich? Wenn sich die Erlöse der Alternativen unterscheiden."
+        ],
+        "pruefungsbezug": "Kostenvergleich mit kritischer Menge durchführen.",
+        "merksatz": "Kostenvergleich bei gleicher Leistung, Gewinnvergleich bei unterschiedlichen Erlösen; kritische Menge durch Gleichsetzen der Kosten."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Gewinn allein sagt nicht, wie viel Kapital dafür nötig war.",
+          "Bei linearer Abschreibung ist im Durchschnitt die Hälfte des Kapitals gebunden."
+        ],
+        "erklaerung": "Der Rentabilitätsvergleich setzt den durchschnittlichen Gewinn ins Verhältnis zum durchschnittlich eingesetzten Kapital: Rentabilität = durchschnittlicher Gewinn ÷ durchschnittlicher Kapitaleinsatz × 100. Bei linearer Abschreibung ohne Restwert beträgt der durchschnittliche Kapitaleinsatz die Hälfte der Anschaffungskosten. Wurden kalkulatorische Zinsen bereits als Kosten abgezogen, werden sie für die Rentabilität üblicherweise wieder hinzugerechnet, damit die Verzinsung des gesamten Kapitals sichtbar wird; welche Variante gilt, wird in der Aufgabe festgelegt. Die Rentabilität wird mit einer Mindestverzinsung verglichen.",
+        "beispiele": [
+          "Anschaffung 40.000 €, Ø Kapitaleinsatz 20.000 €, Ø Gewinn 3.000 €: Rentabilität 15 %.",
+          "Mindestverzinsung 8 %: Die Investition erfüllt das Ziel."
+        ],
+        "fallbeispiel": "Maschine A kostet 40.000 €, bringt im Schnitt 3.000 € Gewinn im Jahr; Maschine B kostet 24.000 € und bringt 2.400 €. Rentabilität A: 3.000 ÷ 20.000 = 15 %; B: 2.400 ÷ 12.000 = 20 %. B verzinst das eingesetzte Kapital besser, A bringt den höheren absoluten Gewinn.",
+        "typische_fehler": "Den Gewinn auf die vollen Anschaffungskosten statt auf den durchschnittlichen Kapitaleinsatz beziehen.",
+        "verstaendnisfragen": [
+          "Wie berechnet man die Rentabilität einer Investition? Ø Gewinn ÷ Ø Kapitaleinsatz × 100.",
+          "Wie hoch ist der durchschnittliche Kapitaleinsatz bei linearer Abschreibung ohne Restwert? Die Hälfte der Anschaffungskosten."
+        ],
+        "pruefungsbezug": "Rentabilitäten berechnen und mit einer Mindestverzinsung vergleichen.",
+        "merksatz": "Rentabilität = Ø Gewinn ÷ Ø Kapitaleinsatz × 100; Ø Kapitaleinsatz bei linearer Abschreibung ohne Restwert = AK ÷ 2."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Abschreibungen mindern den Gewinn, sind aber keine Auszahlungen (LF 5).",
+          "Unternehmen wollen eingesetztes Geld möglichst schnell zurückhaben."
+        ],
+        "erklaerung": "Die statische Amortisationsrechnung fragt, wie viele Jahre es dauert, bis die Anschaffungsauszahlung durch die Rückflüsse wieder hereingekommen ist. Amortisationsdauer = Anschaffungskosten ÷ durchschnittlicher jährlicher Rückfluss. Der Rückfluss ist der Zahlungsüberschuss, nicht der Gewinn: Gewinn + Abschreibungen (vereinfacht), weil Abschreibungen den Gewinn mindern, ohne Geld abfließen zu lassen. Je kürzer die Amortisationsdauer, desto geringer das Risiko, dass sich die Investition nicht zurückzahlt; sie sollte deutlich unter der Nutzungsdauer liegen.",
+        "beispiele": [
+          "Investition 20.000 €, Ø Rückfluss 5.000 €: Amortisation 4 Jahre.",
+          "Ø Gewinn 3.000 €, Abschreibung 2.000 €: Rückfluss 5.000 €."
+        ],
+        "fallbeispiel": "Für Maschine B (24.000 €, Nutzungsdauer 6 Jahre, Abschreibung 4.000 € im Jahr) erwartet Sandra Koslowski 2.400 € Gewinn. Rückfluss: 2.400 € + 4.000 € = 6.400 €. Amortisation: 24.000 ÷ 6.400 = 3,75 Jahre — deutlich unter der Nutzungsdauer.",
+        "typische_fehler": "Den Gewinn statt des Rückflusses in den Nenner setzen oder Abschreibung als Auszahlung behandeln.",
+        "verstaendnisfragen": [
+          "Wie berechnet man die Amortisationsdauer? Anschaffungskosten ÷ Ø jährlicher Rückfluss.",
+          "Warum wird die Abschreibung zum Gewinn addiert? Weil sie den Gewinn mindert, aber kein Geld abfließt."
+        ],
+        "pruefungsbezug": "Amortisationsdauer aus Gewinn und Abschreibung berechnen.",
+        "merksatz": "Amortisationsdauer = Anschaffungskosten ÷ Ø Rückfluss; Rückfluss ≈ Gewinn + Abschreibung, nicht der Gewinn allein."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Jedes Verfahren beleuchtet einen Aspekt.",
+          "Investitionen wirken über Jahre und sind unsicher."
+        ],
+        "erklaerung": "Statische Verfahren sind einfach, haben aber Grenzen: Sie rechnen mit Durchschnittswerten, berücksichtigen nicht, wann Zahlungen anfallen (ein Euro heute ist mehr wert als ein Euro in fünf Jahren), und vergleichen Alternativen mit unterschiedlicher Nutzungsdauer nur eingeschränkt. Die Amortisationsrechnung sagt nichts über Rückflüsse nach dem Amortisationszeitpunkt. Deshalb werden mehrere Kennzahlen gemeinsam betrachtet und durch qualitative Kriterien ergänzt: Qualität, Flexibilität, Service und Ersatzteile, Energieverbrauch und Umweltwirkung, Arbeitsschutz, Finanzierbarkeit, Abhängigkeit vom Hersteller, Unsicherheit der Annahmen.",
+        "beispiele": [
+          "Maschine B amortisiert sich schneller, Maschine A hat die längere Nutzungsdauer und höhere Gesamtrückflüsse.",
+          "Maschine A ist leiser und braucht weniger Energie — ein Vorteil für Arbeitsschutz und Nachhaltigkeit."
+        ],
+        "fallbeispiel": "Tobias Renner fasst zusammen: A hat den höheren Gewinn und geringere Kosten bei hoher Auslastung, B die höhere Rentabilität und kürzere Amortisation. Unsicher ist die künftige Stickmenge. Er entscheidet sich für B, weil sie das Risiko bei schwankender Nachfrage begrenzt — und vereinbart, die Entscheidung nach zwei Jahren mit den tatsächlichen Mengen zu überprüfen.",
+        "typische_fehler": "Allein nach der kürzesten Amortisationsdauer entscheiden.",
+        "verstaendnisfragen": [
+          "Was berücksichtigen statische Verfahren nicht? Den Zeitpunkt der Zahlungen (Abzinsung).",
+          "Nenne zwei qualitative Kriterien einer Investitionsentscheidung. Zum Beispiel Qualität und Energieverbrauch."
+        ],
+        "pruefungsbezug": "Verfahrensgrenzen erläutern und eine Empfehlung quantitativ und qualitativ begründen.",
+        "merksatz": "Keine Kennzahl entscheidet allein: Kosten, Gewinn, Rentabilität und Amortisation zusammen sehen und qualitative Kriterien ergänzen."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Kosten- und Gewinnvergleich anwenden", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Gewinn und Kapitaleinsatz im Rentabilitätsvergleich verbinden", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Gewinn und Zahlungsrückfluss in der Amortisationsrechnung unterscheiden", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Verfahrensgrenzen und qualitative Kriterien erläutern", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Kosten- und Gewinnvergleich",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["Jahresmenge", "Maschine A (9.000 € + 2 €/Stk.)", "Maschine B (6.000 € + 3 €/Stk.)"], "zeilen": [
+          { "zellen": ["2.000", "13.000 €", "12.000 €"] },
+          { "zellen": ["3.000", "15.000 €", "15.000 €"] },
+          { "zellen": ["4.000", "17.000 €", "18.000 €"] }
+        ] },
+        { "typ": "merke", "text": "**Kostenvergleich** bei gleicher Leistung, **Gewinnvergleich** bei unterschiedlichen Erlösen; kritische Menge durch Gleichsetzen der Kosten.", "karteikarte": "Wann nutzt du Kosten- und wann Gewinnvergleich, und wie bestimmst du die kritische Menge?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Rentabilitätsvergleich",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["", "Maschine A", "Maschine B"], "zeilen": [
+          { "zellen": ["Anschaffungskosten", "40.000 €", "24.000 €"] },
+          { "zellen": ["Ø Kapitaleinsatz (AK ÷ 2)", "20.000 €", "12.000 €"] },
+          { "zellen": ["Ø Gewinn", "3.000 €", "2.400 €"] },
+          { "zellen": ["Rentabilität", "15 %", "20 %"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "Eine Maschine kostet 30.000 € (lineare Abschreibung, kein Restwert) und bringt Ø 2.700 € Gewinn. Wie hoch ist die Rentabilität?",
+          "optionen": [
+            { "text": "18 %", "richtig": true, "echo": "Richtig: Ø Kapitaleinsatz 15.000 €; 2.700 ÷ 15.000 × 100 = 18 %." },
+            { "text": "9 %", "richtig": false, "echo": "Hier wurde auf die vollen Anschaffungskosten bezogen. Im Durchschnitt ist nur die Hälfte gebunden." },
+            { "text": "11,1 %", "richtig": false, "echo": "Zähler und Nenner passen nicht zusammen; Rentabilität = Ø Gewinn ÷ Ø Kapitaleinsatz." }
+          ]
+        },
+        { "typ": "merke", "text": "**Rentabilität = Ø Gewinn ÷ Ø Kapitaleinsatz × 100**; Ø Kapitaleinsatz bei linearer Abschreibung ohne Restwert = AK ÷ 2.", "karteikarte": "Wie berechnest du die Rentabilität einer Investition?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Statische Amortisation",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die {{begriff:amortisation|Amortisationsdauer}} misst, wann die Anschaffung zurückgeflossen ist. ==Im Nenner steht der Rückfluss, nicht der Gewinn.==" },
+        { "typ": "tabelle", "mono": true, "spalten": ["Maschine B", "Betrag"], "zeilen": [
+          { "zellen": ["Ø Gewinn", "2.400 €"] },
+          { "zellen": ["+ Abschreibung (24.000 € ÷ 6)", "4.000 €"] },
+          { "zellen": ["= Ø Rückfluss", "6.400 €"] },
+          { "zellen": ["Amortisation 24.000 ÷ 6.400", "3,75 Jahre"] }
+        ] },
+        { "typ": "achtung", "text": "Wer den Gewinn (2.400 €) statt des Rückflusses einsetzt, erhält 10 Jahre — länger als die Nutzungsdauer und schlicht falsch." },
+        { "typ": "merke", "text": "**Amortisationsdauer = Anschaffungskosten ÷ Ø Rückfluss**; Rückfluss ≈ Gewinn + Abschreibung, nicht der Gewinn allein.", "karteikarte": "Wie berechnest du die statische Amortisationsdauer?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Qualitative Kriterien und Unsicherheit",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Kriterium", "Maschine A", "Maschine B"], "zeilen": [
+          { "zellen": ["Kosten bei 4.000 Stück", "günstiger", "teurer"] },
+          { "zellen": ["Rentabilität", "15 %", "20 %"] },
+          { "zellen": ["Amortisation", "länger", "3,75 Jahre"] },
+          { "zellen": ["Energie, Lärm", "besser", "schlechter"] },
+          { "zellen": ["Risiko bei sinkender Menge", "höher (hohe Fixkosten)", "geringer"] }
+        ] },
+        { "typ": "merke", "text": "**Keine Kennzahl entscheidet allein**: Kosten, Gewinn, Rentabilität und Amortisation zusammen sehen und qualitative Kriterien ergänzen.", "karteikarte": "Welche Grenzen haben statische Investitionsrechnungen, und was ergänzt du?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Kostenvergleich bei gleicher Leistung; kritische Menge durch Gleichsetzen.",
+    "Gewinnvergleich bei unterschiedlichen Erlösen.",
+    "Rentabilität = Ø Gewinn ÷ Ø Kapitaleinsatz × 100.",
+    "Amortisation = Anschaffungskosten ÷ Ø Rückfluss (Gewinn + Abschreibung).",
+    "Statische Verfahren ignorieren den Zeitpunkt der Zahlungen.",
+    "Qualitative Kriterien und Unsicherheit gehören zur Entscheidung."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "Investition 20.000 €, durchschnittlicher jährlicher Zahlungsüberschuss 5.000 €, kein Restwert. Statische Amortisationsdauer?", "loesung": "4 Jahre. Im Nenner steht der Zahlungsüberschuss, nicht ein beliebiger Gewinnwert." },
+    { "typ": "Wissen", "frage": "Warum kann die kürzere Amortisationszeit allein keine vollständige Investitionsentscheidung liefern?", "loesung": "Sie sagt nichts über Rückflüsse nach dem Amortisationszeitpunkt, unterschiedliche Nutzungsdauern und Gesamtüberschüsse, Qualität und Risiko; außerdem zinsen statische Verfahren nicht ab." },
+    { "typ": "Rechnen", "frage": "Maschine A: 9.000 € fix + 2 € je Stück, Maschine B: 6.000 € fix + 3 € je Stück. Kritische Menge?", "loesung": "9.000 + 2x = 6.000 + 3x → x = 3.000 Stück. Darüber ist A günstiger, darunter B." }
+  ],
+  "pruefungstipp": "Bei Investitionsaufgaben jede Kennzahl mit Formel und Einheit hinschreiben. Die Empfehlung am Ende sollte mindestens eine Kennzahl und ein qualitatives Kriterium verbinden."
+}

@@ -1,0 +1,190 @@
+{
+  "id": "k06",
+  "lernfeld": "ik2024-lf08",
+  "nummer": 6,
+  "titel": "Deckungsbeiträge und Preisuntergrenzen",
+  "untertitel": "Mit Teilkosten rechnen: was ein Produkt zur Deckung der Fixkosten beiträgt, wo die Preisuntergrenzen liegen und wann sich ein Zusatzauftrag lohnt.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Fixe und variable Kosten kennst du aus Kapitel 2.",
+          "Die Vollkostenrechnung verteilt alle Kosten auf die Produkte (Kapitel 5)."
+        ],
+        "erklaerung": "Die Teilkostenrechnung (Deckungsbeitragsrechnung) rechnet den Produkten nur die variablen Kosten zu. Der Deckungsbeitrag je Stück ist Verkaufspreis netto minus variable Stückkosten. Er zeigt, wie viel jedes Stück zur Deckung der fixen Kosten und danach zum Gewinn beiträgt. Der Gesamtdeckungsbeitrag ist Stück-Deckungsbeitrag × Absatzmenge. Die fixen Kosten werden nicht auf Stücke verteilt, sondern als Block vom Gesamtdeckungsbeitrag abgezogen: Betriebsergebnis = Gesamtdeckungsbeitrag − Fixkosten.",
+        "beispiele": [
+          "Preis 30 €, variable Kosten 18 €: Stück-DB 12 €.",
+          "200 Stück × 12 € = Gesamt-DB 2.400 €; Fixkosten 1.000 €: Ergebnis 1.400 €."
+        ],
+        "fallbeispiel": "Für das Basis-Shirt rechnet Sandra Koslowski: Verkaufspreis netto 30 €, variable Kosten (Rohling, Farbe, Verpackung, Maschinenstrom) 18 €. Jedes Shirt bringt 12 € Deckungsbeitrag. Im Monat werden 200 Stück verkauft: 2.400 € Gesamt-DB. Die dieser Linie zurechenbaren Fixkosten betragen 1.000 €: Ergebnis 1.400 €.",
+        "typische_fehler": "Einen positiven Deckungsbeitrag schon als Gewinn lesen.",
+        "verstaendnisfragen": [
+          "Was ist der Stück-Deckungsbeitrag? Preis minus variable Stückkosten.",
+          "Wie ermittelt man das Betriebsergebnis in der Teilkostenrechnung? Gesamtdeckungsbeitrag minus Fixkosten."
+        ],
+        "pruefungsbezug": "Stück- und Gesamtdeckungsbeitrag sowie das Ergebnis berechnen.",
+        "merksatz": "DB je Stück = Preis − variable Stückkosten; Ergebnis = Gesamt-DB − Fixkosten."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "MAKEL hat mehrere Produktlinien.",
+          "Manche Fixkosten gehören zu einer Linie, andere zum ganzen Unternehmen."
+        ],
+        "erklaerung": "Bei mehreren Produkten zeigt die Deckungsbeitragsrechnung, welches Produkt wie viel zur Fixkostendeckung beiträgt. In einer einstufigen Rechnung werden alle Fixkosten als ein Block abgezogen. In der mehrstufigen Rechnung werden Fixkosten schrittweise abgezogen: zuerst die einer Produktlinie direkt zurechenbaren (Erzeugnisfixkosten, etwa die Leasingrate einer nur für Taschen genutzten Nähmaschine), dann die eines Bereichs, zuletzt die Unternehmensfixkosten. So sieht man, ob eine Linie wenigstens ihre eigenen Fixkosten trägt. Ein Produkt mit positivem DB trägt zur Fixkostendeckung bei, auch wenn es nach Vollkosten ‚Verlust‘ zeigt.",
+        "beispiele": [
+          "Hoodies DB 9.000 €, Shirts DB 6.000 €, Taschen DB 1.500 €; Taschen-Fixkosten 2.000 €: Die Taschenlinie deckt ihre eigenen Fixkosten nicht.",
+          "Unternehmensfixkosten wie die Geschäftsführung werden erst am Ende abgezogen."
+        ],
+        "fallbeispiel": "Tobias Renner möchte die Taschenlinie streichen, weil sie nach Vollkosten 1.200 € Verlust zeigt. Die mehrstufige Rechnung: Taschen-DB 1.500 €, eigene Fixkosten 2.000 € — Deckungsbeitrag II −500 €. Fällt die Linie weg, entfallen 1.500 € DB, aber auch 2.000 € Fixkosten (wenn die Nähmaschine zurückgegeben werden kann). Das Ergebnis würde um 500 € steigen. Wären die Fixkosten nicht abbaubar, wäre die Streichung ein Fehler.",
+        "typische_fehler": "Ein Produkt wegen eines Vollkostenverlusts streichen, ohne zu prüfen, welche Fixkosten tatsächlich wegfallen.",
+        "verstaendnisfragen": [
+          "Was zeigt die mehrstufige Deckungsbeitragsrechnung? Ob ein Produkt oder Bereich die ihm zurechenbaren Fixkosten deckt.",
+          "Wann verbessert der Wegfall eines Produkts das Ergebnis? Wenn die wegfallenden Fixkosten größer sind als der wegfallende Deckungsbeitrag."
+        ],
+        "pruefungsbezug": "Produktentscheidungen mit Deckungsbeiträgen und abbaubaren Fixkosten begründen.",
+        "merksatz": "Ein positiver DB trägt zur Fixkostendeckung bei; über das Streichen entscheiden DB und tatsächlich abbaubare Fixkosten."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Kurzfristig lassen sich Fixkosten nicht abbauen.",
+          "Langfristig müssen alle Kosten gedeckt sein."
+        ],
+        "erklaerung": "Die kurzfristige Preisuntergrenze liegt bei den variablen Stückkosten: Darunter verschlechtert jedes verkaufte Stück das Ergebnis, weil es nicht einmal seine eigenen zusätzlichen Kosten deckt. Darüber trägt jedes Stück zur Fixkostendeckung bei. Die langfristige Preisuntergrenze liegt bei den Selbstkosten (Vollkosten): Auf Dauer müssen alle Kosten gedeckt sein. Diese Aussagen gelten unter Annahmen: freie Kapazität, keine Verdrängung anderer Aufträge, keine zusätzlichen Fixkosten, keine Auswirkungen auf andere Preise.",
+        "beispiele": [
+          "Variable Stückkosten 18 €, Selbstkosten 26 €: kurzfristige Preisuntergrenze 18 €, langfristige 26 €.",
+          "Ein Preis von 22 € deckt kurzfristig die variablen Kosten und 4 € Fixkosten je Stück."
+        ],
+        "fallbeispiel": "Ein Großhändler fragt nach Basis-Shirts zu 22 €. Die Selbstkosten liegen bei 26 €, die variablen Kosten bei 18 €. Sandra erklärt: ‚Bei freier Kapazität bringt jedes Shirt 4 € zur Fixkostendeckung. Dauerhaft dürfen wir aber nicht unter 26 € verkaufen, sonst decken wir unsere Kosten nicht.‘",
+        "typische_fehler": "Die kurzfristige Preisuntergrenze als normalen Verkaufspreis verwenden.",
+        "verstaendnisfragen": [
+          "Wo liegt die kurzfristige Preisuntergrenze? Bei den variablen Stückkosten.",
+          "Wo liegt die langfristige Preisuntergrenze? Bei den Selbstkosten."
+        ],
+        "pruefungsbezug": "Kurz- und langfristige Preisuntergrenzen bestimmen und die Annahmen nennen.",
+        "merksatz": "Kurzfristige Preisuntergrenze = variable Stückkosten, langfristige = Selbstkosten — jeweils unter ausdrücklichen Annahmen."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Freie Kapazität kostet Fixkosten, ob sie genutzt wird oder nicht.",
+          "Kunden vergleichen Preise."
+        ],
+        "erklaerung": "Ein Zusatzauftrag lohnt sich rechnerisch, wenn sein Preis über den variablen Stückkosten liegt, keine zusätzlichen Fixkosten entstehen und die Kapazität frei ist — dann erhöht er das Ergebnis um seinen Deckungsbeitrag. Vor der Annahme werden Nebenbedingungen geprüft: Verdrängt er andere Aufträge mit höherem DB? Erfahren Stammkunden vom niedrigen Preis und fordern ihn auch? Passt er zu Qualität und Marke? Entstehen zusätzliche Kosten (Sonderverpackung, Überstunden)? Aus einem Zusatzauftrag folgt keine allgemeine Preispolitik.",
+        "beispiele": [
+          "100 Zusatzstücke zu 20 €, variable Kosten 18 €: Zusatzbeitrag 200 €.",
+          "Erfordert der Auftrag Überstunden mit 300 € Zuschlag, verschlechtert er das Ergebnis um 100 €."
+        ],
+        "fallbeispiel": "Ein Sportverein bietet für 100 bedruckte Shirts 20 € je Stück. Variable Kosten 18 €, freie Kapazität vorhanden, keine neuen Fixkosten. Rechnerischer Zusatzbeitrag: 100 × 2 € = 200 €. Marlene Voss prüft: Der Verein ist kein Wiederverkäufer, Stammkunden sind nicht betroffen, das Motiv ist einfach. Tobias nimmt an — als Einzelfall, nicht als neuer Listenpreis.",
+        "typische_fehler": "Einen positiven Zusatzbeitrag als allgemeine Begründung für Preissenkungen verwenden.",
+        "verstaendnisfragen": [
+          "Wann verbessert ein Zusatzauftrag das Ergebnis? Wenn sein Preis über den variablen Stückkosten liegt und keine zusätzlichen Fixkosten oder Verdrängung entstehen.",
+          "Nenne zwei Nebenbedingungen. Zum Beispiel Verdrängung anderer Aufträge und Wirkung auf Stammkundenpreise."
+        ],
+        "pruefungsbezug": "Zusatzaufträge rechnerisch und mit Nebenbedingungen beurteilen.",
+        "merksatz": "Zusatzauftrag: annehmen, wenn Preis > variable Stückkosten, Kapazität frei, keine Zusatzfixkosten — und Nebenbedingungen geprüft."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Deckungsbeiträge berechnen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Fixkostendeckung mehrerer Produkte beurteilen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Vollkosten- und Teilkostenaussagen zu Preisuntergrenzen unterscheiden", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Kurzfristige Zusatzaufträge mit freier Kapazität beurteilen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Teilkosten und Deckungsbeitrag",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die {{begriff:teilkostenrechnung|Teilkostenrechnung}} rechnet dem Produkt nur die variablen Kosten zu. Der Rest ist der {{begriff:deckungsbeitrag|Deckungsbeitrag}}." },
+        { "typ": "tabelle", "mono": true, "spalten": ["Basis-Shirt, Monat", "Betrag"], "zeilen": [
+          { "zellen": ["Preis netto je Stück", "30 €"] },
+          { "zellen": ["− variable Stückkosten", "18 €"] },
+          { "zellen": ["= DB je Stück", "12 €"] },
+          { "zellen": ["× 200 Stück = Gesamt-DB", "2.400 €"] },
+          { "zellen": ["− Fixkosten", "1.000 €"] },
+          { "zellen": ["= Ergebnis", "1.400 €"] }
+        ] },
+        { "typ": "merke", "text": "**DB je Stück = Preis − variable Stückkosten**; Ergebnis = Gesamt-DB − Fixkosten.", "karteikarte": "Wie berechnest du Deckungsbeitrag und Ergebnis in der Teilkostenrechnung?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Fixkostendeckung",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["", "Hoodies", "Shirts", "Taschen"], "zeilen": [
+          { "zellen": ["Deckungsbeitrag I", "9.000 €", "6.000 €", "1.500 €"] },
+          { "zellen": ["− Erzeugnisfixkosten", "3.000 €", "2.000 €", "2.000 €"] },
+          { "zellen": ["= Deckungsbeitrag II", "6.000 €", "4.000 €", "−500 €"] }
+        ] },
+        { "typ": "achtung", "text": "Ein negativer DB II heißt nur dann ‚streichen‘, wenn die zugehörigen Fixkosten tatsächlich wegfallen. Sonst verschlechtert die Streichung das Ergebnis." },
+        { "typ": "merke", "text": "Ein positiver DB trägt zur Fixkostendeckung bei; über das Streichen entscheiden **DB und tatsächlich abbaubare Fixkosten**.", "karteikarte": "Was zeigt die mehrstufige Deckungsbeitragsrechnung, und wann lohnt das Streichen eines Produkts?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Preisuntergrenzen",
+      "inhalt": [
+        {
+          "typ": "grafik",
+          "variante": "vergleich",
+          "kopf": "Zwei Untergrenzen",
+          "titel": "Basis-Shirt: variable Kosten 18 €, Selbstkosten 26 €",
+          "lead": "Welche Grenze gilt, hängt vom Zeithorizont ab.",
+          "seiten": [
+            { "name": "Kurzfristig", "ton": "gold", "punkte": [
+              { "text": "Preisuntergrenze 18 €", "detail": "Die variablen Stückkosten müssen gedeckt sein." },
+              { "text": "Jeder Euro darüber deckt Fixkosten", "detail": "Bei 22 € trägt jedes Shirt 4 € zur Fixkostendeckung bei." },
+              { "text": "Nur bei freier Kapazität", "detail": "Und ohne Verdrängung oder zusätzliche Fixkosten." }
+            ] },
+            { "name": "Langfristig", "ton": "gruen", "punkte": [
+              { "text": "Preisuntergrenze 26 €", "detail": "Die Selbstkosten müssen gedeckt sein." },
+              { "text": "Sonst Substanzverlust", "detail": "Fixkosten wie Miete und Maschinen müssen auf Dauer verdient werden." },
+              { "text": "Maßstab für Listenpreise", "detail": "Plus Gewinnzuschlag aus der Verkaufskalkulation." }
+            ] }
+          ],
+          "regel": "Kurzfristig zählen die variablen Kosten, langfristig die Vollkosten — und immer die Annahmen dazuschreiben."
+        },
+        { "typ": "merke", "text": "**Kurzfristige Preisuntergrenze = variable Stückkosten**, **langfristige = Selbstkosten** — jeweils unter ausdrücklichen Annahmen.", "karteikarte": "Wo liegen kurz- und langfristige Preisuntergrenze?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Zusatzauftrag und Nebenbedingungen",
+      "inhalt": [
+        {
+          "typ": "check",
+          "frage": "100 Zusatzstücke zu 20 €, variable Stückkosten 18 €. Keine neuen Fixkosten, keine Verdrängung. Was gilt?",
+          "optionen": [
+            { "text": "Der Auftrag erhöht das Ergebnis um 200 €", "richtig": true, "echo": "Richtig: 100 × (20 − 18) = 200 € Zusatzbeitrag — unter den genannten Annahmen." },
+            { "text": "Der Auftrag bringt Verlust, weil 20 € unter den Selbstkosten liegen", "richtig": false, "echo": "Die Fixkosten fallen ohnehin an. Kurzfristig zählt, ob der Preis die variablen Kosten übersteigt." },
+            { "text": "Ab jetzt kann MAKEL allen Kunden 20 € anbieten", "richtig": false, "echo": "Ein Zusatzauftrag begründet keine allgemeine Preispolitik; langfristig müssen die Vollkosten gedeckt sein." }
+          ]
+        },
+        { "typ": "merke", "text": "Zusatzauftrag: annehmen, wenn **Preis > variable Stückkosten**, Kapazität frei, keine Zusatzfixkosten — und Nebenbedingungen geprüft.", "karteikarte": "Unter welchen Bedingungen lohnt sich ein Zusatzauftrag?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "DB je Stück = Preis − variable Stückkosten.",
+    "Ergebnis = Gesamt-DB − Fixkosten.",
+    "Mehrstufige DB-Rechnung zeigt Fixkostendeckung je Linie.",
+    "Kurzfristige PUG = variable Stückkosten, langfristige = Selbstkosten.",
+    "Zusatzauftrag: Preis > variable Kosten, freie Kapazität, keine Zusatzfixkosten.",
+    "Nebenbedingungen prüfen; keine allgemeine Preispolitik ableiten."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "Preis netto 30 €, variable Stückkosten 18 €, Absatz 200 Stück, fixe Periodenkosten 1.000 €. DB und Ergebnis?", "loesung": "Stück-DB 12 €, Gesamt-DB 2.400 €, Ergebnis 1.400 €." },
+    { "typ": "Beurteilen", "frage": "100 Zusatzstücke zu 20 € bei variablen Stückkosten von 18 €; keine neuen Fixkosten, keine Verdrängung. Beurteile den Zusatzbeitrag.", "loesung": "200 € positiver Zusatzbeitrag. Markt-, Qualitäts- und Kapazitätsannahmen ausdrücklich nennen; keine generelle Preispolitik daraus ableiten." },
+    { "typ": "Wissen", "frage": "Ist ein positiver Deckungsbeitrag dasselbe wie Gewinn?", "loesung": "Nein. Erst wenn die Summe der Deckungsbeiträge die Fixkosten übersteigt, entsteht Gewinn." }
+  ],
+  "pruefungstipp": "Bei Zusatzauftrags-Aufgaben punktet, wer erst rechnet (DB je Stück × Menge, Zusatzkosten abziehen) und dann mindestens zwei Annahmen oder Nebenbedingungen nennt."
+}

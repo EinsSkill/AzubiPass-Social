@@ -1,0 +1,98 @@
+{
+  "lernfeld": "ik2024-lf09",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf09-k04-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH diskutiert verschiedene Preisstrategien." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Preisstrategie liegt vor?",
+          "ziele": ["Skimming", "Penetration", "Hochpreisstrategie", "Preisdifferenzierung"],
+          "elemente": [
+            { "text": "Neue Limited-Edition zunächst teuer, nach drei Monaten günstiger", "loesung": "Skimming" },
+            { "text": "Teamwear-Linie zum Kampfpreis einführen, um schnell Vereine zu gewinnen", "loesung": "Penetration" },
+            { "text": "Event-Paket dauerhaft über Marktniveau mit Designberatung", "loesung": "Hochpreisstrategie" },
+            { "text": "Staffelpreise ab 50, 100 und 250 Stück", "loesung": "Preisdifferenzierung" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Skimming senkt einen hohen Einführungspreis, Penetration hebt einen niedrigen an; Premium bleibt hoch; Differenzierung variiert nach Menge, Zeit, Region oder Kundengruppe.",
+      "quelle": "ik2024-lf09-k04, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf09-k04-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "preis": { "von": 60, "bis": 120, "schritt": 10 },
+        "var_anteil": { "von": 50, "bis": 60, "schritt": 10 },
+        "rabatt": { "von": 5, "bis": 15, "schritt": 5 },
+        "menge": { "von": 100, "bis": 300, "schritt": 50 }
+      },
+      "abgeleitet": {
+        "var": "preis * var_anteil / 100",
+        "db_alt": "preis - preis * var_anteil / 100",
+        "db_neu": "runde(preis * (1 - rabatt / 100) - preis * var_anteil / 100, 2)",
+        "noetig": "aufrunden(menge * (preis - preis * var_anteil / 100) / db_neu)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH verkauft ein Event-Paket zum Listenpreis von {preis} € netto bei variablen Kosten von {var} € je Paket. Bisher werden {menge} Pakete im Jahr verkauft. Eine Agentur fordert {rabatt} % Rabatt auf den Listenpreis." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Deckungsbeitrag je Paket nach Rabatt", "einheit": "€", "loesung": "db_neu", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Mindestmenge für denselben Gesamt-DB (ganze Pakete)", "einheit": "Stück", "loesung": "noetig", "toleranz": 0, "punkte": 2, "folgefehler_aus": ["db_neu"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "DB nach Rabatt = Preis × (1 − Rabatt) − variable Kosten. Mindestmenge = bisheriger Gesamt-DB ÷ neuer DB, aufgerundet.",
+      "quelle": "ik2024-lf09-k04, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf09-k04-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH hat vor einem Jahr einen dauerhaften Treuerabatt von 8 % für alle Geschäftskunden eingeführt. Ergebnis: Umsatz +3 %, Zahl der Geschäftskunden unverändert, Gesamtdeckungsbeitrag −9 %. Der Vertrieb möchte den Rabatt auf 10 % erhöhen, „damit die Kunden zufrieden bleiben“." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die bisherige Rabattpolitik und den Vorschlag des Vertriebs.", "zeilen": 6 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Der Rabatt hat sein Ziel offenbar verfehlt: Es kamen keine neuen Kunden hinzu, der Umsatz stieg kaum, der Gesamt-DB sank um 9 %. Das deutet auf einen Mitnahmeeffekt hin — Bestandskunden erhalten Nachlass, ohne deutlich mehr zu bestellen. Ein höherer Rabatt würde den DB weiter schmälern, ohne erkennbaren Nutzen. Zufriedenheit sollte zudem gemessen statt vermutet werden. Besser: den allgemeinen Rabatt befristet auslaufen lassen oder an Bedingungen knüpfen (Mengenstaffel, Jahresbonus ab Mindestumsatz), Neukundenangebote gezielt einsetzen und Kundenzufriedenheit über Lieferzeit und Service steigern. Erfolg an DB, Neukunden und Bestellmengen messen.",
+        "raster": [
+          { "kriterium": "Zielverfehlung mit Zahlen begründet", "punkte": 1 },
+          { "kriterium": "Mitnahmeeffekt erkannt", "punkte": 1 },
+          { "kriterium": "Vorschlag des Vertriebs begründet abgelehnt oder eingeschränkt", "punkte": 1 },
+          { "kriterium": "Bessere, an Bedingungen geknüpfte Alternative mit Erfolgskontrolle", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Konditionen werden an Zielen gemessen; ohne Bedingungen und Kontrolle wirken Rabatte oft nur als Mitnahme.",
+      "quelle": "ik2024-lf09-k04, Abschnitte a3 und a4"
+    }
+  ]
+}

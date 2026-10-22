@@ -1,0 +1,88 @@
+{
+  "lernfeld": "ik2024-lf08",
+  "kapitel": "k07",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf08-k07-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "db_a": { "von": 10, "bis": 20, "schritt": 2 },
+        "zeit_a": { "von": 4, "bis": 8, "schritt": 2 },
+        "db_b": { "von": 6, "bis": 12, "schritt": 2 },
+        "zeit_b": { "von": 1, "bis": 3, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "rel_a": "runde(db_a / zeit_a, 2)",
+        "rel_b": "runde(db_b / zeit_b, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "In der MAKEL-Veredelung ist die Stickmaschine der Engpass. Hoodie A bringt {db_a} € DB bei {zeit_a} Minuten Stickzeit, Cap B {db_b} € DB bei {zeit_b} Minuten." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Relativer DB Hoodie A (€ je Minute)", "einheit": "€/min", "loesung": "rel_a", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Relativer DB Cap B (€ je Minute)", "einheit": "€/min", "loesung": "rel_b", "toleranz": 0.01, "punkte": 1 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "erklaerung": "Relativer DB = DB je Stück ÷ Engpasszeit je Stück.",
+      "quelle": "ik2024-lf08-k07, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf08-k07-02",
+      "operator": "Bestimmen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die Stickmaschine der MAKEL Studio GmbH hat diese Woche noch 90 freie Minuten. Cap B (DB 10 €, 2 Minuten) lässt sich höchstens 25-mal verkaufen; Hoodie A (DB 12 €, 6 Minuten) ist ausreichend nachgefragt. Es gibt keine Rüstzeiten und keine Lieferpflichten; gefertigt werden nur ganze Stücke." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Menge Cap B", "einheit": "Stück", "loesung": 25, "toleranz": 0, "punkte": 1 },
+        { "block": "zahl", "label": "Menge Hoodie A", "einheit": "Stück", "loesung": 6, "toleranz": 0, "punkte": 2 },
+        { "block": "zahl", "label": "Gesamtdeckungsbeitrag", "einheit": "€", "loesung": 322, "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 5 },
+      "erklaerung": "Relativer DB: B 5 €/min, A 2 €/min → zuerst B. 25 B × 2 min = 50 min; Rest 40 min: 6 A × 6 min = 36 min, 4 min frei. Gesamt-DB 25 × 10 € + 6 × 12 € = 322 €.",
+      "quelle": "ik2024-lf08-k07, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf08-k07-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Nach der Engpassrechnung soll die MAKEL Studio GmbH in den letzten zwei Wochen vor Weihnachten fast nur Caps sticken. Marlene Voss gibt zu bedenken, dass die Boutique „Faden & Form“ seit Jahren 50 Hoodies zu Weihnachten bestellt und dass viele Kunden Hoodie und Cap im Set kaufen. Eine Samstagsschicht würde 180 € kosten und 240 zusätzliche Stickminuten schaffen." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie, wie MAKEL vorgehen sollte. Beziehen Sie die Samstagsschicht rechnerisch ein (Hoodie: 2 € DB je Minute).", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Das rechnerische Optimum berücksichtigt weder die Stammkundenbeziehung noch den Verbundkauf. Verliert MAKEL die Boutique, entgehen künftige Deckungsbeiträge; fehlen Hoodies, sinkt eventuell auch der Cap-Absatz im Set. Die 50 Hoodies für die Boutique sollten deshalb vorab eingeplant werden. Die Samstagsschicht schafft 240 Minuten; selbst wenn sie nur für Hoodies genutzt wird, bringt sie 240 × 2 € = 480 € DB bei 180 € Kosten — Vorteil 300 €. Empfehlung: Samstagsschicht einplanen, Stammkunden-Hoodies sichern, verbleibende Kapazität nach relativem DB verteilen.",
+        "raster": [
+          { "kriterium": "Grenzen des rechnerischen Optimums erkannt (Stammkunde, Verbund)", "punkte": 1 },
+          { "kriterium": "Vorab-Einplanung der Stammkundenmenge begründet", "punkte": 1 },
+          { "kriterium": "Samstagsschicht rechnerisch bewertet (480 € gegen 180 €)", "punkte": 1 },
+          { "kriterium": "Schlüssige Gesamtempfehlung", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Engpassrechnung liefert eine Rangfolge; Lieferpflichten, Verbundwirkungen und Erweiterungsmöglichkeiten gehören in die Entscheidung.",
+      "quelle": "ik2024-lf08-k07, Abschnitt a4"
+    }
+  ]
+}

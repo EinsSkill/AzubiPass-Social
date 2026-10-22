@@ -1,0 +1,91 @@
+{
+  "lernfeld": "ik2024-lf08",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf08-k01-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Sandra Koslowski bittet Sie, Aufwendungen der MAKEL Studio GmbH für die Kostenrechnung einzuordnen." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Grundkosten oder neutraler Aufwand?",
+          "ziele": ["Grundkosten", "Neutraler Aufwand"],
+          "elemente": [
+            { "text": "Verbrauch von Hoodie-Rohlingen in der Veredelung", "loesung": "Grundkosten" },
+            { "text": "Spende an den örtlichen Fußballverein", "loesung": "Neutraler Aufwand" },
+            { "text": "Gewerbesteuernachzahlung für das Vorjahr", "loesung": "Neutraler Aufwand" },
+            { "text": "Miete der Veredelungshalle für den laufenden Monat", "loesung": "Grundkosten" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Grundkosten sind betrieblich, periodengerecht und gewöhnlich. Betriebsfremde und periodenfremde Aufwendungen sind neutral.",
+      "quelle": "ik2024-lf08-k01, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf08-k01-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "aufwand": { "von": 40000, "bis": 70000, "schritt": 5000 },
+        "neutral": { "von": 2000, "bis": 8000, "schritt": 1000 },
+        "kalk": { "von": 1000, "bis": 4000, "schritt": 500 }
+      },
+      "abgeleitet": { "kosten": "aufwand - neutral + kalk" },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die Finanzbuchhaltung der MAKEL Studio GmbH weist für einen Monat {aufwand} € Aufwand aus. Davon sind {neutral} € neutraler Aufwand. Zusätzlich setzt die Kostenrechnung {kalk} € kalkulatorische Zinsen auf das Eigenkapital an, denen kein Aufwand gegenübersteht. Weitere Abgrenzungen gibt es nicht." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Kosten der Periode", "einheit": "€", "loesung": "kosten", "toleranz": 0.01 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Kosten = Aufwand − neutraler Aufwand + Zusatzkosten.",
+      "quelle": "ik2024-lf08-k01, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf08-k01-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH hat im letzten Jahr einen Jahresüberschuss von 20.000 € erzielt. Darin enthalten sind 15.000 € Gewinn aus dem Verkauf einer alten Druckmaschine über Buchwert. Yuki Bergmann schlägt vor: „Die Veredelung läuft offensichtlich gut — wir senken die Preise um 5 %, um mehr Kunden zu gewinnen.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Vorschlag aus Sicht der Kosten- und Leistungsrechnung.", "zeilen": 6 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Der Jahresüberschuss ist keine geeignete Grundlage. 15.000 € stammen aus einem neutralen Ertrag (Maschinenverkauf), der nicht zur Veredelung gehört und sich nicht wiederholt. Ohne ihn bliebe ein Ergebnis von höchstens rund 5.000 €; berücksichtigt man kalkulatorische Kosten, kann das Betriebsergebnis noch niedriger sein. Eine Preissenkung um 5 % könnte das Betriebsergebnis ins Negative drehen, wenn nicht genügend zusätzliche Menge verkauft wird. Vor einer Entscheidung sollte das Betriebsergebnis der Veredelung ermittelt und die Wirkung der Preissenkung auf Deckungsbeiträge und Absatz geprüft werden.",
+        "raster": [
+          { "kriterium": "Maschinenverkauf als neutraler Ertrag erkannt", "punkte": 1 },
+          { "kriterium": "Betriebsergebnis als maßgebliche Größe benannt", "punkte": 1 },
+          { "kriterium": "Risiko der Preissenkung begründet", "punkte": 1 },
+          { "kriterium": "Vorgehen vor Entscheidung vorgeschlagen", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Entscheidungen über die betriebliche Leistung stützen sich auf das Betriebsergebnis, nicht auf das Gesamtergebnis mit neutralen Posten.",
+      "quelle": "ik2024-lf08-k01, Abschnitt a4"
+    }
+  ]
+}

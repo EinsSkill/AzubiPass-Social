@@ -1,0 +1,178 @@
+{
+  "id": "k07",
+  "lernfeld": "ik2024-lf08",
+  "nummer": 7,
+  "titel": "Engpässe und Zielkonflikte beurteilen",
+  "untertitel": "Wenn die Maschinenzeit knapp ist, zählt der Deckungsbeitrag je Engpasseinheit — und die Rechnung braucht eine Prüfung gegen Lieferpflichten und Ziele.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Deckungsbeiträge kennst du aus Kapitel 6.",
+          "Kapazitäten sind begrenzt (LF 6)."
+        ],
+        "erklaerung": "Ein Engpass ist eine Ressource, die nicht ausreicht, um alle nachgefragten Mengen herzustellen: Maschinenzeit, Fachpersonal, Material, Lagerfläche. Solange keine Ressource knapp ist, wird jedes Produkt mit positivem Deckungsbeitrag hergestellt, so weit die Nachfrage reicht. Ist eine Ressource knapp, muss entschieden werden, welche Produkte sie bekommen. Daneben gibt es weitere Restriktionen: Höchstabsatzmengen, Mindestmengen aus Lieferverträgen, Materialverfügbarkeit.",
+        "beispiele": [
+          "Die Stickmaschine hat in KW 47 nur noch 60 freie Minuten, die Nachfrage braucht 120.",
+          "Ein Rahmenvertrag verpflichtet MAKEL, monatlich mindestens 50 Hoodies an eine Boutique zu liefern."
+        ],
+        "fallbeispiel": "Vor Weihnachten ist die Stickmaschine der Engpass: Sowohl bestickte Hoodies als auch bestickte Caps sind gefragt, aber die Maschinenzeit reicht nicht für beide. Tobias Renner fragt: ‚Was bringt uns am meisten?‘",
+        "typische_fehler": "Ohne Engpass mit relativen Deckungsbeiträgen rechnen — dann wird einfach alles mit positivem DB gefertigt.",
+        "verstaendnisfragen": [
+          "Was ist ein Engpass? Eine Ressource, die nicht für alle nachgefragten Mengen ausreicht.",
+          "Nenne zwei weitere Restriktionen. Zum Beispiel Höchstabsatzmengen und vertragliche Mindestmengen."
+        ],
+        "pruefungsbezug": "Engpass und Restriktionen in einem Fall erkennen.",
+        "merksatz": "Ohne Engpass wird alles mit positivem DB gefertigt; mit Engpass muss die knappe Ressource gezielt verteilt werden."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Der absolute DB je Stück sagt nichts über den Ressourcenverbrauch.",
+          "Produkte belegen die Maschine unterschiedlich lange."
+        ],
+        "erklaerung": "Bei einem Engpass entscheidet nicht der absolute Deckungsbeitrag je Stück, sondern der relative Deckungsbeitrag: DB je Stück ÷ Inanspruchnahme der Engpassressource je Stück, etwa DB je Maschinenminute. Er zeigt, wie viel Deckungsbeitrag eine Einheit der knappen Ressource bringt. Rangfolge: Das Produkt mit dem höchsten relativen DB wird zuerst gefertigt, dann das nächste, bis die Kapazität verbraucht ist.",
+        "beispiele": [
+          "Hoodie A: DB 12 €, 6 Minuten → 2 €/min. Cap B: DB 10 €, 2 Minuten → 5 €/min.",
+          "Rangfolge: zuerst B, dann A — obwohl A den höheren Stück-DB hat."
+        ],
+        "fallbeispiel": "Sandra Koslowski rechnet: Der bestickte Hoodie bringt 12 € DB, braucht aber 6 Minuten Stickzeit; die bestickte Cap bringt 10 € DB bei 2 Minuten. Je Maschinenminute bringt die Cap 5 €, der Hoodie nur 2 €. Bei knapper Maschinenzeit hat die Cap Vorrang.",
+        "typische_fehler": "Nach absolutem Stück-DB priorisieren, obwohl Maschinenzeit knapp ist.",
+        "verstaendnisfragen": [
+          "Wie berechnet man den relativen Deckungsbeitrag? DB je Stück ÷ Engpasszeit je Stück.",
+          "Warum ist der absolute DB bei Engpässen irreführend? Weil er den Verbrauch der knappen Ressource nicht berücksichtigt."
+        ],
+        "pruefungsbezug": "Relative Deckungsbeiträge berechnen und eine Rangfolge bilden.",
+        "merksatz": "Relativer DB = DB je Stück ÷ Engpassbedarf je Stück; die Rangfolge richtet sich danach, nicht nach dem Stück-DB."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Die Rangfolge steht fest.",
+          "Die Nachfrage je Produkt ist begrenzt."
+        ],
+        "erklaerung": "Das optimale Produktionsprogramm entsteht schrittweise: Zuerst wird das Produkt mit dem höchsten relativen DB bis zu seiner Höchstabsatzmenge eingeplant, dann das nächste mit der verbleibenden Kapazität, und so weiter. Vertragliche Mindestmengen werden vorab eingeplant. Bei ganzzahligen Produkten kann Restkapazität übrig bleiben. Zum Schluss wird der Gesamt-DB berechnet und mit Alternativen verglichen.",
+        "beispiele": [
+          "60 Minuten frei, höchstens 20 Caps: 20 × 2 min = 40 min; Rest 20 min für Hoodies: 3 × 6 min = 18 min; 2 min frei.",
+          "Gesamt-DB: 20 × 10 € + 3 × 12 € = 236 €."
+        ],
+        "fallbeispiel": "In KW 47 hat die Stickmaschine noch 60 freie Minuten. Caps lassen sich höchstens 20 verkaufen, Hoodies sind ausreichend nachgefragt. Deniz Aydın plant: 20 Caps (40 Minuten), dann 3 Hoodies (18 Minuten). 2 Minuten bleiben frei. Gesamt-DB 236 €. Hätte er nur Hoodies gefertigt: 10 × 12 € = 120 €.",
+        "typische_fehler": "Höchstabsatzmengen ignorieren und die gesamte Kapazität dem besten Produkt geben.",
+        "verstaendnisfragen": [
+          "In welcher Reihenfolge wird das Programm gefüllt? Nach fallendem relativem DB, jeweils bis zur Höchstmenge.",
+          "Was passiert mit vertraglichen Mindestmengen? Sie werden vorab eingeplant."
+        ],
+        "pruefungsbezug": "Ein Produktionsprogramm bei einem Engpass schrittweise ableiten und den Gesamt-DB berechnen.",
+        "merksatz": "Programm schrittweise nach relativem DB füllen, Höchst- und Mindestmengen beachten, Gesamt-DB berechnen."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Unternehmen verfolgen mehrere Ziele.",
+          "Rechenergebnisse beruhen auf Annahmen."
+        ],
+        "erklaerung": "Das rechnerisch optimale Programm wird gegen weitere Ziele geprüft: Lieferpflichten und Kundenbeziehungen (ein wichtiger Stammkunde wartet auf Hoodies), Sortimentswirkung (Kunden kaufen Hoodies und Caps zusammen), Marke und Qualität, Mitarbeiterauslastung, Nachhaltigkeit. Außerdem prüft man die Robustheit: Ändert sich die Rangfolge, wenn Preise oder Zeiten leicht abweichen? Gibt es Möglichkeiten, den Engpass zu erweitern (Zusatzschicht, Fremdvergabe), deren Kosten unter dem zusätzlichen DB liegen?",
+        "beispiele": [
+          "Eine Zusatzschicht kostet 150 € und schafft 120 Minuten: Lohnt sich, wenn diese Minuten mehr als 150 € DB bringen.",
+          "Ein Stammkunde mit Rahmenvertrag bekommt seine Hoodies, auch wenn Caps je Minute mehr bringen."
+        ],
+        "fallbeispiel": "Marlene Voss wendet ein: ‚Die Boutique Faden & Form bestellt jedes Jahr 50 Hoodies zu Weihnachten. Wenn wir sie jetzt vertrösten, verlieren wir sie.‘ Tobias entscheidet: Die 50 Hoodies werden vorab eingeplant, für den Rest gilt die Rangfolge. Zusätzlich prüft Deniz eine Samstagsschicht.",
+        "typische_fehler": "Das rechnerische Optimum ohne Prüfung von Kundenbeziehungen und Lieferpflichten umsetzen.",
+        "verstaendnisfragen": [
+          "Nenne zwei Ziele, die gegen das rechnerische Optimum sprechen können. Zum Beispiel Stammkundenbindung und Sortimentswirkung.",
+          "Wann lohnt sich eine Engpasserweiterung? Wenn ihr zusätzlicher DB höher ist als ihre Kosten."
+        ],
+        "pruefungsbezug": "Quantitative Ergebnisse mit qualitativen Zielen abwägen.",
+        "merksatz": "Das rechnerische Optimum wird gegen Lieferpflichten, Kunden und weitere Ziele geprüft; Engpasserweiterung lohnt, wenn Zusatz-DB > Zusatzkosten."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Engpass und Restriktionen erkennen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Den relativen Deckungsbeitrag bestimmen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Ein Produktionsprogramm bei einem Engpass ableiten", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Quantitative und qualitative Ziele abwägen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Engpass und Restriktionen",
+      "inhalt": [
+        { "typ": "absatz", "text": "Ein {{begriff:engpass|Engpass}} zwingt zur Auswahl. ==Ohne Engpass wird alles mit positivem DB gefertigt.==" },
+        { "typ": "tabelle", "spalten": ["Restriktion", "Beispiel MAKEL"], "zeilen": [
+          { "zellen": ["Kapazität", "60 freie Stickminuten in KW 47"] },
+          { "zellen": ["Höchstabsatz", "höchstens 20 Caps verkaufbar"] },
+          { "zellen": ["Mindestmenge", "50 Hoodies aus Rahmenvertrag"] },
+          { "zellen": ["Material", "nur 100 Cap-Rohlinge am Lager"] }
+        ] },
+        { "typ": "merke", "text": "Ohne Engpass wird alles mit positivem DB gefertigt; **mit Engpass** muss die knappe Ressource gezielt verteilt werden.", "karteikarte": "Was ist ein Engpass, und welche Restriktionen gibt es?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Deckungsbeitrag je Engpasseinheit",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["Produkt", "DB je Stück", "Stickzeit", "DB je Minute", "Rang"], "zeilen": [
+          { "zellen": ["Hoodie A", "12 €", "6 min", "2 €", "2"] },
+          { "zellen": ["Cap B", "10 €", "2 min", "5 €", "1"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "Produkt X: DB 15 €, 5 Minuten. Produkt Y: DB 8 €, 2 Minuten. Die Maschine ist der Engpass. Welches Produkt hat Vorrang?",
+          "optionen": [
+            { "text": "X, weil 15 € mehr sind als 8 €", "richtig": false, "echo": "Das ist der absolute DB. Bei Engpass zählt der DB je Minute: X 3 €/min, Y 4 €/min." },
+            { "text": "Y, weil es 4 € je Minute bringt, X nur 3 €", "richtig": true, "echo": "Richtig: relativer DB Y = 8 ÷ 2 = 4 €/min, X = 15 ÷ 5 = 3 €/min." },
+            { "text": "Beide gleich, weil beide positiv sind", "richtig": false, "echo": "Ohne Engpass würde beides gefertigt. Bei Engpass entscheidet der relative DB." }
+          ]
+        },
+        { "typ": "merke", "text": "**Relativer DB = DB je Stück ÷ Engpassbedarf je Stück**; die Rangfolge richtet sich danach, nicht nach dem Stück-DB.", "karteikarte": "Wie berechnest du den relativen Deckungsbeitrag, und wann ist er entscheidend?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Das Produktionsprogramm",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["Schritt", "Minuten", "Rest", "DB"], "zeilen": [
+          { "zellen": ["20 Caps (Höchstmenge)", "40", "20", "200 €"] },
+          { "zellen": ["3 Hoodies (ganzzahlig)", "18", "2", "36 €"] },
+          { "zellen": ["Gesamt", "58", "2 frei", "236 €"] }
+        ] },
+        { "typ": "achtung", "text": "Erst die **Höchstmenge** des besten Produkts, dann das nächste. Wer die ganze Kapazität dem besten Produkt gibt, plant mehr, als verkauft werden kann." },
+        { "typ": "merke", "text": "Programm schrittweise nach relativem DB füllen, **Höchst- und Mindestmengen** beachten, Gesamt-DB berechnen.", "karteikarte": "Wie leitest du das optimale Produktionsprogramm bei einem Engpass ab?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Zielkonflikte und Robustheit",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Frage", "Warum wichtig?"], "zeilen": [
+          { "zellen": ["Gibt es Lieferpflichten?", "Verträge und Stammkunden gehen vor"] },
+          { "zellen": ["Kaufen Kunden im Verbund?", "Ohne Hoodies fehlen vielleicht auch Cap-Verkäufe"] },
+          { "zellen": ["Wie stabil ist die Rangfolge?", "Kleine Preis- oder Zeitänderungen können sie drehen"] },
+          { "zellen": ["Lässt sich der Engpass erweitern?", "Lohnt, wenn Zusatz-DB > Zusatzkosten"] }
+        ] },
+        { "typ": "merke", "text": "Das rechnerische Optimum wird gegen **Lieferpflichten, Kunden und weitere Ziele** geprüft; Engpasserweiterung lohnt, wenn Zusatz-DB > Zusatzkosten.", "karteikarte": "Welche Gesichtspunkte prüfst du zusätzlich zum rechnerischen Optimum?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Engpass: Ressource reicht nicht für alle nachgefragten Mengen.",
+    "Relativer DB = DB je Stück ÷ Engpassbedarf je Stück.",
+    "Rangfolge nach relativem DB, nicht nach Stück-DB.",
+    "Programm schrittweise füllen, Höchst- und Mindestmengen beachten.",
+    "Gesamt-DB berechnen und Alternativen vergleichen.",
+    "Lieferpflichten, Verbund und Robustheit prüfen."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "A: DB 12 €, Bedarf 6 Minuten; B: DB 10 €, Bedarf 2 Minuten. Rangfolge nach relativem DB?", "loesung": "A: 2 €/Minute; B: 5 €/Minute. Bei sonst gleichen Voraussetzungen zuerst B." },
+    { "typ": "Rechnen", "frage": "60 freie Minuten, höchstens 20 B und ausreichend Nachfrage nach A; ganzzahlig, keine Rüstzeiten. Programm?", "loesung": "20 B benötigen 40 Minuten; anschließend 3 A mit 18 Minuten. 2 Minuten bleiben frei; Gesamt-DB 236 €. Bestehende Lieferpflichten wären zusätzlich zu prüfen." },
+    { "typ": "Wissen", "frage": "Wann wird ohne relativen DB entschieden?", "loesung": "Wenn kein Engpass besteht: Dann wird jedes Produkt mit positivem DB bis zur Nachfragegrenze gefertigt." }
+  ],
+  "pruefungstipp": "Bei Engpassaufgaben erst prüfen, ob überhaupt ein Engpass besteht. Dann relativen DB, Rangfolge, Programm Schritt für Schritt mit Restkapazität — und am Ende ein Satz zu Lieferpflichten oder Kunden."
+}

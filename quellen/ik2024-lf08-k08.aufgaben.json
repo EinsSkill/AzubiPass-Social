@@ -1,0 +1,159 @@
+{
+  "lernfeld": "ik2024-lf08",
+  "kapitel": "k08",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf08-k08-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "ak": {
+          "von": 12000,
+          "bis": 36000,
+          "schritt": 6000
+        },
+        "rueck": {
+          "von": 3000,
+          "bis": 6000,
+          "schritt": 1000
+        }
+      },
+      "abgeleitet": {
+        "dauer": "runde(ak / rueck, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH plant eine Investition von {ak} €. Der durchschnittliche jährliche Zahlungsüberschuss (Rückfluss) wird auf {rueck} € geschätzt; ein Restwert ist nicht vorgesehen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Statische Amortisationsdauer (zwei Nachkommastellen)",
+          "einheit": "Jahre",
+          "loesung": "dauer",
+          "toleranz": 0.01
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Amortisationsdauer = Anschaffungskosten ÷ Ø jährlicher Rückfluss.",
+      "quelle": "ik2024-lf08-k08, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf08-k08-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH vergleicht zwei Druckmaschinen mit gleicher Leistung und gleicher Qualität. Maschine X: Anschaffung 36.000 €, Nutzungsdauer 6 Jahre, lineare Abschreibung ohne Restwert, Ø Gewinn 3.600 € im Jahr. Maschine Y: Anschaffung 20.000 €, Nutzungsdauer 5 Jahre, lineare Abschreibung ohne Restwert, Ø Gewinn 2.500 € im Jahr."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Rentabilität Maschine X",
+          "einheit": "%",
+          "loesung": 20,
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Rentabilität Maschine Y",
+          "einheit": "%",
+          "loesung": 25,
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Amortisationsdauer Maschine X (zwei Nachkommastellen)",
+          "einheit": "Jahre",
+          "loesung": 3.75,
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Amortisationsdauer Maschine Y (zwei Nachkommastellen)",
+          "einheit": "Jahre",
+          "loesung": 3.08,
+          "toleranz": 0.01,
+          "punkte": 1
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "X: Ø Kapital 18.000 €, Rentabilität 3.600 ÷ 18.000 = 20 %; Rückfluss 3.600 + 6.000 = 9.600 €, Amortisation 36.000 ÷ 9.600 = 3,75 Jahre. Y: Ø Kapital 10.000 €, Rentabilität 25 %; Rückfluss 2.500 + 4.000 = 6.500 €, Amortisation 20.000 ÷ 6.500 ≈ 3,08 Jahre.",
+      "quelle": "ik2024-lf08-k08, Abschnitte a2 und a3"
+    },
+    {
+      "id": "ik2024-lf08-k08-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für die Entscheidung zwischen den Druckmaschinen X und Y (Ergebnisse der Investitionsrechnung: X Rentabilität 20 %, Amortisation 3,75 Jahre, Ø Gewinn 3.600 €, Nutzungsdauer 6 Jahre; Y Rentabilität 25 %, Amortisation 3,08 Jahre, Ø Gewinn 2.500 €, Nutzungsdauer 5 Jahre) ergänzt Deniz Aydın: X verbraucht 20 % weniger Energie und ist leiser; für Y gibt es nur noch fünf Jahre Ersatzteile. Die Druckmenge in den nächsten Jahren ist unsicher."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie, welche Maschine MAKEL anschaffen sollte.",
+          "zeilen": 8
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Rechnerisch spricht für Y: höhere Rentabilität (25 % gegen 20 %) und kürzere Amortisation (3,08 gegen 3,75 Jahre) — weniger Kapitalbindung und geringeres Risiko bei unsicherer Menge. Für X sprechen der höhere absolute Gewinn, die längere Nutzungsdauer (mehr Jahre mit Rückflüssen nach der Amortisation), der geringere Energieverbrauch (Kosten und Nachhaltigkeit) und die geringere Lärmbelastung (Arbeitsschutz). Die Ersatzteilversorgung für Y ist ein Risiko, falls die Maschine länger als fünf Jahre genutzt werden soll. Statische Verfahren berücksichtigen den Zahlungszeitpunkt nicht. Eine begründete Empfehlung ist zum Beispiel X, wenn die Mindestmenge einigermaßen gesichert ist und Nachhaltigkeit und Arbeitsbedingungen gewichtet werden; Y, wenn die Unsicherheit der Menge im Vordergrund steht. Wichtig ist, die Gewichtung offenzulegen.",
+        "raster": [
+          {
+            "kriterium": "Rechnerische Vorteile von Y benannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Vorteile von X (Gewinn, Nutzungsdauer) benannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Qualitative Kriterien (Energie, Lärm, Ersatzteile) einbezogen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Grenzen der statischen Verfahren bzw. Unsicherheit erwähnt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Empfehlung mit offengelegter Gewichtung",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Investitionsentscheidungen verbinden mehrere Kennzahlen mit qualitativen Kriterien; die Gewichtung wird offengelegt.",
+      "quelle": "ik2024-lf08-k08, Abschnitt a4"
+    }
+  ]
+}
