@@ -2,16 +2,113 @@
   "_hinweis": "Gemeinsamer Speicher für Industriekaufleute (Neuordnung 2024). Aus gemeinsam.json (Büromanagement) wird nur übernommen, was unter 'uebernehmen' ausdrücklich steht und inhaltlich berufsunabhängig ist – geprüft am 22.10.2026. Eigene Einträge unten gehen vor. Rechtsangaben sinngemäß wiedergegeben, Stand Oktober 2026.",
   "uebernehmen": {
     "begriffe": [
-      "duale-ausbildung", "ausbildungsordnung", "rahmenlehrplan", "ausbildungsrahmenplan",
-      "ausbildungsplan", "zustaendige-stelle", "gestreckte-pruefung"
+      "ablauforganisation",
+      "alpen-methode",
+      "aufbauorganisation",
+      "ausbildungsordnung",
+      "ausbildungsplan",
+      "ausbildungsrahmenplan",
+      "betriebsrat",
+      "datensparsamkeit",
+      "duale-ausbildung",
+      "eisenhower",
+      "ergonomie",
+      "feedback",
+      "gefaehrdungsbeurteilung",
+      "geschaeftsprozess",
+      "gestreckte-pruefung",
+      "handlungsvollmacht",
+      "jav",
+      "oekonomisches-prinzip",
+      "organigramm",
+      "probezeit",
+      "produktionsfaktoren",
+      "prokura",
+      "rahmenlehrplan",
+      "rentabilitaet",
+      "schnittstelle",
+      "urheberrecht",
+      "zustaendige-stelle"
     ],
-    "paragraphen": []
+    "paragraphen": [
+      "arbschg-5",
+      "bbig-10",
+      "bbig-11",
+      "bbig-13",
+      "bbig-14",
+      "bbig-15",
+      "bbig-20",
+      "bbig-22",
+      "dsgvo-5",
+      "hgb-54"
+    ]
   },
   "begriffe": {
+    "anspruchsgruppen": {
+      "titel": "Anspruchsgruppen",
+      "text": "Alle, die Erwartungen an ein Unternehmen haben oder von seinen Entscheidungen betroffen sind (englisch Stakeholder): Eigentümer, Beschäftigte, Kunden, Lieferanten, Kreditgeber, Staat und Öffentlichkeit. Ihre Interessen können sich widersprechen."
+    },
+    "ausbildungsvertrag": {
+      "titel": "Ausbildungsvertrag",
+      "text": "Der Vertrag zwischen Ausbildendem und Auszubildendem. Sein wesentlicher Inhalt muss spätestens vor Beginn der Ausbildung in Textform niedergelegt werden; danach trägt die zuständige Stelle ihn in das Verzeichnis der Ausbildungsverhältnisse ein."
+    },
     "berichtsheft": {
       "titel": "Ausbildungsnachweis",
       "text": "Der Nachweis über die Ausbildung, schriftlich oder elektronisch geführt (umgangssprachlich Berichtsheft). Er wird während der Ausbildungszeit geführt, vom Betrieb regelmäßig durchgesehen und ist Voraussetzung für die Zulassung zur Abschlussprüfung."
+    },
+    "epk": {
+      "titel": "Ereignisgesteuerte Prozesskette (EPK)",
+      "text": "Grafische Darstellung eines Ablaufs aus Ereignissen (Sechsecke) und Funktionen (abgerundete Rechtecke), die sich abwechseln. Sie beginnt und endet mit einem Ereignis; Verzweigungen zeigen UND-, ODER- und XOR-Konnektoren."
+    },
+    "fertigungstiefe": {
+      "titel": "Fertigungstiefe",
+      "text": "Anteil der Wertschöpfung, den ein Unternehmen selbst erbringt. Bei hoher Fertigungstiefe wird vieles im eigenen Haus hergestellt, bei geringer vieles zugekauft oder fremd gefertigt."
+    },
+    "kapitalgesellschaft": {
+      "titel": "Kapitalgesellschaft",
+      "text": "Gesellschaft mit eigener Rechtspersönlichkeit, bei der das Kapital im Vordergrund steht, etwa GmbH oder AG. Gegenüber Gläubigern haftet das Gesellschaftsvermögen, nicht das Privatvermögen der Gesellschafter."
+    },
+    "leistungsprogramm": {
+      "titel": "Leistungsprogramm",
+      "text": "Gesamtheit der Sachgüter und Dienstleistungen, die ein Unternehmen am Markt anbietet. Bei Industriebetrieben meist eigene Erzeugnisse, oft ergänzt um Dienstleistungen und Handelswaren."
+    },
+    "leitbild": {
+      "titel": "Leitbild",
+      "text": "Schriftlich formuliertes Selbstverständnis eines Unternehmens: Werte, Ziele und Grundsätze im Umgang mit Kunden, Beschäftigten und Umwelt. Es beschreibt einen Anspruch; ob er eingelöst wird, zeigt das tatsächliche Handeln."
+    },
+    "produktivitaet": {
+      "titel": "Produktivität",
+      "text": "Mengenmäßiges Verhältnis von Ausbringung zu Einsatz, etwa Stück je Arbeitsstunde oder je Maschinenstunde. Sie wird immer mit Einheit angegeben und sagt nichts über Kosten oder Gewinn."
+    },
+    "werkstoffe": {
+      "titel": "Werkstoffe",
+      "text": "Materialien, die in der Leistungserstellung eingesetzt werden: Rohstoffe als Hauptbestandteile, Hilfsstoffe als Nebenbestandteile des Produkts und Betriebsstoffe, die verbraucht werden, ohne Teil des Produkts zu werden."
+    },
+    "wirtschaftlichkeit": {
+      "titel": "Wirtschaftlichkeit",
+      "text": "Wertmäßiges Verhältnis von Ertrag zu Aufwand (in der Kostenrechnung: Leistung zu Kosten). Ein Wert über 1 zeigt einen Überschuss; 1,25 bedeutet 1,25 Euro Ertrag je Euro Aufwand, nicht 125 Prozent Gewinn."
     }
   },
-  "paragraphen": {}
+  "paragraphen": {
+    "betrvg-60": {
+      "titel": "§ 60 BetrVG",
+      "text": "In Betrieben mit in der Regel mindestens fünf Arbeitnehmern, die das 18. Lebensjahr noch nicht vollendet haben (jugendliche Arbeitnehmer) oder die zu ihrer Berufsausbildung beschäftigt sind und das 25. Lebensjahr noch nicht vollendet haben, werden Jugend- und Auszubildendenvertretungen gewählt. Sie nehmen die besonderen Belange dieser Beschäftigten wahr. (Sinngemäß; Voraussetzung ist zudem ein bestehender Betriebsrat.)",
+      "kurz": "JAV ab in der Regel fünf Jugendlichen oder Auszubildenden unter 25."
+    },
+    "gmbhg-13": {
+      "titel": "§ 13 GmbHG",
+      "text": "Die GmbH hat selbständig ihre Rechte und Pflichten; sie kann Eigentum erwerben, vor Gericht klagen und verklagt werden. Für die Verbindlichkeiten der Gesellschaft haftet den Gläubigern derselben nur das Gesellschaftsvermögen. Die Gesellschaft gilt als Handelsgesellschaft. (Sinngemäß)",
+      "kurz": "Gläubigern haftet nur das Gesellschaftsvermögen."
+    },
+    "gmbhg-35": {
+      "titel": "§ 35 GmbHG",
+      "text": "Die Gesellschaft wird durch die Geschäftsführer gerichtlich und außergerichtlich vertreten. (Sinngemäß)",
+      "kurz": "Geschäftsführer vertreten die GmbH."
+    },
+    "gmbhg-5": {
+      "titel": "§ 5 GmbHG",
+      "text": "Das Stammkapital der Gesellschaft muss mindestens 25.000 Euro betragen. Jeder Gesellschafter übernimmt bei der Errichtung einen oder mehrere Geschäftsanteile. (Sinngemäß)",
+      "kurz": "Mindeststammkapital 25.000 Euro."
+    }
+  }
 }

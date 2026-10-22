@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf01",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf01-k06-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "stunden": { "von": 20, "bis": 40, "schritt": 5 },
+        "je_std": { "von": 6, "bis": 12, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "shirts": "stunden * je_std"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Das Veredelungsteam der MAKEL Studio GmbH hat in einer Woche {shirts} Shirts in {stunden} Arbeitsstunden bedruckt. Berechnen Sie die Arbeitsproduktivität in Shirts je Arbeitsstunde." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Arbeitsproduktivität", "einheit": "Shirts je Std", "loesung": "je_std", "toleranz": 0.01 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "erklaerung": "Arbeitsproduktivität = Ausbringungsmenge ÷ Arbeitsstunden. Die Einheit gehört zum Ergebnis.",
+      "quelle": "ik2024-lf01-k06, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf01-k06-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Tobias Renner legt Ihnen einen vereinfachten Jahresfall der Veredelungssparte vor. Runden Sie Prozentwerte auf zwei Nachkommastellen." },
+        {
+          "block": "anlage",
+          "titel": "Anlage 1: Werte des vereinfachten Jahresfalls",
+          "zugeklappt": false,
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": ["Größe", "Wert"],
+            "zeilen": [
+              ["Erträge", "150.000 €"],
+              ["Aufwendungen", "120.000 €"],
+              ["Jahresgewinn", "30.000 €"],
+              ["Durchschnittliches Eigenkapital", "200.000 €"]
+            ]
+          }
+        }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Wirtschaftlichkeit", "einheit": "", "loesung": 1.25, "toleranz": 0.001, "punkte": 2 },
+        { "block": "zahl", "label": "Eigenkapitalrentabilität", "einheit": "%", "loesung": 15, "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Wirtschaftlichkeit = 150.000 ÷ 120.000 = 1,25 (je Euro Aufwand 1,25 € Ertrag, nicht 125 % Gewinn). Eigenkapitalrentabilität = 30.000 × 100 ÷ 200.000 = 15 %.",
+      "quelle": "ik2024-lf01-k06, Abschnitte a2 und a3"
+    },
+
+    {
+      "id": "ik2024-lf01-k06-03",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "gewinn": { "von": 20000, "bis": 60000, "schritt": 5000 },
+        "zinsen": { "von": 4000, "bis": 12000, "schritt": 1000 },
+        "gk": { "von": 300000, "bis": 600000, "schritt": 50000 }
+      },
+      "abgeleitet": {
+        "gkr": "runde((gewinn + zinsen) * 100 / gk, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Für einen vereinfachten Jahresfall gelten: Jahresgewinn {gewinn} €, Fremdkapitalzinsen {zinsen} €, durchschnittliches Gesamtkapital {gk} €. Berechnen Sie die Gesamtkapitalrentabilität in Prozent, gerundet auf zwei Nachkommastellen." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Gesamtkapitalrentabilität", "einheit": "%", "loesung": "gkr", "toleranz": 0.01 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Gesamtkapitalrentabilität = (Gewinn + Fremdkapitalzinsen) × 100 ÷ durchschnittliches Gesamtkapital. Die Zinsen gehören dazu, weil sie die Verzinsung des Fremdkapitals sind.",
+      "quelle": "ik2024-lf01-k06, Abschnitt a3"
+    }
+  ]
+}
