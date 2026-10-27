@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Interne und externe Beschaffungswege vergleichen", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Eine Stellenausschreibung aus der Stellenbeschreibung entwickeln", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Arbeitgebermarke und digitale Ansprache einsetzen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Inklusion und fremdsprachige Kommunikation berücksichtigen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Interne und externe Beschaffungswege vergleichen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Eine Stellenausschreibung aus der Stellenbeschreibung entwickeln",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Arbeitgebermarke und digitale Ansprache einsetzen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Inklusion und fremdsprachige Kommunikation berücksichtigen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -108,22 +124,58 @@
           "titel": "Intern oder extern?",
           "lead": "Tippe einen Punkt an, um mehr zu erfahren.",
           "seiten": [
-            { "name": "Interne Beschaffung", "ton": "gold", "punkte": [
-              { "text": "Kennt Betrieb und Abläufe", "detail": "Einarbeitung ist kürzer, die Person kennt Kunden, Systeme und Kolleginnen." },
-              { "text": "Motiviert durch Aufstieg", "detail": "Beschäftigte sehen Entwicklungschancen im eigenen Unternehmen." },
-              { "text": "Geringere Kosten", "detail": "Keine Anzeigen- oder Vermittlungskosten." },
-              { "text": "Aber: kleine Auswahl, Lücke bleibt", "detail": "Die bisherige Stelle wird frei und muss ihrerseits besetzt werden." }
-            ] },
-            { "name": "Externe Beschaffung", "ton": "gruen", "punkte": [
-              { "text": "Größere Auswahl", "detail": "Mehr Bewerbungen, auch mit speziellen Qualifikationen." },
-              { "text": "Neue Impulse", "detail": "Erfahrungen aus anderen Betrieben bringen frische Ideen." },
-              { "text": "Höhere Kosten", "detail": "Anzeigen, Vermittlung, längere Auswahl und Einarbeitung." },
-              { "text": "Höheres Risiko", "detail": "Die Person ist weniger bekannt; die Probezeit wird wichtiger." }
-            ] }
+            {
+              "name": "Interne Beschaffung",
+              "ton": "gold",
+              "punkte": [
+                {
+                  "text": "Kennt Betrieb und Abläufe",
+                  "detail": "Einarbeitung ist kürzer, die Person kennt Kunden, Systeme und Kolleginnen."
+                },
+                {
+                  "text": "Motiviert durch Aufstieg",
+                  "detail": "Beschäftigte sehen Entwicklungschancen im eigenen Unternehmen."
+                },
+                {
+                  "text": "Geringere Kosten",
+                  "detail": "Keine Anzeigen- oder Vermittlungskosten."
+                },
+                {
+                  "text": "Aber: kleine Auswahl, Lücke bleibt",
+                  "detail": "Die bisherige Stelle wird frei und muss ihrerseits besetzt werden."
+                }
+              ]
+            },
+            {
+              "name": "Externe Beschaffung",
+              "ton": "gruen",
+              "punkte": [
+                {
+                  "text": "Größere Auswahl",
+                  "detail": "Mehr Bewerbungen, auch mit speziellen Qualifikationen."
+                },
+                {
+                  "text": "Neue Impulse",
+                  "detail": "Erfahrungen aus anderen Betrieben bringen frische Ideen."
+                },
+                {
+                  "text": "Höhere Kosten",
+                  "detail": "Anzeigen, Vermittlung, längere Auswahl und Einarbeitung."
+                },
+                {
+                  "text": "Höheres Risiko",
+                  "detail": "Die Person ist weniger bekannt; die Probezeit wird wichtiger."
+                }
+              ]
+            }
           ],
           "regel": "Oft ist die Kombination am besten: intern ausschreiben, extern parallel suchen — und die Lücke einer internen Besetzung gleich mitplanen."
         },
-        { "typ": "merke", "text": "**Intern**: bekannt, schnell, motivierend — aber kleine Auswahl; **extern**: große Auswahl, neue Ideen — aber teurer und riskanter.", "karteikarte": "Welche Vor- und Nachteile haben interne und externe Personalbeschaffung?" }
+        {
+          "typ": "merke",
+          "text": "**Intern**: bekannt, schnell, motivierend — aber kleine Auswahl; **extern**: große Auswahl, neue Ideen — aber teurer und riskanter.",
+          "karteikarte": "Welche Vor- und Nachteile haben interne und externe Personalbeschaffung?"
+        }
       ]
     },
     {
@@ -131,20 +183,45 @@
       "id": "a2",
       "titel": "Die anforderungsbezogene Ausschreibung",
       "inhalt": [
-        { "typ": "absatz", "text": "Die Ausschreibung muss das {{begriff:agg|AGG}} beachten ({{par:agg-11|§ 11 AGG}})." },
+        {
+          "typ": "absatz",
+          "text": "Die Ausschreibung muss das {{begriff:agg|AGG}} beachten ({{par:agg-11|§ 11 AGG}})."
+        },
         {
           "typ": "zuordnen",
           "lead": "Ist die Formulierung für die Stelle in Lager und Versand geeignet?",
-          "kategorien": ["geeignet", "problematisch"],
+          "kategorien": [
+            "geeignet",
+            "problematisch"
+          ],
           "aufgaben": [
-            { "text": "Lagermitarbeiter*in (m/w/d) in Vollzeit", "loesung": "geeignet" },
-            { "text": "Junges Team sucht Verstärkung bis 30 Jahre", "loesung": "problematisch" },
-            { "text": "Sie kommissionieren Aufträge mit dem Handscanner", "loesung": "geeignet" },
-            { "text": "Deutsche Muttersprache erforderlich", "loesung": "problematisch" },
-            { "text": "Gute Deutschkenntnisse für Lieferscheine und Absprachen", "loesung": "geeignet" }
+            {
+              "text": "Lagermitarbeiter*in (m/w/d) in Vollzeit",
+              "loesung": "geeignet"
+            },
+            {
+              "text": "Junges Team sucht Verstärkung bis 30 Jahre",
+              "loesung": "problematisch"
+            },
+            {
+              "text": "Sie kommissionieren Aufträge mit dem Handscanner",
+              "loesung": "geeignet"
+            },
+            {
+              "text": "Deutsche Muttersprache erforderlich",
+              "loesung": "problematisch"
+            },
+            {
+              "text": "Gute Deutschkenntnisse für Lieferscheine und Absprachen",
+              "loesung": "geeignet"
+            }
           ]
         },
-        { "typ": "merke", "text": "Ausschreibung = **Unternehmen + Aufgaben + benötigte Kompetenzen + Bedingungen + Bewerbungsweg** — neutral und ohne AGG-Merkmale als Ausschlusskriterium.", "karteikarte": "Welche Bestandteile hat eine gute Stellenausschreibung, und was ist nach AGG zu vermeiden?" }
+        {
+          "typ": "merke",
+          "text": "Ausschreibung = **Unternehmen + Aufgaben + benötigte Kompetenzen + Bedingungen + Bewerbungsweg** — neutral und ohne AGG-Merkmale als Ausschlusskriterium.",
+          "karteikarte": "Welche Bestandteile hat eine gute Stellenausschreibung, und was ist nach AGG zu vermeiden?"
+        }
       ]
     },
     {
@@ -156,12 +233,28 @@
           "typ": "check",
           "frage": "MAKEL wirbt in der Anzeige mit „flexiblen Arbeitszeiten“. Im Lager gibt es aber feste Schichten ohne Tauschmöglichkeit. Was ist die Folge?",
           "optionen": [
-            { "text": "Kein Problem, Werbung darf übertreiben", "richtig": false, "echo": "Bei der Arbeitgebermarke rächt sich jede Übertreibung: Neue Beschäftigte fühlen sich getäuscht." },
-            { "text": "Enttäuschte Erwartungen und mögliche Frühfluktuation", "richtig": true, "echo": "Richtig: Versprechen und Alltag müssen zusammenpassen — sonst gehen Neue schnell wieder." },
-            { "text": "Mehr passende Bewerbungen auf Dauer", "richtig": false, "echo": "Kurzfristig vielleicht mehr Bewerbungen, aber nicht die passenden — und sie bleiben nicht." }
+            {
+              "text": "Kein Problem, Werbung darf übertreiben",
+              "richtig": false,
+              "echo": "Bei der Arbeitgebermarke rächt sich jede Übertreibung: Neue Beschäftigte fühlen sich getäuscht."
+            },
+            {
+              "text": "Enttäuschte Erwartungen und mögliche Frühfluktuation",
+              "richtig": true,
+              "echo": "Richtig: Versprechen und Alltag müssen zusammenpassen — sonst gehen Neue schnell wieder."
+            },
+            {
+              "text": "Mehr passende Bewerbungen auf Dauer",
+              "richtig": false,
+              "echo": "Kurzfristig vielleicht mehr Bewerbungen, aber nicht die passenden — und sie bleiben nicht."
+            }
           ]
         },
-        { "typ": "merke", "text": "**Arbeitgebermarke** = glaubwürdiges Versprechen als Arbeitgeber — sichtbar über digitale Kanäle, eingelöst im Alltag.", "karteikarte": "Was ist eine Arbeitgebermarke, und warum muss sie glaubwürdig sein?" }
+        {
+          "typ": "merke",
+          "text": "**Arbeitgebermarke** = glaubwürdiges Versprechen als Arbeitgeber — sichtbar über digitale Kanäle, eingelöst im Alltag.",
+          "karteikarte": "Was ist eine Arbeitgebermarke, und warum muss sie glaubwürdig sein?"
+        }
       ]
     },
     {
@@ -169,15 +262,54 @@
       "id": "a4",
       "titel": "Inklusiv und mehrsprachig ansprechen",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Deutsch", "English"], "zeilen": [
-          { "zellen": ["Ihre Aufgaben", "Your tasks"] },
-          { "zellen": ["Aufträge kommissionieren und verpacken", "Pick and pack orders"] },
-          { "zellen": ["Wareneingang mit Lieferschein abgleichen", "Check incoming goods against delivery notes"] },
-          { "zellen": ["Grundkenntnisse Deutsch hilfreich", "Basic German is helpful"] },
-          { "zellen": ["Wir unterstützen mit einem Sprachkurs", "We support you with a language course"] }
-        ] },
-        { "typ": "achtung", "text": "Pflichten gegenüber schwerbehinderten Bewerbenden (Prüfpflicht, Beteiligung der Schwerbehindertenvertretung) sind gesetzlich geregelt. Vor einem konkreten Verfahren die aktuellen Vorgaben im SGB IX prüfen.", "pruefen": "Prüfpflicht und Meldepflichten nach § 164 SGB IX vor Veröffentlichung mit aktuellem Stand abgleichen." },
-        { "typ": "merke", "text": "Inklusiv ausschreiben: **klar, barrierearm, offen** — Fremdsprache sachlich: Tätigkeit und echte Anforderungen.", "karteikarte": "Wie gestaltest du eine Ausschreibung inklusiv und eine fremdsprachige Kurzbeschreibung sachgerecht?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Deutsch",
+            "English"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Ihre Aufgaben",
+                "Your tasks"
+              ]
+            },
+            {
+              "zellen": [
+                "Aufträge kommissionieren und verpacken",
+                "Pick and pack orders"
+              ]
+            },
+            {
+              "zellen": [
+                "Wareneingang mit Lieferschein abgleichen",
+                "Check incoming goods against delivery notes"
+              ]
+            },
+            {
+              "zellen": [
+                "Grundkenntnisse Deutsch hilfreich",
+                "Basic German is helpful"
+              ]
+            },
+            {
+              "zellen": [
+                "Wir unterstützen mit einem Sprachkurs",
+                "We support you with a language course"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Arbeitgeber müssen bei jeder freien Stelle prüfen, ob sie mit schwerbehinderten Menschen besetzt werden kann, und frühzeitig Kontakt zur Agentur für Arbeit aufnehmen; Schwerbehindertenvertretung und Betriebsrat werden, soweit vorhanden, beteiligt bzw. unterrichtet — es sei denn, die betroffene Person lehnt die Beteiligung der Schwerbehindertenvertretung ab (§ 164 Abs. 1 SGB IX)."
+        },
+        {
+          "typ": "merke",
+          "text": "Inklusiv ausschreiben: **klar, barrierearm, offen** — Fremdsprache sachlich: Tätigkeit und echte Anforderungen.",
+          "karteikarte": "Wie gestaltest du eine Ausschreibung inklusiv und eine fremdsprachige Kurzbeschreibung sachgerecht?"
+        }
       ]
     }
   ],
@@ -190,9 +322,21 @@
     "Inklusiv und bei Bedarf mehrsprachig ansprechen."
   ],
   "selbsttest": [
-    { "typ": "Entwerfen", "frage": "Nenne fünf notwendige Bestandteile einer Stellenausschreibung.", "loesung": "Aufgaben, tatsächlich benötigte Kompetenzen, Arbeitsbedingungen, betrieblicher Bezug (Unternehmen) und Bewerbungsweg; unzulässige oder unbegründete Ausschlüsse vermeiden." },
-    { "typ": "Formulieren", "frage": "Formuliere einen kurzen englischen Satz zu einer konkreten Lagertätigkeit.", "loesung": "Zum Beispiel: „You check incoming goods against delivery notes and prepare parcels for shipping.“ Keine unbelegten Sprach- oder Herkunftsanforderungen erfinden." },
-    { "typ": "Wissen", "frage": "Warum ist „Junger Lagerist gesucht“ problematisch?", "loesung": "Es benachteiligt nach Alter und Geschlecht (§§ 1, 11 AGG). Besser: geschlechtsneutral und ohne Altersangabe." }
+    {
+      "typ": "Entwerfen",
+      "frage": "Nenne fünf notwendige Bestandteile einer Stellenausschreibung.",
+      "loesung": "Aufgaben, tatsächlich benötigte Kompetenzen, Arbeitsbedingungen, betrieblicher Bezug (Unternehmen) und Bewerbungsweg; unzulässige oder unbegründete Ausschlüsse vermeiden."
+    },
+    {
+      "typ": "Formulieren",
+      "frage": "Formuliere einen kurzen englischen Satz zu einer konkreten Lagertätigkeit.",
+      "loesung": "Zum Beispiel: „You check incoming goods against delivery notes and prepare parcels for shipping.“ Keine unbelegten Sprach- oder Herkunftsanforderungen erfinden."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Warum ist „Junger Lagerist gesucht“ problematisch?",
+      "loesung": "Es benachteiligt nach Alter und Geschlecht (§§ 1, 11 AGG). Besser: geschlechtsneutral und ohne Altersangabe."
+    }
   ],
   "pruefungstipp": "Prüfe jede Anforderung in einer Ausschreibung mit der Frage: Braucht die Tätigkeit das wirklich? Wenn nicht, streichen — das macht die Anzeige besser und rechtssicherer."
 }

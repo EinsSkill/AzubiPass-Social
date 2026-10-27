@@ -93,7 +93,7 @@
       "abgeleitet": {
         "brutto": "runde(netto_basis * 1.19, 2)",
         "netto": "netto_basis",
-        "steuer": "runde(netto_basis * 0.19, 2)"
+        "steuer": "runde(netto * 0.19, 2)"
       },
       "anzeige": [
         {
@@ -116,7 +116,10 @@
           "einheit": "€",
           "loesung": "steuer",
           "toleranz": 0.01,
-          "punkte": 1
+          "punkte": 1,
+          "folgefehler_aus": [
+            "netto"
+          ]
         }
       ],
       "bewertung": {

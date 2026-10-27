@@ -35,7 +35,7 @@
       },
       "abgeleitet": {
         "zep": "lep * (1 - rabatt / 100)",
-        "bezug": "runde(lep * (1 - rabatt / 100) * (1 - skonto / 100) + fracht, 2)"
+        "bezug": "runde(zep * (1 - skonto / 100) + fracht, 2)"
       },
       "anzeige": [
         {
@@ -58,7 +58,10 @@
           "einheit": "€",
           "loesung": "bezug",
           "toleranz": 0.01,
-          "punkte": 3
+          "punkte": 3,
+          "folgefehler_aus": [
+            "zep"
+          ]
         }
       ],
       "bewertung": {

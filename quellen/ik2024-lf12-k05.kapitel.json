@@ -58,7 +58,7 @@
           "Übung: Brutto 2.700 €, vorgegebene Abzüge insgesamt 600 € → Auszahlung 2.100 €.",
           "Personalkosten = Brutto + Arbeitgeberanteile."
         ],
-        "fallbeispiel": "Ayla rechnet mit Luca eine ausdrücklich vereinfachte Übungsabrechnung: Auf das Brutto von 2.700 € sind insgesamt 600 € Abzüge vorgegeben, weitere Bewegungen gibt es nicht. Auszahlung: 2.100 €. Sie betont: Daraus lässt sich keine allgemeine Abgabenquote ableiten — echte Abzüge hängen von Steuerklasse, Kinderfreibeträgen, Kirchenzugehörigkeit, Krankenkasse und den Werten des Jahres ab.",
+        "fallbeispiel": "Ayla rechnet mit Luca eine ausdrücklich vereinfachte Übungsabrechnung: Auf das Brutto von 2.700 € sind insgesamt 600 € Abzüge vorgegeben, weitere Bewegungen gibt es nicht. Auszahlung: 2.100 €. Sie betont: Daraus lässt sich keine allgemeine Abgabenquote ableiten — echte Abzüge hängen von Steuerklasse, Kinderfreibeträgen, Kirchenzugehörigkeit, Krankenkasse und den Werten des Jahres ab. Danach rechnen sie eine vollständige Übungsabrechnung mit allen Werten laut Fall: Grundentgelt 2.500 €, Zulage 200 €, Sachbezug 50 € ergeben 2.750 € Gesamtbrutto; nach 310 € Lohnsteuer und 550 € Arbeitnehmeranteilen (laut Fall 20 %) bleiben 1.890 € netto; abzüglich Sachbezug und 40 € VL-Sparrate werden 1.800 € ausgezahlt.",
         "typische_fehler": "Den Nettolohn mit einem pauschal geratenen Prozentsatz ausrechnen.",
         "verstaendnisfragen": [
           "Welche Abzüge führen vom Brutto zum Netto? Lohnsteuer (ggf. Soli, Kirchensteuer) und Arbeitnehmeranteile zur Sozialversicherung.",
@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Entgeltformen erklären und Akkordlohn berechnen", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Bruttobestandteile erklären und das Gesamtbrutto ermitteln", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Brutto, Netto und Auszahlung unterscheiden", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Jahresabhängige und persönliche Abrechnungsgrundlagen prüfen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Entgeltformen erklären und Akkordlohn berechnen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Bruttobestandteile erklären und das Gesamtbrutto ermitteln",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Brutto, Netto und Auszahlung unterscheiden",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Jahresabhängige und persönliche Abrechnungsgrundlagen prüfen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,12 +117,44 @@
       "id": "a1",
       "titel": "Zeit- und leistungsbezogenes Entgelt",
       "inhalt": [
-        { "typ": "tabelle", "mono": true, "spalten": ["Schritt", "Rechnung", "Ergebnis"], "zeilen": [
-          { "zellen": ["Akkordrichtsatz", "Grundlohn 15 € + 20 % Zuschlag", "18,00 €/h"] },
-          { "zellen": ["Minutenfaktor", "18 ÷ 60", "0,30 €/min"] },
-          { "zellen": ["Tageslohn", "90 Stück × 6 min × 0,30 €", "162,00 €"], "detail": "Im reinen Zeitlohn (8 h × 18 €) wären es 144 €. Die Mehrleistung von 90 statt 80 Stück wird bezahlt." }
-        ] },
-        { "typ": "merke", "text": "**Zeitlohn**: Zeit zählt; **Akkord**: Menge zählt (Stück × Vorgabezeit × Minutenfaktor); **Prämie**: Grundlohn + Leistungsbonus — Mindestlohn als Untergrenze.", "karteikarte": "Wie unterscheiden sich Zeit-, Akkord- und Prämienlohn, und wie berechnest du Akkordlohn?" }
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Schritt",
+            "Rechnung",
+            "Ergebnis"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Akkordrichtsatz",
+                "Grundlohn 15 € + 20 % Zuschlag",
+                "18,00 €/h"
+              ]
+            },
+            {
+              "zellen": [
+                "Minutenfaktor",
+                "18 ÷ 60",
+                "0,30 €/min"
+              ]
+            },
+            {
+              "zellen": [
+                "Tageslohn",
+                "90 Stück × 6 min × 0,30 €",
+                "162,00 €"
+              ],
+              "detail": "Im reinen Zeitlohn (8 h × 18 €) wären es 144 €. Die Mehrleistung von 90 statt 80 Stück wird bezahlt."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Zeitlohn**: Zeit zählt; **Akkord**: Menge zählt (Stück × Vorgabezeit × Minutenfaktor); **Prämie**: Grundlohn + Leistungsbonus — Mindestlohn als Untergrenze.",
+          "karteikarte": "Wie unterscheiden sich Zeit-, Akkord- und Prämienlohn, und wie berechnest du Akkordlohn?"
+        }
       ]
     },
     {
@@ -117,15 +165,36 @@
         {
           "typ": "zuordnen",
           "lead": "Welcher Bestandteil des Bruttoentgelts liegt vor?",
-          "kategorien": ["Grundentgelt", "Zulage", "Sonderzahlung", "Sachbezug"],
+          "kategorien": [
+            "Grundentgelt",
+            "Zulage",
+            "Sonderzahlung",
+            "Sachbezug"
+          ],
           "aufgaben": [
-            { "text": "Monatsgehalt laut Arbeitsvertrag", "loesung": "Grundentgelt" },
-            { "text": "Zuschlag für Spätschichten", "loesung": "Zulage" },
-            { "text": "Weihnachtsgeld im November", "loesung": "Sonderzahlung" },
-            { "text": "Vom Arbeitgeber bezahltes Jobticket", "loesung": "Sachbezug" }
+            {
+              "text": "Monatsgehalt laut Arbeitsvertrag",
+              "loesung": "Grundentgelt"
+            },
+            {
+              "text": "Zuschlag für Spätschichten",
+              "loesung": "Zulage"
+            },
+            {
+              "text": "Weihnachtsgeld im November",
+              "loesung": "Sonderzahlung"
+            },
+            {
+              "text": "Vom Arbeitgeber bezahltes Jobticket",
+              "loesung": "Sachbezug"
+            }
           ]
         },
-        { "typ": "merke", "text": "**Brutto** = Grundentgelt + Zulagen + Überstunden + Sonderzahlungen + VL + Sachbezüge — Steuer- und Beitragspflicht **je Bestandteil** prüfen.", "karteikarte": "Woraus setzt sich das Bruttoentgelt zusammen?" }
+        {
+          "typ": "merke",
+          "text": "**Brutto** = Grundentgelt + Zulagen + Überstunden + Sonderzahlungen + VL + Sachbezüge — Steuer- und Beitragspflicht **je Bestandteil** prüfen.",
+          "karteikarte": "Woraus setzt sich das Bruttoentgelt zusammen?"
+        }
       ]
     },
     {
@@ -140,14 +209,109 @@
           "titel": "Vom Brutto zur Auszahlung",
           "lead": "Vereinfachte Übungsabrechnung mit vorgegebenen Werten.",
           "schritte": [
-            { "nr": "1", "titel": "Bruttoentgelt", "satz": "2.700 €", "text": "Grundentgelt 2.500 € + Spätschichtzulage 200 €." },
-            { "nr": "2", "titel": "− Steuern", "satz": "Lohnsteuer, ggf. Soli und Kirchensteuer", "text": "Hängt von Steuerklasse, Freibeträgen und Kirchenzugehörigkeit ab." },
-            { "nr": "3", "titel": "− Sozialversicherung", "satz": "Arbeitnehmeranteile", "text": "Kranken-, Pflege-, Renten- und Arbeitslosenversicherung." },
-            { "nr": "4", "titel": "= Auszahlung", "satz": "2.100 €", "text": "In der Übung sind 600 € Abzüge insgesamt vorgegeben, keine weiteren Bewegungen." }
+            {
+              "nr": "1",
+              "titel": "Bruttoentgelt",
+              "satz": "2.700 €",
+              "text": "Grundentgelt 2.500 € + Spätschichtzulage 200 €."
+            },
+            {
+              "nr": "2",
+              "titel": "− Steuern",
+              "satz": "Lohnsteuer, ggf. Soli und Kirchensteuer",
+              "text": "Hängt von Steuerklasse, Freibeträgen und Kirchenzugehörigkeit ab."
+            },
+            {
+              "nr": "3",
+              "titel": "− Sozialversicherung",
+              "satz": "Arbeitnehmeranteile",
+              "text": "Kranken-, Pflege-, Renten- und Arbeitslosenversicherung."
+            },
+            {
+              "nr": "4",
+              "titel": "= Auszahlung",
+              "satz": "2.100 €",
+              "text": "In der Übung sind 600 € Abzüge insgesamt vorgegeben, keine weiteren Bewegungen."
+            }
           ],
           "regel": "Aus einer Übungsrechnung keine allgemeine Abgabenquote ableiten — echte Abzüge brauchen persönliche und jahresbezogene Daten."
         },
-        { "typ": "merke", "text": "Brutto − Steuern − AN-Anteile SV = **Netto**; Netto − sonstige Abzüge = **Auszahlung**; Personalkosten = Brutto + **AG-Anteile**.", "karteikarte": "Wie kommst du vom Brutto zum Netto und zur Auszahlung, und was sind die Personalkosten des Arbeitgebers?" }
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Übungsabrechnung (alle Werte laut Fall, fiktiv)",
+            "€"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Grundentgelt",
+                "2.500,00"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Spätschichtzulage",
+                "200,00"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Sachbezug (laut Fall steuer- und beitragspflichtig)",
+                "50,00"
+              ]
+            },
+            {
+              "zellen": [
+                "= Gesamtbrutto (laut Fall zugleich Steuer- und SV-Brutto)",
+                "2.750,00"
+              ]
+            },
+            {
+              "zellen": [
+                "− Lohnsteuer (laut Fall, inkl. Zuschläge)",
+                "310,00"
+              ]
+            },
+            {
+              "zellen": [
+                "− Arbeitnehmeranteile SV (laut Fall 20 % des SV-Bruttos)",
+                "550,00"
+              ]
+            },
+            {
+              "zellen": [
+                "= Nettoentgelt",
+                "1.890,00"
+              ]
+            },
+            {
+              "zellen": [
+                "− Sachbezug (bereits als Sachleistung erhalten)",
+                "50,00"
+              ]
+            },
+            {
+              "zellen": [
+                "− Sparrate vermögenswirksame Leistungen",
+                "40,00"
+              ]
+            },
+            {
+              "zellen": [
+                "= Auszahlungsbetrag",
+                "1.800,00"
+              ],
+              "detail": "In echten Abrechnungen können Steuer-Brutto und SV-Brutto voneinander abweichen, etwa bei steuerfreien Zuschlägen; Steuer- und Beitragswerte hängen von persönlichen Merkmalen und den Jahreswerten ab."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Brutto − Steuern − AN-Anteile SV = **Netto**; Netto − sonstige Abzüge = **Auszahlung**; Personalkosten = Brutto + **AG-Anteile**.",
+          "karteikarte": "Wie kommst du vom Brutto zum Netto und zur Auszahlung, und was sind die Personalkosten des Arbeitgebers?"
+        }
       ]
     },
     {
@@ -157,15 +321,34 @@
       "inhalt": [
         {
           "typ": "check",
-          "frage": "Das Brutto einer Lagerkraft bleibt im Januar gleich, das Netto sinkt. Was ist eine plausible Ursache?",
+          "frage": "Das Brutto einer Lagerkraft bleibt im Januar gleich, die Abrechnung wurde geprüft und ist korrekt — trotzdem sinkt das Netto. Was ist eine plausible Ursache?",
           "optionen": [
-            { "text": "Der Arbeitgeber hat sich verrechnet", "richtig": false, "echo": "Möglich, aber nicht die erste Erklärung. Erst prüfen, ob sich jahresabhängige Werte geändert haben." },
-            { "text": "Ein Beitragssatz oder Zusatzbeitrag hat sich zum Jahreswechsel geändert", "richtig": true, "echo": "Richtig: Viele Werte ändern sich zum 1. Januar und wirken direkt auf das Netto." },
-            { "text": "Das Netto ist immer 78 % des Bruttos", "richtig": false, "echo": "Es gibt keine feste Netto-Quote; sie hängt von persönlichen Merkmalen und Jahreswerten ab." }
+            {
+              "text": "Ein Beitragssatz oder Zusatzbeitrag hat sich zum Jahreswechsel erhöht",
+              "richtig": true,
+              "echo": "Richtig: Viele Werte ändern sich zum 1. Januar und wirken direkt auf das Netto."
+            },
+            {
+              "text": "Das Bruttoentgelt wurde gekürzt",
+              "richtig": false,
+              "echo": "Laut Fall ist das Brutto unverändert."
+            },
+            {
+              "text": "Das Netto ist immer ein fester Prozentsatz des Bruttos",
+              "richtig": false,
+              "echo": "Es gibt keine feste Netto-Quote; sie hängt von persönlichen Merkmalen und Jahreswerten ab."
+            }
           ]
         },
-        { "typ": "achtung", "text": "Mindestlohn, Beitragssätze, Bemessungsgrenzen und Steuerwerte ändern sich regelmäßig. Für echte Abrechnungen immer die Werte des Abrechnungsjahres verwenden.", "pruefen": "Jahreswerte (Mindestlohn, SV-Beitragssätze, BBG, Minijob-Grenze) werden in diesem Kapitel bewusst nicht genannt; bei Ergänzung aktuelle Werte belegen." },
-        { "typ": "merke", "text": "Echte Abrechnung = **aktuelle Jahreswerte + persönliche Merkmale + geprüftes System**; Übungswerte immer als solche kennzeichnen.", "karteikarte": "Welche Daten braucht eine korrekte Entgeltabrechnung?" }
+        {
+          "typ": "achtung",
+          "text": "Mindestlohn, Beitragssätze, Bemessungsgrenzen und Steuerwerte ändern sich regelmäßig. Für echte Abrechnungen immer die Werte des Abrechnungsjahres verwenden."
+        },
+        {
+          "typ": "merke",
+          "text": "Echte Abrechnung = **aktuelle Jahreswerte + persönliche Merkmale + geprüftes System**; Übungswerte immer als solche kennzeichnen.",
+          "karteikarte": "Welche Daten braucht eine korrekte Entgeltabrechnung?"
+        }
       ]
     }
   ],
@@ -178,9 +361,21 @@
     "Jahreswerte und persönliche Merkmale immer prüfen."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "Grundentgelt 2.500 € und Zulage 200 €. Gesamtbrutto?", "loesung": "2.700 €; die Steuer- und Sozialversicherungspflicht der Bestandteile ist damit noch nicht geprüft." },
-    { "typ": "Rechnen", "frage": "Auf dieses Brutto sind insgesamt 600 € Abzüge vorgegeben, keine weiteren Bewegungen. Auszahlung?", "loesung": "2.100 €. Daraus keine reale Abgabenquote ableiten." },
-    { "typ": "Rechnen", "frage": "Akkordrichtsatz 18 €/h, Vorgabezeit 6 Minuten, 90 Stück. Tageslohn?", "loesung": "Minutenfaktor 0,30 €; 90 × 6 × 0,30 = 162 €." }
+    {
+      "typ": "Rechnen",
+      "frage": "Grundentgelt 2.500 € und Zulage 200 €. Gesamtbrutto?",
+      "loesung": "2.700 €; die Steuer- und Sozialversicherungspflicht der Bestandteile ist damit noch nicht geprüft."
+    },
+    {
+      "typ": "Rechnen",
+      "frage": "Auf dieses Brutto sind insgesamt 600 € Abzüge vorgegeben, keine weiteren Bewegungen. Auszahlung?",
+      "loesung": "2.100 €. Daraus keine reale Abgabenquote ableiten."
+    },
+    {
+      "typ": "Rechnen",
+      "frage": "Akkordrichtsatz 18 €/h, Vorgabezeit 6 Minuten, 90 Stück. Tageslohn?",
+      "loesung": "Minutenfaktor 0,30 €; 90 × 6 × 0,30 = 162 €."
+    }
   ],
   "pruefungstipp": "Bei Akkordaufgaben drei Zeilen schreiben: Akkordrichtsatz, Minutenfaktor, Lohn. So bekommst du Teilpunkte und siehst sofort, wenn eine Einheit nicht passt."
 }

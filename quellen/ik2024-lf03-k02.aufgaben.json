@@ -109,29 +109,34 @@
       "anzeige": [
         {
           "block": "text",
-          "inhalt": "Die MAKEL Studio GmbH liefert an eine Boutique mit der Vereinbarung „frei Haus“. Auf dem Transport wird ein Karton durch den Paketdienst beschädigt."
+          "inhalt": "Die MAKEL Studio GmbH versendet Ware an eine Boutique (beides Unternehmen). Vereinbart ist nur „frei Haus“, eine Regel zur Gefahrtragung gibt es nicht. Auf dem Transport wird ein Karton durch den Paketdienst beschädigt."
         }
       ],
       "eingabe": [
         {
           "block": "auswahl",
-          "frage": "Wer trägt nach der Vereinbarung Transportkosten und Transportrisiko?",
+          "frage": "Welche Aussage trifft zu?",
           "mehrfach": false,
           "optionen": [
             {
-              "text": "Die Boutique trägt beides.",
-              "richtig": false,
-              "echo": "Das entspräche eher ‚ab Werk‘. ‚Frei Haus‘ verschiebt Kosten und Risiko zum Verkäufer."
+              "text": "MAKEL trägt die Versandkosten; das Transportrisiko ist mit Übergabe an den Paketdienst auf die Boutique übergegangen.",
+              "richtig": true,
+              "echo": "Richtig. ‚Frei Haus‘ regelt die Kosten. Ohne weitere Abrede geht beim Versendungskauf unter Unternehmen die Gefahr mit Übergabe an den Paketdienst über (§ 447 BGB, § 269 Abs. 3 BGB)."
             },
             {
-              "text": "MAKEL trägt Kosten und Risiko bis zur Ablieferung bei der Boutique.",
-              "richtig": true,
-              "echo": "Richtig. Bei ‚frei Haus‘ liefert der Verkäufer auf eigene Kosten und eigenes Risiko bis zum Käufer."
+              "text": "MAKEL trägt Kosten und Risiko bis zur Ablieferung, weil ‚frei Haus‘ vereinbart ist.",
+              "richtig": false,
+              "echo": "Das gilt nur, wenn die Gefahrtragung bis zur Ablieferung ausdrücklich vereinbart ist. Die Kostenübernahme allein verschiebt das Risiko nicht."
+            },
+            {
+              "text": "Die Boutique trägt Versandkosten und Risiko.",
+              "richtig": false,
+              "echo": "Die Versandkosten trägt bei ‚frei Haus‘ MAKEL."
             },
             {
               "text": "Der Paketdienst trägt die Kosten, die Boutique das Risiko.",
               "richtig": false,
-              "echo": "Der Paketdienst ist Beauftragter. Die Klausel regelt das Verhältnis zwischen MAKEL und der Boutique."
+              "echo": "Der Paketdienst ist Beauftragter; die Klausel regelt das Verhältnis zwischen MAKEL und der Boutique. Ansprüche gegen den Paketdienst sind eine eigene Frage."
             }
           ]
         }
@@ -140,7 +145,7 @@
         "art": "automatisch",
         "punkte_gesamt": 2
       },
-      "erklaerung": "Lieferklauseln beantworten zwei Fragen: Wer zahlt den Transport, und wer trägt das Risiko?",
+      "erklaerung": "Lieferklauseln trennen: Wer zahlt den Transport (Kosten)? Wann geht das Risiko über (Gefahr)? Eine Kostenklausel wie ‚frei Haus‘ verschiebt die Gefahr nicht automatisch; dafür braucht es eine ausdrückliche Abrede.",
       "quelle": "ik2024-lf03-k02, Abschnitt a3"
     },
     {

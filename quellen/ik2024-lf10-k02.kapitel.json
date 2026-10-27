@@ -53,7 +53,7 @@
           "Anlagevermögen dient dauerhaft, Umlaufvermögen kurzfristig.",
           "Planmäßige Abschreibungen kennst du aus LF 5."
         ],
-        "erklaerung": "Beim Umlaufvermögen (Vorräte, Forderungen) gilt das strenge Niederstwertprinzip: Liegt der Stichtagswert unter den Anschaffungs- oder Herstellungskosten, muss auf den niedrigeren Wert abgeschrieben werden, auch wenn die Wertminderung vielleicht nur vorübergehend ist. Beim Anlagevermögen gilt das gemilderte Niederstwertprinzip: Abnutzbare Anlagen werden planmäßig abgeschrieben; eine außerplanmäßige Abschreibung ist Pflicht, wenn die Wertminderung voraussichtlich dauerhaft ist. Forderungen werden auf ihre Einbringlichkeit geprüft: Zweifelhafte Forderungen werden gesondert geführt und mit dem wahrscheinlich eingehenden Betrag angesetzt, uneinbringliche abgeschrieben. Entfällt der Grund einer früheren Abschreibung, ist grundsätzlich wieder zuzuschreiben, höchstens bis zu den ursprünglichen Kosten.",
+        "erklaerung": "Beim Umlaufvermögen (Vorräte, Forderungen) gilt das strenge Niederstwertprinzip: Liegt der Stichtagswert unter den Anschaffungs- oder Herstellungskosten, muss auf den niedrigeren Wert abgeschrieben werden, auch wenn die Wertminderung vielleicht nur vorübergehend ist. Beim Anlagevermögen gilt das gemilderte Niederstwertprinzip: Abnutzbare Anlagen werden planmäßig abgeschrieben; eine außerplanmäßige Abschreibung ist Pflicht, wenn die Wertminderung voraussichtlich dauerhaft ist. Bei Finanzanlagen darf zusätzlich auch bei nur vorübergehender Wertminderung abgeschrieben werden (Wahlrecht). Forderungen werden auf ihre Einbringlichkeit geprüft: Zweifelhafte Forderungen werden gesondert geführt und mit dem wahrscheinlich eingehenden Betrag angesetzt, uneinbringliche abgeschrieben. Entfällt der Grund einer früheren außerplanmäßigen Abschreibung, ist grundsätzlich wieder zuzuschreiben (§ 253 Abs. 5 HGB). Obergrenze beim Umlaufvermögen sind die Anschaffungs- oder Herstellungskosten; bei abnutzbarem Anlagevermögen die fortgeführten Kosten, also der Wert, der sich ohne die außerplanmäßige Abschreibung nach planmäßiger Abschreibung ergeben hätte. Beispiel: Maschine 10.000 €, fünf Jahre Nutzungsdauer; nach zwei Jahren liegt die Obergrenze bei 6.000 €, auch wenn der Wertverlust ganz entfällt. Ein abgeschriebener entgeltlich erworbener Geschäfts- oder Firmenwert darf nicht wieder zugeschrieben werden.",
         "beispiele": [
           "Rohlinge AK 1.000 €, Stichtagswert 800 €: Umlaufvermögen — Pflicht zur Abschreibung auf 800 €.",
           "Stickmaschine nach Wasserschaden dauerhaft nur noch halb so viel wert: außerplanmäßige Abschreibung."
@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Bewertungsgrundsätze auf eindeutige Fälle beziehen", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Anschaffungs- und Herstellungskosten unterscheiden", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Anlage- und Umlaufvermögen sowie Forderungen bewerten", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Bilanzansatz und Verkaufspreis auseinanderhalten", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Bewertungsgrundsätze auf eindeutige Fälle beziehen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Anschaffungs- und Herstellungskosten unterscheiden",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Anlage- und Umlaufvermögen sowie Forderungen bewerten",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Bilanzansatz und Verkaufspreis auseinanderhalten",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,12 +117,43 @@
       "id": "a1",
       "titel": "Vorsicht, Realisation und Imparität",
       "inhalt": [
-        { "typ": "absatz", "text": "Die Bewertungsgrundsätze stehen in {{par:hgb-252|§ 252 HGB}}, die Obergrenze in {{par:hgb-253|§ 253 HGB}}. ==Gewinne erst bei Realisation, Verluste schon bei Absehbarkeit.==" },
-        { "typ": "tabelle", "mono": true, "spalten": ["Fall", "AK", "Stichtagswert", "Ansatz"], "zeilen": [
-          { "zellen": ["Baumwolle teurer geworden", "1.000 €", "1.200 €", "1.000 €"] },
-          { "zellen": ["Trendfarbe unverkäuflicher", "1.000 €", "800 €", "800 €"] }
-        ] },
-        { "typ": "merke", "text": "Vorsicht: **Gewinne erst bei Realisation**, **Verluste schon bei Absehbarkeit**; Obergrenze sind die Anschaffungs- oder Herstellungskosten.", "karteikarte": "Was besagen Realisations- und Imparitätsprinzip?" }
+        {
+          "typ": "absatz",
+          "text": "Die Bewertungsgrundsätze stehen in {{par:hgb-252|§ 252 HGB}}, die Obergrenze in {{par:hgb-253|§ 253 HGB}}. ==Gewinne erst bei Realisation, Verluste schon bei Absehbarkeit.=="
+        },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Fall",
+            "AK",
+            "Stichtagswert",
+            "Ansatz"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Baumwolle teurer geworden",
+                "1.000 €",
+                "1.200 €",
+                "1.000 €"
+              ]
+            },
+            {
+              "zellen": [
+                "Trendfarbe unverkäuflicher",
+                "1.000 €",
+                "800 €",
+                "800 €"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Vorsicht: **Gewinne erst bei Realisation**, **Verluste schon bei Absehbarkeit**; Obergrenze sind die Anschaffungs- oder Herstellungskosten.",
+          "karteikarte": "Was besagen Realisations- und Imparitätsprinzip?"
+        }
       ]
     },
     {
@@ -114,15 +161,52 @@
       "id": "a2",
       "titel": "Anschaffungs- und Herstellungskosten",
       "inhalt": [
-        { "typ": "absatz", "text": "{{par:hgb-255|§ 255 HGB}} regelt beide Wertmaßstäbe." },
-        { "typ": "tabelle", "spalten": ["Herstellungskosten-Bestandteil", "Behandlung"], "zeilen": [
-          { "zellen": ["Material-, Fertigungs-, Sondereinzelkosten der Fertigung", "Pflicht"] },
-          { "zellen": ["Angemessene Material- und Fertigungsgemeinkosten, Werteverzehr des Anlagevermögens", "Pflicht"] },
-          { "zellen": ["Allgemeine Verwaltungskosten, bestimmte Sozialaufwendungen", "Wahlrecht"] },
-          { "zellen": ["Vertriebskosten, Forschungskosten", "Verbot"] }
-        ] },
-        { "typ": "achtung", "text": "Herstellungskosten ≠ Selbstkosten. Die Selbstkosten der Kostenrechnung enthalten Vertriebskosten — die sind in der Bilanz verboten." },
-        { "typ": "merke", "text": "**Anschaffungskosten** für Gekauftes, **Herstellungskosten** für Selbstgemachtes — ohne Vertriebs- und Forschungskosten.", "karteikarte": "Was gehört zu den handelsrechtlichen Herstellungskosten und was nicht?" }
+        {
+          "typ": "absatz",
+          "text": "{{par:hgb-255|§ 255 HGB}} regelt beide Wertmaßstäbe."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Herstellungskosten-Bestandteil",
+            "Behandlung"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Material-, Fertigungs-, Sondereinzelkosten der Fertigung",
+                "Pflicht"
+              ]
+            },
+            {
+              "zellen": [
+                "Angemessene Material- und Fertigungsgemeinkosten, Werteverzehr des Anlagevermögens",
+                "Pflicht"
+              ]
+            },
+            {
+              "zellen": [
+                "Allgemeine Verwaltungskosten, bestimmte Sozialaufwendungen",
+                "Wahlrecht"
+              ]
+            },
+            {
+              "zellen": [
+                "Vertriebskosten, Forschungskosten",
+                "Verbot"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Herstellungskosten ≠ Selbstkosten. Die Selbstkosten der Kostenrechnung enthalten Vertriebskosten — die sind in der Bilanz verboten."
+        },
+        {
+          "typ": "merke",
+          "text": "**Anschaffungskosten** für Gekauftes, **Herstellungskosten** für Selbstgemachtes — ohne Vertriebs- und Forschungskosten.",
+          "karteikarte": "Was gehört zu den handelsrechtlichen Herstellungskosten und was nicht?"
+        }
       ]
     },
     {
@@ -130,21 +214,59 @@
       "id": "a3",
       "titel": "Anlage- und Umlaufvermögen",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Vermögen", "Regel bei niedrigerem Stichtagswert"], "zeilen": [
-          { "zellen": ["Umlaufvermögen (Vorräte, Forderungen)", "Abschreibung Pflicht (strenges Niederstwertprinzip)"] },
-          { "zellen": ["Abnutzbares Anlagevermögen", "planmäßig; außerplanmäßig Pflicht bei dauerhafter Minderung"] },
-          { "zellen": ["Forderungen", "zweifelhaft: wahrscheinlicher Eingang; uneinbringlich: abschreiben"] }
-        ] },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Vermögen",
+            "Regel bei niedrigerem Stichtagswert"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Umlaufvermögen (Vorräte, Forderungen)",
+                "Abschreibung Pflicht (strenges Niederstwertprinzip)"
+              ]
+            },
+            {
+              "zellen": [
+                "Abnutzbares Anlagevermögen",
+                "planmäßig; außerplanmäßig Pflicht bei dauerhafter Minderung"
+              ]
+            },
+            {
+              "zellen": [
+                "Forderungen",
+                "zweifelhaft: wahrscheinlicher Eingang; uneinbringlich: abschreiben"
+              ]
+            }
+          ]
+        },
         {
           "typ": "check",
           "frage": "Rohlinge (Umlaufvermögen) wurden für 1.000 € gekauft. Der maßgebliche Stichtagswert beträgt 800 €; die Voraussetzungen sind gegeben. Welcher Wert wird angesetzt?",
           "optionen": [
-            { "text": "1.000 €, weil die Anschaffungskosten gelten", "richtig": false, "echo": "Die Anschaffungskosten sind die Obergrenze. Beim Umlaufvermögen muss auf den niedrigeren Wert abgeschrieben werden." },
-            { "text": "800 €, Wertminderung 200 €", "richtig": true, "echo": "Richtig — strenges Niederstwertprinzip beim Umlaufvermögen." },
-            { "text": "900 €, der Mittelwert", "richtig": false, "echo": "Einen Mittelwert sieht das HGB nicht vor." }
+            {
+              "text": "1.000 €, weil die Anschaffungskosten gelten",
+              "richtig": false,
+              "echo": "Die Anschaffungskosten sind die Obergrenze. Beim Umlaufvermögen muss auf den niedrigeren Wert abgeschrieben werden."
+            },
+            {
+              "text": "800 €, Wertminderung 200 €",
+              "richtig": true,
+              "echo": "Richtig — strenges Niederstwertprinzip beim Umlaufvermögen."
+            },
+            {
+              "text": "900 €, der Mittelwert",
+              "richtig": false,
+              "echo": "Einen Mittelwert sieht das HGB nicht vor."
+            }
           ]
         },
-        { "typ": "merke", "text": "**Umlaufvermögen**: strenges Niederstwertprinzip; **Anlagevermögen**: planmäßig plus außerplanmäßig bei dauerhafter Minderung; **Forderungen** nach Einbringlichkeit.", "karteikarte": "Wie werden Anlage- und Umlaufvermögen bei gesunkenem Stichtagswert bewertet?" }
+        {
+          "typ": "merke",
+          "text": "**Umlaufvermögen**: strenges Niederstwertprinzip; **Anlagevermögen**: planmäßig plus außerplanmäßig bei dauerhafter Minderung; **Forderungen** nach Einbringlichkeit.",
+          "karteikarte": "Wie werden Anlage- und Umlaufvermögen bei gesunkenem Stichtagswert bewertet?"
+        }
       ]
     },
     {
@@ -152,12 +274,43 @@
       "id": "a4",
       "titel": "Fallbewertung und Informationsgrenzen",
       "inhalt": [
-        { "typ": "tabelle", "mono": true, "spalten": ["300 fertige Hoodies", "je Stück", "gesamt"], "zeilen": [
-          { "zellen": ["Verkaufspreis", "44 €", "13.200 €"] },
-          { "zellen": ["Herstellungskosten (Bilanzansatz)", "26 €", "7.800 €"] },
-          { "zellen": ["Noch nicht realisiert", "18 €", "5.400 €"] }
-        ] },
-        { "typ": "merke", "text": "**Bilanzansatz ist nicht Verkaufspreis**; bewertet wird mit Belegen, stetig und dokumentiert.", "karteikarte": "Warum werden fertige Erzeugnisse nicht zum Verkaufspreis bilanziert?" }
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "300 fertige Hoodies",
+            "je Stück",
+            "gesamt"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Verkaufspreis",
+                "44 €",
+                "13.200 €"
+              ]
+            },
+            {
+              "zellen": [
+                "Herstellungskosten (Bilanzansatz)",
+                "26 €",
+                "7.800 €"
+              ]
+            },
+            {
+              "zellen": [
+                "Noch nicht realisiert",
+                "18 €",
+                "5.400 €"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Bilanzansatz ist nicht Verkaufspreis**; bewertet wird mit Belegen, stetig und dokumentiert.",
+          "karteikarte": "Warum werden fertige Erzeugnisse nicht zum Verkaufspreis bilanziert?"
+        }
       ]
     }
   ],
@@ -170,9 +323,21 @@
     "Bilanzansatz ≠ Verkaufspreis; Bewertung belegt und dokumentiert."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "Vorratsfall: Anschaffungskosten 1.000 €, maßgeblicher niedrigerer Stichtagswert 800 €, Voraussetzungen gegeben. Ansatz?", "loesung": "800 €; Wertminderung 200 €. Nicht ohne Prüfung auf beliebige Anlagegüter übertragen." },
-    { "typ": "Wissen", "frage": "Warum darf ein fertiger Hoodie im Vorratsbestand nicht einfach zum Verkaufspreis angesetzt werden?", "loesung": "Er wird mit den Herstellungskosten bewertet; die Differenz zum Verkaufspreis ist noch nicht realisierter Gewinn (Realisationsprinzip). Vertriebskosten gehören nicht in die Herstellungskosten." },
-    { "typ": "Wissen", "frage": "Welche Kosten dürfen nicht in die handelsrechtlichen Herstellungskosten?", "loesung": "Vertriebskosten und Forschungskosten." }
+    {
+      "typ": "Rechnen",
+      "frage": "Vorratsfall: Anschaffungskosten 1.000 €, maßgeblicher niedrigerer Stichtagswert 800 €, Voraussetzungen gegeben. Ansatz?",
+      "loesung": "800 €; Wertminderung 200 €. Nicht ohne Prüfung auf beliebige Anlagegüter übertragen."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Warum darf ein fertiger Hoodie im Vorratsbestand nicht einfach zum Verkaufspreis angesetzt werden?",
+      "loesung": "Er wird mit den Herstellungskosten bewertet; die Differenz zum Verkaufspreis ist noch nicht realisierter Gewinn (Realisationsprinzip). Vertriebskosten gehören nicht in die Herstellungskosten."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Welche Kosten dürfen nicht in die handelsrechtlichen Herstellungskosten?",
+      "loesung": "Vertriebskosten und Forschungskosten."
+    }
   ],
   "pruefungstipp": "Bei Bewertungsaufgaben zuerst klären: Anlage- oder Umlaufvermögen? Gekauft oder selbst hergestellt? Dann den passenden Grundsatz nennen und den Wert berechnen."
 }

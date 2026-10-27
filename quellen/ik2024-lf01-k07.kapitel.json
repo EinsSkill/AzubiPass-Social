@@ -33,19 +33,19 @@
           "Beschäftigte können über gewählte Vertretungen mitreden.",
           "Das Betriebsverfassungsgesetz (BetrVG) regelt Betriebsrat und Jugend- und Auszubildendenvertretung."
         ],
-        "erklaerung": "Ein Betriebsrat kann in Betrieben mit in der Regel mindestens fünf ständigen wahlberechtigten Arbeitnehmern gewählt werden. Eine Jugend- und Auszubildendenvertretung (JAV) wird nach § 60 BetrVG gewählt, wenn es einen Betriebsrat gibt und in der Regel mindestens fünf Beschäftigte unter 18 Jahren oder Auszubildende unter 25 Jahren tätig sind. Die JAV vertritt die besonderen Interessen junger Beschäftigter, handelt aber über den Betriebsrat. Die Beteiligungsrechte sind abgestuft: Information, Beratung beziehungsweise Anhörung und — am stärksten — Mitbestimmung, bei der der Arbeitgeber ohne Zustimmung nicht handeln darf.",
+        "erklaerung": "Ein Betriebsrat kann in Betrieben mit in der Regel mindestens fünf ständigen wahlberechtigten Arbeitnehmern, von denen drei wählbar sind, gewählt werden (§ 1 BetrVG). Eine Jugend- und Auszubildendenvertretung (JAV) wird nach § 60 BetrVG gewählt, wenn es einen Betriebsrat gibt und in der Regel mindestens fünf Beschäftigte unter 18 Jahren oder Auszubildende (gleich welchen Alters) tätig sind. Die JAV vertritt die besonderen Interessen junger Beschäftigter, handelt aber über den Betriebsrat. Die Beteiligungsrechte sind abgestuft: Information, Beratung beziehungsweise Anhörung und — am stärksten — Mitbestimmung, bei der der Arbeitgeber ohne Zustimmung nicht handeln darf.",
         "beispiele": [
-          "Ein Betrieb mit Betriebsrat, sechs Auszubildenden unter 25 und zwei Jugendlichen: Die Voraussetzungen für eine JAV liegen vor.",
+          "Ein Betrieb mit Betriebsrat, sechs Auszubildenden und zwei Jugendlichen: Die Voraussetzungen für eine JAV liegen vor.",
           "Bei Fragen der betrieblichen Ordnung und der Arbeitszeitverteilung hat der Betriebsrat ein Mitbestimmungsrecht."
         ],
-        "fallbeispiel": "Bei MAKEL arbeiten 92 Beschäftigte, davon drei Auszubildende. Angenommen, MAKEL hat einen Betriebsrat: Eine JAV wird trotzdem nicht gewählt, weil weniger als fünf Beschäftigte unter 18 Jahren oder Auszubildende unter 25 Jahren im Betrieb sind. Die drei Auszubildenden wenden sich mit ihren Anliegen direkt an den Betriebsrat — oder an Sandra Koslowski als Ausbildungsbegleitung.",
+        "fallbeispiel": "Bei MAKEL arbeiten 92 Beschäftigte, davon drei Auszubildende. Angenommen, MAKEL hat einen Betriebsrat: Eine JAV wird trotzdem nicht gewählt, weil weniger als fünf Beschäftigte unter 18 Jahren oder Auszubildende (gleich welchen Alters) im Betrieb sind. Die drei Auszubildenden wenden sich mit ihren Anliegen direkt an den Betriebsrat — oder an Sandra Koslowski als Ausbildungsbegleitung.",
         "typische_fehler": "Man glaubt, jeder Betrieb mit Auszubildenden habe automatisch eine JAV. Es braucht einen Betriebsrat und die Mindestzahl junger Beschäftigter.",
         "verstaendnisfragen": [
-          "Unter welchen Voraussetzungen wird eine JAV gewählt? Es besteht ein Betriebsrat, und in der Regel sind mindestens fünf Beschäftigte unter 18 Jahren oder Auszubildende unter 25 Jahren tätig.",
+          "Unter welchen Voraussetzungen wird eine JAV gewählt? Es besteht ein Betriebsrat, und in der Regel sind mindestens fünf Beschäftigte unter 18 Jahren oder Auszubildende (gleich welchen Alters) tätig.",
           "Was bedeutet Mitbestimmung? Der Arbeitgeber darf eine Maßnahme nur mit Zustimmung des Betriebsrats durchführen."
         ],
         "pruefungsbezug": "In JAV-Fällen beide Voraussetzungen prüfen: Gibt es einen Betriebsrat? Ist die Mindestzahl erreicht?",
-        "merksatz": "Eine JAV setzt einen Betriebsrat und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende unter 25 voraus; sie wirkt über den Betriebsrat."
+        "merksatz": "Eine JAV setzt einen Betriebsrat und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze) voraus; sie wirkt über den Betriebsrat."
       },
       {
         "abschnitt": "a3",
@@ -145,16 +145,16 @@
         },
         {
           "typ": "check",
-          "frage": "MAKEL hat 92 Beschäftigte, darunter drei Auszubildende unter 25 Jahren und keine Jugendlichen. Angenommen, es gibt einen Betriebsrat — wird eine JAV gewählt?",
+          "frage": "MAKEL hat 92 Beschäftigte, darunter drei Auszubildende und keine weiteren Jugendlichen. Angenommen, es gibt einen Betriebsrat — wird eine JAV gewählt?",
           "optionen": [
-            { "text": "Ja, weil es Auszubildende gibt.", "richtig": false, "echo": "Auszubildende allein reichen nicht. Es müssen in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende unter 25 sein." },
+            { "text": "Ja, weil es Auszubildende gibt.", "richtig": false, "echo": "Auszubildende allein reichen nicht. Es müssen in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze) sein." },
             { "text": "Nein, weil die Mindestzahl von fünf nicht erreicht ist.", "richtig": true, "echo": "Richtig. Drei Auszubildende erfüllen die Voraussetzung von § 60 BetrVG nicht. Ansprechpartner bleibt der Betriebsrat." },
             { "text": "Ja, weil der Betrieb mehr als 50 Beschäftigte hat.", "richtig": false, "echo": "Die Gesamtzahl der Beschäftigten ist für die JAV nicht entscheidend — es zählt die Zahl der jungen Beschäftigten und Auszubildenden." }
           ]
         },
         {
           "typ": "merke",
-          "text": "Eine JAV setzt einen **Betriebsrat** und in der Regel mindestens **fünf** Beschäftigte unter 18 oder Auszubildende unter 25 voraus; sie wirkt über den Betriebsrat.",
+          "text": "Eine JAV setzt einen **Betriebsrat** und in der Regel mindestens **fünf** Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze) voraus; sie wirkt über den Betriebsrat.",
           "karteikarte": "Unter welchen Voraussetzungen wird eine Jugend- und Auszubildendenvertretung gewählt?"
         }
       ]
@@ -226,7 +226,7 @@
   "zusammenfassung": [
     "Der Arbeitgeber beurteilt Gefährdungen nach § 5 ArbSchG; Beschäftigte melden Mängel und befolgen Schutzvorgaben.",
     "Ergonomie passt die Arbeit an den Menschen an.",
-    "JAV: Betriebsrat vorhanden und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende unter 25.",
+    "JAV: Betriebsrat vorhanden und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze).",
     "Beteiligungsrechte: Information, Beratung/Anhörung, Mitbestimmung.",
     "Eisenhower: wichtig und dringend sofort, wichtig und nicht dringend terminieren.",
     "Feedback beschreibt Verhalten und Wirkung, nicht die Person.",
@@ -242,7 +242,7 @@
     {
       "typ": "Wissen",
       "frage": "Nenne die Voraussetzungen für die Wahl einer Jugend- und Auszubildendenvertretung.",
-      "loesung": "Im Betrieb besteht ein Betriebsrat, und es sind in der Regel mindestens fünf Arbeitnehmer beschäftigt, die das 18. Lebensjahr noch nicht vollendet haben oder die zu ihrer Berufsausbildung beschäftigt sind und das 25. Lebensjahr noch nicht vollendet haben (§ 60 BetrVG)."
+      "loesung": "Im Betrieb besteht ein Betriebsrat, und es sind in der Regel mindestens fünf Arbeitnehmer beschäftigt, die das 18. Lebensjahr noch nicht vollendet haben oder die zu ihrer Berufsausbildung beschäftigt sind — für Auszubildende gibt es seit 2021 keine Altersgrenze mehr (§ 60 BetrVG)."
     },
     {
       "typ": "Anwendung",
@@ -251,5 +251,5 @@
     }
   ],
 
-  "pruefungstipp": "JAV-Fälle sind Zahlenfälle: Betriebsrat ja oder nein, mindestens fünf junge Beschäftigte oder Auszubildende unter 25 ja oder nein. Bei Präsentationsfällen bringt die Begründung die Punkte: Zielgruppe, Erforderlichkeit der Daten, Nutzungsrechte."
+  "pruefungstipp": "JAV-Fälle sind Zahlenfälle: Betriebsrat ja oder nein, mindestens fünf junge Beschäftigte oder Auszubildende (jedes Alters) ja oder nein. Bei Präsentationsfällen bringt die Begründung die Punkte: Zielgruppe, Erforderlichkeit der Daten, Nutzungsrechte."
 }

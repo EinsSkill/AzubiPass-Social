@@ -2,7 +2,6 @@
   "lernfeld": "ik2024-lf08",
   "kapitel": "k02",
   "verweise_im_klausurmodus": "ausblenden",
-
   "bausteine": [
     {
       "id": "ik2024-lf08-k02-01",
@@ -14,26 +13,46 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Bezugsobjekt ist ein einzelner bestickter Hoodie der MAKEL Studio GmbH." }
+        {
+          "block": "text",
+          "inhalt": "Bezugsobjekt ist ein einzelner bestickter Hoodie der MAKEL Studio GmbH."
+        }
       ],
       "eingabe": [
         {
           "block": "zuordnung",
           "lead": "Einzel- oder Gemeinkosten?",
-          "ziele": ["Einzelkosten", "Gemeinkosten"],
+          "ziele": [
+            "Einzelkosten",
+            "Gemeinkosten"
+          ],
           "elemente": [
-            { "text": "Hoodie-Rohling", "loesung": "Einzelkosten" },
-            { "text": "Gehalt der Produktionsleitung", "loesung": "Gemeinkosten" },
-            { "text": "Stickgarn laut Stückliste", "loesung": "Einzelkosten" },
-            { "text": "Versicherung der Veredelungshalle", "loesung": "Gemeinkosten" }
+            {
+              "text": "Hoodie-Rohling",
+              "loesung": "Einzelkosten"
+            },
+            {
+              "text": "Gehalt der Produktionsleitung",
+              "loesung": "Gemeinkosten"
+            },
+            {
+              "text": "Stickgarn laut Stückliste",
+              "loesung": "Einzelkosten"
+            },
+            {
+              "text": "Versicherung der Veredelungshalle",
+              "loesung": "Gemeinkosten"
+            }
           ]
         }
       ],
-      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
       "erklaerung": "Was sich dem Hoodie direkt und belegbar zuordnen lässt, sind Einzelkosten; gemeinsam entstehende Kosten sind Gemeinkosten.",
       "quelle": "ik2024-lf08-k02, Abschnitt a2"
     },
-
     {
       "id": "ik2024-lf08-k02-02",
       "operator": "Berechnen Sie",
@@ -43,26 +62,60 @@
       "schwierigkeit": 2,
       "passt_zu": [],
       "variablen": {
-        "fix": { "von": 6000, "bis": 12000, "schritt": 1000 },
-        "var": { "von": 3, "bis": 8, "schritt": 1 },
-        "menge": { "von": 1000, "bis": 3000, "schritt": 500 }
+        "fix": {
+          "von": 6000,
+          "bis": 12000,
+          "schritt": 1000
+        },
+        "var": {
+          "von": 3,
+          "bis": 8,
+          "schritt": 1
+        },
+        "menge": {
+          "von": 1000,
+          "bis": 3000,
+          "schritt": 500
+        }
       },
       "abgeleitet": {
         "gesamt": "fix + var * menge",
-        "stueck": "runde((fix + var * menge) / menge, 2)"
+        "stueck": "runde(gesamt / menge, 2)"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Für eine Shirt-Linie der MAKEL Studio GmbH fallen im Monat {fix} € fixe Kosten an; die variablen Kosten betragen {var} € je Stück. Produziert werden {menge} Stück." }
+        {
+          "block": "text",
+          "inhalt": "Für eine Shirt-Linie der MAKEL Studio GmbH fallen im Monat {fix} € fixe Kosten an; die variablen Kosten betragen {var} € je Stück. Produziert werden {menge} Stück."
+        }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Gesamtkosten", "einheit": "€", "loesung": "gesamt", "toleranz": 0.01, "punkte": 2 },
-        { "block": "zahl", "label": "Stückkosten (zwei Nachkommastellen)", "einheit": "€", "loesung": "stueck", "toleranz": 0.01, "punkte": 2 }
+        {
+          "block": "zahl",
+          "label": "Gesamtkosten",
+          "einheit": "€",
+          "loesung": "gesamt",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Stückkosten (zwei Nachkommastellen)",
+          "einheit": "€",
+          "loesung": "stueck",
+          "toleranz": 0.01,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "gesamt"
+          ]
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
       "erklaerung": "Gesamtkosten = Fixkosten + variable Stückkosten × Menge; Stückkosten = Gesamtkosten ÷ Menge.",
       "quelle": "ik2024-lf08-k02, Abschnitt a3"
     },
-
     {
       "id": "ik2024-lf08-k02-03",
       "operator": "Beurteilen Sie",
@@ -73,19 +126,38 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Luca Petrelli, Auszubildender der MAKEL Studio GmbH, schreibt in einer Präsentation: „Einzelkosten sind immer variabel, Gemeinkosten sind immer fix. Wenn wir die Menge verdoppeln, verdoppeln sich also genau die Einzelkosten.“" }
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli, Auszubildender der MAKEL Studio GmbH, schreibt in einer Präsentation: „Einzelkosten sind immer variabel, Gemeinkosten sind immer fix. Wenn wir die Menge verdoppeln, verdoppeln sich also genau die Einzelkosten.“"
+        }
       ],
       "eingabe": [
-        { "block": "textfeld", "frage": "Beurteilen Sie Lucas Aussage mit je einem Gegenbeispiel aus der Veredelung.", "zeilen": 6 }
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Aussage mit je einem Gegenbeispiel aus der Veredelung.",
+          "zeilen": 6
+        }
       ],
       "bewertung": {
         "art": "selbstbewertung",
         "musterloesung": "Die Aussage ist zu pauschal. Einzel- und Gemeinkosten unterscheiden sich nach der Zurechenbarkeit zum Produkt, fixe und variable Kosten nach der Abhängigkeit von der Menge — das sind verschiedene Kriterien. Gegenbeispiel 1: Maschinenstrom steigt mit der gestickten Menge (variabel), wird aber ohne Einzelzähler über einen Schlüssel verteilt (Gemeinkosten). Gegenbeispiel 2: Die Leasingrate einer Maschine, die ausschließlich für ein Produkt läuft, ist diesem Produkt zurechenbar, bleibt aber monatlich gleich (fix). Bei einer Verdopplung der Menge verdoppeln sich deshalb die variablen Kosten — nicht automatisch die Einzelkosten.",
         "raster": [
-          { "kriterium": "Unterschiedliche Kriterien benannt", "punkte": 1 },
-          { "kriterium": "Gegenbeispiel variable Gemeinkosten", "punkte": 1 },
-          { "kriterium": "Gegenbeispiel fixe Einzelkosten", "punkte": 1 },
-          { "kriterium": "Folgerung für die Mengenverdopplung richtiggestellt", "punkte": 1 }
+          {
+            "kriterium": "Unterschiedliche Kriterien benannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Gegenbeispiel variable Gemeinkosten",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Gegenbeispiel fixe Einzelkosten",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folgerung für die Mengenverdopplung richtiggestellt",
+            "punkte": 1
+          }
         ]
       },
       "erklaerung": "Zurechenbarkeit und Mengenabhängigkeit sind getrennte Einteilungen; Entscheidungen brauchen die jeweils passende.",

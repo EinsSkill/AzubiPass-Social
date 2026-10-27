@@ -33,19 +33,19 @@
           "Ein Kredit ist ein Vertrag mit Rückzahlungspflicht (§ 488 BGB).",
           "Bei Zahlungsausfall will der Gläubiger auf etwas zugreifen können."
         ],
-        "erklaerung": "Kreditsicherheiten geben der Bank einen zusätzlichen Zugriff, falls der Kreditnehmer nicht zahlt. Bei Personalsicherheiten haftet eine weitere Person. Die wichtigste ist die Bürgschaft (§ 765 BGB): Der Bürge verpflichtet sich, für die Schuld einzustehen. Bei der Ausfallbürgschaft muss der Gläubiger zuerst erfolglos gegen den Schuldner vollstrecken (Einrede der Vorausklage, § 771 BGB). Bei der selbstschuldnerischen Bürgschaft ist darauf verzichtet; der Gläubiger kann sich sofort an den Bürgen wenden. Für Kaufleute ist eine Bürgschaft, die für sie ein Handelsgeschäft ist, formfrei möglich (§ 350 HGB); sonst ist Schriftform nötig (§ 766 BGB).",
+        "erklaerung": "Kreditsicherheiten geben der Bank einen zusätzlichen Zugriff, falls der Kreditnehmer nicht zahlt. Bei Personalsicherheiten haftet eine weitere Person. Die wichtigste ist die Bürgschaft (§ 765 BGB): Der Bürge verpflichtet sich, für die Schuld einzustehen. Bei der gewöhnlichen Bürgschaft kann der Bürge die Zahlung verweigern, solange der Gläubiger nicht erfolglos gegen den Schuldner vollstreckt hat (Einrede der Vorausklage, § 771 BGB). Bei der selbstschuldnerischen Bürgschaft ist diese Einrede ausgeschlossen; der Gläubiger kann sich sofort an den Bürgen wenden. Ist die Bürgschaft für den Bürgen ein Handelsgeschäft, entfällt die Einrede kraft Gesetzes (§ 349 HGB), und die Schriftform ist nicht nötig (§ 350 HGB); sonst braucht die Bürgschaftserklärung die Schriftform (§ 766 BGB). Eine Gesellschafterin wie Yuki Bergmann, die privat für die GmbH bürgt, ist dabei selbst nicht Kauffrau — für sie gelten die Regeln des BGB, die Bank verlangt deshalb ausdrücklich den Verzicht auf die Einrede. Davon zu unterscheiden ist die Ausfallbürgschaft: eine vertragliche Sonderform, bei der der Bürge nur für einen nachgewiesenen endgültigen Ausfall des Gläubigers haftet.",
         "beispiele": [
           "Yuki Bergmann bürgt selbstschuldnerisch für das Darlehen der MAKEL Studio GmbH.",
           "Eine Ausfallbürgschaft greift erst nach erfolgloser Vollstreckung beim Schuldner."
         ],
         "fallbeispiel": "Die Bank verlangt für das Darlehen über 50.000 € eine selbstschuldnerische Bürgschaft von Yuki Bergmann. Tobias Renner erklärt Luca: Damit haftet Yuki im Ernstfall mit ihrem privaten Vermögen — obwohl sie als Gesellschafterin der GmbH sonst nur mit ihrer Einlage haftet.",
-        "typische_fehler": "Ausfallbürgschaft und selbstschuldnerische Bürgschaft verwechseln.",
+        "typische_fehler": "Gewöhnliche Bürgschaft, selbstschuldnerische Bürgschaft und Ausfallbürgschaft verwechseln.",
         "verstaendnisfragen": [
-          "Was unterscheidet die selbstschuldnerische Bürgschaft? Der Bürge verzichtet auf die Einrede der Vorausklage; der Gläubiger kann sofort auf ihn zugreifen.",
+          "Was unterscheidet die selbstschuldnerische von der gewöhnlichen Bürgschaft? Bei der selbstschuldnerischen ist die Einrede der Vorausklage ausgeschlossen; der Gläubiger kann sofort auf den Bürgen zugreifen.",
           "Was ist eine Personalsicherheit? Eine weitere Person haftet neben dem Schuldner."
         ],
         "pruefungsbezug": "Bürgschaftsarten unterscheiden und ihre Folgen erklären.",
-        "merksatz": "Bürgschaft = Personalsicherheit; selbstschuldnerisch = ohne Einrede der Vorausklage, Gläubiger greift sofort zu."
+        "merksatz": "Bürgschaft = Personalsicherheit; gewöhnlich = mit Einrede der Vorausklage; selbstschuldnerisch = ohne Einrede, Gläubiger greift sofort zu; Ausfallbürgschaft = Haftung erst für den nachgewiesenen Ausfall."
       },
       {
         "abschnitt": "a3",
@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Unterlagen für die Kreditwürdigkeitsprüfung zusammenstellen", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Bürgschaftsarten unterscheiden", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Realsicherheiten unterscheiden und auswählen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Haftung nach Rechtsform in die Finanzierungsentscheidung einbeziehen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Unterlagen für die Kreditwürdigkeitsprüfung zusammenstellen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Bürgschaftsarten unterscheiden",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Realsicherheiten unterscheiden und auswählen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Haftung nach Rechtsform in die Finanzierungsentscheidung einbeziehen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,13 +117,42 @@
       "id": "a1",
       "titel": "Kreditwürdigkeit nachweisen",
       "inhalt": [
-        { "typ": "absatz", "text": "Die Bank fragt zweierlei: Ist die Geschäftsführung verlässlich und fähig? Kann das Unternehmen Zins und Tilgung tragen?" },
-        { "typ": "tabelle", "spalten": ["Prüfbereich", "Unterlagen bei MAKEL"], "zeilen": [
-          { "zellen": ["Persönlich", "Lebenslauf und Erfahrung der Geschäftsführung, bisheriges Verhalten als Kreditnehmerin"] },
-          { "zellen": ["Wirtschaftlich", "Jahresabschlüsse, Kennzahlen, aktuelle Auswertung, Liquiditätsplan, Investitionsrechnung"] },
-          { "zellen": ["Sicherheiten", "Bürgschaft, Sicherungsübereignung der Laserstation"] }
-        ] },
-        { "typ": "merke", "text": "Kreditwürdigkeit = **persönlich** (Geschäftsführung) + **wirtschaftlich** (Abschluss, Pläne, Sicherheiten) — gute Unterlagen, bessere Konditionen.", "karteikarte": "Was prüft eine Bank bei der Kreditwürdigkeit?" }
+        {
+          "typ": "absatz",
+          "text": "Die Bank fragt zweierlei: Ist die Geschäftsführung verlässlich und fähig? Kann das Unternehmen Zins und Tilgung tragen?"
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Prüfbereich",
+            "Unterlagen bei MAKEL"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Persönlich",
+                "Lebenslauf und Erfahrung der Geschäftsführung, bisheriges Verhalten als Kreditnehmerin"
+              ]
+            },
+            {
+              "zellen": [
+                "Wirtschaftlich",
+                "Jahresabschlüsse, Kennzahlen, aktuelle Auswertung, Liquiditätsplan, Investitionsrechnung"
+              ]
+            },
+            {
+              "zellen": [
+                "Sicherheiten",
+                "Bürgschaft, Sicherungsübereignung der Laserstation"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Kreditwürdigkeit = **persönlich** (Geschäftsführung) + **wirtschaftlich** (Abschluss, Pläne, Sicherheiten) — gute Unterlagen, bessere Konditionen.",
+          "karteikarte": "Was prüft eine Bank bei der Kreditwürdigkeit?"
+        }
       ]
     },
     {
@@ -115,17 +160,36 @@
       "id": "a2",
       "titel": "Personalsicherheit Bürgschaft",
       "inhalt": [
-        { "typ": "absatz", "text": "Mit der {{begriff:buergschaft|Bürgschaft}} ({{par:bgb-765|§ 765 BGB}}) haftet eine weitere Person; ohne Einrede der Vorausklage ({{par:bgb-771|§ 771 BGB}}) ist sie selbstschuldnerisch. Zur Form: {{par:bgb-766|§ 766 BGB}} und {{par:hgb-350|§ 350 HGB}}." },
+        {
+          "typ": "absatz",
+          "text": "Mit der {{begriff:buergschaft|Bürgschaft}} ({{par:bgb-765|§ 765 BGB}}) haftet eine weitere Person. Die gewöhnliche Bürgschaft gibt dem Bürgen die Einrede der Vorausklage ({{par:bgb-771|§ 771 BGB}}); bei der selbstschuldnerischen ist sie ausgeschlossen. Zur Form: {{par:bgb-766|§ 766 BGB}} und {{par:hgb-350|§ 350 HGB}}."
+        },
         {
           "typ": "check",
           "frage": "MAKEL zahlt eine Rate nicht. Yuki Bergmann hat selbstschuldnerisch gebürgt. Was kann die Bank tun?",
           "optionen": [
-            { "text": "Sie muss zuerst gegen die GmbH vollstrecken", "richtig": false, "echo": "Das gilt nur bei der Ausfallbürgschaft mit Einrede der Vorausklage." },
-            { "text": "Sie kann sich sofort an Yuki Bergmann wenden", "richtig": true, "echo": "Richtig: Bei der selbstschuldnerischen Bürgschaft hat der Bürge auf die Einrede der Vorausklage verzichtet." },
-            { "text": "Sie kann gar nichts tun, weil die GmbH beschränkt haftet", "richtig": false, "echo": "Die Haftungsbeschränkung betrifft die Gesellschafterstellung — mit der Bürgschaft haftet Yuki persönlich." }
+            {
+              "text": "Sie muss zuerst gegen die GmbH vollstrecken",
+              "richtig": false,
+              "echo": "Das gälte bei einer gewöhnlichen Bürgschaft mit Einrede der Vorausklage — hier hat Yuki darauf verzichtet."
+            },
+            {
+              "text": "Sie kann sich sofort an Yuki Bergmann wenden",
+              "richtig": true,
+              "echo": "Richtig: Bei der selbstschuldnerischen Bürgschaft hat der Bürge auf die Einrede der Vorausklage verzichtet."
+            },
+            {
+              "text": "Sie kann gar nichts tun, weil die GmbH beschränkt haftet",
+              "richtig": false,
+              "echo": "Die Haftungsbeschränkung betrifft die Gesellschafterstellung — mit der Bürgschaft haftet Yuki persönlich."
+            }
           ]
         },
-        { "typ": "merke", "text": "Bürgschaft = **Personalsicherheit**; **selbstschuldnerisch** = ohne Einrede der Vorausklage, Gläubiger greift sofort zu.", "karteikarte": "Was unterscheidet die selbstschuldnerische Bürgschaft von der Ausfallbürgschaft?" }
+        {
+          "typ": "merke",
+          "text": "Bürgschaft = **Personalsicherheit**; **gewöhnlich** = mit Einrede der Vorausklage; **selbstschuldnerisch** = ohne Einrede, Gläubiger greift sofort zu; **Ausfallbürgschaft** = Haftung erst für den nachgewiesenen Ausfall.",
+          "karteikarte": "Wie unterscheiden sich gewöhnliche, selbstschuldnerische und Ausfallbürgschaft?"
+        }
       ]
     },
     {
@@ -133,7 +197,10 @@
       "id": "a3",
       "titel": "Realsicherheiten",
       "inhalt": [
-        { "typ": "absatz", "text": "{{begriff:sicherungsuebereignung|Sicherungsübereignung}}, {{begriff:grundschuld|Grundschuld}} und {{begriff:eigentumsvorbehalt|Eigentumsvorbehalt}} ({{par:bgb-449|§ 449 BGB}}) sichern mit Vermögensgegenständen." },
+        {
+          "typ": "absatz",
+          "text": "{{begriff:sicherungsuebereignung|Sicherungsübereignung}}, {{begriff:grundschuld|Grundschuld}} und {{begriff:eigentumsvorbehalt|Eigentumsvorbehalt}} ({{par:bgb-449|§ 449 BGB}}) sichern mit Vermögensgegenständen."
+        },
         {
           "typ": "grafik",
           "variante": "vergleich",
@@ -141,22 +208,58 @@
           "titel": "Sicherungsübereignung und Verpfändung",
           "lead": "Tippe einen Punkt an, um mehr zu erfahren.",
           "seiten": [
-            { "name": "Sicherungsübereignung", "ton": "gold", "punkte": [
-              { "text": "Eigentum geht an die Bank", "detail": "Die Bank wird Sicherungseigentümerin, solange der Kredit läuft." },
-              { "text": "Besitz bleibt beim Kreditnehmer", "detail": "MAKEL arbeitet mit der Laserstation weiter und erwirtschaftet so die Raten." },
-              { "text": "Für Maschinen und Fahrzeuge geeignet", "detail": "Alles, was im Betrieb gebraucht wird, lässt sich so beleihen." },
-              { "text": "Risiko für die Bank", "detail": "Die Sicherheit ist nicht in ihrer Hand; Verkauf, Beschädigung oder Eigentumsvorbehalt eines Lieferanten können sie entwerten." }
-            ] },
-            { "name": "Verpfändung", "ton": "gruen", "punkte": [
-              { "text": "Eigentum bleibt beim Schuldner", "detail": "Der Gläubiger erhält ein Pfandrecht, kein Eigentum." },
-              { "text": "Besitz geht an den Gläubiger", "detail": "Die Sache muss übergeben werden — sie fehlt dann im Betrieb." },
-              { "text": "Für Wertpapiere, Guthaben, Schmuck geeignet", "detail": "Dinge, die man für die Arbeit nicht braucht." },
-              { "text": "Sicher für den Gläubiger", "detail": "Die Sicherheit liegt bei ihm und kann nicht unbemerkt verschwinden." }
-            ] }
+            {
+              "name": "Sicherungsübereignung",
+              "ton": "gold",
+              "punkte": [
+                {
+                  "text": "Eigentum geht an die Bank",
+                  "detail": "Die Bank wird Sicherungseigentümerin, solange der Kredit läuft."
+                },
+                {
+                  "text": "Besitz bleibt beim Kreditnehmer",
+                  "detail": "MAKEL arbeitet mit der Laserstation weiter und erwirtschaftet so die Raten."
+                },
+                {
+                  "text": "Für Maschinen und Fahrzeuge geeignet",
+                  "detail": "Alles, was im Betrieb gebraucht wird, lässt sich so beleihen."
+                },
+                {
+                  "text": "Risiko für die Bank",
+                  "detail": "Die Sicherheit ist nicht in ihrer Hand; Verkauf, Beschädigung oder Eigentumsvorbehalt eines Lieferanten können sie entwerten."
+                }
+              ]
+            },
+            {
+              "name": "Verpfändung",
+              "ton": "gruen",
+              "punkte": [
+                {
+                  "text": "Eigentum bleibt beim Schuldner",
+                  "detail": "Der Gläubiger erhält ein Pfandrecht, kein Eigentum."
+                },
+                {
+                  "text": "Besitz geht an den Gläubiger",
+                  "detail": "Die Sache muss übergeben werden — sie fehlt dann im Betrieb."
+                },
+                {
+                  "text": "Für Wertpapiere, Guthaben, Schmuck geeignet",
+                  "detail": "Dinge, die man für die Arbeit nicht braucht."
+                },
+                {
+                  "text": "Sicher für den Gläubiger",
+                  "detail": "Die Sicherheit liegt bei ihm und kann nicht unbemerkt verschwinden."
+                }
+              ]
+            }
           ],
           "regel": "Frage: Braucht der Betrieb die Sache zum Arbeiten? Dann Sicherungsübereignung — sonst kommt Verpfändung in Betracht."
         },
-        { "typ": "merke", "text": "**Sicherungsübereignung**: Eigentum an die Bank, Besitz bleibt; **Verpfändung**: Besitz an den Gläubiger; **Grundschuld**: Grundstück; **Eigentumsvorbehalt**: Lieferant.", "karteikarte": "Wie unterscheiden sich Sicherungsübereignung, Verpfändung, Grundschuld und Eigentumsvorbehalt?" }
+        {
+          "typ": "merke",
+          "text": "**Sicherungsübereignung**: Eigentum an die Bank, Besitz bleibt; **Verpfändung**: Besitz an den Gläubiger; **Grundschuld**: Grundstück; **Eigentumsvorbehalt**: Lieferant.",
+          "karteikarte": "Wie unterscheiden sich Sicherungsübereignung, Verpfändung, Grundschuld und Eigentumsvorbehalt?"
+        }
       ]
     },
     {
@@ -164,38 +267,91 @@
       "id": "a4",
       "titel": "Haftung und Gesamturteil",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Rechtsform", "Haftung für Gesellschaftsschulden"], "zeilen": [
-          { "zellen": ["GmbH", "Gesellschaftsvermögen; Gesellschafter grundsätzlich nur mit Einlage"] },
-          { "zellen": ["OHG", "Alle Gesellschafter unbeschränkt, unmittelbar, gesamtschuldnerisch"] },
-          { "zellen": ["KG", "Komplementäre unbeschränkt, Kommanditisten bis zur Einlage"] }
-        ] },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Rechtsform",
+            "Haftung für Gesellschaftsschulden"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "GmbH",
+                "Gesellschaftsvermögen; Gesellschafter grundsätzlich nur mit Einlage"
+              ]
+            },
+            {
+              "zellen": [
+                "OHG",
+                "Alle Gesellschafter unbeschränkt, unmittelbar, gesamtschuldnerisch"
+              ]
+            },
+            {
+              "zellen": [
+                "KG",
+                "Komplementäre unbeschränkt, Kommanditisten bis zur Einlage"
+              ]
+            }
+          ]
+        },
         {
           "typ": "zuordnen",
           "lead": "Welche Sicherheit liegt vor?",
-          "kategorien": ["Personalsicherheit", "Realsicherheit"],
+          "kategorien": [
+            "Personalsicherheit",
+            "Realsicherheit"
+          ],
           "aufgaben": [
-            { "text": "Selbstschuldnerische Bürgschaft von Yuki Bergmann", "loesung": "Personalsicherheit" },
-            { "text": "Sicherungsübereignung der Laserstation", "loesung": "Realsicherheit" },
-            { "text": "Grundschuld auf ein Betriebsgrundstück", "loesung": "Realsicherheit" },
-            { "text": "Abtretung von Kundenforderungen", "loesung": "Realsicherheit" }
+            {
+              "text": "Selbstschuldnerische Bürgschaft von Yuki Bergmann",
+              "loesung": "Personalsicherheit"
+            },
+            {
+              "text": "Sicherungsübereignung der Laserstation",
+              "loesung": "Realsicherheit"
+            },
+            {
+              "text": "Grundschuld auf ein Betriebsgrundstück",
+              "loesung": "Realsicherheit"
+            },
+            {
+              "text": "Abtretung von Kundenforderungen",
+              "loesung": "Realsicherheit"
+            }
           ]
         },
-        { "typ": "merke", "text": "**GmbH** haftet mit Gesellschaftsvermögen, Gesellschafter mit Einlage — persönliche **Bürgschaft** hebt das auf; **OHG**: alle haften privat.", "karteikarte": "Wie haften GmbH, OHG und KG, und was ändert eine persönliche Bürgschaft?" }
+        {
+          "typ": "merke",
+          "text": "**GmbH** haftet mit Gesellschaftsvermögen, Gesellschafter mit Einlage — persönliche **Bürgschaft** hebt das auf; **OHG**: alle haften privat.",
+          "karteikarte": "Wie haften GmbH, OHG und KG, und was ändert eine persönliche Bürgschaft?"
+        }
       ]
     }
   ],
   "zusammenfassung": [
     "Kreditwürdigkeit: persönlich und wirtschaftlich.",
     "Vollständige Unterlagen verbessern die Konditionen.",
-    "Bürgschaft: Personalsicherheit, meist selbstschuldnerisch.",
+    "Bürgschaft: gewöhnlich mit, selbstschuldnerisch ohne Einrede der Vorausklage.",
     "Sicherungsübereignung: Eigentum an die Bank, Besitz bleibt.",
     "GmbH-Gesellschafter haften nur durch Bürgschaft persönlich.",
     "Finanzierung im Gesamtbild beurteilen: Kosten, Laufzeit, Liquidität, Sicherheiten, Risiko."
   ],
   "selbsttest": [
-    { "typ": "Wissen", "frage": "Warum eignet sich die Verpfändung nicht für die Laserstation?", "loesung": "Bei der Verpfändung müsste die Station an die Bank übergeben werden; MAKEL könnte nicht mehr damit arbeiten. Geeignet ist die Sicherungsübereignung." },
-    { "typ": "Wissen", "frage": "Wann kann sich der Gläubiger sofort an den Bürgen wenden?", "loesung": "Bei der selbstschuldnerischen Bürgschaft, also wenn auf die Einrede der Vorausklage verzichtet wurde." },
-    { "typ": "Vergleichen", "frage": "Wie unterscheidet sich die Haftung bei GmbH und OHG?", "loesung": "GmbH: Gesellschaftsvermögen haftet, Gesellschafter grundsätzlich nur mit Einlage. OHG: Alle Gesellschafter haften zusätzlich unbeschränkt mit ihrem Privatvermögen." }
+    {
+      "typ": "Wissen",
+      "frage": "Warum eignet sich die Verpfändung nicht für die Laserstation?",
+      "loesung": "Bei der Verpfändung müsste die Station an die Bank übergeben werden; MAKEL könnte nicht mehr damit arbeiten. Geeignet ist die Sicherungsübereignung."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Wann kann sich der Gläubiger sofort an den Bürgen wenden?",
+      "loesung": "Bei der selbstschuldnerischen Bürgschaft, also wenn die Einrede der Vorausklage ausgeschlossen ist — vertraglich oder, wenn die Bürgschaft für den Bürgen ein Handelsgeschäft ist, nach § 349 HGB."
+    },
+    {
+      "typ": "Vergleichen",
+      "frage": "Wie unterscheidet sich die Haftung bei GmbH und OHG?",
+      "loesung": "GmbH: Gesellschaftsvermögen haftet, Gesellschafter grundsätzlich nur mit Einlage. OHG: Alle Gesellschafter haften zusätzlich unbeschränkt mit ihrem Privatvermögen."
+    }
   ],
   "pruefungstipp": "Bei Sicherheiten immer die drei Fragen beantworten: Wer wird Eigentümer? Wer hat den Besitz? Was passiert, wenn nicht gezahlt wird? Damit lassen sich fast alle Fälle lösen."
 }

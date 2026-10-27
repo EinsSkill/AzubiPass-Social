@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Innerbetriebliche und autonome Transportsysteme unterscheiden", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Transportmittel hinsichtlich der Anforderungen vergleichen", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Kosten auf gleicher Basis gegenüberstellen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Sicherheit, Nachhaltigkeit und Vernetzung berücksichtigen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Innerbetriebliche und autonome Transportsysteme unterscheiden",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Transportmittel hinsichtlich der Anforderungen vergleichen",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Kosten auf gleicher Basis gegenüberstellen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Sicherheit, Nachhaltigkeit und Vernetzung berücksichtigen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,12 +117,46 @@
       "id": "a1",
       "titel": "Innerbetriebliche und autonome Systeme",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Fördermittel", "Art", "Stärke", "Grenze"], "zeilen": [
-          { "zellen": ["Rollenbahn, Förderband", "Stetigförderer", "gleichmäßiger Fluss", "fester Weg"] },
-          { "zellen": ["Hubwagen, Stapler", "Unstetigförderer", "flexibel", "Personal, Unfallgefahr"] },
-          { "zellen": ["Fahrerloses Transportsystem", "automatisiert", "wiederkehrende Wege", "Investition, freie Wege"] }
-        ] },
-        { "typ": "merke", "text": "**Stetigförderer** für gleichmäßigen Fluss, **Unstetigförderer** für Flexibilität; Automatisierung nur mit passenden Voraussetzungen.", "karteikarte": "Was unterscheidet Stetig- und Unstetigförderer?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Fördermittel",
+            "Art",
+            "Stärke",
+            "Grenze"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Rollenbahn, Förderband",
+                "Stetigförderer",
+                "gleichmäßiger Fluss",
+                "fester Weg"
+              ]
+            },
+            {
+              "zellen": [
+                "Hubwagen, Stapler",
+                "Unstetigförderer",
+                "flexibel",
+                "Personal, Unfallgefahr"
+              ]
+            },
+            {
+              "zellen": [
+                "Fahrerloses Transportsystem",
+                "automatisiert",
+                "wiederkehrende Wege",
+                "Investition, freie Wege"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Stetigförderer** für gleichmäßigen Fluss, **Unstetigförderer** für Flexibilität; Automatisierung nur mit passenden Voraussetzungen.",
+          "karteikarte": "Was unterscheidet Stetig- und Unstetigförderer?"
+        }
       ]
     },
     {
@@ -114,14 +164,53 @@
       "id": "a2",
       "titel": "Externe und multimodale Transporte",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Verkehrsträger", "Stärken", "Schwächen"], "zeilen": [
-          { "zellen": ["Straße", "flexibel, Haus-zu-Haus", "Stau, Emissionen je Tonne"] },
-          { "zellen": ["Schiene", "große Mengen, umweltfreundlicher", "Gleisanschluss, Umschlag"] },
-          { "zellen": ["Wasser", "sehr große Mengen, günstig", "langsam"] },
-          { "zellen": ["Luft", "sehr schnell", "teuer, hohe Emissionen"] }
-        ] },
-        { "typ": "absatz", "text": "Der {{begriff:spediteur|Spediteur}} organisiert die Versendung, der {{begriff:frachtfuehrer|Frachtführer}} befördert selbst ({{par:hgb-407|§ 407 HGB}}, {{par:hgb-453|§ 453 HGB}})." },
-        { "typ": "merke", "text": "Straße flexibel, Schiene und Schiff für Masse, Luft für Eile; **Spediteur organisiert, Frachtführer befördert**.", "karteikarte": "Welche Verkehrsträger gibt es, und was unterscheidet Spediteur und Frachtführer?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Verkehrsträger",
+            "Stärken",
+            "Schwächen"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Straße",
+                "flexibel, Haus-zu-Haus",
+                "Stau, Emissionen je Tonne"
+              ]
+            },
+            {
+              "zellen": [
+                "Schiene",
+                "große Mengen, umweltfreundlicher",
+                "Gleisanschluss, Umschlag"
+              ]
+            },
+            {
+              "zellen": [
+                "Wasser",
+                "sehr große Mengen, günstig",
+                "langsam"
+              ]
+            },
+            {
+              "zellen": [
+                "Luft",
+                "sehr schnell",
+                "teuer, hohe Emissionen"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "absatz",
+          "text": "Der {{begriff:spediteur|Spediteur}} organisiert die Versendung, der {{begriff:frachtfuehrer|Frachtführer}} befördert selbst ({{par:hgb-407|§ 407 HGB}}, {{par:hgb-453|§ 453 HGB}})."
+        },
+        {
+          "typ": "merke",
+          "text": "Straße flexibel, Schiene und Schiff für Masse, Luft für Eile; **Spediteur organisiert, Frachtführer befördert**.",
+          "karteikarte": "Welche Verkehrsträger gibt es, und was unterscheidet Spediteur und Frachtführer?"
+        }
       ]
     },
     {
@@ -129,21 +218,64 @@
       "id": "a3",
       "titel": "Dienstleister- und Kostenvergleich",
       "inhalt": [
-        { "typ": "tabelle", "mono": true, "spalten": ["Packstücke", "A: 200 € + 2 €/Stk.", "B: 50 € + 4 €/Stk."], "zeilen": [
-          { "zellen": ["50", "300 €", "250 €"] },
-          { "zellen": ["75", "350 €", "350 €"] },
-          { "zellen": ["100", "400 €", "450 €"] }
-        ] },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Packstücke",
+            "A: 200 € + 2 €/Stk.",
+            "B: 50 € + 4 €/Stk."
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "50",
+                "300 €",
+                "250 €"
+              ]
+            },
+            {
+              "zellen": [
+                "75",
+                "350 €",
+                "350 €"
+              ]
+            },
+            {
+              "zellen": [
+                "100",
+                "400 €",
+                "450 €"
+              ]
+            }
+          ]
+        },
         {
           "typ": "check",
           "frage": "Dienstleister A: 200 € Grundpreis + 2 € je Packstück. B: 50 € + 4 € je Packstück. Welcher ist bei 100 Packstücken günstiger und um wie viel?",
           "optionen": [
-            { "text": "A, um 50 €", "richtig": true, "echo": "Richtig: A 400 €, B 450 €. Gleicher Leistungsumfang vorausgesetzt." },
-            { "text": "B, um 150 €", "richtig": false, "echo": "Nur der Grundpreis von B ist niedriger. Bei 100 Packstücken überwiegt der höhere Stückpreis." },
-            { "text": "Beide gleich, weil sich Grund- und Stückpreis ausgleichen", "richtig": false, "echo": "Gleich teuer sind sie nur bei 75 Packstücken." }
+            {
+              "text": "A, um 50 €",
+              "richtig": true,
+              "echo": "Richtig: A 400 €, B 450 €. Gleicher Leistungsumfang vorausgesetzt."
+            },
+            {
+              "text": "B, um 150 €",
+              "richtig": false,
+              "echo": "Nur der Grundpreis von B ist niedriger. Bei 100 Packstücken überwiegt der höhere Stückpreis."
+            },
+            {
+              "text": "Beide gleich, weil sich Grund- und Stückpreis ausgleichen",
+              "richtig": false,
+              "echo": "Gleich teuer sind sie nur bei 75 Packstücken."
+            }
           ]
         },
-        { "typ": "merke", "text": "Transportangebote auf **gleicher Leistungsbasis** vergleichen; Preis plus Termintreue, Schäden und Nachhaltigkeit bewerten.", "karteikarte": "Wie vergleichst du Transportangebote fair?" }
+        {
+          "typ": "merke",
+          "text": "Transportangebote auf **gleicher Leistungsbasis** vergleichen; Preis plus Termintreue, Schäden und Nachhaltigkeit bewerten.",
+          "karteikarte": "Wie vergleichst du Transportangebote fair?"
+        }
       ]
     },
     {
@@ -151,9 +283,19 @@
       "id": "a4",
       "titel": "Sicher und ressourcenschonend",
       "inhalt": [
-        { "typ": "absatz", "text": "Ladungssicherung ist Pflicht — verantwortlich sind auch Verlader und Halter. Gefahrgut wird anhand des Sicherheitsdatenblatts und der **aktuellen** Vorschriften eingestuft.", "pruefen": "Gefahrgutvorschriften (ADR) werden regelmäßig geändert; konkrete Einstufungen nur mit aktuellem Regelwerk und Sicherheitsdatenblatt." },
-        { "typ": "achtung", "text": "Aus dem günstigsten Preis folgt keine Transportfreigabe für Gefahrstoffe. Erst Einstufung, Verpackung, Kennzeichnung, Papiere und Eignung des Dienstleisters klären." },
-        { "typ": "merke", "text": "Ladung sichern, **Gefahrgut anhand aktueller Vorschriften** prüfen, Transporte bündeln und auslasten.", "karteikarte": "Welche Sicherheits- und Nachhaltigkeitsaspekte gehören zur Transportentscheidung?" }
+        {
+          "typ": "absatz",
+          "text": "Ladungssicherung ist Pflicht — verantwortlich sind auch Verlader und Halter. Gefahrgut wird anhand des Sicherheitsdatenblatts und des jeweils geltenden ADR eingestuft (zuletzt ADR 2025); konkrete Pflichten hängen vom Stoff und der Menge ab und werden im Einzelfall geprüft."
+        },
+        {
+          "typ": "achtung",
+          "text": "Aus dem günstigsten Preis folgt keine Transportfreigabe für Gefahrstoffe. Erst Einstufung, Verpackung, Kennzeichnung, Papiere und Eignung des Dienstleisters klären."
+        },
+        {
+          "typ": "merke",
+          "text": "Ladung sichern, **Gefahrgut anhand aktueller Vorschriften** prüfen, Transporte bündeln und auslasten.",
+          "karteikarte": "Welche Sicherheits- und Nachhaltigkeitsaspekte gehören zur Transportentscheidung?"
+        }
       ]
     }
   ],
@@ -166,9 +308,21 @@
     "Bündeln und auslasten spart Kosten und Emissionen."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "A berechnet 200 € Grundpreis plus 2 € je Packstück, B 50 € plus 4 € je Packstück. Vergleiche 100 Packstücke ohne Zusatzkosten.", "loesung": "A: 400 €, B: 450 €; A ist 50 € günstiger. Identischer Leistungsumfang wird vorausgesetzt." },
-    { "typ": "Fall", "frage": "Welche zusätzlichen Kriterien sind bei einem Gefahrstofftransport zu prüfen?", "loesung": "Stoffklassifikation, zulässige Verpackung, Kennzeichnung, Begleitdokumente und Eignung des Dienstleisters anhand aktueller Fachvorschriften und des Sicherheitsdatenblatts. Aus dem Preis folgt keine Transportfreigabe." },
-    { "typ": "Wissen", "frage": "Was ist multimodaler Verkehr?", "loesung": "Ein Transport, der mehrere Verkehrsträger verbindet, etwa Container per Schiff, Bahn und Lkw." }
+    {
+      "typ": "Rechnen",
+      "frage": "A berechnet 200 € Grundpreis plus 2 € je Packstück, B 50 € plus 4 € je Packstück. Vergleiche 100 Packstücke ohne Zusatzkosten.",
+      "loesung": "A: 400 €, B: 450 €; A ist 50 € günstiger. Identischer Leistungsumfang wird vorausgesetzt."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Welche zusätzlichen Kriterien sind bei einem Gefahrstofftransport zu prüfen?",
+      "loesung": "Stoffklassifikation, zulässige Verpackung, Kennzeichnung, Begleitdokumente und Eignung des Dienstleisters anhand aktueller Fachvorschriften und des Sicherheitsdatenblatts. Aus dem Preis folgt keine Transportfreigabe."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Was ist multimodaler Verkehr?",
+      "loesung": "Ein Transport, der mehrere Verkehrsträger verbindet, etwa Container per Schiff, Bahn und Lkw."
+    }
   ],
   "pruefungstipp": "Bei Transportvergleichen erst die Leistung angleichen, dann rechnen, dann bewerten. Wer Termintreue, Schäden oder Sicherheit ergänzt, zeigt Urteilsvermögen statt nur Rechenfertigkeit."
 }

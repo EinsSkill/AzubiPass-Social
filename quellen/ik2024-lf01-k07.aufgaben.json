@@ -94,14 +94,14 @@
           "mehrfach": false,
           "optionen": [
             {
-              "text": "Ja, denn es gibt einen Betriebsrat und insgesamt sechs Beschäftigte unter 18 Jahren oder Auszubildende unter 25 Jahren.",
+              "text": "Ja, denn es gibt einen Betriebsrat und insgesamt sechs Beschäftigte unter 18 Jahren oder Auszubildende (gleich welchen Alters).",
               "richtig": true,
-              "echo": "Richtig. Zwei Jugendliche und vier Auszubildende unter 25 ergeben sechs; die Mindestzahl von fünf ist erreicht, ein Betriebsrat besteht."
+              "echo": "Richtig. Zwei Jugendliche und vier Auszubildende ergeben sechs; die Mindestzahl von fünf ist erreicht, ein Betriebsrat besteht."
             },
             {
               "text": "Nein, denn nur zwei Beschäftigte sind jünger als 18 Jahre.",
               "richtig": false,
-              "echo": "Auszubildende unter 25 Jahren zählen mit. Zusammen sind es sechs."
+              "echo": "Auszubildende zählen mit — seit 2021 unabhängig vom Alter. Zusammen sind es sechs."
             },
             {
               "text": "Nein, denn eine JAV setzt mindestens 200 Beschäftigte voraus.",
@@ -115,7 +115,7 @@
         "art": "automatisch",
         "punkte_gesamt": 2
       },
-      "erklaerung": "§ 60 BetrVG: Betriebsrat vorhanden und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende unter 25.",
+      "erklaerung": "§ 60 BetrVG: Betriebsrat vorhanden und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze).",
       "quelle": "ik2024-lf01-k07, Abschnitt a2"
     },
     {
@@ -192,7 +192,7 @@
               "echo": "Richtig, die JAV wirkt über den Betriebsrat."
             },
             {
-              "text": "In der Regel braucht es mindestens fünf Beschäftigte unter 18 oder Auszubildende unter 25",
+              "text": "In der Regel braucht es mindestens fünf Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze)",
               "richtig": true,
               "echo": "Richtig, das ist die Mindestgröße nach § 60 BetrVG."
             },
@@ -213,7 +213,7 @@
         "art": "automatisch",
         "punkte_gesamt": 3
       },
-      "erklaerung": "Die JAV braucht einen Betriebsrat und eine Mindestzahl Jugendlicher oder Auszubildender unter 25; sie wirkt über den Betriebsrat.",
+      "erklaerung": "Die JAV braucht einen Betriebsrat und eine Mindestzahl Jugendlicher oder Auszubildender (Auszubildende ohne Altersgrenze); sie wirkt über den Betriebsrat.",
       "quelle": "ik2024-lf01-k07, Abschnitt a2"
     }
   ]

@@ -2,7 +2,6 @@
   "lernfeld": "ik2024-lf13",
   "kapitel": "k04",
   "verweise_im_klausurmodus": "ausblenden",
-
   "bausteine": [
     {
       "id": "ik2024-lf13-k04-01",
@@ -14,27 +13,53 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Luca Petrelli gliedert den Abschlussbericht zum Freigabeprojekt der MAKEL Studio GmbH." }
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli gliedert den Abschlussbericht zum Freigabeprojekt der MAKEL Studio GmbH."
+        }
       ],
       "eingabe": [
         {
           "block": "zuordnung",
           "lead": "In welches Berichtskapitel gehört der Inhalt?",
-          "ziele": ["Ausgangslage", "Analyse", "Lösung", "Umsetzung", "Ergebnis"],
+          "ziele": [
+            "Ausgangslage",
+            "Analyse",
+            "Lösung",
+            "Umsetzung",
+            "Ergebnis"
+          ],
           "elemente": [
-            { "text": "Problemfrage und Systemgrenze", "loesung": "Ausgangslage" },
-            { "text": "Verspätungsquote vorher und fehlende August-Daten", "loesung": "Analyse" },
-            { "text": "Nutzwertanalyse der Varianten A und B", "loesung": "Lösung" },
-            { "text": "Terminplan und Verlauf des Piloten", "loesung": "Umsetzung" },
-            { "text": "Verspätungsquote nachher, Nebenfolgen, Empfehlung", "loesung": "Ergebnis" }
+            {
+              "text": "Problemfrage und Systemgrenze",
+              "loesung": "Ausgangslage"
+            },
+            {
+              "text": "Verspätungsquote vorher und fehlende August-Daten",
+              "loesung": "Analyse"
+            },
+            {
+              "text": "Nutzwertanalyse der Varianten A und B",
+              "loesung": "Lösung"
+            },
+            {
+              "text": "Terminplan und Verlauf des Piloten",
+              "loesung": "Umsetzung"
+            },
+            {
+              "text": "Verspätungsquote nachher, Nebenfolgen, Empfehlung",
+              "loesung": "Ergebnis"
+            }
           ]
         }
       ],
-      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
       "erklaerung": "Der Bericht folgt dem Weg des Projekts: Ausgangslage, Analyse, Lösung, Umsetzung, Ergebnis.",
       "quelle": "ik2024-lf13-k04, Abschnitt a1"
     },
-
     {
       "id": "ik2024-lf13-k04-02",
       "operator": "Berechnen Sie",
@@ -44,25 +69,55 @@
       "schwierigkeit": 2,
       "passt_zu": [],
       "variablen": {
-        "vorher": { "von": 16, "bis": 24, "schritt": 2 },
-        "nachher": { "von": 6, "bis": 12, "schritt": 2 }
+        "vorher": {
+          "von": 16,
+          "bis": 24,
+          "schritt": 2
+        },
+        "nachher": {
+          "von": 6,
+          "bis": 12,
+          "schritt": 2
+        }
       },
       "abgeleitet": {
         "pp": "vorher - nachher",
-        "relativ": "runde((vorher - nachher) / vorher * 100, 1)"
+        "relativ": "runde(pp / vorher * 100, 1)"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Bei der MAKEL Studio GmbH sank die Verspätungsquote der Firmenaufträge (gleiche Definition, vergleichbare Stichprobe) von {vorher} % auf {nachher} %. Runden Sie die relative Veränderung auf eine Nachkommastelle." }
+        {
+          "block": "text",
+          "inhalt": "Bei der MAKEL Studio GmbH sank die Verspätungsquote der Firmenaufträge (gleiche Definition, vergleichbare Stichprobe) von {vorher} % auf {nachher} %. Runden Sie die relative Veränderung auf eine Nachkommastelle."
+        }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Rückgang in Prozentpunkten", "einheit": "Prozentpunkte", "loesung": "pp", "toleranz": 0, "punkte": 2 },
-        { "block": "zahl", "label": "Relativer Rückgang", "einheit": "%", "loesung": "relativ", "toleranz": 0.1, "punkte": 2 }
+        {
+          "block": "zahl",
+          "label": "Rückgang in Prozentpunkten",
+          "einheit": "Prozentpunkte",
+          "loesung": "pp",
+          "toleranz": 0,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Relativer Rückgang",
+          "einheit": "%",
+          "loesung": "relativ",
+          "toleranz": 0.1,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "pp"
+          ]
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
       "erklaerung": "Absolut: Differenz der Quoten in Prozentpunkten. Relativ: Differenz ÷ Ausgangswert × 100.",
       "quelle": "ik2024-lf13-k04, Abschnitt a2"
     },
-
     {
       "id": "ik2024-lf13-k04-03",
       "operator": "Beurteilen Sie",
@@ -73,19 +128,38 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Entwurf der Abschlussfolie für die Geschäftsführung der MAKEL Studio GmbH: „Voller Erfolg! Verspätungen um 10 % gesenkt. Alle sind zufrieden. Sofort überall einführen.“ Fakten: Quote 20 % → 10 % im Januar-Piloten mit 30 Aufträgen; Lagerbestand +4 %; Vertrieb braucht je Auftrag zwei Minuten länger; zwei Verspätungen wegen Materialmangels." }
+        {
+          "block": "text",
+          "inhalt": "Entwurf der Abschlussfolie für die Geschäftsführung der MAKEL Studio GmbH: „Voller Erfolg! Verspätungen um 10 % gesenkt. Alle sind zufrieden. Sofort überall einführen.“ Fakten: Quote 20 % → 10 % im Januar-Piloten mit 30 Aufträgen; Lagerbestand +4 %; Vertrieb braucht je Auftrag zwei Minuten länger; zwei Verspätungen wegen Materialmangels."
+        }
       ],
       "eingabe": [
-        { "block": "textfeld", "frage": "Beurteilen Sie die Folie und formulieren Sie eine adressatengerechte, ehrliche Alternative.", "zeilen": 8 }
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie die Folie und formulieren Sie eine adressatengerechte, ehrliche Alternative.",
+          "zeilen": 8
+        }
       ],
       "bewertung": {
         "art": "selbstbewertung",
         "musterloesung": "Die Folie verwechselt Prozentpunkte und Prozent (richtig: −10 Prozentpunkte bzw. −50 % relativ), behauptet Zufriedenheit ohne Beleg, verschweigt Nebenfolgen (Bestand +4 %, Mehraufwand im Vertrieb) und Grenzen (kleine Stichprobe, ruhiger Januar, andere Ursachen wie Materialmangel) und empfiehlt einen sofortigen Rollout ohne Begründung. Alternative: „Ergebnis Pilot (Januar, 30 Aufträge): Verspätungen 20 % → 10 % (−10 Prozentpunkte). Nebenfolgen: Bestand +4 % (Grenze 5 %), +2 Min. Erfassung je Auftrag. Grenzen: ruhige Saison; 2 Verspätungen durch Materialmangel. Kosten < 500 €. Empfehlung: Einführung für alle Firmenaufträge, Messung bis Ende Oktober, Bestand monatlich prüfen.“",
         "raster": [
-          { "kriterium": "Fehler Prozent/Prozentpunkte erkannt", "punkte": 1 },
-          { "kriterium": "Unbelegte Zufriedenheit und fehlende Nebenfolgen erkannt", "punkte": 1 },
-          { "kriterium": "Grenzen (Stichprobe, Saison, andere Ursachen) benannt", "punkte": 1 },
-          { "kriterium": "Ehrliche, adressatengerechte Alternative mit Empfehlung", "punkte": 1 }
+          {
+            "kriterium": "Fehler Prozent/Prozentpunkte erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Unbelegte Zufriedenheit und fehlende Nebenfolgen erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Grenzen (Stichprobe, Saison, andere Ursachen) benannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Ehrliche, adressatengerechte Alternative mit Empfehlung",
+            "punkte": 1
+          }
         ]
       },
       "erklaerung": "Eine überzeugende Ergebnispräsentation zeigt Wirkung, Nebenfolgen und Grenzen — und leitet daraus eine begründete Empfehlung ab.",

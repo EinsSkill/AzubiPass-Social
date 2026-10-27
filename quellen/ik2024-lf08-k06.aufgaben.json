@@ -2,7 +2,6 @@
   "lernfeld": "ik2024-lf08",
   "kapitel": "k06",
   "verweise_im_klausurmodus": "ausblenden",
-
   "bausteine": [
     {
       "id": "ik2024-lf08-k06-01",
@@ -13,29 +12,77 @@
       "schwierigkeit": 1,
       "passt_zu": [],
       "variablen": {
-        "preis": { "von": 26, "bis": 40, "schritt": 2 },
-        "var": { "von": 12, "bis": 20, "schritt": 2 },
-        "menge": { "von": 150, "bis": 400, "schritt": 50 },
-        "fix": { "von": 300, "bis": 800, "schritt": 100 }
+        "preis": {
+          "von": 26,
+          "bis": 40,
+          "schritt": 2
+        },
+        "var": {
+          "von": 12,
+          "bis": 20,
+          "schritt": 2
+        },
+        "menge": {
+          "von": 150,
+          "bis": 400,
+          "schritt": 50
+        },
+        "fix": {
+          "von": 300,
+          "bis": 800,
+          "schritt": 100
+        }
       },
       "abgeleitet": {
         "db": "preis - var",
-        "gesamt_db": "(preis - var) * menge",
-        "ergebnis": "(preis - var) * menge - fix"
+        "gesamt_db": "db * menge",
+        "ergebnis": "gesamt_db - fix"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Für eine Shirt-Linie der MAKEL Studio GmbH gelten im Monat: Preis netto {preis} €, variable Stückkosten {var} €, Absatz {menge} Stück, fixe Kosten der Linie {fix} €." }
+        {
+          "block": "text",
+          "inhalt": "Für eine Shirt-Linie der MAKEL Studio GmbH gelten im Monat: Preis netto {preis} €, variable Stückkosten {var} €, Absatz {menge} Stück, fixe Kosten der Linie {fix} €."
+        }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Deckungsbeitrag je Stück", "einheit": "€", "loesung": "db", "toleranz": 0.01, "punkte": 1 },
-        { "block": "zahl", "label": "Gesamtdeckungsbeitrag", "einheit": "€", "loesung": "gesamt_db", "toleranz": 0.01, "punkte": 1 },
-        { "block": "zahl", "label": "Ergebnis der Linie", "einheit": "€", "loesung": "ergebnis", "toleranz": 0.01, "punkte": 2 }
+        {
+          "block": "zahl",
+          "label": "Deckungsbeitrag je Stück",
+          "einheit": "€",
+          "loesung": "db",
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Gesamtdeckungsbeitrag",
+          "einheit": "€",
+          "loesung": "gesamt_db",
+          "toleranz": 0.01,
+          "punkte": 1,
+          "folgefehler_aus": [
+            "db"
+          ]
+        },
+        {
+          "block": "zahl",
+          "label": "Ergebnis der Linie",
+          "einheit": "€",
+          "loesung": "ergebnis",
+          "toleranz": 0.01,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "gesamt_db"
+          ]
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
       "erklaerung": "DB je Stück = Preis − variable Stückkosten; Gesamt-DB = DB × Menge; Ergebnis = Gesamt-DB − Fixkosten.",
       "quelle": "ik2024-lf08-k06, Abschnitt a1"
     },
-
     {
       "id": "ik2024-lf08-k06-02",
       "operator": "Berechnen Sie",
@@ -45,26 +92,53 @@
       "schwierigkeit": 2,
       "passt_zu": [],
       "variablen": {
-        "menge": { "von": 80, "bis": 200, "schritt": 20 },
-        "var": { "von": 15, "bis": 20, "schritt": 1 },
-        "aufschlag": { "von": 1, "bis": 4, "schritt": 1 },
-        "zusatz": { "von": 20, "bis": 60, "schritt": 20 }
+        "menge": {
+          "von": 80,
+          "bis": 200,
+          "schritt": 20
+        },
+        "var": {
+          "von": 15,
+          "bis": 20,
+          "schritt": 1
+        },
+        "aufschlag": {
+          "von": 1,
+          "bis": 4,
+          "schritt": 1
+        },
+        "zusatz": {
+          "von": 20,
+          "bis": 60,
+          "schritt": 20
+        }
       },
       "abgeleitet": {
         "preis": "var + aufschlag",
         "beitrag": "menge * aufschlag - zusatz"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Ein Sportverein bietet der MAKEL Studio GmbH einen Zusatzauftrag über {menge} bedruckte Shirts zu {preis} € netto je Stück. Die variablen Stückkosten betragen {var} €. Die Kapazität ist frei, andere Aufträge werden nicht verdrängt. Für eine Sonderverpackung fallen einmalig {zusatz} € an." }
+        {
+          "block": "text",
+          "inhalt": "Ein Sportverein bietet der MAKEL Studio GmbH einen Zusatzauftrag über {menge} bedruckte Shirts zu {preis} € netto je Stück. Die variablen Stückkosten betragen {var} €. Die Kapazität ist frei, andere Aufträge werden nicht verdrängt. Für eine Sonderverpackung fallen einmalig {zusatz} € an."
+        }
       ],
       "eingabe": [
-        { "block": "zahl", "label": "Ergebnisveränderung durch den Zusatzauftrag", "einheit": "€", "loesung": "beitrag", "toleranz": 0.01 }
+        {
+          "block": "zahl",
+          "label": "Ergebnisveränderung durch den Zusatzauftrag",
+          "einheit": "€",
+          "loesung": "beitrag",
+          "toleranz": 0.01
+        }
       ],
-      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
       "erklaerung": "Zusatzbeitrag = Menge × (Preis − variable Stückkosten) − zusätzliche Kosten des Auftrags. Die vorhandenen Fixkosten bleiben unverändert.",
       "quelle": "ik2024-lf08-k06, Abschnitt a4"
     },
-
     {
       "id": "ik2024-lf08-k06-03",
       "operator": "Beurteilen Sie",
@@ -75,20 +149,42 @@
       "passt_zu": [],
       "variablen": null,
       "anzeige": [
-        { "block": "text", "inhalt": "Die Taschenlinie der MAKEL Studio GmbH zeigt nach Vollkosten 1.200 € Verlust im Quartal. Die mehrstufige Deckungsbeitragsrechnung ergibt: DB I der Taschen 1.500 €, Erzeugnisfixkosten 2.000 € (davon 1.400 € Leasing einer nur für Taschen genutzten Nähmaschine, kündbar zum Quartalsende, und 600 € anteiliges Gehalt einer Mitarbeiterin, die sonst in der Veredelung arbeiten würde). Tobias Renner will die Linie sofort streichen." }
+        {
+          "block": "text",
+          "inhalt": "Die Taschenlinie der MAKEL Studio GmbH zeigt nach Vollkosten 1.200 € Verlust im Quartal. Die mehrstufige Deckungsbeitragsrechnung ergibt: DB I der Taschen 1.500 €, Erzeugnisfixkosten 2.000 € (davon 1.400 € Leasing einer nur für Taschen genutzten Nähmaschine, kündbar zum Quartalsende, und 600 € anteiliges Gehalt einer Mitarbeiterin, die sonst in der Veredelung arbeiten würde). Tobias Renner will die Linie sofort streichen."
+        }
       ],
       "eingabe": [
-        { "block": "textfeld", "frage": "Beurteilen Sie die Entscheidung mit Zahlen und qualitativen Gesichtspunkten.", "zeilen": 7 }
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie die Entscheidung mit Zahlen und qualitativen Gesichtspunkten.",
+          "zeilen": 7
+        }
       ],
       "bewertung": {
         "art": "selbstbewertung",
         "musterloesung": "Der Vollkostenverlust allein reicht als Begründung nicht. Entscheidend ist, welche Kosten wegfallen: Mit der Linie entfallen 1.500 € DB. Abbaubar sind 1.400 € Leasing; das Gehalt fällt nicht weg, die Mitarbeiterin würde in der Veredelung eingesetzt (sinnvoll nur, wenn dort Bedarf besteht). Rechnerisch verschlechtert sich das Ergebnis also um 1.500 € − 1.400 € = 100 € im Quartal, wenn die Arbeitskraft keinen zusätzlichen Nutzen bringt. Bringt ihr Einsatz in der Veredelung mehr als 100 € DB, verbessert sich das Ergebnis. Qualitativ: Ergänzen Taschen das Sortiment für Boutiquen (Verbundkäufe)? Gibt es Entwicklungschancen? ‚Sofort‘ ist ohnehin nicht möglich, der Leasingvertrag läuft bis Quartalsende. Empfehlung: Entscheidung nach Prüfung des Bedarfs in der Veredelung und der Verbundwirkung, nicht allein nach Vollkosten.",
         "raster": [
-          { "kriterium": "Vollkostenverlust als unzureichende Grundlage erkannt", "punkte": 1 },
-          { "kriterium": "Abbaubare und nicht abbaubare Fixkosten unterschieden", "punkte": 1 },
-          { "kriterium": "Rechnerische Ergebniswirkung richtig ermittelt", "punkte": 1 },
-          { "kriterium": "Qualitative Aspekte (Sortiment, Verbund) einbezogen", "punkte": 1 },
-          { "kriterium": "Begründete Empfehlung mit Bedingungen", "punkte": 1 }
+          {
+            "kriterium": "Vollkostenverlust als unzureichende Grundlage erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Abbaubare und nicht abbaubare Fixkosten unterschieden",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Rechnerische Ergebniswirkung richtig ermittelt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Qualitative Aspekte (Sortiment, Verbund) einbezogen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Empfehlung mit Bedingungen",
+            "punkte": 1
+          }
         ]
       },
       "erklaerung": "Über das Streichen eines Produkts entscheiden wegfallender Deckungsbeitrag und tatsächlich abbaubare Fixkosten — ergänzt um qualitative Wirkungen.",

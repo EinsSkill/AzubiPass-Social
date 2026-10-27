@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Kooperationsformen beschreiben", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Kooperation und Konzentration unterscheiden", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Wettbewerbsrechtliche Fragen erkennen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Chancen und Risiken begründet bewerten", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Kooperationsformen beschreiben",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Kooperation und Konzentration unterscheiden",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Wettbewerbsrechtliche Fragen erkennen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Chancen und Risiken begründet bewerten",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -108,13 +124,29 @@
           "titel": "Von lose bis fest",
           "lead": "Klick dich durch — je weiter rechts, desto weniger Selbständigkeit.",
           "stufen": [
-            { "name": "Kooperation", "text": "Zusammenarbeit in Teilbereichen, etwa gemeinsamer Einkauf. Rechtlich und wirtschaftlich weitgehend selbständig." },
-            { "name": "Kartell", "text": "Vertragliche Absprache, die den Wettbewerb beschränkt, etwa über Preise oder Gebiete. Grundsätzlich **verboten** (§ 1 GWB)." },
-            { "name": "Konzern", "text": "Rechtlich selbständige Unternehmen unter **einheitlicher Leitung**, meist durch Mehrheitsbeteiligung." },
-            { "name": "Fusion", "text": "Verschmelzung zu einem Unternehmen. Mindestens eines verliert die **rechtliche Selbständigkeit**." }
+            {
+              "name": "Kooperation",
+              "text": "Zusammenarbeit in Teilbereichen, etwa gemeinsamer Einkauf. Rechtlich und wirtschaftlich weitgehend selbständig."
+            },
+            {
+              "name": "Kartell",
+              "text": "Vertragliche Absprache, die den Wettbewerb beschränkt, etwa über Preise oder Gebiete. Grundsätzlich **verboten** (§ 1 GWB)."
+            },
+            {
+              "name": "Konzern",
+              "text": "Rechtlich selbständige Unternehmen unter **einheitlicher Leitung**, meist durch Mehrheitsbeteiligung."
+            },
+            {
+              "name": "Fusion",
+              "text": "Verschmelzung zu einem Unternehmen. Mindestens eines verliert die **rechtliche Selbständigkeit**."
+            }
           ]
         },
-        { "typ": "merke", "text": "**Kooperation** = Zusammenarbeit in Teilbereichen, rechtlich selbständig, wirtschaftlich weitgehend unabhängig.", "karteikarte": "Was kennzeichnet eine Kooperation?" }
+        {
+          "typ": "merke",
+          "text": "**Kooperation** = Zusammenarbeit in Teilbereichen, rechtlich selbständig, wirtschaftlich weitgehend unabhängig.",
+          "karteikarte": "Was kennzeichnet eine Kooperation?"
+        }
       ]
     },
     {
@@ -125,15 +157,35 @@
         {
           "typ": "zuordnen",
           "lead": "Welche Richtung hat der Zusammenschluss?",
-          "kategorien": ["horizontal", "vertikal", "diagonal"],
+          "kategorien": [
+            "horizontal",
+            "vertikal",
+            "diagonal"
+          ],
           "aufgaben": [
-            { "text": "MAKEL fusioniert mit einer anderen Textildruckerei", "loesung": "horizontal" },
-            { "text": "MAKEL übernimmt seinen Rohlingslieferanten", "loesung": "vertikal" },
-            { "text": "MAKEL übernimmt eine Softwarefirma für Buchhaltungsprogramme", "loesung": "diagonal" },
-            { "text": "Ein Stoffhersteller kauft eine Näherei, die seine Stoffe verarbeitet", "loesung": "vertikal" }
+            {
+              "text": "MAKEL fusioniert mit einer anderen Textildruckerei",
+              "loesung": "horizontal"
+            },
+            {
+              "text": "MAKEL übernimmt seinen Rohlingslieferanten",
+              "loesung": "vertikal"
+            },
+            {
+              "text": "MAKEL übernimmt eine Softwarefirma für Buchhaltungsprogramme",
+              "loesung": "diagonal"
+            },
+            {
+              "text": "Ein Stoffhersteller kauft eine Näherei, die seine Stoffe verarbeitet",
+              "loesung": "vertikal"
+            }
           ]
         },
-        { "typ": "merke", "text": "**Konzern**: rechtlich selbständig, einheitliche Leitung; **Fusion**: Verschmelzung — horizontal, vertikal oder diagonal.", "karteikarte": "Wie unterscheiden sich Konzern und Fusion, und welche Richtungen von Zusammenschlüssen gibt es?" }
+        {
+          "typ": "merke",
+          "text": "**Konzern**: rechtlich selbständig, einheitliche Leitung; **Fusion**: Verschmelzung — horizontal, vertikal oder diagonal.",
+          "karteikarte": "Wie unterscheiden sich Konzern und Fusion, und welche Richtungen von Zusammenschlüssen gibt es?"
+        }
       ]
     },
     {
@@ -141,18 +193,40 @@
       "id": "a3",
       "titel": "Der Ordnungsrahmen",
       "inhalt": [
-        { "typ": "absatz", "text": "Das {{begriff:kartell|Kartellverbot}} schützt den Wettbewerb ({{par:gwb-1|§ 1 GWB}})." },
+        {
+          "typ": "absatz",
+          "text": "Das {{begriff:kartell|Kartellverbot}} schützt den Wettbewerb ({{par:gwb-1|§ 1 GWB}})."
+        },
         {
           "typ": "check",
           "frage": "Ein Konkurrent schlägt Marlene auf einer Messe gemeinsame Mindestpreise vor. Was ist die richtige Reaktion?",
           "optionen": [
-            { "text": "Zusagen, weil es beiden Firmen hilft", "richtig": false, "echo": "Preisabsprachen sind verboten, auch wenn beide profitieren — Kunden zahlen den Preis." },
-            { "text": "Nicht zusagen, Gespräch beenden, intern melden und dokumentieren", "richtig": true, "echo": "Richtig: Das Risiko erkennen, sich klar distanzieren und die Geschäftsführung einbinden." },
-            { "text": "Zusagen, aber nur mündlich", "richtig": false, "echo": "Auch mündliche oder abgestimmte Verhaltensweisen fallen unter das Kartellverbot." }
+            {
+              "text": "Zusagen, weil es beiden Firmen hilft",
+              "richtig": false,
+              "echo": "Preisabsprachen sind verboten, auch wenn beide profitieren — Kunden zahlen den Preis."
+            },
+            {
+              "text": "Nicht zusagen, Gespräch beenden, intern melden und dokumentieren",
+              "richtig": true,
+              "echo": "Richtig: Das Risiko erkennen, sich klar distanzieren und die Geschäftsführung einbinden."
+            },
+            {
+              "text": "Zusagen, aber nur mündlich",
+              "richtig": false,
+              "echo": "Auch mündliche oder abgestimmte Verhaltensweisen fallen unter das Kartellverbot."
+            }
           ]
         },
-        { "typ": "achtung", "text": "Ob eine Kooperation freigestellt ist und ab wann ein Zusammenschluss anmeldepflichtig ist, hängt vom Einzelfall und von Schwellenwerten ab. Vor einer Zusage fachlich prüfen lassen.", "pruefen": "Freistellungsvoraussetzungen (§§ 2, 3 GWB) und Aufgreifschwellen der Fusionskontrolle (§ 35 GWB, EU-FKVO) vor Veröffentlichung mit aktuellem Stand abgleichen." },
-        { "typ": "merke", "text": "**Kartellverbot** (§ 1 GWB, Art. 101 AEUV): keine Preis-, Gebiets- oder Kundenabsprachen; Kooperationen im Einzelfall prüfen; große Fusionen werden kontrolliert.", "karteikarte": "Was verbietet das Kartellrecht, und wie werden Zusammenschlüsse kontrolliert?" }
+        {
+          "typ": "achtung",
+          "text": "Freigestellt ist eine Vereinbarung nur, wenn alle vier Bedingungen zusammen erfüllt sind (§ 2 GWB): Sie bringt Effizienzvorteile, die Verbraucher werden angemessen beteiligt, die Beschränkung ist dafür unerlässlich, und wesentlicher Wettbewerb wird nicht ausgeschaltet; für Mittelstandskooperationen gelten zusätzliche Bedingungen (§ 3 GWB). Anmeldepflichtig beim Bundeskartellamt sind Zusammenschlüsse in der Regel ab mehr als 500 Mio. € weltweitem Umsatz aller Beteiligten, wenn ein Beteiligter im Inland mehr als 50 Mio. € und ein anderer mehr als 17,5 Mio. € umsetzt (§ 35 GWB); daneben gibt es einen Transaktionswert-Tatbestand und die EU-Fusionskontrolle. Im Zweifel vor einer Zusage fachlich prüfen lassen."
+        },
+        {
+          "typ": "merke",
+          "text": "**Kartellverbot** (§ 1 GWB, Art. 101 AEUV): keine Preis-, Gebiets- oder Kundenabsprachen; Kooperationen im Einzelfall prüfen; große Fusionen werden kontrolliert.",
+          "karteikarte": "Was verbietet das Kartellrecht, und wie werden Zusammenschlüsse kontrolliert?"
+        }
       ]
     },
     {
@@ -160,11 +234,35 @@
       "id": "a4",
       "titel": "Begründet entscheiden",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Angebot", "Chancen", "Risiken"], "zeilen": [
-          { "zellen": ["Einkaufskooperation", "Niedrigere Einkaufspreise, gemeinsame Qualitätsstandards", "Feste Abnahmemengen, Abstimmungsaufwand, kartellrechtliche Prüfung"] },
-          { "zellen": ["Übernahme durch Wettbewerber", "Kapital, Einkaufsmacht, größere Kunden", "Verlust der Eigenständigkeit, Arbeitsplätze, Marke"] }
-        ] },
-        { "typ": "merke", "text": "**Chancen, Risiken und Recht** zusammen bewerten — bei Unsicherheit erst prüfen lassen, dann zusagen.", "karteikarte": "Wie bewertest du ein Kooperations- oder Übernahmeangebot?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Angebot",
+            "Chancen",
+            "Risiken"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Einkaufskooperation",
+                "Niedrigere Einkaufspreise, gemeinsame Qualitätsstandards",
+                "Feste Abnahmemengen, Abstimmungsaufwand, kartellrechtliche Prüfung"
+              ]
+            },
+            {
+              "zellen": [
+                "Übernahme durch Wettbewerber",
+                "Kapital, Einkaufsmacht, größere Kunden",
+                "Verlust der Eigenständigkeit, Arbeitsplätze, Marke"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Chancen, Risiken und Recht** zusammen bewerten — bei Unsicherheit erst prüfen lassen, dann zusagen.",
+          "karteikarte": "Wie bewertest du ein Kooperations- oder Übernahmeangebot?"
+        }
       ]
     }
   ],
@@ -177,9 +275,21 @@
     "Angebote wirtschaftlich und rechtlich prüfen."
   ],
   "selbsttest": [
-    { "typ": "Vergleichen", "frage": "Vergleiche gemeinsame Beschaffung rechtlich selbständiger Unternehmen mit einer Fusion.", "loesung": "Gemeinsame Beschaffung ist eine Kooperation; die Unternehmen bleiben selbständig. Bei der Fusion verschmelzen sie zu einem Unternehmen (Konzentration). Die tatsächliche Vertragsstruktur ist zu prüfen." },
-    { "typ": "Handeln", "frage": "Ein Konkurrent schlägt gemeinsame Verkaufspreise vor. Welche Reaktion ist erforderlich?", "loesung": "Wettbewerbsrechtliches Risiko erkennen, nicht zusagen, intern melden und fachlich prüfen lassen. Effizienzargumente rechtfertigen keine Preisabsprache." },
-    { "typ": "Wissen", "frage": "Was ist ein vertikaler Zusammenschluss?", "loesung": "Ein Zusammenschluss von Unternehmen aufeinanderfolgender Wirtschaftsstufen, etwa Lieferant und Abnehmer." }
+    {
+      "typ": "Vergleichen",
+      "frage": "Vergleiche gemeinsame Beschaffung rechtlich selbständiger Unternehmen mit einer Fusion.",
+      "loesung": "Gemeinsame Beschaffung ist eine Kooperation; die Unternehmen bleiben selbständig. Bei der Fusion verschmelzen sie zu einem Unternehmen (Konzentration). Die tatsächliche Vertragsstruktur ist zu prüfen."
+    },
+    {
+      "typ": "Handeln",
+      "frage": "Ein Konkurrent schlägt gemeinsame Verkaufspreise vor. Welche Reaktion ist erforderlich?",
+      "loesung": "Wettbewerbsrechtliches Risiko erkennen, nicht zusagen, intern melden und fachlich prüfen lassen. Effizienzargumente rechtfertigen keine Preisabsprache."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Was ist ein vertikaler Zusammenschluss?",
+      "loesung": "Ein Zusammenschluss von Unternehmen aufeinanderfolgender Wirtschaftsstufen, etwa Lieferant und Abnehmer."
+    }
   ],
   "pruefungstipp": "Bei Zusammenschlussfragen immer zwei Merkmale prüfen: Bleibt die rechtliche Selbständigkeit? Bleibt die wirtschaftliche Selbständigkeit? Daraus ergibt sich die Form fast von allein."
 }

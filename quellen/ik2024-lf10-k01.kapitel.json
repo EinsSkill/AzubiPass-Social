@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Zweck, Adressaten und Bestandteile des Jahresabschlusses einordnen", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Inventur- und Kontensalden abstimmen", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Vorbereitende Arbeiten in eine sinnvolle Reihenfolge bringen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Abschlussbestandteile einer Kapitalgesellschaft einordnen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Zweck, Adressaten und Bestandteile des Jahresabschlusses einordnen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Inventur- und Kontensalden abstimmen",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Vorbereitende Arbeiten in eine sinnvolle Reihenfolge bringen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Abschlussbestandteile einer Kapitalgesellschaft einordnen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,15 +117,60 @@
       "id": "a1",
       "titel": "Zweck und Adressaten",
       "inhalt": [
-        { "typ": "absatz", "text": "Der {{begriff:jahresabschluss|Jahresabschluss}} informiert nach außen und bildet die Grundlage für Gewinnverwendung und Steuern." },
-        { "typ": "tabelle", "spalten": ["Bestandteil", "Kleine GmbH", "Mittelgroße/große GmbH"], "zeilen": [
-          { "zellen": ["Bilanz", "ja", "ja"] },
-          { "zellen": ["GuV", "ja", "ja"] },
-          { "zellen": ["Anhang", "ja (mit Erleichterungen)", "ja"] },
-          { "zellen": ["Lagebericht", "nein", "ja"] },
-          { "zellen": ["Abschlussprüfung", "nein", "ja"] }
-        ], "pruefen": "Größenklassen-Schwellenwerte (§ 267 HGB) wurden zuletzt 2024 angehoben; aktuelle Werte vor Veröffentlichung prüfen." },
-        { "typ": "merke", "text": "Der Jahresabschluss **dokumentiert und informiert**; bei der GmbH umfasst er Bilanz, GuV und Anhang, je nach Größe zusätzlich Lagebericht und Prüfung.", "karteikarte": "Woraus besteht der Jahresabschluss einer GmbH, und wovon hängen zusätzliche Pflichten ab?" }
+        {
+          "typ": "absatz",
+          "text": "Der {{begriff:jahresabschluss|Jahresabschluss}} informiert nach außen und bildet die Grundlage für Gewinnverwendung und Steuern."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Bestandteil",
+            "Kleine GmbH",
+            "Mittelgroße/große GmbH"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Bilanz",
+                "ja",
+                "ja"
+              ]
+            },
+            {
+              "zellen": [
+                "GuV",
+                "ja",
+                "ja"
+              ]
+            },
+            {
+              "zellen": [
+                "Anhang",
+                "ja (mit Erleichterungen)",
+                "ja"
+              ]
+            },
+            {
+              "zellen": [
+                "Lagebericht",
+                "nein",
+                "ja"
+              ]
+            },
+            {
+              "zellen": [
+                "Abschlussprüfung",
+                "nein",
+                "ja"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Der Jahresabschluss **dokumentiert und informiert**; bei der GmbH umfasst er Bilanz, GuV und Anhang, je nach Größe zusätzlich Lagebericht und Prüfung.",
+          "karteikarte": "Woraus besteht der Jahresabschluss einer GmbH, und wovon hängen zusätzliche Pflichten ab?"
+        }
       ]
     },
     {
@@ -117,14 +178,49 @@
       "id": "a2",
       "titel": "Inventur und bereinigte Salden",
       "inhalt": [
-        { "typ": "tabelle", "mono": true, "spalten": ["Rohstoffe", "Betrag"], "zeilen": [
-          { "zellen": ["Saldo laut Saldenliste", "12.000 €"] },
-          { "zellen": ["− belegter, nicht gebuchter Verbrauch", "500 €"] },
-          { "zellen": ["= abgestimmter Bestand", "11.500 €"] },
-          { "zellen": ["→ danach: Bewertung prüfen", ""] }
-        ] },
-        { "typ": "achtung", "text": "Die Saldenliste ist ein **Arbeitsstand**. Ohne Abstimmung, Abgrenzung und Bewertung ist sie kein Jahresabschluss." },
-        { "typ": "merke", "text": "Erst **Bestände abstimmen** und Differenzen belegt korrigieren — die Saldenliste ist Arbeitsstand, nicht Abschluss.", "karteikarte": "Warum darf eine Saldenliste nicht als fertiger Jahresabschluss übernommen werden?" }
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Rohstoffe",
+            "Betrag"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Saldo laut Saldenliste",
+                "12.000 €"
+              ]
+            },
+            {
+              "zellen": [
+                "− belegter, nicht gebuchter Verbrauch",
+                "500 €"
+              ]
+            },
+            {
+              "zellen": [
+                "= abgestimmter Bestand",
+                "11.500 €"
+              ]
+            },
+            {
+              "zellen": [
+                "→ danach: Bewertung prüfen",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Die Saldenliste ist ein **Arbeitsstand**. Ohne Abstimmung, Abgrenzung und Bewertung ist sie kein Jahresabschluss."
+        },
+        {
+          "typ": "merke",
+          "text": "Erst **Bestände abstimmen** und Differenzen belegt korrigieren — die Saldenliste ist Arbeitsstand, nicht Abschluss.",
+          "karteikarte": "Warum darf eine Saldenliste nicht als fertiger Jahresabschluss übernommen werden?"
+        }
       ]
     },
     {
@@ -132,16 +228,63 @@
       "id": "a3",
       "titel": "Vorbereitung und Zuständigkeiten",
       "inhalt": [
-        { "typ": "grafik", "variante": "kette", "kopf": "Der Abschlussplan", "titel": "Sieben Schritte zum Abschluss", "lead": "Klick dich durch — jeder Schritt baut auf dem vorherigen auf.", "schritte": [
-          { "nr": 1, "titel": "Laufende Buchungen vervollständigen", "satz": "Buchhaltung · bis 10. Januar", "text": "Alle Belege des alten Jahres erfasst, auch späte Lieferantenrechnungen." },
-          { "nr": 2, "titel": "Inventur und Abstimmung", "satz": "Lager, Buchhaltung · bis 15. Januar", "text": "Bestände gezählt, Bank, Kasse und offene Posten abgestimmt, Differenzen geklärt." },
-          { "nr": 3, "titel": "Abgrenzungen", "satz": "Buchhaltung · bis 31. Januar", "text": "Rechnungsabgrenzung, sonstige Forderungen und Verbindlichkeiten, Rückstellungen." },
-          { "nr": 4, "titel": "Bewertung", "satz": "Buchhaltung mit Steuerberatung · bis 15. Februar", "text": "Abschreibungen, Vorratsbewertung, Forderungsbewertung." },
-          { "nr": 5, "titel": "Umsatzsteuer abschließen", "satz": "Buchhaltung", "text": "Zahllast für Dezember und Jahresabstimmung." },
-          { "nr": 6, "titel": "Konten abschließen", "satz": "Buchhaltung · bis 15. März", "text": "Erfolgskonten über die GuV, Bestandskonten über das Schlussbilanzkonto." },
-          { "nr": 7, "titel": "Anhang und Vorlage", "satz": "Geschäftsführung · bis 31. März", "text": "Erläuterungen erstellen, Abschluss der Gesellschafterin und der Bank vorlegen." }
-        ], "regel": "Erst Mengen, dann Werte: Wer bewertet, bevor die Bestände stimmen, bewertet die falschen Zahlen." },
-        { "typ": "merke", "text": "Abschluss in Reihenfolge: **buchen, abstimmen, abgrenzen, bewerten, abschließen, erläutern** — jeweils mit Zuständigen und Nachweisen.", "karteikarte": "In welcher Reihenfolge laufen die Abschlussarbeiten?" }
+        {
+          "typ": "grafik",
+          "variante": "kette",
+          "kopf": "Der Abschlussplan",
+          "titel": "Sieben Schritte zum Abschluss",
+          "lead": "Klick dich durch — jeder Schritt baut auf dem vorherigen auf.",
+          "schritte": [
+            {
+              "nr": 1,
+              "titel": "Laufende Buchungen vervollständigen",
+              "satz": "Buchhaltung · bis 10. Januar",
+              "text": "Alle Belege des alten Jahres erfasst, auch späte Lieferantenrechnungen."
+            },
+            {
+              "nr": 2,
+              "titel": "Inventur und Abstimmung",
+              "satz": "Lager, Buchhaltung · bis 15. Januar",
+              "text": "Bestände gezählt, Bank, Kasse und offene Posten abgestimmt, Differenzen geklärt."
+            },
+            {
+              "nr": 3,
+              "titel": "Abgrenzungen",
+              "satz": "Buchhaltung · bis 31. Januar",
+              "text": "Rechnungsabgrenzung, sonstige Forderungen und Verbindlichkeiten, Rückstellungen."
+            },
+            {
+              "nr": 4,
+              "titel": "Bewertung",
+              "satz": "Buchhaltung mit Steuerberatung · bis 15. Februar",
+              "text": "Abschreibungen, Vorratsbewertung, Forderungsbewertung."
+            },
+            {
+              "nr": 5,
+              "titel": "Umsatzsteuer abschließen",
+              "satz": "Buchhaltung",
+              "text": "Zahllast für Dezember und Jahresabstimmung."
+            },
+            {
+              "nr": 6,
+              "titel": "Konten abschließen",
+              "satz": "Buchhaltung · bis 15. März",
+              "text": "Erfolgskonten über die GuV, Bestandskonten über das Schlussbilanzkonto."
+            },
+            {
+              "nr": 7,
+              "titel": "Anhang und Vorlage",
+              "satz": "Geschäftsführung · bis 31. März",
+              "text": "Erläuterungen erstellen, Abschluss der Gesellschafterin und der Bank vorlegen."
+            }
+          ],
+          "regel": "Erst Mengen, dann Werte: Wer bewertet, bevor die Bestände stimmen, bewertet die falschen Zahlen."
+        },
+        {
+          "typ": "merke",
+          "text": "Abschluss in Reihenfolge: **buchen, abstimmen, abgrenzen, bewerten, abschließen, erläutern** — jeweils mit Zuständigen und Nachweisen.",
+          "karteikarte": "In welcher Reihenfolge laufen die Abschlussarbeiten?"
+        }
       ]
     },
     {
@@ -149,22 +292,65 @@
       "id": "a4",
       "titel": "Bilanz, GuV und weitere Bestandteile",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Aktiva", "Passiva"], "zeilen": [
-          { "zellen": ["A. Anlagevermögen", "A. Eigenkapital (gezeichnetes Kapital, Rücklagen, Jahresüberschuss)"] },
-          { "zellen": ["B. Umlaufvermögen (Vorräte, Forderungen, liquide Mittel)", "B. Rückstellungen"] },
-          { "zellen": ["C. Rechnungsabgrenzungsposten", "C. Verbindlichkeiten"] },
-          { "zellen": ["", "D. Rechnungsabgrenzungsposten"] }
-        ] },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Aktiva",
+            "Passiva"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "A. Anlagevermögen",
+                "A. Eigenkapital (gezeichnetes Kapital, Rücklagen, Jahresüberschuss)"
+              ]
+            },
+            {
+              "zellen": [
+                "B. Umlaufvermögen (Vorräte, Forderungen, liquide Mittel)",
+                "B. Rückstellungen"
+              ]
+            },
+            {
+              "zellen": [
+                "C. Rechnungsabgrenzungsposten",
+                "C. Verbindlichkeiten"
+              ]
+            },
+            {
+              "zellen": [
+                "",
+                "D. Rechnungsabgrenzungsposten"
+              ]
+            }
+          ]
+        },
         {
           "typ": "check",
           "frage": "In der Bilanz der MAKEL Studio GmbH stehen 100.000 € gezeichnetes Kapital, 40.000 € Gewinnrücklagen und 20.000 € Jahresüberschuss. Wie hoch ist das Eigenkapital?",
           "optionen": [
-            { "text": "100.000 €", "richtig": false, "echo": "Das ist nur das gezeichnete Kapital (Stammkapital)." },
-            { "text": "160.000 €", "richtig": true, "echo": "Richtig: 100.000 + 40.000 + 20.000 € — alle Posten des Eigenkapitals zusammen." },
-            { "text": "120.000 €", "richtig": false, "echo": "Die Gewinnrücklagen gehören ebenfalls zum Eigenkapital." }
+            {
+              "text": "100.000 €",
+              "richtig": false,
+              "echo": "Das ist nur das gezeichnete Kapital (Stammkapital)."
+            },
+            {
+              "text": "160.000 €",
+              "richtig": true,
+              "echo": "Richtig: 100.000 + 40.000 + 20.000 € — alle Posten des Eigenkapitals zusammen."
+            },
+            {
+              "text": "120.000 €",
+              "richtig": false,
+              "echo": "Die Gewinnrücklagen gehören ebenfalls zum Eigenkapital."
+            }
           ]
         },
-        { "typ": "merke", "text": "**Bilanz** zeigt den Stichtag, **GuV** das Zustandekommen des Ergebnisses, der **Anhang** erläutert die Methoden; die GmbH legt offen.", "karteikarte": "Was zeigen Bilanz, GuV und Anhang einer Kapitalgesellschaft?" }
+        {
+          "typ": "merke",
+          "text": "**Bilanz** zeigt den Stichtag, **GuV** das Zustandekommen des Ergebnisses, der **Anhang** erläutert die Methoden; die GmbH legt offen.",
+          "karteikarte": "Was zeigen Bilanz, GuV und Anhang einer Kapitalgesellschaft?"
+        }
       ]
     }
   ],
@@ -177,9 +363,21 @@
     "Eigenkapital der GmbH = gezeichnetes Kapital + Rücklagen + Ergebnis."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "Ein Rohstoffkonto enthält 12.000 €; belegter, noch nicht verbuchter Verbrauch beträgt 500 €. Bestand nach Korrektur?", "loesung": "11.500 €. Eine zusätzlich nötige Bewertungsprüfung ist damit nicht vorweggenommen." },
-    { "typ": "Wissen", "frage": "Warum dürfen unbereinigte Salden nicht kommentarlos als fertiger Jahresabschluss übernommen werden?", "loesung": "Vollständigkeit, Inventurdifferenzen, Periodenzuordnung und Bewertung müssen geprüft werden; dafür gibt es Zuständige und Nachweise (Inventurlisten, Kontoauszüge, Saldenbestätigungen, Bewertungsunterlagen)." },
-    { "typ": "Wissen", "frage": "Welche Bestandteile hat der Jahresabschluss einer kleinen GmbH?", "loesung": "Bilanz, Gewinn- und Verlustrechnung und Anhang; ein Lagebericht und eine Abschlussprüfung sind für kleine Gesellschaften nicht vorgeschrieben." }
+    {
+      "typ": "Rechnen",
+      "frage": "Ein Rohstoffkonto enthält 12.000 €; belegter, noch nicht verbuchter Verbrauch beträgt 500 €. Bestand nach Korrektur?",
+      "loesung": "11.500 €. Eine zusätzlich nötige Bewertungsprüfung ist damit nicht vorweggenommen."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Warum dürfen unbereinigte Salden nicht kommentarlos als fertiger Jahresabschluss übernommen werden?",
+      "loesung": "Vollständigkeit, Inventurdifferenzen, Periodenzuordnung und Bewertung müssen geprüft werden; dafür gibt es Zuständige und Nachweise (Inventurlisten, Kontoauszüge, Saldenbestätigungen, Bewertungsunterlagen)."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Welche Bestandteile hat der Jahresabschluss einer kleinen GmbH?",
+      "loesung": "Bilanz, Gewinn- und Verlustrechnung und Anhang; ein Lagebericht und eine Abschlussprüfung sind für kleine Gesellschaften nicht vorgeschrieben."
+    }
   ],
   "pruefungstipp": "Bei Abschlussaufgaben zuerst Mengen klären, dann Werte. Und wenn nach Bestandteilen gefragt wird, immer die Rechtsform und Größenklasse mitdenken."
 }

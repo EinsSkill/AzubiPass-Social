@@ -53,15 +53,15 @@
           "Liefer- und Zahlungsbedingungen regeln, wer was wann und wo leistet.",
           "Viele Unternehmen verwenden dafür Allgemeine Geschäftsbedingungen."
         ],
-        "erklaerung": "Lieferbedingungen regeln, wer Transportkosten und Transportrisiko trägt — etwa ‚ab Werk‘ (Käufer trägt ab Rampe des Verkäufers), ‚frei Haus‘ (Verkäufer trägt bis zum Käufer). Ohne Vereinbarung ist der Erfüllungsort für die Ware der Sitz des Verkäufers; beim Versendungskauf geht die Gefahr unter Unternehmen mit Übergabe an das Transportunternehmen über. Zahlungsbedingungen regeln Zahlungsziel, Skonto und Zahlungsweise, etwa ‚8 Tage 3 % Skonto, 30 Tage netto‘. AGB sind vorformulierte Bedingungen für viele Verträge. Gegenüber Unternehmen werden sie leichter Vertragsbestandteil als gegenüber Verbrauchern, unterliegen aber weiterhin einer Inhaltskontrolle.",
+        "erklaerung": "Lieferbedingungen beantworten drei getrennte Fragen: Wer trägt die Transportkosten? Wo ist der Leistungsort? Wann geht die Gefahr (das Risiko von Verlust oder Beschädigung) über? Klauseln wie ‚ab Werk‘ (Käufer zahlt den Transport ab Verkäufer) oder ‚frei Haus‘ (Verkäufer zahlt den Transport bis zum Käufer) regeln zunächst nur die Kosten. Allein aus der Kostenübernahme folgt kein anderer Leistungsort (§ 269 Abs. 3 BGB). Ohne weitere Vereinbarung ist der Leistungsort für die Ware der Sitz des Verkäufers; beim Versendungskauf unter Unternehmen geht die Gefahr mit Übergabe an das Transportunternehmen auf den Käufer über (§ 447 BGB) — auch bei ‚frei Haus‘. Soll der Verkäufer das Risiko bis zur Ablieferung tragen, muss das ausdrücklich vereinbart werden (etwa ‚Lieferung frei Haus, Gefahrübergang bei Ablieferung‘). Incoterms wie EXW oder DAP sind eigene, genau definierte Klauseln und nur anwendbar, wenn sie ausdrücklich vereinbart werden. Zahlungsbedingungen regeln Zahlungsziel, Skonto und Zahlungsweise, etwa ‚8 Tage 3 % Skonto, 30 Tage netto‘. AGB sind vorformulierte Bedingungen für viele Verträge. Gegenüber Unternehmen werden sie leichter Vertragsbestandteil als gegenüber Verbrauchern, unterliegen aber weiterhin einer Inhaltskontrolle.",
         "beispiele": [
           "MAKELs Standard für Wholesale: ‚8 Tage 3 % Skonto, 30 Tage netto‘.",
-          "‚Frei Haus‘: MAKEL zahlt den Versand und trägt das Risiko bis zur Ablieferung."
+          "‚Frei Haus‘: MAKEL zahlt den Versand; das Transportrisiko trägt ohne weitere Abrede beim Versendungskauf unter Unternehmen die Boutique ab Übergabe an den Paketdienst."
         ],
-        "fallbeispiel": "Die Agentur fragt, wer zahlt, wenn das Paket beim Transport beschädigt wird. Vereinbart ist ‚ab Werk, Versand durch Paketdienst auf Kosten des Käufers‘. Unter Unternehmen geht die Gefahr beim Versendungskauf mit Übergabe an den Paketdienst auf die Agentur über; sie müsste sich an den Paketdienst halten. Hätte MAKEL ‚frei Haus‘ zugesagt, läge das Risiko bis zur Ablieferung bei MAKEL.",
+        "fallbeispiel": "Die Agentur fragt, wer zahlt, wenn das Paket beim Transport beschädigt wird. Vereinbart ist ‚ab Werk, Versand durch Paketdienst auf Kosten des Käufers‘. Unter Unternehmen geht die Gefahr beim Versendungskauf mit Übergabe an den Paketdienst auf die Agentur über; sie müsste sich an den Paketdienst halten. Hätte MAKEL nur ‚frei Haus‘ zugesagt, hätte MAKEL die Versandkosten getragen — am Gefahrübergang hätte das allein nichts geändert. Erst eine ausdrückliche Abrede ‚Gefahrübergang bei Ablieferung‘ legt das Risiko bis zur Boutique auf MAKEL.",
         "typische_fehler": "Skonto und Rabatt werden verwechselt. Rabatt ist ein sofortiger Nachlass, Skonto ein Nachlass für schnelle Zahlung.",
         "verstaendnisfragen": [
-          "Was bedeutet ‚frei Haus‘? Der Verkäufer trägt Transportkosten und Transportrisiko bis zum Käufer.",
+          "Was bedeutet ‚frei Haus‘? Der Verkäufer trägt die Transportkosten bis zum Käufer; die Gefahrtragung muss gesondert vereinbart werden, sonst gilt beim Versendungskauf § 447 BGB.",
           "Was bedeutet ‚10 Tage 2 % Skonto, 30 Tage netto‘? Wer innerhalb von 10 Tagen zahlt, darf 2 Prozent abziehen; spätestens nach 30 Tagen ist der volle Betrag fällig."
         ],
         "pruefungsbezug": "Lieferklauseln immer nach zwei Fragen auflösen: Wer zahlt den Transport? Wer trägt das Risiko?",
@@ -169,10 +169,10 @@
         },
         {
           "typ": "tabelle",
-          "spalten": ["Klausel", "Transportkosten", "Transportrisiko"],
+          "spalten": ["Klausel", "Transportkosten", "Transportrisiko (B2B-Versendungskauf ohne weitere Abrede)"],
           "zeilen": [
-            { "zellen": ["ab Werk", "Käufer", "Käufer ab Bereitstellung"] },
-            { "zellen": ["frei Haus", "Verkäufer", "Verkäufer bis Ablieferung"] },
+            { "zellen": ["ab Werk", "Käufer", "Käufer ab Übergabe an den Transporteur"] },
+            { "zellen": ["frei Haus", "Verkäufer", "Käufer ab Übergabe an den Transporteur — außer, die Gefahrtragung bis Ablieferung ist ausdrücklich vereinbart"] },
             { "zellen": ["unfrei", "Käufer zahlt bei Ankunft", "nach Vereinbarung bzw. Gesetz"],
               "detail": "Ohne besondere Vereinbarung geht beim Versendungskauf unter Unternehmen die Gefahr mit Übergabe an das Transportunternehmen auf den Käufer über." },
             { "zellen": ["8 Tage 3 % Skonto, 30 Tage netto", "—", "Zahlungsbedingung: Abzug bei Zahlung binnen 8 Tagen"] }

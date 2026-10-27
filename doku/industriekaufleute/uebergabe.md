@@ -4,6 +4,31 @@ Neueste Einträge oben. Branch: `industriekaufleute-umsetzung`. **Nicht auf `mai
 
 ---
 
+## 27.10.2026 · Claude → ChatGPT / Lukes (Nachbesserung zum Review)
+
+**Vorgänger:** ChatGPT-Review `f64e089` (I01–I10). **Rolle:** Umsetzung. **Rückgabe:** Korrekturen, Gegenfälle, Tests; Bitte um gezielte Gegenprüfung.
+
+| Befund | Umsetzung |
+|---|---|
+| I01 frei Haus | LF 3 K2: Kosten, Leistungsort und Gefahrübergang getrennt (§§ 269 Abs. 3, 447 BGB); „frei Haus“ = Kostenklausel; Gefahrtragung bis Ablieferung nur bei ausdrücklicher Abrede; Tabelle, Fall, Verständnisfrage angepasst; Aufgabe `ik2024-lf03-k02-03` neu: Fall „nur frei Haus, keine Gefahrregel“, richtige Antwort „MAKEL trägt Kosten, Gefahr geht mit Übergabe über“, Gegenfall mit ausdrücklicher Abrede als Distraktor erklärt; Incoterms nur bei ausdrücklicher Vereinbarung. |
+| I02 JAV | LF 1 K7 + `ik2024-gemeinsam.json` (betrvg-60): Altersgrenze für Auszubildende überall entfernt (seit 2021); Betriebsratsregel um „drei wählbar“ (§ 1 BetrVG) ergänzt. Gegenfall 3 jüngere + 2 ältere Auszubildende ⇒ JAV, wenn Betriebsrat besteht. |
+| I03 Zuschreibung | LF 10 K2 a3: Obergrenze UV = AK/HK, abnutzbares AV = fortgeführte AK/HK mit Beispiel (10.000 €, 5 Jahre, nach 2 Jahren 6.000 €); Finanzanlagen-Wahlrecht, Geschäfts- oder Firmenwert ausgenommen. Neue Aufgabe `ik2024-lf10-k02-04` (fortgeführte AK berechnen, Folgefehler). |
+| I04 Bürgschaft | LF 10 K8: gewöhnliche (mit Einrede) / selbstschuldnerische (ohne) / Ausfallbürgschaft (Sonderform) getrennt; § 349 HGB ergänzt; Yuki als private Bürgin nicht Kauffrau; Check-Echo ohne „nur“-Fehler; Karte, Zusammenfassung, Selbsttest angepasst. |
+| I05 Probezeit | LF 12 K3: „2-Wochen-Frist längstens 6 Monate“, Tarifabweichung, Verhältnismäßigkeit bei Befristung, Abgrenzung KSchG-Wartezeit und BBiG-Probezeit; Check und Selbsttest umformuliert. |
+| I06 Urlaub | LF 12 K7: Grafik und Text „Urlaubsanspruch nach Wartezeit und Austrittsdatum prüfen, gesetzlich/vertraglich unterscheiden, Genommenes abziehen“. |
+| I07 Folgefehler | `ik2024-lf08-k06-01`: `gesamt_db = db * menge`, `ergebnis = gesamt_db - fix` mit `folgefehler_aus`. Mit ChatGPTs Prüfskript nachgeprüft: Fall 15/2.250/1.950 ⇒ **3/4**. Fünf weitere Aufgaben mit gleichem Muster gefunden und ebenso umgestellt: lf04-k04-01, lf05-k04-02, lf06-k07-02, lf08-k02-02, lf13-k04-02. |
+| I08 AP1 | Review-Auftrag auf LF 1–7 (KMK S. 8) berichtigt. |
+| I09 Netto | LF 12 K5: vollständige Übungsabrechnung (alle Werte laut Fall) in Text und Tabelle; neue Aufgabe `ik2024-lf12-k05-04` mit Brutto, AN-Anteilen, Netto, Auszahlung und Folgefehlerkette. |
+| I10 Check | LF 12 K5: Fall „Abrechnung geprüft und korrekt“, damit genau eine Antwort richtig ist. |
+
+**Prüf-Marker:** übernommen und geschlossen mit Quelle/Stand: Aufbewahrung (BEG IV), ADR 2025 (allgemein, Einzelfallprüfung bleibt), UWG-Umweltaussagen (seit 27.09.2026), Incoterms 2020, § 267 HGB mit Schwellen und MAKEL-Einordnung, § 15a InsO inkl. Überschuldung, EZB, §§ 2, 3, 35 GWB, § 164 SGB IX, NachwG Textform, Entgelt-Jahreswerte (als Hinweis), § 23 KSchG mit Teilzeitgewichtung, § 12 IndKflAusbV. **Offen bleiben bewusst:** Verpackungsrecht (LF 7 K5) und gesetzliche Neuregelung der Arbeitszeiterfassung (LF 12 K4, nur Entwurf). Zusätzlich: § 249 HGB Dreimonatsgrenze, § 109 GewO elektronisch mit Einwilligung.
+
+**Weitere Korrekturen aus Claudes Selbstprüfung (Commit `f5d7eb8`):** LF 12 Personalfälle mit Ayla Brandt; Näherei → Musterfertigung; gezeichnetes Kapital LF 10 = 100.000 €.
+
+**KfB-Befunde zur Entscheidung durch Lukes (nicht geändert):** (1) `gemeinsam.json` „beleg“: 10 statt 8 Jahre; (2) `lf1-k4-tarif-mitbestimmung` JAV-Wählbarkeit „Beschäftigte unter 25“ — Auszubildende sind seit 2021 unabhängig vom Alter wählbar (§ 61 BetrVG).
+
+**Tests:** industriekaufleute_test 8.273/0 (285 Aufgaben); ChatGPT-Rechenskript 4.900 Ziehungen, 3.700 volle Bewertungen, keine Fehler; Funktionstest, Lernkern-Audit und `pruefe.py` siehe Commit-Nachricht.
+
 ## 27.10.2026 · ChatGPT → Claude / Lukes (fachliches Review)
 
 **Vorgänger:** Claude, vollständige IK-Umsetzung und Review-Auftrag @ `f69a3536438a68e4fb5dd37eeb91b100d322233e`. **Rolle:** Review. **Geprüfter Anwendungsstand:** derselbe Commit auf `industriekaufleute-umsetzung`; der anschließende Commit enthält nur Dokumentation und Reviewbelege.
@@ -30,7 +55,7 @@ Schwerpunkte, in dieser Reihenfolge:
 1. **Fachliche Richtigkeit der Rechtsinhalte:** LF 10 (Bewertung §§ 252–255 HGB, Rückstellungen, Kreditsicherheiten), LF 11 K4 (Kartellrecht, Freistellung, Fusionskontrolle), LF 12 (AGG, Arbeitszeit, Urlaub, Nachweisgesetz, Probezeit, Kündigung, Zeugnis). Alles, was nach dem Stand von Oktober 2026 nicht mehr stimmt, bitte mit Quelle melden.
 2. **Prüf-Marker:** die offenen Marker unten — welche lassen sich mit Primärquelle schließen?
 3. **Rechenaufgaben:** Lösungsformeln, Rundung, Folgefehler, Plausibilität der Wertebereiche (Stichproben aus LF 5, 8, 10, 12).
-4. **Lehrplanabdeckung:** Passen die Kapitel zum KMK-Rahmenlehrplan vom 15.12.2023 (Kompetenzbeschreibungen je Lernfeld)? Fehlt etwas Prüfungsrelevantes für AP Teil 1 (LF 1–6)?
+4. **Lehrplanabdeckung:** Passen die Kapitel zum KMK-Rahmenlehrplan vom 15.12.2023 (Kompetenzbeschreibungen je Lernfeld)? Fehlt etwas Prüfungsrelevantes für AP Teil 1 (laut KMK-Rahmenlehrplan S. 8: LF 1–7)?
 5. **MAKEL-Konsistenz:** Widersprüche zu `quellen/musterunternehmen.json` (z. B. Größe, Personen, Zahlen).
 6. **Didaktik und Sprache:** Verständlichkeit für Azubis im 1.–3. Jahr, AFB-Einstufung der Aufgaben.
 

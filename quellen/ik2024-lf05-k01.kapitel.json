@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Zwecke und Nutzer der Buchführung erläutern", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Gesetzliche Pflichten und Belegarten einordnen", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Inventur, Inventar und Bilanz unterscheiden", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Die Bilanzgleichung anwenden", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Zwecke und Nutzer der Buchführung erläutern",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Gesetzliche Pflichten und Belegarten einordnen",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Inventur, Inventar und Bilanz unterscheiden",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Die Bilanzgleichung anwenden",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,19 +117,54 @@
       "id": "a1",
       "titel": "Was die Buchführung abbildet",
       "inhalt": [
-        { "typ": "absatz", "text": "Material kommt herein, Erzeugnisse gehen hinaus, Geld fließt in die Gegenrichtung. Die {{begriff:doppelte-buchfuehrung|Buchführung}} hält jeden {{begriff:geschaeftsvorfall|Geschäftsfall}} fest — ==lückenlos, zeitlich geordnet und belegt.==" },
+        {
+          "typ": "absatz",
+          "text": "Material kommt herein, Erzeugnisse gehen hinaus, Geld fließt in die Gegenrichtung. Die {{begriff:doppelte-buchfuehrung|Buchführung}} hält jeden {{begriff:geschaeftsvorfall|Geschäftsfall}} fest — ==lückenlos, zeitlich geordnet und belegt.=="
+        },
         {
           "typ": "tabelle",
-          "spalten": ["Wer?", "Braucht die Buchführung für …"],
+          "spalten": [
+            "Wer?",
+            "Braucht die Buchführung für …"
+          ],
           "zeilen": [
-            { "zellen": ["Geschäftsführung", "Gewinn, Zahlungsfähigkeit, Entscheidungen"] },
-            { "zellen": ["Kostenrechnung", "Kalkulation der Erzeugnisse"] },
-            { "zellen": ["Bank", "Kreditwürdigkeit vor einem Darlehen"] },
-            { "zellen": ["Finanzamt", "Ermittlung der Steuern"] },
-            { "zellen": ["Gesellschafter", "Entwicklung ihres Kapitals"] }
+            {
+              "zellen": [
+                "Geschäftsführung",
+                "Gewinn, Zahlungsfähigkeit, Entscheidungen"
+              ]
+            },
+            {
+              "zellen": [
+                "Kostenrechnung",
+                "Kalkulation der Erzeugnisse"
+              ]
+            },
+            {
+              "zellen": [
+                "Bank",
+                "Kreditwürdigkeit vor einem Darlehen"
+              ]
+            },
+            {
+              "zellen": [
+                "Finanzamt",
+                "Ermittlung der Steuern"
+              ]
+            },
+            {
+              "zellen": [
+                "Gesellschafter",
+                "Entwicklung ihres Kapitals"
+              ]
+            }
           ]
         },
-        { "typ": "merke", "text": "Die Buchführung hält alle Geschäftsfälle **belegt und geordnet** fest und liefert Informationen für Unternehmen, Banken, Finanzamt und Gesellschafter.", "karteikarte": "Welche Aufgaben hat die Buchführung, und wer nutzt ihre Zahlen?" }
+        {
+          "typ": "merke",
+          "text": "Die Buchführung hält alle Geschäftsfälle **belegt und geordnet** fest und liefert Informationen für Unternehmen, Banken, Finanzamt und Gesellschafter.",
+          "karteikarte": "Welche Aufgaben hat die Buchführung, und wer nutzt ihre Zahlen?"
+        }
       ]
     },
     {
@@ -121,17 +172,43 @@
       "id": "a2",
       "titel": "Pflichten und Belege",
       "inhalt": [
-        { "typ": "absatz", "text": "{{par:hgb-238|§ 238 HGB}} verpflichtet jeden Kaufmann zur Buchführung nach den Grundsätzen ordnungsmäßiger Buchführung. Die wichtigste Regel: ==keine Buchung ohne {{begriff:beleg|Beleg}}.==" },
+        {
+          "typ": "absatz",
+          "text": "{{par:hgb-238|§ 238 HGB}} verpflichtet jeden Kaufmann zur Buchführung nach den Grundsätzen ordnungsmäßiger Buchführung. Die wichtigste Regel: ==keine Buchung ohne {{begriff:beleg|Beleg}}.=="
+        },
         {
           "typ": "tabelle",
-          "spalten": ["Belegart", "Entsteht", "Beispiele bei MAKEL"],
+          "spalten": [
+            "Belegart",
+            "Entsteht",
+            "Beispiele bei MAKEL"
+          ],
           "zeilen": [
-            { "zellen": ["Fremdbeleg", "außerhalb des Unternehmens", "Eingangsrechnung, Kontoauszug, Gutschrift des Lieferanten"] },
-            { "zellen": ["Eigenbeleg", "im Unternehmen", "Kopie der Ausgangsrechnung, Materialentnahmeschein, Ersatzbeleg"] }
+            {
+              "zellen": [
+                "Fremdbeleg",
+                "außerhalb des Unternehmens",
+                "Eingangsrechnung, Kontoauszug, Gutschrift des Lieferanten"
+              ]
+            },
+            {
+              "zellen": [
+                "Eigenbeleg",
+                "im Unternehmen",
+                "Kopie der Ausgangsrechnung, Materialentnahmeschein, Ersatzbeleg"
+              ]
+            }
           ]
         },
-        { "typ": "absatz", "text": "Aufbewahrung ({{par:hgb-257|§ 257 HGB}}, {{par:ao-147|§ 147 AO}}): Buchungsbelege acht Jahre, Bücher, Inventare und Jahresabschlüsse zehn Jahre. Die {{begriff:aufbewahrungsfrist|Frist}} beginnt mit dem Schluss des Kalenderjahres.", "pruefen": "Fristen nach dem Vierten Bürokratieentlastungsgesetz (Buchungsbelege acht Jahre seit 2025); vor jeder Prüfungssaison mit dem aktuellen Gesetzestext abgleichen." },
-        { "typ": "merke", "text": "Kaufleute müssen Bücher nach den **GoB** führen; **keine Buchung ohne Beleg**, Belege geordnet und fristgerecht aufbewahren.", "karteikarte": "Was verlangt § 238 HGB, und was ist die wichtigste GoB-Regel?" }
+        {
+          "typ": "absatz",
+          "text": "Aufbewahrung ({{par:hgb-257|§ 257 HGB}}, {{par:ao-147|§ 147 AO}}): Buchungsbelege acht Jahre, Bücher, Inventare und Jahresabschlüsse zehn Jahre. Die {{begriff:aufbewahrungsfrist|Frist}} beginnt mit dem Schluss des Kalenderjahres. (Stand: Viertes Bürokratieentlastungsgesetz, gültig seit 1. 1. 2025; in Sonderfällen, etwa bei laufenden Prüfungen, können Fristen länger laufen.)"
+        },
+        {
+          "typ": "merke",
+          "text": "Kaufleute müssen Bücher nach den **GoB** führen; **keine Buchung ohne Beleg**, Belege geordnet und fristgerecht aufbewahren.",
+          "karteikarte": "Was verlangt § 238 HGB, und was ist die wichtigste GoB-Regel?"
+        }
       ]
     },
     {
@@ -139,7 +216,10 @@
       "id": "a3",
       "titel": "Von der Bestandsaufnahme zur Bilanz",
       "inhalt": [
-        { "typ": "absatz", "text": "{{par:hgb-240|§ 240 HGB}} verlangt ein Verzeichnis aller Vermögensgegenstände und Schulden, {{par:hgb-242|§ 242 HGB}} daraus die Bilanz." },
+        {
+          "typ": "absatz",
+          "text": "{{par:hgb-240|§ 240 HGB}} verlangt ein Verzeichnis aller Vermögensgegenstände und Schulden, {{par:hgb-242|§ 242 HGB}} daraus die Bilanz."
+        },
         {
           "typ": "grafik",
           "variante": "stufen",
@@ -152,15 +232,42 @@
               "text": "Die **Inventur** ist der *Vorgang*: Rohstoffe und Erzeugnisse zählen, Bank, Forderungen und Schulden anhand von Unterlagen feststellen.",
               "darstellung": "zaehlen",
               "posten": [
-                { "name": "Maschinen", "wert": 48000 },
-                { "name": "Betriebsausstattung", "wert": 12000 },
-                { "name": "Rohstoffe", "wert": 9000 },
-                { "name": "Fertige Erzeugnisse", "wert": 6000 },
-                { "name": "Forderungen", "wert": 7000 },
-                { "name": "Bank", "wert": 15000 },
-                { "name": "Kasse", "wert": 1000 },
-                { "name": "Darlehen", "wert": 30000 },
-                { "name": "Verb. LuL", "wert": 8000 }
+                {
+                  "name": "Maschinen",
+                  "wert": 48000
+                },
+                {
+                  "name": "Betriebsausstattung",
+                  "wert": 12000
+                },
+                {
+                  "name": "Rohstoffe",
+                  "wert": 9000
+                },
+                {
+                  "name": "Fertige Erzeugnisse",
+                  "wert": 6000
+                },
+                {
+                  "name": "Forderungen",
+                  "wert": 7000
+                },
+                {
+                  "name": "Bank",
+                  "wert": 15000
+                },
+                {
+                  "name": "Kasse",
+                  "wert": 1000
+                },
+                {
+                  "name": "Darlehen",
+                  "wert": 30000
+                },
+                {
+                  "name": "Verb. LuL",
+                  "wert": 8000
+                }
               ]
             },
             {
@@ -168,27 +275,101 @@
               "text": "Das **Inventar** ist das *Ergebnis*: ein ausführliches Verzeichnis mit Einzelpositionen. Unten steht das {{begriff:reinvermoegen|Reinvermögen}}.",
               "darstellung": "verzeichnis",
               "gruppen": [
-                { "titel": "I. Vermögen", "posten": [ { "name": "Maschinen und Ausstattung", "wert": 60000 }, { "name": "Rohstoffe", "wert": 9000 }, { "name": "Fertige Erzeugnisse", "wert": 6000 }, { "name": "Forderungen", "wert": 7000 }, { "name": "Bank und Kasse", "wert": 16000 } ], "summe": { "name": "Gesamtvermögen", "wert": 98000 } },
-                { "titel": "II. Schulden", "posten": [ { "name": "Bankdarlehen", "wert": 30000 }, { "name": "Verbindlichkeiten LuL", "wert": 8000 } ], "summe": { "name": "Gesamtschulden", "wert": 38000 } }
+                {
+                  "titel": "I. Vermögen",
+                  "posten": [
+                    {
+                      "name": "Maschinen und Ausstattung",
+                      "wert": 60000
+                    },
+                    {
+                      "name": "Rohstoffe",
+                      "wert": 9000
+                    },
+                    {
+                      "name": "Fertige Erzeugnisse",
+                      "wert": 6000
+                    },
+                    {
+                      "name": "Forderungen",
+                      "wert": 7000
+                    },
+                    {
+                      "name": "Bank und Kasse",
+                      "wert": 16000
+                    }
+                  ],
+                  "summe": {
+                    "name": "Gesamtvermögen",
+                    "wert": 98000
+                  }
+                },
+                {
+                  "titel": "II. Schulden",
+                  "posten": [
+                    {
+                      "name": "Bankdarlehen",
+                      "wert": 30000
+                    },
+                    {
+                      "name": "Verbindlichkeiten LuL",
+                      "wert": 8000
+                    }
+                  ],
+                  "summe": {
+                    "name": "Gesamtschulden",
+                    "wert": 38000
+                  }
+                }
               ],
-              "ergebnis": { "name": "III. Reinvermögen", "wert": 60000 }
+              "ergebnis": {
+                "name": "III. Reinvermögen",
+                "wert": 60000
+              }
             },
             {
               "name": "Bilanz",
               "text": "Die **Bilanz** ist die *Verdichtung* in Kontenform. Ändere die Werte — beide Seiten bleiben gleich hoch, weil das Eigenkapital die Differenz ist.",
               "darstellung": "bilanz-rechner",
               "eingaben": [
-                { "id": "av", "label": "Anlagevermögen", "start": 60000, "seite": "aktiva" },
-                { "id": "uv", "label": "Umlaufvermögen", "start": 38000, "seite": "aktiva" },
-                { "id": "dl", "label": "Bankdarlehen", "start": 30000, "seite": "passiva" },
-                { "id": "vb", "label": "Verbindlichkeiten LuL", "start": 8000, "seite": "passiva" }
+                {
+                  "id": "av",
+                  "label": "Anlagevermögen",
+                  "start": 60000,
+                  "seite": "aktiva"
+                },
+                {
+                  "id": "uv",
+                  "label": "Umlaufvermögen",
+                  "start": 38000,
+                  "seite": "aktiva"
+                },
+                {
+                  "id": "dl",
+                  "label": "Bankdarlehen",
+                  "start": 30000,
+                  "seite": "passiva"
+                },
+                {
+                  "id": "vb",
+                  "label": "Verbindlichkeiten LuL",
+                  "start": 8000,
+                  "seite": "passiva"
+                }
               ],
               "hinweis_negativ": "Die Schulden übersteigen das Vermögen: Das Eigenkapital ist negativ. Die Gleichung gilt trotzdem — der Fehlbetrag erscheint dann gesondert auf der Aktivseite."
             }
           ]
         },
-        { "typ": "achtung", "text": "**Inventur** ist die Tätigkeit, **Inventar** das Ergebnis. Wer beides gleichsetzt, verliert in der Prüfung leichte Punkte." },
-        { "typ": "merke", "text": "**Inventur** ist das Erfassen, das **Inventar** das ausführliche Verzeichnis, die **Bilanz** die verdichtete Gegenüberstellung.", "karteikarte": "Wie hängen Inventur, Inventar und Bilanz zusammen?" }
+        {
+          "typ": "achtung",
+          "text": "**Inventur** ist die Tätigkeit, **Inventar** das Ergebnis. Wer beides gleichsetzt, verliert in der Prüfung leichte Punkte."
+        },
+        {
+          "typ": "merke",
+          "text": "**Inventur** ist das Erfassen, das **Inventar** das ausführliche Verzeichnis, die **Bilanz** die verdichtete Gegenüberstellung.",
+          "karteikarte": "Wie hängen Inventur, Inventar und Bilanz zusammen?"
+        }
       ]
     },
     {
@@ -196,23 +377,70 @@
       "id": "a4",
       "titel": "Vermögen, Schulden und Eigenkapital",
       "inhalt": [
-        { "typ": "absatz", "text": "Aktiva zeigen, *wo* das Kapital steckt: {{begriff:anlagevermoegen|Anlagevermögen}} und {{begriff:umlaufvermoegen|Umlaufvermögen}}. Passiva zeigen, *woher* es kommt: {{begriff:eigenkapital|Eigenkapital}} und {{begriff:fremdkapital|Fremdkapital}}." },
-        { "typ": "tabelle", "mono": true, "spalten": ["Mini-Fall", "Betrag"], "zeilen": [
-          { "zellen": ["Rohstoffe + Bank", "500 € + 4.500 € = 5.000 €"] },
-          { "zellen": ["− Schulden", "2.000 €"] },
-          { "zellen": ["= Eigenkapital", "3.000 €"] },
-          { "zellen": ["Aktiva = Passiva", "5.000 € = 3.000 € + 2.000 €"] }
-        ] },
+        {
+          "typ": "absatz",
+          "text": "Aktiva zeigen, *wo* das Kapital steckt: {{begriff:anlagevermoegen|Anlagevermögen}} und {{begriff:umlaufvermoegen|Umlaufvermögen}}. Passiva zeigen, *woher* es kommt: {{begriff:eigenkapital|Eigenkapital}} und {{begriff:fremdkapital|Fremdkapital}}."
+        },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Mini-Fall",
+            "Betrag"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Rohstoffe + Bank",
+                "500 € + 4.500 € = 5.000 €"
+              ]
+            },
+            {
+              "zellen": [
+                "− Schulden",
+                "2.000 €"
+              ]
+            },
+            {
+              "zellen": [
+                "= Eigenkapital",
+                "3.000 €"
+              ]
+            },
+            {
+              "zellen": [
+                "Aktiva = Passiva",
+                "5.000 € = 3.000 € + 2.000 €"
+              ]
+            }
+          ]
+        },
         {
           "typ": "check",
           "frage": "Ein Unternehmen hat 80.000 € Vermögen und 50.000 € Schulden. Wie hoch ist das Eigenkapital?",
           "optionen": [
-            { "text": "130.000 €", "richtig": false, "echo": "Vermögen und Schulden werden nicht addiert. Das Eigenkapital ist die Differenz." },
-            { "text": "30.000 €", "richtig": true, "echo": "Richtig: 80.000 € − 50.000 € = 30.000 €. Die Bilanzsumme beträgt auf beiden Seiten 80.000 €." },
-            { "text": "Das lässt sich ohne Kassenbestand nicht sagen", "richtig": false, "echo": "Der Kassenbestand ist Teil des Vermögens und darin schon enthalten. Eigenkapital ist kein Bargeld." }
+            {
+              "text": "130.000 €",
+              "richtig": false,
+              "echo": "Vermögen und Schulden werden nicht addiert. Das Eigenkapital ist die Differenz."
+            },
+            {
+              "text": "30.000 €",
+              "richtig": true,
+              "echo": "Richtig: 80.000 € − 50.000 € = 30.000 €. Die Bilanzsumme beträgt auf beiden Seiten 80.000 €."
+            },
+            {
+              "text": "Das lässt sich ohne Kassenbestand nicht sagen",
+              "richtig": false,
+              "echo": "Der Kassenbestand ist Teil des Vermögens und darin schon enthalten. Eigenkapital ist kein Bargeld."
+            }
           ]
         },
-        { "typ": "merke", "text": "**Vermögen = Eigenkapital + Fremdkapital**; das Eigenkapital ist die Differenz aus Vermögen und Schulden.", "karteikarte": "Wie lautet die Bilanzgleichung, und wie berechnet man das Eigenkapital?" }
+        {
+          "typ": "merke",
+          "text": "**Vermögen = Eigenkapital + Fremdkapital**; das Eigenkapital ist die Differenz aus Vermögen und Schulden.",
+          "karteikarte": "Wie lautet die Bilanzgleichung, und wie berechnet man das Eigenkapital?"
+        }
       ]
     }
   ],
@@ -225,9 +453,21 @@
     "Vermögen = Eigenkapital + Fremdkapital."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "Materialbestand 500 €, Bankguthaben 4.500 €, Schulden 2.000 €. Weitere Posten gibt es nicht. Wie hoch sind Vermögen und Eigenkapital?", "loesung": "Vermögen 500 € + 4.500 € = 5.000 €. Eigenkapital 5.000 € − 2.000 € = 3.000 €. Beide Bilanzseiten betragen 5.000 €." },
-    { "typ": "Zuordnen", "frage": "Ordne zu: ‚Bestände aufnehmen‘, ‚ausführliches Bestandsverzeichnis erstellen‘, ‚Vermögen und Kapital verdichtet gegenüberstellen‘.", "loesung": "Inventur, Inventar, Bilanz. Nachweise der Inventur sind zum Beispiel Zählprotokolle (körperliche Inventur) und Kontoauszüge (Buchinventur)." },
-    { "typ": "Wissen", "frage": "Luca möchte eine Barzahlung ohne Quittung buchen. Was sagst du ihm?", "loesung": "Keine Buchung ohne Beleg. Fehlt ein Fremdbeleg, wird ein Eigenbeleg mit Datum, Betrag, Zweck und Unterschrift erstellt und abgelegt." }
+    {
+      "typ": "Rechnen",
+      "frage": "Materialbestand 500 €, Bankguthaben 4.500 €, Schulden 2.000 €. Weitere Posten gibt es nicht. Wie hoch sind Vermögen und Eigenkapital?",
+      "loesung": "Vermögen 500 € + 4.500 € = 5.000 €. Eigenkapital 5.000 € − 2.000 € = 3.000 €. Beide Bilanzseiten betragen 5.000 €."
+    },
+    {
+      "typ": "Zuordnen",
+      "frage": "Ordne zu: ‚Bestände aufnehmen‘, ‚ausführliches Bestandsverzeichnis erstellen‘, ‚Vermögen und Kapital verdichtet gegenüberstellen‘.",
+      "loesung": "Inventur, Inventar, Bilanz. Nachweise der Inventur sind zum Beispiel Zählprotokolle (körperliche Inventur) und Kontoauszüge (Buchinventur)."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Luca möchte eine Barzahlung ohne Quittung buchen. Was sagst du ihm?",
+      "loesung": "Keine Buchung ohne Beleg. Fehlt ein Fremdbeleg, wird ein Eigenbeleg mit Datum, Betrag, Zweck und Unterschrift erstellt und abgelegt."
+    }
   ],
   "pruefungstipp": "Bei Bilanzaufgaben zuerst Vermögen und Schulden sauber trennen, dann das Eigenkapital als Differenz bilden. Begriffe wie Inventur und Inventar exakt verwenden — die Prüfung achtet darauf."
 }

@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Kapitalbedarf einer Investition ermitteln", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Kapitalbedarf für das Umlaufvermögen berechnen", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Einen Liquiditätsplan aufstellen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Maßnahmen bei Unter- und Überdeckung auswählen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Kapitalbedarf einer Investition ermitteln",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Kapitalbedarf für das Umlaufvermögen berechnen",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Einen Liquiditätsplan aufstellen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Maßnahmen bei Unter- und Überdeckung auswählen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,14 +117,50 @@
       "id": "a1",
       "titel": "Kapitalbedarf für Anlagen",
       "inhalt": [
-        { "typ": "absatz", "text": "Erst den Bedarf ermitteln, dann die Finanzierung wählen." },
-        { "typ": "tabelle", "mono": true, "spalten": ["Position Laserstation", "€"], "zeilen": [
-          { "zellen": ["Gerät netto", "48.000"] },
-          { "zellen": ["+ Lieferung und Montage", "2.000"] },
-          { "zellen": ["+ Abluftanlage", "1.500"] },
-          { "zellen": ["= Kapitalbedarf Anlagevermögen", "51.500"], "detail": "Dazu kommt die Vorsteuer, die bis zur Erstattung vorfinanziert werden muss." }
-        ] },
-        { "typ": "merke", "text": "Kapitalbedarf Anlage = Preis − Nachlässe + **alle Kosten bis zur Betriebsbereitschaft** (+ Vorfinanzierung der Vorsteuer).", "karteikarte": "Was gehört zum Kapitalbedarf für eine neue Anlage?" }
+        {
+          "typ": "absatz",
+          "text": "Erst den Bedarf ermitteln, dann die Finanzierung wählen."
+        },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Position Laserstation",
+            "€"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Gerät netto",
+                "48.000"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Lieferung und Montage",
+                "2.000"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Abluftanlage",
+                "1.500"
+              ]
+            },
+            {
+              "zellen": [
+                "= Kapitalbedarf Anlagevermögen",
+                "51.500"
+              ],
+              "detail": "Dazu kommt die Vorsteuer, die bis zur Erstattung vorfinanziert werden muss."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Kapitalbedarf Anlage = Preis − Nachlässe + **alle Kosten bis zur Betriebsbereitschaft** (+ Vorfinanzierung der Vorsteuer).",
+          "karteikarte": "Was gehört zum Kapitalbedarf für eine neue Anlage?"
+        }
       ]
     },
     {
@@ -116,24 +168,79 @@
       "id": "a2",
       "titel": "Kapitalbedarf im laufenden Geschäft",
       "inhalt": [
-        { "typ": "tabelle", "mono": true, "spalten": ["Baustein", "Tage"], "zeilen": [
-          { "zellen": ["Lagerdauer Rohstoffe", "10"] },
-          { "zellen": ["+ Fertigungsdauer", "5"] },
-          { "zellen": ["+ Lagerdauer Fertigerzeugnisse", "15"] },
-          { "zellen": ["+ Kundenziel", "30"] },
-          { "zellen": ["− Lieferantenziel", "20"] },
-          { "zellen": ["= Kapitalbindungsdauer", "40"], "detail": "Bei 2.000 € täglichen Auszahlungen: 2.000 × 40 = 80.000 € Kapitalbedarf." }
-        ] },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Baustein",
+            "Tage"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Lagerdauer Rohstoffe",
+                "10"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Fertigungsdauer",
+                "5"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Lagerdauer Fertigerzeugnisse",
+                "15"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Kundenziel",
+                "30"
+              ]
+            },
+            {
+              "zellen": [
+                "− Lieferantenziel",
+                "20"
+              ]
+            },
+            {
+              "zellen": [
+                "= Kapitalbindungsdauer",
+                "40"
+              ],
+              "detail": "Bei 2.000 € täglichen Auszahlungen: 2.000 × 40 = 80.000 € Kapitalbedarf."
+            }
+          ]
+        },
         {
           "typ": "check",
           "frage": "Tägliche Auszahlungen 2.000 €, Kapitalbindungsdauer 40 Tage. Das Kundenziel wird von 30 auf 60 Tage verlängert. Wie hoch ist der neue Kapitalbedarf?",
           "optionen": [
-            { "text": "80.000 €", "richtig": false, "echo": "Das ist der bisherige Bedarf. Das längere Kundenziel verlängert die Bindung um 30 Tage." },
-            { "text": "140.000 €", "richtig": true, "echo": "Richtig: 70 Tage × 2.000 € = 140.000 € — 60.000 € mehr als bisher." },
-            { "text": "120.000 €", "richtig": false, "echo": "Hier wurde nur um 20 Tage verlängert. Die Differenz beträgt 30 Tage." }
+            {
+              "text": "80.000 €",
+              "richtig": false,
+              "echo": "Das ist der bisherige Bedarf. Das längere Kundenziel verlängert die Bindung um 30 Tage."
+            },
+            {
+              "text": "140.000 €",
+              "richtig": true,
+              "echo": "Richtig: 70 Tage × 2.000 € = 140.000 € — 60.000 € mehr als bisher."
+            },
+            {
+              "text": "120.000 €",
+              "richtig": false,
+              "echo": "Hier wurde nur um 20 Tage verlängert. Die Differenz beträgt 30 Tage."
+            }
           ]
         },
-        { "typ": "merke", "text": "Kapitalbedarf UV = **tägliche Auszahlungen × (Lager + Fertigung + Fertiglager + Kundenziel − Lieferantenziel)**.", "karteikarte": "Wie berechnest du den Kapitalbedarf für das Umlaufvermögen?" }
+        {
+          "typ": "merke",
+          "text": "Kapitalbedarf UV = **tägliche Auszahlungen × (Lager + Fertigung + Fertiglager + Kundenziel − Lieferantenziel)**.",
+          "karteikarte": "Wie berechnest du den Kapitalbedarf für das Umlaufvermögen?"
+        }
       ]
     },
     {
@@ -141,27 +248,90 @@
       "id": "a3",
       "titel": "Der Liquiditätsplan",
       "inhalt": [
-        { "typ": "absatz", "text": "Der {{begriff:liquiditaetsplan|Liquiditätsplan}} zeigt Lücken, bevor sie entstehen." },
-        { "typ": "tabelle", "mono": true, "spalten": ["", "Januar", "Februar"], "zeilen": [
-          { "zellen": ["Anfangsbestand", "10.000", "−5.000"] },
-          { "zellen": ["+ Einzahlungen", "25.000", "48.000"] },
-          { "zellen": ["− Auszahlungen", "40.000", "35.000"] },
-          { "zellen": ["= Endbestand", "−5.000", "8.000"], "detail": "Januar: Unterdeckung von 5.000 €. Februar: −5.000 + 48.000 − 35.000 = 8.000 €." }
-        ] },
+        {
+          "typ": "absatz",
+          "text": "Der {{begriff:liquiditaetsplan|Liquiditätsplan}} zeigt Lücken, bevor sie entstehen."
+        },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "",
+            "Januar",
+            "Februar"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Anfangsbestand",
+                "10.000",
+                "−5.000"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Einzahlungen",
+                "25.000",
+                "48.000"
+              ]
+            },
+            {
+              "zellen": [
+                "− Auszahlungen",
+                "40.000",
+                "35.000"
+              ]
+            },
+            {
+              "zellen": [
+                "= Endbestand",
+                "−5.000",
+                "8.000"
+              ],
+              "detail": "Januar: Unterdeckung von 5.000 €. Februar: −5.000 + 48.000 − 35.000 = 8.000 €."
+            }
+          ]
+        },
         {
           "typ": "zuordnen",
           "lead": "Gehört der Posten in den Liquiditätsplan?",
-          "kategorien": ["Einzahlung", "Auszahlung", "Nicht im Plan"],
+          "kategorien": [
+            "Einzahlung",
+            "Auszahlung",
+            "Nicht im Plan"
+          ],
           "aufgaben": [
-            { "text": "Kunde überweist eine Rechnung", "loesung": "Einzahlung" },
-            { "text": "Tilgungsrate für das Darlehen", "loesung": "Auszahlung" },
-            { "text": "Abschreibung der Stickmaschine", "loesung": "Nicht im Plan" },
-            { "text": "Umsatzsteuer-Zahllast an das Finanzamt", "loesung": "Auszahlung" },
-            { "text": "Bildung einer Rückstellung", "loesung": "Nicht im Plan" },
-            { "text": "Auszahlung eines neuen Bankdarlehens an MAKEL", "loesung": "Einzahlung" }
+            {
+              "text": "Kunde überweist eine Rechnung",
+              "loesung": "Einzahlung"
+            },
+            {
+              "text": "Tilgungsrate für das Darlehen",
+              "loesung": "Auszahlung"
+            },
+            {
+              "text": "Abschreibung der Stickmaschine",
+              "loesung": "Nicht im Plan"
+            },
+            {
+              "text": "Umsatzsteuer-Zahllast an das Finanzamt",
+              "loesung": "Auszahlung"
+            },
+            {
+              "text": "Bildung einer Rückstellung",
+              "loesung": "Nicht im Plan"
+            },
+            {
+              "text": "Auszahlung eines neuen Bankdarlehens an MAKEL",
+              "loesung": "Einzahlung"
+            }
           ]
         },
-        { "typ": "merke", "text": "Liquiditätsplan: Anfangsbestand **+ Einzahlungen − Auszahlungen** = Endbestand — nur Zahlungen, keine Abschreibungen.", "karteikarte": "Wie ist ein Liquiditätsplan aufgebaut, und was gehört nicht hinein?" }
+        {
+          "typ": "merke",
+          "text": "Liquiditätsplan: Anfangsbestand **+ Einzahlungen − Auszahlungen** = Endbestand — nur Zahlungen, keine Abschreibungen.",
+          "karteikarte": "Wie ist ein Liquiditätsplan aufgebaut, und was gehört nicht hinein?"
+        }
       ]
     },
     {
@@ -169,12 +339,36 @@
       "id": "a4",
       "titel": "Auf Lücken und Überschüsse reagieren",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Lage", "Maßnahmen"], "zeilen": [
-          { "zellen": ["Unterdeckung", "Forderungen anmahnen, Kundenskonto, Factoring; Lieferantenziele ausschöpfen, Investitionen verschieben, Lager abbauen; Kontokorrentkredit"] },
-          { "zellen": ["Überdeckung", "Lieferantenskonto nutzen, Kontokorrent zurückführen, Sondertilgung, kurzfristige Anlage"] }
-        ] },
-        { "typ": "achtung", "text": "Ist eine GmbH zahlungsunfähig, muss die Geschäftsführung ohne schuldhaftes Zögern Insolvenz beantragen. Der Liquiditätsplan ist deshalb kein Formular, sondern ein Frühwarnsystem.", "pruefen": "Insolvenzantragspflicht und Fristen (§ 15a InsO) vor Veröffentlichung mit dem aktuellen Stand abgleichen." },
-        { "typ": "merke", "text": "Unterdeckung: Einzahlungen **vorziehen**, Auszahlungen **verschieben**, Mittel **beschaffen**; Überdeckung: Skonto, Tilgung, Anlage.", "karteikarte": "Wie reagierst du auf eine Unter- oder Überdeckung im Liquiditätsplan?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Lage",
+            "Maßnahmen"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Unterdeckung",
+                "Forderungen anmahnen, Kundenskonto, Factoring; Lieferantenziele ausschöpfen, Investitionen verschieben, Lager abbauen; Kontokorrentkredit"
+              ]
+            },
+            {
+              "zellen": [
+                "Überdeckung",
+                "Lieferantenskonto nutzen, Kontokorrent zurückführen, Sondertilgung, kurzfristige Anlage"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Ist eine GmbH zahlungsunfähig oder überschuldet, muss die Geschäftsführung ohne schuldhaftes Zögern Insolvenz beantragen — spätestens drei Wochen nach Eintritt der Zahlungsunfähigkeit bzw. sechs Wochen nach Eintritt der Überschuldung (§ 15a InsO). Diese Höchstfristen sind keine Erlaubnis zum Abwarten. Der Liquiditätsplan ist deshalb kein Formular, sondern ein Frühwarnsystem."
+        },
+        {
+          "typ": "merke",
+          "text": "Unterdeckung: Einzahlungen **vorziehen**, Auszahlungen **verschieben**, Mittel **beschaffen**; Überdeckung: Skonto, Tilgung, Anlage.",
+          "karteikarte": "Wie reagierst du auf eine Unter- oder Überdeckung im Liquiditätsplan?"
+        }
       ]
     }
   ],
@@ -187,9 +381,21 @@
     "Überdeckung sinnvoll nutzen."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "Anfangsbestand 10.000 €, Einzahlungen 25.000 €, Auszahlungen 40.000 €. Ergebnis?", "loesung": "10.000 + 25.000 − 40.000 = −5.000 €: Unterdeckung von 5.000 €." },
-    { "typ": "Rechnen", "frage": "Rohstofflager 10 Tage, Fertigung 5, Fertiglager 15, Kundenziel 30, Lieferantenziel 20; tägliche Auszahlungen 2.000 €. Kapitalbedarf?", "loesung": "Bindungsdauer 40 Tage; 40 × 2.000 = 80.000 €." },
-    { "typ": "Wissen", "frage": "Warum steht die Abschreibung nicht im Liquiditätsplan?", "loesung": "Sie ist Aufwand, führt aber nicht zu einer Auszahlung. Ausgezahlt wurde beim Kauf der Anlage." }
+    {
+      "typ": "Rechnen",
+      "frage": "Anfangsbestand 10.000 €, Einzahlungen 25.000 €, Auszahlungen 40.000 €. Ergebnis?",
+      "loesung": "10.000 + 25.000 − 40.000 = −5.000 €: Unterdeckung von 5.000 €."
+    },
+    {
+      "typ": "Rechnen",
+      "frage": "Rohstofflager 10 Tage, Fertigung 5, Fertiglager 15, Kundenziel 30, Lieferantenziel 20; tägliche Auszahlungen 2.000 €. Kapitalbedarf?",
+      "loesung": "Bindungsdauer 40 Tage; 40 × 2.000 = 80.000 €."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Warum steht die Abschreibung nicht im Liquiditätsplan?",
+      "loesung": "Sie ist Aufwand, führt aber nicht zu einer Auszahlung. Ausgezahlt wurde beim Kauf der Anlage."
+    }
   ],
   "pruefungstipp": "Im Liquiditätsplan den Endbestand jedes Monats sofort als Anfangsbestand in die nächste Spalte übertragen — auch wenn er negativ ist. Das ist die häufigste Folgefehlerquelle."
 }

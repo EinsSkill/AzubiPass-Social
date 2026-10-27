@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Ergebnis und Zielerreichung nachvollziehbar dokumentieren", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Wechselwirkungen und Nebenfolgen bewerten", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Adressatengerecht präsentieren", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Vorgehen reflektieren und Verbesserung ableiten", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Ergebnis und Zielerreichung nachvollziehbar dokumentieren",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Wechselwirkungen und Nebenfolgen bewerten",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Adressatengerecht präsentieren",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Vorgehen reflektieren und Verbesserung ableiten",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,14 +117,50 @@
       "id": "a1",
       "titel": "Ergebnisdokumentation",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Kapitel des Berichts", "Inhalt"], "zeilen": [
-          { "zellen": ["Ausgangslage", "Problem, Auftrag, Systemgrenze, Problemfrage"] },
-          { "zellen": ["Analyse", "Datenbasis, Definitionen, Ursachenhypothesen, Datenlücken"] },
-          { "zellen": ["Lösung", "Varianten, Kriterien, Bewertung, Entscheidung"] },
-          { "zellen": ["Umsetzung", "Plan, Pilot, Abweichungen"] },
-          { "zellen": ["Ergebnis", "Zielerreichung, Nebenfolgen, offene Punkte, Empfehlung"] }
-        ] },
-        { "typ": "merke", "text": "Dokumentation = Problem → Daten → Varianten → Entscheidung → Umsetzung → Ergebnis → offene Punkte, **mit Definitionen und Quellen**.", "karteikarte": "Wie ist eine nachvollziehbare Ergebnisdokumentation aufgebaut?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Kapitel des Berichts",
+            "Inhalt"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Ausgangslage",
+                "Problem, Auftrag, Systemgrenze, Problemfrage"
+              ]
+            },
+            {
+              "zellen": [
+                "Analyse",
+                "Datenbasis, Definitionen, Ursachenhypothesen, Datenlücken"
+              ]
+            },
+            {
+              "zellen": [
+                "Lösung",
+                "Varianten, Kriterien, Bewertung, Entscheidung"
+              ]
+            },
+            {
+              "zellen": [
+                "Umsetzung",
+                "Plan, Pilot, Abweichungen"
+              ]
+            },
+            {
+              "zellen": [
+                "Ergebnis",
+                "Zielerreichung, Nebenfolgen, offene Punkte, Empfehlung"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Dokumentation = Problem → Daten → Varianten → Entscheidung → Umsetzung → Ergebnis → offene Punkte, **mit Definitionen und Quellen**.",
+          "karteikarte": "Wie ist eine nachvollziehbare Ergebnisdokumentation aufgebaut?"
+        }
       ]
     },
     {
@@ -123,16 +175,42 @@
           "titel": "Was der Pilot gebracht hat",
           "lead": "Tippe einen Punkt an, um mehr zu erfahren.",
           "seiten": [
-            { "name": "Zielwirkung", "ton": "gruen", "punkte": [
-              { "text": "Verspätungsquote 20 % → 10 %", "detail": "Minus 10 Prozentpunkte bzw. minus 50 % relativ; Ziel erreicht." },
-              { "text": "Freigabe in allen Pilotfällen vermerkt", "detail": "Die Produktion startet nur noch mit dokumentierter Freigabe." },
-              { "text": "Geringe Kosten", "detail": "Unter 500 € für Einrichtung und Schulung." }
-            ] },
-            { "name": "Nebenfolgen und Grenzen", "ton": "gold", "punkte": [
-              { "text": "Lagerbestand +4 %", "detail": "Vorsorgliche Bestellungen; innerhalb der Grenze von 5 %, aber zu beobachten." },
-              { "text": "Mehraufwand im Vertrieb", "detail": "Rund zwei Minuten mehr je Auftrag für die Erfassung." },
-              { "text": "Pilot im ruhigen Januar", "detail": "Im Herbst mit vielen Eilaufträgen kann das Ergebnis anders aussehen." }
-            ] }
+            {
+              "name": "Zielwirkung",
+              "ton": "gruen",
+              "punkte": [
+                {
+                  "text": "Verspätungsquote 20 % → 10 %",
+                  "detail": "Minus 10 Prozentpunkte bzw. minus 50 % relativ; Ziel erreicht."
+                },
+                {
+                  "text": "Freigabe in allen Pilotfällen vermerkt",
+                  "detail": "Die Produktion startet nur noch mit dokumentierter Freigabe."
+                },
+                {
+                  "text": "Geringe Kosten",
+                  "detail": "Unter 500 € für Einrichtung und Schulung."
+                }
+              ]
+            },
+            {
+              "name": "Nebenfolgen und Grenzen",
+              "ton": "gold",
+              "punkte": [
+                {
+                  "text": "Lagerbestand +4 %",
+                  "detail": "Vorsorgliche Bestellungen; innerhalb der Grenze von 5 %, aber zu beobachten."
+                },
+                {
+                  "text": "Mehraufwand im Vertrieb",
+                  "detail": "Rund zwei Minuten mehr je Auftrag für die Erfassung."
+                },
+                {
+                  "text": "Pilot im ruhigen Januar",
+                  "detail": "Im Herbst mit vielen Eilaufträgen kann das Ergebnis anders aussehen."
+                }
+              ]
+            }
           ],
           "regel": "Eine ehrliche Bewertung zeigt beide Seiten — und sagt, was noch offen ist."
         },
@@ -140,12 +218,28 @@
           "typ": "check",
           "frage": "Die Verspätungsquote sinkt von 20 % auf 10 %. Welche Beschreibung ist korrekt?",
           "optionen": [
-            { "text": "Rückgang um 10 %", "richtig": false, "echo": "Das verwechselt Prozentpunkte mit Prozent." },
-            { "text": "Rückgang um 10 Prozentpunkte bzw. 50 % relativ", "richtig": true, "echo": "Richtig: absolut 10 Prozentpunkte, relativ die Hälfte." },
-            { "text": "Rückgang um 20 Prozentpunkte", "richtig": false, "echo": "Die Differenz zwischen 20 % und 10 % beträgt 10 Prozentpunkte." }
+            {
+              "text": "Rückgang um 10 %",
+              "richtig": false,
+              "echo": "Das verwechselt Prozentpunkte mit Prozent."
+            },
+            {
+              "text": "Rückgang um 10 Prozentpunkte bzw. 50 % relativ",
+              "richtig": true,
+              "echo": "Richtig: absolut 10 Prozentpunkte, relativ die Hälfte."
+            },
+            {
+              "text": "Rückgang um 20 Prozentpunkte",
+              "richtig": false,
+              "echo": "Die Differenz zwischen 20 % und 10 % beträgt 10 Prozentpunkte."
+            }
           ]
         },
-        { "typ": "merke", "text": "Gleiche Definition, korrekte Veränderung (**Prozentpunkte vs. relativ**), Nebenfolgen und Vergleichbarkeit prüfen.", "karteikarte": "Worauf achtest du bei der Prüfung von Zielerreichung und Wirkung?" }
+        {
+          "typ": "merke",
+          "text": "Gleiche Definition, korrekte Veränderung (**Prozentpunkte vs. relativ**), Nebenfolgen und Vergleichbarkeit prüfen.",
+          "karteikarte": "Worauf achtest du bei der Prüfung von Zielerreichung und Wirkung?"
+        }
       ]
     },
     {
@@ -156,15 +250,34 @@
         {
           "typ": "zuordnen",
           "lead": "Gehört der Punkt in eine ehrliche Präsentation für die Geschäftsführung?",
-          "kategorien": ["gehört hinein", "gehört nicht hinein"],
+          "kategorien": [
+            "gehört hinein",
+            "gehört nicht hinein"
+          ],
           "aufgaben": [
-            { "text": "Verspätungen halbiert, Bestand +4 %", "loesung": "gehört hinein" },
-            { "text": "Nur die gute Zahl zeigen, damit die Entscheidung leichtfällt", "loesung": "gehört nicht hinein" },
-            { "text": "Hinweis, dass der Pilot im ruhigen Januar lief", "loesung": "gehört hinein" },
-            { "text": "Kosten und Empfehlung mit nächsten Schritten", "loesung": "gehört hinein" }
+            {
+              "text": "Verspätungen halbiert, Bestand +4 %",
+              "loesung": "gehört hinein"
+            },
+            {
+              "text": "Nur die gute Zahl zeigen, damit die Entscheidung leichtfällt",
+              "loesung": "gehört nicht hinein"
+            },
+            {
+              "text": "Hinweis, dass der Pilot im ruhigen Januar lief",
+              "loesung": "gehört hinein"
+            },
+            {
+              "text": "Kosten und Empfehlung mit nächsten Schritten",
+              "loesung": "gehört hinein"
+            }
           ]
         },
-        { "typ": "merke", "text": "Adressatengerecht: **Ergebnis, Kosten, Risiken, Zielkonflikte, Empfehlung** — ehrlich statt Erfolgserzählung.", "karteikarte": "Was gehört in eine adressatengerechte Ergebnispräsentation?" }
+        {
+          "typ": "merke",
+          "text": "Adressatengerecht: **Ergebnis, Kosten, Risiken, Zielkonflikte, Empfehlung** — ehrlich statt Erfolgserzählung.",
+          "karteikarte": "Was gehört in eine adressatengerechte Ergebnispräsentation?"
+        }
       ]
     },
     {
@@ -172,14 +285,48 @@
       "id": "a4",
       "titel": "Reflexion und kontinuierliche Verbesserung",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Frage", "Erkenntnis im MAKEL-Projekt"], "zeilen": [
-          { "zellen": ["Was lief gut?", "Frühe Einbindung aller Abteilungen"] },
-          { "zellen": ["Was würden wir ändern?", "Pilotkriterien früher festlegen"] },
-          { "zellen": ["Was fehlte?", "Zeitstempel für August"] },
-          { "zellen": ["Wer bleibt dran?", "Marlene Voss, monatliche Kontrolle der Verspätungsquote"] }
-        ] },
-        { "typ": "achtung", "text": "Ein Schulprojekt ersetzt keine genehmigte betriebliche Fachaufgabe für die Abschlussprüfung. Vorgaben dafür ergeben sich aus der Ausbildungsordnung und den Regeln der zuständigen Kammer.", "pruefen": "Regelungen zur betrieblichen Fachaufgabe (Teil 2 der Abschlussprüfung, Ausbildungsordnung 2024) vor Veröffentlichung mit aktuellem Stand und IHK-Hinweisen abgleichen." },
-        { "typ": "merke", "text": "Ergebnis **und Vorgehen** reflektieren, Lessons Learned festhalten, Lösung mit Messpunkten und Verantwortung weiter verbessern.", "karteikarte": "Was gehört zur Reflexion am Ende eines Problemlösungsprojekts?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Frage",
+            "Erkenntnis im MAKEL-Projekt"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Was lief gut?",
+                "Frühe Einbindung aller Abteilungen"
+              ]
+            },
+            {
+              "zellen": [
+                "Was würden wir ändern?",
+                "Pilotkriterien früher festlegen"
+              ]
+            },
+            {
+              "zellen": [
+                "Was fehlte?",
+                "Zeitstempel für August"
+              ]
+            },
+            {
+              "zellen": [
+                "Wer bleibt dran?",
+                "Marlene Voss, monatliche Kontrolle der Verspätungsquote"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Ein Schulprojekt ersetzt keine genehmigte betriebliche Fachaufgabe. Für Teil 2 der Abschlussprüfung beantragt der Prüfling vor der Durchführung die Genehmigung beim Prüfungsausschuss, erstellt eine drei- bis fünfseitige Dokumentation (höchstens drei Seiten Anlagen) und präsentiert in höchstens etwa 10 Minuten; Präsentation und Fachgespräch dauern zusammen 30 Minuten (§ 12 IndKflAusbV). Termine und Formulare legt die zuständige Kammer fest."
+        },
+        {
+          "typ": "merke",
+          "text": "Ergebnis **und Vorgehen** reflektieren, Lessons Learned festhalten, Lösung mit Messpunkten und Verantwortung weiter verbessern.",
+          "karteikarte": "Was gehört zur Reflexion am Ende eines Problemlösungsprojekts?"
+        }
       ]
     }
   ],
@@ -192,9 +339,21 @@
     "Vorgehen reflektieren und kontinuierlich verbessern."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "Verspätete Aufträge sinken in einer vergleichbar definierten Stichprobe von 20 auf 10 Prozent. Beschreibe absolute und relative Veränderung.", "loesung": "10 Prozentpunkte Rückgang bzw. 50 % relative Verringerung. Vergleichbarkeit und andere Einflüsse gesondert prüfen." },
-    { "typ": "Präsentieren", "frage": "Was gehört in die Vorstellung einer Lösung, wenn Liefertermine besser, aber Bestände höher geworden sind?", "loesung": "Beide Wirkungen, Kosten, Zielkonflikt, Datenbasis, Grenzen und eine begründete Empfehlung; keine reine Erfolgserzählung." },
-    { "typ": "Wissen", "frage": "Was sind Lessons Learned?", "loesung": "Festgehaltene Erkenntnisse aus dem Vorgehen, die künftige Projekte verbessern." }
+    {
+      "typ": "Rechnen",
+      "frage": "Verspätete Aufträge sinken in einer vergleichbar definierten Stichprobe von 20 auf 10 Prozent. Beschreibe absolute und relative Veränderung.",
+      "loesung": "10 Prozentpunkte Rückgang bzw. 50 % relative Verringerung. Vergleichbarkeit und andere Einflüsse gesondert prüfen."
+    },
+    {
+      "typ": "Präsentieren",
+      "frage": "Was gehört in die Vorstellung einer Lösung, wenn Liefertermine besser, aber Bestände höher geworden sind?",
+      "loesung": "Beide Wirkungen, Kosten, Zielkonflikt, Datenbasis, Grenzen und eine begründete Empfehlung; keine reine Erfolgserzählung."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Was sind Lessons Learned?",
+      "loesung": "Festgehaltene Erkenntnisse aus dem Vorgehen, die künftige Projekte verbessern."
+    }
   ],
   "pruefungstipp": "Formuliere Ergebnisse immer mit Zahl, Definition und Grenze: „Verspätungen −10 Prozentpunkte (Pilot, Januar, 30 Aufträge)“. So wirkt deine Bewertung belastbar und ehrlich."
 }
