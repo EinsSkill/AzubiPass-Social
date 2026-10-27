@@ -1,5 +1,5 @@
 {
-  "_hinweis": "Berufsregistry (doku/industriekaufleute/03-umsetzung-und-abnahme.md §2). Reihenfolge, Lehrjahr und Kurzform der Lernfelder kommen von hier – nicht aus Ziffern im Dateinamen. 'kurz' ist die interne Kennung, die im Lernstand und in inhalt.json steht; 'kennung' ist die sprechende Metadaten-ID. Büromanagement: Buchführung steht als LF 6 am Ende der Liste, damit die gewohnte Reihenfolge der App unverändert bleibt.",
+  "_hinweis": "Berufsregistry (doku/industriekaufleute/03-umsetzung-und-abnahme.md §2). Reihenfolge, Lehrjahr und Kurzform der Lernfelder kommen von hier – nicht aus Ziffern im Dateinamen. 'kurz' ist die interne Kennung, die im Lernstand und in inhalt.json steht; 'kennung' ist die sprechende Metadaten-ID. Büromanagement: Buchführung steht als LF 6 an seiner Stelle zwischen LF 5 und LF 7 (Entscheidung Lukes 27.10.2026).",
   "standard": "kfb",
   "berufe": [
     {
@@ -38,6 +38,18 @@
           "lehrjahr": 1
         },
         {
+          "id": "buchfuehrung",
+          "nr": 6,
+          "lehrjahr": 2,
+          "aliases": [
+            "LF6",
+            "Lernfeld 6",
+            "Rechnungswesen",
+            "Buchhaltung",
+            "FiBu"
+          ]
+        },
+        {
           "id": "lf7",
           "nr": 7,
           "lehrjahr": 2
@@ -71,18 +83,6 @@
           "id": "lf13",
           "nr": 13,
           "lehrjahr": 3
-        },
-        {
-          "id": "buchfuehrung",
-          "nr": 6,
-          "lehrjahr": 2,
-          "aliases": [
-            "LF6",
-            "Lernfeld 6",
-            "Rechnungswesen",
-            "Buchhaltung",
-            "FiBu"
-          ]
         }
       ]
     },
