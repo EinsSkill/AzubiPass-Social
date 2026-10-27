@@ -36,7 +36,7 @@ Kennungen: **C** = Claude-Audit, **G** = ChatGPT-Review.
 | `funktionstest.py` | 269/269 |
 | `lernkern_audit_test.py` | alles in Ordnung (inkl. A09 320 px nach Trennstellen-Korrektur) |
 | `industriekaufleute_test.py` | 8.271 bestanden, 0 Fehler |
-| `pruefe.py --schnell` (geänderte Seiten) | siehe Abschnitt unten |
+| `pruefe.py --schnell` (11 geänderte Seiten) | keine Fehler, Freigabe möglich |
 
 ## Grenzen
 
