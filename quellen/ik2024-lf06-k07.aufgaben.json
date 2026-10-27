@@ -86,8 +86,8 @@
       "abgeleitet": {
         "preis": "var + db",
         "schwelle": "aufrunden(fix / db)",
-        "menge": "schwelle + mehr",
-        "gewinn": "(schwelle + mehr) * db - fix"
+        "menge": "aufrunden(fix / db) + mehr",
+        "gewinn": "menge * db - fix"
       },
       "anzeige": [
         {
@@ -110,10 +110,7 @@
           "einheit": "€",
           "loesung": "gewinn",
           "toleranz": 0.01,
-          "punkte": 2,
-          "folgefehler_aus": [
-            "schwelle"
-          ]
+          "punkte": 2
         }
       ],
       "bewertung": {

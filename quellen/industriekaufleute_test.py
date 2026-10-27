@@ -190,8 +190,10 @@ def trennung():
     pruefe(kurz == ["kfb", "ik"], "Registry: Berufe kfb und ik erwartet")
     namen = [p.name for p in lernfeld_dateien()]
     kfb = [n for n in namen if not n.startswith("ik2024-")]
-    pruefe(kfb[-1] == "buchfuehrung.lernfeld.json" and kfb[0] == "lf1.lernfeld.json",
-           "Reihenfolge Büromanagement verändert")
+    # Seit 27.10.2026 (Entscheidung Lukes) steht Buchführung als LF 6 zwischen LF 5 und LF 7.
+    pruefe(kfb[:7] == ["lf1.lernfeld.json", "lf2.lernfeld.json", "lf3.lernfeld.json", "lf4.lernfeld.json",
+                       "lf5.lernfeld.json", "buchfuehrung.lernfeld.json", "lf7.lernfeld.json"],
+           "Reihenfolge Büromanagement: LF 1–5, Buchführung (LF 6), LF 7 …")
     ik = [n for n in namen if n.startswith("ik2024-")]
     pruefe(ik == sorted(ik), "Industrie-Lernfelder nicht in Reihenfolge 1–13")
 
