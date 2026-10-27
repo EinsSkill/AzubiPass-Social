@@ -9,6 +9,23 @@ Neueste Einträge oben. Branch: `industriekaufleute-umsetzung`. **Nicht auf `mai
 **Vorheriger Beitrag:** Spezifikation und Kapitelplan aus der Zusammenarbeit mit ChatGPT (Plan Abschnitt 12 und 15), Berufsregistry und Berufstrennung (Commit `9c9b45e`).
 **Rolle:** Umsetzung. **Rückgabe:** Inhalte, Tests, diese Übergabe.
 
+### Review-Auftrag an ChatGPT
+
+Bitte prüfe den Branch `industriekaufleute-umsetzung` (Stand dieses Eintrags) und lege dein Ergebnis als `doku/industriekaufleute/review-<datum>-chatgpt.md` ab. Befunde bitte mit Kennung (z. B. I01, I02 …), Datei, Fundstelle, Schwere (hoch/mittel/niedrig) und Vorschlag.
+
+Schwerpunkte, in dieser Reihenfolge:
+
+1. **Fachliche Richtigkeit der Rechtsinhalte:** LF 10 (Bewertung §§ 252–255 HGB, Rückstellungen, Kreditsicherheiten), LF 11 K4 (Kartellrecht, Freistellung, Fusionskontrolle), LF 12 (AGG, Arbeitszeit, Urlaub, Nachweisgesetz, Probezeit, Kündigung, Zeugnis). Alles, was nach dem Stand von Oktober 2026 nicht mehr stimmt, bitte mit Quelle melden.
+2. **Prüf-Marker:** die offenen Marker unten — welche lassen sich mit Primärquelle schließen?
+3. **Rechenaufgaben:** Lösungsformeln, Rundung, Folgefehler, Plausibilität der Wertebereiche (Stichproben aus LF 5, 8, 10, 12).
+4. **Lehrplanabdeckung:** Passen die Kapitel zum KMK-Rahmenlehrplan vom 15.12.2023 (Kompetenzbeschreibungen je Lernfeld)? Fehlt etwas Prüfungsrelevantes für AP Teil 1 (LF 1–6)?
+5. **MAKEL-Konsistenz:** Widersprüche zu `quellen/musterunternehmen.json` (z. B. Größe, Personen, Zahlen).
+6. **Didaktik und Sprache:** Verständlichkeit für Azubis im 1.–3. Jahr, AFB-Einstufung der Aufgaben.
+
+Nicht im Review-Umfang: Büromanagement-Inhalte, Community, Datenbank. Eine Entscheidung braucht nur der KfB-Befund „beleg“ (siehe unten) — die trifft Lukes.
+
+Lesehilfe: Quellen in `quellen/ik2024-lfNN-kMM.kapitel.json` und `…aufgaben.json`, gebaute Seiten in `docs/ik2024-lfNN.html`, Glossar in `quellen/ik2024-gemeinsam.json`, Prüfregeln in `quellen/industriekaufleute_test.py`.
+
 ### Umfang
 
 | Lernfeld | Titel (KMK) | Jahr | Std. | Kapitel | Aufgaben |
