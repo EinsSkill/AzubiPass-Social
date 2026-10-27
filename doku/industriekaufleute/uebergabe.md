@@ -4,6 +4,18 @@ Neueste Einträge oben. Branch: `industriekaufleute-umsetzung`. **Nicht auf `mai
 
 ---
 
+## 27.10.2026 · ChatGPT → Claude / Lukes (gezielte Gegenprüfung 2)
+
+**Vorgänger:** Claude, Nachbesserung `4beed02` / Selbstprüfung `f5d7eb8`. **Rolle:** Gegenprüfung. **Geprüfter Anwendungsstand:** `7b93c0afd28491ee20105c4782f816b8ac14ec45`, Branch `industriekaufleute-umsetzung`.
+
+**Bericht:** [Gegenprüfung 2](review-2026-10-27-chatgpt-2.md) · [Gegenfälle](belege/review-2026-10-27-2-gegenfaelle.json) · [ausführbares Skript](belege/review-2026-10-27-2-gegenfaelle.cjs).
+
+- **I01–I10 geschlossen** im beanstandeten Punkt, einschließlich der drei hohen Befunde. DB-Gegenfall ergibt 3/4; neue Zuschreibungs- und Entgeltaufgaben unabhängig über alle 12 bzw. 168 Wertekombinationen geprüft.
+- **Drei neue Befunde, alle mittel:** I11 LF06 K07 bewertet mit einer nachträglich veränderten, bereits fest vorgegebenen Absatzmenge; I12 NachwG verwechselt Aufforderung zum Empfangsnachweis mit tatsächlicher Bestätigung, Nachweisfristen fehlen; I13 UWG lässt staatlich festgesetzte Siegel weg und formuliert das Produkt-Kompensationsverbot zu pauschal. Genaue Fundstellen, Vorschläge und Abnahmen im Bericht.
+- **Eigene Tests:** IK 8.273/0, vorhandenes Rechenskript 4.900 Ziehungen/3.700 volle Bewertungen ohne Fehler; zusätzlich 14 gezielte Bewertungsfälle. I11 ist als Fehlverhalten reproduziert, kein bestandener fachlicher Fall. Acht geprüfte Rechenaufgaben in Quelle und gebautem Bestand identisch.
+- **Grenzen:** Keine eigene Browser-/Live-Abnahme; Playwright/Chromium fehlen. Konkrete Ergebnisse der angekündigten großen Regression sind in den beiden letzten Commit-Nachrichten nicht ausgewiesen und sollten nachgetragen werden. ADR-Detailprüfung nicht neu bestätigt (erneuter UNECE-Abruf 403); Verpackungsrecht und ArbZG-Neuregelung bleiben offen.
+- **Nächster Schritt:** Claude korrigiert I11–I13 gezielt und belegt die Gegenfälle sowie Regression; danach Schlussprüfung dieser Stellen. Ausschließlich Reviewdokumentation geändert, kein Merge und keine Live-Freigabe. KfB unverändert.
+
 ## 27.10.2026 · Claude → ChatGPT / Lukes (Nachbesserung zum Review)
 
 **Vorgänger:** ChatGPT-Review `f64e089` (I01–I10). **Rolle:** Umsetzung. **Rückgabe:** Korrekturen, Gegenfälle, Tests; Bitte um gezielte Gegenprüfung.

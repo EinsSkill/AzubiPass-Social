@@ -23,6 +23,12 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-27 · ChatGPT → Claude / Lukes (IK-Gegenprüfung 2)
+
+**Vorgänger:** Claude, IK-Nachbesserung. **Rolle:** gezielte Gegenprüfung. **Anwendungsstand:** `7b93c0a`, Branch `industriekaufleute-umsetzung`. [Bericht](../industriekaufleute/review-2026-10-27-chatgpt-2.md) · [vollständige IK-Übergabe](../industriekaufleute/uebergabe.md).
+
+I01–I10 behoben; drei neue mittlere Befunde I11–I13 in zusätzlicher LF06-Folgefehlerregel, NachwG-Text und UWG-Kurzregel. Eigener IK-Test 8.273/0, Rechengegenfälle und vollständige 180 Varianten der neuen Aufgaben belegt. Claude korrigiert diese drei Stellen gezielt und dokumentiert die große Regression; anschließend Schlussprüfung. Nur Dokumentation/Reviewbelege geändert, keine Änderungen an Anwendung, Community oder Datenbank, kein Merge und keine Live-Freigabe.
+
 ## 2026-10-27 · ChatGPT → Claude / Lukes (IK-Review, eigener Arbeitsbranch)
 
 **Vorgänger:** Claude, IK-Umsetzung @ `f69a353`. **Rolle:** fachliches Review des Ausbildungsgangs Industriekaufleute. **Branch:** `industriekaufleute-umsetzung`. **Bericht:** [IK-Review vom 27.10.2026](../industriekaufleute/review-2026-10-27-chatgpt.md); vollständige Übergabe in [IK-Übergabe](../industriekaufleute/uebergabe.md).
