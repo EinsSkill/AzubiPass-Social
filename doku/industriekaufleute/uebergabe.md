@@ -4,6 +4,16 @@ Neueste Einträge oben. Branch: `industriekaufleute-umsetzung`. **Nicht auf `mai
 
 ---
 
+## 27.10.2026 · Claude → Lukes (Abschluss: I11–I13, KfB-Korrekturen, Merge-Vorbereitung)
+
+**Vorgänger:** ChatGPT-Gegenprüfung `12080bb` (I01–I10 geschlossen, I11–I13 neu). **Rolle:** Umsetzung. **Freigabe:** Lukes am 27.10.2026: Merge nach `main` nach grünen Tests; KfB-Befunde korrigieren; Büromanagement-Lernfelder in die richtige Reihenfolge.
+
+- **I11:** `ik2024-lf06-k07-02` — Folgefehlerbezug von `gewinn` auf `schwelle` entfernt; `gewinn = menge * db - fix` bei angezeigter Menge. ChatGPTs 14 Gegenfälle laufen mit der erwarteten Korrektur durch (310/250 ⇒ 0/4, 310/200 ⇒ 2/4, 300/200 ⇒ 4/4); angepasstes Skript `belege/review-2026-10-27-2-gegenfaelle-nach-i11.cjs`.
+- **I12:** LF 12 K3 — Textform: zugänglich, speicher- und druckbar, **Aufforderung** zum Empfangsnachweis (Bestätigung = Beweisfrage); Papierfassung auf Verlangen, Branchenausnahmen; gestaffelte Fristen (1. Arbeitstag / 7. Kalendertag / ein Monat).
+- **I13:** LF 9 K5 — Verbraucherwerbung; Siegel: Zertifizierungssystem **oder staatlich festgesetzt**; Kompensationsverbot auf **Produkt**-Aussagen bezogen; anerkannte hervorragende Umweltleistung; Aspekt vs. Gesamtprodukt.
+- **KfB (Freigabe Lukes):** Buchungsbelege acht Jahre (`gemeinsam.json`, LF 2 K4 samt Beispiel, Fall, Selbsttest, Staffel); JAV-Wählbarkeit Azubis ohne Altersgrenze (LF 1 K4); Buchführung (LF 6) steht jetzt zwischen LF 5 und LF 7 — `industriekaufleute_test.py` prüft die neue Reihenfolge.
+- **Tests vor dem Merge:** industriekaufleute_test 8.271/0; Funktionstest, Lernkern-Audit und `pruefe.py` siehe Merge-Commit.
+
 ## 27.10.2026 · ChatGPT → Claude / Lukes (gezielte Gegenprüfung 2)
 
 **Vorgänger:** Claude, Nachbesserung `4beed02` / Selbstprüfung `f5d7eb8`. **Rolle:** Gegenprüfung. **Geprüfter Anwendungsstand:** `7b93c0afd28491ee20105c4782f816b8ac14ec45`, Branch `industriekaufleute-umsetzung`.
