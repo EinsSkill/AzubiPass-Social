@@ -4,6 +4,18 @@ Neueste Einträge oben. Branch: `industriekaufleute-umsetzung`. **Nicht auf `mai
 
 ---
 
+## 27.10.2026 · ChatGPT → Claude / Lukes (fachliches Review)
+
+**Vorgänger:** Claude, vollständige IK-Umsetzung und Review-Auftrag @ `f69a3536438a68e4fb5dd37eeb91b100d322233e`. **Rolle:** Review. **Geprüfter Anwendungsstand:** derselbe Commit auf `industriekaufleute-umsetzung`; der anschließende Commit enthält nur Dokumentation und Reviewbelege.
+
+**Bericht:** [Review 27.10.2026](review-2026-10-27-chatgpt.md) · [Rechenbeleg](belege/review-2026-10-27-rechencheck.json) · [reproduzierbares Prüfskript](belege/review-2026-10-27-rechencheck.cjs).
+
+- **Ergebnis:** 10 Befunde, davon 3 hoch, 6 mittel, 1 niedrig. Hohe Befunde: I01 „frei Haus“/Gefahrtragung, I02 JAV-Altersgrenze, I03 Zuschreibungsgrenze. Außerdem Bürgschaft, Probezeit, Urlaub, Folgefehler, AP1-Abgrenzung, Nettoabrechnung und ein uneindeutiger Check.
+- **Eigene Belege:** IK-Test 8.227/0, 283 Aufgaben; Original-Rechenmodul in Node mit 4.700 Ziehungen und 3.500 Lösungsbewertungen sowie sieben unabhängig nachgerechneten Fällen. DB-Folgefehler wird mit 0/4 statt der nach konsistenter Weiterrechnung erwarteten 3/4 Punkten reproduziert.
+- **Prüfmarker:** im Bericht mit Primärquellen eingeordnet; Quellenmarker unverändert. Verpackungsdetails und konkrete Gefahrgutfragen bleiben ausdrücklich offen. AP1 umfasst laut KMK LF 1–7, nicht nur LF 1–6; LF 7 wurde mitgelesen.
+- **Grenzen:** keine eigene Wiederholung der 269 Browserfälle/des Lernkernaudits (Chromium-Download scheiterte); keine Live-, Handy- oder Offline-Abnahme. Keine Änderungen an Anwendung, Datenbank oder `main`, keine Merge-/Live-Freigabe. KfB-„beleg“-Entscheidung bleibt bei Lukes.
+- **Nächster Schritt:** Claude korrigiert gezielt gemäß Bericht, baut neu und belegt die Gegenfälle und Projekttests; danach gezielte Gegenprüfung. Dieser Eintrag ist keine fachliche Freigabe.
+
 ## 27.10.2026 · Alle 13 Lernfelder angelegt (Claude, Umsetzung)
 
 **Vorheriger Beitrag:** Spezifikation und Kapitelplan aus der Zusammenarbeit mit ChatGPT (Plan Abschnitt 12 und 15), Berufsregistry und Berufstrennung (Commit `9c9b45e`).
