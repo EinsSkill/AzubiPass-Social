@@ -68,7 +68,7 @@ Jedes Kapitel hat: Langfassung je Abschnitt (Vorwissen, Erklärung, zwei Beispie
 ### Prüfungen
 
 - `industriekaufleute_test.py`: 8.227 Prüfungen bestanden, 0 Fehler (283 Aufgaben). Erweitert um: AFB I–III je Kapitel, Buchungssatz-Regeln, `folgefehler_aus` muss Liste sein und die Formel muss davon abhängen, keine Platzhalter in Zahl-Labels, Variablen nur `von/bis/schritt`.
-- `funktionstest.py` und `lernkern_audit_test.py`: Ergebnis siehe Commit-Nachricht des Abschlusscommits.
+- `funktionstest.py`: 269/269 bestanden; `lernkern_audit_test.py`: alles in Ordnung (Lauf vom 27.10.2026).
 - Sichtprüfung: alle Grafiken von LF 10–13 ohne JS-Fehler gerendert; alle Kapitel bei 320 px ohne seitlichen Überlauf.
 - Testanpassungen: `funktionstest.py` prüft die Heute-/Lernen-Ansicht nur für den Standardberuf (KfB); `lernkern_audit_test.py` erwartet nach der v1-Sicherung Kontofassung 4 (seit Berufstrennung).
 
