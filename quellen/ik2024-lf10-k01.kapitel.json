@@ -75,10 +75,10 @@
         ],
         "erklaerung": "Die Bilanz zeigt Vermögen und Kapital zum Stichtag, gegliedert nach dem Schema des HGB für Kapitalgesellschaften: Aktiva mit Anlagevermögen, Umlaufvermögen und Rechnungsabgrenzung; Passiva mit Eigenkapital (gezeichnetes Kapital, Rücklagen, Gewinn- oder Verlustvortrag, Jahresüberschuss oder -fehlbetrag), Rückstellungen, Verbindlichkeiten und Rechnungsabgrenzung. Die GuV zeigt, wie das Jahresergebnis entstanden ist; im Gesamtkostenverfahren mit Umsatzerlösen, Bestandsveränderungen, Materialaufwand, Personalaufwand, Abschreibungen und sonstigen Posten. Der Anhang erläutert Bilanzierungs- und Bewertungsmethoden. Kapitalgesellschaften müssen ihren Abschluss im Unternehmensregister offenlegen; kleine Gesellschaften haben Erleichterungen.",
         "beispiele": [
-          "Eigenkapital der GmbH: gezeichnetes Kapital 25.000 €, Gewinnrücklagen, Jahresüberschuss.",
+          "Eigenkapital der GmbH: gezeichnetes Kapital 100.000 €, Gewinnrücklagen, Jahresüberschuss.",
           "Anhang: ‚Vorräte werden zu Anschaffungs- bzw. Herstellungskosten oder zum niedrigeren Stichtagswert bewertet.‘"
         ],
-        "fallbeispiel": "Luca fragt, warum in der Bilanz von MAKEL ‚gezeichnetes Kapital 25.000 €‘ steht, obwohl das Eigenkapital viel höher ist. Sandra erklärt: Das gezeichnete Kapital ist das im Gesellschaftsvertrag festgelegte Stammkapital; Rücklagen und Jahresüberschuss kommen hinzu.",
+        "fallbeispiel": "Luca fragt, warum in der Bilanz von MAKEL ‚gezeichnetes Kapital 100.000 €‘ steht, obwohl das Eigenkapital viel höher ist. Sandra erklärt: Das gezeichnete Kapital ist das im Gesellschaftsvertrag festgelegte Stammkapital; Rücklagen und Jahresüberschuss kommen hinzu.",
         "typische_fehler": "Das gezeichnete Kapital mit dem gesamten Eigenkapital gleichsetzen.",
         "verstaendnisfragen": [
           "Woraus besteht das Eigenkapital einer GmbH in der Bilanz? Gezeichnetes Kapital, Rücklagen, Gewinn- oder Verlustvortrag, Jahresüberschuss oder -fehlbetrag.",
@@ -157,11 +157,11 @@
         ] },
         {
           "typ": "check",
-          "frage": "In der Bilanz der MAKEL Studio GmbH stehen 25.000 € gezeichnetes Kapital, 40.000 € Gewinnrücklagen und 20.000 € Jahresüberschuss. Wie hoch ist das Eigenkapital?",
+          "frage": "In der Bilanz der MAKEL Studio GmbH stehen 100.000 € gezeichnetes Kapital, 40.000 € Gewinnrücklagen und 20.000 € Jahresüberschuss. Wie hoch ist das Eigenkapital?",
           "optionen": [
-            { "text": "25.000 €", "richtig": false, "echo": "Das ist nur das gezeichnete Kapital (Stammkapital)." },
-            { "text": "85.000 €", "richtig": true, "echo": "Richtig: 25.000 + 40.000 + 20.000 € — alle Posten des Eigenkapitals zusammen." },
-            { "text": "45.000 €", "richtig": false, "echo": "Die Gewinnrücklagen gehören ebenfalls zum Eigenkapital." }
+            { "text": "100.000 €", "richtig": false, "echo": "Das ist nur das gezeichnete Kapital (Stammkapital)." },
+            { "text": "160.000 €", "richtig": true, "echo": "Richtig: 100.000 + 40.000 + 20.000 € — alle Posten des Eigenkapitals zusammen." },
+            { "text": "120.000 €", "richtig": false, "echo": "Die Gewinnrücklagen gehören ebenfalls zum Eigenkapital." }
           ]
         },
         { "typ": "merke", "text": "**Bilanz** zeigt den Stichtag, **GuV** das Zustandekommen des Ergebnisses, der **Anhang** erläutert die Methoden; die GmbH legt offen.", "karteikarte": "Was zeigen Bilanz, GuV und Anhang einer Kapitalgesellschaft?" }

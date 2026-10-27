@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Die Grundidee der EZB-Geldpolitik erklären", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Zins- und Wechselkurseinflüsse auf MAKEL berechnen und erläutern", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Internationale Organisationen anhand ihrer Aufgaben einordnen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Geschäftsprozesse an Risiken anpassen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Die Grundidee der EZB-Geldpolitik erklären",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Zins- und Wechselkurseinflüsse auf MAKEL berechnen und erläutern",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Internationale Organisationen anhand ihrer Aufgaben einordnen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Geschäftsprozesse an Risiken anpassen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,7 +117,10 @@
       "id": "a1",
       "titel": "EZB und Übertragung",
       "inhalt": [
-        { "typ": "absatz", "text": "Die {{begriff:ezb|EZB}} steuert über die {{begriff:leitzins|Leitzinsen}}." },
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:ezb|EZB}} steuert über die {{begriff:leitzins|Leitzinsen}}."
+        },
         {
           "typ": "grafik",
           "variante": "kette",
@@ -109,15 +128,42 @@
           "titel": "Vom Leitzins zum Preis",
           "lead": "So wirkt eine Leitzinserhöhung — schrittweise und verzögert.",
           "schritte": [
-            { "nr": "1", "titel": "EZB", "satz": "Leitzinsen steigen", "text": "Geschäftsbanken zahlen mehr, wenn sie sich Zentralbankgeld leihen, und erhalten mehr für Einlagen." },
-            { "nr": "2", "titel": "Banken", "satz": "Kredite werden teurer", "text": "Neue und variable Kredite für Unternehmen und Haushalte verteuern sich." },
-            { "nr": "3", "titel": "Unternehmen und Haushalte", "satz": "Weniger Kredit, weniger Nachfrage", "text": "Investitionen werden verschoben, Sparen wird attraktiver, Konsum auf Kredit sinkt." },
-            { "nr": "4", "titel": "Preise", "satz": "Preisauftrieb lässt nach", "text": "Bei geringerer Nachfrage können Anbieter Preise schwerer erhöhen — die Inflationsrate sinkt mit Verzögerung." }
+            {
+              "nr": "1",
+              "titel": "EZB",
+              "satz": "Leitzinsen steigen",
+              "text": "Geschäftsbanken zahlen mehr, wenn sie sich Zentralbankgeld leihen, und erhalten mehr für Einlagen."
+            },
+            {
+              "nr": "2",
+              "titel": "Banken",
+              "satz": "Kredite werden teurer",
+              "text": "Neue und variable Kredite für Unternehmen und Haushalte verteuern sich."
+            },
+            {
+              "nr": "3",
+              "titel": "Unternehmen und Haushalte",
+              "satz": "Weniger Kredit, weniger Nachfrage",
+              "text": "Investitionen werden verschoben, Sparen wird attraktiver, Konsum auf Kredit sinkt."
+            },
+            {
+              "nr": "4",
+              "titel": "Preise",
+              "satz": "Preisauftrieb lässt nach",
+              "text": "Bei geringerer Nachfrage können Anbieter Preise schwerer erhöhen — die Inflationsrate sinkt mit Verzögerung."
+            }
           ],
           "regel": "Die Kette wirkt verzögert und nicht für alle gleich: Festzinskredite ändern sich erst bei Neuabschluss."
         },
-        { "typ": "achtung", "text": "Konkrete Leitzinssätze ändern sich. Für aktuelle Werte immer die Veröffentlichungen der EZB nutzen.", "pruefen": "EZB-Ziel (2 % mittelfristig, Strategie) und Darstellung der Instrumente vor Veröffentlichung mit dem aktuellen Stand abgleichen." },
-        { "typ": "merke", "text": "**EZB**: Ziel Preisstabilität (2 % mittelfristig); Leitzins ↑ → Kredite teurer → Nachfrage ↓ → Preisauftrieb ↓ — **verzögert** und nicht für alle Kredite gleich.", "karteikarte": "Wie wirkt eine Leitzinserhöhung der EZB auf Preise und Unternehmen?" }
+        {
+          "typ": "achtung",
+          "text": "Konkrete Leitzinssätze ändern sich. Für aktuelle Werte immer die Veröffentlichungen der EZB nutzen."
+        },
+        {
+          "typ": "merke",
+          "text": "**EZB**: Ziel Preisstabilität (2 % mittelfristig); Leitzins ↑ → Kredite teurer → Nachfrage ↓ → Preisauftrieb ↓ — **verzögert** und nicht für alle Kredite gleich.",
+          "karteikarte": "Wie wirkt eine Leitzinserhöhung der EZB auf Preise und Unternehmen?"
+        }
       ]
     },
     {
@@ -125,21 +171,64 @@
       "id": "a2",
       "titel": "Zinsen und Wechselkurse bei MAKEL",
       "inhalt": [
-        { "typ": "tabelle", "mono": true, "spalten": ["Fall", "Rechnung", "Ergebnis"], "zeilen": [
-          { "zellen": ["Zins 3 % → 5 % auf 100.000 €", "100.000 × 0,02", "+2.000 € pro Jahr"] },
-          { "zellen": ["10.000 USD bei 1,10 USD/€", "10.000 ÷ 1,10", "9.090,91 €"] },
-          { "zellen": ["10.000 USD bei 1,25 USD/€", "10.000 ÷ 1,25", "8.000,00 €"] }
-        ] },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Fall",
+            "Rechnung",
+            "Ergebnis"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Zins 3 % → 5 % auf 100.000 €",
+                "100.000 × 0,02",
+                "+2.000 € pro Jahr"
+              ]
+            },
+            {
+              "zellen": [
+                "10.000 USD bei 1,10 USD/€",
+                "10.000 ÷ 1,10",
+                "9.090,91 €"
+              ]
+            },
+            {
+              "zellen": [
+                "10.000 USD bei 1,25 USD/€",
+                "10.000 ÷ 1,25",
+                "8.000,00 €"
+              ]
+            }
+          ]
+        },
         {
           "typ": "check",
           "frage": "Der Zins für einen endfälligen Kredit über 100.000 € steigt von 3 % auf 5 %. Wie hoch ist die jährliche Mehrbelastung?",
           "optionen": [
-            { "text": "60 €", "richtig": false, "echo": "Das wären 2 % von 3.000 € — der Anstieg beträgt aber 2 Prozentpunkte vom Kreditbetrag." },
-            { "text": "2.000 €", "richtig": true, "echo": "Richtig: 2 Prozentpunkte von 100.000 € = 2.000 €." },
-            { "text": "5.000 €", "richtig": false, "echo": "Das ist die gesamte neue Zinsbelastung, nicht die Mehrbelastung." }
+            {
+              "text": "60 €",
+              "richtig": false,
+              "echo": "Das wären 2 % von 3.000 € — der Anstieg beträgt aber 2 Prozentpunkte vom Kreditbetrag."
+            },
+            {
+              "text": "2.000 €",
+              "richtig": true,
+              "echo": "Richtig: 2 Prozentpunkte von 100.000 € = 2.000 €."
+            },
+            {
+              "text": "5.000 €",
+              "richtig": false,
+              "echo": "Das ist die gesamte neue Zinsbelastung, nicht die Mehrbelastung."
+            }
           ]
         },
-        { "typ": "merke", "text": "Zins: **Prozentpunkte ≠ Prozent**; Mengennotierung USD/€: Euro-Betrag = USD-Betrag ÷ Kurs — **Aufwertung** macht Importe billiger, Exporte teurer.", "karteikarte": "Wie rechnest du Zinsänderungen und Fremdwährungsbeträge richtig?" }
+        {
+          "typ": "merke",
+          "text": "Zins: **Prozentpunkte ≠ Prozent**; Mengennotierung USD/€: Euro-Betrag = USD-Betrag ÷ Kurs — **Aufwertung** macht Importe billiger, Exporte teurer.",
+          "karteikarte": "Wie rechnest du Zinsänderungen und Fremdwährungsbeträge richtig?"
+        }
       ]
     },
     {
@@ -150,15 +239,35 @@
         {
           "typ": "zuordnen",
           "lead": "Welche Organisation ist zuständig?",
-          "kategorien": ["EU", "WTO", "IWF"],
+          "kategorien": [
+            "EU",
+            "WTO",
+            "IWF"
+          ],
           "aufgaben": [
-            { "text": "Zollfreier Warenverkehr zwischen Deutschland und Portugal", "loesung": "EU" },
-            { "text": "Schlichtung eines Handelsstreits zwischen Staaten über Zölle", "loesung": "WTO" },
-            { "text": "Kredit an einen Staat in einer Zahlungsbilanzkrise", "loesung": "IWF" },
-            { "text": "Gemeinsamer Außenzoll für Einfuhren aus Drittländern", "loesung": "EU" }
+            {
+              "text": "Zollfreier Warenverkehr zwischen Deutschland und Portugal",
+              "loesung": "EU"
+            },
+            {
+              "text": "Schlichtung eines Handelsstreits zwischen Staaten über Zölle",
+              "loesung": "WTO"
+            },
+            {
+              "text": "Kredit an einen Staat in einer Zahlungsbilanzkrise",
+              "loesung": "IWF"
+            },
+            {
+              "text": "Gemeinsamer Außenzoll für Einfuhren aus Drittländern",
+              "loesung": "EU"
+            }
           ]
         },
-        { "typ": "merke", "text": "**EU**: Binnenmarkt und Zollunion; **WTO**: Handelsregeln und Streitschlichtung; **IWF**: Währungsstabilität und Krisenhilfe; **Weltbank**: Entwicklungsfinanzierung.", "karteikarte": "Welche Aufgaben haben EU, WTO, IWF und Weltbank?" }
+        {
+          "typ": "merke",
+          "text": "**EU**: Binnenmarkt und Zollunion; **WTO**: Handelsregeln und Streitschlichtung; **IWF**: Währungsstabilität und Krisenhilfe; **Weltbank**: Entwicklungsfinanzierung.",
+          "karteikarte": "Welche Aufgaben haben EU, WTO, IWF und Weltbank?"
+        }
       ]
     },
     {
@@ -166,12 +275,42 @@
       "id": "a4",
       "titel": "Prozesse anpassen und präsentieren",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Risiko", "Maßnahme", "Kosten bzw. Nachteil"], "zeilen": [
-          { "zellen": ["Steigende Zinsen", "Festzins vereinbaren", "Kein Vorteil bei sinkenden Zinsen"] },
-          { "zellen": ["Schwankender Dollar", "Euro-Lieferant testen, Preise fest vereinbaren", "Abstimmungsaufwand, ggf. höherer Grundpreis"] },
-          { "zellen": ["Lieferausfall", "Sicherheitsbestand, zweite Quelle", "Kapitalbindung, Lagerkosten"] }
-        ] },
-        { "typ": "merke", "text": "**Risiko → Maßnahme → Kosten → Ziel**: Festzins, Euro-Einkauf, zweite Bezugsquelle, Reserve — jede Absicherung hat ihren Preis.", "karteikarte": "Wie baust du eine Empfehlung zum Umgang mit Zins- und Wechselkursrisiken auf?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Risiko",
+            "Maßnahme",
+            "Kosten bzw. Nachteil"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Steigende Zinsen",
+                "Festzins vereinbaren",
+                "Kein Vorteil bei sinkenden Zinsen"
+              ]
+            },
+            {
+              "zellen": [
+                "Schwankender Dollar",
+                "Euro-Lieferant testen, Preise fest vereinbaren",
+                "Abstimmungsaufwand, ggf. höherer Grundpreis"
+              ]
+            },
+            {
+              "zellen": [
+                "Lieferausfall",
+                "Sicherheitsbestand, zweite Quelle",
+                "Kapitalbindung, Lagerkosten"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Risiko → Maßnahme → Kosten → Ziel**: Festzins, Euro-Einkauf, zweite Bezugsquelle, Reserve — jede Absicherung hat ihren Preis.",
+          "karteikarte": "Wie baust du eine Empfehlung zum Umgang mit Zins- und Wechselkursrisiken auf?"
+        }
       ]
     }
   ],
@@ -184,9 +323,21 @@
     "Risiken mit Maßnahmen, Kosten und Zielen beantworten."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "Ein einfacher Jahreszins für einen endfälligen Kredit über 100.000 € steigt von 3 % auf 5 %. Jährliche Mehrbelastung?", "loesung": "2.000 €; der Anstieg beträgt 2 Prozentpunkte, nicht 2 % des bisherigen Zinsbetrags." },
-    { "typ": "Entwickeln", "frage": "Entwickle eine Anpassung bei stärker schwankenden internationalen Beschaffungskosten.", "loesung": "Zum Beispiel weitere Bezugsquellen im Euroraum prüfen, Preise vertraglich fixieren oder Reserve bilden; Kosten, Risiken und Ziele nennen." },
-    { "typ": "Wissen", "frage": "Welche Aufgabe hat die WTO?", "loesung": "Sie vereinbart Regeln für den internationalen Handel und schlichtet Handelsstreitigkeiten zwischen Mitgliedstaaten." }
+    {
+      "typ": "Rechnen",
+      "frage": "Ein einfacher Jahreszins für einen endfälligen Kredit über 100.000 € steigt von 3 % auf 5 %. Jährliche Mehrbelastung?",
+      "loesung": "2.000 €; der Anstieg beträgt 2 Prozentpunkte, nicht 2 % des bisherigen Zinsbetrags."
+    },
+    {
+      "typ": "Entwickeln",
+      "frage": "Entwickle eine Anpassung bei stärker schwankenden internationalen Beschaffungskosten.",
+      "loesung": "Zum Beispiel weitere Bezugsquellen im Euroraum prüfen, Preise vertraglich fixieren oder Reserve bilden; Kosten, Risiken und Ziele nennen."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Welche Aufgabe hat die WTO?",
+      "loesung": "Sie vereinbart Regeln für den internationalen Handel und schlichtet Handelsstreitigkeiten zwischen Mitgliedstaaten."
+    }
   ],
   "pruefungstipp": "Bei Wechselkursaufgaben zuerst die Notierung klären: Wie viele Dollar bekomme ich für einen Euro? Dann teilen (Dollar → Euro) oder malnehmen (Euro → Dollar) — und das Ergebnis auf Plausibilität prüfen."
 }

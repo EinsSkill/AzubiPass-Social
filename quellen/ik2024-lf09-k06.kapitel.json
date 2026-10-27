@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Vertriebswege hinsichtlich Ziel und Aufwand vergleichen", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Internationale Risiken mit geeigneten Maßnahmen verbinden", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Lieferklauseln funktional erklären", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Zahlungsabsicherungen funktional unterscheiden", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Vertriebswege hinsichtlich Ziel und Aufwand vergleichen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Internationale Risiken mit geeigneten Maßnahmen verbinden",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Lieferklauseln funktional erklären",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Zahlungsabsicherungen funktional unterscheiden",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,13 +117,47 @@
       "id": "a1",
       "titel": "Direkter und indirekter Vertrieb",
       "inhalt": [
-        { "typ": "absatz", "text": "Die {{begriff:distributionspolitik|Distributionspolitik}} wählt den Weg zum Kunden. ==Absatzmittler kaufen selbst, Absatzhelfer vermitteln.==" },
-        { "typ": "tabelle", "mono": true, "spalten": ["Monatsumsatz", "Reisender (3.000 € + 2 %)", "Handelsvertreterin (8 %)"], "zeilen": [
-          { "zellen": ["30.000 €", "3.600 €", "2.400 €"] },
-          { "zellen": ["50.000 €", "4.000 €", "4.000 €"] },
-          { "zellen": ["70.000 €", "4.400 €", "5.600 €"] }
-        ] },
-        { "typ": "merke", "text": "Direkter Vertrieb = **Nähe und Marge**, indirekter = **Reichweite gegen Spanne**; der Reisende lohnt sich ab dem kritischen Umsatz.", "karteikarte": "Was unterscheidet direkten und indirekten Vertrieb, und wie vergleichst du Reisenden und Handelsvertreter?" }
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:distributionspolitik|Distributionspolitik}} wählt den Weg zum Kunden. ==Absatzmittler kaufen selbst, Absatzhelfer vermitteln.=="
+        },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Monatsumsatz",
+            "Reisender (3.000 € + 2 %)",
+            "Handelsvertreterin (8 %)"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "30.000 €",
+                "3.600 €",
+                "2.400 €"
+              ]
+            },
+            {
+              "zellen": [
+                "50.000 €",
+                "4.000 €",
+                "4.000 €"
+              ]
+            },
+            {
+              "zellen": [
+                "70.000 €",
+                "4.400 €",
+                "5.600 €"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Direkter Vertrieb = **Nähe und Marge**, indirekter = **Reichweite gegen Spanne**; der Reisende lohnt sich ab dem kritischen Umsatz.",
+          "karteikarte": "Was unterscheidet direkten und indirekten Vertrieb, und wie vergleichst du Reisenden und Handelsvertreter?"
+        }
       ]
     },
     {
@@ -115,14 +165,56 @@
       "id": "a2",
       "titel": "Außenhandelsrisiken",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Risiko", "Beispiel", "Maßnahme"], "zeilen": [
-          { "zellen": ["Transport", "Beschädigung beim Umschlag", "Transportversicherung, Lieferklausel"] },
-          { "zellen": ["Zahlung", "Neukunde zahlt nicht", "Vorkasse, Akkreditiv, Wirtschaftsauskunft"] },
-          { "zellen": ["Wechselkurs", "Rechnung in Pfund", "Rechnung in Euro, Kurssicherung"] },
-          { "zellen": ["Politisch-rechtlich", "Zoll, Einfuhrverbot, fremdes Recht", "Vorabprüfung, Rechtswahl im Vertrag"] },
-          { "zellen": ["Kulturell", "Missverständnisse bei Terminen", "klare schriftliche Absprachen"] }
-        ] },
-        { "typ": "merke", "text": "Auslandsgeschäfte bergen **Transport-, Zahlungs-, Kurs-, politische und kulturelle Risiken** — jedem Risiko eine passende Maßnahme zuordnen.", "karteikarte": "Welche Risiken hat das Auslandsgeschäft, und wie begegnest du ihnen?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Risiko",
+            "Beispiel",
+            "Maßnahme"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Transport",
+                "Beschädigung beim Umschlag",
+                "Transportversicherung, Lieferklausel"
+              ]
+            },
+            {
+              "zellen": [
+                "Zahlung",
+                "Neukunde zahlt nicht",
+                "Vorkasse, Akkreditiv, Wirtschaftsauskunft"
+              ]
+            },
+            {
+              "zellen": [
+                "Wechselkurs",
+                "Rechnung in Pfund",
+                "Rechnung in Euro, Kurssicherung"
+              ]
+            },
+            {
+              "zellen": [
+                "Politisch-rechtlich",
+                "Zoll, Einfuhrverbot, fremdes Recht",
+                "Vorabprüfung, Rechtswahl im Vertrag"
+              ]
+            },
+            {
+              "zellen": [
+                "Kulturell",
+                "Missverständnisse bei Terminen",
+                "klare schriftliche Absprachen"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Auslandsgeschäfte bergen **Transport-, Zahlungs-, Kurs-, politische und kulturelle Risiken** — jedem Risiko eine passende Maßnahme zuordnen.",
+          "karteikarte": "Welche Risiken hat das Auslandsgeschäft, und wie begegnest du ihnen?"
+        }
       ]
     },
     {
@@ -130,14 +222,53 @@
       "id": "a3",
       "titel": "Incoterms und benannter Ort",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Klausel", "Kosten und Gefahr des Verkäufers bis …", "Einfuhrabgaben"], "zeilen": [
-          { "zellen": ["EXW (ab Werk)", "Bereitstellung im eigenen Werk", "Käufer"] },
-          { "zellen": ["FCA (frei Frachtführer)", "Übergabe an den Frachtführer am benannten Ort", "Käufer"] },
-          { "zellen": ["DAP (geliefert benannter Ort)", "Ankunft am Bestimmungsort, nicht entladen", "Käufer"] },
-          { "zellen": ["DDP (geliefert verzollt)", "Ankunft am Bestimmungsort", "Verkäufer"] }
-        ], "pruefen": "Incoterms® 2020 als geltende Fassung vor Veröffentlichung bei der ICC prüfen." },
-        { "typ": "achtung", "text": "Incoterms regeln **nicht** Eigentumsübergang, Preis oder Zahlung. Ohne benannten Ort und Fassung ist die Klausel unvollständig." },
-        { "typ": "merke", "text": "Incoterms regeln **Kosten, Gefahr und Formalitäten** — nur mit benanntem Ort und Fassung, nicht Eigentum oder Zahlung.", "karteikarte": "Was regeln Incoterms, und was gehört zu einer vollständigen Klausel?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Klausel",
+            "Kosten und Gefahr des Verkäufers bis …",
+            "Einfuhrabgaben"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "EXW (ab Werk)",
+                "Bereitstellung im eigenen Werk",
+                "Käufer"
+              ]
+            },
+            {
+              "zellen": [
+                "FCA (frei Frachtführer)",
+                "Übergabe an den Frachtführer am benannten Ort",
+                "Käufer"
+              ]
+            },
+            {
+              "zellen": [
+                "DAP (geliefert benannter Ort)",
+                "Ankunft am Bestimmungsort, nicht entladen",
+                "Käufer"
+              ]
+            },
+            {
+              "zellen": [
+                "DDP (geliefert verzollt)",
+                "Ankunft am Bestimmungsort",
+                "Verkäufer"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Incoterms regeln **nicht** Eigentumsübergang, Preis oder Zahlung. Ohne benannten Ort und Fassung ist die Klausel unvollständig."
+        },
+        {
+          "typ": "merke",
+          "text": "Incoterms regeln **Kosten, Gefahr und Formalitäten** — nur mit benanntem Ort und Fassung, nicht Eigentum oder Zahlung.",
+          "karteikarte": "Was regeln Incoterms, und was gehört zu einer vollständigen Klausel?"
+        }
       ]
     },
     {
@@ -152,20 +283,50 @@
           "titel": "Dokumenteninkasso und Akkreditiv",
           "lead": "Beide arbeiten mit Dokumenten — aber nur eines enthält ein Zahlungsversprechen der Bank.",
           "seiten": [
-            { "name": "Dokumenteninkasso", "ton": "gold", "punkte": [
-              { "text": "Banken leiten Dokumente weiter", "detail": "Der Käufer erhält die Dokumente nur gegen Zahlung." },
-              { "text": "Kein Zahlungsversprechen der Bank", "detail": "Verweigert der Käufer, liegt die Ware im Ausland." },
-              { "text": "Günstiger und einfacher", "detail": "Geeignet bei bekannten Kunden mit guter Bonität." }
-            ] },
-            { "name": "Dokumentenakkreditiv", "ton": "gruen", "punkte": [
-              { "text": "Bedingtes Zahlungsversprechen der Käuferbank", "detail": "Die Bank zahlt bei fristgerechter Vorlage ordnungsgemäßer Dokumente." },
-              { "text": "Hohe Sicherheit für den Verkäufer", "detail": "Unabhängig von der Zahlungsbereitschaft des Käufers." },
-              { "text": "Teurer und formstreng", "detail": "Schon kleine Abweichungen in den Dokumenten gefährden die Zahlung." }
-            ] }
+            {
+              "name": "Dokumenteninkasso",
+              "ton": "gold",
+              "punkte": [
+                {
+                  "text": "Banken leiten Dokumente weiter",
+                  "detail": "Der Käufer erhält die Dokumente nur gegen Zahlung."
+                },
+                {
+                  "text": "Kein Zahlungsversprechen der Bank",
+                  "detail": "Verweigert der Käufer, liegt die Ware im Ausland."
+                },
+                {
+                  "text": "Günstiger und einfacher",
+                  "detail": "Geeignet bei bekannten Kunden mit guter Bonität."
+                }
+              ]
+            },
+            {
+              "name": "Dokumentenakkreditiv",
+              "ton": "gruen",
+              "punkte": [
+                {
+                  "text": "Bedingtes Zahlungsversprechen der Käuferbank",
+                  "detail": "Die Bank zahlt bei fristgerechter Vorlage ordnungsgemäßer Dokumente."
+                },
+                {
+                  "text": "Hohe Sicherheit für den Verkäufer",
+                  "detail": "Unabhängig von der Zahlungsbereitschaft des Käufers."
+                },
+                {
+                  "text": "Teurer und formstreng",
+                  "detail": "Schon kleine Abweichungen in den Dokumenten gefährden die Zahlung."
+                }
+              ]
+            }
           ],
           "regel": "Je unbekannter der Kunde und je höher der Betrag, desto eher Akkreditiv oder Vorkasse. Die konkreten Bedingungen werden mit der Bank und den geltenden Regeln abgestimmt."
         },
-        { "typ": "merke", "text": "**Vorkasse** am sichersten, **offene Rechnung** am riskantesten; **Inkasso** leitet Dokumente weiter, **Akkreditiv** verspricht Zahlung gegen ordnungsgemäße Dokumente.", "karteikarte": "Was unterscheidet Dokumenteninkasso und Akkreditiv?" }
+        {
+          "typ": "merke",
+          "text": "**Vorkasse** am sichersten, **offene Rechnung** am riskantesten; **Inkasso** leitet Dokumente weiter, **Akkreditiv** verspricht Zahlung gegen ordnungsgemäße Dokumente.",
+          "karteikarte": "Was unterscheidet Dokumenteninkasso und Akkreditiv?"
+        }
       ]
     }
   ],
@@ -178,9 +339,21 @@
     "Zahlungssicherung nach Kunde, Betrag und Land wählen."
   ],
   "selbsttest": [
-    { "typ": "Wissen", "frage": "Warum reicht die Nennung einer Lieferklausel ohne benannten Ort und Fassung für eine klare Fallbearbeitung nicht?", "loesung": "Kosten-, Risiko- und Leistungspunkte hängen von der konkreten Klausel und dem Ort ab. Die Klausel regelt nicht automatisch Eigentumsübergang oder Zahlungsfragen." },
-    { "typ": "Vergleich", "frage": "Vergleiche Inkasso und Akkreditiv als Absicherungsinstrumente.", "loesung": "Inkasso: Banken leiten Dokumente gegen Zahlung weiter, ohne Zahlungsversprechen; Risiko der Nichtabnahme bleibt. Akkreditiv: bedingtes Zahlungsversprechen der Käuferbank gegen ordnungsgemäße Dokumente; Risiko formaler Dokumentenfehler und höhere Kosten." },
-    { "typ": "Rechnen", "frage": "Reisender 3.000 € Fixum + 2 % Provision, Handelsvertreter 8 % Provision. Kritischer Monatsumsatz?", "loesung": "3.000 + 0,02x = 0,08x → x = 50.000 €. Darüber ist der Reisende günstiger." }
+    {
+      "typ": "Wissen",
+      "frage": "Warum reicht die Nennung einer Lieferklausel ohne benannten Ort und Fassung für eine klare Fallbearbeitung nicht?",
+      "loesung": "Kosten-, Risiko- und Leistungspunkte hängen von der konkreten Klausel und dem Ort ab. Die Klausel regelt nicht automatisch Eigentumsübergang oder Zahlungsfragen."
+    },
+    {
+      "typ": "Vergleich",
+      "frage": "Vergleiche Inkasso und Akkreditiv als Absicherungsinstrumente.",
+      "loesung": "Inkasso: Banken leiten Dokumente gegen Zahlung weiter, ohne Zahlungsversprechen; Risiko der Nichtabnahme bleibt. Akkreditiv: bedingtes Zahlungsversprechen der Käuferbank gegen ordnungsgemäße Dokumente; Risiko formaler Dokumentenfehler und höhere Kosten."
+    },
+    {
+      "typ": "Rechnen",
+      "frage": "Reisender 3.000 € Fixum + 2 % Provision, Handelsvertreter 8 % Provision. Kritischer Monatsumsatz?",
+      "loesung": "3.000 + 0,02x = 0,08x → x = 50.000 €. Darüber ist der Reisende günstiger."
+    }
   ],
   "pruefungstipp": "Bei Außenhandelsfällen zuerst die Risiken benennen, dann jedem eine Maßnahme zuordnen. Incoterms immer mit Ort und Fassung schreiben — und nie als Zahlungssicherung ausgeben."
 }

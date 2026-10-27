@@ -58,7 +58,7 @@
           "Gesetzlicher Mindesturlaub, im Arbeitsvertrag mehr Tage: zulässig (günstiger).",
           "Der Arbeitsvertrag verweist auf einen Tarifvertrag: dessen Regeln gelten für das Arbeitsverhältnis."
         ],
-        "fallbeispiel": "Luca fragt, ob für die neue Lagerkraft „automatisch der Tarifvertrag“ gilt. Sandra Koslowski erklärt: Das hängt davon ab, ob MAKEL tarifgebunden ist oder der Arbeitsvertrag auf einen Tarifvertrag verweist. Gesetzliche Mindeststandards gelten dagegen immer; der Arbeitsvertrag darf nur zugunsten der Beschäftigten davon abweichen.",
+        "fallbeispiel": "Luca fragt, ob für die neue Lagerkraft „automatisch der Tarifvertrag“ gilt. Ayla Brandt erklärt: Das hängt davon ab, ob MAKEL tarifgebunden ist oder der Arbeitsvertrag auf einen Tarifvertrag verweist. Gesetzliche Mindeststandards gelten dagegen immer; der Arbeitsvertrag darf nur zugunsten der Beschäftigten davon abweichen.",
         "typische_fehler": "Jede Tarifregel automatisch für jedes Arbeitsverhältnis voraussetzen.",
         "verstaendnisfragen": [
           "Was regelt das Kollektivarbeitsrecht? Beziehungen zwischen Gruppen: Tarifverträge, Betriebsvereinbarungen, Mitbestimmung.",
@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Ein nachvollziehbares Auswahlverfahren planen", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Gespräche fair führen und Entscheidungen dokumentieren", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Individual- und Kollektivarbeitsrecht unterscheiden", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Vertrags- und Einstellungsunterlagen einordnen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Ein nachvollziehbares Auswahlverfahren planen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Gespräche fair führen und Entscheidungen dokumentieren",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Individual- und Kollektivarbeitsrecht unterscheiden",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Vertrags- und Einstellungsunterlagen einordnen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,12 +117,48 @@
       "id": "a1",
       "titel": "Auswahlkriterien und Verfahren",
       "inhalt": [
-        { "typ": "tabelle", "mono": true, "spalten": ["Kriterium", "Gewicht", "A", "B"], "zeilen": [
-          { "zellen": ["Fachkompetenz", "60 %", "4", "3"] },
-          { "zellen": ["Passende Erfahrung", "40 %", "3", "5"] },
-          { "zellen": ["Gewichtete Summe", "", "3,6", "3,8"], "detail": "A: 0,6 × 4 + 0,4 × 3 = 3,6. B: 0,6 × 3 + 0,4 × 5 = 3,8." }
-        ] },
-        { "typ": "merke", "text": "Kriterien **vorher** festlegen, für alle gleich anwenden; gewichtete Matrix = **Entscheidungshilfe**, kein Automatismus.", "karteikarte": "Wie gehst du bei einer gewichteten Bewerberauswahl vor, und wo liegt ihre Grenze?" }
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Kriterium",
+            "Gewicht",
+            "A",
+            "B"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Fachkompetenz",
+                "60 %",
+                "4",
+                "3"
+              ]
+            },
+            {
+              "zellen": [
+                "Passende Erfahrung",
+                "40 %",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "zellen": [
+                "Gewichtete Summe",
+                "",
+                "3,6",
+                "3,8"
+              ],
+              "detail": "A: 0,6 × 4 + 0,4 × 3 = 3,6. B: 0,6 × 3 + 0,4 × 5 = 3,8."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Kriterien **vorher** festlegen, für alle gleich anwenden; gewichtete Matrix = **Entscheidungshilfe**, kein Automatismus.",
+          "karteikarte": "Wie gehst du bei einer gewichteten Bewerberauswahl vor, und wo liegt ihre Grenze?"
+        }
       ]
     },
     {
@@ -117,16 +169,38 @@
         {
           "typ": "zuordnen",
           "lead": "Ist die Frage im Vorstellungsgespräch zulässig?",
-          "kategorien": ["zulässig", "unzulässig"],
+          "kategorien": [
+            "zulässig",
+            "unzulässig"
+          ],
           "aufgaben": [
-            { "text": "Wie gehen Sie vor, wenn Ware und Lieferschein nicht übereinstimmen?", "loesung": "zulässig" },
-            { "text": "Sind Sie schwanger?", "loesung": "unzulässig" },
-            { "text": "Welche Erfahrung haben Sie mit Handscannern?", "loesung": "zulässig" },
-            { "text": "Sind Sie Mitglied einer Gewerkschaft?", "loesung": "unzulässig" },
-            { "text": "Welcher Religion gehören Sie an?", "loesung": "unzulässig" }
+            {
+              "text": "Wie gehen Sie vor, wenn Ware und Lieferschein nicht übereinstimmen?",
+              "loesung": "zulässig"
+            },
+            {
+              "text": "Sind Sie schwanger?",
+              "loesung": "unzulässig"
+            },
+            {
+              "text": "Welche Erfahrung haben Sie mit Handscannern?",
+              "loesung": "zulässig"
+            },
+            {
+              "text": "Sind Sie Mitglied einer Gewerkschaft?",
+              "loesung": "unzulässig"
+            },
+            {
+              "text": "Welcher Religion gehören Sie an?",
+              "loesung": "unzulässig"
+            }
           ]
         },
-        { "typ": "merke", "text": "Strukturiert fragen, tätigkeitsbezogen bewerten, **dokumentieren** — keine Fragen zu geschützten Merkmalen; Daten nach Fristablauf löschen.", "karteikarte": "Was macht ein faires Vorstellungsgespräch aus, und welche Fragen sind tabu?" }
+        {
+          "typ": "merke",
+          "text": "Strukturiert fragen, tätigkeitsbezogen bewerten, **dokumentieren** — keine Fragen zu geschützten Merkmalen; Daten nach Fristablauf löschen.",
+          "karteikarte": "Was macht ein faires Vorstellungsgespräch aus, und welche Fragen sind tabu?"
+        }
       ]
     },
     {
@@ -141,13 +215,29 @@
           "titel": "Welche Regel gilt?",
           "lead": "Klick dich von oben nach unten durch die Ebenen.",
           "stufen": [
-            { "name": "Gesetz", "text": "Mindeststandards für alle, etwa Mindesturlaub, Arbeitszeit, Kündigungsschutz, Mindestlohn. Darf nicht zum Nachteil der Beschäftigten unterschritten werden." },
-            { "name": "Tarifvertrag", "text": "Zwischen Gewerkschaft und Arbeitgeberverband oder Arbeitgeber. Gilt bei Tarifbindung, Allgemeinverbindlichkeit oder vertraglicher Bezugnahme." },
-            { "name": "Betriebsvereinbarung", "text": "Zwischen Betriebsrat und Arbeitgeber, etwa zu Arbeitszeitregelungen oder Urlaubsplanung im Betrieb." },
-            { "name": "Arbeitsvertrag", "text": "Individuelle Vereinbarung. Darf von höheren Ebenen grundsätzlich nur **zugunsten** der Beschäftigten abweichen (Günstigkeitsprinzip)." }
+            {
+              "name": "Gesetz",
+              "text": "Mindeststandards für alle, etwa Mindesturlaub, Arbeitszeit, Kündigungsschutz, Mindestlohn. Darf nicht zum Nachteil der Beschäftigten unterschritten werden."
+            },
+            {
+              "name": "Tarifvertrag",
+              "text": "Zwischen Gewerkschaft und Arbeitgeberverband oder Arbeitgeber. Gilt bei Tarifbindung, Allgemeinverbindlichkeit oder vertraglicher Bezugnahme."
+            },
+            {
+              "name": "Betriebsvereinbarung",
+              "text": "Zwischen Betriebsrat und Arbeitgeber, etwa zu Arbeitszeitregelungen oder Urlaubsplanung im Betrieb."
+            },
+            {
+              "name": "Arbeitsvertrag",
+              "text": "Individuelle Vereinbarung. Darf von höheren Ebenen grundsätzlich nur **zugunsten** der Beschäftigten abweichen (Günstigkeitsprinzip)."
+            }
           ]
         },
-        { "typ": "merke", "text": "Rangfolge: **Gesetz → Tarifvertrag → Betriebsvereinbarung → Arbeitsvertrag**; Abweichung nach unten nur zugunsten der Beschäftigten.", "karteikarte": "In welcher Rangfolge stehen Gesetz, Tarifvertrag, Betriebsvereinbarung und Arbeitsvertrag, und was besagt das Günstigkeitsprinzip?" }
+        {
+          "typ": "merke",
+          "text": "Rangfolge: **Gesetz → Tarifvertrag → Betriebsvereinbarung → Arbeitsvertrag**; Abweichung nach unten nur zugunsten der Beschäftigten.",
+          "karteikarte": "In welcher Rangfolge stehen Gesetz, Tarifvertrag, Betriebsvereinbarung und Arbeitsvertrag, und was besagt das Günstigkeitsprinzip?"
+        }
       ]
     },
     {
@@ -155,18 +245,40 @@
       "id": "a4",
       "titel": "Vertrag und Einstellung",
       "inhalt": [
-        { "typ": "absatz", "text": "Probezeit und Kündigungsfrist darin regelt {{par:bgb-622|§ 622 BGB}}." },
+        {
+          "typ": "absatz",
+          "text": "Probezeit und Kündigungsfrist darin regelt {{par:bgb-622|§ 622 BGB}}."
+        },
         {
           "typ": "check",
           "frage": "MAKEL vereinbart mit der neuen Lagerkraft eine Probezeit. Was ist richtig?",
           "optionen": [
-            { "text": "Höchstens sechs Monate, Kündigungsfrist darin zwei Wochen", "richtig": true, "echo": "Richtig: So sieht es § 622 Abs. 3 BGB vor." },
-            { "text": "Höchstens zwölf Monate, Kündigungsfrist vier Wochen", "richtig": false, "echo": "Die Probezeit mit verkürzter Frist ist auf höchstens sechs Monate begrenzt." },
-            { "text": "Eine Probezeit ist nur bei Befristung erlaubt", "richtig": false, "echo": "Eine Probezeit kann auch in unbefristeten Verträgen vereinbart werden." }
+            {
+              "text": "Höchstens sechs Monate, Kündigungsfrist darin zwei Wochen",
+              "richtig": true,
+              "echo": "Richtig: So sieht es § 622 Abs. 3 BGB vor."
+            },
+            {
+              "text": "Höchstens zwölf Monate, Kündigungsfrist vier Wochen",
+              "richtig": false,
+              "echo": "Die Probezeit mit verkürzter Frist ist auf höchstens sechs Monate begrenzt."
+            },
+            {
+              "text": "Eine Probezeit ist nur bei Befristung erlaubt",
+              "richtig": false,
+              "echo": "Eine Probezeit kann auch in unbefristeten Verträgen vereinbart werden."
+            }
           ]
         },
-        { "typ": "achtung", "text": "Form und Inhalt des Nachweises der Arbeitsbedingungen wurden zuletzt geändert. Vor der Vertragserstellung den aktuellen Stand des Nachweisgesetzes prüfen.", "pruefen": "Nachweisgesetz (Schriftform/Textform seit 2025) und Pflichtangaben vor Veröffentlichung mit aktuellem Stand abgleichen." },
-        { "typ": "merke", "text": "Arbeitsvertrag formfrei, wesentliche Bedingungen **nachweisen**; Probezeit ≤ 6 Monate (2 Wochen Frist); Befristung **schriftlich**; Unterlagen für Steuer und Sozialversicherung.", "karteikarte": "Was ist bei Arbeitsvertrag, Probezeit, Befristung und Einstellungsunterlagen zu beachten?" }
+        {
+          "typ": "achtung",
+          "text": "Seit 2025 darf der Nachweis der Arbeitsbedingungen auch in Textform (etwa als PDF per E-Mail) erteilt werden, wenn die Person ihn speichern und ausdrucken kann und den Empfang bestätigt; auf Verlangen ist er schriftlich zu erteilen. Für einige Branchen (z. B. Bau, Gastronomie, Transport und Logistik) gilt weiter die Schriftform."
+        },
+        {
+          "typ": "merke",
+          "text": "Arbeitsvertrag formfrei, wesentliche Bedingungen **nachweisen**; Probezeit ≤ 6 Monate (2 Wochen Frist); Befristung **schriftlich**; Unterlagen für Steuer und Sozialversicherung.",
+          "karteikarte": "Was ist bei Arbeitsvertrag, Probezeit, Befristung und Einstellungsunterlagen zu beachten?"
+        }
       ]
     }
   ],
@@ -179,9 +291,21 @@
     "Nachweis, Probezeit, Befristung und Unterlagen sauber regeln."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "Fachkompetenz 60 %, Erfahrung 40 %. A erhält 4 und 3, B 3 und 5 Punkte (höher = besser). Ergebnis?", "loesung": "A: 3,6 Punkte; B: 3,8 Punkte. Die Matrix ist Entscheidungshilfe und ersetzt nicht die Prüfung der Kriterien." },
-    { "typ": "Einordnen", "frage": "Ordne Arbeitsvertrag und einschlägigen Tarifvertrag funktional ein.", "loesung": "Arbeitsvertrag: individuelle Vereinbarung (Individualarbeitsrecht). Tarifvertrag: kollektives Regelwerk (Kollektivarbeitsrecht). Ob ein Tarifvertrag gilt, ist konkret zu prüfen." },
-    { "typ": "Wissen", "frage": "Wie lang darf eine Probezeit höchstens sein?", "loesung": "Sechs Monate; die Kündigungsfrist beträgt darin zwei Wochen (§ 622 Abs. 3 BGB)." }
+    {
+      "typ": "Rechnen",
+      "frage": "Fachkompetenz 60 %, Erfahrung 40 %. A erhält 4 und 3, B 3 und 5 Punkte (höher = besser). Ergebnis?",
+      "loesung": "A: 3,6 Punkte; B: 3,8 Punkte. Die Matrix ist Entscheidungshilfe und ersetzt nicht die Prüfung der Kriterien."
+    },
+    {
+      "typ": "Einordnen",
+      "frage": "Ordne Arbeitsvertrag und einschlägigen Tarifvertrag funktional ein.",
+      "loesung": "Arbeitsvertrag: individuelle Vereinbarung (Individualarbeitsrecht). Tarifvertrag: kollektives Regelwerk (Kollektivarbeitsrecht). Ob ein Tarifvertrag gilt, ist konkret zu prüfen."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Wie lang darf eine Probezeit höchstens sein?",
+      "loesung": "Sechs Monate; die Kündigungsfrist beträgt darin zwei Wochen (§ 622 Abs. 3 BGB)."
+    }
   ],
   "pruefungstipp": "Bei Bewertungsmatrizen immer Gewichtung und Skalenrichtung angeben und die Rechnung zeigen. Die Entscheidung dann kurz begründen — die Zahl allein reicht nicht."
 }

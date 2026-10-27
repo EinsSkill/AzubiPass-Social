@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Kommunikationsziel, Zielgruppe und Botschaft verbinden", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Kommunikationsmaßnahmen passend zur Zielgruppe auswählen", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Rechtliche und interkulturelle Grenzen berücksichtigen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Reichweite und Reaktion anhand definierter Kennzahlen auswerten", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Kommunikationsziel, Zielgruppe und Botschaft verbinden",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Kommunikationsmaßnahmen passend zur Zielgruppe auswählen",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Rechtliche und interkulturelle Grenzen berücksichtigen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Reichweite und Reaktion anhand definierter Kennzahlen auswerten",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,14 +117,40 @@
       "id": "a1",
       "titel": "Zielgruppe und Botschaft",
       "inhalt": [
-        { "typ": "absatz", "text": "Die {{begriff:kommunikationspolitik|Kommunikationspolitik}} beginnt mit der Botschaft, nicht mit dem Kanal. Das {{begriff:aida|AIDA-Modell}} prüft die Wirkung." },
-        { "typ": "grafik", "variante": "stufen", "kopf": "AIDA", "titel": "Kampagne für Eventagenturen", "lead": "Jede Stufe braucht ein eigenes Element.", "stufen": [
-          { "name": "Attention", "text": "Suchanzeige mit Foto eines Teams in bestickten Hoodies bei ‚Event-Hoodies mit Logo‘." },
-          { "name": "Interest", "text": "Landingpage mit Referenzen, Lieferzeit und **Designberatung**." },
-          { "name": "Desire", "text": "Musterbilder mit dem eigenen Logo der Agentur in der Vorschau." },
-          { "name": "Action", "text": "**Musterpaket anfordern** — ein Formular mit drei Feldern." }
-        ] },
-        { "typ": "merke", "text": "Erst **Ziel, Zielgruppe und Botschaft**, dann der Kanal; AIDA prüft, ob die Ansprache zur Handlung führt.", "karteikarte": "Womit beginnt die Planung einer Kommunikationsmaßnahme, und was beschreibt AIDA?" }
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:kommunikationspolitik|Kommunikationspolitik}} beginnt mit der Botschaft, nicht mit dem Kanal. Das {{begriff:aida|AIDA-Modell}} prüft die Wirkung."
+        },
+        {
+          "typ": "grafik",
+          "variante": "stufen",
+          "kopf": "AIDA",
+          "titel": "Kampagne für Eventagenturen",
+          "lead": "Jede Stufe braucht ein eigenes Element.",
+          "stufen": [
+            {
+              "name": "Attention",
+              "text": "Suchanzeige mit Foto eines Teams in bestickten Hoodies bei ‚Event-Hoodies mit Logo‘."
+            },
+            {
+              "name": "Interest",
+              "text": "Landingpage mit Referenzen, Lieferzeit und **Designberatung**."
+            },
+            {
+              "name": "Desire",
+              "text": "Musterbilder mit dem eigenen Logo der Agentur in der Vorschau."
+            },
+            {
+              "name": "Action",
+              "text": "**Musterpaket anfordern** — ein Formular mit drei Feldern."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Erst **Ziel, Zielgruppe und Botschaft**, dann der Kanal; AIDA prüft, ob die Ansprache zur Handlung führt.",
+          "karteikarte": "Womit beginnt die Planung einer Kommunikationsmaßnahme, und was beschreibt AIDA?"
+        }
       ]
     },
     {
@@ -116,14 +158,56 @@
       "id": "a2",
       "titel": "Kanäle und Online-Instrumente",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Instrument", "Stärke", "Für Agenturen?"], "zeilen": [
-          { "zellen": ["Suchanzeigen (SEA)", "trifft konkreten Bedarf", "sehr gut"] },
-          { "zellen": ["Suchmaschinenoptimierung (SEO)", "dauerhaft, unbezahlt", "gut, aber langsam"] },
-          { "zellen": ["Fachmesse", "persönlicher Kontakt, Muster", "sehr gut"] },
-          { "zellen": ["Social Media", "Bilder, Reichweite", "ergänzend"] },
-          { "zellen": ["Newsletter", "Bestandskunden binden", "nur mit Einwilligung"] }
-        ] },
-        { "typ": "merke", "text": "Klassische und Online-Instrumente werden nach **Zielgruppe, Ziel und Budget** kombiniert, nicht nach Mode.", "karteikarte": "Welche Kommunikationsinstrumente gibt es, und wie wählst du sie aus?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Instrument",
+            "Stärke",
+            "Für Agenturen?"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Suchanzeigen (SEA)",
+                "trifft konkreten Bedarf",
+                "sehr gut"
+              ]
+            },
+            {
+              "zellen": [
+                "Suchmaschinenoptimierung (SEO)",
+                "dauerhaft, unbezahlt",
+                "gut, aber langsam"
+              ]
+            },
+            {
+              "zellen": [
+                "Fachmesse",
+                "persönlicher Kontakt, Muster",
+                "sehr gut"
+              ]
+            },
+            {
+              "zellen": [
+                "Social Media",
+                "Bilder, Reichweite",
+                "ergänzend"
+              ]
+            },
+            {
+              "zellen": [
+                "Newsletter",
+                "Bestandskunden binden",
+                "nur mit Einwilligung"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Klassische und Online-Instrumente werden nach **Zielgruppe, Ziel und Budget** kombiniert, nicht nach Mode.",
+          "karteikarte": "Welche Kommunikationsinstrumente gibt es, und wie wählst du sie aus?"
+        }
       ]
     },
     {
@@ -131,16 +215,58 @@
       "id": "a3",
       "titel": "Rechte, Daten und Wettbewerb",
       "inhalt": [
-        { "typ": "tabelle", "spalten": ["Prüfpunkt", "Frage"], "zeilen": [
-          { "zellen": ["Wahrheit ({{par:uwg-5|§ 5 UWG}})", "Ist jede Aussage belegbar, auch Umweltaussagen?"] },
-          { "zellen": ["Belästigung ({{par:uwg-7|§ 7 UWG}})", "Liegt für Werbe-E-Mails eine Einwilligung vor?"] },
-          { "zellen": ["Kennzeichnung", "Ist bezahlte Werbung als solche erkennbar?"] },
-          { "zellen": ["Urheberrecht", "Haben wir Nutzungsrechte an Bildern und Texten?"] },
-          { "zellen": ["Datenschutz", "Rechtsgrundlage für Daten und Tracking?"] }
-        ] },
-        { "typ": "absatz", "text": "Die Anforderungen an Umweltaussagen wurden durch EU-Recht verschärft; konkrete Formulierungen werden vor Veröffentlichung anhand der aktuellen Rechtslage geprüft.", "pruefen": "Umsetzung der EU-Richtlinie 2024/825 (Umweltaussagen) ins UWG und Geltungsbeginn vor Veröffentlichung mit Primärquelle abgleichen." },
-        { "typ": "achtung", "text": "‚Klimaneutral‘ oder ‚100 % nachhaltig‘ ohne belastbaren Nachweis ist ein Abmahnrisiko. Lieber konkret und belegt beschreiben." },
-        { "typ": "merke", "text": "Werbung braucht **wahre, belegte Aussagen, Nutzungsrechte, Einwilligungen und Datenschutz** — im Zweifel aktuelle Rechtslage prüfen lassen.", "karteikarte": "Welche rechtlichen Prüfpunkte hat eine Werbemaßnahme?" }
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Prüfpunkt",
+            "Frage"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Wahrheit ({{par:uwg-5|§ 5 UWG}})",
+                "Ist jede Aussage belegbar, auch Umweltaussagen?"
+              ]
+            },
+            {
+              "zellen": [
+                "Belästigung ({{par:uwg-7|§ 7 UWG}})",
+                "Liegt für Werbe-E-Mails eine Einwilligung vor?"
+              ]
+            },
+            {
+              "zellen": [
+                "Kennzeichnung",
+                "Ist bezahlte Werbung als solche erkennbar?"
+              ]
+            },
+            {
+              "zellen": [
+                "Urheberrecht",
+                "Haben wir Nutzungsrechte an Bildern und Texten?"
+              ]
+            },
+            {
+              "zellen": [
+                "Datenschutz",
+                "Rechtsgrundlage für Daten und Tracking?"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "absatz",
+          "text": "Seit dem 27. September 2026 gelten im UWG strengere Regeln für Umweltaussagen (Umsetzung der EU-Richtlinie 2024/825): Allgemeine Aussagen wie „umweltfreundlich“ nur bei nachgewiesener hervorragender Umweltleistung, keine Klimaneutralitäts-Werbung auf Basis von Kompensation, keine Nachhaltigkeitssiegel ohne anerkanntes Zertifizierungssystem."
+        },
+        {
+          "typ": "achtung",
+          "text": "‚Klimaneutral‘ oder ‚100 % nachhaltig‘ ohne belastbaren Nachweis ist ein Abmahnrisiko. Lieber konkret und belegt beschreiben."
+        },
+        {
+          "typ": "merke",
+          "text": "Werbung braucht **wahre, belegte Aussagen, Nutzungsrechte, Einwilligungen und Datenschutz** — im Zweifel aktuelle Rechtslage prüfen lassen.",
+          "karteikarte": "Welche rechtlichen Prüfpunkte hat eine Werbemaßnahme?"
+        }
       ]
     },
     {
@@ -148,22 +274,71 @@
       "id": "a4",
       "titel": "Kennzahlen und Reflexion",
       "inhalt": [
-        { "typ": "tabelle", "mono": true, "spalten": ["Kennzahl", "Rechnung", "Ergebnis"], "zeilen": [
-          { "zellen": ["Klickrate (CTR)", "1.000 ÷ 50.000 × 100", "2 %"] },
-          { "zellen": ["Conversionrate (auf Klicks)", "20 ÷ 1.000 × 100", "2 %"] },
-          { "zellen": ["Kosten pro Klick", "800 € ÷ 1.000", "0,80 €"] },
-          { "zellen": ["Kosten pro Anfrage", "800 € ÷ 20", "40 €"] }
-        ] },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Kennzahl",
+            "Rechnung",
+            "Ergebnis"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Klickrate (CTR)",
+                "1.000 ÷ 50.000 × 100",
+                "2 %"
+              ]
+            },
+            {
+              "zellen": [
+                "Conversionrate (auf Klicks)",
+                "20 ÷ 1.000 × 100",
+                "2 %"
+              ]
+            },
+            {
+              "zellen": [
+                "Kosten pro Klick",
+                "800 € ÷ 1.000",
+                "0,80 €"
+              ]
+            },
+            {
+              "zellen": [
+                "Kosten pro Anfrage",
+                "800 € ÷ 20",
+                "40 €"
+              ]
+            }
+          ]
+        },
         {
           "typ": "check",
           "frage": "50.000 Einblendungen, 1.000 Klicks, 20 Bestellungen nach Klick. Welche Aussage stimmt?",
           "optionen": [
-            { "text": "Klickrate 2 %, Conversionrate (Bestellungen ÷ Klicks) 2 %", "richtig": true, "echo": "Richtig — und die Nenner sind verschieden: Impressionen bzw. Klicks." },
-            { "text": "Conversionrate 0,04 %, weil 20 von 50.000 bestellt haben", "richtig": false, "echo": "Das ist eine andere Kennzahl (Bestellungen je Einblendung). Die Conversionrate wurde hier auf Klicks definiert." },
-            { "text": "50.000 Personen haben die Werbung gesehen und kennen jetzt MAKEL", "richtig": false, "echo": "Einblendungen sind nicht gleich Personen, und Sehen heißt nicht Erinnern." }
+            {
+              "text": "Klickrate 2 %, Conversionrate (Bestellungen ÷ Klicks) 2 %",
+              "richtig": true,
+              "echo": "Richtig — und die Nenner sind verschieden: Impressionen bzw. Klicks."
+            },
+            {
+              "text": "Conversionrate 0,04 %, weil 20 von 50.000 bestellt haben",
+              "richtig": false,
+              "echo": "Das ist eine andere Kennzahl (Bestellungen je Einblendung). Die Conversionrate wurde hier auf Klicks definiert."
+            },
+            {
+              "text": "50.000 Personen haben die Werbung gesehen und kennen jetzt MAKEL",
+              "richtig": false,
+              "echo": "Einblendungen sind nicht gleich Personen, und Sehen heißt nicht Erinnern."
+            }
           ]
         },
-        { "typ": "merke", "text": "**CTR = Klicks ÷ Impressionen**, **Conversionrate = Handlungen ÷ Klicks** (Nenner nennen); Reichweite ist kein Kaufbeweis.", "karteikarte": "Wie berechnest du Klickrate und Conversionrate?" }
+        {
+          "typ": "merke",
+          "text": "**CTR = Klicks ÷ Impressionen**, **Conversionrate = Handlungen ÷ Klicks** (Nenner nennen); Reichweite ist kein Kaufbeweis.",
+          "karteikarte": "Wie berechnest du Klickrate und Conversionrate?"
+        }
       ]
     }
   ],
@@ -176,9 +351,21 @@
     "Reichweite beweist keine Käufe; am Ziel messen."
   ],
   "selbsttest": [
-    { "typ": "Rechnen", "frage": "50.000 Einblendungen, 1.000 Klicks und 20 Bestellungen nach Klick. Klickrate und Conversionrate (Bestellungen ÷ Klicks)?", "loesung": "2 % Klickrate und 2 % Conversionrate; die unterschiedlichen Nenner klar nennen." },
-    { "typ": "Fall", "frage": "Vor Veröffentlichung sollen fremde Fotos und eine nicht belegte Umweltbehauptung verwendet werden. Welche Prüfung ist nötig?", "loesung": "Bildnutzungsrechte und gegebenenfalls Einwilligungen klären, Nachweis der Umweltaussage prüfen oder Aussage streichen; Werberecht und Datenschutz anhand aktueller Primärquellen prüfen. Kein rechtssicheres Werbeversprechen erfinden." },
-    { "typ": "Wissen", "frage": "Was unterscheidet SEO und SEA?", "loesung": "SEO verbessert die unbezahlte Platzierung in Suchergebnissen, SEA sind bezahlte Suchanzeigen." }
+    {
+      "typ": "Rechnen",
+      "frage": "50.000 Einblendungen, 1.000 Klicks und 20 Bestellungen nach Klick. Klickrate und Conversionrate (Bestellungen ÷ Klicks)?",
+      "loesung": "2 % Klickrate und 2 % Conversionrate; die unterschiedlichen Nenner klar nennen."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Vor Veröffentlichung sollen fremde Fotos und eine nicht belegte Umweltbehauptung verwendet werden. Welche Prüfung ist nötig?",
+      "loesung": "Bildnutzungsrechte und gegebenenfalls Einwilligungen klären, Nachweis der Umweltaussage prüfen oder Aussage streichen; Werberecht und Datenschutz anhand aktueller Primärquellen prüfen. Kein rechtssicheres Werbeversprechen erfinden."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Was unterscheidet SEO und SEA?",
+      "loesung": "SEO verbessert die unbezahlte Platzierung in Suchergebnissen, SEA sind bezahlte Suchanzeigen."
+    }
   ],
   "pruefungstipp": "Bei Kampagnenkennzahlen immer die Formel mit Nenner aufschreiben. Bei Werbemaßnahmen gehört ein Satz zur rechtlichen Prüfung dazu — konkret, aber ohne Rechtsberatung zu spielen."
 }
