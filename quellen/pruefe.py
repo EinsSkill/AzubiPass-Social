@@ -60,6 +60,7 @@ STIMMUNGEN = ["light", "dark"]
 # beide 44 px; darunter wird geraten statt getippt.
 TIPPZIEL = 44
 
+AMTLICHE_TITEL = ["Betriebliche Problemlösungsprozesse innovativ durchführen"]
 VERBOTEN = ["revolutionär", "innovativ", "ganzheitlich", "lernreise", "erfolgsgarantie",
             "exklusiv", "hochwertig", "nächste level", "ki-gestützt"]
 
@@ -300,6 +301,10 @@ def pruefe_marke_und_quelle(pg, wurzel, datei):
     pg.goto(f"{wurzel}/{datei}", wait_until="networkidle")
     pg.wait_for_timeout(300)
     text = sichtbarer_text(pg).lower()
+    # Amtliche Lernfeldtitel werden wörtlich übernommen, auch wenn sie ein
+    # sonst gemiedenes Wort enthalten (KMK-Rahmenlehrplan IK 2024, LF 13).
+    for amtlich in AMTLICHE_TITEL:
+        text = text.replace(amtlich.lower(), "")
     for w in VERBOTEN:
         if w in text:
             befunde.append(f"  [Marke] {datei}: verbotenes Wort »{w}« im sichtbaren Text")
