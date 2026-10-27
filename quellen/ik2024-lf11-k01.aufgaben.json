@@ -44,14 +44,14 @@
       "schwierigkeit": 2,
       "passt_zu": [],
       "variablen": {
-        "export": { "von": 1500, "bis": 1700, "schritt": 50 },
-        "import": { "von": 1200, "bis": 1400, "schritt": 50 }
+        "exporte": { "von": 1500, "bis": 1700, "schritt": 50 },
+        "importe": { "von": 1200, "bis": 1400, "schritt": 50 }
       },
       "abgeleitet": {
-        "beitrag": "export - import"
+        "beitrag": "exporte - importe"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Für eine Übung im Rahmen der Planung bei MAKEL sind für eine fiktive Volkswirtschaft gegeben: Exporte von Waren und Dienstleistungen {export} Mrd. €, Importe {import} Mrd. €." }
+        { "block": "text", "inhalt": "Für eine Übung im Rahmen der Planung bei MAKEL sind für eine fiktive Volkswirtschaft gegeben: Exporte von Waren und Dienstleistungen {exporte} Mrd. €, Importe {importe} Mrd. €." }
       ],
       "eingabe": [
         { "block": "zahl", "label": "Außenbeitrag", "einheit": "Mrd. €", "loesung": "beitrag", "toleranz": 0 }
