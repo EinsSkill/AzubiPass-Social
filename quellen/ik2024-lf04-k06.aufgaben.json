@@ -1,0 +1,159 @@
+{
+  "lernfeld": "ik2024-lf04",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf04-k06-01",
+      "operator": "Formulieren Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 7,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei der Wareneingangsprüfung am 27. März stellt Jonas Weidner fest: Von 200 Hoodie-Rohlingen aus Bestellung B-2026-130 (vereinbart: schwarz, Lieferung am 20. März) sind 40 dunkelgrau. Fotos liegen vor. Die Veredelung braucht die Rohlinge bis 3. April."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Formulieren Sie die Mängelmitteilung von Deniz Aydın an den Lieferanten.",
+          "zeilen": 8
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Betreff: Mängelrüge zu Bestellung B-2026-130, Lieferung vom 27. März\n\nSehr geehrte Damen und Herren,\n\nbei der Wareneingangsprüfung Ihrer Lieferung vom 27. März zu unserer Bestellung B-2026-130 haben wir festgestellt, dass 40 der 200 Hoodie-Rohlinge dunkelgrau statt in der vereinbarten Farbe Schwarz geliefert wurden. Fotos fügen wir bei. Wir rügen diesen Mangel hiermit und bitten um Ersatzlieferung von 40 schwarzen Rohlingen bis spätestens 3. April. Die 160 vertragsgemäßen Rohlinge behalten wir. Zur verspäteten Lieferung (vereinbart war der 20. März) behalten wir uns weitere Ansprüche vor. Bitte bestätigen Sie uns den Liefertermin kurzfristig.\n\nMit freundlichen Grüßen\nDeniz Aydın\nMAKEL Studio GmbH",
+        "raster": [
+          {
+            "kriterium": "Bestellung und Lieferung eindeutig zugeordnet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Vereinbarte und tatsächliche Ausführung sowie Menge genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Entdeckungszeitpunkt bzw. Nachweise genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Konkrete Forderung (Ersatzlieferung) mit Frist",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sachlicher, unmissverständlicher Ton",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Eine Mängelrüge ordnet die Lieferung zu, beschreibt Soll und Ist, nennt Menge und Nachweise und fordert eine konkrete Abhilfe mit Frist. Beim Handelskauf muss sie unverzüglich erfolgen.",
+      "quelle": "ik2024-lf04-k06, Abschnitte a2 und a3"
+    },
+    {
+      "id": "ik2024-lf04-k06-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "lieferungen": {
+          "von": 10,
+          "bis": 20,
+          "schritt": 10
+        },
+        "termingerecht_anteil": {
+          "von": 60,
+          "bis": 80,
+          "schritt": 10
+        }
+      },
+      "abgeleitet": {
+        "termingerecht": "lieferungen * termingerecht_anteil / 100",
+        "abweichung": "90 - termingerecht_anteil"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Im letzten Halbjahr hat ein Rohlingslieferant der MAKEL Studio GmbH {lieferungen} Lieferungen ausgeführt, davon {termingerecht} termingerecht. Die Zielvorgabe für die Termintreue liegt bei mindestens 90 %. Berechnen Sie die Termintreue und die Abweichung vom Ziel in Prozentpunkten."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Termintreue",
+          "einheit": "%",
+          "loesung": "termingerecht_anteil",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Abweichung vom Ziel",
+          "einheit": "Prozentpunkte",
+          "loesung": "abweichung",
+          "toleranz": 0.01,
+          "punkte": 1
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Termintreue = termingerechte Lieferungen ÷ alle Lieferungen × 100. Die Differenz zweier Prozentwerte wird in Prozentpunkten angegeben.",
+      "quelle": "ik2024-lf04-k06, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf04-k06-03",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 1,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine Lieferung Rohlinge ist zwar pünktlich, aber 30 Stück haben die falsche Farbe."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welches Recht macht MAKEL zuerst geltend?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Nacherfüllung (Ersatzlieferung oder Nachbesserung)",
+              "richtig": true,
+              "echo": "Richtig. Bei Mängeln hat die Nacherfüllung grundsätzlich Vorrang."
+            },
+            {
+              "text": "Sofortiger Rücktritt vom ganzen Vertrag",
+              "richtig": false,
+              "echo": "Rücktritt kommt grundsätzlich erst nach erfolgloser Nacherfüllung in Betracht."
+            },
+            {
+              "text": "Schadensersatz wegen Lieferungsverzug",
+              "richtig": false,
+              "echo": "Die Lieferung war pünktlich — es liegt Schlechtleistung, kein Verzug vor."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Bei Mängeln zuerst Nacherfüllung; Verzug und Schlechtleistung werden getrennt geprüft.",
+      "quelle": "ik2024-lf04-k06, Abschnitt a3"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf08",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf08-k05-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 6,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "mek": { "von": 80, "bis": 200, "schritt": 20 },
+        "mgk": { "von": 5, "bis": 15, "schritt": 5 },
+        "fl": { "von": 60, "bis": 140, "schritt": 20 },
+        "fgk": { "von": 50, "bis": 150, "schritt": 25 },
+        "vwvt": { "von": 8, "bis": 16, "schritt": 2 }
+      },
+      "abgeleitet": {
+        "hk": "runde(mek * (1 + mgk / 100) + fl * (1 + fgk / 100), 2)",
+        "sk": "runde(hk * (1 + vwvt / 100), 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Für einen Veredelungsauftrag der MAKEL Studio GmbH gelten: Materialeinzelkosten {mek} €, Materialgemeinkostenzuschlag {mgk} %, Fertigungslöhne {fl} €, Fertigungsgemeinkostenzuschlag {fgk} %, Verwaltungs- und Vertriebsgemeinkosten zusammen {vwvt} % auf die Herstellkosten. Weitere Positionen gibt es nicht." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Herstellkosten", "einheit": "€", "loesung": "hk", "toleranz": 0.02, "punkte": 4 },
+        { "block": "zahl", "label": "Selbstkosten", "einheit": "€", "loesung": "sk", "toleranz": 0.02, "punkte": 2, "folgefehler_aus": ["hk"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 6 },
+      "erklaerung": "MK = MEK + MGK; FK = FL + FGK; HK = MK + FK; Selbstkosten = HK + VwVt-Zuschlag auf HK.",
+      "quelle": "ik2024-lf08-k05, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf08-k05-02",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Sandra Koslowski erklärt Ihnen die Kostenbegriffe der MAKEL-Kalkulation." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welcher Begriff passt?",
+          "ziele": ["Istkosten", "Normalkosten", "Plankosten"],
+          "elemente": [
+            { "text": "Die tatsächlich im März angefallenen Gemeinkosten", "loesung": "Istkosten" },
+            { "text": "Durchschnittliche Zuschlagssätze der letzten drei Jahre für laufende Angebote", "loesung": "Normalkosten" },
+            { "text": "Für das nächste Jahr vorgegebene Kosten nach Mengen- und Preisplanung", "loesung": "Plankosten" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Ist = tatsächlich, Normal = Durchschnitt der Vergangenheit, Plan = Vorgabe für die Zukunft.",
+      "quelle": "ik2024-lf08-k05, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf08-k05-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH kalkuliert seit Jahresbeginn mit einem Normal-FGK-Zuschlag von 150 %. Im ersten Halbjahr wurden damit 36.000 € Fertigungsgemeinkosten verrechnet; tatsächlich angefallen sind 41.000 €. Tobias Renner sagt: „Das gleicht sich im zweiten Halbjahr schon aus.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Ermitteln Sie die Abweichung und beurteilen Sie Tobias' Einschätzung.", "zeilen": 6 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Unterdeckung: 41.000 € − 36.000 € = 5.000 € (rund 14 % der verrechneten Kosten). Die Angebote waren also zu günstig kalkuliert; die nicht verrechneten Gemeinkosten mindern das Betriebsergebnis. Ob sich das ausgleicht, ist ungewiss. Zuerst muss die Ursache geklärt werden: gestiegene Energie- oder Instandhaltungskosten, geringere Auslastung (weniger Löhne als Grundlage) oder einmalige Effekte. Ist die Ursache dauerhaft, muss der Normalsatz angepasst werden, sonst setzt sich die Unterkalkulation fort. Abwarten ohne Analyse ist keine begründete Entscheidung.",
+        "raster": [
+          { "kriterium": "Unterdeckung 5.000 € richtig ermittelt", "punkte": 1 },
+          { "kriterium": "Folge für Kalkulation und Ergebnis erkannt", "punkte": 1 },
+          { "kriterium": "Mögliche Ursachen genannt", "punkte": 1 },
+          { "kriterium": "Begründete Empfehlung (Analyse, ggf. Satz anpassen)", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Über- und Unterdeckungen zeigen, ob die Normalsätze noch passen; sie werden analysiert, nicht abgewartet.",
+      "quelle": "ik2024-lf08-k05, Abschnitte a3 und a4"
+    }
+  ]
+}

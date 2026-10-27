@@ -1,0 +1,226 @@
+{
+  "lernfeld": "ik2024-lf02",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf02-k02-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "inhalt": {
+          "von": 2,
+          "bis": 4,
+          "schritt": 1
+        },
+        "layout": {
+          "von": 1,
+          "bis": 2,
+          "schritt": 1
+        },
+        "probe": {
+          "von": 1,
+          "bis": 2,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "dauer": "inhalt + layout + probe"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für das Onboarding-Paket der MAKEL Studio GmbH dauert die Inhaltserstellung {inhalt} Arbeitstage, das Layout {layout} Arbeitstage und der anschließende Probelauf {probe} Arbeitstage. Alle Schritte laufen nacheinander; zusätzliche Wartezeiten gibt es nicht. Berechnen Sie die Mindestdauer des Projekts."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Mindestdauer",
+          "einheit": "Arbeitstage",
+          "loesung": "dauer",
+          "toleranz": 0
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Bei rein aufeinanderfolgenden Vorgängen ist die Mindestdauer die Summe der Einzeldauern. Das ist Kalenderzeit — der Aufwand in Personentagen hängt von der Besetzung ab.",
+      "quelle": "ik2024-lf02-k02, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf02-k02-02",
+      "operator": "Bestimmen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Das Onboarding-Team der MAKEL Studio GmbH hat folgende Vorgänge geplant."
+        },
+        {
+          "block": "anlage",
+          "titel": "Anlage 1: Vorgänge und Abhängigkeiten",
+          "zugeklappt": false,
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Dauer",
+              "beginnt nach"
+            ],
+            "zeilen": [
+              [
+                "A Inhalte einholen",
+                "3 Tage",
+                "—"
+              ],
+              [
+                "B Lageplan zeichnen",
+                "2 Tage",
+                "—"
+              ],
+              [
+                "C Checkliste schreiben",
+                "2 Tage",
+                "A"
+              ],
+              [
+                "D Layout",
+                "1 Tag",
+                "B und C"
+              ],
+              [
+                "E Probelauf",
+                "1 Tag",
+                "D"
+              ]
+            ]
+          }
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Mindestdauer des Projekts",
+          "einheit": "Tage",
+          "loesung": 7,
+          "toleranz": 0,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Puffer des Vorgangs B",
+          "einheit": "Tage",
+          "loesung": 3,
+          "toleranz": 0,
+          "punkte": 2
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Kritischer Pfad A → C → D → E: 3 + 2 + 1 + 1 = 7 Tage. D kann erst nach Tag 5 beginnen (Ende von C). B endet nach 2 Tagen und hat deshalb 5 − 2 = 3 Tage Puffer.",
+      "quelle": "ik2024-lf02-k02, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf02-k02-03",
+      "operator": "Begründen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für die Inhalte des MAKEL-Onboarding-Pakets ist noch unklar, welche Informationen neue Beschäftigte zuerst brauchen. Ayla Brandt möchte das im Verlauf mit echten neuen Beschäftigten testen. Der spätere Druck des fertigen Pakets hat dagegen einen festen Termin und einen feststehenden Inhalt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Begründen Sie, welches Vorgehen (klassisch oder agil) für die Inhaltsentwicklung und welches für den Druck passt.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Inhaltsentwicklung agil: Die Anforderungen sind noch unklar und sollen mit echten Nutzern geklärt werden. Kurze Schleifen mit erster Fassung, Test und Überarbeitung zeigen, was tatsächlich gebraucht wird. Druck klassisch: Inhalt und Termin stehen fest, der Ablauf lässt sich vorab vollständig planen. In beiden Teilen bleiben Rollen und Verantwortlichkeiten klar.",
+        "raster": [
+          {
+            "kriterium": "Inhaltsentwicklung agil, begründet mit unklaren Anforderungen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Druck klassisch, begründet mit feststehenden Anforderungen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Hinweis, dass Rollen und Ziele in beiden Fällen klar bleiben",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Entscheidend sind Stabilität der Anforderungen und Abstimmungsbedarf.",
+      "quelle": "ik2024-lf02-k02, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf02-k02-04",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 1,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Das Azubi-Team der MAKEL Studio GmbH zerlegt sein Projekt in Arbeitspakete."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Was gehört NICHT in einen Projektstrukturplan?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Arbeitspakete mit prüfbarem Ergebnis",
+              "richtig": false,
+              "echo": "Doch, das ist der Kern des Projektstrukturplans."
+            },
+            {
+              "text": "Verantwortliche je Arbeitspaket",
+              "richtig": false,
+              "echo": "Doch, jedes Paket hat genau eine verantwortliche Person."
+            },
+            {
+              "text": "Reihenfolge und Termine der Pakete",
+              "richtig": true,
+              "echo": "Richtig. Reihenfolge und Termine regelt der Ablauf- bzw. Terminplan, nicht der Strukturplan."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Der Projektstrukturplan zeigt das Was, nicht das Wann.",
+      "quelle": "ik2024-lf02-k02, Abschnitt a1"
+    }
+  ]
+}

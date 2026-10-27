@@ -1,0 +1,149 @@
+{
+  "lernfeld": "ik2024-lf10",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf10-k01-01",
+      "operator": "Bringen Sie in die richtige Reihenfolge",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski plant den Jahresabschluss der MAKEL Studio GmbH."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "reihenfolge",
+          "lead": "Bringen Sie die Abschlussarbeiten in eine sinnvolle Reihenfolge.",
+          "elemente": [
+            {
+              "text": "Alle Belege des Geschäftsjahres vollständig buchen",
+              "position": 1
+            },
+            {
+              "text": "Inventur durchführen und Bestände abstimmen",
+              "position": 2
+            },
+            {
+              "text": "Rechnungsabgrenzungen und Rückstellungen buchen",
+              "position": 3
+            },
+            {
+              "text": "Vermögen und Schulden bewerten",
+              "position": 4
+            },
+            {
+              "text": "Erfolgs- und Bestandskonten abschließen",
+              "position": 5
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Erst vollständig buchen und Mengen abstimmen, dann abgrenzen und bewerten, zuletzt abschließen.",
+      "quelle": "ik2024-lf10-k01, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf10-k01-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "ruecklagen": {
+          "von": 20000,
+          "bis": 60000,
+          "schritt": 10000
+        },
+        "jue": {
+          "von": 10000,
+          "bis": 30000,
+          "schritt": 5000
+        }
+      },
+      "abgeleitet": {
+        "ek": "100000 + ruecklagen + jue"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die Bilanz der MAKEL Studio GmbH weist aus: gezeichnetes Kapital 100.000 €, Gewinnrücklagen {ruecklagen} €, Jahresüberschuss {jue} €. Weitere Eigenkapitalposten gibt es nicht."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Eigenkapital laut Bilanz",
+          "einheit": "€",
+          "loesung": "ek",
+          "toleranz": 0.01
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Eigenkapital der GmbH = gezeichnetes Kapital + Rücklagen + Jahresüberschuss (bzw. − Fehlbetrag).",
+      "quelle": "ik2024-lf10-k01, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf10-k01-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die Hausbank der MAKEL Studio GmbH verlangt am 5. Januar „kurzfristig den Jahresabschluss“. Luca Petrelli schlägt vor, einfach die aktuelle Saldenliste aus dem Buchhaltungsprogramm zu schicken: „Da steht doch alles drin.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Vorschlag und schlagen Sie ein besseres Vorgehen vor.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Saldenliste vom 5. Januar ist ein Arbeitsstand, kein Jahresabschluss: Späte Belege des alten Jahres fehlen möglicherweise, Inventurdifferenzen sind noch nicht geklärt, Abgrenzungen und Rückstellungen nicht gebucht, Vorräte, Forderungen und Anlagen nicht bewertet, es gibt keine GuV in Gliederung und keinen Anhang. Die Bank könnte auf falscher Grundlage entscheiden; das schadet dem Vertrauen. Besser: Der Bank den Termin für den fertigen Abschluss nennen und, falls sie früher Zahlen braucht, eine ausdrücklich als vorläufig gekennzeichnete Auswertung liefern, abgestimmt mit Sandra und der Geschäftsführung.",
+        "raster": [
+          {
+            "kriterium": "Saldenliste als Arbeitsstand erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Mindestens zwei fehlende Abschlussarbeiten genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folgen für die Bank bzw. das Vertrauen erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Besseres Vorgehen (Termin, gekennzeichnete vorläufige Zahlen, Abstimmung)",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Ein Jahresabschluss entsteht erst nach Abstimmung, Abgrenzung und Bewertung; vorläufige Zahlen werden als solche gekennzeichnet.",
+      "quelle": "ik2024-lf10-k01, Abschnitte a2 und a3"
+    }
+  ]
+}

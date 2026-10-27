@@ -1,0 +1,200 @@
+{
+  "lernfeld": "ik2024-lf05",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf05-k02-01",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "betrag": {
+          "von": 300,
+          "bis": 900,
+          "schritt": 50
+        }
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Emily Tran braucht Wechselgeld für den Store. Es werden {betrag} € vom betrieblichen Bankkonto der MAKEL Studio GmbH abgehoben und in die Kasse gelegt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 2,
+          "loesung": [
+            {
+              "soll": "2880",
+              "haben": null,
+              "betrag": "betrag"
+            },
+            {
+              "soll": null,
+              "haben": "2800",
+              "betrag": "betrag"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Kasse und Bank sind Aktivkonten. Die Kasse nimmt zu (Soll), das Bankguthaben nimmt ab (Haben). Aktivtausch, keine Umsatzsteuer, kein Erfolg.",
+      "quelle": "ik2024-lf05-k02, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf05-k02-02",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "betrag": {
+          "von": 400,
+          "bis": 2400,
+          "schritt": 100
+        }
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski, Leiterin der Buchhaltung der MAKEL Studio GmbH, überweist eine bereits gebuchte Rechnung eines Rohlingslieferanten über {betrag} €. Skonto wird nicht abgezogen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "4400",
+              "haben": null,
+              "betrag": "betrag"
+            },
+            {
+              "soll": null,
+              "haben": "2800",
+              "betrag": "betrag"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Die Verbindlichkeit (Passivkonto) nimmt ab und steht deshalb im Soll; das Bankguthaben nimmt ab und steht im Haben. Material oder Aufwand wird nicht noch einmal gebucht — die Lieferung wurde beim Rechnungseingang erfasst.",
+      "quelle": "ik2024-lf05-k02, Abschnitte a3 und a4"
+    },
+    {
+      "id": "ik2024-lf05-k02-03",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bestimmen Sie für die folgenden Geschäftsfälle der MAKEL Studio GmbH die Art der Bilanzveränderung. Umsatzsteuer bleibt unberücksichtigt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Art der Bilanzveränderung",
+          "ziele": [
+            "Aktivtausch",
+            "Passivtausch",
+            "Aktiv-Passiv-Mehrung",
+            "Aktiv-Passiv-Minderung"
+          ],
+          "elemente": [
+            {
+              "text": "Eine Boutique überweist eine offene Rechnung",
+              "loesung": "Aktivtausch"
+            },
+            {
+              "text": "Die Bank schreibt ein neues Darlehen gut",
+              "loesung": "Aktiv-Passiv-Mehrung"
+            },
+            {
+              "text": "Eine Darlehensrate (nur Tilgung) wird abgebucht",
+              "loesung": "Aktiv-Passiv-Minderung"
+            },
+            {
+              "text": "Eine Lieferantenschuld wird in ein Darlehen umgewandelt",
+              "loesung": "Passivtausch"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Forderung → Bank: zwei Aktivposten. Darlehen und Bank steigen: Mehrung. Tilgung senkt Bank und Darlehen: Minderung. Verbindlichkeit → Darlehen: zwei Passivposten.",
+      "quelle": "ik2024-lf05-k02, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k02-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli, Auszubildender der MAKEL Studio GmbH, hat die Bezahlung einer bereits gebuchten Lieferantenrechnung über 500 € so gebucht: „Rohstoffe 500 € an Bank 500 €“. Er meint: „Die Rohlinge kosten ja 500 €, und die Bank wird weniger — passt.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Buchung, nennen Sie die richtige Buchung und die Bilanzwirkung.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Buchung ist falsch. Die Rohstoffe wurden schon beim Rechnungseingang erfasst (Rohstoffe und Vorsteuer an Verbindlichkeiten). Mit Lucas Buchung stünden sie doppelt im Bestand, und die Verbindlichkeit bliebe offen. Bei der Zahlung sinkt nur die Schuld: Verbindlichkeiten aus Lieferungen und Leistungen 500 € an Guthaben bei Kreditinstituten 500 €. Bilanzwirkung: Aktiv-Passiv-Minderung, die Bilanzsumme sinkt um 500 €, das Eigenkapital bleibt gleich.",
+        "raster": [
+          {
+            "kriterium": "Doppelerfassung der Rohstoffe erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Offene Verbindlichkeit als Folge erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Richtige Buchung genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Bilanzwirkung Aktiv-Passiv-Minderung",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Eine Zahlung begleicht eine Schuld; die Lieferung selbst wurde beim Rechnungseingang gebucht.",
+      "quelle": "ik2024-lf05-k02, Abschnitte a3 und a4"
+    }
+  ]
+}

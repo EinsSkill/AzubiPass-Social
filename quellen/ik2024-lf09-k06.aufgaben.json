@@ -1,0 +1,100 @@
+{
+  "lernfeld": "ik2024-lf09",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf09-k06-01",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH vereinbart mit einer Agentur in Zürich die Lieferklausel „DAP Zürich, Agenturadresse, Incoterms® 2020“." }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Aussagen treffen zu? Kreuzen Sie alle zutreffenden an.",
+          "mehrfach": true,
+          "optionen": [
+            { "text": "MAKEL trägt die Transportkosten bis zum benannten Ort", "richtig": true, "echo": "Richtig, bei DAP organisiert und zahlt der Verkäufer den Transport bis zum Bestimmungsort." },
+            { "text": "Die Gefahr geht bei Ankunft am Bestimmungsort auf die Agentur über", "richtig": true, "echo": "Richtig, sobald die Ware entladebereit zur Verfügung steht." },
+            { "text": "MAKEL zahlt die Schweizer Einfuhrabgaben", "richtig": false, "echo": "Das wäre DDP. Bei DAP trägt der Käufer die Einfuhrabgaben." },
+            { "text": "Die Klausel regelt, wann die Agentur Eigentümerin wird", "richtig": false, "echo": "Incoterms regeln den Eigentumsübergang nicht." }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "DAP: Kosten und Gefahr beim Verkäufer bis zur Ankunft am benannten Ort, Einfuhrabgaben beim Käufer; Eigentum und Zahlung regeln andere Vertragsteile.",
+      "quelle": "ik2024-lf09-k06, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf09-k06-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "fixum": { "von": 2000, "bis": 4000, "schritt": 500 },
+        "prov_r": { "von": 1, "bis": 3, "schritt": 1 },
+        "mehr": { "von": 4, "bis": 6, "schritt": 1 },
+        "umsatz": { "von": 30000, "bis": 70000, "schritt": 10000 }
+      },
+      "abgeleitet": {
+        "prov_v": "prov_r + mehr",
+        "kosten_r": "fixum + umsatz * prov_r / 100",
+        "kosten_v": "umsatz * (prov_r + mehr) / 100",
+        "kritisch": "runde(fixum / (mehr / 100), 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH will Eventagenturen in Süddeutschland betreuen lassen. Ein angestellter Reisender kostet {fixum} € Fixum im Monat plus {prov_r} % Umsatzprovision, eine Handelsvertreterin verlangt {prov_v} % Provision. Erwartet wird ein Monatsumsatz von {umsatz} €." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Kosten des Reisenden bei erwartetem Umsatz", "einheit": "€", "loesung": "kosten_r", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Kosten der Handelsvertreterin bei erwartetem Umsatz", "einheit": "€", "loesung": "kosten_v", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Kritischer Monatsumsatz", "einheit": "€", "loesung": "kritisch", "toleranz": 0.5, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Reisender: Fixum + Provision × Umsatz; Vertreterin: Provision × Umsatz. Gleichsetzen: Fixum = (Provision Vertreterin − Provision Reisender) × Umsatz → kritischer Umsatz = Fixum ÷ Provisionsdifferenz.",
+      "quelle": "ik2024-lf09-k06, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf09-k06-03",
+      "operator": "Empfehlen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Ein bisher unbekannter Großhändler in Kanada bestellt bei der MAKEL Studio GmbH 2.000 bestickte Hoodies für 76.000 CAD, Zahlung 60 Tage nach Lieferung, Lieferung „frei Haus“. Eine Wirtschaftsauskunft liegt nicht vor." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Analysieren Sie die Risiken und empfehlen Sie Lieferklausel, Währung und Zahlungssicherung.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Risiken: Zahlungsrisiko (Neukunde ohne Auskunft, hoher Betrag, 60 Tage Ziel, Durchsetzung in Kanada schwierig), Wechselkursrisiko (Rechnung in CAD), Transportrisiko (lange Seefracht mit Umschlag), politisch-rechtliche Risiken (Zoll, Einfuhrvorschriften, fremdes Recht). ‚Frei Haus‘ ist international unklar. Empfehlung: Lieferklausel mit Ort und Fassung, etwa ‚FCA Köln, Incoterms® 2020‘ (Gefahrübergang früh, Käufer organisiert Hauptlauf) oder, wenn MAKEL liefern soll, ‚CIP Toronto‘ mit Versicherung. Rechnung in Euro, sonst Kurssicherung. Zahlungssicherung: unwiderrufliches Dokumentenakkreditiv oder Vorkasse bzw. hohe Anzahlung; offene Rechnung mit 60 Tagen nur nach positiver Auskunft und eventuell Kreditversicherung. Begründung: Je unbekannter der Kunde und je höher der Betrag, desto stärker die Absicherung.",
+        "raster": [
+          { "kriterium": "Mindestens drei Risiken richtig benannt", "punkte": 1 },
+          { "kriterium": "Unklarheit von ‚frei Haus‘ erkannt, Klausel mit Ort und Fassung", "punkte": 1 },
+          { "kriterium": "Wechselkursrisiko durch Euro-Rechnung oder Kurssicherung begrenzt", "punkte": 1 },
+          { "kriterium": "Passende Zahlungssicherung (Akkreditiv/Vorkasse) begründet", "punkte": 1 },
+          { "kriterium": "Schlüssige Gesamtempfehlung", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Auslandsgeschäfte werden über Lieferklausel, Währung und Zahlungssicherung passend zum Risiko gestaltet.",
+      "quelle": "ik2024-lf09-k06, Abschnitte a2 bis a4"
+    }
+  ]
+}

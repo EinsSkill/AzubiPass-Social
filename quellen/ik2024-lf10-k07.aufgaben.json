@@ -1,0 +1,124 @@
+{
+  "lernfeld": "ik2024-lf10",
+  "kapitel": "k07",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf10-k07-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Sandra Koslowski ordnet die Finanzierungsmöglichkeiten der MAKEL Studio GmbH für die neue Laserstation ein." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Finanzierungsart liegt vor?",
+          "ziele": ["Außen und eigen", "Außen und fremd", "Innen und eigen", "Innen und fremd"],
+          "elemente": [
+            { "text": "Ein neuer Gesellschafter beteiligt sich mit 20.000 €", "loesung": "Außen und eigen" },
+            { "text": "Die Hausbank gewährt ein Ratendarlehen", "loesung": "Außen und fremd" },
+            { "text": "Der Jahresüberschuss wird nicht ausgeschüttet", "loesung": "Innen und eigen" },
+            { "text": "Mittel aus langfristigen Rückstellungen werden vorübergehend genutzt", "loesung": "Innen und fremd" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Herkunft (außen oder aus dem Umsatzprozess) und Rechtsstellung (Eigentümer oder Gläubiger) bestimmen das Feld.",
+      "quelle": "ik2024-lf10-k07, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf10-k07-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "betrag": { "von": 40000, "bis": 80000, "schritt": 10000 },
+        "jahre": { "von": 4, "bis": 5, "schritt": 1 },
+        "zins": { "von": 4, "bis": 7, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "tilgung": "betrag / jahre",
+        "zins2": "(betrag - tilgung) * zins / 100",
+        "rate2": "tilgung + zins2"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH nimmt für die Laserstation ein Ratendarlehen über {betrag} € auf. Laufzeit {jahre} Jahre, Zinssatz {zins} % pro Jahr, Tilgung jeweils am Jahresende." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Jährliche Tilgung", "einheit": "€", "loesung": "tilgung", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Zinsen im 2. Jahr", "einheit": "€", "loesung": "zins2", "toleranz": 0.01, "punkte": 2, "folgefehler_aus": ["tilgung"] },
+        { "block": "zahl", "label": "Gesamtbelastung im 2. Jahr", "einheit": "€", "loesung": "rate2", "toleranz": 0.01, "punkte": 2, "folgefehler_aus": ["tilgung", "zins2"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 5 },
+      "erklaerung": "Tilgung = Darlehen ÷ Laufzeit. Im 2. Jahr werden die Zinsen auf die Restschuld (Darlehen − eine Tilgung) berechnet. Belastung = Tilgung + Zinsen.",
+      "quelle": "ik2024-lf10-k07, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf10-k07-03",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "skonto": { "von": 1, "bis": 3, "schritt": 1 },
+        "frist": { "von": 7, "bis": 14, "schritt": 7 },
+        "ziel": { "von": 30, "bis": 60, "schritt": 30 }
+      },
+      "abgeleitet": {
+        "jahreszins": "runde(skonto * 360 / (ziel - frist), 1)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Ein Stofflieferant der MAKEL Studio GmbH bietet: {skonto} % Skonto bei Zahlung innerhalb von {frist} Tagen, sonst netto innerhalb von {ziel} Tagen. Berechnen Sie den Jahreszins des Lieferantenkredits mit der Näherungsformel (eine Nachkommastelle)." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Jahreszins Lieferantenkredit", "einheit": "%", "loesung": "jahreszins", "toleranz": 0.1, "punkte": 3 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Jahreszins ≈ Skontosatz × 360 ÷ (Zahlungsziel − Skontofrist).",
+      "quelle": "ik2024-lf10-k07, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf10-k07-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 8,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Für die Laserstation (Kapitalbedarf 51.500 €, Nutzungsdauer etwa 5 Jahre, Technik entwickelt sich schnell) stehen zur Wahl: (A) Kauf über den Kontokorrentkredit (Zins 11 %), (B) Kauf mit Ratendarlehen über 5 Jahre zu 5 %, (C) Leasing über 4 Jahre, Summe der Raten rund 15 % über dem Kaufpreis, danach Austausch möglich. MAKEL hat eine Eigenkapitalquote von 30 % und einen Cashflow von 70.000 €." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die drei Möglichkeiten und geben Sie eine begründete Empfehlung.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "(A) ist ungeeignet: Ein kurzfristiger, teurer Kredit für eine langfristige Anlage verletzt die Fristenkongruenz und blockiert den Rahmen für Liquiditätsschwankungen. (B) ist fristengerecht und vergleichsweise günstig; Zins und Tilgung (im 1. Jahr rund 12.900 €) sind aus dem Cashflow tragbar; die Bank wird Sicherheiten verlangen. (C) schont Liquidität und Kreditrahmen und ermöglicht den Wechsel auf neuere Technik, kostet aber mehr und bindet vertraglich. Empfehlung: B, wenn MAKEL die Station voraussichtlich die volle Nutzungsdauer einsetzt; C, wenn schneller technischer Fortschritt einen Austausch nach vier Jahren wahrscheinlich macht. In beiden Fällen gegen A entscheiden.",
+        "raster": [
+          { "kriterium": "A wegen Fristeninkongruenz und Kosten abgelehnt", "punkte": 1 },
+          { "kriterium": "B mit Tragbarkeit aus dem Cashflow bewertet", "punkte": 1 },
+          { "kriterium": "C mit Vor- und Nachteilen (Liquidität, Technik, Gesamtkosten) bewertet", "punkte": 1 },
+          { "kriterium": "Begründete Empfehlung mit Bedingung", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Die beste Finanzierung passt zur Nutzungsdauer, ist tragbar und berücksichtigt Kosten und Flexibilität.",
+      "quelle": "ik2024-lf10-k07, Abschnitte a2 bis a4"
+    }
+  ]
+}

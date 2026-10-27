@@ -1,0 +1,197 @@
+{
+  "lernfeld": "ik2024-lf01",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf01-k04-01",
+      "operator": "Begründen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für eine Schulung neuer Auszubildender der MAKEL Studio GmbH sollen zwei Prozesse eingeordnet werden: die Auftragsabwicklung für Geschäftskunden (von der Bestellung bis zur Auslieferung) und die interne Personalverwaltung."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Ordnen Sie beide Prozesse als Kern- oder Unterstützungsprozess ein und begründen Sie Ihre Zuordnung.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Auftragsabwicklung ist ein Kernprozess: Sie bringt die Leistung unmittelbar zum Kunden, erzeugt Umsatz und ist Teil dessen, wofür Kunden MAKEL bezahlen. Die interne Personalverwaltung ist ein Unterstützungsprozess: Sie stellt Personal bereit, verwaltet Verträge und Abrechnungen und ermöglicht damit die Kernprozesse, erbringt aber selbst keine Leistung, die der Kunde wahrnimmt oder bezahlt.",
+        "raster": [
+          {
+            "kriterium": "Auftragsabwicklung als Kernprozess eingeordnet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründung über den unmittelbaren Kundennutzen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Personalverwaltung als Unterstützungsprozess eingeordnet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründung über die ermöglichende, indirekte Funktion",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Kernprozesse schaffen direkten Kundennutzen, Unterstützungsprozesse ermöglichen die Kernprozesse.",
+      "quelle": "ik2024-lf01-k04, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf01-k04-02",
+      "operator": "Bringen Sie in die richtige Reihenfolge",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Der Vertrieb der MAKEL Studio GmbH möchte den Eingang von Firmenaufträgen als einfache ereignisgesteuerte Prozesskette darstellen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "reihenfolge",
+          "lead": "Bringen Sie die Elemente in die Reihenfolge einer korrekten EPK.",
+          "elemente": [
+            {
+              "text": "Funktion: Auftrag prüfen",
+              "position": 2
+            },
+            {
+              "text": "Ereignis: Druckauftrag eingeplant",
+              "position": 5
+            },
+            {
+              "text": "Ereignis: Auftrag eingegangen",
+              "position": 1
+            },
+            {
+              "text": "Funktion: Druckauftrag einplanen",
+              "position": 4
+            },
+            {
+              "text": "Ereignis: Auftrag freigegeben",
+              "position": 3
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Eine EPK beginnt und endet mit einem Ereignis; Ereignisse und Funktionen wechseln sich ab.",
+      "quelle": "ik2024-lf01-k04, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf01-k04-03",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH überlegt, eine externe Nachhaltigkeitsberaterin direkt der Geschäftsführung zuzuordnen. Sie soll Vorschläge erarbeiten, aber keine Anweisungen an Abteilungen geben."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Wie wird diese Stelle im Organigramm bezeichnet?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Instanz",
+              "richtig": false,
+              "echo": "Eine Instanz hat Weisungsbefugnis — genau die soll die Beraterin nicht haben."
+            },
+            {
+              "text": "Stabsstelle",
+              "richtig": true,
+              "echo": "Richtig. Stabsstellen beraten die Leitung und haben kein Weisungsrecht gegenüber der Linie."
+            },
+            {
+              "text": "Sparte",
+              "richtig": false,
+              "echo": "Eine Sparte ist ein ganzer Produkt- oder Marktbereich mit eigenen Abteilungen."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Stabsstellen beraten ohne Weisungsrecht; sie werden seitlich an die Linie gezeichnet.",
+      "quelle": "ik2024-lf01-k04, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf01-k04-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei MAKEL gibt es immer wieder widersprüchliche Anweisungen an Auszubildende: Vertrieb und Versand fordern gleichzeitig Unterschiedliches. Yuki Bergmann überlegt, eine Stabsstelle „Ausbildungskoordination“ einzurichten, die Auszubildenden verbindliche Anweisungen erteilt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie den Vorschlag und schlagen Sie eine bessere Regelung vor.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Eine Stabsstelle berät und unterstützt, hat aber kein Weisungsrecht. Würde sie Auszubildenden verbindliche Anweisungen erteilen, entstünde eine weitere Weisungslinie und damit noch mehr Widersprüche — das Problem der Mehrlinienorganisation würde verschärft. Besser: Für jeden Einsatz ist genau eine Person weisungsbefugt (der jeweilige Ausbildungsbeauftragte); Konflikte zwischen Abteilungen werden über deren Vorgesetzte geklärt. Eine Stabsstelle Ausbildungskoordination kann dabei Einsatzpläne vorbereiten und beraten.",
+        "raster": [
+          {
+            "kriterium": "Fehlendes Weisungsrecht von Stäben erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Gefahr zusätzlicher Widersprüche begründet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Eindeutige Weisungsbefugnis je Einsatz vorgeschlagen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sinnvolle beratende Rolle des Stabs beschrieben",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Stäbe beraten, Linienstellen weisen an; widersprüchliche Anweisungen löst eine klare Weisungslinie, nicht eine zusätzliche.",
+      "quelle": "ik2024-lf01-k04, Abschnitt a2"
+    }
+  ]
+}

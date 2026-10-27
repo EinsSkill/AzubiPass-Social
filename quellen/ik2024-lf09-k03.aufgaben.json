@@ -1,0 +1,95 @@
+{
+  "lernfeld": "ik2024-lf09",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf09-k03-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH plant verschiedene Wachstumswege." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Marktfeldstrategie nach Ansoff liegt vor?",
+          "ziele": ["Marktdurchdringung", "Marktentwicklung", "Produktentwicklung", "Diversifikation"],
+          "elemente": [
+            { "text": "Mehr Hoodies an bestehende Boutiquen durch Mengenrabatte", "loesung": "Marktdurchdringung" },
+            { "text": "Bestehende Veredelung für Sportvereine in den Niederlanden anbieten", "loesung": "Marktentwicklung" },
+            { "text": "Neue bestickte Mützen für bestehende Boutiquenkunden", "loesung": "Produktentwicklung" },
+            { "text": "Eine Fahrradwerkstatt für Endkunden eröffnen", "loesung": "Diversifikation" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Ansoff kombiniert bestehende/neue Produkte mit bestehenden/neuen Märkten.",
+      "quelle": "ik2024-lf09-k03, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf09-k03-02",
+      "operator": "Formulieren Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Yuki Bergmann gibt für die MAKEL Studio GmbH zwei Ziele vor: „Wir wollen bei Firmen bekannter werden“ und „Wir wollen mehr Firmenkunden“. Heute bestellen 8 Eventagenturen regelmäßig; eine Befragung schätzt die Bekanntheit bei Agenturen in NRW auf etwa 10 %." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Formulieren Sie beide Ziele überprüfbar und ordnen Sie sie als ökonomisches oder psychografisches Ziel ein.", "zeilen": 6 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Psychografisches Ziel: Die gestützte Bekanntheit der MAKEL Studio GmbH bei Eventagenturen in NRW steigt von etwa 10 % auf 25 % bis zum 31.10.2027, gemessen mit einer Befragung im Oktober 2027. Ökonomisches Ziel: Die Zahl der Eventagenturen mit mindestens einer Bestellung im Jahr steigt von 8 (2026) auf 15 bis zum 31.12.2027. Die Zielwerte sind Planungsannahmen und werden bei neuen Daten überprüft.",
+        "raster": [
+          { "kriterium": "Bekanntheitsziel mit Ausgangs- und Zielwert", "punkte": 1 },
+          { "kriterium": "Kundenziel mit Ausgangs- und Zielwert", "punkte": 1 },
+          { "kriterium": "Zeitraum und Zielgruppe jeweils genannt", "punkte": 1 },
+          { "kriterium": "Richtige Einordnung psychografisch/ökonomisch", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Überprüfbare Ziele nennen Messgröße, Ausgangswert, Zielwert, Zeitraum und Zielgruppe.",
+      "quelle": "ik2024-lf09-k03, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf09-k03-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH positioniert sich als Qualitätsanbieter für nachhaltige Teamkleidung mit Designberatung. Ein Vertriebsmitarbeiter schlägt vor, zusätzlich eine „Budget-Linie“ mit konventionellen Rohlingen, einfachem Siebdruck und Tiefstpreisen einzuführen, „um auch die preisbewussten Vereine zu bekommen“." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Vorschlag im Hinblick auf Positionierung, Ressourcen und Zielkonflikte.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Für den Vorschlag spricht zusätzliches Absatzpotenzial und die Auslastung freier Kapazität. Dagegen: Eine Tiefstpreis-Linie widerspricht der Positionierung als nachhaltiger Qualitätsanbieter und kann das Markenbild verwässern; Stammkunden könnten die günstigere Linie verlangen. Gegen Online-Anbieter mit Kostenvorteilen kann MAKEL im Preiswettbewerb kaum gewinnen. Zusätzliche Varianten erhöhen Material-, Lager- und Planungsaufwand. Möglicher Kompromiss: ein klar abgegrenztes Vereinsangebot mit nachhaltigen Standardrohlingen und begrenzter Auswahl (Kostenvorteil durch Standardisierung statt Billigmaterial), getestet in einer Saison mit festen Messgrößen.",
+        "raster": [
+          { "kriterium": "Chancen des Vorschlags genannt", "punkte": 1 },
+          { "kriterium": "Widerspruch zur Positionierung begründet", "punkte": 1 },
+          { "kriterium": "Ressourcen- bzw. Komplexitätsfolgen genannt", "punkte": 1 },
+          { "kriterium": "Begründete Empfehlung oder Kompromiss mit Test", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Produktentscheidungen werden an Positionierung, Ressourcen und Zielkonflikten gemessen.",
+      "quelle": "ik2024-lf09-k03, Abschnitte a2 und a4"
+    }
+  ]
+}

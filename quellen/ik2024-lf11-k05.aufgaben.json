@@ -1,0 +1,97 @@
+{
+  "lernfeld": "ik2024-lf11",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf11-k05-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Tobias Renner sammelt Konjunkturindikatoren für die Planung der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Art von Indikator ist das typischerweise?",
+          "ziele": ["Frühindikator", "Präsenzindikator", "Spätindikator"],
+          "elemente": [
+            { "text": "Auftragseingänge in der Industrie", "loesung": "Frühindikator" },
+            { "text": "Geschäftsklimaindex aus Unternehmensbefragungen", "loesung": "Frühindikator" },
+            { "text": "Kapazitätsauslastung", "loesung": "Präsenzindikator" },
+            { "text": "Bruttoinlandsprodukt im laufenden Quartal", "loesung": "Präsenzindikator" },
+            { "text": "Arbeitslosenquote", "loesung": "Spätindikator" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Frühindikatoren laufen voraus (Erwartungen, Aufträge), Präsenzindikatoren zeigen die aktuelle Lage, Spätindikatoren reagieren verzögert.",
+      "quelle": "ik2024-lf11-k05, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf11-k05-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "alt": { "von": 100, "bis": 120, "schritt": 4 },
+        "delta": { "von": 2, "bis": 6, "schritt": 1 },
+        "budget": { "von": 5000, "bis": 10000, "schritt": 1000 }
+      },
+      "abgeleitet": {
+        "neu": "alt + delta",
+        "rate": "runde(delta / alt * 100, 1)",
+        "budget_neu": "runde(budget * (1 + rate / 100), 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Ein (fiktiver) Preisindex steigt von {alt} auf {neu} Punkte. Die MAKEL Studio GmbH gab im Vorjahr {budget} € für Verbrauchsmaterial aus und unterstellt für die gleiche Menge die gleiche Preissteigerung. Runden Sie die Rate auf eine Nachkommastelle." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Preissteigerungsrate", "einheit": "%", "loesung": "rate", "toleranz": 0.1, "punkte": 2 },
+        { "block": "zahl", "label": "Erwartetes Budget für die gleiche Menge", "einheit": "€", "loesung": "budget_neu", "toleranz": 1, "punkte": 2, "folgefehler_aus": ["rate"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Rate = (neuer Index − alter Index) ÷ alter Index × 100. Budget neu = Budget × (1 + Rate ÷ 100).",
+      "quelle": "ik2024-lf11-k05, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf11-k05-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die Anfragen bei der MAKEL Studio GmbH sinken seit drei Monaten um rund 15 %. Das Geschäftsklima in der Branche hat sich verschlechtert. Luca Petrelli schlägt vor: sofort zwei Beschäftigten kündigen, alle Bestellungen stoppen und die Laserstation absagen. Ein staatliches Förderprogramm würde die Laserstation um 20 % verbilligen." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie Lucas Vorschläge und entwickeln Sie ein begründetes, flexibleres Vorgehen.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Indikatoren sprechen für einen möglichen Abschwung, beweisen ihn aber nicht; auch branchenspezifische Ursachen (neuer Wettbewerber) sind zu prüfen. Sofortige Kündigungen sind übereilt: Fachkräfte fehlen im nächsten Aufschwung, Kündigungen verursachen Kosten und schaden dem Klima; flexiblere Mittel sind Überstundenabbau, Urlaub, ggf. Kurzarbeit. Ein vollständiger Bestellstopp gefährdet die Lieferfähigkeit; besser Bestellmengen reduzieren und Bestände abbauen. Die Förderung verbilligt die Laserstation, löst aber nicht das Nachfrageproblem; sinnvoll ist, die Investition mit Szenarien zu prüfen und flexibel zu terminieren (Rücktrittsrecht, Lieferung verschieben). Empfehlung: Szenarien rechnen, Indikatoren monatlich beobachten, flexible Maßnahmen zuerst.",
+        "raster": [
+          { "kriterium": "Indikatoren als Hinweis, nicht als Beweis eingeordnet", "punkte": 1 },
+          { "kriterium": "Kündigungen und Bestellstopp als zu starr beurteilt, Alternativen genannt", "punkte": 1 },
+          { "kriterium": "Förderung mit Grenze (Nachfrage) beurteilt", "punkte": 1 },
+          { "kriterium": "Flexibles Vorgehen mit Szenarien begründet", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Bei unsicherer Konjunktur sind flexible, umkehrbare Maßnahmen meist besser als harte, schwer rückgängig zu machende Schritte.",
+      "quelle": "ik2024-lf11-k05, Abschnitte a1, a3 und a4"
+    }
+  ]
+}

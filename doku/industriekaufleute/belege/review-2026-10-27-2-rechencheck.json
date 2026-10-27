@@ -1,0 +1,162 @@
+{
+  "engine": "unchanged quellen/aufgaben.js in Node VM; no DOM/browser",
+  "draws": 4900,
+  "numericTasks": 37,
+  "fullAnswers": 3700,
+  "errors": [],
+  "cases": [
+    {
+      "id": "ik2024-lf10-k02-02",
+      "base": {
+        "material": 10,
+        "fertigung": 4,
+        "gemein": 5,
+        "vertrieb": 3,
+        "stueck": 200
+      },
+      "expected": {
+        "hk": 19,
+        "bestand": 3800
+      },
+      "actual": {
+        "hk": 19,
+        "bestand": 3800
+      },
+      "score": {
+        "punkte": 2,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf05-k07-03",
+      "base": {
+        "ak": 4800,
+        "monat": 4
+      },
+      "expected": {
+        "jahresafa": 1200,
+        "monate": 9,
+        "erstjahr": 900
+      },
+      "actual": {
+        "jahresafa": 1200,
+        "monate": 9,
+        "erstjahr": 900
+      },
+      "score": null
+    },
+    {
+      "id": "ik2024-lf08-k05-01",
+      "base": {
+        "mek": 80,
+        "mgk": 5,
+        "fl": 60,
+        "fgk": 50,
+        "vwvt": 8
+      },
+      "expected": {
+        "hk": 174,
+        "sk": 187.92
+      },
+      "actual": {
+        "hk": 174,
+        "sk": 187.92
+      },
+      "score": {
+        "punkte": 2,
+        "moeglich": 6,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf10-k06-03",
+      "base": {
+        "ab": 5000,
+        "ein1": 20000,
+        "aus1": 40000,
+        "ein2": 55000,
+        "aus2": 25000
+      },
+      "expected": {
+        "luecke": 15000,
+        "feb": 15000
+      },
+      "actual": {
+        "luecke": 15000,
+        "feb": 15000
+      },
+      "score": {
+        "punkte": 2,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf12-k05-02",
+      "base": {
+        "richtsatz": 18,
+        "vorgabe": 6,
+        "stueck": 90
+      },
+      "expected": {
+        "minutenfaktor": 0.3,
+        "lohn": 162
+      },
+      "actual": {
+        "minutenfaktor": 0.3,
+        "lohn": 162
+      },
+      "score": {
+        "punkte": 3,
+        "moeglich": 5,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf12-k07-02",
+      "base": {
+        "urlaub": 30,
+        "monate": 2,
+        "genommen": 3
+      },
+      "expected": {
+        "anteil": 5,
+        "rest": 2
+      },
+      "actual": {
+        "anteil": 5,
+        "rest": 2
+      },
+      "score": {
+        "punkte": 2,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf08-k06-01",
+      "base": {
+        "preis": 26,
+        "var": 12,
+        "menge": 150,
+        "fix": 300
+      },
+      "expected": {
+        "db": 14,
+        "gesamt_db": 2100,
+        "ergebnis": 1800
+      },
+      "actual": {
+        "db": 14,
+        "gesamt_db": 2100,
+        "ergebnis": 1800
+      },
+      "score": {
+        "punkte": 3,
+        "moeglich": 4,
+        "selbst": false
+      }
+    }
+  ]
+}

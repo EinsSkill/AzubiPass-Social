@@ -1,0 +1,97 @@
+{
+  "lernfeld": "ik2024-lf12",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf12-k04-01",
+      "operator": "Wählen Sie aus",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Jonas Weidner plant die Schichten im Lager der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Planungen verstoßen gegen das Arbeitszeitgesetz? (Mehrere Antworten möglich)",
+          "mehrfach": true,
+          "optionen": [
+            { "text": "Eine Lagerkraft arbeitet 7 Stunden mit 30 Minuten Pause.", "richtig": false, "echo": "Bei mehr als sechs Stunden sind 30 Minuten Pause ausreichend." },
+            { "text": "Nach einer Spätschicht bis 22 Uhr folgt Frühschicht ab 6 Uhr.", "richtig": true, "echo": "Zwischen 22 und 6 Uhr liegen nur acht Stunden; vorgeschrieben sind elf Stunden Ruhezeit." },
+            { "text": "Eine Kollegin arbeitet in der Hochsaison täglich 11 Stunden.", "richtig": true, "echo": "Mehr als zehn Stunden werktäglich sind nicht zulässig." },
+            { "text": "Eine Kollegin arbeitet zwei Wochen 9,5 Stunden mit 45 Minuten Pause und baut die Mehrarbeit im Januar ab.", "richtig": false, "echo": "Bis zu zehn Stunden mit Ausgleich und passender Pause sind zulässig." }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Grenzen: höchstens 10 Stunden mit Ausgleich, Pausen 30/45 Minuten, 11 Stunden Ruhezeit.",
+      "quelle": "ik2024-lf12-k04, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf12-k04-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "h1": { "von": 30, "bis": 40, "schritt": 10 },
+        "h2": { "von": 10, "bis": 30, "schritt": 10 },
+        "h3": { "von": 10, "bis": 20, "schritt": 10 },
+        "urlaub": { "von": 25, "bis": 30, "schritt": 5 },
+        "tage": { "von": 2, "bis": 4, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "vzae": "(h1 + h2 + h3) / 40",
+        "teil": "urlaub * tage / 5"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Im Lagerteam der MAKEL Studio GmbH arbeiten drei Personen mit {h1}, {h2} und {h3} Wochenstunden; Vollzeit sind 40 Stunden. Vollzeitkräfte mit fünf Arbeitstagen erhalten {urlaub} Urlaubstage. Ein Teilzeitkollege arbeitet gleichmäßig an {tage} Tagen pro Woche." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Vollzeitäquivalente des Teams", "einheit": "VZÄ", "loesung": "vzae", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Urlaubstage des Teilzeitkollegen", "einheit": "Tage", "loesung": "teil", "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "VZÄ = Summe der Wochenstunden ÷ Vollzeitstunden. Urlaub Teilzeit = Urlaubstage × eigene Arbeitstage ÷ 5.",
+      "quelle": "ik2024-lf12-k04, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf12-k04-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Tobias Renner möchte bei der MAKEL Studio GmbH eine gemeinsame Tabelle für alle Teamleitungen anlegen: Name, Adresse, Geburtsdatum, Gehalt, Krankheitstage mit Diagnose, Urlaubsplanung und Schichtzeiten aller Beschäftigten. „Dann sehen alle sofort, wer wann kann.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Vorschlag aus Sicht des Datenschutzes und der Einsatzplanung und schlagen Sie eine bessere Lösung vor.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Für die Einsatzplanung brauchen Teamleitungen Arbeitszeiten, Schichten, Urlaub und Abwesenheiten (ohne Grund) ihres eigenen Teams. Adresse, Geburtsdatum, Gehalt und erst recht Diagnosen sind dafür nicht erforderlich; Gesundheitsdaten sind besonders geschützt, und der Arbeitgeber erfährt Diagnosen in der Regel gar nicht. Eine Tabelle für alle verletzt Zweckbindung und Datenminimierung und erhöht das Risiko von Missbrauch. Bessere Lösung: Einsatzplanungstool mit Rollen und Rechten — Teamleitungen sehen nur ihr Team und nur planungsrelevante Daten; Personalakte und Gehaltsdaten bleiben in der Personalabteilung; Zugriffe werden protokolliert.",
+        "raster": [
+          { "kriterium": "Planungsrelevante Daten richtig abgegrenzt", "punkte": 1 },
+          { "kriterium": "Nicht erforderliche Daten (Adresse, Gehalt, Diagnose) benannt", "punkte": 1 },
+          { "kriterium": "Zweckbindung/Datenminimierung und Schutz von Gesundheitsdaten genannt", "punkte": 1 },
+          { "kriterium": "Bessere Lösung mit Rollen- und Rechtekonzept", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Personalverwaltung heißt: Jede Rolle sieht genau die Daten, die sie für ihre Aufgabe braucht.",
+      "quelle": "ik2024-lf12-k04, Abschnitte a1 und a4"
+    }
+  ]
+}

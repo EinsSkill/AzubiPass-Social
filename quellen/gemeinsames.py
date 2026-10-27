@@ -147,6 +147,74 @@ def tableiste(aktiv=""):
             + "".join(knoepfe) + '</nav>')
 
 
+# ---------------------------------------------------------------- Ausbildungsgänge
+
+_REGISTRY = None
+
+
+def registry():
+    """Die Berufsregistry aus ausbildungsgaenge.json (einmal gelesen).
+
+    Reihenfolge, Lehrjahr, Lernfeldnummer und Kurzformen kommen von hier – nicht
+    aus den Ziffern im Dateinamen. Aus „ik2024-lf01“ ließe sich sonst die
+    Nummer 202401 lesen (doku/industriekaufleute/03-umsetzung-und-abnahme.md §2)."""
+    global _REGISTRY
+    if _REGISTRY is None:
+        datei = HIER / "ausbildungsgaenge.json"
+        if datei.exists():
+            _REGISTRY = json.loads(datei.read_text(encoding="utf-8"))
+        else:
+            _REGISTRY = {"standard": "kfb", "berufe": []}
+    return _REGISTRY
+
+
+def berufe():
+    return registry().get("berufe", [])
+
+
+def lernfeld_eintrag(lf_id):
+    """(beruf, eintrag) für eine Lernfeld-ID – oder (None, None), wenn die
+    Registry das Lernfeld nicht kennt."""
+    for b in berufe():
+        for e in b.get("lernfelder", []):
+            if e["id"] == lf_id:
+                return b, e
+    return None, None
+
+
+def beruf_von(lf_id):
+    """Kurzkennung des Berufs („kfb“ oder „ik“). Unbekannte Lernfelder gehören
+    zum Standardberuf – so bleibt der Bestand ohne Registry-Eintrag sichtbar."""
+    b, _ = lernfeld_eintrag(lf_id)
+    return b["kurz"] if b else registry().get("standard", "kfb")
+
+
+def _gemeinsam_fuer(lf_id, basis):
+    """Der gemeinsame Speicher des Berufs.
+
+    Büromanagement liest wie bisher gemeinsam.json. Andere Berufe lesen ihre
+    eigene Datei und übernehmen aus gemeinsam.json nur, was dort ausdrücklich
+    unter „uebernehmen“ steht – Rechtsgrundlagen sollen nicht stillschweigend
+    von einem Beruf auf den anderen vererbt werden."""
+    b, _ = lernfeld_eintrag(lf_id)
+    name = (b or {}).get("gemeinsam", "gemeinsam.json")
+    datei = basis / name
+    gem = json.loads(datei.read_text(encoding="utf-8")) if datei.exists() else {}
+    if name == "gemeinsam.json":
+        return gem
+    alt_datei = basis / "gemeinsam.json"
+    alt = json.loads(alt_datei.read_text(encoding="utf-8")) if alt_datei.exists() else {}
+    raus = {"begriffe": {}, "paragraphen": {}}
+    for feld in ("begriffe", "paragraphen"):
+        for kennung in (gem.get("uebernehmen") or {}).get(feld, []):
+            if kennung not in alt.get(feld, {}):
+                raise KeyError(f"{name}: übernommener Eintrag {feld}:{kennung} "
+                               f"steht nicht in gemeinsam.json")
+            raus[feld][kennung] = alt[feld][kennung]
+        raus[feld].update(gem.get(feld, {}))
+    return raus
+
+
 def lade(lernfeld_datei):
     """Liest eine Lernfeld-Datei samt ihrer Kapitel und dem gemeinsamen Speicher.
 
@@ -158,12 +226,12 @@ def lade(lernfeld_datei):
     basis = pfad.parent
 
     # Gemeinsamer Speicher zuerst, lernfeldeigene Einträge überschreiben ihn
-    gem_datei = basis / "gemeinsam.json"
-    gem = json.loads(gem_datei.read_text(encoding="utf-8")) if gem_datei.exists() else {}
+    gem = _gemeinsam_fuer(lf["id"], basis)
     for feld in ("begriffe", "paragraphen"):
         zusammen = dict(gem.get(feld, {}))
         zusammen.update(lf.get(feld, {}))
         lf[feld] = zusammen
+    lf["beruf"] = beruf_von(lf["id"])
 
     kapitel_daten, fehlend = [], []
     for eintrag in lf["kapitel"]:
@@ -176,11 +244,24 @@ def lade(lernfeld_datei):
 
 
 def lernfeld_dateien():
-    """Alle Lernfeld-Dateien in Quellenordner, in stabiler Reihenfolge."""
-    def nummer(p):
-        ziffern = "".join(c for c in p.stem.split(".")[0] if c.isdigit())
-        return (0 if ziffern else 1, int(ziffern) if ziffern else 0, p.name)
-    return sorted(HIER.glob("*.lernfeld.json"), key=nummer)
+    """Alle Lernfeld-Dateien im Quellenordner, in stabiler Reihenfolge.
+
+    Bekannte Lernfelder in der Reihenfolge der Registry (Beruf für Beruf),
+    unbekannte dahinter wie früher nach der Ziffernfolge im Namen. Die Datei
+    heißt dabei nicht zwingend wie die ID: buchfuehrung.lernfeld.json trägt
+    die ID „buchfuehrung“, steht aber an der Stelle von LF 6."""
+    rang = {}
+    for i, b in enumerate(berufe()):
+        for j, e in enumerate(b.get("lernfelder", [])):
+            rang[e["id"]] = (i, j)
+
+    def schluessel(p):
+        kennung = p.name[:-len(".lernfeld.json")]
+        if kennung in rang:
+            return (0,) + rang[kennung] + (p.name,)
+        ziffern = "".join(c for c in kennung if c.isdigit())
+        return (1, 0 if ziffern else 1, int(ziffern) if ziffern else 0, p.name)
+    return sorted(HIER.glob("*.lernfeld.json"), key=schluessel)
 
 
 def rechtliches():

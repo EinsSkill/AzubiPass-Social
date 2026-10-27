@@ -1,0 +1,439 @@
+{
+  "applicationCommit": "7b93c0afd28491ee20105c4782f816b8ac14ec45",
+  "engine": "Original quellen/aufgaben.js in Node VM; no browser",
+  "depreciationVariants": 12,
+  "payrollVariants": 168,
+  "cases": [
+    {
+      "id": "ik2024-lf08-k06-01",
+      "base": {
+        "preis": 26,
+        "var": 12,
+        "menge": 150,
+        "fix": 300
+      },
+      "derived": {
+        "preis": 26,
+        "var": 12,
+        "menge": 150,
+        "fix": 300,
+        "db": 14,
+        "gesamt_db": 2100,
+        "ergebnis": 1800
+      },
+      "answers": [
+        14,
+        2100,
+        1800
+      ],
+      "expectedObservedScore": 4,
+      "note": "Correct DB answers",
+      "result": {
+        "punkte": 4,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf08-k06-01",
+      "base": {
+        "preis": 26,
+        "var": 12,
+        "menge": 150,
+        "fix": 300
+      },
+      "derived": {
+        "preis": 26,
+        "var": 12,
+        "menge": 150,
+        "fix": 300,
+        "db": 14,
+        "gesamt_db": 2100,
+        "ergebnis": 1800
+      },
+      "answers": [
+        15,
+        2250,
+        1950
+      ],
+      "expectedObservedScore": 3,
+      "note": "I07 accepted consistent follow-through",
+      "result": {
+        "punkte": 3,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf08-k06-01",
+      "base": {
+        "preis": 26,
+        "var": 12,
+        "menge": 150,
+        "fix": 300
+      },
+      "derived": {
+        "preis": 26,
+        "var": 12,
+        "menge": 150,
+        "fix": 300,
+        "db": 14,
+        "gesamt_db": 2100,
+        "ergebnis": 1800
+      },
+      "answers": [
+        15,
+        2240,
+        1900
+      ],
+      "expectedObservedScore": 0,
+      "note": "Inconsistent answers rejected",
+      "result": {
+        "punkte": 0,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf04-k04-01",
+      "base": {
+        "lep": 1000,
+        "rabatt": 10,
+        "skonto": 2,
+        "fracht": 20
+      },
+      "derived": {
+        "lep": 1000,
+        "rabatt": 10,
+        "skonto": 2,
+        "fracht": 20,
+        "zep": 900,
+        "bezug": 902
+      },
+      "answers": [
+        910,
+        911.8
+      ],
+      "expectedObservedScore": 3,
+      "note": "Own target price used for skonto",
+      "result": {
+        "punkte": 3,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf05-k04-02",
+      "base": {
+        "netto_basis": 1000
+      },
+      "derived": {
+        "netto_basis": 1000,
+        "brutto": 1190,
+        "netto": 1000,
+        "steuer": 190
+      },
+      "answers": [
+        1100,
+        209
+      ],
+      "expectedObservedScore": 1,
+      "note": "19% of own incorrect net",
+      "result": {
+        "punkte": 1,
+        "moeglich": 3,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf08-k02-02",
+      "base": {
+        "fix": 6000,
+        "var": 3,
+        "menge": 1000
+      },
+      "derived": {
+        "fix": 6000,
+        "var": 3,
+        "menge": 1000,
+        "gesamt": 9000,
+        "stueck": 9
+      },
+      "answers": [
+        9100,
+        9.1
+      ],
+      "expectedObservedScore": 2,
+      "note": "Own total divided by given quantity",
+      "result": {
+        "punkte": 2,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf13-k04-02",
+      "base": {
+        "vorher": 20,
+        "nachher": 10
+      },
+      "derived": {
+        "vorher": 20,
+        "nachher": 10,
+        "pp": 10,
+        "relativ": 50
+      },
+      "answers": [
+        12,
+        60
+      ],
+      "expectedObservedScore": 2,
+      "note": "Own percentage-point change",
+      "result": {
+        "punkte": 2,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf06-k07-02",
+      "base": {
+        "fix": 1500,
+        "var": 15,
+        "db": 5,
+        "mehr": 40
+      },
+      "derived": {
+        "fix": 1500,
+        "var": 15,
+        "db": 5,
+        "mehr": 40,
+        "preis": 20,
+        "schwelle": 300,
+        "menge": 340,
+        "gewinn": 200
+      },
+      "answers": [
+        300,
+        200
+      ],
+      "expectedObservedScore": 4,
+      "note": "Correct: displayed quantity 340, profit 200",
+      "result": {
+        "punkte": 4,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf06-k07-02",
+      "base": {
+        "fix": 1500,
+        "var": 15,
+        "db": 5,
+        "mehr": 40
+      },
+      "derived": {
+        "fix": 1500,
+        "var": 15,
+        "db": 5,
+        "mehr": 40,
+        "preis": 20,
+        "schwelle": 300,
+        "menge": 340,
+        "gewinn": 200
+      },
+      "answers": [
+        310,
+        200
+      ],
+      "expectedObservedScore": 2,
+      "note": "Wrong threshold, correct profit at displayed quantity",
+      "result": {
+        "punkte": 2,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf06-k07-02",
+      "base": {
+        "fix": 1500,
+        "var": 15,
+        "db": 5,
+        "mehr": 40
+      },
+      "derived": {
+        "fix": 1500,
+        "var": 15,
+        "db": 5,
+        "mehr": 40,
+        "preis": 20,
+        "schwelle": 300,
+        "menge": 340,
+        "gewinn": 200
+      },
+      "answers": [
+        310,
+        250
+      ],
+      "expectedObservedScore": 2,
+      "note": "I11: false follow-through credit; effectively quantity 350 instead of displayed 340",
+      "result": {
+        "punkte": 2,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf10-k02-04",
+      "base": {
+        "ak": 10000,
+        "nd": 5,
+        "jahre": 2
+      },
+      "derived": {
+        "ak": 10000,
+        "nd": 5,
+        "jahre": 2,
+        "afa": 2000,
+        "grenze": 6000
+      },
+      "answers": [
+        2000,
+        6000
+      ],
+      "expectedObservedScore": 4,
+      "note": "I03: continued acquisition cost",
+      "result": {
+        "punkte": 4,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf10-k02-04",
+      "base": {
+        "ak": 10000,
+        "nd": 5,
+        "jahre": 2
+      },
+      "derived": {
+        "ak": 10000,
+        "nd": 5,
+        "jahre": 2,
+        "afa": 2000,
+        "grenze": 6000
+      },
+      "answers": [
+        2100,
+        5800
+      ],
+      "expectedObservedScore": 3,
+      "note": "Consistent depreciation follow-through",
+      "result": {
+        "punkte": 3,
+        "moeglich": 4,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf12-k05-04",
+      "base": {
+        "grund": 2500,
+        "zulage": 200,
+        "lst": 310,
+        "vl": 40
+      },
+      "derived": {
+        "grund": 2500,
+        "zulage": 200,
+        "lst": 310,
+        "vl": 40,
+        "brutto": 2750,
+        "sv": 550,
+        "netto": 1890,
+        "auszahlung": 1800
+      },
+      "answers": [
+        2750,
+        550,
+        1890,
+        1800
+      ],
+      "expectedObservedScore": 6,
+      "note": "I09: full payroll example",
+      "result": {
+        "punkte": 6,
+        "moeglich": 6,
+        "selbst": false
+      }
+    },
+    {
+      "id": "ik2024-lf12-k05-04",
+      "base": {
+        "grund": 2500,
+        "zulage": 200,
+        "lst": 310,
+        "vl": 40
+      },
+      "derived": {
+        "grund": 2500,
+        "zulage": 200,
+        "lst": 310,
+        "vl": 40,
+        "brutto": 2750,
+        "sv": 550,
+        "netto": 1890,
+        "auszahlung": 1800
+      },
+      "answers": [
+        2800,
+        560,
+        1930,
+        1840
+      ],
+      "expectedObservedScore": 5,
+      "note": "Own gross consistently propagated",
+      "result": {
+        "punkte": 5,
+        "moeglich": 6,
+        "selbst": false
+      }
+    }
+  ],
+  "matches": [
+    {
+      "id": "ik2024-lf04-k04-01",
+      "sourceBuildMatch": true
+    },
+    {
+      "id": "ik2024-lf05-k04-02",
+      "sourceBuildMatch": true
+    },
+    {
+      "id": "ik2024-lf06-k07-02",
+      "sourceBuildMatch": true
+    },
+    {
+      "id": "ik2024-lf08-k02-02",
+      "sourceBuildMatch": true
+    },
+    {
+      "id": "ik2024-lf08-k06-01",
+      "sourceBuildMatch": true
+    },
+    {
+      "id": "ik2024-lf10-k02-04",
+      "sourceBuildMatch": true
+    },
+    {
+      "id": "ik2024-lf12-k05-04",
+      "sourceBuildMatch": true
+    },
+    {
+      "id": "ik2024-lf13-k04-02",
+      "sourceBuildMatch": true
+    }
+  ]
+}

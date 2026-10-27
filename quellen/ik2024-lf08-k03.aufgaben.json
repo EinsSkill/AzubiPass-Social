@@ -1,0 +1,89 @@
+{
+  "lernfeld": "ik2024-lf08",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf08-k03-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "raum": { "von": 8000, "bis": 16000, "schritt": 2000 },
+        "lager": { "von": 80, "bis": 160, "schritt": 20 },
+        "fertigung": { "von": 200, "bis": 400, "schritt": 50 }
+      },
+      "abgeleitet": {
+        "anteil_lager": "runde(raum * lager / (lager + fertigung), 2)",
+        "anteil_fertigung": "runde(raum * fertigung / (lager + fertigung), 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH verteilt Raumkosten von {raum} € im Quartal nach Fläche auf die Kostenstellen Material (Lager, {lager} m²) und Fertigung (Veredelung, {fertigung} m²). Weitere Flächen sind nicht betroffen." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Anteil Kostenstelle Material", "einheit": "€", "loesung": "anteil_lager", "toleranz": 0.02, "punkte": 2 },
+        { "block": "zahl", "label": "Anteil Kostenstelle Fertigung", "einheit": "€", "loesung": "anteil_fertigung", "toleranz": 0.02, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Kosten je m² = Raumkosten ÷ Gesamtfläche; Anteil = Fläche × Kosten je m². Kontrolle: Beide Anteile ergeben zusammen die Raumkosten.",
+      "quelle": "ik2024-lf08-k03, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf08-k03-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "loehne": { "von": 10000, "bis": 20000, "schritt": 2000 },
+        "satz": { "von": 100, "bis": 200, "schritt": 25 }
+      },
+      "abgeleitet": { "fgk": "loehne * satz / 100" },
+      "anzeige": [
+        { "block": "text", "inhalt": "Im BAB der MAKEL Studio GmbH stehen für die Kostenstelle Fertigung nach allen Umlagen {fgk} € Gemeinkosten. Die Fertigungslöhne der Periode betragen {loehne} €." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Fertigungsgemeinkostenzuschlag", "einheit": "%", "loesung": "satz", "toleranz": 0.01 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 2 },
+      "erklaerung": "FGK-Zuschlag = Fertigungsgemeinkosten ÷ Fertigungslöhne × 100.",
+      "quelle": "ik2024-lf08-k03, Abschnitt a4"
+    },
+
+    {
+      "id": "ik2024-lf08-k03-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Luca Petrelli hat den BAB der MAKEL Studio GmbH ausgewertet: „Primäre Gemeinkosten insgesamt 36.000 €, davon Instandhaltung 6.000 €. Nach der Umlage hat die Fertigung 4.800 € und der Vertrieb 1.200 € mehr. Die Gemeinkosten betragen also 36.000 € + 6.000 € = 42.000 €.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie Lucas Auswertung und stellen Sie sie richtig.", "zeilen": 5 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Auswertung ist falsch. Die 6.000 € der Instandhaltung sind bereits in den 36.000 € enthalten. Die Umlage verschiebt sie nur von der Hilfskostenstelle auf Fertigung und Vertrieb; die Instandhaltung steht danach auf null. Die Gemeinkosten insgesamt bleiben 36.000 €. Wer 6.000 € addiert, zählt die Instandhaltung doppelt — die Zuschlagssätze würden zu hoch und die Produkte zu teuer kalkuliert.",
+        "raster": [
+          { "kriterium": "Doppelzählung erkannt", "punkte": 1 },
+          { "kriterium": "Richtige Gesamtsumme 36.000 €", "punkte": 1 },
+          { "kriterium": "Umlage als Verschiebung erklärt (Hilfskostenstelle danach null)", "punkte": 1 },
+          { "kriterium": "Folge für Zuschlagssätze bzw. Kalkulation genannt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Innerbetriebliche Leistungsverrechnung verändert die Zuordnung, nicht die Summe der Gemeinkosten.",
+      "quelle": "ik2024-lf08-k03, Abschnitt a3"
+    }
+  ]
+}

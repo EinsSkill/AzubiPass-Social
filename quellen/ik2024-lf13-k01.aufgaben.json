@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf13",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf13-k01-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Luca Petrelli sammelt Notizen zu verspäteten Lieferungen der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Was beschreibt die Notiz?",
+          "ziele": ["Symptom", "Ursachenhypothese", "Datenlücke"],
+          "elemente": [
+            { "text": "Drei Agenturen haben sich im September über späte Lieferungen beschwert", "loesung": "Symptom" },
+            { "text": "Kundenfreigaben per E-Mail werden nicht im System vermerkt", "loesung": "Ursachenhypothese" },
+            { "text": "Für August gibt es keine Zeitstempel der Fertigmeldungen", "loesung": "Datenlücke" },
+            { "text": "Die Veredelung ist bei Großaufträgen überlastet", "loesung": "Ursachenhypothese" },
+            { "text": "Der Liefertermin wurde bei 10 von 50 Aufträgen überschritten", "loesung": "Symptom" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Symptome sind sichtbare Wirkungen, Ursachen werden als prüfbare Hypothesen formuliert, fehlende Informationen sind Datenlücken.",
+      "quelle": "ik2024-lf13-k01, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf13-k01-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "auftraege": { "von": 40, "bis": 80, "schritt": 10 },
+        "spaet": { "von": 8, "bis": 12, "schritt": 2 },
+        "ohne": { "von": 4, "bis": 6, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "quote": "runde(spaet / auftraege * 100, 1)",
+        "anteil": "runde(ohne / spaet * 100, 1)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Im untersuchten Quartal hatte die MAKEL Studio GmbH {auftraege} Firmenaufträge; {spaet} davon wurden verspätet geliefert. Bei {ohne} der verspäteten Aufträge fehlt der dokumentierte Freigabeschritt. Runden Sie auf eine Nachkommastelle." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Verspätungsquote aller Aufträge", "einheit": "%", "loesung": "quote", "toleranz": 0.1, "punkte": 2 },
+        { "block": "zahl", "label": "Anteil der verspäteten Aufträge ohne dokumentierte Freigabe", "einheit": "%", "loesung": "anteil", "toleranz": 0.1, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Verspätungsquote = verspätete ÷ alle Aufträge × 100. Der zweite Anteil bezieht sich nur auf die verspäteten Aufträge — und beweist noch keine alleinige Ursache.",
+      "quelle": "ik2024-lf13-k01, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf13-k01-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Nach der ersten Datenauswertung schreibt Luca Petrelli in den Zwischenbericht an Yuki Bergmann: „Problem: Der Versand ist zu langsam. Ursache: Die fehlende Freigabe — sie ist bei 60 % der Verspätungen schuld. Lösung: Jonas soll schneller packen.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Zwischenbericht und formulieren Sie eine verbesserte Fassung mit prüfbarer Problemfrage.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Problemformulierung ist unscharf und benennt einen Bereich (Versand), obwohl die Daten auf eine Schnittstelle zwischen Vertrieb und Produktion hinweisen. „Schuld“ ist eine Schuldzuweisung statt einer geprüften Hypothese; 60 % der verspäteten Fälle ohne dokumentierte Freigabe zeigen einen Zusammenhang, aber keine Ursache aller Verspätungen — 40 % haben andere Gründe. Die Lösung passt nicht zur vermuteten Ursache und belastet eine Person. Verbesserte Fassung: „Belegt: 20 % der Firmenaufträge im 3. Quartal waren verspätet; bei 60 % davon fehlt der dokumentierte Freigabeschritt. Hypothese: Freigaben per E-Mail erreichen die Produktion verspätet. Offene Punkte: Ursachen der übrigen Fälle, fehlende Zeitstempel für August. Problemfrage: An welcher Schnittstelle zwischen Auftragseingang und Versand verlängert sich die Durchlaufzeit von Firmenaufträgen, und unter welchen Bedingungen?“",
+        "raster": [
+          { "kriterium": "Unscharfe Problemformulierung erkannt", "punkte": 1 },
+          { "kriterium": "Häufigkeit vs. Ursache richtig eingeordnet", "punkte": 1 },
+          { "kriterium": "Unpassende, personenbezogene Lösung kritisiert", "punkte": 1 },
+          { "kriterium": "Verbesserte Fassung mit Belegtem, Hypothese, Lücke und prüfbarer Frage", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Gute Analysen trennen Belegtes, Vermutetes und Fehlendes — und suchen Ursachen in Prozessen, nicht bei Personen.",
+      "quelle": "ik2024-lf13-k01, Abschnitte a1 bis a3"
+    }
+  ]
+}

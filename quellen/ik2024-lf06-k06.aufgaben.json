@@ -1,0 +1,165 @@
+{
+  "lernfeld": "ik2024-lf06",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf06-k06-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "geprueft": {
+          "von": 200,
+          "bis": 800,
+          "schritt": 100
+        },
+        "quote": {
+          "von": 2,
+          "bis": 6,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "fehler": "geprueft * quote / 100",
+        "gut": "geprueft - geprueft * quote / 100"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei der Endprüfung eines MAKEL-Druckauftrags wurden {geprueft} Shirts geprüft; {fehler} davon haben einen verschobenen Druck."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Fehlerquote",
+          "einheit": "%",
+          "loesung": "quote",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Einwandfreie Shirts",
+          "einheit": "Stück",
+          "loesung": "gut",
+          "toleranz": 0.01,
+          "punkte": 1
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Fehlerquote = fehlerhafte ÷ geprüfte Teile × 100. Einwandfrei = geprüft − fehlerhaft.",
+      "quelle": "ik2024-lf06-k06, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf06-k06-02",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Beim Sticken eines Firmenlogos in der MAKEL-Veredelung sind mehrere Hoodies mit Fadenschlaufen aufgefallen. Deniz Aydın sammelt mögliche Ursachen in einem Ursache-Wirkungs-Diagramm."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welcher Kategorie ordnen Sie die mögliche Ursache zu?",
+          "ziele": [
+            "Mensch",
+            "Maschine",
+            "Material",
+            "Methode"
+          ],
+          "elemente": [
+            {
+              "text": "Neue Aushilfe wurde nicht in die Fadenspannung eingewiesen",
+              "loesung": "Mensch"
+            },
+            {
+              "text": "Spannfeder der Stickmaschine ist verschlissen",
+              "loesung": "Maschine"
+            },
+            {
+              "text": "Garn einer neuen Lieferung ist dünner als spezifiziert",
+              "loesung": "Material"
+            },
+            {
+              "text": "Es gibt keine Arbeitsanweisung für den Garnwechsel",
+              "loesung": "Methode"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Das Ursache-Wirkungs-Diagramm sortiert mögliche Ursachen nach Kategorien; geprüft wird anschließend mit Daten, welche tatsächlich zutrifft.",
+      "quelle": "ik2024-lf06-k06, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf06-k06-03",
+      "operator": "Entwickeln Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Zum zweiten Mal in einem Monat wurde bei MAKEL eine veraltete Motivversion gedruckt. Diesmal sind 80 Shirts für einen Firmenkunden betroffen, Liefertermin in drei Tagen. Ursache: Die alte Datei lag weiterhin im Schnellzugriff der Druckmaschine."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Entwickeln Sie einen Maßnahmenplan mit Sofortmaßnahme, Korrekturmaßnahme, Zuständigkeiten, Kundeninformation und Wirksamkeitskontrolle.",
+          "zeilen": 8
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Sofort: 80 Shirts kennzeichnen und sperren, Maschine stoppen, richtige Datei prüfen und Neudruck einplanen; prüfen, ob Rohlinge für den Neudruck vorhanden sind. Kundeninformation: Vertrieb (Marlene) prüft mit der Produktion, ob der Termin hält; falls nicht, informiert sie den Kunden frühzeitig mit neuem Termin. Korrektur: Maschine greift nur auf einen Freigabeordner zu, alte Versionen werden archiviert, vor jedem Druckstart zeichnet die Schichtleitung die Versionsnummer ab. Zuständig: Deniz für den Freigabeordner bis Ende der Woche, Schichtleitung für den Abgleich. Wirksamkeitskontrolle: In den nächsten 25 Aufträgen kein Motivfehler; Prüfung nach vier Wochen, dann Aufnahme in die Arbeitsanweisung.",
+        "raster": [
+          {
+            "kriterium": "Sofortmaßnahme (sperren, stoppen, Neudruck)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Kundeninformation über zuständige Stelle mit Terminprüfung",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Korrekturmaßnahme beseitigt die Ursache",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zuständigkeiten und Termine benannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Messbare Wirksamkeitskontrolle",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Ein vollständiger Maßnahmenplan begrenzt den Schaden, beseitigt die Ursache, regelt Zuständigkeiten und prüft die Wirkung.",
+      "quelle": "ik2024-lf06-k06, Abschnitte a3 und a4"
+    }
+  ]
+}

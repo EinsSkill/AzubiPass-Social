@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf12",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf12-k02-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH sucht eine Person für Lager und Versand und sammelt Beschaffungswege." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Interne oder externe Personalbeschaffung?",
+          "ziele": ["intern", "extern"],
+          "elemente": [
+            { "text": "Übernahme eines Auszubildenden nach der Prüfung", "loesung": "intern" },
+            { "text": "Anzeige auf einem regionalen Stellenportal", "loesung": "extern" },
+            { "text": "Versetzung einer Aushilfe aus dem Store ins Lager", "loesung": "intern" },
+            { "text": "Vermittlung über die Agentur für Arbeit", "loesung": "extern" },
+            { "text": "Aushang am schwarzen Brett im Betrieb", "loesung": "intern" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Intern: Personen, die schon im Unternehmen sind. Extern: Gewinnung von außerhalb.",
+      "quelle": "ik2024-lf12-k02, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf12-k02-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "anzeige": { "von": 600, "bis": 1200, "schritt": 200 },
+        "messe": { "von": 1500, "bis": 3000, "schritt": 500 },
+        "stunden": { "von": 20, "bis": 40, "schritt": 10 },
+        "satz": { "von": 40, "bis": 50, "schritt": 5 },
+        "einstellungen": { "von": 2, "bis": 4, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "kosten": "runde((anzeige + messe + stunden * satz) / einstellungen, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH hat im Frühjahr für externe Beschaffung ausgegeben: Stellenanzeigen {anzeige} €, Stand auf einer Ausbildungs- und Jobmesse {messe} €, interne Arbeitszeit für Auswahlgespräche {stunden} Stunden zu je {satz} €. Es wurden {einstellungen} Personen eingestellt." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Beschaffungskosten je Einstellung", "einheit": "€", "loesung": "kosten", "toleranz": 0.01 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Kosten je Einstellung = (Anzeigen + Messe + Stunden × Stundensatz) ÷ Zahl der Einstellungen.",
+      "quelle": "ik2024-lf12-k02, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf12-k02-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 8,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Entwurf von Luca Petrelli: „MAKEL sucht jungen, dynamischen Lageristen (max. 30 J.) mit deutscher Muttersprache für unser cooles Team. Du bist belastbar, flexibel und immer gut drauf. Bewerbungen mit Foto an personal@…“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Entwurf und formulieren Sie eine verbesserte Fassung mit den notwendigen Bestandteilen.", "zeilen": 9 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Probleme: „jung“, „max. 30 J.“ (Alter), „Lageristen“ ohne Neutralität (Geschlecht), „deutsche Muttersprache“ (ethnische Herkunft, nicht tätigkeitsbezogen) — Benachteiligungsrisiko nach §§ 1, 11 AGG; „immer gut drauf“ ohne Tätigkeitsbezug; Aufgaben, Bedingungen und Ansprechperson fehlen; Fotoanforderung ist unnötig. Verbesserte Fassung: „Lagermitarbeiter*in (m/w/d) in Vollzeit, Düsseldorf. MAKEL ist ein Streetwear-Label mit eigener Veredelung. Ihre Aufgaben: Aufträge mit dem Handscanner kommissionieren, Pakete versandfertig machen, Wareneingänge mit Lieferscheinen abgleichen. Sie bringen mit: Sorgfalt, Erfahrung im Lager wünschenswert, Deutschkenntnisse für Lieferscheine und Absprachen. Wir bieten: Schichten zwischen 7 und 16 Uhr, Einarbeitung, Mitarbeiterrabatt. Bewerbung an Jonas Weidner, personal@…“",
+        "raster": [
+          { "kriterium": "Mindestens drei AGG-relevante Probleme erkannt", "punkte": 2 },
+          { "kriterium": "Fehlende Bestandteile (Aufgaben, Bedingungen, Ansprechperson) erkannt", "punkte": 1 },
+          { "kriterium": "Verbesserte Fassung mit allen Bestandteilen", "punkte": 1 },
+          { "kriterium": "Anforderungen tätigkeitsbezogen formuliert", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Eine gute Ausschreibung beschreibt Tätigkeit und echte Anforderungen — neutral, konkret und einladend.",
+      "quelle": "ik2024-lf12-k02, Abschnitte a2 bis a4"
+    }
+  ]
+}

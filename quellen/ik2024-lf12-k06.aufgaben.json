@@ -1,0 +1,98 @@
+{
+  "lernfeld": "ik2024-lf12",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf12-k06-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Jonas Weidner plant Entwicklungsmaßnahmen für das Lagerteam der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Wo findet die Maßnahme statt?",
+          "ziele": ["on the job", "near the job", "off the job"],
+          "elemente": [
+            { "text": "Einweisung am Scanner während der Schicht", "loesung": "on the job" },
+            { "text": "Monatlicher Qualitätszirkel zu Retouren", "loesung": "near the job" },
+            { "text": "Zweitägiges Seminar zur Staplerfahrerprüfung beim Bildungsträger", "loesung": "off the job" },
+            { "text": "Job-Rotation zwischen Wareneingang und Versand", "loesung": "on the job" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "On the job: am Arbeitsplatz; near the job: arbeitsnah, aber außerhalb der eigentlichen Tätigkeit; off the job: außerhalb des Arbeitsplatzes.",
+      "quelle": "ik2024-lf12-k06, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf12-k06-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "a1": { "von": 400, "bis": 600, "schritt": 50 },
+        "f1": { "von": 30, "bis": 40, "schritt": 5 },
+        "a2": { "von": 400, "bis": 600, "schritt": 50 },
+        "f2": { "von": 5, "bis": 10, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "q1": "runde(f1 / a1 * 100, 1)",
+        "q2": "runde(f2 / a2 * 100, 1)",
+        "diff": "runde(q1 - q2, 1)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Im Lager der MAKEL Studio GmbH wurde die Fehlerquote beim Kommissionieren (fehlerhafte Aufträge ÷ alle Aufträge) mit gleicher Definition gemessen. Vor der Scanner-Schulung: {f1} Fehler bei {a1} Aufträgen. Nach der Schulung: {f2} Fehler bei {a2} Aufträgen. Runden Sie auf eine Nachkommastelle." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Fehlerquote vorher", "einheit": "%", "loesung": "q1", "toleranz": 0.1, "punkte": 1 },
+        { "block": "zahl", "label": "Fehlerquote nachher", "einheit": "%", "loesung": "q2", "toleranz": 0.1, "punkte": 1 },
+        { "block": "zahl", "label": "Rückgang in Prozentpunkten", "einheit": "Prozentpunkte", "loesung": "diff", "toleranz": 0.2, "punkte": 2, "folgefehler_aus": ["q1", "q2"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Quote = Fehler ÷ Aufträge × 100. Der Rückgang in Prozentpunkten ist die Differenz der beiden Quoten.",
+      "quelle": "ik2024-lf12-k06, Abschnitt a4"
+    },
+
+    {
+      "id": "ik2024-lf12-k06-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Tobias Renner will bei der MAKEL Studio GmbH die Motivation im Lager steigern: Jede Person erhält einmalig 100 € Bonus und ein externes Seminar „Motivation und Teamgeist“. Gleichzeitig beklagt das Team seit Monaten defekte Scanner und unklare Zuständigkeiten bei Retouren." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Plan mithilfe der Zwei-Faktoren-Theorie und der Grundsätze der Personalentwicklung und schlagen Sie ein besseres Vorgehen vor.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Defekte Scanner und unklare Zuständigkeiten sind Mängel bei Hygienefaktoren bzw. Arbeitsbedingungen; solange sie bestehen, bleibt Unzufriedenheit, und ein einmaliger Bonus (ebenfalls Hygienefaktor) wirkt kaum dauerhaft. Ein allgemeines Seminar ohne Tätigkeitsbezug und ohne ermittelten Bedarf verfehlt die Ursache. Besser: zuerst Scanner reparieren bzw. ersetzen und Zuständigkeiten für Retouren klären; dann Motivatoren stärken — Verantwortung (z. B. Retourenverantwortliche Person), Anerkennung, gezielte Schulung am neuen System; Wirkung über Fehlerquote und Teamrückmeldung prüfen.",
+        "raster": [
+          { "kriterium": "Defekte Technik/unklare Zuständigkeit als Hygienefaktor-Problem erkannt", "punkte": 1 },
+          { "kriterium": "Bonus und allgemeines Seminar kritisch beurteilt", "punkte": 1 },
+          { "kriterium": "Reihenfolge: erst Hygienefaktoren, dann Motivatoren", "punkte": 1 },
+          { "kriterium": "Konkrete Maßnahmen mit Wirkungskontrolle", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Motivation entsteht nicht durch Einmalaktionen, wenn grundlegende Arbeitsbedingungen nicht stimmen.",
+      "quelle": "ik2024-lf12-k06, Abschnitte a1, a3 und a4"
+    }
+  ]
+}

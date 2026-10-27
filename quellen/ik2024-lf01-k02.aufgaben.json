@@ -1,0 +1,225 @@
+{
+  "lernfeld": "ik2024-lf01",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf01-k02-01",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ayla Brandt aus der Personalabteilung der MAKEL Studio GmbH bittet Sie, einen Vertragsentwurf für eine neue Auszubildende zu prüfen. Dort steht: „Die Probezeit beträgt sechs Monate.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie die Regelung zur Probezeit und schlagen Sie eine zulässige Formulierung vor.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Nach § 20 BBiG beginnt das Ausbildungsverhältnis mit einer Probezeit von mindestens einem und höchstens vier Monaten. Sechs Monate überschreiten diese Grenze und sind für einen Ausbildungsvertrag nicht zulässig — die aus Arbeitsverträgen bekannte Sechs-Monats-Regel gilt hier nicht. Zulässig wäre zum Beispiel: „Die Probezeit beträgt vier Monate.“ Der Entwurf ist vor Abschluss zu ändern.",
+        "raster": [
+          {
+            "kriterium": "Grenze von einem bis vier Monaten genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sechs Monate als unzulässig beurteilt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zulässige Formulierung (ein bis vier Monate) vorgeschlagen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "§ 20 BBiG: Probezeit mindestens ein Monat, höchstens vier Monate.",
+      "quelle": "ik2024-lf01-k02, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf01-k02-02",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sie haben von Deniz Aydın aus dem Einkauf der MAKEL Studio GmbH eine schriftliche Einzelvollmacht erhalten: „Kauf des Dokumentenscanners Modell S-40 bis höchstens 300 € netto.“ Beim Händler kostet das Modell inzwischen 420 € netto."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Wie gehen Sie sachgerecht vor?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Sie bestellen, weil der Scanner gebraucht wird.",
+              "richtig": false,
+              "echo": "Der Preis liegt über der Grenze der Vollmacht. Ein dringender Bedarf erweitert die Vollmacht nicht."
+            },
+            {
+              "text": "Sie stellen die Bestellung zurück, informieren Deniz Aydın über den neuen Preis und holen eine erweiterte Freigabe ein.",
+              "richtig": true,
+              "echo": "Richtig. Die Preisgrenze ist überschritten; also wird nicht bestellt, sondern neu entschieden."
+            },
+            {
+              "text": "Sie bestellen ein günstigeres Modell eines anderen Herstellers.",
+              "richtig": false,
+              "echo": "Die Vollmacht gilt nur für das Modell S-40. Ein anderes Gerät ist ein anderes Geschäft."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Eine Einzelvollmacht deckt nur das genau bestimmte Geschäft innerhalb der genannten Grenze. Bei Abweichungen wird zurückgestellt und eine neue Freigabe eingeholt.",
+      "quelle": "ik2024-lf01-k02, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf01-k02-03",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine 16-jährige Auszubildende der MAKEL Studio GmbH ist an einem Arbeitstag von 7:30 Uhr bis 15:30 Uhr im Betrieb. Sie macht die gesetzlich vorgeschriebene Mindestpause nach dem Jugendarbeitsschutzgesetz. Berechnen Sie ihre Arbeitszeit an diesem Tag in Stunden."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Arbeitszeit an diesem Tag",
+          "einheit": "Std",
+          "loesung": 7,
+          "toleranz": 0
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Anwesenheit 8 Stunden. Bei mehr als sechs Stunden Arbeitszeit beträgt die Mindestpause für Jugendliche 60 Minuten (§ 11 JArbSchG). 8 Stunden − 1 Stunde = 7 Stunden Arbeitszeit; die Höchstgrenze von 8 Stunden ist eingehalten.",
+      "quelle": "ik2024-lf01-k02, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf01-k02-04",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine neue Auszubildende der MAKEL Studio GmbH fragt Sie, was der Betrieb ihr nach dem Berufsbildungsgesetz schuldet."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Pflichten hat der Ausbildende? Kreuzen Sie alle zutreffenden an.",
+          "mehrfach": true,
+          "optionen": [
+            {
+              "text": "Ausbildungsmittel kostenlos zur Verfügung stellen",
+              "richtig": true,
+              "echo": "Richtig, das gehört zu den Pflichten des Ausbildenden."
+            },
+            {
+              "text": "Für den Berufsschulbesuch freistellen",
+              "richtig": true,
+              "echo": "Richtig, die Freistellung ist Pflicht."
+            },
+            {
+              "text": "Eine angemessene Vergütung zahlen",
+              "richtig": true,
+              "echo": "Richtig, die Vergütung muss angemessen sein."
+            },
+            {
+              "text": "Den Ausbildungsnachweis für die Auszubildende schreiben",
+              "richtig": false,
+              "echo": "Den Nachweis führt die Auszubildende selbst; der Betrieb ermöglicht es in der Ausbildungszeit und prüft ihn."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Der Ausbildende schuldet Ausbildung, kostenlose Ausbildungsmittel, Freistellung und angemessene Vergütung.",
+      "quelle": "ik2024-lf01-k02, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf01-k02-05",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli (17 Jahre), Auszubildender der MAKEL Studio GmbH, soll in der Woche vor dem Weihnachtsgeschäft an vier Tagen je 9,5 Stunden arbeiten, mit jeweils 30 Minuten Pause. Am fünften Tag hat er Berufsschule. Die Schichtleitung meint: „Das gleichen wir im Januar aus.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie die Planung und schlagen Sie eine zulässige Lösung vor.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Planung ist unzulässig. Für Jugendliche gelten nach dem Jugendarbeitsschutzgesetz höchstens 8 Stunden täglich und 40 Stunden wöchentlich; 9,5 Stunden überschreiten die tägliche Grenze. Bei mehr als sechs Stunden Arbeitszeit stehen ihm 60 Minuten Pause zu, nicht 30. Ein späterer Ausgleich im Januar heilt den Verstoß nicht. Zulässig wäre zum Beispiel: an den vier Betriebstagen höchstens 8 Stunden mit 60 Minuten Pause; Mehrbedarf im Weihnachtsgeschäft wird durch volljährige Beschäftigte oder Aushilfen gedeckt.",
+        "raster": [
+          {
+            "kriterium": "Tägliche Höchstarbeitszeit von 8 Stunden als verletzt erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Pausenregel (60 Minuten ab mehr als 6 Stunden) angewendet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Späterer Ausgleich als keine Lösung beurteilt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zulässige Alternative vorgeschlagen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Jugendarbeitsschutz kennt feste Höchstgrenzen; sie lassen sich nicht durch späteren Ausgleich umgehen.",
+      "quelle": "ik2024-lf01-k02, Abschnitt a3"
+    }
+  ]
+}

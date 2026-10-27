@@ -1,0 +1,95 @@
+{
+  "lernfeld": "ik2024-lf09",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf09-k01-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Marlene Voss sammelt Informationen über Eventagenturen als mögliche Zielgruppe der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Primär- oder Sekundärforschung?",
+          "ziele": ["Primärforschung", "Sekundärforschung"],
+          "elemente": [
+            { "text": "Telefoninterviews mit 20 Agenturen", "loesung": "Primärforschung" },
+            { "text": "Auswertung der Umsatzstatistik nach Kundengruppen", "loesung": "Sekundärforschung" },
+            { "text": "Lesen eines Marktberichts eines Branchenverbands", "loesung": "Sekundärforschung" },
+            { "text": "Beobachtung, welche Muster Besucher am Messestand anfassen", "loesung": "Primärforschung" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Primärforschung erhebt neue Daten für die eigene Frage; Sekundärforschung wertet vorhandene interne oder externe Daten aus.",
+      "quelle": "ik2024-lf09-k01, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf09-k01-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "angeschrieben": { "von": 40, "bis": 80, "schritt": 10 },
+        "rueck_anteil": { "von": 30, "bis": 60, "schritt": 10 },
+        "ja_anteil": { "von": 25, "bis": 75, "schritt": 25 }
+      },
+      "abgeleitet": {
+        "antworten": "angeschrieben * rueck_anteil / 100",
+        "ja": "angeschrieben * rueck_anteil / 100 * ja_anteil / 100"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH hat {angeschrieben} Eventagenturen per Online-Fragebogen angeschrieben. {antworten} haben geantwortet, davon wünschen sich {ja} eine Lieferzeit unter zwei Wochen." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Rücklaufquote", "einheit": "%", "loesung": "rueck_anteil", "toleranz": 0.01, "punkte": 1 },
+        { "block": "zahl", "label": "Anteil der Antwortenden mit Wunsch nach unter zwei Wochen", "einheit": "%", "loesung": "ja_anteil", "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Rücklaufquote = Antworten ÷ Angeschriebene × 100. Der Anteil bezieht sich auf die Antwortenden, nicht auf alle Agenturen.",
+      "quelle": "ik2024-lf09-k01, Abschnitt a4"
+    },
+
+    {
+      "id": "ik2024-lf09-k01-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Nach einer Instagram-Umfrage der MAKEL Studio GmbH (312 Teilnahmen, freiwillig, nur Follower) schreibt ein Praktikant in den Bericht: „78 % der Deutschen wollen nachhaltig produzierte Hoodies und zahlen dafür 20 € mehr. MAKEL sollte das gesamte Sortiment sofort umstellen.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die Aussage und schlagen Sie ein besseres Vorgehen vor.", "zeilen": 6 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Aussage überdehnt die Daten. Befragt wurden nur Follower von MAKEL, die freiwillig teilgenommen haben — eine kleine, verzerrte Auswahl, die bereits an der Marke interessiert ist. Das Ergebnis gilt für diese 312 Personen, nicht für ‚die Deutschen‘ und auch nicht für Geschäftskunden. Außerdem ist eine geäußerte Zahlungsbereitschaft in einer Umfrage kein tatsächliches Kaufverhalten. Besser: Sekundärdaten (Branchenberichte zu nachhaltiger Textilnachfrage) auswerten, Zielgruppe festlegen, gegebenenfalls einen Testverkauf einer nachhaltigen Linie mit Preisaufschlag durchführen und erst danach über eine Sortimentsumstellung entscheiden.",
+        "raster": [
+          { "kriterium": "Verzerrte Stichprobe (Follower, freiwillig) erkannt", "punkte": 1 },
+          { "kriterium": "Unzulässige Verallgemeinerung benannt", "punkte": 1 },
+          { "kriterium": "Unterschied geäußerte Zahlungsbereitschaft/tatsächliches Kaufen", "punkte": 1 },
+          { "kriterium": "Besseres Vorgehen (Sekundärdaten, Test) vorgeschlagen", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Umfrageergebnisse gelten zunächst für die Befragten; vor großen Entscheidungen werden Datenqualität und tatsächliches Verhalten geprüft.",
+      "quelle": "ik2024-lf09-k01, Abschnitt a4"
+    }
+  ]
+}

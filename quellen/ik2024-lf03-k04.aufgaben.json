@@ -1,0 +1,151 @@
+{
+  "lernfeld": "ik2024-lf03",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf03-k04-01",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein Auftrag über 120 bedruckte Hoodies ist bei der MAKEL Studio GmbH erfasst. Die Druckdatei liegt vor, aber der Kunde hat sie noch nicht freigegeben. Der Liefertermin ist der 15. Mai."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Angaben müssen vor der Produktionsfreigabe zwingend geklärt sein? Kreuzen Sie alle zutreffenden an.",
+          "mehrfach": true,
+          "optionen": [
+            {
+              "text": "Freigabe des Druckmotivs durch den Kunden",
+              "richtig": true,
+              "echo": "Richtig. Ohne Freigabe kann der Druck vom Vertrag abweichen."
+            },
+            {
+              "text": "Größenverteilung der Hoodies",
+              "richtig": true,
+              "echo": "Richtig. Ohne sie können keine Rohlinge bereitgestellt werden."
+            },
+            {
+              "text": "Verfügbare Druckkapazität bis zum Termin",
+              "richtig": true,
+              "echo": "Richtig. Sonst ist der Termin nicht zu halten."
+            },
+            {
+              "text": "Die Rechnungsnummer",
+              "richtig": false,
+              "echo": "Die Rechnung folgt nach der Lieferung."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Vor der Freigabe müssen Material, Kapazität und alle Pflichtangaben einschließlich der Druckfreigabe geklärt sein.",
+      "quelle": "ik2024-lf03-k04, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf03-k04-02",
+      "operator": "Formulieren Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die niederländische Kundin Ms de Vries hat bei der MAKEL Studio GmbH 200 bedruckte Shirts bestellt (Auftrag 2026-0412, Liefertermin 15. Mai 2026). Die Veredelung benötigt nach Freigabe drei Arbeitstage. Die Freigabe des Druckmusters fehlt; spätester Termin dafür ist der 8. Mai 2026."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Formulieren Sie eine kurze E-Mail auf Englisch, in der Sie um die Freigabe bitten.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Subject: Order 2026-0412 – print approval needed\n\nDear Ms de Vries,\n\nthank you for your order no. 2026-0412. To start printing, we still need your approval of the attached print proof. Could you please confirm it by 8 May 2026? Otherwise we cannot guarantee the delivery date of 15 May.\n\nKind regards\nMarlene Voß\nMAKEL Studio GmbH",
+        "raster": [
+          {
+            "kriterium": "Bezug auf Auftrag bzw. Bestellung",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Fehlende Freigabe klar benannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Frist 8 May genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folge für den Liefertermin sachlich erklärt",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Eine Rückfrage nennt Auftrag, fehlende Information, Frist und Folge. Es gibt mehrere richtige Formulierungen.",
+      "quelle": "ik2024-lf03-k04, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf03-k04-03",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 1,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Jonas Weidner aus dem Lager der MAKEL Studio GmbH packt einen Auftrag für eine Boutique und legt die Begleitpapiere bei."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Angabe gehört NICHT auf den Lieferschein?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Artikel und Menge",
+              "richtig": false,
+              "echo": "Doch, das ist der Kern des Lieferscheins."
+            },
+            {
+              "text": "Auftragsnummer und Lieferanschrift",
+              "richtig": false,
+              "echo": "Doch, sie ermöglichen die Zuordnung."
+            },
+            {
+              "text": "Einzelpreise und Rechnungsbetrag",
+              "richtig": true,
+              "echo": "Richtig. Lieferschein und Packliste begleiten die Ware ohne Preise; die Preise stehen auf der Rechnung."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Lieferschein und Packliste begleiten die Ware ohne Preise.",
+      "quelle": "ik2024-lf03-k04, Abschnitt a3"
+    }
+  ]
+}

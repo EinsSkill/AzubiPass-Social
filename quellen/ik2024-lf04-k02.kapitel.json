@@ -1,0 +1,252 @@
+{
+  "id": "k02",
+  "lernfeld": "ik2024-lf04",
+  "nummer": 2,
+  "titel": "Wann und wie viel bestellen?",
+  "untertitel": "Bestellpunkt oder fester Rhythmus, Meldebestand und Sicherheitsbestand — und warum die optimale Bestellmenge ein Kompromiss ist.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Regelmäßig verbrauchtes Material muss rechtzeitig nachbestellt werden.",
+          "Es gibt zwei Grundverfahren für den Bestellzeitpunkt."
+        ],
+        "erklaerung": "Beim Bestellpunktverfahren wird bestellt, sobald der Bestand einen festgelegten Meldebestand erreicht — der Zeitpunkt schwankt mit dem Verbrauch, die Bestellmenge ist meist fest. Beim Bestellrhythmusverfahren wird in festen Abständen bestellt (etwa jeden zweiten Montag); die Menge richtet sich danach, wie viel bis zum Höchstbestand fehlt. Das Bestellpunktverfahren passt zu schwankendem Verbrauch und laufender Bestandsführung im System, das Rhythmusverfahren zu gleichmäßigem Verbrauch und Lieferanten mit festen Liefertagen.",
+        "beispiele": [
+          "Rohlinge: Bei Unterschreiten von 300 Stück löst das System einen Bestellvorschlag aus — Bestellpunktverfahren.",
+          "Verpackungsmaterial: Bestellung jeden ersten Montag im Monat bis auf 2.000 Stück — Bestellrhythmusverfahren."
+        ],
+        "fallbeispiel": "Deniz Aydın bestellt Rohlinge bisher ‚wenn es knapp aussieht‘. Zweimal stand die Veredelung still. Er stellt auf das Bestellpunktverfahren um: Das Warenwirtschaftssystem meldet, sobald der Meldebestand erreicht ist. Verpackungen bestellt er dagegen im festen Rhythmus, weil der Lieferant ohnehin nur montags liefert.",
+        "typische_fehler": "Die beiden Verfahren werden über die Menge unterschieden. Der Kern ist der Auslöser: Bestandsgrenze oder fester Termin.",
+        "verstaendnisfragen": [
+          "Was löst beim Bestellpunktverfahren die Bestellung aus? Das Erreichen des Meldebestands.",
+          "Was bleibt beim Bestellrhythmusverfahren fest? Der Zeitabstand zwischen den Bestellungen."
+        ],
+        "pruefungsbezug": "Bei der Wahl des Verfahrens auf Verbrauchsverhalten und Lieferbedingungen eingehen.",
+        "merksatz": "Beim Bestellpunktverfahren löst der Meldebestand die Bestellung aus, beim Bestellrhythmusverfahren der feste Termin."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Zwischen Bestellung und Lieferung vergeht Zeit.",
+          "In dieser Zeit wird weiter verbraucht."
+        ],
+        "erklaerung": "Der Meldebestand muss den Verbrauch während der Lieferzeit decken und zusätzlich den Sicherheitsbestand übrig lassen: Meldebestand = Tagesverbrauch × Lieferzeit + Sicherheitsbestand. Der Sicherheitsbestand (auch Mindestbestand) puffert unerwartet hohen Verbrauch oder Lieferverzögerungen ab und wird normalerweise nicht angetastet. Der Höchstbestand begrenzt, wie viel höchstens im Lager liegen soll. Die Rechnung setzt gleichmäßigen Verbrauch und eine sichere Lieferzeit voraus; ändern sich diese, muss der Meldebestand angepasst werden.",
+        "beispiele": [
+          "Tagesverbrauch 40 Rohlinge, Lieferzeit 5 Arbeitstage, Sicherheitsbestand 100: Meldebestand 40 × 5 + 100 = 300.",
+          "Verlängert sich die Lieferzeit auf 7 Tage: 40 × 7 + 100 = 380 — es muss früher bestellt werden."
+        ],
+        "fallbeispiel": "Für schwarze Hoodie-Rohlinge gelten: Tagesverbrauch 40 Stück, Lieferzeit 5 Arbeitstage, Sicherheitsbestand 100 Stück. Meldebestand: 300 Stück. Am Montag zeigt das System 310 Stück, am Dienstag 270. Am Dienstag ist der Meldebestand unterschritten — die Bestellung hätte bei 300 ausgelöst werden müssen. Kommt die Ware nach 5 Tagen, sind dann noch etwa 270 − 5 × 40 = 70 Stück da; der Sicherheitsbestand wurde angegriffen, weil zu spät bestellt wurde.",
+        "typische_fehler": "Der Sicherheitsbestand wird zum berechneten Meldebestand nochmals addiert, obwohl er schon enthalten ist.",
+        "verstaendnisfragen": [
+          "Wozu dient der Sicherheitsbestand? Er puffert unerwartet hohen Verbrauch und Lieferverzögerungen ab.",
+          "Was passiert mit dem Meldebestand, wenn die Lieferzeit länger wird? Er steigt — es muss früher bestellt werden."
+        ],
+        "pruefungsbezug": "Formel hinschreiben, Annahmen nennen (gleichmäßiger Verbrauch, sichere Lieferzeit), Ergebnis mit Einheit.",
+        "merksatz": "Meldebestand = Tagesverbrauch × Lieferzeit + Sicherheitsbestand; der Sicherheitsbestand ist darin schon enthalten."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Große Bestellmengen bedeuten wenige Bestellungen, aber hohe Lagerbestände.",
+          "Kleine Bestellmengen bedeuten viele Bestellungen, aber niedrige Lagerbestände."
+        ],
+        "erklaerung": "Jede Bestellung verursacht fixe Kosten, die nicht von der Menge abhängen: Angebote einholen, Bestellung schreiben, Wareneingang prüfen, Rechnung bearbeiten. Lagerhaltung verursacht Kosten, die mit dem durchschnittlichen Bestand steigen: Zinsen auf gebundenes Kapital, Raum, Versicherung, Schwund. Bestellt MAKEL selten in großen Mengen, sind die Bestellkosten niedrig und die Lagerkosten hoch — und umgekehrt. Dazwischen liegt eine Menge, bei der die Summe am niedrigsten ist.",
+        "beispiele": [
+          "Jahresbedarf 10.000 Stück in 2 Bestellungen à 5.000: wenige Bestellkosten, durchschnittlich 2.500 Stück im Lager.",
+          "Dieselben 10.000 Stück in 50 Bestellungen à 200: durchschnittlich 100 Stück im Lager, aber 50-mal Bestellkosten."
+        ],
+        "fallbeispiel": "Deniz rechnet für schwarze Rohlinge mit Bestellkosten von 50 € je Bestellung und Lagerkosten von 2 € je Stück und Jahr (bezogen auf den durchschnittlichen Bestand). Bei 2 Bestellungen à 5.000: Bestellkosten 100 €, Lagerkosten 2.500 × 2 = 5.000 €, zusammen 5.100 €. Bei 14 Bestellungen à rund 714: Bestellkosten 700 €, Lagerkosten 357 × 2 = 714 €, zusammen rund 1.414 €. Die kleineren Mengen sind hier deutlich günstiger.",
+        "typische_fehler": "Lagerkosten je Stück und Lagerhaltungskostensatz in Prozent werden verwechselt. Der Satz in Prozent bezieht sich auf den Wert des Lagerbestands, nicht auf die Stückzahl.",
+        "verstaendnisfragen": [
+          "Welche Kosten sinken mit größerer Bestellmenge? Die Bestellkosten pro Jahr, weil seltener bestellt wird.",
+          "Welche Kosten steigen mit größerer Bestellmenge? Die Lagerkosten, weil der durchschnittliche Bestand steigt."
+        ],
+        "pruefungsbezug": "Den Zielkonflikt zwischen Bestell- und Lagerkosten mit Begriffen und Richtung (steigt, sinkt) beschreiben.",
+        "merksatz": "Große Mengen sparen Bestellkosten und erhöhen Lagerkosten, kleine Mengen umgekehrt — die optimale Menge minimiert die Summe."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Für die optimale Bestellmenge gibt es eine vereinfachte Formel.",
+          "Jedes Modell beruht auf Annahmen."
+        ],
+        "erklaerung": "Im vereinfachten Modell (Andler-Formel) gilt: optimale Bestellmenge q* = √(2 × Jahresbedarf × Bestellkosten je Bestellung ÷ jährliche Lagerkosten je Stück). Das Modell setzt voraus: gleichmäßiger Verbrauch, konstante Preise ohne Mengenrabatt, feste Bestellkosten, sofortige Lieferung, unbegrenzter Lagerplatz. In der Praxis rundet man auf sinnvolle Gebindegrößen und prüft Mengenrabatte, Lagerplatz, Mindestabnahmen und Saisonschwankungen. Die Formel liefert einen Richtwert, keine Vorschrift.",
+        "beispiele": [
+          "Jahresbedarf 10.000, Bestellkosten 50 €, Lagerkosten 2 € je Stück: q* = √(2 × 10.000 × 50 ÷ 2) = √500.000 ≈ 707 Stück.",
+          "Liefert der Lieferant nur in Kartons zu 50 Stück, wird auf 700 gerundet."
+        ],
+        "fallbeispiel": "Deniz erhält q* ≈ 707 Rohlinge. Der Lieferant liefert in Kartons zu 50 Stück und gewährt ab 1.000 Stück 3 % Rabatt. Deniz rechnet beide Varianten durch: 700 Stück ohne Rabatt und 1.000 Stück mit Rabatt, jeweils Bestell-, Lager- und Materialkosten. Erst diese Gesamtbetrachtung entscheidet — die Formel allein berücksichtigt den Rabatt nicht.",
+        "typische_fehler": "Das Ergebnis der Formel wird als feste betriebliche Bestellvorgabe übernommen, ohne Modellannahmen zu prüfen.",
+        "verstaendnisfragen": [
+          "Welche Annahmen stecken in der Andler-Formel? Gleichmäßiger Verbrauch, feste Preise ohne Rabatt, feste Bestellkosten, sofortige Lieferung, unbegrenztes Lager.",
+          "Warum wird das Ergebnis oft gerundet? Weil Lieferanten in Gebinden liefern und Bruchteile von Stücken keinen Sinn ergeben."
+        ],
+        "pruefungsbezug": "Formel, Einsetzen, Ergebnis mit Einheit und mindestens eine Modellannahme oder Grenze nennen.",
+        "merksatz": "q* = √(2 × Jahresbedarf × Bestellkosten ÷ Lagerkosten je Stück) ist ein Richtwert unter vereinfachten Annahmen — Rabatte, Gebinde und Lagerplatz prüft man zusätzlich."
+      }
+    ]
+  },
+
+  "lernziele": [
+    { "id": "lz1", "text": "Bestellpunkt- und Bestellrhythmusverfahren erklären", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Einen Meldebestand mit klaren Annahmen ermitteln", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Bestell- und Lagerkosten bei der Wahl einer Menge berücksichtigen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Die optimale Bestellmenge berechnen und ihre Grenzen nennen", "abschnitt": "a4" }
+  ],
+
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Bestellpunkt oder fester Rhythmus",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Zwei Verfahren bestimmen den Bestellzeitpunkt: Der {{begriff:meldebestand|Meldebestand}} löst aus — oder ein fester Termin."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["", "Bestellpunktverfahren", "Bestellrhythmusverfahren"],
+          "zeilen": [
+            { "zellen": ["Auslöser", "Bestand erreicht den Meldebestand", "Fester Termin"] },
+            { "zellen": ["Bestellmenge", "meist fest", "Auffüllen bis zum Höchstbestand"] },
+            { "zellen": ["Passt bei", "schwankendem Verbrauch, laufender Bestandsführung", "gleichmäßigem Verbrauch, festen Liefertagen"] },
+            { "zellen": ["MAKEL-Beispiel", "Hoodie-Rohlinge", "Versandkartons"] }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Beim **Bestellpunktverfahren** löst der Meldebestand die Bestellung aus, beim **Bestellrhythmusverfahren** der feste Termin.",
+          "karteikarte": "Was löst beim Bestellpunktverfahren und was beim Bestellrhythmusverfahren die Bestellung aus?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Verbrauch, Lieferzeit und Sicherheitsbestand",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Der Meldebestand deckt den Verbrauch während der Lieferzeit und lässt den {{begriff:mindestbestand|Sicherheitsbestand}} übrig. Der {{begriff:hoechstbestand|Höchstbestand}} begrenzt das Lager nach oben."
+        },
+        {
+          "typ": "grafik",
+          "variante": "lagerkurve",
+          "kopf": "Der Sägezahn",
+          "titel": "Wann müssen Rohlinge bestellt werden?",
+          "lead": "Vier Zahlen, ein Bild. Schieb die Werte und sieh, wie die Meldelinie wandert.",
+          "eingaben": {
+            "verbrauch": { "label": "Tagesverbrauch in Stück", "start": 40, "min": 5, "max": 200, "schritt": 5 },
+            "lieferzeit": { "label": "Lieferzeit in Arbeitstagen", "start": 5, "min": 1, "max": 20, "schritt": 1 },
+            "mindest": { "label": "Sicherheitsbestand in Stück", "start": 100, "min": 0, "max": 800, "schritt": 20 },
+            "menge": { "label": "Bestellmenge in Stück", "start": 700, "min": 100, "max": 3000, "schritt": 50 }
+          },
+          "regel": "Meldebestand = Tagesverbrauch × Lieferzeit + Sicherheitsbestand. Mit den Startwerten: 40 × 5 + 100 = 300 Stück."
+        },
+        {
+          "typ": "merke",
+          "text": "**Meldebestand = Tagesverbrauch × Lieferzeit + Sicherheitsbestand**; der Sicherheitsbestand ist darin schon enthalten.",
+          "karteikarte": "Wie berechnet man den Meldebestand, und wozu dient der Sicherheitsbestand?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Bestellkosten gegen Lagerkosten",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Große Mengen sparen Bestellkosten und erhöhen Lagerkosten. ==Die optimale Menge minimiert die Summe aus beiden.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Bestellungen pro Jahr", "Menge je Bestellung", "Bestellkosten", "Lagerkosten", "Summe"],
+          "zeilen": [
+            { "zellen": ["2", "5.000", "100 €", "5.000 €", "5.100 €"], "mono": [1, 2, 3, 4] },
+            { "zellen": ["10", "1.000", "500 €", "1.000 €", "1.500 €"], "mono": [1, 2, 3, 4] },
+            { "zellen": ["14", "≈ 714", "700 €", "≈ 714 €", "≈ 1.414 €"], "mono": [1, 2, 3, 4] },
+            { "zellen": ["50", "200", "2.500 €", "200 €", "2.700 €"], "mono": [1, 2, 3, 4],
+              "detail": "Annahmen: Jahresbedarf 10.000 Stück, Bestellkosten 50 € je Bestellung, Lagerkosten 2 € je Stück und Jahr auf den durchschnittlichen Bestand (halbe Bestellmenge)." }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Große Mengen sparen Bestellkosten und erhöhen Lagerkosten, kleine Mengen umgekehrt — die **optimale Bestellmenge** minimiert die Summe.",
+          "karteikarte": "Welcher Zielkonflikt steckt hinter der optimalen Bestellmenge?"
+        }
+      ]
+    },
+
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Optimale Menge und Grenzen des Modells",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:optimale-bestellmenge|optimale Bestellmenge}} lässt sich im vereinfachten Modell mit der Andler-Formel berechnen."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": ["Schritt", "Rohlinge bei MAKEL"],
+          "zeilen": [
+            { "zellen": ["Formel", "q* = √(2 × Jahresbedarf × Bestellkosten ÷ Lagerkosten je Stück)"], "mono": [1] },
+            { "zellen": ["Einsetzen", "√(2 × 10.000 × 50 ÷ 2) = √500.000"], "mono": [1] },
+            { "zellen": ["Ergebnis", "≈ 707 Stück"], "mono": [1] },
+            { "zellen": ["Praxis", "Kartons zu 50 → 700 Stück; Mengenrabatt ab 1.000 gesondert prüfen"] }
+          ]
+        },
+        {
+          "typ": "check",
+          "frage": "Der Lieferant gewährt ab 1.000 Stück 3 % Rabatt; die Andler-Formel ergibt 707 Stück. Was ist richtig?",
+          "optionen": [
+            { "text": "707 Stück bestellen — die Formel ist optimal.", "richtig": false, "echo": "Die Formel nimmt konstante Preise an. Einen Mengenrabatt berücksichtigt sie nicht." },
+            { "text": "Beide Varianten mit Bestell-, Lager- und Materialkosten durchrechnen und vergleichen.", "richtig": true, "echo": "Richtig. Der Rabatt kann die höheren Lagerkosten ausgleichen — oder auch nicht. Nur der Gesamtvergleich zeigt es." },
+            { "text": "Immer 1.000 Stück bestellen, weil Rabatt immer günstiger ist.", "richtig": false, "echo": "Höhere Lagerkosten und Kapitalbindung können den Rabatt aufzehren." }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "q* = √(2 × Jahresbedarf × Bestellkosten ÷ Lagerkosten je Stück) ist ein **Richtwert unter vereinfachten Annahmen** — Rabatte, Gebinde und Lagerplatz prüft man zusätzlich.",
+          "karteikarte": "Wie lautet die vereinfachte Formel für die optimale Bestellmenge, und welche Grenzen hat sie?"
+        }
+      ]
+    }
+  ],
+
+  "zusammenfassung": [
+    "Bestellpunktverfahren: Meldebestand löst aus; Bestellrhythmusverfahren: fester Termin.",
+    "Meldebestand = Tagesverbrauch × Lieferzeit + Sicherheitsbestand.",
+    "Längere Lieferzeit oder höherer Verbrauch → höherer Meldebestand.",
+    "Bestellkosten sinken, Lagerkosten steigen mit der Bestellmenge.",
+    "q* = √(2 × Jahresbedarf × Bestellkosten ÷ Lagerkosten je Stück).",
+    "Das Modell nimmt gleichmäßigen Verbrauch, feste Preise und unbegrenztes Lager an; Rabatte und Gebinde gesondert prüfen."
+  ],
+
+  "selbsttest": [
+    {
+      "typ": "Rechnung",
+      "frage": "Tagesverbrauch 40 Stück, Lieferzeit fünf Arbeitstage, Sicherheitsbestand 100 Stück; gleichmäßiger Verbrauch und sichere Lieferzeit. Berechne den Meldebestand.",
+      "loesung": "40 × 5 + 100 = 300 Stück. Der Sicherheitsbestand ist darin bereits enthalten."
+    },
+    {
+      "typ": "Rechnung",
+      "frage": "Jahresbedarf 10.000 Stück, Kosten je Bestellung 50 €, jährliche Lagerkosten 2 € je Stück. Berechne die optimale Bestellmenge und nenne eine Modellannahme.",
+      "loesung": "q* = √(2 × 10.000 × 50 ÷ 2) = √500.000 ≈ 707 Stück. Annahmen sind zum Beispiel gleichmäßiger Verbrauch, konstante Preise ohne Mengenrabatt und unbegrenzter Lagerplatz. Das Ergebnis ist ein Richtwert, keine Vorschrift."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Der Lieferant verlängert die Lieferzeit von 5 auf 8 Arbeitstage. Was bedeutet das für den Meldebestand der Rohlinge (Tagesverbrauch 40, Sicherheitsbestand 100)?",
+      "loesung": "Neuer Meldebestand: 40 × 8 + 100 = 420 Stück statt 300. Es muss früher bestellt werden, sonst wird der Sicherheitsbestand angegriffen."
+    }
+  ],
+
+  "pruefungstipp": "Meldebestand und Andler-Formel sind sichere Rechenpunkte — Formel aufschreiben, Werte einsetzen, Einheit angeben. Für die volle Punktzahl bei der Andler-Formel eine Annahme oder Grenze des Modells nennen."
+}

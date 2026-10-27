@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf12",
+  "kapitel": "k07",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf12-k07-01",
+      "operator": "Wählen Sie aus",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Bei der MAKEL Studio GmbH gehen verschiedene Erklärungen zur Beendigung von Arbeitsverhältnissen ein." }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Erklärungen erfüllen die gesetzliche Form einer Kündigung? (Mehrere Antworten möglich)",
+          "mehrfach": true,
+          "optionen": [
+            { "text": "Unterschriebener Brief, persönlich im Personalbüro übergeben", "richtig": true, "echo": "Schriftform mit eigenhändiger Unterschrift ist erfüllt." },
+            { "text": "WhatsApp-Nachricht an den Teamleiter", "richtig": false, "echo": "Messenger-Nachrichten erfüllen die Schriftform nicht." },
+            { "text": "E-Mail mit eingescannter Unterschrift", "richtig": false, "echo": "Die elektronische Form ist für Kündigungen ausgeschlossen." },
+            { "text": "Unterschriebenes Schreiben, per Bote zugestellt", "richtig": true, "echo": "Schriftform erfüllt; der Bote kann den Zugang bezeugen." }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 3 },
+      "erklaerung": "Nach § 623 BGB bedarf die Kündigung der Schriftform mit eigenhändiger Unterschrift; die elektronische Form ist ausgeschlossen.",
+      "quelle": "ik2024-lf12-k07, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf12-k07-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "urlaub": { "von": 24, "bis": 30, "schritt": 6 },
+        "monate": { "von": 2, "bis": 6, "schritt": 2 },
+        "genommen": { "von": 0, "bis": 3, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "anteil": "urlaub / 12 * monate",
+        "rest": "anteil - genommen"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Eine Schneiderin der MAKEL Studio GmbH scheidet in der ersten Jahreshälfte nach {monate} vollen Beschäftigungsmonaten im Kalenderjahr aus. Ihr Jahresurlaub beträgt {urlaub} Tage; vertraglich ist vereinbart, dass er beim Ausscheiden in der ersten Jahreshälfte für jeden vollen Monat zu einem Zwölftel entsteht. Sie hat in diesem Jahr bereits {genommen} Tage genommen." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Anteiliger Urlaubsanspruch", "einheit": "Tage", "loesung": "anteil", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Resturlaub", "einheit": "Tage", "loesung": "rest", "toleranz": 0.01, "punkte": 2, "folgefehler_aus": ["anteil"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Anteil = Jahresurlaub ÷ 12 × volle Monate. Resturlaub = Anteil − bereits genommene Tage.",
+      "quelle": "ik2024-lf12-k07, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf12-k07-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 8,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Ein Lagerkollege der MAKEL Studio GmbH (seit drei Jahren beschäftigt) kam in sechs Wochen viermal unentschuldigt über eine Stunde zu spät; eine Abmahnung gibt es nicht. Tobias Renner will ihm „morgen per E-Mail zum Monatsende kündigen — drei Abmahnungen braucht man eh nur bei Azubis“. Im Betrieb gibt es einen Betriebsrat." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie Tobias' Vorhaben anhand der Prüfschritte einer Kündigung und schlagen Sie ein rechtssicheres Vorgehen vor.", "zeilen": 9 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Form: Eine Kündigung per E-Mail ist unwirksam (§ 623 BGB). KSchG: MAKEL hat deutlich mehr als zehn Beschäftigte, der Kollege ist länger als sechs Monate beschäftigt — die Kündigung muss sozial gerechtfertigt sein. Grund: verhaltensbedingt; ohne vorherige einschlägige Abmahnung ist eine Kündigung wegen Unpünktlichkeit in der Regel nicht gerechtfertigt. Die Aussage zu „drei Abmahnungen“ ist falsch — es gibt keine feste Zahl, entscheidend ist der Einzelfall. Betriebsrat: muss vor jeder Kündigung angehört werden. Frist: Nach drei Jahren gilt für Arbeitgeberkündigungen eine verlängerte gesetzliche Frist; „zum Monatsende morgen“ ist zu kurz, Tarif und Vertrag prüfen. Vorgehen: Gespräch, Verstöße dokumentieren, schriftliche Abmahnung; bei erneutem Verstoß Kündigung prüfen, Betriebsrat anhören, schriftlich mit Unterschrift und nachweisbarem Zugang, richtige Frist.",
+        "raster": [
+          { "kriterium": "Formfehler (E-Mail) erkannt", "punkte": 1 },
+          { "kriterium": "KSchG-Anwendbarkeit und fehlende Abmahnung beurteilt", "punkte": 1 },
+          { "kriterium": "Irrtum „drei Abmahnungen“ richtiggestellt", "punkte": 1 },
+          { "kriterium": "Betriebsratsanhörung und Frist berücksichtigt", "punkte": 1 },
+          { "kriterium": "Rechtssicheres Vorgehen beschrieben", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Eine Kündigung ist nur wirksam, wenn Form, Grund, Verfahren und Frist stimmen — jeder Schritt wird geprüft.",
+      "quelle": "ik2024-lf12-k07, Abschnitte a1 bis a3"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "lernfeld": "ik2024-lf01",
+  "kapitel": "k07",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf01-k07-01",
+      "operator": "Beschreiben Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski gibt Ihnen den Entwurf einer Präsentation für neue Auszubildende der MAKEL Studio GmbH zur Durchsicht."
+        },
+        {
+          "block": "anlage",
+          "titel": "Anlage 1: Inhalt des Entwurfs",
+          "zugeklappt": false,
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Folie",
+              "Inhalt"
+            ],
+            "zeilen": [
+              [
+                "2",
+                "Aufgaben der Abteilungen Einkauf und Produktion, Vertrieb, Lager und Versand, Verwaltung"
+              ],
+              [
+                "3",
+                "Private Handynummern aller Ansprechpersonen"
+              ],
+              [
+                "4",
+                "Foto eines Hoodies aus einer Internet-Bildersuche, Nutzungsrechte ungeklärt"
+              ]
+            ]
+          }
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beschreiben Sie für jede Folie, wie Sie mit dem Inhalt verfahren, und begründen Sie kurz.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Folie 2 bleibt: Die Abteilungsaufgaben sind für neue Auszubildende sachlich erforderlich. Folie 3 wird geändert: Private Handynummern sind personenbezogene Daten, die für den Zweck nicht erforderlich sind; stattdessen dienstliche Durchwahlen oder Funktionspostfächer angeben. Folie 4 wird geändert: Ohne geklärte Nutzungsrechte darf das Foto nicht verwendet werden; Rechte klären oder ein eigenes beziehungsweise lizenziertes Bild einsetzen.",
+        "raster": [
+          {
+            "kriterium": "Folie 2 begründet beibehalten",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folie 3: private Nummern entfernt und durch dienstliche Kontakte ersetzt, mit Begründung",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folie 4: Rechte klären oder Ersatzmaterial, mit Begründung",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Datensparsamkeit: nur erforderliche personenbezogene Daten. Urheberrecht: fremde Bilder nur mit Nutzungsrecht.",
+      "quelle": "ik2024-lf01-k07, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf01-k07-02",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein Zulieferbetrieb der MAKEL Studio GmbH hat einen Betriebsrat und beschäftigt 140 Personen, darunter zwei Jugendliche unter 18 Jahren sowie vier Auszubildende im Alter von 19 bis 23 Jahren."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Kann in diesem Betrieb eine Jugend- und Auszubildendenvertretung gewählt werden?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Ja, denn es gibt einen Betriebsrat und insgesamt sechs Beschäftigte unter 18 Jahren oder Auszubildende (gleich welchen Alters).",
+              "richtig": true,
+              "echo": "Richtig. Zwei Jugendliche und vier Auszubildende ergeben sechs; die Mindestzahl von fünf ist erreicht, ein Betriebsrat besteht."
+            },
+            {
+              "text": "Nein, denn nur zwei Beschäftigte sind jünger als 18 Jahre.",
+              "richtig": false,
+              "echo": "Auszubildende zählen mit — seit 2021 unabhängig vom Alter. Zusammen sind es sechs."
+            },
+            {
+              "text": "Nein, denn eine JAV setzt mindestens 200 Beschäftigte voraus.",
+              "richtig": false,
+              "echo": "Eine solche Schwelle gibt es nicht. Entscheidend sind Betriebsrat und die Zahl junger Beschäftigter beziehungsweise Auszubildender."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "§ 60 BetrVG: Betriebsrat vorhanden und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze).",
+      "quelle": "ik2024-lf01-k07, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf01-k07-03",
+      "operator": "Planen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Am ersten Tag der neuen Auszubildenden der MAKEL Studio GmbH sollen Sie den Betrieb in drei Minuten vorstellen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Planen Sie die Vorstellung: Nennen Sie die Zielgruppe, drei Kerninformationen mit grober Zeitaufteilung und einen begründeten Verbesserungsvorschlag zu Ihrem eigenen Arbeitsplatz.",
+          "zeilen": 8
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Zielgruppe: neue Auszubildende ohne Vorkenntnisse über MAKEL. Kerninformationen: (1) Was MAKEL anbietet, was im Haus entsteht (Muster, Veredelung) und was extern (Serie) — etwa eine Minute. (2) Welche Abteilungen durchlaufen werden und wer dienstlich ansprechbar ist — etwa eine Minute. (3) Wie Berufsschule, Ausbildungsnachweis und Prüfung zusammenhängen — etwa eine Minute. Verbesserungsvorschlag: externer Bildschirm und verstellbarer Stuhl für den Azubi-Arbeitsplatz im Vertrieb, weil reine Laptoparbeit zu Fehlhaltungen führt und die Maßnahme günstig ist.",
+        "raster": [
+          {
+            "kriterium": "Zielgruppe genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Drei passende Kerninformationen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zeitrahmen von drei Minuten erkennbar eingehalten",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Verbesserungsvorschlag mit Begründung",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Eine gute Vorstellung hat Zielgruppe, roten Faden und Zeitrahmen — keine bloße Aufzählung von Folientiteln.",
+      "quelle": "ik2024-lf01-k07, Abschnitte a1 und a4"
+    },
+    {
+      "id": "ik2024-lf01-k07-04",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei einer Besprechung in der MAKEL Studio GmbH zur Jugend- und Auszubildendenvertretung (JAV) fragt Luca nach den Voraussetzungen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Aussagen zur JAV treffen zu? Kreuzen Sie alle zutreffenden an.",
+          "mehrfach": true,
+          "optionen": [
+            {
+              "text": "Eine JAV setzt einen Betriebsrat voraus",
+              "richtig": true,
+              "echo": "Richtig, die JAV wirkt über den Betriebsrat."
+            },
+            {
+              "text": "In der Regel braucht es mindestens fünf Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze)",
+              "richtig": true,
+              "echo": "Richtig, das ist die Mindestgröße nach § 60 BetrVG."
+            },
+            {
+              "text": "Die JAV verhandelt Tarifverträge mit dem Arbeitgeber",
+              "richtig": false,
+              "echo": "Tarifverträge schließen Gewerkschaften und Arbeitgeberverbände bzw. Arbeitgeber."
+            },
+            {
+              "text": "Die JAV kann Anliegen der Auszubildenden über den Betriebsrat einbringen",
+              "richtig": true,
+              "echo": "Richtig, das ist ihr Weg zur Mitbestimmung."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Die JAV braucht einen Betriebsrat und eine Mindestzahl Jugendlicher oder Auszubildender (Auszubildende ohne Altersgrenze); sie wirkt über den Betriebsrat.",
+      "quelle": "ik2024-lf01-k07, Abschnitt a2"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "k01",
+  "lernfeld": "ik2024-lf06",
+  "nummer": 1,
+  "titel": "Vom Kundenauftrag zum Produktionsprogramm",
+  "untertitel": "Was produziert wird, in welcher Menge und wann — und wie ein einzelner Auftrag auf seine Machbarkeit geprüft wird.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Kunden fragen Produkte mit bestimmten Eigenschaften, Mengen und Terminen an.",
+          "Aus LF 3 kennst du Anfrage, Angebot und Auftragsbestätigung."
+        ],
+        "erklaerung": "Bevor produziert wird, muss klar sein, was genau der Kunde braucht. Die Spezifikation beschreibt das Produkt so, dass Produktion und Einkauf damit arbeiten können: Artikel und Material, Farben, Größenverteilung, Motiv beziehungsweise Druck- oder Stickdatei mit Freigabestand, Veredelungsverfahren und Position, Verpackung und Kennzeichnung, Menge, Liefertermin und Lieferort. Unklare oder fehlende Angaben werden vor der Auftragsbestätigung geklärt, nicht erst an der Maschine. Man unterscheidet Kundenauftragsfertigung (es wird erst nach Auftrag produziert) und Lagerfertigung (es wird auf Vorrat für den anonymen Markt produziert).",
+        "beispiele": [
+          "Ein Firmenkunde bestellt 400 bestickte Hoodies mit Logo: Kundenauftragsfertigung.",
+          "MAKEL produziert die Basis-Kollektion in Standardgrößen auf Vorrat: Lagerfertigung."
+        ],
+        "fallbeispiel": "Ein Eventveranstalter schreibt Marlene Voss: ‚Wir brauchen 400 Hoodies mit unserem Logo bis zum 15. November.‘ Marlene prüft die Anfrage und stellt fest: Farbe, Größenverteilung, Logoposition, Stick oder Druck und die freigegebene Logodatei fehlen. Sie fragt diese Angaben nach, bevor sie die Produktion um eine Einschätzung bittet.",
+        "typische_fehler": "Einen Auftragseingang schon als gesicherte Lieferfähigkeit verstehen.",
+        "verstaendnisfragen": [
+          "Nenne drei Angaben, die eine Veredelungsspezifikation enthalten muss. Zum Beispiel Artikel und Farbe, Größenverteilung, freigegebene Motivdatei.",
+          "Was unterscheidet Kundenauftrags- von Lagerfertigung? Ob erst nach einem konkreten Auftrag oder auf Vorrat produziert wird."
+        ],
+        "pruefungsbezug": "Aus einer Anfrage fehlende Auftragsangaben herausarbeiten und die Nachfrage begründen.",
+        "merksatz": "Erst die vollständige Spezifikation, dann die Planung; Kundenauftragsfertigung startet mit dem Auftrag, Lagerfertigung produziert auf Vorrat."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Ein Industriebetrieb stellt meist mehrere Produkte her.",
+          "Kapazitäten und Material sind begrenzt."
+        ],
+        "erklaerung": "Das Produktionsprogramm legt fest, welche Erzeugnisse in welcher Menge in welchem Zeitraum hergestellt werden. Die Programmbreite beschreibt die Zahl der verschiedenen Produktlinien (zum Beispiel Hoodies, T-Shirts, Taschen), die Programmtiefe die Zahl der Varianten innerhalb einer Linie (Farben, Schnitte, Größen, Veredelungsarten). Die Programmplanung arbeitet auf drei Ebenen: langfristig (welche Produktfelder überhaupt), mittelfristig (welche Produkte mit welchen Kapazitäten) und kurzfristig (welche Mengen in den nächsten Wochen). Ein breites und tiefes Programm erfüllt viele Kundenwünsche, erhöht aber Rüstaufwand, Lagerbestände und Planungskomplexität.",
+        "beispiele": [
+          "MAKEL bietet Hoodies, T-Shirts und Taschen an: Programmbreite drei Produktlinien.",
+          "Hoodies gibt es in 6 Farben und 6 Größen: Programmtiefe 36 Varianten nur in der Grundausführung."
+        ],
+        "fallbeispiel": "Yuki Bergmann möchte die Hoodie-Linie um vier neue Farben erweitern. Deniz Aydın rechnet vor: Bei sechs Größen sind das 24 zusätzliche Rohlingsvarianten, die beschafft, gelagert und verwaltet werden müssen. Die Geschäftsführung entscheidet, zunächst zwei Farben in einer Testauflage aufzunehmen.",
+        "typische_fehler": "Programmbreite und Programmtiefe verwechseln.",
+        "verstaendnisfragen": [
+          "Was beschreibt die Programmtiefe? Die Zahl der Varianten innerhalb einer Produktlinie.",
+          "Welche Folge hat eine größere Programmtiefe in der Produktion? Mehr Rüstvorgänge, mehr Lagerbestände, aufwendigere Planung."
+        ],
+        "pruefungsbezug": "Programmbreite und -tiefe am Fall bestimmen und Vor- und Nachteile einer Erweiterung abwägen.",
+        "merksatz": "Das Produktionsprogramm legt Art, Menge und Zeit fest; Breite = Produktlinien, Tiefe = Varianten je Linie."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Jede Maschine hat nur begrenzt Zeit zur Verfügung.",
+          "Vor jedem Auftrag muss die Maschine eingerichtet werden."
+        ],
+        "erklaerung": "Ob ein Auftrag machbar ist, hängt von Material, Kapazität und Termin ab. Für die Kapazität rechnet man den Zeitbedarf: Rüstzeit (Einrichten der Maschine für diesen Auftrag, fällt einmal je Los an) plus Menge × Stückzeit (Ausführungszeit je Stück). Dieser Bedarf wird mit der verfügbaren Kapazität im Zeitraum verglichen, wobei bereits eingeplante Aufträge abgezogen werden. Zusätzlich prüft der Einkauf, ob Rohlinge und Garn rechtzeitig verfügbar sind.",
+        "beispiele": [
+          "400 Stück × 3 Minuten + 60 Minuten Rüstzeit = 1.260 Minuten = 21 Stunden.",
+          "Werden die 400 Stück in zwei Losen gefertigt, fällt die Rüstzeit zweimal an: 1.320 Minuten."
+        ],
+        "fallbeispiel": "Deniz rechnet für die 400 Hoodies: Die Stickmaschine braucht 3 Minuten je Stück, das Einrichten für das Logo dauert 60 Minuten. Zeitbedarf 400 × 3 + 60 = 1.260 Minuten, also 21 Maschinenstunden. In den nächsten zwei Wochen sind noch 30 Stunden frei. Der Einkauf bestätigt, dass 400 schwarze Rohlinge am Lager sind.",
+        "typische_fehler": "Die Rüstzeit pro Stück rechnen oder ganz vergessen.",
+        "verstaendnisfragen": [
+          "Wie oft fällt die Rüstzeit an? Einmal je Los beziehungsweise Umrüstung.",
+          "Wovon hängt die Machbarkeit eines Auftrags ab? Von Material, freier Kapazität und Termin."
+        ],
+        "pruefungsbezug": "Zeitbedarf aus Rüst- und Stückzeit berechnen und mit verfügbarer Kapazität vergleichen.",
+        "merksatz": "Zeitbedarf = Rüstzeit + Menge × Stückzeit; mit freier Kapazität und Materialverfügbarkeit vergleichen."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Mehrere Aufträge konkurrieren um dieselbe Maschine.",
+          "Eine Lieferzusage ist für den Kunden verbindlich."
+        ],
+        "erklaerung": "Konkurrieren Aufträge um Kapazität, legt die Produktionsplanung Prioritäten fest, etwa nach Liefertermin, Kundenbedeutung, Deckungsbeitrag oder Vertragsstrafen. Vertrieb, Produktion und Einkauf stimmen sich ab, bevor ein Termin zugesagt wird. Eine Lieferzusage wird erst gegeben, wenn Spezifikation, Material und Kapazität geprüft sind; Puffer für Prüfung, Verpackung und Versand gehören dazu. Ändert sich etwas, wird der Kunde früh informiert.",
+        "beispiele": [
+          "Zwei Aufträge brauchen gleichzeitig die Stickmaschine; der mit Vertragsstrafe bei Verspätung bekommt Vorrang.",
+          "Der Liefertermin wird mit zwei Tagen Puffer für Endkontrolle und Versand zugesagt."
+        ],
+        "fallbeispiel": "Marlene möchte dem Eventveranstalter den 15. November zusagen. Die Produktion plant den Auftrag für den 3. bis 6. November ein, die Endkontrolle für den 7. November, der Versand am 10. November. Marlene bestätigt den Termin schriftlich, nachdem der Kunde die Logodatei freigegeben hat.",
+        "typische_fehler": "Einen Termin zusagen, bevor Produktion und Einkauf ihn bestätigt haben.",
+        "verstaendnisfragen": [
+          "Nach welchen Kriterien kann man Aufträge priorisieren? Liefertermin, Kundenbedeutung, Deckungsbeitrag, Vertragsstrafen.",
+          "Was gehört vor eine Lieferzusage? Die Prüfung von Spezifikation, Material und Kapazität."
+        ],
+        "pruefungsbezug": "Eine Terminzusage begründen oder ablehnen und die beteiligten Abteilungen nennen.",
+        "merksatz": "Erst prüfen und abstimmen, dann zusagen; Prioritäten nach Termin, Bedeutung und Wirtschaftlichkeit begründen."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Auftragsanforderungen herausarbeiten", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Produktionsprogramm und einzelne Fertigungsaufträge unterscheiden", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Bedarf und verfügbare Kapazität in Beziehung setzen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Prioritäten und Lieferzusage abstimmen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Kundenbedarf und Spezifikation",
+      "inhalt": [
+        { "typ": "absatz", "text": "==Unklare Angaben werden vor der Bestätigung geklärt, nicht an der Maschine.== Die Spezifikation macht aus einem Wunsch einen planbaren Auftrag." },
+        { "typ": "tabelle", "spalten": ["Angabe", "Warum wichtig?"], "zeilen": [
+          { "zellen": ["Artikel, Farbe, Material", "Rohlinge bestellen bzw. reservieren"] },
+          { "zellen": ["Größenverteilung", "Mengen je Variante, Lagerentnahme"] },
+          { "zellen": ["Motivdatei mit Freigabestand", "Fehldrucke vermeiden"] },
+          { "zellen": ["Verfahren und Position", "Maschine, Rüstzeit, Stückzeit"] },
+          { "zellen": ["Menge, Termin, Lieferort", "Kapazität und Versand planen"] }
+        ] },
+        { "typ": "merke", "text": "Erst die **vollständige Spezifikation**, dann die Planung; **Kundenauftragsfertigung** startet mit dem Auftrag, **Lagerfertigung** produziert auf Vorrat.", "karteikarte": "Welche Angaben braucht ein Veredelungsauftrag, und was unterscheidet Kundenauftrags- von Lagerfertigung?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Das Produktionsprogramm",
+      "inhalt": [
+        { "typ": "absatz", "text": "Das {{begriff:produktionsprogramm|Produktionsprogramm}} beantwortet drei Fragen: *was*, *wie viel*, *wann*." },
+        { "typ": "tabelle", "spalten": ["Merkmal", "Bedeutung", "MAKEL"], "zeilen": [
+          { "zellen": ["Programmbreite", "Zahl der Produktlinien", "Hoodies, T-Shirts, Taschen"] },
+          { "zellen": ["Programmtiefe", "Varianten je Linie", "Farben × Größen × Veredelung"] },
+          { "zellen": ["Planungsebene", "lang-, mittel-, kurzfristig", "Sortimentsstrategie → Kollektion → Wochenplan"] }
+        ] },
+        { "typ": "achtung", "text": "Mehr Varianten heißt nicht nur mehr Auswahl, sondern auch **mehr Rüsten, mehr Lager, mehr Planung**." },
+        { "typ": "merke", "text": "Das Produktionsprogramm legt **Art, Menge und Zeit** fest; **Breite** = Produktlinien, **Tiefe** = Varianten je Linie.", "karteikarte": "Was legt das Produktionsprogramm fest, und was bedeuten Programmbreite und -tiefe?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Auftragsdaten und Machbarkeit",
+      "inhalt": [
+        { "typ": "absatz", "text": "Zeitbedarf eines Loses: {{begriff:ruestzeit|Rüstzeit}} einmal, Stückzeit für jedes Stück." },
+        { "typ": "tabelle", "mono": true, "spalten": ["Rechnung", "Minuten"], "zeilen": [
+          { "zellen": ["400 Stück × 3 min", "1.200"] },
+          { "zellen": ["+ Rüstzeit (einmal)", "60"] },
+          { "zellen": ["= Zeitbedarf", "1.260 = 21 h"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "Ein Auftrag über 250 Stück braucht 4 Minuten je Stück und 30 Minuten Rüstzeit. Frei sind 16 Maschinenstunden. Reicht das?",
+          "optionen": [
+            { "text": "Ja, Bedarf 1.030 Minuten ≈ 17,2 h", "richtig": false, "echo": "Der Bedarf stimmt — aber 17,2 Stunden sind mehr als 16 freie Stunden." },
+            { "text": "Nein, Bedarf 1.030 Minuten ≈ 17,2 h übersteigt 16 h", "richtig": true, "echo": "Richtig: 250 × 4 + 30 = 1.030 Minuten. Es fehlen gut 1,2 Stunden — Termin verschieben, Zusatzschicht oder Fremdvergabe prüfen." },
+            { "text": "Ja, denn 250 × 4 = 1.000 Minuten ≈ 16,7 h, die Rüstzeit zählt nicht", "richtig": false, "echo": "Die Rüstzeit belegt die Maschine ebenfalls. Außerdem wären auch 16,7 Stunden schon zu viel." }
+          ]
+        },
+        { "typ": "merke", "text": "**Zeitbedarf = Rüstzeit + Menge × Stückzeit**; mit freier Kapazität und Materialverfügbarkeit vergleichen.", "karteikarte": "Wie berechnest du den Zeitbedarf eines Fertigungsauftrags?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Prioritäten und Lieferzusage",
+      "inhalt": [
+        { "typ": "grafik", "variante": "stufen", "kopf": "Bevor zugesagt wird", "titel": "Vier Prüfungen bis zur Lieferzusage", "lead": "Jede Stufe hat eine zuständige Stelle.", "stufen": [
+          { "name": "Spezifikation", "text": "Vertrieb klärt mit dem Kunden alle Angaben und holt die **Freigabe der Motivdatei** ein." },
+          { "name": "Material", "text": "Einkauf prüft Bestand und Wiederbeschaffungszeit der Rohlinge und Garne." },
+          { "name": "Kapazität", "text": "Produktionsplanung berechnet den Zeitbedarf und reserviert Maschinenzeit — mit Prioritäten, wenn Aufträge konkurrieren." },
+          { "name": "Zusage", "text": "Vertrieb bestätigt den Termin schriftlich, **inklusive Puffer** für Endkontrolle, Verpackung und Versand." }
+        ] },
+        { "typ": "merke", "text": "Erst **prüfen und abstimmen**, dann zusagen; Prioritäten nach Termin, Bedeutung und Wirtschaftlichkeit begründen.", "karteikarte": "Was muss vor einer Lieferzusage geprüft sein, und wer ist beteiligt?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Spezifikation vollständig klären, bevor geplant wird.",
+    "Kundenauftragsfertigung vs. Lagerfertigung.",
+    "Produktionsprogramm: was, wie viel, wann; Breite und Tiefe.",
+    "Zeitbedarf = Rüstzeit + Menge × Stückzeit.",
+    "Machbarkeit: Material, Kapazität, Termin.",
+    "Lieferzusage erst nach Abstimmung von Vertrieb, Einkauf und Produktion."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "400 Stück benötigen je 3 Minuten Maschinenzeit; Rüsten dauert 60 Minuten. Gesamtzeit?", "loesung": "400 × 3 + 60 = 1.260 Minuten = 21 Maschinenstunden. Die Rüstzeit fällt für das Los nur einmal an." },
+    { "typ": "Fall", "frage": "Von einem Auftrag sind nur Menge und Liefertermin bekannt. Welche Angaben fehlen?", "loesung": "Zum Beispiel Artikel und Farbe, Größenverteilung, Veredelungsart und Position, freigegebene Motivdatei, Verpackung, Lieferort. Ohne sie können weder Material noch Kapazität geplant werden; deshalb beim Kunden nachfragen und Produktion und Einkauf einbinden." },
+    { "typ": "Wissen", "frage": "Was ist der Unterschied zwischen Programmbreite und Programmtiefe?", "loesung": "Breite: Anzahl der Produktlinien (z. B. Hoodies, T-Shirts, Taschen). Tiefe: Anzahl der Varianten innerhalb einer Linie (Farben, Größen, Veredelungen)." }
+  ],
+  "pruefungstipp": "Bei Machbarkeitsfragen immer drei Dinge prüfen und benennen: Material, Kapazität, Termin. Wer nur rechnet und keine Konsequenz zieht, verschenkt die Begründungspunkte."
+}

@@ -1,0 +1,188 @@
+{
+  "id": "k04",
+  "lernfeld": "ik2024-lf06",
+  "nummer": 4,
+  "titel": "Kapazitäten und Durchlaufzeiten planen",
+  "untertitel": "Wie viel Maschinenzeit verfügbar ist, wie Aufträge eingeplant werden, woraus die Durchlaufzeit besteht und was bei Engpässen hilft.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Zeitbedarf = Rüstzeit + Menge × Stückzeit (Kapitel 1).",
+          "Maschinen und Menschen stehen nur begrenzt zur Verfügung."
+        ],
+        "erklaerung": "Die Kapazität ist das Leistungsvermögen eines Arbeitsplatzes in einem Zeitraum, meist in Stunden. Die verfügbare Kapazität ergibt sich aus Arbeitstagen × Schichtstunden, abzüglich geplanter Ausfälle wie Wartung. Der Kapazitätsbedarf ist die Summe der Zeitbedarfe aller eingeplanten Aufträge. Die Auslastung (Kapazitätsauslastungsgrad) setzt beide ins Verhältnis: Bedarf ÷ verfügbare Kapazität × 100. Über 100 Prozent bedeutet Überlast — der Plan ist so nicht machbar.",
+        "beispiele": [
+          "Eine Maschine steht 8 Stunden bereit, der Auftrag braucht 9 Stunden: Auslastung 112,5 %, Überlast 1 Stunde.",
+          "5 Tage × 8 Stunden − 2 Stunden Wartung = 38 Stunden verfügbare Kapazität."
+        ],
+        "fallbeispiel": "Für die Stickmaschine 2 plant Deniz Aydın die kommende Woche: 5 Tage × 8 Stunden = 40 Stunden, davon 2 Stunden Wartung, also 38 Stunden verfügbar. Eingeplant sind Aufträge mit zusammen 34 Stunden Bedarf. Auslastung 34 ÷ 38 ≈ 89,5 %. Ein weiterer Eilauftrag mit 6 Stunden würde die Auslastung auf über 100 % treiben.",
+        "typische_fehler": "Die Auslastung auf den Bedarf statt auf die verfügbare Kapazität beziehen.",
+        "verstaendnisfragen": [
+          "Wie berechnet man die Auslastung? Kapazitätsbedarf ÷ verfügbare Kapazität × 100.",
+          "Was bedeutet eine Auslastung von 112,5 %? Der Plan übersteigt die Kapazität; es fehlen 12,5 % der verfügbaren Zeit."
+        ],
+        "pruefungsbezug": "Verfügbare Kapazität, Bedarf und Auslastung berechnen und Überlast erkennen.",
+        "merksatz": "Auslastung = Kapazitätsbedarf ÷ verfügbare Kapazität × 100; über 100 % ist der Plan nicht machbar."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Aufträge haben Liefertermine.",
+          "Arbeitsgänge laufen nacheinander auf verschiedenen Arbeitsplätzen."
+        ],
+        "erklaerung": "Die Terminplanung legt fest, wann welcher Arbeitsgang auf welchem Arbeitsplatz läuft. Bei der Vorwärtsterminierung wird ab dem frühestmöglichen Start geplant — das ergibt den frühesten Fertigstellungstermin. Bei der Rückwärtsterminierung rechnet man vom Liefertermin zurück und erhält den spätesten Starttermin. Ein Belegungsplan (oft als Balkenplan) zeigt, welche Aufträge die Maschine wann belegen, und macht Überschneidungen sichtbar.",
+        "beispiele": [
+          "Liefertermin Freitag, Versand braucht 1 Tag, Kontrolle 1 Tag, Sticken 2 Tage: spätester Stickbeginn Montag.",
+          "Start Montag, Sticken 2 Tage, Kontrolle und Verpacken 1 Tag: frühester Versand Donnerstag."
+        ],
+        "fallbeispiel": "Der Eventauftrag soll am 15. November geliefert werden. Rückwärts gerechnet: Versand 10. November, Endkontrolle und Verpacken 7. November, Sticken 3. bis 6. November. Im Belegungsplan sieht Deniz, dass die Stickmaschine am 3. November noch einen anderen Auftrag hat; er verschiebt den Start auf den 4. November und prüft, ob der Puffer reicht.",
+        "typische_fehler": "Nur die Bearbeitungszeit einplanen und Kontrolle, Verpackung und Versand vergessen.",
+        "verstaendnisfragen": [
+          "Was ergibt die Rückwärtsterminierung? Den spätesten Starttermin, damit der Liefertermin gehalten wird.",
+          "Wozu dient ein Belegungsplan? Er zeigt, welche Aufträge eine Maschine wann belegen, und macht Überschneidungen sichtbar."
+        ],
+        "pruefungsbezug": "Vorwärts- und Rückwärtsterminierung an einem Auftrag anwenden.",
+        "merksatz": "Vorwärts ergibt den frühesten Endtermin, rückwärts den spätesten Start; der Belegungsplan zeigt Überschneidungen."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Ein Auftrag ist nicht nur in Bearbeitung, sondern wartet auch.",
+          "Aus LF 4 kennst du Liegezeiten im Einkauf."
+        ],
+        "erklaerung": "Die Durchlaufzeit ist die Zeit vom Beginn des ersten bis zum Ende des letzten Arbeitsgangs eines Auftrags. Sie besteht aus Bearbeitungszeit (Rüsten und Ausführen), Liegezeit (Warten vor oder nach Arbeitsgängen), Transportzeit und Prüfzeit. Oft ist die Liegezeit der größte Anteil. Der Flussgrad (Bearbeitungszeit ÷ Durchlaufzeit) zeigt, wie viel der Zeit tatsächlich wertschöpfend ist. Wer die Durchlaufzeit verkürzen will, setzt deshalb meist bei Liege- und Transportzeiten an, nicht an der Maschine.",
+        "beispiele": [
+          "Bearbeitung 90, Liegen 120, Transport 15, Prüfung 15 Minuten: Durchlaufzeit 240 Minuten, Flussgrad 37,5 %.",
+          "Eine schnellere Maschine verkürzt nur die Bearbeitung — die Liegezeit bleibt."
+        ],
+        "fallbeispiel": "Ein Shirt-Auftrag braucht 90 Minuten Druck, liegt dann 120 Minuten vor dem Trockner, wird 15 Minuten zum Packtisch gebracht und 15 Minuten geprüft. Durchlaufzeit: 240 Minuten. Nur 90 Minuten davon sind Bearbeitung. Deniz prüft, warum Aufträge so lange vor dem Trockner warten.",
+        "typische_fehler": "Liegezeit als Maschinenbearbeitung zählen oder die Durchlaufzeit mit der reinen Bearbeitungszeit gleichsetzen.",
+        "verstaendnisfragen": [
+          "Aus welchen Zeitarten besteht die Durchlaufzeit? Bearbeitungs-, Liege-, Transport- und Prüfzeit.",
+          "Was zeigt der Flussgrad? Den Anteil der Bearbeitungszeit an der gesamten Durchlaufzeit."
+        ],
+        "pruefungsbezug": "Durchlaufzeit und Flussgrad berechnen und Ansatzpunkte zur Verkürzung nennen.",
+        "merksatz": "Durchlaufzeit = Bearbeitung + Liegen + Transport + Prüfung; der größte Hebel liegt meist in der Liegezeit."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Pläne treffen auf Störungen, Krankheit und Eilaufträge.",
+          "Kapazität kann man anpassen oder Aufträge verschieben."
+        ],
+        "erklaerung": "Zeigt der Abgleich Überlast oder ein Termin ist gefährdet, gibt es zwei Richtungen. Kapazität anpassen: Überstunden, Zusatzschicht, Personal aus anderen Bereichen, Fremdvergabe an einen Lohnfertiger. Bedarf anpassen: Aufträge verschieben (nach Absprache), Lose teilen, Prioritäten ändern, Rüstzeiten verkürzen. Jede Maßnahme hat Kosten und Folgen, etwa Zuschläge, Qualitätsrisiken bei Fremdvergabe oder verärgerte Kunden bei Verschiebung. Bei Unterlast kann vorgezogen, auf Lager produziert oder Wartung eingeplant werden.",
+        "beispiele": [
+          "1 Stunde Überlast: Überstunde mit Zuschlag oder Verschiebung eines Auftrags ohne festen Termin.",
+          "Längerer Maschinenausfall: Teilauftrag an einen Lohnsticker vergeben, Qualität per Muster absichern."
+        ],
+        "fallbeispiel": "Die Stickmaschine fällt einen Tag aus. Deniz prüft: Der Eventauftrag hat Vertragsstrafe, ein Boutiqueauftrag hat zwei Tage Puffer. Er verschiebt den Boutiqueauftrag nach Rücksprache mit Marlene und plant für den Eventauftrag eine Zusatzschicht am Samstag ein. Die Entscheidung und die Zuschläge dokumentiert er.",
+        "typische_fehler": "Bei Überlast einfach weiterplanen und hoffen, dass es passt.",
+        "verstaendnisfragen": [
+          "Nenne zwei Maßnahmen, um Kapazität zu erhöhen. Zum Beispiel Überstunden und Fremdvergabe.",
+          "Nenne zwei Maßnahmen, um den Bedarf anzupassen. Zum Beispiel Aufträge verschieben und Lose teilen."
+        ],
+        "pruefungsbezug": "Bei Engpässen passende Maßnahmen auswählen und ihre Folgen abwägen.",
+        "merksatz": "Bei Überlast Kapazität erhöhen oder Bedarf anpassen — jede Maßnahme mit Kosten und Folgen begründen."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Kapazitätsbedarf und Auslastung berechnen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Einen Belegungs- und Terminplan erstellen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Aufwand und Durchlaufzeit unterscheiden", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Engpässe samt geeigneter Reaktion erläutern", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Verfügbare und benötigte Kapazität",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die {{begriff:kapazitaet|Kapazität}} ist das Leistungsvermögen in einem Zeitraum. ==Über 100 % Auslastung ist der Plan nicht machbar.==" },
+        { "typ": "tabelle", "mono": true, "spalten": ["Rechnung", "Wert"], "zeilen": [
+          { "zellen": ["Verfügbar: 5 Tage × 8 h − 2 h Wartung", "38 h"] },
+          { "zellen": ["Bedarf eingeplanter Aufträge", "34 h"] },
+          { "zellen": ["Auslastung 34 ÷ 38 × 100", "≈ 89,5 %"] },
+          { "zellen": ["+ Eilauftrag 6 h → 40 ÷ 38 × 100", "≈ 105,3 %"] }
+        ] },
+        { "typ": "merke", "text": "**Auslastung = Kapazitätsbedarf ÷ verfügbare Kapazität × 100**; über 100 % ist der Plan nicht machbar.", "karteikarte": "Wie berechnest du die Kapazitätsauslastung, und was bedeutet ein Wert über 100 %?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Belegungs- und Terminplan",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Verfahren", "Ausgangspunkt", "Ergebnis"], "zeilen": [
+          { "zellen": ["Vorwärtsterminierung", "frühester Start", "frühester Endtermin"] },
+          { "zellen": ["Rückwärtsterminierung", "Liefertermin", "spätester Starttermin"] }
+        ] },
+        { "typ": "absatz", "text": "Der Belegungsplan zeigt je Maschine, welcher Auftrag wann läuft. Überschneidungen und fehlende Puffer werden so früh sichtbar." },
+        { "typ": "merke", "text": "**Vorwärts** ergibt den frühesten Endtermin, **rückwärts** den spätesten Start; der Belegungsplan zeigt Überschneidungen.", "karteikarte": "Was ist der Unterschied zwischen Vorwärts- und Rückwärtsterminierung?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Woraus die Durchlaufzeit besteht",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die {{begriff:durchlaufzeit|Durchlaufzeit}} umfasst mehr als die Arbeit an der Maschine." },
+        {
+          "typ": "grafik",
+          "variante": "durchlauf",
+          "kopf": "Der Balken",
+          "titel": "Ein Shirt-Auftrag in der Veredelung",
+          "lead": "Ändere die Werte und beobachte, wie stark die Liegezeit die Durchlaufzeit bestimmt.",
+          "einheit": "min",
+          "abschnitte": [
+            { "name": "Bearbeitung (Druck)", "art": "wert", "wert": 90, "schritt": 5 },
+            { "name": "Liegezeit vor dem Trockner", "art": "liege", "wert": 120, "schritt": 5 },
+            { "name": "Transport zum Packtisch", "art": "transport", "wert": 15, "schritt": 5 },
+            { "name": "Prüfung", "art": "pruef", "wert": 15, "schritt": 5 }
+          ],
+          "regel": "Durchlaufzeit 240 Minuten, davon 90 Minuten Bearbeitung: Flussgrad 37,5 %. Eine schnellere Maschine ändert daran wenig — der Hebel liegt im Warten."
+        },
+        { "typ": "achtung", "text": "Liegezeit ist **keine** Bearbeitungszeit. Wer sie der Maschine zurechnet, sucht die Ursache für lange Durchlaufzeiten an der falschen Stelle." },
+        { "typ": "merke", "text": "**Durchlaufzeit = Bearbeitung + Liegen + Transport + Prüfung**; der größte Hebel liegt meist in der Liegezeit.", "karteikarte": "Aus welchen Zeitarten besteht die Durchlaufzeit, und wo liegt meist der größte Hebel?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Engpässe und Handlungsmöglichkeiten",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Richtung", "Maßnahmen", "Folgen beachten"], "zeilen": [
+          { "zellen": ["Kapazität erhöhen", "Überstunden, Zusatzschicht, Personal umsetzen, Fremdvergabe", "Zuschläge, Ermüdung, Qualität beim Fremdfertiger"] },
+          { "zellen": ["Bedarf anpassen", "Aufträge verschieben, Lose teilen, Prioritäten ändern, Rüstzeit senken", "Kundenzufriedenheit, mehr Rüstvorgänge"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "Eine Maschine steht 8 Stunden bereit, der Auftrag braucht 9 Stunden. Was stimmt?",
+          "optionen": [
+            { "text": "Auslastung 112,5 %, 1 Stunde Überlast — es braucht zusätzliche oder verschobene Kapazität", "richtig": true, "echo": "Richtig: 9 ÷ 8 × 100 = 112,5 %." },
+            { "text": "Auslastung 88,9 %, alles in Ordnung", "richtig": false, "echo": "Das ist 8 ÷ 9 — umgekehrt bezogen. Die Auslastung bezieht sich auf die verfügbare Kapazität." },
+            { "text": "Auslastung 112,5 %, das gleicht sich im Lauf der Woche von selbst aus", "richtig": false, "echo": "Überlast verschwindet nicht von selbst; ohne Maßnahme wird der Termin gerissen." }
+          ]
+        },
+        { "typ": "merke", "text": "Bei Überlast **Kapazität erhöhen oder Bedarf anpassen** — jede Maßnahme mit Kosten und Folgen begründen.", "karteikarte": "Welche Möglichkeiten gibt es bei einem Kapazitätsengpass?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Verfügbare Kapazität = Zeit im Zeitraum minus geplante Ausfälle.",
+    "Auslastung = Bedarf ÷ verfügbare Kapazität × 100.",
+    "Vorwärtsterminierung: frühester Endtermin; rückwärts: spätester Start.",
+    "Durchlaufzeit = Bearbeitung + Liegen + Transport + Prüfung.",
+    "Flussgrad zeigt den wertschöpfenden Anteil; Hebel meist die Liegezeit.",
+    "Engpass: Kapazität erhöhen oder Bedarf anpassen, Folgen abwägen."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "Eine Maschine steht 8 Stunden bereit. Der Auftrag benötigt 9 Stunden. Auslastung und Überlast?", "loesung": "112,5 % geplante Auslastung und 1 Stunde Überlast. Eine Lösung erfordert zusätzliche oder verschobene Kapazität." },
+    { "typ": "Rechnen", "frage": "Bearbeitung 90, Liegen 120, Transport 15 und Prüfung 15 Minuten, alles nacheinander. Durchlaufzeit?", "loesung": "240 Minuten = 4 Stunden. Die reine Bearbeitungszeit beträgt nur 90 Minuten (Flussgrad 37,5 %)." },
+    { "typ": "Wissen", "frage": "Wozu dient die Rückwärtsterminierung?", "loesung": "Sie rechnet vom Liefertermin zurück und ermittelt den spätesten Starttermin der Arbeitsgänge, damit der Termin gehalten wird." }
+  ],
+  "pruefungstipp": "Bei Kapazitätsaufgaben immer klar sagen, worauf sich die Prozentzahl bezieht. Und bei Durchlaufzeiten zuerst die Zeitarten trennen — die Frage nach Verbesserungen zielt fast immer auf die Liegezeit."
+}

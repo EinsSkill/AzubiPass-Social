@@ -1,0 +1,175 @@
+{
+  "id": "k01",
+  "lernfeld": "ik2024-lf07",
+  "nummer": 1,
+  "titel": "Material und Informationen gemeinsam steuern",
+  "untertitel": "Was Logistik leisten soll, welche Teilaufgaben sie hat und warum Daten und Ware zusammenpassen müssen.",
+  "minuten": 20,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Material kommt vom Lieferanten, Erzeugnisse gehen an Kunden.",
+          "Aus LF 4 kennst du Wareneingang und Bestellung."
+        ],
+        "erklaerung": "Logistik plant, steuert und kontrolliert alle Material- und Informationsflüsse von den Lieferanten durch das Unternehmen bis zu den Kunden — und zurück, etwa bei Retouren und Entsorgung. Ihr Ziel wird oft mit den ‚sieben R‘ beschrieben: das richtige Produkt, in der richtigen Menge, im richtigen Zustand, am richtigen Ort, zur richtigen Zeit, zu den richtigen Kosten, mit den richtigen Informationen. Nach Bereichen unterscheidet man Beschaffungslogistik (Lieferant bis Lager), Produktionslogistik (Lager bis fertiges Erzeugnis), Distributionslogistik (Fertiglager bis Kunde) und Entsorgungslogistik (Retouren, Verpackung, Abfall).",
+        "beispiele": [
+          "Rohlinge vom Lieferanten ins MAKEL-Lager: Beschaffungslogistik.",
+          "Zurückgeschickte Hoodies aus dem Onlineshop prüfen und wieder einlagern: Entsorgungs- bzw. Retourenlogistik."
+        ],
+        "fallbeispiel": "Jonas Weidner beschreibt seinen Bereich so: ‚Ich sorge dafür, dass die Rohlinge da sind, wenn die Veredelung sie braucht, dass fertige Ware rechtzeitig zum Kunden geht und dass zurückgeschickte Teile nicht im Keller verschwinden.‘ Damit hat er drei Logistikbereiche beschrieben.",
+        "typische_fehler": "Logistik nur als Transport verstehen.",
+        "verstaendnisfragen": [
+          "Nenne vier der sieben R. Zum Beispiel richtiges Produkt, richtige Menge, richtiger Ort, richtige Zeit.",
+          "Welcher Logistikbereich umfasst den Versand an Kunden? Die Distributionslogistik."
+        ],
+        "pruefungsbezug": "Logistikbereiche und Logistikziele an Fällen zuordnen.",
+        "merksatz": "Logistik steuert Material- und Informationsflüsse nach den sieben R — in Beschaffung, Produktion, Distribution und Entsorgung."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Ware bewegt sich zwischen Orten und wartet an Orten.",
+          "Beim Wechsel des Transportmittels wird umgeladen."
+        ],
+        "erklaerung": "Die drei logistischen Grundaufgaben heißen Transport, Umschlag und Lagerung (TUL). Transport überbrückt Raum, etwa die Lkw-Fahrt vom Lieferanten. Umschlag ist der Wechsel des Transportmittels oder das Be- und Entladen, etwa vom Lkw auf den Hubwagen oder vom Container in den Lkw. Lagerung überbrückt Zeit, wenn Ware bis zum Bedarf aufbewahrt wird. Eine einzige Lieferung kann alle drei Aufgaben nacheinander auslösen. Jede Aufgabe verursacht Kosten und birgt Risiken wie Beschädigung oder Verwechslung.",
+        "beispiele": [
+          "Lkw-Fahrt vom Lieferanten: Transport. Abladen an der Rampe: Umschlag. Aufbewahren im Regal: Lagerung.",
+          "Container aus Asien: Seeschiff, Umschlag im Hafen, Lkw, Umschlag an der Rampe, Lagerung."
+        ],
+        "fallbeispiel": "Eine Lieferung Rohlinge kommt per Lkw (Transport), wird an der Rampe mit dem Hubwagen abgeladen (Umschlag), im Wareneingang geprüft und anschließend ins Regal eingelagert (Lagerung). Zwei Wochen später holt die Veredelung sie ab (innerbetrieblicher Transport).",
+        "typische_fehler": "Umschlag und Transport verwechseln — Umschlag überbrückt keine Strecke, sondern wechselt das Transportmittel.",
+        "verstaendnisfragen": [
+          "Was überbrückt die Lagerung? Zeit.",
+          "Was ist Umschlag? Be- und Entladen bzw. Wechsel des Transportmittels."
+        ],
+        "pruefungsbezug": "Tätigkeiten den Grundaufgaben Transport, Umschlag und Lagerung zuordnen.",
+        "merksatz": "Transport überbrückt Raum, Lagerung überbrückt Zeit, Umschlag verbindet beide durch Be- und Entladen."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Zu jeder Lieferung gehören Dokumente.",
+          "Daten werden in einem Warenwirtschafts- oder ERP-System verarbeitet."
+        ],
+        "erklaerung": "Zu jedem Materialfluss gehört ein Informationsfluss, oft vorauslaufend. Der Lieferant schickt eine Versandmeldung (Lieferavis) mit Menge, Packstücken und erwartetem Liefertag. Mit der Ware kommen Lieferschein und Etiketten, häufig mit Barcode. Im Wareneingang werden Ware, Lieferschein, Avis und Bestellung abgeglichen und der Eingang im System gebucht. Erst die Buchung macht den Bestand für Einkauf und Produktion verfügbar. Eine Sendungsverfolgung zeigt unterwegs den Status. Abweichungen werden dokumentiert und an die betroffenen Stellen weitergegeben.",
+        "beispiele": [
+          "Versandmeldung: 100 Kartons, Ankunft Dienstag. Tatsächlich kommen 90 Kartons: Abweichung dokumentieren, Einkauf informieren.",
+          "Barcode-Scan beim Einlagern bucht Menge und Lagerplatz im System."
+        ],
+        "fallbeispiel": "Der Lieferant meldet per Versandmeldung 100 Kartons Rohlinge. Jonas zählt beim Abladen 90. Er vermerkt die Abweichung auf dem Lieferschein, lässt sie vom Fahrer quittieren, bucht nur 90 Kartons ein und informiert Deniz Aydın im Einkauf sowie die Produktionsplanung, weil ein Auftrag am Freitag die volle Menge braucht.",
+        "typische_fehler": "Den Status ‚geliefert‘ im System als Nachweis der tatsächlich vorhandenen Ware behandeln.",
+        "verstaendnisfragen": [
+          "Was enthält eine Versandmeldung? Unter anderem Menge, Packstücke und erwarteten Liefertag.",
+          "Warum ist die Wareneingangsbuchung wichtig? Erst sie macht den Bestand im System für andere Bereiche verfügbar."
+        ],
+        "pruefungsbezug": "Informationsfluss zu einer Lieferung beschreiben und bei Abweichungen richtig handeln.",
+        "merksatz": "Zu jedem Materialfluss gehört ein Informationsfluss; gebucht wird, was tatsächlich angekommen ist."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "An einer Lieferung sind Einkauf, Lager, Produktion und Buchhaltung beteiligt.",
+          "Übergaben zwischen Abteilungen sind fehleranfällig."
+        ],
+        "erklaerung": "Logistik verbindet viele Schnittstellen: Lieferant und Spediteur außen, Einkauf, Wareneingang, Lager, Produktion, Versand und Buchhaltung innen. Ein Logistikkonzept legt fest, wie Material und Informationen fließen: wer was wann meldet, welche Dokumente und Kennzeichnungen gelten, wo gelagert wird, welche Dienstleister eingebunden sind, wie mit Abweichungen umgegangen wird. Analysiert wird ein Konzept am konkreten Auftrag: Wo entstehen Wartezeiten, doppelte Erfassungen oder Informationslücken?",
+        "beispiele": [
+          "Regel: Abweichungen beim Wareneingang meldet das Lager innerhalb von zwei Stunden an Einkauf und Produktionsplanung.",
+          "Medienbruch: Lieferschein wird abgetippt statt gescannt — Fehlerquelle."
+        ],
+        "fallbeispiel": "Deniz verfolgt einen Auftrag vom Lieferanten bis zum Kunden und stellt fest: Die Versandmeldung landet in seinem E-Mail-Postfach, das Lager kennt sie nicht. Folge: Das Lager wird von Lieferungen überrascht. MAKEL legt fest, dass Versandmeldungen automatisch im Warenwirtschaftssystem erscheinen und das Lager eine Tagesvorschau erhält.",
+        "typische_fehler": "Nur den eigenen Bereich optimieren und Übergaben an andere übersehen.",
+        "verstaendnisfragen": [
+          "Was regelt ein Logistikkonzept? Wie Material und Informationen fließen, wer meldet, welche Dokumente gelten, wie Abweichungen behandelt werden.",
+          "Was ist ein Medienbruch? Ein Wechsel des Informationsträgers, etwa Papier abtippen, mit Fehlerrisiko."
+        ],
+        "pruefungsbezug": "Schnittstellen und Schwachstellen eines Logistikablaufs am Fall analysieren.",
+        "merksatz": "Ein Logistikkonzept regelt Flüsse und Schnittstellen; Schwachstellen liegen oft an Übergaben und Medienbrüchen."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Ziele und Bereiche der Logistik beschreiben", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Logistische Teilaufgaben zuordnen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Material- und Informationsfluss verbinden", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Ein Logistikkonzept anhand eines Auftrags analysieren", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Ziele und Bereiche der Logistik",
+      "inhalt": [
+        { "typ": "absatz", "text": "==Logistik ist mehr als Transport:== Sie steuert Material und Informationen vom Lieferanten bis zum Kunden und zurück." },
+        { "typ": "tabelle", "spalten": ["Bereich", "Von – bis", "Beispiel MAKEL"], "zeilen": [
+          { "zellen": ["Beschaffungslogistik", "Lieferant → Lager", "Rohlinge anliefern und einlagern"] },
+          { "zellen": ["Produktionslogistik", "Lager → fertiges Erzeugnis", "Rohlinge zur Veredelung bringen"] },
+          { "zellen": ["Distributionslogistik", "Fertiglager → Kunde", "Hoodies an Boutiquen versenden"] },
+          { "zellen": ["Entsorgungslogistik", "Kunde/Betrieb → Verwertung", "Retouren, Kartonagen, Farbreste"] }
+        ] },
+        { "typ": "merke", "text": "Logistik steuert Material- und Informationsflüsse nach den **sieben R** — in Beschaffung, Produktion, Distribution und Entsorgung.", "karteikarte": "Welche Bereiche der Logistik gibt es, und was meinen die sieben R?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Transport, Umschlag und Lagerung",
+      "inhalt": [
+        { "typ": "grafik", "variante": "stufen", "kopf": "Eine Lieferung, drei Aufgaben", "titel": "Rohlinge vom Lieferanten ins Regal", "lead": "Dieselbe Lieferung löst alle drei Grundaufgaben aus.", "stufen": [
+          { "name": "Transport", "text": "Der Lkw fährt vom Lieferanten zu MAKEL — **Raum** wird überbrückt." },
+          { "name": "Umschlag", "text": "An der Rampe wird abgeladen und auf den Hubwagen umgesetzt — **Wechsel** des Transportmittels." },
+          { "name": "Lagerung", "text": "Die Kartons stehen im Regal, bis die Veredelung sie braucht — **Zeit** wird überbrückt." }
+        ] },
+        { "typ": "merke", "text": "**Transport** überbrückt Raum, **Lagerung** überbrückt Zeit, **Umschlag** verbindet beide durch Be- und Entladen.", "karteikarte": "Was sind die drei logistischen Grundaufgaben?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Materialfluss und Begleitinformationen",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Information", "Zeitpunkt", "Zweck"], "zeilen": [
+          { "zellen": ["Versandmeldung (Avis)", "vor Ankunft", "Lager und Rampe planen"] },
+          { "zellen": ["Lieferschein, Etikett, Barcode", "mit der Ware", "Ware eindeutig zuordnen"] },
+          { "zellen": ["Wareneingangsbuchung", "nach Prüfung", "Bestand verfügbar machen"] },
+          { "zellen": ["Abweichungsmeldung", "sofort", "Einkauf und Produktion informieren"] }
+        ] },
+        { "typ": "achtung", "text": "Ein Status ‚geliefert‘ ist **kein Nachweis**. Gebucht wird, was tatsächlich gezählt und geprüft wurde." },
+        { "typ": "merke", "text": "Zu jedem Materialfluss gehört ein **Informationsfluss**; gebucht wird, was tatsächlich angekommen ist.", "karteikarte": "Welche Informationen begleiten eine Lieferung, und was wird gebucht?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Schnittstellen und Logistikkonzept",
+      "inhalt": [
+        { "typ": "absatz", "text": "Ein Logistikkonzept regelt, wer was wann meldet und wie Abweichungen behandelt werden. Schwachstellen liegen oft an {{begriff:schnittstelle|Schnittstellen}} und {{begriff:medienbruch|Medienbrüchen}}." },
+        {
+          "typ": "check",
+          "frage": "Die Versandmeldung kommt nur im Postfach des Einkäufers an; das Lager wird von Lieferungen überrascht. Welche Maßnahme setzt an der Ursache an?",
+          "optionen": [
+            { "text": "Mehr Personal im Lager", "richtig": false, "echo": "Das bekämpft die Wirkung, nicht die fehlende Information." },
+            { "text": "Versandmeldungen automatisch im System für das Lager sichtbar machen", "richtig": true, "echo": "Richtig. Die Information erreicht die Stelle, die sie braucht — die Schnittstelle ist geschlossen." },
+            { "text": "Lieferanten bitten, seltener zu liefern", "richtig": false, "echo": "Das ändert nichts daran, dass das Lager die Ankündigung nicht kennt." }
+          ]
+        },
+        { "typ": "merke", "text": "Ein Logistikkonzept regelt **Flüsse und Schnittstellen**; Schwachstellen liegen oft an Übergaben und Medienbrüchen.", "karteikarte": "Was regelt ein Logistikkonzept, und wo liegen typische Schwachstellen?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Logistik steuert Material- und Informationsflüsse.",
+    "Sieben R: Produkt, Menge, Zustand, Ort, Zeit, Kosten, Information.",
+    "Bereiche: Beschaffung, Produktion, Distribution, Entsorgung.",
+    "Grundaufgaben: Transport (Raum), Umschlag (Wechsel), Lagerung (Zeit).",
+    "Avis, Lieferschein, Buchung: gebucht wird nur Gezähltes.",
+    "Schwachstellen liegen an Schnittstellen und Medienbrüchen."
+  ],
+  "selbsttest": [
+    { "typ": "Zuordnen", "frage": "Ordne Lkw-Fahrt, Umladen und Aufbewahren den drei Teilaufgaben zu.", "loesung": "Lkw-Fahrt: Transport. Umladen: Umschlag. Aufbewahren: Lagerung. Dieselbe Lieferung kann alle drei nacheinander auslösen." },
+    { "typ": "Fall", "frage": "Die Versandmeldung nennt 100 Kartons, tatsächlich kommen 90 an. Was wird geprüft und weitergegeben?", "loesung": "Liefermeldung, tatsächlichen Eingang und Auftragszuordnung vergleichen, die Mengenabweichung auf dem Lieferschein vermerken und quittieren lassen, nur 90 einbuchen, Einkauf und betroffene Produktion informieren." },
+    { "typ": "Wissen", "frage": "Was ist Entsorgungslogistik?", "loesung": "Der Bereich, der Rückflüsse steuert: Retouren, Verpackungen, Reststoffe und Abfälle — vom Sammeln über Sortieren bis zur Verwertung oder Entsorgung." }
+  ],
+  "pruefungstipp": "In Logistikfällen immer Ware und Daten getrennt prüfen: Was ist physisch da, was steht im System, wer muss es wissen? Diese drei Fragen tragen fast jede Antwort."
+}

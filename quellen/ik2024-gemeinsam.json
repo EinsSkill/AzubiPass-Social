@@ -1,0 +1,481 @@
+{
+  "_hinweis": "Gemeinsamer Speicher für Industriekaufleute (Neuordnung 2024). Aus gemeinsam.json (Büromanagement) wird nur übernommen, was unter 'uebernehmen' ausdrücklich steht und inhaltlich berufsunabhängig ist – geprüft am 22.10.2026. Eigene Einträge unten gehen vor. Rechtsangaben sinngemäß wiedergegeben, Stand Oktober 2026.",
+  "uebernehmen": {
+    "begriffe": [
+      "abc-analyse",
+      "ablauforganisation",
+      "afa",
+      "agb",
+      "agg",
+      "aida",
+      "alpen-methode",
+      "amortisation",
+      "anfrage",
+      "angebot",
+      "anlagevermoegen",
+      "annahme",
+      "antrag",
+      "arap",
+      "arbeitspaket",
+      "aufbauorganisation",
+      "aufbewahrungsfrist",
+      "auftragsbearbeitung",
+      "auftragsbestaetigung",
+      "aufwand",
+      "ausbildungsordnung",
+      "ausbildungsplan",
+      "ausbildungsrahmenplan",
+      "aussenfinanzierung",
+      "bab",
+      "balkenplan",
+      "bedarfsermittlung",
+      "beschwerdemanagement",
+      "bestandskonto",
+      "bestellung",
+      "betriebsrat",
+      "bezugskalkulation",
+      "break-even",
+      "buchungssatz",
+      "buchwert",
+      "buergschaft",
+      "cashflow",
+      "darlehen",
+      "datensparsamkeit",
+      "deckungsbeitrag",
+      "distributionspolitik",
+      "doppelte-buchfuehrung",
+      "duale-ausbildung",
+      "durchlaufzeit",
+      "eigenkapital",
+      "eigentumsvorbehalt",
+      "einstandspreis",
+      "einzelkosten",
+      "eisenhower",
+      "erfolgskonto",
+      "ergonomie",
+      "ertrag",
+      "factoring",
+      "feedback",
+      "fixkosten",
+      "fremdkapital",
+      "gefaehrdungsbeurteilung",
+      "gemeinkosten",
+      "geschaeftsprozess",
+      "geschaeftsvorfall",
+      "gestreckte-pruefung",
+      "grundschuld",
+      "guv",
+      "haben",
+      "handlungsvollmacht",
+      "hoechstbestand",
+      "ich-botschaft",
+      "innenfinanzierung",
+      "interkulturelle-kommunikation",
+      "jahresueberschuss",
+      "jav",
+      "just-in-time",
+      "kaeufermarkt",
+      "kaufvertrag",
+      "kommunikationspolitik",
+      "kontokorrentkredit",
+      "kostenartenrechnung",
+      "kostenstellenrechnung",
+      "kostentraegerrechnung",
+      "kreditwuerdigkeit",
+      "kritischer-pfad",
+      "kuendigungsschutz",
+      "kundenbindung",
+      "leasing",
+      "lieferantenbewertung",
+      "lieferbedingungen",
+      "lieferschein",
+      "lieferungsverzug",
+      "liquiditaet",
+      "liquiditaetsplan",
+      "mahnbescheid",
+      "mahnung",
+      "marketing-mix",
+      "medienbruch",
+      "meilenstein",
+      "meldebestand",
+      "mindestbestand",
+      "nacherfuellung",
+      "nutzungsdauer",
+      "nutzwertanalyse",
+      "oekonomisches-prinzip",
+      "optimale-bestellmenge",
+      "organigramm",
+      "periodenabgrenzung",
+      "personenbezogene-daten",
+      "prap",
+      "preispolitik",
+      "primaerforschung",
+      "probezeit",
+      "produktionsfaktoren",
+      "produktlebenszyklus",
+      "produktpolitik",
+      "projekt",
+      "projektauftrag",
+      "projektstrukturplan",
+      "prokura",
+      "rabatt",
+      "rahmenlehrplan",
+      "rechnung",
+      "reinvermoegen",
+      "rentabilitaet",
+      "rueckstellung",
+      "ruegepflicht",
+      "sachmangel",
+      "saldo",
+      "schnittstelle",
+      "sekundaerforschung",
+      "sicherungsuebereignung",
+      "skonto",
+      "soll",
+      "stellenbeschreibung",
+      "t-konto",
+      "teilkostenrechnung",
+      "umlaufvermoegen",
+      "umsatzsteuer",
+      "urheberrecht",
+      "variable-kosten",
+      "verjaehrung",
+      "vollkostenrechnung",
+      "vorsteuer",
+      "wirtschaftskreislauf",
+      "zahllast",
+      "zahlungsbedingungen",
+      "zahlungsverzug",
+      "zuschlagssatz",
+      "zustaendige-stelle"
+    ],
+    "paragraphen": [
+      "ao-147",
+      "arbschg-5",
+      "bbig-10",
+      "bbig-11",
+      "bbig-13",
+      "bbig-14",
+      "bbig-15",
+      "bbig-20",
+      "bbig-22",
+      "bgb-145",
+      "bgb-147",
+      "bgb-195",
+      "bgb-199",
+      "bgb-286",
+      "bgb-288",
+      "bgb-305",
+      "bgb-433",
+      "bgb-434",
+      "bgb-437",
+      "bgb-439",
+      "bgb-449",
+      "bgb-622",
+      "bgb-623",
+      "bgb-626",
+      "bgb-765",
+      "bgb-766",
+      "bgb-771",
+      "dsgvo-5",
+      "hgb-238",
+      "hgb-240",
+      "hgb-242",
+      "hgb-249",
+      "hgb-257",
+      "hgb-350",
+      "hgb-377",
+      "hgb-54",
+      "ustg-14",
+      "uwg-5",
+      "uwg-7"
+    ]
+  },
+  "begriffe": {
+    "agil": {
+      "titel": "Agiles Vorgehen",
+      "text": "Projektvorgehen in kurzen Zyklen: Ein kleines nutzbares Ergebnis entsteht, wird gezeigt, bewertet und verbessert. Geeignet, wenn sich Anforderungen erst während der Arbeit klären. Bekanntes Rahmenwerk ist Scrum. Agil heißt nicht ungeplant — Ziele, Rollen und Takte sind festgelegt."
+    },
+    "anspruchsgruppen": {
+      "titel": "Anspruchsgruppen",
+      "text": "Alle, die Erwartungen an ein Unternehmen haben oder von seinen Entscheidungen betroffen sind (englisch Stakeholder): Eigentümer, Beschäftigte, Kunden, Lieferanten, Kreditgeber, Staat und Öffentlichkeit. Ihre Interessen können sich widersprechen."
+    },
+    "arbeitsplan": {
+      "titel": "Arbeitsplan",
+      "text": "Beschreibt, wie ein Erzeugnis hergestellt wird: Arbeitsgänge in ihrer Reihenfolge, Arbeitsplatz oder Maschine, Rüstzeit je Los und Ausführungszeit je Stück, oft auch Dateien und Prüfanweisungen. Die Materialien stehen dagegen in der Stückliste."
+    },
+    "ausbildungsvertrag": {
+      "titel": "Ausbildungsvertrag",
+      "text": "Der Vertrag zwischen Ausbildendem und Auszubildendem. Sein wesentlicher Inhalt muss spätestens vor Beginn der Ausbildung in Textform niedergelegt werden; danach trägt die zuständige Stelle ihn in das Verzeichnis der Ausbildungsverhältnisse ein."
+    },
+    "beleg": {
+      "titel": "Beleg",
+      "text": "Der Nachweis eines Geschäftsfalls, etwa Rechnung, Kontoauszug oder Materialentnahmeschein. Grundregel der Buchführung: keine Buchung ohne Beleg. Fremdbelege kommen von außen, Eigenbelege entstehen im Unternehmen. Buchungsbelege sind acht Jahre aufzubewahren (Stand 2026)."
+    },
+    "berichtsheft": {
+      "titel": "Ausbildungsnachweis",
+      "text": "Der Nachweis über die Ausbildung, schriftlich oder elektronisch geführt (umgangssprachlich Berichtsheft). Er wird während der Ausbildungszeit geführt, vom Betrieb regelmäßig durchgesehen und ist Voraussetzung für die Zulassung zur Abschlussprüfung."
+    },
+    "besitz": {
+      "titel": "Besitz",
+      "text": "Die tatsächliche Herrschaft über eine Sache: Wer sie hat und benutzen kann, ist Besitzer. Besitz sagt nichts darüber, wem die Sache gehört."
+    },
+    "bezugskosten": {
+      "titel": "Bezugskosten",
+      "text": "Kosten, die beim Beschaffen zusätzlich anfallen und dem eingekauften Gut einzeln zugerechnet werden können: Fracht, Verpackung, Zoll, Transportversicherung. Sie erhöhen die Anschaffungskosten von Material, Handelswaren oder Anlagegütern."
+    },
+    "eigenfinanzierung": {
+      "titel": "Eigenfinanzierung",
+      "text": "Finanzierung mit Eigenkapital: Der Geldgeber ist oder wird Eigentümer. Von außen durch Einlagen und neue Gesellschafter (Beteiligungsfinanzierung), von innen durch einbehaltene Gewinne (Selbstfinanzierung). Kein fester Zins, keine Rückzahlungspflicht."
+    },
+    "eigentum": {
+      "titel": "Eigentum",
+      "text": "Die rechtliche Herrschaft über eine Sache: Der Eigentümer darf mit ihr nach Belieben verfahren, soweit Gesetze nicht entgegenstehen. Bei beweglichen Sachen geht Eigentum durch Einigung und Übergabe über."
+    },
+    "engpass": {
+      "titel": "Engpass",
+      "text": "Eine Ressource, deren Kapazität nicht für alle nachgefragten Mengen reicht — etwa Maschinenzeit, Fachpersonal oder Material. Bei einem Engpass entscheidet der Deckungsbeitrag je Engpasseinheit (relativer Deckungsbeitrag) über die Rangfolge der Produkte."
+    },
+    "epk": {
+      "titel": "Ereignisgesteuerte Prozesskette (EPK)",
+      "text": "Grafische Darstellung eines Ablaufs aus Ereignissen (Sechsecke) und Funktionen (abgerundete Rechtecke), die sich abwechseln. Sie beginnt und endet mit einem Ereignis; Verzweigungen zeigen UND-, ODER- und XOR-Konnektoren."
+    },
+    "ezb": {
+      "titel": "Europäische Zentralbank (EZB)",
+      "text": "Zentralbank des Euroraums mit Sitz in Frankfurt am Main. Vorrangiges Ziel ist Preisstabilität; die EZB strebt mittelfristig eine Inflationsrate von 2 % an und steuert vor allem über die Leitzinsen."
+    },
+    "fertigungsart": {
+      "titel": "Fertigungsart",
+      "text": "Einteilung der Fertigung nach der Menge gleicher Erzeugnisse: Einzel-, Serien-, Sorten-, Massen- und Chargenfertigung. Davon zu unterscheiden ist der Organisationstyp (Werkstatt-, Fließ-, Gruppen-, Baustellenfertigung), der die räumliche Anordnung beschreibt."
+    },
+    "fertigungstiefe": {
+      "titel": "Fertigungstiefe",
+      "text": "Anteil der Wertschöpfung, den ein Unternehmen selbst erbringt. Bei hoher Fertigungstiefe wird vieles im eigenen Haus hergestellt, bei geringer vieles zugekauft oder fremd gefertigt."
+    },
+    "fifo": {
+      "titel": "FIFO (first in, first out)",
+      "text": "Einlagerungs- und Entnahmeprinzip: Was zuerst eingelagert wurde, wird zuerst entnommen. So veralten Bestände nicht, etwa Saisonware oder Material mit Haltbarkeit."
+    },
+    "frachtfuehrer": {
+      "titel": "Frachtführer",
+      "text": "Wer sich vertraglich verpflichtet, Güter zu befördern und beim Empfänger abzuliefern, und die Beförderung selbst durchführt, etwa ein Transportunternehmen mit eigenen Lkw (§ 407 HGB)."
+    },
+    "fremdfinanzierung": {
+      "titel": "Fremdfinanzierung",
+      "text": "Finanzierung mit Fremdkapital: Der Geldgeber wird Gläubiger mit Anspruch auf Zins und Rückzahlung. Von außen durch Kredite, von innen etwa durch Rückstellungen, deren Mittel bis zur Inanspruchnahme im Betrieb arbeiten."
+    },
+    "gesamtkostenverfahren": {
+      "titel": "Gesamtkostenverfahren",
+      "text": "Gliederung der GuV nach Aufwandsarten (Material, Personal, Abschreibungen usw.). Weil alle Aufwendungen der Periode erfasst werden, gleichen Bestandsveränderungen an fertigen und unfertigen Erzeugnissen den Unterschied zwischen Produktion und Absatz aus."
+    },
+    "gleichgewichtspreis": {
+      "titel": "Gleichgewichtspreis",
+      "text": "Der Preis, bei dem angebotene und nachgefragte Menge übereinstimmen. Liegt der Preis darüber, entsteht ein Angebotsüberhang, darunter ein Nachfrageüberhang."
+    },
+    "jahresabschluss": {
+      "titel": "Jahresabschluss",
+      "text": "Der Abschluss eines Geschäftsjahres: bei allen Kaufleuten Bilanz und Gewinn- und Verlustrechnung, bei Kapitalgesellschaften zusätzlich der Anhang. Mittelgroße und große Kapitalgesellschaften stellen außerdem einen Lagebericht auf."
+    },
+    "kalkulatorische-kosten": {
+      "titel": "Kalkulatorische Kosten",
+      "text": "Kosten, die die Kostenrechnung anders oder zusätzlich zum Aufwand der Finanzbuchhaltung ansetzt. Zusatzkosten steht kein Aufwand gegenüber (etwa kalkulatorische Zinsen auf das Eigenkapital), Anderskosten werden anders bewertet als der Aufwand (etwa kalkulatorische Abschreibung vom Wiederbeschaffungswert)."
+    },
+    "kapazitaet": {
+      "titel": "Kapazität",
+      "text": "Das Leistungsvermögen eines Arbeitsplatzes oder einer Maschine in einem Zeitraum, meist in Stunden. Die Auslastung setzt den Kapazitätsbedarf ins Verhältnis zur verfügbaren Kapazität."
+    },
+    "kapitalgesellschaft": {
+      "titel": "Kapitalgesellschaft",
+      "text": "Gesellschaft mit eigener Rechtspersönlichkeit, bei der das Kapital im Vordergrund steht, etwa GmbH oder AG. Gegenüber Gläubigern haftet das Gesellschaftsvermögen, nicht das Privatvermögen der Gesellschafter."
+    },
+    "kartell": {
+      "titel": "Kartell",
+      "text": "Absprache oder abgestimmtes Verhalten von Unternehmen, das den Wettbewerb beschränkt, etwa über Preise, Gebiete oder Kunden. Nach § 1 GWB und Art. 101 AEUV grundsätzlich verboten; bestimmte Kooperationen können im Einzelfall freigestellt sein."
+    },
+    "kommissionieren": {
+      "titel": "Kommissionieren",
+      "text": "Artikel aus dem Lager nach Aufträgen zusammenstellen. Auftragsorientiert wird jeder Auftrag einzeln bearbeitet, serienorientiert werden Artikel mehrerer Aufträge gesammelt entnommen und anschließend verteilt."
+    },
+    "konjunktur": {
+      "titel": "Konjunktur",
+      "text": "Schwankungen der gesamtwirtschaftlichen Aktivität um den langfristigen Wachstumstrend. Vereinfacht in vier Phasen: Aufschwung, Boom, Abschwung, Tiefstand. Abgelesen an Früh-, Präsenz- und Spätindikatoren."
+    },
+    "leistungsprogramm": {
+      "titel": "Leistungsprogramm",
+      "text": "Gesamtheit der Sachgüter und Dienstleistungen, die ein Unternehmen am Markt anbietet. Bei Industriebetrieben meist eigene Erzeugnisse, oft ergänzt um Dienstleistungen und Handelswaren."
+    },
+    "leitbild": {
+      "titel": "Leitbild",
+      "text": "Schriftlich formuliertes Selbstverständnis eines Unternehmens: Werte, Ziele und Grundsätze im Umgang mit Kunden, Beschäftigten und Umwelt. Es beschreibt einen Anspruch; ob er eingelöst wird, zeigt das tatsächliche Handeln."
+    },
+    "leitzins": {
+      "titel": "Leitzins",
+      "text": "Zinssätze, zu denen sich Geschäftsbanken bei der Zentralbank Geld leihen oder dort anlegen können. Änderungen wirken verzögert über die Kreditzinsen der Banken auf Investitionen, Nachfrage und Preise."
+    },
+    "los": {
+      "titel": "Los",
+      "text": "Die Menge gleicher Erzeugnisse, die ohne Unterbrechung durch Umrüsten hintereinander gefertigt wird. Je Los fallen einmal Rüstkosten an."
+    },
+    "magisches-viereck": {
+      "titel": "Magisches Viereck",
+      "text": "Die vier gesamtwirtschaftlichen Ziele aus dem Stabilitäts- und Wachstumsgesetz von 1967: Stabilität des Preisniveaus, hoher Beschäftigungsstand, außenwirtschaftliches Gleichgewicht sowie stetiges und angemessenes Wachstum. „Magisch“, weil sie nicht gleichzeitig vollständig erreichbar sind."
+    },
+    "maschinenstundensatz": {
+      "titel": "Maschinenstundensatz",
+      "text": "Maschinenabhängige Fertigungsgemeinkosten einer Periode (kalkulatorische Abschreibung und Zinsen, Raum, Energie, Instandhaltung) geteilt durch die geplanten Laufstunden. Damit werden Maschinenkosten nach der tatsächlichen Maschinenzeit eines Auftrags verrechnet."
+    },
+    "neutraler-aufwand": {
+      "titel": "Neutraler Aufwand",
+      "text": "Aufwand, der nicht als Kosten in die Kostenrechnung übernommen wird, weil er betriebsfremd (Spende), periodenfremd (Steuernachzahlung für ein Vorjahr) oder außerordentlich (Brandschaden) ist."
+    },
+    "portfolio": {
+      "titel": "Portfolioanalyse (BCG-Matrix)",
+      "text": "Ordnet Produkte nach Marktwachstum und relativem Marktanteil in vier Felder: Fragezeichen, Stars, Cash Cows und Poor Dogs. Daraus folgen Normstrategien wie investieren, halten, abschöpfen oder aufgeben — als Orientierung, nicht als Automatismus."
+    },
+    "produktionsprogramm": {
+      "titel": "Produktionsprogramm",
+      "text": "Legt fest, welche Erzeugnisse in welcher Menge in welchem Zeitraum hergestellt werden. Programmbreite = Zahl der Produktlinien, Programmtiefe = Zahl der Varianten innerhalb einer Linie."
+    },
+    "produktivitaet": {
+      "titel": "Produktivität",
+      "text": "Mengenmäßiges Verhältnis von Ausbringung zu Einsatz, etwa Stück je Arbeitsstunde oder je Maschinenstunde. Sie wird immer mit Einheit angegeben und sagt nichts über Kosten oder Gewinn."
+    },
+    "ruestzeit": {
+      "titel": "Rüstzeit",
+      "text": "Die Zeit, um eine Maschine oder einen Arbeitsplatz für einen Auftrag einzurichten und danach wieder abzurüsten. Sie fällt je Los einmal an, unabhängig von der Stückzahl; die dafür entstehenden Kosten heißen Rüstkosten."
+    },
+    "smart": {
+      "titel": "SMART-Regel",
+      "text": "Prüfraster für Ziele: spezifisch, messbar, attraktiv beziehungsweise akzeptiert, realistisch und terminiert. Ein SMART-Ziel beschreibt ein überprüfbares Ergebnis, keine Tätigkeit."
+    },
+    "soziale-marktwirtschaft": {
+      "titel": "Soziale Marktwirtschaft",
+      "text": "Wirtschaftsordnung in Deutschland: Märkte und Preise koordinieren, der Staat schützt den Wettbewerb und sorgt für sozialen Ausgleich, etwa über Sozialversicherung, Schutzrechte und progressive Steuern."
+    },
+    "spediteur": {
+      "titel": "Spediteur",
+      "text": "Wer sich verpflichtet, die Versendung von Gütern zu besorgen: Er organisiert den Transport und schließt dafür Verträge mit Frachtführern, statt selbst zu fahren (§ 453 HGB)."
+    },
+    "stueckliste": {
+      "titel": "Stückliste",
+      "text": "Verzeichnis der Materialien und Baugruppen, aus denen ein Erzeugnis besteht, mit der Menge je Einheit. Arten: Mengenübersichts-, Struktur-, Baukasten- und Variantenstückliste."
+    },
+    "swot": {
+      "titel": "SWOT-Analyse",
+      "text": "Ordnet interne Stärken (Strengths) und Schwächen (Weaknesses) sowie externe Chancen (Opportunities) und Risiken (Threats). Aus der Verbindung der Felder werden Strategien abgeleitet, etwa Stärken nutzen, um Chancen zu ergreifen."
+    },
+    "vollzeitaequivalent": {
+      "titel": "Vollzeitäquivalent (VZÄ)",
+      "text": "Rechengröße für Arbeitsvolumen: die Arbeitszeit aller Beschäftigten, umgerechnet in Vollzeitstellen. Zwei Halbtagskräfte ergeben ein VZÄ. VZÄ und Kopfzahl können deshalb voneinander abweichen."
+    },
+    "werkstoffe": {
+      "titel": "Werkstoffe",
+      "text": "Materialien, die in der Leistungserstellung eingesetzt werden: Rohstoffe als Hauptbestandteile, Hilfsstoffe als Nebenbestandteile des Produkts und Betriebsstoffe, die verbraucht werden, ohne Teil des Produkts zu werden."
+    },
+    "wirtschaftlichkeit": {
+      "titel": "Wirtschaftlichkeit",
+      "text": "Wertmäßiges Verhältnis von Ertrag zu Aufwand (in der Kostenrechnung: Leistung zu Kosten). Ein Wert über 1 zeigt einen Überschuss; 1,25 bedeutet 1,25 Euro Ertrag je Euro Aufwand, nicht 125 Prozent Gewinn."
+    },
+    "xyz-analyse": {
+      "titel": "XYZ-Analyse",
+      "text": "Ordnet Materialien nach der Regelmäßigkeit ihres Verbrauchs: X-Güter werden gleichmäßig verbraucht und sind gut planbar, Y-Güter schwankend, Z-Güter unregelmäßig. Sie ergänzt die ABC-Analyse, die nach dem Wertanteil ordnet."
+    }
+  },
+  "paragraphen": {
+    "agg-11": {
+      "titel": "§ 11 AGG — Ausschreibung",
+      "text": "Ein Arbeitsplatz darf nicht unter Verstoß gegen das Benachteiligungsverbot des § 7 Abs. 1 AGG ausgeschrieben werden — also nicht so, dass Bewerbende wegen Rasse oder ethnischer Herkunft, Geschlecht, Religion oder Weltanschauung, Behinderung, Alter oder sexueller Identität benachteiligt werden. (Sinngemäß)",
+      "kurz": "Stellenausschreibungen müssen benachteiligungsfrei sein."
+    },
+    "betrvg-60": {
+      "titel": "§ 60 BetrVG",
+      "text": "In Betrieben mit in der Regel mindestens fünf Arbeitnehmern, die das 18. Lebensjahr noch nicht vollendet haben (jugendliche Arbeitnehmer) oder die zu ihrer Berufsausbildung beschäftigt sind, werden Jugend- und Auszubildendenvertretungen gewählt. Für Auszubildende gilt seit dem Betriebsrätemodernisierungsgesetz 2021 keine Altersgrenze mehr. Voraussetzung ist zudem ein bestehender Betriebsrat. (Sinngemäß)",
+      "kurz": "JAV ab in der Regel fünf Jugendlichen oder Auszubildenden (Auszubildende ohne Altersgrenze), wenn ein Betriebsrat besteht."
+    },
+    "bgb-150": {
+      "titel": "§ 150 BGB",
+      "text": "Die verspätete Annahme eines Antrags gilt als neuer Antrag. Eine Annahme unter Erweiterungen, Einschränkungen oder sonstigen Änderungen gilt als Ablehnung verbunden mit einem neuen Antrag. (Sinngemäß)",
+      "kurz": "Geänderte oder verspätete Annahme = neuer Antrag."
+    },
+    "burlg-3": {
+      "titel": "§ 3 BUrlG — Dauer des Urlaubs",
+      "text": "Der Urlaub beträgt jährlich mindestens 24 Werktage. Als Werktage gelten alle Kalendertage, die nicht Sonn- oder gesetzliche Feiertage sind. Bei einer Fünf-Tage-Woche entspricht das 20 Arbeitstagen. (Sinngemäß mit Umrechnungshinweis)",
+      "kurz": "Mindesturlaub 24 Werktage (= 20 Arbeitstage bei Fünf-Tage-Woche)."
+    },
+    "gewo-109": {
+      "titel": "§ 109 GewO",
+      "text": "Der Arbeitnehmer hat bei Beendigung eines Arbeitsverhältnisses Anspruch auf ein schriftliches Zeugnis. Es muss mindestens Angaben zu Art und Dauer der Tätigkeit enthalten; auf Verlangen erstreckt es sich auch auf Leistung und Verhalten. Das Zeugnis muss klar und verständlich formuliert sein. Mit Einwilligung des Arbeitnehmers kann es in elektronischer Form erteilt werden. (Sinngemäß)",
+      "kurz": "Anspruch auf ein einfaches oder qualifiziertes Arbeitszeugnis; elektronisch nur mit Einwilligung."
+    },
+    "gmbhg-13": {
+      "titel": "§ 13 GmbHG",
+      "text": "Die GmbH hat selbständig ihre Rechte und Pflichten; sie kann Eigentum erwerben, vor Gericht klagen und verklagt werden. Für die Verbindlichkeiten der Gesellschaft haftet den Gläubigern derselben nur das Gesellschaftsvermögen. Die Gesellschaft gilt als Handelsgesellschaft. (Sinngemäß)",
+      "kurz": "Gläubigern haftet nur das Gesellschaftsvermögen."
+    },
+    "gmbhg-35": {
+      "titel": "§ 35 GmbHG",
+      "text": "Die Gesellschaft wird durch die Geschäftsführer gerichtlich und außergerichtlich vertreten. (Sinngemäß)",
+      "kurz": "Geschäftsführer vertreten die GmbH."
+    },
+    "gmbhg-5": {
+      "titel": "§ 5 GmbHG",
+      "text": "Das Stammkapital der Gesellschaft muss mindestens 25.000 Euro betragen. Jeder Gesellschafter übernimmt bei der Errichtung einen oder mehrere Geschäftsanteile. (Sinngemäß)",
+      "kurz": "Mindeststammkapital 25.000 Euro."
+    },
+    "gwb-1": {
+      "titel": "§ 1 GWB — Kartellverbot",
+      "text": "Vereinbarungen zwischen Unternehmen, Beschlüsse von Unternehmensvereinigungen und aufeinander abgestimmte Verhaltensweisen, die eine Verhinderung, Einschränkung oder Verfälschung des Wettbewerbs bezwecken oder bewirken, sind verboten. (Sinngemäß)",
+      "kurz": "Wettbewerbsbeschränkende Vereinbarungen sind verboten."
+    },
+    "hgb-252": {
+      "titel": "§ 252 HGB",
+      "text": "Allgemeine Bewertungsgrundsätze, unter anderem: Die Eröffnungsbilanz muss mit der Schlussbilanz des Vorjahres übereinstimmen; es ist von der Fortführung des Unternehmens auszugehen; Vermögensgegenstände und Schulden sind einzeln zu bewerten; es ist vorsichtig zu bewerten — Gewinne nur, wenn sie realisiert sind, vorhersehbare Risiken und Verluste dagegen schon; Aufwendungen und Erträge sind dem Geschäftsjahr zuzurechnen, zu dem sie gehören, unabhängig vom Zahlungszeitpunkt. (Sinngemäß, Auszug aus Abs. 1)",
+      "kurz": "Bewertungsgrundsätze: Fortführung, Einzelbewertung, Vorsicht, Periodenabgrenzung."
+    },
+    "hgb-253": {
+      "titel": "§ 253 HGB",
+      "text": "Vermögensgegenstände sind höchstens mit den Anschaffungs- oder Herstellungskosten anzusetzen, vermindert um Abschreibungen. Bei Vermögensgegenständen des Anlagevermögens, deren Nutzung zeitlich begrenzt ist, sind die Anschaffungs- oder Herstellungskosten um planmäßige Abschreibungen zu vermindern; der Plan muss die Kosten auf die Geschäftsjahre verteilen, in denen der Vermögensgegenstand voraussichtlich genutzt werden kann. (Sinngemäß, Auszug aus Abs. 1 und 3)",
+      "kurz": "Höchstwert Anschaffungskosten; abnutzbares Anlagevermögen planmäßig abschreiben."
+    },
+    "hgb-255": {
+      "titel": "§ 255 HGB",
+      "text": "Anschaffungskosten sind die Aufwendungen, die geleistet werden, um einen Vermögensgegenstand zu erwerben und ihn in einen betriebsbereiten Zustand zu versetzen, soweit sie ihm einzeln zugeordnet werden können. Dazu gehören auch die Nebenkosten sowie die nachträglichen Anschaffungskosten. Anschaffungspreisminderungen, die dem Vermögensgegenstand einzeln zugeordnet werden können, sind abzusetzen. (Sinngemäß, Auszug aus Abs. 1)",
+      "kurz": "Anschaffungskosten = Preis + Nebenkosten bis zur Betriebsbereitschaft − Preisminderungen."
+    },
+    "hgb-264": {
+      "titel": "§ 264 HGB",
+      "text": "Die gesetzlichen Vertreter einer Kapitalgesellschaft haben den Jahresabschluss um einen Anhang zu erweitern, der mit Bilanz und Gewinn- und Verlustrechnung eine Einheit bildet, sowie einen Lagebericht aufzustellen. Kleine Kapitalgesellschaften brauchen keinen Lagebericht aufzustellen. Der Abschluss hat ein den tatsächlichen Verhältnissen entsprechendes Bild der Vermögens-, Finanz- und Ertragslage zu vermitteln. (Sinngemäß, Auszug aus Abs. 1 und 2)",
+      "kurz": "Kapitalgesellschaft: Bilanz, GuV, Anhang; Lagebericht außer bei kleinen."
+    },
+    "hgb-266": {
+      "titel": "§ 266 HGB",
+      "text": "Die Bilanz einer Kapitalgesellschaft ist in Kontoform aufzustellen. Aktivseite: A. Anlagevermögen, B. Umlaufvermögen, C. Rechnungsabgrenzungsposten (ggf. weitere Posten). Passivseite: A. Eigenkapital, B. Rückstellungen, C. Verbindlichkeiten, D. Rechnungsabgrenzungsposten (ggf. weitere Posten). Kleine Kapitalgesellschaften dürfen eine verkürzte Bilanz aufstellen. (Sinngemäß, Auszug)",
+      "kurz": "Bilanzgliederung für Kapitalgesellschaften."
+    },
+    "hgb-275": {
+      "titel": "§ 275 HGB",
+      "text": "Die Gewinn- und Verlustrechnung ist in Staffelform nach dem Gesamtkostenverfahren oder dem Umsatzkostenverfahren aufzustellen. Das Gesamtkostenverfahren beginnt mit den Umsatzerlösen, berücksichtigt Bestandsveränderungen und andere aktivierte Eigenleistungen und zieht die Aufwendungen nach Arten ab. (Sinngemäß, Auszug)",
+      "kurz": "GuV in Staffelform; Gesamt- oder Umsatzkostenverfahren."
+    },
+    "hgb-407": {
+      "titel": "§ 407 HGB",
+      "text": "Durch den Frachtvertrag wird der Frachtführer verpflichtet, das Gut zum Bestimmungsort zu befördern und dort an den Empfänger abzuliefern. Der Absender wird verpflichtet, die vereinbarte Fracht zu zahlen. (Sinngemäß, Auszug)",
+      "kurz": "Frachtvertrag: Frachtführer befördert, Absender zahlt die Fracht."
+    },
+    "hgb-453": {
+      "titel": "§ 453 HGB",
+      "text": "Durch den Speditionsvertrag wird der Spediteur verpflichtet, die Versendung des Gutes zu besorgen. Der Versender wird verpflichtet, die vereinbarte Vergütung zu zahlen. (Sinngemäß, Auszug)",
+      "kurz": "Speditionsvertrag: Spediteur besorgt die Versendung."
+    },
+    "ustg-12": {
+      "titel": "§ 12 UStG",
+      "text": "Die Steuer beträgt für jeden steuerpflichtigen Umsatz 19 Prozent der Bemessungsgrundlage. Für bestimmte, im Gesetz abschließend aufgezählte Umsätze ermäßigt sie sich auf 7 Prozent. (Sinngemäß)",
+      "kurz": "Regelsteuersatz 19 %, ermäßigter Satz 7 %."
+    },
+    "ustg-15": {
+      "titel": "§ 15 UStG",
+      "text": "Der Unternehmer kann die gesetzlich geschuldete Steuer für Lieferungen und sonstige Leistungen, die von einem anderen Unternehmer für sein Unternehmen ausgeführt worden sind, als Vorsteuer abziehen. Voraussetzung ist, dass er eine nach §§ 14, 14a UStG ausgestellte Rechnung besitzt. (Sinngemäß, Auszug aus Abs. 1)",
+      "kurz": "Vorsteuerabzug nur für Unternehmenszwecke und mit ordnungsgemäßer Rechnung."
+    }
+  }
+}

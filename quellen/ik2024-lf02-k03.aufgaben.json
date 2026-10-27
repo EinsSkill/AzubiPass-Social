@@ -1,0 +1,182 @@
+{
+  "lernfeld": "ik2024-lf02",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf02-k03-01",
+      "operator": "Bestimmen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Das Onboarding-Projekt der MAKEL Studio GmbH besteht aus sechs gleich großen Arbeitspaketen. Drei sind abgeschlossen und geprüft, zwei sind begonnen, eines ist noch nicht begonnen. Für begonnene Pakete wurde keine Regel zur Bewertung des Fortschritts vereinbart. Bestimmen Sie den sicher belegbaren Abschlussstand in Prozent."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Belegbar abgeschlossen",
+          "einheit": "%",
+          "loesung": 50,
+          "toleranz": 0
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Nur abgeschlossene und geprüfte Pakete zählen: 3 von 6 = 50 %. Begonnene Pakete werden gesondert ausgewiesen.",
+      "quelle": "ik2024-lf02-k03, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf02-k03-02",
+      "operator": "Nennen und begründen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Im MAKEL-Onboarding-Projekt verzögert sich das Pflichtkapitel ‚Arbeitsschutzunterweisung‘, weil die Freigabe der Fachkraft für Arbeitssicherheit fehlt. Der Probelauf ist in drei Arbeitstagen geplant."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Nennen Sie zwei sachgerechte Handlungsoptionen und begründen Sie, welche Sie wählen würden.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Option 1: Die Freigabe mit festem Termin bei der Fachkraft für Arbeitssicherheit anfragen und bis dahin unabhängige Arbeiten (Layout der übrigen Kapitel) vorziehen — der Termin kann gehalten werden, wenn die Freigabe rechtzeitig kommt. Option 2: Mit der Auftraggeberin Ayla Brandt klären, ob der Probelauf ohne dieses Kapitel stattfindet und das Kapitel vor dem Einsatz nachgereicht wird — Termin bleibt, das Ziel wird bewusst und abgestimmt angepasst. Wahl: zuerst Option 1; zeichnet sich ab, dass die Freigabe nicht rechtzeitig kommt, Option 2 mit der Auftraggeberin. Ein kommentarloses Streichen scheidet aus, weil es sich um eine Pflichtinformation handelt.",
+        "raster": [
+          {
+            "kriterium": "Erste sachgerechte Option",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zweite sachgerechte Option",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Auswahl mit Folgen für Ziel, Termin oder Qualität begründet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Pflichtinhalt wird nicht still gestrichen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Maßnahmen bei Abweichungen werden an Ziel, Termin und Qualität bewertet; Änderungen am Ziel entscheidet die Auftraggeberin.",
+      "quelle": "ik2024-lf02-k03, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf02-k03-03",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "In einer geteilten Datei des MAKEL-Onboarding-Projekts stehen neben Namen und Funktionen auch die Krankheitstage früherer neuer Beschäftigter als ‚Erfahrungswerte‘."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Wie gehen Sie vor? Kreuzen Sie alle zutreffenden Maßnahmen an.",
+          "mehrfach": true,
+          "optionen": [
+            {
+              "text": "Die Krankheitstage aus der Datei entfernen",
+              "richtig": true,
+              "echo": "Richtig. Gesundheitsdaten sind für das Onboarding nicht erforderlich und besonders geschützt."
+            },
+            {
+              "text": "Die verantwortliche Person informieren",
+              "richtig": true,
+              "echo": "Richtig. Die Personalabteilung muss prüfen, wie die Daten in die Datei kamen und wer Zugriff hatte."
+            },
+            {
+              "text": "Die Datei per privatem Messenger an das Team schicken, damit alle Bescheid wissen",
+              "richtig": false,
+              "echo": "Damit würden die Daten noch weiter verbreitet."
+            },
+            {
+              "text": "Nichts tun, weil die Datei nur intern ist",
+              "richtig": false,
+              "echo": "Datenschutz gilt auch innerhalb des Betriebs."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Daten nur zweckgebunden und sparsam; unnötige personenbezogene Daten werden entfernt und gemeldet.",
+      "quelle": "ik2024-lf02-k03, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf02-k03-04",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 1,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Im MAKEL-Onboarding-Projekt kommt es zu Spannungen, weil ein Arbeitspaket zu spät geliefert wurde."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Formulierung ist eine Ich-Botschaft?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "„Du bist immer unzuverlässig.“",
+              "richtig": false,
+              "echo": "Das ist eine verallgemeinernde Du-Botschaft, die die Person angreift."
+            },
+            {
+              "text": "„Ich bin unter Druck geraten, weil die Texte erst gestern kamen. Ich wünsche mir, dass wir Verzögerungen früher besprechen.“",
+              "richtig": true,
+              "echo": "Richtig: eigene Wirkung, konkreter Anlass, Wunsch."
+            },
+            {
+              "text": "„Man könnte ja mal pünktlich sein.“",
+              "richtig": false,
+              "echo": "Eine unpersönliche Andeutung — sie benennt weder Wirkung noch Wunsch."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Ich-Botschaften beschreiben die eigene Wahrnehmung, die Wirkung und einen Wunsch, ohne die andere Person abzuwerten.",
+      "quelle": "ik2024-lf02-k03, Abschnitt a3"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf09",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf09-k02-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Marlene Voss erstellt eine SWOT-Analyse für das Geschäftskundengeschäft der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "In welches Feld gehört der Faktor?",
+          "ziele": ["Stärke", "Schwäche", "Chance", "Risiko"],
+          "elemente": [
+            { "text": "Eigene Designabteilung mit hoher Kompetenz", "loesung": "Stärke" },
+            { "text": "Kein Online-Konfigurator für Geschäftskunden", "loesung": "Schwäche" },
+            { "text": "Wachsende Nachfrage nach nachhaltiger Teamkleidung", "loesung": "Chance" },
+            { "text": "Steigende Baumwollpreise auf dem Weltmarkt", "loesung": "Risiko" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Stärken und Schwächen sind interne, beeinflussbare Faktoren; Chancen und Risiken liegen außerhalb des Unternehmens.",
+      "quelle": "ik2024-lf09-k02, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf09-k02-02",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH ordnet ihre Produktlinien in die Portfolio-Matrix ein." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welches Portfolio-Feld passt?",
+          "ziele": ["Fragezeichen", "Star", "Cash Cow", "Poor Dog"],
+          "elemente": [
+            { "text": "Basis-Hoodie: stagnierender Markt, MAKEL ist dort Marktführer in der Region", "loesung": "Cash Cow" },
+            { "text": "Nachhaltige Teamwear: Markt wächst stark, MAKEL hat erst wenige Kunden", "loesung": "Fragezeichen" },
+            { "text": "Bestickte Event-Hoodies: Markt wächst, MAKEL ist einer der größten Anbieter", "loesung": "Star" },
+            { "text": "Bedruckte Tassen: Markt schrumpft, MAKEL verkauft kaum welche", "loesung": "Poor Dog" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Das Portfolio ordnet nach Marktwachstum (hoch/gering) und relativem Marktanteil (hoch/gering).",
+      "quelle": "ik2024-lf09-k02, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf09-k02-03",
+      "operator": "Leiten Sie ab",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die SWOT der MAKEL Studio GmbH enthält unter anderem: Stärke „hochwertige Stickerei mit eigener Designabteilung“, Schwäche „Lieferzeit drei Wochen“, Chance „mehr Firmenevents mit Teamkleidung“, Risiko „Online-Anbieter mit 48-Stunden-Lieferung und Niedrigpreisen“." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Leiten Sie eine SO-Strategie und eine WT-Strategie ab und begründen Sie, welche MAKEL zuerst angehen sollte.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "SO-Strategie: Mit der Design- und Stickqualität gezielt Eventagenturen und Firmen ansprechen, etwa mit individuellen Designpaketen, die Online-Anbieter nicht bieten. WT-Strategie: Die lange Lieferzeit verkürzen (zum Beispiel Express-Option für Standardmotive, Vorratshaltung beliebter Rohlinge), damit MAKEL im Wettbewerb mit schnellen Online-Anbietern nicht verliert, ohne in den Preiskampf einzusteigen. Priorität: Die Lieferzeit ist für Events oft entscheidend — ohne kürzere Lieferzeit lässt sich die Chance kaum nutzen. Deshalb zuerst die Schwäche angehen (oder beides verbinden), Erfolg an Lieferzeit und Auftragszahl von Agenturen messen.",
+        "raster": [
+          { "kriterium": "SO-Strategie verbindet Stärke und Chance", "punkte": 1 },
+          { "kriterium": "WT-Strategie verbindet Schwäche und Risiko", "punkte": 1 },
+          { "kriterium": "Priorität begründet", "punkte": 1 },
+          { "kriterium": "Messgröße oder Überprüfung genannt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "SWOT-Strategien verbinden interne und externe Felder; die Reihenfolge wird mit der Wirkung auf Kunden begründet.",
+      "quelle": "ik2024-lf09-k02, Abschnitte a2 und a4"
+    }
+  ]
+}

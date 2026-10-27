@@ -1,0 +1,241 @@
+{
+  "lernfeld": "ik2024-lf05",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf05-k05-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "liste": {
+          "von": 1000,
+          "bis": 4000,
+          "schritt": 200
+        },
+        "rabatt": {
+          "von": 5,
+          "bis": 15,
+          "schritt": 5
+        },
+        "fracht": {
+          "von": 40,
+          "bis": 120,
+          "schritt": 20
+        }
+      },
+      "abgeleitet": {
+        "zugang": "runde(liste * (1 - rabatt / 100) + fracht, 2)",
+        "vorsteuer": "runde(zugang * 0.19, 2)",
+        "verbindlichkeit": "zugang + vorsteuer"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Deniz Aydın aus dem Einkauf der MAKEL Studio GmbH bestellt Baumwollstoff. Listenpreis netto {liste} €, der Lieferant gewährt {rabatt} % Rabatt und berechnet zusätzlich {fracht} € netto für den Transport. Skonto wird nicht gewährt. Es gelten 19 % Umsatzsteuer und voller Vorsteuerabzug."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Materialzugang netto (Anschaffungskosten)",
+          "einheit": "€",
+          "loesung": "zugang",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Vorsteuer",
+          "einheit": "€",
+          "loesung": "vorsteuer",
+          "toleranz": 0.01,
+          "punkte": 1,
+          "folgefehler_aus": [
+            "zugang"
+          ]
+        },
+        {
+          "block": "zahl",
+          "label": "Verbindlichkeit gegenüber dem Lieferanten",
+          "einheit": "€",
+          "loesung": "verbindlichkeit",
+          "toleranz": 0.01,
+          "punkte": 1,
+          "folgefehler_aus": [
+            "zugang",
+            "vorsteuer"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Listenpreis − Rabatt + zurechenbare Transportkosten = Anschaffungskosten. Darauf 19 % Vorsteuer; die Verbindlichkeit ist der Bruttobetrag.",
+      "quelle": "ik2024-lf05-k05, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf05-k05-02",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "stueck": {
+          "von": 20,
+          "bis": 80,
+          "schritt": 10
+        },
+        "preis": {
+          "von": 7,
+          "bis": 10,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "wert": "stueck * preis"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für einen Veredelungsauftrag entnimmt die Produktion laut Materialentnahmeschein {stueck} Hoodie-Rohlinge zu Anschaffungskosten von {preis} € je Stück aus dem Lager. MAKEL bucht nach der Bestandsmethode."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "6000",
+              "haben": null,
+              "betrag": "wert"
+            },
+            {
+              "soll": null,
+              "haben": "2000",
+              "betrag": "wert"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Der Verbrauch ist Aufwand (Soll), der Rohstoffbestand sinkt (Haben). Umsatzsteuer fällt nicht an, weil intern nichts verkauft wird.",
+      "quelle": "ik2024-lf05-k05, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf05-k05-03",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 6,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "netto": {
+          "von": 60,
+          "bis": 400,
+          "schritt": 20
+        }
+      },
+      "abgeleitet": {
+        "steuer": "runde(netto * 0.19, 2)",
+        "brutto": "netto + steuer"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Aus einer noch nicht bezahlten Lieferung sendet Jonas Weidner aus dem Lager der MAKEL Studio GmbH falsch gefärbte Rohlinge im Nettowert von {netto} € zurück. Der Lieferant erteilt eine Gutschrift über {netto} € zuzüglich 19 % Umsatzsteuer, insgesamt {brutto} €."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "4400",
+              "haben": null,
+              "betrag": "brutto"
+            },
+            {
+              "soll": null,
+              "haben": "2000",
+              "betrag": "netto"
+            },
+            {
+              "soll": null,
+              "haben": "2600",
+              "betrag": "steuer"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 6,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Die Rücksendung kehrt den Einkauf anteilig um: Verbindlichkeit brutto im Soll, Rohstoffe netto und Vorsteuerberichtigung im Haben.",
+      "quelle": "ik2024-lf05-k05, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k05-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "MAKEL bucht Rohstoffe nach der Bestandsmethode. Luca Petrelli hat einen Rohlingseinkauf über 2.000 € netto so gebucht: „Aufwendungen für Rohstoffe 2.000 € und Vorsteuer 380 € an Verbindlichkeiten 2.380 €“. Eine Woche später bucht er die Entnahme von Rohlingen für 600 € laut Entnahmeschein: „Aufwendungen für Rohstoffe 600 € an Rohstoffe 600 €“."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie die beiden Buchungen und ihre Wirkung auf Bestand und Erfolg.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Einkaufsbuchung widerspricht der Bestandsmethode: Der Einkauf hätte auf das Bestandskonto gebucht werden müssen (Rohstoffe 2.000 € und Vorsteuer 380 € an Verbindlichkeiten 2.380 €). Die Entnahmebuchung ist für sich richtig. Zusammen führen beide zu einem doppelten Aufwand von 600 € und einem um 2.000 € zu niedrigen Rohstoffbestand, der nach der Entnahme sogar zu weit sinkt. Der Erfolg ist deshalb zu niedrig ausgewiesen. Korrektur: Rohstoffe 2.000 € an Aufwendungen für Rohstoffe 2.000 €, dokumentiert mit Verweis auf die Originalbuchung.",
+        "raster": [
+          {
+            "kriterium": "Methodenwidrige Einkaufsbuchung erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Entnahmebuchung als richtig erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folge: doppelter Aufwand, falscher Bestand, zu niedriger Erfolg",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Korrekturbuchung genannt",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Bei der Bestandsmethode entsteht Aufwand erst beim Verbrauch; wer schon beim Einkauf Aufwand bucht, erfasst ihn doppelt.",
+      "quelle": "ik2024-lf05-k05, Abschnitte a1 und a3"
+    }
+  ]
+}

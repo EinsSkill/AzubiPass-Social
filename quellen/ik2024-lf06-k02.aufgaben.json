@@ -1,0 +1,153 @@
+{
+  "lernfeld": "ik2024-lf06",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf06-k02-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ordnen Sie die Beispiele aus dem Umfeld der MAKEL Studio GmbH der passenden Fertigungsart zu."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Fertigungsart liegt vor?",
+          "ziele": [
+            "Einzelfertigung",
+            "Serienfertigung",
+            "Sortenfertigung",
+            "Massenfertigung"
+          ],
+          "elemente": [
+            {
+              "text": "Ein Messemuster nach individuellem Entwurf",
+              "loesung": "Einzelfertigung"
+            },
+            {
+              "text": "800 identisch bestickte Hoodies, danach Umrüsten auf einen anderen Auftrag",
+              "loesung": "Serienfertigung"
+            },
+            {
+              "text": "Dasselbe Basis-Shirt in vier verschiedenen Farbdrucken",
+              "loesung": "Sortenfertigung"
+            },
+            {
+              "text": "Ununterbrochene Herstellung von Kronkorken über Jahre",
+              "loesung": "Massenfertigung"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Einzel: individuell; Serie: begrenzte Menge, dann Umrüsten; Sorte: Varianten eines Grundprodukts; Masse: sehr große Mengen ohne Umrüsten.",
+      "quelle": "ik2024-lf06-k02, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf06-k02-02",
+      "operator": "Vergleichen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei MAKEL stehen Siebdruck, Stickerei und Verpackung in getrennten Räumen. Deniz Aydın schlägt für wiederkehrende Shirt-Aufträge eine Fertigungsinsel vor, in der ein Dreierteam druckt, kontrolliert und verpackt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Vergleichen Sie die bisherige Werkstattfertigung mit der vorgeschlagenen Gruppenfertigung anhand von vier Kriterien.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Wege und Liegezeiten: In der Werkstattfertigung wandern Aufträge zwischen den Räumen und warten; in der Insel entfallen Wege, die Durchlaufzeit sinkt. Flexibilität: Die Werkstatt kann sehr unterschiedliche Aufträge aufnehmen; die Insel ist auf eine Teilefamilie (wiederkehrende Shirts) ausgelegt. Arbeitsbedingungen: In der Insel wechseln die Mitarbeitenden zwischen Tätigkeiten und tragen gemeinsam Verantwortung; dafür brauchen sie breitere Qualifikation. Kosten: Die Insel braucht Umbau und Schulung, senkt aber bei genug Auslastung die Stückkosten.",
+        "raster": [
+          {
+            "kriterium": "Wege bzw. Durchlaufzeit verglichen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Flexibilität verglichen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Arbeitsbedingungen bzw. Qualifikation verglichen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Kosten bzw. Voraussetzungen verglichen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Gruppenfertigung verbindet kurze Wege mit Teamverantwortung, ist aber auf ähnliche Aufträge angewiesen.",
+      "quelle": "ik2024-lf06-k02, Abschnitte a2 und a4"
+    },
+    {
+      "id": "ik2024-lf06-k02-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein Maschinenhersteller bietet MAKEL eine automatische Drucklinie an: Rohling auflegen, drucken, trocknen und falten in einem Durchlauf. Die Linie spart Transportwege und halbiert die Stückzeit, das Umrüsten auf ein neues Motiv dauert aber drei Stunden statt 45 Minuten. 70 % der MAKEL-Aufträge haben weniger als 150 Stück."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie, ob die Drucklinie für MAKEL sinnvoll ist. Gehen Sie auf mindestens zwei Zielkonflikte ein.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Linie ist eine Form der Fließfertigung und lohnt sich bei großen, gleichartigen Mengen. Bei MAKEL sind 70 % der Aufträge klein; die lange Umrüstzeit von drei Stunden würde die Zeitersparnis bei kleinen Losen aufzehren. Zielkonflikte: Effizienz gegen Flexibilität (halbe Stückzeit, aber lange Umrüstung), Investition gegen Auslastung (teure Anlage, die nur bei Großaufträgen ausgelastet ist), eventuell Monotonie der Arbeit gegen Produktivität. Empfehlung: Ohne Daten zu Auftragsgrößen, Investition und erwarteter Auslastung nicht kaufen; allenfalls prüfen, ob große Aufträge gebündelt werden können oder ob eine Fertigungsinsel für wiederkehrende Aufträge besser passt.",
+        "raster": [
+          {
+            "kriterium": "Linie als Fließfertigung mit Eignung für große Mengen eingeordnet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Auftragsstruktur (kleine Lose) und Rüstzeit in Beziehung gesetzt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zwei Zielkonflikte erläutert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Empfehlung mit fehlenden Daten",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Ob eine Organisationsform passt, entscheidet die Auftragsstruktur — nicht die Leistung der Maschine allein.",
+      "quelle": "ik2024-lf06-k02, Abschnitte a2 und a4"
+    }
+  ]
+}

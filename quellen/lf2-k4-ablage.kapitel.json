@@ -33,15 +33,15 @@
           "Aufbewahrungsfristen beginnen nicht automatisch am Belegdatum.",
           "Handels- und Jahresabschlussunterlagen haben unterschiedliche Fristen."
         ],
-        "erklaerung": "Nach § 257 HGB gelten zehn Jahre für Bücher, Inventare und Jahresabschlüsse und sechs Jahre für empfangene und abgesandte Handelsbriefe. Die Frist beginnt mit dem Schluss des Kalenderjahres, in dem die letzte Eintragung gemacht wurde, nicht mit dem Datum des Belegs. Ein Werbeprospekt ist kein Handelsbrief. Laufende Prüfungen oder offene Verfahren können der Vernichtung zusätzlich entgegenstehen.",
+        "erklaerung": "Nach § 257 HGB und § 147 AO gelten zehn Jahre für Bücher, Inventare und Jahresabschlüsse, acht Jahre für Buchungsbelege wie Rechnungen (seit dem Vierten Bürokratieentlastungsgesetz, gültig ab 1. Januar 2025) und sechs Jahre für empfangene und abgesandte Handelsbriefe. Die Frist beginnt mit dem Schluss des Kalenderjahres, in dem die letzte Eintragung gemacht wurde, nicht mit dem Datum des Belegs. Ein Werbeprospekt ist kein Handelsbrief. Laufende Prüfungen oder offene Verfahren können der Vernichtung zusätzlich entgegenstehen.",
         "beispiele": [
-          "Eine Eingangsrechnung vom 12. März 2024, die 2024 verbucht wurde, fällt bei zehnjähriger Frist unter den Jahresendpunkt 31. Dezember 2024 und darf frühestens ab 1. Januar 2035 vernichtet werden.",
+          "Eine Eingangsrechnung vom 12. März 2024, die 2024 verbucht wurde, ist ein Buchungsbeleg: Die achtjährige Frist beginnt am 31. Dezember 2024, vernichtet werden darf frühestens ab 1. Januar 2033.",
           "Ein geschäftlicher Brief wird grundsätzlich sechs Jahre aufbewahrt; die Einordnung richtet sich nach seiner Funktion, nicht danach, ob er auf Papier oder digital vorliegt."
         ],
-        "fallbeispiel": "Die Eingangsrechnung vom 12. März 2024 wurde im selben Jahr verbucht. Der Fristbeginn ist nicht der 12. März, sondern der Schluss des Kalenderjahres: 31. Dezember 2024. Zehn Jahre laufen bis zum Ablauf des 31. Dezember 2034. Frühestens ab 1. Januar 2035 darf vernichtet werden, sofern kein offenes Verfahren entgegensteht.",
-        "typische_fehler": "Ab dem Belegdatum gerechnet, die zehnjährige und sechsjährige Frist vertauscht oder ein Werbeprospekt als Handelsbrief behandelt. Auch die Bedeutung einer laufenden Prüfung wird übersehen.",
+        "fallbeispiel": "Die Eingangsrechnung vom 12. März 2024 wurde im selben Jahr verbucht. Der Fristbeginn ist nicht der 12. März, sondern der Schluss des Kalenderjahres: 31. Dezember 2024. Für Buchungsbelege laufen acht Jahre bis zum Ablauf des 31. Dezember 2032. Frühestens ab 1. Januar 2033 darf vernichtet werden, sofern kein offenes Verfahren entgegensteht.",
+        "typische_fehler": "Ab dem Belegdatum gerechnet, die Fristen von zehn, acht und sechs Jahren vertauscht oder ein Werbeprospekt als Handelsbrief behandelt. Auch die Bedeutung einer laufenden Prüfung wird übersehen.",
         "verstaendnisfragen": [
-          "Wann beginnt die zehnjährige Frist? Mit dem Schluss des Kalenderjahres, in dem die letzte Eintragung gemacht wurde.",
+          "Wann beginnt die Aufbewahrungsfrist? Mit dem Schluss des Kalenderjahres, in dem die letzte Eintragung gemacht wurde.",
           "Welche Unterlagen nennt § 257 HGB mit zehn Jahren? Bücher, Inventare und Jahresabschlüsse."
         ],
         "pruefungsbezug": "Schreibe in jeder Fristrechnung zuerst ‚Schluss des Kalenderjahres‘. Danach Fristdauer bestimmen und erst am folgenden Tag die Vernichtung zulassen.",
@@ -190,12 +190,13 @@
             {
               "zellen": [
                 "Buchungsbelege",
-                "siehe Hinweis",
+                "8 Jahre",
                 "{{par:hgb-257|§ 257 HGB}}, {{par:ao-147|§ 147 AO}}"
               ],
               "mono": [
                 1
-              ]
+              ],
+              "detail": "**Rechnungen, Quittungen, Kontoauszüge und andere Buchungsbelege**: acht Jahre seit dem Vierten Bürokratieentlastungsgesetz (gültig ab 1. Januar 2025; auch für Belege, deren alte Frist da noch lief)."
             },
             {
               "zellen": [
@@ -218,12 +219,11 @@
                 1
               ]
             }
-          ],
-          "pruefen": "Die Aufbewahrungsfrist für Buchungsbelege wurde durch das Vierte Bürokratieentlastungsgesetz verkürzt. Vor Veröffentlichung den aktuellen Stand von § 257 HGB und § 147 AO prüfen und die genaue Jahreszahl samt Anwendungszeitpunkt hier eintragen."
+          ]
         },
         {
           "typ": "achtung",
-          "text": "Die Frist beginnt **nicht mit dem Datum des Belegs**, sondern mit dem **Schluss des Kalenderjahres**, in dem die letzte Eintragung gemacht oder der Brief empfangen beziehungsweise abgesandt wurde. Eine Rechnung vom März 2020 mit zehnjähriger Frist darf also erst nach dem 31. Dezember 2030 vernichtet werden."
+          "text": "Die Frist beginnt **nicht mit dem Datum des Belegs**, sondern mit dem **Schluss des Kalenderjahres**, in dem die letzte Eintragung gemacht oder der Brief empfangen beziehungsweise abgesandt wurde. Ein Jahresabschluss für 2020 (zehn Jahre) darf also erst nach dem 31. Dezember 2030 vernichtet werden, eine 2024 verbuchte Rechnung (acht Jahre) erst nach dem 31. Dezember 2032."
         },
         {
           "typ": "grafik",
@@ -249,6 +249,12 @@
               "frist": "sechs Jahre",
               "termin": "empfangene und abgesandte Handelsbriefe",
               "monate": 3
+            },
+            {
+              "ab": 8,
+              "frist": "acht Jahre",
+              "termin": "Buchungsbelege wie Rechnungen und Kontoauszüge",
+              "monate": 4
             },
             {
               "ab": 10,
@@ -388,7 +394,7 @@
     "In der Praxis werden sie kombiniert — die Reihenfolge muss festgelegt sein.",
     "Prüfstein jeder Ablage: Findet eine Vertretung den Vorgang ohne Rückfrage?",
     "Vor dem Ablegen wird ausgesondert — Entwürfe und Mehrfachkopien gehören nicht hinein.",
-    "{{par:hgb-257|§ 257 HGB}}: zehn Jahre für Bücher, Inventare und Jahresabschlüsse.",
+    "{{par:hgb-257|§ 257 HGB}}: zehn Jahre für Bücher, Inventare und Jahresabschlüsse; acht Jahre für Buchungsbelege ({{par:ao-147|§ 147 AO}}).",
     "Sechs Jahre für empfangene und abgesandte Handelsbriefe.",
     "Die Frist beginnt mit dem Schluss des Kalenderjahres, nicht mit dem Belegdatum.",
     "Digitale Ablage muss unveränderbar, vollständig, nachvollziehbar und auffindbar sein."
@@ -401,8 +407,8 @@
     },
     {
       "typ": "Berechnung",
-      "frage": "Eine Eingangsrechnung stammt vom 12. März 2024 und wurde im selben Jahr verbucht. Wann darf sie frühestens vernichtet werden, wenn eine zehnjährige Frist gilt?",
-      "loesung": "Die Aufbewahrungsfrist beginnt nicht mit dem Belegdatum, sondern mit dem Schluss des Kalenderjahres, in dem die letzte Eintragung dazu gemacht wurde. Das ist hier der 31. Dezember 2024. Von diesem Zeitpunkt an laufen zehn Jahre, die Frist endet also mit Ablauf des 31. Dezember 2034. Vernichtet werden darf der Beleg damit frühestens ab dem 1. Januar 2035. Zu beachten ist außerdem, dass die Frist nicht endet, solange die Unterlagen für eine laufende Außenprüfung oder ein offenes Verfahren von Bedeutung sind."
+      "frage": "Eine Eingangsrechnung stammt vom 12. März 2024 und wurde im selben Jahr verbucht. Wann darf sie frühestens vernichtet werden?",
+      "loesung": "Die Rechnung ist ein Buchungsbeleg; es gilt die achtjährige Frist. Sie beginnt nicht mit dem Belegdatum, sondern mit dem Schluss des Kalenderjahres, in dem die letzte Eintragung dazu gemacht wurde: 31. Dezember 2024. Die Frist endet mit Ablauf des 31. Dezember 2032; vernichtet werden darf frühestens ab 1. Januar 2033 — sofern die Unterlagen nicht für eine laufende Außenprüfung oder ein offenes Verfahren von Bedeutung sind."
     },
     {
       "typ": "Fall",
@@ -410,5 +416,5 @@
       "loesung": "Erstens muss das System revisionssicher sein: Dokumente müssen unveränderbar gespeichert, vollständig erfasst, in ihrer Bearbeitung nachvollziehbar protokolliert und in angemessener Zeit auffindbar sein. Zweitens sind elektronisch empfangene Belege in ihrem Originalformat aufzubewahren, weil sonst die maschinelle Auswertbarkeit verloren geht; ein Ausdruck oder ein reines Bild genügt dafür nicht. Drittens ist für das ersetzende Scannen von Papier ein festgelegter Ablauf nötig, der die bildliche Übereinstimmung sichert und den Umgang mit Fehlern regelt. Dieser Ablauf muss in einer Verfahrensdokumentation schriftlich festgehalten werden — sie ist bei einer Betriebsprüfung eines der ersten angeforderten Dokumente. Viertens bleiben die gesetzlichen Aufbewahrungsfristen unverändert; die Umstellung ändert nur das Medium, nicht die Dauer. Schließlich sind die Zugriffsrechte zu regeln, weil viele Dokumente personenbezogene Daten enthalten."
     }
   ],
-  "pruefungstipp": "Der Fristbeginn ist die meistgestellte Frage und die häufigste Fehlerquelle: Es wird ab dem Schluss des Kalenderjahres gerechnet, nicht ab dem Belegdatum. Schreib diesen Satz in jede Antwort. Merk dir außerdem die klare Zweiteilung zehn Jahre für alles rund um den Jahresabschluss, sechs Jahre für Handelsbriefe — und dass ein Werbeprospekt kein Handelsbrief ist."
+  "pruefungstipp": "Der Fristbeginn ist die meistgestellte Frage und die häufigste Fehlerquelle: Es wird ab dem Schluss des Kalenderjahres gerechnet, nicht ab dem Belegdatum. Schreib diesen Satz in jede Antwort. Merk dir außerdem die Staffel zehn Jahre für alles rund um den Jahresabschluss, acht Jahre für Buchungsbelege, sechs Jahre für Handelsbriefe — und dass ein Werbeprospekt kein Handelsbrief ist."
 }

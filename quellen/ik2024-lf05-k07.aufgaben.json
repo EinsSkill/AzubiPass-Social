@@ -1,0 +1,242 @@
+{
+  "lernfeld": "ik2024-lf05",
+  "kapitel": "k07",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf05-k07-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "preis": {
+          "von": 8000,
+          "bis": 16000,
+          "schritt": 1000
+        },
+        "fracht": {
+          "von": 200,
+          "bis": 600,
+          "schritt": 100
+        },
+        "montage": {
+          "von": 300,
+          "bis": 900,
+          "schritt": 100
+        },
+        "nd": {
+          "von": 4,
+          "bis": 8,
+          "schritt": 1
+        },
+        "jahre": {
+          "von": 2,
+          "bis": 3,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "ak": "preis + fracht + montage",
+        "afa": "runde(ak / nd, 2)",
+        "buchwert": "runde(ak - jahre * afa, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH kauft eine Siebdruckmaschine. Die Rechnung enthält, jeweils netto: Kaufpreis {preis} €, Fracht {fracht} €, Montage bis zur Betriebsbereitschaft {montage} €; zusätzlich ein Wartungsvertrag für das erste Jahr über 400 €. Voller Vorsteuerabzug ist gegeben. Die Maschine ist ab 2. Januar betriebsbereit und wird über {nd} Jahre linear ohne Restwert abgeschrieben. Ermitteln Sie die Anschaffungskosten, die jährliche Abschreibung und den Buchwert nach {jahre} vollen Nutzungsjahren."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Anschaffungskosten",
+          "einheit": "€",
+          "loesung": "ak",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Jährlicher Abschreibungsbetrag",
+          "einheit": "€",
+          "loesung": "afa",
+          "toleranz": 0.01,
+          "punkte": 1,
+          "folgefehler_aus": [
+            "ak"
+          ]
+        },
+        {
+          "block": "zahl",
+          "label": "Buchwert nach den genannten vollen Jahren",
+          "einheit": "€",
+          "loesung": "buchwert",
+          "toleranz": 0.02,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "ak",
+            "afa"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 5
+      },
+      "erklaerung": "Kaufpreis, Fracht und Montage bis zur Betriebsbereitschaft gehören zu den Anschaffungskosten, der Wartungsvertrag ist laufender Aufwand. Jahresabschreibung = AK ÷ Nutzungsdauer; Buchwert = AK − Jahre × Abschreibung.",
+      "quelle": "ik2024-lf05-k07, Abschnitte a2 und a3"
+    },
+    {
+      "id": "ik2024-lf05-k07-02",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "ak": {
+          "von": 6000,
+          "bis": 18000,
+          "schritt": 1200
+        },
+        "nd": {
+          "von": 3,
+          "bis": 6,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "afa": "runde(ak / nd, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Zum 31. Dezember ist für eine Stickmaschine der MAKEL Studio GmbH (Anschaffungskosten {ak} €, betriebsbereit seit 2. Januar, Nutzungsdauer {nd} Jahre, linear, kein Restwert) die Jahresabschreibung zu buchen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "6500",
+              "haben": null,
+              "betrag": "afa"
+            },
+            {
+              "soll": null,
+              "haben": "0500",
+              "betrag": "afa"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Abschreibungen auf Sachanlagen (Aufwand) im Soll, das Anlagekonto Technische Anlagen und Maschinen im Haben. Es fließt kein Geld.",
+      "quelle": "ik2024-lf05-k07, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k07-03",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "ak": {
+          "von": 4800,
+          "bis": 9600,
+          "schritt": 1200
+        },
+        "monat": {
+          "von": 4,
+          "bis": 11,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "jahresafa": "ak / 4",
+        "monate": "13 - monat",
+        "erstjahr": "runde(ak / 4 * (13 - monat) / 12, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein Lieferwagen der MAKEL Studio GmbH mit Anschaffungskosten von {ak} € wird im {monat}. Monat des Geschäftsjahres angeschafft und ist sofort betriebsbereit. Die Nutzungsdauer ist mit vier Jahren vorgegeben, abgeschrieben wird linear und monatsgenau."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Abschreibung im Anschaffungsjahr",
+          "einheit": "€",
+          "loesung": "erstjahr",
+          "toleranz": 0.01
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Jahresbetrag = AK ÷ 4. Im Anschaffungsjahr zählt der Anschaffungsmonat voll mit: Anzahl Monate = 13 − Anschaffungsmonat. Abschreibung = Jahresbetrag × Monate ÷ 12.",
+      "quelle": "ik2024-lf05-k07, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf05-k07-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für eine neue Siebdruckanlage der MAKEL Studio GmbH liegen vor: Kaufpreis 20.000 €, Fracht 800 €, Fundament und Montage 1.200 €, Finanzierungszinsen im ersten Jahr 900 €, Schulung der Mitarbeitenden nach Inbetriebnahme 600 € (alle netto, voller Vorsteuerabzug). Luca rechnet Anschaffungskosten von 23.500 €."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Ergebnis und ermitteln Sie die Anschaffungskosten mit Begründung.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Luca hat alle Positionen addiert; das ist nicht richtig. Zu den Anschaffungskosten gehören nach § 255 HGB Kaufpreis, Fracht sowie Fundament und Montage, weil sie nötig sind, um die Anlage zu erwerben und betriebsbereit zu machen: 20.000 € + 800 € + 1.200 € = 22.000 €. Die Finanzierungszinsen sind laufender Aufwand der Finanzierung, die Schulung nach der Inbetriebnahme ebenfalls laufender Aufwand. Die abziehbare Vorsteuer gehört ohnehin nicht dazu.",
+        "raster": [
+          {
+            "kriterium": "Fehler (alle Positionen addiert) erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Richtige Anschaffungskosten 22.000 €",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zinsen als laufender Aufwand begründet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Schulung nach Inbetriebnahme als laufender Aufwand begründet",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Anschaffungskosten umfassen nur, was zum Erwerb und bis zur Betriebsbereitschaft nötig und einzeln zurechenbar ist.",
+      "quelle": "ik2024-lf05-k07, Abschnitt a2"
+    }
+  ]
+}

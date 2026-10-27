@@ -1,0 +1,241 @@
+{
+  "lernfeld": "ik2024-lf10",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf10-k02-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski ermittelt die handelsrechtlichen Herstellungskosten fertiger Hoodies der MAKEL Studio GmbH."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Wie wird der Kostenbestandteil behandelt?",
+          "ziele": [
+            "Pflicht",
+            "Wahlrecht",
+            "Verbot"
+          ],
+          "elemente": [
+            {
+              "text": "Materialeinzelkosten der Rohlinge",
+              "loesung": "Pflicht"
+            },
+            {
+              "text": "Anteilige Abschreibung der Stickmaschine",
+              "loesung": "Pflicht"
+            },
+            {
+              "text": "Anteilige allgemeine Verwaltungskosten",
+              "loesung": "Wahlrecht"
+            },
+            {
+              "text": "Werbekosten für die Kollektion",
+              "loesung": "Verbot"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Fertigungsbezogene Einzel- und Gemeinkosten sind Pflicht, allgemeine Verwaltung ist Wahlrecht, Vertrieb und Forschung sind verboten.",
+      "quelle": "ik2024-lf10-k02, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf10-k02-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "material": {
+          "von": 10,
+          "bis": 14,
+          "schritt": 1
+        },
+        "fertigung": {
+          "von": 4,
+          "bis": 8,
+          "schritt": 1
+        },
+        "gemein": {
+          "von": 5,
+          "bis": 9,
+          "schritt": 1
+        },
+        "vertrieb": {
+          "von": 3,
+          "bis": 6,
+          "schritt": 1
+        },
+        "stueck": {
+          "von": 200,
+          "bis": 500,
+          "schritt": 50
+        }
+      },
+      "abgeleitet": {
+        "hk": "material + fertigung + gemein",
+        "bestand": "hk * stueck"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Im Lager der MAKEL Studio GmbH liegen am Stichtag {stueck} fertige Hoodies. Je Stück: Materialeinzelkosten {material} €, Fertigungseinzelkosten {fertigung} €, angemessene Material- und Fertigungsgemeinkosten {gemein} €, Vertriebskosten {vertrieb} €. MAKEL bezieht allgemeine Verwaltungskosten nicht ein. Ein niedrigerer Stichtagswert liegt nicht vor."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Herstellungskosten je Stück",
+          "einheit": "€",
+          "loesung": "hk",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Bilanzansatz des Bestands",
+          "einheit": "€",
+          "loesung": "bestand",
+          "toleranz": 0.01,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "hk"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Herstellungskosten = Material + Fertigung + angemessene Gemeinkosten; Vertriebskosten sind verboten. Bestand = Herstellungskosten × Stück.",
+      "quelle": "ik2024-lf10-k02, Abschnitte a2 und a4"
+    },
+    {
+      "id": "ik2024-lf10-k02-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Tobias Renner möchte für ein Bankgespräch ein möglichst gutes Ergebnis zeigen. Er schlägt vor: (1) 300 fertige Hoodies zum Verkaufspreis von 44 € statt zu Herstellungskosten von 26 € anzusetzen, (2) Rohlinge einer Trendfarbe (Anschaffungskosten 1.000 €, belegter Stichtagswert 800 €) weiter mit 1.000 € anzusetzen, „weil die Farbe vielleicht wiederkommt“."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie beide Vorschläge nach den handelsrechtlichen Bewertungsgrundsätzen und beziffern Sie die Auswirkungen.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "(1) Unzulässig: Fertige Erzeugnisse werden höchstens mit den Herstellungskosten angesetzt; die Differenz von 18 € je Stück (5.400 € insgesamt) wäre ein nicht realisierter Gewinn (Realisationsprinzip). Ansatz 7.800 €. (2) Unzulässig: Beim Umlaufvermögen gilt das strenge Niederstwertprinzip; liegt der belegte Stichtagswert bei 800 €, muss auf diesen abgeschrieben werden (Imparitätsprinzip), Aufwand 200 €. Eine mögliche spätere Erholung ändert daran nichts; entfällt der Grund später, ist zuzuschreiben. Beide Vorschläge würden Ergebnis und Vermögen um zusammen 5.600 € zu hoch ausweisen und die Bank falsch informieren.",
+        "raster": [
+          {
+            "kriterium": "Vorschlag 1 mit Realisationsprinzip abgelehnt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Vorschlag 2 mit strengem Niederstwertprinzip abgelehnt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Auswirkungen beziffert (5.400 € und 200 €)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folge für die Information der Bank benannt",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Bewertung folgt dem Vorsichtsprinzip: keine unrealisierten Gewinne, absehbare Verluste berücksichtigen.",
+      "quelle": "ik2024-lf10-k02, Abschnitte a1, a3 und a4"
+    },
+    {
+      "id": "ik2024-lf10-k02-04",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "ak": {
+          "von": 10000,
+          "bis": 20000,
+          "schritt": 5000
+        },
+        "nd": {
+          "von": 4,
+          "bis": 5,
+          "schritt": 1
+        },
+        "jahre": {
+          "von": 2,
+          "bis": 3,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "afa": "ak / nd",
+        "grenze": "ak - afa * jahre"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH hat eine Stickmaschine für {ak} € angeschafft (Nutzungsdauer {nd} Jahre, linear, kein Restwert). Nach einem Jahr wurde wegen eines dauerhaften Wertverlusts zusätzlich außerplanmäßig abgeschrieben. Nach {jahre} Jahren entfällt der Grund dafür vollständig."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Planmäßige Abschreibung pro Jahr",
+          "einheit": "€",
+          "loesung": "afa",
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Höchstwert nach der Zuschreibung",
+          "einheit": "€",
+          "loesung": "grenze",
+          "toleranz": 0.01,
+          "punkte": 3,
+          "folgefehler_aus": [
+            "afa"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Zugeschrieben wird höchstens bis zu den fortgeführten Anschaffungskosten: Anschaffungskosten minus planmäßige Abschreibungen der abgelaufenen Jahre (§ 253 Abs. 5 HGB).",
+      "quelle": "ik2024-lf10-k02, Abschnitt a3"
+    }
+  ]
+}

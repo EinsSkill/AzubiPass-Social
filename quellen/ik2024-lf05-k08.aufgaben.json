@@ -1,0 +1,165 @@
+{
+  "lernfeld": "ik2024-lf05",
+  "kapitel": "k08",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf05-k08-01",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "buch": {
+          "von": 600,
+          "bis": 1200,
+          "schritt": 50
+        },
+        "diff": {
+          "von": 30,
+          "bis": 90,
+          "schritt": 10
+        }
+      },
+      "abgeleitet": {
+        "ist": "buch - diff"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Das Konto Rohstoffe der MAKEL Studio GmbH weist einen Buchbestand von {buch} € aus. Die Inventur ergibt {ist} €. Jonas Weidner findet einen geprüften, von der Schichtleitung abgezeichneten Materialentnahmeschein über Rohlinge im Wert von {diff} €, der nicht gebucht wurde. MAKEL bucht nach der Bestandsmethode."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "6000",
+              "haben": null,
+              "betrag": "diff"
+            },
+            {
+              "soll": null,
+              "haben": "2000",
+              "betrag": "diff"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Die belegte Ursache ist ein nicht gebuchter Verbrauch. Nachgeholt wird die Buchung, die von Anfang an richtig gewesen wäre: Aufwendungen für Rohstoffe an Rohstoffe.",
+      "quelle": "ik2024-lf05-k08, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf05-k08-02",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für einen Mini-Monat sind sämtliche Erträge der MAKEL Studio GmbH mit 6.000 € und sämtliche Aufwendungen mit 5.200 € angegeben. Luca Petrelli sagt in der Teambesprechung: „Damit muss MAKEL 800 € mehr auf dem Bankkonto haben.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Aussage. Gehen Sie auf mindestens zwei Gründe ein, warum Gewinn und Bankbestand auseinanderfallen können.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Der Gewinn beträgt 6.000 € − 5.200 € = 800 €. Lucas Schluss auf das Bankkonto ist aber nicht zulässig. Erträge können als Forderungen noch offen sein (Verkauf auf Ziel), Aufwendungen als Verbindlichkeiten noch unbezahlt. Abschreibungen mindern den Gewinn ohne Auszahlung. Außerdem verändern erfolgsneutrale Zahlungen den Kontostand, etwa Darlehenstilgungen, Materialeinkäufe auf Lager oder Kundenzahlungen auf alte Forderungen. Für eine Aussage zur Zahlungsfähigkeit müssen Bestände und Zahlungsströme betrachtet werden.",
+        "raster": [
+          {
+            "kriterium": "Gewinn von 800 € richtig ermittelt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Aussage zum Bankkonto als nicht zulässig beurteilt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Erster Grund (z. B. offene Forderungen/Verbindlichkeiten) erläutert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zweiter Grund (z. B. Abschreibung, Tilgung, Lagerkauf) erläutert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Hinweis auf Betrachtung von Beständen und Zahlungen für die Zahlungsfähigkeit",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Erfolg und Zahlung sind zwei verschiedene Rechnungen. Der Gewinn zeigt die Veränderung des Eigenkapitals, nicht des Geldbestands.",
+      "quelle": "ik2024-lf05-k08, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k08-03",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski, Leiterin der Buchhaltung der MAKEL Studio GmbH, bittet Sie um die Monatsabstimmung. Womit stimmen Sie die folgenden Konten ab?"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Abstimmen mit …",
+          "ziele": [
+            "Kontoauszug",
+            "Offene-Posten-Liste",
+            "Inventur",
+            "Gezählter Kassenbestand"
+          ],
+          "elemente": [
+            {
+              "text": "Guthaben bei Kreditinstituten",
+              "loesung": "Kontoauszug"
+            },
+            {
+              "text": "Forderungen aus Lieferungen und Leistungen",
+              "loesung": "Offene-Posten-Liste"
+            },
+            {
+              "text": "Rohstoffe",
+              "loesung": "Inventur"
+            },
+            {
+              "text": "Kasse im Store",
+              "loesung": "Gezählter Kassenbestand"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Jedes Konto wird mit einem unabhängigen Nachweis zum selben Stichtag abgestimmt. Abweichungen werden geklärt und dokumentiert.",
+      "quelle": "ik2024-lf05-k08, Abschnitt a3"
+    }
+  ]
+}

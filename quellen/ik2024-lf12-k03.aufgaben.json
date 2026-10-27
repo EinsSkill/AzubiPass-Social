@@ -1,0 +1,99 @@
+{
+  "lernfeld": "ik2024-lf12",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf12-k03-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Ayla Brandt erklärt Luca Petrelli die Regelungen, die für Beschäftigte der MAKEL Studio GmbH gelten können." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Gehört die Regelung zum Individual- oder zum Kollektivarbeitsrecht?",
+          "ziele": ["Individualarbeitsrecht", "Kollektivarbeitsrecht"],
+          "elemente": [
+            { "text": "Arbeitsvertrag mit der neuen Lagerkraft", "loesung": "Individualarbeitsrecht" },
+            { "text": "Tarifvertrag zwischen Gewerkschaft und Arbeitgeberverband", "loesung": "Kollektivarbeitsrecht" },
+            { "text": "Betriebsvereinbarung über Gleitzeit", "loesung": "Kollektivarbeitsrecht" },
+            { "text": "Gesetzlicher Kündigungsschutz der einzelnen Person", "loesung": "Individualarbeitsrecht" },
+            { "text": "Mitbestimmung des Betriebsrats bei Einstellungen", "loesung": "Kollektivarbeitsrecht" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Individualarbeitsrecht: Verhältnis einzelne Person – Arbeitgeber. Kollektivarbeitsrecht: Gruppen, Verbände, Betriebsrat.",
+      "quelle": "ik2024-lf12-k03, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf12-k03-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "w": { "von": 50, "bis": 70, "schritt": 10 },
+        "a1": { "von": 3, "bis": 5, "schritt": 1 },
+        "a2": { "von": 2, "bis": 4, "schritt": 1 },
+        "b1": { "von": 2, "bis": 4, "schritt": 1 },
+        "b2": { "von": 3, "bis": 5, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "w2": "100 - w",
+        "sa": "runde(w / 100 * a1 + (100 - w) / 100 * a2, 2)",
+        "sb": "runde(w / 100 * b1 + (100 - w) / 100 * b2, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Für die Stelle in Lager und Versand der MAKEL Studio GmbH wurde vorab festgelegt: Fachkompetenz {w} %, passende Erfahrung {w2} %. Skala 1–5, höher ist besser. Bewerberin A: Fachkompetenz {a1}, Erfahrung {a2}. Bewerber B: Fachkompetenz {b1}, Erfahrung {b2}." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Gewichtete Punktzahl A", "einheit": "Punkte", "loesung": "sa", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Gewichtete Punktzahl B", "einheit": "Punkte", "loesung": "sb", "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Gewichtete Punktzahl = Gewicht Fachkompetenz × Punkte + Gewicht Erfahrung × Punkte.",
+      "quelle": "ik2024-lf12-k03, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf12-k03-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Nach den Gesprächen liegt Bewerber B mit 3,8 vor Bewerberin A mit 3,6 Punkten. Luca Petrelli fand A „sympathischer“ und schlägt vor, die Gewichtung nachträglich auf 80 % Fachkompetenz zu ändern, damit A vorne liegt. Außerdem möchte er A fragen, ob sie „in nächster Zeit Familie plant“, weil die Stelle dauerhaft besetzt sein soll." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie beide Vorschläge und beschreiben Sie ein faires Vorgehen bis zur Entscheidung.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die nachträgliche Änderung der Gewichtung macht das Verfahren beliebig: Die Kriterien wurden vorher aus der Stellenbeschreibung abgeleitet; sie dem Ergebnis anzupassen, benachteiligt B und ist nicht nachvollziehbar. Sympathie ist kein vereinbartes Kriterium. Die Frage nach Familienplanung ist unzulässig (Benachteiligung wegen des Geschlechts, AGG) und darf nicht gestellt oder berücksichtigt werden. Faires Vorgehen: Bewertungen auf Begründung prüfen (gleiche Fragen, Belege aus Gespräch und Arbeitsprobe), bei sehr knappem Ergebnis ggf. ein zweites, für beide gleiches Verfahren (z. B. Probearbeiten) durchführen, Entscheidung dokumentieren, Betriebsrat beteiligen, sofern vorhanden.",
+        "raster": [
+          { "kriterium": "Nachträgliche Gewichtsänderung als unfair begründet", "punkte": 1 },
+          { "kriterium": "Sympathie als nicht vereinbartes Kriterium erkannt", "punkte": 1 },
+          { "kriterium": "Frage nach Familienplanung als unzulässig erkannt", "punkte": 1 },
+          { "kriterium": "Faires Vorgehen beschrieben (prüfen, ggf. gleiches Zusatzverfahren, dokumentieren)", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Ein faires Auswahlverfahren steht und fällt mit vorher festgelegten, gleich angewendeten Kriterien.",
+      "quelle": "ik2024-lf12-k03, Abschnitte a1 und a2"
+    }
+  ]
+}

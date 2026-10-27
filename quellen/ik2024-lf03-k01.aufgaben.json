@@ -1,0 +1,194 @@
+{
+  "lernfeld": "ik2024-lf03",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf03-k01-01",
+      "operator": "Formulieren Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei Marlene Voß im Vertrieb der MAKEL Studio GmbH geht folgende E-Mail eines bisher unbekannten Unternehmens ein: „Wir brauchen 100 Hoodies mit unserem Logo für unser Sommerfest. Was kostet das?“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Formulieren Sie vier Rückfragen, die für ein Angebot oder die Machbarkeit notwendig sind.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "(1) Wie verteilen sich die 100 Hoodies auf die einzelnen Größen? (2) Bitte senden Sie das Logo als Druckdatei und nennen Sie die gewünschten Druckpositionen (zum Beispiel Brust, Rücken). (3) Bis zu welchem Datum benötigen Sie die Hoodies spätestens? (4) An welche Adresse soll geliefert werden? — Weitere geeignete Fragen: Farbe und Qualität des Hoodies, Einzelverpackung gewünscht.",
+        "raster": [
+          {
+            "kriterium": "Frage zur Größenverteilung",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Frage zu Motiv bzw. Druckausführung",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Frage zum Liefertermin",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Weitere angebotsrelevante Frage (Lieferort, Farbe, Qualität, Verpackung)",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Rückfragen müssen für Angebot oder Machbarkeit relevant sein.",
+      "quelle": "ik2024-lf03-k01, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf03-k01-02",
+      "operator": "Erläutern Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Der neue Geschäftskunde bittet um Lieferung auf Rechnung mit 30 Tagen Zahlungsziel. Ein Kollege meint: „Die haben eine Firmen-E-Mail-Adresse und eine schöne Website, das passt schon.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Erläutern Sie, warum das als Grundlage nicht ausreicht, und schlagen Sie ein Vorgehen vor.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "E-Mail-Adresse und Website sprechen allenfalls für die Identität, nicht für Zahlungsfähigkeit und -bereitschaft. Lieferung auf Rechnung mit 30 Tagen Ziel bedeutet, dass MAKEL den Kunden einen Monat lang vorfinanziert. Vorgehen: Identität über das Handelsregister prüfen, Bonitätsauskunft einholen und bis zum Ergebnis Vorkasse oder eine Anzahlung vereinbaren; Zahlungsbedingungen nach betrieblicher Vorgabe festlegen.",
+        "raster": [
+          {
+            "kriterium": "Unterschied Identität und Bonität erklärt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Lieferung auf Rechnung als Kredit bzw. Risiko erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sachgerechtes Vorgehen (Auskunft, Vorkasse oder Anzahlung)",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Identität und Bonität sind verschiedene Prüfungen; Zahlungsziele sind Kredite.",
+      "quelle": "ik2024-lf03-k01, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf03-k01-03",
+      "operator": "Bringen Sie in die richtige Reihenfolge",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein individueller Druckauftrag eines Geschäftskunden durchläuft bei der MAKEL Studio GmbH mehrere Schritte."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "reihenfolge",
+          "lead": "Bringen Sie die Schritte in die richtige Reihenfolge.",
+          "elemente": [
+            {
+              "text": "Auftragsbestätigung an den Kunden",
+              "position": 3
+            },
+            {
+              "text": "Anfrage des Kunden",
+              "position": 1
+            },
+            {
+              "text": "Rechnung an den Kunden",
+              "position": 5
+            },
+            {
+              "text": "Angebot an den Kunden",
+              "position": 2
+            },
+            {
+              "text": "Lieferung mit Lieferschein",
+              "position": 4
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Anfrage → Angebot → (Bestellung) → Auftragsbestätigung → Lieferung mit Lieferschein → Rechnung → Zahlung.",
+      "quelle": "ik2024-lf03-k01, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf03-k01-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine der MAKEL Studio GmbH bisher unbekannte Eventagentur bestellt nach einem Angebot 300 bedruckte Hoodies im Wert von 12.000 € netto, Lieferung auf Rechnung mit 30 Tagen Zahlungsziel. Die Agentur ist im Handelsregister eingetragen und hat eine professionelle Website. Marlene Voss möchte sofort liefern."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Marlenes Vorhaben und schlagen Sie ein Vorgehen vor.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Handelsregistereintrag und Website belegen die Existenz der Agentur, nicht ihre Zahlungsfähigkeit. Bei einem Neukunden und 12.000 € auf Rechnung ist das Ausfallrisiko erheblich. Vor der Lieferung sollte die Bonität geprüft werden, etwa über eine Wirtschaftsauskunft und Referenzen. Je nach Ergebnis: Vorkasse oder Anzahlung, Teillieferung, Eigentumsvorbehalt oder ein Kreditlimit. Die Entscheidung trifft eine zuständige Stelle und wird dokumentiert.",
+        "raster": [
+          {
+            "kriterium": "Unterschied Existenz und Zahlungsfähigkeit erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Risiko (Neukunde, Höhe, Zahlungsziel) begründet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Bonitätsprüfung mit Quelle vorgeschlagen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Absicherung (Vorkasse, Anzahlung, Eigentumsvorbehalt o. Ä.) vorgeschlagen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Vor der Lieferung auf Rechnung wird die Bonität geprüft; die Absicherung richtet sich nach dem Ergebnis.",
+      "quelle": "ik2024-lf03-k01, Abschnitt a3"
+    }
+  ]
+}

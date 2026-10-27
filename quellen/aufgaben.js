@@ -18,6 +18,14 @@ window.APK = (function () {
   var el = AP.el, mkEl = AP.mkEl;
 
   var SCHLUESSEL = AP.PROBEKLAUSUR_SCHLUESSEL || "azubipass:probeklausur:v1";
+  /* Fassung 4: Jeder Beruf hat seinen eigenen laufenden Bogen. Büromanagement
+     behält den alten Schlüssel. Ein Bogen merkt sich seinen Beruf und wird
+     immer unter dessen Schlüssel geschrieben – auch wenn inzwischen in einem
+     anderen Bildschirm der Beruf gewechselt wurde. */
+  function aktiverBeruf() { return AP.beruf ? AP.beruf() : "kfb"; }
+  function schluesselFuer(b) {
+    return AP.probeklausurSchluessel ? AP.probeklausurSchluessel(b) : SCHLUESSEL;
+  }
   var FASSUNG = 1;
 
   var DAUERN = [30, 45, 60, 90];
@@ -497,7 +505,7 @@ window.APK = (function () {
     return { v: FASSUNG, id: null, seed: null, kapitel: [], dauer: DAUER_STANDARD,
              ende: null, gestartet: false, abgegeben: false, aufgaben: [],
              werte: {}, antworten: {}, markiert: [], aktuell: 0, selbst: {},
-             vorher: [], abgelaufen: false, beendetAm: null };
+             vorher: [], abgelaufen: false, beendetAm: null, beruf: aktiverBeruf() };
   }
 
   /* Defensiv laden: Was hier liegt, kann aus einer älteren Fassung stammen,
@@ -505,11 +513,13 @@ window.APK = (function () {
      zerlegen — im Zweifel gibt es eben keine laufende Klausur. */
   function zustandLaden() {
     var roh;
-    try { roh = localStorage.getItem(SCHLUESSEL); } catch (e) { return null; }
+    var beruf = aktiverBeruf();
+    try { roh = localStorage.getItem(schluesselFuer(beruf)); } catch (e) { return null; }
     if (!roh) return null;
     var z;
     try { z = JSON.parse(roh); } catch (e) { return null; }
     if (!z || typeof z !== "object" || z.v !== FASSUNG) return null;
+    z.beruf = beruf;
     if (!Array.isArray(z.aufgaben) || !z.aufgaben.length) return null;
     var frisch = frischerZustand();
     Object.keys(frisch).forEach(function (f) {
@@ -534,14 +544,14 @@ window.APK = (function () {
 
   function zustandSichern() {
     if (!zustand) return;
-    try { localStorage.setItem(SCHLUESSEL, JSON.stringify(zustand)); }
+    try { localStorage.setItem(schluesselFuer(zustand.beruf || "kfb"), JSON.stringify(zustand)); }
     catch (e) { /* Speicher voll oder gesperrt — die Klausur läuft trotzdem */ }
   }
 
   /* Nur den Klausurschlüssel entfernen. localStorage.clear() würde den
      Lernstand eines Jahres mitnehmen. */
   function zustandVerwerfen() {
-    try { localStorage.removeItem(SCHLUESSEL); } catch (e) {}
+    try { localStorage.removeItem(schluesselFuer(zustand && zustand.beruf || aktiverBeruf())); } catch (e) {}
     zustand = null;
   }
 
@@ -764,6 +774,7 @@ window.APK = (function () {
     e = e || ergebnis();
     AP.probeklausurErgebnisSpeichern({
       id: zustand.id,
+      beruf: zustand.beruf || "kfb",
       status: e.offen ? "in_auswertung" : "abgeschlossen",
       beendetAm: zustand.beendetAm || null,
       aktualisiertAm: new Date().toISOString(),
@@ -1251,8 +1262,13 @@ window.APK = (function () {
      die Wahrheit über die Auswahl steht in wahlKapitel. */
   var vorgewaehlt = null;
 
+  /* Nur die Kapitel des aktiven Berufs. Ein älterer Bau ohne Berufsangabe
+     gehört komplett zu Büromanagement. */
   function kapitelListe() {
-    return (vorrat ? vorrat.kapitel : []);
+    var b = aktiverBeruf();
+    return (vorrat ? vorrat.kapitel : []).filter(function (k) {
+      return (k.beruf || "kfb") === b;
+    });
   }
 
   function lernfelder() {

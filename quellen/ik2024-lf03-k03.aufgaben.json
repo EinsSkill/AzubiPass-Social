@@ -1,0 +1,205 @@
+{
+  "lernfeld": "ik2024-lf03",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf03-k03-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "sk": {
+          "von": 30,
+          "bis": 50,
+          "schritt": 2
+        },
+        "gz": {
+          "von": 10,
+          "bis": 30,
+          "schritt": 5
+        }
+      },
+      "abgeleitet": {
+        "bvp": "runde(sk * (1 + gz / 100), 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für einen bedruckten Hoodie gibt Tobias Renner Selbstkosten von {sk} € je Stück vor. MAKEL kalkuliert einen Gewinnzuschlag von {gz} % auf die Selbstkosten; Rabatt und Skonto werden nicht gewährt. Berechnen Sie den Nettoverkaufspreis je Stück."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Nettoverkaufspreis je Stück",
+          "einheit": "€",
+          "loesung": "bvp",
+          "toleranz": 0.01
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Selbstkosten × (1 + Gewinnzuschlag) = Barverkaufspreis; ohne Skonto und Rabatt ist das der Nettoverkaufspreis.",
+      "quelle": "ik2024-lf03-k03, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf03-k03-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "bvp": {
+          "von": 40,
+          "bis": 60,
+          "schritt": 2
+        },
+        "skonto": {
+          "von": 2,
+          "bis": 3,
+          "schritt": 1
+        },
+        "rabatt": {
+          "von": 5,
+          "bis": 15,
+          "schritt": 5
+        }
+      },
+      "abgeleitet": {
+        "zvp": "runde(bvp / (1 - skonto / 100), 2)",
+        "lvp": "runde(zvp / (1 - rabatt / 100), 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Der Barverkaufspreis eines bedruckten MAKEL-Hoodies beträgt {bvp} € netto. Einkalkuliert werden {skonto} % Kundenskonto und {rabatt} % Kundenrabatt, jeweils auf die vorgelagerte Preisstufe. Runden Sie erst die ausgewiesenen Ergebnisse auf zwei Nachkommastellen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Zielverkaufspreis",
+          "einheit": "€",
+          "loesung": "zvp",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Listenverkaufspreis (netto)",
+          "einheit": "€",
+          "loesung": "lvp",
+          "toleranz": 0.02,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "zvp"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Zielverkaufspreis = Barverkaufspreis ÷ (1 − Skontosatz); Listenverkaufspreis = Zielverkaufspreis ÷ (1 − Rabattsatz). Skonto und Rabatt werden im Hundert gerechnet, nicht addiert.",
+      "quelle": "ik2024-lf03-k03, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf03-k03-03",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein Auszubildender der MAKEL Studio GmbH hat folgendes Angebot entworfen: „Hiermit bieten wir Ihnen Hoodies mit Ihrem Logo zu 54,42 € an. Viele Grüße“."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Nennen Sie sechs Angaben, die in diesem Angebot an einen Geschäftskunden fehlen.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Es fehlen zum Beispiel: Menge und Größenverteilung; genaue Ausführung (Qualität, Farbe, Druckposition und Druckart); Angabe, ob der Preis netto oder brutto ist, mit Umsatzsteuer und Gesamtbetrag; Liefertermin; Lieferbedingungen (etwa frei Haus oder ab Werk); Zahlungsbedingungen (Zahlungsziel, Skonto); gegebenenfalls Rabatt, Bindefrist und Hinweis auf AGB.",
+        "raster": [
+          {
+            "kriterium": "Zwei zutreffende Angaben",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Vier zutreffende Angaben",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sechs zutreffende Angaben, darunter netto/brutto und Zahlungsbedingungen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Ein Angebot muss so bestimmt sein, dass ein einfaches Ja des Kunden genügt.",
+      "quelle": "ik2024-lf03-k03, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf03-k03-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein Stammkunde der MAKEL Studio GmbH verlangt für eine Großbestellung 10 % Rabatt zusätzlich zu den üblichen 2 % Skonto. Marlene Voss rechnet: Bei den kalkulierten 15 % Gewinnaufschlag bleibe „ja noch genug übrig“, und sagt spontan zu."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Marlenes Vorgehen.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die spontane Zusage ist problematisch. Wurde der Rabatt nicht in die Kalkulation eingerechnet, geht er vollständig zulasten des Gewinns; Der Rabatt frisst einen Großteil des Gewinns auf: Bei 100 € Selbstkosten, 15 % Gewinn und 2 % Skonto liegt der Listenpreis bei rund 117,35 €; 10 % Rabatt davon sind rund 11,74 € — vom Gewinn von 15 € blieben nur gut 3 €. Richtig wäre, den Rabatt im Hundert in die Kalkulation einzurechnen und zu prüfen, ob der Preis dann noch marktfähig ist, oder eine Gegenleistung (Menge, Vorauszahlung) zu vereinbaren. Zugesagt wird erst nach Rücksprache mit der zuständigen Stelle.",
+        "raster": [
+          {
+            "kriterium": "Wirkung des Rabatts auf den Gewinn erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Im-Hundert-Rechnung bzw. Einkalkulieren verlangt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Alternative (Gegenleistung, Preisprüfung) vorgeschlagen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Abstimmung vor Zusage gefordert",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Nachlässe müssen in die Kalkulation; sonst zahlt sie der Gewinn.",
+      "quelle": "ik2024-lf03-k03, Abschnitte a2 und a4"
+    }
+  ]
+}

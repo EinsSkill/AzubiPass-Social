@@ -1,0 +1,361 @@
+{
+  "id": "k05",
+  "lernfeld": "ik2024-lf10",
+  "nummer": 5,
+  "titel": "Den Abschluss mit Kennzahlen auswerten",
+  "untertitel": "Kapitalstruktur, Anlagendeckung, Liquidität, Rentabilität und Cashflow berechnen, vergleichen und vorsichtig deuten.",
+  "minuten": 35,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Bilanz und GuV sind aufgestellt (Kapitel 4).",
+          "Absolute Zahlen lassen sich schlecht vergleichen."
+        ],
+        "erklaerung": "Für die Auswertung wird die Bilanz zunächst aufbereitet: Gleichartige Posten werden zusammengefasst (Anlagevermögen, Vorräte, Forderungen, liquide Mittel; Eigenkapital, langfristiges und kurzfristiges Fremdkapital). Kennzahlen setzen diese Größen ins Verhältnis. Aussagekräftig werden sie erst im Vergleich: mit dem Vorjahr (Zeitvergleich), mit ähnlichen Betrieben oder Branchenwerten (Betriebsvergleich) oder mit Zielwerten (Soll-Ist-Vergleich). Eine einzelne Kennzahl ohne Vergleich ist kaum zu deuten.",
+        "beispiele": [
+          "Eigenkapitalquote 30 % — im Vorjahr 24 %: Die Kapitalstruktur hat sich verbessert.",
+          "Liquidität 1. Grades 25 % — branchenüblich oft niedriger als 100 %, entscheidend ist der Finanzplan."
+        ],
+        "fallbeispiel": "Für das Bankgespräch übt Sandra Koslowski mit Luca die Aufbereitung an einem verkleinerten Übungsauszug der MAKEL-Bilanz: Anlagevermögen 180.000 €, Vorräte 90.000 €, Forderungen 105.000 €, liquide Mittel 25.000 € (Summe 400.000 €); Eigenkapital 120.000 €, langfristiges Fremdkapital 180.000 €, kurzfristiges Fremdkapital 100.000 €.",
+        "typische_fehler": "Eine einzelne Kennzahl ohne Vergleich als gut oder schlecht bewerten.",
+        "verstaendnisfragen": [
+          "Warum wird die Bilanz aufbereitet? Damit gleichartige Posten zusammengefasst und ins Verhältnis gesetzt werden können.",
+          "Welche Vergleiche gibt es? Zeitvergleich, Betriebs- oder Branchenvergleich, Soll-Ist-Vergleich."
+        ],
+        "pruefungsbezug": "Bilanz aufbereiten und Vergleichsmaßstäbe nennen.",
+        "merksatz": "Kennzahlen = Verhältnisse; aussagekräftig erst im Vergleich mit Vorjahr, Branche oder Ziel."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Eigenkapital haftet und muss nicht zurückgezahlt werden.",
+          "Anlagevermögen bindet Kapital langfristig."
+        ],
+        "erklaerung": "Die Eigenkapitalquote (Eigenkapital ÷ Gesamtkapital × 100) zeigt die finanzielle Unabhängigkeit und die Fähigkeit, Verluste aufzufangen. Die Anlagendeckung prüft die goldene Bilanzregel: Langfristig gebundenes Vermögen soll langfristig finanziert sein. Anlagendeckung I = Eigenkapital ÷ Anlagevermögen × 100; Anlagendeckung II = (Eigenkapital + langfristiges Fremdkapital) ÷ Anlagevermögen × 100 — sie sollte mindestens 100 % betragen.",
+        "beispiele": [
+          "MAKEL: Eigenkapitalquote 120.000 ÷ 400.000 = 30 %.",
+          "MAKEL: Anlagendeckung II (120.000 + 180.000) ÷ 180.000 = 166,7 %."
+        ],
+        "fallbeispiel": "Die Anlagendeckung I liegt bei 120.000 ÷ 180.000 = 66,7 %: Das Eigenkapital allein deckt das Anlagevermögen nicht. Mit dem langfristigen Darlehen ist es aber deutlich überdeckt (166,7 %) — die neue Maschine ist fristengerecht finanziert.",
+        "typische_fehler": "Bei der Anlagendeckung II das kurzfristige Fremdkapital mitzählen.",
+        "verstaendnisfragen": [
+          "Was sagt die Eigenkapitalquote aus? Wie unabhängig das Unternehmen von Gläubigern ist und wie gut es Verluste auffangen kann.",
+          "Was besagt die goldene Bilanzregel? Langfristig gebundenes Vermögen soll langfristig finanziert sein."
+        ],
+        "pruefungsbezug": "Eigenkapitalquote und Anlagendeckung berechnen und deuten.",
+        "merksatz": "EK-Quote = EK ÷ GK; Anlagendeckung II = (EK + langfr. FK) ÷ AV ≥ 100 % (goldene Bilanzregel)."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Kurzfristige Schulden müssen bald bezahlt werden.",
+          "Forderungen werden erst zu Geld, wenn Kunden zahlen."
+        ],
+        "erklaerung": "Liquiditätsgrade setzen Umlaufvermögen ins Verhältnis zum kurzfristigen Fremdkapital. 1. Grad: liquide Mittel ÷ kurzfristiges FK. 2. Grad: (liquide Mittel + Forderungen) ÷ kurzfristiges FK — als Faustregel mindestens 100 %. 3. Grad: gesamtes Umlaufvermögen ÷ kurzfristiges FK — Faustregel deutlich über 100 %. Die Kennzahlen sind stichtagsbezogen: Sie zeigen nicht, wann Zahlungen tatsächlich fällig werden. Für die Steuerung der Zahlungsfähigkeit braucht man deshalb einen Liquiditätsplan (Kapitel 6).",
+        "beispiele": [
+          "MAKEL 1. Grad: 25.000 ÷ 100.000 = 25 %.",
+          "MAKEL 2. Grad: (25.000 + 105.000) ÷ 100.000 = 130 %."
+        ],
+        "fallbeispiel": "Tobias Renner erschrickt über 25 %. Sandra erklärt: Kaum ein Industriebetrieb hält so viel Bargeld, wie er kurzfristig schuldet. Der 2. Grad von 130 % zeigt, dass Forderungen die kurzfristigen Schulden decken — sofern die Kunden pünktlich zahlen. Deshalb prüft sie auch die Altersstruktur der Forderungen.",
+        "typische_fehler": "Liquiditätsgrade als Zahlungsplan missverstehen.",
+        "verstaendnisfragen": [
+          "Wie wird die Liquidität 2. Grades berechnet? (liquide Mittel + Forderungen) ÷ kurzfristiges Fremdkapital × 100.",
+          "Warum reicht sie nicht zur Steuerung? Sie ist stichtagsbezogen und zeigt keine Fälligkeiten."
+        ],
+        "pruefungsbezug": "Liquiditätsgrade berechnen und ihre Grenzen nennen.",
+        "merksatz": "Liquidität 1./2./3. Grades = (liquide | + Forderungen | gesamtes UV) ÷ kurzfr. FK; stichtagsbezogen, kein Zahlungsplan."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Der Jahresüberschuss stammt aus der GuV.",
+          "Abschreibungen sind Aufwand ohne Auszahlung."
+        ],
+        "erklaerung": "Rentabilitätskennzahlen setzen den Erfolg ins Verhältnis zum eingesetzten Kapital oder zum Umsatz. Eigenkapitalrentabilität = Jahresüberschuss ÷ Eigenkapital × 100 (vereinfacht bezogen auf das Eigenkapital zu Jahresbeginn). Umsatzrentabilität = Jahresüberschuss ÷ Umsatzerlöse × 100. Der Cashflow zeigt die selbst erwirtschafteten Finanzmittel; vereinfacht: Jahresüberschuss + Abschreibungen + Erhöhung langfristiger Rückstellungen. Er zeigt, wie viel das Unternehmen aus eigener Kraft für Investitionen, Tilgung und Ausschüttung zur Verfügung hat.",
+        "beispiele": [
+          "MAKEL: Eigenkapitalrentabilität 30.000 ÷ 90.000 = 33,3 % (Eigenkapital zu Jahresbeginn).",
+          "MAKEL: Umsatzrentabilität 30.000 ÷ 820.000 = 3,7 %."
+        ],
+        "fallbeispiel": "Der vereinfachte Cashflow beträgt 30.000 € Jahresüberschuss + 38.000 € Abschreibungen + 2.000 € Erhöhung der langfristigen Rückstellungen = 70.000 €. Bei einer jährlichen Tilgung von 30.000 € bleibt MAKEL Spielraum für kleinere Investitionen aus eigener Kraft — ein Argument im Bankgespräch.",
+        "typische_fehler": "Abschreibungen beim Cashflow abziehen statt hinzurechnen.",
+        "verstaendnisfragen": [
+          "Warum werden Abschreibungen zum Cashflow addiert? Sie mindern den Gewinn, führen aber nicht zu einer Auszahlung.",
+          "Was zeigt die Umsatzrentabilität? Wie viel Gewinn von jedem Euro Umsatz übrig bleibt."
+        ],
+        "pruefungsbezug": "Rentabilitäten und vereinfachten Cashflow berechnen und deuten.",
+        "merksatz": "EK-Rentabilität = JÜ ÷ EK; Umsatzrentabilität = JÜ ÷ Umsatz; Cashflow (vereinfacht) = JÜ + Abschreibungen + Erhöhung langfr. Rückstellungen."
+      }
+    ]
+  },
+  "lernziele": [
+    {
+      "id": "lz1",
+      "text": "Eine Bilanz aufbereiten und Vergleichsmaßstäbe wählen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Eigenkapitalquote und Anlagendeckung berechnen und deuten",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Liquiditätsgrade berechnen und ihre Grenzen nennen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Rentabilitäten und Cashflow berechnen und deuten",
+      "abschnitt": "a4"
+    }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Aufbereiten und vergleichen",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Kennzahlen machen Abschlüsse vergleichbar — aber nur zusammen mit einem Maßstab."
+        },
+        {
+          "typ": "grafik",
+          "variante": "kette",
+          "kopf": "Vorgehen",
+          "titel": "Von der Bilanz zur Entscheidung",
+          "lead": "Vier Schritte einer Kennzahlenanalyse.",
+          "schritte": [
+            {
+              "nr": "1",
+              "titel": "Aufbereiten",
+              "satz": "Posten zusammenfassen",
+              "text": "Anlagevermögen, Vorräte, Forderungen, liquide Mittel; Eigenkapital, lang- und kurzfristiges Fremdkapital."
+            },
+            {
+              "nr": "2",
+              "titel": "Berechnen",
+              "satz": "Verhältnisse bilden",
+              "text": "Eigenkapitalquote, Anlagendeckung, Liquiditätsgrade, Rentabilitäten, Cashflow."
+            },
+            {
+              "nr": "3",
+              "titel": "Vergleichen",
+              "satz": "Maßstab wählen",
+              "text": "Vorjahr, Branchenwerte oder Zielwerte. Ohne Vergleich bleibt eine Kennzahl stumm."
+            },
+            {
+              "nr": "4",
+              "titel": "Deuten und handeln",
+              "satz": "Ursachen und Maßnahmen",
+              "text": "Warum hat sich der Wert verändert? Was folgt daraus für Finanzierung, Einkauf oder Preise?"
+            }
+          ],
+          "regel": "Kennzahlen stellen Fragen, sie beantworten sie nicht. Die Antwort steckt in den Ursachen dahinter."
+        },
+        {
+          "typ": "merke",
+          "text": "Kennzahlen = **Verhältnisse**; aussagekräftig erst im **Vergleich** mit Vorjahr, Branche oder Ziel.",
+          "karteikarte": "Warum braucht jede Kennzahl einen Vergleichsmaßstab, und welche gibt es?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Kapitalstruktur und Anlagendeckung",
+      "inhalt": [
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Kennzahl",
+            "Formel",
+            "MAKEL"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Eigenkapitalquote",
+                "EK ÷ GK × 100",
+                "30,0 %"
+              ],
+              "detail": "120.000 ÷ 400.000 × 100 = 30 %."
+            },
+            {
+              "zellen": [
+                "Anlagendeckung I",
+                "EK ÷ AV × 100",
+                "66,7 %"
+              ],
+              "detail": "120.000 ÷ 180.000 × 100 = 66,7 %."
+            },
+            {
+              "zellen": [
+                "Anlagendeckung II",
+                "(EK + langfr. FK) ÷ AV × 100",
+                "166,7 %"
+              ],
+              "detail": "(120.000 + 180.000) ÷ 180.000 × 100 = 166,7 %."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**EK-Quote** = EK ÷ GK; **Anlagendeckung II** = (EK + langfr. FK) ÷ AV ≥ 100 % (goldene Bilanzregel).",
+          "karteikarte": "Wie berechnest du Eigenkapitalquote und Anlagendeckung II, und was besagt die goldene Bilanzregel?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Liquiditätsgrade",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:liquiditaet|Liquidität}} am Stichtag wird in drei Graden gemessen."
+        },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Grad",
+            "Formel",
+            "MAKEL"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "1. Grad",
+                "liquide Mittel ÷ kurzfr. FK",
+                "25 %"
+              ]
+            },
+            {
+              "zellen": [
+                "2. Grad",
+                "(liquide Mittel + Forderungen) ÷ kurzfr. FK",
+                "130 %"
+              ]
+            },
+            {
+              "zellen": [
+                "3. Grad",
+                "Umlaufvermögen ÷ kurzfr. FK",
+                "220 %"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "check",
+          "frage": "Liquide Mittel 25.000 €, Forderungen 105.000 €, kurzfristiges Fremdkapital 100.000 €. Wie hoch ist die Liquidität 2. Grades?",
+          "optionen": [
+            {
+              "text": "25 %",
+              "richtig": false,
+              "echo": "Das ist der 1. Grad — beim 2. Grad kommen die Forderungen hinzu."
+            },
+            {
+              "text": "130 %",
+              "richtig": true,
+              "echo": "Richtig: (25.000 + 105.000) ÷ 100.000 × 100 = 130 %."
+            },
+            {
+              "text": "105 %",
+              "richtig": false,
+              "echo": "Hier fehlen die liquiden Mittel im Zähler."
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Liquiditätsgrade sind eine **Momentaufnahme**. Eine Kundenzahlung, die einen Tag nach dem Stichtag eingeht, verändert das Bild völlig. Für die Steuerung zählt der Liquiditätsplan."
+        },
+        {
+          "typ": "merke",
+          "text": "Liquidität 1./2./3. Grades = (liquide | + Forderungen | gesamtes UV) ÷ kurzfr. FK; **stichtagsbezogen**, kein Zahlungsplan.",
+          "karteikarte": "Wie berechnest du die drei Liquiditätsgrade, und wo liegt ihre Grenze?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Rentabilität und Cashflow",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "{{begriff:rentabilitaet|Rentabilität}} misst den Erfolg im Verhältnis zum Einsatz, der {{begriff:cashflow|Cashflow}} die selbst erwirtschafteten Mittel."
+        },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Kennzahl",
+            "Rechnung MAKEL",
+            "Ergebnis"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Eigenkapitalrentabilität",
+                "30.000 ÷ 90.000 × 100",
+                "33,3 %"
+              ]
+            },
+            {
+              "zellen": [
+                "Umsatzrentabilität",
+                "30.000 ÷ 820.000 × 100",
+                "3,7 %"
+              ]
+            },
+            {
+              "zellen": [
+                "Cashflow (vereinfacht)",
+                "30.000 + 38.000 + 2.000",
+                "70.000 €"
+              ],
+              "detail": "Jahresüberschuss + Abschreibungen + Erhöhung langfristiger Rückstellungen."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**EK-Rentabilität** = JÜ ÷ EK; **Umsatzrentabilität** = JÜ ÷ Umsatz; **Cashflow** (vereinfacht) = JÜ + Abschreibungen + Erhöhung langfr. Rückstellungen.",
+          "karteikarte": "Wie berechnest du Eigenkapitalrentabilität, Umsatzrentabilität und den vereinfachten Cashflow?"
+        }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Bilanz aufbereiten, dann Verhältnisse bilden.",
+    "Kennzahlen nur im Vergleich deuten.",
+    "EK-Quote zeigt Unabhängigkeit; Anlagendeckung II prüft die goldene Bilanzregel.",
+    "Liquiditätsgrade sind Momentaufnahmen.",
+    "Rentabilität: Erfolg im Verhältnis zu Kapital oder Umsatz.",
+    "Cashflow: selbst erwirtschaftete Mittel."
+  ],
+  "selbsttest": [
+    {
+      "typ": "Rechnen",
+      "frage": "Eigenkapital 120.000 €, Gesamtkapital 400.000 €. Eigenkapitalquote?",
+      "loesung": "120.000 ÷ 400.000 × 100 = 30 %."
+    },
+    {
+      "typ": "Rechnen",
+      "frage": "Jahresüberschuss 40.000 €, Abschreibungen 10.000 €, keine Veränderung der Rückstellungen. Vereinfachter Cashflow?",
+      "loesung": "40.000 + 10.000 = 50.000 €."
+    },
+    {
+      "typ": "Deuten",
+      "frage": "Die Liquidität 1. Grades liegt bei 25 %. Ist MAKEL damit zahlungsunfähig?",
+      "loesung": "Nicht zwingend. Der Wert ist eine Momentaufnahme; entscheidend sind Forderungen, Fälligkeiten und der Liquiditätsplan. Der 2. Grad sollte mindestens 100 % betragen."
+    }
+  ],
+  "pruefungstipp": "Schreibe bei jeder Kennzahl zuerst die Formel hin, dann die Zahlen. So gibt es Teilpunkte, selbst wenn du dich verrechnest — und du verwechselst Zähler und Nenner seltener."
+}

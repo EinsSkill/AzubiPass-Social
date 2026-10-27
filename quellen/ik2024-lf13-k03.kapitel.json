@@ -1,0 +1,191 @@
+{
+  "id": "k03",
+  "lernfeld": "ik2024-lf13",
+  "nummer": 3,
+  "titel": "Die Lösung planen und umsetzen",
+  "untertitel": "Ziele und Maßnahmen in Arbeitspakete übersetzen, Verantwortlichkeiten und Risiken koordinieren, einen Piloten mit klaren Regeln durchführen und Abweichungen bearbeiten.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Die Lösung ist ausgewählt (Kapitel 2).",
+          "Ein Projektauftrag regelt Ziel, Rahmen und Zuständigkeiten (LF 2)."
+        ],
+        "erklaerung": "Nach der Entscheidung wird die Lösung in einen Umsetzungsauftrag übersetzt: Was genau wird eingeführt? Welches messbare Ziel gilt? Wer verantwortet die Umsetzung, wer entscheidet bei Konflikten? Welche Ressourcen stehen zur Verfügung? Das Ziel aus der Analyse wird übernommen, ergänzt um Zwischenziele für den Piloten. Ein schriftlicher Auftrag schützt vor späteren Missverständnissen.",
+        "beispiele": [
+          "Lösung: Pflichtfeld „Kundenfreigabe erteilt am“ im Warenwirtschaftssystem; ohne Eintrag kein Produktionsstart.",
+          "Zwischenziel Pilot: Bei 30 Pilotaufträgen ist die Freigabe in allen Fällen vor dem Produktionsstart vermerkt."
+        ],
+        "fallbeispiel": "Yuki Bergmann gibt Variante B frei. Luca Petrelli formuliert den Umsetzungsauftrag: Pflichtfeld einführen, Vertrieb schulen, Pilot mit Firmenaufträgen einer Kundengruppe im Januar, Ziel: Verspätungsquote der Pilotaufträge höchstens 10 %. Verantwortlich: Marlene Voss; Entscheidungen bei Konflikten: Tobias Renner.",
+        "typische_fehler": "Mit der Umsetzung beginnen, ohne Ziel, Verantwortung und Entscheidungsweg festzulegen.",
+        "verstaendnisfragen": [
+          "Was gehört in einen Umsetzungsauftrag? Lösung, messbares Ziel, Verantwortliche, Entscheidungsweg, Ressourcen.",
+          "Wozu dienen Zwischenziele? Sie machen den Fortschritt im Piloten prüfbar."
+        ],
+        "pruefungsbezug": "Ziele und Maßnahmen in einen Umsetzungsauftrag übersetzen.",
+        "merksatz": "Umsetzungsauftrag = Lösung + messbares Ziel + Verantwortung + Entscheidungsweg + Ressourcen."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Arbeitspakete und Netzpläne kennst du aus LF 2.",
+          "Manche Arbeiten können erst beginnen, wenn andere fertig sind."
+        ],
+        "erklaerung": "Die Umsetzung wird in Arbeitspakete gegliedert, jedes mit Ergebnis, Dauer, Verantwortlichem und Abhängigkeiten. Ein Terminplan zeigt, welche Pakete nacheinander laufen müssen und welche parallel laufen können. Der kritische Pfad ist die längste Kette abhängiger Pakete; er bestimmt die Mindestdauer. Pakete mit Puffer können sich verzögern, ohne das Ende zu verschieben. Parallelisierung ist nur möglich, wenn die fachlichen Abhängigkeiten es wirklich erlauben. Zur Planung gehören auch Risiken: Was kann schiefgehen, wie wahrscheinlich, wie schwer — und welche Gegenmaßnahme gibt es?",
+        "beispiele": [
+          "Drei zwingend aufeinanderfolgende Pakete mit 2, 3 und 1 Tag: Mindestdauer 6 Arbeitstage.",
+          "Risiko: Die IT-Dienstleisterin hat im Januar keine Zeit → Termin früh vereinbaren."
+        ],
+        "fallbeispiel": "Luca plant: Konzept (2 Tage), dann Einrichtung im System (3 Tage) und parallel Kurzanleitung (2 Tage); nach der Einrichtung die Schulung des Vertriebs (1 Tag); wenn Schulung und Anleitung fertig sind, der Pilot (5 Tage). Der kritische Pfad läuft über Konzept, Einrichtung, Schulung und Pilot: 11 Tage. Die Anleitung hat zwei Tage Puffer.",
+        "typische_fehler": "Pakete parallel planen, obwohl sie fachlich aufeinander aufbauen.",
+        "verstaendnisfragen": [
+          "Was ist der kritische Pfad? Die längste Kette voneinander abhängiger Arbeitspakete; sie bestimmt die Mindestdauer.",
+          "Was gehört zu einem Arbeitspaket? Ergebnis, Dauer, Verantwortlicher, Abhängigkeiten."
+        ],
+        "pruefungsbezug": "Projektplan mit Zuständigkeiten, Abhängigkeiten und Risiken erstellen.",
+        "merksatz": "Arbeitspakete mit Ergebnis, Dauer, Verantwortung und Abhängigkeit; kritischer Pfad = Mindestdauer; Risiken mit Gegenmaßnahmen planen."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Neue Abläufe haben Anfangsschwierigkeiten.",
+          "Ein Fehler bei allen Aufträgen wäre teuer."
+        ],
+        "erklaerung": "Ein Pilot erprobt die Lösung zunächst in einem begrenzten Bereich — etwa für eine Kundengruppe oder einen Zeitraum. Vorher werden festgelegt: Was wird gemessen? Welche Grenzen dürfen nicht überschritten werden (Qualität, Liefertermine, Sicherheit)? Wer entscheidet über Abbruch oder Anpassung? Wie sieht der Rückfallweg aus, wenn es nicht funktioniert? Diese Regeln werden vor dem Start festgelegt, nicht erst nach einem Fehlschlag. Während des Piloten werden Beobachtungen und Probleme dokumentiert.",
+        "beispiele": [
+          "Abbruchregel: Verspätet sich mehr als jeder fünfte Pilotauftrag, entscheidet Tobias Renner nach Rücksprache über Anpassung oder Rückkehr zum alten Ablauf.",
+          "Rückfallweg: Das Pflichtfeld kann in fünf Minuten deaktiviert werden."
+        ],
+        "fallbeispiel": "Der Pilot startet mit 30 Aufträgen von Agenturkunden. Marlene führt ein kurzes Protokoll: Am dritten Tag blockiert das Pflichtfeld einen Eilauftrag, weil der Kunde telefonisch freigegeben hat. Das Team ergänzt sofort die Option „telefonische Freigabe, Notiz Pflicht“ — eine Anpassung im Rahmen der vereinbarten Regeln.",
+        "typische_fehler": "Ein Pilotproblem ohne Prüfung sofort auf alle Aufträge ausrollen — oder Erfolgskriterien erst hinterher festlegen.",
+        "verstaendnisfragen": [
+          "Warum ein Pilot? Um Risiken zu begrenzen und Erfahrungen vor dem breiten Einsatz zu sammeln.",
+          "Was wird vor dem Pilotstart festgelegt? Messgrößen, Grenzwerte, Zuständigkeit für Abbruch, Rückfallweg."
+        ],
+        "pruefungsbezug": "Einen Piloten mit Abbruch- und Anpassungsregeln planen.",
+        "merksatz": "Pilot = begrenzt erproben; vorher Messgrößen, Grenzwerte, Entscheider und Rückfallweg festlegen; Beobachtungen dokumentieren."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Pläne treffen selten genau ein.",
+          "Der PDCA-Zyklus beschreibt kontinuierliche Verbesserung (LF 6)."
+        ],
+        "erklaerung": "Während der Umsetzung wird regelmäßig ein Soll-Ist-Vergleich gemacht: Termine, Kosten, Zielerreichung, Qualität. Abweichungen werden analysiert (Ursache?), bewertet (wie schwer?) und bearbeitet (Gegenmaßnahme, Planänderung oder Eskalation an den Entscheider). Der PDCA-Zyklus — planen, umsetzen, prüfen, handeln — macht daraus einen fortlaufenden Lernprozess. Änderungen am Plan werden dokumentiert und kommuniziert.",
+        "beispiele": [
+          "Einrichtung dauert vier statt drei Tage — liegt auf dem kritischen Pfad, also verschiebt sich der Pilot.",
+          "Die Kurzanleitung dauert einen Tag länger — Puffer vorhanden, kein Einfluss aufs Ende."
+        ],
+        "fallbeispiel": "Die Einrichtung im System verzögert sich um einen Tag, weil die IT-Dienstleisterin krank ist. Luca prüft: Das Paket liegt auf dem kritischen Pfad, der Pilotstart verschiebt sich um einen Tag. Er informiert Tobias und die Agenturkunden der Pilotgruppe, dokumentiert die Änderung und plant keine zusätzlichen Maßnahmen, weil das Ziel weiterhin erreichbar ist.",
+        "typische_fehler": "Abweichungen verschweigen oder ohne Ursachenanalyse hektisch gegensteuern.",
+        "verstaendnisfragen": [
+          "Wie wird mit einer Abweichung umgegangen? Ursache analysieren, Auswirkung bewerten, Maßnahme oder Eskalation, dokumentieren.",
+          "Welche Phasen hat der PDCA-Zyklus? Plan, Do, Check, Act."
+        ],
+        "pruefungsbezug": "Abweichungen methodisch bearbeiten.",
+        "merksatz": "Soll-Ist vergleichen → Ursache → Auswirkung (kritischer Pfad?) → Maßnahme oder Eskalation → dokumentieren; PDCA als Dauerschleife."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Ziele und Maßnahmen in einen Umsetzungsauftrag übersetzen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Arbeitspakete, Verantwortlichkeiten und Risiken koordinieren", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Einen Piloten mit klaren Regeln durchführen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Abweichungen methodisch bearbeiten", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Lösungsauftrag und Ziele",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Baustein", "Umsetzung bei MAKEL"], "zeilen": [
+          { "zellen": ["Lösung", "Pflichtfeld „Kundenfreigabe erteilt am“, ohne Eintrag kein Produktionsstart"] },
+          { "zellen": ["Ziel", "Verspätungsquote der Pilotaufträge ≤ 10 %"] },
+          { "zellen": ["Verantwortlich", "Marlene Voss"] },
+          { "zellen": ["Entscheidung bei Konflikten", "Tobias Renner"] },
+          { "zellen": ["Ressourcen", "Budget 500 €, IT-Dienstleisterin 3 Tage"] }
+        ] },
+        { "typ": "merke", "text": "Umsetzungsauftrag = **Lösung + messbares Ziel + Verantwortung + Entscheidungsweg + Ressourcen**.", "karteikarte": "Was gehört in einen Umsetzungsauftrag?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Projektplan und Zuständigkeiten",
+      "inhalt": [
+        {
+          "typ": "grafik",
+          "variante": "balkenplan",
+          "kopf": "Der Terminplan",
+          "titel": "Vom Konzept bis zum Piloten",
+          "lead": "Vorgang anklicken und verzögern. Manche verschieben das Ende, andere nicht.",
+          "einheit": "Tage",
+          "einheit_eins": "Tag",
+          "plan": 12,
+          "vorgaenge": [
+            { "id": "konzept", "name": "Pflichtfeld konzipieren", "dauer": 2, "nach": [] },
+            { "id": "einrichten", "name": "Feld im System einrichten", "dauer": 3, "nach": ["konzept"] },
+            { "id": "anleitung", "name": "Kurzanleitung schreiben", "dauer": 2, "nach": ["konzept"] },
+            { "id": "schulung", "name": "Vertrieb schulen", "dauer": 1, "nach": ["einrichten"] },
+            { "id": "pilot", "name": "Pilot mit 30 Aufträgen", "dauer": 5, "nach": ["schulung", "anleitung"] }
+          ],
+          "regel": "Der kritische Pfad läuft über Konzept, Einrichtung, Schulung und Pilot: elf Tage. Die Kurzanleitung hat zwei Tage Puffer."
+        },
+        { "typ": "merke", "text": "Arbeitspakete mit Ergebnis, Dauer, Verantwortung und Abhängigkeit; **kritischer Pfad** = Mindestdauer; Risiken mit Gegenmaßnahmen planen.", "karteikarte": "Was ist der kritische Pfad, und was gehört zur Planung von Arbeitspaketen?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Pilot und Umsetzung",
+      "inhalt": [
+        {
+          "typ": "check",
+          "frage": "Welche Regel ist für den Piloten am sinnvollsten?",
+          "optionen": [
+            { "text": "Wir schauen am Ende, ob es irgendwie besser geworden ist", "richtig": false, "echo": "Ohne vorher festgelegte Kriterien lässt sich jedes Ergebnis schönreden." },
+            { "text": "Vorab: Grenzwert für Verspätungen, Entscheider, Rückfallweg", "richtig": true, "echo": "Richtig: Messbare Grenzen, klare Zuständigkeit und ein Weg zurück schützen Kunden und Betrieb." },
+            { "text": "Läuft der erste Tag gut, sofort für alle Aufträge einführen", "richtig": false, "echo": "Ein Tag ist keine belastbare Grundlage für einen Rollout." }
+          ]
+        },
+        { "typ": "merke", "text": "**Pilot** = begrenzt erproben; vorher Messgrößen, Grenzwerte, Entscheider und **Rückfallweg** festlegen; Beobachtungen dokumentieren.", "karteikarte": "Was legst du vor einem Pilotversuch fest?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Kontrolle und Anpassung",
+      "inhalt": [
+        {
+          "typ": "zuordnen",
+          "lead": "Verschiebt die Verzögerung das Projektende?",
+          "kategorien": ["ja, kritischer Pfad", "nein, im Puffer"],
+          "aufgaben": [
+            { "text": "Einrichtung im System dauert einen Tag länger", "loesung": "ja, kritischer Pfad" },
+            { "text": "Kurzanleitung dauert einen Tag länger", "loesung": "nein, im Puffer" },
+            { "text": "Schulung des Vertriebs verschiebt sich um einen Tag", "loesung": "ja, kritischer Pfad" },
+            { "text": "Kurzanleitung dauert zwei Tage länger", "loesung": "nein, im Puffer" }
+          ]
+        },
+        { "typ": "merke", "text": "Soll-Ist vergleichen → Ursache → Auswirkung (kritischer Pfad?) → Maßnahme oder Eskalation → **dokumentieren**; PDCA als Dauerschleife.", "karteikarte": "Wie bearbeitest du eine Abweichung im Projekt?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Umsetzungsauftrag mit Ziel, Verantwortung und Entscheidungsweg.",
+    "Arbeitspakete mit Abhängigkeiten planen.",
+    "Kritischer Pfad bestimmt die Mindestdauer.",
+    "Risiken früh mit Gegenmaßnahmen versehen.",
+    "Pilot mit vorher festgelegten Regeln und Rückfallweg.",
+    "Abweichungen analysieren, bewerten, dokumentieren."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "Drei zwingend aufeinanderfolgende Pakete dauern 2, 3 und 1 Arbeitstage, keine Wartezeit. Mindestdauer?", "loesung": "6 Arbeitstage. Parallelisierung ist nur zulässig, wenn fachliche Abhängigkeiten es tatsächlich erlauben." },
+    { "typ": "Planen", "frage": "Welche Abbruch- oder Anpassungsregel ist für einen Pilotversuch sinnvoll?", "loesung": "Vorab messbare Qualitäts- bzw. Termingrenzen, Zuständigkeit und Rückfallweg definieren; nicht erst nach einem Fehlschlag Kriterien erfinden." },
+    { "typ": "Wissen", "frage": "Was bedeutet Puffer bei einem Arbeitspaket?", "loesung": "Die Zeit, um die es sich verzögern kann, ohne das Projektende zu verschieben." }
+  ],
+  "pruefungstipp": "Bei Terminaufgaben zuerst alle Abhängigkeiten aufschreiben, dann den längsten Weg suchen. Puffer gibt es nur abseits des kritischen Pfads."
+}

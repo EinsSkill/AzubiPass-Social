@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf10",
+  "kapitel": "k08",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf10-k08-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 4,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Luca Petrelli soll Kreditsicherheiten im Umfeld der MAKEL Studio GmbH benennen." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Sicherheit wird beschrieben?",
+          "ziele": ["Selbstschuldnerische Bürgschaft", "Sicherungsübereignung", "Verpfändung", "Grundschuld", "Eigentumsvorbehalt"],
+          "elemente": [
+            { "text": "Yuki Bergmann haftet ohne Einrede der Vorausklage für das Darlehen", "loesung": "Selbstschuldnerische Bürgschaft" },
+            { "text": "Die Bank wird Eigentümerin der Laserstation, MAKEL arbeitet weiter damit", "loesung": "Sicherungsübereignung" },
+            { "text": "Ein Wertpapierdepot wird der Bank übergeben", "loesung": "Verpfändung" },
+            { "text": "Ein Grundstück wird im Grundbuch zugunsten der Bank belastet", "loesung": "Grundschuld" },
+            { "text": "Der Stofflieferant bleibt Eigentümer, bis MAKEL bezahlt hat", "loesung": "Eigentumsvorbehalt" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Entscheidend ist, wer haftet (Person oder Sache) und wer Eigentum und Besitz hat.",
+      "quelle": "ik2024-lf10-k08, Abschnitte a2 und a3"
+    },
+
+    {
+      "id": "ik2024-lf10-k08-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "darlehen": { "von": 50000, "bis": 60000, "schritt": 5000 },
+        "wert": { "von": 40000, "bis": 50000, "schritt": 5000 },
+        "satz": { "von": 50, "bis": 70, "schritt": 10 }
+      },
+      "abgeleitet": {
+        "gedeckt": "wert * satz / 100",
+        "offen": "darlehen - gedeckt"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH beantragt ein Darlehen über {darlehen} €. Als Sicherheit wird die Laserstation übereignet; die Bank setzt sie mit einem Sicherungswert von {wert} € an und beleiht davon {satz} %. Den nicht gedeckten Rest soll eine Bürgschaft abdecken." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Durch die Sicherungsübereignung gedeckter Betrag", "einheit": "€", "loesung": "gedeckt", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Erforderliche Höhe der Bürgschaft", "einheit": "€", "loesung": "offen", "toleranz": 0.01, "punkte": 2, "folgefehler_aus": ["gedeckt"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Gedeckt = Sicherungswert × Beleihungssatz. Der Rest des Darlehens muss anders gesichert werden.",
+      "quelle": "ik2024-lf10-k08, Abschnitte a2 bis a4"
+    },
+
+    {
+      "id": "ik2024-lf10-k08-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die Hausbank verlangt von Yuki Bergmann eine unbegrenzte selbstschuldnerische Bürgschaft für alle Verbindlichkeiten der MAKEL Studio GmbH gegenüber der Bank. Yuki fragt Tobias Renner: „Ich dachte, bei einer GmbH hafte ich nicht privat. Soll ich unterschreiben?“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die Forderung der Bank aus Sicht von Yuki und MAKEL und zeigen Sie Verhandlungsmöglichkeiten auf.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Grundsätzlich haftet die GmbH mit ihrem Gesellschaftsvermögen, Yuki nur mit ihrer Einlage. Mit der Bürgschaft gibt sie diese Begrenzung für die Bankschulden auf und haftet privat; selbstschuldnerisch heißt, die Bank kann sofort auf sie zugreifen, und eine unbegrenzte Bürgschaft für alle Verbindlichkeiten ist für sie kaum kalkulierbar. Aus Sicht der Bank ist die Forderung nachvollziehbar, weil das Gesellschaftsvermögen einer kleinen GmbH begrenzt ist. Verhandlungsmöglichkeiten: Bürgschaft auf einen Höchstbetrag und auf das konkrete Darlehen begrenzen, befristen; vorrangig Realsicherheiten nutzen (Sicherungsübereignung der Laserstation); mit guten Kennzahlen und Liquiditätsplan ein besseres Rating begründen; Alternativen wie Leasing prüfen. Empfehlung: nur eine begrenzte Bürgschaft nach Prüfung des eigenen Risikos und ggf. Beratung unterschreiben.",
+        "raster": [
+          { "kriterium": "Haftungsbeschränkung der GmbH und deren Aufhebung durch Bürgschaft erklärt", "punkte": 1 },
+          { "kriterium": "Risiko einer unbegrenzten selbstschuldnerischen Bürgschaft erkannt", "punkte": 1 },
+          { "kriterium": "Interesse der Bank nachvollzogen", "punkte": 1 },
+          { "kriterium": "Mindestens zwei Verhandlungsmöglichkeiten und begründete Empfehlung", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Eine Bürgschaft verlagert Risiko auf die Bürgin; Höhe, Umfang und Alternativen sind verhandelbar.",
+      "quelle": "ik2024-lf10-k08, Abschnitte a2 und a4"
+    }
+  ]
+}

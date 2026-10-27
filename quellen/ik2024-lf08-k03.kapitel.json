@@ -1,0 +1,180 @@
+{
+  "id": "k03",
+  "lernfeld": "ik2024-lf08",
+  "nummer": 3,
+  "titel": "Kosten auf Kostenstellen verteilen",
+  "untertitel": "Wo die Gemeinkosten entstehen: Kostenstellen bilden, im Betriebsabrechnungsbogen verteilen, Hilfskostenstellen umlegen und Zuschlagssätze ermitteln.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Gemeinkosten lassen sich Produkten nicht direkt zuordnen (Kapitel 2).",
+          "Ein Unternehmen ist in Bereiche gegliedert."
+        ],
+        "erklaerung": "Die Kostenstellenrechnung fragt: Wo sind die Gemeinkosten entstanden? Kostenstellen sind betriebliche Bereiche, deren Kosten getrennt erfasst werden, meist entlang der Verantwortung. Hauptkostenstellen arbeiten unmittelbar an den Produkten oder für den Absatz: Material, Fertigung, Verwaltung, Vertrieb. Hilfskostenstellen erbringen Leistungen für andere Kostenstellen, etwa Instandhaltung oder ein gemeinsamer Fuhrpark. Der Betriebsabrechnungsbogen (BAB) ist die Tabelle, in der die Gemeinkosten auf die Kostenstellen verteilt werden; am Ende stehen Zuschlagssätze für die Kalkulation.",
+        "beispiele": [
+          "Hauptkostenstellen bei MAKEL: Material (Einkauf, Lager), Fertigung (Druck, Stick), Verwaltung, Vertrieb.",
+          "Hilfskostenstelle: Instandhaltung, die die Maschinen der Fertigung und den Lieferwagen des Vertriebs wartet."
+        ],
+        "fallbeispiel": "Tobias Renner möchte wissen, welche Bereiche wie viel Gemeinkosten verursachen. Sandra Koslowski legt für MAKEL vier Hauptkostenstellen und eine Hilfskostenstelle ‚Instandhaltung‘ an und richtet einen BAB ein.",
+        "typische_fehler": "Einzelkosten in den BAB aufnehmen — dort stehen nur Gemeinkosten.",
+        "verstaendnisfragen": [
+          "Welche Frage beantwortet die Kostenstellenrechnung? Wo sind die Gemeinkosten entstanden?",
+          "Was unterscheidet Haupt- und Hilfskostenstellen? Hauptkostenstellen arbeiten für Produkte oder Absatz, Hilfskostenstellen für andere Kostenstellen."
+        ],
+        "pruefungsbezug": "Kostenstellen bilden und Haupt- von Hilfskostenstellen unterscheiden.",
+        "merksatz": "Kostenstellen zeigen, wo Gemeinkosten entstehen; der BAB verteilt sie und liefert Zuschlagssätze."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Manche Gemeinkosten lassen sich per Beleg einer Kostenstelle zuordnen.",
+          "Andere wie Miete betreffen mehrere Stellen."
+        ],
+        "erklaerung": "Bei der primären Verteilung werden die Gemeinkosten aus der Kostenartenrechnung auf die Kostenstellen gebracht. Kostenstelleneinzelkosten lassen sich per Beleg direkt zuordnen, etwa das Gehalt der Lagerleitung zur Materialstelle. Kostenstellengemeinkosten werden über Verteilungsschlüssel aufgeteilt, die der Verursachung möglichst nahekommen: Raumkosten nach Quadratmetern, Energie nach installierter Leistung oder Zählerständen, Versicherung nach Anlagewerten, Sozialkosten nach Löhnen. Kontrolle: Die Summe der verteilten Beträge muss den Ausgangsbetrag ergeben.",
+        "beispiele": [
+          "Raumkosten 10.000 € bei 100 m² und 300 m² von 400 m² gesamt: 2.500 € und 7.500 €.",
+          "Gehalt der Lagerleitung: direkt der Materialstelle zugeordnet."
+        ],
+        "fallbeispiel": "Die Raumkosten von 10.000 € im Quartal verteilt Sandra nach Fläche: Lager 100 m², Veredelung 300 m² (Verwaltung und Vertrieb sitzen in einem angemieteten Büro mit eigener Miete). 10.000 € ÷ 400 m² = 25 € je m²: Lager 2.500 €, Veredelung 7.500 €. Summe 10.000 € — stimmt.",
+        "typische_fehler": "Den Schlüssel auf eine falsche Gesamtgröße beziehen, sodass die Summe nicht aufgeht.",
+        "verstaendnisfragen": [
+          "Wie werden Raumkosten üblicherweise verteilt? Nach Quadratmetern.",
+          "Wie kontrolliert man eine Verteilung? Die Summe der verteilten Beträge muss den Ausgangsbetrag ergeben."
+        ],
+        "pruefungsbezug": "Gemeinkosten mit Verteilungsschlüsseln verteilen und kontrollieren.",
+        "merksatz": "Primäre Verteilung: Stelleneinzelkosten direkt, Stellengemeinkosten über verursachungsnahe Schlüssel; die Summe bleibt gleich."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Hilfskostenstellen arbeiten für Hauptkostenstellen.",
+          "Produkte durchlaufen nur Hauptkostenstellen."
+        ],
+        "erklaerung": "Weil Zuschlagssätze nur für Hauptkostenstellen gebildet werden, müssen die Kosten der Hilfskostenstellen auf die Hauptkostenstellen umgelegt werden (sekundäre Verteilung oder innerbetriebliche Leistungsverrechnung). Der Schlüssel richtet sich nach der Leistung, die die Hilfskostenstelle für die anderen erbringt, etwa Wartungsstunden. Nach der Umlage steht die Hilfskostenstelle auf null; die Gesamtsumme der Gemeinkosten bleibt unverändert. Erbringen Hilfskostenstellen auch Leistungen füreinander, ist eine mehrstufige Umlage nötig; die gewählte Reihenfolge oder Methode wird offengelegt.",
+        "beispiele": [
+          "Instandhaltung 6.000 €: 40 Wartungsstunden für die Fertigung, 10 für den Vertrieb (Lieferwagen) → 4.800 € und 1.200 €.",
+          "Nach der Umlage: Instandhaltung 0 €."
+        ],
+        "fallbeispiel": "Die Instandhaltung hat im Quartal 6.000 € Kosten. Sie hat 40 Stunden an den Maschinen der Veredelung und 10 Stunden am Lieferwagen des Vertriebs gearbeitet. Sandra legt um: Fertigung 4.800 €, Vertrieb 1.200 €. Die Summe aller Gemeinkosten im BAB bleibt gleich.",
+        "typische_fehler": "Umgelegte Beträge noch einmal zu den Gesamtgemeinkosten addieren — das wäre eine Doppelzählung.",
+        "verstaendnisfragen": [
+          "Warum werden Hilfskostenstellen umgelegt? Weil nur Hauptkostenstellen Zuschlagssätze für Produkte bilden.",
+          "Verändert die Umlage die Gesamtsumme der Gemeinkosten? Nein, sie verschiebt nur die Zuordnung."
+        ],
+        "pruefungsbezug": "Hilfskostenstellen nach Leistungsbeziehungen umlegen, ohne Doppelzählung.",
+        "merksatz": "Hilfskostenstellen werden nach ihren Leistungen auf Hauptkostenstellen umgelegt; die Gesamtsumme bleibt gleich."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Gemeinkosten sollen in die Kalkulation der Produkte.",
+          "Zuschlagssätze verbinden Gemein- und Einzelkosten."
+        ],
+        "erklaerung": "Am Ende des BAB stehen die Gemeinkosten jeder Hauptkostenstelle. Daraus werden Zuschlagssätze gebildet, indem man sie auf eine Zuschlagsgrundlage bezieht: Materialgemeinkosten auf Materialeinzelkosten, Fertigungsgemeinkosten auf Fertigungslöhne (Fertigungseinzelkosten), Verwaltungs- und Vertriebsgemeinkosten auf die Herstellkosten des Umsatzes. Zuschlagssatz = Gemeinkosten der Stelle ÷ Zuschlagsgrundlage × 100. Ein Zuschlagssatz unterstellt, dass die Gemeinkosten proportional zur Grundlage entstehen — bei maschinenintensiver Fertigung trifft das oft nicht zu (Kapitel 4).",
+        "beispiele": [
+          "Materialgemeinkosten 3.000 €, Materialeinzelkosten 30.000 €: MGK-Zuschlag 10 %.",
+          "Fertigungsgemeinkosten 18.000 €, Fertigungslöhne 12.000 €: FGK-Zuschlag 150 %."
+        ],
+        "fallbeispiel": "Nach der Umlage hat die Fertigung 18.000 € Gemeinkosten bei 12.000 € Fertigungslöhnen: Zuschlag 150 %. Tobias Renner stutzt: ‚Auf jeden Euro Lohn kommen 1,50 € Gemeinkosten?‘ Sandra erklärt: Die Maschinen verursachen den Großteil — ein Maschinenstundensatz wäre genauer.",
+        "typische_fehler": "Zuschlagssätze auf die falsche Grundlage beziehen.",
+        "verstaendnisfragen": [
+          "Wie berechnet man einen Zuschlagssatz? Gemeinkosten der Stelle ÷ Zuschlagsgrundlage × 100.",
+          "Worauf werden die Fertigungsgemeinkosten bezogen? Auf die Fertigungslöhne."
+        ],
+        "pruefungsbezug": "Zuschlagssätze aus dem BAB berechnen und ihre Aussagekraft beurteilen.",
+        "merksatz": "Zuschlagssatz = Gemeinkosten ÷ Zuschlagsgrundlage × 100; MGK auf MEK, FGK auf Fertigungslöhne, VwGK und VtGK auf Herstellkosten."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Haupt- und Hilfskostenstellen unterscheiden", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Verteilungsschlüssel anwenden", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Umlagen von Hilfskostenstellen nachvollziehbar prüfen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Zuschlagssätze ermitteln und kontrollieren", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Kostenstellen und BAB",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die {{begriff:kostenstellenrechnung|Kostenstellenrechnung}} fragt: *Wo* entstehen die Gemeinkosten? Werkzeug ist der {{begriff:bab|Betriebsabrechnungsbogen}}." },
+        { "typ": "tabelle", "spalten": ["Kostenstelle", "Art", "Leistet für"], "zeilen": [
+          { "zellen": ["Instandhaltung", "Hilfskostenstelle", "andere Kostenstellen"] },
+          { "zellen": ["Material", "Hauptkostenstelle", "Einkauf, Lager"] },
+          { "zellen": ["Fertigung", "Hauptkostenstelle", "Druck, Stick, Verpackung"] },
+          { "zellen": ["Verwaltung", "Hauptkostenstelle", "Unternehmen insgesamt"] },
+          { "zellen": ["Vertrieb", "Hauptkostenstelle", "Absatz, Versand"] }
+        ] },
+        { "typ": "merke", "text": "Kostenstellen zeigen, **wo** Gemeinkosten entstehen; der BAB verteilt sie und liefert Zuschlagssätze.", "karteikarte": "Was ist der Betriebsabrechnungsbogen, und welche Kostenstellen gibt es?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Primäre Verteilung",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["Kostenart", "Schlüssel", "Material", "Fertigung"], "zeilen": [
+          { "zellen": ["Raumkosten 10.000 €", "m² (100 : 300)", "2.500 €", "7.500 €"] },
+          { "zellen": ["Kontrolle", "", "", "Summe 10.000 €"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "Energiekosten von 4.000 € sollen nach installierter Leistung verteilt werden: Fertigung 30 kW, Material 5 kW, Verwaltung 5 kW. Welchen Betrag trägt die Fertigung?",
+          "optionen": [
+            { "text": "3.000 €", "richtig": true, "echo": "Richtig: 4.000 € ÷ 40 kW = 100 € je kW; 30 kW × 100 € = 3.000 €." },
+            { "text": "1.333 €", "richtig": false, "echo": "Das wäre eine Gleichverteilung auf drei Stellen — ohne Schlüssel." },
+            { "text": "1.200 €", "richtig": false, "echo": "Hier wurde 30 % von 4.000 € gerechnet; der Anteil der Fertigung beträgt aber 30 von 40 kW, also 75 %." }
+          ]
+        },
+        { "typ": "merke", "text": "Primäre Verteilung: **Stelleneinzelkosten direkt**, Stellengemeinkosten über verursachungsnahe Schlüssel; die Summe bleibt gleich.", "karteikarte": "Wie werden Gemeinkosten im BAB auf Kostenstellen verteilt?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Innerbetriebliche Leistungsverrechnung",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["Instandhaltung 6.000 €", "Wartungsstunden", "Umlage"], "zeilen": [
+          { "zellen": ["Fertigung", "40", "4.800 €"] },
+          { "zellen": ["Vertrieb", "10", "1.200 €"] },
+          { "zellen": ["Instandhaltung nach Umlage", "", "0 €"] }
+        ] },
+        { "typ": "achtung", "text": "Umgelegte Beträge sind **keine zusätzlichen Kosten**. Wer sie zur Gesamtsumme addiert, zählt doppelt." },
+        { "typ": "merke", "text": "Hilfskostenstellen werden nach ihren Leistungen auf Hauptkostenstellen **umgelegt**; die Gesamtsumme bleibt gleich.", "karteikarte": "Wie und warum werden Hilfskostenstellen umgelegt?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Zuschlagssätze",
+      "inhalt": [
+        { "typ": "absatz", "text": "Der {{begriff:zuschlagssatz|Zuschlagssatz}} verbindet Gemeinkosten mit einer Zuschlagsgrundlage aus Einzelkosten oder Herstellkosten." },
+        { "typ": "tabelle", "mono": true, "spalten": ["Stelle", "Gemeinkosten", "Grundlage", "Zuschlag"], "zeilen": [
+          { "zellen": ["Material", "3.000 €", "MEK 30.000 €", "10 %"] },
+          { "zellen": ["Fertigung", "18.000 €", "Fertigungslöhne 12.000 €", "150 %"] },
+          { "zellen": ["Verwaltung", "6.300 €", "Herstellkosten 63.000 €", "10 %"] },
+          { "zellen": ["Vertrieb", "3.150 €", "Herstellkosten 63.000 €", "5 %"] }
+        ] },
+        { "typ": "merke", "text": "**Zuschlagssatz = Gemeinkosten ÷ Zuschlagsgrundlage × 100**; MGK auf MEK, FGK auf Fertigungslöhne, VwGK und VtGK auf Herstellkosten.", "karteikarte": "Wie berechnest du Zuschlagssätze, und worauf beziehen sie sich?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Kostenstellenrechnung: Wo entstehen Gemeinkosten?",
+    "Hauptkostenstellen: Material, Fertigung, Verwaltung, Vertrieb.",
+    "Primäre Verteilung mit verursachungsnahen Schlüsseln.",
+    "Hilfskostenstellen werden umgelegt — ohne Doppelzählung.",
+    "Zuschlagssatz = Gemeinkosten ÷ Grundlage × 100.",
+    "Hohe FGK-Zuschläge deuten auf maschinenintensive Fertigung hin."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "10.000 € Raumkosten auf 100 und 300 m² verteilen; Gesamtfläche 400 m².", "loesung": "2.500 € und 7.500 €. Die Verteilungssumme bleibt 10.000 €." },
+    { "typ": "Wissen", "frage": "Warum darf der Betrag einer umgelegten Hilfskostenstelle nicht zusätzlich zu den Gesamtgemeinkosten addiert werden?", "loesung": "Sonst wird doppelt gezählt. Die Umlage verändert nur die Zuordnung zu den Hauptkostenstellen, nicht die insgesamt entstandenen Kosten." },
+    { "typ": "Rechnen", "frage": "Fertigungsgemeinkosten 18.000 €, Fertigungslöhne 12.000 €. Zuschlagssatz?", "loesung": "18.000 ÷ 12.000 × 100 = 150 %." }
+  ],
+  "pruefungstipp": "Im BAB nach jedem Schritt die Summe kontrollieren. Und bei Zuschlagssätzen immer die Grundlage dazuschreiben — ‚150 %‘ ohne ‚auf Fertigungslöhne‘ ist in der Prüfung nur halb richtig."
+}

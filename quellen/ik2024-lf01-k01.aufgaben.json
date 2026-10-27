@@ -1,0 +1,195 @@
+{
+  "lernfeld": "ik2024-lf01",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf01-k01-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Als Auszubildende oder Auszubildender der MAKEL Studio GmbH haben Sie in der ersten Ausbildungswoche drei Anliegen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Wer ist jeweils zuständig?",
+          "ziele": [
+            "Ausbildungsbetrieb",
+            "Berufsschule",
+            "IHK als zuständige Stelle"
+          ],
+          "elemente": [
+            {
+              "text": "Praktische Einweisung an der Druckmaschine in der Veredelung",
+              "loesung": "Ausbildungsbetrieb"
+            },
+            {
+              "text": "Klärung einer Lernaufgabe aus dem Unterricht zur Bestellmenge",
+              "loesung": "Berufsschule"
+            },
+            {
+              "text": "Festlegung des Termins für Teil 1 der Abschlussprüfung",
+              "loesung": "IHK als zuständige Stelle"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Der Betrieb bildet am Arbeitsplatz aus und weist ein, die Berufsschule ist für den Unterricht nach Rahmenlehrplan zuständig, die IHK nimmt als zuständige Stelle die Abschlussprüfung ab. Die Berufsschule organisiert die IHK-Prüfung nicht.",
+      "quelle": "ik2024-lf01-k01, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf01-k01-02",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine neue Auszubildende der MAKEL Studio GmbH fragt, wie die Abschlussprüfung für Industriekaufleute aufgebaut ist."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Aussagen zu Teil 1 der Abschlussprüfung treffen zu? Kreuzen Sie alle zutreffenden an.",
+          "mehrfach": true,
+          "optionen": [
+            {
+              "text": "Teil 1 soll im vierten Ausbildungshalbjahr stattfinden.",
+              "richtig": true,
+              "echo": "Richtig. So sieht es die Ausbildungsverordnung vor; den genauen Termin legt die IHK fest."
+            },
+            {
+              "text": "Die Prüfungszeit beträgt 90 Minuten.",
+              "richtig": true,
+              "echo": "Richtig. Teil 1 ist eine schriftliche, praxisbezogene Prüfung von 90 Minuten."
+            },
+            {
+              "text": "Teil 1 zählt 50 Prozent des Gesamtergebnisses.",
+              "richtig": false,
+              "echo": "Nein. Teil 1 geht mit 25 Prozent in das Gesamtergebnis ein."
+            },
+            {
+              "text": "Teil 1 wird von der Berufsschule abgenommen.",
+              "richtig": false,
+              "echo": "Nein. Die Abschlussprüfung nimmt die zuständige Stelle ab, hier die IHK."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Teil 1 (‚Leistungserstellung, Logistik, Beschaffung und Buchhaltung‘) soll im vierten Ausbildungshalbjahr stattfinden, dauert 90 Minuten und zählt 25 Prozent. Abgenommen wird er von der IHK.",
+      "quelle": "ik2024-lf01-k01, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf01-k01-03",
+      "operator": "Entwerfen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sie sind in der kommenden Woche im Lager der MAKEL Studio GmbH eingesetzt. Im Unterricht wird zur gleichen Zeit der Wareneingang behandelt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Entwerfen Sie eine Lernwoche mit je einem Schritt ‚Beobachten im Betrieb‘, ‚Erklären in der Schule‘ und ‚Selbst üben‘. Formulieren Sie am Ende eine überprüfbare Lernfrage.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Beobachten (Montag, Lager): zusehen, wie eine Rohlingslieferung anhand von Lieferschein und Bestellung angenommen und auf Menge und sichtbare Schäden geprüft wird. Erklären (Mittwoch, Berufsschule): Prüf- und Rügepflichten beim Wareneingang und die Bedeutung des Lieferscheins im Unterricht nachvollziehen. Üben (Donnerstag): Mit einem freigegebenen Lieferschein und der zugehörigen Bestellung selbst einen Abgleich durchführen und Abweichungen notieren. Lernfrage (Freitag, im Ausbildungsnachweis): ‚Was ist zu tun, wenn statt 400 nur 380 Rohlinge geliefert wurden?‘ Die Frage ist überprüfbar, weil sie eine konkrete Handlung verlangt.",
+        "raster": [
+          {
+            "kriterium": "Alle drei Schritte beziehen sich auf dasselbe Thema (Wareneingang)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Die Schritte sind konkret und zeitlich eingeplant",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Die Übung nutzt eigene Tätigkeit statt bloßes Lesen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Die Lernfrage ist konkret und überprüfbar",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Ein guter Lernplan verbindet Beobachtung, Erklärung und eigene Übung zum selben Thema und endet mit einer Frage, deren Antwort man später kontrollieren kann.",
+      "quelle": "ik2024-lf01-k01, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf01-k01-04",
+      "operator": "Erläutern Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli, Auszubildender der MAKEL Studio GmbH, sagt: „In der Berufsschule behandeln wir gerade Kaufverträge, im Betrieb arbeite ich aber im Lager. Das passt doch nicht zusammen.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Erläutern Sie Luca, wie Betrieb und Berufsschule in der dualen Ausbildung zusammenwirken und wie er beide Lernorte verbinden kann.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "In der dualen Ausbildung vermittelt der Betrieb die Praxis an echten Aufträgen nach dem Ausbildungsrahmenplan, die Berufsschule das systematische Fachwissen nach dem Rahmenlehrplan. Beide verfolgen dasselbe Ziel, berufliche Handlungsfähigkeit, arbeiten aber nicht im Gleichschritt. Auch im Lager spielt der Kaufvertrag eine Rolle: beim Wareneingang (Prüfung der Lieferung) und beim Versand (Erfüllung). Luca kann im Ausbildungsnachweis festhalten, wo er Schulinhalte im Betrieb wiederfindet, und seine Ausbilderin darauf ansprechen.",
+        "raster": [
+          {
+            "kriterium": "Aufgaben der beiden Lernorte unterschieden",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Gemeinsames Ziel bzw. fehlender Gleichschritt erklärt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Konkrete Verbindung (z. B. Wareneingang, Ausbildungsnachweis) genannt",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Betrieb und Schule ergänzen sich; die Verbindung stellen Auszubildende selbst mit her, etwa über den Ausbildungsnachweis.",
+      "quelle": "ik2024-lf01-k01, Abschnitte a1 und a4"
+    }
+  ]
+}

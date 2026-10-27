@@ -172,9 +172,9 @@ def main():
                 pg2.set_input_files("#ich input[type=file]", str(tmp / "v1.json"))
                 pg2.wait_for_selector("text=Eingespielt und mit dem zusammengeführt")
                 k = pg2.evaluate("JSON.parse(localStorage.getItem('azubipass:konto'))")
-                pruefe(k["version"] == 3 and "lf2-k1" in k["fortschritt"] and "lf4-k6" in k["fortschritt"]
+                pruefe(k["version"] == 4 and "lf2-k1" in k["fortschritt"] and "lf4-k6" in k["fortschritt"]
                        and len(k["lesezeichen"]) == 2 and k["lesezeichen"][1].get("lernfeld") == "",
-                       "Alte v1-Sicherung wird zusammengeführt und auf v3 gebracht", [e["zu"] for e in k["lesezeichen"]])
+                       "Alte v1-Sicherung wird zusammengeführt und auf die aktuelle Fassung 4 gebracht", [e["zu"] for e in k["lesezeichen"]])
                 frisch_ktx.close()
 
                 # Schon gespeicherter kaputter Stand (aus einer alten Fassung) –

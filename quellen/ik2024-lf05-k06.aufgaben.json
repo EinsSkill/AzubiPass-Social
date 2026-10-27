@@ -1,0 +1,212 @@
+{
+  "lernfeld": "ik2024-lf05",
+  "kapitel": "k06",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf05-k06-01",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 6,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "netto": {
+          "von": 50,
+          "bis": 300,
+          "schritt": 10
+        }
+      },
+      "abgeleitet": {
+        "steuer": "runde(netto * 0.19, 2)",
+        "brutto": "netto + steuer"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine Boutique reklamiert bei der MAKEL Studio GmbH bei bereits gelieferten, noch nicht bezahlten Hoodies (eigene Erzeugnisse) leichte Druckfehler und behält die Ware gegen einen Preisnachlass von {netto} € netto. Marlene Voss erteilt eine Gutschrift einschließlich 19 % Umsatzsteuer über {brutto} €. Nachlässe werden auf dem Konto Erlösberichtigungen erfasst."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "5001",
+              "haben": null,
+              "betrag": "netto"
+            },
+            {
+              "soll": "4800",
+              "haben": null,
+              "betrag": "steuer"
+            },
+            {
+              "soll": null,
+              "haben": "2400",
+              "betrag": "brutto"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 6,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Der Nachlass mindert die Erlöse (Erlösberichtigungen im Soll) und die Umsatzsteuerschuld (Soll). Die Forderung sinkt um den Bruttobetrag.",
+      "quelle": "ik2024-lf05-k06, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf05-k06-02",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "anfang": {
+          "von": 1000,
+          "bis": 2000,
+          "schritt": 100
+        },
+        "mehr": {
+          "von": 200,
+          "bis": 800,
+          "schritt": 100
+        }
+      },
+      "abgeleitet": {
+        "schluss": "anfang + mehr"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei der MAKEL Studio GmbH betrug der Anfangsbestand an fertigen Erzeugnissen {anfang} €. Laut Inventur beträgt der bereits korrekt bewertete Schlussbestand {schluss} €. Buchen Sie die Bestandsveränderung."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "2200",
+              "haben": null,
+              "betrag": "mehr"
+            },
+            {
+              "soll": null,
+              "haben": "5200",
+              "betrag": "mehr"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4,
+        "punkte_je_zeile": 2
+      },
+      "erklaerung": "Der Bestand ist gestiegen: Bestandsmehrung. Fertige Erzeugnisse (Aktivkonto) im Soll, Bestandsveränderungen im Haben. Keine Umsatzsteuer, denn es wurde nichts verkauft.",
+      "quelle": "ik2024-lf05-k06, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k06-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Luca Petrelli, Auszubildender der MAKEL Studio GmbH, hat eine Bestandsmehrung fertiger Erzeugnisse von 300 € so gebucht: „Forderungen 357 € an Umsatzerlöse 300 € und Umsatzsteuer 57 €.“ Er begründet: „Die Hoodies werden ja sowieso verkauft.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie Lucas Buchung und nennen Sie die richtige Buchung.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Buchung ist falsch. Eine Bestandsmehrung ist kein Verkauf: Es gibt weder einen Kunden noch eine Forderung, und es entsteht keine Umsatzsteuer. Ob und wann die Hoodies verkauft werden, ist offen; der Umsatz wird erst mit der Rechnung gebucht. Richtig ist: Fertige Erzeugnisse 300 € an Bestandsveränderungen 300 €. Die Mehrung gleicht im Gesamtkostenverfahren die bereits gebuchten Produktionsaufwendungen für die Lagerbestände aus.",
+        "raster": [
+          {
+            "kriterium": "Buchung als falsch beurteilt, weil kein Verkauf vorliegt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Keine Forderung und keine Umsatzsteuer begründet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Richtige Buchung: Fertige Erzeugnisse an Bestandsveränderungen 300 €",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sinn der Bestandsveränderung (Ausgleich der Produktionsaufwendungen) erklärt",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Bestandsveränderungen korrigieren den Erfolg um die Lagerveränderung; Umsätze entstehen erst mit dem Verkauf.",
+      "quelle": "ik2024-lf05-k06, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf05-k06-04",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski, Leiterin der Buchhaltung der MAKEL Studio GmbH, erklärt Ihnen die Konten für Verkäufe im IKR."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welches Konto passt?",
+          "ziele": [
+            "5000 Umsatzerlöse für eigene Erzeugnisse",
+            "5100 Umsatzerlöse für Handelswaren",
+            "5200 Bestandsveränderungen"
+          ],
+          "elemente": [
+            {
+              "text": "Verkauf selbst bestickter Hoodies an eine Boutique",
+              "loesung": "5000 Umsatzerlöse für eigene Erzeugnisse"
+            },
+            {
+              "text": "Verkauf zugekaufter Mützen im Store",
+              "loesung": "5100 Umsatzerlöse für Handelswaren"
+            },
+            {
+              "text": "Mehr fertige Hoodies auf Lager als zu Periodenbeginn",
+              "loesung": "5200 Bestandsveränderungen"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Eigene Erzeugnisse → 5000, Handelswaren → 5100, Lagerveränderung eigener Erzeugnisse → 5200.",
+      "quelle": "ik2024-lf05-k06, Abschnitte a3 und a4"
+    }
+  ]
+}

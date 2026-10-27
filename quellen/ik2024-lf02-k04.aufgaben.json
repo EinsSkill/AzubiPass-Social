@@ -1,0 +1,233 @@
+{
+  "lernfeld": "ik2024-lf02",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf02-k04-01",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Das Onboarding-Paket der MAKEL Studio GmbH wird Ayla Brandt zur Abnahme vorgelegt."
+        },
+        {
+          "block": "anlage",
+          "titel": "Anlage 1: Abnahmekriterien",
+          "zugeklappt": false,
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Art",
+              "erfüllt"
+            ],
+            "zeilen": [
+              [
+                "Checkliste mit acht Pflichtinformationen",
+                "Muss",
+                "ja"
+              ],
+              [
+                "Lageplan von Studio, Lager und Verwaltung",
+                "Muss",
+                "ja"
+              ],
+              [
+                "Ansprechpartnerliste mit dienstlichen Kontakten",
+                "Muss",
+                "ja"
+              ],
+              [
+                "Freigabe der Arbeitsschutzunterweisung",
+                "Muss",
+                "nein"
+              ],
+              [
+                "Englische Kurzfassung",
+                "Kann",
+                "ja"
+              ]
+            ]
+          }
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie, ob das Projektergebnis abgenommen werden kann, und schlagen Sie ein Vorgehen vor.",
+          "zeilen": 5
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Eine erfolgreiche Abnahme ist nicht möglich, weil das Muss-Kriterium ‚Freigabe der Arbeitsschutzunterweisung‘ nicht erfüllt ist. Dass vier von fünf Kriterien — darunter ein Kann-Kriterium — erfüllt sind, ändert daran nichts. Vorschlag: Abnahme mit Auflage, die Freigabe bis zu einem festen Termin (vor dem nächsten Einstellungstermin) nachzuholen, oder Nachbesserung und erneute Vorlage.",
+        "raster": [
+          {
+            "kriterium": "Fehlendes Muss-Kriterium als entscheidend erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Prozentsatz erfüllter Kriterien nicht als Maßstab verwendet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sachgerechtes Vorgehen (Auflage mit Termin oder Nachbesserung)",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Muss-Kriterien sind zwingend; ein verfehltes Muss-Kriterium verhindert die erfolgreiche Abnahme.",
+      "quelle": "ik2024-lf02-k04, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf02-k04-02",
+      "operator": "Formulieren Sie",
+      "anforderungsbereich": 3,
+      "punkte": 3,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "In der Abschlussbesprechung des MAKEL-Onboarding-Projekts fällt der Satz: „Das Team hat schlecht kommuniziert.“ Bekannt ist: Freigaben der Abteilungen fehlten am Ende, weil im Aufgabenplan niemand für sie eingetragen war."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Formulieren Sie daraus eine verwertbare Erkenntnis für Folgeprojekte.",
+          "zeilen": 4
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "„Freigaben fehlten im gemeinsamen Aufgabenplan, weil keine Person dafür verantwortlich war. Künftig wird für jedes Arbeitspaket eine verantwortliche Person und ein dokumentierter Freigabetermin festgelegt.“",
+        "raster": [
+          {
+            "kriterium": "Konkretes Problem statt Pauschalurteil",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Ursache benannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Konkrete Maßnahme für künftige Projekte",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Verwertbare Erkenntnisse nennen Ursache und Maßnahme und werden für Folgeprojekte festgehalten.",
+      "quelle": "ik2024-lf02-k04, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf02-k04-03",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sie bereiten die Rückmeldung zur Präsentation einer Mitauszubildenden bei der MAKEL Studio GmbH vor."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "reihenfolge",
+          "lead": "Bringen Sie die Bestandteile konstruktiven Feedbacks in die übliche Reihenfolge.",
+          "elemente": [
+            {
+              "text": "Beobachtung beschreiben",
+              "position": 1
+            },
+            {
+              "text": "Wirkung auf mich schildern",
+              "position": 2
+            },
+            {
+              "text": "Wunsch oder Vorschlag äußern",
+              "position": 3
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Konstruktives Feedback: Beobachtung, Wirkung, Wunsch.",
+      "quelle": "ik2024-lf02-k04, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf02-k04-04",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "soll": {
+          "von": 40,
+          "bis": 80,
+          "schritt": 5
+        },
+        "mehr": {
+          "von": 5,
+          "bis": 20,
+          "schritt": 5
+        }
+      },
+      "abgeleitet": {
+        "ist": "soll + mehr",
+        "abweichung": "runde(mehr / soll * 100, 1)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für das MAKEL-Onboarding-Projekt waren {soll} Arbeitsstunden geplant. Tatsächlich wurden {ist} Stunden aufgewendet."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Abweichung in Stunden",
+          "einheit": "h",
+          "loesung": "mehr",
+          "toleranz": 0.01,
+          "punkte": 1
+        },
+        {
+          "block": "zahl",
+          "label": "Abweichung in Prozent des Plans (eine Nachkommastelle)",
+          "einheit": "%",
+          "loesung": "abweichung",
+          "toleranz": 0.05,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "mehr"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Abweichung = Ist − Soll; prozentual bezogen auf den Plan (Soll).",
+      "quelle": "ik2024-lf02-k04, Abschnitt a4"
+    }
+  ]
+}

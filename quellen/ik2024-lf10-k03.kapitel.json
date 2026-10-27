@@ -1,0 +1,354 @@
+{
+  "id": "k03",
+  "lernfeld": "ik2024-lf10",
+  "nummer": 3,
+  "titel": "Beträge der richtigen Periode zuordnen",
+  "untertitel": "Zahlung und wirtschaftliche Zugehörigkeit trennen: Rechnungsabgrenzung, sonstige Forderungen und Verbindlichkeiten, Rückstellungen.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Erfolg und Zahlung fallen oft auseinander (LF 5).",
+          "Der Jahresabschluss soll den Erfolg eines bestimmten Jahres zeigen."
+        ],
+        "erklaerung": "Aufwendungen und Erträge gehören in das Geschäftsjahr, zu dem sie wirtschaftlich gehören — unabhängig davon, wann gezahlt wird (§ 252 Abs. 1 Nr. 5 HGB). Fallen Zahlung und wirtschaftliche Zugehörigkeit in verschiedene Jahre, wird abgegrenzt. Transitorische Abgrenzung: Die Zahlung liegt im alten Jahr, der Aufwand oder Ertrag gehört (teilweise) ins neue Jahr — Rechnungsabgrenzungsposten. Antizipative Abgrenzung: Aufwand oder Ertrag gehören ins alte Jahr, die Zahlung kommt erst im neuen Jahr — sonstige Forderungen oder sonstige Verbindlichkeiten.",
+        "beispiele": [
+          "Versicherung im Dezember für ein Jahr im Voraus bezahlt: transitorisch.",
+          "Dezembermiete für einen Lagerraum wird erst im Januar überwiesen: antizipativ."
+        ],
+        "fallbeispiel": "Sandra Koslowski geht im Januar die Zahlungen rund um den Jahreswechsel durch: eine Versicherung, im Dezember für zwölf Monate bezahlt; Zinsen für Dezember, die die Bank erst im Januar belastet; eine Mietvorauszahlung eines Untermieters für Januar, schon im Dezember eingegangen.",
+        "typische_fehler": "Aufwand und Ertrag immer dem Jahr der Zahlung zuordnen.",
+        "verstaendnisfragen": [
+          "Was unterscheidet transitorische und antizipative Abgrenzung? Transitorisch: Zahlung im alten, Erfolg im neuen Jahr. Antizipativ: Erfolg im alten, Zahlung im neuen Jahr.",
+          "Wonach richtet sich die Zuordnung? Nach der wirtschaftlichen Zugehörigkeit, nicht nach der Zahlung."
+        ],
+        "pruefungsbezug": "Fälle der Periodenabgrenzung erkennen und einordnen.",
+        "merksatz": "Zugehörigkeit vor Zahlung: transitorisch = jetzt gezahlt, später Erfolg; antizipativ = jetzt Erfolg, später gezahlt."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Transitorische Fälle: Zahlung jetzt, Erfolg später.",
+          "Rechnungsabgrenzungsposten stehen in der Bilanz."
+        ],
+        "erklaerung": "Aktive Rechnungsabgrenzung (ARA): Eine Ausgabe vor dem Stichtag betrifft Aufwand nach dem Stichtag. Der Anteil des neuen Jahres wird aus dem Aufwand herausgenommen und als ARA aktiviert: ARA an Aufwandskonto. Im neuen Jahr wird er aufgelöst: Aufwandskonto an ARA. Passive Rechnungsabgrenzung (PRA): Eine Einnahme vor dem Stichtag betrifft Ertrag nach dem Stichtag: Ertragskonto an PRA, im neuen Jahr umgekehrt. Berechnet wird zeitanteilig, meist nach Monaten.",
+        "beispiele": [
+          "1.200 € Versicherung am 1. Dezember für 12 Monate: 100 € Aufwand im alten Jahr, 1.100 € ARA.",
+          "Untermieter zahlt im Dezember 300 € Januarmiete: 300 € PRA."
+        ],
+        "fallbeispiel": "MAKEL hat am 1. Dezember 1.200 € für die Maschinenversicherung von Dezember bis November bezahlt und als Aufwand gebucht. Auf das alte Jahr entfällt ein Monat (100 €), auf das neue elf Monate (1.100 €). Sandra bucht zum 31.12.: Aktive Rechnungsabgrenzung 1.100 € an Versicherungsbeiträge 1.100 €. Im Januar löst sie den Posten auf.",
+        "typische_fehler": "Den gesamten Betrag abgrenzen oder die Monate falsch zählen.",
+        "verstaendnisfragen": [
+          "Wie wird eine aktive Rechnungsabgrenzung gebucht? Aktive Rechnungsabgrenzung an Aufwandskonto.",
+          "Wann entsteht eine passive Rechnungsabgrenzung? Wenn vor dem Stichtag eine Einnahme für Ertrag nach dem Stichtag eingeht."
+        ],
+        "pruefungsbezug": "Rechnungsabgrenzungsposten zeitanteilig berechnen und buchen.",
+        "merksatz": "ARA: Ausgabe jetzt, Aufwand später (ARA an Aufwand); PRA: Einnahme jetzt, Ertrag später (Ertrag an PRA) — zeitanteilig berechnen."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Antizipative Fälle: Erfolg jetzt, Zahlung später.",
+          "Forderungen und Verbindlichkeiten kennst du."
+        ],
+        "erklaerung": "Gehört ein Aufwand ins alte Jahr, wird aber erst im neuen Jahr bezahlt, entsteht zum Stichtag eine sonstige Verbindlichkeit: Aufwandskonto an Sonstige Verbindlichkeiten. Gehört ein Ertrag ins alte Jahr, geht das Geld aber erst im neuen Jahr ein, entsteht eine sonstige Forderung: Sonstige Forderungen an Ertragskonto. Bei Zahlung im neuen Jahr wird die Verbindlichkeit bzw. Forderung ausgeglichen, ohne erneut Aufwand oder Ertrag zu buchen. Voraussetzung ist, dass Betrag und Verpflichtung feststehen.",
+        "beispiele": [
+          "Dezemberzinsen 150 €, Belastung im Januar: Zinsaufwendungen an Sonstige Verbindlichkeiten 150 €.",
+          "Zinsgutschrift für Dezember 40 €, Gutschrift im Januar: Sonstige Forderungen an Zinserträge 40 €."
+        ],
+        "fallbeispiel": "Die Bank belastet die Darlehenszinsen für das vierte Quartal (450 €) erst am 15. Januar. Sandra bucht zum 31.12.: Zinsaufwendungen 450 € an Sonstige Verbindlichkeiten 450 €. Im Januar: Sonstige Verbindlichkeiten an Bank — kein zweiter Aufwand.",
+        "typische_fehler": "Im neuen Jahr bei der Zahlung noch einmal Aufwand buchen.",
+        "verstaendnisfragen": [
+          "Was wird gebucht, wenn Dezemberzinsen erst im Januar gezahlt werden? Zinsaufwendungen an Sonstige Verbindlichkeiten.",
+          "Was passiert bei Zahlung im neuen Jahr? Die sonstige Verbindlichkeit wird ausgeglichen, ohne neuen Aufwand."
+        ],
+        "pruefungsbezug": "Antizipative Abgrenzungen buchen und die Auflösung erklären.",
+        "merksatz": "Antizipativ: Aufwand jetzt, Zahlung später → Sonstige Verbindlichkeiten; Ertrag jetzt, Geld später → Sonstige Forderungen."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Manche Verpflichtungen sind sicher, aber ihre Höhe nicht.",
+          "Vorsicht bei Verlusten (Kapitel 2)."
+        ],
+        "erklaerung": "Rückstellungen werden für Verpflichtungen gebildet, die dem Grunde nach bestehen oder wahrscheinlich sind, deren Höhe oder Fälligkeit aber ungewiss ist (§ 249 HGB), etwa für ungewisse Verbindlichkeiten (Prozesskosten, Gewährleistungen), drohende Verluste aus schwebenden Geschäften und unterlassene Instandhaltung, die in den ersten drei Monaten des folgenden Geschäftsjahres nachgeholt wird. Gebucht wird der Aufwand im Jahr der Verursachung: Aufwandskonto an Rückstellungen. Steht die Höhe fest und liegt eine Rechnung vor, ist es keine Rückstellung, sondern eine Verbindlichkeit. Rückstellungen sind kein frei verfügbares Geld und keine Sparreserve, sondern gebundene Verpflichtungen auf der Passivseite.",
+        "beispiele": [
+          "Ein Kunde verlangt Schadensersatz wegen fehlerhafter Logos; Ausgang und Höhe offen: Rückstellung für ungewisse Verbindlichkeiten.",
+          "Kosten für die Erstellung des Jahresabschlusses durch die Steuerberatung im nächsten Jahr: Rückstellung."
+        ],
+        "fallbeispiel": "Eine Agentur fordert wegen eines Druckfehlers 3.000 € Schadensersatz; MAKEL hält 1.000 € für realistisch, eine Einigung steht aus. Sandra bildet nach vernünftiger kaufmännischer Beurteilung eine Rückstellung von 1.000 € und dokumentiert die Begründung. Für die bereits vorliegende Rechnung der Druckerei über 600 € bucht sie dagegen eine Verbindlichkeit.",
+        "typische_fehler": "Jede künftige Ausgabe als Rückstellung buchen oder Rückstellungen als Sparreserve darstellen.",
+        "verstaendnisfragen": [
+          "Wann wird eine Rückstellung gebildet? Bei einer Verpflichtung, deren Grund besteht, deren Höhe oder Fälligkeit aber ungewiss ist.",
+          "Was ist der Unterschied zur Verbindlichkeit? Bei der Verbindlichkeit stehen Grund und Höhe fest."
+        ],
+        "pruefungsbezug": "Rückstellung und sichere Verbindlichkeit abgrenzen und begründen.",
+        "merksatz": "Rückstellung = Grund sicher oder wahrscheinlich, Höhe oder Zeitpunkt ungewiss; Verbindlichkeit = Grund und Höhe sicher — keine Sparreserve."
+      }
+    ]
+  },
+  "lernziele": [
+    {
+      "id": "lz1",
+      "text": "Zahlung und wirtschaftliche Zugehörigkeit trennen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Aktive und passive Rechnungsabgrenzung berechnen und buchen",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Antizipative Fälle als sonstige Forderungen und Verbindlichkeiten erfassen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Rückstellung und sichere Verbindlichkeit abgrenzen",
+      "abschnitt": "a4"
+    }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Periodenabgrenzung",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:periodenabgrenzung|Periodenabgrenzung}} ordnet Erfolge dem richtigen Jahr zu."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "",
+            "Zahlung im alten Jahr",
+            "Zahlung im neuen Jahr"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Aufwand gehört ins neue Jahr",
+                "Aktive Rechnungsabgrenzung",
+                "—"
+              ]
+            },
+            {
+              "zellen": [
+                "Ertrag gehört ins neue Jahr",
+                "Passive Rechnungsabgrenzung",
+                "—"
+              ]
+            },
+            {
+              "zellen": [
+                "Aufwand gehört ins alte Jahr",
+                "—",
+                "Sonstige Verbindlichkeit"
+              ]
+            },
+            {
+              "zellen": [
+                "Ertrag gehört ins alte Jahr",
+                "—",
+                "Sonstige Forderung"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Zugehörigkeit vor Zahlung: **transitorisch** = jetzt gezahlt, später Erfolg; **antizipativ** = jetzt Erfolg, später gezahlt.",
+          "karteikarte": "Was unterscheidet transitorische und antizipative Abgrenzung?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Aktive und passive Rechnungsabgrenzung",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "{{begriff:arap|Aktive}} und {{begriff:prap|passive Rechnungsabgrenzung}} werden zeitanteilig berechnet."
+        },
+        {
+          "typ": "grafik",
+          "variante": "t-konto",
+          "kopf": "Buchen, live",
+          "titel": "Versicherung 1.200 € am 1. Dezember",
+          "lead": "Zahlung im Dezember, Abgrenzung zum 31.12. — danach stehen im alten Jahr nur noch 100 € Aufwand.",
+          "konten": [
+            {
+              "id": "vers",
+              "name": "Versicherungsbeiträge",
+              "art": "aufwand",
+              "ab": 0
+            },
+            {
+              "id": "ara",
+              "name": "Aktive Rechnungsabgrenzung",
+              "art": "aktiv",
+              "ab": 0
+            },
+            {
+              "id": "bank",
+              "name": "Bank",
+              "art": "aktiv",
+              "ab": 15000
+            }
+          ],
+          "vorfaelle": [
+            {
+              "text": "1. Dezember: Jahresbeitrag bezahlt",
+              "satz": "Versicherungsbeiträge 1.200 € an Bank 1.200 €",
+              "soll": [
+                {
+                  "konto": "vers",
+                  "betrag": 1200
+                }
+              ],
+              "haben": [
+                {
+                  "konto": "bank",
+                  "betrag": 1200
+                }
+              ],
+              "echo": "Zunächst steht der volle Betrag als Aufwand im alten Jahr."
+            },
+            {
+              "text": "31. Dezember: elf Monate abgrenzen",
+              "satz": "Aktive Rechnungsabgrenzung 1.100 € an Versicherungsbeiträge 1.100 €",
+              "soll": [
+                {
+                  "konto": "ara",
+                  "betrag": 1100
+                }
+              ],
+              "haben": [
+                {
+                  "konto": "vers",
+                  "betrag": 1100
+                }
+              ],
+              "echo": "Im alten Jahr bleiben 100 € Aufwand für Dezember. Die 1.100 € für Januar bis November stehen als ARA auf der Aktivseite."
+            }
+          ],
+          "regel": "Erst den Anteil des neuen Jahres bestimmen (Monate zählen), dann aus dem Aufwand herausbuchen. Im Januar wird die ARA aufgelöst: Versicherungsbeiträge an Aktive Rechnungsabgrenzung."
+        },
+        {
+          "typ": "merke",
+          "text": "**ARA**: Ausgabe jetzt, Aufwand später (ARA an Aufwand); **PRA**: Einnahme jetzt, Ertrag später (Ertrag an PRA) — zeitanteilig berechnen.",
+          "karteikarte": "Wie berechnest und buchst du aktive und passive Rechnungsabgrenzung?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Noch zu erfassende Aufwendungen und Erträge",
+      "inhalt": [
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Fall",
+            "Buchung zum 31.12.",
+            "Bei Zahlung im Januar"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Zinsen Q4 450 €, Belastung 15.1.",
+                "Zinsaufwendungen an Sonst. Verbindlichkeiten",
+                "Sonst. Verbindlichkeiten an Bank"
+              ]
+            },
+            {
+              "zellen": [
+                "Zinsgutschrift Dez. 40 €, Gutschrift 5.1.",
+                "Sonst. Forderungen an Zinserträge",
+                "Bank an Sonst. Forderungen"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Bei der Zahlung im neuen Jahr wird **kein zweites Mal** Aufwand oder Ertrag gebucht — sonst steht der Betrag doppelt im Erfolg."
+        },
+        {
+          "typ": "merke",
+          "text": "Antizipativ: Aufwand jetzt, Zahlung später → **Sonstige Verbindlichkeiten**; Ertrag jetzt, Geld später → **Sonstige Forderungen**.",
+          "karteikarte": "Wie buchst du antizipative Aufwendungen und Erträge zum Jahresende?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Rückstellungen",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "{{begriff:rueckstellung|Rückstellungen}} ({{par:hgb-249|§ 249 HGB}}) erfassen ungewisse Verpflichtungen im Jahr ihrer Verursachung."
+        },
+        {
+          "typ": "check",
+          "frage": "Welcher Fall führt zu einer Rückstellung?",
+          "optionen": [
+            {
+              "text": "Eine Rechnung der Druckerei über 600 € liegt vor, Zahlung im Januar",
+              "richtig": false,
+              "echo": "Grund und Höhe stehen fest — das ist eine Verbindlichkeit."
+            },
+            {
+              "text": "Eine Agentur fordert Schadensersatz, Höhe und Ausgang sind offen",
+              "richtig": true,
+              "echo": "Richtig: Verpflichtung wahrscheinlich, Höhe ungewiss — Rückstellung nach vernünftiger kaufmännischer Beurteilung."
+            },
+            {
+              "text": "MAKEL will nächstes Jahr eine neue Maschine kaufen",
+              "richtig": false,
+              "echo": "Eine geplante Investition ist keine Verpflichtung gegenüber Dritten und keine Rückstellung."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Rückstellung** = Grund sicher oder wahrscheinlich, Höhe oder Zeitpunkt ungewiss; **Verbindlichkeit** = Grund und Höhe sicher — keine Sparreserve.",
+          "karteikarte": "Wann bildest du eine Rückstellung, und was unterscheidet sie von einer Verbindlichkeit?"
+        }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Erfolge gehören in das Jahr ihrer wirtschaftlichen Zugehörigkeit.",
+    "Transitorisch: ARA und PRA, zeitanteilig.",
+    "Antizipativ: sonstige Forderungen und Verbindlichkeiten.",
+    "Bei Zahlung im neuen Jahr kein zweiter Erfolg.",
+    "Rückstellung: Grund wahrscheinlich, Höhe oder Zeitpunkt ungewiss.",
+    "Rückstellungen sind Verpflichtungen, keine Sparreserve."
+  ],
+  "selbsttest": [
+    {
+      "typ": "Rechnen",
+      "frage": "Am 1. Dezember werden 1.200 € für zwölf Monate Versicherung bezahlt. Welcher Betrag betrifft das nächste Jahr?",
+      "loesung": "1.100 € für elf Monate; 100 € Aufwand im laufenden Jahr. Buchung zum 31.12.: Aktive Rechnungsabgrenzung 1.100 € an Versicherungsbeiträge 1.100 €."
+    },
+    {
+      "typ": "Wissen",
+      "frage": "Eine Rechnung mit eindeutigem Betrag liegt vor; bei einem zweiten Fall sind Verpflichtungsgrund oder Höhe ungewiss. Was ist zu unterscheiden?",
+      "loesung": "Der erste Fall ist eine Verbindlichkeit, der zweite eine prüfungsbedürftige Rückstellung. Ansatzvoraussetzungen und Höhe am konkreten Fall prüfen; Rückstellungen sind keine frei verfügbare Sparreserve."
+    },
+    {
+      "typ": "Buchen",
+      "frage": "Dezemberzinsen von 150 € werden erst im Januar belastet. Buchung zum 31.12.?",
+      "loesung": "Zinsaufwendungen 150 € an Sonstige Verbindlichkeiten 150 €."
+    }
+  ],
+  "pruefungstipp": "Bei Abgrenzungsfällen zuerst eine kleine Zeitleiste zeichnen: Wann wird gezahlt, wohin gehört der Erfolg? Dann ist die richtige Abgrenzungsart fast immer klar."
+}

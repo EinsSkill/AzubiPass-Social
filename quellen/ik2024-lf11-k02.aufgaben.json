@@ -1,0 +1,95 @@
+{
+  "lernfeld": "ik2024-lf11",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf11-k02-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Für eine Präsentation bei der MAKEL Studio GmbH ordnet Luca Petrelli Merkmale den Idealtypen zu." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Zu welchem Idealtyp gehört das Merkmal?",
+          "ziele": ["Freie Marktwirtschaft", "Zentralverwaltungswirtschaft"],
+          "elemente": [
+            { "text": "Preise entstehen aus Angebot und Nachfrage", "loesung": "Freie Marktwirtschaft" },
+            { "text": "Eine Behörde legt Produktionsmengen fest", "loesung": "Zentralverwaltungswirtschaft" },
+            { "text": "Unternehmen gehören Privatpersonen", "loesung": "Freie Marktwirtschaft" },
+            { "text": "Produktionsmittel sind Staatseigentum", "loesung": "Zentralverwaltungswirtschaft" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Marktwirtschaft: Privateigentum und Preise koordinieren. Zentralverwaltungswirtschaft: Staatseigentum und Plan.",
+      "quelle": "ik2024-lf11-k02, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf11-k02-02",
+      "operator": "Erläutern Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH plant ein Angebot mit Lasergravur. Dafür gelten Arbeitsschutzvorschriften für die Laserstation; zugleich gibt es ein befristetes Förderprogramm für energieeffiziente Produktionsanlagen." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Erläutern Sie an diesen beiden Beispielen den Unterschied zwischen Ordnungs- und Prozesspolitik und die jeweilige Bedeutung für MAKEL.", "zeilen": 6 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Arbeitsschutzvorschriften gehören zum dauerhaften, für alle geltenden Ordnungsrahmen (Ordnungspolitik): MAKEL muss sie einhalten, unabhängig davon, ob sich das Projekt lohnt. Das Förderprogramm ist eine gezielte, befristete Maßnahme (Prozesspolitik): MAKEL kann es nutzen, wenn die Bedingungen erfüllt sind, muss aber nicht — es verändert die Wirtschaftlichkeit der Investition, nicht den Rahmen.",
+        "raster": [
+          { "kriterium": "Arbeitsschutz als Ordnungspolitik (dauerhaft, allgemein) erklärt", "punkte": 1 },
+          { "kriterium": "Förderprogramm als Prozesspolitik (gezielt, befristet) erklärt", "punkte": 1 },
+          { "kriterium": "Bedeutung „muss einhalten“ für MAKEL", "punkte": 1 },
+          { "kriterium": "Bedeutung „kann nutzen, beeinflusst Wirtschaftlichkeit“ für MAKEL", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Der Rahmen ist verbindlich, Einzelmaßnahmen sind Angebote mit Bedingungen.",
+      "quelle": "ik2024-lf11-k02, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf11-k02-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Marlene Voss sagt: „Wir leben in einer Marktwirtschaft. Also dürfen wir mit der Konkurrenz Mindestpreise vereinbaren und mit ‚100 % klimaneutral‘ werben — der Markt entscheidet dann schon.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie Marlenes Verständnis der Wirtschaftsordnung und die beiden Vorschläge.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Marlene verwechselt Marktwirtschaft mit Regellosigkeit. In der sozialen Marktwirtschaft schützt der Staat gerade den Wettbewerb: Preisabsprachen mit Konkurrenten sind kartellrechtlich verboten, weil sie den Preiswettbewerb ausschalten und Kunden schaden. Werbeaussagen müssen zutreffen und belegbar sein; eine unbelegte Klimaneutralitätsaussage kann irreführend sein und Vertrauen zerstören. Freiheit besteht bei eigener Preisgestaltung und belegten Umweltaussagen. MAKEL sollte beide Vorschläge ablehnen und stattdessen eigene Preise kalkulieren und nur nachweisbare Umweltvorteile kommunizieren.",
+        "raster": [
+          { "kriterium": "Missverständnis Marktwirtschaft = ohne Regeln erkannt", "punkte": 1 },
+          { "kriterium": "Preisabsprache als Wettbewerbsverstoß beurteilt", "punkte": 1 },
+          { "kriterium": "Unbelegte Umweltwerbung als problematisch beurteilt", "punkte": 1 },
+          { "kriterium": "Zulässige Alternative genannt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Soziale Marktwirtschaft heißt Freiheit innerhalb eines Rahmens, der Wettbewerb und Verbraucher schützt.",
+      "quelle": "ik2024-lf11-k02, Abschnitte a2 und a4"
+    }
+  ]
+}

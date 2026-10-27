@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf11",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf11-k04-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Yuki Bergmann prüft verschiedene Angebote zur Zusammenarbeit für die MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Form liegt vor?",
+          "ziele": ["Kooperation", "Kartell", "Konzern", "Fusion"],
+          "elemente": [
+            { "text": "Gemeinsamer Einkauf mit zwei anderen Veredlern, jede Firma bleibt eigenständig", "loesung": "Kooperation" },
+            { "text": "Absprache mit Wettbewerbern über Mindestpreise für Teamshirts", "loesung": "Kartell" },
+            { "text": "Eine Druckereigruppe erwirbt 75 % der Anteile, MAKEL bleibt als GmbH bestehen", "loesung": "Konzern" },
+            { "text": "MAKEL und eine Stickerei verschmelzen zu einer neuen GmbH", "loesung": "Fusion" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Entscheidend sind Zweck und Bindung: Teilbereich (Kooperation), Wettbewerbsbeschränkung (Kartell), einheitliche Leitung (Konzern), Verschmelzung (Fusion).",
+      "quelle": "ik2024-lf11-k04, Abschnitte a1 bis a3"
+    },
+
+    {
+      "id": "ik2024-lf11-k04-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "menge": { "von": 4000, "bis": 8000, "schritt": 1000 },
+        "preis": { "von": 6, "bis": 9, "schritt": 1 },
+        "rabatt": { "von": 5, "bis": 8, "schritt": 1 },
+        "gebuehr": { "von": 500, "bis": 1000, "schritt": 250 }
+      },
+      "abgeleitet": {
+        "ersparnis": "menge * preis * rabatt / 100",
+        "vorteil": "ersparnis - gebuehr"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH kauft jährlich {menge} Rohlinge zu {preis} € netto. Über eine Einkaufskooperation erhielte sie {rabatt} % zusätzlichen Rabatt. Für die gemeinsame Organisation fallen jährlich {gebuehr} € Kosten an." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Jährliche Einsparung durch den Rabatt", "einheit": "€", "loesung": "ersparnis", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Jährlicher Vorteil nach Organisationskosten", "einheit": "€", "loesung": "vorteil", "toleranz": 0.01, "punkte": 2, "folgefehler_aus": ["ersparnis"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Einsparung = Menge × Preis × Rabattsatz. Vorteil = Einsparung − Organisationskosten.",
+      "quelle": "ik2024-lf11-k04, Abschnitte a1 und a4"
+    },
+
+    {
+      "id": "ik2024-lf11-k04-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Der Vertragsentwurf für die Einkaufskooperation enthält neben dem gemeinsamen Einkauf eine Klausel: „Die Partner verpflichten sich, keine Kunden im Postleitzahlgebiet des jeweils anderen Partners aktiv anzusprechen.“ Deniz Aydın meint: „Die Einsparung ist gut, die Klausel ist doch nur fair.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Vertragsentwurf aus wirtschaftlicher und wettbewerbsrechtlicher Sicht und empfehlen Sie ein Vorgehen.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Wirtschaftlich bringt die Kooperation Einkaufsvorteile, verlangt aber Abstimmung und feste Mengen. Die Gebietsklausel geht über den gemeinsamen Einkauf hinaus: Sie teilt Kunden bzw. Gebiete auf und beschränkt damit den Wettbewerb zwischen den Partnern — ein typischer Fall, der unter das Kartellverbot (§ 1 GWB) fallen kann. Die Einsparung rechtfertigt eine solche Absprache nicht. Empfehlung: Klausel streichen, den Vertrag auf den gemeinsamen Einkauf beschränken (keine Absprachen über Preise, Kunden, Gebiete) und vor der Unterschrift fachlich prüfen lassen.",
+        "raster": [
+          { "kriterium": "Wirtschaftlicher Nutzen und Nachteile der Kooperation genannt", "punkte": 1 },
+          { "kriterium": "Gebietsklausel als Wettbewerbsbeschränkung erkannt", "punkte": 1 },
+          { "kriterium": "Effizienzvorteil als keine Rechtfertigung eingeordnet", "punkte": 1 },
+          { "kriterium": "Empfehlung: Klausel streichen, prüfen lassen", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Eine zulässige Einkaufskooperation darf nicht zur Aufteilung von Kunden oder Gebieten genutzt werden.",
+      "quelle": "ik2024-lf11-k04, Abschnitte a3 und a4"
+    }
+  ]
+}

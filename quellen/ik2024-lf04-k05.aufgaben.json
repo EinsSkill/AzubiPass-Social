@@ -1,0 +1,193 @@
+{
+  "lernfeld": "ik2024-lf04",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf04-k05-01",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski legt Ihnen die Unterlagen zu Bestellung B-2026-118 der MAKEL Studio GmbH vor."
+        },
+        {
+          "block": "anlage",
+          "titel": "Anlage 1: Belegvergleich",
+          "zugeklappt": false,
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Beleg",
+              "Menge",
+              "Stückpreis netto",
+              "Betrag netto"
+            ],
+            "zeilen": [
+              [
+                "Bestellung",
+                "100",
+                "8,00 €",
+                "800,00 €"
+              ],
+              [
+                "Wareneingangsprotokoll",
+                "90 angenommen",
+                "—",
+                "—"
+              ],
+              [
+                "Rechnung",
+                "100",
+                "8,00 €",
+                "800,00 € (+ 152,00 € USt = 952,00 €)"
+              ]
+            ]
+          }
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie die Rechnung und beschreiben Sie das weitere Vorgehen.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die Rechnung ist rechnerisch richtig (100 × 8,00 € = 800,00 €; 19 % USt = 152,00 €; brutto 952,00 €) und preislich korrekt. Sachlich stimmt sie nicht mit dem Wareneingang überein: Angenommen wurden nur 90 Stück, das entspricht 720,00 € netto. Vorgehen: Abweichung dokumentieren, Rechnung nicht freigeben, beim Lieferanten klären, ob eine Teillieferung (Rest folgt) oder ein Rechnungsfehler vorliegt. Danach Restlieferung abwarten oder korrigierte Rechnung bzw. Gutschrift anfordern, Ergebnis dokumentieren und erst dann zur Zahlung freigeben — die Skontofrist dabei im Blick behalten.",
+        "raster": [
+          {
+            "kriterium": "Rechnerische und preisliche Richtigkeit festgestellt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Sachliche Abweichung (90 statt 100, 720 € statt 800 €) erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Klärung beim Lieferanten (Teillieferung oder Rechnungsfehler)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Dokumentation und Freigabe erst nach Klärung, Skontofrist beachtet",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Rechnerisch richtig heißt nicht sachlich richtig; Abweichungen werden geklärt und dokumentiert, bevor gezahlt wird.",
+      "quelle": "ik2024-lf04-k05, Abschnitte a3 und a4"
+    },
+    {
+      "id": "ik2024-lf04-k05-02",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für die Rechnungsprüfung bei der MAKEL Studio GmbH liegen Bestellung, Wareneingangsprotokoll und Rechnung vor."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Womit prüfen Sie jeweils?",
+          "ziele": [
+            "Bestellung",
+            "Wareneingangsprotokoll",
+            "Nachrechnen der Rechnung"
+          ],
+          "elemente": [
+            {
+              "text": "Den vereinbarten Stückpreis",
+              "loesung": "Bestellung"
+            },
+            {
+              "text": "Die tatsächlich angenommene Menge",
+              "loesung": "Wareneingangsprotokoll"
+            },
+            {
+              "text": "Umsatzsteuer und Rechnungsendbetrag",
+              "loesung": "Nachrechnen der Rechnung"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Preis mit der Bestellung, Menge mit dem Wareneingang, Summe durch Nachrechnen.",
+      "quelle": "ik2024-lf04-k05, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf04-k05-03",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "angenommen": {
+          "von": 80,
+          "bis": 95,
+          "schritt": 5
+        },
+        "preis": {
+          "von": 6,
+          "bis": 10,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "netto": "angenommen * preis",
+        "brutto": "runde(netto * 1.19, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH hat 100 Rohlinge bestellt, zu {preis} € netto je Stück. Laut Wareneingangsprotokoll wurden {angenommen} Stück angenommen; die übrigen fehlen. Der Lieferant bestätigt, dass er nur die angenommene Menge berechnen wird. Es gelten 19 % Umsatzsteuer."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Sachlich richtiger Nettobetrag",
+          "einheit": "€",
+          "loesung": "netto",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Sachlich richtiger Bruttobetrag",
+          "einheit": "€",
+          "loesung": "brutto",
+          "toleranz": 0.01,
+          "punkte": 1,
+          "folgefehler_aus": [
+            "netto"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Berechnet werden darf nur die angenommene Menge zum vereinbarten Preis; darauf 19 % Umsatzsteuer.",
+      "quelle": "ik2024-lf04-k05, Abschnitt a3"
+    }
+  ]
+}

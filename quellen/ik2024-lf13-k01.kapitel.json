@@ -1,0 +1,195 @@
+{
+  "id": "k01",
+  "lernfeld": "ik2024-lf13",
+  "nummer": 1,
+  "titel": "Ein betriebliches Problem untersuchen",
+  "untertitel": "Eine komplexe Fragestellung eingrenzen, Prozesse und Schnittstellen vernetzt analysieren und Ursache, Symptom und Datenlücke auseinanderhalten.",
+  "minuten": 30,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Projekte haben Auftrag, Ziel und Rahmen (LF 2).",
+          "Probleme zeigen sich oft an anderer Stelle als dort, wo sie entstehen."
+        ],
+        "erklaerung": "Komplexe betriebliche Probleme betreffen mehrere Abteilungen, haben mehrere mögliche Ursachen und lassen sich nicht mit einem Handgriff lösen. Am Anfang steht ein klarer Auftrag: Wer will was wissen, bis wann, mit welchen Mitteln? Dazu gehört die Systemgrenze: Welche Prozesse, Abteilungen und Zeiträume werden untersucht — und welche bewusst nicht? Eine prüfbare Problemfrage benennt den Gegenstand, den Zeitraum und das Ziel der Untersuchung.",
+        "beispiele": [
+          "Unscharf: „Warum ist der Versand so langsam?“",
+          "Prüfbar: „An welcher Schnittstelle zwischen Auftragseingang und Versand verlängert sich die Durchlaufzeit von Firmenaufträgen im dritten Quartal, und unter welchen Bedingungen?“"
+        ],
+        "fallbeispiel": "Kunden der MAKEL Studio GmbH beschweren sich über verspätete Lieferungen. Yuki Bergmann beauftragt Luca Petrelli, gemeinsam mit Marlene Voss (Vertrieb), Deniz Aydın (Produktion) und Jonas Weidner (Lager) die Ursachen zu untersuchen. Systemgrenze: Firmenaufträge vom Auftragseingang bis zur Übergabe an den Paketdienst, Zeitraum Juli bis September; der Paketdienst selbst wird nicht untersucht.",
+        "typische_fehler": "Ohne Auftrag und Systemgrenze „einfach mal schauen“.",
+        "verstaendnisfragen": [
+          "Was ist eine Systemgrenze? Die Festlegung, welche Prozesse, Bereiche und Zeiträume untersucht werden — und welche nicht.",
+          "Was macht eine Problemfrage prüfbar? Gegenstand, Zeitraum, Prozessgrenze und Ziel sind benannt."
+        ],
+        "pruefungsbezug": "Eine komplexe Fragestellung eingrenzen und prüfbar formulieren.",
+        "merksatz": "Auftrag klären, Systemgrenze ziehen, Problemfrage prüfbar formulieren (Gegenstand, Zeitraum, Grenze, Ziel)."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Geschäftsprozesse lassen sich als Abfolge von Schritten darstellen (LF 1, LF 3).",
+          "An Übergaben gehen oft Informationen verloren."
+        ],
+        "erklaerung": "Für die Analyse wird der Ist-Prozess aufgenommen: Welche Schritte gibt es, wer ist zuständig, welche Informationen und Dokumente fließen, wo wird gewartet? Besonders wichtig sind Schnittstellen — Übergaben zwischen Abteilungen, Personen oder Systemen. Dort entstehen typischerweise Wartezeiten, Medienbrüche und Missverständnisse. Ein Prozessbild mit Zuständigkeiten (etwa als Schwimmbahnen) macht sichtbar, wo ein Auftrag liegen bleibt.",
+        "beispiele": [
+          "Vertrieb → Produktion: Freigabe der Druckdatei durch den Kunden fehlt.",
+          "Produktion → Lager: Fertige Ware wird nicht im System gemeldet."
+        ],
+        "fallbeispiel": "Luca zeichnet mit dem Team den Ablauf eines Firmenauftrags: Auftragseingang (Vertrieb) → Dateiprüfung und Kundenfreigabe (Vertrieb) → Produktionsplanung (Deniz) → Veredelung → Qualitätsprüfung → Einlagerung und Versand (Jonas). Beim Gespräch fällt auf: Die Kundenfreigabe wird per E-Mail eingeholt, aber nicht im System vermerkt — die Produktion erfährt davon oft erst Tage später.",
+        "typische_fehler": "Nur die eigene Abteilung betrachten und Schnittstellen übersehen.",
+        "verstaendnisfragen": [
+          "Was ist eine Schnittstelle? Eine Übergabe zwischen Abteilungen, Personen oder Systemen.",
+          "Warum sind Schnittstellen kritisch? Dort entstehen Wartezeiten, Medienbrüche und Missverständnisse."
+        ],
+        "pruefungsbezug": "Prozesse und Schnittstellen vernetzt analysieren.",
+        "merksatz": "Ist-Prozess mit Zuständigkeiten aufnehmen — die Probleme stecken meist an den Schnittstellen."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Kennzahlen machen Probleme messbar (LF 10, LF 12).",
+          "Eine Vermutung ist noch kein Beweis."
+        ],
+        "erklaerung": "Ein Symptom ist die sichtbare Wirkung (verspätete Lieferungen), eine Ursache ist der Grund dafür. Ursachen werden zunächst als Hypothesen formuliert und mit Daten geprüft. Hilfreich sind Ursache-Wirkungs-Diagramme (etwa nach Mensch, Maschine, Material, Methode, Messung, Mitwelt). Die Daten müssen sauber definiert sein: Was heißt „verspätet“? Fehlen Daten, ist das eine Datenlücke, die benannt wird — nicht mit Vermutungen gefüllt. Aus Häufigkeiten folgt nicht automatisch eine alleinige Ursache.",
+        "beispiele": [
+          "10 von 50 Aufträgen verspätet: Verspätungsquote 20 %.",
+          "Bei 6 der 10 verspäteten Aufträge fehlt der dokumentierte Freigabeschritt: 60 % der verspäteten Fälle."
+        ],
+        "fallbeispiel": "Von 50 Firmenaufträgen im Quartal waren 10 verspätet (20 %). Bei 6 davon fehlt der dokumentierte Freigabeschritt (60 % der verspäteten Fälle). Luca will schreiben: „Die Freigabe ist schuld.“ Marlene widerspricht: Bei vier Verspätungen war die Freigabe dokumentiert — es gibt also weitere Ursachen. Und ob die Freigabe bei den sechs Fällen wirklich die Verzögerung verursacht hat, ist noch zu prüfen.",
+        "typische_fehler": "Eine zuerst genannte Vermutung unmittelbar zur Ursache erklären.",
+        "verstaendnisfragen": [
+          "Was unterscheidet Symptom und Ursache? Das Symptom ist die sichtbare Wirkung, die Ursache ihr Grund.",
+          "Was ist eine Datenlücke? Fehlende Informationen, die für eine Aussage nötig wären — sie wird benannt, nicht überspielt."
+        ],
+        "pruefungsbezug": "Ursache, Symptom und Datenlücke unterscheiden und belegbare Aussagen treffen.",
+        "merksatz": "Symptom ≠ Ursache; Ursachen als Hypothesen mit Daten prüfen; Datenlücken benennen; Häufigkeit ist kein Beweis für alleinige Ursache."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Ziele sollen messbar sein (LF 2).",
+          "Jede Lösung hat Grenzen durch Budget, Zeit und Recht."
+        ],
+        "erklaerung": "Am Ende der Analyse stehen Ziele für die Lösung: spezifisch, messbar, erreichbar, relevant und terminiert. Ebenso wichtig sind die Rahmenbedingungen: Budget, Zeit, verfügbares Personal, technische Möglichkeiten, rechtliche Vorgaben (etwa Datenschutz) und Interessen der Beteiligten. Zielkonflikte werden offen benannt — zum Beispiel kürzere Lieferzeiten gegenüber geringeren Lagerbeständen.",
+        "beispiele": [
+          "Ziel: Verspätungsquote bei Firmenaufträgen bis Ende Q1 von 20 % auf höchstens 10 % senken.",
+          "Rahmen: kein neues IT-System, Budget 3.000 €, keine zusätzlichen Stellen."
+        ],
+        "fallbeispiel": "Das Team formuliert: Die Verspätungsquote soll bis Ende März auf höchstens 10 % sinken, ohne die Lagerbestände um mehr als 5 % zu erhöhen. Rahmen: Budget 3.000 €, vorhandenes Warenwirtschaftssystem, Datenschutz bei Kundendateien. Tobias Renner bestätigt den Rahmen schriftlich.",
+        "typische_fehler": "Ziele ohne Messgröße und Rahmenbedingungen formulieren.",
+        "verstaendnisfragen": [
+          "Wie wird ein Ziel messbar? Mit Messgröße, Zielwert und Termin.",
+          "Welche Rahmenbedingungen sind typisch? Budget, Zeit, Personal, Technik, Recht, Interessen."
+        ],
+        "pruefungsbezug": "Ziele und Rahmenbedingungen für die Lösung festlegen.",
+        "merksatz": "SMART-Ziel + Rahmenbedingungen + offen benannte Zielkonflikte = Grundlage für die Lösungssuche."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Eine komplexe Fragestellung eingrenzen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Prozesse und Schnittstellen vernetzt analysieren", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Ursache, Symptom und Datenlücke unterscheiden", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Ziele und Rahmenbedingungen festlegen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Auftrag und Systemgrenze",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Baustein", "Verspätete Lieferungen bei MAKEL"], "zeilen": [
+          { "zellen": ["Auftraggeberin", "Yuki Bergmann"] },
+          { "zellen": ["Gegenstand", "Firmenaufträge vom Eingang bis zur Übergabe an den Paketdienst"] },
+          { "zellen": ["Nicht untersucht", "Paketdienst, Store-Verkäufe"] },
+          { "zellen": ["Zeitraum", "Juli bis September"] },
+          { "zellen": ["Ergebnis bis", "Ende November"] }
+        ] },
+        { "typ": "merke", "text": "Auftrag klären, **Systemgrenze** ziehen, Problemfrage **prüfbar** formulieren (Gegenstand, Zeitraum, Grenze, Ziel).", "karteikarte": "Wie grenzt du ein komplexes betriebliches Problem ein?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Prozess- und Schnittstellenbild",
+      "inhalt": [
+        {
+          "typ": "grafik",
+          "variante": "kette",
+          "kopf": "Ist-Prozess",
+          "titel": "Ein Firmenauftrag bei MAKEL",
+          "lead": "Wo bleibt der Auftrag liegen? Achte auf die Übergaben.",
+          "schritte": [
+            { "nr": "1", "titel": "Vertrieb", "satz": "Auftrag erfassen", "text": "Marlene erfasst Menge, Motiv und Wunschtermin im Warenwirtschaftssystem." },
+            { "nr": "2", "titel": "Vertrieb ↔ Kunde", "satz": "Druckdatei freigeben", "text": "Freigabe per E-Mail — wird aber nicht im System vermerkt. Erste kritische Schnittstelle." },
+            { "nr": "3", "titel": "Produktion", "satz": "Einplanen", "text": "Deniz plant nur Aufträge mit Freigabevermerk ein und erfährt von E-Mail-Freigaben oft verspätet." },
+            { "nr": "4", "titel": "Veredelung", "satz": "Druck oder Stick", "text": "Fertigung und Qualitätsprüfung." },
+            { "nr": "5", "titel": "Lager", "satz": "Versand", "text": "Jonas verpackt und übergibt an den Paketdienst. Zweite kritische Schnittstelle: Fertigmeldung fehlt manchmal." }
+          ],
+          "regel": "Wartezeiten entstehen fast immer an Übergaben — dort, wo Information den Bereich wechselt."
+        },
+        { "typ": "merke", "text": "Ist-Prozess mit Zuständigkeiten aufnehmen — die Probleme stecken meist an den **Schnittstellen**.", "karteikarte": "Warum lohnt sich bei Prozessproblemen der Blick auf Schnittstellen?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Daten und Ursachenhypothesen",
+      "inhalt": [
+        {
+          "typ": "check",
+          "frage": "Von 50 Aufträgen sind 10 verspätet; bei 6 davon fehlt der dokumentierte Freigabeschritt. Welche Aussage ist belegt?",
+          "optionen": [
+            { "text": "Die fehlende Freigabe verursacht alle Verspätungen", "richtig": false, "echo": "Bei 4 verspäteten Aufträgen war die Freigabe dokumentiert — es gibt weitere Ursachen." },
+            { "text": "Verspätungsquote 20 %; bei 60 % der verspäteten Fälle fehlt der Freigabeschritt", "richtig": true, "echo": "Richtig: Das sind die belegbaren Häufigkeiten. Ob der fehlende Schritt die Ursache war, ist eine Hypothese." },
+            { "text": "60 % aller Aufträge haben keine Freigabe", "richtig": false, "echo": "Die 60 % beziehen sich auf die 10 verspäteten Aufträge, nicht auf alle 50." }
+          ]
+        },
+        {
+          "typ": "zuordnen",
+          "lead": "Symptom, Ursachenhypothese oder Datenlücke?",
+          "kategorien": ["Symptom", "Ursachenhypothese", "Datenlücke"],
+          "aufgaben": [
+            { "text": "Kunden beschweren sich über späte Lieferungen", "loesung": "Symptom" },
+            { "text": "Freigaben per E-Mail erreichen die Produktion zu spät", "loesung": "Ursachenhypothese" },
+            { "text": "Für August fehlen die Zeitstempel der Fertigmeldungen", "loesung": "Datenlücke" },
+            { "text": "Die Veredelung ist im September überlastet", "loesung": "Ursachenhypothese" }
+          ]
+        },
+        { "typ": "merke", "text": "**Symptom ≠ Ursache**; Ursachen als Hypothesen mit Daten prüfen; **Datenlücken** benennen; Häufigkeit ist kein Beweis für alleinige Ursache.", "karteikarte": "Wie unterscheidest du Symptom, Ursachenhypothese und Datenlücke?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Ziele und Rahmenbedingungen",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Element", "Festlegung"], "zeilen": [
+          { "zellen": ["Ziel", "Verspätungsquote Firmenaufträge ≤ 10 % bis 31. März"] },
+          { "zellen": ["Nebenbedingung", "Lagerbestand steigt höchstens um 5 %"] },
+          { "zellen": ["Budget", "3.000 €"] },
+          { "zellen": ["Technik", "Vorhandenes Warenwirtschaftssystem"] },
+          { "zellen": ["Recht", "Datenschutz bei Kundendateien"] }
+        ] },
+        { "typ": "merke", "text": "**SMART-Ziel** + Rahmenbedingungen + offen benannte **Zielkonflikte** = Grundlage für die Lösungssuche.", "karteikarte": "Was gehört zu den Zielen und Rahmenbedingungen einer Problemlösung?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Auftrag und Systemgrenze zuerst klären.",
+    "Problemfrage prüfbar formulieren.",
+    "Ist-Prozess mit Schnittstellen aufnehmen.",
+    "Symptom, Ursache und Datenlücke unterscheiden.",
+    "Häufigkeiten belegen keine alleinige Ursache.",
+    "Messbare Ziele und Rahmenbedingungen festlegen."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "Von 50 Aufträgen sind zehn verspätet. Bei sechs davon fehlt ein dokumentierter Freigabeschritt. Was ist sicher belegbar?", "loesung": "20 % Verspätungsquote; bei 60 % der verspäteten Fälle fehlt dieser Schritt. Eine alleinige Ursache aller Verzögerungen ist damit nicht bewiesen." },
+    { "typ": "Formulieren", "frage": "Formuliere eine prüfbare Problemfrage zu den Verspätungen.", "loesung": "Zum Beispiel: An welcher Schnittstelle und unter welchen Bedingungen verlängert sich die Durchlaufzeit von Firmenaufträgen im dritten Quartal? Zeitraum, Prozessgrenze und Datenbedarf nennen." },
+    { "typ": "Wissen", "frage": "Warum werden Ursachen zunächst als Hypothesen formuliert?", "loesung": "Weil sie erst mit Daten geprüft werden müssen; eine Vermutung ist noch kein Beleg." }
+  ],
+  "pruefungstipp": "Trenne in jeder Analyse sichtbar: Was ist belegt (Zahlen), was ist Vermutung (Hypothese), was fehlt (Datenlücke)? Diese drei Spalten überzeugen Prüfende mehr als jede schnelle Schuldzuweisung."
+}

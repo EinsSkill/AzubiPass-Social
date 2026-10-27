@@ -1,0 +1,198 @@
+{
+  "lernfeld": "ik2024-lf03",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf03-k02-01",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH hat einer Eventagentur am 3. März ein schriftliches, nicht freibleibendes Angebot über 100 bedruckte Hoodies zu 48,00 € netto je Stück geschickt. Am 5. März antwortet die Agentur: „Wir bestellen zu Ihren Bedingungen 120 Stück.“"
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie, ob und mit welchem Inhalt ein Kaufvertrag zustande gekommen ist, und nennen Sie den nächsten Schritt für MAKEL.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Das Angebot von MAKEL ist ein bindender Antrag. Die Antwort der Agentur weicht in der Menge ab und ist deshalb keine Annahme. Nach § 150 Abs. 2 BGB gilt eine Annahme unter Erweiterungen als Ablehnung des ursprünglichen Angebots, verbunden mit einem neuen Antrag über 120 Stück. Ein Vertrag über 100 Stück ist nicht zustande gekommen, einer über 120 Stück noch nicht. Nächster Schritt: MAKEL prüft Rohlinge und Druckkapazität und nimmt den neuen Antrag — etwa durch eine Auftragsbestätigung über 120 Stück — an oder lehnt ihn ab.",
+        "raster": [
+          {
+            "kriterium": "Angebot als bindender Antrag eingeordnet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Mengenabweichung als Ablehnung mit neuem Antrag erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Feststellung: noch kein Vertrag über 100 oder 120 Stück",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Nächster Schritt: Annahme oder Ablehnung durch MAKEL nach Prüfung",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "§ 150 Abs. 2 BGB: Eine Annahme unter Erweiterungen, Einschränkungen oder sonstigen Änderungen gilt als Ablehnung, verbunden mit einem neuen Antrag.",
+      "quelle": "ik2024-lf03-k02, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf03-k02-02",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 2,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Bei der MAKEL Studio GmbH ergeben sich drei Situationen. Ordnen Sie zu, wer jeweils Besitzer und wer Eigentümer ist."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Beschreibung trifft zu?",
+          "ziele": [
+            "Besitzer, aber nicht Eigentümer",
+            "Eigentümer, aber nicht Besitzer",
+            "Besitzer und Eigentümer"
+          ],
+          "elemente": [
+            {
+              "text": "Eine Auszubildende benutzt den betrieblichen Scanner an ihrem Arbeitsplatz.",
+              "loesung": "Besitzer, aber nicht Eigentümer"
+            },
+            {
+              "text": "MAKEL hinsichtlich unter Eigentumsvorbehalt gelieferter, noch unbezahlter Hoodies beim Kunden",
+              "loesung": "Eigentümer, aber nicht Besitzer"
+            },
+            {
+              "text": "Ein Kunde, der seine gelieferten Hoodies vollständig bezahlt hat",
+              "loesung": "Besitzer und Eigentümer"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Besitz ist die tatsächliche Herrschaft, Eigentum die rechtliche. Beim Eigentumsvorbehalt bleibt der Verkäufer bis zur vollständigen Zahlung Eigentümer.",
+      "quelle": "ik2024-lf03-k02, Abschnitt a4"
+    },
+    {
+      "id": "ik2024-lf03-k02-03",
+      "operator": "Kreuzen Sie an",
+      "anforderungsbereich": 2,
+      "punkte": 2,
+      "dauer_min": 2,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH versendet Ware an eine Boutique (beides Unternehmen). Vereinbart ist nur „frei Haus“, eine Regel zur Gefahrtragung gibt es nicht. Auf dem Transport wird ein Karton durch den Paketdienst beschädigt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Aussage trifft zu?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "MAKEL trägt die Versandkosten; das Transportrisiko ist mit Übergabe an den Paketdienst auf die Boutique übergegangen.",
+              "richtig": true,
+              "echo": "Richtig. ‚Frei Haus‘ regelt die Kosten. Ohne weitere Abrede geht beim Versendungskauf unter Unternehmen die Gefahr mit Übergabe an den Paketdienst über (§ 447 BGB, § 269 Abs. 3 BGB)."
+            },
+            {
+              "text": "MAKEL trägt Kosten und Risiko bis zur Ablieferung, weil ‚frei Haus‘ vereinbart ist.",
+              "richtig": false,
+              "echo": "Das gilt nur, wenn die Gefahrtragung bis zur Ablieferung ausdrücklich vereinbart ist. Die Kostenübernahme allein verschiebt das Risiko nicht."
+            },
+            {
+              "text": "Die Boutique trägt Versandkosten und Risiko.",
+              "richtig": false,
+              "echo": "Die Versandkosten trägt bei ‚frei Haus‘ MAKEL."
+            },
+            {
+              "text": "Der Paketdienst trägt die Kosten, die Boutique das Risiko.",
+              "richtig": false,
+              "echo": "Der Paketdienst ist Beauftragter; die Klausel regelt das Verhältnis zwischen MAKEL und der Boutique. Ansprüche gegen den Paketdienst sind eine eigene Frage."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Lieferklauseln trennen: Wer zahlt den Transport (Kosten)? Wann geht das Risiko über (Gefahr)? Eine Kostenklausel wie ‚frei Haus‘ verschiebt die Gefahr nicht automatisch; dafür braucht es eine ausdrückliche Abrede.",
+      "quelle": "ik2024-lf03-k02, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf03-k02-04",
+      "operator": "Nennen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 2,
+      "dauer_min": 1,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine Boutique hat bedruckte Hoodies unter Eigentumsvorbehalt gekauft. Sie hat die Ware erhalten, aber noch nicht bezahlt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Welche Aussage trifft zu?",
+          "mehrfach": false,
+          "optionen": [
+            {
+              "text": "Die Boutique ist Besitzerin, MAKEL bleibt Eigentümerin",
+              "richtig": true,
+              "echo": "Richtig. Besitz ist die tatsächliche, Eigentum die rechtliche Herrschaft — das Eigentum geht erst mit vollständiger Zahlung über."
+            },
+            {
+              "text": "Die Boutique ist Eigentümerin, MAKEL Besitzerin",
+              "richtig": false,
+              "echo": "Umgekehrt: Die Ware liegt bei der Boutique (Besitz), das Eigentum bleibt bis zur Zahlung bei MAKEL."
+            },
+            {
+              "text": "Die Boutique ist Besitzerin und Eigentümerin",
+              "richtig": false,
+              "echo": "Ohne Eigentumsvorbehalt wäre das so. Mit Vorbehalt bleibt MAKEL bis zur Zahlung Eigentümerin."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 2
+      },
+      "erklaerung": "Beim Eigentumsvorbehalt geht das Eigentum erst mit vollständiger Bezahlung über.",
+      "quelle": "ik2024-lf03-k02, Abschnitt a4"
+    }
+  ]
+}

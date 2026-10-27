@@ -1,0 +1,216 @@
+{
+  "lernfeld": "ik2024-lf06",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf06-k01-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "menge": {
+          "von": 200,
+          "bis": 600,
+          "schritt": 50
+        },
+        "stueckzeit": {
+          "von": 2,
+          "bis": 5,
+          "schritt": 1
+        },
+        "ruesten": {
+          "von": 30,
+          "bis": 90,
+          "schritt": 15
+        }
+      },
+      "abgeleitet": {
+        "minuten": "menge * stueckzeit + ruesten",
+        "stunden": "runde(minuten / 60, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein Firmenkunde bestellt bei der MAKEL Studio GmbH {menge} bestickte Hoodies. Die Stickmaschine benötigt {stueckzeit} Minuten je Stück; das Einrichten für das Logo dauert einmalig {ruesten} Minuten. Der Auftrag wird in einem Los gefertigt."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Zeitbedarf in Minuten",
+          "einheit": "min",
+          "loesung": "minuten",
+          "toleranz": 0.01,
+          "punkte": 3
+        },
+        {
+          "block": "zahl",
+          "label": "Zeitbedarf in Stunden (zwei Nachkommastellen)",
+          "einheit": "h",
+          "loesung": "stunden",
+          "toleranz": 0.01,
+          "punkte": 1,
+          "folgefehler_aus": [
+            "minuten"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Zeitbedarf = Menge × Stückzeit + Rüstzeit. Die Rüstzeit fällt für das Los nur einmal an. Umrechnung: Minuten ÷ 60.",
+      "quelle": "ik2024-lf06-k01, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf06-k01-02",
+      "operator": "Erläutern Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Eine Anfrage an die MAKEL Studio GmbH lautet nur: „Bitte 300 Shirts mit unserem Logo bis Ende des Monats.“ Marlene Voss möchte den Auftrag sofort bestätigen."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Erläutern Sie, welche Angaben fehlen und warum Marlene den Auftrag noch nicht bestätigen sollte.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Es fehlen unter anderem Artikel und Farbe der Shirts, die Größenverteilung, Veredelungsart (Druck oder Stick) und Position, die freigegebene Logodatei, Verpackung und Lieferort. Ohne diese Angaben kann der Einkauf kein Material reservieren und die Produktion weder Rüst- und Stückzeit noch Kapazität planen. Marlene sollte die Angaben beim Kunden nachfragen, dann Einkauf und Produktion um Prüfung von Material und Kapazität bitten und erst danach einen Termin verbindlich bestätigen.",
+        "raster": [
+          {
+            "kriterium": "Mindestens drei fehlende Angaben genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folgen für Materialplanung erläutert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Folgen für Kapazitätsplanung erläutert",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Vorgehen: nachfragen, abstimmen, dann zusagen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Ein Auftragseingang ist noch keine gesicherte Lieferfähigkeit. Erst Spezifikation, dann Machbarkeitsprüfung, dann Zusage.",
+      "quelle": "ik2024-lf06-k01, Abschnitte a1 und a4"
+    },
+    {
+      "id": "ik2024-lf06-k01-03",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH plant ihr Produktionsprogramm."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welcher Begriff passt?",
+          "ziele": [
+            "Programmbreite",
+            "Programmtiefe",
+            "Kundenauftragsfertigung",
+            "Lagerfertigung"
+          ],
+          "elemente": [
+            {
+              "text": "MAKEL nimmt neben Hoodies und Shirts auch Taschen ins Programm",
+              "loesung": "Programmbreite"
+            },
+            {
+              "text": "Hoodies gibt es künftig in acht statt sechs Farben",
+              "loesung": "Programmtiefe"
+            },
+            {
+              "text": "400 Hoodies mit Firmenlogo werden nach Bestellung gefertigt",
+              "loesung": "Kundenauftragsfertigung"
+            },
+            {
+              "text": "Basis-Shirts werden vor der Saison auf Vorrat bedruckt",
+              "loesung": "Lagerfertigung"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Neue Produktlinie = Breite, mehr Varianten = Tiefe. Fertigung nach konkretem Auftrag = Kundenauftragsfertigung, auf Vorrat = Lagerfertigung.",
+      "quelle": "ik2024-lf06-k01, Abschnitte a1 und a2"
+    },
+    {
+      "id": "ik2024-lf06-k01-04",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für die Stickmaschine der MAKEL Studio GmbH sind in KW 45 noch 20 Stunden frei. Zwei Anfragen konkurrieren: Auftrag A (Stammkunde, 300 Hoodies, 3 min je Stück, 60 min Rüsten, Liefertermin Ende KW 46, Vertragsstrafe bei Verspätung) und Auftrag B (Neukunde, 200 Hoodies, 4 min je Stück, 45 min Rüsten, Wunschtermin Ende KW 45, höherer Deckungsbeitrag je Stück)."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Berechnen Sie den Zeitbedarf beider Aufträge und beurteilen Sie, wie die Kapazität in KW 45 genutzt werden sollte.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Zeitbedarf A: 300 × 3 + 60 = 960 min = 16 h. Zeitbedarf B: 200 × 4 + 45 = 845 min ≈ 14,1 h. Zusammen gut 30 h, frei sind 20 h — beide passen nicht in KW 45. A hat erst Ende KW 46 Termin, ist aber vertragsstrafenbewehrt; B wünscht Ende KW 45 und bringt mehr Deckungsbeitrag. Vertretbar ist zum Beispiel: B in KW 45 fertigen (14,1 h), A mit den restlichen 5,9 h beginnen und in KW 46 abschließen — vorausgesetzt, in KW 46 ist die übrige Kapazität für A gesichert. Alternativ A vollständig zuerst, wenn KW 46 unsicher ist. Entscheidend ist, die Annahmen zu nennen und beide Termine verbindlich abzustimmen.",
+        "raster": [
+          {
+            "kriterium": "Zeitbedarf A richtig (16 h)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Zeitbedarf B richtig (≈ 14,1 h)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Engpass erkannt (über 30 h > 20 h)",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Priorisierung mit Annahmen zu Termin, Strafe und Deckungsbeitrag",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Kapazitätsplanung verbindet Rechnung und Abwägung: erst Zeitbedarf, dann Prioritäten nach Termin, Risiko und Wirtschaftlichkeit.",
+      "quelle": "ik2024-lf06-k01, Abschnitte a3 und a4"
+    }
+  ]
+}

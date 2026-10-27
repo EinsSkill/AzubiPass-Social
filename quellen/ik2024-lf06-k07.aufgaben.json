@@ -1,0 +1,175 @@
+{
+  "lernfeld": "ik2024-lf06",
+  "kapitel": "k07",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf06-k07-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 2,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Sandra Koslowski teilt die Kosten der Veredelung bei MAKEL ein."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Fix oder variabel (bezogen auf die Produktionsmenge)?",
+          "ziele": [
+            "Fixe Kosten",
+            "Variable Kosten"
+          ],
+          "elemente": [
+            {
+              "text": "Miete der Veredelungshalle",
+              "loesung": "Fixe Kosten"
+            },
+            {
+              "text": "Hoodie-Rohlinge",
+              "loesung": "Variable Kosten"
+            },
+            {
+              "text": "Abschreibung der Stickmaschine",
+              "loesung": "Fixe Kosten"
+            },
+            {
+              "text": "Stickgarn",
+              "loesung": "Variable Kosten"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Fixe Kosten fallen unabhängig von der Menge an, variable Kosten steigen mit jedem gefertigten Stück.",
+      "quelle": "ik2024-lf06-k07, Abschnitt a2"
+    },
+    {
+      "id": "ik2024-lf06-k07-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "fix": {
+          "von": 1500,
+          "bis": 4000,
+          "schritt": 500
+        },
+        "var": {
+          "von": 15,
+          "bis": 25,
+          "schritt": 1
+        },
+        "db": {
+          "von": 5,
+          "bis": 15,
+          "schritt": 5
+        },
+        "mehr": {
+          "von": 40,
+          "bis": 200,
+          "schritt": 20
+        }
+      },
+      "abgeleitet": {
+        "preis": "var + db",
+        "schwelle": "aufrunden(fix / db)",
+        "menge": "aufrunden(fix / db) + mehr",
+        "gewinn": "menge * db - fix"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Für eine neue Shirt-Linie rechnet MAKEL mit monatlichen Fixkosten von {fix} €, variablen Kosten von {var} € je Stück und einem Verkaufspreis von {preis} € netto. Erwartet wird ein Absatz von {menge} Stück im Monat. Es gelten lineare Kosten, ein fester Preis und vollständiger Absatz der produzierten Menge."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Gewinnschwelle (auf ganze Stück aufgerundet)",
+          "einheit": "Stück",
+          "loesung": "schwelle",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Monatsergebnis bei der erwarteten Absatzmenge",
+          "einheit": "€",
+          "loesung": "gewinn",
+          "toleranz": 0.01,
+          "punkte": 2
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Deckungsbeitrag je Stück = Preis − variable Kosten. Gewinnschwelle = Fixkosten ÷ Deckungsbeitrag. Ergebnis = Menge × Deckungsbeitrag − Fixkosten.",
+      "quelle": "ik2024-lf06-k07, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf06-k07-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "MAKEL lässt Stickereien bisher bei einem Lohnsticker für 12 € je Stück fertigen. Eine eigene zweite Stickmaschine würde 1.000 € im Monat fix kosten (Leasing, anteilige Raumkosten), die variablen Kosten lägen bei 8 € je Stück. Erwartet werden 400 Stickereien im Monat, im Sommer jedoch nur rund 150. Der Lohnsticker hatte zuletzt zweimal Lieferverzug. Für die Maschine müsste eine Teilzeitkraft eingearbeitet werden."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Berechnen Sie die kritische Menge und beurteilen Sie, ob MAKEL die Stickerei selbst übernehmen sollte.",
+          "zeilen": 8
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Kritische Menge: 1.000 € ÷ (12 € − 8 €) = 250 Stück im Monat. Bei 400 Stück kostet die Eigenfertigung 1.000 € + 3.200 € = 4.200 €, der Fremdbezug 4.800 € — Vorteil 600 € im Monat. Im Sommer mit 150 Stück ist sie teurer: 2.200 € gegen 1.800 €. Über das Jahr hängt das Ergebnis von der Mengenverteilung ab. Qualitativ sprechen die Lieferverzüge des Lohnstickers und die bessere Qualitäts- und Terminkontrolle für Eigenfertigung; dagegen sprechen Einarbeitung, Personalbindung und das Auslastungsrisiko im Sommer. Empfehlung: Eigenfertigung, wenn die Jahresmenge im Schnitt deutlich über 250 liegt; Lohnsticker als Ausweichpartner für Spitzen behalten. Ohne Jahresplanung der Mengen bleibt die Empfehlung vorläufig.",
+        "raster": [
+          {
+            "kriterium": "Kritische Menge 250 Stück richtig",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Vergleich bei 400 Stück richtig",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Saisonale Unterschreitung im Sommer berücksichtigt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Mindestens zwei qualitative Kriterien abgewogen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Empfehlung mit Bedingung",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Make-or-buy-Entscheidungen verbinden die kritische Menge mit der tatsächlichen Mengenverteilung und qualitativen Kriterien.",
+      "quelle": "ik2024-lf06-k07, Abschnitt a4"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "id": "k05",
+  "lernfeld": "ik2024-lf07",
+  "nummer": 5,
+  "titel": "Logistik messen und verbessern",
+  "untertitel": "Lagerkennzahlen richtig berechnen, Kosten und Umweltwirkung gemeinsam bewerten und Verbesserungen mit Kontrolle umsetzen.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Lagerbestände binden Kapital.",
+          "Kennzahlen brauchen eine passende Bezugsgröße."
+        ],
+        "erklaerung": "Lagerkennzahlen zeigen, wie wirtschaftlich gelagert wird. Der durchschnittliche Lagerbestand wird zum Beispiel als (Anfangsbestand + Endbestand) ÷ 2 oder genauer aus Monatsendbeständen berechnet. Die Umschlagshäufigkeit gibt an, wie oft der Durchschnittsbestand im Jahr verbraucht wird: Materialverbrauch ÷ durchschnittlicher Lagerbestand, beide gleich bewertet (zu Einstandspreisen). Die durchschnittliche Lagerdauer ist 360 Tage ÷ Umschlagshäufigkeit, wenn mit 360 Tagen gerechnet wird. Die Reichweite gibt an, wie viele Tage der aktuelle Bestand beim durchschnittlichen Verbrauch reicht. Wichtig: Zähler und Nenner müssen zusammenpassen — Umsatzerlöse zu Verkaufspreisen gehören nicht in eine Rechnung mit Beständen zu Einstandspreisen.",
+        "beispiele": [
+          "Materialverbrauch 120.000 €, Ø Bestand 20.000 €: Umschlagshäufigkeit 6, Ø Lagerdauer 360 ÷ 6 = 60 Tage.",
+          "Bestand 3.000 Rohlinge, Verbrauch 150 je Arbeitstag: Reichweite 20 Arbeitstage."
+        ],
+        "fallbeispiel": "Sandra Koslowski und Jonas Weidner prüfen das Rohstofflager: Verbrauch im Jahr 120.000 € zu Einstandspreisen, durchschnittlicher Bestand 20.000 €. Umschlag 6-mal im Jahr, Ø Lagerdauer 60 Tage. Für ein Material mit stabiler Nachfrage und kurzer Lieferzeit ist das lang — Kapital ist unnötig gebunden.",
+        "typische_fehler": "Umsatzerlöse statt Materialverbrauch einsetzen oder Bestände und Verbrauch unterschiedlich bewerten.",
+        "verstaendnisfragen": [
+          "Wie berechnet man die Umschlagshäufigkeit? Materialverbrauch ÷ durchschnittlicher Lagerbestand.",
+          "Wie hängen Umschlagshäufigkeit und Lagerdauer zusammen? Lagerdauer = 360 ÷ Umschlagshäufigkeit."
+        ],
+        "pruefungsbezug": "Durchschnittsbestand, Umschlagshäufigkeit, Lagerdauer und Reichweite berechnen und deuten.",
+        "merksatz": "Umschlag = Verbrauch ÷ Ø Bestand, Lagerdauer = 360 ÷ Umschlag — Zähler und Nenner gleich bewerten."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Lagern kostet Geld und Ressourcen.",
+          "Transport verursacht Emissionen."
+        ],
+        "erklaerung": "Logistikkosten bestehen aus Lagerkosten (Raum, Personal, Energie, Versicherung, Schwund, Kapitalbindung), Transportkosten und Verwaltungskosten. Die Kapitalbindung wird oft mit dem Lagerzinssatz ausgedrückt: Jahreszinssatz × Ø Lagerdauer ÷ 360. Daneben stehen ökologische Wirkungen: Energieverbrauch für Licht, Heizung und Fördertechnik, Verpackungsmaterial, Emissionen durch Transporte. Eine Maßnahme wird deshalb nicht nur nach einer Zahl beurteilt, sondern nach ihrer Gesamtwirkung auf Kosten, Ressourcen und Kunden.",
+        "beispiele": [
+          "Zinssatz 6 %, Ø Lagerdauer 60 Tage: Lagerzinssatz 6 % × 60 ÷ 360 = 1 %.",
+          "LED-Beleuchtung mit Bewegungsmeldern im Hochregal senkt den Stromverbrauch."
+        ],
+        "fallbeispiel": "Bei 20.000 € Durchschnittsbestand und 6 % Zinsen kostet die Kapitalbindung rund 1.200 € im Jahr (1 % je Lagerzyklus von 60 Tagen, sechsmal im Jahr). Würde die Lagerdauer auf 30 Tage sinken, halbierte sich der Durchschnittsbestand und damit auch diese Kosten — vorausgesetzt, die Versorgungssicherheit bleibt.",
+        "typische_fehler": "Nur Transportkosten senken und dabei höhere Lagerbestände oder mehr Schäden in Kauf nehmen.",
+        "verstaendnisfragen": [
+          "Wie berechnet man den Lagerzinssatz? Jahreszinssatz × durchschnittliche Lagerdauer ÷ 360.",
+          "Nenne zwei ökologische Wirkungen der Logistik. Zum Beispiel Energieverbrauch und Verpackungsmaterial."
+        ],
+        "pruefungsbezug": "Lagerkosten und Kapitalbindung berechnen und ökologische Wirkungen einbeziehen.",
+        "merksatz": "Logistikkosten umfassen Lager, Transport und Kapitalbindung; Maßnahmen werden nach Gesamtwirkung auf Kosten, Umwelt und Kunden bewertet."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Im Lager fallen Verpackungen, Paletten und Reststoffe an.",
+          "Arbeitsschutz gilt auch im Lager."
+        ],
+        "erklaerung": "Zur Logistik gehört der Rückfluss: Retouren werden geprüft und wieder eingelagert, aufbereitet oder entsorgt. Verpackungen, Paletten und Reststoffe werden getrennt gesammelt, wiederverwendet oder einer Verwertung zugeführt; Unternehmen, die verpackte Ware in Verkehr bringen, haben dabei gesetzliche Pflichten, deren Umfang anhand des aktuellen Verpackungsrechts geklärt wird. Sicherheit im Lager heißt: Verkehrswege frei, Regale geprüft und gekennzeichnet, Höchstlasten beachtet, Stapler nur mit Berechtigung, persönliche Schutzausrüstung. Auch Lagerdaten sind schutzwürdig: Kundendaten auf Versandetiketten und Zugriffe auf das Lagersystem werden geschützt.",
+        "beispiele": [
+          "Wiederverwendbare Transportboxen zwischen Lager und Veredelung statt Einwegkartons.",
+          "Kartons im Gang: Stolpergefahr und versperrter Fluchtweg — sofort beseitigen."
+        ],
+        "fallbeispiel": "Bei einer Begehung findet die Fachkraft für Arbeitssicherheit Kartons im Fluchtweg und ein Regal ohne Lastschild. Jonas lässt den Gang sofort räumen, das Regal prüfen und beschildern. Außerdem führt er Mehrwegboxen für den internen Transport ein; Einwegkartons werden nur noch für den Versand an Kunden genutzt.",
+        "typische_fehler": "Weniger Verpackungsmaterial ohne Blick auf Transportschäden automatisch als nachhaltig bezeichnen.",
+        "verstaendnisfragen": [
+          "Nenne zwei Sicherheitsregeln im Lager. Zum Beispiel freie Verkehrswege und beachtete Höchstlasten der Regale.",
+          "Was gehört zur Entsorgungslogistik? Retouren, Verpackungen, Paletten und Reststoffe sammeln, verwerten oder entsorgen."
+        ],
+        "pruefungsbezug": "Maßnahmen zu Sicherheit, Entsorgung und Datenschutz im Lager begründen.",
+        "merksatz": "Rückflüsse, Sicherheit und Datenschutz gehören zur Logistik; Nachhaltigkeit wird an der Gesamtwirkung gemessen."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Verbesserungen brauchen Ziel und Kontrolle (PDCA aus LF 6).",
+          "Kennzahlen machen Vorher und Nachher vergleichbar."
+        ],
+        "erklaerung": "Eine Verbesserung im Logistikkonzept folgt einem festen Ablauf: Ausgangslage mit Kennzahlen beschreiben, Ziel messbar festlegen (Zielgröße, Messzeitraum), Maßnahme umsetzen, mit derselben Kennzahl kontrollieren und Nebenwirkungen prüfen. Werden zum Beispiel Verpackungen verkleinert, wird nicht nur der Materialverbrauch gemessen, sondern auch die Schadensquote, Ersatzlieferungen und Kundenreaktionen. Erst die Gesamtbilanz zeigt, ob die Maßnahme wirklich besser ist.",
+        "beispiele": [
+          "Ziel: Ø Lagerdauer Rohlinge von 60 auf 40 Tage in sechs Monaten, Versorgungssicherheit 100 %.",
+          "Kleinere Kartons: Material −15 %, aber Schadensquote von 0,5 % auf 2 % — Gesamtwirkung negativ."
+        ],
+        "fallbeispiel": "MAKEL testet kleinere Versandkartons. Nach drei Monaten: Verpackungsmaterial −15 %, aber die Schadensquote stieg von 0,5 % auf 2 %, mit Ersatzlieferungen und Beschwerden. Jonas wertet aus: Die Ersatztransporte und Gutschriften kosten mehr als die Einsparung. MAKEL kehrt zur alten Größe zurück, testet aber eine Polsterung aus Recyclingpapier.",
+        "typische_fehler": "Eine Maßnahme nur an der Kennzahl messen, auf die sie zielt, und Nebenwirkungen übersehen.",
+        "verstaendnisfragen": [
+          "Was gehört zu einem messbaren Ziel? Zielgröße, Zielwert und Messzeitraum.",
+          "Warum werden Nebenwirkungen geprüft? Weil eine Verbesserung an einer Stelle Verschlechterungen an anderer Stelle verursachen kann."
+        ],
+        "pruefungsbezug": "Eine Verbesserung samt Ziel, Messgröße, Zeitraum und Kontrolle formulieren.",
+        "merksatz": "Verbessern heißt: Ausgangswert, messbares Ziel, Maßnahme, Kontrolle mit gleicher Kennzahl — und Nebenwirkungen prüfen."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Lagerkennzahlen mit passenden Bezugsgrößen berechnen", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Kosten und Ressourcen gemeinsam bewerten", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Entsorgung, Sicherheit und Datenschutz im Lager berücksichtigen", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Eine Verbesserung samt Kontrolle formulieren", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Kennzahlen und Datenbasis",
+      "inhalt": [
+        { "typ": "absatz", "text": "==Zähler und Nenner müssen gleich bewertet sein== — Verbrauch und Bestand zu Einstandspreisen." },
+        { "typ": "tabelle", "mono": true, "spalten": ["Kennzahl", "Formel", "Beispiel"], "zeilen": [
+          { "zellen": ["Ø Lagerbestand", "(AB + EB) ÷ 2", "(18.000 + 22.000) ÷ 2 = 20.000 €"] },
+          { "zellen": ["Umschlagshäufigkeit", "Verbrauch ÷ Ø Bestand", "120.000 ÷ 20.000 = 6"] },
+          { "zellen": ["Ø Lagerdauer", "360 ÷ Umschlag", "360 ÷ 6 = 60 Tage"] },
+          { "zellen": ["Reichweite", "Bestand ÷ Verbrauch je Tag", "3.000 ÷ 150 = 20 Tage"] }
+        ] },
+        {
+          "typ": "check",
+          "frage": "Materialverbrauch im Jahr 90.000 € (zu Einstandspreisen), durchschnittlicher Lagerbestand 15.000 €, Umsatzerlöse 300.000 €. Wie hoch ist die Umschlagshäufigkeit des Materiallagers?",
+          "optionen": [
+            { "text": "6", "richtig": true, "echo": "Richtig: 90.000 ÷ 15.000 = 6. Ø Lagerdauer 60 Tage." },
+            { "text": "20", "richtig": false, "echo": "Hier wurden die Umsatzerlöse eingesetzt. Die passen nicht zu einem Bestand zu Einstandspreisen." },
+            { "text": "0,17", "richtig": false, "echo": "Zähler und Nenner sind vertauscht." }
+          ]
+        },
+        { "typ": "merke", "text": "**Umschlag = Verbrauch ÷ Ø Bestand**, **Lagerdauer = 360 ÷ Umschlag** — Zähler und Nenner gleich bewerten.", "karteikarte": "Wie berechnest du Umschlagshäufigkeit und durchschnittliche Lagerdauer?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Kosten, Energie und Umwelt",
+      "inhalt": [
+        { "typ": "tabelle", "mono": true, "spalten": ["Rechnung", "Ergebnis"], "zeilen": [
+          { "zellen": ["Lagerzinssatz = 6 % × 60 ÷ 360", "1 %"] },
+          { "zellen": ["Zinskosten auf Ø Bestand = 20.000 € × 6 %", "1.200 € im Jahr"] },
+          { "zellen": ["Bei 30 Tagen Lagerdauer: Ø Bestand halbiert", "≈ 600 € im Jahr"] }
+        ] },
+        { "typ": "merke", "text": "Logistikkosten umfassen **Lager, Transport und Kapitalbindung**; Maßnahmen werden nach Gesamtwirkung auf Kosten, Umwelt und Kunden bewertet.", "karteikarte": "Welche Kosten verursacht ein Lager, und wie wird die Kapitalbindung ausgedrückt?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Entsorgung, Sicherheit und Daten",
+      "inhalt": [
+        { "typ": "tabelle", "spalten": ["Bereich", "Beispiel für eine Regel"], "zeilen": [
+          { "zellen": ["Rückflüsse", "Retouren innerhalb von 2 Tagen prüfen und wieder einlagern oder aussortieren"] },
+          { "zellen": ["Verpackung", "Mehrwegboxen intern, Einweg nur für den Kundenversand"] },
+          { "zellen": ["Sicherheit", "Fluchtwege frei, Lastschilder an Regalen, Stapler nur mit Beauftragung"] },
+          { "zellen": ["Daten", "Versandetiketten mit Kundendaten nicht offen liegen lassen"] }
+        ] },
+        { "typ": "absatz", "text": "Pflichten für in Verkehr gebrachte Verpackungen werden anhand des aktuellen Verpackungsrechts geklärt.", "pruefen": "Verpackungsrechtliche Pflichten (Registrierung, Systembeteiligung) und EU-Neuregelungen vor Veröffentlichung mit dem aktuellen Stand abgleichen." },
+        { "typ": "achtung", "text": "Weniger Verpackung ist nur dann nachhaltig, wenn dadurch nicht mehr Schäden, Ersatztransporte und Retouren entstehen." },
+        { "typ": "merke", "text": "Rückflüsse, Sicherheit und Datenschutz gehören zur Logistik; **Nachhaltigkeit wird an der Gesamtwirkung** gemessen.", "karteikarte": "Welche Aufgaben gehören neben Lagern und Transportieren zur Logistik?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Konzept bewerten und verbessern",
+      "inhalt": [
+        { "typ": "grafik", "variante": "stufen", "kopf": "Verbessern mit Kontrolle", "titel": "Kleinere Versandkartons — ein Test", "lead": "Vier Schritte, eine ehrliche Bilanz.", "stufen": [
+          { "name": "Ausgangslage", "text": "Verpackungsmaterial 1.000 € im Quartal, **Schadensquote 0,5 %**." },
+          { "name": "Ziel", "text": "Material −15 % in drei Monaten, **Schadensquote höchstens 0,5 %**." },
+          { "name": "Messen", "text": "Material −15 % erreicht, aber **Schadensquote 2 %**, Ersatzlieferungen und Beschwerden." },
+          { "name": "Entscheiden", "text": "Gesamtwirkung negativ: zurück zur alten Größe, **neuer Test** mit Recyclingpolsterung." }
+        ] },
+        { "typ": "merke", "text": "Verbessern heißt: **Ausgangswert, messbares Ziel, Maßnahme, Kontrolle** mit gleicher Kennzahl — und Nebenwirkungen prüfen.", "karteikarte": "Wie gehst du vor, um eine Logistikmaßnahme wirksam zu verbessern und zu kontrollieren?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Ø Bestand, Umschlag, Lagerdauer, Reichweite — gleich bewertet berechnen.",
+    "Umschlag = Verbrauch ÷ Ø Bestand; Lagerdauer = 360 ÷ Umschlag.",
+    "Lagerzinssatz = Zinssatz × Lagerdauer ÷ 360.",
+    "Kosten, Energie, Verpackung und Emissionen gemeinsam bewerten.",
+    "Rückflüsse, Sicherheit und Datenschutz gehören dazu.",
+    "Verbesserung mit messbarem Ziel, Kontrolle und Blick auf Nebenwirkungen."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "Materialverbrauch im Jahr 120.000 €, durchschnittlicher gleichartig bewerteter Lagerbestand 20.000 €. Umschlag und Dauer bei vorgegebenen 360 Tagen?", "loesung": "Umschlag 6 pro Jahr; durchschnittliche Lagerdauer 60 Tage. Keine Umsatzerlöse statt Materialverbrauch einsetzen." },
+    { "typ": "Fall", "frage": "Eine kleinere Verpackung spart Material, verursacht aber mehr Transportschäden. Wie wird die Maßnahme bewertet?", "loesung": "Materialeinsparung, Schadensquote, Ersatztransporte, Kosten und Kundenwirkung gemeinsam vergleichen; Messzeitraum und Zielgröße vorher festlegen. Nur wenn die Gesamtbilanz positiv ist, wird die Maßnahme beibehalten." },
+    { "typ": "Wissen", "frage": "Was gibt die Reichweite an?", "loesung": "Wie viele Tage der aktuelle Bestand beim durchschnittlichen Verbrauch noch reicht: Bestand ÷ Verbrauch je Tag." }
+  ],
+  "pruefungstipp": "Schreib bei Lagerkennzahlen die Formel mit Einheiten auf und prüfe, ob Verbrauch und Bestand gleich bewertet sind. Bei Verbesserungsfragen zählt die Gesamtbilanz — nenne mindestens eine Nebenwirkung."
+}

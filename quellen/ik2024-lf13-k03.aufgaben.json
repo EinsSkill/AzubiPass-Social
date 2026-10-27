@@ -1,0 +1,97 @@
+{
+  "lernfeld": "ik2024-lf13",
+  "kapitel": "k03",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf13-k03-01",
+      "operator": "Bringen Sie in die richtige Reihenfolge",
+      "anforderungsbereich": 1,
+      "punkte": 5,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Luca Petrelli plant die Einführung des neuen Freigabeablaufs bei der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "reihenfolge",
+          "lead": "Bringen Sie die Schritte in eine sinnvolle Reihenfolge.",
+          "elemente": [
+            { "text": "Umsetzungsauftrag mit Ziel und Verantwortung festlegen", "position": 1 },
+            { "text": "Arbeitspakete und Terminplan erstellen", "position": 2 },
+            { "text": "Abbruchregeln und Rückfallweg für den Piloten festlegen", "position": 3 },
+            { "text": "Pilot mit einer Kundengruppe durchführen", "position": 4 },
+            { "text": "Ergebnisse mit dem Ziel vergleichen und über den Rollout entscheiden", "position": 5 }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Erst Auftrag und Plan, dann Regeln für den Piloten, dann erproben und auswerten.",
+      "quelle": "ik2024-lf13-k03, Abschnitte a1 bis a4"
+    },
+
+    {
+      "id": "ik2024-lf13-k03-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "konzept": { "von": 1, "bis": 3, "schritt": 1 },
+        "einrichten": { "von": 2, "bis": 4, "schritt": 1 },
+        "anleitung": { "von": 1, "bis": 2, "schritt": 1 },
+        "schulung": { "von": 1, "bis": 2, "schritt": 1 },
+        "pilot": { "von": 4, "bis": 6, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "dauer": "konzept + max(einrichten + schulung, anleitung) + pilot",
+        "puffer": "max(einrichten + schulung, anleitung) - anleitung"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Terminplan der MAKEL Studio GmbH (Arbeitstage): Konzept {konzept}. Danach parallel: Einrichtung im System {einrichten}, anschließend Schulung {schulung}; sowie Kurzanleitung {anleitung}. Der Pilot ({pilot}) beginnt, wenn Schulung und Kurzanleitung fertig sind." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Mindestdauer des Projekts", "einheit": "Arbeitstage", "loesung": "dauer", "toleranz": 0, "punkte": 2 },
+        { "block": "zahl", "label": "Puffer der Kurzanleitung", "einheit": "Arbeitstage", "loesung": "puffer", "toleranz": 0, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Der Pilot wartet auf den längeren der beiden parallelen Wege. Mindestdauer = Konzept + längerer Weg + Pilot. Puffer der Anleitung = längerer Weg − Dauer der Anleitung.",
+      "quelle": "ik2024-lf13-k03, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf13-k03-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Nach zwei Pilottagen ohne Probleme schlägt Tobias Renner vor, den neuen Freigabeablauf der MAKEL Studio GmbH ab morgen für alle Aufträge einzuführen: „Läuft doch.“ Kriterien für den Piloten wurden nicht festgelegt; am dritten Tag blockierte das Pflichtfeld einen Eilauftrag mit telefonischer Freigabe." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Vorschlag und beschreiben Sie, wie der Pilot sinnvoll abgeschlossen werden sollte.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Zwei Tage sind keine belastbare Grundlage: Es fehlen vorher festgelegte Messgrößen und Grenzwerte, die Zahl der Pilotaufträge ist zu gering, und mit dem blockierten Eilauftrag ist bereits ein Problem aufgetreten, das bei allen Aufträgen vielfach auftreten könnte. Ein sofortiger Rollout riskiert Lieferverzug und Kundenärger. Sinnvoll: Kriterien nachträglich nur offen gekennzeichnet ergänzen oder den Piloten mit festgelegten Kriterien neu starten (z. B. 30 Aufträge, Verspätungsquote ≤ 10 %, keine blockierten Eilaufträge), Sonderfall „telefonische Freigabe mit Notiz“ einbauen, Rückfallweg definieren, Ergebnisse auswerten und dann entscheiden — ggf. schrittweiser Rollout.",
+        "raster": [
+          { "kriterium": "Fehlende Kriterien und zu kleine Basis erkannt", "punkte": 1 },
+          { "kriterium": "Aufgetretenes Problem als Risiko für den Rollout bewertet", "punkte": 1 },
+          { "kriterium": "Anpassung des Ablaufs (Sonderfall) vorgeschlagen", "punkte": 1 },
+          { "kriterium": "Sinnvoller Abschluss: Kriterien, Auswertung, Entscheidung, ggf. stufenweise", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Ein Pilot liefert nur dann eine Entscheidungsgrundlage, wenn die Kriterien vorher feststehen und genug Fälle geprüft wurden.",
+      "quelle": "ik2024-lf13-k03, Abschnitte a3 und a4"
+    }
+  ]
+}

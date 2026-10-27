@@ -29,8 +29,9 @@ from datetime import date, datetime
 from pathlib import Path
 
 from build import karten_sammeln, option_ids
-from gemeinsames import (AUSGABE, LUPE, MARKE, MITTEL, fussleiste, kopf, lade,
-                         lernfeld_dateien, rechtliches, schriften_lokal,
+from gemeinsames import (AUSGABE, LUPE, MARKE, MITTEL, beruf_von, berufe,
+                         fussleiste, kopf, lade, lernfeld_eintrag,
+                         lernfeld_dateien, registry, rechtliches, schriften_lokal,
                          tableiste, veroeffentliche, zwischenspeicher_schreiben)
 
 HIER = Path(__file__).parent
@@ -50,9 +51,17 @@ def klartext(s):
 
 
 def lernfeld_aliases(lf):
-    """Geläufige Kurzformen für Lernfeldreihen und die Volltextsuche."""
-    if lf["id"] == "buchfuehrung":
-        return ["LF6", "Lernfeld 6", "Rechnungswesen", "Buchhaltung", "FiBu"]
+    """Geläufige Kurzformen für Lernfeldreihen und die Volltextsuche.
+
+    Kommen aus der Berufsregistry (ausbildungsgaenge.json): Nummer und eigene
+    Kurzformen stehen dort. Ziffern aus der ID zu lesen ging nur, solange es
+    lf1 bis lf13 gab – aus „ik2024-lf06“ würde sonst LF202406 oder gar ein
+    Buchführungsalias (Plan §2)."""
+    _, e = lernfeld_eintrag(lf["id"])
+    if e:
+        if e.get("aliases"):
+            return list(e["aliases"])
+        return ["LF" + str(e["nr"]), "Lernfeld " + str(e["nr"])]
     treffer = re.fullmatch(r"lf(\d+)", lf["id"])
     return ["LF" + treffer.group(1)] if treffer else [lf["id"]]
 
@@ -174,16 +183,29 @@ def begriffe_sammeln(lf):
 
 
 def vokabeln_lesen():
-    """Lädt Grundwortschatz und getrennte Testlisten mit stabilen IDs."""
-    datei = HIER / "vokabeln.json"
-    if not datei.exists():
-        return []
-    quelle = json.loads(datei.read_text(encoding="utf-8"))
+    """Lädt Grundwortschatz und getrennte Testlisten mit stabilen IDs.
+
+    Jeder Block gehört zu einem Beruf. Der gemeinsame kaufmännische
+    Grundwortschatz (Art „basis“) steht beiden offen („alle“); die
+    Wochen-Tests der Büromanagement-Klasse gehören zu Büromanagement; die
+    berufsbezogenen Industrie-Blöcke kommen aus ik2024-vokabeln.json."""
     bloecke, ids = [], set()
+    for name, standard in (("vokabeln.json", None), ("ik2024-vokabeln.json", "ik")):
+        datei = HIER / name
+        if datei.exists():
+            bloecke += _vokabelblock_lesen(json.loads(datei.read_text(encoding="utf-8")),
+                                           standard, ids)
+    return bloecke
+
+
+def _vokabelblock_lesen(quelle, standard, ids):
+    bloecke = []
     for block in quelle.get("bloecke", []):
+        art = block.get("art", "basis")
         eintrag = {
             "id": block["id"],
-            "art": block.get("art", "basis"),
+            "beruf": block.get("beruf") or standard or ("alle" if art == "basis" else "kfb"),
+            "art": art,
             "titel": block["titel"],
             "beschreibung": block.get("beschreibung", ""),
             "vokabeln": [],
@@ -422,7 +444,7 @@ def aufgaben_sammeln(lf, kapitel_daten, konten_index, vorlagen, steuer):
                     raise Aufgabenfehler(
                         f"{wo}: Verweis {art}:{kennung} steht nicht in {lf['id']}.lernfeld.json")
 
-            eigene.append(dict(b, lernfeld=lf["id"], kapitel=kap,
+            eigene.append(dict(b, lernfeld=lf["id"], kapitel=kap, beruf=lf["beruf"],
                                konten_als=datei.get("konten_als", "nummer")))
 
         if not eigene:
@@ -430,6 +452,7 @@ def aufgaben_sammeln(lf, kapitel_daten, konten_index, vorlagen, steuer):
         info = kapitel_info[kap]
         kapitel_raus.append({
             "schluessel": f'{lf["id"]}:{kap}',
+            "beruf": lf["beruf"],
             "lernfeld": lf["id"], "lernfeldTitel": lf["titel"],
             "kapitel": kap, "nummer": info["nummer"], "titel": info["titel"],
             "zu": f'{lf["id"]}.html#{kap}',
@@ -1035,10 +1058,16 @@ def baue():
         pk_bausteine += b
         nummer = next((x["nr"] for x in cfg["lernfelder"]
                        if x.get("quelle") == datei.name), None)
+        _, eintrag = lernfeld_eintrag(lf["id"])
+        if nummer is None and eintrag:
+            nummer = eintrag["nr"]
         kurz = lernfeld_aliases(lf)[0]
+        beruf = lf["beruf"]
 
         lernfelder.append({
             "id": lf["id"],
+            "beruf": beruf,
+            "lehrjahr": eintrag.get("lehrjahr") if eintrag else None,
             "titel": lf["titel"],
             "nummer": nummer,
             "kurz": kurz,
@@ -1047,17 +1076,36 @@ def baue():
             "kapitel": [{"id": k["id"], "nummer": k["nummer"], "titel": k["titel"],
                          "minuten": k.get("minuten", 0)} for k in kapitel_daten],
         })
-        karten += karten_sammeln(lf, kapitel_daten)
-        quiz += quiz_sammeln(lf, kapitel_daten)
-        tests += tests_sammeln(lf, kapitel_daten)
-        suche += suche_sammeln(lf, kapitel_daten)
+        # Jeder Eintrag trägt seinen Beruf: Die App zeigt nur, was zum
+        # gewählten Ausbildungsgang gehört (Plan §4).
+        for liste, neu in ((karten, karten_sammeln(lf, kapitel_daten)),
+                           (quiz, quiz_sammeln(lf, kapitel_daten)),
+                           (tests, tests_sammeln(lf, kapitel_daten)),
+                           (suche, suche_sammeln(lf, kapitel_daten))):
+            for e in neu:
+                e["beruf"] = beruf
+            liste += neu
+        # Lexikon je Beruf: Derselbe Schlüssel darf in zwei Berufen eine
+        # verschiedene Erklärung tragen, ohne dass einer den anderen
+        # überschreibt (Prüffall 9).
         for e in begriffe_sammeln(lf):
-            begriffe[e["id"]] = e
+            e["beruf"] = beruf
+            begriffe[(beruf, e["id"])] = e
 
     inhalt = {
         "gebaut": datetime.now().isoformat(timespec="seconds"),
         "pruefung": cfg["pruefung"]["naechster_termin"],
         "pruefungName": cfg["pruefung"]["bezeichnung"],
+        "standardBeruf": registry().get("standard", "kfb"),
+        "berufe": [{
+            "kurz": b["kurz"], "kennung": b["kennung"], "name": b["name"],
+            "kurzname": b.get("kurzname", b["name"]),
+            "pruefung": cfg["pruefung"]["naechster_termin"] if b.get("pruefung_aus_landing") else None,
+            "pruefungName": cfg["pruefung"]["bezeichnung"] if b.get("pruefung_aus_landing")
+                            else b.get("pruefungName", "Abschlussprüfung"),
+            "lernfelder": sum(1 for x in lernfelder if x["beruf"] == b["kurz"]),
+            "geplant": len(b.get("lernfelder", [])),
+        } for b in berufe()],
         "lernfelder": lernfelder,
         "karten": karten,
         "quiz": quiz,

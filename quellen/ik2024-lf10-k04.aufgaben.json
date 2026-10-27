@@ -1,0 +1,101 @@
+{
+  "lernfeld": "ik2024-lf10",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf10-k04-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 6,
+      "dauer_min": 4,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Luca Petrelli soll Posten aus dem Abschluss der MAKEL Studio GmbH einordnen." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Wo erscheint der Posten?",
+          "ziele": ["Bilanz Aktivseite", "Bilanz Passivseite", "GuV Ertrag", "GuV Aufwand"],
+          "elemente": [
+            { "text": "Fertige Erzeugnisse", "loesung": "Bilanz Aktivseite" },
+            { "text": "Gezeichnetes Kapital", "loesung": "Bilanz Passivseite" },
+            { "text": "Umsatzerlöse", "loesung": "GuV Ertrag" },
+            { "text": "Abschreibungen auf Sachanlagen", "loesung": "GuV Aufwand" },
+            { "text": "Sonstige Rückstellungen", "loesung": "Bilanz Passivseite" },
+            { "text": "Bestandserhöhung an fertigen Erzeugnissen", "loesung": "GuV Ertrag" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Bestände und Kapital stehen in der Bilanz, Wertzuwachs und Wertverzehr des Jahres in der GuV. Die Bestandserhöhung erscheint als Ertragsposten, der Bestand selbst in der Bilanz.",
+      "quelle": "ik2024-lf10-k04, Abschnitte a1 bis a3"
+    },
+
+    {
+      "id": "ik2024-lf10-k04-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 6,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "umsatz": { "von": 800000, "bis": 900000, "schritt": 20000 },
+        "mehrung": { "von": 2000, "bis": 8000, "schritt": 2000 },
+        "material": { "von": 250000, "bis": 290000, "schritt": 10000 },
+        "personal": { "von": 280000, "bis": 310000, "schritt": 10000 },
+        "afa": { "von": 30000, "bis": 40000, "schritt": 5000 },
+        "sonstige": { "von": 50000, "bis": 60000, "schritt": 5000 },
+        "ek_alt": { "von": 80000, "bis": 120000, "schritt": 10000 }
+      },
+      "abgeleitet": {
+        "jue": "umsatz + mehrung - material - personal - afa - sonstige",
+        "ek_neu": "ek_alt + jue"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Vereinfachte GuV der MAKEL Studio GmbH (Gesamtkostenverfahren, ohne Finanzergebnis und Steuern): Umsatzerlöse {umsatz} €, Bestandserhöhung an fertigen Erzeugnissen {mehrung} €, Materialaufwand {material} €, Personalaufwand {personal} €, Abschreibungen {afa} €, sonstige betriebliche Aufwendungen {sonstige} €. Das Eigenkapital betrug vor Berücksichtigung des Jahresergebnisses {ek_alt} €; es wird nichts ausgeschüttet." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Jahresergebnis", "einheit": "€", "loesung": "jue", "toleranz": 0.01, "punkte": 3 },
+        { "block": "zahl", "label": "Eigenkapital in der Schlussbilanz", "einheit": "€", "loesung": "ek_neu", "toleranz": 0.01, "punkte": 2, "folgefehler_aus": ["jue"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 5 },
+      "erklaerung": "Jahresergebnis = Umsatzerlöse + Bestandserhöhung − alle Aufwendungen. Ohne Ausschüttung erhöht es das Eigenkapital.",
+      "quelle": "ik2024-lf10-k04, Abschnitte a1 und a3"
+    },
+
+    {
+      "id": "ik2024-lf10-k04-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "GuV-Auszug der MAKEL Studio GmbH (in Tsd. €), Vorjahr → Berichtsjahr: Umsatzerlöse 780 → 820; Materialaufwand 270 → 310; Personalaufwand 330 → 340; Abschreibungen 30 → 38; sonstige betriebliche Aufwendungen 95 → 95; Zinsaufwendungen 1,5 → 4,5. Yuki Bergmann sagt: „Mehr Umsatz, also läuft alles besser.“" }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die Aussage anhand der Zahlen und nennen Sie zwei Ansatzpunkte für das nächste Jahr.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Ergebnis vor Steuern Vorjahr: 780 − 270 − 330 − 30 − 95 − 1,5 = 53,5 Tsd. €; Berichtsjahr: 820 − 310 − 340 − 38 − 95 − 4,5 = 32,5 Tsd. €. Trotz 40 Tsd. € mehr Umsatz sinkt das Ergebnis um 21 Tsd. €. Ursachen: Der Materialaufwand steigt stärker als der Umsatz (Materialquote von rund 34,6 % auf 37,8 %), Abschreibungen und Zinsen steigen durch die neue Maschine und das Darlehen. Die Aussage greift zu kurz. Ansatzpunkte: Einkaufspreise und Verschnitt prüfen oder Preise anpassen; die neue Maschine besser auslasten, damit sich Abschreibung und Zinsen auf mehr Aufträge verteilen.",
+        "raster": [
+          { "kriterium": "Ergebnisse beider Jahre korrekt ermittelt", "punkte": 1 },
+          { "kriterium": "Materialaufwand als Hauptursache erkannt (Quote oder Vergleich)", "punkte": 1 },
+          { "kriterium": "Abschreibung und Zinsen als Folge der Investition erkannt", "punkte": 1 },
+          { "kriterium": "Zwei passende Ansatzpunkte", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Umsatz allein sagt nichts über den Erfolg; erst die Staffel zeigt, welche Aufwendungen das Ergebnis treiben.",
+      "quelle": "ik2024-lf10-k04, Abschnitt a3"
+    }
+  ]
+}

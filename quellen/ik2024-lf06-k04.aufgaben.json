@@ -1,0 +1,185 @@
+{
+  "lernfeld": "ik2024-lf06",
+  "kapitel": "k04",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "ik2024-lf06-k04-01",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "tage": {
+          "von": 4,
+          "bis": 5,
+          "schritt": 1
+        },
+        "wartung": {
+          "von": 0,
+          "bis": 4,
+          "schritt": 2
+        },
+        "bedarf": {
+          "von": 30,
+          "bis": 44,
+          "schritt": 1
+        }
+      },
+      "abgeleitet": {
+        "verfuegbar": "tage * 8 - wartung",
+        "auslastung": "runde(bedarf / verfuegbar * 100, 1)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die Stickmaschine 2 der MAKEL Studio GmbH steht in der nächsten Woche an {tage} Tagen je 8 Stunden bereit; für Wartung sind {wartung} Stunden eingeplant. Die eingeplanten Aufträge benötigen zusammen {bedarf} Stunden."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Verfügbare Kapazität",
+          "einheit": "h",
+          "loesung": "verfuegbar",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Auslastung (eine Nachkommastelle)",
+          "einheit": "%",
+          "loesung": "auslastung",
+          "toleranz": 0.05,
+          "punkte": 2,
+          "folgefehler_aus": [
+            "verfuegbar"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Verfügbar = Tage × Stunden − Wartung. Auslastung = Bedarf ÷ verfügbare Kapazität × 100. Über 100 % ist der Plan ohne Maßnahme nicht machbar.",
+      "quelle": "ik2024-lf06-k04, Abschnitt a1"
+    },
+    {
+      "id": "ik2024-lf06-k04-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": {
+        "bearb": {
+          "von": 60,
+          "bis": 120,
+          "schritt": 10
+        },
+        "liege": {
+          "von": 60,
+          "bis": 240,
+          "schritt": 20
+        },
+        "trans": {
+          "von": 10,
+          "bis": 30,
+          "schritt": 5
+        },
+        "pruef": {
+          "von": 10,
+          "bis": 20,
+          "schritt": 5
+        }
+      },
+      "abgeleitet": {
+        "dlz": "bearb + liege + trans + pruef",
+        "fluss": "runde(bearb / dlz * 100, 1)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Ein Druckauftrag der MAKEL Studio GmbH durchläuft nacheinander: Bearbeitung {bearb} min, Liegezeit {liege} min, Transport {trans} min, Prüfung {pruef} min."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Durchlaufzeit",
+          "einheit": "min",
+          "loesung": "dlz",
+          "toleranz": 0.01,
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Flussgrad (eine Nachkommastelle)",
+          "einheit": "%",
+          "loesung": "fluss",
+          "toleranz": 0.05,
+          "punkte": 1,
+          "folgefehler_aus": [
+            "dlz"
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 3
+      },
+      "erklaerung": "Durchlaufzeit = Summe aller Zeitarten. Flussgrad = Bearbeitungszeit ÷ Durchlaufzeit × 100.",
+      "quelle": "ik2024-lf06-k04, Abschnitt a3"
+    },
+    {
+      "id": "ik2024-lf06-k04-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die Durchlaufzeit von Druckaufträgen bei der MAKEL Studio GmbH beträgt im Schnitt 240 Minuten; davon 90 Minuten Bearbeitung, 120 Minuten Liegezeit vor dem Trockner, 15 Minuten Transport und 15 Minuten Prüfung. Tobias Renner schlägt vor, für 25.000 € eine doppelt so schnelle Druckmaschine zu kaufen, „damit die Aufträge schneller durch sind“."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie den Vorschlag und schlagen Sie einen besseren Ansatzpunkt vor.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Eine doppelt so schnelle Maschine halbiert nur die Bearbeitungszeit: 90 auf 45 Minuten. Die Durchlaufzeit sinkt von 240 auf 195 Minuten, also um knapp 19 %. Der größte Anteil ist die Liegezeit vor dem Trockner (120 von 240 Minuten). Die Maschine würde diese Liegezeit vermutlich sogar verlängern, wenn der Trockner der Engpass ist. Besser: Ursache der Wartezeit vor dem Trockner analysieren (Kapazität des Trockners, Reihenfolge, Losgrößen) und dort ansetzen, etwa durch bessere Abstimmung oder einen zusätzlichen Trocknungsplatz. Erst mit Kosten und Zeitersparnis vergleichen.",
+        "raster": [
+          {
+            "kriterium": "Wirkung der schnelleren Maschine rechnerisch eingeordnet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Liegezeit als größter Anteil erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Trockner als möglicher Engpass erkannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Besserer Ansatzpunkt mit Prüfung von Kosten/Nutzen",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Wer Durchlaufzeiten verkürzen will, setzt am größten Zeitanteil und am Engpass an — nicht an der schnellsten Stelle.",
+      "quelle": "ik2024-lf06-k04, Abschnitte a3 und a4"
+    }
+  ]
+}
