@@ -1,0 +1,82 @@
+{
+  "application": "8166b36",
+  "engine": "original aufgaben.js in Node VM, no browser",
+  "all_new_task_values": 51,
+  "random_draws": 1000,
+  "source_build_content_identical": true,
+  "cases": [
+    {
+      "netto": 1000,
+      "expected_eur": {
+        "brutto": 1190,
+        "skonto_brutto": 23.8,
+        "skonto_netto": 20,
+        "vst_korrektur": 3.8,
+        "zahlbetrag": 1166.2
+      },
+      "score": 6,
+      "reversed": 6
+    },
+    {
+      "netto": 2500,
+      "expected_eur": {
+        "brutto": 2975,
+        "skonto_brutto": 59.5,
+        "skonto_netto": 50,
+        "vst_korrektur": 9.5,
+        "zahlbetrag": 2915.5
+      },
+      "score": 6,
+      "reversed": 6
+    },
+    {
+      "netto": 6000,
+      "expected_eur": {
+        "brutto": 7140,
+        "skonto_brutto": 142.8,
+        "skonto_netto": 120,
+        "vst_korrektur": 22.8,
+        "zahlbetrag": 6997.2
+      },
+      "score": 6,
+      "reversed": 6
+    }
+  ],
+  "missing_tax_score": 3.75,
+  "payrollExpected": {
+    "employee_sv": 634.5000000000001,
+    "employer_sv": 634.5000000000001,
+    "net": 1850.25,
+    "cost": 3634.5
+  },
+  "payroll_ladder_net": 1850.25,
+  "payroll_balances": {
+    "loehne": 3000,
+    "soziale": 634.5,
+    "vlst": 0,
+    "vsv": 0,
+    "vnetto": 0,
+    "bank": -3634.5
+  },
+  "closing_balances": {
+    "rent": 0,
+    "sales": 0,
+    "bank": 0,
+    "equity": 0,
+    "guv": 0,
+    "sbk": 0
+  },
+  "investment": {
+    "depreciation": 12500,
+    "averageCapital": 70000,
+    "interest": 3500,
+    "total": 57000
+  },
+  "travel": {
+    "tuesday": 14,
+    "wednesday": 11.199999999999998,
+    "thursday": 8.399999999999999,
+    "total": 33.599999999999994
+  },
+  "errors": []
+}

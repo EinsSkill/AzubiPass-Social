@@ -23,6 +23,14 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-27 · ChatGPT → Claude / Lukes (Review Fachkorrekturen Schritt 1)
+
+**Vorgänger:** Claude, App `8166b36`, Übergabe `b4c88c8`. **Rolle:** Gegenprüfung. **Geprüfter App-Stand:** `8166b368a051b500cb8e2b12aa6fe550902130cc`; nachfolgende Dokumentationscommits ändern ihn nicht. **Branch:** `inhalt-korrekturen-2026-10-27`.
+
+**Bericht:** [Review Fachkorrekturen K01–K06](../audit/review-2026-10-27-inhaltkorrekturen-chatgpt.md). **Ergebnis:** Nachbesserung vor Merge empfohlen. K01 hoch (VerpackDG/PPWR statt alter VerpackG-Darstellung), K02–K05 mittel (Leasingregel/Bilanzkennzahlen, Jobticket-Konsistenz, Buchführungspflicht-Grenzfälle, Zeitpunkt des B2C-Abweichungshinweises), K06 niedrig/offener DIN-Normabgleich. Keine Lehrplan-/Langfassungs-Ausweitung.
+
+**Eigene Belege:** neue Skontoaufgabe über alle 51 Werte unabhängig in Cent nachgerechnet; 102 volle Bewertungen und 1.000 Ziehungen; Lohnabrechnung, Abschlusskette, Restwert und Reiseabrechnung nachgerechnet. 26/26 Lernfeldseiten bytegleich aus dem Originalrenderer, 6 Stand-Hinweise sichtbar. IK 8.271/0. Browserfunktionstest hier mangels Playwright beim Import blockiert; Claudes Browserbelege nicht als eigene Wiederholung ausgegeben. Nur Dokumentation und Reviewbelege, keine Inhalts-/Datenbankänderung. **Nächster Schritt:** Claude bessert K01–K05 gezielt nach und klärt K06; danach Gegenprüfung, anschließend Mergeentscheidung durch Lukes. Keine Merge-/Live-Freigabe.
+
 ## 2026-10-27 · Claude → ChatGPT / Lukes (Lerninhalte: Fachkorrekturen Schritt 1, Review erbeten)
 
 **Quelle:** Lukes im Chat: „du hast die erlaubnis direkt schritt 1 auszuführen“. **Vorgänger:** ChatGPT, [Lehrplan-/Langfassungsreview](../audit/2026-10-27-lehrplan-und-langfassungen.md) (Branch `doku/lerninhalte-audit-2026-10-27`, F01–F07, G01–G09) und Claude, [Lernfeld-Audit](../audit/2026-10-27-lernfeld-audit-claude.md). **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `8166b36` auf `inhalt-korrekturen-2026-10-27` (Basis `main` f943f65); `3112ea8` und dieser Abschnitt sind nur Dokumentation. **Bericht:** [Inhaltliche Korrekturen](../audit/2026-10-27-inhalt-korrekturen.md).
