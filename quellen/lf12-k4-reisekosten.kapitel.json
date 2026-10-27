@@ -38,7 +38,7 @@
           "Bei einer Reise von Dienstag bis Donnerstag ist Dienstag Anreisetag, Mittwoch voller Zwischentag und Donnerstag Abreisetag.",
           "Ein im Hotelpreis enthaltenes Frühstück löst 20 % Kürzung aus; ein gestelltes Mittagessen weitere 40 %, jeweils vom vollen Tagessatz."
         ],
-        "fallbeispiel": "Eine Kollegin ist Dienstag 7 Uhr bis Donnerstag 19 Uhr unterwegs. Dienstag erhält den kleinen Satz, Mittwoch den großen und Donnerstag den kleinen Satz. Das Hotel stellt Frühstück an Mittwoch und Donnerstag: jeweils 20 % des vollen Tagessatzes werden gekürzt. Am Mittwoch wird zusätzlich das gestellte Mittagessen mit 40 % des vollen Tagessatzes gekürzt. Der Frühstücksanteil wird aus der Hotelrechnung herausgerechnet.",
+        "fallbeispiel": "Eine Kollegin ist Dienstag 7 Uhr bis Donnerstag 19 Uhr unterwegs. Dienstag erhält den kleinen Satz, Mittwoch den großen und Donnerstag den kleinen Satz. Das Hotel stellt Frühstück an Mittwoch und Donnerstag: jeweils 20 % des vollen Tagessatzes werden gekürzt. Am Mittwoch wird zusätzlich das gestellte Mittagessen mit 40 % des vollen Tagessatzes gekürzt. Der Frühstücksanteil wird aus der Hotelrechnung herausgerechnet. In Euro (Stand 2026): Dienstag 14,00 €; Mittwoch 28,00 € − 5,60 € − 11,20 € = 11,20 €; Donnerstag 14,00 € − 5,60 € = 8,40 €; zusammen 33,60 €.",
         "typische_fehler": "Die Stunden am An- und Abreisetag werden erneut geprüft oder die Prozentsätze auf den kleinen Satz statt den vollen Tagessatz angewendet. Auch ein nicht gegessenes, aber bereitgestelltes Frühstück wird nicht berücksichtigt.",
         "verstaendnisfragen": [
           "Worauf beziehen sich die Kürzungsprozentsätze? Immer auf den vollen Tagessatz.",
@@ -155,8 +155,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Der {{begriff:verpflegungspauschale|Verpflegungsmehraufwand}} wird nach der **Abwesenheitsdauer** gestaffelt. Bei mehrtägigen Reisen gelten für An- und Abreisetag eigene Regeln — dort kommt es auf die Dauer gar nicht an, sondern nur darauf, dass auswärts übernachtet wurde.",
-          "pruefen": "Die aktuellen Pauschbeträge für Verpflegungsmehraufwand im Inland und die Staffelung nach Abwesenheitsdauer vor Veröffentlichung gegen § 9 Abs. 4a EStG und die geltende Verwaltungsanweisung prüfen und die Euro-Beträge in der folgenden Tabelle eintragen."
+          "text": "Der {{begriff:verpflegungspauschale|Verpflegungsmehraufwand}} wird nach der **Abwesenheitsdauer** gestaffelt. Bei mehrtägigen Reisen gelten für An- und Abreisetag eigene Regeln — dort kommt es auf die Dauer gar nicht an, sondern nur darauf, dass auswärts übernachtet wurde. Die Pauschalen für Reisen im Inland betragen (Stand 2026, § 9 Abs. 4a EStG) **14 €** und **28 €**."
         },
         {
           "typ": "tabelle",
@@ -169,8 +168,8 @@
             {
               "zellen": [
                 "Eintägige Reise",
-                "Abwesenheit über der kleinen Schwelle",
-                "kleiner Satz"
+                "mehr als 8 Stunden abwesend",
+                "14 € (kleiner Satz)"
               ],
               "detail": "**Bleibt die Abwesenheit unter der Schwelle, gibt es gar nichts.** Der Gesetzgeber unterstellt, dass bei kurzer Abwesenheit kein Mehraufwand entsteht."
             },
@@ -178,14 +177,14 @@
               "zellen": [
                 "Ganzer Tag einer mehrtägigen Reise",
                 "volle 24 Stunden abwesend",
-                "großer Satz"
+                "28 € (großer Satz)"
               ]
             },
             {
               "zellen": [
                 "An- und Abreisetag",
                 "auswärtige Übernachtung",
-                "kleiner Satz"
+                "14 € (kleiner Satz)"
               ],
               "detail": "**Ohne Prüfung der Stundenzahl.** Entscheidend ist allein, dass am Vortag oder Folgetag auswärts übernachtet wurde — die tatsächliche Dauer des An- oder Abreisetags spielt keine Rolle."
             }
@@ -368,8 +367,8 @@
     },
     {
       "typ": "Fall",
-      "frage": "Eine Kollegin war von Dienstag 7 Uhr bis Donnerstag 19 Uhr auf Dienstreise. Im Hotel war Frühstück enthalten, am Mittwoch gab es bei der Fortbildung ein Mittagessen. Wie rechnest du die Verpflegung ab, ohne die konkreten Beträge zu kennen?",
-      "loesung": "Zunächst ist die Reise in drei Tage zu zerlegen. Der Dienstag ist Anreisetag mit auswärtiger Übernachtung und erhält deshalb den kleinen Satz, ohne dass die Stundenzahl geprüft wird. Der Mittwoch ist ein voller Zwischentag mit 24 Stunden Abwesenheit und erhält den großen Satz. Der Donnerstag ist Abreisetag und erhält ebenfalls den kleinen Satz. Anschließend sind die gestellten Mahlzeiten zu berücksichtigen. Das Frühstück war im Hotelpreis enthalten, also an Mittwoch und Donnerstag gestellt; für jeden dieser Tage wird die Pauschale um 20 Prozent des vollen Tagessatzes gekürzt. Das Mittagessen am Mittwoch führt zusätzlich zu einer Kürzung um 40 Prozent des vollen Tagessatzes. Am Dienstag erfolgt keine Kürzung, weil an diesem Tag keine Mahlzeit gestellt wurde. Zu beachten ist außerdem, dass der Frühstücksanteil aus der Hotelrechnung herauszurechnen und nicht als Übernachtungskosten anzusetzen ist. Die konkreten Euro-Beträge ergeben sich aus den jeweils geltenden Pauschbeträgen."
+      "frage": "Eine Kollegin war von Dienstag 7 Uhr bis Donnerstag 19 Uhr auf Dienstreise. Im Hotel war Frühstück enthalten, am Mittwoch gab es bei der Fortbildung ein Mittagessen. Wie rechnest du die Verpflegung ab (Stand 2026)?",
+      "loesung": "Zunächst ist die Reise in drei Tage zu zerlegen. Der Dienstag ist Anreisetag mit auswärtiger Übernachtung und erhält deshalb den kleinen Satz, ohne dass die Stundenzahl geprüft wird. Der Mittwoch ist ein voller Zwischentag mit 24 Stunden Abwesenheit und erhält den großen Satz. Der Donnerstag ist Abreisetag und erhält ebenfalls den kleinen Satz. Anschließend sind die gestellten Mahlzeiten zu berücksichtigen. Das Frühstück war im Hotelpreis enthalten, also an Mittwoch und Donnerstag gestellt; für jeden dieser Tage wird die Pauschale um 20 Prozent des vollen Tagessatzes gekürzt. Das Mittagessen am Mittwoch führt zusätzlich zu einer Kürzung um 40 Prozent des vollen Tagessatzes. Am Dienstag erfolgt keine Kürzung, weil an diesem Tag keine Mahlzeit gestellt wurde. Zu beachten ist außerdem, dass der Frühstücksanteil aus der Hotelrechnung herauszurechnen und nicht als Übernachtungskosten anzusetzen ist. In Euro mit den Inlandspauschalen 2026 (14 € und 28 €): Dienstag 14,00 €; Mittwoch 28,00 € − 5,60 € (Frühstück) − 11,20 € (Mittagessen) = 11,20 €; Donnerstag 14,00 € − 5,60 € = 8,40 €. Verpflegung insgesamt: 33,60 €."
     }
   ],
   "pruefungstipp": "Die Reisekostenabrechnung ist eine typische Rechenaufgabe. Geh immer in derselben Reihenfolge vor: Tage einzeln betrachten, je Tag den zutreffenden Satz bestimmen, dann die Kürzungen für gestellte Mahlzeiten abziehen. Die beiden Fallen sind der An- und Abreisetag, bei dem die Stundenzahl keine Rolle spielt, und die Kürzung, die sich immer auf den vollen Tagessatz bezieht — auch an Tagen mit dem kleinen Satz."

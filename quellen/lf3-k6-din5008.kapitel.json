@@ -92,7 +92,7 @@
               "id": "anschrift",
               "name": "Anschriftfeld",
               "x": 24,
-              "y": 40,
+              "y": 45,
               "b": 85,
               "h": 45,
               "art": "pflicht",
@@ -102,7 +102,7 @@
               "id": "info",
               "name": "Informationsblock",
               "x": 125,
-              "y": 40,
+              "y": 45,
               "b": 61,
               "h": 45,
               "art": "frei",
@@ -181,8 +181,8 @@
           ],
           "masse": [
             {
-              "bei": 40,
-              "text": "Anschriftfeld"
+              "bei": 45,
+              "text": "Anschriftfeld (Form B: 45 mm)"
             },
             {
               "bei": 92,
@@ -193,8 +193,7 @@
               "text": "Gruß"
             }
           ],
-          "regel": "Zwei Formen gibt es: Bei **Form A** beginnt das Anschriftfeld höher, bei **Form B** tiefer — Form B lässt mehr Platz für einen aufwendigen Briefkopf und ist im Geschäftsverkehr die übliche.",
-          "pruefen": "Die genauen Millimeterangaben für Seitenränder, Form A und Form B vor Veröffentlichung gegen die geltende DIN 5008 prüfen und in die Maßlinien eintragen."
+          "regel": "Zwei Formen gibt es: Bei **Form A** beginnt das Anschriftfeld 27 mm unter dem oberen Blattrand, bei **Form B** 45 mm — Form B lässt mehr Platz für einen aufwendigen Briefkopf und ist im Geschäftsverkehr die übliche. Das Anschriftfeld ist bei beiden Formen 85 mm breit und 45 mm hoch, der Informationsblock beginnt 125 mm vom linken Blattrand. Seitenränder: links 25 mm, rechts mindestens 20 mm."
         },
         {
           "typ": "merke",

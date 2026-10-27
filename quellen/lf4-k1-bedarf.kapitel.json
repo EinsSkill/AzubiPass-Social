@@ -46,8 +46,8 @@
           "120 Toner zu 180 € ergeben 21.600 € Jahreswert und gehören in der vorhandenen Tabelle zu A.",
           "3.000 Kugelschreiber zu 0,35 € ergeben nur 1.050 € Jahreswert und sind trotz der hohen Stückzahl C-Güter."
         ],
-        "fallbeispiel": "Ein Material wird 40-mal pro Jahr zu 950 € benötigt. Jahreswert: 40 × 950 € = 38.000 €. Die Menge ist klein, der Wert aber sehr hoch. Deshalb wird es als A-Gut behandelt: Bedarf möglichst genau bestimmen, Angebote sorgfältig vergleichen und den Bestand nicht unnötig groß machen.",
-        "typische_fehler": "Die Klasse wird nach Menge statt nach Wert vergeben. Auch die Richtwerte der ABC-Analyse werden als starre gesetzliche Grenzen behandelt, obwohl die vorhandene Grafik sie ausdrücklich als Faustwerte bezeichnet.",
+        "fallbeispiel": "Ein Material wird 40-mal pro Jahr zu 950 € benötigt. Jahreswert: 40 × 950 € = 38.000 €. Der gesamte Materialverbrauch liegt bei 50.000 €, das Material macht also 76 % des Werts aus. Die Menge ist klein, der Wertanteil aber sehr hoch. Deshalb wird es als A-Gut behandelt: Bedarf möglichst genau bestimmen, Angebote sorgfältig vergleichen und den Bestand nicht unnötig groß machen.",
+        "typische_fehler": "Die Klasse wird nach Menge statt nach Wert vergeben — oder nach einem absoluten Eurobetrag ohne Vergleich: 38.000 € sind bei 50.000 € Gesamtwert 76 %, bei 38 Mio. € nur 0,1 %. Auch die Richtwerte der ABC-Analyse werden als starre gesetzliche Grenzen behandelt, obwohl die vorhandene Grafik sie ausdrücklich als Faustwerte bezeichnet.",
         "verstaendnisfragen": [
           "Warum können wenige Stück A-Güter sein? Weil der Preis je Stück den Jahreswert stark erhöhen kann.",
           "Warum werden C-Güter vereinfacht beschafft? Weil eine sehr genaue Planung bei geringem Jahreswert mehr Aufwand verursachen kann, als sie einspart."
@@ -310,22 +310,22 @@
         },
         {
           "typ": "check",
-          "frage": "Ein Material hat einen Jahresverbrauch von 40 Stück bei 950 € je Stück. Wie behandelst du es?",
+          "frage": "Ein Material hat einen Jahresverbrauch von 40 Stück bei 950 € je Stück. Der gesamte Materialverbrauch des Betriebs liegt bei 50.000 € im Jahr; als A-Güter gelten die Materialien, die zusammen rund 75–80 % des Werts ausmachen. Wie behandelst du es?",
           "optionen": [
             {
               "text": "C-Gut — die Menge ist sehr klein",
               "richtig": false,
-              "echo": "Die Menge sagt nichts. 40 × 950 € sind 38.000 € Jahreswert — das ist mit Abstand ein A-Gut."
+              "echo": "Die Menge sagt nichts. 40 × 950 € sind 38.000 € Jahreswert, das sind 76 % des gesamten Materialwerts — damit ein A-Gut."
             },
             {
               "text": "A-Gut — hoher Jahreswert, also genau planen",
               "richtig": true,
-              "echo": "Richtig. 38.000 € Jahreswert bei nur 40 Stück ist das typische A-Gut: wenig Menge, viel Wert. Bedarf deterministisch rechnen, Angebote sorgfältig vergleichen, eher kleine Mengen häufiger bestellen."
+              "echo": "Richtig. 38.000 € von 50.000 € sind 76 % des Jahreswerts — bei nur 40 Stück das typische A-Gut: wenig Menge, viel Wert. Bedarf genau rechnen, Angebote sorgfältig vergleichen, eher kleine Mengen häufiger bestellen."
             },
             {
-              "text": "Lässt sich ohne die Werte der anderen Materialien nicht sagen",
+              "text": "Lässt sich auch mit diesen Angaben nicht sagen",
               "richtig": false,
-              "echo": "Formal stimmt das — die Klassen ergeben sich aus dem Vergleich. In der Prüfung genügt aber die Größenordnung, und 38.000 € bei 40 Stück ist eindeutig oben."
+              "echo": "Ohne Gesamtwert und Klassengrenze wäre das richtig — die ABC-Klasse ergibt sich immer aus dem Anteil am Gesamtwert, nie aus einem Eurobetrag allein. Hier sind aber beide Angaben gegeben: 76 % liegen im A-Bereich."
             }
           ]
         }

@@ -174,6 +174,8 @@ def grafik(b, lf):
     pruef = ''
     if b.get("pruefen"):
         pruef = f'<p class="pruefmarke dunkel">Zu prüfen: {html.escape(b["pruefen"])}</p>'
+    if b.get("standhinweis"):
+        pruef += stand_hinweis(b["standhinweis"])
     regel = f'<p class="sig-regel">{inline(b["regel"], lf)}</p>' if b.get("regel") else ""
     return (f'<div class="sig rein" data-grafik="{b["variante"]}">'
             f'<script type="application/json">{daten}</script>'
@@ -193,7 +195,17 @@ def block(b, lf, kennung):
     inhalt = bausteil(b, lf, kennung)
     if b["typ"] != "grafik" and b.get("pruefen"):
         inhalt += f'<p class="pruefmarke">Zu prüfen: {inline(b["pruefen"], lf)}</p>'
+    if b["typ"] != "grafik" and b.get("standhinweis"):
+        inhalt += stand_hinweis(b["standhinweis"])
     return inhalt
+
+
+def stand_hinweis(text):
+    """Ein Hinweis für Lernende zu Werten oder Regeln, die sich ändern können
+    (Jahreswerte, angekündigte Gesetze). Anders als ein pruefen-Feld ist das
+    kein Redaktionsauftrag: Der Inhalt ist geprüft, nur eben zeitgebunden.
+    Der Build listet alle Stand-Hinweise, damit sie jährlich nachgesehen werden."""
+    return f'<p class="standhinweis">Stand: {html.escape(text)}</p>'
 
 
 def bausteil(b, lf, kennung):
@@ -580,9 +592,12 @@ def start(lf, kapitel_daten, karten_zahl=0):
 def lernfeld_marke(lf):
     """Ein pruefen-Feld am Lernfeld gilt für den ganzen Lernzettel und gehört
     deshalb aufs Deckblatt — sonst wäre es eine Warnung, die niemand sieht."""
-    if not lf.get("pruefen"):
-        return ""
-    return f'<p class="pruefmarke dunkel">Zu prüfen: {html.escape(lf["pruefen"])}</p>'
+    marke = ""
+    if lf.get("pruefen"):
+        marke += f'<p class="pruefmarke dunkel">Zu prüfen: {html.escape(lf["pruefen"])}</p>'
+    if lf.get("standhinweis"):
+        marke += f'<p class="standhinweis dunkel">Stand: {html.escape(lf["standhinweis"])}</p>'
+    return marke
 
 
 def karten_zeile(n):
@@ -677,6 +692,9 @@ def baue(lernfeld_datei):
     print(f"  {len(genutzt)} von {len(lf['begriffe']) + len(lf['paragraphen'])} Einträgen des Speichers genutzt")
     if offen:
         print(f"  ACHTUNG: {offen} Prüf-Marker offen — vor Veröffentlichung klären")
+    staende = roh.count('"standhinweis"')
+    if staende:
+        print(f"  {staende} Stand-Hinweise (zeitgebundene Werte, jährlich nachsehen)")
 
     # Ein Marker, der niemand sieht, ist schlimmer als keiner: Er täuscht
     # Sicherheit vor. Steht ein pruefen-Feld an einer Stelle, die es nicht

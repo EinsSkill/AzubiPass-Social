@@ -13,16 +13,16 @@
           "Investitionen verursachen Anschaffungskosten und laufende Kosten.",
           "Statische Verfahren arbeiten mit Durchschnittswerten."
         ],
-        "erklaerung": "Der Kostenvergleich betrachtet Abschreibung, kalkulatorische Zinsen und Betriebskosten. Die kalkulatorischen Zinsen beziehen sich auf das durchschnittlich gebundene Kapital, bei gleichmäßiger Wertminderung also auf den halben Anschaffungswert. Bei unterschiedlichen Mengen werden Kosten je Stück verglichen.",
+        "erklaerung": "Der Kostenvergleich betrachtet Abschreibung, kalkulatorische Zinsen und Betriebskosten. Die kalkulatorischen Zinsen beziehen sich auf das durchschnittlich gebundene Kapital, bei gleichmäßiger Wertminderung ohne Restwert also auf den halben Anschaffungswert. Bleibt am Ende ein Restwert R, beträgt das durchschnittlich gebundene Kapital (Anschaffungswert + R) ÷ 2. Bei unterschiedlichen Mengen werden Kosten je Stück verglichen.",
         "beispiele": [
           "Bei 120.000 € Anschaffung und acht Jahren Nutzungsdauer beträgt die jährliche Abschreibung 120.000 € ÷ 8 = 15.000 €.",
           "Bei gleichmäßigem Wertverzehr wird für die kalkulatorischen Zinsen das durchschnittliche Kapital angesetzt, nicht der volle Anfangswert."
         ],
-        "fallbeispiel": "Eine Anlage kostet 120.000 €, läuft acht Jahre, hat keinen Restwert, der kalkulatorische Zinssatz beträgt 5 % und die Betriebskosten betragen 41.000 € jährlich. Abschreibung: 120.000 € ÷ 8 = 15.000 €. Durchschnittlich gebundenes Kapital: 60.000 €. Zinsen: 60.000 € × 5 % = 3.000 €. Gesamtkosten: 15.000 € + 3.000 € + 41.000 € = 59.000 € pro Jahr.",
+        "fallbeispiel": "Eine Anlage kostet 120.000 €, läuft acht Jahre, hat keinen Restwert, der kalkulatorische Zinssatz beträgt 5 % und die Betriebskosten betragen 41.000 € jährlich. Abschreibung: 120.000 € ÷ 8 = 15.000 €. Durchschnittlich gebundenes Kapital: 60.000 €. Zinsen: 60.000 € × 5 % = 3.000 €. Gesamtkosten: 15.000 € + 3.000 € + 41.000 € = 59.000 € pro Jahr. Gegenfall mit 20.000 € Restwert: Abschreibung (120.000 € − 20.000 €) ÷ 8 = 12.500 €; durchschnittlich gebundenes Kapital (120.000 € + 20.000 €) ÷ 2 = 70.000 €; Zinsen 3.500 €; Gesamtkosten 12.500 € + 3.500 € + 41.000 € = 57.000 €.",
         "typische_fehler": "Die Abschreibung wird durch den falschen Zeitraum geteilt oder die Zinsen auf den vollen Anschaffungswert gerechnet. Bei verschiedenen Mengen werden Gesamtkosten statt Stückkosten verglichen.",
         "verstaendnisfragen": [
           "Welche drei Bestandteile enthält der Kostenvergleich? Abschreibung, kalkulatorische Zinsen und Betriebskosten.",
-          "Worauf werden kalkulatorische Zinsen bei gleichmäßiger Wertminderung gerechnet? Auf das halbe beziehungsweise durchschnittlich gebundene Anschaffungskapital."
+          "Worauf werden kalkulatorische Zinsen bei gleichmäßiger Wertminderung gerechnet? Auf das durchschnittlich gebundene Kapital: ohne Restwert die Hälfte der Anschaffung, mit Restwert (Anschaffung + Restwert) ÷ 2."
         ],
         "pruefungsbezug": "Schreibe die drei Kostenbestandteile hin, berechne das durchschnittliche Kapital und teile bei Mengenunterschieden auf Stück um.",
         "merksatz": "Kostenvergleich heißt: Abschreibung plus kalkulatorische Zinsen plus Betriebskosten."
@@ -129,7 +129,7 @@
                 2,
                 3
               ],
-              "detail": "**Das durchschnittlich gebundene Kapital ist die halbe Anschaffung**, weil der Wert gleichmäßig von voll auf null sinkt. Bei 5 % ergibt das für A: 40.000 × 5 % = 2.000 €."
+              "detail": "**Ohne Restwert ist das durchschnittlich gebundene Kapital die halbe Anschaffung**, weil der Wert gleichmäßig von voll auf null sinkt. Bei 5 % ergibt das für A: 40.000 × 5 % = 2.000 €. Mit Restwert gilt (Anschaffung + Restwert) ÷ 2 — bei 120.000 € und 20.000 € Restwert also 70.000 €."
             },
             {
               "zellen": [
@@ -160,8 +160,8 @@
         },
         {
           "typ": "merke",
-          "text": "**Kalkulatorische Zinsen rechnen mit dem halben Anschaffungswert**, weil das gebundene Kapital über die Nutzungsdauer gleichmäßig auf null sinkt. Das ist der meistvergessene Schritt.",
-          "karteikarte": "Wie berechnet man die kalkulatorischen Zinsen im Kostenvergleich, und warum wird mit dem halben Anschaffungswert gerechnet?"
+          "text": "**Kalkulatorische Zinsen rechnen mit dem durchschnittlich gebundenen Kapital** — ohne Restwert ist das der halbe Anschaffungswert, weil das Kapital gleichmäßig auf null sinkt; mit Restwert (Anschaffung + Restwert) ÷ 2. Das ist der meistvergessene Schritt.",
+          "karteikarte": "Wie berechnet man die kalkulatorischen Zinsen im Kostenvergleich — ohne und mit Restwert?"
         },
         {
           "typ": "achtung",
@@ -377,7 +377,7 @@
   ],
   "zusammenfassung": [
     "Der Kostenvergleich betrachtet Abschreibung, kalkulatorische Zinsen und Betriebskosten.",
-    "Kalkulatorische Zinsen rechnen mit dem halben Anschaffungswert als gebundenem Kapital.",
+    "Kalkulatorische Zinsen rechnen mit dem durchschnittlich gebundenen Kapital: ohne Restwert Anschaffung ÷ 2, mit Restwert (Anschaffung + Restwert) ÷ 2.",
     "Bei unterschiedlichen Mengen ist auf Kosten je Stück umzurechnen.",
     "Der Gewinnvergleich stellt den Kosten die Erlöse gegenüber.",
     "Der Rentabilitätsvergleich setzt den Gewinn ins Verhältnis zum gebundenen Kapital.",
@@ -402,5 +402,5 @@
       "loesung": "Die Amortisationsrechnung allein trägt die Entscheidung nicht, weil sie ein Risikomaß und kein Rentabilitätsmaß ist. Sie sagt nur, wie schnell das eingesetzte Geld zurückfließt, und begünstigt damit systematisch die kleinere Investition. Anlage A ist die risikoärmere Wahl: Das Kapital ist schneller zurück, Fehleinschätzungen bei der Absatzprognose wirken sich weniger stark aus, und die Liquidität wird geringer belastet. Anlage B bringt jedoch den höheren absoluten Gewinn und ist deshalb zu bevorzugen, wenn die Nutzungsdauer deutlich über vier Jahre liegt, die Absatzprognose belastbar ist und die Finanzierung gesichert werden kann. Für eine tragfähige Entscheidung sollte zusätzlich der Rentabilitätsvergleich gerechnet werden, weil er den Gewinn ins Verhältnis zum gebundenen Kapital setzt und damit die unterschiedlichen Größenordnungen berücksichtigt. Bei langer Laufzeit ist außerdem eine dynamische Rechnung sinnvoll. Nicht messbare Gesichtspunkte wie Kapazitätsreserve, Qualität und Abhängigkeit vom Lieferer gehören ebenfalls in die Abwägung."
     }
   ],
-  "pruefungstipp": "Die Amortisationsdauer ist die häufigste Rechenaufgabe und hat genau eine Falle: Der Rückfluss ist Gewinn plus Abschreibung. Schreib die Formel hin, bevor du einsetzt. Beim Kostenvergleich ist der zweite Klassiker die kalkulatorische Verzinsung — immer auf das halbe Anschaffungskapital. Wenn nach der Beurteilung gefragt wird, nenne ausdrücklich, dass es sich um statische Verfahren ohne Zeitwert des Geldes handelt; das gibt fast immer einen zusätzlichen Punkt."
+  "pruefungstipp": "Die Amortisationsdauer ist die häufigste Rechenaufgabe und hat genau eine Falle: Der Rückfluss ist Gewinn plus Abschreibung. Schreib die Formel hin, bevor du einsetzt. Beim Kostenvergleich ist der zweite Klassiker die kalkulatorische Verzinsung auf das durchschnittlich gebundene Kapital — ohne Restwert die halbe Anschaffung, mit Restwert (Anschaffung + Restwert) ÷ 2. Wenn nach der Beurteilung gefragt wird, nenne ausdrücklich, dass es sich um statische Verfahren ohne Zeitwert des Geldes handelt; das gibt fast immer einen zusätzlichen Punkt."
 }

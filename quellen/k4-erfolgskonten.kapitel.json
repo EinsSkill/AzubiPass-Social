@@ -76,8 +76,8 @@
           "Bestandskonten werden am Ende über das Schlussbilanzkonto abgeschlossen."
         ],
         "ablauf": [
-          "Zuerst Aufwandskonten mit ihrem Sollsaldo an die GuV abschließen.",
-          "Danach Ertragskonten mit ihrem Habensaldo an die GuV abschließen.",
+          "Zuerst die Aufwandskonten abschließen: Buchungssatz „GuV an Aufwandskonto“, der Saldo steht danach im Soll der GuV.",
+          "Danach die Ertragskonten abschließen: Buchungssatz „Ertragskonto an GuV“, der Saldo steht danach im Haben der GuV.",
           "Den Saldo der GuV als Gewinn oder Verlust in das Eigenkapital übertragen.",
           "Erst danach die Bestandskonten über das SBK abschließen."
         ],
@@ -86,7 +86,7 @@
           "Der Mietaufwand von 12.000 € wird zuerst in die GuV übertragen; erst danach wird der Jahresüberschuss von 23.000 € ins Eigenkapital gebucht.",
           "Das Bankkonto wird erst im letzten Schritt mit seinem Restbestand ins SBK übernommen."
         ],
-        "fallbeispiel": "Die Abschlusskette der vorhandenen Grafik lautet: 1. Aufwandskonten an GuV, 2. Ertragskonten an GuV, 3. GuV an Eigenkapital bei Gewinn, 4. Aktivkonten an SBK beziehungsweise SBK an Passivkonten. Die Kontrolle lautet: Nach Schritt 3 muss der Jahreserfolg im Eigenkapital enthalten sein; erst dann kann die Schlussbilanz korrekt erstellt werden.",
+        "fallbeispiel": "Mini-Abschluss: Mietaufwand 12.000 € (Soll), Umsatzerlöse 35.000 € (Haben), Bank 50.000 € (Soll), Eigenkapital 27.000 € (Haben). 1. GuV an Mietaufwand 12.000 € — der Aufwand steht im Soll, also wird er im Haben ausgeglichen und landet im Soll der GuV. 2. Umsatzerlöse an GuV 35.000 €. 3. Die GuV zeigt 35.000 € − 12.000 € = 23.000 € Gewinn: GuV an Eigenkapital 23.000 €; das Eigenkapital steigt auf 50.000 €. 4. SBK an Bank 50.000 € und Eigenkapital an SBK 50.000 €. Kontrolle: Alle Konten stehen auf null, das SBK ist mit 50.000 € auf beiden Seiten ausgeglichen. Wer stattdessen „Mietaufwand an GuV“ bucht, schreibt den Aufwand ein zweites Mal ins Soll — das Konto geht dann nie auf.",
         "typische_fehler": "Bestandskonten werden vor den Erfolgskonten abgeschlossen oder der GuV-Saldo wird nicht ins Eigenkapital übertragen. Dann kann die Schlussbilanz trotz richtiger Einzelbuchungen nicht aufgehen.",
         "verstaendnisfragen": [
           "Warum kommen die Bestandskonten zuletzt? Weil das Eigenkapital vorher noch um den Jahreserfolg korrigiert werden muss.",

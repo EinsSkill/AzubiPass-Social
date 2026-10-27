@@ -204,6 +204,43 @@
       },
       "erklaerung": "Der Operator „Erläutern Sie“ verlangt den Zusammenhang, nicht nur die Feststellung.",
       "quelle": "k6, Abschnitt f1"
+    },
+    {
+      "id": "buchfuehrung-k6-06",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 6,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": ["vorgang:stoffeinkauf"],
+      "variablen": {
+        "netto": { "von": 1000, "bis": 6000, "schritt": 100 }
+      },
+      "abgeleitet": {
+        "brutto": "runde(netto * 1.19, 2)",
+        "skonto_brutto": "runde(brutto * 0.02, 2)",
+        "skonto_netto": "runde(skonto_brutto / 1.19, 2)",
+        "vst_korrektur": "skonto_brutto - skonto_netto",
+        "zahlbetrag": "brutto - skonto_brutto"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Deniz Aydın bezahlt eine Stoffrechnung über {brutto} € brutto (19 % Umsatzsteuer) innerhalb der Skontofrist per Banküberweisung; es gelten die Standardbedingungen 10 Tage 2 % Skonto." }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 4,
+          "loesung": [
+            { "soll": "4400", "haben": null, "betrag": "brutto" },
+            { "soll": null, "haben": "2800", "betrag": "zahlbetrag" },
+            { "soll": null, "haben": "6001", "betrag": "skonto_netto" },
+            { "soll": null, "haben": "2600", "betrag": "vst_korrektur" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 6 },
+      "erklaerung": "Der Skonto wird vom Bruttobetrag berechnet und dann aufgeteilt: Der Nettoanteil mindert den Einkaufsaufwand (6001 Nachlässe), der Steueranteil berichtigt die Vorsteuer (§ 17 UStG). Die Verbindlichkeit wird vollständig ausgebucht.",
+      "quelle": "k6, Abschnitt f3"
     }
   ]
 }
