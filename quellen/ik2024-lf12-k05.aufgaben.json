@@ -1,0 +1,95 @@
+{
+  "lernfeld": "ik2024-lf12",
+  "kapitel": "k05",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf12-k05-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Sandra Koslowski erklärt Luca Petrelli die Vergütungsformen bei der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Entgeltform liegt vor?",
+          "ziele": ["Zeitlohn", "Akkordlohn", "Prämienlohn"],
+          "elemente": [
+            { "text": "Monatsgehalt in der Buchhaltung", "loesung": "Zeitlohn" },
+            { "text": "Bezahlung nach Zahl der umgenähten Etiketten mit Vorgabezeit", "loesung": "Akkordlohn" },
+            { "text": "Grundlohn plus Bonus bei weniger als 1 % Reklamationen", "loesung": "Prämienlohn" },
+            { "text": "Stundenlohn für Aushilfen im Store", "loesung": "Zeitlohn" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Zeitlohn bezahlt Zeit, Akkordlohn die Menge nach Vorgabezeit, Prämienlohn einen Grundlohn plus leistungsabhängige Prämie.",
+      "quelle": "ik2024-lf12-k05, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf12-k05-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "richtsatz": { "von": 15, "bis": 21, "schritt": 3 },
+        "vorgabe": { "von": 4, "bis": 6, "schritt": 1 },
+        "stueck": { "von": 90, "bis": 120, "schritt": 10 }
+      },
+      "abgeleitet": {
+        "minutenfaktor": "richtsatz / 60",
+        "lohn": "runde(stueck * vorgabe * minutenfaktor, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "In der Näherei der MAKEL Studio GmbH wird für das Umnähen von Etiketten Stückakkord gezahlt. Akkordrichtsatz {richtsatz} € pro Stunde, Vorgabezeit {vorgabe} Minuten je Stück. Eine Näherin schafft an einem Tag {stueck} Stück." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Minutenfaktor", "einheit": "€/min", "loesung": "minutenfaktor", "toleranz": 0.001, "punkte": 2 },
+        { "block": "zahl", "label": "Bruttolohn für den Tag", "einheit": "€", "loesung": "lohn", "toleranz": 0.01, "punkte": 3, "folgefehler_aus": ["minutenfaktor"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 5 },
+      "erklaerung": "Minutenfaktor = Akkordrichtsatz ÷ 60. Bruttolohn = Stückzahl × Vorgabezeit × Minutenfaktor.",
+      "quelle": "ik2024-lf12-k05, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf12-k05-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Tobias Renner möchte in der Veredelung der MAKEL Studio GmbH (Stick und Lasergravur auf Kundenwunsch, viele Einzelaufträge, hoher Qualitätsanspruch) vom Zeitlohn auf reinen Stückakkord umstellen, „damit mehr geschafft wird“. Luca Petrelli soll außerdem für eine Infomail ausrechnen, „was netto übrig bleibt“, und dafür pauschal 70 % des Bruttos ansetzen." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie beide Vorhaben und schlagen Sie Alternativen vor.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Reiner Akkord setzt Mengenanreize. In der Veredelung mit wechselnden Einzelaufträgen sind Vorgabezeiten schwer festzulegen, Rüstzeiten groß und Qualität entscheidend; Mengendruck kann Fehler und Reklamationen erhöhen und Stress verursachen. Besser: Zeitlohn beibehalten oder ein Prämiensystem, das Menge und Qualität (z. B. Reklamationsquote) verbindet, transparent vereinbart und — falls ein Betriebsrat besteht — mit ihm abgestimmt. Die pauschale 70-%-Rechnung ist ungeeignet: Das Netto hängt von Steuerklasse, Kinderfreibeträgen, Kirchenzugehörigkeit, Krankenkasse und den Jahreswerten ab. In der Infomail daher keine Nettozahl nennen, sondern auf die individuelle Abrechnung bzw. einen Brutto-Netto-Rechner mit den eigenen Daten verweisen.",
+        "raster": [
+          { "kriterium": "Nachteile des Akkords für Veredelung begründet (Qualität, Vorgabezeiten, Rüsten)", "punkte": 1 },
+          { "kriterium": "Alternative (Prämie mit Qualität, Zeitlohn) begründet", "punkte": 1 },
+          { "kriterium": "Pauschale Nettoquote als ungeeignet begründet", "punkte": 1 },
+          { "kriterium": "Alternative für die Infomail genannt", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Entgeltsysteme müssen zur Arbeit passen; Nettobeträge sind individuell.",
+      "quelle": "ik2024-lf12-k05, Abschnitte a1, a3 und a4"
+    }
+  ]
+}

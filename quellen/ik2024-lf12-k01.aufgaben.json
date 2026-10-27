@@ -1,0 +1,96 @@
+{
+  "lernfeld": "ik2024-lf12",
+  "kapitel": "k01",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf12-k01-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Deniz Aydın plant die Besetzung der Veredelung der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Betrifft die Angabe den qualitativen oder den quantitativen Personalbedarf?",
+          "ziele": ["qualitativ", "quantitativ"],
+          "elemente": [
+            { "text": "Erfahrung mit Vektorgrafiken für Gravurdateien", "loesung": "qualitativ" },
+            { "text": "480 produktive Stunden pro Monat", "loesung": "quantitativ" },
+            { "text": "Kenntnisse im Arbeitsschutz an Lasergeräten", "loesung": "qualitativ" },
+            { "text": "Zwei zusätzliche Vollzeitäquivalente ab März", "loesung": "quantitativ" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Qualitativ: welche Kompetenzen; quantitativ: wie viele Personen oder Stunden.",
+      "quelle": "ik2024-lf12-k01, Abschnitt a1"
+    },
+
+    {
+      "id": "ik2024-lf12-k01-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "vzae": { "von": 3, "bis": 6, "schritt": 1 },
+        "produktiv": { "von": 140, "bis": 160, "schritt": 10 },
+        "bestand": { "von": 2, "bis": 3, "schritt": 1 },
+        "abgang": { "von": 1, "bis": 2, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "stunden": "vzae * produktiv",
+        "netto": "vzae - bestand + abgang"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Für die Laserstation der MAKEL Studio GmbH werden monatlich {stunden} produktive Stunden benötigt. Je Vollzeitkraft stehen {produktiv} produktive Stunden zur Verfügung (Ausfallzeiten bereits berücksichtigt). Heute arbeiten {bestand} Vollzeitkräfte an der Station; bis zum Planungszeitpunkt scheiden {abgang} davon durch Versetzung in die Stickerei aus. Zugänge sind nicht geplant." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Bruttobedarf", "einheit": "VZÄ", "loesung": "vzae", "toleranz": 0, "punkte": 2 },
+        { "block": "zahl", "label": "Nettobedarf", "einheit": "VZÄ", "loesung": "netto", "toleranz": 0, "punkte": 2, "folgefehler_aus": ["vzae"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Bruttobedarf = benötigte Stunden ÷ produktive Stunden je Vollzeitkraft. Nettobedarf = Bruttobedarf − Bestand + Abgänge − Zugänge.",
+      "quelle": "ik2024-lf12-k01, Abschnitte a2 und a3"
+    },
+
+    {
+      "id": "ik2024-lf12-k01-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Für die Laserstation fehlen der MAKEL Studio GmbH zwei Vollzeitäquivalente. Tobias Renner will sofort zwei erfahrene Fachkräfte extern einstellen. Deniz Aydın schlägt vor, eine Stickerin weiterzubilden und für die Stickerei zwei Teilzeitkräfte mit je 50 % einzustellen. Die Aufträge für Gravuren sind noch unsicher." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie beide Vorschläge quantitativ und qualitativ und geben Sie eine Empfehlung.", "zeilen": 7 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Quantitativ deckt Tobias' Vorschlag die zwei VZÄ an der Station vollständig. Deniz' Vorschlag bringt an die Station nur ein VZÄ (die weitergebildete Stickerin); die zwei halben Stellen ersetzen sie in der Stickerei (ein VZÄ, aber zwei Köpfe). Qualitativ bringt externe Erfahrung schnelle Einsatzfähigkeit, ist aber teuer und bei unsicherer Auftragslage riskant. Die Weiterbildung nutzt Kunden- und Qualitätswissen, braucht Schulungszeit und hat eine Lücke an der Station (nur ein VZÄ). Empfehlung: Kombination — eine Stickerin weiterbilden, eine Fachkraft extern oder befristet einstellen, Auftragsentwicklung beobachten; Teilzeitkräfte für die Stickerei, weil sie Flexibilität bringen.",
+        "raster": [
+          { "kriterium": "Quantitative Wirkung (VZÄ vs. Köpfe) richtig dargestellt", "punkte": 1 },
+          { "kriterium": "Vor- und Nachteile externer Einstellung genannt", "punkte": 1 },
+          { "kriterium": "Vor- und Nachteile der Weiterbildung genannt (inkl. Lücke)", "punkte": 1 },
+          { "kriterium": "Begründete Empfehlung mit Blick auf Unsicherheit", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Personalentscheidungen verbinden Menge, Qualifikation, Kosten und Unsicherheit.",
+      "quelle": "ik2024-lf12-k01, Abschnitte a3 und a4"
+    }
+  ]
+}

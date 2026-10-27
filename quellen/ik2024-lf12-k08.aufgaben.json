@@ -1,0 +1,95 @@
+{
+  "lernfeld": "ik2024-lf12",
+  "kapitel": "k08",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf12-k08-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Sandra Koslowski erklärt Luca Petrelli die Personalkennzahlen der MAKEL Studio GmbH." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Kennzahl beantwortet die Frage?",
+          "ziele": ["Fluktuationsquote", "Fehlzeitenquote", "Überstundenquote", "Ausbildungsquote"],
+          "elemente": [
+            { "text": "Wie viele Beschäftigte haben uns im Verhältnis zum Bestand verlassen?", "loesung": "Fluktuationsquote" },
+            { "text": "Welcher Anteil der Soll-Arbeitstage fiel aus?", "loesung": "Fehlzeitenquote" },
+            { "text": "Wie viel wurde über die vereinbarte Zeit hinaus gearbeitet?", "loesung": "Überstundenquote" },
+            { "text": "Wie hoch ist der Anteil der Auszubildenden an den Beschäftigten?", "loesung": "Ausbildungsquote" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Jede Kennzahl hat eine eigene Frage und eine eigene Bezugsgröße.",
+      "quelle": "ik2024-lf12-k08, Abschnitt a2"
+    },
+
+    {
+      "id": "ik2024-lf12-k08-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "anfang": { "von": 76, "bis": 84, "schritt": 2 },
+        "ende": { "von": 78, "bis": 86, "schritt": 2 },
+        "austritte": { "von": 3, "bis": 8, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "schnitt": "(anfang + ende) / 2",
+        "quote": "runde(austritte / schnitt * 100, 1)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Fiktive Übungsperiode bei der MAKEL Studio GmbH (ohne Aushilfen und Auszubildende): Bestand am 1. Januar {anfang}, am 31. Dezember {ende} Beschäftigte; im Jahr gab es {austritte} Austritte. Verwenden Sie als durchschnittlichen Bestand das Mittel aus Anfangs- und Endbestand und als Fluktuationsquote Austritte ÷ durchschnittlicher Bestand × 100 (eine Nachkommastelle)." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Durchschnittlicher Bestand", "einheit": "Beschäftigte", "loesung": "schnitt", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Fluktuationsquote", "einheit": "%", "loesung": "quote", "toleranz": 0.1, "punkte": 2, "folgefehler_aus": ["schnitt"] }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Ø Bestand = (Anfangsbestand + Endbestand) ÷ 2. Fluktuationsquote = Austritte ÷ Ø Bestand × 100.",
+      "quelle": "ik2024-lf12-k08, Abschnitte a1 und a2"
+    },
+
+    {
+      "id": "ik2024-lf12-k08-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Bericht an Yuki Bergmann: „Fehlzeitenquote Lager 2,1 % (Vorjahr 3,8 %) — das Team ist zufrieden. Überstundenquote 7 % (Vorjahr 3 %). Anbei die Fehlzeiten je Person für das Team Lasergravur (2 Personen).“ Zwei Austrittsgespräche nannten Arbeitsdruck als Grund." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie den Bericht inhaltlich und aus Sicht des Datenschutzes und schlagen Sie Maßnahmen mit Messkriterien vor.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Die gesunkene Fehlzeitenquote beweist keine Zufriedenheit: Gestiegene Überstunden und die Austrittsgespräche deuten auf hohen Arbeitsdruck hin; möglich ist auch, dass Beschäftigte trotz Krankheit arbeiten. Der Schluss „zufrieden“ ist nicht belegt. Datenschutz: Fehlzeiten je Person eines Zwei-Personen-Teams machen Einzelne identifizierbar und sind für den Bericht nicht erforderlich — mit anderen Teams aggregieren, Detaildaten nur für Berechtigte. Maßnahmen: Personalbedarf prüfen, Aushilfe für Spitzen; Ziel Überstundenquote unter 4 % bis Ende des nächsten Quartals; anonyme Kurzbefragung zum Arbeitsdruck mit Zielwert; Wirkung nach drei Monaten prüfen.",
+        "raster": [
+          { "kriterium": "Fehlschluss Fehlzeiten = Zufriedenheit erkannt", "punkte": 1 },
+          { "kriterium": "Überstunden und Austrittsgründe als Gegenindiz genutzt", "punkte": 1 },
+          { "kriterium": "Datenschutzproblem bei Kleingruppe erkannt und Lösung genannt", "punkte": 1 },
+          { "kriterium": "Maßnahmen mit Ziel, Frist und Messkriterium", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Kennzahlen brauchen Deutung im Zusammenhang — und ihr Ausweis darf niemanden bloßstellen.",
+      "quelle": "ik2024-lf12-k08, Abschnitte a3 und a4"
+    }
+  ]
+}

@@ -78,7 +78,7 @@
           "Im Anhang erläutert MAKEL, nach welcher Methode Vorräte bewertet werden.",
           "Ein Lagebericht beschreibt etwa die Abhängigkeit von wenigen Großkunden als Risiko."
         ],
-        "fallbeispiel": "Die MAKEL Studio GmbH ist eine kleine Kapitalgesellschaft. Sandra erstellt Bilanz, GuV und einen verkürzten Anhang; ein Lagebericht ist nicht vorgeschrieben. Für das Bankgespräch erläutert Tobias Renner trotzdem in einem kurzen Begleitschreiben, wie sich das Jahr entwickelt hat.",
+        "fallbeispiel": "Die MAKEL Studio GmbH ist mit 92 Beschäftigten und ihren Umsätzen eine mittelgroße Kapitalgesellschaft. Sandra erstellt deshalb Bilanz, GuV und Anhang; die Geschäftsführung ergänzt einen Lagebericht, und eine Wirtschaftsprüferin prüft den Abschluss. Für das Bankgespräch nutzt Tobias Renner den Lagebericht, um Chancen und Risiken des Gravurgeschäfts zu erläutern.",
         "typische_fehler": "Jede GmbH zu einem Lagebericht verpflichten.",
         "verstaendnisfragen": [
           "Was enthält der Anhang? Erläuterungen zu Bilanzierungs- und Bewertungsmethoden und Zusatzangaben.",
@@ -90,10 +90,26 @@
     ]
   },
   "lernziele": [
-    { "id": "lz1", "text": "Zusammenhang von Bilanz und GuV über das Eigenkapital erklären", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Posten der Bilanzgliederung nach § 266 HGB zuordnen", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Eine GuV nach dem Gesamtkostenverfahren aufbauen", "abschnitt": "a3" },
-    { "id": "lz4", "text": "Anhang und Lagebericht nach Größe einordnen", "abschnitt": "a4" }
+    {
+      "id": "lz1",
+      "text": "Zusammenhang von Bilanz und GuV über das Eigenkapital erklären",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Posten der Bilanzgliederung nach § 266 HGB zuordnen",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Eine GuV nach dem Gesamtkostenverfahren aufbauen",
+      "abschnitt": "a3"
+    },
+    {
+      "id": "lz4",
+      "text": "Anhang und Lagebericht nach Größe einordnen",
+      "abschnitt": "a4"
+    }
   ],
   "bloecke": [
     {
@@ -101,7 +117,10 @@
       "id": "a1",
       "titel": "Zwei Rechnungen, ein Ergebnis",
       "inhalt": [
-        { "typ": "absatz", "text": "Der {{begriff:jahresueberschuss|Jahresüberschuss}} verbindet die GuV mit der Bilanz." },
+        {
+          "typ": "absatz",
+          "text": "Der {{begriff:jahresueberschuss|Jahresüberschuss}} verbindet die GuV mit der Bilanz."
+        },
         {
           "typ": "grafik",
           "variante": "vergleich",
@@ -109,22 +128,58 @@
           "titel": "Bilanz und GuV",
           "lead": "Tippe einen Punkt an, um mehr zu erfahren.",
           "seiten": [
-            { "name": "Bilanz", "ton": "gold", "punkte": [
-              { "text": "Zeitpunktrechnung zum Stichtag", "detail": "Sie zeigt den Stand am 31.12., nicht die Bewegungen des Jahres." },
-              { "text": "Aktiva: Mittelverwendung", "detail": "Wofür das Kapital eingesetzt ist: Maschinen, Vorräte, Forderungen, Bank." },
-              { "text": "Passiva: Mittelherkunft", "detail": "Woher das Kapital stammt: Eigenkapital, Rückstellungen, Verbindlichkeiten." },
-              { "text": "Eigenkapital enthält das Jahresergebnis", "detail": "Der Jahresüberschuss erhöht das Eigenkapital, bis über seine Verwendung entschieden ist." }
-            ] },
-            { "name": "GuV", "ton": "gruen", "punkte": [
-              { "text": "Zeitraumrechnung für das Geschäftsjahr", "detail": "Sie summiert alle Aufwendungen und Erträge vom 1.1. bis 31.12." },
-              { "text": "Erträge: Wertzuwachs", "detail": "Umsatzerlöse, Bestandsmehrungen, Zinserträge, sonstige Erträge." },
-              { "text": "Aufwendungen: Wertverzehr", "detail": "Material, Personal, Abschreibungen, Zinsen, Steuern." },
-              { "text": "Saldo = Jahresergebnis", "detail": "Überschuss oder Fehlbetrag, der in die Bilanz übernommen wird." }
-            ] }
+            {
+              "name": "Bilanz",
+              "ton": "gold",
+              "punkte": [
+                {
+                  "text": "Zeitpunktrechnung zum Stichtag",
+                  "detail": "Sie zeigt den Stand am 31.12., nicht die Bewegungen des Jahres."
+                },
+                {
+                  "text": "Aktiva: Mittelverwendung",
+                  "detail": "Wofür das Kapital eingesetzt ist: Maschinen, Vorräte, Forderungen, Bank."
+                },
+                {
+                  "text": "Passiva: Mittelherkunft",
+                  "detail": "Woher das Kapital stammt: Eigenkapital, Rückstellungen, Verbindlichkeiten."
+                },
+                {
+                  "text": "Eigenkapital enthält das Jahresergebnis",
+                  "detail": "Der Jahresüberschuss erhöht das Eigenkapital, bis über seine Verwendung entschieden ist."
+                }
+              ]
+            },
+            {
+              "name": "GuV",
+              "ton": "gruen",
+              "punkte": [
+                {
+                  "text": "Zeitraumrechnung für das Geschäftsjahr",
+                  "detail": "Sie summiert alle Aufwendungen und Erträge vom 1.1. bis 31.12."
+                },
+                {
+                  "text": "Erträge: Wertzuwachs",
+                  "detail": "Umsatzerlöse, Bestandsmehrungen, Zinserträge, sonstige Erträge."
+                },
+                {
+                  "text": "Aufwendungen: Wertverzehr",
+                  "detail": "Material, Personal, Abschreibungen, Zinsen, Steuern."
+                },
+                {
+                  "text": "Saldo = Jahresergebnis",
+                  "detail": "Überschuss oder Fehlbetrag, der in die Bilanz übernommen wird."
+                }
+              ]
+            }
           ],
           "regel": "Gewinn ist kein Kontostand: Er erhöht das Eigenkapital, steckt aber auf der Aktivseite in allen Vermögensposten."
         },
-        { "typ": "merke", "text": "**Bilanz** = Zeitpunkt (Vermögen und Kapital), **GuV** = Zeitraum (Aufwand und Ertrag); verbunden über das **Eigenkapital**.", "karteikarte": "Wie unterscheiden sich Bilanz und GuV, und wie hängen sie zusammen?" }
+        {
+          "typ": "merke",
+          "text": "**Bilanz** = Zeitpunkt (Vermögen und Kapital), **GuV** = Zeitraum (Aufwand und Ertrag); verbunden über das **Eigenkapital**.",
+          "karteikarte": "Wie unterscheiden sich Bilanz und GuV, und wie hängen sie zusammen?"
+        }
       ]
     },
     {
@@ -132,27 +187,88 @@
       "id": "a2",
       "titel": "Die Bilanzgliederung",
       "inhalt": [
-        { "typ": "absatz", "text": "Die Gliederung folgt {{par:hgb-266|§ 266 HGB}}." },
-        { "typ": "tabelle", "spalten": ["Aktivseite", "Passivseite"], "zeilen": [
-          { "zellen": ["A. Anlagevermögen", "A. Eigenkapital"], "detail": "Anlagevermögen dient dem Betrieb dauerhaft. Eigenkapital umfasst gezeichnetes Kapital, Rücklagen, Vortrag und Jahresergebnis." },
-          { "zellen": ["B. Umlaufvermögen", "B. Rückstellungen"], "detail": "Umlaufvermögen wird umgesetzt: Vorräte, Forderungen, liquide Mittel. Rückstellungen sind Schulden mit ungewisser Höhe." },
-          { "zellen": ["C. Rechnungsabgrenzungsposten", "C. Verbindlichkeiten"], "detail": "Aktive RAP: im Voraus bezahlter Aufwand. Verbindlichkeiten: Darlehen, Lieferanten, Steuern." },
-          { "zellen": ["", "D. Rechnungsabgrenzungsposten"], "detail": "Passive RAP: im Voraus erhaltener Ertrag." }
-        ] },
+        {
+          "typ": "absatz",
+          "text": "Die Gliederung folgt {{par:hgb-266|§ 266 HGB}}."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Aktivseite",
+            "Passivseite"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "A. Anlagevermögen",
+                "A. Eigenkapital"
+              ],
+              "detail": "Anlagevermögen dient dem Betrieb dauerhaft. Eigenkapital umfasst gezeichnetes Kapital, Rücklagen, Vortrag und Jahresergebnis."
+            },
+            {
+              "zellen": [
+                "B. Umlaufvermögen",
+                "B. Rückstellungen"
+              ],
+              "detail": "Umlaufvermögen wird umgesetzt: Vorräte, Forderungen, liquide Mittel. Rückstellungen sind Schulden mit ungewisser Höhe."
+            },
+            {
+              "zellen": [
+                "C. Rechnungsabgrenzungsposten",
+                "C. Verbindlichkeiten"
+              ],
+              "detail": "Aktive RAP: im Voraus bezahlter Aufwand. Verbindlichkeiten: Darlehen, Lieferanten, Steuern."
+            },
+            {
+              "zellen": [
+                "",
+                "D. Rechnungsabgrenzungsposten"
+              ],
+              "detail": "Passive RAP: im Voraus erhaltener Ertrag."
+            }
+          ]
+        },
         {
           "typ": "zuordnen",
           "lead": "Wohin gehört der Posten der MAKEL Studio GmbH?",
-          "kategorien": ["Anlagevermögen", "Umlaufvermögen", "Eigenkapital", "Fremdkapital"],
+          "kategorien": [
+            "Anlagevermögen",
+            "Umlaufvermögen",
+            "Eigenkapital",
+            "Fremdkapital"
+          ],
           "aufgaben": [
-            { "text": "Stickmaschine", "loesung": "Anlagevermögen" },
-            { "text": "Fertige Hoodies im Lager", "loesung": "Umlaufvermögen" },
-            { "text": "Gewinnrücklagen", "loesung": "Eigenkapital" },
-            { "text": "Steuerrückstellung", "loesung": "Fremdkapital" },
-            { "text": "Forderungen an eine Agentur", "loesung": "Umlaufvermögen" },
-            { "text": "Bankdarlehen", "loesung": "Fremdkapital" }
+            {
+              "text": "Stickmaschine",
+              "loesung": "Anlagevermögen"
+            },
+            {
+              "text": "Fertige Hoodies im Lager",
+              "loesung": "Umlaufvermögen"
+            },
+            {
+              "text": "Gewinnrücklagen",
+              "loesung": "Eigenkapital"
+            },
+            {
+              "text": "Steuerrückstellung",
+              "loesung": "Fremdkapital"
+            },
+            {
+              "text": "Forderungen an eine Agentur",
+              "loesung": "Umlaufvermögen"
+            },
+            {
+              "text": "Bankdarlehen",
+              "loesung": "Fremdkapital"
+            }
           ]
         },
-        { "typ": "merke", "text": "Aktiva nach **Liquidität** (AV, UV, RAP), Passiva nach **Fristigkeit** (EK, Rückstellungen, Verbindlichkeiten, RAP).", "karteikarte": "Nach welchem Prinzip sind Aktiv- und Passivseite der Bilanz gegliedert?" }
+        {
+          "typ": "merke",
+          "text": "Aktiva nach **Liquidität** (AV, UV, RAP), Passiva nach **Fristigkeit** (EK, Rückstellungen, Verbindlichkeiten, RAP).",
+          "karteikarte": "Nach welchem Prinzip sind Aktiv- und Passivseite der Bilanz gegliedert?"
+        }
       ]
     },
     {
@@ -160,29 +276,107 @@
       "id": "a3",
       "titel": "Die GuV in Staffelform",
       "inhalt": [
-        { "typ": "absatz", "text": "Das {{begriff:gesamtkostenverfahren|Gesamtkostenverfahren}} nach {{par:hgb-275|§ 275 HGB}} ordnet Aufwendungen nach Arten." },
-        { "typ": "tabelle", "mono": true, "spalten": ["Posten (vereinfacht)", "€"], "zeilen": [
-          { "zellen": ["Umsatzerlöse", "820.000"] },
-          { "zellen": ["+ Bestandserhöhung fertige Erzeugnisse", "6.000"] },
-          { "zellen": ["+ sonstige betriebliche Erträge", "4.000"] },
-          { "zellen": ["− Materialaufwand", "310.000"] },
-          { "zellen": ["− Personalaufwand", "340.000"] },
-          { "zellen": ["− Abschreibungen", "38.000"] },
-          { "zellen": ["− sonstige betriebliche Aufwendungen", "95.000"] },
-          { "zellen": ["− Zinsaufwendungen", "4.500"] },
-          { "zellen": ["− Steuern vom Einkommen und Ertrag", "12.500"] },
-          { "zellen": ["= Jahresüberschuss", "30.000"], "detail": "820.000 + 6.000 + 4.000 − 310.000 − 340.000 − 38.000 − 95.000 − 4.500 − 12.500 = 30.000 €." }
-        ] },
+        {
+          "typ": "absatz",
+          "text": "Das {{begriff:gesamtkostenverfahren|Gesamtkostenverfahren}} nach {{par:hgb-275|§ 275 HGB}} ordnet Aufwendungen nach Arten. Die Zahlen sind ein verkleinerter Übungsauszug, nicht MAKELs tatsächlicher Abschluss."
+        },
+        {
+          "typ": "tabelle",
+          "mono": true,
+          "spalten": [
+            "Posten (vereinfacht)",
+            "€"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Umsatzerlöse",
+                "820.000"
+              ]
+            },
+            {
+              "zellen": [
+                "+ Bestandserhöhung fertige Erzeugnisse",
+                "6.000"
+              ]
+            },
+            {
+              "zellen": [
+                "+ sonstige betriebliche Erträge",
+                "4.000"
+              ]
+            },
+            {
+              "zellen": [
+                "− Materialaufwand",
+                "310.000"
+              ]
+            },
+            {
+              "zellen": [
+                "− Personalaufwand",
+                "340.000"
+              ]
+            },
+            {
+              "zellen": [
+                "− Abschreibungen",
+                "38.000"
+              ]
+            },
+            {
+              "zellen": [
+                "− sonstige betriebliche Aufwendungen",
+                "95.000"
+              ]
+            },
+            {
+              "zellen": [
+                "− Zinsaufwendungen",
+                "4.500"
+              ]
+            },
+            {
+              "zellen": [
+                "− Steuern vom Einkommen und Ertrag",
+                "12.500"
+              ]
+            },
+            {
+              "zellen": [
+                "= Jahresüberschuss",
+                "30.000"
+              ],
+              "detail": "820.000 + 6.000 + 4.000 − 310.000 − 340.000 − 38.000 − 95.000 − 4.500 − 12.500 = 30.000 €."
+            }
+          ]
+        },
         {
           "typ": "check",
           "frage": "MAKEL hat mehr produziert als verkauft (Bestandsmehrung 6.000 €). Wie wirkt das in der GuV nach dem Gesamtkostenverfahren?",
           "optionen": [
-            { "text": "Gar nicht, es wurde ja nichts verkauft", "richtig": false, "echo": "Die Aufwendungen für die Produktion stehen schon in der GuV — ohne Ausgleich wäre das Ergebnis zu niedrig." },
-            { "text": "Als Erhöhung der Gesamtleistung um 6.000 €", "richtig": true, "echo": "Richtig: Die Bestandserhöhung gleicht die Aufwendungen für noch nicht verkaufte Erzeugnisse aus." },
-            { "text": "Als zusätzlicher Aufwand von 6.000 €", "richtig": false, "echo": "Eine Bestandsmehrung ist ein Ertragsposten. Aufwand wäre eine Bestandsminderung." }
+            {
+              "text": "Gar nicht, es wurde ja nichts verkauft",
+              "richtig": false,
+              "echo": "Die Aufwendungen für die Produktion stehen schon in der GuV — ohne Ausgleich wäre das Ergebnis zu niedrig."
+            },
+            {
+              "text": "Als Erhöhung der Gesamtleistung um 6.000 €",
+              "richtig": true,
+              "echo": "Richtig: Die Bestandserhöhung gleicht die Aufwendungen für noch nicht verkaufte Erzeugnisse aus."
+            },
+            {
+              "text": "Als zusätzlicher Aufwand von 6.000 €",
+              "richtig": false,
+              "echo": "Eine Bestandsmehrung ist ein Ertragsposten. Aufwand wäre eine Bestandsminderung."
+            }
           ]
         },
-        { "typ": "merke", "text": "GuV in Staffelform (Gesamtkostenverfahren): Umsatz **±** Bestandsveränderung + sonstige Erträge − Aufwandsarten ± Finanzergebnis − Steuern = **Jahresergebnis**.", "karteikarte": "Wie ist die GuV nach dem Gesamtkostenverfahren aufgebaut?" }
+        {
+          "typ": "merke",
+          "text": "GuV in Staffelform (Gesamtkostenverfahren): Umsatz **±** Bestandsveränderung + sonstige Erträge − Aufwandsarten ± Finanzergebnis − Steuern = **Jahresergebnis**.",
+          "karteikarte": "Wie ist die GuV nach dem Gesamtkostenverfahren aufgebaut?"
+        }
       ]
     },
     {
@@ -190,9 +384,20 @@
       "id": "a4",
       "titel": "Anhang und Lagebericht",
       "inhalt": [
-        { "typ": "absatz", "text": "Der {{begriff:jahresabschluss|Jahresabschluss}} einer Kapitalgesellschaft besteht aus Bilanz, GuV und Anhang ({{par:hgb-264|§ 264 HGB}}); mittelgroße und große Gesellschaften stellen zusätzlich einen Lagebericht auf." },
-        { "typ": "achtung", "text": "Die Erleichterungen hängen von der Größenklasse ab. Die Schwellenwerte wurden zuletzt angehoben — vor einer Einordnung den aktuellen Stand von § 267 HGB prüfen.", "pruefen": "Schwellenwerte § 267 HGB aktuell" },
-        { "typ": "merke", "text": "Kapitalgesellschaft: **Bilanz + GuV + Anhang**; ab mittelgroß zusätzlich **Lagebericht**.", "karteikarte": "Woraus besteht der Jahresabschluss einer Kapitalgesellschaft?" }
+        {
+          "typ": "absatz",
+          "text": "Der {{begriff:jahresabschluss|Jahresabschluss}} einer Kapitalgesellschaft besteht aus Bilanz, GuV und Anhang ({{par:hgb-264|§ 264 HGB}}); mittelgroße und große Gesellschaften stellen zusätzlich einen Lagebericht auf."
+        },
+        {
+          "typ": "achtung",
+          "text": "Die Erleichterungen hängen von der Größenklasse ab. Die Schwellenwerte wurden zuletzt angehoben — vor einer Einordnung den aktuellen Stand von § 267 HGB prüfen.",
+          "pruefen": "Schwellenwerte § 267 HGB aktuell"
+        },
+        {
+          "typ": "merke",
+          "text": "Kapitalgesellschaft: **Bilanz + GuV + Anhang**; ab mittelgroß zusätzlich **Lagebericht**.",
+          "karteikarte": "Woraus besteht der Jahresabschluss einer Kapitalgesellschaft?"
+        }
       ]
     }
   ],
@@ -205,9 +410,21 @@
     "Kapitalgesellschaften: Anhang; ab mittelgroß Lagebericht."
   ],
   "selbsttest": [
-    { "typ": "Wissen", "frage": "Warum liegt der Jahresüberschuss nicht vollständig auf dem Bankkonto?", "loesung": "Er erhöht das Eigenkapital; auf der Aktivseite ist der Wertzuwachs in allen Vermögensposten gebunden, etwa in Vorräten, Forderungen oder Anlagen." },
-    { "typ": "Zuordnen", "frage": "Wo stehen Steuerrückstellungen in der Bilanz?", "loesung": "Auf der Passivseite unter B. Rückstellungen; sie gehören zum Fremdkapital." },
-    { "typ": "Rechnen", "frage": "Umsatzerlöse 500.000 €, Bestandsminderung 5.000 €, Aufwendungen insgesamt 470.000 €. Ergebnis?", "loesung": "500.000 − 5.000 − 470.000 = 25.000 € Jahresüberschuss." }
+    {
+      "typ": "Wissen",
+      "frage": "Warum liegt der Jahresüberschuss nicht vollständig auf dem Bankkonto?",
+      "loesung": "Er erhöht das Eigenkapital; auf der Aktivseite ist der Wertzuwachs in allen Vermögensposten gebunden, etwa in Vorräten, Forderungen oder Anlagen."
+    },
+    {
+      "typ": "Zuordnen",
+      "frage": "Wo stehen Steuerrückstellungen in der Bilanz?",
+      "loesung": "Auf der Passivseite unter B. Rückstellungen; sie gehören zum Fremdkapital."
+    },
+    {
+      "typ": "Rechnen",
+      "frage": "Umsatzerlöse 500.000 €, Bestandsminderung 5.000 €, Aufwendungen insgesamt 470.000 €. Ergebnis?",
+      "loesung": "500.000 − 5.000 − 470.000 = 25.000 € Jahresüberschuss."
+    }
   ],
   "pruefungstipp": "Bei GuV-Aufgaben das Vorzeichen jeder Zeile laut mitlesen: Bestandsmehrung plus, Bestandsminderung minus. Die meisten Rechenfehler entstehen genau hier."
 }

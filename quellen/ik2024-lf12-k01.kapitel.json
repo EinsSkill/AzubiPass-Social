@@ -1,0 +1,189 @@
+{
+  "id": "k01",
+  "lernfeld": "ik2024-lf12",
+  "nummer": 1,
+  "titel": "Den Personalbedarf ermitteln",
+  "untertitel": "Quantitativen und qualitativen Bedarf unterscheiden, Arbeitsvolumen und Nettobedarf berechnen und Einflussfaktoren berücksichtigen.",
+  "minuten": 25,
+  "ausfuehrlich": {
+    "abschnitte": [
+      {
+        "abschnitt": "a1",
+        "vorauswissen": [
+          "Jede Stelle hat Aufgaben und Anforderungen.",
+          "Stellen sind in der Aufbauorganisation verankert (LF 1)."
+        ],
+        "erklaerung": "Personalplanung beginnt mit den Aufgaben. Eine Stellenbeschreibung hält fest, welche Aufgaben eine Stelle hat, wem sie unterstellt ist, welche Befugnisse und Verantwortung sie umfasst und welche Kompetenzen nötig sind. Daraus ergibt sich der qualitative Personalbedarf: Welche Qualifikationen werden gebraucht? Der quantitative Personalbedarf fragt: Wie viele Personen bzw. wie viel Arbeitszeit werden gebraucht? Beide Fragen gehören zusammen — drei Stellen nützen nichts, wenn niemand die neue Laserstation bedienen kann.",
+        "beispiele": [
+          "Qualitativ: Für die Laserstation wird jemand mit Erfahrung in Gravurdateien und Maschinenbedienung gebraucht.",
+          "Quantitativ: Für die Veredelung werden im Herbst 480 produktive Stunden pro Monat benötigt."
+        ],
+        "fallbeispiel": "Mit der neuen Laserstation plant Deniz Aydın die Besetzung der Veredelung neu. Die Personalabteilung erstellt eine Stellenbeschreibung „Fachkraft Lasergravur“: Aufgaben, Vorgesetzte, Befugnisse, Anforderungen. Erst danach wird gerechnet, wie viele Stunden zusätzlich gebraucht werden.",
+        "typische_fehler": "Nur Köpfe zählen und die benötigten Qualifikationen vergessen.",
+        "verstaendnisfragen": [
+          "Was ist der qualitative Personalbedarf? Die benötigten Qualifikationen und Kompetenzen.",
+          "Was enthält eine Stellenbeschreibung? Aufgaben, Einordnung, Befugnisse, Verantwortung und Anforderungen."
+        ],
+        "pruefungsbezug": "Quantitativen und qualitativen Bedarf unterscheiden und aus Aufgaben ableiten.",
+        "merksatz": "Erst Aufgaben (Stellenbeschreibung), dann Qualifikation (qualitativ), dann Menge (quantitativ)."
+      },
+      {
+        "abschnitt": "a2",
+        "vorauswissen": [
+          "Beschäftigte gehen in Rente, kündigen oder wechseln intern.",
+          "Auszubildende werden übernommen."
+        ],
+        "erklaerung": "Der Nettopersonalbedarf ergibt sich aus dem Bruttobedarf (benötigte Stellen) abzüglich des Personalbestands, zuzüglich bereits feststehender Abgänge (Ruhestand, Kündigungen, Elternzeit, Versetzungen) und abzüglich feststehender Zugänge (Übernahme von Auszubildenden, Rückkehr aus Elternzeit, bereits unterschriebene Verträge). Ist das Ergebnis positiv, besteht Beschaffungsbedarf; ist es negativ, eine Überdeckung.",
+        "beispiele": [
+          "Bruttobedarf 6, Bestand 5, ein Ruhestand, eine Übernahme: 6 − 5 + 1 − 1 = 1.",
+          "Bruttobedarf 4, Bestand 5, keine Bewegungen: −1 — Überdeckung."
+        ],
+        "fallbeispiel": "In der Veredelung werden ab März 6 Stellen gebraucht. Heute sind 5 besetzt. Eine Kollegin geht im Februar in Rente, ein Azubi wird im Sommer übernommen — aber erst nach dem Bedarfszeitpunkt. Für März ergibt sich: 6 − 5 + 1 − 0 = 2 Stellen.",
+        "typische_fehler": "Zugänge einrechnen, die erst nach dem Planungszeitpunkt wirksam werden.",
+        "verstaendnisfragen": [
+          "Wie berechnet sich der Nettobedarf? Bruttobedarf − Bestand + Abgänge − Zugänge.",
+          "Was bedeutet ein negatives Ergebnis? Eine personelle Überdeckung."
+        ],
+        "pruefungsbezug": "Nettopersonalbedarf zum Planungszeitpunkt berechnen.",
+        "merksatz": "Nettobedarf = Bruttobedarf − Bestand + Abgänge − Zugänge — immer bezogen auf den Planungszeitpunkt."
+      },
+      {
+        "abschnitt": "a3",
+        "vorauswissen": [
+          "Nicht jede Arbeitsstunde ist produktiv.",
+          "Teilzeitkräfte arbeiten weniger Stunden."
+        ],
+        "erklaerung": "Der Bruttobedarf wird oft aus dem Arbeitsvolumen abgeleitet: benötigte produktive Stunden ÷ produktive Stunden je Vollzeitkraft = Vollzeitäquivalente (VZÄ). Die produktiven Stunden je Vollzeitkraft berücksichtigen Urlaub, Krankheit, Feiertage, Schulungen und Rüstzeiten. Ein VZÄ ist nicht dasselbe wie eine Person: Zwei Halbtagskräfte ergeben ein VZÄ. Deshalb muss die Planung Stunden und Köpfe getrennt betrachten.",
+        "beispiele": [
+          "480 benötigte Stunden ÷ 160 produktive Stunden je Vollzeitkraft = 3 VZÄ.",
+          "3 VZÄ können 3 Vollzeitkräfte oder 2 Vollzeit- und 2 Halbtagskräfte sein."
+        ],
+        "fallbeispiel": "Deniz schätzt für die Veredelung 480 produktive Stunden im Monat. Nach Abzug von Urlaub, Krankheit und Rüstzeiten stehen je Vollzeitkraft 160 produktive Stunden zur Verfügung. Der Bedarf beträgt 3 VZÄ. Da zwei Beschäftigte gern Teilzeit arbeiten, plant sie 2 Vollzeit- und 2 Teilzeitstellen mit je 50 %.",
+        "typische_fehler": "Eine Person immer mit einem Vollzeitäquivalent gleichsetzen.",
+        "verstaendnisfragen": [
+          "Wie berechnet man VZÄ aus Stunden? Benötigte produktive Stunden ÷ produktive Stunden je Vollzeitkraft.",
+          "Warum sind VZÄ und Köpfe verschieden? Weil Teilzeitkräfte nur einen Teil eines VZÄ ausmachen."
+        ],
+        "pruefungsbezug": "Bedarf aus Arbeitsvolumen in Vollzeitäquivalenten berechnen.",
+        "merksatz": "VZÄ = benötigte produktive Stunden ÷ produktive Stunden je Vollzeitkraft — VZÄ ≠ Köpfe."
+      },
+      {
+        "abschnitt": "a4",
+        "vorauswissen": [
+          "Aufträge schwanken (LF 11).",
+          "Technik verändert Tätigkeiten."
+        ],
+        "erklaerung": "Der Personalbedarf hängt von vielen Faktoren ab: Absatzplanung und Saison, Technik und Automatisierung, Arbeitszeitmodelle, gesetzliche und tarifliche Regelungen, Fehlzeiten und Fluktuation. Unternehmen tragen dabei gesellschaftliche Verantwortung: Ausbildung sichert künftige Fachkräfte, Weiterbildung hält bestehende Beschäftigte für neue Aufgaben fit, und Inklusion eröffnet Menschen mit Behinderung Chancen. Gute Personalplanung schaut deshalb über den nächsten Monat hinaus.",
+        "beispiele": [
+          "Die Laserstation ersetzt Handarbeit, schafft aber Bedarf an Dateivorbereitung.",
+          "MAKEL bildet jedes Jahr aus, um Fachkräfte selbst zu entwickeln."
+        ],
+        "fallbeispiel": "Yuki Bergmann fragt: Neue Fachkraft einstellen oder eine Beschäftigte aus der Stickerei weiterbilden? Die Stickerin kennt Kunden und Qualitätsanspruch, bräuchte aber drei Wochen Schulung. MAKEL entscheidet sich für die Weiterbildung und stellt für die Stickerei eine Teilzeitkraft ein.",
+        "typische_fehler": "Personalbedarf nur kurzfristig und rein mengenmäßig betrachten.",
+        "verstaendnisfragen": [
+          "Welche Faktoren beeinflussen den Personalbedarf? Absatz, Saison, Technik, Arbeitszeitmodelle, Regelungen, Fehlzeiten, Fluktuation.",
+          "Worin liegt gesellschaftliche Verantwortung? In Ausbildung, Weiterbildung und Inklusion."
+        ],
+        "pruefungsbezug": "Einflussfaktoren und Verantwortung in der Personalplanung berücksichtigen.",
+        "merksatz": "Personalbedarf hängt von Absatz, Technik, Zeitmodellen und Regeln ab — Ausbildung, Weiterbildung und Inklusion sichern die Zukunft."
+      }
+    ]
+  },
+  "lernziele": [
+    { "id": "lz1", "text": "Quantitativen und qualitativen Bedarf unterscheiden", "abschnitt": "a1" },
+    { "id": "lz2", "text": "Nettopersonalbedarf berechnen", "abschnitt": "a2" },
+    { "id": "lz3", "text": "Bedarf aus dem Arbeitsvolumen in VZÄ ableiten", "abschnitt": "a3" },
+    { "id": "lz4", "text": "Einflussfaktoren und gesellschaftliche Verantwortung berücksichtigen", "abschnitt": "a4" }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "a1",
+      "titel": "Aufgaben und Stellenbeschreibung",
+      "inhalt": [
+        { "typ": "absatz", "text": "Die {{begriff:stellenbeschreibung|Stellenbeschreibung}} ist der Ausgangspunkt der Personalplanung." },
+        { "typ": "tabelle", "spalten": ["Baustein", "Fachkraft Lasergravur bei MAKEL"], "zeilen": [
+          { "zellen": ["Aufgaben", "Gravurdateien vorbereiten, Laserstation bedienen, Qualität prüfen"] },
+          { "zellen": ["Einordnung", "Veredelung, unterstellt Deniz Aydın"] },
+          { "zellen": ["Befugnisse", "Freigabe von Musterteilen, Materialanforderung"] },
+          { "zellen": ["Anforderungen", "Erfahrung mit Grafikdateien, technisches Verständnis, Sorgfalt"] }
+        ] },
+        { "typ": "merke", "text": "Erst **Aufgaben** (Stellenbeschreibung), dann **Qualifikation** (qualitativ), dann **Menge** (quantitativ).", "karteikarte": "Wie hängen Stellenbeschreibung, qualitativer und quantitativer Personalbedarf zusammen?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a2",
+      "titel": "Bestand und Veränderungen",
+      "inhalt": [
+        {
+          "typ": "grafik",
+          "variante": "kette",
+          "kopf": "Rechenweg",
+          "titel": "Vom Bruttobedarf zum Nettobedarf",
+          "lead": "Veredelung bei MAKEL, Planungszeitpunkt 1. März.",
+          "schritte": [
+            { "nr": "1", "titel": "Bruttobedarf", "satz": "6 Stellen", "text": "So viele Stellen braucht die Veredelung ab März." },
+            { "nr": "2", "titel": "− Bestand", "satz": "5 besetzt", "text": "Heute arbeiten fünf Personen in der Veredelung." },
+            { "nr": "3", "titel": "+ Abgänge", "satz": "+1 Ruhestand", "text": "Eine Kollegin geht im Februar in Rente — vor dem Planungszeitpunkt." },
+            { "nr": "4", "titel": "− Zugänge", "satz": "0", "text": "Die Azubi-Übernahme im Sommer liegt nach dem Planungszeitpunkt und zählt hier nicht." },
+            { "nr": "=", "titel": "Nettobedarf", "satz": "2 Stellen", "text": "6 − 5 + 1 − 0 = 2. MAKEL muss zwei Stellen besetzen." }
+          ],
+          "regel": "Nur Bewegungen einrechnen, die bis zum Planungszeitpunkt sicher wirksam werden."
+        },
+        { "typ": "merke", "text": "**Nettobedarf = Bruttobedarf − Bestand + Abgänge − Zugänge** — immer bezogen auf den Planungszeitpunkt.", "karteikarte": "Wie berechnest du den Nettopersonalbedarf?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a3",
+      "titel": "Bedarfsrechnung in Stunden",
+      "inhalt": [
+        { "typ": "absatz", "text": "Das {{begriff:vollzeitaequivalent|Vollzeitäquivalent}} macht unterschiedliche Arbeitszeiten vergleichbar." },
+        {
+          "typ": "check",
+          "frage": "Die Veredelung braucht 480 produktive Stunden im Monat; je Vollzeitkraft stehen 160 produktive Stunden zur Verfügung. Wie hoch ist der Bedarf?",
+          "optionen": [
+            { "text": "3 Personen", "richtig": false, "echo": "Fast — aber der Bedarf ist in Vollzeitäquivalenten ausgedrückt. Wie viele Personen das sind, hängt von den Arbeitszeitmodellen ab." },
+            { "text": "3 Vollzeitäquivalente", "richtig": true, "echo": "Richtig: 480 ÷ 160 = 3 VZÄ. Das können auch mehr als drei Personen sein." },
+            { "text": "4 Vollzeitäquivalente", "richtig": false, "echo": "Die Ausfallzeiten sind in den 160 produktiven Stunden bereits berücksichtigt." }
+          ]
+        },
+        { "typ": "merke", "text": "**VZÄ** = benötigte produktive Stunden ÷ produktive Stunden je Vollzeitkraft — VZÄ ≠ Köpfe.", "karteikarte": "Wie berechnest du den Personalbedarf in Vollzeitäquivalenten, und warum ist VZÄ nicht gleich Kopfzahl?" }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Qualifikationen und Verantwortung",
+      "inhalt": [
+        {
+          "typ": "zuordnen",
+          "lead": "Erhöht oder senkt der Faktor eher den Personalbedarf bei MAKEL?",
+          "kategorien": ["erhöht eher", "senkt eher"],
+          "aufgaben": [
+            { "text": "Weihnachtsgeschäft mit vielen Firmenaufträgen", "loesung": "erhöht eher" },
+            { "text": "Automatischer Zuschnitt ersetzt Handarbeit", "loesung": "senkt eher" },
+            { "text": "Steigende Fehlzeiten in der Näherei", "loesung": "erhöht eher" },
+            { "text": "Verkürzung der Wochenarbeitszeit bei gleicher Arbeitsmenge", "loesung": "erhöht eher" }
+          ]
+        },
+        { "typ": "merke", "text": "Personalbedarf hängt von Absatz, Technik, Zeitmodellen und Regeln ab — **Ausbildung, Weiterbildung und Inklusion** sichern die Zukunft.", "karteikarte": "Welche Faktoren beeinflussen den Personalbedarf, und welche Verantwortung trägt ein Unternehmen dabei?" }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Personalplanung beginnt bei den Aufgaben.",
+    "Qualitativer Bedarf: welche Kompetenzen; quantitativer: wie viel.",
+    "Nettobedarf = Brutto − Bestand + Abgänge − Zugänge.",
+    "Vollzeitäquivalente aus Stunden berechnen.",
+    "VZÄ und Köpfe unterscheiden.",
+    "Ausbildung und Weiterbildung sichern künftigen Bedarf."
+  ],
+  "selbsttest": [
+    { "typ": "Rechnen", "frage": "480 produktive Stunden sind erforderlich, je Vollzeitkraft stehen 160 produktive Stunden zur Verfügung. Bedarf?", "loesung": "3 Vollzeitäquivalente; Ausfallzeiten sind in den produktiven Stunden bereits berücksichtigt." },
+    { "typ": "Rechnen", "frage": "Drei Stellen werden benötigt, zwei passend qualifizierte Kräfte sind verfügbar, keine Zu- oder Abgänge. Nettobedarf?", "loesung": "1 Vollzeitäquivalent. Bei Teilzeit können Arbeitsvolumen und Kopfzahl voneinander abweichen." },
+    { "typ": "Wissen", "frage": "Was unterscheidet qualitativen und quantitativen Personalbedarf?", "loesung": "Qualitativ: welche Qualifikationen gebraucht werden. Quantitativ: wie viele Personen bzw. wie viel Arbeitszeit." }
+  ],
+  "pruefungstipp": "Schreibe bei Bedarfsrechnungen die Formel mit Vorzeichen auf und prüfe bei jeder Bewegung, ob sie vor oder nach dem Planungszeitpunkt wirksam wird."
+}

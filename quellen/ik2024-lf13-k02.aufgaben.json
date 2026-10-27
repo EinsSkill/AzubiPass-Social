@@ -1,0 +1,98 @@
+{
+  "lernfeld": "ik2024-lf13",
+  "kapitel": "k02",
+  "verweise_im_klausurmodus": "ausblenden",
+
+  "bausteine": [
+    {
+      "id": "ik2024-lf13-k02-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 4,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Das Projektteam der MAKEL Studio GmbH möchte Lösungsideen für das Freigabeproblem entwickeln." }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Welche Kreativitätstechnik wird beschrieben?",
+          "ziele": ["Brainstorming", "Brainwriting 6-3-5", "Mindmap", "Morphologischer Kasten"],
+          "elemente": [
+            { "text": "Alle rufen spontan Ideen in den Raum, Kritik ist verboten", "loesung": "Brainstorming" },
+            { "text": "Jede Person schreibt drei Ideen auf und gibt das Blatt weiter", "loesung": "Brainwriting 6-3-5" },
+            { "text": "Das Problem steht in der Mitte, Äste zeigen Ursachen und Ideen", "loesung": "Mindmap" },
+            { "text": "Lösungen für Teilprobleme werden in einer Tabelle kombiniert", "loesung": "Morphologischer Kasten" }
+          ]
+        }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
+      "erklaerung": "Alle Techniken trennen Ideenfindung und Bewertung, gehen aber unterschiedlich vor.",
+      "quelle": "ik2024-lf13-k02, Abschnitt a3"
+    },
+
+    {
+      "id": "ik2024-lf13-k02-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 4,
+      "schwierigkeit": 2,
+      "passt_zu": [],
+      "variablen": {
+        "w": { "von": 40, "bis": 60, "schritt": 10 },
+        "a1": { "von": 4, "bis": 5, "schritt": 1 },
+        "a2": { "von": 1, "bis": 3, "schritt": 1 },
+        "b1": { "von": 2, "bis": 4, "schritt": 1 },
+        "b2": { "von": 3, "bis": 5, "schritt": 1 }
+      },
+      "abgeleitet": {
+        "w2": "100 - w",
+        "na": "runde(w / 100 * a1 + (100 - w) / 100 * a2, 2)",
+        "nb": "runde(w / 100 * b1 + (100 - w) / 100 * b2, 2)"
+      },
+      "anzeige": [
+        { "block": "text", "inhalt": "Die MAKEL Studio GmbH bewertet zwei Lösungen für das Freigabeproblem. Gewichtung: Zuverlässigkeit {w} %, Aufwandseignung {w2} %; Skala 1–5, höher ist besser. Variante A (digitales Freigabe-Tool): Zuverlässigkeit {a1}, Aufwandseignung {a2}. Variante B (Pflichtfeld im vorhandenen System): Zuverlässigkeit {b1}, Aufwandseignung {b2}." }
+      ],
+      "eingabe": [
+        { "block": "zahl", "label": "Nutzwert Variante A", "einheit": "Punkte", "loesung": "na", "toleranz": 0.01, "punkte": 2 },
+        { "block": "zahl", "label": "Nutzwert Variante B", "einheit": "Punkte", "loesung": "nb", "toleranz": 0.01, "punkte": 2 }
+      ],
+      "bewertung": { "art": "automatisch", "punkte_gesamt": 4 },
+      "erklaerung": "Nutzwert = Summe aus Gewicht × Punkte je Kriterium.",
+      "quelle": "ik2024-lf13-k02, Abschnitt a4"
+    },
+
+    {
+      "id": "ik2024-lf13-k02-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 7,
+      "schwierigkeit": 3,
+      "passt_zu": [],
+      "variablen": null,
+      "anzeige": [
+        { "block": "text", "inhalt": "Luca Petrelli empfiehlt in der Präsentation für die MAKEL Studio GmbH ein KI-Freigabe-Tool: „Laut Anbieter spart es 50 % Zeit, ist hochmodern und wird von einem bekannten Influencer genutzt. Kosten: 4.800 € pro Jahr. Unsere Nutzwertanalyse zeigt eindeutig A vorn.“ Die Gewichtung hat Luca nach der Bewertung von 50/50 auf 80/20 zugunsten der Zuverlässigkeit geändert. Das Budget beträgt 3.000 €." }
+      ],
+      "eingabe": [
+        { "block": "textfeld", "frage": "Beurteilen Sie die Empfehlung hinsichtlich Informationsqualität, Bewertungsmethode und Rahmenbedingungen.", "zeilen": 8 }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Informationsqualität: „50 % Zeit“ stammt vom Anbieter, ohne Bezugsgröße, Vergleich und Testbedingungen; Modernität und Influencer sind keine sachlichen Kriterien. Methode: Die nachträgliche Änderung der Gewichtung macht die Nutzwertanalyse beliebig; Gewichte müssen vorher aus den Zielen abgeleitet werden. Rahmen: Mit 4.800 € pro Jahr verletzt Variante A das Ausschlusskriterium Budget (3.000 €) und hätte gar nicht bewertet werden dürfen; außerdem fehlt die Prüfung des Datenschutzes für Kundendateien. Empfehlung: Variante B mit ursprünglicher Gewichtung, A erst nach unabhängigen Belegen und bei passendem Budget erneut prüfen.",
+        "raster": [
+          { "kriterium": "Werbeaussage und unsachliche Argumente kritisch beurteilt", "punkte": 1 },
+          { "kriterium": "Nachträgliche Gewichtsänderung als Methodenfehler erkannt", "punkte": 1 },
+          { "kriterium": "Budget als Ausschlusskriterium erkannt", "punkte": 1 },
+          { "kriterium": "Begründete Alternative bzw. weiteres Vorgehen", "punkte": 1 }
+        ]
+      },
+      "erklaerung": "Transparente Bewertung heißt: belastbare Informationen, vorher festgelegte Kriterien, Rahmenbedingungen zuerst.",
+      "quelle": "ik2024-lf13-k02, Abschnitte a2 und a4"
+    }
+  ]
+}
