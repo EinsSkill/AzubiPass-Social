@@ -7,33 +7,220 @@
   "minuten": 30,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Ein Angebotsvergleich beginnt erst dann sinnvoll, wenn alle Angebote auf dieselbe wirtschaftliche Größe gebracht wurden. Danach ergänzt die Nutzwertanalyse den Preis um qualitative Kriterien wie Lieferzuverlässigkeit, Qualität und Service.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Der Listenpreis ist nur der Ausgangspunkt der Bezugskalkulation.",
-          "Rabatt und Skonto werden nacheinander abgezogen, Bezugskosten anschließend addiert."
+        "darstellung": "vollfassung",
+        "ziel": "Du kannst erklären, weshalb der Listenpreis nicht ausreicht, und aus Rabatt, nutzbarem Skonto und Bezugskosten einen vergleichbaren Bezugspreis berechnen.",
+        "vorwissen_kurz": "Ein Prozentwert bezieht sich immer auf einen bestimmten Grundwert. In diesem vereinfachten Vergleich rechnen wir mit Nettobeträgen: MAKEL darf die Vorsteuer voll abziehen, die Umsatzsteuer ist deshalb kein Kostenbestandteil des Vergleichs.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "id": "a-warum",
+            "text": "Warum der günstigste Listenpreis nicht immer gewinnt"
+          },
+          {
+            "typ": "absatz",
+            "id": "a-warum-1",
+            "text": "Ein Angebot nennt zunächst einen Preis. Wie viel die Beschaffung den Betrieb tatsächlich kostet, hängt aber auch von den Bedingungen ab. Ein Lieferant gewährt einen {{begriff:rabatt|Rabatt}}, ein anderer schließt den Transport bereits ein. Ein scheinbar günstiger Preis kann durch zusätzliche Fracht teurer werden. Deshalb vergleichen wir nicht einzelne auffällige Zahlen, sondern bringen beide Angebote auf denselben Umfang und dieselbe Berechnungsgrundlage."
+          },
+          {
+            "typ": "absatz",
+            "id": "a-warum-2",
+            "text": "Zuerst prüfst du, ob Ware, Menge, Qualität und Lieferleistung überhaupt vergleichbar sind. Erst danach rechnest du. Der {{begriff:einstandspreis|Bezugspreis}}, auch Einstandspreis genannt, berücksichtigt im folgenden Grundfall den Liefererrabatt, einen tatsächlich nutzbaren {{begriff:skonto|Skonto}} und die zusätzlichen {{begriff:bezugskosten|Bezugskosten}}. Die Zahl ersetzt nicht die spätere Prüfung von Qualität, Zuverlässigkeit und Nachhaltigkeit."
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "a-fall",
+            "text": "Ein vollständiger Vergleich bei MAKEL"
+          },
+          {
+            "typ": "absatz",
+            "id": "a-fall-1",
+            "text": "MAKEL benötigt 100 gleichartige Rohlinge (fiktive Übungsdaten). Beide Lieferanten bieten dieselbe Qualität, Menge und Lieferfrist; alle Beträge sind netto und gelten für die gesamte Menge. **Angebot A:** 1.000 € Listenpreis, 10 % Rabatt, 2 % Skonto bei Zahlung innerhalb von zehn Tagen; die Fracht kostet zusätzlich 40 € und ist ausdrücklich nicht skontierbar. **Angebot B:** 930 € einschließlich Transport, ohne Rabatt und Skonto. Im Grundfall kann MAKEL A rechtzeitig bezahlen."
+          },
+          {
+            "typ": "tabelle",
+            "id": "a-rechnung",
+            "spalten": [
+              "Rechenschritt",
+              "Warum dieser Schritt?",
+              "Angebot A"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Listeneinkaufspreis",
+                  "Vereinbarter Ausgangswert",
+                  "1.000,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Rabatt: 1.000\u00a0×\u00a010\u00a0%",
+                  "Sofortiger Nachlass auf den Listenpreis",
+                  "−100,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zieleinkaufspreis",
+                  "Grundlage für den hier vereinbarten Skonto",
+                  "900,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Skonto: 900\u00a0×\u00a02\u00a0%",
+                  "Die Frist wird im Grundfall tatsächlich genutzt",
+                  "−18,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Bareinkaufspreis",
+                  "Warenpreis nach beiden Nachlässen",
+                  "882,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Fracht",
+                  "Zusätzlich, laut Fall nicht skontierbar",
+                  "+40,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "**= Bezugspreis**",
+                  "**Vergleichbarer Gesamtbetrag**",
+                  "**922,00 €**"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Bei B beträgt der Bezugspreis 930 €. A ist im Grundfall damit 8 € günstiger — je Rohling 9,22 € gegenüber 9,30 €. Achte auf die Einheit: Den Gesamtpreis des einen Angebots darfst du nicht mit dem Stückpreis des anderen vergleichen."
+          },
+          {
+            "typ": "basis",
+            "id": "a-leiter",
+            "ref": "grafik-1",
+            "hinweis": "Die Leiter startet mit anderen Beispielwerten (1.050 € Listenpreis, 45 € Bezugskosten). Stell sie auf unseren Fall um — 1.000 €, 10 %, 2 %, 40 € — und du landest bei 922 €."
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "a-addieren",
+            "text": "Warum Rabatt und Skonto nicht einfach addiert werden"
+          },
+          {
+            "typ": "absatz",
+            "id": "a-addieren-1",
+            "text": "Die beiden Prozentsätze haben unterschiedliche Grundwerte. Der Rabatt wird aus 1.000 € berechnet; danach bleiben 900 €, und nur auf diese 900 € werden die 2 % Skonto angewendet. Wer insgesamt 12 % von 1.000 € abzieht und dann 40 € Fracht addiert, erhält 920 € und hat 2 € zu viel abgezogen. Die kleine Abweichung zeigt einen Denkfehler, der bei größeren Mengen erheblich wird."
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "a-bedeutung",
+            "text": "Was das Ergebnis für die Entscheidung bedeutet"
+          },
+          {
+            "typ": "absatz",
+            "id": "a-bedeutung-1",
+            "text": "Du kannst jetzt eine präzise Aussage treffen: Unter den genannten, vergleichbaren Bedingungen und bei fristgerechter Zahlung ist A rein preislich günstiger. Ob MAKEL A auswählt, hängt zusätzlich etwa von Lieferzuverlässigkeit und Qualitätsanforderungen ab. Der Satz „A ist immer günstiger“ lässt sich aus dieser Rechnung nicht ableiten."
+          }
         ],
-        "ablauf": [
-          "Listeneinkaufspreis feststellen.",
-          "Liefererrabatt abziehen und Zieleinkaufspreis bestimmen.",
-          "Liefererskonto vom bereits rabattierten Preis abziehen.",
-          "Bezugskosten addieren und den Einstandspreis vergleichen."
+        "details": [
+          {
+            "id": "a-grundwert",
+            "kategorie": "grundlagen",
+            "titel": "Prozentwert und Grundwert",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "a-grundwert-1",
+                "text": "10 % bedeuten zehn von hundert. Bei einem Grundwert von 1.000 € sind das 100 €. Nach dem Rabatt hat sich der Grundwert für den nächsten Nachlass verändert: 2 % von 900 € sind 18 €, nicht 20 €. Schreib bei jeder Prozentrechnung den Grundwert daneben — dann erkennst du, welche Zahl tatsächlich mit dem Prozentsatz verknüpft wird."
+              }
+            ]
+          },
+          {
+            "id": "a-ohne-skonto",
+            "kategorie": "vergleich",
+            "titel": "MAKEL kann die Skontofrist nicht nutzen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "a-ohne-skonto-1",
+                "text": "Ohne Skonto kostet A 900 € plus 40 € Fracht, also 940 €. B bleibt bei 930 € und ist nun rein preislich 10 € günstiger. Genau deshalb darf ein möglicher Skonto nicht bedingungslos als sichere Ersparnis eingeplant werden. Ob es sich lohnt, die Skontozahlung über einen Kredit zu finanzieren, ist eine zusätzliche Frage — dafür müssen die Kreditkosten bekannt sein."
+              }
+            ]
+          },
+          {
+            "id": "a-skontobasis",
+            "kategorie": "sonderfall",
+            "titel": "Welche Beträge sind skontierbar?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "a-skontobasis-1",
+                "text": "Unser Fall legt ausdrücklich fest, dass die Fracht nicht skontierbar ist. In einem anderen Vertrag kann die Bemessungsgrundlage anders geregelt sein. Dann wird nicht dieselbe Zahl mechanisch weiterverwendet, sondern zuerst die vereinbarte Skontobasis bestimmt. Das Rechenschema hilft nur, wenn seine Eingaben zum Vertrag passen."
+              }
+            ]
+          },
+          {
+            "id": "a-liquiditaet",
+            "kategorie": "zusammenhang",
+            "titel": "Liquidität und Lieferantenentscheidung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "a-liquiditaet-1",
+                "text": "Die Bezugskalkulation fragt nach den Kosten. Die Liquiditätsplanung fragt, ob MAKEL den Betrag zum richtigen Zeitpunkt zahlen kann. Für eine gute Entscheidung braucht es beide Antworten."
+              },
+              {
+                "typ": "verweis",
+                "id": "a-liquiditaet-2",
+                "text": "Weiterlesen:",
+                "ziele": [
+                  "k3-b3",
+                  "lf9:k1"
+                ]
+              }
+            ]
+          }
         ],
-        "erklaerung": "Der Einstandspreis macht aus unterschiedlichen Angebotsbedingungen eine vergleichbare Zahl. Erst nach Rabatt, Skonto und Bezugskosten zeigt sich, welcher Betrag den Betrieb tatsächlich erreicht. Die Reihenfolge ist zwingend, weil der Skonto auf dem bereits rabattierten Zieleinkaufspreis berechnet wird.",
-        "beispiele": [
-          "Bei 1.050 € Listeneinkaufspreis, 10 % Rabatt, 2 % Skonto und 45 € Bezugskosten ergibt sich: 1.050 € − 105 € = 945 €, − 18,90 € = 926,10 €, + 45 € = 971,10 € Einstandspreis.",
-          "Ein Angebot ‚ab Werk‘ kann trotz niedrigem Listenpreis durch zusätzliche Fracht teurer sein als ein Angebot ‚frei Haus‘."
-        ],
-        "fallbeispiel": "Rechne das Beispiel der Kalkulationsgrafik vollständig: Listeneinkaufspreis 1.050 €. Rabatt 10 % = 105 €, Zieleinkaufspreis 945 €. Skonto 2 % von 945 € = 18,90 €, Bareinkaufspreis 926,10 €. Bezugskosten 45 € addieren. Ergebnis: 971,10 € Einstandspreis. Nur diese Endgröße darf mit dem Einstandspreis des zweiten Angebots verglichen werden.",
-        "typische_fehler": "Skonto wird vom Listenpreis oder Rabatt und Skonto werden einfach zu 12 % addiert. Bezugskosten werden besonders bei ‚ab Werk‘ überlesen.",
         "verstaendnisfragen": [
-          "Warum wird Skonto vom Zieleinkaufspreis gerechnet? Weil der Rabatt den Ausgangspreis bereits verändert hat.",
-          "Warum sind nur Einstandspreise vergleichbar? Weil erst sie Preisnachlässe und zusätzliche Beschaffungskosten enthalten."
-        ],
-        "pruefungsbezug": "Das Schema als Spalte notieren und jede Zwischenstufe beschriften. Eine nachvollziehbare Rechnung zeigt auch bei einem Rechenfehler den Lösungsweg.",
-        "merksatz": "Listenpreis − Rabatt − Skonto + Bezugskosten = Einstandspreis."
+          {
+            "id": "a1",
+            "frage": "Warum beziehen sich die 2 % Skonto auf 900 € und nicht auf 1.000 €?",
+            "antwort": "Weil der Rabatt den Warenpreis schon auf 900 € reduziert hat und dieser Zieleinkaufspreis laut Fall die Skontobasis ist. Die nicht skontierbare Fracht wird erst danach addiert."
+          },
+          {
+            "id": "a2",
+            "frage": "Welche Änderung lässt B in unserem Vergleich günstiger werden?",
+            "antwort": "Wenn MAKEL A nicht innerhalb der Skontofrist bezahlt, steigt dessen Bezugspreis auf 940 €. B kostet unverändert 930 € und ist dann 10 € günstiger."
+          }
+        ]
       },
       {
         "abschnitt": "b2",

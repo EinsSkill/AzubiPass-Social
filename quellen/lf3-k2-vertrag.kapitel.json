@@ -6,6 +6,7 @@
   "untertitel": "Zwei Sätze genügen — wenn sie zusammenpassen.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
@@ -29,23 +30,181 @@
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Der Antrag bindet den Antragenden nach § 145 BGB grundsätzlich.",
-          "Eine Annahme muss dem Antrag vollständig und rechtzeitig entsprechen."
+        "darstellung": "vollfassung",
+        "ziel": "Du kannst eine unveränderte Annahme von einem neuen Antrag unterscheiden und dein Ergebnis an den konkreten Erklärungen begründen.",
+        "vorwissen_kurz": "Im vereinfachten Grundfall handeln beide Seiten wirksam und mit ausreichender Vertretungsmacht, die Erklärungen sind eindeutig und gehen rechtzeitig zu, und das Angebot enthält die wesentlichen Bedingungen. Streit über AGB, Schweigen oder kaufmännische Bestätigungsschreiben ist nicht Teil dieses Falls.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "id": "b-warum",
+            "text": "Warum eine Antwort noch keine Annahme sein muss"
+          },
+          {
+            "typ": "absatz",
+            "id": "b-warum-1",
+            "text": "Ein Vertrag setzt zwei übereinstimmende {{begriff:willenserklaerung|Willenserklärungen}} voraus. Der {{begriff:antrag|Antrag}} beschreibt ein Geschäft so bestimmt, dass die andere Seite es mit einem schlichten Ja annehmen kann; wer ihn abgibt, ist nach {{par:bgb-145|§ 145 BGB}} daran gebunden. Entscheidend ist nicht, dass zwei Schreiben ähnlich aussehen oder beide Seiten grundsätzlich handeln möchten. Sie müssen sich über **dasselbe** Geschäft einig sein."
+          },
+          {
+            "typ": "absatz",
+            "id": "b-warum-2",
+            "text": "Ein verbindliches Angebot ist deshalb etwas anderes als eine Frage nach Preisen. Mit „Was würden 100 Hoodies kosten?“ erkundigt sich ein Kunde zunächst — das ist eine {{begriff:anfrage|Anfrage}}. Mit einem eindeutig verbindlichen Angebot werden dagegen bestimmte Bedingungen zum Vertragsschluss vorgeschlagen. Die Überschrift eines Schreibens kann ein Hinweis sein; ausschlaggebend bleibt sein Inhalt."
+          },
+          {
+            "typ": "basis",
+            "id": "b-kette",
+            "ref": "grafik-1"
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "b-grundfall",
+            "text": "Der Grundfall: eine eindeutige Zustimmung"
+          },
+          {
+            "typ": "absatz",
+            "id": "b-grundfall-1",
+            "text": "MAKEL bietet einer Agentur verbindlich 100 genau bezeichnete Hoodies für 40 € netto je Stück an (fiktive Übungsdaten), mit einer Annahmefrist bis Freitag und einem bestimmten Liefertermin. Die Agentur antwortet am Mittwoch: „Wir nehmen Ihr Angebot über 100 Hoodies unverändert an.“ Die Antwort geht MAKEL am selben Tag zu. Sie kommt innerhalb der Frist ({{par:bgb-148|§ 148 BGB}}) und deckt sich inhaltlich mit dem Antrag. Die Erklärungen stimmen überein — der Vertrag ist geschlossen."
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "b-vergleich",
+            "text": "Der Vergleichsfall: Zustimmung mit anderer Menge"
+          },
+          {
+            "typ": "absatz",
+            "id": "b-vergleich-1",
+            "text": "Die Agentur antwortet stattdessen: „Wir bestellen 120 Hoodies zu den angebotenen Bedingungen.“ Jetzt passt die Menge nicht mehr zum Antrag über 100 Stück. Nach {{par:bgb-150|§ 150 Abs. 2 BGB}} gilt eine solche Antwort als Ablehnung, verbunden mit einem neuen Antrag. MAKEL muss erst entscheiden, ob es 120 Stück zu diesen Bedingungen liefern möchte. Erst wenn MAKEL diesen neuen Antrag annimmt, gibt es einen Vertrag über 120 Stück."
+          },
+          {
+            "typ": "tabelle",
+            "id": "b-tabelle",
+            "spalten": [
+              "Erklärung der Agentur",
+              "Einordnung im beschriebenen Fall",
+              "Was folgt?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„100 Stück, unverändert wie angeboten“",
+                  "Rechtzeitige Annahme",
+                  "Vertrag über 100 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "„120 Stück zu diesen Bedingungen“",
+                  "Abändernde Antwort = Ablehnung + neuer Antrag",
+                  "Noch kein Vertrag; MAKEL entscheidet"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Könnten Sie alternativ auch 120 Stück anbieten?“",
+                  "Nachfrage ohne eindeutige Annahme",
+                  "Inhalt klären; nicht als Auftrag erfassen"
+                ]
+              }
+            ]
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "b-begruenden",
+            "text": "So begründest du dein Ergebnis"
+          },
+          {
+            "typ": "liste",
+            "id": "b-schritte",
+            "nummeriert": true,
+            "punkte": [
+              "Den ursprünglichen Antrag benennen: Wer schlägt wem welches Geschäft vor?",
+              "Prüfen, ob die Antwort rechtzeitig kommt — innerhalb einer gesetzten Frist oder der regelmäßigen Antwortzeit ({{par:bgb-147|§ 147 BGB}}).",
+              "Antwort und Antrag Punkt für Punkt vergleichen: Ware, Menge, Preis, Ausführung, Termin, sonstige Bedingungen.",
+              "Mit einem konkreten Ergebnis schließen: Ist der Vertrag geschlossen — oder wer muss noch welche Erklärung abgeben?"
+            ]
+          },
+          {
+            "typ": "absatz",
+            "id": "b-begruenden-1",
+            "text": "Das ist hilfreicher als der Satz „Eine Auftragsbestätigung macht den Vertrag.“ Ob eine Bestätigung etwas annimmt, etwas ändert oder nur einen bereits geschlossenen Vertrag dokumentiert, hängt vom vorherigen Ablauf und von ihrem Inhalt ab."
+          }
         ],
-        "erklaerung": "Ein Antrag kann nach § 145 BGB bindend sein. Nach § 147 BGB muss die Annahme unter Anwesenden sofort und unter Abwesenden innerhalb der regelmäßigen Antwortzeit erfolgen. Eine Annahme mit anderem Preis, anderer Menge oder anderem Termin ist keine Annahme, sondern ein neuer Antrag. Die Pflichten aus dem geschlossenen Kaufvertrag beschreibt § 433 BGB: Verkäufer übergibt und verschafft Eigentum; Käufer zahlt und nimmt ab.",
-        "beispiele": [
-          "Ein bindendes Angebot über 200 Ordner wird mit derselben Menge, demselben Preis und demselben Termin angenommen: Der Vertrag steht.",
-          "Wird statt 15. September der 29. September genannt, weicht die Erklärung ab und ist als neuer Antrag zu behandeln."
+        "details": [
+          {
+            "id": "b-anfrage",
+            "kategorie": "grundlagen",
+            "titel": "Anfrage und Antrag",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "b-anfrage-1",
+                "text": "Eine Anfrage soll Informationen beschaffen und zeigt im gewöhnlichen Fall noch keinen Bindungswillen. Ein Antrag ist dagegen auf den Abschluss eines bestimmten Vertrags gerichtet. Deshalb darf ein Fall nicht erst „MAKEL fragt an“ schreiben und diese Erklärung anschließend ohne weitere Angaben als verbindlichen Antrag behandeln. Ist der Wortlaut mehrdeutig, braucht es Auslegung oder zusätzliche Angaben zum Sachverhalt."
+              }
+            ]
+          },
+          {
+            "id": "b-frist",
+            "kategorie": "vergleich",
+            "titel": "Die Annahmefrist ist verpasst",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "b-frist-1",
+                "text": "Ein ausdrücklich bis Freitag befristetes Angebot kann nicht beliebig lange angenommen werden ({{par:bgb-148|§ 148 BGB}}). Antwortet die Agentur erst am Montag, gilt ihre Annahme als neuer Antrag ({{par:bgb-150|§ 150 Abs. 1 BGB}}) — MAKEL kann ihn annehmen, muss aber nicht. Sonderregeln, etwa wenn eine rechtzeitig abgeschickte Antwort unerwartet lange unterwegs war, gehören in einen eigenen, fortgeschrittenen Fall."
+              }
+            ]
+          },
+          {
+            "id": "b-schweigen",
+            "kategorie": "sonderfall",
+            "titel": "Darf die Agentur einfach schweigen?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "b-schweigen-1",
+                "text": "Im hier beschriebenen gewöhnlichen Fall ersetzt Schweigen keine Annahme. Daraus folgt aber keine grenzenlose Regel für jede kaufmännische Konstellation: Stellt ein Fall auf eine laufende Geschäftsverbindung unter Kaufleuten oder ein kaufmännisches Bestätigungsschreiben ab, muss genau dieser zusätzliche Sachverhalt geprüft werden."
+              }
+            ]
+          },
+          {
+            "id": "b-auftrag",
+            "kategorie": "zusammenhang",
+            "titel": "Vertrag und Auftragsbearbeitung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "b-auftrag-1",
+                "text": "Ein sauber erfasster Auftrag braucht eine gesicherte Vertragsgrundlage. Sonst bereitet die Produktion 120 Stück vor, obwohl MAKEL nur 100 Stück angeboten hat. Die rechtliche Prüfung vermeidet damit unmittelbar organisatorische Fehler."
+              },
+              {
+                "typ": "verweis",
+                "id": "b-auftrag-2",
+                "text": "Weiterlesen:",
+                "ziele": [
+                  "k4"
+                ]
+              }
+            ]
+          }
         ],
-        "fallbeispiel": "Ein Kunde bestellt 200 Ordner zum angebotenen Preis, nennt aber einen anderen Liefertermin. Die Erklärung stimmt nicht vollständig mit dem Angebot überein. Deshalb liegt keine Annahme vor; die Abweichung ist ein neuer Antrag. Ein Vertrag entsteht erst, wenn die andere Seite diesen neuen Inhalt annimmt.",
-        "typische_fehler": "Eine kleine Abweichung wird als unwichtig behandelt oder die Auftragsbestätigung allein als Annahme bezeichnet. Außerdem wird eine verspätete Annahme nicht als neuer Antrag geprüft.",
         "verstaendnisfragen": [
-          "Was muss eine Annahme erfüllen? Sie muss vollständig mit dem Antrag übereinstimmen und rechtzeitig erfolgen.",
-          "Was ist eine abweichende Antwort? Ein neuer Antrag, nicht die Annahme des ursprünglichen Antrags."
+          {
+            "id": "b1",
+            "frage": "Warum führt „120 statt 100“ nicht automatisch zu einem Vertrag über 120 Stück?",
+            "antwort": "Weil MAKEL nur 100 Stück angeboten hat. Die abweichende Antwort ist eine Ablehnung, verbunden mit einem neuen Antrag. MAKEL muss diesen erst annehmen; die bloße Ähnlichkeit der Bedingungen ersetzt die Zustimmung nicht."
+          },
+          {
+            "id": "b2",
+            "frage": "Welche drei Punkte prüfst du, bevor du ein Ergebnis nennst?",
+            "antwort": "Den ursprünglichen Antrag, die inhaltliche Übereinstimmung der Antwort und die Rechtzeitigkeit nach der gesetzten oder der regelmäßigen Annahmefrist. Die im Grundfall vorausgesetzte Wirksamkeit und Vertretungsmacht bleiben als Voraussetzung im Blick."
+          }
         ],
-        "pruefungsbezug": "Vergleiche Antrag und Antwort zeilenweise: Ware, Menge, Preis, Termin und weitere Bedingungen. Jede relevante Abweichung ändert die rechtliche Einordnung.",
-        "merksatz": "Abweichung bedeutet neuer Antrag — der Vertrag entsteht erst mit dessen Annahme."
+        "quellen": [
+          {
+            "titel": "§§ 145, 147, 148, 150 BGB",
+            "url": "https://www.gesetze-im-internet.de/bgb/__150.html",
+            "bezug": "Bindung, Annahmefrist, verspätete und abändernde Annahme; Wortlaut geprüft am 28.10.2026"
+          }
+        ]
       },
       {
         "abschnitt": "b3",

@@ -29,6 +29,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from build import karten_sammeln, option_ids
+import vertiefung as vmodus
 from gemeinsames import (AUSGABE, LUPE, MARKE, MITTEL, beruf_von, berufe,
                          fussleiste, kopf, lade, lernfeld_eintrag,
                          lernfeld_dateien, registry, rechtliches, schriften_lokal,
@@ -158,6 +159,24 @@ def suche_sammeln(lf, kapitel_daten):
                 "lf": lf["id"], "lft": lernfeld_label,
                 "k": f'K{ch["nummer"]} · {klartext(ch["titel"])}',
                 "zu": f'{lf["id"]}.html#{ch["id"]}-{a["id"]}',
+            })
+        # Erweiterter Modus: eigener Treffer für Vollfassung, Details und
+        # Fragen. Der Link öffnet genau diese Ebene; Antworten stehen nicht im
+        # Index, damit die Suche keine Lösung vorwegnimmt.
+        titel_von = {a["id"]: klartext(a["titel"]) for a in ch["bloecke"]}
+        for ab, detail, art, text, titel in vmodus.suchtexte(ch, klartext):
+            ziel = f'{lf["id"]}.html?ansicht=ausfuehrlich'
+            if detail:
+                ziel += f'&detail={detail}'
+            ziel += f'#{ch["id"]}-{ab}'
+            zeile = titel_von.get(ab, "")
+            raus.append({
+                "t": (f'{zeile} · ausführlich' if art == "haupt"
+                      else f'{titel}' if art == "detail" else f'Frage: {titel}'),
+                "x": lernfeld_suchtext + " " + text,
+                "lf": lf["id"], "lft": lernfeld_label,
+                "k": f'K{ch["nummer"]} · {klartext(ch["titel"])} · {zeile}',
+                "zu": ziel,
             })
         raus.append({
             "t": "Zusammenfassung",

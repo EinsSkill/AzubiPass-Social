@@ -63,6 +63,7 @@
 
     lesezeichenStellen(id, nr);
     starteKapitel(aktuell);
+    if (stelle) stelle = tiefeAnwenden(aktuell, stelle);
     aktualisieren();
 
     if (stelle) {
@@ -280,27 +281,172 @@
     sec.querySelectorAll(".rein").forEach(function (x) { seher.observe(x); });
   }
 
+  /* ================================================== Erweiterter Modus
+
+     Jeder Abschnitt mit Vertiefung hat einen eigenen Schalter; der Kapitel-
+     schalter öffnet oder schließt alle auf einmal. Zwei Arten von Vertiefung:
+
+       Vollfassung (.vollfassung)  ersetzt beim Öffnen die erklärenden Absätze
+                                   (.kurztext). Grafiken und Checks, auf die sie
+                                   verweist, werden in sie hinein verschoben –
+                                   dasselbe Element, also derselbe Zustand – und
+                                   beim Schließen zurückgestellt.
+       Altzusatz (.detail-zusatz)  steht wie bisher zusätzlich unter dem Text.
+
+     Der Zustand lebt nur im Dokument: Kapitelwechsel innerhalb der Seite
+     behalten ihn, ein Neuladen beginnt kompakt. Kein Lernstand, kein Sync. */
+
+  var vertiefungen = new WeakMap();
+
   function langfassung(sec) {
     var knopf = sec.querySelector(".detail-schalter");
-    var zusatz = [].slice.call(sec.querySelectorAll(".detail-zusatz"));
-    if (!knopf || !zusatz.length) {
-      if (knopf) knopf.hidden = true;
-      return;
+    var standText = sec.querySelector(".vertiefung-stand");
+    var schalter = [].slice.call(sec.querySelectorAll(".abschnitt-schalter:not(.abschnitt-schalter-ende)"));
+    var eintraege = schalter.map(function (s) {
+      var ziel = document.getElementById(s.getAttribute("aria-controls"));
+      return ziel ? { ab: s.dataset.abschnitt, start: s, ziel: ziel,
+                      voll: ziel.classList.contains("vollfassung"),
+                      ende: ziel.querySelector(".abschnitt-schalter-ende") } : null;
+    }).filter(Boolean);
+
+    if (!eintraege.length) { if (knopf) knopf.hidden = true; return; }
+
+    function kurztexte(e) {
+      /* Die Absätze dieses Abschnitts: alles zwischen seiner Überschrift und
+         der nächsten. Nur die als ersetzbar markierten. */
+      var raus = [], n = e.start.nextElementSibling;
+      while (n && n.tagName !== "H3" && !n.classList.contains("zus")) {
+        if (n.classList.contains("kurztext")) raus.push(n);
+        n = n.nextElementSibling;
+      }
+      return raus;
     }
 
-    function setze(offen) {
-      sec.classList.toggle("detailreich", offen);
-      zusatz.forEach(function (x) { x.hidden = !offen; });
-      knopf.setAttribute("aria-expanded", offen ? "true" : "false");
-      knopf.textContent = offen
-        ? "Kompakte Ansicht anzeigen"
-        : "Ausführlich erweitern";
+    function basisVerschieben(e, offen) {
+      e.ziel.querySelectorAll(".vf-basis").forEach(function (platz) {
+        var block = sec.querySelector('.basis-block[data-abschnitt="' + e.ab +
+                                      '"][data-basis="' + platz.dataset.basis + '"]');
+        if (!block) return;
+        if (offen && block.parentNode !== platz) {
+          var heimat = document.createComment("basis " + platz.dataset.basis);
+          block.parentNode.insertBefore(heimat, block);
+          block._heimat = heimat;
+          platz.appendChild(block);
+          platz.classList.add("belegt");
+        } else if (!offen && block._heimat) {
+          block._heimat.parentNode.insertBefore(block, block._heimat);
+          block._heimat.parentNode.removeChild(block._heimat);
+          block._heimat = null;
+          platz.classList.remove("belegt");
+        }
+      });
     }
 
-    setze(false);
-    knopf.addEventListener("click", function () {
-      setze(!sec.classList.contains("detailreich"));
+    function setzeAbschnitt(e, offen, still) {
+      var war = !e.ziel.hidden;
+      if (war === offen) return;
+      var titel = e.start.previousElementSibling;   // die h3
+
+      if (!offen) {
+        // Fokus nie in verborgenem Inhalt zurücklassen.
+        if (e.ziel.contains(document.activeElement)) e.start.focus({ preventScroll: true });
+        e.ziel.querySelectorAll("details[open]").forEach(function (d) { d.open = false; });
+      }
+      if (e.voll) {
+        kurztexte(e).forEach(function (p) { p.hidden = offen; });
+        basisVerschieben(e, offen);
+      }
+      e.ziel.hidden = !offen;
+      [e.start, e.ende].forEach(function (s) {
+        if (!s) return;
+        s.setAttribute("aria-expanded", offen ? "true" : "false");
+        s.textContent = offen ? "Kompakt anzeigen" : "Ausführlicher verstehen";
+      });
+      if (e.ende) e.ende.textContent = "Kompakt anzeigen";
+
+      /* Beim Schließen aus einem langen Text heraus: zur Überschrift, nicht
+         zum Kapitelanfang. Nur wenn sie aus dem Blick geraten ist. */
+      if (!offen && !still && titel && titel.getBoundingClientRect().top < 60) {
+        titel.scrollIntoView({ block: "start", behavior: "auto" });
+        window.scrollBy(0, -80);
+      }
+      stand();
+    }
+
+    function stand() {
+      var offen = eintraege.filter(function (e) { return !e.ziel.hidden; }).length;
+      var alle = offen === eintraege.length;
+      sec.classList.toggle("detailreich", offen > 0);
+      if (knopf) {
+        knopf.setAttribute("aria-expanded", alle ? "true" : "false");
+        knopf.textContent = alle ? "Ganzes Kapitel kompakt lesen" : "Ganzes Kapitel ausführlich lesen";
+      }
+      if (standText) {
+        standText.textContent = offen && !alle
+          ? offen + " von " + eintraege.length + " Abschnitten ausführlich geöffnet" : "";
+      }
+    }
+
+    eintraege.forEach(function (e) {
+      [e.start, e.ende].forEach(function (s) {
+        if (s) s.addEventListener("click", function () {
+          var aus = !e.ziel.hidden;
+          setzeAbschnitt(e, !aus);
+          if (aus && s === e.ende) e.start.focus({ preventScroll: true });
+        });
+      });
     });
+
+    if (knopf) {
+      knopf.addEventListener("click", function () {
+        var alle = eintraege.every(function (e) { return !e.ziel.hidden; });
+        // Nur die Haupttexte – Details und Antworten bleiben, wie sie sind.
+        eintraege.forEach(function (e) { setzeAbschnitt(e, !alle, true); });
+      });
+    }
+
+    // Antworten zu Verständnisfragen: Beschriftung folgt dem Zustand.
+    sec.querySelectorAll(".vf-antwort").forEach(function (d) {
+      d.addEventListener("toggle", function () {
+        d.querySelector("summary").textContent = d.open ? "Antwort ausblenden" : "Antwort anzeigen";
+      });
+    });
+
+    vertiefungen.set(sec, {
+      oeffne: function (ab) {
+        var e = eintraege.filter(function (x) { return x.ab === ab; })[0];
+        if (e) setzeAbschnitt(e, true, true);
+        return e || null;
+      }
+    });
+    stand();
+  }
+
+  /* Ein Suchtreffer kann verlangen, dass eine Vertiefung offen ist:
+     lf4.html?ansicht=ausfuehrlich&detail=d1#k3-b1. Gilt nur für den ersten
+     Aufruf; danach verschwinden die Parameter, damit ein Neuladen wieder
+     kompakt beginnt. Unbekannte Details öffnen nur den Abschnitt. */
+  var tiefeVerlangt = (function () {
+    try {
+      var p = new URLSearchParams(location.search);
+      if (p.get("ansicht") !== "ausfuehrlich") return null;
+      return { detail: p.get("detail") || "" };
+    } catch (e) { return null; }
+  })();
+
+  function tiefeAnwenden(sec, stelle) {
+    if (!tiefeVerlangt || !stelle || !/^H3$/.test(stelle.tagName)) return stelle;
+    var wunsch = tiefeVerlangt;
+    tiefeVerlangt = null;
+    try { history.replaceState(null, "", location.pathname + location.hash); } catch (e) {}
+    var steuerung = vertiefungen.get(sec);
+    var ab = stelle.id.split("-").slice(1).join("-");
+    var e = steuerung && steuerung.oeffne(ab);
+    if (!e || !wunsch.detail) return stelle;
+    var ziel = e.ziel.querySelector('[data-detail="' + CSS.escape(wunsch.detail) + '"]');
+    if (!ziel) return stelle;
+    if (ziel.tagName === "DETAILS") ziel.open = true;
+    return ziel;
   }
 
   /* Wo im Kapitel man gerade steht.
@@ -1092,6 +1238,7 @@
     var wStart = el("div", "lz-wert");
     startInput = document.createElement("input");
     AP.kommafeld(startInput); startInput.value = d.start.wert;
+    startInput.setAttribute("aria-label", d.start.name);
     wStart.appendChild(startInput);
     zStart.appendChild(wStart);
     leiter.appendChild(zStart);
@@ -1920,6 +2067,7 @@
         var inp = document.createElement("input");
         inp.type = "number"; inp.min = "0"; inp.max = "30"; inp.step = "1";
         inp.value = verzug[gewaehlt] || 0;
+        inp.setAttribute("aria-label", v.name + " verzögert sich um (" + d.einheit + ")");
         inp.addEventListener("input", function () {
           verzug[gewaehlt] = Math.max(0, parseInt(inp.value, 10) || 0);
           zeichne();
@@ -1975,6 +2123,7 @@
     var iJahre = document.createElement("input");
     iJahre.type = "number"; iJahre.min = "0"; iJahre.max = "50"; iJahre.step = "1";
     iJahre.value = d.eingaben.jahre.start;
+    iJahre.setAttribute("aria-label", d.eingaben.jahre.label);
     fJahre.appendChild(iJahre);
     regler.appendChild(fJahre);
 
@@ -1984,6 +2133,7 @@
       fDatum.appendChild(el("label", null, d.eingaben.datum.label));
       iDatum = document.createElement("input");
       iDatum.type = "date"; iDatum.value = d.eingaben.datum.start;
+      iDatum.setAttribute("aria-label", d.eingaben.datum.label);
       fDatum.appendChild(iDatum);
       regler.appendChild(fDatum);
     }

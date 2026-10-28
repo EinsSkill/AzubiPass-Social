@@ -135,6 +135,75 @@ button{font:inherit;}
   color:var(--text-sek);}
 .detail-zusatz p:last-child{margin-bottom:0;}
 
+/* Erweiterter Modus: Abschnittsschalter und Vollfassung.
+   Der Schalter sitzt direkt unter der Überschrift, leise wie ein Textlink,
+   aber mit 44 px Tippfläche. Die Vollfassung ist eine ruhige Lesespalte mit
+   feiner Goldkante — keine Kartenwand. */
+.vertiefung-stand{font:500 12.5px var(--sans);color:var(--text-sek);margin:10px 0 0;}
+.vertiefung-stand:empty{display:none;}
+.abschnitt-schalter{display:inline-flex;align-items:center;gap:9px;min-height:44px;
+  margin:-8px 0 14px 16px;padding:0 2px;border:0;background:none;cursor:pointer;
+  font:600 13px var(--sans);color:var(--tinte);text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:4px;}
+.abschnitt-schalter::before{content:"";width:7px;height:7px;flex:none;
+  border:solid currentColor;border-width:0 1.5px 1.5px 0;
+  transform:translateY(-2px) rotate(45deg);transition:transform .2s;}
+.abschnitt-schalter[aria-expanded="true"]::before{transform:translateY(2px) rotate(-135deg);}
+.abschnitt-schalter:hover{text-decoration-thickness:2px;}
+.abschnitt-schalter:focus-visible{outline:3px solid rgba(201,162,39,.55);outline-offset:3px;border-radius:2px;}
+.abschnitt-schalter-ende{margin:18px 0 0;}
+.vollfassung{max-width:var(--lese);margin:4px 0 34px;padding:2px 0 4px 18px;
+  border-left:3px solid var(--gold);}
+.vollfassung p{margin:0 0 18px;}
+.vf-ziel{font:500 15px/1.5 var(--sans);color:var(--text-sek);}
+.vf-ziel span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--gold-text);margin-bottom:4px;}
+.vf-vorwissen{font-size:16px;color:var(--text-sek);padding:12px 14px;background:var(--papier);
+  border:1px solid var(--linie);}
+.vf-zt{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:-.01em;
+  margin:30px 0 10px;color:var(--text);}
+.vollfassung .tab-huelle{margin:6px 0 10px;}
+.vf-fazit{font-size:16px;color:var(--text-sek);}
+.vf-liste{margin:0 0 18px;padding-left:22px;}
+.vf-liste li{margin:0 0 8px;}
+.vf-basis{margin:8px 0 22px;}
+.vf-basis.belegt .vf-basis-ohne-js{display:none;}
+.vf-basis-ohne-js{font:13px var(--sans);color:var(--text-sek);}
+.vf-basis-hinweis{font:14px/1.5 var(--sans);color:var(--text-sek);margin-bottom:6px !important;}
+.vf-verweis{font:15px/1.5 var(--sans);margin:6px 0 20px;}
+.vf-verweis p{margin:0 !important;}
+.vf-verweis ul{list-style:none;margin:2px 0 0;padding:0;}
+.vf-verweis a{display:inline-flex;min-height:44px;align-items:center;color:var(--tinte);}
+.vf-details{margin:26px 0 8px;border-top:1px solid var(--linie);}
+.vf-detail{border-bottom:1px solid var(--linie);}
+.vf-detail > summary,.vf-antwort > summary{cursor:pointer;min-height:44px;display:flex;
+  align-items:center;gap:6px;flex-wrap:wrap;font:600 14px/1.4 var(--sans);color:var(--tinte);
+  padding:10px 0;list-style:none;}
+.vf-detail > summary::-webkit-details-marker,.vf-antwort > summary::-webkit-details-marker{display:none;}
+.vf-detail > summary::before{content:"+";font:500 17px var(--mono);width:16px;flex:none;}
+.vf-detail[open] > summary::before{content:"−";}
+.vf-kat{color:var(--gold-text);}
+.vf-detail > summary:focus-visible,.vf-antwort > summary:focus-visible{outline:3px solid rgba(201,162,39,.55);outline-offset:2px;}
+.vf-detail-inhalt{padding:2px 0 14px 22px;}
+.vf-detail-inhalt p{font-size:16.5px;}
+.vf-fragen{margin-top:26px;}
+.vf-frage{padding:12px 0;border-top:1px solid var(--linie);}
+.vf-frage-text{font-weight:600;margin:0 0 4px !important;}
+.vf-antwort > summary{font-weight:500;text-decoration:underline;text-underline-offset:4px;}
+.vf-antwort p{font-size:16.5px;color:var(--text-sek);margin:4px 0 0 !important;}
+.vf-quellen{margin-top:22px;font:12.5px/1.5 var(--sans);color:var(--text-sek);}
+.vf-quellen span{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:10.5px;}
+.vf-quellen ul{margin:4px 0 0;padding-left:18px;}
+.vf-quellen a{color:inherit;}
+@media (max-width:700px){
+  .abschnitt-schalter{margin-left:0;}
+  .vollfassung{padding-left:14px;}
+  .vf-zt{font-size:19px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .abschnitt-schalter::before{transition:none;}
+}
+
 /* Lauf */
 .lauf{max-width:var(--mass);margin:0 auto;padding:0 48px 90px;display:grid;grid-template-columns:180px 1fr;gap:48px;}
 /* ---------- Inhaltsnavigation im Kapitel ----------
@@ -244,6 +313,7 @@ thead th{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.
 tbody td{padding:12px 14px;border-bottom:1px solid var(--linie);vertical-align:top;}
 tbody tr:nth-child(4n+1) td{background:var(--papier);}
 td.num{font-family:var(--mono);font-size:14.5px;font-variant-numeric:tabular-nums;}
+.vollfassung td.num{white-space:nowrap;}
 tr.klappbar{cursor:pointer;}
 tr.klappbar td:first-child{position:relative;padding-left:32px;}
 tr.klappbar td:first-child::before{content:"+";position:absolute;left:13px;top:11px;font-family:var(--mono);font-size:14px;color:var(--gold-matt);}

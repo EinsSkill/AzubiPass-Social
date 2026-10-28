@@ -19,6 +19,7 @@ from gemeinsames import (AUSGABE, LUPE, fussleiste, kopf, lade, lernfeld_dateien
                          lernfeld_eintrag, registry,
                          schriften_lokal, tableiste, veroeffentliche,
                          zwischenspeicher_schreiben)
+import vertiefung as vmodus
 
 HIER = Path(__file__).parent
 
@@ -327,7 +328,9 @@ def _ausfuehrlich_karte(ch):
     eigene = ch.get("ausfuehrlich")
     if isinstance(eigene, dict) and eigene.get("abschnitte"):
         raus = {}
-        daten = eigene["abschnitte"]
+        # Vollfassungen (Format 2) rendert vertiefung.py; hier nur Altbestand.
+        daten = [d for d in eigene["abschnitte"] if not vmodus.ist_vollfassung(d)]
+        voll = {d["abschnitt"] for d in eigene["abschnitte"] if vmodus.ist_vollfassung(d)}
         gleichlang = len(daten) == len(basis)
         for i, abschnitt in enumerate(daten):
             ids = abschnitt.get("abschnitt")
@@ -338,7 +341,7 @@ def _ausfuehrlich_karte(ch):
             for id_ in ids or []:
                 raus[id_] = abschnitt
         einleitung = _langwerte(eigene.get("einleitung"))
-        if einleitung and basis:
+        if einleitung and basis and basis[0]["id"] not in voll:
             ziel = basis[0]["id"]
             erster = dict(raus.get(ziel, {}))
             erster["einleitung"] = einleitung
@@ -350,7 +353,7 @@ def _ausfuehrlich_karte(ch):
             for a in basis if _automatische_detailgruppen(a)}
 
 
-def detail_zusatz(a, daten, lf):
+def detail_zusatz(a, daten, lf, dom_id=""):
     """Gibt eine unaufdringliche Inline-Erweiterung für einen Abschnitt aus."""
     if not daten:
         return ""
@@ -388,13 +391,24 @@ def detail_zusatz(a, daten, lf):
         inhalt.extend(f"<p>{inline(x, lf)}</p>" for x in texte)
     if not inhalt:
         return ""
-    return '<div class="detail-zusatz" hidden>' \
+    kennung = f' id="{dom_id}"' if dom_id else ""
+    return f'<div class="detail-zusatz"{kennung} hidden>' \
            '<div class="detail-marke">Mehr Erklärung</div>' \
            + "".join(inhalt) + "</div>"
 
 
-def kapitel(ch, lf, naechstes, hat_aufgaben=False):
+def abschnitt_schalter(ch, a, ziel_id):
+    """Schalter unter der Abschnittsüberschrift. Er steuert genau eine
+    Vertiefung — die Vollfassung oder den Altzusatz dieses Abschnitts."""
+    return (f'<button class="abschnitt-schalter" type="button" aria-expanded="false" '
+            f'aria-controls="{ziel_id}" data-abschnitt="{a["id"]}">'
+            f'Ausführlicher verstehen</button>')
+
+
+def kapitel(ch, lf, naechstes, hat_aufgaben=False, datei="", verweis_cache=None):
     detailkarte = _ausfuehrlich_karte(ch)
+    verweis_cache = {} if verweis_cache is None else verweis_cache
+    vollkarte = vmodus.pruefe(ch, lf, datei or ch["id"], verweis_cache)
     ziele = "".join(
         f'<li data-fuer="{z["abschnitt"]}"><span class="haken"></span>'
         f'<span>{inline(z["text"], lf)}</span></li>'
@@ -402,18 +416,42 @@ def kapitel(ch, lf, naechstes, hat_aufgaben=False):
     )
 
     abschnitte = []
+    vertiefbar = 0
     for a in ch["bloecke"]:
         ort = f'{lf["id"]}-{ch["id"]}-{a["id"]}'
+        voll = vollkarte.get(a["id"])
+        basis_refs = set()
+        if voll:
+            basis_refs = {b["ref"] for b in voll["inhalt"] if b["typ"] == "basis"}
+        schluessel = vmodus.basis_schluessel(a)
         gezaehlt = {}
         stuecke = []
-        for x in a["inhalt"]:
+        for x, bk in zip(a["inhalt"], schluessel):
+            # Kennungen weiter aus der ursprünglichen Reihenfolge: Die
+            # Vollfassung darf keine gespeicherte Antwort verschieben.
             kuerzel = KUERZEL.get(x["typ"], "b")
             gezaehlt[kuerzel] = gezaehlt.get(kuerzel, 0) + 1
-            stuecke.append(block(x, lf, f'{ort}-{kuerzel}{gezaehlt[kuerzel]}'))
-        abschnitte.append(
-            f'<h3 id="{ch["id"]}-{a["id"]}">{inline(a["titel"], lf)}</h3>'
-            f'{"".join(stuecke)}{detail_zusatz(a, detailkarte.get(a["id"]), lf)}'
-        )
+            teil = block(x, lf, f'{ort}-{kuerzel}{gezaehlt[kuerzel]}')
+            if voll and x["typ"] == "absatz":
+                teil = teil.replace('<p class="rein">', '<p class="rein kurztext">', 1)
+            if voll and bk in basis_refs:
+                teil = f'<div class="basis-block" data-abschnitt="{a["id"]}" data-basis="{bk}">{teil}</div>'
+            stuecke.append(teil)
+
+        kopf_id = f'{ch["id"]}-{a["id"]}'
+        if voll:
+            vertiefbar += 1
+            zusatz = vmodus.vollfassung(ch, a, voll, lf, inline, tabelle, datei, verweis_cache)
+            abschnitte.append(
+                f'<h3 id="{kopf_id}">{inline(a["titel"], lf)}</h3>'
+                f'{abschnitt_schalter(ch, a, kopf_id + "-voll")}{zusatz}{"".join(stuecke)}')
+        else:
+            zusatz = detail_zusatz(a, detailkarte.get(a["id"]), lf, kopf_id + "-mehr")
+            schalter = abschnitt_schalter(ch, a, kopf_id + "-mehr") if zusatz else ""
+            vertiefbar += 1 if zusatz else 0
+            abschnitte.append(
+                f'<h3 id="{kopf_id}">{inline(a["titel"], lf)}</h3>'
+                f'{schalter}{"".join(stuecke)}{zusatz}')
 
     zus = "".join(f"<li>{inline(s, lf)}</li>" for s in ch["zusammenfassung"])
 
@@ -446,10 +484,7 @@ def kapitel(ch, lf, naechstes, hat_aufgaben=False):
     <div>
       <h2>{html.escape(ch["titel"])}</h2>
       <p>{html.escape(ch["untertitel"])}</p>
-      <div class="kapitel-werkzeuge">
-        <button class="detail-schalter" type="button" aria-expanded="false"
-                aria-controls="{ch["id"]}-inhalt">Ausführlich erweitern</button>
-      </div>
+      {kapitel_werkzeuge(ch, vertiefbar)}
     </div>
   </div>
 
@@ -493,6 +528,17 @@ def kapitel(ch, lf, naechstes, hat_aufgaben=False):
     </div>
   </div>
 </section>'''
+
+
+def kapitel_werkzeuge(ch, vertiefbar):
+    """Kapitelschalter nur, wenn es etwas zu vertiefen gibt — ein Knopf ohne
+    Wirkung wäre ein Versprechen ohne Inhalt."""
+    if not vertiefbar:
+        return ""
+    return (f'<div class="kapitel-werkzeuge">'
+            f'<button class="detail-schalter" type="button" aria-expanded="false" '
+            f'aria-controls="{ch["id"]}-inhalt">Ganzes Kapitel ausführlich lesen</button>'
+            f'<p class="vertiefung-stand" aria-live="polite"></p></div>')
 
 
 PFEIL = ('<svg width="17" height="10" viewBox="0 0 17 10" fill="none">'
@@ -641,9 +687,12 @@ def baue(lernfeld_datei):
     mit_aufgaben = kapitel_mit_aufgaben(lernfeld_datei, lf)
 
     seiten = [start(lf, kapitel_daten, len(karten))]
+    dateiname = {e["id"]: e["datei"] for e in lf["kapitel"]}
+    verweis_cache = {}
     for i, ch in enumerate(kapitel_daten):
         naechstes = kapitel_daten[i + 1] if i + 1 < len(kapitel_daten) else None
-        seiten.append(kapitel(ch, lf, naechstes, ch["id"] in mit_aufgaben))
+        seiten.append(kapitel(ch, lf, naechstes, ch["id"] in mit_aufgaben,
+                              dateiname.get(ch["id"], ch["id"]), verweis_cache))
     seiten.append(trainer(karten))
 
     stil, kernel, verhalten = veroeffentliche("azubipass.css", "kern.js", "azubipass.js")

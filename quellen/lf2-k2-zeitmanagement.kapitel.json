@@ -6,6 +6,7 @@
   "untertitel": "Der Tag hat acht Stunden. Verplanen kannst du fünf.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
@@ -29,23 +30,184 @@
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Dringlichkeit beschreibt Zeitdruck, Wichtigkeit den Beitrag zu einem Ziel.",
-          "Nicht jede dringende Aufgabe muss von dir selbst erledigt werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du kannst Aufgaben anhand ihrer Folgen und Fristen priorisieren und erklären, wann du selbst handelst und wann du Zuständigkeiten klären musst.",
+        "vorwissen_kurz": "**Dringlichkeit** beschreibt zeitlichen Handlungsdruck. **Wichtigkeit** beschreibt den Beitrag zu relevanten Zielen oder die Folgen, wenn die Aufgabe liegen bleibt. Maßgeblich ist der betriebliche Auftrag und deine Rolle — nicht, was dich persönlich am meisten interessiert.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "id": "c-warum",
+            "text": "Warum das Lauteste nicht immer zuerst kommt"
+          },
+          {
+            "typ": "absatz",
+            "id": "c-warum-1",
+            "text": "Im Büro verlangen oft mehrere Aufgaben gleichzeitig Aufmerksamkeit: Eine Nachricht ist als „dringend“ markiert, das Telefon klingelt, und eine Auswertung ist erst nächste Woche fällig. Wer nur auf Unterbrechungen reagiert, beginnt die Auswertung womöglich erst, wenn kaum noch Zeit bleibt. Die Aufgabe war schon vorher wichtig — sie war nur noch nicht unmittelbar dringend."
+          },
+          {
+            "typ": "absatz",
+            "id": "c-warum-2",
+            "text": "Die {{begriff:eisenhower|Eisenhower-Matrix}} hilft, diese beiden Fragen getrennt zu beantworten. Zuerst: Welche Folgen hat es, wenn die Aufgabe nicht erledigt wird? Danach: Bis wann muss etwas geschehen, und welche Vorarbeiten brauchen Zeit? Erst dann wählst du eine Handlung. Die Matrix ist eine Entscheidungshilfe, kein Ersatz für Fachwissen oder betriebliche Zuständigkeit."
+          },
+          {
+            "typ": "basis",
+            "id": "c-matrix",
+            "ref": "grafik-1"
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "c-fall",
+            "text": "Ein Vormittag bei MAKEL"
+          },
+          {
+            "typ": "absatz",
+            "id": "c-fall-1",
+            "text": "Du unterstützt die Verwaltung, und vier Aufgaben liegen vor: Eine sachlich geprüfte Rechnung muss heute zur zuständigen Freigabe, damit die vereinbarte Skontofrist genutzt werden kann. Eine Präsentation für neue Auszubildende ist in zwei Wochen fällig; dafür fehlen noch Angaben aus zwei Abteilungen. Eine Rückfrage zur Bewirtung soll heute weitergeleitet werden. Und alte, nicht mehr verwendbare Werbeprospekte sollen „irgendwann“ sortiert werden."
+          },
+          {
+            "typ": "tabelle",
+            "id": "c-tabelle",
+            "spalten": [
+              "Aufgabe",
+              "Begründete Einordnung",
+              "Nächste Handlung in deiner Rolle"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung zur heutigen Freigabe weitergeben",
+                  "Wichtig und dringend: Frist und wirtschaftliche Folge (Skonto)",
+                  "Vollständigkeit prüfen und sofort an die befugte Person geben — eine fehlende Zahlungsbefugnis nicht selbst ersetzen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Azubi-Präsentation vorbereiten",
+                  "Wichtig, noch nicht unmittelbar dringend",
+                  "Angaben heute anfordern und einen Bearbeitungstermin fest einplanen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Bewirtungsrückfrage weiterleiten",
+                  "Zeitgebunden, aber geringer eigener Zielbeitrag",
+                  "Zuständige Person informieren; selbst nur kurz erledigen, wenn es Wichtigeres nicht verdrängt."
+                ]
+              },
+              {
+                "zellen": [
+                  "Unbrauchbare Prospekte sortieren",
+                  "Im Fall weder dringend noch wichtig",
+                  "Klären, ob die Aufgabe entfallen kann. Keine eigenmächtige Vernichtung aufbewahrungspflichtiger Unterlagen."
+                ]
+              }
+            ]
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "c-terminieren",
+            "text": "Warum Terminieren mehr ist als Verschieben"
+          },
+          {
+            "typ": "absatz",
+            "id": "c-terminieren-1",
+            "text": "„Mache ich später“ ist noch kein Plan. Ein Termin benennt dagegen einen bearbeitbaren nächsten Schritt und die dafür reservierte Zeit. Für die Präsentation forderst du heute die Angaben der Abteilungen an, vereinbarst eine Rückmeldung bis Mittwoch und erstellst am Donnerstag den Entwurf. So werden Abhängigkeiten sichtbar, bevor sie die Frist gefährden."
+          },
+          {
+            "typ": "zwischentitel",
+            "id": "c-delegieren",
+            "text": "Warum Delegieren nicht automatisch erlaubt ist"
+          },
+          {
+            "typ": "absatz",
+            "id": "c-delegieren-1",
+            "text": "Für dringende, weniger wichtige Aufgaben heißt die Empfehlung häufig „delegieren“. Als Auszubildende oder Auszubildender hast du aber nicht automatisch Weisungsbefugnis. Du kannst Zuständigkeiten klären, eine Aufgabe nach Absprache weitergeben oder deine Prioritäten mit der ausbildenden Person besprechen. Eine Methode verschafft keine Befugnis, die dir betrieblich nicht eingeräumt wurde."
+          }
         ],
-        "erklaerung": "Die Eisenhower-Matrix verbindet die beiden Kriterien. Wichtig und dringend wird sofort selbst erledigt. Wichtig, aber nicht dringend wird terminiert. Dringend, aber nicht wichtig wird delegiert; weder wichtig noch dringend wird gestrichen. Beim Delegieren müssen Ziel, Frist und Befugnis mitgegeben werden. Das Pareto-Prinzip bleibt eine Denkhilfe mit Faustwerten, kein Naturgesetz.",
-        "beispiele": [
-          "Ein Angebot mit Frist heute ist wichtig und dringend und wird selbst bearbeitet.",
-          "Das Nachbestellen von Büromaterial kann dringend, aber nicht wichtig für die eigene Rolle sein und wird mit Ziel, Frist und Befugnis delegiert."
+        "details": [
+          {
+            "id": "c-folge-frist",
+            "kategorie": "grundlagen",
+            "titel": "Folge und Frist",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "c-folge-frist-1",
+                "text": "Eine Aufgabe ist nicht schon deshalb wichtig, weil sie aufwendig ist: Ein kurzer sicherheitsrelevanter Hinweis kann wichtiger sein als die lange optische Überarbeitung einer Präsentation. Ebenso ist eine Aufgabe nicht schon deshalb dringend, weil jemand dieses Wort benutzt. Frag nach der tatsächlichen Frist und der Folge einer Verzögerung. Gesetzliche und sicherheitsrelevante Pflichten dürfen dabei nicht nach Geschmack abgewertet werden."
+              }
+            ]
+          },
+          {
+            "id": "c-drucker",
+            "kategorie": "vergleich",
+            "titel": "Wenn der Drucker für den Versand ausfällt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "c-drucker-1",
+                "text": "Ein leerer Toner gilt zunächst als Routine. Stoppt der Ausfall aber den heutigen Versand, ändern sich die Folgen: Die Behebung wird wichtig und dringend. Die Matrix ordnet nicht bestimmte Gegenstände ein, sondern bewertet eine konkrete Situation."
+              }
+            ]
+          },
+          {
+            "id": "c-ueberlast",
+            "kategorie": "sonderfall",
+            "titel": "Alles scheint wichtig und dringend",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "c-ueberlast-1",
+                "text": "Wenn mehrere Pflichten gleichzeitig nicht zu schaffen sind, reicht Umordnen nicht. Benenne Fristen, Aufwand und Folgen und lege der zuständigen Person konkrete Alternativen vor: Unterstützung, geänderter Umfang oder ein neuer Termin. Dauerhafte Überlastung ist nicht allein ein persönliches Planungsproblem — die Methode hilft vor allem, den Konflikt rechtzeitig sichtbar zu machen."
+              }
+            ]
+          },
+          {
+            "id": "c-alpen",
+            "kategorie": "zusammenhang",
+            "titel": "ALPEN und Eisenhower",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "c-alpen-1",
+                "text": "Eisenhower hilft bei der Entscheidung, welche Aufgaben Vorrang haben. ALPEN unterstützt die anschließende Tagesplanung mit Aufwandsschätzung, Puffer und Nachkontrolle. Beide Werkzeuge lösen unterschiedliche Teilprobleme."
+              },
+              {
+                "typ": "verweis",
+                "id": "c-alpen-2",
+                "text": "Weiterlesen:",
+                "ziele": [
+                  "k2-b1",
+                  "k2-b3",
+                  "lf13:k2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c-pareto",
+            "kategorie": "zusammenhang",
+            "titel": "Das Pareto-Prinzip als Denkhilfe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "id": "c-pareto-1",
+                "text": "Ergänzend hilft das {{begriff:pareto|Pareto-Prinzip}}: Ein kleiner Teil des Aufwands bringt oft den größten Teil des Ergebnisses. Als Denkhilfe ist das brauchbar — **es ist aber eine Beobachtung, kein Naturgesetz.** Die Zahlen 80 und 20 sind Faustwerte, keine Rechengrößen."
+              }
+            ]
+          }
         ],
-        "fallbeispiel": "Eine Aufgabe zur Überarbeitung des Ablagesystems ist wichtig, aber ohne akute Frist. Sie wird nicht zwischen Telefonaten erledigt, sondern fest terminiert. Ein leerer Toner ist dringend, aber nicht wichtig und kann delegiert werden. Wer delegiert, sagt dabei, was erreicht werden soll, bis wann und welche Entscheidungsmöglichkeit besteht.",
-        "typische_fehler": "Dringend wird automatisch mit wichtig gleichgesetzt. Der zweite Fehler ist Delegieren ohne Frist oder Entscheidungsbefugnis; dann kommt die Aufgabe mit Rückfragen zurück.",
         "verstaendnisfragen": [
-          "Was passiert mit wichtig, aber nicht dringend? Die Aufgabe wird terminiert und bewusst eingeplant.",
-          "Welche drei Informationen gehören zu einem guten Delegationsauftrag? Ziel, Frist und Befugnis."
-        ],
-        "pruefungsbezug": "Ordne jede Aufgabe zuerst nach den beiden Achsen ein und entscheide erst danach über selbst erledigen, terminieren, delegieren oder streichen.",
-        "merksatz": "Dringend ist Zeitdruck, wichtig ist Zielbeitrag — beides ist nicht dasselbe."
+          {
+            "id": "c1",
+            "frage": "Warum darf die Präsentation nicht warten, bis sie dringend wird?",
+            "antwort": "Weil die Angaben aus anderen Abteilungen und die eigene Bearbeitung Zeit brauchen. Die Aufgabe ist bereits wichtig; frühes Terminieren und Anfordern der Angaben verhindert vermeidbaren Zeitdruck."
+          },
+          {
+            "id": "c2",
+            "frage": "Ist ein leerer Toner immer „dringend, aber unwichtig“?",
+            "antwort": "Nein. Fällt ohne Drucker ein wichtiger Versand aus, hat die Behebung wesentliche Folgen und kann wichtig und dringend sein. Die Einordnung hängt vom Fall ab, nicht vom Wort „Toner“."
+          }
+        ]
       },
       {
         "abschnitt": "b3",
