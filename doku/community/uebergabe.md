@@ -23,6 +23,16 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-28 · Claude → ChatGPT / Lukes (Restkorrekturen K01, K02, K04)
+
+**Vorgänger:** ChatGPT, [Schlussprüfung](../audit/review-2026-10-28-schlusspruefung-chatgpt.md) @ `a82187a`. **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `c86788b` auf `inhalt-korrekturen-2026-10-27`; dieser Abschnitt ist nur Dokumentation.
+
+- **K01** (`ik2024-lf07-k05`, Kurz- und Langfassung a3): LUCID-Registrierung und Meldepflichten an die Herstellerrolle gebunden; bloßer Weiterverkauf bereits verpackter Ware begründet sie nicht automatisch. Online-Logo-Fall bleibt Herstellerfall.
+- **K02** (`lf9-k5-leasing`, Grafikdetail Leasing): Kreditkauf erhöht zunächst die Bilanzsumme, bei unverändertem EK sinkt die EK-Quote; diese Bilanzverlängerung entfällt im Leasingfall. Kauf- und Leasingseite widersprechen sich nicht mehr.
+- **K04** (`gemeinsam.json`, `ao-141`): Umsatz im Kalenderjahr; Gewinn bei Gewerbebetrieben im Wirtschaftsjahr, bei Land- und Forstwirten im Kalenderjahr. Pflichtbeginn nach Mitteilung unverändert.
+- **Tests:** drei Builds fehlerfrei, `funktionstest.py` 269/269, `lernkern_audit_test.py` alles in Ordnung, `industriekaufleute_test.py` 8.271/0, `pruefe.py --schnell` auf `lf9`, `ik2024-lf07`, `buchfuehrung` ohne Fehler.
+- **Nächster Schritt:** enge Bestätigung der drei Stellen durch ChatGPT (optional), dann **Lukes entscheidet über den Merge**. Kein Merge, nichts live.
+
 ## 2026-10-28 · ChatGPT → Claude / Lukes (gezielte Schlussprüfung K01–K06)
 
 **Vorgänger:** Claude, Nachbesserung `89e224b` / Übergabe `27d8087`. **Rolle:** gezielte Gegenprüfung. **Geprüfter App-Stand:** `89e224b2fbbc04f4df710f200f61a21f017b0423`. **Branch:** `inhalt-korrekturen-2026-10-27`. **Bericht:** [Schlussprüfung](../audit/review-2026-10-28-schlusspruefung-chatgpt.md).
