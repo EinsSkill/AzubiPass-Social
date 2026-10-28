@@ -7,74 +7,410 @@
   "minuten": 30,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Ein Jahresabschluss bringt die laufende Buchführung in die Form eines vollständigen Jahresbildes. Dazu werden zuerst tatsächliche Bestände festgestellt, dann notwendige Korrekturen vorgenommen und erst anschließend Erfolgskonten, Eigenkapital und Bestandskonten abgeschlossen.",
     "abschnitte": [
       {
         "abschnitt": "i1",
-        "vorauswissen": [
-          "Die Inventur aus K1 stellt die tatsächlich vorhandenen Bestände fest.",
-          "Erfolgskonten und Bestandskonten werden in unterschiedlichen Schritten abgeschlossen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest die Schritte des Jahresabschlusses in ihre notwendige Reihenfolge und begründest jede Abhängigkeit.",
+        "vorwissen_kurz": "Die Abschlusskette der Konten kennst du aus Kapitel 4. Der Jahresabschluss beginnt aber schon vorher — mit der Frage, ob die Bücher die Wirklichkeit zeigen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Zählen bis zur Schlussbilanz",
+            "id": "i1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Jahresabschluss ist mehr als das Abschließen von Konten. Bevor MAKEL die Konten schließt, muss sichergestellt sein, dass sie stimmen: Sind die Bestände wirklich da? Fehlen Aufwendungen, die wirtschaftlich zum Jahr gehören, aber noch nicht gebucht sind? Erst danach werden Erfolg und Bilanz ermittelt. Daraus ergeben sich fünf Schritte, deren Reihenfolge aus der Sache folgt.",
+            "id": "i1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "i1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Warum jeder Schritt den vorigen braucht",
+            "id": "i1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Ohne den Schritt davor …"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. Inventur",
+                  "— sie ist der Anfang: Erst danach ist bekannt, was tatsächlich vorhanden ist."
+                ]
+              },
+              {
+                "zellen": [
+                  "2. Korrekturbuchungen (Abschreibungen, Rückstellungen, Abgrenzungen, Inventurdifferenzen)",
+                  "… wüsste man nicht, welche Buchbestände an die Wirklichkeit angepasst werden müssen."
+                ]
+              },
+              {
+                "zellen": [
+                  "3. Erfolgskonten über die GuV",
+                  "… fehlten Abschreibungen oder Rückstellungen im Ergebnis; der Gewinn wäre zu hoch."
+                ]
+              },
+              {
+                "zellen": [
+                  "4. Jahreserfolg ins Eigenkapital",
+                  "… gäbe es noch keinen endgültigen Saldo der GuV."
+                ]
+              },
+              {
+                "zellen": [
+                  "5. Bestandskonten über das SBK",
+                  "… würde das Eigenkapital ohne den Jahreserfolg abgeschlossen; die Schlussbilanz ginge nicht auf."
+                ]
+              }
+            ],
+            "fazit": "Die Reihenfolge ist eine Kette von Abhängigkeiten, keine bloße Merkhilfe.",
+            "id": "i1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Beispiel für Schritt 2: Die Inventur ergibt Waren für 31.200 €, die Buchführung zeigt 32.000 €. 800 € sind durch Schwund oder Bruch verloren gegangen. Beim aufwandsorientierten Verfahren wird diese Bestandsminderung als zusätzlicher Aufwand gebucht. Erst danach stimmen Vorräte und Ergebnis.",
+            "id": "i1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "i1-b2"
+          }
         ],
-        "ablauf": [
-          "Inventur durchführen und tatsächliche Bestände feststellen.",
-          "Korrekturbuchungen wie AfA, Rückstellungen und Rechnungsabgrenzung vornehmen.",
-          "Erfolgskonten über die GuV abschließen.",
-          "Jahresergebnis in das Eigenkapital übertragen.",
-          "Bestandskonten über das SBK abschließen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Was zum Jahresabschluss gehört",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Jahresabschluss besteht bei allen Kaufleuten aus Bilanz und Gewinn- und Verlustrechnung. Kapitalgesellschaften wie die GmbH erstellen zusätzlich einen Anhang, der Zahlen erläutert; mittelgroße und große auch einen Lagebericht. Sie müssen den Abschluss außerdem veröffentlichen — je nach Größe in unterschiedlichem Umfang.",
+                "id": "i1-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k1-a4"
+                ],
+                "text": "Inventur, Inventar und Bilanz",
+                "id": "i1-d1-v1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k4-d4"
+                ],
+                "text": "Die Abschlusskette der Konten",
+                "id": "i1-d1-v2"
+              }
+            ],
+            "id": "i1-d1"
+          }
         ],
-        "erklaerung": "Die Reihenfolge ist eine fachliche Abhängigkeit und keine bloße Merkhilfe. Ohne Inventur fehlen die tatsächlichen Werte. Ohne Korrekturbuchungen wären Aufwand, Ertrag und Bilanzbestände nicht periodengerecht. Erst wenn das Ergebnis im Eigenkapital enthalten ist, kann die Schlussbilanz vollständig aufgestellt werden.",
-        "beispiele": [
-          "Die Inventur steht in der Grafik an erster Stelle, weil erst danach bekannt ist, was tatsächlich vorhanden ist.",
-          "Abschreibungen, Rückstellungen und Rechnungsabgrenzung werden vor dem Abschluss der Erfolgskonten vorgenommen."
-        ],
-        "fallbeispiel": "Ordne die fünf vorhandenen Schritte: 1. Inventur, 2. Korrekturbuchungen für AfA, Rückstellungen und RAP, 3. Erfolgskonten über die GuV, 4. Ergebnis ins Eigenkapital, 5. Bestandskonten über SBK. Würde die AfA erst nach dem GuV-Abschluss gebucht, müsste der Jahreserfolg erneut korrigiert werden.",
-        "typische_fehler": "Die Bestandskonten werden zu früh abgeschlossen oder die Korrekturbuchungen vergessen. Häufig wird außerdem die Inventur mit dem fertigen Inventar verwechselt.",
         "verstaendnisfragen": [
-          "Warum kommt die Inventur vor den Buchungen? Sie liefert die tatsächliche Grundlage für die Korrektur der Buchwerte.",
-          "Warum wird das Eigenkapital vor dem SBK aktualisiert? Weil der Jahreserfolg erst dort enthalten sein muss, bevor der endgültige Bestand abgeschlossen wird."
-        ],
-        "pruefungsbezug": "Bei Reihenfolgeaufgaben die fünf Stationen auswendig als Kette notieren. Das Schlüsselwort für den Anfang ist ‚Inventur‘; das Schlüsselwort vor dem SBK ist ‚Jahresergebnis ins Eigenkapital‘.",
-        "merksatz": "Inventur, Korrektur, GuV, Eigenkapital, SBK — diese Reihenfolge trägt den Jahresabschluss."
+          {
+            "frage": "Die Abschreibung einer Maschine wird erst nach dem Abschluss der GuV bemerkt. Was muss passieren?",
+            "antwort": "Die Abschreibung muss gebucht werden, und weil sie ein Aufwand ist, ändern sich Jahreserfolg und Eigenkapital. GuV, Eigenkapitalübertragung und SBK müssen neu abgeschlossen werden. Deshalb kommen Korrekturbuchungen immer vor dem Abschluss.",
+            "id": "i1-f1"
+          },
+          {
+            "frage": "Warum genügt es nicht, die Buchbestände ohne Inventur in die Bilanz zu übernehmen?",
+            "antwort": "Die Buchführung zeigt, was laut Belegen vorhanden sein sollte. Schwund, Diebstahl, Bruch oder Buchungsfehler werden erst durch den Vergleich mit dem tatsächlichen Bestand sichtbar. Die Inventur ist außerdem gesetzlich vorgeschrieben.",
+            "id": "i1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "i2",
-        "vorauswissen": [
-          "Eine Rückstellung betrifft eine bereits entstandene, aber noch ungewisse Verpflichtung.",
-          "Rückstellungen gehören in die Periode, in der die wirtschaftliche Ursache liegt."
+        "darstellung": "vollfassung",
+        "ziel": "Du bildest eine Rückstellung zum Jahresende, begründest ihre Höhe und buchst ihre Auflösung, wenn der tatsächliche Betrag abweicht.",
+        "vorwissen_kurz": "Eine Rückstellung ist eine Verpflichtung, die schon besteht, deren Höhe oder Zeitpunkt aber noch ungewiss ist. Sie gehört zum Fremdkapital.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum man ungewisse Belastungen schon jetzt bucht",
+            "id": "i2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Kundin hat MAKEL im November verklagt. Der Prozess wird erst im nächsten Jahr entschieden. Die Kosten sind wirtschaftlich aber durch einen Vorgang im alten Jahr entstanden. Das Vorsichtsprinzip verlangt deshalb, die absehbare Belastung schon jetzt zu berücksichtigen. Würde MAKEL warten, bis die Rechnung kommt, sähe das alte Jahr besser aus, als es war, und das neue Jahr trüge eine Last, die es nicht verursacht hat.",
+            "id": "i2-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Weil die Höhe unsicher ist, wird sie geschätzt — nach vernünftiger kaufmännischer Beurteilung, etwa anhand einer Einschätzung des Anwalts oder von Erfahrungswerten. Willkürliche Beträge, die den Gewinn nur kleiner rechnen sollen, sind nicht zulässig.",
+            "id": "i2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "i2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bildung und Auflösung an einem Fall",
+            "id": "i2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Anwalt schätzt die Prozesskosten auf 5.000 €.",
+            "id": "i2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-2",
+            "id": "i2-b2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitpunkt",
+              "Vorgang",
+              "Wirkung auf den Erfolg"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "31.12. altes Jahr",
+                  "Rückstellung 5.000 € bilden",
+                  "Aufwand 5.000 € im alten Jahr"
+                ]
+              },
+              {
+                "zellen": [
+                  "neues Jahr, Variante A",
+                  "tatsächlich 4.800 € gezahlt",
+                  "200 € Ertrag im neuen Jahr (zu viel zurückgestellt)"
+                ]
+              },
+              {
+                "zellen": [
+                  "neues Jahr, Variante B",
+                  "tatsächlich 5.300 € gezahlt",
+                  "300 € zusätzlicher Aufwand im neuen Jahr"
+                ]
+              }
+            ],
+            "fazit": "Der größte Teil des Aufwands landet im richtigen Jahr. Nur die Schätzungsabweichung erscheint im neuen Jahr.",
+            "id": "i2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Urlaubsrückstellung funktioniert genauso. Hat ein Mitarbeiter am 31. Dezember noch acht Urlaubstage offen und kostet ein Arbeitstag einschließlich Arbeitgeberanteil 120 €, werden 8 × 120 € = 960 € zurückgestellt. Nimmt er den Urlaub im Februar, wird die Rückstellung verbraucht.",
+            "id": "i2-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "i2-b3"
+          }
         ],
-        "erklaerung": "Eine Rückstellung bildet eine absehbare Belastung ab, obwohl Betrag oder Zeitpunkt noch nicht sicher feststehen. Dadurch wird der Aufwand dem richtigen Geschäftsjahr zugeordnet. Bei der späteren Auflösung wird die Rückstellung mit der tatsächlichen Zahlung verglichen: Ist die Zahlung niedriger, entsteht ein Ertrag; ist sie höher, entsteht zusätzlicher Aufwand.",
-        "beispiele": [
-          "Offene Urlaubstage führen zu einer Urlaubsrückstellung, weil Anspruch und wirtschaftliche Ursache bereits bestehen.",
-          "Bei einer Rückstellung von 5.000 € und tatsächlicher Zahlung von 4.800 € werden 200 € als sonstiger Ertrag aufgelöst."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Rückstellung oder sonstige Verbindlichkeit?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Dezemberrechnung des Steuerberaters über genau 1.190 € liegt am 5. Januar im Briefkasten. Betrag und Fälligkeit stehen fest, die Leistung wurde im alten Jahr erbracht. Das ist keine Rückstellung, sondern eine Verbindlichkeit. Steht dagegen noch nicht fest, was der Steuerberater für die Erstellung des Jahresabschlusses berechnen wird, ist eine Rückstellung zu bilden.",
+                "id": "i2-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k2-b3"
+                ],
+                "text": "Rückstellungen in der Bilanz",
+                "id": "i2-d1-v1"
+              }
+            ],
+            "id": "i2-d1"
+          }
         ],
-        "fallbeispiel": "Bilde eine Rückstellung von 5.000 €: Rückstellungsaufwand 5.000 € an Rückstellungen 5.000 €. Wird später 4.800 € gezahlt, lautet die Auflösung Rückstellungen 5.000 € an Bank 4.800 € + sonstige Erträge 200 €. Wird dagegen 5.300 € gezahlt, werden Rückstellungen 5.000 € und sonstiger Aufwand 300 € an Bank 5.300 € gebucht. So wird die Differenz nicht unterschlagen.",
-        "typische_fehler": "Eine unsichere Verpflichtung wird erst bei Zahlung erfasst oder eine Rückstellung wird wie eine sichere Verbindlichkeit behandelt. Auch die Differenz zwischen Rückstellungsbetrag und tatsächlicher Zahlung wird oft vergessen.",
         "verstaendnisfragen": [
-          "Was muss bei einer Rückstellung bereits feststehen? Die wirtschaftliche Verpflichtung muss entstanden oder absehbar sein; Höhe oder Zeitpunkt dürfen noch ungewiss sein.",
-          "Was passiert bei einer niedrigeren tatsächlichen Zahlung? Der nicht benötigte Teil wird als sonstiger Ertrag aufgelöst."
-        ],
-        "pruefungsbezug": "In Fällen zuerst Gewissheit und wirtschaftliche Zugehörigkeit prüfen, anschließend Bildung und Auflösung getrennt buchen. Die tatsächliche Zahlung niemals automatisch mit dem Rückstellungsbetrag gleichsetzen.",
-        "merksatz": "Rückstellung bildet die ungewisse Belastung heute ab; bei Zahlung wird mit der tatsächlichen Höhe abgerechnet."
+          {
+            "frage": "Warum entsteht bei der Auflösung einer zu hohen Rückstellung ein Ertrag?",
+            "antwort": "Im alten Jahr wurde mehr Aufwand gebucht, als tatsächlich anfiel. Der überschüssige Teil wird im neuen Jahr zurückgegeben, indem er als Ertrag erscheint. Insgesamt über beide Jahre stimmt der Aufwand dann mit der tatsächlichen Zahlung überein.",
+            "id": "i2-f1"
+          },
+          {
+            "frage": "Ein Betrieb möchte in einem guten Jahr „vorsichtshalber“ 50.000 € für mögliche künftige Probleme zurückstellen. Ist das zulässig?",
+            "antwort": "Nein. Eine Rückstellung braucht einen konkreten Anlass, also eine Verpflichtung oder ein Risiko, das am Stichtag besteht, und eine nachvollziehbare Schätzung. Allgemeine Vorsorge ohne Anlass würde den Gewinn willkürlich mindern.",
+            "id": "i2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "i3",
-        "vorauswissen": [
-          "Aufwand und Ertrag gehören in das Jahr ihrer wirtschaftlichen Verursachung.",
-          "ARAP und PRAP verschieben einen bereits geflossenen Geldbetrag in die richtige Periode."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst, wann Zahlung und Leistung in verschiedene Geschäftsjahre fallen, bildest aktive und passive Rechnungsabgrenzungsposten auch für anteilige Zeiträume und löst sie im Folgejahr auf.",
+        "vorwissen_kurz": "Aufwand und Ertrag gehören in das Jahr, dessen Leistung sie betreffen — unabhängig davon, wann das Geld fließt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn Zahlung und Leistung auseinanderfallen",
+            "id": "i3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Manche Zahlungen betreffen einen Zeitraum, der über den Jahreswechsel reicht. MAKEL zahlt eine Versicherung für zwölf Monate im Voraus, oder ein Untermieter überweist die Januarmiete schon im Dezember. Ohne Korrektur stünde dann ein Aufwand oder Ertrag im falschen Jahr. Die Rechnungsabgrenzung verschiebt ihn dorthin, wo er wirtschaftlich hingehört.",
+            "id": "i3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zwei Fragen genügen: Ist Geld schon raus- oder reingegangen? Und gehört die Leistung (ganz oder teilweise) ins nächste Jahr? Geld raus und Leistung später ergibt einen **aktiven** Rechnungsabgrenzungsposten (ARAP): MAKEL hat vorausbezahlt und bekommt noch eine Leistung — ähnlich einem Anspruch, also Aktivseite. Geld rein und Leistung später ergibt einen **passiven** Posten (PRAP): MAKEL muss noch leisten — ähnlich einer Verpflichtung, also Passivseite.",
+            "id": "i3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "i3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Normalfall: anteilige Abgrenzung",
+            "id": "i3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL zahlt am 1. Oktober 2.400 € für eine Versicherung vom 1. Oktober bis 30. September des Folgejahres. Davon betreffen drei Monate das alte Jahr und neun Monate das neue.",
+            "id": "i3-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Monatsbetrag: 2.400 € ÷ 12",
+                  "200 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufwand altes Jahr: 3 Monate",
+                  "600 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufwand neues Jahr: 9 Monate",
+                  "1.800 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchung 1. Oktober",
+                  "Versicherungsaufwand an Bank 2.400 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchung 31. Dezember",
+                  "ARAP an Versicherungsaufwand 1.800 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchung 1. Januar (oder laufend)",
+                  "Versicherungsaufwand an ARAP 1.800 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Im alten Jahr bleiben 600 € Aufwand, im neuen Jahr erscheinen 1.800 €. Über beide Jahre sind es die gezahlten 2.400 €.",
+            "id": "i3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der passive Posten funktioniert spiegelbildlich: Erhält MAKEL im Dezember 800 € Miete für Januar, wird am 31. Dezember „Mietertrag an PRAP 800 €“ gebucht und im Januar wieder aufgelöst.",
+            "id": "i3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "i3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "i3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "i3-b4"
+          }
         ],
-        "erklaerung": "Rechnungsabgrenzung wird notwendig, wenn Zahlung und Leistung in unterschiedliche Geschäftsjahre fallen. Beim ARAP ist Geld bereits ausgegeben, die Leistung gehört aber ins nächste Jahr. Beim PRAP ist Geld bereits eingegangen, die Leistung und damit der Ertrag gehören aber ins nächste Jahr. Die Seiten lassen sich über die Richtung des Geldflusses merken.",
-        "beispiele": [
-          "Eine Jahresversicherung wird im Dezember bezahlt, betrifft aber das Folgejahr: ARAP an Versicherungsaufwand.",
-          "Eine Januarmiete geht im Dezember ein: Mietertrag an PRAP."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Der umgekehrte Fall — Leistung jetzt, Zahlung später",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Dezembermiete für einen Lagerraum zahlt MAKEL erst am 5. Januar. Hier liegt der Aufwand im alten Jahr, das Geld fließt erst im neuen. Das ist keine Rechnungsabgrenzung, sondern eine sonstige Verbindlichkeit: „Mietaufwand an Sonstige Verbindlichkeiten“ am 31. Dezember. Umgekehrt führt ein Ertrag des alten Jahres, der erst im neuen Jahr bezahlt wird, zu einer sonstigen Forderung. Merkhilfe: Rechnungsabgrenzung, wenn das Geld vorausgeht; sonstige Forderungen und Verbindlichkeiten, wenn das Geld hinterherkommt.",
+                "id": "i3-d1-p1"
+              }
+            ],
+            "id": "i3-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kleine Beträge",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei geringfügigen Beträgen verzichten manche Betriebe aus Vereinfachungsgründen auf eine Abgrenzung, wenn sie das Ergebnis nicht wesentlich verändert. Steuerrechtlich gibt es dafür eine Grenze für einzelne Posten. In Prüfungsaufgaben wird trotzdem abgegrenzt, wenn der Sachverhalt danach fragt.",
+                "id": "i3-d2-p1"
+              }
+            ],
+            "id": "i3-d2"
+          }
         ],
-        "fallbeispiel": "Der Betrieb zahlt am 1. Dezember 2.400 € für die Kfz-Versicherung des kompletten Folgejahres. Am 31.12. gehört der Betrag nicht zum laufenden Aufwand. Deshalb wird ARAP 2.400 € an Versicherungsaufwand 2.400 € gebucht. Geld ist herausgegangen und die Leistung kommt erst später: aktiv und abzugrenzen. Bei einer Einnahme für eine spätere Leistung wäre die Logik spiegelbildlich PRAP.",
-        "typische_fehler": "ARAP und PRAP werden allein nach dem Wort ‚Abgrenzung‘ ausgewählt, ohne den Geldfluss zu prüfen. Außerdem wird eine Zahlung als Aufwand behandelt, obwohl die Leistung erst im Folgejahr erbracht wird.",
         "verstaendnisfragen": [
-          "Wie merkst du dir ARAP? Geld raus, Leistung später: aktiver Rechnungsabgrenzungsposten.",
-          "Wie merkst du dir PRAP? Geld rein, Leistung später: passiver Rechnungsabgrenzungsposten."
-        ],
-        "pruefungsbezug": "Zuerst zwei Fragen beantworten: Ist Geld heraus- oder hineingeflossen? Gehört die Leistung ins nächste Jahr? Nur bei ‚raus + später‘ entsteht ARAP, bei ‚rein + später‘ PRAP.",
-        "merksatz": "Geld raus und Leistung später = ARAP; Geld rein und Leistung später = PRAP."
+          {
+            "frage": "Eine Zeitschrift wird am 1. September für ein Jahr im Voraus mit 360 € bezahlt. Wie viel wird am 31. Dezember abgegrenzt?",
+            "antwort": "Vier Monate (September bis Dezember) gehören zum alten Jahr, acht Monate zum neuen. Abgegrenzt werden 8 × 30 € = 240 €: ARAP an Aufwand 240 €.",
+            "id": "i3-f1"
+          },
+          {
+            "frage": "Warum ist ein im Dezember erhaltener Mietbetrag für Januar kein Ertrag des alten Jahres?",
+            "antwort": "Die Leistung — die Überlassung des Raums im Januar — wird erst im neuen Jahr erbracht. Der Ertrag gehört deshalb ins neue Jahr. Am 31. Dezember besteht stattdessen eine Verpflichtung, den Raum noch zu überlassen; sie wird als PRAP ausgewiesen.",
+            "id": "i3-f2"
+          }
+        ]
       }
     ]
   },

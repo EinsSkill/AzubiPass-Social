@@ -6,54 +6,564 @@
   "untertitel": "Was Buchführung ist, warum sie Pflicht ist und welche Regeln dabei gelten.",
   "minuten": 15,
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Buchführung ist ein nachvollziehbarer Prozess: Ein Geschäftsvorfall beginnt mit einem Beleg und endet in einer Auswertung. Wer die Reihenfolge versteht, kann einzelne Regeln besser einordnen und typische Prüfungsfehler vermeiden.",
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "titel": "Vom Beleg bis zum Jahresabschluss",
-        "vorauswissen": ["Ein Geschäftsvorfall ist ein wirtschaftlicher Vorgang, der das Vermögen, die Schulden oder den Erfolg eines Betriebs verändert.", "Ein Beleg ist der nachprüfbare Nachweis dieses Vorgangs."],
-        "erklaerung": "Am Anfang steht immer ein Beleg, zum Beispiel eine Eingangsrechnung, ein Kontoauszug oder ein Kassenbon. Der Beleg wird geprüft, dem richtigen Geschäftsvorfall zugeordnet und anschließend in der Buchführung erfasst. Die Buchung verändert mindestens zwei Konten. Am Ende des Zeitraums werden die Konten abgeschlossen und die Werte für Bilanz und Gewinn- und Verlustrechnung verdichtet.",
-        "beispiel": "MAKEL Studio erhält eine Lieferantenrechnung. Die Rechnung wird auf Echtheit, Betrag und Leistungsdatum geprüft, dem Einkauf zugeordnet und so abgelegt, dass ein sachverständiger Dritter den Vorgang später wiederfindet. Erst danach wird gebucht. Ein fehlender oder unklarer Beleg ist deshalb kein kleines Formproblem, sondern eine Lücke in der Beweiskette.",
-        "ablauf": ["Beleg entgegennehmen und Pflichtangaben prüfen.", "Geschäftsvorfall wirtschaftlich einordnen und die betroffenen Konten bestimmen.", "Buchung mit Datum, Betrag und verständlichem Buchungstext erfassen.", "Beleg und Buchung so archivieren, dass die Prüfung vom Beleg zur Auswertung und zurück möglich ist."],
-        "beispiele": ["Bei einer Eingangsrechnung über Büromaterial steigt der Aufwand und zugleich die Verbindlichkeit gegenüber dem Lieferanten.", "Beim Kontoauszug wird nicht der Kontoauszug selbst zum Aufwand: Er dient als Nachweis für die tatsächliche Zahlung und hilft, offene Posten abzugleichen."],
-        "fallbeispiel": "Eine Rechnung kommt am 28.12. an, die Lieferung wurde am 20.12. erbracht und erst am 15.01. bezahlt. Für die zeitliche Zuordnung zählt der wirtschaftliche Vorgang: Die Ausgabe gehört in das alte Geschäftsjahr; die Zahlung im Januar gleicht später die Verbindlichkeit aus.",
-        "typische_fehler": "Nicht erst buchen und später nach einem Beleg suchen. Ebenfalls falsch ist ein Sammeltext wie „Diverses“: Der Buchungstext muss den Vorgang verständlich machen.",
-        "merksatz": "Beleg prüfen, Vorgang verstehen, richtig buchen, nachvollziehbar aufbewahren."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst den Weg vom Beleg bis zur Auswertung und begründest, wem die Buchführung nützt.",
+        "vorwissen_kurz": "Ein Geschäftsvorfall ist ein Vorgang, der Vermögen, Schulden oder Erfolg eines Betriebs verändert. Ein Beleg ist sein schriftlicher oder digitaler Nachweis.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Das finanzielle Gedächtnis des Betriebs",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jeden Tag geschieht in einem Betrieb Dutzende Male etwas, das Geld oder Werte bewegt: Ware kommt an, eine Rechnung wird bezahlt, ein Kunde überweist. Buchführung bedeutet, all diese {{begriff:geschaeftsvorfall|Geschäftsvorfälle}} lückenlos, zeitgerecht und geordnet in Geldbeträgen aufzuzeichnen. Ohne sie wüsste niemand, woher das Geld kommt, wohin es geht und ob der Betrieb gerade Gewinn oder Verlust macht.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede Aufzeichnung beruht auf einem {{begriff:beleg|Beleg}}. Das ist der wichtigste Grundsatz überhaupt: Keine Buchung ohne Beleg. Der Beleg macht eine Buchung nachprüfbar — für die Geschäftsführung, die Steuerprüfung oder ein Gericht.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Beleg zur Auswertung — ein Durchlauf",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL erhält eine Lieferantenrechnung über Büromaterial. So wandert sie durch die Buchführung:",
+            "id": "a1-p3"
+          },
+          {
+            "typ": "liste",
+            "punkte": [
+              "**Beleg prüfen:** Ist die Rechnung echt, an MAKEL gerichtet, rechnerisch richtig, und wurde die Ware tatsächlich geliefert?",
+              "**Vorgang einordnen:** Es handelt sich um Aufwand für Büromaterial und eine neue Schuld gegenüber dem Lieferer.",
+              "**Buchen:** Die Buchung verändert mindestens zwei Konten, mit Datum, Betrag und verständlichem Text.",
+              "**Ablegen:** Der Beleg wird so archiviert, dass man von der Buchung zum Beleg und zurück findet.",
+              "**Auswerten:** Am Ende des Jahres fließen alle Buchungen in Bilanz und Gewinn- und Verlustrechnung."
+            ],
+            "nummeriert": true,
+            "id": "a1-l1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bezahlt MAKEL die Rechnung später, entsteht kein neuer Aufwand. Der Kontoauszug belegt dann nur, dass die Schuld beglichen wurde. Diese Unterscheidung zwischen dem wirtschaftlichen Vorgang (Kauf auf Rechnung) und der Zahlung zieht sich durch die gesamte Buchführung.",
+            "id": "a1-p4"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wer etwas von der Buchführung hat",
+            "id": "a1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Buchführung erfüllt mehrere Aufgaben zugleich. Die Tabelle ordnet sie:",
+            "id": "a1-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Geschäftsführung ist sie Informationsquelle: Lohnt sich ein Produkt, reicht das Geld für eine Investition? Für das Finanzamt ist sie Grundlage der Steuer. Für Banken und Lieferer, die MAKEL Kredit geben, zeigt sie, wie es um das Vermögen steht. Und für MAKEL selbst ist sie Beweismittel, etwa wenn ein Kunde behauptet, er habe längst bezahlt.",
+            "id": "a1-p6"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Rechnung im Dezember, Zahlung im Januar",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Ware kommt am 20. Dezember, die Rechnung am 28. Dezember, bezahlt wird am 15. Januar. Der Aufwand gehört in das alte Geschäftsjahr, denn dort fand der wirtschaftliche Vorgang statt. Die Zahlung im Januar gleicht nur die Schuld aus. Würde MAKEL alles erst bei Zahlung buchen, sähe der Gewinn des alten Jahres zu gut aus und der des neuen zu schlecht.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Ein unklarer Buchungstext",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "„Diverses 250 €“ ist zwar eine Buchung, aber keine brauchbare. Niemand kann später erkennen, was gekauft wurde und ob es betrieblich war. Ein guter Buchungstext nennt Lieferer, Gegenstand und Belegnummer, etwa „Bürobedarf Papierhaus, Re 4711“. Er kostet zehn Sekunden mehr und erspart bei jeder Prüfung lange Suche.",
+                "id": "a1-d2-p1"
+              }
+            ],
+            "id": "a1-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum ist ein Kontoauszug bei einer Rechnungszahlung kein Beleg für Aufwand?",
+            "antwort": "Der Aufwand ist schon beim Kauf auf Rechnung entstanden. Der Kontoauszug belegt nur den Geldabfluss, mit dem die Schuld gegenüber dem Lieferer beglichen wird. Würde man ihn zusätzlich als Aufwand buchen, wäre derselbe Kauf zweimal erfasst.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Für wen ist die Buchführung als Gläubigerschutz wichtig, und warum?",
+            "antwort": "Für alle, die dem Betrieb Geld oder Ware auf Kredit geben, etwa Banken und Lieferer. Sie wollen wissen, ob genug Vermögen da ist, um ihre Forderungen zu bedienen. Eine ordentliche Buchführung macht die Vermögenslage für sie nachvollziehbar.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "titel": "Pflicht und Grundsätze",
-        "hintergrundwissen": "Handelsrecht ordnet die kaufmännische Rechnungslegung, Steuerrecht die Ermittlung und Kontrolle der steuerlichen Bemessungsgrundlage. Deshalb können zwei Pflichten nebeneinander bestehen, ohne dass sie dasselbe Gesetz und denselben Zweck haben.",
-        "erklaerung": "Die Buchführungspflicht beantwortet die Frage, wer Bücher führen muss. Die Grundsätze ordnungsgemäßer Buchführung beantworten, wie diese Bücher geführt werden müssen. Vollständigkeit, Richtigkeit, Klarheit, Nachprüfbarkeit und zeitgerechte Erfassung bilden dabei zusammen ein System. Ein Betrieb erfüllt die Pflicht also nicht schon dadurch, dass irgendwo Zahlen stehen.",
-        "beispiel": "Ein Kaufmann darf keine Umsätze auslassen, nur weil sie bar bezahlt wurden. Ein kleiner Betrieb darf seine Belege auch digital verwalten, muss aber trotzdem sicherstellen, dass sie lesbar, vollständig und wiederauffindbar bleiben.",
-        "fallbeispiel": "Ein nicht im Handelsregister eingetragenes Gewerbe wächst stark. Zuerst ist zu klären, ob bereits ein Handelsgewerbe vorliegt. Falls nicht, kann die steuerliche Buchführungspflicht unabhängig davon entstehen, sobald die gesetzlichen Voraussetzungen erfüllt sind. In einer Prüfung ist daher immer zuerst die Rechtsgrundlage zu benennen. Grenzfälle: Bei genau 800.000 € Umsatz und genau 80.000 € Gewinn entsteht die Pflicht nach § 141 AO nicht — erst ein Euro mehr reicht. Und auch dann beginnt sie nicht sofort, sondern mit dem Wirtschaftsjahr nach der Mitteilung des Finanzamts. Ein eingetragener Einzelkaufmann mit zweimal hintereinander 300.000 € Umsatz und 40.000 € Gewinn ist nach § 241a HGB befreit; eine GmbH mit denselben Zahlen bleibt buchführungspflichtig.",
-        "pruefungsbezug": "Typische Aufgaben verlangen die Abgrenzung von § 238 HGB, § 140 AO und § 141 AO. Entscheidend ist nicht das Auswendiglernen einer Zahl, sondern die Begründung: Kaufmann, abgeleitete Pflicht oder eigenständige steuerliche Pflicht?",
-        "typische_fehler": "HGB-Pflicht und steuerliche Pflicht werden gleichgesetzt, obwohl sie unterschiedliche Anknüpfungspunkte haben. Außerdem wird „richtig“ oft mit „vollständig“ verwechselt: Eine einzelne korrekte Buchung ersetzt keine lückenlose Erfassung.",
-        "merksatz": "Die Pflicht sagt, ob Bücher geführt werden müssen; die GoB sagen, ob sie brauchbar geführt sind."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst anhand der Rechtsform und der Zahlen, ob und nach welcher Vorschrift ein Betrieb Bücher führen muss, und prüfst Grenzfälle.",
+        "vorwissen_kurz": "Kaufmann ist, wer ein Handelsgewerbe betreibt; eine GmbH ist es immer kraft ihrer Rechtsform. Handels- und Steuerrecht regeln die Buchführungspflicht getrennt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Gesetze, zwei Zwecke",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Pflicht, Bücher zu führen, steht in zwei Gesetzen, weil sie zwei Zwecken dient. Das Handelsgesetzbuch schützt Gläubiger und den Rechtsverkehr. Die Abgabenordnung sichert, dass Steuern richtig ermittelt werden. Deshalb prüfst du in einer Aufgabe immer der Reihe nach:",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "liste",
+            "punkte": [
+              "Ist der Betrieb **Kaufmann**? Dann gilt {{par:hgb-238|§ 238 HGB}}: Er muss Bücher führen, und zwar ohne Umsatz- oder Gewinngrenze.",
+              "Ist er ein kleiner **Einzelkaufmann**? Dann kann er nach {{par:hgb-241a|§ 241a HGB}} befreit sein, wenn er an zwei aufeinanderfolgenden Abschlussstichtagen höchstens 800.000 € Umsatz und höchstens 80.000 € Jahresüberschuss hat. Für Gesellschaften wie die GmbH gilt diese Befreiung nie.",
+              "Wer handelsrechtlich buchführungspflichtig ist, ist es nach {{par:ao-140|§ 140 AO}} auch steuerlich (abgeleitete Pflicht).",
+              "Ist der Betrieb **kein Kaufmann**, aber ein großer Gewerbebetrieb? Dann kann {{par:ao-141|§ 141 AO}} eine eigenständige steuerliche Pflicht begründen."
+            ],
+            "nummeriert": true,
+            "id": "a2-l1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Betriebe, drei Antworten",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Betrieb",
+              "Prüfung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "MAKEL GmbH, 300.000 € Umsatz",
+                  "GmbH ist immer Kaufmann; § 241a gilt nicht für Gesellschaften",
+                  "buchführungspflichtig nach § 238 HGB und § 140 AO"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eingetragener Einzelkaufmann, zwei Jahre hintereinander 300.000 € Umsatz und 40.000 € Gewinn",
+                  "Kaufmann, aber unter beiden Grenzen",
+                  "nach § 241a HGB befreit; einfache Einnahmen-Überschuss-Rechnung möglich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gewerbetreibender ohne Kaufmannseigenschaft, 850.000 € Umsatz, 60.000 € Gewinn",
+                  "kein § 238; Umsatz über 800.000 €",
+                  "Pflicht nach § 141 AO, aber erst ab dem Wirtschaftsjahr nach der Mitteilung des Finanzamts"
+                ]
+              }
+            ],
+            "fazit": "Zuerst die Rechtsgrundlage bestimmen, dann die Zahlen prüfen. Eine Zahl allein entscheidet nichts.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Achte auf die Wörter: § 241a HGB verlangt, dass beide Werte „höchstens“ erreicht werden (und das an zwei Stichtagen hintereinander). § 141 AO greift, wenn einer der Werte „mehr als“ die Grenze beträgt. Bei genau 800.000 € Umsatz und genau 80.000 € Gewinn entsteht die Pflicht nach § 141 AO also noch nicht. Außerdem bezieht § 141 AO den Umsatz auf das Kalenderjahr, den Gewinn bei Gewerbebetrieben auf das Wirtschaftsjahr.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "a2-b2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wann die Pflicht nach § 141 AO beginnt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die steuerliche Pflicht entsteht nicht automatisch am Tag, an dem die Grenze überschritten ist. Das Finanzamt teilt sie dem Betrieb mit, und sie gilt dann ab dem folgenden Wirtschaftsjahr. Der Betrieb hat so Zeit, seine Buchführung umzustellen. Bis dahin darf er seinen Gewinn weiter durch Einnahmen-Überschuss-Rechnung ermitteln.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Buchführungspflicht und Grundsätze",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Pflicht beantwortet, ob Bücher geführt werden müssen. Die Grundsätze ordnungsgemäßer Buchführung beantworten, wie sie geführt werden müssen. Ein Betrieb erfüllt die Pflicht also nicht schon dadurch, dass irgendwo Zahlen stehen: Sie müssen vollständig, richtig und nachprüfbar sein.",
+                "id": "a2-d2-p1"
+              }
+            ],
+            "id": "a2-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Ein Einzelkaufmann hatte im letzten Jahr 750.000 € Umsatz und 70.000 € Gewinn, im Jahr davor 820.000 € Umsatz. Ist er nach § 241a HGB befreit?",
+            "antwort": "Nein. Die Befreiung setzt voraus, dass er an zwei aufeinanderfolgenden Stichtagen beide Grenzen einhält. Im Vorjahr lag der Umsatz über 800.000 €. Erst wenn auch das laufende Jahr wieder unter beiden Grenzen liegt, ist er befreit.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum gilt § 141 AO für die MAKEL GmbH gar nicht?",
+            "antwort": "§ 141 AO betrifft nur Betriebe, die nicht schon nach anderen Gesetzen buchführungspflichtig sind. Die GmbH ist als Kaufmann nach § 238 HGB pflichtig; die steuerliche Pflicht folgt daraus über § 140 AO.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "titel": "Die GoB sicher anwenden",
-        "hintergrundwissen": "Die GoB verbinden Gesetz, kaufmännische Praxis und Prüfungsmaßstäbe. Sie sollen verhindern, dass Zahlen zwar rechnerisch stimmen, aber den Betrieb trotzdem falsch oder unvollständig darstellen.",
-        "erklaerung": "Richtigkeit prüft den einzelnen Vorgang, Vollständigkeit die lückenlose Gesamtheit. Klarheit und Nachprüfbarkeit machen die Buchführung für Dritte verständlich. Vorsicht verhindert, dass unsichere Gewinne vorweggenommen werden; Stetigkeit sorgt dafür, dass Geschäftsjahre vergleichbar bleiben.",
-        "beispiele": ["Eine private Tankrechnung darf nicht als betrieblicher Aufwand erscheinen: Der Beleg ist echt, aber der wirtschaftliche Inhalt passt nicht zum Unternehmen.", "Ein Umsatz vom 31.12. darf nicht einfach in den Januar verschoben werden, nur weil die Zahlung später eingeht: Die zeitliche Zuordnung muss den Geschäftsjahrgang abbilden."],
-        "fallbeispiel": "Bei einer Kassenprüfung fehlen mehrere Tagesabschlüsse. Einzelne Buchungen können korrekt sein, trotzdem ist die Kasse nicht vollständig und nicht mehr zuverlässig nachprüfbar. Die Lösung besteht nicht darin, eine Sammelbuchung zu erfinden, sondern die fehlenden Belege und Ursachen zu klären.",
-        "typische_fehler": "GoB werden nicht als Checkliste einzelner Wörter gelernt, sondern auf den konkreten Sachverhalt angewandt. Besonders häufig werden Richtigkeit und Vollständigkeit verwechselt.",
-        "verstaendnisfragen": ["Warum kann eine richtige Einzelbuchung trotzdem zu einer fehlerhaften Buchführung gehören? Weil andere Vorgänge fehlen können.", "Warum ist Stetigkeit für Prüfungen wichtig? Weil nur gleich angewandte Methoden einen sinnvollen Vergleich ermöglichen."],
-        "pruefungsbezug": "In Fallaufgaben zuerst den beobachteten Fehler beschreiben, dann den verletzten Grundsatz nennen und zuletzt die Auswirkung auf Aussagekraft oder Jahresergebnis erklären.",
-        "merksatz": "Richtig ist der einzelne Vorgang; vollständig ist die gesamte Buchführung; klar und stetig wird sie prüfbar."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst an einem konkreten Fehler, welcher Grundsatz ordnungsgemäßer Buchführung verletzt ist, und erklärst seine Folgen.",
+        "vorwissen_kurz": "Die GoB sind teils im Gesetz geregelt, teils aus kaufmännischer Übung und Rechtsprechung entstanden. Maßstab ist, ob sich ein sachverständiger Dritter in angemessener Zeit zurechtfindet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wozu die Spielregeln dienen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zahlen können rechnerisch stimmen und den Betrieb trotzdem falsch darstellen — wenn etwas fehlt, wenn Privates hineingeraten ist oder wenn jedes Jahr anders bewertet wird. Die Grundsätze ordnungsgemäßer Buchführung (GoB) sollen das verhindern. Ihr Maßstab steht in {{par:hgb-238|§ 238 Abs. 1 HGB}}: Ein sachverständiger Dritter muss sich in angemessener Zeit einen Überblick über die Geschäftsvorfälle und die Lage des Unternehmens verschaffen können.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zu den Grundsätzen in der Tabelle gehören zwei weitere, die fast jeden Tag eine Rolle spielen. Das **Belegprinzip**: keine Buchung ohne Beleg. Und die **Aufbewahrung**: Buchungsbelege müssen acht Jahre, Bücher, Inventare und Jahresabschlüsse zehn Jahre aufbewahrt werden ({{par:hgb-257|§ 257 HGB}}, {{par:ao-147|§ 147 AO}}).",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Fehler erkennen und zuordnen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In einer Aufgabe beschreibst du zuerst den Fehler, nennst dann den Grundsatz und erklärst die Folge:",
+            "id": "a3-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Beobachtung",
+              "Verletzter Grundsatz",
+              "Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Private Tankquittung als Betriebsausgabe gebucht",
+                  "Richtigkeit",
+                  "Gewinn zu niedrig, Steuer zu niedrig; je nach Vorsatz Steuerhinterziehung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Barverkäufe eines Tages nicht erfasst",
+                  "Vollständigkeit",
+                  "Umsatz und Gewinn zu niedrig; Kasse nicht nachprüfbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Dezemberumsatz erst im Januar gebucht",
+                  "Vollständigkeit (zeitgerechte Erfassung)",
+                  "Jahresergebnis beider Jahre falsch"
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchungstext „Diverses“",
+                  "Klarheit",
+                  "Vorgang für Dritte nicht nachvollziehbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abschreibungsmethode jedes Jahr gewechselt",
+                  "Stetigkeit",
+                  "Jahre nicht vergleichbar, Ergebnis gestaltbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erwarteter Gewinn aus einem unterschriebenen, aber noch nicht erfüllten Auftrag schon gebucht",
+                  "Vorsicht (Realisationsprinzip)",
+                  "Gewinn ausgewiesen, der noch nicht sicher ist"
+                ]
+              }
+            ],
+            "fazit": "Richtigkeit betrifft den einzelnen Vorgang, Vollständigkeit die Gesamtheit aller Vorgänge.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Vorsichtsprinzip in zwei Richtungen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Das Vorsichtsprinzip wirkt ungleich: Drohende Verluste werden schon berücksichtigt, wenn sie absehbar sind (Imparitätsprinzip). Gewinne werden erst gebucht, wenn sie durch Lieferung oder Leistung tatsächlich entstanden sind (Realisationsprinzip). Steigt der Wert eines Grundstücks, bleibt es bei den Anschaffungskosten; wird ein Kunde zahlungsunfähig, wird die Forderung sofort berichtigt. Der Betrieb soll sich nicht reicher rechnen, als er ist.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Digitale Belege",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Belege dürfen digital aufbewahrt werden. Dann müssen sie aber während der gesamten Aufbewahrungsfrist lesbar, vollständig und unverändert bleiben und schnell auffindbar sein. Ein eingescannter Beleg, dessen Datei später überschrieben werden kann, oder ein Ordner voller unbenannter Fotos erfüllt das nicht. Wie das genau umzusetzen ist, regeln die Grundsätze zur ordnungsmäßigen Führung von Büchern in elektronischer Form (GoBD) der Finanzverwaltung.",
+                "id": "a3-d2-p1"
+              }
+            ],
+            "id": "a3-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "In der Kasse fehlen drei Tagesabschlüsse. Alle anderen Buchungen sind korrekt. Ist die Buchführung ordnungsgemäß?",
+            "antwort": "Nein. Die vorhandenen Buchungen mögen richtig sein, aber die Kasse ist nicht vollständig und damit nicht mehr nachprüfbar. Das Finanzamt kann deshalb den Gewinn schätzen. Die Lösung ist, die fehlenden Belege und Ursachen zu klären, nicht eine erfundene Sammelbuchung.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum ist Stetigkeit für die Geschäftsführung genauso wichtig wie für das Finanzamt?",
+            "antwort": "Nur wenn gleich bewertet wird, lassen sich Jahre vergleichen. Die Geschäftsführung will wissen, ob sich der Betrieb verbessert. Ändert sich die Methode, kann ein besseres Ergebnis allein aus der neuen Bewertung stammen.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "titel": "Inventur, Inventar und Bilanz",
-        "vorauswissen": "Vermögen beantwortet die Frage, welche wirtschaftlichen Werte vorhanden sind; Schulden zeigen, welche Ansprüche Dritter bestehen. Die Differenz ist das Eigenkapital beziehungsweise Reinvermögen.",
-        "erklaerung": "Die Inventur ist der Vorgang der Bestandsaufnahme. Das Inventar ist das ausführliche Ergebnis mit Mengen und Werten. Die Bilanz verdichtet dieses Ergebnis in die beiden Seiten Aktiva und Passiva. Es handelt sich also um drei Stufen desselben Gedankens: feststellen, auflisten, verdichten.",
-        "beispiel": "Am Jahresende zählt MAKEL die Stoffe im Lager und bewertet sie. Diese Tätigkeit ist die Inventur. Die Liste mit Stoffart, Menge und Wert ist das Inventar. In der Bilanz erscheint daraus nur noch der zusammengefasste Bilanzposten für Vorräte.",
-        "beispiele": ["Wer 120 Kartons zählt und jeden Karton bewertet, führt eine körperliche Inventur durch. Die aufgeschriebene Einzelaufstellung ist das Inventar.", "Wer im Jahresabschluss nur ‚Vorräte 8.400 €‘ auf der Aktivseite ausweist, zeigt die verdichtete Bilanzdarstellung."],
-        "fallbeispiel": "Das Inventar weist 150.000 € Vermögen und 80.000 € Schulden aus. Das Reinvermögen beträgt 70.000 €. In der Bilanz wird dieser Betrag als Eigenkapital auf der Passivseite ausgewiesen; dadurch bleiben Aktiva und Passiva gleich hoch.",
-        "pruefungsbezug": "Bei Zuordnungsaufgaben zuerst auf die Form achten: Tätigkeit = Inventur, detaillierte Liste = Inventar, verdichtete Gegenüberstellung = Bilanz. Danach kann die Eigenkapitalformel als Kontrolle dienen.",
-        "typische_fehler": "Die Bilanz wird als detaillierte Inventarliste beschrieben oder die Inventur als fertiges Dokument bezeichnet. Auch ein bloßer Blick in die Buchhaltung ersetzt die körperliche Bestandsaufnahme nicht, wenn tatsächlich vorhandene Bestände geprüft werden müssen.",
-        "merksatz": "Inventur ist der Vorgang, Inventar die Liste, Bilanz die verdichtete Gegenüberstellung."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Inventur, Inventar und Bilanz, entwickelst aus einer Inventarliste eine Bilanz und kontrollierst das Eigenkapital.",
+        "vorwissen_kurz": "Vermögen sind die wirtschaftlichen Werte eines Betriebs; Schulden sind Ansprüche Dritter. Die Differenz heißt Reinvermögen oder Eigenkapital.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Stufen eines Gedankens",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Ende jedes Geschäftsjahres muss ein Kaufmann feststellen, was er tatsächlich besitzt und schuldet. Dafür gibt es drei Begriffe, die aufeinander aufbauen. Die **Inventur** ist der Vorgang: zählen, wiegen, messen und für Unkörperliches wie Bankguthaben oder Forderungen die Unterlagen auswerten. Das **Inventar** ist das Ergebnis dieser Tätigkeit: ein ausführliches Verzeichnis mit jeder Position, Menge und Wert. Die **Bilanz** verdichtet das Inventar in eine kurze Gegenüberstellung von Vermögen (Aktiva) und Kapital (Passiva).",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Warum zählen, wenn doch alles gebucht ist? Weil die Buchführung nur zeigt, was sein sollte. Schwund, Diebstahl, Bruch oder Buchungsfehler sieht man erst, wenn man den tatsächlichen Bestand mit dem Buchbestand vergleicht.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Inventar zur Bilanz",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Muster GmbH hat bei der Inventur folgende Werte festgestellt. Das Inventar ordnet sie in Vermögen und Schulden:",
+            "id": "a4-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Inventar",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Maschinen",
+                  "60.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Fuhrpark",
+                  "40.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Waren",
+                  "32.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Bank und Kasse",
+                  "18.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "**Summe Vermögen**",
+                  "**150.000 €**"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Bankdarlehen",
+                  "50.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Verbindlichkeiten aus Lieferungen und Leistungen",
+                  "30.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "**Summe Schulden**",
+                  "**80.000 €**"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "**Reinvermögen = Vermögen − Schulden**",
+                  "**70.000 €**"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Das Reinvermögen von 70.000 € erscheint in der Bilanz als Eigenkapital.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Bilanz stehen links das Anlagevermögen (Maschinen und Fuhrpark: 100.000 €) und das Umlaufvermögen (Waren, Bank, Kasse: 50.000 €), zusammen 150.000 €. Rechts stehen das Eigenkapital (70.000 €) und das Fremdkapital (Darlehen und Verbindlichkeiten: 80.000 €), ebenfalls 150.000 €. Beide Seiten sind gleich hoch. Das ist kein Zufall: Das Eigenkapital ist genau der Betrag, der übrig bleibt, wenn man vom Vermögen die Schulden abzieht. Probiere es in der Grafik aus — ändere einen Wert, und das Eigenkapital gleicht aus.",
+            "id": "a4-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a4-b3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ein Inventurfehler und seine Wirkung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zählt das Lager die Waren mit 30.000 € statt 32.000 €, weil ein Regal vergessen wurde, sinkt das Vermögen um 2.000 € — und mit ihm das Eigenkapital auf 68.000 €. Die Bilanz bleibt trotzdem ausgeglichen. Ein ausgeglichenes Ergebnis beweist also nicht, dass alle Werte stimmen. Deshalb wird die Inventur sorgfältig geplant und dokumentiert.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Inventur ohne jährliches Durchzählen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nicht jeder Bestand muss am 31. Dezember durchgezählt werden. Erlaubt sind zum Beispiel die permanente Inventur, bei der die Lagerbuchführung laufend fortgeschrieben und jeder Artikel einmal im Jahr geprüft wird, oder eine zeitlich verlegte Inventur kurz vor oder nach dem Stichtag. Auch Stichprobenverfahren sind unter Bedingungen zulässig. Das Ziel bleibt dasselbe: ein verlässlicher Bestand zum Stichtag.",
+                "id": "a4-d2-p1"
+              }
+            ],
+            "id": "a4-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Die Bilanz einer GmbH ist ausgeglichen. Kann man daraus schließen, dass die Inventur fehlerfrei war?",
+            "antwort": "Nein. Die Bilanz ist immer ausgeglichen, weil das Eigenkapital die Differenz zwischen Vermögen und Schulden ist. Ein vergessener Bestand verringert Vermögen und Eigenkapital gleichermaßen, ohne dass das Gleichgewicht gestört wird.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum steht in der Bilanz nur „Vorräte 32.000 €“ und nicht jede einzelne Ware?",
+            "antwort": "Die Bilanz soll einen schnellen Überblick geben. Die Einzelpositionen mit Menge und Wert stehen im Inventar, auf dem die Bilanz beruht. Wer Details braucht, findet sie dort.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

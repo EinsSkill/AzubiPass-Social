@@ -7,113 +7,825 @@
   "minuten": 35,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Bei Warenkonten greifen Buchführung und Kalkulation ineinander. Zuerst wird geklärt, was die Ware tatsächlich kostet. Danach wird aus diesem Einstandspreis Schritt für Schritt der Preis entwickelt, zu dem der Betrieb verkaufen muss.",
     "abschnitte": [
       {
         "abschnitt": "e1",
-        "vorauswissen": [
-          "Wareneinkauf ist ein Aufwandskonto, Umsatzerlöse sind ein Ertragskonto.",
-          "Der Rohertrag vergleicht Verkaufserlöse mit dem Wareneinsatz."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst Wareneinkauf und Warenverkauf getrennt, erklärst den Rohertrag und unterscheidest das aufwandsorientierte vom bestandsorientierten Verfahren.",
+        "vorwissen_kurz": "Wareneinsatz ist der Wert der Ware, die in einer Periode tatsächlich verkauft oder verbraucht wurde — nicht unbedingt dasselbe wie der Einkauf dieser Periode.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Einkauf und Verkauf getrennt halten",
+            "id": "e1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Handel kauft ein Betrieb Ware ein und verkauft sie mit Aufschlag weiter. Man könnte beides auf einem einzigen Konto verrechnen. Dann sähe man aber nur noch die Differenz und wüsste nicht mehr, wie viel insgesamt eingekauft und verkauft wurde. Deshalb gibt es zwei getrennte {{begriff:erfolgskonto|Erfolgskonten}}: Der Wareneinkauf ist ein Aufwandskonto, die Umsatzerlöse sind ein Ertragskonto.",
+            "id": "e1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "e1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Umsatz zum Rohertrag",
+            "id": "e1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL verkauft im Monat Ware für 5.000 € netto. Diese Ware hatte im Einkauf 3.000 € gekostet. Der {{begriff:rohertrag|Rohertrag}} beträgt 5.000 € − 3.000 € = 2.000 €. Das ist noch nicht der Gewinn: Aus diesen 2.000 € müssen Miete, Löhne, Energie und alle anderen Kosten bezahlt werden. Bleibt danach etwas übrig, ist das der Gewinn.",
+            "id": "e1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "e1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wann Ware zu Aufwand wird: zwei Verfahren",
+            "id": "e1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Es gibt zwei Wege, eingekaufte Ware zu buchen, und der Unterschied wird oft übersehen.",
+            "id": "e1-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim **aufwandsorientierten Verfahren** wird jeder Einkauf sofort als Aufwand gebucht: Wareneinkauf an Verbindlichkeiten. Am Jahresende wird der Lagerbestand per Inventur festgestellt und mit dem Bestand vom Jahresanfang verglichen. Ist der Bestand gestiegen, wurde nicht alles Eingekaufte verbraucht; die Bestandsmehrung mindert den Aufwand. Ist er gesunken, wurde zusätzlich Ware aus dem Vorjahr verbraucht; die Bestandsminderung erhöht den Aufwand.",
+            "id": "e1-p4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim **bestandsorientierten Verfahren** kommt die eingekaufte Ware zunächst auf ein Bestandskonto (Vorräte). Erst wenn sie entnommen oder verkauft wird, wird sie als Aufwand gebucht. Das setzt voraus, dass jede Entnahme erfasst wird, etwa über ein Lagerverwaltungssystem.",
+            "id": "e1-p5"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Aufwandsorientiert",
+              "Bestandsorientiert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einkauf 3.000 € auf Ziel",
+                  "Wareneinkauf an Verbindlichkeiten 3.000 € (sofort Aufwand)",
+                  "Vorräte an Verbindlichkeiten 3.000 € (zunächst Bestand)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Davon im Jahr verkauft: Ware für 2.400 €",
+                  "keine Buchung bei Entnahme",
+                  "Wareneinsatz an Vorräte 2.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Inventur: Bestand gestiegen um 600 €",
+                  "Vorräte an Wareneinkauf 600 € (Bestandsmehrung mindert Aufwand)",
+                  "Kontrolle: Buchbestand = Inventurbestand"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufwand des Jahres",
+                  "3.000 − 600 = 2.400 €",
+                  "2.400 €"
+                ]
+              }
+            ],
+            "fazit": "Beide Verfahren führen zum selben Wareneinsatz von 2.400 €. Sie unterscheiden sich darin, wann und wie oft gebucht wird.",
+            "id": "e1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Unterricht und in vielen Prüfungsaufgaben wird das aufwandsorientierte Verfahren verwendet, weil es weniger Buchungen braucht. Das bestandsorientierte Verfahren zeigt dagegen jederzeit den aktuellen Bestand — bei teurer Ware ein Vorteil.",
+            "id": "e1-p6"
+          }
         ],
-        "erklaerung": "Ein Handelsbetrieb hält Ein- und Verkäufe getrennt fest. Der Wareneinkauf zeigt, welcher Aufwand durch eingekaufte Ware erfasst wurde. Die Umsatzerlöse zeigen, was mit Verkäufen erwirtschaftet wurde. Erst der Vergleich beider Größen zeigt den Rohertrag; weitere Aufwendungen wie Miete oder Löhne sind darin noch nicht berücksichtigt.",
-        "beispiele": [
-          "Ein Warenkauf auf Ziel über 3.000 € wird als Wareneinkauf an Verbindlichkeiten LuL gebucht.",
-          "Ein Warenverkauf auf Ziel über 5.000 € wird als Forderungen LuL an Umsatzerlöse gebucht."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Warum der Einkauf nicht der Wareneinsatz sein muss",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kauft MAKEL im Dezember auf Vorrat ein, ist der Einkauf des Jahres hoch, verkauft wurde aber nicht mehr als sonst. Würde man den gesamten Einkauf als Aufwand stehen lassen, sähe der Gewinn zu niedrig aus. Deshalb wird über die Bestandsveränderung korrigiert: Was am Jahresende noch im Lager liegt, war kein Aufwand dieses Jahres.",
+                "id": "e1-d1-p1"
+              }
+            ],
+            "id": "e1-d1"
+          }
         ],
-        "fallbeispiel": "Der Betrieb erzielt 5.000 € Umsatzerlöse und hat für die verkaufte Ware einen Wareneinsatz von 3.000 €. Rechnung: 5.000 € − 3.000 € = 2.000 € Rohertrag. Diese 2.000 € sind noch nicht der Gewinn, weil daraus unter anderem Miete, Löhne und weitere betriebliche Aufwendungen bezahlt werden müssen.",
-        "typische_fehler": "Umsatzerlöse und Gewinn werden gleichgesetzt. Außerdem werden Einkauf und Verkauf miteinander verrechnet, sodass nicht mehr erkennbar ist, wie hoch die einzelnen Größen waren.",
         "verstaendnisfragen": [
-          "Warum werden Wareneinkauf und Umsatzerlöse getrennt gebucht? Damit Einkauf, Verkauf und Rohertrag nachvollziehbar bleiben.",
-          "Was ist der Rohertrag noch nicht? Der Gewinn, weil weitere Aufwendungen noch abgezogen werden müssen."
-        ],
-        "pruefungsbezug": "Bei Warenbuchungen die Kontenart mitdenken: Einkauf führt zum Aufwandskonto im Soll, Verkauf zum Ertragskonto im Haben. Danach kann der Rohertrag berechnet werden.",
-        "merksatz": "Rohertrag = Umsatzerlöse − Wareneinsatz; erst weitere Aufwendungen führen zum Gewinn."
+          {
+            "frage": "Der Lagerbestand ist zum Jahresende um 1.000 € gesunken. Wie wirkt sich das beim aufwandsorientierten Verfahren auf den Aufwand aus?",
+            "antwort": "Der Aufwand steigt um 1.000 €. Es wurde mehr Ware verbraucht, als im Jahr eingekauft wurde; die Differenz stammt aus dem Vorjahresbestand. Gebucht wird Wareneinkauf an Vorräte 1.000 €.",
+            "id": "e1-f1"
+          },
+          {
+            "frage": "Warum ist der Rohertrag noch kein Gewinn?",
+            "antwort": "Er enthält nur Umsatz und Wareneinsatz. Alle anderen Aufwendungen des Betriebs — Löhne, Miete, Energie, Abschreibungen — sind noch nicht abgezogen.",
+            "id": "e1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "e2",
-        "vorauswissen": [
-          "Der Listenpreis ist nicht automatisch der tatsächliche Einstandspreis.",
-          "Rabatt, Bezugskosten und Rücksendungen verändern den Warenwert."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest aus einer Eingangsrechnung den Einstandspreis und buchst Bezugskosten, Rücksendungen und nachträgliche Nachlässe richtig.",
+        "vorwissen_kurz": "Der Einstandspreis ist das, was die Ware den Betrieb tatsächlich kostet, bis sie im eigenen Lager liegt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Ware wirklich kostet",
+            "id": "e2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Listenpreis auf der Rechnung ist selten der Betrag, den die Ware am Ende kostet. Ein {{begriff:rabatt|Rabatt}} mindert ihn sofort. {{begriff:bezugskosten|Bezugskosten}} wie Fracht, Verpackung oder Transportversicherung kommen hinzu, weil die Ware ohne sie nicht im Lager wäre. Das Ergebnis ist der {{begriff:einstandspreis|Einstandspreis}} — die Grundlage jeder späteren Kalkulation.",
+            "id": "e2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "e2-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Rabatt wird dabei nicht eigens gebucht. Er steht schon auf der Rechnung, und MAKEL schuldet von Anfang an nur den geminderten Betrag. Gebucht wird also Wareneinkauf an Verbindlichkeiten 4.750 €. Die Fracht von 150 € wird zusätzlich als Bezugskosten erfasst. Im Industriekontenrahmen gibt es dafür ein Unterkonto zum Aufwandskonto (bei Rohstoffen 6001 Bezugskosten), das am Jahresende auf das Hauptkonto abgeschlossen wird.",
+            "id": "e2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "e2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn etwas zurückgeht",
+            "id": "e2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Manchmal ändert sich der Wert einer Lieferung nachträglich: MAKEL schickt mangelhafte Ware zurück, oder der Lieferer gewährt wegen eines kleinen Mangels einen Preisnachlass. Dann wird die ursprüngliche Buchung in der Höhe der Änderung rückgängig gemacht.",
+            "id": "e2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-2",
+            "id": "e2-b3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Fall",
+              "Buchungssatz",
+              "Wirkung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "MAKEL schickt Ware für 400 € zurück",
+                  "Verbindlichkeiten an Wareneinkauf 400 €",
+                  "Schuld und Aufwand sinken"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferer gewährt nachträglich 100 € Preisnachlass",
+                  "Verbindlichkeiten an Wareneinkauf (bzw. Nachlässe) 100 €",
+                  "Schuld und Aufwand sinken"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kunde schickt Ware für 300 € zurück",
+                  "Umsatzerlöse an Forderungen 300 €",
+                  "Erlös und Forderung sinken"
+                ]
+              }
+            ],
+            "fazit": "Eine Rücksendung macht die ursprüngliche Buchung in dieser Höhe rückgängig — deshalb stehen die Konten genau spiegelverkehrt.",
+            "id": "e2-t1"
+          }
         ],
-        "erklaerung": "Der Einstandspreis beantwortet die praktische Frage: Was hat die Ware den Betrieb tatsächlich gekostet, bis sie am eigenen Standort verfügbar ist? Ein Rabatt mindert den Preis sofort. Bezugskosten wie Fracht werden hinzugerechnet. Der so ermittelte Einstandspreis bildet später die Basis der Kalkulation.",
-        "beispiele": [
-          "Aus 5.000 € Listenpreis werden nach 5 % Rabatt 4.750 € Zieleinkaufspreis. Mit 150 € Fracht entsteht ein Einstandspreis von 4.900 €.",
-          "Eine Einkaufsrücksendung wird als Verbindlichkeiten an Wareneinkauf gebucht; eine Verkaufsrücksendung als Umsatzerlöse an Forderungen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Bezugskosten bei mehreren Artikeln",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bezieht MAKEL zwei Artikel in einer Sendung und zahlt 120 € Fracht, müssen die Bezugskosten für die Kalkulation auf die Artikel verteilt werden. Üblich ist eine Verteilung nach Gewicht, wenn die Fracht nach Gewicht berechnet wird, oder nach Wert, wenn eine Versicherung den Hauptteil ausmacht. Die gewählte Regel sollte zur Ursache der Kosten passen.",
+                "id": "e2-d1-p1"
+              }
+            ],
+            "id": "e2-d1"
+          }
         ],
-        "fallbeispiel": "Berechne den Einstandspreis: Listenpreis 5.000 €. Rabatt 5 % = 250 €, also Zieleinkaufspreis 4.750 €. Dazu kommen 150 € Bezugskosten. Ergebnis: 4.750 € + 150 € = 4.900 € Einstandspreis. Der Rabatt wird nicht noch einmal separat gebucht, weil der Rechnungsbetrag bereits gemindert ist.",
-        "typische_fehler": "Rabatt und Skonto werden verwechselt. Der Rabatt wird sofort berücksichtigt; Skonto entsteht erst bei schneller Zahlung und wird dann separat gebucht. Auch Bezugskosten werden häufig vergessen oder fälschlich vom Preis abgezogen.",
         "verstaendnisfragen": [
-          "Warum erhöhen Bezugskosten den Einstandspreis? Weil sie notwendig sind, damit die Ware beim Betrieb ankommt.",
-          "Warum wird der Rabatt nicht separat gebucht? Weil er den Rechnungsbetrag direkt mindert und der geminderte Betrag von Anfang an erfasst wird."
-        ],
-        "pruefungsbezug": "Bei Rechenwegen die Reihenfolge einhalten: Listenpreis minus Rabatt, gleich Zieleinkaufspreis, plus Bezugskosten, gleich Einstandspreis. Buchungssätze nur für die im Sachverhalt genannten Vorgänge bilden.",
-        "merksatz": "Rabatt geht ab, Bezugskosten kommen hinzu: Beides führt zum Einstandspreis."
+          {
+            "frage": "Warum ist eine Rücksendung von Ware an den Lieferer kein Ertrag?",
+            "antwort": "Sie macht den ursprünglichen Einkauf teilweise rückgängig. Der Aufwand war zu hoch erfasst und wird gemindert; es entsteht kein neuer Wertzuwachs. Gebucht wird Verbindlichkeiten an Wareneinkauf.",
+            "id": "e2-f1"
+          },
+          {
+            "frage": "Ein Lieferer liefert frei Haus, ein anderer ab Werk mit 80 € Fracht. Der Listenpreis ist bei beiden gleich. Welcher Einstandspreis ist höher?",
+            "antwort": "Der des Lieferers ab Werk, um 80 €. Bei frei Haus sind die Bezugskosten schon im Preis enthalten; bei ab Werk kommen sie hinzu.",
+            "id": "e2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "e3",
-        "vorauswissen": [
-          "Skonto hängt vom Zahlungszeitpunkt ab.",
-          "Aufwand und Ertrag werden nach ihrem wirtschaftlichen Vorteil beziehungsweise Nachteil beurteilt."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst Skonto beim Einkauf und beim Verkauf als nachträgliche Minderung von Aufwand bzw. Erlös und begründest, warum er erst bei Zahlung erfasst wird.",
+        "vorwissen_kurz": "Skonto ist ein Nachlass für schnelle Zahlung. Ob er genutzt wird, steht bei Rechnungseingang noch nicht fest.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum Skonto erst bei Zahlung gebucht wird",
+            "id": "e3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei Rechnungseingang weiß niemand, ob MAKEL innerhalb der Skontofrist zahlen wird. Deshalb wird die Rechnung zunächst in voller Höhe gebucht. Erst wenn MAKEL tatsächlich mit Abzug zahlt, steht fest, dass die Ware weniger gekostet hat. Diese nachträgliche Minderung wird dann gesondert erfasst. So bleibt der ursprüngliche Rechnungsbetrag nachvollziehbar, und der Skonto ist als eigene Größe sichtbar.",
+            "id": "e3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Logik ist auf beiden Seiten gleich: Der Skonto korrigiert das Konto, auf dem der ursprüngliche Betrag gebucht wurde. Beim Einkauf mindert er den Einkaufsaufwand, im Industriekontenrahmen auf dem Unterkonto **6002 Nachlässe**. Beim Verkauf mindert er den Erlös, auf dem Unterkonto **5001 Erlösberichtigungen**. Die Umsatzsteuer lassen wir hier noch weg; wie der Skonto sie zusätzlich berichtigt, zeigt Kapitel 6.",
+            "id": "e3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "e3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Zahlungen mit Skonto",
+            "id": "e3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Einkauf",
+              "Verkauf"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung (ohne Umsatzsteuer)",
+                  "Verbindlichkeit 1.000 €",
+                  "Forderung 2.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Skonto 2 %",
+                  "20 €",
+                  "40 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlung",
+                  "MAKEL überweist 980 €",
+                  "Kunde überweist 1.960 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchung",
+                  "4400 Verbindlichkeiten 1.000 € an 2800 Bank 980 € und 6002 Nachlässe 20 €",
+                  "2800 Bank 1.960 € und 5001 Erlösberichtigungen 40 € an 2400 Forderungen 2.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirkung",
+                  "Einkaufsaufwand sinkt um 20 €",
+                  "Erlös sinkt um 40 €"
+                ]
+              }
+            ],
+            "fazit": "Die Verbindlichkeit bzw. Forderung wird immer vollständig ausgebucht; die Differenz zum gezahlten Betrag ist der Skonto.",
+            "id": "e3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kontrolliere jede Buchung zweimal: Soll und Haben müssen gleich hoch sein (1.000 = 980 + 20). Und nach der Zahlung darf keine Restschuld bzw. Restforderung übrig bleiben. Bliebe auf 4400 ein Rest von 20 €, sähe es so aus, als schulde MAKEL dem Lieferer noch etwas.",
+            "id": "e3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "e3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "e3-b3"
+          }
         ],
-        "erklaerung": "Bei der ursprünglichen Rechnung steht noch nicht fest, ob der Betrieb das Zahlungsziel nutzt und Skonto abzieht. Deshalb bleibt der ursprüngliche Rechnungsbetrag zunächst bestehen. Erst bei der Zahlung wird die Verbindlichkeit oder Forderung vollständig ausgebucht und die Differenz auf einem Unterkonto erfasst: Beim Einkauf mindert der Skonto den Aufwand (Konto Nachlässe, bei MAKEL 6001), beim Verkauf mindert er den Erlös (Konto 5001 Erlösberichtigungen). Die Umsatzsteuer lassen wir in diesem Kapitel noch weg; wie der Skonto zusätzlich die Steuer berichtigt, zeigt K6.",
-        "beispiele": [
-          "Bei einer Einkaufsverbindlichkeit von 1.000 € und 2 % Skonto werden 980 € überwiesen; 20 € werden als Nachlass gebucht und mindern den Aufwand.",
-          "Bei einer Verkaufsforderung von 2.000 € und 2 % Skonto gehen 1.960 € ein; 40 € werden als Erlösberichtigung gebucht und mindern den Erlös."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Skonto als eigener Ertrag — die veraltete Darstellung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Früher wurde Einkaufsskonto oft als „Skontoertrag“ und Verkaufsskonto als „Skontoaufwand“ gebucht. Wirtschaftlich ist ein Skonto aber kein zusätzlicher Ertrag, sondern ein günstigerer Einkaufspreis — und beim Verkauf ein geringerer Erlös. Der Industriekontenrahmen bildet das über Nachlässe und Erlösberichtigungen ab. So stimmen Einstandspreis und Umsatzerlös mit der Wirklichkeit überein.",
+                "id": "e3-d1-p1"
+              }
+            ],
+            "id": "e3-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Lohnt sich die frühe Zahlung?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "2 % Skonto für 20 Tage früheres Zahlen entsprechen überschlagen rund 36 % Jahreszins (2 × 360 ÷ 20). Deshalb lohnt sich Skontoziehen fast immer, sogar mit einem Überziehungskredit. Voraussetzung ist, dass das Geld rechtzeitig verfügbar ist.",
+                "id": "e3-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k3-b2"
+                ],
+                "text": "Skonto im Angebotsvergleich und seine Bewertung",
+                "id": "e3-d2-v1"
+              }
+            ],
+            "id": "e3-d2"
+          }
         ],
-        "fallbeispiel": "Eine Rechnung über 2.000 € wird innerhalb der Skontofrist bezahlt. 2 % von 2.000 € sind 40 €. Die Forderung muss vollständig mit 2.000 € ausgebucht werden. Auf der Sollseite stehen 2800 Bank 1.960 € und 5001 Erlösberichtigungen 40 €; im Haben steht 2400 Forderungen 2.000 €. Die Buchung ist ausgeglichen. Der Erlös wird damit nachträglich um 40 € gekürzt — der Betrieb hat für die Ware eben nur 1.960 € bekommen.",
-        "typische_fehler": "Skonto wird schon bei der Rechnung berücksichtigt, obwohl die Nutzung noch nicht feststeht. Außerdem werden Einkaufsskonto und Verkaufsskonto vertauscht: Beim Einkauf spart der Betrieb Geld, beim Verkauf erhält er weniger. Häufiger Altfehler: Skonto als eigenen Ertrag oder Aufwand buchen — im Industriekontenrahmen ist er eine Minderung des Einkaufsaufwands bzw. des Erlöses.",
         "verstaendnisfragen": [
-          "Wo wird Einkaufsskonto gebucht? Im Haben des Kontos Nachlässe (6001), weil er den Einkaufsaufwand nachträglich mindert.",
-          "Warum muss eine Verkaufsforderung beim Zahlungseingang vollständig verschwinden? Weil der Kunde danach nichts mehr schuldet; die Differenz wird auf 5001 Erlösberichtigungen erfasst."
-        ],
-        "pruefungsbezug": "Bei Skontoaufgaben zuerst den Skontobetrag berechnen, dann die vollständige Forderung oder Verbindlichkeit ausbuchen und zuletzt Bank sowie Nachlässe oder Erlösberichtigungen einsetzen.",
-        "merksatz": "Einkaufsskonto mindert den Aufwand (Nachlässe), Verkaufsskonto mindert den Erlös (Erlösberichtigungen)."
+          {
+            "frage": "Ein Kunde zahlt eine Rechnung über 3.000 € unter Abzug von 2 % Skonto. Welche Buchung entsteht (ohne Umsatzsteuer)?",
+            "antwort": "2800 Bank 2.940 € und 5001 Erlösberichtigungen 60 € an 2400 Forderungen 3.000 €. Die Forderung wird vollständig ausgebucht, der Erlös um 60 € gemindert.",
+            "id": "e3-f1"
+          },
+          {
+            "frage": "Warum wird Einkaufsskonto im Haben des Nachlasskontos gebucht?",
+            "antwort": "Das Nachlasskonto ist ein Unterkonto des Einkaufsaufwands. Aufwand steht im Soll; eine Minderung des Aufwands steht deshalb im Haben. Am Jahresende wird das Nachlasskonto mit dem Aufwandskonto verrechnet.",
+            "id": "e3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "e4",
-        "vorauswissen": [
-          "Der Einstandspreis ist die Nahtstelle zwischen Einkauf und Verkauf.",
-          "Aufschläge werden auf eine Bezugsgröße gerechnet; Abzüge im Hundert werden durch Division berücksichtigt."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst eine vollständige Vorwärtskalkulation vom Listeneinkaufspreis zum Listenverkaufspreis durch und begründest, warum Kundenskonto und Kundenrabatt im Hundert gerechnet werden.",
+        "vorwissen_kurz": "„Vom Hundert“ heißt: Der Prozentsatz bezieht sich auf den Ausgangswert. „Im Hundert“ heißt: Der Prozentsatz bezieht sich auf einen noch unbekannten, größeren Endwert.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Leiter vom Einkauf zum Verkauf",
+            "id": "e4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Handelskalkulation beantwortet die Frage: Zu welchem Preis muss MAKEL eine Ware anbieten, damit alle Kosten gedeckt sind und der gewünschte Gewinn bleibt? Sie folgt einem festen Schema. Oben stehen die Einkaufsstufen bis zum {{begriff:einstandspreis|Einstandspreis}}. Darunter kommen die Handlungskosten (Miete, Löhne, Verwaltung, als Zuschlag auf den Einstandspreis), der Gewinn (als Zuschlag auf die Selbstkosten) und zum Schluss Kundenskonto und Kundenrabatt.",
+            "id": "e4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "e4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein vollständiger Durchlauf",
+            "id": "e4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Listeneinkaufspreis",
+                  "",
+                  "500,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Lieferantenrabatt 20 %",
+                  "500 × 20 %",
+                  "100,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zieleinkaufspreis",
+                  "",
+                  "400,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Lieferantenskonto 2 %",
+                  "400 × 2 %",
+                  "8,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Bareinkaufspreis",
+                  "",
+                  "392,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Bezugskosten",
+                  "",
+                  "8,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Einstandspreis",
+                  "",
+                  "400,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Handlungskosten 50 %",
+                  "400 × 50 %",
+                  "200,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Selbstkosten",
+                  "",
+                  "600,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Gewinn 20 %",
+                  "600 × 20 %",
+                  "120,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Barverkaufspreis",
+                  "",
+                  "720,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Kundenskonto 4 % (im Hundert)",
+                  "720 ÷ 0,96 − 720",
+                  "30,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zielverkaufspreis",
+                  "",
+                  "750,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Kundenrabatt 25 % (im Hundert)",
+                  "750 ÷ 0,75 − 750",
+                  "250,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Listenverkaufspreis",
+                  "",
+                  "1.000,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Probe: 1.000 € − 25 % = 750 €; 750 € − 4 % = 720 €. Genau der Barverkaufspreis bleibt übrig.",
+            "id": "e4-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Warum am Ende geteilt wird",
+            "id": "e4-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kundenrabatt und Kundenskonto zieht der Kunde später vom Listenpreis bzw. Zielpreis ab. Der Listenpreis muss also so hoch sein, dass nach dem Abzug von 25 % noch 750 € übrig bleiben. 750 € sind dann 75 % des Listenpreises, und der Listenpreis ist 750 € ÷ 0,75 = 1.000 €. Würde man stattdessen 25 % auf 750 € aufschlagen, käme man auf 937,50 €. Zieht der Kunde davon 25 % ab, bleiben nur 703,13 € — MAKEL fehlen fast 47 €.",
+            "id": "e4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "e4-b2"
+          }
         ],
-        "ablauf": [
-          "Lieferantenrabatt und Lieferantenskonto vom Listeneinkaufspreis abziehen.",
-          "Bezugskosten addieren und den Einstandspreis bestimmen.",
-          "Handlungskosten und Gewinn aufschlagen.",
-          "Kundenskonto und Kundenrabatt im Hundert zurückrechnen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Handlungskostenzuschlag",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Handlungskostenzuschlag verteilt die allgemeinen Kosten des Handelsbetriebs auf die Waren. Er wird aus der Vergangenheit ermittelt: Handlungskosten des Vorjahres ÷ Wareneinsatz des Vorjahres × 100. Hatte MAKEL 150.000 € Handlungskosten bei 300.000 € Wareneinsatz, ergibt sich ein Zuschlag von 50 %. Er ist ein Durchschnittswert und passt nicht für jede einzelne Ware genau.",
+                "id": "e4-d1-p1"
+              }
+            ],
+            "id": "e4-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Kalkulationszuschlag als Abkürzung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Statt jede Stufe einzeln zu rechnen, kann man den gesamten Aufschlag vom Einstandspreis zum Listenverkaufspreis in einem Satz zusammenfassen. Hier: (1.000 − 400) ÷ 400 × 100 = 150 % Kalkulationszuschlag. Für weitere Waren mit denselben Sätzen gilt dann Einstandspreis × 2,5 = Listenverkaufspreis. Ändert sich einer der Sätze, muss der Zuschlag neu berechnet werden.",
+                "id": "e4-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k3-b1"
+                ],
+                "text": "Bezugskalkulation im Angebotsvergleich",
+                "id": "e4-d2-v1"
+              }
+            ],
+            "id": "e4-d2"
+          }
         ],
-        "erklaerung": "Die Vorwärtskalkulation führt vom bekannten Einkaufspreis zum notwendigen Listenverkaufspreis. Der kritische Richtungswechsel kommt am Ende: Ein Kundenrabatt wird nicht einfach auf den Barverkaufspreis aufgeschlagen, weil der Rabatt später vom Listenpreis abgezogen wird. Deshalb muss durch den verbleibenden Prozentsatz geteilt werden.",
-        "beispiele": [
-          "Aus 500 € Listeneinkaufspreis werden nach 20 % Lieferantenrabatt 400 € und nach 2 % Lieferantenskonto 392 €. Mit 8 € Bezugskosten beträgt der Einstandspreis 400 €.",
-          "Ein Barverkaufspreis von 720 € führt bei 4 % Kundenskonto zu 720 € ÷ 0,96 = 750 € Zielverkaufspreis."
-        ],
-        "fallbeispiel": "Rechne die vorhandene Kalkulationsleiter durch: 500 € − 20 % = 400 €; 400 € − 2 % = 392 €; plus 8 € Bezugskosten = 400 € Einstandspreis. 50 % Handlungskosten ergeben 600 € Selbstkosten. 20 % Gewinn ergeben 720 € Barverkaufspreis. Danach: 720 € ÷ 0,96 = 750 € Zielverkaufspreis und 750 € ÷ 0,75 = 1.000 € Listenverkaufspreis. Die Divisionen sichern, dass nach den späteren Abzügen genau 720 € übrig bleiben.",
-        "typische_fehler": "Der Kundenrabatt wird mit 25 % multipliziert und dadurch zu niedrig zurückgerechnet. Auch wird der Gewinn häufig auf den falschen Zwischenwert bezogen oder der Einstandspreis mit den Selbstkosten verwechselt.",
         "verstaendnisfragen": [
-          "Warum wird der Kundenrabatt durch 0,75 berücksichtigt? Weil nach einem Rabatt von 25 % noch 75 % des Listenpreises übrig bleiben.",
-          "Welche Größe trennt Einkaufs- und Verkaufsseite? Der Einstandspreis."
-        ],
-        "pruefungsbezug": "Das Kalkulationsschema vor dem Rechnen vollständig aufschreiben und bei jeder Zeile die neue Bezugsgröße kontrollieren. Im Hundert bedeutet am Ende Division durch den verbleibenden Prozentsatz.",
-        "merksatz": "Vorwärts heißt vom Einkauf zum Verkauf; Kundenrabatt und Kundenskonto werden im Hundert durch Division zurückgerechnet."
+          {
+            "frage": "Ein Barverkaufspreis von 480 € soll bei 5 % Kundenskonto und 20 % Kundenrabatt erzielt werden. Wie hoch ist der Listenverkaufspreis?",
+            "antwort": "480 € ÷ 0,95 = 505,26 € Zielverkaufspreis; 505,26 € ÷ 0,80 = 631,58 € Listenverkaufspreis. Probe: 631,58 − 20 % = 505,26; 505,26 − 5 % = 480,00 €.",
+            "id": "e4-f1"
+          },
+          {
+            "frage": "Warum werden Handlungskosten auf den Einstandspreis und der Gewinn auf die Selbstkosten bezogen?",
+            "antwort": "Weil jede Stufe auf dem Ergebnis der vorherigen aufbaut. Die Handlungskosten entstehen für den Umgang mit der eingekauften Ware, deshalb Einstandspreis. Der Gewinn soll auf alle Kosten kommen, deshalb auf die Selbstkosten.",
+            "id": "e4-f2"
+          }
+        ]
       },
       {
         "abschnitt": "e5",
-        "vorauswissen": [
-          "Das Kalkulationsschema bleibt gleich, auch wenn die Rechenrichtung wechselt.",
-          "Bei der Rückwärtskalkulation ist der Verkaufspreis vorgegeben."
+        "darstellung": "vollfassung",
+        "ziel": "Du rechnest vom Marktpreis rückwärts bis zum höchstzulässigen Einkaufspreis und entscheidest, ob ein Lieferantenangebot in die Kalkulation passt.",
+        "vorwissen_kurz": "Bei der Rückwärtskalkulation ist der Verkaufspreis gegeben, etwa durch die Konkurrenz. Gesucht ist, was die Ware höchstens kosten darf.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn der Markt den Preis bestimmt",
+            "id": "e5-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Oft kann MAKEL den Verkaufspreis nicht frei festlegen. Verlangt die Konkurrenz für einen vergleichbaren Hoodie 89 €, wird kaum jemand bei MAKEL 110 € zahlen. Dann stellt sich die Frage umgekehrt: Wie viel darf die Ware im Einkauf höchstens kosten, damit Handlungskosten und Gewinn trotzdem gedeckt sind?",
+            "id": "e5-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Schema bleibt dasselbe, nur die Rechenrichtung kehrt sich um. Aus jedem Abzug wird ein Zuschlag und umgekehrt. Wo vorwärts „im Hundert“ geteilt wurde, wird rückwärts „vom Hundert“ abgezogen — und wo vorwärts vom Hundert aufgeschlagen wurde, wird rückwärts durch (1 + Satz) geteilt.",
+            "id": "e5-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rückwärts vom Konkurrenzpreis",
+            "id": "e5-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gegeben: Listenverkaufspreis 89 €, Kundenrabatt 25 %, Kundenskonto 4 %, Gewinn 20 %, Handlungskosten 50 %, Bezugskosten 0,80 € je Stück, Lieferantenskonto 2 %, Lieferantenrabatt 20 %.",
+            "id": "e5-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Listenverkaufspreis",
+                  "gegeben",
+                  "89,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Kundenrabatt 25 % (vom Hundert)",
+                  "89 × 0,75",
+                  "66,75 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Kundenskonto 4 % (vom Hundert)",
+                  "66,75 × 0,96",
+                  "64,08 € = Barverkaufspreis"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Gewinn 20 % (auf Hundert)",
+                  "64,08 ÷ 1,20",
+                  "53,40 € = Selbstkosten"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Handlungskosten 50 % (auf Hundert)",
+                  "53,40 ÷ 1,50",
+                  "35,60 € = Einstandspreis"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Bezugskosten",
+                  "35,60 − 0,80",
+                  "34,80 € = Bareinkaufspreis"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Lieferantenskonto 2 % (im Hundert)",
+                  "34,80 ÷ 0,98",
+                  "35,51 € = Zieleinkaufspreis"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Lieferantenrabatt 20 % (im Hundert)",
+                  "35,51 ÷ 0,80",
+                  "44,39 € = Listeneinkaufspreis"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Der Lieferer darf höchstens 44,39 € Listenpreis verlangen (bei 20 % Rabatt und 2 % Skonto), damit die Kalkulation aufgeht.",
+            "id": "e5-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bietet ein Lieferer den Hoodie für 47 € Listenpreis an, passt er nicht in die Kalkulation. MAKEL hat dann drei Möglichkeiten: einen besseren Preis oder höheren Rabatt verhandeln, auf einen Teil des Gewinns verzichten oder die Ware nicht ins Sortiment nehmen. Die Rückwärtskalkulation liefert also eine Verhandlungsgrenze.",
+            "id": "e5-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "e5-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "e5-b2"
+          }
         ],
-        "erklaerung": "Bei der Rückwärtskalkulation steht meist der am Markt mögliche Listenverkaufspreis fest. Gesucht wird der Preis, den der Betrieb höchstens für die Ware bezahlen darf. Deshalb wird von oben nach unten rückwärts durch die bekannte Leiter gerechnet; die wirtschaftliche Bedeutung der einzelnen Stufen ändert sich nicht.",
-        "beispiele": [
-          "Wenn der Konkurrent 89 € verlangt und der Betrieb mithalten muss, ist der Verkaufspreis gegeben und die Rückwärtskalkulation passend.",
-          "Wenn der Einstandspreis feststeht und der Angebotspreis gesucht wird, handelt es sich dagegen um eine Vorwärtskalkulation."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Differenzkalkulation",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manchmal sind Einkaufs- und Verkaufspreis beide gegeben, und gesucht ist der Gewinn, der übrig bleibt. Dann rechnet man vom Einkauf vorwärts bis zu den Selbstkosten und vom Verkauf rückwärts bis zum Barverkaufspreis. Die Differenz ist der Gewinn. Liegt der Lieferpreis bei 47 €, ergeben sich vorwärts ein Einstandspreis von 47 × 0,8 × 0,98 + 0,80 = 37,65 € und Selbstkosten von 37,648 × 1,5 ≈ 56,47 €. Vom Verkauf her bleiben 64,08 € Barverkaufspreis. Der Gewinn beträgt 7,61 € oder rund 13,5 % der Selbstkosten statt der geplanten 20 %.",
+                "id": "e5-d1-p1"
+              }
+            ],
+            "id": "e5-d1"
+          }
         ],
-        "fallbeispiel": "Die vorhandene Zuordnung liefert die Entscheidungshilfe: ‚Lieferant nennt seinen Preis, gesucht ist unser Angebotspreis‘ bedeutet vorwärts. ‚Konkurrent verlangt 89 €, wir wollen mithalten‘ bedeutet rückwärts. Im zweiten Fall wird vom feststehenden Verkaufspreis bis zum höchstzulässigen Einstandspreis zurückgerechnet.",
-        "typische_fehler": "Die Rechenrichtung wird gewählt, ohne zuerst die gegebene Größe und die gesuchte Größe zu markieren. Außerdem werden bei der Rückwärtskalkulation die Abzüge und Aufschläge nicht in umgekehrter Richtung gelesen.",
         "verstaendnisfragen": [
-          "Welche Frage entscheidet zwischen vorwärts und rückwärts? Ist der Einkaufspreis gegeben und der Verkaufspreis gesucht oder umgekehrt?",
-          "Was bleibt bei beiden Verfahren gleich? Das Kalkulationsschema und die Bedeutung der einzelnen Stufen."
-        ],
-        "pruefungsbezug": "Vor dem Rechnen die Wörter ‚gegeben‘ und ‚gesucht‘ notieren. Das verhindert, dass ein korrektes Schema in der falschen Richtung verwendet wird.",
-        "merksatz": "Vorwärts: Einkaufspreis ist bekannt. Rückwärts: Verkaufspreis ist bekannt."
+          {
+            "frage": "Warum wird der Gewinn rückwärts durch 1,20 geteilt und nicht mit 0,80 multipliziert?",
+            "antwort": "Vorwärts wurden 20 % auf die Selbstkosten aufgeschlagen: Barverkaufspreis = Selbstkosten × 1,20. Rückwärts muss diese Multiplikation umgekehrt werden, also geteilt durch 1,20. 64,08 × 0,80 ergäbe 51,26 € statt 53,40 € — die Selbstkosten wären zu niedrig.",
+            "id": "e5-f1"
+          },
+          {
+            "frage": "Bei welcher Ausgangslage brauchst du die Rückwärtskalkulation?",
+            "antwort": "Wenn der Verkaufspreis feststeht, etwa durch die Konkurrenz oder eine Preisempfehlung, und gesucht ist, wie viel die Ware höchstens im Einkauf kosten darf.",
+            "id": "e5-f2"
+          }
+        ]
       }
     ]
   },
@@ -312,7 +1024,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "{{begriff:skonto|Skonto}} entsteht erst im Moment der Zahlung — vorher weiß niemand, ob die Frist genutzt wird. Deshalb wird die ursprüngliche Buchung nicht korrigiert, sondern die Differenz separat erfasst. ==Beim Einkauf mindert der Skonto den Aufwand, beim Verkauf mindert er den Erlös.== Im Industriekontenrahmen gibt es dafür Unterkonten: Nachlässe (bei MAKEL 6001) und 5001 Erlösberichtigungen. Die Umsatzsteuer bleibt hier noch außen vor — sie kommt in K6 dazu."
+          "text": "{{begriff:skonto|Skonto}} entsteht erst im Moment der Zahlung — vorher weiß niemand, ob die Frist genutzt wird. Deshalb wird die ursprüngliche Buchung nicht korrigiert, sondern die Differenz separat erfasst. ==Beim Einkauf mindert der Skonto den Aufwand, beim Verkauf mindert er den Erlös.== Im Industriekontenrahmen gibt es dafür Unterkonten: Nachlässe (bei MAKEL 6002) und 5001 Erlösberichtigungen. Die Umsatzsteuer bleibt hier noch außen vor — sie kommt in K6 dazu."
         },
         {
           "typ": "tabelle",
@@ -326,7 +1038,7 @@
               "zellen": [
                 "Einkaufsskonto",
                 "Verbindlichkeit 1.000 €, 2 % Skonto",
-                "4400 Verbindlichkeiten 1.000 € an 2800 Bank 980 € + 6001 Nachlässe 20 €"
+                "4400 Verbindlichkeiten 1.000 € an 2800 Bank 980 € + 6002 Nachlässe 20 €"
               ],
               "mono": [
                 2
@@ -538,7 +1250,7 @@
     {
       "typ": "Fall",
       "frage": "Eine Verbindlichkeit von 2.000 € wird innerhalb der Skontofrist mit 2 % Skonto per Bank beglichen. Formuliere den Buchungssatz.",
-      "loesung": "Skontobetrag = 2 % von 2.000 € = 40 €. Überwiesen werden 1.960 €. Buchungssatz (ohne Umsatzsteuer): 4400 Verbindlichkeiten LuL 2.000 € an 2800 Bank 1.960 € und 6001 Nachlässe 40 €. Die Verbindlichkeit ist vollständig ausgeglichen, obwohl weniger geflossen ist."
+      "loesung": "Skontobetrag = 2 % von 2.000 € = 40 €. Überwiesen werden 1.960 €. Buchungssatz (ohne Umsatzsteuer): 4400 Verbindlichkeiten LuL 2.000 € an 2800 Bank 1.960 € und 6002 Nachlässe 40 €. Die Verbindlichkeit ist vollständig ausgeglichen, obwohl weniger geflossen ist."
     }
   ],
   "pruefungstipp": "Skonto-Buchungen kommen fast immer dran. Lerne die zwei Sätze wörtlich: Einkauf → Verbindlichkeiten an Bank plus Nachlässe. Verkauf → Bank plus Erlösberichtigungen an Forderungen. Mit Umsatzsteuer kommt jeweils die Steuerkorrektur dazu (K6). Bei der Kalkulation gilt: Einstandspreis markieren, dann erst rechnen — er trennt Einkaufs- von Verkaufsseite."

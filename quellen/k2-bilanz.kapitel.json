@@ -7,87 +7,593 @@
   "minuten": 20,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Die Bilanz wird verständlich, wenn du sie nicht als bloße Tabelle, sondern als zwei Fragen liest: Was ist im Betrieb vorhanden und woher wurde es finanziert? Die vier Bilanzveränderungsarten zeigen anschließend, wie Geschäftsvorfälle diese beiden Seiten verändern, ohne dass die Bilanzgleichung verletzt wird.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Geschäftsvorfall verändert mindestens zwei Werte der Buchführung.",
-          "Aktiva und Passiva sind zwei Seiten desselben betrieblichen Kapitals."
+        "darstellung": "vollfassung",
+        "ziel": "Du liest eine Bilanz als zwei Antworten auf dieselbe Frage und begründest, warum Aktiva und Passiva immer gleich hoch sind.",
+        "vorwissen_kurz": "Eine Bilanz gilt immer für einen Stichtag, meist den 31. Dezember. Sie zeigt einen Zustand, keinen Zeitraum.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Summe, zwei Blickwinkel",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Stell dir vor, MAKEL hat insgesamt 100.000 € im Betrieb. Man kann zwei Fragen dazu stellen. Erstens: Wo steckt das Geld — in Maschinen, Waren, auf dem Bankkonto? Zweitens: Woher kommt es — von den Eigentümern, von der Bank, von Lieferern, die noch auf ihr Geld warten? Die Bilanz beantwortet beide Fragen nebeneinander. Links stehen die **Aktiva** (Mittelverwendung), rechts die **Passiva** (Mittelherkunft).",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Weil beide Seiten dieselben 100.000 € beschreiben, nur aus zwei Blickwinkeln, müssen sie gleich hoch sein. Aktiva = Passiva ist deshalb keine Rechenregel, die man einhalten muss, sondern folgt aus der Sache: Jeder Euro, der irgendwo im Betrieb steckt, kam von irgendwoher.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Ausgangsbilanz der Muster GmbH",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aktiva",
+              "Betrag",
+              "Passiva",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anlagevermögen",
+                  "60.000 €",
+                  "Eigenkapital",
+                  "55.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Waren",
+                  "20.000 €",
+                  "Darlehen langfristig",
+                  "30.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Bank",
+                  "18.000 €",
+                  "Verbindlichkeiten LuL",
+                  "15.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Kasse",
+                  "2.000 €",
+                  "",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "**Summe**",
+                  "**100.000 €**",
+                  "**Summe**",
+                  "**100.000 €**"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Beide Seiten ergeben 100.000 €. Von diesem Vermögen sind 55.000 € durch die Eigentümer und 45.000 € durch Dritte finanziert.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bilanz ist nach {{par:hgb-242|§ 242 HGB}} Pflichtbestandteil des Jahresabschlusses. Ihre Gliederung folgt einem festen Schema: Auf der Aktivseite kommt zuerst das langfristig gebundene Anlagevermögen, dann das Umlaufvermögen. Auf der Passivseite steht zuerst das Eigenkapital, dann die Rückstellungen, dann die Verbindlichkeiten.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b2"
+          }
         ],
-        "erklaerung": "Die Bilanz ordnet dieselbe wirtschaftliche Situation aus zwei Blickwinkeln. Auf der Aktivseite steht, in welcher Form das Kapital im Unternehmen gebunden ist. Auf der Passivseite steht, aus welchen Quellen dieses Kapital stammt. Deshalb ist die Gleichheit nicht nur eine Rechenregel: Jede Finanzierung muss irgendwo im Vermögen wiederzufinden sein.",
-        "beispiele": [
-          "Finanziert ein Betrieb eine Maschine mit einem Bankdarlehen, erscheint die Maschine auf der Aktivseite und das Darlehen auf der Passivseite.",
-          "Kauft der Betrieb Waren auf Rechnung, steigen die Vorräte auf der Aktivseite und die Verbindlichkeiten aus Lieferungen und Leistungen auf der Passivseite."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Aktiva ist nicht „gut“, Passiva nicht „schlecht“",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Passivseite enthält nicht nur Schulden, sondern auch das Eigenkapital. Und viel Vermögen auf der Aktivseite heißt nicht automatisch, dass es dem Betrieb gut geht: Wenn es überwiegend mit Krediten finanziert ist, steht auf der Passivseite entsprechend viel Fremdkapital. Aussagekräftig ist das Verhältnis der Posten, etwa wie viel vom Kapital den Eigentümern gehört.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "grundlagen",
+            "titel": "Gliederung nach Fristigkeit und Flüssigkeit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Aktivseite ist nach Liquidität geordnet: oben, was lange im Betrieb bleibt und schwer zu Geld zu machen ist (Grundstücke, Maschinen), unten, was schnell zu Geld wird oder schon Geld ist (Forderungen, Bank, Kasse). Die Passivseite ist nach Fälligkeit geordnet: oben das Eigenkapital, das dem Betrieb dauerhaft zur Verfügung steht, unten die kurzfristigen Verbindlichkeiten.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "In der Ausgangsbilanz der Grafik stehen auf der Aktivseite Anlagevermögen von 60.000 €, Waren von 20.000 €, Bank von 18.000 € und Kasse von 2.000 €. Zusammen ergibt das 100.000 €. Auf der Passivseite stehen Eigenkapital von 55.000 €, ein langfristiges Darlehen von 30.000 € und Verbindlichkeiten von 15.000 €. Auch hier lautet die Summe 100.000 €. Die Bilanz ist ausgeglichen, weil beide Seiten dasselbe Kapital beschreiben.",
-        "typische_fehler": "Aktiva und Passiva werden als ‚gut‘ und ‚schlecht‘ missverstanden. Außerdem wird die Passivseite manchmal mit den Kontoständen verwechselt. Sie zeigt aber nicht nur Schulden, sondern auch das Eigenkapital als Herkunft des Kapitals.",
         "verstaendnisfragen": [
-          "Warum muss eine Bilanz immer ausgeglichen sein? Weil jeder Vermögensposten durch Eigen- oder Fremdkapital finanziert ist und beide Seiten dieselbe Gesamtsumme darstellen.",
-          "Was bedeutet die Aussage ‚Aktiva zeigt die Mittelverwendung‘? Sie beschreibt, worin das Kapital steckt, zum Beispiel in Maschinen, Waren, Bankguthaben oder Kasse."
-        ],
-        "pruefungsbezug": "Bei einer Bilanzaufgabe zuerst die Seiten benennen und anschließend die Summe jeder Seite prüfen. Eine nicht ausgeglichene Summe weist auf einen Zuordnungs- oder Rechenfehler hin.",
-        "merksatz": "Aktiva zeigt, wo das Kapital steckt; Passiva zeigt, woher es stammt."
+          {
+            "frage": "Die Bilanz zeigt 100.000 € auf beiden Seiten. Kann MAKEL daraus schließen, dass es 100.000 € Gewinn gemacht hat?",
+            "antwort": "Nein. Die Bilanzsumme zeigt, wie viel Kapital im Betrieb gebunden ist, nicht den Erfolg eines Jahres. Gewinn oder Verlust zeigt sich an der Veränderung des Eigenkapitals und in der Gewinn- und Verlustrechnung.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum steht das Eigenkapital auf der Passivseite, obwohl es den Eigentümern „gehört“?",
+            "antwort": "Die Passivseite zeigt, woher das Kapital stammt. Das Eigenkapital ist die Quelle, die von den Eigentümern kommt. Wo dieses Geld jetzt steckt, zeigt die Aktivseite.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Die Aktivseite enthält Vermögenswerte des Betriebs.",
-          "Anlage- und Umlaufvermögen unterscheiden sich durch ihre betriebliche Verwendung und Verweildauer."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Vermögensgegenstände nach ihrer betrieblichen Zweckbestimmung dem Anlage- oder Umlaufvermögen zu und erklärst die Folgen dieser Zuordnung.",
+        "vorwissen_kurz": "Abschreibung bedeutet, dass die Anschaffungskosten eines langlebigen Gegenstands auf die Jahre seiner Nutzung verteilt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was zählt, ist die Absicht",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Aktivseite teilt sich in {{begriff:anlagevermoegen|Anlagevermögen}} und {{begriff:umlaufvermoegen|Umlaufvermögen}}. Anlagevermögen soll dem Betrieb dauerhaft dienen, also länger als ein Jahr genutzt werden: Gebäude, Maschinen, Fahrzeuge, Software-Lizenzen. Umlaufvermögen ist dazu da, kurzfristig verbraucht, verkauft oder in Geld umgewandelt zu werden: Waren, Rohstoffe, Forderungen, Bankguthaben.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Zuordnung entscheidet sich nicht am Gegenstand, sondern an der Frage, wozu der Betrieb ihn hält. Ein Fahrzeug, das ein Autohändler verkaufen will, ist Ware und damit Umlaufvermögen. Dasselbe Fahrzeug im Fuhrpark einer Spedition ist Anlagevermögen.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Fünf Positionen, begründet eingeordnet",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position bei MAKEL",
+              "Zweck",
+              "Zuordnung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Druckmaschine für die Produktion",
+                  "dauerhaft genutzt",
+                  "Anlagevermögen"
+                ]
+              },
+              {
+                "zellen": [
+                  "500 bedruckte Hoodies im Lager",
+                  "zum Verkauf bestimmt",
+                  "Umlaufvermögen (Vorräte)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Forderung an einen Kunden",
+                  "wird in wenigen Wochen bezahlt",
+                  "Umlaufvermögen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferwagen für Auslieferungen",
+                  "dauerhaft genutzt",
+                  "Anlagevermögen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gebrauchter Lieferwagen, der verkauft werden soll",
+                  "Verkauf geplant, kein dauerhafter Einsatz mehr",
+                  "in der Regel Umlaufvermögen"
+                ]
+              }
+            ],
+            "fazit": "Ändert sich die Absicht, kann sich auch die Zuordnung ändern.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Warum die Zuordnung Folgen hat",
+            "id": "b2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Anlagevermögen wird über die Nutzungsdauer **abgeschrieben**. Kostet die Druckmaschine 60.000 € und wird sie sechs Jahre genutzt, mindert sie den Gewinn jedes Jahr um 10.000 €, nicht im Jahr des Kaufs um 60.000 €. Waren dagegen werden zu Aufwand, wenn sie verbraucht oder verkauft werden. Wer eine Maschine fälschlich als Umlaufvermögen behandelt, verzerrt also den Gewinn mehrerer Jahre.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b2"
+          }
         ],
-        "erklaerung": "Anlagevermögen dient dem Betrieb dauerhaft, während Umlaufvermögen kurzfristig verbraucht, verkauft oder in eine andere Form umgewandelt wird. Die Einteilung ist wichtig, weil sich daran die weitere Behandlung orientiert: Anlagevermögen wird über die Nutzungsdauer abgeschrieben, Umlaufvermögen wird nicht nach demselben Schema behandelt.",
-        "beispiele": [
-          "Ein Fahrzeug ist beim Autohändler eine Ware zum Weiterverkauf und damit Umlaufvermögen. Bei einer Spedition dient es dauerhaft dem Betriebszweck und ist Anlagevermögen.",
-          "Eine Maschine gehört zum Anlagevermögen, Waren im Lager sowie Bank- und Kassenbestände zum Umlaufvermögen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kurze Nutzung, aber trotzdem Anlagevermögen?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Laptop wird drei Jahre genutzt, ein Werkzeug vielleicht nur 14 Monate. Beides ist Anlagevermögen, weil es dem Betrieb über mehr als ein Jahr dienen soll. Für sehr günstige Gegenstände gibt es steuerliche Vereinfachungen, nach denen sie sofort als Aufwand erfasst werden dürfen. Das ändert nichts daran, dass sie wirtschaftlich zum Anlagevermögen gehören würden; es ist eine Erleichterung für kleine Beträge.",
+                "id": "b2-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k8"
+                ],
+                "text": "Abschreibungen buchen",
+                "id": "b2-d1-v1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Ordne vier Positionen ein: Eine dauerhaft eingesetzte Maschine gehört zum Anlagevermögen. Waren, die verkauft werden sollen, gehören zum Umlaufvermögen. Ein Bankguthaben und der Kassenbestand gehören ebenfalls zum Umlaufvermögen. Entscheidend ist bei jeder Position die Frage: Soll sie dem Betrieb dauerhaft dienen oder kurzfristig umgesetzt werden?",
-        "typische_fehler": "Nicht die äußere Art des Gegenstands entscheidet. Besonders häufig wird jedes Fahrzeug automatisch als Anlagevermögen bezeichnet oder jede Maschine als Umlaufvermögen, ohne die betriebliche Absicht zu prüfen.",
         "verstaendnisfragen": [
-          "Warum ist die Zuordnung für Abschreibungen wichtig? Weil die Nutzungsdauer bei Anlagevermögen die Verteilung des Aufwands bestimmt.",
-          "Kann derselbe Gegenstand in zwei Betrieben unterschiedlich eingeordnet werden? Ja. Die betriebliche Zweckbestimmung entscheidet, nicht allein die Bezeichnung des Gegenstands."
-        ],
-        "pruefungsbezug": "Bei Zuordnungsaufgaben nicht nur den Gegenstand lesen, sondern den Verwendungszweck markieren. Formulierungen wie ‚zum Weiterverkauf‘ sprechen für Umlaufvermögen; ‚dauerhaft im Betrieb eingesetzt‘ für Anlagevermögen.",
-        "merksatz": "Nicht der Gegenstand entscheidet, sondern die Absicht und die Verweildauer im Betrieb."
+          {
+            "frage": "Ein Möbelhaus hat 20 Bürostühle im Verkaufsraum und 5 Bürostühle für die eigenen Mitarbeiter. Wie ordnest du sie ein?",
+            "antwort": "Die 20 Stühle zum Verkauf sind Ware und gehören zum Umlaufvermögen. Die 5 Stühle für die Mitarbeiter dienen dem Betrieb dauerhaft und gehören zum Anlagevermögen (Betriebs- und Geschäftsausstattung). Derselbe Gegenstand wird je nach Zweck unterschiedlich eingeordnet.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist eine Forderung an einen Kunden Umlaufvermögen, obwohl sie kein Gegenstand ist?",
+            "antwort": "Zum Vermögen gehören nicht nur Sachen, sondern auch Rechte wie Forderungen. Eine Forderung aus Lieferungen und Leistungen wird typischerweise innerhalb weniger Wochen bezahlt, sie ist also kurzfristig gebunden und gehört zum Umlaufvermögen.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Die Passivseite beschreibt die Herkunft des Kapitals.",
-          "Schulden und Eigenkapital sind wirtschaftlich nicht dasselbe."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Eigenkapital, Rückstellungen und Verbindlichkeiten nach Herkunft und Gewissheit und ordnest Verpflichtungen zum Stichtag richtig ein.",
+        "vorwissen_kurz": "Fremdkapital muss an Dritte zurückgezahlt werden. Eigenkapital steht dem Betrieb ohne feste Rückzahlung zur Verfügung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wem das Kapital zusteht",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Passivseite gliedert sich nach dem HGB in drei Gruppen. Das {{begriff:eigenkapital|Eigenkapital}} haben die Eigentümer eingebracht oder im Betrieb gelassen; es wächst mit Gewinnen und schrumpft mit Verlusten. Das {{begriff:fremdkapital|Fremdkapital}} stammt von Dritten und muss zurückgezahlt werden. Innerhalb des Fremdkapitals unterscheidet das HGB zwei Arten, und genau hier liegt die häufigste Prüfungsfalle.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:verbindlichkeit|Verbindlichkeiten}} sind Schulden, deren Höhe und Fälligkeit feststehen: das Bankdarlehen über 30.000 € mit festem Tilgungsplan, die Lieferantenrechnung über 2.380 €, fällig am 15. Februar. {{begriff:rueckstellung|Rückstellungen}} sind Verpflichtungen, die am Stichtag schon bestehen, deren Höhe oder Zeitpunkt aber noch ungewiss ist. Typische Beispiele: noch nicht genommener Urlaub, ein laufender Rechtsstreit, eine erwartete Steuernachzahlung.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Fälle zum 31. Dezember",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Sachverhalt",
+              "Besteht die Verpflichtung schon?",
+              "Höhe und Zeitpunkt sicher?",
+              "Bilanzposition"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung des Papierlieferers über 2.380 €, fällig 15.02.",
+                  "ja",
+                  "ja",
+                  "Verbindlichkeit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mitarbeiterin hat 8 Urlaubstage offen",
+                  "ja, Anspruch entstanden",
+                  "nein, wann und zu welchem Lohn genommen, offen",
+                  "Rückstellung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kunde hat MAKEL verklagt, Ausgang offen, Anwalt schätzt Kosten auf 4.000 €",
+                  "ja, Prozessrisiko besteht",
+                  "nein",
+                  "Rückstellung, geschätzt"
+                ]
+              }
+            ],
+            "fazit": "Zuerst fragen, ob die Verpflichtung besteht. Dann fragen, ob Höhe und Zeitpunkt sicher sind.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Warum überhaupt etwas buchen, wenn noch kein Geld geflossen ist? Weil die Verpflichtung wirtschaftlich zum alten Jahr gehört. Der Urlaubsanspruch ist durch die Arbeit im alten Jahr entstanden. Würde MAKEL ihn ignorieren, sähe das alte Jahr zu gut aus und das neue Jahr müsste Kosten tragen, die es nicht verursacht hat. Das Vorsichtsprinzip verlangt deshalb, erkennbare Verpflichtungen schon zu berücksichtigen.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          }
         ],
-        "erklaerung": "Eigenkapital gehört den Eigentümern und verändert sich unter anderem durch Gewinn oder Verlust. Fremdkapital stammt von Dritten. Innerhalb des Fremdkapitals muss zwischen sicheren Verbindlichkeiten und Rückstellungen unterschieden werden: Bei einer Verbindlichkeit stehen Betrag und Fälligkeit fest; bei einer Rückstellung ist die Verpflichtung bereits entstanden, aber Höhe oder Zeitpunkt sind noch ungewiss.",
-        "beispiele": [
-          "Ein Bankdarlehen mit feststehendem Betrag und vereinbarter Rückzahlung ist eine Verbindlichkeit.",
-          "Offene Urlaubstage am Bilanzstichtag führen zu einer Rückstellung, weil der Anspruch besteht, aber Zeitpunkt und genaue Kosten der Inanspruchnahme offen sind."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Rückstellung und Rücklage",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Namen klingen ähnlich, bedeuten aber etwas völlig anderes. Eine Rückstellung ist Fremdkapital: eine Verpflichtung gegenüber Dritten. Eine Rücklage ist Eigenkapital: Gewinn, der nicht ausgeschüttet, sondern im Betrieb behalten wurde. Gewinnrücklagen stehen deshalb im Eigenkapital, Rückstellungen in einer eigenen Gruppe danach.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn sich die Schätzung als falsch erweist",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Prozess endet im neuen Jahr, die Kosten betragen nur 3.000 € statt geschätzter 4.000 €. Die Rückstellung wird verbraucht, der nicht benötigte Teil von 1.000 € wird aufgelöst und erscheint im neuen Jahr als Ertrag. Waren es 5.000 €, entsteht in Höhe der fehlenden 1.000 € zusätzlicher Aufwand. Eine Rückstellung ist eine bestmögliche Schätzung, keine sichere Zahl.",
+                "id": "b3-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k9-i2"
+                ],
+                "text": "Rückstellungen im Jahresabschluss buchen",
+                "id": "b3-d2-v1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "fallbeispiel": "Ein Mitarbeiter hat zum 31.12. noch acht Urlaubstage offen. Die Verpflichtung gehört wirtschaftlich in das laufende Jahr. Weil noch nicht feststeht, wann der Urlaub genommen wird und welche Kosten genau entstehen, wird der Betrag als Rückstellung und nicht als Verbindlichkeit erfasst. ‚Noch nicht bezahlt‘ ist also kein Grund, den Sachverhalt wegzulassen.",
-        "typische_fehler": "Rückstellungen werden mit Verbindlichkeiten gleichgesetzt oder erst bei Zahlung berücksichtigt. Der entscheidende Prüfbegriff ist die Gewissheit: sicherer Betrag und bekannte Fälligkeit sprechen für Verbindlichkeit, Unsicherheit für Rückstellung.",
         "verstaendnisfragen": [
-          "Warum reicht es nicht aus, dass noch kein Geld geflossen ist? Weil die Buchführung wirtschaftliche Verpflichtungen periodengerecht abbildet.",
-          "Was ist das einzige zentrale Unterscheidungsmerkmal zwischen Rückstellung und Verbindlichkeit? Der Grad der Gewissheit über Höhe und Zeitpunkt."
-        ],
-        "pruefungsbezug": "In Fällen zuerst prüfen, ob die Verpflichtung bereits besteht. Danach fragen: Sind Betrag und Fälligkeit sicher? Wenn nein, ist die Rückstellung die passende Bilanzposition.",
-        "merksatz": "Verbindlichkeit = sicher; Rückstellung = Verpflichtung mit ungewisser Höhe oder ungewissem Zeitpunkt."
+          {
+            "frage": "Warum ist eine Lieferantenrechnung, die erst im Januar bezahlt wird, am 31. Dezember keine Rückstellung?",
+            "antwort": "Weil Höhe und Fälligkeit feststehen. Die Rechnung nennt den Betrag und das Zahlungsziel. Das ist eine Verbindlichkeit. Eine Rückstellung kommt nur in Betracht, wenn Höhe oder Zeitpunkt noch ungewiss sind.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Ein Gesellschafter gibt MAKEL ein Darlehen über 20.000 €. Ist das Eigenkapital?",
+            "antwort": "Nein. Ein Darlehen muss zurückgezahlt werden, auch wenn es von einem Gesellschafter kommt. Es ist Fremdkapital (Verbindlichkeit). Eigenkapital wäre es, wenn der Gesellschafter das Geld als Einlage ohne Rückzahlungsanspruch einbringt.",
+            "id": "b3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b4",
-        "vorauswissen": [
-          "Jede Buchung betrifft mindestens zwei Konten.",
-          "Aktivkonten stehen auf der linken, Passivkonten auf der rechten Bilanzseite."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst für einen Geschäftsvorfall die Bilanzveränderungsart, rechnest die neue Bilanzsumme und kontrollierst, dass beide Seiten ausgeglichen bleiben.",
+        "vorwissen_kurz": "Jeder Geschäftsvorfall berührt mindestens zwei Bilanzpositionen. Die Frage ist nur, auf welchen Seiten sie stehen und in welche Richtung sie sich bewegen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Möglichkeiten, das Gleichgewicht zu halten",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Geschäftsvorfall verändert mindestens zwei Bilanzposten. Wo können diese zwei Posten liegen? Beide links, beide rechts oder einer links und einer rechts. Bei „einer links, einer rechts“ können beide steigen oder beide sinken. Daraus ergeben sich genau vier Bilanzveränderungsarten. Bei allen bleibt Aktiva = Passiva erhalten.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "So gehst du vor: Erstens die beiden betroffenen Posten bestimmen. Zweitens ihre Seiten feststellen. Drittens die Richtung prüfen. Erst dann vergibst du den Namen.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Geschäftsvorfälle nacheinander",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ausgangspunkt ist die Bilanz der Muster GmbH mit 100.000 €. Die Vorfälle werden nacheinander gebucht:",
+            "id": "b4-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Nr.",
+              "Vorfall",
+              "Betroffene Posten",
+              "Art",
+              "Bilanzsumme danach"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "5.000 € von der Bank in die Kasse",
+                  "Bank −, Kasse + (beide Aktiva)",
+                  "Aktiv-Tausch",
+                  "100.000 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "10.000 € kurzfristige Verbindlichkeit in langfristiges Darlehen umgewandelt",
+                  "Verbindlichkeiten −, Darlehen + (beide Passiva)",
+                  "Passiv-Tausch",
+                  "100.000 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Waren für 8.000 € auf Ziel gekauft",
+                  "Waren +, Verbindlichkeiten +",
+                  "Aktiv-Passiv-Mehrung",
+                  "108.000 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "Lieferantenrechnung 8.000 € per Bank bezahlt",
+                  "Bank −, Verbindlichkeiten −",
+                  "Aktiv-Passiv-Minderung",
+                  "100.000 €"
+                ],
+                "mono": [
+                  4
+                ]
+              }
+            ],
+            "fazit": "Nach jedem Vorfall sind Aktiva und Passiva gleich hoch. Das Eigenkapital ist in keinem Fall verändert worden.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bilanzsumme ist von 100.000 € auf 108.000 € und zurück gegangen, ohne dass sich der Wert des Betriebs für die Eigentümer verändert hat. Daran siehst du, warum eine längere Bilanz nicht „besser“ ist: Mehr Waren auf Kredit bedeuten mehr Vermögen, aber auch mehr Schulden.",
+            "id": "b4-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b4-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b4"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b4-b5"
+          }
         ],
-        "erklaerung": "Für die vier Bilanzveränderungsarten musst du nicht sofort den vollständigen Buchungssatz bilden. Es reicht zunächst, die beiden betroffenen Bilanzpositionen zu finden und ihre Seiten zu vergleichen. Liegen beide Positionen auf derselben Seite, handelt es sich um einen Tausch. Liegt je eine Position auf Aktiva und Passiva, steigt oder sinkt die Bilanzsumme.",
-        "beispiele": [
-          "Bei einer Abhebung von 5.000 € sinkt Bank und Kasse steigt. Beide Konten liegen auf der Aktivseite: Aktiv-Tausch, Bilanzsumme unverändert.",
-          "Beim Kauf von Waren für 8.000 € auf Ziel steigen Waren und Verbindlichkeiten. Je eine Position auf jeder Seite steigt: Aktiv-Passiv-Mehrung, Bilanzsumme plus 8.000 €."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Wenn sich das Eigenkapital doch verändert",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In allen vier Fällen blieb das Eigenkapital gleich. Das ändert sich, sobald Aufwand oder Ertrag entsteht. Zahlt MAKEL 500 € Miete per Bank, sinken Bank und Eigenkapital — formal eine Aktiv-Passiv-Minderung, aber zugleich ein Verlust an Reinvermögen. Damit man solche erfolgswirksamen Vorgänge nicht direkt im Eigenkapitalkonto bucht, gibt es Aufwands- und Ertragskonten.",
+                "id": "b4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k4"
+                ],
+                "text": "Aufwands- und Ertragskonten",
+                "id": "b4-d1-v1"
+              }
+            ],
+            "id": "b4-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Bezahlung einer Rechnung ist kein Aufwand",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Begleicht MAKEL eine Lieferantenrechnung, sinken Bank und Verbindlichkeit um denselben Betrag. Das Vermögen der Eigentümer ändert sich nicht, denn die Schuld war schon vorher da. Aufwand entstand — wenn überhaupt — beim Kauf, nicht bei der Zahlung. Wer Zahlungen als Aufwand bucht, zählt denselben Vorgang doppelt.",
+                "id": "b4-d2-p1"
+              }
+            ],
+            "id": "b4-d2"
+          }
         ],
-        "fallbeispiel": "Ein Laptop für 1.200 € wird auf Ziel gekauft. Der Laptop beziehungsweise die Betriebs- und Geschäftsausstattung steigt auf der Aktivseite um 1.200 €. Gleichzeitig steigen die Verbindlichkeiten auf der Passivseite um 1.200 €. Damit liegt eine Aktiv-Passiv-Mehrung vor und die Bilanzsumme wächst um 1.200 €. Das Eigenkapital bleibt unverändert, weil der Vorgang noch keinen Aufwand oder Ertrag darstellt.",
-        "typische_fehler": "Eine steigende Bilanzsumme wird vorschnell als Gewinn gedeutet. Ebenso wird eine Zahlung an einen Lieferanten als Aufwand behandelt, obwohl bei der reinen Begleichung nur Bank und Verbindlichkeit sinken.",
         "verstaendnisfragen": [
-          "Wie unterscheidest du Aktiv-Tausch und Aktiv-Passiv-Mehrung? Beim Aktiv-Tausch ändern sich zwei Aktivposten; bei der Mehrung steigen ein Aktiv- und ein Passivposten.",
-          "Warum kann eine Bilanzverkürzung neutral sein? Bei der Begleichung einer Schuld sinken Bank und Verbindlichkeit gleichzeitig; Vermögen und Schulden nehmen im gleichen Umfang ab."
-        ],
-        "pruefungsbezug": "Arbeite immer in zwei Schritten: betroffene Konten und Kontoseiten bestimmen, anschließend Richtung der Veränderung prüfen. Erst danach die Bezeichnung Aktiv-Tausch, Passiv-Tausch, Mehrung oder Minderung wählen.",
-        "merksatz": "Zwei Positionen finden, Seiten vergleichen, Richtung prüfen — so entsteht die richtige Veränderungsart."
+          {
+            "frage": "Ein Kunde bezahlt eine offene Rechnung über 1.500 € per Überweisung. Welche Bilanzveränderung liegt vor?",
+            "antwort": "Ein Aktiv-Tausch. Die Forderung sinkt um 1.500 €, das Bankguthaben steigt um 1.500 €. Beide Posten stehen auf der Aktivseite; die Bilanzsumme bleibt gleich.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Ein Bankdarlehen über 10.000 € wird per Überweisung getilgt. Die Bilanzsumme sinkt. Ist das ein Verlust?",
+            "antwort": "Nein. Bank und Darlehen sinken um denselben Betrag. Das Vermögen und die Schulden werden gleichermaßen kleiner, das Eigenkapital bleibt unverändert. Eine kürzere Bilanz bedeutet keinen Verlust.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },

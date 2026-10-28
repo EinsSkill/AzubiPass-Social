@@ -233,13 +233,13 @@
           "loesung": [
             { "soll": "4400", "haben": null, "betrag": "brutto" },
             { "soll": null, "haben": "2800", "betrag": "zahlbetrag" },
-            { "soll": null, "haben": "6001", "betrag": "skonto_netto" },
+            { "soll": null, "haben": "6002", "betrag": "skonto_netto" },
             { "soll": null, "haben": "2600", "betrag": "vst_korrektur" }
           ]
         }
       ],
       "bewertung": { "art": "automatisch", "punkte_gesamt": 6 },
-      "erklaerung": "Der Skonto wird vom Bruttobetrag berechnet und dann aufgeteilt: Der Nettoanteil mindert den Einkaufsaufwand (6001 Nachlässe), der Steueranteil berichtigt die Vorsteuer (§ 17 UStG). Die Verbindlichkeit wird vollständig ausgebucht.",
+      "erklaerung": "Der Skonto wird vom Bruttobetrag berechnet und dann aufgeteilt: Der Nettoanteil mindert den Einkaufsaufwand (6002 Nachlässe), der Steueranteil berichtigt die Vorsteuer (§ 17 UStG). Die Verbindlichkeit wird vollständig ausgebucht.",
       "quelle": "k6, Abschnitt f3"
     }
   ]
