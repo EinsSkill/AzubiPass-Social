@@ -11,13 +11,13 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-65dc32ee4ca2825f";
+var SPEICHER = "azubipass-f138940251056da4";
 var VORRAT = {
   "./": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "app.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "buchfuehrung.html": "c214c51f9efbfd3a2733e7cfe9cc640a22090666fc427e8891fd95bfc532c02b",
   "datenschutz.html": "07945420b168f4ac719e8fe9768193d356d24e48800ee4000970f97ef9f0f94c",
-  "ik2024-lf01.html": "4fe05fb8e3cfabeb22e28bacdfb129562b9a73a6bc09803cabf559db58dc181f",
+  "ik2024-lf01.html": "da89445c5f66a6249fbb0340a405cfd88d8ef8026b0cc104733be92772fe45b0",
   "ik2024-lf02.html": "36a4c0c12c17e43a1f6b70effcf80ee6cc5a4ffc1d7a01662bfc6c572931ad3f",
   "ik2024-lf03.html": "80cbe5f3a6f9f058c3c1f9608e3f825df6d4dbd75b0937854865533047d4715d",
   "ik2024-lf04.html": "0297496456ec9e308494d8c79761f2722ed2527c9077ba5bc476e68940f79c15",
@@ -33,7 +33,7 @@ var VORRAT = {
   "impressum.html": "5c7dddb5aae1ce5ee624d064dd310364d8c59549bb94bf84e0cc551cb8cc0548",
   "index.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "landing.html": "ae2f8488c7c19fd7a482c984bdc3c72eabe8eb61c1329bb9b5adb72d357a1a93",
-  "lf1.html": "f14dd41bf9b7f8e073fdccce2b8352112002201311f2ee375d1b72330aabc753",
+  "lf1.html": "26834c78c0737a423a7a38b1830e10c75998b9027e0ced2701103626edd7310b",
   "lf10.html": "b3fdc41240823da9cfb2f8b1a54a976d6fb779df914efdd348f5769426f2d9a1",
   "lf11.html": "d1f7b04cac3192fe1e3280f443e7031226cda7b4a3d1e046b0906e5a9ca8e30d",
   "lf12.html": "9f2e739caa8ba5d7217df99abcffb8355b1678a4324ecaf4e62f076a6469fb3c",

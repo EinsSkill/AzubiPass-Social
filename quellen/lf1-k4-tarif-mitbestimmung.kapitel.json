@@ -6,66 +6,348 @@
   "untertitel": "Wer deine Arbeitsbedingungen aushandelt — und wer im Betrieb mitreden darf.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "d1",
-        "vorauswissen": [
-          "Arbeitsbedingungen können durch Gesetz, Vertrag und betriebliche Regelungen bestimmt werden.",
-          "Tarifparteien verhandeln kollektiv über Arbeitsbedingungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wer Tarifverträge aushandelt, was die verschiedenen Tarifverträge regeln und wann ein Tarifvertrag für dich gilt.",
+        "vorwissen_kurz": "Arbeitsbedingungen können im Gesetz, im Tarifvertrag, in einer Betriebsvereinbarung und im Einzelvertrag geregelt sein.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Kollektiv statt allein verhandeln",
+            "id": "d1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine einzelne Beschäftigte hat gegenüber einem Unternehmen wenig Verhandlungsmacht. Deshalb schließen sich Beschäftigte in einer {{begriff:gewerkschaft|Gewerkschaft}} zusammen, Unternehmen in einem {{begriff:arbeitgeberverband|Arbeitgeberverband}}. Beide handeln {{begriff:tarifvertrag|Tarifverträge}} aus, die für viele Beschäftigte gelten. Das Grundgesetz schützt diese {{begriff:tarifautonomie|Tarifautonomie}}: Der Staat setzt nur Mindeststandards wie den Mindestlohn und hält sich aus den Verhandlungen heraus.",
+            "id": "d1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d1-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Gilt der Tarif für mich?",
+            "id": "d1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Tarifvertrag wirkt nicht automatisch für alle. Er bindet unmittelbar, wenn beide Seiten tarifgebunden sind: Der Betrieb ist Mitglied im Arbeitgeberverband oder hat einen Haustarif, und die Beschäftigte ist Mitglied der Gewerkschaft.",
+            "id": "d1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Lage",
+              "Gilt der Tarif?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Betrieb im Arbeitgeberverband, Auszubildende in der Gewerkschaft",
+                  "ja, unmittelbar und zwingend"
+                ]
+              },
+              {
+                "zellen": [
+                  "Betrieb im Arbeitgeberverband, Auszubildende nicht in der Gewerkschaft, Vertrag verweist auf den Tarif",
+                  "ja, weil der Vertrag ihn übernimmt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Betrieb ohne Tarifbindung, kein Verweis",
+                  "nein; es gelten Gesetz und Vertrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tarif ist vom Bundesarbeitsministerium für allgemeinverbindlich erklärt",
+                  "ja, für alle Betriebe der Branche"
+                ]
+              }
+            ],
+            "fazit": "In der Praxis behandeln tarifgebundene Betriebe meist alle Beschäftigten nach Tarif, indem sie im Vertrag darauf verweisen.",
+            "id": "d1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "d1-b3"
+          }
         ],
-        "erklaerung": "Tarifautonomie bedeutet, dass Gewerkschaften und Arbeitgeberverbände Tarifbedingungen ohne staatliche Einmischung aushandeln. Dabei erfüllen die Tarifarten unterschiedliche Zwecke: Entgelttarifverträge regeln die Vergütung, Manteltarifverträge allgemeine Arbeitsbedingungen, Rahmentarifverträge Gruppen und Tätigkeitsmerkmale, Haustarifverträge die Bedingungen eines einzelnen Betriebs.",
-        "beispiele": [
-          "Eine Verhandlung über die Höhe des Entgelts gehört in den Entgelttarifvertrag; Regeln zu Arbeitszeit oder Urlaub werden im Manteltarifvertrag verortet.",
-          "Schließt ein einzelner Betrieb mit der Gewerkschaft eigene Bedingungen, liegt ein Haustarifvertrag vor. Das ist etwas anderes als eine allgemeine Vereinbarung eines Arbeitgeberverbands."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Friedenspflicht und Arbeitskampf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Solange ein Tarifvertrag läuft, gilt die Friedenspflicht: Über die geregelten Themen darf nicht gestreikt werden. Nach Ablauf verhandeln die Parteien neu. Scheitern die Verhandlungen, kann die Gewerkschaft nach einer Urabstimmung zum Streik aufrufen; oft gehen Warnstreiks und eine Schlichtung voraus. Während des Streiks erhalten Streikende keine Vergütung vom Betrieb, Gewerkschaftsmitglieder bekommen Streikgeld.",
+                "id": "d1-d1-p1"
+              }
+            ],
+            "id": "d1-d1"
+          }
         ],
-        "fallbeispiel": "In einer Aufgabe sollen vier Überschriften zugeordnet werden: ‚monatliche Vergütung‘, ‚allgemeine Arbeitsbedingungen‘, ‚Tätigkeitsgruppen‘ und ‚Regelung nur für Betrieb X‘. Die Lösung lautet Entgelttarifvertrag, Manteltarifvertrag, Rahmentarifvertrag und Haustarifvertrag. Entscheidend ist jeweils der Regelungsgegenstand, nicht die Länge des Dokuments.",
-        "typische_fehler": "Tarifvertrag und Betriebsvereinbarung werden gleichgesetzt. Außerdem wird angenommen, der Staat setze jeden Tarifinhalt fest. Tarifautonomie beschreibt gerade die Verhandlung durch Gewerkschaften und Arbeitgeberseite.",
         "verstaendnisfragen": [
-          "Wer sind die typischen Tarifparteien? Gewerkschaften und Arbeitgeberverbände; bei einem Haustarifvertrag kann der einzelne Arbeitgeber beteiligt sein.",
-          "Woran erkennst du einen Entgelttarifvertrag? Sein Schwerpunkt liegt auf Vergütung beziehungsweise Entgelt."
+          {
+            "frage": "Lea ist in keiner Gewerkschaft, ihr Betrieb ist tarifgebunden. Bekommt sie die tarifliche Vergütung?",
+            "antwort": "Unmittelbar bindet der Tarif sie nicht. Verweist ihr Vertrag auf den Tarifvertrag, gilt er aber über diesen Verweis. Fehlt der Verweis, hat sie nur den vertraglich vereinbarten Anspruch, mindestens aber die gesetzliche Mindestvergütung.",
+            "id": "d1-f1"
+          },
+          {
+            "frage": "Warum wird der Manteltarifvertrag seltener neu verhandelt als der Entgelttarifvertrag?",
+            "antwort": "Er regelt grundsätzliche Arbeitsbedingungen wie Arbeitszeit, Urlaub und Kündigungsfristen, die sich selten ändern. Die Entgelte müssen dagegen regelmäßig an Preise und wirtschaftliche Lage angepasst werden.",
+            "id": "d1-f2"
+          }
         ],
-        "pruefungsbezug": "Ordne Tarifarten über Schlüsselwörter zu: Entgelt = Geld, Mantel = allgemeine Bedingungen, Rahmen = Gruppen und Tätigkeiten, Haus = einzelner Betrieb.",
-        "merksatz": "Tarifautonomie heißt: Gewerkschaft und Arbeitgeberseite handeln die Bedingungen selbst aus."
+        "quellen": [
+          {
+            "titel": "Tarifvertragsgesetz, §§ 3–5",
+            "url": "https://www.gesetze-im-internet.de/tvg/",
+            "bezug": "Tarifbindung, Wirkung, Allgemeinverbindlichkeit"
+          }
+        ]
       },
       {
         "abschnitt": "d2",
-        "vorauswissen": [
-          "Mehrere Regelungsebenen können denselben Arbeitsbereich betreffen.",
-          "Eine rangniedrigere Regelung darf nicht automatisch schlechter sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst bei widersprüchlichen Regelungen mit Rangfolge und Günstigkeitsprinzip, welche Regel für dich gilt.",
+        "vorwissen_kurz": "Gesetz, Tarifvertrag, Betriebsvereinbarung und Vertrag können dasselbe Thema unterschiedlich regeln.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mindeststandards von oben, Verbesserungen von unten",
+            "id": "d2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Regelungen bauen aufeinander auf. Das Gesetz setzt den untersten Standard, den niemand unterschreiten darf. Tarifverträge dürfen das Gesetz verbessern, Betriebsvereinbarungen den Tarif, der Einzelvertrag alles darüber. Ungünstigere Regelungen auf einer niedrigeren Ebene gelten nicht. Günstigere setzen sich durch — das ist das **Günstigkeitsprinzip**.",
+            "id": "d2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "d2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Regelungen zum Urlaub",
+            "id": "d2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ebene",
+              "Regelung",
+              "Für Lea (17)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gesetz (Jugendarbeitsschutz)",
+                  "25 Werktage",
+                  "Mindeststandard"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tarifvertrag",
+                  "28 Arbeitstage",
+                  "günstiger als das Gesetz"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausbildungsvertrag",
+                  "30 Arbeitstage",
+                  "günstiger als der Tarif"
+                ]
+              }
+            ],
+            "fazit": "Lea erhält 30 Arbeitstage. Stünden im Vertrag nur 25 Arbeitstage, wäre die Klausel insoweit unwirksam, und der Tarif mit 28 Tagen würde gelten.",
+            "id": "d2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Vergleich muss man auf die Einheit achten: Werktage zählen von Montag bis Samstag, Arbeitstage nur die Tage, an denen tatsächlich gearbeitet wird. 25 Werktage entsprechen bei einer Fünftagewoche rund 21 Arbeitstagen.",
+            "id": "d2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "d2-b2"
+          }
         ],
-        "erklaerung": "Die Grundrangfolge lautet Gesetz vor Tarifvertrag vor Betriebsvereinbarung vor Einzelvertrag. Das Günstigkeitsprinzip ist die wichtige Ausnahme: Eine rangniedrigere Regelung setzt sich durch, wenn sie für den Beschäftigten günstiger ist. Während der Laufzeit gilt außerdem die Friedenspflicht; erst danach kommen Streik und Aussperrung als tarifliche Druckmittel in Betracht.",
-        "beispiele": [
-          "Der Tarifvertrag sieht 28 Urlaubstage vor, der Arbeitsvertrag 30. Die günstigere Einzelregelung mit 30 Tagen bleibt bestehen.",
-          "Stehen im Arbeitsvertrag nur 25 Urlaubstage, kann die schlechtere Vereinbarung den Tarifstandard nicht unterschreiten; es bleiben die 28 tariflichen Tage."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Öffnungsklauseln",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Tarifverträge erlauben ausdrücklich, dass Betriebe in bestimmten Fragen abweichen dürfen, etwa bei Arbeitszeitmodellen. Nur dann darf eine Betriebsvereinbarung eine tariflich geregelte Frage anders regeln. Ohne Öffnungsklausel gilt der Tarifvorbehalt.",
+                "id": "d2-d1-p1"
+              }
+            ],
+            "id": "d2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb ist tarifgebunden. Im Tarifvertrag stehen 28 Urlaubstage, im einzelnen Arbeitsvertrag 30. Zuerst wird die Rangfolge notiert: Tarifvertrag steht über Einzelvertrag. Dann wird die Günstigkeit verglichen: 30 ist für den Beschäftigten günstiger als 28. Daher gilt die rangniedrigere, aber günstigere Regelung.",
-        "typische_fehler": "Die Rangfolge wird als starres ‚oben gewinnt immer‘ verstanden. Der Gegenfehler ist, jede Abweichung als günstiger zu bewerten, ohne denselben Regelungsgegenstand und die tatsächliche Verbesserung zu vergleichen.",
         "verstaendnisfragen": [
-          "Was prüfst du nach dem Aufschreiben der Rangfolge? Ob die niedrigere Regelung im gleichen Bereich günstiger ist.",
-          "Was bedeutet Friedenspflicht? Während der Laufzeit eines Tarifvertrags sollen die Tarifparteien über die geregelten Gegenstände nicht streiken oder aussperren."
-        ],
-        "pruefungsbezug": "Schreibe bei Fällen die vier Ebenen in der richtigen Reihenfolge auf und vergleiche erst danach die konkrete Vergütung, Arbeitszeit oder Urlaubstage.",
-        "merksatz": "Die Rangfolge ordnet; das Günstigkeitsprinzip lässt die bessere Regelung der unteren Ebene gelten."
+          {
+            "frage": "Eine Betriebsvereinbarung sieht 39 Stunden Wochenarbeitszeit vor, der Tarif 38. Was gilt für Tarifgebundene?",
+            "antwort": "Der Tarifvertrag mit 38 Stunden, weil die Betriebsvereinbarung ungünstiger ist. Ohne Öffnungsklausel darf sie die tariflich geregelte Arbeitszeit ohnehin nicht abweichend regeln.",
+            "id": "d2-f1"
+          },
+          {
+            "frage": "Warum ist das Gesetz der „unterste Boden“?",
+            "antwort": "Gesetze wie das Jugendarbeitsschutzgesetz oder das Mindestlohngesetz enthalten Mindestschutz, der auch durch Tarif oder Vertrag nicht unterschritten werden darf. Abweichungen sind nur zugunsten der Beschäftigten erlaubt, außer das Gesetz lässt ausdrücklich eine tarifliche Abweichung zu.",
+            "id": "d2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d3",
-        "vorauswissen": [
-          "Der Betriebsrat vertritt die gesamte Belegschaft.",
-          "Auszubildende und junge Beschäftigte können zusätzlich durch die JAV vertreten werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Rechte und Aufgaben von Betriebsrat und Jugend- und Auszubildendenvertretung und ordnest ein Anliegen dem passenden Gremium und Weg zu.",
+        "vorwissen_kurz": "Mitbestimmung bedeutet, dass Beschäftigte über gewählte Vertretungen an Entscheidungen im Betrieb beteiligt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mitreden im eigenen Betrieb",
+            "id": "d3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Während Tarifverträge ganze Branchen regeln, vertritt der {{begriff:betriebsrat|Betriebsrat}} die Beschäftigten eines Betriebs gegenüber der Geschäftsleitung. Seine Rechte sind unterschiedlich stark: Bei manchen Themen muss er nur informiert werden, bei anderen kann er widersprechen, und bei sozialen Angelegenheiten wie der Lage der Arbeitszeit kann der Arbeitgeber ohne seine Zustimmung nicht entscheiden. Für junge Beschäftigte und Auszubildende gibt es zusätzlich die {{begriff:jav|Jugend- und Auszubildendenvertretung}}.",
+            "id": "d3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "d3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Anliegen",
+            "id": "d3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei MAKEL gibt es einen Betriebsrat und eine JAV. Lea und zwei weitere Auszubildende ärgern sich, dass sie an Berufsschultagen mit fünf Stunden Unterricht noch in den Betrieb kommen sollen und keinen Platz für das Führen des Ausbildungsnachweises haben.",
+            "id": "d3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Wer",
+              "Was passiert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Lea spricht die JAV an",
+                  "Die JAV sammelt das Anliegen und prüft die Rechtslage."
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "JAV stellt einen Antrag an den Betriebsrat",
+                  "Sie selbst kann nicht beschließen."
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Betriebsrat behandelt den Antrag; die JAV nimmt teil und stimmt mit, weil es überwiegend Auszubildende betrifft",
+                  "Beschluss, mit der Geschäftsleitung zu verhandeln"
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "Betriebsrat und Geschäftsleitung",
+                  "Regelung für Ausbildungszeiten, etwa als Betriebsvereinbarung"
+                ]
+              }
+            ],
+            "fazit": "Die JAV gibt den Anstoß und bringt die Sicht der Auszubildenden ein; die Entscheidung trifft der Betriebsrat mit dem Arbeitgeber.",
+            "id": "d3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "d3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "d3-b3"
+          }
         ],
-        "erklaerung": "Die Jugend- und Auszubildendenvertretung vertritt Beschäftigte unter 18 und Auszubildende. Sie nimmt Anliegen auf und bringt Anträge in den Betriebsrat ein. Der Betriebsrat besitzt die eigenen Beschluss- und Mitbestimmungsrechte und schließt Betriebsvereinbarungen. Die JAV vertritt also, der Betriebsrat entscheidet. Im öffentlichen Dienst ist der Personalrat die entsprechende Interessenvertretung.",
-        "beispiele": [
-          "Eine Frage zur Ausbildungsqualität kann die JAV aufnehmen und als Antrag in den Betriebsrat bringen; der Beschluss wird dort gefasst.",
-          "Bei der Umstellung von Gleitzeit auf feste Kernzeiten ist der Betriebsrat wegen der Lage der Arbeitszeit zu beteiligen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Besonderer Schutz für JAV-Mitglieder",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mitglieder der JAV und des Betriebsrats genießen besonderen Kündigungsschutz. Auszubildende in der JAV haben außerdem einen Anspruch auf Übernahme nach der Ausbildung, wenn sie diese rechtzeitig schriftlich verlangen; der Arbeitgeber kann sich davon nur unter engen Voraussetzungen über das Arbeitsgericht lösen.",
+                "id": "d3-d1-p1"
+              }
+            ],
+            "id": "d3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Ohne Betriebsrat",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gibt es keinen Betriebsrat, gibt es auch keine JAV. Dann bleiben das direkte Gespräch mit der Ausbilderin und der Geschäftsleitung, die Ausbildungsberatung der IHK und gegebenenfalls die Gewerkschaft. Die Beschäftigten können jederzeit einen Betriebsrat wählen, wenn mindestens fünf ständige wahlberechtigte Beschäftigte im Betrieb arbeiten.",
+                "id": "d3-d2-p1"
+              }
+            ],
+            "id": "d3-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb will die Arbeitszeit von Gleitzeit auf feste Kernzeiten umstellen. Die Lage der Arbeitszeit betrifft eine soziale Angelegenheit und damit die Mitbestimmung des Betriebsrats. Die JAV kann die Interessen der Azubis einbringen, hat aber kein eigenes Beschlussrecht. Das Ergebnis wird in der Regel durch den Betriebsrat, etwa in einer Betriebsvereinbarung, festgelegt.",
-        "typische_fehler": "JAV und Betriebsrat werden als gleichberechtigte Beschlussorgane behandelt. Ebenso wird die JAV nur auf Minderjährige beschränkt; sie vertritt auch Auszubildende, die 18 oder älter sind.",
         "verstaendnisfragen": [
-          "Ab wann kann eine JAV gebildet werden? Nach § 60 BetrVG ab fünf Beschäftigten unter 18 Jahren oder in Ausbildung.",
-          "Wer beschließt eine Betriebsvereinbarung? Der Betriebsrat; die JAV bringt die Anliegen der von ihr vertretenen Gruppe ein."
+          {
+            "frage": "Wer darf die JAV wählen, und wer kann gewählt werden?",
+            "antwort": "Wählen dürfen alle Beschäftigten unter 18 und alle Auszubildenden, seit 2021 unabhängig vom Alter. Wählbar sind Beschäftigte unter 25 und ebenfalls alle Auszubildenden ohne Altersgrenze.",
+            "id": "d3-f1"
+          },
+          {
+            "frage": "Der Betrieb kündigt einem Mitarbeiter, ohne den Betriebsrat anzuhören. Folge?",
+            "antwort": "Die Kündigung ist unwirksam. Der Betriebsrat muss vor jeder Kündigung angehört werden.",
+            "id": "d3-f2"
+          }
         ],
-        "pruefungsbezug": "Bei Beteiligungsfällen zuerst die Personengruppe und dann das zuständige Organ bestimmen. Der Merksatz ‚JAV vertritt, Betriebsrat entscheidet‘ verhindert die häufigste Verwechslung.",
-        "merksatz": "Die JAV bringt Azubi-Themen ein; der Betriebsrat besitzt das Beschluss- und Mitbestimmungsrecht."
+        "quellen": [
+          {
+            "titel": "Betriebsverfassungsgesetz, §§ 1, 60–70, 77, 87, 102",
+            "url": "https://www.gesetze-im-internet.de/betrvg/",
+            "bezug": "Betriebsrat, JAV, Betriebsvereinbarung, Mitbestimmung, Anhörung"
+          },
+          {
+            "titel": "Berufsbildungsgesetz, § 15",
+            "url": "https://www.gesetze-im-internet.de/bbig_2005/",
+            "bezug": "Freistellung am Berufsschultag"
+          }
+        ]
       }
     ]
   },

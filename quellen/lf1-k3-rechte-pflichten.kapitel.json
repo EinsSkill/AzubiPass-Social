@@ -6,66 +6,358 @@
   "untertitel": "Was du schuldest, was der Betrieb schuldet — und was für dich gilt, solange du unter 18 bist.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "c1",
-        "vorauswissen": [
-          "Ein Ausbildungsvertrag verpflichtet beide Seiten.",
-          "Die Pflichten des Azubis stehen dem Ausbildungsauftrag des Betriebs gegenüber."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Situationen aus dem Ausbildungsalltag den Pflichten der Auszubildenden und des Betriebs zu und leitest daraus Rechte ab.",
+        "vorwissen_kurz": "Jede Pflicht der einen Seite entspricht einem Recht der anderen Seite.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Austausch mit Regeln",
+            "id": "c1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Ausbildungsverhältnis tauschen beide Seiten Leistungen aus. Du bringst Lernbereitschaft und Mitarbeit ein; der Betrieb bringt dir den Beruf bei und zahlt eine Vergütung. Was jede Seite genau schuldet, regeln {{par:bbig-13|§ 13 BBiG}} für Auszubildende und {{par:bbig-14|§ 14 BBiG}} für den Betrieb. Aus jeder Pflicht der einen Seite folgt ein Recht der anderen: Weil der Betrieb Ausbildungsmittel kostenlos stellen muss, darfst du sie verlangen.",
+            "id": "c1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "c1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Tims Woche",
+            "id": "c1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Situation",
+              "Wessen Pflicht?",
+              "Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Tim soll eine Bestellung in der Software anlegen, aber das Programm ist für ihn neu.",
+                  "Betrieb: Ausbildung vermitteln",
+                  "Tim hat Anspruch auf eine Einweisung."
+                ]
+              },
+              {
+                "zellen": [
+                  "Tim überträgt eine Artikelnummer falsch, weil er unaufmerksam war.",
+                  "Tim: Sorgfalt",
+                  "Er korrigiert den Fehler und meldet ihn; ein Fehler gehört zum Lernen, gemessen am Ausbildungsstand."
+                ]
+              },
+              {
+                "zellen": [
+                  "Die Berufsschule fällt am Mittwoch aus.",
+                  "Tim: Berufsschulbesuch; danach Arbeitsleistung",
+                  "Er geht nach Absprache in den Betrieb, statt frei zu nehmen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Tim braucht für die Schule einen Taschenrechner und ein Fachbuch.",
+                  "Betrieb stellt nur Ausbildungsmittel für die betriebliche Ausbildung kostenlos",
+                  "Schulbücher sind Sache der Schule beziehungsweise der Lernmittelregelung des Landes."
+                ]
+              },
+              {
+                "zellen": [
+                  "Tim postet ein Foto vom neuen, noch nicht veröffentlichten Kollektionsentwurf.",
+                  "Tim: Verschwiegenheit über Betriebsgeheimnisse",
+                  "Pflichtverletzung, die eine Abmahnung rechtfertigen kann."
+                ]
+              }
+            ],
+            "fazit": "Die meisten Situationen lassen sich lösen, wenn man fragt: Wer schuldet hier was — und gehört es zum Ausbildungszweck?",
+            "id": "c1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "c1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Weitere Pflichten des Betriebs stehen außerhalb von § 14: Er zahlt die Vergütung ({{par:bbig-17|§ 17 BBiG}}), stellt dich für Berufsschule und Prüfungen frei ({{par:bbig-15|§ 15 BBiG}}) und stellt am Ende ein Zeugnis aus ({{par:bbig-16|§ 16 BBiG}}). Und du führst den Ausbildungsnachweis, den der Betrieb regelmäßig durchsieht.",
+            "id": "c1-p2"
+          }
         ],
-        "erklaerung": "§ 13 BBiG beschreibt die Pflichten des Auszubildenden: Lernen, sorgfältige Aufgabenerledigung, Berufsschulbesuch, Befolgen zulässiger Weisungen, Beachtung der Betriebsordnung, pfleglicher Umgang mit Arbeitsmitteln und Verschwiegenheit. § 14 BBiG verpflichtet den Betrieb, die berufliche Handlungsfähigkeit zu vermitteln, geeignete Ausbilder einzusetzen, Ausbildungsmittel kostenlos zu stellen, für Schule und Prüfungen freizustellen, ausbildungsdienliche Aufgaben zu übertragen, zu vergüten und ein Zeugnis auszustellen.",
-        "beispiele": [
-          "Der Azubi führt eine aufgetragene Büroaufgabe sorgfältig aus und meldet, wenn eine Anweisung unklar ist; der Betrieb stellt dafür die erforderlichen Ausbildungsmittel kostenlos bereit.",
-          "Muss der Azubi zur Berufsschule oder Prüfung, liegt die Freistellungspflicht beim Betrieb. Das ist keine freiwillige Kulanz."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Haftung für Fehler",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch Auszubildende haften für Schäden, die sie im Betrieb verursachen, aber nach denselben Grundsätzen wie Beschäftigte: Bei leichter Fahrlässigkeit haften sie in der Regel nicht, bei mittlerer anteilig, bei grober Fahrlässigkeit und Vorsatz meist voll. Bei Auszubildenden wird zusätzlich berücksichtigt, dass ihnen Erfahrung fehlt.",
+                "id": "c1-d1-p1"
+              }
+            ],
+            "id": "c1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Azubi soll eine Aufgabe bearbeiten, erhält aber keinen Zugang zum benötigten Programm. Der Azubi muss sich um den Erwerb der beruflichen Handlungsfähigkeit bemühen und sorgfältig arbeiten; der Betrieb muss die notwendigen Ausbildungsmittel kostenlos bereitstellen. Ohne Mittel kann die Leistung nicht fair am Maßstab einer Fachkraft bewertet werden.",
-        "typische_fehler": "Nur die Azubi-Pflichten werden gelernt. Außerdem wird Sorgfalt mit fehlerfreier Leistung einer ausgebildeten Fachkraft gleichgesetzt. Maßstab ist der jeweilige Ausbildungsstand.",
         "verstaendnisfragen": [
-          "Warum gehören Berufsschule und Prüfung in den Pflichtenkatalog des Betriebs? Weil der Betrieb dafür freistellen und die Ausbildung insgesamt ermöglichen muss.",
-          "Woran wird die Sorgfalt des Azubis gemessen? Am Ausbildungsstand, nicht am Maßstab einer bereits fertig ausgebildeten Fachkraft."
-        ],
-        "pruefungsbezug": "Bei Gegenüberstellungen zwei Spalten anlegen: Pflichten nach § 13 BBiG und Pflichten nach § 14 BBiG. So werden Lernen und Ausbilden, Befolgen und Anleiten nicht vertauscht.",
-        "merksatz": "Der Azubi muss lernen und sorgfältig mitwirken; der Betrieb muss anleiten, freistellen und die Ausbildung ermöglichen."
+          {
+            "frage": "Muss der Betrieb Tim einen Laptop für das mobile Arbeiten an Projekttagen stellen?",
+            "antwort": "Wenn der Betrieb mobiles Ausbilden anbietet und dafür Technik nötig ist, muss er sie kostenlos bereitstellen. Ausbildungsmittel für die betriebliche Ausbildung gehen zulasten des Betriebs.",
+            "id": "c1-f1"
+          },
+          {
+            "frage": "Warum misst sich Tims Sorgfalt am Ausbildungsstand und nicht an einer Fachkraft?",
+            "antwort": "Die Ausbildung soll ihm die Fähigkeiten erst vermitteln. Einem Anfänger dürfen Fehler unterlaufen, die einer erfahrenen Kraft nicht passieren würden; der Betrieb muss ihn entsprechend anleiten und kontrollieren.",
+            "id": "c1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "c2",
-        "vorauswissen": [
-          "Das Weisungsrecht ordnet die Arbeit im Betrieb.",
-          "Ausbildungsaufgaben müssen einen Bezug zum Ausbildungszweck haben."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst Arbeitsanweisungen danach, ob sie dem Ausbildungszweck dienen und den Kräften angemessen sind, und wählst den passenden Weg, wenn sie es nicht tun.",
+        "vorwissen_kurz": "Der Betrieb darf Inhalt, Ort und Zeit der Arbeit näher bestimmen. Das Berufsbildungsgesetz setzt dem Grenzen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Unangenehm ist nicht unzulässig",
+            "id": "c2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das {{begriff:weisungsrecht|Weisungsrecht}} erlaubt dem Betrieb, deine Aufgaben festzulegen. Im Ausbildungsverhältnis hat es zwei Grenzen: Aufgaben müssen dem **Ausbildungszweck** dienen und deinen **körperlichen Kräften** angemessen sein. Langweilige oder ungeliebte Aufgaben gehören dazu, wenn sie Teil des Berufs sind. Berufsfremde Daueraufgaben nicht.",
+            "id": "c2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Problem zur Lösung",
+            "id": "c2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea soll seit drei Wochen jeden Vormittag Pakete im Versand packen, weil dort jemand fehlt. Im Ausbildungsplan steht für diesen Zeitraum „Auftragsbearbeitung“.",
+            "id": "c2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Was Lea tut",
+              "Warum"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Ausbildungsplan und Ausbildungsnachweis vergleichen",
+                  "belegt sachlich, welche Inhalte fehlen"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Gespräch mit der Ausbilderin: Aushilfe ja, aber zeitlich begrenzt und mit Rückkehr zur Auftragsbearbeitung",
+                  "die meisten Probleme lösen sich im Betrieb"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Falls nichts passiert: Jugend- und Auszubildendenvertretung oder Betriebsrat einbeziehen",
+                  "sie setzen sich für Auszubildende ein"
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "Ausbildungsberatung der IHK",
+                  "überwacht die Ausbildung und vermittelt"
+                ]
+              }
+            ],
+            "fazit": "Eine kurze Aushilfe in einem Engpass ist zulässig. Wird daraus eine Dauerlösung, fehlt der Ausbildungszweck.",
+            "id": "c2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "c2-b2"
+          }
         ],
-        "erklaerung": "Eine Weisung ist nicht schon deshalb zulässig, weil sie vom Betrieb kommt. § 14 BBiG begrenzt die Aufgaben auf Tätigkeiten, die dem Ausbildungszweck dienen. Gelegentliche Nebenaufgaben können im Arbeitsalltag vorkommen; berufsfremde oder dauerhaft überfordernde Aufgaben überschreiten aber die Grenze. Der betriebliche Ausbildungsplan ist der sachliche Bezugspunkt für das Gespräch.",
-        "beispiele": [
-          "Eine gelegentliche Ablage von Unterlagen kann zu kaufmännischen Büroabläufen passen; tägliches Autowaschen gehört nicht zum Ausbildungsberuf Kaufleute für Büromanagement.",
-          "Eine Aufgabe darf erklärt und angeleitet werden. Wird sie ohne passende Mittel und dauerhaft auf dem Niveau einer Fachkraft verlangt, ist die Ausbildungs- und Schutzfunktion zu prüfen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Gefährliche Arbeiten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Arbeiten, die mit besonderen Gefahren verbunden sind, dürfen Auszubildenden nur übertragen werden, wenn sie zur Ausbildung gehören, eine fachkundige Aufsicht gewährleistet ist und die Schutzvorschriften beachtet werden. Für Jugendliche gelten zusätzlich die Beschäftigungsverbote des Jugendarbeitsschutzgesetzes.",
+                "id": "c2-d1-p1"
+              }
+            ],
+            "id": "c2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Azubi im Büromanagement soll jeden Morgen eine Stunde lang Firmenwagen waschen. Autowaschen ist keine ausbildungsdienliche Büroaufgabe; die regelmäßige Dauer spricht außerdem gegen eine gelegentliche Nebenaufgabe. Der nächste Schritt ist ein Gespräch mit dem Ausbilder anhand des Ausbildungsplans. Bei fehlender Lösung kommen Ausbildungsberater der IHK oder die JAV als Anlaufstellen in Betracht.",
-        "typische_fehler": "Jede betriebliche Anweisung wird als automatisch verbindlich angesehen. Der Gegenfehler ist, jede Nebenaufgabe pauschal abzulehnen, obwohl die konkrete Aufgabe gelegentlich und ausbildungsbezogen sein kann.",
         "verstaendnisfragen": [
-          "Welche erste Frage entscheidet über die Zulässigkeit einer Aufgabe? Dient sie dem Ausbildungszweck und passt sie zum Berufsbild beziehungsweise Ausbildungsplan?",
-          "Was ist bei einer unpassenden Weisung ein sinnvoller erster Schritt? Sachlich mit dem Ausbilder sprechen und den betrieblichen Ausbildungsplan als Bezug nehmen."
-        ],
-        "pruefungsbezug": "Begründe nicht nur mit ‚gefällt mir nicht‘, sondern mit Ausbildungszweck, Berufsbild, Häufigkeit und Ausbildungsplan. Diese Kriterien machen die Antwort nachvollziehbar.",
-        "merksatz": "Weisungsrecht ja — aber nur innerhalb des Ausbildungszwecks und ohne berufsfremde Daueraufgaben."
+          {
+            "frage": "Darf Lea die Arbeit im Versand einfach verweigern?",
+            "antwort": "Nicht ohne Weiteres. Eine gelegentliche Aushilfe kann zulässig sein, und eine Verweigerung kann eine Pflichtverletzung sein. Sie sollte die Aufgabe zunächst erledigen und das Problem sachlich ansprechen. Nur offensichtlich unzulässige oder gefährliche Weisungen muss sie nicht befolgen.",
+            "id": "c2-f1"
+          },
+          {
+            "frage": "Gehört Kaffeekochen für eine Kundenbesprechung zur Ausbildung?",
+            "antwort": "Gelegentlich ja, als Teil der Vorbereitung und Betreuung von Besprechungen. Wird es zur regelmäßigen Hauptbeschäftigung, verliert es den Bezug zum Ausbildungszweck.",
+            "id": "c2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "c3",
-        "vorauswissen": [
-          "Für Jugendliche gelten zusätzliche Schutzregeln.",
-          "Arbeitszeit, Pausen und Urlaub müssen gemeinsam betrachtet werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du wendest die Regeln des Jugendarbeitsschutzgesetzes zu Arbeitszeit, Pausen, Berufsschule, Urlaub und Gesundheitsuntersuchungen auf einen Wochenplan an.",
+        "vorwissen_kurz": "Jugendlicher ist, wer 15, aber noch nicht 18 Jahre alt ist. Für Volljährige gilt das Arbeitszeitgesetz.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Besonderer Schutz bis 18",
+            "id": "c3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jugendliche brauchen mehr Erholung und dürfen durch Arbeit nicht überlastet werden. Deshalb gilt für sie das {{begriff:jarbschg|Jugendarbeitsschutzgesetz}} mit strengeren Grenzen als für Erwachsene. Es endet mit dem 18. Geburtstag; ab dann gelten Arbeitszeitgesetz und Bundesurlaubsgesetz.",
+            "id": "c3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Woche mit Berufsschultag",
+            "id": "c3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea ist 17. Montags hat sie Berufsschule von 8:00 bis 13:15 Uhr mit sechs Unterrichtsstunden zu 45 Minuten, an den übrigen Tagen arbeitet sie im Betrieb.",
+            "id": "c3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Tag",
+              "Tätigkeit",
+              "Angerechnete Zeit"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Montag",
+                  "Berufsschule, mehr als fünf Unterrichtsstunden",
+                  "8 Stunden; danach keine Beschäftigung mehr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Dienstag bis Freitag",
+                  "je 8 Stunden Arbeit, 60 Minuten Pause",
+                  "4 × 8 = 32 Stunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "",
+                  "40 Stunden"
+                ]
+              }
+            ],
+            "fazit": "Mit dem Berufsschultag ist Leas Wochenhöchstzeit von 40 Stunden erreicht. Eine zusätzliche Schicht am Samstag oder eine Stunde länger am Freitag ist nicht zulässig.",
+            "id": "c3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Berufsschultag mit mehr als fünf Unterrichtsstunden darf Lea danach nicht mehr in den Betrieb geholt werden; das gilt einmal pro Woche. Beginnt der Unterricht vor 9 Uhr, darf sie vorher nicht arbeiten. Seit 2020 gelten diese Freistellungen nach dem Berufsbildungsgesetz auch für volljährige Auszubildende. Dort steht zusätzlich: Am Arbeitstag unmittelbar vor der schriftlichen Abschlussprüfung sind alle Auszubildenden freizustellen.",
+            "id": "c3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "c3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "c3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "c3-b4"
+          }
         ],
-        "erklaerung": "Für unter 18-Jährige begrenzt das JArbSchG die Arbeitszeit auf höchstens acht Stunden täglich und 40 Stunden wöchentlich. Ab 4,5 Stunden sind 30 Minuten Pause erforderlich, bei mehr als sechs Stunden 60 Minuten. Der Urlaubsanspruch richtet sich nach dem Alter am 1. Januar und beträgt 30, 27 oder 25 Werktage. Das Alter ist deshalb bei jeder Fallaufgabe die erste Prüfvariable.",
-        "beispiele": [
-          "Wer an vier Tagen je acht Stunden gearbeitet hat, darf am fünften Tag höchstens noch acht Stunden leisten, weil die Wochenhöchstgrenze 40 Stunden beträgt.",
-          "Bei mehr als sechs Stunden Arbeitszeit ist nicht nur die 30-Minuten-Stufe, sondern die 60-Minuten-Pause zu prüfen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Gesundheitsuntersuchungen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Jugendliche dürfen eine Ausbildung nur beginnen, wenn sie innerhalb der letzten 14 Monate ärztlich untersucht wurden und eine Bescheinigung vorliegt (Erstuntersuchung). Ein Jahr nach Beginn folgt eine Nachuntersuchung; ohne deren Bescheinigung darf der Betrieb sie nach Ablauf weiterer Fristen nicht weiterbeschäftigen.",
+                "id": "c3-d1-p1"
+              }
+            ],
+            "id": "c3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Ruhezeiten und Nachtarbeit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zwischen zwei Arbeitstagen müssen Jugendliche mindestens zwölf Stunden ununterbrochen frei haben. Beschäftigt werden dürfen sie grundsätzlich nur zwischen 6 und 20 Uhr. Für bestimmte Branchen gibt es Ausnahmen, etwa in der Gastronomie, für Büroberufe in der Regel nicht.",
+                "id": "c3-d2-p1"
+              }
+            ],
+            "id": "c3-d2"
+          }
         ],
-        "fallbeispiel": "Eine 17-jährige Auszubildende arbeitet montags bis donnerstags jeweils acht Stunden. Die Rechnung lautet 4 × 8 = 32 Stunden. Bis zur Wochenhöchstgrenze von 40 Stunden bleiben 8 Stunden; freitags sind daher höchstens 8 weitere Stunden möglich. Zusätzlich müssen die für die tägliche Arbeitszeit geltenden Pausen eingehalten werden.",
-        "typische_fehler": "Die tägliche Höchstgrenze wird geprüft, die Wochenhöchstgrenze aber vergessen. Ebenso werden 4,5 Stunden und mehr als 6 Stunden verwechselt oder der Urlaubsanspruch ohne das Alter am 1. Januar bestimmt.",
         "verstaendnisfragen": [
-          "Welche vier Zahlen solltest du zuerst notieren? 8 Stunden täglich, 40 Stunden wöchentlich, 30 Minuten Pause ab 4,5 Stunden und 60 Minuten bei mehr als 6 Stunden.",
-          "Wovon hängt der Urlaub Jugendlicher ab? Vom Alter am 1. Januar; die Staffel beträgt 30, 27 oder 25 Werktage."
+          {
+            "frage": "Lea wird am 3. Januar 18. Wie viel Urlaub hat sie in diesem Jahr mindestens?",
+            "antwort": "25 Werktage. Maßgeblich ist das Alter zu Beginn des Kalenderjahres; am 1. Januar war sie noch 17.",
+            "id": "c3-f1"
+          },
+          {
+            "frage": "Darf ein 16-jähriger Auszubildender an einem Tag 8,5 Stunden arbeiten, wenn er dafür am Freitag früher geht?",
+            "antwort": "Ja, wenn an einzelnen Werktagen die Arbeitszeit verkürzt ist, darf sie an den übrigen Werktagen derselben Woche auf 8,5 Stunden verlängert werden. Die Wochenhöchstzeit von 40 Stunden bleibt bestehen.",
+            "id": "c3-f2"
+          }
         ],
-        "pruefungsbezug": "Rechne Wochenfälle sichtbar vor: bisherige Stunden addieren, von 40 abziehen und anschließend die Tagesgrenze sowie Pausen prüfen.",
-        "merksatz": "Bei Jugendlichen zuerst Alter, dann 8/40, danach die passende Pause und den Urlaub prüfen."
+        "quellen": [
+          {
+            "titel": "Jugendarbeitsschutzgesetz, §§ 8, 9, 11, 13, 14, 19, 32, 33",
+            "url": "https://www.gesetze-im-internet.de/jarbschg/",
+            "bezug": "Arbeitszeit, Berufsschule, Pausen, Ruhe, Nachtruhe, Urlaub, Untersuchungen"
+          },
+          {
+            "titel": "Berufsbildungsgesetz, § 15",
+            "url": "https://www.gesetze-im-internet.de/bbig_2005/",
+            "bezug": "Freistellung und Anrechnung für alle Auszubildenden"
+          }
+        ]
       }
     ]
   },

@@ -6,74 +6,507 @@
   "untertitel": "Bedürfnisse, Arbeitsteilung und der Wirtschaftskreislauf — wo dein Betrieb im Ganzen steht.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "f1",
-        "vorauswissen": [
-          "Menschen haben mehr Wünsche, als mit den vorhandenen Mitteln gleichzeitig erfüllt werden können.",
-          "Wirtschaften bedeutet, mit knappen Mitteln Bedürfnisse zu befriedigen."
+        "darstellung": "vollfassung",
+        "ziel": "Du grenzt Bedürfnis, Bedarf und Nachfrage voneinander ab, ordnest Bedürfnisse und Güter ein und erklärst, warum Knappheit wirtschaftliches Handeln erzwingt.",
+        "vorwissen_kurz": "Menschen haben mehr Wünsche, als sie mit ihren Mitteln erfüllen können.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Wunsch zum Kauf",
+            "id": "f1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Alles Wirtschaften beginnt mit einem {{begriff:beduerfnis|Bedürfnis}}, dem Gefühl, dass etwas fehlt. Weil die Mittel begrenzt sind, wird nicht jedes Bedürfnis erfüllt. Erst wenn Kaufkraft hinzukommt, entsteht ein **Bedarf**; erst wenn jemand damit tatsächlich am Markt auftritt, wird daraus **Nachfrage**. Für Unternehmen zählt nur die Nachfrage — sie entscheidet über Umsatz.",
+            "id": "f1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Personen, ein Hoodie",
+            "id": "f1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Person",
+              "Lage",
+              "Stufe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Mia, 16, sieht den neuen MAKEL-Hoodie auf Social Media",
+                  "möchte ihn, hat aber nur 40 € gespart",
+                  "Bedürfnis"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jonas hat 150 € und möchte den Hoodie für 120 €",
+                  "Kaufkraft vorhanden, noch nicht gekauft",
+                  "Bedarf"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ayla bestellt den Hoodie im Onlineshop",
+                  "tritt am Markt auf",
+                  "Nachfrage"
+                ]
+              }
+            ],
+            "fazit": "Werbung kann bei Mia ein Bedürfnis wecken. Umsatz entsteht aber erst, wenn Kaufkraft vorhanden ist und jemand tatsächlich kauft — etwa durch eine günstigere Variante oder einen Gutschein.",
+            "id": "f1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-2",
+            "id": "f1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "f1-b3"
+          }
         ],
-        "erklaerung": "Ein Bedürfnis ist das Gefühl eines Mangels mit dem Wunsch, ihn zu beseitigen. Wird daraus Kaufkraft, entsteht Bedarf. Tritt dieser Bedarf am Markt tatsächlich auf, spricht man von Nachfrage. Die Stufen beschreiben also nicht drei verschiedene Wünsche, sondern drei Grade der wirtschaftlichen Konkretisierung.",
-        "beispiele": [
-          "Der Wunsch nach einem neuen Laptop ist zunächst ein Bedürfnis. Mit ausreichendem Geld wird er zum Bedarf; mit einer konkreten Suche und Bestellung am Markt zur Nachfrage.",
-          "Luft kann als freies Gut gelten, während ein entgeltlich zu beschaffendes Büroprogramm ein wirtschaftliches Gut ist. Konsumgüter dienen der unmittelbaren Nutzung, Produktionsgüter der Leistungserstellung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Knappheit und Opportunitätskosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer seine 150 € für den Hoodie ausgibt, kann dafür kein Konzertticket kaufen. Was man für eine Entscheidung aufgibt, nennt man Opportunitätskosten. Auch Betriebe entscheiden so: Geld, das in eine neue Maschine fließt, fehlt für Werbung. Knappheit zwingt dazu, zwischen Alternativen zu wählen.",
+                "id": "f1-d1-p1"
+              }
+            ],
+            "id": "f1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Auszubildende möchte ein Fahrrad, hat aber noch kein Geld dafür. Die Einordnung lautet Bedürfnis. Nach dem Sparen mit ausreichender Kaufkraft wird daraus Bedarf. Erst wenn sie im Geschäft konkret nach einem Modell fragt oder es bestellt, liegt Nachfrage vor. Die Kaufkraft trennt Bedürfnis und Bedarf; der tatsächliche Marktauftritt trennt Bedarf und Nachfrage.",
-        "typische_fehler": "Bedürfnis und Bedarf werden als Synonyme benutzt. Ebenso wird jede Kaufabsicht schon als Nachfrage bezeichnet. Für die Nachfrage muss der Bedarf am Markt auftreten.",
         "verstaendnisfragen": [
-          "Was kommt zum Bedürfnis hinzu, damit Bedarf entsteht? Kaufkraft.",
-          "Was macht aus Bedarf Nachfrage? Das tatsächliche Auftreten am Markt, etwa durch eine konkrete Anfrage oder Bestellung."
-        ],
-        "pruefungsbezug": "Unterstreiche in einer Fallaufgabe die Signalwörter Wunsch, Kaufkraft und Marktauftritt. Daraus ergibt sich meist direkt die richtige Stufe.",
-        "merksatz": "Bedürfnis + Kaufkraft = Bedarf; Bedarf am Markt = Nachfrage."
+          {
+            "frage": "Ein Rentner möchte eine Weltreise, hat aber das Geld dafür nicht. Welche Stufe liegt vor?",
+            "antwort": "Ein Bedürfnis. Ohne Kaufkraft wird daraus kein Bedarf und erst recht keine Nachfrage.",
+            "id": "f1-f1"
+          },
+          {
+            "frage": "Ist ein Laptop im Büro ein Konsum- oder ein Produktionsgut?",
+            "antwort": "Ein Produktionsgut, genauer ein Gebrauchsgut im Betrieb. Er wird eingesetzt, um Leistungen zu erstellen. Derselbe Laptop zu Hause für private Zwecke wäre ein Konsumgut.",
+            "id": "f1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "f2",
-        "vorauswissen": [
-          "Nicht jeder Betrieb erstellt alle Leistungen selbst.",
-          "Spezialisierung verändert Produktivität und Abhängigkeit."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest die Arten der Arbeitsteilung, verfolgst sie an einer Lieferkette und beurteilst Vorteile, Abhängigkeiten und Nachhaltigkeitsfolgen.",
+        "vorwissen_kurz": "Spezialisierung bedeutet, dass sich jemand auf eine Aufgabe konzentriert und andere Güter eintauscht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Niemand macht alles selbst",
+            "id": "f2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Hoodie entsteht nicht in einem einzigen Betrieb. Baumwolle wird angebaut, gesponnen, gewebt, gefärbt, genäht, bedruckt, transportiert und verkauft. Jede Stufe übernehmen Spezialisten. Diese {{begriff:arbeitsteilung|Arbeitsteilung}} macht die Herstellung schneller und günstiger, weil jeder seine Aufgabe besonders gut beherrscht. Sie funktioniert nur, wenn alle tauschen können — über Märkte und Geld.",
+            "id": "f2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Lieferkette eines MAKEL-Hoodies",
+            "id": "f2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Wo",
+              "Art der Arbeitsteilung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Baumwollanbau",
+                  "Indien",
+                  "international, Urproduktion"
+                ]
+              },
+              {
+                "zellen": [
+                  "Spinnen und Weben",
+                  "Portugal",
+                  "international, Weiterverarbeitung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zuschnitt, Nähen, Bedrucken",
+                  "MAKEL in Düsseldorf",
+                  "betrieblich: Zuschnitt, Näherei, Druck getrennt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versand",
+                  "Paketdienst",
+                  "volkswirtschaftlich, Dienstleistung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verkauf",
+                  "MAKEL-Onlineshop und Modehändler",
+                  "volkswirtschaftlich, Handel"
+                ]
+              }
+            ],
+            "fazit": "Jede Stufe ist spezialisiert. Fällt eine aus — etwa die Weberei wegen eines Streiks oder eines Hafenstaus —, steht die ganze Kette.",
+            "id": "f2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "f2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Arbeitsteilung hat Nebenwirkungen. Lange Transportwege verursachen Emissionen, und in fernen Produktionsländern sind Arbeitsbedingungen schwer zu überprüfen. Viele Unternehmen beurteilen ihre Lieferketten deshalb auch nach ökologischen und sozialen Kriterien: Wo kann ein Lieferant näher liegen? Welche Nachweise gibt es über Arbeitsbedingungen? Wie viele Lieferanten braucht es, damit ein Ausfall nicht alles stoppt?",
+            "id": "f2-p2"
+          }
         ],
-        "erklaerung": "Arbeitsteilung zerlegt einen Produktions- oder Geschäftsprozess in Teilaufgaben. Durch Spezialisierung steigt die Produktivität, weil Fähigkeiten und Abläufe gezielter eingesetzt werden können. Gleichzeitig entsteht Abhängigkeit: Jeder Beteiligte braucht die Leistungen der anderen. Damit die Teilprodukte zusammenfinden, ist Tausch über einen funktionierenden Markt erforderlich.",
-        "beispiele": [
-          "Im Büro bearbeitet eine Person den Posteingang, eine zweite erstellt Angebote und eine dritte prüft Rechnungen. Jede Aufgabe wird geübter, der Gesamtprozess hängt aber von allen Stationen ab.",
-          "Ein Betrieb kauft eine Teilkomponente von einem anderen Unternehmen, statt sie selbst herzustellen. Die Spezialisierung kann die Produktivität erhöhen, schafft aber eine Abhängigkeit von Lieferung und Markt."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Vorteile und Nachteile",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Vorteile: höhere Produktivität, bessere Qualität durch Spezialisierung, günstigere Preise, Zugang zu Rohstoffen und Know-how aus anderen Ländern. Nachteile: Abhängigkeit von Lieferanten und Transportwegen, einseitige und monotone Tätigkeiten, Verlust von Wissen im eigenen Land, ökologische Kosten langer Wege.",
+                "id": "f2-d1-p1"
+              }
+            ],
+            "id": "f2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Unternehmen teilt den Auftragsprozess in Anfrage, Angebot, Bestellung und Rechnung auf. Die Mitarbeitenden werden an ihren Teilaufgaben schneller und sicherer. Fällt jedoch die Stelle für die Bestellung aus, stockt der Gesamtprozess. Die Lösung zeigt beide Wirkungen der Arbeitsteilung: höhere Produktivität und wachsende gegenseitige Abhängigkeit, die durch Tausch und Abstimmung aufgefangen werden muss.",
-        "typische_fehler": "Arbeitsteilung wird nur als ‚mehr Personen‘ verstanden. Entscheidend ist die Aufteilung eines Prozesses in Teilaufgaben. Außerdem wird der Produktivitätsvorteil genannt, ohne die Abhängigkeit und die Notwendigkeit des Tauschs zu berücksichtigen.",
         "verstaendnisfragen": [
-          "Warum kann Arbeitsteilung die Produktivität steigern? Weil sich Beteiligte spezialisieren und Abläufe gezielter bearbeiten.",
-          "Warum braucht Arbeitsteilung einen Markt? Weil die spezialisierten Beteiligten ihre unterschiedlichen Leistungen tauschen müssen."
-        ],
-        "pruefungsbezug": "Nenne bei einer Bewertungsaufgabe immer beide Seiten: Produktivität als Vorteil, Abhängigkeit und Tauschbedarf als Folge.",
-        "merksatz": "Spezialisierung macht schneller, Tausch verbindet die Spezialisten — und macht sie voneinander abhängig."
+          {
+            "frage": "Warum ist der Tausch die Voraussetzung jeder Arbeitsteilung?",
+            "antwort": "Wer sich spezialisiert, stellt nur noch einen Teil dessen her, was er braucht. Alles andere muss er von anderen beziehen. Ohne Tausch, heute meist über Geld, wäre Spezialisierung nicht möglich.",
+            "id": "f2-f1"
+          },
+          {
+            "frage": "Wie kann MAKEL das Risiko einer ausfallenden Weberei verringern?",
+            "antwort": "Etwa durch einen zweiten Lieferanten, einen Sicherheitsbestand an Stoff oder eine Weberei in größerer Nähe. Jede dieser Maßnahmen kostet Geld oder bindet Kapital, verringert aber die Abhängigkeit.",
+            "id": "f2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "f3",
-        "vorauswissen": [
-          "Haushalte und Unternehmen tauschen Leistungen und Geld.",
-          "Ein Güterstrom hat einen entgegengesetzten Geldstrom."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst den einfachen und den erweiterten Wirtschaftskreislauf dar und verfolgst einen Materialkauf von MAKEL mit seinen Güter- und Geldströmen.",
+        "vorwissen_kurz": "Ein Modell vereinfacht die Wirklichkeit, um Zusammenhänge sichtbar zu machen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ströme zwischen Polen",
+            "id": "f3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:wirtschaftskreislauf|Wirtschaftskreislauf}} fasst alle Beteiligten einer Volkswirtschaft zu wenigen Gruppen zusammen und zeigt die Ströme zwischen ihnen. Im einfachen Kreislauf gibt es nur Haushalte und Unternehmen. Der erweiterte Kreislauf ergänzt Staat, Banken und Ausland. Jedem Güterstrom läuft ein Geldstrom entgegen.",
+            "id": "f3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "f3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "MAKELs Stoffeinkauf im Kreislauf",
+            "id": "f3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL kauft für 60.000 € Stoff bei einer Weberei in Portugal. Bezahlt wird mit einem kurzfristigen Bankkredit. Aus dem Stoff entstehen Hoodies, die MAKEL an Kundinnen in Deutschland und an einen Händler in den Niederlanden verkauft.",
+            "id": "f3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Von",
+              "Nach",
+              "Strom"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lieferung des Stoffs",
+                  "Ausland",
+                  "Unternehmen",
+                  "Güterstrom (Import)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bezahlung der Weberei",
+                  "Unternehmen",
+                  "Ausland",
+                  "Geldstrom"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kredit für den Einkauf",
+                  "Banken",
+                  "Unternehmen",
+                  "Geldstrom"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeit der Näherinnen",
+                  "Haushalte",
+                  "Unternehmen",
+                  "Güterstrom"
+                ]
+              },
+              {
+                "zellen": [
+                  "Löhne der Näherinnen",
+                  "Unternehmen",
+                  "Haushalte",
+                  "Geldstrom"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lohnsteuer und Sozialabgaben",
+                  "Haushalte und Unternehmen",
+                  "Staat",
+                  "Geldstrom"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hoodies an Kundinnen in Deutschland",
+                  "Unternehmen",
+                  "Haushalte",
+                  "Güterstrom"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kaufpreis",
+                  "Haushalte",
+                  "Unternehmen",
+                  "Geldstrom (Konsumausgaben)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hoodies an den Händler in den Niederlanden",
+                  "Unternehmen",
+                  "Ausland",
+                  "Güterstrom (Export)"
+                ]
+              }
+            ],
+            "fazit": "Ein einziger Einkauf berührt alle fünf Pole. Das Modell zeigt, wie eng Unternehmen mit Haushalten, Staat, Banken und Ausland verflochten sind.",
+            "id": "f3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "f3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "f3-b3"
+          }
         ],
-        "erklaerung": "Im einfachen Wirtschaftskreislauf stehen private Haushalte und Unternehmen gegenüber. Haushalte bieten Arbeitsleistung an und erhalten Löhne; Unternehmen liefern Güter und Dienstleistungen und erhalten Konsumausgaben. Der erweiterte Kreislauf ergänzt Staat, Banken und Ausland. Steuern, staatliche Leistungen, Ersparnisse, Kredite, Importe und Exporte erweitern die vier Grundströme.",
-        "beispiele": [
-          "Arbeitsleistung fließt vom Haushalt zum Unternehmen; Lohn fließt in der Gegenrichtung. Das ist ein Paar aus Güter- und Geldstrom.",
-          "Beim Ausland gehören Import und Export zusammen. Bei Banken stehen Ersparnisse der Haushalte den Krediten an Unternehmen gegenüber."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Sparen und Investieren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Haushalte geben nicht ihr ganzes Einkommen aus. Was sie sparen, legen sie bei Banken an. Die Banken vergeben daraus Kredite an Unternehmen, die damit investieren, etwa in eine neue Stickmaschine. Im Kreislauf fließt das Sparen der Haushalte so über die Banken als Investition zu den Unternehmen.",
+                "id": "f3-d1-p1"
+              }
+            ],
+            "id": "f3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Zeichnung soll den einfachen Kreislauf darstellen. Zuerst werden Haushalte und Unternehmen als zwei Pole eingetragen. Dann folgen vier Pfeile: Arbeitsleistung zum Unternehmen, Löhne zum Haushalt, Güter und Dienstleistungen zum Haushalt und Konsumausgaben zum Unternehmen. Erst danach werden im erweiterten Modell Staat, Banken und Ausland ergänzt; jeder Güterstrom erhält seinen entgegengesetzten Geldstrom.",
-        "typische_fehler": "Geld- und Güterströme werden in dieselbe Richtung gezeichnet oder die vier Pfeile des einfachen Modells mit den Erweiterungen vermischt. Auch ein Pfeil ohne Beschriftung ist problematisch, weil die Stromart geprüft werden muss.",
         "verstaendnisfragen": [
-          "Welche vier Ströme gehören in das einfache Modell? Arbeitsleistung, Löhne und Gehälter, Güter und Dienstleistungen sowie Konsumausgaben.",
-          "Welche Pole ergänzt der erweiterte Kreislauf? Staat, Banken und Ausland."
+          {
+            "frage": "Welcher Strom läuft der Lieferung des Stoffs aus Portugal entgegen?",
+            "antwort": "Der Geldstrom der Bezahlung von MAKEL an die Weberei im Ausland. Zu jedem Güterstrom gehört ein entgegengesetzter Geldstrom.",
+            "id": "f3-f1"
+          },
+          {
+            "frage": "Wo erscheint im Kreislauf, dass MAKEL Gewerbesteuer an die Stadt zahlt?",
+            "antwort": "Als Geldstrom vom Unternehmen zum Staat. Der Staat gibt dafür Leistungen zurück, etwa Straßen oder Schulen, die als Güterstrom zu Unternehmen und Haushalten fließen.",
+            "id": "f3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "f4",
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Sach- und Formalziele sowie ökonomische, ökologische und soziale Ziele, bestimmst Zielbeziehungen und entwickelst für einen Zielkonflikt bei MAKEL eine Maßnahme.",
+        "vorwissen_kurz": "Ein Ziel beschreibt einen angestrebten Zustand, den man erreichen und überprüfen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Unternehmen, viele Ziele",
+            "id": "f4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das **Sachziel** beschreibt, womit ein Unternehmen am Markt auftritt: MAKEL entwirft, fertigt und verkauft Streetwear. **Formalziele** zeigen, wie erfolgreich das gelingt: Gewinn, Umsatz, Rentabilität, Liquidität. Hinzu kommen **ökologische Ziele** wie weniger Ressourcenverbrauch und **soziale Ziele** wie sichere Arbeitsplätze, faire Bezahlung und Ausbildung. Ein Unternehmen, das nur ein einziges Ziel verfolgt, gibt es nicht.",
+            "id": "f4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f4-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gut formulierte Ziele sind überprüfbar: Sie nennen, was erreicht werden soll, in welchem Umfang und bis wann. „Nachhaltiger werden“ ist eine Richtung, „60 % Bio-Baumwolle bis Ende 2027“ ist ein Ziel.",
+            "id": "f4-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Zielpaar mit Konflikt",
+            "id": "f4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Ökonomisches Ziel",
+              "Ökologisches Ziel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ziel",
+                  "Umsatzrendite 8 % im Geschäftsjahr",
+                  "60 % Bio-Baumwolle bis Ende 2027"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirkung der anderen Seite",
+                  "Bio-Baumwolle kostet je Hoodie 2,38 € mehr und drückt die Rendite",
+                  "Ein reines Renditeziel spricht gegen teureren Stoff"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beziehung",
+                  "kurzfristig konkurrierend",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahme",
+                  "Umstellung in Stufen: zuerst die Herbstkollektion; Aufpreis von 5 € im Onlineshop mit nachvollziehbarer Erklärung; Einsparung beim Ausschuss in der Näherei",
+                  ""
+                ]
+              }
+            ],
+            "fazit": "Der Konflikt verschwindet nicht, wird aber steuerbar. MAKEL prüft nach einem Jahr, ob Absatz und Rendite die Stufe zwei erlauben.",
+            "id": "f4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "f4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "f4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das **Leitbild** fasst zusammen, wofür ein Unternehmen steht, und gibt Orientierung bei solchen Abwägungen. Bei MAKEL könnte es lauten: „Wir machen langlebige Kleidung mit eigener Handschrift, fair hergestellt und so nah wie möglich.“ Ein Leitbild ersetzt keine Ziele, hilft aber, sie zu begründen — und Beschäftigte wie Kundinnen können das Unternehmen daran messen.",
+            "id": "f4-p3"
+          }
         ],
-        "pruefungsbezug": "Zeichne immer zuerst das einfache Zwei-Pole-Modell. Beschrifte jeden Pfeil als Güter- oder Geldstrom und ergänze die drei Erweiterungen erst im zweiten Schritt.",
-        "merksatz": "Wo eine Leistung hinfließt, fließt eine Geldzahlung in die Gegenrichtung."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ergänzend, konkurrierend, unabhängig",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ziele ergänzen sich, wenn die Erfüllung des einen das andere fördert: weniger Ausschuss senkt die Kosten und schont Ressourcen. Sie konkurrieren, wenn das eine auf Kosten des anderen geht. Sie sind unabhängig, wenn sie sich nicht beeinflussen. Ob ein Konflikt besteht, hängt oft vom Zeitraum ab: Kurzfristig kostet Bio-Baumwolle Rendite, langfristig kann sie neue Kundinnen gewinnen.",
+                "id": "f4-d1-p1"
+              }
+            ],
+            "id": "f4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Ist „Gewinn erzielen“ ein Sach- oder ein Formalziel?",
+            "antwort": "Ein Formalziel. Es beschreibt den wirtschaftlichen Erfolg, nicht die Leistung, mit der das Unternehmen am Markt auftritt.",
+            "id": "f4-f1"
+          },
+          {
+            "frage": "Warum ist „Wir wollen nachhaltiger werden“ kein gut formuliertes Ziel?",
+            "antwort": "Es fehlen Inhalt, Ausmaß und Zeitraum. Niemand kann prüfen, ob es erreicht ist. Ein überprüfbares Ziel nennt eine messbare Größe und einen Termin.",
+            "id": "f4-f2"
+          }
+        ]
       }
     ]
   },
 
   "lernziele": [
-    { "id": "lz1", "text": "Bedürfnisse, Bedarf und Nachfrage voneinander abgrenzen", "abschnitt": "f1" },
-    { "id": "lz2", "text": "Arten und Wirkungen der Arbeitsteilung erklären", "abschnitt": "f2" },
-    { "id": "lz3", "text": "Den einfachen und den erweiterten Wirtschaftskreislauf darstellen", "abschnitt": "f3" }
+    {
+      "id": "lz1",
+      "text": "Bedürfnisse, Bedarf und Nachfrage voneinander abgrenzen",
+      "abschnitt": "f1"
+    },
+    {
+      "id": "lz2",
+      "text": "Arten und Wirkungen der Arbeitsteilung erklären",
+      "abschnitt": "f2"
+    },
+    {
+      "id": "lz3",
+      "text": "Den einfachen und den erweiterten Wirtschaftskreislauf darstellen",
+      "abschnitt": "f3"
+    },
+    {
+      "abschnitt": "f4",
+      "text": "Sach- und Formalziele sowie ökonomische, ökologische und soziale Ziele unterscheiden und einen Zielkonflikt lösen"
+    }
   ],
 
   "bloecke": [
@@ -88,24 +521,72 @@
         },
         {
           "typ": "tabelle",
-          "spalten": ["Stufe", "Bedeutung", "Beispiel"],
+          "spalten": [
+            "Stufe",
+            "Bedeutung",
+            "Beispiel"
+          ],
           "zeilen": [
-            { "zellen": ["Bedürfnis", "Gefühl eines Mangels", "Ich hätte gern ein Notebook"] },
-            { "zellen": ["Bedarf", "Bedürfnis plus Kaufkraft", "Ich habe 900 € und will ein Notebook"] },
             {
-              "zellen": ["Nachfrage", "Bedarf, der am Markt auftritt", "Ich gehe in den Laden und kaufe"],
+              "zellen": [
+                "Bedürfnis",
+                "Gefühl eines Mangels",
+                "Ich hätte gern ein Notebook"
+              ]
+            },
+            {
+              "zellen": [
+                "Bedarf",
+                "Bedürfnis plus Kaufkraft",
+                "Ich habe 900 € und will ein Notebook"
+              ]
+            },
+            {
+              "zellen": [
+                "Nachfrage",
+                "Bedarf, der am Markt auftritt",
+                "Ich gehe in den Laden und kaufe"
+              ],
               "detail": "**Warum die Kette für den Vertrieb zählt:** Werbung kann ein Bedürfnis wecken, aber ohne Kaufkraft wird daraus kein Bedarf — und ohne Marktzugang keine Nachfrage. Genau darum geht es später in Lernfeld 5."
             }
           ]
         },
         {
           "typ": "tabelle",
-          "spalten": ["Einteilung", "Arten", "Beispiel"],
+          "spalten": [
+            "Einteilung",
+            "Arten",
+            "Beispiel"
+          ],
           "zeilen": [
-            { "zellen": ["Nach Dringlichkeit", "Existenz-, Kultur-, Luxusbedürfnis", "Brot · Kino · Sportwagen"] },
-            { "zellen": ["Nach Trägerschaft", "Individual- und Kollektivbedürfnis", "eigene Wohnung · Straßenbeleuchtung"] },
-            { "zellen": ["Güter nach Verfügbarkeit", "freie und wirtschaftliche Güter", "Atemluft · alles mit Preisschild"] },
-            { "zellen": ["Güter nach Verwendung", "Konsum- und Produktionsgüter", "Kaffee zu Hause · Kaffeemaschine im Betrieb"] }
+            {
+              "zellen": [
+                "Nach Dringlichkeit",
+                "Existenz-, Kultur-, Luxusbedürfnis",
+                "Brot · Kino · Sportwagen"
+              ]
+            },
+            {
+              "zellen": [
+                "Nach Trägerschaft",
+                "Individual- und Kollektivbedürfnis",
+                "eigene Wohnung · Straßenbeleuchtung"
+              ]
+            },
+            {
+              "zellen": [
+                "Güter nach Verfügbarkeit",
+                "freie und wirtschaftliche Güter",
+                "Atemluft · alles mit Preisschild"
+              ]
+            },
+            {
+              "zellen": [
+                "Güter nach Verwendung",
+                "Konsum- und Produktionsgüter",
+                "Kaffee zu Hause · Kaffeemaschine im Betrieb"
+              ]
+            }
           ]
         },
         {
@@ -115,7 +596,6 @@
         }
       ]
     },
-
     {
       "typ": "abschnitt",
       "id": "f2",
@@ -127,13 +607,39 @@
         },
         {
           "typ": "tabelle",
-          "spalten": ["Art", "Was geteilt wird", "Beispiel"],
+          "spalten": [
+            "Art",
+            "Was geteilt wird",
+            "Beispiel"
+          ],
           "zeilen": [
-            { "zellen": ["Berufsbildung", "Menschen spezialisieren sich auf Berufe", "Kauffrau für Büromanagement statt Alleskönner"] },
-            { "zellen": ["Betriebliche Arbeitsteilung", "Aufgaben innerhalb eines Betriebs", "Einkauf, Vertrieb, Buchhaltung getrennt"] },
-            { "zellen": ["Volkswirtschaftliche Arbeitsteilung", "Betriebe spezialisieren sich auf Stufen", "Rohstoff, Produktion, Handel"] },
             {
-              "zellen": ["Internationale Arbeitsteilung", "Länder spezialisieren sich", "Bauteile aus mehreren Ländern"],
+              "zellen": [
+                "Berufsbildung",
+                "Menschen spezialisieren sich auf Berufe",
+                "Kauffrau für Büromanagement statt Alleskönner"
+              ]
+            },
+            {
+              "zellen": [
+                "Betriebliche Arbeitsteilung",
+                "Aufgaben innerhalb eines Betriebs",
+                "Einkauf, Vertrieb, Buchhaltung getrennt"
+              ]
+            },
+            {
+              "zellen": [
+                "Volkswirtschaftliche Arbeitsteilung",
+                "Betriebe spezialisieren sich auf Stufen",
+                "Rohstoff, Produktion, Handel"
+              ]
+            },
+            {
+              "zellen": [
+                "Internationale Arbeitsteilung",
+                "Länder spezialisieren sich",
+                "Bauteile aus mehreren Ländern"
+              ],
               "detail": "**Die Kehrseite ist Verwundbarkeit.** Je feiner die Arbeitsteilung, desto größer die Abhängigkeit von funktionierenden Lieferketten — und desto härter treffen Störungen. Der Rahmenlehrplan verlangt ausdrücklich, diese Wirkungen auch unter Nachhaltigkeitsgesichtspunkten zu beurteilen."
             }
           ]
@@ -142,14 +648,25 @@
           "typ": "check",
           "frage": "Was ist die wichtigste Voraussetzung dafür, dass Arbeitsteilung überhaupt funktioniert?",
           "optionen": [
-            { "text": "Ein gemeinsames Rechtssystem", "richtig": false, "echo": "Hilfreich, aber nicht der Kern. Arbeitsteilung funktioniert auch über Rechtssysteme hinweg — internationale Lieferketten sind der beste Beweis." },
-            { "text": "Tausch, und damit ein funktionierender Markt", "richtig": true, "echo": "Richtig. Wer sich spezialisiert, stellt nicht mehr her, was er selbst braucht. Er muss also tauschen können — meist über Geld als Tauschmittel. Ohne Markt wäre Spezialisierung sinnlos." },
-            { "text": "Möglichst große Betriebe", "richtig": false, "echo": "Betriebsgröße ist eine Folge der Arbeitsteilung, keine Voraussetzung. Auch sehr kleine Betriebe sind hochspezialisiert und tauschen mit anderen." }
+            {
+              "text": "Ein gemeinsames Rechtssystem",
+              "richtig": false,
+              "echo": "Hilfreich, aber nicht der Kern. Arbeitsteilung funktioniert auch über Rechtssysteme hinweg — internationale Lieferketten sind der beste Beweis."
+            },
+            {
+              "text": "Tausch, und damit ein funktionierender Markt",
+              "richtig": true,
+              "echo": "Richtig. Wer sich spezialisiert, stellt nicht mehr her, was er selbst braucht. Er muss also tauschen können — meist über Geld als Tauschmittel. Ohne Markt wäre Spezialisierung sinnlos."
+            },
+            {
+              "text": "Möglichst große Betriebe",
+              "richtig": false,
+              "echo": "Betriebsgröße ist eine Folge der Arbeitsteilung, keine Voraussetzung. Auch sehr kleine Betriebe sind hochspezialisiert und tauschen mit anderen."
+            }
           ]
         }
       ]
     },
-
     {
       "typ": "abschnitt",
       "id": "f3",
@@ -166,55 +683,203 @@
           "titel": "Vom einfachen zum erweiterten Kreislauf",
           "lead": "Schalte die Pole nacheinander hinzu und sieh, wie das Modell wächst.",
           "pole": [
-            { "id": "haushalte", "name": "Private Haushalte", "pos": "links" },
-            { "id": "unternehmen", "name": "Unternehmen", "pos": "rechts" },
-            { "id": "staat", "name": "Staat", "pos": "oben" },
-            { "id": "banken", "name": "Banken", "pos": "unten" },
-            { "id": "ausland", "name": "Ausland", "pos": "aussen" }
+            {
+              "id": "haushalte",
+              "name": "Private Haushalte",
+              "pos": "links"
+            },
+            {
+              "id": "unternehmen",
+              "name": "Unternehmen",
+              "pos": "rechts"
+            },
+            {
+              "id": "staat",
+              "name": "Staat",
+              "pos": "oben"
+            },
+            {
+              "id": "banken",
+              "name": "Banken",
+              "pos": "unten"
+            },
+            {
+              "id": "ausland",
+              "name": "Ausland",
+              "pos": "aussen"
+            }
           ],
           "stufen": [
             {
               "name": "Einfacher Kreislauf",
               "text": "Nur zwei Pole. Haushalte stellen Arbeit bereit und erhalten dafür Einkommen; Unternehmen liefern Güter und erhalten dafür Konsumausgaben.",
-              "pole": ["haushalte", "unternehmen"],
+              "pole": [
+                "haushalte",
+                "unternehmen"
+              ],
               "stroeme": [
-                { "von": "haushalte", "nach": "unternehmen", "art": "guter", "label": "Arbeitsleistung" },
-                { "von": "unternehmen", "nach": "haushalte", "art": "geld", "label": "Löhne und Gehälter" },
-                { "von": "unternehmen", "nach": "haushalte", "art": "guter", "label": "Güter und Dienstleistungen" },
-                { "von": "haushalte", "nach": "unternehmen", "art": "geld", "label": "Konsumausgaben" }
+                {
+                  "von": "haushalte",
+                  "nach": "unternehmen",
+                  "art": "guter",
+                  "label": "Arbeitsleistung"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "haushalte",
+                  "art": "geld",
+                  "label": "Löhne und Gehälter"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "haushalte",
+                  "art": "guter",
+                  "label": "Güter und Dienstleistungen"
+                },
+                {
+                  "von": "haushalte",
+                  "nach": "unternehmen",
+                  "art": "geld",
+                  "label": "Konsumausgaben"
+                }
               ]
             },
             {
               "name": "Mit Staat",
               "text": "Der Staat zieht Steuern von beiden Seiten ein und gibt Leistungen zurück — Infrastruktur, Bildung, Sozialleistungen, Subventionen.",
-              "pole": ["haushalte", "unternehmen", "staat"],
+              "pole": [
+                "haushalte",
+                "unternehmen",
+                "staat"
+              ],
               "stroeme": [
-                { "von": "haushalte", "nach": "unternehmen", "art": "guter", "label": "Arbeitsleistung" },
-                { "von": "unternehmen", "nach": "haushalte", "art": "geld", "label": "Löhne und Gehälter" },
-                { "von": "unternehmen", "nach": "haushalte", "art": "guter", "label": "Güter" },
-                { "von": "haushalte", "nach": "unternehmen", "art": "geld", "label": "Konsumausgaben" },
-                { "von": "haushalte", "nach": "staat", "art": "geld", "label": "Steuern" },
-                { "von": "unternehmen", "nach": "staat", "art": "geld", "label": "Steuern" },
-                { "von": "staat", "nach": "haushalte", "art": "guter", "label": "Sozialleistungen" },
-                { "von": "staat", "nach": "unternehmen", "art": "guter", "label": "Subventionen, Aufträge" }
+                {
+                  "von": "haushalte",
+                  "nach": "unternehmen",
+                  "art": "guter",
+                  "label": "Arbeitsleistung"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "haushalte",
+                  "art": "geld",
+                  "label": "Löhne und Gehälter"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "haushalte",
+                  "art": "guter",
+                  "label": "Güter"
+                },
+                {
+                  "von": "haushalte",
+                  "nach": "unternehmen",
+                  "art": "geld",
+                  "label": "Konsumausgaben"
+                },
+                {
+                  "von": "haushalte",
+                  "nach": "staat",
+                  "art": "geld",
+                  "label": "Steuern"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "staat",
+                  "art": "geld",
+                  "label": "Steuern"
+                },
+                {
+                  "von": "staat",
+                  "nach": "haushalte",
+                  "art": "guter",
+                  "label": "Sozialleistungen"
+                },
+                {
+                  "von": "staat",
+                  "nach": "unternehmen",
+                  "art": "guter",
+                  "label": "Subventionen, Aufträge"
+                }
               ]
             },
             {
               "name": "Erweiterter Kreislauf",
               "text": "Banken sammeln Ersparnisse und geben sie als Kredite weiter. Das Ausland kommt über Importe und Exporte hinzu. Damit ist das Modell vollständig.",
-              "pole": ["haushalte", "unternehmen", "staat", "banken", "ausland"],
+              "pole": [
+                "haushalte",
+                "unternehmen",
+                "staat",
+                "banken",
+                "ausland"
+              ],
               "stroeme": [
-                { "von": "haushalte", "nach": "unternehmen", "art": "guter", "label": "Arbeitsleistung" },
-                { "von": "unternehmen", "nach": "haushalte", "art": "geld", "label": "Einkommen" },
-                { "von": "unternehmen", "nach": "haushalte", "art": "guter", "label": "Güter" },
-                { "von": "haushalte", "nach": "unternehmen", "art": "geld", "label": "Konsumausgaben" },
-                { "von": "haushalte", "nach": "staat", "art": "geld", "label": "Steuern" },
-                { "von": "unternehmen", "nach": "staat", "art": "geld", "label": "Steuern" },
-                { "von": "staat", "nach": "haushalte", "art": "guter", "label": "Sozialleistungen" },
-                { "von": "haushalte", "nach": "banken", "art": "geld", "label": "Ersparnisse" },
-                { "von": "banken", "nach": "unternehmen", "art": "geld", "label": "Kredite" },
-                { "von": "ausland", "nach": "unternehmen", "art": "guter", "label": "Importe" },
-                { "von": "unternehmen", "nach": "ausland", "art": "guter", "label": "Exporte" }
+                {
+                  "von": "haushalte",
+                  "nach": "unternehmen",
+                  "art": "guter",
+                  "label": "Arbeitsleistung"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "haushalte",
+                  "art": "geld",
+                  "label": "Einkommen"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "haushalte",
+                  "art": "guter",
+                  "label": "Güter"
+                },
+                {
+                  "von": "haushalte",
+                  "nach": "unternehmen",
+                  "art": "geld",
+                  "label": "Konsumausgaben"
+                },
+                {
+                  "von": "haushalte",
+                  "nach": "staat",
+                  "art": "geld",
+                  "label": "Steuern"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "staat",
+                  "art": "geld",
+                  "label": "Steuern"
+                },
+                {
+                  "von": "staat",
+                  "nach": "haushalte",
+                  "art": "guter",
+                  "label": "Sozialleistungen"
+                },
+                {
+                  "von": "haushalte",
+                  "nach": "banken",
+                  "art": "geld",
+                  "label": "Ersparnisse"
+                },
+                {
+                  "von": "banken",
+                  "nach": "unternehmen",
+                  "art": "geld",
+                  "label": "Kredite"
+                },
+                {
+                  "von": "ausland",
+                  "nach": "unternehmen",
+                  "art": "guter",
+                  "label": "Importe"
+                },
+                {
+                  "von": "unternehmen",
+                  "nach": "ausland",
+                  "art": "guter",
+                  "label": "Exporte"
+                }
               ]
             }
           ],
@@ -223,17 +888,98 @@
         {
           "typ": "zuordnen",
           "lead": "Güterstrom oder Geldstrom?",
-          "kategorien": ["Güterstrom", "Geldstrom"],
+          "kategorien": [
+            "Güterstrom",
+            "Geldstrom"
+          ],
           "aufgaben": [
-            { "text": "Ein Azubi arbeitet 8 Stunden im Betrieb.", "loesung": "Güterstrom" },
-            { "text": "Der Betrieb überweist das Gehalt.", "loesung": "Geldstrom" },
-            { "text": "Der Staat baut eine Straße.", "loesung": "Güterstrom" },
-            { "text": "Ein Haushalt zahlt Einkommensteuer.", "loesung": "Geldstrom" }
+            {
+              "text": "Ein Azubi arbeitet 8 Stunden im Betrieb.",
+              "loesung": "Güterstrom"
+            },
+            {
+              "text": "Der Betrieb überweist das Gehalt.",
+              "loesung": "Geldstrom"
+            },
+            {
+              "text": "Der Staat baut eine Straße.",
+              "loesung": "Güterstrom"
+            },
+            {
+              "text": "Ein Haushalt zahlt Einkommensteuer.",
+              "loesung": "Geldstrom"
+            }
           ]
         },
         {
           "typ": "praxistipp",
           "text": "Bei Kreislaufaufgaben zeichne zuerst die zwei Pole und die vier Pfeile des einfachen Kreislaufs — die sitzen dann sicher. Alles Weitere hängst du daran an. Und beschrifte jeden Pfeil: Ein unbeschrifteter Pfeil bringt in der Prüfung keinen Punkt."
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "f4",
+      "titel": "Ziele und Leitbild",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Kein Unternehmen verfolgt nur ein Ziel. Das **Sachziel** sagt, was der Betrieb leistet — bei MAKEL Streetwear entwerfen, herstellen und verkaufen. **Formalziele** messen, wie erfolgreich er dabei ist: Gewinn, Umsatz, Rentabilität, Liquidität. ==Daneben stehen ökologische und soziale Ziele, und zwischen allen Zielen kann es Konflikte geben.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Zielbereich",
+            "Beispiel bei MAKEL"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "ökonomisch",
+                "Umsatzrendite von 8 % im Geschäftsjahr erreichen"
+              ]
+            },
+            {
+              "zellen": [
+                "ökologisch",
+                "Anteil zertifizierter Bio-Baumwolle bis Ende 2027 auf 60 % steigern"
+              ]
+            },
+            {
+              "zellen": [
+                "sozial",
+                "jedes Jahr mindestens drei Auszubildende einstellen und übernehmen"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Ziele können sich ergänzen, widersprechen oder unabhängig sein.** Bei einem Zielkonflikt wird nicht ein Ziel gestrichen, sondern eine Maßnahme gesucht, die beide so weit wie möglich erreicht. Das **Leitbild** fasst zusammen, wofür das Unternehmen steht.",
+          "karteikarte": "Welche Zielbeziehungen gibt es, und wie geht ein Betrieb mit einem Zielkonflikt um?"
+        },
+        {
+          "typ": "zuordnen",
+          "lead": "Wie hängen die beiden Ziele zusammen?",
+          "kategorien": [
+            "ergänzend",
+            "konkurrierend",
+            "unabhängig"
+          ],
+          "aufgaben": [
+            {
+              "text": "Ausschuss in der Näherei senken und Materialkosten senken.",
+              "loesung": "ergänzend"
+            },
+            {
+              "text": "Kurzfristig den Gewinn steigern und teurere Bio-Baumwolle einsetzen.",
+              "loesung": "konkurrierend"
+            },
+            {
+              "text": "Den Onlineshop barrierefrei gestalten und die Lagerhalle neu streichen.",
+              "loesung": "unabhängig"
+            }
+          ]
         }
       ]
     }
@@ -246,7 +992,9 @@
     "Arbeitsteilung steigert die Produktivität und erzeugt Abhängigkeit.",
     "Voraussetzung der Arbeitsteilung ist der Tausch über einen funktionierenden Markt.",
     "Einfacher Kreislauf: Haushalte und Unternehmen, vier Ströme.",
-    "Erweiterter Kreislauf: zusätzlich Staat, Banken und Ausland — jedem Güterstrom steht ein Geldstrom gegenüber."
+    "Erweiterter Kreislauf: zusätzlich Staat, Banken und Ausland — jedem Güterstrom steht ein Geldstrom gegenüber.",
+    "Sachziel = was der Betrieb leistet; Formalziele messen den Erfolg.",
+    "Zwischen ökonomischen, ökologischen und sozialen Zielen kann es Konflikte geben, die Maßnahmen ausgleichen."
   ],
 
   "selbsttest": [
