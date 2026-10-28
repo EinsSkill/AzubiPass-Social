@@ -6,66 +6,445 @@
   "untertitel": "Die Bank glaubt an dich. Aber lieber schriftlich.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Kredite können durch Personen oder Sachen gesichert werden.",
-          "Akzessorisch bedeutet, dass eine Sicherheit an die Forderung gebunden ist."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Kreditsicherheiten nach Person oder Sache und nach akzessorisch oder abstrakt und schätzt ihren Sicherungswert realistisch ein.",
+        "vorwissen_kurz": "Ein Kredit wird aus künftigen Einnahmen zurückgezahlt. Die Sicherheit ist der Plan B der Bank, falls diese Einnahmen ausbleiben.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Worauf die Bank zurückgreifen kann",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Bank prüft zuerst, ob der Betrieb den Kredit aus seinen laufenden Einnahmen zurückzahlen kann. Erst danach fragt sie: Worauf kann ich zugreifen, wenn es doch schiefgeht? Diese Rückgriffsmöglichkeit ist die **Kreditsicherheit**. Sie ersetzt keine gute Rückzahlungsplanung — sie begrenzt nur den Schaden.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die erste Frage lautet: Haftet eine weitere **Person** mit ihrem Vermögen, oder haftet ein bestimmter **Gegenstand**?",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die zweite Frage: Hängt die Sicherheit an der Forderung?",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine **akzessorische** Sicherheit ist an eine bestimmte Forderung gebunden. Sie entsteht nur, wenn die Forderung besteht, sinkt mit jeder Tilgung und erlischt, wenn die Forderung bezahlt ist. Bürgschaft, Hypothek und Pfandrecht sind akzessorisch. Eine **abstrakte** Sicherheit besteht unabhängig von der Forderung. Ihr Zusammenhang mit dem Kredit ergibt sich nur aus einem gesonderten Sicherungsvertrag. Grundschuld, Sicherungsübereignung und Sicherungsabtretung sind abstrakt (fiduziarisch).",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was eine Sicherheit wirklich wert ist",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL beantragt 1.000.000 € für die Veredelungsanlage. Die Bank setzt jede angebotene Sicherheit nur mit einem Teil ihres Werts an, weil sie im Ernstfall schnell und unter Zeitdruck verkaufen müsste. Die Prozentsätze sind Annahmen für dieses Beispiel; jede Bank legt sie selbst fest.",
+            "id": "b1-p4"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Sicherheit",
+              "Wert",
+              "Angenommener Beleihungssatz",
+              "Sicherungswert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Neue Veredelungsanlage (Spezialmaschine)",
+                  "1.000.000 €",
+                  "50 %",
+                  "500.000 €"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Kundenforderungen (Durchschnittsbestand)",
+                  "600.000 €",
+                  "60 %",
+                  "360.000 €"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Selbstschuldnerische Bürgschaft der Gesellschafterin",
+                  "Vermögen der Bürgin",
+                  "nach Prüfung",
+                  "ergänzend"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe der Sachsicherheiten",
+                  "",
+                  "",
+                  "860.000 €"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Die Sachsicherheiten decken den Kredit nicht vollständig. Die Bank verlangt deshalb zusätzlich eine Bürgschaft oder einen höheren Eigenanteil.",
+            "id": "b1-t1"
+          }
         ],
-        "erklaerung": "Personensicherheiten beruhen auf einer weiteren Person, Sachsicherheiten auf einem Gegenstand. Bei akzessorischen Sicherheiten hängt die Sicherheit an der Hauptforderung und erlischt mit ihr. Diese Grundsortierung kommt vor jeder Detailprüfung.",
-        "beispiele": [
-          "Eine Bürgschaft ist eine Personensicherheit; der Bürge steht für die Schuld eines Dritten ein.",
-          "Eine Maschine oder ein Grundstück kann als Sachsicherheit dienen; bei der Bewertung wird ein Verwertungsabschlag berücksichtigt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Warum Banken bei GmbHs eine Bürgschaft verlangen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei einer GmbH haftet gegenüber Gläubigern nur das Gesellschaftsvermögen. Die Gesellschafterin haftet nicht privat. Damit sie dennoch für den Erfolg einsteht, verlangen Banken bei kleineren und mittleren GmbHs oft eine persönliche Bürgschaft der Gesellschafter oder Geschäftsführer. So wird die beschränkte Haftung für diesen Kredit vertraglich aufgehoben.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Bank verlangt für einen Kredit eine Sicherheit. Zuerst wird gefragt: Soll eine Person einstehen oder ein Gegenstand haften? Bei einer Bürgschaft wird die Person und ihre Form geprüft; bei einem Gegenstand Eigentum, Nutzung und realistischer Verwertungserlös. Erst danach wird die konkrete Sicherheit ausgewählt.",
-        "typische_fehler": "Bürgschaft, Grundschuld und Sicherungsübereignung werden ohne die Grundsortierung verglichen. Außerdem wird der Nennwert eines Gegenstands mit seinem realistischen Verwertungserlös gleichgesetzt.",
         "verstaendnisfragen": [
-          "Was unterscheidet Personen- und Sachsicherheit? Die eine steht auf einer Person, die andere auf einem Gegenstand.",
-          "Was bedeutet akzessorisch? Die Sicherheit ist an die Forderung gebunden und erlischt mit ihr."
-        ],
-        "pruefungsbezug": "Beginne jede Sicherheitsaufgabe mit Person oder Sache und ergänze danach Akzessorietät, Form und Verwertung.",
-        "merksatz": "Erst Person oder Sache sortieren, dann die konkrete Sicherheit prüfen."
+          {
+            "frage": "Warum ist eine Bürgschaft „juristisch wirksam, aber wirtschaftlich wertlos“, wenn der Bürge kein Vermögen hat?",
+            "antwort": "Die Bürgschaft gibt der Bank einen Anspruch gegen den Bürgen. Kann der Bürge nicht zahlen, lässt sich dieser Anspruch nicht durchsetzen. Der Wert einer Personensicherheit hängt deshalb vollständig an der Zahlungsfähigkeit der Person.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Nach vollständiger Tilgung möchte MAKEL einen neuen Kredit mit derselben Sicherheit absichern. Bei welcher Sicherheit geht das ohne neue Bestellung?",
+            "antwort": "Bei der Grundschuld. Sie ist abstrakt und bleibt nach der Tilgung im Grundbuch stehen. Über eine neue Sicherungsabrede kann sie einen neuen Kredit sichern. Eine Hypothek oder Bürgschaft wäre mit der alten Forderung erloschen.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Der Bürge sichert die Schuld eines Dritten.",
-          "Die Bürgschaft hat eigene Form- und Einredefragen."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst eine Bürgschaft nach Hauptforderung, Form und Art und bestimmst, wann und in welchem Umfang der Bürge zahlen muss.",
+        "vorwissen_kurz": "Bei einer Personensicherheit haftet eine weitere Person mit ihrem ganzen Vermögen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Dritter steht für die Schuld ein",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der {{begriff:buergschaft|Bürgschaft}} verpflichtet sich der Bürge gegenüber dem Gläubiger, für die Schuld des Hauptschuldners einzustehen ({{par:bgb-765|§ 765 BGB}}). Der Bürgschaftsvertrag wird zwischen Bürge und Gläubiger geschlossen, nicht zwischen Bürge und Schuldner. Da die Bürgschaft akzessorisch ist, schuldet der Bürge nie mehr als der Hauptschuldner: Ist der Kredit zur Hälfte getilgt, haftet auch der Bürge nur noch für die Hälfte.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Prüfung in vier Schritten",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Frage",
+              "Bei MAKEL"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. Hauptforderung",
+                  "Besteht die gesicherte Schuld noch, und in welcher Höhe?",
+                  "Restschuld des Darlehens 600.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "2. Form",
+                  "Wurde die Bürgschaft schriftlich erklärt (§ 766 BGB), oder ist sie für den Bürgen ein Handelsgeschäft (§ 350 HGB)?",
+                  "Yuki Bergmann hat als Privatperson schriftlich unterschrieben — wirksam"
+                ]
+              },
+              {
+                "zellen": [
+                  "3. Art",
+                  "Gewöhnlich oder selbstschuldnerisch?",
+                  "selbstschuldnerisch, wie bei Banken üblich"
+                ]
+              },
+              {
+                "zellen": [
+                  "4. Folge",
+                  "Muss die Bank zuerst gegen den Hauptschuldner vollstrecken (§ 771 BGB)?",
+                  "Nein, die Bank kann die Bürgin sofort in Anspruch nehmen"
+                ]
+              }
+            ],
+            "fazit": "Die Bürgin haftet sofort, aber nur bis zur Höhe der noch offenen Restschuld.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Schriftform verlangt eine eigenhändig unterschriebene Urkunde; eine E-Mail oder elektronische Erklärung genügt nicht. Ein Kaufmann, für den die Bürgschaft ein Handelsgeschäft ist, kann sich dagegen formfrei verbürgen und hat zugleich keine Einrede der Vorausklage — seine Bürgschaft ist automatisch selbstschuldnerisch.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b4"
+          }
         ],
-        "erklaerung": "Nach § 765 BGB steht der Bürge für die Verbindlichkeit des Hauptschuldners ein. Nach § 766 BGB ist grundsätzlich Schriftform erforderlich; für einen Kaufmann kann § 350 HGB als Handelsgeschäft eine Ausnahme bilden. Bei der gewöhnlichen Bürgschaft kann der Bürge die Einrede der Vorausklage erheben. Bei der selbstschuldnerischen Bürgschaft verzichtet er darauf und kann sofort in Anspruch genommen werden.",
-        "beispiele": [
-          "Bei gewöhnlicher Bürgschaft muss der Gläubiger grundsätzlich zuerst erfolglos gegen den Hauptschuldner vorgehen.",
-          "Bei selbstschuldnerischer Bürgschaft kann der Gläubiger den Bürgen unmittelbar in Anspruch nehmen; das ist im Bankgeschäft die Regel."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Was nach der Zahlung des Bürgen geschieht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zahlt der Bürge an die Bank, geht deren Forderung gegen den Hauptschuldner auf ihn über. Er kann sich das Geld also vom Hauptschuldner zurückholen — was allerdings meist wenig nützt, weil dieser ja gerade nicht zahlen konnte.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Mitbürgschaft",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bürgen mehrere Personen für dieselbe Schuld, haften sie als Gesamtschuldner: Die Bank kann von jedem den vollen Betrag verlangen. Untereinander gleichen die Bürgen den Betrag anschließend anteilig aus.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Ein Kreditnehmer zahlt nicht. Bei gewöhnlicher Bürgschaft prüft der Bürge zunächst die Einrede der Vorausklage; bei selbstschuldnerischer Bürgschaft ist dieser Einwand ausgeschlossen. Vorher wird außerdem geprüft, ob die Bürgschaft formwirksam erklärt wurde oder bei einem Kaufmann als Handelsgeschäft die Ausnahme des § 350 HGB greift.",
-        "typische_fehler": "Selbstschuldnerische und gewöhnliche Bürgschaft werden vertauscht oder jede mündliche Bürgschaft für unwirksam gehalten. Auch die Bindung an die Hauptforderung wird übersehen.",
         "verstaendnisfragen": [
-          "Was ist der Unterschied bei der Inanspruchnahme? Bei gewöhnlicher Bürgschaft gibt es die Vorausklage; bei selbstschuldnerischer nicht.",
-          "Welche Form gilt grundsätzlich? Schriftform nach § 766 BGB, mit der vorhandenen Handelsgeschäft-Ausnahme."
-        ],
-        "pruefungsbezug": "Prüfe Bürgschaft in der Reihenfolge Hauptforderung, Form, Vorausklage und Art der Bürgschaft.",
-        "merksatz": "Selbstschuldnerisch heißt: Der Bürge verzichtet auf die Vorausklage."
+          {
+            "frage": "Ein Freund des Inhabers sagt am Telefon: „Ich bürge für den Kredit.“ Er ist Angestellter. Muss er zahlen, wenn der Betrieb ausfällt?",
+            "antwort": "Nein. Für einen Nichtkaufmann bedarf die Bürgschaftserklärung der Schriftform nach § 766 BGB. Eine mündliche Erklärung ist nichtig. Anders wäre es bei einem Kaufmann, für den die Bürgschaft ein Handelsgeschäft ist.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Die Bürgschaft lautet über 1.000.000 €, der Kredit ist bis auf 600.000 € getilgt. Wie viel kann die Bank von der Bürgin verlangen?",
+            "antwort": "Höchstens 600.000 € zuzüglich etwa angefallener Zinsen und Kosten aus dem Kredit. Die Bürgschaft ist akzessorisch, deshalb richtet sich der Umfang nach der Hauptforderung.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Sachsicherheiten geben der Bank Zugriff auf einen Gegenstand.",
-          "Der Betrieb braucht Betriebsmittel oft weiter für seine Leistung."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für einen Kredit die passende Sachsicherheit aus, unterscheidest Eigentum und Besitz und erklärst die Formen des Eigentumsvorbehalts als Sicherheit des Lieferers.",
+        "vorwissen_kurz": "Eigentum ist die rechtliche Herrschaft über eine Sache, Besitz die tatsächliche. Beides kann auseinanderfallen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eigentum, Besitz und Nutzung trennen",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei Sachsicherheiten kommt es darauf an, was die Bank bekommt und was der Betrieb behält. Ein Pfand muss übergeben werden — der Betrieb verliert also den Besitz und kann die Sache nicht mehr nutzen. Bei der Sicherungsübereignung erhält die Bank das Eigentum, der Betrieb bleibt Besitzer und arbeitet weiter mit der Maschine. Bei Grundstücken wird die Belastung im Grundbuch eingetragen.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Bedarfe, vier Sicherheiten",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Lage bei MAKEL",
+              "Geeignete Sicherheit",
+              "Warum"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Veredelungsanlage soll den Kredit sichern und weiterlaufen",
+                  "Sicherungsübereignung",
+                  "Besitz und Nutzung bleiben bei MAKEL"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bank verlangt Zugriff auf laufende Kundenforderungen",
+                  "stille Globalzession",
+                  "Kunden zahlen weiter an MAKEL; die Bank kann bei Ausfall offenlegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gewerbegrundstück soll einen langfristigen Kredit sichern",
+                  "Grundschuld",
+                  "abstrakt, nach Tilgung erneut nutzbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wertpapierdepot der GmbH soll einen kurzfristigen Kredit sichern",
+                  "Pfandrecht",
+                  "Depot liegt ohnehin bei der Bank, Besitzverlust stört nicht"
+                ]
+              }
+            ],
+            "fazit": "Die beste Sachsicherheit sichert den Kredit, ohne die Arbeit des Betriebs zu behindern.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn der Lieferer sich sichert: Eigentumsvorbehalt",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nicht nur Banken geben Kredit. Liefert ein Stofflieferant mit 60 Tagen Zahlungsziel, ist er Kreditgeber. Er sichert sich mit dem {{begriff:eigentumsvorbehalt|Eigentumsvorbehalt}} ({{par:bgb-449|§ 449 BGB}}): MAKEL wird erst Eigentümer, wenn vollständig bezahlt ist. Der Vorbehalt muss vereinbart werden, meist in den Lieferbedingungen. Will der Lieferer die Ware zurückholen, muss er grundsätzlich vom Vertrag zurücktreten.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der einfache Eigentumsvorbehalt hat eine Schwäche: Er geht unter, wenn die Ware weiterverkauft, verarbeitet oder eingebaut wird. Darum gibt es zwei Erweiterungen.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Form",
+              "Inhalt",
+              "Beispiel MAKEL"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einfacher Eigentumsvorbehalt",
+                  "Ware bleibt bis zur Bezahlung Eigentum des Lieferers",
+                  "Nähmaschine bleibt Eigentum des Händlers, bis sie bezahlt ist"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verlängerter Eigentumsvorbehalt",
+                  "Bei Weiterverkauf tritt der Käufer die Forderung gegen seinen Kunden im Voraus ab; bei Verarbeitung wird der Lieferer Eigentümer oder Miteigentümer der neuen Sache",
+                  "Stoff wird zu Hoodies verarbeitet und an einen Händler verkauft: Die Forderung gegen den Händler steht dem Stofflieferanten zu"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erweiterter Eigentumsvorbehalt",
+                  "Eigentum geht erst über, wenn alle oder bestimmte weitere Forderungen aus der Geschäftsverbindung bezahlt sind",
+                  "Die neue Stofflieferung bleibt Eigentum des Lieferanten, solange auch ältere Rechnungen offen sind"
+                ]
+              }
+            ],
+            "fazit": "Der verlängerte Vorbehalt verfolgt die Ware in ihre neue Form und in die Forderung hinein. Der erweiterte Vorbehalt bindet den Eigentumsübergang an weitere offene Rechnungen.",
+            "id": "b3-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b3"
+          }
         ],
-        "erklaerung": "Bei der Sicherungsübereignung geht das Eigentum auf den Kreditgeber über, während der Betrieb den Besitz und die Nutzung behält. Das ist bei Maschinen sinnvoller als ein Pfand, bei dem der Besitz übergehen müsste. Die Grundschuld ist abstrakt und wiederverwendbar; die Hypothek ist akzessorisch. Banken bewerten nicht den vollen Wert, sondern den erwarteten Verwertungserlös nach Abschlag.",
-        "beispiele": [
-          "Ein Betrieb kann eine Maschine sicherungsübereignen und sie weiterhin zur Rückzahlung des Kredits einsetzen.",
-          "Eine Grundschuld auf einem Betriebsgrundstück kann nach Tilgung für weitere Kredite wiederverwendbar sein; Notar- und Grundbuchkosten gehören in den Vergleich."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Warum der einfache Vorbehalt untergeht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Verkauft der Käufer die Ware an einen gutgläubigen Dritten weiter, erwirbt dieser in der Regel Eigentum, und der Lieferer verliert seine Sicherheit. Wird Stoff zu Hoodies verarbeitet, entsteht eine neue Sache, und das Eigentum am Stoff geht unter. Wird ein Bauteil fest in ein Gebäude eingebaut, wird es Teil des Grundstücks. In allen drei Fällen bleibt dem Lieferer nur noch seine Kaufpreisforderung.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Bank und Lieferant greifen auf dieselbe Forderung zu",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Tritt MAKEL der Bank alle Kundenforderungen ab (Globalzession) und dem Stofflieferanten dieselben Forderungen über den verlängerten Eigentumsvorbehalt, kollidieren zwei Sicherheiten. Nach der Rechtsprechung muss die Globalzession die Forderungen aus verlängertem Eigentumsvorbehalt ausnehmen, sonst ist sie insoweit unwirksam. Banken formulieren ihre Abtretungsverträge deshalb mit einer entsprechenden Klausel.",
+                "id": "b3-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k4-b3"
+                ],
+                "text": "Eigentumsvorbehalt im Kaufvertrag und in AGB",
+                "id": "b3-d2-v1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb braucht 150.000 € für neue Fahrzeuge. Zuerst wird die Sicherungsübereignung der Fahrzeuge geprüft, weil sie weiter genutzt werden können. Reicht der Wert nach Verwertungsabschlag nicht, kommen Grundschuld, Abtretung von Kundenforderungen oder eine selbstschuldnerische Bürgschaft in Betracht. Jede Variante wird nach Nutzung, Erlös, Kosten und Privatrisiko bewertet.",
-        "typische_fehler": "Sicherungsübereignung wird mit Besitzübergabe verwechselt. Außerdem werden Grundschuld und Hypothek beide als akzessorisch bezeichnet oder der Abschlag der Bank nicht berücksichtigt.",
         "verstaendnisfragen": [
-          "Warum wird eine Maschine sicherungsübereignet und nicht verpfändet? Der Betrieb behält den Besitz und kann sie weiter nutzen.",
-          "Was ist der zentrale Unterschied zwischen Grundschuld und Hypothek? Die Grundschuld ist abstrakt und wiederverwendbar, die Hypothek akzessorisch."
-        ],
-        "pruefungsbezug": "Vergleiche Sachsicherheiten nach Nutzung, Eigentum, Verwertung, Kosten und Risiko; nicht nur nach dem Sicherungswort.",
-        "merksatz": "Die beste Sachsicherheit sichert den Kredit und lässt den Betrieb weiterarbeiten."
+          {
+            "frage": "MAKEL verarbeitet Stoff unter einfachem Eigentumsvorbehalt zu Hoodies und verkauft sie. Dann wird MAKEL zahlungsunfähig. Was bleibt dem Stofflieferanten?",
+            "antwort": "Nur seine Kaufpreisforderung als gewöhnlicher Gläubiger. Durch die Verarbeitung ist sein Eigentum am Stoff untergegangen, und eine Vorausabtretung der Weiterverkaufsforderung hat er nicht vereinbart. Mit einem verlängerten Eigentumsvorbehalt stünde ihm die Forderung gegen den Händler zu.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum ist eine Sicherungsübereignung für einen Fuhrpark besser als ein Pfandrecht?",
+            "antwort": "Beim Pfandrecht müssten die Fahrzeuge an die Bank übergeben werden; der Betrieb könnte sie nicht mehr nutzen und damit auch kein Geld für die Rückzahlung verdienen. Bei der Sicherungsübereignung bleibt der Betrieb Besitzer und nutzt die Fahrzeuge weiter.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

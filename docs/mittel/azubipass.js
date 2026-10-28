@@ -1209,8 +1209,8 @@
       var rechts = el("div");
       var k = el("button", "kkopf");
       k.type = "button";
-      k.appendChild(el("span", "ktitel", s.titel));
-      k.appendChild(el("span", "ksatz", s.satz));
+      k.appendChild(mkEl("span", "ktitel", s.titel));
+      k.appendChild(mkEl("span", "ksatz", s.satz));
       var text = mkEl("div", "ktext", s.text);
       text.id = "ap-auf-" + (++aufNr);
       text.setAttribute("aria-hidden", "true");

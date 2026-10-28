@@ -6,66 +6,392 @@
   "untertitel": "Zwei Fragen genügen, um jede Finanzierung einzuordnen.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Finanzierung kann nach Herkunft und Rechtsstellung geordnet werden.",
-          "Eigen- und Fremdkapital wirken für Betrieb und Kapitalgeber unterschiedlich."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest jede Finanzierung mit zwei unabhängigen Fragen — Herkunft und Rechtsstellung — in die Vierfeldertafel ein und begründest Grenzfälle.",
+        "vorwissen_kurz": "Finanzierung heißt, Kapital für den Betrieb zu beschaffen. Die Bilanz zeigt auf der Passivseite, woher es stammt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Fragen, die man nicht vermischen darf",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede Finanzierung lässt sich mit zwei Fragen beschreiben. Die erste fragt nach der **Herkunft**: Fließt Geld von außen in den Betrieb (Außenfinanzierung), oder entstehen die Mittel aus der eigenen Geschäftstätigkeit (Innenfinanzierung)? Die zweite fragt nach der **Rechtsstellung** des Kapitalgebers: Wird er Miteigentümer (Eigenkapital), oder wird er Gläubiger, der Zins und Rückzahlung verlangt (Fremdkapital)?",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die beiden Fragen sind unabhängig voneinander. Deshalb gibt es alle vier Kombinationen — und die häufigsten Fehler entstehen, wenn man „außen“ mit „fremd“ und „innen“ mit „eigen“ gleichsetzt.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Vorgänge bei MAKEL",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Herkunft",
+              "Rechtsstellung",
+              "Feld"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Alleingesellschafterin Yuki Bergmann zahlt 500.000 € zusätzlich ein",
+                  "von außen",
+                  "Eigentümerin",
+                  "Außen/Eigen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bank gewährt ein Darlehen über 800.000 €",
+                  "von außen",
+                  "Gläubigerin",
+                  "Außen/Fremd"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gewinn von 300.000 € wird nicht ausgeschüttet",
+                  "von innen",
+                  "gehört den Eigentümern",
+                  "Innen/Eigen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückstellung für Prozesskosten 50.000 €",
+                  "von innen",
+                  "Verpflichtung gegenüber Dritten",
+                  "Innen/Fremd"
+                ]
+              }
+            ],
+            "fazit": "Die Einlage ist Außenfinanzierung, obwohl sie Eigenkapital ist. Die Rückstellung ist Innenfinanzierung, obwohl sie Fremdkapital ist.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Zwei Fragen ergeben eine Vierfeldertafel: Kommt das Kapital von innen oder außen, und handelt es sich um Eigen- oder Fremdkapital? Innenfinanzierung entsteht im Betrieb; Außenfinanzierung kommt von außen. Eigenkapital haftet und steht grundsätzlich unbefristet zur Verfügung; Fremdkapital wird verzinst und zurückgezahlt.",
-        "beispiele": [
-          "Eine Einlage der Inhaber ist Außen- und Eigenfinanzierung; ein Bankkredit Außen- und Fremdfinanzierung.",
-          "Einbehaltener Gewinn ist Innen- und Eigenfinanzierung; Rückstellungen sind Innen- und Fremdfinanzierung, weil die Verpflichtung gegenüber Dritten besteht."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Lieferantenkredit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Liefert ein Lieferer Ware mit 30 Tagen Zahlungsziel, gibt er MAKEL für diese Zeit Kredit: Die Ware ist da, bezahlt wird später. Das ist Außen- und Fremdfinanzierung, auch wenn kein Darlehensvertrag geschlossen wurde. Verzichtet MAKEL dafür auf Skonto, ist dieser Kredit allerdings sehr teuer — aufs Jahr gerechnet oft über 30 %.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb ordnet vier Vorgänge ein: Einlage, Bankkredit, einbehaltener Gewinn und Rückstellung. Die Matrix wird in zwei Schritten gefüllt: Herkunft innen oder außen, dann Eigen oder fremd. So ergeben sich Außen/Eigen, Außen/Fremd, Innen/Eigen und Innen/Fremd; die Rückstellung landet trotz Innenfinanzierung bei Fremdkapital.",
-        "typische_fehler": "Innenfinanzierung wird automatisch als Eigenkapital bezeichnet. Außerdem wird ‚von außen‘ mit ‚Fremdkapital‘ gleichgesetzt, obwohl eine Einlage Außen- und Eigenfinanzierung ist.",
         "verstaendnisfragen": [
-          "Welche zwei Achsen hat die Systematik? Herkunft der Mittel und Rechtsstellung des Kapitalgebers.",
-          "Warum sind Rückstellungen ein Prüfungsfall? Sie entstehen innen, sind aber Fremdkapital wegen der Verpflichtung gegenüber Dritten."
-        ],
-        "pruefungsbezug": "Zeichne vor der Zuordnung die Vierfeldertafel und entscheide Herkunft und Rechtsstellung getrennt.",
-        "merksatz": "Innen oder außen sagt, woher das Geld kommt; Eigen oder fremd sagt, wem es rechtlich zugeordnet ist."
+          {
+            "frage": "Ein Gesellschafter gibt der GmbH ein Darlehen. Ist das Eigen- oder Fremdkapital?",
+            "antwort": "Fremdkapital. Entscheidend ist die Rechtsstellung, nicht die Person: Als Darlehensgeber ist der Gesellschafter Gläubiger mit Anspruch auf Rückzahlung und Zins. Es ist Außenfinanzierung mit Fremdkapital.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum ist eine Rückstellung Innenfinanzierung, obwohl kein Geld „hereinkommt“?",
+            "antwort": "Die Rückstellung mindert als Aufwand den Gewinn, ohne dass sofort Geld abfließt. Bis zur Zahlung bleibt das Geld im Betrieb und kann genutzt werden. Es entsteht also aus der eigenen Geschäftstätigkeit, nicht von außen.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Innenfinanzierung bedeutet, dass Mittel im Betrieb entstehen.",
-          "Nicht jede Innenfinanzierung ist zinsfrei ohne wirtschaftliche Kosten."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst die Quellen der Innenfinanzierung, insbesondere die Selbstfinanzierung, verfolgst ihre Wirkung auf Eigenkapital und Liquidität und benennst ihre Grenzen.",
+        "vorwissen_kurz": "Innenfinanzierung setzt voraus, dass der Betrieb über die Verkaufspreise mehr Geld einnimmt, als er ausgibt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Geld, das der Betrieb selbst verdient",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Innenfinanzierung fließt kein neues Kapital von außen zu. Die Mittel entstehen aus dem Umsatzprozess: Der Betrieb verkauft seine Produkte und behält einen Teil des Geldes, statt es auszuschütten oder sofort auszugeben. Dafür braucht er weder eine Bank noch neue Gesellschafter, muss keine Sicherheiten stellen und niemandem Rechenschaft über die Verwendung ablegen.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Selbstfinanzierung an Zahlen",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL hat einen Jahresüberschuss von 300.000 € erzielt; er ist als Geld auf dem Konto angekommen. Die Alleingesellschafterin kann ihn sich ausschütten lassen oder im Betrieb lassen. Das Eigenkapital wird für dieses Beispiel mit 3.600.000 € angenommen.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Ausschüttung",
+              "Thesaurierung (Einbehalten)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Eigenkapital vorher",
+                  "3.600.000 €",
+                  "3.600.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jahresüberschuss",
+                  "+300.000 €",
+                  "+300.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausschüttung an die Gesellschafterin",
+                  "−300.000 €",
+                  "0 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigenkapital nachher",
+                  "3.600.000 €",
+                  "3.900.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Geld im Betrieb",
+                  "300.000 € fließen ab",
+                  "300.000 € bleiben für Investitionen"
+                ]
+              }
+            ],
+            "fazit": "Einbehaltener Gewinn stärkt das Eigenkapital und die Liquidität — ohne neue Mitsprache und ohne Zins.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auch die Abschreibungen tragen zur Innenfinanzierung bei. Werden sie über die Verkaufspreise verdient, fließt Geld herein, das als Aufwand gebucht, aber nicht ausgegeben wurde. Schreibt MAKEL eine Stickmaschine mit 12.000 € im Jahr ab, stehen bis zu ihrer Ersatzbeschaffung jedes Jahr 12.000 € zur Verfügung — vorausgesetzt, die Preise haben die Kosten tatsächlich gedeckt. Bei Verlusten ist dieser Effekt nur eine Rechengröße.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          }
         ],
-        "erklaerung": "Quellen der Innenfinanzierung sind einbehaltener Gewinn, Abschreibungsgegenwerte, Rückstellungen und Vermögensumschichtung. Es fließt kein neues Kapital von außen zu. Die Mittel stehen aber nur insoweit zur Verfügung, wie der entsprechende Vorgang tatsächlich liquide Mittel freisetzt oder im Betrieb hält.",
-        "beispiele": [
-          "Einbehaltener Gewinn stärkt die Eigenkapitalbasis, wenn er nicht ausgeschüttet wird.",
-          "Beim Verkauf eines nicht betriebsnotwendigen Vermögensgegenstands entsteht eine Vermögensumschichtung; Rückstellungen halten Mittel bis zur späteren Inanspruchnahme im Betrieb."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Offene und stille Selbstfinanzierung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wird der Gewinn sichtbar in die Gewinnrücklagen eingestellt, spricht man von offener Selbstfinanzierung. Stille Selbstfinanzierung entsteht durch vorsichtige Bewertung: Werden Vermögensgegenstände niedriger und Schulden höher angesetzt, als sie wirtschaftlich sind, sinkt der ausgewiesene Gewinn, und es fließt weniger ab. Diese stillen Reserven werden erst bei einem Verkauf sichtbar.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Grenzen der Innenfinanzierung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein junges Unternehmen ohne Gewinn kann sich nicht von innen finanzieren. Auch ein großer Sprung — etwa ein eigenes Lager für mehrere Millionen Euro — übersteigt meist das, was ein Betrieb in einem Jahr verdient. Dann bleibt nur Außenfinanzierung oder eine schrittweise Investition. Und Gesellschafter, die jahrelang auf Ausschüttung verzichten, wollen irgendwann eine Rendite sehen.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb braucht 300.000 € für eine Anlage, will aber keine neuen Gesellschafter aufnehmen. Zuerst werden Gewinnausschüttung, nicht betriebsnotwendige Vermögenswerte und Abschreibungsgegenwerte geprüft. Reicht dies nicht, werden Leasing oder ein Förderdarlehen als Alternativen betrachtet. Die Reihenfolge schont Mitsprache und Liquidität, ohne die Entscheidung vorschnell an einen Kredit zu delegieren.",
-        "typische_fehler": "Innenfinanzierung wird als kostenlos bezeichnet oder Abschreibungsgegenwerte automatisch als Bargeld behandelt. Auch die Vermögensumschichtung wird mit zusätzlichem Kapital verwechselt.",
         "verstaendnisfragen": [
-          "Welche vier Quellen nennt der Inhalt? Einbehaltener Gewinn, Abschreibungsgegenwerte, Rückstellungen und Vermögensumschichtung.",
-          "Warum ist Innenfinanzierung nicht einfach kostenlos? Sie ist zinsfrei, kann aber Ausschüttungsverzicht, entgangene Nutzung oder andere wirtschaftliche Kosten haben."
-        ],
-        "pruefungsbezug": "Nenne bei Finanzierungsfällen zuerst die eigenen Innenquellen und bewerte dann Liquidität, Zins und Mitsprache.",
-        "merksatz": "Innenfinanzierung entsteht aus dem Betrieb — aber auch sie hat wirtschaftliche Grenzen."
+          {
+            "frage": "MAKEL braucht 3.000.000 € für eine eigene Fertigungshalle. Der Jahresüberschuss beträgt 300.000 €, die verdienten Abschreibungen betragen 400.000 €. Reicht Innenfinanzierung?",
+            "antwort": "Nicht in einem Jahr. Zusammen stehen höchstens 700.000 € aus Innenfinanzierung zur Verfügung, und auch das nur, wenn nichts davon für Ersatzbeschaffungen gebraucht wird. MAKEL müsste entweder viele Jahre ansparen, einen Teil durch Vermögensumschichtung aufbringen oder auf Außenfinanzierung wie Kredit, Leasing oder neue Gesellschafter zurückgreifen.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist einbehaltener Gewinn für die Gesellschafter nicht kostenlos?",
+            "antwort": "Sie verzichten auf die Ausschüttung und können das Geld nicht anderweitig anlegen oder ausgeben. Die entgangene Rendite ist der Preis der Selbstfinanzierung.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Eigenkapital und Fremdkapital werden nach der Rechtsstellung unterschieden.",
-          "Finanzierung beeinflusst Haftung, Rückzahlung und Entscheidungsmacht."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Beteiligungsfinanzierung und Kreditfinanzierung nach Zahlungswirkung, Eigenkapitalwirkung, Kosten, Haftung und Mitsprache und triffst eine begründete Wahl.",
+        "vorwissen_kurz": "Eigenkapital gehört den Eigentümern und haftet für Verluste. Fremdkapital muss zurückgezahlt werden und wird verzinst.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Miteigentümer oder Gläubiger?",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL braucht 1.000.000 € für eine neue Veredelungsanlage für Textildruck. Zwei Angebote liegen vor: Eine Investorin würde als neue Gesellschafterin einsteigen und 1.000.000 € einlegen (Beteiligungsfinanzierung). Die Hausbank würde ein Darlehen über 1.000.000 € für fünf Jahre zu angenommenen 6 % geben (Kreditfinanzierung). Beide Wege bringen dasselbe Geld aufs Konto, aber völlig verschiedene Folgen.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die beiden Angebote im Vergleich",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Beteiligung der Investorin",
+              "Bankdarlehen"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Geld auf dem Konto",
+                  "+1.000.000 €",
+                  "+1.000.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bilanz",
+                  "Eigenkapital +1.000.000 €",
+                  "Fremdkapital +1.000.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigenkapitalquote (angenommen bisher 3,6 Mio. € EK von 9 Mio. € Gesamtkapital = 40 %)",
+                  "4,6 ÷ 10 = 46 %",
+                  "3,6 ÷ 10 = 36 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Laufende Belastung",
+                  "keine feste Zahlung; Gewinnbeteiligung",
+                  "60.000 € Zinsen im ersten Jahr plus Tilgung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückzahlung",
+                  "keine",
+                  "200.000 € pro Jahr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mitsprache",
+                  "Investorin wird Gesellschafterin und stimmt mit ab",
+                  "keine Mitsprache, aber Vertragsbedingungen und Sicherheiten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Im Verlustjahr",
+                  "Investorin bekommt nichts",
+                  "Zins und Tilgung trotzdem fällig"
+                ]
+              }
+            ],
+            "fazit": "Die Beteiligung schont die Liquidität und verbessert die Eigenkapitalquote, kostet aber Einfluss und künftige Gewinnanteile. Der Kredit erhält die Entscheidungsfreiheit, belastet aber jedes Jahr die Liquidität.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Yuki Bergmann ist bisher Alleingesellschafterin und möchte allein entscheiden. Der erwartete Mehrgewinn aus der Anlage (geschätzt 180.000 € pro Jahr) deckt die Zinsen deutlich, und die Tilgung lässt sich zusammen mit den verdienten Abschreibungen der Anlage aufbringen. MAKEL wählt deshalb das Darlehen, plant Zins und Tilgung in den Liquiditätsplan ein und behält einbehaltene Gewinne als Puffer. Wäre der Mehrgewinn unsicher oder die Eigenkapitalquote schon niedrig, spräche mehr für die Beteiligung.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Eigenkapital haftet, ist unbefristet, hat Mitsprache und keine feste Verzinsung. Fremdkapital kostet unabhängig vom Erfolg Zinsen, ist befristet und vermittelt keine Mitsprache. Viel Eigenkapital verbessert die Kreditwürdigkeit, weil es als Haftungspuffer dient; Fremdkapital erhält dafür die Entscheidungsmacht der bisherigen Eigentümer eher ungeteilt.",
-        "beispiele": [
-          "Ein Eigenkapitalgeber erhält Einfluss und trägt das Verlustrisiko, verlangt aber keine feste Verzinsung.",
-          "Ein Kreditgeber erhält Zinsen und Rückzahlung unabhängig vom Erfolg und verlangt häufig Sicherheiten, erhält aber keine laufende Mitsprache."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Mitsprache hängt von der Rechtsform ab",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wie viel ein neuer Kapitalgeber mitreden darf, hängt von Rechtsform und Vertrag ab. In einer GmbH richtet sich das Stimmrecht grundsätzlich nach den Geschäftsanteilen. In einer Kommanditgesellschaft hat ein Kommanditist nur eingeschränkte Kontrollrechte und keine Geschäftsführung. Eine stille Beteiligung bringt Geld, aber nach außen keine Mitsprache. Wer Eigenkapital ohne viel Einfluss aufnehmen will, wählt deshalb eine passende Form.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k7"
+                ],
+                "text": "Rechtsformen: Geschäftsführung, Haftung und Gewinnverteilung",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Die Hausbank verlangt mehr Eigenkapital, die Inhaber wollen aber keine neuen Gesellschafter. Einbehaltener Gewinn kann die Eigenkapitalquote stärken, ohne neue Mitsprache zu schaffen. Zusätzlich werden Vermögensumschichtung, Leasing und ein Förderdarlehen geprüft. So werden Haftungspuffer, Kosten, Liquidität und Entscheidungsmacht gemeinsam bewertet.",
-        "typische_fehler": "Eigenkapital wird als kostenlos bezeichnet oder Fremdkapital nur nach dem Zinssatz bewertet. Haftung, Befristung, Mitsprache und Kreditwürdigkeit gehören ebenfalls in die Abwägung.",
         "verstaendnisfragen": [
-          "Warum verbessert Eigenkapital die Kreditwürdigkeit? Es haftet und dient Kreditgebern als Puffer.",
-          "Was passiert mit dem Fremdkapitalzins bei Verlust? Der Zins bleibt grundsätzlich fällig, unabhängig vom Erfolg."
-        ],
-        "pruefungsbezug": "Vergleiche in Tabellen mindestens Haftung, Laufzeit, Verzinsung, Mitsprache und Rückzahlung.",
-        "merksatz": "Eigenkapital trägt Risiko und gibt Einfluss; Fremdkapital verlangt Zins und Rückzahlung."
+          {
+            "frage": "Nach der Beteiligung der Investorin steigt die Eigenkapitalquote. Warum interessiert das die Bank bei einem späteren Kreditantrag?",
+            "antwort": "Eigenkapital haftet für Verluste und ist der Puffer vor dem Geld der Bank. Eine höhere Eigenkapitalquote bedeutet, dass der Betrieb Verluste besser verkraften kann. Die Bank sieht darin ein geringeres Ausfallrisiko und gibt eher oder günstiger Kredit.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum kann ein Kredit im Verlustjahr gefährlicher sein als eine Beteiligung?",
+            "antwort": "Zins und Tilgung sind unabhängig vom Erfolg fällig. Fehlt in einem schlechten Jahr das Geld, droht Zahlungsunfähigkeit. Die Investorin dagegen bekommt im Verlustjahr keine Ausschüttung; der Betrieb wird nicht zusätzlich belastet.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

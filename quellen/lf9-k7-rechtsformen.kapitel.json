@@ -1,0 +1,752 @@
+{
+  "id": "k7",
+  "lernfeld": "lf9",
+  "nummer": 7,
+  "titel": "Rechtsformen und Finanzierung",
+  "untertitel": "Wer entscheidet, wer haftet, wer verdient — die Rechtsform legt es fest.",
+  "minuten": 30,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "text": "Einzelunternehmen, KG und GmbH nach Gründung, Kapital und Kapitalgebern unterscheiden",
+      "abschnitt": "b1"
+    },
+    {
+      "id": "lz2",
+      "text": "Geschäftsführung und Vertretung in den drei Rechtsformen bestimmen",
+      "abschnitt": "b2"
+    },
+    {
+      "id": "lz3",
+      "text": "Haftung und Gewinnverteilung nach Gesetz und Vertrag berechnen",
+      "abschnitt": "b3"
+    }
+  ],
+  "bloecke": [
+    {
+      "typ": "abschnitt",
+      "id": "b1",
+      "titel": "Drei Rechtsformen im Überblick",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Wer einen Betrieb gründet oder neue Kapitalgeber aufnimmt, wählt eine **Rechtsform**. Sie legt fest, wie das Unternehmen entsteht, wer Kapital einbringt und wer im Ernstfall mit welchem Vermögen einsteht. ==Für die Finanzierung ist sie deshalb keine Formsache: Sie bestimmt, wem eine Bank Kredit gibt und welche Sicherheiten sie verlangt.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Merkmal",
+            "Einzelunternehmen",
+            "KG",
+            "GmbH"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Gründer",
+                "eine Person",
+                "mindestens ein Komplementär und ein Kommanditist",
+                "eine oder mehrere Personen"
+              ]
+            },
+            {
+              "zellen": [
+                "Mindestkapital",
+                "keines",
+                "keines",
+                "25.000 € Stammkapital"
+              ],
+              "detail": "**Bei der GmbH muss vor der Anmeldung mindestens die Hälfte eingezahlt sein**, also 12.500 € (§ 7 Abs. 2 GmbHG). Die Unternehmergesellschaft (haftungsbeschränkt) ist eine GmbH-Variante, die schon mit 1 € gegründet werden kann, aber Gewinne zum Teil zurücklegen muss."
+            },
+            {
+              "zellen": [
+                "Gründung",
+                "formlos; Eintrag ins Handelsregister, wenn Kaufmann",
+                "Gesellschaftsvertrag, Eintrag ins Handelsregister",
+                "notarieller Gesellschaftsvertrag, entsteht mit Eintragung"
+              ]
+            },
+            {
+              "zellen": [
+                "Firmenzusatz",
+                "e. K.",
+                "KG",
+                "GmbH"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Einzelunternehmen:** eine Person, kein Mindestkapital, volle Haftung. **KG:** Komplementär haftet voll, Kommanditist bis zur Einlage. **GmbH:** juristische Person, 25.000 € Stammkapital, es haftet nur das Gesellschaftsvermögen.",
+          "karteikarte": "Worin unterscheiden sich Einzelunternehmen, KG und GmbH bei Gründung, Mindestkapital und Haftung?"
+        },
+        {
+          "typ": "praxistipp",
+          "text": "Neue Eigenkapitalgeber ohne Mitarbeit suchen meist eine Form, in der sie **begrenzt haften und nicht geschäftsführen müssen**. Genau dafür passen die Rolle des Kommanditisten oder die eines GmbH-Gesellschafters, der nicht Geschäftsführer ist."
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b2",
+      "titel": "Wer entscheidet, wer vertritt?",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "**Geschäftsführung** betrifft das Innenverhältnis: Wer darf im Unternehmen entscheiden? **Vertretung** betrifft das Außenverhältnis: Wer kann das Unternehmen gegenüber Dritten wirksam verpflichten? ==Beides fällt oft zusammen, ist aber nicht dasselbe.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Rechtsform",
+            "Geschäftsführung",
+            "Vertretung"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Einzelunternehmen",
+                "Inhaber",
+                "Inhaber"
+              ]
+            },
+            {
+              "zellen": [
+                "KG",
+                "Komplementär; Kommanditist ausgeschlossen",
+                "nur Komplementär"
+              ],
+              "detail": "**Der Kommanditist ist von der Geschäftsführung ausgeschlossen** (§ 164 HGB) und kann außergewöhnlichen Geschäften nur widersprechen. Vertreten kann er die KG nicht (§ 170 HGB). Er hat Kontroll- und Auskunftsrechte (§ 166 HGB)."
+            },
+            {
+              "zellen": [
+                "GmbH",
+                "Geschäftsführer, gebunden an Beschlüsse der Gesellschafterversammlung",
+                "Geschäftsführer"
+              ],
+              "detail": "**Beschränkungen im Innenverhältnis wirken nicht nach außen** (§ 37 Abs. 2 GmbHG). Schließt ein Geschäftsführer einen Vertrag ohne den nötigen Gesellschafterbeschluss, ist die GmbH trotzdem gebunden; er haftet ihr aber gegebenenfalls auf Schadensersatz."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Geschäftsführung = innen, Vertretung = außen.** Der Kommanditist hat keins von beidem, aber Kontrollrechte. Der GmbH-Geschäftsführer vertritt nach außen unbeschränkt, auch wenn er innen an Beschlüsse gebunden ist.",
+          "karteikarte": "Was ist der Unterschied zwischen Geschäftsführung und Vertretung, und wie sind beide bei KG und GmbH geregelt?"
+        },
+        {
+          "typ": "check",
+          "frage": "Eine Kommanditistin bestellt im Namen der KG eine Maschine für 40.000 €. Ist die KG verpflichtet?",
+          "optionen": [
+            {
+              "text": "Ja, alle Gesellschafter einer KG können die Gesellschaft vertreten",
+              "richtig": false,
+              "echo": "Das gilt für die Komplementäre. Die Kommanditistin ist nach § 170 HGB zur Vertretung der KG nicht ermächtigt."
+            },
+            {
+              "text": "Nein, eine Kommanditistin kann die KG nicht vertreten — es sei denn, ihr wurde gesondert Vollmacht erteilt, etwa Prokura",
+              "richtig": true,
+              "echo": "Richtig. Als Kommanditistin hat sie keine Vertretungsmacht. Die KG ist nur gebunden, wenn ihr eine Vollmacht wie Prokura oder Handlungsvollmacht erteilt wurde oder der Komplementär das Geschäft genehmigt."
+            },
+            {
+              "text": "Ja, weil sie Kapital eingebracht hat",
+              "richtig": false,
+              "echo": "Kapitalbeteiligung verschafft keine Vertretungsmacht. Entscheidend ist die Stellung als Komplementär oder eine erteilte Vollmacht."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b3",
+      "titel": "Wer haftet, wer verdient?",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "**Haftung** fragt, auf welches Vermögen die Gläubiger zugreifen können, wenn das Unternehmen nicht zahlt. **Gewinnverteilung** fragt, wem der Gewinn zusteht. ==Für beides gibt das Gesetz einen Ausgangspunkt vor, den die Gesellschafter vertraglich anpassen können — bei der Haftung allerdings nur im Verhältnis untereinander, nicht gegenüber Gläubigern.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Rechtsform",
+            "Haftung gegenüber Gläubigern",
+            "Gewinnverteilung ohne Vereinbarung"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Einzelunternehmen",
+                "Inhaber unbeschränkt mit Privatvermögen",
+                "Inhaber erhält alles"
+              ]
+            },
+            {
+              "zellen": [
+                "KG",
+                "Komplementär unbeschränkt; Kommanditist bis zur Höhe seiner Einlage",
+                "nach den vereinbarten Beteiligungsverhältnissen, sonst nach dem Wert der Beiträge, sonst nach Köpfen"
+              ],
+              "detail": "**Seit 2024 gilt für OHG und KG eine neue gesetzliche Gewinnverteilung** (§ 120 HGB mit § 709 Abs. 3 BGB). Die frühere Regel „4 % auf den Kapitalanteil, Rest nach Köpfen“ gibt es nicht mehr. Hat der Kommanditist seine Einlage voll geleistet, haftet er nicht mehr persönlich (§ 171 HGB)."
+            },
+            {
+              "zellen": [
+                "GmbH",
+                "nur das Gesellschaftsvermögen",
+                "nach dem Verhältnis der Geschäftsanteile, nach Beschluss der Gesellschafter"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Die beschränkte Haftung der GmbH hilft wenig, wenn die Gesellschafter für Bankkredite **persönlich bürgen**. Banken verlangen das bei kleineren GmbHs häufig. Für diesen Kredit haftet die Gesellschafterin dann doch mit ihrem Privatvermögen."
+        },
+        {
+          "typ": "zuordnen",
+          "lead": "Welche Rechtsform passt zur Beschreibung?",
+          "kategorien": [
+            "Einzelunternehmen",
+            "KG",
+            "GmbH"
+          ],
+          "aufgaben": [
+            {
+              "text": "Eine Person haftet unbeschränkt, ein Geldgeber nur bis zu seiner Einlage.",
+              "loesung": "KG"
+            },
+            {
+              "text": "Gegründet mit notariellem Vertrag und mindestens 25.000 € Stammkapital.",
+              "loesung": "GmbH"
+            },
+            {
+              "text": "Der Inhaber entscheidet allein und erhält den ganzen Gewinn.",
+              "loesung": "Einzelunternehmen"
+            },
+            {
+              "text": "Der Gewinn wird nach dem Verhältnis der Geschäftsanteile verteilt.",
+              "loesung": "GmbH"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "zusammenfassung": [
+    "Die Rechtsform bestimmt Gründung, Kapital, Geschäftsführung, Vertretung, Haftung und Gewinnverteilung.",
+    "Einzelunternehmen: eine Person, kein Mindestkapital, unbeschränkte Haftung, ganzer Gewinn.",
+    "KG: Komplementär führt, vertritt und haftet unbeschränkt; Kommanditist haftet bis zur Einlage und hat Kontrollrechte.",
+    "GmbH: 25.000 € Stammkapital, notarieller Vertrag, Geschäftsführer vertritt, es haftet nur das Gesellschaftsvermögen.",
+    "Geschäftsführung betrifft das Innenverhältnis, Vertretung das Außenverhältnis.",
+    "Gewinnverteilung in der KG seit 2024: nach vereinbarten Beteiligungsverhältnissen, sonst nach dem Wert der Beiträge, sonst nach Köpfen.",
+    "In der GmbH wird der Gewinn nach Geschäftsanteilen verteilt, wenn die Gesellschafter nichts anderes beschließen oder vereinbaren.",
+    "Persönliche Bürgschaften heben die beschränkte Haftung für einzelne Kredite praktisch auf."
+  ],
+  "selbsttest": [
+    {
+      "typ": "Wissen",
+      "frage": "Vergleiche die Stellung von Komplementär und Kommanditist in der KG.",
+      "loesung": "Der Komplementär führt die Geschäfte, vertritt die KG nach außen und haftet den Gläubigern unbeschränkt mit seinem gesamten Vermögen. Der Kommanditist ist von der Geschäftsführung ausgeschlossen, kann außergewöhnlichen Geschäften widersprechen und hat Kontroll- und Auskunftsrechte. Vertreten kann er die KG nicht. Er haftet den Gläubigern nur bis zur Höhe seiner im Handelsregister eingetragenen Einlage; hat er sie geleistet, ist seine persönliche Haftung ausgeschlossen. Am Gewinn sind beide nach dem Gesellschaftsvertrag beteiligt."
+    },
+    {
+      "typ": "Berechnung",
+      "frage": "Eine KG erzielt 48.000 € Gewinn. Der Komplementär hat 20.000 € eingelegt, die Kommanditistin 60.000 €. Einen Verteilungsschlüssel haben sie nicht vereinbart, wohl aber den Wert der Einlagen. Wie wird verteilt?",
+      "loesung": "Ohne vereinbarte Beteiligungsverhältnisse richtet sich die Verteilung nach dem vereinbarten Wert der Beiträge, hier 20.000 € zu 60.000 €, also 1 : 3. Der Komplementär erhält 48.000 € × 1/4 = 12.000 €, die Kommanditistin 48.000 € × 3/4 = 36.000 €. Weil der Komplementär voll mitarbeitet, ist diese Verteilung für ihn ungünstig; deshalb sollte der Gesellschaftsvertrag eine Tätigkeitsvergütung vorab vorsehen."
+    },
+    {
+      "typ": "Fall",
+      "frage": "Eine Gründerin braucht 120.000 €. Ihre Tante würde 60.000 € beisteuern, will aber weder mitarbeiten noch mehr als diesen Betrag riskieren. Welche Rechtsform schlägst du vor?",
+      "loesung": "Als Einzelunternehmen könnte die Tante nur ein Darlehen geben; sie wäre dann Gläubigerin, nicht Eigentümerin. Als KG wird die Gründerin Komplementärin, führt allein und haftet unbeschränkt; die Tante wird Kommanditistin, haftet nur bis zur Einlage und muss nicht mitarbeiten. Als GmbH haften beide nur mit dem Gesellschaftsvermögen, die Gründung ist aber aufwendiger, verlangt 25.000 € Stammkapital, und Banken werden eine persönliche Bürgschaft der Gründerin verlangen. Die KG passt zum Wunsch der Tante; will auch die Gründerin ihr Privatvermögen schützen, kommt die GmbH oder eine GmbH & Co. KG in Frage."
+    }
+  ],
+  "pruefungstipp": "Rechtsformaufgaben fragen fast immer nach vier Punkten: Geschäftsführung, Vertretung, Haftung und Gewinnverteilung. Lege dafür eine Tabelle an und trenne sauber zwischen dem, was das Gesetz vorgibt, und dem, was im Gesellschaftsvertrag vereinbart ist. Bei der KG-Gewinnverteilung gilt seit 2024 nicht mehr die 4-%-Regel — ältere Lösungsschemata sind hier veraltet.",
+  "ausfuehrlich": {
+    "format": 2,
+    "abschnitte": [
+      {
+        "abschnitt": "b1",
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Einzelunternehmen, KG und GmbH nach Gründung, Kapital und Stellung der Kapitalgeber und ordnest einen Gründungsfall begründet zu.",
+        "vorwissen_kurz": "Eigenkapitalgeber werden Miteigentümer, Fremdkapitalgeber werden Gläubiger. Die Rechtsform legt fest, wie Miteigentum aussieht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Gründungsfall",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jonas Weber, gelernter Siebdrucker, will sich selbstständig machen und Textilien für Vereine und Labels bedrucken. Er braucht 120.000 € für Maschinen, Material und die ersten Monate. Jonas hat 20.000 € gespart. Seine Tante Petra würde 60.000 € beisteuern, möchte aber nicht mitarbeiten und nicht mehr als diesen Betrag riskieren. Den Rest von 40.000 € soll die Hausbank finanzieren.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Welche Rechtsform Jonas wählt, entscheidet darüber, welche Rolle seine Tante bekommt: Gläubigerin oder Miteigentümerin, und wenn Miteigentümerin, mit welchen Rechten und welchem Risiko.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Wege für Jonas und seine Tante",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Einzelunternehmen",
+              "KG",
+              "GmbH"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rolle von Jonas",
+                  "Inhaber",
+                  "Komplementär",
+                  "Gesellschafter und Geschäftsführer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rolle der Tante",
+                  "Darlehensgeberin (Gläubigerin)",
+                  "Kommanditistin (Miteigentümerin)",
+                  "Gesellschafterin (Miteigentümerin)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was die Tante bekommt",
+                  "vereinbarte Zinsen und Rückzahlung",
+                  "Gewinnanteil nach Vertrag",
+                  "Gewinnanteil nach Geschäftsanteilen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gründungsaufwand",
+                  "gering",
+                  "Gesellschaftsvertrag, Handelsregister",
+                  "Notar, 25.000 € Stammkapital, Handelsregister"
+                ]
+              }
+            ],
+            "fazit": "Im Einzelunternehmen bleibt die Tante außen vor und bekommt Zinsen. In KG und GmbH wird sie Miteigentümerin und trägt das Verlustrisiko ihrer Einlage, ist dafür aber am Gewinn beteiligt.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine **juristische Person** wie die GmbH ist selbst Träger von Rechten und Pflichten: Sie schließt Verträge, besitzt Vermögen und schuldet ihren Gläubigern selbst. Einzelunternehmen und KG sind keine juristischen Personen. Beim Einzelunternehmen handelt und haftet der Inhaber selbst; die KG kann zwar unter ihrer Firma Verträge schließen, hinter ihr stehen aber persönlich haftende Gesellschafter.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b1-b3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "GmbH & Co. KG",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine häufige Mischform ist die GmbH & Co. KG. Komplementärin ist hier eine GmbH, die unbeschränkt haftet — aber eben nur mit ihrem eigenen Vermögen. Die natürlichen Personen sind Kommanditisten oder Gesellschafter der GmbH. So verbindet man die Gewinnverteilung und Besteuerung einer Personengesellschaft mit einer Haftungsbegrenzung für alle Beteiligten.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Unternehmergesellschaft (haftungsbeschränkt)",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer die 25.000 € Stammkapital nicht aufbringen kann, gründet eine UG (haftungsbeschränkt). Sie ist eine GmbH mit geringerem Mindestkapital, muss aber jedes Jahr ein Viertel ihres Jahresüberschusses (vermindert um einen Verlustvortrag) in eine Rücklage einstellen, bis das Stammkapital einer normalen GmbH erreicht ist. Banken sehen das geringe Eigenkapital kritisch.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum ist die Tante im Einzelunternehmen nicht Miteigentümerin, obwohl sie mehr Geld gibt als Jonas?",
+            "antwort": "Im Einzelunternehmen gibt es nur einen Inhaber. Wer zusätzlich Geld gibt, kann das nur als Darlehen tun und wird Gläubiger. Die Tante hat dann Anspruch auf Zinsen und Rückzahlung, aber keine Eigentümerrechte und keinen Gewinnanteil.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Jonas überlegt, die GmbH mit nur 12.500 € Einzahlung zu gründen. Ist das zulässig?",
+            "antwort": "Ja. Das Stammkapital muss mindestens 25.000 € betragen, vor der Anmeldung zum Handelsregister muss aber nur insgesamt mindestens die Hälfte eingezahlt sein, also 12.500 €. Den Rest schulden die Gesellschafter der GmbH weiter; im Insolvenzfall kann er eingefordert werden.",
+            "id": "b1-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "Handelsgesetzbuch (HGB), §§ 161–177a",
+            "url": "https://www.gesetze-im-internet.de/hgb/",
+            "bezug": "KG"
+          },
+          {
+            "titel": "GmbH-Gesetz (GmbHG), §§ 5, 5a, 7, 13",
+            "url": "https://www.gesetze-im-internet.de/gmbhg/",
+            "bezug": "GmbH"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b2",
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst in Einzelunternehmen, KG und GmbH, wer intern entscheiden und wer das Unternehmen nach außen verpflichten darf, und beurteilst Fälle mit überschrittenen Befugnissen.",
+        "vorwissen_kurz": "Ein Vertrag bindet ein Unternehmen nur, wenn jemand mit Vertretungsmacht ihn geschlossen hat.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Innen und außen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zwei Fragen muss jede Rechtsform beantworten. **Geschäftsführung:** Wer darf im Unternehmen entscheiden, was getan wird — Einkauf, Personal, Investitionen? Das betrifft das Innenverhältnis zwischen den Gesellschaftern. **Vertretung:** Wer kann im Namen des Unternehmens Verträge mit Dritten schließen, die das Unternehmen binden? Das betrifft das Außenverhältnis zu Kunden, Lieferanten und Banken.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Regeln bei Jonas und bei MAKEL",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der KG führt Jonas als Komplementär die Geschäfte und vertritt die Gesellschaft. Seine Tante ist als Kommanditistin von der Geschäftsführung ausgeschlossen. Bei gewöhnlichen Geschäften — Farben bestellen, einen Auftrag annehmen — hat sie nichts mitzureden. Will Jonas aber etwas Außergewöhnliches tun, etwa eine zweite Werkstatt kaufen, kann sie widersprechen. Den Jahresabschluss darf sie prüfen und Auskunft verlangen.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die MAKEL Studio GmbH hat zwei Geschäftsführer: Yuki Bergmann und Tobias Renner. Sieht der Gesellschaftsvertrag nichts anderes vor, vertreten mehrere Geschäftsführer die GmbH gemeinsam; viele Gesellschaftsverträge erlauben deshalb ausdrücklich Einzelvertretung. Yuki Bergmann ist zugleich Alleingesellschafterin und damit die Gesellschafterversammlung: Sie kann den Geschäftsführern Weisungen erteilen und etwa festlegen, dass Investitionen über 250.000 € ihrer Zustimmung bedürfen.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Situation",
+              "Bindet der Vertrag das Unternehmen?",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Tante Petra bestellt für die KG eine Druckmaschine",
+                  "nein",
+                  "Kommanditistin hat keine Vertretungsmacht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jonas kauft als Komplementär gegen den Widerspruch der Tante eine zweite Werkstatt",
+                  "ja, nach außen wirksam",
+                  "Komplementär vertritt unbeschränkt; intern hat er seine Befugnis überschritten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tobias Renner kauft für MAKEL eine Anlage für 400.000 € ohne die nötige Zustimmung",
+                  "ja, wenn er allein vertreten darf",
+                  "interne Beschränkung wirkt nicht gegenüber Dritten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein Lagerist ohne Vollmacht bestellt Regale für MAKEL",
+                  "nein, solange MAKEL nicht genehmigt",
+                  "keine Vertretungsmacht"
+                ]
+              }
+            ],
+            "fazit": "Nach außen zählt die Vertretungsmacht. Interne Grenzen schützen die Gesellschafter untereinander — wer sie überschreitet, haftet intern auf Schadensersatz, das Geschäft mit dem Dritten bleibt aber gültig.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Vollmachten für Mitarbeitende",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben den gesetzlichen Vertretern können Unternehmen weiteren Personen Vertretungsmacht erteilen. Die **Prokura** ermächtigt zu fast allen Geschäften eines Handelsgewerbes und wird im Handelsregister eingetragen; nicht erlaubt sind etwa der Verkauf von Grundstücken ohne besondere Befugnis. Die **Handlungsvollmacht** ist enger und deckt die Geschäfte, die ein solcher Betrieb oder Aufgabenbereich gewöhnlich mit sich bringt. So kann auch eine Kommanditistin die KG vertreten — aber als Prokuristin, nicht als Kommanditistin.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Warum der Gesetzgeber Dritte schützt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Lieferant kann nicht wissen, welche internen Absprachen in einer GmbH gelten. Müsste er vor jedem Vertrag den Gesellschaftsvertrag und alle Beschlüsse prüfen, käme der Handel zum Erliegen. Deshalb ist die Vertretungsmacht eines Geschäftsführers nach außen unbeschränkt; ob jemand Geschäftsführer ist, steht im Handelsregister.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum darf die Tante einer neuen Werkstatt widersprechen, aber nicht der Bestellung von Farben?",
+            "antwort": "Der Kommanditist ist von der Geschäftsführung ausgeschlossen. Gewöhnliche Geschäfte entscheidet der Komplementär allein. Nur bei Handlungen, die über den gewöhnlichen Betrieb hinausgehen, hat der Kommanditist ein Widerspruchsrecht, weil sie sein eingesetztes Kapital stärker gefährden können.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Woran erkennt ein Lieferant, wer die MAKEL Studio GmbH vertreten darf?",
+            "antwort": "Am Handelsregister. Dort sind die Geschäftsführer, ihre Vertretungsbefugnis (gemeinsam oder einzeln) und gegebenenfalls Prokuristen eingetragen. Interne Zustimmungsvorbehalte stehen dort nicht und muss der Lieferant nicht kennen.",
+            "id": "b2-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "GmbH-Gesetz, §§ 35, 37",
+            "url": "https://www.gesetze-im-internet.de/gmbhg/",
+            "bezug": "Vertretung der GmbH"
+          },
+          {
+            "titel": "Handelsgesetzbuch, §§ 164, 166, 170",
+            "url": "https://www.gesetze-im-internet.de/hgb/",
+            "bezug": "Kommanditist"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b3",
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst, wer bei Zahlungsunfähigkeit mit welchem Vermögen haftet, berechnest die Gewinnverteilung nach Gesetz und nach Vertrag und leitest daraus eine Empfehlung ab.",
+        "vorwissen_kurz": "Gläubiger wollen bezahlt werden. Gesellschafter wollen am Gewinn beteiligt werden, der ihrem Einsatz entspricht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn es schiefgeht: Haftung",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Drei Jahre nach der Gründung kann Jonas' Betrieb seine Rechnungen nicht mehr bezahlen. Den Schulden von 150.000 € steht verwertbares Vermögen von 80.000 € gegenüber; 70.000 € sind ungedeckt. Wer trägt diesen Ausfall?",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Einzelunternehmen",
+              "KG",
+              "GmbH"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Jonas",
+                  "haftet mit seinem ganzen Privatvermögen für die 70.000 €",
+                  "haftet als Komplementär unbeschränkt mit seinem Privatvermögen",
+                  "haftet nicht persönlich — außer für Kredite, für die er gebürgt hat"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tante Petra",
+                  "ist Gläubigerin; ihr Darlehen gehört zu den Schulden und wird nur teilweise zurückgezahlt",
+                  "hat ihre Einlage geleistet: Die 60.000 € sind verloren, weiter haftet sie nicht",
+                  "ihre Einlage ist verloren, weiter haftet sie nicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gläubiger",
+                  "greifen auf Betriebs- und Privatvermögen von Jonas zu",
+                  "greifen auf Gesellschaftsvermögen und Jonas' Privatvermögen zu",
+                  "erhalten nur das Gesellschaftsvermögen; die Bank hält sich an den Bürgen"
+                ]
+              }
+            ],
+            "fazit": "Die Tante riskiert in KG und GmbH genau ihre Einlage. Jonas haftet nur in der GmbH begrenzt — und auch dort nicht für den Bankkredit, wenn er gebürgt hat.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn es gut läuft: Gewinnverteilung",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im ersten guten Jahr erwirtschaftet der Betrieb 48.000 € Gewinn. Jonas arbeitet voll mit, die Tante nicht.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "**KG ohne Vereinbarung über Beteiligungsverhältnisse.** Seit 2024 verteilt das Gesetz Gewinn und Verlust einer OHG oder KG vorrangig nach den vereinbarten Beteiligungsverhältnissen, ersatzweise nach dem vereinbarten Wert der Beiträge, zuletzt nach Köpfen. Haben Jonas und seine Tante nur die Einlagen von 20.000 € und 60.000 € festgehalten, wird im Verhältnis 1 : 3 verteilt.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Verteilung",
+              "Jonas (Komplementär)",
+              "Tante (Kommanditistin)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gesetzlicher Ausgangspunkt: nach Wert der Beiträge 1 : 3",
+                  "48.000 € × ¼ = 12.000 €",
+                  "48.000 € × ¾ = 36.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrag: vorab 30.000 € Tätigkeitsvergütung für Jonas",
+                  "30.000 €",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrag: Rest 18.000 € im Verhältnis 1 : 3",
+                  "4.500 €",
+                  "13.500 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrag: Summe",
+                  "34.500 €",
+                  "13.500 €"
+                ]
+              }
+            ],
+            "fazit": "Ohne Vertrag würde Jonas für ein Jahr Vollzeitarbeit 12.000 € erhalten. Mit der Tätigkeitsvergütung wird sein Arbeitseinsatz berücksichtigt; die Tante erhält für 60.000 € Einlage noch 13.500 €, also 22,5 %.",
+            "id": "b3-t2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der GmbH ist Jonas' Arbeit als Geschäftsführergehalt bereits Aufwand und mindert den Gewinn. Bei 30.000 € Gehalt bleiben 18.000 € Gewinn. Beschließen die Gesellschafter die Ausschüttung, wird sie nach dem Verhältnis der Geschäftsanteile verteilt: Jonas 4.500 €, Tante 13.500 €. Bevor ausgeschüttet werden kann, zahlt die GmbH allerdings selbst Körperschaft- und Gewerbesteuer; in der KG versteuern die Gesellschafter ihren Gewinnanteil persönlich.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Empfehlung für Jonas",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Tante passt die KG: Sie haftet nur mit ihrer Einlage, muss nicht mitarbeiten und hat Kontrollrechte. Jonas haftet in der KG allerdings unbeschränkt. Will er sein Privatvermögen schützen, kommt die GmbH oder eine GmbH & Co. KG in Frage — mit mehr Gründungsaufwand und dem Wissen, dass die Bank für ihren Kredit trotzdem eine Bürgschaft verlangen wird. In jedem Fall gehören eine Tätigkeitsvergütung und ein klarer Gewinnverteilungsschlüssel in den Gesellschaftsvertrag.",
+            "id": "b3-p5"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Haftung des Kommanditisten im Detail",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Kommanditist haftet den Gläubigern unmittelbar, aber nur bis zur Höhe der im Handelsregister eingetragenen Haftsumme. Hat er seine Einlage in dieser Höhe geleistet, ist seine persönliche Haftung ausgeschlossen. Zahlt die KG ihm die Einlage später zurück, lebt die Haftung wieder auf. Beginnt die KG ihre Geschäfte mit seiner Zustimmung schon vor der Eintragung ins Handelsregister, haftet er für die bis dahin entstandenen Schulden wie ein Komplementär.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Die alte Regel aus vielen Lehrbüchern",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bis Ende 2023 sah das HGB für OHG und KG ohne Vereinbarung vor, zuerst 4 % auf den Kapitalanteil zu verteilen und den Rest nach Köpfen (OHG) beziehungsweise in einem angemessenen Verhältnis (KG). Diese Regel wurde durch das Gesetz zur Modernisierung des Personengesellschaftsrechts abgeschafft. Ältere Lösungen mit der 4-%-Regel sind deshalb nur noch richtig, wenn der Gesellschaftsvertrag diese Verteilung ausdrücklich vorsieht.",
+                "id": "b3-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k4-b2"
+                ],
+                "text": "Bürgschaft als Personensicherheit",
+                "id": "b3-d2-v1"
+              }
+            ],
+            "id": "b3-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Die KG hat 60.000 € Gewinn. Vereinbart ist: Jonas erhält vorab 30.000 €, der Rest wird im Verhältnis der Einlagen 20.000 € zu 60.000 € verteilt. Wie viel erhält jeder?",
+            "antwort": "Nach der Vorabvergütung bleiben 30.000 €. Davon erhält Jonas ¼, also 7.500 €, die Tante ¾, also 22.500 €. Jonas bekommt insgesamt 37.500 €, die Tante 22.500 €.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Die Tante hat erst 40.000 € ihrer vereinbarten Einlage von 60.000 € eingezahlt, als die KG zahlungsunfähig wird. Wie weit haftet sie den Gläubigern?",
+            "antwort": "Bis zur Höhe ihrer im Handelsregister eingetragenen Haftsumme, soweit sie diese noch nicht geleistet hat. Bei einer Haftsumme von 60.000 € sind das noch 20.000 €, die Gläubiger direkt von ihr verlangen können.",
+            "id": "b3-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "Handelsgesetzbuch, §§ 120, 126, 167, 169, 171, 176",
+            "url": "https://www.gesetze-im-internet.de/hgb/",
+            "bezug": "Gewinnverteilung und Haftung in der KG"
+          },
+          {
+            "titel": "Rödl & Partner: Auswirkungen des neuen Personengesellschaftsrechts auf die Ergebnisverteilung (2024)",
+            "url": "https://www.roedl.com/insights/auswirkungen-neues-personengesellschaftsrecht-auf-ergebnisverteilung-rechte-der-gesellschafter/",
+            "bezug": "Gewinnverteilung seit 1.1.2024"
+          },
+          {
+            "titel": "GmbH-Gesetz, §§ 13, 29, 46",
+            "url": "https://www.gesetze-im-internet.de/gmbhg/",
+            "bezug": "Haftung und Gewinnverteilung der GmbH"
+          }
+        ]
+      }
+    ]
+  }
+}
