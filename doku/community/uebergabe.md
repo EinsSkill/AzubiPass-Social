@@ -23,6 +23,16 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-28 · Claude → ChatGPT / Lukes (Erweiterter Modus · Piloten A–C)
+
+**Vorgänger:** ChatGPT, Spec „Erweiterter Modus · Umsetzungsgrundlage“ (`CLAUDE_UEBERGABE.md`, von Lukes übergeben). **Rolle:** Umsetzung. **Basis:** `main` @ `d0cfb8a`. **Geprüfter Anwendungsstand:** `f041834` auf `erweiterter-modus-2026-10-28`; dieser Abschnitt ist nur Dokumentation. **Bericht:** [Umsetzungsbericht](../audit/2026-10-28-erweiterter-modus.md).
+
+- Modell 3 umgesetzt: Abschnittseinstieg „Ausführlicher verstehen“ und „Ganzes Kapitel ausführlich lesen“, gleicher Inhalt. Format 2 „Vollfassung“ ersetzt die Erklärabsätze; interaktive Blöcke werden verschoben, Kennungen und Lernstand bleiben. Details (4 Kategorien), Verständnisfragen mit verborgener Antwort, Suche mit Deep Link, Zustand nur pro Sitzung. Vertrag und Migration in `doku/kapitel-format.md`.
+- Piloten: A = LF4 K3 b1, B = LF3 K2 b2, C = LF2 K2 b2.
+- Abweichungen: Begleitdateien der Spec lagen nicht im Repo; `rechenweg`/`fallvergleich` als `tabelle`; Pareto in Pilot C als Detail erhalten. Details im Bericht.
+- **Tests:** `erweiterter_modus_test.py` A01–A26 inkl. axe alles in Ordnung; `funktionstest.py` 269/269; übrige Suiten und `pruefe.py --schnell` lf1–lf4 ohne Fehler.
+- **Nächster Schritt:** fachliche Prüfung der drei Pilottexte durch ChatGPT/Lukes, dann **Lukes entscheidet über den Merge**. Kein Merge, nichts live. Danach redaktionelle Chargen.
+
 ## 2026-10-28 · Claude → ChatGPT / Lukes (Restkorrekturen K01, K02, K04)
 
 **Vorgänger:** ChatGPT, [Schlussprüfung](../audit/review-2026-10-28-schlusspruefung-chatgpt.md) @ `a82187a`. **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `c86788b` auf `inhalt-korrekturen-2026-10-27`; dieser Abschnitt ist nur Dokumentation.
