@@ -348,6 +348,8 @@
       var titel = e.start.previousElementSibling;   // die h3
 
       if (!offen) {
+        // Wer das Ziel eines Direktlinks bewusst schließt, will kompakt weiter.
+        if (!still && tiefeAktiv && tiefeAktiv.ab === e.ab) tiefeParameterEntfernen();
         // Fokus nie in verborgenem Inhalt zurücklassen.
         if (e.ziel.contains(document.activeElement)) e.start.focus({ preventScroll: true });
         e.ziel.querySelectorAll("details[open]").forEach(function (d) { d.open = false; });
@@ -401,6 +403,7 @@
       knopf.addEventListener("click", function () {
         var alle = eintraege.every(function (e) { return !e.ziel.hidden; });
         // Nur die Haupttexte – Details und Antworten bleiben, wie sie sind.
+        if (alle) tiefeParameterEntfernen();
         eintraege.forEach(function (e) { setzeAbschnitt(e, !alle, true); });
       });
     }
@@ -423,25 +426,44 @@
   }
 
   /* Ein Suchtreffer kann verlangen, dass eine Vertiefung offen ist:
-     lf4.html?ansicht=ausfuehrlich&detail=d1#k3-b1. Gilt nur für den ersten
-     Aufruf; danach verschwinden die Parameter, damit ein Neuladen wieder
-     kompakt beginnt. Unbekannte Details öffnen nur den Abschnitt. */
+     lf4.html?ansicht=ausfuehrlich&detail=d1#k3-b1. Die Parameter bleiben in
+     der Adresse (Review E02): Kopieren oder Neuladen öffnet dasselbe Ziel.
+     Sie verschwinden erst, wenn man diesen Abschnitt bewusst schließt oder an
+     eine andere Stelle springt — ein normaler Aufruf ohne sie bleibt kompakt.
+     Andere Suchparameter bleiben unberührt. Unbekannte Details öffnen nur den
+     Abschnitt. */
   var tiefeVerlangt = (function () {
     try {
       var p = new URLSearchParams(location.search);
       if (p.get("ansicht") !== "ausfuehrlich") return null;
-      return { detail: p.get("detail") || "" };
+      return { detail: p.get("detail") || "", hash: location.hash, ab: null };
     } catch (e) { return null; }
   })();
+  var tiefeAktiv = tiefeVerlangt;
+
+  function tiefeParameterEntfernen() {
+    if (!tiefeAktiv) return;
+    tiefeAktiv = null;
+    try {
+      var p = new URLSearchParams(location.search);
+      p.delete("ansicht"); p.delete("detail");
+      var rest = p.toString();
+      history.replaceState(history.state, "", location.pathname + (rest ? "?" + rest : "") + location.hash);
+    } catch (e) {}
+  }
+  window.addEventListener("hashchange", function () {
+    if (tiefeAktiv && location.hash !== tiefeAktiv.hash) tiefeParameterEntfernen();
+  });
 
   function tiefeAnwenden(sec, stelle) {
     if (!tiefeVerlangt || !stelle || !/^H3$/.test(stelle.tagName)) return stelle;
+    if (location.hash !== tiefeVerlangt.hash) return stelle;
     var wunsch = tiefeVerlangt;
     tiefeVerlangt = null;
-    try { history.replaceState(null, "", location.pathname + location.hash); } catch (e) {}
     var steuerung = vertiefungen.get(sec);
     var ab = stelle.id.split("-").slice(1).join("-");
     var e = steuerung && steuerung.oeffne(ab);
+    if (tiefeAktiv) tiefeAktiv.ab = e ? ab : null;
     if (!e || !wunsch.detail) return stelle;
     var ziel = e.ziel.querySelector('[data-detail="' + CSS.escape(wunsch.detail) + '"]');
     if (!ziel) return stelle;

@@ -49,6 +49,9 @@ KATEGORIEN = {
 BASIS_TYPEN = {"grafik", "check", "zuordnen", "merke", "tabelle",
                "achtung", "praxistipp", "vertiefung"}
 
+# Felder, die es nur in Vollfassungen gibt (E01-Erkennung ohne Kennzeichen).
+FORMAT2_FELDER = {"inhalt", "details", "ziel", "vorwissen_kurz", "quellen"}
+
 KENNUNG = re.compile(r"^[a-z0-9][a-z0-9-]{0,40}$")
 
 
@@ -155,6 +158,26 @@ def pruefe(ch, lf, datei, cache=None):
     eigene = ch.get("ausfuehrlich")
     if not isinstance(eigene, dict):
         return {}
+    # Review E01: Kennzeichen prüfen, bevor gefiltert wird. Ein Tippfehler in
+    # „darstellung“ oder ein Format-2-Eintrag ohne Kennzeichen darf nicht still
+    # im Altformat-Renderer landen. Echte Alteinträge (ohne Kennzeichen, ohne
+    # Format-2-Felder) bleiben erlaubt.
+    if "format" in eigene and eigene["format"] != 2:
+        _fehler(datei, "–", f"unbekanntes format {eigene['format']!r} unter ausfuehrlich (erlaubt: 2)")
+    for e in eigene.get("abschnitte", []):
+        if not isinstance(e, dict):
+            continue
+        ab_e = e.get("abschnitt", "–")
+        if "darstellung" in e and e["darstellung"] != "vollfassung":
+            _fehler(datei, ab_e, f"unbekannte darstellung „{e['darstellung']}“ (erlaubt: vollfassung)")
+        if not ist_vollfassung(e):
+            neu = sorted(k for k in FORMAT2_FELDER if k in e)
+            fragen = e.get("verstaendnisfragen")
+            if isinstance(fragen, list) and any(isinstance(f, dict) for f in fragen):
+                neu.append("verstaendnisfragen als Objekte")
+            if neu:
+                _fehler(datei, ab_e, "Eintrag mit Format-2-Feldern (" + ", ".join(neu) +
+                        ") ohne darstellung \"vollfassung\"")
     eintraege = [e for e in eigene.get("abschnitte", []) if ist_vollfassung(e)]
     if not eintraege:
         return {}
@@ -184,8 +207,17 @@ def pruefe(ch, lf, datei, cache=None):
                 if ref in genutzt:
                     _fehler(datei, ab, f"basis-Verweis „{ref}“ steht doppelt — ein Block lebt nur einmal")
                 genutzt.add(ref)
-        if not any(x.get("typ") == "absatz" for x in basis[ab]["inhalt"]):
-            _fehler(datei, ab, "die Kurzfassung hat keinen Absatz, den die Vollfassung ersetzen könnte")
+        # M01: Eine Kurzfassung ohne Absatz (nur Tabelle, Grafik, Check …) darf
+        # trotzdem eine Vollfassung haben — dann ersetzt sie nichts, sondern
+        # erklärt und holt die Originale einmal heran. Streng bleibt: Die
+        # Vollfassung selbst muss erklärenden Text enthalten, und jedes
+        # Original mit eigener Funktion wird genau einmal platziert (M02:
+        # beim Umschalten darf nichts verloren gehen oder doppelt erscheinen).
+        if not any(x.get("typ") == "absatz" for x in e["inhalt"]):
+            _fehler(datei, ab, "die Vollfassung enthält keinen erklärenden Absatz")
+        fehlend = sorted(erlaubte - genutzt)
+        if fehlend:
+            _fehler(datei, ab, "Originalblöcke ohne Platz in der Vollfassung: " + ", ".join(fehlend))
 
         for d in e.get("details", []):
             did = d.get("id")

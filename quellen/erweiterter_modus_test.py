@@ -174,6 +174,37 @@ def vertrag():
     faellt(lambda c, e: e["details"][3]["inhalt"][1].update(ziele=["ik2024-lf04:k01"]), "Verweis in fremden Beruf")
     faellt(lambda c, e: c["ausfuehrlich"]["abschnitte"].append({"abschnitt": "b1", "erklaerung": "alt"}),
            "Vollfassung und Alteintrag für denselben Abschnitt")
+    faellt(lambda c, e: e["inhalt"].__setitem__(slice(None), [x for x in e["inhalt"] if x["typ"] != "absatz"]),
+           "M01 streng: Vollfassung ohne eigenen Absatz")
+    faellt(lambda c, e: e["inhalt"].__setitem__(slice(None), [x for x in e["inhalt"] if x.get("ref") != "merke-1"]),
+           "M02 Originalblock ohne Platz in der Vollfassung")
+    faellt(lambda c, e: c["ausfuehrlich"].update(format=3), "E01 unbekanntes format")
+
+    print("G03 · E01 · Fehlerhafte Kennzeichnung bricht ab, echtes Altformat bleibt")
+    for datei, lfid in (("lf4-k3-angebotsvergleich.kapitel.json", "lf4"),
+                        ("lf3-k2-vertrag.kapitel.json", "lf3"),
+                        ("lf2-k2-zeitmanagement.kapitel.json", "lf2")):
+        c = json.loads((HIER / datei).read_text(encoding="utf-8"))
+        for art, aendern in (("Tippfehler vollfasung", lambda e: e.update(darstellung="vollfasung")),
+                             ("Kennzeichen fehlt", lambda e: e.pop("darstellung"))):
+            c2 = copy.deepcopy(c)
+            e = [x for x in c2["ausfuehrlich"]["abschnitte"] if x.get("darstellung") == "vollfassung"][0]
+            ab = e["abschnitt"]
+            aendern(e)
+            try:
+                vertiefung.pruefe(c2, {"id": lfid}, datei)
+                pruefe(False, f"E01 {datei} · {art}", "kein Abbruch")
+            except vertiefung.Vertragsfehler as f:
+                m = str(f)
+                pruefe(datei in m and f"Abschnitt {ab}" in m, f"E01 {datei} · {art}: Abbruch mit Datei und Abschnitt",
+                       m.strip().split(": ", 1)[-1][:60])
+    # Echtes Altkapitel ohne Format 2 bleibt gültig und liefert keine Vollfassung
+    alt = json.loads((HIER / "lf1-k1-duale-ausbildung.kapitel.json").read_text(encoding="utf-8"))
+    if not any(vertiefung.ist_vollfassung(x) for x in alt["ausfuehrlich"].get("abschnitte", [])):
+        pruefe(vertiefung.pruefe(alt, {"id": "lf1"}, "lf1-k1") == {}, "E01 Echtes Altkapitel bleibt gültig")
+    # Im gebauten Lerninhalt kein Python-Objekttext aus Fragen
+    roh = "".join((DOCS / f).read_text(encoding="utf-8") for f in ("lf2.html", "lf3.html", "lf4.html"))
+    pruefe("{'id':" not in roh and "'frage':" not in roh, "E01 Kein Objekttext im erzeugten Lerninhalt")
 
 
 def browser(w):
@@ -258,6 +289,7 @@ def browser(w):
         ant = "#k3-b1-f-a1 details.vf-antwort"
         pruefe(not pg.evaluate(f"() => document.querySelector('{ant}').open"), "A07 Antwort zunächst verborgen")
         pg.click(f"{ant} > summary")
+        pg.wait_for_timeout(100)   # toggle-Ereignis ist asynchron
         pruefe(pg.evaluate(f"() => document.querySelector('{ant}').open")
                and pg.inner_text(f"{ant} > summary").strip() == "Antwort ausblenden",
                "A07 Antwort bewusst aufklappbar, Beschriftung folgt")
@@ -310,8 +342,8 @@ def browser(w):
         pg.wait_for_timeout(150)
         z = zustand(pg, "k3", "b1")
         pruefe(z["offen"] and z["detailsOffen"] == 0, "A11 Treffer Hauptvertiefung öffnet genau den Abschnitt")
-        pruefe(pg.evaluate("() => location.search") == "" and pg.evaluate("() => location.hash") == "#k3-b1",
-               "A18 Parameter nach Anwendung entfernt, Fragment bleibt")
+        pruefe(pg.evaluate("() => location.search") == "?ansicht=ausfuehrlich" and pg.evaluate("() => location.hash") == "#k3-b1",
+               "E02 Direktlink: Ansicht bleibt in der Adresse, Fragment bleibt")
         pg.goto(f"{w}/lf4.html?ansicht=ausfuehrlich&detail=a-ohne-skonto#k3-b1")
         pg.wait_for_selector("#k3:not([hidden])")
         pg.wait_for_timeout(200)
@@ -319,6 +351,43 @@ def browser(w):
             const t = d.getBoundingClientRect().top; return { offen: d.open, top: t, h: innerHeight,
             andere: document.querySelectorAll('#k3-b1-voll details.vf-detail[open]').length }; }""")
         pruefe(r["offen"] and r["andere"] == 1 and 0 <= r["top"] < r["h"], "A12 Detailtreffer öffnet genau dieses Detail im Blick", r)
+        # G07 / E02: Neuladen und erneutes Öffnen der kopierten Adresse
+        kopiert = pg.evaluate("() => location.href")
+        pruefe("detail=a-ohne-skonto" in kopiert, "G07 Detailparameter bleibt in der Adresse", kopiert)
+        pg.reload()
+        pg.wait_for_selector("#k3:not([hidden])")
+        pg.wait_for_timeout(200)
+        pruefe(pg.evaluate("() => document.getElementById('k3-b1-d-a-ohne-skonto').open")
+               and zustand(pg, "k3", "b1")["offen"], "G07 Nach Neuladen derselbe Detailbereich offen")
+        pg.goto("about:blank")
+        pg.goto(kopiert)
+        pg.wait_for_selector("#k3:not([hidden])")
+        pg.wait_for_timeout(200)
+        pruefe(pg.evaluate("() => document.getElementById('k3-b1-d-a-ohne-skonto').open"),
+               "G07 Kopierte Adresse in neuem Aufruf öffnet dasselbe Ziel")
+        # Bewusstes Schließen entfernt nur Ansicht/Detail, andere Parameter bleiben
+        pg.goto(f"{w}/lf4.html?quelle=test&ansicht=ausfuehrlich&detail=a-ohne-skonto#k3-b1")
+        pg.wait_for_selector("#k3:not([hidden])")
+        pg.wait_for_timeout(200)
+        pg.click(schalter("k3", "b1"))
+        pruefe(pg.evaluate("() => location.search") == "?quelle=test" and not zustand(pg, "k3", "b1")["offen"],
+               "E02 Schließen entfernt nur ansicht/detail, fremde Parameter bleiben",
+               pg.evaluate("() => location.search"))
+        pg.reload()
+        pg.wait_for_selector("#k3:not([hidden])")
+        pruefe(not zustand(pg, "k3", "b1")["offen"], "G07 Danach Neuladen kompakt")
+        # Sprung an eine andere Stelle entfernt die Parameter ebenfalls
+        pg.goto(f"{w}/lf4.html?ansicht=ausfuehrlich#k3-b1")
+        pg.wait_for_selector("#k3:not([hidden])")
+        pg.evaluate("() => { location.hash = '#k4'; }")
+        pg.wait_for_selector("#k4:not([hidden])")
+        pruefe(pg.evaluate("() => location.search") == "", "E02 Sprung zu anderem Ziel entfernt die Parameter")
+        # Unbekannte Detailkennung bleibt harmlos
+        pg.goto(f"{w}/lf4.html?ansicht=ausfuehrlich&detail=gibtsnicht#k3-b1")
+        pg.wait_for_selector("#k3:not([hidden])")
+        pg.wait_for_timeout(150)
+        pruefe(zustand(pg, "k3", "b1")["offen"] and zustand(pg, "k3", "b1")["detailsOffen"] == 0,
+               "G07 Unbekanntes Detail: nur der Abschnitt öffnet")
         pg.goto(f"{w}/lf4.html?ansicht=ausfuehrlich&detail=a1#k3-b1")
         pg.wait_for_selector("#k3:not([hidden])")
         pg.wait_for_timeout(200)
@@ -365,9 +434,10 @@ def browser(w):
                 pg.wait_for_selector(f"#{kap}:not([hidden])")
                 pg.click(f"#{kap} .detail-schalter")
                 pg.evaluate("() => document.querySelectorAll('.vollfassung details').forEach(d => d.open = true)")
+                pg.wait_for_timeout(700)   # Kartenwende-/Einblendanimationen abwarten
                 pg.add_script_tag(path=axe)
                 v = pg.evaluate("""async (k) => { const r = await axe.run(document.getElementById(k),
-                    { runOnly: ['wcag2a', 'wcag2aa'] }); return r.violations.map(x => x.id + ':' + x.nodes.length); }""", kap)
+                    { runOnly: ['wcag2a', 'wcag2aa'] }); return r.violations.map(x => x.id + ':' + x.nodes.length + ' ' + x.nodes.map(n => n.target.join(' ') + ' ' + ((n.any[0]||{}).message||'')).join(' ; ')); }""", kap)
                 pruefe(not v, f"A20 axe WCAG A/AA ohne Verstoß · {seite} offen", v)
         else:
             print("  (axe übersprungen: AXE_PFAD nicht gesetzt)")
