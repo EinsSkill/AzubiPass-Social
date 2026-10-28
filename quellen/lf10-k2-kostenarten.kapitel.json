@@ -6,66 +6,512 @@
   "untertitel": "Zwei Einteilungen, die nichts miteinander zu tun haben.",
  "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Kosten können direkt einem Produkt oder nur über einen Schlüssel zugerechnet werden.",
-          "Das Bezugsobjekt muss immer genannt werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Kosten als Einzel-, Sondereinzel- oder Gemeinkosten ein und nennst dabei stets das Bezugsobjekt.",
+        "vorwissen_kurz": "Ein Kostenträger ist das, wofür Kosten anfallen: ein Produkt, ein Auftrag, eine Leistung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Lässt sich der Betrag einem Stück zuordnen?",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die erste Einteilung fragt nach der **Zurechenbarkeit**. {{begriff:einzelkosten|Einzelkosten}} lassen sich einem einzelnen Kostenträger direkt und nachprüfbar zuordnen, weil man messen kann, wie viel auf ihn entfällt. {{begriff:gemeinkosten|Gemeinkosten}} entstehen für mehrere Kostenträger gemeinsam; sie werden erst über einen Schlüssel verteilt. Je größer der Anteil der Gemeinkosten, desto mehr hängt die Kalkulation von der Wahl dieser Schlüssel ab.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Sechs Kostenarten eines MAKEL-Hoodies",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kostenart",
+              "Bezogen auf den einzelnen Hoodie",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Baumwollstoff, 1,4 m je Hoodie",
+                  "Einzelkosten",
+                  "Verbrauch je Stück lässt sich aus der Stückliste ablesen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lohn der Näherin, 25 Minuten je Hoodie",
+                  "Einzelkosten",
+                  "Arbeitszeit je Stück wird erfasst"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stickprogramm für das Logo eines Vereinsauftrags, 600 €",
+                  "Sondereinzelkosten der Fertigung",
+                  "gehört zu genau diesem Auftrag, nicht zu einem einzelnen Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Speditionskosten für die Lieferung an diesen Verein, 180 €",
+                  "Sondereinzelkosten des Vertriebs",
+                  "einem Auftrag zurechenbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Strom der Näherei",
+                  "Gemeinkosten",
+                  "wird für alle Produkte gemeinsam verbraucht und nicht je Stück gemessen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gehalt der Produktionsleiterin",
+                  "Gemeinkosten",
+                  "sie betreut die gesamte Fertigung"
+                ]
+              }
+            ],
+            "fazit": "Bei 300 Vereins-Hoodies entfallen auf jedes Stück 2 € Stickprogramm und 0,60 € Spedition. Diese Beträge werden auf den Auftrag gerechnet, nicht in einen allgemeinen Zuschlag gemischt.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Einzelkosten lassen sich einem Produkt direkt zuordnen, etwa Fertigungsmaterial und Fertigungslöhne. Gemeinkosten können nur über Schlüssel verteilt werden, etwa Miete oder Verwaltungsgehälter. Sondereinzelkosten sind dem Auftrag, nicht dem einzelnen Stück zurechenbar. Die richtige Frage lautet immer: Zurechenbar wozu?",
-        "beispiele": [
-          "Fertigungsmaterial ist Einzelkosten und direkt einem Produkt zurechenbar.",
-          "Miete ist Gemeinkosten und wird über einen Schlüssel auf Kostenstellen oder Produkte verteilt."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Unechte Gemeinkosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Kosten könnte man einem Stück zwar zurechnen, tut es aber nicht, weil sich der Aufwand nicht lohnt: Nähgarn, Etiketten oder Klebstoff. Man behandelt sie aus Vereinfachung als Gemeinkosten und spricht von unechten Gemeinkosten. Für die Kalkulation genügt hier ein Zuschlag.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Auftrag benötigt ein eigens gefertigtes Werkzeug. Das Werkzeug gehört als Sondereinzelkosten direkt zum Auftrag, aber nicht sinnvoll zu einem einzelnen Stück. Der Fertigungsmeister wird dagegen über einen Schlüssel als Gemeinkosten verteilt. Das Bezugsobjekt entscheidet die Einordnung.",
-        "typische_fehler": "Gemeinkosten werden mit variablen Kosten gleichgesetzt. Außerdem wird Sondereinzelkosten so behandelt, als ließe sie sich immer auf jedes einzelne Stück verteilen.",
         "verstaendnisfragen": [
-          "Was sind Einzelkosten? Direkt zurechenbare Kosten eines Bezugsobjekts.",
-          "Worauf beziehen sich Sondereinzelkosten? Auf den Auftrag, nicht auf das einzelne Stück."
-        ],
-        "pruefungsbezug": "Prüfe bei jeder Kostenart zuerst das Bezugsobjekt und erst danach die Zuordnung Einzel-, Sonder- oder Gemeinkosten.",
-        "merksatz": "Einzel oder gemein beschreibt die Zurechenbarkeit — nicht das Kostenverhalten bei Mengenänderung."
+          {
+            "frage": "Ist das Gehalt der Produktionsleiterin Einzel- oder Gemeinkosten?",
+            "antwort": "Bezogen auf den einzelnen Hoodie Gemeinkosten, weil es sich keinem Stück direkt zuordnen lässt. Bezogen auf die Kostenstelle Fertigung sind es Einzelkosten der Stelle, weil es eindeutig dort anfällt. Die Antwort hängt also vom Bezugsobjekt ab.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum sollte man das Stickprogramm für einen Vereinsauftrag nicht in den allgemeinen Fertigungsgemeinkostenzuschlag einrechnen?",
+            "antwort": "Dann würden alle Produkte einen Teil dieser Kosten tragen, obwohl sie nur für den einen Auftrag anfallen. Der Vereinsauftrag würde zu billig, andere Produkte zu teuer kalkuliert. Als Sondereinzelkosten bleiben sie bei dem Auftrag, der sie verursacht.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Kosten können sich bei steigender Beschäftigung unterschiedlich verhalten.",
-          "Gesamtbetrag und Betrag je Stück müssen getrennt betrachtet werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest fixe, variable und Mischkosten nach ihrem Verhalten bei Mengenänderung und hältst diese Einteilung von Einzel- und Gemeinkosten getrennt.",
+        "vorwissen_kurz": "Die Beschäftigung ist die genutzte Kapazität, etwa die Zahl der produzierten Stücke in einem Monat.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was passiert, wenn mehr produziert wird?",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die zweite Einteilung fragt nach dem **Verhalten bei Mengenänderung**. {{begriff:fixkosten|Fixkosten}} fallen in gleicher Höhe an, ob MAKEL im Monat 2.000 oder 3.000 Hoodies näht: Miete, Gehälter, Versicherungen. {{begriff:variable-kosten|Variable Kosten}} steigen mit der Menge: Stoff, Verpackung, Versand. Diese Einteilung braucht man für Mengen- und Preisentscheidungen, die erste für die Stückkalkulation.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Beide Einteilungen nebeneinander",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "variabel",
+              "fix"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einzelkosten",
+                  "Baumwollstoff, Verpackung je Stück",
+                  "Stickprogramm für einen Auftrag (fix bezogen auf die Auftragsmenge)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gemeinkosten",
+                  "Strom der Stickmaschinen, Nähgarn",
+                  "Miete der Werkstatt, Gehalt der Produktionsleiterin"
+                ]
+              }
+            ],
+            "fazit": "Alle vier Felder sind besetzt. Wer „Einzelkosten“ automatisch für variabel und „Gemeinkosten“ automatisch für fix hält, ordnet die Hälfte falsch ein.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei den Fertigungslöhnen hängt die Einordnung vom Lohnsystem und vom Zeitraum ab. Im Akkordlohn steigen sie direkt mit der Menge. Erhalten die Näherinnen einen festen Monatslohn, ändern sich die Lohnkosten kurzfristig nicht, wenn weniger genäht wird. In der Kalkulation gelten Fertigungslöhne dennoch meist als variabel, weil sie sich der Menge anpassen lassen — über Schichten, Überstunden oder Personalplanung.",
+            "id": "b2-p2"
+          }
         ],
-        "erklaerung": "Fixkosten bleiben in der Summe gleich und sinken je Stück. Variable Kosten steigen in der Summe mit der Menge, bleiben je Stück gleich. Die Einteilung fix/variabel ist unabhängig von Einzel- oder Gemeinkosten. Deshalb kann eine Kostenart gleichzeitig Gemeinkosten und variabel oder Einzelkosten und fix sein.",
-        "beispiele": [
-          "Das Gehalt des Fertigungsmeisters ist Gemeinkosten und fix.",
-          "Energie für Maschinen kann Gemeinkosten und variabel sein; ein eigens für einen Auftrag gefertigtes Werkzeug kann Sondereinzelkosten und im Verhältnis zur Auftragsmenge fix sein."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Mischkosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Kostenarten haben einen fixen und einen variablen Teil. Die Stromrechnung enthält eine Grundgebühr und einen Arbeitspreis je Kilowattstunde; ein Mietwagen kostet eine Monatsrate und Kraftstoff je gefahrenem Kilometer. Für Entscheidungen werden solche Mischkosten in ihren fixen und ihren variablen Teil aufgespalten.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Tabelle enthält Fertigungsmaterial, Fertigungsmeister und Maschinenenergie. Das Material ist direkt zurechenbar und verändert sich mit der Menge: Einzelkosten und variabel. Der Meister ist nicht direkt zurechenbar und bleibt gesamt gleich: Gemeinkosten und fix. Die Maschinenenergie wird verteilt und steigt mit der Nutzung: Gemeinkosten und variabel.",
-        "typische_fehler": "Einzelkosten werden automatisch für variabel gehalten und Gemeinkosten automatisch für fix. Die beiden Fragen — zurechenbar? und mengenabhängig? — werden nicht getrennt gestellt.",
         "verstaendnisfragen": [
-          "Welche zwei Fragen müssen getrennt beantwortet werden? Ist die Kostenart direkt zurechenbar, und ändert sie sich mit der Menge?",
-          "Kann eine Kostenart Gemeinkosten und variabel sein? Ja, zum Beispiel Maschinenenergie."
-        ],
-        "pruefungsbezug": "Fülle Kostentabellen in zwei Durchgängen aus: Zurechenbarkeit und Beschäftigungsabhängigkeit.",
-        "merksatz": "Einzel/Gemein und fix/variabel sind zwei unabhängige Brillen."
+          {
+            "frage": "Ist die Miete der Werkstatt Einzel- oder Gemeinkosten, fix oder variabel?",
+            "antwort": "Bezogen auf das einzelne Produkt Gemeinkosten, weil sie für die ganze Werkstatt anfällt. Und fix, weil sie sich nicht ändert, wenn mehr oder weniger produziert wird. Die beiden Antworten werden getrennt begründet.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist die Unterscheidung fix/variabel für die Annahme eines Zusatzauftrags wichtig?",
+            "antwort": "Ein Zusatzauftrag verursacht bei freier Kapazität nur zusätzliche variable Kosten; die Fixkosten fallen ohnehin an. Wer mit vollen Stückkosten einschließlich Fixkostenanteil rechnet, lehnt möglicherweise einen Auftrag ab, der einen Beitrag zur Deckung der Fixkosten geleistet hätte.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Fixkosten verteilen sich auf die produzierte Menge.",
-          "Variable Stückkosten bilden die Untergrenze der Annäherung."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Stückkosten bei verschiedenen Mengen, erklärst die Fixkostendegression und ihre Grenzen bei sprungfixen Kosten.",
+        "vorwissen_kurz": "Stückkosten = Fixkosten ÷ Menge + variable Kosten je Stück.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gleiche Fixkosten, mehr Stücke",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bleiben die Fixkosten gleich und steigt die Menge, verteilt sich derselbe Betrag auf mehr Stücke. Die Fixkosten je Stück sinken, die variablen Kosten je Stück bleiben gleich. Dadurch sinken die Stückkosten, ohne dass an der Herstellung etwas besser geworden wäre. Das ist die **Fixkostendegression**.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit denselben Werten: Bei 1.500 Stück betragen die Fixkosten je Stück 40.000 € ÷ 1.500 ≈ 26,67 €, die Stückkosten also rund 86,67 €. Der Rechenweg ist immer derselbe: Fixkosten durch die Menge teilen, variable Stückkosten addieren.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Stückkosten können deshalb nie unter die variablen Stückkosten sinken; sie nähern sich ihnen nur an. Das ist der rechnerische Grund für die kurzfristige Preisuntergrenze in Kapitel 5.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn die Kapazität nicht reicht",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Angenommen, eine Stickmaschine schafft im Monat höchstens 2.000 Stück. Für mehr braucht MAKEL eine zweite Maschine, die die Fixkosten um 15.000 € im Monat erhöht.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Menge",
+              "Fixkosten gesamt",
+              "Fixkosten je Stück",
+              "Variable je Stück",
+              "Stückkosten"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "2.000",
+                  "40.000 €",
+                  "20,00 €",
+                  "60,00 €",
+                  "80,00 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "2.001",
+                  "55.000 €",
+                  "27,49 €",
+                  "60,00 €",
+                  "87,49 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "2.500",
+                  "55.000 €",
+                  "22,00 €",
+                  "60,00 €",
+                  "82,00 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "fazit": "Mit dem ersten Stück über der Kapazitätsgrenze springen die Stückkosten nach oben. Erst bei deutlich höherer Auslastung lohnt sich die zweite Maschine.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Fixkostendegression bedeutet, dass unveränderte Fixkosten auf mehr Stück verteilt werden. Die Stückkosten sinken, nähern sich den variablen Stückkosten an, unterschreiten sie aber nie. Kapazität, Absatz und sprungfixe Kosten begrenzen den Effekt.",
-        "beispiele": [
-          "Bei 90.000 € Fixkosten und 45 € variablen Kosten je Stück betragen die Stückkosten bei 600 Stück 90.000 ÷ 600 + 45 = 195 €.",
-          "Bei 1.500 Stück sind es 90.000 ÷ 1.500 + 45 = 105 €; bei 3.000 Stück 90.000 ÷ 3.000 + 45 = 75 €."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Degression ist kein Grund, auf Vorrat zu produzieren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Niedrigere Stückkosten nützen nur, wenn die Ware verkauft wird. Unverkaufte Hoodies binden Geld im Lager, verursachen Lagerkosten und verlieren bei Mode schnell an Wert. Die Menge richtet sich deshalb nach dem erwarteten Absatz, nicht nach der rechnerisch günstigsten Stückzahl.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Die Stückkosten sinken rechnerisch von 195 € über 105 € auf 75 €, wenn die Menge von 600 über 1.500 auf 3.000 steigt. Die variable Untergrenze von 45 € wird nicht unterschritten. Vor einer Mengenausweitung werden zusätzlich Kapazität und Absatz geprüft; unverkaufte Ware bindet sonst Kapital.",
-        "typische_fehler": "Nur die rechnerisch sinkenden Stückkosten werden betrachtet. Reicht die Kapazität nicht oder wird die Ware nicht verkauft, entstehen sprungfixe Kosten oder Lagerbelastung.",
         "verstaendnisfragen": [
-          "Wie sinken Fixkosten je Stück? Durch Division des gleichbleibenden Gesamtbetrags durch eine größere Menge.",
-          "Welche Untergrenze nähern sich die Stückkosten an? Den variablen Stückkosten."
+          {
+            "frage": "Die Fixkosten betragen 90.000 €, die variablen Kosten 45 € je Stück. Wie hoch sind die Stückkosten bei 600 und bei 3.000 Stück?",
+            "antwort": "Bei 600 Stück: 90.000 € ÷ 600 = 150 € Fixkosten je Stück, plus 45 € = 195 €. Bei 3.000 Stück: 90.000 € ÷ 3.000 = 30 € plus 45 € = 75 €.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum können die Stückkosten nie unter die variablen Stückkosten sinken?",
+            "antwort": "Die Fixkosten je Stück werden mit steigender Menge zwar immer kleiner, aber nie null. Die variablen Kosten fallen für jedes Stück in voller Höhe an. Die Stückkosten nähern sich ihnen also an, ohne sie zu erreichen.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest die kalkulatorische Abschreibung aus Wiederbeschaffungswert und erwarteter Nutzungsdauer her, vergleichst sie mit der bilanziellen Abschreibung und ordnest die Differenz als Anderskosten ein.",
+        "vorwissen_kurz": "Die bilanzielle Abschreibung verteilt die Anschaffungskosten nach handels- und steuerrechtlichen Regeln auf die Nutzungsdauer.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum die Kostenrechnung anders abschreibt",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL hat im Januar 2026 eine Stickmaschine für 100.000 € gekauft. Für den Jahresabschluss wird sie degressiv mit 30 % abgeschrieben, was für Anschaffungen zwischen Juli 2025 und Ende 2027 steuerlich zulässig ist; als steuerliche Nutzungsdauer werden sieben Jahre angenommen. Die Kostenrechnung stellt eine andere Frage: Wie viel Wert verbraucht die Maschine wirklich, und wie viel muss über die Preise hereinkommen, damit MAKEL sie ersetzen kann? Eine vergleichbare neue Maschine würde heute 115.000 € kosten, und MAKEL rechnet mit fünf Jahren Nutzung.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Jahre im Vergleich",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Jahr",
+              "Bilanzielle Abschreibung (30 % degressiv)",
+              "Kalkulatorische Abschreibung (115.000 € ÷ 5)",
+              "Kosten minus Aufwand"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "2026",
+                  "30.000 €",
+                  "23.000 €",
+                  "−7.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "2027",
+                  "21.000 €",
+                  "23.000 €",
+                  "+2.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "2028",
+                  "14.700 €",
+                  "23.000 €",
+                  "+8.300 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Die bilanzielle Abschreibung schwankt mit dem Verfahren. Die kalkulatorische belastet jedes Jahr gleich, damit die Stückkosten nicht allein wegen der Abschreibungsmethode steigen oder fallen.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Ergebnistabelle erscheint diese Differenz bei den kostenrechnerischen Korrekturen: links die bilanzielle Abschreibung laut Buchführung, rechts die verrechnete kalkulatorische Abschreibung. 2026 sind die Kosten um 7.000 € niedriger als der Aufwand, 2028 um 8.300 € höher.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b4-b3"
+          }
         ],
-        "pruefungsbezug": "Rechne Fixkosten je Stück plus variable Stückkosten und nenne bei Beurteilungen Kapazität und Absatz als Grenzen.",
-        "merksatz": "Mehr Menge verteilt Fixkosten besser, aber variable Stückkosten bleiben die Untergrenze."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Nach dem Ende der Abschreibung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nutzt MAKEL die Maschine länger als geplant, etwa sechs statt fünf Jahre, ist sie kalkulatorisch nach fünf Jahren voll abgeschrieben. Viele Betriebe setzen die kalkulatorische Abschreibung trotzdem weiter an, solange die Maschine genutzt wird, weil sie weiterhin Wert verzehrt und ersetzt werden muss. Wichtig ist, die Annahme offen zu legen und bei Abweichungen die Nutzungsdauer neu zu schätzen.",
+                "id": "b4-d1-p1"
+              }
+            ],
+            "id": "b4-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Kalkulatorische Zinsen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben der Abschreibung setzt die Kostenrechnung kalkulatorische Zinsen an: auf das betriebsnotwendige Kapital, also das für den Betriebszweck gebundene Vermögen. Für abnutzbare Anlagen wird meist das durchschnittlich gebundene Kapital verwendet, die Hälfte des Ausgangswerts. Bei 115.000 € und 6 % wären das 57.500 € × 6 % = 3.450 € im Jahr.",
+                "id": "b4-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k1-b4"
+                ],
+                "text": "Ergebnistabelle mit Anderskosten",
+                "id": "b4-d2-v1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf9:k6-b1"
+                ],
+                "text": "Kalkulatorische Zinsen im Kostenvergleich",
+                "id": "b4-d2-v2"
+              }
+            ],
+            "id": "b4-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum wählt die Kostenrechnung meist die lineare Methode, obwohl bilanziell degressiv abgeschrieben werden darf?",
+            "antwort": "Die degressive Methode belastet die ersten Jahre stark und die späteren schwach. In der Kalkulation würden dieselben Hoodies im ersten Jahr teurer erscheinen als im dritten, obwohl sich an der Herstellung nichts geändert hat. Die lineare Methode verteilt den Wertverzehr gleichmäßig.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Die Preise für Stickmaschinen sinken. Ein Ersatz würde nur noch 90.000 € kosten. Was folgt für die kalkulatorische Abschreibung?",
+            "antwort": "Sie sinkt auf 90.000 € ÷ 5 = 18.000 € pro Jahr. Die Kostenrechnung richtet sich nach dem Wert, der für die Ersatzbeschaffung tatsächlich gebraucht wird; der höhere Anschaffungspreis der Vergangenheit spielt für die Kalkulation keine Rolle.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +530,10 @@
       "id": "lz3",
       "text": "Die Fixkostendegression erklären",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Kalkulatorische Abschreibung herleiten und von der bilanziellen unterscheiden"
     }
   ],
   "bloecke": [
@@ -360,6 +810,89 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Kalkulatorische Abschreibung",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die bilanzielle Abschreibung folgt Handels- und Steuerrecht: Sie geht von den Anschaffungskosten aus und nutzt vorgegebene Nutzungsdauern und Verfahren. Die **kalkulatorische Abschreibung** fragt dagegen, welcher Wert durch die Nutzung tatsächlich verzehrt wird. ==Sie rechnet deshalb meist vom Wiederbeschaffungswert und mit der tatsächlich erwarteten Nutzungsdauer.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Merkmal",
+            "Bilanzielle Abschreibung",
+            "Kalkulatorische Abschreibung"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Zweck",
+                "Gewinn und Vermögen zutreffend und steuerlich zulässig ausweisen",
+                "Wertverzehr in Preise und Entscheidungen einrechnen"
+              ]
+            },
+            {
+              "zellen": [
+                "Ausgangswert",
+                "Anschaffungs- oder Herstellungskosten",
+                "meist Wiederbeschaffungswert"
+              ],
+              "detail": "**Der Wiederbeschaffungswert sorgt dafür, dass über die Preise genug Geld hereinkommt**, um die Anlage am Ende ihrer Nutzung zu ersetzen — auch wenn sie inzwischen teurer geworden ist."
+            },
+            {
+              "zellen": [
+                "Nutzungsdauer",
+                "steuerlich vorgegeben oder handelsrechtlich geschätzt",
+                "tatsächlich erwartete Nutzung"
+              ]
+            },
+            {
+              "zellen": [
+                "Verfahren",
+                "linear, unter Bedingungen degressiv",
+                "meist linear, damit jedes Jahr gleich belastet wird"
+              ]
+            },
+            {
+              "zellen": [
+                "Nach Ende der Abschreibung",
+                "keine weitere Abschreibung",
+                "wird weiter angesetzt, solange die Anlage genutzt wird"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Kalkulatorische Abschreibung = Wiederbeschaffungswert ÷ tatsächliche Nutzungsdauer.** Weicht sie von der bilanziellen ab, ist sie Anderskosten und wird in der Ergebnistabelle als kostenrechnerische Korrektur ausgewiesen.",
+          "karteikarte": "Wie wird die kalkulatorische Abschreibung berechnet, und worin unterscheidet sie sich von der bilanziellen?"
+        },
+        {
+          "typ": "check",
+          "frage": "Eine Stickmaschine wurde für 100.000 € gekauft. Eine neue würde heute 115.000 € kosten; MAKEL rechnet mit fünf Jahren Nutzung. Wie hoch ist die jährliche kalkulatorische Abschreibung?",
+          "optionen": [
+            {
+              "text": "20.000 € — 100.000 € ÷ 5",
+              "richtig": false,
+              "echo": "Damit wäre nur der Anschaffungswert verteilt. Die Kostenrechnung will aber erreichen, dass die Preise die Ersatzbeschaffung ermöglichen."
+            },
+            {
+              "text": "23.000 € — 115.000 € ÷ 5",
+              "richtig": true,
+              "echo": "Richtig. Ausgangswert ist der Wiederbeschaffungswert von 115.000 €, verteilt auf die erwartete Nutzungsdauer von fünf Jahren. So fließt über die Preise genug zurück, um die Maschine zum aktuellen Preis zu ersetzen."
+            },
+            {
+              "text": "14.286 € — 100.000 € ÷ 7",
+              "richtig": false,
+              "echo": "Das wäre eine lineare bilanzielle Abschreibung bei einer angenommenen steuerlichen Nutzungsdauer von sieben Jahren — nicht der tatsächliche Wertverzehr."
+            }
+          ]
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -370,7 +903,9 @@
     "{{begriff:variable-kosten|Variable Kosten}} steigen gesamt und bleiben je Stück gleich.",
     "Die Einteilungen Einzel/Gemein und fix/variabel sind voneinander unabhängig.",
     "Fixkostendegression: Mehr Menge senkt die Fixkosten je Stück.",
-    "Die Stückkosten nähern sich den variablen Stückkosten an, unterschreiten sie aber nie."
+    "Die Stückkosten nähern sich den variablen Stückkosten an, unterschreiten sie aber nie.",
+    "Die kalkulatorische Abschreibung rechnet meist vom Wiederbeschaffungswert und mit der tatsächlichen Nutzungsdauer.",
+    "Weicht sie von der bilanziellen Abschreibung ab, ist sie Anderskosten."
   ],
   "selbsttest": [
     {

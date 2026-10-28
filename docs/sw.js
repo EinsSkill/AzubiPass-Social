@@ -11,7 +11,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-d2bb11dbed3e3045";
+var SPEICHER = "azubipass-65dc32ee4ca2825f";
 var VORRAT = {
   "./": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "app.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
@@ -34,7 +34,7 @@ var VORRAT = {
   "index.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "landing.html": "ae2f8488c7c19fd7a482c984bdc3c72eabe8eb61c1329bb9b5adb72d357a1a93",
   "lf1.html": "f14dd41bf9b7f8e073fdccce2b8352112002201311f2ee375d1b72330aabc753",
-  "lf10.html": "a0927febcebd5c28d0642171646ef5c3fab41857843c735d58916fa0fd9ee244",
+  "lf10.html": "b3fdc41240823da9cfb2f8b1a54a976d6fb779df914efdd348f5769426f2d9a1",
   "lf11.html": "d1f7b04cac3192fe1e3280f443e7031226cda7b4a3d1e046b0906e5a9ca8e30d",
   "lf12.html": "9f2e739caa8ba5d7217df99abcffb8355b1678a4324ecaf4e62f076a6469fb3c",
   "lf13.html": "7a583b78a3a5fb2600d4814290442fe258a3008913703fb1a8e6804e18cce0f6",

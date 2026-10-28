@@ -6,66 +6,765 @@
   "untertitel": "Vom Material zum Angebotspreis, Stufe für Stufe.",
  "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Einzelkosten werden direkt, Gemeinkosten über Zuschlagssätze zugerechnet.",
-          "Herstellkosten sind die Bezugsgröße für Verwaltung und Vertrieb."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest mit dem Schema der Zuschlagskalkulation die Selbstkosten eines Produkts aus Einzelkosten und Zuschlagssätzen.",
+        "vorwissen_kurz": "Die Zuschlagssätze stammen aus dem BAB: Material auf das Fertigungsmaterial, Fertigung auf die Fertigungslöhne, Verwaltung und Vertrieb auf die Herstellkosten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Alles zusammensetzen",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Kostenträgerrechnung fließen die Ergebnisse der beiden vorherigen Stufen zusammen. Die Einzelkosten kommen aus Stückliste und Zeiterfassung, die Gemeinkosten über die Zuschlagssätze des BAB. Das Schema ist bei jedem Produkt dasselbe; nur die Zahlen ändern sich.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Hoodie der Herbstkollektion",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für einen Hoodie verbraucht MAKEL Stoff, Bündchen und Kordel für 12,00 €. Die Näherin braucht 25 Minuten; bei einem Stundensatz von 19,20 € sind das 8,00 € Fertigungslohn. Es gelten die Zuschlagssätze aus dem BAB: Material 15 %, Fertigung 140 %, Verwaltung 10 %, Vertrieb 8 %.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fertigungsmaterial",
+                  "aus der Stückliste",
+                  "12,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Materialgemeinkosten",
+                  "15 % von 12,00 €",
+                  "1,80 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Materialkosten",
+                  "",
+                  "13,80 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigungslöhne",
+                  "25 min × 19,20 € ÷ 60",
+                  "8,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Fertigungsgemeinkosten",
+                  "140 % von 8,00 €",
+                  "11,20 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Fertigungskosten",
+                  "",
+                  "19,20 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Herstellkosten",
+                  "13,80 € + 19,20 €",
+                  "33,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Verwaltungsgemeinkosten",
+                  "10 % von 33,00 €",
+                  "3,30 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Vertriebsgemeinkosten",
+                  "8 % von 33,00 €",
+                  "2,64 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Selbstkosten",
+                  "",
+                  "38,94 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Ein Hoodie kostet MAKEL bei voller Verteilung aller Kosten 38,94 €. Ein Modehaus, das 38 € pro Stück zahlen will, deckt diese Vollkosten nicht — ob sich der Auftrag trotzdem lohnen kann, klärt die Deckungsbeitragsrechnung.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Das Kalkulationsschema beginnt mit Material- und Fertigungskosten. Zusammen ergeben sie die Herstellkosten. Verwaltungs- und Vertriebsgemeinkosten werden beide auf die Herstellkosten gerechnet; zusammen mit ihnen entstehen die Selbstkosten. Der Gewinnzuschlag kommt erst danach auf die Selbstkosten.",
-        "beispiele": [
-          "500 € Fertigungsmaterial mit 15 % MGK ergeben 575 € Materialkosten; 300 € Fertigungslöhne mit 120 % FGK ergeben 660 € Fertigungskosten.",
-          "575 € + 660 € = 1.235 € Herstellkosten; 10 % Verwaltung und 8 % Vertrieb werden jeweils auf 1.235 € berechnet."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Sondereinzelkosten im Schema",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Fallen Kosten für genau einen Auftrag an, stehen sie als eigene Zeile im Schema. Sondereinzelkosten der Fertigung, etwa ein Stickprogramm für ein Vereinslogo, gehören zu den Herstellkosten. Sondereinzelkosten des Vertriebs, etwa die Spedition zu genau diesem Kunden, werden nach den Vertriebsgemeinkosten addiert und sind Teil der Selbstkosten.",
+                "id": "b1-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k5-b1"
+                ],
+                "text": "Ob sich der Auftrag zu 38 € lohnt",
+                "id": "b1-d1-v1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Die Rechnung wird zeilenweise durchgeführt: Material 500 € + 75 € MGK = 575 €, Fertigung 300 € + 360 € FGK = 660 €, Herstellkosten 1.235 €. VwGK 10 % = 123,50 €, VtGK 8 % = 98,80 €. Selbstkosten: 1.235 € + 123,50 € + 98,80 € = 1.457,30 €.",
-        "typische_fehler": "Verwaltung und Vertrieb werden aufeinander statt beide auf die Herstellkosten gerechnet. Außerdem wird der Gewinn vor den Selbstkosten oder ein Gemeinkostensatz auf die falsche Bezugsgröße angewendet.",
         "verstaendnisfragen": [
-          "Woraus bestehen die Herstellkosten? Aus Materialkosten plus Fertigungskosten.",
-          "Worauf werden Verwaltung und Vertrieb gerechnet? Beide auf die Herstellkosten."
-        ],
-        "pruefungsbezug": "Schreibe das Schema vor der Rechnung untereinander und markiere die Herstellkosten als gemeinsame Bezugsgröße.",
-        "merksatz": "Material plus Fertigung ergibt Herstellung; Verwaltung und Vertrieb kommen beide auf die Herstellkosten."
+          {
+            "frage": "Die Fertigungslöhne eines Shirts betragen 4,80 €, das Fertigungsmaterial 6,00 €. Wie hoch sind die Herstellkosten bei 15 % und 140 %?",
+            "antwort": "Materialkosten 6,00 € + 0,90 € = 6,90 €. Fertigungskosten 4,80 € + 6,72 € = 11,52 €. Herstellkosten 6,90 € + 11,52 € = 18,42 €.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum werden die Verwaltungsgemeinkosten nicht auf die Summe aus Herstellkosten und Vertriebsgemeinkosten gerechnet?",
+            "antwort": "Beide Zuschläge wurden im BAB auf dieselbe Bezugsgröße, die Herstellkosten, berechnet. In der Kalkulation müssen sie deshalb auch auf die Herstellkosten angewandt werden. Würde man sie aufeinander aufbauen, wäre einer der beiden Beträge zu hoch.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Selbstkosten decken Kosten, aber noch keinen Gewinn und keine Kundennachlässe.",
-          "Skonto und Rabatt werden später vom Endpreis abgezogen."
+        "darstellung": "vollfassung",
+        "ziel": "Du rechnest von den Selbstkosten über Gewinn, Kundenskonto und Kundenrabatt zum Angebotspreis und unterscheidest Rechnen auf Hundert und im Hundert.",
+        "vorwissen_kurz": "Skonto und Rabatt werden später vom Rechnungsbetrag abgezogen. Damit nach dem Abzug der gewünschte Betrag übrig bleibt, müssen sie vorher eingerechnet werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Platz für die Nachlässe schaffen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ab den Selbstkosten rechnet MAKEL nicht mehr Kosten, sondern plant den Preis. Der **Gewinn** wird auf die Selbstkosten aufgeschlagen. **Kundenskonto** und **Kundenrabatt** dagegen zieht der Kunde später vom höheren Preis ab. Damit nach dem Abzug genau der geplante Betrag bleibt, werden sie **im Hundert** gerechnet: Der niedrigere Preis entspricht 98 % beziehungsweise 90 % des höheren.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Hoodie bis zum Listenpreis",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Selbstkosten",
+                  "aus der Zuschlagskalkulation",
+                  "38,94 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Gewinnzuschlag 12 %",
+                  "auf Hundert: 38,94 € × 12 %",
+                  "4,67 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Barverkaufspreis",
+                  "",
+                  "43,61 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Kundenskonto 2 %",
+                  "im Hundert: 43,61 € ÷ 98 × 100",
+                  "0,89 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zielverkaufspreis",
+                  "",
+                  "44,50 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Kundenrabatt 10 %",
+                  "im Hundert: 44,50 € ÷ 90 × 100",
+                  "4,94 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Angebotspreis (Listenpreis netto)",
+                  "",
+                  "49,44 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Probe: 49,44 € − 10 % Rabatt (4,94 €) = 44,50 €; davon 2 % Skonto (0,89 €) = 43,61 €. Es bleiben genau die geplanten 4,67 € Gewinn.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b4"
+          }
         ],
-        "erklaerung": "Auf die Selbstkosten kommt der Gewinnzuschlag. Danach werden Kundenskonto und Kundenrabatt im Hundert gerechnet, weil sie vom jeweiligen Endpreis abgezogen werden. Vorwärtskalkulation geht von den Kosten zum Angebotspreis.",
-        "beispiele": [
-          "Bei Selbstkosten von 1.457,30 € ergeben 12 % Gewinn 174,88 € und einen Barverkaufspreis von 1.632,18 €.",
-          "2 % Skonto werden im Hundert gerechnet: 1.632,18 € ÷ 98 × 100 = 1.665,49 €; 10 % Rabatt: 1.665,49 € ÷ 90 × 100 = 1.850,54 €."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Vertreterprovision",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Verkauft ein Handelsvertreter auf Provisionsbasis, wird auch seine Provision im Hundert eingerechnet, weil sie sich auf den Zielverkaufspreis bezieht. Kundenskonto und Provision werden dann meist gemeinsam vom Zielverkaufspreis gerechnet: Bei 2 % Skonto und 5 % Provision entspricht der Barverkaufspreis 93 % des Zielverkaufspreises.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Umsatzsteuer kommt zuletzt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Kalkulation rechnet mit Nettopreisen, weil die Umsatzsteuer für MAKEL ein durchlaufender Posten ist. Erst auf den Listenpreis netto kommt die Umsatzsteuer. Im Laden steht deshalb ein Bruttopreis, im Großhandel meist der Nettopreis.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Aus 1.457,30 € Selbstkosten werden zunächst 12 % Gewinn = 174,88 € addiert. Der Barverkaufspreis beträgt 1.632,18 €. Für 2 % Skonto wird durch 98 geteilt und mit 100 multipliziert: Zielverkaufspreis 1.665,49 €. Für 10 % Rabatt wird durch 90 geteilt und mit 100 multipliziert: Angebotspreis 1.850,54 €. Probe: Nach Rabatt und Skonto bleiben 1.632,18 €.",
-        "typische_fehler": "Skonto oder Rabatt werden auf Hundert addiert statt im Hundert zurückgerechnet. Dadurch ist der Angebotspreis zu niedrig und der kalkulierte Gewinn wird nach dem Nachlass nicht erreicht.",
         "verstaendnisfragen": [
-          "Warum wird bei Skonto im Hundert gerechnet? Weil der Kunde den Nachlass später vom Endpreis abzieht.",
-          "Welche Position kommt zuerst nach den Selbstkosten? Der Gewinnzuschlag."
-        ],
-        "pruefungsbezug": "Markiere bei jedem Nachlass, ob er später abgezogen wird. Dann mit dem passenden Im-Hundert-Faktor rückwärts rechnen.",
-        "merksatz": "Gewinn auf die Selbstkosten, Nachlässe im Hundert auf den späteren Endpreis."
+          {
+            "frage": "Der Barverkaufspreis beträgt 72,52 €. Bei 3 % Skonto: Wie hoch ist der Zielverkaufspreis?",
+            "antwort": "72,52 € ÷ 97 × 100 = 74,76 €. Probe: 3 % von 74,76 € sind 2,24 €; 74,76 € − 2,24 € = 72,52 €.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum wird der Gewinn auf Hundert, Skonto und Rabatt aber im Hundert gerechnet?",
+            "antwort": "Der Gewinn ist ein Aufschlag, den MAKEL selbst festlegt; er bezieht sich auf die Selbstkosten. Skonto und Rabatt sind Abzüge, die der Kunde später vom höheren Preis vornimmt; sie beziehen sich auf den Ziel- beziehungsweise Listenpreis. Damit die Prozentsätze stimmen, muss der Bezugswert immer der Preis sein, von dem später abgezogen wird.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Vorwärtskalkulation läuft von Kosten zum Preis.",
-          "Rückwärts- und Differenzkalkulation lesen dasselbe Schema in anderer Richtung."
+        "darstellung": "vollfassung",
+        "ziel": "Du rechnest vom Marktpreis rückwärts zu den zulässigen Kosten und ermittelst mit der Differenzkalkulation den tatsächlich erzielbaren Gewinn.",
+        "vorwissen_kurz": "Rückwärts werden alle Rechenschritte umgekehrt: Was vorwärts aufgeschlagen wurde, wird abgezogen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn der Markt den Preis vorgibt",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Händler sagt: „Mehr als 45 € netto Listenpreis für einen Hoodie zahlen unsere Kunden nicht.“ MAKEL kann jetzt nicht von den Kosten zum Preis rechnen. Es muss umgekehrt fragen: Welche Kosten darf ein Hoodie höchstens verursachen, wenn 10 % Rabatt, 2 % Skonto und 12 % Gewinn erhalten bleiben sollen?",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rückwärts vom Listenpreis",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Listenpreis",
+                  "vom Händler vorgegeben",
+                  "45,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Kundenrabatt 10 %",
+                  "vom Hundert",
+                  "4,50 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zielverkaufspreis",
+                  "",
+                  "40,50 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Kundenskonto 2 %",
+                  "vom Hundert",
+                  "0,81 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Barverkaufspreis",
+                  "",
+                  "39,69 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Gewinn 12 %",
+                  "im Hundert: 39,69 € ÷ 112 × 100",
+                  "4,25 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= höchstens zulässige Selbstkosten",
+                  "",
+                  "35,44 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "÷ 1,18 (Verwaltung 10 % + Vertrieb 8 %)",
+                  "35,44 € ÷ 118 × 100",
+                  ""
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= höchstens zulässige Herstellkosten",
+                  "",
+                  "30,03 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Die tatsächlichen Herstellkosten betragen 33,00 €. Mit gleichen Fertigungskosten von 19,20 € dürften die Materialkosten höchstens 10,83 € betragen, das Fertigungsmaterial also höchstens 10,83 € ÷ 1,15 ≈ 9,42 € statt 12,00 €.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Rückwärtsrechnen kehrt sich jede Bezugsgröße um. Rabatt und Skonto wurden vorwärts im Hundert eingerechnet, rückwärts werden sie vom Hundert abgezogen. Der Gewinn wurde vorwärts auf Hundert aufgeschlagen, rückwärts wird er im Hundert herausgerechnet.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Differenzkalkulation",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bleibt MAKEL bei den bisherigen Kosten von 38,94 € und akzeptiert die 45 € Listenpreis, rechnet es von beiden Seiten bis zur Mitte: von unten bis zu den Selbstkosten (38,94 €), von oben bis zum Barverkaufspreis (39,69 €). Der Gewinn beträgt 39,69 € − 38,94 € = 0,75 € je Hoodie, das sind 0,75 € ÷ 38,94 € × 100 ≈ 1,9 % statt der geplanten 12 %.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Die Rückwärtskalkulation geht vom Markt- oder Angebotspreis zu den zulässigen Kosten zurück. Aus Im-Hundert wird Vom-Hundert, Zuschläge werden rückwärts abgezogen. Die Differenzkalkulation ermittelt aus dem tatsächlich erzielten Preis den tatsächlichen Gewinn. Die Herstellkosten bleiben die zentrale Bezugsgröße für Verwaltung und Vertrieb.",
-        "beispiele": [
-          "Bietet der Wettbewerb 1.600 € an, wird aus diesem Preis rückwärts gerechnet, wie hoch die zulässigen Selbstkosten sein dürfen.",
-          "Eine Differenz zwischen dem tatsächlich erzielten Preis und den tatsächlichen Kosten zeigt den realisierten Gewinn, nicht nur den geplanten Zuschlag."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Was MAKEL mit dem Ergebnis macht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Rechnung zeigt drei Möglichkeiten: günstigeren Stoff suchen, die Fertigungszeit senken oder den Auftrag mit geringem Gewinn annehmen, wenn er freie Kapazität füllt. Welche Entscheidung richtig ist, hängt davon ab, ob MAKEL die Qualität halten kann und ob die Fixkosten ohnehin anfallen — die Frage der Deckungsbeitragsrechnung.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Die Vorwärtskalkulation ergibt 1.850 €, der Wettbewerb bietet 1.600 €. Zuerst wird der Marktpreis rückwärts um Rabatt und Skonto bereinigt und anschließend der Gewinnzuschlag herausgerechnet. Das Ergebnis zeigt, wie weit die eigenen Selbstkosten über dem Ziel liegen. Danach werden Material, Fertigung, Gemeinkostensätze, Nachlässe und ein möglicher positiver Deckungsbeitrag geprüft; dauerhaft unter Selbstkosten zu verkaufen bleibt keine Lösung.",
-        "typische_fehler": "Der Wettbewerberpreis wird einfach übernommen oder nur der Gewinnzuschlag gestrichen. Rückwärts werden Nachlässe nicht mit Vom-Hundert und die Kostenursachen nicht analysiert.",
         "verstaendnisfragen": [
-          "Welche Frage beantwortet die Rückwärtskalkulation? Was darf das Produkt bei einem gegebenen Marktpreis höchstens kosten?",
-          "Was ermittelt die Differenzkalkulation? Den tatsächlich erzielten Gewinn."
+          {
+            "frage": "Der Listenpreis liegt bei 60 €, es gelten 10 % Rabatt und 2 % Skonto. Wie hoch ist der Barverkaufspreis?",
+            "antwort": "60 € − 10 % = 54,00 €; 54,00 € − 2 % = 52,92 €.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum wird der Gewinn bei der Rückwärtskalkulation im Hundert herausgerechnet?",
+            "antwort": "Vorwärts wurde er auf die Selbstkosten aufgeschlagen: Barverkaufspreis = Selbstkosten × 1,12. Rückwärts ist der Barverkaufspreis bekannt und entspricht 112 % der Selbstkosten. Man teilt deshalb durch 112 und multipliziert mit 100. Zieht man einfach 12 % vom Barverkaufspreis ab, erhält man zu niedrige Selbstkosten.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du kalkulierst einen Auftrag vor und nach, erklärst die Abweichungen zwischen Normal- und Istwerten und beurteilst ihre Wirkung auf den Auftragsgewinn.",
+        "vorwissen_kurz": "Normalzuschläge stehen vor dem Auftrag fest, Istzuschläge erst nach der Abrechnung des Monats.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Vereinsauftrag über 300 Hoodies",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Sportverein bestellt im Oktober 300 Hoodies mit eingesticktem Logo. Die Vorkalkulation rechnet mit 12,00 € Material und 25 Minuten Nähzeit (8,00 €), den Normalzuschlägen sowie zwei Sondereinzelkosten: dem Stickprogramm (600 €, also 2,00 € je Stück) und der Spedition zum Verein (180 €, also 0,60 € je Stück). Daraus ermittelt MAKEL den Listenpreis von 53,21 € je Hoodie (12 % Gewinn, 2 % Skonto, 10 % Rabatt); der Verein unterschreibt.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach der Auslieferung zeigt sich: Der Stoff war teurer geworden (12,40 €), und das Nähen dauerte wegen des dickeren Materials 27 statt 25 Minuten (8,64 €). Für die Gemeinkosten gelten die Istzuschläge des Oktobers aus dem BAB.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vor- und Nachkalkulation je Hoodie",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Vorkalkulation (Normal)",
+              "Nachkalkulation (Ist)",
+              "Abweichung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fertigungsmaterial",
+                  "12,00 €",
+                  "12,40 €",
+                  "+0,40 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Materialgemeinkosten (15 % / 15,45 %)",
+                  "1,80 €",
+                  "1,92 €",
+                  "+0,12 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigungslöhne",
+                  "8,00 €",
+                  "8,64 €",
+                  "+0,64 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigungsgemeinkosten (140 % / 144,78 %)",
+                  "11,20 €",
+                  "12,51 €",
+                  "+1,31 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Sondereinzelkosten der Fertigung",
+                  "2,00 €",
+                  "2,00 €",
+                  "0,00 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Herstellkosten",
+                  "35,00 €",
+                  "37,47 €",
+                  "+2,47 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Verwaltungsgemeinkosten (10 % / 9,86 %)",
+                  "3,50 €",
+                  "3,69 €",
+                  "+0,19 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertriebsgemeinkosten (8 % / 8,06 %)",
+                  "2,80 €",
+                  "3,02 €",
+                  "+0,22 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Sondereinzelkosten des Vertriebs",
+                  "0,60 €",
+                  "0,60 €",
+                  "0,00 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Selbstkosten",
+                  "41,90 €",
+                  "44,78 €",
+                  "+2,88 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Der Barverkaufspreis von 46,93 € steht vertraglich fest. Statt 5,03 € Gewinn je Hoodie bleiben 46,93 € − 44,78 € = 2,15 €; für den Auftrag 645 € statt 1.509 €.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Abweichungen haben drei Ursachen. Der teurere Stoff erhöht Material und Materialgemeinkosten. Die längere Nähzeit erhöht die Fertigungslöhne und — weil die Fertigungsgemeinkosten auf die Löhne bezogen sind — auch diese. Und die Istzuschläge des Monats lagen über den Normalwerten, vor allem in der Fertigung. Die längere Nähzeit wirkt am stärksten: Jede Minute kostet 0,32 € Lohn und zusätzlich rund 0,46 € Fertigungsgemeinkosten.",
+            "id": "b4-p3"
+          }
         ],
-        "pruefungsbezug": "Begründe bei Abweichungen zwischen Vorwärtskalkulation und Marktpreis zuerst rückwärts und benenne anschließend konkrete Kosten- oder Konditionshebel.",
-        "merksatz": "Vorwärts zeigt den Preis, rückwärts die zulässigen Kosten, Differenz den tatsächlichen Gewinn."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Was MAKEL aus der Nachkalkulation lernt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Folgeaufträge mit dickem Stoff plant MAKEL künftig 27 Minuten Nähzeit ein. Bei Stoff wird ein Preisvorbehalt im Angebot geprüft oder die Bindefrist des Angebots verkürzt. Und weil die Fertigung im Oktober eine Unterdeckung zeigte, beobachtet Tobias Renner, ob der Normalzuschlag von 140 % noch stimmt.",
+                "id": "b4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k3-b4"
+                ],
+                "text": "Über- und Unterdeckung im BAB",
+                "id": "b4-d1-v1"
+              }
+            ],
+            "id": "b4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum steigen die Fertigungsgemeinkosten in der Nachkalkulation, obwohl sich die Miete der Näherei nicht geändert hat?",
+            "antwort": "Sie werden als Zuschlag auf die Fertigungslöhne verrechnet. Steigen die Löhne je Stück, weil die Nähzeit länger ist, steigt automatisch auch der Gemeinkostenanteil. Hinzu kommt, dass der Istzuschlag des Monats mit 144,78 % über dem Normalzuschlag von 140 % lag.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Kann MAKEL den höheren Stoffpreis nachträglich an den Verein weitergeben?",
+            "antwort": "Grundsätzlich nicht. Der Preis ist mit dem Vertrag vereinbart, und das Risiko gestiegener Einkaufspreise trägt MAKEL, sofern der Vertrag keine Preisgleitklausel oder keinen Preisvorbehalt enthält. Die Abweichung mindert deshalb den Gewinn des Auftrags.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +783,10 @@
       "id": "lz3",
       "text": "Rückwärts- und Differenzkalkulation durchführen",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Einen Auftrag vor- und nachkalkulieren und Abweichungen erklären"
     }
   ],
   "bloecke": [
@@ -392,6 +1095,61 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Vor- und Nachkalkulation",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die **Vorkalkulation** ermittelt vor Auftragsannahme den Angebotspreis — mit geplanten Mengen, Zeiten und Normalzuschlägen. Die **Nachkalkulation** rechnet nach Abschluss mit den tatsächlichen Werten und Istzuschlägen. ==Erst sie zeigt, ob der Auftrag den geplanten Gewinn gebracht hat und wo die Abweichungen entstanden sind.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "",
+            "Vorkalkulation",
+            "Nachkalkulation"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Zeitpunkt",
+                "vor Angebot und Auftragsannahme",
+                "nach Fertigstellung"
+              ]
+            },
+            {
+              "zellen": [
+                "Einzelkosten",
+                "geplante Mengen und Zeiten",
+                "tatsächlich verbrauchte Mengen und Zeiten"
+              ]
+            },
+            {
+              "zellen": [
+                "Zuschlagssätze",
+                "Normalzuschläge",
+                "Istzuschläge der Periode"
+              ]
+            },
+            {
+              "zellen": [
+                "Zweck",
+                "Preis festlegen",
+                "Erfolg kontrollieren, künftige Kalkulation verbessern"
+              ],
+              "detail": "**Der Preis steht nach Vertragsschluss fest.** Abweichungen bei den Kosten verändern deshalb nicht den Erlös, sondern den Gewinn des Auftrags."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Vorkalkulation: Normalwerte, Ziel Preis. Nachkalkulation: Istwerte, Ziel Kontrolle.** Die Differenz der Selbstkosten verändert bei festem Preis unmittelbar den Gewinn.",
+          "karteikarte": "Worin unterscheiden sich Vor- und Nachkalkulation nach Zeitpunkt, Werten und Zweck?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -402,7 +1160,8 @@
     "Der Gewinnzuschlag wird auf die Selbstkosten gerechnet.",
     "Kundenskonto und Kundenrabatt werden im Hundert gerechnet.",
     "Vorwärtskalkulation geht von den Kosten zum Preis, Rückwärtskalkulation umgekehrt.",
-    "Die Differenzkalkulation ermittelt den tatsächlich erzielten Gewinn."
+    "Die Differenzkalkulation ermittelt den tatsächlich erzielten Gewinn.",
+    "Die Vorkalkulation rechnet mit Normalwerten und legt den Preis fest; die Nachkalkulation rechnet mit Istwerten und kontrolliert den Erfolg."
   ],
   "selbsttest": [
     {
