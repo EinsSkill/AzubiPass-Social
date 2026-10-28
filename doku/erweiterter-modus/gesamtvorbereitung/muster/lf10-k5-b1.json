@@ -1,0 +1,170 @@
+{
+  "hinweis": "Redaktioneller Entwurf, nicht eingebaut; vor Übernahme Voraussetzungen/Quellen und Einordnung der gemeinsam genutzten Basiselemente prüfen.",
+  "datei": "quellen/lf10-k5-deckungsbeitrag.kapitel.json",
+  "lernfeld": "lf10",
+  "abschnitt": "b1",
+  "eintrag": {
+    "ziel": "Du unterscheidest Deckungsbeitrag und Gewinn und begründest, unter welchen Annahmen ein positiver Deckungsbeitrag hilft.",
+    "vorwissen_kurz": "Variable Kosten verändern sich mit der Menge. Fixkosten bleiben im betrachteten Beschäftigungsbereich und Zeitraum zunächst bestehen.",
+    "inhalt": [
+      {
+        "typ": "zwischentitel",
+        "id": "b1-zuerst",
+        "text": "Was nach einem Verkauf wirklich übrig bleibt"
+      },
+      {
+        "typ": "absatz",
+        "text": "MAKEL betrachtet für eine Übungsperiode ein Produkt. Der angenommene Nettoverkaufspreis beträgt 40 € je Stück, die variablen Kosten betragen 26 € je Stück. Beide Werte bleiben in unserem vereinfachten Mengenbereich konstant. Zusätzlich fallen in der Periode 1.000 € Fixkosten an. Alle produzierten Stücke werden verkauft; Bestandsänderungen lassen wir weg.",
+        "id": "b1-text-2"
+      },
+      {
+        "typ": "absatz",
+        "text": "Von jedem Verkaufserlös müssen zuerst die 26 € bezahlt werden, die das zusätzliche Stück verursacht. Es bleiben 40 € − 26 € = 14 € je Stück. Das ist der Stückdeckungsbeitrag. Er heißt nicht Gewinn, weil die Fixkosten der Periode noch gedeckt werden müssen. Mehrere Stücke sammeln also zunächst Beiträge zu demselben Fixkostenblock.",
+        "id": "b1-text-3"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "b1-menge",
+        "text": "Vom Stück zur ganzen Periode"
+      },
+      {
+        "typ": "tabelle",
+        "spalten": [
+          "Größe",
+          "50 verkaufte Stück",
+          "100 verkaufte Stück"
+        ],
+        "zeilen": [
+          {
+            "zellen": [
+              "Erlös",
+              "50 × 40 € = 2.000 €",
+              "100 × 40 € = 4.000 €"
+            ]
+          },
+          {
+            "zellen": [
+              "Variable Kosten",
+              "50 × 26 € = 1.300 €",
+              "100 × 26 € = 2.600 €"
+            ]
+          },
+          {
+            "zellen": [
+              "Gesamtdeckungsbeitrag",
+              "2.000 € − 1.300 € = 700 €",
+              "4.000 € − 2.600 € = 1.400 €"
+            ]
+          },
+          {
+            "zellen": [
+              "Fixkosten",
+              "1.000 €",
+              "1.000 €"
+            ]
+          },
+          {
+            "zellen": [
+              "Betriebsergebnis",
+              "700 € − 1.000 € = −300 €",
+              "1.400 € − 1.000 € = 400 €"
+            ]
+          }
+        ],
+        "fazit": "Der Stückdeckungsbeitrag ist in beiden Fällen positiv und gleich hoch. Ob die Periode Gewinn oder Verlust bringt, hängt zusätzlich von Absatzmenge und Fixkosten ab.",
+        "id": "b1-text-5"
+      },
+      {
+        "typ": "absatz",
+        "text": "Prüfe auch die Einheiten: 14 € je Stück mal 100 Stück ergibt 1.400 € für die Periode. Erst davon ziehst du die 1.000 € Fixkosten der Periode ab. Stückwerte und Periodensummen darfst du nicht ohne Umrechnung miteinander verrechnen.",
+        "id": "b1-text-6"
+      },
+      {
+        "typ": "absatz",
+        "text": "Die bestehende Übersicht ordnet diese drei Ebenen: Stückdeckungsbeitrag, Gesamtdeckungsbeitrag und Betriebsergebnis. Lies die Reihenfolge als Erklärung des Geldbeitrags: Was verursacht das Stück zusätzlich, was trägt die Menge bei und was bleibt nach den gesamten Fixkosten?",
+        "id": "b1-text-7"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "b1-entscheidung",
+        "text": "Was ein positiver Beitrag aussagen kann"
+      },
+      {
+        "typ": "absatz",
+        "text": "Bei 50 Stück bleiben 300 € Verlust. Würde MAKEL das Produkt in diesem Modell vollständig streichen und blieben die 1.000 € Fixkosten unverändert, läge das Ergebnis bei −1.000 €. Die 50 Verkäufe verbessern die Lage also um 700 €, obwohl sie noch keinen Periodengewinn ermöglichen. Daraus folgt keine allgemeine Empfehlung, jedes Produkt mit positivem Deckungsbeitrag anzubieten. Kapazitätsgrenzen, vermeidbare Fixkosten, weitere auftragsbedingte Kosten und andere Ziele können die Entscheidung ändern.",
+        "id": "b1-text-9"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "b1-originale",
+        "text": "Vorhandene Darstellung und Anwendung"
+      },
+      {
+        "typ": "basis",
+        "ref": "tabelle-1",
+        "id": "b1-text-11"
+      },
+      {
+        "typ": "basis",
+        "ref": "achtung-1",
+        "id": "b1-text-12"
+      },
+      {
+        "typ": "basis",
+        "ref": "merke-1",
+        "id": "b1-text-13"
+      }
+    ],
+    "details": [
+      {
+        "id": "b1-engpass",
+        "kategorie": "vergleich",
+        "titel": "Wenn ein anderes Produkt dieselbe knappe Zeit braucht",
+        "inhalt": [
+          {
+            "typ": "absatz",
+            "text": "Angenommen, ein anderes Produkt erzielt 20 € Deckungsbeitrag und benötigt genau dieselbe knappe Maschinenzeit je Stück. Wenn beide Produkte zuverlässig absetzbar sind und alle anderen Bedingungen gleich bleiben, wäre die knappe Zeit mit 20 € statt 14 € Beitrag wirtschaftlich besser eingesetzt. Ein positiver Beitrag allein entscheidet den Engpassfall daher nicht.",
+            "id": "b1-detail-1-1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Benötigen die Produkte unterschiedlich viel Engpasszeit, musst du den Beitrag auf diese Zeit beziehen. Der Stückdeckungsbeitrag allein ist dann kein geeigneter Vergleich.",
+            "id": "b1-detail-1-2"
+          }
+        ]
+      },
+      {
+        "id": "b1-fixkosten",
+        "kategorie": "sonderfall",
+        "titel": "Wenn Kosten beim Streichen tatsächlich entfallen",
+        "inhalt": [
+          {
+            "typ": "absatz",
+            "text": "Ob Fixkosten unverändert bleiben, ist eine Fallannahme. Können durch das Streichen eines Produkts bestimmte Kosten tatsächlich und rechtzeitig vermieden werden, muss die Entscheidung diese Veränderung berücksichtigen. Das Wort Fixkosten bedeutet nicht, dass ein Kostenblock unter allen denkbaren Entscheidungen und über beliebig lange Zeit unveränderlich wäre.",
+            "id": "b1-detail-2-1"
+          }
+        ]
+      }
+    ],
+    "verstaendnisfragen": [
+      {
+        "id": "b1-vf1",
+        "frage": "Warum entsteht bei 50 Stück trotz 14 € positivem Stückdeckungsbeitrag ein Verlust?",
+        "antwort": "Die 50 Stück liefern insgesamt 700 € Deckungsbeitrag. Die Fixkosten betragen 1.000 €. Es fehlen 300 € zur Deckung des gesamten Fixkostenblocks."
+      },
+      {
+        "id": "b1-vf2",
+        "frage": "Weshalb reicht ein positiver Stückdeckungsbeitrag nicht zur Auswahl im Engpass?",
+        "antwort": "Eine knappe Ressource kann nur einmal eingesetzt werden. Entscheidend ist dann auch der Beitrag der besten verfügbaren Alternative je Engpasseinheit. Ein positiver Beitrag kann geringer sein als der entgangene Beitrag einer anderen Verwendung."
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Redaktioneller Modellfall zur Teilkostenrechnung",
+        "bezug": "Zahlen didaktisch gewählt und unabhängig nachgerechnet; vorhandener Abschnitt b1 als Anschluss, keine gesetzlichen Jahreswerte."
+      }
+    ],
+    "abschnitt": "b1",
+    "darstellung": "vollfassung"
+  }
+}

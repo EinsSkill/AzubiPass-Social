@@ -1,0 +1,159 @@
+{
+  "hinweis": "Redaktioneller Entwurf, nicht eingebaut; vor Übernahme Voraussetzungen/Quellen und Einordnung der gemeinsam genutzten Basiselemente prüfen.",
+  "datei": "quellen/ik2024-lf06-k03.kapitel.json",
+  "lernfeld": "ik2024-lf06",
+  "abschnitt": "a1",
+  "eintrag": {
+    "ziel": "Du leitest Materialmengen aus einer Stückliste ab, kontrollierst die Einheiten und berücksichtigst eine Produktvariante.",
+    "vorwissen_kurz": "Die Stückliste beschreibt Material und Menge je Erzeugniseinheit. Ein Arbeitsplan beschreibt dagegen die auszuführenden Arbeitsschritte.",
+    "inhalt": [
+      {
+        "typ": "zwischentitel",
+        "id": "a1-menge",
+        "text": "Eine Stückliste ist eine Mengenbeschreibung"
+      },
+      {
+        "typ": "absatz",
+        "text": "MAKEL soll in diesem Übungsfall 200 schwarze Hoodies herstellen. Die vorhandene Stückliste nennt für einen Hoodie einen Rohling, 15 g Stickgarn, 0,04 m² Stickvlies, ein Etikett und einen Versandbeutel. Die Zahlen beschreiben den Materialeinsatz je Stück. Sie sagen noch nicht, welche Vorräte vorhanden sind, wann Material bereitstehen muss oder welche Arbeitsschritte ausgeführt werden.",
+        "id": "a1-text-2"
+      },
+      {
+        "typ": "absatz",
+        "text": "Für den Auftrag wird jede Menge je Stück mit 200 Stück multipliziert. Dabei gehört die Einheit zur Rechnung. Aus 15 g je Hoodie mal 200 Hoodies werden 3.000 g Garn. Erst danach kannst du bei Bedarf in die Einheit des Einkaufs umrechnen: 3.000 g sind 3 kg. Würdest du 3.000 als Kilogramm übernehmen, wäre nicht das Multiplikationsverfahren falsch, sondern die Einheit.",
+        "id": "a1-text-3"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "a1-rechnen",
+        "text": "Den Auftrag vollständig auflösen"
+      },
+      {
+        "typ": "tabelle",
+        "spalten": [
+          "Material",
+          "Menge je Hoodie",
+          "Rechnung für 200 Hoodies",
+          "Auftragsbedarf"
+        ],
+        "zeilen": [
+          {
+            "zellen": [
+              "Rohling schwarz",
+              "1 Stück",
+              "200 × 1 Stück",
+              "200 Stück"
+            ]
+          },
+          {
+            "zellen": [
+              "Stickgarn",
+              "15 g",
+              "200 × 15 g",
+              "3.000 g = 3 kg"
+            ]
+          },
+          {
+            "zellen": [
+              "Stickvlies",
+              "0,04 m²",
+              "200 × 0,04 m²",
+              "8 m²"
+            ]
+          },
+          {
+            "zellen": [
+              "Etikett",
+              "1 Stück",
+              "200 × 1 Stück",
+              "200 Stück"
+            ]
+          },
+          {
+            "zellen": [
+              "Versandbeutel",
+              "1 Stück",
+              "200 × 1 Stück",
+              "200 Stück"
+            ]
+          }
+        ],
+        "fazit": "Die Auftragsmenge vervielfacht den Materialeinsatz. Unterschiedliche Materialien behalten ihre jeweilige Einheit; Gramm und Quadratmeter dürfen nicht addiert werden.",
+        "id": "a1-text-5"
+      },
+      {
+        "typ": "absatz",
+        "text": "Unsere Rechnung setzt voraus, dass die Stückliste zur bestellten Ausführung passt und keine zusätzlichen Ausschuss-, Verschnitt- oder Reserveannahmen gelten. Sie ist eine einfache einstufige Mengenauflösung. Bei einer Baugruppenstruktur musst du die Mengen über die Ebenen verfolgen; bei gemeinsamer Verwendung eines Materials werden die Beiträge anschließend in derselben Einheit zusammengeführt.",
+        "id": "a1-text-6"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "a1-beschaffung",
+        "text": "Auftragsbedarf ist noch keine Bestellmenge"
+      },
+      {
+        "typ": "absatz",
+        "text": "Angenommen, vom passenden Garn liegen 500 g frei verfügbar und zum benötigten Zeitpunkt nutzbar im Lager. Für diesen Auftrag werden keine weiteren Zu- oder Abgänge und keine zusätzliche Sicherheitsreserve angesetzt. Dann fehlen 3.000 g − 500 g = 2.500 g, also 2,5 kg. Bereits für andere Aufträge reserviertes Garn dürftest du nicht noch einmal als verfügbar abziehen. Mindestbestellmenge, Gebinde und Lieferzeit prüfst du danach gesondert.",
+        "id": "a1-text-8"
+      },
+      {
+        "typ": "absatz",
+        "text": "Die Ausgangstabelle zeigt außerdem eine Weihnachtsvariante: Geschenkbox statt Versandbeutel. Bestellt der Kunde 200 Stück dieser Variante, werden 200 Boxen und keine Versandbeutel nach dieser Verpackungsposition benötigt. „Variante“ bedeutet hier Austausch der passenden Position, nicht automatisch eine zusätzliche Verpackung. Welche Ausführung gilt, muss deshalb vor der Mengenrechnung geklärt sein.",
+        "id": "a1-text-9"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "a1-originale",
+        "text": "Vorhandene Darstellung und Anwendung"
+      },
+      {
+        "typ": "basis",
+        "ref": "tabelle-1",
+        "id": "a1-text-11"
+      },
+      {
+        "typ": "basis",
+        "ref": "merke-1",
+        "id": "a1-text-12"
+      }
+    ],
+    "details": [
+      {
+        "id": "a1-planarten",
+        "kategorie": "vergleich",
+        "titel": "Gleiche Auftragsnummer, unterschiedliche Planungsfragen",
+        "inhalt": [
+          {
+            "typ": "absatz",
+            "text": "Die Stückliste beantwortet „Woraus und wie viel je Einheit?“. Der Arbeitsplan beantwortet „Welche Arbeitsschritte, in welcher Folge und mit welchen vorgesehenen Ressourcen?“. Beide können zum selben Produkt gehören, sind aber nicht austauschbar. Aus 3 kg Garn lässt sich keine zuverlässige Fertigungsdauer ableiten.",
+            "id": "a1-detail-1-1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auch der Termin kommt nicht allein aus der Stückliste. Erst Auftragstermin, Arbeitsablauf, Kapazitäten, Bestände und Lieferzeiten zeigen gemeinsam, wann das Material tatsächlich benötigt wird.",
+            "id": "a1-detail-1-2"
+          }
+        ]
+      }
+    ],
+    "verstaendnisfragen": [
+      {
+        "id": "a1-vf1",
+        "frage": "Warum werden aus 3 kg Auftragsbedarf bei 500 g frei verfügbarem Bestand nicht automatisch 3 kg Bestellmenge?",
+        "antwort": "Der Auftragsbedarf beschreibt den benötigten Einsatz, nicht den fehlenden Zukauf. Unter den ausdrücklich genannten Annahmen decken 500 g Bestand einen Teil, sodass 2,5 kg fehlen. Weitere Bestellrestriktionen sind anschließend zu prüfen."
+      },
+      {
+        "id": "a1-vf2",
+        "frage": "Warum ist die Weihnachtsvariante vor der Rechnung zu klären?",
+        "antwort": "Die Variante verändert eine Materialposition. Wer zuerst die Standardstückliste vervielfacht und danach nur Boxen hinzufügt, plant zusätzlich nicht benötigte Versandbeutel. Zuerst wird die gültige Ausführung bestimmt, dann deren Stückliste aufgelöst."
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Vorhandene MAKEL-Stückliste in ik2024-lf06-k03, a1",
+        "bezug": "Materialeinsatz aus dem aktuellen Repo; Auftragsmenge und verfügbarer Bestand didaktisch gewählt. Arithmetik separat geprüft."
+      }
+    ],
+    "abschnitt": "a1",
+    "darstellung": "vollfassung"
+  }
+}

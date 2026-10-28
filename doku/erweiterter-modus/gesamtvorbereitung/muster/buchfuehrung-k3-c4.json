@@ -1,0 +1,152 @@
+{
+  "hinweis": "Redaktioneller Entwurf, nicht eingebaut; vor Übernahme Voraussetzungen/Quellen und Einordnung der gemeinsam genutzten Basiselemente prüfen.",
+  "datei": "quellen/k3-konten.kapitel.json",
+  "lernfeld": "buchfuehrung",
+  "abschnitt": "c4",
+  "eintrag": {
+    "ziel": "Du leitest einen Buchungssatz aus dem wirtschaftlichen Vorgang ab und prüfst mehr als die Summengleichheit.",
+    "vorwissen_kurz": "Soll bezeichnet die linke, Haben die rechte Kontoseite. Ob eine Zunahme links oder rechts steht, hängt von der Kontoart ab.",
+    "inhalt": [
+      {
+        "typ": "zwischentitel",
+        "id": "c4-vorgang",
+        "text": "Erst verstehen, dann buchen"
+      },
+      {
+        "typ": "absatz",
+        "text": "Auf dem Kontoauszug steht eine Überweisung über 800 €. Das reicht noch nicht für einen Buchungssatz: Derselbe Abgang könnte eine Lieferantenrechnung begleichen, ein Darlehen tilgen oder eine andere Ursache haben. Zuerst brauchst du den Beleg und die Information, welcher Vorgang dahintersteht.",
+        "id": "c4-text-2"
+      },
+      {
+        "typ": "absatz",
+        "text": "Im Grundfall bezahlt MAKEL eine bereits vollständig gebuchte Lieferantenrechnung über 800 € per Bank. Es gibt keinen Skonto und keine Gebühren. Die Rechnung wurde vorher erfasst. Jetzt wird nur die offene Schuld beglichen. Deshalb entstehen durch die Zahlung weder ein neuer Materialaufwand noch eine zweite Vorsteuerbuchung.",
+        "id": "c4-text-3"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "c4-analyse",
+        "text": "Warum beide Abgänge auf verschiedenen Seiten stehen"
+      },
+      {
+        "typ": "absatz",
+        "text": "Die Bank ist ein Aktivkonto. Ihr Guthaben wird um 800 € kleiner; ein Aktivabgang steht im Haben. Die Verbindlichkeit ist ein Passivkonto. Auch sie wird um 800 € kleiner, ihr Abgang steht aber im Soll. Zwei wirtschaftliche Abgänge bedeuten deshalb nicht zwei Habenbuchungen. Die Kontoart entscheidet über die Seite.",
+        "id": "c4-text-5"
+      },
+      {
+        "typ": "tabelle",
+        "spalten": [
+          "Konto",
+          "Kontoart",
+          "Veränderung",
+          "Buchungsseite"
+        ],
+        "zeilen": [
+          {
+            "zellen": [
+              "4400 Verbindlichkeiten aus Lieferungen und Leistungen",
+              "Passivkonto",
+              "Schuld sinkt um 800 €",
+              "Soll"
+            ]
+          },
+          {
+            "zellen": [
+              "2800 Guthaben bei Kreditinstituten",
+              "Aktivkonto",
+              "Guthaben sinkt um 800 €",
+              "Haben"
+            ]
+          }
+        ],
+        "fazit": "Der vollständige Satz lautet: 4400 Verbindlichkeiten aus Lieferungen und Leistungen 800 € an 2800 Guthaben bei Kreditinstituten 800 €.",
+        "id": "c4-text-6"
+      },
+      {
+        "typ": "absatz",
+        "text": "Kontrolliere anschließend zwei Dinge: Sind Soll- und Habenbetrag gleich hoch? Und passt die Wirkung zum Beleg? Hier sinken Bank und Lieferantenschuld um denselben Betrag. Das Eigenkapital verändert sich durch diesen reinen Zahlungsausgleich nicht. Ein ausgeglichener Satz auf falschen Konten wäre trotzdem falsch.",
+        "id": "c4-text-7"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "c4-grafik",
+        "text": "Die Regel an weiteren Vorgängen überprüfen"
+      },
+      {
+        "typ": "absatz",
+        "text": "Die vorhandene Kontengrafik zeigt andere Geschäftsvorfälle. Nenne vor jeder Auswahl zuerst die wirtschaftliche Veränderung. Erkläre danach für jedes betroffene Konto die Seite. Die Formel „Soll an Haben“ ordnet den fertigen Satz, sie ersetzt diese Analyse nicht.",
+        "id": "c4-text-9"
+      },
+      {
+        "typ": "zwischentitel",
+        "id": "c4-originale",
+        "text": "Vorhandene Darstellung und Anwendung"
+      },
+      {
+        "typ": "basis",
+        "ref": "grafik-1",
+        "id": "c4-text-11"
+      },
+      {
+        "typ": "basis",
+        "ref": "check-1",
+        "id": "c4-text-12"
+      },
+      {
+        "typ": "basis",
+        "ref": "praxistipp-1",
+        "id": "c4-text-13"
+      }
+    ],
+    "details": [
+      {
+        "id": "c4-neue-rechnung",
+        "kategorie": "vergleich",
+        "titel": "Wenn die Rechnung erst jetzt erfasst wird",
+        "inhalt": [
+          {
+            "typ": "absatz",
+            "text": "Bei einer noch nicht gebuchten Anschaffungsrechnung liegt ein anderer Schritt vor. Angenommen, eine betriebliche Büromaschine kostet 1.000 € netto; die Aufgabe setzt 19 % vollständig abziehbare Vorsteuer voraus. Die Lieferung erfolgt auf Ziel. Dann werden 0860 Büromaschinen und EDV-Anlagen mit 1.000 € und 2600 Vorsteuer mit 190 € im Soll erfasst; 4400 Verbindlichkeiten aus Lieferungen und Leistungen steht mit 1.190 € im Haben. Dies ist ein ausdrücklich vereinfachter Rechnungsfall, keine Prüfung sämtlicher Vorsteuer- oder Aktivierungsvoraussetzungen.",
+            "id": "c4-detail-1-1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die spätere ungekürzte Zahlung lautet 4400 Verbindlichkeiten aus Lieferungen und Leistungen 1.190 € an 2800 Guthaben bei Kreditinstituten 1.190 €. Würdest du bei der Zahlung nochmals Maschine und Vorsteuer erfassen, wäre der ursprüngliche Vorgang doppelt gebucht.",
+            "id": "c4-detail-1-2"
+          }
+        ]
+      },
+      {
+        "id": "c4-summenfehler",
+        "kategorie": "sonderfall",
+        "titel": "Ausgeglichen bedeutet noch nicht richtig",
+        "inhalt": [
+          {
+            "typ": "absatz",
+            "text": "Der Satz 2800 Bank an 4400 Verbindlichkeiten 800 € wäre ebenfalls betragsgleich. Er würde aber Bankguthaben und Schuld erhöhen. Das passt nicht zu einer Zahlung an den Lieferanten. Eine Summenkontrolle erkennt diese Vertauschung nicht; die Kontrolle der wirtschaftlichen Wirkung schon.",
+            "id": "c4-detail-2-1"
+          }
+        ]
+      }
+    ],
+    "verstaendnisfragen": [
+      {
+        "id": "c4-vf1",
+        "frage": "Bei der Zahlung sinken Bank und Lieferantenschuld. Warum steht trotzdem nur ein Konto im Haben?",
+        "antwort": "Die Bank ist ein Aktivkonto und nimmt im Haben ab. Die Verbindlichkeit ist ein Passivkonto und nimmt im Soll ab. Die Seite folgt aus Kontoart und Veränderung, nicht allein aus dem Wort Abgang."
+      },
+      {
+        "id": "c4-vf2",
+        "frage": "Warum wird bei einer schon vollständig gebuchten Rechnung die Vorsteuer bei der ungekürzten Zahlung nicht erneut erfasst?",
+        "antwort": "Die Vorsteuer wurde bereits bei der Rechnungsbuchung erfasst. Die ungekürzte Zahlung gleicht nur die Verbindlichkeit gegen Bank aus. Erneutes Buchen würde den Steuerbetrag doppelt erfassen. Bei einem nachträglichen Nachlass wäre dagegen eine gesonderte Korrektur zu prüfen."
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "MAKEL-Kontenplan im Repository",
+        "bezug": "Nummern und Bezeichnungen gegen quellen/musterunternehmen.json am 28.10.2026 abgeglichen; didaktische Fälle und Zahlen von ChatGPT."
+      }
+    ],
+    "abschnitt": "c4",
+    "darstellung": "vollfassung"
+  }
+}
