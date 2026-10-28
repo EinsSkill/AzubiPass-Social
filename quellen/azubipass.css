@@ -152,7 +152,7 @@ button{font:inherit;}
 .abschnitt-schalter:hover{text-decoration-thickness:2px;}
 .abschnitt-schalter:focus-visible{outline:3px solid rgba(201,162,39,.55);outline-offset:3px;border-radius:2px;}
 .abschnitt-schalter-ende{margin:18px 0 0;}
-.vollfassung{max-width:var(--lese);margin:4px 0 34px;padding:2px 0 4px 18px;
+.vollfassung{max-width:var(--lese);overflow-wrap:break-word;margin:4px 0 34px;padding:2px 0 4px 18px;
   border-left:3px solid var(--gold);}
 .vollfassung p{margin:0 0 18px;}
 .vf-ziel{font:500 15px/1.5 var(--sans);color:var(--text-sek);}

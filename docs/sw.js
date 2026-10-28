@@ -11,7 +11,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-3c7bc721c9954955";
+var SPEICHER = "azubipass-9206761cfe767f56";
 var VORRAT = {
   "./": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "app.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
@@ -40,7 +40,7 @@ var VORRAT = {
   "lf13.html": "7a583b78a3a5fb2600d4814290442fe258a3008913703fb1a8e6804e18cce0f6",
   "lf2.html": "e10f925201eb8411ad82636267fb4f266f26ff9862c1be75fd372424eab142e1",
   "lf3.html": "1f96c6b10edeef1fbfac6bfac4af6b9429b8cdebc73e4e0f26df48daa13de393",
-  "lf4.html": "75f3c2d88f3241b7782b02aad6fc847a445dbb6dbd8128c677e45104f79890b6",
+  "lf4.html": "8ea997e11a703dd8921ae11417220da1fbb4610f23b0f3e84476b039cef190f2",
   "lf5.html": "bba73a7aa2ea1ea57fbcfad55e0b18925279a83c83d16c94c11f0c92c122684d",
   "lf7.html": "477d114dfc125a339f98c047dbedcf7a1278396d12352a4ae05935245fd7cd9c",
   "lf8.html": "8cab6bdfc82c941efcca2e7b85563a8cdb025a50dbcc7a019b6c193726eac355",
@@ -51,7 +51,7 @@ var VORRAT = {
   "mittel/aufgaben.json": "b91f1e541f45e2891f8e96b0bf2ba4d37cf4086495eecaaf4192305b8ed25a2e",
   "mittel/azubipass-logo.png": "6fbfaa65da67de20b628b6d5415a8a46c95ceeaa5c6638492e2860e7d6e98973",
   "mittel/azubipass-symbol.png": "82cddbb695cbba0a09d3b933eb4b178e221463e015b962d8013cdff580d4a692",
-  "mittel/azubipass.css": "1bbf678d6f93e64ea9fab9b44ec525756bebaf10145f78116bb4ecc4db710355",
+  "mittel/azubipass.css": "401358f6096238cbfb2e3ce783c5c3d62960ea08c024a4d629d9e8175a325c51",
   "mittel/azubipass.js": "2f28519acb82ec94838c3c8de1fb5b91ff8edf6120b62e773dda8e4cbd45730d",
   "mittel/community-ansicht.js": "00e3cbae412cc79188537f71b3edbc4ff78741ea60c17e2358157f65ea98a781",
   "mittel/community-beitraege.js": "3b5e08ef5991386cc473798cb3d53c86d37a9e19375d87ec948924e7b06f15ab",

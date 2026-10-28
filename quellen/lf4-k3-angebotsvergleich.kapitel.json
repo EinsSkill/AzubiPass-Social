@@ -234,49 +234,407 @@
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Rabatt wird beim Kauf gewährt; Skonto hängt von schneller Zahlung ab.",
-          "Bezugskosten gehören zu den tatsächlichen Beschaffungskosten."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Rabatt, Skonto und Bezugskosten nach ihrem Grund und Zeitpunkt und beurteilst, ob sich Skontoziehen lohnt.",
+        "vorwissen_kurz": "Ein Prozentsatz braucht immer einen Grundwert. Rabatt und Skonto haben verschiedene Grundwerte, weil sie zu verschiedenen Zeitpunkten entstehen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Größen, drei verschiedene Gründe",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auf einer Rechnung sehen Rabatt und Skonto ähnlich aus: Beide verringern den Betrag um einige Prozent. Ihr Grund ist aber verschieden, und daraus folgt die Rechenreihenfolge.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:rabatt|Rabatt}} ist ein Preisnachlass, der schon beim Kauf feststeht — etwa für eine große Menge, als Treuerabatt oder für Wiederverkäufer. Er gilt unabhängig davon, wann MAKEL bezahlt. Das {{begriff:skonto|Skonto}} dagegen belohnt schnelle Zahlung. Es entsteht nur, wenn MAKEL innerhalb der Skontofrist zahlt, und wird deshalb auf den Betrag gerechnet, der nach dem Rabatt übrig ist. Die {{begriff:bezugskosten|Bezugskosten}} schließlich sind kein Nachlass, sondern Kosten, damit die Ware bei MAKEL ankommt: Fracht, Verpackung, Versicherung, bei Einfuhr auch Zoll. Sie werden addiert.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Angebot vollständig durchgerechnet",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Lieferer bietet 200 Aktenordner zu 2,50 € je Stück an. Er gewährt 10 % Mengenrabatt und 2 % Skonto bei Zahlung innerhalb von 10 Tagen, sonst 30 Tage Ziel. Die Lieferung erfolgt ab Werk; die Fracht beträgt angenommene 25 €.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Listeneinkaufspreis",
+                  "200 × 2,50 €",
+                  "500,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Rabatt 10 %",
+                  "10 % von 500,00 €",
+                  "50,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zieleinkaufspreis",
+                  "",
+                  "450,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− Skonto 2 %",
+                  "2 % von 450,00 €",
+                  "9,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Bareinkaufspreis",
+                  "",
+                  "441,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Bezugskosten (Fracht)",
+                  "",
+                  "25,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Einstandspreis",
+                  "",
+                  "466,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Je Ordner ergibt das 466,00 € ÷ 200 = 2,33 €. Zahlt MAKEL erst nach 30 Tagen, entfällt das Skonto und der Einstandspreis steigt auf 475,00 €.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Name „Zieleinkaufspreis“ verrät seine Bedeutung: Das ist der Betrag, den MAKEL am Ende des Zahlungsziels zahlen müsste. Wer früher zahlt, darf davon das Skonto abziehen. Deshalb ist die Reihenfolge Rabatt vor Skonto keine Konvention, sondern ergibt sich aus der Sache.",
+            "id": "b2-p4"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lohnt sich das Skonto?",
+            "id": "b2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für 9 € Ersparnis muss MAKEL 20 Tage früher zahlen, nämlich am 10. statt am 30. Tag. Ob das viel ist, zeigt erst der Vergleich mit einem Jahreszins. Die Überschlagsformel lautet Skontosatz × 360 ÷ (Zahlungsziel − Skontofrist), hier also 2 × 360 ÷ 20 = 36 % pro Jahr. Selbst ein teurer Kontokorrentkredit kostet deutlich weniger. Es lohnt sich daher in der Regel sogar, für die frühe Zahlung kurzfristig Kredit aufzunehmen.",
+            "id": "b2-p5"
+          },
+          {
+            "typ": "absatz",
+            "text": "Rechnet man genauer, ist der Vorteil noch etwas größer: MAKEL spart 9 € auf einen tatsächlich gezahlten Betrag von 441 €, also 2,04 % für 20 Tage. Aufs Jahr gerechnet sind das 2,04 % × 360 ÷ 20 ≈ 36,7 %. An der Entscheidung ändert das nichts.",
+            "id": "b2-p6"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Rabatt und Skonto sehen beide wie Preisnachlässe aus, wirken aber zu unterschiedlichen Zeitpunkten. Der Rabatt mindert den Preis sofort. Skonto wird nur bei Zahlung innerhalb der Frist genutzt und wird deshalb auf dem bereits rabattierten Preis berechnet. Fracht, Verpackung, Versicherung und Zoll erhöhen dagegen den Einstandspreis.",
-        "beispiele": [
-          "Bei 2 % Skonto innerhalb von 10 Tagen und 30 Tagen Zahlungsziel werden 2 % für 20 Tage früheres Zahlen gespart; die vorhandene Überschlagsrechnung entspricht etwa 36 % Jahreszins.",
-          "Ein Angebot ‚frei Haus‘ enthält die Lieferung bereits, während beim Angebot ‚ab Werk‘ die Fracht noch als Bezugskosten ergänzt werden muss."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ab Werk oder frei Haus",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein zweiter Lieferer bietet dieselben 200 Ordner zu 2,40 € an, 10 % Rabatt, 2 % Skonto, aber frei Haus — also ohne Fracht für MAKEL. Rechnung: 480,00 € − 48,00 € = 432,00 € − 8,64 € = 423,36 €, keine Bezugskosten, Einstandspreis 423,36 €. Er ist um 42,64 € günstiger. Hätte MAKEL nur die Bareinkaufspreise verglichen (441,00 € zu 423,36 €), wäre der Abstand ohne Fracht geringer erschienen. Wer Bezugskosten vergisst, bevorzugt systematisch Angebote ab Werk.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn das Geld für die frühe Zahlung fehlt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die 36 % gelten nur, wenn MAKEL am 10. Tag auch zahlen kann. Ist das Konto leer und kein Kredit verfügbar, bleibt nur die Zahlung zum Ziel. Dann muss der Vergleich mit dem Zieleinkaufspreis rechnen, nicht mit dem Bareinkaufspreis. Ein Skonto, das MAKEL nicht nutzen kann, darf nicht als sichere Ersparnis in die Entscheidung einfließen.",
+                "id": "b2-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf9:k1"
+                ],
+                "text": "Skonto, Liquidität und Kredit hängen eng zusammen",
+                "id": "b2-d2-v1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Bei 2 % Skonto, zehn Tagen Skontofrist und 30 Tagen Zahlungsziel beträgt die verkürzte Zahlungszeit 20 Tage. Überschlag: 2 × 360 ÷ 20 = 36 % Jahreszins. Das erklärt, warum der Betrieb die Skontofrist wirtschaftlich prüfen sollte; die genaue Entscheidung hängt trotzdem von Liquidität und Zahlungsbedingungen ab.",
-        "typische_fehler": "Skonto wird als immer gewährter Rabatt behandelt oder Bezugskosten werden nicht berücksichtigt. Auch wird der Skontovorteil isoliert betrachtet, ohne zu prüfen, ob die Zahlung rechtzeitig möglich ist.",
         "verstaendnisfragen": [
-          "Wann entsteht Skonto? Erst bei Zahlung innerhalb der vereinbarten Skontofrist.",
-          "Welche Kosten werden addiert? Fracht, Verpackung, Versicherung und Zoll als Bezugskosten."
-        ],
-        "pruefungsbezug": "Begriffe anhand des Zeitpunkts unterscheiden: sofortiger Nachlass = Rabatt, Nachlass für schnelle Zahlung = Skonto, Kosten bis zum Eintreffen = Bezugskosten.",
-        "merksatz": "Rabatt sofort, Skonto bei schneller Zahlung, Bezugskosten zusätzlich."
+          {
+            "frage": "Warum wird das Skonto nicht vom Listeneinkaufspreis berechnet?",
+            "antwort": "Das Skonto bezieht sich auf den Betrag, den MAKEL am Ende des Zahlungsziels schulden würde. Das ist der Preis nach Abzug des Rabatts, also der Zieleinkaufspreis. Der Rabatt ist zu diesem Zeitpunkt längst abgezogen.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Bei „3 % Skonto innerhalb 14 Tagen, 30 Tage netto“ — lohnt sich die frühe Zahlung, wenn der Kontokorrentkredit 12 % kostet?",
+            "antwort": "Ja. Überschlag: 3 × 360 ÷ (30 − 14) = 3 × 360 ÷ 16 = 67,5 % pro Jahr. Das liegt weit über 12 %. Selbst wenn MAKEL dafür den Kredit nutzen muss, spart es unter dem Strich Geld.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Einstandspreis ist der quantitative Vergleich.",
-          "Qualitative Kriterien werden mit Punkten und Gewichtungen bewertet."
+        "darstellung": "vollfassung",
+        "ziel": "Du entscheidest zwischen Angeboten mit einer begründeten Nutzwertanalyse, die neben dem Preis auch Liefertreue, Qualität und Nachhaltigkeit berücksichtigt, und kannst sie in einer Tabellenkalkulation nachvollziehbar aufbauen.",
+        "vorwissen_kurz": "Der Einstandspreis ist eine Zahl, die man ausrechnen kann. Zuverlässigkeit oder Qualität muss man erst in Punkte übersetzen, bevor man sie vergleichen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum der billigste Lieferer nicht automatisch der beste ist",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Einstandspreis entscheidet den **quantitativen** Vergleich. Ein Lieferer, der zwei Wochen zu spät liefert, verursacht aber Kosten, die in keinem Preis stehen: Stillstand, Eilfracht, verärgerte Kunden. Auch Qualität, Service und Umweltverhalten gehören in eine gute Entscheidung. Diese **qualitativen** Kriterien lassen sich nicht direkt in Euro ausdrücken. Die {{begriff:nutzwertanalyse|Nutzwertanalyse}} macht sie trotzdem vergleichbar: Jedes Kriterium bekommt ein Gewicht, jeder Lieferer pro Kriterium Punkte.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Analyse in vier Schritten",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "liste",
+            "punkte": [
+              "Kriterien festlegen und gewichten, bevor die Angebote bewertet werden. Die Gewichte ergeben zusammen 100 %.",
+              "Jeden Lieferer je Kriterium mit Punkten bewerten, hier auf einer Skala von 0 bis 10.",
+              "Punkte mit dem Gewicht multiplizieren.",
+              "Die gewichteten Werte addieren. Der höchste Nutzwert spricht für den Lieferer."
+            ],
+            "nummeriert": true,
+            "id": "b3-l1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für Lieferer A ergibt sich 8 × 0,40 + 10 × 0,30 + 9 × 0,20 + 7 × 0,10 = 3,2 + 3,0 + 1,8 + 0,7 = 8,7. Lieferer B kommt auf 4,0 + 1,5 + 1,4 + 0,6 = 7,5. B ist beim Preis besser, verliert aber bei der Liefertreue so viel, dass A insgesamt vorne liegt. Das Ergebnis gilt für diese Gewichtung: Hätte MAKEL den Preis mit 70 % gewichtet, sähe es anders aus. Deshalb müssen die Gewichte vorher feststehen und begründet sein — etwa: Das Material versorgt einen Kundenauftrag, eine Verspätung wäre teuer, also bekommt die Liefertreue 30 %.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Nachhaltigkeit als eigenes Kriterium",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL will künftig auch Umwelt- und Sozialkriterien berücksichtigen. Das geht nur, wenn klar ist, wofür es Punkte gibt. Ein Vorschlag: 10 Punkte für ein anerkanntes, prüfbares Zertifikat und Mehrwegverpackung, 5 Punkte für eine konkrete, belegte Angabe (etwa Recyclinganteil), 0 Punkte für allgemeine Werbeaussagen ohne Nachweis. Ein neues Kriterium verändert die Gewichte der anderen, denn alle zusammen müssen weiter 100 % ergeben.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Gewicht",
+              "Lieferer A",
+              "Lieferer B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einstandspreis",
+                  "35 %",
+                  "8 → 2,80",
+                  "10 → 3,50"
+                ]
+              },
+              {
+                "zellen": [
+                  "Liefertreue",
+                  "25 %",
+                  "10 → 2,50",
+                  "5 → 1,25"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualität",
+                  "20 %",
+                  "9 → 1,80",
+                  "7 → 1,40"
+                ]
+              },
+              {
+                "zellen": [
+                  "Service",
+                  "10 %",
+                  "7 → 0,70",
+                  "6 → 0,60"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachhaltigkeit",
+                  "10 %",
+                  "0 → 0,00",
+                  "10 → 1,00"
+                ]
+              },
+              {
+                "zellen": [
+                  "**Nutzwert**",
+                  "100 %",
+                  "**7,80**",
+                  "**7,75**"
+                ]
+              }
+            ],
+            "fazit": "Mit dem neuen Kriterium schrumpft der Abstand auf 0,05 Punkte. Bei so knappen Ergebnissen entscheidet die Analyse allein nicht mehr.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein so knappes Ergebnis ist ein Hinweis, genauer hinzusehen: Lassen sich die Punkte belegen? Kann Lieferer A ein Zertifikat nachreichen? Kann Lieferer B seine Liefertreue verbessern, etwa mit einer Vertragsstrafe bei Verspätung? Eine Nutzwertanalyse ersetzt die Entscheidung nicht. Sie macht sichtbar, worauf sie beruht.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Bewertung in der Tabellenkalkulation",
+            "id": "b3-z4"
+          },
+          {
+            "typ": "absatz",
+            "text": "In einer Tabellenkalkulation lässt sich die Analyse so aufbauen, dass jeder Rechenschritt sichtbar bleibt. In Spalte B stehen die Gewichte als Dezimalzahlen (0,35 usw.), in C und D die Punkte. Der gewichtete Wert entsteht mit =B2*C2, der Nutzwert mit =SUMME(E2:E6). Eine Prüfzelle =SUMME(B2:B6) zeigt, ob die Gewichte zusammen 1 ergeben.",
+            "id": "b3-p5"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit einer WENN-Funktion lässt sich eine Mindestanforderung prüfen. Soll ein Lieferer bei der Liefertreue mindestens 6 Punkte erreichen, lautet die Formel etwa =WENN(D3>=6;\"geeignet\";\"ausgeschlossen\"). Lieferer B mit 5 Punkten wäre dann trotz guten Nutzwerts ausgeschlossen — ein K.-o.-Kriterium, das vorher festgelegt werden muss.",
+            "id": "b3-p6"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zusätzliche Daten wie Lieferzeit oder Zertifikat stehen oft in einer zweiten Tabelle, zum Beispiel auf einem Blatt „Lieferer“ mit der Liefererkennung in Spalte A. Eine Suchfunktion holt sie herüber: =SVERWEIS(A2;Lieferer!A:D;3;FALSCH) sucht die Kennung aus A2 und liefert den Wert aus der dritten Spalte. Das letzte Argument FALSCH verlangt eine genaue Übereinstimmung. Fehlt die Kennung in der Liefererliste, erscheint der Fehler #NV. In neueren Programmversionen gibt es zusätzlich XVERWEIS, bei dem man einen eigenen Text für den Fehlerfall angeben kann, etwa =XVERWEIS(A2;Lieferer!A:A;Lieferer!C:C;\"nicht gefunden\"). Ob die Funktion verfügbar ist und wie das Trennzeichen lautet, hängt vom Programm und seiner Spracheinstellung ab.",
+            "id": "b3-p7"
+          }
         ],
-        "ablauf": [
-          "Kriterien und Gewichte vor dem Vergleich festlegen.",
-          "Jeden Lieferer je Kriterium mit Punkten bewerten.",
-          "Punkte mit dem Gewicht multiplizieren.",
-          "Gewichtete Werte addieren und den höchsten Nutzwert begründen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn die Suchfunktion falsch statt gar nicht trifft",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Lässt man beim SVERWEIS das letzte Argument weg oder setzt WAHR, sucht die Funktion nur ungefähr und setzt eine aufsteigend sortierte erste Spalte voraus. Ist die Liste nicht sortiert, liefert sie unter Umständen einen Wert aus einer falschen Zeile — ohne Fehlermeldung. Ein #NV ist deshalb harmloser als ein falscher Treffer, weil man ihn sieht. Für Kennungen wie Lieferernummern gehört immer die genaue Suche dazu.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Punkteskala und Gewichte nachträglich ändern",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer nach dem Ergebnis die Gewichte ändert, kann fast jeden Lieferer gewinnen lassen. Im ursprünglichen Beispiel reicht es, den Preis auf 70 % zu heben und die übrigen Gewichte entsprechend zu kürzen (Liefertreue 15 %, Qualität 10 %, Service 5 %): Dann kommt A auf 8,35 und B auf 8,75 Punkte. Deshalb werden Kriterien, Gewichte und die Bedeutung der Punktwerte vorher schriftlich festgelegt. Wer sie später ändern will, braucht einen neuen sachlichen Grund, nicht ein unerwünschtes Ergebnis.",
+                "id": "b3-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k3-b1"
+                ],
+                "text": "Wie der Einstandspreis entsteht, der hier als Preis bewertet wird",
+                "id": "b3-d2-v1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "erklaerung": "Die Nutzwertanalyse macht qualitative Überlegungen nachvollziehbar. Ein Lieferer kann beim Preis schlechter, bei Liefertreue und Qualität aber deutlich besser sein. Die Gewichtung muss vor dem Ergebnis feststehen, sonst wird die Rechnung nur nachträglich an den Wunschlieferer angepasst.",
-        "beispiele": [
-          "Lieferer A erhält beim Einstandspreis 8 Punkte bei 40 % Gewichtung: 8 × 0,40 = 3,2 Nutzwertpunkte.",
-          "In der vorhandenen Tabelle erreicht Lieferer A insgesamt 8,7 Punkte und Lieferer B 7,5, obwohl B beim Preis 10 Punkte erhält."
-        ],
-        "fallbeispiel": "Berechne Lieferer A aus der Tabelle: Einstandspreis 8 × 40 % = 3,2; Liefertreue 10 × 30 % = 3,0; Qualität 9 × 20 % = 1,8; Service 7 × 10 % = 0,7. Summe: 3,2 + 3,0 + 1,8 + 0,7 = 8,7. Lieferer B kommt auf 7,5. Nach dieser Gewichtung ist A die bessere Gesamtentscheidung, obwohl B beim Preis besser abschneidet.",
-        "typische_fehler": "Gewichtung und Punkte werden vertauscht oder erst nach Kenntnis des Ergebnisses festgelegt. Ein weiterer Fehler ist, nur den Preis zu betrachten und die qualitative Bewertung als ‚subjektiv‘ ohne nachvollziehbare Rechnung abzutun.",
         "verstaendnisfragen": [
-          "Was bedeutet ein Gewicht von 40 %? Das Kriterium trägt 40 % zum Gesamtnutzwert bei.",
-          "Wann kann der höchste Nutzwert vom billigsten Lieferer abweichen? Wenn andere wichtige Kriterien, etwa Liefertreue oder Qualität, höher bewertet werden."
-        ],
-        "pruefungsbezug": "In Berechnungen jedes Kriterium einzeln multiplizieren und erst am Ende addieren. In der Begründung immer Preis und qualitative Kriterien gemeinsam nennen.",
-        "merksatz": "Nutzwert = Punkte mal Gewichtung; die Gewichte stehen fest, bevor die Lieferer bewertet werden."
+          {
+            "frage": "Lieferer B hat den höchsten Nutzwert, liefert aber nur 5 von 10 Punkten bei der Liefertreue. MAKEL hatte mindestens 6 Punkte als Pflicht festgelegt. Wie entscheidest du?",
+            "antwort": "B scheidet aus, denn die Mindestanforderung ist ein K.-o.-Kriterium und wurde vorher festgelegt. Ein hoher Nutzwert kann eine nicht erfüllte Pflichtbedingung nicht ausgleichen. MAKEL wählt unter den verbleibenden Lieferern den mit dem höchsten Nutzwert.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Eine SVERWEIS-Formel liefert für Lieferer „L-07“ die Lieferzeit eines anderen Lieferers, ohne Fehlermeldung. Woran kann das liegen?",
+            "antwort": "Vermutlich wurde ungefähr statt genau gesucht: Das vierte Argument fehlt oder steht auf WAHR, und die Liste ist nicht sortiert. Dann gibt die Funktion den nächstbesten Treffer zurück. Mit FALSCH als viertem Argument erscheint stattdessen #NV, wenn die Kennung fehlt.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
