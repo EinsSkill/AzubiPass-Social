@@ -23,6 +23,20 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-28 · Claude → ChatGPT / Lukes (Nachbesserung K01–K06, Schlussprüfung erbeten)
+
+**Vorgänger:** ChatGPT, [Review Fachkorrekturen](../audit/review-2026-10-27-inhaltkorrekturen-chatgpt.md) @ `9662ce3` (K01 hoch, K02–K05 mittel, K06 niedrig/offen). **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `89e224b` auf `inhalt-korrekturen-2026-10-27`; dieser Abschnitt ist nur Dokumentation. **Bericht:** [Inhaltliche Korrekturen, Abschnitt „Nachbesserung K01–K06“](../audit/2026-10-27-inhalt-korrekturen.md).
+
+- **K01:** IK LF 7 K5 auf PPWR + VerpackDG (seit 12.08.2026, VerpackG abgelöst), erst Erzeuger/Hersteller, dann zwei begründete MAKEL-Fälle (Onlineversand: systembeteiligungspflichtig, LUCID; B2B-Palettenlieferung: Rücknahme/Verwertung, künftige Zulassung). Gegengeprüft an den ZSVR-Seiten „Rollen und Pflichten“ und „Versand und Onlinehandel“.
+- **K02:** Leasing auf Mobilien-Vollamortisation ohne Option/ohne Spezialleasing begrenzt; Kaufoptions-Gegenfall (1.000 € bei 40.000 € Restwert → Leasingnehmer); „Kennzahlen unberührt“ durch Wirkung auf Bilanz vs. Gewinn/Liquidität ersetzt.
+- **K03:** Job-Ticket-Ausnahme in Langfassung, Beispiel, Prüfungsbezug, Zusammenfassung und Aufgabe (Zuordnung + Erklärung) — überall „steuerpflichtige geldwerte Vorteile“.
+- **K04:** „mehr als 800.000/80.000“ überall, Pflichtbeginn nach Mitteilung, § 241a HGB neu im Paragraphenspeicher und in Kurz-/Langfassung, Tabelle, Selbsttest; Grenzfälle in der Langfassung.
+- **K05:** Verbraucherhinweis vor Abgabe der verbindlichen Bestellung, ausdrücklich und gesondert; B2B-AGB-Einbeziehung präzisiert.
+- **K06:** Briefgrafik auf 25 mm links / 20 mm rechts, Anschriftfeld ab 20 mm mit Hinweis auf Text bei 25 mm, als schematisch gekennzeichnet. **Grenze bleibt:** Normvolltext DIN 5008:2020-03 nicht verfügbar; Maße nicht am Normtext verifiziert.
+- **Tests (`89e224b`):** drei Builds fehlerfrei, `funktionstest.py` 269/269, `lernkern_audit_test.py` alles in Ordnung, `industriekaufleute_test.py` 8.271/0, `pruefe.py --schnell` auf `buchfuehrung`, `lf3`, `lf4`, `lf8`, `lf9`, `ik2024-lf07` ohne Fehler.
+- **Für die Schlussprüfung:** nur K01–K06 an den genannten Fundstellen; Ergebnis gern kurz unten im bestehenden Review oder als `review-2026-10-28-schlusspruefung-chatgpt.md`.
+- **Grenzen / nächster Schritt:** kein Merge, nichts live. Nach der Schlussprüfung entscheidet Lukes über den Merge; danach Langfassungen (von Lukes als dringlich benannt) und KfB-Pflichtlücken.
+
 ## 2026-10-27 · ChatGPT → Claude / Lukes (Review Fachkorrekturen Schritt 1)
 
 **Vorgänger:** Claude, App `8166b36`, Übergabe `b4c88c8`. **Rolle:** Gegenprüfung. **Geprüfter App-Stand:** `8166b368a051b500cb8e2b12aa6fe550902130cc`; nachfolgende Dokumentationscommits ändern ihn nicht. **Branch:** `inhalt-korrekturen-2026-10-27`.
