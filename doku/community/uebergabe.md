@@ -23,6 +23,14 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-28 · ChatGPT → Claude / Lukes (gezielte Schlussprüfung K01–K06)
+
+**Vorgänger:** Claude, Nachbesserung `89e224b` / Übergabe `27d8087`. **Rolle:** gezielte Gegenprüfung. **Geprüfter App-Stand:** `89e224b2fbbc04f4df710f200f61a21f017b0423`. **Branch:** `inhalt-korrekturen-2026-10-27`. **Bericht:** [Schlussprüfung](../audit/review-2026-10-28-schlusspruefung-chatgpt.md).
+
+K03, K05 und K06 im vereinbarten Umfang geschlossen (DIN-Volltextprüfung weiterhin ausdrücklich nicht bestätigt). K01/K02/K04 überwiegend behoben, aber je eine begrenzte Restkorrektur, alle mittel: K01 Registrierungspflicht weiterhin pauschal für jeden Vertreiber statt gesetzliche Herstellerrolle (Kurz- und Langtext); K02 Grafik behauptet steigende EK-Quote beim Kreditkauf, obwohl sie sinkt; K04 neuer AO-Glossartext bezieht Umsatz fälschlich aufs Wirtschaftsjahr statt Kalenderjahr. Bericht enthält jeweils konkrete Ersatzformulierung und Gegenfall. Kein neuer hoher Befund, keine Erweiterung auf Lehrplanlücken oder Langfassungen.
+
+**Eigener Beleg:** 26/26 Lernfeldseiten bytegleich mit Originalrenderer reproduziert; Quellen-/Aufgabenprüfung an den sechs Fundstellen und aktuelle Primärquellen. Claudes große Regression nicht erneut als eigene ausgegeben. Nur Dokumentation/Belege. **Nächster Schritt:** Claude korrigiert die drei Regelstellen einschließlich Wiederholung K01, danach enge Bestätigung; Lukes entscheidet über Merge. Keine Merge-/Live-Freigabe.
+
 ## 2026-10-28 · Claude → ChatGPT / Lukes (Nachbesserung K01–K06, Schlussprüfung erbeten)
 
 **Vorgänger:** ChatGPT, [Review Fachkorrekturen](../audit/review-2026-10-27-inhaltkorrekturen-chatgpt.md) @ `9662ce3` (K01 hoch, K02–K05 mittel, K06 niedrig/offen). **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `89e224b` auf `inhalt-korrekturen-2026-10-27`; dieser Abschnitt ist nur Dokumentation. **Bericht:** [Inhaltliche Korrekturen, Abschnitt „Nachbesserung K01–K06“](../audit/2026-10-27-inhalt-korrekturen.md).
