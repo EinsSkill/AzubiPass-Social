@@ -26,7 +26,7 @@
         "hintergrundwissen": "Handelsrecht ordnet die kaufmännische Rechnungslegung, Steuerrecht die Ermittlung und Kontrolle der steuerlichen Bemessungsgrundlage. Deshalb können zwei Pflichten nebeneinander bestehen, ohne dass sie dasselbe Gesetz und denselben Zweck haben.",
         "erklaerung": "Die Buchführungspflicht beantwortet die Frage, wer Bücher führen muss. Die Grundsätze ordnungsgemäßer Buchführung beantworten, wie diese Bücher geführt werden müssen. Vollständigkeit, Richtigkeit, Klarheit, Nachprüfbarkeit und zeitgerechte Erfassung bilden dabei zusammen ein System. Ein Betrieb erfüllt die Pflicht also nicht schon dadurch, dass irgendwo Zahlen stehen.",
         "beispiel": "Ein Kaufmann darf keine Umsätze auslassen, nur weil sie bar bezahlt wurden. Ein kleiner Betrieb darf seine Belege auch digital verwalten, muss aber trotzdem sicherstellen, dass sie lesbar, vollständig und wiederauffindbar bleiben.",
-        "fallbeispiel": "Ein nicht im Handelsregister eingetragenes Gewerbe wächst stark. Zuerst ist zu klären, ob bereits ein Handelsgewerbe vorliegt. Falls nicht, kann die steuerliche Buchführungspflicht unabhängig davon entstehen, sobald die gesetzlichen Voraussetzungen erfüllt sind. In einer Prüfung ist daher immer zuerst die Rechtsgrundlage zu benennen.",
+        "fallbeispiel": "Ein nicht im Handelsregister eingetragenes Gewerbe wächst stark. Zuerst ist zu klären, ob bereits ein Handelsgewerbe vorliegt. Falls nicht, kann die steuerliche Buchführungspflicht unabhängig davon entstehen, sobald die gesetzlichen Voraussetzungen erfüllt sind. In einer Prüfung ist daher immer zuerst die Rechtsgrundlage zu benennen. Grenzfälle: Bei genau 800.000 € Umsatz und genau 80.000 € Gewinn entsteht die Pflicht nach § 141 AO nicht — erst ein Euro mehr reicht. Und auch dann beginnt sie nicht sofort, sondern mit dem Wirtschaftsjahr nach der Mitteilung des Finanzamts. Ein eingetragener Einzelkaufmann mit zweimal hintereinander 300.000 € Umsatz und 40.000 € Gewinn ist nach § 241a HGB befreit; eine GmbH mit denselben Zahlen bleibt buchführungspflichtig.",
         "pruefungsbezug": "Typische Aufgaben verlangen die Abgrenzung von § 238 HGB, § 140 AO und § 141 AO. Entscheidend ist nicht das Auswendiglernen einer Zahl, sondern die Begründung: Kaufmann, abgeleitete Pflicht oder eigenständige steuerliche Pflicht?",
         "typische_fehler": "HGB-Pflicht und steuerliche Pflicht werden gleichgesetzt, obwohl sie unterschiedliche Anknüpfungspunkte haben. Außerdem wird „richtig“ oft mit „vollständig“ verwechselt: Eine einzelne korrekte Buchung ersetzt keine lückenlose Erfassung.",
         "merksatz": "Die Pflicht sagt, ob Bücher geführt werden müssen; die GoB sagen, ob sie brauchbar geführt sind."
@@ -105,15 +105,15 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Nicht jeder Unternehmer betreibt automatisch eine vollständige {{begriff:doppelte-buchfuehrung|doppelte Buchführung}}. Die wichtigste Grundlage im Handelsrecht ist {{par:hgb-238|§ 238 HGB}}: Jeder {{begriff:kaufmann|Kaufmann}} ist verpflichtet, Bücher zu führen — ==ohne jede Umsatz- oder Gewinnschwelle==."
+          "text": "Nicht jeder Unternehmer betreibt automatisch eine vollständige {{begriff:doppelte-buchfuehrung|doppelte Buchführung}}. Die wichtigste Grundlage im Handelsrecht ist {{par:hgb-238|§ 238 HGB}}: Jeder {{begriff:kaufmann|Kaufmann}} ist verpflichtet, Bücher zu führen — ==grundsätzlich ohne Umsatz- oder Gewinnschwelle==. Einzige Ausnahme: Kleine **Einzelkaufleute** mit höchstens 800.000 € Umsatz und 80.000 € Jahresüberschuss an zwei Stichtagen hintereinander sind nach {{par:hgb-241a|§ 241a HGB}} befreit. Für eine GmbH wie MAKEL gibt es diese Befreiung nie."
         },
         {
           "typ": "tabelle",
           "spalten": ["Grundlage", "Für wen?", "Schwellenwert"],
           "zeilen": [
-            { "zellen": ["§ 238 HGB", "Jeder Kaufmann (Handelsgewerbe)", "keiner — gilt automatisch"], "mono": [0] },
+            { "zellen": ["§ 238 HGB", "Jeder Kaufmann (Handelsgewerbe)", "keiner — gilt automatisch (Ausnahme: kleine Einzelkaufleute, § 241a HGB)"], "mono": [0] },
             { "zellen": ["§ 140 AO", "Wer nach anderem Gesetz pflichtig ist", "folgt aus § 238 HGB"], "mono": [0] },
-            { "zellen": ["§ 141 AO", "Gewerbetreibende, Land- u. Forstwirte", "> 800.000 € Umsatz oder > 80.000 € Gewinn"], "mono": [0, 2] }
+            { "zellen": ["§ 141 AO", "Gewerbetreibende, Land- u. Forstwirte", "mehr als 800.000 € Umsatz oder mehr als 80.000 € Gewinn; Pflicht ab dem Jahr nach Mitteilung des Finanzamts"], "mono": [0, 2] }
           ]
         },
         {
@@ -269,9 +269,9 @@
 
   "zusammenfassung": [
     "Buchführung = systematische Erfassung aller Geschäftsvorfälle in Geldeinheiten.",
-    "{{par:hgb-238|§ 238 HGB}} — Pflicht für alle Kaufleute, ohne Schwellenwert.",
+    "{{par:hgb-238|§ 238 HGB}} — Pflicht für alle Kaufleute, ohne Schwellenwert; nur kleine Einzelkaufleute sind nach {{par:hgb-241a|§ 241a HGB}} befreit.",
     "{{par:ao-140|§ 140 AO}} — wer handelsrechtlich pflichtig ist, ist es auch steuerlich.",
-    "{{par:ao-141|§ 141 AO}} — Gewerbetreibende ab 800.000 € Umsatz oder 80.000 € Gewinn.",
+    "{{par:ao-141|§ 141 AO}} — Gewerbetreibende mit mehr als 800.000 € Umsatz oder mehr als 80.000 € Gewinn, ab dem Jahr nach der Mitteilung des Finanzamts.",
     "GoB: Richtigkeit · Vollständigkeit · Klarheit · Vorsicht · Stetigkeit.",
     "Inventur = Vorgang · Inventar = Verzeichnis · Bilanz = verdichtete Übersicht.",
     "Eigenkapital = Gesamtvermögen − Gesamtschulden."
@@ -286,7 +286,7 @@
     {
       "typ": "Wissen",
       "frage": "Worin unterscheiden sich § 238 HGB und § 141 AO?",
-      "loesung": "§ 238 HGB verpflichtet alle Kaufleute zur Buchführung — ohne Umsatz- oder Gewinnschwelle; es genügt, dass ein Handelsgewerbe betrieben wird. § 141 AO verpflichtet Gewerbetreibende, die kein Kaufmann im HGB-Sinne sind, erst ab bestimmten Schwellen: über 800.000 € Umsatz oder über 80.000 € Gewinn. Für Kaufleute greift immer zuerst § 238 HGB."
+      "loesung": "§ 238 HGB verpflichtet alle Kaufleute zur Buchführung — grundsätzlich ohne Umsatz- oder Gewinnschwelle; es genügt, dass ein Handelsgewerbe betrieben wird. Ausnahme: Kleine Einzelkaufleute (höchstens 800.000 € Umsatz und 80.000 € Jahresüberschuss an zwei Stichtagen hintereinander) sind nach § 241a HGB befreit; Gesellschaften wie die GmbH nie. § 141 AO verpflichtet Gewerbetreibende, die nicht schon nach dem HGB buchführungspflichtig sind, wenn sie mehr als 800.000 € Umsatz oder mehr als 80.000 € Gewinn erzielen — und zwar ab dem Wirtschaftsjahr, das auf die Mitteilung des Finanzamts folgt. Für Kaufleute greift zuerst § 238 HGB."
     },
     {
       "typ": "Berechnung",

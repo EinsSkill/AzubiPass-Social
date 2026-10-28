@@ -26,20 +26,20 @@
             "das vereinbarte Entgelt vor allen Abzügen",
             "gesetzlicher Abzug an das Finanzamt",
             "Beitragsanteil, den die beschäftigte Person selbst trägt",
-            "Sachleistung, die das steuerpflichtige Brutto erhöht, ohne dass Geld fließt",
+            "steuerpflichtige Sachleistung, die das Steuerbrutto erhöht, ohne dass Geld fließt",
             "der Betrag, der tatsächlich überwiesen wird"
           ],
           "elemente": [
             { "text": "Bruttoentgelt", "loesung": "das vereinbarte Entgelt vor allen Abzügen" },
             { "text": "Lohnsteuer", "loesung": "gesetzlicher Abzug an das Finanzamt" },
             { "text": "Arbeitnehmeranteil zur Sozialversicherung", "loesung": "Beitragsanteil, den die beschäftigte Person selbst trägt" },
-            { "text": "Geldwerter Vorteil", "loesung": "Sachleistung, die das steuerpflichtige Brutto erhöht, ohne dass Geld fließt" },
+            { "text": "Geldwerter Vorteil", "loesung": "steuerpflichtige Sachleistung, die das Steuerbrutto erhöht, ohne dass Geld fließt" },
             { "text": "Auszahlungsbetrag", "loesung": "der Betrag, der tatsächlich überwiesen wird" }
           ]
         }
       ],
       "bewertung": { "art": "automatisch", "punkte_je_treffer": 1 },
-      "erklaerung": "Die Abrechnung läuft immer gleich: Brutto, gesetzliche Abzüge, Sozialversicherung, sonstige Abzüge, Auszahlungsbetrag. Geldwerte Vorteile erhöhen das steuerpflichtige Brutto, ohne dass Geld fließt.",
+      "erklaerung": "Die Abrechnung läuft immer gleich: Brutto, gesetzliche Abzüge, Sozialversicherung, sonstige Abzüge, Auszahlungsbetrag. Steuerpflichtige geldwerte Vorteile erhöhen das steuerpflichtige Brutto, ohne dass Geld fließt; ein zusätzlich gewährtes Job-Ticket für den Nahverkehr bleibt steuerfrei (§ 3 Nr. 15 EStG).",
       "quelle": "lf8-k4, Abschnitt d2"
     },
 

@@ -44,6 +44,21 @@ Kennungen: **C** = Claude-Audit, **G** = ChatGPT-Review.
 - Jahreswerte (Pauschalen, Beitragssätze, § 141 AO, DIN-Maße) nach Stand Oktober 2026; DIN 5008 einmal am Normtext gegenhalten.
 - Nicht enthalten (Schritt 2 ff.): Lehrplanlücken KfB (G01–G09 bzw. L-Punkte), Ausbau der Langfassungen, IK-Vertiefung.
 
+## Nachbesserung nach ChatGPT-Review K01–K06 · 28.10.2026
+
+Review: [review-2026-10-27-inhaltkorrekturen-chatgpt.md](review-2026-10-27-inhaltkorrekturen-chatgpt.md) @ `9662ce3`. Alle Befunde am Code bestätigt; K01 zusätzlich an den ZSVR-Seiten „Rollen und Pflichten“ und „Versand und Onlinehandel“ gegengeprüft.
+
+| Kennung | Datei | Nachbesserung | Gegenfall / Abnahme |
+|---|---|---|---|
+| K01 | `ik2024-lf07-k05` (Kurzfassung a3, Langfassung a3, Stand-Hinweis) | Rechtsrahmen PPWR + VerpackDG seit 12.08.2026 (VerpackG abgelöst). Erst Rolle klären (Erzeuger/Hersteller), dann zwei MAKEL-Fälle. | Onlineshop: Versandkarton mit Logo an Privatkunden → Transportverpackung nach PPWR, aber ausnahmslos systembeteiligungspflichtig, LUCID-Registrierung. Großhandel: palettierte Lieferung an Boutiquen → keine Systembeteiligung, Rücknahme und nachweisliche Verwertung, künftig Zulassungspflicht (Übergang bis Ende 2027). Stand-Hinweis neu formuliert, nicht nur umdatiert. |
+| K02 | `lf9-k5-leasing` (Grafikdetail, Hinweis) | Auf Vollamortisationsvertrag über Mobilien ohne Option und ohne Spezialleasing begrenzt. „Kennzahlen unberührt“ ersetzt: Keine Aktivierung und keine Darlehensschuld beim Nutzer, aber Raten mindern Gewinn und Liquidität. | Kaufoption 1.000 € bei 40.000 € Restwert → Zurechnung beim Leasingnehmer trotz 50 % Grundmietzeit. Hinweis nennt die Vertragstypen des Mobilien-Leasing-Erlasses. |
+| K03 | `lf8-k4-entgelt` (Langfassung d2: Erklärung, Beispiel, Prüfungsbezug; Zusammenfassung; Aufgabe lf8-k4 Zuordnung + Erklärung) | Überall „steuerpflichtige geldwerte Vorteile“; Job-Ticket-Ausnahme nach § 3 Nr. 15 EStG in Langfassung, Zusammenfassung und Aufgabe. | Dienstwagen privat erhöht das Steuerbrutto, zusätzlich gewährtes ÖPNV-Ticket nicht — in jeder Darstellungsform. |
+| K04 | `k1-grundlagen` (Kurzfassung, Tabelle, Zusammenfassung, Langfassung a2, Selbsttest), `k1-grundlagen.aufgaben` (Echo), `gemeinsam.json` (§ 141 AO, § 238 HGB, neu § 241a HGB) | Überall „mehr als“; Pflichtbeginn ab dem Wirtschaftsjahr nach Mitteilung des Finanzamts; Befreiung kleiner Einzelkaufleute nach § 241a HGB (800.000/80.000 an zwei Stichtagen), nie für Gesellschaften. | Genau 800.000/80.000 → keine Pflicht nach § 141; 1 € mehr → Pflicht ab dem Jahr nach Mitteilung; Einzelkaufmann 2 × 300.000/40.000 → befreit; GmbH mit denselben Zahlen → pflichtig. Die MAKEL-Aufgabe (Formkaufmann) bleibt richtig. |
+| K05 | `lf4-k6-mangel` (b1) | Verbraucher wird **vor Abgabe seiner verbindlichen Bestellung** informiert, Abweichung ausdrücklich und gesondert vereinbart (§ 476 Abs. 1 BGB). B2B: AGB-Klausel muss wirksam einbezogen sein. | Hinweis vor der Bestellung + eigenes Ankreuzfeld → wirksam; Hinweis erst in der Bestellbestätigung → zu spät; AGB-Klausel → nie ausreichend. |
+| K06 | `lf3-k6-din5008` (Briefgrafik, Lead, Anschriftfeld-Notiz, Regel) | Textzonen auf 25 mm linken Rand und 20 mm rechten Rand ausgerichtet (x = 25, Breite 165), Anschriftfeld beginnt bei 20 mm mit Hinweis auf eingerückte Anschrift bei 25 mm, Infoblock bis 190 mm. Grafik ausdrücklich als schematisch gekennzeichnet; Verweis auf DIN 5008:2020-03 und die Briefvorlage des Betriebs. | **Grenze:** Volltext der Norm war auch hier nicht zugänglich; die Maße sind als gängige Normangaben übernommen, nicht am Normtext verifiziert. |
+
+**Regression nach Nachbesserung:** drei Builds fehlerfrei (595 Begriffe: § 241a HGB neu im Speicher und auf der Buchführungsseite verlinkt; Anzahl unaufgelöster Verweise in Datenblöcken gegenüber vorher unverändert), `funktionstest.py` 269/269, `lernkern_audit_test.py` alles in Ordnung, `industriekaufleute_test.py` 8.271/0, `pruefe.py --schnell` auf den sechs betroffenen Seiten ohne Fehler.
+
 ## Nächster Schritt
 
-ChatGPT-Review dieses Branches, dann Lukes: Merge-Freigabe. Danach Schritt 2 (KfB-Pflichtlücken) und die Langfassungen nach dem gemeinsamen Zielstandard.
+Gezielte Schlussprüfung von K01–K06 durch ChatGPT, dann Lukes: Merge-Freigabe. Danach Schritt 2 (KfB-Pflichtlücken) und die Langfassungen nach dem gemeinsamen Zielstandard.
