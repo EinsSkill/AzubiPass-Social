@@ -411,14 +411,203 @@
             "id": "i3-f2"
           }
         ]
+      },
+      {
+        "abschnitt": "i4",
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Eigenkapital-, Gesamtkapital- und Umsatzrentabilität sowie die Wirtschaftlichkeit aus Bilanz und GuV, erklärst ihre Bezugsgrößen und deutest die Ergebnisse.",
+        "vorwissen_kurz": "Eine Kennzahl ist ein Verhältnis zweier Größen. Ihre Aussage hängt davon ab, was im Zähler und was im Nenner steht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erfolg braucht einen Maßstab",
+            "id": "i4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Muster GmbH hat einen Jahresüberschuss von 23.000 € erzielt. Ob das viel ist, lässt sich erst sagen, wenn man weiß, wie viel Geld dafür im Betrieb gebunden war. 23.000 € auf 50.000 € Eigenkapital wären hervorragend, auf 2 Millionen € kläglich. Rentabilitätskennzahlen setzen den Gewinn deshalb ins Verhältnis zu einer Bezugsgröße und drücken ihn in Prozent aus — wie den Zins eines Sparbuchs.",
+            "id": "i4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "i4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kennzahlen der Muster GmbH",
+            "id": "i4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Aus der GuV (Kapitel 4) und der Bilanz sind bekannt: Umsatzerlöse 160.000 €, Erträge gesamt 170.000 €, Aufwendungen gesamt 147.000 €, darin Zinsaufwand 2.000 €, Jahresüberschuss 23.000 €. Eigenkapital am Jahresanfang 200.000 €, am Jahresende 223.000 € (keine Ausschüttung). Fremdkapital 150.000 €.",
+            "id": "i4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Rechnung",
+              "Ergebnis",
+              "Deutung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Eigenkapitalrentabilität (Anfangskapital)",
+                  "23.000 ÷ 200.000 × 100",
+                  "11,5 %",
+                  "Das Kapital der Eigentümer hat sich mit 11,5 % verzinst."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigenkapitalrentabilität (Durchschnitt)",
+                  "23.000 ÷ 211.500 × 100",
+                  "10,9 %",
+                  "etwas niedriger, weil das Kapital im Jahr gewachsen ist"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesamtkapitalrentabilität",
+                  "(23.000 + 2.000) ÷ 350.000 × 100",
+                  "7,1 %",
+                  "Verzinsung des gesamten eingesetzten Kapitals, unabhängig von der Finanzierung"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Umsatzrentabilität",
+                  "23.000 ÷ 160.000 × 100",
+                  "14,4 %",
+                  "Von jedem Euro Umsatz bleiben gut 14 Cent Gewinn."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirtschaftlichkeit",
+                  "170.000 ÷ 147.000",
+                  "1,16",
+                  "Je Euro Aufwand entstehen 1,16 € Ertrag."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Die Bezugsgröße muss immer genannt werden. Dieselbe Rentabilität kann je nach Anfangs-, End- oder Durchschnittskapital unterschiedlich ausfallen.",
+            "id": "i4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Warum werden bei der Gesamtkapitalrentabilität die Zinsen addiert? Der Jahresüberschuss ist der Teil des Erfolgs, der den Eigentümern zusteht. Die Fremdkapitalgeber haben ihren Anteil schon als Zinsen erhalten. Wer wissen will, wie gut das gesamte Kapital gearbeitet hat, muss beide Teile zusammenzählen.",
+            "id": "i4-p3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Zahlen bedeuten — und was nicht",
+            "id": "i4-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Eigenkapitalrentabilität von 11,5 % ist für die Eigentümer gut, wenn sie ihr Geld anderswo bei vergleichbarem Risiko nur zu 4 % anlegen könnten. Sie sagt aber nichts darüber, ob der Betrieb zahlungsfähig ist, und ein einzelnes Jahr kann durch Sondereffekte verzerrt sein. Aussagekräftig werden Kennzahlen im Vergleich: mit dem Vorjahr, mit ähnlichen Betrieben und mit dem, was die Eigentümer erwarten.",
+            "id": "i4-p4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Wirtschaftlichkeit ist keine Prozentzahl, sondern ein Verhältnis. Werte über 1 bedeuten, dass mehr erwirtschaftet als verbraucht wurde. In der Kostenrechnung wird sie oft mit Leistungen und Kosten statt mit Erträgen und Aufwendungen berechnet; dann blendet sie betriebsfremde Einflüsse aus.",
+            "id": "i4-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "i4-b2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Hebeleffekt des Fremdkapitals",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Liegt die Gesamtkapitalrentabilität (7,1 %) über dem Fremdkapitalzins, steigert zusätzliches Fremdkapital die Eigenkapitalrentabilität: Das geliehene Geld verdient mehr, als es kostet. Das nennt man Leverage-Effekt. Er wirkt aber auch umgekehrt: Sinkt die Gesamtkapitalrentabilität unter den Zinssatz, drückt jedes zusätzliche Fremdkapital die Eigenkapitalrentabilität — und das Risiko steigt mit der Verschuldung.",
+                "id": "i4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf9:k2-b3"
+                ],
+                "text": "Eigen- oder Fremdkapital",
+                "id": "i4-d1-v1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf9:k1-b1"
+                ],
+                "text": "Rentabilität und Liquidität unterscheiden",
+                "id": "i4-d1-v2"
+              }
+            ],
+            "id": "i4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum ist die Eigenkapitalrentabilität bei Rechnung mit dem Durchschnittskapital niedriger als mit dem Anfangskapital?",
+            "antwort": "Weil das Eigenkapital im Jahr durch den Gewinn von 200.000 € auf 223.000 € gestiegen ist. Der Durchschnitt von 211.500 € ist größer als das Anfangskapital; derselbe Gewinn wird durch eine größere Zahl geteilt.",
+            "id": "i4-f1"
+          },
+          {
+            "frage": "Ein Betrieb hat eine Umsatzrentabilität von 2 %, ein anderer von 15 %. Ist der erste automatisch schlechter geführt?",
+            "antwort": "Nicht automatisch. Im Lebensmittelhandel sind niedrige Umsatzrenditen bei hohem Umsatz üblich, in Beratung oder Software höhere. Entscheidend ist auch, wie viel Kapital eingesetzt wird und wie die Werte im Branchenvergleich liegen.",
+            "id": "i4-f2"
+          }
+        ]
       }
     ]
   },
 
   "lernziele": [
-    { "id": "lz1", "text": "Die Abschlussschritte in der richtigen Reihenfolge durchführen", "abschnitt": "i1" },
-    { "id": "lz2", "text": "Rückstellungen bilden und auflösen", "abschnitt": "i2" },
-    { "id": "lz3", "text": "Aktive und passive Rechnungsabgrenzungsposten unterscheiden und buchen", "abschnitt": "i3" }
+    {
+      "id": "lz1",
+      "text": "Die Abschlussschritte in der richtigen Reihenfolge durchführen",
+      "abschnitt": "i1"
+    },
+    {
+      "id": "lz2",
+      "text": "Rückstellungen bilden und auflösen",
+      "abschnitt": "i2"
+    },
+    {
+      "id": "lz3",
+      "text": "Aktive und passive Rechnungsabgrenzungsposten unterscheiden und buchen",
+      "abschnitt": "i3"
+    },
+    {
+      "abschnitt": "i4",
+      "text": "Eigenkapital-, Gesamtkapital- und Umsatzrentabilität sowie die Wirtschaftlichkeit berechnen und deuten"
+    }
   ],
 
   "bloecke": [
@@ -438,11 +627,36 @@
           "titel": "Der Jahresabschluss",
           "lead": "Jeder Schritt setzt den vorherigen voraus. Klick dich durch.",
           "schritte": [
-            { "nr": 1, "titel": "Inventur", "satz": "keine Buchung", "text": "Körperliche und buchmäßige Bestandsaufnahme. Erst danach ist bekannt, was wirklich da ist." },
-            { "nr": 2, "titel": "Korrekturbuchungen", "satz": "AfA · Rückstellungen · RAP", "text": "Abschreibungen aus K8, Rückstellungen und Rechnungsabgrenzung. Alles, was das Ergebnis noch verändert, passiert jetzt." },
-            { "nr": 3, "titel": "Erfolgskonten über GuV", "satz": "GuV an Aufwand · Ertrag an GuV", "text": "Wie in K4: Aufwendungen ins Soll der GuV, Erträge ins Haben." },
-            { "nr": 4, "titel": "Ergebnis ins Eigenkapital", "satz": "GuV an Eigenkapital", "text": "Der Jahreserfolg wandert ins Eigenkapital. Erst jetzt steht dessen endgültiger Stand fest." },
-            { "nr": 5, "titel": "Bestandskonten über SBK", "satz": "SBK an Aktivkonto · Passivkonto an SBK", "text": "Zum Schluss alle Bestandskonten ins Schlussbilanzkonto. Das Ergebnis ist die Schlussbilanz." }
+            {
+              "nr": 1,
+              "titel": "Inventur",
+              "satz": "keine Buchung",
+              "text": "Körperliche und buchmäßige Bestandsaufnahme. Erst danach ist bekannt, was wirklich da ist."
+            },
+            {
+              "nr": 2,
+              "titel": "Korrekturbuchungen",
+              "satz": "AfA · Rückstellungen · RAP",
+              "text": "Abschreibungen aus K8, Rückstellungen und Rechnungsabgrenzung. Alles, was das Ergebnis noch verändert, passiert jetzt."
+            },
+            {
+              "nr": 3,
+              "titel": "Erfolgskonten über GuV",
+              "satz": "GuV an Aufwand · Ertrag an GuV",
+              "text": "Wie in K4: Aufwendungen ins Soll der GuV, Erträge ins Haben."
+            },
+            {
+              "nr": 4,
+              "titel": "Ergebnis ins Eigenkapital",
+              "satz": "GuV an Eigenkapital",
+              "text": "Der Jahreserfolg wandert ins Eigenkapital. Erst jetzt steht dessen endgültiger Stand fest."
+            },
+            {
+              "nr": 5,
+              "titel": "Bestandskonten über SBK",
+              "satz": "SBK an Aktivkonto · Passivkonto an SBK",
+              "text": "Zum Schluss alle Bestandskonten ins Schlussbilanzkonto. Das Ergebnis ist die Schlussbilanz."
+            }
           ],
           "regel": "Korrekturbuchungen immer vor dem Abschluss der Erfolgskonten. Wer erst abschließt und dann korrigiert, muss von vorn anfangen."
         },
@@ -452,7 +666,6 @@
         }
       ]
     },
-
     {
       "typ": "abschnitt",
       "id": "i2",
@@ -464,24 +677,77 @@
         },
         {
           "typ": "tabelle",
-          "spalten": ["Art", "Anlass", "Was ungewiss ist"],
+          "spalten": [
+            "Art",
+            "Anlass",
+            "Was ungewiss ist"
+          ],
           "zeilen": [
-            { "zellen": ["Urlaubsrückstellung", "offene Urlaubstage zum 31.12.", "Zeitpunkt und genaue Kosten"] },
-            { "zellen": ["Steuerrückstellung", "erwartete Nachzahlung", "die Höhe"] },
-            { "zellen": ["Prozesskostenrückstellung", "laufender Rechtsstreit", "Ausgang und Höhe"] },
             {
-              "zellen": ["Gewährleistungsrückstellung", "erfahrungsgemäße Garantiefälle", "ob und in welcher Höhe"],
+              "zellen": [
+                "Urlaubsrückstellung",
+                "offene Urlaubstage zum 31.12.",
+                "Zeitpunkt und genaue Kosten"
+              ]
+            },
+            {
+              "zellen": [
+                "Steuerrückstellung",
+                "erwartete Nachzahlung",
+                "die Höhe"
+              ]
+            },
+            {
+              "zellen": [
+                "Prozesskostenrückstellung",
+                "laufender Rechtsstreit",
+                "Ausgang und Höhe"
+              ]
+            },
+            {
+              "zellen": [
+                "Gewährleistungsrückstellung",
+                "erfahrungsgemäße Garantiefälle",
+                "ob und in welcher Höhe"
+              ],
               "detail": "**Wie schätzt man das?** Über Erfahrungswerte: Wenn erfahrungsgemäß 2 % des Jahresumsatzes als Garantiefall zurückkommen, wird dieser Anteil zurückgestellt. Die Schätzung muss nachvollziehbar sein — willkürliche Beträge erkennt jede Betriebsprüfung."
             }
           ]
         },
         {
           "typ": "tabelle",
-          "spalten": ["Vorgang", "Buchungssatz"],
+          "spalten": [
+            "Vorgang",
+            "Buchungssatz"
+          ],
           "zeilen": [
-            { "zellen": ["Rückstellung bilden (5.000 €)", "Rückstellungsaufwand 5.000 € an Rückstellungen 5.000 €"], "mono": [1] },
-            { "zellen": ["Auflösung, tatsächlich 4.800 €", "Rückstellungen 5.000 € an Bank 4.800 € + Sonstige Erträge 200 €"], "mono": [1] },
-            { "zellen": ["Auflösung, tatsächlich 5.300 €", "Rückstellungen 5.000 € + Sonstiger Aufwand 300 € an Bank 5.300 €"], "mono": [1] }
+            {
+              "zellen": [
+                "Rückstellung bilden (5.000 €)",
+                "Rückstellungsaufwand 5.000 € an Rückstellungen 5.000 €"
+              ],
+              "mono": [
+                1
+              ]
+            },
+            {
+              "zellen": [
+                "Auflösung, tatsächlich 4.800 €",
+                "Rückstellungen 5.000 € an Bank 4.800 € + Sonstige Erträge 200 €"
+              ],
+              "mono": [
+                1
+              ]
+            },
+            {
+              "zellen": [
+                "Auflösung, tatsächlich 5.300 €",
+                "Rückstellungen 5.000 € + Sonstiger Aufwand 300 € an Bank 5.300 €"
+              ],
+              "mono": [
+                1
+              ]
+            }
           ]
         },
         {
@@ -491,7 +757,6 @@
         }
       ]
     },
-
     {
       "typ": "abschnitt",
       "id": "i3",
@@ -503,16 +768,35 @@
         },
         {
           "typ": "tabelle",
-          "spalten": ["Posten", "Situation", "Beispiel", "Buchung am 31.12."],
+          "spalten": [
+            "Posten",
+            "Situation",
+            "Beispiel",
+            "Buchung am 31.12."
+          ],
           "zeilen": [
             {
-              "zellen": ["ARAP", "Ausgabe jetzt, Aufwand nächstes Jahr", "Jahresversicherung im Dezember gezahlt", "ARAP an Versicherungsaufwand"],
-              "mono": [3],
+              "zellen": [
+                "ARAP",
+                "Ausgabe jetzt, Aufwand nächstes Jahr",
+                "Jahresversicherung im Dezember gezahlt",
+                "ARAP an Versicherungsaufwand"
+              ],
+              "mono": [
+                3
+              ],
               "detail": "**Warum aktiv?** Der Betrieb hat bezahlt und bekommt die Leistung erst noch — er hat also eine Art Anspruch. Ansprüche stehen links, auf der Aktivseite."
             },
             {
-              "zellen": ["PRAP", "Einnahme jetzt, Ertrag nächstes Jahr", "Januarmiete im Dezember erhalten", "Mietertrag an PRAP"],
-              "mono": [3],
+              "zellen": [
+                "PRAP",
+                "Einnahme jetzt, Ertrag nächstes Jahr",
+                "Januarmiete im Dezember erhalten",
+                "Mietertrag an PRAP"
+              ],
+              "mono": [
+                3
+              ],
               "detail": "**Warum passiv?** Der Betrieb hat Geld bekommen und muss die Leistung erst noch erbringen — das ist eine Verpflichtung. Verpflichtungen stehen rechts, auf der Passivseite."
             }
           ]
@@ -521,25 +805,106 @@
           "typ": "check",
           "frage": "Ein Betrieb zahlt am 1. Dezember die Kfz-Versicherung für das komplette Folgejahr: 2.400 €. Was ist am 31.12. zu buchen?",
           "optionen": [
-            { "text": "Nichts, die Zahlung ist erfolgt", "richtig": false, "echo": "Damit läge der komplette Aufwand im falschen Jahr. Das laufende Jahr würde um 2.400 € zu schlecht dargestellt und das Folgejahr um denselben Betrag zu gut." },
-            { "text": "ARAP 2.400 € an Versicherungsaufwand 2.400 €", "richtig": true, "echo": "Richtig. Die Leistung betrifft ausschließlich das Folgejahr, also wird der volle Betrag abgegrenzt. Im nächsten Jahr wird der ARAP monatlich aufgelöst: Versicherungsaufwand 200 € an ARAP 200 €." },
-            { "text": "PRAP 2.400 € an Versicherungsaufwand 2.400 €", "richtig": false, "echo": "Falsche Seite. Ein PRAP entsteht bei einer Einnahme, nicht bei einer Ausgabe. Hier hat der Betrieb gezahlt — daraus wird ein aktiver Posten." }
+            {
+              "text": "Nichts, die Zahlung ist erfolgt",
+              "richtig": false,
+              "echo": "Damit läge der komplette Aufwand im falschen Jahr. Das laufende Jahr würde um 2.400 € zu schlecht dargestellt und das Folgejahr um denselben Betrag zu gut."
+            },
+            {
+              "text": "ARAP 2.400 € an Versicherungsaufwand 2.400 €",
+              "richtig": true,
+              "echo": "Richtig. Die Leistung betrifft ausschließlich das Folgejahr, also wird der volle Betrag abgegrenzt. Im nächsten Jahr wird der ARAP monatlich aufgelöst: Versicherungsaufwand 200 € an ARAP 200 €."
+            },
+            {
+              "text": "PRAP 2.400 € an Versicherungsaufwand 2.400 €",
+              "richtig": false,
+              "echo": "Falsche Seite. Ein PRAP entsteht bei einer Einnahme, nicht bei einer Ausgabe. Hier hat der Betrieb gezahlt — daraus wird ein aktiver Posten."
+            }
           ]
         },
         {
           "typ": "zuordnen",
           "lead": "ARAP oder PRAP?",
-          "kategorien": ["ARAP", "PRAP"],
+          "kategorien": [
+            "ARAP",
+            "PRAP"
+          ],
           "aufgaben": [
-            { "text": "Die Miete für Januar geht schon im Dezember auf dem Konto ein.", "loesung": "PRAP" },
-            { "text": "Die Zeitschriftenabos fürs nächste Jahr werden im November bezahlt.", "loesung": "ARAP" },
-            { "text": "Ein Kunde zahlt im Dezember eine Wartungspauschale für das erste Quartal.", "loesung": "PRAP" },
-            { "text": "Die Kfz-Steuer für das Folgejahr wird im Dezember abgebucht.", "loesung": "ARAP" }
+            {
+              "text": "Die Miete für Januar geht schon im Dezember auf dem Konto ein.",
+              "loesung": "PRAP"
+            },
+            {
+              "text": "Die Zeitschriftenabos fürs nächste Jahr werden im November bezahlt.",
+              "loesung": "ARAP"
+            },
+            {
+              "text": "Ein Kunde zahlt im Dezember eine Wartungspauschale für das erste Quartal.",
+              "loesung": "PRAP"
+            },
+            {
+              "text": "Die Kfz-Steuer für das Folgejahr wird im Dezember abgebucht.",
+              "loesung": "ARAP"
+            }
           ]
         },
         {
           "typ": "praxistipp",
           "text": "Zwei Fragen genügen: Ist Geld raus- oder reingegangen? Und gehört die Leistung ins nächste Jahr? Geld raus plus Leistung später ergibt ARAP. Geld rein plus Leistung später ergibt PRAP. Alles andere ist keine Abgrenzung."
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "i4",
+      "titel": "Hat sich das Jahr gelohnt? Rentabilität und Wirtschaftlichkeit",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Ein Jahresüberschuss von 23.000 € klingt gut — aber ist er viel? Das hängt davon ab, ==wie viel Kapital dafür eingesetzt wurde==. Kennzahlen setzen den Erfolg deshalb ins Verhältnis: die **Rentabilität** zum eingesetzten Kapital oder zum Umsatz, die **Wirtschaftlichkeit** zum Aufwand."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Kennzahl",
+            "Formel",
+            "Einheit"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Eigenkapitalrentabilität",
+                "Jahresüberschuss ÷ Eigenkapital × 100",
+                "Prozent"
+              ]
+            },
+            {
+              "zellen": [
+                "Gesamtkapitalrentabilität",
+                "(Jahresüberschuss + Fremdkapitalzinsen) ÷ Gesamtkapital × 100",
+                "Prozent"
+              ]
+            },
+            {
+              "zellen": [
+                "Umsatzrentabilität",
+                "Jahresüberschuss ÷ Umsatzerlöse × 100",
+                "Prozent"
+              ]
+            },
+            {
+              "zellen": [
+                "Wirtschaftlichkeit",
+                "Erträge ÷ Aufwendungen (oder Leistungen ÷ Kosten)",
+                "Verhältniszahl, über 1 = wirtschaftlich"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Rentabilität sagt, **wie gut sich das eingesetzte Kapital verzinst**. Wirtschaftlichkeit sagt, **wie viel Ertrag je Euro Aufwand** entsteht. Immer angeben, auf welches Kapital (Anfang, Ende oder Durchschnitt) gerechnet wurde.",
+          "karteikarte": "Wie berechnest du Eigenkapitalrentabilität und Wirtschaftlichkeit, und was sagen sie aus?"
         }
       ]
     }
@@ -552,7 +917,8 @@
     "Verbindlichkeit: Betrag und Fälligkeit stehen fest.",
     "ARAP: Ausgabe jetzt, Aufwand nächstes Jahr — Aktivseite.",
     "PRAP: Einnahme jetzt, Ertrag nächstes Jahr — Passivseite.",
-    "Beide RAP werden im Folgejahr wieder aufgelöst."
+    "Beide RAP werden im Folgejahr wieder aufgelöst.",
+    "Eigenkapitalrentabilität = Jahresüberschuss ÷ Eigenkapital × 100; Wirtschaftlichkeit = Erträge ÷ Aufwendungen."
   ],
 
   "selbsttest": [

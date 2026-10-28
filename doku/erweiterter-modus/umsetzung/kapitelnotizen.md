@@ -22,7 +22,7 @@ Pro Kapitel: **Mehrwert** = was man mit der Vollfassung zusätzlich versteht; **
 - **K6 Umsatzsteuer:** Lieferkette mit Abführung je Stufe; Netto/Brutto-Tabelle, Steuersätze inkl. 7 % Speisen Gastronomie seit 1.1.2026 (IHK geprüft), Steuerfreiheit vs. Vorsteuerabzug; Zahllast mit Fristen, Vorsteuerüberhang; Skontoberichtigung mit Kontrolle 186,20 €, Mangelnachlass, Rechnungspflichtangaben; Kleinunternehmer 2025 an drei Fällen, Option 5 Jahre, Rechenbeispiel.
 - **K7 Personal:** Abrechnung mit Bezugsgrößen-Spalte; reale Abweichungen (Steuerklasse, Soli-Freigrenze, KiSt 8 %); BBG 2026 (5.812,50/8.450 €), Minijob 603 €, Übergangsbereich 2.000 € (lohn-info.de geprüft); Personalkosten, U1/U2/Insolvenzgeld, Kinderlosenzuschlag; Buchung in drei Schritten mit Fälligkeiten.
 - **K8 Abschreibungen:** GWG/Sammelposten-Entscheidungstabelle; degressive AfA 2025–2027 (IHK geprüft); unterjährig über vier Kalenderjahre, Anschaffungsnebenkosten; Abgang mit USt und unterjährigem Verkauf. **Berichtigt:** Zuordnungsaufgabe h3 („AK 20.000 €, 3 × 4.000 €, Verkauf 10.000 €“) war als Buchverlust gelöst — richtig Buchgewinn 2.000 €.
-- **K9 Jahresabschluss:** Abhängigkeitstabelle der fünf Schritte mit Inventurdifferenz; Rückstellung Bildung/Auflösung mit Erfolgswirkung je Jahr, Urlaubsrückstellung, Abgrenzung zu Verbindlichkeit; RAP anteilig (Versicherung 1.10., 600/1.800 €) und Abgrenzung zu sonstigen Forderungen/Verbindlichkeiten.
+- **K9 Jahresabschluss:** Abhängigkeitstabelle der fünf Schritte mit Inventurdifferenz; Rückstellung Bildung/Auflösung mit Erfolgswirkung je Jahr, Urlaubsrückstellung, Abgrenzung zu Verbindlichkeit; RAP anteilig (Versicherung 1.10., 600/1.800 €) und Abgrenzung zu sonstigen Forderungen/Verbindlichkeiten. **Neu i4** (L14): Eigenkapital-, Gesamtkapital-, Umsatzrentabilität und Wirtschaftlichkeit an einem Jahresabschluss (11,5 %/10,9 %, 7,1 %, 14,4 %, 1,16) mit Deutung und Grenzen.
 
 ## KfB LF8 · Personalbezogene Aufgaben wahrnehmen
 
@@ -32,3 +32,7 @@ Pro Kapitel: **Mehrwert** = was man mit der Vollfassung zusätzlich versteht; **
 - **K4 Entgelt:** Entgeltformen an drei Stellen, Mindestlohn 2026 13,90 €; Abrechnung mit Dienstwagen-Sachbezug als Ursache sinkenden Nettos (Rechnung vollständig). **Neu d3** (L18): Entgeltfortzahlung mit Fristenkalender (2.3.–12.4.), eAU, Fortsetzungserkrankung, U1.
 - **K5 Einsatz/Entwicklung:** Gleitzeitregelwerk mit ArbZG-Grenzen, Pausen, Ruhezeit; Entwicklungsplan Teamleitung mit Fortschrittskriterien. **Neu e3** (L17): Mutterschutz als Personalfall mit Fristenkalender (9.7./15.10./20.12.), Mutterschaftsgeld/Zuschuss/U2, Elternzeit, Fehlgeburt-Schutzfristen seit 1.6.2025 (TK geprüft).
 - **K6 Trennung:** Freisetzungsstufen, Beendigungsarten mit Fällen, Zugang; Fristtabelle mit fünf Fällen inkl. Arbeitnehmer- und Probezeitkündigung, Schwellenrechnung Teilzeit, besonderer Kündigungsschutz; Zeugnisprüfung mit fünf Befunden, Arbeitspapiere beim Austritt.
+
+## KfB LF9 · Finanzierungsentscheidungen treffen
+
+- **K1 Liquidität:** Liquidität vs. Rentabilität an einem Monatsplan; Liquiditätsplan mit Deckungslücke und Maßnahmen. **K13:** Liquiditätsgrade 1–3 mit Deutung, Stichtagsproblem. **K12:** Kulanz als Liquiditäts- und Kundenentscheidung.

@@ -11,11 +11,11 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-a8ab079c4be5ba7b";
+var SPEICHER = "azubipass-6011f4e6e755ea49";
 var VORRAT = {
   "./": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "app.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
-  "buchfuehrung.html": "16405975c0e9bec70b25d9e44ed3622ff6f79e84a4160aacb14b107fa17151d2",
+  "buchfuehrung.html": "c214c51f9efbfd3a2733e7cfe9cc640a22090666fc427e8891fd95bfc532c02b",
   "datenschutz.html": "07945420b168f4ac719e8fe9768193d356d24e48800ee4000970f97ef9f0f94c",
   "ik2024-lf01.html": "4fe05fb8e3cfabeb22e28bacdfb129562b9a73a6bc09803cabf559db58dc181f",
   "ik2024-lf02.html": "36a4c0c12c17e43a1f6b70effcf80ee6cc5a4ffc1d7a01662bfc6c572931ad3f",
@@ -44,7 +44,7 @@ var VORRAT = {
   "lf5.html": "bba73a7aa2ea1ea57fbcfad55e0b18925279a83c83d16c94c11f0c92c122684d",
   "lf7.html": "477d114dfc125a339f98c047dbedcf7a1278396d12352a4ae05935245fd7cd9c",
   "lf8.html": "fdab2517c61219b941a2332ff36d3c049cd4bdabbc440caaf0b7a6e799fc07d2",
-  "lf9.html": "7dd27e0203ccd05230d49f79352383b595af64c5a344fa3c99d02ec62d625cfd",
+  "lf9.html": "11a70a842b67d63859b28cd961b84785c9a6be6f03249fdd6eac755d97d1ea16",
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "49e2f946051d0f3e1dfb60f5f7ea5ee3ec1db923636b71f29f1a848c269cdfd5",
   "mittel/aufgaben.js": "3da2279f3048ff8233db6f053e2ac066cc5b31b8e17c21e6ed7f6c8c9b1022f3",

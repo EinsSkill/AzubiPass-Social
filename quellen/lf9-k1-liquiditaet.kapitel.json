@@ -6,66 +6,509 @@
   "untertitel": "Am Gewinn ist noch keiner gestorben. An fehlendem Geld schon.",
  "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Rentabilität und Liquidität beantworten unterschiedliche Fragen.",
-          "Zeitpunkt und Höhe von Ein- und Auszahlungen entscheiden über Zahlungsfähigkeit."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Rentabilität und Liquidität an einem Auftrag und erklärst, warum ein Betrieb trotz Gewinn zahlungsunfähig werden kann.",
+        "vorwissen_kurz": "Ertrag und Aufwand bestimmen den Gewinn. Einzahlung und Auszahlung bestimmen den Kontostand. Beide Paare können zeitlich auseinanderfallen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Fragen, zwei Zeitachsen",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:rentabilitaet|Rentabilität}} fragt: Lohnt sich das, was der Betrieb tut? Sie setzt den Gewinn ins Verhältnis zum eingesetzten Kapital und wird meist für ein Jahr gemessen. Die {{begriff:liquiditaet|Liquidität}} fragt: Kann der Betrieb die Zahlungen leisten, die gerade fällig sind? Sie wird an jedem einzelnen Tag gemessen. Beide Fragen sind wichtig, aber die zweite ist dringender: Fehlende Rentabilität zehrt über Jahre am Eigenkapital. Fehlende Liquidität kann einen Betrieb in wenigen Wochen beenden, denn {{begriff:zahlungsunfaehigkeit|Zahlungsunfähigkeit}} ist ein Insolvenzgrund.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein guter Auftrag, der Geld kostet",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL erhält einen Großauftrag über 2.000 bedruckte Hoodies für 50.000 € netto. Material und Fremdleistungen kosten 34.000 € und müssen beim Bezug sofort bezahlt werden, die zusätzlichen Löhne von 6.000 € am Monatsende. Der Kunde zahlt 60 Tage nach Lieferung.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitpunkt",
+              "Einzahlung",
+              "Auszahlung",
+              "Kontoveränderung",
+              "Erfolg"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anfang März: Material",
+                  "",
+                  "34.000 €",
+                  "−34.000 €",
+                  "noch kein Ertrag"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Ende März: Löhne, Lieferung",
+                  "",
+                  "6.000 €",
+                  "−40.000 € (kumuliert)",
+                  "Ertrag 50.000 €, Aufwand 40.000 €, Gewinn 10.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Ende Mai: Kunde zahlt",
+                  "50.000 €",
+                  "",
+                  "+10.000 € (kumuliert)",
+                  "—"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Der Auftrag bringt 10.000 € Gewinn, aber zwei Monate lang fehlen MAKEL 40.000 € auf dem Konto.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Hat MAKEL nur 25.000 € auf dem Konto und keine Kreditlinie, kann es schon das Material nicht vollständig bezahlen, von den Löhnen Ende März ganz zu schweigen — obwohl der Auftrag rentabel ist. Wer Aufträge annimmt, muss deshalb immer auch fragen: Wann geht das Geld raus, wann kommt es rein, und wie überbrücken wir die Zeit dazwischen?",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          }
         ],
-        "erklaerung": "Rentabilität fragt, ob sich ein Geschäft lohnt; Liquidität fragt, ob fällige Zahlungen geleistet werden können. Ein Betrieb kann Gewinn erzielen und trotzdem zahlungsunfähig werden, wenn Kundenzahlungen später eingehen als Material, Löhne oder Steuern bezahlt werden müssen. Zahlungsunfähigkeit ist ein Insolvenzgrund und wirkt sofort.",
-        "beispiele": [
-          "Ein langer Zahlungsziel für Kunden kann die Liquidität belasten, obwohl die Leistung bereits als Ertrag und Gewinn erfasst ist.",
-          "Eine planbare Steuervorauszahlung kann eine Auszahlungsspitze bilden, wenn gleichzeitig weitere Zahlungen fällig werden."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Viel Geld, aber kein Gewinn",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Umgekehrt kann ein Betrieb sehr liquide sein und trotzdem Verluste machen — etwa, wenn er gerade ein Grundstück verkauft hat oder ein Kredit ausgezahlt wurde. Das Geld auf dem Konto verdeckt dann für eine Weile, dass das Geschäft sich nicht trägt. Liquidität sichert das Überleben heute, Rentabilität das Überleben auf Dauer. Ein Betrieb braucht beides.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb hat hohen Gewinn, aber eine leere Kasse. Die Erklärung liegt in der Zeit: Der Gewinn entsteht mit der Leistung, die Liquidität mit der tatsächlichen Zahlung. Wenn Kunden spät zahlen und Material, Löhne sowie Steuern früher fällig sind, entsteht eine Lücke. Deshalb wird die Zahlungsfähigkeit separat geprüft.",
-        "typische_fehler": "Gewinn und Geldbestand werden gleichgesetzt. Außerdem wird ein rentabler Betrieb automatisch für zahlungsfähig gehalten, obwohl die Zeitpunkte nicht passen.",
         "verstaendnisfragen": [
-          "Welche Frage stellt Rentabilität, welche Liquidität? Rentabilität fragt nach dem wirtschaftlichen Lohn; Liquidität nach der Fähigkeit, fällige Zahlungen zu leisten.",
-          "Warum kann Gewinn ohne Liquidität entstehen? Weil Erträge und Zahlungen zeitlich auseinanderfallen."
-        ],
-        "pruefungsbezug": "Bei Fallaufgaben zuerst klären, ob nach Erfolg oder nach Zahlung gefragt wird. Danach die zeitliche Lücke zwischen Ein- und Auszahlungen benennen.",
-        "merksatz": "Gewinn sagt, ob es sich lohnt; Liquidität sagt, ob heute gezahlt werden kann."
+          {
+            "frage": "Warum sagt ein hoher Jahresgewinn nichts darüber aus, ob ein Betrieb im März seine Löhne zahlen kann?",
+            "antwort": "Der Gewinn fasst Erträge und Aufwendungen des Jahres zusammen, unabhängig davon, wann Geld fließt. Ob im März genug Geld da ist, hängt von den Zahlungsterminen in diesem Monat ab. Kommen Kundenzahlungen erst später, kann trotz Gewinn eine Lücke entstehen.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "MAKEL könnte mit dem Kunden 30 statt 60 Tage Zahlungsziel vereinbaren. Wie wirkt das?",
+            "antwort": "Der Gewinn bleibt gleich, aber die Liquiditätslücke wird um einen Monat kürzer. Das Geld fließt Ende April statt Ende Mai zurück; MAKEL braucht weniger Überbrückung.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Ein Liquiditätsplan betrachtet Zahlungszeitpunkte.",
-          "Erträge und Aufwendungen sind nicht dasselbe wie Ein- und Auszahlungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst einen Liquiditätsplan mit Ein- und Auszahlungen auf, schreibst den Bestand fort, erkennst Unterdeckungen rechtzeitig und unterscheidest ihn von Stichtagskennzahlen.",
+        "vorwissen_kurz": "Ein Plan rechnet mit Erwartungen. Er muss deshalb früh genug vorliegen und laufend aktualisiert werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zahlungen statt Buchungen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:liquiditaetsplan|Liquiditätsplan}} listet für jeden Monat (oder jede Woche) die erwarteten Einzahlungen und Auszahlungen auf und schreibt den Bestand fort: Anfangsbestand + Einzahlungen − Auszahlungen = Endbestand, der wiederum Anfangsbestand des nächsten Zeitraums ist. Er rechnet ausschließlich mit Geldbewegungen. Eine Abschreibung gehört nicht hinein, weil kein Geld fließt. Eine Rechnung an einen Kunden steht nicht im Monat der Rechnung, sondern im Monat, in dem das Geld erwartet wird.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Plan der Grafik, Monat für Monat",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Monat",
+              "Anfangsbestand",
+              "Einzahlungen",
+              "Auszahlungen",
+              "Endbestand"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Januar",
+                  "40.000 €",
+                  "95.000 €",
+                  "88.000 €",
+                  "47.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Februar",
+                  "47.000 €",
+                  "92.000 €",
+                  "90.000 €",
+                  "49.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "März",
+                  "49.000 €",
+                  "88.000 €",
+                  "112.000 €",
+                  "25.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "April",
+                  "25.000 €",
+                  "105.000 €",
+                  "95.000 €",
+                  "35.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Mai",
+                  "35.000 €",
+                  "98.000 €",
+                  "91.000 €",
+                  "42.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Juni",
+                  "42.000 €",
+                  "110.000 €",
+                  "94.000 €",
+                  "58.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "fazit": "Im März entsteht eine Unterdeckung von 24.000 €. Mit 40.000 € Anfangsbestand fängt der Betrieb sie auf; mit 15.000 € stünde er Ende März bei null, mit 10.000 € mit 5.000 € im Minus.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Warum ist der März kritisch? Hier treffen eine Steuervorauszahlung und eine Versicherungsprämie zusammen. Beide stehen lange vorher fest. Ein guter Plan zeigt solche Spitzen Monate im Voraus, damit Zeit bleibt, etwa eine Kreditlinie zu vereinbaren oder eine Investition zu verschieben. Deshalb wird er rollierend geführt: Jeden Monat wird der vergangene Monat durch Ist-Zahlen ersetzt und ein neuer Monat hinten angehängt.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Plan und Kennzahl: zwei verschiedene Blickwinkel",
+            "id": "b2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Neben dem Plan gibt es Liquiditätskennzahlen aus der Bilanz, etwa die Liquidität 2. Grades. Sie zeigt an einem Stichtag, ob die kurzfristigen Schulden durch flüssige Mittel und kurzfristige Forderungen gedeckt sind. Eine solche Kennzahl ist ein Foto: Sie sagt nichts darüber, ob die Forderungen vor oder nach den Verbindlichkeiten fällig werden. Der Liquiditätsplan ist dagegen ein Film: Er zeigt, wann Geld fließt. Für die Steuerung des Alltags ist der Plan das wichtigere Werkzeug; die Kennzahl ist eine grobe Kontrolle von außen, etwa für Banken.",
+            "id": "b2-p3"
+          }
         ],
-        "erklaerung": "Der Liquiditätsplan stellt erwartete Einzahlungen und Auszahlungen gegenüber. Abschreibungen gehören nicht hinein, wenn ihnen keine Auszahlung gegenübersteht. Große Auszahlungsspitzen wie Steuern und Sonderzahlungen werden früh eingeplant. Der Plan wird rollierend fortgeschrieben, damit kommende Unterdeckungen sichtbar werden.",
-        "beispiele": [
-          "Eine Kundenzahlung wird in dem Monat eingeplant, in dem sie voraussichtlich eingeht, nicht nur in dem Monat der Leistung.",
-          "Eine Steuervorauszahlung wird als Auszahlungsspitze im betreffenden Zeitraum berücksichtigt; eine Abschreibung ohne Geldfluss nicht."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Das Budget",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Budget ist ein verbindlicher Plan für Einnahmen und Ausgaben eines Bereichs, zum Beispiel „Marketing 2027: 24.000 €“. Es begrenzt, was ausgegeben werden darf, und macht Abweichungen sichtbar. Die Budgets der Abteilungen fließen in den Liquiditätsplan ein. Wird ein Budget überschritten, muss geprüft werden, ob der Plan noch trägt.",
+                "id": "b2-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k1-b3"
+                ],
+                "text": "Die Liquiditätsgrade berechnen",
+                "id": "b2-d1-v1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Für März wird eine Unterdeckung von 24.000 € erwartet, weil eine Steuervorauszahlung mit der Zahlung des Weihnachtsgeldes zusammentrifft. Zuerst wird geprüft, ob die Lücke einmalig oder wiederkehrend ist. Die Spitze wird im Liquiditätsplan sichtbar gemacht und rechtzeitig mit einer Kreditlinie sowie Maßnahmen auf Ein- und Auszahlungsseite vorbereitet.",
-        "typische_fehler": "Abschreibungen als Auszahlung eintragen oder nur die Jahresgesamtsumme statt die Fälligkeit betrachten. Auch ein Plan ohne regelmäßige Fortschreibung verliert seinen Nutzen.",
         "verstaendnisfragen": [
-          "Was gehört in den Liquiditätsplan? Tatsächliche und erwartete Ein- und Auszahlungen mit ihren Zeitpunkten.",
-          "Warum taucht eine Abschreibung dort nicht auf? Weil ihr keine Auszahlung gegenübersteht."
-        ],
-        "pruefungsbezug": "Trenne in Tabellen immer Zahlungen von Erträgen und Aufwendungen. Markiere Auszahlungsspitzen und rechne die Unterdeckung im betroffenen Zeitraum.",
-        "merksatz": "Der Liquiditätsplan rechnet mit Geldbewegungen, nicht mit Buchungsbegriffen."
+          {
+            "frage": "Ein Betrieb trägt die Abschreibungen von 3.000 € pro Monat in seinen Liquiditätsplan ein. Welche Wirkung hat der Fehler?",
+            "antwort": "Der Plan zeigt jeden Monat 3.000 € zu wenig Bestand, weil eine Auszahlung eingetragen ist, die es nicht gibt. Die Abschreibung ist Aufwand ohne Geldabfluss; das Geld floss beim Kauf der Anlage.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum reicht eine gute Liquidität 2. Grades am 31. Dezember nicht aus, um die Zahlungsfähigkeit im März zu sichern?",
+            "antwort": "Die Kennzahl ist eine Momentaufnahme. Sie sagt nicht, wann Forderungen eingehen und wann Verbindlichkeiten oder große Zahlungen fällig werden. Eine Spitze im März sieht nur der Liquiditätsplan.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Liquidität kann über Einzahlungen, Auszahlungen und Reserven beeinflusst werden.",
-          "Fremdes Geld löst nicht automatisch ein dauerhaftes Strukturproblem."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für eine erkannte Liquiditätslücke Maßnahmen in sinnvoller Reihenfolge aus, entscheidest über Kulanz bei säumigen Kunden und berechnest die Liquiditätsgrade.",
+        "vorwissen_kurz": "Liquidität lässt sich verbessern, indem Geld schneller hereinkommt, langsamer hinausgeht oder eine Reserve bereitsteht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Hebel, unterschiedliche Kosten",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gegen eine Lücke im Liquiditätsplan gibt es drei Hebel. **Schneller einnehmen:** Forderungen konsequent mahnen, Skonto anbieten, Anzahlungen vereinbaren, Forderungen verkaufen (Factoring). **Später ausgeben:** eigene Zahlungsziele ausnutzen, nicht dringende Investitionen verschieben, leasen statt kaufen. **Reserve bereithalten:** eine Kreditlinie (Kontokorrent) vereinbaren. Alle Maßnahmen kosten etwas: Skonto schmälert den Erlös, Factoring kostet Gebühren, ein ausgeschöpftes Zahlungsziel kostet den eigenen Skonto, der Kontokorrent kostet hohe Zinsen. Deshalb werden zuerst die eigenen Abläufe verbessert und erst dann fremdes Geld für die verbleibende Spitze genutzt.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Mahnen oder Kulanz? Eine Entscheidung mit Zahlen",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die März-Lücke von 24.000 € schaut MAKEL in die offene Postenliste. Zwei Kunden sind überfällig:",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kunde",
+              "Offener Betrag",
+              "Überfällig seit",
+              "Zahlungsverhalten bisher",
+              "Entscheidung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Stammkunde A",
+                  "9.000 €",
+                  "12 Tage",
+                  "seit acht Jahren pünktlich; kurzfristiger Engpass durch Ausfall eines eigenen Kunden",
+                  "Kulanz: Ratenzahlung 4.500 € im März, 4.500 € im April, schriftlich vereinbart"
+                ]
+              },
+              {
+                "zellen": [
+                  "Neukunde B",
+                  "7.500 €",
+                  "35 Tage",
+                  "erste Bestellung, keine Reaktion auf zwei Mahnungen",
+                  "konsequent: letzte Mahnung mit Frist, danach Mahnbescheid"
+                ]
+              }
+            ],
+            "fazit": "Kulanz ist eine Entscheidung nach Ausfallrisiko und Geldbedarf — nicht nach Sympathie. Beim Stammkunden ist das Risiko gering und die Beziehung wertvoll; beim Neukunden ist das Risiko hoch.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Durch die Raten von A fließen im März 4.500 € ein, bei B hofft MAKEL auf 7.500 €, plant aber vorsichtig ohne sie. Für die restliche Lücke vereinbart MAKEL rechtzeitig eine Kontokorrentlinie über 20.000 €. Sie kostet nur für den tatsächlich beanspruchten Betrag und die Dauer Zinsen.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Liquiditätsgrade berechnen",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Banken und Geschäftspartner schauen oft auf Kennzahlen aus der Bilanz. Bei MAKEL stehen am Stichtag: flüssige Mittel (Bank, Kasse) 25.000 €, kurzfristige Forderungen 60.000 €, Vorräte 40.000 €, kurzfristige Verbindlichkeiten 80.000 €.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Zähler",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Liquidität 1. Grades",
+                  "flüssige Mittel",
+                  "25.000 ÷ 80.000 × 100",
+                  "31,25 %"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Liquidität 2. Grades",
+                  "flüssige Mittel + kurzfristige Forderungen",
+                  "85.000 ÷ 80.000 × 100",
+                  "106,25 %"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Liquidität 3. Grades",
+                  "zusätzlich Vorräte",
+                  "125.000 ÷ 80.000 × 100",
+                  "156,25 %"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Der Nenner ist immer gleich: die kurzfristigen Verbindlichkeiten. Bei 2. Grades gelten etwa 100 % als Orientierung — die kurzfristigen Schulden sind durch Geld und bald eingehende Forderungen gedeckt.",
+            "id": "b3-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Drei Hebel verbessern die Liquidität: schneller einnehmen, später ausgeben und eine Reserve bereithalten. Dazu gehören konsequentes Mahnwesen, Skonto für schnelle Kundenzahlung, das Ausschöpfen eigener Zahlungsziele, das Verschieben nicht dringender Investitionen und Factoring. Der Kontokorrentkredit ist für kurzfristige Spitzen gedacht, flexibel, aber teuer; zuerst werden die eigenen Abläufe verbessert.",
-        "beispiele": [
-          "Ein Mahnwesen beschleunigt Einzahlungen, verursacht aber Arbeitsaufwand und kann Kunden verärgern.",
-          "Leasing vermeidet eine große Einmalzahlung, ist über die Laufzeit aber teurer; der Kontokorrent deckt nur eine kurzfristige Spitze."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Factoring genauer",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim Factoring verkauft MAKEL seine Forderungen an ein Factoringunternehmen und erhält sofort einen großen Teil des Betrags, abzüglich Gebühren. Beim echten Factoring übernimmt der Käufer auch das Ausfallrisiko, beim unechten bleibt es bei MAKEL. Die Kunden zahlen dann meist an den Factor. Das bringt schnelle Liquidität, kostet aber Marge und kann die Kundenbeziehung berühren.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k5-b2"
+                ],
+                "text": "Factoring als Finanzierungsalternative",
+                "id": "b3-d1-v1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k7-b3"
+                ],
+                "text": "Mahnwesen und Mahnverfahren",
+                "id": "b3-d1-v2"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Bei der Unterdeckung von 24.000 € wird rechtzeitig eine Kreditlinie in ausreichender Höhe vereinbart, weil sie nur für den beanspruchten Betrag und die tatsächliche Dauer Zinsen kostet. Parallel werden Forderungen angemahnt, Skonto angeboten, nicht dringende Investitionen verschoben und eigene Zahlungsziele ausgeschöpft. So wird die Ursache nicht allein mit teurem Fremdgeld überdeckt.",
-        "typische_fehler": "Der Kontokorrent wird als Dauerfinanzierung eingesetzt oder nur die Kreditaufnahme betrachtet. Kosten von Skonto, Factoring, Mahnwesen und Leasing werden nicht gegeneinander abgewogen.",
         "verstaendnisfragen": [
-          "Welche drei Hebel gibt es? Schneller einnehmen, später ausgeben, Reserve bereithalten.",
-          "Wofür ist der Kontokorrentkredit gedacht? Für kurzfristige Liquiditätsspitzen, nicht für dauerhaften Bedarf."
-        ],
-        "pruefungsbezug": "Ordne Maßnahmen zuerst Einzahlungs- oder Auszahlungsseite zu und nenne dann ihre Kosten oder Nebenwirkungen.",
-        "merksatz": "Erst Abläufe verbessern, dann fremdes Geld für die verbleibende Spitze nutzen."
+          {
+            "frage": "Die Liquidität 2. Grades liegt bei 106 %. Kann MAKEL damit sicher sein, im März alle Rechnungen zu bezahlen?",
+            "antwort": "Nein. Die Kennzahl zeigt nur, dass Geld und kurzfristige Forderungen am Stichtag die kurzfristigen Schulden decken. Ob Forderungen rechtzeitig eingehen und ob im März zusätzliche Zahlungen fällig werden, zeigt erst der Liquiditätsplan. Außerdem können Forderungen ausfallen.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum wird die Kontokorrentlinie erst nach Mahnwesen, Skonto und Zahlungszielen eingesetzt?",
+            "antwort": "Sie ist teuer: Überziehungszinsen liegen deutlich über anderen Kreditzinsen. Die eigenen Abläufe zu verbessern, kostet wenig und wirkt oft genauso schnell. Der Kontokorrent deckt dann nur noch die verbleibende Spitze.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
