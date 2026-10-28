@@ -6,46 +6,413 @@
   "untertitel": "Arbeitszeit gestalten und Menschen weiterbringen.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "e1",
-        "vorauswissen": [
-          "Arbeitszeitmodelle verteilen Arbeitszeit unterschiedlich.",
-          "Arbeitszeit bleibt auch bei größerer Freiheit rechtlich zu erfassen."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für eine Abteilung ein passendes Arbeitszeitmodell, gestaltest seine Regeln und prüfst es gegen das Arbeitszeitgesetz.",
+        "vorwissen_kurz": "Das Arbeitszeitgesetz schützt die Gesundheit: Es begrenzt die tägliche Arbeitszeit und schreibt Pausen und Ruhezeiten vor.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zeit als Gestaltungsaufgabe",
+            "id": "e1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Arbeitszeit regelt zwei Dinge: wie viel gearbeitet wird und wann. Ein Arbeitszeitmodell beantwortet beides für eine Abteilung so, dass die Arbeit erledigt wird und die Beschäftigten ihr Leben planen können. Was passt, hängt vom Arbeitsablauf ab. Ein Lager mit Lieferungen ab 6 Uhr braucht feste Zeiten oder Schichten. Ein Büro mit Kundentelefon von 9 bis 16 Uhr kann Gleitzeit mit Kernzeit anbieten. Projektarbeit mit Ergebnisverantwortung verträgt Vertrauensarbeitszeit.",
+            "id": "e1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "e1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Gleitzeit für die Buchhaltung von MAKEL",
+            "id": "e1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Buchhaltung möchte Gleitzeit einführen. Die Regeln müssen klar sein, sonst entstehen Zeitberge oder unbesetzte Telefone:",
+            "id": "e1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Regel",
+              "Festlegung",
+              "Grund"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rahmenzeit",
+                  "7:00 bis 19:00 Uhr",
+                  "in diesem Rahmen darf gearbeitet werden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kernzeit",
+                  "9:30 bis 15:00 Uhr",
+                  "Erreichbarkeit für Kunden und Lieferer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeitkonto",
+                  "höchstens +40 / −20 Stunden",
+                  "Salden bleiben abbaubar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausgleich",
+                  "Ausgleich innerhalb von drei Monaten; Überschreitungen mit der Leitung besprechen",
+                  "verhindert Dauerüberlastung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfassung",
+                  "jede Arbeitszeit wird erfasst",
+                  "rechtliche Pflicht, Grundlage für das Zeitkonto"
+                ]
+              }
+            ],
+            "fazit": "Gleitzeit funktioniert nur mit Kernzeit, Zeitkonto, Ausgleichsregel und Erfassung.",
+            "id": "e1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die gesetzlichen Grenzen gelten auch bei Gleitzeit. Die werktägliche Arbeitszeit darf acht Stunden nicht überschreiten; bis zu zehn Stunden sind erlaubt, wenn im Durchschnitt von sechs Monaten acht Stunden je Werktag nicht überschritten werden. Nach sechs Stunden ist eine Pause von mindestens 30 Minuten nötig, nach neun Stunden 45 Minuten. Zwischen zwei Arbeitstagen müssen mindestens elf Stunden Ruhe liegen. Wer an einem Tag bis 19 Uhr arbeitet, darf am nächsten also nicht vor 6 Uhr beginnen.",
+            "id": "e1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "e1-b2"
+          }
         ],
-        "erklaerung": "Zu den Arbeitszeitmodellen gehören feste Arbeitszeit, Gleitzeit, Vertrauensarbeitszeit, Teilzeit, Schichtarbeit und mobiles Arbeiten. Gleitzeit braucht ein Zeitkonto und Regeln für den Ausgleich. Auch Vertrauensarbeitszeit hebt die Pflicht zur Arbeitszeiterfassung nicht auf. Nach dem Arbeitszeitgesetz gelten werktäglich acht Stunden, bis zehn Stunden bei Ausgleich im Halbjahresschnitt.",
-        "beispiele": [
-          "Bei Gleitzeit werden Beginn und Ende innerhalb eines Rahmens gewählt; Zeitkonto und Ausgleichsregeln sorgen dafür, dass die Abweichungen nachvollziehbar bleiben.",
-          "Mobiles Arbeiten verändert den Ort, Vertrauensarbeitszeit die Kontrolle der Lage; beide sind trotzdem in der Arbeitszeitplanung und -erfassung zu berücksichtigen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Vertrauensarbeitszeit und Erfassungspflicht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei Vertrauensarbeitszeit kontrolliert der Arbeitgeber nicht, wann gearbeitet wird; es zählt das Ergebnis. Nach der Rechtsprechung des Bundesarbeitsgerichts muss die Arbeitszeit aber trotzdem erfasst werden, damit Höchstgrenzen und Ruhezeiten eingehalten werden können. Die Beschäftigten können die Zeiten selbst aufschreiben. Vertrauen bezieht sich also auf die Lage der Arbeit, nicht auf ihre Dokumentation.",
+                "id": "e1-d1-p1"
+              }
+            ],
+            "id": "e1-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Mobiles Arbeiten und Homeoffice",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim mobilen Arbeiten kann von verschiedenen Orten aus gearbeitet werden. Beim Homeoffice im engeren Sinn (Telearbeitsplatz) richtet der Arbeitgeber einen festen Arbeitsplatz in der Wohnung ein, mit entsprechenden Pflichten zur Ausstattung und Gestaltung. Für beide gelten Arbeitszeitgesetz, Datenschutz und Arbeitsschutz weiter. Ein gesetzlicher Anspruch auf Homeoffice besteht nicht; es wird vereinbart.",
+                "id": "e1-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf2:k1"
+                ],
+                "text": "Arbeitsplatz und Homeoffice",
+                "id": "e1-d2-v1"
+              }
+            ],
+            "id": "e1-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb führt Gleitzeit ein, beschreibt aber weder Zeitkonto noch Ausgleich. Das Modell ist organisatorisch unvollständig. Es werden Regeln für die Zeiterfassung und den Ausgleich festgelegt. Zusätzlich wird geprüft, dass die tägliche Arbeitszeit die acht Stunden beziehungsweise den zulässigen Ausgleich bis zehn Stunden einhält.",
-        "typische_fehler": "Vertrauensarbeitszeit wird als arbeitszeitfreie Selbstbestimmung verstanden. Außerdem wird Gleitzeit ohne Zeitkonto oder Ausgleichsregel eingeführt.",
         "verstaendnisfragen": [
-          "Welche zwei Voraussetzungen braucht Gleitzeit? Ein Zeitkonto und Regeln für den Ausgleich.",
-          "Was gilt auch bei Vertrauensarbeitszeit? Die Pflicht zur Arbeitszeiterfassung."
-        ],
-        "pruefungsbezug": "Ordne Modelle nach der Gestaltung von Zeit und Ort zu und prüfe anschließend Erfassung, tägliche Grenze und Ausgleich.",
-        "merksatz": "Mehr Freiheit bei der Lage der Arbeit beseitigt weder Regeln noch Zeiterfassung."
+          {
+            "frage": "Eine Mitarbeiterin mit Gleitzeit arbeitet an einem Tag von 7:00 bis 18:30 Uhr mit 30 Minuten Pause. Ist das zulässig?",
+            "antwort": "Die Arbeitszeit beträgt elf Stunden. Das überschreitet die zulässige Höchstgrenze von zehn Stunden. Außerdem wären nach neun Stunden 45 Minuten Pause nötig gewesen. Der Tag verstößt gegen das Arbeitszeitgesetz.",
+            "id": "e1-f1"
+          },
+          {
+            "frage": "Warum braucht Gleitzeit eine Kernzeit?",
+            "antwort": "Damit Kunden, Lieferer und Kollegen zu verlässlichen Zeiten jemanden erreichen und Besprechungen möglich sind. Ohne Kernzeit könnte die Abteilung zu wichtigen Zeiten leer sein.",
+            "id": "e1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "e2",
-        "vorauswissen": [
-          "Personalentwicklung kann vor, während und nach einer Tätigkeit ansetzen.",
-          "Lernen soll die berufliche Entwicklung und den Einsatz verbinden."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Maßnahmen der Personalentwicklung nach Zeitpunkt und Lernort und stellst für ein Entwicklungsziel einen begründeten Maßnahmenplan zusammen.",
+        "vorwissen_kurz": "Personalentwicklung umfasst alles, was die Fähigkeiten der Beschäftigten für heutige und künftige Aufgaben verbessert — von der Ausbildung bis zur Vorbereitung auf den Ruhestand.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Entwickeln statt suchen",
+            "id": "e2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede Stelle, die MAKEL mit einer intern entwickelten Person besetzt, erspart eine externe Suche, eine lange Einarbeitung und das Risiko einer Fehlbesetzung. {{begriff:personalentwicklung|Personalentwicklung}} ist deshalb Teil der Personalbeschaffung — und ein Grund, warum gute Leute bleiben. Die Maßnahmen werden danach unterschieden, wann und wo gelernt wird.",
+            "id": "e2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "e2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Entwicklungsplan zur Teamleitung",
+            "id": "e2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Frau Y. soll in einem Jahr die Teamleitung im Versand übernehmen. Im Mitarbeitergespräch werden Ziel und Weg vereinbart:",
+            "id": "e2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitraum",
+              "Maßnahme",
+              "Form",
+              "Ergebnis, an dem man den Fortschritt erkennt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Monate 1–3",
+                  "Seminar „Grundlagen der Führung“ (3 Tage)",
+                  "off the job",
+                  "Kenntnis von Gesprächsführung und Aufgabenverteilung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Monate 1–12",
+                  "Mentoring durch die bisherige Teamleitung, monatliches Gespräch",
+                  "along the job",
+                  "Reflexion echter Führungssituationen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Monate 4–9",
+                  "Leitung eines Projekts „Verpackung umstellen“ mit drei Kollegen",
+                  "on the job",
+                  "Projekt fristgerecht abgeschlossen, Feedback des Teams"
+                ]
+              },
+              {
+                "zellen": [
+                  "Monat 10",
+                  "Urlaubsvertretung der Teamleitung",
+                  "on the job",
+                  "zwei Wochen eigenständige Leitung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Monat 12",
+                  "Mitarbeitergespräch mit Rückblick und Entscheidung",
+                  "along the job",
+                  "Übernahme der Stelle"
+                ]
+              }
+            ],
+            "fazit": "Die Maßnahmen ergänzen sich: Das Seminar gibt Begriffe, Projekt und Vertretung geben Erfahrung, das Mentoring hilft, beides zu verbinden.",
+            "id": "e2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Grundlage ist das **Mitarbeitergespräch**. Beide Seiten bereiten es vor, es blickt auf das vergangene Jahr zurück, enthält eine Beurteilung und endet mit Zielen. Gute Ziele sind konkret, messbar und mit einem Termin versehen. Das Gespräch folgt den Regeln guten Feedbacks: beschreibend, konkret, auf Verhalten bezogen.",
+            "id": "e2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "e2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "e2-b3"
+          }
         ],
-        "erklaerung": "Die fünf Formen der Personalentwicklung werden über ihre Präpositionen unterschieden: into the job, on the job, off the job, along the job und out of the job. On the job findet direkt am Arbeitsplatz statt und ist die wirksamste und günstigste Form. Das jährliche Mitarbeitergespräch verbindet Rückblick, Beurteilung und Zielvereinbarung.",
-        "beispiele": [
-          "Eine Einarbeitung in die konkrete Stelle gehört zu into the job; Lernen während der laufenden Aufgabe zu on the job.",
-          "Eine Entwicklung außerhalb des Arbeitsplatzes gehört zu off the job; das Mitarbeitergespräch verbindet Rückblick und neue Ziele."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Lebenslanges Lernen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Personalentwicklung endet nicht mit der Ausbildung. Fortbildungen wie der Fachwirt oder Betriebswirt bauen auf der Berufsausbildung auf und bereiten auf anspruchsvollere Aufgaben vor. Auch kurze Weiterbildungen zu neuer Software oder geänderten Vorschriften gehören dazu. Für manche Fortbildungen gibt es staatliche Förderung; Voraussetzungen und Höhe sollten bei der zuständigen Stelle aktuell erfragt werden.",
+                "id": "e2-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf1:k1"
+                ],
+                "text": "Fortbildung und lebenslanges Lernen",
+                "id": "e2-d1-v1"
+              }
+            ],
+            "id": "e2-d1"
+          }
         ],
-        "fallbeispiel": "Eine neue Aufgabe soll sicher beherrscht werden. Zuerst wird geklärt, ob die Person in die Stelle eingeführt, während der Arbeit angeleitet oder außerhalb des Arbeitsplatzes geschult werden soll. Für die laufende Weiterentwicklung wird das Mitarbeitergespräch genutzt: Rückblick, Beurteilung und Zielvereinbarung werden verbunden. Ist Lernen direkt am Arbeitsplatz möglich, wird on the job geprüft.",
-        "typische_fehler": "Die fünf Formen werden nur übersetzt, ohne den Zeitpunkt und Ort des Lernens zuzuordnen. Außerdem wird das Mitarbeitergespräch auf eine reine Beurteilung reduziert.",
         "verstaendnisfragen": [
-          "Welche Form gilt als wirksamste und günstigste? On the job.",
-          "Welche drei Elemente verbindet das jährliche Mitarbeitergespräch? Rückblick, Beurteilung und Zielvereinbarung."
+          {
+            "frage": "Warum gilt Lernen „on the job“ als besonders wirksam?",
+            "antwort": "Es findet an echten Aufgaben statt, das Gelernte wird sofort angewendet und muss nicht erst übertragen werden. Außerdem kostet es weniger als ein externes Seminar. Ohne Anleitung kann es aber zu Fehlern führen; deshalb wird es oft mit Mentoring verbunden.",
+            "id": "e2-f1"
+          },
+          {
+            "frage": "Ein Mitarbeiter nimmt an drei Seminaren teil, verändert aber im Arbeitsalltag nichts. Woran kann das liegen?",
+            "antwort": "Off the job vermittelt Wissen, aber die Übertragung in den Alltag fehlt. Es braucht Gelegenheiten, das Gelernte anzuwenden, und Begleitung, etwa durch Gespräche mit der Führungskraft oder Mentoring. Außerdem sollte vorher ein Ziel vereinbart werden, an dem man den Erfolg misst.",
+            "id": "e2-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "e3",
+        "darstellung": "vollfassung",
+        "ziel": "Du bearbeitest die Mitteilung einer Schwangerschaft als Personalfall: Zuständigkeiten klären, notwendige Informationen einholen, Fristen berechnen und Schutzrechte beachten.",
+        "vorwissen_kurz": "Das Mutterschutzgesetz schützt die Gesundheit der Frau und des Kindes und sichert Arbeitsplatz und Einkommen. Die Pflichten treffen den Arbeitgeber, sobald er von der Schwangerschaft weiß.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was nach der Mitteilung geschieht",
+            "id": "e3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Frau L., Sachbearbeiterin im Einkauf, teilt der Personalabteilung mit, dass sie schwanger ist; der errechnete Entbindungstermin ist der 20. August. Ab jetzt gelten Schutzpflichten. MAKEL muss die zuständige Aufsichtsbehörde unverzüglich benachrichtigen. Die Information wird nur an die Personen weitergegeben, die sie für ihre Aufgabe brauchen — etwa die direkte Leitung —, und nicht im Team verbreitet.",
+            "id": "e3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Außerdem prüft MAKEL, ob der Arbeitsplatz Gefährdungen enthält: Muss Frau L. schwer heben, steht sie lange, ist sie Stoffen ausgesetzt? Im Büro sind das meist kleine Anpassungen, etwa Pausen- und Liegemöglichkeiten. Lässt sich eine Gefährdung nicht beseitigen, muss die Tätigkeit umgestaltet, ein anderer Arbeitsplatz angeboten oder als letztes Mittel ein betriebliches Beschäftigungsverbot ausgesprochen werden.",
+            "id": "e3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "e3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Fristenkalender",
+            "id": "e3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitpunkt",
+              "Ereignis",
+              "Aufgabe der Personalabteilung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "sofort",
+                  "Mitteilung der Schwangerschaft",
+                  "Aufsichtsbehörde benachrichtigen, Gefährdungsbeurteilung, Vertretung planen"
+                ]
+              },
+              {
+                "zellen": [
+                  "ab 9. Juli",
+                  "Beginn der Schutzfrist (6 Wochen vor dem 20. August)",
+                  "Beschäftigung nur, wenn Frau L. sich ausdrücklich bereit erklärt; Vertretung beginnt"
+                ]
+              },
+              {
+                "zellen": [
+                  "20. August (errechnet)",
+                  "Entbindung",
+                  "tatsächliches Datum erfragen, Fristen anpassen"
+                ]
+              },
+              {
+                "zellen": [
+                  "bis 15. Oktober",
+                  "Ende der Schutzfrist (8 Wochen nach dem 20. August)",
+                  "Beschäftigungsverbot; bei Früh- oder Mehrlingsgeburt 12 Wochen"
+                ]
+              },
+              {
+                "zellen": [
+                  "bis 20. Dezember",
+                  "Ende des besonderen Kündigungsschutzes (4 Monate nach der Entbindung)",
+                  "keine Kündigung ohne behördliche Zulassung"
+                ]
+              }
+            ],
+            "fazit": "Alle Daten hängen am tatsächlichen Entbindungstermin. Kommt das Kind früher, verlängert sich die Schutzfrist danach um die Tage, die vorher nicht in Anspruch genommen werden konnten.",
+            "id": "e3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Während der Schutzfristen erhält Frau L. Mutterschaftsgeld von ihrer Krankenkasse; MAKEL zahlt einen Zuschuss bis zur Höhe ihres bisherigen Nettoentgelts. Diesen Zuschuss bekommt MAKEL über die Umlage U2 von der Krankenkasse erstattet. Schließt sich Elternzeit an, muss Frau L. sie spätestens sieben Wochen vor Beginn schriftlich verlangen; der Kündigungsschutz besteht dann auch während der Elternzeit.",
+            "id": "e3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "e3-b2"
+          }
         ],
-        "pruefungsbezug": "Ordne die englischen Präpositionen nach Ort und Zeitpunkt der Entwicklung und nenne jeweils ein passendes Beispiel.",
-        "merksatz": "Personalentwicklung folgt der Frage, wann und wo gelernt wird; on the job ist direkt und wirksam."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Schutz nach einer Fehlgeburt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Seit dem 1. Juni 2025 gibt es auch nach einer Fehlgeburt gestaffelte Schutzfristen: ab der 13. Schwangerschaftswoche bis zu zwei Wochen, ab der 17. Woche bis zu sechs, ab der 20. Woche bis zu acht Wochen. Die Frau darf in dieser Zeit nur beschäftigt werden, wenn sie sich ausdrücklich dazu bereit erklärt. Die Personalabteilung behandelt solche Mitteilungen besonders vertraulich.",
+                "id": "e3-d1-p1"
+              }
+            ],
+            "id": "e3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Mutterschutz und Elternzeit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mutterschutz ist eine gesetzliche Schutzzeit rund um die Geburt, die nur die Mutter betrifft und nicht abbedungen werden kann (nach der Geburt besteht ein absolutes Beschäftigungsverbot). Elternzeit ist ein Anspruch beider Elternteile auf unbezahlte Freistellung bis zum dritten Geburtstag des Kindes, die beantragt werden muss. Während der Elternzeit kann Elterngeld vom Staat bezogen werden; der Arbeitgeber zahlt kein Entgelt.",
+                "id": "e3-d2-p1"
+              }
+            ],
+            "id": "e3-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Frau L. möchte bis eine Woche vor dem errechneten Termin arbeiten. Ist das möglich?",
+            "antwort": "Ja, wenn sie sich ausdrücklich dazu bereit erklärt. Vor der Geburt darf sie während der Schutzfrist auf eigenen Wunsch beschäftigt werden; diese Erklärung kann sie jederzeit widerrufen. Nach der Geburt besteht dagegen ein Beschäftigungsverbot.",
+            "id": "e3-f1"
+          },
+          {
+            "frage": "Die Teamleitung erzählt im Teammeeting von der Schwangerschaft, bevor Frau L. es selbst tun wollte. Was ist daran problematisch?",
+            "antwort": "Die Schwangerschaft ist eine Gesundheitsinformation und gehört zu den besonders geschützten personenbezogenen Daten. Sie darf nur an Personen weitergegeben werden, die sie für ihre Aufgabe brauchen. Ob und wann das Team informiert wird, entscheidet Frau L.",
+            "id": "e3-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "Techniker Krankenkasse (Firmenkunden): Mutterschutz bei Fehlgeburten",
+            "url": "https://www.tk.de/firmenkunden/service/fachthemen/versicherung-fachthema/mutterschutz-bei-fehlgeburten-2191170",
+            "bezug": "gestaffelte Schutzfristen seit 1.6.2025; reguläre Fristen 6/8 bzw. 12 Wochen; gelesen am 28.10.2026"
+          }
+        ]
       }
     ]
   },
@@ -59,6 +426,10 @@
       "id": "lz2",
       "text": "Maßnahmen der Personalentwicklung einordnen",
       "abschnitt": "e2"
+    },
+    {
+      "abschnitt": "e3",
+      "text": "Den Mutterschutz als Verwaltungsfall mit Zuständigkeiten, Informationen und Fristen bearbeiten"
     }
   ],
   "bloecke": [
@@ -241,6 +612,67 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "e3",
+      "titel": "Mutterschutz als Personalfall",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Teilt eine Beschäftigte mit, dass sie schwanger ist, entstehen für den Betrieb feste Pflichten nach dem Mutterschutzgesetz: die Aufsichtsbehörde benachrichtigen, den Arbeitsplatz auf Gefährdungen prüfen, Schutzfristen planen und den Kündigungsschutz beachten. ==Die Personalabteilung organisiert das — vertraulich und mit Fristenkalender.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Pflicht",
+            "Inhalt",
+            "Frist oder Dauer"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Benachrichtigung",
+                "Aufsichtsbehörde informieren; Information nur an Beteiligte weitergeben",
+                "unverzüglich nach der Mitteilung"
+              ]
+            },
+            {
+              "zellen": [
+                "Schutz am Arbeitsplatz",
+                "Gefährdungsbeurteilung, Arbeitsplatz anpassen, notfalls Beschäftigungsverbot",
+                "sofort"
+              ]
+            },
+            {
+              "zellen": [
+                "Schutzfrist vor der Geburt",
+                "Beschäftigung nur, wenn die Frau sich ausdrücklich bereit erklärt",
+                "6 Wochen vor dem errechneten Termin"
+              ]
+            },
+            {
+              "zellen": [
+                "Schutzfrist nach der Geburt",
+                "Beschäftigungsverbot",
+                "8 Wochen, bei Früh- oder Mehrlingsgeburt 12 Wochen"
+              ]
+            },
+            {
+              "zellen": [
+                "Kündigungsschutz",
+                "Kündigung grundsätzlich unzulässig",
+                "während der Schwangerschaft bis 4 Monate nach der Entbindung"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Mutterschutz bedeutet für die Personalabteilung: **benachrichtigen, Arbeitsplatz prüfen, Fristen eintragen, Kündigungsschutz beachten, Entgelt richtig weiterzahlen.** Die Schwangerschaft selbst bleibt vertraulich.",
+          "karteikarte": "Welche Pflichten hat der Arbeitgeber, wenn eine Beschäftigte ihm ihre Schwangerschaft mitteilt?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -250,7 +682,8 @@
     "Arbeitszeitgesetz: werktäglich acht Stunden, bis zehn bei Ausgleich im Halbjahresschnitt.",
     "Personalentwicklung: into, on, off, along und out of the job.",
     "On the job ist die wirksamste und günstigste Form.",
-    "Das jährliche Mitarbeitergespräch verbindet Rückblick, Beurteilung und Zielvereinbarung."
+    "Das jährliche Mitarbeitergespräch verbindet Rückblick, Beurteilung und Zielvereinbarung.",
+    "Mutterschutz: Aufsichtsbehörde benachrichtigen, Gefährdung beurteilen, Schutzfristen 6 Wochen vor und 8 Wochen nach der Geburt, Kündigungsschutz bis 4 Monate nach der Entbindung."
   ],
   "selbsttest": [
     {

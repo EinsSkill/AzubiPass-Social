@@ -6,46 +6,398 @@
   "untertitel": "Wonach bezahlt wird — und was am Ende auf der Abrechnung steht.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "d1",
-        "vorauswissen": [
-          "Entgelt kann an Zeit, Leistung oder einer Kombination hängen.",
-          "Akkord setzt eine bestimmte messbare Arbeitsleistung voraus."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für unterschiedliche Tätigkeiten die passende Entgeltform und begründest sie mit Messbarkeit, Anreizwirkung und rechtlichen Grenzen.",
+        "vorwissen_kurz": "Entgelt ist die Gegenleistung für Arbeit. Seine Form beeinflusst, worauf Beschäftigte achten: auf Zeit, auf Menge oder auf vereinbarte Ziele.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was bezahlt wird, wird gemacht",
+            "id": "d1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede Entgeltform setzt einen Anreiz. Beim **Zeitlohn** wird die Arbeitszeit bezahlt, egal wie viel in ihr geschafft wird. Das passt, wenn Sorgfalt wichtiger ist als Tempo oder wenn sich Leistung nicht sinnvoll zählen lässt — Beratung, Buchhaltung, Organisation. Beim **Akkordlohn** wird die Menge bezahlt. Das passt nur, wenn die Arbeit messbar ist, die Beschäftigten das Tempo selbst beeinflussen können und sich die Tätigkeit regelmäßig wiederholt. Der **Prämienlohn** kombiniert einen sicheren Grundlohn mit einem Zuschlag für messbare Zusatzleistungen wie Qualität, Termintreue oder erreichte Ziele.",
+            "id": "d1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "d1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Stellen bei MAKEL",
+            "id": "d1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stelle",
+              "Gewählte Form",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Sachbearbeitung Rechnungswesen",
+                  "Zeitlohn (Monatsgehalt)",
+                  "Vorgänge sind sehr unterschiedlich schwierig; Tempo vor Sorgfalt würde Fehler erzeugen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckerei: gleichförmiges Bedrucken von Shirts nach Vorlage",
+                  "Prämienlohn (Grundlohn plus Prämie für fehlerfreie Stückzahl)",
+                  "Menge ist messbar, aber Qualität soll nicht leiden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb",
+                  "Grundgehalt plus Bonus nach Jahreszielen",
+                  "Ergebnis ist messbar, hängt aber auch vom Markt ab; ein fester Teil sichert ab"
+                ]
+              }
+            ],
+            "fazit": "Akkord im engen Sinn wählt MAKEL nirgends: Selbst in der Druckerei würde reiner Mengenanreiz die Fehlerquote erhöhen.",
+            "id": "d1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei jeder Form gilt eine Untergrenze: der gesetzliche Mindestlohn, 2026 13,90 € je Stunde, und gegebenenfalls ein höherer Tariflohn. Auch im Akkord oder mit Prämie darf das Entgelt diese Grenze nicht unterschreiten. Für Jugendliche unter 18 ist Akkordarbeit nach dem Jugendarbeitsschutzgesetz verboten, weil Tempodruck die Gesundheit junger Menschen gefährden kann.",
+            "id": "d1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d1-b2"
+          }
         ],
-        "erklaerung": "Zeitlohn vergütet die Anwesenheitszeit. Akkordlohn richtet sich nach der Leistungsmenge; dafür muss die Leistung messbar, beeinflussbar und wiederholbar sein. Prämienlohn verbindet Zeit und Leistung. Jugendliche unter 18 dürfen keine Akkordarbeit leisten. Auch bei Akkord gilt der Mindestlohn.",
-        "beispiele": [
-          "Bei Zeitlohn bleibt die Vergütung an der geleisteten Zeit orientiert; bei Akkord steigt sie mit der messbaren Leistungsmenge.",
-          "Eine Tätigkeit ohne beeinflussbare oder wiederholbare Leistung eignet sich nicht für Akkordlohn; bei einer minderjährigen Person ist Akkordarbeit zusätzlich verboten."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Zielvereinbarung und Bonus",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im Büro tritt der Prämiengedanke meist als Zielvereinbarung auf. Gute Ziele sind konkret, messbar, von der Person beeinflussbar und vorher vereinbart: „Bearbeitungszeit von Reklamationen auf durchschnittlich drei Arbeitstage senken.“ Schlechte Ziele messen etwas, das die Person kaum beeinflussen kann, etwa den Gesamtumsatz des Unternehmens. Dann wirkt der Bonus nicht als Anreiz, sondern als Lotterie.",
+                "id": "d1-d1-p1"
+              }
+            ],
+            "id": "d1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb möchte eine Leistung nach Stückzahl vergüten. Zuerst werden die drei Voraussetzungen geprüft: Ist die Leistung messbar, kann die beschäftigte Person sie beeinflussen und wiederholt sie sich? Fehlt eine Voraussetzung, wird kein Akkordlohn gewählt. Ist die Person unter 18, ist Akkordarbeit unabhängig davon ausgeschlossen; der Mindestlohn bleibt auch bei zulässigem Akkord maßgeblich.",
-        "typische_fehler": "Prämienlohn und Akkordlohn werden gleichgesetzt oder nur die Messbarkeit geprüft. Außerdem wird angenommen, Akkord könne den Mindestlohn unterschreiten.",
         "verstaendnisfragen": [
-          "Welche drei Voraussetzungen hat Akkord? Messbar, beeinflussbar und wiederholbar.",
-          "Welche Entgeltform kombiniert Zeit und Leistung? Prämienlohn."
-        ],
-        "pruefungsbezug": "Ordne Entgeltformen zuerst nach dem Anknüpfungspunkt zu und prüfe bei Akkord immer Voraussetzungen, Alter und Mindestlohn.",
-        "merksatz": "Zeitlohn zählt Zeit, Akkord zählt Menge, Prämienlohn verbindet beides."
+          {
+            "frage": "Ein Betrieb möchte im Kundenservice nach Anzahl der beantworteten Anfragen bezahlen. Welche Gefahr siehst du?",
+            "antwort": "Die Beschäftigten würden schnell und kurz antworten, auch wenn ein Problem nicht gelöst ist. Schwierige Anfragen würden gemieden. Ein Prämienlohn, der auch Kundenzufriedenheit oder Lösungsquote berücksichtigt, wäre besser.",
+            "id": "d1-f1"
+          },
+          {
+            "frage": "Warum ist Akkordlohn für eine 17-jährige Auszubildende in der Druckerei unzulässig, auch wenn die Arbeit messbar wäre?",
+            "antwort": "Das Jugendarbeitsschutzgesetz verbietet Akkordarbeit für Jugendliche unter 18. Der Schutz vor Tempodruck geht vor der Eignung der Tätigkeit.",
+            "id": "d1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d2",
-        "vorauswissen": [
-          "Die Abrechnung beginnt mit dem Brutto und endet mit dem Auszahlungsbetrag.",
-          "Nicht jeder Abzug hat dieselbe Funktion."
+        "darstellung": "vollfassung",
+        "ziel": "Du liest eine Entgeltabrechnung Block für Block, ordnest jeden Betrag seinem Empfänger zu und erklärst, warum sich das Netto bei gleichem Brutto ändern kann.",
+        "vorwissen_kurz": "Die Rechnung vom Brutto zum Netto kennst du aus der Buchführung. Hier geht es darum, eine Abrechnung zu lesen und einer Kollegin zu erklären.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Abrechnung erklären",
+            "id": "d2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Kollegin bei MAKEL kommt mit ihrer Entgeltabrechnung zur Personalabteilung: „Mein Brutto ist gleich, aber ich bekomme 108 € weniger.“ Die {{begriff:entgeltabrechnung|Entgeltabrechnung}} ist in Blöcke gegliedert, und jeder Block beantwortet eine Frage: Was steht der Person zu? Was geht an das Finanzamt? Was an die Sozialversicherung? Was wird sonst einbehalten? Was wird überwiesen?",
+            "id": "d2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was sich verändert hat",
+            "id": "d2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Block",
+              "Vormonat",
+              "Dieser Monat",
+              "Grund"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bruttoentgelt",
+                  "3.000,00 €",
+                  "3.000,00 €",
+                  "unverändert"
+                ]
+              },
+              {
+                "zellen": [
+                  "+ geldwerter Vorteil Dienstwagen",
+                  "–",
+                  "1 % von 30.000 € Listenpreis = 300,00 €",
+                  "neu: private Nutzung eines Firmenwagens"
+                ]
+              },
+              {
+                "zellen": [
+                  "= steuer- und beitragspflichtiges Brutto",
+                  "3.000,00 €",
+                  "3.300,00 €",
+                  "Vorteil erhöht die Bemessungsgrundlage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lohnsteuer (vereinfacht 15 %)",
+                  "450,00 €",
+                  "495,00 €",
+                  "höhere Bemessungsgrundlage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sozialversicherung (21,15 %)",
+                  "634,50 €",
+                  "697,95 €",
+                  "höhere Bemessungsgrundlage"
+                ]
+              },
+              {
+                "zellen": [
+                  "− Sachbezug wieder abziehen (wurde nicht ausgezahlt)",
+                  "–",
+                  "300,00 €",
+                  "der Wagen ist kein Geld"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Auszahlung (ohne Soli/KiSt, vereinfacht)",
+                  "1.915,50 €",
+                  "1.807,05 €",
+                  "108,45 € weniger"
+                ]
+              }
+            ],
+            "fazit": "Der Dienstwagen erhöht Steuer und Beiträge, obwohl kein zusätzliches Geld fließt. Das Netto sinkt — dafür steht ein Auto zur Verfügung.",
+            "id": "d2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Werte sind ein vereinfachter Übungsfall mit pauschaler Steuer. Er zeigt das Prinzip: Ein Sachbezug wird wie Lohn behandelt, muss aber am Ende wieder abgezogen werden, weil er nicht überwiesen wird. Steuerfreie Vorteile wirken anders: Ein Job-Ticket für Bus und Bahn, das zusätzlich zum geschuldeten Lohn gewährt wird, ist nach § 3 Nr. 15 EStG steuerfrei und verändert das Netto nicht.",
+            "id": "d2-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Andere häufige Gründe für ein geringeres Netto bei gleichem Brutto: eine neue Steuerklasse nach Heirat oder Trennung, ein höherer Zusatzbeitrag der Krankenkasse, der Pflegezuschlag für Kinderlose ab dem 23. Geburtstag oder eine Pfändung.",
+            "id": "d2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "d2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "d2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "d2-b4"
+          }
         ],
-        "erklaerung": "Eine Abrechnung wird vom Brutto über gesetzliche Abzüge und Sozialversicherung zum Auszahlungsbetrag gelesen. Sonstige Abzüge werden gesondert betrachtet. Steuerpflichtige geldwerte Vorteile — etwa die private Nutzung eines Dienstwagens — erhöhen das steuerpflichtige Brutto, obwohl kein zusätzlicher Geldbetrag ausgezahlt wird. Es gibt steuerfreie Ausnahmen: Ein Job-Ticket für Bus und Bahn, das zusätzlich zum ohnehin geschuldeten Lohn gewährt wird, bleibt nach § 3 Nr. 15 EStG steuerfrei. Die Krankenkasse ist Einzugsstelle für den Gesamt­sozial­versicherungs­beitrag, also Kranken-, Pflege-, Renten- und Arbeitslosenversicherung; die Unfallversicherung zahlt der Arbeitgeber allein und direkt an die Berufsgenossenschaft.",
-        "beispiele": [
-          "Ein steuerpflichtiger geldwerter Vorteil wie die private Dienstwagennutzung wird dem steuerpflichtigen Brutto zugerechnet, obwohl die Person dafür nicht nochmals Geld erhält; ein zusätzlich gewährtes Job-Ticket für den Nahverkehr dagegen nicht.",
-          "Für die Sozialversicherungsbeiträge wird die Krankenkasse als Einzugsstelle betrachtet; die Abrechnung weist anschließend den Auszahlungsbetrag aus."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Die Krankenkasse als Einzugsstelle",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Arbeitgeber überweist den gesamten Sozialversicherungsbeitrag — Arbeitnehmer- und Arbeitgeberanteil für Kranken-, Pflege-, Renten- und Arbeitslosenversicherung — an die Krankenkasse der beschäftigten Person. Sie leitet die Anteile an Rentenversicherung und Bundesagentur für Arbeit weiter. Deshalb heißt sie Einzugsstelle. Die Unfallversicherung läuft getrennt: Der Arbeitgeber zahlt sie allein an die Berufsgenossenschaft.",
+                "id": "d2-d1-p1"
+              }
+            ],
+            "id": "d2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Elektroauto als Dienstwagen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für reine Elektrofahrzeuge gelten steuerliche Vergünstigungen: Der geldwerte Vorteil wird nicht mit 1 %, sondern nur mit einem Bruchteil des Listenpreises angesetzt, wenn bestimmte Grenzen eingehalten sind. Die genauen Sätze und Preisgrenzen hängen vom Anschaffungsjahr ab und haben sich mehrfach geändert. Vor einer Beratung sind sie deshalb aktuell zu prüfen.",
+                "id": "d2-d2-p1"
+              }
+            ],
+            "id": "d2-d2"
+          }
         ],
-        "fallbeispiel": "Eine Beschäftigte fragt, warum ihr steuerpflichtiges Brutto höher ist als der ausgezahlte Betrag. Die Abrechnung wird schrittweise gelesen: Brutto, gesetzliche Abzüge, Sozialversicherung, sonstige Abzüge, Auszahlungsbetrag. Ein geldwerter Vorteil kann das steuerpflichtige Brutto erhöhen, ohne dass er als Geld auf dem Konto erscheint.",
-        "typische_fehler": "Brutto und Auszahlung werden gleichgesetzt oder alle Abzüge als Sozialversicherung bezeichnet. Auch die Krankenkasse wird nur als eine einzelne Versicherung statt als Einzugsstelle für die Beiträge betrachtet.",
         "verstaendnisfragen": [
-          "Welche Reihenfolge hilft beim Lesen? Brutto, gesetzliche Abzüge, Sozialversicherung, sonstige Abzüge, Auszahlungsbetrag.",
-          "Wer ist Einzugsstelle für den Gesamt­sozial­versicherungs­beitrag? Die Krankenkasse — für Kranken-, Pflege-, Renten- und Arbeitslosenversicherung, nicht für die Unfallversicherung."
+          {
+            "frage": "Eine Kollegin fragt, warum der Arbeitgeberanteil nicht auf ihrer Abrechnung als Abzug erscheint. Was antwortest du?",
+            "antwort": "Der Arbeitgeberanteil wird nicht von ihrem Gehalt einbehalten, sondern vom Betrieb zusätzlich gezahlt. Er gehört zu den Personalkosten des Betriebs. Auf ihrer Abrechnung wird er höchstens zur Information ausgewiesen.",
+            "id": "d2-f1"
+          },
+          {
+            "frage": "Warum wird der geldwerte Vorteil nach der Berechnung von Steuer und Sozialversicherung wieder abgezogen?",
+            "antwort": "Er erhöht nur die Bemessungsgrundlage für Steuer und Beiträge. Ausgezahlt wird er nicht, denn die Person bekommt das Auto, kein Geld. Ohne den Abzug würde zu viel überwiesen.",
+            "id": "d2-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "d3",
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst in einem Krankheitsfall Anspruch, Nachweis und Dauer der Entgeltfortzahlung und überwachst die Fristen mit einem nachvollziehbaren Kalender.",
+        "vorwissen_kurz": "Arbeitsunfähig ist, wer wegen Krankheit seine Arbeit nicht verrichten kann oder dabei seine Genesung gefährden würde. Krank sein allein bedeutet nicht immer arbeitsunfähig.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum Entgelt weitergezahlt wird",
+            "id": "d3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer krank ist, soll nicht auch noch um sein Einkommen fürchten müssen. Das Entgeltfortzahlungsgesetz verpflichtet deshalb den Arbeitgeber, bei unverschuldeter Arbeitsunfähigkeit das Entgelt bis zu sechs Wochen weiterzuzahlen. Der Anspruch entsteht erst, wenn das Arbeitsverhältnis vier Wochen ununterbrochen bestanden hat. Wer in den ersten vier Wochen krank wird, bekommt in dieser Zeit Krankengeld von der Krankenkasse.",
+            "id": "d3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zwei Pflichten hat die Beschäftigte: Sie muss die Arbeitsunfähigkeit und ihre voraussichtliche Dauer unverzüglich melden, in der Regel am ersten Krankheitstag vor Arbeitsbeginn. Und dauert sie länger als drei Kalendertage, muss sie sich ärztlich krankschreiben lassen. Die Bescheinigung kommt heute elektronisch: Die Praxis übermittelt sie an die Krankenkasse, und der Arbeitgeber ruft sie dort ab. Der Arbeitgeber darf den Nachweis auch schon ab dem ersten Tag verlangen.",
+            "id": "d3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Abwesenheitsfall mit Kalender",
+            "id": "d3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Herr K. ist seit zwei Jahren bei MAKEL. Er meldet sich am Montag, 2. März, um 7:30 Uhr telefonisch krank.",
+            "id": "d3-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datum",
+              "Ereignis",
+              "Was die Personalabteilung tut"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Mo, 2. März",
+                  "Krankmeldung vor Arbeitsbeginn",
+                  "Abwesenheit im Kalender eintragen, Vertretung organisieren"
+                ]
+              },
+              {
+                "zellen": [
+                  "Do, 5. März",
+                  "vierter Kalendertag",
+                  "eAU bei der Krankenkasse abrufen; liegt sie nicht vor, nachfragen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fr, 10. April",
+                  "Ende der sechsten Woche",
+                  "Hinweis im Kalender: Entgeltfortzahlung endet nach dem 12. April"
+                ]
+              },
+              {
+                "zellen": [
+                  "ab 13. April",
+                  "weiter arbeitsunfähig",
+                  "Krankengeld durch die Krankenkasse; Entgeltbescheinigung an die Kasse übermitteln, Herrn K. informieren"
+                ]
+              }
+            ],
+            "fazit": "Die sechs Wochen (42 Kalendertage) laufen vom 2. März bis einschließlich 12. April. Die Frist wird im Kalender erfasst, nicht im Kopf.",
+            "id": "d3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Zahlung selbst läuft über die normale Entgeltabrechnung: Herr K. bekommt in diesen Wochen das Entgelt, das er bei normaler Arbeit erhalten hätte, ohne Überstundenvergütung. Kleinere Betriebe bis 30 Beschäftigte erhalten einen Teil davon über die Umlage U1 von der Krankenkasse erstattet.",
+            "id": "d3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d3-b2"
+          }
         ],
-        "pruefungsbezug": "Lies eine Abrechnung von oben nach unten und ordne jeden Betrag seiner Stufe zu. Geldwerte Vorteile als Brutto-Bestandteil prüfen, nicht als Auszahlung — und dabei klären, ob sie steuerpflichtig oder steuerfrei sind.",
-        "merksatz": "Brutto ist nicht Netto: Die Abrechnung erklärt den Weg zwischen beiden Beträgen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Dieselbe Krankheit kommt zurück",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Erkrankt jemand mehrmals an derselben Krankheit, werden die Zeiten zusammengerechnet: Insgesamt gibt es für diese Krankheit nur sechs Wochen Entgeltfortzahlung. Ein neuer Anspruch entsteht, wenn zwischen den Erkrankungen mindestens sechs Monate lagen oder seit Beginn der ersten Erkrankung zwölf Monate vergangen sind. Ob dieselbe Krankheit vorliegt, kann der Arbeitgeber bei der Krankenkasse anfragen; die Diagnose selbst erfährt er nicht.",
+                "id": "d3-d1-p1"
+              }
+            ],
+            "id": "d3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Fehlender Nachweis",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Liegt am vierten Tag keine Bescheinigung vor, darf der Arbeitgeber die Entgeltfortzahlung zurückhalten, bis der Nachweis kommt. Der Anspruch geht dadurch nicht verloren; er wird nur nicht fällig. Kommt die Bescheinigung nach, wird nachgezahlt. Davon zu unterscheiden ist eine Abmahnung, wenn jemand die Meldepflicht wiederholt verletzt.",
+                "id": "d3-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k3-c4"
+                ],
+                "text": "Personalakte und Datenschutz bei Gesundheitsdaten",
+                "id": "d3-d2-v1"
+              }
+            ],
+            "id": "d3-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Eine Mitarbeiterin ist seit drei Wochen bei MAKEL und erkrankt für zehn Tage. Zahlt MAKEL das Entgelt weiter?",
+            "antwort": "Für die Tage, an denen das Arbeitsverhältnis noch keine vier Wochen besteht, nicht; in dieser Zeit erhält sie Krankengeld von der Krankenkasse. Sobald die vier Wochen erreicht sind, zahlt MAKEL für die restlichen Krankheitstage das Entgelt weiter.",
+            "id": "d3-f1"
+          },
+          {
+            "frage": "Warum trennt die Personalabteilung Anspruch, Nachweis und Zahlung?",
+            "antwort": "Weil sie unterschiedliche Voraussetzungen und Fristen haben. Der Anspruch hängt von Wartezeit und Dauer ab, der Nachweis vom vierten Krankheitstag, die Zahlung von der Abrechnung. Wer sie vermischt, zahlt zu lange, zu kurz oder ohne Nachweis.",
+            "id": "d3-f2"
+          }
+        ]
       }
     ]
   },
@@ -59,6 +411,10 @@
       "id": "lz2",
       "text": "Eine Entgeltabrechnung lesen und die Bestandteile zuordnen",
       "abschnitt": "d2"
+    },
+    {
+      "abschnitt": "d3",
+      "text": "Entgeltfortzahlung im Krankheitsfall prüfen und Fristen dafür überwachen"
     }
   ],
   "bloecke": [
@@ -245,6 +601,60 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "d3",
+      "titel": "Entgelt ohne Arbeit: wenn jemand krank wird",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Wird eine Beschäftigte arbeitsunfähig krank, zahlt der Arbeitgeber ihr Entgelt weiter — nach dem Entgeltfortzahlungsgesetz **bis zu sechs Wochen**, wenn das Arbeitsverhältnis schon vier Wochen besteht. Danach zahlt die Krankenkasse Krankengeld. ==Für die Personalabteilung heißt das: Fristen überwachen, Nachweise einholen und Zahlung und Anspruch sauber trennen.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Frage",
+            "Regel",
+            "Im Betrieb"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Wann muss die Krankheit gemeldet werden?",
+                "unverzüglich, mit voraussichtlicher Dauer",
+                "Meldeweg festlegen, z. B. Anruf bei der Teamleitung vor Arbeitsbeginn"
+              ]
+            },
+            {
+              "zellen": [
+                "Ab wann braucht es einen ärztlichen Nachweis?",
+                "bei mehr als drei Kalendertagen, auf Verlangen schon früher",
+                "elektronische AU bei der Krankenkasse abrufen"
+              ]
+            },
+            {
+              "zellen": [
+                "Wie lange zahlt der Arbeitgeber?",
+                "bis zu sechs Wochen je Krankheit, nach vier Wochen Wartezeit",
+                "Fristen im Kalender führen, auch bei wiederholter Erkrankung"
+              ]
+            },
+            {
+              "zellen": [
+                "Was gilt danach?",
+                "Krankengeld von der Krankenkasse",
+                "Beschäftigte rechtzeitig informieren, Meldungen abgeben"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Anspruch, Nachweis und Zahlung** sind drei verschiedene Dinge: Der Anspruch auf Entgeltfortzahlung besteht nach vier Wochen Beschäftigung für bis zu sechs Wochen; der Nachweis ist ab dem vierten Kalendertag nötig; gezahlt wird mit der normalen Abrechnung.",
+          "karteikarte": "Wie lange und unter welcher Voraussetzung zahlt der Arbeitgeber bei Krankheit das Entgelt weiter, und ab wann ist eine ärztliche Bescheinigung nötig?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -254,7 +664,8 @@
     "Auch im Akkord gilt der Mindestlohn.",
     "Abrechnung: Brutto, gesetzliche Abzüge, Sozialversicherung, sonstige Abzüge, Auszahlungsbetrag.",
     "Steuerpflichtige geldwerte Vorteile (z. B. Dienstwagen privat) erhöhen das steuerpflichtige Brutto, ohne dass Geld fließt; ein zusätzlich gewährtes Job-Ticket ist steuerfrei.",
-    "Die Krankenkasse ist Einzugsstelle für den Gesamt­sozial­versicherungs­beitrag (KV, PV, RV, AV); die Unfallversicherung läuft gesondert über die Berufsgenossenschaft."
+    "Die Krankenkasse ist Einzugsstelle für den Gesamt­sozial­versicherungs­beitrag (KV, PV, RV, AV); die Unfallversicherung läuft gesondert über die Berufsgenossenschaft.",
+    "Entgeltfortzahlung: nach vier Wochen Beschäftigung bis zu sechs Wochen je Krankheit; Nachweis ab dem vierten Kalendertag."
   ],
   "selbsttest": [
     {

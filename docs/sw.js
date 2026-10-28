@@ -11,7 +11,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-98939630f696ec5b";
+var SPEICHER = "azubipass-a8ab079c4be5ba7b";
 var VORRAT = {
   "./": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "app.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
@@ -43,7 +43,7 @@ var VORRAT = {
   "lf4.html": "8ea997e11a703dd8921ae11417220da1fbb4610f23b0f3e84476b039cef190f2",
   "lf5.html": "bba73a7aa2ea1ea57fbcfad55e0b18925279a83c83d16c94c11f0c92c122684d",
   "lf7.html": "477d114dfc125a339f98c047dbedcf7a1278396d12352a4ae05935245fd7cd9c",
-  "lf8.html": "8cab6bdfc82c941efcca2e7b85563a8cdb025a50dbcc7a019b6c193726eac355",
+  "lf8.html": "fdab2517c61219b941a2332ff36d3c049cd4bdabbc440caaf0b7a6e799fc07d2",
   "lf9.html": "7dd27e0203ccd05230d49f79352383b595af64c5a344fa3c99d02ec62d625cfd",
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "49e2f946051d0f3e1dfb60f5f7ea5ee3ec1db923636b71f29f1a848c269cdfd5",

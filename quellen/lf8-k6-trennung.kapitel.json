@@ -6,66 +6,412 @@
   "untertitel": "Kündigungsarten, Fristen, Schutz — und was am Ende im Zeugnis steht.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "f1",
-        "vorauswissen": [
-          "Personalfreisetzung kann vor einer Kündigung beginnen.",
-          "Eine Kündigung ist das letzte Mittel und muss formal wirksam sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Maßnahmen der Personalfreisetzung von mild bis einschneidend, unterscheidest die Beendigungsarten und prüfst zuerst die Form.",
+        "vorwissen_kurz": "Personalfreisetzung bedeutet, eine personelle Überdeckung abzubauen. Das kann, muss aber nicht, durch Kündigung geschehen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kündigung steht am Ende",
+            "id": "f1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein großer Kunde von MAKEL springt ab, im Versand ist für drei Personen zu wenig Arbeit. Die erste Frage lautet nicht „Wem kündigen wir?“, sondern „Wie bauen wir die Überdeckung mit dem geringsten Schaden ab?“. Mildere Mittel kommen zuerst: Überstunden und Resturlaub abbauen, Kurzarbeit prüfen, frei werdende Stellen nicht nachbesetzen, Beschäftigte in andere Abteilungen versetzen. Erst wenn das nicht reicht, kommen Aufhebungsverträge oder Kündigungen infrage. Das ist nicht nur eine Frage des Anstands: Im Geltungsbereich des Kündigungsschutzgesetzes muss der Arbeitgeber zeigen, dass eine Kündigung das letzte Mittel war.",
+            "id": "f1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wie ein Arbeitsverhältnis enden kann",
+            "id": "f1-z2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-2",
+            "id": "f1-b2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Fall bei MAKEL",
+              "Beendigungsart",
+              "Was zu beachten ist"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Befristeter Vertrag der Saisonkraft endet am 31. Dezember",
+                  "Fristablauf",
+                  "keine Kündigung nötig, wenn die Befristung wirksam war"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mitarbeiter will gehen, MAKEL ist einverstanden, Ende in drei Wochen",
+                  "Aufhebungsvertrag",
+                  "schriftlich; Mitarbeiter riskiert eine Sperrzeit beim Arbeitslosengeld"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stelle im Versand fällt weg",
+                  "ordentliche Kündigung durch den Arbeitgeber",
+                  "Frist, Kündigungsschutz, Betriebsrat, Sozialauswahl"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mitarbeiter hat Geld aus der Kasse genommen",
+                  "außerordentliche Kündigung",
+                  "wichtiger Grund; binnen zwei Wochen nach Kenntnis"
+                ]
+              }
+            ],
+            "fazit": "Jede Beendigungsart hat eigene Voraussetzungen. Die Form ist bei Kündigung und Aufhebungsvertrag immer dieselbe: Schriftform.",
+            "id": "f1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "f1-b3"
+          }
         ],
-        "erklaerung": "Freisetzung wird stufenweise betrachtet: Überstunden, Kurzarbeit, Fluktuation, Aufhebungsvertrag und erst dann Kündigung. Kündigung und Aufhebungsvertrag brauchen nach § 623 BGB Schriftform; E-Mail, Messenger oder Fax reichen nicht. Die Formfrage wird vor jeder inhaltlichen Prüfung geklärt.",
-        "beispiele": [
-          "Ein Betrieb kann zunächst Überstunden abbauen oder Kurzarbeit prüfen, bevor er eine Kündigung ausspricht.",
-          "Eine Kündigung per E-Mail ist unwirksam, selbst wenn die Empfängerin sie gelesen und verstanden hat."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Zugang der Kündigung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Kündigung wirkt erst, wenn sie zugeht — also in den Machtbereich des Empfängers gelangt, so dass er sie unter normalen Umständen lesen kann. Wird sie persönlich übergeben, ist das sofort der Fall; am besten mit Zeugen oder Empfangsquittung. Wird sie eingeworfen, geht sie zu, wenn mit der Leerung des Briefkastens zu rechnen ist. Für die Frist zählt der Tag des Zugangs, nicht der Tag, an dem sie geschrieben wurde.",
+                "id": "f1-d1-p1"
+              }
+            ],
+            "id": "f1-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Aufhebungsvertrag aus Sicht beider Seiten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für den Arbeitgeber ist der Aufhebungsvertrag sicher: keine Frist, kein Kündigungsschutzprozess, keine Betriebsratsanhörung. Für den Arbeitnehmer kann er eine Abfindung bringen, kostet aber den Kündigungsschutz, und die Agentur für Arbeit verhängt oft eine Sperrzeit von zwölf Wochen, weil er an der Beendigung mitgewirkt hat. Deshalb sollte niemand einen Aufhebungsvertrag unter Zeitdruck unterschreiben.",
+                "id": "f1-d2-p1"
+              }
+            ],
+            "id": "f1-d2"
+          }
         ],
-        "fallbeispiel": "Ein Arbeitgeber schickt eine Kündigung als E-Mail und beruft sich darauf, dass sie zugegangen ist. Zuerst wird die Form geprüft: § 623 BGB verlangt Schriftform mit eigenhändiger Unterschrift auf Papier. Die E-Mail ist deshalb unwirksam. Erst bei einer wirksamen Form wären Frist, Schutz und Grund zu prüfen.",
-        "typische_fehler": "Die Kündigung wird sofort inhaltlich bewertet, ohne die Schriftform zu prüfen. Außerdem wird ein Aufhebungsvertrag als formfreies Gespräch behandelt.",
         "verstaendnisfragen": [
-          "Welche Stufen können vor der Kündigung liegen? Überstunden, Kurzarbeit, Fluktuation und Aufhebungsvertrag.",
-          "Welche Form verlangen Kündigung und Aufhebungsvertrag? Schriftform mit eigenhändiger Unterschrift auf Papier."
-        ],
-        "pruefungsbezug": "Beginne jede Trennungsaufgabe mit der Form. Erst danach Frist, Kündigungsschutz, Betriebsratsanhörung und Kündigungsgrund prüfen.",
-        "merksatz": "Die Kündigung ist das letzte Mittel und beginnt formal mit Papier und Unterschrift."
+          {
+            "frage": "Ein Abteilungsleiter schreibt einer Mitarbeiterin per WhatsApp: „Hiermit kündige ich Ihnen zum Monatsende.“ Ist das Arbeitsverhältnis gekündigt?",
+            "antwort": "Nein. Eine Kündigung braucht die Schriftform mit eigenhändiger Unterschrift auf Papier; die elektronische Form ist ausgeschlossen. Die Nachricht ist unwirksam, auch wenn sie gelesen wurde. Der Abteilungsleiter müsste zudem überhaupt befugt sein, zu kündigen.",
+            "id": "f1-f1"
+          },
+          {
+            "frage": "Warum prüft MAKEL vor einer betriebsbedingten Kündigung Kurzarbeit, Versetzung und Fluktuation?",
+            "antwort": "Weil die Kündigung nach dem Kündigungsschutzgesetz das letzte Mittel sein muss. Gibt es eine mildere Möglichkeit, etwa einen freien Arbeitsplatz in einer anderen Abteilung, ist die Kündigung in der Regel nicht sozial gerechtfertigt.",
+            "id": "f1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "f2",
-        "vorauswissen": [
-          "Frist, Kündigungsschutz und Betriebsgröße müssen getrennt geprüft werden.",
-          "Der Betriebsrat ist vor einer Kündigung anzuhören."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Kündigungsfristen für Arbeitgeber und Arbeitnehmer, prüfst, ob Kündigungsschutz besteht, und ordnest Kündigungsgründe zu.",
+        "vorwissen_kurz": "Eine Frist beginnt mit dem Zugang der Kündigung. Der Termin ist der Tag, an dem das Arbeitsverhältnis endet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie lange es noch dauert",
+            "id": "f2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach {{par:bgb-622|§ 622 BGB}} gilt für beide Seiten eine Grundfrist von vier Wochen zum Fünfzehnten oder zum Ende eines Kalendermonats. Kündigt der Arbeitgeber, verlängert sich die Frist mit der Dauer der Betriebszugehörigkeit: ab zwei Jahren ein Monat, dann in Stufen bis sieben Monate nach zwanzig Jahren, immer zum Monatsende. Die Beschäftigten selbst können weiter mit vier Wochen kündigen, sofern im Vertrag oder Tarifvertrag nichts anderes steht. In einer vereinbarten Probezeit gelten zwei Wochen zu jedem beliebigen Tag.",
+            "id": "f2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "f2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Fristen Schritt für Schritt",
+            "id": "f2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Fall",
+              "Betriebszugehörigkeit",
+              "Zugang",
+              "Frist",
+              "Ende"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Arbeitgeber kündigt",
+                  "1 Jahr",
+                  "10. März",
+                  "4 Wochen zum 15. oder Monatsende: 10. März + 4 Wochen = 7. April",
+                  "15. April"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitgeber kündigt",
+                  "6 Jahre",
+                  "10. März",
+                  "2 Monate zum Monatsende",
+                  "31. Mai"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitgeber kündigt",
+                  "11 Jahre",
+                  "20. Juni",
+                  "4 Monate zum Monatsende",
+                  "31. Oktober"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitnehmerin kündigt",
+                  "11 Jahre",
+                  "20. Juni",
+                  "4 Wochen (keine Verlängerung): 18. Juli",
+                  "31. Juli"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kündigung in der Probezeit",
+                  "3 Monate",
+                  "10. März",
+                  "2 Wochen",
+                  "24. März"
+                ]
+              }
+            ],
+            "fazit": "Erst die Frist ablaufen lassen, dann den nächsten zulässigen Termin suchen.",
+            "id": "f2-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Braucht die Kündigung einen Grund?",
+            "id": "f2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob der Arbeitgeber einen Grund braucht, entscheidet der {{begriff:kuendigungsschutz|Kündigungsschutz}}. Er gilt, wenn der Betrieb in der Regel mehr als zehn Arbeitnehmer beschäftigt ({{par:kschg-23|§ 23 KSchG}}; Teilzeitkräfte zählen anteilig) und das Arbeitsverhältnis länger als sechs Monate besteht ({{par:kschg-1|§ 1 KSchG}}). Dann muss die Kündigung sozial gerechtfertigt sein, also auf einem der drei Gründe beruhen. Der Arbeitnehmer kann sich nur wehren, wenn er innerhalb von drei Wochen nach Zugang Klage beim Arbeitsgericht erhebt.",
+            "id": "f2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "f2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "f2-b4"
+          }
         ],
-        "erklaerung": "Die Grundfrist nach § 622 BGB beträgt vier Wochen zum 15. oder zum Monatsende und gilt für beide Seiten. Für Arbeitgeber verlängert sie sich mit der Betriebszugehörigkeit in den Stufen 2, 5, 8, 10, 12, 15 und 20 Jahre auf ein bis sieben Monate zum Monatsende. In der Probezeit gilt eine Frist von zwei Wochen ohne festen Termin. Kündigungsschutz greift nach sechs Monaten und in Betrieben mit mehr als zehn Arbeitnehmern. Die Kündigungsgründe sind personen-, verhaltens- und betriebsbedingt; bei betriebsbedingter Kündigung kommt Sozialauswahl hinzu. Ohne Anhörung des Betriebsrats ist die Kündigung unwirksam.",
-        "beispiele": [
-          "Eine Arbeitgeberfrist von zwei Monaten endet zum Monatsende; eine Arbeitnehmerin bleibt grundsätzlich bei der vierwöchigen Grundfrist, sofern nichts anderes vereinbart ist.",
-          "Vor einer betriebsbedingten Kündigung werden zusätzlich Kündigungsgrund und Sozialauswahl geprüft; vor jeder Kündigung die Anhörung des Betriebsrats."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Die Abmahnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Vor einer verhaltensbedingten Kündigung muss der Arbeitgeber in der Regel abmahnen. Eine wirksame Abmahnung beschreibt das Fehlverhalten konkret mit Datum, fordert auf, es künftig zu unterlassen, und kündigt für den Wiederholungsfall arbeitsrechtliche Konsequenzen bis zur Kündigung an. Ohne Abmahnung ist eine Kündigung nur bei sehr schweren Pflichtverletzungen möglich, etwa einem Diebstahl.",
+                "id": "f2-d1-p1"
+              }
+            ],
+            "id": "f2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Besonderer Kündigungsschutz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Menschen dürfen nur unter erschwerten Bedingungen gekündigt werden: Schwangere und Mütter bis vier Monate nach der Entbindung, Beschäftigte in Elternzeit, schwerbehinderte Menschen (Zustimmung des Integrationsamts nötig) und Betriebsratsmitglieder. Auszubildende können nach der Probezeit nur aus wichtigem Grund gekündigt werden. In diesen Fällen genügt ein Kündigungsgrund allein nicht.",
+                "id": "f2-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k5-e3"
+                ],
+                "text": "Mutterschutz als Personalfall",
+                "id": "f2-d2-v1"
+              }
+            ],
+            "id": "f2-d2"
+          }
         ],
-        "fallbeispiel": "Ein Arbeitgeber kündigt einem Beschäftigten nach mehr als sechs Monaten in einem Betrieb mit mehr als zehn Arbeitnehmern zum 15. des nächsten Monats, ohne den Betriebsrat anzuhören. Die Prüfung ergibt mehrere Punkte: Kündigungsschutz ist eröffnet, die Arbeitgeberfrist muss nach Betriebszugehörigkeit geprüft werden, und die fehlende Anhörung macht die Kündigung unwirksam.",
-        "typische_fehler": "Verlängerte Fristen werden auch auf Arbeitnehmer angewendet, der Monatsendtermin wird vergessen oder die Schwellen des Kündigungsschutzes werden nicht zusammen geprüft. Die Betriebsratsanhörung wird als freiwillig behandelt.",
         "verstaendnisfragen": [
-          "Welche Grundfrist gilt für beide Seiten? Vier Wochen zum 15. oder zum Monatsende.",
-          "Was bewirkt eine fehlende Betriebsratsanhörung? Die Kündigung ist unwirksam."
-        ],
-        "pruefungsbezug": "Rechne in dieser Reihenfolge: Form, Betriebsgröße und Dauer, Frist, Kündigungsgrund, Sozialauswahl und Betriebsratsanhörung.",
-        "merksatz": "Arbeitgeberfristen verlängern sich, Arbeitnehmerfristen nicht automatisch; die Anhörung des Betriebsrats bleibt zwingend."
+          {
+            "frage": "Eine Mitarbeiterin seit vier Jahren kündigt selbst am 5. September. Wann endet ihr Arbeitsverhältnis, wenn vertraglich nichts geregelt ist?",
+            "antwort": "Für sie gilt die Grundfrist von vier Wochen. 5. September plus vier Wochen ergibt den 3. Oktober; nächster zulässiger Termin ist der 15. Oktober.",
+            "id": "f2-f1"
+          },
+          {
+            "frage": "Ein Betrieb hat acht Vollzeit- und vier Teilzeitkräfte mit 20 Wochenstunden. Gilt das Kündigungsschutzgesetz?",
+            "antwort": "Teilzeitkräfte bis 20 Stunden zählen mit 0,5. Es ergeben sich 8 + 4 × 0,5 = 10. Das ist nicht mehr als zehn; das Kündigungsschutzgesetz gilt nach dieser Rechnung nicht.",
+            "id": "f2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "f3",
-        "vorauswissen": [
-          "Ein Zeugnis wird bei Beendigung des Arbeitsverhältnisses ausgestellt.",
-          "Wahrheit und Wohlwollen müssen gleichzeitig eingehalten werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst ein Arbeitszeugnis auf Vollständigkeit, Notenstufe, Schlussformel und unzulässige Formulierungen und nennst die übrigen Arbeitspapiere bei Austritt.",
+        "vorwissen_kurz": "Ein Arbeitszeugnis begleitet Beschäftigte ihr Berufsleben lang. Es soll wahr sein und das Fortkommen nicht unnötig erschweren.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wahr und wohlwollend zugleich",
+            "id": "f3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach {{par:gewo-109|§ 109 GewO}} haben Beschäftigte bei Ende des Arbeitsverhältnisses Anspruch auf ein {{begriff:arbeitszeugnis|Arbeitszeugnis}}. Das einfache Zeugnis nennt nur Art und Dauer der Tätigkeit; das qualifizierte bewertet zusätzlich Leistung und Verhalten und wird auf Verlangen ausgestellt. Ein Zeugnis muss wahr sein — es darf keine Fähigkeiten erfinden. Es muss aber auch wohlwollend sein — es darf das berufliche Fortkommen nicht unnötig erschweren. Aus diesem Spannungsverhältnis hat sich eine Zeugnissprache entwickelt, in der positive Formulierungen abgestufte Noten bedeuten.",
+            "id": "f3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-2",
+            "id": "f3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Zeugnis prüfen",
+            "id": "f3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfpunkt",
+              "Gefundene Formulierung",
+              "Bewertung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Tätigkeitsbeschreibung",
+                  "nennt Rechnungsprüfung, lässt Vertretung der Teamleitung weg",
+                  "unvollständig: wichtige Aufgabe ergänzen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Leistung",
+                  "„erledigte die Aufgaben stets zu unserer vollen Zufriedenheit“",
+                  "gut"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verhalten",
+                  "„Ihr Verhalten gegenüber Vorgesetzten war einwandfrei.“",
+                  "Kollegen fehlen — das kann als versteckte Kritik gelesen werden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Schlussformel",
+                  "„Wir wünschen ihr für die Zukunft alles Gute.“",
+                  "Dank und Bedauern fehlen: deutliches Signal"
+                ]
+              },
+              {
+                "zellen": [
+                  "Austrittsdatum",
+                  "15. Juni statt 30. Juni",
+                  "falsch, korrigieren"
+                ]
+              }
+            ],
+            "fazit": "Mehrere Stellen schwächen das Zeugnis, obwohl die Leistungsnote gut ist. Die Mitarbeiterin kann eine Berichtigung verlangen.",
+            "id": "f3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "f3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "f3-b4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "f3-b5"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was beim Austritt noch dazugehört",
+            "id": "f3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Neben dem Zeugnis erhält die ausscheidende Person weitere Papiere: eine Urlaubsbescheinigung über den im laufenden Jahr gewährten Urlaub, die Lohnsteuerbescheinigung, auf Verlangen eine Arbeitsbescheinigung für die Agentur für Arbeit, außerdem eine Kopie der Abmeldung zur Sozialversicherung. MAKEL selbst meldet die Person bei der Krankenkasse ab, rechnet Resturlaub und Zeitkonto ab und sperrt Zugänge zu IT und Gebäuden zum letzten Arbeitstag.",
+            "id": "f3-p2"
+          }
         ],
-        "erklaerung": "Nach § 109 GewO besteht Anspruch auf ein einfaches oder qualifiziertes Zeugnis. Es muss wahr und wohlwollend sein. Die Tätigkeitsbeschreibung muss vollständig sein; Schlussformel, Austrittsdatum und unauffällige Schreibweise werden geprüft. Geheimzeichen, Hinweise auf Krankheiten, Gewerkschaftszugehörigkeit oder Betriebsratstätigkeit sind unzulässig. Die vorhandene Zeugnissprache übersetzt abgestufte Zufriedenheitsformulierungen.",
-        "beispiele": [
-          "Ein einfaches Zeugnis bestätigt Art und Dauer der Tätigkeit; ein qualifiziertes enthält zusätzlich Leistung und Verhalten.",
-          "Fehlt die Schlussformel mit Dank, Bedauern und Zukunftswünschen, ist das bei der Prüfung ein deutliches Signal, ersetzt aber keine vollständige Inhaltsprüfung."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Zwischenzeugnis",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Zwischenzeugnis wird während des laufenden Arbeitsverhältnisses ausgestellt, wenn es einen berechtigten Grund gibt: Wechsel der Führungskraft, Versetzung, Elternzeit oder eine interne Bewerbung. Es bindet den Arbeitgeber: Wurde die Leistung im Zwischenzeugnis mit „gut“ bewertet, kann das Endzeugnis kurz danach nicht ohne neue Gründe schlechter ausfallen.",
+                "id": "f3-d1-p1"
+              }
+            ],
+            "id": "f3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Zeugnis nennt die Stelle, lässt aber wichtige Aufgaben weg und enthält ein falsches Austrittsdatum. Bei der Prüfung werden Tätigkeitsbeschreibung und Datum korrigiert. Danach werden Wahrheit, Wohlwollen, Schlussformel und unzulässige Geheimzeichen kontrolliert. Krankheiten oder Betriebsratstätigkeit dürfen nicht als versteckte Bewertung aufgenommen werden.",
-        "typische_fehler": "Wohlwollend wird mit positiv, aber unwahr gleichgesetzt. Außerdem werden auffällige Zeichensetzung oder Auslassungen als harmlose Gestaltung übersehen.",
         "verstaendnisfragen": [
-          "Welche beiden Anforderungen stehen im Spannungsverhältnis? Das Zeugnis muss wahr und zugleich wohlwollend sein.",
-          "Welche drei Punkte gehören zur praktischen Zeugnisprüfung? Schlussformel, vollständige Tätigkeitsbeschreibung und richtiges Austrittsdatum."
-        ],
-        "pruefungsbezug": "Unterscheide einfaches und qualifiziertes Zeugnis und prüfe anschließend Inhalt, Formulierungen und unzulässige Geheimzeichen.",
-        "merksatz": "Ein Zeugnis ist wahr, wohlwollend, vollständig und frei von Geheimzeichen."
+          {
+            "frage": "Ein Zeugnis enthält den Satz: „Er war bei Kollegen wegen seiner Geselligkeit sehr beliebt.“ Was kann gemeint sein, und ist das zulässig?",
+            "antwort": "Solche Formulierungen gelten in der Zeugnissprache als versteckter Hinweis, etwa auf Alkoholkonsum oder mangelnden Arbeitseinsatz. Versteckte Botschaften sind unzulässig; der Arbeitnehmer kann eine Berichtigung verlangen.",
+            "id": "f3-f1"
+          },
+          {
+            "frage": "Warum ist die Schlussformel so wichtig, obwohl es keinen Rechtsanspruch auf sie gibt?",
+            "antwort": "Weil Leserinnen und Leser in der Praxis darauf achten. Fehlen Dank und Bedauern, wird das als Zeichen für ein schlechtes Verhältnis gedeutet. Das Bundesarbeitsgericht sieht keinen Anspruch auf eine Schlussformel; viele Arbeitgeber nehmen sie aber auf, um das Zeugnis nicht zu entwerten.",
+            "id": "f3-f2"
+          }
+        ]
       }
     ]
   },

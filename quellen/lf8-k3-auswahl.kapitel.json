@@ -6,66 +6,547 @@
   "untertitel": "Vom Bewerbungseingang bis zum unterschriebenen Vertrag.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "c1",
-        "vorauswissen": [
-          "Auswahlentscheidungen brauchen einen vorher festgelegten Maßstab.",
-          "Das Anforderungsprofil beschreibt die passende Person für die Stelle."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst ein Auswahlverfahren von der Vorauswahl bis zur Entscheidung an vorab festgelegten, gewichteten Kriterien durch und dokumentierst es nachvollziehbar.",
+        "vorwissen_kurz": "Das Anforderungsprofil trennt Muss- und Kann-Anforderungen. Es ist der Maßstab für jede Auswahlstufe.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Trichter mit festem Maßstab",
+            "id": "c1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auf die Stelle in der Buchhaltung von MAKEL sind 34 Bewerbungen eingegangen. Am Ende soll eine Person eingestellt werden. Damit das fair und begründbar geschieht, wird der Maßstab vor dem ersten Lesen festgelegt: das Anforderungsprofil. Auf jeder Stufe wird gefragt, wie gut jemand die Anforderungen erfüllt — nicht, wer am sympathischsten wirkt.",
+            "id": "c1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "c1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vorauswahl und Bewertung im Fall",
+            "id": "c1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Vorauswahl werden die Muss-Anforderungen geprüft: abgeschlossene kaufmännische Ausbildung, Buchführungskenntnisse, Tabellenkalkulation. 21 Bewerbungen erfüllen sie nicht und erhalten eine Absage. 13 kommen weiter; die besten fünf werden eingeladen. Nach den Gesprächen und einer kurzen Arbeitsprobe (zehn Rechnungen prüfen) bewertet ein kleines Gremium die beiden stärksten Kandidaten:",
+            "id": "c1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Gewicht",
+              "Kandidatin A",
+              "Kandidat B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Buchführung (Arbeitsprobe)",
+                  "40 %",
+                  "9 → 3,6",
+                  "6 → 2,4"
+                ]
+              },
+              {
+                "zellen": [
+                  "Softwarekenntnisse",
+                  "20 %",
+                  "6 → 1,2",
+                  "9 → 1,8"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sorgfalt und Arbeitsweise (Gespräch)",
+                  "25 %",
+                  "8 → 2,0",
+                  "7 → 1,75"
+                ]
+              },
+              {
+                "zellen": [
+                  "Englisch für Lieferantenkontakte",
+                  "15 %",
+                  "5 → 0,75",
+                  "8 → 1,2"
+                ]
+              },
+              {
+                "zellen": [
+                  "**Summe**",
+                  "100 %",
+                  "**7,55**",
+                  "**7,15**"
+                ]
+              }
+            ],
+            "fazit": "Kandidatin A liegt vorn, weil sie im wichtigsten Kriterium — der eigentlichen Buchhaltungsarbeit — deutlich besser ist.",
+            "id": "c1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Gewichte stammen aus der Stellenbeschreibung: Rechnungsprüfung ist die Hauptaufgabe, Englisch wird nur gelegentlich gebraucht. Die Bewertung wird schriftlich festgehalten. Fragt später jemand, warum A und nicht B eingestellt wurde, lässt sich das an den Kriterien belegen.",
+            "id": "c1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "c1-b2"
+          }
         ],
-        "erklaerung": "Der Auswahlablauf führt von Eingangsbestätigung und Vorauswahl über Gespräch und weitere Verfahren zur Entscheidung sowie Zu- oder Absage. Auf jeder Stufe gilt das Anforderungsprofil als Maßstab. Strukturierte Gespräche machen Bewerber vergleichbar und verringern das Risiko, dass persönliche Eindrücke die fachliche Auswahl ersetzen.",
-        "beispiele": [
-          "In der Vorauswahl werden Unterlagen am Anforderungsprofil geprüft, nicht an Sympathie oder einem zufälligen Detail.",
-          "Allen Bewerbern werden im strukturierten Gespräch vergleichbare Fragen gestellt; zusätzliche Verfahren werden nur nach dem gleichen Anforderungsbezug bewertet."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Typische Beurteilungsfehler",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der erste Eindruck färbt alles Weitere (Halo-Effekt): Wer sympathisch auftritt, wird auch fachlich besser eingeschätzt. Ähnlichkeit wirkt anziehend: Menschen mit ähnlichem Werdegang oder Hobby wirken „passender“. Und am Ende des Tages erinnert man sich an die letzten Gespräche besser als an die ersten. Feste Fragen, mehrere Beurteilende und eine Bewertung direkt nach jedem Gespräch verringern diese Fehler.",
+                "id": "c1-d1-p1"
+              }
+            ],
+            "id": "c1-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Lücken im Lebenslauf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Lücke von einem Jahr ist kein Ausschlussgrund. Sie kann viele Ursachen haben: Pflege eines Angehörigen, Krankheit, Elternzeit, Reisen, eine gescheiterte Selbstständigkeit. Im Gespräch darf nach der beruflichen Entwicklung gefragt werden; Fragen, die auf geschützte Lebensbereiche zielen, sind tabu. Entscheidend ist, ob die Person die Anforderungen der Stelle erfüllt.",
+                "id": "c1-d2-p1"
+              }
+            ],
+            "id": "c1-d2"
+          }
         ],
-        "fallbeispiel": "Für eine Stelle gehen mehrere Bewerbungen ein. Zuerst wird der Eingang bestätigt, dann werden die Unterlagen anhand des Anforderungsprofils vorausgewählt. Im strukturierten Gespräch werden vergleichbare Fragen gestellt; danach folgt die Entscheidung und eine Zu- oder Absage. Jeder Schritt wird mit demselben Profil begründet.",
-        "typische_fehler": "Die Auswahl beginnt mit dem Gespräch, ohne Kriterien festzulegen. Außerdem werden Bewerber nach persönlicher Sympathie verglichen oder ein zusätzliches Verfahren ohne Bezug zur Stelle eingesetzt.",
         "verstaendnisfragen": [
-          "Was ist der Maßstab auf jeder Auswahlstufe? Das Anforderungsprofil.",
-          "Warum sind strukturierte Gespräche hilfreich? Sie machen Bewerber vergleichbar und schützen besser vor Diskriminierungsvorwürfen."
-        ],
-        "pruefungsbezug": "Nenne die Schritte in Reihenfolge und verknüpfe jede Entscheidung mit dem Anforderungsprofil. So wird aus einer Ablaufbeschreibung eine begründete Auswahl.",
-        "merksatz": "Ein gutes Auswahlverfahren ist nachvollziehbar, vergleichbar und am Anforderungsprofil ausgerichtet."
+          {
+            "frage": "Warum wird die Gewichtung vor den Gesprächen festgelegt?",
+            "antwort": "Sonst kann man die Gewichte nachträglich so verschieben, dass der Wunschkandidat vorne liegt. Die Auswahl wäre dann nicht mehr an der Stelle orientiert, sondern an der Sympathie. Eine vorab festgelegte Gewichtung macht die Entscheidung begründbar.",
+            "id": "c1-f1"
+          },
+          {
+            "frage": "Kandidat B wäre bei einer Gewichtung von 40 % für Software und 20 % für Buchführung vorne. Ist es zulässig, die Gewichte so zu ändern?",
+            "antwort": "Nur, wenn sich die Stelle geändert hat und Software tatsächlich die Hauptaufgabe ist. Ein Wechsel allein, um ein gewünschtes Ergebnis zu erreichen, macht die Auswahl willkürlich und angreifbar.",
+            "id": "c1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "c2",
-        "vorauswissen": [
-          "Fragen im Bewerbungsgespräch müssen einen Bezug zur konkreten Stelle haben.",
-          "Persönliche Merkmale sind nicht automatisch beruflich relevant."
+        "darstellung": "vollfassung",
+        "ziel": "Du entscheidest für Fragen im Vorstellungsgespräch, ob sie zulässig sind, indem du den Bezug zur konkreten Stelle und die geschützten Merkmale prüfst.",
+        "vorwissen_kurz": "Arbeitgeber haben ein berechtigtes Interesse, die Eignung zu prüfen. Bewerbende haben ein Recht auf Schutz ihrer Privatsphäre. Die Grenze zieht die Rechtsprechung am Stellenbezug.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Der Stellenbezug als Prüfstein",
+            "id": "c2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Vorstellungsgespräch darf der Arbeitgeber fragen, was er für die Entscheidung über die konkrete Stelle braucht: Ausbildung, Werdegang, Kenntnisse, Fähigkeiten, Verfügbarkeit. Er darf nicht fragen, was ihn zwar interessieren mag, aber mit der Eignung nichts zu tun hat oder an ein geschütztes Merkmal anknüpft. Wird trotzdem unzulässig gefragt, darf die Bewerberin oder der Bewerber ausweichen oder sogar falsch antworten — das sogenannte Recht zur Lüge. Der Arbeitgeber kann den Vertrag später nicht deshalb anfechten.",
+            "id": "c2-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Umgekehrt muss die Antwort auf eine zulässige Frage wahr sein. Wer auf die zulässige Frage nach einer Buchhaltungsausbildung eine erfundene Ausbildung angibt, täuscht arglistig; der Arbeitgeber kann den Vertrag dann anfechten.",
+            "id": "c2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "c2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Fragen prüfen: der Dreischritt",
+            "id": "c2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Stellenbezug?",
+              "Geschütztes Merkmal?",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„Welche Buchhaltungssoftware haben Sie genutzt?“",
+                  "ja, Kernaufgabe",
+                  "nein",
+                  "zulässig"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Sind Sie verheiratet?“",
+                  "nein",
+                  "Familienstand, mittelbar Geschlecht",
+                  "unzulässig"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Haben Sie Vorstrafen wegen Vermögensdelikten?“ — Stelle mit Kassenverantwortung",
+                  "ja, Vertrauensstellung mit Geld",
+                  "nein",
+                  "zulässig, eng auf solche Delikte begrenzt"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Haben Sie Vorstrafen?“ — Stelle im Lager ohne Geldverantwortung",
+                  "nein",
+                  "nein",
+                  "unzulässig"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Sind Sie schwerbehindert?“ — vor der Einstellung",
+                  "in der Regel nein",
+                  "Behinderung",
+                  "grundsätzlich unzulässig"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Können Sie die Stelle ab 1. März antreten?“",
+                  "ja",
+                  "nein",
+                  "zulässig"
+                ]
+              }
+            ],
+            "fazit": "Erst fragen: Braucht MAKEL die Antwort für diese Stelle? Dann prüfen, ob ein geschütztes Merkmal berührt ist.",
+            "id": "c2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Frage nach einer Behinderung kommt es auf den Zeitpunkt an: Vor der Einstellung ist sie wegen des Benachteiligungsverbots grundsätzlich unzulässig. Erlaubt ist die Frage, ob die Person die konkreten Tätigkeiten ausüben kann. Nach sechs Monaten im Arbeitsverhältnis darf der Arbeitgeber nach einer Schwerbehinderung fragen, etwa um gesetzliche Pflichten zu erfüllen.",
+            "id": "c2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "c2-b2"
+          }
         ],
-        "erklaerung": "Zulässig sind Fragen, die für die konkrete Tätigkeit relevant sind. Fragen nach Schwangerschaft, Familienplanung, Religion, Gewerkschaft oder Vorstrafen ohne Stellenbezug sind unzulässig. Auf eine unzulässige Frage darf wahrheitswidrig geantwortet werden. Entscheidend ist nicht, ob der Arbeitgeber neugierig ist, sondern ob die Information für die Stelle erforderlich ist.",
-        "beispiele": [
-          "Eine Frage nach einer für die Tätigkeit notwendigen Fähigkeit hat Stellenbezug und kann zulässig sein.",
-          "Die Frage nach Familienplanung gehört nicht zur Eignung für die Stelle; eine Frage nach Vorstrafen ist nur bei konkretem Stellenbezug einzuordnen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Tendenzbetriebe und kirchliche Arbeitgeber",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei Arbeitgebern mit besonderer weltanschaulicher Ausrichtung — Kirchen, kirchliche Einrichtungen, politische Parteien — kann die Frage nach Religion oder Weltanschauung ausnahmsweise zulässig sein, aber nur, wenn sie für die konkrete Tätigkeit nach der Art der Arbeit eine wesentliche Anforderung ist. Wie weit diese Ausnahme etwa für eine Buchhalterin in einem kirchlichen Krankenhaus reicht, haben deutsche und europäische Gerichte unterschiedlich beurteilt; im Zweifel ist eine rechtliche Prüfung nötig.",
+                "id": "c2-d1-p1"
+              }
+            ],
+            "id": "c2-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Fragebogen und Online-Profile",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Was im Gespräch nicht gefragt werden darf, darf auch nicht in einem Bewerbungsfragebogen stehen. Und wer sich Social-Media-Profile von Bewerbenden ansieht, verarbeitet personenbezogene Daten. Berufliche Netzwerke, die zur Selbstdarstellung im Beruf dienen, sind eher vertretbar; private Profile auszuwerten, ist in der Regel nicht erforderlich und datenschutzrechtlich heikel.",
+                "id": "c2-d2-p1"
+              }
+            ],
+            "id": "c2-d2"
+          }
         ],
-        "fallbeispiel": "Im Gespräch wird eine Bewerberin nach Schwangerschaft und Familienplanung gefragt. Die Fragen haben keinen Bezug zu den konkreten Aufgaben und sind daher unzulässig. Die Bewerberin darf wahrheitswidrig antworten. Die Auswahl wird anschließend anhand des Anforderungsprofils und zulässiger Fragen fortgesetzt.",
-        "typische_fehler": "Jede Frage im Gespräch wird als erlaubt angesehen oder jede Frage nach einer Vorstrafe pauschal verboten, ohne den Stellenbezug zu prüfen. Auch wird die zulässige Antwort auf eine unzulässige Frage fälschlich als Täuschung behandelt.",
         "verstaendnisfragen": [
-          "Was ist der Prüfstein für eine Frage? Hat sie einen konkreten Bezug zur Stelle?",
-          "Wie darf auf eine unzulässige Frage geantwortet werden? Wahrheitswidrig, ohne dass daraus automatisch ein unzulässiger Auswahlgrund wird."
-        ],
-        "pruefungsbezug": "Ordne Gesprächsfragen nicht nach persönlicher Höflichkeit, sondern nach konkretem Stellenbezug und geschütztem Merkmal.",
-        "merksatz": "Im Bewerbungsgespräch zählt die Stelle, nicht die private Neugier des Arbeitgebers."
+          {
+            "frage": "Eine Bewerberin wird gefragt, ob sie Kinder hat, und antwortet wahrheitswidrig mit Nein. Kann MAKEL später den Vertrag anfechten?",
+            "antwort": "Nein. Die Frage war unzulässig, weil sie keinen Bezug zur Eignung hat und mittelbar an das Geschlecht anknüpft. Auf eine unzulässige Frage darf falsch geantwortet werden; eine Anfechtung wegen Täuschung scheidet aus.",
+            "id": "c2-f1"
+          },
+          {
+            "frage": "Ein Bewerber verschweigt auf die zulässige Frage nach einem bestehenden Wettbewerbsverbot, dass er zwei Jahre lang nicht für Konkurrenten arbeiten darf. Welche Folge kann das haben?",
+            "antwort": "Die Frage war zulässig, weil das Wettbewerbsverbot die Beschäftigung tatsächlich verhindern kann. Eine bewusst falsche Antwort ist eine arglistige Täuschung. MAKEL kann den Vertrag anfechten.",
+            "id": "c2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "c3",
-        "vorauswissen": [
-          "Ein Arbeitsvertrag beschreibt weisungsgebundene Arbeit in persönlicher Abhängigkeit.",
-          "Bei Einstellungen kann der Betriebsrat beteiligt sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, was einen Arbeitsvertrag ausmacht, welche Bedingungen nachzuweisen sind und wann der Betriebsrat der Einstellung zustimmen muss.",
+        "vorwissen_kurz": "Ein Arbeitsvertrag ist ein besonderer Dienstvertrag. Geschuldet wird weisungsgebundene Arbeit, kein bestimmter Erfolg.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was ein Arbeitsvertrag ist",
+            "id": "c3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach {{par:bgb-611a|§ 611a BGB}} verpflichtet der {{begriff:arbeitsvertrag|Arbeitsvertrag}} zur Arbeit im Dienst eines anderen, weisungsgebunden und in persönlicher Abhängigkeit. Der Arbeitgeber bestimmt also Inhalt, Ort und Zeit der Arbeit. Genau das unterscheidet ihn von einem Auftrag an Selbstständige, die selbst entscheiden, wie, wann und wo sie arbeiten. Wird jemand „frei“ beauftragt, arbeitet aber wie ein Angestellter — feste Arbeitszeiten, feste Weisungen, eingegliedert ins Team —, liegt in Wirklichkeit ein Arbeitsverhältnis vor (Scheinselbstständigkeit), mit allen Folgen für Sozialversicherung und Kündigungsschutz.",
+            "id": "c3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Vertrag selbst kann formfrei geschlossen werden. Die wesentlichen Bedingungen muss der Arbeitgeber aber nachweisen — seit 2025 in vielen Branchen auch in Textform, etwa als PDF per E-Mail, wenn die Beschäftigten den Empfang bestätigen. Eine Befristung braucht dagegen weiterhin die Schriftform mit Unterschrift, sonst gilt der Vertrag als unbefristet.",
+            "id": "c3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Zustimmung des Betriebsrats",
+            "id": "c3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In Unternehmen mit in der Regel mehr als 20 wahlberechtigten Beschäftigten muss der Arbeitgeber den Betriebsrat vor jeder Einstellung unterrichten und seine **Zustimmung** einholen ({{par:betrvg-99|§ 99 BetrVG}}). Er legt dafür die Bewerbungsunterlagen vor und erklärt, wer eingestellt werden soll, für welche Stelle und mit welcher Eingruppierung. Der Betriebsrat kann die Zustimmung nur aus bestimmten gesetzlichen Gründen verweigern, etwa wenn ein Gesetz verletzt würde oder interne Bewerbende ohne Grund übergangen werden, obwohl intern ausgeschrieben werden musste. Er muss sich innerhalb einer Woche schriftlich äußern, sonst gilt die Zustimmung als erteilt. Verweigert er sie, kann der Arbeitgeber sie vom Arbeitsgericht ersetzen lassen.",
+            "id": "c3-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einer Kündigung reicht dagegen die **Anhörung** des Betriebsrats ({{par:betrvg-102|§ 102 BetrVG}}). Er kann widersprechen, die Kündigung aber nicht verhindern. Fehlt die Anhörung, ist die Kündigung unwirksam.",
+            "id": "c3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "c3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "c3-b3"
+          }
         ],
-        "erklaerung": "Nach § 611a BGB ist die persönliche Abhängigkeit mit Weisungsgebundenheit ein Merkmal des Arbeitsverhältnisses. Bei einer Einstellung braucht der Arbeitgeber nach § 99 BetrVG die Zustimmung des Betriebsrats, soweit die betriebliche Mitbestimmung anwendbar ist. Vertrag und Beteiligung des Betriebsrats sind daher zwei getrennte Prüfschritte.",
-        "beispiele": [
-          "Wer nach Inhalt, Zeit und Ort der Arbeit Weisungen erhält, wird auf die Merkmale persönlicher Abhängigkeit geprüft.",
-          "Vor der Einstellung wird neben dem Vertrag auch die Zustimmung des Betriebsrats eingeholt; die Anhörung bei einer Kündigung ist davon zu unterscheiden."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Probezeit im Arbeits- und im Ausbildungsverhältnis",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im Arbeitsverhältnis kann eine Probezeit von bis zu sechs Monaten vereinbart werden; in dieser Zeit beträgt die Kündigungsfrist zwei Wochen. Nach sechs Monaten greift in Betrieben mit mehr als zehn Beschäftigten zusätzlich das Kündigungsschutzgesetz. In der Berufsausbildung beträgt die Probezeit mindestens einen und höchstens vier Monate, und in ihr kann ohne Frist gekündigt werden.",
+                "id": "c3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf1:k2"
+                ],
+                "text": "Probezeit im Ausbildungsvertrag",
+                "id": "c3-d1-v1"
+              }
+            ],
+            "id": "c3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb hat eine Bewerberin ausgewählt und möchte sofort den Vertrag unterschreiben. Vorher wird geprüft, ob die Tätigkeit als weisungsgebundene Arbeit einzuordnen ist und ob die Zustimmung des Betriebsrats nach § 99 BetrVG erforderlich ist. Erst danach wird der Einstellungsprozess vollständig abgeschlossen.",
-        "typische_fehler": "Die Zustimmung bei Einstellung wird mit der Anhörung bei Kündigung verwechselt. Außerdem wird jede freie Mitarbeit automatisch als Arbeitsverhältnis oder jede Tätigkeit ohne Kontrolle als frei eingeordnet.",
         "verstaendnisfragen": [
-          "Welche zwei Merkmale nennt § 611a BGB im vorhandenen Inhalt? Weisungsgebundene Arbeit und persönliche Abhängigkeit.",
-          "Was braucht die Einstellung nach § 99 BetrVG? Die Zustimmung des Betriebsrats."
+          {
+            "frage": "Eine Grafikerin arbeitet als „freie Mitarbeiterin“ fünf Tage die Woche von 9 bis 17 Uhr im Büro von MAKEL nach Anweisung der Teamleitung. Ist das ein freies Mitarbeiterverhältnis?",
+            "antwort": "Wahrscheinlich nicht. Feste Arbeitszeiten, fester Arbeitsort, Weisungen und Eingliederung in das Team sind Merkmale eines Arbeitsverhältnisses. Es droht Scheinselbstständigkeit mit nachzuzahlenden Sozialversicherungsbeiträgen.",
+            "id": "c3-f1"
+          },
+          {
+            "frage": "Der Betriebsrat äußert sich zu einer geplanten Einstellung nicht. Darf MAKEL einstellen?",
+            "antwort": "Ja, wenn er ordnungsgemäß unterrichtet wurde und sich innerhalb einer Woche nicht schriftlich geäußert hat. Dann gilt seine Zustimmung als erteilt.",
+            "id": "c3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "c4",
+        "darstellung": "vollfassung",
+        "ziel": "Du führst eine Einstellung bis zur angelegten Personalakte durch, nennst die benötigten Unterlagen und ihren Zweck und wählst eine zum Bedarf passende Vertragsart.",
+        "vorwissen_kurz": "Personenbezogene Daten von Beschäftigten dürfen nur verarbeitet werden, soweit das für das Arbeitsverhältnis erforderlich ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nach der Zusage beginnt die Verwaltung",
+            "id": "c4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kandidatin A hat zugesagt, der Betriebsrat hat zugestimmt. Jetzt muss die Personalabteilung dafür sorgen, dass Frau A am 1. März arbeiten, bezahlt und gemeldet werden kann. Dafür braucht sie bestimmte Angaben — und nicht mehr.",
+            "id": "c4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Checkliste für den ersten Arbeitstag",
+            "id": "c4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Verantwortlich",
+              "Erledigt bis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Vertragsart festlegen: unbefristet, Vollzeit, Probezeit 6 Monate",
+                  "Personalabteilung mit Leitung Rechnungswesen",
+                  "vor Vertragsangebot"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrag in zwei Exemplaren unterschreiben lassen, Nachweis der Arbeitsbedingungen übergeben",
+                  "Personalabteilung",
+                  "vor Arbeitsbeginn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Unterlagen einholen: Steuer-ID, Sozialversicherungsnummer, Krankenkasse, IBAN",
+                  "Personalabteilung",
+                  "vor der ersten Abrechnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anmeldung zur Sozialversicherung über die Krankenkasse",
+                  "Lohnabrechnung",
+                  "mit der ersten Entgeltabrechnung, spätestens sechs Wochen nach Beginn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zugänge einrichten: Benutzerkonto, Rechte nur für Buchhaltungssoftware und Teamlaufwerk",
+                  "IT nach Freigabe der Leitung",
+                  "erster Arbeitstag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Personalakte anlegen, Zugriff auf Personalabteilung beschränken",
+                  "Personalabteilung",
+                  "erste Woche"
+                ]
+              }
+            ],
+            "fazit": "Jede Angabe hat einen Zweck. Was keinen Zweck hat — etwa Religion außer für die Kirchensteuer oder private Fotos — wird nicht erhoben.",
+            "id": "c4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In die Personalakte gehören zum Beispiel der Arbeitsvertrag, die Bewerbungsunterlagen der eingestellten Person, Nachweise über Qualifikationen, Abmahnungen, Beurteilungen und Bescheinigungen. Gesundheitsdaten wie ärztliche Atteste über Diagnosen gehören dagegen nicht in die allgemeine Akte; wenn überhaupt, werden sie getrennt und besonders geschützt aufbewahrt. Die Beschäftigten haben das Recht, ihre eigene Akte einzusehen. Bewerbungsunterlagen abgelehnter Bewerbender werden nach Abschluss des Verfahrens gelöscht oder zurückgegeben — üblich ist eine Frist von einigen Monaten, damit mögliche Ansprüche nach dem AGG noch abgewehrt werden können.",
+            "id": "c4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "c4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Vertragsart passt?",
+            "id": "c4-z3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vertragsart",
+              "Zweck",
+              "Wichtige Voraussetzung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Unbefristeter Vertrag",
+                  "dauerhafte Aufgabe",
+                  "Regelfall, voller Kündigungsschutz nach Wartezeit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Befristet mit Sachgrund",
+                  "vorübergehender Bedarf, z. B. Vertretung",
+                  "Sachgrund muss bestehen; Schriftform vor Beginn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Befristet ohne Sachgrund",
+                  "Erprobung, unsichere Auftragslage",
+                  "höchstens zwei Jahre, nur bei Neueinstellung; Schriftform"
+                ]
+              },
+              {
+                "zellen": [
+                  "Teilzeit",
+                  "geringerer Stundenbedarf oder Wunsch der Person",
+                  "gleiche Rechte anteilig, kein schlechterer Stundenlohn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Minijob",
+                  "kleiner, oft flexibler Bedarf",
+                  "Verdienst bis 603 € im Monat (2026); Pauschalabgaben durch den Arbeitgeber"
+                ]
+              }
+            ],
+            "fazit": "Die Vertragsart folgt aus Dauer und Umfang des Bedarfs — nicht aus dem Wunsch, Kündigungsschutz zu umgehen.",
+            "id": "c4-t2"
+          }
         ],
-        "pruefungsbezug": "Trenne in Fällen Arbeitsvertragsmerkmale, Auswahlentscheidung und Mitbestimmung. Merke: Zustimmung bei Einstellung, Anhörung bei Kündigung.",
-        "merksatz": "Auswahl, Vertrag und Mitbestimmung sind drei Schritte — keiner ersetzt den anderen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Ausländische Beschäftigte",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer nicht die Staatsangehörigkeit eines EU- oder EWR-Staates oder der Schweiz besitzt, braucht für die Beschäftigung einen Aufenthaltstitel, der die Erwerbstätigkeit erlaubt. Der Arbeitgeber muss das vor Beschäftigungsbeginn prüfen und eine Kopie aufbewahren. Die genauen Voraussetzungen hängen vom Einzelfall ab; zuständig sind die Ausländerbehörde und gegebenenfalls die Agentur für Arbeit.",
+                "id": "c4-d1-p1"
+              }
+            ],
+            "id": "c4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Die Teamleitung möchte eine Kopie des Personalausweises und ein Foto der neuen Kollegin für die Personalakte. Ist das erforderlich?",
+            "antwort": "Eine Ausweiskopie ist für das Arbeitsverhältnis in der Regel nicht erforderlich; es genügt, die Identität einmal festzustellen und zu vermerken. Ein Foto ist nur mit Einwilligung zulässig, etwa für einen Werksausweis. Beides sollte nicht automatisch in die Akte.",
+            "id": "c4-f1"
+          },
+          {
+            "frage": "Für ein Projekt von acht Monaten wird eine zusätzliche Kraft gebraucht. Welche Vertragsart passt, und was ist zu beachten?",
+            "antwort": "Eine Befristung mit dem Sachgrund vorübergehender Mehrbedarf oder, bei einer Neueinstellung, ohne Sachgrund. In beiden Fällen muss die Befristung vor Arbeitsbeginn schriftlich mit Unterschrift vereinbart werden, sonst gilt der Vertrag als unbefristet.",
+            "id": "c4-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "Lexware: Digitaler Arbeitsvertrag und Formerleichterungen 2025",
+            "url": "https://www.lexware.de/wissen/mitarbeiter-gehalt/digitaler-arbeitsvertrag-und-weitere-formerleichterungen-diese-neuerungen-gelten-2025/",
+            "bezug": "Nachweisgesetz seit 1.1.2025 Textform mit Empfangsnachweis, Ausnahmen nach § 2a SchwarzArbG; Befristung weiter Schriftform; gelesen am 28.10.2026"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +565,10 @@
       "id": "lz3",
       "text": "Den Arbeitsvertrag und die Beteiligung des Betriebsrats einordnen",
       "abschnitt": "c3"
+    },
+    {
+      "abschnitt": "c4",
+      "text": "Den Einstellungsprozess bis zur Personalakte durchführen und Vertragsarten nach Zweck und Voraussetzungen vergleichen"
     }
   ],
   "bloecke": [
@@ -326,6 +811,60 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "c4",
+      "titel": "Vom Vertrag bis zur Personalakte",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Mit der Unterschrift ist die Einstellung noch nicht abgeschlossen. Der Betrieb braucht Unterlagen für Entgeltabrechnung und Meldungen, muss die wesentlichen Arbeitsbedingungen nachweisen und legt eine **Personalakte** an. ==Hineingehört nur, was für das Arbeitsverhältnis erforderlich ist, und lesen dürfen sie nur Berechtigte.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Schritt",
+            "Was gebraucht wird",
+            "Wozu"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Vertragsart festlegen",
+                "unbefristet, befristet, Teilzeit, Minijob — passend zum Bedarf",
+                "Rechte und Pflichten, Kündigungsschutz, Abgaben"
+              ]
+            },
+            {
+              "zellen": [
+                "Unterlagen einholen",
+                "Steuer-Identifikationsnummer, Sozialversicherungsnummer, Krankenkasse, Bankverbindung; bei Bedarf Nachweis der Arbeitserlaubnis",
+                "Lohnsteuer, Meldung zur Sozialversicherung, Auszahlung"
+              ]
+            },
+            {
+              "zellen": [
+                "Arbeitsbedingungen nachweisen",
+                "Tätigkeit, Beginn, Entgelt, Arbeitszeit, Urlaub, Kündigungsfristen",
+                "Nachweisgesetz; seit 2025 in vielen Fällen in Textform"
+              ]
+            },
+            {
+              "zellen": [
+                "Personalakte anlegen",
+                "Vertrag, Bewerbungsunterlagen der eingestellten Person, Bescheinigungen",
+                "nachvollziehbare Verwaltung des Arbeitsverhältnisses"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "In die Personalakte gehört nur, was für das Arbeitsverhältnis **erforderlich** ist. Zugriff haben nur Personen, die ihn für ihre Aufgabe brauchen, und die Beschäftigten dürfen ihre eigene Akte einsehen.",
+          "karteikarte": "Welche Unterlagen braucht der Betrieb nach der Einstellung, und wer darf die Personalakte einsehen?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -336,7 +875,8 @@
     "Unzulässig: Schwangerschaft, Familienplanung, Religion, Gewerkschaft, Vorstrafen ohne Bezug.",
     "Auf unzulässige Fragen darf wahrheitswidrig geantwortet werden.",
     "{{par:bgb-611a|§ 611a BGB}}: weisungsgebundene Arbeit in persönlicher Abhängigkeit.",
-    "{{par:betrvg-99|§ 99 BetrVG}}: Einstellung braucht die Zustimmung des Betriebsrats."
+    "{{par:betrvg-99|§ 99 BetrVG}}: Einstellung braucht die Zustimmung des Betriebsrats.",
+    "Nach der Einstellung: Vertragsart, Unterlagen für Steuer und Sozialversicherung, Nachweis der Arbeitsbedingungen, Personalakte mit begrenztem Zugriff."
   ],
   "selbsttest": [
     {
