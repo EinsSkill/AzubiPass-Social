@@ -131,7 +131,7 @@
           "variante": "vergleich",
           "kopf": "Zwei Rechnungsarten",
           "titel": "Vollständige Rechnung oder Kleinbetragsrechnung",
-          "lead": "Ab einer bestimmten Grenze genügen weniger Angaben. Jede Zeile anklicken.",
+          "lead": "Bis 250 € brutto genügen weniger Angaben (§ 33 UStDV). Jede Zeile anklicken.",
           "seiten": [
             {
               "name": "Vollständige Rechnung",
@@ -147,7 +147,7 @@
                 },
                 {
                   "text": "Ausstellungsdatum und fortlaufende Rechnungsnummer",
-                  "detail": "Die Nummer muss einmalig und lückenlos vergeben sein — daran hängt die Nachprüfbarkeit der Buchführung aus Lernfeld 6."
+                  "detail": "Die Nummer muss einmalig und lückenlos vergeben sein — daran hängt die Nachprüfbarkeit der Buchführung, die du in Lernfeld 6 genauer kennenlernst."
                 },
                 {
                   "text": "Menge und handelsübliche Bezeichnung der Leistung",
@@ -168,7 +168,7 @@
               "ton": "gruen",
               "punkte": [
                 {
-                  "text": "Vereinfachung für kleine Beträge",
+                  "text": "Gesamtbetrag bis 250 € brutto",
                   "detail": "Gedacht für Bewirtungsbelege, Tankquittungen, Bahntickets — dort wäre der volle Angabenkatalog unpraktikabel."
                 },
                 {
@@ -190,12 +190,11 @@
               ]
             }
           ],
-          "regel": "Für die Prüfung genügt die Logik: Je kleiner der Betrag, desto weniger Angaben — aber Aussteller, Datum, Leistung und Steuersatz sind immer dabei.",
-          "pruefen": "Betragsgrenze für Kleinbetragsrechnungen eintragen und gegen die geltende Fassung prüfen."
+          "regel": "Grenze: 250 € einschließlich Umsatzsteuer (§ 33 UStDV). Darüber braucht es alle Angaben nach § 14 UStG — Aussteller, Datum, Leistung und Steuersatz sind aber in jedem Fall dabei."
         },
         {
           "typ": "absatz",
-          "text": "Wann gezahlt wird, steht in den {{begriff:zahlungsbedingungen|Zahlungsbedingungen}} aus Kapitel 4. Der Klassiker lautet „30 Tage netto, bei Zahlung innerhalb von 10 Tagen 2 % Skonto“ — die Buchung dazu kennst du aus Lernfeld 6, Kapitel 5."
+          "text": "Wann gezahlt wird, steht in den {{begriff:zahlungsbedingungen|Zahlungsbedingungen}} aus Kapitel 4. Der Klassiker lautet „30 Tage netto, bei Zahlung innerhalb von 10 Tagen 2 % Skonto“ — wie man ihn bucht, lernst du in Lernfeld 6, Kapitel 5."
         },
         {
           "typ": "check",

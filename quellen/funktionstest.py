@@ -145,8 +145,8 @@ def probeklausur_daten():
 
     pruefe("Neun Buchführungskapitel mit Aufgaben", len(buch) == 9, len(buch))
     kennungen = [b["id"] for b in buch_b]
-    pruefe("45 eindeutige Baustein-Kennungen",
-           len(kennungen) == 45 and len(set(kennungen)) == 45,
+    pruefe("46 eindeutige Baustein-Kennungen",
+           len(kennungen) == 46 and len(set(kennungen)) == 46,
            f"{len(kennungen)} Bausteine, {len(set(kennungen))} verschieden")
     pruefe("Jeder Baustein hat Punkte und Dauer",
            all(b.get("punkte") and b.get("dauer_min") for b in bausteine))

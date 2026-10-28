@@ -76,14 +76,14 @@
           "variante": "brief",
           "kopf": "Der Geschäftsbrief",
           "titel": "Aufbau nach DIN 5008",
-          "lead": "Klick auf einen Bereich — jeder hat eine feste Position und eine Aufgabe.",
+          "lead": "Schematische Darstellung eines Briefs nach Form B auf A4. Klick auf einen Bereich — jeder hat eine feste Position und eine Aufgabe.",
           "zonen": [
             {
               "id": "kopf",
               "name": "Briefkopf",
-              "x": 24,
+              "x": 25,
               "y": 6,
-              "b": 162,
+              "b": 165,
               "h": 32,
               "art": "pflicht",
               "notiz": "Absenderangaben und Logo. Er reicht bis zum Beginn des Anschriftfelds und wird meist als Vorlage einmal angelegt."
@@ -91,19 +91,19 @@
             {
               "id": "anschrift",
               "name": "Anschriftfeld",
-              "x": 24,
-              "y": 40,
+              "x": 20,
+              "y": 45,
               "b": 85,
               "h": 45,
               "art": "pflicht",
-              "notiz": "Muss im Fenster des Briefumschlags sichtbar sein. Oben die Zusatz- und Vermerkzone für Angaben wie „Einschreiben“ oder die Rücksendeangabe, darunter die Anschrift selbst — **ohne Leerzeile** zwischen Straße und Ort."
+              "notiz": "Das Feld beginnt 20 mm vom linken Blattrand, die Anschrift selbst steht wie der übrige Text bei 25 mm. Es muss im Fenster des Briefumschlags sichtbar sein. Oben die Zusatz- und Vermerkzone für Angaben wie „Einschreiben“ oder die Rücksendeangabe, darunter die Anschrift selbst — **ohne Leerzeile** zwischen Straße und Ort."
             },
             {
               "id": "info",
               "name": "Informationsblock",
               "x": 125,
-              "y": 40,
-              "b": 61,
+              "y": 45,
+              "b": 65,
               "h": 45,
               "art": "frei",
               "notiz": "Rechts neben dem Anschriftfeld: Ihr Zeichen, Ihre Nachricht vom, Unser Zeichen, Telefon, E-Mail und das Datum. Er ersetzt die früher übliche Bezugszeichenzeile."
@@ -111,9 +111,9 @@
             {
               "id": "betreff",
               "name": "Betreff",
-              "x": 24,
+              "x": 25,
               "y": 92,
-              "b": 162,
+              "b": 165,
               "h": 8,
               "art": "pflicht",
               "notiz": "Kurz und ohne das Wort „Betreff“. Er wird hervorgehoben, meist fett, und endet **ohne Punkt**."
@@ -121,9 +121,9 @@
             {
               "id": "anrede",
               "name": "Anrede",
-              "x": 24,
+              "x": 25,
               "y": 104,
-              "b": 162,
+              "b": 165,
               "h": 8,
               "art": "pflicht",
               "notiz": "Nach der Anrede folgt ein Komma, der Text beginnt danach klein. Zwischen Betreff und Anrede sowie zwischen Anrede und Text steht jeweils eine Leerzeile."
@@ -131,9 +131,9 @@
             {
               "id": "text",
               "name": "Brieftext",
-              "x": 24,
+              "x": 25,
               "y": 116,
-              "b": 162,
+              "b": 165,
               "h": 92,
               "art": "pflicht",
               "notiz": "Linksbündig, ohne Einzug, Absätze durch Leerzeilen getrennt. Der erste Satz sagt, worum es geht — nicht „Bezug nehmend auf Ihr Schreiben“."
@@ -141,9 +141,9 @@
             {
               "id": "gruss",
               "name": "Grußformel",
-              "x": 24,
+              "x": 25,
               "y": 212,
-              "b": 162,
+              "b": 165,
               "h": 8,
               "art": "pflicht",
               "notiz": "Eine Leerzeile nach dem Text, **ohne Komma** am Ende. Danach folgen Firmenbezeichnung, Raum für die Unterschrift und der maschinenschriftliche Name."
@@ -151,7 +151,7 @@
             {
               "id": "unterschrift",
               "name": "Firma · Unterschrift · Name",
-              "x": 24,
+              "x": 25,
               "y": 224,
               "b": 100,
               "h": 26,
@@ -161,7 +161,7 @@
             {
               "id": "anlage",
               "name": "Anlagenvermerk",
-              "x": 24,
+              "x": 25,
               "y": 254,
               "b": 100,
               "h": 8,
@@ -171,9 +171,9 @@
             {
               "id": "fuss",
               "name": "Geschäftsangaben",
-              "x": 24,
+              "x": 25,
               "y": 268,
-              "b": 162,
+              "b": 165,
               "h": 22,
               "art": "frei",
               "notiz": "Rechtsform, Sitz, Registergericht, Handelsregisternummer, Geschäftsführung und Bankverbindung. Für Kaufleute sind diese Pflichtangaben im Geschäftsbrief gesetzlich vorgeschrieben."
@@ -181,8 +181,8 @@
           ],
           "masse": [
             {
-              "bei": 40,
-              "text": "Anschriftfeld"
+              "bei": 45,
+              "text": "Anschriftfeld (Form B: 45 mm)"
             },
             {
               "bei": 92,
@@ -193,8 +193,7 @@
               "text": "Gruß"
             }
           ],
-          "regel": "Zwei Formen gibt es: Bei **Form A** beginnt das Anschriftfeld höher, bei **Form B** tiefer — Form B lässt mehr Platz für einen aufwendigen Briefkopf und ist im Geschäftsverkehr die übliche.",
-          "pruefen": "Die genauen Millimeterangaben für Seitenränder, Form A und Form B vor Veröffentlichung gegen die geltende DIN 5008 prüfen und in die Maßlinien eintragen."
+          "regel": "Zwei Formen gibt es: Bei **Form A** beginnt das Anschriftfeld 27 mm unter dem oberen Blattrand, bei **Form B** 45 mm — Form B lässt mehr Platz für einen aufwendigen Briefkopf und ist im Geschäftsverkehr die übliche. Das Anschriftfeld ist bei beiden Formen 85 mm breit und 45 mm hoch, der Informationsblock beginnt 125 mm vom linken Blattrand. Seitenränder für den Text: links 25 mm, rechts mindestens 20 mm. Die Grafik ist schematisch; verbindlich sind die Maße der aktuellen Normausgabe DIN 5008:2020-03 und die Briefvorlage deines Betriebs."
         },
         {
           "typ": "merke",

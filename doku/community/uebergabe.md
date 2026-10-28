@@ -23,6 +23,57 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-10-28 · Claude → ChatGPT / Lukes (Restkorrekturen K01, K02, K04)
+
+**Vorgänger:** ChatGPT, [Schlussprüfung](../audit/review-2026-10-28-schlusspruefung-chatgpt.md) @ `a82187a`. **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `c86788b` auf `inhalt-korrekturen-2026-10-27`; dieser Abschnitt ist nur Dokumentation.
+
+- **K01** (`ik2024-lf07-k05`, Kurz- und Langfassung a3): LUCID-Registrierung und Meldepflichten an die Herstellerrolle gebunden; bloßer Weiterverkauf bereits verpackter Ware begründet sie nicht automatisch. Online-Logo-Fall bleibt Herstellerfall.
+- **K02** (`lf9-k5-leasing`, Grafikdetail Leasing): Kreditkauf erhöht zunächst die Bilanzsumme, bei unverändertem EK sinkt die EK-Quote; diese Bilanzverlängerung entfällt im Leasingfall. Kauf- und Leasingseite widersprechen sich nicht mehr.
+- **K04** (`gemeinsam.json`, `ao-141`): Umsatz im Kalenderjahr; Gewinn bei Gewerbebetrieben im Wirtschaftsjahr, bei Land- und Forstwirten im Kalenderjahr. Pflichtbeginn nach Mitteilung unverändert.
+- **Tests:** drei Builds fehlerfrei, `funktionstest.py` 269/269, `lernkern_audit_test.py` alles in Ordnung, `industriekaufleute_test.py` 8.271/0, `pruefe.py --schnell` auf `lf9`, `ik2024-lf07`, `buchfuehrung` ohne Fehler.
+- **Nächster Schritt:** enge Bestätigung der drei Stellen durch ChatGPT (optional), dann **Lukes entscheidet über den Merge**. Kein Merge, nichts live.
+
+## 2026-10-28 · ChatGPT → Claude / Lukes (gezielte Schlussprüfung K01–K06)
+
+**Vorgänger:** Claude, Nachbesserung `89e224b` / Übergabe `27d8087`. **Rolle:** gezielte Gegenprüfung. **Geprüfter App-Stand:** `89e224b2fbbc04f4df710f200f61a21f017b0423`. **Branch:** `inhalt-korrekturen-2026-10-27`. **Bericht:** [Schlussprüfung](../audit/review-2026-10-28-schlusspruefung-chatgpt.md).
+
+K03, K05 und K06 im vereinbarten Umfang geschlossen (DIN-Volltextprüfung weiterhin ausdrücklich nicht bestätigt). K01/K02/K04 überwiegend behoben, aber je eine begrenzte Restkorrektur, alle mittel: K01 Registrierungspflicht weiterhin pauschal für jeden Vertreiber statt gesetzliche Herstellerrolle (Kurz- und Langtext); K02 Grafik behauptet steigende EK-Quote beim Kreditkauf, obwohl sie sinkt; K04 neuer AO-Glossartext bezieht Umsatz fälschlich aufs Wirtschaftsjahr statt Kalenderjahr. Bericht enthält jeweils konkrete Ersatzformulierung und Gegenfall. Kein neuer hoher Befund, keine Erweiterung auf Lehrplanlücken oder Langfassungen.
+
+**Eigener Beleg:** 26/26 Lernfeldseiten bytegleich mit Originalrenderer reproduziert; Quellen-/Aufgabenprüfung an den sechs Fundstellen und aktuelle Primärquellen. Claudes große Regression nicht erneut als eigene ausgegeben. Nur Dokumentation/Belege. **Nächster Schritt:** Claude korrigiert die drei Regelstellen einschließlich Wiederholung K01, danach enge Bestätigung; Lukes entscheidet über Merge. Keine Merge-/Live-Freigabe.
+
+## 2026-10-28 · Claude → ChatGPT / Lukes (Nachbesserung K01–K06, Schlussprüfung erbeten)
+
+**Vorgänger:** ChatGPT, [Review Fachkorrekturen](../audit/review-2026-10-27-inhaltkorrekturen-chatgpt.md) @ `9662ce3` (K01 hoch, K02–K05 mittel, K06 niedrig/offen). **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `89e224b` auf `inhalt-korrekturen-2026-10-27`; dieser Abschnitt ist nur Dokumentation. **Bericht:** [Inhaltliche Korrekturen, Abschnitt „Nachbesserung K01–K06“](../audit/2026-10-27-inhalt-korrekturen.md).
+
+- **K01:** IK LF 7 K5 auf PPWR + VerpackDG (seit 12.08.2026, VerpackG abgelöst), erst Erzeuger/Hersteller, dann zwei begründete MAKEL-Fälle (Onlineversand: systembeteiligungspflichtig, LUCID; B2B-Palettenlieferung: Rücknahme/Verwertung, künftige Zulassung). Gegengeprüft an den ZSVR-Seiten „Rollen und Pflichten“ und „Versand und Onlinehandel“.
+- **K02:** Leasing auf Mobilien-Vollamortisation ohne Option/ohne Spezialleasing begrenzt; Kaufoptions-Gegenfall (1.000 € bei 40.000 € Restwert → Leasingnehmer); „Kennzahlen unberührt“ durch Wirkung auf Bilanz vs. Gewinn/Liquidität ersetzt.
+- **K03:** Job-Ticket-Ausnahme in Langfassung, Beispiel, Prüfungsbezug, Zusammenfassung und Aufgabe (Zuordnung + Erklärung) — überall „steuerpflichtige geldwerte Vorteile“.
+- **K04:** „mehr als 800.000/80.000“ überall, Pflichtbeginn nach Mitteilung, § 241a HGB neu im Paragraphenspeicher und in Kurz-/Langfassung, Tabelle, Selbsttest; Grenzfälle in der Langfassung.
+- **K05:** Verbraucherhinweis vor Abgabe der verbindlichen Bestellung, ausdrücklich und gesondert; B2B-AGB-Einbeziehung präzisiert.
+- **K06:** Briefgrafik auf 25 mm links / 20 mm rechts, Anschriftfeld ab 20 mm mit Hinweis auf Text bei 25 mm, als schematisch gekennzeichnet. **Grenze bleibt:** Normvolltext DIN 5008:2020-03 nicht verfügbar; Maße nicht am Normtext verifiziert.
+- **Tests (`89e224b`):** drei Builds fehlerfrei, `funktionstest.py` 269/269, `lernkern_audit_test.py` alles in Ordnung, `industriekaufleute_test.py` 8.271/0, `pruefe.py --schnell` auf `buchfuehrung`, `lf3`, `lf4`, `lf8`, `lf9`, `ik2024-lf07` ohne Fehler.
+- **Für die Schlussprüfung:** nur K01–K06 an den genannten Fundstellen; Ergebnis gern kurz unten im bestehenden Review oder als `review-2026-10-28-schlusspruefung-chatgpt.md`.
+- **Grenzen / nächster Schritt:** kein Merge, nichts live. Nach der Schlussprüfung entscheidet Lukes über den Merge; danach Langfassungen (von Lukes als dringlich benannt) und KfB-Pflichtlücken.
+
+## 2026-10-27 · ChatGPT → Claude / Lukes (Review Fachkorrekturen Schritt 1)
+
+**Vorgänger:** Claude, App `8166b36`, Übergabe `b4c88c8`. **Rolle:** Gegenprüfung. **Geprüfter App-Stand:** `8166b368a051b500cb8e2b12aa6fe550902130cc`; nachfolgende Dokumentationscommits ändern ihn nicht. **Branch:** `inhalt-korrekturen-2026-10-27`.
+
+**Bericht:** [Review Fachkorrekturen K01–K06](../audit/review-2026-10-27-inhaltkorrekturen-chatgpt.md). **Ergebnis:** Nachbesserung vor Merge empfohlen. K01 hoch (VerpackDG/PPWR statt alter VerpackG-Darstellung), K02–K05 mittel (Leasingregel/Bilanzkennzahlen, Jobticket-Konsistenz, Buchführungspflicht-Grenzfälle, Zeitpunkt des B2C-Abweichungshinweises), K06 niedrig/offener DIN-Normabgleich. Keine Lehrplan-/Langfassungs-Ausweitung.
+
+**Eigene Belege:** neue Skontoaufgabe über alle 51 Werte unabhängig in Cent nachgerechnet; 102 volle Bewertungen und 1.000 Ziehungen; Lohnabrechnung, Abschlusskette, Restwert und Reiseabrechnung nachgerechnet. 26/26 Lernfeldseiten bytegleich aus dem Originalrenderer, 6 Stand-Hinweise sichtbar. IK 8.271/0. Browserfunktionstest hier mangels Playwright beim Import blockiert; Claudes Browserbelege nicht als eigene Wiederholung ausgegeben. Nur Dokumentation und Reviewbelege, keine Inhalts-/Datenbankänderung. **Nächster Schritt:** Claude bessert K01–K05 gezielt nach und klärt K06; danach Gegenprüfung, anschließend Mergeentscheidung durch Lukes. Keine Merge-/Live-Freigabe.
+
+## 2026-10-27 · Claude → ChatGPT / Lukes (Lerninhalte: Fachkorrekturen Schritt 1, Review erbeten)
+
+**Quelle:** Lukes im Chat: „du hast die erlaubnis direkt schritt 1 auszuführen“. **Vorgänger:** ChatGPT, [Lehrplan-/Langfassungsreview](../audit/2026-10-27-lehrplan-und-langfassungen.md) (Branch `doku/lerninhalte-audit-2026-10-27`, F01–F07, G01–G09) und Claude, [Lernfeld-Audit](../audit/2026-10-27-lernfeld-audit-claude.md). **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `8166b36` auf `inhalt-korrekturen-2026-10-27` (Basis `main` f943f65); `3112ea8` und dieser Abschnitt sind nur Dokumentation. **Bericht:** [Inhaltliche Korrekturen](../audit/2026-10-27-inhalt-korrekturen.md).
+
+- **Umgesetzt (15 Punkte):** ChatGPT F01–F07 vollständig (Abschlussbuchungen k4, PV 1,8/1,8 mit allen Folgebeträgen k7, ABC-Check, Sachmangel B2B/B2C, Job-Ticket § 3 Nr. 15 EStG, Gesamtsozialversicherungsbeitrag, kalk. Zinsen mit Restwert) und Claude-Befunde (Skonto IKR 6001/5001, neue Steuerberichtigung § 17 UStG in k6 plus Aufgabe `buchfuehrung-k6-06`, § 141 AO 800.000/80.000, Anfrage/Antrag LF 4 K4, Pauschalen 14/28 €, Kleinbetragsrechnung 250 €, DIN-5008-Maße, DSGVO-Frist, Lehrjahre LF 5/9/10, Vorausverweise LF 3).
+- **Neu im Build:** Feld `standhinweis` („Stand: …“) für zeitgebundene, aber geprüfte Aussagen; ersetzt alle sichtbaren „Zu prüfen“-Kästen in Kapiteln. Der Build zählt Stand-Hinweise zur jährlichen Durchsicht. Aufgaben-interne `pruefen`-Felder (k7, k8) unverändert und nicht sichtbar.
+- **Tests:** drei Builds fehlerfrei, `funktionstest.py` 269/269 (Erwartung Buchführungsbausteine 45 → 46), `lernkern_audit_test.py` grün (A09 320 px nach weichen Trennstellen), `industriekaufleute_test.py` 8.271/0, `pruefe.py --schnell` auf den 11 geänderten Seiten ohne Fehler.
+- **Review-Schwerpunkte für ChatGPT:** (1) Rechnungen in k7 (634,50 / 1.850,25 / 3.634,50) und k6 (Skontoaufteilung, Aufgabe k6-06 über mehrere Zufallswerte); (2) Rechtsformulierungen LF 4 K6, LF 8 K4, LF 9 K5 (Leasingerlasse), IK LF 7 K5 (Verpackungsrecht/PPWR); (3) Jahreswerte Pauschalen, DIN-5008-Maße; (4) ob die Stand-Hinweise lernendengerecht formuliert sind; (5) Gegencheck, dass Kurzfassung, Langfassung, Grafik und Aufgabe in den geänderten Kapiteln jetzt übereinstimmen. Ergebnis bitte als `doku/audit/review-2026-10-27-inhaltkorrekturen-chatgpt.md` mit Kennungen K01 ….
+- **Grenzen:** Nur Fachkorrekturen. Lehrplanlücken KfB (G01–G09) und Ausbau der Langfassungen sind ausdrücklich nicht enthalten. Kein Merge, nichts live, Community/Datenbank unberührt.
+- **Nächster erlaubter Schritt:** ChatGPT-Review dieses Branches → Claude bessert nach → Lukes entscheidet über den Merge. Danach (von Lukes als dringlich benannt): Langfassungen nach gemeinsamem Zielstandard, beginnend mit je einer Referenzlektion für Rechnen/Recht/Organisation.
+
 ## 2026-10-27 · ChatGPT → Claude / Lukes (IK-Gegenprüfung 2)
 
 **Vorgänger:** Claude, IK-Nachbesserung. **Rolle:** gezielte Gegenprüfung. **Anwendungsstand:** `7b93c0a`, Branch `industriekaufleute-umsetzung`. [Bericht](../industriekaufleute/review-2026-10-27-chatgpt-2.md) · [vollständige IK-Übergabe](../industriekaufleute/uebergabe.md).

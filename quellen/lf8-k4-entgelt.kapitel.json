@@ -33,18 +33,18 @@
           "Die Abrechnung beginnt mit dem Brutto und endet mit dem Auszahlungsbetrag.",
           "Nicht jeder Abzug hat dieselbe Funktion."
         ],
-        "erklaerung": "Eine Abrechnung wird vom Brutto über gesetzliche Abzüge und Sozialversicherung zum Auszahlungsbetrag gelesen. Sonstige Abzüge werden gesondert betrachtet. Geldwerte Vorteile erhöhen das steuerpflichtige Brutto, obwohl kein zusätzlicher Geldbetrag ausgezahlt wird. Die Krankenkasse ist Einzugsstelle für alle Sozialversicherungsbeiträge.",
+        "erklaerung": "Eine Abrechnung wird vom Brutto über gesetzliche Abzüge und Sozialversicherung zum Auszahlungsbetrag gelesen. Sonstige Abzüge werden gesondert betrachtet. Steuerpflichtige geldwerte Vorteile — etwa die private Nutzung eines Dienstwagens — erhöhen das steuerpflichtige Brutto, obwohl kein zusätzlicher Geldbetrag ausgezahlt wird. Es gibt steuerfreie Ausnahmen: Ein Job-Ticket für Bus und Bahn, das zusätzlich zum ohnehin geschuldeten Lohn gewährt wird, bleibt nach § 3 Nr. 15 EStG steuerfrei. Die Krankenkasse ist Einzugsstelle für den Gesamt­sozial­versicherungs­beitrag, also Kranken-, Pflege-, Renten- und Arbeitslosenversicherung; die Unfallversicherung zahlt der Arbeitgeber allein und direkt an die Berufsgenossenschaft.",
         "beispiele": [
-          "Ein geldwerter Vorteil wird dem steuerpflichtigen Brutto zugerechnet, obwohl die Person dafür nicht nochmals Geld erhält.",
+          "Ein steuerpflichtiger geldwerter Vorteil wie die private Dienstwagennutzung wird dem steuerpflichtigen Brutto zugerechnet, obwohl die Person dafür nicht nochmals Geld erhält; ein zusätzlich gewährtes Job-Ticket für den Nahverkehr dagegen nicht.",
           "Für die Sozialversicherungsbeiträge wird die Krankenkasse als Einzugsstelle betrachtet; die Abrechnung weist anschließend den Auszahlungsbetrag aus."
         ],
         "fallbeispiel": "Eine Beschäftigte fragt, warum ihr steuerpflichtiges Brutto höher ist als der ausgezahlte Betrag. Die Abrechnung wird schrittweise gelesen: Brutto, gesetzliche Abzüge, Sozialversicherung, sonstige Abzüge, Auszahlungsbetrag. Ein geldwerter Vorteil kann das steuerpflichtige Brutto erhöhen, ohne dass er als Geld auf dem Konto erscheint.",
         "typische_fehler": "Brutto und Auszahlung werden gleichgesetzt oder alle Abzüge als Sozialversicherung bezeichnet. Auch die Krankenkasse wird nur als eine einzelne Versicherung statt als Einzugsstelle für die Beiträge betrachtet.",
         "verstaendnisfragen": [
           "Welche Reihenfolge hilft beim Lesen? Brutto, gesetzliche Abzüge, Sozialversicherung, sonstige Abzüge, Auszahlungsbetrag.",
-          "Wer ist Einzugsstelle für alle Sozialversicherungsbeiträge? Die Krankenkasse."
+          "Wer ist Einzugsstelle für den Gesamt­sozial­versicherungs­beitrag? Die Krankenkasse — für Kranken-, Pflege-, Renten- und Arbeitslosenversicherung, nicht für die Unfallversicherung."
         ],
-        "pruefungsbezug": "Lies eine Abrechnung von oben nach unten und ordne jeden Betrag seiner Stufe zu. Geldwerte Vorteile als Brutto-Bestandteil prüfen, nicht als Auszahlung.",
+        "pruefungsbezug": "Lies eine Abrechnung von oben nach unten und ordne jeden Betrag seiner Stufe zu. Geldwerte Vorteile als Brutto-Bestandteil prüfen, nicht als Auszahlung — und dabei klären, ob sie steuerpflichtig oder steuerfrei sind.",
         "merksatz": "Brutto ist nicht Netto: Die Abrechnung erklärt den Weg zwischen beiden Beträgen."
       }
     ]
@@ -159,7 +159,7 @@
                 "Grundentgelt, Zulagen, Zuschläge, geldwerte Vorteile",
                 "Ausgangspunkt der Rechnung"
               ],
-              "detail": "**Geldwerte Vorteile werden mitversteuert.** Ein Dienstwagen zur privaten Nutzung, ein Job-Ticket oder ein Zuschuss erhöhen das steuerpflichtige Brutto, ohne dass Geld fließt — deshalb fällt das Netto niedriger aus, als der Mitarbeiter erwartet."
+              "detail": "**Geldwerte Vorteile werden grundsätzlich mitversteuert.** Ein Dienstwagen zur privaten Nutzung erhöht das steuerpflichtige Brutto, ohne dass Geld fließt — deshalb fällt das Netto niedriger aus, als der Mitarbeiter erwartet. Es gibt aber steuerfreie Ausnahmen: Ein Job-Ticket für Bus und Bahn, das der Arbeitgeber zusätzlich zum ohnehin geschuldeten Lohn gewährt, ist nach § 3 Nr. 15 EStG steuerfrei. Ob ein Vorteil das Netto mindert, muss also jeweils geprüft werden."
             },
             {
               "zellen": [
@@ -174,7 +174,7 @@
                 "Arbeitnehmeranteile zu KV, RV, AV, PV",
                 "Krankenkasse als Einzugsstelle"
               ],
-              "detail": "**Die Krankenkasse zieht alles ein**, auch die Renten- und Arbeitslosenversicherungsbeiträge, und verteilt sie weiter. Deshalb heißt sie Einzugsstelle — eine beliebte Prüfungsfrage."
+              "detail": "**Die Krankenkasse zieht den Gesamt­sozial­versicherungs­beitrag ein** — also auch die Renten- und Arbeitslosenversicherungsbeiträge — und verteilt sie weiter. Deshalb heißt sie Einzugsstelle, eine beliebte Prüfungsfrage. Ausnahme: Die Unfallversicherung zahlt der Arbeitgeber allein an die Berufsgenossenschaft."
             },
             {
               "zellen": [
@@ -253,8 +253,8 @@
     "Für Jugendliche unter 18 ist Akkordarbeit verboten.",
     "Auch im Akkord gilt der Mindestlohn.",
     "Abrechnung: Brutto, gesetzliche Abzüge, Sozialversicherung, sonstige Abzüge, Auszahlungsbetrag.",
-    "Geldwerte Vorteile erhöhen das steuerpflichtige Brutto, ohne dass Geld fließt.",
-    "Die Krankenkasse ist Einzugsstelle für alle Sozialversicherungsbeiträge."
+    "Steuerpflichtige geldwerte Vorteile (z. B. Dienstwagen privat) erhöhen das steuerpflichtige Brutto, ohne dass Geld fließt; ein zusätzlich gewährtes Job-Ticket ist steuerfrei.",
+    "Die Krankenkasse ist Einzugsstelle für den Gesamt­sozial­versicherungs­beitrag (KV, PV, RV, AV); die Unfallversicherung läuft gesondert über die Berufsgenossenschaft."
   ],
   "selbsttest": [
     {

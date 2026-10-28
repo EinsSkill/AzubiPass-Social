@@ -98,7 +98,7 @@
         "zahlbetrag": "brutto - skonto_brutto"
       },
       "anzeige": [
-        { "block": "text", "inhalt": "Eine Verbindlichkeit von {brutto} € wird innerhalb der Skontofrist per Banküberweisung beglichen; es gelten die Standardbedingungen 10 Tage 2 % Skonto." }
+        { "block": "text", "inhalt": "Eine Verbindlichkeit von {brutto} € wird innerhalb der Skontofrist per Banküberweisung beglichen; es gelten die Standardbedingungen 10 Tage 2 % Skonto. Die Umsatzsteuer bleibt in dieser Aufgabe außer Betracht." }
       ],
       "eingabe": [
         {
@@ -112,7 +112,7 @@
         }
       ],
       "bewertung": { "art": "automatisch", "punkte_gesamt": 5 },
-      "erklaerung": "Die Verbindlichkeit wird in voller Höhe ausgebucht. Der einbehaltene Betrag ist ein Ertrag — beim Einkauf verdient der Betrieb am Skonto.",
+      "erklaerung": "Die Verbindlichkeit wird in voller Höhe ausgebucht. Der einbehaltene Betrag mindert nachträglich den Einkaufsaufwand und steht deshalb im Haben von 6001 Nachlässe.",
       "quelle": "k5, Abschnitt e3"
     },
 

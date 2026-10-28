@@ -55,19 +55,19 @@
           "Skonto hängt vom Zahlungszeitpunkt ab.",
           "Aufwand und Ertrag werden nach ihrem wirtschaftlichen Vorteil beziehungsweise Nachteil beurteilt."
         ],
-        "erklaerung": "Bei der ursprünglichen Rechnung steht noch nicht fest, ob der Betrieb das Zahlungsziel nutzt und Skonto abzieht. Deshalb bleibt der ursprüngliche Rechnungsbetrag zunächst bestehen. Erst bei der Zahlung wird die Verbindlichkeit oder Forderung vollständig ausgebucht und die Differenz als Skonto erfasst.",
+        "erklaerung": "Bei der ursprünglichen Rechnung steht noch nicht fest, ob der Betrieb das Zahlungsziel nutzt und Skonto abzieht. Deshalb bleibt der ursprüngliche Rechnungsbetrag zunächst bestehen. Erst bei der Zahlung wird die Verbindlichkeit oder Forderung vollständig ausgebucht und die Differenz auf einem Unterkonto erfasst: Beim Einkauf mindert der Skonto den Aufwand (Konto Nachlässe, bei MAKEL 6001), beim Verkauf mindert er den Erlös (Konto 5001 Erlösberichtigungen). Die Umsatzsteuer lassen wir in diesem Kapitel noch weg; wie der Skonto zusätzlich die Steuer berichtigt, zeigt K6.",
         "beispiele": [
-          "Bei einer Einkaufsverbindlichkeit von 1.000 € und 2 % Skonto werden 980 € überwiesen; 20 € sind Skontoertrag.",
-          "Bei einer Verkaufsforderung von 2.000 € und 2 % Skonto gehen 1.960 € ein; 40 € sind Skontoaufwand."
+          "Bei einer Einkaufsverbindlichkeit von 1.000 € und 2 % Skonto werden 980 € überwiesen; 20 € werden als Nachlass gebucht und mindern den Aufwand.",
+          "Bei einer Verkaufsforderung von 2.000 € und 2 % Skonto gehen 1.960 € ein; 40 € werden als Erlösberichtigung gebucht und mindern den Erlös."
         ],
-        "fallbeispiel": "Eine Rechnung über 2.000 € wird innerhalb der Skontofrist bezahlt. 2 % von 2.000 € sind 40 €. Die Forderung muss vollständig mit 2.000 € ausgebucht werden. Auf der Sollseite stehen Bank 1.960 € und Skontoaufwand 40 €; im Haben steht Forderungen 2.000 €. Die Buchung ist ausgeglichen und erklärt gleichzeitig, warum Verkaufsskonto ein Aufwand ist.",
-        "typische_fehler": "Skonto wird schon bei der Rechnung berücksichtigt, obwohl die Nutzung noch nicht feststeht. Außerdem werden Einkaufsskonto und Verkaufsskonto vertauscht: Beim Einkauf spart der Betrieb Geld, beim Verkauf erhält er weniger.",
+        "fallbeispiel": "Eine Rechnung über 2.000 € wird innerhalb der Skontofrist bezahlt. 2 % von 2.000 € sind 40 €. Die Forderung muss vollständig mit 2.000 € ausgebucht werden. Auf der Sollseite stehen 2800 Bank 1.960 € und 5001 Erlösberichtigungen 40 €; im Haben steht 2400 Forderungen 2.000 €. Die Buchung ist ausgeglichen. Der Erlös wird damit nachträglich um 40 € gekürzt — der Betrieb hat für die Ware eben nur 1.960 € bekommen.",
+        "typische_fehler": "Skonto wird schon bei der Rechnung berücksichtigt, obwohl die Nutzung noch nicht feststeht. Außerdem werden Einkaufsskonto und Verkaufsskonto vertauscht: Beim Einkauf spart der Betrieb Geld, beim Verkauf erhält er weniger. Häufiger Altfehler: Skonto als eigenen Ertrag oder Aufwand buchen — im Industriekontenrahmen ist er eine Minderung des Einkaufsaufwands bzw. des Erlöses.",
         "verstaendnisfragen": [
-          "Warum ist Einkaufsskonto ein Ertrag? Weil die Verbindlichkeit vollständig erlischt, aber weniger Geld überwiesen wird.",
-          "Warum muss eine Verkaufsforderung beim Zahlungseingang vollständig verschwinden? Weil der Kunde danach nichts mehr schuldet; die Differenz wird als Skontoaufwand erfasst."
+          "Wo wird Einkaufsskonto gebucht? Im Haben des Kontos Nachlässe (6001), weil er den Einkaufsaufwand nachträglich mindert.",
+          "Warum muss eine Verkaufsforderung beim Zahlungseingang vollständig verschwinden? Weil der Kunde danach nichts mehr schuldet; die Differenz wird auf 5001 Erlösberichtigungen erfasst."
         ],
-        "pruefungsbezug": "Bei Skontoaufgaben zuerst den Skontobetrag berechnen, dann die vollständige Forderung oder Verbindlichkeit ausbuchen und zuletzt Bank sowie Aufwand oder Ertrag einsetzen.",
-        "merksatz": "Einkaufsskonto bringt einen Vorteil und ist Ertrag; Verkaufsskonto mindert den Erlös und ist Aufwand."
+        "pruefungsbezug": "Bei Skontoaufgaben zuerst den Skontobetrag berechnen, dann die vollständige Forderung oder Verbindlichkeit ausbuchen und zuletzt Bank sowie Nachlässe oder Erlösberichtigungen einsetzen.",
+        "merksatz": "Einkaufsskonto mindert den Aufwand (Nachlässe), Verkaufsskonto mindert den Erlös (Erlösberichtigungen)."
       },
       {
         "abschnitt": "e4",
@@ -312,7 +312,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "{{begriff:skonto|Skonto}} entsteht erst im Moment der Zahlung — vorher weiß niemand, ob die Frist genutzt wird. Deshalb wird die ursprüngliche Buchung nicht korrigiert, sondern die Differenz separat erfasst. ==Beim Einkauf spart der Betrieb Geld, das ist ein Ertrag. Beim Verkauf verliert er welches, das ist ein Aufwand.=="
+          "text": "{{begriff:skonto|Skonto}} entsteht erst im Moment der Zahlung — vorher weiß niemand, ob die Frist genutzt wird. Deshalb wird die ursprüngliche Buchung nicht korrigiert, sondern die Differenz separat erfasst. ==Beim Einkauf mindert der Skonto den Aufwand, beim Verkauf mindert er den Erlös.== Im Industriekontenrahmen gibt es dafür Unterkonten: Nachlässe (bei MAKEL 6001) und 5001 Erlösberichtigungen. Die Umsatzsteuer bleibt hier noch außen vor — sie kommt in K6 dazu."
         },
         {
           "typ": "tabelle",
@@ -326,30 +326,30 @@
               "zellen": [
                 "Einkaufsskonto",
                 "Verbindlichkeit 1.000 €, 2 % Skonto",
-                "Verbindlichkeiten 1.000 € an Bank 980 € + Skontoertrag 20 €"
+                "4400 Verbindlichkeiten 1.000 € an 2800 Bank 980 € + 6001 Nachlässe 20 €"
               ],
               "mono": [
                 2
               ],
-              "detail": "**Was hier passiert:** Die Schuld war 1.000 € und verschwindet vollständig — deshalb steht sie voll im Soll. Überwiesen werden aber nur 980 €. Die Lücke von 20 € ist ein wirtschaftlicher Vorteil und wird als Ertrag gebucht."
+              "detail": "**Was hier passiert:** Die Schuld war 1.000 € und verschwindet vollständig — deshalb steht sie voll im Soll. Überwiesen werden aber nur 980 €. Die Lücke von 20 € ist ein nachträglicher Nachlass und mindert den Einkaufsaufwand."
             },
             {
               "zellen": [
                 "Verkaufsskonto",
                 "Forderung 2.000 €, 2 % Skonto",
-                "Bank 1.960 € + Skontoaufwand 40 € an Forderungen 2.000 €"
+                "2800 Bank 1.960 € + 5001 Erlösberichtigungen 40 € an 2400 Forderungen 2.000 €"
               ],
               "mono": [
                 2
               ],
-              "detail": "**Spiegelbildlich:** Die Forderung von 2.000 € verschwindet vollständig, eingegangen sind nur 1.960 €. Die Differenz ist ein Verlust und wird als Aufwand gebucht."
+              "detail": "**Spiegelbildlich:** Die Forderung von 2.000 € verschwindet vollständig, eingegangen sind nur 1.960 €. Die Differenz kürzt nachträglich den Erlös und wird als Erlösberichtigung gebucht."
             }
           ]
         },
         {
           "typ": "merke",
-          "text": "Einkauf → Skonto**ertrag**. Verkauf → Skonto**aufwand**. Eselsbrücke: Wer einkauft, verdient am Skonto. Wer verkauft, bezahlt dafür.",
-          "karteikarte": "Ist Skonto beim Einkauf ein Ertrag oder ein Aufwand — und warum?"
+          "text": "Einkauf → **Nachlässe** (Aufwand sinkt). Verkauf → **Erlösberichtigungen** (Erlös sinkt). Eselsbrücke: Skonto ändert nie das Konto der Gegenseite, sondern korrigiert dort, wo der ursprüngliche Betrag gebucht wurde.",
+          "karteikarte": "Auf welchem Konto wird Skonto beim Einkauf und beim Verkauf gebucht — und warum?"
         },
         {
           "typ": "check",
@@ -510,7 +510,7 @@
     "Bezugskosten erhöhen den Einstandspreis, Rabatte mindern ihn.",
     "Rabatt wird nicht separat gebucht — es wird nur der geminderte Betrag erfasst.",
     "Skonto wird separat gebucht, erst im Moment der Zahlung.",
-    "Einkaufsskonto = Skontoertrag. Verkaufsskonto = Skontoaufwand.",
+    "Einkaufsskonto mindert den Aufwand (Nachlässe), Verkaufsskonto mindert den Erlös (Erlösberichtigungen).",
     "Skonto ziehen lohnt fast immer: 2 % bei 20 Tagen entsprechen etwa 36 % Jahreszins.",
     "Kalkulation: Einstandspreis ist die Basis; Kundenskonto und -rabatt werden im Hundert gerechnet."
   ],
@@ -518,12 +518,12 @@
     {
       "typ": "Wissen",
       "frage": "Was ist der Unterschied zwischen Rabatt und Skonto?",
-      "loesung": "Der Rabatt ist ein sofortiger Preisnachlass beim Kauf. Er mindert den Rechnungsbetrag direkt und wird nicht separat gebucht — es wird von vornherein nur der geminderte Betrag erfasst. Skonto ist ein Nachlass für schnelle Zahlung. Er entsteht erst im Moment der Zahlung, weil vorher nicht feststeht, ob die Frist genutzt wird, und wird separat als Skontoertrag oder Skontoaufwand gebucht."
+      "loesung": "Der Rabatt ist ein sofortiger Preisnachlass beim Kauf. Er mindert den Rechnungsbetrag direkt und wird nicht separat gebucht — es wird von vornherein nur der geminderte Betrag erfasst. Skonto ist ein Nachlass für schnelle Zahlung. Er entsteht erst im Moment der Zahlung, weil vorher nicht feststeht, ob die Frist genutzt wird, und wird separat gebucht: beim Einkauf als Nachlass, beim Verkauf als Erlösberichtigung."
     },
     {
       "typ": "Wissen",
-      "frage": "Warum ist Einkaufsskonto ein Ertrag und Verkaufsskonto ein Aufwand?",
-      "loesung": "Beim Einkaufsskonto zahlt der Betrieb weniger, als er laut Verbindlichkeit schuldet — er behält Geld, das sonst abgeflossen wäre. Das ist ein wirtschaftlicher Vorteil, also ein Ertrag. Beim Verkaufsskonto erhält der Betrieb weniger, als seine Forderung betrug. Das ist ein Nachteil, also ein Aufwand."
+      "frage": "Warum wird Einkaufsskonto auf Nachlässe und Verkaufsskonto auf Erlösberichtigungen gebucht?",
+      "loesung": "Beim Einkaufsskonto zahlt der Betrieb weniger, als er laut Verbindlichkeit schuldet. Die Ware hat ihn also nachträglich weniger gekostet — der Einkaufsaufwand sinkt, deshalb Nachlässe im Haben. Beim Verkaufsskonto erhält der Betrieb weniger, als seine Forderung betrug. Er hat für die Ware also weniger erlöst — der Erlös sinkt, deshalb Erlösberichtigungen im Soll. Ein eigener Skontoertrag oder Skontoaufwand ist die veraltete Darstellung."
     },
     {
       "typ": "Berechnung",
@@ -538,8 +538,8 @@
     {
       "typ": "Fall",
       "frage": "Eine Verbindlichkeit von 2.000 € wird innerhalb der Skontofrist mit 2 % Skonto per Bank beglichen. Formuliere den Buchungssatz.",
-      "loesung": "Skontobetrag = 2 % von 2.000 € = 40 €. Überwiesen werden 1.960 €. Buchungssatz: Verbindlichkeiten LuL 2.000 € an Bank 1.960 € und Skontoertrag 40 €. Die Verbindlichkeit ist vollständig ausgeglichen, obwohl weniger geflossen ist."
+      "loesung": "Skontobetrag = 2 % von 2.000 € = 40 €. Überwiesen werden 1.960 €. Buchungssatz (ohne Umsatzsteuer): 4400 Verbindlichkeiten LuL 2.000 € an 2800 Bank 1.960 € und 6001 Nachlässe 40 €. Die Verbindlichkeit ist vollständig ausgeglichen, obwohl weniger geflossen ist."
     }
   ],
-  "pruefungstipp": "Skonto-Buchungen kommen fast immer dran. Lerne die zwei Sätze wörtlich: Einkauf → Verbindlichkeiten an Bank plus Skontoertrag. Verkauf → Bank plus Skontoaufwand an Forderungen. Bei der Kalkulation gilt: Einstandspreis markieren, dann erst rechnen — er trennt Einkaufs- von Verkaufsseite."
+  "pruefungstipp": "Skonto-Buchungen kommen fast immer dran. Lerne die zwei Sätze wörtlich: Einkauf → Verbindlichkeiten an Bank plus Nachlässe. Verkauf → Bank plus Erlösberichtigungen an Forderungen. Mit Umsatzsteuer kommt jeweils die Steuerkorrektur dazu (K6). Bei der Kalkulation gilt: Einstandspreis markieren, dann erst rechnen — er trennt Einkaufs- von Verkaufsseite."
 }

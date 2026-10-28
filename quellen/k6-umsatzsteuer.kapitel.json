@@ -5,7 +5,6 @@
   "titel": "Umsatzsteuer",
   "untertitel": "Durchlaufprinzip, Vorsteuer, Zahllast — und warum der Betrieb nur Kassierer ist.",
   "minuten": 25,
-
   "ausfuehrlich": {
     "einleitung": "Die Umsatzsteuer lässt sich auf zwei Ebenen verstehen: wirtschaftlich trägt sie am Ende der private Verbrauch, buchhalterisch wird sie zwischen Einkauf, Verkauf und Finanzamt weitergeleitet. Wer Vorsteuer und Umsatzsteuer als Konten einordnet, kann auch die Zahllast sicher herleiten.",
     "abschnitte": [
@@ -64,10 +63,11 @@
         "erklaerung": "Die Zahllast ist keine zusätzliche Steuer neben den bereits gebuchten Beträgen. Sie ist der Saldo aus Umsatzsteuer und Vorsteuer: Zahllast = Umsatzsteuer − Vorsteuer. Ist der Wert positiv, muss der Betrieb zahlen; ist er negativ, ergibt sich eine Erstattung.",
         "beispiele": [
           "Der Einkauf von 1.000 € netto erzeugt 190 € Vorsteuer und eine Verbindlichkeit von 1.190 €.",
-          "Der Verkauf von 2.000 € netto erzeugt 380 € Umsatzsteuer und eine Forderung von 2.380 €."
+          "Der Verkauf von 2.000 € netto erzeugt 380 € Umsatzsteuer und eine Forderung von 2.380 €.",
+          "Zahlt der Betrieb eine Rechnung über 1.190 € mit 2 % Skonto, berichtigt er die Vorsteuer um 3,80 €: Skonto 23,80 € brutto = 20,00 € Nachlass + 3,80 € Vorsteuerkorrektur."
         ],
         "fallbeispiel": "Bilde den vollständigen Zyklus aus der Grafik: 1. Wareneinkauf 1.000 € + Vorsteuer 190 € an Verbindlichkeiten 1.190 €. 2. Forderungen 2.380 € an Umsatzerlöse 2.000 € + Umsatzsteuer 380 €. 3. Umsatzsteuer 380 € an Vorsteuer 190 € + Bank 190 €. Die Zahllast beträgt 380 € − 190 € = 190 €. Nach der Verrechnung stehen beide Steuerkonten auf null.",
-        "typische_fehler": "Die Umsatzsteuer wird auf den Warenaufwand aufgeschlagen oder die Vorsteuer als Aufwand behandelt. Auch die vollständige Forderung beziehungsweise Verbindlichkeit wird manchmal nicht ausgebucht.",
+        "typische_fehler": "Die Umsatzsteuer wird auf den Warenaufwand aufgeschlagen oder die Vorsteuer als Aufwand behandelt. Auch die vollständige Forderung beziehungsweise Verbindlichkeit wird manchmal nicht ausgebucht. Bei Skonto, Rücksendung und Mängelnachlass wird außerdem häufig vergessen, die Steuer mitzuberichtigen: Ändert sich der Nettobetrag, ändert sich auch die Vorsteuer oder Umsatzsteuer.",
         "verstaendnisfragen": [
           "Was bedeutet eine negative Zahllast? Die Vorsteuer ist höher als die Umsatzsteuer; gegenüber dem Finanzamt ergibt sich eine Erstattung.",
           "Warum wird beim Verkauf die Forderung mit dem Bruttobetrag gebucht? Weil der Kunde Nettoerlös und Umsatzsteuer zusammen schuldet."
@@ -393,6 +393,57 @@
           "typ": "merke",
           "text": "Der Betrieb hat 2.380 € eingenommen und 1.190 € ausgegeben, aber nur 1.000 € verdient und 190 € ans Finanzamt abgeführt. Die Umsatzsteuer taucht im Ergebnis nirgends auf — sie ist durchgelaufen.",
           "karteikarte": "Wie berechnet sich die Zahllast, und was bedeutet ein negativer Wert?"
+        },
+        {
+          "typ": "absatz",
+          "text": "Ändert sich der Nettobetrag nachträglich, ändert sich auch die Steuer. Das passiert bei **Skonto**, bei **Rücksendungen** und bei **Preisnachlässen wegen eines Mangels**. Gebucht wird dann nicht nur die Minderung selbst, sondern auch die Berichtigung der Vorsteuer (beim Einkauf) oder der Umsatzsteuer (beim Verkauf) — § 17 UStG."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Vorgang",
+            "Rechnung",
+            "Buchung"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Einkauf: Zahlung mit 2 % Skonto",
+                "Rechnung 1.190 € brutto · Skonto 23,80 € = 20,00 € netto + 3,80 € Steuer",
+                "4400 Verbindlichkeiten 1.190,00 € an 2800 Bank 1.166,20 € + 6001 Nachlässe 20,00 € + 2600 Vorsteuer 3,80 €"
+              ],
+              "mono": [
+                2
+              ],
+              "detail": "**Erst brutto, dann aufteilen.** Der Skonto wird vom Bruttobetrag berechnet (2 % von 1.190 € = 23,80 €) und dann durch 1,19 geteilt: 20,00 € netto, 3,80 € Steuer. Weil der Betrieb weniger bezahlt hat, darf er auch nur weniger Vorsteuer abziehen — deshalb steht die Vorsteuer hier im Haben."
+            },
+            {
+              "zellen": [
+                "Verkauf: Kunde zahlt mit 2 % Skonto",
+                "Forderung 2.380 € brutto · Skonto 47,60 € = 40,00 € netto + 7,60 € Steuer",
+                "2800 Bank 2.332,40 € + 5001 Erlösberichtigungen 40,00 € + 4800 Umsatzsteuer 7,60 € an 2400 Forderungen 2.380,00 €"
+              ],
+              "mono": [
+                2
+              ],
+              "detail": "**Spiegelbildlich.** Der Erlös sinkt um 40 €, und auch die Umsatzsteuer, die an das Finanzamt geht, sinkt um 7,60 € — deshalb steht die Umsatzsteuer im Soll."
+            },
+            {
+              "zellen": [
+                "Rücksendung an den Lieferanten",
+                "Ware 100 € netto + 19 € Steuer",
+                "4400 Verbindlichkeiten 119 € an Wareneinkauf 100 € + 2600 Vorsteuer 19 €"
+              ],
+              "mono": [
+                2
+              ],
+              "detail": "**Die Gegenbuchung zum Einkauf.** Was beim Einkauf im Soll stand, steht bei der Rücksendung im Haben — einschließlich der Vorsteuer."
+            }
+          ]
+        },
+        {
+          "typ": "achtung",
+          "text": "Der häufigste Fehler: den ganzen Skontobetrag (23,80 €) auf Nachlässe buchen und die Vorsteuer vergessen. Dann ist der Einkauf zu billig und die Vorsteuer zu hoch angesetzt — das Finanzamt würde zu viel erstatten."
         }
       ]
     },
