@@ -877,7 +877,8 @@
       "liquiditaet": gLiquiditaet,
       "breakeven": gBreakeven,
       "durchlauf": gDurchlauf,
-      "balkenplan": gBalkenplan
+      "balkenplan": gBalkenplan,
+      "epk": gEpk
     }[daten.variante];
     if (bauer) bauer(buehne, daten);
     else buehne.appendChild(mkEl("p", "echo", "Bauteil „" + daten.variante + "“ ist noch nicht gebaut."));
@@ -1984,6 +1985,79 @@
 
     felder.forEach(function (i) { i.addEventListener("input", zeichne); });
     zeichne();
+  }
+
+  /* ---------- 17 · Ereignisgesteuerte Prozesskette ----------
+     Ereignisse als Sechsecke, Funktionen als abgerundete Rechtecke,
+     Konnektoren als Kreise; Organisationseinheit optional als Oval an der
+     Funktion. Ein Zweig teilt sich nach einem Konnektor in nebeneinander
+     liegende Wege. Jedes Element erklärt sich auf Klick; der Ablauf steht
+     zusätzlich als Text für Bildschirmleser bereit.                        */
+
+  function gEpk(buehne, d) {
+    var ARTNAME = { ereignis: "Ereignis", funktion: "Funktion", xor: "Konnektor XOR",
+                    und: "Konnektor UND", oder: "Konnektor ODER" };
+    var KSYM = { xor: "XOR", und: "∧", oder: "∨" };
+    var info = el("div", "epk-info");
+    info.setAttribute("aria-live", "polite");
+    var alle = [];
+    function knoten(e) {
+      var konn = KSYM[e.art];
+      var b = el("button", "epk-k epk-" + e.art);
+      b.type = "button";
+      if (konn) {
+        b.appendChild(el("span", "epk-sym", KSYM[e.art]));
+        b.setAttribute("aria-label", ARTNAME[e.art]);
+      } else {
+        b.appendChild(mkEl("span", "epk-text", e.text));
+      }
+      var zeile = el("div", "epk-zeile");
+      zeile.appendChild(b);
+      if (e.stelle) {
+        zeile.appendChild(el("span", "epk-stelle", e.stelle));
+      }
+      b.addEventListener("click", function () {
+        alle.forEach(function (x) { x.classList.remove("an"); x.setAttribute("aria-pressed", "false"); });
+        b.classList.add("an"); b.setAttribute("aria-pressed", "true");
+        info.innerHTML = "";
+        info.appendChild(el("span", "epk-info-art", ARTNAME[e.art]));
+        info.appendChild(mkEl("p", null, e.erklaerung || e.text || ""));
+      });
+      b.setAttribute("aria-pressed", "false");
+      alle.push(b);
+      return zeile;
+    }
+    function spalte(liste, kl) {
+      var s = el("div", "epk-spalte" + (kl ? " " + kl : ""));
+      liste.forEach(function (e) { s.appendChild(knoten(e)); });
+      return s;
+    }
+    var bild = el("div", "epk");
+    bild.appendChild(spalte(d.folge));
+    if (d.zweige && d.zweige.length) {
+      var z = el("div", "epk-zweige");
+      z.style.setProperty("--epk-n", d.zweige.length);
+      d.zweige.forEach(function (w, i) {
+        var sp = spalte(w, "epk-weg");
+        sp.setAttribute("role", "group");
+        sp.setAttribute("aria-label", (d.wegnamen && d.wegnamen[i]) || "Weg " + (i + 1));
+        z.appendChild(sp);
+      });
+      bild.appendChild(z);
+    }
+    buehne.appendChild(bild);
+    var leg = el("div", "epk-legende");
+    [["ereignis", "Ereignis: Zustand"], ["funktion", "Funktion: Tätigkeit"],
+     ["xor", "Konnektor"], ["stelle", "Organisationseinheit"]].forEach(function (p) {
+      var l = el("span", "epk-leg");
+      l.appendChild(el("span", "epk-mini epk-mini-" + p[0]));
+      l.appendChild(el("span", null, p[1]));
+      leg.appendChild(l);
+    });
+    buehne.appendChild(leg);
+    info.appendChild(mkEl("p", "epk-hinweis", d.hinweis || "Element anklicken, um es zu erklären."));
+    buehne.appendChild(info);
+    if (d.konvention) buehne.appendChild(mkEl("p", "epk-konvention", d.konvention));
   }
 
   /* ---------- 16 · Balkenplan ----------

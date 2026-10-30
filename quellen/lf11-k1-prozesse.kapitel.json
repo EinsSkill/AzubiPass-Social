@@ -6,66 +6,352 @@
   "untertitel": "Abteilungen denken senkrecht. Prozesse laufen quer.",
  "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Prozess verbindet mehrere Tätigkeiten zu einem Ergebnis.",
-          "Abteilungen können an verschiedenen Stationen desselben Vorgangs beteiligt sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du grenzt einen Geschäftsprozess mit Auslöser, Eingaben, Tätigkeiten, Ergebnis für einen Kunden und Beteiligten ab und benennst, wer für den ganzen Weg verantwortlich ist.",
+        "vorwissen_kurz": "Ein Betrieb ist in Abteilungen gegliedert. Die Arbeit für einen Kunden läuft aber meist durch mehrere davon.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Quer durch den Betrieb",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:geschaeftsprozess|Geschäftsprozess}} ist eine Folge zusammenhängender Tätigkeiten, die durch ein Ereignis ausgelöst wird und zu einem Ergebnis für einen Kunden führt. Der Kunde kann extern sein, etwa ein Modehändler, oder intern, etwa die Buchhaltung, die eine geprüfte Eingangsrechnung braucht. Das Organigramm zeigt, wer wem unterstellt ist. Der Prozess zeigt, welchen Weg ein Vorgang nimmt — und der verläuft meist quer zu den Abteilungen.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Händlerbestellung bei MAKEL",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestandteil",
+              "Bei MAKEL"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Auslöser",
+                  "Ein Modehaus bestellt per Händlerportal 120 Hoodies."
+                ]
+              },
+              {
+                "zellen": [
+                  "Eingaben",
+                  "Kundenstamm mit Konditionen, Artikelstamm, Lagerbestand, Kreditlimit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tätigkeiten",
+                  "Bestellung prüfen, Auftrag bestätigen, kommissionieren, verpacken, versenden, Rechnung stellen, Zahlung überwachen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beteiligte",
+                  "Vertrieb, Lager, Versand, Buchhaltung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis für den Kunden",
+                  "Ware ist pünktlich und vollständig im Laden, die Rechnung ist korrekt."
+                ]
+              },
+              {
+                "zellen": [
+                  "Prozessverantwortung",
+                  "Leitung Vertrieb für den gesamten Ablauf vom Eingang bis zur bezahlten Rechnung"
+                ]
+              }
+            ],
+            "fazit": "Der Prozess beginnt mit einem Ereignis beim Kunden und endet mit einem Ergebnis, das der Kunde wahrnimmt. „Rechnung gebucht“ wäre ein internes Zwischenergebnis, kein Ergebnis für das Modehaus.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Linie und Prozess",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Organigramm von MAKEL hat jede Abteilung eine Leitung, die ihren Mitarbeitenden Weisungen gibt. Das ist das **Leitungssystem**, bei MAKEL ein Einliniensystem. Jede Leitung achtet auf ihre Abteilung: Das Lager auf schnelle Kommissionierung, die Buchhaltung auf korrekte Belege. Für die Gesamtdauer einer Bestellung ist dabei niemand zuständig. Deshalb benennt MAKEL eine **Prozessverantwortliche**: Sie hat den ganzen Ablauf im Blick, misst seine Dauer und stößt Verbesserungen an. Sie ersetzt die Linienvorgesetzten nicht, sondern ergänzt sie quer zur Linie.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Ein Geschäftsprozess wird durch ein Ereignis ausgelöst, enthält Tätigkeiten und führt zu einem Ergebnis für einen internen oder externen Kunden. Er verläuft quer durch Abteilungen und wird aus Kundensicht beschrieben. Eine Auftragsabwicklung beginnt etwa mit der Bestellung und endet mit gelieferter Ware und Rechnung.",
-        "beispiele": [
-          "Eingang einer Kundenbestellung löst Prüfen, Bestätigen, Kommissionieren, Versenden und Rechnungsstellen aus.",
-          "Vertrieb, Lager, Versand und Buchhaltung arbeiten an einem Prozess, obwohl sie organisatorisch getrennt sind."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Prozessverantwortung in verschiedenen Leitungssystemen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im Einliniensystem kann die Prozessverantwortung Konflikte mit den Abteilungsleitungen auslösen, wenn nicht geklärt ist, wer bei einer Änderung entscheidet. Manche Betriebe lösen das mit einer Matrixorganisation, in der Prozess- und Abteilungsverantwortung bewusst nebeneinanderstehen. Andere legen fest, dass die Prozessverantwortliche Vorschläge macht und die betroffenen Leitungen gemeinsam entscheiden. Wichtig ist, dass die Regel bekannt ist, bevor der erste Streit entsteht.",
+                "id": "b1-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf1:k5-e2"
+                ],
+                "text": "Leitungssysteme und Organigramm",
+                "id": "b1-d1-v1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Für eine Auftragsabwicklung werden Auslöser, Tätigkeiten und Ergebnis festgelegt. Auslöser ist der Eingang der Bestellung; Ergebnis ist die gelieferte Ware mit Rechnung. Die Beteiligten werden über ihre Abteilungsgrenzen hinweg verbunden und eine Verantwortung für den Gesamtweg benannt.",
-        "typische_fehler": "Das Ergebnis wird aus Abteilungssicht formuliert oder der Prozess an einer Abteilungsgrenze beendet. Außerdem wird nur die Tätigkeit, nicht der Auslöser und der Kundennutzen beschrieben.",
         "verstaendnisfragen": [
-          "Welche drei Bestandteile gehören zum Geschäftsprozess? Auslöser, Tätigkeiten und Ergebnis für einen Kunden.",
-          "Wie verläuft ein Geschäftsprozess organisatorisch? Quer durch Abteilungen, nicht nur innerhalb einer Stelle."
-        ],
-        "pruefungsbezug": "Formuliere Prozessgrenzen mit Ereignis und Kundenergebnis und nenne die beteiligten Stellen in der tatsächlichen Reihenfolge.",
-        "merksatz": "Ein Geschäftsprozess beginnt mit einem Auslöser und endet mit einem wahrnehmbaren Kundenergebnis."
+          {
+            "frage": "Warum ist „Rechnung gebucht“ kein Ergebnis im Sinne des Prozesses?",
+            "antwort": "Weil das Modehaus davon nichts merkt. Ein Prozessergebnis wird aus Sicht des Kunden formuliert: Die Ware ist vollständig angekommen, die Rechnung stimmt. Das Buchen ist eine interne Tätigkeit auf dem Weg dorthin.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum braucht MAKEL eine Prozessverantwortliche, obwohl jede Abteilung eine Leitung hat?",
+            "antwort": "Jede Abteilungsleitung verantwortet ihren Teil. Ob die Bestellung insgesamt schnell und fehlerfrei läuft, hängt aber vor allem an den Übergaben zwischen den Abteilungen. Dafür braucht es jemanden, der den ganzen Weg im Blick hat.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Prozesse können Kern-, Unterstützungs- oder Führungsaufgaben enthalten.",
-          "Abteilungsübergänge sind besondere Prüfpunkte."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest betriebliche Abläufe Kern-, Unterstützungs- und Führungsprozessen zu und leitest ab, wie sie jeweils behandelt werden.",
+        "vorwissen_kurz": "Nicht jeder Prozess leistet unmittelbar etwas für den externen Kunden. Trotzdem braucht der Betrieb alle.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Rollen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Prozesse lassen sich nach ihrer Rolle einteilen. **Kernprozesse** erzeugen unmittelbar die Leistung, für die externe Kunden zahlen. **Unterstützungsprozesse** schaffen die Voraussetzungen dafür; ihre Kunden sind meist intern. **Führungsprozesse** planen und steuern das Unternehmen und legen fest, woran Erfolg gemessen wird. Die Einteilung hängt vom Geschäftsmodell ab: Was bei einem Hersteller ein Unterstützungsprozess ist, kann bei einem Dienstleister der Kern sein.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Prozesslandkarte von MAKEL",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prozessart",
+              "Prozesse bei MAKEL",
+              "Kunde"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kernprozesse",
+                  "Kollektion entwickeln, Hoodies herstellen, Händlerbestellungen abwickeln, Onlineshop-Bestellungen abwickeln, Reklamationen bearbeiten",
+                  "Händler, Endkundinnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Unterstützungsprozesse",
+                  "Stoffe beschaffen, Personal einstellen und abrechnen, Buchführung, IT betreiben, Stickmaschinen warten",
+                  "Fertigung, Vertrieb, alle Abteilungen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Führungsprozesse",
+                  "Jahresplanung, Controlling, Qualitätsmanagement, Nachhaltigkeitsstrategie",
+                  "Geschäftsführung, Gesellschafterin"
+                ]
+              }
+            ],
+            "fazit": "Die Kernprozesse von MAKEL entscheiden darüber, ob Händler und Endkundinnen zufrieden sind. Die übrigen Prozesse machen sie möglich oder geben ihnen die Richtung.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Verbesserung folgt daraus eine Reihenfolge: MAKEL steckt den größten Aufwand in die Kernprozesse, weil jede gewonnene Stunde dort bei den Kunden ankommt. Unterstützungsprozesse sollen vor allem zuverlässig und wirtschaftlich laufen. Die Betreuung der Bürorechner zum Beispiel hat MAKEL an einen IT-Dienstleister vergeben, weil MAKEL dort keinen Vorsprung gegenüber anderen gewinnen kann.",
+            "id": "b2-p2"
+          }
         ],
-        "erklaerung": "Kernprozesse schaffen unmittelbar Kundennutzen. Unterstützungsprozesse ermöglichen die Kernprozesse und werden häufig standardisiert. Führungsprozesse planen, steuern und kontrollieren. Die Schnittstellen zwischen diesen Bereichen müssen sichtbar bleiben, weil dort Wartezeit, Informationsverlust und Doppelerfassung entstehen.",
-        "beispiele": [
-          "Die Auftragsabwicklung ist ein Kernprozess, weil ihr Ergebnis der Kunde erhält.",
-          "Personal- oder IT-Unterstützung ermöglicht Kernprozesse; Planung und Kontrolle gehören zu Führungsprozessen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Beschaffung — Kern oder Unterstützung?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Stoffbeschaffung wird bei MAKEL als Unterstützungsprozess geführt, weil der Kunde sie nicht unmittelbar wahrnimmt. Seit MAKEL mit zertifizierter Bio-Baumwolle wirbt, hängt aber das Werbeversprechen an der Beschaffung. Deshalb wird sie enger gesteuert als andere Unterstützungsprozesse. Die Einteilung ist ein Werkzeug, keine feste Wahrheit.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Vertrieb, Lager und Buchhaltung beschweren sich jeweils über die anderen. Das deutet nicht automatisch auf eine einzelne schlechte Abteilung, sondern auf unklare Schnittstellen. Der Gesamtprozess wird dargestellt, Übergaben werden gemessen und eine Verantwortung für den Weg vom Auslöser bis zum Ergebnis eingerichtet.",
-        "typische_fehler": "Eine Abteilung wird als ganzer Prozess bezeichnet oder Kern-, Unterstützungs- und Führungsprozesse werden nach ihrer Wichtigkeit statt nach ihrer Funktion unterschieden.",
         "verstaendnisfragen": [
-          "Was macht ein Kernprozess? Er schafft unmittelbar Kundennutzen.",
-          "Warum sind Schnittstellen kritisch? Dort entstehen Warten, Informationsverlust und Doppelerfassung."
-        ],
-        "pruefungsbezug": "Ordne Prozessarten nach ihrer Funktion und suche bei Beschwerden zuerst nach Übergaben statt nach Schuldzuweisungen.",
-        "merksatz": "Der Kunde sieht den Gesamtprozess; Schnittstellen entscheiden, ob er reibungslos funktioniert."
+          {
+            "frage": "Ist die Reklamationsbearbeitung ein Kern- oder ein Unterstützungsprozess?",
+            "antwort": "Ein Kernprozess. Sie richtet sich unmittelbar an den externen Kunden und entscheidet mit darüber, ob er weiter bei MAKEL kauft.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum darf ein Unterstützungsprozess nicht vernachlässigt werden?",
+            "antwort": "Weil die Kernprozesse von ihm abhängen. Fällt die IT aus oder fehlt Stoff, steht auch die Auftragsabwicklung. Die Einteilung beschreibt die Rolle, nicht die Bedeutung.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "An einer Schnittstelle wechselt die Zuständigkeit.",
-          "Zeit kann aus Bearbeitung, Liegen, Transport und Prüfung bestehen."
+        "darstellung": "vollfassung",
+        "ziel": "Du findest in einem Ablauf die Schnittstellen, erkennst Warten, Informationsverlust, Doppelerfassung und unklare Zuständigkeit und schlägst eine Maßnahme vor.",
+        "vorwissen_kurz": "Eine Schnittstelle entsteht überall dort, wo ein Vorgang die Zuständigkeit wechselt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo Vorgänge hängen bleiben",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Innerhalb einer Abteilung kennt jeder die Abläufe. Probleme entstehen oft an den Übergängen: Der Vorgang landet in einem neuen Postfach, Informationen gehen unterwegs verloren, Daten werden noch einmal erfasst. Eine {{begriff:schnittstelle|Schnittstelle}} ist deshalb nicht nur eine Stelle im Ablauf, sondern oft der Ort, an dem Zeit und Qualität verloren gehen.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Händlerbestellung an vier Übergaben",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Übergabe",
+              "Was bei MAKEL passiert",
+              "Problem"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Händlerportal → Vertrieb",
+                  "Bestellung kommt per E-Mail als PDF und wird abgetippt",
+                  "Medienbruch, Tippfehler"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb → Lager",
+                  "Auftrag wird ausgedruckt und in den Ablagekorb gelegt",
+                  "Liegezeit bis zum nächsten Rundgang"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lager → Versand",
+                  "fehlende Größe wird mündlich gemeldet",
+                  "Information geht verloren, Kunde erfährt nichts"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versand → Buchhaltung",
+                  "Lieferschein wird gesammelt einmal pro Woche weitergegeben",
+                  "Rechnung geht bis zu fünf Tage später raus"
+                ]
+              }
+            ],
+            "fazit": "Keine Abteilung arbeitet schlecht. Der Vorgang verliert Zeit und Informationen zwischen ihnen.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Prozessverantwortliche schlägt drei Maßnahmen vor: Bestellungen aus dem Portal laufen direkt ins Warenwirtschaftssystem, das Lager sieht freigegebene Aufträge auf dem Bildschirm, und fehlende Größen werden im System vermerkt, sodass Vertrieb und Kunde automatisch eine Nachricht bekommen. Der Lieferschein löst die Rechnung noch am selben Tag aus. Zwei von vier Übergaben bleiben, aber ohne Medienbruch und Wartestapel.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Schnittstellen sind typische Bruchstellen: Vorgänge warten im nächsten Stapel, Informationen fehlen, Daten werden doppelt erfasst und Zuständigkeiten bleiben unklar. Ein Medienbruch zwischen Papier und digital ist besonders teuer. Prozessverbesserung beginnt daher mit dem Sichtbarmachen und Messen der Übergaben.",
-        "beispiele": [
-          "Eine unvollständige Übergabe löst Rückfragen und Nacharbeit aus.",
-          "Der Wechsel von digitalem Auftrag zu Papierbeleg und zurück verursacht Doppelerfassung und Übertragungsfehler."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Übergaben vollständig gestalten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wo eine Schnittstelle nötig ist, hilft eine feste Übergaberegel: Welche Angaben müssen vollständig sein, wann wird übergeben, und wer bestätigt den Empfang? Eine solche Regel kann in einer Verfahrensanweisung stehen und verhindert Rückfragen, die sonst an jeder Übergabe entstehen.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Im Betrieb beschwert sich jede Abteilung über die nächste. Der Prozess wird als Ganzes aufgenommen, vom Auslöser bis zum Kundenergebnis. An jeder Schnittstelle werden Wartezeit, Informationsverlust und erneute Dateneingabe geprüft. Daraus entstehen gemeinsame Kennzahlen für den Gesamtprozess statt isolierter Abteilungswerte.",
-        "typische_fehler": "Nur Bearbeitungszeiten innerhalb der Abteilungen werden gemessen. Medienbruch wird als technisches Detail statt als kostspielige Schnittstelle behandelt.",
         "verstaendnisfragen": [
-          "Welche Probleme entstehen an Schnittstellen? Warten, Informationsverlust, Doppelerfassung und unklare Zuständigkeit.",
-          "Was ist ein Medienbruch? Der Wechsel zwischen Medien wie digital und Papier, der erneute Erfassung und Fehler verursachen kann."
-        ],
-        "pruefungsbezug": "Nenne bei Prozessproblemen die Schnittstelle als Ursache und konkretisiere Wartezeit, Informationsverlust oder Medienbruch.",
-        "merksatz": "Prozesse scheitern selten am normalen Arbeitsschritt, sondern an der Übergabe."
+          {
+            "frage": "Warum ist der Medienbruch beim Abtippen der Portalbestellung besonders teuer?",
+            "antwort": "Weil die Daten bereits digital vorliegen und trotzdem erneut erfasst werden. Das kostet Zeit, verursacht Tippfehler und schafft eine zusätzliche Fehlerquelle, die später aufwendig gesucht werden muss.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Eine Abteilungsleitung sagt: „Bei uns läuft alles schnell.“ Warum kann die Bestellung trotzdem lange dauern?",
+            "antwort": "Weil die Zeit oft zwischen den Abteilungen verloren geht: in Ablagekörben, Postfächern und Wochenstapeln. Jede Abteilung misst nur ihren Teil; die Wartezeiten an den Übergaben sieht keine.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -185,7 +471,7 @@
               "text": "Planung, Steuerung, Controlling, Qualitätsmanagement. Sie greifen nicht selbst zu, sondern entscheiden, was die anderen tun und woran der Erfolg gemessen wird."
             }
           ],
-          "regel": "Die praktische Folgerung: Kernprozesse werden optimiert, Unterstützungsprozesse standardisiert oder ausgelagert. Wer beides gleich behandelt, verteilt seinen Aufwand falsch."
+          "regel": "Die praktische Folgerung: Kernprozesse werden vorrangig verbessert, Unterstützungsprozesse eher standardisiert oder auch ausgelagert. Wer beides gleich behandelt, verteilt seinen Aufwand oft falsch."
         },
         {
           "typ": "achtung",
@@ -205,7 +491,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Eine **{{begriff:schnittstelle|Schnittstelle}}** ist jede Stelle, an der ein Vorgang die Zuständigkeit wechselt. ==Fast alle Prozessprobleme sitzen genau dort== — nicht innerhalb der Abteilungen, sondern zwischen ihnen."
+          "text": "Eine **{{begriff:schnittstelle|Schnittstelle}}** ist jede Stelle, an der ein Vorgang die Zuständigkeit wechselt. ==Viele Prozessprobleme sitzen genau dort== — nicht innerhalb der Abteilungen, sondern zwischen ihnen."
         },
         {
           "typ": "tabelle",
