@@ -261,3 +261,14 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K04:** Vorschläge nach Bindungsintensität; horizontale/vertikale/diagonale Zusammenschlüsse mit Marktwirkung; vier Kartellrechtssituationen, Kronzeugenregelung; Vergleich Einkaufskooperation vs. Übernahme mit Prüfschritten.
 - **K05:** Indikatorenmix (Übungswerte) → Abschwung als Hypothese; Inflation 3 % und Reallohn; Wirkungskette Investitionsförderung (15 % → 43.775 €) mit Mitnahmeeffekt; Szenario-Entscheidungen mit Auslösern.
 - **K06:** Transmission bis MAKEL (Kontokorrent sofort, Festzins später); Zins in Prozentpunkten und Aufwertung für Ein-/Verkauf; EU/WTO/IWF/Weltbank im Alltag von MAKEL; Risiko-Maßnahme-Kosten-Ziel-Empfehlung.
+
+## IK LF13 · Betriebliche Problemlösungsprozesse innovativ durchführen
+
+- Durchgängiger Fall „verspätete Firmenaufträge" über alle vier Kapitel konsistent: 20 % (10/50) → Pilot 10 % (3/30), Wartezeit vor Einplanung 4,0 → 0,8 Tage, Bestand +4 %, Budget 3.000 € / Umsetzung 500 €, Balkenplan 11 + 1 Tag.
+- **K01:** vorschnelle Lösung → prüfbare Problemfrage; Durchlaufzeit nach Bearbeitung/Wartezeit (4 + 6 Tage); verspätete Aufträge nach Ursache aufgeschlüsselt (Freigabe 6, Überlastung 3, Material 1), Datenlücke August; Ziel mit Neben-/Rahmenbedingungen und Konflikten.
+- **K02:** Rechercheprotokoll intern/extern/englisch mit Werbung gekennzeichnet; Quellenprüfung (Wer/Wann/Belegt/Bestätigt), AVV bei neuen Werkzeugen; morphologischer Kasten zu Varianten A/B; Ausschluss (Software 18.000 €), Nutzwert, Wirtschaftlichkeit → gestufte Empfehlung.
+- **K03:** Umsetzungsauftrag mit ergänzter Abgrenzung/Termin; Risikotabelle mit Ausnahmeregel; Pilotregeln vorab, Ergebnis knapp erreicht, Platzhalterdaten als Beobachtung; Abweichung auf kritischem Pfad aufgefangen, PDCA.
+- **K04:** Bericht mit Beleg je Kernaussage und Kennzahldefinition; Pilotbewertung in Prozentpunkten/relativ mit Vergleichbarkeitsgrenze; GF-Präsentation mit vorbereiteten Rückfragen; Lessons Learned mit Ursache/Maßnahme, Transfer zur Fachaufgabe ohne Gleichsetzung.
+
+## Stand gesamt
+- **KfB und IK vollständig:** 602 von 602 Abschnitten als Vollfassung (geprüft mit `vertiefung.ist_vollfassung` über alle Kapitel-Dateien).

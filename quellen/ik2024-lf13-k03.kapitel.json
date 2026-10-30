@@ -6,86 +6,470 @@
   "untertitel": "Ziele und Maßnahmen in Arbeitspakete übersetzen, Verantwortlichkeiten und Risiken koordinieren, einen Piloten mit klaren Regeln durchführen und Abweichungen bearbeiten.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Die Lösung ist ausgewählt (Kapitel 2).",
-          "Ein Projektauftrag regelt Ziel, Rahmen und Zuständigkeiten (LF 2)."
+        "darstellung": "vollfassung",
+        "ziel": "Du übersetzt die gewählte Lösung in einen Umsetzungsauftrag mit messbarem Ziel, Verantwortung, Entscheidungsweg und Ressourcen und prüfst ihn auf Vollständigkeit.",
+        "vorwissen_kurz": "Die Entscheidung ist gefallen: Zuerst wird die organisatorische Lösung umgesetzt. Ohne klaren Auftrag bleibt sie eine gute Idee.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Beschluss zum Auftrag",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Lösung wird erst wirksam, wenn sie umgesetzt wird. Der **Umsetzungsauftrag** hält fest, was genau eingeführt wird, welches **messbare Ziel** erreicht werden soll, wer **verantwortlich** ist, wer bei Konflikten **entscheidet** und welche **Ressourcen** zur Verfügung stehen. Bei MAKEL Studio ist die erste Stufe ein Pflichtfeld im Warenwirtschaftssystem: Ohne eingetragenes Freigabedatum kann ein Firmenauftrag nicht zur Produktion freigegeben werden. Damit wird die Verantwortung für die Freigabe sichtbar, ohne neue Software zu kaufen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Den Auftrag auf Vollständigkeit prüfen",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüffrage",
+              "Antwort im Auftrag",
+              "vollständig?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Was wird eingeführt?",
+                  "Pflichtfeld „Kundenfreigabe erteilt am\", Sperre für Produktionsstart",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Woran wird Erfolg gemessen?",
+                  "Verspätungsquote der Pilotaufträge höchstens 10 %",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wer setzt um?",
+                  "Marlene Voß für den Vertrieb, IT-Dienstleisterin für die Einrichtung",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wer entscheidet bei Konflikten?",
+                  "Tobias Renner",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Welche Mittel gibt es?",
+                  "500 €, drei Tage IT-Dienstleisterin",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was gehört nicht dazu?",
+                  "Freigabe-Link, Änderungen am Onlineshop",
+                  "ergänzt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bis wann?",
+                  "Pilot abgeschlossen bis Ende Januar",
+                  "ergänzt"
+                ]
+              }
+            ],
+            "fazit": "Zwei Punkte fehlten im ersten Entwurf: die Abgrenzung und der Termin. Erst mit ihnen ist der Auftrag vollständig.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein unvollständiger Auftrag führt zu Missverständnissen. Fehlt die Abgrenzung, beginnt die IT-Dienstleisterin vielleicht schon mit dem Freigabe-Link, der erst später kommen soll. Fehlt der Termin, zieht sich die Umsetzung. Fehlt der Entscheidungsweg, bleibt ein Konflikt zwischen Vertrieb und Produktion ungelöst liegen. Deshalb wird der Auftrag schriftlich festgehalten und von allen Beteiligten bestätigt.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Nach der Entscheidung wird die Lösung in einen Umsetzungsauftrag übersetzt: Was genau wird eingeführt? Welches messbare Ziel gilt? Wer verantwortet die Umsetzung, wer entscheidet bei Konflikten? Welche Ressourcen stehen zur Verfügung? Das Ziel aus der Analyse wird übernommen, ergänzt um Zwischenziele für den Piloten. Ein schriftlicher Auftrag schützt vor späteren Missverständnissen.",
-        "beispiele": [
-          "Lösung: Pflichtfeld „Kundenfreigabe erteilt am“ im Warenwirtschaftssystem; ohne Eintrag kein Produktionsstart.",
-          "Zwischenziel Pilot: Bei 30 Pilotaufträgen ist die Freigabe in allen Fällen vor dem Produktionsstart vermerkt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kleine Schritte statt großer Wurf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Lösung in Stufen einzuführen, verringert das Risiko. Das Pflichtfeld ist schnell eingerichtet und zeigt früh, ob die Verantwortung für Freigaben funktioniert. Der Freigabe-Link folgt, wenn der Datenschutz geklärt ist. So lernt MAKEL Studio aus jeder Stufe für die nächste.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Yuki Bergmann gibt Variante B frei. Luca Petrelli formuliert den Umsetzungsauftrag: Pflichtfeld einführen, Vertrieb schulen, Pilot mit Firmenaufträgen einer Kundengruppe im Januar, Ziel: Verspätungsquote der Pilotaufträge höchstens 10 %. Verantwortlich: Marlene Voss; Entscheidungen bei Konflikten: Tobias Renner.",
-        "typische_fehler": "Mit der Umsetzung beginnen, ohne Ziel, Verantwortung und Entscheidungsweg festzulegen.",
         "verstaendnisfragen": [
-          "Was gehört in einen Umsetzungsauftrag? Lösung, messbares Ziel, Verantwortliche, Entscheidungsweg, Ressourcen.",
-          "Wozu dienen Zwischenziele? Sie machen den Fortschritt im Piloten prüfbar."
-        ],
-        "pruefungsbezug": "Ziele und Maßnahmen in einen Umsetzungsauftrag übersetzen.",
-        "merksatz": "Umsetzungsauftrag = Lösung + messbares Ziel + Verantwortung + Entscheidungsweg + Ressourcen."
+          {
+            "frage": "Was gehört in einen Umsetzungsauftrag?",
+            "antwort": "Lösung, messbares Ziel, Verantwortung, Entscheidungsweg, Ressourcen, Abgrenzung und Termin.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum wird festgelegt, wer bei Konflikten entscheidet?",
+            "antwort": "Damit Streitfragen zwischen Abteilungen nicht liegen bleiben und die Umsetzung blockieren.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Arbeitspakete und Netzpläne kennst du aus LF 2.",
-          "Manche Arbeiten können erst beginnen, wenn andere fertig sind."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst die Umsetzung in Arbeitspaketen mit Ergebnis, Dauer, Verantwortung und Abhängigkeiten, bestimmst den kritischen Pfad und ordnest Risiken Gegenmaßnahmen zu.",
+        "vorwissen_kurz": "Das Pflichtfeld muss konzipiert, eingerichtet, erklärt und erprobt werden. Was hängt wovon ab?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Pakete, Pfad und Risiken",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Umsetzung wird in **Arbeitspakete** zerlegt. Jedes Paket hat ein Ergebnis, eine Dauer, eine verantwortliche Person und gegebenenfalls Voraussetzungen. Aus den Abhängigkeiten ergibt sich der **kritische Pfad**: die längste Kette, die die Mindestdauer des Projekts bestimmt. Pakete außerhalb haben Puffer. Zusätzlich werden **Risiken** gesammelt, nach Eintrittswahrscheinlichkeit und Auswirkung bewertet und mit Gegenmaßnahmen versehen.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Risiken und Gegenmaßnahmen",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Risiko",
+              "Wahrscheinlichkeit",
+              "Auswirkung",
+              "Gegenmaßnahme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "IT-Dienstleisterin hat erst eine Woche später Zeit",
+                  "mittel",
+                  "Pilot verschiebt sich, kritischer Pfad",
+                  "Termin früh fest buchen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb umgeht das Pflichtfeld mit Platzhalterdatum",
+                  "mittel",
+                  "Ziel wird verfehlt, Daten falsch",
+                  "Schulung, Stichprobenprüfung durch Marlene Voß"
+                ]
+              },
+              {
+                "zellen": [
+                  "eiliger Großauftrag ohne schriftliche Freigabe",
+                  "gering",
+                  "Produktion blockiert",
+                  "Ausnahmeregel: Tobias Renner gibt im Einzelfall frei, Vermerk im System"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kunden verstehen nicht, warum Freigabe nötig ist",
+                  "gering",
+                  "Rückfragen, Verzögerung",
+                  "Hinweis im Angebot und in der Auftragsbestätigung"
+                ]
+              }
+            ],
+            "fazit": "Die Risiken sind beherrschbar, wenn die Gegenmaßnahmen von Anfang an eingeplant werden. Das größte Risiko liegt auf dem kritischen Pfad bei der IT-Einrichtung.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der kritische Pfad zeigt, wo Verzögerungen das Projekt verschieben. Dauert die Einrichtung im System einen Tag länger, verschiebt sich der Pilot. Dauert die Kurzanleitung einen Tag länger, passiert nichts, weil sie zwei Tage Puffer hat. Deshalb wird die IT-Dienstleisterin früh gebucht, während die Kurzanleitung flexibel geschrieben werden kann. Die Ausnahmeregel für Eilaufträge ist wichtig, damit das Pflichtfeld nicht zur Blockade wird.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Umsetzung wird in Arbeitspakete gegliedert, jedes mit Ergebnis, Dauer, Verantwortlichem und Abhängigkeiten. Ein Terminplan zeigt, welche Pakete nacheinander laufen müssen und welche parallel laufen können. Der kritische Pfad ist die längste Kette abhängiger Pakete; er bestimmt die Mindestdauer. Pakete mit Puffer können sich verzögern, ohne das Ende zu verschieben. Parallelisierung ist nur möglich, wenn die fachlichen Abhängigkeiten es wirklich erlauben. Zur Planung gehören auch Risiken: Was kann schiefgehen, wie wahrscheinlich, wie schwer — und welche Gegenmaßnahme gibt es?",
-        "beispiele": [
-          "Drei zwingend aufeinanderfolgende Pakete mit 2, 3 und 1 Tag: Mindestdauer 6 Arbeitstage.",
-          "Risiko: Die IT-Dienstleisterin hat im Januar keine Zeit → Termin früh vereinbaren."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Risiko und Problem",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Risiko ist etwas, das eintreten könnte; ein Problem ist bereits eingetreten. Risikomanagement versucht, Risiken vorher zu erkennen und zu begrenzen. Ist ein Risiko eingetreten, wird es wie eine Abweichung bearbeitet.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Luca plant: Konzept (2 Tage), dann Einrichtung im System (3 Tage) und parallel Kurzanleitung (2 Tage); nach der Einrichtung die Schulung des Vertriebs (1 Tag); wenn Schulung und Anleitung fertig sind, der Pilot (5 Tage). Der kritische Pfad läuft über Konzept, Einrichtung, Schulung und Pilot: 11 Tage. Die Anleitung hat zwei Tage Puffer.",
-        "typische_fehler": "Pakete parallel planen, obwohl sie fachlich aufeinander aufbauen.",
         "verstaendnisfragen": [
-          "Was ist der kritische Pfad? Die längste Kette voneinander abhängiger Arbeitspakete; sie bestimmt die Mindestdauer.",
-          "Was gehört zu einem Arbeitspaket? Ergebnis, Dauer, Verantwortlicher, Abhängigkeiten."
-        ],
-        "pruefungsbezug": "Projektplan mit Zuständigkeiten, Abhängigkeiten und Risiken erstellen.",
-        "merksatz": "Arbeitspakete mit Ergebnis, Dauer, Verantwortung und Abhängigkeit; kritischer Pfad = Mindestdauer; Risiken mit Gegenmaßnahmen planen."
+          {
+            "frage": "Was bestimmt der kritische Pfad?",
+            "antwort": "Die Mindestdauer des Projekts, weil er die längste Kette abhängiger Pakete ist.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum braucht das Pflichtfeld eine Ausnahmeregel?",
+            "antwort": "Damit eilige Aufträge nicht blockiert werden, wenn eine Freigabe im Einzelfall anders vorliegt.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Neue Abläufe haben Anfangsschwierigkeiten.",
-          "Ein Fehler bei allen Aufträgen wäre teuer."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst einen Piloten mit vorher festgelegten Messgrößen, Grenzwerten, Entscheidern und Rückfallweg durch, dokumentierst Beobachtungen und entscheidest auf dieser Grundlage über die Einführung.",
+        "vorwissen_kurz": "Das Pflichtfeld soll zuerst bei 30 Firmenaufträgen erprobt werden, bevor es für alle gilt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Begrenzt erproben, vorher Regeln festlegen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein **Pilot** erprobt eine Lösung in begrenztem Umfang, bevor sie für alle eingeführt wird. Damit das Ergebnis aussagekräftig ist, werden vorher festgelegt: die **Messgrößen**, etwa Verspätungsquote und Wartezeit bis zur Einplanung; die **Grenzwerte**, ab denen der Pilot als erfolgreich gilt oder abgebrochen wird; wer **entscheidet**; und der **Rückfallweg**, falls etwas schiefgeht. Während des Piloten werden Beobachtungen dokumentiert, auch solche, die nicht in den Kennzahlen stehen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Pilotregeln und Ergebnis",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Festlegung vorab",
+              "Wert",
+              "Ergebnis nach 30 Aufträgen"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Verspätungsquote Ziel",
+                  "höchstens 10 %",
+                  "3 von 30 = 10 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wartezeit Freigabe bis Einplanung",
+                  "höchstens 1 Tag",
+                  "durchschnittlich 0,8 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abbruchgrenze",
+                  "mehr als 3 blockierte Eilaufträge",
+                  "1 Eilauftrag, über Ausnahmeregel gelöst"
+                ]
+              },
+              {
+                "zellen": [
+                  "Entscheider",
+                  "Tobias Renner",
+                  "Einführung für alle Firmenaufträge freigegeben"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückfallweg",
+                  "Pflichtfeld deaktivieren, bisheriger Ablauf",
+                  "nicht nötig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beobachtung",
+                  "—",
+                  "zwei Vertriebskräfte trugen zunächst Platzhalterdaten ein, nach Hinweis korrigiert"
+                ]
+              }
+            ],
+            "fazit": "Der Pilot hat die Ziele knapp erreicht, ohne die Abbruchgrenze zu berühren. Die Beobachtung zu Platzhalterdaten zeigt, wo die Stichprobenprüfung weiter nötig ist.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die vorher festgelegten Regeln machen die Entscheidung einfach und fair. Niemand kann das Ergebnis im Nachhinein schönreden oder schlechtreden, weil die Maßstäbe feststanden. Gleichzeitig zeigt die Beobachtung zu den Platzhalterdaten, dass Kennzahlen nicht alles erfassen: Ohne die Stichprobe von Marlene Voß wäre aufgefallen, dass das Feld ausgefüllt war, aber nicht, dass die Daten falsch waren. Bei der Einführung für alle wird die Stichprobe deshalb beibehalten.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Ein Pilot erprobt die Lösung zunächst in einem begrenzten Bereich — etwa für eine Kundengruppe oder einen Zeitraum. Vorher werden festgelegt: Was wird gemessen? Welche Grenzen dürfen nicht überschritten werden (Qualität, Liefertermine, Sicherheit)? Wer entscheidet über Abbruch oder Anpassung? Wie sieht der Rückfallweg aus, wenn es nicht funktioniert? Diese Regeln werden vor dem Start festgelegt, nicht erst nach einem Fehlschlag. Während des Piloten werden Beobachtungen und Probleme dokumentiert.",
-        "beispiele": [
-          "Abbruchregel: Verspätet sich mehr als jeder fünfte Pilotauftrag, entscheidet Tobias Renner nach Rücksprache über Anpassung oder Rückkehr zum alten Ablauf.",
-          "Rückfallweg: Das Pflichtfeld kann in fünf Minuten deaktiviert werden."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Vergleichbarkeit des Piloten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Pilot ist nur dann aussagekräftig, wenn die Pilotaufträge mit den bisherigen vergleichbar sind. Werden nur einfache Aufträge ausgewählt, sieht das Ergebnis besser aus, als es im Alltag wäre. Deshalb werden die 30 Aufträge nacheinander so genommen, wie sie hereinkommen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Der Pilot startet mit 30 Aufträgen von Agenturkunden. Marlene führt ein kurzes Protokoll: Am dritten Tag blockiert das Pflichtfeld einen Eilauftrag, weil der Kunde telefonisch freigegeben hat. Das Team ergänzt sofort die Option „telefonische Freigabe, Notiz Pflicht“ — eine Anpassung im Rahmen der vereinbarten Regeln.",
-        "typische_fehler": "Ein Pilotproblem ohne Prüfung sofort auf alle Aufträge ausrollen — oder Erfolgskriterien erst hinterher festlegen.",
         "verstaendnisfragen": [
-          "Warum ein Pilot? Um Risiken zu begrenzen und Erfahrungen vor dem breiten Einsatz zu sammeln.",
-          "Was wird vor dem Pilotstart festgelegt? Messgrößen, Grenzwerte, Zuständigkeit für Abbruch, Rückfallweg."
-        ],
-        "pruefungsbezug": "Einen Piloten mit Abbruch- und Anpassungsregeln planen.",
-        "merksatz": "Pilot = begrenzt erproben; vorher Messgrößen, Grenzwerte, Entscheider und Rückfallweg festlegen; Beobachtungen dokumentieren."
+          {
+            "frage": "Was wird vor einem Pilotversuch festgelegt?",
+            "antwort": "Messgrößen, Grenzwerte, Entscheider und ein Rückfallweg.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum werden auch Beobachtungen dokumentiert, die nicht in den Kennzahlen stehen?",
+            "antwort": "Weil Kennzahlen nicht alles erfassen, etwa ob eingetragene Daten richtig sind.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Pläne treffen selten genau ein.",
-          "Der PDCA-Zyklus beschreibt kontinuierliche Verbesserung (LF 6)."
+        "darstellung": "vollfassung",
+        "ziel": "Du bearbeitest Abweichungen im Projekt methodisch von Soll-Ist-Vergleich über Ursache und Auswirkung bis zu Maßnahme oder Eskalation und verankerst die Lösung mit dem PDCA-Zyklus als dauerhafte Verbesserung.",
+        "vorwissen_kurz": "Während der Umsetzung läuft nicht alles nach Plan. Die Einrichtung im System dauert länger als geplant.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Abweichung erkennen und bearbeiten",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Abweichung wird in festen Schritten bearbeitet. Der **Soll-Ist-Vergleich** zeigt, wo das Projekt vom Plan abweicht. Dann wird die **Ursache** geklärt und die **Auswirkung** bewertet: Liegt das Paket auf dem kritischen Pfad, verschiebt sich das Projektende? Daraus folgt eine **Maßnahme** oder, wenn die eigenen Befugnisse nicht reichen, eine **Eskalation** an die entscheidende Person. Alles wird **dokumentiert**. Nach dem Projekt sorgt der **PDCA-Zyklus** aus Planen, Umsetzen, Prüfen und Handeln dafür, dass die Verbesserung dauerhaft bleibt und weiterentwickelt wird.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Abweichung bearbeitet",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Soll-Ist",
+                  "Einrichtung im System: Soll 3 Tage, Ist 4 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ursache",
+                  "Sperrlogik musste mit der bestehenden Auftragsfreigabe abgestimmt werden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auswirkung",
+                  "Paket liegt auf dem kritischen Pfad; Pilot startet einen Tag später"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahme",
+                  "Schulung am selben Nachmittag statt am nächsten Tag, Pilotende bleibt im Rahmen von 12 Tagen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eskalation",
+                  "nicht nötig, Planrahmen eingehalten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Dokumentation",
+                  "im Projektprotokoll mit Datum und Begründung"
+                ]
+              }
+            ],
+            "fazit": "Die Verzögerung lag auf dem kritischen Pfad, konnte aber durch eine gestraffte Schulung aufgefangen werden. Das Projekt bleibt im Rahmen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit der Einführung ist die Arbeit nicht beendet. Im PDCA-Zyklus wird die Verspätungsquote weiter monatlich geprüft. Steigt sie wieder, wird nach der Ursache gesucht: Werden Platzhalterdaten eingetragen? Sind neue Engpässe entstanden, etwa in der Veredelung? Der nächste Zyklus könnte der Freigabe-Link sein, sobald der Datenschutz geklärt ist. So wird aus einem Projekt ein Prozess der fortlaufenden Verbesserung.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Während der Umsetzung wird regelmäßig ein Soll-Ist-Vergleich gemacht: Termine, Kosten, Zielerreichung, Qualität. Abweichungen werden analysiert (Ursache?), bewertet (wie schwer?) und bearbeitet (Gegenmaßnahme, Planänderung oder Eskalation an den Entscheider). Der PDCA-Zyklus — planen, umsetzen, prüfen, handeln — macht daraus einen fortlaufenden Lernprozess. Änderungen am Plan werden dokumentiert und kommuniziert.",
-        "beispiele": [
-          "Einrichtung dauert vier statt drei Tage — liegt auf dem kritischen Pfad, also verschiebt sich der Pilot.",
-          "Die Kurzanleitung dauert einen Tag länger — Puffer vorhanden, kein Einfluss aufs Ende."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wann eskaliert wird",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eskaliert wird, wenn eine Abweichung Ziel, Budget oder Termin gefährdet und die Projektverantwortliche sie nicht selbst lösen kann. Eine frühe Eskalation ist kein Versagen, sondern gibt der entscheidenden Person die Möglichkeit, rechtzeitig zu handeln.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die Einrichtung im System verzögert sich um einen Tag, weil die IT-Dienstleisterin krank ist. Luca prüft: Das Paket liegt auf dem kritischen Pfad, der Pilotstart verschiebt sich um einen Tag. Er informiert Tobias und die Agenturkunden der Pilotgruppe, dokumentiert die Änderung und plant keine zusätzlichen Maßnahmen, weil das Ziel weiterhin erreichbar ist.",
-        "typische_fehler": "Abweichungen verschweigen oder ohne Ursachenanalyse hektisch gegensteuern.",
         "verstaendnisfragen": [
-          "Wie wird mit einer Abweichung umgegangen? Ursache analysieren, Auswirkung bewerten, Maßnahme oder Eskalation, dokumentieren.",
-          "Welche Phasen hat der PDCA-Zyklus? Plan, Do, Check, Act."
-        ],
-        "pruefungsbezug": "Abweichungen methodisch bearbeiten.",
-        "merksatz": "Soll-Ist vergleichen → Ursache → Auswirkung (kritischer Pfad?) → Maßnahme oder Eskalation → dokumentieren; PDCA als Dauerschleife."
+          {
+            "frage": "Welche Schritte gehören zur Bearbeitung einer Abweichung?",
+            "antwort": "Soll-Ist-Vergleich, Ursache, Auswirkung, Maßnahme oder Eskalation und Dokumentation.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Wofür stehen die vier Schritte des PDCA-Zyklus?",
+            "antwort": "Plan, Do, Check, Act: planen, umsetzen, prüfen, handeln.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
