@@ -230,3 +230,13 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K04:** Vergleichbarkeitsprüfung inkl. netto aus brutto; Bezugskalkulation mit/ohne Skonto (922/940/930 €); Dollar-Angebot mit Fracht/Zoll und Kursänderung (+380,95 €), Kurssicherung; Mindestbedingungen vor Nutzwertanalyse, Stabilitätsprüfung der Gewichte.
 - **K05:** Freigaberegeln nach Wertgrenzen; Wareneingangsprotokoll mit Mindermenge; Rechnungsprüfung inkl. § 14 UStG-Pflichtangaben, E-Rechnung (Empfang seit 2025, Ausstellung für MAKEL ab 2027); Klärung mit Nachlieferung und Skontozahlung 932,96 €.
 - **K06:** Störungen einordnen (Verzug/Schlechtleistung/höhere Gewalt); Mängelmitteilung mit Vorbehalt zur Verspätung; Verzögerungsschaden 420 €, Deckungskauf; Lieferantenbewertung in Prozentpunkten mit ursachengerechten Maßnahmen.
+
+## IK LF7 · Logistik- und Lagerprozesse koordinieren, umsetzen und überwachen
+
+- **Rechtsstand geprüft:** VerpackDG ist veröffentlicht (gesetze-im-internet.de/verpackdg), PPWR gilt seit 12.8.2026 – Basistext K05 a3 bestätigt; Vollfassung bleibt bei Rollen/Pflichten ohne zusätzliche Fristzahlen. ADR nur als „jeweils geltende Fassung".
+- **K01:** Sieben R am Vereinsauftrag mit Zielkonflikt; Umschläge zählen und reduzieren (Paletten, Prüfung an der Rampe); Abgleich Avis/Lieferschein/Zählung/Buchung (90 statt 100); Schwachstellen und Medienbrüche im Wareneingang mit Maßnahmen.
+- **K02:** Artikelstruktur nach Varianten und Zugriffen; kombinierte Platzvergabe je Bereich, FIFO für Druckfarben, Gefahrstofflager; auftrags- vs. serienorientiert (15 vs. 25 Positionen/h); Fehlerquote 1,5 % → 0,3 % nach Pick-by-Scan mit gleicher Definition.
+- **K03:** Fördermittel je Weg (Rollenbahn, kein FTS); Verkehrsträger je Sendung, Spediteur/Frachtführer, Paket vs. Stückgut; kritische Menge 75 Packstücke plus Termintreue/Schadensquote; Bündelung, Kartongrößen, Lkw–Bahn, Gefahrgut nur mit Freigabe.
+- **K04:** Peitscheneffekt in Zahlen (+10/20/40/60 %); Push/Pull je Leistung, Zwei-Behälter-Kanban; Containerweg Rotterdam mit Freigaben (vorhanden ≠ verfügbar), EORI/EUSt; Störungsfall mit drei Aufträgen, nur einer betroffen.
+- **K05:** Kennzahlen zweier Lagerbereiche (Umschlag 6 vs. 3); Kapitalbindung und Veraltung bei kleineren Bestellungen; Verpackungsrollen und Pflichten je Verpackungsart; Kartontest mit Gesamtbilanz (1.270 € → 1.930 €).
+- **Hinweis für Lukes:** Schreibweise „Marlene Voss" in mehreren Aufgaben-/Checktexten (z. B. LF7 K4 check-1) neben „Voß" – nicht geändert, weil Check-Fragetexte in den Lernstand-Fingerabdruck eingehen.

@@ -6,86 +6,444 @@
   "untertitel": "Wozu gelagert wird, welche Lagersysteme und Platzvergaben es gibt und wie Aufträge zuverlässig zusammengestellt werden.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Lagerung überbrückt Zeit.",
-          "Lagerbestände binden Kapital (LF 4)."
+        "darstellung": "vollfassung",
+        "ziel": "Du beschreibst die Aufgaben eines Lagers, analysierst die Artikelstruktur von MAKEL Studio nach Menge, Varianten und Umschlag und leitest daraus Anforderungen an die Lagerorganisation ab.",
+        "vorwissen_kurz": "Im Lager von MAKEL Studio liegen Rohlinge in vielen Farben und Größen, fertige Kollektionsteile und Verpackungsmaterial. Nicht alles braucht dieselbe Organisation.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wozu gelagert wird",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Lager erfüllt mehrere Aufgaben. Es **sichert** die Versorgung, wenn ein Lieferant ausfällt oder sich verspätet. Es **gleicht aus**, wenn Beschaffung und Verbrauch unterschiedlich verlaufen, etwa bei einer Großbestellung, die über Wochen verbraucht wird. Und es **bildet Sortimente**, wenn Aufträge aus vielen Artikeln zusammengestellt werden, etwa Onlinebestellungen in verschiedenen Farben und Größen. Welche Organisation passt, hängt von der **Artikelstruktur** ab: Wie viele Artikel und Varianten gibt es, wie groß sind sie, wie oft werden sie gebraucht?",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Artikelstruktur im Lager von MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Artikelgruppe",
+              "Varianten",
+              "Zugriffe pro Woche",
+              "Anforderung an das Lager"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "schwarze Hoodie-Rohlinge S–XL",
+                  "4",
+                  "über 200",
+                  "nah an der Veredelung, schnell greifbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohlinge in Saisonfarben",
+                  "rund 40",
+                  "je 0 bis 20",
+                  "viel Platz für wechselnde Bestände"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kollektionsteile für den Onlineshop",
+                  "rund 300",
+                  "je 1 bis 10",
+                  "übersichtlich für Einzelentnahmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kartons und Füllmaterial",
+                  "6",
+                  "über 100",
+                  "direkt am Packtisch"
+                ]
+              }
+            ],
+            "fazit": "Wenige Artikel werden sehr oft gebraucht, viele nur selten. Das spricht für unterschiedliche Lagerbereiche statt einer einheitlichen Organisation.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Aus der Artikelstruktur folgen Gestaltungsentscheidungen. Schnelldreher wie schwarze Rohlinge gehören nah an den Ort, an dem sie gebraucht werden, damit die Wege kurz sind. Langsamdreher dürfen weiter entfernt oder höher liegen. Viele Varianten mit schwankenden Beständen brauchen eine flexible Platzvergabe. Wer das nicht beachtet, verschwendet täglich Zeit mit Laufwegen und Suchen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Lager erfüllen verschiedene Aufgaben: Sicherung (Lieferausfälle und Bedarfsschwankungen abfedern), Ausgleich (zeitliche und mengenmäßige Unterschiede zwischen Beschaffung, Produktion und Absatz), Sortimentsbildung (Kundenaufträge aus vielen Artikeln zusammenstellen) und manchmal Veredelung oder Reifung. Nach der Stellung im Ablauf unterscheidet man Eingangslager (Rohstoffe), Zwischenlager (halbfertige Teile) und Fertigwarenlager. Welche Lagerorganisation passt, hängt von der Artikelstruktur ab: Anzahl der Artikel und Varianten, Größe und Gewicht, Umschlagshäufigkeit, Empfindlichkeit.",
-        "beispiele": [
-          "Rohlinge in 6 Farben × 6 Größen: 36 Varianten, kleine Kartons, mittlere Umschlagshäufigkeit.",
-          "Fertige Kundenaufträge warten im Fertigwarenlager auf die Abholung durch den Paketdienst."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Lager als Kostenfaktor",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Jedes Lager kostet: Miete für die Fläche, Regale, Personal, Zinsen auf das gebundene Kapital und das Risiko, dass Ware veraltet. Deshalb wird nur gelagert, was eine der drei Aufgaben erfüllt. Alles andere ist überflüssiger Bestand.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Jonas Weidner beschreibt sein Lager: vorne das Eingangslager mit Rohlingen in vielen Farben und Größen, hinten das Fertigwarenlager mit gepackten Aufträgen. Dazwischen stehen halbfertige Hoodies, die auf den zweiten Druck warten — ein Zwischenlager, das eigentlich niemand geplant hat.",
-        "typische_fehler": "Lager nur als Kostenfaktor sehen und seine Sicherungs- und Ausgleichsfunktion übersehen.",
         "verstaendnisfragen": [
-          "Nenne zwei Aufgaben eines Lagers. Zum Beispiel Sicherung und Ausgleich.",
-          "Welche Merkmale der Artikel beeinflussen die Lagerorganisation? Zahl der Varianten, Größe, Gewicht, Umschlagshäufigkeit, Empfindlichkeit."
-        ],
-        "pruefungsbezug": "Lageraufgaben und Lagerarten an einem Betrieb beschreiben.",
-        "merksatz": "Lager sichern, gleichen aus und bilden Sortimente; die Artikelstruktur bestimmt die passende Organisation."
+          {
+            "frage": "Welche drei Aufgaben erfüllt ein Lager?",
+            "antwort": "Sicherung der Versorgung, Ausgleich zwischen Beschaffung und Verbrauch, Sortimentsbildung.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum gehören Schnelldreher nah an den Ort des Verbrauchs?",
+            "antwort": "Weil sie sehr oft gebraucht werden. Kurze Wege sparen bei jedem Zugriff Zeit.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ware muss schnell auffindbar sein.",
-          "Lagerfläche ist begrenzt."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Lagersysteme sowie feste und dynamische Lagerplatzvergabe anhand der Anforderungen von MAKEL Studio, wendest das FIFO-Prinzip an und begründest eine kombinierte Lösung.",
+        "vorwissen_kurz": "Das Lager wird umgebaut. Die Frage ist, ob jeder Artikel einen festen Platz bekommt oder dorthin kommt, wo gerade frei ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie Plätze vergeben werden",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lagersysteme reichen vom **Bodenlager**, in dem Ware gestapelt wird, über **Fachbodenregale** für Kartons und Einzelteile und **Palettenregale** für größere Mengen bis zum automatisierten Hochregallager. Bei der Platzvergabe gibt es zwei Grundformen. Bei **festen Lagerplätzen** hat jeder Artikel immer denselben Platz. Bei **dynamischen Lagerplätzen**, auch chaotische Lagerung genannt, kommt Ware auf einen gerade freien Platz, und das System merkt sich, wo sie liegt. Das {{begriff:fifo|FIFO-Prinzip}} sorgt dafür, dass ältere Ware zuerst entnommen wird.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Platzvergabe je Lagerbereich",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bereich",
+              "Platzvergabe",
+              "Lagersystem",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Schnelldreher schwarze Rohlinge",
+                  "fest, nahe Veredelung",
+                  "Fachbodenregal in Griffhöhe",
+                  "jeder findet sie sofort, auch Aushilfen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Saisonfarben",
+                  "dynamisch",
+                  "Palettenregal",
+                  "stark schwankende Bestände, gute Flächennutzung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kollektionsteile Onlineshop",
+                  "dynamisch mit Scan",
+                  "Fachbodenregal",
+                  "viele Varianten, kleine Mengen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckfarben",
+                  "fest",
+                  "Gefahrstoffschrank, FIFO",
+                  "Haltbarkeit und Sicherheitsvorschriften"
+                ]
+              }
+            ],
+            "fazit": "Eine Kombination nutzt die Vorteile beider Formen. Feste Plätze für die wenigen Schnelldreher, dynamische für den großen, wechselnden Rest.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Dynamische Lagerplätze funktionieren nur mit Disziplin. Jede Einlagerung und jede Umlagerung muss gescannt werden; sonst ist die Ware im System an einem Ort, in Wirklichkeit an einem anderen, und niemand findet sie. Bei Druckfarben ist FIFO besonders wichtig, weil sie ein Haltbarkeitsdatum haben. Neue Lieferungen werden deshalb hinter die vorhandenen gestellt, damit die älteren zuerst verbraucht werden.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Lagersysteme reichen vom Bodenlager (Stapeln auf dem Boden) über Fachbodenregale für Kleinteile und Kartons, Palettenregale für schwere Ladeeinheiten und Durchlaufregale (Einlagern hinten, Entnahme vorne, automatisch FIFO) bis zum automatischen Hochregallager. Für die Lagerplatzvergabe gibt es zwei Grundformen. Feste Lagerplätze: Jeder Artikel hat immer denselben Platz — leicht zu finden, aber Fläche bleibt ungenutzt, wenn der Bestand klein ist. Dynamische (chaotische) Lagerplätze: Ware kommt auf einen gerade freien Platz, das System merkt sich den Ort — gute Flächennutzung, aber nur mit konsequenter Buchung und Systemunterstützung. Das FIFO-Prinzip (first in, first out) sorgt dafür, dass ältere Ware zuerst verbraucht wird.",
-        "beispiele": [
-          "Kartons mit Rohlingen im Fachbodenregal, Lagerplatz 03-B-2.",
-          "Dynamische Lagerplätze: Neue Lieferung kommt auf freien Platz 05-A-1, Scan bucht den Ort."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Gefahrstoffe im Lager",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Druckfarben und Reinigungsmittel sind Gefahrstoffe. Für sie gelten besondere Regeln: Kennzeichnung, Sicherheitsdatenblätter, getrennte Lagerung und oft ein spezieller Schrank. Die Gefährdungsbeurteilung legt fest, was genau nötig ist.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL hat feste Lagerplätze je Farbe und Größe. In der Saison sind manche Fächer übervoll, andere leer. Jonas überlegt, auf dynamische Lagerplätze umzustellen. Voraussetzung: Jeder Ein- und Auslagerungsvorgang wird gescannt, sonst findet niemand mehr etwas.",
-        "typische_fehler": "Eine hohe Flächenauslastung automatisch für die beste Lagerorganisation halten.",
         "verstaendnisfragen": [
-          "Welchen Vorteil haben feste Lagerplätze? Artikel sind leicht und ohne System auffindbar.",
-          "Was ist die Voraussetzung für dynamische Lagerplätze? Konsequente Buchung jedes Lagervorgangs und Systemunterstützung."
-        ],
-        "pruefungsbezug": "Feste und dynamische Lagerplatzvergabe vergleichen und eine begründete Empfehlung geben.",
-        "merksatz": "Feste Plätze sind einfach, dynamische nutzen Fläche besser — aber nur mit Scan-Disziplin und System; FIFO verbraucht Älteres zuerst."
+          {
+            "frage": "Was spricht für dynamische Lagerplätze?",
+            "antwort": "Die bessere Flächennutzung bei vielen Varianten und schwankenden Beständen.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was bedeutet FIFO, und wo ist es bei MAKEL Studio besonders wichtig?",
+            "antwort": "First in, first out: ältere Ware zuerst. Besonders bei Druckfarben mit Haltbarkeit und bei Saisonartikeln.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Kundenaufträge bestehen aus mehreren Positionen.",
-          "Eine Position ist eine Zeile im Auftrag (Artikel mit Menge)."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest auftrags- und serienorientiertes Kommissionieren, berechnest die Kommissionierleistung in Positionen je Stunde und wählst für eine Auftragsstruktur das passende Verfahren.",
+        "vorwissen_kurz": "Montagmorgen liegen 60 Onlinebestellungen vom Wochenende vor, dazu eine Großbestellung einer Boutique. Wie werden sie am schnellsten zusammengestellt?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Einzeln oder gesammelt",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:kommissionieren|Kommissionieren}} heißt, Artikel nach Aufträgen zusammenzustellen. Beim **auftragsorientierten** Kommissionieren wird ein Auftrag nach dem anderen abgearbeitet: Mit der Liste eines Auftrags geht man durch das Lager. Beim **serienorientierten** Kommissionieren werden die Artikel mehrerer Aufträge gesammelt entnommen und danach auf die Aufträge verteilt. ==Leistung misst man in Positionen je Stunde.== Eine Position ist eine Zeile auf dem Auftrag, unabhängig davon, wie viele Stück sie umfasst.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Montagmorgen im Versand",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Verfahren",
+              "Aufträge",
+              "Positionen",
+              "Zeit",
+              "Positionen je Stunde"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "auftragsorientiert: Boutique-Großauftrag",
+                  "1",
+                  "24",
+                  "1,0 Stunden",
+                  "24"
+                ]
+              },
+              {
+                "zellen": [
+                  "auftragsorientiert: 60 Onlinebestellungen einzeln",
+                  "60",
+                  "90",
+                  "6,0 Stunden",
+                  "15"
+                ]
+              },
+              {
+                "zellen": [
+                  "serienorientiert: 60 Onlinebestellungen gesammelt, dann verteilt",
+                  "60",
+                  "90",
+                  "3,6 Stunden",
+                  "25"
+                ]
+              }
+            ],
+            "fazit": "Für den einen großen Auftrag passt das auftragsorientierte Verfahren. Die vielen kleinen Onlinebestellungen gehen serienorientiert deutlich schneller, weil jeder Lagerplatz nur einmal angelaufen wird.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Vorteil des serienorientierten Kommissionierens liegt in den Wegen. Wird derselbe Hoodie in 15 Onlinebestellungen gebraucht, holt man 15 Stück auf einmal statt 15-mal zum selben Regal zu gehen. Dafür braucht es einen zweiten Schritt: das Verteilen auf die einzelnen Aufträge am Packtisch. Dieser Schritt ist eine eigene Fehlerquelle; deshalb wird dort gescannt oder mit Fächern je Auftrag gearbeitet.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Kommissionieren heißt, Artikel aus dem Lager nach Aufträgen zusammenzustellen. Beim Prinzip ‚Person zur Ware‘ geht die Kommissioniererin durch das Lager, bei ‚Ware zur Person‘ kommt die Ware automatisch zum Arbeitsplatz. Auftragsorientiert (einstufig) wird jeder Auftrag einzeln abgearbeitet. Serienorientiert (zweistufig) werden die Artikel mehrerer Aufträge gesammelt entnommen und anschließend auf die Aufträge verteilt — das spart Wege bei vielen kleinen Aufträgen. Die Leistung misst man zum Beispiel in Positionen je Stunde. Auftrag, Position und Stück sind dabei verschiedene Größen.",
-        "beispiele": [
-          "120 Positionen in 6 Stunden: 20 Positionen je Stunde.",
-          "Ein Auftrag mit 3 Positionen: 10 × Hoodie M schwarz, 5 × Hoodie L schwarz, 2 × Tasche = 17 Stück."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Position, Stück, Auftrag",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Auftrag kann mehrere Positionen haben, eine Position mehrere Stück. „3 Hoodies Kyoto M\" ist eine Position mit drei Stück. Wer Leistung in Stück misst, bevorzugt große Mengen und benachteiligt den Versand vieler kleiner Bestellungen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Vor Weihnachten kommen täglich 80 Onlinebestellungen mit je ein bis drei Positionen. Jonas lässt morgens alle Aufträge sammeln, die Artikel in einer Runde entnehmen und dann am Packtisch auf die Aufträge verteilen. Die Laufwege sinken deutlich.",
-        "typische_fehler": "Positionen, Stück und Aufträge gleichsetzen, wenn man die Leistung misst.",
         "verstaendnisfragen": [
-          "Was unterscheidet auftrags- und serienorientiertes Kommissionieren? Einzelner Auftrag gegenüber gesammelter Entnahme für mehrere Aufträge mit anschließender Verteilung.",
-          "Was ist eine Position? Eine Zeile im Auftrag, also ein Artikel mit Menge."
-        ],
-        "pruefungsbezug": "Kommissionierverfahren unterscheiden und Kommissionierleistung berechnen.",
-        "merksatz": "Kommissionieren stellt Aufträge zusammen — einzeln oder gesammelt; Leistung in Positionen je Stunde, nicht in Stück."
+          {
+            "frage": "120 Positionen werden in 6 Stunden kommissioniert. Wie hoch ist die Leistung?",
+            "antwort": "120 ÷ 6 = 20 Positionen je Stunde.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wann passt serienorientiertes Kommissionieren?",
+            "antwort": "Bei vielen kleinen Aufträgen mit überschneidenden Artikeln, weil Lagerplätze dann nur einmal angelaufen werden.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Falsch gelieferte Ware verursacht Retouren und Ärger.",
-          "Viele Varianten sehen sich ähnlich."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst Maßnahmen gegen Kommissionierfehler nach ihrer Ursache, berechnest die Kommissionierfehlerquote und prüfst die Wirkung einer Maßnahme mit gleicher Definition.",
+        "vorwissen_kurz": "Immer wieder bekommen Onlinekunden die falsche Größe. Der Versand will das Problem lösen, ohne Schuldige zu suchen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fehler an der Ursache packen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kommissionierfehler entstehen meist nicht aus Unaufmerksamkeit, sondern weil Abläufe sie möglich machen: ähnliche Artikel nebeneinander, unklare Beschriftungen, fehlende Kontrollen. Wirksam sind deshalb Maßnahmen an der Ursache. **Eindeutige Kennzeichnung** von Platz und Artikel verhindert Verwechslungen. **Pick-by-Scan** prüft bei jeder Entnahme, ob der richtige Artikel gegriffen wurde. **Kontrollwiegen** am Packtisch erkennt falsche Mengen. Gemessen wird der Erfolg mit der **Kommissionierfehlerquote**.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Fehlerquote vor und nach Pick-by-Scan",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "Oktober (vorher)",
+              "Dezember (nachher)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "kommissionierte Positionen",
+                  "2.400",
+                  "3.000"
+                ]
+              },
+              {
+                "zellen": [
+                  "fehlerhafte Positionen laut Retouren und Reklamationen",
+                  "36",
+                  "9"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kommissionierfehlerquote",
+                  "1,5 %",
+                  "0,3 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "häufigster Fehler",
+                  "falsche Größe",
+                  "falsche Menge"
+                ]
+              }
+            ],
+            "fazit": "Die Fehlerquote ist von 1,5 % auf 0,3 % gesunken, obwohl im Dezember mehr kommissioniert wurde. Die verbliebenen Fehler betreffen die Menge; dagegen hilft Kontrollwiegen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Messung braucht eine feste Definition. Zählt man nur Reklamationen, entgehen Fehler, die Kunden nicht melden. Zählt man vorher Positionen und nachher Aufträge, ist der Vergleich wertlos. MAKEL Studio zählt deshalb in beiden Monaten fehlerhafte Positionen bezogen auf alle kommissionierten Positionen. Dass sich der häufigste Fehler verändert hat, zeigt, dass Pick-by-Scan gegen falsche Größen wirkt, aber nicht gegen falsche Mengen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Kommissionierfehler entstehen durch Verwechslungen (falsche Größe oder Farbe), falsche Mengen oder vergessene Positionen. Vermeiden lassen sie sich durch eindeutige Kennzeichnung von Lagerplätzen und Artikeln, Scannen bei Entnahme (Pick-by-Scan), Lichtsignale am Fach (Pick-by-Light), Kontrollwiegen oder eine Sichtprüfung beim Packen. Die Kommissionierfehlerquote (fehlerhafte Positionen ÷ kommissionierte Positionen) macht die Qualität messbar. Ergonomie gehört dazu: schwere, häufig benötigte Artikel auf Griffhöhe, kurze Wege für Schnelldreher.",
-        "beispiele": [
-          "Größe M und L schwarz liegen nebeneinander: unterschiedliche Fachfarben und Scan-Pflicht.",
-          "Schnelldreher (Basis-Shirt weiß M) in Griffhöhe nahe am Packtisch."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Ergonomie und Fehler",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Schnelldreher in Griffhöhe nahe am Packtisch verkürzen nicht nur Wege, sondern verringern auch Belastung und Ermüdung. Wer weniger bücken und laufen muss, macht weniger Fehler. Arbeitsschutz und Qualität gehen hier Hand in Hand.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Im November gab es 12 Reklamationen wegen falscher Größen bei 1.500 kommissionierten Positionen: Fehlerquote 0,8 %. Jonas führt Pick-by-Scan ein; das Handgerät meldet sofort, wenn ein falscher Artikel gescannt wird. Im Dezember sinkt die Quote auf 0,1 %.",
-        "typische_fehler": "Fehler allein auf Unaufmerksamkeit schieben, statt Kennzeichnung und Ablauf zu verbessern.",
         "verstaendnisfragen": [
-          "Wie wird die Kommissionierfehlerquote berechnet? Fehlerhafte Positionen ÷ kommissionierte Positionen × 100.",
-          "Nenne zwei technische Hilfen gegen Verwechslungen. Zum Beispiel Pick-by-Scan und Pick-by-Light."
-        ],
-        "pruefungsbezug": "Maßnahmen gegen Kommissionierfehler begründen und ihre Wirkung messen.",
-        "merksatz": "Fehler vermeiden durch Kennzeichnung, Scan und Kontrolle; Wirkung mit der Kommissionierfehlerquote messen."
+          {
+            "frage": "Warum ist der Hinweis auf Unaufmerksamkeit keine wirksame Maßnahme gegen Kommissionierfehler?",
+            "antwort": "Weil er nichts am Ablauf ändert. Wirksam sind Kennzeichnung, Technik und klare Kontrollen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "3.000 Positionen, 9 fehlerhaft. Wie hoch ist die Fehlerquote?",
+            "antwort": "9 ÷ 3.000 × 100 = 0,3 %.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

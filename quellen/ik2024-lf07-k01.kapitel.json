@@ -6,86 +6,464 @@
   "untertitel": "Was Logistik leisten soll, welche Teilaufgaben sie hat und warum Daten und Ware zusammenpassen müssen.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Material kommt vom Lieferanten, Erzeugnisse gehen an Kunden.",
-          "Aus LF 4 kennst du Wareneingang und Bestellung."
+        "darstellung": "vollfassung",
+        "ziel": "Du beschreibst die Ziele der Logistik mit den sieben R, ordnest Vorgänge bei MAKEL Studio den Bereichen Beschaffungs-, Produktions-, Distributions- und Entsorgungslogistik zu und erkennst Zielkonflikte zwischen Service und Kosten.",
+        "vorwissen_kurz": "Logistik klingt nach Lkw und Lager. Bei MAKEL Studio ist sie viel mehr.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehr als Transport",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "==Logistik ist mehr als Transport:== Sie plant, steuert und kontrolliert Material- und Informationsflüsse vom Lieferanten über den eigenen Betrieb bis zum Kunden und zurück. Ihr Ziel fassen die **sieben R** zusammen: das richtige Produkt in der richtigen Menge, im richtigen Zustand, am richtigen Ort, zur richtigen Zeit, zu den richtigen Kosten und mit den richtigen Informationen. Nach den Abschnitten des Weges unterscheidet man Beschaffungs-, Produktions-, Distributions- und Entsorgungslogistik.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die sieben R am Vereinsauftrag",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "R",
+              "Anforderung beim Vereinsauftrag über 400 Hoodies"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Produkt",
+                  "Hoodie schwarz mit Vereinslogo, nicht navy"
+                ]
+              },
+              {
+                "zellen": [
+                  "Menge",
+                  "400 Stück, Größen laut Liste"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zustand",
+                  "gefaltet, einzeln verpackt, ohne Druckfehler"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ort",
+                  "Vereinsheim, nicht Geschäftsstelle"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeit",
+                  "bis Freitag vor dem Saisonstart"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten",
+                  "Versand im kalkulierten Rahmen von 60 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Information",
+                  "Lieferschein mit Größenaufteilung, Sendungsnummer an den Verein"
+                ]
+              }
+            ],
+            "fazit": "Fehlt ein einziges R, ist die Lieferung aus Sicht des Kunden nicht in Ordnung, auch wenn alle anderen stimmen.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die sieben R stehen teilweise im Konflikt. Eine Expresslieferung erfüllt das R „Zeit\", verletzt aber das R „Kosten\". Ein großer Vorrat sichert die Verfügbarkeit, bindet aber Kapital. Logistik heißt deshalb, für jeden Auftrag die richtige Balance zu finden: Beim Vereinsauftrag zum Saisonstart ist der Termin wichtiger als ein paar Euro Versandkosten, bei einer Nachbestellung der Boutique ohne Eile ist es umgekehrt.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Logistik plant, steuert und kontrolliert alle Material- und Informationsflüsse von den Lieferanten durch das Unternehmen bis zu den Kunden — und zurück, etwa bei Retouren und Entsorgung. Ihr Ziel wird oft mit den ‚sieben R‘ beschrieben: das richtige Produkt, in der richtigen Menge, im richtigen Zustand, am richtigen Ort, zur richtigen Zeit, zu den richtigen Kosten, mit den richtigen Informationen. Nach Bereichen unterscheidet man Beschaffungslogistik (Lieferant bis Lager), Produktionslogistik (Lager bis fertiges Erzeugnis), Distributionslogistik (Fertiglager bis Kunde) und Entsorgungslogistik (Retouren, Verpackung, Abfall).",
-        "beispiele": [
-          "Rohlinge vom Lieferanten ins MAKEL-Lager: Beschaffungslogistik.",
-          "Zurückgeschickte Hoodies aus dem Onlineshop prüfen und wieder einlagern: Entsorgungs- bzw. Retourenlogistik."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Entsorgungslogistik",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Entsorgungslogistik steuert Rückflüsse: Retouren aus dem Onlineshop, Kartonagen, Farbreste und fehlerhafte Drucke. Sie wird oft vergessen, verursacht aber Kosten und ist für die Nachhaltigkeit wichtig, etwa wenn Fehldrucke als Musterteile oder Spenden weiterverwendet werden.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Jonas Weidner beschreibt seinen Bereich so: ‚Ich sorge dafür, dass die Rohlinge da sind, wenn die Veredelung sie braucht, dass fertige Ware rechtzeitig zum Kunden geht und dass zurückgeschickte Teile nicht im Keller verschwinden.‘ Damit hat er drei Logistikbereiche beschrieben.",
-        "typische_fehler": "Logistik nur als Transport verstehen.",
         "verstaendnisfragen": [
-          "Nenne vier der sieben R. Zum Beispiel richtiges Produkt, richtige Menge, richtiger Ort, richtige Zeit.",
-          "Welcher Logistikbereich umfasst den Versand an Kunden? Die Distributionslogistik."
-        ],
-        "pruefungsbezug": "Logistikbereiche und Logistikziele an Fällen zuordnen.",
-        "merksatz": "Logistik steuert Material- und Informationsflüsse nach den sieben R — in Beschaffung, Produktion, Distribution und Entsorgung."
+          {
+            "frage": "Nenne die sieben R der Logistik.",
+            "antwort": "Richtiges Produkt, Menge, Zustand, Ort, Zeit, Kosten und Information.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Zu welchem Bereich gehört der Versand von Hoodies an Boutiquen?",
+            "antwort": "Zur Distributionslogistik.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ware bewegt sich zwischen Orten und wartet an Orten.",
-          "Beim Wechsel des Transportmittels wird umgeladen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Vorgänge den logistischen Grundaufgaben Transport, Umschlag und Lagerung zu, erkennst, welche Funktion jede erfüllt, und planst eine Anlieferung so, dass unnötige Umschläge entfallen.",
+        "vorwissen_kurz": "Dieselbe Lieferung Rohlinge durchläuft auf ihrem Weg ins Regal mehrere Schritte. Jeder kostet Zeit und Geld.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Raum, Wechsel, Zeit",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Logistik hat drei Grundaufgaben. Der **Transport** überbrückt Raum: Die Rohlinge kommen vom Lieferanten nach Düsseldorf. Die **Lagerung** überbrückt Zeit: Die Kartons stehen im Regal, bis die Veredelung sie braucht. Der **Umschlag** verbindet beides: Be- und Entladen, Umsetzen auf ein anderes Transportmittel, Kommissionieren. Jeder Umschlag ist eine Gelegenheit für Schäden, Verwechslungen und Wartezeit.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Umschläge zählen und reduzieren",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Aufgabe",
+              "heute",
+              "nach Umstellung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lkw vom Lieferanten",
+                  "Transport",
+                  "Kartons lose gestapelt",
+                  "Kartons auf Paletten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abladen an der Rampe",
+                  "Umschlag",
+                  "von Hand, 40 Kartons",
+                  "Palette mit Hubwagen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zwischenlager vor der Prüfung",
+                  "Lagerung",
+                  "Kartons auf dem Boden",
+                  "entfällt, Prüfung direkt an der Rampe"
+                ]
+              },
+              {
+                "zellen": [
+                  "ins Regal",
+                  "Umschlag",
+                  "von Hand umstapeln",
+                  "Palette ins Palettenregal"
+                ]
+              },
+              {
+                "zellen": [
+                  "zur Veredelung",
+                  "Umschlag und Transport",
+                  "Kartons einzeln tragen",
+                  "Kommissionierwagen nach Auftrag"
+                ]
+              }
+            ],
+            "fazit": "Durch Paletten und eine Prüfung direkt an der Rampe fallen ein Zwischenlager und mehrere Handumschläge weg. Das spart Zeit und senkt das Risiko beschädigter Kartons.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer Logistikkosten senken will, schaut deshalb zuerst auf die Umschläge. Jedes Anfassen kostet Arbeitszeit, jedes Zwischenlager Fläche. Mit dem Lieferanten Paletten statt loser Kartons zu vereinbaren, kann den Wareneingang erheblich beschleunigen. Gleichzeitig muss die Prüfung erhalten bleiben: Wird an der Rampe geprüft, braucht es dort Platz, Licht und die Bestellung im System.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die drei logistischen Grundaufgaben heißen Transport, Umschlag und Lagerung (TUL). Transport überbrückt Raum, etwa die Lkw-Fahrt vom Lieferanten. Umschlag ist der Wechsel des Transportmittels oder das Be- und Entladen, etwa vom Lkw auf den Hubwagen oder vom Container in den Lkw. Lagerung überbrückt Zeit, wenn Ware bis zum Bedarf aufbewahrt wird. Eine einzige Lieferung kann alle drei Aufgaben nacheinander auslösen. Jede Aufgabe verursacht Kosten und birgt Risiken wie Beschädigung oder Verwechslung.",
-        "beispiele": [
-          "Lkw-Fahrt vom Lieferanten: Transport. Abladen an der Rampe: Umschlag. Aufbewahren im Regal: Lagerung.",
-          "Container aus Asien: Seeschiff, Umschlag im Hafen, Lkw, Umschlag an der Rampe, Lagerung."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Lagerung mit und ohne Zweck",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Lagerung kann gewollt sein, etwa als Puffer für das Weihnachtsgeschäft, oder ungewollt, etwa wenn Ware auf eine Prüfung wartet. Gewollte Lagerung wird geplant; ungewollte ist Liegezeit und sollte vermieden werden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Lieferung Rohlinge kommt per Lkw (Transport), wird an der Rampe mit dem Hubwagen abgeladen (Umschlag), im Wareneingang geprüft und anschließend ins Regal eingelagert (Lagerung). Zwei Wochen später holt die Veredelung sie ab (innerbetrieblicher Transport).",
-        "typische_fehler": "Umschlag und Transport verwechseln — Umschlag überbrückt keine Strecke, sondern wechselt das Transportmittel.",
         "verstaendnisfragen": [
-          "Was überbrückt die Lagerung? Zeit.",
-          "Was ist Umschlag? Be- und Entladen bzw. Wechsel des Transportmittels."
-        ],
-        "pruefungsbezug": "Tätigkeiten den Grundaufgaben Transport, Umschlag und Lagerung zuordnen.",
-        "merksatz": "Transport überbrückt Raum, Lagerung überbrückt Zeit, Umschlag verbindet beide durch Be- und Entladen."
+          {
+            "frage": "Welche Grundaufgabe überbrückt Zeit?",
+            "antwort": "Die Lagerung.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum lohnt es sich, Umschläge zu reduzieren?",
+            "antwort": "Weil jeder Umschlag Arbeitszeit kostet und das Risiko von Schäden und Verwechslungen erhöht.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Zu jeder Lieferung gehören Dokumente.",
-          "Daten werden in einem Warenwirtschafts- oder ERP-System verarbeitet."
+        "darstellung": "vollfassung",
+        "ziel": "Du verbindest den Materialfluss einer Lieferung mit den begleitenden Informationen von der Versandmeldung bis zur Buchung, gleichst Bestandsinformation und tatsächliche Ware ab und meldest Abweichungen an die richtigen Stellen.",
+        "vorwissen_kurz": "Im System stehen 100 Kartons als „geliefert\". An der Rampe stehen 90.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zu jeder Ware gehört eine Information",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zu jedem Materialfluss gehört ein Informationsfluss. Vor der Ankunft kündigt eine **Versandmeldung** die Lieferung an, damit Lager und Rampe planen können. Mit der Ware kommen **Lieferschein, Etiketten und Barcodes**, die sie eindeutig zuordnen. Nach der Prüfung macht die **Wareneingangsbuchung** den Bestand verfügbar. Weicht etwas ab, geht sofort eine **Abweichungsmeldung** an Einkauf und Produktion. Nur wenn Information und Ware übereinstimmen, kann man sich auf den Bestand im System verlassen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Information und Ware abgleichen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitpunkt",
+              "Information",
+              "Ware",
+              "Abgleich und Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Montag",
+                  "Versandmeldung: 100 Kartons, Ankunft Mittwoch",
+                  "noch unterwegs",
+                  "Rampe für Mittwoch geplant"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mittwoch 9 Uhr",
+                  "Lieferschein: 100 Kartons",
+                  "90 Kartons gezählt",
+                  "Abweichung − 10, auf Lieferschein vermerkt, vom Fahrer quittiert"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mittwoch 10 Uhr",
+                  "Wareneingangsbuchung",
+                  "90 Kartons im Regal",
+                  "gebucht werden 90, nicht 100"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mittwoch 10 Uhr",
+                  "Abweichungsmeldung",
+                  "—",
+                  "Einkauf fragt beim Lieferanten nach; Veredelung plant Auftrag mit 90"
+                ]
+              }
+            ],
+            "fazit": "Gebucht wird nur, was gezählt und geprüft wurde. So zeigt das System den tatsächlichen Bestand, und alle Beteiligten planen mit denselben Zahlen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Stimmen Bestand im System und Ware im Regal nicht überein, entstehen Folgefehler. Der Vertrieb sagt einem Kunden einen Termin zu, weil das System genug Rohlinge zeigt, die Veredelung findet aber zu wenige. Deshalb wird nie die Menge aus Lieferschein oder Versandmeldung gebucht, sondern die gezählte. Und jede Umlagerung wird ebenfalls gebucht, damit das System auch den Lagerplatz kennt.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Zu jedem Materialfluss gehört ein Informationsfluss, oft vorauslaufend. Der Lieferant schickt eine Versandmeldung (Lieferavis) mit Menge, Packstücken und erwartetem Liefertag. Mit der Ware kommen Lieferschein und Etiketten, häufig mit Barcode. Im Wareneingang werden Ware, Lieferschein, Avis und Bestellung abgeglichen und der Eingang im System gebucht. Erst die Buchung macht den Bestand für Einkauf und Produktion verfügbar. Eine Sendungsverfolgung zeigt unterwegs den Status. Abweichungen werden dokumentiert und an die betroffenen Stellen weitergegeben.",
-        "beispiele": [
-          "Versandmeldung: 100 Kartons, Ankunft Dienstag. Tatsächlich kommen 90 Kartons: Abweichung dokumentieren, Einkauf informieren.",
-          "Barcode-Scan beim Einlagern bucht Menge und Lagerplatz im System."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Barcode und Scanner",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Barcodes auf Kartons und Regalplätzen verbinden Ware und Information. Wird beim Einlagern der Karton und der Lagerplatz gescannt, weiß das System sofort, wo welcher Artikel liegt. Das verringert Suchzeiten und Fehler beim Kommissionieren.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Der Lieferant meldet per Versandmeldung 100 Kartons Rohlinge. Jonas zählt beim Abladen 90. Er vermerkt die Abweichung auf dem Lieferschein, lässt sie vom Fahrer quittieren, bucht nur 90 Kartons ein und informiert Deniz Aydın im Einkauf sowie die Produktionsplanung, weil ein Auftrag am Freitag die volle Menge braucht.",
-        "typische_fehler": "Den Status ‚geliefert‘ im System als Nachweis der tatsächlich vorhandenen Ware behandeln.",
         "verstaendnisfragen": [
-          "Was enthält eine Versandmeldung? Unter anderem Menge, Packstücke und erwarteten Liefertag.",
-          "Warum ist die Wareneingangsbuchung wichtig? Erst sie macht den Bestand im System für andere Bereiche verfügbar."
-        ],
-        "pruefungsbezug": "Informationsfluss zu einer Lieferung beschreiben und bei Abweichungen richtig handeln.",
-        "merksatz": "Zu jedem Materialfluss gehört ein Informationsfluss; gebucht wird, was tatsächlich angekommen ist."
+          {
+            "frage": "Welche Menge wird gebucht, wenn der Lieferschein 100 Kartons nennt, aber 90 ankommen?",
+            "antwort": "90, also die tatsächlich gezählte Menge. Die Abweichung wird vermerkt und gemeldet.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wozu dient eine Versandmeldung?",
+            "antwort": "Damit Lager und Rampe die Ankunft planen können, bevor die Ware da ist.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "An einer Lieferung sind Einkauf, Lager, Produktion und Buchhaltung beteiligt.",
-          "Übergaben zwischen Abteilungen sind fehleranfällig."
+        "darstellung": "vollfassung",
+        "ziel": "Du analysierst das Logistikkonzept eines Auftrags auf Schnittstellen und Medienbrüche, findest die Ursache einer Störung und schlägst eine Maßnahme vor, die den Informationsfluss schließt.",
+        "vorwissen_kurz": "Das Lager wird immer wieder von Lieferungen überrascht. Das liegt nicht an den Menschen an der Rampe.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo Informationen verloren gehen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Logistikkonzept regelt, wer was wann meldet, wer welche Ware wohin bringt und wie Abweichungen behandelt werden. Schwachstellen liegen oft an {{begriff:schnittstelle|Schnittstellen}}, an denen die Zuständigkeit wechselt, und an {{begriff:medienbruch|Medienbrüchen}}, an denen Informationen von einem Medium ins andere übertragen werden müssen, etwa von einer E-Mail ins System oder von Papier in eine Tabelle. Dort gehen Informationen verloren, werden falsch abgetippt oder kommen zu spät.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Schwachstellen im Wareneingang von MAKEL Studio",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "heute",
+              "Schwachstelle",
+              "Maßnahme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Versandmeldung",
+                  "geht per E-Mail an den Einkäufer",
+                  "Lager erfährt nichts",
+                  "Avis automatisch im System für das Lager sichtbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wareneingangsprüfung",
+                  "Notizen auf Papier",
+                  "Medienbruch, späteres Abtippen",
+                  "Prüfung direkt mit dem Scanner erfassen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abweichungsmeldung",
+                  "Anruf beim Einkauf, oft nicht erreichbar",
+                  "Information bleibt hängen",
+                  "Meldung im System mit Benachrichtigung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Information an Veredelung",
+                  "mündlich",
+                  "Veredelung plant mit falscher Menge",
+                  "Bestand und Reservierung im System"
+                ]
+              }
+            ],
+            "fazit": "Alle vier Schwachstellen liegen an Übergaben oder Medienbrüchen. Die Maßnahmen schließen den Informationsfluss, statt mehr Personal einzusetzen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Maßnahme an der Ursache wirkt dauerhaft. Mehr Personal im Lager würde die Überraschungen abfedern, aber nicht verhindern. Wenn die Versandmeldung automatisch im System erscheint, weiß das Lager rechtzeitig Bescheid, egal ob der Einkäufer im Urlaub ist. Wichtig ist, nach der Umstellung zu prüfen, ob sie wirkt: Wie oft kommen Lieferungen noch unangekündigt?",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Logistik verbindet viele Schnittstellen: Lieferant und Spediteur außen, Einkauf, Wareneingang, Lager, Produktion, Versand und Buchhaltung innen. Ein Logistikkonzept legt fest, wie Material und Informationen fließen: wer was wann meldet, welche Dokumente und Kennzeichnungen gelten, wo gelagert wird, welche Dienstleister eingebunden sind, wie mit Abweichungen umgegangen wird. Analysiert wird ein Konzept am konkreten Auftrag: Wo entstehen Wartezeiten, doppelte Erfassungen oder Informationslücken?",
-        "beispiele": [
-          "Regel: Abweichungen beim Wareneingang meldet das Lager innerhalb von zwei Stunden an Einkauf und Produktionsplanung.",
-          "Medienbruch: Lieferschein wird abgetippt statt gescannt — Fehlerquelle."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Logistik und Kundenservice",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die gleichen Schwachstellen wirken nach außen. Kennt der Vertrieb den echten Bestand nicht, sagt er falsche Termine zu. Ein geschlossener Informationsfluss im Lager ist deshalb auch eine Voraussetzung für verlässliche Auskünfte an Kunden.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Deniz verfolgt einen Auftrag vom Lieferanten bis zum Kunden und stellt fest: Die Versandmeldung landet in seinem E-Mail-Postfach, das Lager kennt sie nicht. Folge: Das Lager wird von Lieferungen überrascht. MAKEL legt fest, dass Versandmeldungen automatisch im Warenwirtschaftssystem erscheinen und das Lager eine Tagesvorschau erhält.",
-        "typische_fehler": "Nur den eigenen Bereich optimieren und Übergaben an andere übersehen.",
         "verstaendnisfragen": [
-          "Was regelt ein Logistikkonzept? Wie Material und Informationen fließen, wer meldet, welche Dokumente gelten, wie Abweichungen behandelt werden.",
-          "Was ist ein Medienbruch? Ein Wechsel des Informationsträgers, etwa Papier abtippen, mit Fehlerrisiko."
-        ],
-        "pruefungsbezug": "Schnittstellen und Schwachstellen eines Logistikablaufs am Fall analysieren.",
-        "merksatz": "Ein Logistikkonzept regelt Flüsse und Schnittstellen; Schwachstellen liegen oft an Übergaben und Medienbrüchen."
+          {
+            "frage": "Was ist ein Medienbruch?",
+            "antwort": "Eine Stelle, an der Informationen von einem Medium in ein anderes übertragen werden müssen, etwa von Papier ins System.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ist mehr Personal keine Lösung, wenn das Lager von Lieferungen überrascht wird?",
+            "antwort": "Weil es die Ursache nicht beseitigt. Die Information über die Lieferung erreicht das Lager weiterhin nicht.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
