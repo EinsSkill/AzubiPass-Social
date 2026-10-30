@@ -33,6 +33,16 @@ import vertiefung  # noqa: E402
 fehler = []
 
 
+
+# Belegte fachliche Korrekturen einer Antwortoption gegenüber main (d0cfb8a).
+# Jede Zeile braucht einen Nachweis in doku/erweiterter-modus/umsetzung/kapitelnotizen.md.
+FACHKORREKTUREN_ANTWORT = {
+    # LF7 K1 a2: „… und er glaubt dem Körper“ war eine populärwissenschaftliche
+    # Übergeneralisierung; neue richtige Antwort „Einen Widerspruch zwischen
+    # Worten und Auftreten“ (Review cc5f06e, T02).
+    "lf7.html": {"lf7-k1-a2-c1-oeec2aafb8fee": "lf7-k1-a2-c1-occa6d8db336b"},
+}
+
 def pruefe(bedingung, text, wert=""):
     print(f"  {'OK  ' if bedingung else 'FEHL'} {text}" + (f"  {wert}" if wert != "" else ""))
     if not bedingung:
@@ -100,6 +110,11 @@ def statisch():
 
     # Übungs-/Kartenkennungen gegenüber main (Basis d0cfb8a): keine alte Kennung fehlt,
     # Reihenfolge der alten bleibt; neue Hauptabschnitte dürfen neue Kennungen ergänzen.
+    # Kein stilles Umdeuten: Der gespeicherte Check-Stand ist an Frage und
+    # Optionsabdruck gebunden (azubipass.js checks()); eine geänderte Option
+    # ergibt einen neuen Schlüssel, der alte Stand wird nicht übertragen.
+    js = (HIER / "azubipass.js").read_text(encoding="utf-8")
+    pruefe('frageText + "|" + optionAbdruck' in js, "Check-Lernstand an Optionsabdruck gebunden (kein stilles Umdeuten)")
     def teilfolge(alt, neu):
         it = iter(neu)
         return all(x in it for x in alt)
@@ -116,7 +131,16 @@ def statisch():
         fehlt = sorted(set(a) - set(n))
         pruefe(not fehlt and teilfolge(a, n), f"{name}: alte Kennungen erhalten ({len(a)} alt, {len(n) - len(a)} neu)", fehlt[:3])
         oa, on = re.findall(r'data-option-id="([^"]+)"', alt), re.findall(r'data-option-id="([^"]+)"', neu)
-        pruefe(not (set(oa) - set(on)) and teilfolge(oa, on), f"{name}: alte Antwort-Kennungen erhalten")
+        # T02: Belegte fachliche Antwortkorrekturen. Die Option bekommt mit dem
+        # neuen Text bewusst eine neue Kennung, damit ein alter Lernstand nicht
+        # still auf eine inhaltlich geänderte Aussage umgedeutet wird. Nur diese
+        # einzelnen Paare sind ausgenommen; alles andere bleibt streng.
+        korrigiert = FACHKORREKTUREN_ANTWORT.get(name, {})
+        for alt_id, neu_id in korrigiert.items():
+            pruefe(alt_id in oa and alt_id not in on and neu_id in on and neu_id not in oa,
+                   f"{name}: Fachkorrektur {alt_id} → {neu_id} belegt (Reihenfolge prüft die Teilfolge)")
+        oa_streng = [korrigiert.get(x, x) for x in oa]
+        pruefe(not (set(oa_streng) - set(on)) and teilfolge(oa_streng, on), f"{name}: alte Antwort-Kennungen erhalten")
 
     # A26: Jede Vollfassungsebene hat einen Suchtreffer und umgekehrt
     suche = json.loads((DOCS / "mittel" / "suche.json").read_text(encoding="utf-8"))

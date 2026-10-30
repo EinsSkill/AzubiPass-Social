@@ -41,6 +41,39 @@ def ik_lernfelder():
 
 # ---------------------------------------------------------------- 1 · Inhalt
 
+def vollfassung_pruefen(wo, x):
+    """Format 2 (darstellung: vollfassung) fachlich-strukturell absichern.
+
+    Die Vollfassung ersetzt die acht Altfelder durch Lernziel, Vorwissen,
+    eigenen Erklärtext, ein ausgeführtes Anwendungsbeispiel (Tabelle mit
+    Fazit), mindestens eine Vertiefung/Grenze (Detail) und Verständnisfragen
+    mit Antwort. Der Format-Vertrag selbst (Marker, Basisblöcke, Verweise)
+    wird zusätzlich von vertiefung.pruefe beim Build durchgesetzt."""
+    ziel = x.get("ziel") or ""
+    pruefe(ziel.startswith("Du ") and len(ziel) >= 60, f"{wo}: Vollfassung ohne handlungsbezogenes Lernziel")
+    pruefe(bool((x.get("vorwissen_kurz") or "").strip()), f"{wo}: Vollfassung ohne Vorwissen")
+    inhalt = x.get("inhalt") or []
+    absaetze = [b.get("text", "") for b in inhalt if b.get("typ") == "absatz"]
+    woerter = sum(len(t.split()) for t in absaetze)
+    pruefe(len(absaetze) >= 2 and woerter >= 80,
+           f"{wo}: Vollfassung mit zu wenig eigenem Erklärtext ({len(absaetze)} Absätze, {woerter} Wörter)")
+    tabellen = [b for b in inhalt if b.get("typ") == "tabelle"]
+    pruefe(any(t.get("fazit") and len(t.get("zeilen") or []) >= 2 for t in tabellen),
+           f"{wo}: Vollfassung ohne ausgeführtes Anwendungsbeispiel mit Fazit")
+    for t in tabellen:
+        breite = len(t.get("spalten") or [])
+        pruefe(all(len(z if isinstance(z, list) else z.get("zellen", [])) == breite for z in t.get("zeilen") or []),
+               f"{wo}: Tabelle mit uneinheitlicher Spaltenzahl")
+    details = x.get("details") or []
+    pruefe(len(details) >= 1 and all(d.get("titel") and d.get("inhalt") for d in details),
+           f"{wo}: Vollfassung ohne Vertiefung/Grenzfall")
+    fragen = x.get("verstaendnisfragen") or []
+    pruefe(len(fragen) >= 2 and all(f.get("frage") and f.get("antwort") for f in fragen),
+           f"{wo}: weniger als zwei Verständnisfragen mit Antwort")
+    roh = json.dumps(x, ensure_ascii=False)
+    pruefe("[basis absatz" not in roh, f"{wo}: Absatz fälschlich als Basisblock")
+
+
 def kapitel_pruefen(lf, ch, eintrag):
     wo = f'{lf["id"]}/{ch.get("id")}'
     for feld in ("id", "lernfeld", "nummer", "titel", "untertitel", "minuten",
@@ -62,7 +95,9 @@ def kapitel_pruefen(lf, ch, eintrag):
     for a in abschnitte:
         x = lang.get(a["id"])
         pruefe(x is not None, f"{wo}: Langfassung für {a['id']} fehlt")
-        if x:
+        if x and x.get("darstellung") == "vollfassung":
+            vollfassung_pruefen(f"{wo}/{a['id']}", x)
+        elif x:
             for feld in ("erklaerung", "fallbeispiel", "typische_fehler", "merksatz"):
                 pruefe(bool(x.get(feld)), f"{wo}/{a['id']}: Langfassung ohne {feld}")
             pruefe(len(x.get("beispiele") or []) >= 2, f"{wo}/{a['id']}: weniger als zwei Beispiele")

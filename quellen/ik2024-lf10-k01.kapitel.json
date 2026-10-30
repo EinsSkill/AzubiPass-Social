@@ -6,86 +6,534 @@
   "untertitel": "Wozu der Jahresabschluss dient, welche Vorarbeiten nötig sind und woraus er bei einer GmbH besteht.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Kaufleute müssen Bücher führen und jährlich einen Abschluss aufstellen (LF 5).",
-          "Banken, Finanzamt und Gesellschafter interessieren sich für die Zahlen."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst die Bestandteile des Jahresabschlusses einer GmbH nach ihrer Größenklasse, nennst die Adressaten und leitest für MAKEL Studio ab, welche zusätzlichen Pflichten gelten.",
+        "vorwissen_kurz": "Am Ende jedes Geschäftsjahres legt ein Unternehmen Rechenschaft ab. Wie umfangreich das sein muss, hängt von Rechtsform und Größe ab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rechenschaft am Jahresende",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:jahresabschluss|Jahresabschluss}} dokumentiert die Vermögens-, Finanz- und Ertragslage eines Unternehmens zum Ende des Geschäftsjahres. Er informiert Gesellschafter, Banken, Lieferanten und das Finanzamt und ist Grundlage für die Entscheidung, was mit dem Gewinn geschieht. Bei einer GmbH besteht er aus Bilanz, Gewinn- und Verlustrechnung und Anhang. Mittelgroße und große Kapitalgesellschaften müssen zusätzlich einen Lagebericht erstellen und den Abschluss von einem Abschlussprüfer prüfen lassen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Pflichten für MAKEL Studio gelten",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Größenklasse richtet sich nach § 267 HGB: Eine GmbH ist klein, wenn sie an zwei aufeinanderfolgenden Stichtagen mindestens zwei der drei Grenzen nicht überschreitet: 7,5 Mio. € Bilanzsumme, 15 Mio. € Umsatz, 50 Beschäftigte im Jahresdurchschnitt. Für mittelgroße Gesellschaften liegen die Grenzen bei 25 Mio. €, 50 Mio. € und 250 Beschäftigten.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Merkmal",
+              "MAKEL Studio",
+              "Grenze klein",
+              "Grenze mittelgroß"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Beschäftigte im Jahresdurchschnitt",
+                  "92",
+                  "50",
+                  "250"
+                ]
+              },
+              {
+                "zellen": [
+                  "Umsatz",
+                  "über der Grenze für kleine",
+                  "15 Mio. €",
+                  "50 Mio. €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Größenklasse",
+                  "mittelgroß",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Folge",
+                  "Bilanz, GuV, Anhang, Lagebericht, Abschlussprüfung; Aufstellung in den ersten drei Monaten des Folgejahres",
+                  "",
+                  ""
+                ]
+              }
+            ],
+            "fazit": "Als mittelgroße GmbH braucht MAKEL Studio einen Lagebericht und eine Abschlussprüfung. Kleine Gesellschaften dürften sich mit der Aufstellung bis zu sechs Monate Zeit lassen.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach der Aufstellung und Prüfung stellt die Gesellschafterversammlung den Abschluss fest und beschließt über die Verwendung des Ergebnisses. Anschließend wird er beim Unternehmensregister offengelegt, damit Außenstehende sich ein Bild machen können. Für das Finanzamt wird zusätzlich eine Steuerbilanz oder eine Überleitung der Handelsbilanz erstellt.",
+            "id": "a1-p3"
+          }
         ],
-        "erklaerung": "Der Jahresabschluss fasst das Geschäftsjahr zusammen. Er dient der Dokumentation, der Information der Adressaten (Gesellschafter, Banken, Lieferanten, Finanzamt, Öffentlichkeit), der Ermittlung des ausschüttbaren Gewinns und als Grundlage der Steuerermittlung. Für Kapitalgesellschaften wie die MAKEL Studio GmbH gelten über die Regeln für alle Kaufleute hinaus besondere Vorschriften: Der Abschluss umfasst Bilanz, Gewinn- und Verlustrechnung und Anhang; mittelgroße und große Kapitalgesellschaften erstellen zusätzlich einen Lagebericht und lassen den Abschluss prüfen. Welche Pflichten gelten, hängt von der Größenklasse ab, die nach Bilanzsumme, Umsatzerlösen und Beschäftigtenzahl bestimmt wird.",
-        "beispiele": [
-          "Die Hausbank verlangt den Jahresabschluss vor einer Kreditverlängerung.",
-          "Die Gesellschafterin beschließt auf Basis des Jahresüberschusses über die Gewinnverwendung."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Wer was aus dem Abschluss liest",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Gesellschafterin sieht, ob sich ihr Kapital vermehrt hat und wie viel ausgeschüttet werden kann. Die Bank prüft Eigenkapital und Verschuldung vor einer Kreditverlängerung. Lieferanten schauen auf die Zahlungsfähigkeit, bevor sie längere Zahlungsziele gewähren. Das Finanzamt nutzt den Abschluss als Ausgangspunkt für die Besteuerung.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Im Januar beginnt Sandra Koslowski mit dem Abschluss für das vergangene Jahr. Tobias Renner erinnert: ‚Die Bank will die Zahlen bis Ende April für das Maschinendarlehen, und Yuki muss über die Gewinnverwendung entscheiden.‘",
-        "typische_fehler": "Den Jahresabschluss nur als Pflicht gegenüber dem Finanzamt sehen.",
         "verstaendnisfragen": [
-          "Aus welchen Teilen besteht der Jahresabschluss einer kleinen GmbH mindestens? Bilanz, GuV und Anhang.",
-          "Wovon hängen zusätzliche Pflichten wie Lagebericht und Prüfung ab? Von der Größenklasse."
-        ],
-        "pruefungsbezug": "Zwecke, Adressaten und Bestandteile des Jahresabschlusses einer Kapitalgesellschaft nennen.",
-        "merksatz": "Der Jahresabschluss dokumentiert und informiert; bei der GmbH umfasst er Bilanz, GuV und Anhang, je nach Größe zusätzlich Lagebericht und Prüfung."
+          {
+            "frage": "Welche Bestandteile hat der Jahresabschluss einer kleinen GmbH?",
+            "antwort": "Bilanz, Gewinn- und Verlustrechnung und Anhang, mit Erleichterungen; ein Lagebericht und eine Abschlussprüfung sind nicht vorgeschrieben.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum braucht MAKEL Studio einen Lagebericht?",
+            "antwort": "Weil es mit 92 Beschäftigten und seinem Umsatz zwei Grenzen der kleinen Kapitalgesellschaft überschreitet und damit mittelgroß ist.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Inventur und Buchbestand kennst du aus LF 5.",
-          "Differenzen werden geklärt, bevor korrigiert wird."
+        "darstellung": "vollfassung",
+        "ziel": "Du stimmst die Saldenliste mit Inventur und Belegen ab, korrigierst belegte Differenzen und erklärst, warum die Saldenliste erst nach Abstimmung, Abgrenzung und Bewertung zum Abschluss werden kann.",
+        "vorwissen_kurz": "Zum Jahresende zeigt die Saldenliste alle Kontostände. Das ist ein Zwischenstand, kein fertiger Abschluss.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst die Mengen, dann die Werte",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Saldenliste** zeigt für jedes Konto den Stand laut Buchführung. Bevor daraus ein Abschluss wird, müssen die Bestände mit der Inventur und mit externen Nachweisen abgestimmt werden. Belegte Differenzen werden gebucht. Erst danach kommen Abgrenzungen und Bewertungen. Wer die Saldenliste ohne diese Schritte übernimmt, übernimmt auch alle Fehler und fehlenden Buchungen des Jahres.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Abstimmung zum 31. Dezember",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Konto",
+              "Saldenliste",
+              "Nachweis",
+              "Korrektur"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohstoffe",
+                  "12.000 €",
+                  "Inventur 11.500 €",
+                  "nicht gebuchter Entnahmeschein über 500 €: Aufwendungen für Rohstoffe an Rohstoffe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertige Erzeugnisse",
+                  "18.400 €",
+                  "Inventur 21.200 €",
+                  "Bestandsmehrung 2.800 €: Fertige Erzeugnisse an Bestandsveränderungen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bank",
+                  "24.310 €",
+                  "Kontoauszug 24.250 €",
+                  "Kontoführungsgebühren 60 € nicht gebucht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Forderungen",
+                  "58.900 €",
+                  "Offene-Posten-Liste 58.900 €",
+                  "keine"
+                ]
+              }
+            ],
+            "fazit": "Drei von vier Konten werden korrigiert. Erst jetzt stimmen die Bestände; die Bewertung folgt im nächsten Schritt.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Reihenfolge hat einen Grund. Würde Sandra die Rohstoffe bewerten, bevor die 500 € Verbrauch gebucht sind, würde sie einen Bestand bewerten, der gar nicht mehr da ist. Und würde sie die fertigen Erzeugnisse nicht an die Inventur anpassen, wäre der Erfolg des Jahres um 2.800 € zu niedrig ausgewiesen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Vor dem Abschluss werden die Buchbestände mit den tatsächlichen Beständen abgestimmt. Die Inventur zum Stichtag erfasst Vorräte, Bank, Kasse, Forderungen und Verbindlichkeiten. Abweichungen werden geklärt: noch nicht gebuchte Belege werden nachgebucht, Zählfehler korrigiert, echte Fehlmengen nach Prüfung erfasst. Die Saldenliste zeigt alle Konten mit ihren Salden; sie ist ein Arbeitsstand, kein fertiger Abschluss. Erst nach Abstimmung, Abgrenzungen und Bewertung entstehen die bereinigten Salden für Bilanz und GuV.",
-        "beispiele": [
-          "Rohstoffkonto 12.000 €, belegter, nicht gebuchter Verbrauch 500 €: bereinigter Bestand 11.500 €.",
-          "Bankkonto weicht vom Kontoauszug zum 31.12. um eine nicht gebuchte Lastschrift ab."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Späte Belege",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Rechnungen für Lieferungen aus dem Dezember kommen oft erst im Januar. Sie gehören trotzdem ins alte Jahr. Deshalb wartet die Buchhaltung mit dem Abschluss, bis die späten Belege eingegangen sind, oder bildet für fehlende Rechnungen eine Rückstellung.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Das Konto Rohstoffe zeigt 12.000 €. Bei der Inventur findet Jonas Weidner einen Entnahmeschein über 500 €, der nicht gebucht wurde. Sandra bucht nach: Aufwendungen für Rohstoffe 500 € an Rohstoffe 500 €. Der Bestand beträgt 11.500 € — ob dieser Wert auch bewertet so angesetzt werden darf, prüft sie im nächsten Schritt.",
-        "typische_fehler": "Eine Saldenliste als fertigen, vollständigen Abschluss ausgeben.",
         "verstaendnisfragen": [
-          "Was ist eine Saldenliste? Eine Übersicht aller Konten mit ihren Salden — ein Arbeitsstand.",
-          "Warum folgt nach der Mengenkorrektur noch eine Bewertung? Weil der richtige Bestand noch nicht den richtigen Wertansatz garantiert."
-        ],
-        "pruefungsbezug": "Inventur und Kontensalden abstimmen und Korrekturen begründen.",
-        "merksatz": "Erst Bestände abstimmen und Differenzen belegt korrigieren — die Saldenliste ist Arbeitsstand, nicht Abschluss."
+          {
+            "frage": "Warum ist die Saldenliste kein fertiger Jahresabschluss?",
+            "antwort": "Weil sie nur den Buchungsstand zeigt. Ohne Abstimmung mit der Inventur, Abgrenzungen und Bewertung kann sie falsche Bestände, fehlende Buchungen und Werte enthalten, die nicht mehr stimmen.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie wird die Bestandsmehrung an fertigen Erzeugnissen gebucht?",
+            "antwort": "Fertige Erzeugnisse an Bestandsveränderungen an fertigen Erzeugnissen, 2.800 €.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Am Abschluss arbeiten mehrere Personen.",
-          "Fristen müssen eingehalten werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest die Abschlussarbeiten in eine sinnvolle Reihenfolge mit Zuständigkeiten und Terminen und begründest, warum Mengen vor Werten und Abgrenzung vor Abschluss kommt.",
+        "vorwissen_kurz": "Ein Jahresabschluss besteht aus vielen Arbeitsschritten, die aufeinander aufbauen. Ein Abschlussplan sorgt dafür, dass nichts vergessen wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Plan für die ersten Monate",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Abschlussarbeiten folgen einer festen Logik: Zuerst werden alle Belege des alten Jahres gebucht. Dann werden die Bestände abgestimmt. Danach werden Aufwendungen und Erträge den richtigen Jahren zugeordnet und Rückstellungen gebildet. Erst dann werden Vermögen und Schulden bewertet. Zum Schluss werden die Konten abgeschlossen und der Anhang erstellt. Jeder Schritt hat eine zuständige Stelle und einen Termin.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Abschlussplan von MAKEL Studio",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "zuständig",
+              "bis",
+              "Nachweis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Belege des alten Jahres buchen",
+                  "Buchhaltung",
+                  "10. Januar",
+                  "leere Belegablage „Dezember“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Inventur und Abstimmung",
+                  "Lager, Buchhaltung",
+                  "15. Januar",
+                  "Zählprotokolle, Abstimmliste"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abgrenzungen und Rückstellungen",
+                  "Buchhaltung",
+                  "31. Januar",
+                  "Liste der Abgrenzungen mit Belegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bewertung",
+                  "Buchhaltung mit Steuerberatung",
+                  "15. Februar",
+                  "Abschreibungsliste, Bewertungsvermerk"
+                ]
+              },
+              {
+                "zellen": [
+                  "Umsatzsteuer abschließen",
+                  "Buchhaltung",
+                  "15. Februar",
+                  "Abstimmung Voranmeldungen mit Konten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Konten abschließen",
+                  "Buchhaltung",
+                  "15. März",
+                  "GuV-Konto, Schlussbilanzkonto"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anhang, Lagebericht, Vorlage an Prüfer",
+                  "Geschäftsführung",
+                  "31. März",
+                  "Entwurf an Abschlussprüfer"
+                ]
+              }
+            ],
+            "fazit": "Jeder Schritt hat ein Ergebnis, das der nächste braucht. Die Prüfung durch den Abschlussprüfer folgt nach dem 31. März.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fällt ein Termin aus, verschiebt sich alles Folgende. Kommt die Inventurliste aus dem Lager eine Woche zu spät, kann die Bewertung erst später beginnen. Deshalb wird der Plan schon im November mit allen Beteiligten abgestimmt und mit Wiedervorlagen versehen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Abschlussarbeiten folgen einer sinnvollen Reihenfolge: (1) laufende Buchungen vollständig erfassen, (2) Inventur durchführen und Bestände abstimmen, (3) Abgrenzungen buchen (Rechnungsabgrenzung, sonstige Forderungen und Verbindlichkeiten, Rückstellungen), (4) Vermögen und Schulden bewerten (Abschreibungen, Wertberichtigungen, Bestandsbewertung), (5) Umsatzsteuer abschließen, (6) Erfolgskonten über die GuV und Bestandskonten über das Schlussbilanzkonto abschließen, (7) Anhang und gegebenenfalls Lagebericht erstellen. Für jeden Schritt gibt es Zuständige, Nachweise und Termine. Für Kapitalgesellschaften gelten gesetzliche Fristen für Aufstellung und Offenlegung.",
-        "beispiele": [
-          "Lager: Inventur bis 3. Januar. Buchhaltung: Abstimmung bis 15. Januar. Steuerberatung: Prüfung bis Ende März.",
-          "Abschreibungen werden erst gebucht, wenn alle Anlagenzugänge erfasst sind."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Aufstellungsfristen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mittelgroße und große Kapitalgesellschaften stellen den Jahresabschluss in den ersten drei Monaten des Folgejahres auf. Kleine Kapitalgesellschaften dürfen sich bis zu sechs Monate Zeit lassen, wenn das einem ordnungsgemäßen Geschäftsgang entspricht. Die Offenlegung erfolgt spätestens zwölf Monate nach dem Abschlussstichtag.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Sandra erstellt einen Abschlussplan: Inventur am 31.12. und 2.1. (Jonas), Abstimmung von Bank und offenen Posten bis 15.1. (Luca Petrelli), Abgrenzungen und Rückstellungen bis 31.1. (Sandra), Bewertung und Abschreibungen bis 15.2. (Sandra mit Steuerberatung), Abschluss und Anhang bis 31.3., Vorlage an Yuki und die Bank im April.",
-        "typische_fehler": "Bewertungen vornehmen, bevor die Mengen abgestimmt sind.",
         "verstaendnisfragen": [
-          "Warum werden Abgrenzungen vor dem Abschluss der Erfolgskonten gebucht? Weil sie Aufwendungen und Erträge der richtigen Periode zuordnen und damit das Ergebnis beeinflussen.",
-          "Was gehört zu jedem Abschlussschritt? Zuständige, Nachweise und Termin."
-        ],
-        "pruefungsbezug": "Vorbereitende Abschlussarbeiten in eine sinnvolle Reihenfolge bringen.",
-        "merksatz": "Abschluss in Reihenfolge: buchen, abstimmen, abgrenzen, bewerten, abschließen, erläutern — jeweils mit Zuständigen und Nachweisen."
+          {
+            "frage": "Warum kommt die Bewertung erst nach der Inventur?",
+            "antwort": "Weil zuerst feststehen muss, welche Mengen tatsächlich vorhanden sind. Wer vorher bewertet, bewertet möglicherweise falsche Bestände.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Was passiert, wenn die Abgrenzungen fehlen?",
+            "antwort": "Aufwendungen und Erträge stehen im falschen Jahr. Der Erfolg des Jahres ist dann zu hoch oder zu niedrig ausgewiesen.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Bilanz und GuV kennst du aus LF 5.",
-          "Kapitalgesellschaften müssen mehr offenlegen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Posten der Bilanz einer GmbH nach § 266 HGB zu, berechnest das Eigenkapital aus seinen Bestandteilen und erklärst, was Bilanz, GuV, Anhang und Lagebericht jeweils zeigen.",
+        "vorwissen_kurz": "Der Jahresabschluss einer Kapitalgesellschaft folgt einem gesetzlich festgelegten Aufbau. So lassen sich verschiedene Unternehmen vergleichen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein fester Aufbau",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bilanz einer Kapitalgesellschaft ist nach {{par:hgb-266|§ 266 HGB}} gegliedert. Auf der Aktivseite stehen Anlagevermögen, Umlaufvermögen und aktive Rechnungsabgrenzung, auf der Passivseite Eigenkapital, Rückstellungen, Verbindlichkeiten und passive Rechnungsabgrenzung. Das Eigenkapital einer GmbH besteht aus dem gezeichneten Kapital (Stammkapital), Rücklagen, einem Gewinn- oder Verlustvortrag und dem Jahresüberschuss oder -fehlbetrag. Die GuV zeigt, wie das Ergebnis zustande gekommen ist; der Anhang erläutert Bilanzierungs- und Bewertungsmethoden; der Lagebericht beschreibt Geschäftsverlauf, Lage, Chancen und Risiken.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Bilanz von MAKEL Studio, verkürzt",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aktiva",
+              "Betrag",
+              "Passiva",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "A. Anlagevermögen",
+                  "410.000 €",
+                  "A. Eigenkapital",
+                  "160.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "B. Umlaufvermögen: Vorräte",
+                  "96.000 €",
+                  "— gezeichnetes Kapital 100.000 €",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "— Forderungen",
+                  "58.900 €",
+                  "— Gewinnrücklagen 40.000 €",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "— Kasse, Bank",
+                  "24.250 €",
+                  "— Jahresüberschuss 20.000 €",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "C. Rechnungsabgrenzung",
+                  "3.850 €",
+                  "B. Rückstellungen",
+                  "38.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "",
+                  "C. Verbindlichkeiten",
+                  "395.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "593.000 €",
+                  "Summe",
+                  "593.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Das Eigenkapital beträgt 160.000 €, gut 27 % der Bilanzsumme. Das Stammkapital allein ist nur ein Teil davon.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Was die Bilanz nicht zeigt, steht im Anhang: etwa nach welcher Methode die Vorräte bewertet wurden oder welche Nutzungsdauer für die Stickmaschinen angesetzt ist. Der Lagebericht ergänzt, wie das Jahr verlaufen ist und welche Risiken die Geschäftsführung sieht, etwa steigende Baumwollpreise oder die Abhängigkeit von wenigen Großkunden.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Die Bilanz zeigt Vermögen und Kapital zum Stichtag, gegliedert nach dem Schema des HGB für Kapitalgesellschaften: Aktiva mit Anlagevermögen, Umlaufvermögen und Rechnungsabgrenzung; Passiva mit Eigenkapital (gezeichnetes Kapital, Rücklagen, Gewinn- oder Verlustvortrag, Jahresüberschuss oder -fehlbetrag), Rückstellungen, Verbindlichkeiten und Rechnungsabgrenzung. Die GuV zeigt, wie das Jahresergebnis entstanden ist; im Gesamtkostenverfahren mit Umsatzerlösen, Bestandsveränderungen, Materialaufwand, Personalaufwand, Abschreibungen und sonstigen Posten. Der Anhang erläutert Bilanzierungs- und Bewertungsmethoden. Kapitalgesellschaften müssen ihren Abschluss im Unternehmensregister offenlegen; kleine Gesellschaften haben Erleichterungen.",
-        "beispiele": [
-          "Eigenkapital der GmbH: gezeichnetes Kapital 100.000 €, Gewinnrücklagen, Jahresüberschuss.",
-          "Anhang: ‚Vorräte werden zu Anschaffungs- bzw. Herstellungskosten oder zum niedrigeren Stichtagswert bewertet.‘"
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Stammkapital und Eigenkapital",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Das Stammkapital ist der Betrag, den die Gesellschafter laut Gesellschaftsvertrag eingezahlt oder zugesagt haben, bei einer GmbH mindestens 25.000 €. Das Eigenkapital ist mehr: Es umfasst auch einbehaltene Gewinne in den Rücklagen und den Gewinn des laufenden Jahres. Bei Verlusten kann es unter das Stammkapital sinken.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Luca fragt, warum in der Bilanz von MAKEL ‚gezeichnetes Kapital 100.000 €‘ steht, obwohl das Eigenkapital viel höher ist. Sandra erklärt: Das gezeichnete Kapital ist das im Gesellschaftsvertrag festgelegte Stammkapital; Rücklagen und Jahresüberschuss kommen hinzu.",
-        "typische_fehler": "Das gezeichnete Kapital mit dem gesamten Eigenkapital gleichsetzen.",
         "verstaendnisfragen": [
-          "Woraus besteht das Eigenkapital einer GmbH in der Bilanz? Gezeichnetes Kapital, Rücklagen, Gewinn- oder Verlustvortrag, Jahresüberschuss oder -fehlbetrag.",
-          "Wozu dient der Anhang? Er erläutert Bilanz und GuV, insbesondere die Bilanzierungs- und Bewertungsmethoden."
-        ],
-        "pruefungsbezug": "Abschlussbestandteile und Bilanzposten einer Kapitalgesellschaft einordnen.",
-        "merksatz": "Bilanz zeigt den Stichtag, GuV das Zustandekommen des Ergebnisses, der Anhang erläutert die Methoden; die GmbH legt offen."
+          {
+            "frage": "100.000 € gezeichnetes Kapital, 40.000 € Gewinnrücklagen, 20.000 € Jahresüberschuss. Wie hoch ist das Eigenkapital?",
+            "antwort": "160.000 € — alle Posten des Eigenkapitals zusammen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Wo erfährt man, nach welcher Methode die Vorräte bewertet wurden?",
+            "antwort": "Im Anhang. Er erläutert die Bilanzierungs- und Bewertungsmethoden.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
