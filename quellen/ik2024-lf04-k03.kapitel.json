@@ -6,86 +6,462 @@
   "untertitel": "Wo man Lieferanten findet, wie viele man braucht, was regionale und internationale Beschaffung unterscheidet — und wie eine vollständige Anfrage aussieht.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Für jedes Material braucht ein Betrieb geeignete Lieferanten.",
-          "Informationen über Lieferanten müssen geprüft werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst interne und externe Bezugsquellen für einen Lieferantenbedarf aus und prüfst einen neuen Lieferanten auf Existenz, Qualität und Zuverlässigkeit, bevor er in die Lieferantendatei aufgenommen wird.",
+        "vorwissen_kurz": "MAKEL Studio sucht einen zweiten Lieferanten für Hoodie-Rohlinge. Zuerst muss klar sein, wo man sucht und wem man vertrauen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo Lieferanten zu finden sind",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die erste Quelle ist die eigene **Lieferantendatei**: Sie enthält bekannte Lieferanten mit Konditionen, Bewertungen und Erfahrungen. Reicht sie nicht, helfen **externe Quellen**: B2B-Plattformen und Branchenverzeichnisse für einen schnellen Überblick, Fachmessen, auf denen man Muster prüfen kann, Kammern und Verbände mit geprüften Kontakten. ==Neue Lieferanten werden geprüft, bevor sie in die Lieferantendatei kommen.== Ein professioneller Internetauftritt beweist noch nicht, dass ein Unternehmen zuverlässig liefert.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Prüfung eines neuen Rohlinglieferanten",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfschritt",
+              "Frage",
+              "Ergebnis bei „Textil Norte\" aus Portugal"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Existenz",
+                  "Gibt es das Unternehmen, wer vertritt es?",
+                  "im Handelsregister eingetragen, seit 2011 tätig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualität",
+                  "Entsprechen die Rohlinge der Spezifikation?",
+                  "Muster bestellt, Druckprobe in der Veredelung bestanden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zuverlässigkeit",
+                  "Liefert es pünktlich und vollständig?",
+                  "zwei Referenzen von deutschen Labels, Probebestellung über 200 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachweise",
+                  "Welche Zertifikate liegen vor, wofür gelten sie?",
+                  "Schadstoffprüfung für die Hoodie-Linie, Sozialaudit vom Vorjahr"
+                ]
+              }
+            ],
+            "fazit": "Textil Norte besteht die Prüfung und wird mit dem Vermerk „Probebestellung abwarten\" in die Lieferantendatei aufgenommen.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Prüfung schützt vor Ausfällen und Betrug. Gerade auf internationalen Plattformen gibt es Anbieter, die nicht existieren oder minderwertige Ware liefern. Eine kleine Probebestellung vor dem ersten großen Auftrag zeigt, ob Qualität, Lieferzeit und Kommunikation stimmen. Die Ergebnisse werden in der Lieferantendatei dokumentiert, damit spätere Bestellungen darauf aufbauen können.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Bezugsquellen findet man in der eigenen Lieferantendatei, über B2B-Plattformen und Branchenverzeichnisse, auf Fachmessen, über Kammern und Verbände oder durch Empfehlungen. Externe Informationen werden geprüft: Gibt es das Unternehmen (Handelsregister, Impressum)? Liefert es die geforderte Qualität (Muster, Zertifikate)? Ist es zuverlässig (Referenzen, Auskünfte)? Die eigene Lieferantendatei mit bisherigen Erfahrungen ist die wertvollste Quelle.",
-        "beispiele": [
-          "Interne Quelle: Lieferantendatei mit Bewertungen der letzten Lieferungen.",
-          "Externe Quelle: Fachmesse für Textilien, auf der neue Rohlingshersteller ausstellen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Lieferantenbewertung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bestehende Lieferanten werden regelmäßig bewertet, etwa nach Termintreue, Qualität, Preis und Kommunikation. Die Bewertung zeigt, ob ein Lieferant weiter bevorzugt wird oder ob Alternativen gesucht werden müssen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Deniz sucht einen zweiten Lieferanten für schwarze Hoodie-Rohlinge. Eine Suchmaschine liefert einen günstigen Anbieter mit schicker Website. Bevor er ihn anfragt, prüft er Handelsregister und Impressum, fordert ein Muster und ein Zertifikat zur Materialzusammensetzung an und fragt nach Referenzen. Erst danach kommt der Anbieter in die Lieferantendatei.",
-        "typische_fehler": "Die erste Fundstelle einer Suchmaschine wird als geprüfter Lieferant behandelt.",
         "verstaendnisfragen": [
-          "Was ist die wertvollste Bezugsquelle für bekannte Materialien? Die eigene Lieferantendatei mit dokumentierten Erfahrungen.",
-          "Wie prüft man einen unbekannten Lieferanten? Existenz (Register, Impressum), Qualität (Muster, Zertifikate) und Zuverlässigkeit (Referenzen, Auskünfte)."
-        ],
-        "pruefungsbezug": "Interne und externe Bezugsquellen unterscheiden und Prüfschritte für neue Lieferanten nennen.",
-        "merksatz": "Bezugsquellen liegen intern (Lieferantendatei) und extern (Plattformen, Messen, Verbände); neue Lieferanten werden auf Existenz, Qualität und Zuverlässigkeit geprüft."
+          {
+            "frage": "Welche internen und externen Bezugsquellen gibt es?",
+            "antwort": "Intern die Lieferantendatei; extern B2B-Plattformen, Branchenverzeichnisse, Fachmessen, Kammern und Verbände.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum wird ein neuer Lieferant vor der ersten großen Bestellung geprüft?",
+            "antwort": "Damit MAKEL Studio nicht auf einen Anbieter hereinfällt, der nicht existiert, schlecht liefert oder unzuverlässig ist.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ein Betrieb kann ein Material bei einem oder mehreren Lieferanten beziehen.",
-          "Beides hat Vor- und Nachteile."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Single und Multiple Sourcing für ein Material nach Konditionen, Aufwand und Ausfallrisiko und begründest eine Aufteilung des Bedarfs auf Lieferanten.",
+        "vorwissen_kurz": "Lieferant A bietet Rabatt, wenn MAKEL Studio alles bei ihm kauft. Im letzten Jahr hatte A aber eine dreiwöchige Lieferpause.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Lieferant oder mehrere",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim **Single Sourcing** bezieht MAKEL Studio ein Material nur von einem Lieferanten. Das bündelt das Volumen, bringt bessere Konditionen und wenig Abstimmungsaufwand, schafft aber Abhängigkeit. Beim **Multiple Sourcing** wird der Bedarf auf mehrere Lieferanten verteilt. Das senkt das Ausfallrisiko und erhält Wettbewerb, kostet aber mehr Aufwand, und die Ware zweier Hersteller kann sich unterscheiden. Wie viele Lieferanten ein Material braucht, ist eine Abwägung.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rechnung: Rabatt gegen Ausfallrisiko",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "alles bei A mit 2 % Rabatt",
+              "70 % bei A ohne Rabatt, 30 % bei B (+3 %)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohlingkosten pro Jahr",
+                  "168.000 € × 0,98 = 164.640 €",
+                  "117.600 € + 51.912 € = 169.512 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mehrkosten gegenüber Variante A",
+                  "—",
+                  "4.872 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Folgen einer dreiwöchigen Lieferpause",
+                  "Veredelung steht, ca. 20 Aufträge verspätet",
+                  "B liefert 30 %, wichtigste Aufträge laufen weiter"
+                ]
+              },
+              {
+                "zellen": [
+                  "geschätzter Deckungsbeitragsverlust bei Lieferpause",
+                  "15.000 € bis 25.000 €",
+                  "5.000 € bis 8.000 €"
+                ]
+              }
+            ],
+            "fazit": "Die Aufteilung kostet rund 4.900 € pro Jahr. Tritt eine Lieferpause wie im Vorjahr auf, verhindert sie einen deutlich größeren Schaden.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Entscheidung hängt davon ab, wie wahrscheinlich ein Ausfall ist und wie teuer er wäre. Bei den schwarzen Hoodie-Rohlingen, ohne die kaum ein Auftrag läuft, spricht viel für zwei Lieferanten. Bei Etiketten, die leicht zu ersetzen sind und kaum etwas kosten, lohnt sich der Aufwand nicht. MAKEL Studio teilt deshalb nur die kritischen A-Materialien auf und prüft vorher, ob die Rohlinge von B beim Druck genauso reagieren wie die von A.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Bezieht man ein Material nur bei einem Lieferanten (Single Sourcing), bekommt man oft bessere Konditionen und hat wenig Abstimmungsaufwand, ist aber abhängig: Fällt der Lieferant aus, steht die Produktion. Bei zwei oder mehr Lieferanten (Dual oder Multiple Sourcing) sinkt das Ausfallrisiko und es gibt Wettbewerb, dafür steigen Abstimmungsaufwand und Qualitätsunterschiede, und Mengenrabatte verteilen sich. Welche Strategie passt, hängt vom Material, vom Risiko und von der Marktlage ab.",
-        "beispiele": [
-          "Ein Spezialstoff, den nur ein Hersteller liefert: Single Sourcing ist unvermeidbar — umso wichtiger sind Sicherheitsbestand und gute Beziehung.",
-          "Schwarze Standard-Rohlinge, für die es viele Anbieter gibt: zwei Lieferanten senken das Ausfallrisiko."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Dual Sourcing",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine häufige Mittellösung ist das Dual Sourcing: ein Hauptlieferant mit dem größten Anteil und ein zweiter, der regelmäßig kleinere Mengen liefert. So bleibt der zweite Lieferant eingearbeitet und kann bei einem Ausfall schnell mehr übernehmen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Lieferant A bietet Rohlinge 2 % günstiger, wenn MAKEL den gesamten Bedarf bei ihm kauft. Lieferant B ist etwas teurer, könnte aber 30 % des Bedarfs liefern. Im letzten Jahr hatte A eine dreiwöchige Lieferpause. Deniz wägt ab: 2 % Ersparnis gegen das Risiko, die Veredelung erneut anhalten zu müssen. Er entscheidet sich für 70/30 — die Abhängigkeit sinkt, der Mehrpreis ist begrenzt.",
-        "typische_fehler": "Eine Strategie wird generell für überlegen erklärt. Ob ein oder mehrere Lieferanten besser sind, hängt vom Einzelfall ab.",
         "verstaendnisfragen": [
-          "Welchen Hauptnachteil hat Single Sourcing? Abhängigkeit vom einzigen Lieferanten.",
-          "Welchen Nachteil hat die Verteilung auf mehrere Lieferanten? Mehr Abstimmungsaufwand, mögliche Qualitätsunterschiede, geringere Mengenrabatte."
-        ],
-        "pruefungsbezug": "Beschaffungsstrategien anhand von Abhängigkeit, Risiko, Konditionen und Aufwand abwägen.",
-        "merksatz": "Ein Lieferant bringt Konditionen und wenig Aufwand, aber Abhängigkeit; mehrere Lieferanten senken das Ausfallrisiko, erhöhen aber den Aufwand."
+          {
+            "frage": "Welchen Hauptnachteil hat Single Sourcing?",
+            "antwort": "Die Abhängigkeit: Fällt der einzige Lieferant aus, steht die Produktion.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum lohnt sich Multiple Sourcing nicht für jedes Material?",
+            "antwort": "Weil es Aufwand kostet. Bei günstigen, leicht ersetzbaren Materialien ist das Ausfallrisiko gering.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Lieferanten können in der Region, in der EU oder weltweit sitzen.",
-          "Digitale Plattformen verändern den Einkauf."
+        "darstellung": "vollfassung",
+        "ziel": "Du wägst regionale, internationale und digitale Beschaffung nach Kosten, Lieferzeit und Risiken ab, vergleichst Lieferanten anhand belegbarer Sozial- und Umweltkriterien und benennst, was Zertifikate und Audits nachweisen und was nicht.",
+        "vorwissen_kurz": "Ein Lieferant in Südasien bietet Hoodie-Rohlinge deutlich günstiger an als der portugiesische. Der Preis ist nur ein Teil der Entscheidung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nah, fern und auf Plattformen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Regionale Beschaffung** bringt kurze Lieferzeiten, einfache Kommunikation und die Möglichkeit, den Lieferanten zu besuchen. **Internationale Beschaffung** bietet oft günstigere Preise und Materialien, die es regional nicht gibt, bringt aber Risiken: lange Transportwege, Wechselkurse, Zoll, Sprache und schwer überprüfbare Arbeitsbedingungen. **Digitale B2B-Plattformen** machen Anbieter weltweit schnell vergleichbar, ersetzen aber keine Lieferantenprüfung. Die Beschaffung hat außerdem Folgen über MAKEL Studio hinaus: für die Menschen, die die Rohlinge herstellen, und für die Umwelt entlang der Lieferkette.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lieferantenvergleich mit Sozial- und Umweltkriterien",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Textil Norte, Portugal",
+              "Anbieter aus Südasien",
+              "Was der Nachweis belegt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Preis je Rohling",
+                  "14,00 €",
+                  "9,50 € zzgl. ca. 1,20 € Fracht und Zoll",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferzeit",
+                  "5 Arbeitstage",
+                  "6 bis 8 Wochen",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Schadstoffe",
+                  "Schadstoffprüfung für die Hoodie-Linie",
+                  "Schadstoffprüfung vorgelegt",
+                  "geprüfte Schadstoffgrenzen im Produkt, nichts über Löhne oder Arbeitsschutz"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitsbedingungen",
+                  "Sozialaudit vom Vorjahr, Besuch möglich",
+                  "Sozialaudit vom Vorjahr, Näherei arbeitet mit Subunternehmen",
+                  "Zustand am Audittag in der geprüften Fabrik, nicht bei Subunternehmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Umwelt",
+                  "Bio-Baumwolle mit Zertifizierung der Verarbeitungskette",
+                  "keine Angaben",
+                  "Herkunft und Verarbeitung nach Standard, nur für zertifizierte Ware"
+                ]
+              },
+              {
+                "zellen": [
+                  "Transport",
+                  "Lkw, ca. 2.000 km",
+                  "Seefracht, ca. 15.000 km",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Der südasiatische Anbieter ist auch mit Fracht und Zoll günstiger. Für die Arbeitsbedingungen bei den Subunternehmen und für die Umweltwirkung fehlen aber Belege, und die lange Lieferzeit passt schlecht zum Saisongeschäft.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nachweise sind wichtig, aber begrenzt. Eine Schadstoffprüfung sagt, dass die Ware keine schädlichen Stoffe über bestimmten Grenzwerten enthält, aber nichts über Löhne oder Arbeitsschutz. Ein Sozialaudit zeigt den Zustand an einem Tag in einer bestimmten Fabrik; angekündigte Audits und Subunternehmen, die nicht geprüft werden, sind bekannte Schwachstellen. Wer verantwortungsvoll beschaffen will, fragt deshalb genau nach: Wofür gilt das Zertifikat, wer hat geprüft, wann, und welche Produktionsstufen sind erfasst? Und er nimmt Lücken in die Entscheidung auf, statt sie mit einem Siegel zu überdecken.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Regionale Lieferanten bieten kurze Wege, schnelle Lieferung, einfache Kommunikation und oft geringere Transportemissionen, sind aber manchmal teurer. Internationale Lieferanten können günstiger sein oder Materialien anbieten, die es regional nicht gibt; dafür kommen längere und unsichere Lieferzeiten, Wechselkurse, Zoll außerhalb der EU, Sprachbarrieren und schwer überprüfbare Arbeits- und Umweltbedingungen hinzu. Digitale B2B-Beschaffung über Plattformen oder Lieferantenportale beschleunigt Anfragen und Bestellungen, ersetzt aber nicht die Prüfung des Lieferanten.",
-        "beispiele": [
-          "Regionaler Rohlingshändler in NRW: Lieferung in zwei Tagen, etwas höherer Preis.",
-          "Hersteller außerhalb der EU: niedrigerer Preis, sechs Wochen Seefracht, Zollabwicklung, Zahlung in US-Dollar."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Anforderungen von Kunden und Gesetzgeber",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gesetze zur Sorgfalt in Lieferketten verpflichten bisher vor allem große Unternehmen. MAKEL Studio mit 92 Beschäftigten fällt nicht direkt darunter. Große Firmenkunden geben ihre Anforderungen aber oft vertraglich an Zulieferer weiter, etwa mit einem Verhaltenskodex. Wer Belege für seine Lieferkette hat, kann solche Kunden leichter gewinnen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für die Herbstkollektion vergleicht Deniz einen regionalen Händler (Lieferzeit 3 Tage) mit einem Hersteller außerhalb der EU (Lieferzeit 6–8 Wochen, Preis in US-Dollar). Für die planbare Grundmenge kommt der günstigere Auslandslieferant in Frage, für kurzfristige Nachbestellungen bleibt der regionale Händler — so werden Preisvorteil und Lieferfähigkeit kombiniert.",
-        "typische_fehler": "Internationale Beschaffung wird nur über den Stückpreis bewertet; Transport, Zoll, Wechselkurs und Lieferrisiko bleiben außen vor.",
         "verstaendnisfragen": [
-          "Welche zusätzlichen Risiken bringt Beschaffung außerhalb der EU? Längere Lieferzeit, Wechselkurs, Zoll, Kommunikation, schwer prüfbare Arbeitsbedingungen.",
-          "Was ersetzt eine B2B-Plattform nicht? Die Prüfung, ob der Lieferant zuverlässig ist und die Qualität stimmt."
-        ],
-        "pruefungsbezug": "Beim Vergleich regionaler und internationaler Beschaffung immer mehrere Kriterien nennen, nicht nur den Preis.",
-        "merksatz": "Regional heißt schnell und einfach, international oft günstiger, aber mit Lieferzeit-, Kurs-, Zoll- und Kontrollrisiken; digitale Plattformen ersetzen keine Lieferantenprüfung."
+          {
+            "frage": "Was belegt eine Schadstoffprüfung für Textilien, und was nicht?",
+            "antwort": "Dass bestimmte Schadstoffgrenzwerte im Produkt eingehalten sind. Über Arbeitsbedingungen und Löhne sagt sie nichts.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum ist ein Sozialaudit nur ein begrenzter Nachweis?",
+            "antwort": "Weil es den Zustand an einem Tag in der geprüften Fabrik zeigt. Subunternehmen und spätere Veränderungen erfasst es nicht.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Eine Anfrage bittet einen Lieferanten um ein Angebot.",
-          "Je genauer die Anfrage, desto vergleichbarer die Angebote."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst eine vollständige, unverbindliche Anfrage an Lieferanten auf Deutsch und Englisch, die Spezifikation, Menge, Termin, Lieferort, erbetene Bedingungen und Nachweise nennt, und stellst sicher, dass alle Anbieter dieselbe Anfrage erhalten.",
+        "vorwissen_kurz": "Damit sich Angebote vergleichen lassen, müssen alle Lieferanten auf dieselbe Frage antworten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Anfrage, die Vergleiche möglich macht",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine {{begriff:anfrage|Anfrage}} ist unverbindlich. Je genauer sie ist, desto besser lassen sich die Angebote vergleichen. Sie nennt die **Spezifikation** der Ware, die **Mengen**, gerne mit Staffel, den **Lieferort**, den gewünschten **Termin**, die erbetenen Angaben zu Preisen, Lieferzeit, Liefer- und Zahlungsbedingungen und eine **Frist** für das Angebot. Wer Sozial- und Umweltkriterien vergleichen will, bittet gleich um die passenden **Nachweise**. Alle Anbieter erhalten dieselbe Anfrage, sonst antworten sie auf unterschiedliche Fragen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Anfrage auf Englisch",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Formulierung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anrede",
+                  "Dear Sir or Madam,"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anlass",
+                  "We are looking for a supplier of hoodie blanks for our textile finishing department."
+                ]
+              },
+              {
+                "zellen": [
+                  "Spezifikation und Menge",
+                  "Please send us your quotation for black hoodie blanks, 100 % organic cotton, 380 g/m², sizes S–XL, for 1,000 and 2,000 pieces."
+                ]
+              },
+              {
+                "zellen": [
+                  "erbetene Angaben",
+                  "Please include unit prices, delivery time to Düsseldorf, delivery terms and payment terms."
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachweise",
+                  "Please also provide copies of current certificates and audit reports, stating which products and production sites they cover."
+                ]
+              },
+              {
+                "zellen": [
+                  "Frist",
+                  "We would appreciate your offer by 15 March 2026."
+                ]
+              },
+              {
+                "zellen": [
+                  "Gruß",
+                  "Kind regards, Deniz Aydın, MAKEL Studio GmbH"
+                ]
+              }
+            ],
+            "fazit": "Die Anfrage ist vollständig und unverbindlich. Sie enthält keine Bestellformulierung und bittet ausdrücklich um Nachweise mit ihrem Geltungsbereich.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Typische Fehler sind leicht zu vermeiden. „Please deliver 1,000 pieces\" wäre eine Bestellung und damit ein Antrag, den der Lieferant annehmen könnte. Eine Anfrage ohne Staffel lässt nicht erkennen, ob es ab 2.000 Stück günstiger wird. Und eine Bitte um „certificates\" ohne Geltungsbereich führt oft zu Zertifikaten, die für andere Produkte oder Fabriken gelten. Die genaue Formulierung spart später viele Rückfragen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Eine vollständige Anfrage enthält: Artikel mit genauer Spezifikation (Material, Grammatur, Farbe, Größen), Menge (gegebenenfalls Staffeln), gewünschten Liefertermin, Lieferort, Bitte um Preis, Liefer- und Zahlungsbedingungen sowie die Frist für das Angebot. Eine Anfrage ist unverbindlich und wird nicht als Bestellung formuliert. Fragt MAKEL mehrere Lieferanten mit derselben Anfrage an, werden die Angebote vergleichbar.",
-        "beispiele": [
-          "Spezifikation: ‚Hoodie-Rohling, 100 % Baumwolle, 380 g/m², schwarz, Größen S–XL‘.",
-          "Mengenstaffel: ‚Bitte nennen Sie Preise für 500, 1.000 und 2.000 Stück.‘"
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Anfrage an mehrere Anbieter",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wird dieselbe Anfrage an mehrere Lieferanten geschickt, setzt man sie in Blindkopie oder schreibt jeden einzeln an, damit kein Anbieter die anderen sieht. Die Antworten werden dann in einer Vergleichstabelle zusammengeführt.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Deniz schreibt an einen Lieferanten in Portugal: ‚Dear Sir or Madam, we are interested in black hoodie blanks (100 % cotton, 380 g/m², sizes S–XL). Please send us your quotation for 1,000 and 2,000 pieces, including prices, delivery time to Düsseldorf, delivery terms and payment terms, by 15 March. Kind regards, Deniz Aydın, MAKEL Studio GmbH‘",
-        "typische_fehler": "Die Anfrage wird wie eine Bestellung formuliert (‚Bitte liefern Sie uns …‘) oder lässt wichtige Angaben weg — dann sind die Angebote nicht vergleichbar.",
         "verstaendnisfragen": [
-          "Ist eine Anfrage verbindlich? Nein, sie bittet nur um ein Angebot.",
-          "Warum schickt man mehreren Lieferanten dieselbe Anfrage? Damit die Angebote auf derselben Grundlage beruhen und vergleichbar sind."
-        ],
-        "pruefungsbezug": "Bei Anfrage-Aufgaben Spezifikation, Menge, Termin, Lieferort und erbetene Bedingungen vollständig nennen.",
-        "merksatz": "Eine Anfrage nennt Spezifikation, Menge, Termin, Lieferort und erbetene Bedingungen — unverbindlich formuliert und an alle Anbieter gleich."
+          {
+            "frage": "Welcher Satz würde aus einer Anfrage eine Bestellung machen?",
+            "antwort": "Zum Beispiel „Bitte liefern Sie uns 1.000 Stück bis 15. April\" — damit gäbe MAKEL einen Antrag ab.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum bittet MAKEL Studio um Nachweise mit Angabe des Geltungsbereichs?",
+            "antwort": "Damit klar ist, für welche Produkte und Fabriken ein Zertifikat gilt, und keine Nachweise für andere Ware vorgelegt werden.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

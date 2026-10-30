@@ -6,86 +6,472 @@
   "untertitel": "Zu spät oder fehlerhaft: Störungen unterscheiden, sauber dokumentieren, passend reagieren — und Lieferanten so bewerten, dass es beim nächsten Mal besser läuft.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Ein Lieferant kann zu spät oder fehlerhaft liefern.",
-          "Beides sind verschiedene Störungen mit verschiedenen Regeln."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Lieferungsverzug und Schlechtleistung anhand von Belegen, erkennst, wenn beide Störungen zusammentreffen, und beschreibst die Störung sachlich.",
+        "vorwissen_kurz": "Die Rohlinge kommen eine Woche zu spät, und ein Teil hat die falsche Farbe. Das sind zwei verschiedene Probleme.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zu spät oder nicht wie vereinbart",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:lieferungsverzug|Lieferungsverzug}} heißt: Der Lieferant liefert trotz Fälligkeit nicht rechtzeitig. Voraussetzung sind Fälligkeit, eine Mahnung oder ein kalendermäßig bestimmter Termin und dass der Lieferant die Verspätung zu vertreten hat. **Schlechtleistung** heißt: Die Lieferung weicht von der Vereinbarung ab, es liegt ein {{begriff:sachmangel|Sachmangel}} vor. ==Eine Lieferung kann beides zugleich sein.== Dann werden beide Störungen getrennt geprüft, weil für sie unterschiedliche Rechte gelten.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Störungen richtig einordnen",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Sachverhalt",
+              "Lieferungsverzug?",
+              "Schlechtleistung?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lieferung am 27. statt am vereinbarten 20. März",
+                  "ja, Kalendertermin überschritten",
+                  "nein"
+                ]
+              },
+              {
+                "zellen": [
+                  "40 von 200 Rohlingen dunkelgrau statt schwarz",
+                  "nein",
+                  "ja, Abweichung von der vereinbarten Farbe"
+                ]
+              },
+              {
+                "zellen": [
+                  "180 statt 200 Stück geliefert, Rest folgt",
+                  "ja für die fehlenden 20 Stück",
+                  "nein, wenn Teillieferung vereinbart war"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferant meldet höhere Gewalt durch Hafenstreik",
+                  "kein Verzug, wenn er die Verspätung nicht zu vertreten hat",
+                  "nein"
+                ]
+              }
+            ],
+            "fazit": "Bei der Lieferung vom 27. März liegen beide Störungen vor. Ob aus der Verspätung Rechte folgen, hängt zusätzlich davon ab, ob der Lieferant sie zu vertreten hat.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Trennung ist wichtig, weil sie zu unterschiedlichen Schritten führt. Für die falsche Farbe braucht MAKEL Studio Ersatzware; für die Verspätung möglicherweise Ersatz zusätzlicher Kosten, etwa einer Expresslieferung an den eigenen Kunden. Wer beides vermischt, übersieht leicht ein Recht oder fordert etwas, das gar nicht zusteht.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Lieferungsverzug liegt vor, wenn der Lieferant trotz Fälligkeit nicht liefert und gemahnt wurde — die Mahnung ist entbehrlich, wenn der Liefertermin kalendermäßig bestimmt ist (‚Lieferung am 20. März‘). Er muss die Verspätung zu vertreten haben. Schlechtleistung (mangelhafte Lieferung) liegt vor, wenn die gelieferte Ware nicht der vereinbarten Beschaffenheit entspricht. Eine Lieferung kann gleichzeitig verspätet und mangelhaft sein; dann werden beide Störungen getrennt geprüft.",
-        "beispiele": [
-          "Vereinbart ‚Lieferung am 20. März‘, Ware kommt am 27. März: Lieferungsverzug ohne Mahnung, wenn der Lieferant die Verspätung zu vertreten hat.",
-          "Bestellt 380 g/m², geliefert 280 g/m²: Schlechtleistung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Vertretenmüssen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Lieferant hat eine Verspätung zu vertreten, wenn er vorsätzlich oder fahrlässig gehandelt hat, etwa weil er zu spät beim Vorlieferanten bestellt hat. Bei höherer Gewalt, etwa einem Streik oder einer Naturkatastrophe, fehlt es daran. Die Pflicht zur Lieferung bleibt, aber Schadensersatz wegen Verzugs entfällt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Die am 20. März fällige Rohlingslieferung kommt am 27. März. Beim Auspacken stellt Jonas fest, dass 40 der 200 Rohlinge in Dunkelgrau statt Schwarz sind. Zwei Störungen: Lieferungsverzug (sieben Tage zu spät, kalendermäßiger Termin) und Schlechtleistung bei 40 Stück (falsche Farbe).",
-        "typische_fehler": "Verspätung und Mangel werden in einen Topf geworfen und mit demselben Standardschreiben behandelt.",
         "verstaendnisfragen": [
-          "Wann ist bei Lieferungsverzug eine Mahnung entbehrlich? Wenn der Liefertermin kalendermäßig bestimmt ist.",
-          "Was ist Schlechtleistung? Die Lieferung entspricht nicht der vereinbarten Beschaffenheit."
-        ],
-        "pruefungsbezug": "Bei Lieferstörungen zuerst die Art bestimmen: Verzug, Mangel oder beides.",
-        "merksatz": "Lieferungsverzug heißt zu spät trotz Fälligkeit und Mahnung oder Kalendertermin; Schlechtleistung heißt nicht wie vereinbart — beides wird getrennt geprüft."
+          {
+            "frage": "Wodurch unterscheidet sich Lieferungsverzug von Schlechtleistung?",
+            "antwort": "Verzug heißt zu spät trotz Fälligkeit; Schlechtleistung heißt, die Ware weicht von der Vereinbarung ab.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Kann eine Lieferung zugleich verspätet und mangelhaft sein?",
+            "antwort": "Ja. Dann werden beide Störungen getrennt geprüft.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Für die weitere Bearbeitung zählen die genauen Fakten.",
-          "Beim Handelskauf gilt die Rügepflicht."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst die rechtlich relevanten Angaben einer Lieferstörung mit Belegen zusammen, rügst einen offenen Mangel unverzüglich und formulierst eine sachliche Mängelmitteilung.",
+        "vorwissen_kurz": "Ob MAKEL Studio später Rechte geltend machen kann, hängt davon ab, was heute dokumentiert wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fakten mit Belegen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die weitere Bearbeitung zählen Fakten und Belege: Bestellung mit vereinbartem Termin, tatsächlicher Liefertag laut Lieferschein, vereinbarte und gelieferte Ausführung, betroffene Menge, Zeitpunkt der Entdeckung und Nachweise wie Fotos. Beim Handelskauf werden offene Mängel unverzüglich gerügt ({{par:hgb-377|§ 377 HGB}}). Die Rüge muss den Mangel so genau beschreiben, dass der Lieferant erkennt, was beanstandet wird.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Mängelmitteilung an den Lieferanten",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Formulierung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bezug",
+                  "Bestellung B-2026-130, Lieferung vom 27. März 2026"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vereinbarung",
+                  "Hoodie-Rohlinge schwarz, 380 g/m², 200 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mangel",
+                  "40 Stück sind dunkelgrau statt schwarz; Fotos von fünf Teilen anbei"
+                ]
+              },
+              {
+                "zellen": [
+                  "Entdeckung",
+                  "bei der Wareneingangsprüfung am 27. März"
+                ]
+              },
+              {
+                "zellen": [
+                  "Forderung",
+                  "Bitte liefern Sie 40 schwarze Rohlinge bis spätestens 31. März nach."
+                ]
+              },
+              {
+                "zellen": [
+                  "Verspätung",
+                  "Die Lieferung war für den 20. März vereinbart. Wir behalten uns vor, Mehrkosten aus der Verspätung geltend zu machen."
+                ]
+              }
+            ],
+            "fazit": "Die Mitteilung ist sachlich, vollständig und noch am Tag der Lieferung abgeschickt. Damit ist die Rüge rechtzeitig und die Forderung klar.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Vorbehalt zur Verspätung ist wichtig. Nimmt MAKEL Studio die verspätete Lieferung kommentarlos an, könnte der Lieferant annehmen, die Verspätung sei in Ordnung. Mit dem Hinweis bleibt offen, ob MAKEL Mehrkosten verlangt, etwa für eine Expresslieferung an den eigenen Kunden. Die falsch eingefärbten Rohlinge werden getrennt gelagert und nicht verarbeitet, bis geklärt ist, ob der Lieferant sie zurückhaben will.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Dokumentiert werden: Bestellnummer und vereinbarter Termin, tatsächlicher Liefertag, bestellte und gelieferte Ausführung, betroffene Menge, Zeitpunkt der Entdeckung, Nachweise (Fotos, Protokoll, Lieferschein). Weil MAKEL und der Lieferant Kaufleute sind, muss MAKEL offene Mängel unverzüglich nach Ablieferung rügen (§ 377 HGB). Für die Frage, welche weiteren Schritte möglich sind, ist außerdem wichtig, ob ein fester Termin vereinbart war und ob eine Frist gesetzt wurde.",
-        "beispiele": [
-          "Wareneingangsprotokoll vom 27. März: 200 Stück, davon 40 dunkelgrau, Fotos angehängt.",
-          "Bestellung B-2026-130 mit Liefertermin ‚20. März‘ belegt den kalendermäßigen Termin."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Versteckte Mängel",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Stellt sich ein Mangel erst beim Druck heraus, etwa weil der Stoff die Farbe nicht annimmt, muss er unverzüglich nach der Entdeckung gerügt werden. Auch dann gilt: sofort dokumentieren, Fotos machen, dem Lieferanten schreiben.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Jonas legt die Belege zusammen: Bestellung mit Termin 20. März, Lieferschein vom 27. März, Wareneingangsprotokoll mit 40 dunkelgrauen Teilen und Fotos. Deniz schickt die Mängelrüge noch am 27. März. Damit sind die Fakten für die weitere Bearbeitung gesichert und die Rüge rechtzeitig.",
-        "typische_fehler": "Die Rüge wird aufgeschoben, bis die Ware gebraucht wird. Dann kann sie verspätet sein, und die Mängelrechte gehen verloren.",
         "verstaendnisfragen": [
-          "Warum muss MAKEL den Mangel noch am Tag der Entdeckung melden? Weil beim beiderseitigen Handelskauf unverzüglich gerügt werden muss.",
-          "Welche Belege braucht man für die Bearbeitung einer Lieferstörung? Bestellung mit Termin, Lieferschein, Wareneingangsprotokoll und Nachweise wie Fotos."
-        ],
-        "pruefungsbezug": "In Fällen erst Sachverhalt mit Belegen sichern, dann rechtliche Schritte nennen.",
-        "merksatz": "Bei Lieferstörungen werden Termin, Liefertag, Ausführung, Menge, Entdeckungszeitpunkt und Nachweise dokumentiert; offene Mängel werden unverzüglich gerügt."
+          {
+            "frage": "Welche Angaben gehören in eine Mängelmitteilung?",
+            "antwort": "Bezug auf Bestellung und Lieferung, vereinbarte Ausführung, festgestellter Mangel mit Menge, Entdeckungszeitpunkt, Nachweise und die Forderung mit Frist.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum behält sich MAKEL Studio in der Mitteilung Ansprüche aus der Verspätung vor?",
+            "antwort": "Damit die kommentarlose Annahme nicht als Einverständnis mit der Verspätung verstanden wird.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Nach einer Lieferstörung hat der Käufer verschiedene Möglichkeiten.",
-          "Die passende Reaktion hängt vom Fall und vom eigenen Bedarf ab."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst bei Lieferungsverzug und Schlechtleistung die rechtlich möglichen und kaufmännisch sinnvollen Schritte, berechnest einen Verzögerungsschaden und erkennst, wann ein Rücktritt ohne Nachfrist möglich ist.",
+        "vorwissen_kurz": "Welche Rechte MAKEL Studio hat, ist das eine. Welche davon helfen, die Veredelung am Laufen zu halten, ist das andere.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rechte und Bedarf zusammendenken",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei **Lieferungsverzug** kann MAKEL Studio weiterhin die Lieferung verlangen und den Verzögerungsschaden ersetzt bekommen, wenn der Lieferant die Verspätung zu vertreten hat. Nach einer erfolglosen angemessenen Nachfrist kann MAKEL zurücktreten oder Schadensersatz statt der Leistung verlangen, etwa die Mehrkosten eines Deckungskaufs. Beim **Fixgeschäft**, bei dem der Termin ausdrücklich als fix vereinbart ist, ist der Rücktritt ohne Nachfrist möglich. Bei **Schlechtleistung** hat die Nacherfüllung Vorrang. Welche Rechte sinnvoll sind, entscheidet der eigene Bedarf.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Verzögerungsschaden",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Expressversand an den eigenen Kunden, weil MAKEL eine Woche verloren hat",
+                  "180,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Überstunden in der Veredelung, um den Rückstand aufzuholen",
+                  "240,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Verzögerungsschaden",
+                  "420,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Voraussetzung",
+                  "Verzug, Lieferant hat die Verspätung zu vertreten"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachweis",
+                  "Rechnung des Paketdienstes, Zeiterfassung"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Hat der Lieferant die Verspätung verschuldet, kann MAKEL Studio die 420 € Mehrkosten von ihm verlangen. Ohne Nachweis über die Kosten wird das schwierig.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kaufmännisch ist der Rücktritt oft die schlechteste Wahl, auch wenn er rechtlich möglich wäre. Ohne Rohlinge kann die Veredelung nicht drucken, und ein neuer Lieferant braucht Zeit. Deshalb verlangt MAKEL Studio für die 40 falschen Rohlinge eine schnelle Ersatzlieferung und verarbeitet die 160 richtigen sofort. Über den Verzögerungsschaden wird gesprochen, wenn die Versorgung gesichert ist. Ob MAKEL ihn tatsächlich fordert, hängt auch davon ab, wie wichtig der Lieferant künftig ist.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Bei Lieferungsverzug kann MAKEL weiter Lieferung verlangen und den Verzögerungsschaden ersetzt bekommen, wenn der Lieferant die Verspätung zu vertreten hat. Nach erfolglosem Ablauf einer angemessenen Nachfrist kann MAKEL vom Vertrag zurücktreten und — bei Vertretenmüssen — Schadensersatz statt der Leistung verlangen, etwa die Mehrkosten eines Deckungskaufs bei einem anderen Lieferanten. Bei einem Fixgeschäft (‚Lieferung am 20. März fix‘) ist der Rücktritt ohne Nachfrist möglich. Bei Schlechtleistung gelten die Mängelrechte: zuerst Nacherfüllung. Kaufmännisch zählt außerdem: Was braucht die Veredelung jetzt? Oft ist schnelle Ersatzlieferung wichtiger als die maximale Rechtsposition.",
-        "beispiele": [
-          "MAKEL braucht die Rohlinge dringend für einen Kundenauftrag: Nacherfüllung (Ersatz der 40 Teile) mit kurzer Frist verlangen.",
-          "Der Lieferant reagiert auf eine Nachfrist nicht: MAKEL kauft bei einem anderen Lieferanten (Deckungskauf) und verlangt die Mehrkosten, wenn die Voraussetzungen vorliegen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Deckungskauf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wartet MAKEL Studio nicht auf den Lieferanten, sondern kauft nach erfolgloser Nachfrist bei einem anderen ein, entstehen oft Mehrkosten. Kostet der Ersatz 1,50 € je Stück mehr, kann MAKEL diese Differenz als Schadensersatz statt der Leistung verlangen, wenn der ursprüngliche Lieferant den Verzug zu vertreten hat.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Deniz schreibt dem Lieferanten: Die 40 dunkelgrauen Rohlinge werden beanstandet; MAKEL verlangt Ersatzlieferung in Schwarz bis 3. April. Die 160 korrekten Teile behält MAKEL. Für die einwöchige Verspätung behält sich MAKEL vor, einen etwaigen Verzögerungsschaden geltend zu machen. Die rechtlichen Voraussetzungen im Einzelnen prüft Tobias Renner, falls es zum Streit kommt.",
-        "typische_fehler": "Jede Störung wird mit sofortigem Rücktritt beantwortet. Ohne Nachfrist ist das meist nicht möglich — und kaufmännisch oft auch nicht sinnvoll.",
         "verstaendnisfragen": [
-          "Was kann MAKEL bei Lieferungsverzug zunächst verlangen? Weiterhin die Lieferung und gegebenenfalls Ersatz des Verzögerungsschadens.",
-          "Was ist ein Deckungskauf? Der Kauf beim anderen Lieferanten; die Mehrkosten können unter den gesetzlichen Voraussetzungen als Schadensersatz verlangt werden."
-        ],
-        "pruefungsbezug": "Rechte bei Lieferungsverzug in Stufen nennen (Lieferung + Verzögerungsschaden; nach Nachfrist Rücktritt und Schadensersatz statt der Leistung) und die kaufmännische Zweckmäßigkeit begründen.",
-        "merksatz": "Bei Lieferungsverzug zuerst Lieferung und Verzögerungsschaden, nach erfolgloser Nachfrist Rücktritt oder Schadensersatz statt der Leistung; bei Mängeln zuerst Nacherfüllung."
+          {
+            "frage": "Wann kann MAKEL Studio bei Lieferungsverzug ohne Nachfrist zurücktreten?",
+            "antwort": "Beim Fixgeschäft, wenn der Liefertermin ausdrücklich als fix vereinbart war.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Welches Recht hat bei Schlechtleistung Vorrang?",
+            "antwort": "Die Nacherfüllung, also Ersatzlieferung oder Nachbesserung.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Lieferanten werden regelmäßig bewertet.",
-          "Kennzahlen machen die Bewertung vergleichbar."
+        "darstellung": "vollfassung",
+        "ziel": "Du bewertest Lieferanten mit Kennzahlen wie Termintreue und Qualitätsquote, gibst Abweichungen vom Ziel in Prozentpunkten an und leitest aus der Ursache eine passende Maßnahme ab.",
+        "vorwissen_kurz": "Die Störung ist gelöst. Damit sie sich nicht wiederholt, wertet der Einkauf die Erfahrungen mit dem Lieferanten aus.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erfahrungen vergleichbar machen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:lieferantenbewertung|Lieferantenbewertung}} macht Erfahrungen vergleichbar. Typische Kennzahlen sind die **Termintreue**, also der Anteil termingerechter Lieferungen, und die **Qualitätsquote**, also der Anteil mangelfreier Lieferungen. Sie werden mit einem Zielwert verglichen. Abweichungen zwischen Prozentwerten gibt man in **Prozentpunkten** an: Von 90 % auf 70 % sind es 20 Prozentpunkte, nicht 20 Prozent. Aus der Ursache der Abweichung wird die Maßnahme abgeleitet.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Lieferanten im Halbjahresvergleich",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Ziel",
+              "Lieferant A",
+              "Lieferant B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lieferungen",
+                  "",
+                  "10",
+                  "8"
+                ]
+              },
+              {
+                "zellen": [
+                  "termingerecht",
+                  "",
+                  "7",
+                  "8"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termintreue",
+                  "mindestens 90 %",
+                  "70 % (− 20 Prozentpunkte)",
+                  "100 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "mangelfreie Lieferungen",
+                  "",
+                  "8",
+                  "7"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualitätsquote",
+                  "mindestens 95 %",
+                  "80 % (− 15 Prozentpunkte)",
+                  "87,5 % (− 7,5 Prozentpunkte)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hauptursache",
+                  "",
+                  "Engpässe beim Vorlieferanten",
+                  "Farbabweichungen bei Saisonfarben"
+                ]
+              }
+            ],
+            "fazit": "Lieferant A ist vor allem unpünktlich, B liefert pünktlich, aber nicht immer in der vereinbarten Qualität. Beide brauchen unterschiedliche Maßnahmen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Maßnahme folgt der Ursache. Bei A liegen die Verspätungen an Engpässen beim Vorlieferanten; hier hilft ein zweiter Lieferant für einen Teil des Bedarfs. Bei B treten Farbabweichungen auf; hier hilft eine Qualitätsvereinbarung mit Farbreferenz und Freigabe eines Musters vor jeder Saisonlieferung. Die Bewertung wird mit den Lieferanten besprochen. Wer seine Zahlen kennt, kann sich verbessern, und eine faire Bewertung stärkt die Zusammenarbeit.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Die Lieferantenbewertung fasst Erfahrungen in Kennzahlen: Termintreue (termingerechte Lieferungen ÷ alle Lieferungen × 100), Qualitätsquote, Reaktionszeit bei Reklamationen, Preisentwicklung, zunehmend auch Nachhaltigkeit und Arbeitsbedingungen. Weicht ein Wert vom Ziel ab, sucht man die Ursache und entscheidet: Gespräch und Vereinbarung, realistischere Terminabsprache, zusätzliche Bezugsquelle oder Wechsel. Abweichungen zwischen Prozentwerten werden in Prozentpunkten angegeben.",
-        "beispiele": [
-          "7 von 10 Lieferungen termingerecht: Termintreue 70 %. Ziel 90 %: Abweichung 20 Prozentpunkte.",
-          "Qualitätsquote: 1.900 von 2.000 Teilen einwandfrei = 95 %."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kleine Zahlen vorsichtig deuten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei nur acht oder zehn Lieferungen verändert eine einzige verspätete Lieferung die Quote um mehr als zehn Prozentpunkte. Deshalb werden solche Kennzahlen über längere Zeiträume beobachtet, bevor ein Lieferant aussortiert wird.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "In der Halbjahresbewertung liegt der Rohlingslieferant bei 70 % Termintreue, Ziel sind 90 %. Ursache laut Gespräch: Engpässe bei seinem Vorlieferanten. Deniz vereinbart realistischere Liefertermine mit einem Puffer und baut einen zweiten Lieferanten für 30 % des Bedarfs auf. Er weist Tobias Renner auf den Mehrpreis von 1,5 % beim zweiten Lieferanten hin.",
-        "typische_fehler": "Prozent und Prozentpunkte werden verwechselt: Von 70 % auf 90 % sind es 20 Prozentpunkte, aber eine Steigerung um rund 28,6 Prozent.",
         "verstaendnisfragen": [
-          "Wie berechnet man die Termintreue eines Lieferanten? Termingerechte Lieferungen ÷ alle Lieferungen × 100.",
-          "Wie viele Prozentpunkte liegen zwischen 70 % und 90 %? 20 Prozentpunkte."
-        ],
-        "pruefungsbezug": "Kennzahl berechnen, Abweichung in Prozentpunkten angeben, Maßnahme mit möglichen Mehrkosten begründen.",
-        "merksatz": "Lieferanten werden mit Kennzahlen wie der Termintreue bewertet; Abweichungen zwischen Prozentwerten gibt man in Prozentpunkten an und leitet begründete Maßnahmen ab."
+          {
+            "frage": "Von zehn Lieferungen waren sieben termingerecht, Ziel 90 %. Wie groß ist die Abweichung?",
+            "antwort": "Istwert 70 %, Abweichung 20 Prozentpunkte.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Welche Maßnahme passt, wenn ein Lieferant immer wieder Farbabweichungen liefert?",
+            "antwort": "Eine Qualitätsvereinbarung, etwa mit Farbreferenz und Musterfreigabe vor jeder Lieferung.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

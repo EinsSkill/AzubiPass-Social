@@ -27,6 +27,9 @@ VERWEIS = re.compile(r"\{\{(begriff|par):([a-z0-9-]+)\|")
 fehler, ok = [], 0
 
 
+
+GRAFIK_AUSNAHMEN = {"ik2024-lf04/k02": 2}  # L29: Kostendiagramm optimale Bestellmenge
+
 def pruefe(bedingung, text):
     global ok
     if bedingung:
@@ -110,7 +113,10 @@ def kapitel_pruefen(lf, ch, eintrag):
 
     alle = [b for a in abschnitte for b in a["inhalt"]]
     zahl = lambda t: sum(1 for b in alle if b["typ"] == t)
-    pruefe(zahl("grafik") <= 1, f"{wo}: {zahl('grafik')} Grafiken (höchstens 1)")
+    # Begründete Ausnahme (Ergänzung L29): Das Bestellmengenmodell wird zusätzlich zur
+    # Lagerkurve als eigenes Kostendiagramm gezeigt. Jede weitere Ausnahme gehört hierher.
+    grafik_max = GRAFIK_AUSNAHMEN.get(wo, 1)
+    pruefe(zahl("grafik") <= grafik_max, f"{wo}: {zahl('grafik')} Grafiken (höchstens {grafik_max})")
     pruefe(zahl("check") <= 1, f"{wo}: {zahl('check')} Checks (höchstens 1)")
     pruefe(zahl("zuordnen") <= 1, f"{wo}: {zahl('zuordnen')} Zuordnungen (höchstens 1)")
     pruefe(zahl("achtung") <= 2, f"{wo}: {zahl('achtung')} Achtung-Kästen (höchstens 2)")

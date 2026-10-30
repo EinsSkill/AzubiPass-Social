@@ -801,8 +801,17 @@ tr.detail td strong{color:var(--gold);}
 .be-warnung{font-family:var(--sans);font-size:13.5px;line-height:1.6;color:#E8B4A0;
   margin:14px 0 0;padding-top:14px;border-top:1px solid rgba(245,245,240,.14);}
 .be-warnung strong{color:var(--creme);}
+.bm-lager{fill:none;stroke:rgba(245,245,240,.55);stroke-width:1.5;stroke-dasharray:6 4;}
+.bm-bestell{fill:none;stroke:#7FA7A0;stroke-width:1.5;}
+.be-kosten{fill:none;}
+.bm-lagerschrift{fill:rgba(245,245,240,.6);font-family:var(--sans);font-size:10.5px;}
+.bm-bestellschrift{fill:#7FA7A0;font-family:var(--sans);font-size:10.5px;}
+.bm-annahmen{margin-top:14px;padding-top:12px;border-top:1px solid rgba(245,245,240,.14);
+  font-family:var(--sans);font-size:13px;line-height:1.55;color:rgba(245,245,240,.66);}
+.bm-annahmen-kopf{margin:0 0 4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,245,240,.5);}
+.bm-annahmen ul{margin:0;padding-left:18px;}
 @media (max-width:860px){
-  .be-fixschrift,.be-kostenschrift,.be-erloesschrift,.be-punktschrift{font-size:13px;}
+  .be-fixschrift,.be-kostenschrift,.be-erloesschrift,.be-punktschrift,.bm-lagerschrift,.bm-bestellschrift{font-size:13px;}
 }
 
 /* ---------- Liquiditätsverlauf ---------- */

@@ -879,7 +879,8 @@
       "durchlauf": gDurchlauf,
       "balkenplan": gBalkenplan,
       "epk": gEpk,
-      "pauschale": gPauschale
+      "pauschale": gPauschale,
+      "bestellmenge": gBestellmenge
     }[daten.variante];
     if (bauer) bauer(buehne, daten);
     else buehne.appendChild(mkEl("p", "echo", "Bauteil „" + daten.variante + "“ ist noch nicht gebaut."));
@@ -2065,6 +2066,138 @@
      Tagesart wählen, gestellte Mahlzeiten anhaken. Gekürzt wird immer
      mit festen Anteilen des vollen Tagessatzes; die Pauschale wird nie
      negativ. Beträge kommen aus den Daten (Stand im Text belegt).          */
+
+  /* ---------- Optimale Bestellmenge ----------
+     Drei Kurven über der Bestellmenge: Bestellkosten fallen, Lagerkosten
+     steigen, die Summe hat ein flaches Minimum. Achsen mit Einheiten, die
+     Modellannahmen stehen sichtbar daneben — das Ergebnis ist ein Richtwert. */
+
+  function gBestellmenge(buehne, d) {
+    var NSB3 = "http://www.w3.org/2000/svg";
+    var regler = el("div", "staffel-regler");
+    var felder = {};
+    ["bedarf", "bestellkosten", "lagerkosten"].forEach(function (schl) {
+      if (!d.eingaben[schl]) return;
+      var f = el("div", "feld");
+      f.appendChild(el("label", null, d.eingaben[schl].label));
+      var i = document.createElement("input");
+      AP.kommafeld(i);
+      i.min = d.eingaben[schl].min; i.max = d.eingaben[schl].max;
+      i.step = d.eingaben[schl].schritt || 1;
+      i.value = d.eingaben[schl].start;
+      f.appendChild(i);
+      regler.appendChild(f);
+      felder[schl] = i;
+    });
+    buehne.appendChild(regler);
+
+    var huelle = el("div", "be-buehne weit");
+    buehne.appendChild(huelle);
+    var ergebnis = el("div", "be-ergebnis");
+    ergebnis.setAttribute("aria-live", "polite");
+    buehne.appendChild(ergebnis);
+    if (d.annahmen && d.annahmen.length) {
+      var box = el("div", "bm-annahmen");
+      box.appendChild(el("p", "bm-annahmen-kopf", "Modellannahmen"));
+      var ul = document.createElement("ul");
+      d.annahmen.forEach(function (a) { ul.appendChild(mkEl("li", null, a)); });
+      box.appendChild(ul);
+      buehne.appendChild(box);
+    }
+
+    var B = 620, H = 280, LI = 70, RE = 16, OB = 18, UN = 46;
+    function zahlText(n) { return Math.round(n).toLocaleString("de-DE"); }
+
+    function zeichne() {
+      var J = Math.max(0, AP.zahl(felder.bedarf, 0));
+      var K = Math.max(0, AP.zahl(felder.bestellkosten, 0));
+      var L = Math.max(0, AP.zahl(felder.lagerkosten, 0));
+      huelle.innerHTML = ""; ergebnis.innerHTML = "";
+      if (!(J > 0 && K > 0 && L > 0)) {
+        ergebnis.appendChild(mkEl("p", "be-warnung",
+          "Alle drei Werte müssen größer als null sein — sonst gibt es keinen Ausgleich zwischen Bestell- und Lagerkosten."));
+        return;
+      }
+      var qs = Math.sqrt(2 * J * K / L);
+      var maxQ = Math.max(qs * 2.6, 10);
+      function bestell(q) { return J / q * K; }
+      function lager(q) { return q / 2 * L; }
+      var maxWert = Math.max(lager(maxQ) + bestell(maxQ), bestell(qs) * 2) * 1.6;
+      // Kurven erst dort beginnen lassen, wo sie ins Bild passen — kein Abschneiden am oberen Rand
+      var minQ = Math.max(maxQ / 40, J * K / (maxWert * 0.98));
+      function x(q) { return LI + (q / maxQ) * (B - LI - RE); }
+      function y(w) { return OB + (1 - Math.min(w, maxWert) / maxWert) * (H - OB - UN); }
+
+      var svg = document.createElementNS(NSB3, "svg");
+      svg.setAttribute("viewBox", "0 0 " + B + " " + H);
+      svg.setAttribute("class", "be-svg");
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", "Kostenkurven über der Bestellmenge. Die Gesamtkosten sind bei etwa " +
+        zahlText(qs) + " Stück am niedrigsten; dort sind Bestell- und Lagerkosten gleich hoch.");
+
+      function pfad(fn, klasse) {
+        var d2 = "", n = 120;
+        for (var k = 0; k <= n; k++) {
+          var q = minQ + (maxQ - minQ) * k / n;
+          if (fn(q) > maxWert) continue;
+          d2 += (d2 ? "L" : "M") + x(q).toFixed(1) + " " + y(fn(q)).toFixed(1);
+        }
+        var p2 = document.createElementNS(NSB3, "path");
+        p2.setAttribute("d", d2); p2.setAttribute("class", klasse);
+        svg.appendChild(p2);
+      }
+      function schrift(px, py, text, klasse, anker) {
+        var t = document.createElementNS(NSB3, "text");
+        t.setAttribute("x", px); t.setAttribute("y", py);
+        if (anker) t.setAttribute("text-anchor", anker);
+        t.setAttribute("class", klasse);
+        t.textContent = text;
+        svg.appendChild(t);
+      }
+      var achse = document.createElementNS(NSB3, "path");
+      achse.setAttribute("d", "M" + LI + " " + OB + "V" + y(0) + "H" + (B - RE));
+      achse.setAttribute("class", "be-achse");
+      svg.appendChild(achse);
+      schrift(LI - 8, OB + 4, "€/Jahr", "be-fixschrift", "end");
+      schrift(B - RE, H - 8, "Bestellmenge in Stück", "be-fixschrift", "end");
+      schrift(LI, y(0) + 16, "0", "be-fixschrift", "middle");
+
+      var lagerStart = minQ; minQ = maxQ / 200;
+      pfad(lager, "bm-lager");
+      minQ = lagerStart;
+      pfad(bestell, "bm-bestell");
+      pfad(function (q) { return bestell(q) + lager(q); }, "be-kosten");
+      schrift(x(maxQ) - 4, y(lager(maxQ)) + 18, "Lagerkosten", "bm-lagerschrift", "end");
+      schrift(x(maxQ) - 4, y(bestell(maxQ)) - 8, "Bestellkosten", "bm-bestellschrift", "end");
+      schrift(x(maxQ) - 4, y(lager(maxQ) + bestell(maxQ)) - 8, "Gesamtkosten", "be-kostenschrift", "end");
+
+      var lot = document.createElementNS(NSB3, "line");
+      lot.setAttribute("x1", x(qs)); lot.setAttribute("x2", x(qs));
+      lot.setAttribute("y1", y(bestell(qs) + lager(qs))); lot.setAttribute("y2", y(0));
+      lot.setAttribute("class", "be-lot");
+      svg.appendChild(lot);
+      var punkt = document.createElementNS(NSB3, "circle");
+      punkt.setAttribute("cx", x(qs)); punkt.setAttribute("cy", y(bestell(qs) + lager(qs)));
+      punkt.setAttribute("r", 5); punkt.setAttribute("class", "be-punkt");
+      svg.appendChild(punkt);
+      schrift(x(qs), y(0) + 16, zahlText(qs), "be-punktschrift", "middle");
+      huelle.appendChild(svg);
+
+      var gesamt = bestell(qs) + lager(qs);
+      var zeile = el("div", "be-rechnung");
+      zeile.innerHTML = "q* = √(2 × " + zahlText(J) + " × " + geld(K) + " ÷ " + geld(L) + ") ≈ <b>" +
+        zahlText(qs) + " Stück</b> · Gesamtkosten dort ≈ " + geld(gesamt) + " pro Jahr";
+      ergebnis.appendChild(zeile);
+      var q2 = qs * 1.4;
+      ergebnis.appendChild(mkEl("p", "be-hinweis",
+        "Im Optimum sind Bestell- und Lagerkosten gleich hoch (je " + geld(gesamt / 2) + "). " +
+        "Wer 40 % mehr bestellt (" + zahlText(q2) + " Stück), zahlt nur " +
+        geld(bestell(q2) + lager(q2) - gesamt) + " mehr — das Minimum ist flach."));
+    }
+
+    Object.keys(felder).forEach(function (k) { felder[k].addEventListener("input", zeichne); });
+    zeichne();
+  }
 
   function gPauschale(buehne, d) {
     function eur(x) { return x.toFixed(2).replace(".", ",") + " €"; }

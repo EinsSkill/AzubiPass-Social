@@ -6,86 +6,467 @@
   "untertitel": "Eindeutig bestellen, Wareneingang sauber prüfen, Bestellung, Lieferung und Rechnung abgleichen — und erst dann zahlen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eine Bestellung auf ein verbindliches Angebot schließt den Kaufvertrag.",
-          "Was in der Bestellung steht, ist später Maßstab für Lieferung und Rechnung."
+        "darstellung": "vollfassung",
+        "ziel": "Du löst eine Bestellung vollständig aus, indem du alle Angebotsangaben übernimmst, prüfst, ob die Bestellung dem Angebot entspricht, und holst die passende Freigabe nach Wertgrenzen ein.",
+        "vorwissen_kurz": "Das Angebot von Lieferant B ist das beste. Jetzt wird bestellt, und diese Bestellung ist später der Maßstab für alles Weitere.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Bestellung festlegt",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:bestellung|Bestellung}} übernimmt alle Angaben aus dem Angebot: Artikel mit Spezifikation, Menge, Preis, Liefertermin, Liefer- und Zahlungsbedingungen. Stimmt sie mit einem bindenden Angebot überein, ist der Kaufvertrag geschlossen. ==Was hier steht, ist später Maßstab für Lieferung und Rechnung.== Die Bestellung wird im System angelegt, damit Lager und Buchhaltung sie sehen und Wareneingang und Rechnung damit abgleichen können. Je nach Bestellwert braucht sie eine Freigabe durch eine berechtigte Person.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Freigaberegeln bei MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestellwert netto",
+              "Freigabe durch",
+              "Beispiel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "bis 500 €",
+                  "Sachbearbeitung Einkauf",
+                  "Etiketten, Verpackungsmaterial"
+                ]
+              },
+              {
+                "zellen": [
+                  "bis 5.000 €",
+                  "Deniz Aydın, Leitung Einkauf und Produktion",
+                  "100 Hoodie-Rohlinge für 800 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "bis 50.000 €",
+                  "Tobias Renner, kaufmännische Geschäftsführung",
+                  "Rohlinge für die Wintersaison"
+                ]
+              },
+              {
+                "zellen": [
+                  "über 50.000 €",
+                  "Geschäftsführung gemeinsam",
+                  "Laserstation"
+                ]
+              }
+            ],
+            "fazit": "Die Bestellung B-2026-118 über 800 € fällt in die Grenze von Deniz Aydın. Ohne seine Freigabe würde sie nicht ausgelöst.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Freigaberegeln schützen das Unternehmen. Sie verhindern, dass große Beträge ohne Kontrolle ausgegeben werden, und legen fest, wer für welche Entscheidung verantwortlich ist. Gleichzeitig sorgen sie dafür, dass kleine Bestellungen nicht unnötig lange warten. Wer eine Bestellung über seiner Grenze auslöst, handelt im Innenverhältnis ohne Befugnis, auch wenn der Vertrag nach außen oft trotzdem wirksam ist.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Bestellung enthält dieselben Angaben wie das angenommene Angebot: Artikel mit Spezifikation, Menge, Preis, Liefertermin, Lieferort, Liefer- und Zahlungsbedingungen, Bezug auf das Angebot. Sie wird im Warenwirtschaftssystem angelegt, damit Wareneingang und Buchhaltung später darauf zugreifen. Wer bestellt, braucht eine passende Vollmacht. Bei MAKEL gilt für Rohlinge zum Beispiel: Bestellungen bis 5.000 € gibt Deniz Aydın frei, darüber die kaufmännische Geschäftsführung.",
-        "beispiele": [
-          "Bestellnummer, Angebotsbezug und Liefertermin stehen auf der Bestellung — sie erleichtern dem Lieferanten die Zuordnung.",
-          "Eine telefonische Bestellung wird schriftlich bestätigt, damit Inhalt und Zeitpunkt nachweisbar sind."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Bestellung ohne Angebot",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bestellt MAKEL Studio ohne vorheriges bindendes Angebot, etwa nach einer Preisliste, ist die Bestellung selbst der Antrag. Der Vertrag kommt erst zustande, wenn der Lieferant annimmt, zum Beispiel mit einer Auftragsbestätigung oder durch Lieferung. Weicht die Auftragsbestätigung ab, muss MAKEL reagieren.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Deniz bestellt beim Lieferanten 100 Rohlinge zu 8,00 € netto je Stück auf dessen Angebot vom 3. März, Liefertermin 20. März, frei Haus, 10 Tage 2 % Skonto, 30 Tage netto. Die Bestellung erhält die Nummer B-2026-118 und wird im System angelegt.",
-        "typische_fehler": "Die Bestellung weicht unbemerkt vom Angebot ab — etwa in Menge oder Preis. Dann ist sie keine Annahme, sondern ein neuer Antrag.",
         "verstaendnisfragen": [
-          "Welche Rechtswirkung hat eine Bestellung auf ein verbindliches Angebot? Sie nimmt das Angebot an; der Kaufvertrag ist geschlossen.",
-          "Warum wird die Bestellung im System angelegt? Damit Wareneingang und Rechnungsprüfung später darauf zugreifen können."
-        ],
-        "pruefungsbezug": "Bestellungen auf Vollständigkeit und Übereinstimmung mit dem Angebot prüfen.",
-        "merksatz": "Die Bestellung übernimmt alle Angebotsangaben, wird im System angelegt und braucht eine passende Freigabe."
+          {
+            "frage": "Warum wird die Bestellung im System angelegt?",
+            "antwort": "Damit Lager und Buchhaltung Lieferung und Rechnung damit abgleichen können.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Wer muss bei MAKEL Studio eine Bestellung über 800 € freigeben?",
+            "antwort": "Deniz Aydın als Leiter Einkauf und Produktion, weil sie in seine Grenze bis 5.000 € fällt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Beim Wareneingang wird geprüft, ob die Lieferung stimmt.",
-          "Unter Kaufleuten gibt es eine Untersuchungs- und Rügepflicht."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst den Wareneingang in zwei Stufen, gleichst Lieferung, Lieferschein und Bestellung ab, dokumentierst Abweichungen im Wareneingangsprotokoll und beachtest die Rügepflicht beim Handelskauf.",
+        "vorwissen_kurz": "Ein Lkw bringt die Rohlinge. Jonas Weidner nimmt die Lieferung an.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Stufen der Prüfung",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Wareneingang wird in zwei Stufen geprüft. Die **äußere Prüfung** erfolgt sofort im Beisein des Fahrers: Stimmt die Anschrift, stimmt die Zahl der Packstücke mit dem Frachtbrief überein, gibt es äußere Schäden? Schäden werden auf dem Frachtbrief vermerkt und vom Fahrer bestätigt. Die **inhaltliche Prüfung** folgt unverzüglich im Lager: Art, Menge und Qualität werden mit Lieferschein und Bestellung verglichen, die Qualität stichprobenartig. Beim Handelskauf macht die {{begriff:ruegepflicht|Rügepflicht}} die zügige Prüfung zur Rechtssicherung.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Wareneingangsprotokoll",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfpunkt",
+              "Bestellung",
+              "Lieferschein",
+              "festgestellt",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Packstücke",
+                  "—",
+                  "5 Kartons",
+                  "5 Kartons, unbeschädigt",
+                  "in Ordnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Artikel",
+                  "Hoodie-Rohling schwarz, 380 g/m²",
+                  "wie bestellt",
+                  "wie bestellt",
+                  "in Ordnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Menge",
+                  "100 Stück",
+                  "100 Stück",
+                  "90 Stück, ein Karton nur halb gefüllt",
+                  "Abweichung − 10"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualität, Stichprobe 10 Stück",
+                  "—",
+                  "—",
+                  "Gewicht und Farbe in Ordnung",
+                  "in Ordnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Datum, Prüfer",
+                  "",
+                  "",
+                  "20. März, Jonas Weidner",
+                  ""
+                ]
+              }
+            ],
+            "fazit": "Die Lieferung ist äußerlich in Ordnung, aber es fehlen 10 Rohlinge. Jonas informiert sofort Einkauf und Buchhaltung.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Protokoll ist die Grundlage für alles Weitere. Ohne dokumentierte Abweichung kann die Buchhaltung die Rechnung nicht richtig prüfen, und MAKEL Studio kann eine Mindermenge später kaum belegen. Weil der Kauf für beide Seiten ein Handelsgeschäft ist, muss MAKEL die fehlende Menge unverzüglich beim Lieferanten anzeigen. Der Einkauf meldet sich noch am selben Tag und fragt, ob eine Teillieferung vorliegt oder ein Packfehler.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Prüfung beim Wareneingang läuft in zwei Stufen. Sofort bei Anlieferung im Beisein des Fahrers: Anschrift, Anzahl der Packstücke, äußere Beschädigungen; Schäden werden auf dem Frachtbrief vermerkt. Danach unverzüglich im Lager: Inhalt mit Lieferschein und Bestellung vergleichen (Art, Menge, Qualität), Stichproben auf Mängel. Das Ergebnis hält das Wareneingangsprotokoll fest. Beim beiderseitigen Handelskauf muss MAKEL Mängel unverzüglich rügen (§ 377 HGB) — deshalb ist die zügige Prüfung kein Bürokratismus, sondern Rechtssicherung.",
-        "beispiele": [
-          "Ein Karton ist eingedrückt: Vermerk auf dem Frachtbrief, Foto, Unterschrift des Fahrers.",
-          "Laut Lieferschein 100 Stück, gezählt 90: Abweichung im Protokoll festhalten und dem Lieferanten melden."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Lieferschein und Frachtbrief",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Frachtbrief gehört zum Transport und dokumentiert, was der Spediteur übernommen und abgeliefert hat. Der Lieferschein kommt vom Lieferanten und nennt den Inhalt der Sendung. Beide werden mit der Bestellung verglichen, aber für unterschiedliche Fragen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Am 20. März liefert der Paketdienst drei Kartons. Jonas Weidner prüft bei Übergabe: drei Packstücke, unbeschädigt. Im Lager zählt er 90 Rohlinge; Lieferschein und Bestellung nennen 100. Eine Stichprobe von 10 Teilen ist in Ordnung. Er protokolliert: 90 angenommen, 10 fehlen, Qualität ohne Befund.",
-        "typische_fehler": "Ware wird ungeprüft eingelagert. Fällt ein offensichtlicher Mangel erst Wochen später auf, kann die Rüge verspätet sein.",
         "verstaendnisfragen": [
-          "Was wird bei Anlieferung im Beisein des Fahrers geprüft? Anschrift, Anzahl der Packstücke und äußere Beschädigungen.",
-          "Warum muss die Inhaltsprüfung zügig erfolgen? Weil beim Handelskauf Mängel unverzüglich gerügt werden müssen."
-        ],
-        "pruefungsbezug": "Die zwei Prüfstufen und die Rechtsfolge verspäteter Rüge (§ 377 HGB) gehören zusammen.",
-        "merksatz": "Wareneingang: sofort äußerlich mit dem Fahrer, dann unverzüglich inhaltlich mit Lieferschein und Bestellung — Ergebnis im Protokoll."
+          {
+            "frage": "Was wird bei der äußeren Prüfung im Beisein des Fahrers kontrolliert?",
+            "antwort": "Anschrift, Zahl der Packstücke laut Frachtbrief und äußere Schäden.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum muss eine fehlende Menge beim Handelskauf unverzüglich angezeigt werden?",
+            "antwort": "Wegen der Rügepflicht nach § 377 HGB. Sonst gilt die Lieferung als genehmigt.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Die Rechnung des Lieferanten wird vor der Zahlung geprüft.",
-          "Grundlage sind Bestellung und Wareneingangsprotokoll."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst eine Eingangsrechnung sachlich, preislich und rechnerisch anhand von Bestellung und Wareneingangsprotokoll, kontrollierst die Pflichtangaben für den Vorsteuerabzug und erkennst, dass rechnerisch richtig nicht sachlich richtig bedeutet.",
+        "vorwissen_kurz": "Die Rechnung des Lieferanten trifft ein. Bevor sie bezahlt wird, prüft die Buchhaltung, ob sie stimmt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Prüfungen, drei Belege",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnungsprüfung gleicht drei Belege ab: Bestellung, Wareneingangsprotokoll und {{begriff:rechnung|Rechnung}}. Die **sachliche Prüfung** fragt, ob die berechnete Ware in Art und Menge tatsächlich angenommen wurde; Maßstab ist das Wareneingangsprotokoll. Die **preisliche Prüfung** fragt, ob Preis, Rabatte und Zahlungsbedingungen der Bestellung entsprechen. Die **rechnerische Prüfung** rechnet Beträge, Umsatzsteuer und Summe nach. Außerdem muss die Rechnung die gesetzlichen Pflichtangaben enthalten, damit MAKEL Studio die Vorsteuer abziehen kann.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Prüfung der Rechnung R-4471",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfung",
+              "Rechnung",
+              "Maßstab",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "sachlich: Menge",
+                  "100 Stück",
+                  "Wareneingang: 90 Stück",
+                  "Abweichung − 10 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "preislich: Stückpreis",
+                  "8,00 € netto",
+                  "Bestellung: 8,00 €",
+                  "in Ordnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "preislich: Zahlung",
+                  "30 Tage netto",
+                  "Bestellung: 10 Tage 2 % Skonto, 30 Tage netto",
+                  "Skonto fehlt auf der Rechnung, gilt aber laut Vertrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "rechnerisch",
+                  "800,00 € + 152,00 € = 952,00 €",
+                  "nachgerechnet",
+                  "in Ordnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Pflichtangaben",
+                  "Name, Anschrift, Steuernummer, Rechnungsnummer, Datum, Leistung, Steuersatz und -betrag",
+                  "§ 14 UStG",
+                  "vollständig"
+                ]
+              }
+            ],
+            "fazit": "Die Rechnung ist rechnerisch richtig, aber sachlich um 10 Stück zu hoch. Der vereinbarte Skonto gilt, auch wenn er auf der Rechnung fehlt.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die drei Prüfungen ergänzen sich. Eine Rechnung kann sauber gerechnet sein und trotzdem Ware enthalten, die nie angekommen ist. Sie kann die richtige Menge zeigen, aber einen höheren Preis als vereinbart. Erst wenn alle drei Prüfungen stimmen, wird die Rechnung zur Zahlung freigegeben. Fehlen Pflichtangaben, fordert die Buchhaltung eine berichtigte Rechnung an, weil sonst der Vorsteuerabzug gefährdet ist.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Rechnungsprüfung hat drei Teile. Sachlich: Wurde das berechnet, was bestellt und tatsächlich angenommen wurde? (Menge mit Wareneingang, Artikel mit Bestellung.) Preislich: Stimmen Einzelpreise, Rabatte und Bedingungen mit der Bestellung überein? Rechnerisch: Stimmen Multiplikationen, Summen und Umsatzsteuer? Außerdem müssen die Pflichtangaben einer Rechnung vorhanden sein, damit MAKEL die Vorsteuer abziehen kann. Eine rechnerisch richtige Rechnung kann sachlich falsch sein.",
-        "beispiele": [
-          "Bestellt 100, angenommen 90, berechnet 100: sachlich falsch, auch wenn 100 × 8 € = 800 € rechnerisch stimmt.",
-          "Bestellt zu 8,00 €, berechnet zu 8,40 €: preislich falsch."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "E-Rechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Seit 2025 müssen Unternehmen in Deutschland elektronische Rechnungen in einem strukturierten Format empfangen können. Für den Versand gelten Übergangsfristen; ein Unternehmen der Größe von MAKEL Studio muss ab 2027 selbst E-Rechnungen ausstellen. Die Prüfung bleibt dieselbe, nur die Daten kommen maschinenlesbar.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Rechnung über 100 Rohlinge zu 8,00 € = 800,00 € netto, 152,00 € Umsatzsteuer, 952,00 € brutto ist rechnerisch richtig. Der Abgleich zeigt aber: Angenommen wurden nur 90 Stück, also 720,00 € netto Warenwert. Sandra Koslowski gibt die Rechnung nicht frei, sondern lässt die Abweichung klären.",
-        "typische_fehler": "Eine rechnerisch richtige Rechnung wird automatisch freigegeben, ohne sie mit Bestellung und Wareneingang abzugleichen.",
         "verstaendnisfragen": [
-          "Womit prüft man die berechnete Menge? Mit dem Wareneingangsprotokoll und der Bestellung.",
-          "Womit prüft man den Preis? Mit den in der Bestellung vereinbarten Konditionen."
-        ],
-        "pruefungsbezug": "Zu jeder Prüffrage den passenden Beleg nennen: Menge – Wareneingang, Preis – Bestellung, Summe – Nachrechnen.",
-        "merksatz": "Rechnungen werden sachlich (Menge, Artikel), preislich (Konditionen) und rechnerisch geprüft; rechnerisch richtig heißt nicht sachlich richtig."
+          {
+            "frage": "Mit welchem Beleg wird die berechnete Menge geprüft?",
+            "antwort": "Mit dem Wareneingangsprotokoll, das die tatsächlich angenommene Menge zeigt.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum reicht die rechnerische Prüfung allein nicht?",
+            "antwort": "Weil eine richtig gerechnete Rechnung trotzdem nicht gelieferte Ware oder falsche Preise enthalten kann.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Abweichungen müssen geklärt werden, bevor gezahlt wird.",
-          "Zahlungen werden nur mit Freigabe angewiesen."
+        "darstellung": "vollfassung",
+        "ziel": "Du klärst Abweichungen zwischen Bestellung, Wareneingang und Rechnung mit dem Lieferanten, dokumentierst das Ergebnis, gibst die Zahlung frei und wahrst dabei die Skontofrist.",
+        "vorwissen_kurz": "Die Rechnung ist um 10 Stück zu hoch, die Skontofrist läuft. Jetzt muss schnell und sauber geklärt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Klären, dokumentieren, freigeben",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Abweichungen werden geklärt, bevor gezahlt wird. Die Buchhaltung oder der Einkauf fragt beim Lieferanten nach, ob eine Teillieferung vorliegt, bei der der Rest folgt, oder ein Fehler in Lieferung oder Rechnung. Das Ergebnis wird dokumentiert: mit Datum, Ansprechperson und Vereinbarung. Erst dann wird die Zahlung freigegeben. Die {{begriff:skonto|Skontofrist}} läuft dabei weiter; die Klärung muss deshalb zügig erfolgen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Klärung und Zahlung",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Datum",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung eingegangen",
+                  "21. März",
+                  "Skontofrist bis 31. März"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abweichung gemeldet",
+                  "21. März",
+                  "Mail an Lieferant mit Wareneingangsprotokoll"
+                ]
+              },
+              {
+                "zellen": [
+                  "Antwort des Lieferanten",
+                  "23. März",
+                  "Packfehler; 10 Stück werden am 27. März nachgeliefert"
+                ]
+              },
+              {
+                "zellen": [
+                  "Restlieferung geprüft",
+                  "27. März",
+                  "10 Stück in Ordnung, Protokoll ergänzt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlung freigegeben",
+                  "28. März",
+                  "952,00 € − 2 % Skonto = 932,96 €"
+                ]
+              }
+            ],
+            "fazit": "Nach der Restlieferung stimmen Bestellung, Wareneingang und Rechnung überein. MAKEL Studio zahlt innerhalb der Skontofrist und spart 19,04 €.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Hätte der Lieferant nicht nachgeliefert, wäre eine korrigierte Rechnung über 90 Stück nötig gewesen: 720 € netto, 856,80 € brutto. Eigenmächtig nur 720 € plus Steuer zu überweisen, ohne den Lieferanten zu informieren, führt zu offenen Posten und Rückfragen auf beiden Seiten. Und dauert die Klärung zu lange, kann MAKEL den unstreitigen Teil fristgerecht mit Skonto zahlen und den Rest nach Klärung, wenn der Lieferant zustimmt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Bei Abweichungen wird geklärt, ob es sich um eine Teillieferung (Rest folgt), eine Fehllieferung oder einen Rechnungsfehler handelt. Möglich sind: Restlieferung abwarten und dann zahlen, eine korrigierte Rechnung oder Gutschrift anfordern, oder nur den unstrittigen Teil zahlen, wenn das mit dem Lieferanten abgestimmt ist. Die Entscheidung wird dokumentiert. Erst nach Freigabe wird die Zahlung angewiesen — mit Blick auf die Skontofrist, die durch Klärungen nicht unnötig verstreichen soll.",
-        "beispiele": [
-          "Der Lieferant bestätigt eine Teillieferung; die restlichen 10 Rohlinge kommen am 25. März. Die Rechnung wird nach vollständigem Eingang freigegeben.",
-          "Der Lieferant räumt einen Fehler ein und schickt eine Rechnungskorrektur über 90 Stück."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Drei-Wege-Abgleich im System",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Viele Warenwirtschaftssysteme gleichen Bestellung, Wareneingang und Rechnung automatisch ab und sperren eine Rechnung, wenn sie nicht übereinstimmen. Die Klärung bleibt Aufgabe der Menschen, aber das System verhindert, dass eine fehlerhafte Rechnung versehentlich bezahlt wird.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Sandra fragt beim Lieferanten nach. Antwort: Die restlichen 10 Rohlinge kommen in zwei Tagen, die Rechnung ist korrekt für die Gesamtbestellung. Sandra vermerkt: ‚Freigabe nach Eingang der Restmenge; Skontofrist wird vom Lieferanten bis 5. April verlängert (E-Mail vom 21. März).‘ Nach Eingang und Protokoll gibt sie die Zahlung frei.",
-        "typische_fehler": "Bei einer Abweichung wird ohne Abstimmung einfach weniger überwiesen. Das ist ohne Vertrags- und Sachklärung keine vollständig begründete Lösung und führt oft zu Folgefragen.",
         "verstaendnisfragen": [
-          "Welche drei Ursachen kann eine Mengenabweichung zwischen Lieferung und Rechnung haben? Teillieferung, Fehllieferung oder Rechnungsfehler.",
-          "Warum wird die Skontofrist bei Klärungen im Blick behalten? Weil sonst der Skontovorteil verloren gehen kann."
-        ],
-        "pruefungsbezug": "Bei Abweichungsfällen Ursache klären, Vorgehen begründen und dokumentieren — nicht einfach kürzen.",
-        "merksatz": "Abweichungen werden geklärt und dokumentiert; gezahlt wird erst nach Freigabe — mit Blick auf die Skontofrist."
+          {
+            "frage": "Bestellt 100, angenommen 90, berechnet 100. Wie gehst du vor?",
+            "antwort": "Abweichung dokumentieren, beim Lieferanten klären, ob eine Teillieferung oder ein Fehler vorliegt, und erst nach Klärung freigeben.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Rechnungsbetrag 952 €, 2 % Skonto. Wie viel wird bei Zahlung in der Skontofrist überwiesen?",
+            "antwort": "952 € − 19,04 € = 932,96 €.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
