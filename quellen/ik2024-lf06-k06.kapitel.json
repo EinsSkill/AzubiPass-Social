@@ -6,86 +6,478 @@
   "untertitel": "Qualität prüfbar beschreiben, Abweichungen mit Daten erkennen, Ursachen finden und Maßnahmen mit Wirksamkeitskontrolle umsetzen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Kunden erwarten, dass das Produkt der Vereinbarung entspricht.",
-          "Aus LF 4 kennst du die Wareneingangsprüfung."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst Qualitätsanforderungen als messbare Prüfmerkmale mit Sollwert und Toleranz und legst fest, wann im Ablauf und in welchem Umfang geprüft wird.",
+        "vorwissen_kurz": "„Gute Qualität“ ist kein Prüfkriterium. Erst wenn feststeht, was gemessen wird und welcher Wert zulässig ist, lässt sich eindeutig entscheiden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was geprüft wird und wann",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Qualität bedeutet, dass ein Erzeugnis die vereinbarten Anforderungen erfüllt. Damit sich das prüfen lässt, werden die Anforderungen als **Prüfmerkmale** beschrieben: ein messbares Merkmal, ein Sollwert und eine zulässige Abweichung. Geprüft wird an mehreren Stellen im Ablauf: beim Wareneingang, nach dem Rüsten am ersten Stück, während der Fertigung in Stichproben und vor dem Versand. Je früher ein Fehler auffällt, desto weniger Stücke sind betroffen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Prüfmerkmale für den Vereinsauftrag",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Merkmal",
+              "Sollwert",
+              "Toleranz",
+              "Prüfmittel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Position des Wappens",
+                  "8 cm unter Schulternaht, 10 cm von Mitte",
+                  "± 0,5 cm",
+                  "Schablone"
+                ]
+              },
+              {
+                "zellen": [
+                  "Breite des Wappens",
+                  "9 cm",
+                  "± 0,2 cm",
+                  "Lineal"
+                ]
+              },
+              {
+                "zellen": [
+                  "Garnfarben",
+                  "laut Freigabe: Marine, Weiß, Gold",
+                  "keine Abweichung",
+                  "Vergleich mit Probestick"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stickbild",
+                  "keine losen Fäden, keine Lücken",
+                  "keine",
+                  "Sichtprüfung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Größe laut Etikett",
+                  "laut Packliste",
+                  "keine",
+                  "Abgleich"
+                ]
+              }
+            ],
+            "fazit": "Jedes Merkmal lässt sich eindeutig mit Ja oder Nein beurteilen. „Sieht gut aus“ steht nicht in der Liste.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Umfang der Prüfung entscheidet MAKEL Studio zwischen **Vollprüfung** und **Stichprobe**. Beim ersten Stück nach dem Rüsten wird vollständig geprüft, weil ein Fehler dort jedes folgende Stück betrifft. Während der Fertigung genügt jedes 25. Stück. Vor dem Versand prüft die Endkontrolle 10 % der Hoodies und zählt alle Größen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Qualität heißt: Das Produkt erfüllt die vereinbarten und erwarteten Anforderungen. Damit Qualität geprüft werden kann, werden Merkmale messbar beschrieben, zum Beispiel Position des Drucks (± 5 mm), Farbton laut freigegebenem Muster, Waschbeständigkeit (30 Wäschen bei 40 °C ohne Ablösung), Fadenspannung ohne Schlaufen. Geprüft wird an festen Zeitpunkten: Wareneingangsprüfung (Rohlinge, Farben), Zwischenprüfung (erstes Stück nach dem Rüsten, laufende Stichproben) und Endprüfung vor dem Versand. Man unterscheidet Vollprüfung (jedes Stück) und Stichprobenprüfung (ein festgelegter Teil).",
-        "beispiele": [
-          "Erstmusterprüfung: Das erste bestickte Stück eines Loses wird mit der freigegebenen Datei verglichen, bevor die Serie läuft.",
-          "Stichprobe bei der Endprüfung: 50 von 500 Shirts werden auf Druckbild und Position kontrolliert."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Prüfung beim Wareneingang",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch das Material wird geprüft. Kommen 150 Rohlinge in Marine, vergleicht der Wareneingang Farbe, Grammatur und Menge mit der Bestellung. Bei Kaufleuten muss eine Lieferung unverzüglich untersucht und ein Mangel gerügt werden; wer erst beim Sticken merkt, dass die Farbe falsch ist, riskiert seine Mängelrechte.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für die Firmenbestellung legt MAKEL im Auftrag fest: Logo zentriert 8 cm unter dem Kragen (± 5 mm), Farbe nach Pantone-Vorgabe, Freigabe des ersten Stücks durch Deniz Aydın. Bei der Endprüfung werden 10 % der Hoodies kontrolliert.",
-        "typische_fehler": "Qualität nur als ‚sieht gut aus‘ beschreiben, ohne prüfbare Merkmale.",
         "verstaendnisfragen": [
-          "Warum werden Qualitätsmerkmale messbar beschrieben? Damit jeder gleich prüfen und eindeutig entscheiden kann.",
-          "Was unterscheidet Voll- und Stichprobenprüfung? Vollprüfung prüft jedes Stück, Stichprobe nur einen festgelegten Teil."
-        ],
-        "pruefungsbezug": "Prüfbare Qualitätsmerkmale formulieren und Prüfzeitpunkte zuordnen.",
-        "merksatz": "Qualität wird über messbare Merkmale geprüft — beim Wareneingang, nach dem Rüsten und vor dem Versand."
+          {
+            "frage": "Warum wird das erste Stück nach dem Rüsten vollständig geprüft?",
+            "antwort": "Weil ein Fehler beim Rüsten, etwa eine falsche Datei oder Position, auf jedem folgenden Stück wiederkehrt. Früh entdeckt, betrifft er nur ein Stück.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Formuliere „Das Logo soll ordentlich sitzen“ als Prüfmerkmal.",
+            "antwort": "Zum Beispiel: Position 8 cm unter der Schulternaht, 10 cm von der Mitte, Toleranz ± 0,5 cm, geprüft mit Schablone.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Für jeden Auftrag gibt es Planwerte für Menge, Zeit und Kosten.",
-          "Kennzahlen machen Abweichungen vergleichbar."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Soll und Ist bei Menge, Qualität und Zeit, berechnest Fehlerquote und Zeitabweichung und begrenzt Aussagen aus einer Stichprobe auf das, was sie belegen.",
+        "vorwissen_kurz": "Nach einem Auftrag zeigt der Vergleich mit dem Plan, was gut lief und wo es Abweichungen gab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Plan und Wirklichkeit",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Soll-Ist-Abgleich werden geplante und tatsächliche Werte gegenübergestellt: Wie viele Stücke waren geplant, wie viele sind einwandfrei? Wie lange sollte der Auftrag dauern, wie lange hat er gedauert? Die **Fehlerquote** ist der Anteil fehlerhafter Stücke an der geprüften Menge. Fehlerhafte Stücke werden entweder **nachgearbeitet**, wenn sich der Fehler beheben lässt, oder sind **Ausschuss**.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Abgleich für 400 Werbe-Shirts",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Merkmal",
+              "Soll",
+              "Ist",
+              "Abweichung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Menge einwandfrei",
+                  "400",
+                  "386",
+                  "− 14"
+                ]
+              },
+              {
+                "zellen": [
+                  "geprüft (Vollprüfung)",
+                  "400",
+                  "400",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "fehlerhaft",
+                  "0",
+                  "14",
+                  "14 ÷ 400 × 100 = 3,5 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "davon nachgearbeitet",
+                  "",
+                  "9 (Fäden entfernt, Druck nachgebessert)",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "davon Ausschuss",
+                  "",
+                  "5 (Druck verschoben)",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeit",
+                  "16 h",
+                  "19 h",
+                  "+ 3 h"
+                ]
+              }
+            ],
+            "fazit": "Nach der Nacharbeit fehlen 5 Shirts. Die Zeitabweichung von 3 Stunden entstand vor allem durch die Nacharbeit und einen Nachdruck der fehlenden Stücke.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wäre nur eine Stichprobe von 50 Shirts geprüft worden und hätten zwei davon Fehler gehabt, läge die Fehlerquote in der Stichprobe bei 4 %. Daraus auf genau 16 fehlerhafte Shirts im ganzen Auftrag zu schließen, wäre eine Schätzung. Richtig formuliert: „In der Stichprobe waren 4 % fehlerhaft; im Gesamtauftrag ist mit einer ähnlichen Größenordnung zu rechnen.“ Bei einem wichtigen Kunden würde MAKEL Studio dann vollständig nachprüfen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Produktionskontrolle vergleicht Soll und Ist: Menge (geplante gegen gute Stücke), Zeit (geplanter gegen tatsächlichen Zeitbedarf und Termin), Kosten (geplante gegen tatsächliche Material- und Arbeitskosten). Für die Qualität wichtig ist die Fehlerquote: fehlerhafte Teile ÷ geprüfte Teile × 100. Aussagen gelten für die geprüfte Menge; wer eine Stichprobe auf die ganze Lieferung hochrechnet, muss das als Schätzung kennzeichnen. Fehlerhafte Teile werden unterschieden in Nacharbeit (lässt sich beheben) und Ausschuss (unbrauchbar).",
-        "beispiele": [
-          "500 Teile geprüft, 20 fehlerhaft: Fehlerquote 4 %, 480 einwandfrei.",
-          "Plan 16 Stunden, Ist 19 Stunden: 3 Stunden Mehrzeit; Ursache klären."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Kosten der Abweichung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ausschuss kostet Material und die bereits geleistete Arbeit. Nacharbeit kostet zusätzliche Zeit. Beides erhöht die tatsächlichen Kosten des Auftrags gegenüber der Kalkulation. Die Nachkalkulation macht sichtbar, wie viel ein Qualitätsproblem tatsächlich gekostet hat.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Nach der Endprüfung meldet Jonas Weidner: Von 500 geprüften Shirts haben 20 einen verschobenen Druck. Fehlerquote 4 %. Ob die Shirts nachgearbeitet werden können, ist noch offen. Deniz prüft zusätzlich die Zeit: Der Auftrag hat 3 Stunden länger gedauert als geplant.",
-        "typische_fehler": "Eine Fehlerquote aus einer kleinen Stichprobe als sichere Quote aller Lieferungen ausgeben.",
         "verstaendnisfragen": [
-          "Wie berechnet man die Fehlerquote? Fehlerhafte Teile ÷ geprüfte Teile × 100.",
-          "Was unterscheidet Nacharbeit von Ausschuss? Nacharbeit lässt sich beheben, Ausschuss ist unbrauchbar."
-        ],
-        "pruefungsbezug": "Soll-Ist-Abweichungen und Fehlerquoten berechnen und richtig interpretieren.",
-        "merksatz": "Fehlerquote = fehlerhafte ÷ geprüfte Teile × 100; Soll-Ist bei Menge, Zeit und Kosten vergleichen."
+          {
+            "frage": "500 Stück geprüft, 20 fehlerhaft. Wie hoch ist die Fehlerquote?",
+            "antwort": "20 ÷ 500 × 100 = 4 %.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was ist der Unterschied zwischen Nacharbeit und Ausschuss?",
+            "antwort": "Nacharbeit behebt einen Fehler, das Stück ist danach einwandfrei. Ausschuss kann nicht mehr in den geforderten Zustand gebracht werden.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Ein Fehler hat immer eine Ursache.",
-          "Schuldzuweisungen lösen kein Problem."
+        "darstellung": "vollfassung",
+        "ziel": "Du bearbeitest eine Qualitätsstörung in der Reihenfolge Sofortmaßnahme, Ursachenanalyse und Dokumentation, fragst mehrfach nach dem Warum und suchst die Ursache im Ablauf statt bei Personen.",
+        "vorwissen_kurz": "Wenn ein Fehler auftritt, muss zuerst verhindert werden, dass er sich ausbreitet. Danach wird geklärt, warum er entstanden ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst begrenzen, dann verstehen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Qualitätsstörung wird in drei Schritten bearbeitet. Die **Sofortmaßnahme** begrenzt den Schaden: Maschine anhalten, betroffene Stücke kennzeichnen und sperren. Die **Ursachenanalyse** sucht mit Daten und mehrfachem Nachfragen, warum der Fehler entstanden ist. Die **Dokumentation** hält Auftrag, Zeitpunkt, Menge, Ursache und Maßnahmen fest. Ziel ist, den Ablauf zu verbessern, nicht einen Schuldigen zu finden.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der falsche Druck",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Druck von 400 Werbe-Shirts fällt nach 80 Stück auf, dass ein veraltetes Logo gedruckt wird.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Antwort"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Warum wurde das alte Logo gedruckt?",
+                  "Die Maschine hat die Datei aus dem Schnellzugriff geladen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Warum lag dort die alte Datei?",
+                  "Sie wurde beim letzten Auftrag des Kunden vor einem Jahr gespeichert."
+                ]
+              },
+              {
+                "zellen": [
+                  "Warum wurde sie nicht ersetzt?",
+                  "Die neue Datei lag nur im Freigabeordner, nicht im Schnellzugriff."
+                ]
+              },
+              {
+                "zellen": [
+                  "Warum wurde das nicht bemerkt?",
+                  "Vor dem Druckstart gibt es keinen Abgleich der Dateiversion mit der Freigabe."
+                ]
+              },
+              {
+                "zellen": [
+                  "Warum gibt es diesen Abgleich nicht?",
+                  "Die Arbeitsanweisung sieht ihn nicht vor."
+                ]
+              }
+            ],
+            "fazit": "Die Ursache ist kein Fehler des Druckers, sondern eine Lücke im Ablauf: Die Maschine darf auf alte Dateien zugreifen, und niemand prüft die Version vor dem Start.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Sofortmaßnahmen sind schnell erledigt: Maschine stoppen, 80 Shirts sperren, den Kunden informieren, ob er die Shirts als B-Ware will oder sie entsorgt werden. Wichtiger für die Zukunft sind die Korrekturmaßnahmen, die an der Ursache ansetzen — im nächsten Abschnitt.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Bei einer Störung wird zuerst die Wirkung begrenzt (Sofortmaßnahme): betroffene Ware kennzeichnen und sperren, Prozess stoppen, Kunden bei Terminrisiko informieren. Dann wird die Ursache gesucht, mit Daten statt Vermutungen. Hilfsmittel sind die 5-Warum-Methode (mehrfach nach dem Warum fragen) und das Ursache-Wirkungs-Diagramm (Ishikawa) mit Kategorien wie Mensch, Maschine, Material, Methode, Messung, Umwelt. Alles wird dokumentiert: was, wann, wie viele Teile, welche Ursache, welche Maßnahmen, wer zuständig.",
-        "beispiele": [
-          "Warum verschoben? Rahmen falsch eingespannt. Warum? Keine Markierung. Warum? Neue Rahmengröße ohne Einstellblatt.",
-          "Ishikawa-Kategorie Material: Rohlinge einer Lieferung mit abweichender Schnittform."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Sofortmaßnahme und Korrekturmaßnahme",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Sofortmaßnahme stoppt die Wirkung eines Fehlers jetzt. Eine Korrekturmaßnahme beseitigt die Ursache, damit der Fehler nicht wieder auftritt. Wer nur Sofortmaßnahmen ergreift, löscht immer wieder dasselbe Feuer.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Bei einem Teil einer Druckserie entspricht das Motiv nicht der Freigabe: Statt Version 3 wurde Version 2 gedruckt. Jonas sperrt die 80 bereits gedruckten Shirts und stoppt die Maschine. Die Ursachensuche ergibt: Die alte Datei lag im Schnellzugriff der Maschine. Alles wird im Störungsprotokoll festgehalten.",
-        "typische_fehler": "Sofort eine Person beschuldigen, statt Ablauf und Daten zu prüfen.",
         "verstaendnisfragen": [
-          "Was ist eine typische Sofortmaßnahme? Betroffene Ware kennzeichnen und sperren, Prozess stoppen.",
-          "Wozu dient die 5-Warum-Methode? Um von der sichtbaren Wirkung zur eigentlichen Ursache zu gelangen."
-        ],
-        "pruefungsbezug": "Sofortmaßnahme, Ursachenanalyse und Dokumentation einer Störung beschreiben.",
-        "merksatz": "Erst Wirkung begrenzen, dann Ursache mit Daten finden, alles dokumentieren — Ablauf statt Schuld."
+          {
+            "frage": "Ist „Druckmaschine anhalten“ eine Sofort- oder eine Korrekturmaßnahme?",
+            "antwort": "Eine Sofortmaßnahme. Sie verhindert, dass weitere fehlerhafte Shirts entstehen, beseitigt aber nicht die Ursache.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum führt die Frage „Wer war schuld?“ selten zu einer besseren Lösung?",
+            "antwort": "Weil sie bei der Person stehen bleibt. Der Fehler entstand, weil der Ablauf ihn zuließ; nur eine Änderung des Ablaufs verhindert ihn künftig.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Sofortmaßnahmen helfen nur kurzfristig.",
-          "Gleiche Fehler sollen nicht wieder auftreten."
+        "darstellung": "vollfassung",
+        "ziel": "Du legst für eine Qualitätsstörung Korrekturmaßnahmen mit Verantwortlichen, Termin und Wirksamkeitskontrolle fest und führst sie durch den PDCA-Zyklus bis zur Übernahme in die Arbeitsanweisung.",
+        "vorwissen_kurz": "Eine Korrekturmaßnahme ist erst dann erledigt, wenn nachgewiesen ist, dass der Fehler nicht wieder auftritt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Maßnahme, Termin, Nachweis",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Korrekturmaßnahme setzt an der gefundenen Ursache an. Damit sie wirkt, braucht sie eine verantwortliche Person, einen Termin für die Umsetzung und eine Kontrolle, ob sie gewirkt hat. Der PDCA-Zyklus ordnet diese Schritte: planen, umsetzen, prüfen, verankern. Erst wenn die Prüfung zeigt, dass der Fehler nicht mehr auftritt, wird die Maßnahme in die Arbeitsanweisung übernommen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Maßnahmenplan zum Motivfehler",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Maßnahme",
+              "verantwortlich",
+              "Termin",
+              "Wirksamkeitskontrolle"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Schnellzugriff an Druck- und Stickmaschinen sperren; nur Zugriff auf den Freigabeordner",
+                  "IT mit Schichtleitung",
+                  "1. Dezember",
+                  "Test an allen Maschinen am 2. Dezember"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versionsabgleich vor Druckstart in die Arbeitsanweisung aufnehmen: Dateiname und Version mit dem Freigabevermerk vergleichen, abzeichnen",
+                  "Schichtleitung",
+                  "1. Dezember",
+                  "Stichprobe der Abzeichnungen in vier Wochen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einweisung aller Mitarbeitenden an Druck und Stick",
+                  "Schichtleitung",
+                  "bis 5. Dezember",
+                  "Teilnehmerliste"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfolgsmessung",
+                  "Qualitätsbeauftragte",
+                  "5. Januar",
+                  "Motivfehler in den nächsten 25 Aufträgen: Ziel 0"
+                ]
+              }
+            ],
+            "fazit": "Jede Maßnahme hat einen Namen und ein Datum. Die Erfolgsmessung nutzt dieselbe Messgröße wie die Fehlerbeschreibung: Motivfehler je Auftrag.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Januar zeigt die Messung: In 27 Aufträgen ist kein Motivfehler aufgetreten. Die Maßnahmen werden in die Arbeitsanweisung übernommen. Wäre doch wieder ein Fehler passiert, hätte die Schichtleitung die Ursache erneut gesucht — vielleicht wurde der Abgleich unter Zeitdruck übersprungen, dann müsste die Arbeitsanweisung angepasst werden.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Nach der Ursachenanalyse folgt die Korrekturmaßnahme: Sie beseitigt die Ursache, damit der Fehler nicht wieder auftritt, etwa durch eine verbindliche Prüfung der Freigabeversion vor jedem Druckstart. Jede Maßnahme hat eine verantwortliche Person, einen Termin und eine Wirksamkeitskontrolle (Nachkontrolle mit derselben Messgröße wie vorher). Der PDCA-Zyklus beschreibt dieses Vorgehen: Plan (planen), Do (umsetzen), Check (prüfen), Act (verankern oder nachsteuern). Betroffen sind oft mehrere Schnittstellen: Vertrieb (Kunde), Einkauf (Lieferant), Produktion, Lager.",
-        "beispiele": [
-          "Korrekturmaßnahme: Vor jedem Druckstart wird die Dateiversion mit dem Auftrag abgeglichen und abgezeichnet. Verantwortlich: Schichtleitung, ab 1. Dezember.",
-          "Wirksamkeitskontrolle: Fehlerquote ‚falsches Motiv‘ in den nächsten 20 Aufträgen = 0."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Qualitätsmanagement nach Norm",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Viele Betriebe arbeiten nach einem Qualitätsmanagementsystem, etwa nach DIN EN ISO 9001. Es verlangt unter anderem, dass Fehler und Korrekturmaßnahmen dokumentiert und ihre Wirksamkeit bewertet werden. Die Schritte im Beispiel entsprechen dieser Logik.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL führt nach dem Motivfehler ein: Die Maschine darf nur auf einen Freigabeordner zugreifen, alte Versionen werden archiviert; vor Druckstart zeichnet die Schichtleitung die Versionsnummer ab. Deniz prüft nach vier Wochen: In 25 Aufträgen kein Motivfehler mehr. Die Regel wird in die Arbeitsanweisung übernommen.",
-        "typische_fehler": "Eine Maßnahme beschließen, aber nie prüfen, ob sie wirkt.",
         "verstaendnisfragen": [
-          "Was unterscheidet Sofort- und Korrekturmaßnahme? Die Sofortmaßnahme begrenzt die Wirkung, die Korrekturmaßnahme beseitigt die Ursache.",
-          "Wofür stehen die vier Schritte PDCA? Plan, Do, Check, Act."
-        ],
-        "pruefungsbezug": "Eine Sofort- und eine vorbeugende Maßnahme mit Zuständigkeit und Wirksamkeitskontrolle formulieren.",
-        "merksatz": "Korrekturmaßnahmen beseitigen die Ursache und brauchen Verantwortliche, Termin und Wirksamkeitskontrolle (PDCA)."
+          {
+            "frage": "Warum braucht eine Korrekturmaßnahme eine Wirksamkeitskontrolle?",
+            "antwort": "Weil sonst niemand weiß, ob sie die Ursache tatsächlich beseitigt hat. Erst die Messung zeigt, ob der Fehler ausbleibt.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum wird die Erfolgsmessung mit derselben Größe wie die Fehlerbeschreibung durchgeführt?",
+            "antwort": "Damit Vorher und Nachher vergleichbar sind. Mit einer anderen Kennzahl ließe sich nicht sagen, ob sich das ursprüngliche Problem verbessert hat.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

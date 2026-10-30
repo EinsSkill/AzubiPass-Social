@@ -6,86 +6,452 @@
   "untertitel": "Fertigungsarten nach Menge, Organisationstypen nach Anordnung — und wie Digitalisierung, Nachhaltigkeit und Gesundheitsschutz die Wahl beeinflussen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Manche Produkte werden einmal, andere tausendfach hergestellt.",
-          "Die Stückzahl beeinflusst, wie man die Produktion einrichtet."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Aufträge der Einzel-, Serien-, Sorten-, Massen- oder Chargenfertigung zu und erklärst, wie Menge und Umrüsthäufigkeit Stückkosten und Flexibilität beeinflussen.",
+        "vorwissen_kurz": "Manche Erzeugnisse werden einmal hergestellt, andere tausendfach gleich. Davon hängt ab, wie die Fertigung abläuft.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie oft dasselbe?",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:fertigungsart|Fertigungsart}} beschreibt, wie viele gleiche Erzeugnisse hintereinander hergestellt werden. Bei der **Einzelfertigung** entsteht ein individuelles Stück. Bei der **Serienfertigung** wird eine begrenzte Menge gleicher Stücke hergestellt, danach wird umgerüstet. Die **Sortenfertigung** stellt Varianten eines Grundprodukts mit weitgehend gleichem Ablauf her. Die **Massenfertigung** produziert sehr große Mengen ohne Umrüsten. Bei der **Chargenfertigung** schwanken die Eigenschaften von Ansatz zu Ansatz, etwa bei einem Farbbad.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Aufträge in einer Woche",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Auftrag",
+              "Fertigungsart",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ein Musterhoodie mit neuem Motiv für die Kollektion",
+                  "Einzelfertigung",
+                  "ein Stück, individuell, mit Überarbeitungen"
+                ]
+              },
+              {
+                "zellen": [
+                  "150 Vereinshoodies mit Wappen",
+                  "Serienfertigung",
+                  "gleiche Stücke, danach Umrüsten"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Kyoto“ in vier Farbvarianten mit gleichem Stickmotiv",
+                  "Sortenfertigung",
+                  "gleicher Ablauf, Varianten unterscheiden sich in der Farbe"
+                ]
+              },
+              {
+                "zellen": [
+                  "400 Werbe-Shirts mit Firmenlogo",
+                  "Serienfertigung",
+                  "gleiche Stücke in größerer Menge"
+                ]
+              }
+            ],
+            "fazit": "MAKEL Studio arbeitet vor allem in Serien und Sorten. Massenfertigung gibt es nicht, weil kein Erzeugnis ohne Umrüsten in sehr großen Mengen läuft.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit steigender Menge sinken die Stückkosten, weil sich die Rüstzeit auf mehr Stücke verteilt und die Arbeitsabläufe eingeübt sind. Gleichzeitig sinkt die Flexibilität: Wer eine große Serie fährt, kann einen eiligen Kleinauftrag nicht einfach dazwischenschieben. Das Musterstück dagegen ist teuer, aber MAKEL Studio kann es so lange verändern, bis es passt.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Fertigungsart beschreibt, wie oft gleiche Erzeugnisse hergestellt werden. Einzelfertigung: ein Stück oder sehr wenige nach individuellen Vorgaben (Muster, Sonderanfertigung). Serienfertigung: eine begrenzte Anzahl gleicher Erzeugnisse, danach wird auf ein anderes Produkt umgerüstet (Klein- oder Großserie). Sortenfertigung: Varianten eines Grundprodukts aus dem gleichen Ausgangsmaterial, etwa dasselbe Shirt in verschiedenen Farbdrucken. Massenfertigung: sehr große Mengen über lange Zeit ohne Umrüsten. Chargenfertigung: Mengen, deren Eigenschaften je Ansatz leicht schwanken, etwa Farbbäder beim Färben. Mit steigender Stückzahl sinken in der Regel die Stückkosten, aber auch die Flexibilität.",
-        "beispiele": [
-          "Ein individuell entworfenes Muster-Hoodie für eine Messe: Einzelfertigung.",
-          "1.000 identische Druckaufträge für eine Firmenkampagne: Serienfertigung (Großserie)."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Chargen beim Lieferanten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Rohlinge von MAKEL Studio werden beim Lieferanten in Chargen gefärbt. Zwei Lieferungen derselben Farbe können deshalb leicht voneinander abweichen. Für einen Vereinsauftrag achtet MAKEL darauf, dass alle Hoodies aus derselben Charge stammen, damit die Mannschaft einheitlich aussieht.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "In der Musterwerkstatt entwickelt das Designteam einen neuen Stick für Yukis Kollektion — ein Stück, mehrfach überarbeitet. Am selben Tag läuft in der Veredelung eine Serie über 1.000 bedruckte Shirts für eine Firmenkampagne. Gleiches Unternehmen, zwei ganz verschiedene Fertigungsarten.",
-        "typische_fehler": "Die Fertigungsart nur an der Stückzahl festmachen, ohne zu prüfen, ob die Stücke gleich sind und wie oft umgerüstet wird.",
         "verstaendnisfragen": [
-          "Was unterscheidet Serien- von Massenfertigung? Serien sind begrenzt und enden mit einem Umrüsten, Massenfertigung läuft ohne Umrüsten über lange Zeit.",
-          "Warum sinken die Stückkosten mit steigender Menge? Weil sich fixe Kosten wie Rüsten und Planung auf mehr Stücke verteilen."
-        ],
-        "pruefungsbezug": "Fertigungsarten an Beispielen zuordnen und die Zuordnung mit Merkmalen begründen.",
-        "merksatz": "Einzel-, Serien-, Sorten-, Massen- und Chargenfertigung unterscheiden sich nach Menge, Gleichartigkeit und Umrüsthäufigkeit."
+          {
+            "frage": "Ist ein Auftrag über 1.000 identische Shirts Massenfertigung?",
+            "antwort": "Nein. Nach dem Auftrag wird umgerüstet; es ist eine größere Serie. Massenfertigung läuft über lange Zeit ohne Umrüsten.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist ein Musterstück je Stück teuer?",
+            "antwort": "Weil die gesamte Vorbereitung, Rüstzeit und oft mehrere Überarbeitungen auf ein einziges Stück entfallen.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Maschinen und Arbeitsplätze müssen räumlich angeordnet werden.",
-          "Transportwege und Wartezeiten kosten Zeit und Geld."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Werkstatt-, Gruppen-, Fließ- und Baustellenfertigung nach der räumlichen Anordnung und wählst für ein Auftragsspektrum einen passenden Organisationstyp.",
+        "vorwissen_kurz": "Neben der Frage, wie viel hergestellt wird, steht die Frage, wie Maschinen und Arbeitsplätze angeordnet sind.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo die Maschinen stehen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der **Werkstattfertigung** stehen gleichartige Maschinen zusammen, etwa alle Stickmaschinen in einem Raum, alle Druckmaschinen in einem anderen. Jeder Auftrag nimmt seinen eigenen Weg durch die Werkstätten. Bei der **Fließfertigung** sind die Arbeitsplätze in der Reihenfolge der Arbeitsgänge angeordnet; das Werkstück läuft ohne Umweg durch. Die **Gruppenfertigung** liegt dazwischen: Ein Team bearbeitet in einer Fertigungsinsel eine Gruppe ähnlicher Erzeugnisse weitgehend vollständig. Bei der **Baustellenfertigung** kommen Menschen und Maschinen zum Werkstück, etwa beim Hausbau.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wie MAKEL Studio heute arbeitet",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bereich",
+              "Organisationstyp",
+              "Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Stickraum mit drei Maschinen",
+                  "Werkstatt",
+                  "flexibel für jedes Motiv, aber Hoodies warten vor und nach dem Raum"
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckraum mit zwei Pressen",
+                  "Werkstatt",
+                  "ebenso"
+                ]
+              },
+              {
+                "zellen": [
+                  "Packbereich",
+                  "Werkstatt",
+                  "Ware wird aus beiden Räumen gesammelt und gemeinsam verpackt"
+                ]
+              },
+              {
+                "zellen": [
+                  "geplant: Insel für wiederkehrende Shirt-Aufträge",
+                  "Gruppe",
+                  "Druck, Kontrolle und Verpacken an einem Ort durch ein Team"
+                ]
+              }
+            ],
+            "fazit": "Die Werkstattfertigung passt zu den vielen verschiedenen Aufträgen. Für wiederkehrende, ähnliche Aufträge könnte eine Insel Wege und Liegezeiten sparen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fertigungsart und Organisationstyp sind zwei getrennte Fragen. Eine Serie von 400 Shirts kann in der Werkstatt laufen oder in einer Insel. Die Fertigungsart sagt, wie viele gleiche Stücke entstehen; der Organisationstyp sagt, wie der Weg durch den Betrieb aussieht.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Der Organisationstyp beschreibt, wie Arbeitsplätze und Maschinen räumlich angeordnet sind. Werkstattfertigung: gleichartige Maschinen stehen zusammen, das Werkstück wandert je nach Auftrag zwischen den Werkstätten — flexibel, aber mit langen Wegen und Liegezeiten. Fließfertigung: die Arbeitsplätze stehen in der Reihenfolge der Arbeitsgänge, das Werkstück läuft ohne Umwege durch — schnell und kostengünstig bei großen Mengen, aber unflexibel und monoton. Gruppenfertigung: ein Team bearbeitet in einer Fertigungsinsel eine Teilefamilie weitgehend vollständig — ein Kompromiss mit mehr Verantwortung im Team. Baustellenfertigung: die Arbeitskräfte und Maschinen kommen zum ortsfesten Werkstück, etwa beim Hausbau. Fertigungsart und Organisationstyp sind zwei verschiedene Fragen.",
-        "beispiele": [
-          "Siebdruck, Stickerei und Verpackung in getrennten Räumen, Aufträge wandern hin und her: Werkstattfertigung.",
-          "Ein Team bedruckt, kontrolliert, faltet und verpackt Shirts an einer Insel: Gruppenfertigung."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Vorteile der Gruppenfertigung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Insel ist das Team für das Ergebnis vom Rohling bis zum verpackten Shirt verantwortlich. Das verkürzt Wege, macht die Arbeit abwechslungsreicher und erleichtert die Qualitätskontrolle. Dafür braucht es Mitarbeitende, die mehrere Arbeitsgänge beherrschen, und genug gleichartige Aufträge, damit die Insel ausgelastet ist.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Deniz Aydın stellt fest, dass Aufträge zwischen Druckraum, Stickraum und Packtisch oft einen halben Tag liegen. Er schlägt vor, für wiederkehrende Shirt-Aufträge eine Fertigungsinsel mit Druckplatz, Kontrolltisch und Packplatz einzurichten, die ein Dreierteam betreut.",
-        "typische_fehler": "Fertigungsart und Organisationstyp gleichsetzen — eine Serie kann in Werkstatt-, Gruppen- oder Fließfertigung laufen.",
         "verstaendnisfragen": [
-          "Was kennzeichnet die Werkstattfertigung? Gleichartige Maschinen stehen zusammen, das Werkstück wandert zwischen den Werkstätten.",
-          "Welchen Vorteil hat die Gruppenfertigung für die Beschäftigten? Abwechslungsreichere Arbeit und mehr Verantwortung im Team."
-        ],
-        "pruefungsbezug": "Organisationstypen beschreiben und für einen Fall mit Vor- und Nachteilen begründet auswählen.",
-        "merksatz": "Werkstatt-, Fließ-, Gruppen- und Baustellenfertigung beschreiben die räumliche Anordnung — unabhängig von der Fertigungsart."
+          {
+            "frage": "Warum passt Fließfertigung nicht zu MAKEL Studio?",
+            "antwort": "Weil die Aufträge klein und sehr verschieden sind. Eine Fließlinie lohnt sich bei großen, gleichartigen Mengen; jede Variante würde sie aufhalten.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was ist der Unterschied zwischen Fertigungsart und Organisationstyp?",
+            "antwort": "Die Fertigungsart beschreibt, wie viele gleiche Stücke hergestellt werden; der Organisationstyp beschreibt, wie Maschinen und Arbeitsplätze räumlich angeordnet sind.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Moderne Maschinen werden über Dateien und Software gesteuert.",
-          "Daten aus der Produktion helfen bei Planung und Kontrolle."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wie Motivdateien, Maschineneinstellungen und Betriebsdatenerfassung zusammenwirken, und benennst die Voraussetzungen, damit digitale Steuerung verlässliche Daten liefert.",
+        "vorwissen_kurz": "Moderne Stick- und Druckmaschinen arbeiten mit Dateien und melden ihren Status an ein Planungssystem. Das hilft nur, wenn die Daten stimmen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Daten steuern die Maschine",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei MAKEL Studio kommt das Motiv als Datei auf die Stickmaschine. Die Maschine stickt es auf jedem Hoodie identisch — auch einen Fehler in der Datei. Gespeicherte Maschineneinstellungen für wiederkehrende Motive verkürzen das Rüsten. Über die **Betriebsdatenerfassung** melden die Mitarbeitenden, wann ein Auftrag beginnt, wie viele Stücke fertig sind und ob es Störungen gab. So sieht die Planung den Auftragsstand, ohne in den Stickraum gehen zu müssen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Fehler, der sich wiederholt",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Vereinsauftrag lädt ein Mitarbeiter die Motivdatei aus dem Kundenordner. Nach 40 Hoodies fällt auf, dass das Wappen eine alte Jahreszahl zeigt.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Befund"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Welche Datei wurde verwendet?",
+                  "Version 1 vom 10. August, nicht die freigegebene Version 2 vom 18. August"
+                ]
+              },
+              {
+                "zellen": [
+                  "Warum?",
+                  "Beide Dateien lagen im selben Ordner, die Freigabe war nur in der Mail vermerkt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was zeigte das System?",
+                  "Status „läuft, 40 von 150 fertig“ — korrekt gemeldet, aber mit falscher Datei"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahme",
+                  "Nur freigegebene Dateien im Produktionsordner, Versionsnummer im Dateinamen, Freigabevermerk im System"
+                ]
+              }
+            ],
+            "fazit": "Das System hat richtig gemeldet, was passierte. Es konnte nicht erkennen, dass die falsche Datei lief. Digitale Steuerung ist nur so gut wie die Daten, mit denen sie arbeitet.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die 40 fehlerhaften Hoodies sind Ausschuss oder werden als B-Ware verkauft. Der Schaden ist begrenzt, weil der Fehler beim Zwischenstand auffiel. Hätte niemand den ersten Hoodie gegen die Freigabe geprüft, wären alle 150 betroffen gewesen. Deshalb gehört eine Erststückprüfung nach dem Rüsten zu jedem Auftrag.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Digitalisierung verbindet Maschinen, Aufträge und Planung. Stick- und Druckmaschinen arbeiten mit digitalen Motivdateien; ein Fehler in der Datei wiederholt sich auf jedem Stück. Mit Betriebsdatenerfassung (BDE) melden Maschinen und Mitarbeitende Start, Ende, Mengen und Störungen an das Planungssystem; so ist der Auftragsstatus aktuell sichtbar. Vernetzte Systeme ermöglichen kurze Rüstzeiten, weil Einstellungen gespeichert und wieder aufgerufen werden. Voraussetzung sind gepflegte Stammdaten, klare Freigaben der Dateien und geschützte Zugänge.",
-        "beispiele": [
-          "Die freigegebene Stickdatei mit Versionsnummer wird direkt an die Maschine übertragen.",
-          "Die Maschine meldet automatisch 400 gefertigte Stück und zwei Fadenrisse an das Planungssystem."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Vernetzte Produktion",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Je stärker Maschinen, Planung und Lager vernetzt sind, desto genauer lassen sich Aufträge steuern. Zugleich steigen die Anforderungen an Datenpflege und IT-Sicherheit: Wer auf die Motivdateien zugreifen kann, darf nur freigegebene Versionen sehen, und Kundendaten dürfen nicht unbefugt weitergegeben werden.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Bei einem Auftrag wurde eine alte Version des Kundenlogos gestickt — 50 Hoodies sind unbrauchbar. Die Ursache: Die Datei lag in zwei Ordnern. MAKEL führt daraufhin ein, dass nur Dateien mit Freigabevermerk und Versionsnummer an die Maschine übertragen werden dürfen.",
-        "typische_fehler": "Einen digitalen Status für den tatsächlichen Stand halten, ohne zu prüfen, ob die Daten gepflegt werden.",
         "verstaendnisfragen": [
-          "Was leistet eine Betriebsdatenerfassung? Sie meldet Mengen, Zeiten und Störungen aus der Produktion an die Planung.",
-          "Warum sind Versionsstände bei Motivdateien wichtig? Weil ein Dateifehler sich auf jedem gefertigten Stück wiederholt."
-        ],
-        "pruefungsbezug": "Nutzen und Voraussetzungen digitaler Produktionssteuerung an einem Fall erläutern.",
-        "merksatz": "Digitale Steuerung beschleunigt und macht den Status sichtbar — aber nur mit freigegebenen, gepflegten Daten."
+          {
+            "frage": "Warum ist der Status „läuft, 40 von 150 fertig“ kein Beweis, dass der Auftrag richtig läuft?",
+            "antwort": "Weil das System nur meldet, was eingegeben wird. Es erkennt nicht, ob die richtige Datei oder das richtige Material verwendet wurde.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Welche Maßnahme verhindert, dass wieder eine alte Datei verwendet wird?",
+            "antwort": "Nur freigegebene Dateien im Produktionsordner ablegen, die Version im Dateinamen führen und die Freigabe im System vermerken.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Eine Produktionsentscheidung wirkt auf Kosten, Menschen und Umwelt.",
-          "Arbeitsschutz ist Pflicht des Arbeitgebers."
+        "darstellung": "vollfassung",
+        "ziel": "Du bewertest eine Änderung der Fertigungsorganisation nach wirtschaftlichen, sozialen und ökologischen Kriterien, benennst Zielkonflikte und gibst eine begründete Empfehlung.",
+        "vorwissen_kurz": "Eine neue Fertigungsorganisation kann Zeit sparen, die Arbeit verändern und Energie oder Material beeinflussen. Diese Folgen werden gemeinsam betrachtet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Blickrichtungen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Entscheidung über die Fertigungsorganisation wird nicht nur nach Kosten getroffen. **Wirtschaftlich** zählen Stückkosten, Durchlaufzeit, Flexibilität und Investition. **Sozial** zählen Belastung, Ergonomie, Abwechslung, Qualifikation und Verantwortung. **Ökologisch** zählen Energie, Materialeinsatz, Ausschuss und Wege. Oft widersprechen sich die Kriterien; dann werden sie gewichtet und der Zielkonflikt offen benannt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lohnt sich die Shirt-Insel?",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio erhält jede Woche drei bis fünf ähnliche Shirt-Aufträge mit Druck. Geplant ist eine Insel mit einer Druckpresse, einem Kontrolltisch und einem Packplatz, betreut von einem Team aus drei Personen.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "heute: Werkstatt",
+              "geplant: Insel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Durchlaufzeit eines 400er-Auftrags",
+                  "3 Arbeitstage",
+                  "1,5 Arbeitstage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Investition",
+                  "keine",
+                  "6.500 € für zweite Presse und Umbau"
+                ]
+              },
+              {
+                "zellen": [
+                  "Flexibilität",
+                  "jede Presse für jeden Auftrag",
+                  "Insel nur für Shirt-Druck"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeit",
+                  "je Person ein Arbeitsgang",
+                  "Wechsel zwischen Druck, Kontrolle, Verpacken; Schulung nötig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wege und Ausschuss",
+                  "Transport zwischen drei Räumen, Fehler fallen erst beim Packen auf",
+                  "kurze Wege, Kontrolle direkt nach dem Druck"
+                ]
+              },
+              {
+                "zellen": [
+                  "Energie",
+                  "zwei Pressen laufen oft nur teilweise ausgelastet",
+                  "eine zusätzliche Presse, aber gezielt ausgelastet"
+                ]
+              }
+            ],
+            "fazit": "Die Insel verkürzt die Durchlaufzeit, macht die Arbeit abwechslungsreicher und senkt den Ausschuss. Dafür kostet sie Investition und bindet eine Presse an eine Auftragsart. Bei drei bis fünf wiederkehrenden Aufträgen pro Woche überwiegen die Vorteile.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Empfehlung enthält eine Bedingung: Sinkt die Zahl der Shirt-Aufträge deutlich, steht die Insel teilweise leer. Deshalb schlägt die Produktionsplanung vor, die Insel zunächst für sechs Monate zu erproben und Durchlaufzeit, Ausschuss und Auslastung zu messen, bevor die Werkstattordnung endgültig geändert wird.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Welche Fertigungsorganisation passt, wird wirtschaftlich, sozial und ökologisch bewertet. Wirtschaftlich: Stückkosten, Durchlaufzeit, Flexibilität, Investitionsbedarf. Sozial: Monotonie oder Abwechslung, körperliche Belastung, Ergonomie, Qualifikation und Verantwortung. Ökologisch: Energie- und Materialverbrauch, Ausschuss, Transportwege, Emissionen etwa von Druckfarben. Oft gibt es Zielkonflikte: Eine Fließlinie spart Wege, ist aber unflexibel bei vielen Varianten. Eine begründete Entscheidung nennt Kriterien, Gewichtung und Daten.",
-        "beispiele": [
-          "Ein neues Druckverfahren spart Transportwege, braucht aber längere Rüstzeiten bei Motivwechsel: Zielkonflikt Effizienz gegen Flexibilität.",
-          "Wasserbasierte Druckfarben sind umweltfreundlicher, brauchen aber längere Trocknungszeiten."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Beteiligung der Mitarbeitenden",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ändert sich die Arbeitsorganisation, ändert sich der Arbeitsalltag der Beschäftigten. Werden sie früh beteiligt, bringen sie Wissen über Abläufe ein und tragen die Änderung eher mit. Gibt es einen Betriebsrat, hat er bei der Gestaltung von Arbeitsplätzen und -abläufen Unterrichtungs- und Beratungsrechte.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Für die Fertigungsinsel vergleicht Deniz: Durchlaufzeit sinkt von zwei Tagen auf einen, die Mitarbeitenden wechseln zwischen Drucken, Kontrolle und Verpacken (weniger einseitige Belastung), Transportwege entfallen. Dagegen: Die Insel lohnt sich nur bei wiederkehrenden Shirt-Aufträgen, und es müssen Mitarbeitende für mehrere Tätigkeiten geschult werden.",
-        "typische_fehler": "Nur die Kosten vergleichen und Belastung, Qualität und Umwelt außer Acht lassen.",
         "verstaendnisfragen": [
-          "Nenne je ein wirtschaftliches, soziales und ökologisches Kriterium. Zum Beispiel Stückkosten, Monotonie, Energieverbrauch.",
-          "Was ist ein typischer Zielkonflikt der Fließfertigung? Hohe Effizienz bei großen Mengen gegen geringe Flexibilität bei Varianten."
-        ],
-        "pruefungsbezug": "Eine Organisationsentscheidung mit mindestens zwei Zielkonflikten begründet bewerten.",
-        "merksatz": "Fertigungsorganisation wird wirtschaftlich, sozial und ökologisch bewertet; Zielkonflikte werden benannt und gewichtet."
+          {
+            "frage": "Warum ist „Die Insel ist immer besser, weil Wege entfallen“ zu einfach?",
+            "antwort": "Weil die Insel nur bei genug gleichartigen Aufträgen ausgelastet ist, eine Investition erfordert und Mitarbeitende schulen muss. Vorteile und Voraussetzungen gehören zusammen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Welcher Zielkonflikt besteht zwischen Flexibilität und Durchlaufzeit?",
+            "antwort": "Die Insel verkürzt die Durchlaufzeit für Shirt-Aufträge, ist aber auf diese Auftragsart festgelegt. Die Werkstatt ist flexibler, aber langsamer.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

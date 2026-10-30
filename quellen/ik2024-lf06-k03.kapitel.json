@@ -6,86 +6,515 @@
   "untertitel": "Woraus ein Erzeugnis besteht, welche Mengen dafür gebraucht werden und in welchen Schritten es entsteht.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Ein Erzeugnis besteht aus mehreren Materialien und Teilen.",
-          "Einkauf und Lager müssen wissen, was für einen Auftrag gebraucht wird."
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest Materialmengen aus einer Stückliste ab, kontrollierst die Einheiten und berücksichtigst eine Produktvariante.",
+        "vorwissen_kurz": "Die Stückliste beschreibt Material und Menge je Erzeugniseinheit. Ein Arbeitsplan beschreibt dagegen die auszuführenden Arbeitsschritte.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Stückliste ist eine Mengenbeschreibung",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL soll in diesem Übungsfall 200 schwarze Hoodies herstellen. Die vorhandene {{begriff:stueckliste|Stückliste}} nennt für einen Hoodie einen Rohling, 15 g Stickgarn, 0,04 m² Stickvlies, ein Etikett und einen Versandbeutel. Die Zahlen beschreiben den Materialeinsatz je Stück. Sie sagen noch nicht, welche Vorräte vorhanden sind, wann Material bereitstehen muss oder welche Arbeitsschritte ausgeführt werden.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Auftrag wird jede Menge je Stück mit 200 Stück multipliziert. Dabei gehört die Einheit zur Rechnung. Aus 15 g je Hoodie mal 200 Hoodies werden 3.000 g Garn. Erst danach kannst du bei Bedarf in die Einheit des Einkaufs umrechnen: 3.000 g sind 3 kg. Würdest du 3.000 als Kilogramm übernehmen, wäre nicht das Multiplikationsverfahren falsch, sondern die Einheit.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Den Auftrag vollständig auflösen",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Material",
+              "Menge je Hoodie",
+              "Rechnung für 200 Hoodies",
+              "Auftragsbedarf"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohling schwarz",
+                  "1 Stück",
+                  "200 × 1 Stück",
+                  "200 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stickgarn",
+                  "15 g",
+                  "200 × 15 g",
+                  "3.000 g = 3 kg"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stickvlies",
+                  "0,04 m²",
+                  "200 × 0,04 m²",
+                  "8 m²"
+                ]
+              },
+              {
+                "zellen": [
+                  "Etikett",
+                  "1 Stück",
+                  "200 × 1 Stück",
+                  "200 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versandbeutel",
+                  "1 Stück",
+                  "200 × 1 Stück",
+                  "200 Stück"
+                ]
+              }
+            ],
+            "fazit": "Die Auftragsmenge vervielfacht den Materialeinsatz. Unterschiedliche Materialien behalten ihre jeweilige Einheit; Gramm und Quadratmeter dürfen nicht addiert werden.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Unsere Rechnung setzt voraus, dass die Stückliste zur bestellten Ausführung passt und keine zusätzlichen Ausschuss-, Verschnitt- oder Reserveannahmen gelten. Sie ist eine einfache einstufige Mengenauflösung. Bei einer Baugruppenstruktur musst du die Mengen über die Ebenen verfolgen; bei gemeinsamer Verwendung eines Materials werden die Beiträge anschließend in derselben Einheit zusammengeführt.",
+            "id": "a1-p3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Auftragsbedarf ist noch keine Bestellmenge",
+            "id": "a1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Angenommen, vom passenden Garn liegen 500 g frei verfügbar und zum benötigten Zeitpunkt nutzbar im Lager. Für diesen Auftrag werden keine weiteren Zu- oder Abgänge und keine zusätzliche Sicherheitsreserve angesetzt. Dann fehlen 3.000 g − 500 g = 2.500 g, also 2,5 kg. Bereits für andere Aufträge reserviertes Garn dürftest du nicht noch einmal als verfügbar abziehen. Mindestbestellmenge, Gebinde und Lieferzeit prüfst du danach gesondert.",
+            "id": "a1-p4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Ausgangstabelle zeigt außerdem eine Weihnachtsvariante: Geschenkbox statt Versandbeutel. Bestellt der Kunde 200 Stück dieser Variante, werden 200 Boxen und keine Versandbeutel nach dieser Verpackungsposition benötigt. „Variante“ bedeutet hier Austausch der passenden Position, nicht automatisch eine zusätzliche Verpackung. Welche Ausführung gilt, muss deshalb vor der Mengenrechnung geklärt sein.",
+            "id": "a1-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "erklaerung": "Die Stückliste beschreibt, aus welchen Materialien und Baugruppen ein Erzeugnis besteht und in welcher Menge je Einheit. Die Mengenübersichtsstückliste listet alle Teile mit Gesamtmenge je Stück ohne Struktur auf. Die Strukturstückliste zeigt zusätzlich, auf welcher Fertigungsstufe ein Teil eingeht (zum Beispiel Baugruppe ‚bestickter Rohling‘ und darin Garn und Vlies). Die Baukastenstückliste beschreibt jeweils nur eine Stufe und verweist auf weitere Stücklisten. Bei vielen Ausführungen nutzt man Variantenstücklisten: Ein Grundaufbau gilt für alle, abweichende Positionen werden je Variante geführt.",
-        "beispiele": [
-          "Hoodie mit Logo-Stick: 1 Rohling, 15 g Stickgarn, 0,04 m² Stickvlies, 1 Etikett, 1 Versandbeutel.",
-          "Variante ‚Geschenkverpackung‘: statt Versandbeutel eine Geschenkbox."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Gleiche Auftragsnummer, unterschiedliche Planungsfragen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Stückliste beantwortet „Woraus und wie viel je Einheit?“. Der Arbeitsplan beantwortet „Welche Arbeitsschritte, in welcher Folge und mit welchen vorgesehenen Ressourcen?“. Beide können zum selben Produkt gehören, sind aber nicht austauschbar. Aus 3 kg Garn lässt sich keine zuverlässige Fertigungsdauer ableiten. Auch der Termin kommt nicht allein aus der Stückliste. Erst Auftragstermin, Arbeitsablauf, Kapazitäten, Bestände und Lieferzeiten zeigen gemeinsam, wann das Material tatsächlich benötigt wird.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für den Artikel ‚Hoodie Logo-Stick schwarz‘ liegt im System eine Stückliste mit fünf Positionen. Deniz Aydın nutzt sie, um für einen Auftrag über 400 Stück den Materialbedarf an den Einkauf weiterzugeben.",
-        "typische_fehler": "Positionen erfinden oder weglassen, statt die gültige Stückliste zu verwenden.",
         "verstaendnisfragen": [
-          "Was zeigt eine Strukturstückliste zusätzlich zur Mengenübersicht? Auf welcher Fertigungsstufe die Teile eingehen.",
-          "Wozu dienen Variantenstücklisten? Um viele Ausführungen mit einem gemeinsamen Grundaufbau übersichtlich zu führen."
-        ],
-        "pruefungsbezug": "Stücklistenarten unterscheiden und aus einer Stückliste Mengen ablesen.",
-        "merksatz": "Die Stückliste sagt, woraus ein Erzeugnis besteht und wie viel je Stück; Mengenübersicht, Struktur, Baukasten und Varianten unterscheiden sich im Aufbau."
+          {
+            "frage": "Warum werden aus 3 kg Auftragsbedarf bei 500 g frei verfügbarem Bestand nicht automatisch 3 kg Bestellmenge?",
+            "antwort": "Der Auftragsbedarf beschreibt den benötigten Einsatz, nicht den fehlenden Zukauf. Unter den ausdrücklich genannten Annahmen decken 500 g Bestand einen Teil, sodass 2,5 kg fehlen. Weitere Bestellrestriktionen sind anschließend zu prüfen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist die Weihnachtsvariante vor der Rechnung zu klären?",
+            "antwort": "Die Variante verändert eine Materialposition. Wer zuerst die Standardstückliste vervielfacht und danach nur Boxen hinzufügt, plant zusätzlich nicht benötigte Versandbeutel. Zuerst wird die gültige Ausführung bestimmt, dann deren Stückliste aufgelöst.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Bruttobedarf = Menge × Verbrauch je Stück (aus LF 4).",
-          "Materialien werden in unterschiedlichen Einheiten geführt."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest den Materialbedarf eines Auftrags über mehrere Stücklistenebenen, rechnest Einheiten in die Einkaufseinheit um und setzt einen Ausschusszuschlag nur dann an, wenn er vorgegeben ist.",
+        "vorwissen_kurz": "Nicht jedes Erzeugnis besteht direkt aus Material. Manchmal entsteht zuerst eine Baugruppe, die dann weiterverarbeitet wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Über die Ebenen rechnen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Stückliste kann einstufig sein wie beim Hoodie oder mehrstufig. Stellt MAKEL Studio für eine Kollektion vorbestickte Aufnäher her und näht sie anschließend auf Taschen, ist der Aufnäher eine **Baugruppe** mit eigener Stückliste. Der Bedarf wird dann Ebene für Ebene berechnet: zuerst wie viele Aufnäher für die Taschen nötig sind, dann wie viel Material für diese Aufnäher. Gibt der Auftrag einen Ausschusszuschlag vor, wird er auf den Nettobedarf aufgeschlagen; ohne Vorgabe wird nichts geschätzt.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Taschen mit Aufnäher",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auftrag: 300 Taschen. Jede Tasche hat 2 Aufnäher. Ein Aufnäher braucht 0,01 m² Filz und 4 g Stickgarn. Für das Sticken der Aufnäher sind 5 % Ausschuss vorgegeben.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ebene",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Taschen",
+                  "Auftrag",
+                  "300 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufnäher netto",
+                  "300 × 2",
+                  "600 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufnäher mit 5 % Ausschuss",
+                  "600 × 1,05",
+                  "630 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Filz",
+                  "630 × 0,01 m²",
+                  "6,3 m²"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stickgarn",
+                  "630 × 4 g = 2.520 g",
+                  "2,52 kg"
+                ]
+              }
+            ],
+            "fazit": "Der Ausschuss wird auf der Ebene angesetzt, auf der er entsteht — beim Sticken der Aufnäher. Von dort wird das Material berechnet. Die Taschen selbst brauchen 300 Stück, ohne Zuschlag.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Würde man den Ausschuss erst am Ende auf das Garn aufschlagen, käme dasselbe heraus. Anders ist es, wenn der Ausschuss nur einen Teil betrifft: Fehlerhafte Aufnäher kosten Filz und Garn, aber keine Taschen. Würde man 5 % auf die Taschen aufschlagen, plante MAKEL Studio 15 Taschen zu viel.",
+            "id": "a2-p3"
+          }
         ],
-        "erklaerung": "Aus der Stückliste ergibt sich der Materialbedarf eines Auftrags: Auftragsmenge × Menge je Stück. Dabei müssen die Einheiten stimmen: Garn wird in Gramm verbraucht, aber in Kilogramm-Konen gekauft; Vlies wird in m² verbraucht, aber in Rollen gekauft. Ist ein Ausschusszuschlag vorgegeben, wird er auf den Bedarf aufgeschlagen. Der Nettobedarf ergibt sich nach Abzug verfügbarer Bestände (LF 4).",
-        "beispiele": [
-          "250 Stück × 20 g Druckmaterial = 5.000 g = 5 kg.",
-          "400 Stück × 0,04 m² Vlies = 16 m²; eine Rolle hat 50 m² — eine Rolle reicht."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Arten von Stücklisten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die **Mengenübersichtsstückliste** listet alle Materialien mit ihrer Gesamtmenge je Erzeugnis, ohne Ebenen. Die **Strukturstückliste** zeigt den vollständigen Aufbau über alle Ebenen. Die **Baukastenstückliste** zeigt je Baugruppe nur die direkt darunterliegende Ebene. Die **Variantenstückliste** fasst ähnliche Erzeugnisse zusammen und zeigt, welche Positionen sich unterscheiden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für 400 Hoodies rechnet Deniz: Garn 400 × 15 g = 6.000 g = 6 kg; Vlies 400 × 0,04 m² = 16 m²; Rohlinge, Etiketten und Beutel je 400 Stück. Ein Ausschusszuschlag ist für diesen Auftrag nicht vorgegeben. Er gleicht die Mengen mit dem Lagerbestand ab und meldet den Nettobedarf an den Einkauf.",
-        "typische_fehler": "Gramm und Kilogramm vermischen oder einen Ausschusszuschlag annehmen, der nicht vorgegeben ist.",
         "verstaendnisfragen": [
-          "Wie viel Kilogramm sind 6.000 g? 6 kg.",
-          "Wann wird ein Ausschusszuschlag berücksichtigt? Nur wenn er vorgegeben oder betrieblich festgelegt ist."
-        ],
-        "pruefungsbezug": "Materialbedarf aus Stücklistenangaben mit Einheitenumrechnung berechnen.",
-        "merksatz": "Bedarf = Auftragsmenge × Menge je Stück; Einheiten angleichen, Zuschläge nur wenn vorgegeben."
+          {
+            "frage": "Ein Shirt braucht 20 g Druckmaterial; produziert werden 250 Stück ohne Ausschuss. Wie hoch ist der Bedarf?",
+            "antwort": "250 × 20 g = 5.000 g = 5 kg.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum wird der Ausschuss im Beispiel auf die Aufnäher und nicht auf die Taschen aufgeschlagen?",
+            "antwort": "Weil der Ausschuss beim Sticken der Aufnäher entsteht. Fehlerhafte Aufnäher werden ersetzt; die Taschen selbst sind davon nicht betroffen.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Die Stückliste sagt, was gebraucht wird.",
-          "Für die Planung braucht man auch, wie und wie lange gefertigt wird."
+        "darstellung": "vollfassung",
+        "ziel": "Du liest einen Arbeitsplan mit Arbeitsgängen, Betriebsmitteln, Rüst- und Stückzeiten, berechnest daraus den Zeitbedarf eines Auftrags je Arbeitsplatz und trennst die Informationen von Stückliste und Arbeitsplan.",
+        "vorwissen_kurz": "Die Stückliste sagt, woraus ein Hoodie besteht. Wie er entsteht und wie lange das dauert, steht woanders.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie gefertigt wird",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:arbeitsplan|Arbeitsplan}} beschreibt die Arbeitsgänge in ihrer Reihenfolge, das jeweilige Betriebsmittel, die Rüstzeit je Los und die Zeit je Stück. Aus ihm lässt sich berechnen, wie lange ein Auftrag jeden Arbeitsplatz belegt. Stückliste und Arbeitsplan gehören zum selben Erzeugnis, beantworten aber verschiedene Fragen: Material und Mengen das eine, Arbeitsgänge und Zeiten das andere.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zeitbedarf für 200 Hoodies",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Arbeitsgang",
+              "Rechnung",
+              "Minuten"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "10 Rohling bereitstellen",
+                  "200 × 0,5 min",
+                  "100"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "20 Vlies einlegen, einspannen",
+                  "200 × 1 min",
+                  "200"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "30 Sticken",
+                  "45 min + 200 × 3 min",
+                  "645"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "40 Sichtkontrolle",
+                  "200 × 0,5 min",
+                  "100"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "50 Falten, verpacken",
+                  "200 × 1 min",
+                  "200"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "",
+                  "1.245"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Der Auftrag braucht insgesamt 1.245 Minuten, gut 20,75 Stunden Arbeitszeit. Die Stickmaschine ist davon 645 Minuten belegt, also 10,75 Stunden — sie ist der Arbeitsplatz mit dem größten Zeitbedarf.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Summe ist nicht die Durchlaufzeit. Arbeitsgänge an verschiedenen Plätzen können teilweise gleichzeitig laufen: Während die Maschine den zehnten Hoodie stickt, kann der erste schon kontrolliert werden. Für die Kapazitätsplanung zählt deshalb vor allem, wie lange jeder einzelne Arbeitsplatz belegt ist.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Der Arbeitsplan beschreibt, wie ein Erzeugnis hergestellt wird: die Arbeitsgänge in ihrer Reihenfolge, den Arbeitsplatz oder die Maschine (Betriebsmittel), die Rüstzeit je Los und die Ausführungszeit je Stück, oft auch benötigte Werkzeuge, Dateien und Prüfanweisungen. Stückliste und Arbeitsplan gehören zusammen: Die Stückliste liefert die Materialien, der Arbeitsplan die Tätigkeiten und Zeiten. Aus dem Arbeitsplan berechnet die Planung den Kapazitätsbedarf (Kapitel 4).",
-        "beispiele": [
-          "Arbeitsgang 30 ‚Sticken‘: Stickmaschine 2, Rüstzeit 45 min, Stückzeit 3 min, Datei LOGO-V3.",
-          "Arbeitsgang 40 ‚Sichtkontrolle‘: Kontrolltisch, 0,5 min je Stück, Prüfanweisung PA-12."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Hinweis im Arbeitsplan",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Arbeitsplan nennt beim Sticken die Datei LOGO-V3 mit dem Vermerk „nur mit Freigabe“. Solche Hinweise gehören in den Arbeitsplan, weil sie den Arbeitsgang betreffen. Fehlt der Vermerk oder ist eine andere Version im Umlauf, wird nicht gestickt, sondern nachgefragt.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Luca soll für den Auftrag die benötigte Maschinenzeit nennen und liest aus der Stückliste ‚15 g Garn‘ ab. Sandra korrigiert: ‚Die Stückliste sagt dir das Material. Zeiten und Maschinen stehen im Arbeitsplan.‘ Dort findet Luca: Sticken, Rüstzeit 45 Minuten, 3 Minuten je Stück.",
-        "typische_fehler": "Zeiten aus dem Arbeitsplan als Materialmengen lesen oder umgekehrt.",
         "verstaendnisfragen": [
-          "Was enthält ein Arbeitsplan? Arbeitsgänge in Reihenfolge, Betriebsmittel, Rüst- und Stückzeiten, ggf. Dateien und Prüfanweisungen.",
-          "Worin unterscheiden sich Stückliste und Arbeitsplan? Die Stückliste nennt Materialien, der Arbeitsplan Tätigkeiten und Zeiten."
-        ],
-        "pruefungsbezug": "Informationen gezielt aus Stückliste oder Arbeitsplan entnehmen.",
-        "merksatz": "Stückliste = Was (Material und Mengen), Arbeitsplan = Wie (Arbeitsgänge, Maschinen, Zeiten)."
+          {
+            "frage": "Wie lange ist die Stickmaschine für 150 Hoodies nach diesem Arbeitsplan belegt?",
+            "antwort": "45 min + 150 × 3 min = 495 Minuten = 8,25 Stunden.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Steht die Rüstzeit der Stickmaschine in der Stückliste oder im Arbeitsplan?",
+            "antwort": "Im Arbeitsplan, weil sie den Arbeitsgang und das Betriebsmittel betrifft, nicht das Material.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Stücklisten und Arbeitspläne ändern sich, wenn Produkte überarbeitet werden.",
-          "Falsche Stammdaten führen zu falschen Bestellungen und Plänen."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst Stücklisten und Arbeitspläne auf Version und Freigabe, erkennst widersprüchliche Stammdaten und klärst sie mit der zuständigen Stelle, statt zu raten.",
+        "vorwissen_kurz": "Stücklisten und Arbeitspläne werden für viele Aufträge immer wieder verwendet. Ein Fehler darin wiederholt sich in jedem Auftrag.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Stammdaten mit Version",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Stücklisten und Arbeitspläne sind **Stammdaten**: Sie werden einmal angelegt und für jeden Auftrag genutzt. Ändert sich etwas, etwa ein neues Stickgarn oder ein schnelleres Programm, entsteht eine neue **Version** mit einem Datum, ab dem sie gilt. Erst nach der **Freigabe** durch die zuständige Stelle darf sie in der Planung verwendet werden. So ist nachvollziehbar, nach welchem Stand ein Auftrag gefertigt wurde.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Versionen im System",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Hoodie „Kyoto“ findet Luca zwei Stücklisten:",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Merkmal",
+              "Version 2",
+              "Version 3"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Stickgarn",
+                  "15 g Polyester",
+                  "14 g Bio-Garn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Etikett",
+                  "Standard",
+                  "Etikett mit Siegelhinweis"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gültig ab",
+                  "1. März 2026",
+                  "kein Datum eingetragen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Freigabe",
+                  "Produktionsleitung, 25. Februar 2026",
+                  "fehlt"
+                ]
+              }
+            ],
+            "fazit": "Version 3 ist nicht freigegeben und hat kein Gültigkeitsdatum. Luca plant den neuen Auftrag nicht nach Version 3, nimmt aber auch nicht stillschweigend Version 2, sondern fragt bei der Produktionsleitung nach.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rückfrage ergibt: Version 3 ist für die Bio-Kollektion gedacht, die ab 1. Januar 2027 gilt. Bis dahin bleibt Version 2 gültig. Die Produktionsleitung trägt das Datum ein und gibt Version 3 frei. Hätte Luca geraten, wären entweder falsche Etiketten bestellt oder ein Auftrag mit falschem Garn gefertigt worden.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Stücklisten und Arbeitspläne sind Stammdaten mit Versionsstand und Freigabe. Ändert sich ein Produkt (anderes Garn, neue Verpackung, neues Logo), wird eine neue Version angelegt und freigegeben; ab einem Gültigkeitsdatum gilt sie für neue Aufträge. Sind zwei Varianten ohne gültige Versionsangabe vorhanden, wird nicht geraten oder beides eingesetzt, sondern die gültige Version bei der zuständigen Stelle geklärt. Gute Datenqualität heißt: vollständig, aktuell, eindeutig und von genau einer Stelle gepflegt.",
-        "beispiele": [
-          "Stückliste ‚Hoodie Logo-Stick‘, Version 3, gültig ab 1. Oktober: neues recyceltes Garn.",
-          "Zwei Verpackungsvarianten ohne Versionsangabe: Rückfrage bei Produktentwicklung, bis eine freigegebene Version vorliegt."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Stammdaten und Nachhaltigkeit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gerade bei Nachhaltigkeitsversprechen sind gepflegte Stammdaten wichtig. Wirbt MAKEL Studio mit Bio-Garn, muss die gültige Stückliste es auch enthalten — sonst stimmt die Werbeaussage nicht mit der Produktion überein.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "In der Stückliste stehen zwei Verpackungspositionen: ‚Versandbeutel‘ und ‚Geschenkbox‘, beide ohne Gültigkeitsdatum. Deniz bestellt nicht einfach beides, sondern fragt bei Yuki Bergmann nach. Antwort: Die Geschenkbox gilt nur für die Weihnachtsedition. Die Stückliste wird als Variantenstückliste neu angelegt und freigegeben.",
-        "typische_fehler": "Bei unklaren Stammdaten beide Varianten ungeprüft einplanen oder die eigene Vermutung eintragen.",
         "verstaendnisfragen": [
-          "Was tust du, wenn eine Stückliste zwei Varianten ohne gültige Versionsangabe enthält? Die gültige Version bei der zuständigen Stelle klären, bevor geplant oder bestellt wird.",
-          "Was gehört zu guter Datenqualität? Vollständig, aktuell, eindeutig, zuständig gepflegt."
-        ],
-        "pruefungsbezug": "Umgang mit unklaren oder veralteten Stammdaten begründen.",
-        "merksatz": "Stücklisten und Arbeitspläne haben Version und Freigabe; Unklarheiten werden geklärt, nicht geraten."
+          {
+            "frage": "Warum plant Luca nicht einfach nach der neuesten Version?",
+            "antwort": "Weil sie nicht freigegeben ist und kein Gültigkeitsdatum hat. Ohne Freigabe ist nicht sicher, dass sie für diesen Auftrag gelten soll.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Was gehört zu einer gültigen Stücklistenversion?",
+            "antwort": "Eine Versionsnummer, ein Datum, ab dem sie gilt, und die Freigabe durch die zuständige Stelle.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

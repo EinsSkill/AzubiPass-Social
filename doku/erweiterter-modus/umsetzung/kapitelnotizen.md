@@ -140,3 +140,13 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K06:** Vereinsauftrag mit Rücksendung und Nachlass (Forderung 3.561,07 €), Erzeugnis vs. Handelsware, Bestandsveränderung im Quartal.
 - **K07:** Anschaffungen mit Konten, GWG-Grenzen 250/800/1.000 €; Anschaffungskosten 13.000 € mit Abgrenzung Garn/Wartung; zeitanteilige AfA über sechs Kalenderjahre; Kauf/Zahlung/AfA mit Bankwirkung. **Berichtigt (gemeinsam):** IKR-Konten in der Tabelle falsch — „0500 Technische Anlagen und Maschinen“ (0500 = unbebaute Grundstücke) → 0700, „0700 Betriebs- und Geschäftsausstattung“ → 0870 Büromöbel und sonstige Geschäftsausstattung.
 - **K08:** Buchbestand/Istbestand Rohlinge mit Prüfreihenfolge, belegte Teilerklärung und dokumentierte Restdifferenz, Storno; Abstimmung mit Kontoauszug, Kasse, Saldenbestätigungen, Eingangsrechnungen; Gewinn 800 € bei Bank − 3.300 €.
+
+## IK LF6 · Wertschöpfungsprozesse analysieren und beurteilen
+
+- **K01:** Vereinsanfrage zur vollständigen Spezifikation, Kundenauftrags- vs. Lagerfertigung; Wochenprogramm; Machbarkeit 945 min bei 16 h mit fehlenden XXL-Rohlingen; Prioritäten nach Termin/Zusage/Bedeutung, Zusage unter Vorbehalt.
+- **K02:** Fertigungsarten an vier Aufträgen, Chargen beim Lieferanten; Organisationstypen bei MAKEL; Motivdatei-Fehler mit Erststückprüfung; Shirt-Insel wirtschaftlich/sozial/ökologisch mit Erprobung, § 90 BetrVG.
+- **K03:** **a1 nach ChatGPT-Muster** übernommen; a2 mehrstufige Mengenauflösung mit Ausschuss auf der richtigen Ebene, Stücklistenarten; a3 Zeitbedarf je Arbeitsgang (1.245 min, Engpass Stickmaschine); a4 Versionskonflikt mit Klärung.
+- **K04:** Kapazität 38 h, Auslastung 89,5 %, Eilauftrag 105,3 %; Rückwärts-/Vorwärtsterminierung und Belegungsplan; Durchlaufzeit mit Engpass Trockner; Engpassmaßnahmen mit Folgen, ArbZG/JArbSchG.
+- **K05:** Rüstkosten 75 € je Los; Losgrößentabelle Kyoto (Optimum 300), flaches Optimum; Formel mit Einheitenfehler-Fall; tatsächliche Lose mit Saison, Lagerplatz.
+- **K06:** Prüfmerkmale mit Toleranz und Prüfzeitpunkten, Rügepflicht; Soll-Ist 400 Shirts (3,5 %, Nacharbeit/Ausschuss), Stichprobenaussage; 5-Warum am Motivfehler; Maßnahmenplan mit Wirksamkeitskontrolle, ISO 9001.
+- **K07:** Rationalisierung mit Prozentveränderung und Amortisation; Fixkostendegression mit Grenzen/sprungfixen Kosten; Gewinnschwelle mit Preis-/Kostenvariante; **K19 Teil 2:** Make-or-buy Etiketten mit kritischer Menge 7.500 und Nachhaltigkeit aus konkreten Transport- und Materialflüssen ohne geschätzte Emissionszahl.
