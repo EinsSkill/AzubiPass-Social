@@ -251,3 +251,13 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K05:** Ziel/Zielgruppe/Botschaft mit Beleg; Budgetverteilung 6.000 € auf Kanäle; Entwurfsprüfung (Umweltaussage, Lizenz, Einwilligung, Kennzeichnung, Garantie); Kanalvergleich Kosten je Anfrage.
 - **K06:** Reisender/Handelsvertreterin (kritisch 50.000 €, bei 35.000 € HV günstiger), § 89b HGB; Londoner Auftrag mit Risiken inkl. Brexit/Ursprungsregeln; Incoterms-Vergleich mit Empfehlung DAP; Zahlungsabsicherung Anzahlung + Inkasso bzw. Akkreditiv.
 - **K07:** Konzept auf einer Seite mit Budgetreserve; Unstimmigkeiten im Mix; Pakete/Schnittstellen zum Balkenplan (kritischer Pfad 7 Wochen, konsistent mit Basisgrafik); Bruch der Wirkungskette Anfrage → Bestellung (40 % → 14 %) mit Nachsteuerung.
+
+## IK LF11 · Geschäftsprozesse an gesamtwirtschaftlichen Rahmenbedingungen ausrichten
+
+- **Keine tagesaktuellen Makrowerte** (Leitzins, Inflation, Wechselkurs) in den Vollfassungen; Indikator- und Kurswerte sind als Übungswerte gekennzeichnet, EZB-Ziel 2 % mittelfristig, § 35 GWB-Schwellen aus Basis bestätigt.
+- **K01:** Ströme mit/ohne Gegenleistung (Steuern, Transfers); Weg Ersparnis → Kredit → Laserstation; Außenhandelssaldo MAKEL (−90.400 €, Übungszahlen) mit Einordnung; Rückwirkungskette gekürzter Eventbudgets.
+- **K02:** Preissignal Bio-Rohlinge; Pflichten von MAKEL je Baustein der sozialen Marktwirtschaft; Ordnungs- vs. Prozesspolitik mit Förderantrag vor Kauf; Entscheidungen im Spielraum (Kartell, Kurzarbeit mit Betriebsrat, Green Claim).
+- **K03:** Verschiebungen von Angebot/Nachfrage; Märkte von MAKEL nach relevanter Abgrenzung und Marktmacht; Weitergabe von 8 % Kostensteigerung je Produkt, Preiselastizität; Annahmen des vollkommenen Marktes geprüft.
+- **K04:** Vorschläge nach Bindungsintensität; horizontale/vertikale/diagonale Zusammenschlüsse mit Marktwirkung; vier Kartellrechtssituationen, Kronzeugenregelung; Vergleich Einkaufskooperation vs. Übernahme mit Prüfschritten.
+- **K05:** Indikatorenmix (Übungswerte) → Abschwung als Hypothese; Inflation 3 % und Reallohn; Wirkungskette Investitionsförderung (15 % → 43.775 €) mit Mitnahmeeffekt; Szenario-Entscheidungen mit Auslösern.
+- **K06:** Transmission bis MAKEL (Kontokorrent sofort, Festzins später); Zins in Prozentpunkten und Aufwertung für Ein-/Verkauf; EU/WTO/IWF/Weltbank im Alltag von MAKEL; Risiko-Maßnahme-Kosten-Ziel-Empfehlung.

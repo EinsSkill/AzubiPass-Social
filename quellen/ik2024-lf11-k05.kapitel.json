@@ -6,86 +6,478 @@
   "untertitel": "Konjunkturphasen und Indikatoren deuten, wirtschaftspolitische Ziele und Zielkonflikte erklären, Maßnahmen auf MAKEL beziehen.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Die Auftragslage schwankt über die Jahre.",
-          "Das Bruttoinlandsprodukt misst die Wirtschaftsleistung."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Konjunkturindikatoren als Früh-, Präsenz- oder Spätindikatoren ein, liest mehrere Indikatoren zusammen und formulierst eine vorsichtige Einschätzung der Konjunkturphase.",
+        "vorwissen_kurz": "Die Anfragen von Agenturen gehen zurück, und in den Nachrichten ist von einer Abkühlung die Rede. Wie ernst ist das?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehrere Signale zusammen lesen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:konjunktur|Konjunktur}} beschreibt die Schwankungen der Wirtschaftstätigkeit um ihren langfristigen Trend. Typisch sind vier Phasen: Aufschwung, Boom, Abschwung und Tiefstand. Um die Phase einzuschätzen, werden Indikatoren beobachtet. **Frühindikatoren** wie Auftragseingänge und Geschäftserwartungen zeigen Veränderungen an, bevor sie eintreten. **Präsenzindikatoren** wie Produktion und Kapazitätsauslastung beschreiben die aktuelle Lage. **Spätindikatoren** wie die Arbeitslosenquote reagieren erst mit Verzögerung. Ein einzelner Indikator kann täuschen; erst mehrere zusammen ergeben ein Bild.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Indikatoren für die Branche (Übungswerte)",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Indikator",
+              "Art",
+              "Vorquartal",
+              "aktuelles Quartal",
+              "Tendenz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Auftragseingänge Textilveredelung",
+                  "Frühindikator",
+                  "100",
+                  "94",
+                  "sinkend"
+                ]
+              },
+              {
+                "zellen": [
+                  "Geschäftserwartungen der Eventbranche",
+                  "Frühindikator",
+                  "leicht positiv",
+                  "leicht negativ",
+                  "sinkend"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kapazitätsauslastung Druckereien",
+                  "Präsenzindikator",
+                  "85 %",
+                  "80 %",
+                  "sinkend"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitslosenquote in der Region",
+                  "Spätindikator",
+                  "6,1 %",
+                  "6,1 %",
+                  "unverändert"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anfragen von Agenturen bei MAKEL",
+                  "eigener Frühindikator",
+                  "48",
+                  "39",
+                  "sinkend"
+                ]
+              }
+            ],
+            "fazit": "Früh- und Präsenzindikatoren zeigen nach unten, der Spätindikator noch nicht. Das spricht für einen beginnenden Abschwung in der Branche, ist aber eine Hypothese, keine Gewissheit.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für MAKEL Studio sind die eigenen Zahlen besonders wertvoll, weil sie die Lage der eigenen Kunden direkt zeigen. Sinkende Anfragen von Agenturen können ein Frühzeichen sein. Sie können aber auch andere Gründe haben, etwa einen neuen Wettbewerber oder ein schwaches Quartal nach einem starken Vorjahr. Deshalb wird die Einschätzung vorsichtig formuliert und mit weiteren Daten überprüft.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die gesamtwirtschaftliche Aktivität schwankt um einen langfristigen Wachstumstrend. Diese Schwankungen nennt man Konjunktur. Man unterscheidet vereinfacht vier Phasen: Aufschwung (Nachfrage und Produktion steigen), Boom oder Hochkonjunktur (Kapazitäten ausgelastet, Preise steigen), Abschwung (Nachfrage sinkt, Lager wachsen) und Tiefstand (geringe Auslastung, hohe Arbeitslosigkeit). Indikatoren helfen bei der Einordnung: Frühindikatoren laufen voraus (Auftragseingänge, Geschäftsklima), Präsenzindikatoren zeigen die aktuelle Lage (Produktion, Auslastung, BIP), Spätindikatoren folgen nach (Arbeitslosenquote, oft auch Preise).",
-        "beispiele": [
-          "Sinkende Auftragseingänge in der Industrie: ein Frühindikator für einen möglichen Abschwung.",
-          "Die Arbeitslosenquote steigt meist erst, wenn der Abschwung schon länger läuft."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Konjunktur und Trend",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Trend beschreibt die langfristige Entwicklung der Wirtschaftsleistung, etwa durch technischen Fortschritt und Bevölkerungsentwicklung. Konjunktur sind die kürzeren Schwankungen darum herum. Saisonale Schwankungen wie das Weihnachtsgeschäft gehören weder zum Trend noch zur Konjunktur.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Bei MAKEL sinken die Anfragen von Agenturen seit drei Monaten, im Lager stapeln sich Standardrohlinge, und zwei Kunden verschieben Messeauftritte. Tobias Renner vermutet einen konjunkturellen Abschwung — prüft aber auch, ob ein neuer Online-Wettbewerber die Ursache sein könnte.",
-        "typische_fehler": "Aus einem einzelnen Indikator sicher auf eine Konjunkturphase schließen.",
         "verstaendnisfragen": [
-          "Welche Phasen hat der Konjunkturzyklus? Aufschwung, Boom, Abschwung, Tiefstand.",
-          "Was ist ein Frühindikator? Eine Größe, die der Konjunktur vorausläuft, etwa Auftragseingänge oder Geschäftsklima."
-        ],
-        "pruefungsbezug": "Konjunkturphasen anhand mehrerer Indikatoren begründet einschätzen.",
-        "merksatz": "Konjunktur = Schwankung um den Trend; Phasen: Aufschwung, Boom, Abschwung, Tiefstand — mehrere Indikatoren zusammen lesen."
+          {
+            "frage": "Welche Indikatoren zeigen Veränderungen frühzeitig an?",
+            "antwort": "Frühindikatoren wie Auftragseingänge und Geschäftserwartungen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum sollte man sich nicht auf einen einzelnen Indikator verlassen?",
+            "antwort": "Weil er aus anderen Gründen schwanken kann. Erst mehrere Indikatoren zusammen ergeben ein verlässliches Bild.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Der Staat verfolgt wirtschaftspolitische Ziele.",
-          "Ziele können sich widersprechen."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst die Ziele des magischen Vierecks mit ihren Messgrößen, berechnest eine Inflationsrate aus einem Preisindex und beschreibst typische Zielkonflikte zwischen den Zielen.",
+        "vorwissen_kurz": "Der Staat soll gleichzeitig für stabile Preise, viele Arbeitsplätze, Wachstum und ausgeglichenen Außenhandel sorgen. Alles auf einmal geht selten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Ziele, die sich beeinflussen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das **magische Viereck** fasst vier gesamtwirtschaftliche Ziele zusammen, die das Stabilitätsgesetz nennt: **Preisniveaustabilität**, gemessen an der Inflationsrate; **hoher Beschäftigungsstand**, gemessen an der Arbeitslosenquote; **außenwirtschaftliches Gleichgewicht**, gemessen etwa an der Leistungsbilanz; **stetiges und angemessenes Wachstum**, gemessen an der Veränderung des realen Bruttoinlandsprodukts. „Magisch\" heißt es, weil sich die Ziele gegenseitig beeinflussen und kaum gleichzeitig voll zu erreichen sind.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Inflation berechnen und deuten (Übungswerte)",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Verbraucherpreisindex Vorjahr",
+                  "Basis",
+                  "120,0"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verbraucherpreisindex aktuell",
+                  "",
+                  "123,6"
+                ]
+              },
+              {
+                "zellen": [
+                  "Inflationsrate",
+                  "(123,6 − 120,0) ÷ 120,0 × 100",
+                  "3,0 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lohnerhöhung bei MAKEL",
+                  "",
+                  "2,5 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Reallohn der Beschäftigten",
+                  "2,5 % − 3,0 %",
+                  "etwa − 0,5 %"
+                ]
+              }
+            ],
+            "fazit": "Bei 3 % Inflation und 2,5 % Lohnerhöhung sinkt die Kaufkraft der Beschäftigten leicht. Das kann Lohnforderungen verstärken und den Zielkonflikt zwischen Preisstabilität und Beschäftigung verschärfen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zielkonflikte entstehen über Wirkungsketten. Erhöht der Staat seine Ausgaben, um Arbeitsplätze zu sichern, steigt die Nachfrage. Sind die Kapazitäten bereits ausgelastet, können die Preise steigen. Umgekehrt kann eine Politik, die Preise stabilisieren will, etwa über höhere Zinsen, Investitionen bremsen und Arbeitsplätze kosten. Für MAKEL Studio zeigen sich solche Konflikte konkret: Steigen Preise und Löhne, wird Personal teurer; steigen die Zinsen, wird die Laserstation teurer finanziert.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Das Stabilitäts- und Wachstumsgesetz von 1967 nennt vier gesamtwirtschaftliche Ziele, die gleichzeitig angestrebt werden sollen (magisches Viereck): Stabilität des Preisniveaus, hoher Beschäftigungsstand, außenwirtschaftliches Gleichgewicht sowie stetiges und angemessenes Wirtschaftswachstum. Ergänzend werden häufig Umweltschutz und eine gerechte Einkommens- und Vermögensverteilung genannt (magisches Sechseck). „Magisch“ heißt: Nicht alle Ziele sind zugleich vollständig erreichbar. Typischer Zielkonflikt: Mehr Nachfrage senkt die Arbeitslosigkeit, kann aber die Preise steigen lassen.",
-        "beispiele": [
-          "Ein Konjunkturprogramm schafft Arbeitsplätze, kann aber die Inflation erhöhen.",
-          "Wachstum kann mit Umweltzielen in Konflikt geraten."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Magisches Sechseck",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Häufig wird das Viereck um zwei Ziele erweitert: eine gerechte Einkommens- und Vermögensverteilung und den Schutz der natürlichen Lebensgrundlagen. Sie stehen nicht im Stabilitätsgesetz, spielen in der Wirtschaftspolitik aber eine wachsende Rolle.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Luca fragt, warum der Staat nicht einfach „alles gleichzeitig“ erreicht. Sandra Koslowski zeigt ihm an MAKEL: Mehr Aufträge bedeuten mehr Arbeit — aber wenn alle Druckereien ausgelastet sind, steigen auch die Preise für Rohlinge und Fachkräfte.",
-        "typische_fehler": "Annehmen, alle Ziele seien jederzeit gleichzeitig voll erreichbar.",
         "verstaendnisfragen": [
-          "Welche Ziele bilden das magische Viereck? Preisniveaustabilität, hoher Beschäftigungsstand, außenwirtschaftliches Gleichgewicht, stetiges und angemessenes Wachstum.",
-          "Warum heißt es „magisch“? Weil die Ziele nicht alle gleichzeitig vollständig erreicht werden können."
-        ],
-        "pruefungsbezug": "Wirtschaftspolitische Ziele und Zielkonflikte erklären.",
-        "merksatz": "Magisches Viereck (StabG): Preisniveaustabilität, Beschäftigung, außenwirtschaftliches Gleichgewicht, Wachstum — Zielkonflikte sind die Regel."
+          {
+            "frage": "Welche Ziele bilden das magische Viereck?",
+            "antwort": "Preisniveaustabilität, hoher Beschäftigungsstand, außenwirtschaftliches Gleichgewicht und stetiges, angemessenes Wachstum.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Der Preisindex steigt von 120 auf 123,6. Wie hoch ist die Inflationsrate?",
+            "antwort": "(123,6 − 120) ÷ 120 × 100 = 3 %.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Der Staat nimmt Steuern ein und gibt Geld aus (Kapitel 1).",
-          "Ordnungs- und Prozesspolitik unterscheiden sich (Kapitel 2)."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst die Wirkungskette antizyklischer Fiskalpolitik und einer Investitionsförderung dar, berücksichtigst den Zeitverzug bis zur Wirkung und benennst Bedingungen und Grenzen am Beispiel von MAKEL Studio.",
+        "vorwissen_kurz": "Der Staat legt ein Programm auf, das Investitionen in energieeffiziente Maschinen fördert. Ob MAKEL Studio deshalb die Laserstation früher kauft, ist nicht ausgemacht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gegen den Zyklus steuern",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Fiskalpolitik** nutzt Staatseinnahmen und -ausgaben, um die Konjunktur zu beeinflussen. **Antizyklisch** heißt: Im Abschwung erhöht der Staat seine Ausgaben oder senkt Steuern, um die Nachfrage zu stützen; im Boom hält er sich zurück und baut Schulden ab. Eine **Investitionsförderung** soll die Kosten einer Investition senken und Unternehmen zum Kauf bewegen. Zwischen Beschluss und Wirkung vergeht oft viel Zeit: Programme müssen beschlossen, Anträge gestellt und bearbeitet werden.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wirkungskette einer Förderung bei MAKEL Studio",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Wirkung",
+              "Bedingung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Zuschuss von 15 % auf energieeffiziente Maschinen",
+                  "MAKEL erfüllt die Förderbedingungen"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Laserstation kostet effektiv 43.775 € statt 51.500 €",
+                  "Antrag vor dem Kauf gestellt"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Investition lohnt sich schneller",
+                  "ausreichende Nachfrage nach gravierten Patches"
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "MAKEL kauft jetzt statt in zwei Jahren",
+                  "Finanzierung gesichert"
+                ]
+              },
+              {
+                "zellen": [
+                  "5",
+                  "Hersteller der Station erhält einen Auftrag",
+                  "Wirkung auf andere Unternehmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Grenze",
+                  "hätte MAKEL ohnehin gekauft, ist es ein Mitnahmeeffekt",
+                  "zusätzliche Investition entsteht nicht"
+                ]
+              }
+            ],
+            "fazit": "Die Förderung kann eine Investition vorziehen, wenn Nachfrage und Finanzierung stimmen. Hätte MAKEL ohnehin gekauft, bewirkt sie gesamtwirtschaftlich nichts Zusätzliches.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Wirkung hängt an vielen Bedingungen. Fehlt die Nachfrage nach gravierten Patches, kauft MAKEL Studio die Station auch mit Zuschuss nicht. Ist die Finanzierung unsicher, hilft ein Zuschuss von 15 % wenig. Und kommt die Förderung erst, wenn der Abschwung schon vorbei ist, verstärkt sie vielleicht den nächsten Boom. Deshalb wird Fiskalpolitik oft dafür kritisiert, zu spät zu wirken.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Mit der Fiskalpolitik beeinflusst der Staat die gesamtwirtschaftliche Nachfrage über Ausgaben und Einnahmen. Antizyklisch heißt: Im Abschwung mehr ausgeben oder Steuern senken, um Nachfrage zu stützen; im Boom zurückhaltend sein. Investitionsförderungen, Abschreibungserleichterungen oder Zuschüsse sollen Unternehmen zu Investitionen bewegen. Die Strukturpolitik fördert einzelne Regionen oder Branchen dauerhaft, etwa beim Wandel zu klimafreundlicher Produktion. Wirkungen sind unsicher: Zeitverzögerungen, Mitnahmeeffekte (Investitionen, die ohnehin erfolgt wären) und Staatsverschuldung begrenzen sie.",
-        "beispiele": [
-          "Ein Investitionszuschuss senkt die Anschaffungskosten einer Maschine.",
-          "Ein Programm für Gebäudesanierung belebt die Baubranche."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Geldpolitik der Zentralbank",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben der Fiskalpolitik des Staates gibt es die Geldpolitik der Europäischen Zentralbank. Sie beeinflusst über die Leitzinsen die Zinsen für Kredite und damit Investitionen und Preise. Ihr vorrangiges Ziel ist die Preisniveaustabilität im Euroraum.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Der Staat legt ein Förderprogramm für energieeffiziente Anlagen auf. Deniz Aydın rechnet: Der Zuschuss senkt die Kosten der Laserstation. Tobias Renner bremst: Ohne genügend Aufträge nützt die günstigere Maschine wenig — die Nachfrage ist der Engpass.",
-        "typische_fehler": "Eine Maßnahme als sichere Ursache eines bestimmten Betriebsergebnisses darstellen.",
         "verstaendnisfragen": [
-          "Was bedeutet antizyklische Fiskalpolitik? Im Abschwung Nachfrage stützen, im Boom bremsen.",
-          "Was ist ein Mitnahmeeffekt? Eine Förderung wird für etwas genutzt, das ohnehin geschehen wäre."
-        ],
-        "pruefungsbezug": "Wirkungsketten staatlicher Maßnahmen und ihre Grenzen darstellen.",
-        "merksatz": "Fiskalpolitik antizyklisch; Förderung → geringere Kosten → mehr Investitionen — begrenzt durch Nachfrage, Kapazität, Finanzierung, Mitnahmeeffekte."
+          {
+            "frage": "Was bedeutet antizyklische Fiskalpolitik?",
+            "antwort": "Im Abschwung erhöht der Staat Ausgaben oder senkt Steuern, im Boom hält er sich zurück.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Was ist ein Mitnahmeeffekt bei einer Förderung?",
+            "antwort": "Ein Unternehmen erhält die Förderung für eine Investition, die es auch ohne Förderung getätigt hätte.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Konjunkturprognosen sind unsicher.",
-          "MAKEL plant Einkauf, Personal und Investitionen."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst eine betriebliche Entscheidung unter konjunktureller Unsicherheit mit Szenarien, legst die Annahmen offen und wählst Maßnahmen, die in mehreren Szenarien vertretbar sind.",
+        "vorwissen_kurz": "Niemand weiß, ob der Abschwung kommt. MAKEL Studio muss trotzdem entscheiden, ob es die Laserstation kauft und wie viele Rohlinge es bestellt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Szenarien statt einer Prognose",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Unter Unsicherheit ist eine einzige Prognose gefährlich, weil sie eine Genauigkeit vortäuscht, die es nicht gibt. Besser ist es, mit **Szenarien** zu planen: einem vorsichtigen, einem wahrscheinlichen und einem optimistischen. Für jedes Szenario werden die Annahmen offengelegt und passende Maßnahmen überlegt. Gute Entscheidungen sind solche, die in mehreren Szenarien vertretbar sind, oder die sich später anpassen lassen. Die Szenarien werden regelmäßig mit den Indikatoren abgeglichen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Entscheidungen mit Blick auf alle Szenarien",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Entscheidung",
+              "vorsichtig (−10 %)",
+              "wahrscheinlich (±0 %)",
+              "optimistisch (+5 %)",
+              "Wahl"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Laserstation jetzt kaufen",
+                  "Kapitaldienst belastet",
+                  "vertretbar",
+                  "sinnvoll",
+                  "verschieben bis Indikatoren klarer, Förderantrag vorbereiten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohlinge in großen Mengen bestellen",
+                  "Überbestände",
+                  "neutral",
+                  "Rabatt genutzt",
+                  "Rahmenvertrag mit flexiblen Abrufen"
+                ]
+              },
+              {
+                "zellen": [
+                  "zusätzliche Kraft in der Veredelung einstellen",
+                  "Überkapazität",
+                  "knapp",
+                  "nötig",
+                  "befristet einstellen oder Arbeitszeitkonten nutzen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Marketing für Agenturen verstärken",
+                  "stützt Umsatz",
+                  "stützt Umsatz",
+                  "stützt Umsatz",
+                  "umsetzen"
+                ]
+              }
+            ],
+            "fazit": "Marketing für Agenturen lohnt sich in allen Szenarien. Bei Laserstation, Bestellmengen und Personal wählt MAKEL Studio Lösungen, die sich je nach Entwicklung anpassen lassen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Flexibilität hat einen Preis, ist unter Unsicherheit aber oft die bessere Wahl. Ein Rahmenvertrag mit flexiblen Abrufen bringt vielleicht etwas weniger Rabatt als eine Großbestellung, verhindert aber Überbestände im vorsichtigen Szenario. Eine befristete Einstellung ist teurer in der Einarbeitung, vermeidet aber Kündigungen bei einem Abschwung. Wichtig ist, Auslöser festzulegen: Steigen die Anfragen zwei Monate in Folge wieder, wird die Laserstation bestellt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Unternehmen entscheiden unter Unsicherheit. Sinnvoll ist es, Annahmen offenzulegen, mehrere Szenarien durchzurechnen (vorsichtig, wahrscheinlich, optimistisch), Frühindikatoren der eigenen Branche zu beobachten und flexibel zu bleiben — etwa durch kürzere Bestellmengen, flexible Arbeitszeitmodelle oder verschiebbare Investitionen. Reagiert ein Unternehmen zu spät, drohen Überbestände und Liquiditätsprobleme; reagiert es zu heftig, verpasst es den nächsten Aufschwung.",
-        "beispiele": [
-          "MAKEL halbiert Standardbestellungen, hält aber die Kapazität für Premium-Stick.",
-          "Die Laserstation wird bestellt, aber die Lieferung um drei Monate verschoben."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Antizyklisch denken im Betrieb",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch Unternehmen können antizyklisch handeln: Im Abschwung sind Maschinen und Fachkräfte oft leichter zu bekommen, und Lieferanten verhandeln eher. Wer finanziell solide aufgestellt ist, kann solche Gelegenheiten nutzen.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Tobias rechnet drei Szenarien: Umsatz −10 %, ±0 %, +5 %. Im vorsichtigen Szenario reicht die Liquidität nur, wenn MAKEL Bestände abbaut. Er entscheidet: Bestellungen reduzieren, Überstunden abbauen, keine Entlassungen, Laserstation mit Rücktrittsrecht bestellen.",
-        "typische_fehler": "Nur mit einer einzigen Prognose planen.",
         "verstaendnisfragen": [
-          "Wie geht ein Unternehmen mit Konjunkturunsicherheit um? Szenarien rechnen, Annahmen offenlegen, flexibel bleiben.",
-          "Was droht bei zu später Reaktion auf einen Abschwung? Überbestände und Liquiditätsprobleme."
-        ],
-        "pruefungsbezug": "Betriebliche Maßnahmen bei veränderter Konjunktur begründen.",
-        "merksatz": "Unter Unsicherheit: Szenarien statt Einzelprognose, Annahmen offenlegen, flexibel bleiben."
+          {
+            "frage": "Warum ist eine einzige Prognose unter Unsicherheit gefährlich?",
+            "antwort": "Weil sie eine Genauigkeit vortäuscht. Szenarien zeigen die Bandbreite möglicher Entwicklungen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Was ist eine robuste Entscheidung?",
+            "antwort": "Eine Entscheidung, die in mehreren Szenarien vertretbar ist oder sich später anpassen lässt.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

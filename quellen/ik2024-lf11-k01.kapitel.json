@@ -6,86 +6,451 @@
   "untertitel": "Wirtschaftssubjekte, reale und monetäre Ströme, Finanzsektor und Ausland — und was das Modell über MAKEL verrät.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "MAKEL zahlt Löhne und verkauft Produkte.",
-          "Steuern fließen an den Staat."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst die Beziehungen zwischen Haushalten, Unternehmen und Staat als reale und monetäre Ströme dar, ordnest Vorgänge bei MAKEL Studio zu und erkennst Ströme ohne direkte Gegenleistung.",
+        "vorwissen_kurz": "Wenn MAKEL Studio Löhne zahlt, landet dieses Geld nicht einfach bei den Beschäftigten. Es fließt weiter und kommt teilweise zurück.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Güter in die eine, Geld in die andere Richtung",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:wirtschaftskreislauf|Wirtschaftskreislauf}} ist ein vereinfachtes Modell der Volkswirtschaft. **Haushalte** stellen Arbeit zur Verfügung und erhalten Einkommen, mit dem sie konsumieren. **Unternehmen** produzieren Güter, zahlen Löhne und erhalten Umsatzerlöse. Der **Staat** erhebt Steuern und Abgaben, zahlt Transfers wie Kindergeld und kauft selbst Güter. Zwischen den Sektoren fließen **reale Ströme** aus Gütern und Arbeit und **monetäre Ströme** aus Geld, jeweils in Gegenrichtung. Steuern und Transfers sind Ausnahmen: Ihnen steht keine direkte Gegenleistung gegenüber.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ströme rund um MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "monetärer Strom",
+              "realer Gegenstrom"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lohn an Jonas Weidner",
+                  "MAKEL → Haushalt",
+                  "Arbeitsleistung Haushalt → MAKEL"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jonas kauft im Supermarkt ein",
+                  "Haushalt → Unternehmen",
+                  "Lebensmittel Unternehmen → Haushalt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lohnsteuer von Jonas",
+                  "Haushalt → Staat",
+                  "keine direkte Gegenleistung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stadt bestellt Shirts für ein Stadtfest",
+                  "Staat → MAKEL",
+                  "Shirts MAKEL → Staat"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kindergeld an eine Kollegin",
+                  "Staat → Haushalt",
+                  "keine direkte Gegenleistung"
+                ]
+              }
+            ],
+            "fazit": "Die meisten Geldströme haben einen realen Gegenstrom. Steuern und Transfers sind die Ausnahme; sie verteilen Geld ohne direkte Gegenleistung um.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Modell zeigt, dass MAKEL Studio von den anderen Sektoren abhängt. Das Geld, das Kunden für Hoodies ausgeben, stammt aus Einkommen, die andere Unternehmen oder der Staat gezahlt haben. Kürzen Unternehmen Löhne oder steigt die Steuerlast, haben Haushalte weniger zum Ausgeben. Gleichzeitig ist das Modell stark vereinfacht: Es zeigt Richtungen, keine genauen Beträge.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Der Wirtschaftskreislauf ist ein Modell, das die Beziehungen zwischen Wirtschaftssubjekten vereinfacht darstellt. Im einfachen Kreislauf stellen private Haushalte den Unternehmen Arbeitsleistung zur Verfügung und erhalten dafür Einkommen; mit dem Einkommen kaufen sie Konsumgüter. Jedem Güterstrom (realer Strom) steht ein Geldstrom (monetärer Strom) in Gegenrichtung gegenüber. Erweitert man das Modell um den Staat, kommen Steuern und Abgaben, Transferzahlungen (etwa Kindergeld) und Subventionen sowie staatliche Käufe hinzu.",
-        "beispiele": [
-          "Luca arbeitet bei MAKEL (realer Strom: Arbeitsleistung) und erhält seine Ausbildungsvergütung (monetärer Strom).",
-          "MAKEL zahlt Gewerbesteuer an die Stadt; die Stadt bestellt bedruckte Shirts für ein Stadtfest."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Geschlossene und offene Kreisläufe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Kreislauf nur mit Haushalten und Unternehmen heißt einfacher Kreislauf. Mit Staat, Banken und Ausland wird er erweitert. Je mehr Sektoren, desto realistischer, aber auch unübersichtlicher wird das Modell.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Sandra Koslowski erklärt Luca Petrelli an der Monatsabrechnung den Kreislauf: Die Löhne fließen an die Haushalte, ein Teil davon als Lohnsteuer und Sozialbeiträge an Staat und Sozialversicherung. Mit ihrem Einkommen kaufen die Haushalte — unter anderem Hoodies im MAKEL-Store.",
-        "typische_fehler": "Modellströme mit einzelnen Buchungskonten gleichsetzen.",
         "verstaendnisfragen": [
-          "Was ist ein realer Strom? Ein Strom von Gütern oder Leistungen, etwa Arbeitsleistung oder Waren.",
-          "Was steht jedem realen Strom gegenüber? Ein monetärer Strom in entgegengesetzter Richtung."
-        ],
-        "pruefungsbezug": "Ströme zwischen Haushalten, Unternehmen und Staat darstellen.",
-        "merksatz": "Wirtschaftskreislauf = Modell: reale Ströme (Güter, Arbeit) und monetäre Ströme (Geld) fließen gegenläufig zwischen Haushalten, Unternehmen und Staat."
+          {
+            "frage": "Welcher reale Strom steht der Lohnzahlung gegenüber?",
+            "antwort": "Die Arbeitsleistung, die der Haushalt dem Unternehmen zur Verfügung stellt.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum haben Steuern keinen direkten Gegenstrom?",
+            "antwort": "Weil der Steuerzahler dafür keine bestimmte Leistung erhält; der Staat finanziert damit allgemeine Aufgaben.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Nicht das ganze Einkommen wird ausgegeben.",
-          "Unternehmen finanzieren Investitionen oft mit Krediten (LF 10)."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wie der Finanzsektor Ersparnisse sammelt und als Kredite an Unternehmen und Staat weitergibt, und verfolgst den Weg einer Ersparnis bis zu einer Investition von MAKEL Studio.",
+        "vorwissen_kurz": "Für die Laserstation braucht MAKEL Studio einen Kredit. Das Geld dafür stammt letztlich von Menschen, die sparen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Sparen wird zu Investieren",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Haushalte geben nicht ihr ganzes Einkommen aus, sondern sparen einen Teil. Der **Finanzsektor**, vor allem Banken, sammelt diese Ersparnisse und vergibt sie als Kredite an Unternehmen und den Staat. Unternehmen nutzen die Kredite für Investitionen, etwa in Maschinen. Dafür zahlen sie Zinsen, von denen ein Teil als Zinsertrag an die Sparer zurückfließt. So verbindet der Finanzsektor Sparen und Investieren.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Weg zur Laserstation",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Strom",
+              "Beispiel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Haushalte sparen",
+                  "Beschäftigte vieler Unternehmen legen Geld auf Sparkonten an"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Bank sammelt Einlagen",
+                  "Hausbank von MAKEL Studio verfügt über Einlagen"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Bank vergibt Kredit",
+                  "50.000 € Investitionskredit an MAKEL"
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "MAKEL investiert",
+                  "Kauf der Laserstation beim Hersteller"
+                ]
+              },
+              {
+                "zellen": [
+                  "5",
+                  "MAKEL zahlt Zinsen und Tilgung",
+                  "Zinsen an die Bank, ein Teil fließt als Sparzins an Haushalte"
+                ]
+              }
+            ],
+            "fazit": "Ohne Ersparnisse anderer gäbe es keinen Kredit für die Laserstation. Der Finanzsektor bringt Sparer und Investoren zusammen, die sich sonst nie begegnen würden.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rolle der Banken zeigt, warum Zinsen für Unternehmen so wichtig sind. Steigen die Zinsen, wird ein Kredit teurer, und manche Investition lohnt sich nicht mehr. Gleichzeitig wird Sparen attraktiver. Sinken die Zinsen, ist es umgekehrt. Über die Zinsen wirkt die Geldpolitik der Zentralbank auf Investitionen und damit auch auf MAKEL Studio.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Haushalte sparen einen Teil ihres Einkommens. Banken und andere Finanzinstitute (der Finanzsektor oder die Vermögensänderung) sammeln diese Ersparnisse und leiten sie als Kredite an Unternehmen oder den Staat weiter, die damit investieren. So verbindet der Finanzsektor Sparen und Investieren. Im Modell gilt: Was nicht konsumiert wird, steht über den Finanzsektor für Investitionen zur Verfügung.",
-        "beispiele": [
-          "Ersparnisse von Haushalten auf Sparkonten ermöglichen der Hausbank Kredite.",
-          "MAKEL finanziert die Laserstation über ein Bankdarlehen (LF 10)."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Bank und Kapitalmarkt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Große Unternehmen können Geld auch direkt am Kapitalmarkt aufnehmen, etwa durch Anleihen oder Aktien. Für ein mittelgroßes Unternehmen wie MAKEL Studio ist die Hausbank meist der wichtigste Kreditgeber.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner verfolgt, woher das Geld für das MAKEL-Darlehen stammt: Die Hausbank verleiht unter anderem Einlagen von Kundinnen und Kunden. Das Darlehen wird zur Investition in die Laserstation; deren Hersteller zahlt davon wiederum Löhne.",
-        "typische_fehler": "Sparen als „verlorenes Geld“ für die Wirtschaft ansehen.",
         "verstaendnisfragen": [
-          "Welche Aufgabe hat der Finanzsektor im Kreislauf? Er sammelt Ersparnisse und leitet sie als Kredite für Investitionen weiter.",
-          "Was geschieht im Modell mit Ersparnissen? Sie stehen über Banken für Investitionen zur Verfügung."
-        ],
-        "pruefungsbezug": "Die Rolle von Banken zwischen Sparen und Investieren erklären.",
-        "merksatz": "Finanzsektor: sammelt Ersparnisse, vergibt Kredite für Investitionen — verbindet Sparen und Investieren."
+          {
+            "frage": "Welche Rolle spielt der Finanzsektor im Wirtschaftskreislauf?",
+            "antwort": "Er sammelt Ersparnisse und vergibt sie als Kredite für Investitionen; so verbindet er Sparen und Investieren.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie wirken steigende Zinsen auf Investitionen?",
+            "antwort": "Kredite werden teurer, und manche Investitionen lohnen sich nicht mehr.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "MAKEL kauft Rohlinge auch im Ausland (LF 4).",
-          "Exporte bringen Geld ins Inland."
+        "darstellung": "vollfassung",
+        "ziel": "Du erweiterst den Kreislauf um das Ausland, ordnest Vorgänge bei MAKEL Studio als Export oder Import ein und erklärst, was der Außenbeitrag aussagt und was nicht.",
+        "vorwissen_kurz": "MAKEL Studio kauft Rohlinge in Portugal und verkauft Hoodies nach Österreich. Damit ist das Unternehmen Teil einer offenen Volkswirtschaft.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Güter und Geld über Grenzen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In einer **offenen Volkswirtschaft** kommt das Ausland als Sektor hinzu. Beim **Export** fließen Güter ins Ausland und Geld ins Inland. Beim **Import** fließen Güter ins Inland und Geld ins Ausland. Der **Außenbeitrag** ist die Differenz aus Exporten und Importen einer Volkswirtschaft. Ist er positiv, exportiert das Land mehr, als es importiert. Für ein einzelnes Unternehmen lässt sich daraus wenig ableiten.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "MAKEL Studio im Außenhandel (Übungszahlen)",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Art",
+              "Betrag pro Jahr"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohlinge aus Portugal",
+                  "Import",
+                  "120.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stickgarn aus der Schweiz",
+                  "Import",
+                  "8.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Trikots an Vereine in Österreich",
+                  "Export",
+                  "25.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tourhoodies für eine Agentur in London",
+                  "Export",
+                  "12.600 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Saldo aus Sicht von MAKEL",
+                  "",
+                  "− 90.400 €"
+                ]
+              }
+            ],
+            "fazit": "MAKEL Studio importiert mehr, als es exportiert. Das ist kein Problem, weil die importierten Rohlinge im Inland veredelt und überwiegend in Deutschland verkauft werden.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der negative Saldo eines einzelnen Unternehmens sagt nichts über seine wirtschaftliche Lage. MAKEL Studio schafft mit den importierten Rohlingen Wertschöpfung in Düsseldorf: Arbeit in der Veredelung, Gewinn, Steuern. Für die Volkswirtschaft als Ganzes ist der Außenbeitrag eine wichtige Größe, aber auch er wird oft missverstanden. Ein hoher Exportüberschuss zeigt Wettbewerbsfähigkeit, kann aber auch auf schwache Binnennachfrage hinweisen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "In einer offenen Volkswirtschaft kommt das Ausland als fünfter Sektor hinzu. Exporte bedeuten Güter ins Ausland und Zahlungen ins Inland; Importe Güter ins Inland und Zahlungen ins Ausland. Die Differenz von Exporten und Importen ist der Außenbeitrag. Ein einzelner Import- oder Exportvorgang sagt aber nichts über die Lage der ganzen Volkswirtschaft aus — dafür braucht man die Gesamtrechnung.",
-        "beispiele": [
-          "MAKEL importiert Bio-Baumwollrohlinge aus Portugal: Güter fließen herein, Geld hinaus.",
-          "Ein Verein in Österreich bestellt Trikots bei MAKEL: Export."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "EU-Binnenmarkt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Innerhalb der EU gibt es keine Zölle und keine Zollformalitäten. Die Lieferung nach Österreich ist statistisch ein Export, praktisch aber fast so einfach wie eine Lieferung nach München. Die Lieferung nach London erfordert dagegen seit dem Brexit Zollformalitäten.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Deniz Aydın bestellt Rohlinge bei einem Hersteller in Portugal, Marlene Voss liefert Teamshirts an einen Verein in Österreich. Luca fragt, ob Deutschland jetzt „mehr exportiert als importiert“. Tobias lacht: Das lässt sich aus zwei Aufträgen nicht ablesen — dafür gibt es die volkswirtschaftliche Gesamtrechnung.",
-        "typische_fehler": "Aus einem einzelnen Geschäft auf den Außenhandelssaldo eines Landes schließen.",
         "verstaendnisfragen": [
-          "Welche Ströme gehören zu einem Import? Güter fließen ins Inland, Zahlungen ins Ausland.",
-          "Was ist der Außenbeitrag? Exporte minus Importe."
-        ],
-        "pruefungsbezug": "Den Kreislauf um das Ausland erweitern.",
-        "merksatz": "Offene Volkswirtschaft: Export = Güter hinaus, Geld herein; Import = Güter herein, Geld hinaus; Außenbeitrag = Export − Import."
+          {
+            "frage": "Wie fließen Güter und Geld bei einem Import?",
+            "antwort": "Güter fließen ins Inland, Geld ins Ausland.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum sagt ein negativer Außenhandelssaldo von MAKEL Studio nichts Schlechtes über das Unternehmen aus?",
+            "antwort": "Weil die importierten Rohlinge im Inland veredelt und verkauft werden und so Wertschöpfung in Düsseldorf entsteht.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "MAKEL ist mit allen Sektoren verbunden.",
-          "Modelle vereinfachen bewusst."
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest aus Veränderungen in anderen Sektoren plausible Rückwirkungen auf MAKEL Studio ab, verfolgst sie über mehrere Stufen und benennst die Grenzen des Kreislaufmodells für Aussagen über ein einzelnes Unternehmen.",
+        "vorwissen_kurz": "In den Nachrichten heißt es, viele Unternehmen kürzen ihre Eventbudgets. Was bedeutet das für MAKEL Studio?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Veränderungen pflanzen sich fort",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Wirtschaftskreislauf hängen die Sektoren voneinander ab. Eine Veränderung in einem Sektor wirkt über die Ströme auf andere zurück. Kürzen Unternehmen ihre Ausgaben, sinken die Einnahmen ihrer Lieferanten. Diese stellen vielleicht weniger ein oder zahlen weniger Überstunden, und die Haushalte haben weniger Einkommen für Konsum. Das Modell zeigt solche **Zusammenhänge**, aber keine exakten Wirkungen auf ein einzelnes Unternehmen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Kette von Rückwirkungen",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Veränderung",
+              "mögliche Wirkung auf MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Unternehmen kürzen Eventbudgets",
+                  "weniger Aufträge von Eventagenturen für Teamkleidung"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Eventagenturen haben weniger Umsatz",
+                  "Agenturen bestellen kleinere Mengen, verhandeln härter"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "MAKEL hat weniger Aufträge",
+                  "Veredelung weniger ausgelastet, weniger Überstunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "Beschäftigte haben weniger Zusatzeinkommen",
+                  "etwas weniger Konsum, auch im Onlineshop"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gegenbewegung",
+                  "Agenturen suchen günstigere Anbieter",
+                  "Risiko für Premiumpositionierung, Chance für Mengenstaffel"
+                ]
+              }
+            ],
+            "fazit": "Die Kürzung der Eventbudgets trifft MAKEL Studio direkt über die Zielgruppe und indirekt über weitere Stufen. Wie stark, lässt sich aus dem Modell nicht ablesen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für MAKEL Studio heißt das: Die Entwicklung genau beobachten, ohne in Panik zu geraten. Hilfreich sind eigene Daten, etwa die Zahl der Anfragen von Agenturen im Vergleich zum Vorjahr. Zeigt sich ein Rückgang, kann MAKEL gegensteuern, etwa mit Angeboten für kleinere Budgets oder durch Stärkung anderer Kundengruppen. Das Modell hilft, die richtigen Fragen zu stellen; die Antworten liefern die eigenen Zahlen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Der Kreislauf zeigt, wie Veränderungen weitergegeben werden: Sinken die Einkommen der Haushalte, kaufen sie weniger — Unternehmen setzen weniger ab, investieren weniger und stellen weniger ein. Erhöht der Staat Steuern, haben Haushalte weniger verfügbares Einkommen. Für MAKEL heißt das: Eigene Umsätze hängen von Entscheidungen der anderen Sektoren ab. Das Modell bleibt eine Vereinfachung: Es zeigt Zusammenhänge, aber keine exakten Wirkungen auf ein einzelnes Unternehmen.",
-        "beispiele": [
-          "Firmen kürzen Eventbudgets: weniger Aufträge für Teamshirts.",
-          "Eine Exportflaute in der Region dämpft die Nachfrage nach Werbetextilien."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Konjunktur",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wenn viele Sektoren gleichzeitig weniger ausgeben, spricht man von einem konjunkturellen Abschwung. Wie Konjunkturschwankungen entstehen und wie sie gemessen werden, betrachtet das nächste Kapitel.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Im Herbst bestellen mehrere Agenturen weniger Merchandise, weil ihre eigenen Kunden sparen. Yuki Bergmann nutzt den Kreislauf, um im Team zu erklären, warum MAKEL das spürt, obwohl im eigenen Betrieb nichts schiefgelaufen ist.",
-        "typische_fehler": "Das Kreislaufmodell als exakte Vorhersage für ein einzelnes Unternehmen nutzen.",
         "verstaendnisfragen": [
-          "Wie können sinkende Haushaltseinkommen MAKEL treffen? Weniger Konsum, weniger Aufträge bei Kunden, weniger Bestellungen bei MAKEL.",
-          "Wo liegt die Grenze des Modells? Es zeigt Zusammenhänge, aber keine exakten Wirkungen auf einzelne Betriebe."
-        ],
-        "pruefungsbezug": "Rückwirkungen gesamtwirtschaftlicher Veränderungen auf einen Betrieb erklären.",
-        "merksatz": "Der Kreislauf überträgt Veränderungen von Sektor zu Sektor — er zeigt Zusammenhänge, keine exakten Einzelwirkungen."
+          {
+            "frage": "Viele Unternehmen kürzen Eventbudgets. Welche Wirkung auf MAKEL Studio ist plausibel?",
+            "antwort": "Weniger Aufträge für Teamkleidung von Eventagenturen. Wie stark, sagt das Modell nicht.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Wo liegt die Grenze des Kreislaufmodells für ein einzelnes Unternehmen?",
+            "antwort": "Es zeigt Zusammenhänge und Richtungen, aber keine exakten Wirkungen oder Beträge.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
