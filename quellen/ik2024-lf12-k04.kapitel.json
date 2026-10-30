@@ -6,86 +6,467 @@
   "untertitel": "Personalakte und Datenschutz, Arbeitszeit- und Arbeitsortmodelle, Urlaub umrechnen und eine Woche einsatzplanen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Personaldaten sind personenbezogene Daten (DSGVO).",
-          "Nicht alle im Team brauchen alle Informationen."
+        "darstellung": "vollfassung",
+        "ziel": "Du verarbeitest Personalinformationen nach Zweckbindung und Datenminimierung, legst fest, wer welche Daten aus der Personalakte sehen darf, und erklärst die Rechte der Beschäftigten.",
+        "vorwissen_kurz": "In der Personalabteilung liegen Daten, die niemand anderes sehen soll. Trotzdem brauchen Führungskräfte einen Teil davon für ihre Arbeit.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer was sehen darf",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Personalakte** sammelt alle Unterlagen zum Arbeitsverhältnis: Vertrag, Nachweise über Qualifikationen, Abmahnungen, Beurteilungen, Urlaubs- und Krankmeldungen ohne Diagnose, Angaben für die Entgeltabrechnung. Sie muss vollständig, richtig und vertraulich sein. Nach der DSGVO dürfen Personaldaten nur für den Zweck verarbeitet werden, für den sie erhoben wurden (**Zweckbindung**), und nur so weit wie nötig (**Datenminimierung**). Zugriff haben nur Personen, die die Daten für ihre Aufgabe brauchen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zugriffsrechte bei MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datenart",
+              "Personalbüro",
+              "Teamleitung Jonas",
+              "Kolleginnen im Lager"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Arbeitszeit und Schichtplan",
+                  "ja",
+                  "ja",
+                  "eigener Plan, Teamplan"
+                ]
+              },
+              {
+                "zellen": [
+                  "genehmigter Urlaub",
+                  "ja",
+                  "ja",
+                  "nur „abwesend\" im Teamplan"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualifikationen wie Staplerschein",
+                  "ja",
+                  "ja",
+                  "nein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gehalt, Steuerklasse, Bankverbindung",
+                  "ja",
+                  "nein",
+                  "nein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Krankmeldung",
+                  "ja, ohne Diagnose",
+                  "nur Abwesenheitszeitraum",
+                  "nein"
+                ]
+              }
+            ],
+            "fazit": "Jonas sieht, was er für die Einsatzplanung braucht. Gehalt und private Daten bleiben im Personalbüro.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beschäftigte haben das Recht, ihre Personalakte einzusehen und dazu ein Betriebsratsmitglied hinzuzuziehen (§ 83 BetrVG). Sie können eine Gegendarstellung beifügen lassen, wenn sie mit einem Inhalt nicht einverstanden sind, und nach der DSGVO Auskunft über die gespeicherten Daten verlangen. Unrichtige Daten müssen berichtigt werden. Diese Rechte gelten auch für digitale Personalakten.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Personalakte sammelt alle Unterlagen zum Arbeitsverhältnis: Vertrag und Nachträge, Nachweise, Bescheinigungen, Beurteilungen, Abmahnungen, Zeugnisse. Sie wird heute oft digital geführt. Es gelten die Grundsätze des Datenschutzes: Daten nur für festgelegte Zwecke verarbeiten (Zweckbindung), nur so viel wie nötig (Datenminimierung), richtig halten und nach Ablauf von Fristen löschen. Zugriff haben nur berechtigte Personen. Beschäftigte haben ein Recht auf Einsicht in ihre Personalakte.",
-        "beispiele": [
-          "Die Krankmeldung kommt in die Personalakte, die Diagnose erfährt der Arbeitgeber in der Regel nicht.",
-          "Die Teamleitung sieht Urlaubstage, aber nicht das Gehalt der Kolleginnen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Gesundheitsdaten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Arbeitsunfähigkeitsbescheinigung enthält keine Diagnose, und der Arbeitgeber darf sie auch nicht erfragen. Seit 2023 ruft er die Arbeitsunfähigkeitsdaten gesetzlich Versicherter elektronisch bei der Krankenkasse ab. Gesundheitsdaten gehören zu den besonders geschützten Daten und werden getrennt und mit besonders engem Zugriff aufbewahrt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli soll für Jonas Weidner eine Liste mit Geburtstagen, Adressen und Gehältern des Lagerteams erstellen, „damit wir einen Überblick haben“. Ayla Brandt stoppt das: Für die Einsatzplanung braucht Jonas Arbeitszeiten und Urlaub — Adressen und Gehälter nicht.",
-        "typische_fehler": "Personaldaten ohne sachlichen Bedarf im gesamten Team teilen.",
         "verstaendnisfragen": [
-          "Was gehört in die Personalakte? Unterlagen zum Arbeitsverhältnis, etwa Vertrag, Bescheinigungen, Beurteilungen, Abmahnungen.",
-          "Was bedeutet Zweckbindung? Daten nur für den festgelegten Zweck verwenden."
-        ],
-        "pruefungsbezug": "Personalinformationen zweckgebunden und datensparsam verarbeiten.",
-        "merksatz": "Personalakte: vollständig, richtig, vertraulich — Zweckbindung, Datenminimierung, Zugriff nur für Berechtigte, Einsichtsrecht."
+          {
+            "frage": "Darf Jonas als Teamleitung die Gehälter seines Teams einsehen?",
+            "antwort": "Nein. Für die Einsatzplanung braucht er sie nicht. Zweckbindung und Datenminimierung schließen den Zugriff aus.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welches Recht haben Beschäftigte in Bezug auf ihre Personalakte?",
+            "antwort": "Sie dürfen sie einsehen, ein Betriebsratsmitglied hinzuziehen, eine Gegendarstellung beifügen lassen und Auskunft über gespeicherte Daten verlangen.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Es gibt Vollzeit und Teilzeit.",
-          "Manche Tätigkeiten gehen auch von zu Hause."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Arbeitszeit- und Arbeitsortmodelle für verschiedene Tätigkeiten und prüfst Einsatzpläne gegen die Grenzen des Arbeitszeitgesetzes und des Jugendarbeitsschutzgesetzes.",
+        "vorwissen_kurz": "Wie lange, wann und wo gearbeitet wird, ist nicht nur eine Frage der Organisation, sondern auch des Rechts.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Modelle innerhalb fester Grenzen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei **Gleitzeit** gibt es eine Kernzeit mit Anwesenheitspflicht und Gleitspannen, in denen Beschäftigte Beginn und Ende selbst wählen. **Schichtarbeit** verteilt die Arbeit auf feste Zeiträume, etwa Früh- und Spätschicht. **Teilzeit** verringert die Wochenstunden. Bei **mobiler Arbeit** oder im **Homeoffice** wird ganz oder teilweise außerhalb des Betriebs gearbeitet; das passt zu Büroarbeit, nicht zur Arbeit an der Stickmaschine. Alle Modelle müssen die Grenzen des Arbeitszeitgesetzes einhalten.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Einsatzplan auf dem Prüfstand",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Situation im Dezember",
+              "Prüfung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lagerkraft arbeitet Montag 10 Stunden",
+                  "erlaubt, wenn im Ausgleichszeitraum durchschnittlich 8 Stunden erreicht werden",
+                  "zulässig mit Ausgleich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Spätschicht endet 22 Uhr, Frühschicht beginnt 6 Uhr",
+                  "nur 8 Stunden Ruhezeit",
+                  "unzulässig"
+                ]
+              },
+              {
+                "zellen": [
+                  "9,5 Stunden mit 30 Minuten Pause",
+                  "ab mehr als 9 Stunden sind 45 Minuten nötig",
+                  "unzulässig"
+                ]
+              },
+              {
+                "zellen": [
+                  "eine 17-jährige Auszubildende soll 9 Stunden arbeiten",
+                  "Jugendliche höchstens 8 Stunden täglich",
+                  "unzulässig"
+                ]
+              }
+            ],
+            "fazit": "Drei der vier Planungen verstoßen gegen Schutzvorschriften. Der Einsatzplan muss geändert werden, bevor er gilt.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für Jugendliche gelten strengere Regeln: höchstens 8 Stunden täglich und 40 Stunden wöchentlich, 30 Minuten Pause bei mehr als 4,5 Stunden und 60 Minuten bei mehr als 6 Stunden, mindestens 12 Stunden Freizeit zwischen zwei Arbeitstagen. Diese Grenzen lassen sich nicht durch Zustimmung der jugendlichen Person umgehen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Das Arbeitszeitgesetz setzt Grenzen zum Schutz der Gesundheit: werktäglich grundsätzlich höchstens acht Stunden, bis zu zehn Stunden, wenn im Durchschnitt von sechs Monaten bzw. 24 Wochen acht Stunden werktäglich nicht überschritten werden; Pausen von mindestens 30 Minuten bei mehr als sechs und 45 Minuten bei mehr als neun Stunden; eine Ruhezeit von elf Stunden zwischen zwei Arbeitstagen. Innerhalb dieser Grenzen gibt es viele Modelle: feste Arbeitszeit, Gleitzeit mit Kernzeit, Schichtarbeit, Teilzeit, Jobsharing, Vertrauensarbeitszeit, mobiles Arbeiten. Der Arbeitsort hängt von der Tätigkeit ab: Lager und Veredelung brauchen Präsenz, Buchhaltung kann teilweise mobil arbeiten.",
-        "beispiele": [
-          "Lager: Frühschicht 6–14:30 Uhr mit 30 Minuten Pause.",
-          "Buchhaltung: Gleitzeit mit Kernzeit 9–14 Uhr, zwei Tage mobil."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Reform des Arbeitszeitgesetzes",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Bundesregierung plant, die tägliche Höchstarbeitszeit durch eine wöchentliche zu ersetzen. Ein Entwurf liegt vor, ist aber noch nicht beschlossen. Bis eine Neuregelung in Kraft tritt, gelten die täglichen Grenzen von 8 und höchstens 10 Stunden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "In der Hochsaison will Jonas eine Kollegin zwei Wochen lang täglich elf Stunden arbeiten lassen. Ayla rechnet nach: Mehr als zehn Stunden werktäglich sind nicht erlaubt. Stattdessen verteilt Jonas die Mehrarbeit auf mehr Personen und plant den Ausgleich in den ruhigeren Januarwochen.",
-        "typische_fehler": "Annehmen, Überstunden seien unbegrenzt möglich, wenn die Beschäftigten zustimmen.",
         "verstaendnisfragen": [
-          "Wie lange darf werktäglich höchstens gearbeitet werden? Grundsätzlich acht, mit Ausgleich bis zu zehn Stunden.",
-          "Wie lang ist die Pause bei acht Stunden Arbeit? Mindestens 30 Minuten."
-        ],
-        "pruefungsbezug": "Arbeitszeitmodelle innerhalb der gesetzlichen Grenzen vergleichen.",
-        "merksatz": "ArbZG: 8 h (max. 10 h mit Ausgleich), Pausen 30/45 Min., 11 h Ruhezeit — Modelle innerhalb dieser Grenzen wählen."
+          {
+            "frage": "Eine Spätschicht endet um 22 Uhr. Wann darf die nächste Schicht frühestens beginnen?",
+            "antwort": "Um 9 Uhr am nächsten Tag, weil 11 Stunden ununterbrochene Ruhezeit vorgeschrieben sind.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum eignet sich mobile Arbeit nicht für alle Stellen bei MAKEL Studio?",
+            "antwort": "Weil Tätigkeiten an Maschinen oder im Lager an den Betrieb gebunden sind. Sie passt zu Büroarbeit wie Auftragsbearbeitung oder Buchhaltung.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Jede beschäftigte Person hat Anspruch auf bezahlten Erholungsurlaub.",
-          "Teilzeitkräfte arbeiten an weniger Tagen."
+        "darstellung": "vollfassung",
+        "ziel": "Du rechnest Urlaubsansprüche bei Teilzeit um, ermittelst das verfügbare Arbeitszeitvolumen einer Woche unter Berücksichtigung von Abwesenheiten und planst den Einsatz gegen den Bedarf.",
+        "vorwissen_kurz": "Ob die Arbeit einer Woche erledigt werden kann, hängt davon ab, wer tatsächlich da ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Urlaub fair umrechnen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der gesetzliche Mindesturlaub beträgt 24 Werktage bei einer Sechs-Tage-Woche ({{par:burlg-3|§ 3 BUrlG}}), also 20 Arbeitstage bei einer Fünf-Tage-Woche. Viele Verträge gewähren mehr. Wer an weniger Tagen pro Woche arbeitet, hat entsprechend weniger Urlaubstage, aber gleich viele Urlaubswochen: Urlaubstage × eigene Arbeitstage ÷ 5. Wer an fünf Tagen in Teilzeit arbeitet, hat so viele Urlaubstage wie eine Vollzeitkraft.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Versandwoche vor Weihnachten",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Person",
+              "vertragliche Stunden",
+              "Abwesenheit",
+              "verfügbar"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Jonas",
+                  "40",
+                  "—",
+                  "40"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aushilfe",
+                  "20",
+                  "—",
+                  "20"
+                ]
+              },
+              {
+                "zellen": [
+                  "Teilzeitkollege",
+                  "20",
+                  "Urlaub ganze Woche",
+                  "0"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe verfügbar",
+                  "80",
+                  "",
+                  "60"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bedarf aus Auftragslage",
+                  "",
+                  "",
+                  "76"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lücke",
+                  "",
+                  "",
+                  "16"
+                ]
+              }
+            ],
+            "fazit": "In dieser Woche fehlen 16 Stunden. Die Lücke muss geschlossen werden, ohne die Schutzvorschriften zu verletzen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Lücke gibt es mehrere Möglichkeiten. Die Aushilfe kann, wenn ihr Vertrag es zulässt und sie einverstanden ist, vorübergehend auf 30 Stunden aufstocken; dann bleiben 6 Stunden offen. Jonas könnte Überstunden leisten, die er im Januar ausgleicht. Oder eine Kollegin aus der Veredelung hilft einige Stunden aus, wenn dort weniger zu tun ist. Den Urlaub des Teilzeitkollegen zu widerrufen, ist dagegen nur in echten Notfällen möglich; ein vorhersehbares Weihnachtsgeschäft ist keiner.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Das Bundesurlaubsgesetz sichert mindestens 24 Werktage Urlaub im Jahr, bezogen auf eine Sechs-Tage-Woche — das entspricht 20 Arbeitstagen bei einer Fünf-Tage-Woche. Arbeits- oder Tarifverträge gewähren oft mehr. Arbeitet jemand an weniger Tagen pro Woche, wird der Anspruch umgerechnet, damit alle gleich viele Wochen Urlaub haben: Urlaubstage × eigene Arbeitstage pro Woche ÷ Arbeitstage der Vergleichswoche. Für die Einsatzplanung werden Urlaub, Arbeitszeiten und Arbeitsvolumen zusammengeführt; Vollzeitäquivalente zeigen, wie viel Arbeitszeit tatsächlich verfügbar ist.",
-        "beispiele": [
-          "30 Urlaubstage bei 5 Arbeitstagen = 6 Wochen; bei 3 Arbeitstagen pro Woche: 30 × 3 ÷ 5 = 18 Tage = ebenfalls 6 Wochen.",
-          "Drei Personen mit 40, 20 und 20 Stunden bei 40 Stunden Vollzeit = 2 VZÄ."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Urlaubsplanung im Betrieb",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei der zeitlichen Festlegung des Urlaubs sind die Wünsche der Beschäftigten zu berücksichtigen, es sei denn, dringende betriebliche Belange oder Wünsche anderer, die sozial vorrangig sind, stehen entgegen (§ 7 Abs. 1 BUrlG). Eine Urlaubssperre für die Weihnachtswochen sollte deshalb früh bekannt gegeben und begründet werden.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Im Lagerteam arbeiten Jonas (40 h), eine Aushilfe (20 h) und ein Teilzeitkollege (20 h, drei Tage pro Woche). Jonas plant die Kalenderwoche 50: 2 VZÄ stehen zur Verfügung. Der Teilzeitkollege hat bei MAKELs 30-Tage-Regel für Vollzeit 18 Urlaubstage — so hat er genauso sechs Wochen frei wie alle anderen.",
-        "typische_fehler": "Teilzeitkräften die gleiche Zahl an Urlaubstagen wie Vollzeitkräften geben, obwohl sie an weniger Tagen arbeiten — oder ihnen weniger Urlaubswochen zugestehen.",
         "verstaendnisfragen": [
-          "Wie viel Mindesturlaub gilt bei einer Fünf-Tage-Woche? 20 Arbeitstage (24 Werktage bei sechs Tagen).",
-          "Wie wird Urlaub bei Teilzeit an weniger Tagen umgerechnet? Urlaubstage × eigene Arbeitstage ÷ Vergleichsarbeitstage."
-        ],
-        "pruefungsbezug": "Urlaubsansprüche umrechnen und in die Einsatzplanung einbeziehen.",
-        "merksatz": "Mindesturlaub 24 Werktage = 20 Arbeitstage (5-Tage-Woche); Teilzeit: Tage × eigene Arbeitstage ÷ 5 — gleiche Zahl Urlaubswochen."
+          {
+            "frage": "Ein Vertrag gewährt 30 Urlaubstage bei fünf Arbeitstagen. Wie viele Tage sind es bei vier Arbeitstagen?",
+            "antwort": "30 × 4 ÷ 5 = 24 Tage, also ebenfalls sechs Wochen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum hat eine Teilzeitkraft mit fünf Arbeitstagen à 4 Stunden genauso viele Urlaubstage wie eine Vollzeitkraft?",
+            "antwort": "Weil der Urlaub nach Arbeitstagen berechnet wird, nicht nach Stunden. Sie arbeitet an gleich vielen Tagen.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Einsatzpläne ändern sich kurzfristig.",
-          "Fehler in der Zeiterfassung führen zu falschen Abrechnungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du dokumentierst den Personaleinsatz mit Einsatzplan, Zeiterfassung und Arbeitszeitkonten, wertest Abweichungen aus und leitest daraus Steuerungsmaßnahmen ab.",
+        "vorwissen_kurz": "Ein Plan zeigt, was sein soll. Erst die Erfassung zeigt, was tatsächlich passiert ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Planen, erfassen, vergleichen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zur Dokumentation des Personaleinsatzes gehören der **Einsatzplan** mit Schichten und Aufgaben, die **Zeiterfassung** mit tatsächlichem Beginn, Ende und Pausen sowie **Arbeitszeitkonten**, auf denen Mehr- und Minderstunden gesammelt werden, und **Urlaubskonten**. Arbeitgeber sind verpflichtet, die Arbeitszeit ihrer Beschäftigten systematisch zu erfassen. Der Vergleich von Plan und Ist zeigt, wo die Planung nicht stimmt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Auswertung der Dezemberwochen",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl im Versand",
+              "Plan",
+              "Ist",
+              "Signal"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Arbeitsstunden",
+                  "304",
+                  "341",
+                  "37 Mehrstunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitszeitkonto Jonas",
+                  "+ 0",
+                  "+ 22",
+                  "Ausgleich im Januar planen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fehltage durch Krankheit",
+                  "2",
+                  "6",
+                  "Belastung prüfen"
+                ]
+              },
+              {
+                "zellen": [
+                  "versandte Pakete je Stunde",
+                  "9,0",
+                  "8,1",
+                  "Ursache klären"
+                ]
+              }
+            ],
+            "fazit": "Der Versand hat mehr gearbeitet und trotzdem weniger je Stunde geschafft. Die Zahlen sind Signale, die geklärt werden müssen, keine Urteile über einzelne Personen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Abweichungen sind Anlass für Fragen, nicht für Schuldzuweisungen. Weniger Pakete je Stunde können an mehr Kleinaufträgen, an einem defekten Drucker für Versandetiketten oder an Einarbeitung neuer Kräfte liegen. Erst die Ursache zeigt die passende Maßnahme: bessere Planung, Investition in Technik oder eine frühere Verstärkung im nächsten Jahr. Mehrstunden auf dem Konto müssen ausgeglichen werden, damit Erschöpfung nicht zu weiteren Ausfällen führt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Personalverwaltung braucht verlässliche Dokumentation: Einsatz- und Schichtpläne, Urlaubsübersicht, Zeiterfassung, Überstundenkonten. Arbeitgeber müssen die Arbeitszeit erfassen; wie genau, wird gesetzlich weiter konkretisiert. Kontrolliert wird, ob die Pläne eingehalten werden, ob Höchstarbeitszeiten und Ruhezeiten gewahrt sind und ob Überstunden ausgeglichen werden. Abweichungen werden geklärt, nicht verschwiegen — sie sind Hinweise auf zu knappe Planung.",
-        "beispiele": [
-          "Das Zeiterfassungssystem warnt, wenn zwischen zwei Schichten weniger als elf Stunden liegen.",
-          "Monatlich prüft Jonas die Überstundenkonten seines Teams."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Aufbewahrung und Mitbestimmung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Arbeitszeit über 8 Stunden werktäglich muss aufgezeichnet und mindestens zwei Jahre aufbewahrt werden (§ 16 Abs. 2 ArbZG). Führt MAKEL Studio ein technisches Zeiterfassungssystem ein, hat der Betriebsrat ein Mitbestimmungsrecht, weil damit Verhalten und Leistung überwacht werden können (§ 87 Abs. 1 Nr. 6 BetrVG).",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die Auswertung im November zeigt: Zwei Lagerkräfte haben je 25 Überstunden, ein Kollege hatte zweimal nur neun Stunden Ruhezeit. Jonas passt den Schichtplan an, plant den Freizeitausgleich und spricht mit Tobias Renner über eine befristete Aushilfe für Dezember.",
-        "typische_fehler": "Überstunden und Ruhezeitverstöße nicht dokumentieren oder auswerten.",
         "verstaendnisfragen": [
-          "Was wird in der Personalverwaltung dokumentiert? Einsatzpläne, Urlaub, Arbeitszeiten, Überstunden.",
-          "Was zeigt eine dauerhaft hohe Zahl an Überstunden? Dass die Planung zu knapp ist und Maßnahmen nötig sind."
-        ],
-        "pruefungsbezug": "Einsatz dokumentieren und Abweichungen bearbeiten.",
-        "merksatz": "Planen, erfassen, kontrollieren: Einsatzplan, Zeiterfassung, Überstunden- und Urlaubskonten — Abweichungen sind Steuerungssignale."
+          {
+            "frage": "Was ist ein Arbeitszeitkonto?",
+            "antwort": "Ein Konto, auf dem Mehr- und Minderstunden gegenüber der vertraglichen Arbeitszeit gesammelt und später ausgeglichen werden.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum sind Abweichungen zwischen Plan und Ist keine Urteile über Personen?",
+            "antwort": "Weil sie viele Ursachen haben können, etwa Technik, Auftragsstruktur oder Einarbeitung. Erst die Ursache zeigt, was zu tun ist.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

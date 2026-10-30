@@ -6,86 +6,454 @@
   "untertitel": "Beendigungswege unterscheiden, Abmahnung und Kündigung prüfen, den Ablauf dokumentieren und ein Arbeitszeugnis einordnen.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Arbeitsverträge können befristet oder unbefristet sein (Kapitel 3).",
-          "Beide Seiten können ein Arbeitsverhältnis beenden wollen."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest ordentliche und außerordentliche Kündigung, Aufhebungsvertrag und Fristablauf nach Voraussetzungen, Form und Folgen und ordnest Beendigungsfälle zu.",
+        "vorwissen_kurz": "Arbeitsverhältnisse enden aus vielen Gründen. Der Weg der Beendigung entscheidet über Fristen und Rechte.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Wege aus dem Arbeitsverhältnis",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit einer **ordentlichen Kündigung** beendet eine Seite das Arbeitsverhältnis unter Einhaltung der Kündigungsfrist. Die **außerordentliche Kündigung** wirkt in der Regel fristlos; sie setzt einen wichtigen Grund voraus, der die Fortsetzung bis zum Fristende unzumutbar macht ({{par:bgb-626|§ 626 BGB}}). Beim **Aufhebungsvertrag** einigen sich beide Seiten auf ein Ende. Ein **befristeter Vertrag** endet mit Fristablauf, ohne dass gekündigt werden muss. Kündigung und Aufhebungsvertrag brauchen die Schriftform mit eigenhändiger Unterschrift ({{par:bgb-623|§ 623 BGB}}).",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Wege im Vergleich",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Weg",
+              "Voraussetzung",
+              "Frist",
+              "Folge für die beschäftigte Person"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "ordentliche Kündigung durch Arbeitgeber",
+                  "bei Geltung des KSchG sozial gerechtfertigt",
+                  "nach Gesetz, Tarif oder Vertrag",
+                  "Kündigungsschutzklage innerhalb von drei Wochen möglich"
+                ]
+              },
+              {
+                "zellen": [
+                  "außerordentliche Kündigung",
+                  "wichtiger Grund, Erklärung binnen zwei Wochen nach Kenntnis",
+                  "keine",
+                  "sofortiges Ende, Klage möglich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufhebungsvertrag",
+                  "Einigung beider Seiten",
+                  "frei vereinbar",
+                  "kein Kündigungsschutz; beim Arbeitslosengeld droht eine Sperrzeit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fristablauf",
+                  "wirksame Befristung",
+                  "Ende laut Vertrag",
+                  "keine Kündigung nötig"
+                ]
+              }
+            ],
+            "fazit": "Jeder Weg hat eigene Voraussetzungen. Der Aufhebungsvertrag ist schnell, kann für die beschäftigte Person aber Nachteile beim Arbeitslosengeld haben.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Schriftform ist streng. Eine Kündigung per E-Mail, Messenger oder Fax ist unwirksam; das Arbeitsverhältnis besteht weiter. Wer kündigt, muss außerdem nachweisen können, wann die Kündigung zugegangen ist. MAKEL Studio übergibt Kündigungen deshalb persönlich gegen Empfangsbestätigung oder lässt sie durch einen Boten zustellen, der den Einwurf bezeugen kann.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Ein Arbeitsverhältnis endet durch Kündigung, Aufhebungsvertrag, Ablauf einer Befristung oder Erreichen einer vereinbarten Altersgrenze. Die ordentliche Kündigung beendet das Verhältnis unter Einhaltung der Kündigungsfrist; die außerordentliche (meist fristlose) Kündigung setzt einen wichtigen Grund voraus, der die Fortsetzung bis zum Fristende unzumutbar macht, und muss innerhalb von zwei Wochen nach Kenntnis des Grundes erklärt werden. Beim Aufhebungsvertrag einigen sich beide Seiten. Kündigung und Aufhebungsvertrag müssen schriftlich mit eigenhändiger Unterschrift erfolgen; E-Mail oder Messenger reichen nicht.",
-        "beispiele": [
-          "Eine Lagerkraft kündigt, weil sie in eine andere Stadt zieht: ordentliche Kündigung durch die Arbeitnehmerin.",
-          "Eine befristete Aushilfe für das Weihnachtsgeschäft scheidet mit Fristablauf aus."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kündigung durch die beschäftigte Person",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch wer selbst kündigt, muss die Schriftform und die Frist einhalten. Für Beschäftigte gilt grundsätzlich die Grundfrist von vier Wochen zum 15. oder zum Ende eines Monats. Die verlängerten Fristen bei längerer Betriebszugehörigkeit gelten nach dem Gesetz nur für Kündigungen durch den Arbeitgeber, sofern der Vertrag nichts anderes regelt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Kollege aus der Musterfertigung schickt Jonas Weidner eine WhatsApp-Nachricht: „Ich kündige zum Monatsende.“ Ayla Brandt erklärt: Eine Kündigung braucht die Schriftform mit eigenhändiger Unterschrift; die Nachricht ist keine wirksame Kündigung. Sie bittet ihn um ein unterschriebenes Schreiben.",
-        "typische_fehler": "Eine Kündigung per E-Mail oder Messenger für wirksam halten.",
         "verstaendnisfragen": [
-          "Nenne drei Beendigungswege. Kündigung, Aufhebungsvertrag, Ablauf einer Befristung.",
-          "Welche Form verlangt eine Kündigung? Schriftform mit eigenhändiger Unterschrift (§ 623 BGB)."
-        ],
-        "pruefungsbezug": "Beendigungsarten unterscheiden und Formvorschriften beachten.",
-        "merksatz": "Kündigung (ordentlich/außerordentlich), Aufhebungsvertrag, Fristablauf — Kündigung und Aufhebung nur schriftlich mit Unterschrift."
+          {
+            "frage": "Ist eine Kündigung per E-Mail wirksam?",
+            "antwort": "Nein. § 623 BGB verlangt die Schriftform mit eigenhändiger Unterschrift; die elektronische Form ist ausgeschlossen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welches Risiko hat ein Aufhebungsvertrag für die beschäftigte Person?",
+            "antwort": "Sie verliert den Kündigungsschutz, und beim Arbeitslosengeld kann eine Sperrzeit eintreten.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Fehlverhalten soll korrigiert werden, bevor es zu Konsequenzen kommt.",
-          "Beschäftigte sind vor willkürlicher Kündigung geschützt."
+        "darstellung": "vollfassung",
+        "ziel": "Du grenzt Abmahnung und Kündigung ab, prüfst eine arbeitgeberseitige Kündigung Schritt für Schritt auf Form, Kündigungsschutz, Betriebsratsanhörung, Sonderkündigungsschutz und Frist und berechnest den Beendigungstermin.",
+        "vorwissen_kurz": "Eine Kündigung durch den Arbeitgeber ist an viele Voraussetzungen gebunden. Fehlt eine, ist sie unwirksam.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warnen, bevor man kündigt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Abmahnung** hat zwei Aufgaben: Sie weist auf ein konkretes Fehlverhalten hin und warnt, dass im Wiederholungsfall die Kündigung droht. Bei verhaltensbedingten Gründen ist sie in der Regel Voraussetzung für eine Kündigung. Gilt das {{begriff:kuendigungsschutz|Kündigungsschutzgesetz}}, muss eine Kündigung sozial gerechtfertigt sein: aus Gründen in der Person, etwa lang andauernde Krankheit mit negativer Prognose, im Verhalten, etwa wiederholte Unpünktlichkeit trotz Abmahnung, oder aus dringenden betrieblichen Erfordernissen, etwa dem Wegfall eines Arbeitsplatzes.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Fall Schritt für Schritt",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfschritt",
+              "Fall: Kündigung einer Schneiderin, beschäftigt seit 1. März 2022",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Form",
+                  "schriftlich, von Tobias Renner unterschrieben, Zugang am 20. Februar 2026",
+                  "erfüllt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kündigungsschutzgesetz",
+                  "92 Beschäftigte, länger als sechs Monate beschäftigt",
+                  "gilt; betriebsbedingter Grund und Sozialauswahl nötig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Betriebsrat",
+                  "vor der Kündigung angehört, Stellungnahme abgewartet",
+                  "erfüllt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sonderkündigungsschutz",
+                  "keine Schwangerschaft, Elternzeit oder Schwerbehinderung bekannt",
+                  "keiner"
+                ]
+              },
+              {
+                "zellen": [
+                  "Frist",
+                  "Betriebszugehörigkeit fast vier Jahre: ein Monat zum Monatsende (§ 622 Abs. 2 BGB)",
+                  "Ende am 31. März 2026"
+                ]
+              }
+            ],
+            "fazit": "Die formalen Voraussetzungen sind erfüllt. Ob die Kündigung hält, hängt davon ab, ob der betriebliche Grund und die Sozialauswahl tragen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Betriebsrat muss vor jeder Kündigung angehört werden; eine Kündigung ohne Anhörung ist unwirksam (§ 102 BetrVG). Er kann bei einer ordentlichen Kündigung innerhalb einer Woche Bedenken äußern oder widersprechen. Den besonderen Kündigungsschutz haben unter anderem Schwangere, Beschäftigte in Elternzeit, schwerbehinderte Menschen, für deren Kündigung das Inklusionsamt zustimmen muss, Betriebsratsmitglieder und Auszubildende nach der Probezeit.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Abmahnung rügt ein konkretes Fehlverhalten (Hinweisfunktion) und kündigt für den Wiederholungsfall arbeitsrechtliche Folgen an (Warnfunktion). Vor einer verhaltensbedingten Kündigung ist in der Regel eine einschlägige Abmahnung nötig — eine feste Zahl gibt es nicht. Gilt das Kündigungsschutzgesetz (Betrieb mit in der Regel mehr als zehn Beschäftigten, Arbeitsverhältnis länger als sechs Monate), muss eine Kündigung des Arbeitgebers sozial gerechtfertigt sein: personen-, verhaltens- oder betriebsbedingt. Besteht ein Betriebsrat, ist er vor jeder Kündigung anzuhören. Einige Gruppen haben besonderen Kündigungsschutz, etwa Schwangere, Beschäftigte in Elternzeit, schwerbehinderte Menschen, Betriebsratsmitglieder und Auszubildende nach der Probezeit. Die Kündigungsfristen ergeben sich aus Gesetz, Tarifvertrag und Arbeitsvertrag und hängen oft von der Betriebszugehörigkeit ab.",
-        "beispiele": [
-          "Wiederholtes unentschuldigtes Zuspätkommen: Abmahnung mit konkreten Daten.",
-          "Kündigungsfrist: Grundfrist vier Wochen zum 15. oder zum Monatsende; für Arbeitgeberkündigungen mit wachsender Betriebszugehörigkeit länger."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Die verlängerten Fristen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Kündigungen durch den Arbeitgeber verlängert sich die Frist mit der Betriebszugehörigkeit: ab zwei Jahren ein Monat, ab fünf Jahren zwei Monate, ab acht Jahren drei Monate, jeweils zum Monatsende, bis zu sieben Monaten ab zwanzig Jahren. Tarifverträge können abweichen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Lagerkollege kommt in sechs Wochen viermal ohne Entschuldigung über eine Stunde zu spät; Gespräche haben nichts geändert. Die Personalabteilung dokumentiert die Daten und erteilt eine Abmahnung, die das Verhalten genau beschreibt und im Wiederholungsfall die Kündigung androht. Ob später gekündigt werden kann, wird anhand der konkreten Umstände geprüft.",
-        "typische_fehler": "Drei Abmahnungen als ausnahmslos notwendige oder ausreichende Voraussetzung jeder Kündigung behaupten.",
         "verstaendnisfragen": [
-          "Welche Funktionen hat eine Abmahnung? Hinweis auf konkretes Fehlverhalten und Warnung vor Folgen.",
-          "Wann gilt das Kündigungsschutzgesetz? In Betrieben mit in der Regel mehr als zehn Beschäftigten bei mehr als sechs Monaten Beschäftigung."
-        ],
-        "pruefungsbezug": "Abmahnung und Kündigung funktional abgrenzen und Prüfschritte nennen.",
-        "merksatz": "Abmahnung = Hinweis + Warnung; Kündigung nach KSchG sozial gerechtfertigt (Person, Verhalten, Betrieb); Betriebsrat anhören; Sonderkündigungsschutz prüfen; Frist aus Gesetz, Tarif, Vertrag."
+          {
+            "frage": "Welche zwei Funktionen hat eine Abmahnung?",
+            "antwort": "Sie weist auf ein konkretes Fehlverhalten hin (Hinweisfunktion) und droht für den Wiederholungsfall die Kündigung an (Warnfunktion).",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Eine Kündigung des Arbeitgebers geht nach sechs Jahren Betriebszugehörigkeit am 10. Mai zu. Wann endet das Arbeitsverhältnis?",
+            "antwort": "Die Frist beträgt zwei Monate zum Monatsende, also endet es am 31. Juli.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Kündigungen müssen zugehen.",
-          "Beim Ausscheiden fallen Aufgaben an."
+        "darstellung": "vollfassung",
+        "ziel": "Du organisierst das Ausscheiden einer beschäftigten Person mit einer Austrittscheckliste, berechnest den Resturlaub und stellst die nötigen Meldungen und Bescheinigungen zusammen.",
+        "vorwissen_kurz": "Mit dem Zugang der Kündigung beginnt für das Personalbüro eine Reihe von Aufgaben bis zum letzten Arbeitstag und darüber hinaus.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Zugang bis zum letzten Tag",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ab dem Zugang der Kündigung laufen die Fristen, auch die dreiwöchige Frist für eine Kündigungsschutzklage. Bis zum Austritt muss der **Resturlaub** berechnet und möglichst gewährt werden; kann er wegen der Beendigung nicht mehr genommen werden, wird er ausgezahlt. Arbeitsmittel und Zugänge werden zurückgegeben und gesperrt. Nach dem Austritt folgen die Abmeldung bei der Sozialversicherung, die Arbeitsbescheinigung für die Agentur für Arbeit, die letzte Abrechnung und das Zeugnis.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Resturlaub der Schneiderin",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "vertraglicher Jahresurlaub, laut Vertrag bei Austritt zeitanteilig",
+                  "30 Tage",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Austritt 31. März, Wartezeit erfüllt, erste Jahreshälfte",
+                  "30 × 3 ÷ 12",
+                  "7,5 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "gesetzlicher Mindestanspruch zum Vergleich",
+                  "20 × 3 ÷ 12",
+                  "5 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "bereits genommen im Januar",
+                  "",
+                  "2 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Resturlaub",
+                  "7,5 − 2",
+                  "5,5 Tage, bis zum Austritt gewähren"
+                ]
+              }
+            ],
+            "fazit": "Die Schneiderin kann bis Ende März noch 5,5 Tage Urlaub nehmen. Nur wenn das betrieblich nicht möglich ist, wird der Rest abgegolten.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Checkliste schützt beide Seiten. Das Personalbüro vergisst keine Abmeldung und keine Bescheinigung, und die ausscheidende Person erhält alles, was sie für die Agentur für Arbeit und den nächsten Arbeitgeber braucht. Der Arbeitgeber soll außerdem darauf hinweisen, dass sie sich frühzeitig arbeitssuchend melden muss: spätestens drei Monate vor dem Ende oder, wenn die Kündigung kurzfristiger kommt, innerhalb von drei Tagen nach Kenntnis.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Eine Kündigung wird erst mit Zugang wirksam; der Zeitpunkt sollte nachweisbar sein (persönliche Übergabe gegen Empfangsbestätigung, Bote). Danach laufen die Fristen. Wer eine Kündigung des Arbeitgebers für unwirksam hält, muss innerhalb von drei Wochen nach Zugang Klage beim Arbeitsgericht erheben. Zum Ausscheiden gehören: Urlaubsanspruch prüfen (Wartezeit, Austrittsdatum, gesetzlicher und vertraglicher Urlaub) und den Rest gewähren oder abgelten, Arbeitsmittel zurücknehmen, Zugänge sperren, Arbeitspapiere und Arbeitsbescheinigung erstellen, Abmeldung bei der Sozialversicherung, Zeugnis. Beschäftigte müssen sich frühzeitig bei der Agentur für Arbeit arbeitsuchend melden.",
-        "beispiele": [
-          "Die Kündigung wird im Personalbüro übergeben, die Empfängerin bestätigt den Erhalt mit Datum.",
-          "Checkliste Austritt: Schlüssel, Scanner, Zugangsdaten, Arbeitspapiere."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Bruchteile von Urlaubstagen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ergeben sich bei der Berechnung des gesetzlichen Teilurlaubs Bruchteile von mindestens einem halben Tag, werden sie auf volle Tage aufgerundet (§ 5 Abs. 2 BUrlG). Für vertraglichen Mehrurlaub gilt das nur, wenn der Vertrag es vorsieht. Im Beispiel liegt der gesetzliche Anteil bei glatten 5 Tagen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Schneiderin scheidet zum 31. März aus. Ayla erstellt eine Austrittscheckliste: Urlaubsanspruch für ein Ausscheiden in der ersten Jahreshälfte anteilig berechnen und im März gewähren, Schlüssel und Zugangskarte zurück, Abmeldung bei der Krankenkasse, Arbeitsbescheinigung, Zeugnis. Luca Petrelli übernimmt die Liste und hakt Schritt für Schritt ab.",
-        "typische_fehler": "Den Zugang der Kündigung nicht dokumentieren.",
         "verstaendnisfragen": [
-          "Wann wird eine Kündigung wirksam? Mit Zugang beim Empfänger.",
-          "Innerhalb welcher Frist muss Kündigungsschutzklage erhoben werden? Drei Wochen nach Zugang."
-        ],
-        "pruefungsbezug": "Ablauf und Dokumente beim Ausscheiden organisieren.",
-        "merksatz": "Zugang nachweisen → Fristen laufen (Klagefrist drei Wochen) → Austrittscheckliste: Urlaub, Arbeitsmittel, Zugänge, Papiere, Abmeldung, Zeugnis."
+          {
+            "frage": "Wann wird Resturlaub ausgezahlt?",
+            "antwort": "Wenn er wegen der Beendigung des Arbeitsverhältnisses nicht mehr genommen werden kann.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Innerhalb welcher Frist muss eine Kündigungsschutzklage erhoben werden?",
+            "antwort": "Innerhalb von drei Wochen nach Zugang der schriftlichen Kündigung.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Bewerbungen enthalten Zeugnisse (Kapitel 3).",
-          "Trennungen sind für alle belastend."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest einfaches und qualifiziertes Arbeitszeugnis, trennst Tätigkeitsbeschreibung und Beurteilung, wendest die Grundsätze Wahrheit und Wohlwollen an und führst das Abschlussgespräch respektvoll.",
+        "vorwissen_kurz": "Das Zeugnis begleitet die Schneiderin in jede künftige Bewerbung. Es muss stimmen und darf ihr nicht schaden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wahr und wohlwollend zugleich",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede beschäftigte Person hat beim Ausscheiden Anspruch auf ein schriftliches Zeugnis ({{par:gewo-109|§ 109 GewO}}). Das **einfache Zeugnis** enthält Art und Dauer der Tätigkeit. Das **qualifizierte Zeugnis**, das sie verlangen kann, beurteilt zusätzlich Leistung und Verhalten. Das Zeugnis muss wahr sein und zugleich wohlwollend formuliert, damit es das berufliche Fortkommen nicht unnötig erschwert. Es darf keine versteckten Botschaften enthalten.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Aufbau eines qualifizierten Zeugnisses",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Formulierung für die Schneiderin"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einleitung",
+                  "Frau K. war vom 1. März 2022 bis 31. März 2026 als Schneiderin bei uns beschäftigt."
+                ]
+              },
+              {
+                "zellen": [
+                  "Unternehmen",
+                  "MAKEL Studio gestaltet und veredelt Textilien in Düsseldorf."
+                ]
+              },
+              {
+                "zellen": [
+                  "Tätigkeit",
+                  "Sie war für Änderungen, das Umnähen von Etiketten und die Endkontrolle zuständig."
+                ]
+              },
+              {
+                "zellen": [
+                  "Leistung",
+                  "Sie erledigte ihre Aufgaben stets sorgfältig und zuverlässig."
+                ]
+              },
+              {
+                "zellen": [
+                  "Verhalten",
+                  "Ihr Verhalten gegenüber Vorgesetzten und Kollegen war stets einwandfrei."
+                ]
+              },
+              {
+                "zellen": [
+                  "Schluss",
+                  "Das Arbeitsverhältnis endet aus betrieblichen Gründen. Wir danken ihr und wünschen ihr alles Gute."
+                ]
+              }
+            ],
+            "fazit": "Die Tätigkeit wird sachlich beschrieben, die Beurteilung folgt getrennt. Der Grund der Beendigung wird nur genannt, wenn er ihr nicht schadet.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Kündigung aus betrieblichen Gründen ist für die betroffene Person belastend, auch wenn sie keine Schuld trägt. Das Abschlussgespräch sollte deshalb ehrlich, wertschätzend und klar sein: Gründe erklären, die nächsten Schritte nennen, Unterstützung anbieten, etwa ein Zwischenzeugnis sofort oder Freistellung für Vorstellungsgespräche. Das Team wird informiert, ohne Details preiszugeben, die die Person nicht teilen möchte.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Beim Ausscheiden haben Beschäftigte Anspruch auf ein schriftliches Arbeitszeugnis; mit ihrer Einwilligung darf es seit 2025 auch elektronisch erteilt werden. Das einfache Zeugnis enthält Art und Dauer der Tätigkeit, das qualifizierte Zeugnis auf Verlangen zusätzlich Leistung und Verhalten. Das Zeugnis muss klar und verständlich, wahr und wohlwollend formuliert sein und darf keine versteckten Botschaften enthalten. Tätigkeitsbeschreibung und Leistungsbeurteilung werden getrennt. Die Kommunikation rund um eine Trennung sollte respektvoll und sachlich sein — auch gegenüber dem Team, das nur so viel erfährt, wie es für die Arbeit braucht.",
-        "beispiele": [
-          "Tätigkeitsbeschreibung: „Frau K. war als Schneiderin für das Umnähen von Etiketten und die Endkontrolle zuständig.“",
-          "Leistungsbeurteilung: „Sie erledigte ihre Aufgaben stets sorgfältig und zuverlässig.“"
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Form des Zeugnisses",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Das Zeugnis wird auf Firmenpapier ausgestellt und eigenhändig unterschrieben; die elektronische Form ist ausgeschlossen (§ 109 Abs. 3 GewO). Es soll ein Datum tragen, das in der Regel dem Beendigungstermin entspricht.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die ausscheidende Schneiderin bittet um ein qualifiziertes Zeugnis. Ayla entwirft es mit Deniz Aydın: zuerst eine genaue Tätigkeitsbeschreibung, dann eine Beurteilung von Leistung und Verhalten auf Grundlage der Mitarbeitergespräche. Im Team teilt Deniz nur mit, dass die Kollegin auf eigenen Wunsch geht, und dankt ihr öffentlich.",
-        "typische_fehler": "Tätigkeitsbeschreibung und Leistungsbeurteilung vermischen oder verschlüsselte Formulierungen verwenden.",
         "verstaendnisfragen": [
-          "Was unterscheidet einfaches und qualifiziertes Zeugnis? Das qualifizierte enthält zusätzlich Leistung und Verhalten.",
-          "Welche Grundsätze gelten für Zeugnisse? Klar, wahr und wohlwollend, ohne versteckte Botschaften."
-        ],
-        "pruefungsbezug": "Arbeitszeugnis einordnen und respektvoll kommunizieren.",
-        "merksatz": "Zeugnis: einfach (Art, Dauer) oder qualifiziert (+ Leistung, Verhalten); klar, wahr, wohlwollend — Tätigkeit und Beurteilung getrennt."
+          {
+            "frage": "Was unterscheidet das einfache vom qualifizierten Zeugnis?",
+            "antwort": "Das einfache nennt Art und Dauer der Tätigkeit. Das qualifizierte beurteilt zusätzlich Leistung und Verhalten.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum muss ein Zeugnis zugleich wahr und wohlwollend sein?",
+            "antwort": "Wahr, damit künftige Arbeitgeber sich darauf verlassen können; wohlwollend, damit es das Fortkommen der Person nicht unnötig erschwert.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

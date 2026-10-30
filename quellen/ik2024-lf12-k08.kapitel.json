@@ -6,86 +6,444 @@
   "untertitel": "Personalstatistiken mit klaren Definitionen berechnen, quantitative und qualitative Ziele verbinden und Maßnahmen datenschutzgerecht begründen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Kennzahlen setzen Größen ins Verhältnis (LF 10).",
-          "Personaldaten sind besonders schützenswert (Kapitel 4)."
+        "darstellung": "vollfassung",
+        "ziel": "Du legst vor der Berechnung einer Personalkennzahl fest, was gezählt wird, welcher Zeitraum gilt und welche Bezugsgröße verwendet wird, und erkennst, wie unterschiedliche Definitionen das Ergebnis verändern.",
+        "vorwissen_kurz": "Zwei Abteilungen melden eine Fluktuationsquote. Ob die Zahlen vergleichbar sind, hängt davon ab, wie sie berechnet wurden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst definieren, dann rechnen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Personalkennzahl ist nur so gut wie ihre Definition. Vor jeder Berechnung muss feststehen, **wer gezählt wird**: alle Köpfe, nur Festangestellte, mit oder ohne Auszubildende und Aushilfen. Dann der **Zeitraum**: Monat, Quartal oder Jahr. Und die **Bezugsgröße**: Bestand am Stichtag oder durchschnittlicher Bestand über den Zeitraum. Wer diese Festlegungen nicht mit angibt, erzeugt Zahlen, die niemand vergleichen kann.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Quote, drei Ergebnisse",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Definition",
+              "Austritte",
+              "Bezugsgröße",
+              "Fluktuationsquote"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "alle Austritte, Ø Bestand ohne Aushilfen",
+                  "4",
+                  "80",
+                  "5,0 %"
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "alle Austritte, Bestand am 31. Dezember",
+                  "4",
+                  "76",
+                  "5,3 %"
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "nur Eigenkündigungen der Beschäftigten, Ø Bestand",
+                  "2",
+                  "80",
+                  "2,5 %"
+                ],
+                "mono": [
+                  3
+                ]
+              }
+            ],
+            "fazit": "Dieselben Ereignisse ergeben je nach Definition 2,5 % bis 5,3 %. Ohne Angabe der Definition ist die Zahl nicht aussagekräftig.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Wahl der Definition hängt vom Zweck ab. Will MAKEL Studio wissen, wie viele Beschäftigte freiwillig gehen, zählen nur Eigenkündigungen; Ruhestand oder das Ende einer Befristung verzerren sonst das Bild. Will es den gesamten Ersatzbedarf planen, zählen alle Austritte. Wichtig ist, eine Definition festzulegen, sie zu dokumentieren und über die Jahre beizubehalten.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Personalkennzahlen sind nur so gut wie ihre Definitionen. Vor jeder Auswertung wird festgelegt: Was wird gezählt (Köpfe oder VZÄ, mit oder ohne Auszubildende und Aushilfen)? Welcher Zeitraum? Welche Bezugsgröße (Bestand am Stichtag oder durchschnittlicher Bestand)? Wer verschiedene Definitionen mischt, vergleicht Äpfel mit Birnen. Außerdem müssen die Daten richtig, vollständig und zweckgebunden erhoben werden.",
-        "beispiele": [
-          "Durchschnittlicher Bestand: (Bestand 1.1. + Bestand 31.12.) ÷ 2 oder Mittel der Monatswerte.",
-          "Krankheitstage: nur Arbeitstage zählen, nicht Kalendertage."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Woher die Daten kommen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Personalkennzahlen stammen aus dem Personalinformationssystem, der Zeiterfassung und der Entgeltabrechnung. Bevor gerechnet wird, prüft das Personalbüro, ob die Daten vollständig sind, etwa ob alle Austritte erfasst und Aushilfen einheitlich gekennzeichnet sind.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner möchte die Fluktuation bei MAKEL mit einer Branchenzahl vergleichen. Ayla Brandt fragt zuerst: Zählt die Branche alle Austritte oder nur Eigenkündigungen? Sind Auszubildende enthalten? Erst wenn die Definitionen passen, ist der Vergleich sinnvoll.",
-        "typische_fehler": "Kennzahlen mit unterschiedlichen Definitionen vergleichen.",
         "verstaendnisfragen": [
-          "Was muss vor einer Personalauswertung festgelegt werden? Zählweise, Zeitraum und Bezugsgröße.",
-          "Warum ist das wichtig? Sonst sind Werte nicht vergleichbar."
-        ],
-        "pruefungsbezug": "Kennzahlendefinitionen festlegen und offenlegen.",
-        "merksatz": "Erst definieren (was, welcher Zeitraum, welche Bezugsgröße), dann rechnen — und die Definition mit angeben."
+          {
+            "frage": "Warum muss bei einer Kennzahl die Definition mit angegeben werden?",
+            "antwort": "Weil dieselben Daten je nach Definition zu unterschiedlichen Ergebnissen führen. Nur mit Definition lassen sich Zahlen vergleichen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welche Fluktuationsdefinition passt, wenn MAKEL Studio die freiwillige Abwanderung messen will?",
+            "antwort": "Nur Eigenkündigungen der Beschäftigten bezogen auf den durchschnittlichen Bestand.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Beschäftigte verlassen Unternehmen aus verschiedenen Gründen.",
-          "Fehlzeiten verursachen Kosten und Mehrarbeit."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Fluktuations-, Fehlzeiten-, Überstunden-, Ausbildungs- und Personalaufwandsquote mit festgelegten Bezugsgrößen und interpretierst die Ergebnisse im Vergleich.",
+        "vorwissen_kurz": "Mit klaren Definitionen lassen sich die wichtigsten Personalkennzahlen berechnen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fünf Kennzahlen im Überblick",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Fluktuationsquote** zeigt, wie viele Beschäftigte das Unternehmen verlassen. Die **Fehlzeitenquote** setzt Ausfalltage ins Verhältnis zu den Soll-Arbeitstagen. Die **Überstundenquote** zeigt, wie viel über die vereinbarte Arbeitszeit hinaus gearbeitet wird. Die **Ausbildungsquote** gibt den Anteil der Auszubildenden an den Beschäftigten an. Die **Personalaufwandsquote** setzt den Personalaufwand ins Verhältnis zum Umsatz. Jede Kennzahl wird mit 100 multipliziert und als Prozentwert angegeben.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vorjahr und Berichtsjahr bei MAKEL Studio",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Vorjahr",
+              "Berichtsjahr",
+              "Veränderung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fluktuationsquote",
+                  "7,5 %",
+                  "5,0 %",
+                  "gesunken"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fehlzeitenquote",
+                  "3,8 %",
+                  "4,2 %",
+                  "gestiegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Überstundenquote",
+                  "4,0 %",
+                  "6,0 %",
+                  "deutlich gestiegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausbildungsquote",
+                  "3,3 %",
+                  "3,3 %",
+                  "gleich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Personalaufwandsquote, Übungswert 5,6 Mio. € ÷ 16 Mio. €",
+                  "34 %",
+                  "35 %",
+                  "leicht gestiegen"
+                ]
+              }
+            ],
+            "fazit": "Weniger Austritte sind erfreulich. Mehr Überstunden und Fehlzeiten deuten aber darauf hin, dass die Belastung gestiegen ist.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kennzahlen sprechen erst im Zusammenhang. Die gesunkene Fluktuation allein klingt gut. Zusammen mit steigenden Überstunden und Fehlzeiten entsteht ein anderes Bild: Möglicherweise arbeiten weniger Menschen mehr, weil frei gewordene Stellen nicht nachbesetzt wurden. Ob das stimmt, zeigen nur Gespräche und ein Blick auf einzelne Bereiche, nicht die Gesamtzahl.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Wichtige Personalkennzahlen sind: Fluktuationsquote (hier definiert als Austritte ÷ durchschnittlicher Personalbestand × 100; andere Definitionen zählen etwa nur Eigenkündigungen), Fehlzeitenquote (Ausfalltage ÷ Soll-Arbeitstage × 100), Überstundenquote (Überstunden ÷ Soll-Arbeitsstunden × 100), Personalaufwandsquote (Personalaufwand ÷ Umsatzerlöse oder Gesamtleistung × 100), Weiterbildungstage je Beschäftigtem und Ausbildungsquote (Auszubildende ÷ Beschäftigte × 100). Jede Kennzahl misst etwas Bestimmtes — und nicht mehr.",
-        "beispiele": [
-          "4 Austritte bei durchschnittlich 80 Beschäftigten: 4 ÷ 80 × 100 = 5 %.",
-          "MAKEL: 3 Auszubildende bei 92 Beschäftigten: Ausbildungsquote rund 3,3 %."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ausbildungsquote richtig deuten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Ausbildungsquote von 3,3 % bedeutet bei 92 Beschäftigten drei Auszubildende. Ob das viel oder wenig ist, zeigt der Vergleich mit dem künftigen Bedarf: Gehen in den nächsten Jahren mehrere Fachkräfte in Rente, reicht diese Quote vielleicht nicht aus.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Ayla wertet für MAKEL eine ausdrücklich fiktive Übungsperiode aus: 4 Austritte bei durchschnittlich 80 Beschäftigten (ohne Aushilfen und Auszubildende), Fluktuationsquote 5 %. Die Fehlzeitenquote liegt bei 4,2 %, die Überstundenquote bei 6 %. Auffällig: Die Überstunden sind gegenüber dem Vorjahr deutlich gestiegen.",
-        "typische_fehler": "Aus einer Kennzahl Aussagen ableiten, die sie gar nicht misst.",
         "verstaendnisfragen": [
-          "Wie wird die Fluktuationsquote hier berechnet? Austritte ÷ durchschnittlicher Bestand × 100.",
-          "Wie wird die Fehlzeitenquote berechnet? Ausfalltage ÷ Soll-Arbeitstage × 100."
-        ],
-        "pruefungsbezug": "Personalkennzahlen mit definierten Bezugsgrößen berechnen.",
-        "merksatz": "Fluktuation = Austritte ÷ Ø Bestand; Fehlzeiten = Ausfalltage ÷ Soll-Tage; Überstunden = Überstunden ÷ Soll-Stunden; Personalaufwand ÷ Umsatz — jeweils × 100."
+          {
+            "frage": "Im Lager gab es 2 Austritte bei durchschnittlich 25 Beschäftigten. Wie hoch ist die Fluktuationsquote?",
+            "antwort": "2 ÷ 25 × 100 = 8 %.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "760 Ausfalltage bei 18.000 Soll-Arbeitstagen. Wie hoch ist die Fehlzeitenquote?",
+            "antwort": "760 ÷ 18.000 × 100 ≈ 4,2 %.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Ziele sollten messbar sein (LF 2).",
-          "Nicht alles Wichtige lässt sich zählen."
+        "darstellung": "vollfassung",
+        "ziel": "Du verbindest quantitative Kennzahlen mit qualitativen Zielen und Rückmeldungen, formulierst messbare Ziele und erkennst, wann eine Kennzahl falsche Anreize setzt.",
+        "vorwissen_kurz": "Zahlen zeigen, was sich verändert. Warum, zeigen sie nicht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zahlen und Stimmen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Quantitative Ziele** lassen sich in Zahlen messen: eine Fluktuationsquote unter 8 %, zwei Weiterbildungstage je Person. **Qualitative Ziele** beschreiben Zustände, die sich nicht direkt zählen lassen: ein gutes Arbeitsklima, Beschäftigte, die sich gut informiert fühlen. Sie lassen sich über Befragungen, Gespräche oder Beobachtungen erfassen. Eine gute Personalpolitik verbindet beides, weil Zahlen ohne Erklärung leicht falsch gedeutet werden.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ziele für das nächste Jahr",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ziel",
+              "Art",
+              "Messung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Überstundenquote unter 4 %",
+                  "quantitativ",
+                  "Zeiterfassung, monatlich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fehlzeitenquote nicht über 4 %",
+                  "quantitativ",
+                  "Abwesenheitsdaten, aggregiert je Bereich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beschäftigte fühlen sich bei Veränderungen gut informiert",
+                  "qualitativ",
+                  "anonyme Kurzbefragung, Zustimmung mindestens 70 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Neue Beschäftigte fühlen sich nach drei Monaten gut eingearbeitet",
+                  "qualitativ",
+                  "Gespräch am Ende der Probezeit"
+                ]
+              }
+            ],
+            "fazit": "Auch qualitative Ziele lassen sich überprüfen, wenn vorher festgelegt wird, woran man sie erkennt.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kennzahlen können falsche Anreize setzen. Wird eine niedrige Fehlzeitenquote belohnt, kommen manche krank zur Arbeit, stecken andere an und fallen später länger aus. Dieses Verhalten heißt **Präsentismus**. Eine niedrige Quote ist dann kein Erfolg, sondern ein Warnsignal. Deshalb sollten Kennzahlen nie allein über Prämien oder Beurteilungen einzelner Personen entscheiden.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Personalpolitische Ziele verbinden quantitative Größen (etwa Fluktuation unter 8 %, mindestens zwei Weiterbildungstage je Person) mit qualitativen Zielen (Zufriedenheit, Arbeitsklima, Führungsqualität). Qualitative Ziele werden über Befragungen, Feedbackgespräche und Austrittsgespräche erfasst. Eine Kennzahl allein beweist nichts: Eine niedrige Fehlzeitenquote bedeutet nicht automatisch hohe Zufriedenheit — vielleicht kommen Beschäftigte krank zur Arbeit. Erst mehrere Quellen zusammen ergeben ein verlässliches Bild.",
-        "beispiele": [
-          "Quantitativ: Überstundenquote unter 4 %.",
-          "Qualitativ: In der jährlichen Befragung bewerten mindestens 75 % das Arbeitsklima als gut."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn das Ziel zur Zahl wird",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wird nur die Überstundenquote gesteuert, kann sie sinken, weil Arbeit liegen bleibt oder nicht mehr erfasst wird. Wer Kennzahlen als Ziele nutzt, prüft daher immer auch, ob sich die eigentliche Lage verbessert hat, etwa über Lieferzeiten oder Rückmeldungen des Teams.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Tobias freut sich über die niedrige Fehlzeitenquote im Lager: „Alle sind zufrieden.“ Ayla weist auf die gestiegenen Überstunden und zwei Austrittsgespräche hin, in denen Arbeitsdruck genannt wurde. Sie schlägt eine kurze anonyme Befragung vor, bevor MAKEL Schlüsse zieht.",
-        "typische_fehler": "Eine niedrige Fehlzeitenquote als Beweis für Zufriedenheit nehmen.",
         "verstaendnisfragen": [
-          "Warum reicht eine Kennzahl allein nicht? Sie misst nur einen Ausschnitt; andere Ursachen sind möglich.",
-          "Wie werden qualitative Ziele erfasst? Über Befragungen, Gespräche und Austrittsinterviews."
-        ],
-        "pruefungsbezug": "Quantitative und qualitative Ziele verbinden und Kennzahlen kritisch deuten.",
-        "merksatz": "Zahlen + Stimmen: quantitative Kennzahlen mit qualitativen Rückmeldungen verbinden — eine Kennzahl beweist keine Zufriedenheit."
+          {
+            "frage": "Warum ist eine sehr niedrige Fehlzeitenquote nicht immer ein gutes Zeichen?",
+            "antwort": "Sie kann auf Präsentismus hinweisen: Beschäftigte kommen krank zur Arbeit, etwa aus Angst vor Nachteilen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie lässt sich ein qualitatives Ziel wie „gut informiert\" überprüfen?",
+            "antwort": "Durch eine anonyme Befragung mit vorher festgelegtem Zielwert, etwa mindestens 70 % Zustimmung.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Maßnahmen sollen messbar wirken (Kapitel 6).",
-          "In kleinen Teams sind Personen schnell erkennbar."
+        "darstellung": "vollfassung",
+        "ziel": "Du begründest Personalmaßnahmen mit Ziel, Frist und Messkriterium, wertest Personaldaten aggregiert und datenschutzgerecht aus und reflektierst, was Kennzahlen über die Personalpolitik aussagen.",
+        "vorwissen_kurz": "Aus der Analyse sollen Maßnahmen werden, ohne dass Einzelne in Auswertungen bloßgestellt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Von der Kennzahl zur Maßnahme",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Maßnahme ist erst dann begründet, wenn klar ist, welches Problem sie lösen soll, bis wann und woran man den Erfolg erkennt. Dazu gehören ein **Ziel**, eine **Frist** und ein **Messkriterium**. Bei der Auswertung gilt der Datenschutz: Personaldaten werden **aggregiert** ausgewertet, also für Gruppen statt für Einzelne, und so ausgewiesen, dass niemand erkennbar wird. Detaildaten sehen nur Berechtigte.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Maßnahmenplan für den Versand",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Befund",
+              "Maßnahme",
+              "Ziel und Frist",
+              "Messkriterium"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Überstundenquote im Versand 9 %",
+                  "eine zusätzliche Teilzeitstelle ab März",
+                  "unter 5 % bis Jahresende",
+                  "Zeiterfassung, monatlich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fehlzeiten im Versand gestiegen",
+                  "Gefährdungsbeurteilung psychische Belastung, Gespräche im Team",
+                  "Ursachen bis Juni geklärt",
+                  "Bericht mit Maßnahmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auswertung Zwei-Personen-Team Retouren",
+                  "mit Versand zusammenfassen",
+                  "keine Rückschlüsse auf Einzelne",
+                  "Gruppen ab fünf Personen"
+                ]
+              }
+            ],
+            "fazit": "Jede Maßnahme hat ein Ziel, eine Frist und ein Messkriterium. Kleine Teams werden in der Auswertung zusammengefasst.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kennzahlen sind ein Spiegel der Personalpolitik, aber kein vollständiges Bild. Sie zeigen, wo genauer hingesehen werden muss. Ob eine Maßnahme richtig war, beurteilt MAKEL Studio am Jahresende anhand der Messkriterien und der Rückmeldungen aus dem Team. Wird ein Ziel verfehlt, ist das kein Scheitern, sondern ein Anlass, die Ursachen erneut zu prüfen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Aus der Auswertung werden Maßnahmen mit Messkriterien abgeleitet: Was soll sich bis wann wie verändern, und woran erkennt man es? Datenschutz begleitet jeden Schritt: Auswertungen werden möglichst aggregiert und anonymisiert. In kleinen Gruppen können Einzelpersonen indirekt erkennbar werden — etwa wenn die Fehlzeiten eines Zwei-Personen-Teams ausgewiesen werden. Deshalb werden kleine Gruppen zusammengefasst, und nur Berechtigte erhalten Detaildaten. Besteht ein Betriebsrat, ist er bei technischen Einrichtungen zur Leistungs- und Verhaltenskontrolle zu beteiligen. Am Ende steht die Reflexion: Haben die Maßnahmen gewirkt, und waren die Kennzahlen die richtigen?",
-        "beispiele": [
-          "Maßnahme: Aushilfe im Dezember; Messkriterium: Überstundenquote im Lager unter 4 % bis Ende Januar.",
-          "Fehlzeiten werden nur für Gruppen ab mehreren Personen ausgewiesen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Betriebsrat und Datenschutz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Werden Personaldaten mit technischen Systemen ausgewertet, die Verhalten oder Leistung überwachen können, hat der Betriebsrat ein Mitbestimmungsrecht (§ 87 Abs. 1 Nr. 6 BetrVG). Oft regelt eine Betriebsvereinbarung, welche Auswertungen zulässig sind und ab welcher Gruppengröße Ergebnisse ausgewiesen werden.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli erstellt eine Grafik mit den Fehlzeiten je Team. Das Team „Lasergravur“ besteht aus zwei Personen. Ayla fasst es mit der Stickerei zur „Veredelung“ zusammen, damit niemand Rückschlüsse auf einzelne Kolleginnen ziehen kann.",
-        "typische_fehler": "Kleine Personengruppen durch detaillierte Auswertungen indirekt identifizierbar machen.",
         "verstaendnisfragen": [
-          "Was gehört zu einer gut begründeten Maßnahme? Ziel, Zeitraum und Messkriterium.",
-          "Wie schützt man Personen in kleinen Gruppen? Gruppen zusammenfassen, aggregieren, Zugriff beschränken."
-        ],
-        "pruefungsbezug": "Verbesserungen mit Messkriterien begründen und Datenschutz beachten.",
-        "merksatz": "Maßnahme + Ziel + Frist + Messkriterium; aggregiert und anonym auswerten — kleine Gruppen zusammenfassen."
+          {
+            "frage": "Welche drei Angaben braucht eine begründete Personalmaßnahme?",
+            "antwort": "Ziel, Frist und Messkriterium.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum werden Auswertungen kleiner Teams mit anderen zusammengefasst?",
+            "antwort": "Weil in kleinen Gruppen Einzelne erkennbar wären. Die Zusammenfassung schützt ihre Daten.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

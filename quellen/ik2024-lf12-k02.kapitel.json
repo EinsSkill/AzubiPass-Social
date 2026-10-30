@@ -6,86 +6,422 @@
   "untertitel": "Interne und externe Wege vergleichen, eine diskriminierungsfreie Ausschreibung entwickeln und Arbeitgebermarke und Inklusion berücksichtigen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Der Nettobedarf ist bekannt (Kapitel 1).",
-          "Manche Beschäftigte möchten sich weiterentwickeln."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst interne und externe Beschaffungswege für eine konkrete Stelle nach Kosten, Zeit, Auswahl und Folgen für die Organisation und wählst eine begründete Kombination.",
+        "vorwissen_kurz": "Steht der Bedarf fest, muss MAKEL Studio entscheiden, wo es die passende Person sucht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Im eigenen Haus oder auf dem Arbeitsmarkt",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der **internen Beschaffung** wird die Stelle mit jemandem besetzt, der schon im Unternehmen arbeitet: durch Versetzung, Beförderung, Weiterbildung oder Übernahme von Auszubildenden. Zur internen Deckung zählen auch Mehrarbeit oder eine Aufstockung von Teilzeit. Bei der **externen Beschaffung** sucht das Unternehmen auf dem Arbeitsmarkt: über Stellenanzeigen auf der eigenen Website und in Jobbörsen, die Agentur für Arbeit, Personalvermittlungen, Hochschulkontakte oder Empfehlungen von Beschäftigten.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Stellen, zwei Wege",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stelle",
+              "Beschaffungsweg",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fachkraft Lasergravur",
+                  "intern: Mitarbeiterin aus dem Druck mit Herstellerschulung",
+                  "kennt Produkte und Qualitätsansprüche; Gravur ist neu für alle"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachbesetzung im Druck",
+                  "extern: Anzeige auf Website und Jobbörse, Agentur für Arbeit",
+                  "die interne Besetzung reißt dort eine Lücke"
+                ]
+              },
+              {
+                "zellen": [
+                  "Spitzenbedarf Versand im Dezember",
+                  "extern befristet oder Zeitarbeit",
+                  "Bedarf nur für wenige Wochen"
+                ]
+              }
+            ],
+            "fazit": "Die interne Besetzung der Gravur löst eine Folgebesetzung im Druck aus. Wer intern besetzt, plant die frei werdende Stelle gleich mit.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kombination ist oft die beste Lösung. MAKEL Studio schreibt die Gravurstelle zuerst intern aus, damit Beschäftigte eine Entwicklungschance sehen, und sucht für den Druck parallel extern. So verliert das Unternehmen keine Zeit und zeigt zugleich, dass Weiterentwicklung im eigenen Haus möglich ist.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Personal kann intern oder extern beschafft werden. Intern: innerbetriebliche Ausschreibung, Versetzung, Beförderung, Übernahme von Auszubildenden, Weiterbildung, Mehrarbeit. Vorteile: Die Person kennt Betrieb und Abläufe, die Einarbeitung ist kürzer, Aufstiegschancen motivieren; Nachteile: kleinere Auswahl, die alte Stelle wird frei, wenig neue Impulse. Extern: Stellenportale, eigene Karriereseite, soziale Netzwerke, Agentur für Arbeit, Hochschulen, Personalvermittlung, Empfehlungen. Vorteile: größere Auswahl, neue Ideen; Nachteile: höhere Kosten, längere Einarbeitung, höheres Risiko einer Fehlbesetzung. Besteht ein Betriebsrat, kann er verlangen, dass Stellen vorher innerbetrieblich ausgeschrieben werden.",
-        "beispiele": [
-          "Ein Mitarbeiter aus dem Versand bewirbt sich intern auf die Stelle als Lagerleiter-Stellvertretung.",
-          "Für Lager und Versand schaltet MAKEL eine Anzeige auf einem regionalen Stellenportal."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Interne Ausschreibung und Betriebsrat",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Betriebsrat kann verlangen, dass freie Stellen vor ihrer Besetzung innerbetrieblich ausgeschrieben werden (§ 93 BetrVG). Unterbleibt das, kann er der Einstellung widersprechen. Eine Pflicht, intern zu besetzen, entsteht dadurch nicht.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL sucht eine Person für Lager und Versand. Jonas Weidner schlägt vor, zuerst intern zu fragen — ein Aushilfsstudent ist interessiert. Gleichzeitig veröffentlicht die Personalabteilung die Stelle auf der Karriereseite und bei der Agentur für Arbeit, um eine größere Auswahl zu haben.",
-        "typische_fehler": "Nur externe Wege betrachten und interne Potenziale übersehen.",
         "verstaendnisfragen": [
-          "Nenne einen Vorteil interner Beschaffung. Die Person kennt den Betrieb, die Einarbeitung ist kürzer, Aufstieg motiviert.",
-          "Nenne einen Vorteil externer Beschaffung. Größere Auswahl und neue Impulse."
-        ],
-        "pruefungsbezug": "Interne und externe Beschaffungswege vergleichen.",
-        "merksatz": "Intern: bekannt, schnell, motivierend — aber kleine Auswahl; extern: große Auswahl, neue Ideen — aber teurer und riskanter."
+          {
+            "frage": "Welcher Nachteil entsteht bei einer internen Besetzung fast immer?",
+            "antwort": "Die bisherige Stelle der Person wird frei und muss ihrerseits besetzt werden.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist Zeitarbeit für das Weihnachtsgeschäft eine Option?",
+            "antwort": "Weil der Bedarf nur wenige Wochen dauert. Eine unbefristete Einstellung wäre für die übrige Zeit nicht ausgelastet.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Die Stellenbeschreibung nennt Aufgaben und Anforderungen (Kapitel 1).",
-          "Niemand darf wegen bestimmter persönlicher Merkmale benachteiligt werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du entwickelst aus einer Stellenbeschreibung eine Stellenausschreibung mit allen notwendigen Bestandteilen und formulierst sie so, dass niemand wegen eines im AGG geschützten Merkmals ausgeschlossen wird.",
+        "vorwissen_kurz": "Die Ausschreibung ist oft der erste Kontakt zwischen MAKEL Studio und künftigen Beschäftigten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was hineingehört und was nicht",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine gute Ausschreibung stellt das Unternehmen kurz vor, beschreibt die Aufgaben, nennt die tatsächlich benötigten Kompetenzen, die Bedingungen wie Arbeitszeit, Ort und Beginn und erklärt den Bewerbungsweg. Sie folgt der Stellenbeschreibung, übersetzt sie aber in eine verständliche, ansprechende Sprache. Nach dem {{begriff:agg|AGG}} darf eine Stelle nicht so ausgeschrieben werden, dass Menschen wegen ethnischer Herkunft, Geschlecht, Religion oder Weltanschauung, Behinderung, Alter oder sexueller Identität benachteiligt werden ({{par:agg-11|§ 11 AGG}}).",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Aus der Stellenbeschreibung wird eine Anzeige",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Formulierung für Lager und Versand"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Unternehmen",
+                  "MAKEL Studio gestaltet und veredelt Textilien in Düsseldorf."
+                ]
+              },
+              {
+                "zellen": [
+                  "Stelle",
+                  "Mitarbeiter*in Lager und Versand (m/w/d), Vollzeit, ab 1. März"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufgaben",
+                  "Sie kommissionieren Aufträge mit dem Handscanner, gleichen den Wareneingang mit Lieferscheinen ab und verpacken Sendungen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Kompetenzen",
+                  "Erfahrung im Lager wünschenswert, Staplerschein von Vorteil, gute Deutschkenntnisse für Lieferscheine und Absprachen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bedingungen",
+                  "Frühschicht 6 bis 14:30 Uhr, unbefristet, Einarbeitung im Team"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bewerbung",
+                  "kurz per E-Mail oder Online-Formular an das Personalbüro"
+                ]
+              }
+            ],
+            "fazit": "Jede Anforderung ist mit der Tätigkeit begründet. Alter, Herkunft oder Geschlecht spielen keine Rolle.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Grenze verläuft dort, wo eine Anforderung nicht mehr aus der Tätigkeit folgt. „Gute Deutschkenntnisse für Lieferscheine\" ist begründet, „deutsche Muttersprache\" nicht, weil sie Menschen anderer Herkunft ausschließt, obwohl sie die Arbeit genauso gut erledigen könnten. „Junges Team\" klingt harmlos, kann aber als Hinweis verstanden werden, dass Ältere nicht erwünscht sind. Wer abgelehnt wird und Indizien für eine Benachteiligung vorlegt, kann Entschädigung verlangen; der Arbeitgeber muss dann beweisen, dass kein Verstoß vorlag.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Eine gute Stellenausschreibung leitet sich aus der Stellenbeschreibung ab und enthält: das Unternehmen und den betrieblichen Bezug, die Aufgaben, die tatsächlich benötigten Kompetenzen (Muss- und Kann-Anforderungen), die Arbeitsbedingungen (Arbeitszeit, Ort, Beginn, Vergütungsrahmen, Leistungen) sowie Bewerbungsweg und Ansprechperson. Nach dem Allgemeinen Gleichbehandlungsgesetz (AGG) darf eine Ausschreibung niemanden wegen Rasse oder ethnischer Herkunft, Geschlecht, Religion oder Weltanschauung, Behinderung, Alter oder sexueller Identität benachteiligen (§§ 1, 11 AGG). Deshalb: geschlechtsneutral formulieren (etwa m/w/d), keine Altersgrenzen wie „junges Team sucht bis 30 Jahre“, Sprachanforderungen nur, wenn die Tätigkeit sie erfordert.",
-        "beispiele": [
-          "Gut: „Sie kommissionieren Aufträge mit dem Handscanner und verpacken sie versandfertig.“",
-          "Problematisch: „Wir suchen einen jungen, dynamischen Lagermitarbeiter, Muttersprache Deutsch.“"
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Frist und Entschädigung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Anspruch nach dem AGG muss innerhalb von zwei Monaten nach Zugang der Ablehnung schriftlich geltend gemacht werden (§ 15 Abs. 4 AGG). Wäre die Person auch ohne Benachteiligung nicht eingestellt worden, ist die Entschädigung auf drei Monatsgehälter begrenzt (§ 15 Abs. 2 AGG).",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli entwirft die Anzeige: „Junger Lagerist gesucht, belastbar, deutsche Muttersprache.“ Jonas Weidner korrigiert gemeinsam mit ihm: geschlechtsneutral, keine Altersangabe, statt Muttersprache „gute Deutschkenntnisse für Lieferscheine und Absprachen“ — weil das die Tätigkeit wirklich erfordert. Dazu kommen konkrete Aufgaben, Arbeitszeiten und der Bewerbungsweg.",
-        "typische_fehler": "Wunscheigenschaften ohne Tätigkeitsbezug auflisten oder unzulässige Merkmale verlangen.",
         "verstaendnisfragen": [
-          "Welche Bestandteile hat eine Stellenausschreibung? Unternehmen, Aufgaben, Anforderungen, Bedingungen, Bewerbungsweg.",
-          "Welche Merkmale schützt das AGG? Rasse/ethnische Herkunft, Geschlecht, Religion/Weltanschauung, Behinderung, Alter, sexuelle Identität."
-        ],
-        "pruefungsbezug": "Eine anforderungsbezogene, AGG-konforme Ausschreibung entwickeln.",
-        "merksatz": "Ausschreibung = Unternehmen + Aufgaben + benötigte Kompetenzen + Bedingungen + Bewerbungsweg — neutral und ohne AGG-Merkmale als Ausschlusskriterium."
+          {
+            "frage": "Warum ist „deutsche Muttersprache erforderlich\" problematisch?",
+            "antwort": "Weil die Muttersprache an die Herkunft anknüpft. Für die Tätigkeit reichen ausreichende Deutschkenntnisse, die man auch als Fremdsprache erwerben kann.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Nenne die Bausteine einer Stellenausschreibung.",
+            "antwort": "Unternehmen, Stelle, Aufgaben, benötigte Kompetenzen, Bedingungen und Bewerbungsweg.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Bewerbende vergleichen Arbeitgeber.",
-          "MAKEL hat eine bekannte Marke (LF 9)."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wie eine glaubwürdige Arbeitgebermarke entsteht, wählst digitale Kanäle passend zur Zielgruppe und prüfst Werbeversprechen gegen den Arbeitsalltag.",
+        "vorwissen_kurz": "Fachkräfte haben oft die Wahl. MAKEL Studio muss zeigen, warum sich die Arbeit dort lohnt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Versprechen, die im Alltag halten",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Arbeitgebermarke** ist das Bild, das Beschäftigte und Bewerbende von einem Unternehmen als Arbeitgeber haben. Sie entsteht aus dem, was das Unternehmen verspricht, und vor allem aus dem, was Beschäftigte erleben und weitererzählen. Digitale Kanäle machen dieses Bild sichtbar: die Karriereseite, Beiträge in sozialen Netzwerken, Bewertungsportale für Arbeitgeber. Wirkung hat eine Marke nur, wenn Versprechen und Alltag zusammenpassen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Kanäle passend zur Zielgruppe",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zielgruppe",
+              "geeigneter Kanal",
+              "Botschaft von MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Schulabgänger für die Ausbildung",
+                  "Instagram, Schulbesuche, Praktika",
+                  "Azubis zeigen ihren Alltag in kurzen Videos"
+                ]
+              },
+              {
+                "zellen": [
+                  "erfahrene Fachkräfte im Druck",
+                  "Jobbörsen, berufliche Netzwerke, Empfehlungen",
+                  "moderne Maschinen, feste Ansprechpersonen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lagerkräfte aus der Region",
+                  "Agentur für Arbeit, lokale Jobbörse, Aushang",
+                  "feste Frühschicht, gute Erreichbarkeit mit Bus und Bahn"
+                ]
+              }
+            ],
+            "fazit": "Nicht jeder Kanal erreicht jede Zielgruppe. Die Botschaft muss zu dem passen, was die Zielgruppe wirklich interessiert.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ehrlichkeit zahlt sich aus. Wirbt MAKEL Studio mit flexiblen Arbeitszeiten, obwohl im Lager feste Schichten gelten, kommen Bewerbende mit falschen Erwartungen und gehen nach kurzer Zeit wieder. Besser ist es, die festen Schichten offen zu nennen und zu erklären, was sie bieten: planbare Freizeit am Nachmittag. Die Beschäftigten sind dabei die glaubwürdigsten Botschafter; Empfehlungen aus dem Team bringen oft besonders passende Bewerbungen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Arbeitgebermarke (Employer Branding) beschreibt, wie ein Unternehmen als Arbeitgeber wahrgenommen wird und welches Versprechen es Beschäftigten macht: Arbeitsklima, Entwicklungsmöglichkeiten, Werte, Arbeitszeitmodelle, Bezahlung. Eine glaubwürdige Arbeitgebermarke hilft, passende Bewerbungen zu gewinnen und Beschäftigte zu halten. Digitale Kanäle — Karriereseite, Bewertungsplattformen, soziale Netzwerke — machen sie sichtbar. Entscheidend ist, dass Versprechen und Alltag übereinstimmen; sonst kündigen neue Beschäftigte schnell wieder.",
-        "beispiele": [
-          "MAKEL zeigt auf der Karriereseite kurze Videos aus Lager und Veredelung.",
-          "Azubis berichten in sozialen Netzwerken von ihrem Alltag."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Bewertungsportale",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auf Bewertungsportalen berichten aktuelle und ehemalige Beschäftigte anonym über ihren Arbeitgeber. Unternehmen können darauf antworten. Sachliche Antworten auf Kritik wirken oft überzeugender als ausschließlich positive Bewertungen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Marlene Voss schlägt vor, die Stellenanzeige mit einem kurzen Video von Jonas zu ergänzen, der seinen Arbeitsplatz zeigt. Yuki Bergmann ist einverstanden — unter der Bedingung, dass nichts beschönigt wird: „Wenn wir Flexibilität versprechen, müssen die Schichtpläne das auch hergeben.“",
-        "typische_fehler": "Arbeitgebermarke mit schöner Werbung verwechseln, die der Alltag nicht einlöst.",
         "verstaendnisfragen": [
-          "Was ist eine Arbeitgebermarke? Das Bild und Versprechen eines Unternehmens als Arbeitgeber.",
-          "Warum muss sie glaubwürdig sein? Sonst passen Erwartungen und Alltag nicht zusammen, und neue Beschäftigte gehen wieder."
-        ],
-        "pruefungsbezug": "Arbeitgebermarke und digitale Ansprache begründet einsetzen.",
-        "merksatz": "Arbeitgebermarke = glaubwürdiges Versprechen als Arbeitgeber — sichtbar über digitale Kanäle, eingelöst im Alltag."
+          {
+            "frage": "Was passiert, wenn die Arbeitgebermarke mehr verspricht, als der Alltag hält?",
+            "antwort": "Neue Beschäftigte sind enttäuscht und gehen oft schon in der Probezeit wieder. Der Ruf als Arbeitgeber leidet.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Welcher Kanal eignet sich für Schulabgänger?",
+            "antwort": "Kanäle, die sie selbst nutzen, etwa soziale Netzwerke, dazu Schulbesuche und Praktika.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Bewerbende haben unterschiedliche Voraussetzungen.",
-          "Nicht alle sprechen Deutsch als Erstsprache."
+        "darstellung": "vollfassung",
+        "ziel": "Du gestaltest eine Ausschreibung barrierearm und inklusiv, beachtest die Prüfpflicht bei schwerbehinderten Bewerbenden und formulierst eine sachliche fremdsprachige Kurzbeschreibung der Tätigkeit.",
+        "vorwissen_kurz": "Eine Ausschreibung erreicht nur die Menschen, die sie verstehen und sich angesprochen fühlen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Offen für alle, die die Arbeit können",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Inklusiv** ausschreiben heißt, keine unnötigen Hürden aufzubauen: klare, einfache Sätze, keine Anforderungen ohne Bezug zur Tätigkeit, ein barrierearmes Bewerbungsformular und ein ausdrücklicher Hinweis, dass Bewerbungen von Menschen mit Behinderung willkommen sind. Für Stellen, bei denen gute Deutschkenntnisse nicht zwingend sind, kann eine **fremdsprachige Kurzbeschreibung** Menschen erreichen, die gerade Deutsch lernen. Sie beschreibt sachlich die Tätigkeit und die echten Anforderungen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Ausschreibung prüfen",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüffrage",
+              "Lagerstelle bei MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Sind alle Anforderungen durch die Tätigkeit begründet?",
+                  "ja; Staplerschein nur „von Vorteil\""
+                ]
+              },
+              {
+                "zellen": [
+                  "Ist die Sprache einfach und klar?",
+                  "kurze Sätze, keine Fachbegriffe ohne Erklärung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lässt sich die Bewerbung barrierearm einreichen?",
+                  "E-Mail oder Formular, das mit Screenreader nutzbar ist"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wird Unterstützung angeboten?",
+                  "Sprachkurs, Arbeitsplatzanpassung nach Bedarf"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wurden Agentur für Arbeit und Schwerbehindertenvertretung einbezogen?",
+                  "ja, vor der Veröffentlichung"
+                ]
+              }
+            ],
+            "fazit": "Die Prüfung zeigt, ob die Ausschreibung wirklich alle erreicht, die die Arbeit leisten können.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die englische Kurzbeschreibung übersetzt nicht jeden Satz, sondern das Wesentliche: Tätigkeit, Anforderungen, Unterstützung. Sie darf keine Anforderungen enthalten, die in der deutschen Fassung fehlen, und keine weglassen. Wer „Basic German is helpful\" schreibt, muss im Auswahlverfahren auch Bewerbende mit Grundkenntnissen ernsthaft berücksichtigen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Inklusive Personalgewinnung öffnet Stellen für Menschen mit unterschiedlichen Voraussetzungen: klare, einfache Sprache, barrierearme Online-Bewerbung, Hinweise auf mögliche Arbeitsplatzanpassungen, Ermutigung von Menschen mit Behinderung. Arbeitgeber sind gesetzlich verpflichtet zu prüfen, ob freie Stellen mit schwerbehinderten Menschen besetzt werden können. Für Fachkräfte aus dem Ausland oder internationale Teams kann eine Ausschreibung auch auf Englisch sinnvoll sein — sie beschreibt dann Tätigkeit und tatsächlich benötigte Sprachkenntnisse sachlich, ohne Herkunftsanforderungen.",
-        "beispiele": [
-          "„Your tasks: picking orders with a hand scanner, packing parcels, checking delivery notes.“",
-          "„Basic German is helpful for team communication; we offer a language course.“"
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Vorstellungsgespräch bei schwerbehinderten Bewerbenden",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Öffentliche Arbeitgeber müssen schwerbehinderte Bewerbende grundsätzlich zum Vorstellungsgespräch einladen (§ 165 SGB IX). Private Arbeitgeber wie MAKEL Studio trifft diese Pflicht nicht, wohl aber die Prüfpflicht nach § 164 SGB IX und das Benachteiligungsverbot.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die Stelle für Lager und Versand soll auch auf Englisch erscheinen. Luca schreibt: „You will pick and pack orders for our streetwear label, check incoming goods against delivery notes and prepare parcels for shipping. Basic German is helpful; we support you with a language course.“ Jonas prüft, ob die Aufgaben stimmen.",
-        "typische_fehler": "Sprach- oder Herkunftsanforderungen erfinden, die die Tätigkeit nicht verlangt.",
         "verstaendnisfragen": [
-          "Was macht eine Ausschreibung inklusiver? Einfache Sprache, barrierearme Bewerbung, Hinweise auf Unterstützung.",
-          "Was gehört in eine englische Kurzbeschreibung? Konkrete Tätigkeiten und tatsächlich nötige Anforderungen."
-        ],
-        "pruefungsbezug": "Inklusive und fremdsprachige Ansprache sachgerecht gestalten.",
-        "merksatz": "Inklusiv ausschreiben: klar, barrierearm, offen — Fremdsprache sachlich: Tätigkeit und echte Anforderungen."
+          {
+            "frage": "Warum darf die englische Kurzbeschreibung keine zusätzlichen Anforderungen enthalten?",
+            "antwort": "Weil sonst Bewerbende je nach Sprache unterschiedlich behandelt würden. Beide Fassungen müssen dieselbe Stelle beschreiben.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Was müssen Arbeitgeber bei jeder freien Stelle in Bezug auf schwerbehinderte Menschen prüfen?",
+            "antwort": "Ob die Stelle mit schwerbehinderten Menschen besetzt werden kann, und dazu frühzeitig Kontakt mit der Agentur für Arbeit aufnehmen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
