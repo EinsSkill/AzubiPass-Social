@@ -6,86 +6,453 @@
   "untertitel": "Vom bestätigten Auftrag zur freigegebenen Produktion — mit sauberen Daten, abgestimmter Kapazität und klaren Nachrichten, auch auf Englisch.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Nach der Bestellung wird der Auftrag im System erfasst und bestätigt.",
-          "Fehler bei der Erfassung wandern durch alle Abteilungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du erfasst einen bestätigten Auftrag vollständig, richtig und eindeutig im System, erkennst widersprüchliche oder fehlende Angaben und unterscheidest erfasste von freigegebenen Aufträgen.",
+        "vorwissen_kurz": "Die Agentur hat 120 Hoodies bestellt, MAKEL Studio hat bestätigt. Jetzt müssen die Daten so ins System, dass alle damit arbeiten können.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vollständig, richtig, eindeutig",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:auftragsbestaetigung|Auftragsbestätigung}} hält fest, was vereinbart ist; die Erfassung im System übernimmt es für alle Abteilungen. **Datenqualität** heißt: Alle nötigen Angaben sind vorhanden (vollständig), sie stimmen mit der Vereinbarung überein (richtig) und lassen nur eine Deutung zu (eindeutig). ==Erfasst heißt noch nicht freigegeben.== Freigegeben wird ein Auftrag erst, wenn alle Voraussetzungen für die Produktion geklärt sind.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Fehler in der ersten Erfassung",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Feld",
+              "erfasst",
+              "Problem",
+              "korrigiert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Menge",
+                  "120",
+                  "Größen summieren sich auf 110 (S 20, M 40, L 30, XL 20)",
+                  "L 40 laut Bestellung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Farbe",
+                  "„dunkel\"",
+                  "nicht eindeutig: schwarz oder navy?",
+                  "schwarz laut Auftragsbestätigung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Liefertermin",
+                  "05/15",
+                  "Format mehrdeutig",
+                  "15. Mai 2026"
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckfreigabe",
+                  "leer",
+                  "Status fehlt",
+                  "„Druckdatei liegt vor, Freigabe des Kunden fehlt\""
+                ]
+              }
+            ],
+            "fazit": "Jeder dieser Fehler hätte später Folgen gehabt: zu wenige Rohlinge, falsche Farbe, Missverständnisse beim Termin. Die Prüfung bei der Erfassung kostet Minuten, ein Fehldruck Tage.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gute Erfassung prüft gegen die Quelle. Der Vertrieb vergleicht jedes Feld mit der Auftragsbestätigung, rechnet die Größen nach und schreibt Daten so, dass sie niemand missverstehen kann. Fehlt eine Angabe, wird sie nicht geschätzt, sondern beim Kunden erfragt und bis dahin als offen markiert. So weiß die Veredelung sofort, dass sie noch nicht drucken darf.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Auftragsbestätigung hält fest, was vereinbart ist: Kunde, Artikel, Ausführung, Menge und Größen, Preis, Termin, Liefer- und Zahlungsbedingungen. Im Warenwirtschaftssystem wird der Auftrag mit denselben Daten angelegt. Datenqualität heißt: vollständig, richtig, eindeutig und aktuell. Personenbezogene Daten des Kunden (etwa Ansprechpartner) werden nur so weit erfasst, wie der Auftrag sie braucht.",
-        "beispiele": [
-          "Die Größenverteilung fehlt im System: Das Lager kann keine Rohlinge kommissionieren.",
-          "Die Lieferadresse ist eine alte Adresse: Die Ware geht an die falsche Stelle."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Stammdaten und Bewegungsdaten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kundenname, Anschrift und Zahlungsbedingungen sind Stammdaten, die für viele Aufträge gelten und nur einmal gepflegt werden. Artikel, Menge und Termin eines Auftrags sind Bewegungsdaten. Ein Fehler in den Stammdaten wirkt auf jeden künftigen Auftrag; deshalb werden sie besonders sorgfältig geprüft.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Marlene erfasst den Agenturauftrag: 120 Hoodies schwarz, Größen S 20 / M 40 / L 40 / XL 20, Logo einfarbig Brust, Liefertermin 15. Mai frei Haus, Preis laut Bestätigung. Sie vergleicht die Erfassung mit der Bestellung und der Auftragsbestätigung, bevor sie den Auftrag weitergibt.",
-        "typische_fehler": "Eine erfasste Bestellung wird mit einer freigegebenen Produktion gleichgesetzt. Erfasst heißt nur: Der Auftrag steht im System.",
         "verstaendnisfragen": [
-          "Was bedeutet Datenqualität bei der Auftragserfassung? Die Daten sind vollständig, richtig, eindeutig und aktuell.",
-          "Warum wird die Erfassung mit der Bestellung abgeglichen? Damit Abweichungen nicht unbemerkt in Produktion und Versand gelangen."
-        ],
-        "pruefungsbezug": "Bei Erfassungsfällen die Pflichtangaben abhaken und Abweichungen zur Bestellung benennen.",
-        "merksatz": "Die Auftragserfassung übernimmt alle vereinbarten Angaben vollständig, richtig und eindeutig; erfasst heißt noch nicht zur Produktion freigegeben."
+          {
+            "frage": "Warum ist ein erfasster Auftrag noch nicht freigegeben?",
+            "antwort": "Weil erst geprüft werden muss, ob Material, Kapazität und alle Pflichtangaben wie die Druckfreigabe vorliegen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Wie gehst du mit einer fehlenden Angabe bei der Erfassung um?",
+            "antwort": "Nicht schätzen, sondern beim Kunden erfragen und den Auftrag bis dahin als offen markieren.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Die Veredelung hat begrenzte Maschinen- und Personalkapazität.",
-          "Der Vertrieb muss vor der Terminzusage wissen, was machbar ist."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst vor der Freigabe gemeinsam mit der Veredelung Material, Kapazität und Freigaben und legst für jede Übergabe fest, welche Daten weitergegeben werden dürfen und welche nicht.",
+        "vorwissen_kurz": "Der Auftrag geht vom Vertrieb an Veredelung und Versand. An jeder Übergabe können Termine wackeln und Daten an die falsche Stelle geraten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was an der Schnittstelle geklärt wird",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Vor der Freigabe prüfen Vertrieb und Veredelung gemeinsam: Sind genug Rohlinge in den richtigen Größen da oder rechtzeitig bestellbar? Ist bis zum Termin freie Druckkapazität vorhanden? Liegt die Druckfreigabe des Kunden vor? An dieser {{begriff:schnittstelle|Schnittstelle}} entscheidet sich, ob der Termin hält. Gleichzeitig gilt der Datenschutz: Jede Stelle erhält nur die Daten, die sie für ihre Aufgabe braucht.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Datenfluss beim Agenturauftrag",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Übergabe",
+              "benötigte Daten",
+              "nicht weitergegeben"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Vertrieb → Veredelung",
+                  "Artikel, Farbe, Größen, Motivdatei, Druckposition, Termin",
+                  "Preise, Zahlungsbedingungen, Bonitätsauskunft"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb → Lager und Versand",
+                  "Menge, Lieferadresse, Ansprechperson für die Annahme, Termin",
+                  "Bonitätsauskunft, Preise"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versand → Transportdienstleister",
+                  "Name, Lieferadresse, Telefonnummer der Ansprechperson für die Zustellung",
+                  "Auftragsinhalt, Preise"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb → Buchhaltung",
+                  "Rechnungsadresse, Preise, Zahlungsbedingungen",
+                  "Motivdatei"
+                ]
+              }
+            ],
+            "fazit": "Jede Stelle erhält, was sie für ihre Aufgabe braucht. Die Bonitätsauskunft bleibt im Vertrieb und in der Buchhaltung; der Paketdienst sieht weder Preise noch Inhalt.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Datenweitergabe an der Übergabe hat zwei Seiten. Fehlt der Veredelung die Größenverteilung, druckt sie falsch. Erhält der Paketdienst die Bonitätsauskunft oder die Preise, werden Daten ohne Zweck weitergegeben. Grundlage für die Verarbeitung der Kundendaten ist die Erfüllung des Vertrags; sie deckt nur, was dafür erforderlich ist. Die Telefonnummer der Ansprechperson darf an den Paketdienst gehen, wenn sie für die Zustellung gebraucht wird, nicht aber für Werbung genutzt werden.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Bevor ein Termin zugesagt oder ein Auftrag freigegeben wird, prüft der Vertrieb mit der Veredelung: Sind Rohlinge vorhanden oder rechtzeitig lieferbar? Ist Druckkapazität frei? Liegt eine freigegebene Druckdatei vor? Erst wenn alle Pflichtangaben geklärt sind, wird der Auftrag zur Produktion freigegeben. Fehlt eine Pflichtangabe — etwa die Freigabe des Druckmotivs —, wird nicht ‚auf Verdacht‘ produziert.",
-        "beispiele": [
-          "Im Fallpaket P1 ist die Druckmaschine im Planungszeitraum mit 21 von 24 Stunden belegt. Ein weiterer Auftrag mit 6 Stunden Maschinenzeit passt nicht mehr hinein.",
-          "Die Druckdatei ist da, aber vom Kunden nicht freigegeben: Druck nicht starten."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wie lange Auftragsdaten bleiben",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nach Abschluss des Auftrags werden die Daten nicht sofort gelöscht. Rechnungen und Buchungsbelege müssen nach Handels- und Steuerrecht mehrere Jahre aufbewahrt werden, empfangene und versandte Geschäftsbriefe ebenfalls. Daten, die keiner Aufbewahrungspflicht unterliegen, etwa die Durchwahl einer Ansprechperson für die Zustellung, werden gelöscht, sobald sie nicht mehr gebraucht werden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Der Liefertermin 15. Mai steht, die Druckdatei ist noch nicht freigegeben. Die Veredelung braucht nach Freigabe drei Arbeitstage. Marlene und Deniz legen fest: Spätester Freigabetermin ist der 8. Mai. Marlene informiert die Agentur darüber; bis dahin wird nur vorbereitet (Rohlinge bereitstellen), nicht gedruckt.",
-        "typische_fehler": "Es wird gedruckt, bevor die Druckdatei freigegeben ist, ‚damit der Termin hält‘. Ein Fehldruck kostet dann Rohlinge, Zeit und Vertrauen.",
         "verstaendnisfragen": [
-          "Welche Angaben müssen vor der Produktionsfreigabe geklärt sein? Menge, Größen, Ausführung, freigegebenes Motiv und Termin.",
-          "Warum wird ohne Druckfreigabe nicht produziert? Weil ein Fehldruck Material und Zeit kostet und nicht dem Vertrag entspricht."
-        ],
-        "pruefungsbezug": "Machbarkeitsfragen beziehen Material, Kapazität und Freigaben ein — nicht nur den Wunschtermin.",
-        "merksatz": "Freigegeben wird erst, wenn Material, Kapazität und alle Pflichtangaben einschließlich der Druckfreigabe geklärt sind."
+          {
+            "frage": "Braucht die Veredelung die Zahlungsbedingungen des Kunden?",
+            "antwort": "Nein. Sie braucht Artikel, Größen, Motiv, Position und Termin. Zahlungsdaten bleiben im Vertrieb und in der Buchhaltung.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was muss vor der Produktionsfreigabe geklärt sein?",
+            "antwort": "Material, freie Kapazität bis zum Termin und alle Pflichtangaben einschließlich der Druckfreigabe des Kunden.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Ein Auftrag durchläuft mehrere Stationen.",
-          "Jede Station sollte wissen, wo der Auftrag gerade steht."
+        "darstellung": "vollfassung",
+        "ziel": "Du nutzt einen gemeinsamen Auftragsstatus und die Lieferunterlagen, um den Stand eines Auftrags zu überwachen, Verzögerungen früh zu erkennen und widerspruchsfreie Auskünfte zu geben.",
+        "vorwissen_kurz": "Die Agentur ruft an und fragt, wo ihre Hoodies sind. Die Antwort muss stimmen, egal wer ans Telefon geht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Status für alle",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein **gemeinsamer Auftragsstatus** im System zeigt jederzeit, wo ein Auftrag steht: erfasst, freigegeben, in Veredelung, versandbereit, versendet. Jede Abteilung setzt den Status für ihren Schritt. So kann jeder, der eine Anfrage beantwortet, denselben Stand sehen. Der {{begriff:lieferschein|Lieferschein}} begleitet die Ware und nennt Inhalt und Menge, aber keine Preise. Mit der Sendungsnummer des Transportdienstleisters lässt sich der Weg der Ware verfolgen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Statusüberwachung beim Agenturauftrag",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datum",
+              "Status",
+              "Soll laut Plan",
+              "Abweichung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "2. Mai",
+                  "erfasst",
+                  "erfasst",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "8. Mai",
+                  "erfasst, Freigabe fehlt",
+                  "freigegeben",
+                  "Freigabe zwei Tage überfällig"
+                ]
+              },
+              {
+                "zellen": [
+                  "10. Mai",
+                  "freigegeben",
+                  "in Veredelung",
+                  "ein Tag Verzug"
+                ]
+              },
+              {
+                "zellen": [
+                  "13. Mai",
+                  "versandbereit",
+                  "versandbereit",
+                  "aufgeholt"
+                ]
+              },
+              {
+                "zellen": [
+                  "14. Mai",
+                  "versendet, Sendungsnummer im System",
+                  "versendet",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Der Status zeigte die überfällige Freigabe sofort. Weil der Vertrieb nachfasste und die Veredelung umplante, wurde der Termin am 15. Mai gehalten.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ohne gemeinsamen Status entstehen widersprüchliche Auskünfte: Der Vertrieb sagt „ist in Arbeit\", die Veredelung weiß nichts von dem Auftrag, und der Kunde verliert Vertrauen. Mit Status und festen Terminen für jeden Schritt fällt eine Verzögerung auf, bevor sie den Liefertermin gefährdet. Wichtig ist, dass jede Abteilung den Status sofort aktualisiert; ein veralteter Status ist schlimmer als keiner.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Ein gemeinsamer Auftragsstatus im System — etwa ‚erfasst‘, ‚freigegeben‘, ‚in Veredelung‘, ‚versandbereit‘, ‚versendet‘ — macht den Stand für alle sichtbar. Lieferunterlagen sind Lieferschein (Inhalt und Menge, ohne Preise), gegebenenfalls Versandetikett und Packliste. Der Vertrieb überwacht wichtige Termine und meldet Abweichungen früh an den Kunden.",
-        "beispiele": [
-          "Status ‚versandbereit‘ am 13. Mai: Der Versand weiß, dass er die Tour einplanen kann.",
-          "Packliste je Karton mit Größen: Der Kunde kann die Lieferung schnell prüfen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Packliste und Lieferschein",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei größeren Sendungen ergänzt eine Packliste den Lieferschein: Sie zeigt, welche Größen in welchem Karton liegen. Der Kunde kann so beim Wareneingang schnell prüfen, ob alles angekommen ist.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Agentur ruft an: ‚Wo steht unser Auftrag?‘ Marlene sieht im System den Status ‚in Veredelung, 80 von 120 gedruckt‘ und den geplanten Versandtag. Sie gibt eine verlässliche Auskunft, statt in der Veredelung nachzufragen.",
-        "typische_fehler": "Der Status wird nur mündlich weitergegeben. Dann gibt der Vertrieb widersprüchliche Auskünfte.",
         "verstaendnisfragen": [
-          "Welche Angaben enthält ein Lieferschein? Lieferant, Empfänger, Artikel und Mengen — keine Preise.",
-          "Wozu dient ein gemeinsamer Auftragsstatus? Damit alle Beteiligten denselben, aktuellen Stand sehen und Auskünfte übereinstimmen."
-        ],
-        "pruefungsbezug": "Bei Schnittstellenproblemen einen gemeinsamen, gepflegten Status mit Verantwortlichkeit als Lösung nennen.",
-        "merksatz": "Ein gemeinsamer Auftragsstatus macht den Stand für alle sichtbar; Lieferschein und Packliste begleiten die Ware, ohne Preise."
+          {
+            "frage": "Warum enthält der Lieferschein keine Preise?",
+            "antwort": "Weil er Inhalt und Menge der Sendung dokumentiert. Preise stehen in der Rechnung und gehen Lager und Empfangspersonal nichts an.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wozu dient ein gemeinsamer Auftragsstatus?",
+            "antwort": "Damit alle denselben Stand sehen, Verzögerungen früh auffallen und Kunden widerspruchsfreie Auskünfte erhalten.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Geschäftskunden erwarten klare, höfliche und knappe Nachrichten.",
-          "Mit internationalen Kunden wird oft auf Englisch kommuniziert."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst eine Rückfrage oder Bestätigung an einen Kunden mit Auftrag, fehlender Information, Frist und Folge, auch auf Englisch, und berücksichtigst dabei eindeutige Datumsangaben und kulturelle Unterschiede.",
+        "vorwissen_kurz": "Die Druckfreigabe fehlt, und der Kunde sitzt in den Niederlanden. Die Nachricht muss klar sein, damit er sofort handeln kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Bausteine für jede Rückfrage",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine wirksame Rückfrage nennt den **Auftrag**, die **fehlende Information**, eine **Frist** und die **Folge**, wenn die Frist nicht eingehalten wird. Mit internationalen Kunden gelten dieselben Regeln. Dazu kommt ein eindeutiges Datumsformat, weil „05/08\" in den USA den 8. Mai und in Europa den 5. August bedeuten kann; der Monat wird deshalb ausgeschrieben. Und es lohnt sich, auf {{begriff:interkulturelle-kommunikation|kulturelle Unterschiede}} zu achten, etwa wie direkt Bitten formuliert werden.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bestätigung nach Eingang der Freigabe",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Deutsch",
+              "Englisch"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Dank und Bezug",
+                  "Vielen Dank für die Freigabe zu Auftrag 2026-0412.",
+                  "Thank you for approving the print proof for order no. 2026-0412."
+                ]
+              },
+              {
+                "zellen": [
+                  "Was jetzt passiert",
+                  "Wir beginnen morgen mit dem Druck.",
+                  "We will start printing tomorrow."
+                ]
+              },
+              {
+                "zellen": [
+                  "Termin",
+                  "Die Lieferung erfolgt wie vereinbart am 15. Mai 2026.",
+                  "Delivery will take place as agreed on 15 May 2026."
+                ]
+              },
+              {
+                "zellen": [
+                  "Nächster Schritt",
+                  "Die Sendungsnummer erhalten Sie am Versandtag.",
+                  "You will receive the tracking number on the day of dispatch."
+                ]
+              },
+              {
+                "zellen": [
+                  "Gruß",
+                  "Freundliche Grüße",
+                  "Kind regards"
+                ]
+              }
+            ],
+            "fazit": "Auch eine Bestätigung folgt einem klaren Aufbau. Der Kunde weiß, was passiert, wann geliefert wird und was er als Nächstes erhält.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Klarheit ist höflich. Eine vage Bitte wie „melden Sie sich bei Gelegenheit\" wirkt freundlich, lässt den Kunden aber im Unklaren und kostet am Ende Zeit. In manchen Kulturen werden Bitten indirekter formuliert, in anderen sehr direkt; in der Geschäftskorrespondenz mit niederländischen Partnern etwa wird Direktheit meist geschätzt. Im Zweifel hilft eine freundliche, aber eindeutige Formulierung mit „Could you please …\" und einem konkreten Datum.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Eine gute Rückfrage oder Bestätigung nennt das Thema im Betreff, bezieht sich auf den Auftrag, sagt klar, was fehlt oder was gilt, nennt eine Frist und erklärt kurz die Folge. Auf Englisch gilt dasselbe; höfliche Standardformeln helfen: ‚Could you please confirm …?‘, ‚We need your approval by …‘, ‚Otherwise, the delivery date may be delayed.‘ Bei internationalen Kunden auf Datumsformat (15 May 2026 statt 05/15) und Zeitzonen achten.",
-        "beispiele": [
-          "Subject: Order 2026-0412 – print approval needed",
-          "‚To keep the delivery date of 15 May, we need your approval of the print file by 8 May.‘"
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Britisches und amerikanisches Englisch",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In britischem Englisch steht der Tag vor dem Monat (15 May 2026), in amerikanischem der Monat vor dem Tag (May 15, 2026). Wer den Monat ausschreibt, ist in beiden Varianten eindeutig.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Ein Kunde aus Amsterdam hat 200 Shirts bestellt; die Druckfreigabe fehlt. Marlene schreibt: ‚Dear Ms de Vries, thank you for your order no. 2026-0412. To start printing, we still need your approval of the attached print proof. Could you please confirm it by 8 May? Otherwise we cannot guarantee the delivery date of 15 May. Kind regards, Marlene Voß‘",
-        "typische_fehler": "Die Nachricht beschreibt nur ein Problem, aber keine Frist und keine Folge. Dann antwortet der Kunde zu spät oder gar nicht.",
         "verstaendnisfragen": [
-          "Welche Elemente gehören in eine Rückfrage zur fehlenden Freigabe? Bezug auf den Auftrag, was fehlt, bis wann, und was passiert, wenn es fehlt.",
-          "Warum schreibt man im internationalen Verkehr ‚15 May 2026‘? Weil Zahlenformate wie 05/06 in verschiedenen Ländern unterschiedlich gelesen werden."
-        ],
-        "pruefungsbezug": "Bei Formulierungsaufgaben zählt der Inhalt: fehlende Information, Frist, Folge — in höflicher Form. Es gibt mehrere richtige Formulierungen.",
-        "merksatz": "Eine Rückfrage nennt Auftrag, fehlende Information, Frist und Folge — auch auf Englisch klar, höflich und mit eindeutigem Datum."
+          {
+            "frage": "Welche vier Bausteine gehören in eine Rückfrage wegen einer fehlenden Freigabe?",
+            "antwort": "Auftrag, fehlende Information, Frist und Folge.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum wird der Monat in internationalen Nachrichten ausgeschrieben?",
+            "antwort": "Weil Zahlenformate wie 05/08 je nach Land unterschiedlich gelesen werden.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

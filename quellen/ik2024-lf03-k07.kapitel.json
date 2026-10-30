@@ -6,86 +6,447 @@
   "untertitel": "Messen, was gut läuft, Ursachen statt Vermutungen finden und Maßnahmen so wählen, dass Kunde und MAKEL profitieren.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Kunden beurteilen nicht nur das Produkt, sondern den ganzen Ablauf.",
-          "Ein guter Auftragsprozess ist schnell, verlässlich und fehlerarm."
+        "darstellung": "vollfassung",
+        "ziel": "Du beschreibst, was einen guten Auftragsprozess aus Kunden- und Unternehmenssicht ausmacht, und begründest, warum die Bindung bestehender Kunden für MAKEL Studio besonders wertvoll ist.",
+        "vorwissen_kurz": "Ein Kunde erinnert sich nicht nur an den Hoodie, sondern an alles, was zwischen Anfrage und Lieferung passiert ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Sichtweisen auf denselben Ablauf",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kunden beurteilen den ganzen Auftragsprozess: Stimmen die Auskünfte? Halten die Termine? Ist die Lieferung fehlerfrei? Wird ein Problem schnell gelöst? {{begriff:kundenbindung|Kundenbindung}} entsteht, wenn diese Erwartungen immer wieder erfüllt werden. Für MAKEL Studio bedeutet derselbe Ablauf: wenig Rückfragen, planbare Kapazität, keine Kosten für Nacherfüllung und wiederkehrende Aufträge. Gute Prozesse dienen also beiden Seiten.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was ein verlorener Stammkunde kostet",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "Boutique Nordlicht"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Aufträge pro Jahr",
+                  "6"
+                ]
+              },
+              {
+                "zellen": [
+                  "durchschnittlicher Auftragswert",
+                  "3.000 € netto"
+                ]
+              },
+              {
+                "zellen": [
+                  "Umsatz pro Jahr",
+                  "18.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Deckungsbeitrag bei 35 %",
+                  "6.300 € pro Jahr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufwand, eine vergleichbare Neukundin zu gewinnen",
+                  "Messebesuch, Muster, Angebote, Bonitätsprüfung"
+                ]
+              }
+            ],
+            "fazit": "Geht eine Stammkundin wegen schlechter Erfahrungen verloren, fehlen MAKEL Studio jedes Jahr rund 6.300 € Deckungsbeitrag. Eine neue Kundin zu gewinnen, kostet meist mehr Aufwand als eine bestehende zu halten.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kundenbindung entsteht selten durch große Gesten, sondern durch Verlässlichkeit im Alltag. Eine Boutique, die dreimal hintereinander pünktlich und fehlerfrei beliefert wurde, verzeiht einen Fehler eher, wenn er schnell und fair gelöst wird. Eine Boutique, die widersprüchliche Auskünfte bekommt, sucht sich still einen anderen Lieferanten. Deshalb lohnt es sich, den Auftragsprozess regelmäßig zu prüfen, auch wenn sich niemand beschwert.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Aus Kundensicht zählen: verlässliche Auskünfte, eingehaltene Termine, fehlerfreie Lieferungen und eine schnelle Lösung, wenn doch etwas schiefgeht. Aus Unternehmenssicht kommen Kosten, Aufwand und Zahlungseingang hinzu. Kundenzufriedenheit entsteht, wenn die Erwartung erfüllt oder übertroffen wird. Zufriedene Kunden bestellen eher wieder, empfehlen weiter und sind weniger preisempfindlich — Kundenbindung ist meist günstiger als Neukundengewinnung. Nachhaltige Leistungsangebote, etwa Mehrwegverpackung oder Rücknahme von Musterteilen, können zur Bindung beitragen.",
-        "beispiele": [
-          "Eine Boutique bestellt seit Jahren, weil MAKEL Liefertermine zuverlässig einhält.",
-          "Eine Agentur wechselt den Anbieter, nachdem sie dreimal unterschiedliche Auskünfte zum Lieferstand bekommen hat."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kundenzufriedenheit und Kundenbindung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zufriedenheit ist ein Gefühl nach einem Auftrag, Bindung ist das Verhalten über viele Aufträge. Zufriedene Kunden wechseln trotzdem, wenn ein Konkurrent günstiger ist. Gebunden sind Kunden, die Vertrauen haben, weil MAKEL Studio verlässlich ist und ihre Bedürfnisse kennt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "In Kundengesprächen hört Marlene mehrfach: ‚Ihre Ware ist super, aber man weiß nie genau, wann sie kommt.‘ Das Produkt überzeugt, der Ablauf nicht. Daraus wird ein Verbesserungsthema: verlässliche Lieferauskünfte.",
-        "typische_fehler": "Kundenzufriedenheit wird nur am Produkt gemessen. Oft entscheidet der Ablauf.",
         "verstaendnisfragen": [
-          "Was gehört aus Kundensicht zu einem guten Auftragsprozess? Verlässliche Auskünfte, eingehaltene Termine, fehlerfreie Lieferung, schnelle Problemlösung.",
-          "Warum lohnt Kundenbindung? Weil Stammkunden meist günstiger zu halten sind als neue zu gewinnen."
-        ],
-        "pruefungsbezug": "Bei Verbesserungsfragen Kunden- und Unternehmenssicht nebeneinanderstellen.",
-        "merksatz": "Ein guter Auftragsprozess ist für Kunden verlässlich, termintreu und fehlerarm und für MAKEL wirtschaftlich; Kundenbindung entsteht aus erfüllten Erwartungen."
+          {
+            "frage": "Nenne zwei Merkmale eines guten Auftragsprozesses aus Kundensicht.",
+            "antwort": "Zum Beispiel verlässliche Auskünfte und termintreue, fehlerfreie Lieferung.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist Kundenbindung oft günstiger als Neukundengewinnung?",
+            "antwort": "Weil bestehende Kunden ohne Akquiseaufwand wieder bestellen. Eine neue Kundin zu gewinnen kostet Zeit für Kontakt, Muster und Prüfung.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Was man verbessern will, muss man messen können.",
-          "Kennzahlen brauchen eine klare Definition."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Termintreue, Reklamationsquote und Durchlaufzeit mit eindeutigen Definitionen und Bezugsgrößen, vergleichst zwei Quartale und ergänzt die Zahlen um Kundenrückmeldungen.",
+        "vorwissen_kurz": "Ob der Auftragsprozess besser wird, zeigt sich erst, wenn man ihn misst.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Messen mit klarer Definition",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer verbessern will, muss messen. Die **Termintreue** zeigt, wie viele Aufträge zum zugesagten Termin geliefert wurden. Die **Reklamationsquote** zeigt, bei wie vielen Aufträgen es Beanstandungen gab. Die **Durchlaufzeit** misst die Tage von Auftragseingang bis Lieferung; hier zählt neben dem Durchschnitt auch die Streuung. ==Jede Kennzahl braucht eine eindeutige Definition und Bezugsgröße.== Zählt die Reklamationsquote Aufträge oder Teile? Gilt ein Auftrag mit einem Tag Verspätung als termintreu? Erst wenn das festgelegt ist, sind Zahlen vergleichbar.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Quartale im Vergleich",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "2. Quartal",
+              "3. Quartal",
+              "Veränderung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Aufträge",
+                  "80",
+                  "90",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "termingerecht",
+                  "72",
+                  "76",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Termintreue",
+                  "90 %",
+                  "84,4 %",
+                  "− 5,6 Prozentpunkte"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufträge mit Reklamation",
+                  "4",
+                  "4",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Reklamationsquote",
+                  "5,0 %",
+                  "4,4 %",
+                  "− 0,6 Prozentpunkte"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beschwerden über widersprüchliche Auskünfte",
+                  "1",
+                  "3",
+                  "gestiegen"
+                ]
+              }
+            ],
+            "fazit": "Die Reklamationsquote ist leicht gesunken, die Termintreue aber deutlich schlechter geworden. Die Beschwerden über widersprüchliche Auskünfte deuten auf ein Problem im Ablauf hin.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kennzahlen und Rückmeldungen ergänzen sich. Die Termintreue sagt, dass etwas schlechter läuft, aber nicht warum. Die drei Beschwerden über widersprüchliche Auskünfte geben einen Hinweis, wo man suchen sollte. Umgekehrt sind einzelne Beschwerden kein Beleg für ein Muster; erst die Zahlen zeigen, ob es sich um Einzelfälle oder ein systematisches Problem handelt.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Typische Kennzahlen des Auftragsprozesses: Termintreue (termingerechte Aufträge ÷ alle Aufträge × 100), Reklamationsquote (Aufträge mit mindestens einer Reklamation ÷ alle Aufträge × 100), Durchlaufzeit (Tage von Auftragseingang bis Lieferung), Anteil widersprüchlicher Auskünfte. Jede Kennzahl braucht eine eindeutige Definition: Welche Aufträge zählen, welcher Zeitraum, was gilt als termingerecht? Ergänzt werden die Zahlen durch Kundenrückmeldungen, etwa aus Gesprächen oder kurzen Befragungen.",
-        "beispiele": [
-          "80 Aufträge im Quartal, 72 termingerecht: Termintreue 90 %.",
-          "Bei 4 der 80 Aufträge ging mindestens eine Reklamation ein: Reklamationsquote 5 %."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Durchschnitt und Streuung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine durchschnittliche Durchlaufzeit von 10 Tagen kann bedeuten, dass alle Aufträge 9 bis 11 Tage brauchen, oder dass die Hälfte in 5 und die andere in 15 Tagen geliefert wird. Für Kunden ist die zweite Situation viel schlechter, weil sie nicht planen können. Deshalb lohnt sich ein Blick auf die längsten Durchlaufzeiten.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Marlene wertet das letzte Quartal aus: 80 Wholesale-Aufträge, 72 termingerecht geliefert, bei vier Aufträgen ging je eine Reklamation ein. Termintreue 90 %, auftragsbezogene Reklamationsquote 5 %. Sie notiert die Definition: ‚termingerecht = Lieferung spätestens am bestätigten Liefertag‘.",
-        "typische_fehler": "Kennzahlen werden ohne Definition verglichen — etwa Reklamationen je Stück in einem Quartal und je Auftrag im nächsten.",
         "verstaendnisfragen": [
-          "Wie berechnet man die Termintreue? Termingerecht gelieferte Aufträge ÷ alle Aufträge × 100.",
-          "Warum braucht jede Kennzahl eine Definition? Damit Werte über Zeiträume vergleichbar sind und jeder dasselbe darunter versteht."
-        ],
-        "pruefungsbezug": "Kennzahlen mit Formel, Bezugsgröße und Ergebnis angeben; die Bezugsgröße ist oft die Falle.",
-        "merksatz": "Kennzahlen wie Termintreue und Reklamationsquote brauchen eine eindeutige Definition und Bezugsgröße; Kundenrückmeldungen ergänzen sie."
+          {
+            "frage": "Von 90 Aufträgen sind 76 termingerecht. Wie hoch ist die Termintreue?",
+            "antwort": "76 ÷ 90 × 100 ≈ 84,4 %.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum braucht die Reklamationsquote eine eindeutige Definition?",
+            "antwort": "Weil sie sich auf Aufträge oder auf Teile beziehen kann. Je nach Definition ergeben sich ganz andere Werte.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Ein Problem hat oft mehrere mögliche Ursachen.",
-          "Maßnahmen wirken nur, wenn sie an der tatsächlichen Ursache ansetzen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ermittelst die Ursache einer Störung im Auftragsprozess mit Daten, Stichproben und der Fünf-Warum-Methode und grenzt Ursachen von Symptomen und Schuldzuweisungen ab.",
+        "vorwissen_kurz": "Die Termintreue sinkt, die Beschwerden über widersprüchliche Auskünfte steigen. Bevor gehandelt wird, muss klar sein, warum.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Symptom zur Ursache",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Maßnahme wirkt nur dauerhaft, wenn sie an der Ursache ansetzt. Deshalb wird die Ursache belegt, bevor gehandelt wird: mit Daten aus dem System, Stichproben einzelner Aufträge und dem wiederholten Fragen nach dem Warum. Die **Fünf-Warum-Methode** fragt so lange nach, bis man auf einen Ablauf oder eine Regel stößt, die man ändern kann. Wer stattdessen bei einer Person stehen bleibt, findet einen Schuldigen, aber keine Lösung.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Belege für die Ursache",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Stichprobe 20 Kundenanfragen im 3. Quartal",
+                  "in 7 Fällen wich die Auskunft des Vertriebs vom tatsächlichen Stand im Versand ab"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeitpunkt der Statusänderungen im System",
+                  "Versand setzt den Status einmal täglich um 16 Uhr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Befragung Vertrieb und Versand",
+                  "Änderungen werden tagsüber mündlich weitergegeben, oft an die falsche Person"
+                ]
+              },
+              {
+                "zellen": [
+                  "verspätete Aufträge",
+                  "9 von 14 Verspätungen fielen auf, nachdem der Kunde bereits einen falschen Termin genannt bekommen hatte"
+                ]
+              }
+            ],
+            "fazit": "Die Daten bestätigen die Vermutung. Ursache ist kein gemeinsamer, laufend gepflegter Status; daraus folgen falsche Auskünfte und zu spät erkannte Verzögerungen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Belege verhindern zwei Fehler. Ohne Stichprobe hätte der Vertrieb vielleicht vermutet, dass ein einzelner Kollege im Versand unzuverlässig ist. Mit Stichprobe zeigt sich: Das Problem tritt bei allen auf, weil der Ablauf es erzeugt. Und die Daten zeigen den Zusammenhang mit der Termintreue: Verspätungen werden zu spät erkannt, weil niemand den aktuellen Stand sieht.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Bevor gehandelt wird, wird die Ursache belegt. Hilfreich sind Fragen wie ‚Wo genau entsteht die widersprüchliche Auskunft?‘ und das wiederholte ‚Warum?‘. Daten aus dem System, Stichproben und Gespräche mit den Beteiligten liefern Belege. Eine Vermutung (‚Der Versand ist schuld‘) wird geprüft, nicht vorausgesetzt.",
-        "beispiele": [
-          "Warum widersprüchliche Auskünfte? Weil Vertrieb und Versand unterschiedliche Stände kennen. Warum? Weil der Versand Änderungen nur mündlich weitergibt. Warum? Weil es keinen gemeinsamen Status im System gibt.",
-          "Stichprobe von 20 Kundenanfragen: In 7 Fällen weicht die Auskunft des Vertriebs vom tatsächlichen Versandstand ab."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ursache-Wirkungs-Diagramm",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben der Fünf-Warum-Methode hilft das Ursache-Wirkungs-Diagramm, auch Fischgrätendiagramm genannt. Es ordnet mögliche Ursachen nach Bereichen wie Mensch, Methode, Material, Maschine und Umfeld. So werden mehrere Ursachen gleichzeitig sichtbar.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Jonas Weidner sagt: ‚Der Vertrieb fragt nie nach.‘ Marlene sagt: ‚Der Versand meldet nichts.‘ Statt zu streiten, vergleichen beide 20 Anfragen der letzten Woche mit den Versanddaten. Ergebnis: Der Versandstatus wird im System nur einmal am Tag aktualisiert, Änderungen dazwischen gehen mündlich weiter. Das ist die belegte Ursache.",
-        "typische_fehler": "Eine Maßnahme wird auf Basis einer Schuldzuweisung beschlossen. Sie verfehlt dann oft die eigentliche Ursache.",
         "verstaendnisfragen": [
-          "Was ist die Fünf-Warum-Methode? Man fragt mehrmals nach dem Grund, bis man von einem Symptom zur eigentlichen Ursache kommt.",
-          "Womit belegt man eine Ursache? Mit Daten, Stichproben und Beobachtungen statt mit Vermutungen."
-        ],
-        "pruefungsbezug": "Wenn nach Ursachen gefragt wird, Belege nennen — nicht nur Behauptungen.",
-        "merksatz": "Maßnahmen setzen an einer belegten Ursache an; Daten, Stichproben und wiederholtes Warum-Fragen ersetzen Schuldzuweisungen."
+          {
+            "frage": "Warum soll eine Maßnahme an der Ursache und nicht am Symptom ansetzen?",
+            "antwort": "Weil eine Maßnahme gegen das Symptom das Problem nur verschiebt. An der Ursache wirkt sie dauerhaft.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie wird eine Ursache belegt?",
+            "antwort": "Mit Daten aus dem System, Stichproben und gezielten Fragen, nicht mit Vermutungen.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Jede Maßnahme kostet etwas und hat Nebenwirkungen.",
-          "Erfolg muss nachgewiesen werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst eine Verbesserungsmaßnahme mit Verantwortlichen, Termin und messbarer Erfolgskontrolle, prüfst Zielkonflikte zwischen Kunden- und Unternehmensinteressen und bewertest das Ergebnis vorsichtig.",
+        "vorwissen_kurz": "Die Ursache ist gefunden. Jetzt braucht es eine Maßnahme, die Kunden und MAKEL Studio gleichermaßen nützt, und einen Weg, ihren Erfolg zu prüfen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was, wer, bis wann, und woran gemessen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Maßnahme ist erst geplant, wenn feststeht, was getan wird, wer verantwortlich ist und bis wann es umgesetzt ist. Dazu gehört eine **Erfolgskontrolle** mit derselben Definition wie vorher, damit der Vergleich aussagekräftig ist. Außerdem werden Zielkonflikte geprüft: Eine Maßnahme, die Kunden nützt, kann Aufwand im Betrieb verursachen, und umgekehrt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Maßnahmenplan",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Maßnahme",
+                  "Versand setzt den Auftragsstatus bei jeder Änderung sofort im System; Vertrieb gibt Auskünfte nur nach Blick in den Status"
+                ]
+              },
+              {
+                "zellen": [
+                  "verantwortlich",
+                  "Jonas Weidner für den Versand, Marlene Voß für den Vertrieb"
+                ]
+              },
+              {
+                "zellen": [
+                  "Start",
+                  "1. Oktober"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zielkonflikt",
+                  "etwa zehn Minuten Mehraufwand pro Tag im Versand gegen weniger Rückrufe und Beschwerden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfolgskontrolle",
+                  "im 4. Quartal erneut 20 Anfragen stichprobenartig prüfen, Termintreue gleich definiert"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ziel",
+                  "höchstens 1 von 20 widersprüchlichen Auskünften, Termintreue wieder mindestens 90 %"
+                ]
+              }
+            ],
+            "fazit": "Die Maßnahme hat Verantwortliche, Termin und eine messbare Kontrolle. Der Mehraufwand im Versand ist gering im Vergleich zu den Folgen widersprüchlicher Auskünfte.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auch ein gutes Ergebnis wird vorsichtig bewertet. Sinkt die Zahl widersprüchlicher Auskünfte von 7 auf 1 je 20 Anfragen, spricht viel für die Maßnahme. Ein Beweis ist es erst, wenn Stichprobe und Definition gleich geblieben sind und es keine andere wesentliche Änderung gab, etwa deutlich weniger Aufträge. Steigt die Termintreue nicht, obwohl die Auskünfte stimmen, gibt es eine weitere Ursache, der nachgegangen werden muss.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Eine Maßnahme wird beschrieben (was, wer, bis wann), auf Zielkonflikte geprüft (Kosten, Aufwand, Datenschutz) und mit einer Erfolgskontrolle versehen: Welche Kennzahl soll sich bis wann wie verändern? Nach der Umsetzung wird gemessen. Eine bessere Durchschnittszahl ist erst dann ein Erfolg, wenn sie mit der Maßnahme zusammenhängt und nicht zufällig ist — etwa weil im Vergleichszeitraum weniger Aufträge liefen.",
-        "beispiele": [
-          "Maßnahme: Gemeinsamer Auftragsstatus im System, den der Versand bei jeder Änderung sofort setzt; verantwortlich Jonas Weidner; ab 1. September.",
-          "Erfolgskontrolle: Anteil widersprüchlicher Auskünfte in einer Stichprobe von 20 Anfragen; Ziel unter 2 von 20 im Oktober."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Den Kunden einbeziehen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gute Verbesserungen werden auch nach außen sichtbar. MAKEL Studio könnte Stammkunden wie Nordlicht künftig automatisch eine Nachricht schicken, wenn sich der Status ihres Auftrags ändert. Das spart Rückfragen und zeigt, dass MAKEL aus den Beschwerden gelernt hat.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Nach der Einführung des gemeinsamen Status wird im Oktober erneut eine Stichprobe von 20 Anfragen geprüft: eine widersprüchliche Auskunft statt vorher sieben. Weil Stichprobengröße und Definition gleich geblieben sind und es keine andere wesentliche Änderung gab, spricht das für die Wirkung der Maßnahme.",
-        "typische_fehler": "Eine Verbesserung der Durchschnittszahl wird ohne Blick auf Ursache und Vergleichbarkeit als Erfolg gefeiert.",
         "verstaendnisfragen": [
-          "Was gehört zu einer Maßnahmenbeschreibung? Was getan wird, wer verantwortlich ist und bis wann.",
-          "Wann ist eine verbesserte Kennzahl ein belegter Erfolg? Wenn Definition und Vergleichsbasis gleich sind und die Veränderung plausibel auf die Maßnahme zurückgeht."
-        ],
-        "pruefungsbezug": "Maßnahmenvorschläge mit Verantwortlichem, Termin und messbarer Erfolgskontrolle bringen volle Punktzahl.",
-        "merksatz": "Eine Maßnahme hat Verantwortliche, Termin und eine messbare Erfolgskontrolle mit gleicher Definition wie vorher."
+          {
+            "frage": "Was gehört zu einer Verbesserungsmaßnahme, damit ihr Erfolg nachgewiesen werden kann?",
+            "antwort": "Verantwortliche, Termin und eine Erfolgskontrolle mit gleicher Definition wie vor der Maßnahme.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Die Durchlaufzeit sinkt nach der Maßnahme von 12 auf 9 Tage. Ist damit bewiesen, dass die Maßnahme wirkt?",
+            "antwort": "Nicht automatisch. Vielleicht gab es weniger oder einfachere Aufträge; die Vergleichsbasis muss geprüft werden.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

@@ -6,86 +6,435 @@
   "untertitel": "Wer fragt an, was genau wird gebraucht, kann MAKEL das leisten — und darf man auf Rechnung liefern?",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eine Anfrage ist die Bitte um ein Angebot.",
-          "Sie ist rechtlich unverbindlich."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest eine Anfrage nach Kundenstatus, Kundenart und Rolle ein und leitest daraus ab, welche Konditionen, Rechtsregeln und Prüfschritte gelten.",
+        "vorwissen_kurz": "Eine Anfrage ist der erste Kontakt. Was danach passiert, hängt davon ab, wer anfragt und wofür.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer anfragt, bestimmt den Weg",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine {{begriff:anfrage|Anfrage}} ist die Bitte um ein Angebot und rechtlich unverbindlich: Der Anfragende muss nicht kaufen, MAKEL Studio muss nicht anbieten. Bevor der Vertrieb ein Angebot erstellt, klärt er drei Fragen. Ist es ein **Neukunde**, ein **Stammkunde** oder ein ehemaliger Kunde? Ist es ein **Unternehmen** oder ein **Verbraucher**? Und kauft der Kunde als **Wiederverkäufer**, etwa eine Boutique, oder als **Endabnehmer**, etwa eine Agentur für eigene Mitarbeitende?",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Anfragen, drei Wege",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Anfrage",
+              "Status",
+              "Art",
+              "Rolle",
+              "Folge für MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Boutique „Nordlicht\" aus Hamburg, 60 Hoodies der Kollektion",
+                  "Stammkunde",
+                  "Unternehmen",
+                  "Wiederverkäufer",
+                  "Wiederverkäuferpreis, bekannte Zahlungsbedingungen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Agentur „Pixelwerk\", 100 Hoodies mit Firmenlogo",
+                  "Neukunde",
+                  "Unternehmen",
+                  "Endabnehmer",
+                  "Bonitätsprüfung, individuelles Angebot"
+                ]
+              },
+              {
+                "zellen": [
+                  "Privatperson über den Onlineshop, 2 Hoodies",
+                  "Neukunde",
+                  "Verbraucher",
+                  "Endabnehmer",
+                  "Shoppreise, Widerrufsrecht im Fernabsatz"
+                ]
+              }
+            ],
+            "fazit": "Dieselbe Ware wird je nach Kunde unterschiedlich angeboten. Status, Art und Rolle bestimmen Preis, Prüfaufwand und rechtliche Regeln.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Einordnung spart Fehler. Ein Wiederverkäufer erwartet andere Preise und oft eine Verpackung, die er direkt in den Laden stellen kann. Für Verbraucher gelten Schutzregeln, etwa das Widerrufsrecht bei Bestellungen im Onlineshop; für individuell bedruckte Ware nach Kundenvorgabe ist es allerdings ausgeschlossen. Und bei einem Neukunden, der auf Rechnung kaufen möchte, muss erst die Zahlungsfähigkeit geprüft werden.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Bevor eine Anfrage bearbeitet wird, klärt der Vertrieb, wer anfragt: ein Neukunde, ein Stammkunde oder ein ehemaliger Kunde; ein Unternehmen oder eine Privatperson; ein Wiederverkäufer (etwa eine Boutique) oder ein Endabnehmer (etwa eine Firma, die Teamkleidung braucht). Der Kundenstatus beeinflusst Konditionen, Zahlungsbedingungen und den Prüfaufwand. Ebenso wichtig ist der Zweck: Wofür braucht der Kunde die Ware, bis wann, und was ist ihm besonders wichtig?",
-        "beispiele": [
-          "Eine Boutique, die seit Jahren MAKEL-Kollektionen führt, fragt Nachschub an: Stammkunde, Wiederverkäufer, bekannte Konditionen.",
-          "Eine Eventagentur fragt erstmals 100 bedruckte Hoodies für ein Firmenfest an: Neukunde, Endabnehmer, individueller Druck."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Arten von Anfragen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine allgemeine Anfrage bittet um Katalog oder Preisliste, eine bestimmte Anfrage nennt konkrete Ware, Menge und Termin. Je bestimmter die Anfrage, desto schneller kann ein passendes Angebot erstellt werden.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Bei Marlene Voß geht eine E-Mail ein: ‚Wir brauchen 100 Hoodies mit unserem Logo für unser Sommerfest. Was kostet das?‘ Absender ist eine Eventagentur, die MAKEL bisher nicht kennt. Einordnung: Neukunde, Unternehmen, Endabnehmer, individueller Veredelungsauftrag. Daraus folgt: Konditionen müssen neu festgelegt, Bonität und Zahlungsweise geprüft und viele Details erfragt werden.",
-        "typische_fehler": "Eine unverbindliche Anfrage wird schon als fertiger Auftrag behandelt und sofort eingeplant. Aus der Anfrage entsteht noch keine Pflicht für eine der Seiten.",
         "verstaendnisfragen": [
-          "Ist eine Anfrage rechtlich verbindlich? Nein, sie ist eine Bitte um ein Angebot und noch keine Willenserklärung.",
-          "Warum ist der Kundenstatus wichtig? Weil er Konditionen, Zahlungsbedingungen und den Prüfaufwand beeinflusst."
-        ],
-        "pruefungsbezug": "In Fallaufgaben zuerst den Kundenstatus bestimmen — viele weitere Antworten hängen davon ab.",
-        "merksatz": "Eine Anfrage ist unverbindlich; zuerst werden Kundenstatus und Zweck geklärt, weil sie Konditionen und Prüfaufwand bestimmen."
+          {
+            "frage": "Ist eine Anfrage rechtlich bindend?",
+            "antwort": "Nein. Sie verpflichtet weder den Anfragenden zum Kauf noch den Angefragten zum Angebot.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist es wichtig, ob ein Kunde Unternehmen oder Verbraucher ist?",
+            "antwort": "Weil für Verbraucher besondere Schutzregeln gelten, etwa das Widerrufsrecht bei Fernabsatzverträgen.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ein Angebot kann nur so genau sein wie die Anfrage.",
-          "Fehlende Angaben werden gezielt erfragt."
+        "darstellung": "vollfassung",
+        "ziel": "Du arbeitest aus einer unvollständigen Anfrage die Anforderungen an Menge, Ausführung, Termin und Lieferort heraus und formulierst gebündelte, begründete Rückfragen.",
+        "vorwissen_kurz": "Die Agentur Pixelwerk möchte „100 Hoodies mit unserem Logo, möglichst bald\". Für ein Angebot reicht das nicht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was für ein Angebot fehlt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Angebot kann nur so genau sein wie die Angaben dahinter. Für bedruckte Kleidung braucht MAKEL Studio den Artikel, die Menge und ihre Verteilung auf Größen und Farben, das Motiv mit Druckverfahren und Positionen, den spätesten Liefertermin und den Lieferort. Dazu kommen Wünsche zu Service wie Einzelverpackung oder Musterteil vorab. ==Fehlende Angaben werden gebündelt und mit Zweck erfragt.== Eine Mail mit allen Fragen ist besser als fünf Mails nacheinander.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rückfrage an Pixelwerk",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Rückfrage",
+              "Wozu MAKEL Studio die Angabe braucht"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Welche Größenverteilung benötigen Sie?",
+                  "Rohlinge in der richtigen Menge je Größe bestellen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bitte senden Sie das Logo als Vektordatei und nennen Sie die Position.",
+                  "Druckverfahren und Preis festlegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein- oder mehrfarbiger Druck?",
+                  "Aufwand und Siebkosten berechnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bis wann benötigen Sie die Hoodies spätestens?",
+                  "Kapazität in der Veredelung prüfen"
+                ]
+              },
+              {
+                "zellen": [
+                  "An welche Adresse soll geliefert werden?",
+                  "Versandkosten und Lieferzeit kalkulieren"
+                ]
+              }
+            ],
+            "fazit": "Jede Frage hat einen Zweck. So versteht der Kunde, warum MAKEL fragt, und antwortet vollständiger.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit der Begründung wird aus einer Rückfrage ein Service. Die Agentur merkt, dass MAKEL Studio mitdenkt. Gleichzeitig fragt der Vertrieb nur, was er wirklich braucht: Geburtsdaten oder private Adressen der Agenturmitarbeitenden sind für das Angebot nicht nötig und werden nicht erhoben. Kommen die Antworten, prüft der Vertrieb, ob sie vollständig und widerspruchsfrei sind, bevor er das Angebot schreibt.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Für ein Angebot über bedruckte Kleidung braucht MAKEL mindestens: Artikel und Qualität, Menge, Größenverteilung, Farbe, Druckmotiv und Druckpositionen, gewünschten Liefertermin, Lieferort und gegebenenfalls Serviceleistungen wie Einzelverpackung. Fehlt etwas, wird gezielt nachgefragt. Gute Rückfragen sind konkret, bündeln alle offenen Punkte in einer Nachricht und erklären, wofür die Angabe gebraucht wird.",
-        "beispiele": [
-          "Größenverteilung: Ohne sie können weder Rohlinge bestellt noch Kosten sicher berechnet werden.",
-          "Liefertermin: Er entscheidet, ob die Druckkapazität ausreicht."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn der Termin zu knapp ist",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nennt der Kunde einen Termin, den MAKEL Studio nicht halten kann, sagt der Vertrieb das früh und bietet eine Lösung an: einen späteren Termin, eine Teillieferung oder einen Artikel, der vorrätig ist. Ein Angebot mit einem unrealistischen Termin führt später zu Ärger.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Eventagentur nennt weder Größen noch Termin. Marlene schickt eine Rückfrage mit vier Punkten: (1) Größenverteilung der 100 Hoodies, (2) Druckmotiv als Datei und Druckpositionen (Brust, Rücken), (3) spätester Liefertermin, (4) Lieferadresse. Sie erklärt kurz, dass das Angebot danach innerhalb von zwei Arbeitstagen folgt.",
-        "typische_fehler": "Es wird auf Grundlage von Annahmen kalkuliert (‚Wir nehmen mal Größe L‘). Das Angebot passt dann nicht zum Bedarf.",
         "verstaendnisfragen": [
-          "Warum wird die Größenverteilung erfragt? Weil Rohlingsbestellung und Kosten davon abhängen.",
-          "Was macht eine gute Rückfrage aus? Sie ist konkret, bündelt alle offenen Punkte und nennt den Zweck."
-        ],
-        "pruefungsbezug": "Rückfragen müssen für Angebot oder Machbarkeit relevant sein — nicht beliebige Informationen sammeln.",
-        "merksatz": "Vor dem Angebot werden Artikel, Menge, Größen, Ausführung, Termin und Lieferort geklärt; fehlende Angaben werden gebündelt und begründet erfragt."
+          {
+            "frage": "Warum werden Rückfragen gebündelt?",
+            "antwort": "Damit der Kunde nicht mehrfach angeschrieben wird und alle Angaben auf einmal liefern kann.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Braucht MAKEL Studio für das Angebot die Geburtsdaten der Agenturmitarbeitenden?",
+            "antwort": "Nein. Sie sind für Angebot und Machbarkeit nicht erforderlich und werden nicht erhoben.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Nicht jeder Kundenwunsch passt zum Leistungsangebot.",
-          "Wer auf Rechnung liefert, gibt dem Kunden einen Kredit."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst vor einem Angebot Identität, Bonität und Machbarkeit, unterscheidest Identität von Zahlungsfähigkeit und wählst passende Zahlungsbedingungen für einen Neukunden.",
+        "vorwissen_kurz": "Wer auf Rechnung liefert, gewährt dem Kunden einen Kredit. Deshalb will MAKEL Studio wissen, mit wem es zu tun hat.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Prüfungen vor dem Angebot",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einem Neukunden prüft der Vertrieb zuerst die **Identität**: Gibt es das Unternehmen, und wer darf es vertreten? Dann die **Bonität**, also die {{begriff:kreditwuerdigkeit|Kreditwürdigkeit}}: Kann und wird der Kunde pünktlich zahlen? Und schließlich die **Machbarkeit**: Hat MAKEL Studio die Rohlinge, die Druckkapazität und das passende Verfahren? Erst wenn alle drei Fragen geklärt sind, wird ein Angebot mit Zahlungsbedingungen erstellt.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Prüfung bei Pixelwerk",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfung",
+              "Ergebnis",
+              "Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Identität",
+                  "im Handelsregister eingetragen, GmbH seit drei Jahren",
+                  "Vertragspartner steht fest"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bonität",
+                  "Auskunftei: noch wenige Daten, keine Negativmerkmale",
+                  "eingeschränkte Aussagekraft"
+                ]
+              },
+              {
+                "zellen": [
+                  "Machbarkeit",
+                  "Rohlinge vorrätig, Druckkapazität in KW 46 frei",
+                  "lieferbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlungsbedingung",
+                  "50 % Anzahlung bei Auftrag, Rest 14 Tage netto",
+                  "Risiko begrenzt, Kunde nicht abgeschreckt"
+                ]
+              }
+            ],
+            "fazit": "Weil die Bonität noch nicht sicher beurteilt werden kann, verlangt MAKEL Studio eine Anzahlung. Nach zwei pünktlich bezahlten Aufträgen kann auf reine Rechnung umgestellt werden.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Zahlungsbedingung ist ein Kompromiss zwischen Sicherheit und Kundenfreundlichkeit. Volle Vorkasse ist sicher, schreckt aber manche Geschäftskunden ab. Lieferung auf Rechnung ohne Prüfung ist bequem, kann aber teuer werden, wenn der Kunde nicht zahlt; bei individuell bedruckter Ware kann MAKEL sie nicht einmal anderweitig verkaufen. Die Anzahlung verbindet beides und deckt zumindest die Material- und Druckkosten.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Der Vertrieb prüft, ob MAKEL die Anfrage erfüllen kann: Passt der Artikel zum Sortiment? Reichen Rohlinge und Druckkapazität bis zum Termin? Dann wird die Zahlungsweise festgelegt. Wer auf Rechnung mit Zahlungsziel liefert, finanziert den Kunden für diese Zeit vor. Deshalb wird bei Neukunden die Bonität geprüft — die Fähigkeit und Bereitschaft, pünktlich zu zahlen. Quellen sind etwa Auskunfteien, Bankauskünfte oder eigene Erfahrungen. Identität und Bonität sind zwei verschiedene Prüfungen.",
-        "beispiele": [
-          "Eine Firmen-E-Mail-Adresse belegt allenfalls, dass die Anfrage aus einem Unternehmen kommt — nicht, dass es zahlungsfähig ist.",
-          "Neukunden erhalten bei MAKEL im Beispiel zunächst Vorkasse oder eine Anzahlung, bis eine positive Bonitätsauskunft vorliegt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Bonitätsauskünfte und Datenschutz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auskunfteien sammeln Daten über das Zahlungsverhalten von Unternehmen und Personen. Eine Abfrage ist zulässig, wenn ein berechtigtes Interesse besteht, etwa vor einer Lieferung auf Rechnung. Abgefragt wird nur, was für die Entscheidung nötig ist.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Eventagentur bittet um Lieferung auf Rechnung, 30 Tage Ziel. Marlene prüft: Die Agentur ist im Handelsregister eingetragen (Identität), über Bonität ist nichts bekannt. Nach betrieblicher Vorgabe holt sie eine Auskunft ein und bietet bis dahin 50 Prozent Anzahlung an. So bleibt das Geschäft möglich, ohne das volle Risiko zu tragen.",
-        "typische_fehler": "Ein Neukunde wird allein wegen eines professionellen Auftritts oder einer Unternehmens-E-Mail-Adresse auf offene Rechnung beliefert.",
         "verstaendnisfragen": [
-          "Was ist Bonität? Die Fähigkeit und Bereitschaft eines Kunden, seine Rechnungen pünktlich zu bezahlen.",
-          "Warum ist Lieferung auf Rechnung eine Form von Kredit? Weil der Kunde die Ware erhält, bevor er zahlt — MAKEL finanziert ihn bis zum Zahlungsziel vor."
-        ],
-        "pruefungsbezug": "Bei Zahlungsbedingungen für Neukunden immer Risiko und Bonitätsprüfung ansprechen.",
-        "merksatz": "Bevor auf Rechnung geliefert wird, wird die Bonität geprüft; die Identität eines Unternehmens sagt noch nichts über seine Zahlungsfähigkeit."
+          {
+            "frage": "Warum belegt ein Handelsregistereintrag noch nicht die Zahlungsfähigkeit?",
+            "antwort": "Weil er nur zeigt, dass es das Unternehmen gibt und wer es vertritt. Ob es zahlen kann, zeigen Bonitätsauskünfte und Zahlungserfahrungen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Welche Zahlungsbedingung passt, wenn die Bonität eines Neukunden noch unsicher ist?",
+            "antwort": "Vorkasse oder eine Anzahlung, bis eine positive Auskunft oder eigene Zahlungserfahrung vorliegt.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Von der Anfrage bis zur Zahlung durchläuft ein Auftrag mehrere Schritte.",
-          "Jeder Schritt hat einen typischen Beleg."
+        "darstellung": "vollfassung",
+        "ziel": "Du überblickst den Auftragsprozess von der Anfrage bis zum Zahlungseingang, ordnest jedem Schritt Beleg und Rechtswirkung zu und bestimmst, ab wann produziert und Material bestellt werden darf.",
+        "vorwissen_kurz": "Zwischen der ersten Anfrage und dem Geld auf dem Konto liegen mehrere Schritte. Jeder hat seine eigene Bedeutung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eine feste Belegkette",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:auftragsbearbeitung|Auftragsbearbeitung}} folgt einer festen Reihenfolge. Die **Anfrage** ist unverbindlich. Das **Angebot** ist rechtlich ein Antrag und bindet MAKEL Studio, wenn es nicht freibleibend formuliert ist. Stimmt die **Bestellung** mit dem Angebot überein, ist der Kaufvertrag geschlossen. Die **Auftragsbestätigung** hält die Bedingungen fest. Danach folgen Freigabe des Motivs, Veredelung, **Lieferschein**, **Rechnung** und Zahlung. Produziert und Material bestellt wird erst, wenn der Vertrag geschlossen ist.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wann darf was passieren?",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitpunkt",
+              "Rohlinge bestellen?",
+              "Drucken?",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "nach der Anfrage",
+                  "nein",
+                  "nein",
+                  "kein Vertrag, Kunde ist nicht gebunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "nach dem Angebot",
+                  "nein",
+                  "nein",
+                  "Kunde hat noch nicht angenommen"
+                ]
+              },
+              {
+                "zellen": [
+                  "nach Bestellung, die dem Angebot entspricht",
+                  "ja",
+                  "nein",
+                  "Vertrag geschlossen, Motiv noch nicht freigegeben"
+                ]
+              },
+              {
+                "zellen": [
+                  "nach Freigabe des Druckmotivs",
+                  "—",
+                  "ja",
+                  "Kunde hat das Motiv bestätigt"
+                ]
+              }
+            ],
+            "fazit": "Jeder Schritt hat eine Voraussetzung. Wer früher bestellt oder druckt, trägt das Risiko, auf Rohlingen oder bedruckter Ware sitzen zu bleiben.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Belegkette ist auch ein Kontrollinstrument. Fehlt ein Beleg, fehlt eine Voraussetzung. Hat der Kunde das Motiv nicht freigegeben, druckt die Veredelung nicht, auch wenn der Liefertermin drängt. Und die Rechnung wird erst erstellt, wenn geliefert wurde. So kann jede Abteilung prüfen, ob der vorherige Schritt abgeschlossen ist, bevor sie mit ihrem beginnt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Der Auftragsprozess im Überblick: Anfrage → Angebot → Bestellung → Auftragsbestätigung → Produktion beziehungsweise Veredelung → Lieferung mit Lieferschein → Rechnung → Zahlungseingang. Nicht jeder Schritt ist immer nötig — eine Bestellung kann auch ohne vorheriges Angebot kommen. Für die Bearbeitung zählt, dass der Auftrag vollständig und freigegeben ist, bevor er in die Produktion geht.",
-        "beispiele": [
-          "Stammkunde bestellt direkt nach Katalog: Anfrage und Angebot entfallen.",
-          "Individueller Druckauftrag: Anfrage, Rückfragen, Angebot, Bestellung, Bestätigung, Druckfreigabe, Veredelung, Lieferung."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Bestellung mit Abweichung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Weicht die Bestellung vom Angebot ab, etwa mit 120 statt 100 Hoodies zum selben Stückpreis, ist sie rechtlich ein neuer Antrag. Erst wenn MAKEL Studio ihn annimmt, zum Beispiel mit einer Auftragsbestätigung, entsteht der Vertrag. Bis dahin wird nichts bestellt.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die Agentur antwortet mit allen Angaben. Marlene erstellt das Angebot, die Agentur bestellt, MAKEL bestätigt. Erst danach geht der Auftrag an die Veredelung — und dort erst nach Freigabe des Druckmotivs. Die Anfrage selbst hat noch nichts in Gang gesetzt außer der Vorbereitung des Angebots.",
-        "typische_fehler": "Die Veredelung wird schon nach der Anfrage eingeplant und Rohlinge werden bestellt — bevor ein Vertrag besteht.",
         "verstaendnisfragen": [
-          "Welcher Beleg begleitet die Lieferung? Der Lieferschein.",
-          "Ab wann darf die Produktion beginnen? Wenn der Auftrag angenommen, vollständig und — bei individuellem Druck — das Motiv freigegeben ist."
-        ],
-        "pruefungsbezug": "Belegfolgen in die richtige Reihenfolge bringen ist eine typische Aufgabe — und die Frage, welcher Schritt rechtliche Wirkung hat.",
-        "merksatz": "Der Auftragsprozess führt von der Anfrage über Angebot, Bestellung und Auftragsbestätigung zu Lieferung, Rechnung und Zahlung; produziert wird erst nach Annahme und Freigabe."
+          {
+            "frage": "Ab wann darf MAKEL Studio die Rohlinge für einen Kundenauftrag bestellen?",
+            "antwort": "Wenn der Kaufvertrag geschlossen ist, also nach einer Bestellung, die dem Angebot entspricht, oder nach der Annahme durch MAKEL.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum wird erst nach der Motivfreigabe gedruckt?",
+            "antwort": "Weil bedruckte Ware bei einem Fehler im Motiv nicht mehr verkauft werden kann. Die Freigabe bestätigt, dass der Kunde das Motiv so will.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

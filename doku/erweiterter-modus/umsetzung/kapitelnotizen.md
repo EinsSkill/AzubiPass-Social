@@ -209,3 +209,14 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K02:** Arbeitspaketbeschreibung 1.2; Verantwortungsmatrix mit Freigabe als eigenem Paket; Vorwärtsrechnung des Balkenplans (kritischer Pfad 7 Tage, Lageplan 3 Tage Puffer, 2 Tage Reserve bis Tag 9 – konsistent mit Basisgrafik); drei agile Schleifen Willkommensseite, Scrum als Detail.
 - **K03:** Statusbericht Tag 5 (0/100-Regel, Ampel); Prüfung des Ansprechpartnerdokuments, Meldeweg, Art. 33 DSGVO; Konfliktgespräch in vier Schritten, Brainstorming mit getrennter Bewertung, 6-3-5; Soll-Ist Tag 7 mit Entscheidungsvorlage.
 - **K04:** Dieselbe Präsentation für Auftraggeberin und Nutzer; vage Rückmeldungen → Feedback, Sympathie vs. Ergebnis; Abnahmeprotokoll mit verfehltem Muss-Kriterium (Notausgang) → Abnahme mit Auflage; Reflexion mit Ursache/Maßnahme/Ablageort.
+
+## IK LF3 · Kundenaufträge bearbeiten und überwachen
+
+- **Jahreswert geprüft:** Basiszinssatz 1,27 % (1.1.2026), 1,52 % ab 1.7.2026 (Bundesbank) → B2B-Verzugszins 10,52 %.
+- **K01:** Drei Anfragen nach Status/Art/Rolle (Widerrufsrecht im Fernabsatz, Ausschluss bei Kundenspezifikation); begründete gebündelte Rückfrage an Pixelwerk; Identität/Bonität/Machbarkeit mit Anzahlung; Zeitpunkte für Rohlingbestellung und Druck.
+- **K02:** Vier Antworten auf ein Angebot (unverändert, Mengenänderung, verspätet, Zielwunsch), kaufmännisches Bestätigungsschreiben; Pflichtentabelle Vereinsauftrag, § 377 HGB als Ausblick; Rechnung mit Skonto (2.770,32 €), kollidierende AGB, Incoterms; Wirkung des Eigentumsvorbehalts inkl. verlängerter EV und Grenze bei bedruckter Ware.
+- **K03:** Selbstkostenaufstellung 40 €; Rückwärtskalkulation bei Marktpreis 52 € (≈ 14,7 % Gewinn), Zuschlag ≠ Marge; vollständiges Angebot an Pixelwerk, freibleibend; Kosten von Muster, Zahlungsziel (≈ 37 €), Einzelverpackung, Expresstermin.
+- **K04:** **K19 (Teil LF3):** Datenfluss je Übergabe (Vertrieb → Veredelung/Versand/Transportdienstleister/Buchhaltung) mit „nicht weitergegeben"-Spalte, Vertragserfüllung als Zweck, Aufbewahrung vs. Löschung ohne konkrete Fristzahlen; Erfassungsfehler (Größensumme, Farbe, Datumsformat); Statusverlauf; Bestätigung DE/EN.
+- **K05:** Mangel oder nicht (Toleranz, Muster); Rügezeitpunkte (offen/versteckt, Verein ggf. kein Handelskauf); Rechte im Agenturfall mit Nachdruck; Ursachenanalyse Dateiablage/Erststückprüfung, Kulanz vs. Pflicht.
+- **K06:** OP-Liste am 20. Juli; Verzugsbeginn drei Fälle (Kalender, Mahnung, 30-Tage-Regel); Mahnung ohne Frist (Hinweis: mit Frist Verzug erst nach Ablauf); Verzugszinsen 2.856 € × 10,52 % × 31/365 = 25,52 € + 40 €; Verjährung 31.12.2029, Mahnbescheid hemmt.
+- **K07:** Wert einer Stammkundin (6.300 € DB/Jahr); Quartalsvergleich Termintreue 90 → 84,4 %; Belege für Ursache (7/20 Stichprobe, 9/14 Verspätungen); Maßnahmenplan mit Zielkonflikt und Erfolgskontrolle.
