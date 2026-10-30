@@ -6,86 +6,516 @@
   "untertitel": "Wann etwas Anlagevermögen ist, was zu den Anschaffungskosten gehört und wie die Abnutzung als Aufwand verteilt wird.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Anlagevermögen dient dem Betrieb dauerhaft.",
-          "Material wird in der Produktion verbraucht."
+        "darstellung": "vollfassung",
+        "ziel": "Du grenzt Anlagegüter von Material ab, ordnest sie dem passenden Anlagekonto zu und erklärst, warum ihr Wertverzehr über die Nutzungsdauer verteilt wird.",
+        "vorwissen_kurz": "Eine Stickmaschine arbeitet viele Jahre, eine Garnspule ist nach wenigen Hoodies leer. Diesen Unterschied bildet die Buchführung ab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Dauerhaft nutzen oder verbrauchen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zum {{begriff:anlagevermoegen|Anlagevermögen}} gehören Gegenstände, die dazu bestimmt sind, dem Betrieb dauerhaft zu dienen: Maschinen, Fahrzeuge, Einrichtung. Material dagegen wird verbraucht und geht in die Erzeugnisse ein. Würde MAKEL Studio eine Stickmaschine im Kaufjahr vollständig als Aufwand buchen, sähe dieses Jahr schlecht aus und alle folgenden zu gut, obwohl die Maschine in jedem Jahr gleich arbeitet. Deshalb wird ihr Wert über die {{begriff:nutzungsdauer|Nutzungsdauer}} verteilt.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was MAKEL Studio im Frühjahr anschafft",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Gegenstand",
+              "Einordnung",
+              "Konto (IKR)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Stickmaschine mit sechs Köpfen",
+                  "Anlagevermögen",
+                  "0700 Technische Anlagen und Maschinen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Transporter für Lieferungen an Händler",
+                  "Anlagevermögen",
+                  "0840 Fuhrpark"
+                ]
+              },
+              {
+                "zellen": [
+                  "Laptop für die Auftragsbearbeitung",
+                  "Anlagevermögen",
+                  "0860 Büromaschinen"
+                ]
+              },
+              {
+                "zellen": [
+                  "30 Spulen Stickgarn",
+                  "Hilfsstoff",
+                  "2020 Hilfsstoffe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ersatznadeln für die Stickmaschine",
+                  "Betriebs- oder Hilfsmaterial, schnell verbraucht",
+                  "2030 Betriebsstoffe"
+                ]
+              }
+            ],
+            "fazit": "Was über mehrere Jahre genutzt wird, ist Anlagevermögen. Was in kurzer Zeit verbraucht wird, ist Material — auch wenn es zur Maschine gehört.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "erklaerung": "Ein Anlagegut wird nicht verbraucht, sondern über mehrere Jahre genutzt: eine Stickmaschine, eine Siebdruckanlage, ein Lieferwagen, Büroausstattung. Es steht auf einem Konto der Kontenklasse 0. Material dagegen geht in die Erzeugnisse ein und ist nach dem Verbrauch weg. Weil ein Anlagegut sich über die Jahre abnutzt, wäre es falsch, den ganzen Kaufpreis im Anschaffungsjahr als Aufwand zu erfassen. Stattdessen wird er als Abschreibung auf die Nutzungsdauer verteilt. Für geringwertige Wirtschaftsgüter gibt es Sonderregeln, die im Lernfeld 10 behandelt werden.",
-        "beispiele": [
-          "Eine Stickmaschine für 10.000 € ist Anlagevermögen (0500 Technische Anlagen und Maschinen).",
-          "Stickgarn ist Hilfsstoff und wird verbraucht."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Geringwertige Wirtschaftsgüter",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bewegliche, selbstständig nutzbare Anlagegüter mit Anschaffungskosten bis 800 € netto dürfen steuerlich im Jahr der Anschaffung voll abgeschrieben werden; bis 250 € können sie sofort als Aufwand gebucht werden. Alternativ können Güter zwischen 250 € und 1.000 € in einem Sammelposten über fünf Jahre abgeschrieben werden. Ein Bürostuhl für 320 € wird deshalb nicht über 13 Jahre verteilt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL kauft eine zweite Stickmaschine, weil die Nachfrage nach bestickten Hoodies wächst. Tobias Renner fragt: ‚Drückt die Maschine dieses Jahr voll auf den Gewinn?‘ Sandra antwortet: ‚Nein. Sie arbeitet mehrere Jahre für uns, also verteilen wir die Kosten über die Nutzungsdauer.‘",
-        "typische_fehler": "Eine langlebige Maschine im Kaufjahr vollständig als Aufwand buchen.",
         "verstaendnisfragen": [
-          "Warum wird ein Anlagegut nicht sofort als Aufwand gebucht? Weil es mehrere Jahre genutzt wird; der Aufwand wird auf diese Jahre verteilt.",
-          "In welcher IKR-Klasse stehen Anlagegüter? In Klasse 0."
-        ],
-        "pruefungsbezug": "Anlagegut und Materialverbrauch sicher unterscheiden ist Voraussetzung für richtige Konten und Erfolgswirkungen.",
-        "merksatz": "Anlagegüter werden mehrere Jahre genutzt und über Abschreibungen verteilt; Material wird verbraucht."
+          {
+            "frage": "Ist ein Transporter, der Hoodies zu Händlern bringt, Anlagevermögen?",
+            "antwort": "Ja. Er wird über mehrere Jahre genutzt und ist dazu bestimmt, dem Betrieb dauerhaft zu dienen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum wird die Stickmaschine nicht im Kaufjahr vollständig als Aufwand gebucht?",
+            "antwort": "Weil sie mehrere Jahre zur Produktion beiträgt. Der Aufwand wird auf diese Jahre verteilt, damit jedes Jahr seinen Anteil trägt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Anschaffungskosten umfassen mehr als den Listenpreis.",
-          "Abziehbare Vorsteuer ist eine Forderung ans Finanzamt."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst die Anschaffungskosten eines Anlageguts nach § 255 HGB einschließlich der Nebenkosten bis zur Betriebsbereitschaft und buchst den Kauf mit Vorsteuer.",
+        "vorwissen_kurz": "Eine Maschine kostet mehr als ihren Kaufpreis. Bis sie läuft, fallen Lieferung, Aufstellung und Anschluss an.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Alles bis zur Betriebsbereitschaft",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach {{par:hgb-255|§ 255 HGB}} gehören zu den Anschaffungskosten alle Aufwendungen, die nötig sind, um den Gegenstand zu erwerben und betriebsbereit zu machen, soweit sie ihm einzeln zugeordnet werden können: Kaufpreis abzüglich Nachlässe, Fracht, Transportversicherung, Montage, Fundament, Anschluss. Nicht dazu gehören die abziehbare Vorsteuer und Kosten, die erst im laufenden Betrieb entstehen, etwa für Garn oder Wartung.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die neue Stickmaschine",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio kauft eine Stickmaschine. Laut Rechnung und Belegen fallen an:",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "netto",
+              "Anschaffungskosten?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Listenpreis",
+                  "12.500 €",
+                  "ja"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "− 4 % Rabatt",
+                  "500 €",
+                  "ja (mindernd)"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Fracht",
+                  "400 €",
+                  "ja"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufstellung und Einweisung des Technikers bis zum Probelauf",
+                  "600 €",
+                  "ja"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Erstausstattung Garn für die Produktion",
+                  "180 €",
+                  "nein, Hilfsstoff"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Wartungsvertrag für das erste Jahr",
+                  "450 €",
+                  "nein, laufender Aufwand"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Anschaffungskosten",
+                  "13.000 €",
+                  ""
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Buchungssatz für die Maschine: 0700 Technische Anlagen und Maschinen 13.000 € und 2600 Vorsteuer 2.470 € an 4400 Verbindlichkeiten LuL 15.470 €. Garn und Wartungsvertrag werden getrennt gebucht.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Einweisung durch den Techniker gehört dazu, weil sie Teil der Aufstellung bis zum Probelauf ist. Eine spätere Schulung der Mitarbeitenden zu neuen Stickmustern dagegen wäre laufender Aufwand. Die Grenze ist die Betriebsbereitschaft: Was vorher nötig ist, erhöht die Anschaffungskosten; was danach anfällt, ist Aufwand.",
+            "id": "a2-p3"
+          }
         ],
-        "erklaerung": "Nach § 255 Abs. 1 HGB gehören zu den Anschaffungskosten alle Aufwendungen, um ein Anlagegut zu erwerben und in einen betriebsbereiten Zustand zu versetzen, soweit sie ihm einzeln zugeordnet werden können: Kaufpreis, Fracht, Montage, Fundament, Transportversicherung. Preisminderungen wie Rabatt oder Skonto werden abgezogen. Abziehbare Vorsteuer gehört nicht dazu. Laufende Kosten nach der Inbetriebnahme, etwa Wartung, Strom oder Finanzierungszinsen, sind keine Anschaffungskosten, sondern laufender Aufwand.",
-        "beispiele": [
-          "Preis 10.000 € + Fracht 500 € + Montage 500 € = Anschaffungskosten 11.000 €.",
-          "Die erste Wartung nach drei Monaten ist Aufwand, keine Anschaffungskosten."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Finanzierungskosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zinsen für einen Kredit, mit dem die Maschine bezahlt wird, gehören grundsätzlich nicht zu den Anschaffungskosten. Sie entstehen durch die Finanzierung, nicht durch den Erwerb, und werden als Zinsaufwand gebucht.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Rechnung des Maschinenhändlers: Stickmaschine 10.000 €, Fracht 500 €, Montage und Einweisung bis zur Betriebsbereitschaft 500 €, jeweils netto, zuzüglich 19 % Umsatzsteuer 2.090 €. Sandra bucht: Technische Anlagen und Maschinen 11.000 € und Vorsteuer 2.090 € an Verbindlichkeiten aus Lieferungen und Leistungen 13.090 €.",
-        "typische_fehler": "Fracht und Montage als sonstigen Aufwand buchen oder die abziehbare Vorsteuer zu den Anschaffungskosten rechnen.",
         "verstaendnisfragen": [
-          "Gehört die Montage zu den Anschaffungskosten? Ja, wenn sie nötig ist, um die Maschine betriebsbereit zu machen.",
-          "Gehören Zinsen für den Kredit zum Maschinenkauf dazu? In der Regel nein, sie sind laufender Aufwand."
-        ],
-        "pruefungsbezug": "Anschaffungskosten aus einer Rechnung mit Nebenkosten und Nachlässen ermitteln.",
-        "merksatz": "Anschaffungskosten = Kaufpreis − Minderungen + Nebenkosten bis zur Betriebsbereitschaft; ohne abziehbare Vorsteuer."
+          {
+            "frage": "Kaufpreis 10.000 €, Fracht 500 €, Montage bis zur Betriebsbereitschaft 500 €, alles netto. Wie hoch sind die Anschaffungskosten?",
+            "antwort": "11.000 €. Die abziehbare Vorsteuer gehört nicht dazu.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Gehört der Wartungsvertrag für das erste Jahr zu den Anschaffungskosten?",
+            "antwort": "Nein. Er betrifft den laufenden Betrieb nach der Betriebsbereitschaft und wird als Aufwand gebucht.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Die Nutzungsdauer gibt an, wie viele Jahre ein Anlagegut voraussichtlich genutzt wird.",
-          "Abschreibung verteilt die Anschaffungskosten."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die lineare Abschreibung aus Anschaffungskosten und Nutzungsdauer, auch zeitanteilig im Anschaffungsjahr, und stellst die Entwicklung des Buchwerts dar.",
+        "vorwissen_kurz": "Die Abschreibung verteilt die Anschaffungskosten auf die Jahre der Nutzung. Bei der linearen Methode ist jeder Jahresbetrag gleich.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gleichmäßig verteilen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Abnutzbare Anlagegüter werden nach {{par:hgb-253|§ 253 HGB}} planmäßig abgeschrieben. Bei der linearen {{begriff:afa|Abschreibung}} werden die Anschaffungskosten durch die Nutzungsdauer geteilt; jedes Jahr wird derselbe Betrag als Aufwand gebucht. Wird das Anlagegut im Laufe des Jahres angeschafft, wird im ersten Jahr nur für die Monate ab dem Monat der Anschaffung abgeschrieben. Die Nutzungsdauer orientiert sich an der betriebsgewöhnlichen Nutzung; für die Steuer geben die AfA-Tabellen Anhaltspunkte.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Stickmaschine über sechs Jahre",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Stickmaschine hat Anschaffungskosten von 13.000 €, eine Nutzungsdauer von fünf Jahren und ist ab 1. April betriebsbereit.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Jahr",
+              "Abschreibung",
+              "Buchwert am Jahresende"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1 (April bis Dezember)",
+                  "9/12 × 2.600 € = 1.950 €",
+                  "11.050 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "2.600 €",
+                  "8.450 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "2.600 €",
+                  "5.850 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "2.600 €",
+                  "3.250 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "5",
+                  "2.600 €",
+                  "650 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "6 (Januar bis März)",
+                  "3/12 × 2.600 € = 650 €",
+                  "0 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Der Jahresbetrag ist 13.000 € ÷ 5 = 2.600 €. Weil die Maschine im April beginnt, verteilt sich die Abschreibung auf sechs Kalenderjahre; insgesamt werden genau 13.000 € abgeschrieben.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wird die Maschine auch nach dem sechsten Jahr noch genutzt, steht sie mit 0 € in den Büchern — oder, wie in vielen Betrieben üblich, mit einem Erinnerungswert von 1 €, damit sie im Anlagenverzeichnis sichtbar bleibt. Für die Produktion zählt, ob sie noch funktioniert; der Buchwert sagt nichts über den tatsächlichen Zustand.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Abnutzbare Anlagegüter werden planmäßig abgeschrieben (§ 253 Abs. 3 HGB). Bei der linearen Abschreibung ist der Betrag jedes Jahr gleich: Anschaffungskosten ÷ Nutzungsdauer. Der Abschreibungssatz in Prozent ist 100 ÷ Nutzungsdauer. Wird das Anlagegut im Laufe des Jahres angeschafft, wird im ersten Jahr nur zeitanteilig für die angefangenen Monate abgeschrieben. Die Nutzungsdauer wird nicht geraten: In Aufgaben ist sie vorgegeben, in der Praxis orientiert man sich an amtlichen AfA-Tabellen und der betrieblichen Erfahrung.",
-        "beispiele": [
-          "11.000 € ÷ 5 Jahre = 2.200 € pro Jahr, Abschreibungssatz 20 %.",
-          "Anschaffung im Oktober, Jahresbetrag 2.400 €: im ersten Jahr 3/12 × 2.400 € = 600 €."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Lineare und leistungsabhängige Abschreibung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben der linearen Methode gibt es die leistungsabhängige Abschreibung, die sich nach der tatsächlichen Nutzung richtet, etwa nach Stickstunden. Sie passt, wenn die Auslastung stark schwankt. Die lineare Methode ist einfacher und wird in den meisten Aufgaben verwendet.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für die Stickmaschine ist eine Nutzungsdauer von fünf Jahren vorgegeben, kein Restwert, betriebsbereit ab 2. Januar, lineare Abschreibung. Luca rechnet: 11.000 € ÷ 5 = 2.200 € pro Jahr. Nach einem Jahr steht die Maschine mit 8.800 € in den Büchern.",
-        "typische_fehler": "Die Nutzungsdauer aus dem Gerätenamen raten oder bei unterjähriger Anschaffung trotzdem den vollen Jahresbetrag ansetzen.",
         "verstaendnisfragen": [
-          "Wie berechnet man die lineare Jahresabschreibung? Anschaffungskosten geteilt durch Nutzungsdauer.",
-          "Wie hoch ist der Abschreibungssatz bei acht Jahren Nutzungsdauer? 12,5 Prozent."
-        ],
-        "pruefungsbezug": "Lineare Abschreibung und Buchwerte über mehrere Jahre berechnen; bei unterjähriger Anschaffung zeitanteilig.",
-        "merksatz": "Lineare Abschreibung = Anschaffungskosten ÷ Nutzungsdauer, jedes Jahr gleich; im Anschaffungsjahr zeitanteilig nach Monaten."
+          {
+            "frage": "Ein Laptop kostet 1.500 € netto, Nutzungsdauer drei Jahre, angeschafft am 1. September. Wie hoch ist die Abschreibung im ersten Jahr?",
+            "antwort": "1.500 € ÷ 3 = 500 € pro Jahr; für September bis Dezember 4/12 × 500 € ≈ 166,67 €.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum verteilt sich die Abschreibung der Stickmaschine auf sechs Kalenderjahre, obwohl die Nutzungsdauer fünf Jahre beträgt?",
+            "antwort": "Weil sie im April beginnt. Die fünf Nutzungsjahre reichen von April des ersten bis März des sechsten Kalenderjahres.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Abschreibungen sind Aufwand.",
-          "Der Buchwert ist der Wert, mit dem ein Anlagegut in der Bilanz steht."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst die Abschreibung, verfolgst die Wirkung auf Buchwert, Gewinn und Bankkonto und erklärst, warum Abschreibung Aufwand ohne Auszahlung ist.",
+        "vorwissen_kurz": "Die Maschine wurde einmal bezahlt. Die Abschreibung verteilt diesen Betrag als Aufwand, ohne dass erneut Geld fließt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Aufwand, aber keine Zahlung",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Jahresende bucht die Buchhaltung die Abschreibung: 6520 Abschreibungen auf Sachanlagen im Soll, das Anlagekonto im Haben. Der {{begriff:buchwert|Buchwert}} der Maschine sinkt, der Aufwand mindert den Gewinn. Das Bankkonto bleibt unberührt, denn bezahlt wurde die Maschine schon beim Kauf. Abschreibungen sind deshalb ein wichtiger Grund, warum Gewinn und Geldfluss auseinanderfallen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Kauf, Zahlung und erste Abschreibung",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datum",
+              "Vorgang",
+              "Buchungssatz",
+              "Bank"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. April",
+                  "Kauf auf Ziel",
+                  "0700 Maschinen 13.000 € und 2600 Vorsteuer 2.470 € an 4400 Verbindlichkeiten LuL 15.470 €",
+                  "± 0 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "30. April",
+                  "Zahlung",
+                  "4400 Verbindlichkeiten LuL 15.470 € an 2800 Bank 15.470 €",
+                  "− 15.470 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "31. Dezember",
+                  "Abschreibung",
+                  "6520 Abschreibungen auf Sachanlagen 1.950 € an 0700 Maschinen 1.950 €",
+                  "± 0 €"
+                ]
+              }
+            ],
+            "fazit": "Das Geld fließt einmal, im April. Der Aufwand von 1.950 € im ersten Jahr mindert den Gewinn, aber nicht den Kontostand.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Planung bedeutet das: Wenn die Stickmaschine nach fünf Jahren ersetzt werden muss, braucht MAKEL Studio wieder Geld dafür. Die Abschreibungen haben in den Jahren dazwischen den Gewinn gemindert, ohne dass Geld abgeflossen ist. Wird dieser Betrag nicht ausgeschüttet, bleibt er im Betrieb und kann die Ersatzinvestition mitfinanzieren.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Die Abschreibung wird direkt gebucht: Abschreibungen auf Sachanlagen (Aufwand, Soll) an das Anlagekonto (Haben). Der Buchwert sinkt jedes Jahr um den Abschreibungsbetrag: Buchwert = Anschaffungskosten − bisherige Abschreibungen. Die Abschreibung mindert den Gewinn, führt aber zu keiner Auszahlung — das Geld floss schon beim Kauf beziehungsweise bei der Bezahlung der Rechnung. Über die Verkaufspreise der Erzeugnisse fließen die Abschreibungen idealerweise wieder ins Unternehmen zurück und stehen für eine spätere Ersatzinvestition zur Verfügung.",
-        "beispiele": [
-          "Abschreibungen auf Sachanlagen 2.200 € an Technische Anlagen und Maschinen 2.200 €.",
-          "Buchwert nach zwei Jahren: 11.000 € − 2 × 2.200 € = 6.600 €."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Abschreibung in der Kostenrechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Kostenrechnung rechnet oft mit einer eigenen, kalkulatorischen Abschreibung, etwa auf Basis des Wiederbeschaffungswerts. Sie soll zeigen, was die Nutzung der Maschine wirklich kostet. Die bilanzielle Abschreibung in der Buchführung bleibt davon unberührt.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Am 31. Dezember bucht Sandra: Abschreibungen auf Sachanlagen 2.200 € an Technische Anlagen und Maschinen 2.200 €. Luca wundert sich, dass das Bankkonto unverändert bleibt. Sandra: ‚Die Abschreibung ist Aufwand, aber keine Zahlung. Bezahlt haben wir die Maschine schon im Januar.‘",
-        "typische_fehler": "Die Abschreibung mit einer jährlichen Auszahlung verwechseln.",
         "verstaendnisfragen": [
-          "Wie wirkt die Abschreibung auf Gewinn und Bankkonto? Sie mindert den Gewinn, das Bankkonto bleibt unverändert.",
-          "Wie berechnet man den Buchwert? Anschaffungskosten minus alle bisherigen Abschreibungen."
-        ],
-        "pruefungsbezug": "Abschreibung buchen, Buchwert ermitteln und die Wirkung auf Erfolg und Liquidität unterscheiden.",
-        "merksatz": "Abschreibungen auf Sachanlagen an Anlagekonto; der Buchwert sinkt, der Gewinn sinkt, das Bankkonto bleibt gleich."
+          {
+            "frage": "Tobias Renner meint: „Wir schreiben jedes Jahr 2.600 € ab — dann fehlen uns jedes Jahr 2.600 € auf dem Konto.“ Stimmt das?",
+            "antwort": "Nein. Die Abschreibung ist Aufwand ohne Auszahlung; bezahlt wurde die Maschine beim Kauf. Der Gewinn sinkt, der Kontostand nicht.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Wie hoch ist der Buchwert der Stickmaschine nach zwei Jahren?",
+            "antwort": "13.000 € − 1.950 € − 2.600 € = 8.450 €.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
@@ -103,9 +533,9 @@
       "inhalt": [
         { "typ": "absatz", "text": "{{begriff:anlagevermoegen|Anlagevermögen}} arbeitet über Jahre, Material ist nach dem Verbrauch weg. ==Deshalb wird ein Anlagegut nicht auf einmal, sondern über die {{begriff:nutzungsdauer|Nutzungsdauer}} zu Aufwand.==" },
         { "typ": "tabelle", "spalten": ["Gegenstand", "Einordnung", "Konto (IKR)"], "zeilen": [
-          { "zellen": ["Stickmaschine", "Anlagevermögen", "0500 Technische Anlagen und Maschinen"] },
+          { "zellen": ["Stickmaschine", "Anlagevermögen", "0700 Technische Anlagen und Maschinen"] },
           { "zellen": ["Lieferwagen", "Anlagevermögen", "0840 Fuhrpark"] },
-          { "zellen": ["Regale im Store", "Anlagevermögen", "0700 Betriebs- und Geschäftsausstattung"] },
+          { "zellen": ["Regale im Store", "Anlagevermögen", "0870 Büromöbel und sonstige Geschäftsausstattung"] },
           { "zellen": ["Stickgarn", "Hilfsstoff", "2020 Hilfsstoffe"] }
         ] },
         { "typ": "merke", "text": "**Anlagegüter** werden mehrere Jahre genutzt und über Abschreibungen verteilt; Material wird verbraucht.", "karteikarte": "Warum wird eine Maschine nicht im Kaufjahr vollständig als Aufwand gebucht?" }

@@ -6,86 +6,493 @@
   "untertitel": "Wie die Bilanz in Konten aufgelöst wird, wo Zu- und Abgänge stehen und wie ein Buchungssatz entsteht.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Die Bilanz zeigt Vermögen und Kapital zu einem Stichtag.",
-          "Im Laufe des Jahres ändern Geschäftsfälle diese Werte ständig."
+        "darstellung": "vollfassung",
+        "ziel": "Du löst eine Eröffnungsbilanz in Aktiv- und Passivkonten auf und trägst jeden Anfangsbestand auf der richtigen Kontoseite ein.",
+        "vorwissen_kurz": "Die Bilanz zeigt die Bestände an einem Stichtag. Um Veränderungen im Laufe des Jahres zu erfassen, braucht jeder Posten ein eigenes Konto.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Jeder Bilanzposten bekommt ein Konto",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zu Beginn des Geschäftsjahres wird die Bilanz in einzelne {{begriff:bestandskonto|Bestandskonten}} aufgelöst. Jedes Konto hat {{begriff:t-konto|T-Form}}: links die Seite {{begriff:soll|Soll}}, rechts die Seite {{begriff:haben|Haben}}. Konten für Posten der linken Bilanzseite heißen **Aktivkonten**, Konten für Posten der rechten Seite **Passivkonten**. Der Anfangsbestand steht jeweils auf der Seite, auf der der Posten in der Bilanz steht.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Eröffnung bei MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bilanzposten",
+              "Konto (IKR)",
+              "Kontoart",
+              "Anfangsbestand"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Maschinen",
+                  "0700 Technische Anlagen und Maschinen",
+                  "aktiv",
+                  "48.000 € im Soll"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohstoffe",
+                  "2000 Rohstoffe",
+                  "aktiv",
+                  "9.000 € im Soll"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bank",
+                  "2800 Guthaben bei Kreditinstituten",
+                  "aktiv",
+                  "15.000 € im Soll"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigenkapital",
+                  "3000 Eigenkapital",
+                  "passiv",
+                  "60.000 € im Haben"
+                ]
+              },
+              {
+                "zellen": [
+                  "Darlehen",
+                  "4250 Langfristige Bankverbindlichkeiten",
+                  "passiv",
+                  "30.000 € im Haben"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verbindlichkeiten",
+                  "4400 Verbindlichkeiten aus Lieferungen und Leistungen",
+                  "passiv",
+                  "8.000 € im Haben"
+                ]
+              }
+            ],
+            "fazit": "Die Aktivkonten beginnen im Soll, die Passivkonten im Haben — wie in der Bilanz links und rechts. Die Kontonummern folgen dem Industriekontenrahmen (IKR).",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "erklaerung": "Man kann nicht nach jedem Geschäftsfall eine neue Bilanz aufstellen. Deshalb wird die Bilanz zu Jahresbeginn in einzelne Konten aufgelöst: Für jeden Bilanzposten gibt es ein Bestandskonto. Ein Konto hat die Form eines T mit einer linken Seite (Soll) und einer rechten Seite (Haben). Aktivposten werden zu Aktivkonten, Passivposten zu Passivkonten. Der Anfangsbestand steht dort, wo der Posten in der Bilanz steht: bei Aktivkonten im Soll, bei Passivkonten im Haben. Am Jahresende werden die Konten abgeschlossen, ihre Endbestände ergeben die Schlussbilanz (Schlussbilanzkonto).",
-        "beispiele": [
-          "Das Konto ‚Rohstoffe‘ ist ein Aktivkonto; sein Anfangsbestand steht im Soll.",
-          "Das Konto ‚Verbindlichkeiten aus Lieferungen und Leistungen‘ ist ein Passivkonto; sein Anfangsbestand steht im Haben."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Der Industriekontenrahmen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der IKR ordnet die Konten nach Kontenklassen: 0 und 1 Anlagevermögen, 2 Umlaufvermögen, 3 Eigenkapital und Rückstellungen, 4 Verbindlichkeiten, 5 Erträge, 6 und 7 Aufwendungen, 8 Ergebnisrechnungen. Aus dem Kontenrahmen erstellt jeder Betrieb seinen eigenen Kontenplan mit den Konten, die er tatsächlich braucht.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Sandra Koslowski eröffnet für MAKEL am 2. Januar die Konten: Guthaben bei Kreditinstituten mit 15.000 € im Soll, Kasse mit 1.000 € im Soll, Verbindlichkeiten aus Lieferungen und Leistungen mit 8.000 € im Haben. Ab jetzt wird jeder Geschäftsfall auf diesen Konten erfasst.",
-        "typische_fehler": "Soll mit ‚Plus‘ und Haben mit ‚Minus‘ gleichsetzen. Ob eine Seite mehrt oder mindert, hängt von der Kontoart ab.",
         "verstaendnisfragen": [
-          "Wo steht der Anfangsbestand eines Aktivkontos? Im Soll, wie in der Bilanz auf der linken Seite.",
-          "Warum löst man die Bilanz in Konten auf? Weil sonst jeder Geschäftsfall eine neue Bilanz erfordern würde."
-        ],
-        "pruefungsbezug": "Anfangsbestände auf die richtige Kontoseite setzen ist die Grundlage aller Buchungsaufgaben.",
-        "merksatz": "Jeder Bilanzposten bekommt ein Bestandskonto; der Anfangsbestand steht auf der Seite, auf der der Posten in der Bilanz steht."
+          {
+            "frage": "Warum steht der Anfangsbestand des Kontos Verbindlichkeiten im Haben?",
+            "antwort": "Weil Verbindlichkeiten auf der Passivseite der Bilanz stehen. Bei Passivkonten steht der Anfangsbestand auf der rechten Seite, im Haben.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Zu welcher Kontenklasse gehört das Konto Rohstoffe, und warum?",
+            "antwort": "Zur Klasse 2, Umlaufvermögen, weil Rohstoffe verbraucht und ständig nachgekauft werden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Aktivkonten haben den Anfangsbestand im Soll, Passivkonten im Haben.",
-          "Ein Konto wird durch den Saldo abgeschlossen."
+        "darstellung": "vollfassung",
+        "ziel": "Du trägst Zu- und Abgänge auf Aktiv- und Passivkonten auf der richtigen Seite ein, ermittelst den Saldo und schließt ein Konto mit dem Schlussbestand ab.",
+        "vorwissen_kurz": "Soll und Haben sind Kontoseiten, keine Vorzeichen. Welche Seite ein Zugang bekommt, hängt von der Kontoart ab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zugänge zum Anfangsbestand, Abgänge gegenüber",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auf einem Konto stehen Zugänge auf derselben Seite wie der Anfangsbestand, Abgänge auf der Gegenseite. Bei einem Aktivkonto stehen Zugänge also im Soll, bei einem Passivkonto im Haben. Am Ende einer Periode wird der {{begriff:saldo|Saldo}} ermittelt: die Differenz der beiden Seiten. Er steht auf der kleineren Seite, damit beide Seiten gleich hoch sind, und ist der Schlussbestand.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Bankkonto im Januar",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Soll",
+              "Betrag",
+              "Haben",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anfangsbestand",
+                  "15.000 €",
+                  "Lieferantenrechnung bezahlt",
+                  "4.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Kunde zahlt Rechnung",
+                  "7.000 €",
+                  "Miete",
+                  "2.500 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "",
+                  "Bargeld in die Kasse",
+                  "3.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "",
+                  "Saldo (Schlussbestand)",
+                  "12.500 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "22.000 €",
+                  "Summe",
+                  "22.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Soll 22.000 € minus Haben 9.500 € ergibt einen Saldo von 12.500 €. Er steht im Haben, weil dort die kleinere Seite ausgeglichen werden muss — als Bestand ist er trotzdem ein Guthaben.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Passivkonto Verbindlichkeiten ist es umgekehrt: Der Anfangsbestand von 8.000 € steht im Haben, eine neue Lieferantenrechnung über 4.760 € kommt als Zugang ebenfalls ins Haben. Bezahlt MAKEL Studio eine Rechnung über 4.000 €, steht dieser Abgang im Soll. Der Saldo von 8.760 € wird im Soll eingetragen und ist der Schlussbestand der Verbindlichkeiten.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Zugänge stehen auf derselben Seite wie der Anfangsbestand, Abgänge auf der Gegenseite. Bei Aktivkonten heißt das: Zugänge im Soll, Abgänge im Haben. Bei Passivkonten: Zugänge im Haben, Abgänge im Soll. Am Ende wird der Saldo auf der kleineren Seite eingesetzt, damit beide Seiten gleich groß sind; er ist der Schlussbestand und geht ins Schlussbilanzkonto.",
-        "beispiele": [
-          "Bank (aktiv): Einzahlung 1.000 € steht im Soll, Überweisung 400 € im Haben.",
-          "Verbindlichkeiten (passiv): Neue Lieferantenrechnung im Haben, Bezahlung im Soll."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Konten und Schlussbilanz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Salden aller Bestandskonten werden am Jahresende in das Schlussbilanzkonto übertragen. Aktivkonten geben ihren Saldo auf die Sollseite des Schlussbilanzkontos ab, Passivkonten auf die Habenseite. Aus dem Schlussbilanzkonto wird die Schlussbilanz aufgestellt.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Das Bankkonto beginnt mit 15.000 € im Soll. Im Januar gehen 7.000 € von Kunden ein (Soll) und 9.500 € werden überwiesen (Haben). Sollseite 22.000 €, Habenseite 9.500 €. Der Saldo von 12.500 € steht auf der Habenseite und ist der Schlussbestand.",
-        "typische_fehler": "Den Saldo auf der größeren Seite eintragen. Er gleicht die kleinere Seite aus.",
         "verstaendnisfragen": [
-          "Wo wird eine Zahlung an einen Lieferanten auf dem Verbindlichkeitenkonto gebucht? Im Soll, denn die Schuld nimmt ab.",
-          "Wie ermittelt man den Schlussbestand eines Kontos? Als Saldo: größere Seite minus kleinere Seite, eingesetzt auf der kleineren Seite."
-        ],
-        "pruefungsbezug": "T-Konten führen und abschließen gehört zu fast jeder Buchungsaufgabe.",
-        "merksatz": "Zugänge stehen auf der Seite des Anfangsbestands, Abgänge auf der Gegenseite; der Saldo gleicht die kleinere Seite aus."
+          {
+            "frage": "Ein Aktivkonto hat Soll 30.000 € und Haben 18.000 €. Wie hoch ist der Saldo, und auf welcher Seite steht er?",
+            "antwort": "12.000 €. Er steht im Haben, um die kleinere Habenseite auszugleichen.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Steht eine Tilgung des Darlehens im Soll oder im Haben des Darlehenskontos?",
+            "antwort": "Im Soll. Das Darlehen ist ein Passivkonto; eine Tilgung ist ein Abgang und steht auf der Gegenseite des Anfangsbestands.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Jeder Geschäftsfall berührt mindestens zwei Konten.",
-          "Auf einem Konto steht im Soll und im Haben."
+        "darstellung": "vollfassung",
+        "ziel": "Du bildest einfache und zusammengesetzte Buchungssätze in vier Schritten — Konten, Kontoart, Zu- oder Abgang, Seite — und prüfst, dass Soll- und Habensumme übereinstimmen.",
+        "vorwissen_kurz": "Jeder Geschäftsfall verändert mindestens zwei Konten. Der Buchungssatz sagt, welche und auf welcher Seite.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "In vier Schritten zum Buchungssatz",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:buchungssatz|Buchungssatz}} nennt zuerst das Konto, auf dem im Soll gebucht wird, dann das Wort „an“ und das Konto mit der Habenbuchung. Weil jeder Geschäftsfall auf mindestens zwei Konten wirkt, sind Soll- und Habensumme immer gleich. Wer unsicher ist, geht in vier Schritten vor: Welche Konten sind betroffen? Welche Kontoart haben sie? Nimmt der Bestand zu oder ab? Auf welcher Seite wird deshalb gebucht?",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein zusammengesetzter Buchungssatz",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio bezahlt eine Lieferantenrechnung über 2.000 €: 1.500 € per Banküberweisung und 500 € bar.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. Welche Konten?",
+                  "Verbindlichkeiten LuL, Bank, Kasse"
+                ]
+              },
+              {
+                "zellen": [
+                  "2. Kontoart?",
+                  "Verbindlichkeiten passiv, Bank und Kasse aktiv"
+                ]
+              },
+              {
+                "zellen": [
+                  "3. Zu- oder Abgang?",
+                  "Verbindlichkeiten nehmen um 2.000 € ab, Bank um 1.500 €, Kasse um 500 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "4. Seite?",
+                  "Verbindlichkeiten im Soll, Bank und Kasse im Haben"
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchungssatz",
+                  "4400 Verbindlichkeiten LuL 2.000 € an 2800 Bank 1.500 € und 2880 Kasse 500 €"
+                ]
+              }
+            ],
+            "fazit": "Drei Konten, eine Sollbuchung, zwei Habenbuchungen. Soll 2.000 € = Haben 1.500 € + 500 €.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          }
         ],
-        "erklaerung": "In der doppelten Buchführung wird jeder Geschäftsfall mindestens zweimal gebucht: einmal im Soll, einmal im Haben, mit gleichen Summen. Der Buchungssatz nennt zuerst das Soll-Konto, dann ‚an‘ und das Haben-Konto. Vorgehen in vier Schritten: (1) Welche Konten sind betroffen? (2) Aktiv- oder Passivkonto? (3) Zugang oder Abgang? (4) Soll oder Haben — und dann den Satz bilden. Bei zusammengesetzten Buchungssätzen stehen auf einer Seite mehrere Konten; die Summen von Soll und Haben müssen trotzdem übereinstimmen.",
-        "beispiele": [
-          "600 € vom Bankkonto in die Kasse: Kasse 600 € an Guthaben bei Kreditinstituten 600 €.",
-          "Darlehen über 10.000 € wird dem Bankkonto gutgeschrieben: Guthaben bei Kreditinstituten 10.000 € an Verbindlichkeiten gegenüber Kreditinstituten 10.000 €."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Mehrere Konten im Soll",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch auf der Sollseite können mehrere Konten stehen. Kauft MAKEL Studio Rohstoffe für 3.000 € und einen Laptop für 1.200 € und bezahlt beides per Bank, lautet der Satz (ohne Umsatzsteuer betrachtet): 2000 Rohstoffe 3.000 € und 0860 Büromaschinen 1.200 € an 2800 Bank 4.200 €.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Luca soll buchen: ‚Bargeldabhebung 600 € für die Kasse im Store‘. Er prüft: Kasse (aktiv) nimmt zu → Soll. Bank (aktiv) nimmt ab → Haben. Buchungssatz: Kasse 600 € an Guthaben bei Kreditinstituten 600 €. Umsatzsteuer spielt keine Rolle, weil nur Geld umgeschichtet wird.",
-        "typische_fehler": "Bei einer Zahlung an einen Lieferanten nochmals Material oder Aufwand buchen. Die Lieferung wurde schon beim Rechnungseingang erfasst; jetzt sinken nur Schuld und Bank.",
         "verstaendnisfragen": [
-          "Welche vier Fragen helfen beim Buchungssatz? Welche Konten, welche Kontoart, Zugang oder Abgang, Soll oder Haben.",
-          "Was muss bei einem zusammengesetzten Buchungssatz gelten? Die Summe der Sollbeträge gleicht der Summe der Habenbeträge."
-        ],
-        "pruefungsbezug": "Buchungssätze werden in der Prüfung mit Kontennamen oder -nummern verlangt; die Schrittfolge verhindert Seitenfehler.",
-        "merksatz": "Buchungssatz: Soll-Konto an Haben-Konto, Summen gleich; erst Konten und Kontoart bestimmen, dann Zugang oder Abgang."
+          {
+            "frage": "Bilde den Buchungssatz: Ein Händler überweist eine offene Rechnung über 3.570 €.",
+            "antwort": "2800 Bank 3.570 € an 2400 Forderungen aus Lieferungen und Leistungen 3.570 €. Die Bank nimmt zu (Soll), die Forderungen nehmen ab (Haben).",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Woran erkennst du, dass ein Buchungssatz rechnerisch falsch ist?",
+            "antwort": "Wenn Soll- und Habensumme nicht übereinstimmen. Jeder Betrag, der im Soll gebucht wird, muss im Haben einen Gegenwert haben.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Jeder Geschäftsfall verändert mindestens zwei Bilanzposten.",
-          "Die Bilanzsumme ist auf beiden Seiten gleich."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst für einen Buchungssatz die Art der Bilanzveränderung und ihre Wirkung auf die Bilanzsumme und erklärst, warum reine Bestandsvorgänge das Eigenkapital nicht verändern.",
+        "vorwissen_kurz": "Jede Buchung auf Bestandskonten verändert die Bilanz. Die Art der Veränderung zeigt, ob die Bilanzsumme wächst, schrumpft oder gleich bleibt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Arten, die Bilanz zu verändern",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Betrifft ein Geschäftsfall nur Aktivkonten, werden Posten auf der linken Seite getauscht: **Aktivtausch**. Betrifft er nur Passivkonten, ist es ein **Passivtausch**. In beiden Fällen bleibt die Bilanzsumme gleich. Wirkt er auf beide Seiten gleichzeitig, steigt die Bilanzsumme (**Aktiv-Passiv-Mehrung**) oder sie sinkt (**Aktiv-Passiv-Minderung**). Das Eigenkapital bleibt bei all diesen Vorgängen unverändert, weil weder Aufwand noch Ertrag entsteht.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Geschäftsfälle im Februar",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Geschäftsfall",
+              "Buchungssatz",
+              "Art",
+              "Bilanzsumme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohstoffe für 2.000 € bar gekauft (ohne Steuer)",
+                  "Rohstoffe an Kasse",
+                  "Aktivtausch",
+                  "gleich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferantenschuld von 8.000 € in ein Darlehen umgewandelt",
+                  "Verbindlichkeiten LuL an Darlehen",
+                  "Passivtausch",
+                  "gleich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Darlehen über 10.000 € aufgenommen",
+                  "Bank an Darlehen",
+                  "Aktiv-Passiv-Mehrung",
+                  "+ 10.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Darlehen mit 5.000 € per Bank getilgt",
+                  "Darlehen an Bank",
+                  "Aktiv-Passiv-Minderung",
+                  "− 5.000 €"
+                ]
+              }
+            ],
+            "fazit": "Nach allen vier Fällen ist die Bilanzsumme um 5.000 € höher als vorher. Das Eigenkapital ist in keinem Fall berührt.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bilanzveränderung lässt sich direkt aus dem Buchungssatz ablesen: Stehen Soll- und Habenkonto auf derselben Bilanzseite, ist es ein Tausch. Steht das Sollkonto auf der Aktivseite und das Habenkonto auf der Passivseite, wächst die Bilanz. Steht das Sollkonto auf der Passivseite und das Habenkonto auf der Aktivseite, schrumpft sie.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Bestandsbuchungen verändern die Bilanz auf vier Arten. Aktivtausch: Zwei Aktivposten ändern sich gegenläufig, die Bilanzsumme bleibt gleich. Passivtausch: Zwei Passivposten ändern sich gegenläufig, die Summe bleibt gleich. Aktiv-Passiv-Mehrung: Je ein Posten auf beiden Seiten nimmt zu, die Bilanzsumme steigt. Aktiv-Passiv-Minderung: Je ein Posten auf beiden Seiten nimmt ab, die Bilanzsumme sinkt. In keinem dieser Fälle ändert sich das Eigenkapital — reine Bestandsvorgänge sind erfolgsneutral.",
-        "beispiele": [
-          "Kasse an Bank: Aktivtausch.",
-          "Verbindlichkeiten LuL an Bank: Aktiv-Passiv-Minderung, die Bilanzsumme sinkt um den Zahlbetrag."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Wann sich das Eigenkapital ändert",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Das Eigenkapital ändert sich durch Aufwendungen und Erträge, also wenn MAKEL Studio Miete zahlt oder Hoodies verkauft, sowie durch Einlagen und Entnahmen. Diese Vorgänge werden nicht direkt auf dem Eigenkapitalkonto gebucht, sondern auf Erfolgskonten, die im nächsten Kapitel folgen.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL überweist eine bereits gebuchte Lieferantenrechnung über 500 € ohne Skonto. Buchungssatz: Verbindlichkeiten aus Lieferungen und Leistungen 500 € an Guthaben bei Kreditinstituten 500 €. Bank (aktiv) und Verbindlichkeiten (passiv) sinken: Aktiv-Passiv-Minderung, kein Aufwand, kein Gewinn oder Verlust.",
-        "typische_fehler": "Eine Bilanzverkürzung für einen Verlust halten. Das Unternehmen hat weniger Geld, aber auch weniger Schulden; das Eigenkapital bleibt gleich.",
         "verstaendnisfragen": [
-          "Welche Bilanzveränderung ist ‚Darlehen aufnehmen, Gutschrift auf dem Bankkonto‘? Aktiv-Passiv-Mehrung.",
-          "Warum ändern Bestandsvorgänge das Eigenkapital nicht? Weil sich Vermögen und Schulden gleich verändern oder nur innerhalb einer Seite umgeschichtet wird."
-        ],
-        "pruefungsbezug": "Die Art der Bilanzveränderung bestimmen und begründen ist eine häufige Teilaufgabe.",
-        "merksatz": "Aktivtausch und Passivtausch lassen die Bilanzsumme gleich, Mehrung erhöht und Minderung senkt sie; das Eigenkapital bleibt unverändert."
+          {
+            "frage": "Welche Bilanzveränderung liegt vor: Ein Händler überweist eine offene Rechnung?",
+            "antwort": "Aktivtausch. Die Bank nimmt zu, die Forderungen nehmen ab; beide stehen auf der Aktivseite.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ist die Bezahlung einer Lieferantenrechnung kein Aufwand?",
+            "antwort": "Weil der Einkauf bereits beim Rechnungseingang gebucht wurde. Die Zahlung mindert nur die Schuld und das Bankguthaben — eine Aktiv-Passiv-Minderung.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

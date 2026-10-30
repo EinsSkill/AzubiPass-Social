@@ -127,3 +127,16 @@ Durchgehender Fall: erster eigener MAKEL-Messestand auf der Modemesse Berlin 10.
 - **K4 Abschluss:** Abnahmeprotokoll mit knapp verfehltem Ziel (7/8) ehrlich vermerkt, Restpunkte, Übergabe in Prozess; Auswertung mit konkreten Maßnahmen, Ergebnis und Vorgehen getrennt; Präsentation Ergebnis zuerst, Kosten je Gespräch ≈ 802 €. **Berichtigt:** „der einzige Teil, von dem das nächste Projekt etwas hat“, „häufigster Bruch“ entschärft.
 
 **Stand KfB:** alle 26 KfB-Kapitelreihen einschließlich Buchführung vollständig als Vollfassung (Prüfung per `vertiefung.ist_vollfassung` über alle Kapiteldateien: 0 offene KfB-Abschnitte).
+
+## IK LF5 · Wertströme buchhalterisch dokumentieren
+
+Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulischen IKR-Kontenplan (FOS Nürnberg, Klassen 0–3) geprüft.
+
+- **K01:** Stoffeinkauf aus Sicht von fünf Nutzern; Belegarten mit Ersatzbeleg, Aufbewahrungsfristen mit Enddatum (Beleg vs. Jahresabschluss ab Feststellungsjahr); Inventar mit Reinvermögen 60.000 €, Inventurverfahren; Bilanz und Kauf auf Ziel.
+- **K02:** Eröffnung mit IKR-Konten, Bankkonto mit Saldo, Verbindlichkeitenkonto; vierschrittiger zusammengesetzter Buchungssatz; vier Bilanzveränderungen mit Summenwirkung.
+- **K03:** Bestands-/Erfolgsvorgänge, IKR-Buchungen März, GuV mit Verlust 4.460 € und Erklärung, Quartal mit Gewinn 9.000 € bei Bank − 15.000 €. Alt-Langfassung nannte „6720 Versicherungsbeiträge“ und „3070 Jahresüberschuss“ – in der Vollfassung 6900 bzw. ohne Nummer (Kontengruppe nicht eindeutig belegt).
+- **K04:** Drei Belege rückwärts gerechnet, Pflichtangabenprüfung, E-Rechnungsempfang seit 2025, Kleinbetragsrechnung; Händlerrechnung, innergemeinschaftliche Lieferung; Zahllast März und Vorsteuerüberhang.
+- **K05:** Materialarten, Bestands- vs. aufwandsorientierte Methode; Anschaffungskosten 1.580 € (Rohling 7,90 €), Zugang/Entnahme mit Auftragsbezug, Rücksendung mit § 17 UStG.
+- **K06:** Vereinsauftrag mit Rücksendung und Nachlass (Forderung 3.561,07 €), Erzeugnis vs. Handelsware, Bestandsveränderung im Quartal.
+- **K07:** Anschaffungen mit Konten, GWG-Grenzen 250/800/1.000 €; Anschaffungskosten 13.000 € mit Abgrenzung Garn/Wartung; zeitanteilige AfA über sechs Kalenderjahre; Kauf/Zahlung/AfA mit Bankwirkung. **Berichtigt (gemeinsam):** IKR-Konten in der Tabelle falsch — „0500 Technische Anlagen und Maschinen“ (0500 = unbebaute Grundstücke) → 0700, „0700 Betriebs- und Geschäftsausstattung“ → 0870 Büromöbel und sonstige Geschäftsausstattung.
+- **K08:** Buchbestand/Istbestand Rohlinge mit Prüfreihenfolge, belegte Teilerklärung und dokumentierte Restdifferenz, Storno; Abstimmung mit Kontoauszug, Kasse, Saldenbestätigungen, Eingangsrechnungen; Gewinn 800 € bei Bank − 3.300 €.

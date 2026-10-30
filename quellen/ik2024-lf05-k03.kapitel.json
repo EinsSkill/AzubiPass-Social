@@ -6,86 +6,462 @@
   "untertitel": "Warum es Erfolgskonten gibt, wie die GuV den Gewinn ermittelt und warum Gewinn nicht dasselbe ist wie Geld auf dem Konto.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Bestandsvorgänge verändern das Eigenkapital nicht.",
-          "Unternehmen wollen aber Gewinn erzielen — also das Eigenkapital vermehren."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Bestands- von Erfolgsvorgängen danach, ob sie das Eigenkapital verändern, und erklärst, warum Aufwendungen und Erträge auf eigenen Konten gesammelt werden.",
+        "vorwissen_kurz": "Manche Geschäftsfälle verschieben nur Vermögen und Schulden. Andere machen den Betrieb reicher oder ärmer.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was das Eigenkapital verändert",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Holt MAKEL Studio Bargeld von der Bank, hat der Betrieb danach genauso viel Vermögen wie vorher — es liegt nur an anderer Stelle. Überweist MAKEL Studio die Miete für die Veredelungshalle, ist das Geld weg, ohne dass ein Vermögensgegenstand dafür hereinkommt. Solche {{begriff:aufwand|Aufwendungen}} mindern das Eigenkapital; {{begriff:ertrag|Erträge}} wie Umsatzerlöse oder Zinsgutschriften erhöhen es. Damit nachvollziehbar bleibt, woher Gewinn oder Verlust kommen, werden Aufwendungen und Erträge nicht direkt auf dem Eigenkapitalkonto gebucht, sondern auf eigenen {{begriff:erfolgskonto|Erfolgskonten}}.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Vorgänge im März",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Art",
+              "Wirkung auf das Eigenkapital"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohstoffe für 3.000 € auf Ziel gekauft (ohne Steuer)",
+                  "Bestandsvorgang",
+                  "keine: Rohstoffe und Verbindlichkeiten steigen gleich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Löhne für die Näherei überwiesen, 8.400 €",
+                  "Erfolgsvorgang",
+                  "sinkt um 8.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "120 Hoodies an einen Händler auf Ziel verkauft, 5.400 € netto",
+                  "Erfolgsvorgang",
+                  "steigt um 5.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Händler überweist die Rechnung",
+                  "Bestandsvorgang",
+                  "keine: Bank steigt, Forderungen sinken"
+                ]
+              }
+            ],
+            "fazit": "Nur Löhne und Verkauf verändern das Eigenkapital. Einkauf auf Ziel und Kundenzahlung sind reine Bestandsvorgänge.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Erfolgskonten haben keinen Anfangsbestand. Sie sammeln die Aufwendungen und Erträge eines Geschäftsjahres und werden am Jahresende abgeschlossen. Im neuen Jahr beginnen sie wieder bei null, damit jedes Jahr seinen eigenen Erfolg zeigt.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Manche Geschäftsfälle verändern das Eigenkapital: Aufwendungen (Werteverzehr, etwa Miete, Gehälter, Materialverbrauch) mindern es, Erträge (Wertezuwachs, etwa Umsatzerlöse, Zinserträge) mehren es. Würde man sie direkt auf dem Eigenkapitalkonto buchen, wäre nicht mehr erkennbar, woher der Erfolg stammt. Deshalb gibt es Erfolgskonten als Unterkonten des Eigenkapitals: Aufwandskonten und Ertragskonten. Sie haben keinen Anfangsbestand, sammeln die Werte des Geschäftsjahres und werden am Ende über das Gewinn- und Verlustkonto abgeschlossen. In diesem Kapitel bleibt die Umsatzsteuer bewusst außen vor; sie folgt in Kapitel 4.",
-        "beispiele": [
-          "Die Miete für die Veredelungshalle ist Aufwand: Sie verbraucht Werte, ohne dass dafür Vermögen entsteht.",
-          "Zinsen, die die Bank auf ein Guthaben gutschreibt, sind Ertrag."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Erfolgskonten als Unterkonten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Man kann sich Erfolgskonten als Unterkonten des Eigenkapitals vorstellen. Aufwand mindert das Eigenkapital und steht deshalb im Soll — wie ein Abgang auf dem Passivkonto Eigenkapital. Ertrag erhöht es und steht im Haben — wie ein Zugang.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner fragt: ‚Wie viel haben wir im März für Energie ausgegeben, und was hat der Wholesale-Umsatz gebracht?‘ Sandra kann es sofort beantworten, weil Energie und Umsatzerlöse auf eigenen Erfolgskonten gesammelt werden — auf dem Eigenkapitalkonto wäre alles vermischt.",
-        "typische_fehler": "Eine Auszahlung automatisch für Aufwand halten. Die Tilgung eines Darlehens ist eine Auszahlung, aber kein Aufwand.",
         "verstaendnisfragen": [
-          "Warum bucht man Aufwand und Ertrag nicht direkt auf dem Eigenkapitalkonto? Weil die Quellen des Erfolgs sonst nicht mehr erkennbar wären.",
-          "Haben Erfolgskonten einen Anfangsbestand? Nein, sie beginnen jedes Geschäftsjahr bei null."
-        ],
-        "pruefungsbezug": "Bestands- und Erfolgsvorgänge unterscheiden ist die Voraussetzung, um Buchungen und Gewinnwirkungen richtig zu beurteilen.",
-        "merksatz": "Aufwendungen mindern, Erträge mehren das Eigenkapital; sie werden auf Erfolgskonten ohne Anfangsbestand gesammelt."
+          {
+            "frage": "Ist der Kauf von Rohstoffen auf Ziel ein Aufwand?",
+            "antwort": "Nein, bei bestandsorientierter Buchung nicht. Rohstoffe und Verbindlichkeiten steigen um denselben Betrag; das Eigenkapital bleibt gleich. Aufwand entsteht erst, wenn die Rohstoffe verbraucht werden.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum beginnen Erfolgskonten jedes Jahr bei null?",
+            "antwort": "Weil sie den Erfolg eines einzelnen Jahres zeigen sollen. Der Erfolg des Vorjahres steckt bereits im Eigenkapital.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Das Eigenkapital ist ein Passivkonto: Zugänge im Haben, Abgänge im Soll.",
-          "Erfolgskonten sind Unterkonten des Eigenkapitals."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst einfache Aufwendungen und Erträge auf den passenden IKR-Erfolgskonten und begründest die Soll- oder Habenseite.",
+        "vorwissen_kurz": "Aufwand mindert das Eigenkapital, Ertrag erhöht es. Daraus folgt, auf welcher Kontoseite gebucht wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Aufwand im Soll, Ertrag im Haben",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Aufwendungen werden im Soll des Aufwandskontos gebucht, Erträge im Haben des Ertragskontos. Die Gegenbuchung erfolgt meist auf einem Bestandskonto, etwa der Bank. Im Industriekontenrahmen stehen die Erträge in Klasse 5, die Aufwendungen in den Klassen 6 und 7. So erkennt man schon an der Kontonummer, ob ein Konto den Erfolg erhöht oder mindert.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Buchungen im März (ohne Umsatzsteuer)",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Geschäftsfall",
+              "Buchungssatz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Miete für die Veredelungshalle per Bank, 1.200 €",
+                  "6700 Mieten und Pachten 1.200 € an 2800 Bank 1.200 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maschinenversicherung per Bank, 300 €",
+                  "6900 Versicherungsbeiträge 300 € an 2800 Bank 300 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Löhne der Näherei per Bank, 8.400 €",
+                  "6200 Löhne 8.400 € an 2800 Bank 8.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinsgutschrift der Bank, 40 €",
+                  "2800 Bank 40 € an 5710 Zinserträge 40 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verkauf von 120 Hoodies an einen Händler auf Ziel, 5.400 €",
+                  "2400 Forderungen LuL 5.400 € an 5000 Umsatzerlöse für eigene Erzeugnisse 5.400 €"
+                ]
+              }
+            ],
+            "fazit": "Alle Aufwandskonten stehen im Soll, alle Ertragskonten im Haben. Die Gegenkonten sind Bestandskonten.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Praxis kommt bei vielen Geschäftsfällen Umsatzsteuer hinzu; sie wird auf eigenen Konten gebucht und ist kein Aufwand und kein Ertrag. Versicherungsbeiträge sind umsatzsteuerfrei, Wohnraum- und Hallenmieten je nach Vertrag. Diese Unterschiede folgen im Kapitel zur Umsatzsteuer; hier geht es zunächst nur um den Erfolg.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Weil Aufwendungen das Eigenkapital mindern, stehen sie wie Eigenkapitalabgänge im Soll. Erträge mehren das Eigenkapital und stehen im Haben. Die Gegenbuchung erfolgt meist auf einem Bestandskonto: Bank, Kasse, Forderungen oder Verbindlichkeiten. Im Industriekontenrahmen stehen Erträge in Kontenklasse 5 (zum Beispiel 5000 Umsatzerlöse für eigene Erzeugnisse, 5710 Zinserträge), Aufwendungen in den Klassen 6 und 7 (zum Beispiel 6700 Mieten und Pachten, 6720 Versicherungsbeiträge, 7500 Zinsaufwendungen).",
-        "beispiele": [
-          "Mietzahlung 1.200 € per Bank: Mieten und Pachten 1.200 € an Guthaben bei Kreditinstituten 1.200 €.",
-          "Zinsgutschrift 40 €: Guthaben bei Kreditinstituten 40 € an Zinserträge 40 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kontenbezeichnungen im IKR",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Nummern zeigen die Ordnung: 50 Umsatzerlöse, 57 Zinserträge, 62 Löhne, 63 Gehälter, 67 sonstige Aufwendungen für die Inanspruchnahme von Rechten und Diensten wie Mieten, 69 Aufwendungen für Beiträge wie Versicherungen, 75 Zinsaufwendungen. Welche Konten ein Betrieb genau führt, legt sein Kontenplan fest.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Im Januar bucht Luca: Versicherungsbeitrag für die Maschinen 300 € per Bank (Versicherungsbeiträge an Bank), Mietzahlung 1.200 € (Mieten und Pachten an Bank), Zinsgutschrift 40 € (Bank an Zinserträge). Sandra prüft: alle Aufwendungen im Soll, der Ertrag im Haben — korrekt.",
-        "typische_fehler": "Erträge im Soll buchen, weil das Bankkonto ‚plus‘ macht. Die Bank steht im Soll, der Ertrag auf der Gegenseite im Haben.",
         "verstaendnisfragen": [
-          "Auf welcher Kontoseite stehen Aufwendungen? Im Soll.",
-          "In welcher IKR-Klasse findest du Umsatzerlöse? In Klasse 5."
-        ],
-        "pruefungsbezug": "Erfolgsbuchungen mit IKR-Kontonummern bilden; Klasse 5 für Erträge, Klassen 6 und 7 für Aufwendungen.",
-        "merksatz": "Aufwand im Soll, Ertrag im Haben; im IKR stehen Erträge in Klasse 5, Aufwendungen in den Klassen 6 und 7."
+          {
+            "frage": "Bilde den Buchungssatz: MAKEL Studio überweist 250 € Zinsen für das Darlehen.",
+            "antwort": "7510 Zinsaufwendungen 250 € an 2800 Bank 250 €. Zinsen sind Aufwand und stehen im Soll.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum steht der Verkauf auf Ziel als Ertrag, obwohl noch kein Geld geflossen ist?",
+            "antwort": "Weil die Leistung erbracht ist. Der Ertrag entsteht mit dem Verkauf; die Zahlung ist ein späterer Bestandsvorgang.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Erfolgskonten sammeln Aufwendungen und Erträge eines Jahres.",
-          "Am Jahresende werden alle Konten abgeschlossen."
+        "darstellung": "vollfassung",
+        "ziel": "Du schließt die Erfolgskonten über die GuV ab, ermittelst Gewinn oder Verlust und überträgst ihn in das Eigenkapital.",
+        "vorwissen_kurz": "Am Jahresende werden alle Aufwendungen und Erträge an einer Stelle zusammengeführt. Dort zeigt sich, ob der Betrieb Gewinn gemacht hat.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Alle Erfolgskonten in die GuV",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zum Abschluss werden die Salden aller Aufwandskonten auf die Sollseite, die Salden aller Ertragskonten auf die Habenseite des Kontos {{begriff:guv|Gewinn und Verlust (GuV)}} übertragen. Sind die Erträge höher als die Aufwendungen, ergibt sich als Saldo ein Gewinn, sonst ein Verlust. Der Saldo wird in das Eigenkapital übertragen. Bei MAKEL Studio als GmbH landet er auf einem eigenen Eigenkapitalkonto für den Jahresüberschuss oder Jahresfehlbetrag.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die GuV für März",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Soll · Aufwendungen",
+              "Betrag",
+              "Haben · Erträge",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Löhne",
+                  "8.400 €",
+                  "Umsatzerlöse",
+                  "5.400 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Mieten und Pachten",
+                  "1.200 €",
+                  "Zinserträge",
+                  "40 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Versicherungsbeiträge",
+                  "300 €",
+                  "Saldo: Verlust",
+                  "4.460 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "9.900 €",
+                  "Summe",
+                  "9.900 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Die Aufwendungen von 9.900 € übersteigen die Erträge von 5.440 €. Der Verlust von 4.460 € mindert das Eigenkapital: Eigenkapital an GuV 4.460 €.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein einzelner Monat ist nur ein Ausschnitt. Im März hat MAKEL Studio viel produziert, aber erst wenig verkauft; die Hoodies liegen im Lager und werden im April an Händler geliefert. Für die Beurteilung des Erfolgs zählt deshalb vor allem das ganze Geschäftsjahr — und auch dort müssen Bestandsveränderungen an fertigen Erzeugnissen berücksichtigt werden, wie im nächsten Kapitel.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Zum Abschluss werden die Salden aller Aufwandskonten ins Soll und die Salden aller Ertragskonten ins Haben des Gewinn- und Verlustkontos (GuV) übertragen. Sind die Erträge größer als die Aufwendungen, ergibt sich ein Gewinn; der Saldo steht im Soll der GuV und wird ins Haben des Eigenkapitals gebucht (GuV an Eigenkapital). Bei einem Verlust ist es umgekehrt. Bei der MAKEL Studio GmbH als Kapitalgesellschaft landet das Ergebnis im IKR auf dem Konto 3070 Jahresüberschuss/Jahresfehlbetrag.",
-        "beispiele": [
-          "Erträge 1.200 €, Aufwendungen 600 €: Gewinn 600 €, Buchung GuV 600 € an Eigenkapital 600 €.",
-          "Erträge 900 €, Aufwendungen 1.100 €: Verlust 200 €, Buchung Eigenkapital 200 € an GuV 200 €."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Vom Konto zur Gewinn- und Verlustrechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Das GuV-Konto ist das Sammelkonto der Buchhaltung. Für den Jahresabschluss einer Kapitalgesellschaft wird daraus die Gewinn- und Verlustrechnung nach § 275 HGB in Staffelform, die Erträge und Aufwendungen in einer festen Reihenfolge untereinander zeigt.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für einen Mini-Monat sind alle Erträge mit 1.200 € und alle Aufwendungen mit 600 € angegeben. Luca überträgt die Salden in die GuV und erhält einen Gewinn von 600 €, der das Eigenkapital erhöht. Sandra fragt: ‚Und wie viel mehr ist auf dem Bankkonto?‘ Luca muss zugeben: Das lässt sich daraus nicht ablesen.",
-        "typische_fehler": "Den Gewinn auf der Habenseite der GuV eintragen. Der Saldo gleicht die kleinere Seite aus — bei Gewinn ist das die Sollseite.",
         "verstaendnisfragen": [
-          "Wohin wird der Saldo der GuV gebucht? Auf das Eigenkapitalkonto.",
-          "Wie lautet die Buchung bei einem Gewinn? GuV an Eigenkapital."
-        ],
-        "pruefungsbezug": "Erfolg aus gegebenen Aufwendungen und Erträgen ermitteln und den Abschluss über die GuV buchen.",
-        "merksatz": "Aufwandssalden ins Soll, Ertragssalden ins Haben der GuV; ein Gewinn wird mit ‚GuV an Eigenkapital‘ übertragen."
+          {
+            "frage": "Wie lautet die Buchung, wenn die GuV einen Gewinn von 600 € zeigt?",
+            "antwort": "GuV 600 € an Eigenkapital (Jahresüberschuss) 600 €. Der Gewinn erhöht das Eigenkapital und steht deshalb im Haben des Eigenkapitalkontos.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum ist der Verlust im März kein Grund zur Sorge, wenn im April viel geliefert wird?",
+            "antwort": "Weil die Aufwendungen für die Produktion im März angefallen sind, die Erträge aber erst beim Verkauf entstehen. Über das Jahr gleicht sich das aus, wenn die Hoodies verkauft werden.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Gewinn ist Ertrag minus Aufwand.",
-          "Geldbewegungen zeigt das Bankkonto."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst an Beispielen, warum Gewinn und Zahlungsmittelzufluss auseinanderfallen, und ordnest Vorgänge als erfolgswirksam, zahlungswirksam oder beides ein.",
+        "vorwissen_kurz": "Ein Betrieb kann Gewinn machen und trotzdem knapp bei Kasse sein — oder Geld auf dem Konto haben und Verlust machen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gewinn ist nicht Geld",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Gewinn zeigt, ob die Erträge die Aufwendungen übersteigen. Der Kontostand zeigt, wie viel Geld gerade verfügbar ist. Beides hängt zusammen, ist aber nicht dasselbe: Ein Verkauf auf Ziel bringt sofort Ertrag, aber erst später Geld. Eine Darlehenstilgung kostet Geld, ist aber kein Aufwand. Wer nur auf den Gewinn schaut, kann deshalb in Zahlungsschwierigkeiten geraten.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Quartal bei MAKEL Studio",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Erfolg",
+              "Bank"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Hoodies an Händler auf Ziel verkauft, 30.000 €",
+                  "+ 30.000 €",
+                  "± 0 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Händler zahlen ältere Rechnungen, 12.000 €",
+                  "± 0 €",
+                  "+ 12.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Löhne und Miete gezahlt, 21.000 €",
+                  "− 21.000 €",
+                  "− 21.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Darlehen getilgt, 6.000 €",
+                  "± 0 €",
+                  "− 6.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "Gewinn 9.000 €",
+                  "Bank − 15.000 €"
+                ]
+              }
+            ],
+            "fazit": "Das Quartal zeigt 9.000 € Gewinn, aber das Bankkonto ist um 15.000 € gesunken. Der Grund: Die Verkäufe sind noch nicht bezahlt, die Tilgung kostet Geld ohne Aufwand.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für MAKEL Studio heißt das: Neben der GuV braucht die Geschäftsführung eine Liquiditätsplanung, die zeigt, wann Geld ein- und ausgeht. Ein Gewinn nützt wenig, wenn am Monatsende die Löhne nicht gezahlt werden können, weil die Händler erst in 60 Tagen zahlen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Erfolg und Zahlung fallen oft auseinander. Ein Verkauf auf Ziel ist sofort Ertrag, bringt aber erst später Geld. Bezahlt der Kunde dann, fließt Geld, aber es entsteht kein neuer Ertrag — er wurde beim Verkauf gebucht (Bank an Forderungen). Umgekehrt ist die Tilgung eines Darlehens eine Auszahlung, aber kein Aufwand. Wer aus dem Gewinn auf den Kontostand schließt, irrt deshalb häufig.",
-        "beispiele": [
-          "Kunde zahlt 1.000 € auf eine bereits gebuchte Forderung: Bank 1.000 € an Forderungen 1.000 € — Geldzufluss, kein Ertrag.",
-          "Darlehenstilgung 2.000 €: Auszahlung, aber kein Aufwand; nur die Zinsen sind Aufwand."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ertrag, Einnahme, Einzahlung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Kostenrechnung unterscheidet genauer: Eine Einzahlung erhöht den Bestand an Geld. Eine Einnahme erhöht das Geldvermögen einschließlich Forderungen. Ein Ertrag erhöht das Eigenkapital. Beim Verkauf auf Ziel entstehen Einnahme und Ertrag, aber noch keine Einzahlung.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Eine Boutique überweist 1.000 € für eine Lieferung aus dem Vormonat. Luca will ‚Bank an Umsatzerlöse‘ buchen. Sandra zeigt ihm die Ausgangsrechnung vom Vormonat: Damals wurde ‚Forderungen an Umsatzerlöse‘ gebucht. Richtig ist jetzt: Bank 1.000 € an Forderungen aus Lieferungen und Leistungen 1.000 € — sonst wäre der Umsatz doppelt erfasst.",
-        "typische_fehler": "Jede Kundenzahlung noch einmal als Umsatzerlös buchen.",
         "verstaendnisfragen": [
-          "Ist der Zahlungseingang auf eine Forderung ein Ertrag? Nein, der Ertrag entstand beim Verkauf; jetzt wird nur eine Forderung zu Geld.",
-          "Warum ist eine Darlehenstilgung kein Aufwand? Weil Bank und Schulden gleich sinken; das Eigenkapital ändert sich nicht."
-        ],
-        "pruefungsbezug": "Prüfungsfälle verlangen oft die Begründung, warum ein Geldfluss erfolgsneutral ist oder warum Gewinn nicht gleich Geld ist.",
-        "merksatz": "Erfolg und Zahlung fallen auseinander: Kundenzahlungen auf Forderungen und Darlehenstilgungen sind erfolgsneutral."
+          {
+            "frage": "Ein Händler zahlt 1.000 € auf eine bereits gebuchte Forderung. Wie lautet der Buchungssatz, und entsteht ein Ertrag?",
+            "antwort": "2800 Bank 1.000 € an 2400 Forderungen LuL 1.000 €. Es entsteht kein neuer Ertrag; er wurde schon beim Verkauf erfasst.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ist eine Darlehenstilgung kein Aufwand?",
+            "antwort": "Weil Bank und Darlehensschuld um denselben Betrag sinken. Das Eigenkapital bleibt gleich; Aufwand sind nur die Zinsen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

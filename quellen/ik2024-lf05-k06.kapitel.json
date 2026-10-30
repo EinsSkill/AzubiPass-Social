@@ -6,86 +6,398 @@
   "untertitel": "Ausgangsrechnungen und Nachlässe buchen, eigene Erzeugnisse von Handelswaren unterscheiden und verstehen, warum Lagerzuwachs den Erfolg verändert.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Beim Verkauf auf Ziel entsteht eine Forderung.",
-          "Auf Ausgangsrechnungen berechnet MAKEL Umsatzsteuer."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst eine Ausgangsrechnung über eigene Erzeugnisse auf Ziel, trennst Ertrag, Umsatzsteuer und Forderung und buchst den späteren Zahlungseingang erfolgsneutral.",
+        "vorwissen_kurz": "Der Ertrag entsteht mit der Lieferung und der Rechnung. Wann der Kunde zahlt, ist eine andere Frage.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mit der Rechnung entsteht die Forderung",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Liefert MAKEL Studio Hoodies an einen Händler und schreibt eine {{begriff:rechnung|Ausgangsrechnung}}, entstehen drei Werte: der Umsatzerlös netto als Ertrag, die Umsatzsteuer als Schuld gegenüber dem Finanzamt und die Forderung brutto gegenüber dem Händler. Bezahlt der Händler später, tauscht sich nur die Forderung gegen Bankguthaben; ein neuer Ertrag entsteht nicht.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Vereinsauftrag von der Rechnung bis zur Zahlung",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio liefert einem Sportverein 80 bestickte Hoodies zu je 42 € netto.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datum",
+              "Vorgang",
+              "Buchungssatz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "14. Mai",
+                  "Ausgangsrechnung 80 × 42 € = 3.360 € netto, 638,40 € USt",
+                  "2400 Forderungen LuL 3.998,40 € an 5000 Umsatzerlöse für eigene Erzeugnisse 3.360,00 € und 4800 Umsatzsteuer 638,40 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "10. Juni",
+                  "Verein überweist den Rechnungsbetrag",
+                  "2800 Bank 3.998,40 € an 2400 Forderungen LuL 3.998,40 €"
+                ]
+              }
+            ],
+            "fazit": "Der Ertrag von 3.360 € gehört in den Mai, auch wenn das Geld erst im Juni kommt. Die Zahlung ist ein reiner Aktivtausch.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "erklaerung": "Verkauft MAKEL selbst veredelte Erzeugnisse auf Ziel, entsteht mit der Ausgangsrechnung eine Forderung in Höhe des Bruttobetrags. Der Ertrag wird netto auf 5000 Umsatzerlöse für eigene Erzeugnisse gebucht, die Steuer auf 4800 Umsatzsteuer. Geld fließt erst später, wenn der Kunde zahlt; dann wird Bank an Forderungen gebucht. Barverkäufe im Store werden direkt über die Kasse gebucht.",
-        "beispiele": [
-          "Verkauf auf Ziel netto 2.000 €: Forderungen LuL 2.380 € an Umsatzerlöse 2.000 € und Umsatzsteuer 380 €.",
-          "Barverkauf im Store brutto 59,50 €: Kasse 59,50 € an Umsatzerlöse 50 € und Umsatzsteuer 9,50 €."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Forderungen im Blick behalten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Solange der Verein nicht gezahlt hat, steckt der Umsatz in den Forderungen. Die Buchhaltung überwacht deshalb Zahlungsziele und mahnt, wenn eine Rechnung offen bleibt. Fällt eine Forderung ganz aus, weil der Kunde zahlungsunfähig ist, wird sie abgeschrieben und die Umsatzsteuer berichtigt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Marlene Voss liefert 50 bestickte Hoodies an eine Boutique in Köln und stellt netto 2.000 € plus 380 € Umsatzsteuer in Rechnung, zahlbar in 30 Tagen. Sandra bucht: Forderungen aus Lieferungen und Leistungen 2.380 € an Umsatzerlöse für eigene Erzeugnisse 2.000 € und Umsatzsteuer 380 €. Auf dem Bankkonto passiert heute nichts.",
-        "typische_fehler": "Beim Verkauf auf Ziel schon das Bankkonto ansprechen.",
         "verstaendnisfragen": [
-          "Mit welchem Betrag entsteht die Forderung? Mit dem Bruttobetrag.",
-          "Wann wird das Bankkonto berührt? Erst bei Zahlungseingang."
-        ],
-        "pruefungsbezug": "Ausgangsrechnungen werden als zusammengesetzter Buchungssatz mit Umsatzsteuer verlangt.",
-        "merksatz": "Verkauf auf Ziel: Forderungen brutto an Umsatzerlöse netto und Umsatzsteuer; Geld fließt erst später."
+          {
+            "frage": "Bilde den Buchungssatz für den Verkauf eigener Erzeugnisse auf Ziel zu 2.000 € netto zuzüglich 19 % Umsatzsteuer.",
+            "antwort": "2400 Forderungen LuL 2.380 € an 5000 Umsatzerlöse für eigene Erzeugnisse 2.000 € und 4800 Umsatzsteuer 380 €.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist der Zahlungseingang kein Ertrag?",
+            "antwort": "Weil der Ertrag schon mit der Rechnung gebucht wurde. Die Zahlung verwandelt nur die Forderung in Bankguthaben.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Kunden reklamieren manchmal Ware oder erhalten nachträglich Nachlässe.",
-          "Der Ertrag wurde beim Verkauf netto gebucht."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst Rücksendungen und nachträgliche Nachlässe aus Sicht des Verkäufers, wählst zwischen Umsatzerlöse und Erlösberichtigungen und korrigierst die Umsatzsteuer.",
+        "vorwissen_kurz": "Gibt ein Kunde Ware zurück oder erhält er nachträglich einen Nachlass, sinkt der Erlös. Mit ihm sinkt auch die Umsatzsteuer.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Weniger Erlös, weniger Steuer",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Schickt ein Kunde Erzeugnisse zurück, wird der Verkauf anteilig rückgängig gemacht: Umsatzerlöse und Umsatzsteuer im Soll, Forderung im Haben. Gewährt MAKEL Studio nachträglich einen Preisnachlass, etwa wegen eines kleinen Mangels oder als Bonus, wird er auf dem Unterkonto Erlösberichtigungen gebucht. So bleibt sichtbar, wie viel Erlös durch Nachlässe verloren geht. In beiden Fällen sinkt die Umsatzsteuer nach § 17 UStG mit.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Korrekturen beim Vereinsauftrag",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Buchungssatz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "5 Hoodies falsch bestickt zurück, Gutschrift 5 × 42 € = 210 € netto",
+                  "5000 Umsatzerlöse 210,00 € und 4800 Umsatzsteuer 39,90 € an 2400 Forderungen LuL 249,90 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachlass 5 % auf die übrigen 75 Hoodies wegen verspäteter Lieferung: 157,50 € netto",
+                  "5001 Erlösberichtigungen 157,50 € und 4800 Umsatzsteuer 29,93 € an 2400 Forderungen LuL 187,43 €"
+                ]
+              }
+            ],
+            "fazit": "Die Forderung sinkt von 3.998,40 € auf 3.561,07 €. Der Erlös beträgt nach beiden Korrekturen 2.992,50 € netto.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Würde MAKEL Studio den Nachlass als Aufwand buchen, wären Erlöse und Aufwendungen gleichzeitig zu hoch, und die Umsatzsteuer würde nicht berichtigt. Der Verein bekäme eine Gutschrift ohne Steueranteil — und MAKEL Studio würde Umsatzsteuer auf einen Betrag abführen, den es gar nicht erhält.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Schickt ein Kunde Erzeugnisse zurück, wird der Verkauf anteilig umgekehrt: Umsatzerlöse und Umsatzsteuer im Soll, Forderungen im Haben. Nachträgliche Preisnachlässe (Minderung wegen eines Mangels, Skonto, Bonus) werden im IKR auf dem Unterkonto 5001 Erlösberichtigungen erfasst, damit die ursprünglichen Erlöse und die Nachlässe getrennt sichtbar bleiben. Auch hier muss die Umsatzsteuer berichtigt werden, weil sich das Entgelt verringert hat.",
-        "beispiele": [
-          "Rücksendung netto 200 €: Umsatzerlöse 200 € und Umsatzsteuer 38 € an Forderungen LuL 238 €.",
-          "Nachlass wegen leichter Druckfehler netto 100 €: Erlösberichtigungen 100 € und Umsatzsteuer 19 € an Forderungen LuL 119 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Skonto beim Verkauf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zieht ein Kunde bei Zahlung Skonto ab, ist auch das eine Erlösschmälerung. Sie wird bei Zahlungseingang auf dem Konto Erlösberichtigungen gebucht, und die Umsatzsteuer wird anteilig korrigiert: Bank, Erlösberichtigungen und Umsatzsteuer an Forderungen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Boutique reklamiert bei fünf Hoodies einen leicht verschobenen Druck und behält sie gegen einen Nachlass von 100 € netto. Marlene schickt eine Gutschrift über 119 €. Sandra bucht: Erlösberichtigungen 100 € und Umsatzsteuer 19 € an Forderungen aus Lieferungen und Leistungen 119 €.",
-        "typische_fehler": "Den Nachlass als Aufwand buchen oder die Umsatzsteuerkorrektur vergessen.",
         "verstaendnisfragen": [
-          "Warum wird die Umsatzsteuer bei einem Nachlass berichtigt? Weil sich das Entgelt und damit die geschuldete Steuer verringert.",
-          "Wozu dient das Konto Erlösberichtigungen? Es macht nachträgliche Nachlässe getrennt von den Erlösen sichtbar."
-        ],
-        "pruefungsbezug": "Rücksendungen und Nachlässe aus Verkäufersicht mit Steuerkorrektur buchen.",
-        "merksatz": "Rücksendung oder Nachlass beim Verkauf: Erlöse beziehungsweise Erlösberichtigungen und Umsatzsteuer an Forderungen."
+          {
+            "frage": "Bilde den Buchungssatz: Ein Händler erhält wegen eines Druckfehlers nachträglich 100 € netto Nachlass.",
+            "antwort": "5001 Erlösberichtigungen 100 € und 4800 Umsatzsteuer 19 € an 2400 Forderungen LuL 119 €.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Rechne nach: Wie hoch ist die verbleibende Forderung aus dem Vereinsauftrag?",
+            "antwort": "3.998,40 € − 249,90 € − 187,43 € = 3.561,07 €.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "MAKEL veredelt Rohlinge zu eigenen Erzeugnissen.",
-          "Im Store verkauft MAKEL auch zugekaufte Artikel wie Taschen oder Caps eines anderen Labels."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest eigene Erzeugnisse von Handelswaren nach ihrer Entstehung und ordnest Bestandskonto, Erlöskonto und Bewertung richtig zu.",
+        "vorwissen_kurz": "Ein Industriebetrieb verkauft vor allem, was er selbst herstellt. Manchmal ergänzt er sein Angebot mit zugekaufter Ware.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Selbst hergestellt oder zugekauft?",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Eigene Erzeugnisse** sind im Betrieb be- oder verarbeitet worden, etwa ein bestickter Hoodie. Sie werden mit ihren Herstellungskosten bewertet und auf den Konten 2100 Unfertige Erzeugnisse oder 2200 Fertige Erzeugnisse geführt; ihr Verkauf erscheint auf 5000 Umsatzerlöse für eigene Erzeugnisse. **Handelswaren** werden unverändert weiterverkauft, etwa eine zugekaufte Mütze. Sie werden mit ihren Anschaffungskosten bewertet, auf 2280 Waren geführt und auf 5100 Umsatzerlöse für Waren verkauft.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Sortiment im MAKEL-Store",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Artikel",
+              "Einordnung",
+              "Bestandskonto",
+              "Erlöskonto"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Hoodie „Kyoto“, bei MAKEL bestickt",
+                  "eigenes Erzeugnis, fertig",
+                  "2200 Fertige Erzeugnisse",
+                  "5000"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohling in der Stickmaschine, halb bestickt",
+                  "eigenes Erzeugnis, unfertig",
+                  "2100 Unfertige Erzeugnisse",
+                  "— (noch nicht verkaufsfähig)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mütze eines Partnerlabels, unverändert",
+                  "Handelsware",
+                  "2280 Waren",
+                  "5100"
+                ]
+              },
+              {
+                "zellen": [
+                  "Pflegespray für Textilien, zugekauft",
+                  "Handelsware",
+                  "2280 Waren",
+                  "5100"
+                ]
+              }
+            ],
+            "fazit": "Entscheidend ist, ob MAKEL Studio die Ware verändert hat. Ein Etikett mit MAKEL-Logo auf einer zugekauften Mütze macht sie noch nicht zum eigenen Erzeugnis, eine Bestickung schon.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Trennung ist wichtig für die Auswertung: Die Geschäftsführung will wissen, wie viel MAKEL Studio mit eigenen Erzeugnissen verdient und wie viel mit Handelsware. Nur wenn die Erlöse auf getrennten Konten stehen, lässt sich das ablesen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Eigene Erzeugnisse entstehen im Unternehmen durch Be- oder Verarbeitung; ihre Kosten bestehen aus Material, Löhnen, Abschreibungen und weiteren Kosten. Halb fertige Stücke sind unfertige Erzeugnisse (2100), verkaufsbereite Stücke fertige Erzeugnisse (2200), Erlöse daraus laufen auf 5000. Handelswaren werden unverändert weiterverkauft; sie stehen auf 2280 Handelswaren, ihr Einsatz ist Aufwand auf 6080, Erlöse laufen auf 5100. Die Trennung ist wichtig, weil sich die Kalkulation und die Bewertung unterscheiden: Erzeugnisse werden mit Herstellungskosten, Handelswaren mit Anschaffungskosten bewertet.",
-        "beispiele": [
-          "Ein bedruckter Hoodie aus der eigenen Veredelung ist ein eigenes Erzeugnis.",
-          "Eine zugekaufte Mütze eines Partnerlabels, die unverändert im Store liegt, ist eine Handelsware."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Herstellungs- und Anschaffungskosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Herstellungskosten umfassen Material, Fertigungslöhne und angemessene Teile der Gemeinkosten der Herstellung. Anschaffungskosten umfassen Kaufpreis und Bezugskosten abzüglich Nachlässe. Ein Hoodie aus eigener Produktion und eine zugekaufte Mütze werden deshalb nach unterschiedlichen Regeln bewertet.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Emily Tran fragt, warum die Mützen im Store anders gebucht werden als die Hoodies. Sandra erklärt: ‚Die Hoodies bedrucken wir selbst — eigene Erzeugnisse. Die Mützen kaufen wir fertig ein und verkaufen sie so weiter — Handelswaren. Für die Übungen hier gilt: Was MAKEL selbst veredelt, behandeln wir als eigenes Erzeugnis.‘",
-        "typische_fehler": "Alles, was verkauft wird, als ‚Ware‘ bezeichnen. Im Industriebetrieb sind die eigenen Produkte Erzeugnisse.",
         "verstaendnisfragen": [
-          "Woran erkennst du eine Handelsware? Sie wird ohne Be- oder Verarbeitung weiterverkauft.",
-          "Auf welchem Konto stehen verkaufsbereite eigene Produkte? Auf 2200 Fertige Erzeugnisse."
-        ],
-        "pruefungsbezug": "Erzeugnisse und Handelswaren unterscheiden und die passenden Erlöskonten wählen.",
-        "merksatz": "Eigene Erzeugnisse werden hergestellt (2100/2200, Erlöse 5000), Handelswaren unverändert weiterverkauft (2280, Erlöse 5100)."
+          {
+            "frage": "Ist ein zugekaufter Rucksack, auf den MAKEL Studio ein Logo stickt, eine Handelsware?",
+            "antwort": "Nein. Durch das Besticken wird er im Betrieb bearbeitet und zum eigenen Erzeugnis.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Auf welchem Konto wird der Verkauf von Pflegespray gebucht?",
+            "antwort": "Auf 5100 Umsatzerlöse für Waren, weil es unverändert weiterverkauft wird.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Material, Löhne und andere Kosten der Produktion werden laufend als Aufwand gebucht.",
-          "Nicht alles, was in einer Periode hergestellt wird, wird in derselben Periode verkauft."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, warum im Gesamtkostenverfahren eine Bestandsveränderung an Erzeugnissen den Erfolg verändert, und buchst Bestandsmehrung und -minderung ohne Umsatzsteuer.",
+        "vorwissen_kurz": "Produziert ein Betrieb mehr, als er verkauft, stehen Aufwendungen für Erzeugnisse in der GuV, die noch im Lager liegen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Lager wächst, Erfolg steigt",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Gesamtkostenverfahren stehen alle Aufwendungen einer Periode in der GuV: Material, Löhne, Abschreibungen — auch für Hoodies, die noch nicht verkauft sind. Ohne Ausgleich sähe ein Monat mit viel Produktion auf Lager wie ein Verlust aus. Deshalb wird die Veränderung des Bestands an Erzeugnissen als **Bestandsveränderung** gebucht: Eine Bestandsmehrung erscheint als Ertrag, eine Bestandsminderung als Aufwand. Umsatzsteuer fällt dabei nicht an, weil nichts verkauft wird.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Herbstproduktion bei MAKEL Studio",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Oktober produziert MAKEL Studio für das Weihnachtsgeschäft vor. Der Bestand an fertigen Erzeugnissen steigt laut Inventur von 6.000 € auf 14.000 €. Im Dezember werden viele Hoodies verkauft; der Bestand sinkt bis zum Jahresende auf 4.500 €.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitraum",
+              "Veränderung",
+              "Buchungssatz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Oktober",
+                  "Mehrung 8.000 €",
+                  "2200 Fertige Erzeugnisse 8.000 € an 5202 Bestandsveränderungen an fertigen Erzeugnissen 8.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "November bis Dezember",
+                  "Minderung 9.500 €",
+                  "5202 Bestandsveränderungen an fertigen Erzeugnissen 9.500 € an 2200 Fertige Erzeugnisse 9.500 €"
+                ]
+              }
+            ],
+            "fazit": "Über das Quartal sinkt der Bestand von 6.000 € auf 4.500 €, also um 1.500 €. Diese Minderung erhöht die Aufwandsseite: Es wurde mehr verkauft, als im Quartal produziert wurde.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bestandsveränderung ordnet die Aufwendungen dem Zeitraum zu, in dem die Erzeugnisse verkauft werden. Im Oktober stehen den Produktionsaufwendungen noch keine Erlöse gegenüber; die Bestandsmehrung von 8.000 € gleicht das aus. Im Dezember kommen Erlöse ohne neue Produktionsaufwendungen herein; die Bestandsminderung stellt ihnen den Lagerwert gegenüber.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Im Gesamtkostenverfahren stehen in der GuV alle Aufwendungen der Periode, auch die für Erzeugnisse, die noch im Lager liegen. Ohne Korrektur sähe eine Periode mit viel Produktion auf Lager zu schlecht aus. Deshalb wird die Bestandsveränderung gebucht: Steigt der Bestand an fertigen (oder unfertigen) Erzeugnissen, bucht man Fertige Erzeugnisse an Bestandsveränderungen — die Bestandsmehrung wirkt wie ein Ertrag. Sinkt der Bestand, weil mehr verkauft als hergestellt wurde, bucht man Bestandsveränderungen an Fertige Erzeugnisse — die Bestandsminderung wirkt wie ein Aufwand. Die Bestandsveränderung ist kein Verkauf und löst keine Umsatzsteuer aus. Wie die Erzeugnisse genau bewertet werden (Herstellungskosten), wird in Lernfeld 10 vertieft; in den Übungen hier ist der Wert vorgegeben.",
-        "beispiele": [
-          "Bestand fertige Erzeugnisse steigt von 1.200 € auf 1.500 €: Fertige Erzeugnisse 300 € an Bestandsveränderungen 300 €.",
-          "Bestand sinkt von 1.500 € auf 900 €: Bestandsveränderungen 600 € an Fertige Erzeugnisse 600 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Bewertung des Bestands",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die fertigen Erzeugnisse werden mit Herstellungskosten bewertet, höchstens aber mit dem Wert, der sich am Bilanzstichtag beim Verkauf noch erzielen lässt. Ein Hoodie, dessen Herstellungskosten 26 € betragen, steht deshalb mit 26 € im Bestand — nicht mit dem Verkaufspreis von 42 €. Gewinn entsteht erst beim Verkauf.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Im November produziert MAKEL für das Weihnachtsgeschäft vor. Laut Inventur liegt der Bestand an fertigen Erzeugnissen, bereits korrekt bewertet, bei 1.500 €; Anfangsbestand war 1.200 €. Sandra bucht: Fertige Erzeugnisse 300 € an Bestandsveränderungen 300 €. Damit stehen den Material- und Lohnaufwendungen für die Hoodies im Lager auch die geschaffenen Werte gegenüber.",
-        "typische_fehler": "Eine Bestandsmehrung als verkaufte Menge behandeln oder die Erzeugnisse mit dem Verkaufspreis bewerten.",
         "verstaendnisfragen": [
-          "Wie wirkt eine Bestandsmehrung auf den Erfolg? Sie erhöht ihn, weil sie die Aufwendungen für noch nicht verkaufte Erzeugnisse ausgleicht.",
-          "Fällt auf eine Bestandsveränderung Umsatzsteuer an? Nein, es ist kein Verkauf."
-        ],
-        "pruefungsbezug": "Bestandsmehrung und -minderung aus Anfangs- und Schlussbestand ermitteln und buchen.",
-        "merksatz": "Bestandsmehrung: Erzeugnisse an Bestandsveränderungen (erhöht den Erfolg); Bestandsminderung umgekehrt; keine Umsatzsteuer."
+          {
+            "frage": "Der Bestand an fertigen Erzeugnissen steigt von 1.200 € auf 1.500 €. Wie lautet die Buchung?",
+            "antwort": "2200 Fertige Erzeugnisse 300 € an 5202 Bestandsveränderungen an fertigen Erzeugnissen 300 €. Kein Verkauf, keine Umsatzsteuer.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum wird bei einer Bestandsveränderung keine Umsatzsteuer gebucht?",
+            "antwort": "Weil kein Umsatz stattfindet. Die Erzeugnisse bleiben im Betrieb; es wird nur ihr Wert in der Bilanz angepasst.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
