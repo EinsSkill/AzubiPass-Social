@@ -2334,3 +2334,9 @@ input[type=file].cm-eingabe{padding:10px 14px;min-height:48px;}
 .epk-konvention{font:500 12.5px/1.5 var(--sans);color:rgba(245,245,240,.55);margin:14px 0 0;}
 @media (max-width:520px){.epk-zweige{--epk-gap:10px;}.epk-k{font-size:13px;}.epk-ereignis{padding:10px 20px;}}
 @media print{.epk-ereignis,.epk-funktion{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+
+/* ---------- Verpflegungspauschale ---------- */
+.pa-mahlzeiten{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.pa-mahl{display:flex;align-items:center;gap:10px;min-height:44px;font:500 14px var(--sans);color:rgba(245,245,240,.85);cursor:pointer;}
+.pa-mahl input{width:20px;height:20px;accent-color:var(--gold);}
+.pa-ergebnis{padding-top:4px;}

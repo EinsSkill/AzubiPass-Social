@@ -4,68 +4,401 @@
   "nummer": 4,
   "titel": "Reisekosten abrechnen",
   "untertitel": "Vier Bausteine, eine Reihenfolge, ein paar Fallen.",
- "minuten": 25,
+  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Reisekosten bestehen aus unterschiedlichen Aufwandsarten.",
-          "Nicht jeder Betrag wird gleich abgerechnet."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest die Kosten einer Geschäftsreise den Bausteinen Fahrt, Verpflegung, Übernachtung und Nebenkosten zu, weißt, welche mit Beleg und welche pauschal abgerechnet werden, und grenzt Bewirtungskosten ab.",
+        "vorwissen_kurz": "Auf einer Geschäftsreise entstehen verschiedene Kosten. Sie werden nicht alle gleich abgerechnet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Bausteine",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine {{begriff:reisekostenabrechnung|Reisekostenabrechnung}} gliedert die Kosten in vier Bausteine. **Fahrtkosten** werden mit Beleg oder beim eigenen Pkw mit einem Kilometersatz abgerechnet. Der **Verpflegungsmehraufwand** wird ausschließlich pauschal erstattet, gestaffelt nach Abwesenheitsdauer. **Übernachtungskosten** und **Reisenebenkosten** wie Parken oder Nahverkehr werden mit Beleg erstattet. Die steuerlichen Regeln stehen in § 9 des Einkommensteuergesetzes; viele Betriebe übernehmen sie in ihre Reiserichtlinie.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kosten der Messereise nach Berlin",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Herr Okafor war von Mittwoch, 10. Februar, bis Freitag, 12. Februar 2027, auf der Modemesse in Berlin.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kosten",
+              "Baustein",
+              "Abrechnung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bahnticket Düsseldorf–Berlin und zurück",
+                  "Fahrtkosten",
+                  "mit Beleg"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hotel, zwei Nächte mit Frühstück, vom Betrieb gebucht",
+                  "Übernachtung",
+                  "mit Beleg; Frühstück kürzt die Verpflegungspauschale"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mehraufwand für Essen an drei Tagen",
+                  "Verpflegung",
+                  "pauschal nach Abwesenheit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nahverkehr in Berlin",
+                  "Reisenebenkosten",
+                  "mit Beleg"
+                ]
+              },
+              {
+                "zellen": [
+                  "Getränke mit einem Händler an der Messebar, von Herrn Okafor bezahlt",
+                  "keine Reisekosten",
+                  "Bewirtung mit eigenem Beleg"
+                ]
+              }
+            ],
+            "fazit": "Vier Positionen gehören in die Reisekostenabrechnung. Die Getränke mit dem Händler werden getrennt als Bewirtung abgerechnet.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Würde Herr Okafor mit dem eigenen Auto fahren, könnte er statt eines Fahrscheins einen Kilometersatz ansetzen. Steuerlich wird dafür die höchste Wegstreckenentschädigung nach dem Bundesreisekostengesetz angesetzt, derzeit 0,30 € je gefahrenem Kilometer. Er muss dann Datum, Ziel, Anlass und Kilometer nachweisen.",
+            "id": "b1-p3"
+          }
         ],
-        "erklaerung": "Vier Bausteine gehören zur Reisekostenabrechnung: Fahrtkosten, Verpflegungsmehraufwand, Übernachtung und Reisenebenkosten. Fahrt, Übernachtung und Nebenkosten werden mit Beleg abgerechnet. Nur der Verpflegungsmehraufwand wird pauschal nach Abwesenheitsdauer berechnet. Bewirtungskosten gehören nicht zu den Reisekosten und haben eigene Nachweise.",
-        "beispiele": [
-          "Ein Bahnticket oder eine Taxiquittung belegt Fahrtkosten; bei eigenem Pkw werden Datum, Ziel, Anlass und Kilometer nachgewiesen.",
-          "Ein Hotelbeleg wird um den Frühstücksanteil bereinigt; Parkgebühren und Maut gehören als Nebenkosten mit Beleg in die Abrechnung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Übernachtungspauschale",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Statt der Hotelrechnung kann der Arbeitgeber bei Übernachtungen im Inland auch eine Pauschale von 20 € je Nacht steuerfrei zahlen, etwa wenn jemand privat übernachtet. Wer die tatsächlichen Kosten abrechnet, braucht die Rechnung.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Abrechnung wird in vier Gruppen sortiert. Tickets und Kilometerangaben kommen zu Fahrtkosten, die Pauschale zur Verpflegung, der bereinigte Hotelbeleg zu Übernachtung und Park- oder Mautbelege zu Nebenkosten. Ein Bewirtungsbeleg wird nicht in diese Gruppen eingeordnet, sondern nach eigenen Nachweispflichten geprüft.",
-        "typische_fehler": "Verpflegung wird gegen Beleg statt pauschal abgerechnet oder Frühstück vollständig als Übernachtungskosten angesetzt. Bewirtung wird mit Verpflegung verwechselt.",
         "verstaendnisfragen": [
-          "Welcher Baustein wird ausschließlich pauschal abgerechnet? Der Verpflegungsmehraufwand.",
-          "Was gehört nicht zu den Reisekosten? Bewirtungskosten."
+          {
+            "frage": "Warum gehören die Getränke mit dem Händler nicht in die Reisekostenabrechnung?",
+            "antwort": "Weil es eine Bewirtung aus geschäftlichem Anlass ist, keine Verpflegung der reisenden Person. Für Bewirtungen gelten eigene Nachweise: Anlass, Teilnehmende, Ort und Datum. Bezahlt der Betrieb ein Geschäftsessen, an dem die reisende Person teilnimmt, kann das außerdem ihre Verpflegungspauschale kürzen — das klärt die Buchhaltung im Einzelfall.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Welcher Baustein wird ohne Beleg abgerechnet?",
+            "antwort": "Der Verpflegungsmehraufwand. Er wird pauschal nach Abwesenheitsdauer erstattet, unabhängig davon, was tatsächlich ausgegeben wurde.",
+            "id": "b1-f2"
+          }
         ],
-        "pruefungsbezug": "Sortiere jeden Betrag zuerst einem Baustein zu und bestimme danach Beleg- oder Pauschalabrechnung.",
-        "merksatz": "Vier Bausteine, zwei Abrechnungsarten: Beleg für die meisten, Pauschale nur für Verpflegung."
+        "quellen": [
+          {
+            "titel": "Einkommensteuergesetz, § 9 Abs. 1 Satz 3 Nr. 4a und Abs. 4a",
+            "url": "https://www.gesetze-im-internet.de/estg/__9.html",
+            "bezug": "Kilometersätze und Verpflegungspauschalen"
+          },
+          {
+            "titel": "Techniker Krankenkasse, Reisekosten 2026: Pauschalen für Arbeitgeber",
+            "url": "https://www.tk.de/firmenkunden/fachthemen/ausland/pauschalen-fuer-reisekosten-2026-2188234",
+            "bezug": "Inlandswerte 2026: 14 €/28 €, 0,30 €/km, 20 € Übernachtung"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Die Pauschale richtet sich nach Abwesenheitsdauer.",
-          "Gestellte Mahlzeiten mindern die Pauschale prozentual."
+        "darstellung": "vollfassung",
+        "ziel": "Du ermittelst die Verpflegungspauschale für jeden Reisetag nach Abwesenheitsdauer und Übernachtung, kürzt sie für gestellte Mahlzeiten mit den festen Anteilen des vollen Tagessatzes und begründest, wann nicht gekürzt wird.",
+        "vorwissen_kurz": "Für das Essen unterwegs gibt es keine Erstattung nach Beleg, sondern Pauschalen. Ihre Höhe hängt davon ab, wie lange jemand unterwegs ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Tagesarten, zwei Beträge",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:verpflegungspauschale|Verpflegungsmehraufwand}} beträgt im Inland 2026 **28 €** für jeden vollen Kalendertag mit 24 Stunden Abwesenheit und **14 €** für den An- und den Abreisetag einer Reise mit Übernachtung. Bei einer eintägigen Reise gibt es 14 €, wenn die Abwesenheit von Wohnung und erster Tätigkeitsstätte mehr als 8 Stunden beträgt. Wird eine Mahlzeit vom Arbeitgeber oder auf seine Veranlassung von einem Dritten gestellt, wird gekürzt: um 20 % des vollen Tagessatzes für ein Frühstück, um je 40 % für Mittag- und Abendessen.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Pauschalen der Messereise",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Herr Okafor fährt am Mittwoch um 6:20 Uhr von zu Hause los und ist am Freitag um 21:05 Uhr zurück. Das Hotel mit Frühstück hat MAKEL gebucht. Am Donnerstag isst er mittags am Messestand; das Standcatering hat MAKEL bezahlt. Am Donnerstagabend lädt ihn ein Händler aus eigenem Antrieb zum Essen ein.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Tag",
+              "Tagesart",
+              "Pauschale",
+              "Kürzung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Mittwoch",
+                  "Anreisetag",
+                  "14,00 €",
+                  "keine Mahlzeit gestellt",
+                  "14,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Donnerstag",
+                  "voller Tag",
+                  "28,00 €",
+                  "Frühstück 5,60 €, Mittagessen 11,20 €",
+                  "11,20 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Freitag",
+                  "Abreisetag",
+                  "14,00 €",
+                  "Frühstück 5,60 €",
+                  "8,40 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "",
+                  "56,00 €",
+                  "22,40 €",
+                  "33,60 €"
+                ]
+              }
+            ],
+            "fazit": "Die Kürzungen werden immer vom vollen Tagessatz aus berechnet: 20 % von 28 € = 5,60 €, 40 % von 28 € = 11,20 €. Das Abendessen des Händlers kürzt nicht, weil es weder vom Arbeitgeber noch auf dessen Veranlassung gestellt wurde.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Freitag zeigt sich, warum die Kürzung nie unter null gehen kann: Hätte MAKEL an diesem Tag auch Mittag- und Abendessen gestellt, wären 5,60 € + 11,20 € + 11,20 € = 28 € abzuziehen — mehr als die 14 € des Abreisetags. Die Pauschale wäre dann 0 €, nicht negativ.",
+            "id": "b2-p3"
+          }
         ],
-        "erklaerung": "An- und Abreisetage erhalten den kleinen Satz ohne Prüfung der Stundenzahl. Ein voller Zwischentag wird nach der Abwesenheitsdauer eingeordnet. Gestellte Mahlzeiten kürzen die Pauschale um 20 % des vollen Tagessatzes für Frühstück und jeweils 40 % für Mittag und Abend. Die Prozentsätze beziehen sich immer auf den vollen Tagessatz.",
-        "beispiele": [
-          "Bei einer Reise von Dienstag bis Donnerstag ist Dienstag Anreisetag, Mittwoch voller Zwischentag und Donnerstag Abreisetag.",
-          "Ein im Hotelpreis enthaltenes Frühstück löst 20 % Kürzung aus; ein gestelltes Mittagessen weitere 40 %, jeweils vom vollen Tagessatz."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Zuzahlung für eine Mahlzeit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zahlt die reisende Person für eine gestellte Mahlzeit selbst etwas, etwa 5 € für das Mittagessen, mindert dieser Betrag die Kürzung. Statt 11,20 € werden dann nur 6,20 € abgezogen.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Kollegin ist Dienstag 7 Uhr bis Donnerstag 19 Uhr unterwegs. Dienstag erhält den kleinen Satz, Mittwoch den großen und Donnerstag den kleinen Satz. Das Hotel stellt Frühstück an Mittwoch und Donnerstag: jeweils 20 % des vollen Tagessatzes werden gekürzt. Am Mittwoch wird zusätzlich das gestellte Mittagessen mit 40 % des vollen Tagessatzes gekürzt. Der Frühstücksanteil wird aus der Hotelrechnung herausgerechnet. In Euro (Stand 2026): Dienstag 14,00 €; Mittwoch 28,00 € − 5,60 € − 11,20 € = 11,20 €; Donnerstag 14,00 € − 5,60 € = 8,40 €; zusammen 33,60 €.",
-        "typische_fehler": "Die Stunden am An- und Abreisetag werden erneut geprüft oder die Prozentsätze auf den kleinen Satz statt den vollen Tagessatz angewendet. Auch ein nicht gegessenes, aber bereitgestelltes Frühstück wird nicht berücksichtigt.",
         "verstaendnisfragen": [
-          "Worauf beziehen sich die Kürzungsprozentsätze? Immer auf den vollen Tagessatz.",
-          "Welche Mahlzeitenkürzungen gelten? Frühstück 20 %, Mittag und Abend jeweils 40 %."
-        ],
-        "pruefungsbezug": "Zerlege die Reise tageweise, bestimme den Satz und ziehe gestellte Mahlzeiten erst danach ab.",
-        "merksatz": "Erst Tagessatz bestimmen, dann Mahlzeiten vom vollen Tagessatz kürzen."
+          {
+            "frage": "Warum wird am Freitag nur um 5,60 € gekürzt, obwohl der Abreisetag nur 14 € bringt?",
+            "antwort": "Weil die Kürzungsbeträge immer vom vollen Tagessatz von 28 € berechnet werden. 20 % davon sind 5,60 €, auch am An- oder Abreisetag.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Herr Okafor wäre am Mittwoch erst um 14 Uhr losgefahren. Ändert das die Pauschale?",
+            "antwort": "Nein. Am Anreisetag einer Reise mit Übernachtung gibt es 14 € unabhängig von der Stundenzahl.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Eine Reisekostenabrechnung muss sachlich und rechnerisch prüfbar sein.",
-          "Private Anteile und fehlende Nachweise dürfen nicht unbemerkt bleiben."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst eine eingereichte Reisekostenabrechnung Punkt für Punkt auf Anlass, Zeiten, Belege, gestellte Mahlzeiten und Rechnung und hältst jede Korrektur nachvollziehbar fest.",
+        "vorwissen_kurz": "Wer Abrechnungen prüft, arbeitet eine feste Reihenfolge ab. So wird nichts übersehen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Prüfen mit System",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Reisekostenabrechnung wird in fester Reihenfolge geprüft: War die Reise betrieblich veranlasst und genehmigt? Stimmen Beginn und Ende mit Uhrzeit? Liegen alle Belege vor, und sind private Anteile herausgerechnet? Wurden gestellte Mahlzeiten berücksichtigt? Stimmt die Rechnung? Jede Korrektur wird mit Grund vermerkt, damit die reisende Person sie nachvollziehen kann.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Tim prüft die Messeabrechnung",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "eingereicht",
+              "geprüft",
+              "Grund"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bahnticket",
+                  "238,00 €",
+                  "238,00 €",
+                  "Beleg liegt vor"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hotel",
+                  "302,00 €",
+                  "290,00 €",
+                  "12 € Minibar sind privat"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verpflegung",
+                  "3 × 28 € = 84,00 €",
+                  "33,60 €",
+                  "An- und Abreisetag 14 €; Kürzungen für Frühstück und Standcatering fehlten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nahverkehr",
+                  "16,40 €",
+                  "16,40 €",
+                  "Belege liegen vor"
+                ]
+              },
+              {
+                "zellen": [
+                  "Taxi Messe–Hotel",
+                  "32,00 €",
+                  "0,00 €",
+                  "Beleg fehlt; wird erstattet, wenn er nachgereicht wird"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "672,40 €",
+                  "578,00 €",
+                  ""
+                ]
+              }
+            ],
+            "fazit": "Die Abrechnung wird um 94,40 € gekürzt, davon 32 € nur vorläufig. Tim schickt Herrn Okafor die Übersicht mit den Gründen und bittet um den Taxibeleg.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Die Prüfung erfolgt in fester Reihenfolge: Reiseanlass und Zeitraum, Tage und Abwesenheit, Fahrtkosten, Verpflegungspauschalen, Mahlzeitenkürzungen, Übernachtung und Nebenkosten. Private Verlängerungen werden getrennt, Frühstücksanteile herausgerechnet und Bewirtung nach eigenen Regeln behandelt.",
-        "beispiele": [
-          "Bei einer gemischten Reise wird nur der betriebliche Anteil angesetzt und separat dokumentiert.",
-          "Bei fehlendem Fahrtbeleg werden Ziel, Anlass und Kilometer geprüft; bei Verpflegung wird dagegen die Pauschale ohne Essensbeleg berechnet."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Abrechnung und Buchung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nach der Prüfung wird die Erstattung gebucht. Die einzelnen Bausteine landen auf unterschiedlichen Aufwandskonten, und bei Belegen mit Umsatzsteuer kann der Betrieb die Vorsteuer abziehen, wenn die Rechnung die nötigen Angaben enthält. Die Verpflegungspauschale enthält dagegen keine abziehbare Vorsteuer.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Die Dienstag-bis-Donnerstag-Reise wird als drei Tage erfasst. Danach werden die kleinen und großen Sätze eingesetzt, Frühstück und Mittag gekürzt, der Frühstücksanteil aus dem Hotelbeleg entfernt und Fahrt- sowie Nebenkosten mit Nachweisen abgeglichen. Erst die Gesamtsumme wird zur Auszahlung freigegeben.",
-        "typische_fehler": "Alle Tage mit dem großen Satz berechnet, Frühstücksanteil doppelt angesetzt oder private Kosten übernommen. Die Reihenfolge der Prüfung wird nicht dokumentiert.",
         "verstaendnisfragen": [
-          "Was wird vor der Summe geprüft? Zeitraum, Tagesart, Mahlzeiten, Belege und private Anteile.",
-          "Warum wird der Frühstücksanteil aus der Hotelrechnung herausgerechnet? Weil er bereits über die Verpflegungspauschale berücksichtigt wird."
-        ],
-        "pruefungsbezug": "Arbeite jede Abrechnung tageweise und mit einer festen Checkliste durch; so werden Satz und Kürzung nicht vertauscht.",
-        "merksatz": "Reisekosten werden nicht pauschal über den ganzen Aufenthalt gerechnet, sondern Tag für Tag geprüft."
+          {
+            "frage": "Warum streicht Tim die Taxikosten nicht endgültig?",
+            "antwort": "Weil die Fahrt betrieblich veranlasst sein kann und nur der Beleg fehlt. Reicht Herr Okafor ihn nach, werden die Kosten erstattet. Ohne Beleg kann Tim sie nicht anerkennen.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Prüfe die Summe der geprüften Beträge.",
+            "antwort": "238,00 € + 290,00 € + 33,60 € + 16,40 € + 0,00 € = 578,00 €. Die Differenz zur eingereichten Summe von 672,40 € beträgt 94,40 €.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -192,39 +525,41 @@
         },
         {
           "typ": "absatz",
-          "text": "Stellt der Arbeitgeber oder ein Dritter eine Mahlzeit, wird die Pauschale **gekürzt** — und zwar um feste Anteile des vollen Tagessatzes: **20 Prozent für ein Frühstück, je 40 Prozent für Mittag- und Abendessen.** ==Diese Prozentsätze beziehen sich immer auf den großen Satz==, auch am An- oder Abreisetag."
+          "text": "Stellt der Arbeitgeber oder auf dessen Veranlassung ein Dritter eine Mahlzeit, wird die Pauschale **gekürzt** — und zwar um feste Anteile des vollen Tagessatzes: **20 Prozent für ein Frühstück, je 40 Prozent für Mittag- und Abendessen.** ==Diese Prozentsätze beziehen sich immer auf den großen Satz==, auch am An- oder Abreisetag."
         },
         {
           "typ": "grafik",
-          "variante": "durchlauf",
+          "variante": "pauschale",
           "kopf": "Die Kürzung",
           "titel": "Was von der Pauschale übrig bleibt",
-          "lead": "Trag ein, was gestellt wurde. Die Anteile beziehen sich auf den vollen Tagessatz.",
-          "einheit": "%",
-          "abschnitte": [
+          "lead": "Tagesart wählen und gestellte Mahlzeiten anhaken. Die Kürzung bezieht sich immer auf den vollen Tagessatz von 28 €.",
+          "voller_satz": 28,
+          "tagesarten": [
             {
-              "name": "Bleibt ausgezahlt",
-              "art": "wert",
-              "wert": 40,
-              "schritt": 5
+              "name": "Voller Kalendertag (24 Stunden)",
+              "satz": 28
             },
             {
-              "name": "Frühstück gestellt (20 %)",
-              "art": "pruef",
-              "wert": 20,
-              "schritt": 20
+              "name": "An- oder Abreisetag",
+              "satz": 14
             },
             {
-              "name": "Mittagessen gestellt (40 %)",
-              "art": "liege",
-              "wert": 40,
-              "schritt": 40
+              "name": "Eintägig, mehr als 8 Stunden",
+              "satz": 14
+            }
+          ],
+          "mahlzeiten": [
+            {
+              "name": "Frühstück",
+              "anteil": 20
             },
             {
-              "name": "Abendessen gestellt (40 %)",
-              "art": "transport",
-              "wert": 0,
-              "schritt": 40
+              "name": "Mittagessen",
+              "anteil": 40
+            },
+            {
+              "name": "Abendessen",
+              "anteil": 40
             }
           ],
           "regel": "Rechenweg: Voller Tagessatz minus 20 Prozent je Frühstück minus 40 Prozent je Mittag- oder Abendessen. Werden alle drei Mahlzeiten gestellt, bleibt nichts übrig — die Kürzung kann die Pauschale aber nie unter null drücken."
@@ -264,7 +599,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Wer Reisekostenabrechnungen prüft, arbeitet eine feste Liste ab. ==Dieselben fünf Fehler machen den größten Teil aller Beanstandungen aus.=="
+          "text": "Wer Reisekostenabrechnungen prüft, arbeitet eine feste Liste ab. ==Fünf Prüfpunkte decken die typischen Beanstandungen ab.=="
         },
         {
           "typ": "grafik",
@@ -295,7 +630,7 @@
               "nr": 4,
               "titel": "Gestellte Mahlzeiten",
               "satz": "Kürzung vorgenommen?",
-              "text": "Frühstück im Hotelpreis, Mittagessen bei der Fortbildung, Abendessen beim Kunden. Jede gestellte Mahlzeit kürzt die Pauschale — das wird am häufigsten übersehen."
+              "text": "Frühstück im vom Betrieb gebuchten Hotelpreis, Mittagessen bei der bezahlten Fortbildung: Jede vom Arbeitgeber oder auf seine Veranlassung gestellte Mahlzeit kürzt die Pauschale — das wird leicht übersehen. Lädt dagegen ein Kunde aus eigenem Antrieb ein, wird nicht gekürzt."
             },
             {
               "nr": 5,
@@ -312,7 +647,7 @@
         },
         {
           "typ": "merke",
-          "text": "Prüfe **Anlass, Zeiten, Belege, gestellte Mahlzeiten, Rechnerisches**. Die häufigsten Fehler sind fehlende Uhrzeiten und vergessene Mahlzeitenkürzungen.",
+          "text": "Prüfe **Anlass, Zeiten, Belege, gestellte Mahlzeiten, Rechnerisches**. Typische Fehler sind fehlende Uhrzeiten und vergessene Mahlzeitenkürzungen.",
           "karteikarte": "Welche fünf Punkte prüfst du an einer Reisekostenabrechnung, und welche zwei Fehler sind am häufigsten?"
         },
         {

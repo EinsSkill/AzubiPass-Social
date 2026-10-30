@@ -6,66 +6,379 @@
   "untertitel": "Wer bucht, entscheidet über Kosten, Zeit und Nerven.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Nicht jeder Weg außerhalb des Büros ist eine Geschäftsreise.",
-          "Die erste Tätigkeitsstätte wird vom Arbeitgeber festgelegt."
+        "darstellung": "vollfassung",
+        "ziel": "Du grenzt eine Geschäftsreise vom Weg zur ersten Tätigkeitsstätte und von privaten Reiseteilen ab und begründest, welche Kosten deshalb überhaupt abgerechnet werden können.",
+        "vorwissen_kurz": "Nicht jede Fahrt im Auftrag des Betriebs ist gleich zu behandeln. Entscheidend ist, wohin sie führt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo die Reise beginnt",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine {{begriff:geschaeftsreise|Geschäftsreise}} liegt vor, wenn jemand vorübergehend und aus betrieblichem Anlass außerhalb seiner Wohnung und seiner {{begriff:erste-taetigkeitsstaette|ersten Tätigkeitsstätte}} tätig wird. Die erste Tätigkeitsstätte ist der Ort, dem der Arbeitgeber die beschäftigte Person dauerhaft zuordnet, bei den meisten das eigene Büro. Die Fahrt dorthin ist der normale Arbeitsweg, keine Geschäftsreise.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Fahrten bei MAKEL",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Herr Okafor arbeitet im Außendienst. Seine erste Tätigkeitsstätte ist laut Arbeitsvertrag das Büro in Düsseldorf.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Fahrt",
+              "Geschäftsreise?",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Montags von zu Hause ins Büro in Düsseldorf",
+                  "nein",
+                  "Weg zur ersten Tätigkeitsstätte"
+                ]
+              },
+              {
+                "zellen": [
+                  "Dienstag zu einem Modehaus in Essen",
+                  "ja",
+                  "auswärtige betriebliche Tätigkeit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mittwoch bis Freitag zur Modemesse in Berlin",
+                  "ja",
+                  "vorübergehend, betrieblich veranlasst"
+                ]
+              },
+              {
+                "zellen": [
+                  "Falls er Samstag und Sonntag privat in Berlin bliebe",
+                  "nur der Messeteil",
+                  "zusätzliche Übernachtungen und Verpflegung am Wochenende trägt er selbst"
+                ]
+              }
+            ],
+            "fazit": "Drei von vier Fahrten sind Geschäftsreisen. Eine private Verlängerung würde die Messereise nicht zur Privatreise machen, aber die Kosten des privaten Teils würden nicht erstattet.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Hängt jemand ein privates Wochenende an, gilt für die Rückfahrt: Steht der berufliche Anlass im Vordergrund und kostet die Rückfahrt nicht mehr als am Freitag, wird sie in der Regel erstattet. Fallen durch die Verlängerung Mehrkosten an, etwa ein teureres Ticket am Sonntag, trägt die reisende Person diese selbst. Solche Fälle werden vor der Reise mit der Buchhaltung abgestimmt.",
+            "id": "b1-p3"
+          }
         ],
-        "erklaerung": "Eine Geschäftsreise ist betrieblich veranlasst, vorübergehend und führt außerhalb der Wohnung und der ersten Tätigkeitsstätte. Der normale Arbeitsweg zur ersten Tätigkeitsstätte ist keine Geschäftsreise. Bei privater Verlängerung werden betriebliche und private Kosten aufgeteilt.",
-        "beispiele": [
-          "Die Fahrt zu einem Kunden außerhalb der ersten Tätigkeitsstätte kann Geschäftsreise sein; der tägliche Weg zur festgelegten Arbeitsstätte nicht.",
-          "Bei einer privaten Verlängerung bleibt nur der betrieblich veranlasste Anteil erstattungsfähig."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Erste Tätigkeitsstätte ohne Festlegung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat der Arbeitgeber keine erste Tätigkeitsstätte festgelegt, gilt nach dem Gesetz die Stätte, an der jemand typischerweise arbeitstäglich oder an mindestens zwei vollen Arbeitstagen pro Woche oder mindestens einem Drittel seiner Arbeitszeit tätig werden soll. Für die meisten Beschäftigten ist das eindeutig; im Außendienst lohnt die ausdrückliche Festlegung im Vertrag.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Kollegin fährt montags zu einem Kunden nach München, bleibt privat bis Mittwoch und kehrt danach zurück. Die Reise wird in betrieblichen und privaten Anteil aufgeteilt. Hinfahrt und der ohne private Verlängerung angefallene Rückfahrtanteil werden betrieblich geprüft; private Übernachtungen und Verpflegung bleiben außen vor. Die Aufteilung wird vorab abgestimmt und in der Abrechnung getrennt ausgewiesen.",
-        "typische_fehler": "Der normale Arbeitsweg wird als Geschäftsreise abgerechnet oder die private Verlängerung vollständig dem Betrieb zugerechnet.",
         "verstaendnisfragen": [
-          "Welche drei Merkmale müssen zusammenkommen? Betrieblicher Anlass, vorübergehender Aufenthalt und Auswärtigkeit außerhalb von Wohnung und erster Tätigkeitsstätte.",
-          "Wer legt die erste Tätigkeitsstätte fest? Der Arbeitgeber."
+          {
+            "frage": "Warum ist die Fahrt von zu Hause ins Büro keine Geschäftsreise, obwohl sie für die Arbeit nötig ist?",
+            "antwort": "Weil das Büro die erste Tätigkeitsstätte ist. Der Weg dorthin ist der normale Arbeitsweg; er wird nicht vom Betrieb erstattet, sondern nur in der eigenen Steuererklärung über die Entfernungspauschale berücksichtigt.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Herr Okafor fährt von zu Hause direkt zum Modehaus in Essen. Ist das eine Geschäftsreise?",
+            "antwort": "Ja. Ziel ist nicht die erste Tätigkeitsstätte, sondern ein auswärtiger Ort, an dem er betrieblich tätig wird.",
+            "id": "b1-f2"
+          }
         ],
-        "pruefungsbezug": "Prüfe zuerst Anlass, Dauer und Ort und teile gemischte Reisen anschließend in betrieblich und privat.",
-        "merksatz": "Geschäftsreise heißt: betrieblich, vorübergehend und außerhalb der ersten Tätigkeitsstätte."
+        "quellen": [
+          {
+            "titel": "Einkommensteuergesetz, § 9 Abs. 4",
+            "url": "https://www.gesetze-im-internet.de/estg/__9.html",
+            "bezug": "erste Tätigkeitsstätte"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Verkehrsmittel verursachen mehr als Ticketkosten.",
-          "Unterkunft, Arbeitszeit, Erreichbarkeit und Stornorisiko gehören in den Vergleich."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Verkehrsmittel und Unterkunft nach Gesamtkosten, nutzbarer Arbeitszeit, Flexibilität und Nachhaltigkeit, benennst Zielkonflikte und hältst dich an Reiserichtlinie und eigene Buchungsbefugnis.",
+        "vorwissen_kurz": "Das günstigste Ticket ist nicht automatisch die günstigste Reise. Arbeitszeit, Flexibilität und Umweltwirkung gehören mit in den Vergleich.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehr als der Ticketpreis",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer eine Geschäftsreise bucht, vergleicht nicht nur Fahrpreise. Wichtig ist auch, wie viel Arbeitszeit unterwegs genutzt werden kann, ob sich der Termin noch verschieben könnte und welche Folgen die Reise für die Umwelt hat. Viele Betriebe regeln in einer **Reiserichtlinie**, welche Verkehrsmittel und Hotelkategorien erlaubt sind und wer welche Buchungen freigeben muss.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bahn oder Auto nach Amsterdam?",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Herr Okafor besucht an einem Tag ein Modehaus in Amsterdam, rund 230 km von Düsseldorf. Er reist allein und trägt nur eine Musterkollektion im Rollkoffer. Die Preise sind Beispielwerte vom Buchungstag.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Bahn, flexibler Tarif",
+              "Eigener Pkw"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fahrtkosten",
+                  "2 × 79 € = 158 €",
+                  "2 × 230 km × 0,30 € = 138 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nebenkosten",
+                  "Nahverkehr Amsterdam 10 €",
+                  "Parken in Amsterdam 40 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "168 €",
+                  "178 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fahrzeit je Richtung",
+                  "etwa 2,5 Stunden, nutzbar für Vorbereitung und Mails",
+                  "etwa 2,75 Stunden, nicht nutzbar, Staurisiko"
+                ]
+              },
+              {
+                "zellen": [
+                  "Flexibilität",
+                  "Rückfahrt mit beliebigem Zug",
+                  "frei, aber abhängig vom Verkehr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Umweltwirkung",
+                  "je Person in der Regel deutlich geringer als mit dem Pkw",
+                  "höher, besonders bei Alleinfahrt"
+                ]
+              }
+            ],
+            "fazit": "Die Bahn ist hier kaum teurer, die Fahrzeit lässt sich nutzen, und die Umweltwirkung ist geringer. Die Reiserichtlinie von MAKEL sieht für solche Fälle ohnehin die Bahn vor.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Anders wäre es, wenn Herr Okafor am selben Tag drei Modehäuser in kleinen Orten besuchen und einen vollen Musterständer mitnehmen müsste. Dann spricht vieles für das Auto, obwohl es mehr Emissionen verursacht. Solche **Zielkonflikte** zwischen Kosten, Zeit, Praktikabilität und Umwelt lassen sich nicht immer auflösen. Wichtig ist, dass die Entscheidung begründet und nachvollziehbar ist.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Genaue Emissionswerte hängen von Fahrzeug, Auslastung und Strecke ab. Wer sie in einen Vergleich aufnehmen will, nutzt einen anerkannten Rechner und gibt Quelle und Abrufdatum an, statt eine Zahl zu schätzen.",
+            "id": "b2-p4"
+          }
         ],
-        "erklaerung": "Die Reisezeit ist häufig teurer als der Preisunterschied zwischen Tickets und wird deshalb in die Verkehrsmittelwahl einbezogen. Bahn passt, wenn die Reisezeit nutzbar ist; Auto bei Material, mehreren Stationen oder schlechter Anbindung. Bei der Unterkunft kann die Lage wichtiger sein als der Preis. Stornierbare Buchung schützt vor unnötigen Gebühren.",
-        "beispiele": [
-          "Bahn ist sinnvoll, wenn während der Fahrt gearbeitet werden kann; Parkplatzsuche und Stau entfallen.",
-          "Ein Auto passt bei mehreren Kundenorten oder zu transportierendem Material; ein Hotel in Terminnähe kann trotz höherem Preis Zeit und Taxi sparen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Buchen nur im eigenen Rahmen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Tim darf als Auszubildender Bahntickets nach der Reiserichtlinie buchen. Ein Hotel über der erlaubten Kategorie oder einen Flug bucht er nur mit Freigabe der Abteilungsleitung. Wer ohne Befugnis bucht, bindet den Betrieb womöglich trotzdem — und muss sich erklären.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Für einen Kundentermin werden Bahn und Auto verglichen. Die Entscheidung wird nicht nur über den Ticketpreis getroffen, sondern über nutzbare Arbeitszeit, Material, mehrere Stationen, Erreichbarkeit und gemeinsame Reise. Beim Hotel wird Lage und Stornierbarkeit geprüft, damit eine Änderung nicht den Preisvorteil aufzehrt.",
-        "typische_fehler": "Nur der billigste Fahrschein wird gewählt oder Arbeitszeit nicht bewertet. Auch die Lage des Hotels und Stornokosten werden bei der Unterkunft übersehen.",
         "verstaendnisfragen": [
-          "Wann passt die Bahn? Wenn Reisezeit nutzbar ist und der Weg gut angebunden ist.",
-          "Wann passt das Auto? Bei Material, mehreren Stationen oder schlechter Anbindung."
-        ],
-        "pruefungsbezug": "Begründe Verkehrsmittel und Unterkunft mit Gesamtzeit, Arbeitswert, Material, Erreichbarkeit und Stornorisiko.",
-        "merksatz": "Die günstigste Reise ist nicht zwingend das billigste Ticket, sondern die passendste Gesamtlösung."
+          {
+            "frage": "Warum ist der Pkw im Amsterdam-Beispiel trotz niedrigerer Fahrtkosten nicht die bessere Wahl?",
+            "antwort": "Weil die Gesamtkosten mit Parken höher sind, die Fahrzeit nicht nutzbar ist und die Umweltwirkung bei einer Alleinfahrt größer ist.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Wann ist das Auto trotz höherer Emissionen die vertretbare Wahl?",
+            "antwort": "Wenn mehrere schlecht angebundene Orte an einem Tag besucht werden oder sperriges Material transportiert werden muss. Der Zielkonflikt wird dann bewusst entschieden und begründet.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Eine Reise braucht neben Buchungen auch einen Ablauf- und Kontaktplan.",
-          "Puffer schützen vor Verspätungen und Änderungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst für eine Geschäftsreise die Reiseunterlagen vollständig zusammen — Reiseplan mit Puffern, Buchungen, Kontakte, Termininhalte und Abrechnungsunterlagen —, sodass die reisende Person unterwegs nichts nachfragen muss.",
+        "vorwissen_kurz": "Eine gute Reisevorbereitung erkennt man daran, dass unterwegs keine Rückfragen nötig sind.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Alles an einem Ort",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Reiseunterlagen enthalten alles, was die reisende Person braucht: wann sie wo sein muss, womit sie reist, wo sie übernachtet, wen sie trifft und worum es geht. Dazu gehören auch die Unterlagen für die spätere Abrechnung. Wichtige Angaben liegen digital und ausgedruckt vor, falls Akku oder Netz ausfallen.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Unterlagen für die Messe in Berlin",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Unterlage",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Reiseplan",
+                  "Mittwoch 6:52 ab Düsseldorf Hbf, an Berlin Hbf 11:15; 13 Uhr Standdienst; Rückfahrt Freitag 16:34 — zwischen Ankunft und Standdienst eine Stunde Puffer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchungen",
+                  "Bahnticket (flexibler Tarif), Hotelbestätigung mit Frühstück, zwei Nächte, Messeausweis"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kontakte",
+                  "Standleitung der Messe, Hotel, Ansprechpartnerin im Büro, Notfallnummer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termininhalte",
+                  "Terminliste der Händlergespräche, Preisliste, Konditionen, Vorbestellformulare"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abrechnung",
+                  "Reisekostenformular mit Feldern für Abfahrts- und Rückkehrzeit, Belegumschlag, Hinweis: vom Betrieb organisierte Mahlzeiten eintragen"
+                ]
+              }
+            ],
+            "fazit": "Herr Okafor findet alles in einer Mappe und im geteilten Ordner. Der Hinweis zu den Mahlzeiten erleichtert später die Abrechnung.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Zu den Reiseunterlagen gehören Plan mit Puffern, Buchungen ausgedruckt, Kontakte, Termininhalte und ein Belegumschlag. Die Unterlagen müssen auch bei technischen Problemen oder unterwegs verfügbar bleiben. Termine und Wege werden so dokumentiert, dass die Abrechnung später nachvollziehbar ist.",
-        "beispiele": [
-          "Buchungen werden zusätzlich ausgedruckt und Kontakte sowie Termininhalte in den Plan aufgenommen.",
-          "Ein Belegumschlag sammelt Tickets, Quittungen und weitere Nachweise für die spätere Abrechnung."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Vorbereitung und Abrechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Abrechnung wird schon bei der Vorbereitung erleichtert: Wer weiß, dass Abfahrts- und Rückkehrzeiten, gestellte Mahlzeiten und alle Belege gebraucht werden, notiert sie unterwegs. Fehlen sie, geht die Abrechnung zurück, und beide Seiten verlieren Zeit.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k4-b1"
+                ],
+                "text": "Reisekosten abrechnen",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Vor einer Reise werden Termin, Weg, Puffer, Buchungen, Kontakte und Inhalte in einem Plan zusammengeführt. Ausdrucke liegen zusätzlich vor. Während der Reise werden Belege gesammelt und nach der Rückkehr den vier Reisekostenbausteinen zugeordnet. So gehen weder Nachweis noch Zeitreserve verloren.",
-        "typische_fehler": "Nur die Buchung wird abgelegt oder alle Belege lose gesammelt. Puffer und Kontakte fehlen, sodass Änderungen unterwegs nicht beherrscht werden.",
         "verstaendnisfragen": [
-          "Welche Unterlagen gehören mindestens in den Reiseplan? Puffer, Buchungen, Kontakte, Termininhalte und Belegumschlag.",
-          "Warum sind Ausdrucke sinnvoll? Als Rückfallebene bei fehlendem Zugriff auf digitale Unterlagen."
-        ],
-        "pruefungsbezug": "Prüfe Reiseunterlagen auf Planung, Nachweis und Rückfallebene — nicht nur auf das Ticket.",
-        "merksatz": "Gute Reiseunterlagen verbinden Terminplan, Kontakt, Buchung und Abrechnung."
+          {
+            "frage": "Warum steht im Reiseplan zwischen Ankunft und Standdienst eine Stunde Puffer?",
+            "antwort": "Weil Züge sich verspäten können und der Weg vom Bahnhof zum Messegelände Zeit braucht. Ohne Puffer würde schon eine kleine Verspätung den ersten Termin gefährden.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum gehört das Reisekostenformular schon in die Reiseunterlagen?",
+            "antwort": "Damit Herr Okafor unterwegs Zeiten, Mahlzeiten und Belege festhält. So lässt sich die Reise hinterher vollständig und ohne Rückfragen abrechnen.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -130,7 +443,7 @@
               "zellen": [
                 "Fahrt zwischen zwei Betriebsstätten",
                 "ja",
-                "keine der beiden ist erste Tätigkeitsstätte"
+                "die andere Betriebsstätte ist nicht die erste Tätigkeitsstätte"
               ],
               "detail": "**Voraussetzung ist, dass die zweite Stätte nicht dauerhaft zugeordnet ist.** Wer regelmäßig an beiden Orten arbeitet, hat trotzdem nur eine erste Tätigkeitsstätte — die legt der Arbeitgeber fest."
             },
@@ -140,7 +453,7 @@
                 "nur der berufliche Teil",
                 "private Anteile bleiben außen vor"
               ],
-              "detail": "**Wird eine Reise privat verlängert, sind die Kosten aufzuteilen.** Die Hinfahrt bleibt in der Regel erstattungsfähig, zusätzliche Übernachtungen und Verpflegung des privaten Teils nicht."
+              "detail": "**Wird eine Reise privat verlängert, sind die Kosten aufzuteilen.** Die Fahrtkosten bleiben in der Regel erstattungsfähig, wenn der berufliche Anlass im Vordergrund steht; zusätzliche Übernachtungen und Verpflegung des privaten Teils nicht."
             }
           ]
         },

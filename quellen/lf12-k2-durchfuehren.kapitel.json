@@ -6,66 +6,388 @@
   "untertitel": "Die Bestuhlung entscheidet, ob geredet oder zugehört wird.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Bestuhlung beeinflusst Kommunikation und Flächenbedarf.",
-          "Die Zielgruppe und Veranstaltungsart stehen vor der Raumwahl fest."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst die Bestuhlung nach dem Zweck der Veranstaltung, prüfst, ob Raumgröße und Zugänge dafür reichen, und kombinierst Formen für wechselnde Programmteile.",
+        "vorwissen_kurz": "Wie Menschen sitzen, beeinflusst, ob sie zuhören oder miteinander sprechen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Sitzordnung ist Programm",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:raumplan|Bestuhlung}} entscheidet mit darüber, was in einer Veranstaltung passiert. In Reihen schauen alle nach vorn, Gespräche untereinander sind schwer. In U-Form oder an Inseln sehen sich die Teilnehmenden und kommen leichter ins Gespräch. Gesprächsfördernde Formen brauchen dafür mehr Fläche je Person. Deshalb wird die Bestuhlung vor der Raumwahl festgelegt, nicht danach.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Showroom für den Händlertag",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Händlertag hat drei Programmteile mit unterschiedlichen Anforderungen.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Programmteil",
+              "Zweck",
+              "Bestuhlung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Begrüßung und Präsentation, 45 Minuten",
+                  "zuhören, Kollektion sehen",
+                  "Reihen mit Mittelgang, Blick auf Leinwand und Laufsteg"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anprobe und Beratung, 2 Stunden",
+                  "Ware anfassen, Gespräche",
+                  "Stehtische und Musterständer an Inseln, keine feste Bestuhlung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vorbestellung, laufend",
+                  "Konditionen besprechen",
+                  "kleine Tische für je zwei bis vier Personen am Rand"
+                ]
+              }
+            ],
+            "fazit": "Ein Raum, drei Nutzungen. Lea plant eine Umbaupause ein und klärt vorher, ob der Showroom für Inseln und Musterständer genug Fläche hat.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Raumbesichtigung prüft Lea außerdem die Wege: Kommt man mit Rollstuhl oder Rollkoffer stufenlos in den Showroom? Sind die Gänge zwischen den Musterständern breit genug? Gibt es eine barrierefreie Toilette? Und wo steht die Kamera für die Online-Gäste, damit sie die Präsentation sehen, ohne dass das Stativ einen Fluchtweg versperrt?",
+            "id": "b1-p3"
+          }
         ],
-        "erklaerung": "Reihenbestuhlung richtet alle nach vorne und eignet sich für Vorträge. Die U-Form unterstützt Schulungen und moderierte Gespräche. Inseln eignen sich für Gruppenarbeit, die Blockform für Verhandlungen. Gesprächsfördernde Formen brauchen etwa die doppelte Fläche je Person wie Reihen.",
-        "beispiele": [
-          "Reihen bringen viele Personen auf kleiner Fläche unter, erschweren aber Gespräche untereinander.",
-          "Inseln mit vier bis sechs Personen unterstützen Gruppenarbeit; die U-Form lässt Leitung und Teilnehmende einander sehen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Fluchtwege und Personenzahl",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Jeder Veranstaltungsraum hat eine zulässige Höchstzahl an Personen und vorgeschriebene Fluchtwege. Diese Angaben stehen meist im Mietvertrag oder in der Hausordnung. Musterständer, Kabel und Stehtische dürfen Notausgänge und Rettungswege nicht verstellen.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Für einen Workshop mit Gruppenarbeit werden Inseln gewählt. Dadurch wird mehr Fläche eingeplant als bei Reihen und berücksichtigt, dass für einen Vortrag ein Teil der Gruppe mit dem Rücken zur Bühne sitzen kann. Für eine Verhandlung wäre dagegen die Blockform passender.",
-        "typische_fehler": "Die Bestuhlung wird nur nach maximaler Personenzahl gewählt. Außerdem werden U-Form und Inseln verwechselt oder ihr höherer Flächenbedarf übersehen.",
         "verstaendnisfragen": [
-          "Welche Form eignet sich für Gruppenarbeit? Inselbestuhlung.",
-          "Welche Folge haben gesprächsfördernde Formen? Etwa doppelte Fläche je Person."
-        ],
-        "pruefungsbezug": "Ordne Form und Zweck zu und leite daraus die Raumgröße sowie mögliche Sicht- und Gesprächsprobleme ab.",
-        "merksatz": "Die Bestuhlung entscheidet, ob zugehört, verhandelt oder zusammengearbeitet wird."
+          {
+            "frage": "Warum passt eine Reihenbestuhlung nicht für den ganzen Händlertag?",
+            "antwort": "Sie eignet sich für die Präsentation, in der alle nach vorn schauen. Bei Anprobe und Beratung sollen die Händler aber herumgehen, die Ware anfassen und ins Gespräch kommen — dafür braucht es Inseln und Stehtische.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Was prüfst du bei der Raumbesichtigung neben der Größe?",
+            "antwort": "Stufenlosen Zugang, Breite der Wege, barrierefreie Toilette, Fluchtwege, Stromanschlüsse und den Platz für Technik und Kamera.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Technik kann ausfallen oder inkompatibel sein.",
-          "Jedes technische Mittel braucht eine Bedienung und eine Rückfallebene."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst Technik und Ausstattung für eine Präsenz- oder hybride Veranstaltung vollständig, legst für jede Komponente eine Rückfallebene fest und berücksichtigst Barrierefreiheit.",
+        "vorwissen_kurz": "Technik fällt nicht auf, solange sie funktioniert. Fällt sie aus, steht oft die ganze Veranstaltung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Jede Technik braucht einen Plan B",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einer Präsenzveranstaltung genügen oft Projektor, Mikrofon und Flipchart. Bei einer hybriden Veranstaltung kommen Kamera, Streaming, eine stabile Internetverbindung und jemand hinzu, der die Online-Gäste betreut. Je mehr Technik im Spiel ist, desto mehr kann ausfallen. Deshalb wird für jede Komponente festgelegt, was passiert, wenn sie nicht funktioniert.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Technik und Ausfallplan für den Händlertag",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Komponente",
+              "Zuständig",
+              "Rückfallebene"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Präsentation auf Leinwand",
+                  "Lea, Laptop des Showrooms",
+                  "Datei zusätzlich auf USB-Stick und auf Leas Laptop"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mikrofon für Präsentation",
+                  "Technikdienstleister",
+                  "zweites Funkmikrofon, Ersatzakkus"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kamera und Streaming",
+                  "Technikdienstleister",
+                  "zweite Kamera; bei Ausfall Aufzeichnung, die online nachgereicht wird"
+                ]
+              },
+              {
+                "zellen": [
+                  "Internet für Streaming",
+                  "Showroom, kabelgebunden",
+                  "Mobilfunk-Router als Reserve"
+                ]
+              },
+              {
+                "zellen": [
+                  "Betreuung der Online-Gäste",
+                  "Mira, eigener Laptop",
+                  "Fragen per Chat sammeln und gebündelt beantworten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Barrierefreiheit",
+                  "Lea",
+                  "Live-Untertitel im Stream, Folien vorab als PDF, Präsentation mit vorgelesenen Bildinhalten"
+                ]
+              }
+            ],
+            "fazit": "Für jede Komponente gibt es eine verantwortliche Person und einen Plan B. Die Online-Gäste haben eine eigene Ansprechpartnerin und gehen bei Störungen nicht verloren.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Generalprobe am Vortag zeigt sich, dass das Mikrofon im Showroom hallt und die Online-Gäste die Präsentation schlecht verstehen. Der Dienstleister stellt ein Ansteckmikrofon und reduziert die Lautsprecher im Raum. Ohne die Probe wäre das erst am Tag selbst aufgefallen — vor 90 Gästen.",
+            "id": "b2-p2"
+          }
         ],
-        "erklaerung": "Zur Technikplanung gehören Gerät, Kabel, Adapter, Ersatz und Betreuung. Der Technikcheck erfolgt mit dem echten Gerät und der echten Datei, am Vortag oder mindestens 90 Minuten vorher. WLAN-Kapazität wird beim Anbieter erfragt. Für Projektion, Ton und Moderation werden Rückfallebenen vorbereitet.",
-        "beispiele": [
-          "Die Präsentation liegt zusätzlich auf einem Speicherstick, und für Mikrofone stehen Ersatzbatterien bereit.",
-          "Ein Flipchart kann die Präsentation ersetzen, wenn der Beamer ausfällt; eine zuständige Person bedient die Technik."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Hybride Veranstaltungen moderieren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Online-Gäste werden leicht vergessen, wenn im Raum lebhaft diskutiert wird. Deshalb nimmt die Moderation in jeder Fragerunde zuerst eine Online-Frage auf, und Mira meldet sich, wenn im Chat etwas offen ist. Wortmeldungen im Raum werden über Mikrofon gesprochen, damit sie auch im Stream zu hören sind.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Zwanzig Minuten vor Beginn fällt der Beamer aus. Zuerst werden Strom, Kabel, Eingangskanal, Laptop-Anzeige und Adapter geprüft. Parallel wird ein Ersatzgerät oder anderer Raum gesucht. Wenn beides nicht gelingt, wird ohne Projektion mit Flipchart und Handouts gearbeitet; Referent und Gäste werden informiert. Für später werden Ersatzgerät und erreichbare Betreuung fest eingeplant.",
-        "typische_fehler": "Nur das Hauptgerät wird gebucht oder WLAN-Kapazität angenommen. Außerdem fehlt eine Person, die im Störungsfall eingreift.",
         "verstaendnisfragen": [
-          "Womit wird ein Technikcheck durchgeführt? Mit dem tatsächlich genutzten Gerät und der tatsächlich zu zeigenden Datei.",
-          "Was gehört neben Geräten zur Planung? Rückfallebene und verantwortliche Betreuung."
-        ],
-        "pruefungsbezug": "Nenne im Technikfall zuerst einfache Ursachen, dann Rückfallebene und Information der Beteiligten.",
-        "merksatz": "Technikplanung endet erst bei Ersatzlösung und verantwortlicher Betreuung."
+          {
+            "frage": "Warum braucht eine hybride Veranstaltung eine eigene Betreuung für die Online-Gäste?",
+            "antwort": "Weil die Moderation im Raum die Online-Gäste schnell aus dem Blick verliert. Jemand muss Fragen im Chat aufnehmen, technische Probleme lösen und dafür sorgen, dass Online-Gäste zu Wort kommen.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Welche Maßnahmen machen den Stream für mehr Menschen zugänglich?",
+            "antwort": "Gut verständlicher Ton, Untertitel, Folien vorab als Datei, Bildinhalte mündlich beschreiben und Fragen auch schriftlich ermöglichen.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Veranstaltungen ändern sich während des Tages.",
-          "Verantwortung und Zeitpunkt müssen vorab festgelegt sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du arbeitest am Veranstaltungstag mit Checklisten für Aufbau, Durchführung und Nachbereitung, ordnest jedem Punkt Verantwortung und Uhrzeit zu und sicherst nach der Veranstaltung die Ergebnisse.",
+        "vorwissen_kurz": "Am Veranstaltungstag bleibt keine Zeit zum Nachdenken. Was vorher festgelegt ist, muss nur noch abgearbeitet werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Listen statt Gedächtnis",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Veranstaltungstag passiert vieles gleichzeitig. {{begriff:checkliste|Checklisten}} sorgen dafür, dass nichts vergessen wird und jeder weiß, was er zu tun hat. Jeder Punkt hat eine verantwortliche Person und eine Uhrzeit. Abgehakte Punkte zeigen, was erledigt ist, und niemand muss es ein zweites Mal prüfen.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ausschnitt aus Leas Checkliste",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Uhrzeit",
+              "Aufgabe",
+              "Verantwortlich",
+              "erledigt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "7:30",
+                  "Showroom aufschließen lassen, Bestuhlung und Wege prüfen",
+                  "Lea",
+                  "✓"
+                ]
+              },
+              {
+                "zellen": [
+                  "8:00",
+                  "Technik und Stream testen, Mikrofone, Untertitel",
+                  "Technikdienstleister, Mira",
+                  "✓"
+                ]
+              },
+              {
+                "zellen": [
+                  "8:45",
+                  "Empfang aufbauen, Namensschilder, Anmeldeliste",
+                  "Tim",
+                  "✓"
+                ]
+              },
+              {
+                "zellen": [
+                  "9:30",
+                  "Zugangslink an Online-Gäste erneut senden",
+                  "Mira",
+                  "✓"
+                ]
+              },
+              {
+                "zellen": [
+                  "10:00",
+                  "Begrüßung",
+                  "Geschäftsführung",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "15:30",
+                  "Musterständer sichern, Vorbestellungen zählen",
+                  "Lea, Vertrieb",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "bis 22.1.",
+                  "Dankmail mit Folien und Bestelllink an alle Gäste",
+                  "Mira",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "bis 26.1.",
+                  "Ergebnis gegen Ziel prüfen, Rückmeldungen auswerten",
+                  "Lea",
+                  ""
+                ]
+              }
+            ],
+            "fazit": "Auch die Nachbereitung steht mit Datum und Namen auf der Liste. Sonst geht sie unter, weil am Abend alle erschöpft sind.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Woche später prüft Lea das Ergebnis gegen das Ziel: 46 Händler haben vorbestellt, darunter sechs neue aus den Benelux-Ländern, vier davon über die Online-Teilnahme. Beide Ziele sind erreicht. Die Rückmeldungen zeigen aber, dass die Umbaupause zu kurz war. Das notiert Lea für das nächste Jahr.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b5"
+          }
         ],
-        "erklaerung": "Drei Checklisten strukturieren vorher, währenddessen und danach. Jeder Punkt erhält eine verantwortliche Person und eine Uhrzeit. Die Nachbereitung prüft Ergebnisse, offene Punkte und den Nutzen der Veranstaltung.",
-        "beispiele": [
-          "Vorher werden Raum, Technik, Unterlagen und Bewirtung kontrolliert; währenddessen werden Ablauf und Störungen beobachtet.",
-          "Nachher werden Unterlagen, Rechnungen, Rückmeldungen und offene Aufgaben abgelegt beziehungsweise nachverfolgt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Was in die Nachbereitung gehört",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Dank an Gäste und Mitwirkende, Unterlagen versenden, Kontakte und Zusagen ins Kundenbeziehungsmanagement übernehmen, Rechnungen prüfen, Ergebnis mit dem Ziel vergleichen und Verbesserungen notieren. Je schneller das geschieht, desto eher werden Zusagen zu Bestellungen.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Für eine Veranstaltung mit 60 Gästen wird jede Aufgabe einer Person und einer Uhrzeit zugewiesen. Während der Veranstaltung wird bei einer Technikpanne die Rückfallebene aktiviert. Danach werden Rückmeldungen und offene Restpunkte dokumentiert; so wird aus der Veranstaltung eine auswertbare Leistung statt eines einmaligen Tages.",
-        "typische_fehler": "Eine einzige Checkliste ohne Zeitpunkt und Verantwortlichen wird verwendet. Nachbereitung wird als optional betrachtet und dadurch gehen Erfahrungen und offene Punkte verloren.",
         "verstaendnisfragen": [
-          "Welche drei Checklisten braucht der Tag? Vorher, währenddessen und danach.",
-          "Was muss jeder Checklistenpunkt enthalten? Verantwortliche Person und Uhrzeit."
-        ],
-        "pruefungsbezug": "Prüfe bei Ablaufplänen nicht nur Aufgaben, sondern Zuständigkeit, Zeitpunkt, Rückfallebene und Nachbereitung.",
-        "merksatz": "Vorher sichern, währenddessen steuern, danach auswerten — mit Namen und Uhrzeit."
+          {
+            "frage": "Warum gehören auch Punkte nach dem Veranstaltungstag auf die Checkliste?",
+            "antwort": "Weil sich in der Nachbereitung entscheidet, ob die Veranstaltung etwas bringt. Ohne Termin und Verantwortliche bleiben Dankmails, Bestelllinks und die Auswertung liegen.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Woran erkennt Lea, dass der Händlertag erfolgreich war?",
+            "antwort": "Am Vergleich mit dem vorher festgelegten Ziel: 46 statt mindestens 40 Vorbestellungen und sechs statt mindestens fünf neue Benelux-Händler.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -152,7 +474,7 @@
         },
         {
           "typ": "merke",
-          "text": "**Reihen für Vorträge, U-Form für Schulungen, Inseln für Gruppenarbeit, Blockform für Verhandlungen.** Gesprächsfördernde Formen brauchen etwa doppelt so viel Fläche.",
+          "text": "**Reihen für Vorträge, U-Form für Schulungen, Inseln für Gruppenarbeit, Blockform für Verhandlungen.** Gesprächsfördernde Formen brauchen deutlich mehr Fläche je Person.",
           "karteikarte": "Welche Bestuhlungsform passt zu welchem Veranstaltungszweck, und welche Folge hat das für die Raumgröße?"
         }
       ]
@@ -164,7 +486,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Technik fällt nie auf, wenn sie funktioniert, und ruiniert eine Veranstaltung, wenn nicht. ==Die drei häufigsten Pannen sind banal:== fehlender Adapter, leerer Akku am Mikrofon, kein Netz für die Online-Zuschaltung."
+          "text": "Technik fällt nie auf, wenn sie funktioniert, und ruiniert eine Veranstaltung, wenn nicht. ==Typische Pannen sind banal:== fehlender Adapter, leerer Akku am Mikrofon, kein Netz für die Online-Zuschaltung."
         },
         {
           "typ": "tabelle",
@@ -332,7 +654,7 @@
   "zusammenfassung": [
     "Die {{begriff:raumplan|Bestuhlung}} steuert, ob zugehört oder miteinander geredet wird.",
     "Reihen für Vorträge, U-Form für Schulungen, Inseln für Gruppenarbeit, Blockform für Verhandlungen.",
-    "Gesprächsfördernde Formen brauchen etwa die doppelte Fläche je Person.",
+    "Gesprächsfördernde Formen brauchen deutlich mehr Fläche je Person.",
     "Zu jeder Technik gehört eine Rückfallebene und jemand, der sie bedient.",
     "Der Technikcheck erfolgt mit dem echten Gerät und der echten Datei.",
     "WLAN-Kapazität beim Anbieter erfragen, nicht annehmen.",

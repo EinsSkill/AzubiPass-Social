@@ -878,7 +878,8 @@
       "breakeven": gBreakeven,
       "durchlauf": gDurchlauf,
       "balkenplan": gBalkenplan,
-      "epk": gEpk
+      "epk": gEpk,
+      "pauschale": gPauschale
     }[daten.variante];
     if (bauer) bauer(buehne, daten);
     else buehne.appendChild(mkEl("p", "echo", "Bauteil „" + daten.variante + "“ ist noch nicht gebaut."));
@@ -2058,6 +2059,54 @@
     info.appendChild(mkEl("p", "epk-hinweis", d.hinweis || "Element anklicken, um es zu erklären."));
     buehne.appendChild(info);
     if (d.konvention) buehne.appendChild(mkEl("p", "epk-konvention", d.konvention));
+  }
+
+  /* ---------- 18 · Verpflegungspauschale mit Mahlzeitenkürzung ----------
+     Tagesart wählen, gestellte Mahlzeiten anhaken. Gekürzt wird immer
+     mit festen Anteilen des vollen Tagessatzes; die Pauschale wird nie
+     negativ. Beträge kommen aus den Daten (Stand im Text belegt).          */
+
+  function gPauschale(buehne, d) {
+    function eur(x) { return x.toFixed(2).replace(".", ",") + " €"; }
+    var voll = d.voller_satz;
+    var tagIdx = 0;
+    wahlLeiste(buehne, d.tagesarten.map(function (t) { return t.name + " · " + eur(t.satz); }), function (i) {
+      tagIdx = i; zeichne();
+    }).querySelector("button").classList.add("an");
+    var feld = el("div", "pa-mahlzeiten");
+    var boxen = d.mahlzeiten.map(function (m) {
+      var lab = el("label", "pa-mahl");
+      var cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.addEventListener("change", zeichne);
+      lab.appendChild(cb);
+      lab.appendChild(el("span", null, m.name + " gestellt (− " + m.anteil + " % von " + eur(voll) + ")"));
+      feld.appendChild(lab);
+      return cb;
+    });
+    buehne.appendChild(feld);
+    var aus = el("div", "pa-ergebnis");
+    aus.setAttribute("aria-live", "polite");
+    buehne.appendChild(aus);
+    function zeichne() {
+      var satz = d.tagesarten[tagIdx].satz;
+      var abzug = 0, teile = [];
+      d.mahlzeiten.forEach(function (m, i) {
+        if (boxen[i].checked) {
+          var b = Math.round(voll * m.anteil) / 100;
+          abzug += b; teile.push(m.name + " " + eur(b));
+        }
+      });
+      var rest = Math.max(0, satz - abzug);
+      aus.innerHTML = "";
+      var z = el("div", "dl-rechnung");
+      z.innerHTML = eur(satz) + (teile.length ? " − " + teile.join(" − ") : "") +
+        " = <b>" + eur(rest) + "</b>";
+      aus.appendChild(z);
+      if (satz - abzug < 0)
+        aus.appendChild(mkEl("p", "dl-hinweis", "Die Kürzungen übersteigen den Tagessatz. Die Pauschale sinkt auf **0 €**, nicht darunter."));
+    }
+    zeichne();
   }
 
   /* ---------- 16 · Balkenplan ----------
