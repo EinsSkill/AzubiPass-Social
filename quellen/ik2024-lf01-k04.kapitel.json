@@ -6,86 +6,458 @@
   "untertitel": "Wer wem Weisungen gibt, wie Arbeit quer durch die Abteilungen läuft und wie man einen Ablauf als Prozesskette aufzeichnet.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "In jedem Betrieb ist festgelegt, wer welche Aufgaben erledigt und wer wem Anweisungen geben darf.",
-          "Diese Festlegung heißt Aufbauorganisation und wird im Organigramm dargestellt."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Aufbau- und Ablauforganisation, liest Zuständigkeiten und Weisungswege aus dem Organigramm von MAKEL Studio ab und erkennst, was ein Organigramm nicht zeigt.",
+        "vorwissen_kurz": "Wer einen Auftrag weitergeben will, muss wissen, wer wofür zuständig ist und wer entscheidet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer zuständig ist und wer anweist",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:aufbauorganisation|Aufbauorganisation}} beantwortet die Frage *Wer?*: Welche Stelle ist wofür zuständig, und wer darf wem Weisungen geben? Eine **Stelle** ist die kleinste Organisationseinheit, ein Aufgabenbereich für eine Person. Mehrere Stellen bilden eine **Abteilung** unter einer Leitung, der **Instanz**. Dargestellt wird die Aufbauorganisation im {{begriff:organigramm|Organigramm}}. Die {{begriff:ablauforganisation|Ablauforganisation}} beantwortet dagegen die Frage *Wann und in welcher Reihenfolge?*.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Auftrag, zwei Sichtweisen",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage zum Vereinsauftrag über 400 Hoodies",
+              "Antwort aus der Aufbauorganisation",
+              "Antwort aus der Ablauforganisation"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wer prüft den Auftrag?",
+                  "Vertrieb unter Marlene Voß",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was passiert nach der Prüfung?",
+                  "—",
+                  "Rohlinge bestellen, dann drucken"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wer entscheidet bei einem Engpass in der Veredelung?",
+                  "Deniz Aydın als Leiter Einkauf und Produktion",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wann wird versendet?",
+                  "—",
+                  "nach Druck und Qualitätskontrolle"
+                ]
+              }
+            ],
+            "fazit": "Das Organigramm beantwortet Fragen nach Zuständigkeit und Weisung. Fragen nach Reihenfolge und Zeit beantwortet erst die Ablauforganisation.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beide Sichtweisen gehören zusammen. Luca soll den Vereinsauftrag an die Veredelung weitergeben. Aus dem Organigramm weiß er, dass die Veredelung zu Einkauf und Produktion gehört und Deniz Aydın über Prioritäten entscheidet. Aus dem Ablauf weiß er, dass vor dem Druck die Rohlinge bestellt und das Motiv freigegeben sein müssen. Erst beides zusammen ergibt eine vollständige Übergabe.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die kleinste organisatorische Einheit ist die Stelle: ein Aufgabenbereich für eine Person, zum Beispiel ‚Disposition Rohlinge‘. Mehrere Stellen mit verwandten Aufgaben bilden eine Abteilung. Stellen mit Weisungsbefugnis heißen Instanzen. Das Organigramm zeigt, welche Linien von oben nach unten laufen. Bei MAKEL leiten zwei Geschäftsführer das Unternehmen; darunter liegen Abteilungen wie Einkauf und Produktion, Vertrieb, Lager und Versand, Rechnungswesen und Personal.",
-        "beispiele": [
-          "Deniz Aydın leitet Einkauf und Produktion und ist damit eine Instanz für die Musterfertigung, die Veredelung und die Qualitätskontrolle.",
-          "Eine Auszubildende in der Buchhaltung bekommt ihre fachlichen Weisungen von Sandra Koslowski, nicht direkt von der Geschäftsführung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Stelle und Instanz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Stelle mit Leitungsbefugnis heißt Instanz. Die Zahl der Stellen, die einer Instanz direkt unterstellt sind, heißt Leitungsspanne. Ist sie zu groß, fehlt der Leitung die Zeit für jede einzelne Stelle; ist sie zu klein, entstehen viele Hierarchieebenen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli erhält an einem Tag zwei Anweisungen: von Marlene Voß aus dem Vertrieb, ein Muster sofort zu verschicken, und von Jonas Weidner aus dem Versand, zuerst die Tagestour zu packen. Luca ist dem Versand zugeteilt. Im Organigramm ist Jonas Weidner seine Instanz; Marlenes Bitte ist eine Anfrage an den Versand, keine Weisung an Luca. Richtig ist, die Bitte an Jonas weiterzugeben und die Reihenfolge von ihm entscheiden zu lassen.",
-        "typische_fehler": "Das Organigramm wird als Ablaufbeschreibung gelesen. Es zeigt Zuständigkeiten und Weisungswege, aber nicht, in welcher Reihenfolge ein Auftrag bearbeitet wird.",
         "verstaendnisfragen": [
-          "Was ist eine Instanz? Eine Stelle mit Weisungsbefugnis gegenüber anderen Stellen.",
-          "Welche Frage beantwortet die Aufbauorganisation? Wer ist wofür zuständig und wer darf wem Weisungen geben?"
-        ],
-        "pruefungsbezug": "In Organigramm-Aufgaben zuerst die Linien verfolgen: Von wem kommt die Weisung, und ist diese Stelle für den Empfänger überhaupt zuständig?",
-        "merksatz": "Die Aufbauorganisation legt Stellen, Abteilungen und Weisungswege fest; das Organigramm stellt sie dar, nicht den zeitlichen Ablauf."
+          {
+            "frage": "Was zeigt ein Organigramm nicht?",
+            "antwort": "Die Reihenfolge und den zeitlichen Ablauf eines Vorgangs. Das zeigt die Ablauforganisation.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Wer entscheidet bei MAKEL Studio über Prioritäten in der Veredelung?",
+            "antwort": "Deniz Aydın als Leiter von Einkauf und Produktion, zu dem die Veredelung gehört.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Weisungswege können unterschiedlich aufgebaut sein.",
-          "Jede Bauform hat Vor- und Nachteile."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Einlinien-, Mehrlinien-, Stablinien-, Sparten- und Matrixorganisation nach Vor- und Nachteilen und erkennst Schnittstellen als typische Stellen für Verzögerungen.",
+        "vorwissen_kurz": "Wie Weisungswege gestaltet sind, entscheidet, wie schnell und klar ein Unternehmen arbeitet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fünf Formen der Organisation",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im **Einliniensystem** hat jede Stelle genau eine vorgesetzte Instanz; MAKEL Studio ist so organisiert. Im **Mehrliniensystem** erhält eine Stelle Weisungen von mehreren Fachvorgesetzten. Das **Stabliniensystem** ergänzt die Linie um beratende Stabsstellen ohne Weisungsrecht. Die **Spartenorganisation** gliedert nach Produkten oder Märkten, die **Matrixorganisation** kreuzt zwei Gliederungen, etwa Funktionen und Produkte. Jede Form hat Vor- und Nachteile.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Form passt?",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Situation bei MAKEL Studio",
+              "geeignete Lösung",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Die Geschäftsführung braucht Unterstützung beim Datenschutz",
+                  "Stabsstelle Datenschutz",
+                  "berät fachlich, ohne in die Linie einzugreifen"
+                ]
+              },
+              {
+                "zellen": [
+                  "MAKEL gründet eine zweite Marke für Sportbekleidung",
+                  "Sparte „Sport\" neben „Streetwear\"",
+                  "eigene Kunden und Produkte"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein Projekt zur Laserstation braucht Einkauf, Produktion und Vertrieb",
+                  "Projektteam auf Zeit, matrixähnlich",
+                  "Fachleute bleiben in ihren Abteilungen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Alltag mit 92 Beschäftigten",
+                  "Einliniensystem beibehalten",
+                  "klare Zuständigkeit bei überschaubarer Größe"
+                ]
+              }
+            ],
+            "fazit": "Die Form folgt der Aufgabe. Für den Alltag reicht bei MAKEL Studio die Einlinie; für Sonderaufgaben werden Stäbe oder Projektteams ergänzt.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Egal welche Form: Wo ein Vorgang die Zuständigkeit wechselt, liegt eine {{begriff:schnittstelle|Schnittstelle}}. ==Dort bleiben Aufträge am häufigsten liegen.== Gibt der Vertrieb einen Auftrag an die Veredelung weiter, ohne die Motivfreigabe mitzuteilen, wartet die Veredelung, und der Vertrieb glaubt, alles sei erledigt. Gegen solche Lücken helfen feste Übergaben mit Pflichtangaben.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Im Einliniensystem hat jede Stelle genau eine vorgesetzte Instanz — klar, aber langsam, weil Informationen den Dienstweg gehen. Das Mehrliniensystem erlaubt mehrere Fachvorgesetzte; Fachwissen kommt schnell an, es können aber widersprüchliche Weisungen entstehen. Das Stabliniensystem ergänzt die Linie um beratende Stabsstellen ohne Weisungsrecht. In der Spartenorganisation gliedert man nach Produkten oder Märkten, in der Matrixorganisation kreuzen sich zwei Gliederungen, etwa Funktion und Produkt. Wo eine Aufgabe von einer Stelle an die nächste übergeht, liegt eine Schnittstelle — dort entstehen Wartezeiten und Informationsverluste.",
-        "beispiele": [
-          "MAKEL ist überwiegend im Einliniensystem organisiert. Eine externe Beraterin für Nachhaltigkeit, die der Geschäftsführung zuarbeitet, wäre eine Stabsstelle.",
-          "Ein großer Sportartikelhersteller gliedert sich in die Sparten Schuhe, Bekleidung und Zubehör — jede Sparte mit eigenem Einkauf und Vertrieb."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Einlinie und Mehrlinie im Konflikt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im Mehrliniensystem könnte die Veredelung gleichzeitig vom Vertrieb einen Eilauftrag und von der Produktionsleitung eine andere Reihenfolge erhalten. Wer dann entscheidet, ist unklar. Das Einliniensystem vermeidet diesen Konflikt, weil nur Deniz Aydın der Veredelung Weisungen gibt.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Firmenauftrag über 400 bedruckte Hoodies wandert vom Vertrieb in die Veredelung und dann in den Versand. An jeder Übergabe kann er liegen bleiben: Fehlt dem Druckteam das freigegebene Motiv, wartet es; erfährt der Versand nicht, dass der Auftrag fertig ist, steht die Ware im Regal. Die beiden Übergaben sind Schnittstellen. Abhilfe: eine klare Übergabe mit festen Angaben, etwa ‚Motiv freigegeben, Menge, Liefertermin‘.",
-        "typische_fehler": "Stabsstellen wird ein Weisungsrecht zugeschrieben, weil sie nahe an der Geschäftsführung hängen. Stäbe beraten nur.",
         "verstaendnisfragen": [
-          "Welchen Nachteil hat das Einliniensystem? Lange Dienstwege und eine hohe Belastung der oberen Instanzen.",
-          "Was ist eine Schnittstelle? Eine Stelle im Ablauf, an der die Zuständigkeit für einen Vorgang wechselt."
-        ],
-        "pruefungsbezug": "Vorteile und Nachteile der Organisationsformen werden gern als Paar gefragt. Lerne zu jeder Form einen Vorteil und einen Nachteil.",
-        "merksatz": "Einlinie ist klar, aber langsam; Mehrlinie schnell, aber widerspruchsanfällig; Stäbe beraten ohne Weisungsrecht; Schnittstellen sind die typischen Stellen für Verzögerungen."
+          {
+            "frage": "Welchen Nachteil hat eine Stabsstelle?",
+            "antwort": "Sie hat Fachwissen, aber keine Entscheidungsbefugnis. Ob ihr Rat umgesetzt wird, entscheidet die Linie.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum bleiben Aufträge an Schnittstellen besonders oft liegen?",
+            "antwort": "Weil dort die Zuständigkeit wechselt. Fehlen Informationen bei der Übergabe, fühlt sich keiner verantwortlich.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Ein Geschäftsprozess ist eine Folge von Tätigkeiten, die durch ein Ereignis ausgelöst wird und ein Ergebnis liefert.",
-          "Prozesse laufen quer durch Abteilungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Geschäftsprozesse nach ihrem Beitrag zum Kundennutzen als Kern-, Unterstützungs- oder Steuerungsprozess ein und begründest die Zuordnung an Beispielen aus MAKEL Studio.",
+        "vorwissen_kurz": "Abläufe, die durch mehrere Abteilungen gehen, heißen Geschäftsprozesse. Nicht alle tragen gleich direkt zum Erfolg bei.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Prozesse nach ihrem Nutzen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:geschaeftsprozess|Geschäftsprozess}} wird durch ein Ereignis ausgelöst, besteht aus einer Folge von Tätigkeiten und endet mit einem Ergebnis. **Kernprozesse** schaffen direkt Nutzen für den Kunden, für den er bezahlt: etwa die Auftragsabwicklung oder die Entwicklung einer Kollektion. **Unterstützungsprozesse** sind nötig, damit Kernprozesse funktionieren, schaffen aber keinen direkten Kundennutzen: Personalverwaltung, IT, Wartung. **Steuerungsprozesse** setzen Ziele und überwachen ihre Erreichung.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Vereinsauftrag als Prozess",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Element",
+              "Inhalt beim Vereinsauftrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "auslösendes Ereignis",
+                  "Bestellung von 400 Hoodies geht ein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tätigkeiten",
+                  "prüfen, Rohlinge bestellen, Motiv freigeben, drucken, prüfen, versenden, abrechnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "beteiligte Abteilungen",
+                  "Vertrieb, Einkauf und Produktion, Lager und Versand, Rechnungswesen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis",
+                  "Verein hat die Hoodies erhalten und bezahlt"
+                ]
+              },
+              {
+                "zellen": [
+                  "unterstützende Prozesse",
+                  "Wartung der Druckmaschine, Personaleinsatzplanung"
+                ]
+              }
+            ],
+            "fazit": "Der Kernprozess läuft quer durch vier Abteilungen. Unterstützungsprozesse sorgen dafür, dass er reibungslos funktioniert.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Einteilung hilft bei Entscheidungen. Kernprozesse sollten besonders gut und schnell laufen, weil Kunden sie direkt spüren. Unterstützungsprozesse werden oft daraufhin geprüft, ob sie ausgelagert werden können, etwa die Lohnabrechnung an einen Dienstleister. Steuerungsprozesse sorgen dafür, dass alle Prozesse auf die Unternehmensziele ausgerichtet bleiben.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Kernprozesse schaffen unmittelbar Wert für den Kunden und unterscheiden ein Unternehmen vom Wettbewerb — bei MAKEL etwa die Auftragsabwicklung vom Kundenauftrag bis zur Auslieferung oder die Kollektionsentwicklung. Unterstützungsprozesse sorgen dafür, dass Kernprozesse laufen können, schaffen aber keinen direkten Kundennutzen: Personalverwaltung, Buchhaltung, IT-Betreuung, Instandhaltung. Steuerungs- oder Managementprozesse legen Ziele fest und kontrollieren sie, etwa die Jahresplanung.",
-        "beispiele": [
-          "Die Abwicklung eines Großauftrags — Angebot, Druck, Versand, Rechnung — ist ein Kernprozess.",
-          "Die Gehaltsabrechnung ist ein Unterstützungsprozess: Ohne sie arbeitet auf Dauer niemand, aber der Kunde merkt sie nicht."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Prozessorientierung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Prozessorientierte Unternehmen betrachten nicht nur Abteilungen, sondern den gesamten Weg eines Auftrags. Für wichtige Prozesse gibt es oft eine verantwortliche Person, die über Abteilungsgrenzen hinweg auf Durchlaufzeit und Qualität achtet.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Du sollst für eine Schulung zwei Prozesse einordnen: ‚Auftragsabwicklung für Geschäftskunden‘ und ‚interne Personalverwaltung‘. Die Auftragsabwicklung ist ein Kernprozess, weil sie direkt das Produkt zum Kunden bringt und Umsatz erzeugt. Die Personalverwaltung ist ein Unterstützungsprozess: Sie stellt Personal bereit und verwaltet es, erzeugt aber selbst keine Leistung für den Kunden.",
-        "typische_fehler": "Unterstützungsprozesse werden als unwichtig angesehen. Sie sind notwendig — nur ist ihr Nutzen indirekt.",
         "verstaendnisfragen": [
-          "Woran erkennt man einen Kernprozess? Er erzeugt unmittelbar Nutzen für den Kunden.",
-          "Ist die Instandhaltung der Druckmaschine ein Kern- oder Unterstützungsprozess? Ein Unterstützungsprozess, weil sie die Veredelung ermöglicht, selbst aber keine Leistung für den Kunden erbringt."
-        ],
-        "pruefungsbezug": "Bei Einordnungsaufgaben die Begründung über den Kundennutzen führen — direkt (Kernprozess) oder indirekt (Unterstützungsprozess).",
-        "merksatz": "Kernprozesse schaffen direkten Kundennutzen, Unterstützungsprozesse ermöglichen sie, Steuerungsprozesse setzen Ziele und kontrollieren."
+          {
+            "frage": "Ist die Wartung der Druckmaschine ein Kernprozess?",
+            "antwort": "Nein, ein Unterstützungsprozess. Sie ermöglicht den Druck, schafft aber selbst keinen direkten Kundennutzen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Was kennzeichnet einen Geschäftsprozess?",
+            "antwort": "Ein auslösendes Ereignis, eine Folge von Tätigkeiten über Abteilungen hinweg und ein Ergebnis.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Abläufe lassen sich grafisch darstellen, damit alle Beteiligten sie gleich verstehen.",
-          "Eine verbreitete Darstellungsform ist die ereignisgesteuerte Prozesskette (EPK)."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst einen einfachen Ablauf als ereignisgesteuerte Prozesskette dar, wendest die Regeln zu Ereignissen, Funktionen und Konnektoren an und erkennst typische Fehler.",
+        "vorwissen_kurz": "Abläufe lassen sich in Worten beschreiben. Als Prozesskette werden sie eindeutig und prüfbar.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ereignisse und Funktionen im Wechsel",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In einer {{begriff:epk|ereignisgesteuerten Prozesskette}} wechseln sich Ereignisse und Funktionen ab. Ein **Ereignis** beschreibt einen eingetretenen Zustand, etwa „Auftrag eingegangen\". Eine **Funktion** beschreibt eine Tätigkeit, etwa „Auftrag prüfen\". Die Kette beginnt und endet mit einem Ereignis. **Konnektoren** zeigen Verzweigungen: XOR für genau einen Weg, ODER für mindestens einen, UND für alle. Organisationseinheiten werden als Ellipsen an die Funktionen gehängt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Auftragsprüfung als EPK",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Nr.",
+              "Element",
+              "Inhalt",
+              "Organisationseinheit"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Ereignis",
+                  "Auftrag eingegangen",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Funktion",
+                  "Auftrag prüfen",
+                  "Vertrieb"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "XOR-Konnektor",
+                  "genau einer der beiden Wege",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "4a",
+                  "Ereignis",
+                  "Auftrag freigegeben",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "4b",
+                  "Ereignis",
+                  "Auftrag abgelehnt",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "5 (nach 4a)",
+                  "Funktion",
+                  "Rohlinge bestellen",
+                  "Einkauf"
+                ]
+              },
+              {
+                "zellen": [
+                  "6",
+                  "Ereignis",
+                  "Rohlinge bestellt",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Die Kette wechselt Ereignis und Funktion ab. Die Entscheidung trifft die Funktion „Auftrag prüfen\"; danach verzweigt der XOR-Konnektor.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Typische Fehler sind leicht zu erkennen, wenn man die Regeln kennt. Stehen zwei Funktionen direkt hintereinander, fehlt das Ereignis dazwischen, und es bleibt unklar, wann die zweite beginnt. Steht ein XOR-Konnektor direkt nach einem Ereignis, müsste das Ereignis entscheiden, was es nicht kann. Und eine Folge von Abteilungen wie „Vertrieb → Veredelung → Versand\" ist keine Prozesskette, sondern eine Liste von Zuständigkeiten.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Eine EPK besteht aus Ereignissen (Sechsecke: ein Zustand ist eingetreten, etwa ‚Auftrag eingegangen‘) und Funktionen (abgerundete Rechtecke: eine Tätigkeit wird ausgeführt, etwa ‚Auftrag prüfen‘). Ereignisse und Funktionen wechseln sich ab; die Kette beginnt und endet mit einem Ereignis. Verzweigungen werden mit Konnektoren dargestellt: UND (alle Wege), ODER (mindestens einer) und XOR (genau einer). Weil ein Ereignis nichts entscheiden kann, darf auf ein Ereignis kein ODER- oder XOR-Verzweig folgen — Entscheidungen trifft immer eine Funktion.",
-        "beispiele": [
-          "Auftrag eingegangen → Auftrag prüfen → Auftrag freigegeben: die kleinste vollständige EPK.",
-          "Nach ‚Bonität prüfen‘ folgt ein XOR: entweder ‚Bonität ausreichend‘ oder ‚Bonität nicht ausreichend‘ — genau eines tritt ein."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Parallele Abläufe mit UND",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nach der Freigabe können zwei Tätigkeiten gleichzeitig beginnen: Die Veredelung bereitet das Sieb vor, und der Versand reserviert Kartons. Ein UND-Konnektor öffnet beide Wege. Erst wenn beide erledigt sind, führt ein schließender UND-Konnektor sie wieder zusammen.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Du zeichnest den Ablauf ‚Auftrag eingegangen – Auftrag prüfen – Auftrag freigegeben‘. Richtig ist die Folge Ereignis (Sechseck) – Funktion (abgerundetes Rechteck) – Ereignis (Sechseck). Kommt hinzu, dass die Prüfung auch scheitern kann, folgt auf die Funktion ‚Auftrag prüfen‘ ein XOR-Konnektor mit den Ereignissen ‚Auftrag freigegeben‘ und ‚Auftrag abgelehnt‘.",
-        "typische_fehler": "Statt Ereignissen und Funktionen werden Abteilungen aneinandergereiht (‚Vertrieb → Veredelung → Versand‘). Das ist eine Liste von Zuständigkeiten, keine Prozesskette.",
         "verstaendnisfragen": [
-          "Womit beginnt und endet eine EPK? Mit einem Ereignis.",
-          "Warum darf nach einem Ereignis kein XOR-Verzweig stehen? Weil ein Ereignis ein Zustand ist und keine Entscheidung treffen kann."
-        ],
-        "pruefungsbezug": "Prüfe jede gezeichnete EPK auf drei Regeln: Start und Ende als Ereignis, Wechsel zwischen Ereignis und Funktion, Entscheidungen nur nach Funktionen.",
-        "merksatz": "Eine EPK beginnt und endet mit einem Ereignis, Ereignisse und Funktionen wechseln sich ab, und Verzweigungen per XOR oder ODER folgen nur auf Funktionen."
+          {
+            "frage": "Warum darf ein XOR-Konnektor nicht direkt nach einem Ereignis stehen?",
+            "antwort": "Weil ein Ereignis nur einen Zustand beschreibt und nichts entscheiden kann. Die Entscheidung trifft eine Funktion.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Womit beginnt und endet eine EPK?",
+            "antwort": "Mit einem Ereignis.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

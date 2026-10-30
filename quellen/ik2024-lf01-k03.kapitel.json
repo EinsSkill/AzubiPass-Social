@@ -6,86 +6,450 @@
   "untertitel": "Was MAKEL anbietet, womit es hergestellt wird, was im Haus und was außer Haus entsteht — und welche Ströme dabei fließen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Ein Industriebetrieb stellt Sachgüter her oder verändert sie.",
-          "Viele Industriebetriebe bieten zusätzlich Dienstleistungen an."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Sachgüter und Dienstleistungen im Leistungsprogramm von MAKEL Studio und leitest ab, was für ihre Planung jeweils wichtig ist.",
+        "vorwissen_kurz": "Bevor du einen Auftrag verfolgst, musst du wissen, was MAKEL Studio überhaupt anbietet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Kollektion und Auftragsdruck",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die MAKEL Studio GmbH ist ein Streetwear-Label mit eigener Musterfertigung und Veredelung. Ihr {{begriff:leistungsprogramm|Leistungsprogramm}} besteht aus eigenen Kollektionen — Hoodies, Shirts, Hosen, Hemden, Accessoires — und aus Dienstleistungen wie dem Bedrucken oder Besticken von Kleidung für Geschäftskunden, Vereine und Agenturen. Sachgüter sind greifbar und lagerfähig. Dienstleistungen entstehen erst in dem Moment, in dem sie erbracht werden, und lassen sich nicht auf Vorrat herstellen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was der Unterschied für die Planung bedeutet",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Angebot",
+              "Art",
+              "Was MAKEL Studio planen muss"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Hoodie „Kyoto\" aus der Kollektion",
+                  "Sachgut",
+                  "Bestand im Lager, Nachproduktion beim Lohnfertiger"
+                ]
+              },
+              {
+                "zellen": [
+                  "Logo-Druck auf 400 Vereinshoodies",
+                  "Dienstleistung am Kundeneigentum oder mit zugekauften Rohlingen",
+                  "freie Kapazität an der Druckmaschine zum Wunschtermin"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gestaltung eines Vereinslogos",
+                  "Dienstleistung",
+                  "Zeit in der Grafik, Abstimmung mit dem Kunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "bestickte Cap aus eigener Fertigung",
+                  "Sachgut",
+                  "Material und Stickkapazität"
+                ]
+              }
+            ],
+            "fazit": "Sachgüter verlangen Bestandsplanung, Dienstleistungen Kapazitätsplanung. Viele Aufträge verbinden beides.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Unterscheidung hilft, Engpässe zu verstehen. Ein Hoodie aus der Kollektion kann im Sommer auf Vorrat produziert und im Winter verkauft werden. Ein Vereinsdruck für das Saisonstartfest muss dagegen genau zum Termin fertig sein; freie Kapazität im Juli hilft im September nicht. Deshalb planen Vertrieb und Veredelung Druckaufträge gemeinsam und frühzeitig.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Das Leistungsprogramm umfasst alles, was ein Unternehmen am Markt anbietet. Bei MAKEL sind das vor allem Sachgüter: Hoodies, Shirts, Hosen, Hemden und Accessoires. Dazu kommen Dienstleistungen, etwa das Veredeln von Kleidung mit dem Logo eines Geschäftskunden. Sachgüter kann man lagern und anfassen; Dienstleistungen entstehen erst im Moment der Leistung und lassen sich nicht auf Vorrat herstellen. Für die kaufmännische Arbeit ist das wichtig: Ein Lagerbestand an Hoodies ist planbar, Kapazität für Veredelungsaufträge muss man dagegen zeitlich einteilen.",
-        "beispiele": [
-          "Ein Oversized-Hoodie aus der eigenen Kollektion ist ein Sachgut, das im Lager auf den Verkauf wartet.",
-          "Ein Firmenkunde lässt 400 eigene Hoodies mit seinem Logo bedrucken. Die Druckleistung ist eine Dienstleistung an fremder Ware — MAKEL verkauft hier keinen Hoodie, sondern Arbeit an einem Hoodie."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Leistungsprogramm und Sortiment",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben selbst hergestellten Erzeugnissen kann ein Industriebetrieb auch Handelswaren anbieten, die er unverändert weiterverkauft, etwa zugekaufte Taschen als Ergänzung zur Kollektion. Zusammen bilden Erzeugnisse, Handelswaren und Dienstleistungen das Leistungsprogramm.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Boutique bestellt 50 bedruckte Hoodies aus dem MAKEL-Sortiment, ein Sportverein lässt 120 vorhandene Trikots mit seinem Wappen bedrucken. Im ersten Fall verkauft MAKEL Sachgüter (fertige Erzeugnisse), im zweiten eine Dienstleistung (Veredelung fremder Ware). Beide Aufträge belegen dieselbe Druckmaschine — deshalb muss der Vertrieb wissen, welche Kapazität frei ist.",
-        "typische_fehler": "Alles, was ein Industriebetrieb verkauft, wird als ‚Produkt‘ im Sinne eines Sachguts verstanden. Dienstleistungen wie Veredelung, Beratung oder Reparatur gehören ebenso zum Leistungsprogramm.",
         "verstaendnisfragen": [
-          "Warum kann man Veredelungsleistungen nicht auf Vorrat herstellen? Weil die Leistung erst entsteht, wenn sie am Gegenstand des Kunden erbracht wird.",
-          "Was gehört zum Leistungsprogramm von MAKEL? Eigene Erzeugnisse wie Hoodies und Shirts sowie Dienstleistungen wie die Veredelung für Geschäftskunden."
-        ],
-        "pruefungsbezug": "Unterscheide in Aufgaben zwischen Sachgut und Dienstleistung und begründe mit Lagerfähigkeit und dem Zeitpunkt der Leistungserstellung.",
-        "merksatz": "Das Leistungsprogramm umfasst Sachgüter und Dienstleistungen; Sachgüter sind lagerfähig, Dienstleistungen entstehen erst bei der Erbringung."
+          {
+            "frage": "Warum kann MAKEL Studio Druckdienstleistungen nicht auf Vorrat herstellen?",
+            "antwort": "Weil eine Dienstleistung erst bei der Erbringung entsteht. Sie hängt vom Auftrag und Motiv des Kunden ab.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was muss bei Sachgütern vor allem geplant werden?",
+            "antwort": "Bestände und Nachproduktion, damit genug Ware verfügbar ist, ohne zu viel Kapital im Lager zu binden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Um etwas herzustellen, braucht ein Betrieb Material, Maschinen und Menschen.",
-          "Diese Einsatzgüter heißen betriebliche Produktionsfaktoren."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest die bei einem Auftrag eingesetzten Produktionsfaktoren Werkstoffen, Betriebsmitteln und menschlicher Arbeit zu, unterscheidest Roh-, Hilfs- und Betriebsstoffe und begründest jede Zuordnung.",
+        "vorwissen_kurz": "Für jeden bedruckten Hoodie braucht MAKEL Studio Material, Maschinen und Menschen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was in die Leistung eingeht",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Alles, was ein Betrieb zur Leistungserstellung einsetzt, heißt {{begriff:produktionsfaktoren|Produktionsfaktoren}}. **Werkstoffe** gehen in das Produkt ein oder werden bei der Herstellung verbraucht. Sie werden unterteilt: **Rohstoffe** sind Hauptbestandteil, **Hilfsstoffe** Nebenbestandteil, **Betriebsstoffe** werden verbraucht, ohne im Produkt zu stecken. **Betriebsmittel** wie Maschinen und Werkzeuge werden wiederholt genutzt und nutzen sich dabei ab. **Menschliche Arbeit** ist entweder ausführend oder dispositiv, also planend, leitend und kontrollierend.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Grenzfälle richtig zuordnen",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Gegenstand",
+              "Zuordnung",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Garn beim Besticken eines Logos",
+                  "Hilfsstoff",
+                  "geht ins Produkt ein, ist aber nicht Hauptbestandteil"
+                ]
+              },
+              {
+                "zellen": [
+                  "Siebdruckschablone für ein Vereinslogo",
+                  "Betriebsmittel",
+                  "wird für alle 400 Hoodies wiederholt genutzt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Reinigungsmittel für die Siebe",
+                  "Betriebsstoff",
+                  "wird verbraucht, steckt nicht im Hoodie"
+                ]
+              },
+              {
+                "zellen": [
+                  "Deniz Aydın legt die Reihenfolge der Druckaufträge fest",
+                  "dispositive Arbeit",
+                  "plant und steuert"
+                ]
+              }
+            ],
+            "fazit": "Entscheidend ist nicht, was ein Gegenstand ist, sondern welche Rolle er im Auftrag spielt.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Zuordnung ist mehr als eine Prüfungsübung. Werkstoffe werden je Auftrag verbraucht und lassen sich dem Produkt direkt zurechnen; Betriebsmittel verteilen ihre Kosten über viele Aufträge. Wer das verwechselt, kalkuliert falsch. Und die dispositive Arbeit entscheidet, ob Material, Maschinen und ausführende Arbeit gut zusammenspielen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Betriebswirtschaftslehre unterscheidet drei Elementarfaktoren: Werkstoffe (alles, was in das Produkt eingeht oder bei der Herstellung verbraucht wird), Betriebsmittel (Maschinen, Gebäude, Werkzeuge, EDV, die länger genutzt werden) und ausführende menschliche Arbeit. Dazu kommt die leitende, planende Arbeit — der dispositive Faktor. Werkstoffe werden weiter unterteilt: Rohstoffe sind Hauptbestandteile des Produkts, Hilfsstoffe gehen als Nebenbestandteile ein, Betriebsstoffe werden verbraucht, ohne Teil des Produkts zu werden.",
-        "beispiele": [
-          "Beim bedruckten Hoodie ist der Rohling der Hauptbestandteil, die Druckfarbe ein Hilfsstoff, der Strom für den Trockner ein Betriebsstoff.",
-          "Die Druckmaschine ist ein Betriebsmittel; die Arbeitszeit der Drucker ist ausführende Arbeit; die Produktionsplanung durch Deniz Aydın ist dispositive Arbeit."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Betriebsmittel in der Buchführung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Betriebsmittel wie die Druckmaschine werden über ihre Nutzungsdauer abgeschrieben. Die Abschreibung erfasst die Wertminderung durch Nutzung und Alter als Aufwand. Das lernst du in der Buchführung genauer.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für den Auftrag ‚400 bedruckte Hoodies‘ werden eingesetzt: 400 Rohlinge, 8 kg Druckmaterial, Verpackung, eine Druckmaschine, 25 Stunden Arbeitszeit und die Planung des Auftrags. Zuordnung: Rohlinge als Rohstoff (Hauptbestandteil), Druckmaterial als Hilfsstoff (Nebenbestandteil), Druckmaschine als Betriebsmittel, Arbeitszeit als ausführende Arbeit, Auftragsplanung als dispositiver Faktor. Die Verpackung wird hier zum Versand eingesetzt und gilt als Hilfsstoff beziehungsweise Verpackungsmaterial — wichtig ist, dass man die Zuordnung begründet.",
-        "typische_fehler": "Rohstoffe und Betriebsstoffe werden verwechselt, weil beide ‚verbraucht‘ werden. Der Unterschied: Rohstoffe stecken im fertigen Produkt, Betriebsstoffe nicht.",
         "verstaendnisfragen": [
-          "Warum ist die Druckmaschine kein Werkstoff? Weil sie nicht in das Produkt eingeht, sondern über viele Aufträge hinweg genutzt wird — sie ist ein Betriebsmittel.",
-          "Zu welchem Faktor gehört die Entscheidung, welcher Auftrag zuerst gedruckt wird? Zum dispositiven Faktor, also zur leitenden und planenden Arbeit."
-        ],
-        "pruefungsbezug": "Bei Zuordnungsaufgaben immer die Funktion im konkreten Fall begründen: Geht es ins Produkt ein, wird es verbraucht oder wird es wiederholt genutzt?",
-        "merksatz": "Werkstoffe gehen ein oder werden verbraucht, Betriebsmittel werden wiederholt genutzt, Arbeit führt aus oder plant und leitet."
+          {
+            "frage": "Ist Druckfarbe ein Roh-, Hilfs- oder Betriebsstoff?",
+            "antwort": "Ein Hilfsstoff. Sie geht in das Produkt ein, ist aber nicht sein Hauptbestandteil.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ist die Planung der Druckreihenfolge dispositive Arbeit?",
+            "antwort": "Weil sie plant und steuert, statt die Tätigkeit selbst auszuführen.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Nicht jeder Industriebetrieb stellt alles selbst her.",
-          "Wie viel ein Betrieb selbst fertigt, nennt man Fertigungstiefe."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Musterfertigung, Veredelung und Serienfertigung bei MAKEL Studio danach, wo sie stattfinden und wer verantwortlich ist, und erklärst, warum Fremdfertigung gesteuert werden muss.",
+        "vorwissen_kurz": "Nicht alles, was MAKEL Studio verkauft, wird im eigenen Haus hergestellt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Selbst machen oder machen lassen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wie viel ein Betrieb selbst herstellt, beschreibt seine {{begriff:fertigungstiefe|Fertigungstiefe}}. Bei MAKEL Studio ist sie mittel. In der **Musterfertigung** im eigenen Studio entstehen erste Modelle neuer Kollektionen. In der **Veredelung** im eigenen Haus werden zugekaufte Rohlinge bedruckt, bestickt, getrocknet und geprüft. Die **Serienfertigung** der Kollektionsteile übernimmt ein externer Lohnfertiger nach MAKELs Schnitten und Vorgaben. Drei Wege laufen nebeneinander und dürfen nicht verwechselt werden.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wer ist wofür verantwortlich?",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aufgabe",
+              "eigene Musterfertigung",
+              "eigene Veredelung",
+              "externer Lohnfertiger"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Schnitt und Passform festlegen",
+                  "MAKEL Studio",
+                  "—",
+                  "setzt Vorgaben um"
+                ]
+              },
+              {
+                "zellen": [
+                  "Material beschaffen",
+                  "MAKEL Studio",
+                  "MAKEL Studio (Rohlinge, Farben)",
+                  "je nach Vertrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kapazität planen",
+                  "MAKEL Studio",
+                  "MAKEL Studio",
+                  "Lohnfertiger, MAKEL bucht Termine"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualität prüfen",
+                  "MAKEL Studio",
+                  "MAKEL Studio",
+                  "Lohnfertiger, MAKEL prüft Wareneingang"
+                ]
+              }
+            ],
+            "fazit": "Auch bei Fremdfertigung bleibt MAKEL Studio für Vorgaben, Termine und Qualität verantwortlich gegenüber den Kunden.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fremdfertigung entlastet MAKEL Studio von eigenen Nähkapazitäten, schafft aber Abhängigkeiten. Liefert der Lohnfertiger zu spät oder mit Mängeln, muss MAKEL das gegenüber seinen Kunden vertreten. Deshalb steuert der Einkauf den Lohnfertiger mit klaren Unterlagen, vereinbarten Terminen und Qualitätsprüfungen im Wareneingang. Wer in einer Präsentation behauptet, alle Hoodies würden im eigenen Haus genäht, beschreibt den Betrieb falsch.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "MAKEL hat eine mittlere Fertigungstiefe. Drei Wege sind zu unterscheiden: In der eigenen Musterfertigung entstehen aus Stoffen und Zubehör erste Modelle neuer Kollektionen. In der eigenen Veredelung werden zugekaufte Rohlinge bedruckt und geprüft — hier entsteht eigene Wertschöpfung. Die Serienfertigung der Kollektionsteile übernimmt ein externer Lohnfertiger nach MAKELs Schnitten und Vorgaben. Diese Fremdfertigung ist keine eigene Produktion, muss aber gesteuert werden: mit genauen Unterlagen, Terminen und Qualitätsprüfungen.",
-        "beispiele": [
-          "Ein neuer Boxy-Hoodie wird zuerst im Studio als Muster genäht und anprobiert. Erst wenn das Muster passt, geht die Serie an den Lohnfertiger.",
-          "Für einen Firmenauftrag kauft MAKEL fertige Rohlinge zu und bedruckt sie im eigenen Haus. Der Druck ist eigene Leistung, der Rohling Fremdbezug."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Hohe und niedrige Fertigungstiefe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine hohe Fertigungstiefe gibt mehr Kontrolle über Qualität und Termine, bindet aber Kapital in Maschinen und Personal. Eine niedrige Fertigungstiefe macht flexibler und senkt Fixkosten, erhöht aber die Abhängigkeit von Lieferanten. MAKEL Studio hat sich für die Mitte entschieden: Was die Marke prägt, bleibt im Haus.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "In einer Präsentation steht: ‚MAKEL produziert alle Hoodies selbst.‘ Du korrigierst: Muster und Veredelung entstehen im Haus; die Serienteile der Kollektion fertigt ein externer Lohnfertiger, und die Rohlinge für Veredelungsaufträge werden zugekauft. Richtig wäre: ‚MAKEL entwickelt und veredelt im eigenen Haus und lässt die Serie extern fertigen.‘",
-        "typische_fehler": "Fremdfertigung wird als eigene Produktion ausgewiesen. Daraus folgen später falsche Annahmen über Kapazitäten, Kosten und Zuständigkeiten.",
         "verstaendnisfragen": [
-          "Welche Wertschöpfung leistet MAKEL bei einem Veredelungsauftrag selbst? Druck, Trocknung und Qualitätsprüfung der zugekauften Rohlinge.",
-          "Warum braucht auch die Fremdfertigung kaufmännische Steuerung? Weil Termine, Mengen, Qualität und Unterlagen mit dem Lohnfertiger abgestimmt und überwacht werden müssen."
-        ],
-        "pruefungsbezug": "Wenn eine Aufgabe nach dem Produktionsablauf fragt, kläre zuerst, welcher Schritt im Haus und welcher extern stattfindet.",
-        "merksatz": "Bei MAKEL entstehen Muster und Veredelung im eigenen Haus, die Serienteile beim externen Lohnfertiger; Fremdfertigung ist zu steuern, aber keine eigene Produktion."
+          {
+            "frage": "Werden die Kollektionshoodies bei MAKEL Studio selbst genäht?",
+            "antwort": "Nein. Die Serienteile näht ein externer Lohnfertiger. Im eigenen Haus entstehen Muster und die Veredelung.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum muss MAKEL Studio den Lohnfertiger steuern, obwohl es nicht selbst fertigt?",
+            "antwort": "Weil MAKEL gegenüber seinen Kunden für Termine und Qualität verantwortlich bleibt.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Zwischen Lieferanten, Betrieb und Kunden fließen Güter, Geld und Informationen.",
-          "Jeder Strom hat eine Richtung."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst Güter-, Geld- und Informationsströme eines Auftrags zwischen Lieferant, MAKEL Studio und Kunde getrennt dar und erkennst, welche Unterlagen welchen Strom begleiten.",
+        "vorwissen_kurz": "Bei jedem Auftrag bewegt sich mehr als nur Ware.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Ströme, drei Richtungen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zwischen Lieferant, MAKEL Studio und Kunde fließen drei Ströme. Der **Güterstrom** bewegt Material und Erzeugnisse vom Lieferanten über MAKEL zum Kunden. Der **Geldstrom** läuft in Gegenrichtung: Der Kunde zahlt MAKEL, MAKEL zahlt den Lieferanten. ==Zu jedem Güterstrom gehört ein Geldstrom in Gegenrichtung.== Der **Informationsstrom** begleitet beide oder läuft ihnen voraus: Anfragen, Bestellungen, Lieferscheine, Rechnungen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Unterlagen und ihre Ströme",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Unterlage oder Vorgang",
+              "Strom",
+              "Richtung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anfrage des Vereins",
+                  "Information",
+                  "Kunde → MAKEL Studio"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferschein des Rohlingslieferanten",
+                  "Information, begleitet Güterstrom",
+                  "Lieferant → MAKEL Studio"
+                ]
+              },
+              {
+                "zellen": [
+                  "Überweisung an den Rohlingslieferanten",
+                  "Geld",
+                  "MAKEL Studio → Lieferant"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versand der 400 Hoodies",
+                  "Güter",
+                  "MAKEL Studio → Kunde"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnung an den Verein",
+                  "Information, löst Geldstrom aus",
+                  "MAKEL Studio → Kunde"
+                ]
+              }
+            ],
+            "fazit": "Jede Unterlage gehört zu einem Strom. Informationen lösen Güter- und Geldströme aus oder dokumentieren sie.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Trennung der Ströme hilft, Fehler zu finden. Stimmt der Lieferschein nicht mit der gelieferten Menge überein, passen Informations- und Güterstrom nicht zusammen. Bezahlt MAKEL Studio eine Rechnung, bevor die Ware geprüft ist, läuft der Geldstrom dem Güterstrom voraus. In der Buchführung wirst du sehen, dass jeder dieser Vorgänge einen Beleg braucht.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Der Güterstrom läuft vom Lieferanten über MAKEL zum Kunden: Material kommt herein, fertige Ware geht hinaus. Der Geldstrom läuft in die Gegenrichtung: MAKEL bezahlt den Lieferanten, der Kunde bezahlt MAKEL. Informationsströme begleiten beides und laufen oft voraus — eine Bestellung, eine Auftragsbestätigung oder ein Lieferschein sind Informationen, keine Güter. Wer die Ströme sauber trennt, erkennt, wo es hakt: Ware ist da, aber keine Rechnung; Zahlung ist eingegangen, aber der Auftrag fehlt im System.",
-        "beispiele": [
-          "Die Bestellung der Boutique an MAKEL ist ein Informationsstrom vom Kunden zum Betrieb.",
-          "Die Überweisung an den Rohlingslieferanten ist ein Geldstrom von MAKEL zum Lieferanten."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Ströme und Abteilungen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Jede Abteilung bearbeitet einen Teil der Ströme. Der Einkauf löst Informationsströme zum Lieferanten aus, das Lager steuert den Güterstrom, die Buchhaltung den Geldstrom. Erst zusammen ergibt sich der vollständige Auftrag.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Ablauf: (1) Ein Geschäftskunde bestellt 400 bedruckte Hoodies. (2) MAKEL bestellt 400 Rohlinge beim Lieferanten. (3) Die Rohlinge werden geliefert. (4) MAKEL bezahlt den Lieferanten. (5) MAKEL liefert die fertigen Hoodies. (6) Der Kunde bezahlt. Zuordnung: 1 und 2 Information, 3 und 5 Güter, 4 und 6 Geld. Jedem Güterstrom steht ein Geldstrom in Gegenrichtung gegenüber.",
-        "typische_fehler": "Die Bestellung wird als Güterstrom eingezeichnet, weil es ‚um Ware geht‘. Bewegt wird bei einer Bestellung aber nur eine Information.",
         "verstaendnisfragen": [
-          "In welche Richtung fließt der Geldstrom beim Verkauf an den Kunden? Vom Kunden zu MAKEL — entgegengesetzt zum Güterstrom.",
-          "Ist ein Lieferschein ein Güter- oder Informationsstrom? Ein Informationsstrom; er begleitet die Lieferung."
-        ],
-        "pruefungsbezug": "In Darstellungsaufgaben Pfeile beschriften und die Richtung prüfen: Güter vorwärts, Geld zurück, Informationen begleiten oder laufen voraus.",
-        "merksatz": "Güter fließen vom Lieferanten über den Betrieb zum Kunden, Geld fließt in Gegenrichtung, Informationen wie Bestellungen und Lieferscheine begleiten beide."
+          {
+            "frage": "Zu welchem Strom gehört eine Rechnung?",
+            "antwort": "Zum Informationsstrom. Sie löst den Geldstrom aus, bewegt aber selbst kein Geld.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "In welche Richtung fließt der Geldstrom zwischen MAKEL Studio und dem Lieferanten?",
+            "antwort": "Von MAKEL Studio zum Lieferanten, entgegengesetzt zum Güterstrom.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

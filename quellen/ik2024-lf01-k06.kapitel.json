@@ -6,86 +6,491 @@
   "untertitel": "Produktivität, Wirtschaftlichkeit und Rentabilität — drei Kennzahlen, drei verschiedene Fragen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eine Kennzahl setzt zwei Größen ins Verhältnis.",
-          "Produktivität misst Mengen, nicht Geld."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Arbeits- und Maschinenproduktivität mit Einheit, vergleichst zwei Zeiträume und erkennst, wann eine höhere Produktivität keinen echten Fortschritt bedeutet.",
+        "vorwissen_kurz": "Ob die Veredelung besser geworden ist, lässt sich zuerst an Mengen ablesen: Wie viel wurde mit wie viel Einsatz geschafft?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Menge im Verhältnis zum Einsatz",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:produktivitaet|Produktivität}} vergleicht Mengen: Ausbringungsmenge geteilt durch Einsatzmenge. Die **Arbeitsproduktivität** bezieht die Menge auf Arbeitsstunden, die **Maschinenproduktivität** auf Maschinenstunden. Weil Mengen verglichen werden, gehört zum Ergebnis immer eine Einheit, etwa „Shirts je Arbeitsstunde\". Ohne Einheit ist die Zahl wertlos, weil niemand weiß, was gezählt wurde.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vor und nach der neuen Trockneranlage",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "März",
+              "April",
+              "Veränderung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "bedruckte Shirts",
+                  "240",
+                  "270",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitsstunden",
+                  "30",
+                  "30",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitsproduktivität",
+                  "8 Shirts je Std",
+                  "9 Shirts je Std",
+                  "+ 12,5 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "davon Nacharbeit wegen Druckfehlern",
+                  "6 Shirts",
+                  "12 Shirts",
+                  "verdoppelt"
+                ]
+              },
+              {
+                "zellen": [
+                  "fehlerfreie Shirts je Arbeitsstunde",
+                  "7,8",
+                  "8,6",
+                  "+ 10,3 %"
+                ]
+              }
+            ],
+            "fazit": "Auch wenn man die Nacharbeit herausrechnet, bleibt eine Verbesserung. Sie ist aber kleiner, als die reine Produktivität zeigt.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Produktivität misst Mengen, nicht Qualität und nicht Kosten. Steigt sie, weil schneller, aber schlechter gearbeitet wird, ist das kein Erfolg. Deshalb lohnt es sich, nur gute Teile zu zählen oder die Nacharbeit getrennt auszuweisen. Und eine Maschine mit höherer Produktivität kann trotzdem teurer sein, wenn sie viel Energie verbraucht. Das zeigt erst die Wirtschaftlichkeit.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Produktivität beantwortet die Frage: Wie viel kommt mengenmäßig heraus im Verhältnis zu dem, was mengenmäßig hineingeht? Die Arbeitsproduktivität ist die Ausbringungsmenge geteilt durch die eingesetzten Arbeitsstunden, die Maschinenproduktivität die Ausbringungsmenge geteilt durch die Maschinenstunden. Weil beide Größen Mengen sind, hat das Ergebnis eine Einheit, etwa ‚Shirts je Arbeitsstunde‘. Ohne Einheit ist die Zahl wertlos.",
-        "beispiele": [
-          "240 bedruckte Shirts in 30 Arbeitsstunden: 240 ÷ 30 = 8 Shirts je Arbeitsstunde.",
-          "Die Druckmaschine läuft 21 Stunden und liefert 400 Hoodies: 400 ÷ 21 ≈ 19,05 Hoodies je Maschinenstunde."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Teilproduktivitäten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Weil sich Arbeitsstunden, Maschinenstunden und Material nicht addieren lassen, gibt es keine Gesamtproduktivität in Mengen. Man berechnet Teilproduktivitäten für jeden Faktor einzeln, etwa auch die Materialproduktivität: Shirts je Kilogramm Druckfarbe.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Das Veredelungsteam druckt in Woche 1 240 Shirts in 30 Arbeitsstunden, in Woche 2 nach einer neuen Arbeitsanordnung 270 Shirts in ebenfalls 30 Stunden. Arbeitsproduktivität Woche 1: 8 Shirts je Stunde, Woche 2: 9 Shirts je Stunde. Steigerung: (9 − 8) ÷ 8 × 100 = 12,5 Prozent. Über Kosten oder Gewinn sagt das noch nichts aus.",
-        "typische_fehler": "Produktivität wird in Euro angegeben oder mit Gewinn verwechselt. Eine höhere Produktivität bedeutet nur mehr Menge je Einsatz, nicht automatisch mehr Gewinn.",
         "verstaendnisfragen": [
-          "Welche Einheit hat die Arbeitsproduktivität im Beispiel? Shirts je Arbeitsstunde.",
-          "Kann die Produktivität steigen, obwohl der Gewinn sinkt? Ja — etwa wenn mehr produziert, aber zu niedrigeren Preisen verkauft wird."
-        ],
-        "pruefungsbezug": "Bei Produktivitätsaufgaben immer Einheit angeben und bei Vergleichen die prozentuale Veränderung auf den Ausgangswert beziehen.",
-        "merksatz": "Produktivität ist ein Mengenverhältnis — Ausbringungsmenge geteilt durch Einsatzmenge — und braucht immer eine Einheit."
+          {
+            "frage": "240 Shirts in 30 Arbeitsstunden. Wie hoch ist die Arbeitsproduktivität?",
+            "antwort": "240 ÷ 30 = 8 Shirts je Arbeitsstunde.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum gehört zur Produktivität immer eine Einheit?",
+            "antwort": "Weil sie Mengen vergleicht. Ohne Einheit ist unklar, was je welchen Einsatz gezählt wurde.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Wirtschaftlichkeit vergleicht Werte, also Geldbeträge.",
-          "Sie bewertet, ob der Ertrag den Aufwand übersteigt."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die Wirtschaftlichkeit als Verhältnis von Ertrag zu Aufwand, deutest das Ergebnis richtig und ordnest Maximal- und Minimalprinzip einer Entscheidung zu.",
+        "vorwissen_kurz": "Mengen allein sagen nicht, ob sich eine Tätigkeit lohnt. Dafür müssen Werte verglichen werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wert im Verhältnis zum Wert",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:wirtschaftlichkeit|Wirtschaftlichkeit}} vergleicht Geldwerte: Ertrag geteilt durch Aufwand. Liegt das Ergebnis über 1, wurde mehr erwirtschaftet als verbraucht; unter 1 ist ein Verlust entstanden. Dahinter steht das {{begriff:oekonomisches-prinzip|ökonomische Prinzip}}: Nach dem **Maximalprinzip** soll mit gegebenem Einsatz ein möglichst großes Ergebnis erzielt werden, nach dem **Minimalprinzip** ein gegebenes Ergebnis mit möglichst geringem Einsatz.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei Erträgen von 150.000 € und Aufwendungen von 120.000 € beträgt die Wirtschaftlichkeit 1,25. ==Das heißt 1,25 € Ertrag je Euro Aufwand — nicht 125 Prozent Gewinn.== Der Überschuss beträgt 30.000 €, also 25 Cent je Euro Aufwand.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Bereiche im Vergleich (Übungszahlen)",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bereich",
+              "Ertrag",
+              "Aufwand",
+              "Wirtschaftlichkeit",
+              "Deutung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Veredelung",
+                  "150.000 €",
+                  "120.000 €",
+                  "1,25",
+                  "Überschuss 30.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Musterfertigung",
+                  "40.000 €",
+                  "50.000 €",
+                  "0,80",
+                  "Verlust 10.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Onlineshop",
+                  "300.000 €",
+                  "270.000 €",
+                  "1,11",
+                  "Überschuss 30.000 €"
+                ]
+              }
+            ],
+            "fazit": "Veredelung und Onlineshop erwirtschaften gleich viel Überschuss. Die Veredelung braucht dafür aber weniger Aufwand und arbeitet deshalb wirtschaftlicher.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Wert unter 1 heißt nicht automatisch, dass ein Bereich geschlossen werden sollte. Die Musterfertigung erzielt kaum eigene Erträge, weil sie Modelle für die Kollektion entwickelt; ihr Nutzen zeigt sich erst im Verkauf der Kollektion. Die Kennzahl ist deshalb ein Anlass für Fragen, nicht schon die Antwort.",
+            "id": "a2-p3"
+          }
         ],
-        "erklaerung": "Die Wirtschaftlichkeit ist Ertrag geteilt durch Aufwand (in der Kostenrechnung: Leistung geteilt durch Kosten). Ein Wert über 1 bedeutet, dass mehr erwirtschaftet als verbraucht wurde; ein Wert unter 1 zeigt Verlust. Wichtig: 1,25 heißt, dass auf einen Euro Aufwand 1,25 Euro Ertrag kommen — nicht, dass 125 Prozent Gewinn entstanden sind. Der Überschuss beträgt 25 Cent je Euro Aufwand.",
-        "beispiele": [
-          "Ertrag 150.000 €, Aufwand 120.000 €: 150.000 ÷ 120.000 = 1,25.",
-          "Ertrag 90.000 €, Aufwand 100.000 €: 0,9 — der Betrieb hat weniger erwirtschaftet als verbraucht."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Maximal- oder Minimalprinzip",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Will MAKEL Studio mit dem vorhandenen Druckteam möglichst viele Aufträge erledigen, folgt es dem Maximalprinzip. Soll ein bestimmter Vereinsauftrag mit möglichst wenig Material und Zeit erledigt werden, folgt es dem Minimalprinzip. Beides gleichzeitig, also maximales Ergebnis mit minimalem Einsatz, ist nicht möglich.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "In einem vereinfachten Jahresfall der Veredelung stehen Erträge von 150.000 € Aufwendungen von 120.000 € gegenüber. Wirtschaftlichkeit: 1,25. Interpretation: Für jeden eingesetzten Euro kamen 1,25 € zurück; der Überschuss beträgt 30.000 €. Eine Aussage wie ‚125 % Gewinn‘ wäre falsch.",
-        "typische_fehler": "Die Kennzahl wird als Prozentsatz Gewinn gelesen. 1,25 oder 125 Prozent ist das Verhältnis von Ertrag zu Aufwand.",
         "verstaendnisfragen": [
-          "Ab welchem Wert arbeitet ein Bereich wirtschaftlich? Bei einem Wert über 1.",
-          "Was bedeutet eine Wirtschaftlichkeit von 1,1? Auf einen Euro Aufwand kommen 1,10 € Ertrag; der Überschuss beträgt 10 Cent je Euro."
-        ],
-        "pruefungsbezug": "Wirtschaftlichkeit ohne Einheit oder als Prozent des Verhältnisses angeben und die Interpretation ‚je Euro Aufwand‘ dazuschreiben.",
-        "merksatz": "Wirtschaftlichkeit ist Ertrag geteilt durch Aufwand; über 1 heißt Überschuss, unter 1 Verlust — 1,25 bedeutet nicht 125 Prozent Gewinn."
+          {
+            "frage": "Ertrag 150.000 €, Aufwand 120.000 €. Wie hoch ist die Wirtschaftlichkeit, und was bedeutet sie?",
+            "antwort": "1,25: Je Euro Aufwand wurden 1,25 € Ertrag erzielt. Das ist kein Gewinn von 125 %.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was bedeutet eine Wirtschaftlichkeit von 0,8?",
+            "antwort": "Dass der Aufwand größer war als der Ertrag. Je Euro Aufwand wurden nur 80 Cent erwirtschaftet.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Rentabilität misst, wie sich eingesetztes Kapital verzinst.",
-          "Sie wird in Prozent angegeben und braucht einen klar benannten Kapitalbezug."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Eigenkapital-, Gesamtkapital- und Umsatzrentabilität mit ausdrücklich genannten Bezugsgrößen und erklärst, warum bei der Gesamtkapitalrentabilität die Fremdkapitalzinsen hinzugerechnet werden.",
+        "vorwissen_kurz": "Für die Eigentümer ist entscheidend, wie gut sich das Geld verzinst, das sie im Unternehmen eingesetzt haben.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gewinn im Verhältnis zum Kapital",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:rentabilitaet|Rentabilität}} setzt den Gewinn ins Verhältnis zu einer Bezugsgröße und wird in Prozent angegeben. Die **Eigenkapitalrentabilität** zeigt die Verzinsung des Eigenkapitals der Gesellschafter. Die **Gesamtkapitalrentabilität** zeigt die Verzinsung des gesamten eingesetzten Kapitals; dazu werden die Fremdkapitalzinsen zum Gewinn addiert, weil sie die Verzinsung des Fremdkapitals sind. Die **Umsatzrentabilität** zeigt, wie viel Gewinn von einem Euro Umsatz bleibt. Weil es mehrere Rentabilitäten gibt, wird der Bezug immer genannt.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rechnung Schritt für Schritt (Übungszahlen)",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Wert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gewinn",
+                  "30.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Fremdkapitalzinsen",
+                  "6.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigenkapital Jahresanfang / Jahresende",
+                  "190.000 € / 210.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "durchschnittliches Eigenkapital",
+                  "(190.000 + 210.000) ÷ 2 = 200.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "durchschnittliches Gesamtkapital",
+                  "400.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigenkapitalrentabilität",
+                  "30.000 × 100 ÷ 200.000 = 15 %"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesamtkapitalrentabilität",
+                  "36.000 × 100 ÷ 400.000 = 9 %"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Das Eigenkapital hat sich mit 15 % verzinst, das gesamte Kapital mit 9 %. Der Unterschied entsteht, weil Fremdkapital günstiger war als die Gesamtverzinsung.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Durchschnitt aus Anfangs- und Endbestand ist genauer als ein einzelner Stichtag, weil sich das Kapital im Laufe des Jahres verändert. Liegt die Gesamtkapitalrentabilität über dem Zinssatz für Fremdkapital, steigert zusätzliches Fremdkapital die Eigenkapitalrentabilität. Dieser **Leverage-Effekt** wirkt aber auch umgekehrt: Sinkt die Gesamtverzinsung unter den Fremdkapitalzins, fällt die Eigenkapitalrentabilität schnell.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Eigenkapitalrentabilität ist der Gewinn geteilt durch das durchschnittliche Eigenkapital, mal 100. Die Gesamtkapitalrentabilität ist Gewinn plus Fremdkapitalzinsen, geteilt durch das durchschnittliche Gesamtkapital, mal 100 — die Zinsen werden addiert, weil sie die ‚Verzinsung‘ des Fremdkapitals sind. Die Umsatzrentabilität ist Gewinn geteilt durch Umsatz, mal 100: Wie viel Gewinn bleibt von einem Euro Umsatz?",
-        "beispiele": [
-          "Gewinn 30.000 €, durchschnittliches Eigenkapital 200.000 €: 30.000 ÷ 200.000 × 100 = 15 %.",
-          "Gewinn 30.000 €, Fremdkapitalzinsen 6.000 €, Gesamtkapital 400.000 €: 36.000 ÷ 400.000 × 100 = 9 %."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Die echten Größenordnungen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Übungszahlen sind bewusst klein gewählt. Bei MAKEL Studio mit rund 16 Mio. € Umsatz und 9 Mio. € Bilanzsumme sind die Beträge viel größer; die Rechenwege bleiben dieselben.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Vereinfachter Jahresfall: Gewinn 30.000 €, durchschnittliches Eigenkapital 200.000 €, Fremdkapitalzinsen 6.000 €, durchschnittliches Gesamtkapital 400.000 €, Umsatz 150.000 €. Eigenkapitalrentabilität 15 %, Gesamtkapitalrentabilität 9 %, Umsatzrentabilität 20 %. Jede Zahl beantwortet eine andere Frage — die Werte dürfen nicht miteinander verwechselt werden.",
-        "typische_fehler": "Bei der Gesamtkapitalrentabilität werden die Fremdkapitalzinsen vergessen; oder Rentabilität wird ohne Angabe des Kapitalbezugs genannt.",
         "verstaendnisfragen": [
-          "Warum addiert man bei der Gesamtkapitalrentabilität die Fremdkapitalzinsen? Weil auch das Fremdkapital eine Verzinsung erwirtschaftet hat, die in Form von Zinsen an die Kreditgeber ging.",
-          "Was sagt eine Umsatzrentabilität von 20 % aus? Von jedem Euro Umsatz bleiben 20 Cent Gewinn."
-        ],
-        "pruefungsbezug": "Formel hinschreiben, Werte einsetzen, Ergebnis mit Prozentzeichen und kurzer Deutung angeben. Durchschnittswerte nur verwenden, wenn sie vorgegeben oder berechenbar sind.",
-        "merksatz": "Rentabilität setzt den Gewinn ins Verhältnis zu einem benannten Kapital oder zum Umsatz; bei der Gesamtkapitalrentabilität kommen die Fremdkapitalzinsen zum Gewinn hinzu."
+          {
+            "frage": "Warum werden bei der Gesamtkapitalrentabilität die Fremdkapitalzinsen zum Gewinn addiert?",
+            "antwort": "Weil sie die Verzinsung des Fremdkapitals sind. Ohne sie wäre ein fremdfinanziertes Unternehmen künstlich schlechter gestellt.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Gewinn 30.000 €, Umsatz 150.000 €. Wie hoch ist die Umsatzrentabilität?",
+            "antwort": "30.000 × 100 ÷ 150.000 = 20 %.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Eine einzelne Kennzahl zeigt immer nur einen Ausschnitt.",
-          "Aussagekräftig wird sie im Vergleich."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Produktivität, Wirtschaftlichkeit und Rentabilität ihren Fragen zu, beurteilst ein Ergebnis im Zeit-, Betriebs- oder Soll-Ist-Vergleich und benennst, was die Kennzahlen nicht zeigen.",
+        "vorwissen_kurz": "Jede Kennzahl beantwortet eine eigene Frage. Ein Urteil über den Erfolg braucht mehrere davon.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Fragen, drei Kennzahlen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Produktivität fragt: Wie viel Menge je Einsatz? Die Wirtschaftlichkeit fragt: Übersteigt der Ertrag den Aufwand? Die Rentabilität fragt: Wie verzinst sich das Kapital? Allein sagen die Werte wenig. Aussagekräftig werden sie erst im **Vergleich**: mit dem Vorjahr (Zeitvergleich), mit ähnlichen Betrieben (Betriebsvergleich) oder mit dem Plan (Soll-Ist-Vergleich).",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Jahr im Vergleich (Übungszahlen)",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Vorjahr",
+              "Berichtsjahr",
+              "Plan",
+              "Urteil"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Arbeitsproduktivität Druck",
+                  "8 Shirts je Std",
+                  "9 Shirts je Std",
+                  "9",
+                  "Plan erreicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirtschaftlichkeit Veredelung",
+                  "1,20",
+                  "1,25",
+                  "1,30",
+                  "verbessert, Plan verfehlt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigenkapitalrentabilität",
+                  "12 %",
+                  "15 %",
+                  "14 %",
+                  "über Plan"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bankguthaben am Jahresende",
+                  "40.000 €",
+                  "8.000 €",
+                  "30.000 €",
+                  "deutlich gesunken"
+                ]
+              }
+            ],
+            "fazit": "Die Erfolgskennzahlen haben sich verbessert. Gleichzeitig ist das Bankguthaben stark gesunken; das zeigen die drei Kennzahlen nicht.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Beispiel zeigt die Grenze. Ein Unternehmen kann produktiv, wirtschaftlich und rentabel sein und trotzdem in Zahlungsnot geraten, wenn Kunden spät zahlen oder viel Geld in Vorräten und Maschinen steckt. Deshalb gehört zu jeder Erfolgsbeurteilung auch ein Blick auf die Liquidität. Und jede Kennzahl hängt an ihren Ausgangsdaten: Ändert sich die Definition, etwa ob Nacharbeit mitgezählt wird, ist der Vergleich mit dem Vorjahr verzerrt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Kennzahlen werden verglichen: mit Vorjahren (Zeitvergleich), mit anderen Betrieben oder Abteilungen (Betriebsvergleich) oder mit einem Ziel (Soll-Ist-Vergleich). Jede Kennzahl hat Grenzen. Produktivität sagt nichts über Kosten; Wirtschaftlichkeit nichts über Kapitaleinsatz; Rentabilität nichts darüber, ob das Geld zum Zahlungszeitpunkt da ist — dafür braucht man die Liquidität. Außerdem hängen Kennzahlen davon ab, wie die Ausgangswerte abgegrenzt sind.",
-        "beispiele": [
-          "Die Arbeitsproduktivität steigt von 8 auf 9 Shirts je Stunde, gleichzeitig steigen die Fehlerquote und die Nacharbeit. Die Verbesserung ist dann nur scheinbar.",
-          "Eine hohe Eigenkapitalrentabilität kann entstehen, weil sehr wenig Eigenkapital eingesetzt ist und viel Fremdkapital — das erhöht zugleich das Risiko."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Kennzahlen in späteren Lernfeldern",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Kosten- und Leistungsrechnung und beim Jahresabschluss begegnen dir diese Kennzahlen wieder, dann mit echten Abschlusszahlen und ergänzt um Liquiditäts- und Finanzierungskennzahlen.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner fragt, ob die Veredelung ‚erfolgreich‘ war. Du legst drei Werte vor: Produktivität +12,5 %, Wirtschaftlichkeit 1,25, Eigenkapitalrentabilität 15 %. Dein Ergebnis: Die Veredelung arbeitet produktiver und mit Überschuss; ob 15 % Rentabilität gut sind, zeigt erst ein Vergleich mit dem Vorjahr oder einer sicheren Alternativanlage. Zur Zahlungsfähigkeit sagen die Werte nichts.",
-        "typische_fehler": "Eine Kennzahl wird als Gesamturteil verwendet. Ohne Vergleichswert und ohne Blick auf die Grenzen bleibt jede Zahl eine Momentaufnahme.",
         "verstaendnisfragen": [
-          "Welche drei Vergleichsarten gibt es? Zeitvergleich, Betriebsvergleich und Soll-Ist-Vergleich.",
-          "Was sagt die Rentabilität nicht aus? Ob das Unternehmen zu einem bestimmten Zeitpunkt zahlungsfähig ist."
-        ],
-        "pruefungsbezug": "Bei ‚Beurteilen Sie‘ immer mindestens einen Vergleich und eine Grenze der Kennzahl nennen.",
-        "merksatz": "Kennzahlen werden erst im Zeit-, Betriebs- oder Soll-Ist-Vergleich aussagekräftig; jede zeigt nur einen Ausschnitt."
+          {
+            "frage": "Welche Frage beantwortet die Wirtschaftlichkeit?",
+            "antwort": "Ob die Erträge die Aufwendungen übersteigen und um wie viel je Euro Aufwand.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum kann ein rentables Unternehmen in Zahlungsnot geraten?",
+            "antwort": "Weil Rentabilität nichts über die Zahlungsfähigkeit sagt. Spät zahlende Kunden oder hohe Investitionen können das Geld binden.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
