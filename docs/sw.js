@@ -11,7 +11,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-ee7603e5044668fe";
+var SPEICHER = "azubipass-68a932f58ea51e94";
 var VORRAT = {
   "./": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "app.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
@@ -41,14 +41,14 @@ var VORRAT = {
   "lf2.html": "dcbc1218756fc939c556fa87aff9d6798a05cf37e32648e1581e7d0221ff7d8b",
   "lf3.html": "449d29533eb7049d83f2e8557bf0271cbd9ac158a287e1d3f680e9ae7dc3c73f",
   "lf4.html": "8ea997e11a703dd8921ae11417220da1fbb4610f23b0f3e84476b039cef190f2",
-  "lf5.html": "bba73a7aa2ea1ea57fbcfad55e0b18925279a83c83d16c94c11f0c92c122684d",
+  "lf5.html": "1bd0f558921b76c9f22bcd524ede288bddc5c5af6303a1e9fe516f1b9e3d96c8",
   "lf7.html": "477d114dfc125a339f98c047dbedcf7a1278396d12352a4ae05935245fd7cd9c",
   "lf8.html": "fdab2517c61219b941a2332ff36d3c049cd4bdabbc440caaf0b7a6e799fc07d2",
   "lf9.html": "116cd7a6406dd4f7cdeefd6bf5c8d6a0bdbe5432249372073de92fcbd6fa7fda",
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "49e2f946051d0f3e1dfb60f5f7ea5ee3ec1db923636b71f29f1a848c269cdfd5",
   "mittel/aufgaben.js": "3da2279f3048ff8233db6f053e2ac066cc5b31b8e17c21e6ed7f6c8c9b1022f3",
-  "mittel/aufgaben.json": "ab5d2ff75a3dd5a56bc14bf92b30ca6956b692e5ef3524587e97e80374cc6456",
+  "mittel/aufgaben.json": "a5e61a9187c9f5caaa0ff77a652faaef2c92146c664d7bc878004bff7f19e3cc",
   "mittel/azubipass-logo.png": "6fbfaa65da67de20b628b6d5415a8a46c95ceeaa5c6638492e2860e7d6e98973",
   "mittel/azubipass-symbol.png": "82cddbb695cbba0a09d3b933eb4b178e221463e015b962d8013cdff580d4a692",
   "mittel/azubipass.css": "401358f6096238cbfb2e3ce783c5c3d62960ea08c024a4d629d9e8175a325c51",
@@ -68,7 +68,7 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "06cfba72043eb08a229cb1b43354ef94c033870f9bb251002101443ddfb128c2",
+  "mittel/inhalt.json": "5f9697fda51dcbac3e5366df8ed72537f07267dccec9959674849bb409d6b94b",
   "mittel/kern.js": "fe047655aad844758254282a3d4a0d3e8942970b8eafc0d606c6076aaef74bef",
   "mittel/landing.css": "c1d299ad11bd6a3fd4b8515d08334b45741b6616da271a4899acf51353596f45",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",
@@ -82,7 +82,7 @@ var VORRAT = {
   "mittel/source-serif-4-600-latin.woff2": "f2ea9c12d2fe9bd3a9589b02ad2c0909da88f30938c91adc838c4f4098f9f9e0",
   "mittel/source-serif-4-700-latin-ext.woff2": "155f6e701097cc269cf8d5d7ac86795f263f1afbeb47c14d1d747108c9335389",
   "mittel/source-serif-4-700-latin.woff2": "f2ea9c12d2fe9bd3a9589b02ad2c0909da88f30938c91adc838c4f4098f9f9e0",
-  "mittel/suche.json": "83d2449efcd21aec118e5d8811effcc05ea2bdc02c43071dd267070eb91fecb3",
+  "mittel/suche.json": "a4a042a68d2d65b9b0b34ca2e53965cdad6a3d2e1e90fda7b9ff8eea6c86ebc8",
   "mittel/supabase.js": "50db96e85947966782e7a3f4252a59dd8285f1ca00c1718a4079ed621e10bae1",
   "mittel/symbol-v1-180.png": "718223b0c01694f646fc25b5d0c384fcbc825381b2d7fdc484ae8d1bee5e2711",
   "mittel/symbol-v1-192.png": "e0b355299d9fce7756c6e251095869599ad87706b7d8f4bbb6abdde89493f63e",

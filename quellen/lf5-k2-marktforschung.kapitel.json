@@ -6,66 +6,324 @@
   "untertitel": "Woher du weißt, was Kunden wollen — statt es zu vermuten.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Marketingentscheidungen brauchen Informationen über Markt und Kunden.",
-          "Daten können bereits vorhanden oder neu erhoben worden sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du entscheidest für eine Marketingfrage, welche Daten schon vorliegen und welche neu erhoben werden müssen, und wählst passende Quellen und Methoden.",
+        "vorwissen_kurz": "Marketingentscheidungen sind besser, wenn sie auf Daten statt auf Vermutungen beruhen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst schauen, dann fragen",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL überlegt, alle Hoodies aus Bio-Baumwolle zu fertigen und dafür 5 € mehr zu verlangen. Die entscheidende Frage lautet: Zahlen die Kundinnen und Kunden den Aufpreis? Bevor MAKEL eine teure Befragung startet, wertet es aus, was schon vorliegt. Diese {{begriff:marktforschung|Marktforschung}} am Schreibtisch heißt Sekundärforschung. Erst für die Lücke folgt Primärforschung mit eigens erhobenen Daten.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "MAKELs Datenplan",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Teilfrage",
+              "Vorhandene Daten (sekundär)",
+              "Neue Daten (primär)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kaufen unsere Kunden schon nachhaltige Produkte?",
+                  "Onlineshop: Absatz der bisherigen Bio-Shirts im Vergleich zu konventionellen",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie entwickelt sich der Markt für nachhaltige Mode?",
+                  "Branchenberichte, Verbandsstatistiken",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was verlangen Wettbewerber?",
+                  "Preise der Konkurrenz auf deren Websites",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlen unsere Kunden 5 € mehr?",
+                  "keine passenden Daten",
+                  "Befragung und ein kleiner Preistest im Shop"
+                ]
+              }
+            ],
+            "fazit": "Drei von vier Teilfragen beantworten vorhandene Daten. Neu erhoben wird nur, was sich nicht anders klären lässt.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          }
         ],
-        "erklaerung": "Sekundärforschung wertet vorhandene interne und externe Daten aus. Sie ist meist schnell und günstig. Primärforschung erhebt neue Daten durch Befragung, Beobachtung, Test oder Experiment. Sinnvoll ist die Reihenfolge: zuerst die vorhandenen Daten nutzen und danach nur die verbleibende Informationslücke neu erforschen.",
-        "beispiele": [
-          "Interne Verkaufszahlen und Reklamationen sind Sekundärdaten, weil sie bereits im Betrieb vorliegen.",
-          "Eine neue Kundenbefragung oder ein Test mit zwei Varianten ist Primärforschung, weil die Daten für die konkrete Frage erhoben werden."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Befragen, beobachten, testen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Befragungen zeigen, was Menschen sagen. Beobachtungen zeigen, was sie tun, etwa wie lange Besucher im Laden vor einem Regal stehen. Tests und Experimente zeigen, wie sie auf eine Veränderung reagieren, etwa wenn ein Teil der Shopbesucher einen anderen Preis sieht. Wo möglich, ist beobachtetes Verhalten aussagekräftiger als eine Absichtserklärung.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb möchte wissen, warum eine Produktgruppe weniger nachgefragt wird. Zuerst werden vorhandene Verkaufsdaten, Reklamationen und externe Marktinformationen ausgewertet. Bleibt offen, welche Kundenanforderung fehlt, wird eine Befragung oder Beobachtung durchgeführt. So wird die teurere Primärforschung auf die echte Lücke begrenzt.",
-        "typische_fehler": "Jede Internetrecherche wird als Primärforschung bezeichnet oder eine neue Befragung gestartet, obwohl interne Daten die Frage bereits beantworten. Auch wird Primärforschung nur mit Befragung gleichgesetzt.",
         "verstaendnisfragen": [
-          "Was ist der Kernunterschied? Sekundärforschung nutzt vorhandene Daten; Primärforschung erhebt neue.",
-          "Welche Reihenfolge spart Aufwand? Erst Sekundärforschung, dann Primärforschung für die verbleibende Lücke."
-        ],
-        "pruefungsbezug": "Ordne die konkrete Datenquelle zu und begründe die Reihenfolge. Nenne bei Primärforschung nicht nur Befragung, sondern auch Beobachtung, Test und Experiment.",
-        "merksatz": "Sekundär ist schon da, primär wird neu erhoben."
+          {
+            "frage": "Warum beginnt MAKEL nicht direkt mit einer Befragung?",
+            "antwort": "Vorhandene Daten sind schneller und günstiger verfügbar und beantworten oft einen Großteil der Fragen. Eine Befragung kostet Zeit und Geld und wird gezielter, wenn klar ist, welche Lücke sie schließen soll.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Ist die Umsatzstatistik des eigenen Shops primäre oder sekundäre Information?",
+            "antwort": "Sekundär. Die Daten wurden für Buchführung und Steuerung erhoben, nicht für die Frage nach dem Aufpreis. Sie werden zweitverwertet.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Eine Befragung soll Aussagen über eine größere Zielgruppe ermöglichen.",
-          "Die Auswahl der Befragten beeinflusst die Aussagekraft."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst Grundgesamtheit und Stichprobe einer Befragung, beurteilst Auswahlverfahren und Rücklauf und begrenzt die Aussagekraft des Ergebnisses.",
+        "vorwissen_kurz": "Eine Befragung soll etwas über eine Gruppe aussagen, ohne jedes Mitglied zu fragen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer gemeint ist, wer gefragt wird",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:grundgesamtheit|Grundgesamtheit}} ist die Gruppe, über die eine Aussage getroffen werden soll. Bei MAKEL sind das alle, die in den letzten zwölf Monaten im Onlineshop gekauft haben — rund 24.000 Personen. Befragt wird eine {{begriff:stichprobe|Stichprobe}}. Damit ihr Ergebnis auf die Grundgesamtheit übertragbar ist, muss sie ihr in den wichtigen Merkmalen ähneln.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Befragung und ihr Ergebnis",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Umsetzung",
+              "Prüfung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Auswahl",
+                  "1.000 Kundinnen und Kunden per Zufall aus denen, die einer Befragung per E-Mail zugestimmt haben",
+                  "zufällig, aber nur unter Zustimmenden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rücklauf",
+                  "312 Antworten (31 %)",
+                  "wer antwortet, interessiert sich oft stärker für das Thema"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis",
+                  "58 % würden 5 € mehr für Bio-Baumwolle zahlen",
+                  "Aussage über die Antwortenden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abgleich",
+                  "Preistest im Shop: Bio-Hoodie für 125 € verkauft sich in vier Wochen 14 % seltener als die konventionelle Variante für 120 €",
+                  "tatsächliches Verhalten"
+                ]
+              }
+            ],
+            "fazit": "Die Befragung zeigt eine Bereitschaft, der Preistest eine spürbare Zurückhaltung. Beides zusammen ergibt ein realistischeres Bild als jede Zahl für sich.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea schreibt deshalb in den Bericht nicht „58 % unserer Kunden zahlen den Aufpreis“, sondern: „Von 312 Antwortenden aus einer Zufallsauswahl unter einwilligenden Shopkunden gaben 58 % an, 5 € mehr zu zahlen. Im Preistest sank der Absatz um 14 %. Die Befragten interessieren sich vermutlich überdurchschnittlich für das Thema.“ Diese Begrenzung macht das Ergebnis nicht schwächer, sondern ehrlich.",
+            "id": "b2-p2"
+          }
         ],
-        "erklaerung": "Eine Stichprobe muss repräsentativ sein, nicht bloß groß. Zufalls- und Quotenauswahl können die Zielgruppe angemessen abbilden; eine willkürliche Auswahl verzerrt das Ergebnis. Vor der Auswahl wird deshalb festgelegt, welche Zielgruppe untersucht wird und welche Merkmale in der Stichprobe vorkommen müssen.",
-        "beispiele": [
-          "Eine zufällig ausgewählte Gruppe kann die Zielgruppe besser abbilden als eine große Gruppe, die nur aus zufällig erreichbaren Personen besteht.",
-          "Bei einer Quotenauswahl werden vorher passende Anteile der Zielgruppe festgelegt und bei der Befragung berücksichtigt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Befragung per E-Mail und Datenschutz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer Kundinnen und Kunden per E-Mail um ihre Meinung bittet, braucht dafür in der Regel eine Einwilligung; Gerichte haben auch Zufriedenheitsanfragen per E-Mail als Werbung eingeordnet. Die Antworten werden möglichst anonym ausgewertet, und personenbezogene Daten werden nur so lange gespeichert, wie es für die Auswertung nötig ist.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Fragebogen wird nur an die Personen verteilt, die gerade im Eingangsbereich erreichbar sind. Obwohl viele Antworten eingehen, ist die Auswahl willkürlich. Für eine belastbarere Aussage wird die Zielgruppe beschrieben und eine Zufalls- oder Quotenauswahl verwendet. Die Entscheidung lautet daher nicht ‚mehr Antworten‘, sondern ‚passendere Stichprobe‘.",
-        "typische_fehler": "Die Stichprobengröße wird mit Repräsentativität gleichgesetzt. Außerdem wird eine willkürliche Auswahl als Zufallsauswahl bezeichnet, obwohl nicht jede Person der Zielgruppe dieselbe Chance hatte.",
         "verstaendnisfragen": [
-          "Was ist wichtiger als eine bloße große Zahl? Dass die Stichprobe die Zielgruppe repräsentativ abbildet.",
-          "Welche Auswahlverfahren nennt der Inhalt als repräsentativ? Zufallsauswahl und Quotenauswahl."
-        ],
-        "pruefungsbezug": "Prüfe bei Stichproben zuerst Zielgruppe und Auswahlverfahren. Begründe die Qualität mit Repräsentativität, nicht mit der Anzahl allein.",
-        "merksatz": "Nicht die größte, sondern die passende Stichprobe liefert brauchbare Aussagen."
+          {
+            "frage": "Warum ist das Ergebnis der Befragung nicht einfach auf alle 24.000 Shopkunden übertragbar?",
+            "antwort": "Befragt wurden nur Kundinnen und Kunden, die einer E-Mail-Befragung zugestimmt haben, und geantwortet hat nur ein knappes Drittel. Beide Gruppen können sich von allen Kunden unterscheiden, etwa durch größeres Interesse am Thema.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Welchen Vorteil hat der Preistest gegenüber der Befragung?",
+            "antwort": "Er misst, was Kunden tatsächlich tun, wenn sie zahlen müssen. In Befragungen sagen viele, sie würden mehr zahlen, kaufen dann aber doch die günstigere Variante.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Fragen müssen die gewünschte Information eindeutig erfassen.",
-          "Befragte brauchen eine verständliche und faire Antwortmöglichkeit."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust einen Fragebogen mit sinnvollem Aufbau, eindeutigen Fragen und passenden Antwortformaten und verbesserst fehlerhafte Fragen.",
+        "vorwissen_kurz": "Die Qualität einer Befragung hängt vor allem an den Fragen. Schlechte Fragen liefern verzerrte Antworten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Fragebogen mit Bauplan",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Fragebogen beginnt mit einer kurzen Einleitung, die Zweck, Dauer und Umgang mit den Daten nennt. Dann folgen leichte Einstiegsfragen, der inhaltliche Kern und am Ende persönliche Angaben. Für die Gestaltung bieten Textverarbeitung und Online-Formulare Ankreuzfelder, Auswahllisten und Textfelder, damit Antworten einheitlich und leicht auszuwerten sind.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Fragen aus Leas Entwurf",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Entwurf",
+              "Problem",
+              "Verbessert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„Finden Sie nicht auch, dass Nachhaltigkeit wichtig ist?“",
+                  "Suggestivfrage",
+                  "„Wie wichtig ist Ihnen beim Kauf eines Hoodies, dass er nachhaltig hergestellt wurde?“ (sehr wichtig … gar nicht wichtig)"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Wie zufrieden sind Sie mit Qualität und Preis?“",
+                  "Doppelfrage",
+                  "zwei Fragen: eine zur Qualität, eine zum Preis"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Würden Sie für GOTS-zertifizierte Ware mehr zahlen?“",
+                  "Fachbegriff",
+                  "„… für Ware aus Bio-Baumwolle mit unabhängigem Siegel …“"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Wie viel würden Sie mehr zahlen? 0 € / 5 € / 10 €“",
+                  "keine Ausweichmöglichkeit, Lücken",
+                  "„0 € / bis 5 € / bis 10 € / mehr als 10 € / weiß nicht“"
+                ]
+              }
+            ],
+            "fazit": "Gute Fragen sind neutral, behandeln einen Gegenstand, verwenden Alltagssprache und bieten passende, vollständige Antwortmöglichkeiten.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor der Fragebogen verschickt wird, testet Lea ihn mit drei Kolleginnen aus anderen Abteilungen. Sie stellen fest, dass eine Frage missverstanden wird und der Bogen sieben statt der angekündigten fünf Minuten dauert. Lea kürzt zwei Fragen. Ein solcher Vortest kostet eine halbe Stunde und erspart eine Befragung mit unbrauchbaren Antworten.",
+            "id": "b3-p2"
+          }
         ],
-        "erklaerung": "Ein Fragebogen beginnt mit Einleitung und Eisbrecherfragen, führt zu den Sachfragen, fragt statistische Angaben am Ende ab und schließt mit Dank. Suggestivfragen lenken die Antwort, Doppelfragen verlangen zwei Antworten zugleich. Fachjargon und fehlende Ausweichmöglichkeiten können ebenfalls die Aussage verzerren.",
-        "beispiele": [
-          "‚Wie zufrieden sind Sie mit Preis und Service?‘ ist eine Doppelfrage; Preis und Service sollten getrennt gefragt werden.",
-          "Eine Einleitung erklärt Zweck und Ablauf, bevor die Sachfragen beginnen; statistische Angaben werden erst am Ende erhoben."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Skalen richtig einsetzen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Einstellungen und Zufriedenheit eignen sich Skalen, etwa von 1 = sehr zufrieden bis 5 = sehr unzufrieden. Alle Fragen eines Bogens sollten dieselbe Richtung haben, damit niemand versehentlich falsch herum ankreuzt. Ob eine Mitte („teils, teils“) angeboten wird, ist eine bewusste Entscheidung: Ohne Mitte müssen sich Befragte für eine Tendenz entscheiden.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Fragebogen enthält die Frage ‚Sie finden unseren schnellen und günstigen Service doch gut, oder?‘. Sie ist suggestiv und enthält zwei bewertende Eigenschaften. Die Überarbeitung trennt die Aspekte, formuliert neutral und bietet eine passende Antwortskala sowie eine Ausweichmöglichkeit an.",
-        "typische_fehler": "Zwei Themen werden in eine Frage gepackt, die gewünschte Antwort wird sprachlich vorgegeben oder Fachbegriffe werden ohne Erklärung verwendet.",
         "verstaendnisfragen": [
-          "Warum ist eine Doppelfrage problematisch? Weil nicht erkennbar ist, worauf sich die Antwort bezieht.",
-          "Wozu dient eine Ausweichmöglichkeit? Sie verhindert, dass Befragte eine unpassende Antwort erzwingen müssen."
-        ],
-        "pruefungsbezug": "Streiche in Überarbeitungsaufgaben wertende Wörter, trenne mehrere Sachverhalte und prüfe, ob jede Frage mit den vorhandenen Antwortmöglichkeiten beantwortbar ist.",
-        "merksatz": "Eine gute Frage ist neutral, eindeutig, verständlich und lässt eine passende Antwort zu."
+          {
+            "frage": "Warum steht die Frage nach dem Alter am Ende?",
+            "antwort": "Persönliche Angaben werden ungern gemacht. Am Anfang würden sie Befragte abschrecken; am Ende haben sie schon investiert und antworten eher. Zudem stören sie den Einstieg in das eigentliche Thema nicht.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Wann ist eine offene Frage sinnvoll?",
+            "antwort": "Wenn man Antworten erwartet, an die man vorher nicht gedacht hat, etwa „Was sollten wir an unseren Hoodies verbessern?“. Offene Fragen sind aufwendiger auszuwerten und stehen deshalb sparsam, meist am Ende.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

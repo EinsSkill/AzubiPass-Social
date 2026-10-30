@@ -6,66 +6,305 @@
   "untertitel": "Wo Angebot und Nachfrage sich treffen — und wer dabei am längeren Hebel sitzt.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Anbieter wollen Leistungen verkaufen, Nachfrager wollen sie erwerben.",
-          "Der Preis verbindet Angebot und Nachfrage."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wie auf einem Markt ein Preis entsteht, ordnest Märkte den Marktformen zu und leitest daraus den Preisspielraum eines Anbieters ab.",
+        "vorwissen_kurz": "Anbieter wollen möglichst teuer verkaufen, Nachfrager möglichst günstig kaufen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo sich Angebot und Nachfrage treffen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:markt|Markt}} entsteht überall, wo Anbieter und Nachfrager zusammenkommen: im Laden, im Onlineshop, auf einer Messe. Steigt der Preis, wollen mehr Anbieter verkaufen und weniger Nachfrager kaufen; sinkt er, ist es umgekehrt. Der Preis, bei dem beide Mengen übereinstimmen, heißt Gleichgewichtspreis. Wie stark ein einzelner Anbieter den Preis beeinflussen kann, hängt davon ab, wie viele Konkurrenten es gibt.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Märkte, in denen MAKEL handelt",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Markt",
+              "Anbieter",
+              "Marktform",
+              "Folge für MAKEL"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Streetwear für Endkunden in Deutschland",
+                  "sehr viele Labels und Händler",
+                  "Polypol",
+                  "MAKEL kann den Preis kaum diktieren und setzt auf Design und Qualität"
+                ]
+              },
+              {
+                "zellen": [
+                  "Industrielle Stickmaschinen",
+                  "wenige große Hersteller",
+                  "Angebotsoligopol",
+                  "MAKEL hat beim Einkauf wenig Verhandlungsmacht; Preise ähneln sich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Strom aus dem örtlichen Netz (Netzbetrieb)",
+                  "ein Netzbetreiber im Gebiet",
+                  "Monopol, staatlich reguliert",
+                  "Netzentgelte werden behördlich überwacht"
+                ]
+              }
+            ],
+            "fazit": "Dasselbe Unternehmen ist auf verschiedenen Märkten in sehr unterschiedlichen Positionen. Ob es Preise setzen kann, hängt vom jeweiligen Markt ab.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "erklaerung": "Ein Markt ist das Zusammentreffen von Angebot und Nachfrage. Der Preis ist nicht einfach nur eine Zahl aus der Preisliste, sondern das Ergebnis dieses Zusammentreffens. Die Marktform hängt von der Zahl der Anbieter ab: Im Monopol steht ein Anbieter vielen Nachfragern gegenüber, im Oligopol wenigen Anbietern und im Polypol vielen Anbietern.",
-        "beispiele": [
-          "Bei einem Monopol hat der einzelne Anbieter mehr Preisspielraum als in einem Polypol, in dem viele Anbieter miteinander konkurrieren.",
-          "Bei einem Oligopol beobachten wenige Anbieter einander; Preisentscheidungen eines Anbieters können die übrigen unmittelbar beeinflussen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wie der Gleichgewichtspreis entsteht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei einem Preis von 60 € für einen Basic-Hoodie wollen Händler 10.000 Stück anbieten, aber Kunden nur 6.000 kaufen; es bleibt Ware übrig, und die Preise sinken. Bei 40 € wollen Kunden 12.000 kaufen, aber nur 7.000 werden angeboten; die Ware wird knapp, und die Preise steigen. Irgendwo dazwischen gleichen sich die Mengen aus. Dieses Modell vereinfacht stark, erklärt aber die Richtung von Preisbewegungen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb prüft, warum er seinen Preis nicht beliebig erhöhen kann. Zuerst wird die Marktform betrachtet. Stehen viele vergleichbare Anbieter bereit, handelt es sich eher um ein Polypol; der Preisspielraum ist begrenzt. Gibt es dagegen nur wenige Anbieter, ist der Preisspielraum größer. Die Entscheidung wird damit nicht nur aus den eigenen Kosten, sondern aus dem Markt abgeleitet.",
-        "typische_fehler": "Markt wird mit einem Verkaufsraum gleichgesetzt oder die Marktform nach der Zahl der Kunden statt nach der Zahl der Anbieter bestimmt. Außerdem wird der Preis als ausschließlich kostenbestimmt verstanden.",
         "verstaendnisfragen": [
-          "Woraus entsteht der Preis im Marktmodell? Aus dem Zusammentreffen von Angebot und Nachfrage.",
-          "Welche Marktform hat die geringste Anbieterzahl? Das Monopol."
-        ],
-        "pruefungsbezug": "Zähle bei Marktformaufgaben die Anbieter und ordne erst danach Monopol, Oligopol oder Polypol zu. Ergänze die Folgerung für den Preisspielraum.",
-        "merksatz": "Markt bedeutet Angebot plus Nachfrage; je weniger Anbieter, desto größer der mögliche Preisspielraum."
+          {
+            "frage": "Warum kämpfen Anbieter im Oligopol eher mit Werbung als mit dem Preis?",
+            "antwort": "Senkt einer den Preis, ziehen die wenigen Konkurrenten schnell nach, und am Ende verdienen alle weniger. Mit Werbung und Marke kann man sich dagegen unterscheiden, ohne einen Preiskampf auszulösen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welche Möglichkeit hat MAKEL im Polypol, trotzdem höhere Preise zu erzielen?",
+            "antwort": "Es muss sich vom Wettbewerb unterscheiden, etwa durch eigenes Design, bessere Qualität, Nachhaltigkeit oder Service. Kunden zahlen dann für diese Besonderheit, nicht für einen austauschbaren Hoodie.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Marktmacht hängt davon ab, welche Seite knapp ist.",
-          "Angebot und Nachfrage können sich unterschiedlich entwickeln."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Käufer- und Verkäufermarkt, erkennst Anzeichen für eine Verschiebung und leitest passende Marketingentscheidungen ab.",
+        "vorwissen_kurz": "Ob Kunden oder Anbieter die Bedingungen bestimmen, hängt davon ab, was knapp ist: die Ware oder die Kaufkraft.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer ist knapp?",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gibt es mehr Ware als Käufer, herrscht ein {{begriff:kaeufermarkt|Käufermarkt}}: Kunden vergleichen, verhandeln und wechseln. Ist die Ware knapper als die Nachfrage, entsteht ein {{begriff:verkaeufermarkt|Verkäufermarkt}}: Anbieter bestimmen Preise und Lieferbedingungen. Die meisten Konsumgütermärkte sind Käufermärkte. Ein Markt kann aber kippen, etwa bei Lieferengpässen oder einem plötzlichen Trend.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Markt kippt",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Phase",
+              "Lage",
+              "MAKEL reagiert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Normalzeit",
+                  "viele Labels, volle Lager im Handel: Käufermarkt",
+                  "Werbung, Rabattaktionen für Händler, schnelle Lieferung als Argument"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein Modell geht in sozialen Netzwerken viral",
+                  "MAKEL kann nicht so schnell nachproduzieren: Verkäufermarkt für dieses Modell",
+                  "keine Rabatte, Vorbestellung mit Liefertermin, faire Zuteilung an Händler"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nach drei Monaten",
+                  "Nachahmer bieten Ähnliches an, die Nachfrage normalisiert sich",
+                  "zurück zu Kundenbindung und Abgrenzung"
+                ]
+              }
+            ],
+            "fazit": "Die Marktlage gilt für ein Produkt zu einer Zeit, nicht für ein Unternehmen auf Dauer. Wer das verkennt, gibt im Engpass unnötig Rabatte oder verliert nach dem Hype Kunden.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          }
         ],
-        "erklaerung": "Übersteigt das Angebot die Nachfrage, liegt ein Käufermarkt vor. Kundinnen und Kunden können vergleichen und der Anbieter muss sich stärker an ihren Wünschen orientieren. Übersteigt dagegen die Nachfrage das Angebot, liegt ein Verkäufermarkt vor; der Anbieter hat die stärkere Position. Die Marktlage erklärt damit auch, warum Marketing bei einem Käufermarkt besonders wichtig wird.",
-        "beispiele": [
-          "Viele Anbieter konkurrieren um wenige Kunden: Käufermarkt, stärkerer Preisdruck und höherer Bedarf an Marketing.",
-          "Viele Kunden suchen eine knappe Leistung, die nur wenige Anbieter liefern: Verkäufermarkt, größerer Spielraum des Anbieters."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Knappheit nicht vortäuschen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Anbieter erwecken künstlich den Eindruck von Knappheit, etwa mit Countdowns oder „nur noch 2 Stück“. Ist die Angabe falsch, ist das irreführende Werbung. Echte Knappheit offen zu kommunizieren — mit realistischen Lieferzeiten — schafft dagegen Vertrauen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb stellt fest, dass mehrere Anbieter dieselbe Leistung anbieten, während die Zahl der Kunden sinkt. Das Angebot ist größer als die Nachfrage. Die Situation ist ein Käufermarkt. Der Betrieb muss die Kundenstruktur und Konkurrenz prüfen und sein Marketing nutzen, statt allein auf eine Preiserhöhung zu setzen.",
-        "typische_fehler": "Die Begriffe werden aus Sicht des Verkäufers verwechselt. Außerdem wird ein Käufermarkt nur als ‚schlechter Markt‘ bezeichnet, ohne die Konsequenz für Kundenorientierung, Preis und Marketing zu erklären.",
         "verstaendnisfragen": [
-          "Wer hat im Käufermarkt die stärkere Position? Die Nachfrager beziehungsweise Kunden.",
-          "Was kennzeichnet den Verkäufermarkt? Die Nachfrage übersteigt das Angebot; der Anbieter ist in der stärkeren Position."
-        ],
-        "pruefungsbezug": "Suche in Fallaufgaben zuerst nach Knappheit: Ist das Angebot oder die Nachfrage größer? Daraus folgt die Marktbezeichnung und die Machtverteilung.",
-        "merksatz": "Wer knapp ist, hat die Macht: viel Angebot bedeutet Käufermarkt, viel Nachfrage Verkäufermarkt."
+          {
+            "frage": "Woran erkennt MAKEL, dass ein Modell in einen Verkäufermarkt gerät?",
+            "antwort": "An Anzeichen wie stark steigenden Bestellungen, ausverkauften Größen, Wartelisten bei Händlern und Anfragen, die nicht bedient werden können. Die Nachfrage übersteigt die lieferbare Menge.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum wäre eine Rabattaktion im Verkäufermarkt falsch?",
+            "antwort": "Die Ware verkauft sich ohnehin. Ein Rabatt würde Ertrag verschenken und die Knappheit noch verschärfen.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Die eigene Marktposition ergibt sich nicht aus einer einzelnen Zahl.",
-          "Kunden, Konkurrenz und konjunkturelle Lage beeinflussen die Marktsituation."
+        "darstellung": "vollfassung",
+        "ziel": "Du schätzt die Marktsituation eines Betriebs anhand von Kundenstruktur, Konkurrenz und konjunktureller Lage ein und beurteilst den Erfolg mit dem Marktanteil.",
+        "vorwissen_kurz": "Der eigene Umsatz zeigt, wie viel verkauft wurde. Ob das gut ist, zeigt erst der Vergleich mit dem Markt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Blickwinkel",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Um die eigene Lage zu beurteilen, braucht ein Betrieb drei Blickwinkel: Wer sind unsere Kunden und wie verändern sie sich? Wer sind unsere Konkurrenten und was tun sie? Wie entwickelt sich die Wirtschaft insgesamt und damit die Kaufkraft? Viele Zahlen dazu hat der Betrieb selbst, andere liefern Verbände und Statistikämter.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "MAKELs Lage im Überblick",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Blickwinkel",
+              "Befund",
+              "Bedeutung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kundenstruktur",
+                  "60 % des Umsatzes mit Händlern, 40 % im eigenen Onlineshop; Kernzielgruppe 18 bis 35 Jahre",
+                  "Händlerbeziehungen sind wichtig, Direktgeschäft wächst"
+                ]
+              },
+              {
+                "zellen": [
+                  "Konkurrenz",
+                  "zwei neue Labels mit ähnlichem Stil in Nordrhein-Westfalen",
+                  "Abgrenzung über Design und Nachhaltigkeit nötig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Konjunktur",
+                  "Bekleidungsumsätze stagnieren, Kundinnen kaufen bewusster",
+                  "eher weniger, dafür langlebige Teile"
+                ]
+              }
+            ],
+            "fazit": "Die Lage ist stabil, aber umkämpft. MAKEL kann nicht mit dem Markt wachsen, sondern nur gegen die Konkurrenz.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Den deutschen Markt für hochwertige Streetwear in seinem Segment schätzt MAKEL auf 200 Mio. € im Jahr; diese Zahl ist eine Annahme auf Grundlage von Branchenangaben. Mit 16 Mio. € Umsatz läge der Marktanteil bei 16 ÷ 200 × 100 = 8 %. Wächst MAKEL um 5 %, der Markt aber um 9 %, sinkt der Anteil — obwohl der Umsatz steigt.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b3"
+          }
         ],
-        "erklaerung": "Eine Marktsituation wird über Kundenstruktur, Konkurrenz und konjunkturelle Lage eingeschätzt. Der Marktanteil setzt den eigenen Umsatz ins Verhältnis zum Marktumsatz: eigener Umsatz ÷ Marktumsatz × 100. Erst der Vergleich mit dem Gesamtmarkt zeigt, wie groß die eigene Position tatsächlich ist.",
-        "beispiele": [
-          "Ein Betrieb betrachtet nicht nur seine Umsätze, sondern auch Kundengruppen und die Zahl der Wettbewerber.",
-          "Für den Marktanteil wird der eigene Umsatz durch den Umsatz des gesamten Marktes geteilt und mit 100 multipliziert."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Vom Befund zur Analyse",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die drei Blickwinkel sind der Ausgangspunkt für eine Stärken-Schwächen-Analyse oder eine Situationsanalyse, wie sie die Marketingkonzeption verlangt. Wer Kunden, Konkurrenz und Umfeld kennt, kann begründet entscheiden, wo das Unternehmen ansetzen sollte.",
+                "id": "a3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k3-c1"
+                ],
+                "text": "Marketingkonzeption: Erst das Ziel, dann die Maßnahme",
+                "id": "a3-d1-v1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Unternehmen kennt seinen eigenen Umsatz, aber noch nicht den Marktumsatz. Eine Aussage wie ‚wir verkaufen viel‘ reicht deshalb nicht für den Marktanteil. Zuerst wird der Gesamtmarkt abgegrenzt und der Marktumsatz ermittelt. Dann wird gerechnet: eigener Umsatz ÷ Marktumsatz × 100. Das Ergebnis wird anschließend zusammen mit Kundenstruktur, Konkurrenz und Konjunktur bewertet.",
-        "typische_fehler": "Der eigene Umsatz wird als Marktanteil bezeichnet oder durch die Kundenzahl geteilt. Außerdem wird die konjunkturelle Lage ignoriert, obwohl sie die Nachfrage des gesamten Marktes beeinflussen kann.",
         "verstaendnisfragen": [
-          "Welche drei Bereiche helfen bei der Markteinschätzung? Kundenstruktur, Konkurrenz und konjunkturelle Lage.",
-          "Wie lautet die Marktanteilsformel? Eigener Umsatz ÷ Marktumsatz × 100."
-        ],
-        "pruefungsbezug": "Schreibe bei Marktanteilsaufgaben die Formel vor dem Einsetzen hin und prüfe, ob der Nenner wirklich den gesamten abgegrenzten Markt umfasst.",
-        "merksatz": "Marktanteil ist immer ein Verhältnis zum Gesamtmarkt, nie der eigene Umsatz allein."
+          {
+            "frage": "Ein Wettbewerber senkt seine Preise um 10 %. Welcher Blickwinkel ist betroffen, und was prüft MAKEL?",
+            "antwort": "Die Konkurrenz. MAKEL prüft, ob dieselben Kunden angesprochen werden, wie stark sich das auf den eigenen Absatz auswirkt und ob eine Antwort über Preis oder eher über Qualität und Service sinnvoll ist.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum ist der Marktanteil aussagekräftiger als der Umsatz?",
+            "antwort": "Er setzt den eigenen Umsatz ins Verhältnis zum ganzen Markt. So zeigt er, ob ein Betrieb im Vergleich zur Konkurrenz gewinnt oder verliert, unabhängig davon, ob der Markt insgesamt wächst oder schrumpft.",
+            "id": "a3-f2"
+          }
+        ]
       }
     ]
   },
@@ -103,8 +342,8 @@
         {
           "typ": "tabelle",
           "spalten": [
-            "Wenige Nachfrager",
-            "Viele Nachfrager",
+            "Anbieter",
+            "Nachfrager",
             "Marktform"
           ],
           "zeilen": [

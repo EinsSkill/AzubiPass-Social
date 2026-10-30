@@ -6,66 +6,334 @@
   "untertitel": "Der Preis ist das einzige Instrument, das Geld einbringt statt kostet.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "d1",
-        "vorauswissen": [
-          "Ein Preis muss Kosten decken und am Markt akzeptiert werden.",
-          "Kosten- und Marktsicht liefern unterschiedliche Grenzen."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst einen Verkaufspreis aus Kosten-, Nachfrage- und Wettbewerbssicht, bestimmst den Preisspielraum und berechnest die Wirkung einer Preisänderung mit der Preiselastizität.",
+        "vorwissen_kurz": "Die Kalkulation zeigt, was ein Produkt kostet. Ob Kunden den daraus errechneten Preis zahlen, ist eine andere Frage.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Blickrichtungen auf den Preis",
+            "id": "d1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Preis muss drei Prüfungen bestehen. Er muss die Kosten decken, sonst verliert das Unternehmen bei jedem Verkauf. Er muss in das Umfeld der Konkurrenz passen, sonst kaufen Kunden woanders. Und er muss der Zahlungsbereitschaft der Kunden entsprechen. Die {{begriff:preispolitik|Preispolitik}} sucht den Preis, der alle drei Bedingungen erfüllt.",
+            "id": "d1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d1-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Bio-Hoodie im Onlineshop",
+            "id": "d1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Sicht",
+              "Befund",
+              "Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kosten",
+                  "Selbstkosten des Hoodies 38,94 €, mit Bio-Baumwolle 41,32 € netto",
+                  "Untergrenze langfristig: etwa 49 € brutto"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wettbewerb",
+                  "vergleichbare Hoodies anderer Labels: 110 € bis 140 € im Onlineshop",
+                  "MAKEL liegt mit 120 € im Mittelfeld"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachfrage",
+                  "Preistest: bei 125 € statt 120 € verkaufen sich 14 % weniger",
+                  "Kunden reagieren deutlich auf den Preis"
+                ]
+              }
+            ],
+            "fazit": "Kosten setzen den Preis nicht unter Druck — der Spielraum nach oben ist aber durch die Nachfrage eng. Eine Erhöhung auf 125 € würde mehr Absatz kosten, als sie einbringt.",
+            "id": "d1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Stärke der Reaktion zeigt die {{begriff:preiselastizitaet|Preiselastizität}}: prozentuale Mengenänderung geteilt durch prozentuale Preisänderung. Der Preis steigt um 5 € ÷ 120 € = 4,2 %, die Menge sinkt um 14 %. Die Elastizität beträgt −14 ÷ 4,2 ≈ −3,4; die Nachfrage ist elastisch. Der Umsatz zeigt die Folge: Bei 100 Stück zu 120 € sind es 12.000 €, bei 86 Stück zu 125 € nur 10.750 €.",
+            "id": "d1-p2"
+          }
         ],
-        "erklaerung": "Die kostenorientierte Preisbildung liefert die Preisuntergrenze, weil darunter die eigenen Kosten nicht gedeckt sind. Die marktorientierte Betrachtung liefert die Preisobergrenze, weil der Markt die Zahlungsbereitschaft begrenzt. Liegt die Untergrenze über der Obergrenze, reicht eine einfache Preisentscheidung nicht; die Kosten müssen geprüft und bearbeitet werden.",
-        "beispiele": [
-          "Ein Preis unterhalb der Kostenuntergrenze kann kurzfristig attraktiv aussehen, deckt aber die Kosten nicht.",
-          "Ein Preis oberhalb der vom Markt akzeptierten Obergrenze wird trotz Kostendeckung nicht nachgefragt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Preisstrategien nach Marktposition",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben Kosten und Nachfrage richten sich Preise oft an einer Strategie aus. Eine Premiumstrategie setzt bewusst hohe Preise für hohe Qualität und Marke, eine Mittelpreisstrategie bleibt im Umfeld der Konkurrenz, eine Niedrigpreisstrategie gewinnt über den Preis. MAKEL positioniert sich laut Unternehmensprofil leicht über dem Marktschnitt.",
+                "id": "d1-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf10:k4-b1"
+                ],
+                "text": "Zuschlagskalkulation des Hoodies",
+                "id": "d1-d1-v1"
+              }
+            ],
+            "id": "d1-d1"
+          }
         ],
-        "fallbeispiel": "Die Kostenrechnung ergibt eine Untergrenze, die Marktforschung eine niedrigere Obergrenze. Zuerst wird nicht einfach ein Mittelwert gewählt. Die Grenzen werden gegenübergestellt: Ist die Untergrenze höher als die Obergrenze, muss der Betrieb an den Kosten arbeiten oder die Marktsituation neu beurteilen. Erst danach wird ein tragfähiger Preis festgelegt.",
-        "typische_fehler": "Untergrenze und Obergrenze werden vertauscht oder der höchste mögliche Preis automatisch als bester Preis angesehen. Auch wird übersehen, dass eine nicht passende Kostensituation bearbeitet werden muss.",
         "verstaendnisfragen": [
-          "Woher kommt die Preisuntergrenze? Aus den Kosten.",
-          "Woher kommt die Preisobergrenze? Aus dem Markt beziehungsweise der Zahlungsbereitschaft."
-        ],
-        "pruefungsbezug": "Schreibe in Preisfällen zuerst ‚Kosten = Untergrenze‘ und ‚Markt = Obergrenze‘. Vergleiche anschließend beide Grenzen.",
-        "merksatz": "Kosten begrenzen nach unten, Markt und Zahlungsbereitschaft nach oben."
+          {
+            "frage": "Warum ist die Kostenrechnung allein kein guter Preisfinder?",
+            "antwort": "Sie zeigt, was MAKEL mindestens verlangen muss, aber nicht, was Kunden bereit sind zu zahlen. Ein kostendeckender Preis kann über dem Marktpreis liegen und dann nicht verkauft werden — oder weit darunter und Ertrag verschenken.",
+            "id": "d1-f1"
+          },
+          {
+            "frage": "Eine Preissenkung um 10 % steigert den Absatz um 4 %. Ist die Nachfrage elastisch?",
+            "antwort": "Nein. Die Elastizität beträgt 4 ÷ (−10) = −0,4; die Menge reagiert schwächer als der Preis. Der Umsatz sinkt durch die Preissenkung.",
+            "id": "d1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d2",
-        "vorauswissen": [
-          "Neue Produkte können unterschiedlich in den Markt eingeführt werden.",
-          "Markt- und Wettbewerbssituation bestimmen die passende Preisstrategie."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für die Einführung eines neuen Produkts eine Preisstrategie, begründest sie mit Marktlage und Zielen und kennst ihre Risiken.",
+        "vorwissen_kurz": "Bei neuen Produkten gibt es keinen Erfahrungswert, was Kunden zahlen. Der Einstiegspreis prägt aber die Wahrnehmung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Hoch oder tief einsteigen",
+            "id": "d2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einem neuen Produkt entscheidet das Unternehmen, ob es mit einem hohen Preis beginnt und ihn später senkt — **Abschöpfung** — oder mit einem niedrigen Preis schnell viele Kunden gewinnt — **Durchdringung**. Welche Strategie passt, hängt davon ab, wie einzigartig das Produkt ist, wie schnell Nachahmer kommen und welches Ziel das Unternehmen verfolgt.",
+            "id": "d2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "d2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei neue MAKEL-Produkte",
+            "id": "d2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Produkt",
+              "Lage",
+              "Strategie",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Limitierte Kollaboration mit einer Künstlerin, 500 Hoodies",
+                  "einzigartig, Fans mit hoher Zahlungsbereitschaft, keine Nachahmer möglich",
+                  "Abschöpfung: 189 €",
+                  "hoher Preis passt zur Exklusivität; eine spätere Senkung ist nicht geplant, weil die Auflage begrenzt ist"
+                ]
+              },
+              {
+                "zellen": [
+                  "Basic-Shirts im Dreierpack",
+                  "austauschbar, viele Konkurrenten",
+                  "Durchdringung: Einführungspreis 49 € statt 59 € für acht Wochen",
+                  "soll Neukunden in den Shop bringen, die später andere Produkte kaufen"
+                ]
+              }
+            ],
+            "fazit": "Dasselbe Unternehmen nutzt beide Strategien — für Produkte in sehr unterschiedlicher Lage.",
+            "id": "d2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "d2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Durchdringung muss der Einführungspreis klar als befristet erkennbar sein. Wer später den Preis anhebt, verliert sonst Vertrauen. Und wer mit einem durchgestrichenen „Statt“-Preis wirbt, muss als Vergleich den niedrigsten Preis der letzten 30 Tage angeben; erfundene Vergleichspreise sind unzulässig.",
+            "id": "d2-p2"
+          }
         ],
-        "erklaerung": "Beim Skimming wird mit einem hohen Preis gestartet und der Preis langsam gesenkt. Das passt zu technischem Vorsprung. Bei der Penetration wird mit einem niedrigen Preis gestartet, um schnell Marktanteile zu gewinnen; das passt zu austauschbaren Massenprodukten. Die Strategie muss zum Produkt und Markt passen.",
-        "beispiele": [
-          "Ein Produkt mit technischem Vorsprung kann zunächst über Skimming einen hohen Preis durchsetzen.",
-          "Bei einem austauschbaren Massenprodukt kann Penetration über einen tiefen Einstiegspreis Marktanteile gewinnen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Psychologische Preise",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Preise wie 119 € statt 120 € wirken für viele Kunden deutlich günstiger, weil sie die erste Ziffer stärker wahrnehmen. Im Premiumsegment werden dagegen oft runde Preise gewählt, weil sie hochwertiger wirken. Beides ist eine Entscheidung über Wahrnehmung, nicht über Kosten.",
+                "id": "d2-d1-p1"
+              }
+            ],
+            "id": "d2-d1"
+          }
         ],
-        "fallbeispiel": "Ein neues Produkt besitzt einen technischen Vorsprung und spricht zunächst Kundinnen und Kunden an, die dafür zahlen. Die passende Strategie ist Skimming: hoch einsteigen und später senken. Wäre das Produkt austauschbar und der Massenmarkt entscheidend, wäre Penetration mit niedrigem Einstiegspreis die passendere Wahl.",
-        "typische_fehler": "Skimming wird mit niedrigem Einstiegspreis und Penetration mit hohem Einstiegspreis verbunden. Außerdem wird die Strategie ohne Bezug zu Vorsprung, Austauschbarkeit und Marktgröße gewählt.",
         "verstaendnisfragen": [
-          "Welche Richtung hat Skimming? Hoher Einstiegspreis, anschließend langsame Senkung.",
-          "Wann passt Penetration? Bei austauschbaren Massenprodukten, wenn schnell Marktanteile gewonnen werden sollen."
+          {
+            "frage": "Warum plant MAKEL bei der Kollaboration keine spätere Preissenkung?",
+            "antwort": "Die Auflage ist auf 500 Stück begrenzt. Eine Senkung würde nur Ertrag verschenken und die Käufer verärgern, die den vollen Preis bezahlt haben. Die Abschöpfung endet hier, wenn die Auflage verkauft ist.",
+            "id": "d2-f1"
+          },
+          {
+            "frage": "Welches Risiko hat die Durchdringung beim Shirt-Pack?",
+            "antwort": "Kunden gewöhnen sich an den niedrigen Preis und kaufen nach der Anhebung weniger. Außerdem kann der Einführungspreis Verluste bringen, wenn die erhofften Folgekäufe ausbleiben.",
+            "id": "d2-f2"
+          }
         ],
-        "pruefungsbezug": "Suche in Falltexten nach ‚technischer Vorsprung‘ oder ‚Massenmarkt‘. Diese Stichwörter führen meist direkt zu Skimming oder Penetration.",
-        "merksatz": "Skimming schöpft oben ab; Penetration dringt unten in den Markt ein."
+        "quellen": [
+          {
+            "titel": "Preisangabenverordnung, § 11",
+            "url": "https://www.gesetze-im-internet.de/pangv_2022/__11.html",
+            "bezug": "Angabe des niedrigsten Preises bei Preisermäßigungen"
+          }
+        ]
       },
       {
         "abschnitt": "d3",
-        "vorauswissen": [
-          "Der Preis besteht nicht nur aus dem Listenpreis.",
-          "Kunden reagieren unterschiedlich stark auf Preisänderungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Rabatte, Skonto, Boni und Zahlungsziele der Preispolitik zu und berechnest, wie ein zusätzlicher Rabatt den Deckungsbeitrag mindert und wie viel mehr Absatz nötig wäre, um das auszugleichen.",
+        "vorwissen_kurz": "Der tatsächlich gezahlte Preis ist oft niedriger als der Listenpreis.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Der Preis hinter dem Preis",
+            "id": "d3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gegenüber Händlern zählt nicht nur der Listenpreis, sondern das ganze Paket aus Rabatten, Skonto, Boni, Zahlungsziel und Lieferbedingung. Diese **Konditionen** sind Preispolitik, auch wenn der Listenpreis unverändert bleibt. Sie wirken stark und unauffällig — und sie kosten Marge.",
+            "id": "d3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was ein zusätzlicher Rabatt kostet",
+            "id": "d3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Händler verlangt für den Hoodie „Kyoto“ 15 % statt 10 % Rabatt. Listenpreis 49,44 €, 2 % Skonto, variable Kosten 26 €.",
+            "id": "d3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "10 % Rabatt",
+              "15 % Rabatt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zielverkaufspreis",
+                  "49,44 € × 0,90 = 44,50 €",
+                  "49,44 € × 0,85 = 42,02 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "nach 2 % Skonto",
+                  "43,61 €",
+                  "41,18 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Deckungsbeitrag je Stück",
+                  "43,61 € − 26 € = 17,61 €",
+                  "41,18 € − 26 € = 15,18 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Absatz für gleichen Gesamtdeckungsbeitrag",
+                  "100 Stück",
+                  "17,61 ÷ 15,18 × 100 ≈ 116 Stück"
+                ]
+              }
+            ],
+            "fazit": "Fünf Prozentpunkte mehr Rabatt kosten 2,43 € Deckungsbeitrag je Stück. Der Händler müsste rund 16 % mehr abnehmen, damit MAKEL nicht schlechter dasteht.",
+            "id": "d3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "d3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "d3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL bietet deshalb statt eines höheren Grundrabatts einen Mengenrabatt ab 200 Stück an: Der zusätzliche Nachlass fällt nur an, wenn der Händler tatsächlich mehr kauft. So ist die Kondition an die Gegenleistung gebunden, die sie ausgleichen soll.",
+            "id": "d3-p3"
+          }
         ],
-        "erklaerung": "Preispolitik umfasst auch Rabatte, Skonto und Zahlungsziele, selbst wenn der Listenpreis unverändert bleibt. Die Preiselastizität beschreibt, wie stark die Nachfrage auf eine Preisänderung reagiert. Bei hoher Reaktion kann eine Preisänderung die Nachfrage deutlich verändern; bei geringer Reaktion fällt die Mengenänderung schwächer aus.",
-        "beispiele": [
-          "Ein Rabatt senkt den tatsächlich gezahlten Preis, obwohl der Listenpreis gleich bleibt.",
-          "Ein Skonto verändert den Preis bei schneller Zahlung; ein Zahlungsziel verändert den Zeitpunkt der Zahlung und damit die Kondition."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Boni und Zahlungsziele",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Bonus ist ein nachträglicher Rabatt, etwa 2 % auf den Jahresumsatz ab einer bestimmten Höhe; er wird am Jahresende als Erlösberichtigung gebucht. Ein Zahlungsziel kostet keinen Preisnachlass, aber Liquidität: MAKEL wartet länger auf sein Geld und muss die Zeit finanzieren.",
+                "id": "d3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf10:k5-b3"
+                ],
+                "text": "Preisuntergrenze und Zusatzauftrag",
+                "id": "d3-d1-v1"
+              }
+            ],
+            "id": "d3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb plant keine Listenpreissenkung, bietet aber Rabatt und Skonto an. Für die Preisentscheidung werden beide Konditionen berücksichtigt, weil sie den tatsächlich erzielten Preis verändern. Anschließend wird beobachtet, wie stark die Nachfrage auf diese Änderung reagiert; genau diese Reaktion beschreibt die Preiselastizität.",
-        "typische_fehler": "Nur der Listenpreis wird betrachtet oder Skonto mit einem dauerhaften Rabatt gleichgesetzt. Die Preiselastizität wird außerdem als Preis selbst statt als Reaktion der Nachfrage verstanden.",
         "verstaendnisfragen": [
-          "Welche Konditionen gehören zur Preispolitik? Unter anderem Rabatte, Skonto und Zahlungsziele.",
-          "Was misst Preiselastizität? Wie stark die Nachfrage auf Preisänderungen reagiert."
-        ],
-        "pruefungsbezug": "Prüfe bei Preisfällen den tatsächlich erzielten Preis und die Reaktion der Menge, nicht nur die Zahl auf der Preisliste.",
-        "merksatz": "Konditionen verändern den Preis, auch wenn die Preisliste gleich aussieht."
+          {
+            "frage": "Gehört ein Skontoangebot zur Preis- oder zur Kommunikationspolitik?",
+            "antwort": "Zur Preispolitik. Es verändert den Betrag, den der Kunde bei schneller Zahlung tatsächlich zahlt. Dass es im Angebot steht und beworben wird, ändert daran nichts.",
+            "id": "d3-f1"
+          },
+          {
+            "frage": "Warum bindet MAKEL den Zusatzrabatt an eine Mindestmenge?",
+            "antwort": "Ein höherer Rabatt mindert den Deckungsbeitrag je Stück. Nur wenn der Händler mehr kauft, gleicht die größere Menge diesen Verlust aus. Ohne Mengenbindung würde MAKEL einfach weniger verdienen.",
+            "id": "d3-f2"
+          }
+        ]
       }
     ]
   },
@@ -251,14 +519,14 @@
               "zellen": [
                 "Treuerabatt",
                 "bindet den Kunden über Zeit",
-                "wird nicht separat gebucht"
+                "als Sofortrabatt auf der Rechnung, als nachträglicher Bonus eine Erlösberichtigung"
               ]
             },
             {
               "zellen": [
                 "Skonto",
                 "Anreiz für schnelle Zahlung",
-                "separat gebucht als Aufwand oder Ertrag"
+                "nachträglich gebucht als Erlösberichtigung (5001), nicht als Aufwand"
               ],
               "detail": "**Der Zusammenhang mit Lernfeld 6:** Zwei Prozent Skonto bei zwanzig Tagen entsprechen etwa 36 Prozent Jahreszins. Für den Kunden ist das ein starker Anreiz — für dich als Anbieter ein teures Instrument, das du bewusst einsetzen solltest."
             },
