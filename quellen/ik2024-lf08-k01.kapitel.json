@@ -6,86 +6,521 @@
   "untertitel": "Warum die Kostenrechnung andere Zahlen braucht als die Buchführung und wie man Aufwand in Kosten überführt.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Die Finanzbuchhaltung ermittelt den Gewinn des ganzen Unternehmens (LF 5).",
-          "Für Preisentscheidungen braucht man die Kosten einzelner Produkte."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Finanzbuchhaltung und Kosten- und Leistungsrechnung nach Adressaten, Regeln, Betrachtungsbereich und Ergebnis und ordnest Fragen dem passenden Rechnungskreis zu.",
+        "vorwissen_kurz": "Die Buchführung liefert Zahlen für Finanzamt und Bank. Für die Frage, was ein Hoodie kostet, braucht die Geschäftsführung andere Zahlen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Rechnungskreise, zwei Zwecke",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Finanzbuchhaltung** erfasst alle Geschäftsfälle des Unternehmens nach den Regeln von HGB und Steuerrecht. Ihr Ergebnis, der Jahresüberschuss, richtet sich an Finanzamt, Banken und Gesellschafter. Die **Kosten- und Leistungsrechnung** (KLR) betrachtet nur den betrieblichen Leistungsprozess. Sie richtet sich an Geschäftsführung und Abteilungen und folgt keinen gesetzlichen Vorgaben, sondern dem Zweck: Kalkulation, Steuerung, Entscheidung. Ihr Ergebnis ist das Betriebsergebnis, ihre wichtigste Zahl oft die Stückkosten.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Fünf Fragen bei MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Rechnungskreis",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wie hoch ist der Jahresüberschuss für die Steuererklärung?",
+                  "Finanzbuchhaltung",
+                  "gesetzlich geregelt, nach außen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was kostet ein bestickter Vereinshoodie?",
+                  "KLR",
+                  "Kalkulation eines Produkts"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitet die Stickabteilung wirtschaftlich?",
+                  "KLR",
+                  "Kostenstelle, interne Steuerung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie hoch sind die Verbindlichkeiten gegenüber Lieferanten?",
+                  "Finanzbuchhaltung",
+                  "Bestand für die Bilanz"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lohnt sich ein Auftrag zum Sonderpreis?",
+                  "KLR",
+                  "Entscheidung mit Kosten und Leistungen"
+                ]
+              }
+            ],
+            "fazit": "Fragen nach außen und nach dem Gesamtunternehmen beantwortet die Finanzbuchhaltung, Fragen nach Produkten, Abteilungen und Entscheidungen die KLR.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beide Rechnungskreise arbeiten mit denselben Belegen. Die KLR übernimmt die Aufwendungen und Erträge der Buchführung, sortiert aber aus, was nichts mit der eigentlichen Tätigkeit zu tun hat, und ergänzt Kosten, die die Buchführung nicht erfasst. Wie das geht, zeigen die nächsten Abschnitte.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Das Rechnungswesen hat zwei Bereiche mit verschiedenen Zwecken. Die Finanzbuchhaltung (externes Rechnungswesen) bildet alle Geschäftsfälle nach gesetzlichen Regeln ab und informiert Finanzamt, Banken und Gesellschafter über das Gesamtergebnis. Die Kosten- und Leistungsrechnung (internes Rechnungswesen) dient der Steuerung: Sie fragt, was die betriebliche Leistung kostet, ermöglicht Kalkulation und Preisentscheidungen, Wirtschaftlichkeitskontrolle und Planung. Sie ist gesetzlich nicht vorgeschrieben und darf deshalb Werte so ansetzen, wie es die Entscheidung erfordert.",
-        "beispiele": [
-          "Finanzbuchhaltung: Jahresüberschuss der MAKEL Studio GmbH für den Jahresabschluss.",
-          "Kostenrechnung: Was kostet ein bestickter Hoodie, und wie viel bleibt bei 30 € Verkaufspreis?"
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Gesetzlich gebunden oder frei gestaltet",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Finanzbuchhaltung muss Vorschriften einhalten, damit Außenstehende sich auf ihre Zahlen verlassen können. Die KLR darf frei gestaltet werden: MAKEL Studio entscheidet selbst, welche Kostenstellen es bildet und wie es Maschinenkosten verrechnet. Entscheidend ist, dass die Zahlen für die interne Frage aussagekräftig sind.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner fragt: ‚Die Bilanz zeigt einen Gewinn — aber verdienen wir an der Veredelung überhaupt Geld, oder kommt der Gewinn aus dem Verkauf einer alten Maschine?‘ Die Antwort gibt nicht die Finanzbuchhaltung, sondern die Kosten- und Leistungsrechnung.",
-        "typische_fehler": "Den Jahresüberschuss mit dem Ergebnis der eigentlichen Betriebstätigkeit gleichsetzen.",
         "verstaendnisfragen": [
-          "Für wen arbeitet die Finanzbuchhaltung vor allem? Für externe Adressaten wie Finanzamt, Banken und Gesellschafter.",
-          "Wozu dient die Kosten- und Leistungsrechnung? Zur internen Steuerung: Kalkulation, Wirtschaftlichkeitskontrolle, Entscheidungen."
-        ],
-        "pruefungsbezug": "Aufgaben und Adressaten von Finanzbuchhaltung und KLR unterscheiden.",
-        "merksatz": "Die Finanzbuchhaltung informiert nach außen über das Gesamtergebnis, die KLR steuert nach innen die betriebliche Leistung."
+          {
+            "frage": "Welcher Rechnungskreis beantwortet die Frage, ob die Druckabteilung zu teuer arbeitet?",
+            "antwort": "Die KLR. Sie betrachtet einzelne Kostenstellen und dient der internen Steuerung.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum darf die KLR andere Zahlen verwenden als die Buchführung?",
+            "antwort": "Weil sie keinen gesetzlichen Vorgaben folgt, sondern dem internen Zweck. Für Kalkulation und Entscheidungen sind andere Abgrenzungen sinnvoll als für den Jahresabschluss.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Aufwand und Ertrag kennst du aus LF 5.",
-          "Auszahlungen sind Geldabflüsse."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Auszahlung, Ausgabe, Aufwand und Kosten an Beispielen und begründest, warum ein Vorgang zu einer, mehreren oder keiner dieser Größen gehört.",
+        "vorwissen_kurz": "Im Alltag werden „Ausgaben“, „Aufwand“ und „Kosten“ oft gleich verwendet. Im Rechnungswesen bedeuten sie Verschiedenes.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Begriffe, vier Fragen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine **Auszahlung** verringert den Bestand an Bargeld und Bankguthaben. Eine **Ausgabe** verringert das Geldvermögen, also auch durch neue Verbindlichkeiten. **Aufwand** ist der gesamte Werteverzehr eines Unternehmens in einer Periode, wie ihn die Finanzbuchhaltung erfasst. **Kosten** sind nur der betriebsbedingte, periodengerechte Werteverzehr für die Erstellung der betrieblichen Leistung. Ein Vorgang kann alles gleichzeitig sein, einiges davon oder nichts.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Sechs Vorgänge im März",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Auszahlung",
+              "Aufwand",
+              "Kosten"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohlinge auf Ziel gekauft",
+                  "nein",
+                  "nein (Bestand)",
+                  "nein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohlinge für Aufträge verbraucht",
+                  "nein",
+                  "ja",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Löhne der Stickerei überwiesen",
+                  "ja",
+                  "ja",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Darlehen getilgt",
+                  "ja",
+                  "nein",
+                  "nein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Spende an den Jugendfußballverein",
+                  "ja",
+                  "ja",
+                  "nein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kalkulatorischer Unternehmerlohn (falls ein Inhaber ohne Gehalt mitarbeitet)",
+                  "nein",
+                  "nein",
+                  "ja"
+                ]
+              }
+            ],
+            "fazit": "Nur die Löhne sind alles gleichzeitig. Die Spende ist Aufwand, aber keine Kosten, weil sie nichts mit der Herstellung von Hoodies zu tun hat.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Unterscheidung verhindert Fehlentscheidungen. Würde MAKEL Studio die Spende in die Kalkulation der Hoodies einrechnen, wären die Hoodies scheinbar teurer, und der Vertrieb würde womöglich einen Auftrag ablehnen, der sich eigentlich lohnt. Umgekehrt würde eine Darlehenstilgung in der Kalkulation Kosten vortäuschen, die es nicht gibt.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Begriffe der Rechnungsbereiche unterscheiden sich. Auszahlung und Einzahlung betreffen den Geldbestand. Ausgabe und Einnahme betreffen zusätzlich Forderungen und Verbindlichkeiten. Aufwand und Ertrag sind der gesamte Werteverzehr und -zuwachs einer Periode in der Finanzbuchhaltung. Kosten sind der bewertete Verzehr von Gütern und Dienstleistungen für die betriebliche Leistungserstellung einer Periode; Leistungen sind das bewertete Ergebnis dieser Tätigkeit. Nicht jede Auszahlung ist Kosten, nicht jeder Aufwand ist Kosten.",
-        "beispiele": [
-          "Darlehenstilgung: Auszahlung, aber weder Aufwand noch Kosten.",
-          "Spende an einen Sportverein: Aufwand, aber keine Kosten der Veredelung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Einzahlung, Einnahme, Ertrag, Leistung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auf der Gegenseite gibt es dieselbe Abstufung: Einzahlung erhöht den Geldbestand, Einnahme das Geldvermögen, Ertrag ist der gesamte Wertezuwachs, Leistung der betriebsbedingte Wertezuwachs aus der eigentlichen Tätigkeit — etwa verkaufte oder auf Lager produzierte Hoodies.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli sortiert drei Vorgänge: Kauf von Rohlingen auf Lager (Ausgabe, noch kein Aufwand), Verbrauch der Rohlinge in der Veredelung (Aufwand und Kosten), Spende an den Fußballverein (Aufwand, keine Kosten).",
-        "typische_fehler": "Alle Auszahlungen automatisch als Kosten behandeln.",
         "verstaendnisfragen": [
-          "Ist die Tilgung eines Darlehens Kosten? Nein, sie ist nur eine Auszahlung.",
-          "Was sind Kosten? Der bewertete, betriebsbedingte Güterverzehr einer Periode für die Leistungserstellung."
-        ],
-        "pruefungsbezug": "Grundbegriffe des Rechnungswesens an Geschäftsfällen unterscheiden.",
-        "merksatz": "Auszahlung, Ausgabe, Aufwand und Kosten sind verschiedene Größen; Kosten sind nur der betriebsbedingte, periodengerechte Werteverzehr."
+          {
+            "frage": "Ist die Tilgung eines Darlehens Aufwand oder Kosten?",
+            "antwort": "Weder noch. Sie ist eine Auszahlung, verringert aber nur die Schuld; es wird kein Wert verzehrt.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ist der Kauf von Rohlingen auf Ziel noch kein Aufwand?",
+            "antwort": "Weil die Rohlinge zunächst als Bestand ins Lager gehen. Aufwand und Kosten entstehen erst, wenn sie verbraucht werden.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Manche Aufwendungen haben nichts mit der Veredelung zu tun.",
-          "Die KLR darf eigene Werte ansetzen."
+        "darstellung": "vollfassung",
+        "ziel": "Du grenzt neutralen Aufwand ab, ergänzt kalkulatorische Kosten und leitest aus dem Aufwand der Finanzbuchhaltung die Kosten einer Periode ab.",
+        "vorwissen_kurz": "Nicht jeder Aufwand gehört in die Kalkulation, und nicht alle Kosten stehen in der Buchführung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Herausnehmen und hinzufügen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Aus dem Aufwand der Finanzbuchhaltung wird zuerst der {{begriff:neutraler-aufwand|neutrale Aufwand}} herausgenommen. Er ist betriebsfremd (etwa Spenden), periodenfremd (etwa eine Steuernachzahlung für das Vorjahr) oder außerordentlich (etwa ein Brandschaden). Was übrig bleibt, sind die **Grundkosten**. Dann kommen {{begriff:kalkulatorische-kosten|kalkulatorische Kosten}} hinzu: **Zusatzkosten**, denen kein Aufwand gegenübersteht, etwa Zinsen auf das Eigenkapital, und **Anderskosten**, die in anderer Höhe angesetzt werden als in der Buchführung, etwa eine Abschreibung auf Basis des Wiederbeschaffungswerts.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kosten im März",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Posten",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Aufwand laut Finanzbuchhaltung",
+                  "",
+                  "50.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− neutraler Aufwand",
+                  "Spende an den Jugendverein 800 €",
+                  ""
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "Gewerbesteuernachzahlung für das Vorjahr 4.200 €",
+                  "− 5.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Grundkosten",
+                  "",
+                  "45.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Zusatzkosten",
+                  "kalkulatorische Zinsen auf das Eigenkapital",
+                  "+ 2.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Kosten",
+                  "",
+                  "47.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Die Kosten sind um 3.000 € niedriger als der Aufwand. Ohne die Abgrenzung wäre die Kalkulation durch die Steuernachzahlung verzerrt und würde die Eigenkapitalzinsen nicht berücksichtigen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Warum Zinsen auf das Eigenkapital? Hätten die Gesellschafter ihr Geld nicht in MAKEL Studio, sondern in eine Geldanlage gesteckt, bekämen sie dafür Zinsen. Dieser entgangene Ertrag ist ein echter Einsatz für den Betrieb, auch wenn er in der Buchführung nicht erscheint. Damit die Preise langfristig auch diese Kapitalnutzung decken, rechnet die KLR ihn als Zusatzkosten ein.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Abgrenzungsrechnung trennt den Aufwand in zwei Teile. Neutraler Aufwand ist betriebsfremd (Spende), periodenfremd (Steuernachzahlung für ein Vorjahr) oder außerordentlich (Brandschaden); er wird nicht in die Kosten übernommen. Zweckaufwand ist betrieblich, periodengerecht und gewöhnlich; er geht als Grundkosten in die KLR. Zusätzlich setzt die KLR kalkulatorische Kosten an: Zusatzkosten, denen kein Aufwand gegenübersteht (etwa kalkulatorische Zinsen auf das Eigenkapital), und Anderskosten, die anders bewertet werden als der Aufwand (etwa kalkulatorische Abschreibung nach Wiederbeschaffungswert). Kosten = Grundkosten + kalkulatorische Kosten. Entsprechend werden Erträge in neutrale Erträge und Leistungen getrennt.",
-        "beispiele": [
-          "Aufwand 50.000 €, davon 5.000 € neutral, dazu 2.000 € kalkulatorische Zusatzkosten: Kosten 47.000 €.",
-          "Gewinn aus dem Verkauf einer alten Maschine: neutraler Ertrag, keine Leistung."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Anderskosten bei der Abschreibung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Buchführung schreibt die Stickmaschine von den Anschaffungskosten ab, 2.600 € im Jahr. Die KLR rechnet mit dem Wiederbeschaffungswert, weil die Ersatzmaschine teurer sein wird: 3.000 € im Jahr. Die Differenz von 400 € erhöht die Kosten gegenüber dem Aufwand. Solche Anderskosten werden in die Überleitung einbezogen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für den Monat März weist die Finanzbuchhaltung 50.000 € Aufwand aus. Darin stecken 5.000 € Spende und Steuernachzahlung für das Vorjahr (neutral). Sandra Koslowski setzt außerdem 2.000 € kalkulatorische Zinsen auf das eingesetzte Eigenkapital an. Kosten der Periode: 50.000 − 5.000 + 2.000 = 47.000 €.",
-        "typische_fehler": "Zusatzkosten noch einmal im Aufwand suchen oder neutralen Aufwand in die Kosten übernehmen.",
         "verstaendnisfragen": [
-          "Nenne die drei Arten neutralen Aufwands. Betriebsfremd, periodenfremd, außerordentlich.",
-          "Was sind Zusatzkosten? Kalkulatorische Kosten, denen kein Aufwand gegenübersteht."
-        ],
-        "pruefungsbezug": "Kosten aus Aufwand mit neutralem Aufwand und kalkulatorischen Kosten berechnen.",
-        "merksatz": "Kosten = Aufwand − neutraler Aufwand + kalkulatorische Zusatzkosten (± Anderskosten-Differenz)."
+          {
+            "frage": "Aufwand 80.000 €, davon 6.000 € neutral; kalkulatorische Zusatzkosten 3.500 €. Wie hoch sind die Kosten?",
+            "antwort": "80.000 € − 6.000 € + 3.500 € = 77.500 €.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum ist die Gewerbesteuernachzahlung für das Vorjahr neutraler Aufwand?",
+            "antwort": "Weil sie einen anderen Zeitraum betrifft. Sie gehört nicht zu den Kosten des März, auch wenn sie im März gebucht wird.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Ergebnis = Erträge − Aufwendungen bzw. Leistungen − Kosten.",
-          "Neutrale Posten gehören nicht zum Betriebsergebnis."
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest das Gesamtergebnis in neutrales Ergebnis und Betriebsergebnis über und interpretierst, welcher Teil des Gewinns aus der eigentlichen Tätigkeit stammt.",
+        "vorwissen_kurz": "Ein hoher Jahresüberschuss klingt gut. Ob die eigentliche Tätigkeit profitabel ist, zeigt erst die Trennung der Ergebnisse.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Woher der Gewinn kommt",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Gesamtergebnis der Finanzbuchhaltung setzt sich aus zwei Teilen zusammen. Das **neutrale Ergebnis** umfasst alle Erträge und Aufwendungen, die nicht zur eigentlichen Tätigkeit gehören, etwa den Gewinn aus dem Verkauf einer alten Maschine oder eine Spende. Das **Betriebsergebnis** ist die Differenz aus Leistungen und Kosten der eigentlichen Tätigkeit. Nur das Betriebsergebnis zeigt, ob das Kerngeschäft wirtschaftlich ist.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Geschäftsjahr von MAKEL Studio",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ergebnisteil",
+              "Erträge/Leistungen",
+              "Aufwand/Kosten",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gesamtergebnis (Finanzbuchhaltung)",
+                  "612.000 €",
+                  "592.000 €",
+                  "20.000 €"
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "davon neutral: Verkauf der alten Druckpresse über Buchwert",
+                  "21.000 €",
+                  "",
+                  ""
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "davon neutral: Spenden, Nachzahlungen",
+                  "",
+                  "5.000 €",
+                  ""
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Abgrenzung kalkulatorischer Kosten",
+                  "",
+                  "2.000 €",
+                  ""
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Betriebsergebnis (KLR)",
+                  "591.000 €",
+                  "589.000 €",
+                  "2.000 €"
+                ],
+                "mono": [
+                  3
+                ]
+              }
+            ],
+            "fazit": "Von 20.000 € Jahresüberschuss stammen nur 2.000 € aus dem Kerngeschäft. Der Rest kommt vor allem aus dem einmaligen Verkauf der alten Presse.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Geschäftsführung ist das eine wichtige Warnung. Im nächsten Jahr gibt es keine alte Presse mehr zu verkaufen. Bleibt das Kerngeschäft bei 2.000 €, sinkt der Jahresüberschuss deutlich. Die KLR zeigt deshalb, wo angesetzt werden muss: bei Preisen, Kosten oder Auslastung.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "In der Ergebnistabelle wird das Gesamtergebnis der Finanzbuchhaltung in zwei Teile zerlegt: das neutrale Ergebnis (neutrale Erträge − neutrale Aufwendungen, korrigiert um die Differenz aus kalkulatorischen Kosten und entsprechendem Aufwand) und das Betriebsergebnis (Leistungen − Kosten). Bilanzieller Gewinn und Betriebsergebnis können deshalb deutlich voneinander abweichen. Das Betriebsergebnis zeigt, ob die eigentliche Tätigkeit wirtschaftlich ist; das Gesamtergebnis, was dem Unternehmen insgesamt geblieben ist.",
-        "beispiele": [
-          "Gesamtergebnis 20.000 €, darin 15.000 € Gewinn aus einem Maschinenverkauf: Das Betriebsergebnis ist deutlich schwächer.",
-          "Hohe kalkulatorische Zinsen senken das Betriebsergebnis, nicht aber den Jahresüberschuss."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Die Ergebnistabelle",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Praxis wird die Überleitung in einer Ergebnistabelle dargestellt. Sie zeigt in getrennten Spalten die Zahlen der Finanzbuchhaltung, die Abgrenzung neutraler Posten, die Korrektur kalkulatorischer Kosten und das Betriebsergebnis. So ist jede Differenz zwischen den beiden Rechnungskreisen nachvollziehbar.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die GuV zeigt 20.000 € Jahresüberschuss. Die Ergebnistabelle zeigt: 15.000 € stammen aus dem Verkauf einer alten Maschine über Buchwert (neutraler Ertrag), 3.000 € aus kalkulatorischen Korrekturen. Das Betriebsergebnis der Veredelung beträgt nur 2.000 €. Tobias Renner sieht: Die Veredelung trägt sich knapp.",
-        "typische_fehler": "Aus einem guten Jahresüberschuss auf eine wirtschaftliche Produktion schließen.",
         "verstaendnisfragen": [
-          "Woraus setzt sich das Gesamtergebnis zusammen? Aus neutralem Ergebnis und Betriebsergebnis.",
-          "Warum kann der Jahresüberschuss hoch und das Betriebsergebnis niedrig sein? Weil neutrale Erträge das Gesamtergebnis erhöhen, aber nicht zur betrieblichen Leistung gehören."
-        ],
-        "pruefungsbezug": "Abweichungen zwischen Gesamt- und Betriebsergebnis erklären.",
-        "merksatz": "Gesamtergebnis = neutrales Ergebnis + Betriebsergebnis; nur das Betriebsergebnis zeigt die Wirtschaftlichkeit der eigentlichen Tätigkeit."
+          {
+            "frage": "Jahresüberschuss 20.000 €, Betriebsergebnis 2.000 €. Was folgt daraus?",
+            "antwort": "Der größte Teil des Gewinns stammt aus neutralen Posten, etwa einem Maschinenverkauf. Das Kerngeschäft trägt sich nur knapp.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ist das Betriebsergebnis für die Steuerung aussagekräftiger als der Jahresüberschuss?",
+            "antwort": "Weil es nur die eigentliche Tätigkeit zeigt. Einmalige oder betriebsfremde Posten verzerren den Jahresüberschuss und lassen sich nicht wiederholen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

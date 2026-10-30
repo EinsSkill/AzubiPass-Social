@@ -150,3 +150,14 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K05:** Rüstkosten 75 € je Los; Losgrößentabelle Kyoto (Optimum 300), flaches Optimum; Formel mit Einheitenfehler-Fall; tatsächliche Lose mit Saison, Lagerplatz.
 - **K06:** Prüfmerkmale mit Toleranz und Prüfzeitpunkten, Rügepflicht; Soll-Ist 400 Shirts (3,5 %, Nacharbeit/Ausschuss), Stichprobenaussage; 5-Warum am Motivfehler; Maßnahmenplan mit Wirksamkeitskontrolle, ISO 9001.
 - **K07:** Rationalisierung mit Prozentveränderung und Amortisation; Fixkostendegression mit Grenzen/sprungfixen Kosten; Gewinnschwelle mit Preis-/Kostenvariante; **K19 Teil 2:** Make-or-buy Etiketten mit kritischer Menge 7.500 und Nachhaltigkeit aus konkreten Transport- und Materialflüssen ohne geschätzte Emissionszahl.
+
+## IK LF8 · Wertschöpfungsprozesse erfolgsorientiert steuern
+
+- **K01:** Fragen nach Rechnungskreis; Auszahlung/Aufwand/Kosten an sechs Vorgängen; Abgrenzung März 50.000 → 47.000 €, Anderskosten; Überleitung Jahresüberschuss 20.000 € zu Betriebsergebnis 2.000 € (Abgrenzung neutraler und kalkulatorischer Posten nachvollziehbar).
+- **K02:** Kostenarten mit Anteilen; Eventauftrag Einzel-/Sondereinzel-/Gemeinkosten, unechte Gemeinkosten; Druckabteilung fix/variabel je Stück; Vier-Felder-Einordnung.
+- **K03:** Kostenstellen MAKEL; vollständiger BAB Oktober (40.000 € primär), Umlage Instandhaltung über Wartungsstunden, Zuschlagssätze MGK 10 %, FGK 125 %, VwGK ≈ 7,5 %, VtGK ≈ 3,6 %.
+- **K04:** Verzerrung des Lohnzuschlags an zwei Aufträgen; Laufstunden 1.200; Maschinenstundensatz 12,50 € mit Auslastungseffekt; Auftragskalkulation mit Restgemeinkosten und Vergleich.
+- **K05:** Zuschlagskalkulation Vereinsauftrag mit Sondereinzelkosten (16,89 €/Stk.), Nachbestellung; Unterdeckung Q4 3.600 € mit Ursache; Sonderpreis 15 € unter Vollkosten mit DB 1.480 €.
+- **K06:** DB-Rechnung Kyoto Oktober; mehrstufig mit abbaubaren Fixkosten (Streichen der Taschen kostet 300 €); Preisuntergrenzen mit Annahmen; Zusatzauftrag mit Druckvorlage und Nebenbedingungen.
+- **K07:** Dezember-Engpass mit Mindest-/Höchstmengen; relativer DB; Programm 6.792 € (vs. 4.800 € nach Stück-DB); Robustheit, Verbund, Samstagsschicht lohnt sich (960 € vs. 420 €).
+- **K08:** Druckpressen A/B: kritische Menge 3.000, Rentabilität 15/20 % mit Inkrementalbetrachtung, Amortisation 5,0/3,75 Jahre, Empfehlung B mit Szenarien.

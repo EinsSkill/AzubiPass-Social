@@ -6,86 +6,547 @@
   "untertitel": "Wo die Gemeinkosten entstehen: Kostenstellen bilden, im Betriebsabrechnungsbogen verteilen, Hilfskostenstellen umlegen und Zuschlagssätze ermitteln.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Gemeinkosten lassen sich Produkten nicht direkt zuordnen (Kapitel 2).",
-          "Ein Unternehmen ist in Bereiche gegliedert."
+        "darstellung": "vollfassung",
+        "ziel": "Du gliederst einen Betrieb in Haupt- und Hilfskostenstellen, ordnest Tätigkeiten zu und erklärst, welche Aufgabe der Betriebsabrechnungsbogen in der Kostenrechnung hat.",
+        "vorwissen_kurz": "Gemeinkosten lassen sich keinem Produkt direkt zuordnen. Wohl aber lässt sich feststellen, in welchem Bereich des Betriebs sie entstehen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo die Gemeinkosten entstehen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:kostenstellenrechnung|Kostenstellenrechnung}} ist die zweite Stufe der KLR. Sie teilt den Betrieb in **Kostenstellen**, also Verantwortungsbereiche, und ermittelt, wie viel Gemeinkosten in jeder entstehen. **Hauptkostenstellen** wie Material, Fertigung, Verwaltung und Vertrieb arbeiten direkt am Leistungsprozess. **Hilfskostenstellen** wie die Instandhaltung leisten für andere Kostenstellen. Das Werkzeug ist der {{begriff:bab|Betriebsabrechnungsbogen}} (BAB): eine Tabelle, die die Gemeinkosten auf die Stellen verteilt und daraus Zuschlagssätze für die Kalkulation ableitet.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kostenstellen von MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kostenstelle",
+              "Art",
+              "Tätigkeiten"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Instandhaltung",
+                  "Hilfskostenstelle",
+                  "Wartung und Reparatur der Stick- und Druckmaschinen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Material",
+                  "Hauptkostenstelle",
+                  "Einkauf der Rohlinge, Wareneingang, Lager"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigung",
+                  "Hauptkostenstelle",
+                  "Sticken, Drucken, Kontrolle, Verpacken"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verwaltung",
+                  "Hauptkostenstelle",
+                  "Geschäftsführung, Buchhaltung, Personal"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb",
+                  "Hauptkostenstelle",
+                  "Kundenberatung, Onlineshop, Versand"
+                ]
+              }
+            ],
+            "fazit": "Jede Kostenstelle hat eine verantwortliche Person. So lässt sich nicht nur sagen, wo Kosten entstehen, sondern auch, wer sie beeinflussen kann.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Gliederung richtet sich nach dem Zweck. MAKEL Studio könnte die Fertigung weiter in Stickerei und Druckerei teilen, wenn die Geschäftsführung wissen will, welcher Bereich teurer arbeitet. Mehr Kostenstellen geben genauere Informationen, machen die Abrechnung aber aufwendiger.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Kostenstellenrechnung fragt: Wo sind die Gemeinkosten entstanden? Kostenstellen sind betriebliche Bereiche, deren Kosten getrennt erfasst werden, meist entlang der Verantwortung. Hauptkostenstellen arbeiten unmittelbar an den Produkten oder für den Absatz: Material, Fertigung, Verwaltung, Vertrieb. Hilfskostenstellen erbringen Leistungen für andere Kostenstellen, etwa Instandhaltung oder ein gemeinsamer Fuhrpark. Der Betriebsabrechnungsbogen (BAB) ist die Tabelle, in der die Gemeinkosten auf die Kostenstellen verteilt werden; am Ende stehen Zuschlagssätze für die Kalkulation.",
-        "beispiele": [
-          "Hauptkostenstellen bei MAKEL: Material (Einkauf, Lager), Fertigung (Druck, Stick), Verwaltung, Vertrieb.",
-          "Hilfskostenstelle: Instandhaltung, die die Maschinen der Fertigung und den Lieferwagen des Vertriebs wartet."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Die drei Stufen der KLR",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Kostenartenrechnung fragt, welche Kosten entstanden sind. Die Kostenstellenrechnung fragt, wo sie entstanden sind. Die Kostenträgerrechnung fragt, wofür sie entstanden sind — für welchen Auftrag oder welches Produkt. Der BAB verbindet die zweite mit der dritten Stufe, indem er die Zuschlagssätze liefert.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner möchte wissen, welche Bereiche wie viel Gemeinkosten verursachen. Sandra Koslowski legt für MAKEL vier Hauptkostenstellen und eine Hilfskostenstelle ‚Instandhaltung‘ an und richtet einen BAB ein.",
-        "typische_fehler": "Einzelkosten in den BAB aufnehmen — dort stehen nur Gemeinkosten.",
         "verstaendnisfragen": [
-          "Welche Frage beantwortet die Kostenstellenrechnung? Wo sind die Gemeinkosten entstanden?",
-          "Was unterscheidet Haupt- und Hilfskostenstellen? Hauptkostenstellen arbeiten für Produkte oder Absatz, Hilfskostenstellen für andere Kostenstellen."
-        ],
-        "pruefungsbezug": "Kostenstellen bilden und Haupt- von Hilfskostenstellen unterscheiden.",
-        "merksatz": "Kostenstellen zeigen, wo Gemeinkosten entstehen; der BAB verteilt sie und liefert Zuschlagssätze."
+          {
+            "frage": "Warum ist die Instandhaltung eine Hilfskostenstelle?",
+            "antwort": "Weil sie nicht direkt am Leistungsprozess arbeitet, sondern Leistungen für andere Kostenstellen erbringt, etwa Wartung für die Fertigung.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Wozu dient der BAB?",
+            "antwort": "Er verteilt die Gemeinkosten auf die Kostenstellen und liefert die Zuschlagssätze, mit denen die Gemeinkosten in der Kalkulation auf Aufträge verrechnet werden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Manche Gemeinkosten lassen sich per Beleg einer Kostenstelle zuordnen.",
-          "Andere wie Miete betreffen mehrere Stellen."
+        "darstellung": "vollfassung",
+        "ziel": "Du verteilst Gemeinkosten im BAB als Stelleneinzelkosten direkt und als Stellengemeinkosten über verursachungsnahe Schlüssel und prüfst, dass die Summe erhalten bleibt.",
+        "vorwissen_kurz": "Manche Gemeinkosten lassen sich einer Kostenstelle direkt zuordnen, andere müssen über einen Schlüssel aufgeteilt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Direkt oder per Schlüssel auf die Stellen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der primären Verteilung werden die Gemeinkosten einer Periode auf die Kostenstellen gebracht. **Stelleneinzelkosten** lassen sich einer Stelle direkt zuordnen, etwa das Gehalt einer Mitarbeiterin, die nur im Einkauf arbeitet. **Stellengemeinkosten** betreffen mehrere Stellen und werden über einen Schlüssel verteilt, der möglichst der Verursachung entspricht: Raumkosten nach Fläche, Energie nach installierter Leistung oder Zählerstand. Am Ende muss die Summe aller Stellen der Summe der verteilten Kosten entsprechen.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der BAB für Oktober, primäre Verteilung",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Gemeinkostenart",
+              "Schlüssel",
+              "Instandh.",
+              "Material",
+              "Fertigung",
+              "Verwaltung",
+              "Vertrieb",
+              "Summe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gehälter, Hilfslöhne",
+                  "direkt",
+                  "2.000 €",
+                  "1.500 €",
+                  "6.000 €",
+                  "4.500 €",
+                  "2.000 €",
+                  "16.000 €"
+                ],
+                "mono": [
+                  7
+                ]
+              },
+              {
+                "zellen": [
+                  "Raumkosten",
+                  "m² 20 : 100 : 300 : 50 : 30",
+                  "320 €",
+                  "1.600 €",
+                  "4.800 €",
+                  "800 €",
+                  "480 €",
+                  "8.000 €"
+                ],
+                "mono": [
+                  7
+                ]
+              },
+              {
+                "zellen": [
+                  "Energie",
+                  "kW 2 : 3 : 30 : 3 : 2",
+                  "200 €",
+                  "300 €",
+                  "3.000 €",
+                  "300 €",
+                  "200 €",
+                  "4.000 €"
+                ],
+                "mono": [
+                  7
+                ]
+              },
+              {
+                "zellen": [
+                  "Abschreibungen",
+                  "Anlagenverzeichnis",
+                  "480 €",
+                  "600 €",
+                  "9.200 €",
+                  "1.200 €",
+                  "520 €",
+                  "12.000 €"
+                ],
+                "mono": [
+                  7
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "",
+                  "3.000 €",
+                  "4.000 €",
+                  "23.000 €",
+                  "6.800 €",
+                  "3.200 €",
+                  "40.000 €"
+                ],
+                "mono": [
+                  7
+                ]
+              }
+            ],
+            "fazit": "Raumkosten: 8.000 € ÷ 500 m² = 16 € je m². Energie: 4.000 € ÷ 40 kW = 100 € je kW. Die Summe von 40.000 € bleibt erhalten.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Schlüssel ist eine Annahme. Die Energie nach installierter Leistung zu verteilen, setzt voraus, dass alle Maschinen ähnlich lange laufen. Hat die Fertigung eigene Stromzähler, ist der gemessene Verbrauch genauer. Wo ein besserer Schlüssel ohne großen Aufwand verfügbar ist, wird er verwendet.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Bei der primären Verteilung werden die Gemeinkosten aus der Kostenartenrechnung auf die Kostenstellen gebracht. Kostenstelleneinzelkosten lassen sich per Beleg direkt zuordnen, etwa das Gehalt der Lagerleitung zur Materialstelle. Kostenstellengemeinkosten werden über Verteilungsschlüssel aufgeteilt, die der Verursachung möglichst nahekommen: Raumkosten nach Quadratmetern, Energie nach installierter Leistung oder Zählerständen, Versicherung nach Anlagewerten, Sozialkosten nach Löhnen. Kontrolle: Die Summe der verteilten Beträge muss den Ausgangsbetrag ergeben.",
-        "beispiele": [
-          "Raumkosten 10.000 € bei 100 m² und 300 m² von 400 m² gesamt: 2.500 € und 7.500 €.",
-          "Gehalt der Lagerleitung: direkt der Materialstelle zugeordnet."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Abschreibungen aus dem Anlagenverzeichnis",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Abschreibungen lassen sich oft direkt zuordnen, weil im Anlagenverzeichnis steht, in welcher Kostenstelle eine Maschine steht. Die Stickmaschinen gehören zur Fertigung, der Laptop der Buchhaltung zur Verwaltung. Deshalb sind Abschreibungen häufig Stelleneinzelkosten.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Raumkosten von 10.000 € im Quartal verteilt Sandra nach Fläche: Lager 100 m², Veredelung 300 m² (Verwaltung und Vertrieb sitzen in einem angemieteten Büro mit eigener Miete). 10.000 € ÷ 400 m² = 25 € je m²: Lager 2.500 €, Veredelung 7.500 €. Summe 10.000 € — stimmt.",
-        "typische_fehler": "Den Schlüssel auf eine falsche Gesamtgröße beziehen, sodass die Summe nicht aufgeht.",
         "verstaendnisfragen": [
-          "Wie werden Raumkosten üblicherweise verteilt? Nach Quadratmetern.",
-          "Wie kontrolliert man eine Verteilung? Die Summe der verteilten Beträge muss den Ausgangsbetrag ergeben."
-        ],
-        "pruefungsbezug": "Gemeinkosten mit Verteilungsschlüsseln verteilen und kontrollieren.",
-        "merksatz": "Primäre Verteilung: Stelleneinzelkosten direkt, Stellengemeinkosten über verursachungsnahe Schlüssel; die Summe bleibt gleich."
+          {
+            "frage": "Energiekosten von 4.000 € werden nach installierter Leistung verteilt: Fertigung 30 kW, Material 5 kW, Verwaltung 5 kW. Welchen Betrag trägt die Fertigung?",
+            "antwort": "4.000 € ÷ 40 kW = 100 € je kW; 30 kW × 100 € = 3.000 €.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum muss die Summe der Kostenstellen der Summe der Kostenarten entsprechen?",
+            "antwort": "Weil die Verteilung nur Kosten zuordnet, aber keine schafft oder streicht. Eine Abweichung zeigt einen Rechenfehler.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Hilfskostenstellen arbeiten für Hauptkostenstellen.",
-          "Produkte durchlaufen nur Hauptkostenstellen."
+        "darstellung": "vollfassung",
+        "ziel": "Du legst die Kosten einer Hilfskostenstelle nach ihren Leistungen auf die Hauptkostenstellen um und vermeidest, umgelegte Beträge doppelt zu zählen.",
+        "vorwissen_kurz": "Hilfskostenstellen erbringen Leistungen für andere Stellen. Ihre Kosten sollen am Ende dort stehen, wo die Leistung genutzt wurde.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Instandhaltung verteilen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der sekundären Verteilung, der **innerbetrieblichen Leistungsverrechnung**, werden die Kosten der Hilfskostenstellen auf die Hauptkostenstellen umgelegt. Der Schlüssel ist die tatsächlich bezogene Leistung, bei der Instandhaltung etwa die Wartungsstunden. Nach der Umlage steht die Hilfskostenstelle auf null; ihre Kosten sind in den Hauptkostenstellen enthalten. Die Gesamtsumme bleibt gleich.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Umlage im Oktober",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Instandhaltung hat im Oktober 50 Wartungsstunden geleistet. Ihre Kosten von 3.000 € werden danach verteilt: 3.000 € ÷ 50 h = 60 € je Stunde.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Instandh.",
+              "Material",
+              "Fertigung",
+              "Verwaltung",
+              "Vertrieb",
+              "Summe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Summe primäre Verteilung",
+                  "3.000 €",
+                  "4.000 €",
+                  "23.000 €",
+                  "6.800 €",
+                  "3.200 €",
+                  "40.000 €"
+                ],
+                "mono": [
+                  6
+                ]
+              },
+              {
+                "zellen": [
+                  "Wartungsstunden",
+                  "",
+                  "5",
+                  "40",
+                  "3",
+                  "2",
+                  "50"
+                ],
+                "mono": [
+                  6
+                ]
+              },
+              {
+                "zellen": [
+                  "Umlage",
+                  "− 3.000 €",
+                  "+ 300 €",
+                  "+ 2.400 €",
+                  "+ 180 €",
+                  "+ 120 €",
+                  "0 €"
+                ],
+                "mono": [
+                  6
+                ]
+              },
+              {
+                "zellen": [
+                  "Gemeinkosten nach Umlage",
+                  "0 €",
+                  "4.300 €",
+                  "25.400 €",
+                  "6.980 €",
+                  "3.320 €",
+                  "40.000 €"
+                ],
+                "mono": [
+                  6
+                ]
+              }
+            ],
+            "fazit": "Die Fertigung trägt den größten Teil der Instandhaltung, weil dort die Maschinen stehen. Die Gesamtsumme bleibt 40.000 €.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Umlage macht sichtbar, was die Maschinen der Fertigung wirklich kosten: Zu den eigenen Gemeinkosten von 23.000 € kommen 2.400 € Wartung. Wer nur die primäre Verteilung betrachtet, unterschätzt die Kosten der Fertigung und überschätzt die der Instandhaltung, die ja gar nicht selbst am Produkt arbeitet.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Weil Zuschlagssätze nur für Hauptkostenstellen gebildet werden, müssen die Kosten der Hilfskostenstellen auf die Hauptkostenstellen umgelegt werden (sekundäre Verteilung oder innerbetriebliche Leistungsverrechnung). Der Schlüssel richtet sich nach der Leistung, die die Hilfskostenstelle für die anderen erbringt, etwa Wartungsstunden. Nach der Umlage steht die Hilfskostenstelle auf null; die Gesamtsumme der Gemeinkosten bleibt unverändert. Erbringen Hilfskostenstellen auch Leistungen füreinander, ist eine mehrstufige Umlage nötig; die gewählte Reihenfolge oder Methode wird offengelegt.",
-        "beispiele": [
-          "Instandhaltung 6.000 €: 40 Wartungsstunden für die Fertigung, 10 für den Vertrieb (Lieferwagen) → 4.800 € und 1.200 €.",
-          "Nach der Umlage: Instandhaltung 0 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Gegenseitige Leistungen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Leisten mehrere Hilfskostenstellen auch füreinander, etwa die Instandhaltung für die Kantine und die Kantine für die Instandhaltung, wird die Umlage aufwendiger. Dann gibt es Verfahren, die solche gegenseitigen Leistungen schrittweise oder gleichzeitig berücksichtigen. Bei MAKEL Studio mit nur einer Hilfskostenstelle genügt die einfache Umlage.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Instandhaltung hat im Quartal 6.000 € Kosten. Sie hat 40 Stunden an den Maschinen der Veredelung und 10 Stunden am Lieferwagen des Vertriebs gearbeitet. Sandra legt um: Fertigung 4.800 €, Vertrieb 1.200 €. Die Summe aller Gemeinkosten im BAB bleibt gleich.",
-        "typische_fehler": "Umgelegte Beträge noch einmal zu den Gesamtgemeinkosten addieren — das wäre eine Doppelzählung.",
         "verstaendnisfragen": [
-          "Warum werden Hilfskostenstellen umgelegt? Weil nur Hauptkostenstellen Zuschlagssätze für Produkte bilden.",
-          "Verändert die Umlage die Gesamtsumme der Gemeinkosten? Nein, sie verschiebt nur die Zuordnung."
-        ],
-        "pruefungsbezug": "Hilfskostenstellen nach Leistungsbeziehungen umlegen, ohne Doppelzählung.",
-        "merksatz": "Hilfskostenstellen werden nach ihren Leistungen auf Hauptkostenstellen umgelegt; die Gesamtsumme bleibt gleich."
+          {
+            "frage": "Warum steht die Instandhaltung nach der Umlage auf null?",
+            "antwort": "Weil ihre gesamten Kosten auf die Hauptkostenstellen verteilt wurden, die ihre Leistungen bezogen haben.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie hoch wäre die Umlage auf die Fertigung, wenn die Instandhaltung 4.000 € gekostet hätte?",
+            "antwort": "4.000 € ÷ 50 h = 80 € je Stunde; 40 h × 80 € = 3.200 €.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Gemeinkosten sollen in die Kalkulation der Produkte.",
-          "Zuschlagssätze verbinden Gemein- und Einzelkosten."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest aus dem BAB die Zuschlagssätze für Material-, Fertigungs-, Verwaltungs- und Vertriebsgemeinkosten und erklärst, was ein hoher Fertigungsgemeinkostenzuschlag über den Betrieb aussagt.",
+        "vorwissen_kurz": "Am Ende des BAB stehen die Gemeinkosten je Hauptkostenstelle. Für die Kalkulation werden sie in Prozentsätze umgerechnet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Betrag zum Prozentsatz",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:zuschlagssatz|Zuschlagssatz}} setzt die Gemeinkosten einer Stelle ins Verhältnis zu einer Grundlage, die sich dem Auftrag direkt zuordnen lässt. Die Materialgemeinkosten werden auf die Materialeinzelkosten bezogen, die Fertigungsgemeinkosten auf die Fertigungslöhne, Verwaltungs- und Vertriebsgemeinkosten auf die Herstellkosten. Mit diesen Sätzen werden in der Kalkulation die Gemeinkosten auf jeden einzelnen Auftrag verteilt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Zuschlagssätze für Oktober",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Materialeinzelkosten im Oktober 43.000 €, Fertigungslöhne 20.320 €.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stelle",
+              "Gemeinkosten",
+              "Grundlage",
+              "Zuschlagssatz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Material",
+                  "4.300 €",
+                  "MEK 43.000 €",
+                  "10,0 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigung",
+                  "25.400 €",
+                  "Fertigungslöhne 20.320 €",
+                  "125,0 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Herstellkosten",
+                  "",
+                  "43.000 + 4.300 + 20.320 + 25.400",
+                  "93.020 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verwaltung",
+                  "6.980 €",
+                  "Herstellkosten 93.020 €",
+                  "≈ 7,5 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb",
+                  "3.320 €",
+                  "Herstellkosten 93.020 €",
+                  "≈ 3,6 %"
+                ]
+              }
+            ],
+            "fazit": "Auf jeden Euro Fertigungslohn kommen 1,25 € Fertigungsgemeinkosten. Das zeigt, wie stark die Fertigung von Maschinen, Raum und Energie geprägt ist.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Fertigungsgemeinkostenzuschlag über 100 % ist typisch für maschinenintensive Betriebe. Er hat aber eine Schwäche: Ein Auftrag mit viel Handarbeit und wenig Maschinenzeit bekommt über den Lohn viele Maschinenkosten zugerechnet, die er gar nicht verursacht. Deshalb rechnen manche Betriebe zusätzlich mit Maschinenstundensätzen, die die Maschinenkosten nach der tatsächlichen Laufzeit verteilen.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Am Ende des BAB stehen die Gemeinkosten jeder Hauptkostenstelle. Daraus werden Zuschlagssätze gebildet, indem man sie auf eine Zuschlagsgrundlage bezieht: Materialgemeinkosten auf Materialeinzelkosten, Fertigungsgemeinkosten auf Fertigungslöhne (Fertigungseinzelkosten), Verwaltungs- und Vertriebsgemeinkosten auf die Herstellkosten des Umsatzes. Zuschlagssatz = Gemeinkosten der Stelle ÷ Zuschlagsgrundlage × 100. Ein Zuschlagssatz unterstellt, dass die Gemeinkosten proportional zur Grundlage entstehen — bei maschinenintensiver Fertigung trifft das oft nicht zu (Kapitel 4).",
-        "beispiele": [
-          "Materialgemeinkosten 3.000 €, Materialeinzelkosten 30.000 €: MGK-Zuschlag 10 %.",
-          "Fertigungsgemeinkosten 18.000 €, Fertigungslöhne 12.000 €: FGK-Zuschlag 150 %."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Zuschlagssätze und Kalkulation",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mit den Zuschlagssätzen kalkuliert MAKEL Studio jeden Auftrag: Materialeinzelkosten plus 10 % MGK, Fertigungslöhne plus 125 % FGK ergeben die Herstellkosten; darauf kommen 7,5 % Verwaltung und 3,6 % Vertrieb. Das Ergebnis sind die Selbstkosten des Auftrags — Ausgangspunkt für den Angebotspreis.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Nach der Umlage hat die Fertigung 18.000 € Gemeinkosten bei 12.000 € Fertigungslöhnen: Zuschlag 150 %. Tobias Renner stutzt: ‚Auf jeden Euro Lohn kommen 1,50 € Gemeinkosten?‘ Sandra erklärt: Die Maschinen verursachen den Großteil — ein Maschinenstundensatz wäre genauer.",
-        "typische_fehler": "Zuschlagssätze auf die falsche Grundlage beziehen.",
         "verstaendnisfragen": [
-          "Wie berechnet man einen Zuschlagssatz? Gemeinkosten der Stelle ÷ Zuschlagsgrundlage × 100.",
-          "Worauf werden die Fertigungsgemeinkosten bezogen? Auf die Fertigungslöhne."
-        ],
-        "pruefungsbezug": "Zuschlagssätze aus dem BAB berechnen und ihre Aussagekraft beurteilen.",
-        "merksatz": "Zuschlagssatz = Gemeinkosten ÷ Zuschlagsgrundlage × 100; MGK auf MEK, FGK auf Fertigungslöhne, VwGK und VtGK auf Herstellkosten."
+          {
+            "frage": "Fertigungsgemeinkosten 18.000 €, Fertigungslöhne 12.000 €. Wie hoch ist der Zuschlagssatz?",
+            "antwort": "18.000 € ÷ 12.000 € × 100 = 150 %.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum werden Verwaltungs- und Vertriebsgemeinkosten auf die Herstellkosten bezogen?",
+            "antwort": "Weil sie mit keiner Einzelkostenart besonders eng zusammenhängen. Die Herstellkosten sind ein Maß für den gesamten Umfang der Produktion, den Verwaltung und Vertrieb begleiten.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

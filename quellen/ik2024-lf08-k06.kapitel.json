@@ -6,86 +6,481 @@
   "untertitel": "Mit Teilkosten rechnen: was ein Produkt zur Deckung der Fixkosten beiträgt, wo die Preisuntergrenzen liegen und wann sich ein Zusatzauftrag lohnt.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Fixe und variable Kosten kennst du aus Kapitel 2.",
-          "Die Vollkostenrechnung verteilt alle Kosten auf die Produkte (Kapitel 5)."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Deckungsbeitrag je Stück, Gesamtdeckungsbeitrag und Ergebnis in der Teilkostenrechnung und erklärst, warum die fixen Kosten nicht auf das Stück verteilt werden.",
+        "vorwissen_kurz": "Die Vollkostenrechnung verteilt auch fixe Kosten auf jedes Stück. Die Teilkostenrechnung geht einen anderen Weg.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was jedes Stück beiträgt",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:teilkostenrechnung|Teilkostenrechnung}} rechnet einem Produkt nur die Kosten zu, die es selbst verursacht: die variablen Kosten. Was vom Preis darüber hinaus bleibt, ist der {{begriff:deckungsbeitrag|Deckungsbeitrag}}. Er steht zur Deckung der fixen Kosten zur Verfügung; was danach übrig bleibt, ist Gewinn. Die fixen Kosten werden als Block vom gesamten Deckungsbeitrag abgezogen, statt sie auf einzelne Stücke zu verteilen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Hoodie „Kyoto“ im Händlergeschäft",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "je Stück",
+              "Oktober, 600 Stück"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Verkaufspreis an Händler netto",
+                  "43,61 €",
+                  "26.166 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "− variable Kosten (Rohling, Garn, Etikett, Verpackung, Fertigungslohn, Maschinenenergie)",
+                  "26,00 €",
+                  "15.600 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Deckungsbeitrag",
+                  "17,61 €",
+                  "10.566 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "− fixe Kosten der Veredelung im Oktober",
+                  "",
+                  "8.200 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Ergebnis",
+                  "",
+                  "2.366 €"
+                ]
+              }
+            ],
+            "fazit": "Jeder verkaufte Hoodie trägt 17,61 € zur Deckung der Fixkosten bei. Ab dem 466. Hoodie im Monat entsteht Gewinn.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung beantwortet eine andere Frage als die Vollkostenkalkulation. Sie zeigt nicht, was ein Hoodie „insgesamt“ kostet, sondern wie viel jeder zusätzliche verkaufte Hoodie zum Ergebnis beiträgt. Für Entscheidungen über Mengen, Sonderpreise und Programme ist das die wichtigere Zahl.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Teilkostenrechnung (Deckungsbeitragsrechnung) rechnet den Produkten nur die variablen Kosten zu. Der Deckungsbeitrag je Stück ist Verkaufspreis netto minus variable Stückkosten. Er zeigt, wie viel jedes Stück zur Deckung der fixen Kosten und danach zum Gewinn beiträgt. Der Gesamtdeckungsbeitrag ist Stück-Deckungsbeitrag × Absatzmenge. Die fixen Kosten werden nicht auf Stücke verteilt, sondern als Block vom Gesamtdeckungsbeitrag abgezogen: Betriebsergebnis = Gesamtdeckungsbeitrag − Fixkosten.",
-        "beispiele": [
-          "Preis 30 €, variable Kosten 18 €: Stück-DB 12 €.",
-          "200 Stück × 12 € = Gesamt-DB 2.400 €; Fixkosten 1.000 €: Ergebnis 1.400 €."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Gewinnschwelle aus dem Deckungsbeitrag",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Gewinnschwelle ergibt sich, wenn der Gesamtdeckungsbeitrag genau die Fixkosten deckt: 8.200 € ÷ 17,61 € ≈ 465,6 Stück. Ab 466 Hoodies im Monat arbeitet die Veredelung mit Gewinn.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für das Basis-Shirt rechnet Sandra Koslowski: Verkaufspreis netto 30 €, variable Kosten (Rohling, Farbe, Verpackung, Maschinenstrom) 18 €. Jedes Shirt bringt 12 € Deckungsbeitrag. Im Monat werden 200 Stück verkauft: 2.400 € Gesamt-DB. Die dieser Linie zurechenbaren Fixkosten betragen 1.000 €: Ergebnis 1.400 €.",
-        "typische_fehler": "Einen positiven Deckungsbeitrag schon als Gewinn lesen.",
         "verstaendnisfragen": [
-          "Was ist der Stück-Deckungsbeitrag? Preis minus variable Stückkosten.",
-          "Wie ermittelt man das Betriebsergebnis in der Teilkostenrechnung? Gesamtdeckungsbeitrag minus Fixkosten."
-        ],
-        "pruefungsbezug": "Stück- und Gesamtdeckungsbeitrag sowie das Ergebnis berechnen.",
-        "merksatz": "DB je Stück = Preis − variable Stückkosten; Ergebnis = Gesamt-DB − Fixkosten."
+          {
+            "frage": "Preis 30 €, variable Stückkosten 18 €, 200 Stück, Fixkosten 1.000 €. Wie hoch ist das Ergebnis?",
+            "antwort": "DB je Stück 12 €; Gesamt-DB 2.400 €; Ergebnis 2.400 € − 1.000 € = 1.400 €.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum verteilt die Teilkostenrechnung die fixen Kosten nicht auf das Stück?",
+            "antwort": "Weil sie unabhängig von der Menge anfallen. Für die Frage, ob ein zusätzliches Stück das Ergebnis verbessert, zählen nur die Kosten, die das Stück zusätzlich verursacht.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "MAKEL hat mehrere Produktlinien.",
-          "Manche Fixkosten gehören zu einer Linie, andere zum ganzen Unternehmen."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst eine mehrstufige Deckungsbeitragsrechnung mit erzeugnisfixen Kosten durch und beurteilst, ob das Streichen einer Produktlinie das Ergebnis verbessert oder verschlechtert.",
+        "vorwissen_kurz": "Nicht alle fixen Kosten gehören zum ganzen Unternehmen. Manche entstehen nur, weil es eine bestimmte Produktlinie gibt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fixkosten in Schichten",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der mehrstufigen Deckungsbeitragsrechnung werden die fixen Kosten nach ihrer Zugehörigkeit getrennt. Vom **Deckungsbeitrag I** jeder Produktlinie werden zuerst die **erzeugnisfixen Kosten** abgezogen, die nur für diese Linie anfallen, etwa eine Spezialmaschine oder das Musterbudget der Linie. Das ergibt den **Deckungsbeitrag II**. Erst danach kommen die **unternehmensfixen Kosten** wie Miete und Verwaltung, die alle Linien gemeinsam tragen.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lohnen sich die Taschen?",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Hoodies",
+              "Shirts",
+              "Taschen",
+              "Summe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Deckungsbeitrag I",
+                  "9.000 €",
+                  "6.000 €",
+                  "1.500 €",
+                  "16.500 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "− erzeugnisfixe Kosten",
+                  "3.000 €",
+                  "2.000 €",
+                  "2.000 €",
+                  "7.000 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "= Deckungsbeitrag II",
+                  "6.000 €",
+                  "4.000 €",
+                  "− 500 €",
+                  "9.500 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "− unternehmensfixe Kosten",
+                  "",
+                  "",
+                  "",
+                  "7.500 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "= Betriebsergebnis",
+                  "",
+                  "",
+                  "",
+                  "2.000 €"
+                ],
+                "mono": [
+                  4
+                ]
+              }
+            ],
+            "fazit": "Die Taschen decken ihre eigenen Fixkosten nicht: DB II − 500 €. Ob sich das Streichen lohnt, hängt davon ab, welche der 2.000 € erzeugnisfixen Kosten tatsächlich wegfallen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die erzeugnisfixen Kosten der Taschen bestehen aus 1.200 € Leasing für die Nähmaschine, kündbar mit einem Monat Frist, und 800 € anteiligem Gehalt einer Designerin, die bei Wegfall der Taschen für die Hoodies arbeiten würde. Werden die Taschen gestrichen, fallen der DB I von 1.500 € und das Leasing von 1.200 € weg; das Gehalt bleibt. Das Ergebnis sinkt dann um 300 €. Solange keine bessere Nutzung für die Kapazität da ist, bleiben die Taschen im Programm — mit dem Auftrag, Preise oder Kosten zu verbessern.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Bei mehreren Produkten zeigt die Deckungsbeitragsrechnung, welches Produkt wie viel zur Fixkostendeckung beiträgt. In einer einstufigen Rechnung werden alle Fixkosten als ein Block abgezogen. In der mehrstufigen Rechnung werden Fixkosten schrittweise abgezogen: zuerst die einer Produktlinie direkt zurechenbaren (Erzeugnisfixkosten, etwa die Leasingrate einer nur für Taschen genutzten Nähmaschine), dann die eines Bereichs, zuletzt die Unternehmensfixkosten. So sieht man, ob eine Linie wenigstens ihre eigenen Fixkosten trägt. Ein Produkt mit positivem DB trägt zur Fixkostendeckung bei, auch wenn es nach Vollkosten ‚Verlust‘ zeigt.",
-        "beispiele": [
-          "Hoodies DB 9.000 €, Shirts DB 6.000 €, Taschen DB 1.500 €; Taschen-Fixkosten 2.000 €: Die Taschenlinie deckt ihre eigenen Fixkosten nicht.",
-          "Unternehmensfixkosten wie die Geschäftsführung werden erst am Ende abgezogen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Abbaubare und nicht abbaubare Fixkosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Fixkosten lassen sich oft nicht sofort abbauen: Mietverträge laufen weiter, Mitarbeitende haben Kündigungsfristen, Maschinen sind gekauft. Bei der Entscheidung über eine Produktlinie zählen deshalb nur die Fixkosten, die durch die Entscheidung tatsächlich und innerhalb des betrachteten Zeitraums wegfallen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner möchte die Taschenlinie streichen, weil sie nach Vollkosten 1.200 € Verlust zeigt. Die mehrstufige Rechnung: Taschen-DB 1.500 €, eigene Fixkosten 2.000 € — Deckungsbeitrag II −500 €. Fällt die Linie weg, entfallen 1.500 € DB, aber auch 2.000 € Fixkosten (wenn die Nähmaschine zurückgegeben werden kann). Das Ergebnis würde um 500 € steigen. Wären die Fixkosten nicht abbaubar, wäre die Streichung ein Fehler.",
-        "typische_fehler": "Ein Produkt wegen eines Vollkostenverlusts streichen, ohne zu prüfen, welche Fixkosten tatsächlich wegfallen.",
         "verstaendnisfragen": [
-          "Was zeigt die mehrstufige Deckungsbeitragsrechnung? Ob ein Produkt oder Bereich die ihm zurechenbaren Fixkosten deckt.",
-          "Wann verbessert der Wegfall eines Produkts das Ergebnis? Wenn die wegfallenden Fixkosten größer sind als der wegfallende Deckungsbeitrag."
-        ],
-        "pruefungsbezug": "Produktentscheidungen mit Deckungsbeiträgen und abbaubaren Fixkosten begründen.",
-        "merksatz": "Ein positiver DB trägt zur Fixkostendeckung bei; über das Streichen entscheiden DB und tatsächlich abbaubare Fixkosten."
+          {
+            "frage": "Warum sinkt das Ergebnis, wenn die Taschen gestrichen werden, obwohl ihr DB II negativ ist?",
+            "antwort": "Weil mit den Taschen ihr DB I von 1.500 € wegfällt, aber nur 1.200 € Fixkosten abgebaut werden können. Das Gehalt der Designerin bleibt.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wann wäre das Streichen der Taschen sinnvoll?",
+            "antwort": "Wenn alle erzeugnisfixen Kosten von 2.000 € wegfallen oder die frei werdende Kapazität für ein Produkt mit höherem Deckungsbeitrag genutzt werden kann.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Kurzfristig lassen sich Fixkosten nicht abbauen.",
-          "Langfristig müssen alle Kosten gedeckt sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst kurz- und langfristige Preisuntergrenzen aus variablen Kosten und Selbstkosten, nennst die Annahmen, unter denen sie gelten, und beurteilst einen Preisvorschlag.",
+        "vorwissen_kurz": "Wie weit darf ein Preis sinken? Die Antwort hängt davon ab, ob man auf den nächsten Monat oder auf mehrere Jahre schaut.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Grenzen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **kurzfristige Preisuntergrenze** liegt bei den variablen Stückkosten. Liegt der Preis darüber, trägt jedes Stück etwas zur Deckung der Fixkosten bei, die ohnehin anfallen. Die **langfristige Preisuntergrenze** liegt bei den Selbstkosten. Auf Dauer muss ein Produkt alle Kosten decken, auch Miete, Maschinen und Verwaltung; sonst verliert der Betrieb Substanz. Beide Grenzen gelten nur unter Annahmen, die ausdrücklich genannt werden.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Preisvorschlag für Basic-Shirts",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Großhändler bietet für 1.000 Basic-Shirts 22 € je Stück. Variable Kosten 18 €, Selbstkosten 26 €.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Antwort"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kurzfristige Preisuntergrenze",
+                  "18 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Langfristige Preisuntergrenze",
+                  "26 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Deckungsbeitrag beim Vorschlag",
+                  "22 € − 18 € = 4 € je Shirt, 4.000 € für den Auftrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Annahmen",
+                  "Kapazität im Januar frei, keine zusätzlichen Fixkosten, keine Auswirkung auf die Preise anderer Kunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bewertung",
+                  "einmalig sinnvoll; als Dauerpreis nicht, weil 22 € die Selbstkosten nicht decken"
+                ]
+              }
+            ],
+            "fazit": "Der Vorschlag liegt zwischen den beiden Grenzen. MAKEL Studio kann ihn für einen Auftrag mit freier Kapazität annehmen, aber nicht als Listenpreis.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Annahmen entscheiden. Wäre die Druckpresse im Januar ausgelastet, müsste MAKEL Studio für den Großhändler andere Aufträge zurückstellen — dann zählt der entgangene Deckungsbeitrag dieser Aufträge als zusätzliche Kosten. Und bietet MAKEL Studio einem Kunden 22 €, kann es passieren, dass Stammkunden davon erfahren und ebenfalls Nachlässe fordern.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Die kurzfristige Preisuntergrenze liegt bei den variablen Stückkosten: Darunter verschlechtert jedes verkaufte Stück das Ergebnis, weil es nicht einmal seine eigenen zusätzlichen Kosten deckt. Darüber trägt jedes Stück zur Fixkostendeckung bei. Die langfristige Preisuntergrenze liegt bei den Selbstkosten (Vollkosten): Auf Dauer müssen alle Kosten gedeckt sein. Diese Aussagen gelten unter Annahmen: freie Kapazität, keine Verdrängung anderer Aufträge, keine zusätzlichen Fixkosten, keine Auswirkungen auf andere Preise.",
-        "beispiele": [
-          "Variable Stückkosten 18 €, Selbstkosten 26 €: kurzfristige Preisuntergrenze 18 €, langfristige 26 €.",
-          "Ein Preis von 22 € deckt kurzfristig die variablen Kosten und 4 € Fixkosten je Stück."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Preisuntergrenze bei Engpass",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ist die Kapazität knapp, verschiebt sich die kurzfristige Preisuntergrenze nach oben: Sie liegt bei den variablen Kosten plus dem Deckungsbeitrag, der durch die Verdrängung eines anderen Auftrags verloren geht. Ein Zusatzauftrag lohnt sich dann nur, wenn er mehr einbringt als der verdrängte.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Großhändler fragt nach Basis-Shirts zu 22 €. Die Selbstkosten liegen bei 26 €, die variablen Kosten bei 18 €. Sandra erklärt: ‚Bei freier Kapazität bringt jedes Shirt 4 € zur Fixkostendeckung. Dauerhaft dürfen wir aber nicht unter 26 € verkaufen, sonst decken wir unsere Kosten nicht.‘",
-        "typische_fehler": "Die kurzfristige Preisuntergrenze als normalen Verkaufspreis verwenden.",
         "verstaendnisfragen": [
-          "Wo liegt die kurzfristige Preisuntergrenze? Bei den variablen Stückkosten.",
-          "Wo liegt die langfristige Preisuntergrenze? Bei den Selbstkosten."
-        ],
-        "pruefungsbezug": "Kurz- und langfristige Preisuntergrenzen bestimmen und die Annahmen nennen.",
-        "merksatz": "Kurzfristige Preisuntergrenze = variable Stückkosten, langfristige = Selbstkosten — jeweils unter ausdrücklichen Annahmen."
+          {
+            "frage": "Wo liegt die kurzfristige Preisuntergrenze eines Produkts mit 18 € variablen Kosten und 26 € Selbstkosten?",
+            "antwort": "Bei 18 €, den variablen Stückkosten, sofern Kapazität frei ist und keine zusätzlichen Fixkosten entstehen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum kann der Preis von 22 € nicht dauerhaft gelten?",
+            "antwort": "Weil er unter den Selbstkosten von 26 € liegt. Auf Dauer würden die fixen Kosten nicht gedeckt, und MAKEL Studio würde Verlust machen.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Freie Kapazität kostet Fixkosten, ob sie genutzt wird oder nicht.",
-          "Kunden vergleichen Preise."
+        "darstellung": "vollfassung",
+        "ziel": "Du entscheidest über einen Zusatzauftrag anhand von Deckungsbeitrag, freier Kapazität und zusätzlichen Fixkosten und prüfst Nebenbedingungen wie Kundenbeziehung und Preisgefüge.",
+        "vorwissen_kurz": "Ein Zusatzauftrag kommt zu den geplanten Aufträgen hinzu. Ob er sich lohnt, zeigt eine einfache Rechnung — und einige Fragen, die die Rechnung nicht beantwortet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rechnung und ihre Bedingungen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Zusatzauftrag verbessert das Ergebnis, wenn sein Preis über den variablen Stückkosten liegt, genug Kapazität frei ist und keine zusätzlichen Fixkosten entstehen. Der Ergebnisbeitrag ist dann Menge mal Deckungsbeitrag je Stück, abzüglich eventueller auftragsbezogener Fixkosten wie einer Stickdatei. Zusätzlich wird geprüft, ob der Auftrag andere Kunden verärgert, das Preisgefüge stört oder einen neuen Markt öffnet.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Eventveranstalter fragt an",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Veranstalter möchte 300 Shirts mit Eventlogo zu 21 € netto. Variable Kosten 18 €, für das Logo fällt eine Druckvorlage für 120 € an. Die Presse ist in der betreffenden Woche zu 70 % ausgelastet.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Deckungsbeitrag",
+                  "300 × (21 € − 18 €) = 900 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "− auftragsbezogene Kosten",
+                  "Druckvorlage 120 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Ergebnisbeitrag",
+                  "780 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kapazität",
+                  "300 Shirts brauchen 12 Stunden, frei sind 14 Stunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nebenbedingungen",
+                  "Veranstalter ist neu, Folgeaufträge möglich; Preis wird nicht öffentlich; Stammkunden zahlen für ähnliche Mengen 24 €"
+                ]
+              }
+            ],
+            "fazit": "Der Auftrag verbessert das Ergebnis um 780 € und passt in die Woche. Weil der Preis unter dem üblichen liegt, begründet der Vertrieb ihn als Einstiegspreis für einen Neukunden.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wäre der Veranstalter ein Konkurrent eines Stammkunden, etwa ein anderes Modehaus in derselben Stadt, würde der Vertrieb vorsichtiger sein: Erfährt der Stammkunde vom niedrigeren Preis, steht womöglich mehr auf dem Spiel als 780 €. Die Rechnung zeigt, ob ein Auftrag sich lohnt; die Nebenbedingungen zeigen, ob er klug ist.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Ein Zusatzauftrag lohnt sich rechnerisch, wenn sein Preis über den variablen Stückkosten liegt, keine zusätzlichen Fixkosten entstehen und die Kapazität frei ist — dann erhöht er das Ergebnis um seinen Deckungsbeitrag. Vor der Annahme werden Nebenbedingungen geprüft: Verdrängt er andere Aufträge mit höherem DB? Erfahren Stammkunden vom niedrigen Preis und fordern ihn auch? Passt er zu Qualität und Marke? Entstehen zusätzliche Kosten (Sonderverpackung, Überstunden)? Aus einem Zusatzauftrag folgt keine allgemeine Preispolitik.",
-        "beispiele": [
-          "100 Zusatzstücke zu 20 €, variable Kosten 18 €: Zusatzbeitrag 200 €.",
-          "Erfordert der Auftrag Überstunden mit 300 € Zuschlag, verschlechtert er das Ergebnis um 100 €."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Zusatzauftrag und Dauerauftrag",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Zusatzauftrag bei freier Kapazität darf unter den Vollkosten liegen. Ein Dauerauftrag, der regelmäßig Kapazität bindet, muss langfristig die Vollkosten decken. Wird aus dem Eventkunden ein Stammkunde, sollte der Preis schrittweise auf das übliche Niveau angehoben werden.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Ein Sportverein bietet für 100 bedruckte Shirts 20 € je Stück. Variable Kosten 18 €, freie Kapazität vorhanden, keine neuen Fixkosten. Rechnerischer Zusatzbeitrag: 100 × 2 € = 200 €. Marlene Voss prüft: Der Verein ist kein Wiederverkäufer, Stammkunden sind nicht betroffen, das Motiv ist einfach. Tobias nimmt an — als Einzelfall, nicht als neuer Listenpreis.",
-        "typische_fehler": "Einen positiven Zusatzbeitrag als allgemeine Begründung für Preissenkungen verwenden.",
         "verstaendnisfragen": [
-          "Wann verbessert ein Zusatzauftrag das Ergebnis? Wenn sein Preis über den variablen Stückkosten liegt und keine zusätzlichen Fixkosten oder Verdrängung entstehen.",
-          "Nenne zwei Nebenbedingungen. Zum Beispiel Verdrängung anderer Aufträge und Wirkung auf Stammkundenpreise."
-        ],
-        "pruefungsbezug": "Zusatzaufträge rechnerisch und mit Nebenbedingungen beurteilen.",
-        "merksatz": "Zusatzauftrag: annehmen, wenn Preis > variable Stückkosten, Kapazität frei, keine Zusatzfixkosten — und Nebenbedingungen geprüft."
+          {
+            "frage": "100 Zusatzstücke zu 20 €, variable Stückkosten 18 €, keine neuen Fixkosten, keine Verdrängung. Wie verändert sich das Ergebnis?",
+            "antwort": "Es steigt um 100 × (20 € − 18 €) = 200 €.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum wird die Druckvorlage vom Deckungsbeitrag abgezogen?",
+            "antwort": "Weil sie nur für diesen Auftrag anfällt. Sie ist ein auftragsbezogener Fixbetrag, der ohne den Auftrag nicht entstünde.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
