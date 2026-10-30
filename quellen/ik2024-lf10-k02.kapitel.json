@@ -6,86 +6,464 @@
   "untertitel": "Mit welchen Werten Vorräte, Erzeugnisse, Anlagen und Forderungen in die Bilanz kommen — und warum der Verkaufspreis dafür nicht zählt.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Anschaffungskosten kennst du aus LF 5.",
-          "Die Bilanz soll Gläubiger nicht über die Lage täuschen."
+        "darstellung": "vollfassung",
+        "ziel": "Du wendest Vorsichts-, Realisations- und Imparitätsprinzip auf Bewertungsfälle an und begründest, warum gestiegene Werte nicht, gesunkene aber schon im Abschluss erscheinen.",
+        "vorwissen_kurz": "Vermögen muss am Bilanzstichtag bewertet werden. Dabei gelten Regeln, die Außenstehende vor zu optimistischen Zahlen schützen sollen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Lieber zu vorsichtig als zu optimistisch",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die allgemeinen Bewertungsgrundsätze stehen in {{par:hgb-252|§ 252 HGB}}. Zentral ist das **Vorsichtsprinzip**: Der Kaufmann soll sich nicht reicher rechnen, als er ist. Daraus folgen zwei Regeln. Nach dem **Realisationsprinzip** dürfen Gewinne erst ausgewiesen werden, wenn sie durch einen Verkauf entstanden sind. Nach dem **Imparitätsprinzip** werden Verluste dagegen schon berücksichtigt, wenn sie am Stichtag absehbar sind. Gewinne und Verluste werden also ungleich behandelt. Obergrenze für Vermögensgegenstände sind nach {{par:hgb-253|§ 253 HGB}} die Anschaffungs- oder Herstellungskosten.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Posten im Lager von MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Anschaffungskosten",
+              "Wert am 31.12.",
+              "Ansatz",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bio-Baumwollstoff, Preis gestiegen",
+                  "4.000 €",
+                  "4.600 €",
+                  "4.000 €",
+                  "Wertsteigerung ist nicht realisiert"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohlinge in Trendfarbe Neongrün, Nachfrage eingebrochen",
+                  "2.400 €",
+                  "1.500 €",
+                  "1.500 €",
+                  "Verlust ist absehbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stickgarn, Preis unverändert",
+                  "800 €",
+                  "800 €",
+                  "800 €",
+                  "keine Veränderung"
+                ]
+              }
+            ],
+            "fazit": "Der gestiegene Stoffpreis bleibt unberücksichtigt, der gesunkene Wert der Neongrün-Rohlinge wird sofort abgeschrieben. Der Abschluss zeigt 6.300 € statt 6.900 € zum Stichtagswert.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für Banken und Lieferanten ist diese Vorsicht ein Schutz: Sie können sich darauf verlassen, dass das ausgewiesene Vermögen nicht auf erhofften Gewinnen beruht. Für die Geschäftsführung bedeutet sie, dass die Bilanz das Vermögen eher zu niedrig als zu hoch zeigt. Stille Reserven wie beim Baumwollstoff werden erst sichtbar, wenn der Stoff verarbeitet und verkauft ist.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Das Handelsrecht verlangt eine vorsichtige Bewertung (§ 252 HGB). Daraus folgen Grundsätze: Realisationsprinzip — Gewinne werden erst ausgewiesen, wenn sie durch einen Umsatz realisiert sind; ein gestiegener Marktwert eines Lagerbestands ist noch kein Gewinn. Imparitätsprinzip — Verluste werden schon berücksichtigt, wenn sie absehbar sind, auch wenn sie noch nicht eingetreten sind. Daraus ergibt sich das Niederstwertprinzip: Vermögensgegenstände werden höchstens mit den Anschaffungs- oder Herstellungskosten bewertet (§ 253 Abs. 1 HGB), bei niedrigerem Stichtagswert unter bestimmten Voraussetzungen mit diesem. Weitere Grundsätze sind Stichtagsprinzip, Einzelbewertung und Stetigkeit der Methoden.",
-        "beispiele": [
-          "Rohlinge für 1.000 € gekauft, Marktpreis am Stichtag 1.200 €: Ansatz 1.000 € — kein unrealisierter Gewinn.",
-          "Rohlinge für 1.000 € gekauft, Stichtagswert 800 €: Ansatz 800 €, Abschreibung 200 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Weitere Grundsätze nach § 252 HGB",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zu den Bewertungsgrundsätzen gehören auch die Einzelbewertung (jeder Posten für sich), die Stichtagsbezogenheit (Verhältnisse am 31. Dezember), die Fortführung der Unternehmenstätigkeit und die Bewertungsstetigkeit: Einmal gewählte Methoden werden beibehalten, damit die Jahre vergleichbar bleiben.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli schlägt vor, die Lagerbestände zum aktuellen Marktpreis anzusetzen, weil Baumwolle teurer geworden ist. Sandra Koslowski erklärt: ‚Das wäre ein Gewinn, den wir noch nicht realisiert haben. Nach oben gilt die Grenze der Anschaffungskosten — nach unten müssen wir reagieren, wenn der Wert fällt.‘",
-        "typische_fehler": "Gestiegene Marktwerte als Gewinn in der Bilanz ausweisen.",
         "verstaendnisfragen": [
-          "Was besagt das Realisationsprinzip? Gewinne werden erst ausgewiesen, wenn sie durch einen Umsatz verwirklicht sind.",
-          "Was besagt das Imparitätsprinzip? Absehbare Verluste werden schon vor ihrem Eintritt berücksichtigt."
-        ],
-        "pruefungsbezug": "Bewertungsgrundsätze an eindeutigen Fällen anwenden.",
-        "merksatz": "Vorsicht: Gewinne erst bei Realisation, Verluste schon bei Absehbarkeit; Obergrenze sind die Anschaffungs- oder Herstellungskosten."
+          {
+            "frage": "Warum wird der gestiegene Stoffpreis nicht in der Bilanz gezeigt?",
+            "antwort": "Weil der Gewinn noch nicht durch einen Verkauf realisiert ist. Nach dem Realisationsprinzip dürfen nur realisierte Gewinne ausgewiesen werden; Obergrenze sind die Anschaffungskosten.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was besagt das Imparitätsprinzip?",
+            "antwort": "Dass Verluste schon berücksichtigt werden, wenn sie am Stichtag absehbar sind, Gewinne aber erst bei Realisation. Gewinne und Verluste werden ungleich behandelt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Gekaufte Güter werden mit Anschaffungskosten bewertet.",
-          "Selbst hergestellte Erzeugnisse wurden nicht gekauft."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst Anschaffungs- und Herstellungskosten nach § 255 HGB, ordnest Kostenbestandteile als Pflicht, Wahlrecht oder Verbot ein und grenzt die Herstellungskosten von den Selbstkosten der Kostenrechnung ab.",
+        "vorwissen_kurz": "Gekaufte Gegenstände werden mit Anschaffungskosten bewertet, selbst hergestellte mit Herstellungskosten. Was dazugehört, regelt das Gesetz.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gekauft oder selbst hergestellt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach {{par:hgb-255|§ 255 HGB}} umfassen die **Anschaffungskosten** den Kaufpreis abzüglich Minderungen sowie alle Nebenkosten bis zur Betriebsbereitschaft. Die **Herstellungskosten** für selbst hergestellte Erzeugnisse umfassen als Pflicht die Material- und Fertigungseinzelkosten, Sondereinzelkosten der Fertigung sowie angemessene Teile der Material- und Fertigungsgemeinkosten und des Werteverzehrs des Anlagevermögens. Allgemeine Verwaltungskosten und bestimmte Sozialaufwendungen dürfen einbezogen werden. Vertriebs- und Forschungskosten sind verboten.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was ein fertiger Hoodie in der Bilanz kostet",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestandteil",
+              "je Hoodie",
+              "Behandlung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Materialeinzelkosten (Rohling, Garn, Etikett)",
+                  "11,20 €",
+                  "Pflicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Materialgemeinkosten 10 %",
+                  "1,12 €",
+                  "Pflicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigungslöhne",
+                  "4,00 €",
+                  "Pflicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigungsgemeinkosten einschließlich Abschreibungen der Maschinen",
+                  "5,68 €",
+                  "Pflicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Untergrenze der Herstellungskosten",
+                  "22,00 €",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "allgemeine Verwaltungskosten",
+                  "4,00 €",
+                  "Wahlrecht, MAKEL Studio bezieht ein"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Herstellungskosten in der Bilanz",
+                  "26,00 €",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertriebskosten",
+                  "1,90 €",
+                  "Verbot"
+                ]
+              }
+            ],
+            "fazit": "Der Hoodie steht mit 26 € im Bestand. Die Selbstkosten der Kostenrechnung von 27,90 € enthalten zusätzlich Vertriebskosten, die in der Bilanz nicht angesetzt werden dürfen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Wahlrecht für Verwaltungskosten wirkt auf den Erfolg: Wird es genutzt, steht der Lagerbestand höher in der Bilanz, und der Aufwand des Jahres fällt niedriger aus. Wegen der Bewertungsstetigkeit muss MAKEL Studio die einmal gewählte Methode in den Folgejahren beibehalten und im Anhang angeben.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Gekaufte Vermögensgegenstände werden mit den Anschaffungskosten bewertet: Preis plus Nebenkosten minus Preisminderungen (§ 255 Abs. 1 HGB). Selbst hergestellte Erzeugnisse werden mit den Herstellungskosten bewertet (§ 255 Abs. 2 HGB). Pflichtbestandteile sind Materialkosten, Fertigungskosten und Sondereinzelkosten der Fertigung sowie angemessene Teile der Material- und Fertigungsgemeinkosten und des fertigungsbedingten Werteverzehrs des Anlagevermögens. Wahlweise einbezogen werden dürfen angemessene Teile der allgemeinen Verwaltungskosten und bestimmter Sozialaufwendungen. Vertriebskosten und Forschungskosten dürfen nicht einbezogen werden. Die handelsrechtlichen Herstellungskosten sind deshalb nicht dasselbe wie die Selbstkosten der Kostenrechnung, die auch Vertriebskosten enthalten.",
-        "beispiele": [
-          "Hoodie: Material 12 €, Fertigung 8 €, Gemeinkostenanteile 6 € = Herstellungskosten (Untergrenze) 26 €.",
-          "Werbekosten für die Kollektion: Vertriebskosten, nicht in die Herstellungskosten."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Herstellungskosten und Selbstkosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Selbstkosten der Kostenrechnung sollen zeigen, was ein Produkt insgesamt kostet, einschließlich Vertrieb und kalkulatorischer Kosten. Die Herstellungskosten der Bilanz folgen gesetzlichen Regeln, enthalten keine Vertriebskosten und keine kalkulatorischen Kosten wie Eigenkapitalzinsen. Beide Zahlen haben unterschiedliche Zwecke und sind deshalb verschieden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Im Lager liegen 300 fertige Hoodies. Sandra ermittelt die Herstellungskosten je Stück: Material 12 €, Fertigungslöhne 5 €, Fertigungs- und Materialgemeinkosten anteilig 6 €, Maschinenabschreibung anteilig 3 €, zusammen 26 €. Vertriebs- und Werbekosten bleiben außen vor. Bestandswert: 300 × 26 € = 7.800 €.",
-        "typische_fehler": "Handelsrechtliche Herstellungskosten mit Selbstkosten gleichsetzen.",
         "verstaendnisfragen": [
-          "Welche Kosten dürfen nicht in die Herstellungskosten? Vertriebskosten und Forschungskosten.",
-          "Warum sind Herstellungskosten nicht gleich Selbstkosten? Weil die Selbstkosten auch Vertriebskosten enthalten."
-        ],
-        "pruefungsbezug": "Anschaffungs- und Herstellungskosten unterscheiden und aus gegebenen Kosten ermitteln.",
-        "merksatz": "Anschaffungskosten für Gekauftes, Herstellungskosten für Selbstgemachtes — ohne Vertriebs- und Forschungskosten."
+          {
+            "frage": "Dürfen Vertriebskosten in die Herstellungskosten einbezogen werden?",
+            "antwort": "Nein. § 255 Abs. 2 HGB verbietet die Einbeziehung von Vertriebskosten.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie hoch wären die Herstellungskosten je Hoodie, wenn MAKEL Studio das Wahlrecht nicht nutzt?",
+            "antwort": "22 €, die Untergrenze aus Material- und Fertigungskosten einschließlich der Pflichtgemeinkosten.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Anlagevermögen dient dauerhaft, Umlaufvermögen kurzfristig.",
-          "Planmäßige Abschreibungen kennst du aus LF 5."
+        "darstellung": "vollfassung",
+        "ziel": "Du bewertest Umlaufvermögen nach dem strengen Niederstwertprinzip, abnutzbares Anlagevermögen planmäßig und bei dauerhafter Wertminderung außerplanmäßig und Forderungen nach ihrer Einbringlichkeit.",
+        "vorwissen_kurz": "Sinkt der Wert eines Vermögensgegenstands unter seinen Buchwert, hängt die Reaktion davon ab, zu welcher Vermögensart er gehört.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Unterschiedliche Regeln je Vermögensart",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim **Umlaufvermögen** gilt das strenge Niederstwertprinzip: Ist der Wert am Stichtag niedriger als die Anschaffungs- oder Herstellungskosten, muss abgeschrieben werden, egal ob die Minderung vorübergehend ist. Beim **abnutzbaren Anlagevermögen** wird planmäßig abgeschrieben; eine außerplanmäßige Abschreibung ist Pflicht, wenn die Wertminderung voraussichtlich dauerhaft ist. **Forderungen** werden nach ihrer Einbringlichkeit bewertet: Zweifelhafte Forderungen mit dem wahrscheinlich eingehenden Betrag, uneinbringliche werden voll abgeschrieben.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bewertungsfälle zum 31. Dezember",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Buchwert",
+              "Befund am Stichtag",
+              "Ansatz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "200 Rohlinge Neongrün (Umlaufvermögen)",
+                  "2.400 €",
+                  "Wiederbeschaffung nur noch 7,50 € je Stück",
+                  "1.500 €, Abschreibung 900 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckpresse (Anlagevermögen)",
+                  "12.000 €",
+                  "Wasserschaden, dauerhaft eingeschränkt nutzbar, Wert 7.000 €",
+                  "7.000 €, außerplanmäßige Abschreibung 5.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Forderung an Modehaus im Insolvenzverfahren",
+                  "5.950 € brutto",
+                  "voraussichtlich 30 % Quote",
+                  "Netto 5.000 €, davon 70 % = 3.500 € abschreiben"
+                ]
+              }
+            ],
+            "fazit": "Alle drei Posten werden auf den niedrigeren Wert gebracht. Bei der Forderung wird nur der Nettobetrag abgeschrieben; die Umsatzsteuer wird erst bei endgültigem Ausfall berichtigt.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Druckpresse kommt es auf die Dauer an. Hätte nur ein Ersatzteil gefehlt und die Presse wäre nach zwei Wochen wieder voll nutzbar gewesen, wäre die Minderung vorübergehend gewesen — dann keine außerplanmäßige Abschreibung. Erst der dauerhafte Schaden verlangt sie. Für die Neongrün-Rohlinge dagegen spielt die Dauer keine Rolle: Umlaufvermögen wird immer auf den niedrigeren Stichtagswert abgeschrieben.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Beim Umlaufvermögen (Vorräte, Forderungen) gilt das strenge Niederstwertprinzip: Liegt der Stichtagswert unter den Anschaffungs- oder Herstellungskosten, muss auf den niedrigeren Wert abgeschrieben werden, auch wenn die Wertminderung vielleicht nur vorübergehend ist. Beim Anlagevermögen gilt das gemilderte Niederstwertprinzip: Abnutzbare Anlagen werden planmäßig abgeschrieben; eine außerplanmäßige Abschreibung ist Pflicht, wenn die Wertminderung voraussichtlich dauerhaft ist. Bei Finanzanlagen darf zusätzlich auch bei nur vorübergehender Wertminderung abgeschrieben werden (Wahlrecht). Forderungen werden auf ihre Einbringlichkeit geprüft: Zweifelhafte Forderungen werden gesondert geführt und mit dem wahrscheinlich eingehenden Betrag angesetzt, uneinbringliche abgeschrieben. Entfällt der Grund einer früheren außerplanmäßigen Abschreibung, ist grundsätzlich wieder zuzuschreiben (§ 253 Abs. 5 HGB). Obergrenze beim Umlaufvermögen sind die Anschaffungs- oder Herstellungskosten; bei abnutzbarem Anlagevermögen die fortgeführten Kosten, also der Wert, der sich ohne die außerplanmäßige Abschreibung nach planmäßiger Abschreibung ergeben hätte. Beispiel: Maschine 10.000 €, fünf Jahre Nutzungsdauer; nach zwei Jahren liegt die Obergrenze bei 6.000 €, auch wenn der Wertverlust ganz entfällt. Ein abgeschriebener entgeltlich erworbener Geschäfts- oder Firmenwert darf nicht wieder zugeschrieben werden.",
-        "beispiele": [
-          "Rohlinge AK 1.000 €, Stichtagswert 800 €: Umlaufvermögen — Pflicht zur Abschreibung auf 800 €.",
-          "Stickmaschine nach Wasserschaden dauerhaft nur noch halb so viel wert: außerplanmäßige Abschreibung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wertaufholung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Steigt der Wert in einem späteren Jahr wieder, muss die außerplanmäßige Abschreibung rückgängig gemacht werden, höchstens bis zu den fortgeführten Anschaffungskosten. Eine Ausnahme gilt nur für den Geschäfts- oder Firmenwert.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Posten Rohlinge in einer Trendfarbe wurde für 1.000 € gekauft. Am Stichtag ist die Farbe aus der Mode, der Wiederbeschaffungs- bzw. Verwertungswert liegt laut Angebot bei 800 €. Sandra schreibt auf 800 € ab. Außerdem stuft sie eine Forderung von 1.190 € an eine insolvente Boutique als zweifelhaft ein.",
-        "typische_fehler": "Die Regeln für Vorräte ohne Prüfung auf Anlagegüter übertragen.",
         "verstaendnisfragen": [
-          "Was gilt beim Umlaufvermögen, wenn der Stichtagswert niedriger ist? Es muss auf den niedrigeren Wert abgeschrieben werden.",
-          "Wann ist beim Anlagevermögen außerplanmäßig abzuschreiben? Bei voraussichtlich dauerhafter Wertminderung."
-        ],
-        "pruefungsbezug": "Bewertungsregeln für Anlage- und Umlaufvermögen an Fällen anwenden.",
-        "merksatz": "Umlaufvermögen: strenges Niederstwertprinzip; Anlagevermögen: planmäßig plus außerplanmäßig bei dauerhafter Minderung; Forderungen nach Einbringlichkeit."
+          {
+            "frage": "Rohlinge (Umlaufvermögen) wurden für 1.000 € gekauft, der Stichtagswert beträgt 800 €. Welcher Wert wird angesetzt?",
+            "antwort": "800 €. Beim Umlaufvermögen gilt das strenge Niederstwertprinzip; die Wertminderung von 200 € wird abgeschrieben.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum wird bei der zweifelhaften Forderung nur der Nettobetrag abgeschrieben?",
+            "antwort": "Weil die Umsatzsteuer kein Ertrag war. Sie wird erst korrigiert, wenn der Ausfall endgültig feststeht, etwa nach Abschluss des Insolvenzverfahrens.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Bewertungen beruhen auf Belegen und Schätzungen.",
-          "Der Anhang erläutert die Methoden."
+        "darstellung": "vollfassung",
+        "ziel": "Du bewertest einen Bestand fertiger Erzeugnisse zu Herstellungskosten, unterscheidest Bilanzansatz und Verkaufswert und dokumentierst Bewertungsentscheidungen mit Belegen und Annahmen.",
+        "vorwissen_kurz": "Fertige Hoodies im Lager haben einen Verkaufspreis. In der Bilanz stehen sie trotzdem mit einem anderen Wert.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Bewerten heißt belegen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fertige Erzeugnisse werden mit ihren Herstellungskosten bewertet, nicht mit dem erwarteten Verkaufspreis. Der Unterschied zwischen beiden ist ein Gewinn, der erst beim Verkauf entsteht. Liegt der erzielbare Preis abzüglich noch anfallender Kosten unter den Herstellungskosten, wird auf diesen niedrigeren Wert abgeschrieben. Jede Bewertung wird mit Belegen und Annahmen dokumentiert, damit sie für den Abschlussprüfer nachvollziehbar ist.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Hoodie-Bestand am 31. Dezember",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Artikel",
+              "Stück",
+              "Herstellungskosten",
+              "erzielbarer Wert abzüglich Vertrieb",
+              "Ansatz je Stück",
+              "Ansatz gesamt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Hoodie „Kyoto“, aktuelle Kollektion",
+                  "300",
+                  "26,00 €",
+                  "42,10 €",
+                  "26,00 €",
+                  "7.800 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hoodie Weihnachtsmotiv 2026",
+                  "120",
+                  "26,00 €",
+                  "18,00 €",
+                  "18,00 €",
+                  "2.160 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "420",
+                  "",
+                  "",
+                  "",
+                  "9.960 €"
+                ]
+              }
+            ],
+            "fazit": "Der „Kyoto“ bleibt bei den Herstellungskosten, der unverkaufte Weihnachtshoodie wird auf den erzielbaren Wert abgeschrieben.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Annahme für den Weihnachtshoodie stammt aus dem Vertrieb: Nach Weihnachten lässt er sich nur noch mit starkem Rabatt im Outlet verkaufen, für etwa 19,90 € abzüglich 1,90 € Vertriebskosten. Sandra legt der Bewertung die Preisliste des Outlets und die Absatzzahlen des Vorjahres bei. So kann der Abschlussprüfer prüfen, ob der Wert begründet ist — und im nächsten Jahr wird nach derselben Methode bewertet.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Eine sachgerechte Bewertung braucht Informationen: Anschaffungsbelege, Kalkulationsunterlagen für Herstellungskosten, Marktpreise und Angebote zum Stichtag, Zustandsberichte, Informationen über Kunden. Fehlen Informationen, wird nicht geschätzt, was am besten passt, sondern nachgefragt und dokumentiert. Bewertungsmethoden werden stetig angewendet und im Anhang erläutert. Ein fertiger Hoodie wird nie zum Verkaufspreis angesetzt: Die Differenz zwischen Herstellungskosten und Verkaufspreis ist noch nicht realisierter Gewinn.",
-        "beispiele": [
-          "Verkaufspreis eines Hoodies 44 €, Herstellungskosten 26 €: Ansatz 26 €, nicht 44 €.",
-          "Ohne Angebot zum Stichtagswert bleibt die Abschreibung der Trendfarbe offen, bis ein Nachweis vorliegt."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Gruppenbewertung und Verbrauchsfolge",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei gleichartigen Vorräten, deren Einzelpreise schwanken, darf zur Vereinfachung mit Durchschnittspreisen oder nach einer Verbrauchsfolge bewertet werden. Für Garnspulen, die zu unterschiedlichen Preisen gekauft wurden, nutzt MAKEL Studio den gewogenen Durchschnitt — und gibt das im Anhang an.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner möchte die 300 Hoodies im Lager mit dem Verkaufspreis von 44 € ansetzen, ‚weil wir sie sicher verkaufen‘. Sandra lehnt ab: Bilanzansatz 26 € je Stück; der Unterschied von 18 € ist noch nicht realisiert. Sie dokumentiert die Kalkulation als Nachweis für den Anhang.",
-        "typische_fehler": "Fertige Erzeugnisse zum Verkaufspreis bewerten.",
         "verstaendnisfragen": [
-          "Warum darf ein fertiger Hoodie nicht zum Verkaufspreis angesetzt werden? Weil die Differenz zu den Herstellungskosten noch nicht realisierter Gewinn ist.",
-          "Was tust du, wenn für eine Bewertung Informationen fehlen? Nachfragen, Nachweise einholen und dokumentieren statt zu schätzen."
-        ],
-        "pruefungsbezug": "Bilanzansatz und Verkaufspreis auseinanderhalten und Informationsgrenzen benennen.",
-        "merksatz": "Bilanzansatz ist nicht Verkaufspreis; bewertet wird mit Belegen, stetig und dokumentiert."
+          {
+            "frage": "Warum werden die 300 „Kyoto“-Hoodies nicht mit dem Verkaufspreis von 44 € bilanziert?",
+            "antwort": "Weil der Gewinn noch nicht realisiert ist. Bilanziert wird höchstens mit den Herstellungskosten von 26 €.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Was gehört zur Dokumentation einer Abwertung?",
+            "antwort": "Der Grund, die Annahmen zum erzielbaren Wert, die Belege dazu, etwa Preislisten und Absatzzahlen, und die angewandte Methode.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

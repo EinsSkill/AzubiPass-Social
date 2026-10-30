@@ -6,86 +6,447 @@
   "untertitel": "Finanzierungsarten unterscheiden, Darlehen und Lieferantenkredit berechnen, Leasing, Factoring und Innenfinanzierung einordnen.",
   "minuten": 40,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eigenkapital gehört den Eigentümern, Fremdkapital den Gläubigern.",
-          "Gewinne können im Unternehmen bleiben oder ausgeschüttet werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Finanzierungsvorgänge nach ihrer Herkunft als Außen- oder Innenfinanzierung und nach der Rechtsstellung des Geldgebers als Eigen- oder Fremdfinanzierung ein und erklärst die Folgen für Mitsprache und Haftung.",
+        "vorwissen_kurz": "Wenn der Kapitalbedarf feststeht, stellt sich die Frage, woher das Geld kommen soll.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Fragen, vier Felder",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jeder Finanzierungsvorgang lässt sich mit zwei Fragen einordnen. Erstens: Woher kommt das Geld? Fließt es von außen zu, etwa von der Gesellschafterin, einer Bank oder einem Lieferanten, ist es **Außenfinanzierung**. Stammt es aus dem eigenen Umsatzprozess, etwa aus einbehaltenen Gewinnen, ist es **Innenfinanzierung**. Zweitens: Welche Stellung hat der Geldgeber? Wird er Eigentümer, ist es **Eigenfinanzierung**; wird er Gläubiger mit Anspruch auf Zins und Rückzahlung, ist es **Fremdfinanzierung**.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Felder bei MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Feld",
+              "Bezeichnung",
+              "Beispiel bei MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "außen und eigen",
+                  "Beteiligungsfinanzierung",
+                  "Yuki Bergmann erhöht ihre Stammeinlage"
+                ]
+              },
+              {
+                "zellen": [
+                  "außen und fremd",
+                  "Kreditfinanzierung",
+                  "Darlehen der Hausbank, Lieferantenkredit"
+                ]
+              },
+              {
+                "zellen": [
+                  "innen und eigen",
+                  "Selbstfinanzierung",
+                  "Jahresüberschuss bleibt im Unternehmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "innen und fremd",
+                  "Finanzierung aus Rückstellungen",
+                  "Mittel aus Pensionsrückstellungen bis zur Auszahlung"
+                ]
+              }
+            ],
+            "fazit": "Die Einordnung zeigt nicht nur, woher das Geld kommt, sondern auch, welche Rechte der Geldgeber erhält.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Unterscheidung hat Folgen. Eigenkapital muss nicht zurückgezahlt werden und kostet keine festen Zinsen; dafür erwartet die Gesellschafterin Mitsprache und eine Beteiligung am Gewinn. Fremdkapital belastet die Liquidität mit Zins und Tilgung, gibt dem Gläubiger aber kein Stimmrecht. Für MAKEL Studio heißt das: Ein Bankdarlehen lässt die Gesellschafterstruktur unverändert, eine Einlage von außen stärkt die Eigenkapitalquote, kann aber die Machtverhältnisse in der Gesellschaft verschieben, wenn neue Gesellschafter hinzukommen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Finanzierungen werden nach zwei Merkmalen unterschieden. Nach der Herkunft: Außenfinanzierung, wenn Mittel von außen zufließen (Gesellschafter, Banken, Lieferanten), Innenfinanzierung, wenn sie aus dem Umsatzprozess stammen (einbehaltene Gewinne, Abschreibungsrückflüsse, Rückstellungen, Vermögensumschichtung). Nach der Rechtsstellung: Eigenfinanzierung, wenn der Geldgeber Eigentümer wird oder ist, Fremdfinanzierung, wenn er Gläubiger wird und Anspruch auf Zins und Rückzahlung hat. So entstehen vier Felder.",
-        "beispiele": [
-          "Bankdarlehen: Außen- und Fremdfinanzierung.",
-          "Einbehaltener Gewinn: Innen- und Eigenfinanzierung (Selbstfinanzierung)."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Abschreibungsrückflüsse",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch Abschreibungen können finanzieren. Wenn die Verkaufspreise die Abschreibungen decken, fließt mit den Umsatzerlösen Geld zurück, das bis zur Ersatzbeschaffung im Unternehmen bleibt. Das ist Innenfinanzierung, aber weder klar eigen noch fremd; man spricht von Finanzierung durch Vermögensumschichtung.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für die Laserstation (Kapitalbedarf 51.500 €) sammelt Sandra Koslowski Möglichkeiten: Yuki Bergmann könnte als Gesellschafterin Kapital nachschießen, die Hausbank bietet ein Darlehen an, ein Hersteller bietet Leasing an, und ein Teil des Jahresüberschusses könnte im Unternehmen bleiben.",
-        "typische_fehler": "Innenfinanzierung mit Eigenfinanzierung gleichsetzen — Rückstellungen sind Innen-, aber Fremdfinanzierung.",
         "verstaendnisfragen": [
-          "Nach welchen Merkmalen werden Finanzierungen unterschieden? Nach Herkunft (außen/innen) und nach Rechtsstellung (eigen/fremd).",
-          "Wie wird eine Gesellschaftereinlage eingeordnet? Als Außen- und Eigenfinanzierung."
-        ],
-        "pruefungsbezug": "Finanzierungsvorgänge nach Herkunft und Rechtsstellung einordnen.",
-        "merksatz": "Herkunft: außen oder innen; Rechtsstellung: eigen oder fremd — jeder Vorgang hat beide Merkmale."
+          {
+            "frage": "Ein Lieferant gewährt MAKEL Studio 30 Tage Zahlungsziel. Wie ist das einzuordnen?",
+            "antwort": "Als Außen- und Fremdfinanzierung: Das Kapital kommt von außen, der Lieferant ist Gläubiger.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist die Selbstfinanzierung Eigenfinanzierung?",
+            "antwort": "Weil der einbehaltene Gewinn den Eigentümern zusteht und als Eigenkapital im Unternehmen bleibt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Zinsen sind der Preis für überlassenes Kapital.",
-          "Langfristiges Vermögen soll langfristig finanziert werden (Kapitel 5)."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Raten-, Annuitäten- und Fälligkeitsdarlehen, stellst einen Tilgungsplan auf und grenzt das Darlehen vom Kontokorrentkredit ab.",
+        "vorwissen_kurz": "Für die Laserstation braucht MAKEL Studio Geld für mehrere Jahre; für saisonale Lücken nur für wenige Wochen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Arten, ein Darlehen zurückzuzahlen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:darlehen|Darlehen}} wird für einen festen Betrag und eine feste Laufzeit vereinbart. Beim **Ratendarlehen** ist die Tilgung jedes Jahr gleich; weil die Zinsen auf die sinkende Restschuld berechnet werden, wird die Rate kleiner. Beim **Annuitätendarlehen** bleibt die Rate aus Zins und Tilgung gleich; der Zinsanteil sinkt, der Tilgungsanteil steigt. Beim **Fälligkeitsdarlehen** werden während der Laufzeit nur Zinsen gezahlt und am Ende der ganze Betrag auf einmal.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ratendarlehen und Annuitätendarlehen im Vergleich",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Ratendarlehen",
+              "Annuitätendarlehen"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rate im 1. Jahr",
+                  "12.500 €",
+                  "11.548,74 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Rate im 5. Jahr",
+                  "10.500 €",
+                  "11.548,74 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinsen insgesamt",
+                  "7.500 €",
+                  "7.743,70 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Belastung der Liquidität",
+                  "am Anfang hoch, dann sinkend",
+                  "gleichbleibend, gut planbar"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Bei gleichem Betrag, Zins und Laufzeit zahlt MAKEL Studio beim Annuitätendarlehen etwas mehr Zinsen, weil zu Beginn langsamer getilgt wird. Dafür bleibt die Rate jedes Jahr gleich.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:kontokorrentkredit|Kontokorrentkredit}} funktioniert anders. Die Bank räumt eine Kreditlinie auf dem Geschäftskonto ein, die MAKEL Studio je nach Bedarf in Anspruch nimmt und wieder zurückführt. Zinsen fallen nur auf den tatsächlich genutzten Betrag an, sind aber deutlich höher als beim Darlehen. Er eignet sich deshalb für kurze Lücken wie die im Januar, nicht für die Finanzierung einer Maschine.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Darlehen werden nach der Tilgungsform unterschieden. Ratendarlehen: gleichbleibende Tilgung, sinkende Zinsen, also sinkende Gesamtbelastung. Annuitätendarlehen: gleichbleibende Rate aus Zins und Tilgung, der Tilgungsanteil steigt. Fälligkeitsdarlehen: nur Zinsen während der Laufzeit, Tilgung in einem Betrag am Ende. Der Kontokorrentkredit ist ein Kreditrahmen auf dem Geschäftskonto für kurzfristige Schwankungen — flexibel, aber teurer, und für langfristige Investitionen ungeeignet. Wichtig für den Vergleich sind der effektive Jahreszins und die gesamte Belastung.",
-        "beispiele": [
-          "Ratendarlehen 60.000 €, 5 Jahre, 5 %: Tilgung 12.000 € jährlich, Zinsen im 1. Jahr 3.000 €, Rate 15.000 €.",
-          "Im 2. Jahr: Restschuld 48.000 €, Zinsen 2.400 €, Rate 14.400 €."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Laufzeit und Nutzungsdauer",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Laufzeit des Darlehens sollte die Nutzungsdauer der finanzierten Anlage nicht überschreiten. Wird die Laserstation fünf Jahre genutzt, passt ein Darlehen über fünf Jahre: Die Tilgung kann aus den Erlösen bezahlt werden, die die Station erwirtschaftet. Läuft das Darlehen länger als die Anlage, zahlt MAKEL Studio noch für eine Maschine, die nicht mehr arbeitet.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Hausbank bietet MAKEL für die Laserstation ein Ratendarlehen über 50.000 € an, Laufzeit 5 Jahre, 5 % Zins. Sandra rechnet: Tilgung 10.000 € pro Jahr, Zinsen im ersten Jahr 2.500 €, Gesamtbelastung 12.500 €. Bei einem Cashflow von 70.000 € ist das tragbar.",
-        "typische_fehler": "Beim Ratendarlehen die Zinsen jedes Jahr vom ursprünglichen Betrag berechnen.",
         "verstaendnisfragen": [
-          "Was bleibt beim Ratendarlehen gleich? Die Tilgung.",
-          "Warum eignet sich der Kontokorrentkredit nicht für Maschinen? Er ist teuer und kurzfristig — langfristiges Vermögen braucht langfristige Finanzierung."
-        ],
-        "pruefungsbezug": "Tilgungspläne berechnen und Darlehensarten vergleichen.",
-        "merksatz": "Ratendarlehen: Tilgung gleich, Rate sinkt; Annuität: Rate gleich; Fälligkeit: Tilgung am Ende; Kontokorrent: kurzfristig und teuer."
+          {
+            "frage": "Ratendarlehen 50.000 €, 5 %, Tilgung 10.000 € jährlich. Wie hoch ist die Rate im 3. Jahr?",
+            "antwort": "Restschuld 30.000 €, Zinsen 1.500 €, Rate 11.500 €.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ist der Kontokorrentkredit für die Laserstation ungeeignet?",
+            "antwort": "Er ist für kurzfristige Schwankungen gedacht und teuer. Eine Anlage, die über Jahre genutzt wird, gehört langfristig finanziert.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Lieferanten gewähren Zahlungsziele und Skonto (LF 4).",
-          "Ein Zinssatz bezieht sich auf ein Jahr."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest den Jahreszins eines Lieferantenkredits näherungsweise, vergleichst ihn mit einem Kontokorrentkredit und entscheidest begründet, ob Skonto gezogen wird.",
+        "vorwissen_kurz": "Ein Zahlungsziel wirkt kostenlos. Es kostet aber den Skonto, auf den MAKEL Studio verzichtet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was 20 Tage Aufschub kosten",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Garnlieferant liefert für 8.000 € mit der Bedingung „10 Tage 2 % Skonto, 30 Tage netto\". Zahlt MAKEL Studio am 30. Tag, nutzt es 20 Tage länger das Geld des Lieferanten und verzichtet dafür auf 160 € Skonto. Rechnet man diese Kosten auf ein Jahr hoch, ergibt sich näherungsweise ein Jahreszins von 36 %. Kein Bankkredit ist so teuer.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Zahlungsbedingungen im Vergleich",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bedingung",
+              "Kreditdauer",
+              "Jahreszins (Näherung)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "10 Tage 2 %, 30 Tage netto",
+                  "20 Tage",
+                  "36 %"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "14 Tage 3 %, 60 Tage netto",
+                  "46 Tage",
+                  "rund 23 %"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "10 Tage 1 %, 30 Tage netto",
+                  "20 Tage",
+                  "18 %"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Auch das günstigste Beispiel liegt über einem Kontokorrentzins von 11 %. Skonto zu ziehen lohnt sich fast immer, selbst wenn dafür kurz das Konto überzogen wird.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung gilt nur, wenn die Überbrückung tatsächlich nötig ist. Hat MAKEL Studio genug Geld auf dem Konto, ist der Vorteil sogar größer: Der Skonto wird ganz gespart, ohne Kontokorrentzinsen. Das Zahlungsziel auszureizen ist nur dann sinnvoll, wenn weder Guthaben noch eine freie Kreditlinie vorhanden sind — und dann ist es ein Warnzeichen für die Liquidität.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Wer eine Rechnung erst am Ende des Zahlungsziels statt innerhalb der Skontofrist bezahlt, nimmt einen Lieferantenkredit in Anspruch. Er wirkt bequem, ist aber teuer: Der Preis ist der entgangene Skonto. Näherungsweise ergibt sich der Jahreszins aus Skontosatz × 360 ÷ (Zahlungsziel − Skontofrist). Liegt dieser Zins über dem Zins des Kontokorrentkredits, lohnt es sich, Skonto zu ziehen und den Betrag notfalls über das Konto zu finanzieren.",
-        "beispiele": [
-          "2 % Skonto bei 10 Tagen, Ziel 30 Tage: 2 × 360 ÷ 20 = 36 % Jahreszins (Näherung).",
-          "Kontokorrentzins 11 %: Skonto ziehen ist deutlich günstiger."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Woher die Näherungsformel kommt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Skontosatz mal 360 durch Kreditdauer rechnet den Skonto auf ein Jahr hoch. Genauer wäre es, den Skonto auf den verminderten Betrag zu beziehen: 160 € Zinsen für 7.840 € über 20 Tage ergeben etwa 36,7 %. Für den Vergleich mit dem Kontokorrentkredit reicht die Näherung.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Stoffrechnung über 8.000 € bietet 2 % Skonto bei Zahlung innerhalb von 10 Tagen. Tobias Renner will das Ziel von 30 Tagen ausnutzen. Sandra zeigt: Für 20 Tage Aufschub verzichtet MAKEL auf 160 € — das entspricht etwa 36 % Jahreszins. Selbst mit Kontokorrent (11 %) kostet die Überbrückung nur rund 48 €.",
-        "typische_fehler": "Den Lieferantenkredit für kostenlos halten.",
         "verstaendnisfragen": [
-          "Was kostet ein Lieferantenkredit? Den entgangenen Skonto.",
-          "Wie wird der Jahreszins näherungsweise berechnet? Skontosatz × 360 ÷ (Zahlungsziel − Skontofrist)."
-        ],
-        "pruefungsbezug": "Lieferantenkredit und Kontokorrentkredit rechnerisch vergleichen.",
-        "merksatz": "Lieferantenkredit-Zins ≈ Skontosatz × 360 ÷ (Ziel − Skontofrist) — fast immer teurer als Kontokorrent."
+          {
+            "frage": "3 % Skonto bei Zahlung in 10 Tagen, Ziel 40 Tage. Wie hoch ist der Jahreszins näherungsweise?",
+            "antwort": "3 × 360 ÷ 30 = 36 %.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum kostet der Kontokorrentkredit im Beispiel nur rund 48 €?",
+            "antwort": "Weil er nur für 20 Tage auf 7.840 € läuft: 7.840 × 11 % × 20 ÷ 360 ≈ 48 €.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Abschreibungen fließen über die Verkaufspreise zurück.",
-          "Forderungen binden Kapital (Kapitel 6)."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst Leasing, Factoring und Innenfinanzierung als Alternativen zum Kredit nach Gesamtkosten, Liquidität und Risiko und wählst für einen Fall eine begründete Kombination.",
+        "vorwissen_kurz": "Nicht jede Investition muss mit einem Bankdarlehen finanziert werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nutzen statt kaufen, verkaufen statt warten",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim {{begriff:leasing|Leasing}} überlässt eine Leasinggesellschaft MAKEL Studio die Laserstation gegen monatliche Raten; Eigentümerin bleibt die Leasinggesellschaft. Das schont die Liquidität bei der Anschaffung, ist über die Laufzeit aber meist teurer als ein Kauf. Beim {{begriff:factoring|Factoring}} verkauft MAKEL Studio Forderungen an eine Factoringgesellschaft, die sofort einen Großteil auszahlt; gegen Gebühr kann sie auch das Ausfallrisiko übernehmen. Bei der **Selbstfinanzierung** wird der Gewinn nicht ausgeschüttet, sondern für Investitionen verwendet.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Laserstation: Kauf mit Darlehen oder Leasing",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Kauf mit Ratendarlehen",
+              "Leasing über 48 Monate"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Auszahlung zu Beginn",
+                  "Eigenanteil 1.500 € und Vorsteuer 9.785 €, die im Folgemonat erstattet wird",
+                  "keine"
+                ]
+              },
+              {
+                "zellen": [
+                  "laufende Belastung",
+                  "Rate 12.500 € im 1. Jahr, danach sinkend",
+                  "1.200 € monatlich, 14.400 € jährlich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesamtzahlungen",
+                  "51.500 € Kaufpreis + 7.500 € Zinsen = 59.000 €",
+                  "48 × 1.200 € = 57.600 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "nach Ende der Laufzeit",
+                  "Station gehört MAKEL Studio und hat noch einen Restwert",
+                  "Station geht zurück oder wird übernommen"
+                ]
+              }
+            ],
+            "fazit": "Die Leasingraten wirken günstiger, MAKEL Studio besitzt nach vier Jahren aber nichts. Beim Kauf bleibt eine Station mit Restwert, die weiter genutzt werden kann.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Welche Lösung passt, hängt von der Lage ab. Will MAKEL Studio die Station nach vier Jahren durch ein neueres Modell ersetzen, spricht viel für Leasing. Soll sie lange genutzt werden, ist der Kauf meist günstiger. Factoring hilft, wenn große Kunden lange Zahlungsziele haben und die Liquidität knapp ist; es kostet aber Gebühren. Selbstfinanzierung ist ohne Zinsen, setzt aber voraus, dass Gewinne erwirtschaftet und nicht ausgeschüttet werden — darüber entscheidet die Gesellschafterin.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Beim Leasing nutzt ein Unternehmen ein Gut gegen Leasingraten, ohne es zu kaufen; Eigentümer bleibt die Leasinggesellschaft. Vorteile: geringer Kapitalbedarf zu Beginn, planbare Raten, Austausch nach Vertragsende; Nachteile: in der Summe meist teurer als Kauf, vertragliche Bindung. Beim Factoring verkauft ein Unternehmen seine Forderungen an einen Factor und erhält schnell Liquidität; der Factor kann auch das Ausfallrisiko übernehmen (echtes Factoring) — gegen Gebühren. Zur Innenfinanzierung zählen die Selbstfinanzierung aus einbehaltenen Gewinnen und die Finanzierung aus Abschreibungsrückflüssen: Abschreibungen sind in die Preise einkalkuliert und fließen über die Umsatzerlöse zurück, ohne dass gleichzeitig Geld abfließt.",
-        "beispiele": [
-          "Leasing der Laserstation: 48 Monatsraten statt 51.500 € sofort.",
-          "Factoring der Forderungen gegen große Agenturen mit langen Zahlungszielen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Kombination statt Entweder-oder",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Praxis werden Instrumente kombiniert. MAKEL Studio könnte die Laserstation zu einem Teil aus einbehaltenen Gewinnen bezahlen, den Rest über ein Darlehen finanzieren und für die saisonale Januar-Lücke den Kontokorrentkredit nutzen. So passt jede Mittelverwendung zur Laufzeit der Finanzierung.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner vergleicht: Darlehen und Kauf oder Leasing. Die Summe der Leasingraten liegt rund 15 % über dem Kaufpreis. Dafür bleibt der Kontokorrentrahmen frei, und nach vier Jahren kann MAKEL auf ein neueres Gerät wechseln. Da Lasertechnik sich schnell entwickelt, ist das ein ernsthaftes Argument.",
-        "typische_fehler": "Leasing immer für günstiger halten, weil die Monatsrate klein ist.",
         "verstaendnisfragen": [
-          "Wem gehört ein geleastes Gut? In der Regel der Leasinggesellschaft.",
-          "Wie finanzieren Abschreibungen? Sie fließen über die Verkaufspreise als Einzahlungen zurück, ohne dass dafür Geld abfließt."
-        ],
-        "pruefungsbezug": "Leasing und Kreditkauf vergleichen; Factoring und Innenfinanzierung erklären.",
-        "merksatz": "Leasing: nutzen statt kaufen, planbar, meist teurer; Factoring: Forderungen verkaufen, schnell liquide; Innenfinanzierung: Gewinne und Abschreibungsrückflüsse."
+          {
+            "frage": "Wann ist Leasing für MAKEL Studio sinnvoller als ein Kauf?",
+            "antwort": "Wenn die Station nach kurzer Zeit gegen ein neueres Modell getauscht werden soll oder die Liquidität bei der Anschaffung geschont werden muss.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ist eine niedrige Monatsrate kein Beweis für eine günstige Finanzierung?",
+            "antwort": "Weil erst die Gesamtkosten über die Laufzeit und der Wert am Ende zeigen, was die Finanzierung tatsächlich kostet.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

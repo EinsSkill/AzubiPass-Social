@@ -11,7 +11,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-999c67dad87f95ba";
+var SPEICHER = "azubipass-4d3d0809eca3ed1d";
 var VORRAT = {
   "./": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "app.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
@@ -24,9 +24,9 @@ var VORRAT = {
   "ik2024-lf05.html": "3cbb6119227c4158066e8f8733f644b67468559828cdfcb08aa14e4b420a239f",
   "ik2024-lf06.html": "2fa9093425be7160350d04d26859700956ec9a7e36dbc566c205ee2bf17ae7c4",
   "ik2024-lf07.html": "66f0cead46b6afd93098c1e87d0aed2f144e993ba3678cb7f4301c60563905c1",
-  "ik2024-lf08.html": "a9b4acc06086d49a30c9257ee129e4d9c2c74ba0ba7531307ac89066e45c04c7",
+  "ik2024-lf08.html": "b57d0d52b24d935044d6c1c4d47e3f992500133e05a4a301516c7b3034afc733",
   "ik2024-lf09.html": "f10418108a47d73d1e6ad05a2e80e948998f26febcf487d341605bdf2654d328",
-  "ik2024-lf10.html": "ef8cf092f3c3ff3a4a677fddde7aefa4985a2ce046f33f185cacc12a823af49a",
+  "ik2024-lf10.html": "2a6718658806451e2c2daac73fed3ce785ba65e888dc35fa803380811a881f7d",
   "ik2024-lf11.html": "d2bd6c304115bb6014380ec612f4dae2179a0f8d1bf5a183133bed30590b786c",
   "ik2024-lf12.html": "cd1c1d477db6bf23510f36a52ee06c7bafe78e3dc33e105da6eeb7747824bb77",
   "ik2024-lf13.html": "b230ca5174ddb34efdb968d8cc4ef861cbc84328a6d7b2da386ec3db726e4d54",
@@ -48,7 +48,7 @@ var VORRAT = {
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "49e2f946051d0f3e1dfb60f5f7ea5ee3ec1db923636b71f29f1a848c269cdfd5",
   "mittel/aufgaben.js": "3da2279f3048ff8233db6f053e2ac066cc5b31b8e17c21e6ed7f6c8c9b1022f3",
-  "mittel/aufgaben.json": "e81bd29ab9c1fe458f7e85ec59bc5b1e43cd31320eda2dd4fb8f05f1ffec6e43",
+  "mittel/aufgaben.json": "463b66f605c9dbf05d8ba19aba4c12e70b08085ed93ecd76a8553b0e3b7cb110",
   "mittel/azubipass-logo.png": "6fbfaa65da67de20b628b6d5415a8a46c95ceeaa5c6638492e2860e7d6e98973",
   "mittel/azubipass-symbol.png": "82cddbb695cbba0a09d3b933eb4b178e221463e015b962d8013cdff580d4a692",
   "mittel/azubipass.css": "eed5d0e207c7f8123c72718bc66768029cc2463adcf58addfdab01b8aae0ac44",
@@ -68,7 +68,7 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "851ffa8d33b71774e33866696fa4da419ee38e26d15dd70e76ff3539d61d5130",
+  "mittel/inhalt.json": "5c24c918821e84badfc6db8d3c1a1d5951e2f3f56878c2b739efd88a47bfb9b3",
   "mittel/kern.js": "fe047655aad844758254282a3d4a0d3e8942970b8eafc0d606c6076aaef74bef",
   "mittel/landing.css": "c1d299ad11bd6a3fd4b8515d08334b45741b6616da271a4899acf51353596f45",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",
@@ -82,7 +82,7 @@ var VORRAT = {
   "mittel/source-serif-4-600-latin.woff2": "f2ea9c12d2fe9bd3a9589b02ad2c0909da88f30938c91adc838c4f4098f9f9e0",
   "mittel/source-serif-4-700-latin-ext.woff2": "155f6e701097cc269cf8d5d7ac86795f263f1afbeb47c14d1d747108c9335389",
   "mittel/source-serif-4-700-latin.woff2": "f2ea9c12d2fe9bd3a9589b02ad2c0909da88f30938c91adc838c4f4098f9f9e0",
-  "mittel/suche.json": "e4a94fa08c525708ec41e908aeff326bd0ca04ac6a83ef5c9d3d2d3bd2819a9d",
+  "mittel/suche.json": "bd9e14cb032376b37e7a9570cf730755630c67267af7091024b84ae05071862d",
   "mittel/supabase.js": "50db96e85947966782e7a3f4252a59dd8285f1ca00c1718a4079ed621e10bae1",
   "mittel/symbol-v1-180.png": "718223b0c01694f646fc25b5d0c384fcbc825381b2d7fdc484ae8d1bee5e2711",
   "mittel/symbol-v1-192.png": "e0b355299d9fce7756c6e251095869599ad87706b7d8f4bbb6abdde89493f63e",

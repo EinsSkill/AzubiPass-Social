@@ -6,86 +6,467 @@
   "untertitel": "Kapitalstruktur, Anlagendeckung, Liquidität, Rentabilität und Cashflow berechnen, vergleichen und vorsichtig deuten.",
   "minuten": 35,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Bilanz und GuV sind aufgestellt (Kapitel 4).",
-          "Absolute Zahlen lassen sich schlecht vergleichen."
+        "darstellung": "vollfassung",
+        "ziel": "Du bereitest eine Bilanz für die Kennzahlenanalyse in Strukturgruppen auf und wählst für jede Kennzahl einen geeigneten Vergleichsmaßstab.",
+        "vorwissen_kurz": "Einzelne Bilanzposten sagen wenig. Erst ihr Verhältnis zueinander und der Vergleich mit anderen Werten zeigen, wie es dem Unternehmen geht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst verdichten, dann vergleichen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Analyse wird die Bilanz zunächst aufbereitet: Posten werden zu Gruppen zusammengefasst, etwa Anlagevermögen, Vorräte, Forderungen und liquide Mittel auf der Aktivseite, Eigenkapital sowie lang- und kurzfristiges Fremdkapital auf der Passivseite. Rückstellungen und Verbindlichkeiten werden nach ihrer Fälligkeit zugeordnet. Aus diesen Gruppen werden Kennzahlen gebildet. Eine Kennzahl allein ist aber stumm: Erst der Vergleich mit dem Vorjahr, mit Branchenwerten oder einem Ziel zeigt, ob ein Wert gut oder schlecht ist.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die aufbereitete Bilanz von MAKEL Studio (Übungsauszug)",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aktiva",
+              "Berichtsjahr",
+              "Vorjahr",
+              "Passiva",
+              "Berichtsjahr",
+              "Vorjahr"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anlagevermögen",
+                  "180.000 €",
+                  "170.000 €",
+                  "Eigenkapital",
+                  "120.000 €",
+                  "90.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "Vorräte",
+                  "90.000 €",
+                  "85.000 €",
+                  "langfristiges Fremdkapital",
+                  "180.000 €",
+                  "160.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "Forderungen",
+                  "105.000 €",
+                  "80.000 €",
+                  "kurzfristiges Fremdkapital",
+                  "100.000 €",
+                  "125.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "liquide Mittel",
+                  "25.000 €",
+                  "40.000 €",
+                  "",
+                  "",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  2,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesamtkapital",
+                  "400.000 €",
+                  "375.000 €",
+                  "Gesamtkapital",
+                  "400.000 €",
+                  "375.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  4,
+                  5
+                ]
+              }
+            ],
+            "fazit": "Schon die aufbereitete Bilanz zeigt Bewegung: mehr Eigenkapital, weniger kurzfristige Schulden, aber auch weniger liquide Mittel und deutlich mehr Forderungen.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Aufbereitung entstehen Entscheidungen. Eine Rückstellung für die Abschlussprüfung wird im Folgejahr fällig und gehört zum kurzfristigen Fremdkapital; ein Darlehen mit zehn Jahren Laufzeit zum langfristigen. Der Teil des Darlehens, der im nächsten Jahr getilgt wird, kann dem kurzfristigen Fremdkapital zugeordnet werden. Wichtig ist, dass dieselbe Zuordnung in jedem Jahr gilt, sonst sind die Vergleiche wertlos.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Für die Auswertung wird die Bilanz zunächst aufbereitet: Gleichartige Posten werden zusammengefasst (Anlagevermögen, Vorräte, Forderungen, liquide Mittel; Eigenkapital, langfristiges und kurzfristiges Fremdkapital). Kennzahlen setzen diese Größen ins Verhältnis. Aussagekräftig werden sie erst im Vergleich: mit dem Vorjahr (Zeitvergleich), mit ähnlichen Betrieben oder Branchenwerten (Betriebsvergleich) oder mit Zielwerten (Soll-Ist-Vergleich). Eine einzelne Kennzahl ohne Vergleich ist kaum zu deuten.",
-        "beispiele": [
-          "Eigenkapitalquote 30 % — im Vorjahr 24 %: Die Kapitalstruktur hat sich verbessert.",
-          "Liquidität 1. Grades 25 % — branchenüblich oft niedriger als 100 %, entscheidend ist der Finanzplan."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Drei Maßstäbe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der **Zeitvergleich** mit dem Vorjahr zeigt Entwicklungen im eigenen Unternehmen. Der **Branchenvergleich** zeigt, wo MAKEL Studio im Verhältnis zu ähnlichen Betrieben steht. Der **Soll-Ist-Vergleich** misst die Werte an eigenen Zielen, etwa einer angestrebten Eigenkapitalquote von mindestens 30 %.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für das Bankgespräch übt Sandra Koslowski mit Luca die Aufbereitung an einem verkleinerten Übungsauszug der MAKEL-Bilanz: Anlagevermögen 180.000 €, Vorräte 90.000 €, Forderungen 105.000 €, liquide Mittel 25.000 € (Summe 400.000 €); Eigenkapital 120.000 €, langfristiges Fremdkapital 180.000 €, kurzfristiges Fremdkapital 100.000 €.",
-        "typische_fehler": "Eine einzelne Kennzahl ohne Vergleich als gut oder schlecht bewerten.",
         "verstaendnisfragen": [
-          "Warum wird die Bilanz aufbereitet? Damit gleichartige Posten zusammengefasst und ins Verhältnis gesetzt werden können.",
-          "Welche Vergleiche gibt es? Zeitvergleich, Betriebs- oder Branchenvergleich, Soll-Ist-Vergleich."
-        ],
-        "pruefungsbezug": "Bilanz aufbereiten und Vergleichsmaßstäbe nennen.",
-        "merksatz": "Kennzahlen = Verhältnisse; aussagekräftig erst im Vergleich mit Vorjahr, Branche oder Ziel."
+          {
+            "frage": "Warum ist eine Eigenkapitalquote von 30 % allein noch keine Aussage?",
+            "antwort": "Weil der Maßstab fehlt. Erst im Vergleich mit dem Vorjahr, der Branche oder einem Ziel zeigt sich, ob 30 % viel oder wenig sind.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Zu welcher Gruppe gehört eine Steuerrückstellung, die im März gezahlt wird?",
+            "antwort": "Zum kurzfristigen Fremdkapital, weil sie innerhalb eines Jahres fällig wird.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Eigenkapital haftet und muss nicht zurückgezahlt werden.",
-          "Anlagevermögen bindet Kapital langfristig."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Eigenkapitalquote sowie Anlagendeckung I und II, vergleichst sie mit dem Vorjahr und beurteilst die Finanzierung nach der goldenen Bilanzregel.",
+        "vorwissen_kurz": "Wie ein Unternehmen finanziert ist, entscheidet darüber, wie unabhängig und krisenfest es ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie solide ist die Finanzierung?",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Eigenkapitalquote** zeigt, welcher Anteil des Gesamtkapitals von den Eigentümern stammt. Je höher sie ist, desto unabhängiger ist das Unternehmen von Banken und desto besser kann es Verluste auffangen. Die **Anlagendeckung** prüft, ob langfristig gebundenes Vermögen auch langfristig finanziert ist. Nach der **goldenen Bilanzregel** soll das Anlagevermögen mindestens durch Eigenkapital und langfristiges Fremdkapital gedeckt sein: Anlagendeckung II von mindestens 100 %.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Berichtsjahr und Vorjahr",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Berichtsjahr",
+              "Vorjahr"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Eigenkapitalquote",
+                  "120.000 ÷ 400.000 × 100 = 30,0 %",
+                  "90.000 ÷ 375.000 × 100 = 24,0 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anlagendeckung I",
+                  "120.000 ÷ 180.000 × 100 = 66,7 %",
+                  "90.000 ÷ 170.000 × 100 = 52,9 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anlagendeckung II",
+                  "300.000 ÷ 180.000 × 100 = 166,7 %",
+                  "250.000 ÷ 170.000 × 100 = 147,1 %"
+                ]
+              }
+            ],
+            "fazit": "Alle drei Kennzahlen haben sich verbessert. Die goldene Bilanzregel ist in beiden Jahren erfüllt; das Anlagevermögen ist vollständig langfristig finanziert.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Ursache der Verbesserung liegt im Ergebnis: MAKEL Studio hat den Jahresüberschuss von 30.000 € nicht ausgeschüttet, sondern im Unternehmen behalten. Dadurch ist das Eigenkapital gewachsen, ohne dass die Gesellschafterin Geld nachschießen musste. Für die Bank ist das ein gutes Zeichen bei der nächsten Kreditverhandlung.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Eigenkapitalquote (Eigenkapital ÷ Gesamtkapital × 100) zeigt die finanzielle Unabhängigkeit und die Fähigkeit, Verluste aufzufangen. Die Anlagendeckung prüft die goldene Bilanzregel: Langfristig gebundenes Vermögen soll langfristig finanziert sein. Anlagendeckung I = Eigenkapital ÷ Anlagevermögen × 100; Anlagendeckung II = (Eigenkapital + langfristiges Fremdkapital) ÷ Anlagevermögen × 100 — sie sollte mindestens 100 % betragen.",
-        "beispiele": [
-          "MAKEL: Eigenkapitalquote 120.000 ÷ 400.000 = 30 %.",
-          "MAKEL: Anlagendeckung II (120.000 + 180.000) ÷ 180.000 = 166,7 %."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Grenzen der Kapitalstrukturregeln",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die goldene Bilanzregel ist eine Faustregel, kein Gesetz. Branchen mit viel Anlagevermögen, etwa Maschinenbau, haben typischerweise andere Werte als Handelsbetriebe. Außerdem zeigt die Bilanz nur den Stichtag; ein Kredit, der im Januar verlängert wird, ist am 31. Dezember vielleicht noch kurzfristig.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Anlagendeckung I liegt bei 120.000 ÷ 180.000 = 66,7 %: Das Eigenkapital allein deckt das Anlagevermögen nicht. Mit dem langfristigen Darlehen ist es aber deutlich überdeckt (166,7 %) — die neue Maschine ist fristengerecht finanziert.",
-        "typische_fehler": "Bei der Anlagendeckung II das kurzfristige Fremdkapital mitzählen.",
         "verstaendnisfragen": [
-          "Was sagt die Eigenkapitalquote aus? Wie unabhängig das Unternehmen von Gläubigern ist und wie gut es Verluste auffangen kann.",
-          "Was besagt die goldene Bilanzregel? Langfristig gebundenes Vermögen soll langfristig finanziert sein."
-        ],
-        "pruefungsbezug": "Eigenkapitalquote und Anlagendeckung berechnen und deuten.",
-        "merksatz": "EK-Quote = EK ÷ GK; Anlagendeckung II = (EK + langfr. FK) ÷ AV ≥ 100 % (goldene Bilanzregel)."
+          {
+            "frage": "Eigenkapital 120.000 €, Gesamtkapital 400.000 €. Wie hoch ist die Eigenkapitalquote?",
+            "antwort": "120.000 € ÷ 400.000 € × 100 = 30 %.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was bedeutet eine Anlagendeckung II von 166,7 %?",
+            "antwort": "Das Anlagevermögen ist vollständig durch Eigenkapital und langfristiges Fremdkapital gedeckt; ein Teil der langfristigen Mittel finanziert sogar Umlaufvermögen.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Kurzfristige Schulden müssen bald bezahlt werden.",
-          "Forderungen werden erst zu Geld, wenn Kunden zahlen."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die Liquiditätsgrade 1 bis 3, vergleichst sie mit dem Vorjahr und erklärst, warum sie als Stichtagswerte keinen Liquiditätsplan ersetzen.",
+        "vorwissen_kurz": "Neben der langfristigen Finanzierung interessiert, ob das Unternehmen seine kurzfristigen Schulden bezahlen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Können die kurzfristigen Schulden bezahlt werden?",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Liquiditätsgrade setzen kurzfristig verfügbare Mittel ins Verhältnis zum kurzfristigen Fremdkapital. Der **1. Grad** berücksichtigt nur liquide Mittel, der **2. Grad** zusätzlich die Forderungen, der **3. Grad** das gesamte Umlaufvermögen einschließlich der Vorräte. Als Faustregeln gelten oft: 2. Grad mindestens 100 %, 3. Grad deutlich darüber. Alle Werte beziehen sich auf den Bilanzstichtag.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Liquidität im Vergleich",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Grad",
+              "Berichtsjahr",
+              "Vorjahr"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. Grad",
+                  "25.000 ÷ 100.000 × 100 = 25 %",
+                  "40.000 ÷ 125.000 × 100 = 32 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "2. Grad",
+                  "130.000 ÷ 100.000 × 100 = 130 %",
+                  "120.000 ÷ 125.000 × 100 = 96 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "3. Grad",
+                  "220.000 ÷ 100.000 × 100 = 220 %",
+                  "205.000 ÷ 125.000 × 100 = 164 %"
+                ]
+              }
+            ],
+            "fazit": "Der 2. und 3. Grad haben sich verbessert, weil das kurzfristige Fremdkapital gesunken ist. Der 1. Grad ist dagegen gefallen: Es liegt weniger Geld auf dem Konto, dafür mehr in Forderungen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die gestiegenen Forderungen verdienen einen zweiten Blick. Sind sie entstanden, weil MAKEL Studio im Dezember viel verkauft hat, ist das unbedenklich. Liegt es daran, dass Händler später zahlen als früher, wird es zum Risiko: Dann stimmt der 2. Grad nur auf dem Papier. Die Buchhaltung prüft deshalb die Altersstruktur der Forderungen und das tatsächliche Zahlungsverhalten.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Liquiditätsgrade setzen Umlaufvermögen ins Verhältnis zum kurzfristigen Fremdkapital. 1. Grad: liquide Mittel ÷ kurzfristiges FK. 2. Grad: (liquide Mittel + Forderungen) ÷ kurzfristiges FK — als Faustregel mindestens 100 %. 3. Grad: gesamtes Umlaufvermögen ÷ kurzfristiges FK — Faustregel deutlich über 100 %. Die Kennzahlen sind stichtagsbezogen: Sie zeigen nicht, wann Zahlungen tatsächlich fällig werden. Für die Steuerung der Zahlungsfähigkeit braucht man deshalb einen Liquiditätsplan (Kapitel 6).",
-        "beispiele": [
-          "MAKEL 1. Grad: 25.000 ÷ 100.000 = 25 %.",
-          "MAKEL 2. Grad: (25.000 + 105.000) ÷ 100.000 = 130 %."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Liquiditätsplan",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für die laufende Steuerung nutzt MAKEL Studio einen Liquiditätsplan, der Ein- und Auszahlungen der nächsten Wochen und Monate gegenüberstellt. Er zeigt, ob am 28. Februar genug Geld für Löhne und Lieferanten da ist — eine Frage, die die Liquiditätsgrade vom 31. Dezember nicht beantworten können.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner erschrickt über 25 %. Sandra erklärt: Kaum ein Industriebetrieb hält so viel Bargeld, wie er kurzfristig schuldet. Der 2. Grad von 130 % zeigt, dass Forderungen die kurzfristigen Schulden decken — sofern die Kunden pünktlich zahlen. Deshalb prüft sie auch die Altersstruktur der Forderungen.",
-        "typische_fehler": "Liquiditätsgrade als Zahlungsplan missverstehen.",
         "verstaendnisfragen": [
-          "Wie wird die Liquidität 2. Grades berechnet? (liquide Mittel + Forderungen) ÷ kurzfristiges Fremdkapital × 100.",
-          "Warum reicht sie nicht zur Steuerung? Sie ist stichtagsbezogen und zeigt keine Fälligkeiten."
-        ],
-        "pruefungsbezug": "Liquiditätsgrade berechnen und ihre Grenzen nennen.",
-        "merksatz": "Liquidität 1./2./3. Grades = (liquide | + Forderungen | gesamtes UV) ÷ kurzfr. FK; stichtagsbezogen, kein Zahlungsplan."
+          {
+            "frage": "Liquide Mittel 25.000 €, Forderungen 105.000 €, kurzfristiges Fremdkapital 100.000 €. Wie hoch ist die Liquidität 2. Grades?",
+            "antwort": "(25.000 € + 105.000 €) ÷ 100.000 € × 100 = 130 %.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum kann ein guter 2. Grad trügen?",
+            "antwort": "Weil er Forderungen wie Geld behandelt. Zahlen Kunden spät oder gar nicht, fehlt das Geld trotzdem.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Der Jahresüberschuss stammt aus der GuV.",
-          "Abschreibungen sind Aufwand ohne Auszahlung."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Eigenkapital- und Umsatzrentabilität sowie den vereinfachten Cashflow, deutest die Werte im Vorjahresvergleich und nennst Grenzen der Kennzahlen.",
+        "vorwissen_kurz": "Neben Finanzierung und Liquidität interessiert, wie erfolgreich das Unternehmen mit seinem Kapital und seinem Umsatz wirtschaftet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erfolg im Verhältnis",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Eigenkapitalrentabilität** zeigt, wie sich das Eigenkapital verzinst: Jahresüberschuss geteilt durch Eigenkapital. Üblich ist, das Eigenkapital zu Jahresbeginn oder den Durchschnitt zu verwenden, damit der Gewinn des Jahres nicht im Nenner steckt. Die **Umsatzrentabilität** zeigt, wie viel von jedem Euro Umsatz als Gewinn bleibt. Der {{begriff:cashflow|Cashflow}} schätzt die selbst erwirtschafteten Mittel: Jahresüberschuss plus Aufwendungen ohne Auszahlung, vor allem Abschreibungen und die Erhöhung langfristiger Rückstellungen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rentabilität und Cashflow im Vergleich",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Berichtsjahr",
+              "Vorjahr"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Eigenkapitalrentabilität (auf EK zu Jahresbeginn)",
+                  "30.000 ÷ 90.000 × 100 = 33,3 %",
+                  "18.000 ÷ 72.000 × 100 = 25,0 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Umsatzrentabilität",
+                  "30.000 ÷ 820.000 × 100 = 3,7 %",
+                  "18.000 ÷ 760.000 × 100 = 2,4 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Cashflow (vereinfacht)",
+                  "30.000 + 38.000 + 2.000 = 70.000 €",
+                  "18.000 + 35.000 + 1.000 = 54.000 €"
+                ]
+              }
+            ],
+            "fazit": "Alle Werte haben sich verbessert. Von jedem Euro Umsatz bleiben jetzt 3,7 Cent Gewinn, und MAKEL Studio hat 70.000 € aus eigener Kraft erwirtschaftet.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Cashflow von 70.000 € ist die Summe, die MAKEL Studio für Investitionen, Tilgungen oder Ausschüttungen aus dem laufenden Geschäft zur Verfügung hatte. Im Berichtsjahr wurden damit eine Druckpresse finanziert und das kurzfristige Fremdkapital abgebaut. Dass trotzdem weniger Geld auf dem Konto liegt, erklärt sich durch die gestiegenen Forderungen und Vorräte, die ebenfalls Mittel gebunden haben.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Rentabilitätskennzahlen setzen den Erfolg ins Verhältnis zum eingesetzten Kapital oder zum Umsatz. Eigenkapitalrentabilität = Jahresüberschuss ÷ Eigenkapital × 100 (vereinfacht bezogen auf das Eigenkapital zu Jahresbeginn). Umsatzrentabilität = Jahresüberschuss ÷ Umsatzerlöse × 100. Der Cashflow zeigt die selbst erwirtschafteten Finanzmittel; vereinfacht: Jahresüberschuss + Abschreibungen + Erhöhung langfristiger Rückstellungen. Er zeigt, wie viel das Unternehmen aus eigener Kraft für Investitionen, Tilgung und Ausschüttung zur Verfügung hat.",
-        "beispiele": [
-          "MAKEL: Eigenkapitalrentabilität 30.000 ÷ 90.000 = 33,3 % (Eigenkapital zu Jahresbeginn).",
-          "MAKEL: Umsatzrentabilität 30.000 ÷ 820.000 = 3,7 %."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Hohe Eigenkapitalrentabilität bei wenig Eigenkapital",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine sehr hohe Eigenkapitalrentabilität kann auch entstehen, weil das Eigenkapital klein ist. Ein Unternehmen mit 10.000 € Eigenkapital und 5.000 € Gewinn hat 50 % Rentabilität, ist aber stark verschuldet und anfällig. Deshalb wird die Rentabilität immer zusammen mit der Eigenkapitalquote betrachtet.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Der vereinfachte Cashflow beträgt 30.000 € Jahresüberschuss + 38.000 € Abschreibungen + 2.000 € Erhöhung der langfristigen Rückstellungen = 70.000 €. Bei einer jährlichen Tilgung von 30.000 € bleibt MAKEL Spielraum für kleinere Investitionen aus eigener Kraft — ein Argument im Bankgespräch.",
-        "typische_fehler": "Abschreibungen beim Cashflow abziehen statt hinzurechnen.",
         "verstaendnisfragen": [
-          "Warum werden Abschreibungen zum Cashflow addiert? Sie mindern den Gewinn, führen aber nicht zu einer Auszahlung.",
-          "Was zeigt die Umsatzrentabilität? Wie viel Gewinn von jedem Euro Umsatz übrig bleibt."
-        ],
-        "pruefungsbezug": "Rentabilitäten und vereinfachten Cashflow berechnen und deuten.",
-        "merksatz": "EK-Rentabilität = JÜ ÷ EK; Umsatzrentabilität = JÜ ÷ Umsatz; Cashflow (vereinfacht) = JÜ + Abschreibungen + Erhöhung langfr. Rückstellungen."
+          {
+            "frage": "Wie hoch ist die Umsatzrentabilität bei 30.000 € Jahresüberschuss und 820.000 € Umsatz?",
+            "antwort": "30.000 € ÷ 820.000 € × 100 ≈ 3,7 %.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum werden Abschreibungen beim Cashflow zum Jahresüberschuss addiert?",
+            "antwort": "Weil sie den Gewinn mindern, aber zu keiner Auszahlung führen. Das Geld ist im Unternehmen geblieben.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
