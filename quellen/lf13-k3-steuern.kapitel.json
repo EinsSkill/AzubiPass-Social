@@ -6,66 +6,580 @@
   "untertitel": "Ein Plan ist keine Vorhersage. Er ist etwas, woran man Abweichungen erkennt.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Projektfortschritt muss anhand fertiger Ergebnisse messbar sein.",
-          "Prozentangaben und Stundenverbrauch können täuschen."
+        "darstellung": "vollfassung",
+        "ziel": "Du misst den Projektfortschritt an fertigen Arbeitspaketen und Meilensteinen, vergleichst Plan und Ist und meldest eine Abweichung so früh, dass noch gegengesteuert werden kann.",
+        "vorwissen_kurz": "Ein Plan ist keine Vorhersage. Er ist der Maßstab, an dem man Abweichungen erkennt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fertig oder nicht fertig",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob ein Projekt im Plan liegt, lässt sich nur an überprüfbaren Ergebnissen erkennen. Prozentangaben wie „zu 80 Prozent fertig“ beruhen auf Gefühl und bleiben oft lange gleich. Verbrauchte Stunden sagen nur, wie viel gearbeitet wurde, nicht, wie viel fertig ist. Zuverlässig sind abgeschlossene Arbeitspakete und erreichte {{begriff:meilenstein|Meilensteine}}: Das Ergebnis liegt vor oder nicht.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Statusbericht nach drei Wochen",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Arbeitspaket",
+              "Plan",
+              "Ist",
+              "Status"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Standkonzept erstellen",
+                  "fertig bis Tag 5",
+                  "fertig an Tag 6",
+                  "1 Tag verspätet, aufgeholt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Standbauer beauftragen",
+                  "fertig bis Tag 9",
+                  "fertig an Tag 9",
+                  "im Plan"
+                ]
+              },
+              {
+                "zellen": [
+                  "Standbau",
+                  "Zwischentermin Tag 18: Rohbau steht",
+                  "Rohbau zu etwa zwei Dritteln",
+                  "Meilenstein nicht erreicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einladungsmails",
+                  "fertig bis Tag 14",
+                  "fertig an Tag 13",
+                  "im Plan"
+                ]
+              },
+              {
+                "zellen": [
+                  "Musterstücke",
+                  "40 Stück bis Tag 18",
+                  "28 Stück",
+                  "Rückstand, hat Puffer"
+                ]
+              }
+            ],
+            "fazit": "Der Standbau hat den Zwischentermin verpasst — und er liegt auf dem kritischen Pfad. Die Musterstücke liegen auch zurück, haben aber Puffer.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea meldet die Abweichung beim Standbau noch am selben Tag an den Auftraggeber, zusammen mit einem Vorschlag: Der Standbauer setzt am Wochenende eine zusätzliche Schicht ein, die Mehrkosten von 900 € trägt er laut Vertrag selbst, weil der Zwischentermin vereinbart war. So bleibt der Termin erreichbar.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Fortschritt wird an vollständig fertigen Arbeitspaketen und erreichten Meilensteinen gemessen. Prozentangaben sind nicht überprüfbar und oft zu optimistisch. Verbrauchte Stunden zeigen allein nicht, wie viel Ergebnis erreicht wurde; die Größe der Arbeitspakete und ihr geplanter Aufwand müssen berücksichtigt werden.",
-        "beispiele": [
-          "3 von 8 gleich großen Arbeitspaketen entsprechen 37,5 % abgeschlossener Pakete.",
-          "60 % Budgetverbrauch bei nur 3 von 8 Paketen zeigt, dass Aufwand und Ergebnis auseinanderlaufen können."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Plan-Ist-Vergleich und Kosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben Terminen werden auch Kosten verglichen: Was war bis heute geplant, was wurde ausgegeben, was ist dafür fertig? Erst die drei Werte zusammen zeigen, ob das Projekt teurer wird. Wurden 60 Prozent des Budgets verbraucht, aber erst 40 Prozent der Ergebnisse geliefert, droht eine Überschreitung.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Zur Halbzeit sind 60 % des Budgets verbraucht, aber nur 3 von 8 Arbeitspaketen abgeschlossen. 3 ÷ 8 × 100 = 37,5 %. Die Aussage ‚im Plan‘ ist deshalb nicht belastbar. Es wird geprüft, ob die Pakete gleich groß sind, und der Auftraggeber erhält frühzeitig bezifferte Auswirkungen.",
-        "typische_fehler": "Budgetverbrauch wird als Fortschritt behandelt oder Arbeitspakete werden nach einer Prozentmeldung als fertig gezählt. Unterschiedliche Paketgrößen werden ebenfalls ignoriert.",
         "verstaendnisfragen": [
-          "Woran wird zuverlässig gemessen? An fertigen Arbeitspaketen und erreichten Meilensteinen.",
-          "Warum sind Prozentangaben problematisch? Sie sind nicht überprüfbar und häufig systematisch zu optimistisch."
-        ],
-        "pruefungsbezug": "Vergleiche Ergebnisfortschritt und Ressourcenverbrauch und prüfe die Größe der Arbeitspakete.",
-        "merksatz": "Fertig ist messbar; verbrauchte Stunden sind noch kein Ergebnis."
+          {
+            "frage": "Warum ist „Standbau zu zwei Dritteln fertig“ eine schwache Statusangabe?",
+            "antwort": "Weil sie eine Schätzung ist und sich kaum prüfen lässt. Aussagekräftig ist der Meilenstein: Der Rohbau steht oder nicht. Hier steht er nicht, und das ist das, was zählt.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum meldet Lea die Verzögerung sofort und nicht erst, wenn sie eine Lösung sicher hat?",
+            "antwort": "Weil eine früh gemeldete Abweichung mehr Handlungsspielraum lässt. Der Auftraggeber kann mitentscheiden, solange noch Möglichkeiten bestehen. Ein Vorschlag gehört dazu, aber er ist kein Grund, mit der Meldung zu warten.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Risiken haben Eintrittswahrscheinlichkeit und Auswirkung.",
-          "Risiken können im Projektverlauf neu entstehen oder entfallen."
+        "darstellung": "vollfassung",
+        "ziel": "Du sammelst Projektrisiken im Team, bewertest sie nach Eintrittswahrscheinlichkeit und Auswirkung und leitest für jedes Risiko eine passende Behandlung mit Verantwortlichem ab.",
+        "vorwissen_kurz": "Ein Risiko ist etwas, das noch nicht eingetreten ist, aber eintreten könnte. Wer es kennt, kann vorbeugen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wahrscheinlichkeit mal Auswirkung",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:projektrisiko|Projektrisiko}} ist ein mögliches Ereignis, das Ziel, Termin oder Budget gefährdet. Es wird nach zwei Größen bewertet: Wie wahrscheinlich ist es, und wie schwer wären die Folgen? Daraus ergibt sich die Behandlung. Risiken mit schweren Folgen verdienen Aufmerksamkeit, auch wenn sie selten sind; häufige Kleinigkeiten werden mit einfachen Mitteln gemindert oder bewusst hingenommen.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Risikoregister des Messestands",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Risiko",
+              "Wahrscheinlichkeit",
+              "Auswirkung",
+              "Behandlung",
+              "Verantwortlich"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Standbauer wird nicht rechtzeitig fertig",
+                  "mittel",
+                  "hoch",
+                  "Zwischentermine vertraglich vereinbaren, Vertragsstrafe",
+                  "Lea"
+                ]
+              },
+              {
+                "zellen": [
+                  "Spedition liefert Musterstücke zu spät",
+                  "gering",
+                  "hoch",
+                  "Notfallplan: zehn Musterstücke im Auto mitnehmen",
+                  "Tim"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einzelne Standkräfte fallen krank aus",
+                  "hoch",
+                  "gering",
+                  "zwei Ersatzpersonen einplanen",
+                  "Lea"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lookbook-Druck einen Tag später",
+                  "gering",
+                  "gering",
+                  "hinnehmen",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Jedes Risiko hat eine Behandlung und eine verantwortliche Person. Das Register wird in jeder Teambesprechung kurz durchgegangen und ergänzt.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Risiko ist von einem **Problem** zu unterscheiden: Das Risiko ist möglich, das Problem ist eingetreten. Als der Standbauer den Zwischentermin verpasst, wird aus dem Risiko ein Problem. Weil es im Register stand, lag die Gegenmaßnahme — die vertragliche Absicherung — schon bereit.",
+            "id": "b2-p2"
+          }
         ],
-        "erklaerung": "Risiken werden nach Wahrscheinlichkeit und Auswirkung auf Ziel, Termin oder Budget bewertet. Daraus ergeben sich vermeiden, vorsorgen, mindern oder hinnehmen. Zu Beginn sammelt das Team Risiken gemeinsam; die Liste wird laufend fortgeschrieben. Früh gemeldete Verzögerungen schaffen Handlungsspielraum.",
-        "beispiele": [
-          "Ein wahrscheinliches Risiko mit schwerer Folge wird vermieden oder abgesichert, etwa durch zweiten Lieferer oder Vertrag.",
-          "Ein unwahrscheinliches, aber schweres Risiko erhält eine Rückfallebene; ein kleines Risiko kann bewusst hingenommen werden."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Vier Arten der Risikobehandlung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Vermeiden heißt, die Ursache zu beseitigen, etwa einen zweiten Lieferanten zu beauftragen. Vorsorgen heißt, einen Notfallplan bereitzuhalten. Mindern heißt, die Wahrscheinlichkeit oder die Folgen zu verringern. Hinnehmen heißt, das Risiko bewusst zu tragen, weil jede Maßnahme mehr kosten würde als der mögliche Schaden.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Lieferer könnte ausfallen. Ist der Ausfall wahrscheinlich und schwerwiegend, wird ein zweiter Lieferer oder eine vertragliche Absicherung geprüft. Ist er unwahrscheinlich, aber folgenschwer, wird ein Notfallplan vorbereitet. Bei hoher Wahrscheinlichkeit und begrenzter Auswirkung wird die Wirkung gemindert, etwa durch Puffer oder Vertretung.",
-        "typische_fehler": "Nur Wahrscheinlichkeit oder nur Schaden wird betrachtet. Außerdem wird eine Risikoliste einmal erstellt und danach nicht aktualisiert.",
         "verstaendnisfragen": [
-          "Welche zwei Größen bestimmen die Risikobewertung? Eintrittswahrscheinlichkeit und Auswirkung.",
-          "Welche vier Umgangsweisen gibt es? Vermeiden, vorsorgen, mindern und hinnehmen."
-        ],
-        "pruefungsbezug": "Ordne jedes Risiko in beide Achsen ein und begründe daraus die Maßnahme; nenne die laufende Fortschreibung.",
-        "merksatz": "Risiko heißt Wahrscheinlichkeit mal Auswirkung — erst daraus folgt der Umgang."
+          {
+            "frage": "Warum wird ein unwahrscheinliches Risiko mit schweren Folgen nicht einfach hingenommen?",
+            "antwort": "Weil der Schaden im Ernstfall das Projekt gefährden würde. Ein Notfallplan kostet wenig und verhindert, dass im Ernstfall erst nach einer Lösung gesucht werden muss.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Was unterscheidet ein Risiko von einem Problem?",
+            "antwort": "Ein Risiko kann eintreten, ein Problem ist eingetreten. Risiken werden vorbeugend behandelt, Probleme müssen gelöst werden — am besten mit einer Maßnahme, die schon vorbereitet war.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Änderungswünsche wirken auf Zeit, Kosten und Umfang.",
-          "Eine Änderung braucht eine nachvollziehbare Entscheidung."
+        "darstellung": "vollfassung",
+        "ziel": "Du behandelst einen Änderungswunsch auf dem geordneten Weg — aufnehmen, Auswirkung beziffern, entscheiden lassen, Plan anpassen — und dokumentierst die Entscheidung.",
+        "vorwissen_kurz": "Änderungswünsche sind in Projekten normal. Gefährlich werden sie, wenn sie ohne Entscheidung einfach umgesetzt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Jede Änderung auf demselben Weg",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Während eines Projekts kommen immer wieder neue Wünsche auf. Einzeln wirken sie klein, zusammen können sie Termin und Budget sprengen. Deshalb durchläuft jeder Änderungswunsch denselben Weg: Er wird schriftlich aufgenommen, seine Auswirkung auf Zeit, Kosten und Umfang wird beziffert, der Auftraggeber entscheidet, und danach wird der Plan angepasst.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Änderungsantrag",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Vertrieb möchte am Messestand zusätzlich Händler aus Polen ansprechen und dafür ein polnisches Lookbook.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Feld",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wunsch",
+                  "polnisches Lookbook, 200 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Begründung",
+                  "zwei polnische Händlerketten haben ihren Besuch angekündigt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auswirkung Zeit",
+                  "Übersetzung und Druck 8 Arbeitstage, liegt nicht auf dem kritischen Pfad"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auswirkung Kosten",
+                  "1.150 € (Übersetzung 650 €, Druck 500 €)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auswirkung Umfang",
+                  "neues Arbeitspaket „Lookbook Polnisch“; Projektauftrag schloss weitere Übersetzungen bisher aus"
+                ]
+              },
+              {
+                "zellen": [
+                  "Entscheidung",
+                  "Auftraggeber genehmigt, Kosten aus dem Puffer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Plananpassung",
+                  "Strukturplan, Terminplan und Budget aktualisiert; Pufferrest jetzt 850 €"
+                ]
+              }
+            ],
+            "fazit": "Der Wunsch wurde nicht abgelehnt, sondern entschieden. Alle Beteiligten wissen, dass sich Budget und Plan geändert haben.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zur Wiederholung der Risikobehandlung aus dem vorigen Abschnitt:",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Änderungen werden aufgenommen, beziffert, zur Entscheidung vorgelegt und anschließend in den Plan eingearbeitet. Die Projektleitung macht die Folgen sichtbar; der Auftraggeber entscheidet über Umfang, Budget oder Termin. Ungeprüfte kleine Wünsche führen zur schleichenden Ausweitung.",
-        "beispiele": [
-          "Ein zusätzlicher Dokumententyp wird aufgenommen, seine Auswirkung auf Aufwand, Budget und Termin wird beziffert.",
-          "Eine Terminverschiebung wird nicht nur im Kalender geändert, sondern mit den betroffenen Arbeitspaketen und Meilensteinen neu geplant."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kleine Wünsche bündeln",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nicht jede Kleinigkeit braucht einen eigenen Antrag. Viele Teams sammeln kleinere Wünsche und legen sie gebündelt in der nächsten Besprechung mit dem Auftraggeber vor. Wichtig ist nur, dass nichts zwischen Tür und Angel zugesagt und umgesetzt wird.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Der Auftraggeber wünscht eine zusätzliche Funktion. Der Wunsch wird dokumentiert und mit Mehrarbeit, Kosten und Terminfolge versehen. Erst nach der Entscheidung wird der Projektauftrag beziehungsweise Plan angepasst. Ohne Zustimmung wird die Funktion nicht still in laufende Pakete aufgenommen.",
-        "typische_fehler": "Änderungen werden mündlich angenommen oder nur der Termin angepasst, ohne Budget und Umfang zu aktualisieren. Die Auswirkung wird nicht beziffert.",
         "verstaendnisfragen": [
-          "Welche vier Schritte gelten? Aufnehmen, beziffern, entscheiden lassen, Plan anpassen.",
-          "Warum muss die Auswirkung beziffert werden? Damit der Auftraggeber zwischen Zeit, Kosten und Umfang entscheiden kann."
+          {
+            "frage": "Warum steht im Antrag, dass der Projektauftrag weitere Übersetzungen ausschloss?",
+            "antwort": "Weil die Änderung damit über die vereinbarte Abgrenzung hinausgeht. Das macht deutlich, dass nicht die Projektleitung, sondern der Auftraggeber entscheiden muss.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Rechne nach: Wie groß war der Puffer vor der Änderung?",
+            "antwort": "850 € + 1.150 € = 2.000 €. Das entspricht dem im Projektauftrag festgelegten Puffer.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du füllst für ein Projekt einen Kommunikations-, Qualitäts- und Kapazitätsplan aus und legst mit dem Team eine Regel fest, wie Konflikte geklärt und wann sie eskaliert werden.",
+        "vorwissen_kurz": "In einem Projekt arbeiten Menschen aus verschiedenen Abteilungen zusammen, die sich nicht gegenseitig unterstellt sind. Absprachen ersetzen hier die Linie.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Absprachen vor dem ersten Streit",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Struktur- und Terminplan zeigen, was wann zu tun ist. Ob die Zusammenarbeit funktioniert, hängt an weiteren Absprachen: Wer wird wann informiert? Woran wird gemessen, ob ein Ergebnis gut genug ist? Wer hat wie viel Zeit? Und wie wird ein Konflikt geklärt? Diese Fragen werden zu Projektbeginn beantwortet, solange noch niemand verärgert ist.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Kommunikationsplan",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Wer",
+              "erhält was",
+              "wann",
+              "wie"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Auftraggeber Tobias Renner",
+                  "Statusbericht mit Ampel, Risiken, Entscheidungsbedarf",
+                  "alle zwei Wochen, freitags",
+                  "Mail, bei Rot sofort Anruf"
+                ]
+              },
+              {
+                "zellen": [
+                  "Projektteam",
+                  "Stand der Arbeitspakete, nächste Schritte",
+                  "jeden Montag, 9:00 bis 9:20 Uhr",
+                  "Kurzbesprechung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb und Geschäftsführung",
+                  "Einladung, Messeprogramm",
+                  "sechs Wochen vor der Messe",
+                  "Intranet"
+                ]
+              },
+              {
+                "zellen": [
+                  "Standbauer, Spedition",
+                  "Termine, Ansprechpartner",
+                  "bei Auftragsvergabe und bei Änderungen",
+                  "Mail mit Lesebestätigung"
+                ]
+              }
+            ],
+            "fazit": "Jeder weiß, was er wann erfährt. Schlechte Nachrichten gehen nicht in den Wochenbericht, sondern sofort an den Auftraggeber.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Qualitäts- und Kapazitätsplan",
+            "id": "b4-z3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ergebnis",
+              "Anforderung",
+              "Prüfung durch"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Standzeichnung",
+                  "Markenfarben, Logo lesbar aus 10 m, barrierefreier Zugang zum Stand",
+                  "Designleitung, Lea"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einladungsmail",
+                  "nur an Empfänger mit Einwilligung, Termine buchbar, fehlerfrei",
+                  "Mira, Gegenlesen durch Tim"
+                ]
+              },
+              {
+                "zellen": [
+                  "Musterstücke",
+                  "alle Größen S bis XL, Etiketten vollständig",
+                  "Produktion"
+                ]
+              }
+            ],
+            "fazit": "Jede Anforderung ist prüfbar, und für jede Prüfung ist jemand benannt.",
+            "id": "b4-t2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Person",
+              "Stunden je Woche für das Projekt",
+              "Zeitraum"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lea",
+                  "15",
+                  "Dezember bis Februar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mira",
+                  "15 (drei Stunden täglich)",
+                  "Dezember und Januar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tim",
+                  "8",
+                  "Januar und Februar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Designleitung",
+                  "10",
+                  "Dezember"
+                ]
+              }
+            ],
+            "fazit": "Mit dem Kapazitätsplan lässt sich prüfen, ob die geschätzten Aufwände in die verfügbare Zeit passen. Fällt Mira aus, ist sofort sichtbar, welche Stunden fehlen.",
+            "id": "b4-t3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Teamregel für Konflikte",
+            "id": "b4-z4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Team legt in der ersten Besprechung fest: Konflikte werden zuerst zwischen den Beteiligten direkt geklärt. Gelingt das nicht innerhalb von zwei Arbeitstagen, wird die Projektleitung einbezogen. Kann auch sie den Konflikt nicht lösen oder betrifft er Termin, Budget oder Umfang, entscheidet der Auftraggeber in der nächsten Statusrunde, bei Dringlichkeit sofort. Persönliche Vorwürfe werden nicht per Mail ausgetragen.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          }
         ],
-        "pruefungsbezug": "Schreibe die vier Schritte vollständig hin und ordne die Entscheidung dem Auftraggeber zu.",
-        "merksatz": "Keine Änderung ohne Aufnahme, Zahl, Entscheidung und angepassten Plan."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Eskalieren und Petzen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eskalation ist ein vereinbarter Weg, um einen Konflikt dorthin zu bringen, wo entschieden werden kann. Sie richtet sich auf die Sache, nicht gegen eine Person, und die Beteiligten wissen davon. Petzen dagegen geschieht heimlich und überspringt das direkte Gespräch. Die Teamregel macht diesen Unterschied ausdrücklich.",
+                "id": "b4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf7:k4-d4"
+                ],
+                "text": "Konflikte klären mit Beobachtung, Gefühl, Bedürfnis und Bitte",
+                "id": "b4-d1-v1"
+              }
+            ],
+            "id": "b4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum wird die Eskalationsregel zu Projektbeginn festgelegt?",
+            "antwort": "Weil sich im Konflikt kaum noch sachlich über Verfahren sprechen lässt. Steht die Regel vorher fest, ist die Eskalation ein normaler, vereinbarter Schritt und kein persönlicher Angriff.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Mira hat 15 Stunden pro Woche für das Projekt. Passt das Arbeitspaket „Einladungsmails“ mit 11 Stunden in eine Woche?",
+            "antwort": "Ja, wenn in derselben Woche keine anderen Projektaufgaben von Mira anstehen. Der Kapazitätsplan zeigt, ob sich Pakete überschneiden.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +598,10 @@
       "id": "lz3",
       "text": "Änderungswünsche geordnet behandeln",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Kommunikations-, Qualitäts- und Kapazitätsplan für ein Projekt ausfüllen und eine Teamregel für Konflikt und Eskalation festlegen"
     }
   ],
   "bloecke": [
@@ -110,7 +628,7 @@
                 "„gefühlt 80 Prozent\"",
                 "kaum"
               ],
-              "detail": "**Nicht überprüfbar und systematisch zu optimistisch.** Die letzten 10 Prozent enthalten regelmäßig die Hälfte der Arbeit."
+              "detail": "**Nicht überprüfbar und systematisch zu optimistisch.** In den letzten Prozent steckt oft noch ein großer Teil der Arbeit."
             },
             {
               "zellen": [
@@ -182,7 +700,7 @@
             },
             {
               "id": "mindern",
-              "name": "Eintritt verringern",
+              "name": "Mindern",
               "x": 1,
               "y": 0
             },
@@ -245,7 +763,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Änderungswünsche sind normal — ==unkontrollierte Änderungen sind der häufigste Grund, warum Projekte scheitern.== Deshalb braucht jeder Wunsch denselben geordneten Weg, egal wie klein er wirkt."
+          "text": "Änderungswünsche sind normal — ==unkontrollierte Änderungen sind ein häufiger Grund, warum Projekte Termin und Budget sprengen.== Deshalb braucht jeder Wunsch denselben geordneten Weg, egal wie klein er wirkt."
         },
         {
           "typ": "grafik",
@@ -336,6 +854,56 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Wer was wann erfährt",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Neben Struktur- und Terminplan braucht ein Projekt weitere Absprachen: Wer wird wann worüber informiert? Woran wird gemessen, ob ein Ergebnis gut genug ist? Wer hat wie viel Zeit? ==Und was passiert, wenn es im Team Streit gibt?== Diese Regeln werden zu Beginn festgelegt, nicht erst im Konflikt."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Plan",
+            "Beantwortet"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Kommunikationsplan",
+                "wer wen wann über welchen Weg informiert"
+              ]
+            },
+            {
+              "zellen": [
+                "Qualitätsplan",
+                "welche Anforderungen ein Ergebnis erfüllen muss und wer es prüft"
+              ]
+            },
+            {
+              "zellen": [
+                "Kapazitätsplan",
+                "wer wann wie viele Stunden für das Projekt hat"
+              ]
+            },
+            {
+              "zellen": [
+                "Teamregeln",
+                "wie Entscheidungen fallen und wie Konflikte eskaliert werden"
+              ],
+              "detail": "**Eskalation ist kein Petzen,** sondern ein vereinbarter Weg: erst unter den Beteiligten klären, dann mit der Projektleitung, dann mit dem Auftraggeber."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Kommunikation, Qualität, Kapazität und Teamregeln werden zu Beginn schriftlich festgelegt.** Eine Eskalationsstufe nach der anderen — und mit Frist.",
+          "karteikarte": "Was regeln Kommunikations-, Qualitäts- und Kapazitätsplan, und wie sieht ein Eskalationsweg aus?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -346,7 +914,8 @@
     "{{begriff:projektrisiko|Risiken}} werden nach Wahrscheinlichkeit und Auswirkung bewertet.",
     "Vier Umgangsweisen: vermeiden, vorsorgen, mindern, hinnehmen.",
     "Risiken werden zu Beginn im Team gesammelt und laufend fortgeschrieben.",
-    "Änderungen: aufnehmen, beziffern, entscheiden lassen, Plan anpassen."
+    "Änderungen: aufnehmen, beziffern, entscheiden lassen, Plan anpassen.",
+    "Kommunikations-, Qualitäts- und Kapazitätsplan zu Beginn festlegen; Konflikte über einen vereinbarten Eskalationsweg klären."
   ],
   "selbsttest": [
     {

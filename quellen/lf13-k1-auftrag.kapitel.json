@@ -6,66 +6,560 @@
   "untertitel": "Nicht jede große Aufgabe ist ein Projekt. Und das ist gut so.",
  "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Projekt ist eine zeitlich begrenzte, besondere Aufgabe.",
-          "Wiederkehrende Abläufe werden als Prozesse standardisiert."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst an den Merkmalen Einmaligkeit, Ziel, Anfang und Ende, begrenzte Mittel und eigene Organisation, ob ein Vorhaben ein Projekt ist oder als Prozess gesteuert werden sollte.",
+        "vorwissen_kurz": "Nicht jede große Aufgabe ist ein Projekt. Wiederkehrende Arbeit wird anders gesteuert als ein einmaliges Vorhaben.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Einmalig und begrenzt",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:projekt|Projekt}} ist ein Vorhaben, das in seiner Gesamtheit einmalig ist. Es hat ein festgelegtes Ziel, einen Anfang und ein Ende, begrenzte Mittel und meist eine eigene Organisation, in der Menschen aus verschiedenen Abteilungen zusammenarbeiten. Was regelmäßig wiederkehrt, ist dagegen ein Prozess. Für ihn gibt es einen Standardablauf, den man verbessert, statt ihn jedes Mal neu zu planen.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Vorhaben bei MAKEL",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorhaben",
+              "Projekt?",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Erster eigener Messestand auf der Modemesse in Berlin im Februar 2027",
+                  "ja",
+                  "einmalig, Termin steht fest, Budget begrenzt, Vertrieb, Design und Marketing arbeiten zusammen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Monatliche Händlerrundmail mit Neuheiten",
+                  "nein",
+                  "wiederkehrend, fester Ablauf — ein Prozess"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Digitalisierung vorantreiben“",
+                  "noch nicht",
+                  "kein Ziel, kein Ende, keine Mittel — erst ein Auftrag macht daraus ein Projekt"
+                ]
+              }
+            ],
+            "fazit": "Nur der Messestand erfüllt alle Merkmale. Die Rundmail ist ein Prozess, die Digitalisierung zunächst nur ein Wunsch.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wird der Messestand ein Erfolg und MAKEL stellt künftig jedes Jahr aus, ändert sich die Lage: Der zweite Messeauftritt ist zwar wieder ein Projekt, aber vieles lässt sich als Standardablauf übernehmen — Checklisten, Lieferanten, Zeitplan. Aus den Erfahrungen des ersten Projekts wird so ein Prozess für die wiederkehrenden Teile.",
+            "id": "b1-p2"
+          }
         ],
-        "erklaerung": "Ein Projekt ist einmalig, hat ein klares messbares Ziel, einen Anfang und ein Ende, begrenzte Mittel und eine eigene, oft bereichsübergreifende Organisation. Die Einmaligkeit grenzt es vom Prozess ab. Ein Prozess wiederholt sich, wird standardisiert und laufend verbessert.",
-        "beispiele": [
-          "Die einmalige Einführung eines digitalen Dokumentenmanagements ist ein Projekt; die spätere laufende Ablage ist ein Prozess.",
-          "Die monatliche Entgeltabrechnung ist wiederkehrend und damit Prozess, nicht Projekt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Projekt nach Norm",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Norm DIN 69901 beschreibt ein Projekt als Vorhaben, das im Wesentlichen durch die Einmaligkeit seiner Bedingungen gekennzeichnet ist, etwa Zielvorgabe, zeitliche, finanzielle und personelle Begrenzungen und eine projektspezifische Organisation. Die fünf Merkmale fassen diese Bedingungen zusammen.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Die Einführung eines digitalen Dokumentenmanagements wird auf die fünf Merkmale geprüft. Ziel, Termin, Budget, beteiligte Bereiche und Projektorganisation werden schriftlich festgehalten. Nach der einmaligen Einführung geht die laufende Nutzung in einen Prozess über und wird über Standards gesteuert.",
-        "typische_fehler": "Jede größere Aufgabe wird Projekt genannt oder Einmaligkeit und Wiederholung werden nicht geprüft. Auch wird die eigene Organisation vergessen.",
         "verstaendnisfragen": [
-          "Welches Merkmal grenzt Projekt und Prozess am stärksten ab? Die Einmaligkeit des Projekts.",
-          "Welche fünf Merkmale gehören zum Projekt? Einmaligkeit, klares Ziel, Anfang und Ende, begrenzte Mittel und eigene Organisation."
-        ],
-        "pruefungsbezug": "Prüfe Projektfälle mit der vollständigen Merkmalsliste und nenne ausdrücklich die Abgrenzung zum wiederkehrenden Prozess.",
-        "merksatz": "Ein Projekt ist einmalig, zielklar, befristet, begrenzt und eigenständig organisiert."
+          {
+            "frage": "Warum ist „Digitalisierung vorantreiben“ noch kein Projekt?",
+            "antwort": "Weil Ziel, Ende und Mittel fehlen. Erst wenn festgelegt ist, was bis wann mit welchem Budget erreicht werden soll, etwa „digitale Eingangsrechnungsprüfung bis 30. Juni 2027“, entsteht daraus ein Projekt.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum wird die monatliche Rundmail nicht als Projekt organisiert?",
+            "antwort": "Sie wiederholt sich jeden Monat mit gleichem Ablauf. Dafür lohnt sich keine eigene Projektorganisation; ein klarer Standardablauf mit Zuständigkeit ist wirksamer.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Zeit, Kosten und Umfang beeinflussen den Projekterfolg.",
-          "Eine Änderung einer Größe kann Folgen für die anderen haben."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst am magischen Dreieck, wie Zeit, Kosten und Umfang zusammenhängen, bezifferst die Folgen eines Zusatzwunsches und legst die Entscheidung dem Auftraggeber vor.",
+        "vorwissen_kurz": "Ein Projekt soll pünktlich, im Budget und im vereinbarten Umfang fertig werden. Diese drei Ziele hängen voneinander ab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Größen im Gleichgewicht",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das {{begriff:magisches-dreieck|magische Dreieck}} beschreibt die Abhängigkeit zwischen **Zeit**, **Kosten** und **Umfang beziehungsweise Qualität**. Wer eine Größe ändert, muss mit Folgen für mindestens eine andere rechnen. Soll der Stand schneller fertig werden, kostet das mehr oder es muss etwas weggelassen werden. Die Projektleitung macht diese Folgen sichtbar; entscheiden muss der Auftraggeber.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Zusatzwunsch zum Messestand",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Drei Wochen vor der Messe wünscht sich die Designleitung einen Bildschirm am Stand, auf dem ein Kollektionsfilm läuft. Projektleiterin Lea beziffert die Folgen.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Möglichkeit",
+              "Zeit",
+              "Kosten",
+              "Umfang"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bildschirm zusätzlich, Termin halten",
+                  "Film muss in zwei Wochen fertig sein",
+                  "+ 2.400 € für Bildschirmmiete und Eilschnitt",
+                  "größer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bildschirm zusätzlich, dafür gedruckte Lookbooks streichen",
+                  "kein Mehraufwand",
+                  "± 0 €",
+                  "anders, nicht größer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Film erst zur nächsten Messe",
+                  "unverändert",
+                  "unverändert",
+                  "unverändert"
+                ]
+              }
+            ],
+            "fazit": "Jede Möglichkeit verschiebt das Dreieck auf andere Weise. Lea legt die drei Varianten dem Geschäftsführer als Auftraggeber vor; er entscheidet sich für den Tausch gegen die gedruckten Lookbooks.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Das magische Dreieck verbindet Zeit, Kosten und Umfang beziehungsweise Qualität. Die Größen lassen sich nicht unabhängig verändern. Wird der Termin vorgezogen, steigen Kosten oder der Umfang sinkt. Wird das Budget gekürzt, verlängert sich die Dauer oder der Umfang schrumpft. Die Projektleitung macht die Auswirkung sichtbar; der Auftraggeber entscheidet.",
-        "beispiele": [
-          "Ein vorgezogener Termin kann zusätzliches Personal erfordern oder den Projektumfang verkleinern.",
-          "Ein zusätzlicher Funktionswunsch verlängert den Termin, erhöht das Budget oder verdrängt eine andere Funktion."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Qualität oder Umfang?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Darstellungen nennen die dritte Ecke Qualität, andere Umfang oder Leistung. Gemeint ist dasselbe: was das Projekt am Ende liefert. Für die Praxis ist Umfang oft greifbarer, weil sich ein zusätzlicher Bildschirm leichter beziffern lässt als „mehr Qualität“.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Der Auftraggeber verlangt eine zusätzliche Funktion bei unverändertem Termin und Budget. Die Projektleitung beziffert die zusätzliche Zeit und Kosten und zeigt, welcher Umfang entfallen müsste, wenn keine Größe verändert werden darf. Danach entscheidet der Auftraggeber statt die Auswirkung still im Team aufzufangen.",
-        "typische_fehler": "Alle drei Größen werden gleichzeitig unverändert versprochen. Kleine Zusatzwünsche werden nicht gesammelt und führen schleichend zur Umfangsausweitung.",
         "verstaendnisfragen": [
-          "Welche drei Größen verbindet das magische Dreieck? Zeit, Kosten und Umfang beziehungsweise Qualität.",
-          "Wer entscheidet über die Konsequenz einer Änderung? Der Auftraggeber auf Grundlage der bezifferten Auswirkungen."
-        ],
-        "pruefungsbezug": "Benenne bei Änderungsfällen immer mindestens zwei betroffene Größen und die Entscheidungsvorlage.",
-        "merksatz": "Eine Ecke ändern heißt mindestens eine andere nachziehen."
+          {
+            "frage": "Warum entscheidet nicht Lea selbst über den Bildschirm?",
+            "antwort": "Weil die Entscheidung Budget, Umfang oder Termin des Projekts verändert. Diese Größen hat der Auftraggeber im Projektauftrag festgelegt. Lea macht die Folgen sichtbar, entscheiden muss er.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Was wäre die Folge, wenn Lea den Bildschirm einfach zusagt, ohne etwas zu streichen?",
+            "antwort": "Das Budget würde um 2.400 € überschritten, und der Eilschnitt würde Zeit aus anderen Arbeitspaketen binden. Die Abweichung fiele erst später auf, wenn sich nichts mehr ändern lässt.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Ein Projektauftrag setzt Rahmen und Verantwortung fest.",
-          "Verantwortung braucht passende Befugnisse."
+        "darstellung": "vollfassung",
+        "ziel": "Du übersetzt eine Projektidee in einen schriftlichen Projektauftrag mit messbarem Ziel, Abgrenzung, Terminen, Budget, Befugnissen und Auftraggeber.",
+        "vorwissen_kurz": "Ein Projekt beginnt mit einem Auftrag. Ist er unklar, verfolgen die Beteiligten bald unterschiedliche Ziele.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst der Auftrag, dann die Arbeit",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:projektauftrag|Projektauftrag}} legt schriftlich fest, was das Projekt erreichen soll und unter welchen Bedingungen. Er schützt alle Beteiligten: Der Auftraggeber weiß, was er bekommt; die Projektleitung weiß, wofür sie zuständig ist und was nicht dazugehört. Am Ende dient er als Maßstab für die Abnahme.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Projektauftrag für den Messestand",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Inhalt",
+              "Festlegung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ziel",
+                  "Auf der Modemesse Berlin vom 10. bis 12. Februar 2027 mindestens 25 Gespräche mit neuen Händlern führen und mindestens 8 Vorbestellungen aufnehmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abgrenzung",
+                  "nicht enthalten: Onlinekampagne zur Messe, Übersetzung des Katalogs ins Französische, Teilnahme an weiteren Messen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termine",
+                  "Standkonzept bis 4. Dezember 2026; Standbau beauftragt bis 18. Dezember; Generalprobe 9. Februar 2027"
+                ]
+              },
+              {
+                "zellen": [
+                  "Budget",
+                  "24.000 € einschließlich Standmiete, Standbau, Reise und Werbemittel; Puffer 2.000 € nur nach Freigabe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Projektleitung und Befugnisse",
+                  "Lea; darf Aufträge bis 3.000 € je Lieferant selbst vergeben und Standpersonal einteilen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auftraggeber",
+                  "Tobias Renner, kaufmännischer Geschäftsführer; nimmt das Ergebnis ab"
+                ]
+              }
+            ],
+            "fazit": "Jeder Punkt ist prüfbar. Die Abgrenzung verhindert, dass im Laufe des Projekts Zusatzwünsche wie eine Onlinekampagne „nebenbei“ hinzukommen.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea hat den Entwurf mit Tobias Renner besprochen und zwei Punkte geändert: Das Ziel enthielt zuerst nur „Gespräche führen“, ohne Zahl. Und die Befugnis für Auftragsvergaben fehlte. Ohne sie hätte Lea jeden Kleinauftrag einzeln freigeben lassen müssen. Erst nach dieser Abstimmung unterschreiben beide den Auftrag.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Der schriftliche Projektauftrag enthält Ziel, Abgrenzung, Termine, Budget und Befugnisse. Ziele werden mit Zahl und Termin messbar formuliert. Die Abgrenzung verhindert, dass später unbemerkt weitere Abteilungen oder Dokumentenarten hinzukommen. Ohne Befugnisse bleibt Projektverantwortung nur nominell.",
-        "beispiele": [
-          "Beim Dokumentenmanagement wird festgelegt, welche Abteilungen, Dokumentenarten und Altbestände enthalten sind und was ausdrücklich nicht dazugehört.",
-          "Der Auftrag klärt, ob die Projektleitung Arbeitszeit anderer Abteilungen einplanen und bis zu welchem Betrag beauftragen darf."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn der Auftraggeber keinen schriftlichen Auftrag will",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manchmal heißt es: „Das brauchen wir nicht aufzuschreiben, wir wissen doch, was gemeint ist.“ Dann hilft es, die Absprache selbst schriftlich zusammenzufassen und per Mail bestätigen zu lassen. Das ist kein Misstrauen, sondern die Grundlage dafür, später über dasselbe Ergebnis zu sprechen.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Der Auftraggeber nennt Ziel und Termin, aber kein Budget und keine Befugnisse. Vor dem Projektstrukturplan wird ein schriftlicher Auftrag erstellt: Ziel mit Zahl und Termin, Abgrenzung, Budget, Entscheidungswege, Auftraggeber und Meilensteine. Erst nach Bestätigung beginnt die Detailplanung.",
-        "typische_fehler": "Mit der Detailplanung begonnen, obwohl Budget und Befugnisse offen sind. Außerdem wird Verantwortung versprochen, ohne Zugriff auf Personal oder Entscheidungen zu sichern.",
         "verstaendnisfragen": [
-          "Welche Inhalte gehören in den Projektauftrag? Ziel, Abgrenzung, Termine, Budget und Befugnisse.",
-          "Warum muss das Ziel messbar sein? Damit Fortschritt und Abnahme objektiv geprüft werden können."
+          {
+            "frage": "Warum steht im Ziel eine Zahl von Gesprächen und Vorbestellungen?",
+            "antwort": "Damit sich nach der Messe prüfen lässt, ob das Ziel erreicht wurde. „Neue Händler gewinnen“ wäre nicht messbar, und jeder könnte das Ergebnis anders beurteilen.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Wozu dient die Abgrenzung „nicht enthalten: Onlinekampagne“?",
+            "antwort": "Sie macht klar, dass eine Onlinekampagne nicht zum Projekt gehört. Wird sie später gewünscht, ist das eine Änderung mit eigenen Kosten und Zeit, über die der Auftraggeber entscheiden muss.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du entwickelst mit Brainstorming und der Methode 6-3-5 Ideen für ein konkretes Projektproblem und wählst mit vorher festgelegten Kriterien begründet aus.",
+        "vorwissen_kurz": "Für viele Projektprobleme gibt es mehrere Lösungen. Die beste ist selten die erste, die jemandem einfällt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst sammeln, dann bewerten",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kreativitätstechniken trennen zwei Schritte, die im Alltag oft vermischt werden: Ideen finden und Ideen beurteilen. Während der Sammlung wird nicht kritisiert, damit auch ungewöhnliche Ideen geäußert werden. Erst danach werden die Ideen nach Kriterien bewertet, die vorher festgelegt wurden.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wie gewinnt ein kleiner Stand Aufmerksamkeit?",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Messestand von MAKEL ist nur 24 m² groß und liegt in einer Nebenhalle. Das Projektteam sucht Ideen, wie trotzdem genug neue Händler stehen bleiben.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im **Brainstorming** sammelt das Team in zehn Minuten 17 Ideen, darunter: Live-Sticken am Stand, Kaffee-Bar, Gewinnspiel, große Schaufensterpuppen am Gang, Terminvereinbarung vorab per Mail, Gratis-Beutel mit Logo, Musterstücke zum Anfassen am Gang, Influencerin am Stand.",
+            "id": "b4-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Danach arbeitet das Team mit der **Methode 6-3-5**, um die Ideen weiterzuentwickeln. Aus „Live-Sticken“ wird nach drei Runden: „Händler lassen ihr eigenes Ladenlogo auf einen Musterhoodie sticken und nehmen ihn mit — als Erinnerung und als Muster für den Laden.“",
+            "id": "b4-p4"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Auswahl nach Kriterien",
+            "id": "b4-z3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Idee",
+              "Wirkung auf neue Händler (×3)",
+              "Kosten im Budget (×2)",
+              "Umsetzbar bis Februar (×1)",
+              "Punkte"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Logo-Sticken am Stand",
+                  "5",
+                  "3",
+                  "4",
+                  "15 + 6 + 4 = 25"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termine vorab per Mail",
+                  "4",
+                  "5",
+                  "5",
+                  "12 + 10 + 5 = 27"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kaffee-Bar",
+                  "2",
+                  "3",
+                  "5",
+                  "6 + 6 + 5 = 17"
+                ]
+              },
+              {
+                "zellen": [
+                  "Influencerin am Stand",
+                  "3",
+                  "1",
+                  "2",
+                  "9 + 2 + 2 = 13"
+                ]
+              }
+            ],
+            "fazit": "Die Terminvereinbarung vorab und das Logo-Sticken erreichen die meisten Punkte und ergänzen sich: Die Mails bringen Händler gezielt an den Stand, das Sticken hält sie dort. Die Kaffee-Bar und die Influencerin werden nicht weiterverfolgt.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bewertung war nur möglich, weil die Kriterien und ihre Gewichtung vor der Ideensuche feststanden. Hätte das Team erst nachher Kriterien gewählt, hätte jeder die Kriterien bevorzugt, bei denen seine Lieblingsidee gut abschneidet.",
+            "id": "b4-p5"
+          }
         ],
-        "pruefungsbezug": "Bei unklarem Auftrag zuerst Projektauftrag ergänzen und Verantwortung von Befugnis unterscheiden.",
-        "merksatz": "Kein belastbarer Plan ohne schriftlichen Auftrag, klare Grenze und passende Befugnis."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Brainstorming und 6-3-5",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Brainstorming ist schnell und lebendig, aber oft reden wenige viel. Die Methode 6-3-5 ist ruhiger und beteiligt alle gleichmäßig; sie eignet sich besonders, um vorhandene Ideen weiterzuentwickeln. Viele Teams kombinieren beide: erst breit sammeln, dann schriftlich vertiefen.",
+                "id": "b4-d1-p1"
+              }
+            ],
+            "id": "b4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum wird während des Brainstormings nicht kritisiert?",
+            "antwort": "Weil Kritik ungewöhnliche Ideen verhindert. Wer fürchtet, belächelt zu werden, sagt nur das Naheliegende. Bewertet wird erst im zweiten Schritt.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Rechne nach: Wie viele Punkte hätte das Logo-Sticken, wenn es bei den Kosten 5 statt 3 Punkte bekäme?",
+            "antwort": "15 + 10 + 4 = 29 Punkte. Es läge dann vor der Terminvereinbarung.",
+            "id": "b4-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b5",
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für ein Projekt klassisches, agiles oder hybrides Vorgehen nach Planbarkeit, Änderungsbedarf und Team und begründest, welche Teile wie gesteuert werden.",
+        "vorwissen_kurz": "Manche Projektergebnisse lassen sich vorher genau beschreiben, andere entstehen erst im Laufe der Arbeit.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Planen oder in Schritten vorgehen",
+            "id": "b5-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim **klassischen Vorgehen** wird das Ergebnis zu Beginn genau beschrieben, die Arbeit in Phasen geplant und dann abgearbeitet. Das passt, wenn Ziel und Weg klar sind und spätere Änderungen teuer wären. Beim **agilen Vorgehen** wird in kurzen Abschnitten gearbeitet, oft zwei bis vier Wochen. Nach jedem Abschnitt wird ein nutzbares Zwischenergebnis vorgestellt, Rückmeldungen werden aufgenommen, und der nächste Abschnitt wird neu geplant. Das passt, wenn sich Anforderungen erst im Laufe der Arbeit klären.",
+            "id": "b5-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b5-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Messestand: hybrid",
+            "id": "b5-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Teil des Projekts",
+              "Vorgehen",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Standmiete, Standbau, Reise, Aufbau",
+                  "klassisch",
+                  "fester Messetermin, Fristen der Messe und des Standbauers, Änderungen sind teuer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einladungsmails, Social-Media-Beiträge, Gestaltung der Musterstücke",
+                  "agil, in Zweiwochenabschnitten",
+                  "Rückmeldungen von Händlern und Vertrieb sollen einfließen; Änderungen kosten wenig"
+                ]
+              }
+            ],
+            "fazit": "Der Termin ist fest, die Werbung bleibt beweglich. Das Team legt ausdrücklich fest, welcher Teil wie gesteuert wird.",
+            "id": "b5-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die agilen Teile trifft sich das Team alle zwei Wochen für eine halbe Stunde: Was ist fertig, welche Rückmeldungen gibt es, was kommt als Nächstes? Für die klassischen Teile gilt der Balkenplan mit seinen Meilensteinen. Beides läuft im selben Projekt, aber nach unterschiedlichen Regeln.",
+            "id": "b5-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b5-b2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Agil ist kein Ersatz für Ziele",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch agile Projekte brauchen ein Ziel, ein Budget und einen Auftraggeber. Agil heißt nicht, ohne Plan zu arbeiten, sondern den Plan in kurzen Abständen anzupassen. Ein Team, das nur noch auf Zuruf arbeitet, ist nicht agil, sondern unorganisiert.",
+                "id": "b5-d1-p1"
+              }
+            ],
+            "id": "b5-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum wird der Standbau nicht agil geplant?",
+            "antwort": "Weil der Messetermin feststeht und der Standbauer feste Fristen hat. Änderungen kurz vor der Messe wären sehr teuer oder unmöglich. Hier ist ein vollständiger Plan zu Beginn sinnvoll.",
+            "id": "b5-f1"
+          },
+          {
+            "frage": "Was spricht für agiles Vorgehen bei den Einladungsmails?",
+            "antwort": "Ihre Wirkung lässt sich schnell prüfen, etwa an Antworten und vereinbarten Terminen. Änderungen kosten wenig, und Rückmeldungen des Vertriebs verbessern die nächste Mail.",
+            "id": "b5-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +578,14 @@
       "id": "lz3",
       "text": "Inhalte eines Projektauftrags aufzählen",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Mit Brainstorming und der Methode 6-3-5 Ideen für ein Projektproblem entwickeln und begründet auswählen"
+    },
+    {
+      "abschnitt": "b5",
+      "text": "Eine Projektmethode anhand von Planbarkeit, Änderungsbedarf und Team wählen und klassische, agile und hybride Ansätze einordnen"
     }
   ],
   "bloecke": [
@@ -151,7 +653,7 @@
         },
         {
           "typ": "achtung",
-          "text": "Der häufigste Fehler in Betrieben: **Alles heißt Projekt.** Das entwertet den Begriff und führt dazu, dass für echte Projekte keine eigene Organisation mehr aufgesetzt wird — sie laufen dann nebenher wie Tagesgeschäft und scheitern entsprechend."
+          "text": "Ein häufiger Fehler in Betrieben: **Alles heißt Projekt.** Das entwertet den Begriff und führt dazu, dass für echte Projekte keine eigene Organisation mehr aufgesetzt wird — sie laufen dann nebenher wie Tagesgeschäft und scheitern entsprechend."
         }
       ]
     },
@@ -231,7 +733,7 @@
                 "Abgrenzung: was gehört **nicht** dazu",
                 "verhindert schleichende Ausweitung"
               ],
-              "detail": "**Der am häufigsten vergessene Punkt** und zugleich der wirksamste. Was ausdrücklich ausgeschlossen ist, muss später nicht diskutiert werden."
+              "detail": "**Ein oft vergessener Punkt** und zugleich ein sehr wirksamer. Was ausdrücklich ausgeschlossen ist, muss später nicht diskutiert werden."
             },
             {
               "zellen": [
@@ -262,7 +764,7 @@
         },
         {
           "typ": "merke",
-          "text": "Der Projektauftrag enthält **Ziel, Abgrenzung, Termine, Budget, Befugnisse und Auftraggeber** — schriftlich. Die Abgrenzung ist der wirksamste und meistvergessene Teil.",
+          "text": "Der Projektauftrag enthält **Ziel, Abgrenzung, Termine, Budget, Befugnisse und Auftraggeber** — schriftlich. Die Abgrenzung wird oft vergessen und verhindert viel Streit.",
           "karteikarte": "Welche Inhalte gehören in einen Projektauftrag, und warum ist die Abgrenzung so wichtig?"
         },
         {
@@ -313,6 +815,102 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Ideen finden",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Bevor ein Projekt geplant wird, steht oft eine offene Frage: Wie lösen wir das Problem? **Kreativitätstechniken** helfen, viele Ideen zu sammeln, bevor bewertet wird. ==Erst Menge, dann Auswahl== — wer jede Idee sofort beurteilt, bekommt nur die naheliegenden."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Technik",
+            "Ablauf",
+            "Stärke"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Brainstorming",
+                "Ideen in der Gruppe frei zurufen, notieren, keine Kritik während der Sammlung",
+                "schnell, viele Ideen, Ideen bauen aufeinander auf"
+              ]
+            },
+            {
+              "zellen": [
+                "Methode 6-3-5",
+                "6 Personen schreiben je 3 Ideen in 5 Minuten, geben das Blatt weiter, ergänzen die Ideen der anderen",
+                "alle kommen zu Wort, bis zu 108 Ideen"
+              ],
+              "detail": "**Sechs Runden zu je fünf Minuten:** Jede Person sieht nach und nach die Ideen der anderen und entwickelt sie weiter. Wer im Brainstorming still bleibt, trägt hier gleich viel bei."
+            },
+            {
+              "zellen": [
+                "Mindmap",
+                "Thema in der Mitte, Unterthemen als Äste",
+                "ordnet Ideen und zeigt Zusammenhänge"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Erst sammeln ohne Kritik, dann bewerten nach vorher festgelegten Kriterien.** Brainstorming ist schnell, 6-3-5 beteiligt alle gleichmäßig.",
+          "karteikarte": "Wie laufen Brainstorming und die Methode 6-3-5 ab, und warum wird erst gesammelt und dann bewertet?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b5",
+      "titel": "Klassisch, agil oder hybrid",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Projekte lassen sich unterschiedlich steuern. **Klassisch** wird das Ergebnis zu Beginn vollständig geplant und in Phasen umgesetzt. **Agil** wird in kurzen Abschnitten gearbeitet; nach jedem Abschnitt wird das Zwischenergebnis geprüft und der nächste Schritt neu festgelegt. ==Welche Methode passt, hängt davon ab, wie genau sich das Ergebnis vorher beschreiben lässt.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Vorgehen",
+            "Passt, wenn …",
+            "Beispiel"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Klassisch",
+                "Ziel und Weg sind gut planbar, Änderungen sind teuer",
+                "Umzug in ein neues Lager"
+              ]
+            },
+            {
+              "zellen": [
+                "Agil",
+                "Anforderungen ändern sich, Rückmeldungen der Nutzer sind wichtig",
+                "neuer Onlineshop-Bereich"
+              ]
+            },
+            {
+              "zellen": [
+                "Hybrid",
+                "feste Rahmenbedingungen, aber offene Teile",
+                "Messeauftritt mit festem Termin und agiler Gestaltung der Werbung"
+              ],
+              "detail": "**Hybrid heißt nicht beliebig:** Es wird ausdrücklich festgelegt, welche Teile klassisch und welche agil gesteuert werden."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Klassisch bei planbarem Ergebnis, agil bei sich ändernden Anforderungen, hybrid bei festen Rahmen mit offenen Teilen.** Die Methode folgt aus Planbarkeit, Änderungsbedarf und Team.",
+          "karteikarte": "Nach welchen Kriterien wählst du zwischen klassischem, agilem und hybridem Projektvorgehen?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -323,7 +921,9 @@
     "Die Projektleitung macht Auswirkungen sichtbar, entscheiden tut der Auftraggeber.",
     "Der {{begriff:projektauftrag|Projektauftrag}} ist schriftlich und enthält Ziel, Abgrenzung, Termine, Budget und Befugnisse.",
     "Ziele werden messbar formuliert — mit Zahl und Termin.",
-    "Verantwortung ohne Befugnis funktioniert nicht."
+    "Verantwortung ohne Befugnis funktioniert nicht.",
+    "Kreativitätstechniken: erst ohne Kritik sammeln, dann nach Kriterien auswählen.",
+    "Klassisch bei planbarem Ergebnis, agil bei wechselnden Anforderungen, hybrid bei festem Rahmen mit offenen Teilen."
   ],
   "selbsttest": [
     {
