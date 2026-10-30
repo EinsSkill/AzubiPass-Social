@@ -240,3 +240,14 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K04:** Peitscheneffekt in Zahlen (+10/20/40/60 %); Push/Pull je Leistung, Zwei-Behälter-Kanban; Containerweg Rotterdam mit Freigaben (vorhanden ≠ verfügbar), EORI/EUSt; Störungsfall mit drei Aufträgen, nur einer betroffen.
 - **K05:** Kennzahlen zweier Lagerbereiche (Umschlag 6 vs. 3); Kapitalbindung und Veraltung bei kleineren Bestellungen; Verpackungsrollen und Pflichten je Verpackungsart; Kartontest mit Gesamtbilanz (1.270 € → 1.930 €).
 - **Hinweis für Lukes:** Schreibweise „Marlene Voss" in mehreren Aufgaben-/Checktexten (z. B. LF7 K4 check-1) neben „Voß" – nicht geändert, weil Check-Fragetexte in den Lernstand-Fingerabdruck eingehen.
+
+## IK LF9 · Marketingkonzepte planen und umsetzen
+
+- **Rechtsstand:** UWG-Neuregelung zu Umweltaussagen (ab 27.9.2026, RL 2024/825) aus dem Basistext übernommen, nur für Verbraucherwerbung; B2B weiter allgemeines Irreführungsverbot. Werbe-E-Mails B2B nur mit Einwilligung (§ 7 UWG).
+- **K01:** Sättigungsgrad 62,5 %, Marktanteile (Übungsmarkt); gewichtete Segmentbewertung (Agenturen 4,0); Forschungsplan mit Quellen/Lücken; Befragung 12 von 30 mit Bestandskundenüberhang, Aussagegrenzen.
+- **K02:** Beobachtungen mit Beleg (keine Strategie); SO/WO/ST/WT-Kombinationen; Portfolio mit relativen Marktanteilen und Lebenszyklus; Stofftaschen als Set-Verbund statt Eliminierung.
+- **K03:** Bekanntheitsziel mit Messmethode; **L30:** Ideenphase (6-3-5, 18 Ideen → fünf Alternativen, keine Bewertung) getrennt von Bewertungsphase mit vorher festgelegten Kriterien (Passung/geringer Aufwand/Zielbeitrag) und Ansoff-Zuordnung, begründete Auswahl A+B, Strategie vs. Maßnahme; Event-Paket aus Bedürfnis/Ressource; Salbeigrün als Sonderanfertigung (1.440 € Lagerrisiko vermieden).
+- **K04:** Preisspielraum 22/34/44 €; Mengenstaffel mit DB; 10 % Rabatt → 25 % Mehrmenge nötig, Kapazitätsprüfung, § 1 GWB; Aktionsauswertung mit Mitnahmeeffekt.
+- **K05:** Ziel/Zielgruppe/Botschaft mit Beleg; Budgetverteilung 6.000 € auf Kanäle; Entwurfsprüfung (Umweltaussage, Lizenz, Einwilligung, Kennzeichnung, Garantie); Kanalvergleich Kosten je Anfrage.
+- **K06:** Reisender/Handelsvertreterin (kritisch 50.000 €, bei 35.000 € HV günstiger), § 89b HGB; Londoner Auftrag mit Risiken inkl. Brexit/Ursprungsregeln; Incoterms-Vergleich mit Empfehlung DAP; Zahlungsabsicherung Anzahlung + Inkasso bzw. Akkreditiv.
+- **K07:** Konzept auf einer Seite mit Budgetreserve; Unstimmigkeiten im Mix; Pakete/Schnittstellen zum Balkenplan (kritischer Pfad 7 Wochen, konsistent mit Basisgrafik); Bruch der Wirkungskette Anfrage → Bestellung (40 % → 14 %) mit Nachsteuerung.

@@ -6,86 +6,447 @@
   "untertitel": "Interne und externe Faktoren mit der SWOT-Analyse ordnen, Produkte mit Lebenszyklus und Portfolio einordnen und begründete Schlüsse ziehen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Marktforschung liefert Informationen über Kunden und Wettbewerb (Kapitel 1).",
-          "Das Unternehmen kennt seine eigenen Zahlen."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest interne Faktoren der Unternehmensanalyse von externen Faktoren der Umweltanalyse, belegst sie mit Daten und trennst Beobachtungen von Schlussfolgerungen.",
+        "vorwissen_kurz": "Bevor MAKEL Studio eine Strategie für das Geschäftskundengeschäft wählt, muss klar sein, wo das Unternehmen steht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Innen und außen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Unternehmensanalyse** betrachtet interne Faktoren, die MAKEL Studio selbst beeinflussen kann: Produkte, Kapazitäten, Personal, Kosten, Marke, Prozesse. Die **Umweltanalyse** betrachtet externe Faktoren, die MAKEL nicht direkt steuern kann: Nachfrage, Wettbewerb, rechtliche Rahmenbedingungen, technische Entwicklungen, gesellschaftliche Trends. Beide Analysen stützen sich auf Daten, nicht auf Eindrücke. Und sie beschreiben zuerst, was ist; was daraus folgt, ist ein zweiter Schritt.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Beobachtung mit Beleg",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Faktor",
+              "intern oder extern",
+              "Beleg",
+              "Beobachtung, noch keine Strategie"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Reklamationsquote bei Stickereien 0,8 %",
+                  "intern",
+                  "Reklamationsstatistik des letzten Jahres",
+                  "Stickqualität wird geschätzt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferzeit Firmendrucke 15 Arbeitstage",
+                  "intern",
+                  "Durchlaufzeiten im System",
+                  "länger als bei einigen Wettbewerbern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckkapazität Juni bis August zu 55 % ausgelastet",
+                  "intern",
+                  "Kapazitätsplanung",
+                  "freie Kapazität im Sommer"
+                ]
+              },
+              {
+                "zellen": [
+                  "neuer Online-Konfigurator mit 48-Stunden-Lieferung",
+                  "extern",
+                  "Website des Anbieters, Testbestellung",
+                  "zusätzlicher Wettbewerb im Niedrigpreis"
+                ]
+              },
+              {
+                "zellen": [
+                  "mehr Firmenevents mit Teamkleidung",
+                  "extern",
+                  "Branchenbericht, Anfragen von Agenturen",
+                  "wachsende Nachfrage"
+                ]
+              }
+            ],
+            "fazit": "Jeder Faktor ist belegt und als Beobachtung formuliert. Ob MAKEL die Lieferzeit verkürzen oder die Sommerkapazität für Agenturen nutzen sollte, ist erst der nächste Schritt.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Trennung schützt vor voreiligen Schlüssen. „Die Lieferzeit ist länger als beim Konfigurator\" ist eine Beobachtung. „Wir müssen auf 48 Stunden kommen\" ist bereits eine Strategie, die Kosten und Folgen hat. Wer beides vermischt, übersieht Alternativen, etwa sich bewusst über Qualität statt Geschwindigkeit abzugrenzen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Bevor Marketingziele festgelegt werden, wird die Lage analysiert. Die Unternehmensanalyse betrachtet interne Faktoren, die MAKEL selbst beeinflussen kann: Produkte und Qualität, Kapazitäten, Mitarbeitende und Know-how, Kosten und Finanzen, Marke und Image, Kundenbeziehungen. Die Umweltanalyse betrachtet externe Faktoren außerhalb des Einflusses: Nachfrageentwicklung, Wettbewerber, Lieferanten, Gesetze und Politik, Wirtschaftslage, Technologie, gesellschaftliche Trends wie Nachhaltigkeit. Grundlage sind belegbare Daten: Verkaufszahlen, Kundenrückmeldungen, Marktberichte.",
-        "beispiele": [
-          "Intern: freie Druckkapazität in den Sommermonaten.",
-          "Extern: ein neuer Online-Konfigurator bietet Firmenbekleidung mit 48-Stunden-Lieferung an."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "PESTEL als Prüfliste",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für die Umweltanalyse hilft eine Prüfliste mit sechs Bereichen: politisch, wirtschaftlich, gesellschaftlich, technologisch, ökologisch und rechtlich. Sie sorgt dafür, dass kein wichtiger Bereich übersehen wird.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für die Strategiesitzung sammelt Marlene Voss: eigene Absatzzahlen nach Produktlinien, Reklamationsquote, Kundenfeedback, freie Kapazitäten aus der Produktionsplanung sowie einen Marktbericht und Preise von drei Wettbewerbern.",
-        "typische_fehler": "Interne Schwächen und externe Risiken vermischen.",
         "verstaendnisfragen": [
-          "Was unterscheidet interne und externe Faktoren? Interne kann das Unternehmen beeinflussen, externe liegen außerhalb seines Einflusses.",
-          "Nenne zwei externe Faktoren. Zum Beispiel neue Wettbewerber und gesetzliche Änderungen."
-        ],
-        "pruefungsbezug": "Faktoren als intern oder extern einordnen.",
-        "merksatz": "Unternehmensanalyse = intern, beeinflussbar; Umweltanalyse = extern, nicht direkt beeinflussbar — beides mit Daten belegen."
+          {
+            "frage": "Was unterscheidet interne von externen Faktoren?",
+            "antwort": "Interne Faktoren kann das Unternehmen selbst beeinflussen, externe nicht direkt.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum werden Faktoren zuerst als Beobachtung formuliert?",
+            "antwort": "Damit Beschreibung und Strategie getrennt bleiben und keine Alternative vorschnell ausgeschlossen wird.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Interne Faktoren können Stärken oder Schwächen sein.",
-          "Externe Faktoren können Chancen oder Risiken sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Faktoren in eine SWOT-Analyse ein, prüfst dabei die häufige Verwechslung von Stärke und Chance und leitest aus der Kombination der Felder SO-, WO-, ST- und WT-Strategien ab.",
+        "vorwissen_kurz": "Die Faktoren sind gesammelt. Jetzt werden sie geordnet und miteinander verbunden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Felder, vier Strategierichtungen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:swot|SWOT-Analyse}} ordnet interne Faktoren als **Stärken** und **Schwächen**, externe als **Chancen** und **Risiken**. Eine Chance ist keine Stärke, auch wenn sie gut für MAKEL Studio ist: Sie liegt außerhalb und muss erst genutzt werden. Aus der Kombination der Felder entstehen Strategierichtungen: Stärken nutzen, um Chancen zu ergreifen (SO), Schwächen abbauen, um Chancen zu nutzen (WO), Stärken einsetzen, um Risiken abzuwehren (ST), und Schwächen und Risiken gemeinsam begrenzen (WT).",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Strategierichtungen für das Geschäftskundengeschäft",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kombination",
+              "Überlegung für MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "SO: Stickqualität + mehr Firmenevents",
+                  "hochwertige bestickte Eventkleidung gezielt Agenturen anbieten"
+                ]
+              },
+              {
+                "zellen": [
+                  "WO: lange Lieferzeit + mehr Firmenevents",
+                  "Expressschiene für Events schaffen, etwa mit Sommerkapazität"
+                ]
+              },
+              {
+                "zellen": [
+                  "ST: Stickqualität + Konfigurator im Niedrigpreis",
+                  "über Qualität und Beratung abgrenzen statt Preiskampf"
+                ]
+              },
+              {
+                "zellen": [
+                  "WT: lange Lieferzeit + Konfigurator",
+                  "Standardaufträge beschleunigen, um nicht im Preisvergleich zu verlieren"
+                ]
+              }
+            ],
+            "fazit": "Jede Kombination führt zu einer anderen Überlegung. Welche davon verfolgt wird, ist eine Entscheidung, die erst nach Bewertung der Optionen fällt.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die SWOT liefert Optionen, keine fertige Strategie. Im Beispiel passen SO und ST gut zusammen: MAKEL Studio grenzt sich über Qualität ab und spricht gezielt Agenturen an. WO verlangt Investitionen in Prozesse, die erst geprüft werden müssen. Eine SWOT, die nur ausgefüllt, aber nicht in Kombinationen übersetzt wird, bleibt eine Liste ohne Folgen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die SWOT-Analyse ordnet die Ergebnisse in vier Felder: Strengths (Stärken, intern), Weaknesses (Schwächen, intern), Opportunities (Chancen, extern), Threats (Bedrohungen oder Risiken, extern). Daraus werden Strategien abgeleitet: Stärken nutzen, um Chancen zu ergreifen (SO); Schwächen abbauen, um Chancen zu nutzen (WO); Stärken einsetzen, um Risiken abzuwehren (ST); Schwächen und Risiken gemeinsam begrenzen (WT). Ob ein Faktor Stärke oder Schwäche ist, hängt vom Vergleich mit den Wettbewerbern und den Kundenanforderungen ab.",
-        "beispiele": [
-          "Stärke: hochwertige Stickerei mit geringer Reklamationsquote.",
-          "Bedrohung: Online-Konfigurator mit Niedrigpreisen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Ein Faktor, zwei Felder",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Faktoren lassen sich nicht eindeutig zuordnen. Freie Kapazität im Sommer ist eine potenzielle Stärke, wenn sie genutzt wird, aber auch ein Zeichen für ungleichmäßige Auslastung. In solchen Fällen wird die Zuordnung begründet und offen genannt, statt den Faktor beliebig einzusortieren.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "MAKELs SWOT: Stärken — Qualität, Designkompetenz, freie Sommerkapazität. Schwächen — Lieferzeit drei Wochen, kein Online-Konfigurator. Chancen — wachsende Nachfrage nach nachhaltiger Firmenbekleidung, mehr Firmenevents. Risiken — Preisdruck durch Online-Anbieter. Strategie SO: Mit Qualität und Nachhaltigkeit Eventagenturen gewinnen; WO: Lieferzeit verkürzen, um die Eventnachfrage zu bedienen.",
-        "typische_fehler": "Eine Chance als Stärke eintragen, weil sie gut für das Unternehmen ist.",
         "verstaendnisfragen": [
-          "Wofür stehen die vier Buchstaben der SWOT? Strengths, Weaknesses, Opportunities, Threats.",
-          "Was ist eine SO-Strategie? Stärken nutzen, um Chancen zu ergreifen."
-        ],
-        "pruefungsbezug": "Faktoren in eine SWOT einordnen und Strategien ableiten.",
-        "merksatz": "SWOT: Stärken und Schwächen innen, Chancen und Risiken außen; Strategien verbinden beide Seiten."
+          {
+            "frage": "Ist „mehr Firmen buchen Events mit Teamkleidung\" eine Stärke oder eine Chance?",
+            "antwort": "Eine Chance, weil es eine externe Entwicklung ist, die MAKEL nicht selbst steuert.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was bedeutet eine WO-Strategie?",
+            "antwort": "Eine interne Schwäche abbauen, um eine externe Chance zu nutzen.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Produkte verkaufen sich nicht ewig gleich gut.",
-          "Ein Unternehmen hat mehrere Produkte mit unterschiedlicher Entwicklung."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Produkte von MAKEL Studio in Produktlebenszyklus und Portfolio ein, leitest Normstrategien ab und erkennst, welche Daten für eine belastbare Einordnung nötig sind.",
+        "vorwissen_kurz": "Basis-Hoodie, Event-Hoodies, nachhaltige Teamwear, Stofftaschen: Nicht alle Produkte brauchen dieselbe Aufmerksamkeit.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Über die Zeit und im Vergleich",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:produktlebenszyklus|Produktlebenszyklus}} beschreibt, wie sich Umsatz und Gewinn eines Produkts über die Zeit entwickeln: Einführung, Wachstum, Reife, Sättigung, Rückgang. Das {{begriff:portfolio|Portfolio}} vergleicht Produkte nach Marktwachstum und relativem Marktanteil. **Fragezeichen** wachsen stark bei geringem Anteil, **Stars** wachsen bei hohem Anteil, **Cash Cows** haben hohen Anteil in einem kaum wachsenden Markt, **Poor Dogs** geringen Anteil bei geringem Wachstum. Für jedes Feld gibt es eine Normstrategie.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Einordnung mit Daten",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Produkt",
+              "Marktwachstum",
+              "relativer Marktanteil",
+              "Phase im Lebenszyklus",
+              "Feld"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Basis-Hoodie",
+                  "1 % pro Jahr",
+                  "1,4",
+                  "Reife",
+                  "Cash Cow"
+                ]
+              },
+              {
+                "zellen": [
+                  "bestickte Event-Hoodies",
+                  "12 %",
+                  "1,2",
+                  "Wachstum",
+                  "Star"
+                ]
+              },
+              {
+                "zellen": [
+                  "nachhaltige Teamwear",
+                  "18 %",
+                  "0,3",
+                  "Einführung",
+                  "Fragezeichen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stofftaschen",
+                  "0 %",
+                  "0,2",
+                  "Sättigung bis Rückgang",
+                  "Poor Dog"
+                ]
+              }
+            ],
+            "fazit": "Die Cash Cow finanziert die Investitionen in Event-Hoodies und nachhaltige Teamwear. Bei den Stofftaschen stellt sich die Frage, ob sie noch einen Zweck erfüllen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der relative Marktanteil vergleicht den eigenen Anteil mit dem des größten Wettbewerbers; ein Wert über 1 heißt, MAKEL ist in diesem Segment Marktführer. Solche Zahlen sind bei einem kleinen Unternehmen oft nur grob zu schätzen, etwa für einen regionalen Teilmarkt. Deshalb wird offengelegt, worauf die Einordnung beruht. Ein Portfolio mit geschätzten Werten ist eine Diskussionsgrundlage, keine exakte Messung.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Der Produktlebenszyklus beschreibt idealtypisch, wie sich Umsatz und Gewinn eines Produkts über die Zeit entwickeln: Einführung (geringer Umsatz, oft Verlust), Wachstum (stark steigender Umsatz, Gewinnzone), Reife (Umsatz wächst langsamer, höchster Gewinn), Sättigung (Umsatz stagniert, Preisdruck), Rückgang (Umsatz sinkt). Die Portfolioanalyse (BCG-Matrix) ordnet Produkte nach Marktwachstum und relativem Marktanteil: Fragezeichen (hohes Wachstum, geringer Anteil), Stars (hohes Wachstum, hoher Anteil), Cash Cows (geringes Wachstum, hoher Anteil), Poor Dogs (geringes Wachstum, geringer Anteil). Daraus folgen Normstrategien wie investieren, halten, abschöpfen oder aufgeben.",
-        "beispiele": [
-          "Basis-Hoodie seit Jahren stabil, hoher Anteil im Stammmarkt: Cash Cow.",
-          "Neue nachhaltige Teamwear-Linie in einem wachsenden Markt, noch kleiner Anteil: Fragezeichen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Lebenszyklus und Portfolio",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beide Modelle hängen zusammen: Ein Fragezeichen steht meist am Anfang des Lebenszyklus, eine Cash Cow in der Reife. Der Lebenszyklus betrachtet aber ein einzelnes Produkt über die Zeit, das Portfolio alle Produkte zu einem Zeitpunkt.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Sandra Koslowski und Marlene ordnen die Linien ein: Der Basis-Hoodie finanziert mit stabilen Deckungsbeiträgen die Entwicklung (Cash Cow). Die neue Teamwear-Linie wächst, hat aber noch wenige Kunden (Fragezeichen) — hier soll investiert werden. Die Stofftaschen verkaufen sich kaum und der Markt stagniert (Poor Dog).",
-        "typische_fehler": "Aus einem einzelnen Umsatzanstieg die Lebenszyklusphase als sicher bestimmt ansehen.",
         "verstaendnisfragen": [
-          "In welcher Phase ist der Gewinn typischerweise am höchsten? In der Reifephase.",
-          "Was kennzeichnet eine Cash Cow? Geringes Marktwachstum, hoher relativer Marktanteil, hohe Rückflüsse."
-        ],
-        "pruefungsbezug": "Produkte in Lebenszyklus und Portfolio einordnen und Normstrategien nennen.",
-        "merksatz": "Lebenszyklus beschreibt Umsatz und Gewinn über die Zeit, das Portfolio ordnet nach Marktwachstum und Marktanteil — beides sind Modelle, keine Naturgesetze."
+          {
+            "frage": "Welche Normstrategie gilt für eine Cash Cow?",
+            "antwort": "Halten und abschöpfen; die Rückflüsse finanzieren Stars und Fragezeichen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Was bedeutet ein relativer Marktanteil von 1,4?",
+            "antwort": "Dass der eigene Marktanteil 1,4-mal so groß ist wie der des größten Wettbewerbers; MAKEL ist in diesem Segment führend.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Analysen sollen zu Entscheidungen führen.",
-          "Modelle vereinfachen."
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest aus SWOT, Lebenszyklus und Portfolio begründete Handlungsoptionen ab, prüfst Normstrategien auf Verbundwirkungen und legst Datenbasis, Annahmen und Grenzen der Modelle offen.",
+        "vorwissen_kurz": "Die Modelle legen nahe, die Stofftaschen aufzugeben. Bevor entschieden wird, lohnt ein zweiter Blick.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Modelle als Ausgangspunkt",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Analysemodelle ordnen Informationen, ersetzen aber keine Entscheidung. Normstrategien sind Empfehlungen für den typischen Fall; sie berücksichtigen nicht, wie Produkte zusammenwirken. Eine Handlungsoption ist erst begründet, wenn sie die Datenbasis nennt, die Annahmen offenlegt und prüft, was das Modell nicht abbildet, etwa Verbundwirkungen im Sortiment, Saisoneffekte oder strategische Ziele wie Nachhaltigkeit.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Stofftaschen genauer betrachtet",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüffrage",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Umsatz Stofftaschen allein",
+                  "4.000 € im Jahr, Deckungsbeitrag 1.200 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Werden sie mit anderen Produkten gekauft?",
+                  "in 60 % der Fälle zusammen mit Event-Hoodies als Set"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was sagen Agenturen?",
+                  "Set aus Hoodie und Tasche wird für Events gern bestellt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fallen ohne Taschen Hoodie-Aufträge weg?",
+                  "wahrscheinlich bei einem Teil der Set-Kunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Option",
+                  "Taschen nicht einzeln bewerben, aber als Set-Bestandteil behalten"
+                ]
+              }
+            ],
+            "fazit": "Allein betrachtet sind die Stofftaschen ein Poor Dog. Als Ergänzung zu den Event-Hoodies stützen sie aber das wichtigste Wachstumsprodukt. Die Option „im Set behalten\" ist besser begründet als „aufgeben\".",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine gute Schlussfolgerung benennt auch ihre Unsicherheit. Ob ohne Taschen tatsächlich Hoodie-Aufträge wegfallen, ist eine Annahme, die mit einem Test überprüft werden könnte, etwa indem bei einigen Angeboten die Tasche nicht angeboten wird. Auch der Lebenszyklus kann täuschen: Zwei Monate steigender Umsatz bei nachhaltiger Teamwear können ein Saisoneffekt sein. Deshalb werden Zeitraum und Marktvergleich geprüft, bevor in eine Wachstumsphase investiert wird.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Aus der Analyse werden Handlungsoptionen abgeleitet und begründet: Welche Stärken nutzen wir? Welche Schwäche müssen wir zuerst beheben? In welche Produkte investieren wir, welche schöpfen wir ab? Dabei werden die Grenzen der Modelle genannt: Der Lebenszyklus ist idealtypisch, Phasen lassen sich oft erst im Nachhinein bestimmen. Das Portfolio hängt von der Abgrenzung des Marktes ab. Die SWOT ist nur so gut wie die zugrunde liegenden Daten. Eine Schlussfolgerung nennt deshalb Datenbasis, Annahmen und die nächste Überprüfung.",
-        "beispiele": [
-          "Wachsende Umsätze über zwei Monate können Saisoneffekt sein, nicht Wachstumsphase.",
-          "Eine ‚Poor Dog‘-Linie kann als Ergänzung im Sortiment trotzdem sinnvoll sein."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Von der Analyse zur Strategie",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Analyse liefert Optionen. Welche davon verfolgt wird, entscheidet MAKEL Studio nach seinen Zielen, Mitteln und Risiken. Dafür werden die Optionen im nächsten Schritt bewertet und ausgewählt.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner möchte die Stofftaschen als Poor Dog sofort streichen. Marlene gibt zu bedenken, dass Eventagenturen oft Hoodies und Taschen im Set bestellen. Die Gruppe entscheidet: Taschen bleiben als Set-Ergänzung, werden aber nicht mehr einzeln beworben; die Entscheidung wird nach sechs Monaten anhand der Set-Verkäufe überprüft.",
-        "typische_fehler": "Normstrategien mechanisch anwenden, ohne Zusammenhänge im Sortiment zu prüfen.",
         "verstaendnisfragen": [
-          "Warum ist die Lebenszyklusphase oft schwer zu bestimmen? Weil Schwankungen auch saisonal oder zufällig sein können und Phasen oft erst rückblickend erkennbar sind.",
-          "Was gehört zu einer begründeten Schlussfolgerung? Datenbasis, Annahmen und ein Termin zur Überprüfung."
-        ],
-        "pruefungsbezug": "Aus Analysen begründete Handlungsoptionen ableiten und Modellgrenzen nennen.",
-        "merksatz": "Analysen führen zu begründeten Optionen — mit offengelegter Datenbasis, Annahmen und Modellgrenzen."
+          {
+            "frage": "Warum sollte ein Poor Dog nicht automatisch aufgegeben werden?",
+            "antwort": "Weil er andere Verkäufe stützen kann, etwa als Ergänzung im Set. Das bildet das Portfolio nicht ab.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Was gehört zu einer begründeten Handlungsoption aus einer Analyse?",
+            "antwort": "Datenbasis, offengelegte Annahmen und die Grenzen des Modells.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

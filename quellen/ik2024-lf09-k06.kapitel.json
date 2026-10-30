@@ -6,86 +6,447 @@
   "untertitel": "Vertriebswege vergleichen, Risiken im Auslandsgeschäft erkennen und mit Lieferklauseln und Zahlungssicherungen gezielt begrenzen.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "MAKEL verkauft über Boutiquen, den eigenen Store und online.",
-          "Distributionspolitik regelt den Weg zum Kunden."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst direkten und indirekten Vertrieb nach Kundennähe, Reichweite und Kosten, unterscheidest Absatzmittler und Absatzhelfer und berechnest den kritischen Umsatz zwischen Reisendem und Handelsvertreter.",
+        "vorwissen_kurz": "MAKEL Studio will Eventagenturen auch persönlich besuchen lassen. Die Frage ist, ob mit eigenem Personal oder über eine Handelsvertreterin.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wege zum Kunden",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:distributionspolitik|Distributionspolitik}} wählt den Weg, auf dem Produkte zum Kunden kommen. Beim **direkten Vertrieb** verkauft MAKEL Studio selbst, etwa über den Onlineshop, eigene Außendienstler oder auf Messen. Beim **indirekten Vertrieb** sind andere Unternehmen dazwischen. ==Absatzmittler kaufen selbst, Absatzhelfer vermitteln.== Boutiquen sind Absatzmittler: Sie kaufen die Hoodies und verkaufen sie weiter. Eine Handelsvertreterin ist Absatzhelferin: Sie vermittelt Aufträge im Namen von MAKEL und erhält dafür Provision.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Reisender oder Handelsvertreterin?",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "Reisender (angestellt)",
+              "Handelsvertreterin (selbstständig)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Vergütung",
+                  "3.000 € fix + 2 % Provision",
+                  "8 % Provision"
+                ]
+              },
+              {
+                "zellen": [
+                  "kritischer Umsatz",
+                  "3.000 + 0,02x = 0,08x",
+                  "x = 50.000 € pro Monat"
+                ]
+              },
+              {
+                "zellen": [
+                  "erwarteter Monatsumsatz im ersten Jahr",
+                  "35.000 €",
+                  "35.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten bei 35.000 €",
+                  "3.700 €",
+                  "2.800 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "weitere Gesichtspunkte",
+                  "weisungsgebunden, nur für MAKEL tätig, zusätzliche Arbeitgeberkosten",
+                  "bringt eigene Kontakte mit, vertritt oft mehrere Firmen"
+                ]
+              }
+            ],
+            "fazit": "Bei erwarteten 35.000 € Monatsumsatz ist die Handelsvertreterin günstiger. Erst über 50.000 € lohnt sich ein eigener Reisender, und dabei sind seine Lohnnebenkosten noch nicht eingerechnet.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung ist nur ein Teil der Entscheidung. Ein angestellter Reisender kennt die Produkte genau, folgt Weisungen und baut Kundenbeziehungen für MAKEL auf. Eine Handelsvertreterin bringt eigene Kontakte zu Agenturen mit und verursacht keine Fixkosten, wenn der Umsatz ausbleibt. Für den Einstieg in einen neuen Markt ist sie deshalb oft die vorsichtigere Wahl. Wächst der Umsatz über die kritische Grenze, kann MAKEL Studio später umstellen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Beim direkten Vertrieb verkauft der Hersteller ohne zwischengeschaltete Händler an den Endabnehmer: eigener Onlineshop, eigener Store, Außendienst mit angestellten Reisenden. Beim indirekten Vertrieb kaufen Händler (Absatzmittler) die Ware und verkaufen sie weiter, etwa Boutiquen oder Großhändler. Absatzhelfer verkaufen im Namen oder für Rechnung des Herstellers, ohne selbst Eigentümer zu werden: Handelsvertreter (selbstständig, auf Provision), Kommissionäre, Plattformen. Direkter Vertrieb bringt Kundennähe und volle Marge, kostet aber eigene Strukturen; indirekter Vertrieb bringt Reichweite gegen Handelsspanne und weniger Kontrolle. Beim Vergleich zwischen angestelltem Reisenden (Fixum plus Provision) und Handelsvertreter (nur Provision, meist höher) gibt es einen kritischen Umsatz, ab dem der Reisende günstiger ist.",
-        "beispiele": [
-          "Reisender: 3.000 € Fixum + 2 % Provision; Handelsvertreter: 8 % Provision. Kritischer Umsatz: 3.000 + 0,02x = 0,08x → x = 50.000 € im Monat.",
-          "Boutiquen als Absatzmittler: MAKEL verkauft zum Großhandelspreis, die Boutique verkauft mit eigenem Aufschlag."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Ausgleichsanspruch der Handelsvertreterin",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Endet der Vertrag mit einer Handelsvertreterin, kann sie einen Ausgleich für die Kunden verlangen, die sie geworben hat und von denen MAKEL weiter profitiert (§ 89b HGB). Dieser mögliche Ausgleich gehört in die langfristige Betrachtung.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für Eventagenturen in Süddeutschland überlegt Tobias Renner: Ein angestellter Reisender kostet 3.000 € Fixum plus 2 % Provision, eine Handelsvertreterin verlangt 8 % Provision. Erwarteter Umsatz im Monat: 30.000 €. Vertreterin: 2.400 €, Reisender: 3.600 €. Bei diesem Umsatz ist die Vertreterin günstiger; ab 50.000 € wäre es der Reisende.",
-        "typische_fehler": "Absatzmittler (kaufen selbst) und Absatzhelfer (vermitteln) verwechseln.",
         "verstaendnisfragen": [
-          "Was unterscheidet direkten und indirekten Vertrieb? Beim indirekten Vertrieb sind Händler zwischengeschaltet, die selbst kaufen und weiterverkaufen.",
-          "Wie bestimmt man den kritischen Umsatz zwischen Reisendem und Handelsvertreter? Beide Kostenfunktionen gleichsetzen."
-        ],
-        "pruefungsbezug": "Vertriebswege vergleichen und den kritischen Umsatz berechnen.",
-        "merksatz": "Direkter Vertrieb = Nähe und Marge, indirekter = Reichweite gegen Spanne; Reisender lohnt sich ab dem kritischen Umsatz."
+          {
+            "frage": "Was unterscheidet einen Absatzmittler von einem Absatzhelfer?",
+            "antwort": "Absatzmittler kaufen die Ware selbst und verkaufen sie weiter; Absatzhelfer vermitteln nur.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Reisender 3.000 € + 2 %, Handelsvertreterin 8 %. Bei welchem Umsatz kosten beide gleich viel?",
+            "antwort": "3.000 + 0,02x = 0,08x, also x = 50.000 € im Monat.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Im Ausland gelten andere Gesetze, Währungen und Gepflogenheiten.",
-          "Lieferungen sind länger unterwegs."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst Transport-, Zahlungs-, Wechselkurs-, politisch-rechtliche und kulturelle Risiken eines Auslandsgeschäfts und ordnest jedem Risiko eine passende Maßnahme zu.",
+        "vorwissen_kurz": "Eine Konzertagentur aus London fragt 300 bedruckte Hoodies für eine Tour an. Es wäre MAKELs erster größerer Auftrag nach Großbritannien.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Risiken jenseits der Grenze",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auslandsgeschäfte bringen Risiken, die im Inland kleiner sind. Das **Transportrisiko** steigt mit langen Wegen und mehreren Umschlägen. Das **Zahlungsrisiko** ist schwer einzuschätzen, wenn der Kunde unbekannt ist und Forderungen im Ausland durchgesetzt werden müssten. Das **Wechselkursrisiko** entsteht, wenn in fremder Währung abgerechnet wird. **Politisch-rechtliche Risiken** umfassen Zoll, Einfuhrbestimmungen und fremdes Recht. **Kulturelle Risiken** entstehen aus unterschiedlichen Erwartungen an Kommunikation und Termine.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Risiken beim Auftrag aus London",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Risiko",
+              "konkret",
+              "Maßnahme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zahlung",
+                  "Neukunde, 300 × 42 € = 12.600 €",
+                  "Anzahlung 50 %, Rest gegen Dokumente oder Wirtschaftsauskunft"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wechselkurs",
+                  "Agentur möchte in Pfund zahlen",
+                  "Rechnung in Euro oder Kurs mit der Bank sichern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zoll",
+                  "Großbritannien ist seit dem Brexit Drittland",
+                  "Zollformalitäten klären, Präferenzursprung prüfen, Lieferklausel festlegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Transport",
+                  "Lkw mit Fähre, Termin vor Tourstart",
+                  "Lieferung mit Puffer, Transportversicherung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Recht",
+                  "englisches oder deutsches Recht?",
+                  "Rechtswahl und Gerichtsstand im Vertrag"
+                ]
+              }
+            ],
+            "fazit": "Jedes Risiko lässt sich begrenzen. Zusammen machen die Maßnahmen aus einem riskanten Auftrag ein kalkulierbares Geschäft.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Maßnahmen haben Kosten. Eine Kurssicherung kostet Gebühren, eine Transportversicherung eine Prämie, die Zollabwicklung Zeit oder einen Dienstleister. MAKEL Studio rechnet diese Kosten in das Angebot ein. Für einen Auftrag dieser Größe lohnt sich der Aufwand; bei einer einzelnen Bestellung über zehn Hoodies wäre er vielleicht unverhältnismäßig, und MAKEL würde nur gegen Vorkasse liefern.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Auslandsgeschäfte bringen zusätzliche Risiken. Transportrisiko: lange Wege, Umschlag, Beschädigung oder Verlust. Zahlungsrisiko: Der Käufer zahlt nicht oder spät, und die Durchsetzung im Ausland ist schwierig. Wechselkursrisiko: Bei Rechnungen in fremder Währung kann sich der Wert bis zur Zahlung ändern. Politische und rechtliche Risiken: Zölle, Einfuhrbeschränkungen, Sanktionen, fremdes Vertragsrecht. Kulturelle Risiken: Missverständnisse in Kommunikation und Erwartungen. Innerhalb des EU-Binnenmarkts entfallen Zölle, umsatzsteuerliche Sonderregeln gelten aber weiter. Jedem Risiko werden passende Maßnahmen zugeordnet: Versicherung, Lieferklausel, Zahlungssicherung, Rechnung in Euro oder Kurssicherung, klare Verträge.",
-        "beispiele": [
-          "Rechnung in britischen Pfund, zahlbar in 60 Tagen: Wechselkursrisiko — Rechnung in Euro oder Kurssicherung.",
-          "Neuer Kunde außerhalb der EU: Zahlungsrisiko — Vorkasse oder Akkreditiv."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Ursprungsregeln im Handel mit Großbritannien",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zwischen der EU und Großbritannien gilt ein Handelsabkommen mit Zollfreiheit für Waren mit präferenziellem Ursprung. Ob die Hoodies diese Voraussetzung erfüllen, hängt davon ab, wo Stoff und Rohlinge hergestellt wurden. Stammen die Rohlinge aus Asien, kann trotz Veredelung in Düsseldorf Zoll anfallen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Eventagentur in Zürich fragt 500 bestickte Hoodies an. Marlene Voss prüft: Die Schweiz gehört nicht zur EU — Zollanmeldung, Einfuhrabgaben, längere Abwicklung. Der Kunde ist neu, die Bestellsumme hoch. Sie schlägt Rechnung in Euro, eine klare Lieferklausel und eine Zahlungssicherung vor.",
-        "typische_fehler": "Ein Auslandsgeschäft wie ein Inlandsgeschäft behandeln.",
         "verstaendnisfragen": [
-          "Nenne vier Risiken im Auslandsgeschäft. Transport-, Zahlungs-, Wechselkurs- und politisch-rechtliches Risiko.",
-          "Wie kann MAKEL das Wechselkursrisiko vermeiden? Zum Beispiel durch Rechnung in Euro."
-        ],
-        "pruefungsbezug": "Internationale Risiken erkennen und geeignete Maßnahmen zuordnen.",
-        "merksatz": "Auslandsgeschäfte bergen Transport-, Zahlungs-, Kurs-, politische und kulturelle Risiken — jedem Risiko eine passende Maßnahme zuordnen."
+          {
+            "frage": "Welche Maßnahme begrenzt das Wechselkursrisiko?",
+            "antwort": "Eine Rechnung in Euro oder eine Kurssicherung über die Bank.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ist das Zahlungsrisiko bei einem ausländischen Neukunden besonders hoch?",
+            "antwort": "Weil die Bonität schwer einzuschätzen ist und Forderungen im Ausland schwerer durchzusetzen sind.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Lieferbedingungen regeln Kosten und Gefahr (LF 3).",
-          "Im internationalen Handel braucht man einheitliche Begriffe."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, welche Kosten, Gefahren und Formalitäten die Incoterms EXW, FCA, DAP und DDP regeln, ergänzt eine Klausel um benannten Ort und Fassung und wählst für einen Auslandsauftrag eine passende Klausel.",
+        "vorwissen_kurz": "Die Londoner Agentur fragt, wer den Transport bezahlt und wer haftet, wenn die Kartons auf der Fähre beschädigt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Klauseln regeln",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Incoterms der Internationalen Handelskammer regeln, bis zu welchem Punkt der Verkäufer die **Kosten** trägt, wann die **Gefahr** auf den Käufer übergeht und wer welche **Formalitäten** wie die Zollabfertigung übernimmt. Eine vollständige Klausel nennt die Klausel, den **benannten Ort** und die **Fassung**, etwa „DAP London, Venue Road 12, Incoterms 2020\". Die Incoterms regeln nicht den Eigentumsübergang, den Preis oder die Zahlung; das steht an anderer Stelle im Vertrag.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Klausel für den Auftrag aus London?",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Klausel",
+              "Was MAKEL Studio übernimmt",
+              "Folge für die Agentur"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "EXW Düsseldorf",
+                  "Ware im Lager bereitstellen",
+                  "muss Transport, Ausfuhr und Einfuhr selbst organisieren, für Agentur aufwendig"
+                ]
+              },
+              {
+                "zellen": [
+                  "FCA Düsseldorf",
+                  "Übergabe an den Spediteur der Agentur, Ausfuhrabfertigung",
+                  "organisiert Transport ab Düsseldorf und Einfuhr"
+                ]
+              },
+              {
+                "zellen": [
+                  "DAP London, Venue Road 12",
+                  "Transport bis zur Spielstätte, Gefahr bis Ankunft",
+                  "erledigt nur Einfuhr und zahlt Abgaben"
+                ]
+              },
+              {
+                "zellen": [
+                  "DDP London, Venue Road 12",
+                  "alles bis zur Spielstätte, einschließlich Einfuhrabgaben",
+                  "erhält die Ware ohne weiteren Aufwand"
+                ]
+              }
+            ],
+            "fazit": "DAP ist ein guter Kompromiss: MAKEL Studio organisiert den Transport und kann den Termin steuern, die Agentur übernimmt die Einfuhr in ihr eigenes Land. DDP würde MAKEL mit britischen Einfuhrformalitäten belasten.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Wahl der Klausel hat Folgen für den Preis. Bei DAP rechnet MAKEL Studio Fracht und Transportversicherung bis London in das Angebot ein; bei FCA nicht. Gleichzeitig gibt DAP MAKEL Kontrolle über den Termin, was bei einer Tour mit festem Start wichtig ist. Bei DDP müsste MAKEL Einfuhrabgaben in Großbritannien zahlen und dort zollrechtlich auftreten, was ohne Erfahrung riskant ist.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Incoterms® der Internationalen Handelskammer sind standardisierte Lieferklauseln. Sie regeln, wer welche Transportkosten trägt, wann die Gefahr des Verlusts oder der Beschädigung übergeht und wer Ausfuhr- und Einfuhrformalitäten erledigt. Sie gelten nur, wenn sie vereinbart werden, und immer zusammen mit einem benannten Ort und der Angabe der Fassung, etwa ‚FCA Köln, Incoterms® 2020‘. Beispiele: EXW (ab Werk) — der Käufer trägt fast alles; DAP (geliefert benannter Ort) — der Verkäufer trägt Kosten und Gefahr bis zum Bestimmungsort, ohne Einfuhrabgaben; DDP (geliefert verzollt) — der Verkäufer trägt alles einschließlich Einfuhrabgaben. Incoterms regeln nicht den Eigentumsübergang, nicht den Preis und nicht die Zahlung.",
-        "beispiele": [
-          "‚EXW Köln‘: Die Agentur holt die Hoodies bei MAKEL ab und trägt ab dort Kosten und Gefahr.",
-          "‚DAP Zürich‘: MAKEL liefert bis Zürich; Einfuhrabgaben trägt der Käufer."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Incoterms und Lieferbedingungen im Inland",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im Inland reichen oft einfache Klauseln wie „ab Werk\" oder „frei Haus\". Sie regeln aber meist nur die Kosten, nicht den Gefahrübergang. Die Incoterms regeln beides genau und werden international einheitlich verstanden; deshalb werden sie im Auslandsgeschäft bevorzugt.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Zürcher Agentur möchte ‚frei Haus‘. Marlene erklärt, dass das im internationalen Handel unklar ist, und schlägt ‚DAP Zürich, Agenturadresse, Incoterms® 2020‘ vor: MAKEL organisiert und bezahlt den Transport und trägt das Risiko bis zur Ankunft; die Agentur übernimmt Verzollung und Einfuhrabgaben.",
-        "typische_fehler": "Incoterms als vollständigen Kaufvertrag oder als Zahlungsgarantie darstellen.",
         "verstaendnisfragen": [
-          "Was regeln die Incoterms? Kostenverteilung, Gefahrübergang und Formalitäten beim Transport.",
-          "Was regeln sie nicht? Unter anderem Eigentumsübergang, Preis und Zahlung."
-        ],
-        "pruefungsbezug": "Eine Lieferklausel mit benanntem Ort und Fassung angeben und ihre Wirkung erklären.",
-        "merksatz": "Incoterms regeln Kosten, Gefahr und Formalitäten — nur mit benanntem Ort und Fassung, nicht Eigentum oder Zahlung."
+          {
+            "frage": "Was regeln die Incoterms, und was nicht?",
+            "antwort": "Sie regeln Kosten, Gefahrübergang und Formalitäten, aber nicht Eigentumsübergang, Preis oder Zahlung.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Was gehört zu einer vollständigen Incoterms-Klausel?",
+            "antwort": "Die Klausel, der benannte Ort und die Fassung, etwa „DAP London, Venue Road 12, Incoterms 2020\".",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Bei neuen Auslandskunden ist das Zahlungsrisiko hoch.",
-          "Banken können Zahlungen absichern."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Vorkasse, offene Rechnung, Dokumenteninkasso und Akkreditiv nach Sicherheit und Aufwand für Verkäufer und Käufer und wählst für einen Auslandsauftrag eine begründete Zahlungsabsicherung.",
+        "vorwissen_kurz": "Die Londoner Agentur möchte erst nach Lieferung zahlen. MAKEL Studio kennt sie nicht und will nicht auf 12.600 € sitzen bleiben.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Sicherheit gegen Aufwand",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei **Vorkasse** zahlt der Käufer vor der Lieferung; für MAKEL Studio ist das am sichersten, für den Käufer am riskantesten. Bei **offener Rechnung** liefert MAKEL zuerst und vertraut auf die Zahlung; das ist am riskantesten für den Verkäufer. Dazwischen liegen Verfahren über Banken. Beim **Dokumenteninkasso** leiten die Banken die Versanddokumente weiter; der Käufer erhält sie nur gegen Zahlung, die Bank verspricht aber nichts. Beim **Dokumentenakkreditiv** gibt die Bank des Käufers ein bedingtes Zahlungsversprechen: Sie zahlt, wenn MAKEL ordnungsgemäße Dokumente fristgerecht vorlegt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zahlungsabsicherung für den Auftrag aus London",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Verfahren",
+              "Sicherheit für MAKEL",
+              "Aufwand und Kosten",
+              "geeignet?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Vorkasse 100 %",
+                  "sehr hoch",
+                  "gering",
+                  "Agentur lehnt ab"
+                ]
+              },
+              {
+                "zellen": [
+                  "offene Rechnung",
+                  "gering",
+                  "gering",
+                  "nicht bei unbekanntem Neukunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anzahlung 50 % + Rest per Dokumenteninkasso",
+                  "mittel bis hoch",
+                  "mittel",
+                  "gut, wenn Bonitätsauskunft positiv"
+                ]
+              },
+              {
+                "zellen": [
+                  "Akkreditiv über 12.600 €",
+                  "hoch",
+                  "Bankgebühren, strenge Dokumentenprüfung",
+                  "gut, wenn Agentur zustimmt"
+                ]
+              }
+            ],
+            "fazit": "MAKEL Studio schlägt eine Anzahlung von 50 % und den Rest per Dokumenteninkasso vor. Ist die Bonitätsauskunft negativ oder unklar, verlangt MAKEL ein Akkreditiv.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Akkreditiv bietet hohe Sicherheit, ist aber formstreng. Schon kleine Abweichungen zwischen Dokumenten und Akkreditivbedingungen, etwa ein falsch geschriebener Ortsname oder ein verspätetes Versanddatum, können dazu führen, dass die Bank nicht zahlt. MAKEL Studio stimmt die Bedingungen deshalb vorher mit der eigenen Bank ab und prüft jedes Dokument sorgfältig. Für wiederkehrende Kunden mit guter Zahlungserfahrung kann später auf einfachere Verfahren umgestellt werden.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Zahlungsbedingungen im Außenhandel reichen von sicher für den Verkäufer bis sicher für den Käufer. Vorkasse: Der Käufer zahlt vor der Lieferung — für den Verkäufer am sichersten. Dokumenteninkasso (Dokumente gegen Zahlung): Die Banken leiten die Versanddokumente weiter; der Käufer erhält sie erst gegen Zahlung und kann ohne sie die Ware nicht übernehmen. Die Banken garantieren die Zahlung nicht; verweigert der Käufer, liegt die Ware im Ausland. Dokumentenakkreditiv: Die Bank des Käufers gibt ein bedingtes Zahlungsversprechen — sie zahlt, wenn der Verkäufer fristgerecht vorgeschriebene, ordnungsgemäße Dokumente vorlegt. Das ist sicherer, aber teurer und formstreng: Kleine Abweichungen in den Dokumenten können die Zahlung verhindern. Zahlung auf offene Rechnung ist für den Verkäufer am riskantesten.",
-        "beispiele": [
-          "Neuer Kunde, hoher Betrag, Drittland: Akkreditiv oder Vorkasse.",
-          "Langjähriger Kunde in der EU: offene Rechnung mit Zahlungsziel."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Exportkreditversicherung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Unternehmen können sich gegen den Ausfall ausländischer Forderungen versichern, etwa über private Kreditversicherer. Die Versicherung kostet eine Prämie, übernimmt aber bei Zahlungsausfall einen großen Teil des Schadens. Für einzelne kleine Aufträge lohnt sie sich selten.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Für die 500 Hoodies im Wert von 22.000 € schlägt Marlene der Zürcher Agentur 30 % Anzahlung und für den Rest ein Dokumenteninkasso vor. Tobias Renner wägt ab: Ein Akkreditiv wäre sicherer, kostet aber Bankgebühren und verlangt exakt passende Dokumente. Weil die Agentur eine gute Wirtschaftsauskunft hat, entscheidet er sich für Anzahlung plus Inkasso.",
-        "typische_fehler": "Das Dokumenteninkasso für eine Zahlungsgarantie der Bank halten.",
         "verstaendnisfragen": [
-          "Was unterscheidet Inkasso und Akkreditiv? Beim Inkasso leiten Banken Dokumente gegen Zahlung weiter ohne Garantie, beim Akkreditiv gibt die Bank ein bedingtes Zahlungsversprechen.",
-          "Welches Risiko bleibt beim Akkreditiv? Formfehler in den Dokumenten können die Zahlung verhindern."
-        ],
-        "pruefungsbezug": "Zahlungssicherungen funktional unterscheiden und einem Risiko zuordnen.",
-        "merksatz": "Vorkasse am sichersten, offene Rechnung am riskantesten; Inkasso leitet Dokumente weiter, Akkreditiv verspricht Zahlung gegen ordnungsgemäße Dokumente."
+          {
+            "frage": "Was unterscheidet Dokumenteninkasso und Akkreditiv?",
+            "antwort": "Beim Inkasso leiten Banken Dokumente gegen Zahlung weiter, ohne Zahlungsversprechen. Beim Akkreditiv verspricht die Käuferbank Zahlung gegen ordnungsgemäße Dokumente.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Welches Verfahren ist für den Verkäufer am sichersten?",
+            "antwort": "Die Vorkasse, weil der Käufer vor der Lieferung zahlt.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

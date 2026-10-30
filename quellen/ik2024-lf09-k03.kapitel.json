@@ -6,86 +6,526 @@
   "untertitel": "Marketingziele überprüfbar formulieren, eine Strategie wählen und das Produktangebot auf Bedürfnisse und Ressourcen abstimmen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "SMART-Ziele kennst du aus der Projektarbeit (LF 2).",
-          "Marketingziele leiten sich aus den Unternehmenszielen ab (LF 1)."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst ökonomische und psychografische Marketingziele überprüfbar mit Messgröße, Ausgangswert, Zielwert, Zeitraum und Zielgruppe und leitest sie aus den Unternehmenszielen ab.",
+        "vorwissen_kurz": "Aus der Analyse folgt, dass Eventagenturen eine attraktive Zielgruppe sind. Jetzt braucht es ein Ziel, an dem sich später messen lässt, ob das Marketing gewirkt hat.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was erreicht werden soll",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Marketingziele leiten sich aus den Unternehmenszielen ab. **Ökonomische Ziele** betreffen messbare Marktgrößen wie Umsatz, Absatz, Marktanteil oder Zahl der Kunden. **Psychografische Ziele** betreffen Einstellungen und Wissen, etwa Bekanntheit, Image oder Zufriedenheit. Beide werden SMART formuliert: mit Messgröße, Ausgangswert, Zielwert, Zeitraum und Zielgruppe. Psychografische Ziele brauchen eine Messmethode, etwa eine Befragung, sonst lässt sich ihre Erreichung nicht prüfen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Wunsch zum überprüfbaren Ziel",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "„Wir wollen bei Agenturen bekannter werden.\"",
+              "überprüfbare Fassung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Messgröße",
+                  "unklar",
+                  "gestützte Bekanntheit: Anteil der Befragten, die MAKEL auf einer Liste erkennen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zielgruppe",
+                  "„Agenturen\"",
+                  "Eventagenturen in NRW"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausgangswert",
+                  "fehlt",
+                  "ca. 10 % laut Befragung Herbst 2026"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zielwert",
+                  "„bekannter\"",
+                  "25 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeitraum und Messung",
+                  "fehlt",
+                  "Befragung im Herbst 2027 mit derselben Methode"
+                ]
+              }
+            ],
+            "fazit": "Erst mit Messgröße, Ausgangswert, Zielwert und Messmethode lässt sich später feststellen, ob das Ziel erreicht wurde.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ökonomische und psychografische Ziele hängen zusammen. Wer bei Eventagenturen bekannter wird, gewinnt eher neue Kunden; das psychografische Ziel ist eine Vorstufe des ökonomischen. Beide Ziele müssen außerdem zu den Unternehmenszielen passen: Will MAKEL Studio profitabel wachsen, ist ein Ziel „mehr Kunden um jeden Preis\" ungeeignet, wenn es nur über Rabatte erreicht wird. Die Zahlen im Beispiel sind Planungsannahmen und werden so gekennzeichnet.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Marketingziele konkretisieren die Unternehmensziele für den Markt. Ökonomische Ziele sind direkt messbar: Umsatz, Absatz, Marktanteil, Deckungsbeitrag, Zahl der Neukunden. Psychografische Ziele betreffen Wahrnehmung und Einstellung: Bekanntheit, Image, Kundenzufriedenheit, Weiterempfehlung — sie werden über Befragungen messbar gemacht. Ein überprüfbares Ziel nennt Inhalt, Ausmaß, Zeitraum und Zielgruppe, also SMART. Ausgangswerte und Zielwerte sind Planungsannahmen und werden als solche gekennzeichnet.",
-        "beispiele": [
-          "Unklar: ‚Mehr Geschäftskunden gewinnen.‘",
-          "Überprüfbar: ‚Zahl der Eventagenturen mit mindestens einer Bestellung von 8 (2026) auf 15 bis 31.12.2027 erhöhen.‘"
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Zielbeziehungen im Marketing",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Marketingziele können sich ergänzen oder konkurrieren. Mehr Kunden durch niedrige Preise kann den Gewinn je Auftrag senken. Deshalb werden Ziele gemeinsam betrachtet und Prioritäten festgelegt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Yuki Bergmann sagt in der Strategiesitzung: ‚Wir wollen bekannter werden bei Firmen.‘ Marlene Voss formuliert daraus zwei Ziele: Ökonomisch — 15 aktive Eventagentur-Kunden bis Ende 2027 (heute 8). Psychografisch — gestützte Bekanntheit bei Eventagenturen in NRW von geschätzt 10 % auf 25 %, gemessen mit einer Befragung im Herbst 2027.",
-        "typische_fehler": "Ziele ohne Ausgangswert, Zielwert oder Zeitraum formulieren.",
         "verstaendnisfragen": [
-          "Was unterscheidet ökonomische und psychografische Marketingziele? Ökonomische sind direkt in Geld- oder Mengengrößen messbar, psychografische betreffen Wahrnehmung und Einstellung.",
-          "Was macht ein Ziel überprüfbar? Inhalt, Ausmaß, Zeitraum und Zielgruppe sind festgelegt."
-        ],
-        "pruefungsbezug": "Ein Marketingziel überprüfbar formulieren.",
-        "merksatz": "Marketingziele sind ökonomisch oder psychografisch und werden SMART formuliert — mit Ausgangswert, Zielwert, Zeitraum und Zielgruppe."
+          {
+            "frage": "Was unterscheidet ökonomische von psychografischen Marketingzielen?",
+            "antwort": "Ökonomische betreffen messbare Marktgrößen wie Umsatz, psychografische Einstellungen wie Bekanntheit oder Image.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum braucht ein psychografisches Ziel eine Messmethode?",
+            "antwort": "Weil sich Bekanntheit oder Image nicht direkt ablesen lassen. Ohne Befragung lässt sich die Zielerreichung nicht prüfen.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ein Ziel sagt, wohin; eine Strategie sagt, auf welchem Weg.",
-          "Maßnahmen sind einzelne Schritte."
+        "darstellung": "vollfassung",
+        "ziel": "Du entwickelst mit einer Kreativitätstechnik mehrere Strategiealternativen, ordnest sie der Ansoff-Matrix zu, bewertest sie anschließend nach vorher festgelegten Kriterien und begründest die Auswahl, wobei du Ideenphase und Bewertung trennst und Strategie von Maßnahme unterscheidest.",
+        "vorwissen_kurz": "Die SWOT-Analyse hat Optionen gezeigt, aber noch keine Strategie geliefert. Bevor MAKEL Studio sich festlegt, sollen mehrere Wege auf den Tisch.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst Ideen öffnen, dann auswählen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Strategie legt den grundsätzlichen Weg fest: welche Produkte auf welchen Märkten, wie sich MAKEL Studio gegenüber dem Wettbewerb positioniert. **Maßnahmen** setzen die Strategie um, etwa eine Messe oder ein Rabatt. Die Ansoff-Matrix unterscheidet vier Marktfeldstrategien: **Marktdurchdringung**, **Marktentwicklung**, **Produktentwicklung** und **Diversifikation**. Damit nicht die erstbeste Idee gewinnt, werden zuerst mit einer Kreativitätstechnik möglichst viele Alternativen gesammelt, ohne sie zu bewerten. Erst danach werden sie nach Kriterien bewertet, die vor der Bewertung festgelegt wurden.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ideenphase: Methode 6-3-5 im Marketingteam",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Runde",
+              "Beispiele für Ideen aus den Blättern"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Agenturen gezielt ansprechen; Expressservice für Events; Set aus Hoodie und Tasche"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Agenturen über Messen gewinnen; Event-Paket mit Designberatung; Stammkunden-Rabatt für Boutiquen"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Onlinekonfigurator für Firmenkunden; nachhaltige Teamwear für Firmen; eigene Merchandising-Agentur gründen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis",
+                  "18 Ideen, zusammengefasst zu fünf Strategiealternativen"
+                ]
+              }
+            ],
+            "fazit": "In der Ideenphase wird nichts kritisiert. Aus vielen Einzelideen entstehen fünf Alternativen, die sich klar unterscheiden.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bewertungsphase: fünf Alternativen nach festgelegten Kriterien",
+            "id": "a2-z3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Alternative",
+              "Ansoff",
+              "Passung zur Analyse 30 %",
+              "geringer Aufwand und Risiko 30 %",
+              "Zielbeitrag 40 %",
+              "Summe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "A: bestehende Veredelung für Eventagenturen",
+                  "Marktentwicklung",
+                  "5",
+                  "4",
+                  "4",
+                  "4,3"
+                ]
+              },
+              {
+                "zellen": [
+                  "B: Event-Paket mit Designberatung für Agenturen",
+                  "Produkt- und Marktentwicklung",
+                  "5",
+                  "3",
+                  "5",
+                  "4,4"
+                ]
+              },
+              {
+                "zellen": [
+                  "C: Stammkunden-Rabatt für Boutiquen",
+                  "Marktdurchdringung",
+                  "2",
+                  "5",
+                  "2",
+                  "2,9"
+                ]
+              },
+              {
+                "zellen": [
+                  "D: Onlinekonfigurator für Firmen",
+                  "Produktentwicklung",
+                  "3",
+                  "1",
+                  "3",
+                  "2,4"
+                ]
+              },
+              {
+                "zellen": [
+                  "E: eigene Merchandising-Agentur",
+                  "Diversifikation",
+                  "2",
+                  "1",
+                  "3",
+                  "2,1"
+                ]
+              }
+            ],
+            "fazit": "Die Alternativen A und B liegen klar vorn und lassen sich verbinden: Marktentwicklung zu den Eventagenturen mit einem Event-Paket als Angebot. Der Konfigurator würde direkt mit dem Niedrigpreisanbieter konkurrieren und viel Aufwand verursachen.",
+            "id": "a2-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Trennung der beiden Phasen ist der Kern. Hätte das Team sofort bewertet, wäre vielleicht nur der Rabatt für Boutiquen besprochen worden, weil er einfach umzusetzen ist. Erst durch die offene Sammlung kam das Event-Paket auf den Tisch. Die Kriterien wurden vor der Bewertung festgelegt und aus der Analyse abgeleitet: Passung zu den Stärken, Aufwand und Risiko, Beitrag zum Ziel von 15 Agenturkunden. So ist die Auswahl begründet und nicht nur Geschmack. Gewählte Strategie ist eine Marktentwicklung zu den Eventagenturen mit Event-Paket; eine Messe oder ein Mailing sind danach Maßnahmen, die sie umsetzen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Marketingstrategie legt den grundsätzlichen Weg zum Ziel fest. Marktfeldstrategien nach Ansoff fragen, mit welchen Produkten in welchen Märkten gewachsen wird: Marktdurchdringung (bestehende Produkte, bestehende Märkte), Marktentwicklung (bestehende Produkte, neue Märkte), Produktentwicklung (neue Produkte, bestehende Märkte), Diversifikation (neue Produkte, neue Märkte). Wettbewerbsstrategien legen fest, wie sich das Unternehmen abhebt: Qualitätsführerschaft (Differenzierung), Kostenführerschaft (niedrigster Preis) oder Konzentration auf eine Nische. Die Positionierung beschreibt, wie die Zielgruppe das Angebot im Vergleich zum Wettbewerb wahrnehmen soll. Eine einzelne Werbeaktion ist eine Maßnahme, keine Strategie.",
-        "beispiele": [
-          "Bestehende Hoodies an Eventagenturen verkaufen, die bisher nicht Kunden sind: Marktentwicklung.",
-          "Positionierung: ‚Hochwertige, nachhaltige Teamkleidung mit persönlicher Designberatung‘ — nicht ‚die Billigsten‘."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Strategie und Maßnahme",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "„Wir bieten unsere Veredelung Eventagenturen an\" ist eine Strategie. „Wir stellen auf der Eventmesse in Köln aus\" ist eine Maßnahme. Eine Maßnahme ohne Strategie bleibt Zufall; eine Strategie ohne Maßnahmen bleibt ein Papier.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL wählt Marktentwicklung (bestehende Veredelung für das neue Segment Eventagenturen) und Qualitätsführerschaft. Gegen Online-Anbieter mit Niedrigpreisen will MAKEL nicht über den Preis konkurrieren, sondern über Design, Qualität und Beratung.",
-        "typische_fehler": "Eine Werbeaktion als vollständige Marketingstrategie ausgeben.",
         "verstaendnisfragen": [
-          "Welche Ansoff-Strategie liegt vor, wenn bestehende Produkte in einem neuen Markt angeboten werden? Marktentwicklung.",
-          "Was unterscheidet Qualitäts- und Kostenführerschaft? Abheben durch besondere Leistung gegenüber Abheben durch niedrigsten Preis."
-        ],
-        "pruefungsbezug": "Strategien zuordnen und von einzelnen Maßnahmen abgrenzen.",
-        "merksatz": "Die Strategie legt den Weg fest (Marktfeld, Wettbewerb, Positionierung); Maßnahmen setzen sie um."
+          {
+            "frage": "Warum werden Ideenphase und Bewertung getrennt?",
+            "antwort": "Damit in der Ideenphase möglichst viele Alternativen entstehen und nicht die erstbeste oder einfachste Idee vorschnell gewählt wird.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Welche Ansoff-Strategie liegt vor, wenn MAKEL bestehende Produkte erstmals Eventagenturen anbietet?",
+            "antwort": "Marktentwicklung: bestehende Produkte auf einem neuen Markt.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Programmbreite und -tiefe kennst du aus LF 6.",
-          "Kunden kaufen Nutzen, nicht nur ein Produkt."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst produktpolitische Maßnahmen von Innovation bis Eliminierung passend zu Kundenbedürfnissen und eigenen Ressourcen und gestaltest ein Produktangebot einschließlich Marke, Verpackung und Service.",
+        "vorwissen_kurz": "Die Strategie steht: Eventagenturen sollen ein passendes Angebot bekommen. Wie sieht es konkret aus?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehr als das Kernprodukt",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:produktpolitik|Produktpolitik}} gestaltet das Angebot. ==Marke, Verpackung und Service gehören dazu.== Zu den Maßnahmen zählen **Innovation**, also ein neues Produkt, **Variation**, also die Veränderung eines bestehenden, **Differenzierung**, also zusätzliche Varianten, und **Eliminierung**, also die Aufgabe eines Produkts. Jede Maßnahme muss zu den Bedürfnissen der Zielgruppe und zu den eigenen Ressourcen passen: Was MAKEL Studio nicht selbst herstellen oder liefern kann, ist kein gutes Angebot.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Event-Paket für Agenturen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestandteil",
+              "Bedürfnis der Agenturen",
+              "Ressource bei MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Hoodie, bestickt oder bedruckt",
+                  "hochwertige Teamkleidung",
+                  "eigene Veredelung, Stickqualität"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tasche im passenden Design",
+                  "Set für Gäste oder Team",
+                  "Stofftaschen bereits im Sortiment"
+                ]
+              },
+              {
+                "zellen": [
+                  "Designberatung in 30 Minuten",
+                  "Agenturen haben oft nur ein Logo",
+                  "Grafik im Haus"
+                ]
+              },
+              {
+                "zellen": [
+                  "Expresslieferung in 7 Arbeitstagen",
+                  "kurzfristige Events",
+                  "Sommerkapazität, eigene Planung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verpackung je Person mit Namensaufkleber",
+                  "einfache Verteilung beim Event",
+                  "Versand kann vorsortieren"
+                ]
+              }
+            ],
+            "fazit": "Das Paket verbindet bestehende Produkte mit Service. Jeder Bestandteil antwortet auf ein Bedürfnis und nutzt eine vorhandene Stärke.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Paket ist eine Innovation, die weitgehend auf Vorhandenem aufbaut. Das senkt das Risiko: MAKEL Studio muss keine neue Maschine kaufen und keinen neuen Lieferanten suchen. Gleichzeitig unterscheidet es sich vom Niedrigpreisanbieter, der weder Beratung noch Vorsortierung bietet. Die Expresslieferung ist allerdings nur realistisch, solange die Kapazität reicht; im Weihnachtsgeschäft wird sie eingeschränkt oder mit Aufschlag angeboten.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Produkt- und Sortimentspolitik gestaltet das Angebot: Produktinnovation (ganz neues Produkt), Produktvariation (bestehendes Produkt verändern, etwa neues Material), Produktdifferenzierung (zusätzliche Varianten), Produkteliminierung (Produkt aufgeben). Zum Produkt gehören auch Marke, Verpackung, Service (Designberatung, Musterservice, Nachbestellung) und Garantie. Entscheidungen werden auf Kundenbedürfnisse und auf die eigenen Ressourcen bezogen: Material, Kapazität, Know-how, Lager.",
-        "beispiele": [
-          "Hoodie aus recycelter Baumwolle statt konventioneller: Produktvariation.",
-          "Designberatung mit drei Entwürfen für Firmenkunden: Serviceleistung als Teil des Produkts."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Marke und Verpackung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Marke macht ein Angebot wiedererkennbar und schafft Vertrauen. Die Verpackung schützt, informiert und kann selbst Teil des Nutzens sein, etwa wenn jedes Teil mit Namen versehen ist. Beides gehört zur Produktpolitik, nicht erst zur Werbung.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für Eventagenturen stellt MAKEL ein ‚Event-Paket‘ zusammen: Hoodie und Tasche aus nachhaltigen Rohlingen, Designberatung mit zwei Entwürfen, Lieferung in zwei Wochen. Deniz Aydın prüft, ob die nachhaltigen Rohlinge in ausreichender Menge verfügbar sind.",
-        "typische_fehler": "Neue Varianten einführen, ohne Material, Rüstaufwand und Lager zu prüfen.",
         "verstaendnisfragen": [
-          "Was ist Produktvariation? Ein bestehendes Produkt wird verändert, etwa im Material.",
-          "Was gehört neben dem Kernprodukt zum Angebot? Zum Beispiel Marke, Verpackung, Service und Garantie."
-        ],
-        "pruefungsbezug": "Produktpolitische Maßnahmen zuordnen und auf Bedürfnisse und Ressourcen beziehen.",
-        "merksatz": "Produktpolitik gestaltet Kernprodukt, Varianten, Marke und Service — passend zu Kundenbedürfnissen und eigenen Ressourcen."
+          {
+            "frage": "Was ist eine Produktvariation?",
+            "antwort": "Die Veränderung eines bestehenden Produkts, etwa ein Hoodie aus recycelter Baumwolle.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum soll ein neues Angebot zu den eigenen Ressourcen passen?",
+            "antwort": "Weil MAKEL Studio nur liefern kann, was es selbst herstellen oder zuverlässig beschaffen kann.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Jede Variante bringt Nutzen und verursacht Kosten.",
-          "Ressourcen sind begrenzt."
+        "darstellung": "vollfassung",
+        "ziel": "Du bewertest zusätzliche Produktvarianten nach Kundennutzen und Kosten für Material, Bestand, Rüsten und Planung, berechnest die Wirkung einer Mindestbestellmenge und begründest, ob eine Variante ins Standardsortiment oder als Sonderanfertigung angeboten wird.",
+        "vorwissen_kurz": "Agenturen wünschen sich mehr Farben. Jede neue Farbe macht das Angebot attraktiver und das Lager komplizierter.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nutzen gegen Komplexität",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede neue Variante bringt Kundennutzen, verursacht aber Kosten: Material muss beschafft, Bestand gehalten, Maschinen umgerüstet und Planung angepasst werden. Diese **Komplexitätskosten** steigen mit jeder Variante, oft stärker als der zusätzliche Umsatz. Deshalb wird jede Variante mit Daten zur erwarteten Nachfrage geprüft. Ist die Nachfrage klein, kann eine **Sonderanfertigung** ab einer Mindestmenge besser sein als eine neue Standardvariante.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Neue Farbe „Salbeigrün\": Standard oder Sonderanfertigung?",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "als Standardvariante",
+              "als Sonderanfertigung ab 50 Stück"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Mindestbestellmenge beim Lieferanten",
+                  "200 Rohlinge",
+                  "je Auftrag passend bestellt"
+                ]
+              },
+              {
+                "zellen": [
+                  "erwartete Nachfrage pro Jahr",
+                  "40 Stück",
+                  "40 Stück in 1 bis 2 Aufträgen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohlinge, die voraussichtlich liegen bleiben",
+                  "160 × 9 € = 1.440 €",
+                  "keine"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lagerplatz und Bestandsführung",
+                  "dauerhaft",
+                  "keine"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferzeit für Kunden",
+                  "sofort",
+                  "2 Wochen länger"
+                ]
+              },
+              {
+                "zellen": [
+                  "Preis für Kunden",
+                  "Standardpreis",
+                  "Aufschlag von 2 € je Stück"
+                ]
+              }
+            ],
+            "fazit": "Als Standardvariante würden Rohlinge im Wert von 1.440 € voraussichtlich liegen bleiben. Als Sonderanfertigung bekommt die Agentur ihre Farbe ohne Lagerrisiko für MAKEL, dafür mit etwas längerer Lieferzeit.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung macht die Entscheidung nachvollziehbar, aber sie hängt an der Nachfrageschätzung. Stellt sich heraus, dass Salbeigrün in den nächsten Monaten häufig angefragt wird, kann MAKEL Studio die Farbe später ins Standardsortiment aufnehmen. Wichtig ist, die Anfragen zu zählen, statt aus einem einzelnen Kundenwunsch auf einen Trend zu schließen. So bleibt das Sortiment schlank, und echte Trends werden trotzdem erkannt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Varianten werden bewertet, bevor sie eingeführt werden: Welchen zusätzlichen Kundennutzen und Absatz bringen sie? Welche Kosten entstehen durch Material, Bestände, Rüsten, Komplexität in Planung und Lager? Passt die Variante zur Positionierung? Häufige Zielkonflikte: Breites Angebot gegen niedrige Kosten, schnelle Lieferung gegen viele Varianten, Nachhaltigkeit gegen Preis. Eine Empfehlung gewichtet diese Punkte offen und nennt die Datenbasis, etwa erwartete Nachfrage aus einer Befragung oder einem Test.",
-        "beispiele": [
-          "Zusätzliche Farbe bei erwarteten 40 Stück im Jahr: Rüsten und Lager kosten mehr als der zusätzliche DB.",
-          "Express-Lieferung nur für die fünf meistbestellten Motive, nicht für alle."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Eliminierung prüfen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mit jeder neuen Variante lohnt sich der Blick auf die alten: Gibt es Farben, die seit einem Jahr kaum bestellt werden? Werden sie eliminiert, sinkt die Komplexität wieder. Auch hier gilt: Verbundwirkungen prüfen, bevor eine Variante verschwindet.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Eine Agentur wünscht den Hoodie zusätzlich in Mintgrün. Deniz rechnet: Mindestbestellmenge beim Lieferanten 200 Rohlinge, erwartete Nachfrage 40 Stück im Jahr. Rest auf Lager, Kapital gebunden, Veralterungsrisiko. MAKEL bietet stattdessen Mintgrün als Sonderanfertigung ab 100 Stück mit längerer Lieferzeit an.",
-        "typische_fehler": "Jede Kundenanfrage sofort als neue Standardvariante aufnehmen.",
         "verstaendnisfragen": [
-          "Welche Kosten entstehen durch zusätzliche Varianten? Material, Bestände, Rüsten, Komplexität.",
-          "Nenne einen typischen Zielkonflikt der Produktpolitik. Zum Beispiel breites Angebot gegen niedrige Kosten."
-        ],
-        "pruefungsbezug": "Produktvarianten mit Nutzen, Kosten und Zielkonflikten bewerten.",
-        "merksatz": "Neue Varianten: Kundennutzen gegen Material-, Bestands-, Rüst- und Komplexitätskosten abwägen — mit Daten zur Nachfrage."
+          {
+            "frage": "Welche Kosten verursacht eine zusätzliche Produktvariante?",
+            "antwort": "Material-, Bestands-, Rüst- und Planungskosten, zusammengefasst als Komplexitätskosten.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Mindestbestellmenge 200 Rohlinge, erwartete Nachfrage 40 im Jahr. Was spricht für eine Sonderanfertigung?",
+            "antwort": "Dass sonst voraussichtlich 160 Rohlinge liegen blieben. Eine Sonderanfertigung erfüllt den Wunsch ohne Lagerrisiko.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
