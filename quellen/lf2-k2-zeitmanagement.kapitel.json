@@ -10,23 +10,141 @@
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Arbeitstag enthält planbare Aufgaben und ungeplante Störungen.",
-          "Aufgaben unterscheiden sich nach Dauer und Leistungsanforderung."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst einen Arbeitstag mit der ALPEN-Methode einschließlich realistischer Schätzungen und Puffer und legst Aufgaben passend zur Tagesleistungskurve.",
+        "vorwissen_kurz": "Eine Aufgabe ist planbar, wenn man weiß, was zu tun ist und wie lange es ungefähr dauert.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Plan, der Störungen aushält",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Arbeitstag im Büro besteht nicht nur aus geplanten Aufgaben. Rückfragen, Anrufe und kurzfristige Aufträge kommen dazu. Die {{begriff:alpen-methode|ALPEN-Methode}} trägt dem Rechnung: Sie zwingt dazu, alles aufzuschreiben, ehrlich zu schätzen und bewusst Zeit freizulassen. Erst danach wird entschieden, was heute wirklich passiert.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Dienstag",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea arbeitet acht Stunden (480 Minuten). Mit 60 % verplant sie 288 Minuten, rund 4 Stunden 50 Minuten.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aufgabe",
+              "Geschätzt",
+              "Entscheidung",
+              "Zeitfenster"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Angebot für einen Händler fertigstellen (Frist heute 14 Uhr)",
+                  "90 min",
+                  "selbst, zuerst",
+                  "8:30–10:00"
+                ]
+              },
+              {
+                "zellen": [
+                  "25 Eingangsrechnungen prüfen und vorkontieren",
+                  "75 min",
+                  "selbst",
+                  "10:15–11:30"
+                ]
+              },
+              {
+                "zellen": [
+                  "Besprechung Kollektionsvorstellung",
+                  "45 min",
+                  "fester Termin",
+                  "13:00–13:45"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ablage und Postversand",
+                  "30 min",
+                  "Routine ins Nachmittagstief",
+                  "14:00–14:30"
+                ]
+              },
+              {
+                "zellen": [
+                  "Präsentation für Freitag vorbereiten",
+                  "60 min",
+                  "heute nur 45 min, Rest Mittwoch",
+                  "15:00–15:45"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kopierpapier bestellen",
+                  "5 min",
+                  "delegiert an Tim",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe verplant",
+                  "285 min",
+                  "",
+                  "Rest: Puffer"
+                ]
+              }
+            ],
+            "fazit": "Lea plant die anspruchsvollste Aufgabe ins Vormittagshoch und Routine ins Tief. Sie kürzt eine Aufgabe, statt den Puffer zu opfern.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Abends vergleicht Lea: Das Angebot dauerte 110 statt 90 Minuten, zwei Anrufe eines Lieferanten kosteten zusammen 40 Minuten. Der Puffer hat beides aufgefangen. Ihre Erkenntnis für die Nachkontrolle: Angebote schätzt sie künftig mit dem Faktor 1,2.",
+            "id": "b1-p3"
+          }
         ],
-        "erklaerung": "ALPEN steht für Aufgaben notieren, Länge schätzen, Puffer einplanen, Entscheidungen über Prioritäten treffen und am Ende nachkontrollieren. Nur etwa 60 Prozent des Tages werden fest verplant. Schwierige Aufgaben gehören in das Vormittagshoch der Tagesleistungskurve; Routineaufgaben passen eher in das Nachmittagstief.",
-        "beispiele": [
-          "Bei einer Auswertung werden zuerst Aufgabe und voraussichtliche Länge notiert, danach ein Zeitpuffer für Rückfragen und Telefonate freigelassen.",
-          "Die Tagespost wird in einen festen Routineblock gelegt, während eine anspruchsvolle Auswertung in die leistungsstarke Vormittagsphase kommt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Die Tagesleistungskurve",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Viele Menschen sind am Vormittag am leistungsfähigsten, haben nach dem Mittag ein Tief und am späten Nachmittag ein zweites, kleineres Hoch. Die Kurve ist ein Durchschnitt; Frühaufsteher und Abendmenschen verschieben sie. Wer seine eigene Kurve kennt, legt anspruchsvolle Arbeit in die eigene Hochphase.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Auswertung soll bis Freitag fertig sein und benötigt Zahlen aus zwei Abteilungen. Nach ALPEN werden alle Aufgaben notiert und geschätzt. Die Zahlen werden am Montag angefordert, erhalten eine eigene Wiedervorlage und eine Frist bis Mittwochmittag. Die Auswertung kommt in die Vormittagsstunden, die Tagespost in zwei Routineblöcke, und Donnerstag bleibt als Puffer. Am Tagesende werden offene Punkte übertragen.",
-        "typische_fehler": "Der gesamte Tag wird zu 100 Prozent verplant oder der Puffer nur als freie Zeit ohne Zweck behandelt. Auch die Nachkontrolle wird oft ausgelassen, obwohl sie die Planung für die nächsten Tage verbessert.",
         "verstaendnisfragen": [
-          "Wofür steht das P in ALPEN? Für Pufferzeiten, sodass nur etwa 60 Prozent fest verplant werden.",
-          "Warum kommen schwierige Aufgaben in den Vormittag? Weil die Tagesleistungskurve dort ihr Hoch hat."
-        ],
-        "pruefungsbezug": "Nenne ALPEN ausgeschrieben und begründe den Puffer mit konkreten Störungen. Bei Fällen zusätzlich die Tagesleistungskurve auf die Aufgaben anwenden.",
-        "merksatz": "ALPEN verhindert Überplanung: Aufgaben, Länge, Puffer, Entscheidungen, Nachkontrolle."
+          {
+            "frage": "Warum verplant Lea nicht einfach 480 Minuten, wenn sie so viel zu tun hat?",
+            "antwort": "Störungen kommen sicher, nur nicht planbar. Ohne Puffer verschiebt jede Unterbrechung alle folgenden Aufgaben, und der Plan ist schon am Vormittag wertlos. Mit Puffer bleibt er steuerbar.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Was gewinnt Lea durch die abendliche Nachkontrolle?",
+            "antwort": "Sie erfährt, wie genau ihre Schätzungen sind und was regelmäßig liegen bleibt. Damit plant sie den nächsten Tag realistischer und überträgt offene Aufgaben, statt sie zu vergessen.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
@@ -216,23 +334,246 @@
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Zeitmanagement verteilt vorhandene Zeit, es erzeugt keine neue.",
-          "Wiederkehrende Störungen können organisatorisch begrenzt werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst Zeitdiebe an deinem Arbeitsplatz, wählst passende Gegenmittel und machst Überlastung sachlich sichtbar, statt sie zu verdecken.",
+        "vorwissen_kurz": "Unterbrechungen kosten nicht nur ihre eigene Dauer, sondern auch die Zeit, bis man wieder konzentriert ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wohin die Zeit verschwindet",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein **Zeitdieb** ist eine wiederkehrende Störung, die Zeit kostet, ohne ein Ergebnis zu bringen. Einzeln wirken sie harmlos: ein kurzer Blick ins Postfach, eine schnelle Frage, eine Suche nach einer Datei. Zusammen verschlingen sie Stunden. Abschaffen lassen sie sich selten, begrenzen fast immer.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Tims Woche im Protokoll",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tim notiert eine Woche lang jede Unterbrechung.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitdieb",
+              "Häufigkeit",
+              "Zeit je Woche",
+              "Gegenmittel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "E-Mail-Benachrichtigungen",
+                  "etwa 40-mal täglich",
+                  "rund 3 Stunden durch Wiedereinstieg",
+                  "Postfach dreimal täglich, Benachrichtigungen aus"
+                ]
+              },
+              {
+                "zellen": [
+                  "Suche nach Dateien auf dem Laufwerk",
+                  "12-mal",
+                  "2 Stunden",
+                  "Ordnerstruktur und Dateinamen nach Teamregel"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wöchentliche Besprechung ohne Tagesordnung",
+                  "1-mal",
+                  "45 Minuten zu viel (90 statt 45)",
+                  "Tagesordnung und Endzeit vorab"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kollegin fragt spontan nach",
+                  "15-mal",
+                  "1 Stunde",
+                  "feste Sprechzeit, Fragen sammeln"
+                ]
+              }
+            ],
+            "fazit": "Knapp sieben Stunden pro Woche gehen an vier Zeitdiebe. Schon die Hälfte davon zurückzugewinnen, bringt fast einen halben Arbeitstag.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Zeitdiebe sind wiederkehrende Störungen, die Zeit ohne Ergebnis verbrauchen. Sie werden begrenzt statt vollständig abgeschafft: etwa durch feste Zeiten für das Postfach, eine stille Stunde, Tagesordnungen mit Zeitrahmen, einheitliche Ablage und geklärte Prioritäten. Wenn dauerhaft mehr Aufgaben anfallen, als in die Arbeitszeit passen, liegt ein Kapazitätsproblem vor.",
-        "beispiele": [
-          "Statt E-Mails ständig zu öffnen, werden feste Postfachzeiten eingerichtet; die übrige Zeit bleibt für konzentrierte Aufgaben.",
-          "Eine Besprechung erhält eine Tagesordnung und einen Zeitrahmen. So wird die Störung nicht geleugnet, aber begrenzt."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Nein sagen, ohne abzulehnen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer eine neue Aufgabe nicht schaffen kann, sagt nicht einfach Nein, sondern macht die Folge sichtbar: „Ich kann das übernehmen. Dann verschiebt sich die Präsentation auf Montag. Soll ich das so machen?“ So entscheidet die Person, die die Prioritäten setzen darf, auf einer ehrlichen Grundlage.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Mitarbeiterin wird ständig durch Postfach, spontane Rückfragen und unstrukturierte Besprechungen unterbrochen. Sie richtet feste Postfachzeiten ein, plant eine stille Stunde, versieht Besprechungen mit Tagesordnung und Zeitrahmen und nutzt die einheitliche Ablage. Bleibt die Aufgabenmenge trotzdem dauerhaft zu groß, muss die Kapazität mit der zuständigen Stelle geklärt werden; eine weitere Methode löst dieses Problem nicht.",
-        "typische_fehler": "Zeitdiebe sollen vollständig verschwinden, oder Überlastung wird nur als persönliches Planungsversagen bewertet. Beides ignoriert, dass Störungen begrenzbar und Kapazitätsgrenzen real sind.",
         "verstaendnisfragen": [
-          "Warum werden Zeitdiebe begrenzt und nicht einfach abgeschafft? Weil Rückfragen, Post und Abstimmungen zum Arbeitsalltag gehören.",
-          "Woran erkennst du ein Kapazitätsproblem? Daran, dass dauerhaft mehr Aufgaben anfallen, als in die verfügbare Arbeitszeit passen."
+          {
+            "frage": "Warum kosten 40 kurze Blicke ins Postfach mehr als 40 Minuten?",
+            "antwort": "Nach jeder Unterbrechung braucht man Zeit, um wieder in die eigentliche Aufgabe hineinzufinden. Diese Wiedereinstiegszeit summiert sich und ist oft größer als die Unterbrechung selbst.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Tim hat dauerhaft mehr Aufgaben, als in seine Arbeitszeit passen. Hilft eine bessere Methode?",
+            "antwort": "Nur begrenzt. Methoden verteilen vorhandene Zeit besser, schaffen aber keine neue. Bei dauerhafter Überlast muss Tim das mit seiner Vorgesetzten besprechen, damit Aufgaben neu verteilt oder gestrichen werden.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du durchläufst den Selbstmanagement-Kreislauf an einem eigenen Arbeitstag, verbindest ABC-Analyse, Eisenhower-Matrix und Tagesplan und unterscheidest persönliche Resilienz von der Pflicht, Arbeitsbedingungen zu verbessern.",
+        "vorwissen_kurz": "Zeitmanagementmethoden helfen beim Planen. Ob der Plan zu einem passt, zeigt erst die Erfahrung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Kreis statt einer Liste",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Selbstmanagement beginnt nicht mit einer Methode, sondern mit einem Blick auf sich selbst: Wie arbeite ich, wann bin ich leistungsfähig, was hält mich auf? Daraus folgt ein Ziel, ein Plan, die Umsetzung und eine Kontrolle. Die Kontrolle liefert die Beobachtungen für den nächsten Durchgang. So wird die eigene Planung mit jedem Kreis genauer.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Woche im Kreislauf",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Was Lea tut"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Beobachten",
+                  "Zwei Tage lang notiert sie, wann sie woran arbeitet. Ergebnis: Vormittags erledigt sie viele kleine C-Aufgaben, die anspruchsvollen Angebote schiebt sie in den Nachmittag."
+                ]
+              },
+              {
+                "zellen": [
+                  "Ziel",
+                  "„Ab nächster Woche arbeite ich jeden Vormittag mindestens 90 Minuten ungestört an A-Aufgaben.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Planen",
+                  "Sie ordnet die Aufgaben nach ABC und nach Eisenhower: A-Aufgaben mit Frist kommen ins Vormittagshoch, C-Aufgaben bündelt sie nach 14 Uhr, dringende C-Aufgaben gibt sie ab, wenn das erlaubt ist."
+                ]
+              },
+              {
+                "zellen": [
+                  "Umsetzen",
+                  "Postfach erst ab 10 Uhr, Status „konzentriert“ im Chat von 8:30 bis 10:00 Uhr."
+                ]
+              },
+              {
+                "zellen": [
+                  "Kontrollieren",
+                  "Nach einer Woche: an vier von fünf Tagen geschafft; am Montag kam eine Reklamation dazwischen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachsteuern",
+                  "Montags plant sie 30 Minuten für Reklamationen vom Wochenende ein."
+                ]
+              }
+            ],
+            "fazit": "Lea hat keine neue Methode gelernt, sondern die vorhandenen auf ihre Arbeitsweise abgestimmt — und den Plan dort angepasst, wo die Wirklichkeit ihn widerlegt hat.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "ABC-Analyse und Eisenhower-Matrix ergänzen sich: ABC fragt nach dem Wert einer Aufgabe, Eisenhower zusätzlich nach ihrer Dringlichkeit. Eine A-Aufgabe ohne Frist ist ein typischer Fall für „terminieren“ — und genau der Fall, der ohne festen Termin verschwindet.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Belastbarkeit lässt sich stärken, etwa durch genug Schlaf, Bewegung, Pausen, Austausch mit anderen und das Bewusstsein, was man beeinflussen kann. Diese **Resilienz** hilft, schwierige Phasen gut zu überstehen. Sie ist aber keine Antwort auf dauerhaft zu viel Arbeit, fehlende Einarbeitung oder ständige Konflikte. Solche Bedingungen müssen im Betrieb geändert werden; wer sie nur „resilienter“ aushalten soll, wird damit allein gelassen.",
+            "id": "b4-p3"
+          }
         ],
-        "pruefungsbezug": "Schlage bei Fallaufgaben konkrete Begrenzungen vor und nenne anschließend, ob die Restmenge ein Planungs- oder ein Kapazitätsproblem ist.",
-        "merksatz": "Zeitmanagement verteilt Zeit; es ersetzt weder Puffer noch zusätzliche Kapazität."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Was ein gutes Ziel ausmacht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Ziel ist hilfreich, wenn es konkret und überprüfbar ist: Was genau, wie viel, bis wann? „Ich will besser planen“ lässt sich nicht kontrollieren. „Jeden Vormittag 90 Minuten ungestört an A-Aufgaben“ schon. Es sollte zudem erreichbar sein und von einem selbst beeinflusst werden können.",
+                "id": "b4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k1-b4"
+                ],
+                "text": "Belastungen und Ansprechpartner im Betrieb",
+                "id": "b4-d1-v1"
+              }
+            ],
+            "id": "b4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Wie unterscheiden sich ABC-Analyse und Eisenhower-Matrix?",
+            "antwort": "Die ABC-Analyse ordnet Aufgaben nur nach ihrem Wert oder ihrer Wichtigkeit. Die Eisenhower-Matrix fragt zusätzlich, wie dringend eine Aufgabe ist, und leitet daraus ab, ob man sie sofort tut, terminiert, delegiert oder streicht.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Lea arbeitet seit Wochen täglich zwei Stunden länger, weil eine Stelle unbesetzt ist. Ihre Vorgesetzte empfiehlt ihr ein Resilienz-Seminar. Reicht das?",
+            "antwort": "Nein. Das Seminar kann ihr helfen, mit Belastung umzugehen, löst aber die Ursache nicht. Die fehlende Besetzung ist eine Frage der Arbeitsorganisation: Aufgaben müssen umverteilt, gestrichen oder die Stelle muss besetzt werden.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -251,6 +592,10 @@
       "id": "lz3",
       "text": "Zeitdiebe erkennen und begrenzen",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Einen eigenen Tagesplan im Selbstmanagement-Kreislauf beobachten, planen und nachsteuern"
     }
   ],
   "bloecke": [
@@ -500,6 +845,54 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Sich selbst steuern",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Methoden wie ALPEN oder Eisenhower wirken nur, wenn man sie an sich selbst anpasst. **Selbstmanagement** läuft deshalb in einem Kreis: sich beobachten, ein Ziel setzen, planen, umsetzen, kontrollieren — und daraus für den nächsten Durchgang lernen. ==Die ABC-Analyse hilft beim Planen: A-Aufgaben sind wenige, aber wertvoll, C-Aufgaben viele, aber wenig wirksam.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Kategorie",
+            "Anteil am Aufgabenbestand (Faustwert)",
+            "Umgang"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "A — sehr wichtig",
+                "etwa 15 %",
+                "selbst erledigen, ins Leistungshoch legen"
+              ]
+            },
+            {
+              "zellen": [
+                "B — wichtig",
+                "etwa 20 %",
+                "einplanen, teilweise delegieren"
+              ]
+            },
+            {
+              "zellen": [
+                "C — weniger wichtig",
+                "etwa 65 %",
+                "bündeln, delegieren, in Tiefphasen erledigen"
+              ],
+              "detail": "**Die Prozentwerte sind Faustregeln**, keine Vorgaben. Entscheidend ist der Gedanke: Die meiste Zeit geht oft in Aufgaben mit geringer Wirkung."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Beobachten → Ziel → Planen → Umsetzen → Kontrollieren.** Resilienz, also die Fähigkeit, mit Belastungen umzugehen, lässt sich stärken — sie ersetzt aber nicht, unzumutbare Arbeitsbedingungen zu verbessern.",
+          "karteikarte": "Welche Schritte hat der Selbstmanagement-Kreislauf, und wo liegen die Grenzen von Resilienz?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -510,7 +903,9 @@
     "{{begriff:eisenhower|Eisenhower}}: wichtig und dringend selbst tun, wichtig allein terminieren.",
     "Dringend, aber unwichtig wird delegiert; weder noch wird gestrichen.",
     "Delegieren braucht Ziel, Frist und Befugnis — sonst kommt die Aufgabe zurück.",
-    "Zeitmanagement schafft keine Zeit, es verteilt die vorhandene."
+    "Zeitmanagement schafft keine Zeit, es verteilt die vorhandene.",
+    "Selbstmanagement ist ein Kreislauf aus Beobachten, Ziel, Planen, Umsetzen und Kontrollieren.",
+    "ABC ordnet Aufgaben nach Wert; Resilienz stärkt, ersetzt aber keine besseren Bedingungen."
   ],
   "selbsttest": [
     {
