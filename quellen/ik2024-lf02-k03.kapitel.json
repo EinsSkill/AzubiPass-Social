@@ -6,86 +6,447 @@
   "untertitel": "Fortschritt ehrlich messen, Daten im Team schützen, Konflikte lösen — und reagieren, wenn der Plan nicht aufgeht.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Während der Durchführung wird laufend festgehalten, was erledigt ist.",
-          "Fortschritt muss nachprüfbar sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst den Projektstatus anhand abgeschlossener und geprüfter Ergebnisse dar, grenzt ihn vom gefühlten Aufwand ab und berichtest einen beginnenden Verzug rechtzeitig.",
+        "vorwissen_kurz": "„Wir sind fast fertig\" ist eine der häufigsten und unzuverlässigsten Aussagen in Projekten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ergebnisse zählen, nicht Gefühle",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Arbeitspaket ist erst erledigt, wenn sein vereinbartes Ergebnis vorliegt und geprüft ist. Begonnene Pakete werden gesondert ausgewiesen, weil sich ohne vereinbarte Regel nicht sagen lässt, wie weit sie sind. {{begriff:meilenstein|Meilensteine}} sind überprüfbare Zwischenergebnisse zu festen Zeitpunkten; an ihnen zeigt sich, ob das Projekt im Plan liegt. Ein Statusbericht nennt deshalb, was fertig ist, was läuft, was gefährdet ist und was entschieden werden muss.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Statusbericht am Tag 5",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Punkt",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Plan bis Tag 5",
+                  "Inhalte, Lageplan und Checkliste abgeschlossen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ist",
+                  "Inhalte, Lageplan und Ansprechpartnerliste abgeschlossen und geprüft; Checkliste begonnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abweichung",
+                  "Checkliste fehlt; ein Abteilungsbeitrag kam einen Tag zu spät"
+                ]
+              },
+              {
+                "zellen": [
+                  "Folge",
+                  "kritischer Pfad verschiebt sich um einen Tag, Probelauf an Tag 8 statt Tag 7"
+                ]
+              },
+              {
+                "zellen": [
+                  "Reserve",
+                  "zwei Tage bis zum geplanten Ende an Tag 9; Termin nicht gefährdet"
+                ]
+              },
+              {
+                "zellen": [
+                  "Entscheidung nötig",
+                  "keine"
+                ]
+              }
+            ],
+            "fazit": "Der Bericht zeigt ehrlich, dass die Checkliste fehlt und der Puffer schrumpft. Ayla Brandt weiß früh Bescheid und kann reagieren, falls sich weitere Verzögerungen ergeben.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer Fortschritt nach gefühltem Aufwand misst, wird oft überrascht. „Die Checkliste ist zu 90 % fertig\" heißt vielleicht, dass die schwierigsten 10 % noch fehlen. Deshalb vereinbaren viele Teams eine einfache Regel: Ein Paket zählt erst bei 100 %, wenn es abgeschlossen und geprüft ist, sonst bei 0 %. Das wirkt streng, verhindert aber Schönfärberei.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Der Status eines Projekts wird an vereinbarten Kriterien gemessen, nicht an Gefühlen. Ein bewährtes Verfahren: Ein Arbeitspaket zählt erst als erledigt, wenn sein Ergebnis vorliegt und geprüft ist. Begonnene Pakete werden gesondert ausgewiesen. Meilensteine — überprüfbare Zwischenergebnisse zu festen Zeitpunkten — zeigen, ob das Projekt im Plan liegt.",
-        "beispiele": [
-          "Von sechs gleich großen Paketen sind drei abgeschlossen und zwei begonnen: Belegbar sind 50 Prozent der Pakete abgeschlossen.",
-          "Meilenstein ‚Alle Abteilungsinformationen liegen vor‘ zum Ende der zweiten Woche."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Ampel im Statusbericht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Viele Teams nutzen eine Ampel: grün für im Plan, gelb für gefährdet mit eigener Lösung, rot für gefährdet mit Entscheidungsbedarf der Auftraggeberin. Die Farbe ersetzt nicht die Begründung, macht aber auf einen Blick sichtbar, wo Aufmerksamkeit nötig ist.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Luca meldet: ‚Wir sind bei 80 Prozent.‘ Auf Nachfrage zeigt sich: Drei von sechs Paketen sind abgeschlossen, zwei begonnen, eines nicht angefangen. Belegbar sind 50 Prozent abgeschlossene Pakete. Wie weit die begonnenen Pakete sind, lässt sich ohne vereinbarte Regel nicht genau sagen; ‚80 Prozent‘ ist eine Schätzung, kein Status.",
-        "typische_fehler": "Begonnene Arbeit wird als fertig gezählt. So sieht das Projekt bis kurz vor Schluss gut aus und ist dann plötzlich zu spät.",
         "verstaendnisfragen": [
-          "Wann zählt ein Arbeitspaket als erledigt? Wenn sein vereinbartes Ergebnis vorliegt und geprüft ist.",
-          "Was ist ein Meilenstein? Ein festgelegter Zeitpunkt mit überprüfbarem Zwischenergebnis."
-        ],
-        "pruefungsbezug": "Bei Statusaufgaben nur belegbare Abschlüsse zählen und angefangene Pakete gesondert nennen.",
-        "merksatz": "Fortschritt wird an abgeschlossenen und geprüften Ergebnissen gemessen; begonnene Pakete werden gesondert ausgewiesen."
+          {
+            "frage": "Von sechs gleich großen Paketen sind drei abgeschlossen und zwei begonnen. Welcher Stand ist belegbar?",
+            "antwort": "50 % abgeschlossen. Wie weit die begonnenen Pakete sind, lässt sich ohne vereinbarte Regel nicht genau sagen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum wird ein Verzug auch dann berichtet, wenn der Endtermin noch nicht gefährdet ist?",
+            "antwort": "Weil der Puffer schrumpft. Je früher die Auftraggeberin Bescheid weiß, desto mehr Möglichkeiten zum Gegensteuern gibt es.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Projektteams arbeiten oft mit geteilten Dokumenten und digitalen Werkzeugen.",
-          "Personenbezogene Daten sind auch im Team zu schützen."
+        "darstellung": "vollfassung",
+        "ziel": "Du tauschst Informationen im Projektteam über geeignete dienstliche Werkzeuge aus, prüfst geteilte Dokumente auf unnötige personenbezogene Daten und handelst richtig, wenn Daten falsch gespeichert oder geteilt wurden.",
+        "vorwissen_kurz": "Projekte leben vom Austausch. Dabei dürfen Daten anderer nicht leichtfertig weitergegeben werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Teilen, aber geschützt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auch im Projekt sind {{begriff:personenbezogene-daten|personenbezogene Daten}} geschützt. Es gilt {{begriff:datensparsamkeit|Datensparsamkeit}}: nur Daten verwenden, die für den Zweck nötig sind, und nur Berechtigten zugänglich machen. Für den Austausch nutzt das Team die dienstlichen Werkzeuge mit geregelten Zugriffsrechten, etwa den gemeinsamen Projektordner und das dienstliche Chatprogramm. Private Messenger oder private Cloudspeicher sind tabu, weil der Betrieb dort keine Kontrolle über die Daten hat.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das geteilte Ansprechpartnerdokument prüfen",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Inhalt im Dokument",
+              "erforderlich für das Onboarding?",
+              "Maßnahme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Name, Abteilung, Aufgabe",
+                  "ja",
+                  "behalten"
+                ]
+              },
+              {
+                "zellen": [
+                  "dienstliche Telefonnummer und E-Mail",
+                  "ja",
+                  "behalten"
+                ]
+              },
+              {
+                "zellen": [
+                  "private Handynummer",
+                  "nein",
+                  "entfernen, dienstlichen Kontakt nennen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Geburtstag",
+                  "nein",
+                  "entfernen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Krankheitstage der letzten Monate",
+                  "nein, besonders geschützte Gesundheitsdaten",
+                  "sofort entfernen, Vorfall melden"
+                ]
+              }
+            ],
+            "fazit": "Nur Name, Abteilung, Aufgabe und dienstliche Kontakte gehören in das Dokument. Alles andere wird entfernt; Gesundheitsdaten sind ein Fall für eine Meldung.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer unnötige oder geschützte Daten in einem geteilten Dokument findet, entfernt sie nicht nur stillschweigend, sondern informiert die verantwortliche Person, hier Ayla Brandt. Sie prüft, wer Zugriff hatte und ob ein Datenschutzvorfall vorliegt, der an die Datenschutzbeauftragte gemeldet werden muss. Bei einem Risiko für die Betroffenen muss das Unternehmen den Vorfall innerhalb von 72 Stunden der Aufsichtsbehörde melden (Art. 33 DSGVO). Deshalb zählt schnelles Melden mehr als Scham über einen Fehler.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Digitale Werkzeuge — gemeinsame Ordner, Aufgabenpläne, Chats — machen Zusammenarbeit schneller, bringen aber Datenrisiken mit. Grundsätze der DSGVO gelten auch im Projekt: Daten nur für den Zweck, nur so viel wie nötig, nur für Berechtigte zugänglich. Wer in einem geteilten Dokument unnötige personenbezogene Daten findet, entfernt sie oder meldet sie der verantwortlichen Person. Dienstliche Werkzeuge haben Vorrang vor privaten Messengern.",
-        "beispiele": [
-          "In der Ansprechpartnerliste stehen Geburtstage und private Adressen. Für das Onboarding reichen Name, Funktion und dienstlicher Kontakt.",
-          "Ein Teammitglied schickt Entwürfe mit Namen neuer Beschäftigter über einen privaten Messenger. Besser: der dienstliche Projektordner mit Zugriffsrechten."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Zugriffsrechte im Projektordner",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Projektordner sollte nur für das Projektteam und die Auftraggeberin zugänglich sein. Nach Projektende werden Unterlagen archiviert oder gelöscht, und die Zugriffsrechte werden zurückgenommen. So bleiben Daten nicht länger verfügbar als nötig.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Beim Probelauf fällt auf: In der geteilten Datei mit Einstiegsaufgaben stehen Krankheitstage früherer Neueinsteiger als ‚Erfahrungswerte‘. Diese Gesundheitsdaten sind für das Onboarding nicht erforderlich und besonders geschützt. Du entfernst sie, informierst Ayla Brandt und prüfst, wer Zugriff auf die Datei hatte.",
-        "typische_fehler": "‚Ist ja nur intern‘ wird als Rechtfertigung für unnötige Daten benutzt. Datenschutz gilt auch innerhalb des Betriebs.",
         "verstaendnisfragen": [
-          "Welche Kontaktdaten gehören in eine Ansprechpartnerliste für neue Beschäftigte? Name, Funktion und dienstliche Kontaktwege.",
-          "Warum sind private Messenger für Projektdateien ungeeignet? Weil Zugriff, Speicherort und Löschung nicht vom Betrieb kontrolliert werden."
-        ],
-        "pruefungsbezug": "In Datenschutzfällen prüfen: Ist das Datum für den Zweck erforderlich? Wer hat Zugriff? Was ist zu tun?",
-        "merksatz": "Auch im Projekt gilt: Daten nur zweckgebunden, sparsam und für Berechtigte — unnötige personenbezogene Daten werden entfernt und gemeldet."
+          {
+            "frage": "Darf das Team Projektdateien in einem privaten Messenger austauschen?",
+            "antwort": "Nein. Der Betrieb hat dort keine Kontrolle über die Daten. Es sind die dienstlichen Werkzeuge zu nutzen.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was tust du, wenn ein geteiltes Dokument Krankheitstage von Kolleginnen enthält?",
+            "antwort": "Die Daten sofort entfernen und die verantwortliche Person informieren, damit geprüft wird, ob ein Datenschutzvorfall vorliegt.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "In Teams entstehen Konflikte, wenn Erwartungen auseinandergehen.",
-          "Kreativitätstechniken helfen, Lösungen zu finden."
+        "darstellung": "vollfassung",
+        "ziel": "Du bearbeitest einen Konflikt im Projektteam mit Ich-Botschaften und gemeinsamer Lösungssuche und setzt eine Kreativitätstechnik ein, bei der Ideensammlung und Bewertung getrennt bleiben.",
+        "vorwissen_kurz": "Wo Menschen zusammenarbeiten, entstehen Spannungen. Entscheidend ist, wie man mit ihnen umgeht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Problem statt Person",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Konflikte werden sachlich bearbeitet: Das Problem wird beschrieben, nicht die Person bewertet. {{begriff:ich-botschaft|Ich-Botschaften}} sagen, was man beobachtet, wie es wirkt und was man braucht, statt Vorwürfe zu machen. Aktives Zuhören zeigt, dass man die Sicht des anderen verstanden hat. Dann werden gemeinsam Lösungen gesammelt und eine verbindliche Absprache getroffen. Kreativitätstechniken wie das **Brainstorming** helfen, viele Lösungen zu finden; ihre Grundregel lautet: erst sammeln, dann bewerten.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Konfliktgespräch in vier Schritten",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Was Luca sagt oder tut"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Beobachtung",
+                  "„Die Texte für die Checkliste waren für Montag vereinbart, jetzt ist Mittwoch.\""
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirkung und Bedürfnis",
+                  "„Ich kann das Layout nicht beginnen und mache mir Sorgen um den Probelauf.\""
+                ]
+              },
+              {
+                "zellen": [
+                  "Sicht des anderen",
+                  "„Du hattest diese Woche viel im Vertrieb zu tun, verstehe ich das richtig?\""
+                ]
+              },
+              {
+                "zellen": [
+                  "Gemeinsame Absprache",
+                  "Die Kollegin liefert zwei Kapitel bis Donnerstag, Luca übernimmt eines selbst."
+                ]
+              }
+            ],
+            "fazit": "Statt eines Vorwurfs gibt es eine Absprache mit Termin. Der Konflikt ist gelöst, und die Zusammenarbeit bleibt intakt.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Brainstorming für die Gestaltung des Onboarding-Pakets sammelt das Team zehn Minuten lang Ideen, ohne sie zu kommentieren: Lageplan als Faltkarte, QR-Code zur Willkommensseite, Foto der Ansprechpersonen, Gutschein für die Kantine. Erst danach wird bewertet, nach vorher festgelegten Kriterien wie Kosten, Aufwand und Datenschutz. Wer Ideen sofort kritisiert, bremst die Gruppe, und gute Vorschläge werden gar nicht erst ausgesprochen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Konflikte lassen sich sachlich bearbeiten: das Problem beschreiben, nicht die Person; mit Ich-Botschaften sprechen; zuhören und zusammenfassen; gemeinsam Lösungen sammeln und eine verbindliche Absprache treffen. Für die Lösungssuche helfen Kreativitätstechniken wie Brainstorming (Ideen sammeln, ohne sie sofort zu bewerten) oder die Methode 6-3-5 (sechs Personen schreiben je drei Ideen in fünf Minuten und reichen sie weiter). Bewertet wird erst danach.",
-        "beispiele": [
-          "Statt ‚Du hast schon wieder nichts geliefert‘ besser: ‚Mir fehlen die Texte für die Checkliste; ohne sie kann ich das Layout nicht anfangen. Bis wann schaffst du es?‘",
-          "Brainstorming zur Frage ‚Wie erreichen wir neue Beschäftigte am ersten Tag?‘ — erst sammeln, dann bewerten."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Weitere Kreativitätstechniken",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei der Methode 6-3-5 schreiben sechs Personen je drei Ideen auf und geben das Blatt fünfmal weiter, sodass jede Idee weiterentwickelt wird. Eine Mindmap ordnet Ideen um ein zentrales Thema. Alle Techniken trennen das Sammeln vom Bewerten.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die beiden Azubis streiten, ob der Lageplan gezeichnet oder fotografiert werden soll. Statt weiter zu diskutieren, sammeln sie in fünf Minuten Kriterien (Aktualität, Datenschutz, Aufwand) und bewerten beide Varianten. Ergebnis: gezeichnet, weil Fotos Personen zeigen würden und schneller veralten.",
-        "typische_fehler": "Ideen werden sofort bewertet. Dann trauen sich Teammitglieder nicht mehr, ungewöhnliche Vorschläge zu machen.",
         "verstaendnisfragen": [
-          "Was ist die Grundregel beim Brainstorming? Ideen werden zunächst gesammelt, ohne sie zu bewerten.",
-          "Was kennzeichnet eine Ich-Botschaft? Sie beschreibt die eigene Wahrnehmung und Wirkung statt die andere Person zu bewerten."
-        ],
-        "pruefungsbezug": "Konfliktfälle verlangen meist ein Vorgehen in Schritten: Problem sachlich benennen, zuhören, Lösungen sammeln, Absprache festhalten.",
-        "merksatz": "Konflikte werden sachlich mit Ich-Botschaften und gemeinsamer Lösungssuche bearbeitet; bei Kreativitätstechniken wird erst gesammelt, dann bewertet."
+          {
+            "frage": "Formuliere „Du bist immer unzuverlässig\" als Ich-Botschaft.",
+            "antwort": "Zum Beispiel: „Mir fehlen die vereinbarten Texte, deshalb kann ich nicht weiterarbeiten. Bis wann schaffst du es?\"",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum werden beim Brainstorming Ideen nicht sofort bewertet?",
+            "antwort": "Weil Kritik die Kreativität bremst. Erst wenn alle Ideen gesammelt sind, wird nach Kriterien bewertet.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Pläne treffen selten genau ein.",
-          "Abweichungen erkennt man durch den Vergleich von Soll und Ist."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst einen Soll-Ist-Vergleich zu Terminen, Ergebnissen und Mitteln durch, bewertest Gegenmaßnahmen nach ihren Folgen für Ziel, Termin und Qualität und legst Entscheidungen der Auftraggeberin vor.",
+        "vorwissen_kurz": "Kein Projekt läuft genau nach Plan. Wichtig ist, Abweichungen früh zu erkennen und richtig zu reagieren.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Abweichungen erkennen und steuern",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der **Soll-Ist-Vergleich** stellt den Plan dem tatsächlichen Stand gegenüber: bei Terminen, bei Ergebnissen und bei den verbrauchten Mitteln. Zeigt sich eine Abweichung, sucht das Team die Ursache und wählt eine Gegenmaßnahme. ==Jede Gegenmaßnahme wird an Ziel, Termin und Qualität gemessen.== Was das Ziel oder den Umfang verändert, entscheidet die Auftraggeberin.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Soll-Ist am Tag 7",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "Soll",
+              "Ist",
+              "Abweichung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "abgeschlossene Pakete",
+                  "5 von 6",
+                  "4 von 6",
+                  "ein Paket im Rückstand"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stunden verbraucht",
+                  "16 von 20",
+                  "18 von 20",
+                  "zwei Stunden mehr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckkosten",
+                  "0 € bisher",
+                  "0 €",
+                  "keine"
+                ]
+              },
+              {
+                "zellen": [
+                  "Probelauf",
+                  "Tag 7",
+                  "frühestens Tag 8",
+                  "ein Tag"
+                ]
+              }
+            ],
+            "fazit": "Termin und Stunden sind knapp, aber noch im Rahmen. Bei weiteren Verzögerungen reichen die verbleibenden zwei Stunden nicht für den Probelauf.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Luca prüft die Möglichkeiten. Ein zusätzlicher Mitarbeiter würde helfen, fehlt aber woanders. Die Reihenfolge zu ändern bringt nichts, weil der Probelauf vom Layout abhängt. Bleibt die Frage an Ayla Brandt: Werden zwei zusätzliche Stunden freigegeben, oder verschiebt sich der Probelauf um einen Tag? Luca legt beide Optionen mit ihren Folgen vor; Ayla entscheidet sich für die zusätzlichen Stunden, weil die neuen Beschäftigten am festen Termin beginnen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Im Soll-Ist-Vergleich wird regelmäßig geprüft, ob Termine, Ergebnisse und Mittel dem Plan entsprechen. Bei einer Abweichung gibt es mehrere Handlungsmöglichkeiten: Unterstützung organisieren, Reihenfolge anpassen, Puffer nutzen, Umfang mit der Auftraggeberin anpassen oder den Termin verschieben. Jede Option hat Folgen für Ziel, Termin und Qualität. Pflichtinhalte kommentarlos zu streichen ist keine Lösung, sondern eine verdeckte Zielverfehlung.",
-        "beispiele": [
-          "Die Personalabteilung liefert ihre Informationen drei Tage später. Der Lageplan hat Puffer und wird vorgezogen — der kritische Pfad bleibt aber betroffen.",
-          "Eine Kollegin aus dem Vertrieb hilft einen Tag beim Schreiben der Checkliste."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Lessons Learned",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Am Projektende hält das Team fest, was gut lief und was es beim nächsten Mal anders machen würde, etwa Abteilungsbeiträge früher anfragen. Diese Erfahrungen fließen in künftige Projekte ein und sind oft wertvoller als das Ergebnis selbst.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Ein Pflichtkapitel der Checkliste — Arbeitsschutzunterweisung — verzögert sich, weil die Freigabe der Fachkraft für Arbeitssicherheit fehlt. Optionen: (1) Freigabe mit Nachdruck und festem Termin anfragen und in der Zwischenzeit Layout der übrigen Teile vorziehen; (2) mit Ayla Brandt besprechen, ob der Probelauf ohne dieses Kapitel stattfindet und das Kapitel nachgereicht wird. Streichen kommt nicht in Frage, weil es eine Pflichtinformation ist.",
-        "typische_fehler": "Bei Zeitdruck werden Pflichtinhalte still weggelassen. Das Ziel ist dann nicht erreicht, auch wenn der Termin gehalten wird.",
         "verstaendnisfragen": [
-          "Was ist ein Soll-Ist-Vergleich? Der regelmäßige Abgleich der geplanten mit den tatsächlichen Terminen, Ergebnissen und Mitteln.",
-          "Warum ist kommentarloses Streichen von Pflichtinhalten keine Lösung? Weil damit das vereinbarte Ziel verfehlt wird, ohne dass die Auftraggeberin entscheiden konnte."
-        ],
-        "pruefungsbezug": "Bei Abweichungen mindestens zwei Optionen nennen und ihre Folgen für Ziel, Termin und Qualität bewerten.",
-        "merksatz": "Abweichungen zeigt der Soll-Ist-Vergleich; jede Gegenmaßnahme wird an Ziel, Termin und Qualität bewertet — Pflichtinhalte werden nicht still gestrichen."
+          {
+            "frage": "Warum darf ein Pflichtkapitel nicht ohne Rücksprache gestrichen werden, um den Termin zu halten?",
+            "antwort": "Weil damit das vereinbarte Ziel verdeckt verfehlt würde. Änderungen am Umfang entscheidet die Auftraggeberin.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Welche drei Größen vergleicht der Soll-Ist-Vergleich im Projekt?",
+            "antwort": "Termine, Ergebnisse und verbrauchte Mittel wie Stunden und Kosten.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

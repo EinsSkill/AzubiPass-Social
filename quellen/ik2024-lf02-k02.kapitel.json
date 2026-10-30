@@ -6,86 +6,481 @@
   "untertitel": "Vom Ziel zu Arbeitspaketen, von Arbeitspaketen zum Terminplan — und wann ein agiles Vorgehen besser passt.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Ein großes Ziel wird erst handhabbar, wenn man es zerlegt.",
-          "Die Zerlegung zeigt der Projektstrukturplan."
+        "darstellung": "vollfassung",
+        "ziel": "Du zerlegst ein Projektergebnis in einem Projektstrukturplan in Teilaufgaben und Arbeitspakete und beschreibst jedes Paket mit verantwortlicher Person, Aufwand und prüfbarem Ergebnis.",
+        "vorwissen_kurz": "Ein Ziel wie „Onboarding-Paket bis 15. Januar\" ist zu groß, um es direkt anzugehen. Es muss in handliche Teile zerlegt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was zu tun ist",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:projektstrukturplan|Projektstrukturplan}} zerlegt das Projekt in Teilaufgaben und diese in {{begriff:arbeitspaket|Arbeitspakete}}. Ein Arbeitspaket ist die kleinste Einheit, die geplant und verantwortet wird. Es hat eine verantwortliche Person, einen geschätzten Aufwand und ein Ergebnis, an dem man erkennt, dass es fertig ist. Der Strukturplan sagt, *was* zu tun ist, aber noch nicht, *wann* und in welcher Reihenfolge; das kommt im Terminplan.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Arbeitspaket im Detail",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Feld",
+              "Arbeitspaket „Checkliste schreiben\""
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Nummer",
+                  "1.2"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verantwortlich",
+                  "Luca Petrelli"
+                ]
+              },
+              {
+                "zellen": [
+                  "Voraussetzung",
+                  "Rückmeldungen aller fünf Abteilungen (Paket 1.1)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufwand",
+                  "4 Stunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis",
+                  "Entwurf mit acht Pflichtinformationen, von Ayla Brandt gesichtet"
+                ]
+              },
+              {
+                "zellen": [
+                  "nicht enthalten",
+                  "Layout und Druck"
+                ]
+              }
+            ],
+            "fazit": "Die Beschreibung macht klar, wer das Paket übernimmt, was es braucht und wann es fertig ist. Damit lässt es sich planen und kontrollieren.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wie fein zerlegt wird, hängt vom Projekt ab. Ein Paket sollte so klein sein, dass eine Person es überblicken und sein Ende feststellen kann, und so groß, dass sich die Planung lohnt. Für ein Projekt mit zwanzig Stunden Aufwand reichen fünf bis acht Pakete. Fehlt im Strukturplan ein Paket, etwa die Freigabe durch die Auftraggeberin, fehlt es später auch im Terminplan, und das Projekt wird nicht fertig.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Der Projektstrukturplan zerlegt das Projekt in Teilaufgaben und diese in Arbeitspakete. Ein Arbeitspaket ist eine abgrenzbare Aufgabe mit einer verantwortlichen Person, einem geschätzten Aufwand und einem überprüfbaren Ergebnis. Der Strukturplan beantwortet die Frage, was zu tun ist — noch ohne Reihenfolge und Termine. Die Zerlegung ist fertig, wenn jedes Paket so klein ist, dass eine Person es verantworten und sein Ergebnis prüfen kann.",
-        "beispiele": [
-          "Teilaufgabe ‚Inhalte‘: Arbeitspakete ‚Pflichtinformationen bei Abteilungen einholen‘, ‚Checkliste schreiben‘, ‚Inhalte freigeben lassen‘.",
-          "Teilaufgabe ‚Gestaltung‘: Arbeitspakete ‚Layout im Corporate Design‘, ‚Lageplan zeichnen‘."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Gliederung nach Objekten oder Phasen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Projektstrukturplan kann nach Teilergebnissen gegliedert sein, etwa Inhalte, Gestaltung, Probelauf, oder nach Phasen wie Vorbereitung, Erstellung, Test. Wichtig ist, dass am Ende alle Pakete zusammen das ganze Projektergebnis ergeben.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Das Onboarding-Paket wird zerlegt in die Teilaufgaben Inhalte, Gestaltung und Probelauf. Für ‚Inhalte einholen‘ ist Luca verantwortlich (Ergebnis: Rückmeldungen aller fünf Abteilungen liegen vor), für ‚Layout‘ seine Kollegin (Ergebnis: freigegebene Druckvorlage), für den Probelauf beide (Ergebnis: Protokoll mit zwei Testpersonen).",
-        "typische_fehler": "Arbeitspakete werden zu groß geschnitten (‚Onboarding machen‘) oder ohne verantwortliche Person und prüfbares Ergebnis angelegt.",
         "verstaendnisfragen": [
-          "Was gehört zu einem Arbeitspaket? Eine abgrenzbare Aufgabe, eine verantwortliche Person, ein geschätzter Aufwand und ein überprüfbares Ergebnis.",
-          "Was zeigt der Projektstrukturplan nicht? Reihenfolge und Termine — das zeigt der Ablauf- und Terminplan."
-        ],
-        "pruefungsbezug": "Bei Strukturplan-Aufgaben Teilaufgaben und Arbeitspakete hierarchisch ordnen und je Paket ein Ergebnis nennen.",
-        "merksatz": "Der Projektstrukturplan zerlegt das Projekt in Arbeitspakete mit Verantwortlichem, Aufwand und prüfbarem Ergebnis — ohne Reihenfolge und Termine."
+          {
+            "frage": "Was zeigt der Projektstrukturplan noch nicht?",
+            "antwort": "Die Reihenfolge und die Termine der Arbeitspakete. Das zeigt erst der Terminplan.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welche Angaben gehören zu einem Arbeitspaket?",
+            "antwort": "Verantwortliche Person, geschätzter Aufwand und ein prüfbares Ergebnis; oft auch Voraussetzungen.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Im Team braucht jede Aufgabe eine verantwortliche Person.",
-          "Absprachen müssen für alle sichtbar sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du verteilst Verantwortung im Projektteam eindeutig, vereinbarst Regeln für Ablage, Besprechungen und Entscheidungen und legst einen Eskalationsweg fest.",
+        "vorwissen_kurz": "Viele Projekte scheitern nicht an der Aufgabe, sondern an unklarer Zusammenarbeit.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Klare Rollen, klare Regeln",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "==Jedes Arbeitspaket braucht genau eine verantwortliche Person.== Andere können mitarbeiten, beraten oder informiert werden, aber verantwortlich ist nur eine. Sonst verlässt sich jeder auf den anderen. Dazu kommen Vereinbarungen für die Zusammenarbeit: wo Dateien abgelegt werden, wann sich das Team abstimmt, wie Entscheidungen festgehalten werden und an wen man sich wendet, wenn ein Termin in Gefahr ist.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wer welche Rolle hat",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Arbeitspaket",
+              "verantwortlich",
+              "arbeitet mit",
+              "entscheidet",
+              "wird informiert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Inhalte einholen",
+                  "Luca",
+                  "Abteilungsleitungen",
+                  "—",
+                  "Ayla Brandt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Checkliste schreiben",
+                  "Luca",
+                  "zweite Auszubildende",
+                  "—",
+                  "Ayla Brandt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Layout",
+                  "zweite Auszubildende",
+                  "Luca",
+                  "—",
+                  "Marketing"
+                ]
+              },
+              {
+                "zellen": [
+                  "Freigabe der Druckvorlage",
+                  "Luca",
+                  "—",
+                  "Ayla Brandt",
+                  "Team"
+                ]
+              },
+              {
+                "zellen": [
+                  "Probelauf",
+                  "zweite Auszubildende",
+                  "zwei neue Beschäftigte",
+                  "—",
+                  "Ayla Brandt"
+                ]
+              }
+            ],
+            "fazit": "In jeder Zeile steht genau eine verantwortliche Person. Die Freigabe ist ein eigenes Paket, bei dem die Auftraggeberin entscheidet.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine solche Übersicht heißt oft **Verantwortungsmatrix**. Sie verhindert, dass zwei Personen „gemeinsam\" verantwortlich sind und am Ende keiner handelt. Die Teamregeln schützen zusätzlich: Ein kurzer fester Termin pro Woche ist besser als viele spontane Rückfragen. Und wer ein Terminrisiko sieht, meldet es sofort, statt zu hoffen, dass es sich von selbst löst.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Rollen machen klar, wer entscheidet, wer verantwortet und wer mitarbeitet. Eine einfache Verantwortungsmatrix ordnet jedem Arbeitspaket genau eine verantwortliche Person zu. Für die Kommunikation werden Weg und Takt vereinbart: Wo liegen die Dateien? Wann trifft sich das Team? Wie werden Entscheidungen festgehalten? Wer Regeln vorher festlegt, muss Konflikte später seltener lösen.",
-        "beispiele": [
-          "Ein gemeinsamer Aufgabenplan zeigt für jedes Paket Verantwortliche, Termin und Status.",
-          "Feste kurze Abstimmung jeden Dienstag 15 Minuten; Entscheidungen werden im Aufgabenplan notiert."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Zusammenarbeit über Abteilungen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im Onboarding-Projekt arbeiten die Auszubildenden mit Abteilungsleitungen zusammen, denen sie im Alltag nicht vorgesetzt sind. Hier hilft der Projektauftrag: Er gibt dem Team die Befugnis, Informationen anzufragen. Antwortet eine Abteilung nicht, ist das ein Fall für die Eskalation an die Auftraggeberin.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Im Onboarding-Team schreiben beide Azubis an der Checkliste, keiner fühlt sich für die Freigabe verantwortlich. Ergebnis: Die Freigabe durch die Abteilungen fehlt am Ende. Lösung für die nächste Planung: Jedes Arbeitspaket bekommt genau eine verantwortliche Person; die Freigabe wird als eigenes Paket mit Termin geplant.",
-        "typische_fehler": "Mehrere Personen sind ‚gemeinsam verantwortlich‘. Dann fühlt sich am Ende niemand zuständig.",
         "verstaendnisfragen": [
-          "Warum sollte jedes Arbeitspaket genau eine verantwortliche Person haben? Damit klar ist, wer für das Ergebnis einsteht und nachhält.",
-          "Was gehört zu einer Kommunikationsvereinbarung im Team? Ablageort, Besprechungstakt und die Art, wie Entscheidungen festgehalten werden."
-        ],
-        "pruefungsbezug": "Wenn nach Ursachen für Verzögerungen gefragt wird, an fehlende Verantwortlichkeiten und ungeklärte Kommunikationswege denken.",
-        "merksatz": "Jedes Arbeitspaket hat genau eine verantwortliche Person; Ablageort, Besprechungstakt und Entscheidungsdokumentation werden im Team vereinbart."
+          {
+            "frage": "Warum sollten nicht zwei Personen gemeinsam für ein Arbeitspaket verantwortlich sein?",
+            "antwort": "Weil sich dann jede auf die andere verlässt und am Ende niemand handelt.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was tust du, wenn ein Termin in Gefahr ist?",
+            "antwort": "Sofort die vereinbarte Stelle informieren, hier Ayla Brandt, damit früh gegengesteuert werden kann.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Manche Arbeitspakete können erst beginnen, wenn andere fertig sind.",
-          "Dauer und Aufwand sind nicht dasselbe."
+        "darstellung": "vollfassung",
+        "ziel": "Du übersetzt Abhängigkeiten zwischen Arbeitspaketen in einen Balkenplan, ermittelst den kritischen Pfad und Puffer und unterscheidest Dauer und Aufwand.",
+        "vorwissen_kurz": "Manche Arbeiten können erst beginnen, wenn andere fertig sind. Daraus ergibt sich, wann das Projekt frühestens fertig ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Reihenfolge und Puffer",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im {{begriff:balkenplan|Balkenplan}} werden die Arbeitspakete auf einer Zeitachse angeordnet. **Abhängigkeiten** bestimmen die Reihenfolge: Die Checkliste kann erst geschrieben werden, wenn die Inhalte vorliegen. Pakete ohne Abhängigkeit können parallel laufen. Die längste Kette abhängiger Pakete bestimmt das früheste Projektende; sie heißt {{begriff:kritischer-pfad|kritischer Pfad}}. Pakete außerhalb dieser Kette haben **Puffer**: Sie können sich verzögern, ohne das Ende zu verschieben.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Den kritischen Pfad berechnen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Paket",
+              "Dauer",
+              "Voraussetzung",
+              "frühester Beginn",
+              "frühestes Ende",
+              "Puffer"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Inhalte einholen",
+                  "3 Tage",
+                  "—",
+                  "Tag 0",
+                  "Tag 3",
+                  "0"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lageplan zeichnen",
+                  "2 Tage",
+                  "—",
+                  "Tag 0",
+                  "Tag 2",
+                  "3 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Checkliste schreiben",
+                  "2 Tage",
+                  "Inhalte",
+                  "Tag 3",
+                  "Tag 5",
+                  "0"
+                ]
+              },
+              {
+                "zellen": [
+                  "Layout",
+                  "1 Tag",
+                  "Checkliste und Lageplan",
+                  "Tag 5",
+                  "Tag 6",
+                  "0"
+                ]
+              },
+              {
+                "zellen": [
+                  "Probelauf",
+                  "1 Tag",
+                  "Layout",
+                  "Tag 6",
+                  "Tag 7",
+                  "0"
+                ]
+              }
+            ],
+            "fazit": "Der kritische Pfad läuft über Inhalte, Checkliste, Layout und Probelauf und dauert sieben Tage. Beim geplanten Rahmen von neun Tagen bleiben zwei Tage Reserve.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der kritische Pfad zeigt, wo Aufmerksamkeit nötig ist. Verzögern sich die Rückmeldungen der Abteilungen um einen Tag, verschiebt sich das ganze Projekt um einen Tag. Verzögert sich der Lageplan um einen Tag, passiert nichts. Wer Ressourcen verschieben kann, setzt sie deshalb auf dem kritischen Pfad ein. Dauer und Aufwand werden dabei getrennt geplant: Drei Tage für das Einholen der Inhalte sind vor allem Wartezeit, nur wenige Stunden Arbeit.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Der Terminplan bringt die Arbeitspakete in eine Reihenfolge und ordnet ihnen Dauern zu. Abhängigkeiten bestimmen, was nacheinander laufen muss. Die längste Kette ohne Puffer ist der kritische Pfad — verzögert sich ein Vorgang darauf, verschiebt sich das Projektende. Wichtig ist der Unterschied zwischen Dauer (wie lange dauert es im Kalender?) und Aufwand (wie viele Personenstunden kostet es?). Zwei Personen können einen Aufwand von zwei Personentagen in einem Kalendertag erledigen — wenn die Arbeit teilbar ist.",
-        "beispiele": [
-          "Inhalte zwei Arbeitstage, Layout einen, Probelauf einen; alles nacheinander: Mindestdauer vier Arbeitstage.",
-          "Arbeiten zwei Personen gleichzeitig am Layout, kann die Dauer kürzer werden — der Aufwand in Personentagen bleibt gleich."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Meilensteine",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Meilenstein ist ein Zeitpunkt, an dem ein wichtiges Zwischenergebnis vorliegen muss, etwa „Druckvorlage freigegeben\". Er hat keine Dauer, eignet sich aber gut, um den Fortschritt zu prüfen und die Auftraggeberin einzubinden.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Pakete ‚Inhalte einholen‘ (3 Tage), ‚Lageplan zeichnen‘ (2 Tage, unabhängig), ‚Checkliste schreiben‘ (2 Tage, nach Inhalten), ‚Layout‘ (1 Tag, nach Checkliste und Lageplan), ‚Probelauf‘ (1 Tag, nach Layout). Kritischer Pfad: Inhalte → Checkliste → Layout → Probelauf = 7 Tage. Der Lageplan hat 3 Tage Puffer.",
-        "typische_fehler": "Dauer, Aufwand und Personenzahl werden gleichgesetzt. Vier Tage Dauer sind nicht automatisch vier Personentage Aufwand.",
         "verstaendnisfragen": [
-          "Was ist der kritische Pfad? Die Folge von Vorgängen ohne Puffer, die das Projektende bestimmt.",
-          "Worin unterscheiden sich Dauer und Aufwand? Dauer ist Kalenderzeit, Aufwand die eingesetzte Arbeitszeit in Personenstunden oder -tagen."
-        ],
-        "pruefungsbezug": "Bei Terminrechnungen zuerst die Abhängigkeiten notieren, dann die längste Kette suchen.",
-        "merksatz": "Abhängigkeiten bestimmen die Reihenfolge; die längste Kette ohne Puffer ist der kritische Pfad — und Dauer ist nicht dasselbe wie Aufwand."
+          {
+            "frage": "Was passiert, wenn sich ein Paket auf dem kritischen Pfad um einen Tag verzögert?",
+            "antwort": "Das Projektende verschiebt sich um einen Tag, weil auf dem kritischen Pfad kein Puffer ist.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie viel Puffer hat der Lageplan, und warum?",
+            "antwort": "Drei Tage. Er endet an Tag 2, das Layout kann aber erst an Tag 5 beginnen, wenn die Checkliste fertig ist.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Nicht jedes Projekt lässt sich vorab vollständig planen.",
-          "Agile Verfahren arbeiten in kurzen Schleifen mit Rückmeldung."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst begründet zwischen klassischem und agilem Vorgehen, indem du prüfst, wie stabil die Anforderungen sind, und planst für den agilen Fall kurze Schleifen mit Rückmeldung.",
+        "vorwissen_kurz": "Nicht jedes Projekt lässt sich am Anfang vollständig durchplanen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vorab planen oder in Schleifen lernen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim **klassischen** Vorgehen wird zu Beginn vollständig geplant und Phase für Phase abgearbeitet; die Rückmeldung kommt vor allem bei der Abnahme. Beim {{begriff:agil|agilen}} Vorgehen wird in kurzen Schleifen gearbeitet: ein Zwischenergebnis zeigen, Rückmeldung einholen, verbessern. Ziel, Rollen und Takt bleiben dabei festgelegt; agil heißt nicht ungeplant. Entscheidend für die Wahl ist, wie gut die Anforderungen zu Beginn bekannt sind.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Schleifen für die digitale Willkommensseite",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schleife",
+              "Ergebnis",
+              "Rückmeldung von",
+              "Erkenntnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. Woche",
+                  "einfache Seite mit Ansprechpersonen und Lageplan",
+                  "zwei neue Beschäftigte",
+                  "Sie suchen zuerst den Weg zum Parkplatz und die Pausenzeiten."
+                ]
+              },
+              {
+                "zellen": [
+                  "2. Woche",
+                  "Seite mit Anfahrt, Pausen und erstem Tag oben",
+                  "Ayla Brandt und zwei neue Beschäftigte",
+                  "Die Liste der Ansprechpersonen ist zu lang."
+                ]
+              },
+              {
+                "zellen": [
+                  "3. Woche",
+                  "Ansprechpersonen nach Abteilung gegliedert",
+                  "Betriebsrat, Datenschutz",
+                  "Freigabe, nur dienstliche Kontakte"
+                ]
+              }
+            ],
+            "fazit": "Nach drei kurzen Schleifen weiß das Team, was neue Beschäftigte wirklich brauchen. Mit einem Plan vom ersten Tag an hätte es an den Bedürfnissen vorbei gebaut.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Viele Projekte kombinieren beide Ansätze. Die Inhalte der Willkommensseite entstehen agil, weil sich erst im Test zeigt, was gebraucht wird. Der Druck des fertigen Pakets läuft klassisch, weil Menge, Termin und Gestaltung feststehen. Wer das Vorgehen begründet wählt, fragt deshalb für jeden Teil: Kennen wir die Anforderungen, oder müssen wir sie erst herausfinden?",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Klassisches Vorgehen plant zu Beginn vollständig und arbeitet die Phasen nacheinander ab. Es passt, wenn die Anforderungen stabil und bekannt sind. Agiles Vorgehen — etwa nach Scrum — arbeitet in kurzen Zyklen: Ein kleines nutzbares Ergebnis entsteht, wird gezeigt, bewertet und verbessert. Es passt, wenn sich Anforderungen erst während der Arbeit klären. In beiden Fällen bleiben Rollen, Verantwortlichkeiten und Ziele klar; agil heißt nicht ungeplant.",
-        "beispiele": [
-          "Druck des fertigen Onboarding-Pakets mit festem Termin und bekanntem Inhalt: klassisch planbar.",
-          "Gestaltung einer digitalen Willkommensseite, bei der unklar ist, was neue Beschäftigte wirklich brauchen: agil mit kurzen Testschleifen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Scrum als agiles Rahmenwerk",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine verbreitete agile Methode ist Scrum. Gearbeitet wird in festen Zeitabschnitten, den Sprints, meist zwei bis vier Wochen lang. Eine Person verantwortet die Anforderungen und ihre Reihenfolge, das Team plant jeden Sprint selbst, und am Ende jedes Sprints wird das Ergebnis gezeigt und das Vorgehen besprochen.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Ayla weiß noch nicht genau, welche Informationen neue Beschäftigte zuerst brauchen. Das Team entscheidet sich für zwei kurze Schleifen: erste Checkliste nach einer Woche, Test mit einer neuen Kollegin, Überarbeitung, zweite Fassung nach einer weiteren Woche. Der Druck danach wird klassisch geplant, weil Inhalt und Termin dann feststehen.",
-        "typische_fehler": "Agil wird mit ‚ohne Plan‘ verwechselt. Auch agile Projekte haben Ziele, Rollen und feste Takte.",
         "verstaendnisfragen": [
-          "Wann passt klassisches Vorgehen? Wenn Anforderungen stabil und bekannt sind und wenig Abstimmung im Verlauf nötig ist.",
-          "Was kennzeichnet agiles Vorgehen? Kurze Zyklen mit nutzbaren Zwischenergebnissen, Rückmeldung und Anpassung."
-        ],
-        "pruefungsbezug": "Die Wahl des Vorgehens immer an der Stabilität der Anforderungen und am Abstimmungsbedarf begründen.",
-        "merksatz": "Klassisch bei stabilen Anforderungen, agil bei Anforderungen, die sich erst klären — in beiden Fällen mit klaren Rollen und Zielen."
+          {
+            "frage": "Wann passt ein agiles Vorgehen besser als ein klassisches?",
+            "antwort": "Wenn sich die Anforderungen erst während der Arbeit klären und frühe Rückmeldungen das Ergebnis verbessern.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Heißt agil, dass nicht geplant wird?",
+            "antwort": "Nein. Ziel, Rollen und Takt sind festgelegt; nur die Feinplanung erfolgt je Schleife.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

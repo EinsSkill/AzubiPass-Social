@@ -6,86 +6,444 @@
   "untertitel": "Das Ergebnis für die Zielgruppe aufbereiten, ehrlich abnehmen lassen — und aus der Zusammenarbeit etwas Konkretes mitnehmen.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Am Ende eines Projekts wird das Ergebnis vorgestellt.",
-          "Verschiedene Zielgruppen brauchen verschiedene Informationen."
+        "darstellung": "vollfassung",
+        "ziel": "Du bereitest dasselbe Projektergebnis für zwei Zielgruppen unterschiedlich auf, wählst wenige belegte Kernaussagen und ordnest sie nach den Fragen der Zuhörenden.",
+        "vorwissen_kurz": "Das Onboarding-Paket ist fertig. Jetzt soll es der Auftraggeberin und den künftigen Nutzern vorgestellt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Fragen der Zuhörenden beantworten",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Ergebnispräsentation beginnt mit der Frage: Wer hört zu, und was braucht diese Person, um zu entscheiden oder zu handeln? Die Auftraggeberin will wissen, ob das Ziel erreicht ist, was es gekostet hat und was offen ist. Künftige Nutzer wollen wissen, wie sie mit dem Ergebnis arbeiten. ==Die Präsentation beantwortet die Fragen der Zielgruppe — nicht die Chronik der eigenen Arbeit.== Jede Kernaussage wird belegt, etwa mit dem Ergebnis des Probelaufs oder dem Plan-Ist-Vergleich.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Dasselbe Ergebnis, zwei Präsentationen",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Für Ayla Brandt als Auftraggeberin",
+              "Für die Abteilungsleitungen als Nutzer"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Worum geht es?",
+                  "Ziel und Ergebnis in einem Satz",
+                  "Was neue Beschäftigte künftig am ersten Tag bekommen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ist es gut?",
+                  "Abnahmekriterien mit Status, Ergebnis des Probelaufs",
+                  "Rückmeldungen der zwei Testpersonen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was hat es gekostet?",
+                  "21 statt 20 Stunden, 140 € Druck statt 150 €",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was muss ich tun?",
+                  "über offene Punkte entscheiden",
+                  "eigene Abteilungsseite jährlich aktualisieren"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie lange?",
+                  "fünf Minuten",
+                  "zehn Minuten mit Fragen"
+                ]
+              }
+            ],
+            "fazit": "Die Auftraggeberin braucht Belege für ihre Entscheidung, die Nutzer eine Anleitung für ihre Arbeit. Die Inhalte überschneiden sich, Auswahl und Reihenfolge nicht.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine typische Schwäche ist der nacherzählte Arbeitsweg: „Zuerst haben wir die Abteilungen angeschrieben, dann …\". Das interessiert die Zuhörenden selten. Besser ist es, mit dem Ergebnis zu beginnen und den Weg nur dort zu zeigen, wo er eine Entscheidung erklärt. Auf jeder Folie steht eine Kernaussage; Details kommen in den Anhang oder in die Handreichung.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Auftraggeberin will wissen, ob das Ziel erreicht ist, was es gekostet hat und was offen bleibt. Neue Beschäftigte wollen wissen, wie sie das Ergebnis nutzen. Deshalb beginnt die Aufbereitung mit der Frage: Wer hört zu, und was braucht diese Person zum Entscheiden oder Handeln? Daraus folgen Auswahl, Reihenfolge und Darstellung — wenige Kernaussagen, belegt mit Zahlen oder Beispielen.",
-        "beispiele": [
-          "Für Ayla Brandt: Zielerreichung je Abnahmekriterium, Aufwand im Vergleich zum Plan, offene Punkte.",
-          "Für neue Beschäftigte: Wie nutze ich die Checkliste am ersten Tag?"
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Aufbau einer Folie",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine gute Folie hat eine Überschrift, die die Aussage formuliert, etwa „Probelauf ohne Rückfragen bestanden\", statt nur das Thema zu nennen. Darunter stehen wenige Belege. Zu viel Text lenkt vom Vortrag ab, weil die Zuhörenden lesen statt zuzuhören.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Das Team will in der Abschlusspräsentation alle 40 Entwurfsseiten zeigen. Für Ayla Brandt reichen vier Folien: Ziel und Ergebnis, Abnahmekriterien mit Status, Aufwand Soll und Ist, offene Punkte und Empfehlung. Die Entwürfe liegen als Anhang bereit.",
-        "typische_fehler": "Die Präsentation erzählt den Arbeitsweg chronologisch nach, statt die Fragen der Zielgruppe zu beantworten.",
         "verstaendnisfragen": [
-          "Was will die Auftraggeberin in einer Abschlusspräsentation vor allem wissen? Ob das Ziel erreicht ist, was es gekostet hat und was offen bleibt.",
-          "Wie entsteht der rote Faden einer Präsentation? Aus den Fragen der Zielgruppe, nicht aus der Reihenfolge der eigenen Arbeit."
-        ],
-        "pruefungsbezug": "Bei Präsentationsaufgaben Zielgruppe nennen und Inhalte begründet auswählen.",
-        "merksatz": "Ein Ergebnis wird für die Zielgruppe aufbereitet: wenige belegte Kernaussagen, die ihre Fragen beantworten — nicht der nacherzählte Arbeitsweg."
+          {
+            "frage": "Was will die Auftraggeberin bei einer Ergebnispräsentation vor allem wissen?",
+            "antwort": "Ob das Ziel erreicht ist, was es gekostet hat und worüber sie noch entscheiden muss.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum sollte eine Präsentation nicht den Arbeitsweg nacherzählen?",
+            "antwort": "Weil er die Fragen der Zielgruppe meist nicht beantwortet. Wichtig sind Ergebnis, Belege und nächste Schritte.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Nach einer Präsentation gibt es Rückmeldungen.",
-          "Gutes Feedback hilft, schlechtes verletzt oder bleibt folgenlos."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst Feedback zu einer Präsentation mit Beobachtung, Wirkung und Wunsch, nimmst Rückmeldungen sachlich an und trennst dabei Ergebnisqualität und persönliche Sympathie.",
+        "vorwissen_kurz": "Nach der Präsentation gibt es Rückmeldungen. Wie sie formuliert und aufgenommen werden, entscheidet, ob man daraus lernt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rückmeldung geben und nehmen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gutes {{begriff:feedback|Feedback}} besteht aus drei Teilen: Was wurde beobachtet? Welche Wirkung hatte es? Was wünsche ich mir? Es bezieht sich auf das Ergebnis oder das Verhalten, nicht auf die Person, und nennt auch, was gelungen ist. Wer Feedback empfängt, hört zu, fragt nach, wenn etwas unklar ist, und rechtfertigt sich nicht sofort. Ob er die Anregung umsetzt, entscheidet er danach in Ruhe.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Aus vagem Lob und Kritik wird Feedback",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Rückmeldung",
+              "Problem",
+              "Besser"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„War ganz okay.\"",
+                  "keine Beobachtung, kein Wunsch",
+                  "„Die Tabelle mit den Kriterien war sofort klar.\""
+                ]
+              },
+              {
+                "zellen": [
+                  "„Du kannst nicht präsentieren.\"",
+                  "Urteil über die Person",
+                  "„Du hast oft auf die Folie geschaut; ich hätte mir mehr Blickkontakt gewünscht.\""
+                ]
+              },
+              {
+                "zellen": [
+                  "„Zu lang.\"",
+                  "unklar, was zu lang war",
+                  "„Folie 3 hatte über 20 Zeilen; drei Kernpunkte hätten gereicht.\""
+                ]
+              },
+              {
+                "zellen": [
+                  "„Super, du bist so sympathisch!\"",
+                  "Sympathie statt Ergebnis",
+                  "„Der Einstieg mit der Frage an die Runde hat alle sofort einbezogen.\""
+                ]
+              }
+            ],
+            "fazit": "Konkretes Feedback zeigt, was gut war und was sich verbessern lässt. Urteile über die Person oder reine Sympathie helfen nicht weiter.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ergebnisqualität und persönliche Sympathie zu trennen ist schwer, aber wichtig. Wer jemanden mag, sieht über Schwächen hinweg; wer jemanden weniger mag, übersieht Stärken. Deshalb hilft es, Feedback an vorher vereinbarten Kriterien zu orientieren, etwa Verständlichkeit, Belege und Zeiteinhaltung. Für Luca heißt das: Er notiert die Rückmeldungen, dankt dafür und entscheidet später, welche er für die nächste Präsentation übernimmt.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Feedback bezieht sich auf beobachtbares Verhalten und seine Wirkung und enthält einen konkreten Wunsch. Wer Feedback gibt, spricht in Ich-Botschaften, bleibt beim Thema und würdigt auch Gelungenes. Wer Feedback empfängt, hört zu, fragt nach, rechtfertigt sich nicht sofort und entscheidet danach, was er übernimmt. Feedback zur Ergebnisqualität ist von persönlicher Sympathie zu trennen.",
-        "beispiele": [
-          "Hilfreich: ‚Die Tabelle mit den Abnahmekriterien war sofort verständlich. Bei den Kosten hätte ich gern Plan und Ist nebeneinander gesehen.‘",
-          "Nicht hilfreich: ‚War ganz okay.‘"
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Feedback an Vorgesetzte",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch Vorgesetzte profitieren von Rückmeldungen. Wer Feedback nach oben gibt, bleibt besonders sachlich, fragt vorher, ob es gewünscht ist, und formuliert als eigene Wahrnehmung: „Mir ist aufgefallen, dass …\".",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Nach der Präsentation sagt eine Teilnehmerin: ‚Die Folien waren zu voll.‘ Luca fragt nach: ‚Welche Folie meinst du, und was hättest du weggelassen?‘ Die Antwort — ‚Folie 3, die Liste aller Abteilungsrückmeldungen‘ — ist verwertbar.",
-        "typische_fehler": "Feedback wird zur Bewertung der Person (‚Du kannst nicht präsentieren‘) oder bleibt so allgemein, dass niemand weiß, was er ändern soll.",
         "verstaendnisfragen": [
-          "Woraus besteht konstruktives Feedback? Aus Beobachtung, Wirkung und konkretem Wunsch.",
-          "Wie reagiert man gut auf Feedback? Zuhören, nachfragen, nicht sofort rechtfertigen, danach entscheiden."
-        ],
-        "pruefungsbezug": "Feedback-Aufgaben verlangen oft eine Umformulierung: aus einer Bewertung eine Beobachtung mit Wirkung und Wunsch machen.",
-        "merksatz": "Konstruktives Feedback beschreibt Beobachtung, Wirkung und Wunsch; wer es empfängt, fragt nach statt sich zu rechtfertigen."
+          {
+            "frage": "Aus welchen drei Teilen besteht konstruktives Feedback?",
+            "antwort": "Beobachtung, Wirkung und Wunsch.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie reagierst du gut auf kritisches Feedback?",
+            "antwort": "Zuhören, bei Unklarheit nachfragen, nicht sofort rechtfertigen und danach entscheiden, was du übernimmst.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Am Projektende prüft die Auftraggeberin, ob die vereinbarten Ziele erreicht sind.",
-          "Grundlage sind die Abnahmekriterien."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst ein Projektergebnis Kriterium für Kriterium gegen die vereinbarten Abnahmekriterien, unterscheidest Muss- und Kann-Kriterien und schlägst bei Lücken eine Abnahme mit Auflage vor.",
+        "vorwissen_kurz": "Ob ein Projekt erfolgreich war, entscheidet nicht das Gefühl des Teams, sondern der Vergleich mit dem Auftrag.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Jedes Kriterium einzeln prüfen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Abnahme prüft die Auftraggeberin jedes Abnahmekriterium einzeln. **Muss-Kriterien** sind zwingend; fehlt eines, kann das Ergebnis nicht vorbehaltlos abgenommen werden. **Kann-Kriterien** sind wünschenswert; ihr Fehlen mindert den Wert, verhindert aber die Abnahme nicht. Ist ein Muss-Kriterium nicht erfüllt, ist höchstens eine **Abnahme mit Auflage** möglich: Das Ergebnis wird angenommen, das fehlende Kriterium muss bis zu einem Termin nachgeliefert werden.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Abnahmeprotokoll",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Art",
+              "erfüllt?",
+              "Beleg"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Checkliste enthält alle acht Pflichtinformationen",
+                  "Muss",
+                  "ja",
+                  "Abgleich mit der vereinbarten Liste"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zwei Testpersonen erledigen drei Einstiegsaufgaben ohne Rückfrage",
+                  "Muss",
+                  "ja",
+                  "Protokoll des Probelaufs"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nur dienstliche Kontaktangaben",
+                  "Muss",
+                  "ja",
+                  "Sichtprüfung durch Ayla Brandt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lageplan zeigt alle Notausgänge",
+                  "Muss",
+                  "nein, einer fehlt",
+                  "Prüfung mit Sicherheitsfachkraft"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gestaltung im Corporate Design",
+                  "Kann",
+                  "ja",
+                  "Freigabe Marketing"
+                ]
+              }
+            ],
+            "fazit": "Vier Muss-Kriterien und ein Kann-Kriterium sind geprüft; ein Muss-Kriterium fehlt. Ayla Brandt nimmt mit der Auflage ab, den Lageplan bis Freitag zu ergänzen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Prozentzahl erfüllter Kriterien täuscht. Vier von fünf klingen nach 80 % Erfolg, aber ein fehlender Notausgang im Lageplan ist ein Sicherheitsmangel, der nicht durch gute Gestaltung ausgeglichen wird. Deshalb wird schon im Projektauftrag festgelegt, welche Kriterien zwingend sind. Über ihre Bedeutung entscheidet nicht das Team, sondern die Vereinbarung mit der Auftraggeberin.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Bei der Abnahme wird jedes vereinbarte Kriterium einzeln geprüft. Muss-Kriterien müssen erfüllt sein; Kann-Kriterien verbessern das Ergebnis, sind aber nicht zwingend. Werden Muss-Kriterien verfehlt, ist die Abnahme nicht erfolgreich — unabhängig davon, wie viele andere Kriterien erfüllt sind. Möglich ist eine Abnahme mit Auflagen: Die Auftraggeberin nimmt an, verlangt aber die Nachbesserung bis zu einem Termin.",
-        "beispiele": [
-          "Vier von fünf Kriterien erfüllt, das fünfte ist ein Muss-Kriterium: keine erfolgreiche Abnahme.",
-          "Alle Muss-Kriterien erfüllt, ein Kann-Kriterium (Übersetzung ins Englische) fehlt: Abnahme möglich."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Abnahme als Projektende",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mit der Abnahme übernimmt die Auftraggeberin das Ergebnis und entlastet das Team. Erst danach wird das Projekt formal abgeschlossen: Unterlagen werden archiviert, Zugriffsrechte zurückgenommen und die Erfahrungen festgehalten.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Das Onboarding-Paket erfüllt vier von fünf Kriterien. Es fehlt die Freigabe der Arbeitsschutzunterweisung — als Muss-Kriterium gekennzeichnet. 80 Prozent erfüllte Kriterien ersetzen die Muss-Anforderung nicht. Ayla Brandt kann mit Auflage abnehmen: Freigabe bis zum nächsten Einstellungstermin.",
-        "typische_fehler": "Die Abnahme wird nach Prozent erfüllter Kriterien beurteilt. Entscheidend ist, ob alle Muss-Kriterien erfüllt sind.",
         "verstaendnisfragen": [
-          "Was ist ein Muss-Kriterium? Ein Abnahmekriterium, ohne dessen Erfüllung das Ergebnis nicht abgenommen werden kann.",
-          "Was bedeutet Abnahme mit Auflagen? Das Ergebnis wird angenommen, festgelegte Mängel müssen aber bis zu einem Termin behoben werden."
-        ],
-        "pruefungsbezug": "In Abnahmefällen zuerst die Muss-Kriterien prüfen, dann die Kann-Kriterien.",
-        "merksatz": "Die Abnahme prüft jedes Kriterium einzeln; ein verfehltes Muss-Kriterium verhindert die erfolgreiche Abnahme, egal wie viele andere erfüllt sind."
+          {
+            "frage": "Vier von fünf Abnahmekriterien sind erfüllt, das fünfte ist ein Muss-Kriterium. Ist die Abnahme erfolgreich?",
+            "antwort": "Nein. Möglich ist höchstens eine Abnahme mit Auflage, das fehlende Kriterium bis zu einem Termin zu erfüllen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wer entscheidet, welche Kriterien zwingend sind?",
+            "antwort": "Die Auftraggeberin gemeinsam mit dem Team im Projektauftrag, nicht das Team allein bei der Abnahme.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Aus jedem Projekt lässt sich etwas für das nächste lernen.",
-          "Dazu braucht es konkrete statt allgemeine Erkenntnisse."
+        "darstellung": "vollfassung",
+        "ziel": "Du wertest die Zusammenarbeit im Projekt aus, formulierst aus allgemeiner Kritik verwertbare Erkenntnisse mit Ursache und Maßnahme und hältst sie für Folgeprojekte fest.",
+        "vorwissen_kurz": "Ein Projekt ist erst wirklich abgeschlossen, wenn das Team weiß, was es beim nächsten Mal besser macht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ursache und Maßnahme statt Klage",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Projektreflexion stellt vier Fragen: Was lief gut? Was lief nicht gut? Woran lag es? Was ändern wir beim nächsten Mal? Brauchbar sind nur Erkenntnisse, die eine **Ursache** benennen und eine **konkrete Maßnahme** ableiten. „Die Kommunikation war schlecht\" ist ein Eindruck; „Freigaben fehlten im Aufgabenplan, weil niemand verantwortlich war\" ist eine Ursache, aus der sich eine Regel ableiten lässt. Die Erkenntnisse werden schriftlich festgehalten, damit sie beim nächsten Projekt verfügbar sind.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Reflexion des Onboarding-Teams",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Antwort des Teams"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Was lief gut?",
+                  "Probelauf ohne Rückfragen; Budget eingehalten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was lief nicht gut?",
+                  "ein Abteilungsbeitrag kam einen Tag zu spät; Notausgang im Lageplan fehlte"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ursache",
+                  "Anfrage ohne Frist; Lageplan nicht mit der Sicherheitsfachkraft abgestimmt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahme",
+                  "Anfragen schriftlich mit Datum; sicherheitsrelevante Inhalte vor dem Layout fachlich prüfen lassen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wo festgehalten?",
+                  "Projektordner, Abschnitt „Erfahrungen\", und Vorlage für den nächsten Projektauftrag"
+                ]
+              }
+            ],
+            "fazit": "Aus zwei Problemen werden zwei konkrete Regeln. Sie stehen dort, wo das nächste Team sie findet.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine gute Reflexion sucht keine Schuldigen. Wer Angst hat, für Fehler verantwortlich gemacht zu werden, verschweigt sie, und das Team lernt nichts. Deshalb wird über Abläufe und Bedingungen gesprochen, nicht über Personen. Auch Gelungenes wird festgehalten: Was gut lief, soll beim nächsten Mal wieder so laufen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "In der Projektreflexion (auch Lessons Learned) fragt das Team: Was hat gut funktioniert? Was nicht? Woran lag es? Was machen wir beim nächsten Mal anders? Brauchbar sind nur konkrete Erkenntnisse mit Ursache und Maßnahme. ‚Die Kommunikation war schlecht‘ hilft niemandem; ‚Freigaben fehlten, weil niemand dafür verantwortlich war — künftig bekommt jede Freigabe einen Verantwortlichen und einen Termin‘ schon. Die Erkenntnisse werden festgehalten, damit das nächste Team sie findet.",
-        "beispiele": [
-          "Gut: ‚Der Probelauf mit echten neuen Beschäftigten hat drei Lücken aufgedeckt, die wir selbst nicht gesehen hätten.‘",
-          "Verbesserung: ‚Rückmeldefristen der Abteilungen künftig schriftlich mit Datum anfragen.‘"
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Vom Projekt zur Routine",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Projektergebnisse werden zur Routine. Das Onboarding-Paket muss künftig jedes Jahr aktualisiert werden. Dafür braucht es eine verantwortliche Person im Personalbereich und einen festen Termin, sonst veraltet das Ergebnis schnell.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Im Abschlussgespräch sagt jemand: ‚Das Team hat schlecht kommuniziert.‘ Das Team macht daraus: ‚Freigaben fehlten im gemeinsamen Aufgabenplan; künftig wird je Arbeitspaket eine verantwortliche Person und ein dokumentierter Freigabetermin festgelegt.‘ Die Erkenntnis kommt in den Projektordner unter ‚Erfahrungen für Folgeprojekte‘.",
-        "typische_fehler": "Ergebnisqualität und persönliche Sympathie werden vermischt, oder die Reflexion bleibt bei Allgemeinplätzen stehen.",
         "verstaendnisfragen": [
-          "Welche vier Fragen stellt eine Projektreflexion? Was lief gut, was nicht, woran lag es, was ändern wir?",
-          "Wann ist eine Erkenntnis verwertbar? Wenn sie Ursache und konkrete Maßnahme für das nächste Mal nennt."
-        ],
-        "pruefungsbezug": "Aus einer allgemeinen Kritik eine Erkenntnis mit Ursache und Maßnahme machen — so lautet die typische Aufgabe.",
-        "merksatz": "Eine verwertbare Projekterkenntnis nennt Ursache und konkrete Maßnahme für das nächste Mal und wird für Folgeprojekte festgehalten."
+          {
+            "frage": "Formuliere aus „Am Ende war es stressig\" eine verwertbare Erkenntnis.",
+            "antwort": "Zum Beispiel: „Der Probelauf lag ohne Puffer am Schluss. Künftig planen wir zwei Tage Puffer vor dem Abgabetermin.\"",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum sucht eine Projektreflexion keine Schuldigen?",
+            "antwort": "Weil Fehler sonst verschwiegen werden. Nur wenn offen über Ursachen gesprochen wird, kann das Team lernen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

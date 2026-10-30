@@ -6,86 +6,449 @@
   "untertitel": "Was ein Projekt von Routinearbeit unterscheidet und wie aus ‚soll besser werden‘ ein überprüfbares Ziel wird.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Viele Aufgaben im Betrieb wiederholen sich regelmäßig.",
-          "Ein Projekt ist dagegen ein einmaliges Vorhaben."
+        "darstellung": "vollfassung",
+        "ziel": "Du grenzt Projekte anhand ihrer Merkmale von wiederkehrenden Aufgaben ab und begründest, warum eine Aufgabe bei MAKEL Studio als Projekt organisiert werden sollte.",
+        "vorwissen_kurz": "Nicht jede größere Aufgabe ist ein Projekt. Die Unterscheidung entscheidet, wie sie organisiert wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Einmalig, befristet, zielgerichtet",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:projekt|Projekt}} ist ein Vorhaben, das einmalig ist, ein klares Ziel hat, einen festen Anfang und ein festes Ende besitzt und mit begrenzten Mitteln auskommen muss. Oft arbeiten mehrere Abteilungen zusammen, und das Ergebnis ist neu für das Unternehmen. Routinearbeit wiederholt sich dagegen regelmäßig nach bekanntem Ablauf und hat kein eigenes Endergebnis. Weil Projekte neu sind, sind sie mit Unsicherheit verbunden; deshalb brauchen sie eine eigene Planung und Steuerung.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Merkmale geprüft",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Merkmal",
+              "Onboarding-Paket bis 15. Januar",
+              "Anwesenheitsliste jeden Montag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "einmalig",
+                  "ja, neues Paket",
+                  "nein, wiederkehrend"
+                ]
+              },
+              {
+                "zellen": [
+                  "klares Endergebnis",
+                  "Paket mit Checkliste, Lageplan, Ansprechpersonen",
+                  "keines, läuft weiter"
+                ]
+              },
+              {
+                "zellen": [
+                  "fester Termin",
+                  "15. Januar",
+                  "jede Woche"
+                ]
+              },
+              {
+                "zellen": [
+                  "begrenzte Mittel",
+                  "zehn Stunden je Person, 150 € Druck",
+                  "im Tagesgeschäft enthalten"
+                ]
+              },
+              {
+                "zellen": [
+                  "mehrere Beteiligte",
+                  "Personal, Abteilungsleitungen, Azubis",
+                  "eine Person"
+                ]
+              }
+            ],
+            "fazit": "Das Onboarding-Paket erfüllt alle Merkmale eines Projekts. Die Anwesenheitsliste ist Routine und braucht keine Projektorganisation.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Einordnung ist mehr als eine Begriffsfrage. Wird ein Projekt wie Routine behandelt, fehlen Ziel, Termin und Verantwortung, und es zieht sich hin. Wird umgekehrt jede kleine Aufgabe als Projekt aufgezogen, entsteht unnötiger Planungsaufwand. Für MAKEL Studio lohnt sich die Projektform bei Vorhaben wie der Auswahl eines neuen Lohnfertigers, der Einführung der Laserstation oder einem neuen Onboarding.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Ein Projekt hat ein klares Ziel, einen festen Anfang und ein festes Ende, begrenzte Mittel (Zeit, Geld, Personal) und ist neuartig genug, dass es nicht nach Schema F abläuft. Häufig arbeiten Personen aus mehreren Abteilungen zusammen. Routineaufgaben wie das Pflegen einer Anwesenheitsliste wiederholen sich dagegen ohne eigenes Endergebnis. Die Unterscheidung ist nicht akademisch: Projekte brauchen eine eigene Planung, Verantwortliche und eine Abnahme, Routinen eine gute Prozessbeschreibung.",
-        "beispiele": [
-          "‚Bis Ende Januar ein Onboarding-Paket für neue Beschäftigte entwickeln‘ ist ein Projekt: einmalig, befristet, mit eigenem Ergebnis.",
-          "‚Jeden Montag die Anwesenheitsliste der Veredelung aktualisieren‘ ist Routine: Es gibt kein Ende und kein neues Ergebnis."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Das magische Dreieck",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Jedes Projekt bewegt sich zwischen drei Größen: Leistung oder Qualität, Zeit und Kosten. Verändert sich eine davon, wirkt das auf die anderen. Soll das Onboarding-Paket früher fertig sein, braucht es mehr Stunden oder es wird weniger umfangreich.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Ayla Brandt sagt: ‚Unsere neuen Leute finden sich am Anfang schlecht zurecht. Könnt ihr Azubis da etwas machen?‘ Daraus wird ein Projekt, wenn ein konkretes Ergebnis (ein Onboarding-Paket), ein Termin (vor dem nächsten Einstellungstermin), ein Team (zwei Azubis, Ayla als Auftraggeberin) und begrenzte Mittel (zehn Arbeitsstunden je Azubi) festgelegt werden.",
-        "typische_fehler": "Jede größere Aufgabe wird ‚Projekt‘ genannt. Fehlen Einmaligkeit und festes Ende, handelt es sich um eine Routine oder einen Prozess.",
         "verstaendnisfragen": [
-          "Welche Merkmale hat ein Projekt? Einmaligkeit, klares Ziel, fester Anfang und fester Endtermin, begrenzte Mittel, oft bereichsübergreifende Zusammenarbeit.",
-          "Warum ist die monatliche Inventurstichprobe kein Projekt? Weil sie sich regelmäßig wiederholt und kein einmaliges neues Ergebnis liefert."
-        ],
-        "pruefungsbezug": "Wird nach Projektmerkmalen gefragt, nenne sie und belege jedes am Fall.",
-        "merksatz": "Ein Projekt ist einmalig, zielgerichtet, befristet und mit begrenzten Mitteln ausgestattet — Routinen wiederholen sich ohne eigenes Endergebnis."
+          {
+            "frage": "Ist die tägliche Prüfung eingehender Rechnungen ein Projekt?",
+            "antwort": "Nein. Sie wiederholt sich regelmäßig nach bekanntem Ablauf und hat kein eigenes Endergebnis.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Nenne vier Merkmale eines Projekts.",
+            "antwort": "Einmaligkeit, klares Ziel, fester Anfang und Endtermin, begrenzte Mittel; oft auch mehrere Beteiligte und Neuartigkeit.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Jedes Projekt hat eine Auftraggeberin oder einen Auftraggeber.",
-          "Der Projektauftrag hält fest, was vereinbart ist."
+        "darstellung": "vollfassung",
+        "ziel": "Du benennst die Bestandteile eines Projektauftrags, ordnest die Rollen von Auftraggeberin, Projektleitung und Team zu und erkennst Lücken in einem unvollständigen Auftrag.",
+        "vorwissen_kurz": "Ein Projekt beginnt mit einem Auftrag. Ist er unklar, beginnt das Projekt mit einem Missverständnis.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was schriftlich festgehalten wird",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:projektauftrag|Projektauftrag}} hält fest, was zwischen Auftraggeberin und Projektteam vereinbart ist: Ziel, Umfang, Termin, verfügbare Mittel, Befugnisse und Beteiligte. Die **Auftraggeberin** gibt das Projekt in Auftrag, stellt die Mittel bereit, entscheidet bei wichtigen Fragen und nimmt das Ergebnis ab. Die **Projektleitung** plant, steuert und berichtet. Das **Team** erledigt die Arbeitspakete. Der Auftrag schützt beide Seiten: Das Team weiß, was erwartet wird, und die Auftraggeberin kann das Ergebnis daran messen.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein unvollständiger Auftrag",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestandteil",
+              "Erster Entwurf von Luca",
+              "Was fehlt?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ziel",
+                  "„besseres Onboarding\"",
+                  "prüfbares Ergebnis"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termin",
+                  "„Anfang des Jahres\"",
+                  "konkretes Datum"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mittel",
+                  "nicht genannt",
+                  "Stunden, Budget"
+                ]
+              },
+              {
+                "zellen": [
+                  "Befugnisse",
+                  "nicht genannt",
+                  "Darf das Team Abteilungen um Informationen bitten?"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auftraggeberin",
+                  "„Personal\"",
+                  "eine namentlich verantwortliche Person"
+                ]
+              }
+            ],
+            "fazit": "Ohne Ziel, Termin, Mittel und benannte Auftraggeberin ist der Auftrag nicht steuerbar. Luca klärt die Lücken mit Ayla Brandt, bevor das Projekt startet.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Klärung zu Beginn spart später Zeit. Weiß das Team nicht, dass es Abteilungsleitungen direkt ansprechen darf, wartet es auf Freigaben. Ist das Budget unklar, wird vielleicht ein teurer Druck beauftragt, den niemand genehmigt hat. Ein guter Projektauftrag ist kurz, passt oft auf eine Seite und wird von beiden Seiten bestätigt.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Der Projektauftrag ist die schriftliche Grundlage: Wer gibt den Auftrag? Was soll erreicht werden? Bis wann? Mit welchen Mitteln und Befugnissen? Wer gehört zum Team? Dazu gehören die Rahmenbedingungen — etwa Budget, verfügbare Arbeitszeit, Vorgaben zu Datenschutz oder Corporate Design. Auftraggeber, Projektleitung und Team haben verschiedene Rollen: Der Auftraggeber entscheidet und nimmt ab, die Projektleitung plant und steuert, das Team erarbeitet.",
-        "beispiele": [
-          "Rahmenbedingung Zeit: zehn Arbeitsstunden je Azubi in sechs Wochen.",
-          "Rahmenbedingung Gestaltung: Unterlagen im Corporate Design von MAKEL; keine privaten Kontaktdaten."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Stakeholder",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben Auftraggeberin und Team gibt es weitere Beteiligte, die vom Projekt betroffen sind oder es beeinflussen: beim Onboarding etwa die Abteilungsleitungen, der Betriebsrat und die neuen Beschäftigten selbst. Sie früh einzubeziehen, verhindert spätere Einwände.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für das Onboarding-Paket hält der Projektauftrag fest: Auftraggeberin Ayla Brandt (Personal); Projektleitung Luca Petrelli; Team zwei Auszubildende; Termin 15. Januar; Mittel je zehn Arbeitsstunden, Druckkosten bis 150 €; Befugnis, Abteilungsleitungen um Informationen zu bitten; Rahmen: Corporate Design, keine privaten Kontaktdaten.",
-        "typische_fehler": "Ein Projekt startet mit einer mündlichen Bitte ohne Festlegung von Termin und Mitteln. Später streitet man darüber, was eigentlich bestellt war.",
         "verstaendnisfragen": [
-          "Wer nimmt das Projektergebnis ab? Die Auftraggeberin oder der Auftraggeber.",
-          "Warum gehören Rahmenbedingungen in den Projektauftrag? Weil sie festlegen, in welchem Rahmen Lösungen erlaubt sind — sonst entsteht ein Ergebnis, das nicht verwendet werden darf."
-        ],
-        "pruefungsbezug": "Bei Aufgaben zum Projektauftrag die Bestandteile vollständig abarbeiten: Ziel, Umfang, Termin, Mittel, Befugnisse, Beteiligte.",
-        "merksatz": "Der Projektauftrag legt Ziel, Umfang, Termin, Mittel, Befugnisse und Beteiligte schriftlich fest; die Auftraggeberin entscheidet und nimmt ab."
+          {
+            "frage": "Welche Rolle hat die Auftraggeberin in einem Projekt?",
+            "antwort": "Sie gibt den Auftrag, stellt die Mittel bereit, entscheidet bei wichtigen Fragen und nimmt das Ergebnis ab.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum sollte die Auftraggeberin namentlich genannt sein?",
+            "antwort": "Damit klar ist, wer entscheidet und abnimmt. Eine Abteilung allein kann keine Entscheidung treffen.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Ein Ziel beschreibt einen Zustand, der erreicht sein soll.",
-          "Nur überprüfbare Ziele lassen sich am Ende abnehmen."
+        "darstellung": "vollfassung",
+        "ziel": "Du übersetzt einen unklaren Auftrag mit der SMART-Regel in überprüfbare Projektziele und leitest daraus Abnahmekriterien ab.",
+        "vorwissen_kurz": "„Das Onboarding soll besser werden\" ist ein Wunsch, kein Ziel. Erst ein prüfbares Ziel macht ein Projekt steuerbar.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ergebnis statt Tätigkeit",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Projektziel beschreibt einen Zustand nach dem Projekt, keine Tätigkeit. „Wir überarbeiten die Unterlagen\" sagt, was getan wird, aber nicht, wann das Projekt fertig ist. Bewährt ist die {{begriff:smart|SMART-Regel}}: Ein Ziel soll spezifisch, messbar, attraktiv beziehungsweise akzeptiert, realistisch und terminiert sein. Aus einem SMART-Ziel lassen sich **Abnahmekriterien** ableiten, an denen die Auftraggeberin am Ende prüft, ob das Ergebnis den Auftrag erfüllt.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Wunsch zum Abnahmekriterium",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Formulierung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wunsch",
+                  "Das Onboarding soll besser werden."
+                ]
+              },
+              {
+                "zellen": [
+                  "Ziel nach SMART",
+                  "Bis 15. Januar liegt eine erprobte Checkliste mit den acht vereinbarten Pflichtinformationen vor."
+                ]
+              },
+              {
+                "zellen": [
+                  "Abnahmekriterium 1",
+                  "Die Checkliste enthält alle acht Pflichtinformationen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Abnahmekriterium 2",
+                  "Zwei neue Beschäftigte erledigen damit im Probelauf die drei Einstiegsaufgaben ohne zusätzliche Rückfrage."
+                ]
+              },
+              {
+                "zellen": [
+                  "Abnahmekriterium 3",
+                  "Alle Kontaktangaben sind dienstlich."
+                ]
+              }
+            ],
+            "fazit": "Aus einem vagen Wunsch wird ein Ziel mit Termin und daraus drei Kriterien, die sich mit Ja oder Nein prüfen lassen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gute Ziele sind auch realistisch. Mit zehn Stunden je Person lässt sich keine vollständige Lernplattform bauen, aber eine erprobte Checkliste. Und Ziele müssen akzeptiert sein: Stimmen die Abteilungsleitungen den acht Pflichtinformationen nicht zu, liefern sie ihre Beiträge nur zögerlich. Deshalb werden Ziele mit der Auftraggeberin abgestimmt und schriftlich bestätigt.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Gute Projektziele sind SMART: spezifisch, messbar, attraktiv beziehungsweise akzeptiert, realistisch und terminiert. Wichtig ist, ein Ergebnis zu beschreiben, nicht eine Tätigkeit: ‚Wir überarbeiten das Onboarding‘ ist eine Tätigkeit; ‚Bis 15. Januar liegt eine erprobte Checkliste mit allen festgelegten Pflichtinformationen vor‘ ist ein Ergebnisziel. Aus den Zielen werden Abnahmekriterien abgeleitet: Woran erkennt die Auftraggeberin, dass das Ziel erreicht ist?",
-        "beispiele": [
-          "Unklar: ‚Das Onboarding soll besser werden.‘ SMART: ‚Bis 15. Januar liegt eine Checkliste mit den acht vereinbarten Pflichtinformationen vor; zwei neue Beschäftigte haben sie im Probelauf genutzt und die drei Einstiegsaufgaben ohne Rückfrage erledigt.‘",
-          "Abnahmekriterium: ‚Alle acht Pflichtinformationen sind in der Checkliste enthalten und von der jeweiligen Abteilung freigegeben.‘"
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Sach-, Termin- und Kostenziele",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Projektziele lassen sich nach dem magischen Dreieck gliedern: Sachziele beschreiben das Ergebnis, Terminziele den Zeitpunkt, Kostenziele das Budget. Ein vollständiger Projektauftrag enthält alle drei.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Im ersten Entwurf steht als Ziel ‚Neue Leute sollen sich wohlfühlen.‘ Das ist sympathisch, aber nicht prüfbar. Das Team formuliert neu: ‚Bis 15. Januar ist das Onboarding-Paket (Checkliste, Lageplan, Ansprechpartnerübersicht mit dienstlichen Kontakten) fertig; im Probelauf mit zwei neuen Beschäftigten werden alle Einstiegsaufgaben ohne zusätzliche Rückfrage erledigt.‘",
-        "typische_fehler": "Tätigkeiten (‚überarbeiten‘, ‚verbessern‘) werden als Ziele formuliert. Ein Ziel beschreibt einen überprüfbaren Zustand nach dem Projekt.",
         "verstaendnisfragen": [
-          "Wofür steht das M in SMART? Für messbar — es muss feststellbar sein, ob das Ziel erreicht ist.",
-          "Was ist ein Abnahmekriterium? Ein vorher vereinbartes, überprüfbares Merkmal, an dem die Erreichung eines Ziels festgestellt wird."
-        ],
-        "pruefungsbezug": "Wenn ein Ziel verbessert werden soll: Ergebnis statt Tätigkeit, Zahl oder prüfbares Merkmal, Termin.",
-        "merksatz": "Projektziele beschreiben ein überprüfbares Ergebnis mit Termin (SMART), und aus ihnen werden die Abnahmekriterien abgeleitet."
+          {
+            "frage": "Ist „Wir überarbeiten die Einarbeitungsunterlagen\" ein gutes Projektziel?",
+            "antwort": "Nein. Es beschreibt eine Tätigkeit, kein Ergebnis, und es fehlen Prüfmerkmal und Termin.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wozu dienen Abnahmekriterien?",
+            "antwort": "Damit die Auftraggeberin am Ende eindeutig prüfen kann, ob das Ergebnis den Auftrag erfüllt.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Projekte wachsen schnell über den geplanten Umfang hinaus.",
-          "Was nicht dazugehört, sollte ebenso klar sein wie das, was dazugehört."
+        "darstellung": "vollfassung",
+        "ziel": "Du dokumentierst Nichtziele, Annahmen und offene Fragen im Projektauftrag und gehst mit Änderungswünschen während des Projekts geregelt um.",
+        "vorwissen_kurz": "Was nicht ins Projekt gehört, ist genauso wichtig wie das, was hineingehört.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Grenzen ziehen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Nichtziele** legen fest, was ausdrücklich nicht zum Projekt gehört. ==Nichtziele schützen das Projekt vor schleichender Ausweitung.== **Annahmen** sind Voraussetzungen, von denen das Team ausgeht, ohne sie schon sicher zu wissen, etwa dass Abteilungen ihre Informationen rechtzeitig liefern. **Offene Fragen** werden mit Verantwortlichen und Termin notiert, damit sie nicht vergessen werden. Ändern sich Umfang oder Ziel während des Projekts, entscheidet die Auftraggeberin, ob Termin und Mittel angepasst werden.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Änderungswunsch mitten im Projekt",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Lernvideo zum Onboarding"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wunsch",
+                  "Eine Abteilungsleitung regt ein Lernvideo zur Sicherheitsunterweisung an."
+                ]
+              },
+              {
+                "zellen": [
+                  "Prüfung",
+                  "gehört nicht zum vereinbarten Umfang; braucht schätzungsweise 15 Stunden und Rechte für Aufnahmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vorlage an Ayla Brandt",
+                  "Option A: Video ins Projekt, Termin auf 15. Februar verschieben; Option B: Ideenspeicher, Folgeprojekt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Entscheidung",
+                  "Option B; das Projekt bleibt beim vereinbarten Umfang"
+                ]
+              },
+              {
+                "zellen": [
+                  "Dokumentation",
+                  "Änderung im Projektauftrag und im Ideenspeicher vermerkt"
+                ]
+              }
+            ],
+            "fazit": "Der Wunsch wird nicht abgelehnt und nicht heimlich umgesetzt, sondern mit seinen Folgen zur Entscheidung vorgelegt.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Annahmen sind Risiken in Verkleidung. Liefert eine Abteilung ihre Informationen nicht in einer Woche, gerät der Termin in Gefahr. Deshalb prüft die Projektleitung Annahmen regelmäßig und meldet früh, wenn eine nicht eintritt. Offene Fragen wie die nach Fotos von Beschäftigten werden mit Termin geklärt; bis dahin plant das Team ohne Fotos, damit nichts blockiert.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Zum Umfang gehört auch, was ausdrücklich nicht Teil des Projekts ist (Nichtziele). Das schützt vor schleichender Ausweitung. Annahmen, auf denen die Planung beruht — etwa ‚Die Abteilungen liefern ihre Informationen innerhalb einer Woche‘ —, und offene Fragen werden notiert. Erweist sich eine Annahme als falsch, ist das ein Grund, mit der Auftraggeberin über Termin oder Umfang zu sprechen.",
-        "beispiele": [
-          "Nichtziel: ‚Das Projekt erstellt keine neuen Arbeitsverträge und ändert keine Prozesse in der Personalabteilung.‘",
-          "Offene Frage: ‚Dürfen Fotos von Beschäftigten verwendet werden? Klärung mit Ayla Brandt bis Woche 2.‘"
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn niemand Nein sagt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Werden Zusatzwünsche immer wieder still übernommen, wächst das Projekt, ohne dass Termin oder Mittel mitwachsen. Am Ende ist es zu spät und über dem Budget, obwohl jeder einzelne Wunsch klein war. Diese schleichende Ausweitung lässt sich nur durch klare Nichtziele und ein geregeltes Änderungsverfahren verhindern.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Mitten im Projekt schlägt jemand vor, auch gleich ein Lernvideo zu drehen. Laut Projektauftrag ist ein Video kein Bestandteil, Zeit und Budget reichen nicht. Das Team notiert die Idee als Vorschlag für ein Folgeprojekt und bespricht sie mit Ayla — statt sie einfach zusätzlich zu beginnen.",
-        "typische_fehler": "Gute Ideen werden ohne Absprache in den Umfang aufgenommen. Dann gefährden sie Termin und Kernergebnis.",
         "verstaendnisfragen": [
-          "Warum werden Nichtziele festgehalten? Damit klar ist, was nicht erwartet wird, und der Umfang nicht unbemerkt wächst.",
-          "Was tust du, wenn sich eine Planungsannahme als falsch erweist? Die Auftraggeberin informieren und über Anpassung von Termin, Umfang oder Mitteln entscheiden lassen."
-        ],
-        "pruefungsbezug": "In Fallaufgaben zur Ausweitung des Umfangs die Lösung über den Projektauftrag begründen: Abstimmung mit der Auftraggeberin statt Alleingang.",
-        "merksatz": "Nichtziele, Annahmen und offene Fragen gehören in den Projektauftrag; Erweiterungen des Umfangs werden mit der Auftraggeberin abgestimmt."
+          {
+            "frage": "Was sind Nichtziele, und wozu dienen sie?",
+            "antwort": "Ausdrücklich ausgeschlossene Inhalte. Sie schützen das Projekt vor schleichender Ausweitung.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Wie gehst du mit einem Zusatzwunsch mitten im Projekt um?",
+            "antwort": "Folgen für Umfang, Termin und Mittel prüfen und der Auftraggeberin zur Entscheidung vorlegen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

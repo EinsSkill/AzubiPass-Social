@@ -202,3 +202,10 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K05:** Haftung je Rechtsform bei offener Rechnung, Bürgschaftsfall; Organzuständigkeit GmbH, Innen-/Außenverhältnis; Zielkonflikt zertifizierter Rohling nach Anspruchsgruppen; Belegprüfung von Website-Aussagen (Green Claims nur als Irreführungsrisiko, keine Rechtsstandsbehauptung).
 - **K06:** Produktivität mit Nacharbeitsbereinigung (7,8 → 8,6 gute Shirts/h); Wirtschaftlichkeit dreier Bereiche (Übungszahlen), Maximal-/Minimalprinzip; Rentabilitäten mit Ø-Eigenkapital, Leverage-Effekt, Hinweis auf echte Größenordnung; Kennzahlenvergleich mit sinkendem Bankguthaben.
 - **K07:** TOP-Prinzip mit Lucas Rollwagen-Vorschlag; Beteiligungswege je Anliegen, § 87 Abs. 1 Nr. 12 BetrVG; **L28:** Entwicklungsplan Luca (Ausgangslage, Ziel bis Ende März, Maßnahmen, Zwischentermin, Rückmeldung, Erfolgskontrolle an Zeit/Skontofristen) mit Teilzielbewertung; Drei-Minuten-Vorstellung, datensparsam, Fotos mit Einwilligung.
+
+## IK LF2 · Projekte planen und durchführen
+
+- **K01:** Merkmalsprüfung Projekt/Routine, magisches Dreieck; unvollständiger Auftragsentwurf mit Lücken; Wunsch → SMART-Ziel → drei Abnahmekriterien; Änderungswunsch Lernvideo mit Optionen und Entscheidung der Auftraggeberin.
+- **K02:** Arbeitspaketbeschreibung 1.2; Verantwortungsmatrix mit Freigabe als eigenem Paket; Vorwärtsrechnung des Balkenplans (kritischer Pfad 7 Tage, Lageplan 3 Tage Puffer, 2 Tage Reserve bis Tag 9 – konsistent mit Basisgrafik); drei agile Schleifen Willkommensseite, Scrum als Detail.
+- **K03:** Statusbericht Tag 5 (0/100-Regel, Ampel); Prüfung des Ansprechpartnerdokuments, Meldeweg, Art. 33 DSGVO; Konfliktgespräch in vier Schritten, Brainstorming mit getrennter Bewertung, 6-3-5; Soll-Ist Tag 7 mit Entscheidungsvorlage.
+- **K04:** Dieselbe Präsentation für Auftraggeberin und Nutzer; vage Rückmeldungen → Feedback, Sympathie vs. Ergebnis; Abnahmeprotokoll mit verfehltem Muss-Kriterium (Notausgang) → Abnahme mit Auflage; Reflexion mit Ursache/Maßnahme/Ablageort.
