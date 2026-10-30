@@ -10,23 +10,107 @@
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Vertrag beruht auf übereinstimmenden Erklärungen.",
-          "Eine Erklärung kann ausdrücklich oder durch schlüssiges Handeln abgegeben werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst Willenserklärungen in ihren Formen, unterscheidest einseitige und zweiseitige Rechtsgeschäfte und beurteilst, wann Schweigen ausnahmsweise eine Erklärung ist.",
+        "vorwissen_kurz": "Ein Rechtsgeschäft verändert die rechtliche Lage: Es begründet Rechte und Pflichten oder hebt sie auf.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Der Wille muss nach außen",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine {{begriff:willenserklaerung|Willenserklärung}} ist eine Äußerung, mit der jemand eine bestimmte Rechtsfolge herbeiführen will. Ein innerer Entschluss reicht nicht; er muss nach außen erkennbar werden. Das kann gesprochen, geschrieben oder durch ein Verhalten geschehen, aus dem der Wille eindeutig hervorgeht. Eine bestimmte Form verlangt das Gesetz nur in Ausnahmefällen, etwa beim Grundstückskauf oder bei der Bürgschaft.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Erklärungen bei MAKEL",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Form",
+              "Willenserklärung?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ein Händler schreibt per E-Mail: „Wir bestellen 50 Hoodies gemäß Ihrem Angebot vom 4.11.“",
+                  "schriftlich (Textform)",
+                  "ja, Annahme"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eine Kundin legt im Laden einen Hoodie an die Kasse",
+                  "schlüssiges Handeln",
+                  "ja, Kaufangebot"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein Kunde fragt am Telefon: „Haben Sie die Hoodies auch in Grün?“",
+                  "mündlich",
+                  "nein, nur eine Frage ohne Bindungswillen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein Lieferant schickt unbestellt Garnmuster mit Rechnung; MAKEL reagiert nicht",
+                  "Schweigen",
+                  "nein, MAKEL muss nicht zahlen"
+                ]
+              }
+            ],
+            "fazit": "Entscheidend ist, ob die Äußerung auf eine Rechtsfolge gerichtet ist. Eine Frage oder ein Schweigen ist das in der Regel nicht.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Unter Kaufleuten kann Schweigen ausnahmsweise Bedeutung haben. Bestätigt ein Kaufmann nach einer mündlichen Verhandlung schriftlich, was vereinbart wurde, und widerspricht der andere nicht unverzüglich, gilt der Vertrag mit dem bestätigten Inhalt — das sogenannte kaufmännische Bestätigungsschreiben. Und wer als Kaufmann für andere Geschäfte besorgt, muss auf einen Antrag aus laufender Geschäftsverbindung unverzüglich antworten, sonst gilt sein Schweigen als Annahme ({{par:hgb-362|§ 362 HGB}}).",
+            "id": "b1-p2"
+          }
         ],
-        "erklaerung": "Eine Willenserklärung kann mündlich, schriftlich oder durch schlüssiges Handeln erfolgen. Für einen Kaufvertrag braucht es Antrag und Annahme. Schweigen gilt grundsätzlich nicht als Zustimmung; unter Kaufleuten kann § 362 HGB eine Ausnahme bilden. Die rechtliche Wirkung wird deshalb aus Inhalt, Verhalten und Situation bestimmt, nicht allein aus einem unterschriebenen Dokument.",
-        "beispiele": [
-          "Eine Bestellung im Onlineshop ist eine ausdrückliche Willenserklärung; die Annahme kann durch eine passende Auftragsbestätigung erklärt werden.",
-          "Wer eine Ware an der Kasse bezahlt und erhält, erklärt seinen Willen auch durch schlüssiges Handeln. Bloßes Schweigen ist dagegen grundsätzlich keine Annahme."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Einseitig und zweiseitig",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Einseitige Rechtsgeschäfte entstehen durch die Erklärung einer Person, etwa eine Kündigung, eine Anfechtung oder ein Testament. Sie werden mit Zugang wirksam, ohne dass der andere zustimmen muss. Verträge sind zweiseitige Rechtsgeschäfte: Sie brauchen übereinstimmende Erklärungen beider Seiten.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Kunde fragt telefonisch nur nach dem Preis und erhält noch kein Angebot. Aus der Frage allein folgt kein Vertrag, weil der Rechtsbindungswille nicht als Antrag feststeht. Erst eine hinreichend bestimmte Bestellung oder ein passendes Angebot mit Annahme bildet die erforderlichen Willenserklärungen.",
-        "typische_fehler": "Jede Äußerung wird als Antrag gewertet oder Schweigen automatisch als Zustimmung. Auch eine Anfrage wird mit einer verbindlichen Bestellung verwechselt.",
         "verstaendnisfragen": [
-          "Welche Formen kann eine Willenserklärung haben? Mündlich, schriftlich oder durch schlüssiges Handeln.",
-          "Ist Schweigen grundsätzlich eine Annahme? Nein; es gibt nur besondere Ausnahmen, etwa unter Kaufleuten nach § 362 HGB."
-        ],
-        "pruefungsbezug": "Markiere in Fällen die konkrete Handlung und frage, ob sie als Antrag, Annahme, bloße Anfrage oder Schweigen einzuordnen ist.",
-        "merksatz": "Vertragserklärungen können unterschiedlich aussehen; entscheidend sind Inhalt und erkennbarer Rechtsbindungswille."
+          {
+            "frage": "Ist die Anzeige eines Hoodies im Onlineshop bereits ein Antrag?",
+            "antwort": "In der Regel nicht. Sie ist eine Aufforderung an Kunden, ihrerseits ein Angebot abzugeben. Der Antrag kommt vom Kunden mit der Bestellung; MAKEL nimmt an, etwa mit der Versandbestätigung. So kann MAKEL nicht an mehr Bestellungen gebunden werden, als Ware da ist.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Muss MAKEL die unbestellt zugesandten Garnmuster bezahlen?",
+            "antwort": "Nein. Schweigen auf ein Angebot ist keine Annahme. MAKEL schuldet keinen Kaufpreis und muss die Muster auch nicht zurückschicken; es kann sie für den Absender bereithalten.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
@@ -218,23 +302,119 @@
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Geschäftsfähigkeit hängt vom Alter ab.",
-          "Minderjährige können nicht jeden Vertrag allein wirksam schließen."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst die Geschäftsfähigkeit einer Person, bestimmst die Wirksamkeit ihres Vertrags nach Alter, Vorteil, Zustimmung und Taschengeld und leitest die Folgen für den Betrieb ab.",
+        "vorwissen_kurz": "Wer einen Vertrag schließt, muss rechtlich in der Lage sein, sich zu verpflichten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Stufen der Geschäftsfähigkeit",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:geschaeftsfaehigkeit|Geschäftsfähigkeit}} ist die Fähigkeit, Rechtsgeschäfte selbst wirksam vorzunehmen. Kinder unter sieben Jahren sind geschäftsunfähig; ihre Erklärungen sind nichtig. Wer sieben, aber noch nicht 18 ist, ist beschränkt geschäftsfähig: Verträge, die nicht nur Vorteile bringen, brauchen die Zustimmung der Eltern. Mit 18 ist man voll geschäftsfähig.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Käufe im MAKEL-Onlineshop",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Käufer",
+              "Vorgang",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Paul, 15, bestellt einen Hoodie für 120 € auf Rechnung",
+                  "weder bezahlt noch Zustimmung",
+                  "schwebend unwirksam; MAKEL fragt bei den Eltern nach"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mia, 16, kauft im Laden eine Mütze für 35 € und zahlt bar von ihrem Taschengeld",
+                  "vollständig mit überlassenen Mitteln bezahlt",
+                  "wirksam"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jonas, 17, bestellt mit Zustimmung seiner Mutter ein Shirt",
+                  "Einwilligung liegt vor",
+                  "wirksam"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein Sechsjähriger klickt auf dem Tablet seiner Eltern „Jetzt kaufen“",
+                  "geschäftsunfähig",
+                  "nichtig"
+                ]
+              }
+            ],
+            "fazit": "Bei Pauls Bestellung muss MAKEL warten. Stimmen die Eltern zu, wird der Vertrag rückwirkend wirksam; verweigern sie, ist er endgültig unwirksam.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL kann die Schwebe beenden, indem es die Eltern zur Erklärung auffordert. Dann haben sie zwei Wochen Zeit; schweigen sie, gilt die Zustimmung als verweigert. Bereits gelieferte Ware muss zurückgegeben werden. Für einen Onlineshop heißt das praktisch: Bei Kauf auf Rechnung prüft man das Alter, oder man bietet Minderjährigen nur Zahlarten an, bei denen sofort bezahlt wird.",
+            "id": "b3-p2"
+          }
         ],
-        "erklaerung": "Unter sieben Jahren sind Willenserklärungen nichtig. Von sieben bis 17 Jahren besteht beschränkte Geschäftsfähigkeit; ab 18 ist sie unbeschränkt. Ein Vertrag eines beschränkt Geschäftsfähigen, der nicht lediglich rechtlich vorteilhaft ist, kann zunächst schwebend unwirksam sein. Der Taschengeldparagraf § 110 BGB greift, wenn vollständig mit eigenen Mitteln bezahlt wurde.",
-        "beispiele": [
-          "Ein 16-Jähriger bestellt Büromaterial auf Rechnung. Weil nicht vollständig mit eigenen Mitteln bezahlt wurde, hilft § 110 BGB nicht; die Zustimmung der Eltern ist relevant.",
-          "Ein Kauf, den ein Minderjähriger vollständig mit eigenen Mitteln bezahlt, kann nach § 110 BGB wirksam sein."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Minderjährige mit Erlaubnis zum Gewerbe oder zur Arbeit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ermächtigen die Eltern einen Minderjährigen mit Genehmigung des Familiengerichts, ein eigenes Gewerbe zu betreiben, ist er für die Geschäfte dieses Gewerbes voll geschäftsfähig. Ähnlich gilt für Minderjährige, die mit Erlaubnis der Eltern ein Arbeitsverhältnis eingehen, eine Teilgeschäftsfähigkeit für Geschäfte rund um dieses Arbeitsverhältnis. Für Ausbildungsverhältnisse gilt diese Regel nach überwiegender Auffassung nicht.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Ein 16-jähriger Azubi bestellt Büromaterial für 89 € auf Rechnung. Er ist beschränkt geschäftsfähig und der Kauf ist nicht lediglich rechtlich vorteilhaft. Weil die Ware nicht vollständig mit eigenen Mitteln bezahlt wurde, greift § 110 BGB nicht. Verweigern die Eltern die Zustimmung, ist der Vertrag endgültig unwirksam; bereits gelieferte Ware muss zurückgegeben werden.",
-        "typische_fehler": "Die Altersgrenzen werden vermischt oder jede Zahlung eines Minderjährigen als Taschengeldfall behandelt. Entscheidend ist, ob vollständig mit eigenen Mitteln bezahlt wurde und ob der Vertrag rechtlich vorteilhaft ist.",
         "verstaendnisfragen": [
-          "Welche Altersstufen gelten? Unter 7 nichtig, 7 bis 17 beschränkt geschäftsfähig, ab 18 unbeschränkt geschäftsfähig.",
-          "Wann kann § 110 BGB helfen? Wenn der Minderjährige die Leistung vollständig mit eigenen Mitteln bewirkt hat."
+          {
+            "frage": "Paul hat den Hoodie inzwischen getragen, die Eltern verweigern die Zustimmung. Was kann MAKEL verlangen?",
+            "antwort": "Den Kaufpreis nicht, weil kein wirksamer Vertrag besteht. MAKEL kann die Rückgabe des Hoodies verlangen. Ansprüche wegen der Abnutzung sind gegenüber Minderjährigen stark eingeschränkt; das Risiko liegt weitgehend beim Verkäufer.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum gilt der Taschengeldparagraf nicht bei einem Kauf auf Raten?",
+            "antwort": "Er setzt voraus, dass die Leistung vollständig mit Mitteln bewirkt ist, die dem Minderjährigen dafür oder zur freien Verfügung überlassen wurden. Solange Raten offen sind, ist nicht vollständig bezahlt, und der Vertrag bleibt schwebend unwirksam.",
+            "id": "b3-f2"
+          }
         ],
-        "pruefungsbezug": "Notiere bei Minderjährigen zuerst Alter, dann Vertragsart, eigene Zahlung und Zustimmung des gesetzlichen Vertreters.",
-        "merksatz": "Alter prüfen, eigene Zahlung prüfen, Zustimmung prüfen — erst dann steht die Wirksamkeit fest."
+        "quellen": [
+          {
+            "titel": "Bürgerliches Gesetzbuch, §§ 104–113",
+            "url": "https://www.gesetze-im-internet.de/bgb/",
+            "bezug": "Geschäftsfähigkeit"
+          }
+        ]
       }
     ]
   },

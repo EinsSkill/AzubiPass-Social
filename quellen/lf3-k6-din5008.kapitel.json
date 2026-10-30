@@ -6,46 +6,377 @@
   "untertitel": "Wo was steht — und warum das keine Geschmacksfrage ist.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "f1",
-        "vorauswissen": [
-          "Ein Geschäftsbrief muss schnell lesbar und eindeutig zugeordnet werden können.",
-          "Anschrift, Bezug und Inhalt haben im Brief feste Funktionen."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust einen Geschäftsbrief in der richtigen Reihenfolge der Bereiche auf, ordnest Angaben dem passenden Bereich zu und prüfst die Pflichtangaben für Kaufleute.",
+        "vorwissen_kurz": "Ein Geschäftsbrief vertritt das Unternehmen nach außen. Empfänger erwarten, Angaben an gewohnter Stelle zu finden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Jede Angabe hat ihren Platz",
+            "id": "f1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:din5008|DIN 5008}} beschreibt einen einheitlichen Aufbau für Geschäftsbriefe. Er hat praktische Gründe: Die Anschrift muss im Fenster des Umschlags erscheinen, Bezugszeichen und Ansprechpartner sollen auf einen Blick zu finden sein, und wer viele Briefe bearbeitet, spart Zeit, wenn alle gleich aufgebaut sind. Die Grafik zeigt den Aufbau schematisch; maßgeblich für genaue Maße ist der Normtext.",
+            "id": "f1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "f1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Brief an den Sportverein",
+            "id": "f1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bereich",
+              "Inhalt bei Lea"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Briefkopf",
+                  "Logo und Name der MAKEL Studio GmbH aus der Vorlage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anschriftfeld",
+                  "Rücksendeangabe; darunter: SV Grün-Weiß Neuss e. V., Frau Anna Kaya, Am Sportpark 12, 41460 Neuss"
+                ]
+              },
+              {
+                "zellen": [
+                  "Informationsblock",
+                  "Ihr Zeichen: ak · Ihre Nachricht vom: 2026-11-02 · Unser Zeichen: lw · Name: Lea Wagner · Telefon: 0211 98765-23 · E-Mail · Datum: 2026-11-04"
+                ]
+              },
+              {
+                "zellen": [
+                  "Betreff",
+                  "Angebot über 300 Vereins-Hoodies mit Logo"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anrede",
+                  "Sehr geehrte Frau Kaya,"
+                ]
+              },
+              {
+                "zellen": [
+                  "Brieftext",
+                  "Dank für die Anfrage, Angebot, Hinweis auf Bindungsfrist, Ansprechpartnerin"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gruß",
+                  "Mit freundlichen Grüßen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Firmenbezeichnung, Unterschrift",
+                  "MAKEL Studio GmbH · i. A. Lea Wagner"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anlagen",
+                  "Angebot Nr. 2026-0412, AGB"
+                ]
+              },
+              {
+                "zellen": [
+                  "Geschäftsangaben im Fuß",
+                  "Sitz Düsseldorf, Registergericht und Handelsregisternummer, Geschäftsführung, Bankverbindung"
+                ]
+              }
+            ],
+            "fazit": "Jede Angabe steht dort, wo die Empfängerin sie sucht. Die Geschäftsangaben im Fuß sind für die GmbH Pflicht.",
+            "id": "f1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "f1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kaufleute müssen auf Geschäftsbriefen an bestimmte Empfänger bestimmte Angaben machen. Für eine GmbH sind das unter anderem Rechtsform, Sitz, Registergericht und Registernummer sowie alle Geschäftsführer mit Familiennamen und mindestens einem ausgeschriebenen Vornamen. Das gilt auch für geschäftliche E-Mails. Lea muss das nicht jedes Mal eintragen: Es steht in der Vorlage.",
+            "id": "f1-p2"
+          }
         ],
-        "erklaerung": "DIN 5008 ordnet den Geschäftsbrief in einer festen Reihenfolge: Briefkopf, Anschriftfeld, Informationsblock, Betreff, Anrede, Brieftext, Grußformel, Unterschrift mit Name, Anlagenvermerk und Geschäftsangaben. Das Anschriftfeld muss im Umschlagfenster sichtbar sein; zwischen Straße und Ort steht keine Leerzeile. Die Norm schafft damit eine einheitliche Orientierung und ist in der AP1 direkt am Rechner anwendbar.",
-        "beispiele": [
-          "Der Betreff ‚Angebot Nr. 4711‘ steht ohne das Wort ‚Betreff‘ und ohne Punkt, bevor die Anrede folgt.",
-          "Im Informationsblock können Zeichen, Datum, Telefon und E-Mail stehen; im Fußbereich folgen die Geschäftsangaben mit Rechtsform, Sitz und Registerangaben."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wer unterschreibt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Unterschrift zeigt, mit welcher Befugnis jemand handelt. Prokuristen zeichnen mit „ppa.“, Handlungsbevollmächtigte mit „i. V.“, wer nur einen einzelnen Auftrag ausführt, mit „i. A.“. Lea unterschreibt das Angebot mit „i. A.“, weil sie es im Auftrag ihrer Abteilung versendet.",
+                "id": "f1-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf1:k5-e3"
+                ],
+                "text": "Prokura und Handlungsvollmacht",
+                "id": "f1-d1-v1"
+              }
+            ],
+            "id": "f1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Brief enthält Briefkopf, Anschriftfeld, Informationsblock, Betreff, Anrede, Text, Gruß, Unterschrift und Anlagen. Bei der Kontrolle wird die Reihenfolge mit der DIN-5008-Struktur abgeglichen. Das Anschriftfeld wird fenstergerecht positioniert, der Betreff gekürzt und der Anlagenvermerk nach dem Namen platziert. So wird nicht nur ein schönes, sondern ein funktional lesbarer Brief erstellt.",
-        "typische_fehler": "Das Anschriftfeld wird nach optischem Geschmack verschoben, das Wort ‚Betreff‘ ergänzt oder der Anlagenvermerk an das Seitenende gesetzt. Auch die Geschäftsangaben im Fußbereich werden vergessen.",
         "verstaendnisfragen": [
-          "Warum ist die Position des Anschriftfelds wichtig? Damit die Anschrift im Fenster des Briefumschlags sichtbar ist.",
-          "Was gehört in welcher Reihenfolge nach dem Brieftext? Grußformel, Firmenbezeichnung mit Unterschrift und Name, Anlagenvermerk und Geschäftsangaben."
+          {
+            "frage": "Wohin gehört der Vermerk „Einschreiben“?",
+            "antwort": "In die Zusatz- und Vermerkzone des Anschriftfelds, oberhalb der eigentlichen Anschrift. So ist er im Umschlagfenster sichtbar.",
+            "id": "f1-f1"
+          },
+          {
+            "frage": "Warum steht im Betreff nicht das Wort „Betreff“?",
+            "antwort": "Seine Stellung und die Hervorhebung zeigen schon, dass es der Betreff ist. Die Norm sieht das Leitwort deshalb nicht mehr vor; der Betreff wird kurz und ohne Schlusspunkt formuliert.",
+            "id": "f1-f2"
+          }
         ],
-        "pruefungsbezug": "Arbeite den Brief von oben nach unten ab und prüfe jede Zone statt nur das Gesamtbild. DIN 5008 wird direkt am Rechner über die konkrete Einrichtung sichtbar.",
-        "merksatz": "Ein Geschäftsbrief ist eine Funktionsordnung: Jede Information hat ihren Platz."
+        "quellen": [
+          {
+            "titel": "GmbH-Gesetz, § 35a",
+            "url": "https://www.gesetze-im-internet.de/gmbhg/__35a.html",
+            "bezug": "Angaben auf Geschäftsbriefen"
+          }
+        ]
       },
       {
         "abschnitt": "f2",
-        "vorauswissen": [
-          "Schreibregeln sollen Eindeutigkeit und einheitliche Bearbeitung sichern.",
-          "Zeichen, Zahlen und Datumsangaben sind Teil der formalen Prüfung."
+        "darstellung": "vollfassung",
+        "ziel": "Du wendest die Schreibregeln für Datum, Uhrzeit, Telefonnummern, Beträge, Prozent und Anschriften an und korrigierst einen Brieftext normgerecht.",
+        "vorwissen_kurz": "Einheitliche Schreibweisen machen Texte schneller lesbar und vermeiden Missverständnisse.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Kleinigkeiten mit Wirkung",
+            "id": "f2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Neben dem Aufbau regelt die Norm, wie Zahlen und Zeichen im Text geschrieben werden. Viele Regeln wirken klein, sind aber im Alltag wichtig: Ein Datum ohne vierstellige Jahreszahl kann falsch gelesen werden, ein Betrag ohne Dezimalstellen wirkt ungenau. In der Prüfung werden genau diese Details am Rechner bewertet.",
+            "id": "f2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Absatz vor und nach der Korrektur",
+            "id": "f2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Vorher:** „Wie besprochen liefern wir am 23.11.26 um 10.00 Uhr. Der Betrag von 17096,37€ enthält 19% Umsatzsteuer. Rückfragen gerne unter 0211/98765-23.“",
+            "id": "f2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Fehler",
+              "Korrektur",
+              "Regel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "23.11.26",
+                  "23.11.2026 oder 2026-11-23",
+                  "vierstellige Jahreszahl"
+                ]
+              },
+              {
+                "zellen": [
+                  "10.00 Uhr",
+                  "10:00 Uhr",
+                  "Stunden und Minuten mit Doppelpunkt"
+                ]
+              },
+              {
+                "zellen": [
+                  "17096,37€",
+                  "17.096,37 EUR (oder 17.096,37 €)",
+                  "Tausenderpunkt, Leerzeichen vor der Währung"
+                ]
+              },
+              {
+                "zellen": [
+                  "19%",
+                  "19 %",
+                  "Leerzeichen zwischen Zahl und Zeichen"
+                ]
+              },
+              {
+                "zellen": [
+                  "0211/98765-23",
+                  "0211 98765-23",
+                  "Leerzeichen statt Schrägstrich"
+                ]
+              }
+            ],
+            "fazit": "**Nachher:** „Wie besprochen liefern wir am 23.11.2026 um 10:00 Uhr. Der Betrag von 17.096,37 EUR enthält 19 % Umsatzsteuer. Rückfragen gerne unter 0211 98765-23.“",
+            "id": "f2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "f2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "f2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "f2-b4"
+          }
         ],
-        "erklaerung": "Der Betreff wird ohne ‚Betreff‘ und ohne Punkt geschrieben. Nach der Anrede steht ein Komma, der anschließende Text beginnt klein. Die Grußformel endet ohne Komma. Beispiele für zulässige Datumsformen sind 01.09.2026 und 2026-09-01; beim Prozentzeichen steht ein Leerzeichen davor. Die Unterschrift zeigt mit ppa., i. V. oder i. A. den jeweiligen Handlungsrahmen.",
-        "beispiele": [
-          "Aus ‚Betreff: Angebot Nr. 4711.‘ wird ‚Angebot Nr. 4711‘; aus ‚Sehr geehrte Damen und Herren:‘ wird ‚Sehr geehrte Damen und Herren,‘.",
-          "Geschäftliche Schreibweisen lauten etwa 0211 12345-67, 1.250,00 EUR und 25 %; die Datumsangabe kann 01.09.2026 oder 2026-09-01 sein."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Hervorhebungen sparsam einsetzen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Fettdruck, Unterstreichung oder Einrückung dienen dazu, Wichtiges schnell erkennbar zu machen. Wer zu viel hervorhebt, erreicht das Gegenteil. Im Geschäftsbrief genügt meist der fett gesetzte Betreff und gelegentlich eine eingerückte Aufzählung, etwa für Termine oder Beträge.",
+                "id": "f2-d1-p1"
+              }
+            ],
+            "id": "f2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Kollege schreibt ‚Betreff: Angebot Nr. 4711.‘, setzt nach der Anrede einen Doppelpunkt und beendet ‚Mit freundlichen Grüßen,‘ mit Komma. Die Korrektur erfolgt in drei Schritten: ‚Betreff‘ und Punkt entfernen, nach der Anrede ein Komma setzen und die Grußformel ohne Satzzeichen schreiben. Danach beginnt der Brieftext klein.",
-        "typische_fehler": "Der Doppelpunkt nach der Anrede wird aus anderen Textsorten übernommen, der Punkt im Betreff bleibt stehen oder das Komma nach der Grußformel wird gesetzt. Bei Zahlen fehlen außerdem Leerzeichen und Einheiten.",
         "verstaendnisfragen": [
-          "Welche drei Zeichensetzungsregeln sind besonders wichtig? Betreff ohne Punkt, Anrede mit Komma und Grußformel ohne Komma.",
-          "Wie wird die Vertretungsmacht sichtbar? Durch die passende Zeichnung, etwa ppa. bei Prokura oder i. V. beziehungsweise i. A. bei Handlungsvollmacht."
+          {
+            "frage": "Ist „1. September 2026“ oder „01. September 2026“ richtig?",
+            "antwort": "„1. September 2026“. In der alphanumerischen Schreibweise steht keine führende Null vor dem Tag.",
+            "id": "f2-f1"
+          },
+          {
+            "frage": "Wie schreibst du die Uhrzeit neun Uhr fünfzehn normgerecht?",
+            "antwort": "09:15 Uhr. Stunden und Minuten werden zweistellig mit Doppelpunkt geschrieben.",
+            "id": "f2-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "f3",
+        "darstellung": "vollfassung",
+        "ziel": "Du gestaltest einen Geschäftsbrief nach den Vorgaben des Corporate Designs und schreibst einen einfachen englischen Kundenkontakt adressatengerecht und eindeutig.",
+        "vorwissen_kurz": "Ein Unternehmen tritt nach außen einheitlich auf. Briefe, E-Mails und Angebote sollen sofort als seine erkennbar sein.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Aussehen und Sprache",
+            "id": "f3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die DIN 5008 sagt, wo Anschrift, Betreff und Gruß stehen. Wie der Brief aussieht, legt das **Corporate Design** fest: Logo und seine Position, Hausfarben, Hausschrift, Abstände, die Vorlage für Briefe und E-Mail-Signaturen. Mitarbeitende verändern die Vorlage nicht, sondern füllen sie aus. So wirkt jedes Schreiben gleich, egal wer es verfasst. Schreibt MAKEL an Kunden im Ausland, wechselt die Sprache, aber das Erscheinungsbild bleibt.",
+            "id": "f3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Antwort an einen niederländischen Händler",
+            "id": "f3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Händler aus Amsterdam fragt auf Englisch nach Lieferzeiten für 60 Hoodies. Lea antwortet in der englischen Briefvorlage von MAKEL.",
+            "id": "f3-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "„Dear Ms Janssen,",
+            "id": "f3-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Thank you for your enquiry of 2 November 2026.",
+            "id": "f3-p4"
+          },
+          {
+            "typ": "absatz",
+            "text": "We are pleased to offer 60 hoodies, model Kyoto, in the colours and sizes listed in the attached quotation. Delivery can be made within three weeks of receipt of your order. Prices are quoted net, DAP Amsterdam (Incoterms 2020). The quotation is valid until 20 November 2026.",
+            "id": "f3-p5"
+          },
+          {
+            "typ": "absatz",
+            "text": "If you have any questions, please do not hesitate to contact me.",
+            "id": "f3-p6"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kind regards",
+            "id": "f3-p7"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea Wagner MAKEL Studio GmbH“",
+            "id": "f3-p8"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "f3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea schreibt kurze Sätze und vermeidet Redewendungen, die nur Muttersprachler verstehen. Daten schreibt sie aus, damit „11/12“ nicht als 11. Dezember oder 12. November gelesen werden kann. Preise, Lieferbedingung und Gültigkeit stehen genauso klar wie in einem deutschen Angebot. Die Gestaltung — Logo, Schrift, Fußzeile mit Registerangaben — übernimmt die englische Vorlage.",
+            "id": "f3-p9"
+          }
         ],
-        "pruefungsbezug": "Korrigiere Briefe systematisch: Betreff, Anrede, Textbeginn, Gruß, Datum, Zahlen, Prozentzeichen und Zeichnung. Nutze die Normregeln statt persönlicher Gestaltungsvorlieben.",
-        "merksatz": "Betreff ohne Punkt, Anrede mit Komma, Gruß ohne Komma — die drei schnellen DIN-5008-Punkte."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Britisches und amerikanisches Englisch",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im britischen Englisch steht das Datum als „2 November 2026“, im amerikanischen meist als „November 2, 2026“. Auch die Schreibung unterscheidet sich, etwa „colour“ und „color“. Wichtiger als die Variante ist, innerhalb eines Schreibens einheitlich zu bleiben. Viele europäische Unternehmen verwenden britisches Englisch.",
+                "id": "f3-d1-p1"
+              }
+            ],
+            "id": "f3-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Darf Lea für einen besonders wichtigen Kunden eine andere Schrift und Farbe wählen, damit der Brief auffällt?",
+            "antwort": "Nein. Das Corporate Design gilt für alle Schreiben, damit das Unternehmen einheitlich auftritt. Auffallen soll der Inhalt, nicht eine abweichende Gestaltung.",
+            "id": "f3-f1"
+          },
+          {
+            "frage": "Warum schreibt Lea „2 November 2026“ statt „02/11/2026“?",
+            "antwort": "Zahlenformate werden international unterschiedlich gelesen: In den USA steht der Monat vorn. Das ausgeschriebene Datum ist eindeutig.",
+            "id": "f3-f2"
+          }
+        ]
       }
     ]
   },
@@ -59,6 +390,10 @@
       "id": "lz2",
       "text": "Schreibregeln für Datum, Zahlen und Anschriften anwenden",
       "abschnitt": "f2"
+    },
+    {
+      "abschnitt": "f3",
+      "text": "Einen Brief im Corporate Design gestalten und einen einfachen englischen Kundenkontakt adressatengerecht schreiben"
     }
   ],
   "bloecke": [
@@ -240,7 +575,7 @@
                 "0211 12345-67",
                 "0211 / 12 34 5 - 67"
               ],
-              "detail": "**Gegliedert wird von rechts nach links in Zweiergruppen — außer bei Durchwahlen.** Die Durchwahl wird mit Bindestrich angehängt. Klammern und Schrägstriche sind nicht mehr vorgesehen."
+              "detail": "**Vorwahl und Rufnummer trennt ein Leerzeichen; die Rufnummer selbst wird nicht mehr in Zweiergruppen gegliedert.** Die Durchwahl wird mit Bindestrich angehängt. Klammern und Schrägstriche sind nicht vorgesehen."
             },
             {
               "zellen": [
@@ -325,6 +660,61 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "f3",
+      "titel": "Corporate Design und Englisch im Brief",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die Norm regelt, wo etwas steht. Das **Corporate Design** regelt, wie der Brief nach dem Unternehmen aussieht: Logo, Farben, Schrift, Vorlage. ==Beides zusammen macht einen Brief wiedererkennbar und professionell.== Schreibt der Betrieb an ausländische Kunden, kommen Sprache und Gepflogenheiten des Empfängers dazu."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Element",
+            "Deutscher Brief",
+            "Englischer Geschäftsbrief"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Anrede, Name bekannt",
+                "Sehr geehrte Frau Janssen,",
+                "Dear Ms Janssen,"
+              ]
+            },
+            {
+              "zellen": [
+                "Anrede, Name unbekannt",
+                "Sehr geehrte Damen und Herren,",
+                "Dear Sir or Madam,"
+              ]
+            },
+            {
+              "zellen": [
+                "Gruß",
+                "Mit freundlichen Grüßen",
+                "Kind regards (oder Yours sincerely)"
+              ],
+              "detail": "**Im britischen Englisch** passt zu einer Anrede mit Namen klassisch „Yours sincerely“, zu „Dear Sir or Madam“ „Yours faithfully“. In E-Mails ist „Kind regards“ heute üblich und neutral."
+            },
+            {
+              "zellen": [
+                "Datum",
+                "25.11.2026",
+                "25 November 2026 (britisch) — Zahlenformate wie 11/25/2026 vermeiden, weil sie missverständlich sind"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Die Norm bestimmt den Aufbau, das Corporate Design das Aussehen, der Empfänger die Sprache.** Bei englischen Briefen auf eindeutige Datumsformate und passende Anrede- und Grußformeln achten.",
+          "karteikarte": "Was regelt das Corporate Design im Geschäftsbrief, und worauf achtest du bei einem englischen Geschäftsbrief?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -334,7 +724,8 @@
     "Betreff ohne Punkt, Grußformel ohne Komma, nach der Anrede ein Komma und Kleinschreibung.",
     "Unterschrift zeigt die Vertretungsmacht: ppa. bei Prokura, i. V. oder i. A. bei Handlungsvollmacht.",
     "Datum als 01.09.2026 oder 2026-09-01, Prozentzeichen mit Leerzeichen davor.",
-    "Kaufleute müssen im Geschäftsbrief Rechtsform, Sitz und Registerangaben nennen."
+    "Kaufleute müssen im Geschäftsbrief Rechtsform, Sitz und Registerangaben nennen.",
+    "Corporate Design bestimmt das Aussehen des Briefs; englische Briefe brauchen passende Anrede, Gruß und eindeutige Datumsformate."
   ],
   "selbsttest": [
     {

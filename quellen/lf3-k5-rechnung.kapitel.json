@@ -6,46 +6,297 @@
   "untertitel": "Die Ware ist raus — jetzt muss das Geld kommen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "e1",
-        "vorauswissen": [
-          "Die Lieferung erfüllt die Hauptpflicht aus dem Kaufvertrag.",
-          "Lieferschein, Empfangsbestätigung und Frachtbrief dokumentieren unterschiedliche Beziehungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Lieferpapiere ihrer Funktion zu, gleichst Lieferschein und Bestellung ab und gehst richtig mit einer Teillieferung um.",
+        "vorwissen_kurz": "Mit der Lieferung erfüllt der Verkäufer seine Pflicht aus dem Kaufvertrag. Der Käufer prüft, ob die richtige Ware in der richtigen Menge angekommen ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Papiere, die die Ware begleiten",
+            "id": "e1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wenn MAKEL Ware verschickt, gehen mehrere Papiere mit oder hinterher. Jedes hat eine eigene Aufgabe und einen eigenen Empfänger. Der {{begriff:lieferschein|Lieferschein}} zeigt dem Kunden, was in der Sendung sein soll. Der Frachtbrief ist der Auftrag an das Transportunternehmen. Die Empfangsbestätigung beweist, dass die Ware angekommen ist. Die Rechnung fordert die Zahlung.",
+            "id": "e1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "e1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Versand an den Sportverein",
+            "id": "e1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Datum",
+              "Papier",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Erste Sendung",
+                  "23.11.",
+                  "Lieferschein Nr. 2026-1184",
+                  "296 Hoodies, Größen laut Liste; Vermerk: „4 Stück Größe XL folgen“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Übergabe an den Paketdienst",
+                  "23.11.",
+                  "Versandauftrag mit Sendungsnummern",
+                  "8 Kartons an die Vereinsadresse"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zustellung",
+                  "24.11.",
+                  "Empfangsbestätigung des Vereins",
+                  "8 Kartons, äußerlich unbeschädigt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachlieferung",
+                  "25.11.",
+                  "Lieferschein Nr. 2026-1191",
+                  "4 Hoodies Größe XL"
+                ]
+              }
+            ],
+            "fazit": "Die Teillieferung ist auf dem Lieferschein offen vermerkt. Der Verein weiß sofort, dass die fehlenden vier Stück nicht vergessen, sondern unterwegs sind.",
+            "id": "e1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "e1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Teillieferungen sind nur zulässig, wenn sie vereinbart sind oder der Kunde zustimmt. Lea hat das mit dem Verein am Telefon geklärt und per E-Mail bestätigt. Erst nach der Nachlieferung erstellt die Buchhaltung die Rechnung über 300 Stück — so stimmen Lieferung und Rechnung überein.",
+            "id": "e1-p2"
+          }
         ],
-        "erklaerung": "Der Lieferschein weist den Inhalt der Sendung nach und enthält keine Preise. Die Empfangsbestätigung quittiert den Erhalt. Der Frachtbrief regelt das Verhältnis zwischen Absender und Frachtführer. Die Rechnung fordert die Zahlung. Lieferung und Rechnung gehören daher zum selben Prozess, erfüllen aber verschiedene Informations- und Nachweisfunktionen.",
-        "beispiele": [
-          "Die Warenannahme vergleicht Artikel und Menge mit dem Lieferschein und bestätigt den Empfang; Preise werden in der Rechnung geprüft.",
-          "Der Frachtführer arbeitet mit dem Frachtbrief, während der Käufer mit dem Lieferschein den Lieferumfang kontrolliert."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Prüfung beim Empfänger",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Kunde prüft bei Anlieferung die Sendung äußerlich, etwa auf beschädigte Kartons, und vermerkt Schäden auf der Empfangsbestätigung. Danach gleicht er den Inhalt mit dem Lieferschein und seiner Bestellung ab. Unter Kaufleuten muss er offene Mängel unverzüglich rügen, sonst verliert er seine Rechte; das vertieft Lernfeld 4.",
+                "id": "e1-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k6-b1"
+                ],
+                "text": "Wareneingang und Mängelrüge",
+                "id": "e1-d1-v1"
+              }
+            ],
+            "id": "e1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Kunde meldet, dass drei Kartons angekommen sind, aber im Lieferschein vier stehen. Der Lieferschein ist der passende Beleg für die Mengenprüfung. Die Empfangsbestätigung zeigt, was quittiert wurde; der Frachtbrief wird nur für das Verhältnis zum Transporteur herangezogen. Die Rechnung wird erst danach auf die geschuldete Zahlung geprüft.",
-        "typische_fehler": "Der Lieferschein wird als Rechnung ohne Preis verstanden oder der Frachtbrief als Beleg des Kaufvertrags. Außerdem wird die Lieferung mit dem Eigentumsübergang gleichgesetzt, obwohl ein Eigentumsvorbehalt vereinbart sein kann.",
         "verstaendnisfragen": [
-          "Warum stehen auf dem Lieferschein keine Preise? Er soll den Sendungsinhalt nachweisen und wird von mehreren Stellen gesehen.",
-          "Wem ordnest du den Frachtbrief zu? Dem Verhältnis zwischen Absender und Frachtführer."
-        ],
-        "pruefungsbezug": "Ordne in Belegaufgaben immer Zweck und Beteiligte zu. Bei Eigentumsvorbehalt zusätzlich prüfen, ob die Ware trotz Lieferung noch dem Verkäufer gehört.",
-        "merksatz": "Lieferschein prüft Inhalt, Empfangsbestätigung den Erhalt, Frachtbrief den Transport und Rechnung die Zahlung."
+          {
+            "frage": "Warum stellt die Buchhaltung die Rechnung erst nach der Nachlieferung aus?",
+            "antwort": "Abgerechnet wird, was geliefert wurde. Mit einer Rechnung über 300 Stück am 23.11. hätte MAKEL vier noch nicht gelieferte Hoodies berechnet. Alternativ wären zwei Rechnungen über 296 und 4 Stück möglich gewesen.",
+            "id": "e1-f1"
+          },
+          {
+            "frage": "Was unterscheidet Frachtbrief und Lieferschein?",
+            "antwort": "Der Frachtbrief regelt den Transport zwischen Absender und Frachtführer. Der Lieferschein richtet sich an den Käufer und zeigt den Inhalt der Sendung.",
+            "id": "e1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "e2",
-        "vorauswissen": [
-          "Eine Rechnung belegt die Leistung und ermöglicht dem Empfänger den Vorsteuerabzug.",
-          "Pflichtangaben müssen vollständig und nachvollziehbar sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst eine Rechnung auf alle Pflichtangaben, rechnest Rabatt, Umsatzsteuer und Skonto nach und berichtigst eine fehlerhafte Rechnung korrekt.",
+        "vorwissen_kurz": "Unternehmen, die Vorsteuer abziehen wollen, brauchen eine ordnungsgemäße Rechnung ihres Lieferanten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehr als eine Zahlungsaufforderung",
+            "id": "e2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Kunden ist die {{begriff:rechnung|Rechnung}} zugleich ein Steuerbeleg. Nur mit allen Pflichtangaben nach {{par:ustg-14|§ 14 UStG}} kann ein Unternehmen die Umsatzsteuer als Vorsteuer vom Finanzamt zurückholen. Fehlt eine Angabe, ist die Rechnung zu berichtigen. Zwischen Unternehmen im Inland gilt zudem: Rechnungen werden schrittweise als E-Rechnung in einem strukturierten Datenformat ausgetauscht; empfangen können müssen sie alle Unternehmen seit 2025.",
+            "id": "e2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "e2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rechnung an den Sportverein",
+            "id": "e2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "300 Hoodies „Kyoto“ mit Vereinslogo à 53,21 €",
+                  "300 × 53,21 €",
+                  "15.963,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "− 10 % Vereinsrabatt",
+                  "15.963,00 € × 10 %",
+                  "1.596,30 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Nettobetrag",
+                  "",
+                  "14.366,70 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ 19 % Umsatzsteuer",
+                  "14.366,70 € × 19 %",
+                  "2.729,67 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Rechnungsbetrag",
+                  "",
+                  "17.096,37 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "bei Zahlung bis 3.12.: 2 % Skonto",
+                  "17.096,37 € × 2 %",
+                  "−341,93 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zahlbetrag mit Skonto",
+                  "",
+                  "16.754,44 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Ohne Skonto ist der Rechnungsbetrag bis zum 9.12. fällig (14 Tage nach dem Rechnungsdatum 25.11.). Mit Skonto spart der Verein 341,93 €.",
+            "id": "e2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Weitere Pflichtangaben auf der Rechnung: vollständige Namen und Anschriften von MAKEL und Verein, Steuernummer oder USt-IdNr. von MAKEL, Rechnungsdatum 25.11.2026, fortlaufende Rechnungsnummer, Liefertage 23. und 25.11.2026 — und der Hinweis auf die vereinbarte Skontoregel.",
+            "id": "e2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "e2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "e2-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn ein Fehler auffällt",
+            "id": "e2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Verein meldet: Auf der Rechnung steht eine falsche Hausnummer. Eine Rechnung wird nicht einfach durchgestrichen oder überschrieben. MAKEL berichtigt sie mit einem Dokument, das eindeutig auf die ursprüngliche Rechnung verweist und die fehlende oder falsche Angabe richtigstellt; bei falschen Beträgen wird die alte Rechnung storniert und eine neue mit neuer Nummer ausgestellt. Beide Belege werden aufbewahrt.",
+            "id": "e2-p3"
+          }
         ],
-        "erklaerung": "§ 14 UStG verlangt unter anderem vollständige Namen und Anschriften, Steuernummer oder Umsatzsteuer-Identifikationsnummer, Ausstellungsdatum, fortlaufende Rechnungsnummer, Menge und handelsübliche Bezeichnung, Lieferzeitpunkt sowie Entgelt, Steuersatz und Steuerbetrag. Bei kleinen Beträgen genügt eine Kleinbetragsrechnung mit weniger Angaben. Fehlt eine Pflichtangabe, ist die Rechnung nicht ordnungsgemäß und der Vorsteuerabzug des Empfängers kann gefährdet sein.",
-        "beispiele": [
-          "Fehlt auf einer Rechnung der Lieferzeitpunkt, wird eine berichtigte Rechnung mit eindeutiger Bezugnahme auf die ursprüngliche Rechnung erstellt.",
-          "Eine Rechnungsnummer wird einmalig und fortlaufend vergeben; die Bezeichnung ‚Diverses‘ reicht als handelsübliche Leistungsbeschreibung nicht aus."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kleinbetragsrechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Rechnungen bis 250 € brutto genügen weniger Angaben: Name und Anschrift des leistenden Unternehmers, Ausstellungsdatum, Menge und Art der Leistung sowie Entgelt und Steuerbetrag in einer Summe mit dem Steuersatz. Typisch sind Kassenbons im MAKEL-Laden.",
+                "id": "e2-d1-p1"
+              }
+            ],
+            "id": "e2-d1"
+          }
         ],
-        "fallbeispiel": "Bei der Rechnungsprüfung fehlt der Lieferzeitpunkt. Die Angabe gehört zu den Pflichtangaben nach § 14 UStG. Deshalb wird eine berichtigte Rechnung erstellt, die eindeutig auf die ursprüngliche Rechnung Bezug nimmt. Stimmen Liefer- und Rechnungsdatum überein, kann ein entsprechender Hinweis den Zeitpunkt belegen; die übrigen Pflichtangaben werden ebenfalls kontrolliert.",
-        "typische_fehler": "Nur Name, Datum und Betrag werden geprüft. Häufig fehlen Lieferzeitpunkt, fortlaufende Nummer oder die handelsübliche Bezeichnung. Kleinbetragsregel und vollständige Rechnung werden außerdem verwechselt.",
         "verstaendnisfragen": [
-          "Welche Angabe fehlt besonders häufig? Der Zeitpunkt der Lieferung oder Leistung.",
-          "Was ist die Folge einer fehlenden Pflichtangabe? Die Rechnung ist nicht ordnungsgemäß; der Empfänger kann den Vorsteuerabzug verlieren, bis berichtigt wird."
+          {
+            "frage": "Warum wird der Skonto vom Bruttobetrag berechnet?",
+            "antwort": "Der Kunde zahlt den Rechnungsbetrag einschließlich Umsatzsteuer und zieht den Skonto davon ab. Für MAKEL mindert sich dadurch nachträglich auch die Umsatzsteuer; das wird in der Buchführung berichtigt.",
+            "id": "e2-f1"
+          },
+          {
+            "frage": "Eine Rechnung enthält „Lieferung von Ware“ als Leistungsbeschreibung. Ist sie ordnungsgemäß?",
+            "antwort": "Nein. Die Leistung muss handelsüblich bezeichnet sein, sodass sie eindeutig erkennbar ist, etwa „300 Hoodies Modell Kyoto, Dunkelblau, mit Logo“. Eine Sammelbezeichnung wie „Ware“ reicht nicht.",
+            "id": "e2-f2"
+          }
         ],
-        "pruefungsbezug": "Prüfe in der Reihenfolge Anschriften, Steuerangabe, Datum, Nummer, Leistung, Lieferzeitpunkt, Entgelt und Steuer. Danach klären, ob die Kleinbetragsrechnung anwendbar ist.",
-        "merksatz": "Eine Rechnung ist erst prüffähig, wenn Leistung, Beteiligte, Zeit, Nummer und Steuer vollständig erkennbar sind."
+        "quellen": [
+          {
+            "titel": "Umsatzsteuergesetz, § 14",
+            "url": "https://www.gesetze-im-internet.de/ustg_1980/__14.html",
+            "bezug": "Pflichtangaben, E-Rechnung"
+          },
+          {
+            "titel": "Umsatzsteuer-Durchführungsverordnung, § 33",
+            "url": "https://www.gesetze-im-internet.de/ustdv_1980/__33.html",
+            "bezug": "Kleinbetragsrechnung"
+          }
+        ]
       }
     ]
   },

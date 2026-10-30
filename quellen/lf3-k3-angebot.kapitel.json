@@ -6,66 +6,500 @@
   "untertitel": "Was drinstehen muss — und wie du dich aus der Bindung nimmst.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "c1",
-        "vorauswissen": [
-          "Eine Anfrage erkundet Waren, Mengen oder Konditionen.",
-          "Nicht jede Anfrage enthält schon einen verbindlichen Kaufwillen."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest allgemeine und bestimmte Anfragen, erkennst, welche Angaben für ein Angebot fehlen, und beantwortest eine Anfrage vollständig und zügig.",
+        "vorwissen_kurz": "Eine Anfrage ist rechtlich unverbindlich. Für den Vertrieb ist sie trotzdem der wichtigste Moment.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was der Kunde wissen will",
+            "id": "c1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit einer {{begriff:anfrage|Anfrage}} bittet ein Kunde um Informationen oder um ein Angebot. Sie verpflichtet weder ihn noch den Betrieb. Aber sie zeigt Interesse, und wer schnell und genau antwortet, hat einen Vorsprung vor der Konkurrenz. Wie die Antwort aussieht, hängt davon ab, wie konkret die Anfrage ist.",
+            "id": "c1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Anfragen an MAKEL",
+            "id": "c1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Anfrage",
+              "Art",
+              "Fehlende Angaben",
+              "Antwort"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„Was haben Sie an Hoodies im Sortiment, und was kosten die ungefähr?“ — Modeboutique",
+                  "allgemein",
+                  "—",
+                  "Katalog und Händlerpreisliste mit freundlichem Angebot zur Beratung"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Wir brauchen Hoodies mit Logo für unseren Verein, bis Ende November.“ — Sportverein",
+                  "bestimmt, aber unvollständig",
+                  "Menge, Größen, Logo-Datei, Farbe",
+                  "Rückfrage mit Checkliste, danach individuelles Angebot"
+                ]
+              }
+            ],
+            "fazit": "Eine bestimmte Anfrage ist nicht automatisch vollständig. Eine kurze Rückfrage mit klaren Punkten spart später Änderungen am Angebot.",
+            "id": "c1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "c1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea antwortet dem Verein am selben Tag: „Vielen Dank für Ihre Anfrage. Damit wir Ihnen ein genaues Angebot machen können, benötigen wir: Anzahl und Größenverteilung, gewünschte Farbe, Ihr Logo als Vektordatei sowie Ihre Lieferadresse. Sobald uns die Angaben vorliegen, erhalten Sie Ihr Angebot innerhalb von zwei Arbeitstagen.“ So weiß der Verein, was zu tun ist, und wann er mit einer Antwort rechnen kann.",
+            "id": "c1-p2"
+          }
         ],
-        "erklaerung": "Die allgemeine Anfrage bittet um einen Überblick, etwa durch Katalog oder Preisliste. Die bestimmte Anfrage nennt konkrete Ware, Menge und Termin und führt typischerweise zu einem individuellen Angebot. Katalog, Prospekt und Schaufenster sind keine Angebote im Rechtssinn, sondern Aufforderungen, selbst ein Angebot abzugeben.",
-        "beispiele": [
-          "‚Bitte senden Sie uns Ihren Katalog‘ ist eine allgemeine Anfrage; die passende Antwort sind Katalog, Preisliste oder Prospekt.",
-          "‚Wir benötigen 200 Ordner bis zum 15. September‘ ist eine bestimmte Anfrage; daraus wird ein individuelles Angebot erstellt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Anfrage per Telefon oder Messe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch mündliche Anfragen werden festgehalten: Name, Kontakt, Wunsch, Menge, Termin, Datum der Anfrage. Eine kurze Gesprächsnotiz im System verhindert, dass die Anfrage verloren geht, wenn jemand anderes das Angebot schreibt.",
+                "id": "c1-d1-p1"
+              }
+            ],
+            "id": "c1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Kundin bittet telefonisch um ein Angebot über 200 Ordner und sagt am nächsten Tag ab. Die Anfrage war rechtlich unverbindlich und hat keinen Kaufvertrag begründet. Dass der Betrieb bereits Arbeit in die Angebotserstellung gesteckt hat, ändert die Einordnung nicht.",
-        "typische_fehler": "Ein Katalog wird als bindendes Angebot behandelt oder eine allgemeine Anfrage mit einer Bestellung gleichgesetzt. Entscheidend ist, ob bereits eine bestimmte, rechtlich bindende Erklärung vorliegt.",
         "verstaendnisfragen": [
-          "Was unterscheidet allgemeine und bestimmte Anfrage? Die bestimmte Anfrage nennt konkrete Ware, Menge und Termin; die allgemeine bittet nur um Überblick.",
-          "Warum ist ein Katalog kein Angebot? Weil er zur Abgabe eines eigenen Angebots auffordert und den Anbieter nicht an jeden gedruckten Preis bindet."
-        ],
-        "pruefungsbezug": "Markiere konkrete Angaben zu Ware, Menge und Termin. Fehlen sie, spricht das für eine allgemeine Anfrage; vorhanden sind sie, folgt meist ein individuelles Angebot.",
-        "merksatz": "Die Anfrage eröffnet den Verkauf, bindet aber noch niemanden."
+          {
+            "frage": "Ist der Händlerkatalog von MAKEL ein Angebot?",
+            "antwort": "Nein. Er richtet sich an viele Empfänger und ist eine Aufforderung, selbst ein Angebot abzugeben. Sonst müsste MAKEL an jeden liefern, der bestellt, auch wenn die Ware ausverkauft ist.",
+            "id": "c1-f1"
+          },
+          {
+            "frage": "Warum nennt Lea in der Rückfrage einen Zeitraum für das Angebot?",
+            "antwort": "Der Verein kann planen und weiß, wann er nachfragen sollte. Eine konkrete Zusage wirkt verlässlich und hebt MAKEL von Anbietern ab, die unbestimmt „bald“ antworten.",
+            "id": "c1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "c2",
-        "vorauswissen": [
-          "Ein Angebot muss so bestimmt sein, dass ein schlichtes Ja genügt.",
-          "Preis und Lieferumfang müssen für beide Seiten erkennbar sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust ein vollständiges Angebot mit allen Bestandteilen auf und prüfst, ob ein schlichtes Ja des Kunden zum Vertrag führen würde.",
+        "vorwissen_kurz": "Ein bindendes Angebot ist ein Antrag. Es muss alle wesentlichen Punkte so genau enthalten, dass der Kunde nur noch zustimmen muss.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Das Angebot an den Sportverein",
+            "id": "c2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach der Rückfrage hat der Verein alles geliefert: 300 Hoodies in Dunkelblau, Größen S bis XL, Logo als Datei. Lea schreibt das Angebot. Ein {{begriff:angebot|Angebot}} ist gut, wenn der Verein es mit „Ja, so bestellen wir“ annehmen kann, ohne nachfragen zu müssen.",
+            "id": "c2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Angaben im Angebot",
+            "id": "c2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestandteil",
+              "Im Angebot an den Verein"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Art und Güte",
+                  "Hoodie „Kyoto“, 80 % Bio-Baumwolle, 20 % recyceltes Polyester, 350 g/m², Dunkelblau, Logo gestickt (max. 10 × 10 cm)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Menge",
+                  "300 Stück, Größenverteilung laut Ihrer Liste vom 3.11."
+                ]
+              },
+              {
+                "zellen": [
+                  "Preis",
+                  "53,21 € je Stück netto, abzüglich 10 % Vereinsrabatt; zuzüglich 19 % Umsatzsteuer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferbedingung",
+                  "Lieferung frei Haus an die Vereinsadresse"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlungsbedingung",
+                  "14 Tage netto, 2 % Skonto bei Zahlung innerhalb von 8 Tagen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Liefertermin",
+                  "23.11.2026 bei Bestellung bis 9.11.2026"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bindungsfrist",
+                  "gültig bis 13.11.2026"
+                ]
+              },
+              {
+                "zellen": [
+                  "Weiteres",
+                  "Es gelten unsere AGB (Anlage)"
+                ]
+              }
+            ],
+            "fazit": "Jede Zeile beantwortet eine Frage, die der Verein sonst stellen müsste. Die Kopplung von Liefertermin und Bestelldatum schützt MAKEL, falls der Verein spät bestellt.",
+            "id": "c2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "c2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor Lea das Angebot abschickt, prüft sie: Ist die Ware lieferbar, und hält die Stickerei den Termin? Stimmt der Preis mit der Kalkulation überein? Darf sie 10 % Rabatt selbst gewähren, oder braucht es eine Freigabe? Ein bindendes Angebot lässt sich nach Zugang nicht einfach zurücknehmen.",
+            "id": "c2-p2"
+          }
         ],
-        "erklaerung": "Ein vollständiges Angebot enthält Art und Güte der Ware, Menge, Preis einschließlich Rabatten und Umsatzsteuer, Liefer- und Zahlungsbedingungen, Liefertermin und Bindungsfrist. Erfüllungsort und Gerichtsstand können über AGB geregelt sein. Fehlt eine wesentliche Angabe, ist eine Rückfrage nötig; die Erklärung ist nicht so bestimmt, dass ein einfaches Ja den Vertrag bilden kann.",
-        "beispiele": [
-          "Bei 200 Ordnern werden Bezeichnung, Menge, Preis, Liefertermin und Zahlungsbedingung ausdrücklich genannt.",
-          "Eine Bindungsfrist wie ‚gültig bis 31.08.‘ schafft Klarheit darüber, wie lange der Kunde annehmen kann."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Preise netto oder brutto",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gegenüber Unternehmen werden Preise meist netto angegeben, weil diese die Umsatzsteuer als Vorsteuer zurückerhalten. Gegenüber Verbrauchern, etwa im Onlineshop, müssen Gesamtpreise einschließlich Umsatzsteuer angegeben werden. Ein Sportverein ist oft nicht vorsteuerabzugsberechtigt; deshalb nennt Lea zusätzlich den Bruttobetrag.",
+                "id": "c2-d1-p1"
+              }
+            ],
+            "id": "c2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Angebot nennt Ware und Menge, lässt aber den Liefertermin und die Bindungsfrist offen. Vor der Annahme wird die Angebotsvorlage ergänzt. So sind die Konditionen bestimmt und der Betrieb weiß, wie lange die Bindung läuft. Die Bindungsfrist verhindert, dass die Antwortzeit allein aus den Umständen ausgelegt werden muss.",
-        "typische_fehler": "Rabatte werden einfach zum Preis addiert oder der Liefertermin nicht genannt. Häufig fehlt außerdem die Bindungsfrist, obwohl der Betrieb die Dauer der Bindung steuern möchte.",
         "verstaendnisfragen": [
-          "Welche Angaben müssen mindestens geprüft werden? Art und Güte, Menge, Preis, Liefer- und Zahlungsbedingungen, Termin und Bindungsfrist.",
-          "Warum ist eine Bindungsfrist praktisch wichtig? Sie legt fest, bis wann der Kunde das Angebot annehmen kann."
-        ],
-        "pruefungsbezug": "Nutze bei Fehlersuchen eine Checkliste und prüfe besonders Preisbestandteile, Termin und Frist. Begründe jede fehlende Angabe mit ihrer rechtlichen oder organisatorischen Funktion.",
-        "merksatz": "Ein Angebot muss so vollständig sein, dass ein Ja ohne Rückfrage möglich ist."
+          {
+            "frage": "Warum steht beim Liefertermin „bei Bestellung bis 9.11.“?",
+            "antwort": "Die Fertigung braucht eine bestimmte Zeit. Bestellt der Verein später, kann MAKEL den 23.11. nicht mehr halten. Ohne die Kopplung wäre MAKEL auch bei später Bestellung an den Termin gebunden.",
+            "id": "c2-f1"
+          },
+          {
+            "frage": "Was passiert, wenn im Angebot die Menge fehlt?",
+            "antwort": "Ein schlichtes Ja reicht dann nicht für einen Vertrag, weil ein wesentlicher Punkt offen ist. Der Kunde müsste nachfragen oder selbst eine Menge nennen — dann wäre seine Bestellung ein neuer Antrag.",
+            "id": "c2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "c3",
-        "vorauswissen": [
-          "Ein Antragender ist nach § 145 BGB grundsätzlich gebunden.",
-          "Die Bindung kann durch eine Freizeichnung eingeschränkt werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst, ob und wie lange ein Angebot bindet, setzt Freizeichnungsklauseln gezielt ein und unterscheidest verlangte und unverlangte Angebote nach Bindung und Kontaktregeln.",
+        "vorwissen_kurz": "Ein Angebot ohne Einschränkung bindet den Anbietenden, bis es abgelehnt wird oder die Annahmefrist abläuft.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Bindung als Regel",
+            "id": "c3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer ein Angebot macht, ist daran gebunden ({{par:bgb-145|§ 145 BGB}}). Die Bindung endet, wenn der Kunde ablehnt, wenn eine genannte Frist abläuft oder — ohne Frist — wenn die Zeit verstrichen ist, in der man mit einer Antwort rechnen durfte. Will ein Betrieb die Bindung vermeiden oder einschränken, braucht er eine {{begriff:freizeichnungsklausel|Freizeichnungsklausel}}.",
+            "id": "c3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "c3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Formulierungen, drei Wirkungen",
+            "id": "c3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Formulierung",
+              "Wirkung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„Angebot gültig bis 13.11.2026“",
+                  "bindend bis zum genannten Tag"
+                ]
+              },
+              {
+                "zellen": [
+                  "„freibleibend“",
+                  "keine Bindung; die Bestellung des Kunden wird zum Antrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Preis freibleibend“",
+                  "Ware und Menge binden, der Preis kann bis zur Lieferung angepasst werden"
+                ]
+              },
+              {
+                "zellen": [
+                  "„solange der Vorrat reicht“",
+                  "bindend, aber nur für die noch vorhandene Menge"
+                ]
+              }
+            ],
+            "fazit": "Eine vollständige Freizeichnung nimmt die Bindung ganz, eine teilweise nur in einem Punkt. Welche passt, hängt davon ab, was MAKEL nicht garantieren kann.",
+            "id": "c3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "c3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Verlangt oder unverlangt",
+            "id": "c3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein **verlangtes Angebot** antwortet auf eine Anfrage. Ein **unverlangtes Angebot** schickt der Betrieb von sich aus, etwa an einen früheren Kunden. Rechtlich entscheidet nicht, ob das Angebot verlangt war, sondern wie es formuliert ist: Ein unverlangtes, individuell adressiertes Angebot mit Ware, Menge und Preis bindet genauso wie ein verlangtes. Unverbindlich wird es nur durch eine Freizeichnung.",
+            "id": "c3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Verlangtes Angebot",
+              "Unverlangtes Angebot"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anlass",
+                  "Anfrage des Kunden",
+                  "Initiative des Betriebs"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bindung",
+                  "bindend, außer mit Freizeichnung",
+                  "bindend, außer mit Freizeichnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kontaktweg",
+                  "wie vom Kunden gewünscht",
+                  "Brief meist zulässig; Werbe-E-Mail und Anruf nur in engen Grenzen"
+                ]
+              }
+            ],
+            "fazit": "„Unverlangt“ heißt nicht „unverbindlich“. Unterschiede gibt es vor allem beim erlaubten Kontaktweg.",
+            "id": "c3-t2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für unverlangte Angebote gelten Regeln gegen unzumutbare Belästigung: Werbung per E-Mail braucht grundsätzlich eine vorherige Einwilligung — auch gegenüber Unternehmen —, außer bei eigenen Bestandskunden für ähnliche Produkte unter bestimmten Voraussetzungen. Werbeanrufe bei Verbrauchern brauchen eine ausdrückliche Einwilligung, bei Unternehmen zumindest eine mutmaßliche. Ein Brief ist meist zulässig, solange der Empfänger nicht widersprochen hat.",
+            "id": "c3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "c3-b3"
+          }
         ],
-        "erklaerung": "Ohne Zusatz ist ein Angebot grundsätzlich bindend. Formulierungen wie ‚freibleibend‘ oder ‚solange der Vorrat reicht‘ schließen die Bindung aus. Beim freibleibenden Angebot wird die Bestellung des Kunden zum Antrag; der Vertrag entsteht erst durch die Annahme des Verkäufers. Eine eindeutige Reaktion bleibt wichtig, weil unter Kaufleuten § 362 HGB eine besondere Bedeutung des Schweigens haben kann.",
-        "beispiele": [
-          "Ein bindendes Angebot ohne eigene Frist kann nach § 147 BGB nur so lange angenommen werden, wie unter regelmäßigen Umständen mit einer Antwort zu rechnen ist.",
-          "Bei ‚freibleibend‘ ist der Kunde nach seiner Bestellung gebunden, während der Verkäufer erst mit seiner Annahme den Vertrag schließt."
-        ],
-        "fallbeispiel": "Ein bindendes Angebot wird per E-Mail versandt, der Kunde meldet sich erst nach drei Wochen. Eine eigene Frist fehlt, daher wird § 147 BGB geprüft. Bei einer E-Mail sind regelmäßig wenige Tage, nicht drei Wochen, zu erwarten. Die Bindung ist erloschen; die verspätete Bestellung ist ein neuer Antrag, den der Betrieb annehmen kann, aber nicht muss.",
-        "typische_fehler": "‚Freibleibend‘ wird als besonders verbindliches Angebot verstanden oder eine Bestellung automatisch als Vertrag behandelt. Außerdem wird eine verspätete Annahme nicht mit der regelmäßigen Antwortzeit verglichen.",
         "verstaendnisfragen": [
-          "Was bewirkt ‚freibleibend‘? Die Bindung des Anbieters wird ausgeschlossen; die Bestellung wird zum Antrag des Kunden.",
-          "Was gilt ohne eigene Bindungsfrist? Die regelmäßige Antwortzeit nach § 147 BGB."
+          {
+            "frage": "MAKEL schickt einem früheren Kunden unaufgefordert ein Angebot über 50 Hoodies zu 40 € je Stück, gültig bis Monatsende. Der Kunde bestellt. Ist ein Vertrag zustande gekommen?",
+            "antwort": "Ja. Das Angebot war individuell, bestimmt und ohne Freizeichnung, also ein bindender Antrag, auch wenn es unverlangt kam. Die rechtzeitige Bestellung ist die Annahme.",
+            "id": "c3-f1"
+          },
+          {
+            "frage": "Darf MAKEL einem Modehaus, mit dem es noch nie Kontakt hatte, ein Angebot per E-Mail schicken?",
+            "antwort": "Als Werbe-E-Mail ohne vorherige Einwilligung grundsätzlich nicht, auch nicht an ein Unternehmen. Ein Brief wäre in der Regel zulässig. Fragt das Modehaus von sich aus an, darf MAKEL natürlich per E-Mail antworten.",
+            "id": "c3-f2"
+          }
         ],
-        "pruefungsbezug": "Suche zuerst nach Freizeichnungszusätzen, dann nach einer eigenen Frist. Fehlt beides, prüfe die regelmäßige Antwortzeit und ordne eine verspätete Erklärung als neuen Antrag ein.",
-        "merksatz": "Ohne Freizeichnung bindet das Angebot; mit ‚freibleibend‘ bindet sich zunächst der bestellende Kunde."
+        "quellen": [
+          {
+            "titel": "Gesetz gegen den unlauteren Wettbewerb, § 7",
+            "url": "https://www.gesetze-im-internet.de/uwg_2004/__7.html",
+            "bezug": "unzumutbare Belästigung"
+          },
+          {
+            "titel": "Bürgerliches Gesetzbuch, §§ 145–150",
+            "url": "https://www.gesetze-im-internet.de/bgb/",
+            "bezug": "Antrag, Annahmefrist, verspätete und abändernde Annahme"
+          }
+        ]
+      },
+      {
+        "abschnitt": "c4",
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Mengen, Preise, Rabatte und Umsatzsteuer im Angebot mit Dreisatz und Prozentrechnung und benennst dabei gegeben, gesucht, Einheit und Grundwert.",
+        "vorwissen_kurz": "Prozentrechnung verbindet drei Größen: Grundwert, Prozentsatz und Prozentwert.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst ordnen, dann rechnen",
+            "id": "c4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die meisten Rechenfehler im Angebot entstehen nicht beim Rechnen, sondern davor: Es ist unklar, was gegeben ist, was gesucht wird und worauf sich ein Prozentsatz bezieht. Deshalb notiert Lea vor jeder Rechnung drei Dinge: gegeben, gesucht, Grundwert. Dazu die Einheit, damit Stück, Euro und Prozent nicht durcheinandergeraten.",
+            "id": "c4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Anfrage, vier Rechnungen",
+            "id": "c4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Händler kaufte bisher 80 Shirts für 600 € netto. Jetzt fragt er nach 120 Stück.",
+            "id": "c4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Gegeben",
+              "Gesucht",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1 Dreisatz",
+                  "80 Stück = 600 €",
+                  "Preis für 120 Stück",
+                  "600 € ÷ 80 = 7,50 € je Stück; × 120",
+                  "900,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "2 Rabatt",
+                  "900 € Grundwert, 10 %",
+                  "Rabattbetrag",
+                  "900 € × 10 ÷ 100",
+                  "90,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "3 Nettopreis",
+                  "900 € − 90 €",
+                  "Nettobetrag",
+                  "",
+                  "810,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "4 Umsatzsteuer",
+                  "810 € Grundwert, 19 %",
+                  "Bruttobetrag",
+                  "810 € × 119 ÷ 100",
+                  "963,90 €"
+                ]
+              }
+            ],
+            "fazit": "Der Dreisatz setzt voraus, dass der Stückpreis gleich bleibt. MAKEL nennt diese Annahme im Angebot ausdrücklich: „Bei gleichem Stückpreis wie bisher; ab 200 Stück gewähren wir zusätzlich 5 %.“",
+            "id": "c4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "c4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "c4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der häufigste Fehler betrifft den Grundwert. Will Lea aus einem Bruttobetrag die Steuer herausrechnen, ist der Grundwert der Nettobetrag, nicht der Bruttobetrag. Und gewährt ein Kunde 2 % Skonto, bezieht sich der Abzug auf den Rechnungsbetrag, auf den er zahlt — nicht auf den Listenpreis vor Rabatt.",
+            "id": "c4-p3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Wenn der Dreisatz nicht passt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei Mengenstaffeln gilt kein gerades Verhältnis. Kosten 1 bis 99 Stück 7,50 € und ab 100 Stück 7,00 €, kosten 120 Stück 840 € und nicht 900 €. Auch bei Fixbeträgen wie einer Versandpauschale von 15 € pro Lieferung versagt der Dreisatz: Doppelt so viele Stücke kosten nicht doppelt so viel Versand.",
+                "id": "c4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf10:k4-b2"
+                ],
+                "text": "Kalkulation vom Selbstkosten- zum Angebotspreis",
+                "id": "c4-d1-v1"
+              }
+            ],
+            "id": "c4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "150 Stück kosten bei gleichem Stückpreis 1.125 €. Was kosten 40 Stück?",
+            "antwort": "1.125 € ÷ 150 = 7,50 € je Stück; 7,50 € × 40 = 300 €.",
+            "id": "c4-f1"
+          },
+          {
+            "frage": "Ein Kunde erhält 54 € Rabatt auf 720 €. Wie viel Prozent sind das?",
+            "antwort": "54 € × 100 ÷ 720 € = 7,5 %.",
+            "id": "c4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +518,10 @@
       "id": "lz3",
       "text": "Bindung und Freizeichnung beurteilen",
       "abschnitt": "c3"
+    },
+    {
+      "abschnitt": "c4",
+      "text": "Dreisatz und Prozentrechnung im Angebot mit gegeben, gesucht, Einheit und Grundwert anwenden"
     }
   ],
   "bloecke": [
@@ -238,8 +676,8 @@
               "ton": "gruen",
               "punkte": [
                 {
-                  "text": "Zusatz wie freibleibend, unverbindlich, Preis freibleibend",
-                  "detail": "Auch „solange der Vorrat reicht“ oder „Zwischenverkauf vorbehalten“ wirken so. Der Zusatz muss deutlich sein, nicht im Kleingedruckten versteckt."
+                  "text": "Zusatz wie freibleibend, unverbindlich, ohne Obligo",
+                  "detail": "Zusätze wie „Preis freibleibend“ oder „solange der Vorrat reicht“ lockern die Bindung dagegen nur teilweise — beim Preis oder bei der Menge. Der Zusatz muss deutlich sein, nicht im Kleingedruckten versteckt."
                 },
                 {
                   "text": "Rechtlich kein Antrag",
@@ -296,12 +734,88 @@
               "loesung": "Nicht bindend"
             },
             {
-              "text": "Angebot mit dem Zusatz „solange der Vorrat reicht“",
+              "text": "Angebot mit dem Zusatz „freibleibend“",
               "loesung": "Nicht bindend"
             },
             {
               "text": "Schriftliches Angebot ohne weiteren Zusatz",
               "loesung": "Bindend"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "c4",
+      "titel": "Rechnen im Angebot",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Ein Angebot steckt voller kleiner Rechnungen: Wie viel kostet die größere Menge, wie hoch ist der Rabatt, was zahlt der Kunde mit Umsatzsteuer? ==Fehler entstehen fast immer, weil unklar ist, was gegeben, was gesucht und worauf sich ein Prozentsatz bezieht.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Rechnung",
+            "Ansatz",
+            "Beispiel"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Dreisatz (gerades Verhältnis)",
+                "mehr Menge, mehr Preis: auf eine Einheit, dann auf die gesuchte Menge",
+                "80 Stück kosten 600 € → 1 Stück 7,50 € → 120 Stück 900 €"
+              ],
+              "detail": "**Gilt nur bei gleichem Stückpreis.** Gibt es ab 100 Stück einen Mengenrabatt, ist der Dreisatz für 120 Stück falsch."
+            },
+            {
+              "zellen": [
+                "Prozentwert",
+                "Grundwert × Prozentsatz ÷ 100",
+                "10 % Rabatt auf 900 € = 90 €"
+              ]
+            },
+            {
+              "zellen": [
+                "Grundwert",
+                "Prozentwert × 100 ÷ Prozentsatz",
+                "19 % USt sind 171 € → Nettobetrag 900 €"
+              ]
+            },
+            {
+              "zellen": [
+                "Prozentsatz",
+                "Prozentwert × 100 ÷ Grundwert",
+                "90 € Nachlass auf 900 € = 10 %"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Erst notieren: gegeben, gesucht, Einheit, Grundwert.** Der Grundwert ist immer der Wert, der 100 % entspricht — bei einem Rabatt der Preis vor Abzug, bei der Umsatzsteuer der Nettobetrag.",
+          "karteikarte": "Wie gehst du beim Dreisatz und bei der Prozentrechnung im Angebot vor, und was ist der Grundwert?"
+        },
+        {
+          "typ": "check",
+          "frage": "Ein Bruttobetrag von 1.071 € enthält 19 % Umsatzsteuer. Wie hoch ist der Nettobetrag?",
+          "optionen": [
+            {
+              "text": "867,51 € — 19 % von 1.071 € abgezogen",
+              "richtig": false,
+              "echo": "Der Grundwert der Umsatzsteuer ist der Nettobetrag, nicht der Bruttobetrag. 19 % vom Brutto abzuziehen ergibt zu wenig."
+            },
+            {
+              "text": "900,00 € — 1.071 € ÷ 119 × 100",
+              "richtig": true,
+              "echo": "Richtig. Der Bruttobetrag entspricht 119 % des Nettobetrags. Also 1.071 € ÷ 119 × 100 = 900 €. Probe: 900 € × 19 % = 171 €; 900 € + 171 € = 1.071 €."
+            },
+            {
+              "text": "1.052 € — 19 € abgezogen",
+              "richtig": false,
+              "echo": "Hier wurden Prozent und Euro verwechselt. 19 % sind ein Anteil, kein fester Betrag."
             }
           ]
         }
@@ -313,9 +827,10 @@
     "Katalog, Prospekt und Schaufenster sind keine Angebote, sondern Aufforderungen dazu.",
     "Ein Angebot braucht Art, Menge, Preis, Liefer- und Zahlungsbedingungen, Termin und Bindungsfrist.",
     "{{par:bgb-145|§ 145 BGB}}: Ohne Freizeichnung bist du gebunden.",
-    "Freizeichnung durch Zusätze wie freibleibend oder solange der Vorrat reicht.",
+    "Vollständige Freizeichnung durch freibleibend oder unverbindlich; teilweise durch Preis freibleibend oder solange der Vorrat reicht.",
     "Beim freibleibenden Angebot wird die Bestellung zum Antrag — der Kunde ist gebunden.",
-    "Reagiere trotzdem unverzüglich: {{par:hgb-362|§ 362 HGB}} kann Schweigen als Zustimmung werten."
+    "Reagiere trotzdem unverzüglich: {{par:hgb-362|§ 362 HGB}} kann Schweigen als Zustimmung werten.",
+    "Dreisatz nur bei gleichem Stückpreis; Grundwert ist immer der Wert, der 100 % entspricht."
   ],
   "selbsttest": [
     {
