@@ -4,74 +4,474 @@
   "nummer": 4,
   "titel": "Schwierige Gespräche und Feedback",
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Schwierige Gesprächssituationen verlangen eine feste Reihenfolge und eine klare Haltung. Bei Reklamationen muss zuerst der Ärger Raum bekommen; bei Feedback muss beobachtbares Verhalten von einer Bewertung der Person getrennt werden. Interkulturelle Unterschiede ergänzen die Aufgabe um die Pflicht, Deutungen vorsichtig zu prüfen.",
     "abschnitte": [
       {
         "abschnitt": "d1",
-        "vorauswissen": [
-          "Eine Reklamation betrifft sachlich einen Mangel, aber auch die Beziehung zum Kunden.",
-          "Ärger kann die Aufnahmefähigkeit für sachliche Argumente zunächst blockieren."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst ein Reklamationsgespräch in der Reihenfolge Ausreden lassen, Verständnis zeigen, Sachverhalt klären, Lösung mit Termin und Nachfassen und hältst dich an die Grenze deiner Entscheidungsbefugnis.",
+        "vorwissen_kurz": "Wer reklamiert, ist meist verärgert. Bevor über die Sache gesprochen werden kann, braucht der Ärger Raum.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst der Mensch, dann die Sache",
+            "id": "d1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine {{begriff:reklamation|Reklamation}} hat zwei Seiten. Rechtlich geht es meist um die Geltendmachung von Mängelrechten: falsche Ware, fehlende Menge, beschädigte Lieferung. Im Gespräch geht es zuerst um einen verärgerten Menschen. Solange der Ärger nicht angekommen ist, wirken Sachfragen wie Ausweichen. Deshalb hat das Reklamationsgespräch eine feste Reihenfolge.",
+            "id": "d1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "d1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Reklamation in fünf Schritten",
+            "id": "d1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Inhaberin des Modehauses Lindner in Essen ruft an: Statt 30 schwarzer Hoodies sind 30 graue gekommen, und am Samstag startet ihre Schaufensteraktion.",
+            "id": "d1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Was Lea sagt oder tut"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ausreden lassen",
+                  "hört zu, ohne zu unterbrechen, notiert Lieferscheinnummer und Artikel"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verständnis zeigen",
+                  "„Das ist ärgerlich, gerade vor Ihrer Aktion am Samstag. Danke, dass Sie sich gleich melden.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sachverhalt klären",
+                  "„Welche Artikelnummer steht auf dem Lieferschein, und welche Farbe haben Sie bestellt?“ — prüft im System: Kommissionierfehler bei MAKEL"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lösung mit Termin",
+                  "„Ich lasse heute 30 schwarze Hoodies per Express verschicken, sie sind morgen bei Ihnen. Die grauen holt die Spedition bei der Lieferung ab. Die Kosten trägt MAKEL.“ — Lea darf Ersatzlieferungen bis 2.000 € selbst veranlassen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachfassen",
+                  "ruft am Tag nach der Lieferung an, ob alles angekommen ist; notiert den Fall für die Auswertung im Lager"
+                ]
+              }
+            ],
+            "fazit": "Die Kundin erlebt, dass ihr Problem ernst genommen und verlässlich gelöst wird. Die sachliche Klärung kommt erst, nachdem der Ärger angekommen ist.",
+            "id": "d1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "d1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wäre die Lösung teurer gewesen oder hätte die Kundin eine Gutschrift auf frühere Rechnungen verlangt, hätte Lea nicht selbst entscheiden dürfen. Dann sagt sie offen, wer entscheidet und bis wann: „Das muss meine Abteilungsleiterin freigeben. Ich rufe Sie heute bis 16 Uhr zurück.“ Eine ehrliche Grenze mit Termin ist besser als eine Zusage, die später zurückgenommen werden muss.",
+            "id": "d1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d1-b3"
+          }
         ],
-        "ablauf": [
-          "Kunden ausreden lassen.",
-          "Verständnis für den Ärger zeigen, ohne vorschnell Schuld einzugestehen.",
-          "Sachverhalt mit offenen Fragen klären.",
-          "Konkrete Lösung mit Zuständigkeit und Termin anbieten.",
-          "Nachfassen und prüfen, ob die Lösung angekommen ist."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Gespräch und Mängelrecht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hinter dem Gespräch stehen rechtliche Ansprüche. Bei einem Mangel kann der Käufer zunächst Nacherfüllung verlangen, also Ersatzlieferung oder Nachbesserung. Unter Kaufleuten muss er Ware unverzüglich untersuchen und Mängel rügen. Das Gespräch klärt, was passiert ist und welche Lösung beide Seiten wollen; die rechtliche Einordnung ist der Rahmen, nicht der Gesprächseinstieg.",
+                "id": "d1-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k6-b3"
+                ],
+                "text": "Mängel, Rügepflicht und Rechte des Käufers",
+                "id": "d1-d1-v1"
+              }
+            ],
+            "id": "d1-d1"
+          }
         ],
-        "erklaerung": "Die Reihenfolge beginnt bewusst nicht mit der Sachfrage. Wer den Kunden unterbricht oder sofort mit einer Rechtfertigung antwortet, verstärkt den Ärger. Erst wenn die emotionale Lage anerkannt ist, kann der konkrete Vorgang geklärt und eine verbindliche Lösung vereinbart werden.",
-        "beispiele": [
-          "Statt den Kunden bei der ersten Beschwerde zu unterbrechen, wird sein Anliegen vollständig aufgenommen und anschließend zusammengefasst.",
-          "‚Wir prüfen die Bestellung heute und melden uns bis 15 Uhr‘ ist konkreter als ‚Wir kümmern uns darum‘, weil Handlung und Termin feststehen."
-        ],
-        "fallbeispiel": "Ein Kunde beschwert sich über eine verspätete Lieferung. Die Mitarbeiterin lässt ihn ausreden und erkennt an, dass die Situation ärgerlich ist. Danach fragt sie nach Bestellnummer und zugesagtem Termin. Sie vereinbart, dass sie den Lieferstatus prüft und bis 15 Uhr zurückruft. Drei Tage später fragt sie nach, ob die Lösung funktioniert hat.",
-        "typische_fehler": "Mit der Sachklärung beginnen, Kollegen vor dem Kunden beschuldigen oder eine Lösung versprechen, für die keine Zuständigkeit besteht. Ein pauschales ‚Wir kümmern uns‘ ersetzt weder Termin noch Verantwortung.",
         "verstaendnisfragen": [
-          "Warum steht das Gefühl vor der Sache? Weil ein verärgerter Kunde sachliche Argumente sonst als Ausweichen hören kann.",
-          "Was macht eine Lösung verbindlich? Sie benennt, was geschieht, wer handelt und bis wann."
-        ],
-        "pruefungsbezug": "Die fünf Schritte in der richtigen Reihenfolge nennen und bei einem Fall jeweils mit einer konkreten Formulierung oder Handlung begründen.",
-        "merksatz": "Erst Gefühl, dann Sache: ausreden lassen, anerkennen, klären, lösen, nachfassen."
+          {
+            "frage": "Warum fragt Lea nicht gleich nach der Lieferscheinnummer?",
+            "antwort": "Weil die Kundin in diesem Moment verärgert ist. Eine sofortige Sachfrage wirkt, als wolle Lea prüfen, ob die Kundin recht hat. Erst wenn der Ärger anerkannt ist, ist die Kundin für die Klärung offen.",
+            "id": "d1-f1"
+          },
+          {
+            "frage": "Was sagt Lea, wenn sie eine verlangte Lösung nicht selbst entscheiden darf?",
+            "antwort": "Sie nennt die Grenze offen, sagt, wer entscheidet, und vereinbart einen konkreten Rückmeldetermin. Sie verspricht nichts, was sie nicht einhalten kann.",
+            "id": "d1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d2",
-        "vorauswissen": [
-          "Feedback bezieht sich auf wahrgenommenes Verhalten in einer Situation.",
-          "Eine Ich-Botschaft beschreibt die eigene Wahrnehmung statt die Person zu bewerten."
+        "darstellung": "vollfassung",
+        "ziel": "Du gibst Feedback beschreibend, konkret, zeitnah und als Ich-Botschaft und nimmst Feedback an, indem du zuhörst, nachfragst und später entscheidest, was du übernimmst.",
+        "vorwissen_kurz": "Feedback ist eine Rückmeldung über wahrgenommenes Verhalten und seine Wirkung — keine Bewertung des Menschen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rückmeldung statt Urteil",
+            "id": "d2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:feedback|Feedback}} hilft, das eigene Verhalten so zu sehen, wie es auf andere wirkt. Damit es ankommt, muss es sich auf ein beobachtbares Verhalten beziehen, nicht auf die Person. „Du bist unzuverlässig“ ist ein Urteil, gegen das man sich nur verteidigen kann. „Die letzten zwei Versandlisten kamen nach 14 Uhr“ ist eine Beobachtung, über die man sprechen kann. Auch das Annehmen von Feedback folgt Regeln: Wer sich sofort rechtfertigt, hört die Hälfte nicht.",
+            "id": "d2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "d2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Feedbackgespräch unter Azubis",
+            "id": "d2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mira und Tim haben gemeinsam eine Präsentation über die neue Kollektion gehalten. Mira gibt Tim danach Rückmeldung.",
+            "id": "d2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Element",
+              "Was Mira sagt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Beobachtung",
+                  "„Bei deinem Teil hast du die meiste Zeit auf die Folien geschaut und schnell gesprochen.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirkung",
+                  "„Ich hatte den Eindruck, dass die Händler nicht alle Zahlen mitbekommen haben — zwei haben nachgefragt.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anerkennung",
+                  "„Die Grafik zur Lieferzeit war sehr klar, die hat allen geholfen.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vorschlag",
+                  "„Vielleicht hilft es, die wichtigste Zahl je Folie laut zu betonen und kurz in die Runde zu schauen.“"
+                ]
+              }
+            ],
+            "fazit": "Mira beschreibt, was sie beobachtet hat, und welche Wirkung es hatte. Sie bewertet Tim nicht als Person und lässt ihm die Entscheidung, was er ändert.",
+            "id": "d2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tim möchte zuerst widersprechen: Er war nervös, und die Zeit war knapp. Stattdessen hört er zu und fragt nach: „Bei welcher Folie war das am deutlichsten?“ Am Ende bedankt er sich. Was er übernimmt, entscheidet er später in Ruhe. Feedback ist ein Angebot, kein Urteil.",
+            "id": "d2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "d2-b2"
+          }
         ],
-        "erklaerung": "Gutes Feedback bleibt überprüfbar und bearbeitbar. Deshalb werden konkrete Beobachtungen, Zeitbezug und Wirkung genannt, statt Eigenschaften wie ‚unzuverlässig‘ zu behaupten. Beim Annehmen geht es zunächst um Zuhören und Nachfragen; ob man die Rückmeldung vollständig übernimmt, kann danach entschieden werden.",
-        "beispiele": [
-          "‚Die letzten zwei Protokolle kamen nach dem Termin; mir fehlt dadurch die Grundlage für den Versand‘ beschreibt Verhalten und Wirkung.",
-          "‚Du bist immer unorganisiert‘ bewertet die Person und verallgemeinert mit ‚immer‘; die Aussage lädt eher zur Verteidigung als zur Lösung ein."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Feedback und Kritik vor anderen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kritik vor der Gruppe zwingt den Empfänger, sein Gesicht zu wahren; er verteidigt sich, auch wenn die Kritik berechtigt ist. Feedback gehört deshalb unter vier Augen. Anders ist es bei Lob: Anerkennung vor anderen kann motivieren, wenn sie ehrlich und konkret ist.",
+                "id": "d2-d1-p1"
+              }
+            ],
+            "id": "d2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Bericht kommt zwei Tage nach dem vereinbarten Termin. Statt ‚Du bist unzuverlässig‘ sagt die Führungskraft: ‚Der Bericht kam am Mittwoch statt am Montag. Mir fehlte dadurch die Grundlage für den Versand. Wie können wir den nächsten Termin sichern?‘ Die Rückmeldung benennt Beobachtung, Wirkung und einen nächsten Schritt.",
-        "typische_fehler": "Verallgemeinerungen wie ‚immer‘ und ‚nie‘, Feedback vor anderen oder Kritik aus zweiter Hand. Beim Annehmen wird häufig sofort gerechtfertigt, bevor das konkrete Beispiel überhaupt verstanden ist.",
         "verstaendnisfragen": [
-          "Warum ist ‚Ich-Botschaft‘ hilfreich? Sie beschreibt die eigene Wahrnehmung und Wirkung, statt eine unbeweisbare Eigenschaft der Person zu behaupten.",
-          "Was sollte man bei unklarem Feedback tun? Zuhören und um ein konkretes Beispiel bitten."
-        ],
-        "pruefungsbezug": "Bei der Bewertung jede Rückmeldung auf beschreibend, konkret, zeitnah, unter vier Augen und Ich-Botschaft prüfen. Beim Annehmen Zuhören, Nachfragen und Bedanken nennen.",
-        "merksatz": "Feedback beschreibt Verhalten in einer Situation, nicht den Wert oder Charakter eines Menschen."
+          {
+            "frage": "Warum nennt Mira auch die gelungene Grafik?",
+            "antwort": "Weil Feedback nicht nur Kritik ist. Die Rückmeldung zeigt Tim, was er beibehalten soll, und macht die Kritik leichter annehmbar, weil sie fair wirkt. Wichtig ist, dass das Lob ehrlich und konkret ist, nicht nur ein Polster.",
+            "id": "d2-f1"
+          },
+          {
+            "frage": "Tim findet die Rückmeldung ungerecht. Was tut er?",
+            "antwort": "Er hört trotzdem zu, fragt nach Beispielen und bedankt sich. Später prüft er, ob etwas daran stimmt. Er muss nicht alles übernehmen, sollte die Rückmeldung aber nicht sofort abwehren.",
+            "id": "d2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d3",
-        "vorauswissen": [
-          "Interkulturelle Kommunikation betrifft unterschiedliche Erwartungen, nicht starre Länderklischees.",
-          "Gesprächsqualität kann anhand vorher festgelegter Kriterien bewertet werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst, auf welchen Feldern sich Erwartungen an Kommunikation zwischen Kulturen unterscheiden können, prüfst Deutungen durch Nachfragen und beurteilst ein Gespräch mit einem vorher aufgestellten Kriterienkatalog.",
+        "vorwissen_kurz": "Was in einem Umfeld höflich ist, kann in einem anderen unhöflich oder missverständlich wirken.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Unterschiede kennen, ohne zu verallgemeinern",
+            "id": "d3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL arbeitet mit Händlern in den Benelux-Ländern, mit Stofflieferanten aus anderen Teilen der Welt und mit Kolleginnen unterschiedlicher Herkunft. {{begriff:interkulturelle-kommunikation|Interkulturelle Kommunikation}} heißt nicht, Länderlisten auswendig zu lernen. Menschen sind keine Vertreter einer Nation. Hilfreich ist zu wissen, auf welchen Feldern Erwartungen auseinandergehen können, um Irritationen richtig einzuordnen.",
+            "id": "d3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Antwort, zwei Deutungen",
+            "id": "d3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea schlägt einem neuen Stofflieferanten per Mail einen Liefertermin in drei Wochen vor. Die Antwort: „Vielen Dank, das ist ein interessanter Vorschlag. Wir werden prüfen, was möglich ist.“",
+            "id": "d3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Deutung",
+              "Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zusage, die Prüfung ist Formsache",
+                  "Lea plant die Produktion fest ein — und gerät in Verzug, falls der Termin nicht klappt."
+                ]
+              },
+              {
+                "zellen": [
+                  "höfliche Zurückhaltung, vielleicht ein Nein",
+                  "Lea fragt konkret nach und erhält eine Antwort, mit der sie planen kann."
+                ]
+              }
+            ],
+            "fazit": "Welche Deutung stimmt, lässt sich aus der Mail nicht sicher erkennen. Eine Rückfrage, die eine ehrliche Antwort leicht macht, klärt es: „Ist der Termin für Sie realistisch, oder wäre eine Woche später besser?“",
+            "id": "d3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "d3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Gespräche beurteilen",
+            "id": "d3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer seine Gesprächsführung verbessern will, braucht Maßstäbe. Ein **Kriterienkatalog** legt vor dem Gespräch fest, woran es gemessen wird — so wie bei einer Präsentation. Danach lässt sich ehrlich sagen, was gut lief und was nicht, statt nur einen Gesamteindruck zu haben.",
+            "id": "d3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-2",
+            "id": "d3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea wendet den Katalog auf ihr Reklamationsgespräch mit dem Modehaus Lindner an: Ziel klar, ausreden lassen, zusammengefasst, Lösung mit Termin, Notiz angelegt. Einen Punkt findet sie verbesserungswürdig: Sie hat einmal „Kommi-Fehler“ gesagt, ein Wort, das die Kundin nicht kannte. Beim nächsten Mal sagt sie „Fehler beim Zusammenstellen der Ware“.",
+            "id": "d3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "d3-b4"
+          }
         ],
-        "erklaerung": "Unterschiede können bei Direktheit, Zeitverständnis, Hierarchie, Beziehungsaufbau und Körpersprache liegen. Eine höfliche oder ausweichende Antwort darf nicht vorschnell als Zustimmung gelesen werden. Die sichere Haltung ist, Irritationen nachzufragen und Vereinbarungen ausdrücklich zu sichern. Ein Kriterienkatalog macht außerdem die spätere Gesprächsbewertung nachvollziehbar.",
-        "beispiele": [
-          "‚Das ist sehr interessant, wir schauen uns das an‘ kann in einem interkulturellen Kontext eine höfliche Zurückhaltung statt einer Zusage bedeuten; eine konkrete Rückfrage schafft Klarheit.",
-          "Wenn Entscheidungen in einer Organisation an der Spitze getroffen werden, muss geprüft werden, ob der Gesprächspartner überhaupt entscheiden darf."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Förmlichkeit als sichere Wahl",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei neuen Geschäftspartnern ist eine etwas förmlichere Ansprache selten falsch: Nachnamen und Sie, vollständige Sätze, klare Termine in Zahlen statt „bald“. Lockerer werden kann man später, wenn das Gegenüber es anbietet. Ein zu vertraulicher Ton am Anfang lässt sich dagegen schwer zurücknehmen.",
+                "id": "d3-d1-p1"
+              }
+            ],
+            "id": "d3-d1"
+          }
         ],
-        "fallbeispiel": "Ein ausländischer Geschäftspartner antwortet auf einen Terminvorschlag ausweichend und meldet sich nicht mehr. Statt die Antwort als feste Zusage zu behandeln, fragt die Mitarbeiterin freundlich nach und bietet zwei konkrete Termine mit einer Rückmeldefrist an. Danach bewertet sie das Gespräch anhand von Vorbereitung, Gesprächsführung, Zuhören, Sprache, Ergebnis und Nachbereitung.",
-        "typische_fehler": "Kulturunterschiede als feste Eigenschaften einzelner Länder behandeln oder eine ungewohnte Reaktion sofort negativ bewerten. Ebenso problematisch ist eine Nachbereitung ohne Kriterien, bei der nur das persönliche Gefühl zählt.",
         "verstaendnisfragen": [
-          "Welche Haltung hilft bei interkulturellen Irritationen? Zurückhaltend deuten und nachfragen statt vorschnell interpretieren.",
-          "Warum wird der Kriterienkatalog vor dem Gespräch erstellt? Damit die Bewertung nicht nachträglich an eine gewünschte Schlussfolgerung angepasst wird."
+          {
+            "frage": "Warum ist „In Land X sagt man nie Nein“ als Regel problematisch?",
+            "antwort": "Sie unterstellt allen Menschen eines Landes dasselbe Verhalten. Erwartungen unterscheiden sich auch innerhalb eines Landes, nach Branche, Alter und Person. Hilfreicher ist, die eigene Deutung zu prüfen und nachzufragen.",
+            "id": "d3-f1"
+          },
+          {
+            "frage": "Warum wird der Kriterienkatalog vor dem Gespräch aufgestellt?",
+            "antwort": "Damit die Beurteilung nicht vom Ergebnis oder vom Gefühl danach abhängt. Wer erst hinterher Kriterien wählt, findet meist die, die zum Eindruck passen.",
+            "id": "d3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "d4",
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst Konfliktursachen unterhalb des sichtbaren Streitpunkts und führst ein Konfliktgespräch mit Beobachtung, Gefühl, Bedürfnis und Bitte, ohne dem Gegenüber Absichten zu unterstellen.",
+        "vorwissen_kurz": "Konflikte gehören zum Arbeitsalltag. Entscheidend ist, ob sie geklärt werden oder sich verfestigen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was unter der Oberfläche liegt",
+            "id": "d4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Konflikt entsteht, wenn Ziele, Interessen oder Erwartungen aufeinandertreffen und mindestens eine Seite sich beeinträchtigt fühlt. Häufige Ursachen sind unklare Zuständigkeiten, knappe Zeit, unterschiedliche Arbeitsweisen oder frühere Verletzungen. Das **Eisbergmodell** veranschaulicht, warum Konflikte schwer zu lösen sind: Sichtbar ist nur ein kleiner Teil, etwa der Streit über eine Uhrzeit. Darunter liegen Gefühle, Bedürfnisse und Erfahrungen, die selten ausgesprochen werden, aber das Gespräch steuern.",
+            "id": "d4-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Modell ist eine Denkhilfe. Es sagt nicht, welche Gefühle beim anderen tatsächlich unter der Oberfläche liegen. Das lässt sich nur im Gespräch erfahren.",
+            "id": "d4-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Konflikt zwischen Versand und Vertrieb",
+            "id": "d4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea aus dem Versand ärgert sich seit Wochen über Jonas aus dem Vertrieb: Die Liste der Tagesaufträge kommt oft erst nach 14 Uhr, die Spedition holt um 16 Uhr ab. Bisher hat Lea nur spitze Bemerkungen gemacht. Jetzt sucht sie das Gespräch.",
+            "id": "d4-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Was gesagt wird",
+              "Kommentar"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lea: „Du schickst die Liste ja nie pünktlich.“",
+                  "Vorwurf mit Verallgemeinerung — Jonas wird sich verteidigen. So beginnt Lea deshalb nicht."
+                ]
+              },
+              {
+                "zellen": [
+                  "Lea: „Die Versandliste kam diese Woche dreimal nach 14 Uhr.“",
+                  "Beobachtung: konkret und überprüfbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lea: „Dann bin ich ziemlich unter Druck.“",
+                  "Gefühl: beschreibt Leas Lage, nicht Jonas"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lea: „Ich brauche zwei Stunden, damit alle Pakete bis 16 Uhr fertig sind.“",
+                  "Bedürfnis: was Lea braucht und warum"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lea: „Kannst du mir die Liste bis 12 Uhr schicken — oder Bescheid geben, wenn es später wird?“",
+                  "Bitte: konkret, erfüllbar, mit Alternative"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jonas: „Bis 12 schaffe ich nicht immer. Viele Händler bestellen erst mittags.“",
+                  "Jonas nennt sein eigenes Bedürfnis — der Konflikt hat zwei Seiten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lea: „Was wäre, wenn du mir um 12 die Aufträge bis dahin schickst und den Rest um 14 Uhr?“",
+                  "gemeinsame Lösung statt Durchsetzen"
+                ]
+              }
+            ],
+            "fazit": "Unter dem Streit über die Uhrzeit lagen zwei berechtigte Bedürfnisse: Planbarkeit im Versand und Rücksicht auf späte Händlerbestellungen im Vertrieb. Erst als beide sichtbar wurden, war eine Lösung möglich.",
+            "id": "d4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d4-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die vier Schritte stammen aus der **gewaltfreien Kommunikation** nach Marshall B. Rosenberg. Sie trennen das, was beobachtbar ist, von dem, was es in einem selbst auslöst, und machen daraus eine erfüllbare Bitte. Wichtig ist der Unterschied zwischen Gefühl und Bewertung: „Ich fühle mich übergangen“ klingt wie ein Gefühl, enthält aber eine Unterstellung. „Ich bin enttäuscht“ beschreibt das eigene Erleben.",
+            "id": "d4-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d4-b2"
+          }
         ],
-        "pruefungsbezug": "Nicht Länderlisten auswendig aufsagen, sondern ein Feld der möglichen Unterschiede erklären und eine sichere Gesprächsreaktion formulieren. Bei der Bewertung Kriterien und Beobachtung verbinden.",
-        "merksatz": "Nicht vorschnell deuten: Unterschiede prüfen, Vereinbarungen sichern, Gespräch anhand klarer Kriterien bewerten."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wenn das Gespräch nicht reicht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nicht jeder Konflikt lässt sich zu zweit lösen. Wiederholt sich der Streit, geht es um Zuständigkeiten, die keiner der beiden ändern kann, oder fühlt sich jemand dauerhaft herabgesetzt, ist es richtig, die Führungskraft, die Ausbildungsleitung oder die Jugend- und Auszubildendenvertretung einzubeziehen. Das ist kein Petzen, sondern der vorgesehene Weg.",
+                "id": "d4-d1-p1"
+              }
+            ],
+            "id": "d4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum beginnt Lea nicht mit „Du schickst die Liste ja nie pünktlich“?",
+            "antwort": "Der Satz ist ein Vorwurf und verallgemeinert mit „nie“. Jonas würde sich verteidigen oder Gegenbeispiele suchen, statt zuzuhören. Eine konkrete Beobachtung lässt sich nicht bestreiten und öffnet das Gespräch.",
+            "id": "d4-f1"
+          },
+          {
+            "frage": "Ist „Ich fühle mich von dir ignoriert“ eine Gefühlsaussage im Sinne der gewaltfreien Kommunikation?",
+            "antwort": "Nur bedingt. „Ignoriert“ enthält eine Deutung des Verhaltens des anderen. Klarer wäre: „Ich habe auf meine Mail keine Antwort bekommen und bin verunsichert.“",
+            "id": "d4-f2"
+          }
+        ]
       }
     ]
   },
@@ -92,6 +492,10 @@
       "id": "lz3",
       "text": "Interkulturelle Besonderheiten berücksichtigen und Gespräche bewerten",
       "abschnitt": "d3"
+    },
+    {
+      "abschnitt": "d4",
+      "text": "Konfliktursachen mit dem Eisbergmodell erkennen und ein Konfliktgespräch mit Beobachtung, Gefühl, Bedürfnis und Bitte führen"
     }
   ],
   "bloecke": [
@@ -102,7 +506,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Eine {{begriff:reklamation|Reklamation}} ist rechtlich ein Mängelanspruch — im Gespräch aber vor allem ein Beziehungsereignis. Der Kunde ist verärgert, und ==Ärger lässt sich nicht mit Argumenten auflösen==. Wer sofort sachlich antwortet, verstärkt ihn."
+          "text": "Eine {{begriff:reklamation|Reklamation}} ist rechtlich meist die Geltendmachung von Mängelrechten — im Gespräch aber vor allem ein Beziehungsereignis. Der Kunde ist verärgert, und ==Ärger lässt sich nicht mit Argumenten auflösen==. Wer sofort sachlich antwortet, verstärkt ihn."
         },
         {
           "typ": "grafik",
@@ -139,10 +543,10 @@
               "nr": 5,
               "titel": "Nachfassen",
               "satz": "prüfen, ob es gewirkt hat",
-              "text": "Der Schritt, den fast alle auslassen — und der einzige, an den der Kunde sich erinnert. Ein kurzer Anruf drei Tage später macht aus einem Beschwerdeführer einen Stammkunden."
+              "text": "Der Schritt, der am häufigsten ausgelassen wird — und an den sich Kunden besonders erinnern. Ein kurzer Anruf einige Tage später zeigt, dass die Lösung wirklich gewollt war."
             }
           ],
-          "regel": "Reihenfolge merken: erst Gefühl, dann Sache. Wer mit Schritt 3 anfängt, hat den Kunden schon verloren."
+          "regel": "Reihenfolge merken: erst Gefühl, dann Sache. Wer mit Schritt 3 anfängt, wirkt schnell, als wolle er ausweichen."
         },
         {
           "typ": "achtung",
@@ -268,7 +672,7 @@
                 "offene Kritik oder Andeutung",
                 "Ein „schwierig“ kann ein Nein sein"
               ],
-              "detail": "**Der häufigste Stolperstein für deutsche Betriebe.** In vielen Kulturen gilt ein direktes Nein als unhöflich; ausgedrückt wird es durch Zögern, Ausweichen oder ein sehr höfliches „wir prüfen das“. Wer das als Zustimmung liest, wartet vergeblich."
+              "detail": "**Ein häufiger Stolperstein.** In vielen Kulturen gilt ein direktes Nein als unhöflich; ausgedrückt wird es durch Zögern, Ausweichen oder ein sehr höfliches „wir prüfen das“. Wer das als Zustimmung liest, wartet vergeblich."
             },
             {
               "zellen": [
@@ -382,6 +786,56 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "d4",
+      "titel": "Konflikte klären",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Ein Konflikt entsteht, wenn Ziele, Interessen oder Erwartungen aufeinandertreffen und mindestens eine Seite sich beeinträchtigt fühlt. ==Was sichtbar gestritten wird, ist oft nur die Spitze== — darunter liegen Gefühle und Bedürfnisse, die selten ausgesprochen werden."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Schritt der gewaltfreien Kommunikation",
+            "Beispiel"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Beobachtung",
+                "„Die Versandliste kam diese Woche zweimal erst nach 14 Uhr.“"
+              ]
+            },
+            {
+              "zellen": [
+                "Gefühl",
+                "„Ich bin dann unter Druck.“"
+              ]
+            },
+            {
+              "zellen": [
+                "Bedürfnis",
+                "„Ich brauche Planbarkeit, damit die Pakete noch zur Abholung fertig werden.“"
+              ]
+            },
+            {
+              "zellen": [
+                "Bitte",
+                "„Kannst du mir die Liste bis 12 Uhr schicken oder Bescheid geben, wenn es später wird?“"
+              ],
+              "detail": "**Eine Bitte ist keine Forderung:** Das Gegenüber darf Nein sagen oder einen anderen Vorschlag machen. Dann wird gemeinsam nach einer Lösung gesucht."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Beobachtung, Gefühl, Bedürfnis, Bitte** — und die Bitte erfüllbar formulieren. Modelle helfen beim Sortieren, verraten aber nicht, was im anderen vorgeht; das klärt nur Nachfragen.",
+          "karteikarte": "Welche vier Schritte hat die gewaltfreie Kommunikation, und warum ist eine Bitte keine Forderung?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -391,7 +845,9 @@
     "Feedback geben: beschreibend, konkret, zeitnah, unter vier Augen, als Ich-Botschaft.",
     "Feedback annehmen: zuhören statt rechtfertigen, nachfragen, bedanken.",
     "Interkulturelle Unterschiede zeigen sich bei Direktheit, Zeit, Hierarchie, Beziehung und Körpersprache.",
-    "Der Kriterienkatalog zur Gesprächsbeurteilung wird vorher aufgestellt."
+    "Der Kriterienkatalog zur Gesprächsbeurteilung wird vorher aufgestellt.",
+    "Konflikte haben sichtbare Streitpunkte und verdeckte Gefühle und Bedürfnisse.",
+    "Gewaltfreie Kommunikation: Beobachtung, Gefühl, Bedürfnis, Bitte."
   ],
   "selbsttest": [
     {

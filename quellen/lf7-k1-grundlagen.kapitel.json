@@ -4,73 +4,340 @@
   "nummer": 1,
   "titel": "Wie Kommunikation funktioniert",
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Kommunikation ist ein Prozess, in dem eine gemeinte Bedeutung über mehrere Stationen zum Empfänger gelangt. Für die Praxis reicht es deshalb nicht, nur den eigenen Wortlaut zu betrachten: Kanal, Ton, Körpersprache und die Deutung des Gegenübers gehören immer mit dazu.",
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eine Nachricht beginnt mit einem Gedanken oder Anliegen des Senders.",
-          "Sender und Empfänger können dieselben Wörter mit unterschiedlichen Erfahrungen verbinden."
+        "darstellung": "vollfassung",
+        "ziel": "Du verfolgst eine Nachricht vom Gedanken des Senders bis zur Deutung beim Empfänger, findest die Stelle, an der sie sich verändert hat, und sicherst das Verständnis mit einer Rückfrage.",
+        "vorwissen_kurz": "Was jemand sagt, und was beim anderen ankommt, ist nicht automatisch dasselbe.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gesagt ist nicht verstanden",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tim, Auszubildender bei MAKEL, bekommt von Lea aus dem Versand eine Nachricht im Teamchat: „Kannst du die Hoodies für Köln noch fertig machen?“ Tim legt die 40 Hoodies aus dem Lager bereit und geht in die Pause. Am Nachmittag ist Lea verärgert: Die Ware war nicht verpackt, der Lieferschein fehlte, die Spedition ist ohne die Sendung abgefahren. Beide haben ehrlich gehandelt — und trotzdem ist die Nachricht nicht angekommen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das {{begriff:kommunikation|Sender-Empfänger-Modell}} hilft, solche Fälle zu untersuchen. Es zerlegt den Weg einer Nachricht in Stationen. An jeder kann sich die Bedeutung verschieben, ohne dass es jemand merkt.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wo die Nachricht sich verändert hat",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Station",
+              "Was passiert ist",
+              "Beobachtung oder Vermutung?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gedanke",
+                  "Lea meint: verpacken, Lieferschein drucken, Sendung an die Rampe bis 13 Uhr",
+                  "Lea sagt es im Nachgespräch — Beobachtung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kodierung",
+                  "Lea schreibt „fertig machen“ und setzt voraus, dass Tim die Abholzeit kennt",
+                  "Beobachtung am Text"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kanal",
+                  "Chatnachricht ohne Uhrzeit, ohne Rückfragemöglichkeit im Moment",
+                  "Beobachtung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Dekodierung",
+                  "Tim versteht „fertig machen“ als „bereitstellen“, weil er das im Lager so gelernt hat",
+                  "Tims Aussage — Beobachtung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bewertung",
+                  "„Tim ist unzuverlässig“",
+                  "Vermutung, durch nichts belegt"
+                ]
+              }
+            ],
+            "fazit": "Der Fehler lag nicht bei einer Person, sondern an der Kodierung und am Kanal: Ein mehrdeutiges Wort und eine fehlende Zeitangabe trafen auf einen Empfänger mit eigenem Wortverständnis. Die Bewertung „unzuverlässig“ erklärt den Fall nicht.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea und Tim vereinbaren danach eine einfache Regel: Aufträge im Chat enthalten Tätigkeit und Uhrzeit, und wer einen Auftrag annimmt, bestätigt ihn in eigenen Worten: „Ich verpacke die 40 Hoodies für Köln und lege sie mit Lieferschein bis 13 Uhr an die Rampe.“ Diese Rückmeldung kostet einen Satz und macht sichtbar, was angekommen ist.",
+            "id": "a1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "ablauf": [
-          "Der Sender entwickelt einen Gedanken.",
-          "Er kodiert ihn in Worte, Tonfall und Gesten.",
-          "Die Nachricht läuft über einen Kanal.",
-          "Der Empfänger dekodiert sie mit seinem eigenen Deutungsrahmen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Beobachtung und Vermutung trennen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei der Untersuchung eines Missverständnisses hilft eine Trennung: Was lässt sich beobachten — der Wortlaut, die Uhrzeit, die Handlung? Und was ist eine Deutung — „er wollte nicht“, „sie hat sich unklar ausgedrückt“? Vermutungen über Absichten sind oft falsch und führen zu Schuldzuweisungen. Beobachtungen lassen sich prüfen und bieten einen Ansatz für bessere Absprachen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "erklaerung": "Die Bedeutung einer Nachricht entsteht nicht vollständig beim Senden. Schon ein unklarer Gedanke, eine unpassende Formulierung oder ein Kanal, der wichtige Signale weglässt, kann die Botschaft verändern. Beim Empfänger wird das Empfangene mit eigenen Erfahrungen entschlüsselt. Nachfragen und Zusammenfassen sind deshalb die Kontrolle, ob Gemeintes und Verstandenes übereinstimmen.",
-        "beispiele": [
-          "Eine kurze E-Mail kann sachlich gemeint sein, aber ohne Tonfall beim Empfänger härter ankommen.",
-          "Ein Fachbegriff kann beim Sender selbstverständlich wirken, beim Empfänger aber eine andere Bedeutung oder gar keine klare Vorstellung auslösen."
-        ],
-        "fallbeispiel": "Eine Ausbilderin sagt: ‚Das brauche ich möglichst bald.‘ Der Sender meint vielleicht heute, der Empfänger versteht innerhalb der Woche. Der Fehler liegt nicht zwingend in der Absicht, sondern in der unklaren Kodierung. Die sichere Lösung lautet: ‚Meinst du heute bis 16 Uhr oder reicht morgen?‘ Damit wird die Dekodierung überprüft.",
-        "typische_fehler": "Der Sender setzt voraus, dass seine Absicht automatisch angekommen ist. Ebenso falsch ist die Annahme, eine ausführliche Nachricht sei immer klarer; zusätzliche Wörter können die eigentliche Handlungsaufforderung verdecken.",
         "verstaendnisfragen": [
-          "An welcher Stelle wird die Bedeutung endgültig hergestellt? Beim Empfänger während der Dekodierung.",
-          "Warum ist Nachfragen keine Schwäche? Weil nur so geprüft wird, ob die entschlüsselte Bedeutung der gemeinten entspricht."
-        ],
-        "pruefungsbezug": "Die Begriffe Gedanke, Kodierung, Kanal und Dekodierung in der richtigen Reihenfolge erklären und an einer konkreten Störung anwenden.",
-        "merksatz": "Gemeint ist nicht automatisch gesagt, gesagt nicht gehört und gehört nicht automatisch verstanden."
+          {
+            "frage": "Warum reicht es nicht, wenn Lea sich „klar ausdrückt“?",
+            "antwort": "Weil die Bedeutung erst beim Empfänger entsteht. Lea hielt „fertig machen“ für eindeutig; für Tim war es das auch — nur mit einer anderen Bedeutung. Klarheit lässt sich erst prüfen, wenn der Empfänger wiedergibt, was er verstanden hat.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welche Station hätte eine Rückfrage von Tim abgesichert?",
+            "antwort": "Die Dekodierung. Mit „Meinst du bereitstellen oder auch verpacken?“ hätte Tim seine Deutung geprüft, bevor er handelt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Verbal, paraverbal und nonverbal beschreiben unterschiedliche Teile derselben Kommunikation.",
-          "Ein Kanal kann den anderen bestätigen oder ihm widersprechen."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest verbale, paraverbale und nonverbale Anteile einer Nachricht, erkennst Widersprüche zwischen ihnen und sprichst einen Widerspruch an, statt ihn zu deuten.",
+        "vorwissen_kurz": "Wer spricht, sendet nicht nur Worte. Stimme und Körper senden mit.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Spuren gleichzeitig",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Gespräch kommt eine Nachricht auf drei Spuren zugleich an. **Verbal** sind die Worte selbst. **Paraverbal** ist, wie sie gesprochen werden: Lautstärke, Tempo, Betonung, Pausen. **Nonverbal** sind Mimik, Gestik, Haltung, Blick und Abstand. Meist passen die drei zusammen und verstärken sich. Passen sie nicht zusammen, nehmen Zuhörer das wahr, auch wenn sie es nicht benennen.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Satz, zwei Wirkungen",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea bittet ihre Kollegin Mira, kurzfristig eine Händlerbestellung zu übernehmen. Mira antwortet zweimal mit denselben Worten.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Spur",
+              "Erste Antwort",
+              "Zweite Antwort"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Verbal",
+                  "„Kein Problem, mache ich.“",
+                  "„Kein Problem, mache ich.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Paraverbal",
+                  "ruhig, mittleres Tempo",
+                  "knapp, leise, kurze Pause vor „mache ich“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nonverbal",
+                  "Blickkontakt, nickt, notiert die Bestellnummer",
+                  "Arme verschränkt, Blick auf den Bildschirm"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirkung auf Lea",
+                  "Zusage",
+                  "Zweifel: Will sie wirklich?"
+                ]
+              }
+            ],
+            "fazit": "Der Wortlaut ist identisch, die Wirkung nicht. Ton und Haltung prägen, wie glaubwürdig die Worte ankommen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Was die zweite Antwort bedeutet, weiß Lea trotzdem nicht. Mira könnte überlastet sein, verärgert über die kurzfristige Bitte — oder einfach gerade eine andere Aufgabe im Kopf haben. Eine einzelne Geste ist mehrdeutig. Statt zu deuten, spricht Lea den Eindruck an: „Du klingst gerade nicht begeistert. Passt es dir zeitlich wirklich, oder soll ich jemand anderen fragen?“ So kann Mira ehrlich antworten, ohne sich rechtfertigen zu müssen.",
+            "id": "a2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          }
         ],
-        "erklaerung": "Verbal sind die Wörter. Paraverbal sind Lautstärke, Tempo, Betonung und Pausen. Nonverbal sind Mimik, Gestik, Haltung, Blick und Abstand. In einem Gespräch wirken die drei Ebenen gleichzeitig. Widersprechen sie sich, wird häufig der weniger bewusst steuerbare Ton oder die Körpersprache als glaubwürdiger wahrgenommen.",
-        "beispiele": [
-          "Der Satz ‚Das haben Sie ja schön gemacht‘ kann durch Betonung als Lob oder Vorwurf verstanden werden.",
-          "‚Kein Problem, mache ich‘ mit verschränkten Armen und knappem Ton sendet eine andere Wirkung als derselbe Satz mit offenem Blick und ruhiger Stimme."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Am Telefon und in der Mail",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Am Telefon fehlt die nonverbale Spur; Stimme, Pausen und Wortwahl müssen mehr tragen. In einer Mail fehlt auch die Stimme. Ein knapper Satz, der im Gespräch mit freundlichem Ton harmlos wäre, kann schriftlich schroff wirken. Deshalb lohnt es sich, schriftlich etwas ausführlicher und ausdrücklich freundlich zu formulieren und heikle Themen lieber im Gespräch zu klären.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Kollegin sagt ‚Kein Problem, mache ich‘, verschränkt aber die Arme und antwortet knapp. Verbal klingt die Zusage positiv; paraverbal und nonverbal wirken zurückhaltend. Der Empfänger sollte den Widerspruch nicht einfach als Zustimmung verbuchen, sondern offen klären: ‚Ich höre eine Zusage, bin aber unsicher, ob es gerade zeitlich passt.‘",
-        "typische_fehler": "Nur den Wortlaut wiederholen und Ton sowie Körpersprache ignorieren. Umgekehrt darf eine einzelne Geste nicht als sichere Absicht behandelt werden; entscheidend ist das Zusammenspiel und die anschließende Klärung.",
         "verstaendnisfragen": [
-          "Was gehört zum paraverbalen Kanal? Lautstärke, Tempo, Betonung und Pausen.",
-          "Was sollte bei widersprüchlichen Signalen geschehen? Nicht vorschnell interpretieren, sondern die Wahrnehmung ansprechen und nachfragen."
-        ],
-        "pruefungsbezug": "In Situationen nicht nur den Kanal nennen, sondern die Wirkung erklären: Welches Signal widerspricht welchem und wie kann die Person den Widerspruch klären?",
-        "merksatz": "Worte sagen etwas, Ton färbt es und Körpersprache macht die Wirkung sichtbar."
+          {
+            "frage": "Warum ist „Körpersprache lügt nicht“ eine zu einfache Regel?",
+            "antwort": "Weil einzelne Signale viele Ursachen haben können. Verschränkte Arme können Ablehnung zeigen, aber auch Kälte oder Gewohnheit. Ein Widerspruch zwischen Worten und Auftreten ist ein Anlass nachzufragen, kein Beweis für eine bestimmte Absicht.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Eine Kundin schreibt in einer Mail nur „Okay.“ Wie gehst du damit um?",
+            "antwort": "Ohne Stimme und Mimik ist offen, ob sie zufrieden, verärgert oder in Eile ist. Wenn es wichtig ist, fragst du kurz nach oder bestätigst das Vereinbarte ausdrücklich, statt die Stimmung zu unterstellen.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Kommunikationsstörungen können an der Umgebung, der Sprache, der Person oder der Beziehung liegen.",
-          "Eine passende Gegenmaßnahme setzt an der tatsächlichen Ursache an."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest eine Kommunikationsstörung ihrer Art zu, wählst eine passende Gegenmaßnahme und wendest Gesprächsregeln in einer konkreten Situation an.",
+        "vorwissen_kurz": "Die meisten Missverständnisse haben einfache Ursachen. Wer die Ursache kennt, findet leichter eine Lösung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was sich dazwischenschiebt",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine {{begriff:kommunikationsstoerung|Kommunikationsstörung}} ist alles, was sich zwischen das Gemeinte und das Verstandene schiebt. Manche Störungen liegen in der Umgebung, etwa Lärm oder eine schlechte Telefonverbindung. Andere liegen in der Sprache, in der Verfassung der Beteiligten oder in ihrer Beziehung zueinander. Je nach Ursache hilft etwas anderes.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Telefonat mit drei Störungen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Modehändler aus Essen ruft an, weil seine Rechnung höher ist als erwartet. Tim nimmt das Gespräch im Großraumbüro an.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Was passiert",
+              "Art der Störung",
+              "Was Tim tut"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Nebenan läuft eine Besprechung, Tim versteht die Rechnungsnummer nicht",
+                  "äußere Störung",
+                  "bittet um einen Moment, wechselt in den Besprechungsraum"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tim erklärt: „Da ist die Fracht nach Incoterm DAP drauf.“ Der Händler schweigt.",
+                  "sprachliche Störung",
+                  "erklärt ohne Fachbegriff: „Wir haben die Lieferung bis zu Ihrem Laden übernommen und die Frachtkosten dafür berechnet.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Der Händler sagt: „Bei Ihnen gibt es ja immer Ärger mit den Rechnungen.“",
+                  "Wahrnehmung oder Beziehung",
+                  "reagiert nicht gereizt, fragt nach: „Gab es schon einmal Probleme? Dann schaue ich mir das gleich mit an.“"
+                ]
+              }
+            ],
+            "fazit": "Jede Störung braucht eine eigene Antwort. Den Raum zu wechseln hilft gegen Lärm, nicht gegen Fachsprache; Erklärungen helfen gegen Fachsprache, nicht gegen Misstrauen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Besonders hartnäckig sind Störungen auf der Beziehungsebene. Hat ein Händler schlechte Erfahrungen gemacht, hört er auch eine richtige Erklärung mit Misstrauen. Dann hilft es wenig, noch mehr Zahlen vorzulegen. Wirksamer ist, die schlechte Erfahrung anzuerkennen und durch verlässliches Handeln neues Vertrauen aufzubauen, etwa mit einem zugesagten und eingehaltenen Rückruf.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Eine äußere Störung wird durch Lärm oder Unterbrechungen verursacht. Sprachliche Störungen entstehen durch Fachbegriffe oder komplizierte Formulierungen. Zeitdruck, Ärger und Müdigkeit wirken persönlich. Bei einer Beziehungsstörung wird die Sache durch Misstrauen oder einen alten Konflikt überlagert. Wahrnehmungsstörungen entstehen, wenn Vorurteile oder Erwartungen die Deutung lenken.",
-        "beispiele": [
-          "Im Großraumbüro hilft bei einer äußeren Störung ein Raumwechsel oder ein späterer Termin.",
-          "Wenn ein Kunde Abkürzungen nicht versteht, muss die Sprache angepasst werden; bei einem alten Konflikt muss zuerst die Beziehungsebene geklärt werden."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Regeln wirken nur zusammen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Gesprächsregeln stützen sich gegenseitig. Wer ausreden lässt, hört mehr; wer zusammenfasst, merkt Missverständnisse früh; wer beim Thema bleibt, vermeidet, dass alte Konflikte das aktuelle Gespräch belasten. Eine einzelne Regel mechanisch anzuwenden, ersetzt kein echtes Interesse am Gegenüber.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Kollege reagiert seit Wochen abweisend auf sachliche E-Mails. Eine noch längere Mail würde die Ursache wahrscheinlich nicht lösen. Die Situation spricht für eine Beziehungsstörung. Sinnvoller ist ein persönliches Gespräch, in dem die Wahrnehmung angesprochen und anschließend wieder die Sachfrage geklärt wird.",
-        "typische_fehler": "Alle Störungen mit mehr Sachinformationen bekämpfen oder eine persönliche Belastung als Unwillen bewerten. Besonders bei Beziehungsstörungen führt sachliches Nachlegen ohne Klärung häufig zu weiterer Distanz.",
         "verstaendnisfragen": [
-          "Warum ist eine Beziehungsstörung besonders hartnäckig? Weil der Empfänger die Sache durch die belastete Beziehung bewertet.",
-          "Welche sechs Regeln helfen fast immer? Ausreden lassen, verständlich sprechen, konkret bleiben, Ich-Botschaften verwenden, Verständnis zusammenfassen und beim Thema bleiben."
-        ],
-        "pruefungsbezug": "Störungstyp, konkretes Beispiel und passende Gegenmaßnahme gemeinsam nennen. Nur die Kategorie aufzuzählen reicht bei Fallaufgaben nicht.",
-        "merksatz": "Erst die Störung erkennen, dann die passende Ebene klären — mehr Argumente sind nicht immer die Lösung."
+          {
+            "frage": "Ein Kunde versteht deine Erklärung nicht. Welche Störung liegt vermutlich vor, und was hilft?",
+            "antwort": "Häufig eine sprachliche Störung durch Fachbegriffe oder zu lange Sätze. Hilfreich sind einfache Worte, ein konkretes Beispiel und eine Rückfrage, ob die Erklärung angekommen ist.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum hilft ein sachliches Argument bei einer Beziehungsstörung oft nicht?",
+            "antwort": "Weil der Empfänger die Nachricht durch die belastete Beziehung hört. Er prüft nicht nur, was gesagt wird, sondern auch, wer es sagt. Erst wenn die Beziehung angesprochen oder durch verlässliches Verhalten verbessert wird, kommen Sachargumente wieder an.",
+            "id": "a3-f2"
+          }
+        ]
       }
     ]
   },
@@ -151,7 +418,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Wer spricht, sendet auf drei Kanälen zugleich. Der Wortlaut ist dabei der schwächste — ==widersprechen sich Wort und Körper, glaubt der Empfänger dem Körper==."
+          "text": "Wer spricht, sendet auf drei Kanälen zugleich. ==Widersprechen sich Wort und Auftreten, wirken Ton und Körpersprache oft stärker als der Wortlaut== — sicher deuten lassen sie sich trotzdem nicht."
         },
         {
           "typ": "tabelle",
@@ -181,9 +448,9 @@
               "zellen": [
                 "Nonverbal",
                 "Mimik, Gestik, Haltung, Blick, Abstand",
-                "entscheidet über Glaubwürdigkeit"
+                "prägt die Glaubwürdigkeit"
               ],
-              "detail": "**Am Telefon fällt dieser Kanal weg** — deshalb wirkt der paraverbale dort doppelt so stark. Lächeln hört man tatsächlich, weil es die Stimme verändert."
+              "detail": "**Am Telefon fällt dieser Kanal weg** — deshalb wirkt der paraverbale dort umso stärker. Lächeln hört man tatsächlich, weil es die Stimme verändert."
             }
           ]
         },
@@ -194,17 +461,17 @@
             {
               "text": "Zustimmung, weil sie es so gesagt hat",
               "richtig": false,
-              "echo": "Der Wortlaut sagt Zustimmung, Körper und Ton sagen etwas anderes. Bei einem solchen Widerspruch glaubt der Empfänger fast nie den Worten."
+              "echo": "Der Wortlaut sagt Zustimmung, Körper und Ton sagen etwas anderes. Bei einem solchen Widerspruch achten die meisten stärker auf Ton und Haltung als auf die Worte."
             },
             {
-              "text": "Einen Widerspruch — und er glaubt dem Körper",
+              "text": "Einen Widerspruch zwischen Worten und Auftreten",
               "richtig": true,
-              "echo": "Richtig. Verbal, paraverbal und nonverbal widersprechen sich. In diesem Fall gewinnt der nonverbale Kanal, weil er als weniger steuerbar und damit ehrlicher gilt. Sinnvoll wäre jetzt, den Widerspruch anzusprechen statt ihn zu überhören."
+              "echo": "Richtig. Verbal, paraverbal und nonverbal passen nicht zusammen. Ton und Haltung wirken hier meist stärker, weil sie weniger bewusst gesteuert werden. Was die Kollegin wirklich denkt, weiß der Empfänger trotzdem nicht — vielleicht friert sie nur oder ist in Eile. Sinnvoll ist, freundlich nachzufragen, statt den Widerspruch zu überhören oder zu deuten."
             },
             {
               "text": "Nichts Besonderes, Körpersprache ist Auslegungssache",
               "richtig": false,
-              "echo": "Einzelne Gesten sind tatsächlich mehrdeutig. Ein Widerspruch zwischen Wort und Auftreten ist aber etwas anderes — er wird zuverlässig bemerkt, auch wenn er selten benannt wird."
+              "echo": "Einzelne Gesten sind tatsächlich mehrdeutig. Ein Widerspruch zwischen Wort und Auftreten ist aber etwas anderes — er fällt meist auf, auch wenn er selten benannt wird."
             }
           ]
         }
@@ -254,7 +521,7 @@
                 "alter Konflikt, Misstrauen, Hierarchie",
                 "Beziehung vor Sache klären"
               ],
-              "detail": "**Die hartnäckigste Sorte.** Solange die Beziehung gestört ist, kommt kein Sachargument durch — der Empfänger hört nicht, *was* gesagt wird, sondern *wer* es sagt. Deshalb bringt es nichts, sachlich nachzulegen; es macht es meist schlimmer."
+              "detail": "**Die hartnäckigste Sorte.** Solange die Beziehung gestört ist, kommen Sachargumente kaum an — der Empfänger hört nicht, *was* gesagt wird, sondern *wer* es sagt. Deshalb bringt es nichts, sachlich nachzulegen; es macht es meist schlimmer."
             },
             {
               "zellen": [
@@ -305,7 +572,7 @@
     "Sender-Empfänger-Modell: Gedanke, Kodierung, Kanal, Dekodierung.",
     "Die Bedeutung entsteht beim Empfänger, nicht beim Sender.",
     "Drei Kanäle: verbal (Worte), paraverbal (Ton), nonverbal (Körper).",
-    "Bei Widersprüchen glaubt der Empfänger dem nonverbalen Kanal.",
+    "Bei Widersprüchen wirken Ton und Körpersprache oft stärker als die Worte — nachfragen statt deuten.",
     "Störungen: äußere, sprachliche, persönliche, Beziehungs- und Wahrnehmungsstörungen.",
     "Eine Beziehungsstörung lässt sich nicht mit Sachargumenten lösen."
   ],
@@ -318,7 +585,7 @@
     {
       "typ": "Wissen",
       "frage": "Nenne die drei Kommunikationskanäle und erkläre, welcher bei einem Widerspruch gewinnt.",
-      "loesung": "Verbal sind die Worte, paraverbal ist die Art des Sprechens mit Lautstärke, Tempo und Betonung, nonverbal sind Mimik, Gestik, Haltung und Blick. Widersprechen sich die Kanäle, glaubt der Empfänger dem nonverbalen, weil dieser als am wenigsten steuerbar und damit als ehrlicher gilt."
+      "loesung": "Verbal sind die Worte, paraverbal ist die Art des Sprechens mit Lautstärke, Tempo und Betonung, nonverbal sind Mimik, Gestik, Haltung und Blick. Widersprechen sich die Kanäle, achten Empfänger meist stärker auf Ton und Körpersprache, weil diese weniger bewusst gesteuert werden. Eine sichere Deutung ist das nicht; Nachfragen klärt, was gemeint ist."
     },
     {
       "typ": "Fall",
