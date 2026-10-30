@@ -11,7 +11,7 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-bdba217632df1bf0";
+var SPEICHER = "azubipass-1c29a38e912013d2";
 var VORRAT = {
   "./": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
   "app.html": "4a6fb745b3dc7cdaa6104f6669d576cb6b92146262b0b8743424c7bf27b0dbd9",
@@ -44,11 +44,11 @@ var VORRAT = {
   "lf5.html": "1bd0f558921b76c9f22bcd524ede288bddc5c5af6303a1e9fe516f1b9e3d96c8",
   "lf7.html": "5069989d907b17be1396889b2dfeb5b7cab0abc1c483ef13fcc989398fb7d8e4",
   "lf8.html": "fdab2517c61219b941a2332ff36d3c049cd4bdabbc440caaf0b7a6e799fc07d2",
-  "lf9.html": "116cd7a6406dd4f7cdeefd6bf5c8d6a0bdbe5432249372073de92fcbd6fa7fda",
+  "lf9.html": "0fad145127d8453328d5842f0238bdf2d47da69be25fb79831d0678d6bea3e7c",
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "49e2f946051d0f3e1dfb60f5f7ea5ee3ec1db923636b71f29f1a848c269cdfd5",
   "mittel/aufgaben.js": "3da2279f3048ff8233db6f053e2ac066cc5b31b8e17c21e6ed7f6c8c9b1022f3",
-  "mittel/aufgaben.json": "13475744b4c07feec4d192b8b98b8116e37021275bd278ac1c51e80e56ba5af4",
+  "mittel/aufgaben.json": "acb7d5fbc42484fa9c6ede0cb25865ef1871ad41e5a35bd0483bac5ca993ecfa",
   "mittel/azubipass-logo.png": "6fbfaa65da67de20b628b6d5415a8a46c95ceeaa5c6638492e2860e7d6e98973",
   "mittel/azubipass-symbol.png": "82cddbb695cbba0a09d3b933eb4b178e221463e015b962d8013cdff580d4a692",
   "mittel/azubipass.css": "dbdda5a25c8b09c501afcfaff31b2541ebe7ef77dc8344839e0f28fff09f1647",
@@ -68,7 +68,7 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "d4f7140aad52958352288727c73e63b0cee55627f50878d31d31e0a60001a8cb",
+  "mittel/inhalt.json": "9756cc6d9feac9642401e2a3cbc50a40706a9010aaa0b7ff93f643f1d80e54db",
   "mittel/kern.js": "fe047655aad844758254282a3d4a0d3e8942970b8eafc0d606c6076aaef74bef",
   "mittel/landing.css": "c1d299ad11bd6a3fd4b8515d08334b45741b6616da271a4899acf51353596f45",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",

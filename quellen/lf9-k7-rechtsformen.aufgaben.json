@@ -1,0 +1,185 @@
+{
+  "lernfeld": "lf9",
+  "kapitel": "k7",
+  "verweise_im_klausurmodus": "ausblenden",
+  "bausteine": [
+    {
+      "id": "lf9-k7-01",
+      "operator": "Ordnen Sie zu",
+      "anforderungsbereich": 1,
+      "punkte": 3,
+      "dauer_min": 3,
+      "schwierigkeit": 1,
+      "passt_zu": [
+        "vorgang:winterkollektion-finanzierung"
+      ],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Jonas Weber überlegt, in welcher Rechtsform er sein Geschäft führen soll. Zuerst klärt er, wer jeweils für die Schulden des Unternehmens haftet."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Wie haften die Beteiligten gegenüber den Gläubigern?",
+          "ziele": [
+            "unbeschränkt mit dem Privatvermögen",
+            "nur bis zur Höhe der Einlage",
+            "nur das Gesellschaftsvermögen haftet"
+          ],
+          "elemente": [
+            {
+              "text": "Inhaber eines Einzelunternehmens",
+              "loesung": "unbeschränkt mit dem Privatvermögen"
+            },
+            {
+              "text": "Kommanditistin einer KG",
+              "loesung": "nur bis zur Höhe der Einlage"
+            },
+            {
+              "text": "GmbH gegenüber ihren Gläubigern",
+              "loesung": "nur das Gesellschaftsvermögen haftet"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_je_treffer": 1
+      },
+      "erklaerung": "Der Einzelunternehmer haftet mit allem, was er hat. In der KG haftet der Komplementär unbeschränkt, die Kommanditistin nur bis zur Höhe ihrer Einlage. Bei der GmbH haftet nur das Gesellschaftsvermögen; die Gesellschafter riskieren grundsätzlich nur ihre Einlage.",
+      "quelle": "lf9-k7, Abschnitt b3"
+    },
+    {
+      "id": "lf9-k7-02",
+      "operator": "Berechnen Sie",
+      "anforderungsbereich": 2,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [
+        "vorgang:winterkollektion-finanzierung"
+      ],
+      "variablen": {
+        "gewinn": {
+          "von": 24000,
+          "bis": 72000,
+          "schritt": 4000
+        }
+      },
+      "abgeleitet": {
+        "anteil_komplementaer": "runde(gewinn * 0.75, 2)",
+        "anteil_kommanditistin": "runde(gewinn * 0.25, 2)"
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "In einer KG hat der Komplementär einen Kapitalanteil von 60.000 €, die Kommanditistin von 20.000 €. Der Gesellschaftsvertrag sagt nichts zur Gewinnverteilung; vereinbart sind nur diese Beteiligungsverhältnisse."
+        },
+        {
+          "block": "anlage",
+          "titel": "Anlage 1: Jahresgewinn der KG",
+          "zugeklappt": false,
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Wert"
+            ],
+            "zeilen": [
+              [
+                "Jahresgewinn",
+                "{gewinn} €"
+              ],
+              [
+                "Kapitalanteil Komplementär",
+                "60.000 €"
+              ],
+              [
+                "Kapitalanteil Kommanditistin",
+                "20.000 €"
+              ]
+            ]
+          }
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zahl",
+          "label": "Gewinnanteil Komplementär",
+          "einheit": "€",
+          "loesung": "anteil_komplementaer",
+          "punkte": 2
+        },
+        {
+          "block": "zahl",
+          "label": "Gewinnanteil Kommanditistin",
+          "einheit": "€",
+          "loesung": "anteil_kommanditistin",
+          "punkte": 2
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 4
+      },
+      "erklaerung": "Nach dem seit 2024 geltenden Recht wird der Gewinn ohne besondere Vereinbarung nach den vereinbarten Beteiligungsverhältnissen verteilt. 60.000 € zu 20.000 € entsprechen 75 % zu 25 %. Die frühere Regel mit 4 % Vorabverzinsung der Kapitalanteile gilt nicht mehr.",
+      "quelle": "lf9-k7, Abschnitt b3"
+    },
+    {
+      "id": "lf9-k7-03",
+      "operator": "Beurteilen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 6,
+      "schwierigkeit": 3,
+      "passt_zu": [
+        "vorgang:winterkollektion-finanzierung"
+      ],
+      "variablen": null,
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Jonas Webers Tante möchte sein Geschäft mit 40.000 € unterstützen. Sie will mitverdienen, aber nicht mitarbeiten und auf keinen Fall mehr als diesen Betrag riskieren. Jonas möchte allein entscheiden."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Beurteilen Sie, ob die Tante als Darlehensgeberin, als Kommanditistin einer KG oder als Gesellschafterin einer GmbH einsteigen sollte. Gehen Sie auf Haftung, Mitsprache und Gewinnbeteiligung ein.",
+          "zeilen": 7
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Als Darlehensgeberin erhält die Tante Zinsen, aber keinen Gewinnanteil und keine Mitsprache; fällt das Geschäft aus, ist sie nur Gläubigerin unter anderen. Als Kommanditistin ist sie am Gewinn beteiligt, haftet nur bis zur Höhe ihrer Einlage und ist von der Geschäftsführung ausgeschlossen; Jonas entscheidet als Komplementär allein, haftet aber unbeschränkt. Als GmbH-Gesellschafterin wäre ihr Risiko ebenfalls auf die Einlage begrenzt, sie hätte aber Stimmrechte in der Gesellschafterversammlung, und die Gründung kostet mehr Aufwand und 25.000 € Mindeststammkapital. Ihre Wünsche – mitverdienen, nicht mitarbeiten, begrenztes Risiko – und Jonas' Wunsch nach alleiniger Entscheidung passen am besten zur KG mit der Tante als Kommanditistin. Nachteil für Jonas ist seine unbeschränkte Haftung; will er sie vermeiden, käme eine GmbH in Betracht, in der die Mitsprache der Tante vertraglich geregelt werden müsste.",
+        "raster": [
+          {
+            "kriterium": "Darlehen richtig eingeordnet: Zinsen statt Gewinnanteil, keine Mitsprache, Tante ist Gläubigerin",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Kommanditistin: Gewinnbeteiligung, Haftung bis zur Einlage, von der Geschäftsführung ausgeschlossen",
+            "punkte": 1
+          },
+          {
+            "kriterium": "GmbH: Haftung auf Einlage begrenzt, Stimmrecht, Gründungsaufwand und Mindeststammkapital",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Begründete Empfehlung, die die Wünsche von Tante und Jonas verbindet",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Nachteil der gewählten Lösung benannt, etwa die unbeschränkte Haftung des Komplementärs",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Entscheidend ist, welche Rolle die Tante haben soll: Gläubigerin, Teilhaberin mit begrenzter Haftung ohne Geschäftsführung oder Gesellschafterin mit Stimmrecht. Die Begründung muss Haftung, Mitsprache und Gewinnbeteiligung verbinden.",
+      "quelle": "lf9-k7, Abschnitte b1–b3"
+    }
+  ]
+}

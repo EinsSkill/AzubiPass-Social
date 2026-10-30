@@ -466,8 +466,14 @@ def browser(w):
         print("A16 · Berufe getrennt")
         pg.goto(f"{w}/ik2024-lf03.html#k02")
         pg.wait_for_selector("#k02:not([hidden])")
-        pruefe(pg.locator(".vollfassung").count() == 0 and pg.evaluate("() => document.body.dataset.lernfeld") == "ik2024-lf03",
-               "A16 IK-Seite zeigt keine KfB-Vollfassung; Zustand hängt an der Seite des Berufs")
+        # Seit der IK-Redaktion hat auch die IK-Seite Vollfassungen. Geprüft wird die Trennung:
+        # Jede Vollfassung gehört zu einem IK-Kapitel (Kennung k01…k13), keine stammt aus KfB (k1…k13).
+        fremd = pg.evaluate("""() => [...document.querySelectorAll('.vollfassung')]
+            .map(v => (v.closest('section[id], article[id], [id^="k"]') || {}).id || '')
+            .filter(id => !/^k\\d\\d/.test(id))""")
+        pruefe(pg.locator(".vollfassung").count() > 0 and not fremd
+               and pg.evaluate("() => document.body.dataset.lernfeld") == "ik2024-lf03",
+               "A16 IK-Seite zeigt nur IK-Vollfassungen; Zustand hängt an der Seite des Berufs", fremd[:5])
 
         # ------------------------------------------------ A20 Tastatur, axe
         print("A20 · Tastatur und Barrierefreiheit")
