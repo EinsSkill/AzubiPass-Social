@@ -6,66 +6,609 @@
   "untertitel": "Acht Stunden am Tag. Da lohnt es sich, ihn richtig einzustellen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Arbeitsplatz beeinflusst Gesundheit und Leistungsfähigkeit.",
-          "Ergonomie richtet die Arbeit am Menschen aus."
+        "darstellung": "vollfassung",
+        "ziel": "Du untersuchst einen Büroarbeitsplatz nach Licht, Lärm, Klima, Platz und Gestaltung, vergleichst ihn mit den Richtwerten der Arbeitsstättenregeln und schlägst Verbesserungen vor.",
+        "vorwissen_kurz": "Ergonomie passt die Arbeit an den Menschen an, nicht umgekehrt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Umgebung arbeitet mit",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer im Büro arbeitet, verbringt dort viele Stunden. Ob man sich konzentrieren kann, wie schnell man ermüdet und wie viele Fehler passieren, hängt auch von der Umgebung ab. Die Arbeitsstättenverordnung und die technischen Regeln dazu legen fest, was ein Arbeitsplatz mindestens bieten muss. {{begriff:ergonomie|Ergonomie}} geht darüber hinaus: Sie fragt, wie die Arbeit am besten zu den Menschen passt.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Arbeitsplatz im Check",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Faktor",
+              "Befund",
+              "Richtwert",
+              "Maßnahme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Licht",
+                  "Bildschirm vor dem Fenster, abends nur Deckenlampe",
+                  "etwa 500 Lux für Büroarbeit, blendfrei",
+                  "Tisch drehen, Jalousie, Arbeitsplatzleuchte"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lärm",
+                  "Drucker neben dem Schreibtisch, Telefonate der Kollegen",
+                  "für überwiegend geistige Tätigkeit höchstens 55 dB(A)",
+                  "Drucker in einen Nebenraum, Telefonregeln"
+                ]
+              },
+              {
+                "zellen": [
+                  "Klima",
+                  "im Winter morgens 18 °C",
+                  "mindestens 20 °C bei sitzender Büroarbeit",
+                  "Heizung früher einschalten lassen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Platz",
+                  "Kartons im Durchgang",
+                  "Verkehrswege frei, ausreichende Bewegungsfläche",
+                  "Kartons ins Lager"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gestaltung",
+                  "grelle Wandfarbe, keine Pflanzen",
+                  "ruhige Umgebung",
+                  "Teil der nächsten Renovierung"
+                ]
+              }
+            ],
+            "fazit": "Drei Mängel lassen sich sofort beheben, einer braucht den Hausmeister, einer ist eine längerfristige Verbesserung.",
+            "id": "b1-t1"
+          }
         ],
-        "erklaerung": "Ergonomie betrachtet nicht nur den Stuhl, sondern die gesamte Arbeitssituation. Zu den fünf Umgebungsfaktoren gehören Licht, Lärm, Klima, Platz und Gestaltung. Ein guter Arbeitsplatz reduziert unnötige Belastungen und macht die Arbeitsmittel so erreichbar, dass die Tätigkeit dauerhaft ausgeführt werden kann.",
-        "beispiele": [
-          "Ein Bildschirmarbeitsplatz mit seitlichem Fenster, ausreichend Platz und passender Beleuchtung berücksichtigt Licht und Raum ebenso wie die Sitzposition.",
-          "Eine laute Umgebung kann die Konzentration stören; neben der Gestaltung des Arbeitsplatzes gehört deshalb auch der Lärm in die Betrachtung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Hitze im Büro",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Steigt die Raumtemperatur über 26 °C, soll der Arbeitgeber Maßnahmen ergreifen, etwa Jalousien schließen, Gleitzeit lockern oder Getränke bereitstellen. Über 30 °C muss er handeln. Räume mit über 35 °C sind ohne besondere Maßnahmen nicht als Arbeitsraum geeignet.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Bei der Prüfung eines neuen Arbeitsplatzes werden fünf Punkte nacheinander notiert: Licht, Lärm, Klima, Platz und Gestaltung. Erst danach wird über einzelne Möbel gesprochen. So wird nicht nur ein zu hoher Bildschirm korrigiert, während etwa Blendung oder fehlende Bewegungsfläche übersehen werden.",
-        "typische_fehler": "Ergonomie wird auf einen höhenverstellbaren Stuhl reduziert. Ebenso wird nur die Körperhaltung betrachtet, obwohl Licht, Lärm, Klima, Platz und Gestaltung ebenfalls Belastungsfaktoren sind.",
         "verstaendnisfragen": [
-          "Welche fünf Umgebungsfaktoren gehören zur Arbeitsplatzprüfung? Licht, Lärm, Klima, Platz und Gestaltung.",
-          "Was ist der Grundgedanke der Ergonomie? Die Arbeit wird an den Menschen angepasst, nicht der Mensch dauerhaft an eine ungeeignete Arbeitssituation."
+          {
+            "frage": "Warum gilt im Büro ein niedrigerer Lärmwert als in der Werkstatt?",
+            "antwort": "Geistige Arbeit wie Rechnen, Schreiben oder Telefonieren reagiert empfindlicher auf Geräusche als körperliche Tätigkeit. Schon gedämpfte Gespräche stören die Konzentration.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Lea arbeitet am Fenster und hat trotzdem abends zu wenig Licht. Was hilft?",
+            "antwort": "Eine blendfreie Arbeitsplatzleuchte ergänzt das Raumlicht. Tageslicht schwankt; der Arbeitsplatz muss auch ohne es ausreichend beleuchtet sein.",
+            "id": "b1-f2"
+          }
         ],
-        "pruefungsbezug": "Nenne bei offenen Fragen nicht nur Möbel, sondern die vollständigen fünf Umgebungsfaktoren. Das zeigt, dass du den Arbeitsplatz ganzheitlich beurteilst.",
-        "merksatz": "Ergonomie ist mehr als Sitzen: Licht, Lärm, Klima, Platz und Gestaltung gehören zusammen."
+        "quellen": [
+          {
+            "titel": "Technische Regeln für Arbeitsstätten ASR A3.4, A3.5, A3.7 (BAuA)",
+            "url": "https://www.baua.de/DE/Angebote/Regelwerk/ASR/ASR.html",
+            "bezug": "Beleuchtung, Raumtemperatur, Lärm"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Die Einstellung eines Arbeitsplatzes beginnt mit der Sitzposition.",
-          "Jede Einstellung beeinflusst die nächste."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst einen Bildschirmarbeitsplatz in der richtigen Reihenfolge ein und begründest jede Einstellung mit ihrer Wirkung auf den Körper.",
+        "vorwissen_kurz": "Wer lange in derselben Haltung sitzt, belastet Rücken, Nacken, Schultern und Augen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Von unten nach oben",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Bildschirmarbeitsplatz ist gut eingestellt, wenn der Körper ohne Anstrengung aufrecht sitzt, die Schultern locker bleiben und die Augen nicht ständig zwischen hell und dunkel wechseln müssen. Weil jede Einstellung die nächste beeinflusst, beginnt man beim Stuhl und endet bei Tastatur und Maus.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Tims Einstellung Schritt für Schritt",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Befund bei Tim (1,85 m)",
+              "Einstellung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Stuhl",
+                  "Knie höher als die Hüfte",
+                  "Sitz höher, bis Ober- und Unterschenkel etwa 90 Grad bilden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tisch",
+                  "Unterarme schräg nach oben",
+                  "höhenverstellbaren Tisch anheben, bis die Unterarme waagerecht liegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bildschirm",
+                  "Blick nach oben, Nacken im Hohlkreuz",
+                  "Bildschirm absenken: oberste Zeile auf oder knapp unter Augenhöhe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tastatur und Maus",
+                  "Maus weit rechts neben dem Ziffernblock",
+                  "Maus näher heran oder kompakte Tastatur ohne Ziffernblock"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wechsel",
+                  "sitzt seit zwei Stunden durch",
+                  "jede Stunde einige Minuten stehen oder gehen"
+                ]
+              }
+            ],
+            "fazit": "Keine Einstellung hilft, wenn Tim acht Stunden in derselben Haltung verharrt. Der Wechsel ist Teil der Ergonomie.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Der Bildschirmarbeitsplatz wird von unten nach oben eingestellt: zuerst Stuhl, dann Tisch, Bildschirm, Tastatur und Maus. Füße stehen vollständig auf dem Boden, Ellenbogen, Hüfte und Knie bilden ungefähr rechte Winkel. Die oberste Bildschirmzeile liegt auf oder unter Augenhöhe, der Blick geht leicht nach unten und der Abstand beträgt etwa eine Armlänge. Der Bildschirm steht seitlich zum Fenster.",
-        "beispiele": [
-          "Reicht die Tischhöhe nicht für waagerechte Unterarme und lockere Schultern, kann eine Fußstütze helfen, statt die Sitzhaltung zu erzwingen.",
-          "Ein Bildschirm auf einem Ordnerstapel kann zu hoch stehen. Die oberste Zeile gehört auf oder unter Augenhöhe; das Fenster sollte nicht hinter der Person liegen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Zwei Bildschirme und Laptops",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer viel am zweiten Bildschirm arbeitet, stellt ihn direkt vor sich, den weniger genutzten seitlich. Werden beide gleich viel genutzt, steht die Mitte zwischen ihnen vor dem Körper. Ein Laptop allein ist für Dauerarbeit ungeeignet, weil Bildschirm und Tastatur nicht getrennt eingestellt werden können; mit externer Tastatur und Maus oder Ständer wird daraus ein brauchbarer Arbeitsplatz.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Kollegin hat Nacken- und Augenschmerzen. Der Bildschirm steht auf Ordnern, der Stuhl ist nicht verstellbar und das Fenster liegt hinter ihr. Die Korrektur erfolgt in der Reihenfolge: geeigneten Stuhl bereitstellen, Tischhöhe anpassen, Bildschirm auf Augenhöhe oder darunter ausrichten und den Arbeitsplatz mit seitlichem Fenster positionieren. Danach werden Tastatur und Maus nah am Körper angeordnet.",
-        "typische_fehler": "Der Bildschirm wird zuerst eingestellt und der Stuhl danach verändert. Häufig wird die oberste Zeile zu hoch positioniert oder der Bildschirm direkt vor beziehungsweise mit dem Rücken zum Fenster gestellt.",
         "verstaendnisfragen": [
-          "Warum wird von unten nach oben eingestellt? Weil Sitz- und Tischhöhe die spätere Bildschirmposition beeinflussen.",
-          "Wo soll der Bildschirm zum Fenster stehen? Seitlich, damit direkte Blendung und Spiegelungen reduziert werden."
-        ],
-        "pruefungsbezug": "Schreibe die Reihenfolge vollständig aus: Stuhl, Tisch, Bildschirm, Tastatur, Maus. Ergänze rechte Winkel, Augenhöhe und seitlichen Fenstereinfall.",
-        "merksatz": "Von unten nach oben einstellen: Stuhl, Tisch, Bildschirm, Tastatur, Maus."
+          {
+            "frage": "Warum stellt man den Bildschirm nicht als Erstes ein?",
+            "antwort": "Seine richtige Höhe hängt von der Augenhöhe ab, und die verändert sich mit der Stuhlhöhe. Wer zuerst den Bildschirm ausrichtet und danach den Stuhl verstellt, muss den Bildschirm erneut einstellen.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Was bewirkt die Handballenauflage vor der Tastatur?",
+            "antwort": "Die Handgelenke liegen ab, statt beim Tippen dauerhaft gehalten zu werden. Das entlastet Unterarme und Schultern.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Arbeitsplatzmängel können Gefährdungen verursachen.",
-          "Arbeitsschutz verbindet Verantwortung des Arbeitgebers mit Mitwirkung der Beschäftigten."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst die Pflichten von Arbeitgeber und Beschäftigten im Arbeitsschutz, verfolgst eine Gefährdungsbeurteilung an einem Bildschirmarbeitsplatz und kennst die Akteure im Betrieb.",
+        "vorwissen_kurz": "Arbeitsschutz soll Unfälle und arbeitsbedingte Erkrankungen verhindern.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Beurteilen, handeln, überprüfen",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Arbeitgeber trägt die Verantwortung für den Arbeitsschutz. Sein wichtigstes Werkzeug ist die {{begriff:gefaehrdungsbeurteilung|Gefährdungsbeurteilung}} ({{par:arbschg-5|§ 5 ArbSchG}}): Er ermittelt für jede Tätigkeit, welche Gefährdungen bestehen, legt Maßnahmen fest, prüft ihre Wirksamkeit und dokumentiert das Ergebnis. Beschäftigte unterstützen ihn, indem sie Schutzmaßnahmen einhalten und Mängel melden.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Gefährdungsbeurteilung für die Auftragsbearbeitung",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Gefährdung",
+              "Bewertung",
+              "Maßnahme",
+              "Wirksamkeit geprüft"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Blendung durch Fensterlage",
+                  "hoch",
+                  "Arbeitsplätze quer zum Fenster stellen, Jalousien",
+                  "Begehung nach vier Wochen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rücken- und Nackenbeschwerden",
+                  "mittel",
+                  "höhenverstellbare Tische, Unterweisung zur Einstellung",
+                  "Befragung nach drei Monaten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeitdruck in der Saison",
+                  "mittel",
+                  "Aushilfen im Herbst, Prioritätenregel",
+                  "Überstundenauswertung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stolpergefahr durch Kabel",
+                  "gering",
+                  "Kabelkanäle",
+                  "Sichtprüfung"
+                ]
+              }
+            ],
+            "fazit": "Eine Gefährdungsbeurteilung ist kein einmaliges Formular. Sie wird bei Änderungen wiederholt und zeigt, ob Maßnahmen wirken.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Nach § 5 ArbSchG beurteilt der Arbeitgeber die Gefährdungen am Arbeitsplatz, leitet Schutzmaßnahmen ab und dokumentiert das Ergebnis. Bei Bildschirmarbeit gehören Augen, Körper und psychische Belastungen in die Betrachtung. Beschäftigte müssen Unterweisungen beachten und erkannte Gefahren melden. Für Jugendliche gelten zusätzlich die strengeren Regeln des Jugendarbeitsschutzgesetzes.",
-        "beispiele": [
-          "Meldet eine Beschäftigte Spiegelungen und Nackenbeschwerden, gehört der Arbeitsplatz in die Gefährdungsbeurteilung; die Mängel dürfen nicht nur individuell ausgeglichen werden.",
-          "Bei einer minderjährigen Auszubildenden werden neben ergonomischen Fragen auch die Schutzgrenzen des JArbSchG geprüft."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Akteure im Arbeitsschutz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Betriebe müssen eine Fachkraft für Arbeitssicherheit und eine Betriebsärztin bestellen, die beraten. In Betrieben mit mehr als 20 Beschäftigten kommen Sicherheitsbeauftragte aus der Belegschaft hinzu, und ein Arbeitsschutzausschuss tagt regelmäßig. Der Betriebsrat bestimmt bei Regelungen zum Gesundheitsschutz mit. Von außen überwachen die staatliche Arbeitsschutzbehörde und die Berufsgenossenschaft.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Eine neue Kollegin klagt nach zwei Wochen über Nacken- und Augenschmerzen. Die Ursache wird nicht allein bei ihr gesucht: Der Arbeitgeber muss die Gefährdung nach § 5 ArbSchG beurteilen und dokumentieren. Die Kollegin meldet die Mängel und befolgt Unterweisungen; der Arbeitgeber stellt geeignete Arbeitsmittel bereit und beseitigt die erkannte Belastung.",
-        "typische_fehler": "Die Gefährdungsbeurteilung wird als Aufgabe der betroffenen Person angesehen. Ebenso wird die Meldung eines Mangels als ausreichend betrachtet, ohne die Verantwortung des Arbeitgebers für Beurteilung und Maßnahmen zu nennen.",
         "verstaendnisfragen": [
-          "Wer ist für die Gefährdungsbeurteilung verantwortlich? Der Arbeitgeber.",
-          "Was müssen Beschäftigte bei erkannten Gefahren tun? Sie melden die Gefahr und beachten die Unterweisungen und Schutzmaßnahmen."
+          {
+            "frage": "Muss ein Betrieb mit acht Beschäftigten die Gefährdungsbeurteilung dokumentieren?",
+            "antwort": "Ja. Die Pflicht, das Ergebnis der Gefährdungsbeurteilung, die Maßnahmen und die Überprüfung zu dokumentieren, gilt unabhängig von der Betriebsgröße.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Tim bemerkt, dass ein Verlängerungskabel angeschmort ist. Was tut er?",
+            "antwort": "Er nimmt es außer Betrieb, soweit das gefahrlos möglich ist, und meldet den Mangel sofort der Vorgesetzten oder der zuständigen Stelle. Beschäftigte sind verpflichtet, erkannte Gefahren zu melden.",
+            "id": "b3-f2"
+          }
         ],
-        "pruefungsbezug": "Verbinde im Fall immer drei Elemente: Arbeitgeber beurteilt und dokumentiert, Beschäftigte melden und befolgen, Jugendliche werden zusätzlich nach JArbSchG geschützt.",
-        "merksatz": "Der Arbeitgeber beurteilt die Gefährdung; Beschäftigte melden sie und wirken bei den Schutzmaßnahmen mit."
+        "quellen": [
+          {
+            "titel": "Arbeitsschutzgesetz, §§ 3–6, 12, 15–17",
+            "url": "https://www.gesetze-im-internet.de/arbschg/",
+            "bezug": "Pflichten, Gefährdungsbeurteilung, Dokumentation, Unterweisung, Pflichten der Beschäftigten"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst körperliche und psychische Belastungen am Arbeitsplatz, ordnest ihnen Ressourcen und organisatorische Maßnahmen zu und weißt, wer im Betrieb unterstützt.",
+        "vorwissen_kurz": "Belastungen gehören zur Arbeit. Problematisch werden sie, wenn sie dauerhaft hoch sind und Ressourcen fehlen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Belastung und Ressourcen",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede Arbeit belastet: Termine, schwierige Kunden, viele E-Mails. Ob daraus Stress wird, der krank macht, hängt davon ab, was dagegensteht. **Ressourcen** sind zum Beispiel Handlungsspielraum, klare Aufgaben, Unterstützung durch Kolleginnen, ausreichende Pausen, Bewegung und ausgewogene Ernährung. Der Arbeitgeber muss psychische Belastungen in die Gefährdungsbeurteilung aufnehmen und die Arbeit so gestalten, dass sie tragbar ist. Gesundheit ist damit keine reine Privatsache.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Monat im Kundenservice",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Sara arbeitet im Kundenservice von MAKEL. Im Oktober kommen dreimal so viele Anfragen wie sonst.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Beobachtung",
+              "Belastung",
+              "Ressource oder Maßnahme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Sara isst mittags am Schreibtisch und antwortet nebenbei",
+                  "keine Erholung",
+                  "echte Pause außerhalb des Arbeitsplatzes, Vertretung im Postfach"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kunden beschimpfen sie am Telefon",
+                  "emotionale Belastung",
+                  "Leitfaden für schwierige Gespräche, Rückendeckung der Teamleitung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sie weiß nicht, welche Anfragen zuerst kommen",
+                  "Unklarheit",
+                  "Prioritätenregel: Reklamationen vor Lieferanfragen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sie fährt abends noch zum Sport",
+                  "Ressource",
+                  "beibehalten; Überstunden so planen, dass es möglich bleibt"
+                ]
+              }
+            ],
+            "fazit": "Die meisten wirksamen Maßnahmen sind organisatorisch. Sie setzen beim Arbeitsablauf an, nicht bei der Person.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei Mobbing, also wiederholten und gezielten Anfeindungen über längere Zeit, ist niemand allein. Betroffene halten Vorfälle mit Datum fest und wenden sich an Vorgesetzte, den Betriebsrat oder eine betriebliche Beschwerdestelle. Bei Sorgen um Alkohol oder andere Suchtmittel bei sich oder anderen helfen die Betriebsärztin, betriebliche Suchtbeauftragte oder externe Beratungsstellen. Kolleginnen und Kollegen stellen keine Diagnosen; sie sprechen Beobachtungen an und zeigen Hilfewege.",
+            "id": "b4-p3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Betriebliches Eingliederungsmanagement",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer innerhalb von zwölf Monaten länger als sechs Wochen arbeitsunfähig war, dem muss der Arbeitgeber ein betriebliches Eingliederungsmanagement anbieten. Gemeinsam wird geklärt, wie die Arbeitsunfähigkeit überwunden und erneuten Ausfällen vorgebeugt werden kann. Die Teilnahme ist freiwillig.",
+                "id": "b4-d1-p1"
+              }
+            ],
+            "id": "b4-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Verhaltens- und Verhältnisprävention",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Verhältnisprävention verändert die Arbeitsbedingungen, etwa durch bessere Planung, ruhige Räume oder ergonomische Möbel. Verhaltensprävention setzt bei der Person an, etwa mit Rückenkursen oder Entspannungstraining. Wirksam ist vor allem beides zusammen; Kurse ersetzen aber keine Veränderung belastender Bedingungen.",
+                "id": "b4-d2-p1"
+              }
+            ],
+            "id": "b4-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum ist „Sara soll stressresistenter werden“ keine geeignete Maßnahme?",
+            "antwort": "Sie verlagert die Verantwortung auf die Person, obwohl die Belastung aus dem Arbeitsablauf kommt. Zuerst werden die Bedingungen gestaltet, etwa durch Vertretung, Prioritäten und Pausen. Angebote zur persönlichen Stärkung können ergänzen, aber nicht ersetzen.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Ein Kollege wirkt seit Wochen gereizt und erscheint unpünktlich. Wie verhältst du dich?",
+            "antwort": "Ich spreche ihn in Ruhe auf meine Beobachtungen an, ohne zu bewerten oder eine Ursache zu unterstellen, und frage, ob ich helfen kann. Ich weise auf Ansprechpartner wie Betriebsärztin oder Betriebsrat hin. Diagnosen stelle ich nicht.",
+            "id": "b4-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "Arbeitsschutzgesetz, § 5 Abs. 3 Nr. 6",
+            "url": "https://www.gesetze-im-internet.de/arbschg/__5.html",
+            "bezug": "psychische Belastung in der Gefährdungsbeurteilung"
+          },
+          {
+            "titel": "SGB IX, § 167 Abs. 2",
+            "url": "https://www.gesetze-im-internet.de/sgb_9_2018/__167.html",
+            "bezug": "Betriebliches Eingliederungsmanagement"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b5",
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Büroraumkonzepte, Telearbeit und mobiles Arbeiten an derselben Teamaufgabe und legst Rollen, Kommunikationsregeln und einen Konfliktweg für ein verteiltes, barrierearmes Team fest.",
+        "vorwissen_kurz": "Ein Team erledigt eine Aufgabe gemeinsam. Dafür braucht es Absprachen darüber, wer was wann und wie tut.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Team, vier Arbeitsorte",
+            "id": "b5-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL bereitet die Vorstellung der Frühjahrskollektion für Händler vor. Im Team sind Lea (im Büro), Tim (mittwochs und donnerstags im Homeoffice), Murat (im Außendienst unterwegs) und Sara, die schwerhörig ist und Gesprächen in lauten Räumen schlecht folgen kann. Der Arbeitsort jedes Einzelnen beeinflusst, wie das Team zusammenarbeitet.",
+            "id": "b5-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b5-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b5-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Absprachen für die Teamaufgabe",
+            "id": "b5-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bereich",
+              "Regel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rollen",
+                  "Lea koordiniert und hält den Zeitplan, Tim erstellt die Präsentation, Murat bringt Händlerwünsche ein, Sara schreibt die Ergebnisprotokolle"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kanäle",
+                  "Chat für kurze Fragen, E-Mail für Verbindliches mit Frist, Videobesprechung montags 9 Uhr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Antwortzeiten",
+                  "Chat innerhalb von zwei Stunden in der Kernzeit, E-Mail bis zum nächsten Arbeitstag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Barrierearmut",
+                  "Kamera an für Lippenlesen, Live-Untertitel in der Videobesprechung, Ergebnisse immer zusätzlich schriftlich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ablage",
+                  "alle Dateien im gemeinsamen Projektordner, Dateinamen mit Datum, keine Kopien auf privaten Geräten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Konfliktweg",
+                  "erst direkt und sachlich ansprechen, dann in der Montagsrunde klären, erst danach die Teamleitung einbeziehen"
+                ]
+              }
+            ],
+            "fazit": "Die Regeln gleichen aus, was die verschiedenen Orte erschweren. Was für Sara hilft — Untertitel, schriftliche Ergebnisse —, hilft auch Murat, der aus dem Auto zuhört.",
+            "id": "b5-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für Telearbeit im Homeoffice stellt der Arbeitgeber die Ausstattung und prüft die Arbeitsbedingungen; für mobiles Arbeiten trägt er weiterhin die Verantwortung für den Arbeitsschutz, etwa durch Unterweisung. In beiden Fällen gelten Arbeitszeit- und Datenschutzregeln: Murat telefoniert im Zug nicht über Kundendaten, Tim sperrt den Bildschirm, wenn er den Raum verlässt.",
+            "id": "b5-p2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Desk-Sharing",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim Desk-Sharing gibt es weniger Schreibtische als Beschäftigte, weil nicht alle gleichzeitig da sind. Das spart Fläche, verlangt aber gute Buchungsregeln, aufgeräumte Plätze und schnell einstellbare Möbel. Für Beschäftigte, die einen festen, angepassten Arbeitsplatz brauchen, etwa wegen einer Behinderung, muss es Ausnahmen geben.",
+                "id": "b5-d1-p1"
+              }
+            ],
+            "id": "b5-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Tim möchte ganz ins Homeoffice wechseln. Kann er das verlangen?",
+            "antwort": "Einen allgemeinen gesetzlichen Anspruch gibt es nicht. Homeoffice beruht auf einer Vereinbarung mit dem Arbeitgeber oder auf einer Betriebsvereinbarung. Tim kann es beantragen; MAKEL entscheidet nach betrieblichen Gründen.",
+            "id": "b5-f1"
+          },
+          {
+            "frage": "Warum hilft die schriftliche Zusammenfassung nicht nur Sara?",
+            "antwort": "Schriftliche Ergebnisse sind für alle nachlesbar, auch für Murat, der unterwegs nicht alles mitbekommt, und für jeden, der nicht teilnehmen konnte. Barrierearme Regeln verbessern die Zusammenarbeit für das ganze Team.",
+            "id": "b5-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "Arbeitsstättenverordnung, § 2 Abs. 7",
+            "url": "https://www.gesetze-im-internet.de/arbst_ttv_2004/__2.html",
+            "bezug": "Telearbeitsplatz"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +627,14 @@
       "id": "lz3",
       "text": "Pflichten des Arbeitgebers im Arbeitsschutz erklären",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Belastungen und Ressourcen am Arbeitsplatz erkennen und organisatorische Maßnahmen und Ansprechpartner zuordnen"
+    },
+    {
+      "abschnitt": "b5",
+      "text": "Büroraumkonzepte, Telearbeit und mobiles Arbeiten an einer Teamaufgabe vergleichen"
     }
   ],
   "bloecke": [
@@ -320,6 +871,116 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Gesund bleiben bei der Arbeit",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Belastungen am Arbeitsplatz sind nicht nur körperlich. Zeitdruck, ständige Unterbrechungen, Konflikte im Team oder Überforderung wirken ebenso. ==Ob eine Belastung krank macht, hängt auch von den Ressourcen ab: Handlungsspielraum, Unterstützung, Pausen, Bewegung.== Deshalb gehören psychische Belastungen ausdrücklich in die Gefährdungsbeurteilung."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Belastung",
+            "Organisatorische Maßnahme",
+            "Ansprechpartner"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "dauernde Unterbrechungen durch Telefon und Chat",
+                "feste Zeiten ohne Erreichbarkeit, Vertretungsregel",
+                "Vorgesetzte, Team"
+              ]
+            },
+            {
+              "zellen": [
+                "einseitiges Sitzen",
+                "Wechsel Sitzen–Stehen, Bewegungspausen, Wege einplanen",
+                "Fachkraft für Arbeitssicherheit"
+              ]
+            },
+            {
+              "zellen": [
+                "wiederholte Herabsetzung durch eine Kollegin",
+                "Vorfälle notieren, Beschwerde einlegen",
+                "Vorgesetzte, Betriebsrat, Beschwerdestelle"
+              ],
+              "detail": "**Beschäftigte haben ein Beschwerderecht**, und wer sich beschwert, darf deshalb nicht benachteiligt werden. Ziel ist, das Verhalten abzustellen, nicht Betroffenen die Schuld zu geben."
+            },
+            {
+              "zellen": [
+                "Sorge um Alkoholkonsum eines Kollegen",
+                "nicht selbst diagnostizieren, Hilfeangebote nennen",
+                "Betriebsärztin, Suchtbeauftragte, Betriebsrat"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Belastung minus Ressourcen entscheidet.** Der Arbeitgeber beurteilt auch psychische Belastungen und gestaltet die Arbeit; Beschäftigte melden Probleme und nutzen Hilfsangebote. Niemand muss eine Diagnose stellen, um Hilfe zu holen.",
+          "karteikarte": "Welche Belastungen gehören in die Gefährdungsbeurteilung, und welche Ansprechpartner gibt es im Betrieb?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b5",
+      "titel": "Büro, Homeoffice, unterwegs",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Wo gearbeitet wird, hat sich verändert. Neben dem klassischen Einzel- oder Gruppenbüro gibt es Großraum- und Open-Space-Flächen, wechselnde Arbeitsplätze und Arbeit von zu Hause oder unterwegs. ==Welches Konzept passt, hängt von der Aufgabe ab: Konzentration braucht Ruhe, Zusammenarbeit braucht kurze Wege.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Form",
+            "Stärke",
+            "Schwäche"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Einzel- oder Zweierbüro",
+                "Ruhe, Vertraulichkeit",
+                "weniger spontane Abstimmung"
+              ]
+            },
+            {
+              "zellen": [
+                "Großraum / Open Space",
+                "kurze Wege, schnelle Absprachen",
+                "Lärm, Unterbrechungen, wenig Rückzug"
+              ]
+            },
+            {
+              "zellen": [
+                "Telearbeit im Homeoffice",
+                "Ruhe, keine Fahrtzeit",
+                "Ergonomie und Datenschutz zu Hause sicherstellen"
+              ],
+              "detail": "**Telearbeit** ist ein vom Arbeitgeber fest eingerichteter Bildschirmarbeitsplatz in der Wohnung; dafür gilt die Arbeitsstättenverordnung. **Mobiles Arbeiten** an wechselnden Orten fällt nicht darunter, das Arbeitsschutzgesetz gilt aber auch dort. Einen allgemeinen gesetzlichen Anspruch auf Homeoffice gibt es nicht."
+            },
+            {
+              "zellen": [
+                "mobil unterwegs",
+                "flexibel, nah am Kunden",
+                "Bildschirm, Haltung und Vertraulichkeit oft schlecht"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Das Raumkonzept folgt der Aufgabe.** Für jede Form müssen Ergonomie, Datenschutz und Zusammenarbeit geregelt sein. Homeoffice ist Vereinbarungssache, kein gesetzlicher Anspruch.",
+          "karteikarte": "Worin unterscheiden sich Telearbeit und mobiles Arbeiten, und wovon hängt die Wahl des Raumkonzepts ab?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -330,7 +991,9 @@
     "Ellenbogen, Hüfte und Knie bilden jeweils etwa einen rechten Winkel.",
     "Die oberste Bildschirmzeile liegt auf oder unter Augenhöhe.",
     "{{par:arbschg-5|§ 5 ArbSchG}}: Der Arbeitgeber beurteilt Gefährdungen und dokumentiert sie.",
-    "Für Jugendliche unter 18 gelten die strengeren Regeln des Jugendarbeitsschutzgesetzes."
+    "Für Jugendliche unter 18 gelten die strengeren Regeln des Jugendarbeitsschutzgesetzes.",
+    "Psychische Belastungen gehören in die Gefährdungsbeurteilung; Ressourcen wie Spielraum und Unterstützung schützen.",
+    "Das Raumkonzept folgt der Aufgabe; Telearbeit unterliegt der Arbeitsstättenverordnung, mobiles Arbeiten nicht."
   ],
   "selbsttest": [
     {

@@ -88,15 +88,22 @@ def statisch():
             mit += 1
     pruefe(ohne == 0, f"A05 Kapitelschalter genau dann, wenn ein Abschnitt vertiefbar ist ({mit} Kapitel)", ohne)
 
-    # Keine doppelten DOM-IDs auf den Pilotseiten
-    for name in ("lf2.html", "lf3.html", "lf4.html"):
+    # Alle Lernfeldseiten (beide Berufe) aus den Registern
+    seiten = sorted(json.loads(r.read_text(encoding="utf-8"))["id"] + ".html" for r in HIER.glob("*.lernfeld.json"))
+
+    # Keine doppelten DOM-IDs auf allen Lernfeldseiten
+    for name in seiten:
         t = (DOCS / name).read_text(encoding="utf-8")
         ids = re.findall(r'\sid="([^"]+)"', t)
         doppelt = sorted({i for i in ids if ids.count(i) > 1})
         pruefe(not doppelt, f"{name}: keine doppelte DOM-ID", doppelt[:4])
 
-    # Übungs-/Kartenkennungen unverändert gegenüber main (Basis d0cfb8a)
-    for name in ("lf2.html", "lf3.html", "lf4.html"):
+    # Übungs-/Kartenkennungen gegenüber main (Basis d0cfb8a): keine alte Kennung fehlt,
+    # Reihenfolge der alten bleibt; neue Hauptabschnitte dürfen neue Kennungen ergänzen.
+    def teilfolge(alt, neu):
+        it = iter(neu)
+        return all(x in it for x in alt)
+    for name in seiten:
         try:
             alt = subprocess.run(["git", "show", f"d0cfb8a:docs/{name}"], cwd=HIER.parent,
                                  capture_output=True, text=True, check=True).stdout
@@ -106,15 +113,16 @@ def statisch():
         neu = (DOCS / name).read_text(encoding="utf-8")
         muster = r'class="(?:check rein|karte|zuordnen rein|frage|zu-reihe)" id="([^"]+)"'
         a, n = re.findall(muster, alt), re.findall(muster, neu)
-        pruefe(a == n, f"{name}: Kennungen von Checks, Karten, Zuordnungen, Fragen unverändert", f"{len(n)} Stück")
+        fehlt = sorted(set(a) - set(n))
+        pruefe(not fehlt and teilfolge(a, n), f"{name}: alte Kennungen erhalten ({len(a)} alt, {len(n) - len(a)} neu)", fehlt[:3])
         oa, on = re.findall(r'data-option-id="([^"]+)"', alt), re.findall(r'data-option-id="([^"]+)"', neu)
-        pruefe(oa == on, f"{name}: Antwort-Kennungen unverändert")
+        pruefe(not (set(oa) - set(on)) and teilfolge(oa, on), f"{name}: alte Antwort-Kennungen erhalten")
 
     # A26: Jede Vollfassungsebene hat einen Suchtreffer und umgekehrt
     suche = json.loads((DOCS / "mittel" / "suche.json").read_text(encoding="utf-8"))
     ziele = {e["zu"] for e in suche if "ansicht=ausfuehrlich" in e["zu"]}
     erwartet = set()
-    for name in ("lf2.html", "lf3.html", "lf4.html"):
+    for name in seiten:
         t = (DOCS / name).read_text(encoding="utf-8")
         for m in re.finditer(r'<div class="vollfassung" id="(k\d+)-([a-z0-9]+)-voll"(.*?)<button class="abschnitt-schalter abschnitt-schalter-ende"', t, re.S):
             kap, ab, innen = m.groups()
@@ -123,12 +131,17 @@ def statisch():
                 erwartet.add(f"{name}?ansicht=ausfuehrlich&detail={d}#{kap}-{ab}")
     pruefe(ziele == erwartet, f"A26 Suchindex und HTML synchron ({len(erwartet)} Ziele)",
            sorted(ziele ^ erwartet)[:3])
-    antworten = []
-    for name in ("lf2.html", "lf3.html", "lf4.html"):
+    # Eine Antwort gilt nur dann als verraten, wenn ihr Text im Index steht, aber nirgends sonst
+    # sichtbar auf der Seite (gleichlautende Sätze aus dem Haupttext verraten nichts).
+    antworten, verraten = [], []
+    for name in seiten:
         t = (DOCS / name).read_text(encoding="utf-8")
-        antworten += [re.sub(r"<[^>]+>", "", x)[:60] for x in
-                      re.findall(r'<details class="vf-antwort"><summary>Antwort anzeigen</summary><p>(.*?)</p>', t)]
-    verraten = [a for a in antworten if any(a[:50] in e["x"] for e in suche)]
+        eigene = [re.sub(r"<[^>]+>", "", x)[:60] for x in
+                  re.findall(r'<details class="vf-antwort"><summary>Antwort anzeigen</summary><p>(.*?)</p>', t)]
+        sichtbar = re.sub(r"<[^>]+>", " ", re.sub(r'<details class="vf-antwort">.*?</details>', " ", t, flags=re.S))
+        sichtbar = re.sub(r"\s+", " ", sichtbar)
+        antworten += eigene
+        verraten += [a for a in eigene if a[:50] not in sichtbar and any(a[:50] in e["x"] for e in suche)]
     pruefe(antworten and not verraten, f"A13 Antworten stehen nicht im Suchindex ({len(antworten)} Antworten)", verraten[:2])
 
     # A25: Inhalte der Muster
@@ -149,7 +162,9 @@ def vertrag():
     print("A24 · Vertrag bricht den Build mit Fundstelle ab")
     ch = json.loads((HIER / "lf4-k3-angebotsvergleich.kapitel.json").read_text(encoding="utf-8"))
     lf = {"id": "lf4"}
-    pruefe(set(vertiefung.pruefe(ch, lf, "lf4-k3")) == {"b1"}, "Gültiger Pilot wird angenommen")
+    vf_ids = {x["abschnitt"] for x in ch["ausfuehrlich"]["abschnitte"] if vertiefung.ist_vollfassung(x)}
+    angenommen = set(vertiefung.pruefe(ch, lf, "lf4-k3"))
+    pruefe("b1" in angenommen and angenommen == vf_ids, f"Gültiger Pilot und alle aktuellen Vollfassungen angenommen {sorted(angenommen)}")
 
     def faellt(aendern, text):
         c = copy.deepcopy(ch)
@@ -198,10 +213,14 @@ def vertrag():
                 m = str(f)
                 pruefe(datei in m and f"Abschnitt {ab}" in m, f"E01 {datei} · {art}: Abbruch mit Datei und Abschnitt",
                        m.strip().split(": ", 1)[-1][:60])
-    # Echtes Altkapitel ohne Format 2 bleibt gültig und liefert keine Vollfassung
-    alt = json.loads((HIER / "lf1-k1-duale-ausbildung.kapitel.json").read_text(encoding="utf-8"))
-    if not any(vertiefung.ist_vollfassung(x) for x in alt["ausfuehrlich"].get("abschnitte", [])):
-        pruefe(vertiefung.pruefe(alt, {"id": "lf1"}, "lf1-k1") == {}, "E01 Echtes Altkapitel bleibt gültig")
+    # Altformat bleibt gültig und liefert keine Vollfassung: feste Testfixture aus einem
+    # echten Kapitel, dessen ausfuehrlich-Block durch einen Eintrag im alten Format ersetzt wird
+    alt = copy.deepcopy(ch)
+    alt["ausfuehrlich"] = {"einleitung": "Alte Einleitung.",
+                           "abschnitte": [{"abschnitt": "b1", "vorauswissen": ["Vorwissen."],
+                                           "erklaerung": "Alte Erklärung.", "beispiele": ["Beispiel."],
+                                           "merksatz": "Merksatz."}]}
+    pruefe(vertiefung.pruefe(alt, {"id": "lf4"}, "fixture-altformat") == {}, "E01 Altformat (Fixture) bleibt gültig, keine Vollfassung")
     # Im gebauten Lerninhalt kein Python-Objekttext aus Fragen
     roh = "".join((DOCS / f).read_text(encoding="utf-8") for f in ("lf2.html", "lf3.html", "lf4.html"))
     pruefe("{'id':" not in roh and "'frage':" not in roh, "E01 Kein Objekttext im erzeugten Lerninhalt")
@@ -218,16 +237,28 @@ def browser(w):
 
         # ------------------------------------------------ A01 Altbestand
         print("A01 · Altbestand")
-        pg.goto(f"{w}/lf1.html#k1")
-        pg.wait_for_selector("#k1:not([hidden])")
-        s = schalter("k1", "a1")
-        pruefe(pg.locator(s).count() == 1, "Altabschnitt hat einen Abschnittsschalter")
-        pg.click(s)
-        z = pg.evaluate("() => !document.getElementById('k1-a1-mehr').hidden")
-        pruefe(z, "Altzusatz „Mehr Erklärung“ öffnet sich weiterhin")
-        pruefe(pg.evaluate("() => document.querySelectorAll('#k1 p.rein:not([hidden])').length > 0"),
-               "Grundtext bleibt sichtbar (Altzusatz ergänzt, ersetzt nicht)")
-        pg.click(s)
+        # erstes noch nicht umgestelltes Kapitel suchen (Altzusatz „-mehr“)
+        alt_ziel = None
+        for r in sorted(HIER.glob("*.lernfeld.json")):
+            name = json.loads(r.read_text(encoding="utf-8"))["id"] + ".html"
+            m = re.search(r'id="(k\d+)-([a-z0-9]+)-mehr"', (DOCS / name).read_text(encoding="utf-8"))
+            if m:
+                alt_ziel = (name, m.group(1), m.group(2))
+                break
+        if alt_ziel is None:
+            print("  (übersprungen: kein Altbestand mehr auf den Seiten; Altformat wird im Vertragstest per Fixture geprüft)")
+        else:
+            name, kap, ab = alt_ziel
+            pg.goto(f"{w}/{name}#{kap}")
+            pg.wait_for_selector(f"#{kap}:not([hidden])")
+            s = schalter(kap, ab)
+            pruefe(pg.locator(s).count() == 1, f"Altabschnitt hat einen Abschnittsschalter ({name} {kap}-{ab})")
+            pg.click(s)
+            z = pg.evaluate(f"() => !document.getElementById('{kap}-{ab}-mehr').hidden")
+            pruefe(z, "Altzusatz „Mehr Erklärung“ öffnet sich weiterhin")
+            pruefe(pg.evaluate(f"() => document.querySelectorAll('#{kap} p.rein:not([hidden])').length > 0"),
+                   "Grundtext bleibt sichtbar (Altzusatz ergänzt, ersetzt nicht)")
+            pg.click(s)
 
         # ------------------------------------------------ A02–A04, A08 Pilot A
         print("A02–A04 · Abschnitt und Kapitel")
