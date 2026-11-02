@@ -23,10 +23,10 @@
       "eingabe": [
         {
           "block": "zuordnung",
-          "lead": "Wie haften die Beteiligten gegenüber den Gläubigern?",
+          "lead": "Wie haften die Beteiligten unmittelbar gegenüber den Gläubigern?",
           "ziele": [
             "unbeschränkt mit dem Privatvermögen",
-            "nur bis zur Höhe der Einlage",
+            "bis zur eingetragenen Haftsumme, soweit die Einlage noch nicht geleistet ist",
             "nur das Gesellschaftsvermögen haftet"
           ],
           "elemente": [
@@ -36,7 +36,7 @@
             },
             {
               "text": "Kommanditistin einer KG",
-              "loesung": "nur bis zur Höhe der Einlage"
+              "loesung": "bis zur eingetragenen Haftsumme, soweit die Einlage noch nicht geleistet ist"
             },
             {
               "text": "GmbH gegenüber ihren Gläubigern",
@@ -49,7 +49,7 @@
         "art": "automatisch",
         "punkte_je_treffer": 1
       },
-      "erklaerung": "Der Einzelunternehmer haftet mit allem, was er hat. In der KG haftet der Komplementär unbeschränkt, die Kommanditistin nur bis zur Höhe ihrer Einlage. Bei der GmbH haftet nur das Gesellschaftsvermögen; die Gesellschafter riskieren grundsätzlich nur ihre Einlage.",
+      "erklaerung": "Der Einzelunternehmer haftet mit allem, was er hat. Die Kommanditistin haftet den Gläubigern unmittelbar nur bis zur im Handelsregister eingetragenen Haftsumme, und nur soweit sie ihre Einlage noch nicht geleistet hat (§ 171 Abs. 1 HGB): Bei 40.000 € Haftsumme und vollständig geleisteter Einlage in gleicher Höhe haftet sie nicht mehr persönlich, hat sie erst 25.000 € geleistet, noch mit 15.000 €. Wird ihr die Einlage zurückgezahlt, lebt die Haftung wieder auf (§ 172 Abs. 4 HGB). Davon zu trennen ist das wirtschaftliche Risiko, die geleistete Einlage zu verlieren. Bei der GmbH haftet nur das Gesellschaftsvermögen; die Gesellschafter riskieren grundsätzlich nur ihre Einlage.",
       "quelle": "lf9-k7, Abschnitt b3"
     },
     {
@@ -154,14 +154,18 @@
       ],
       "bewertung": {
         "art": "selbstbewertung",
-        "musterloesung": "Als Darlehensgeberin erhält die Tante Zinsen, aber keinen Gewinnanteil und keine Mitsprache; fällt das Geschäft aus, ist sie nur Gläubigerin unter anderen. Als Kommanditistin ist sie am Gewinn beteiligt, haftet nur bis zur Höhe ihrer Einlage und ist von der Geschäftsführung ausgeschlossen; Jonas entscheidet als Komplementär allein, haftet aber unbeschränkt. Als GmbH-Gesellschafterin wäre ihr Risiko ebenfalls auf die Einlage begrenzt, sie hätte aber Stimmrechte in der Gesellschafterversammlung, und die Gründung kostet mehr Aufwand und 25.000 € Mindeststammkapital. Ihre Wünsche – mitverdienen, nicht mitarbeiten, begrenztes Risiko – und Jonas' Wunsch nach alleiniger Entscheidung passen am besten zur KG mit der Tante als Kommanditistin. Nachteil für Jonas ist seine unbeschränkte Haftung; will er sie vermeiden, käme eine GmbH in Betracht, in der die Mitsprache der Tante vertraglich geregelt werden müsste.",
+        "musterloesung": "Als Darlehensgeberin erhält die Tante Zinsen, aber keinen Gewinnanteil und keine Mitsprache; fällt das Geschäft aus, ist sie nur Gläubigerin unter anderen. Als Kommanditistin ist sie am Gewinn beteiligt und muss nicht mitarbeiten. Hat sie ihre Einlage in Höhe der eingetragenen Haftsumme voll eingezahlt und nichts zurückerhalten, haftet sie den Gläubigern nicht mehr persönlich; riskieren kann sie dann nur, ihre 40.000 € zu verlieren. Sie ist von der Geschäftsführung ausgeschlossen: Die laufenden Geschäfte führt Jonas als Komplementär allein. Für außergewöhnliche Geschäfte, etwa eine zweite Werkstatt, braucht er nach dem Gesetz aber einen Beschluss aller Gesellschafter, also ihre Zustimmung; außerdem hat sie Kontroll- und Auskunftsrechte. Jonas haftet unbeschränkt. Als GmbH-Gesellschafterin wäre ihr Risiko ebenfalls auf die Einlage begrenzt, sie hätte aber Stimmrechte in der Gesellschafterversammlung, und die Gründung kostet mehr Aufwand und 25.000 € Mindeststammkapital. Mitverdienen, nicht mitarbeiten und begrenztes Risiko passen am besten zur KG mit der Tante als Kommanditistin. Jonas' Wunsch, allein zu entscheiden, erfüllt die KG nur für die laufenden Geschäfte; bei großen Entscheidungen bleibt die Tante beteiligt, wenn der Gesellschaftsvertrag nichts anderes regelt. Nachteil für Jonas ist seine unbeschränkte Haftung; will er sie vermeiden, käme eine GmbH in Betracht, in der die Mitsprache der Tante vertraglich geregelt werden müsste.",
         "raster": [
           {
             "kriterium": "Darlehen richtig eingeordnet: Zinsen statt Gewinnanteil, keine Mitsprache, Tante ist Gläubigerin",
             "punkte": 1
           },
           {
-            "kriterium": "Kommanditistin: Gewinnbeteiligung, Haftung bis zur Einlage, von der Geschäftsführung ausgeschlossen",
+            "kriterium": "Kommanditistin: Gewinnbeteiligung; nach voll geleisteter Einlage keine persönliche Haftung mehr, nur Verlust der Einlage möglich",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Mitsprache in der KG zutreffend: laufende Geschäfte führt Jonas allein, außergewöhnliche Geschäfte brauchen die Zustimmung der Tante; Kontrollrechte",
             "punkte": 1
           },
           {
@@ -169,16 +173,12 @@
             "punkte": 1
           },
           {
-            "kriterium": "Begründete Empfehlung, die die Wünsche von Tante und Jonas verbindet",
-            "punkte": 1
-          },
-          {
-            "kriterium": "Nachteil der gewählten Lösung benannt, etwa die unbeschränkte Haftung des Komplementärs",
+            "kriterium": "Begründete Empfehlung, die die Wünsche von Tante und Jonas mit ihren Grenzen abgleicht und einen Nachteil benennt, etwa die unbeschränkte Haftung des Komplementärs",
             "punkte": 1
           }
         ]
       },
-      "erklaerung": "Entscheidend ist, welche Rolle die Tante haben soll: Gläubigerin, Teilhaberin mit begrenzter Haftung ohne Geschäftsführung oder Gesellschafterin mit Stimmrecht. Die Begründung muss Haftung, Mitsprache und Gewinnbeteiligung verbinden.",
+      "erklaerung": "Entscheidend ist, welche Rolle die Tante haben soll: Gläubigerin, Teilhaberin mit begrenzter Haftung ohne Geschäftsführung, aber mit Zustimmungsrecht bei außergewöhnlichen Geschäften, oder Gesellschafterin mit Stimmrecht. Die Begründung muss Haftung, Mitsprache und Gewinnbeteiligung verbinden und darf „nicht mitarbeiten“ nicht mit „ohne jede Mitsprache“ verwechseln.",
       "quelle": "lf9-k7, Abschnitte b1–b3"
     }
   ]

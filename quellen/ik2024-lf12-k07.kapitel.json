@@ -269,7 +269,7 @@
             "zeilen": [
               {
                 "zellen": [
-                  "vertraglicher Jahresurlaub, laut Vertrag bei Austritt zeitanteilig",
+                  "Arbeitsvertrag: 30 Tage Jahresurlaub, bei Austritt in der ersten Jahreshälfte ein Zwölftel je vollen Monat; eine eigene Rundungsregel für den Mehrurlaub enthält er nicht",
                   "30 Tage",
                   ""
                 ]
@@ -279,6 +279,13 @@
                   "Austritt 31. März, Wartezeit erfüllt, erste Jahreshälfte",
                   "30 × 3 ÷ 12",
                   "7,5 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bruchteil ab einem halben Tag aufrunden, wie beim gesetzlichen Urlaub",
+                  "7,5 → 8",
+                  "8 Tage"
                 ]
               },
               {
@@ -298,12 +305,12 @@
               {
                 "zellen": [
                   "Resturlaub",
-                  "7,5 − 2",
-                  "5,5 Tage, bis zum Austritt gewähren"
+                  "8 − 2",
+                  "6 Tage, bis zum Austritt gewähren"
                 ]
               }
             ],
-            "fazit": "Die Schneiderin kann bis Ende März noch 5,5 Tage Urlaub nehmen. Nur wenn das betrieblich nicht möglich ist, wird der Rest abgegolten.",
+            "fazit": "Erst wird der Teilanspruch berechnet und gerundet, dann der genommene Urlaub abgezogen: Die Schneiderin kann bis Ende März noch 6 Tage Urlaub nehmen. Nur wenn das betrieblich nicht möglich ist, wird der Rest abgegolten.",
             "id": "a3-t1"
           },
           {
@@ -324,7 +331,7 @@
             "inhalt": [
               {
                 "typ": "absatz",
-                "text": "Ergeben sich bei der Berechnung des gesetzlichen Teilurlaubs Bruchteile von mindestens einem halben Tag, werden sie auf volle Tage aufgerundet (§ 5 Abs. 2 BUrlG). Für vertraglichen Mehrurlaub gilt das nur, wenn der Vertrag es vorsieht. Im Beispiel liegt der gesetzliche Anteil bei glatten 5 Tagen.",
+                "text": "Ergeben sich beim Teilurlaub Bruchteile von mindestens einem halben Tag, werden sie auf volle Tage aufgerundet (§ 5 Abs. 2 BUrlG). Regelt der Arbeitsvertrag den Mehrurlaub nicht erkennbar eigenständig, wird er nach denselben Regeln berechnet wie der gesetzliche Urlaub; deshalb rundet die Tabelle 7,5 auf 8 Tage. Anders ist es, wenn der Vertrag für den Mehrurlaub ausdrücklich eine eigene Regel enthält, etwa „Bruchteile von Mehrurlaubstagen werden nicht aufgerundet“. Dann rechnet man getrennt: gesetzlicher Teil 20 × 3 ÷ 12 = 5 Tage, Mehrurlaub 10 × 3 ÷ 12 = 2,5 Tage, zusammen 7,5 Tage, nach 2 genommenen Tagen bleiben 5,5 Tage. Welche Zahl stimmt, entscheidet die Vertragsregel, nicht die Rechnung.",
                 "id": "a3-d1-p1"
               }
             ],

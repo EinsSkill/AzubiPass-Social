@@ -8,6 +8,16 @@
   var eur = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 2 });
   var geld = function (n) { return eur.format(Math.round(n * 100) / 100) + " €"; };
 
+  /* Sichtbare Beschriftung und Eingabefeld der Fachgrafiken gehören zusammen
+     (for/id, WCAG H44). Die Nummer zählt seitenweit weiter, auch beim
+     Zurücksetzen einer Grafik — so entstehen nie doppelte IDs. */
+  var feldNummer = 0;
+  function verbinde(label, input) {
+    var id = "ap-feld-" + (++feldNummer);
+    input.id = id;
+    label.htmlFor = id;
+  }
+
   var LERNFELD = document.body.dataset.lernfeld || "seite";
   /* Wer eine Lernzettelseite eines Berufs öffnet (auch per direktem Link),
      arbeitet in diesem Beruf: Zurück zur App zeigt dann dessen Lernfelder.
@@ -968,10 +978,11 @@
     var felder = {};
     s.eingaben.forEach(function (e) {
       var f = el("div", "feld");
-      f.appendChild(el("label", null, e.label));
+      var lab = f.appendChild(el("label", null, e.label));
       var i = document.createElement("input");
       AP.kommafeld(i); i.step = "5000"; i.min = "0"; i.value = e.start;
       f.appendChild(i);
+      verbinde(lab, i);
       felder[e.id] = { input: i, seite: e.seite };
       regler.appendChild(f);
     });
@@ -1394,12 +1405,13 @@
     ["verbrauch", "lieferzeit", "mindest", "menge"].forEach(function (schl) {
       if (!e[schl]) return;
       var f = el("div", "feld");
-      f.appendChild(el("label", null, e[schl].label));
+      var lab = f.appendChild(el("label", null, e[schl].label));
       var i = document.createElement("input");
       AP.kommafeld(i);
       i.min = e[schl].min; i.max = e[schl].max; i.step = e[schl].schritt || 1;
       i.value = e[schl].start;
       f.appendChild(i);
+      verbinde(lab, i);
       regler.appendChild(f);
       felder[schl] = i;
     });
@@ -1649,12 +1661,13 @@
     [["start", d.eingaben.start], ["ziel", d.eingaben.ziel]].forEach(function (paar) {
       if (!paar[1]) return;
       var f = el("div", "feld");
-      f.appendChild(el("label", null, paar[1].label));
+      var lab = f.appendChild(el("label", null, paar[1].label));
       var i = document.createElement("input");
       AP.kommafeld(i);
       i.min = paar[1].min; i.max = paar[1].max; i.step = paar[1].schritt || 1;
       i.value = paar[1].start;
       f.appendChild(i);
+      verbinde(lab, i);
       regler.appendChild(f);
       felder[paar[0]] = i;
     });
@@ -1790,13 +1803,14 @@
     ["fix", "var", "preis"].forEach(function (schl) {
       if (!d.eingaben[schl]) return;
       var f = el("div", "feld");
-      f.appendChild(el("label", null, d.eingaben[schl].label));
+      var lab = f.appendChild(el("label", null, d.eingaben[schl].label));
       var i = document.createElement("input");
       AP.kommafeld(i);
       i.min = d.eingaben[schl].min; i.max = d.eingaben[schl].max;
       i.step = d.eingaben[schl].schritt || 1;
       i.value = d.eingaben[schl].start;
       f.appendChild(i);
+      verbinde(lab, i);
       regler.appendChild(f);
       felder[schl] = i;
     });
@@ -1922,11 +1936,12 @@
     var felder = [];
     d.abschnitte.forEach(function (a, i) {
       var f = el("div", "feld");
-      f.appendChild(el("label", null, a.name + " (" + d.einheit + ")"));
+      var lab = f.appendChild(el("label", null, a.name + " (" + d.einheit + ")"));
       var inp = document.createElement("input");
       AP.kommafeld(inp); inp.min = "0";
       inp.value = a.wert;
       f.appendChild(inp);
+      verbinde(lab, inp);
       regler.appendChild(f);
       felder.push(inp);
     });
@@ -2079,13 +2094,14 @@
     ["bedarf", "bestellkosten", "lagerkosten"].forEach(function (schl) {
       if (!d.eingaben[schl]) return;
       var f = el("div", "feld");
-      f.appendChild(el("label", null, d.eingaben[schl].label));
+      var lab = f.appendChild(el("label", null, d.eingaben[schl].label));
       var i = document.createElement("input");
       AP.kommafeld(i);
       i.min = d.eingaben[schl].min; i.max = d.eingaben[schl].max;
       i.step = d.eingaben[schl].schritt || 1;
       i.value = d.eingaben[schl].start;
       f.appendChild(i);
+      verbinde(lab, i);
       regler.appendChild(f);
       felder[schl] = i;
     });
@@ -2341,7 +2357,7 @@
       if (gewaehlt) {
         var v = d.vorgaenge.filter(function (x) { return x.id === gewaehlt; })[0];
         var f = el("div", "feld");
-        f.appendChild(el("label", null, v.name + " verzögert sich um (" + d.einheit + ")"));
+        var lab = f.appendChild(el("label", null, v.name + " verzögert sich um (" + d.einheit + ")"));
         var inp = document.createElement("input");
         inp.type = "number"; inp.min = "0"; inp.max = "30"; inp.step = "1";
         inp.value = verzug[gewaehlt] || 0;
@@ -2352,6 +2368,7 @@
           inp.focus();
         });
         f.appendChild(inp);
+        verbinde(lab, inp);
         steuer.appendChild(f);
 
         notiz.innerHTML = "";
@@ -2397,22 +2414,24 @@
     var regler = el("div", "staffel-regler");
 
     var fJahre = el("div", "feld");
-    fJahre.appendChild(el("label", null, d.eingaben.jahre.label));
+    var labJahre = fJahre.appendChild(el("label", null, d.eingaben.jahre.label));
     var iJahre = document.createElement("input");
     iJahre.type = "number"; iJahre.min = "0"; iJahre.max = "50"; iJahre.step = "1";
     iJahre.value = d.eingaben.jahre.start;
     iJahre.setAttribute("aria-label", d.eingaben.jahre.label);
     fJahre.appendChild(iJahre);
+    verbinde(labJahre, iJahre);
     regler.appendChild(fJahre);
 
     var iDatum = null;
     if (d.eingaben.datum) {
       var fDatum = el("div", "feld");
-      fDatum.appendChild(el("label", null, d.eingaben.datum.label));
+      var labDatum = fDatum.appendChild(el("label", null, d.eingaben.datum.label));
       iDatum = document.createElement("input");
       iDatum.type = "date"; iDatum.value = d.eingaben.datum.start;
       iDatum.setAttribute("aria-label", d.eingaben.datum.label);
       fDatum.appendChild(iDatum);
+      verbinde(labDatum, iDatum);
       regler.appendChild(fDatum);
     }
     buehne.appendChild(regler);
