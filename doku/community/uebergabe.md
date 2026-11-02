@@ -23,6 +23,18 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-11-02 · Claude → Lukes (Mergevorlage) / ChatGPT (Kenntnis)
+
+**Vorgänger:** ChatGPT-Fortschrittsprüfung [5380a00](review/2026-11-02-erweiterter-modus-5380a00.md) (von Lukes als Paket übergeben, hier mit Belegen abgelegt). **Rolle:** Umsetzung und Gesamtabnahme. **Basis:** `main` @ `d0cfb8a`, unverändert. **Geprüfter Anwendungsstand:** `d7e4a18` auf `erweiterter-modus-2026-10-28`; dieser Abschnitt ist Dokumentation. **Bericht:** [Gesamtabnahme G01–G14 und N01–N03](../erweiterter-modus/umsetzung/abnahme.md).
+
+- **Umfang:** 26 Lernfelder, 161 Kapitel, 602/602 Abschnitte im erweiterten Modus (567 aus dem Plan, 35 neu). L01–L30 und K01–K19 umgesetzt: 32 „neu ergänzt“, 17 „erweitert“, je mit Ziel, Beleg und Commit in [`ergaenzungen.csv`](../erweiterter-modus/gesamtvorbereitung/ergaenzungen.csv).
+- **N01:** § 164 HGB (MoPeG) an der Primärquelle geprüft; Zustimmung der Kommanditistin bei außergewöhnlichen Geschäften statt Widerspruch, Haftung nach §§ 171/172 in Kapitel und Aufgaben präzisiert; Gegenfälle Farben/Werkstatt, 40.000 €/25.000 € geprüft.
+- **N02:** Alle Grafik-Eingabefelder per `for`/`id` beschriftet (neun Stellen, nicht nur Bestellmenge). Browser über 26 Seiten: 80 Felder, 0 ohne Namen (main: 43 auf 12 Seiten); Label-Klick, Reset und Rechnung geprüft.
+- **N03:** Urlaubsbeispiel mit ausdrücklicher Vertragsannahme im gleichen Berechnungsregime (6 Tage), zweiter Fall mit eigener Vertragsregel (5,5 Tage) im Detail.
+- **Tests am Stand `d7e4a18`:** `funktionstest.py` 269/269, `industriekaufleute_test.py` 9.219/0, `lernkern_audit_test.py` und `lernstand_sync_test.py` grün, `erweiterter_modus_test.py` mit axe 163 OK/0 FEHL. Offline (SW, 75 Dateien) und mobil 375 px am korrigierten Stand geprüft.
+- **Grenzen:** Fachprüfung ist Claudes eigene plus ChatGPT-Stichproben, keine unabhängige Lesung aller 602 Abschnitte. Keine Druckregeln (vorbestehend). Liste der Punkte zur Kenntnis/Entscheidung im Bericht, Abschnitt „Für Lukes“.
+- **Nächster erlaubter Schritt:** Lukes entscheidet über den Merge. Kein Merge, kein Deployment ohne seine ausdrückliche Freigabe.
+
 ## 2026-10-28 · ChatGPT → Claude / Lukes (Gesamtvorbereitung Erweiterter Modus)
 
 **Vorgänger:** Pilotanwendung `f041834`, Claude-Übergabe `22c84b8`, ChatGPT-Review `e3f1b05`, Gesamtabschlussentscheidung `d3de2fa`. **Nutzerauftrag:** „okay dann lass uns alles vorbereiten und claude setzt dann um“. **Rolle:** vollständige Redaktionsvorbereitung. Remote erneut gelesen: `22c84b8`. Keine Änderung an Anwendung, Kapitelquellen, Buildoutput oder Datenbank.

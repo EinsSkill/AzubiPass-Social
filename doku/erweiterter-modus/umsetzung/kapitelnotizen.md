@@ -270,5 +270,12 @@ Musterunternehmen MAKEL Studio GmbH (IK), IKR-Kontonummern gegen einen schulisch
 - **K03:** Umsetzungsauftrag mit ergänzter Abgrenzung/Termin; Risikotabelle mit Ausnahmeregel; Pilotregeln vorab, Ergebnis knapp erreicht, Platzhalterdaten als Beobachtung; Abweichung auf kritischem Pfad aufgefangen, PDCA.
 - **K04:** Bericht mit Beleg je Kernaussage und Kennzahldefinition; Pilotbewertung in Prozentpunkten/relativ mit Vergleichbarkeitsgrenze; GF-Präsentation mit vorbereiteten Rückfragen; Lessons Learned mit Ursache/Maßnahme, Transfer zur Fachaufgabe ohne Gleichsetzung.
 
+## Antwort auf die ChatGPT-Fortschrittsprüfung (5380a00)
+
+- **N01 · KfB LF9 K7:** § 164 HGB am 02.11.2026 selbst gelesen: seit MoPeG kein Widerspruchsrecht mehr, sondern „§ 116 Absatz 2 Satz 1 bleibt unberührt“ → außergewöhnliche Geschäfte brauchen einen Beschluss aller Gesellschafter. Alle Fundstellen im Kapitel umgestellt (Tabellendetail, Merke, Zusammenfassung, Selbsttest, b2-p2, b2-t1, b2-f1, b3-p5), Innenbefugnis und Außenwirkung getrennt, Vorbehalt Gesellschaftsvertrag. Haftung nach §§ 171/172 HGB: b3-Frage mit ausdrücklicher Haftsumme; Aufgabe 01 mit präzisem Zuordnungsziel und Erklärung (40.000 € voll geleistet → 0 €; 25.000 € → 15.000 €; Rückzahlung lässt Haftung aufleben); Aufgabe 03 Musterlösung und Raster neu (laufende Geschäfte allein, außergewöhnliche mit Zustimmung). Kapitel und Aufgaben sind neu auf diesem Branch, daher keine Lernstandsfolgen.
+- **N02 · Grafikfelder:** `verbinde(label, input)` mit seitenweit fortlaufender ID an allen neun Label/Input-Stellen in `azubipass.js`. Browserlauf alle 26 Seiten: 80 Felder, 0 ohne Namen (main: 43 ohne Namen auf 12 Seiten). Label-Klick, Reset und Rechnung der Bestellmengengrafik geprüft.
+- **N03 · IK LF12 K07 a3:** Vertragsannahme in der Tabelle ausdrücklich; gleiches Berechnungsregime wie der gesetzliche Teilurlaub (BAG 9 AZR 579/16 Rn. 56): 7,5 → 8 Tage, Rest 6 Tage. Detail mit dem zweiten, ausdrücklich geregelten Fall (5 + 2,5 = 7,5, Rest 5,5). Aufgabe lf12-k07-02 ergibt nur ganze Tage, unverändert.
+- Gesamtabnahme G01–G14: [abnahme.md](abnahme.md).
+
 ## Stand gesamt
 - **KfB und IK vollständig:** 602 von 602 Abschnitten als Vollfassung (geprüft mit `vertiefung.ist_vollfassung` über alle Kapitel-Dateien).
