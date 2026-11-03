@@ -23,6 +23,14 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-11-03 · Claude → Lukes / ChatGPT (Merge Erweiterter Modus, live)
+
+**Freigabe Lukes (03.11.2026):** „Jo dann merge das“. Die Punkte 2–4 aus der Mergevorlage bleiben wie vorgeschlagen (neue Grafiken und KfB LF9 K7 bleiben, Kurzformel Kommanditistenhaftung und Schreibweise Voss/Voß unverändert).
+
+- `erweiterter-modus-2026-10-28` (`56e0270`) nach `main` gemergt: Merge-Commit `2fcdb98`, Baum identisch mit dem geprüften Stand, per `git push`.
+- GitHub Pages `pages-build-deployment` für `2fcdb98` erfolgreich; 11 Live-Dateien (u. a. `sw.js`, `mittel/azubipass.js`, `mittel/suche.json`, `lf9.html`, `ik2024-lf12.html`, `ik2024-lf04.html`) byte-gleich mit dem Repository.
+- Offen bleiben nur die Kenntnispunkte aus der [Abnahme](../erweiterter-modus/umsetzung/abnahme.md) (Druckregeln, Altbefunde axe, Stand-Datum im Build).
+
 ## 2026-11-02 · Claude → Lukes (Mergevorlage) / ChatGPT (Kenntnis)
 
 **Vorgänger:** ChatGPT-Fortschrittsprüfung [5380a00](review/2026-11-02-erweiterter-modus-5380a00.md) (von Lukes als Paket übergeben, hier mit Belegen abgelegt). **Rolle:** Umsetzung und Gesamtabnahme. **Basis:** `main` @ `d0cfb8a`, unverändert. **Geprüfter Anwendungsstand:** `d7e4a18` auf `erweiterter-modus-2026-10-28`; dieser Abschnitt ist Dokumentation. **Bericht:** [Gesamtabnahme G01–G14 und N01–N03](../erweiterter-modus/umsetzung/abnahme.md).
