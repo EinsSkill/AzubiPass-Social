@@ -6,31 +6,860 @@
   "untertitel": "Was drinsteht, entscheidet später — nicht das Gespräch davor.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Ein Kaufvertrag ist mehr als die Einigung auf einen Preis. Er legt fest, welche Leistung geschuldet wird, wann sie zu erbringen ist und wer bei Abweichungen welches Risiko trägt.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "titel": "Vom Antrag zum Vertrag",
-        "erklaerung": "Ein Vertrag entsteht, wenn ein bestimmbarer Antrag vollständig angenommen wird. Ware und Preis müssen feststehen; Liefertermin, Zahlungsart, Versand und Eigentumsvorbehalt regeln anschließend, wie der Vertrag praktisch abgewickelt wird. Weicht die Antwort von Menge oder Preis ab, ist sie keine Annahme, sondern ein neuer Antrag.",
-        "beispiel": "MAKEL bestellt ohne vorheriges Angebot 200 Hoodies zu 52 Euro — die Bestellung ist hier der Antrag. Der Lieferer bestätigt 180 Stück zu 54 Euro. Damit ist der Antrag nicht angenommen (§ 150 Abs. 2 BGB). Die Bestätigung ist ein neuer Antrag, den MAKEL noch annehmen muss. Eine bloße Anfrage wäre dagegen noch gar kein Antrag gewesen.",
-        "typische_fehler": "Eine Auftragsbestätigung wird automatisch als Vertragsschluss behandelt, obwohl sie den Antrag verändert. Ebenso falsch ist die Annahme, mündliche Nebenabreden seien unwichtig: Was ausdrücklich vereinbart wurde, kann dem Kleingedruckten vorgehen.",
-        "merksatz": "Vollständige Annahme = Vertrag; Abweichung = neuer Antrag."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wie ein Kaufvertrag zustande kommt, welche Bestandteile er mindestens braucht und was gilt, wenn weitere Punkte nicht vereinbart sind.",
+        "vorwissen_kurz": "Ein Vertrag entsteht durch zwei übereinstimmende Willenserklärungen: Antrag und Annahme. Die Pflichten beider Seiten beim Kauf stehen in § 433 BGB.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Einig über Ware und Preis",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:kaufvertrag|Kaufvertrag}} entsteht, wenn ein Antrag vollständig und rechtzeitig angenommen wird. Damit das möglich ist, muss der Antrag so bestimmt sein, dass ein einfaches „Ja“ genügt. Dafür braucht es mindestens drei Angaben: welche Ware in welcher Art und Güte, welche Menge und welchen Preis. Der Preis darf auch bestimmbar sein, etwa „zum Listenpreis am Liefertag“, weil er sich daraus eindeutig ergibt.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ist der Vertrag geschlossen, legt {{par:bgb-433|§ 433 BGB}} die Pflichten fest. Der Verkäufer muss die Ware übergeben und dem Käufer das Eigentum verschaffen, und zwar frei von Mängeln. Der Käufer muss den Kaufpreis zahlen und die Ware abnehmen.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was gilt, wenn nichts vereinbart ist",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lieferzeit, Lieferort, Zahlungsbedingungen oder Verpackung müssen nicht im Vertrag stehen. Fehlen sie, füllt das Gesetz die Lücke. Und die gesetzliche Regel passt selten zu dem, was der Käufer im Kopf hatte:",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Punkt",
+              "Gesetzliche Regel ohne Vereinbarung",
+              "Was das praktisch heißt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lieferzeit",
+                  "sofort fällig",
+                  "Der Käufer darf sofort Lieferung verlangen, der Verkäufer sofort liefern."
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferort",
+                  "Sitz des Verkäufers",
+                  "Der Käufer muss die Ware dort abholen oder den Versand selbst bezahlen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlung",
+                  "sofort, ohne Abzug",
+                  "Kein Skonto, kein Zahlungsziel."
+                ]
+              },
+              {
+                "zellen": [
+                  "Versandkosten",
+                  "Kosten der Versendung an einen anderen Ort trägt der Käufer",
+                  "Wer liefern lässt, zahlt die Fracht."
+                ]
+              }
+            ],
+            "fazit": "Wer Lieferung frei Haus, ein Zahlungsziel oder Skonto will, muss es vereinbaren.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Fall: Bestätigung mit anderen Zahlen",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL bestellt ohne vorheriges Angebot 200 Hoodies zu 52 € je Stück. Weil kein bindendes Angebot vorlag, ist diese Bestellung der Antrag. Der Lieferer schickt eine „Auftragsbestätigung“ über 180 Stück zu 54 €. Der Name täuscht: Weil Menge und Preis abweichen, ist das keine Annahme. Nach {{par:bgb-150|§ 150 Abs. 2 BGB}} gilt sie als Ablehnung, verbunden mit einem neuen Antrag. Ein Vertrag besteht erst, wenn MAKEL diesen neuen Antrag annimmt — ausdrücklich oder etwa dadurch, dass es die gelieferten 180 Stück ohne Widerspruch annimmt und bezahlt.",
+            "id": "b1-p4"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Mündlich vereinbart, schriftlich anders bestätigt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Kaufvertrag braucht keine besondere Form; er kann mündlich, per E-Mail oder durch schlüssiges Handeln geschlossen werden. Gerade deshalb sind Belege wichtig. Wurde am Telefon „frei Haus“ zugesagt, steht in der Bestätigung aber „ab Werk“, gilt grundsätzlich das tatsächlich Vereinbarte. Beweisen muss es aber, wer sich darauf beruft. Unter Kaufleuten kann zudem ein sogenanntes kaufmännisches Bestätigungsschreiben, dem nicht unverzüglich widersprochen wird, den Vertragsinhalt festlegen. Wer eine abweichende Bestätigung erhält, sollte deshalb sofort widersprechen.",
+                "id": "b1-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf3:k2-b2"
+                ],
+                "text": "Wie Antrag, Annahme und Fristen genau zusammenspielen",
+                "id": "b1-d1-v1"
+              }
+            ],
+            "id": "b1-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Ein Lieferer bestätigt eine Bestellung „mit Lieferung in sechs statt in vier Wochen“. Ist der Vertrag geschlossen?",
+            "antwort": "Nein. Auch eine geänderte Lieferzeit ist eine Änderung des Antrags. Die Bestätigung gilt nach § 150 Abs. 2 BGB als Ablehnung und neuer Antrag. MAKEL kann ihn annehmen oder ablehnen.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "MAKEL und ein Lieferer haben nur Ware, Menge und Preis vereinbart. MAKEL erwartet die Ware nächste Woche frei Haus. Was gilt tatsächlich?",
+            "antwort": "Der Vertrag ist wirksam, weil die drei Muss-Bestandteile feststehen. Für alles andere gilt das Gesetz: Die Ware ist sofort fällig und am Sitz des Verkäufers zu übergeben; schickt der Verkäufer sie auf Wunsch, trägt MAKEL die Versandkosten. Lieferung frei Haus hätte MAKEL vereinbaren müssen.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "titel": "Lieferung, Gefahr und Zahlung",
-        "erklaerung": "Nach dem Vertrag muss der Verkäufer die vereinbarte Sache übergeben und übereignen; der Käufer muss sie abnehmen und den Preis zahlen. Liefer- und Zahlungsbedingungen verschieben, wer organisiert, wann gezahlt wird und wann die Gefahr eines zufälligen Untergangs übergeht. Deshalb gehören diese Bedingungen zur wirtschaftlichen Beurteilung des Angebots.",
-        "beispiel": "Bei „frei Haus“ trägt der Verkäufer die Organisation der Lieferung und kalkuliert die Fracht meist in den Preis ein. Bei „ab Werk“ muss der Käufer den Transport selbst organisieren oder zusätzlich bezahlen. Der niedrigere Preis auf dem Papier ist deshalb nicht automatisch das günstigere Angebot.",
-        "typische_fehler": "Frachtkosten werden beim Angebotsvergleich vergessen. Auch der Übergang von Besitz und Eigentum wird verwechselt: Die Ware kann schon beim Käufer liegen, obwohl das Eigentum wegen eines Eigentumsvorbehalts noch beim Verkäufer ist.",
-        "merksatz": "Nicht nur den Preis lesen: Lieferung, Gefahr, Zahlung und Eigentum gehören zusammen."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst Lieferungs- und Zahlungsbedingungen danach, wer die Kosten trägt, wer die Transportgefahr trägt und wann gezahlt werden muss.",
+        "vorwissen_kurz": "Gefahr bedeutet hier: Wer muss zahlen bzw. verliert seinen Anspruch, wenn die Ware durch Zufall untergeht oder beschädigt wird — ohne dass jemand schuld ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Fragen, die man nicht vermischen darf",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei jeder Lieferung stellen sich zwei getrennte Fragen. Erstens: Wer bezahlt den Transport? Zweitens: Wer trägt das Risiko, wenn die Ware unterwegs beschädigt wird oder verloren geht? {{begriff:lieferbedingungen|Lieferbedingungen}} und {{begriff:handelsklausel|Handelsklauseln}} beantworten vor allem die erste Frage. Die zweite regelt das Gesetz, soweit nichts anderes vereinbart ist.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Transport gilt: Ohne Vereinbarung trägt der Käufer die Kosten der Versendung an einen anderen Ort als den Erfüllungsort. Handelsklauseln verteilen diese Kosten anders. „Ab Werk“ heißt: Der Käufer trägt alle Transportkosten. „Frei Haus“ heißt: Der Verkäufer liefert ohne zusätzliche Fracht bis zum Käufer. Dazwischen gibt es Abstufungen, etwa „frei Bahnhof dort“: Der Verkäufer zahlt bis zum Bahnhof am Ort des Käufers, den Rest der Käufer.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wer das Risiko unterwegs trägt",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Grundsätzlich geht die Gefahr mit der Übergabe der Ware an den Käufer über. Verschickt der Verkäufer die Ware auf Wunsch des Käufers an einen anderen Ort, geht sie unter Unternehmen schon mit der Übergabe an das Transportunternehmen über (Versendungskauf). Wird die Sendung danach durch Zufall beschädigt, muss der Käufer trotzdem zahlen. Er kann sich an das Transportunternehmen oder eine Versicherung halten. Deshalb gehört zu jeder Lieferung ab Werk die Frage nach einer Transportversicherung.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob „frei Haus“ neben den Kosten auch das Risiko bis zur Ankunft beim Verkäufer lässt, ist rechtlich nicht in jedem Fall eindeutig; im Unterricht wird es meist so gelesen. Im Betrieb vereinbart man den Gefahrübergang deshalb am besten ausdrücklich, etwa „frei Haus, Gefahrübergang bei Anlieferung“.",
+            "id": "b2-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wann gezahlt wird",
+            "id": "b2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:zahlungsbedingungen|Zahlungsbedingungen}} legen fest, wann und mit welchem Abzug zu zahlen ist. Ohne Vereinbarung ist der Kaufpreis sofort fällig. Üblich sind:",
+            "id": "b2-p5"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bedingung",
+              "Bedeutung",
+              "Für wen günstig"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Vorauszahlung",
+                  "Der Käufer zahlt vor der Lieferung.",
+                  "Verkäufer: kein Ausfallrisiko."
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlung bei Lieferung (Zug um Zug)",
+                  "Ware gegen Geld, etwa per Nachnahme.",
+                  "ausgeglichen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlungsziel, z. B. „30 Tage netto“",
+                  "Der Käufer zahlt erst nach Ablauf der Frist, ohne Abzug.",
+                  "Käufer: Ware vor dem Geld."
+                ]
+              },
+              {
+                "zellen": [
+                  "Skonto, z. B. „10 Tage 2 %“",
+                  "Abzug bei Zahlung innerhalb der Skontofrist.",
+                  "beide: Verkäufer bekommt früher Geld, Käufer spart."
+                ]
+              }
+            ],
+            "fazit": "Die Formel „30 Tage netto, 10 Tage 2 % Skonto“ heißt: voller Betrag spätestens nach 30 Tagen, 2 % weniger bei Zahlung binnen 10 Tagen.",
+            "id": "b2-t1"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Lieferung an Privatkunden",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kauft eine Privatperson bei einem Unternehmen (Verbrauchsgüterkauf), geht die Transportgefahr beim Versand in der Regel erst mit der Übergabe an den Kunden über. Nur wenn der Kunde selbst das Transportunternehmen beauftragt hat und der Verkäufer es ihm nicht vorher benannt hatte, gilt die Regel des Versendungskaufs. Ein Onlinehändler trägt das Risiko des Paketversands an Privatkunden also selbst — eine Klausel „Versand auf Gefahr des Kunden“ ändert daran nichts.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Lieferbedingungen im Angebotsvergleich",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Angebot ab Werk wirkt billiger, weil die Fracht noch fehlt. Im Angebotsvergleich werden die Frachtkosten deshalb als Bezugskosten zum Bareinkaufspreis addiert. Bei frei Haus entfällt dieser Schritt. Außerdem trägt MAKEL bei ab Werk mehr Risiko und Organisationsaufwand — ein qualitativer Punkt, der in eine Nutzwertanalyse gehört.",
+                "id": "b2-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k3-b2"
+                ],
+                "text": "Bezugskosten im Einstandspreis",
+                "id": "b2-d2-v1"
+              }
+            ],
+            "id": "b2-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "MAKEL kauft unter Unternehmen ab Werk. Die Ware wird beim Transport ohne Verschulden beschädigt. Muss MAKEL zahlen?",
+            "antwort": "Ja. Mit der Übergabe an das Transportunternehmen ist die Gefahr auf MAKEL übergegangen. MAKEL muss den Kaufpreis zahlen und kann sich an das Transportunternehmen oder seine Transportversicherung halten.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist die Klausel „frei Haus“ allein keine sichere Antwort auf die Frage, wer das Transportrisiko trägt?",
+            "antwort": "Handelsklauseln wie „frei Haus“ regeln zuerst die Transportkosten. Ob damit auch die Gefahr bis zur Ankunft beim Verkäufer bleibt, kann im Einzelfall umstritten sein. Wer Klarheit will, vereinbart den Gefahrübergang ausdrücklich.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "titel": "Störung und Reaktion",
-        "erklaerung": "Bei einer Pflichtverletzung muss zuerst geklärt werden, was genau geschuldet war und ob die Abweichung erheblich ist. Danach folgen je nach Fall Mängelrechte, Fristsetzung, Rücktritt oder Schadensersatz. Wer sofort selbst handelt, ohne den Vertragspartner in Verzug zu setzen oder zurückzutreten, riskiert zusätzliche Probleme.",
-        "beispiel": "Eine gelieferte Maschine hat nicht die vereinbarte Leistung. MAKEL dokumentiert den Mangel, rügt ihn und setzt eine angemessene Frist zur Nacherfüllung. Erst wenn diese scheitert oder unzumutbar ist, kommen weitere Rechte in Betracht.",
-        "typische_fehler": "Die Ware wird eigenmächtig zurückgeschickt oder abgeholt, ohne den Vertrag rechtlich zu beenden. Außerdem wird ein Eigentumsvorbehalt als sofortige Erlaubnis verstanden, die Sache beim Kunden wegzunehmen.",
-        "merksatz": "Vertrag lesen, Abweichung dokumentieren, Frist und Rechte in der richtigen Reihenfolge prüfen."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst, ob AGB Vertragsbestandteil geworden sind, was bei widersprechenden AGB gilt und wie ein Eigentumsvorbehalt wirkt.",
+        "vorwissen_kurz": "AGB sind Vertragsbedingungen, die eine Seite für viele Verträge vorformuliert hat. Wer sie stellt, heißt Verwender.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum das Kleingedruckte Regeln braucht",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:agb|Allgemeine Geschäftsbedingungen}} sparen Arbeit: Ein Betrieb muss Lieferung, Zahlung oder Haftung nicht mit jedem Kunden neu aushandeln. Sie geben dem Verwender aber auch Macht, denn er formuliert sie zu seinen Gunsten, und die andere Seite liest sie oft nicht. Deshalb schützt das Gesetz die andere Seite: AGB werden nur unter bestimmten Bedingungen Teil des Vertrags, und manche Klauseln gelten nie.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gegenüber Verbrauchern verlangt {{par:bgb-305|§ 305 BGB}}, dass der Verwender bei Vertragsschluss ausdrücklich auf seine AGB hinweist, der Kunde zumutbar von ihnen Kenntnis nehmen kann und einverstanden ist. Zwischen Unternehmen sind die Anforderungen geringer: Es genügt, dass beide Seiten sich auf die Geltung einigen; ein klarer Verweis auf die AGB reicht meist, wenn der andere sie sich beschaffen kann. In beiden Fällen gilt: AGB, die erst nach Vertragsschluss auftauchen, etwa auf der Rechnung, sind zu spät.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn zwei Kleingedruckte aufeinandertreffen",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL bestellt mit seinen Einkaufsbedingungen, die Zahlung „60 Tage netto“ vorsehen. Der Lieferer bestätigt mit seinen Verkaufsbedingungen, die „30 Tage netto“ verlangen. Beide liefern und zahlen, ohne den Widerspruch zu klären. Der Vertrag ist trotzdem geschlossen, weil beide ihn tatsächlich durchführen. An der widersprüchlichen Stelle gilt aber keine der beiden Klauseln, sondern das Gesetz — und danach ist der Kaufpreis sofort fällig. Wer ein bestimmtes Zahlungsziel braucht, sollte es deshalb einzeln aushandeln und festhalten.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Einzeln ausgehandelte Absprachen haben ohnehin Vorrang vor AGB, auch wenn sie nur mündlich getroffen wurden. Überraschende Klauseln, mit denen niemand rechnen musste, werden nicht Vertragsbestandteil. Und lässt eine Klausel zwei Deutungen zu, gilt die für den Verwender ungünstigere.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Eigentumsvorbehalt: Besitz ja, Eigentum noch nicht",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die wichtigste Klausel für Verkäufer ist der {{begriff:eigentumsvorbehalt|Eigentumsvorbehalt}} nach {{par:bgb-449|§ 449 BGB}}. Normalerweise geht das Eigentum mit Einigung und Übergabe über. Mit dem Vorbehalt geht es erst über, wenn der Kaufpreis vollständig bezahlt ist. Bis dahin hat der Käufer die Ware in Besitz und darf sie benutzen, Eigentümer bleibt aber der Verkäufer.",
+            "id": "b3-p5"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das schützt den Verkäufer, wenn der Käufer nicht zahlt oder zahlungsunfähig wird: Die Ware gehört nicht zum Vermögen des Käufers, das unter dessen Gläubigern verteilt wird. Holen darf der Verkäufer sie trotzdem nicht einfach. Er muss zuerst vom Vertrag zurücktreten. Dafür braucht er in der Regel einen Rücktrittsgrund, etwa weil der Käufer trotz einer angemessenen Frist nicht gezahlt hat.",
+            "id": "b3-p6"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn die Ware weiterverkauft oder verarbeitet wird",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein einfacher Eigentumsvorbehalt erlischt, wenn der Käufer die Ware wirksam an einen Dritten weiterverkauft und übereignet oder sie so verarbeitet, dass eine neue Sache entsteht. Für Händler und Hersteller ist er deshalb oft zu schwach. Abhilfe schaffen der **verlängerte** Eigentumsvorbehalt (der Käufer tritt die Forderung aus dem Weiterverkauf im Voraus an den Verkäufer ab) und der **erweiterte** Eigentumsvorbehalt (das Eigentum geht erst über, wenn auch andere offene Forderungen aus der Geschäftsbeziehung bezahlt sind). Die Einzelheiten sind Teil der Kreditsicherung.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf9:k4-b3"
+                ],
+                "text": "Eigentumsvorbehalt als Kreditsicherung",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Die alte „Störung und Reaktion“",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Was bei verspäteter oder mangelhafter Lieferung gilt, folgt in den nächsten Kapiteln. Der Grundsatz gehört aber schon hierher: Erst prüfen, was der Vertrag samt wirksamer AGB tatsächlich verlangt. Danach die Abweichung dokumentieren und die Rechte in der gesetzlichen Reihenfolge geltend machen — nicht eigenmächtig handeln.",
+                "id": "b3-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k5"
+                ],
+                "text": "Lieferungsverzug",
+                "id": "b3-d2-v1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k6"
+                ],
+                "text": "Mangelhafte Lieferung",
+                "id": "b3-d2-v2"
+              }
+            ],
+            "id": "b3-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Ein Lieferer verweist erst auf der Rechnung nach der Lieferung auf seine AGB mit Eigentumsvorbehalt. Gilt der Vorbehalt?",
+            "antwort": "Als vertragliche Vereinbarung nicht, weil die AGB erst nach Vertragsschluss genannt wurden und damit nicht Vertragsbestandteil sind. Das Eigentum ist mit Einigung und Übergabe bereits übergegangen, sofern nichts anderes vereinbart war. Ein Vorbehalt muss spätestens bei der Übergabe erklärt werden.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Der Käufer zahlt eine unter Eigentumsvorbehalt gelieferte Maschine nicht. Darf der Verkäufer sie am Wochenende abholen lassen?",
+            "antwort": "Nein. Der Eigentumsvorbehalt allein berechtigt nicht zur Wegnahme. Der Verkäufer muss erst vom Vertrag zurücktreten, in der Regel nach erfolgloser Fristsetzung, und dann die Herausgabe verlangen. Eigenmächtiges Abholen wäre verbotene Eigenmacht.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest eine Beschaffung dem richtigen Vertragstyp zu, indem du fragst, was der Vertragspartner schuldet, und erklärst, warum das für Rechte und Pflichten wichtig ist.",
+        "vorwissen_kurz": "Jeder Vertragstyp legt fest, was die eine Seite leisten muss und was die andere dafür gibt. Die Bezeichnung auf dem Papier entscheidet nicht — der Inhalt tut es.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum der Vertragstyp wichtig ist",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL braucht einen neuen Kopierer. Man kann ihn kaufen, mieten oder leasen; man kann außerdem jemanden beauftragen, ihn zu warten. Das alles sind Beschaffungen, aber rechtlich verschiedene Verträge. Der Vertragstyp bestimmt, wem das Gerät gehört, wer es reparieren muss und was gilt, wenn das Ergebnis nicht stimmt. Deshalb fragst du bei jeder Beschaffung: Was genau schuldet der Vertragspartner?",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Fälle aus einer Woche bei MAKEL",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Was wird geschuldet?",
+              "Vertragstyp",
+              "Folge, wenn etwas schiefgeht"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "MAKEL bestellt 500 Ordner.",
+                  "Übergabe und Eigentum an den Ordnern",
+                  "Kaufvertrag",
+                  "Mängelrechte aus dem Kaufrecht, z. B. Nacherfüllung."
+                ]
+              },
+              {
+                "zellen": [
+                  "MAKEL mietet für drei Jahre einen Kopierer.",
+                  "Gebrauch auf Zeit; das Gerät bleibt Eigentum des Vermieters",
+                  "Mietvertrag",
+                  "Der Vermieter muss das Gerät gebrauchsfähig halten; ist es defekt, kann die Miete gemindert sein."
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein Techniker soll den defekten Drucker reparieren.",
+                  "ein Erfolg: Der Drucker muss danach funktionieren",
+                  "Werkvertrag",
+                  "Funktioniert er nicht, muss nachgebessert werden; bezahlt wird nach Abnahme."
+                ]
+              },
+              {
+                "zellen": [
+                  "Eine IT-Beraterin berät zwei Tage zur Netzwerksicherheit.",
+                  "Tätigkeit nach Stunden, kein bestimmtes Ergebnis",
+                  "Dienstvertrag",
+                  "Bezahlt wird die geleistete Zeit, auch wenn die Beratung nicht zu einer Lösung führt."
+                ]
+              }
+            ],
+            "fazit": "Dieselbe Frage löst jeden Fall: Schuldet der Partner Eigentum, Gebrauch, einen Erfolg oder eine Tätigkeit?",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Unterschied zwischen Werk- und Dienstvertrag ist am schwierigsten. Ein Hinweis ist, ob ein überprüfbares Ergebnis vereinbart wurde. „Drucker reparieren“ hat ein Ergebnis: Der Drucker läuft oder nicht. „Zwei Tage beraten“ hat keines, das man abnehmen könnte. Auch der Arbeitsvertrag ist übrigens ein besonderer Dienstvertrag: Geschuldet wird die Arbeit, nicht ein bestimmter Erfolg.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Kaufen oder mieten?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim Kauf zahlt MAKEL den Preis einmal und wird Eigentümer. Das Gerät steht dann in der Bilanz, und Reparaturen nach Ablauf der Mängelhaftung zahlt MAKEL selbst. Beim Mieten bleibt der Vermieter Eigentümer und muss das Gerät gebrauchsfähig halten; MAKEL zahlt laufend und schont seine Liquidität. Was günstiger ist, hängt von Laufzeit, Wartungskosten und Liquidität ab. Leasing ist eine eigene Vertragsform zwischen Miete und Kauf, die im Kapitel zur Finanzierung behandelt wird.",
+                "id": "b4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf9:k5"
+                ],
+                "text": "Leasing als Finanzierungsalternative",
+                "id": "b4-d1-v1"
+              }
+            ],
+            "id": "b4-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kaufvertrag mit Montage",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Liefert ein Händler einen Schrank und baut ihn auch auf, bleibt der Vertrag in der Regel ein Kaufvertrag, weil die Lieferung im Vordergrund steht. Eine fehlerhafte Montage gilt dann als Sachmangel. Steht dagegen die individuelle Herstellung im Vordergrund — etwa ein maßgefertigter Empfangstresen —, kann ein Vertrag über herzustellende Sachen vorliegen, für den ebenfalls weitgehend Kaufrecht gilt. Hier lohnt der Blick ins Gesetz oder in den Vertrag, bevor man Rechte geltend macht.",
+                "id": "b4-d2-p1"
+              }
+            ],
+            "id": "b4-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Eine Agentur soll für MAKEL eine neue Website erstellen. Welcher Vertragstyp liegt nahe, und warum ist das für die Bezahlung wichtig?",
+            "antwort": "Ein Werkvertrag, denn geschuldet wird ein Erfolg: eine funktionierende Website. Die Vergütung wird grundsätzlich erst mit der Abnahme fällig. Funktioniert die Website nicht wie vereinbart, kann MAKEL Nacherfüllung verlangen.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "MAKEL zahlt einer Beraterin 2.000 € für zwei Beratungstage. Ihre Vorschläge bringen nichts. Kann MAKEL die Zahlung verweigern?",
+            "antwort": "In der Regel nicht. Bei einem Dienstvertrag schuldet die Beraterin eine fachgerechte Tätigkeit, keinen Erfolg. Hat sie sorgfältig beraten, ist die vereinbarte Vergütung fällig. Anders wäre es nur, wenn sie ihre Pflichten verletzt hätte.",
+            "id": "b4-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b5",
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest nichtige und anfechtbare Verträge und prüfst eine Anfechtung nach Grund, Erklärung, Frist und Folge.",
+        "vorwissen_kurz": "Ein Vertrag beruht auf Willenserklärungen. Ist eine davon fehlerhaft — weil jemand nicht geschäftsfähig ist, sich irrt oder getäuscht wird —, kann der Vertrag unwirksam sein oder unwirksam gemacht werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Wege zur Unwirksamkeit",
+            "id": "b5-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Vertrag kann auf zwei Arten unwirksam sein. Ist er **nichtig**, war er nie wirksam, und niemand muss etwas tun. Das Gesetz ordnet die Nichtigkeit an, weil der Fehler so schwer wiegt, dass kein Vertrag gelten soll. Ist er **anfechtbar**, gilt er zunächst. Die betroffene Seite kann ihn aber durch eine Erklärung rückwirkend beseitigen. Ob sie das tut, entscheidet sie selbst.",
+            "id": "b5-p1"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Nichtigkeitsgrund",
+              "Beispiel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Geschäftsunfähigkeit (§ 105 BGB)",
+                  "Ein Sechsjähriger bestellt online."
+                ]
+              },
+              {
+                "zellen": [
+                  "Formmangel (§ 125 BGB)",
+                  "Ein Grundstückskauf ohne notarielle Beurkundung."
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesetzliches Verbot (§ 134 BGB)",
+                  "Ein Vertrag über Schwarzarbeit."
+                ]
+              },
+              {
+                "zellen": [
+                  "Sittenwidrigkeit, Wucher (§ 138 BGB)",
+                  "Ein Darlehen zu einem auffällig überhöhten Zins unter Ausnutzung einer Notlage."
+                ]
+              },
+              {
+                "zellen": [
+                  "Schein- und Scherzgeschäft (§§ 117, 118 BGB)",
+                  "Beide wollen den Vertrag nur zum Schein, etwa für einen Kreditantrag."
+                ]
+              }
+            ],
+            "fazit": "In all diesen Fällen soll der Vertrag nach dem Willen des Gesetzes gar nicht erst gelten.",
+            "id": "b5-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b5-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Anfechtung Schritt für Schritt",
+            "id": "b5-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Anfechtung hat vier Voraussetzungen, die du der Reihe nach prüfst:",
+            "id": "b5-p2"
+          },
+          {
+            "typ": "liste",
+            "punkte": [
+              "**Anfechtungsgrund:** ein Inhalts- oder Erklärungsirrtum, ein Irrtum über eine verkehrswesentliche Eigenschaft (§ 119 BGB), eine falsche Übermittlung (§ 120 BGB), eine arglistige Täuschung oder eine widerrechtliche Drohung (§ 123 BGB).",
+              "**Anfechtungserklärung:** gegenüber dem Vertragspartner. Das Wort „anfechten“ muss nicht fallen; es muss aber klar sein, dass der Vertrag wegen des Fehlers nicht gelten soll.",
+              "**Frist:** Bei Irrtum und falscher Übermittlung unverzüglich, also ohne schuldhaftes Zögern, nachdem der Irrtum entdeckt wurde (§ 121 BGB). Bei Täuschung und Drohung innerhalb eines Jahres nach Entdeckung der Täuschung oder Ende der Zwangslage (§ 124 BGB).",
+              "**Folge:** Der Vertrag gilt als von Anfang an nichtig (§ 142 BGB). Bereits Geleistetes wird zurückgegeben. Wer wegen eines eigenen Irrtums anficht, muss dem anderen den Schaden ersetzen, den dieser im Vertrauen auf den Vertrag hatte (§ 122 BGB)."
+            ],
+            "nummeriert": true,
+            "id": "b5-l1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Fälle, die knapp auseinanderliegen",
+            "id": "b5-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fall 1: Eine Mitarbeiterin von MAKEL will 100 Kartons bestellen, vertippt sich und schreibt 1.000. Sie wollte eine Erklärung mit diesem Inhalt gar nicht abgeben — ein Erklärungsirrtum. Bemerkt sie den Fehler bei der Auftragsbestätigung, muss sie sofort anfechten. Der Vertrag fällt dann rückwirkend weg; dem Lieferer muss MAKEL aber zum Beispiel bereits angefallene Versandkosten ersetzen.",
+            "id": "b5-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fall 2: MAKEL bestellt bewusst 1.000 Kartons, weil ein großer Kundenauftrag erwartet wird. Der Auftrag platzt. MAKEL hat sich nicht in der Erklärung geirrt, sondern in der Erwartung, warum es die Kartons braucht. Ein solcher Irrtum über den Beweggrund (Motivirrtum) berechtigt nicht zur Anfechtung. Der Vertrag gilt; MAKEL kann höchstens um Kulanz bitten.",
+            "id": "b5-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b5-b2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Arglistige Täuschung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Händler verschweigt bewusst, dass ein „neuwertiger“ Gebrauchtdrucker schon einen schweren Wasserschaden hatte, und MAKEL kauft ihn deshalb. Das ist eine arglistige Täuschung. MAKEL kann binnen eines Jahres nach Entdeckung anfechten und muss dem Händler keinen Vertrauensschaden ersetzen — der Händler verdient keinen Schutz. Daneben können Mängelrechte bestehen. Welcher Weg günstiger ist, hängt vom Fall ab.",
+                "id": "b5-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf3:k2-b3"
+                ],
+                "text": "Geschäftsfähigkeit als häufigster Grund für unwirksame Verträge",
+                "id": "b5-d1-v1"
+              }
+            ],
+            "id": "b5-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Kalkulationsirrtum",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Lieferer rechnet intern falsch und bietet deshalb zu billig an. Das ist ein Irrtum bei der Vorbereitung, nicht in der Erklärung selbst. Er berechtigt grundsätzlich nicht zur Anfechtung, denn der Lieferer hat genau den Preis erklärt, den er erklären wollte. Anders kann es sein, wenn der Käufer den offensichtlichen Rechenfehler erkannt und ausgenutzt hat.",
+                "id": "b5-d2-p1"
+              }
+            ],
+            "id": "b5-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Ein Lieferer bemerkt drei Monate nach Vertragsschluss, dass er sich in seinem Angebot verschrieben hat, und ficht jetzt erst an. Ist das wirksam?",
+            "antwort": "Das hängt davon ab, wann er den Fehler entdeckt hat. Bei einem Irrtum muss unverzüglich nach Entdeckung angefochten werden. Hat er den Fehler erst jetzt entdeckt, kann die Anfechtung noch rechtzeitig sein. Hat er ihn schon früher bemerkt und gewartet, ist die Frist versäumt und der Vertrag bleibt wirksam.",
+            "id": "b5-f1"
+          },
+          {
+            "frage": "Warum muss jemand, der wegen eines eigenen Irrtums anficht, dem anderen unter Umständen Schadensersatz zahlen?",
+            "antwort": "Der Vertragspartner durfte auf die Erklärung vertrauen und hat womöglich schon Kosten gehabt, etwa für Versand oder Vorbereitung. Der Irrtum stammt aus dem Bereich des Anfechtenden. Deshalb muss er diesen Vertrauensschaden ersetzen, nicht aber den entgangenen Gewinn aus dem Vertrag.",
+            "id": "b5-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b6",
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für einen konkreten Zahlungsfall die passende Zahlungsart und begründest sie mit Auslöser, Geschwindigkeit, Kosten, Sicherheit und Rückgabemöglichkeit.",
+        "vorwissen_kurz": "Die Bank, die eine Zahlung ausführt, heißt Zahlungsdienstleister. Wer zahlt, ist der Zahler; wer das Geld erhält, der Zahlungsempfänger.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer schiebt, wer zieht?",
+            "id": "b6-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der **Überweisung** gibt der Zahler seiner Bank den Auftrag, Geld an den Empfänger zu senden. Er bestimmt Betrag und Zeitpunkt. Eine normale SEPA-Überweisung im Euroraum muss spätestens am nächsten Geschäftstag beim Empfänger sein. Eine **Echtzeitüberweisung** kommt innerhalb von Sekunden an, rund um die Uhr. Seit Oktober 2025 müssen Banken im Euroraum sie anbieten und dürfen dafür nicht mehr verlangen als für eine normale Überweisung. Außerdem prüft die Bank seitdem vor jeder Überweisung, ob Empfängername und IBAN zusammenpassen, und warnt bei Abweichungen.",
+            "id": "b6-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der **Lastschrift** ist es umgekehrt: Der Empfänger zieht das Geld ein. Dafür braucht er ein Mandat, also die schriftliche oder elektronische Erlaubnis des Zahlers. Das lohnt sich bei wiederkehrenden Beträgen, deren Termin der Empfänger bestimmt, etwa Miete, Leasingraten oder Versicherungsbeiträge.",
+            "id": "b6-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b6-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rückgabe: Wer ist geschützt?",
+            "id": "b6-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine ausgeführte Überweisung kann der Zahler nicht einfach zurückholen. Hat er sich vertippt, kann seine Bank nur versuchen, das Geld zurückzurufen; zurückzahlen muss es der Empfänger. Bei der Echtzeitüberweisung ist das Geld schon in Sekunden weg. Deshalb ist die Namensprüfung vor dem Absenden so wichtig.",
+            "id": "b6-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die SEPA-Basislastschrift schützt dagegen den Zahler: Er kann binnen acht Wochen nach der Belastung ohne Begründung von seiner Bank die Erstattung verlangen (§ 675x BGB). Wurde ohne gültiges Mandat abgebucht, gilt sogar eine längere Frist von bis zu 13 Monaten. Zwischen Unternehmen gibt es zusätzlich die SEPA-Firmenlastschrift. Bei ihr ist die Erstattung einer autorisierten Zahlung nach den Bedingungen des Verfahrens ausgeschlossen; dafür prüft die Bank des Zahlers das Mandat vorher.",
+            "id": "b6-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b6-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Zahlungsfall bei MAKEL",
+            "id": "b6-z3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zahlung",
+              "Gewählte Zahlungsart",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Eingangsrechnung über 1.200 €, 2 % Skonto bis Freitag",
+                  "SEPA-Überweisung am Mittwoch",
+                  "MAKEL bestimmt den Zeitpunkt selbst; spätestens am nächsten Geschäftstag ist das Geld da."
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferant verlangt Vorkasse, Ware soll heute noch raus",
+                  "Echtzeitüberweisung",
+                  "Kommt in Sekunden an. Vorher Empfängername prüfen, weil Rückholung praktisch unmöglich ist."
+                ]
+              },
+              {
+                "zellen": [
+                  "Monatliche Leasingrate für den Kopierer",
+                  "Lastschrift mit Mandat",
+                  "Wiederkehrender Betrag, Termin bestimmt der Leasinggeber; MAKEL vergisst keine Rate."
+                ]
+              },
+              {
+                "zellen": [
+                  "Kurzfristige Onlinebestellung beim neuen Händler",
+                  "Kauf auf Rechnung oder Zahlungsdienst mit Käuferschutz",
+                  "Bei unbekanntem Händler zahlt MAKEL möglichst erst nach Lieferung oder mit Schutz."
+                ]
+              }
+            ],
+            "fazit": "Es gibt keine beste Zahlungsart. Entscheidend sind Zeitpunkt, Vertrauen in den Partner und das Risiko bei einem Fehler.",
+            "id": "b6-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Kosten und Sicherheit",
+            "id": "b6-z4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die gängigen Zahlungswege — SEPA-Überweisung, SEPA-Lastschrift und, gegenüber Verbrauchern, die üblichen Zahlungskarten — darf ein Händler kein zusätzliches Entgelt verlangen (§ 270a BGB). Die Bank kann trotzdem Kontoführungs- oder Buchungsgebühren berechnen; das regelt der Kontovertrag. Bei Karten- und Onlinezahlungen verlangt die Bank meist eine starke Kundenauthentifizierung, also zwei unabhängige Nachweise wie App-Freigabe und PIN. Für den Betrieb gilt: Zahlungsfreigaben nach dem Vier-Augen-Prinzip und keine Bankdaten aufgrund einer bloßen E-Mail ändern. Gefälschte „neue Bankverbindung“-Mails sind ein häufiger Betrugsweg.",
+            "id": "b6-p5"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Lastschrift zurückgegeben — was heißt das für den Empfänger?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gibt ein Kunde eine Basislastschrift zurück, wird MAKEL der Betrag wieder abgezogen, oft zuzüglich Bankgebühren. Die Forderung aus dem Vertrag besteht aber weiter. Der Kunde schuldet den Betrag also immer noch, wenn er ihn tatsächlich schuldete. MAKEL muss ihn erneut anfordern und gegebenenfalls mahnen. Die Rückgabe ist kein Rücktritt vom Vertrag.",
+                "id": "b6-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k7"
+                ],
+                "text": "Was gilt, wenn ein Kunde nicht zahlt",
+                "id": "b6-d1-v1"
+              }
+            ],
+            "id": "b6-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Debitkarte und Kreditkarte",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mit einer Debitkarte wird der Betrag zeitnah vom Konto abgebucht. Mit einer Kreditkarte sammelt der Kartenanbieter die Umsätze und rechnet sie später ab; bis dahin gewährt er einen kurzen Kredit. Für den Betrieb ist die Kreditkarte bei Reisen und Onlinebestellungen praktisch, weil manche Anbieter sie verlangen. Ein Firmenkreditkartenkonzept braucht aber klare Regeln: wer welche Karte hat, welche Höchstbeträge gelten und wann Belege einzureichen sind.",
+                "id": "b6-d2-p1"
+              }
+            ],
+            "id": "b6-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Eine Mitarbeiterin von MAKEL erhält eine E-Mail eines bekannten Lieferers: „Unsere Bankverbindung hat sich geändert, bitte zahlen Sie ab sofort auf folgende IBAN.“ Was sollte sie tun?",
+            "antwort": "Nicht einfach umstellen. Sie sollte die Änderung über einen bekannten, unabhängigen Kontaktweg — etwa die bekannte Telefonnummer aus der Lieferantenkartei — bestätigen lassen und erst dann die Stammdaten ändern, am besten mit Freigabe durch eine zweite Person. Solche Mails sind ein verbreiteter Betrugsversuch.",
+            "id": "b6-f1"
+          },
+          {
+            "frage": "Ein Kunde gibt eine SEPA-Basislastschrift nach drei Wochen zurück. Ist die Rechnung damit erledigt?",
+            "antwort": "Nein. Die Rückgabe hebt nur die Abbuchung auf. Die Zahlungspflicht aus dem Vertrag bleibt bestehen. MAKEL muss den Betrag erneut fordern und kann bei Nichtzahlung mahnen.",
+            "id": "b6-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "§ 675x BGB",
+            "url": "https://www.gesetze-im-internet.de/bgb/__675x.html",
+            "bezug": "Erstattung bei SEPA-Basis- und Firmenlastschrift, Frist acht Wochen ab Belastung; gelesen am 28.10.2026"
+          },
+          {
+            "titel": "§ 270a BGB",
+            "url": "https://www.gesetze-im-internet.de/bgb/__270a.html",
+            "bezug": "Unwirksamkeit von Entgelten für SEPA-Überweisung, -Lastschrift und Zahlungskarten (Karten nur gegenüber Verbrauchern); gelesen am 28.10.2026"
+          },
+          {
+            "titel": "Europäisches Verbraucherzentrum: Instant Payment ab Oktober 2025",
+            "url": "https://www.evz.de/presse/pressemitteilungen/instant-payment.html",
+            "bezug": "Echtzeitüberweisung binnen 10 Sekunden, höchstens Preis der normalen Überweisung, Empfängerüberprüfung seit 9.10.2025; gelesen am 28.10.2026"
+          }
+        ]
       }
     ]
   },
@@ -49,6 +878,18 @@
       "id": "lz3",
       "text": "Die Wirkung von AGB und Eigentumsvorbehalt erklären",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Kauf-, Miet-, Werk- und Dienstvertrag nach der geschuldeten Leistung abgrenzen"
+    },
+    {
+      "abschnitt": "b5",
+      "text": "Nichtige und anfechtbare Verträge unterscheiden und die Voraussetzungen einer Anfechtung prüfen"
+    },
+    {
+      "abschnitt": "b6",
+      "text": "Zahlungsarten nach Auslöser, Geschwindigkeit, Kosten und Sicherheit unterscheiden und passend auswählen"
     }
   ],
   "bloecke": [
@@ -59,7 +900,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Ein {{begriff:kaufvertrag|Kaufvertrag}} kommt nach {{par:bgb-433|§ 433 BGB}} zustande, sobald sich beide Seiten über Ware und Preis einig sind. ==Alles Weitere ist freiwillig — aber genau dort entscheidet sich, wer bei Störungen den Schaden trägt.=="
+          "text": "Ein {{begriff:kaufvertrag|Kaufvertrag}} kommt zustande, sobald sich beide Seiten über Ware und Preis einig sind; seine Pflichten regelt {{par:bgb-433|§ 433 BGB}}. ==Alles Weitere ist freiwillig — aber genau dort entscheidet sich, wer bei Störungen den Schaden trägt.=="
         },
         {
           "typ": "tabelle",
@@ -294,6 +1135,178 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Kaufen, mieten oder beauftragen?",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Nicht jede Beschaffung ist ein Kauf. Entscheidend ist, ==was der Vertragspartner schuldet:== Beim **Kaufvertrag** übergibt er eine Sache und verschafft das Eigentum. Beim **Mietvertrag** überlässt er sie nur zum Gebrauch auf Zeit. Beim **Werkvertrag** schuldet er einen Erfolg, beim **Dienstvertrag** nur eine Tätigkeit."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Vertrag",
+            "Geschuldet wird",
+            "Beispiel bei MAKEL",
+            "Gegenleistung"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Kaufvertrag ({{par:bgb-433|§ 433 BGB}})",
+                "Sache übergeben und übereignen",
+                "500 Ordner",
+                "Kaufpreis"
+              ]
+            },
+            {
+              "zellen": [
+                "Mietvertrag (§ 535 BGB)",
+                "Gebrauch einer Sache auf Zeit",
+                "Kopierer für 36 Monate",
+                "Miete"
+              ]
+            },
+            {
+              "zellen": [
+                "Werkvertrag (§ 631 BGB)",
+                "ein bestimmter Erfolg",
+                "Drucker reparieren, Website erstellen",
+                "Vergütung, fällig bei Abnahme"
+              ]
+            },
+            {
+              "zellen": [
+                "Dienstvertrag (§ 611 BGB)",
+                "eine Tätigkeit, kein Erfolg",
+                "IT-Beratung nach Stunden",
+                "Vergütung für die Dienste"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Frag immer: Was wird geschuldet? **Eigentum** → Kauf. **Gebrauch auf Zeit** → Miete. **Erfolg** → Werkvertrag. **Tätigkeit** → Dienstvertrag.",
+          "karteikarte": "Woran unterscheidest du Kauf-, Miet-, Werk- und Dienstvertrag?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b5",
+      "titel": "Wenn ein Vertrag nicht hält: Nichtigkeit und Anfechtung",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Ein geschlossener Vertrag bindet. Er kann aber von Anfang an **nichtig** sein, etwa bei Geschäftsunfähigkeit, einem Verstoß gegen ein gesetzliches Verbot, Sittenwidrigkeit oder fehlender vorgeschriebener Form. Oder er ist zunächst wirksam und wird erst durch **Anfechtung** rückwirkend beseitigt. ==Dafür braucht es einen gesetzlichen Anfechtungsgrund — bloße Reue genügt nie.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "",
+            "Nichtig",
+            "Anfechtbar"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Wirkung",
+                "von selbst unwirksam, von Anfang an",
+                "wirksam, bis angefochten wird; dann von Anfang an nichtig"
+              ]
+            },
+            {
+              "zellen": [
+                "Beispiele",
+                "Geschäftsunfähigkeit, gesetzliches Verbot, Sittenwidrigkeit, Formmangel, Schein- und Scherzgeschäft",
+                "Inhalts- oder Erklärungsirrtum, Irrtum über eine wesentliche Eigenschaft, falsche Übermittlung, arglistige Täuschung, widerrechtliche Drohung"
+              ]
+            },
+            {
+              "zellen": [
+                "Was zu tun ist",
+                "nichts — die Nichtigkeit tritt von selbst ein",
+                "Anfechtung gegenüber dem Vertragspartner erklären"
+              ]
+            },
+            {
+              "zellen": [
+                "Frist",
+                "keine",
+                "Irrtum: unverzüglich nach Entdeckung; Täuschung und Drohung: ein Jahr"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Nichtig** ist ein Vertrag von selbst und von Anfang an. **Anfechtbar** heißt: wirksam, bis die berechtigte Seite rechtzeitig anficht — dann gilt er als von Anfang an nichtig. Ein Irrtum über den Beweggrund oder den Marktpreis ist kein Anfechtungsgrund.",
+          "karteikarte": "Was unterscheidet einen nichtigen von einem anfechtbaren Vertrag, und welche Anfechtungsgründe gibt es?"
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b6",
+      "titel": "Wie bezahlt wird",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Fast alle Zahlungen im Betrieb laufen bargeldlos. Welche Zahlungsart passt, hängt davon ab, ==wer die Zahlung auslöst, wie schnell das Geld ankommen muss und ob sie sich rückgängig machen lässt.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Zahlungsart",
+            "Wer löst aus?",
+            "Typischer Einsatz",
+            "Rückgängig?"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "SEPA-Überweisung",
+                "Zahler",
+                "Eingangsrechnungen bezahlen",
+                "nur mit Zustimmung des Empfängers"
+              ]
+            },
+            {
+              "zellen": [
+                "Echtzeitüberweisung",
+                "Zahler",
+                "eilige Zahlungen, auch am Wochenende",
+                "praktisch nicht"
+              ]
+            },
+            {
+              "zellen": [
+                "SEPA-Lastschrift",
+                "Empfänger, mit Mandat des Zahlers",
+                "wiederkehrende Beträge wie Miete oder Leasingraten",
+                "Basislastschrift: 8 Wochen ohne Begründung"
+              ]
+            },
+            {
+              "zellen": [
+                "Karte, Onlinezahlung",
+                "Zahler am Terminal oder im Shop",
+                "Einkäufe vor Ort, Onlinebestellungen",
+                "je nach Verfahren und Anbieter"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Bei der **Überweisung** schickt der Zahler das Geld. Bei der **Lastschrift** zieht der Empfänger es mit Erlaubnis (Mandat) ein. Bei der SEPA-Basislastschrift kann der Zahler binnen **8 Wochen** ohne Begründung die Erstattung verlangen.",
+          "karteikarte": "Worin unterscheiden sich Überweisung und Lastschrift, und welches Recht hat der Zahler bei der SEPA-Basislastschrift?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -304,7 +1317,12 @@
     "Frei Haus: Verkäufer zahlt und trägt die Gefahr bis zur Ankunft.",
     "{{par:bgb-305|§ 305 BGB}}: AGB gelten nur bei ausdrücklichem Hinweis und Kenntnisnahmemöglichkeit.",
     "Individualabreden gehen AGB vor; Unklarheiten gehen zulasten des Verwenders.",
-    "{{par:bgb-449|§ 449 BGB}}: Eigentumsvorbehalt — Herausgabe erst nach Rücktritt vom Vertrag."
+    "{{par:bgb-449|§ 449 BGB}}: Eigentumsvorbehalt — Herausgabe erst nach Rücktritt vom Vertrag.",
+    "Kauf: Eigentum; Miete: Gebrauch auf Zeit; Werkvertrag: Erfolg; Dienstvertrag: Tätigkeit.",
+    "Nichtig: von selbst und von Anfang an unwirksam. Anfechtbar: wirksam, bis rechtzeitig angefochten wird.",
+    "Anfechtungsgründe sind Irrtum, falsche Übermittlung, arglistige Täuschung und Drohung — nicht bloße Reue.",
+    "Überweisung: Der Zahler schickt das Geld. Lastschrift: Der Empfänger zieht es mit Mandat ein.",
+    "SEPA-Basislastschrift: Erstattung binnen 8 Wochen ohne Begründung."
   ],
   "selbsttest": [
     {

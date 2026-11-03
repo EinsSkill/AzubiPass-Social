@@ -7,93 +7,538 @@
   "minuten": 20,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Erfolgskonten machen sichtbar, wodurch sich das Eigenkapital eines Geschäftsjahres verändert. Sie werden nicht direkt in die Bilanz übernommen, sondern zuerst über die Gewinn- und Verlustrechnung abgeschlossen.",
     "abschnitte": [
       {
         "abschnitt": "d1",
-        "vorauswissen": [
-          "Bestandskonten bilden Vermögen und Kapital in der Bilanz ab.",
-          "Ein Geschäftsjahr muss von den vorherigen und folgenden Jahren abgegrenzt werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Bestands- und Erfolgskonten nach Inhalt, Abschlussweg und Verhalten beim Jahreswechsel und erklärst, warum Erfolgskonten Unterkonten des Eigenkapitals sind.",
+        "vorwissen_kurz": "Das Eigenkapital ist der Teil des Vermögens, der den Eigentümern gehört. Steigt es durch die Geschäftstätigkeit, war das Jahr erfolgreich.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum man nicht direkt ins Eigenkapital bucht",
+            "id": "d1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zahlt MAKEL 1.000 € Miete per Bank, wird das Unternehmen ärmer: Die Bank sinkt, und weil keine Schuld wegfällt und kein Vermögensgegenstand dazukommt, sinkt das Eigenkapital. Man könnte also „Eigenkapital an Bank 1.000 €“ buchen. Das würde aber nach einem Jahr ein Eigenkapitalkonto mit tausenden Einzelposten ergeben, auf dem niemand mehr erkennt, wofür das Geld ausgegeben oder womit es verdient wurde.",
+            "id": "d1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Deshalb gibt es {{begriff:erfolgskonto|Erfolgskonten}}. Sie sind Unterkonten des Eigenkapitals: {{begriff:aufwand|Aufwandskonten}} sammeln alles, was das Eigenkapital mindert (Miete, Löhne, Wareneinsatz), {{begriff:ertrag|Ertragskonten}} alles, was es mehrt (Umsatzerlöse, Zinserträge). Am Jahresende werden sie zusammengefasst und nur der Saldo wandert ins Eigenkapital.",
+            "id": "d1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Konten über den Jahreswechsel",
+            "id": "d1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Konto",
+              "Stand am 31.12.",
+              "Was passiert beim Abschluss",
+              "Stand am 1.1."
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bank (Bestandskonto)",
+                  "18.000 €",
+                  "Saldo ins SBK",
+                  "18.000 € über EBK eröffnet"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mietaufwand (Erfolgskonto)",
+                  "12.000 €",
+                  "Saldo in die GuV",
+                  "0 €"
+                ]
+              }
+            ],
+            "fazit": "Das Bankguthaben ist am 1. Januar noch da. Die Miete des letzten Jahres ist dagegen „verbraucht“ und gehört zum abgeschlossenen Jahr.",
+            "id": "d1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Würde man den Mietaufwand fortführen, stünden im Februar des neuen Jahres schon 14.000 € auf dem Konto, obwohl erst 2.000 € Miete im neuen Jahr angefallen sind. Ein Erfolgskonto misst immer genau einen Zeitraum. Deshalb beginnt es jedes Jahr bei null.",
+            "id": "d1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d1-b2"
+          }
         ],
-        "erklaerung": "Bestandskonten zeigen, welche Werte am Bilanzstichtag vorhanden sind. Erfolgskonten zeigen dagegen die Vorgänge, die den Erfolg eines bestimmten Jahres beeinflussen. Deshalb wird ein Bankkonto fortgeführt, während Mietaufwand und Umsatzerlöse am Jahresende über die GuV abgeschlossen und im neuen Jahr wieder bei null begonnen werden.",
-        "beispiele": [
-          "Ein Bankguthaben von 18.000 € bleibt über den Jahreswechsel als Bestand erhalten und wird im nächsten Jahr weitergeführt.",
-          "Der Mietaufwand des abgeschlossenen Jahres darf nicht im Folgejahr weiterlaufen, weil er wirtschaftlich bereits zum alten Geschäftsjahr gehört."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Erfolg heißt nicht Geld auf dem Konto",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Jahresüberschuss von 23.000 € bedeutet, dass das Eigenkapital um 23.000 € gestiegen ist. Er bedeutet nicht, dass 23.000 € mehr auf dem Bankkonto liegen. Vielleicht steckt der Gewinn in neuen Waren, in Forderungen an Kunden, die noch nicht gezahlt haben, oder er wurde zur Tilgung eines Kredits verwendet. Gewinn und Liquidität sind zwei verschiedene Dinge.",
+                "id": "d1-d1-p1"
+              }
+            ],
+            "id": "d1-d1"
+          }
         ],
-        "fallbeispiel": "Ordne vier Konten ein: Bank, Kasse und Verbindlichkeiten sind Bestandskonten, weil sie Bilanzpositionen darstellen. Löhne, Miete und Umsatzerlöse sind Erfolgskonten, weil sie Aufwand oder Ertrag eines Jahres erfassen. Beim Abschluss werden die Erfolgskonten über die GuV auf null gestellt; die Bestandskonten führen ihren Saldo über SBK und EBK weiter.",
-        "typische_fehler": "Erfolgskonten werden als direkte Bilanzkonten behandelt oder ein Jahresüberschuss wird mit einem Bankbestand verwechselt. Gewinn bedeutet nicht, dass das Geld auf einem bestimmten Konto liegt, sondern dass Erträge und Aufwendungen das Eigenkapital verändert haben.",
         "verstaendnisfragen": [
-          "Warum starten Erfolgskonten jedes Jahr bei null? Damit nur Aufwand und Ertrag des neuen Geschäftsjahres ausgewertet werden.",
-          "Warum tauchen Erfolgskonten nicht direkt in der Bilanz auf? Ihr Saldo wird zunächst in der GuV gesammelt und anschließend über den Jahreserfolg im Eigenkapital berücksichtigt."
-        ],
-        "pruefungsbezug": "Bei einer Kontenart-Aufgabe nach dem Inhalt fragen: Vermögen oder Kapital bedeutet Bestandskonto; Aufwand oder Ertrag bedeutet Erfolgskonto. Danach den Abschlussweg nennen.",
-        "merksatz": "Bestandskonten bleiben bestehen; Erfolgskonten messen ein Jahr und werden über die GuV abgeschlossen."
+          {
+            "frage": "Warum sind Aufwandskonten Unterkonten des Eigenkapitals und nicht etwa der Bank?",
+            "antwort": "Aufwand mindert das Reinvermögen, also das Eigenkapital — egal, ob er bar, per Bank oder auf Rechnung entsteht. Wird Büromaterial auf Rechnung gekauft, ist die Bank gar nicht berührt, das Eigenkapital trotzdem kleiner geworden.",
+            "id": "d1-f1"
+          },
+          {
+            "frage": "Ein Azubi führt das Konto Umsatzerlöse mit 160.000 € ins neue Jahr fort. Welche Folge hat das?",
+            "antwort": "Im neuen Jahr würden die Umsätze des alten Jahres noch einmal als Ertrag gezählt. Der Jahreserfolg wäre viel zu hoch. Erfolgskonten werden deshalb über die GuV auf null abgeschlossen.",
+            "id": "d1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d2",
-        "vorauswissen": [
-          "Im T-Konto bestimmen Kontoart und Mehrungsseite die Buchungsseite.",
-          "Aufwand und Auszahlung sowie Ertrag und Einzahlung sind unterschiedliche Begriffe."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst Aufwendungen und Erträge auf der richtigen Seite und ordnest sie dem richtigen Geschäftsjahr zu, auch wenn Zahlung und Leistung auseinanderfallen.",
+        "vorwissen_kurz": "Aufwand mindert das Eigenkapital, Ertrag mehrt es. Deshalb verhalten sich Aufwandskonten wie Minderungen und Ertragskonten wie Mehrungen des Eigenkapitals.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Seite folgt aus dem Eigenkapital",
+            "id": "d2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Eigenkapital ist ein Passivkonto: Es nimmt im Haben zu und im Soll ab. Erträge mehren das Eigenkapital, also stehen sie im Haben. Aufwendungen mindern es, also stehen sie im Soll. Daraus folgt die einfache Regel: **Aufwand im Soll, Ertrag im Haben.** Jedes Aufwandskonto hat deshalb am Jahresende einen Sollsaldo, jedes Ertragskonto einen Habensaldo.",
+            "id": "d2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wann Aufwand entsteht",
+            "id": "d2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Aufwand ist nicht dasselbe wie Auszahlung. Aufwand entsteht, wenn der Betrieb Werte verbraucht oder eine Leistung in Anspruch nimmt — unabhängig davon, wann er bezahlt. Ebenso entsteht Ertrag mit der Lieferung oder Leistung, nicht mit dem Zahlungseingang.",
+            "id": "d2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datum",
+              "Vorgang",
+              "Buchungssatz",
+              "Wirkung auf den Erfolg"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "20. Dezember",
+                  "Büromaterial wird auf Rechnung geliefert, 300 € netto",
+                  "Bürobedarf an Verbindlichkeiten LuL 300 € (Vorsteuer hier vereinfacht weggelassen)",
+                  "Aufwand im alten Jahr"
+                ]
+              },
+              {
+                "zellen": [
+                  "10. Januar",
+                  "Rechnung wird per Bank bezahlt",
+                  "Verbindlichkeiten LuL an Bank 300 €",
+                  "kein Erfolg, nur Bestandskonten"
+                ]
+              },
+              {
+                "zellen": [
+                  "28. Dezember",
+                  "MAKEL liefert einem Kunden Ware auf Rechnung, 2.000 € netto",
+                  "Forderungen LuL an Umsatzerlöse 2.000 €",
+                  "Ertrag im alten Jahr"
+                ]
+              },
+              {
+                "zellen": [
+                  "15. Januar",
+                  "Kunde zahlt",
+                  "Bank an Forderungen LuL 2.000 €",
+                  "kein Erfolg"
+                ]
+              }
+            ],
+            "fazit": "Der Erfolg entsteht mit Lieferung und Verbrauch. Die spätere Zahlung bewegt nur Bestandskonten.",
+            "id": "d2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "d2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "d2-b3"
+          }
         ],
-        "erklaerung": "Aufwandskonten nehmen im Soll zu, Ertragskonten im Haben. Diese Richtung passt zur Abschlusslogik: Aufwendungen werden später auf die Sollseite der GuV übertragen, Erträge auf deren Habenseite. Für die zeitliche Zuordnung ist nicht allein der Zahlungszeitpunkt entscheidend, sondern der wirtschaftliche Vorgang.",
-        "beispiele": [
-          "Ein Warenkauf auf Rechnung wird als Wareneinkauf an Verbindlichkeiten gebucht: Der Aufwand steht im Soll, die Schuld im Haben.",
-          "Ein Verkauf auf Rechnung wird als Forderungen beziehungsweise Bank an Umsatzerlöse gebucht: Der Ertrag steht im Haben."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn eine Leistung zwei Jahre betrifft",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zahlt MAKEL am 1. Oktober eine Versicherung für zwölf Monate im Voraus, betrifft sie drei Monate des alten und neun Monate des neuen Jahres. Dann darf nur der Anteil des alten Jahres dort als Aufwand erscheinen. Der Rest wird am Jahresende abgegrenzt. Das ist keine Ausnahme von der Regel, sondern ihre konsequente Anwendung: Aufwand gehört in das Jahr, dessen Leistung er betrifft.",
+                "id": "d2-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k9-i3"
+                ],
+                "text": "Rechnungsabgrenzung",
+                "id": "d2-d1-v1"
+              }
+            ],
+            "id": "d2-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Ertrag und Einzahlung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Barverkauf ist Ertrag und Einzahlung zugleich: Kasse an Umsatzerlöse. Ein Verkauf auf Rechnung ist Ertrag ohne Einzahlung: Forderungen an Umsatzerlöse. Die spätere Zahlung des Kunden ist Einzahlung ohne Ertrag: Bank an Forderungen. Wer diese drei Fälle sicher auseinanderhalten kann, vermeidet die häufigste Doppelbuchung.",
+                "id": "d2-d2-p1"
+              }
+            ],
+            "id": "d2-d2"
+          }
         ],
-        "fallbeispiel": "Büromaterial wird am 20. Dezember auf Rechnung geliefert und am 10. Januar bezahlt. Im Dezember entsteht der Aufwand: Bürobedarf an Verbindlichkeiten. Im Januar wird nur die Schuld beglichen: Verbindlichkeiten an Bank. Die Zahlung verändert in diesem zweiten Schritt nicht mehr den Jahreserfolg des Dezembers.",
-        "typische_fehler": "Aufwand wird mit Auszahlung gleichgesetzt. Ein weiterer Fehler ist, bei einem Ertrag automatisch einen Zahlungseingang anzunehmen; auch ein Verkauf auf Rechnung erzeugt zunächst eine Forderung und den Ertrag.",
         "verstaendnisfragen": [
-          "Auf welcher Seite wächst ein Aufwandskonto? Im Soll.",
-          "Warum ist die Januartilgung der Dezemberrechnung kein neuer Aufwand? Weil der Aufwand bereits bei der Lieferung im Dezember erfasst wurde."
-        ],
-        "pruefungsbezug": "Bei Buchungssätzen zuerst klären, ob der Vorgang Aufwand oder Ertrag erzeugt und ob sofort gezahlt wird oder eine Forderung beziehungsweise Verbindlichkeit entsteht.",
-        "merksatz": "Aufwand im Soll, Ertrag im Haben — Zahlung und Erfolg können zeitlich auseinanderfallen."
+          {
+            "frage": "Ein Kunde zahlt im März eine Anzahlung für Ware, die im Mai geliefert wird. Ist das im März Ertrag?",
+            "antwort": "Nein. Im März hat MAKEL noch nichts geliefert. Die Anzahlung ist eine Verpflichtung, später zu liefern, und wird als erhaltene Anzahlung (Fremdkapital) erfasst. Ertrag entsteht erst mit der Lieferung im Mai.",
+            "id": "d2-f1"
+          },
+          {
+            "frage": "Warum hat ein Aufwandskonto immer einen Sollsaldo?",
+            "antwort": "Aufwendungen werden im Soll gebucht. Gegenbuchungen im Haben gibt es nur bei Korrekturen, etwa Gutschriften. Deshalb überwiegt am Jahresende fast immer die Sollseite.",
+            "id": "d2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d3",
-        "vorauswissen": [
-          "Aufwendungen stehen im Soll, Erträge im Haben.",
-          "Die GuV ist ein Abschlusskonto und kein dauerhaftes Sachkonto."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst ein GuV-Konto aus den Salden der Erfolgskonten auf, ermittelst den Jahreserfolg und erklärst seine Wirkung auf das Eigenkapital.",
+        "vorwissen_kurz": "Das GuV-Konto ist wie EBK und SBK ein Abschlusskonto. Es sammelt die Salden der Erfolgskonten eines Jahres.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Das Sammelbecken des Jahres",
+            "id": "d3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Jahresende werden alle Aufwandskonten und alle Ertragskonten abgeschlossen. Ihre Salden wandern in das {{begriff:guv|GuV-Konto}}: Aufwendungen ins Soll, Erträge ins Haben. Auf einen Blick stehen sich dann alle Werteverzehre und alle Wertzuwächse des Jahres gegenüber. Die Differenz ist der Jahreserfolg.",
+            "id": "d3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Den Jahreserfolg ermitteln",
+            "id": "d3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Muster GmbH hat folgende Salden:",
+            "id": "d3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aufwendungen (Soll)",
+              "Betrag",
+              "Erträge (Haben)",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wareneinkauf",
+                  "80.000 €",
+                  "Umsatzerlöse",
+                  "160.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Löhne",
+                  "45.000 €",
+                  "Zinserträge",
+                  "5.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Miete",
+                  "12.000 €",
+                  "Sonstige Erträge",
+                  "5.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Abschreibungen",
+                  "8.000 €",
+                  "",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinsaufwand",
+                  "2.000 €",
+                  "",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "**Summe Aufwand**",
+                  "**147.000 €**",
+                  "**Summe Ertrag**",
+                  "**170.000 €**"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Erträge 170.000 € − Aufwendungen 147.000 € = 23.000 € Jahresüberschuss.",
+            "id": "d3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Saldo von 23.000 € steht im GuV-Konto im Soll, auf der schwächeren Seite, damit beide Seiten gleich hoch sind. Er wird ins Eigenkapital übertragen: GuV an Eigenkapital 23.000 €. Das Eigenkapital steigt im Haben. Hätten die Aufwendungen überwogen, wäre ein Jahresfehlbetrag entstanden und mit „Eigenkapital an GuV“ übertragen worden — das Eigenkapital wäre gesunken.",
+            "id": "d3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Wege zum selben Ergebnis",
+            "id": "d3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Den Jahreserfolg kann man auf zwei Arten ermitteln. Über die GuV: Erträge minus Aufwendungen. Oder über den Eigenkapitalvergleich: Eigenkapital am Jahresende minus Eigenkapital am Jahresanfang, bereinigt um Privatentnahmen und -einlagen. Stimmen beide Ergebnisse überein, ist das eine gute Kontrolle. Die GuV hat aber einen großen Vorteil: Sie zeigt, woher der Erfolg kommt.",
+            "id": "d3-p4"
+          }
         ],
-        "erklaerung": "Im GuV-Konto werden die Salden aller Erfolgskonten gesammelt. Die Aufwendungen bilden die linke Seite, die Erträge die rechte Seite. Ist die Ertragsseite höher, entsteht ein Jahresüberschuss; ist die Aufwandsseite höher, entsteht ein Jahresfehlbetrag. Erst der Saldo der GuV wird in das Eigenkapital übertragen.",
-        "beispiele": [
-          "Die in der Tabelle aufgeführten Aufwendungen ergeben zusammen 147.000 €, die Erträge 170.000 €. Die Differenz beträgt 23.000 € Jahresüberschuss.",
-          "Ein einzelner hoher Aufwand kann durch mehrere Erträge ausgeglichen werden; entscheidend ist die Gesamtsumme beider GuV-Seiten."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Privatentnahmen beim Einzelunternehmen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Einzelunternehmer, der 5.000 € für private Zwecke vom Geschäftskonto nimmt, mindert das Eigenkapital. Das ist aber kein Aufwand des Betriebs und gehört nicht in die GuV. Es wird über ein Privatkonto gebucht. Würde man es als Aufwand buchen, wäre der Gewinn zu niedrig. Bei einer GmbH gibt es keine Privatentnahmen; Gesellschafter erhalten Geld etwa über Gewinnausschüttungen oder ein Geschäftsführergehalt.",
+                "id": "d3-d1-p1"
+              }
+            ],
+            "id": "d3-d1"
+          }
         ],
-        "fallbeispiel": "Für die Musterrechnung werden 170.000 € Erträge und 147.000 € Aufwendungen gegenübergestellt. Rechnung: 170.000 € − 147.000 € = 23.000 €. Weil die Erträge größer sind, liegt ein Jahresüberschuss von 23.000 € vor. Dieser Betrag erhöht anschließend das Eigenkapital; die einzelnen Erfolgskonten werden dadurch nicht als Bestände ins neue Jahr übernommen.",
-        "typische_fehler": "Der Saldo wird mit der Summe der Erträge verwechselt oder der Gewinn direkt dem Bankkonto zugeschrieben. Außerdem wird vergessen, dass ein Jahresfehlbetrag das Eigenkapital mindert.",
         "verstaendnisfragen": [
-          "Was wird im GuV-Konto gesammelt? Die Salden der Aufwands- und Ertragskonten eines Geschäftsjahres.",
-          "Was bewirkt ein Jahresüberschuss im Eigenkapital? Das Eigenkapital steigt um den Überschuss."
-        ],
-        "pruefungsbezug": "Bei Berechnungen die beiden GuV-Summen sauber getrennt notieren und erst danach die Differenz bilden. Das Vorzeichen ergibt sich daraus, welche Seite größer ist.",
-        "merksatz": "Erträge minus Aufwendungen ergeben den Jahreserfolg; der Jahreserfolg verändert das Eigenkapital."
+          {
+            "frage": "Die GuV einer Firma zeigt 90.000 € Aufwand und 85.000 € Ertrag. Wie wird der Saldo gebucht, und was passiert mit dem Eigenkapital?",
+            "antwort": "Es entsteht ein Jahresfehlbetrag von 5.000 €. Der Saldo steht im GuV-Konto im Haben. Gebucht wird „Eigenkapital an GuV 5.000 €“; das Eigenkapital sinkt um 5.000 €.",
+            "id": "d3-f1"
+          },
+          {
+            "frage": "Warum ist die GuV aussagekräftiger als der bloße Vergleich des Eigenkapitals am Anfang und am Ende?",
+            "antwort": "Der Eigenkapitalvergleich zeigt nur, wie groß der Erfolg war. Die GuV zeigt außerdem, woraus er besteht: welche Erträge erzielt und welche Aufwendungen verursacht wurden. Nur so erkennt man, wo man ansetzen kann.",
+            "id": "d3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d4",
-        "vorauswissen": [
-          "Erfolgskonten werden über die GuV abgeschlossen.",
-          "Bestandskonten werden am Ende über das Schlussbilanzkonto abgeschlossen."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst die Abschlusskette in der richtigen Reihenfolge durch, buchst jeden Schritt und kontrollierst das Ergebnis.",
+        "vorwissen_kurz": "Erfolgskonten werden über die GuV abgeschlossen, Bestandskonten über das SBK. Das Eigenkapital ist das Bindeglied zwischen beiden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum die Reihenfolge zwingend ist",
+            "id": "d4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Jahresende müssen alle Konten abgeschlossen werden. Die Reihenfolge ergibt sich aus einer Abhängigkeit: Das Eigenkapital steht erst fest, wenn der Jahreserfolg ermittelt ist. Und der Jahreserfolg steht erst fest, wenn alle Erfolgskonten in der GuV gesammelt sind. Schließt man das Eigenkapital vorher ins SBK ab, fehlt der Gewinn darin, und die Schlussbilanz geht nicht auf.",
+            "id": "d4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "d4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Mini-Abschluss, vollständig gebucht",
+            "id": "d4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gegeben sind vier Konten: Mietaufwand 12.000 € (Sollsaldo), Umsatzerlöse 35.000 € (Habensaldo), Bank 50.000 € (Sollsaldo), Eigenkapital 27.000 € (Habensaldo).",
+            "id": "d4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Buchungssatz",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. Aufwandskonto abschließen",
+                  "GuV an Mietaufwand 12.000 €",
+                  "Mietaufwand steht auf null, GuV-Soll 12.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "2. Ertragskonto abschließen",
+                  "Umsatzerlöse an GuV 35.000 €",
+                  "Umsatzerlöse auf null, GuV-Haben 35.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "3. Erfolg ins Eigenkapital",
+                  "GuV an Eigenkapital 23.000 €",
+                  "GuV ausgeglichen; Eigenkapital 27.000 + 23.000 = 50.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "4. Bestandskonten abschließen",
+                  "SBK an Bank 50.000 €; Eigenkapital an SBK 50.000 €",
+                  "SBK auf beiden Seiten 50.000 €"
+                ]
+              }
+            ],
+            "fazit": "Am Ende stehen alle Konten auf null, und das SBK ist ausgeglichen. Das ist die Kontrolle für den ganzen Abschluss.",
+            "id": "d4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Achte im ersten Schritt auf die Richtung. Das Mietaufwandskonto hat einen Sollsaldo. Um es auszugleichen, muss der Betrag ins Haben dieses Kontos — und die Gegenbuchung ins Soll der GuV. Deshalb lautet der Satz „GuV an Mietaufwand“. Wer „Mietaufwand an GuV“ bucht, schreibt den Aufwand ein zweites Mal ins Soll; das Konto geht dann nie auf.",
+            "id": "d4-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "d4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "d4-b3"
+          }
         ],
-        "ablauf": [
-          "Zuerst die Aufwandskonten abschließen: Buchungssatz „GuV an Aufwandskonto“, der Saldo steht danach im Soll der GuV.",
-          "Danach die Ertragskonten abschließen: Buchungssatz „Ertragskonto an GuV“, der Saldo steht danach im Haben der GuV.",
-          "Den Saldo der GuV als Gewinn oder Verlust in das Eigenkapital übertragen.",
-          "Erst danach die Bestandskonten über das SBK abschließen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Bei Verlust",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hätte MAKEL 40.000 € Mietaufwand und 35.000 € Umsatzerlöse, entstünde ein Verlust von 5.000 €. Schritt 3 würde dann „Eigenkapital an GuV 5.000 €“ lauten, und das Eigenkapital sänke auf 22.000 €. An der Reihenfolge ändert das nichts.",
+                "id": "d4-d1-p1"
+              }
+            ],
+            "id": "d4-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Abschluss im echten Betrieb",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Vor der Abschlusskette stehen im Betrieb die vorbereitenden Abschlussbuchungen: Abschreibungen, Rückstellungen, Abgrenzungen und der Abgleich mit der Inventur. Erst wenn diese erfasst sind, stimmen die Salden der Erfolgskonten. Die Abschlusskette ist also der letzte, technische Schritt.",
+                "id": "d4-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k9-i1"
+                ],
+                "text": "Die Reihenfolge des Jahresabschlusses",
+                "id": "d4-d2-v1"
+              }
+            ],
+            "id": "d4-d2"
+          }
         ],
-        "erklaerung": "Die Reihenfolge folgt einer Abhängigkeit: Das Eigenkapital kann erst endgültig feststehen, wenn der Jahreserfolg berechnet wurde. Und die Bestandskonten können erst danach vollständig ins SBK übertragen werden. Wer die Reihenfolge vertauscht, schließt das Eigenkapital mit einem veralteten Stand ab.",
-        "beispiele": [
-          "Der Mietaufwand von 12.000 € wird zuerst in die GuV übertragen; erst danach wird der Jahresüberschuss von 23.000 € ins Eigenkapital gebucht.",
-          "Das Bankkonto wird erst im letzten Schritt mit seinem Restbestand ins SBK übernommen."
-        ],
-        "fallbeispiel": "Mini-Abschluss: Mietaufwand 12.000 € (Soll), Umsatzerlöse 35.000 € (Haben), Bank 50.000 € (Soll), Eigenkapital 27.000 € (Haben). 1. GuV an Mietaufwand 12.000 € — der Aufwand steht im Soll, also wird er im Haben ausgeglichen und landet im Soll der GuV. 2. Umsatzerlöse an GuV 35.000 €. 3. Die GuV zeigt 35.000 € − 12.000 € = 23.000 € Gewinn: GuV an Eigenkapital 23.000 €; das Eigenkapital steigt auf 50.000 €. 4. SBK an Bank 50.000 € und Eigenkapital an SBK 50.000 €. Kontrolle: Alle Konten stehen auf null, das SBK ist mit 50.000 € auf beiden Seiten ausgeglichen. Wer stattdessen „Mietaufwand an GuV“ bucht, schreibt den Aufwand ein zweites Mal ins Soll — das Konto geht dann nie auf.",
-        "typische_fehler": "Bestandskonten werden vor den Erfolgskonten abgeschlossen oder der GuV-Saldo wird nicht ins Eigenkapital übertragen. Dann kann die Schlussbilanz trotz richtiger Einzelbuchungen nicht aufgehen.",
         "verstaendnisfragen": [
-          "Warum kommen die Bestandskonten zuletzt? Weil das Eigenkapital vorher noch um den Jahreserfolg korrigiert werden muss.",
-          "Welche zwei Stellen prüfst du bei einer unausgeglichenen Schlussbilanz zuerst? Die Übertragung des Jahreserfolgs und den vollständigen Abschluss aller Erfolgskonten."
-        ],
-        "pruefungsbezug": "Die Abschlusskette wird häufig als Reihenfolge oder Zuordnung geprüft. Schreibe die vier Schritte vor der eigentlichen Buchung in der richtigen Reihenfolge auf.",
-        "merksatz": "Erfolgskonten vor Bestandskonten: GuV abschließen, Ergebnis ins Eigenkapital, dann SBK."
+          {
+            "frage": "Ein Azubi schließt zuerst die Bestandskonten und dann die Erfolgskonten ab. Woran merkt er den Fehler?",
+            "antwort": "Das SBK ist nicht ausgeglichen. Das Eigenkapital wurde mit 27.000 € übertragen, obwohl es nach Gewinnübertragung 50.000 € betragen müsste. Auf der Passivseite fehlen genau die 23.000 € Gewinn.",
+            "id": "d4-f1"
+          },
+          {
+            "frage": "Warum wird das Eigenkapital als einziges Bestandskonto vor seinem Abschluss noch einmal verändert?",
+            "antwort": "Weil es den Jahreserfolg aufnimmt. Die Erfolgskonten sind Unterkonten des Eigenkapitals; erst wenn ihr Saldo über die GuV ins Eigenkapital übertragen ist, zeigt es den richtigen Endbestand.",
+            "id": "d4-f2"
+          }
+        ]
       }
     ]
   },

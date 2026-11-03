@@ -6,86 +6,559 @@
   "untertitel": "Wie viel Maschinenzeit verfügbar ist, wie Aufträge eingeplant werden, woraus die Durchlaufzeit besteht und was bei Engpässen hilft.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Zeitbedarf = Rüstzeit + Menge × Stückzeit (Kapitel 1).",
-          "Maschinen und Menschen stehen nur begrenzt zur Verfügung."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die verfügbare Kapazität eines Arbeitsplatzes nach Abzug geplanter Ausfälle, ermittelst die Auslastung und erkennst, ab wann ein zusätzlicher Auftrag den Plan überlastet.",
+        "vorwissen_kurz": "Eine Maschine kann nicht mehr leisten, als ihr Zeit zur Verfügung steht. Wie viel davon schon verplant ist, zeigt die Auslastung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was zur Verfügung steht und was gebraucht wird",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:kapazitaet|Kapazität}} ist das Leistungsvermögen eines Arbeitsplatzes in einem Zeitraum, meist in Stunden. Die **verfügbare Kapazität** ist die Betriebszeit abzüglich geplanter Ausfälle wie Wartung, Reinigung oder Schulung. Der **Kapazitätsbedarf** ergibt sich aus den Arbeitsplänen der eingeplanten Aufträge. Das Verhältnis beider ist die **Auslastung**. Liegt sie über 100 %, reicht die Zeit nicht.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Stickmaschine in Woche 36",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Rechnung",
+              "Stunden"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Betriebszeit",
+                  "5 Tage × 8 h",
+                  "40,0"
+                ]
+              },
+              {
+                "zellen": [
+                  "− Wartung Montag",
+                  "",
+                  "1,5"
+                ]
+              },
+              {
+                "zellen": [
+                  "− Reinigung Freitag",
+                  "",
+                  "0,5"
+                ]
+              },
+              {
+                "zellen": [
+                  "= verfügbare Kapazität",
+                  "",
+                  "38,0"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vereinsauftrag 150 Hoodies",
+                  "45 min + 150 × 3 min",
+                  "8,25"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kollektion „Kyoto“ 300 Stück",
+                  "45 min + 300 × 4 min",
+                  "20,75"
+                ]
+              },
+              {
+                "zellen": [
+                  "Musterstücke für die Frühjahrskollektion",
+                  "geschätzt",
+                  "5,0"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Kapazitätsbedarf",
+                  "",
+                  "34,0"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auslastung",
+                  "34 ÷ 38 × 100",
+                  "≈ 89,5 %"
+                ]
+              }
+            ],
+            "fazit": "Die Maschine ist zu knapp 90 % ausgelastet. Es bleiben 4 Stunden Reserve für Störungen oder einen kleinen Zusatzauftrag.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Dienstag fragt ein Kunde, ob noch 120 Polos mit Logo in dieser Woche möglich sind: 30 Minuten Rüsten, 2,75 Minuten je Stück, zusammen 6 Stunden. Mit ihnen stiege der Bedarf auf 40 Stunden und die Auslastung auf 40 ÷ 38 × 100 ≈ 105,3 %. Ohne zusätzliche Maßnahme ist der Eilauftrag in dieser Woche nicht machbar.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Kapazität ist das Leistungsvermögen eines Arbeitsplatzes in einem Zeitraum, meist in Stunden. Die verfügbare Kapazität ergibt sich aus Arbeitstagen × Schichtstunden, abzüglich geplanter Ausfälle wie Wartung. Der Kapazitätsbedarf ist die Summe der Zeitbedarfe aller eingeplanten Aufträge. Die Auslastung (Kapazitätsauslastungsgrad) setzt beide ins Verhältnis: Bedarf ÷ verfügbare Kapazität × 100. Über 100 Prozent bedeutet Überlast — der Plan ist so nicht machbar.",
-        "beispiele": [
-          "Eine Maschine steht 8 Stunden bereit, der Auftrag braucht 9 Stunden: Auslastung 112,5 %, Überlast 1 Stunde.",
-          "5 Tage × 8 Stunden − 2 Stunden Wartung = 38 Stunden verfügbare Kapazität."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Hundert Prozent sind zu viel",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Planung mit genau 100 % Auslastung lässt keinen Raum für Störungen, Nacharbeit oder Krankheit. Viele Betriebe planen deshalb bewusst nur bis etwa 85 bis 90 % und halten den Rest als Puffer. Bei MAKEL Studio entspricht das ungefähr einem halben Arbeitstag pro Woche und Maschine.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für die Stickmaschine 2 plant Deniz Aydın die kommende Woche: 5 Tage × 8 Stunden = 40 Stunden, davon 2 Stunden Wartung, also 38 Stunden verfügbar. Eingeplant sind Aufträge mit zusammen 34 Stunden Bedarf. Auslastung 34 ÷ 38 ≈ 89,5 %. Ein weiterer Eilauftrag mit 6 Stunden würde die Auslastung auf über 100 % treiben.",
-        "typische_fehler": "Die Auslastung auf den Bedarf statt auf die verfügbare Kapazität beziehen.",
         "verstaendnisfragen": [
-          "Wie berechnet man die Auslastung? Kapazitätsbedarf ÷ verfügbare Kapazität × 100.",
-          "Was bedeutet eine Auslastung von 112,5 %? Der Plan übersteigt die Kapazität; es fehlen 12,5 % der verfügbaren Zeit."
-        ],
-        "pruefungsbezug": "Verfügbare Kapazität, Bedarf und Auslastung berechnen und Überlast erkennen.",
-        "merksatz": "Auslastung = Kapazitätsbedarf ÷ verfügbare Kapazität × 100; über 100 % ist der Plan nicht machbar."
+          {
+            "frage": "Wie hoch ist die Auslastung, wenn 32 Stunden Bedarf auf 40 verfügbare Stunden treffen?",
+            "antwort": "32 ÷ 40 × 100 = 80 %.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum wird die Wartung von der Betriebszeit abgezogen?",
+            "antwort": "Weil die Maschine in dieser Zeit nicht produzieren kann. Wer sie mitrechnet, plant mehr Aufträge ein, als tatsächlich möglich sind.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Aufträge haben Liefertermine.",
-          "Arbeitsgänge laufen nacheinander auf verschiedenen Arbeitsplätzen."
+        "darstellung": "vollfassung",
+        "ziel": "Du terminierst einen Auftrag vorwärts und rückwärts, liest einen Belegungsplan und erkennst Überschneidungen und fehlende Puffer.",
+        "vorwissen_kurz": "Neben der Frage, ob genug Zeit vorhanden ist, steht die Frage, wann ein Auftrag laufen soll.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Start oder vom Liefertermin aus",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der **Vorwärtsterminierung** wird vom frühestmöglichen Start aus gerechnet; das Ergebnis ist der früheste Endtermin. Bei der **Rückwärtsterminierung** wird vom Liefertermin aus zurückgerechnet; das Ergebnis ist der späteste Starttermin. Der **Belegungsplan** zeigt für jede Maschine, welcher Auftrag wann läuft. Überschneidungen und fehlende Puffer werden so sichtbar, bevor sie zum Problem werden.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Vereinsauftrag rückwärts terminiert",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Liefertermin ist Donnerstag, 10. September, 12 Uhr beim Verein. Für den Transport plant MAKEL Studio einen halben Tag ein.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Dauer",
+              "spätestens"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anlieferung beim Verein",
+                  "—",
+                  "Donnerstag, 12:00"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versand, Transport",
+                  "4 h",
+                  "Donnerstag, 8:00 Abfahrt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verpacken, Endkontrolle",
+                  "4 h",
+                  "Mittwoch, 12:00 beginnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sticken",
+                  "8,25 h",
+                  "Dienstag, 11:45 beginnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einspannen, Vlies, Bereitstellen",
+                  "mit dem Sticken überlappend",
+                  "Dienstag früh"
+                ]
+              }
+            ],
+            "fazit": "Spätester Start des Stickens ist Dienstagvormittag. Geplant ist der Montag — damit bleibt gut ein Tag Puffer.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Belegungsplan der Stickmaschine",
+            "id": "a2-z3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Tag",
+              "Vormittag",
+              "Nachmittag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Montag",
+                  "Wartung, dann Verein",
+                  "Verein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Dienstag",
+                  "Verein (Rest)",
+                  "Kyoto"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mittwoch",
+                  "Kyoto",
+                  "Kyoto"
+                ]
+              },
+              {
+                "zellen": [
+                  "Donnerstag",
+                  "Kyoto",
+                  "Muster"
+                ]
+              },
+              {
+                "zellen": [
+                  "Freitag",
+                  "Muster",
+                  "Reinigung, frei"
+                ]
+              }
+            ],
+            "fazit": "Die Aufträge laufen nacheinander ohne Überschneidung. Der Freitagnachmittag ist der einzige zusammenhängende Puffer.",
+            "id": "a2-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Vorwärts terminiert ergibt sich für den Vereinsauftrag: Start Montag nach der Wartung, Sticken fertig Dienstagvormittag, Kontrolle und Verpacken bis Dienstagnachmittag. Der früheste Liefertermin wäre Mittwoch. Zwischen frühestem und spätestem Termin liegt der Spielraum, den die Planung für andere Aufträge nutzen kann.",
+            "id": "a2-p3"
+          }
         ],
-        "erklaerung": "Die Terminplanung legt fest, wann welcher Arbeitsgang auf welchem Arbeitsplatz läuft. Bei der Vorwärtsterminierung wird ab dem frühestmöglichen Start geplant — das ergibt den frühesten Fertigstellungstermin. Bei der Rückwärtsterminierung rechnet man vom Liefertermin zurück und erhält den spätesten Starttermin. Ein Belegungsplan (oft als Balkenplan) zeigt, welche Aufträge die Maschine wann belegen, und macht Überschneidungen sichtbar.",
-        "beispiele": [
-          "Liefertermin Freitag, Versand braucht 1 Tag, Kontrolle 1 Tag, Sticken 2 Tage: spätester Stickbeginn Montag.",
-          "Start Montag, Sticken 2 Tage, Kontrolle und Verpacken 1 Tag: frühester Versand Donnerstag."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Feinplanung im System",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In vielen Betrieben erstellt die Produktionsplanungssoftware den Belegungsplan automatisch aus Arbeitsplänen und Aufträgen. Die Planerin prüft das Ergebnis und greift ein, wenn etwa ein eiliger Auftrag vorgezogen werden muss. Die Logik dahinter ist dieselbe wie bei der Berechnung von Hand.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Der Eventauftrag soll am 15. November geliefert werden. Rückwärts gerechnet: Versand 10. November, Endkontrolle und Verpacken 7. November, Sticken 3. bis 6. November. Im Belegungsplan sieht Deniz, dass die Stickmaschine am 3. November noch einen anderen Auftrag hat; er verschiebt den Start auf den 4. November und prüft, ob der Puffer reicht.",
-        "typische_fehler": "Nur die Bearbeitungszeit einplanen und Kontrolle, Verpackung und Versand vergessen.",
         "verstaendnisfragen": [
-          "Was ergibt die Rückwärtsterminierung? Den spätesten Starttermin, damit der Liefertermin gehalten wird.",
-          "Wozu dient ein Belegungsplan? Er zeigt, welche Aufträge eine Maschine wann belegen, und macht Überschneidungen sichtbar."
-        ],
-        "pruefungsbezug": "Vorwärts- und Rückwärtsterminierung an einem Auftrag anwenden.",
-        "merksatz": "Vorwärts ergibt den frühesten Endtermin, rückwärts den spätesten Start; der Belegungsplan zeigt Überschneidungen."
+          {
+            "frage": "Was ist das Ergebnis einer Rückwärtsterminierung?",
+            "antwort": "Der späteste Starttermin, damit der Auftrag zum Liefertermin fertig ist.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ist der Freitagnachmittag im Belegungsplan wichtig?",
+            "antwort": "Weil er der einzige zusammenhängende Puffer ist. Fällt die Maschine unter der Woche aus, kann dort nachgeholt werden.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Ein Auftrag ist nicht nur in Bearbeitung, sondern wartet auch.",
-          "Aus LF 4 kennst du Liegezeiten im Einkauf."
+        "darstellung": "vollfassung",
+        "ziel": "Du zerlegst die Durchlaufzeit eines Auftrags in Bearbeitungs-, Liege-, Transport- und Prüfzeit, berechnest den Flussgrad und leitest ab, wo sich eine Verkürzung lohnt.",
+        "vorwissen_kurz": "Ein Auftrag ist länger im Betrieb, als an ihm gearbeitet wird. Wo die übrige Zeit bleibt, zeigt die Zerlegung der Durchlaufzeit.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Arbeiten, warten, bewegen, prüfen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:durchlaufzeit|Durchlaufzeit}} reicht vom Start eines Auftrags bis zu seinem Abschluss. Sie besteht aus Bearbeitungszeit, Liegezeit, Transportzeit und Prüfzeit. Nur die Bearbeitung verändert das Erzeugnis. Der Anteil der Bearbeitung an der Durchlaufzeit heißt Flussgrad. Ist er niedrig, liegt der Hebel für eine Verkürzung nicht an der Maschine, sondern beim Warten und Weiterreichen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Druckauftrag über 400 Shirts",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitart",
+              "Was passiert",
+              "Minuten"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bearbeitung",
+                  "Druck an der Presse",
+                  "90"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Liegezeit",
+                  "Shirts warten vor dem Trockner, weil er noch mit einem anderen Auftrag belegt ist",
+                  "120"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Transport",
+                  "Wagen vom Trockner zum Packtisch",
+                  "15"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Prüfung",
+                  "Stichprobenkontrolle",
+                  "15"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Durchlaufzeit",
+                  "",
+                  "240"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Flussgrad = 90 ÷ 240 × 100 = 37,5 %. Die halbe Durchlaufzeit warten die Shirts vor dem Trockner.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine schnellere Presse würde wenig bringen: Selbst bei halber Druckzeit sänke die Durchlaufzeit nur auf 195 Minuten. Wird dagegen der Trockner so eingeplant, dass er frei ist, wenn der Druck fertig ist, sinkt die Liegezeit auf 20 Minuten und die Durchlaufzeit auf 140 Minuten. Der Engpass ist der Trockner, nicht die Presse.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Durchlaufzeit ist die Zeit vom Beginn des ersten bis zum Ende des letzten Arbeitsgangs eines Auftrags. Sie besteht aus Bearbeitungszeit (Rüsten und Ausführen), Liegezeit (Warten vor oder nach Arbeitsgängen), Transportzeit und Prüfzeit. Oft ist die Liegezeit der größte Anteil. Der Flussgrad (Bearbeitungszeit ÷ Durchlaufzeit) zeigt, wie viel der Zeit tatsächlich wertschöpfend ist. Wer die Durchlaufzeit verkürzen will, setzt deshalb meist bei Liege- und Transportzeiten an, nicht an der Maschine.",
-        "beispiele": [
-          "Bearbeitung 90, Liegen 120, Transport 15, Prüfung 15 Minuten: Durchlaufzeit 240 Minuten, Flussgrad 37,5 %.",
-          "Eine schnellere Maschine verkürzt nur die Bearbeitung — die Liegezeit bleibt."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Liegezeit und Belegungsplanung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Liegezeiten entstehen oft, weil die Arbeitsplätze nicht aufeinander abgestimmt geplant sind. Ein Belegungsplan, der Presse und Trockner gemeinsam betrachtet, verkürzt die Durchlaufzeit, ohne dass jemand schneller arbeiten muss.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Shirt-Auftrag braucht 90 Minuten Druck, liegt dann 120 Minuten vor dem Trockner, wird 15 Minuten zum Packtisch gebracht und 15 Minuten geprüft. Durchlaufzeit: 240 Minuten. Nur 90 Minuten davon sind Bearbeitung. Deniz prüft, warum Aufträge so lange vor dem Trockner warten.",
-        "typische_fehler": "Liegezeit als Maschinenbearbeitung zählen oder die Durchlaufzeit mit der reinen Bearbeitungszeit gleichsetzen.",
         "verstaendnisfragen": [
-          "Aus welchen Zeitarten besteht die Durchlaufzeit? Bearbeitungs-, Liege-, Transport- und Prüfzeit.",
-          "Was zeigt der Flussgrad? Den Anteil der Bearbeitungszeit an der gesamten Durchlaufzeit."
-        ],
-        "pruefungsbezug": "Durchlaufzeit und Flussgrad berechnen und Ansatzpunkte zur Verkürzung nennen.",
-        "merksatz": "Durchlaufzeit = Bearbeitung + Liegen + Transport + Prüfung; der größte Hebel liegt meist in der Liegezeit."
+          {
+            "frage": "Wie hoch wäre der Flussgrad, wenn die Liegezeit auf 20 Minuten sinkt?",
+            "antwort": "Durchlaufzeit 90 + 20 + 15 + 15 = 140 Minuten; Flussgrad 90 ÷ 140 × 100 ≈ 64,3 %.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum ist die Liegezeit vor dem Trockner keine Bearbeitungszeit?",
+            "antwort": "Weil an den Shirts in dieser Zeit nichts geschieht. Sie warten nur. Wer sie der Presse zurechnet, sucht die Ursache an der falschen Stelle.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Pläne treffen auf Störungen, Krankheit und Eilaufträge.",
-          "Kapazität kann man anpassen oder Aufträge verschieben."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst bei einem Kapazitätsengpass zwischen Kapazität erhöhen und Bedarf anpassen, bewertest die Maßnahmen nach Kosten und Folgen und begründest eine Entscheidung.",
+        "vorwissen_kurz": "Reicht die Kapazität nicht, gibt es zwei Richtungen: mehr Kapazität schaffen oder weniger Bedarf einplanen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Richtungen, viele Wege",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einem Engpass kann MAKEL Studio die Kapazität erhöhen, etwa mit Überstunden, einer Zusatzschicht, dem Umsetzen von Personal oder einer Fremdvergabe an einen anderen Veredler. Oder es passt den Bedarf an: Aufträge verschieben, Lose teilen, Prioritäten ändern oder Rüstzeiten senken. Jede Maßnahme hat Kosten und Folgen — für die Beschäftigten, die Kunden und die Qualität.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Eilauftrag mit den Polos",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Polo-Auftrag würde die Stickmaschine in Woche 36 auf 105,3 % auslasten; es fehlen 2 Stunden.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Möglichkeit",
+              "Wirkung",
+              "Kosten und Folgen"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Überstunden am Donnerstag, 2 h",
+                  "+ 2 h Kapazität",
+                  "Zuschläge für eine Mitarbeiterin, Arbeitszeitgesetz beachten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Musterstücke in die Folgewoche verschieben",
+                  "− 5 h Bedarf",
+                  "Kollektionsplanung verschiebt sich um eine Woche"
+                ]
+              },
+              {
+                "zellen": [
+                  "Polos an einen Veredler vergeben",
+                  "− 6 h Bedarf",
+                  "Fremdpreis höher, Qualitätskontrolle beim Fremdfertiger"
+                ]
+              },
+              {
+                "zellen": [
+                  "Polos ablehnen",
+                  "− 6 h Bedarf",
+                  "Umsatz geht verloren, Kunde geht womöglich zur Konkurrenz"
+                ]
+              }
+            ],
+            "fazit": "Die Musterstücke haben keinen festen Kundentermin. Sie in die Folgewoche zu verschieben, schafft genug Platz ohne Zusatzkosten. Die Produktionsplanung entscheidet sich dafür.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Entscheidung ist nicht automatisch die billigste. Hätte die Designabteilung die Muster dringend für einen Termin mit einem Großkunden gebraucht, wären Überstunden die bessere Wahl gewesen. Deshalb wird vor der Entscheidung gefragt, welche Termine wirklich fest sind.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Zeigt der Abgleich Überlast oder ein Termin ist gefährdet, gibt es zwei Richtungen. Kapazität anpassen: Überstunden, Zusatzschicht, Personal aus anderen Bereichen, Fremdvergabe an einen Lohnfertiger. Bedarf anpassen: Aufträge verschieben (nach Absprache), Lose teilen, Prioritäten ändern, Rüstzeiten verkürzen. Jede Maßnahme hat Kosten und Folgen, etwa Zuschläge, Qualitätsrisiken bei Fremdvergabe oder verärgerte Kunden bei Verschiebung. Bei Unterlast kann vorgezogen, auf Lager produziert oder Wartung eingeplant werden.",
-        "beispiele": [
-          "1 Stunde Überlast: Überstunde mit Zuschlag oder Verschiebung eines Auftrags ohne festen Termin.",
-          "Längerer Maschinenausfall: Teilauftrag an einen Lohnsticker vergeben, Qualität per Muster absichern."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Grenzen bei Überstunden",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Das Arbeitszeitgesetz erlaubt werktäglich in der Regel bis zu acht Stunden, mit Ausgleich bis zu zehn. Für Jugendliche gelten engere Grenzen nach dem Jugendarbeitsschutzgesetz. Gibt es einen Betriebsrat, bestimmt er bei vorübergehender Verlängerung der Arbeitszeit mit.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die Stickmaschine fällt einen Tag aus. Deniz prüft: Der Eventauftrag hat Vertragsstrafe, ein Boutiqueauftrag hat zwei Tage Puffer. Er verschiebt den Boutiqueauftrag nach Rücksprache mit Marlene und plant für den Eventauftrag eine Zusatzschicht am Samstag ein. Die Entscheidung und die Zuschläge dokumentiert er.",
-        "typische_fehler": "Bei Überlast einfach weiterplanen und hoffen, dass es passt.",
         "verstaendnisfragen": [
-          "Nenne zwei Maßnahmen, um Kapazität zu erhöhen. Zum Beispiel Überstunden und Fremdvergabe.",
-          "Nenne zwei Maßnahmen, um den Bedarf anzupassen. Zum Beispiel Aufträge verschieben und Lose teilen."
-        ],
-        "pruefungsbezug": "Bei Engpässen passende Maßnahmen auswählen und ihre Folgen abwägen.",
-        "merksatz": "Bei Überlast Kapazität erhöhen oder Bedarf anpassen — jede Maßnahme mit Kosten und Folgen begründen."
+          {
+            "frage": "Eine Maschine steht 8 Stunden bereit, der Auftrag braucht 9 Stunden. Wie hoch ist die Auslastung?",
+            "antwort": "9 ÷ 8 × 100 = 112,5 %. Es fehlt eine Stunde; ohne Maßnahme wird der Termin nicht gehalten.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ist das Verschieben der Musterstücke die beste Lösung im Beispiel?",
+            "antwort": "Weil sie keinen festen Kundentermin haben und die Verschiebung keine Zusatzkosten verursacht. Alle anderen Maßnahmen kosten Geld oder gefährden Umsatz.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

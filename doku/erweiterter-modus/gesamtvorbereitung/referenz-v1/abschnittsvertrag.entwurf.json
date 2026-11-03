@@ -1,0 +1,573 @@
+{
+  "status": "Datenvertragsentwurf in Dokumentation; benötigt Rendereranpassung und fachliche Prüfung, nicht direkt in produktive Quellen importieren.",
+  "anwendungsgrundlage": "f943f653e8cc41af4e53a4d83a31cbd90417d412",
+  "ids": "Einmal zugewiesene semantische IDs bei Textänderung erhalten; nicht bei jedem Build neu aus Text erzeugen.",
+  "piloten": [
+    {
+      "pilot": "A",
+      "beruf": "kfb",
+      "lernfeld": "lf4",
+      "kapitel": "k3",
+      "datei": "quellen/lf4-k3-angebotsvergleich.kapitel.json",
+      "ausfuehrlich": {
+        "format": 2,
+        "abschnitte": [
+          {
+            "abschnitt": "b1",
+            "darstellung": "vollfassung",
+            "lernabsicht": "Du kannst erklären, weshalb der Listenpreis nicht ausreicht, und aus Rabatt, nutzbarem Skonto und Bezugskosten einen vergleichbaren Bezugspreis berechnen.",
+            "vorwissen_kurz": "Ein Prozentwert bezieht sich immer auf einen bestimmten Grundwert. In diesem vereinfachten Vergleich betrachten wir Nettobeträge; MAKEL ist im Fall zum vollen Vorsteuerabzug berechtigt. Die Umsatzsteuer wird deshalb nicht als Kostenbestandteil in diesen Nettopreisvergleich aufgenommen. Andere Steuer- und Auslandssachverhalte sind hier nicht unterstellt.",
+            "inhalt": [
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b1-warum-der-gunstigste-listenpreis-nicht-immer-gewinnt",
+                "text": "Warum der günstigste Listenpreis nicht immer gewinnt"
+              },
+              {
+                "typ": "absatz",
+                "id": "b1-ein-angebot-nennt-zunachst-einen-preis-wie-viel",
+                "text": "Ein Angebot nennt zunächst einen Preis. Wie viel die Beschaffung den Betrieb tatsächlich kostet, hängt aber auch von den Bedingungen ab. Ein Lieferant kann einen Rabatt gewähren, ein anderer den Transport bereits einschließen. Ein scheinbar günstiger Preis kann durch zusätzliche Fracht teurer werden. Deshalb vergleichen wir nicht einzelne auffällige Zahlen, sondern bringen beide Angebote auf denselben Umfang und dieselbe Berechnungsgrundlage."
+              },
+              {
+                "typ": "absatz",
+                "id": "b1-zuerst-prufst-du-ob-ware-menge-qualitat-und",
+                "text": "Zuerst prüfst du, ob Ware, Menge, Qualität und Lieferleistung überhaupt vergleichbar sind. Erst danach rechnest du. Der Bezugspreis, auch Einstandspreis genannt, berücksichtigt im folgenden Grundfall den Liefererrabatt, einen tatsächlich nutzbaren Liefererskonto und die zusätzlichen Bezugskosten. Die Zahl ersetzt nicht die spätere Prüfung von Qualität, Zuverlässigkeit und Nachhaltigkeit."
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b1-ein-vollstandiger-vergleich-bei-makel",
+                "text": "Ein vollständiger Vergleich bei MAKEL"
+              },
+              {
+                "typ": "absatz",
+                "id": "b1-makel-benotigt-100-gleichartige-rohlinge-beide-lieferanten-bieten",
+                "text": "MAKEL benötigt 100 gleichartige Rohlinge. Beide Lieferanten bieten dieselbe Qualität, Menge und Lieferfrist. Alle Beträge sind netto und gelten für die gesamte Menge. Bei A sind 1.000 € Listenpreis, 10 % Rabatt und 2 % Skonto innerhalb von zehn Tagen vereinbart. Die Fracht kostet zusätzlich 40 € und ist ausdrücklich nicht skontierbar. B verlangt 930 € einschließlich Transport; Rabatt und Skonto gibt es dort nicht. Für den Grundfall kann MAKEL A rechtzeitig bezahlen."
+              },
+              {
+                "typ": "tabelle",
+                "id": "b1-rechenschritt-warum-dieser-schritt-angebot-a",
+                "spalten": [
+                  "Rechenschritt",
+                  "Warum dieser Schritt?",
+                  "Angebot A"
+                ],
+                "zeilen": [
+                  [
+                    "Listeneinkaufspreis",
+                    "Vereinbarter Ausgangswert",
+                    "1.000,00 €"
+                  ],
+                  [
+                    "Rabatt: 1.000 × 10 %",
+                    "Sofortiger Nachlass auf den Listenpreis",
+                    "−100,00 €"
+                  ],
+                  [
+                    "Zieleinkaufspreis",
+                    "Grundlage für den hier vereinbarten Skonto",
+                    "900,00 €"
+                  ],
+                  [
+                    "Skonto: 900 × 2 %",
+                    "Die Frist wird im Grundfall tatsächlich genutzt",
+                    "−18,00 €"
+                  ],
+                  [
+                    "Bareinkaufspreis",
+                    "Warenpreis nach den beiden Nachlässen",
+                    "882,00 €"
+                  ],
+                  [
+                    "Fracht",
+                    "Zusätzlich, laut Fall nicht skontierbar",
+                    "+40,00 €"
+                  ],
+                  [
+                    "**Bezugspreis**",
+                    "**Vergleichbarer Gesamtbetrag**",
+                    "**922,00 €**"
+                  ]
+                ]
+              },
+              {
+                "typ": "absatz",
+                "id": "b1-bei-b-betragt-der-bezugspreis-930-a",
+                "text": "Bei B beträgt der Bezugspreis 930 €. A ist damit im Grundfall 8 € günstiger. Je Rohling sind das 9,22 € gegenüber 9,30 €. Die Einheitenkontrolle ist wichtig: Du darfst den Gesamtpreis des einen Angebots nicht mit dem Stückpreis des anderen vergleichen."
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b1-warum-werden-rabatt-und-skonto-nicht-einfach-addiert",
+                "text": "Warum werden Rabatt und Skonto nicht einfach addiert?"
+              },
+              {
+                "typ": "absatz",
+                "id": "b1-die-beiden-prozentsatze-haben-unterschiedliche-grundwerte-der-rabatt",
+                "text": "Die beiden Prozentsätze haben unterschiedliche Grundwerte. Der Rabatt wird hier aus 1.000 € berechnet. Danach bleiben 900 €; nur auf diese 900 € werden die 2 % Skonto angewendet. Wer insgesamt 12 % von 1.000 € abzieht und dann 40 € Fracht addiert, erhält 920 € und zieht 2 € zu viel ab. Die scheinbar kleine Abweichung zeigt einen Denkfehler, der bei größeren Mengen erheblich werden kann."
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b1-was-das-ergebnis-fur-die-entscheidung-bedeutet",
+                "text": "Was das Ergebnis für die Entscheidung bedeutet"
+              },
+              {
+                "typ": "absatz",
+                "id": "b1-du-kannst-jetzt-eine-prazise-aussage-treffen-unter",
+                "text": "Du kannst jetzt eine präzise Aussage treffen: Unter den genannten, vergleichbaren Bedingungen und bei fristgerechter Zahlung ist A rein preislich günstiger. Ob MAKEL A auswählt, hängt zusätzlich etwa von Lieferzuverlässigkeit und Qualitätsanforderungen ab. Der Satz „A ist immer günstiger“ wäre aus dieser Rechnung nicht ableitbar."
+              }
+            ],
+            "details": [
+              {
+                "id": "b1-prozentwert-und-grundwert",
+                "kategorie": "Grundlagen nachlesen",
+                "titel": "Prozentwert und Grundwert",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b1-prozentwert-und-grundwert-10-bedeuten-zehn-von-hundert-bei-einem",
+                    "text": "10 % bedeuten zehn von hundert. Bei einem Grundwert von 1.000 € entsprechen sie 100 €. Nach dem Rabatt hat sich der Grundwert für den nächsten Nachlass verändert: 2 % von 900 € sind 18 €, nicht 20 €. Schreibe bei jeder Prozentrechnung den Grundwert daneben; dann erkennst du, welche Zahl tatsächlich mit dem Prozentsatz verknüpft wird."
+                  }
+                ]
+              },
+              {
+                "id": "b1-makel-kann-die-skontofrist-nicht-nutzen",
+                "kategorie": "Fälle vergleichen",
+                "titel": "MAKEL kann die Skontofrist nicht nutzen",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b1-makel-kann-die-skontofris-ohne-skonto-kostet-a-900-plus-40",
+                    "text": "Ohne Skonto kostet A 900 € plus 40 € Fracht, also 940 €. B bleibt bei 930 €. Nun ist B rein preislich 10 € günstiger. Genau deshalb darf ein möglicher Skonto nicht bedingungslos als sichere Ersparnis eingeplant werden. Ob eine Finanzierung zur Skontonutzung wirtschaftlich wäre, ist eine zusätzliche Frage; dafür müssen die Kreditkosten bekannt sein."
+                  }
+                ]
+              },
+              {
+                "id": "b1-welche-betrage-sind-skontierbar",
+                "kategorie": "Sonderfall verstehen",
+                "titel": "Welche Beträge sind skontierbar?",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b1-welche-betrage-sind-skont-unser-fall-legt-ausdrucklich-fest-dass-die-fracht",
+                    "text": "Unser Fall legt ausdrücklich fest, dass die Fracht nicht skontierbar ist. In einem anderen Vertrag kann die Bemessungsgrundlage anders geregelt sein. Dann wird nicht dieselbe Zahl mechanisch weiterverwendet, sondern zuerst die vereinbarte Skontobasis bestimmt. Das Rechenschema hilft nur, wenn seine Eingaben zum Vertrag passen."
+                  }
+                ]
+              },
+              {
+                "id": "b1-liquiditat-und-lieferantenentscheidung",
+                "kategorie": "Zusammenhang entdecken",
+                "titel": "Liquidität und Lieferantenentscheidung",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b1-liquiditat-und-lieferante-die-bezugskalkulation-fragt-nach-den-kosten-die-liquiditatsplanung",
+                    "text": "Die Bezugskalkulation fragt nach den Kosten. Die Liquiditätsplanung fragt, ob MAKEL den Betrag zum richtigen Zeitpunkt zahlen kann. Beide Antworten werden für eine gute Entscheidung benötigt. Weiterführende Inhalte: LF9 K1 Liquidität; LF4 K3 b3 qualitative Lieferantenauswahl. Verweise nur erzeugen, wenn die Ziele im aktuellen Bestand tatsächlich vorhanden sind."
+                  }
+                ]
+              }
+            ],
+            "verstaendnisfragen": [
+              {
+                "id": "b1-frage-a1",
+                "frage": "Warum beziehen sich die 2 % Skonto auf 900 €?",
+                "antwort": "Weil der Rabatt den Warenpreis schon auf 900 € reduziert hat und laut Fall dieser Zieleinkaufspreis die Skontobasis ist. Die nicht skontierbare Fracht wird anschließend addiert.",
+                "bewertung": "keine"
+              },
+              {
+                "id": "b1-frage-a2",
+                "frage": "Welche Änderung lässt B in unserem Vergleich günstiger werden?",
+                "antwort": "Wenn MAKEL A nicht innerhalb der Skontofrist bezahlt, steigt dessen Bezugspreis auf 940 €. B kostet unverändert 930 € und ist dann 10 € günstiger.",
+                "bewertung": "keine"
+              }
+            ],
+            "basis_erhalten": [
+              {
+                "typ": "grafik",
+                "hinweis": "Grafik besitzt im Alt-HTML keine eigene DOM-ID; expliziten gemeinsamen Schlüssel bei Migration vergeben. Bestehende Instanz erhalten, keine erfundene alte ID voraussetzen.",
+                "gemeinsam_schluessel": "lf4-k3-b1-darstellung",
+                "quellreferenz": {
+                  "abschnitt": "b1",
+                  "typ": "grafik",
+                  "variante": "kalkulationsleiter"
+                }
+              },
+              {
+                "typ": "merke",
+                "hinweis": "Einmal gemeinsam weiterverwenden; ursprüngliche Kennung und Instanz erhalten. Kein neu generierter Ersatz.",
+                "bestehende_dom_kennung": "lf4-k3-b1-m1"
+              }
+            ],
+            "quellen": [
+              {
+                "art": "Fiktiver vollständig vorgegebener Rechenfall",
+                "pruefhinweis": "Kein amtlicher Jahreswert; Fachlogik und vorhandene Darstellung gegenlesen."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pilot": "B",
+      "beruf": "kfb",
+      "lernfeld": "lf3",
+      "kapitel": "k2",
+      "datei": "quellen/lf3-k2-vertrag.kapitel.json",
+      "ausfuehrlich": {
+        "format": 2,
+        "abschnitte": [
+          {
+            "abschnitt": "b2",
+            "darstellung": "vollfassung",
+            "lernabsicht": "Du kannst eine unveränderte Annahme von einem neuen Antrag unterscheiden und deinen Schluss an den konkreten Erklärungen begründen.",
+            "vorwissen_kurz": "Für unseren vereinfachten B2B-Fall handeln die Beteiligten wirksam und mit ausreichender Vertretungsmacht. Die Erklärungen sind eindeutig, gehen rechtzeitig zu, und das Angebot enthält die wesentlichen Bedingungen. Streit über AGB, Schweigen, kaufmännische Bestätigungsschreiben oder Sonderregeln ist nicht Gegenstand des Grundfalls.",
+            "inhalt": [
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b2-warum-eine-antwort-noch-keine-annahme-sein-muss",
+                "text": "Warum eine Antwort noch keine Annahme sein muss"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-ein-vertrag-setzt-ubereinstimmende-willenserklarungen-voraus-der-antra",
+                "text": "Ein Vertrag setzt übereinstimmende Willenserklärungen voraus. Der Antrag beschreibt ein Geschäft so bestimmt, dass die andere Seite es annehmen kann. Entscheidend ist nicht, dass zwei Schreiben ähnlich aussehen oder beide Seiten grundsätzlich handeln möchten. Sie müssen sich über dasselbe Geschäft einig sein."
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-ein-verbindliches-angebot-ist-deshalb-etwas-anderes-als",
+                "text": "Ein verbindliches Angebot ist deshalb etwas anderes als eine Frage nach Preisen. Mit „Was würden 100 Hoodies kosten?“ erkundigt sich ein Kunde zunächst. Mit einem eindeutig verbindlichen Angebot werden dagegen bestimmte Bedingungen zum Vertragsschluss vorgeschlagen. Die Bezeichnung des Schreibens kann ein Hinweis sein; ausschlaggebend bleibt sein Inhalt."
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b2-der-grundfall-eine-eindeutige-zustimmung",
+                "text": "Der Grundfall: eine eindeutige Zustimmung"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-makel-bietet-einer-agentur-verbindlich-100-genau-bezeichnete",
+                "text": "MAKEL bietet einer Agentur verbindlich 100 genau bezeichnete Hoodies für 40 € netto je Stück an. Im Angebot steht eine Annahmefrist bis Freitag und ein bestimmter Liefertermin. Die Agentur antwortet am Mittwoch: „Wir nehmen Ihr Angebot über 100 Hoodies unverändert an.“ Die Antwort geht MAKEL am selben Tag zu. Im beschriebenen Fall liegt eine rechtzeitige, inhaltlich passende Annahme vor. Die Erklärungen stimmen überein; der Vertrag ist geschlossen."
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b2-der-vergleichsfall-zustimmung-mit-anderer-menge",
+                "text": "Der Vergleichsfall: Zustimmung mit anderer Menge"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-die-agentur-antwortet-stattdessen-wir-bestellen-120-hoodies",
+                "text": "Die Agentur antwortet stattdessen: „Wir bestellen 120 Hoodies zu den angebotenen Bedingungen.“ Jetzt passt die Menge nicht mehr zum Antrag über 100 Stück. Die Antwort nimmt deshalb nicht einfach das ursprüngliche Angebot an. Sie lehnt es rechtlich verbunden mit einem neuen Antrag ab. MAKEL muss erst entscheiden, ob es 120 Stück zu diesen Bedingungen liefern möchte. Erst eine passende Annahme dieses neuen Antrags schließt den Vertrag über 120 Stück."
+              },
+              {
+                "typ": "tabelle",
+                "id": "b2-erklarung-der-agentur-einordnung-im-beschriebenen-fall-was-folgt",
+                "spalten": [
+                  "Erklärung der Agentur",
+                  "Einordnung im beschriebenen Fall",
+                  "Was folgt?"
+                ],
+                "zeilen": [
+                  [
+                    "„100 Stück, unverändert wie angeboten“",
+                    "Rechtzeitige Annahme",
+                    "Vertrag über 100 Stück"
+                  ],
+                  [
+                    "„120 Stück zu diesen Bedingungen“",
+                    "Abändernde Antwort, neuer Antrag",
+                    "Noch kein Vertrag über 120 Stück"
+                  ],
+                  [
+                    "„Könnten Sie alternativ auch 120 Stück anbieten?“",
+                    "Nachfrage ohne eindeutig erklärte Annahme",
+                    "Inhalt klären; nicht automatisch als Vertrag buchen"
+                  ]
+                ]
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b2-so-begrundest-du-deine-entscheidung",
+                "text": "So begründest du deine Entscheidung"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-lege-die-erklarungen-nebeneinander-benenne-zunachst-den-ursprunglichen",
+                "text": "Lege die Erklärungen nebeneinander. Benenne zunächst den ursprünglichen Antrag: Wer schlägt wem welches Geschäft vor? Prüfe dann, ob die Antwort wirksam, rechtzeitig und inhaltlich unverändert ist. Markiere Abweichungen bei Menge, Preis, Ausführung oder sonstigen Bedingungen. Schließe mit einem konkreten Ergebnis: Wer muss noch welche Erklärung abgeben, damit das gewünschte Geschäft zustande kommt?"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-das-ist-hilfreicher-als-der-satz-eine-auftragsbestatigung",
+                "text": "Das ist hilfreicher als der Satz „Eine Auftragsbestätigung macht den Vertrag.“ Ob eine solche Bestätigung etwas annimmt, etwas ändert oder nur einen schon bestehenden Vertrag dokumentiert, hängt vom vorherigen Ablauf und ihrem Inhalt ab."
+              }
+            ],
+            "details": [
+              {
+                "id": "b2-anfrage-und-antrag",
+                "kategorie": "Grundlagen nachlesen",
+                "titel": "Anfrage und Antrag",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b2-anfrage-und-antrag-eine-anfrage-soll-informationen-beschaffen-und-zeigt-im",
+                    "text": "Eine Anfrage soll Informationen beschaffen und zeigt im gewöhnlichen Grundfall noch keinen Bindungswillen. Ein Antrag ist dagegen auf den Abschluss eines bestimmten Vertrags gerichtet. Deshalb darf eine Lernaufgabe nicht erst „MAKEL fragt an“ schreiben und diese Erklärung anschließend ohne weitere Angaben als verbindlichen Antrag behandeln. Bei mehrdeutigem Wortlaut braucht es Auslegung beziehungsweise zusätzliche Sachverhaltsangaben."
+                  }
+                ]
+              },
+              {
+                "id": "b2-annahmefrist-verpasst",
+                "kategorie": "Fälle vergleichen",
+                "titel": "Annahmefrist verpasst",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b2-annahmefrist-verpasst-ein-ausdrucklich-bis-freitag-befristetes-angebot-kann-nicht",
+                    "text": "Ein ausdrücklich bis Freitag befristetes Angebot kann nicht beliebig lange angenommen werden. Eine verspätete Annahme gilt grundsätzlich als neuer Antrag. Sonderregeln, etwa bei erkennbar ungewöhnlicher Beförderungsverzögerung, gehören in einen eigenen fortgeschrittenen Fall; sie dürfen den Grundfall nicht unklar machen."
+                  }
+                ]
+              },
+              {
+                "id": "b2-darf-die-agentur-einfach-schweigen",
+                "kategorie": "Sonderfall verstehen",
+                "titel": "Darf die Agentur einfach schweigen?",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b2-darf-die-agentur-einfach--im-hier-beschriebenen-gewohnlichen-fall-ersetzt-schweigen-keine",
+                    "text": "Im hier beschriebenen gewöhnlichen Fall ersetzt Schweigen keine eindeutige Annahme. Daraus folgt jedoch keine grenzenlose Regel für jede kaufmännische Konstellation. Wenn ein Fall auf besondere Handelsbräuche oder ein kaufmännisches Bestätigungsschreiben abstellt, muss genau dieser zusätzliche Sachverhalt geprüft werden."
+                  }
+                ]
+              },
+              {
+                "id": "b2-vertrag-und-auftragsbearbeitung",
+                "kategorie": "Zusammenhang entdecken",
+                "titel": "Vertrag und Auftragsbearbeitung",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b2-vertrag-und-auftragsbearb-ein-sauber-erfasster-auftrag-braucht-eine-gesicherte-vertragsgrundlage",
+                    "text": "Ein sauber erfasster Auftrag braucht eine gesicherte Vertragsgrundlage. Sonst kann die Produktion 120 Stück vorbereiten, obwohl nur ein Angebot über 100 Stück abgegeben wurde. Die rechtliche Prüfung vermeidet damit unmittelbar organisatorische Fehler. Weiterführendes Ziel: LF3 K4 Bestellung und Auftragsbestätigung."
+                  }
+                ]
+              }
+            ],
+            "verstaendnisfragen": [
+              {
+                "id": "b2-frage-b1",
+                "frage": "Warum führt „120 statt 100“ nicht automatisch zum Vertrag über 120 Stück?",
+                "antwort": "Weil MAKEL zunächst nur 100 Stück angeboten hat. Die abweichende Antwort ist ein neuer Antrag. MAKEL muss diesen erst annehmen; die bloße Ähnlichkeit der Bedingungen ersetzt die Zustimmung nicht.",
+                "bewertung": "keine"
+              },
+              {
+                "id": "b2-frage-b2",
+                "frage": "Welche drei Punkte prüfst du vor deinem Ergebnis?",
+                "antwort": "Den ursprünglichen Antrag, die inhaltliche Übereinstimmung der Antwort und die Rechtzeitigkeit beziehungsweise die einschlägige Annahmefrist. Die im Grundfall vorausgesetzte Wirksamkeit/Vertretungsmacht bleibt als Voraussetzung erkennbar.",
+                "bewertung": "keine"
+              }
+            ],
+            "basis_erhalten": [
+              {
+                "typ": "grafik",
+                "hinweis": "Grafik besitzt im Alt-HTML keine eigene DOM-ID; expliziten gemeinsamen Schlüssel bei Migration vergeben. Bestehende Instanz erhalten, keine erfundene alte ID voraussetzen.",
+                "gemeinsam_schluessel": "lf3-k2-b2-darstellung",
+                "quellreferenz": {
+                  "abschnitt": "b2",
+                  "typ": "grafik",
+                  "variante": "kette"
+                }
+              },
+              {
+                "typ": "check",
+                "hinweis": "Einmal gemeinsam weiterverwenden; ursprüngliche Kennung und Instanz erhalten. Kein neu generierter Ersatz.",
+                "bestehende_dom_kennung": "lf3-k2-b2-c1"
+              }
+            ],
+            "quellen": [
+              {
+                "norm": "BGB §§ 145, 147, 148, 150; §149 als abgegrenzter Sonderfall",
+                "url": "https://www.gesetze-im-internet.de/bgb/BJNR001950896.html",
+                "geprueft_am": "2026-10-27",
+                "vor_einbau": "Aktuellen Wortlaut und passende Paragraphenkennungen bestätigen."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pilot": "C",
+      "beruf": "kfb",
+      "lernfeld": "lf2",
+      "kapitel": "k2",
+      "datei": "quellen/lf2-k2-zeitmanagement.kapitel.json",
+      "ausfuehrlich": {
+        "format": 2,
+        "abschnitte": [
+          {
+            "abschnitt": "b2",
+            "darstellung": "vollfassung",
+            "lernabsicht": "Du kannst Aufgaben anhand ihrer Folgen und Fristen priorisieren und erklären, wann du selbst handeln oder Zuständigkeiten klären musst.",
+            "vorwissen_kurz": "Dringlichkeit beschreibt zeitlichen Handlungsdruck. Wichtigkeit beschreibt den Beitrag zu relevanten Zielen oder die Folgen einer Nichterledigung. Für den Fall zählt nicht nur dein persönliches Interesse, sondern der betriebliche Auftrag und deine Rolle.",
+            "inhalt": [
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b2-warum-das-lauteste-nicht-immer-zuerst-kommt",
+                "text": "Warum das Lauteste nicht immer zuerst kommt"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-im-buro-konnen-mehrere-aufgaben-gleichzeitig-aufmerksamkeit-verlangen",
+                "text": "Im Büro können mehrere Aufgaben gleichzeitig Aufmerksamkeit verlangen: Eine Nachricht erscheint als „dringend“, das Telefon klingelt, und eine Auswertung ist erst nächste Woche fällig. Wer ausschließlich auf Unterbrechungen reagiert, beginnt die Auswertung möglicherweise erst dann, wenn kaum Zeit übrig ist. Die Aufgabe war schon vorher wichtig; sie war nur noch nicht unmittelbar dringend."
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-die-eisenhower-matrix-hilft-diese-zwei-fragen-getrennt-zu",
+                "text": "Die Eisenhower-Matrix hilft, diese zwei Fragen getrennt zu beantworten. Zuerst: Welche Folgen hat es, wenn die Aufgabe nicht erledigt wird? Danach: Bis wann muss etwas geschehen, und welche Vorarbeiten brauchen Zeit? Erst dann wählst du eine Handlung. Die Matrix ist eine Entscheidungshilfe, kein automatischer Ersatz für Fachwissen oder betriebliche Zuständigkeit."
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b2-ein-vormittag-bei-makel",
+                "text": "Ein Vormittag bei MAKEL"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-du-unterstutzt-die-verwaltung-vier-aufgaben-liegen-vor",
+                "text": "Du unterstützt die Verwaltung. Vier Aufgaben liegen vor: Eine sachlich geprüfte Rechnung muss heute zur zuständigen Freigabe, damit die vereinbarte Skontofrist genutzt werden kann. Eine Präsentation für neue Auszubildende ist in zwei Wochen fällig; für sie fehlen noch Angaben aus zwei Abteilungen. Eine Rückfrage zur Bewirtung soll heute weitergeleitet werden. Alte, nicht mehr verwendbare Werbeprospekte sollen irgendwann sortiert werden."
+              },
+              {
+                "typ": "tabelle",
+                "id": "b2-aufgabe-begrundete-einordnung-nachste-handlung-in-deiner-rolle",
+                "spalten": [
+                  "Aufgabe",
+                  "Begründete Einordnung",
+                  "Nächste Handlung in deiner Rolle"
+                ],
+                "zeilen": [
+                  [
+                    "Rechnung zur heutigen Freigabe weitergeben",
+                    "Wichtig und dringend: Frist und wirtschaftliche Folge",
+                    "Vollständigkeit prüfen und unverzüglich an die befugte Person geben; nicht selbst eine fehlende Zahlungsbefugnis ersetzen."
+                  ],
+                  [
+                    "Azubi-Präsentation vorbereiten",
+                    "Wichtig, noch nicht unmittelbar dringend",
+                    "Angaben jetzt anfordern und einen Bearbeitungstermin fest einplanen."
+                  ],
+                  [
+                    "Bewirtungsrückfrage weiterleiten",
+                    "Zeitgebunden, aber im Fall geringer eigener Zielbeitrag",
+                    "Zuständige Person informieren; kurze Erledigung nur, wenn sie höher priorisierte Arbeit nicht verdrängt."
+                  ],
+                  [
+                    "Unbrauchbare Prospekte sortieren",
+                    "Im beschriebenen Fall weder dringend noch sinnvoll wichtig",
+                    "Mit der zuständigen Person klären, ob die Aufgabe entfallen kann. Keine eigenmächtige Vernichtung aufbewahrungspflichtiger Unterlagen."
+                  ]
+                ]
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b2-warum-terminieren-mehr-bedeutet-als-verschieben",
+                "text": "Warum Terminieren mehr bedeutet als Verschieben"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-mache-ich-spater-enthalt-noch-keinen-plan-ein",
+                "text": "„Mache ich später“ enthält noch keinen Plan. Ein Termin benennt dagegen einen bearbeitbaren nächsten Schritt und die dafür reservierte Zeit. Für die Präsentation kannst du heute die Abteilungsangaben anfordern, bis Mittwoch eine Rückmeldung vereinbaren und am Donnerstag den Entwurf erstellen. So werden Abhängigkeiten sichtbar, bevor sie die spätere Frist gefährden."
+              },
+              {
+                "typ": "zwischenueberschrift",
+                "id": "b2-warum-delegieren-nicht-automatisch-erlaubt-ist",
+                "text": "Warum Delegieren nicht automatisch erlaubt ist"
+              },
+              {
+                "typ": "absatz",
+                "id": "b2-die-bekannte-handlungsempfehlung-fur-dringende-weniger-wichtige-aufgab",
+                "text": "Die bekannte Handlungsempfehlung für dringende, weniger wichtige Aufgaben lautet häufig „delegieren“. Als Auszubildender hast du aber nicht automatisch Weisungsbefugnis. Du kannst Zuständigkeit und Unterstützung klären, eine Aufgabe nach Absprache weitergeben oder deine Prioritäten mit der ausbildenden Person besprechen. Eine Methode erzeugt keine Befugnis, die dir betrieblich nicht eingeräumt wurde."
+              }
+            ],
+            "details": [
+              {
+                "id": "b2-folge-und-frist",
+                "kategorie": "Grundlagen nachlesen",
+                "titel": "Folge und Frist",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b2-folge-und-frist-eine-aufgabe-ist-nicht-allein-deshalb-wichtig-weil",
+                    "text": "Eine Aufgabe ist nicht allein deshalb wichtig, weil sie aufwendig ist. Ein kurzer sicherheitsrelevanter Hinweis kann wichtiger sein als eine lange optische Überarbeitung einer Präsentation. Ebenso ist eine Aufgabe nicht allein deshalb dringend, weil die Absenderin dieses Wort verwendet. Frage nach der tatsächlichen Frist und der Folge einer Verzögerung. Gesetzliche und sicherheitsrelevante Pflichten dürfen dabei nicht nach persönlichem Geschmack abgewertet werden."
+                  }
+                ]
+              },
+              {
+                "id": "b2-wenn-der-drucker-fur-den-versand-ausfallt",
+                "kategorie": "Fälle vergleichen",
+                "titel": "Wenn der Drucker für den Versand ausfällt",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b2-wenn-der-drucker-fur-den--ein-leerer-toner-wurde-vielleicht-zunachst-als-routine",
+                    "text": "Ein leerer Toner wurde vielleicht zunächst als Routine eingeordnet. Stoppt der Ausfall aber den heutigen Versand, ändern sich seine betrieblichen Folgen: Die Behebung wird wichtig und dringend. Die Matrix ordnet nicht unveränderlich bestimmte Gegenstände ein; sie bewertet eine konkrete Situation."
+                  }
+                ]
+              },
+              {
+                "id": "b2-alles-scheint-wichtig-und-dringend",
+                "kategorie": "Sonderfall verstehen",
+                "titel": "Alles scheint wichtig und dringend",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b2-alles-scheint-wichtig-und-wenn-mehrere-pflichten-gleichzeitig-unerfullbar-sind-reicht-umordnen",
+                    "text": "Wenn mehrere Pflichten gleichzeitig unerfüllbar sind, reicht Umordnen nicht. Benenne die Fristen, den nötigen Aufwand und die Folgen. Lege der zuständigen Person konkrete Alternativen vor: Unterstützung, geänderter Umfang oder veränderter Termin. Dauerhafte Überlastung ist nicht allein ein persönliches Planungsproblem. Die Methode hilft dann vor allem, den Konflikt rechtzeitig sichtbar zu machen."
+                  }
+                ]
+              },
+              {
+                "id": "b2-alpen-und-eisenhower",
+                "kategorie": "Zusammenhang entdecken",
+                "titel": "ALPEN und Eisenhower",
+                "inhalt": [
+                  {
+                    "typ": "absatz",
+                    "id": "b2-alpen-und-eisenhower-eisenhower-hilft-bei-der-entscheidung-welche-aufgaben-vorrang",
+                    "text": "Eisenhower hilft bei der Entscheidung, welche Aufgaben Vorrang haben. ALPEN unterstützt die anschließende Tagesplanung mit Aufwandsschätzung, Puffer und Nachkontrolle. Beide Werkzeuge lösen unterschiedliche Teilprobleme. Weiterführende Ziele: LF2 K2 b1 ALPEN, b3 Zeitdiebe; für größere Abhängigkeiten LF13 Projektplanung."
+                  }
+                ]
+              }
+            ],
+            "verstaendnisfragen": [
+              {
+                "id": "b2-frage-c1",
+                "frage": "Warum darf die Präsentation nicht warten, bis sie dringend wird?",
+                "antwort": "Weil Informationen aus anderen Abteilungen und die eigene Bearbeitung Zeit benötigen. Die Aufgabe ist bereits wichtig; frühes Terminieren und Anfordern der Angaben verhindert vermeidbaren Zeitdruck.",
+                "bewertung": "keine"
+              },
+              {
+                "id": "b2-frage-c2",
+                "frage": "Muss ein leerer Toner immer „dringend, aber unwichtig“ sein?",
+                "antwort": "Nein. Wenn ohne Drucker ein wichtiger Versand ausfällt, hat die Behebung wesentliche Folgen und kann wichtig und dringend sein. Die Einordnung hängt vom Fall ab, nicht vom Wort „Toner“.",
+                "bewertung": "keine"
+              }
+            ],
+            "basis_erhalten": [
+              {
+                "typ": "grafik",
+                "hinweis": "Grafik besitzt im Alt-HTML keine eigene DOM-ID; expliziten gemeinsamen Schlüssel bei Migration vergeben. Bestehende Instanz erhalten, keine erfundene alte ID voraussetzen.",
+                "gemeinsam_schluessel": "lf2-k2-b2-darstellung",
+                "quellreferenz": {
+                  "abschnitt": "b2",
+                  "typ": "grafik",
+                  "variante": "matrix"
+                }
+              }
+            ],
+            "quellen": [
+              {
+                "art": "Organisationsmodell; Fallannahmen im Text",
+                "pruefhinweis": "Kein amtlicher Jahreswert; Fachlogik und vorhandene Darstellung gegenlesen."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

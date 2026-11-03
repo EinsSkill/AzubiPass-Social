@@ -6,86 +6,490 @@
   "untertitel": "Entgeltformen und Bruttobestandteile erklären, vom Brutto zum Netto mit vollständig gegebenen Daten rechnen und jahresabhängige Werte prüfen.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Beschäftigte erhalten ein Entgelt für ihre Arbeit.",
-          "Manche Arbeiten werden nach Menge bezahlt."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Zeit-, Akkord- und Prämienlohn, berechnest einen Akkordlohn über Minutenfaktor und Vorgabezeit und beurteilst, für welche Tätigkeit welche Entgeltform passt.",
+        "vorwissen_kurz": "Ob jemand nach Zeit oder nach Leistung bezahlt wird, beeinflusst, wie gearbeitet wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Bezahlt wird Zeit oder Menge",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim **Zeitlohn** wird die Arbeitszeit bezahlt, unabhängig von der Menge. Er passt zu Tätigkeiten, bei denen Qualität wichtiger ist als Tempo oder die Menge kaum beeinflussbar ist. Beim **Akkordlohn** wird die Menge bezahlt: Für jedes Stück gibt es eine Vorgabezeit, die mit dem Minutenfaktor vergütet wird. Der **Akkordrichtsatz** besteht aus dem Grundlohn und einem Akkordzuschlag. Beim **Prämienlohn** gibt es einen Grundlohn plus eine Prämie für messbare Mehrleistung, etwa weniger Ausschuss oder Materialersparnis.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Tagesleistungen an der Stickmaschine",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stück am Tag",
+              "Rechnung",
+              "Akkordlohn",
+              "Zeitlohn bei 18 €/h"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "70",
+                  "70 × 6 × 0,30 €",
+                  "126,00 €",
+                  "144,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "80",
+                  "80 × 6 × 0,30 €",
+                  "144,00 €",
+                  "144,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "90",
+                  "90 × 6 × 0,30 €",
+                  "162,00 €",
+                  "144,00 €"
+                ]
+              }
+            ],
+            "fazit": "Bei 80 Stück, der Normalleistung, sind Akkord- und Zeitlohn gleich. Mehrleistung wird im Akkord bezahlt, Minderleistung führt zu weniger Lohn.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Akkord hat Grenzen. Bei 70 Stück läge der Akkordlohn rechnerisch unter dem Zeitlohn; in vielen Tarifverträgen ist der Grundlohn deshalb garantiert. Der gesetzliche Mindestlohn von 13,90 € je Stunde (2026) gilt immer als Untergrenze. Außerdem verleitet Akkord zu Tempo auf Kosten der Qualität. Für die Stickerei bei MAKEL Studio, wo ein fehlerhaftes Logo den ganzen Auftrag gefährdet, ist deshalb ein Prämienlohn für fehlerfreie Stücke oft die bessere Wahl.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Beim Zeitlohn wird die Arbeitszeit bezahlt (Stundenlohn oder Monatsgehalt) — einfach und planbar, aber ohne direkten Leistungsanreiz. Beim Leistungslohn hängt das Entgelt von der Leistung ab. Beim Akkordlohn zählt die Menge: Aus Grundlohn und Akkordzuschlag ergibt sich der Akkordrichtsatz je Stunde; daraus der Minutenfaktor (Akkordrichtsatz ÷ 60). Bruttolohn = Stückzahl × Vorgabezeit je Stück × Minutenfaktor. Beim Prämienlohn wird zum Grundlohn eine Prämie für Menge, Qualität oder Ersparnis gezahlt. Für alle gilt der gesetzliche Mindestlohn als Untergrenze.",
-        "beispiele": [
-          "Akkordrichtsatz 18 € pro Stunde → Minutenfaktor 0,30 €.",
-          "Vorgabezeit 6 Minuten je Hoodie, 90 Hoodies am Tag: 90 × 6 × 0,30 = 162 €."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Prämienlohn an einem Beispiel",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Stickerin erhält 16 € Grundlohn je Stunde. Liegt ihre Ausschussquote im Monat unter 1 %, bekommt sie eine Prämie von 1 € je Stunde. So belohnt MAKEL Studio Sorgfalt statt Tempo; der Grundlohn bleibt sicher.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "In der Musterfertigung der MAKEL Studio GmbH wird für das Umnähen von Etiketten ein Prämienlohn diskutiert. Deniz Aydın gibt zu bedenken: Ein reiner Mengenanreiz kann zu mehr Fehlern führen. Sie schlägt eine Prämie vor, die Menge und Reklamationsquote verbindet.",
-        "typische_fehler": "Den Minutenfaktor mit dem Stundenlohn verwechseln.",
         "verstaendnisfragen": [
-          "Was ist der Vorteil des Zeitlohns? Einfach, planbar, kein Druck zu Lasten der Qualität.",
-          "Wie wird der Akkordlohn berechnet? Stückzahl × Vorgabezeit × Minutenfaktor."
-        ],
-        "pruefungsbezug": "Entgeltformen unterscheiden und Akkordlohn berechnen.",
-        "merksatz": "Zeitlohn: Zeit zählt; Akkord: Menge zählt (Stück × Vorgabezeit × Minutenfaktor); Prämie: Grundlohn + Leistungsbonus — Mindestlohn als Untergrenze."
+          {
+            "frage": "Akkordrichtsatz 18 €/h, Vorgabezeit 6 Minuten, 90 Stück. Wie hoch ist der Tageslohn?",
+            "antwort": "Minutenfaktor 18 ÷ 60 = 0,30 €; 90 × 6 × 0,30 € = 162 €.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum passt Akkordlohn nicht zu jeder Tätigkeit?",
+            "antwort": "Weil er Tempo belohnt. Wo Qualität entscheidend ist oder die Menge nicht beeinflussbar ist, sind Zeit- oder Prämienlohn besser.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Das Gehalt besteht oft aus mehreren Teilen.",
-          "Schichtarbeit wird manchmal zusätzlich vergütet."
+        "darstellung": "vollfassung",
+        "ziel": "Du setzt das Bruttoentgelt aus Grundentgelt, Zulagen, Überstundenvergütung, Sonderzahlungen, vermögenswirksamen Leistungen und Sachbezügen zusammen und erkennst, dass die Steuer- und Beitragspflicht je Bestandteil geprüft werden muss.",
+        "vorwissen_kurz": "Das Bruttoentgelt ist mehr als das Monatsgehalt aus dem Vertrag.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was alles zum Brutto gehört",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zum **Bruttoentgelt** gehören das **Grundentgelt** aus dem Arbeitsvertrag, **Zulagen** und Zuschläge etwa für Schichten, Nachtarbeit oder Erschwernisse, die Vergütung von **Überstunden**, **Sonderzahlungen** wie Urlaubs- oder Weihnachtsgeld, **vermögenswirksame Leistungen** des Arbeitgebers und **Sachbezüge** wie ein Dienstwagen zur privaten Nutzung oder Essenszuschüsse. Ob ein Bestandteil steuer- und beitragspflichtig ist, hängt von gesetzlichen Regeln ab und muss für jeden einzeln geprüft werden.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Novemberbrutto einer Lagerkraft",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestandteil",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Grundentgelt laut Vertrag",
+                  "2.500,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Spätschichtzulage",
+                  "200,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "5 Überstunden zu 14,45 € Stundensatz mit 25 % Zuschlag",
+                  "90,31 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Weihnachtsgeld laut Vertrag",
+                  "1.250,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "vermögenswirksame Leistung des Arbeitgebers",
+                  "40,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Gesamtbrutto November",
+                  "4.080,31 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Im November ist das Brutto durch das Weihnachtsgeld deutlich höher als sonst. Lohnsteuer und Beiträge steigen entsprechend.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Sonderzahlungen wie das Weihnachtsgeld werden steuerlich als sonstige Bezüge behandelt und anders berechnet als das laufende Entgelt. In der Sozialversicherung werden einmalige Zahlungen der Beitragspflicht unterworfen, soweit die anteilige Jahres-Beitragsbemessungsgrenze nicht überschritten ist. Deshalb fällt das Netto im November nicht einfach proportional höher aus.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Das Bruttoentgelt setzt sich zusammen aus Grundentgelt und weiteren Bestandteilen: Zulagen (etwa für Schicht-, Nacht- oder Sonntagsarbeit), Überstundenvergütung, Sonderzahlungen (Urlaubs- oder Weihnachtsgeld), vermögenswirksame Leistungen des Arbeitgebers und Sachbezüge (etwa ein Jobticket). Ob und wie ein Bestandteil steuer- und sozialversicherungspflichtig ist, muss einzeln geprüft werden — manche Zuschläge sind unter bestimmten Bedingungen begünstigt.",
-        "beispiele": [
-          "Grundentgelt 2.500 € + Schichtzulage 200 € = Gesamtbrutto 2.700 €.",
-          "Ein Jobticket kann ein Sachbezug sein — die steuerliche Behandlung ist gesondert zu prüfen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Steuerfreie Zuschläge",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zuschläge für tatsächlich geleistete Sonntags-, Feiertags- oder Nachtarbeit sind in bestimmten Grenzen steuerfrei (§ 3b EStG). Spätschichtzuschläge für Arbeit vor 20 Uhr fallen nicht darunter. Steuer-Brutto und Sozialversicherungs-Brutto können deshalb voneinander abweichen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli erhält in der Personalabteilung die Aufgabe, für eine Lagerkraft das Gesamtbrutto zu ermitteln: Grundentgelt 2.500 €, Zulage für Spätschichten laut Vertrag 200 €. Er kommt auf 2.700 €. Ayla Brandt ergänzt: „Damit weißt du das Brutto — aber noch nicht, welche Teile wie besteuert werden.“",
-        "typische_fehler": "Alle Bruttobestandteile ungeprüft gleich behandeln.",
         "verstaendnisfragen": [
-          "Nenne drei Bestandteile des Bruttoentgelts. Grundentgelt, Zulagen, Sonderzahlungen (auch Überstunden, VL, Sachbezüge).",
-          "Sind alle Bestandteile gleich steuer- und beitragspflichtig? Nein, das muss je Bestandteil geprüft werden."
-        ],
-        "pruefungsbezug": "Bruttobestandteile erklären und das Gesamtbrutto ermitteln.",
-        "merksatz": "Brutto = Grundentgelt + Zulagen + Überstunden + Sonderzahlungen + VL + Sachbezüge — Steuer- und Beitragspflicht je Bestandteil prüfen."
+          {
+            "frage": "Gehört ein vom Arbeitgeber bezahltes Jobticket zum Bruttoentgelt?",
+            "antwort": "Ja, als Sachbezug. Ob es steuerfrei ist, muss nach den aktuellen Regeln geprüft werden.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum muss die Steuerpflicht für jeden Bestandteil einzeln geprüft werden?",
+            "antwort": "Weil manche Bestandteile steuerfrei oder beitragsfrei sein können, etwa bestimmte Zuschläge, und andere voll pflichtig sind.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Vom Brutto bleibt weniger übrig.",
-          "Die Sozialversicherung schützt bei Krankheit, Pflege, Alter und Arbeitslosigkeit."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest vom Bruttoentgelt über Lohnsteuer und Arbeitnehmeranteile das Netto und den Auszahlungsbetrag und ermittelst mit den Arbeitgeberanteilen die Personalkosten.",
+        "vorwissen_kurz": "Zwischen dem, was im Vertrag steht, und dem, was auf dem Konto ankommt, liegen mehrere Abzüge.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Brutto, Netto, Auszahlung",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Vom Bruttoentgelt werden die **Lohnsteuer**, gegebenenfalls der Solidaritätszuschlag und die Kirchensteuer abgezogen. Ihre Höhe hängt von Steuerklasse, Freibeträgen und Kirchenzugehörigkeit ab. Außerdem werden die **Arbeitnehmeranteile zur Sozialversicherung** abgezogen: Kranken-, Pflege-, Renten- und Arbeitslosenversicherung. Das Ergebnis ist das **Netto**. Davon gehen sonstige Abzüge ab, etwa die Sparrate für vermögenswirksame Leistungen oder bereits erhaltene Sachbezüge; übrig bleibt der **Auszahlungsbetrag**.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Mit den Beitragssätzen 2026 gerechnet",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zweig",
+              "Arbeitnehmer",
+              "Arbeitgeber",
+              "Betrag je Seite bei 2.750 €"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Krankenversicherung 14,6 % + Zusatzbeitrag, hier 2,9 %",
+                  "8,75 %",
+                  "8,75 %",
+                  "240,63 €"
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Pflegeversicherung 3,6 %, mit Kind, außerhalb Sachsens",
+                  "1,80 %",
+                  "1,80 %",
+                  "49,50 €"
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Rentenversicherung 18,6 %",
+                  "9,30 %",
+                  "9,30 %",
+                  "255,75 €"
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitslosenversicherung 2,6 %",
+                  "1,30 %",
+                  "1,30 %",
+                  "35,75 €"
+                ],
+                "mono": [
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "21,15 %",
+                  "21,15 %",
+                  "581,63 €"
+                ],
+                "mono": [
+                  3
+                ]
+              }
+            ],
+            "fazit": "Mit den echten Sätzen 2026 betragen die Arbeitnehmeranteile 581,63 € statt der vereinfachten 550 €. Der Arbeitgeber zahlt noch einmal etwa denselben Betrag zusätzlich.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für MAKEL Studio kostet die Lagerkraft deshalb deutlich mehr als 2.750 €. Zu Brutto und Arbeitgeberanteilen von 581,63 € kommen die Insolvenzgeldumlage, die Umlage für Mutterschaftsleistungen und der Beitrag zur Berufsgenossenschaft, die der Arbeitgeber allein trägt. Wer Personalkosten plant, rechnet also mit dem Arbeitgeberbrutto, nicht mit dem Bruttoentgelt.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Vom Bruttoentgelt werden abgezogen: Lohnsteuer sowie gegebenenfalls Solidaritätszuschlag und Kirchensteuer, und die Arbeitnehmeranteile zur Kranken-, Pflege-, Renten- und Arbeitslosenversicherung. Das Ergebnis ist das Nettoentgelt. Weitere Abzüge (etwa der Sparbetrag für vermögenswirksame Leistungen oder ein Vorschuss) führen zum Auszahlungsbetrag. Der Arbeitgeber zahlt zusätzlich seine Anteile zur Sozialversicherung und die Unfallversicherung allein — für das Unternehmen sind die Personalkosten deshalb höher als das Brutto.",
-        "beispiele": [
-          "Übung: Brutto 2.700 €, vorgegebene Abzüge insgesamt 600 € → Auszahlung 2.100 €.",
-          "Personalkosten = Brutto + Arbeitgeberanteile."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kinderlosenzuschlag",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kinderlose Beschäftigte ab 23 Jahren zahlen in der Pflegeversicherung einen Zuschlag von 0,6 % allein. Eltern mit mehreren Kindern unter 25 Jahren zahlen dagegen weniger. Deshalb hängen die Abzüge auch von der persönlichen Situation ab, nicht nur vom Brutto.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Ayla rechnet mit Luca eine ausdrücklich vereinfachte Übungsabrechnung: Auf das Brutto von 2.700 € sind insgesamt 600 € Abzüge vorgegeben, weitere Bewegungen gibt es nicht. Auszahlung: 2.100 €. Sie betont: Daraus lässt sich keine allgemeine Abgabenquote ableiten — echte Abzüge hängen von Steuerklasse, Kinderfreibeträgen, Kirchenzugehörigkeit, Krankenkasse und den Werten des Jahres ab. Danach rechnen sie eine vollständige Übungsabrechnung mit allen Werten laut Fall: Grundentgelt 2.500 €, Zulage 200 €, Sachbezug 50 € ergeben 2.750 € Gesamtbrutto; nach 310 € Lohnsteuer und 550 € Arbeitnehmeranteilen (laut Fall 20 %) bleiben 1.890 € netto; abzüglich Sachbezug und 40 € VL-Sparrate werden 1.800 € ausgezahlt.",
-        "typische_fehler": "Den Nettolohn mit einem pauschal geratenen Prozentsatz ausrechnen.",
         "verstaendnisfragen": [
-          "Welche Abzüge führen vom Brutto zum Netto? Lohnsteuer (ggf. Soli, Kirchensteuer) und Arbeitnehmeranteile zur Sozialversicherung.",
-          "Warum sind die Personalkosten höher als das Brutto? Der Arbeitgeber zahlt eigene Sozialversicherungsanteile und die Unfallversicherung."
-        ],
-        "pruefungsbezug": "Brutto, Netto und Auszahlung mit vollständig gegebenen Daten unterscheiden.",
-        "merksatz": "Brutto − Steuern − AN-Anteile SV = Netto; Netto − sonstige Abzüge = Auszahlung; Personalkosten = Brutto + AG-Anteile."
+          {
+            "frage": "Wie unterscheiden sich Nettoentgelt und Auszahlungsbetrag?",
+            "antwort": "Das Netto ist Brutto minus Steuern und Arbeitnehmeranteile. Die Auszahlung ist Netto minus sonstige Abzüge wie Sparraten oder Sachbezüge.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum sind die Personalkosten höher als das Bruttoentgelt?",
+            "antwort": "Weil der Arbeitgeber zusätzlich seine Anteile zur Sozialversicherung, Umlagen und den Beitrag zur Berufsgenossenschaft zahlt.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Beitragssätze und Steuertarife ändern sich.",
-          "Fehler in der Abrechnung haben Folgen."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst, welche jahresabhängigen Werte und persönlichen Merkmale in eine Entgeltabrechnung eingehen, erklärst Veränderungen beim Jahreswechsel und kennzeichnest Übungswerte als solche.",
+        "vorwissen_kurz": "Eine Abrechnung, die im Dezember richtig war, kann im Januar falsch sein, wenn die neuen Werte fehlen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was sich jedes Jahr ändert",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Viele Werte der Entgeltabrechnung gelten nur für ein Jahr. Dazu gehören der **Mindestlohn**, die **Beitragssätze** und der durchschnittliche **Zusatzbeitrag** der Krankenversicherung, die **Beitragsbemessungsgrenzen**, bis zu denen Beiträge erhoben werden, die Grenzen für **Minijobs** und den Übergangsbereich sowie die **Steuertarife** mit Grundfreibetrag. Dazu kommen persönliche Merkmale: Steuerklasse, Freibeträge, Kinder, Kirchenzugehörigkeit und die gewählte Krankenkasse.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die wichtigsten Werte 2026",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Wert",
+              "2026"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Mindestlohn je Stunde",
+                  "13,90 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Minijob-Grenze im Monat",
+                  "603 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Obergrenze des Übergangsbereichs im Monat",
+                  "2.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beitragsbemessungsgrenze Kranken- und Pflegeversicherung im Monat",
+                  "5.812,50 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beitragsbemessungsgrenze Renten- und Arbeitslosenversicherung im Monat",
+                  "8.450 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "durchschnittlicher Zusatzbeitrag Krankenversicherung",
+                  "2,9 %"
+                ]
+              }
+            ],
+            "fazit": "Diese Werte gelten für 2026. In der Abrechnung für Januar 2027 müssen sie durch die neuen Jahreswerte ersetzt werden.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Jahreswechsel prüft das Personalbüro deshalb systematisch: Sind die neuen Werte im Abrechnungsprogramm hinterlegt? Hat die Krankenkasse einer beschäftigten Person ihren Zusatzbeitrag geändert? Liegen neue Lohnsteuermerkmale vor, etwa nach einer Heirat? Erst dann ist die erste Abrechnung des Jahres verlässlich. In Übungsaufgaben steht dagegen oft ein vereinfachter Prozentsatz; er muss als Übungswert erkennbar sein und darf nicht mit echten Abzügen verwechselt werden.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Beschäftigte erhalten eine Entgeltabrechnung in Textform, die Zeitraum und Zusammensetzung des Entgelts zeigt. Viele Werte sind jahresabhängig: Mindestlohn, Beitragssätze und Zusatzbeiträge, Beitragsbemessungsgrenzen, Steuertarif, Freibeträge, Minijob-Grenze. Hinzu kommen persönliche Merkmale wie Steuerklasse, Kinder, Kirchenzugehörigkeit und Krankenkasse. Für eine echte Abrechnung braucht man deshalb immer aktuelle, vollständige Daten und in der Praxis ein geprüftes Abrechnungsprogramm. Für Übungen werden Werte ausdrücklich vorgegeben.",
-        "beispiele": [
-          "Zum 1. Januar prüft die Personalabteilung neue Beitragssätze und Grenzen.",
-          "Ändert sich die Steuerklasse nach einer Heirat, ändert sich der Lohnsteuerabzug."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Woher die Werte kommen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Den Mindestlohn schlägt die Mindestlohnkommission vor, die Bundesregierung setzt ihn per Verordnung fest. Die Beitragsbemessungsgrenzen werden jährlich nach der Lohnentwicklung angepasst. Den Zusatzbeitrag legt jede Krankenkasse selbst fest; der durchschnittliche Wert dient nur als Orientierung.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Im Januar fragt eine Lagerkraft, warum ihr Netto gesunken ist, obwohl das Brutto gleich blieb. Ayla prüft die Abrechnung: Der Zusatzbeitrag ihrer Krankenkasse wurde erhöht. Sie erklärt das anhand der Abrechnung und weist auf die Mitteilung der Krankenkasse hin.",
-        "typische_fehler": "Werte aus dem Vorjahr oder aus dem Internet ungeprüft übernehmen.",
         "verstaendnisfragen": [
-          "Nenne zwei jahresabhängige Werte. Zum Beispiel Mindestlohn, Beitragssätze, Beitragsbemessungsgrenzen, Steuertarif.",
-          "Welche persönlichen Merkmale beeinflussen das Netto? Steuerklasse, Kinder, Kirchenzugehörigkeit, Krankenkasse."
-        ],
-        "pruefungsbezug": "Gesetzliche, tarifliche und persönliche Grundlagen samt Jahresstand prüfen.",
-        "merksatz": "Echte Abrechnung = aktuelle Jahreswerte + persönliche Merkmale + geprüftes System; Übungswerte immer als solche kennzeichnen."
+          {
+            "frage": "Das Brutto bleibt im Januar gleich, das Netto sinkt. Nenne eine mögliche Ursache.",
+            "antwort": "Ein Beitragssatz oder der Zusatzbeitrag der Krankenkasse ist zum Jahreswechsel gestiegen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum darf man aus einer Übungsabrechnung keine allgemeine Abgabenquote ableiten?",
+            "antwort": "Weil echte Abzüge von persönlichen Merkmalen und den Jahreswerten abhängen und deshalb von Person zu Person verschieden sind.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

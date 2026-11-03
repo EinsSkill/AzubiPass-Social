@@ -6,66 +6,560 @@
   "untertitel": "Ein Bild, über das drei Abteilungen streiten können — das ist der Sinn.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Flussdiagramm macht Reihenfolge und Entscheidungen sichtbar.",
-          "Jeder Prozess braucht einen klaren Start und mindestens ein Ende."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst einen Ablauf als Flussdiagramm mit den richtigen Symbolen dar, beschriftest Tätigkeiten und Entscheidungsausgänge eindeutig und prüfst, ob jeder Weg an einem Ende ankommt.",
+        "vorwissen_kurz": "Ein Ablauf in Worten ist schwer zu überblicken. Als Bild fallen Lücken und Schleifen schneller auf.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wenige Symbole, feste Regeln",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Flussdiagramm stellt einen Ablauf mit wenigen genormten Symbolen dar. Jedes Symbol hat eine Bedeutung, und Pfeile zeigen die Reihenfolge. Seine Stärke liegt bei Entscheidungen: An jeder Raute wird sichtbar, welche Wege es gibt und ob für jeden Fall geregelt ist, wie es weitergeht.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Händlerbestellung als Flussdiagramm",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Nr.",
+              "Symbol",
+              "Beschriftung",
+              "weiter zu"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Start",
+                  "Händlerbestellung geht ein",
+                  "2"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Tätigkeit",
+                  "Bestellung erfassen",
+                  "3"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Entscheidung",
+                  "Kreditlimit eingehalten?",
+                  "ja: 5 · nein: 4"
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "Tätigkeit",
+                  "Vorkasse anfordern",
+                  "8"
+                ]
+              },
+              {
+                "zellen": [
+                  "5",
+                  "Entscheidung",
+                  "Ware vollständig auf Lager?",
+                  "ja: 7 · nein: 6"
+                ]
+              },
+              {
+                "zellen": [
+                  "6",
+                  "Tätigkeit",
+                  "Teillieferung mit dem Kunden abstimmen",
+                  "7"
+                ]
+              },
+              {
+                "zellen": [
+                  "7",
+                  "Tätigkeit",
+                  "Auftrag bestätigen",
+                  "9"
+                ]
+              },
+              {
+                "zellen": [
+                  "8",
+                  "Ende",
+                  "Auftrag wartet auf Zahlung",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "9",
+                  "Ende",
+                  "Auftrag ist bestätigt",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Jede Raute hat zwei beschriftete Ausgänge, und jeder Weg endet an einem Ende. Das Diagramm zeigt auch, was es nicht regelt: Lehnt der Kunde die Teillieferung ab, fehlt noch ein Weg.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die letzte Beobachtung ist typisch. Beim Zeichnen fällt auf, dass ein Fall im Alltag „irgendwie“ gelöst wird, aber nirgends geregelt ist. Die Prozessverantwortliche ergänzt deshalb einen weiteren Ausgang: Lehnt der Kunde ab, wird die Bestellung zurückgestellt, und der Vertrieb meldet sich, sobald die Ware vollständig ist.",
+            "id": "b1-p2"
+          }
         ],
-        "erklaerung": "Im Flussdiagramm steht das abgerundete Rechteck für Start oder Ende, das Rechteck für eine Tätigkeit und die Raute für eine Entscheidung. Das Parallelogramm steht für Ein- und Ausgaben wie Formulare, Belege oder Daten. Tätigkeiten werden als Verb plus Gegenstand formuliert; Entscheidungen werden als eindeutig beantwortbare Frage mit beschrifteten Ausgängen dargestellt.",
-        "beispiele": [
-          "‚Angebot erstellen‘ ist eine passende Tätigkeitsbezeichnung aus Verb und Gegenstand.",
-          "Eine Raute ‚Unterlagen vollständig?‘ führt über beschriftete Wege wie Ja und Nein weiter."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Symbole nach Norm",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Symbole für Programmablaufpläne und Datenflusspläne sind in der Norm DIN 66001 beschrieben. Für Geschäftsprozesse werden meist nur die wichtigsten genutzt: Start und Ende, Tätigkeit, Entscheidung, Ein- und Ausgabe sowie Pfeile. Entscheidend ist, dass alle Beteiligten dieselbe Bedeutung zugrunde legen.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Urlaubsprozess beginnt mit dem eingereichten Antrag und endet mit genehmigtem oder abgelehntem, erfasstem Urlaub. Die Entscheidung ‚genehmigt?‘ erhält die Ausgänge Ja und Nein; beide Wege werden bis zu einem Ende verfolgt. Es gibt genau einen Start.",
-        "typische_fehler": "Entscheidungsausgänge bleiben unbeschriftet oder ein Pfeil endet im Nichts. Auch werden mehrere Tätigkeiten in einem Rechteck versteckt.",
         "verstaendnisfragen": [
-          "Welche Form hat eine Entscheidung? Eine Raute.",
-          "Welche Regel gilt für jeden Weg? Jeder Weg muss an einem Ende ankommen und jeder Entscheidungsausgang beschriftet sein."
-        ],
-        "pruefungsbezug": "Kontrolliere Diagramme mit drei Fragen: genau ein Start, beschriftete Rautenwege, kein offener Pfeil.",
-        "merksatz": "Ein Diagramm ist erst vollständig, wenn jeder mögliche Weg verständlich bis zu einem Ende führt."
+          {
+            "frage": "Warum ist „Kreditlimit?“ als Beschriftung einer Raute schlechter als „Kreditlimit eingehalten?“",
+            "antwort": "Weil die Frage nicht eindeutig mit ja oder nein beantwortbar ist. „Kreditlimit eingehalten?“ macht klar, was geprüft wird und welcher Ausgang welcher Antwort entspricht.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Was zeigt ein Weg, der nicht an einem Ende ankommt?",
+            "antwort": "Einen Fall, der im Ablauf nicht geregelt ist. Im Alltag führt so etwas zu Rückfragen und liegen gebliebenen Vorgängen.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Prozessdarstellung soll den tatsächlichen Ablauf zeigen.",
-          "Beteiligte wechseln an Schnittstellen."
+        "darstellung": "vollfassung",
+        "ziel": "Du nimmst einen Ist-Prozess bei den Beteiligten auf, ordnest jeden Schritt in einer Bahnendarstellung der ausführenden Stelle zu und zählst die Schnittstellen.",
+        "vorwissen_kurz": "Ein Flussdiagramm zeigt die Reihenfolge. Wer einen Schritt ausführt, zeigt es nicht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Bahnen machen Zuständigkeit sichtbar",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In einer **Bahnendarstellung** bekommt jeder Beteiligte eine eigene Bahn, waagerecht oder senkrecht. Jeder Schritt steht in der Bahn der Stelle, die ihn ausführt. Wechselt ein Pfeil die Bahn, wechselt die Zuständigkeit — dort ist eine Schnittstelle. So zeigt das Bild auf einen Blick, wie oft ein Vorgang weitergereicht wird.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Händlerbestellung in Bahnen",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Vertrieb",
+              "Lager",
+              "Versand",
+              "Buchhaltung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Bestellung erfassen",
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Auftrag bestätigen",
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "",
+                  "Ware kommissionieren",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "",
+                  "",
+                  "verpacken, Lieferschein drucken",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "5",
+                  "",
+                  "",
+                  "an Spedition übergeben",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "6",
+                  "",
+                  "",
+                  "",
+                  "Rechnung stellen"
+                ]
+              },
+              {
+                "zellen": [
+                  "7",
+                  "",
+                  "",
+                  "",
+                  "Zahlungseingang prüfen"
+                ]
+              }
+            ],
+            "fazit": "Der Vorgang wechselt dreimal die Bahn: Vertrieb → Lager → Versand → Buchhaltung. Jede dieser Übergaben ist eine Stelle, an der Liegezeit und Informationsverlust entstehen können.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Aufnahme erzählt der Lagerleiter, dass fehlende Größen „auf dem kurzen Dienstweg“ an den Vertrieb gemeldet werden. In der Arbeitsanweisung steht das nicht. Genau diese Abweichung zwischen Vorschrift und Wirklichkeit ist ein wichtiges Ergebnis: Sie zeigt eine Schnittstelle, die bisher niemand gestaltet hat. Deshalb wird aufgenommen, wie tatsächlich gearbeitet wird.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b2"
+          }
         ],
-        "erklaerung": "Bei der Aufnahme werden zuerst Grenzen, Auslöser und Ergebnis festgelegt. Danach werden Beteiligte zum tatsächlichen Ablauf befragt, die Schritte geordnet und Sonderfälle ergänzt. Bahnen je Beteiligtem machen Zuständigkeiten und Schnittstellen sichtbar. Zum Schluss wird die Darstellung gemeinsam geprüft.",
-        "beispiele": [
-          "Für einen Urlaubsantrag werden antragstellende Person, Führungskraft und Personalabteilung als Bahnen dargestellt.",
-          "Fehlende Unterlagen, Abwesenheit und Reklamation werden als Sonderfälle aufgenommen, obwohl sie nicht im Normalablauf liegen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Bahnen und Prozessverantwortung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Bahnendarstellung ist ein gutes Werkzeug für die Prozessverantwortliche. Sie zeigt, welche Abteilungen sie für eine Verbesserung an einen Tisch holen muss, und macht im Gespräch sichtbar, dass die Wartezeit zwischen zwei Bahnen niemandem allein gehört.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Der Urlaubsprozess wird in drei Bahnen aufgenommen: Antrag einreichen und Rückmeldung, Prüfung und Entscheidung, Erfassung. Neben dem Normalweg werden fehlender Resturlaub, abwesende Führungskraft, überschneidende Anträge und Rückzug des Antrags ergänzt. Alle Beteiligten prüfen anschließend, ob die Darstellung ihrer tatsächlichen Arbeit entspricht.",
-        "typische_fehler": "Nur die Arbeitsanweisung wird abgebildet oder Sonderfälle werden weggelassen. Außerdem wird die Darstellung nicht mit den Beteiligten abgeglichen.",
         "verstaendnisfragen": [
-          "Warum wird der tatsächliche Ablauf aufgenommen? Weil Abweichungen vom vorgeschriebenen Ablauf wichtige Probleme sichtbar machen.",
-          "Was machen Bahnen sichtbar? Zuständigkeiten und Schnittstellen zwischen Beteiligten."
-        ],
-        "pruefungsbezug": "Beschreibe die Aufnahme in der Reihenfolge Grenzen, Befragung, Schritte, Sonderfälle und gemeinsame Prüfung.",
-        "merksatz": "Ein Prozessbild muss die Wirklichkeit und ihre Ausnahmen zeigen, nicht nur die ideale Arbeitsanweisung."
+          {
+            "frage": "Warum werden die Schritte in die Bahn der ausführenden Stelle gezeichnet und nicht in die der verantwortlichen Leitung?",
+            "antwort": "Weil die Darstellung zeigen soll, wo der Vorgang tatsächlich bearbeitet wird und wo er übergeben wird. Nur so werden die Schnittstellen sichtbar.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Was ist am „kurzen Dienstweg“ des Lagerleiters problematisch?",
+            "antwort": "Er ist nirgends geregelt. Ist der Lagerleiter krank oder vergisst er die Meldung, erfährt der Vertrieb nichts, und der Kunde wartet ohne Information.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Die passende Darstellung hängt von Prozessumfang und Beteiligten ab.",
-          "Ein Bild soll verständlich und auf eine Seite begrenzt bleiben."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für eine Frage die passende Darstellungsform — Flussdiagramm, Bahnendarstellung, EPK, Checkliste oder Arbeitsanweisung — und begründest die Wahl.",
+        "vorwissen_kurz": "Es gibt mehrere Arten, einen Ablauf darzustellen. Welche passt, hängt davon ab, was man herausfinden oder festlegen will.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Frage entscheidet",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Darstellung ist kein Selbstzweck. Will MAKEL wissen, warum Bestellungen lange dauern, braucht es eine Form, die Übergaben zeigt. Soll eine neue Kollegin einen Ablauf ohne Entscheidungen sicher ausführen, genügt eine Checkliste. Soll ein Ablauf verbindlich festgelegt und geprüft werden, braucht es eine Arbeits- oder Verfahrensanweisung.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Fragen, vier Darstellungen",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage bei MAKEL",
+              "Passende Darstellung",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Warum dauert die Händlerbestellung neun Tage?",
+                  "Bahnendarstellung",
+                  "zeigt Zuständigkeiten und Übergaben"
+                ]
+              },
+              {
+                "zellen": [
+                  "Welche Fälle können bei der Kreditprüfung eintreten?",
+                  "Flussdiagramm oder EPK",
+                  "zeigt Entscheidungen und alle Wege"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie wird die Stickmaschine morgens gestartet?",
+                  "Checkliste",
+                  "feste Reihenfolge ohne Verzweigung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie läuft die Reklamationsbearbeitung verbindlich ab?",
+                  "Verfahrensanweisung",
+                  "legt Ablauf, Zuständigkeit und Nachweise fest"
+                ]
+              }
+            ],
+            "fazit": "Dieselbe Organisation braucht verschiedene Darstellungen für verschiedene Zwecke. Eine aufwendige Grafik für einen Ablauf ohne Entscheidung ist Aufwand ohne Nutzen.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Die Darstellung wird nach Zweck gewählt. Bahnen eignen sich für abteilungsübergreifende Abläufe, weil sie Zuständigkeiten und Übergaben zeigen. Ein Prozessbild sollte auf eine Seite passen und die wichtigsten Regeln, Sonderfälle und Verantwortlichkeiten lesbar halten.",
-        "beispiele": [
-          "Für den Urlaubsantrag sind Bahnen für antragstellende Person, Führungskraft und Personalabteilung passend.",
-          "Ein kompakter Fluss zeigt Start, Prüfung, Entscheidung und Ende; lange Nebenerklärungen gehören nicht in jeden Prozesskasten."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Flussdiagramm und EPK",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beide zeigen Abläufe mit Verzweigungen. Das Flussdiagramm stellt Entscheidungen als Rauten dar. Die EPK beschreibt zusätzlich die Zustände zwischen den Tätigkeiten als Ereignisse und verbindet Wege mit Konnektoren. Sie ist dadurch ausführlicher und wird häufig in der Geschäftsprozessmodellierung und bei der Einführung betriebswirtschaftlicher Software genutzt.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Ein zu großes Prozessbild enthält jede Ausnahme als Detail und ist nicht mehr lesbar. Die Darstellung wird auf die Prozessgrenzen, Hauptschritte und entscheidenden Sonderfälle konzentriert. Zuständigkeiten bleiben in Bahnen sichtbar; ergänzende Erläuterungen werden außerhalb des Bildes dokumentiert.",
-        "typische_fehler": "Die Form wird nach Software statt nach Zweck gewählt oder das Bild wird mit Text überfüllt. Ein Prozessbild ohne Zuständigkeiten bleibt bei Übergaben unklar.",
         "verstaendnisfragen": [
-          "Welche Form ist bei abteilungsübergreifenden Abläufen besonders geeignet? Die Bahnendarstellung.",
-          "Warum sollte ein Prozessbild auf eine Seite passen? Damit der Ablauf als Ganzes erfassbar und prüfbar bleibt."
+          {
+            "frage": "MAKEL möchte neuen Aushilfen im Versand erklären, wie ein Paket gepackt wird. Welche Darstellung passt?",
+            "antwort": "Eine Checkliste, wenn der Ablauf keine Entscheidungen enthält. Sie ist schnell erstellt und sofort nutzbar. Gibt es Verzweigungen, etwa für Sperrgut oder Auslandssendungen, ist ein kurzes Flussdiagramm besser.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum ist eine Verfahrensanweisung für die Reklamationsbearbeitung sinnvoll?",
+            "antwort": "Weil der Ablauf verbindlich und nachprüfbar sein soll: Wer nimmt die Reklamation an, welche Fristen gelten, wer entscheidet über Ersatz, was wird dokumentiert? Eine Grafik allein legt das nicht verbindlich fest.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du baust aus einem vorhandenen Geschäftsprozess eine EPK mit Ereignissen, Funktionen und einem passenden Konnektor auf und erklärst, warum Ereignisse Zustände und Funktionen Tätigkeiten beschreiben.",
+        "vorwissen_kurz": "Ein Ablauf lässt sich auch als Wechsel von Zuständen und Tätigkeiten beschreiben. Das macht sichtbar, warum eine Arbeit startet und welches Ergebnis sie liefert.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ereignisse beschreiben Zustände, Funktionen beschreiben Tätigkeiten",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Aussage „Bestellung prüfen“ ist eine Tätigkeit. „Bestellung ist eingegangen“ beschreibt dagegen einen Zustand, der eine Tätigkeit auslösen kann. Genau diese Unterscheidung hilft bei einer {{begriff:epk|ereignisgesteuerten Prozesskette}}: Du erkennst, warum eine Arbeit startet und welches Ergebnis sie für den nächsten Schritt bereitstellt.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL prüft im vereinfachten Fall eine eingegangene Bestellung auf Vollständigkeit. Es gibt genau zwei mögliche Prüfergebnisse: vollständig oder unvollständig. Deshalb verzweigt der Prozess exklusiv; beide Ergebnisse gelten für dieselbe Prüfung nicht gleichzeitig.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Elemente im Einzelnen",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Element",
+              "Art",
+              "Bedeutung im Fall"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bestellung ist eingegangen",
+                  "Ereignis",
+                  "Startzustand, noch keine ausgeführte Prüfung."
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestellung auf Vollständigkeit prüfen",
+                  "Funktion",
+                  "Tätigkeit mit zugeordnetem Verantwortungsbereich."
+                ]
+              },
+              {
+                "zellen": [
+                  "XOR-Verzweigung",
+                  "Konnektor",
+                  "Genau einer der folgenden Ergebniswege tritt ein."
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestellung ist vollständig",
+                  "Ereignis",
+                  "Ergebnisweg 1."
+                ]
+              },
+              {
+                "zellen": [
+                  "Auftrag freigeben",
+                  "Funktion",
+                  "Nächste Tätigkeit im ersten Weg."
+                ]
+              },
+              {
+                "zellen": [
+                  "Auftrag ist freigegeben",
+                  "Ereignis",
+                  "Ende des hier betrachteten Ausschnitts."
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestellung ist unvollständig",
+                  "Ereignis",
+                  "Ergebnisweg 2."
+                ]
+              },
+              {
+                "zellen": [
+                  "Fehlende Angaben anfordern",
+                  "Funktion",
+                  "Nächste Tätigkeit im zweiten Weg."
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückfrage ist versendet",
+                  "Ereignis",
+                  "Ende des hier betrachteten Ausschnitts."
+                ]
+              }
+            ],
+            "fazit": "Ereignisse und Funktionen wechseln sich ab. Jeder Weg beginnt und endet mit einem Ereignis.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die XOR-Verzweigung trifft keine Entscheidung aus dem Nichts. Die Prüfung als Funktion liefert das Ergebnis. Der Konnektor beschreibt, wie die daraus entstehenden Wege zusammenhängen. Ein UND würde aussagen, dass beide Wege durchlaufen werden. Das wäre für „vollständig oder unvollständig“ unpassend. Ein ODER hieße, dass mindestens einer, möglicherweise auch beide Wege eintreten — ebenfalls unpassend.",
+            "id": "b4-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wenn später eine Rückmeldung eingeht, kann ein weiterer Prozessschritt die vervollständigte Bestellung erneut prüfen. Diesen Rücklauf muss eine vollständige Darstellung ergänzen, wenn sie den gesamten Prozess zeigen soll. Für den hier bewusst begrenzten Ausschnitt enden beide Wege an nachvollziehbaren Zuständen. Der Umfang der Darstellung wird deshalb vor dem Zeichnen benannt.",
+            "id": "b4-p4"
+          }
         ],
-        "pruefungsbezug": "Begründe die Darstellungsform mit dem Zweck und prüfe immer Lesbarkeit, Zuständigkeit und Sonderfälle.",
-        "merksatz": "Die beste Darstellung ist die kleinste, die Ablauf, Entscheidung und Zuständigkeit vollständig sichtbar macht."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Organisationseinheiten und erweiterte EPK",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Grafik ist jeder Funktion die ausführende Stelle als Oval zugeordnet, hier der Vertrieb. Werden zusätzlich Organisationseinheiten, Informationsobjekte wie Dokumente oder Systeme an die Funktionen angehängt, spricht man von einer erweiterten EPK (eEPK). Die Grundregeln bleiben gleich: Ereignis und Funktion wechseln sich ab, und nach einem Ereignis wird nicht mit XOR oder ODER verzweigt, weil ein Ereignis nichts entscheiden kann.",
+                "id": "b4-d1-p1"
+              }
+            ],
+            "id": "b4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum wäre „Vollständigkeit?“ als einzelnes Entscheidungselement ohne vorherige Funktion für diese EPK unzureichend?",
+            "antwort": "Es bliebe unklar, wer anhand welcher Tätigkeit das Prüfergebnis erzeugt. Die Funktion „Bestellung auf Vollständigkeit prüfen“ macht die Arbeit sichtbar; die folgenden Ereignisse beschreiben ihre möglichen Ergebnisse und der XOR-Konnektor ihre exklusive Verzweigung.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Ist „Bestellung prüfen“ ein Ereignis oder eine Funktion?",
+            "antwort": "Eine Funktion, weil sie eine Tätigkeit beschreibt. Das zugehörige Ereignis davor wäre „Bestellung ist eingegangen“, danach etwa „Bestellung ist vollständig“.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +578,10 @@
       "id": "lz3",
       "text": "Die passende Darstellungsform auswählen",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Eine EPK mit Ereignissen, Funktionen und Konnektoren an einem Geschäftsprozess aufbauen und erklären"
     }
   ],
   "bloecke": [
@@ -309,6 +807,90 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Die ereignisgesteuerte Prozesskette",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die {{begriff:epk|ereignisgesteuerte Prozesskette}} (EPK) stellt einen Ablauf als Wechsel von Ereignissen und Funktionen dar. ==Ereignisse beschreiben Zustände, Funktionen beschreiben Tätigkeiten.== Konnektoren zeigen, wie sich Wege verzweigen oder wieder zusammenlaufen."
+        },
+        {
+          "typ": "grafik",
+          "variante": "epk",
+          "kopf": "Ereignisgesteuerte Prozesskette",
+          "titel": "Eingegangene Bestellung prüfen",
+          "lead": "Ein Ausschnitt aus der Auftragsabwicklung bei MAKEL. Jedes Element anklicken.",
+          "folge": [
+            {
+              "art": "ereignis",
+              "text": "Bestellung ist eingegangen",
+              "erklaerung": "Startereignis: ein Zustand, der die Arbeit auslöst. Noch ist nichts geprüft."
+            },
+            {
+              "art": "funktion",
+              "text": "Bestellung auf Vollständigkeit prüfen",
+              "stelle": "Vertrieb",
+              "erklaerung": "Funktion: eine Tätigkeit, formuliert als Gegenstand plus Verb. Das Oval nennt die verantwortliche Organisationseinheit."
+            },
+            {
+              "art": "xor",
+              "erklaerung": "Exklusives Oder: Nach der Prüfung tritt genau eines der beiden folgenden Ereignisse ein, nie beide."
+            }
+          ],
+          "zweige": [
+            [
+              {
+                "art": "ereignis",
+                "text": "Bestellung ist vollständig",
+                "erklaerung": "Ergebnisereignis des ersten Wegs. Es beschreibt den Zustand nach der Prüfung."
+              },
+              {
+                "art": "funktion",
+                "text": "Auftrag freigeben",
+                "stelle": "Vertrieb",
+                "erklaerung": "Folgetätigkeit im ersten Weg."
+              },
+              {
+                "art": "ereignis",
+                "text": "Auftrag ist freigegeben",
+                "erklaerung": "Endereignis dieses Ausschnitts. Hier schließt später die Kommissionierung an."
+              }
+            ],
+            [
+              {
+                "art": "ereignis",
+                "text": "Bestellung ist unvollständig",
+                "erklaerung": "Ergebnisereignis des zweiten Wegs."
+              },
+              {
+                "art": "funktion",
+                "text": "Fehlende Angaben anfordern",
+                "stelle": "Vertrieb",
+                "erklaerung": "Folgetätigkeit im zweiten Weg."
+              },
+              {
+                "art": "ereignis",
+                "text": "Rückfrage ist versendet",
+                "erklaerung": "Endereignis dieses Ausschnitts. Geht die Antwort ein, beginnt die Prüfung erneut — dieser Rücklauf gehört in eine vollständige Darstellung."
+              }
+            ]
+          ],
+          "wegnamen": [
+            "Weg 1: Bestellung vollständig",
+            "Weg 2: Bestellung unvollständig"
+          ],
+          "konvention": "Konvention: Ereignis und Funktion wechseln sich ab; jede Kette beginnt und endet mit einem Ereignis. Nach einem Ereignis steht kein XOR- oder ODER-Verzweiger, weil ein Ereignis nichts entscheiden kann.",
+          "regel": "Die Funktion erzeugt das Prüfergebnis, der Konnektor beschreibt nur, wie die Wege zusammenhängen. Ein UND an dieser Stelle hieße, dass beide Ergebnisse gleichzeitig eintreten — das ist bei „vollständig oder unvollständig“ unmöglich."
+        },
+        {
+          "typ": "merke",
+          "text": "**Ereignis = Zustand, Funktion = Tätigkeit.** Eine EPK beginnt und endet mit einem Ereignis; nach einem Ereignis wird nicht mit XOR oder ODER verzweigt, weil nur eine Funktion entscheiden kann. XOR: genau ein Weg, UND: alle Wege, ODER: mindestens einer.",
+          "karteikarte": "Was unterscheidet in der EPK ein Ereignis von einer Funktion, und was bedeuten XOR, UND und ODER?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -319,7 +901,8 @@
     "Aufgenommen wird der tatsächliche Ablauf, nicht der vorgeschriebene.",
     "Sonderfälle gehören dazu — Prozesse scheitern an der Ausnahme, nicht am Normalfall.",
     "Die Darstellung wird gemeinsam mit den Beteiligten geprüft.",
-    "Ein Prozessbild sollte auf eine Seite passen."
+    "Ein Prozessbild sollte auf eine Seite passen.",
+    "EPK: Ereignisse (Zustände) und Funktionen (Tätigkeiten) wechseln sich ab, Konnektoren verzweigen."
   ],
   "selbsttest": [
     {

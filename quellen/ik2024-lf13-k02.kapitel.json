@@ -6,86 +6,460 @@
   "untertitel": "Geeignete Quellen auch in fremder Sprache nutzen, Datenqualität und Trends kritisch prüfen, Lösungsvarianten kreativ entwickeln und transparent bewerten.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Die Problemfrage ist formuliert (Kapitel 1).",
-          "Nicht jede Quelle ist gleich verlässlich."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst interne und externe Quellen für eine betriebliche Problemlösung aus, recherchierst mit zweisprachigen Suchbegriffen und hältst Quelle, Datum und Kernaussage nachvollziehbar fest.",
+        "vorwissen_kurz": "Wie lösen andere Unternehmen das Problem verzögerter Freigaben? Dazu gibt es Material, oft auf Englisch.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Intern und extern, deutsch und englisch",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Recherche beginnt **intern**: Welche Daten hat MAKEL Studio selbst, wer im Betrieb kennt das Problem, gibt es frühere Lösungsversuche? Dann folgt die **externe** Recherche: Fachartikel, Branchenverbände, Anbieterinformationen, Erfahrungsberichte anderer Unternehmen. Viele Fachbeiträge zu Prozessverbesserung sind auf Englisch; deshalb werden Suchbegriffe in beiden Sprachen verwendet. Zu jeder Quelle werden Herkunft, Datum und Kernaussage in eigenen Worten festgehalten.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rechercheprotokoll",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Quelle",
+              "Art",
+              "Datum",
+              "Kernaussage in eigenen Worten"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Auswertung von 50 Firmenaufträgen",
+                  "intern, eigene Daten",
+                  "3. Quartal 2026",
+                  "60 % der verspäteten Aufträge ohne dokumentierte Freigabe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gespräch mit Deniz Aydın",
+                  "intern, Erfahrung",
+                  "Oktober 2026",
+                  "Produktion erfährt von E-Mail-Freigaben oft erst am nächsten Tag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fachartikel „Reducing artwork approval delays\"",
+                  "extern, englisch",
+                  "2025",
+                  "Freigabe-Links mit automatischer Statusmeldung verkürzen Wartezeiten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Informationsseite eines Softwareanbieters",
+                  "extern, Werbung",
+                  "2026",
+                  "verspricht 50 % kürzere Durchlaufzeiten, ohne Angaben zur Bezugsgröße"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfahrungsbericht einer Druckerei beim Branchenverband",
+                  "extern",
+                  "2024",
+                  "feste Verantwortliche für Freigaben halbierte Rückfragen"
+                ]
+              }
+            ],
+            "fazit": "Die internen Quellen beschreiben das Problem genau, die externen liefern Lösungsansätze. Die Anbieterseite wird als Werbung gekennzeichnet und nicht als Beleg verwendet.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Protokoll macht die Recherche überprüfbar. Wer später fragt, woher eine Idee stammt, findet Quelle und Datum. Die Kernaussage in eigenen Worten zeigt, dass die Quelle verstanden wurde, und vermeidet, Texte ungeprüft zu übernehmen. Englische Quellen werden nicht Wort für Wort übersetzt, sondern sinngemäß zusammengefasst; Fachbegriffe wie „lead time\" oder „bottleneck\" werden einheitlich übersetzt.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Für die Lösungssuche braucht das Team Informationen: interne Daten (Auftragszahlen, Prozesszeiten, Gespräche mit Beteiligten) und externe Quellen (Fachartikel, Herstellerinformationen, Verbände, Normen, Gesetze, Erfahrungsberichte anderer Betriebe). Viele Fachinformationen, etwa zu Software oder Prozessmethoden, gibt es vor allem auf Englisch. Hilfreich sind präzise Suchbegriffe in beiden Sprachen, das Notieren der Quelle mit Datum und das Zusammenfassen in eigenen Worten.",
-        "beispiele": [
-          "Suchbegriffe: „Freigabeprozess Druckdaten“ / „artwork approval workflow“.",
-          "Interne Quelle: Interview mit Deniz Aydın zur Produktionsplanung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Methoden der Informationsgewinnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben Recherche in Texten gibt es Befragung, Beobachtung und Messung. Für Prozessprobleme ist die Beobachtung oft besonders ergiebig: Wer einen Auftrag einen Tag lang begleitet, sieht Wartezeiten, die in keiner Statistik auftauchen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli recherchiert Lösungen für das Freigabeproblem. Er findet einen englischen Fachartikel über „online proofing“ in Druckereien, eine Herstellerseite eines Freigabe-Tools und einen Bericht eines Verbands über Lieferzeiten in der Textilveredelung. Er notiert zu jeder Quelle Herkunft, Datum und Kernaussage auf Deutsch.",
-        "typische_fehler": "Nur die erstbeste Quelle nutzen oder fremdsprachige Fachliteratur ignorieren.",
         "verstaendnisfragen": [
-          "Nenne je eine interne und eine externe Quelle. Intern: Auftragsdaten, Interviews; extern: Fachartikel, Verbandsberichte.",
-          "Warum Suchbegriffe in zwei Sprachen? Weil viele Fachinformationen nur auf Englisch verfügbar sind."
-        ],
-        "pruefungsbezug": "Geeignete Quellen und Methoden der Informationsbeschaffung wählen.",
-        "merksatz": "Intern und extern recherchieren, Suchbegriffe zweisprachig, Quelle mit Datum notieren, Kern in eigenen Worten festhalten."
+          {
+            "frage": "Warum werden Suchbegriffe auch auf Englisch verwendet?",
+            "antwort": "Weil viele Fachbeiträge zu Prozessverbesserung auf Englisch erscheinen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was wird zu jeder Quelle festgehalten?",
+            "antwort": "Herkunft, Datum und die Kernaussage in eigenen Worten.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Werbung verspricht oft viel.",
-          "Digitalisierung und Nachhaltigkeit verändern Betriebe."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst Informationen auf Herkunft, Aktualität, Belege und Bestätigung, erkennst Werbeaussagen ohne Bezugsgröße und beurteilst, ob ein Trend das konkrete Problem lösen kann.",
+        "vorwissen_kurz": "Ein Softwareanbieter verspricht: „KI spart 50 Prozent.\" Klingt gut, sagt aber wenig.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer, wann, belegt, bestätigt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nicht jede Information ist gleich verlässlich. Vier Fragen helfen bei der Prüfung: **Wer** hat die Information veröffentlicht, und welches Interesse hat die Person? **Wann** wurde sie veröffentlicht, ist sie noch aktuell? Ist sie **belegt**, etwa mit Daten und Methode? Wird sie von anderen, unabhängigen Quellen **bestätigt**? Neue **Trends** wie künstliche Intelligenz werden daran gemessen, ob sie das konkrete Problem lösen, nicht daran, wie neu sie sind.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Informationen geprüft",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Information",
+              "Wer?",
+              "Belegt?",
+              "Bestätigt?",
+              "Bewertung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„KI spart 50 Prozent\"",
+                  "Softwareanbieter, Verkaufsinteresse",
+                  "nein, keine Bezugsgröße",
+                  "nein",
+                  "Werbeaussage, kein Beleg"
+                ]
+              },
+              {
+                "zellen": [
+                  "Freigabe-Links verkürzen Wartezeiten",
+                  "Fachartikel 2025, Methode beschrieben",
+                  "ja, Fallstudie mit drei Betrieben",
+                  "teilweise durch Verbandsbericht",
+                  "brauchbarer Hinweis"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verantwortliche für Freigaben halbieren Rückfragen",
+                  "Druckerei, eigener Bericht",
+                  "eigene Zahlen",
+                  "nicht unabhängig",
+                  "Hinweis, auf MAKEL übertragen prüfen"
+                ]
+              }
+            ],
+            "fazit": "Die Werbeaussage wird nicht verwendet. Die beiden anderen Informationen liefern Ansätze, die bei MAKEL Studio getestet werden können.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Trend ist nur dann relevant, wenn er zum Problem passt. Die Analyse hat gezeigt, dass Freigaben zu spät im System ankommen. Eine KI-Lösung, die Druckmotive automatisch erstellt, würde daran nichts ändern. Eine einfache Freigabefunktion mit Statusmeldung dagegen setzt genau an der Ursache an, auch wenn sie weniger modern klingt. Vor dem Einsatz neuer Technik fragt MAKEL Studio außerdem nach Kosten, Einarbeitung und Datenschutz.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Informationen werden auf ihre Qualität geprüft: Wer steht dahinter, und welche Interessen hat die Quelle? Wie aktuell ist sie? Werden Aussagen belegt (Datenbasis, Bezugsgröße, Testbedingungen)? Stimmen sie mit anderen Quellen überein? Entwicklungstrends wie Digitalisierung, Automatisierung, Künstliche Intelligenz oder Kreislaufwirtschaft können Lösungen ermöglichen — sie werden aber am konkreten Problem gemessen, nicht an ihrer Neuheit. Eine Werbeaussage wie „KI spart 50 Prozent“ ist ohne Bezugsgröße, Vergleich und Testbedingungen kein Beleg.",
-        "beispiele": [
-          "„50 % weniger Zeit“ — wovon? Im Vergleich zu was? Unter welchen Bedingungen?",
-          "Ein unabhängiger Testbericht wiegt mehr als die Herstellerseite."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Datenschutz bei neuen Werkzeugen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Werden Druckdateien oder Kundendaten in ein externes Werkzeug hochgeladen, verarbeitet ein Dienstleister personenbezogene Daten. Dafür braucht es in der Regel einen Vertrag zur Auftragsverarbeitung und eine Prüfung, wo die Daten gespeichert werden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Anbieter wirbt: „Unsere KI-Freigabe spart 50 % Durchlaufzeit.“ Luca will das in die Präsentation übernehmen. Marlene Voss fragt nach: Bezogen auf welchen Prozessschritt? In welchen Betrieben getestet? Was kostet das Tool, und wo werden die Kundendateien gespeichert? Erst wenn diese Fragen beantwortet sind, kommt die Lösung in die engere Wahl.",
-        "typische_fehler": "Eine neue Technologie allein wegen ihrer Neuheit als beste Lösung einstufen.",
         "verstaendnisfragen": [
-          "Nach welchen Kriterien prüfst du eine Quelle? Herkunft und Interessen, Aktualität, Belege, Übereinstimmung mit anderen Quellen.",
-          "Was fehlt bei „KI spart 50 Prozent“? Bezugsgröße, Vergleich, Testbedingungen, Datenbasis, Kosten, Datenschutz."
-        ],
-        "pruefungsbezug": "Datenqualität prüfen und Trends problembezogen einordnen.",
-        "merksatz": "Quellen prüfen: Wer? Wann? Belegt? Bestätigt? — Trends nur dann, wenn sie das konkrete Problem lösen."
+          {
+            "frage": "Welche vier Fragen helfen bei der Prüfung einer Information?",
+            "antwort": "Wer hat sie veröffentlicht, wann, ist sie belegt und wird sie unabhängig bestätigt?",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Woran wird ein neuer Trend gemessen?",
+            "antwort": "Daran, ob er das konkrete Problem löst, nicht daran, wie neu er ist.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Gute Ideen entstehen oft im Austausch.",
-          "Kritik zu früh bremst Kreativität."
+        "darstellung": "vollfassung",
+        "ziel": "Du entwickelst mit Kreativitätstechniken mehrere Lösungsvarianten für das Freigabeproblem, trennst Ideensammlung und Bewertung und kombinierst Teillösungen mit einem morphologischen Kasten zu Gesamtlösungen.",
+        "vorwissen_kurz": "Die Ursachen sind bekannt, die Recherche hat Ansätze geliefert. Jetzt soll das Team nicht bei der ersten Idee stehen bleiben.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst sammeln, dann bewerten",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kreativitätstechniken helfen, viele und unterschiedliche Ideen zu finden. Beim **Brainstorming** nennen alle spontan Ideen; Kritik ist verboten. Beim **Brainwriting 6-3-5** schreiben sechs Personen je drei Ideen und geben das Blatt weiter, sodass Ideen weiterentwickelt werden. Eine **Mindmap** ordnet Gedanken um ein zentrales Problem. Der **morphologische Kasten** zerlegt das Problem in Teilprobleme und kombiniert für jedes Teilproblem eine Lösung zu Gesamtlösungen. Allen gemeinsam ist die Regel: erst sammeln, dann bewerten.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Morphologischer Kasten für das Freigabeproblem",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Teilproblem",
+              "Lösung 1",
+              "Lösung 2",
+              "Lösung 3"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wie gibt der Kunde frei?",
+                  "Antwort per E-Mail",
+                  "Freigabe-Link mit Klick",
+                  "Unterschrift auf PDF"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie kommt die Freigabe ins System?",
+                  "Vertrieb trägt sie manuell ein",
+                  "Link setzt Status automatisch",
+                  "Produktion fragt täglich nach"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wer ist verantwortlich?",
+                  "jeweilige Vertriebsperson",
+                  "feste Freigabeverantwortliche",
+                  "Produktion"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie werden Verzögerungen erkannt?",
+                  "gar nicht",
+                  "Erinnerung nach 24 Stunden",
+                  "tägliche Liste offener Freigaben"
+                ]
+              }
+            ],
+            "fazit": "Aus dem Kasten entstehen mehrere Gesamtlösungen, etwa Variante A „Freigabe-Link mit automatischem Status und Erinnerung\" oder Variante B „E-Mail bleibt, aber feste Verantwortliche trägt täglich ein und prüft die Liste offener Freigaben\".",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der morphologische Kasten verhindert, dass das Team nur eine Lösung im Kopf hat. Er zeigt, dass es nicht nur um Technik geht, sondern auch um Verantwortung und Kontrolle. Variante A setzt auf Technik, Variante B auf Organisation; denkbar ist auch eine Kombination. In dieser Phase wird bewusst noch nicht bewertet, auch wenn manche Kombination auf den ersten Blick ungewöhnlich wirkt. Die Bewertung folgt im nächsten Schritt nach festgelegten Kriterien.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Kreativitätstechniken helfen, mehrere Lösungsvarianten zu entwickeln, statt bei der ersten Idee stehen zu bleiben. Beim Brainstorming werden Ideen ohne Kritik gesammelt; beim Brainwriting (etwa der Methode 6-3-5) schreiben Teilnehmende Ideen auf und entwickeln die der anderen weiter; eine Mindmap ordnet Ideen um ein Thema; der morphologische Kasten kombiniert Lösungen für Teilprobleme systematisch. Wichtig ist die Trennung von Ideenfindung und Bewertung — erst sammeln, dann prüfen.",
-        "beispiele": [
-          "Variante A: Freigabe-Tool mit digitalem Vermerk.",
-          "Variante B: Klare Verantwortlichkeit — der Vertrieb trägt jede Freigabe sofort im Warenwirtschaftssystem ein. Variante C: Reservebestände vorproduzierter Standardmotive."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Brainstorming und Brainwriting",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim Brainstorming kommen schnell viele Ideen, aber laute Teammitglieder dominieren leicht. Beim Brainwriting schreibt jede Person für sich; auch ruhigere Kolleginnen und Kollegen bringen ihre Ideen ein. Für ein gemischtes Team wie bei MAKEL Studio kann Brainwriting deshalb ergiebiger sein.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "In einem Brainwriting mit Marlene, Deniz, Jonas und Luca entstehen 18 Ideen. Das Team fasst sie zu drei Varianten zusammen: digitale Freigabe (A), klare Verantwortlichkeiten mit Pflichtfeld im vorhandenen System (B) und Reservebestände für Standardmotive (C).",
-        "typische_fehler": "Ideen schon beim Sammeln bewerten und damit abwürgen.",
         "verstaendnisfragen": [
-          "Was ist die Grundregel beim Brainstorming? Ideen sammeln ohne Kritik.",
-          "Wozu dient ein morphologischer Kasten? Lösungen für Teilprobleme systematisch zu kombinieren."
-        ],
-        "pruefungsbezug": "Kreative Lösungsvarianten mit geeigneten Methoden entwickeln.",
-        "merksatz": "Erst sammeln, dann bewerten: Brainstorming, Brainwriting 6-3-5, Mindmap, morphologischer Kasten."
+          {
+            "frage": "Was ist die gemeinsame Grundregel der Kreativitätstechniken?",
+            "antwort": "Erst Ideen sammeln, dann bewerten.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie funktioniert ein morphologischer Kasten?",
+            "antwort": "Das Problem wird in Teilprobleme zerlegt, für jedes werden Lösungen gesammelt und zu Gesamtlösungen kombiniert.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Die Nutzwertanalyse gewichtet Kriterien (LF 2).",
-          "Ziele und Rahmenbedingungen stehen fest (Kapitel 1)."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst Lösungsvarianten zuerst auf Ausschlusskriterien, bewertest die verbleibenden mit einer Nutzwertanalyse mit offengelegter Gewichtung und Skala und prüfst die Wirtschaftlichkeit gesondert.",
+        "vorwissen_kurz": "Zwei Varianten stehen zur Wahl: ein digitaler Freigabe-Link und eine organisatorische Lösung mit fester Verantwortung. Welche passt besser?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ausschluss vor Bewertung",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zuerst werden die **Ausschlusskriterien** geprüft: Bedingungen, die eine Lösung unbedingt erfüllen muss, etwa das Budget von 3.000 € oder die Grenze für den Lagerbestand. Eine Variante, die ein Ausschlusskriterium verfehlt, scheidet aus. Die übrigen werden mit der {{begriff:nutzwertanalyse|Nutzwertanalyse}} bewertet: Kriterien gewichten, nach einheitlicher Skala bewerten, gewichtet addieren. Gewichtung und Skala werden offengelegt. Die **Wirtschaftlichkeit** wird gesondert geprüft, weil ein hoher Nutzwert noch nichts über Kosten und Nutzen in Euro sagt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ausschluss, Bewertung, Wirtschaftlichkeit",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfschritt",
+              "Variante A digital",
+              "Variante B Verantwortung",
+              "Variante C neue Software"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ausschluss: Budget höchstens 3.000 €",
+                  "2.400 € Einrichtung, erfüllt",
+                  "0 € Investition, erfüllt",
+                  "18.000 €, scheidet aus"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausschluss: Datenschutz geklärt",
+                  "Auftragsverarbeitung nötig, lösbar",
+                  "erfüllt",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nutzwert (Zuverlässigkeit 50 %, Aufwandseignung 50 %)",
+                  "3,0",
+                  "3,5",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "laufende Kosten pro Jahr",
+                  "600 € Lizenz",
+                  "ca. 2 Stunden pro Woche, rund 2.900 € Arbeitszeit",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "erwartete Wirkung",
+                  "Wartezeit Freigabe von 2,5 auf 0,5 Tage",
+                  "Wartezeit von 2,5 auf 1,0 Tag",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Variante C scheidet am Budget aus. B liegt im Nutzwert vorn und kommt ohne Investition aus, A wirkt stärker und kostet laufend weniger. Eine Kombination aus fester Verantwortung jetzt und Freigabe-Link in einem zweiten Schritt ist eine begründete Empfehlung.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bewertung zeigt, warum die Wirtschaftlichkeit gesondert betrachtet wird. Variante B gewinnt im Nutzwert, weil sie leichter umzusetzen ist. Über ein Jahr kostet sie aber mehr Arbeitszeit als Variante A an Lizenz, und sie verkürzt die Wartezeit weniger. Die Empfehlung nutzt beide Stärken: B lässt sich sofort umsetzen und bringt schnell Wirkung, A wird nach Klärung des Datenschutzes eingeführt. So wird aus der Bewertung eine Entscheidung, die Kosten, Wirkung und Umsetzbarkeit berücksichtigt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Lösungsvarianten werden anhand transparenter Kriterien verglichen, die aus Zielen und Rahmenbedingungen abgeleitet sind — etwa Zuverlässigkeit, Aufwand, Kosten, Umsetzungszeit, Akzeptanz, Datenschutz. In einer Nutzwertanalyse werden die Kriterien gewichtet, die Varianten bewertet und die gewichteten Punkte addiert. Gewichtung und Skalenrichtung werden offengelegt. Ausschlusskriterien (etwa „Budget höchstens 3.000 €“) werden vorher geprüft. Die wirtschaftliche Machbarkeit — Kosten und Nutzen — wird gesondert betrachtet.",
-        "beispiele": [
-          "Zuverlässigkeit 50 %, Aufwandseignung 50 %; A: 4 und 2 → 3,0; B: 3 und 4 → 3,5.",
-          "Variante C fällt heraus, weil sie die Lagerbestände um mehr als 5 % erhöht."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Gewichte begründen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Gewichte einer Nutzwertanalyse sind Entscheidungen. Werden Zuverlässigkeit und Aufwandseignung gleich gewichtet, ist das eine Aussage über die Prioritäten. Wer die Gewichte offenlegt und begründet, macht die Bewertung für andere nachvollziehbar und angreifbar, und genau das ist gewollt.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Das Team prüft zuerst die Ausschlusskriterien: Variante C verletzt die Bestandsgrenze. Für A und B rechnet Luca die Nutzwertanalyse: Zuverlässigkeit 50 %, Aufwandseignung 50 % (höher = weniger Aufwand). A erreicht 3,0, B 3,5. Die Kosten liegen bei B unter 500 €, bei A über dem Budget — Variante B wird empfohlen, A für später vorgemerkt.",
-        "typische_fehler": "Gewichtung und Skalenrichtung nicht offenlegen oder die Kosten vergessen.",
         "verstaendnisfragen": [
-          "Woraus werden Bewertungskriterien abgeleitet? Aus Zielen und Rahmenbedingungen.",
-          "Was ist ein Ausschlusskriterium? Eine Bedingung, die eine Variante erfüllen muss, um überhaupt bewertet zu werden."
-        ],
-        "pruefungsbezug": "Lösungen anhand transparenter Kriterien vergleichen und auswählen.",
-        "merksatz": "Ausschlusskriterien zuerst, dann gewichtete Bewertung mit offener Gewichtung und Skala — Wirtschaftlichkeit gesondert prüfen."
+          {
+            "frage": "Warum werden Ausschlusskriterien vor der Nutzwertanalyse geprüft?",
+            "antwort": "Damit Varianten, die eine zwingende Bedingung verfehlen, gar nicht erst bewertet werden.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum wird die Wirtschaftlichkeit gesondert geprüft?",
+            "antwort": "Weil ein hoher Nutzwert nichts über Kosten und Nutzen in Euro aussagt.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

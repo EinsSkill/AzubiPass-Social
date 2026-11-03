@@ -6,66 +6,379 @@
   "untertitel": "Was man nicht misst, kann man nicht verbessern — nur behaupten.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Durchlaufzeit enthält mehr als reine Bearbeitung.",
-          "Nur Bearbeitungszeit gilt aus Kundensicht als wertschöpfend."
+        "darstellung": "vollfassung",
+        "ziel": "Du zerlegst die Durchlaufzeit eines Vorgangs in Bearbeitungs-, Liege-, Transport- und Prüfzeit, berechnest den Flussgrad und leitest ab, wo sich eine Verkürzung lohnt.",
+        "vorwissen_kurz": "Wie lange ein Vorgang dauert, sagt noch nicht, wie lange wirklich daran gearbeitet wurde.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gearbeitet wird selten",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:durchlaufzeit|Durchlaufzeit}} reicht vom Eingang eines Vorgangs bis zu seinem Abschluss. In dieser Zeit wird der Vorgang bearbeitet, aber er liegt auch in Postfächern, wird weitergeleitet und geprüft. Nur die Bearbeitung bringt ihn aus Kundensicht voran. Wie groß ihr Anteil ist, zeigt der {{begriff:flussgrad|Flussgrad}}: Bearbeitungszeit geteilt durch Durchlaufzeit, mal 100.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Händlerangebot über acht Arbeitstage",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Modehaus fragt nach einem Angebot für eine Sonderkollektion. Vom Eingang der Anfrage bis zum Versand des Angebots vergehen acht Arbeitstage zu je acht Stunden, also 64 Stunden.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitart",
+              "Stunden",
+              "Was passiert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bearbeitung",
+                  "4,5",
+                  "Anfrage auswerten, kalkulieren, Angebot schreiben"
+                ]
+              },
+              {
+                "zellen": [
+                  "Liegezeit",
+                  "48,0",
+                  "Anfrage im Sammelpostfach, Kalkulation wartet auf Freigabe der Leitung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Transport und Weiterleitung",
+                  "6,0",
+                  "Weitergabe zwischen Vertrieb, Produktion und Leitung per Mail und Hauspost"
+                ]
+              },
+              {
+                "zellen": [
+                  "Prüfung und Freigabe",
+                  "5,5",
+                  "Preis- und Terminprüfung, Unterschrift"
+                ]
+              },
+              {
+                "zellen": [
+                  "Durchlaufzeit",
+                  "64,0",
+                  "4,5 + 48 + 6 + 5,5"
+                ]
+              }
+            ],
+            "fazit": "Flussgrad = 4,5 ÷ 64 × 100 ≈ 7 %. In den übrigen 93 % der Zeit wartet das Angebot, wird weitergereicht oder geprüft.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer das Angebot schneller verschicken will, muss deshalb nicht schneller kalkulieren. Selbst wenn die Bearbeitung halb so lange dauerte, wäre das Angebot nur gut zwei Stunden früher fertig. Halbiert MAKEL dagegen die Liegezeit, etwa durch feste Freigabezeiten am Vor- und Nachmittag, gewinnt es 24 Stunden — drei Arbeitstage.",
+            "id": "b1-p3"
+          }
         ],
-        "erklaerung": "Die Durchlaufzeit besteht aus Bearbeitung, Liegezeit, Transport und Prüfung. Der Flussgrad setzt Bearbeitungszeit ins Verhältnis zur gesamten Durchlaufzeit: Bearbeitungszeit ÷ Durchlaufzeit × 100. Ein niedriger Flussgrad zeigt, dass der größte Hebel außerhalb der eigentlichen Bearbeitung liegt.",
-        "beispiele": [
-          "3 Stunden Bearbeitung + 36 Stunden Liegezeit + 4 Stunden Transport + 5 Stunden Prüfung ergeben 48 Stunden Durchlaufzeit.",
-          "3 ÷ 48 × 100 = 6,25 % Flussgrad; die Bearbeitung ist nur ein kleiner Teil der Gesamtzeit."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Prüfen ist nicht wertschöpfend, aber oft nötig",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Preis- und Terminprüfung bringt das Angebot aus Kundensicht nicht voran. Trotzdem wäre es falsch, sie zu streichen: Ein falsch kalkuliertes Angebot bindet MAKEL. Die Frage lautet nicht, ob geprüft wird, sondern wie schnell und ob jede Anfrage dieselbe Prüftiefe braucht.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Für den Vorgang werden 3 + 36 + 4 + 5 = 48 Stunden Durchlaufzeit berechnet. Wertschöpfend sind 3 Stunden. Der Flussgrad beträgt 3 ÷ 48 × 100 = 6,25 %. Eine Halbierung der Bearbeitungszeit würde die Gesamtdauer weniger beeinflussen als die Verkürzung der Liegezeit.",
-        "typische_fehler": "Die Bestandteile werden addiert, aber die Bearbeitungszeit durch die falsche Größe geteilt. Auch wird schnelleres Arbeiten gefordert, ohne Liege-, Transport- und Prüfzeiten zu messen.",
         "verstaendnisfragen": [
-          "Welche vier Bestandteile hat die Durchlaufzeit? Bearbeitung, Liegezeit, Transport und Prüfung.",
-          "Wie lautet die Flussgradformel? Bearbeitungszeit ÷ Durchlaufzeit × 100."
-        ],
-        "pruefungsbezug": "Addiere zuerst alle vier Zeitarten und setze nur die Bearbeitungszeit in den Zähler.",
-        "merksatz": "Durchlaufzeit ist der ganze Weg; Flussgrad zeigt, wie viel davon echte Bearbeitung ist."
+          {
+            "frage": "Warum bringt eine schnellere Kalkulation im Beispiel wenig?",
+            "antwort": "Weil die Bearbeitung nur 4,5 von 64 Stunden ausmacht. Selbst eine Halbierung spart gut zwei Stunden. Der große Hebel liegt bei der Liegezeit von 48 Stunden.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Berechne den Flussgrad, wenn die Liegezeit auf 24 Stunden sinkt.",
+            "antwort": "Die Durchlaufzeit beträgt dann 4,5 + 24 + 6 + 5,5 = 40 Stunden. Der Flussgrad liegt bei 4,5 ÷ 40 × 100 ≈ 11 %.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Kennzahlen machen Leistung vergleichbar.",
-          "Eine einzelne Kennzahl kann falsches Verhalten fördern."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Durchlaufzeit, Flussgrad, Fehlerquote, Termintreue und Prozesskosten je Vorgang, vergleichst sie mit einer Bezugsgröße und erkennst, wann eine Kennzahl falsche Anreize setzt.",
+        "vorwissen_kurz": "Eine Zahl allein ist weder gut noch schlecht. Erst der Vergleich mit Vormonat, Ziel oder Wettbewerb gibt ihr eine Bedeutung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Messen, vergleichen, deuten",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Prozesskennzahlen machen sichtbar, wie schnell, zuverlässig und wirtschaftlich ein Ablauf läuft. Damit sie etwas aussagen, braucht jede Kennzahl eine Bezugsgröße: einen Vorperiodenwert, ein Ziel oder einen Vergleichswert. Und weil Menschen ihr Verhalten danach ausrichten, was gemessen wird, gehören Tempo und Qualität immer zusammen.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Händlerbestellungen im Oktober",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Berechnung",
+              "Oktober",
+              "Vormonat",
+              "Ziel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Durchlaufzeit (Durchschnitt)",
+                  "Ende − Anfang je Bestellung",
+                  "6,2 Tage",
+                  "7,5 Tage",
+                  "4 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fehlerquote",
+                  "18 ÷ 400 × 100",
+                  "4,5 %",
+                  "3,0 %",
+                  "unter 2 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termintreue",
+                  "352 ÷ 400 × 100",
+                  "88 %",
+                  "85 %",
+                  "95 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Prozesskosten je Bestellung",
+                  "14.000 € ÷ 400",
+                  "35 €",
+                  "38 €",
+                  "30 €"
+                ]
+              }
+            ],
+            "fazit": "Die Bestellungen sind schneller und günstiger geworden, aber die Fehlerquote ist gestiegen. Das Ziel ist bei keiner Kennzahl erreicht.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Prozessverantwortliche sucht die Ursache für die höhere Fehlerquote. Im Lager wird seit September die Kennzahl „kommissionierte Positionen je Stunde“ ausgehängt. Seitdem werden Aufträge schneller gepackt, aber die Kontrolle der Größen fällt öfter weg. Die Kennzahl hat das Tempo erhöht und die Sorgfalt gesenkt. MAKEL hängt deshalb künftig beide Werte nebeneinander aus: Positionen je Stunde und Fehlerquote.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b4"
+          }
         ],
-        "erklaerung": "Kennzahlen brauchen einen Vergleichsmaßstab: Vormonat, Ziel oder Wettbewerb. Tempo- und Qualitätskennzahlen gehören zusammen, ergänzt um Kosten, weil eine verkürzte Durchlaufzeit sonst durch ausgelassene Prüfung und mehr Fehler entstehen kann. Kennzahlen werden als Steuerungsinstrumente gelesen, nicht als Selbstzweck.",
-        "beispiele": [
-          "Durchlaufzeit wird zusammen mit Fehlerquote betrachtet, damit Geschwindigkeit nicht auf Kosten der Qualität steigt.",
-          "Eine Zahl wird mit dem Vormonat oder einem Ziel verglichen; ohne Maßstab ist sie nicht sinnvoll deutbar."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Woher die Zahlen kommen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Viele Kennzahlen lassen sich aus dem Warenwirtschaftssystem ablesen, weil es Zeitpunkte von Eingang, Freigabe, Versand und Rechnung speichert. Die Prozesskosten je Vorgang sind schwieriger: Dafür werden die Personal- und Sachkosten der beteiligten Stellen anteilig dem Prozess zugeordnet. Solche Werte sind Schätzungen und sollten mit ihrer Berechnungsgrundlage angegeben werden.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Die Geschäftsführung fordert, Reisekostenabrechnungen schneller zu bearbeiten. Vor der Maßnahme wird die Durchlaufzeit in Bearbeitung, Liegen, Transport und Prüfung zerlegt. Liegt der größte Anteil beim Warten auf Belege oder Freigaben, wird dort angesetzt. Nach der Änderung werden Durchlaufzeit und Fehlerquote erneut gemessen.",
-        "typische_fehler": "Nur Stundenverbrauch oder nur Durchlaufzeit wird bewertet. Der Vergleichsmaßstab und die Qualitätsfolge werden vergessen.",
         "verstaendnisfragen": [
-          "Warum gehören Tempo und Qualität zusammen? Sonst kann die Beschleunigung Fehler und Nacharbeit erzeugen.",
-          "Was braucht jede Kennzahl zusätzlich? Einen Vergleichsmaßstab."
-        ],
-        "pruefungsbezug": "Nenne bei Kennzahlen immer Messgröße, Vergleich und mögliche Nebenwirkung auf Qualität oder Kosten.",
-        "merksatz": "Eine Kennzahl ohne Vergleich und ohne Qualitätsblick steuert blind."
+          {
+            "frage": "Die Durchlaufzeit ist gesunken. Ist der Prozess damit besser geworden?",
+            "antwort": "Nicht unbedingt. Im Beispiel ist zugleich die Fehlerquote gestiegen. Ein Prozess ist erst besser, wenn Tempo, Qualität und Kosten zusammen betrachtet werden.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Wie hoch wäre die Termintreue, wenn 380 von 400 Bestellungen pünktlich wären?",
+            "antwort": "380 ÷ 400 × 100 = 95 %. Das Ziel wäre dann erreicht.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Ein Engpass begrenzt die Leistung des gesamten Prozesses.",
-          "Verbesserung braucht Messung statt Vermutung."
+        "darstellung": "vollfassung",
+        "ziel": "Du findest den Engpass eines Prozesses über Stau und Kapazität je Schritt, entlastest ihn gezielt und prüfst, wo der nächste Engpass entsteht.",
+        "vorwissen_kurz": "Ein Prozess ist so schnell wie sein langsamster Schritt. Alles davor staut sich, alles danach wartet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die schwächste Stelle bestimmt das Tempo",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:engpass|Engpass}} ist der Schritt mit der geringsten Kapazität im Verhältnis zur Menge, die durch den Prozess laufen soll. Er begrenzt die Leistung des ganzen Prozesses. Verbesserungen an anderen Stellen bringen nichts oder vergrößern nur den Stau vor dem Engpass. Deshalb lohnt es sich, ihn zuerst zu finden.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Engpass bei den Händlerbestellungen",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Herbstgeschäft gehen täglich etwa 35 Händlerbestellungen ein. Die Prozessverantwortliche misst, wie viele Bestellungen jeder Schritt pro Tag schafft.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Kapazität je Tag",
+              "Eingang je Tag",
+              "Lage"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bestellung erfassen",
+                  "60",
+                  "35",
+                  "frei"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kreditprüfung",
+                  "25",
+                  "35",
+                  "Stau: täglich 10 Bestellungen mehr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kommissionieren",
+                  "45",
+                  "25",
+                  "wartet auf Aufträge"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versand",
+                  "50",
+                  "25",
+                  "wartet auf Aufträge"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnung",
+                  "70",
+                  "25",
+                  "wartet auf Aufträge"
+                ]
+              }
+            ],
+            "fazit": "Die Kreditprüfung ist der Engpass. Sie lässt nur 25 Bestellungen am Tag durch; das Lager könnte 45 schaffen, bekommt aber nur 25.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kreditprüfung macht bisher eine einzige Mitarbeiterin der Buchhaltung, und zwar für jede Bestellung. MAKEL führt eine Wertgrenze ein: Bestandskunden, die ihr Kreditlimit einhalten und in den letzten zwölf Monaten pünktlich gezahlt haben, werden automatisch freigegeben. Das betrifft etwa vier von fünf Bestellungen. Geprüft werden nur noch rund sieben Bestellungen am Tag. Jetzt laufen alle 35 durch — und der nächste Engpass wäre das Kommissionieren mit 45, das noch Luft hat.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b3"
+          }
         ],
-        "erklaerung": "Der Engpass ist der Prozessschritt mit der geringsten Kapazität und bestimmt die Leistung des gesamten Ablaufs. Vor einer Forderung nach schnellerer Arbeit wird gemessen, wo die Zeit liegt. Nach einer Entlastung kann der Engpass wandern, deshalb wird erneut gemessen.",
-        "beispiele": [
-          "Warten auf Freigabe kann der Engpass sein, obwohl die eigentliche Sachbearbeitung kurz ist.",
-          "Eine Vertretungsregelung kann einen Engpass bei Abwesenheit lösen; anschließend wird geprüft, ob die nächste Stelle begrenzt."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Engpass und Kennzahlen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Engpass zeigt sich in den Kennzahlen meist als hohe Liegezeit vor einem bestimmten Schritt. Wer den Flussgrad verbessern will, findet den Engpass deshalb oft dort, wo sich Vorgänge stapeln. Nach jeder Entlastung lohnt eine neue Messung, weil der Engpass weiterwandert.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Reisekostenabrechnungen dauern neun Arbeitstage. Die Messung zerlegt den Weg und zeigt lange Liegezeit vor Freigaben. Statt die Sachbearbeitung pauschal zu beschleunigen, werden vollständige Einreichung, feste Freigabezeitpunkte und Vertretungen geprüft. Danach werden Durchlaufzeit und Fehlerquote neu gemessen.",
-        "typische_fehler": "Der sichtbarste Arbeitsschritt wird automatisch als Engpass betrachtet. Außerdem wird eine Maßnahme nicht nachgemessen, sodass unbekannt bleibt, ob der Engpass nur weitergewandert ist.",
         "verstaendnisfragen": [
-          "Was bestimmt die Leistung des gesamten Prozesses? Der Engpass.",
-          "Warum muss nach einer Verbesserung erneut gemessen werden? Weil sich der Engpass an eine andere Stelle verschieben kann."
-        ],
-        "pruefungsbezug": "Zerlege den Prozess, identifiziere die geringste Kapazität und begründe die Maßnahme mit Messdaten.",
-        "merksatz": "Nicht der lauteste Arbeitsschritt, sondern der Engpass bestimmt das Tempo des Prozesses."
+          {
+            "frage": "Warum bringt ein zusätzlicher Mitarbeiter im Lager in der Ausgangslage nichts?",
+            "antwort": "Weil das Lager nicht der Engpass ist. Es bekommt nur 25 Aufträge am Tag aus der Kreditprüfung und könnte schon jetzt 45 schaffen. Mehr Kapazität dort würde nur mehr Wartezeit erzeugen.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Woran erkennt man einen Engpass im Alltag ohne Messung?",
+            "antwort": "An Stapeln und Warteschlangen: volle Postfächer, Ablagekörbe oder Wartelisten vor einem bestimmten Schritt, während die Stellen danach auf Arbeit warten.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -129,7 +442,7 @@
               "schritt": 0.5
             }
           ],
-          "regel": "Der Flussgrad ist der Anteil wertschöpfender Zeit an der Durchlaufzeit. In Büroprozessen liegt er typischerweise im einstelligen Prozentbereich — dort steckt der ganze Verbesserungsspielraum."
+          "regel": "Der Flussgrad ist der Anteil wertschöpfender Zeit an der Durchlaufzeit. In Büroprozessen ist er oft niedrig — der größte Verbesserungsspielraum steckt dann in Liege-, Transport- und Prüfzeiten."
         },
         {
           "typ": "tabelle",
@@ -174,7 +487,7 @@
         },
         {
           "typ": "merke",
-          "text": "**Durchlaufzeit = Bearbeitung + Liegezeit + Transport + Prüfung.** Der **Flussgrad** ist der Anteil der Bearbeitung daran — meist erschreckend klein.",
+          "text": "**Durchlaufzeit = Bearbeitung + Liegezeit + Transport + Prüfung.** Der **Flussgrad** ist der Anteil der Bearbeitung daran — oft überraschend klein.",
           "karteikarte": "Aus welchen Bestandteilen besteht die Durchlaufzeit, und was sagt der Flussgrad aus?"
         }
       ]
@@ -209,7 +522,7 @@
                 "Bearbeitungszeit ÷ Durchlaufzeit × 100",
                 "Verbesserungsspielraum"
               ],
-              "detail": "**Je niedriger, desto größer der Hebel.** Ein Flussgrad von 5 % heißt: 95 % der Zeit ließe sich theoretisch streichen, ohne dass jemand schneller arbeiten müsste."
+              "detail": "**Je niedriger, desto größer der Hebel.** Ein Flussgrad von 5 % heißt: 95 % der Zeit entfallen auf Warten, Weiterleiten und Prüfen. Dort lässt sich am meisten gewinnen, ohne dass jemand schneller arbeiten müsste — auch wenn nötige Prüfungen bleiben."
             },
             {
               "zellen": [
@@ -348,7 +661,7 @@
     "Durchlaufzeit = Bearbeitung + Liegezeit + Transport + Prüfung.",
     "Nur die Bearbeitungszeit ist aus Kundensicht wertschöpfend.",
     "Flussgrad = Bearbeitungszeit ÷ Durchlaufzeit × 100.",
-    "In Büroprozessen liegt der Flussgrad meist im einstelligen Prozentbereich.",
+    "In Büroprozessen ist der Flussgrad oft niedrig.",
     "Ein niedriger Flussgrad zeigt großen Verbesserungsspielraum.",
     "Kennzahlen brauchen einen Vergleichsmaßstab — Vormonat, Ziel oder Wettbewerb.",
     "Tempo- und Qualitätskennzahlen gehören zusammen, sonst steuern sie falsch.",

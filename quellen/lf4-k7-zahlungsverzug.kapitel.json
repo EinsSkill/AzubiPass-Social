@@ -7,73 +7,488 @@
   "minuten": 30,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Wenn ein Kunde nicht zahlt, muss zuerst geklärt werden, welche Pflicht verletzt ist und ab welchem Datum die rechtlichen Folgen beginnen. Annahmeverzug betrifft die Ware; Zahlungsverzug betrifft das Geld. Danach führt das kaufmännische Mahnwesen bei Bedarf in das gerichtliche Verfahren.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Nach § 433 BGB muss der Käufer die Ware abnehmen und den Kaufpreis zahlen.",
-          "Die beiden Pflichten können unabhängig voneinander gestört werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest an einem Sachverhalt Annahmeverzug und Zahlungsverzug nach der verletzten Pflicht und leitest die jeweiligen Folgen ab.",
+        "vorwissen_kurz": "Nach § 433 BGB hat der Käufer zwei Pflichten: den Kaufpreis zahlen und die Ware abnehmen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Pflichten, zwei Störungen",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wenn ein Kunde „nicht mitspielt“, kann er zwei verschiedene Pflichten verletzen. Nimmt er die ordnungsgemäß angebotene Ware nicht an, gerät er in {{begriff:annahmeverzug|Annahmeverzug}}. Zahlt er eine fällige Rechnung nicht, gerät er in {{begriff:zahlungsverzug|Zahlungsverzug}}. Die beiden Störungen haben verschiedene Voraussetzungen und völlig verschiedene Folgen. Deshalb fragst du zuerst: Geht es um die Ware oder um das Geld?",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Annahmeverzug steht der Schutz des Verkäufers im Vordergrund, der seine Leistung angeboten hat und nun mit der Ware dasteht. Ein Verschulden des Käufers ist dafür nicht nötig: Es genügt, dass er die ordnungsgemäß angebotene Ware nicht annimmt. Beim Zahlungsverzug geht es darum, dass der Verkäufer sein Geld zu spät bekommt; hier gelten die Voraussetzungen des {{par:bgb-286|§ 286 BGB}}.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Kunde, zwei Probleme",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL liefert einem Geschäftskunden vereinbarungsgemäß am 5. Mai 300 bedruckte Kartons frei Haus. Der Kunde schickt den Fahrer weg, weil gerade kein Platz im Lager sei. Die Rechnung über eine frühere Lieferung ist außerdem seit sechs Wochen offen.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Verletzte Pflicht",
+              "Störung",
+              "Folgen für MAKEL"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fahrer wird mit richtiger Ware weggeschickt",
+                  "Abnahme",
+                  "Annahmeverzug",
+                  "Gefahr geht auf den Kunden über; MAKEL haftet nur noch für Vorsatz und grobe Fahrlässigkeit; Mehrkosten (zweite Anfahrt, Lagerung) sind zu ersetzen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Frühere Rechnung seit sechs Wochen offen",
+                  "Zahlung",
+                  "Zahlungsverzug (bei Vorliegen der Voraussetzungen)",
+                  "Verzugszinsen, 40-€-Pauschale, weiterer Verzugsschaden."
+                ]
+              }
+            ],
+            "fazit": "Beide Störungen können beim selben Kunden zur selben Zeit vorliegen. Sie werden getrennt geprüft.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Was bedeutet der Gefahrübergang konkret? Werden die zurückgebrachten Kartons in MAKELs Lager durch einen Wasserrohrbruch beschädigt, den niemand verschuldet hat, muss der Kunde trotzdem zahlen. Ohne Annahmeverzug läge dieses Risiko bei MAKEL.",
+            "id": "b1-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          }
         ],
-        "erklaerung": "Annahmeverzug liegt vor, wenn der Verkäufer die richtige Ware ordnungsgemäß anbietet und der Käufer sie nicht annimmt. Dann geht die Gefahr auf den Käufer über, die Haftung des Verkäufers wird eingeschränkt und Mehraufwendungen können ersetzt verlangt werden. Zahlungsverzug entsteht dagegen, wenn eine fällige Forderung nicht bezahlt wird und die weiteren Voraussetzungen des § 286 BGB erfüllt sind; dann laufen Verzugszinsen und weitere Verzugsschäden.",
-        "beispiele": [
-          "Der Kunde schickt den Fahrer trotz richtiger Lieferung weg: Das ist Annahmeverzug, nicht Zahlungsverzug.",
-          "Die Ware wurde angenommen, aber die Rechnung bleibt nach Fälligkeit offen: Das ist Zahlungsverzug."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Selbsthilfeverkauf beim Handelskauf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nimmt ein kaufmännischer Kunde die Ware dauerhaft nicht ab, muss MAKEL sie nicht endlos lagern. Beim Handelskauf darf MAKEL die Ware nach vorheriger Androhung öffentlich versteigern lassen oder, wenn sie einen Börsen- oder Marktpreis hat, freihändig verkaufen. Der Erlös wird mit dem Kaufpreis verrechnet, ein Fehlbetrag bleibt Schuld des Kunden. Bei verderblicher Ware kann die Androhung entfallen.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Annahmeverzug ohne Verschulden",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Kunde war krank, niemand konnte die Ware annehmen. Trotzdem liegt Annahmeverzug vor, denn er setzt kein Verschulden voraus. Die Folgen treffen den Kunden also auch dann. Beim Zahlungsverzug dagegen muss der Schuldner die Verzögerung zu vertreten haben. Geldmangel entlastet ihn dabei nie: Für seine Zahlungsfähigkeit muss jeder selbst einstehen.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "Ein Kunde nimmt die angelieferte Ware nicht an und bezahlt anschließend auch die Rechnung nicht. Es können beide Störungen nebeneinander vorliegen: Für die nicht angenommene Ware gelten die Folgen des Annahmeverzugs; für die offene fällige Forderung die Folgen des Zahlungsverzugs. Die Begriffe werden getrennt geprüft, auch wenn sie im selben Sachverhalt vorkommen.",
-        "typische_fehler": "Jede Nichtzahlung als Annahmeverzug bezeichnen oder aus dem Annahmeverzug automatisch Verzugszinsen ableiten. Annahmeverzug betrifft die Übergabe; Zahlungsverzug die fällige Geldforderung.",
         "verstaendnisfragen": [
-          "Welche wichtigste Folge hat Annahmeverzug? Die Gefahr geht auf den Käufer über und der Verkäufer haftet nur noch eingeschränkt.",
-          "Welche Folgen hat Zahlungsverzug? Vor allem Verzugszinsen und Ersatz weiterer Verzugsschäden."
-        ],
-        "pruefungsbezug": "Im Sachverhalt die Verben markieren: Wird nicht angenommen oder nicht bezahlt? Erst danach die passende Störung und ihre Rechtsfolgen nennen.",
-        "merksatz": "Annahmeverzug betrifft die Ware; Zahlungsverzug betrifft das Geld."
+          {
+            "frage": "Der Kunde nimmt die Ware an, zahlt aber nicht. Kann MAKEL von Annahmeverzug sprechen?",
+            "antwort": "Nein. Die Ware wurde angenommen, die Abnahmepflicht ist erfüllt. Verletzt ist nur die Zahlungspflicht. Ob Zahlungsverzug vorliegt, richtet sich nach Fälligkeit, Mahnung oder deren Entbehrlichkeit und Vertretenmüssen.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "MAKEL liefert falsche Ware, der Kunde schickt den Fahrer weg. Liegt Annahmeverzug vor?",
+            "antwort": "Nein. Annahmeverzug setzt voraus, dass die Ware ordnungsgemäß angeboten wurde — die richtige Ware, am richtigen Ort, zur richtigen Zeit. Falsche Ware darf der Kunde zurückweisen, ohne in Verzug zu geraten.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Zahlungsverzug kann durch Mahnung, einen festen Zahlungstermin oder die 30-Tage-Regel eintreten.",
-          "Die 40-Euro-Pauschale gilt nur bei Entgeltforderungen zwischen Unternehmen."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst den Beginn des Zahlungsverzugs auf einer Zeitachse und berechnest Verzugszinsen und Pauschale mit dem aktuellen Basiszinssatz.",
+        "vorwissen_kurz": "Der Basiszinssatz ist ein veränderlicher Zinssatz, den die Bundesbank zum 1. Januar und 1. Juli bekannt gibt. Verzugszinsen werden als Prozentpunkte darüber angegeben.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wann der Verzug beginnt",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{par:bgb-286|§ 286 BGB}} kennt drei Wege in den Zahlungsverzug. Im Grundfall muss der Gläubiger nach Fälligkeit mahnen; der Verzug beginnt mit Zugang der Mahnung. Ist der Zahlungstermin nach dem Kalender bestimmt — „zahlbar bis 30. Juni“ —, beginnt der Verzug am Tag danach ohne Mahnung. Und bei Entgeltforderungen, also Geld für eine Lieferung oder Leistung, gerät der Schuldner spätestens 30 Tage nach Fälligkeit und Zugang der Rechnung in Verzug. Gegenüber Verbrauchern gilt diese 30-Tage-Regel nur, wenn die Rechnung ausdrücklich darauf hinweist.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Fall: Rechnung vom 2. Mai",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL schickt einem Geschäftskunden am 2. Mai eine Rechnung über 5.000 €, „zahlbar sofort“, ohne Datum und ohne Verzugshinweis. Sie geht am selben Tag zu. Der Kunde zahlt erst am 2. Juli.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Antwort",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fällig?",
+                  "ab 2. Mai",
+                  "„Sofort“ macht die Forderung fällig."
+                ]
+              },
+              {
+                "zellen": [
+                  "Kalendermäßig bestimmt?",
+                  "nein",
+                  "„Sofort“ nennt keinen Kalendertag."
+                ]
+              },
+              {
+                "zellen": [
+                  "Gemahnt?",
+                  "nein",
+                  "Keine Mahnung im Sachverhalt."
+                ]
+              },
+              {
+                "zellen": [
+                  "30-Tage-Regel?",
+                  "ja",
+                  "Geschäftskunde, Entgeltforderung, Rechnung zugegangen: Verzug ab dem 31. Tag nach Zugang, also ab 2. Juni."
+                ]
+              }
+            ],
+            "fazit": "Der Kunde ist ab dem 2. Juni im Zahlungsverzug. Bis zur Zahlung am 2. Juli sind das 30 Zinstage.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zwischen Unternehmen betragen die Verzugszinsen nach {{par:bgb-288|§ 288 BGB}} neun Prozentpunkte über dem Basiszinssatz. Seit 1. Juli 2026 liegt der Basiszinssatz bei 1,52 %. Der Verzugszins beträgt also 10,52 % pro Jahr. Für 30 Tage gerechnet, taggenau mit 365 Tagen im Jahr:",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Rechenschritt",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zinssatz",
+                  "1,52 % + 9 Prozentpunkte",
+                  "10,52 % p. a."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Jahreszins auf 5.000 €",
+                  "5.000 € × 10,52 %",
+                  "526,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinsen für 30 Tage",
+                  "526,00 € × 30 ÷ 365",
+                  "43,23 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Verzugspauschale",
+                  "Schuldner ist kein Verbraucher",
+                  "40,00 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe neben der Hauptforderung",
+                  "43,23 € + 40,00 €",
+                  "83,23 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Wäre der Kunde ein Verbraucher, läge der Zins bei 6,52 %, und die Pauschale entfiele.",
+            "id": "b2-t2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für einen Zeitraum, der über einen Stichtag (1. Januar oder 1. Juli) hinausreicht, wird mit dem jeweils geltenden Basiszinssatz getrennt gerechnet. Deshalb ist der Satz bei jeder Berechnung neu nachzuschlagen.",
+            "id": "b2-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b4"
+          }
         ],
-        "erklaerung": "Der Grundfall ist die Mahnung nach Fälligkeit. Daneben kann ein kalendermäßig bestimmtes Zahlungsdatum den Verzug ohne Mahnung auslösen. Die 30-Tage-Regel beginnt bei einer fälligen Entgeltforderung spätestens 30 Tage nach Fälligkeit und Zugang der Rechnung; gegenüber Verbrauchern ist der Hinweis in der Rechnung erforderlich. Die konkrete Zinshöhe hängt vom jeweils geltenden Basiszinssatz ab und muss bei aktuellen Aufgaben geprüft werden.",
-        "beispiele": [
-          "‚Zahlbar bis 30. Juni‘: Der Verzug kann am Folgetag ohne weitere Mahnung beginnen.",
-          "Bei einer sofort fälligen Rechnung an einen Geschäftskunden kann die 30-Tage-Regel auch ohne Hinweis in der Rechnung greifen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Warum die erste Mahnung nichts kostet",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im Grundfall setzt erst die Mahnung den Verzug in Gang. Die Kosten dieser ersten Mahnung entstehen also, bevor der Schuldner im Verzug ist. Sie sind deshalb in der Regel kein ersatzfähiger Verzugsschaden. Mahnkosten für weitere Mahnungen, Inkasso- oder Anwaltskosten nach Verzugseintritt kann der Gläubiger dagegen verlangen — bei Geschäftskunden wird die 40-€-Pauschale darauf angerechnet.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "grundlagen",
+            "titel": "Prozentpunkte und Prozent",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "„Neun Prozentpunkte über dem Basiszinssatz“ heißt: Die Zahlen werden addiert, 1,52 % + 9 = 10,52 %. „Neun Prozent über dem Basiszinssatz“ hieße dagegen 1,52 % × 1,09 = 1,66 %. Das wäre ein ganz anderer Wert. Das Gesetz meint Prozentpunkte.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Eine Rechnung über 5.000 € geht einem Geschäftskunden am 2. Mai zu und ist sofort fällig. Steht kein konkretes Zahlungsdatum und kein Hinweis auf Verzug in der Rechnung, beginnt der Verzug spätestens nach Ablauf der 30 Tage nach Fälligkeit und Zugang. Ab diesem Zeitpunkt werden die Verzugszinsen nach § 288 BGB und bei einem Geschäftskunden die 40-Euro-Pauschale geprüft. Für den genauen Eurobetrag muss der aktuelle Basiszinssatz eingesetzt werden.",
-        "typische_fehler": "Ohne Mahnung immer das Fehlen von Verzug annehmen oder ‚zahlbar sofort‘ mit einem kalendermäßig bestimmten Datum gleichsetzen. Außerdem wird die 40-Euro-Pauschale gegenüber Verbrauchern angesetzt oder der veränderliche Basiszinssatz als feste Zahl behandelt.",
         "verstaendnisfragen": [
-          "Welche drei Wege können zum Zahlungsverzug führen? Mahnung, kalendermäßige Bestimmung und 30-Tage-Regel.",
-          "Wovon hängt die konkrete Höhe der Verzugszinsen ab? Vom gesetzlichen Prozentsatz und dem jeweils aktuellen Basiszinssatz sowie davon, ob ein Verbraucher beteiligt ist."
+          {
+            "frage": "Eine Rechnung an einen Privatkunden ohne Hinweis auf die 30-Tage-Regel ist seit 45 Tagen offen. Ist der Kunde im Verzug?",
+            "antwort": "Nicht über die 30-Tage-Regel, denn gegenüber Verbrauchern greift sie nur mit Hinweis in der Rechnung. MAKEL muss mahnen. Mit Zugang der Mahnung beginnt der Verzug, sofern die übrigen Voraussetzungen vorliegen.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum unterscheidet das Gesetz beim Verzugszins zwischen Verbrauchern und Unternehmen?",
+            "antwort": "Unternehmen sollen ihre Geschäftspartner nicht als zinslosen Kredit nutzen. Der höhere Satz von neun Prozentpunkten soll schnelles Zahlen zwischen Unternehmen fördern. Verbraucher werden dagegen nicht mit dem höheren Satz belastet.",
+            "id": "b2-f2"
+          }
         ],
-        "pruefungsbezug": "Das Eintrittsdatum auf einer Zeitachse bestimmen und erst danach Zinsen und Pauschale prüfen. Bei dynamischen Werten den Prüfmarker beachten und keine veraltete Zahl einsetzen.",
-        "merksatz": "Erst den Beginn des Verzugs bestimmen, dann Zinsen, Pauschale und weiteren Schaden berechnen."
+        "quellen": [
+          {
+            "titel": "Deutsche Bundesbank: Basiszinssatz zum 1. Juli 2026",
+            "url": "https://www.bundesbank.de/de/presse/pressemitteilungen/bekanntgabe-des-basiszinssatzes-zum-1-juli-2026-anpassung-auf-1-52--941386",
+            "bezug": "Basiszinssatz 1,52 % ab 1.7.2026 (zuvor 1,27 %); gelesen am 28.10.2026"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Das kaufmännische Mahnwesen ist von einem gerichtlichen Mahnverfahren zu unterscheiden.",
-          "Ein gerichtlicher Titel ermöglicht anschließend die Zwangsvollstreckung."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst die Stufen vom kaufmännischen zum gerichtlichen Mahnverfahren, die Reaktionsmöglichkeiten des Schuldners und die Bedeutung der Verjährung.",
+        "vorwissen_kurz": "Ein Titel ist ein gerichtliches Dokument, aus dem man vollstrecken darf — etwa ein Urteil oder ein Vollstreckungsbescheid.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst kaufmännisch, dann gerichtlich",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das **kaufmännische** Mahnwesen ist Sache des Betriebs. Ob MAKEL eine freundliche Zahlungserinnerung, dann eine Mahnung und schließlich eine letzte Mahnung mit Fristsetzung schickt, entscheidet MAKEL selbst. Rechtlich genügt eine einzige Mahnung, um den Verzug auszulösen. Mehrere Stufen haben aber einen Sinn: Viele Kunden haben eine Rechnung schlicht übersehen, und ein höflicher Ton erhält die Geschäftsbeziehung.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zahlt der Kunde trotzdem nicht, braucht MAKEL einen Titel, um vollstrecken zu dürfen. Den Weg über eine Klage kann man sich oft sparen: Das **gerichtliche Mahnverfahren** ist schneller und günstiger, weil das Gericht zunächst nur die Form prüft.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Fall: 8.000 € seit Februar offen",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datum",
+              "Schritt",
+              "Wirkung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "15. Februar",
+                  "Rechnung, zahlbar bis 1. März",
+                  "Verzug ab 2. März ohne Mahnung."
+                ]
+              },
+              {
+                "zellen": [
+                  "März/April",
+                  "Zahlungserinnerung, Mahnung, letzte Mahnung",
+                  "Kaufmännisches Mahnwesen; der Kunde reagiert nicht."
+                ]
+              },
+              {
+                "zellen": [
+                  "10. Mai",
+                  "Antrag auf Mahnbescheid beim zentralen Mahngericht",
+                  "Verjährung wird gehemmt."
+                ]
+              },
+              {
+                "zellen": [
+                  "20. Mai",
+                  "Zustellung des Mahnbescheids",
+                  "Kunde kann widersprechen; regelmäßig wird eine Frist von zwei Wochen genannt."
+                ]
+              },
+              {
+                "zellen": [
+                  "10. Juni",
+                  "Kein Widerspruch; Antrag auf Vollstreckungsbescheid",
+                  "Vollstreckungsbescheid wirkt wie ein Urteil."
+                ]
+              },
+              {
+                "zellen": [
+                  "danach",
+                  "Zwangsvollstreckung durch Gerichtsvollzieher, z. B. Kontopfändung",
+                  "MAKEL bekommt Geld, wenn beim Kunden etwas zu holen ist."
+                ]
+              }
+            ],
+            "fazit": "Jede Stufe gibt dem Schuldner eine Chance zu reagieren. Erst wenn er sie nicht nutzt, wird vollstreckt.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Widerspricht der Kunde dem Mahnbescheid, endet das vereinfachte Verfahren. Die Sache geht dann in ein normales Gerichtsverfahren über, in dem MAKEL seine Forderung begründen und beweisen muss. Ein Widerspruch ist sogar noch nach Ablauf der zwei Wochen möglich, solange der Vollstreckungsbescheid noch nicht erlassen ist. Gegen den Vollstreckungsbescheid kann der Kunde binnen zwei Wochen Einspruch einlegen; danach steht der Titel fest.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Verjährung: Wer zu lange wartet, verliert",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Forderung bleibt nicht ewig durchsetzbar. Nach {{par:bgb-195|§ 195 BGB}} verjährt sie in drei Jahren. Die Frist beginnt nach {{par:bgb-199|§ 199 BGB}} am Schluss des Jahres, in dem die Forderung entstanden ist und der Gläubiger davon wusste. Für die Rechnung vom 15. Februar 2026 läuft die Frist also ab dem 31. Dezember 2026 und endet mit Ablauf des 31. Dezember 2029. Danach kann der Kunde die Zahlung verweigern. Eine bloße Mahnung hält die Verjährung nicht auf, der Antrag auf einen Mahnbescheid schon.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "ablauf": [
-          "Forderung fällig stellen und kaufmännisch mahnen.",
-          "Bei ausbleibender Zahlung Mahnbescheid beantragen.",
-          "Widerspruchsfrist abwarten; bei Ausbleiben Vollstreckungsbescheid beantragen.",
-          "Nach einem vollstreckbaren Titel die Zwangsvollstreckung einleiten."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Kulanz oder Mahnbescheid?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein langjähriger Kunde zahlt eine Rechnung über 900 € zwei Wochen zu spät, weil sein Hauptkunde ausgefallen ist. Rechtlich könnte MAKEL Zinsen und Pauschale verlangen. Wirtschaftlich kann es klüger sein, darauf zu verzichten oder eine Ratenzahlung zu vereinbaren, wenn das Ausfallrisiko gering ist und die Geschäftsbeziehung viel wert ist. Bei einem neuen Kunden, der auf Mahnungen nicht reagiert, spricht dagegen viel für den schnellen Mahnbescheid, bevor auch andere Gläubiger zugreifen. Kulanz ist eine Entscheidung, kein Versehen — sie sollte dokumentiert werden.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Ein Titel gegen einen Mittellosen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Vollstreckungsbescheid ist 30 Jahre lang vollstreckbar. Das hilft aber nur, wenn beim Schuldner etwas zu holen ist. Ist er zahlungsunfähig, bleibt der Titel zunächst Papier. Im Insolvenzverfahren meldet MAKEL die Forderung beim Insolvenzverwalter an und erhält meist nur einen kleinen Teil. Ware unter Eigentumsvorbehalt gehört dagegen nicht zur Insolvenzmasse — ein Grund mehr, ihn zu vereinbaren.",
+                "id": "b3-d2-p1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "erklaerung": "Eine kaufmännische Mahnung ist eine betriebliche Erinnerung und kann individuell gestaltet werden. Das gerichtliche Mahnverfahren ist dagegen ein formaler Weg: Mahnbescheid, mögliche zweiwöchige Reaktion, Vollstreckungsbescheid und schließlich Zwangsvollstreckung. Das Gericht prüft beim Mahnbescheid zunächst nur die Formalien; bei Widerspruch wird die Forderung im streitigen Verfahren inhaltlich geprüft.",
-        "beispiele": [
-          "Gegen einen zugestellten Mahnbescheid kann der Schuldner innerhalb von zwei Wochen Widerspruch einlegen.",
-          "Nach einem Vollstreckungsbescheid kann bei ausbleibender Zahlung zum Beispiel eine Konto-, Lohn- oder Sachpfändung folgen."
-        ],
-        "fallbeispiel": "Eine Forderung über 8.000 € bleibt trotz kaufmännischer Mahnung offen. Der Gläubiger beantragt den Mahnbescheid. Widerspricht der Schuldner, endet der vereinfachte Mahnweg und die Forderung wird im Streitverfahren geprüft. Widerspricht er nicht, kann der Vollstreckungsbescheid beantragt werden. Bleibt auch danach die Zahlung aus, ist die Zwangsvollstreckung möglich.",
-        "typische_fehler": "Mahnbescheid und Vollstreckungsbescheid werden vertauscht oder angenommen, das Gericht prüfe beim ersten Schritt bereits die materielle Richtigkeit der Forderung. Auch die zweiwöchigen Reaktionsfristen werden übersehen.",
         "verstaendnisfragen": [
-          "Was passiert bei Widerspruch gegen den Mahnbescheid? Das Verfahren geht in ein streitiges Verfahren über.",
-          "Welche Stufe erlaubt die Zwangsvollstreckung? Der Vollstreckungsbescheid beziehungsweise der daraus folgende vollstreckbare Titel."
-        ],
-        "pruefungsbezug": "Die vier Stufen in Reihenfolge nennen und jeweils die mögliche Reaktion des Schuldners ergänzen: Mahnbescheid, Widerspruch, Vollstreckungsbescheid, Einspruch, Zwangsvollstreckung.",
-        "merksatz": "Mahnen, Mahnbescheid, Vollstreckungsbescheid, vollstrecken — jede Stufe hat eigene Fristen und Folgen."
+          {
+            "frage": "Der Kunde widerspricht dem Mahnbescheid ohne Begründung. Hat MAKEL damit verloren?",
+            "antwort": "Nein. Der Widerspruch beendet nur das vereinfachte Mahnverfahren. Die Forderung wird nun im streitigen Verfahren geprüft. Ist sie berechtigt und kann MAKEL sie belegen, bekommt MAKEL ein Urteil und kann daraus vollstrecken.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Eine Forderung entstand im Juni 2023. MAKEL will sie im November 2026 einklagen. Ist sie verjährt?",
+            "antwort": "Nein, noch nicht. Die Frist begann mit Ablauf des 31. Dezember 2023 und endet mit Ablauf des 31. Dezember 2026. MAKEL sollte aber vor dem Jahresende handeln, etwa den Mahnbescheid beantragen, um die Verjährung zu hemmen.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

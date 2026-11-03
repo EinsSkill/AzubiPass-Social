@@ -6,86 +6,431 @@
   "untertitel": "Gesund arbeiten, mitreden, dich selbst organisieren — und MAKEL so vorstellen, dass Daten und Rechte anderer geschützt bleiben.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Arbeitsschutz ist Pflicht des Arbeitgebers, Mitwirkung aber Aufgabe aller.",
-          "Ergonomie bedeutet, die Arbeit an den Menschen anzupassen."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst Gefährdungen an Arbeitsplätzen bei MAKEL Studio, ordnest Schutzmaßnahmen nach ihrer Wirksamkeit und begründest einen eigenen Verbesserungsvorschlag.",
+        "vorwissen_kurz": "Gesund zu bleiben ist nicht nur deine Privatsache. Arbeitgeber und Beschäftigte haben dafür klare Pflichten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Arbeit an den Menschen anpassen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach {{par:arbschg-5|§ 5 ArbSchG}} muss MAKEL Studio für jeden Arbeitsplatz eine {{begriff:gefaehrdungsbeurteilung|Gefährdungsbeurteilung}} durchführen: Gefährdungen ermitteln, bewerten, Maßnahmen festlegen und ihre Wirksamkeit prüfen. Dazu gehören auch psychische Belastungen wie Zeitdruck. {{begriff:ergonomie|Ergonomie}} heißt, die Arbeit an den Menschen anzupassen, nicht umgekehrt. Du als Beschäftigter musst Schutzvorgaben befolgen, Schutzausrüstung tragen und Mängel melden, und du kannst Verbesserungen vorschlagen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Schutzmaßnahmen in der richtigen Reihenfolge",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Grundsatz",
+              "Beispiel in der Veredelung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1 technisch",
+                  "Gefahr an der Quelle beseitigen oder abschirmen",
+                  "Absaugung an der Druckmaschine, Schutzgitter am Trockner"
+                ]
+              },
+              {
+                "zellen": [
+                  "2 organisatorisch",
+                  "Ablauf so gestalten, dass weniger Menschen der Gefahr ausgesetzt sind",
+                  "Trocknerbereich nur für unterwiesene Beschäftigte"
+                ]
+              },
+              {
+                "zellen": [
+                  "3 personenbezogen",
+                  "Schutzausrüstung und Unterweisung",
+                  "Hitzeschutzhandschuhe, jährliche Unterweisung"
+                ]
+              }
+            ],
+            "fazit": "Technische Lösungen kommen vor organisatorischen, organisatorische vor persönlicher Schutzausrüstung. Handschuhe allein ersetzen kein Schutzgitter.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Diese Reihenfolge heißt auch **TOP-Prinzip** und hilft, eigene Vorschläge zu begründen. Luca bemerkt im Versand, dass schwere Kartons vom Boden gehoben werden müssen. Statt nur „besser heben\" vorzuschlagen, regt er einen Rollwagen in Arbeitshöhe an: eine technische Lösung, die die Belastung an der Quelle verringert. Mit dem Hinweis auf die Gefährdungsbeurteilung und die Zahl der Hebevorgänge pro Tag wird aus dem Wunsch ein begründeter Vorschlag.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Nach § 5 ArbSchG muss der Arbeitgeber die Gefährdungen jedes Arbeitsplatzes beurteilen und Schutzmaßnahmen festlegen. Am Bildschirmarbeitsplatz geht es um Sitzhöhe, Bildschirmabstand, blendfreie Beleuchtung und regelmäßige Unterbrechungen. In der Veredelung kommen andere Gefährdungen hinzu: heiße Trockner, bewegte Maschinenteile, Dämpfe von Druckfarben, langes Stehen. Beschäftigte müssen Schutzvorgaben befolgen, Mängel melden und Schutzausrüstung bestimmungsgemäß nutzen. Wer Verbesserungen vorschlägt, hilft dem Betrieb und sich selbst.",
-        "beispiele": [
-          "Im Büro: Der Bildschirm steht vor dem Fenster und blendet. Besser ist eine Aufstellung quer zum Fenster.",
-          "In der Veredelung: Ein Trockner hat keinen Hinweis auf heiße Flächen. Ein Warnschild und eine Unterweisung verringern das Risiko."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Bildschirmarbeit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Bildschirmarbeitsplätze gelten die Anforderungen der Arbeitsstättenverordnung: ausreichend Platz, blendfreie Beleuchtung, verstellbare Arbeitsmittel und Unterbrechungen der Bildschirmarbeit. Wer regelmäßig am Bildschirm arbeitet, hat Anspruch auf eine Angebotsvorsorge zum Sehen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Du sitzt an einem Arbeitsplatz im Vertrieb, der Stuhl lässt sich nicht verstellen, und der Laptop steht ohne externen Bildschirm flach auf dem Tisch. Nach zwei Stunden hast du Nackenschmerzen. Du schlägst Marlene Voß vor: verstellbarer Stuhl, externer Bildschirm auf Augenhöhe, separate Tastatur. Begründung: Die Haltung verursacht Beschwerden; die Maßnahmen sind günstig und folgen den Anforderungen an Bildschirmarbeitsplätze.",
-        "typische_fehler": "Ergonomie wird als Komfortwunsch abgetan. Es geht um die Vermeidung dauerhafter gesundheitlicher Schäden — und damit auch um weniger Ausfälle.",
         "verstaendnisfragen": [
-          "Wer muss die Gefährdungsbeurteilung durchführen? Der Arbeitgeber.",
-          "Was ist deine Pflicht, wenn du einen Mangel an einer Maschine bemerkst? Ihn sofort der zuständigen Person melden und die Schutzvorgaben einhalten."
-        ],
-        "pruefungsbezug": "Vorschläge immer mit Gefährdung und Wirkung begründen: Was ist das Problem, welche Maßnahme hilft, warum?",
-        "merksatz": "Der Arbeitgeber beurteilt Gefährdungen und legt Schutzmaßnahmen fest; Beschäftigte befolgen sie, melden Mängel und können Verbesserungen vorschlagen."
+          {
+            "frage": "Warum kommt eine technische Schutzmaßnahme vor persönlicher Schutzausrüstung?",
+            "antwort": "Weil sie die Gefahr an der Quelle verringert und für alle wirkt, unabhängig davon, ob jemand die Ausrüstung richtig trägt.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welche Pflichten haben Beschäftigte im Arbeitsschutz?",
+            "antwort": "Schutzvorgaben befolgen, Schutzausrüstung bestimmungsgemäß verwenden und Mängel oder Gefahren melden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Beschäftigte können über gewählte Vertretungen mitreden.",
-          "Das Betriebsverfassungsgesetz (BetrVG) regelt Betriebsrat und Jugend- und Auszubildendenvertretung."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest betriebliche Beteiligungswege wie Betriebsrat, Jugend- und Auszubildendenvertretung und Vorschlagswesen zu, prüfst die Voraussetzungen einer JAV und unterscheidest Information, Beratung und Mitbestimmung.",
+        "vorwissen_kurz": "Wer etwas verbessern will, braucht einen Weg, gehört zu werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer die Beschäftigten vertritt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:betriebsrat|Betriebsrat}} vertritt die Interessen der Beschäftigten gegenüber dem Arbeitgeber. Er kann in Betrieben mit mindestens fünf ständigen wahlberechtigten Arbeitnehmern gewählt werden. Für junge Beschäftigte gibt es die {{begriff:jav|Jugend- und Auszubildendenvertretung}}, aber nur, wenn ein Betriebsrat besteht und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende im Betrieb sind ({{par:betrvg-60|§ 60 BetrVG}}). Die Rechte des Betriebsrats reichen von der Information über die Beratung bis zur echten Mitbestimmung.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welcher Weg passt zu Lucas Anliegen?",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Anliegen",
+              "Weg",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rollwagen für den Versand",
+                  "direkt bei Jonas Weidner oder über das Vorschlagswesen",
+                  "Verbesserung am eigenen Arbeitsplatz"
+                ]
+              },
+              {
+                "zellen": [
+                  "Pausenregelung soll geändert werden",
+                  "Betriebsrat",
+                  "Beginn und Ende der Arbeitszeit und Pausen sind mitbestimmungspflichtig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausbildungsinhalte fehlen seit Monaten",
+                  "Sandra Koslowski, dann Betriebsrat oder IHK",
+                  "Ausbildungsfrage, ohne JAV übernimmt der Betriebsrat"
+                ]
+              },
+              {
+                "zellen": [
+                  "Neue Software zur Zeiterfassung",
+                  "Betriebsrat",
+                  "technische Überwachungseinrichtung, Mitbestimmung"
+                ]
+              }
+            ],
+            "fazit": "Viele Anliegen lassen sich direkt klären. Wo Regeln für alle betroffen sind, ist der Betriebsrat zuständig.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mitreden bedeutet auch, die richtigen Wege zu kennen. Ein Vorschlag, der direkt bei der Abteilungsleitung landet, ist oft schneller umgesetzt als einer, der über mehrere Stellen läuft. Betrifft er aber Arbeitszeit, Pausen oder technische Überwachung, darf der Arbeitgeber ihn ohne Zustimmung des Betriebsrats nicht einführen. Wird bei MAKEL Studio später eine JAV gewählt, weil die Zahl der Auszubildenden steigt, hat sie ein eigenes Antragsrecht über den Betriebsrat.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Ein Betriebsrat kann in Betrieben mit in der Regel mindestens fünf ständigen wahlberechtigten Arbeitnehmern, von denen drei wählbar sind, gewählt werden (§ 1 BetrVG). Eine Jugend- und Auszubildendenvertretung (JAV) wird nach § 60 BetrVG gewählt, wenn es einen Betriebsrat gibt und in der Regel mindestens fünf Beschäftigte unter 18 Jahren oder Auszubildende (gleich welchen Alters) tätig sind. Die JAV vertritt die besonderen Interessen junger Beschäftigter, handelt aber über den Betriebsrat. Die Beteiligungsrechte sind abgestuft: Information, Beratung beziehungsweise Anhörung und — am stärksten — Mitbestimmung, bei der der Arbeitgeber ohne Zustimmung nicht handeln darf.",
-        "beispiele": [
-          "Ein Betrieb mit Betriebsrat, sechs Auszubildenden und zwei Jugendlichen: Die Voraussetzungen für eine JAV liegen vor.",
-          "Bei Fragen der betrieblichen Ordnung und der Arbeitszeitverteilung hat der Betriebsrat ein Mitbestimmungsrecht."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Betriebliches Vorschlagswesen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Viele Unternehmen belohnen Verbesserungsvorschläge, die Kosten sparen oder die Arbeit sicherer machen. Die Grundsätze des Vorschlagswesens unterliegen der Mitbestimmung des Betriebsrats (§ 87 Abs. 1 Nr. 12 BetrVG).",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Bei MAKEL arbeiten 92 Beschäftigte, davon drei Auszubildende. Angenommen, MAKEL hat einen Betriebsrat: Eine JAV wird trotzdem nicht gewählt, weil weniger als fünf Beschäftigte unter 18 Jahren oder Auszubildende (gleich welchen Alters) im Betrieb sind. Die drei Auszubildenden wenden sich mit ihren Anliegen direkt an den Betriebsrat — oder an Sandra Koslowski als Ausbildungsbegleitung.",
-        "typische_fehler": "Man glaubt, jeder Betrieb mit Auszubildenden habe automatisch eine JAV. Es braucht einen Betriebsrat und die Mindestzahl junger Beschäftigter.",
         "verstaendnisfragen": [
-          "Unter welchen Voraussetzungen wird eine JAV gewählt? Es besteht ein Betriebsrat, und in der Regel sind mindestens fünf Beschäftigte unter 18 Jahren oder Auszubildende (gleich welchen Alters) tätig.",
-          "Was bedeutet Mitbestimmung? Der Arbeitgeber darf eine Maßnahme nur mit Zustimmung des Betriebsrats durchführen."
-        ],
-        "pruefungsbezug": "In JAV-Fällen beide Voraussetzungen prüfen: Gibt es einen Betriebsrat? Ist die Mindestzahl erreicht?",
-        "merksatz": "Eine JAV setzt einen Betriebsrat und in der Regel mindestens fünf Beschäftigte unter 18 oder Auszubildende (ohne Altersgrenze) voraus; sie wirkt über den Betriebsrat."
+          {
+            "frage": "MAKEL Studio hat drei Auszubildende und keine weiteren Jugendlichen. Wird eine JAV gewählt?",
+            "antwort": "Nein. Es sind weniger als fünf Beschäftigte unter 18 oder Auszubildende. Ansprechpartner bleibt der Betriebsrat.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was bedeutet Mitbestimmung im engeren Sinn?",
+            "antwort": "Der Arbeitgeber kann eine Maßnahme ohne Zustimmung des Betriebsrats nicht umsetzen; bei fehlender Einigung entscheidet die Einigungsstelle.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Wer viele Aufgaben gleichzeitig hat, muss Prioritäten setzen.",
-          "Zusammenarbeit gelingt besser mit klaren Absprachen und sachlicher Rückmeldung."
+        "darstellung": "vollfassung",
+        "ziel": "Du priorisierst Aufgaben mit der Eisenhower-Matrix, gibst sachliches Feedback und erstellst einen eigenen Entwicklungsplan mit Ziel, Maßnahme, Termin und Rückmeldung, dessen Erfolg du an Verhalten oder Ergebnis prüfst.",
+        "vorwissen_kurz": "Lernen hört mit der Ausbildung nicht auf. Wer sich selbst organisiert, kommt weiter.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Prioritäten setzen und Rückmeldung geben",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:eisenhower|Eisenhower-Matrix}} ordnet Aufgaben nach Wichtigkeit und Dringlichkeit: wichtig und dringend sofort erledigen, wichtig und nicht dringend terminieren, dringend und nicht wichtig delegieren oder kurz erledigen, weder noch streichen. Die {{begriff:alpen-methode|ALPEN-Methode}} hilft, einen Tag zu planen: Aufgaben notieren, Länge schätzen, Pufferzeit einplanen, Entscheidungen treffen, Nachkontrolle. In der Zusammenarbeit zählt gutes {{begriff:feedback|Feedback}}: beobachtetes Verhalten, Wirkung, Wunsch.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lucas Entwicklungsplan für die nächsten drei Monate",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ausgangslage",
+                  "In der Buchhaltung braucht Luca für zehn Eingangsrechnungen fast zwei Stunden und übersieht Skontofristen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Ziel",
+                  "bis Ende März zehn Eingangsrechnungen in einer Stunde prüfen, ohne eine Skontofrist zu verpassen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahmen",
+                  "Prüfschema mit Sandra Koslowski erstellen; täglich fünf Rechnungen nach Schema; Fristen im Kalender markieren"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termin für Zwischenstand",
+                  "Mitte Februar, kurzes Gespräch mit Sandra Koslowski"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückmeldung",
+                  "Sandra prüft stichprobenweise zehn Rechnungen; Luca notiert seine Zeit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfolgskontrolle",
+                  "Zeit je zehn Rechnungen und Zahl verpasster Skontofristen im März"
+                ]
+              }
+            ],
+            "fazit": "Der Plan beschreibt ein Verhalten, das man beobachten kann, und legt fest, wann und wie geprüft wird. So wird aus „Ich will besser werden\" ein überprüfbares Vorhaben.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Lebenslanges Lernen** heißt, sich immer wieder neue Kompetenzen anzueignen, weil sich Arbeit, Technik und Anforderungen verändern. Es beginnt in der Ausbildung mit der Gewohnheit, den eigenen Stand ehrlich einzuschätzen und gezielt zu verbessern. Entscheidend ist die Erfolgskontrolle: Nicht das Gefühl „Ich kann das jetzt\" zählt, sondern ob sich Verhalten oder Ergebnis messbar verändert haben. Hat Luca im März keine Skontofrist verpasst, aber noch 80 Minuten gebraucht, ist ein Teilziel erreicht, und der Plan wird angepasst.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Eisenhower-Matrix ordnet Aufgaben nach Wichtigkeit und Dringlichkeit: wichtig und dringend sofort erledigen, wichtig und nicht dringend terminieren, dringend und nicht wichtig delegieren oder kurz erledigen, weder noch streichen. Die ALPEN-Methode plant einen Tag in fünf Schritten und lässt bewusst Puffer. In der Zusammenarbeit helfen klare Absprachen (Wer macht was bis wann?) und Feedback, das beobachtbares Verhalten beschreibt statt Personen zu bewerten.",
-        "beispiele": [
-          "‚Rechnung eines Lieferanten mit Skontofrist heute prüfen‘ ist wichtig und dringend.",
-          "Statt ‚Du bist unzuverlässig‘ besser: ‚Der Lieferschein lag gestern erst um 14 Uhr bei mir, abgesprochen war 10 Uhr. Dadurch konnte ich die Tour nicht packen.‘"
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn der Plan nicht aufgeht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Erreicht man ein Ziel nicht, ist das kein Versagen, sondern eine Information. Vielleicht war das Ziel zu ehrgeizig, die Maßnahme ungeeignet oder die Zeit zu knapp. In der Rückmeldung wird das ehrlich besprochen und ein neuer Plan vereinbart.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Am Montagmorgen liegen vier Aufgaben vor dir: (1) Eingangsrechnung mit Skontofrist heute prüfen, (2) Präsentation für neue Azubis in zwei Wochen vorbereiten, (3) eine Mail mit einer Rückfrage zur Kantinenumfrage beantworten, (4) alte Werbeprospekte sortieren, die niemand mehr nutzt. Einordnung: (1) sofort, (2) heute einen Termin dafür blocken, (3) kurz erledigen, (4) mit der Ausbilderin klären, ob es entfallen kann.",
-        "typische_fehler": "Dringendes verdrängt dauerhaft Wichtiges. Wer die Präsentation nie terminiert, macht sie am Ende in einer Nacht.",
         "verstaendnisfragen": [
-          "Was passiert in der Eisenhower-Matrix mit wichtigen, nicht dringenden Aufgaben? Sie werden terminiert, also fest eingeplant.",
-          "Woran erkennt man gutes Feedback? Es beschreibt beobachtbares Verhalten und seine Wirkung, ohne die Person zu bewerten."
-        ],
-        "pruefungsbezug": "Bei Priorisierungsaufgaben jede Einordnung kurz mit Wichtigkeit und Dringlichkeit begründen.",
-        "merksatz": "Wichtig und dringend sofort, wichtig und nicht dringend terminieren — und Feedback beschreibt Verhalten und Wirkung statt die Person."
+          {
+            "frage": "Wohin gehört in der Eisenhower-Matrix eine wichtige, aber nicht dringende Aufgabe?",
+            "antwort": "Sie wird terminiert, also fest eingeplant, damit sie nicht dringend wird.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Woran erkennst du, ob ein Entwicklungsziel erreicht ist?",
+            "antwort": "An einem beobachtbaren Verhalten oder Ergebnis, das vorher festgelegt wurde, etwa Zeit je Aufgabe oder Zahl der Fehler.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Präsentationen sollen ihre Zielgruppe erreichen.",
-          "Auch in internen Präsentationen gelten Datenschutz und Urheberrecht."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst eine Unternehmensvorstellung für eine bestimmte Zielgruppe mit wenigen Kernbotschaften und prüfst ihre Inhalte auf Datensparsamkeit und Nutzungsrechte.",
+        "vorwissen_kurz": "Am ersten Tag der neuen Auszubildenden sollst du MAKEL Studio in drei Minuten vorstellen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Für wen, was und wie",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine gute Unternehmensvorstellung beginnt mit der **Zielgruppe**: Was wissen die Zuhörenden schon, was brauchen sie? Daraus ergeben sich wenige **Kernbotschaften** und ein klarer Zeitrahmen. Für die Inhalte gelten rechtliche Regeln. Nach {{par:dsgvo-5|Art. 5 DSGVO}} dürfen personenbezogene Daten nur verwendet werden, soweit sie für den Zweck erforderlich sind ({{begriff:datensparsamkeit|Datensparsamkeit}}). Bilder, Texte und Grafiken anderer sind durch das {{begriff:urheberrecht|Urheberrecht}} geschützt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Minuten für neue Auszubildende",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Minute",
+              "Kernbotschaft",
+              "Material"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Was MAKEL Studio anbietet und was im Haus entsteht: Muster und Veredelung; die Serie fertigt ein Lohnfertiger",
+                  "eigene Fotos aus Studio und Veredelung"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Welche Abteilungen ihr durchlauft und wer Ansprechperson ist",
+                  "Organigramm mit dienstlichen Kontaktwegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Wie Berufsschule, Ausbildungsnachweis und Prüfung zusammenhängen, dazu ein Tipp aus dem eigenen ersten Jahr",
+                  "Zeitstrahl, selbst erstellt"
+                ]
+              }
+            ],
+            "fazit": "Drei Kernbotschaften passen in drei Minuten. Alle Materialien sind selbst erstellt oder dienstlich freigegeben.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Datensparsamkeit gilt auch intern. Private Handynummern, Geburtstage oder Fotos von Kolleginnen ohne deren Einverständnis gehören nicht in eine Präsentation, auch wenn sie nur im Betrieb gezeigt wird. Für Fotos aus dem Internet braucht man ein Nutzungsrecht; ein Bild ist nicht frei verwendbar, nur weil es in einer Suchmaschine auftaucht. Eigene Fotos von Arbeitsplätzen ohne erkennbare Personen sind die einfachste Lösung.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Eine gute Unternehmensvorstellung beginnt mit der Zielgruppe: Was müssen neue Auszubildende wissen, was ist für sie neu? Daraus folgen wenige Kernbotschaften, ein roter Faden und ein Zeitrahmen. Bei den Inhalten gilt Datensparsamkeit: Private Telefonnummern oder Privatadressen von Beschäftigten gehören nicht in eine Präsentation, wenn sie für den Zweck nicht erforderlich sind und keine Rechtsgrundlage besteht. Fremde Fotos, Grafiken und Texte dürfen nur genutzt werden, wenn die Nutzungsrechte geklärt sind; sonst eigenes oder lizenziertes Material verwenden.",
-        "beispiele": [
-          "Statt privater Handynummern: die Durchwahl der Abteilung oder ein Funktionspostfach.",
-          "Statt eines Fotos aus der Bildersuche: ein selbst gemachtes Foto der Veredelung, bei dem abgebildete Personen einverstanden sind."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Fotos von Beschäftigten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Fotos, auf denen Beschäftigte erkennbar sind, braucht der Arbeitgeber in der Regel eine Einwilligung, die freiwillig erteilt und widerrufen werden kann. Im Arbeitsverhältnis ist die Freiwilligkeit besonders zu prüfen, deshalb wird die Einwilligung schriftlich oder elektronisch dokumentiert.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "In einem Entwurf für die Azubi-Präsentation stehen die Aufgaben der Abteilungen, eine Folie mit privaten Handynummern aller Ansprechpersonen und ein Hoodie-Foto aus dem Internet. Du behältst die Abteilungsaufgaben, ersetzt die privaten Nummern durch dienstliche Kontaktwege und tauschst das Foto gegen ein eigenes Bild aus dem MAKEL-Archiv, dessen Nutzung geklärt ist.",
-        "typische_fehler": "Interne Präsentationen werden als datenschutzfreier Raum gesehen. Auch intern gilt: nur erforderliche personenbezogene Daten, nur Material mit geklärten Rechten.",
         "verstaendnisfragen": [
-          "Warum gehören private Telefonnummern nicht in eine Unternehmensvorstellung? Sie sind personenbezogene Daten, die für den Zweck nicht erforderlich sind.",
-          "Was tust du mit einem Foto, dessen Nutzungsrechte ungeklärt sind? Die Rechte klären oder es durch eigenes beziehungsweise lizenziertes Material ersetzen."
-        ],
-        "pruefungsbezug": "Bei Präsentationsfällen zwei Fragen stellen: Passt der Inhalt zur Zielgruppe? Sind Daten und Bilder rechtlich in Ordnung?",
-        "merksatz": "Eine Präsentation richtet sich nach der Zielgruppe und nutzt nur erforderliche personenbezogene Daten und Material mit geklärten Nutzungsrechten."
+          {
+            "frage": "Darf eine interne Präsentation private Handynummern der Ansprechpersonen enthalten?",
+            "antwort": "Nein. Sie sind für den Zweck nicht erforderlich. Dienstliche Kontaktwege genügen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Darfst du ein Foto aus der Internetsuche in die Präsentation übernehmen?",
+            "antwort": "Nur, wenn du ein Nutzungsrecht hast. Sonst eigenes oder lizenziertes Material verwenden.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

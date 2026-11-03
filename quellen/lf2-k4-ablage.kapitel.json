@@ -6,66 +6,493 @@
   "untertitel": "Ablegen kann jeder. Wiederfinden ist die Kunst.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ablage soll Vorgänge geordnet und wiederauffindbar halten.",
-          "Ein Ordnungssystem funktioniert nur, wenn alle es gleich anwenden."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für verschiedene Unterlagen ein passendes Ordnungssystem, kombinierst Systeme zu einer festen Ablageordnung und prüfst sie am Vertretungsfall.",
+        "vorwissen_kurz": "Eine Ablage ist dann gut, wenn auch andere einen Vorgang schnell finden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ordnen für andere",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer ablegt, denkt meist an sich selbst. Die eigentliche Probe kommt aber, wenn jemand anderes etwas sucht: die Vertretung im Urlaub, die neue Kollegin, die Steuerprüferin. Deshalb braucht eine {{begriff:registratur|Registratur}} feste, schriftlich vereinbarte Regeln, nach welchem Merkmal sortiert wird und in welcher Reihenfolge.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Ablageplan für den Vertrieb",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ebene",
+              "Ordnungssystem",
+              "Beispiel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "geografisch nach Vertriebsgebiet",
+                  "Nord, Süd, West, Ost"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "alphabetisch nach Kunde (Firmenname ohne Rechtsform, Umlaute wie ae, oe, ue)",
+                  "„Modehaus Becker“ unter M"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "sachlich nach Vorgangsart",
+                  "Angebote, Aufträge, Reklamationen"
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "chronologisch, neueste oben",
+                  "Angebot vom 2.11. vor dem vom 14.10."
+                ]
+              }
+            ],
+            "fazit": "Lea findet die Reklamation von Modehaus Becker aus dem Gebiet West in vier Schritten — und ihre Vertretung auch, weil die Regeln im Ablageplan stehen.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Die fünf Grundsysteme sind alphabetisch, numerisch, chronologisch, sachlich und geografisch. In der Praxis werden sie kombiniert, zum Beispiel sachlich, darin alphabetisch und darin chronologisch. Vor dem Ablegen wird ausgesondert: Entwürfe und Mehrfachkopien gehören nicht ohne Zweck in die Registratur. Der Prüfstein lautet, ob eine Vertretung den Vorgang ohne Rückfrage findet.",
-        "beispiele": [
-          "Kundenakten können zunächst sachlich nach Vorgangsart und innerhalb der Gruppe alphabetisch nach Firmennamen geordnet werden.",
-          "Eingehende Vorgänge lassen sich chronologisch nach Datum oder numerisch nach einer laufenden Vorgangsnummer ablegen; entscheidend ist die schriftlich festgelegte Regel."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Aktenplan und Aktenzeichen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Größere Betriebe und Behörden nutzen einen Aktenplan: ein Verzeichnis aller Sachgebiete mit Nummern, etwa 3 für Vertrieb, 3.2 für Reklamationen. Jede Akte erhält daraus ein Aktenzeichen. Das verbindet das sachliche System mit dem numerischen und macht Ablagen auch über Abteilungen hinweg einheitlich.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "In einem Team sortiert eine Person nach Firmenname, eine zweite nach Ansprechpartner und eine dritte nach Projekt. Bei einer Vertretung ist ein Vorgang nicht auffindbar. Die Lösung ist ein schriftlicher Ablageplan mit einem führenden System und festgelegten Unterteilungen. Danach werden Entwürfe und Mehrfachkopien ausgesondert und die Auffindbarkeit mit einem Vertretungstest geprüft.",
-        "typische_fehler": "Ordnung wird mit persönlicher Gewohnheit verwechselt. Außerdem wird alles abgelegt, obwohl Entwürfe und Mehrfachkopien ausgesondert werden sollten.",
         "verstaendnisfragen": [
-          "Welche fünf Grundsysteme gibt es? Alphabetisch, numerisch, chronologisch, sachlich und geografisch.",
-          "Woran wird eine gute Ablage geprüft? Daran, ob eine Vertretung den Vorgang ohne Rückfrage findet."
-        ],
-        "pruefungsbezug": "Nenne bei einer Ablageaufgabe das Grundsystem, mögliche Kombinationen und die Notwendigkeit einer schriftlichen Regel.",
-        "merksatz": "Die beste Ablage ist nicht die schönste, sondern die, in der eine Vertretung sofort findet, was sie braucht."
+          {
+            "frage": "Warum sortiert der Ablageplan nach Firmenname ohne Rechtsform?",
+            "antwort": "Sonst stünde „GmbH Becker“ und „Becker GmbH“ unterschiedlich oder alle GmbHs unter G. Eine feste Regel sorgt dafür, dass jede Person dieselbe Stelle wählt.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Für Rechnungen eignet sich welches System am besten?",
+            "antwort": "Ein numerisches nach Rechnungsnummer, oft kombiniert mit chronologisch nach Jahr. Die Nummer ist eindeutig und wird auf jeder Zahlung und Mahnung genannt; über ein Verzeichnis oder die Buchhaltung findet man sie schnell.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Aufbewahrungsfristen beginnen nicht automatisch am Belegdatum.",
-          "Handels- und Jahresabschlussunterlagen haben unterschiedliche Fristen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Unterlagen den Aufbewahrungsfristen von sechs, acht und zehn Jahren zu und bestimmst Fristbeginn und frühestes Vernichtungsdatum.",
+        "vorwissen_kurz": "Kaufleute müssen Bücher, Belege und Geschäftsbriefe aufbewahren, damit Finanzamt und Gerichte Vorgänge nachprüfen können.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie lange, ab wann",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Handelsrecht und Steuerrecht schreiben vor, welche Unterlagen wie lange aufbewahrt werden müssen ({{par:hgb-257|§ 257 HGB}}, {{par:ao-147|§ 147 AO}}). Seit 2025 gelten drei Fristen: zehn Jahre für Bücher, Inventare und Abschlüsse, acht Jahre für Buchungsbelege, sechs Jahre für Handelsbriefe. Die Frist beginnt nicht am Datum des Dokuments, sondern mit dem Ende des Kalenderjahres, in dem es entstanden, empfangen oder abgeschlossen wurde.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Aussondern im Januar 2027",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Januar sortiert Lea aus. Welche Unterlagen darf sie vernichten?",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Unterlage",
+              "Frist",
+              "Fristbeginn",
+              "Frühestens vernichten",
+              "Jetzt?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Eingangsrechnung vom März 2018",
+                  "8 Jahre",
+                  "31.12.2018",
+                  "ab 1.1.2027",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eingangsrechnung vom Dezember 2019",
+                  "8 Jahre",
+                  "31.12.2019",
+                  "ab 1.1.2028",
+                  "nein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Angebot eines Lieferanten vom Juni 2020",
+                  "6 Jahre",
+                  "31.12.2020",
+                  "ab 1.1.2027",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jahresabschluss 2015, festgestellt im Mai 2016",
+                  "10 Jahre",
+                  "31.12.2016",
+                  "ab 1.1.2027",
+                  "ja"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kontoauszug vom Februar 2020",
+                  "8 Jahre",
+                  "31.12.2020",
+                  "ab 1.1.2029",
+                  "nein"
+                ]
+              }
+            ],
+            "fazit": "Entscheidend ist immer das Jahr, in dem der Vorgang abgeschlossen wurde. Beim Jahresabschluss ist das das Jahr der Feststellung, nicht das Geschäftsjahr.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor Lea vernichtet, prüft sie, ob die Unterlagen noch gebraucht werden, etwa für eine laufende Betriebsprüfung oder einen Rechtsstreit. Dann läuft die Aufbewahrung weiter, auch wenn die Frist abgelaufen ist. Vernichtet wird datenschutzgerecht, also geschreddert oder über einen Entsorgungsdienst, nicht im Altpapier.",
+            "id": "b2-p3"
+          }
         ],
-        "erklaerung": "Nach § 257 HGB und § 147 AO gelten zehn Jahre für Bücher, Inventare und Jahresabschlüsse, acht Jahre für Buchungsbelege wie Rechnungen (seit dem Vierten Bürokratieentlastungsgesetz, gültig ab 1. Januar 2025) und sechs Jahre für empfangene und abgesandte Handelsbriefe. Die Frist beginnt mit dem Schluss des Kalenderjahres, in dem die letzte Eintragung gemacht wurde, nicht mit dem Datum des Belegs. Ein Werbeprospekt ist kein Handelsbrief. Laufende Prüfungen oder offene Verfahren können der Vernichtung zusätzlich entgegenstehen.",
-        "beispiele": [
-          "Eine Eingangsrechnung vom 12. März 2024, die 2024 verbucht wurde, ist ein Buchungsbeleg: Die achtjährige Frist beginnt am 31. Dezember 2024, vernichtet werden darf frühestens ab 1. Januar 2033.",
-          "Ein geschäftlicher Brief wird grundsätzlich sechs Jahre aufbewahrt; die Einordnung richtet sich nach seiner Funktion, nicht danach, ob er auf Papier oder digital vorliegt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Warum die Frist für Belege 2025 verkürzt wurde",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mit dem Vierten Bürokratieentlastungsgesetz sank die Aufbewahrungsfrist für Buchungsbelege ab 1. Januar 2025 von zehn auf acht Jahre. Sie gilt auch für Belege, deren alte Frist zu diesem Zeitpunkt noch nicht abgelaufen war. Bücher und Abschlüsse bleiben bei zehn Jahren.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Die Eingangsrechnung vom 12. März 2024 wurde im selben Jahr verbucht. Der Fristbeginn ist nicht der 12. März, sondern der Schluss des Kalenderjahres: 31. Dezember 2024. Für Buchungsbelege laufen acht Jahre bis zum Ablauf des 31. Dezember 2032. Frühestens ab 1. Januar 2033 darf vernichtet werden, sofern kein offenes Verfahren entgegensteht.",
-        "typische_fehler": "Ab dem Belegdatum gerechnet, die Fristen von zehn, acht und sechs Jahren vertauscht oder ein Werbeprospekt als Handelsbrief behandelt. Auch die Bedeutung einer laufenden Prüfung wird übersehen.",
         "verstaendnisfragen": [
-          "Wann beginnt die Aufbewahrungsfrist? Mit dem Schluss des Kalenderjahres, in dem die letzte Eintragung gemacht wurde.",
-          "Welche Unterlagen nennt § 257 HGB mit zehn Jahren? Bücher, Inventare und Jahresabschlüsse."
-        ],
-        "pruefungsbezug": "Schreibe in jeder Fristrechnung zuerst ‚Schluss des Kalenderjahres‘. Danach Fristdauer bestimmen und erst am folgenden Tag die Vernichtung zulassen.",
-        "merksatz": "Nicht das Belegdatum zählt, sondern der Jahresabschluss des Entstehungsjahres der letzten Eintragung."
+          {
+            "frage": "Ein Werbeprospekt eines Lieferanten liegt im Posteingang. Wie lange muss er aufbewahrt werden?",
+            "antwort": "Gar nicht. Ein Werbeprospekt betrifft kein konkretes Handelsgeschäft des Betriebs und ist weder Handelsbrief noch Buchungsbeleg.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist der Jahresabschluss 2015 erst ab 2027 zu vernichten und nicht schon ab 2026?",
+            "antwort": "Die Frist beginnt mit dem Schluss des Kalenderjahres, in dem der Abschluss festgestellt wurde, hier 2016. Zehn Jahre ab dem 31.12.2016 enden am 31.12.2026.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Digitale Ablage ersetzt die gesetzlichen Aufbewahrungsfristen nicht.",
-          "Elektronische Dokumente müssen in ihrer Nachprüfbarkeit erhalten bleiben."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst die Anforderungen an eine revisionssichere digitale Ablage und beurteilst Abläufe beim Scannen, Benennen und Versionieren von Dokumenten.",
+        "vorwissen_kurz": "Elektronische Unterlagen müssen genauso sicher und nachprüfbar aufbewahrt werden wie Papier.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Digital ist nicht automatisch sicher",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:dokumentenmanagement|Dokumentenmanagementsystem}} (DMS) verwaltet Dokumente zentral: Es speichert sie, verschlagwortet sie, protokolliert Zugriffe und verhindert unbemerkte Änderungen. Damit erfüllt es Anforderungen, die ein einfacher Ordner auf dem Netzlaufwerk nicht erfüllt. Für steuerlich relevante Unterlagen gelten zusätzlich die Grundsätze ordnungsmäßiger Buchführung in digitaler Form (GoBD).",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Eingangsrechnung vom Eingang bis zum Auffinden",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Was passiert",
+              "Anforderung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Eingang als E-Rechnung im XML-Format",
+                  "wird unverändert im DMS gespeichert, zusätzlich als lesbare Ansicht",
+                  "Originalformat, maschinell auswertbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Prüfung und Freigabe",
+                  "Sachbearbeiter prüft, Teamleitung gibt im System frei",
+                  "nachvollziehbar: wer, wann"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verschlagwortung",
+                  "Lieferant, Rechnungsnummer, Datum, Betrag, Kostenstelle",
+                  "auffindbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Korrektur durch den Lieferanten",
+                  "neue Rechnung wird als neue Version gespeichert, alte bleibt sichtbar",
+                  "unveränderbar, Versionen erkennbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zugriff",
+                  "nur Einkauf und Buchhaltung",
+                  "Datenschutz und Berechtigung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufbewahrung",
+                  "Löschsperre für acht Jahre ab Jahresende",
+                  "Fristen technisch abgesichert"
+                ]
+              }
+            ],
+            "fazit": "Jede Anforderung entspricht einem Schritt. Fehlt einer, wird die Ablage angreifbar — etwa wenn eine Rechnung im persönlichen Postfach liegen bleibt.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für Dateien außerhalb eines DMS hilft eine feste Namensregel: Datum zuerst, damit sich Dateien chronologisch sortieren, dann Vorgang, dann Version — etwa „2026-11-20_Protokoll-Kollektion_v2.pdf“. Wer „final_neu_wirklich_final.docx“ findet, weiß, warum.",
+            "id": "b3-p2"
+          }
         ],
-        "erklaerung": "Eine digitale Ablage muss unveränderbar, vollständig, nachvollziehbar und auffindbar sein. Elektronisch empfangene Belege werden im Originalformat aufbewahrt, damit die maschinelle Auswertbarkeit erhalten bleibt. Für ersetzendes Scannen braucht es einen festgelegten Ablauf und eine Verfahrensdokumentation. Zugriffsrechte sind zusätzlich zu regeln, weil viele Unterlagen personenbezogene Daten enthalten.",
-        "beispiele": [
-          "Ein PDF-Ausdruck eines elektronisch eingegangenen Belegs genügt nicht, wenn dadurch das Originalformat und seine maschinelle Auswertbarkeit verloren gehen.",
-          "Ein Dokumentenmanagementsystem protokolliert Bearbeitungsschritte und begrenzt Zugriffe; dadurch werden Nachvollziehbarkeit und Vertraulichkeit unterstützt."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "E-Rechnung im Geschäftsverkehr",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Seit 2025 müssen Unternehmen im Inland E-Rechnungen von anderen Unternehmen empfangen können; die Pflicht zum Versenden wird bis 2028 schrittweise eingeführt. Eine E-Rechnung ist ein strukturierter Datensatz, kein PDF. Aufbewahrt wird der Datensatz im Originalformat; ein Ausdruck ersetzt ihn nicht.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "buchfuehrung:k1-a3"
+                ],
+                "text": "Aufbewahrung und GoB in der Buchführung",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb möchte nach der Umstellung auf ein Dokumentenmanagementsystem alle Papierbelege sofort vernichten. Vorher werden Unveränderbarkeit, Vollständigkeit, Nachvollziehbarkeit und Auffindbarkeit geprüft. Für das Scannen wird ein dokumentierter Ablauf festgelegt; elektronische Originale bleiben im Originalformat. Erst wenn diese Voraussetzungen und Zugriffsrechte geklärt sind, kann die Umstellung rechtssicher organisiert werden.",
-        "typische_fehler": "Digital wird mit automatisch revisionssicher gleichgesetzt. Ein Scan ohne Verfahrensdokumentation, ein veränderbares Dokument oder ein Ausdruck statt des elektronischen Originals kann die Anforderungen verfehlen.",
         "verstaendnisfragen": [
-          "Welche vier Eigenschaften muss die digitale Ablage erfüllen? Unveränderbar, vollständig, nachvollziehbar und auffindbar.",
-          "Warum muss die Verfahrensdokumentation schriftlich festgelegt sein? Damit der Ablauf des ersetzenden Scannens und der Umgang mit Fehlern bei einer Prüfung nachvollziehbar sind."
+          {
+            "frage": "Warum genügt ein PDF auf dem Netzlaufwerk nicht als revisionssichere Ablage?",
+            "antwort": "Es lässt sich unbemerkt überschreiben oder löschen, und niemand kann nachvollziehen, wer wann etwas geändert hat. Revisionssicherheit verlangt, dass Änderungen erkennbar und Zugriffe protokolliert sind.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Was wird bei einer E-Rechnung aufbewahrt, wenn sie zusätzlich als PDF-Ansicht vorliegt?",
+            "antwort": "Der strukturierte Datensatz im Originalformat. Er ist das maßgebliche Dokument; die Ansicht dient nur dem Lesen.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du bearbeitest den Posteingang vom Öffnen bis zur Verteilung und wählst für ausgehende Sendungen eine Versandart nach Vertraulichkeit, Nachweisbedarf, Kosten und Tempo.",
+        "vorwissen_kurz": "Für viele Fristen kommt es darauf an, wann ein Schreiben zugegangen ist. Zugegangen ist es, wenn es so in den Machtbereich des Empfängers gelangt, dass er es unter normalen Umständen zur Kenntnis nehmen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Der Posteingang",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei MAKEL öffnet Tim jeden Morgen die Post. Briefe mit dem Vermerk „persönlich“ oder „vertraulich“ öffnet er nicht, sondern gibt sie verschlossen weiter. Alle anderen Schreiben erhalten einen Eingangsstempel mit Datum, Wichtiges wie Mahnungen oder Kündigungen kommt sofort zur zuständigen Person, Rechnungen gehen in den digitalen Rechnungseingang, Werbung wird aussortiert. Der Eingangsstempel ist wichtig: Er belegt, wann eine Frist zu laufen begann.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Sendungen, drei Entscheidungen",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Sendung",
+              "Wichtig ist",
+              "Wahl",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Angebot an einen Händler",
+                  "Tempo, geringe Kosten",
+                  "E-Mail mit PDF",
+                  "kein Nachweis nötig, schnell, kostenlos"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mahnung mit letzter Zahlungsfrist an einen Kunden",
+                  "Nachweis des Zugangs",
+                  "Einschreiben Einwurf",
+                  "Einwurf ist dokumentiert, auch wenn niemand öffnet"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kündigung eines Mietvertrags für ein Lager, Frist endet Freitag",
+                  "Nachweis von Zugang und Inhalt, Termin sicher",
+                  "Bote mit Zeugen, der den Brief vorher liest und einwirft; zusätzlich Einwurfprotokoll",
+                  "nur so lassen sich Zugang und Inhalt beweisen"
+                ]
+              }
+            ],
+            "fazit": "Je wichtiger der Nachweis, desto aufwendiger der Weg. Für alltägliche Schreiben reicht der einfache Brief oder die E-Mail.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Deutschen Post kostet ein Einschreiben Einwurf zusätzlich zum Porto 2,35 €, ein Einschreiben mit Übergabe 2,65 €, ein Rückschein weitere 2,20 € (Stand Mai 2026). Der Einwurf ist für Schreiben an Unternehmen oft die bessere Wahl: Beim Übergabe-Einschreiben kann der Empfänger die Annahme verweigern oder die Sendung nicht abholen, und dann ist sie nicht zugegangen.",
+            "id": "b4-p2"
+          }
         ],
-        "pruefungsbezug": "Prüfe digitale Ablage nicht nur auf Speicherung, sondern auf Originalformat, Unveränderbarkeit, Protokollierung, Auffindbarkeit und geregelte Zugriffe.",
-        "merksatz": "Digital ist nur dann belastbar, wenn Original, Inhalt, Bearbeitung und Zugriff nachvollziehbar bleiben."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Vertrauliche Inhalte per E-Mail",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Personalunterlagen, Gesundheitsdaten oder Vertragsentwürfe gehören nicht unverschlüsselt in eine normale E-Mail. Je nach Betrieb gibt es verschlüsselte Mails, sichere Datenräume oder passwortgeschützte Dateien mit getrennt übermitteltem Passwort. Welche Lösung erlaubt ist, regelt die betriebliche Datenschutzvorgabe.",
+                "id": "b4-d1-p1"
+              }
+            ],
+            "id": "b4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum gibt Tim einen Brief mit „persönlich“ verschlossen weiter?",
+            "antwort": "Der Vermerk zeigt, dass nur die genannte Person den Inhalt lesen soll, etwa bei Personalangelegenheiten. Das Briefgeheimnis und die betriebliche Regel schützen diesen Inhalt.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Beweist das Einschreiben Einwurf, dass im Umschlag die Kündigung lag?",
+            "antwort": "Nein. Es belegt nur, dass eine Sendung eingeworfen wurde. Den Inhalt kann ein Zeuge bestätigen, der das Schreiben gelesen und eingetütet oder eingeworfen hat.",
+            "id": "b4-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "Deutsche Post: Einschreiben für Privatkunden (Flyer, Stand 05/2026)",
+            "url": "https://www.deutschepost.de/dam/jcr:485b5d3b-e92e-499a-957f-c22912cdab8f/dp-flyer-einschreiben-privatkunden-052026.pdf",
+            "bezug": "Varianten und Zusatzentgelte"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +511,10 @@
       "id": "lz3",
       "text": "Anforderungen an digitale Ablage erklären",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Posteingang bearbeiten und eine Versandart nach Vertraulichkeit, Nachweis, Kosten und Tempo auswählen"
     }
   ],
   "bloecke": [
@@ -223,7 +654,7 @@
         },
         {
           "typ": "achtung",
-          "text": "Die Frist beginnt **nicht mit dem Datum des Belegs**, sondern mit dem **Schluss des Kalenderjahres**, in dem die letzte Eintragung gemacht oder der Brief empfangen beziehungsweise abgesandt wurde. Ein Jahresabschluss für 2020 (zehn Jahre) darf also erst nach dem 31. Dezember 2030 vernichtet werden, eine 2024 verbuchte Rechnung (acht Jahre) erst nach dem 31. Dezember 2032."
+          "text": "Die Frist beginnt **nicht mit dem Datum des Belegs**, sondern mit dem **Schluss des Kalenderjahres**, in dem die letzte Eintragung gemacht oder der Brief empfangen beziehungsweise abgesandt wurde. Ein Jahresabschluss für 2025, der 2026 festgestellt wird (zehn Jahre), darf also erst nach dem 31. Dezember 2036 vernichtet werden, eine 2024 entstandene Rechnung (acht Jahre) erst nach dem 31. Dezember 2032."
         },
         {
           "typ": "grafik",
@@ -267,7 +698,7 @@
         },
         {
           "typ": "merke",
-          "text": "**Zehn Jahre** für alles, was den Jahresabschluss trägt. **Sechs Jahre** für Handelsbriefe. Die Frist beginnt mit dem **Schluss des Kalenderjahres**, nicht mit dem Belegdatum.",
+          "text": "**Zehn Jahre** für alles, was den Jahresabschluss trägt. **Acht Jahre** für Buchungsbelege. **Sechs Jahre** für Handelsbriefe. Die Frist beginnt mit dem **Schluss des Kalenderjahres**, nicht mit dem Belegdatum.",
           "karteikarte": "Welche Aufbewahrungsfristen gelten für Jahresabschlüsse und für Handelsbriefe, und wann beginnen sie?"
         }
       ]
@@ -387,6 +818,68 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Post annehmen und versenden",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Dokumente kommen auf vielen Wegen in den Betrieb und verlassen ihn auf vielen Wegen. ==Welcher Weg der richtige ist, hängt davon ab, wie vertraulich der Inhalt ist, ob der Zugang nachgewiesen werden muss, wie schnell er ankommen soll und was er kosten darf.== Ein Produktname wie „Einschreiben“ beweist dabei nicht automatisch, was im Umschlag war."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Versandart",
+            "Nachweis",
+            "Geeignet für"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "einfacher Brief",
+                "keiner",
+                "Angebote, Rechnungen, allgemeine Korrespondenz"
+              ]
+            },
+            {
+              "zellen": [
+                "Einschreiben Einwurf",
+                "Einwurf in den Briefkasten dokumentiert",
+                "Mahnungen, Kündigungen an Unternehmen"
+              ]
+            },
+            {
+              "zellen": [
+                "Einschreiben (Übergabe)",
+                "Unterschrift des Empfängers",
+                "wichtige Unterlagen, wenn persönliche Übergabe gewollt ist"
+              ],
+              "detail": "**Wird niemand angetroffen**, liegt die Sendung in der Filiale. Holt der Empfänger sie nicht ab, ist sie nicht zugegangen — beim Einschreiben Einwurf entsteht dieses Problem nicht."
+            },
+            {
+              "zellen": [
+                "Bote mit Zeugen",
+                "Zeuge kennt Inhalt und Einwurf",
+                "Kündigungen mit fester Frist, wenn der Inhalt bewiesen werden muss"
+              ]
+            },
+            {
+              "zellen": [
+                "E-Mail",
+                "Sendeprotokoll, keine sichere Zugangsbestätigung",
+                "schnelle Abstimmung; vertrauliche Inhalte nur verschlüsselt"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Vertraulichkeit, Nachweis, Tempo, Kosten** entscheiden über den Versandweg. Ein Einschreiben belegt den Zugang einer Sendung, nicht ihren Inhalt. Wo der Inhalt bewiesen werden muss, hilft ein Bote mit Zeugen.",
+          "karteikarte": "Nach welchen Kriterien wählst du eine Versandart, und was beweist ein Einschreiben — und was nicht?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -397,7 +890,8 @@
     "{{par:hgb-257|§ 257 HGB}}: zehn Jahre für Bücher, Inventare und Jahresabschlüsse; acht Jahre für Buchungsbelege ({{par:ao-147|§ 147 AO}}).",
     "Sechs Jahre für empfangene und abgesandte Handelsbriefe.",
     "Die Frist beginnt mit dem Schluss des Kalenderjahres, nicht mit dem Belegdatum.",
-    "Digitale Ablage muss unveränderbar, vollständig, nachvollziehbar und auffindbar sein."
+    "Digitale Ablage muss unveränderbar, vollständig, nachvollziehbar und auffindbar sein.",
+    "Ein Einschreiben belegt den Zugang, nicht den Inhalt; die Versandart folgt Vertraulichkeit, Nachweisbedarf, Tempo und Kosten."
   ],
   "selbsttest": [
     {

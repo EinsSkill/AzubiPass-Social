@@ -6,66 +6,341 @@
   "untertitel": "Der Vertrag steht — jetzt zählt, was genau vereinbart wurde.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "d1",
-        "vorauswissen": [
-          "Eine Bestellung kann Antrag oder Annahme sein.",
-          "Die rechtliche Wirkung hängt vom vorherigen Angebot ab."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst, ob Bestellung und Auftragsbestätigung Antrag, Annahme oder bloße Bestätigung sind, und prüfst eine abweichende Auftragsbestätigung auf ihre Folgen.",
+        "vorwissen_kurz": "Ein Vertrag entsteht durch Antrag und Annahme. Eine Annahme muss dem Antrag vollständig entsprechen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was vorher geschah, entscheidet",
+            "id": "d1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob eine {{begriff:bestellung|Bestellung}} schon den Vertrag schließt oder erst einen Antrag darstellt, hängt davon ab, was vorher passiert ist. Gab es ein bindendes Angebot, ist die passende Bestellung die Annahme. Gab es keines oder nur ein freibleibendes, ist die Bestellung der Antrag, und erst die {{begriff:auftragsbestaetigung|Auftragsbestätigung}} des Verkäufers nimmt ihn an.",
+            "id": "d1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Bestellung, eine abweichende Bestätigung",
+            "id": "d1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Modehaus bestellt ohne vorheriges Angebot nach Katalog: 120 Hoodies „Kyoto“, Lieferung bis 4. Dezember. MAKEL bestätigt am nächsten Tag: 120 Hoodies, Lieferung 11. Dezember, weil die Stickerei ausgelastet ist.",
+            "id": "d1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Erklärung",
+              "Rechtliche Einordnung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bestellung des Modehauses",
+                  "120 Stück bis 4.12.",
+                  "Antrag (kein bindendes Angebot ging voraus)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auftragsbestätigung von MAKEL",
+                  "120 Stück, Lieferung 11.12.",
+                  "keine Annahme, weil abweichend; Ablehnung mit neuem Antrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Reaktion des Modehauses",
+                  "schweigt",
+                  "in der Regel keine Annahme — der Vertrag ist noch nicht geschlossen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Besserer Weg",
+                  "MAKEL ruft an, erklärt den Engpass, das Modehaus stimmt dem 11.12. per E-Mail zu",
+                  "Annahme; Vertrag mit Liefertermin 11.12."
+                ]
+              }
+            ],
+            "fazit": "Eine Auftragsbestätigung mit stillschweigend geändertem Termin bringt keinen Vertrag, sondern Unsicherheit. Abweichungen werden deshalb offen angesprochen und ausdrücklich bestätigt.",
+            "id": "d1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "d1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "d1-b3"
+          }
         ],
-        "erklaerung": "Ging ein bindendes Angebot voraus und bestellt der Kunde unverändert, ist die Bestellung die Annahme und der Vertrag steht. Ging ein freibleibendes Angebot voraus oder gab es kein Angebot, ist die Bestellung der Antrag. Die Auftragsbestätigung ist dann die Annahme. Weicht sie in Termin, Menge oder einer anderen Bedingung ab, ist sie ein neuer Antrag.",
-        "beispiele": [
-          "Nach einem bindenden Angebot über 200 Ordner zum 15. September bestätigt die Bestellung genau diese Daten: Vertragsschluss durch die Bestellung.",
-          "Nach einem freibleibenden Angebot wird die Bestellung zum Antrag und die Auftragsbestätigung zur Annahme."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kaufmännisches Bestätigungsschreiben",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Haben zwei Kaufleute mündlich verhandelt und fasst einer das Ergebnis schriftlich zusammen, muss der andere unverzüglich widersprechen, wenn die Zusammenfassung nicht stimmt. Schweigt er, gilt der Vertrag mit dem bestätigten Inhalt — selbst wenn er in Einzelheiten abweicht, solange die Abweichung nicht so groß ist, dass der Absender mit Zustimmung nicht rechnen durfte. Eine Auftragsbestätigung auf eine schriftliche Bestellung ist dagegen kein solches Bestätigungsschreiben.",
+                "id": "d1-d1-p1"
+              }
+            ],
+            "id": "d1-d1"
+          }
         ],
-        "fallbeispiel": "Der Kunde bestellt 200 Ordner mit Liefertermin 15. September. Die Auftragsbestätigung nennt den 29. September. Weil sie vom Inhalt der Bestellung abweicht, ist sie keine Annahme, sondern ein neuer Antrag. Ein Vertrag über den neuen Termin entsteht erst, wenn der Kunde zustimmt oder die Lieferung zum 29. September widerspruchslos annimmt.",
-        "typische_fehler": "Die Überschrift ‚Auftragsbestätigung‘ wird wichtiger genommen als der Inhalt. Außerdem wird eine Bestellung nach einem bindenden Angebot als neuer Antrag behandelt, obwohl der Vertrag bereits mit der unveränderten Annahme geschlossen wurde.",
         "verstaendnisfragen": [
-          "Wann ist die Bestellung die Annahme? Wenn ihr ein bindendes Angebot vorausging und sie diesem vollständig entspricht.",
-          "Was bedeutet eine abweichende Auftragsbestätigung? Neuer Antrag statt Annahme; der Kunde muss zustimmen."
-        ],
-        "pruefungsbezug": "Frage in dieser Reihenfolge: Was ging voraus? Ist die Bestellung gleichlautend? Weicht die Bestätigung ab? Erst dann die Begriffe Antrag, Annahme oder Bestätigung verwenden.",
-        "merksatz": "Nicht die Überschrift entscheidet, sondern das vorausgegangene Angebot und der genaue Inhalt."
+          {
+            "frage": "MAKEL hatte dem Modehaus vorher ein bindendes Angebot mit Liefertermin 4.12. gemacht; das Modehaus bestellt unverändert. Ändert die Auftragsbestätigung mit dem 11.12. etwas?",
+            "antwort": "Nein. Der Vertrag ist bereits mit der Bestellung zum 4.12. zustande gekommen. Die abweichende Auftragsbestätigung kann ihn nicht einseitig ändern. Liefert MAKEL erst am 11.12., gerät es möglicherweise in Lieferungsverzug.",
+            "id": "d1-f1"
+          },
+          {
+            "frage": "Warum lohnt sich eine Auftragsbestätigung auch dann, wenn der Vertrag schon steht?",
+            "antwort": "Sie hält alle Punkte schriftlich fest und deckt Missverständnisse früh auf, etwa bei Größen oder Farben. Für die interne Bearbeitung ist sie zudem die Grundlage für Fertigung und Versand.",
+            "id": "d1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d2",
-        "vorauswissen": [
-          "AGB sind vorformulierte Bedingungen für mehrere Verträge.",
-          "Der Zeitpunkt des Hinweises entscheidet über ihre Einbeziehung."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst, ob AGB wirksam in einen Vertrag einbezogen wurden und ob einzelne Klauseln gelten, und unterscheidest dabei Verbraucher- und Unternehmergeschäfte.",
+        "vorwissen_kurz": "Allgemeine Geschäftsbedingungen regeln Standardfragen für viele Verträge, damit sie nicht jedes Mal neu verhandelt werden müssen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wann das Kleingedruckte gilt",
+            "id": "d2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:agb|AGB}} sind vorformulierte Vertragsbedingungen, die ein Unternehmen für viele Verträge verwendet. Weil der Kunde sie nicht aushandelt, schützt ihn das Gesetz in drei Stufen. Erstens müssen sie überhaupt Vertragsbestandteil werden. Zweitens gelten überraschende Klauseln nicht, und eine individuelle Absprache geht den AGB immer vor. Drittens werden einzelne Klauseln inhaltlich kontrolliert: Benachteiligen sie den Kunden unangemessen, sind sie unwirksam.",
+            "id": "d2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "d2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Fälle aus dem MAKEL-Alltag",
+            "id": "d2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Fall",
+              "Gelten die AGB oder die Klausel?",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Onlineshop: AGB per Link vor dem Bestellknopf, Kästchen „gelesen“",
+                  "ja",
+                  "Hinweis und Kenntnisnahme vor Vertragsschluss"
+                ]
+              },
+              {
+                "zellen": [
+                  "Telefonische Bestellung einer Privatkundin, AGB erstmals mit der Rechnung",
+                  "nein",
+                  "Hinweis erst nach Vertragsschluss"
+                ]
+              },
+              {
+                "zellen": [
+                  "Händler-AGB: „Gewährleistung ausgeschlossen“ gegenüber Privatkundin",
+                  "Klausel unwirksam",
+                  "Mängelrechte von Verbrauchern beim Kauf neuer Ware können nicht ausgeschlossen werden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mit dem Verein individuell vereinbart: Lieferung bis 23.11.; AGB: „Liefertermine unverbindlich“",
+                  "Liefertermin gilt",
+                  "individuelle Absprache geht vor"
+                ]
+              }
+            ],
+            "fazit": "AGB helfen, Standardfragen zu regeln. Sie wirken aber nur, wenn sie rechtzeitig und erkennbar einbezogen werden — und nicht gegen das, was ausdrücklich vereinbart ist.",
+            "id": "d2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "d2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Unter Unternehmern sind die Anforderungen an die Einbeziehung geringer: Ein deutlicher Hinweis, etwa im Angebot, genügt in der Regel, und die AGB können bei laufender Geschäftsbeziehung auch stillschweigend gelten. Verweisen beide Seiten auf ihre eigenen AGB, gelten die übereinstimmenden Regeln; bei widersprechenden Klauseln tritt an ihre Stelle das Gesetz.",
+            "id": "d2-p2"
+          }
         ],
-        "erklaerung": "Nach § 305 BGB müssen AGB vor oder bei Vertragsschluss ausdrücklich einbezogen werden. Die andere Seite muss in zumutbarer Weise von ihrem Inhalt Kenntnis nehmen können; überraschende Klauseln gelten nicht. Ein Hinweis erst auf der Rechnung kommt zu spät, weil der Vertrag dann bereits geschlossen ist.",
-        "beispiele": [
-          "Ein Bestellformular verweist vor Vertragsschluss auf lesbare, zugängliche AGB. Der Kunde erhält damit die Möglichkeit zur Kenntnisnahme.",
-          "Zusatzkosten, die erstmals auf der Rechnung auftauchen und überraschend sind, werden nicht durch den späteren Abdruck Vertragsbestandteil."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Typische Klauseln in AGB",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "AGB regeln häufig Lieferzeiten und Teillieferungen, Zahlungsbedingungen, Eigentumsvorbehalt, Gefahrübergang, Gerichtsstand und Erfüllungsort. Wer eigene AGB verwendet, sollte sie von Fachleuten prüfen lassen; unwirksame Klauseln fallen weg, und an ihre Stelle tritt die gesetzliche Regelung.",
+                "id": "d2-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k4-b3"
+                ],
+                "text": "AGB, Eigentumsvorbehalt und Kollision im Einkauf",
+                "id": "d2-d1-v1"
+              }
+            ],
+            "id": "d2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb druckt seine AGB erstmals auf die Rechnung. Der Vertrag war zu diesem Zeitpunkt bereits geschlossen. Der Hinweis kam zu spät; Schriftlichkeit allein genügt nicht. Für eine wirksame Einbeziehung hätte der Betrieb vor Vertragsschluss hinweisen und eine zumutbare Kenntnisnahme ermöglichen müssen.",
-        "typische_fehler": "Die AGB werden als wirksam angesehen, weil sie irgendwo schriftlich vorliegen. Maßgeblich sind aber Zeitpunkt, Zugangsmöglichkeit und das Verbot überraschender Klauseln.",
         "verstaendnisfragen": [
-          "Welche zwei zeitlichen und praktischen Voraussetzungen sind zentral? Hinweis vor Vertragsschluss und zumutbare Möglichkeit der Kenntnisnahme.",
-          "Warum reicht die Rechnung nicht? Weil sie erst nach dem Vertragsschluss ausgehändigt wird."
-        ],
-        "pruefungsbezug": "Markiere in AGB-Fällen den Zeitpunkt des Hinweises und die Möglichkeit, den Inhalt zu lesen. Prüfe danach, ob eine Klausel überraschend ist.",
-        "merksatz": "AGB müssen vor dem Vertrag sichtbar und zumutbar zugänglich sein — die Rechnung ist zu spät."
+          {
+            "frage": "Warum gilt beim Verein der Liefertermin, obwohl die AGB „Liefertermine unverbindlich“ sagen?",
+            "antwort": "Individuelle Vertragsabreden haben Vorrang vor AGB. Der Termin wurde ausdrücklich vereinbart; eine vorformulierte Klausel kann ihn nicht wieder aushebeln.",
+            "id": "d2-f1"
+          },
+          {
+            "frage": "Ein Onlineshop versteckt die AGB auf einer Unterseite ohne Hinweis beim Bestellen. Gelten sie?",
+            "antwort": "Nein, gegenüber Verbrauchern nicht. Es fehlt der ausdrückliche Hinweis vor Vertragsschluss. Der Vertrag gilt trotzdem, aber mit den gesetzlichen Regeln statt der AGB.",
+            "id": "d2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "d3",
-        "vorauswissen": [
-          "Liefer- und Zahlungsbedingungen regeln verschiedene Teile der Vertragserfüllung.",
-          "Lieferbedingungen betreffen nicht nur den Termin."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Liefer- und Zahlungsbedingungen, bestimmst, wer ohne Vereinbarung Versandkosten und Gefahr trägt, und wählst passende Bedingungen für unterschiedliche Kunden.",
+        "vorwissen_kurz": "Ein Kaufvertrag verpflichtet den Verkäufer zur Lieferung und den Käufer zur Zahlung. Wie und wann das geschieht, regeln die Bedingungen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Fragen, zwei Regelungsblöcke",
+            "id": "d3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lieferbedingungen beantworten, wie die Ware zum Kunden kommt: Wer transportiert, wer zahlt die Fracht, wann geht das Risiko über, sind Teillieferungen erlaubt? Zahlungsbedingungen beantworten, wann und wie bezahlt wird: sofort, nach einer Frist, mit Skonto, per Lastschrift? Ohne Vereinbarung gilt das Gesetz.",
+            "id": "d3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "d3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ohne Vereinbarung",
+            "id": "d3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Haben Verkäufer und Käufer nichts vereinbart, ist die Ware beim Verkäufer abzuholen. Wünscht der Käufer, dass sie an einen anderen Ort geschickt wird, trägt er die Versandkosten. Unter Unternehmern geht die Gefahr mit der Übergabe an das Transportunternehmen über; bei Verbrauchern trägt der Verkäufer das Transportrisiko, bis die Ware bei ihnen ankommt. Gezahlt wird ohne Vereinbarung sofort.",
+            "id": "d3-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bedingungen für drei Kunden",
+            "id": "d3-z3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kunde",
+              "Lieferbedingung",
+              "Zahlungsbedingung",
+              "Grund"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Langjähriger Händler",
+                  "frei Haus ab 500 € Bestellwert",
+                  "30 Tage netto, 2 % Skonto innerhalb 10 Tagen",
+                  "gute Zahlungshistorie, Verkaufsargument"
+                ]
+              },
+              {
+                "zellen": [
+                  "Neuer Händler ohne Erfahrungswerte",
+                  "unfrei",
+                  "Vorkasse für die erste Bestellung",
+                  "Ausfallrisiko begrenzen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Neuer Verein, erste Sonderanfertigung",
+                  "frei Haus",
+                  "30 % Anzahlung, Rest 14 Tage nach Lieferung",
+                  "Logo-Ware lässt sich nicht anderweitig verkaufen"
+                ]
+              }
+            ],
+            "fazit": "Die Bedingungen spiegeln Vertrauen und Risiko. Je größer das Risiko für MAKEL, desto früher fließt Geld.",
+            "id": "d3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "d3-b2"
+          }
         ],
-        "erklaerung": "Lieferbedingungen beschreiben Ware, Liefertermin, Kosten und Gefahr. Zahlungsbedingungen betreffen Zeitpunkt und Art der Zahlung. Beide müssen zusammenpassen: Der Kunde soll erkennen können, was geliefert wird, wer Kosten trägt und wann beziehungsweise wie gezahlt wird.",
-        "beispiele": [
-          "Eine Lieferbedingung regelt, wann die Ware eintrifft und wer die Frachtkosten trägt.",
-          "Eine Zahlungsbedingung legt fest, wann und auf welchem Weg der Rechnungsbetrag zu zahlen ist."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Incoterms im Auslandsgeschäft",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei internationalen Lieferungen verwenden Unternehmen die Incoterms der Internationalen Handelskammer, etwa EXW (ab Werk) oder DAP (geliefert benannter Ort). Sie regeln, wer Transport, Versicherung und Zollformalitäten übernimmt und wo die Gefahr übergeht. Gelten sie, steht das ausdrücklich im Vertrag mit Version und Ort, etwa „DAP Amsterdam Incoterms 2020“.",
+                "id": "d3-d1-p1"
+              }
+            ],
+            "id": "d3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Auftrag nennt eine Lieferung, aber nicht, wer die Frachtkosten trägt; außerdem fehlt das Zahlungsziel. Vor der Bestätigung werden beide Bereiche ergänzt: Liefertermin, Kosten und Gefahr auf der Lieferseite, Zahlungszeitpunkt und Zahlungsart auf der Zahlungsseite. So wird die Vereinbarung vollständig und der spätere Rechnungsprozess eindeutig.",
-        "typische_fehler": "Lieferbedingungen werden nur als Datum verstanden oder Zahlungsbedingungen mit dem Preis verwechselt. Auch wird die Auftragsbestätigung formuliert, obwohl die Abweichung bei Termin oder Kosten noch nicht geklärt ist.",
         "verstaendnisfragen": [
-          "Welche Fragen beantworten Lieferbedingungen? Was wird wann geliefert, wer trägt Kosten und wie wird die Gefahr behandelt?",
-          "Welche Fragen beantworten Zahlungsbedingungen? Wann und auf welche Art wird gezahlt?"
+          {
+            "frage": "Ein Händler bestellt ohne Absprache zum Versand. Wer zahlt die Fracht?",
+            "antwort": "Ohne Vereinbarung der Käufer. Der Leistungsort ist der Sitz des Verkäufers; wer Versand an einen anderen Ort wünscht, trägt dessen Kosten.",
+            "id": "d3-f1"
+          },
+          {
+            "frage": "Warum verlangt MAKEL beim neuen Verein eine Anzahlung?",
+            "antwort": "Die Hoodies mit Vereinslogo kann MAKEL nicht an andere Kunden verkaufen. Fällt der Verein aus oder storniert, bliebe MAKEL auf Material und Arbeit sitzen. Die Anzahlung deckt einen Teil dieses Risikos.",
+            "id": "d3-f2"
+          }
         ],
-        "pruefungsbezug": "Ordne jede Angabe entweder Lieferung oder Zahlung zu und prüfe, ob Termin, Kosten, Gefahr, Zahlungszeitpunkt und Zahlungsart eindeutig sind.",
-        "merksatz": "Lieferbedingungen klären Ware und Weg; Zahlungsbedingungen klären Geld und Zeitpunkt."
+        "quellen": [
+          {
+            "titel": "Bürgerliches Gesetzbuch, §§ 269, 271, 447, 448, 475",
+            "url": "https://www.gesetze-im-internet.de/bgb/",
+            "bezug": "Leistungsort, Leistungszeit, Gefahr- und Kostentragung, Verbrauchsgüterkauf"
+          }
+        ]
       }
     ]
   },

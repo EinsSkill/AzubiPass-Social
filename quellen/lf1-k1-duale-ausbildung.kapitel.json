@@ -6,74 +6,494 @@
   "untertitel": "Zwei Lernorte, vier Regelwerke, eine Prüfung in zwei Teilen.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eine Ausbildung verbindet praktisches Handeln mit fachlichem Lernen.",
-          "Der Betrieb und die Berufsschule haben unterschiedliche Aufgaben."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Betrieb, Berufsschule und zuständige Stelle ihren Aufgaben zu und weißt, an wen du dich mit welchem Anliegen wendest.",
+        "vorwissen_kurz": "Du hast einen Ausbildungsvertrag mit einem Betrieb geschlossen und besuchst parallel die Berufsschule.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Lernorte, eine Aufsicht",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der {{begriff:duale-ausbildung|dualen Ausbildung}} lernst du an zwei Orten zugleich. Im Betrieb arbeitest du an echten Aufgaben mit: Du schreibst Angebote, buchst Rechnungen, betreust Kunden. In der Berufsschule lernst du in Lernfeldern, die dieselben Situationen aufgreifen und erklären, warum etwas so gemacht wird. Beide Lernorte sollen sich ergänzen. Über das Ganze wacht eine dritte Stelle: die {{begriff:zustaendige-stelle|zuständige Stelle}}, für kaufmännische Berufe die Industrie- und Handelskammer.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Anliegen, drei Ansprechpartner",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tim ist Auszubildender bei MAKEL. Im ersten Jahr fallen ihm drei Dinge auf.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Anliegen",
+              "Zuständig",
+              "Warum"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Tim arbeitet seit Wochen nur im Versand und lernt nichts aus dem Einkauf, obwohl es im Ausbildungsplan steht.",
+                  "zuerst der Ausbilder im Betrieb, notfalls die Ausbildungsberatung der IHK",
+                  "Der Betrieb muss die Inhalte des Ausbildungsplans vermitteln; die IHK überwacht das."
+                ]
+              },
+              {
+                "zellen": [
+                  "In der Berufsschule versteht Tim die Buchungssätze nicht.",
+                  "Lehrkraft der Berufsschule",
+                  "Die Schule vermittelt die Inhalte der Lernfelder."
+                ]
+              },
+              {
+                "zellen": [
+                  "Tim will wissen, wann Teil 1 der Abschlussprüfung stattfindet.",
+                  "IHK",
+                  "Sie setzt die Prüfungstermine fest und beruft die Prüfungsausschüsse."
+                ]
+              }
+            ],
+            "fazit": "Wer das richtige Gegenüber wählt, bekommt schneller eine Antwort — und vermeidet, dass ein Problem zwischen den Stellen hängen bleibt.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "erklaerung": "Duale Ausbildung bedeutet nicht, dass Betrieb und Berufsschule denselben Unterricht zweimal anbieten. Der Betrieb zeigt die beruflichen Abläufe und lässt dich unter Anleitung handeln. Die Berufsschule ordnet diese Erfahrungen fachlich ein und vermittelt die theoretischen Grundlagen. Die zuständige Stelle überwacht das Ausbildungsverhältnis und organisiert die Prüfung.",
-        "beispiele": [
-          "Im Betrieb lernst du, einen Auftrag in der Bürosoftware zu bearbeiten; in der Berufsschule ordnest du den Vorgang in einen Geschäftsprozess ein.",
-          "Der Betrieb ist der Ausbildende und damit Vertragspartner. Die konkrete Anleitung kann ein bestellter Ausbilder übernehmen; beide Begriffe bezeichnen also nicht automatisch dieselbe Person."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Ausbildungsberatung der IHK",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die IHK beschäftigt Ausbildungsberaterinnen und -berater. Sie beraten Betriebe und Auszubildende, prüfen, ob Betrieb und Ausbilder geeignet sind, und vermitteln bei Konflikten. Ein Gespräch dort ist vertraulich und kein Angriff auf den Betrieb; meist hilft es, ein Problem zu lösen, bevor es eskaliert.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Azubi fragt, ob die IHK sein Arbeitgeber sei, weil sie den Vertrag einträgt und die Prüfung organisiert. Vertragspartner ist der Ausbildungsbetrieb als Ausbildender. Die Berufsschule vermittelt die schulischen Inhalte. Die IHK ist die zuständige Stelle: Sie überwacht, registriert und prüft, ist aber nicht Arbeitgeber.",
-        "typische_fehler": "Ausbildender und Ausbilder werden vertauscht. Außerdem wird die IHK als dritte Lernstätte oder als Arbeitgeber verstanden. Sie ist die zuständige Stelle für Überwachung und Prüfung; die beiden Lernorte bleiben Betrieb und Berufsschule.",
         "verstaendnisfragen": [
-          "Warum braucht die Ausbildung zwei Lernorte? Weil praktische Handlungskompetenz und theoretische Einordnung unterschiedliche Lernaufgaben sind.",
-          "Wer ist Vertragspartner des Azubis? Der Ausbildende, in der Regel der Betrieb oder das Unternehmen, nicht die einzelne anleitende Person und nicht die IHK."
-        ],
-        "pruefungsbezug": "Bei einer Zuordnungsaufgabe zuerst die drei Rollen markieren: Betrieb = Praxis und Vertrag, Berufsschule = Theorie und Lernfelder, zuständige Stelle = Überwachung und Prüfung.",
-        "merksatz": "Der Betrieb zeigt, wie es geht; die Schule erklärt, warum; die zuständige Stelle überwacht und prüft."
+          {
+            "frage": "Wer ist dein Vertragspartner: der Ausbilder, der dich anleitet, oder der Betrieb?",
+            "antwort": "Der Betrieb als Ausbildender. Er schließt den Vertrag, zahlt die Vergütung und trägt die Pflichten aus dem Berufsbildungsgesetz. Der Ausbilder ist die Person, die der Betrieb mit der Ausbildung beauftragt hat.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist die IHK nicht dein Arbeitgeber, obwohl sie deinen Vertrag einträgt?",
+            "antwort": "Sie ist eine Aufsichts- und Prüfungsstelle. Sie trägt Verträge ein, überwacht die Ausbildung und nimmt Prüfungen ab, schließt aber selbst keinen Vertrag mit dir und erteilt dir keine Arbeitsanweisungen.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ausbildungsinhalte müssen verbindlich geplant werden.",
-          "Betriebliche Ausbildung und Berufsschulunterricht werden durch unterschiedliche Stellen geregelt."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Ausbildungsordnung, Ausbildungsrahmenplan, Rahmenlehrplan und betrieblichen Ausbildungsplan nach Herausgeber, Adressat und Inhalt und nutzt sie, um eigene Lernlücken zu erkennen.",
+        "vorwissen_kurz": "Für jeden anerkannten Ausbildungsberuf ist bundesweit geregelt, was gelernt und geprüft wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Pläne, eine Ausbildung",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Was du in deiner Ausbildung lernen sollst, steht in vier Dokumenten. Die **Ausbildungsordnung** ist eine Rechtsverordnung des Bundes; sie legt Berufsbezeichnung, Dauer, Berufsbild und Prüfung fest. Für Kaufleute für Büromanagement gilt eine neue Ausbildungsordnung vom 25. Februar 2025 für Ausbildungen, die ab dem 1. August 2025 beginnen. Ihre Anlage ist der **Ausbildungsrahmenplan**: Er sagt, was der Betrieb in welchem Zeitraum vermitteln muss. Für die Berufsschule beschließt die Kultusministerkonferenz den **Rahmenlehrplan** mit den Lernfeldern. Und jeder Betrieb überträgt den Rahmenplan in einen **betrieblichen Ausbildungsplan** für dich.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Den eigenen Plan nutzen",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tim vergleicht nach einem Jahr seinen betrieblichen Ausbildungsplan mit dem, was er tatsächlich gemacht hat.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Laut Ausbildungsplan bis Monat 12",
+              "Tatsächlich",
+              "Nächster Schritt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bürokommunikation und Terminplanung",
+                  "erledigt, im Ausbildungsnachweis dokumentiert",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auftragsbearbeitung im Vertrieb",
+                  "erledigt",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beschaffung: Angebote vergleichen, Bestellungen auslösen",
+                  "nicht begonnen",
+                  "mit dem Ausbilder einen Einsatz im Einkauf vereinbaren"
+                ]
+              }
+            ],
+            "fazit": "Der Plan ist kein Papier für die Schublade. Er zeigt früh, welche Inhalte fehlen — und Teil 1 der Prüfung fragt die ersten 15 Monate ab.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          }
         ],
-        "erklaerung": "Die vier Pläne liegen auf unterschiedlichen Ebenen. Die Ausbildungsordnung beschreibt den anerkannten Beruf. Der Ausbildungsrahmenplan konkretisiert, was der Betrieb vermitteln muss. Der Rahmenlehrplan ordnet die schulischen Lernfelder. Der betriebliche Ausbildungsplan übersetzt den Rahmenplan schließlich in die Abteilungen und Zeitabläufe des einzelnen Betriebs.",
-        "beispiele": [
-          "Die Ausbildungsordnung nennt Berufsbezeichnung, Dauer und Prüfungsanforderungen; sie ist deshalb die übergeordnete Rechtsgrundlage.",
-          "Wenn der Ausbildungsrahmenplan einen Inhalt vorsieht, legt der betriebliche Ausbildungsplan fest, welche Abteilung ihn wann übernimmt. Der Rahmenlehrplan bleibt dagegen der Plan für die Berufsschule."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Der Ausbildungsnachweis",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben den Plänen gibt es ein Dokument, das du selbst führst: den Ausbildungsnachweis, früher Berichtsheft. Du hältst darin fest, was du im Betrieb und in der Schule gelernt hast. Der Betrieb muss dir Zeit dafür geben und ihn regelmäßig durchsehen. Ein ordnungsgemäß geführter Nachweis ist Voraussetzung für die Zulassung zur Abschlussprüfung.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Azubi findet im betrieblichen Ausbildungsplan keinen Einsatz in einer Abteilung, obwohl der Ausbildungsrahmenplan den entsprechenden Inhalt vorsieht. Der Plan für den einzelnen Betrieb ist daraufhin zu prüfen und mit dem Ausbilder zu besprechen. Er darf den verbindlichen Rahmen nicht einfach auslassen, sondern muss ihn auf die betrieblichen Stationen übertragen.",
-        "typische_fehler": "Ausbildungsrahmenplan und Rahmenlehrplan werden wegen des ähnlichen Namens gleichgesetzt. Die sichere Gegenprobe lautet: Rahmenlehrplan = Berufsschule und KMK; Ausbildungsrahmenplan = Betrieb und Anlage zur Ausbildungsordnung; betrieblicher Ausbildungsplan = konkrete Abteilungen.",
         "verstaendnisfragen": [
-          "Welcher Plan ist auf den einzelnen Betrieb zugeschnitten? Der betriebliche Ausbildungsplan.",
-          "Warum gibt es einen Rahmenlehrplan und einen Ausbildungsrahmenplan? Weil Schule und Betrieb ihre Inhalte jeweils in eigenen Zuständigkeiten planen und aufeinander abstimmen."
+          {
+            "frage": "Wo schaust du nach, wenn du wissen willst, welches Lernfeld im zweiten Schuljahr kommt?",
+            "antwort": "Im Rahmenlehrplan. Er wird von der Kultusministerkonferenz beschlossen und legt die Lernfelder der Berufsschule mit ihren Zeitrichtwerten fest.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum lohnt sich der Abgleich mit dem betrieblichen Ausbildungsplan schon im ersten Jahr?",
+            "antwort": "Teil 1 der Abschlussprüfung bezieht sich auf die ersten 15 Monate. Fehlt ein Inhalt bis dahin, bleibt kaum Zeit, ihn nachzuholen. Wer früh vergleicht, kann rechtzeitig einen Einsatz vereinbaren.",
+            "id": "a2-f2"
+          }
         ],
-        "pruefungsbezug": "Ordne in Tabellenaufgaben immer zwei Merkmale zu: Wer erlässt das Dokument und für welchen Lernort gilt es. So lässt sich der betriebliche Ausbildungsplan sicher vom Rahmenlehrplan unterscheiden.",
-        "merksatz": "Ordnung und Ausbildungsrahmenplan steuern den Betrieb, der Rahmenlehrplan die Schule, der betriebliche Plan deinen konkreten Ablauf."
+        "quellen": [
+          {
+            "titel": "Verordnung über die Berufsausbildung zum Kaufmann/zur Kauffrau für Büromanagement 2025",
+            "url": "https://www.gesetze-im-internet.de/b_romkfausbv_2025/",
+            "bezug": "Ausbildungsordnung vom 25.02.2025"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Das Ausbildungsverhältnis beginnt mit Vertrag und Probezeit.",
-          "Die Abschlussprüfung besteht aus Teil 1 und Teil 2."
+        "darstellung": "vollfassung",
+        "ziel": "Du beschreibst den Ablauf der Ausbildung vom Vertragsschluss bis zum Ende und erklärst Aufbau, Gewichtung und Besonderheiten der gestreckten Abschlussprüfung.",
+        "vorwissen_kurz": "Das Ausbildungsverhältnis ist ein Vertrag mit Beginn, Probezeit und einem festen Ende.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fünf Stationen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Deine Ausbildung beginnt mit dem Vertrag. Sein wesentlicher Inhalt muss spätestens vor Beginn in Textform festgehalten werden, etwa als speicherbares PDF, und die IHK trägt ihn ins Verzeichnis der Ausbildungsverhältnisse ein. Es folgen die Probezeit, die beiden Teile der Abschlussprüfung und das Ende des Ausbildungsverhältnisses.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die gestreckte Abschlussprüfung",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Es gibt keine Zwischenprüfung, die nur den Stand anzeigt. Stattdessen besteht die {{begriff:gestreckte-pruefung|gestreckte Abschlussprüfung}} aus zwei Teilen, die beide in die Endnote eingehen.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfungsbereich",
+              "Zeitpunkt",
+              "Form",
+              "Gewicht"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Informationstechnisches Büromanagement (Teil 1)",
+                  "im vierten Ausbildungshalbjahr",
+                  "schriftlich am Computer, 120 Minuten",
+                  "25 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kundenbeziehungsprozesse",
+                  "Ende der Ausbildung",
+                  "schriftlich, 150 Minuten",
+                  "30 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fachaufgabe in der Wahlqualifikation",
+                  "Ende der Ausbildung",
+                  "fallbezogenes Fachgespräch, 20 Minuten",
+                  "35 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirtschafts- und Sozialkunde",
+                  "Ende der Ausbildung",
+                  "schriftlich, 60 Minuten",
+                  "10 %"
+                ]
+              }
+            ],
+            "fazit": "Teil 1 macht ein Viertel der Endnote aus. Wer ihn unterschätzt, startet mit einem Rückstand in Teil 2.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bestanden ist die Prüfung nur, wenn mehrere Bedingungen erfüllt sind: Das Gesamtergebnis aus beiden Teilen und das Ergebnis von Teil 2 müssen mindestens „ausreichend“ sein, mindestens zwei Bereiche von Teil 2 müssen „ausreichend“ sein, und kein Bereich von Teil 2 darf „ungenügend“ sein. Für Kundenbeziehungsprozesse oder Wirtschafts- und Sozialkunde kann eine mündliche Ergänzungsprüfung beantragt werden, wenn sie über das Bestehen entscheidet.",
+            "id": "a3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a3-b3"
+          }
         ],
-        "erklaerung": "Der Ausbildungsablauf hat feste Stationen: Vertragsschluss und Eintragung, Probezeit, Teil 1 der gestreckten Abschlussprüfung, Teil 2 und das Ende des Ausbildungsverhältnisses. Teil 1 ist bereits Bestandteil der Endnote und keine folgenlose Zwischenprüfung. Für die zeitliche Einordnung muss zwischen dem vereinbarten Vertragsende und dem tatsächlichen Ende nach Bekanntgabe eines bestandenen Prüfungsergebnisses unterschieden werden.",
-        "beispiele": [
-          "Im dritten Monat kann eine Kündigung während der noch laufenden Probezeit ohne Frist und ohne Begründung erfolgen; die Probezeit dauert ein bis vier Monate.",
-          "Teil 1 findet in der Mitte des zweiten Ausbildungsjahres statt und wird nicht wiederholt, auch wenn Teil 2 später wiederholt werden muss."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Report oder betriebliche Fachaufgabe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für das Fachgespräch gibt es zwei Varianten. Bei der ersten schreibst du für jede deiner beiden Wahlqualifikationen einen Report von höchstens drei Seiten über eine Aufgabe aus deinem Betrieb; der Prüfungsausschuss wählt einen davon für das Gespräch aus. Bei der zweiten bearbeitest du in der Prüfung eine von zwei praxisbezogenen Aufgaben nach 20 Minuten Vorbereitung. Welche Variante gilt, teilt der Betrieb bei der Anmeldung mit.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Auszubildende besteht die Abschlussprüfung vier Wochen vor dem im Vertrag genannten Enddatum. Der Prüfungstermin allein beendet das Verhältnis nicht. Es endet mit der Bekanntgabe des Prüfungsergebnisses durch den Prüfungsausschuss, weil dieses Datum früher liegt als das vereinbarte Ende.",
-        "typische_fehler": "Teil 1 wird als reine Übung behandelt oder das Ende immer automatisch auf das Vertragsdatum gelegt. Ebenfalls falsch ist, das Prüfungsdatum mit dem Tag der Ergebnisbekanntgabe gleichzusetzen.",
         "verstaendnisfragen": [
-          "Warum ist Teil 1 besonders wichtig? Weil das Ergebnis in die Endnote einfließt und Teil 1 nicht wiederholt wird.",
-          "Welches Datum entscheidet bei bestandener Prüfung vor Vertragsende? Die Bekanntgabe des Prüfungsergebnisses durch den Prüfungsausschuss."
+          {
+            "frage": "Kann Teil 1 wiederholt werden, wenn er schlecht ausgefallen ist?",
+            "antwort": "Nicht eigenständig. Erst wenn alle Prüfungsbereiche abgelegt sind und feststeht, dass die gesamte Prüfung nicht bestanden ist, kann Teil 1 im Rahmen der Wiederholungsprüfung erneut abgelegt werden. Ist die Prüfung bestanden, bleibt das Ergebnis von Teil 1 in der Endnote.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Eine Auszubildende hat in Kundenbeziehungsprozessen „ungenügend“, sonst überall „gut“. Hat sie bestanden?",
+            "antwort": "Nein. Kein Bereich von Teil 2 darf „ungenügend“ sein. Sie kann für diesen Bereich eine mündliche Ergänzungsprüfung beantragen, wenn diese für das Bestehen den Ausschlag geben kann.",
+            "id": "a3-f2"
+          }
         ],
-        "pruefungsbezug": "Ordne Ablauffälle chronologisch und trenne Prüfungstermin, Ergebnisbekanntgabe und Vertragsdatum. Bei Kündigungsfragen zuerst prüfen, ob die Probezeit von einem bis vier Monaten noch läuft.",
-        "merksatz": "Teil 1 zählt mit; bei früherem Bestehen endet die Ausbildung mit der Bekanntgabe des Ergebnisses."
+        "quellen": [
+          {
+            "titel": "Ausbildungsordnung 2025, §§ 7–16",
+            "url": "https://www.gesetze-im-internet.de/b_romkfausbv_2025/",
+            "bezug": "Prüfungsaufbau, Gewichtung, Bestehensregeln"
+          },
+          {
+            "titel": "Berufsbildungsgesetz, §§ 11, 20, 21, 37",
+            "url": "https://www.gesetze-im-internet.de/bbig_2005/",
+            "bezug": "Vertragsniederschrift, Probezeit, Ende, Wiederholung"
+          },
+          {
+            "titel": "IHK Düsseldorf: Wiederholung der Abschlussprüfung",
+            "url": "https://www.ihk.de/duesseldorf/ausbildung/ausbildungspruefungen/pruefung-von-a-z/abschlusspruefung/wiederholung-der-abschlusspruefung-2599130",
+            "bezug": "Wiederholung von Teil 1"
+          }
+        ]
+      },
+      {
+        "abschnitt": "a4",
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest aus einem eigenen beruflichen Ziel passende Wege der Weiterbildung ab und vergleichst sie nach Ziel, Zugang und Aufwand.",
+        "vorwissen_kurz": "Ein Berufsabschluss ist die Grundlage für viele weitere Abschlüsse, nicht das Ende des Lernens.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Ziel zum Weg",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea ist im zweiten Ausbildungsjahr bei MAKEL. Sie möchte in drei bis fünf Jahren Marketingprojekte koordinieren. Was ihr dafür fehlt, sind Kenntnisse in Marketingplanung, Projektleitung und Erfahrung mit Agenturen. Aus diesem Ziel leitet sie Wege ab, statt wahllos Kurse zu buchen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Möglichkeiten im Vergleich",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Weg",
+              "Zugang",
+              "Aufwand",
+              "Passt zum Ziel, weil …"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wahlqualifikation „Marketing und Vertrieb“ in der Ausbildung",
+                  "mit dem Betrieb bei Vertragsschluss festgelegt, Änderung nur im Einvernehmen",
+                  "im Ausbildungsalltag",
+                  "sie im Betrieb früh Marketingaufgaben übernimmt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auslandsaufenthalt während der Ausbildung",
+                  "Absprache mit Betrieb und Schule; bis zu einem Viertel der Ausbildungsdauer möglich",
+                  "einige Wochen",
+                  "sie englischsprachige Agenturen und Kunden besser betreut"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufstiegsfortbildung der IHK im Bereich Marketing",
+                  "Berufsabschluss und Berufspraxis, je nach Fortbildungsordnung",
+                  "ein bis zwei Jahre berufsbegleitend",
+                  "sie Planung und Führung abdeckt und anerkannt ist"
+                ]
+              },
+              {
+                "zellen": [
+                  "Berufsbegleitendes Studium",
+                  "Hochschulzugang, für beruflich Qualifizierte nach Landesrecht möglich",
+                  "mehrere Jahre, oft kostenpflichtig",
+                  "es breiter und akademisch ausgerichtet ist"
+                ]
+              }
+            ],
+            "fazit": "Lea beginnt mit dem, was sie jetzt schon nutzen kann, und plant die Aufstiegsfortbildung nach der Ausbildung. Das Studium hält sie sich als späteren Schritt offen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Förderung gibt es für viele Wege, etwa das Aufstiegs-BAföG für Fortbildungen oder Stipendien für besonders gute Absolventen. Die Bedingungen und Beträge ändern sich jedoch. Vor einer Entscheidung prüfst du sie deshalb auf den offiziellen Seiten und lässt dich beraten, statt dich auf ältere Angaben zu verlassen.",
+            "id": "a4-p2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Lebenslanges Lernen im Alltag",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Weiterbildung ist nicht nur ein Kurs mit Zertifikat. Wer neue Software ausprobiert, Fachartikel liest oder in Projekten Verantwortung übernimmt, lernt ebenfalls. Hilfreich ist ein kurzer Plan: Ziel, nächste Maßnahme, Termin, und wer eine Rückmeldung gibt. So wird aus einem guten Vorsatz ein überprüfbarer Schritt.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Was unterscheidet eine Anpassungs- von einer Aufstiegsfortbildung?",
+            "antwort": "Die Anpassungsfortbildung hält Kenntnisse aktuell oder erweitert sie in der bisherigen Tätigkeit, etwa eine Softwareschulung. Die Aufstiegsfortbildung führt zu einem höheren, öffentlich-rechtlich geprüften Abschluss und eröffnet neue Aufgaben, etwa Führungsverantwortung.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum solltest du konkrete Förderbeträge nicht aus einem älteren Lehrbuch übernehmen?",
+            "antwort": "Förderprogramme werden regelmäßig geändert, etwa bei Höhe, Altersgrenzen oder Voraussetzungen. Verbindlich ist nur die aktuelle Fassung auf den offiziellen Seiten oder die Auskunft einer Beratungsstelle.",
+            "id": "a4-f2"
+          }
+        ],
+        "quellen": [
+          {
+            "titel": "Aufstiegs-BAföG (BMBFSFJ)",
+            "url": "https://www.aufstiegs-bafoeg.de/",
+            "bezug": "aktuelle Förderbedingungen"
+          },
+          {
+            "titel": "Berufsbildungsgesetz, § 2 Abs. 3 und §§ 53–53d",
+            "url": "https://www.gesetze-im-internet.de/bbig_2005/",
+            "bezug": "Ausbildung im Ausland, Fortbildungsstufen"
+          }
+        ]
       }
     ]
   },
 
   "lernziele": [
-    { "id": "lz1", "text": "Die Beteiligten der dualen Ausbildung und ihre Aufgaben benennen", "abschnitt": "a1" },
-    { "id": "lz2", "text": "Ausbildungsordnung, Ausbildungsrahmenplan, Rahmenlehrplan und betrieblichen Ausbildungsplan unterscheiden", "abschnitt": "a2" },
-    { "id": "lz3", "text": "Den Ablauf der Ausbildung bis zur gestreckten Abschlussprüfung erklären", "abschnitt": "a3" }
+    {
+      "id": "lz1",
+      "text": "Die Beteiligten der dualen Ausbildung und ihre Aufgaben benennen",
+      "abschnitt": "a1"
+    },
+    {
+      "id": "lz2",
+      "text": "Ausbildungsordnung, Ausbildungsrahmenplan, Rahmenlehrplan und betrieblichen Ausbildungsplan unterscheiden",
+      "abschnitt": "a2"
+    },
+    {
+      "id": "lz3",
+      "text": "Den Ablauf der Ausbildung bis zur gestreckten Abschlussprüfung erklären",
+      "abschnitt": "a3"
+    },
+    {
+      "abschnitt": "a4",
+      "text": "Aus einem beruflichen Ziel passende Fort- und Weiterbildungswege ableiten"
+    }
   ],
 
   "bloecke": [
@@ -92,15 +512,33 @@
         },
         {
           "typ": "tabelle",
-          "spalten": ["Beteiligter", "Aufgabe", "Rechtsgrundlage"],
+          "spalten": [
+            "Beteiligter",
+            "Aufgabe",
+            "Rechtsgrundlage"
+          ],
           "zeilen": [
             {
-              "zellen": ["Ausbildungsbetrieb", "vermittelt die praktischen Inhalte, zahlt die Vergütung", "Berufsbildungsgesetz"],
+              "zellen": [
+                "Ausbildungsbetrieb",
+                "vermittelt die praktischen Inhalte, zahlt die Vergütung",
+                "Berufsbildungsgesetz"
+              ],
               "detail": "**Wichtige Unterscheidung:** Der {{begriff:ausbildender|Ausbildende}} ist dein Vertragspartner — meist der Betrieb als Ganzes. Der {{begriff:ausbilder|Ausbilder}} ist die Person, die dich tatsächlich anleitet. In der Prüfung werden die beiden Begriffe gern vertauscht."
             },
-            { "zellen": ["Berufsschule", "vermittelt die theoretischen Inhalte in Lernfeldern", "Schulgesetze der Länder"] },
             {
-              "zellen": ["Zuständige Stelle (IHK)", "überwacht, registriert, prüft", "Berufsbildungsgesetz"],
+              "zellen": [
+                "Berufsschule",
+                "vermittelt die theoretischen Inhalte in Lernfeldern",
+                "Schulgesetze der Länder"
+              ]
+            },
+            {
+              "zellen": [
+                "Zuständige Stelle (IHK)",
+                "überwacht, registriert, prüft",
+                "Berufsbildungsgesetz"
+              ],
               "detail": "**Was die IHK konkret tut:** Sie trägt deinen Vertrag ins Verzeichnis der Ausbildungsverhältnisse ein, überwacht die Eignung von Betrieb und Ausbildern, beruft die Prüfungsausschüsse und stellt am Ende dein Prüfungszeugnis aus."
             }
           ]
@@ -112,7 +550,6 @@
         }
       ]
     },
-
     {
       "typ": "abschnitt",
       "id": "a2",
@@ -124,13 +561,39 @@
         },
         {
           "typ": "tabelle",
-          "spalten": ["Dokument", "Wer erlässt es", "Was steht drin"],
+          "spalten": [
+            "Dokument",
+            "Wer erlässt es",
+            "Was steht drin"
+          ],
           "zeilen": [
-            { "zellen": ["Ausbildungsordnung", "Bund (Rechtsverordnung)", "Berufsbezeichnung, Dauer, Berufsbild, Prüfungsanforderungen"] },
-            { "zellen": ["Ausbildungsrahmenplan", "Bund, Anlage zur Ausbildungsordnung", "Was der Betrieb wann vermitteln muss"] },
-            { "zellen": ["Rahmenlehrplan", "Kultusministerkonferenz", "Die Lernfelder der Berufsschule mit Zeitrichtwerten"] },
             {
-              "zellen": ["Betrieblicher Ausbildungsplan", "der einzelne Betrieb", "Welche Abteilung wann welchen Inhalt übernimmt"],
+              "zellen": [
+                "Ausbildungsordnung",
+                "Bund (Rechtsverordnung)",
+                "Berufsbezeichnung, Dauer, Berufsbild, Prüfungsanforderungen"
+              ]
+            },
+            {
+              "zellen": [
+                "Ausbildungsrahmenplan",
+                "Bund, Anlage zur Ausbildungsordnung",
+                "Was der Betrieb wann vermitteln muss"
+              ]
+            },
+            {
+              "zellen": [
+                "Rahmenlehrplan",
+                "Kultusministerkonferenz",
+                "Die Lernfelder der Berufsschule mit Zeitrichtwerten"
+              ]
+            },
+            {
+              "zellen": [
+                "Betrieblicher Ausbildungsplan",
+                "der einzelne Betrieb",
+                "Welche Abteilung wann welchen Inhalt übernimmt"
+              ],
               "detail": "**Der einzige Plan, der auf dich persönlich zugeschnitten ist.** Er ist Anlage deines Ausbildungsvertrags — und wenn du das Gefühl hast, dass du Inhalte gar nicht siehst, ist er das Dokument, mit dem du das ansprichst."
             }
           ]
@@ -150,7 +613,6 @@
         }
       ]
     },
-
     {
       "typ": "abschnitt",
       "id": "a3",
@@ -158,7 +620,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Deine Ausbildung ist ein Ablauf mit festen Stationen. Besonders wichtig ist die {{begriff:gestreckte-pruefung|gestreckte Abschlussprüfung}}: ==Es gibt keine Zwischenprüfung mehr, die man einfach mitnimmt.== Teil 1 zählt bereits zur Endnote und kann nicht wiederholt werden."
+          "text": "Deine Ausbildung ist ein Ablauf mit festen Stationen. Besonders wichtig ist die {{begriff:gestreckte-pruefung|gestreckte Abschlussprüfung}}: ==Es gibt keine Zwischenprüfung mehr, die man einfach mitnimmt.== Teil 1 zählt bereits zur Endnote und kann nicht eigenständig wiederholt werden."
         },
         {
           "typ": "grafik",
@@ -167,11 +629,36 @@
           "titel": "Von der Unterschrift bis zum Zeugnis",
           "lead": "Fünf Stationen, jede mit eigenen Rechtsfolgen. Klick dich durch.",
           "schritte": [
-            { "nr": 1, "titel": "Vertragsschluss", "satz": "vor Beginn · schriftlich · Eintrag bei der IHK", "text": "Der Vertrag muss schriftlich niedergelegt und ins Verzeichnis der Ausbildungsverhältnisse eingetragen werden. Ohne Eintragung keine Prüfungszulassung." },
-            { "nr": 2, "titel": "Probezeit", "satz": "1 bis 4 Monate", "text": "Beide Seiten können jederzeit fristlos und ohne Begründung kündigen. Danach ist eine Kündigung durch den Betrieb nur noch aus wichtigem Grund möglich." },
-            { "nr": 3, "titel": "Teil 1 der Abschlussprüfung", "satz": "Mitte des 2. Ausbildungsjahres", "text": "Informationstechnisches Büromanagement. Das Ergebnis fließt fest in die Endnote ein und wird nicht wiederholt — auch dann nicht, wenn Teil 2 wiederholt werden muss." },
-            { "nr": 4, "titel": "Teil 2 der Abschlussprüfung", "satz": "Ende des 3. Ausbildungsjahres", "text": "Schriftliche Prüfungsbereiche plus das Fachgespräch zu den beiden gewählten Wahlqualifikationen." },
-            { "nr": 5, "titel": "Ende des Ausbildungsverhältnisses", "satz": "Ablauf der Zeit — oder früher", "text": "Mit Ablauf der vereinbarten Ausbildungszeit. Bestehst du die Prüfung vorher, endet die Ausbildung bereits mit der Bekanntgabe des Ergebnisses durch den Prüfungsausschuss." }
+            {
+              "nr": 1,
+              "titel": "Vertragsschluss",
+              "satz": "vor Beginn · in Textform · Eintrag bei der IHK",
+              "text": "Der wesentliche Vertragsinhalt muss spätestens vor Beginn in Textform niedergelegt werden, etwa als speicherbares PDF, und der Vertrag wird ins Verzeichnis der Ausbildungsverhältnisse eingetragen. Ohne Eintragung keine Prüfungszulassung."
+            },
+            {
+              "nr": 2,
+              "titel": "Probezeit",
+              "satz": "1 bis 4 Monate",
+              "text": "Beide Seiten können jederzeit fristlos und ohne Begründung kündigen. Danach ist eine Kündigung durch den Betrieb nur noch aus wichtigem Grund möglich."
+            },
+            {
+              "nr": 3,
+              "titel": "Teil 1 der Abschlussprüfung",
+              "satz": "im 4. Ausbildungshalbjahr",
+              "text": "Informationstechnisches Büromanagement. Das Ergebnis fließt fest in die Endnote ein und kann nicht eigenständig wiederholt werden — nur wenn die gesamte Prüfung nicht bestanden ist, im Rahmen der Wiederholungsprüfung."
+            },
+            {
+              "nr": 4,
+              "titel": "Teil 2 der Abschlussprüfung",
+              "satz": "Ende des 3. Ausbildungsjahres",
+              "text": "Die schriftlichen Prüfungsbereiche Kundenbeziehungsprozesse und Wirtschafts- und Sozialkunde plus ein fallbezogenes Fachgespräch zu einer der beiden gewählten Wahlqualifikationen."
+            },
+            {
+              "nr": 5,
+              "titel": "Ende des Ausbildungsverhältnisses",
+              "satz": "Ablauf der Zeit — oder früher",
+              "text": "Mit Ablauf der vereinbarten Ausbildungszeit. Bestehst du die Prüfung vorher, endet die Ausbildung bereits mit der Bekanntgabe des Ergebnisses durch den Prüfungsausschuss."
+            }
           ],
           "regel": "Merke dir Station 3: Teil 1 ist keine Übung. Wer ihn verpatzt, schleppt das bis zum Schluss mit."
         },
@@ -179,14 +666,81 @@
           "typ": "check",
           "frage": "Du bestehst die Abschlussprüfung vier Wochen vor dem im Vertrag genannten Enddatum. Wann endet dein Ausbildungsverhältnis?",
           "optionen": [
-            { "text": "Am vereinbarten Enddatum", "richtig": false, "echo": "Das gilt nur, wenn du die Prüfung nicht vorher bestehst. Nach § 21 BBiG endet die Ausbildung mit dem Bestehen — der Vertrag läuft nicht künstlich weiter." },
-            { "text": "Mit Bekanntgabe des Prüfungsergebnisses", "richtig": true, "echo": "Richtig. Nach § 21 BBiG endet das Ausbildungsverhältnis mit der Bekanntgabe des Ergebnisses durch den Prüfungsausschuss. Ab diesem Tag bist du kein Azubi mehr — was auch bedeutet, dass die Ausbildungsvergütung endet." },
-            { "text": "Mit dem Tag der schriftlichen Prüfung", "richtig": false, "echo": "Zu früh. Solange das Ergebnis nicht feststeht und bekannt gegeben ist, läuft die Ausbildung weiter — schließlich könnte die Prüfung auch nicht bestanden sein." }
+            {
+              "text": "Am vereinbarten Enddatum",
+              "richtig": false,
+              "echo": "Das gilt nur, wenn du die Prüfung nicht vorher bestehst. Nach § 21 BBiG endet die Ausbildung mit dem Bestehen — der Vertrag läuft nicht künstlich weiter."
+            },
+            {
+              "text": "Mit Bekanntgabe des Prüfungsergebnisses",
+              "richtig": true,
+              "echo": "Richtig. Nach § 21 BBiG endet das Ausbildungsverhältnis mit der Bekanntgabe des Ergebnisses durch den Prüfungsausschuss. Ab diesem Tag bist du kein Azubi mehr — was auch bedeutet, dass die Ausbildungsvergütung endet."
+            },
+            {
+              "text": "Mit dem Tag der schriftlichen Prüfung",
+              "richtig": false,
+              "echo": "Zu früh. Solange das Ergebnis nicht feststeht und bekannt gegeben ist, läuft die Ausbildung weiter — schließlich könnte die Prüfung auch nicht bestanden sein."
+            }
           ]
         },
         {
           "typ": "praxistipp",
           "text": "Nach bestandener Prüfung endet auch dein Anspruch auf Ausbildungsvergütung. Wenn du übernommen wirst, sollte der Arbeitsvertrag also nahtlos anschließen — sprich das rechtzeitig an, nicht erst am Tag der Bekanntgabe."
+        }
+      ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Nach der Ausbildung weiterlernen",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Mit dem Abschluss hört das Lernen nicht auf. Aufgaben, Programme und Vorschriften ändern sich während des ganzen Berufslebens. ==Wer weiterkommen will, plant vom Ziel her: Was will ich können, und welcher Weg führt mit vertretbarem Aufwand dorthin?=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Weg",
+            "Wofür",
+            "Beispiel"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Anpassungsfortbildung",
+                "Wissen aktuell halten oder erweitern",
+                "Schulung zu neuer Buchhaltungssoftware, Seminar zu Datenschutz"
+              ]
+            },
+            {
+              "zellen": [
+                "Aufstiegsfortbildung",
+                "höhere berufliche Stufe mit öffentlich-rechtlicher Prüfung",
+                "Fortbildungsabschlüsse der IHK auf drei Stufen: Geprüfte Berufsspezialisten, Bachelor Professional, Master Professional"
+              ],
+              "detail": "**Die drei Stufen stehen im Berufsbildungsgesetz.** Welcher konkrete Abschluss zu welcher Stufe gehört und welche Zulassungsvoraussetzungen gelten, regelt die jeweilige Fortbildungsordnung."
+            },
+            {
+              "zellen": [
+                "Zusatzqualifikation",
+                "schon während der Ausbildung mehr können",
+                "Fremdsprachenzertifikat, Auslandsaufenthalt"
+              ]
+            },
+            {
+              "zellen": [
+                "Studium",
+                "akademischer Abschluss, auch berufsbegleitend",
+                "Betriebswirtschaft an einer Hochschule"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Fortbildung baut auf der Ausbildung auf.** Anpassung hält Wissen aktuell, Aufstieg führt zu einem höheren Abschluss. Den passenden Weg wählst du nach Ziel, Zugang und Aufwand.",
+          "karteikarte": "Welche Wege der beruflichen Weiterbildung gibt es nach der Ausbildung, und wonach wählst du aus?"
         }
       ]
     }
@@ -198,8 +752,9 @@
     "Ausbildungsordnung und Ausbildungsrahmenplan kommen vom Bund, der Rahmenlehrplan von der KMK.",
     "Der betriebliche Ausbildungsplan überträgt den Rahmenplan auf deinen Betrieb.",
     "{{par:bbig-20|§ 20 BBiG}} — Probezeit von einem bis vier Monaten.",
-    "Gestreckte Abschlussprüfung: Teil 1 Mitte des 2. Jahres, Teil 2 am Ende. Teil 1 zählt und wird nicht wiederholt.",
-    "{{par:bbig-21|§ 21 BBiG}} — die Ausbildung endet mit Bekanntgabe des Prüfungsergebnisses, wenn das früher liegt."
+    "Gestreckte Abschlussprüfung: Teil 1 im vierten Ausbildungshalbjahr, Teil 2 am Ende. Teil 1 zählt und kann nicht eigenständig wiederholt werden.",
+    "{{par:bbig-21|§ 21 BBiG}} — die Ausbildung endet mit Bekanntgabe des Prüfungsergebnisses, wenn das früher liegt.",
+    "Anpassungsfortbildung hält Wissen aktuell, Aufstiegsfortbildung führt zu einem höheren Abschluss auf drei Stufen."
   ],
 
   "selbsttest": [
@@ -220,5 +775,5 @@
     }
   ],
 
-  "pruefungstipp": "Zwei Dauerbrenner: die Abgrenzung Ausbildender gegen Ausbilder, und die Frage, welches Dokument was regelt. Und merke dir die Zahlen zur Probezeit — ein bis vier Monate — sowie dass Teil 1 der Abschlussprüfung nicht wiederholbar ist."
+  "pruefungstipp": "Zwei Dauerbrenner: die Abgrenzung Ausbildender gegen Ausbilder, und die Frage, welches Dokument was regelt. Und merke dir die Zahlen zur Probezeit — ein bis vier Monate — sowie dass Teil 1 der Abschlussprüfung nicht eigenständig wiederholbar ist."
 }

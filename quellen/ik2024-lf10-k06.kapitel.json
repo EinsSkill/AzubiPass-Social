@@ -6,86 +6,482 @@
   "untertitel": "Kapitalbedarf für Anlagen und Umlaufvermögen ermitteln, einen Liquiditätsplan aufstellen und auf Unter- oder Überdeckung reagieren.",
   "minuten": 35,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Anschaffungskosten umfassen den Preis und die Nebenkosten (Kapitel 2).",
-          "Eine Investition bindet Kapital über Jahre."
+        "darstellung": "vollfassung",
+        "ziel": "Du ermittelst den Kapitalbedarf für eine neue Anlage aus Kaufpreis, Nebenkosten bis zur Betriebsbereitschaft und vorzufinanzierender Vorsteuer und unterscheidest ihn von den späteren laufenden Kosten.",
+        "vorwissen_kurz": "Bevor über die Finanzierung einer Investition gesprochen wird, muss klar sein, wie viel Geld überhaupt gebraucht wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Laserstation wirklich braucht",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio will eine Laserstation anschaffen, mit der Motive auf Lederpatches graviert werden. Der **Kapitalbedarf für Anlagevermögen** umfasst den Kaufpreis abzüglich Nachlässen und alle Kosten, die bis zur Betriebsbereitschaft anfallen: Lieferung, Montage, notwendige Umbauten. Außerdem muss die Vorsteuer bezahlt werden, bevor das Finanzamt sie erstattet; auch sie wird für einige Wochen vorfinanziert. Laufende Kosten nach der Inbetriebnahme gehören nicht zum Kapitalbedarf der Anschaffung, sondern zum laufenden Geschäft.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Finanzierungsbedarf im Überblick",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kapitalbedarf Anlagevermögen netto",
+                  "51.500 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Vorsteuer 19 %, vorzufinanzieren bis zur Erstattung",
+                  "9.785 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zahlungsbedarf bei Anschaffung",
+                  "61.285 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "zusätzlich: Erstausstattung Lederpatches für die ersten Aufträge",
+                  "3.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "zusätzlich: Schulung der Mitarbeitenden nach Inbetriebnahme",
+                  "800 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "MAKEL Studio muss bei der Anschaffung rund 61.300 € bezahlen. Material und Schulung kommen hinzu, gehören aber zum laufenden Geschäft und nicht zu den Anschaffungskosten.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Vorsteuer wird oft vergessen, weil sie am Ende kein Aufwand ist. Für die Liquidität zählt sie aber: Zahlt MAKEL Studio die Rechnung im März, erhält es die Vorsteuer erst mit der Umsatzsteuer-Voranmeldung im April. Bis dahin muss das Geld da sein — aus eigenen Mitteln oder einem kurzfristigen Kredit.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Bevor ein Unternehmen über die Finanzierung entscheidet, ermittelt es den Kapitalbedarf. Für das Anlagevermögen umfasst er alles, was bis zur Betriebsbereitschaft bezahlt werden muss: Kaufpreis abzüglich Preisnachlässen, Transport, Montage, Fundament, Schulung. Hinzu kommen oft Anlaufkosten, bevor die Investition Einzahlungen bringt. Ein zu knapp geschätzter Bedarf führt dazu, dass mitten im Projekt das Geld ausgeht.",
-        "beispiele": [
-          "Laserstation 48.000 € netto, Lieferung und Montage 2.000 €: Kapitalbedarf Anlagevermögen 50.000 €.",
-          "Schulung von zwei Beschäftigten: zusätzlicher Bedarf, der bei der Planung oft vergessen wird."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Vom Kapitalbedarf zur Finanzierung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Steht der Bedarf fest, wird die Finanzierung gesucht: Eigenmittel aus dem Cashflow, ein Investitionskredit, Leasing oder eine Kombination. Für ein langfristig genutztes Anlagegut soll nach der goldenen Bilanzregel auch die Finanzierung langfristig sein.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Deniz Aydın möchte eine Laserstation für Gravuren auf Taschen anschaffen. Sandra Koslowski sammelt Angebote: 48.000 € für das Gerät, 2.000 € für Lieferung und Montage, 1.500 € für die Abluftanlage. Die Vorsteuer wird erstattet, muss aber zunächst vorfinanziert werden.",
-        "typische_fehler": "Nur den Listenpreis als Kapitalbedarf ansetzen.",
         "verstaendnisfragen": [
-          "Was gehört zum Kapitalbedarf einer Anlage? Kaufpreis abzüglich Nachlässen plus alle Kosten bis zur Betriebsbereitschaft.",
-          "Warum muss auch die Vorsteuer bedacht werden? Sie wird erst später erstattet und muss bis dahin vorfinanziert werden."
-        ],
-        "pruefungsbezug": "Kapitalbedarf für eine Investition ermitteln.",
-        "merksatz": "Kapitalbedarf Anlage = Preis − Nachlässe + alle Kosten bis zur Betriebsbereitschaft (+ Vorfinanzierung der Vorsteuer)."
+          {
+            "frage": "Gehört die Abluftanlage für die Laserstation zum Kapitalbedarf?",
+            "antwort": "Ja. Sie ist nötig, damit die Station betrieben werden kann, und gehört deshalb zu den Kosten bis zur Betriebsbereitschaft.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum muss die Vorsteuer vorfinanziert werden, obwohl sie erstattet wird?",
+            "antwort": "Weil sie mit der Rechnung gezahlt wird, die Erstattung aber erst über die nächste Voranmeldung kommt. Bis dahin ist das Geld gebunden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Material liegt im Lager, bevor es verarbeitet wird (LF 7).",
-          "Kunden zahlen mit Zahlungsziel, Lieferanten gewähren eines."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die Kapitalbindungsdauer im Umlaufvermögen und den daraus folgenden Kapitalbedarf und zeigst, wie Kunden- und Lieferantenziele ihn verändern.",
+        "vorwissen_kurz": "Auch ohne neue Maschine braucht ein Industriebetrieb laufend Geld: Material muss bezahlt werden, lange bevor Kunden zahlen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie lange das Geld gebunden ist",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zwischen der Auszahlung für Material und Löhne und der Einzahlung vom Kunden vergeht Zeit: Material liegt im Lager, wird verarbeitet, die Erzeugnisse warten auf den Verkauf, und der Kunde zahlt erst nach Ablauf seines Zahlungsziels. Das Lieferantenziel verkürzt die Bindung, weil MAKEL Studio selbst später zahlt. Die **Kapitalbindungsdauer** ist die Summe dieser Tage, der **Kapitalbedarf für Umlaufvermögen** die durchschnittlichen täglichen Auszahlungen mal Kapitalbindungsdauer.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Änderungsvorschläge",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Szenario",
+              "Kapitalbindung",
+              "Kapitalbedarf bei 2.000 € täglich"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ausgangslage",
+                  "10 + 5 + 15 + 30 − 20 = 40 Tage",
+                  "80.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb will Händlern 45 statt 30 Tage Ziel gewähren",
+                  "55 Tage",
+                  "110.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einkauf vereinbart 30 statt 20 Tage Lieferantenziel",
+                  "30 Tage",
+                  "60.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "beides zusammen",
+                  "45 Tage",
+                  "90.000 €"
+                ]
+              }
+            ],
+            "fazit": "Jeder Tag mehr Kundenziel kostet 2.000 € zusätzliches Kapital, jeder Tag mehr Lieferantenziel spart dieselbe Summe.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung zeigt, was im Gespräch mit Händlern auf dem Spiel steht. Gewährt der Vertrieb 15 Tage mehr Zahlungsziel, braucht MAKEL Studio dauerhaft 30.000 € mehr Kapital, etwa über einen Kontokorrentkredit mit Zinsen. Ob sich das lohnt, hängt davon ab, wie viel zusätzlicher Umsatz das längere Ziel bringt.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Auch das laufende Geschäft bindet Kapital: Zwischen der Bezahlung von Material und Löhnen und dem Zahlungseingang vom Kunden vergeht Zeit. Die Kapitalbindungsdauer ergibt sich aus Lagerdauer der Rohstoffe + Fertigungsdauer + Lagerdauer der Fertigerzeugnisse + Kundenziel − Lieferantenziel. Der Kapitalbedarf für das Umlaufvermögen ist dann vereinfacht: durchschnittliche tägliche Auszahlungen × Kapitalbindungsdauer. Wer Lagerzeiten verkürzt oder Kunden schneller zahlen lässt, senkt den Bedarf.",
-        "beispiele": [
-          "10 Tage Rohstofflager + 5 Tage Fertigung + 15 Tage Fertiglager + 30 Tage Kundenziel − 20 Tage Lieferantenziel = 40 Tage.",
-          "Tägliche Auszahlungen 2.000 € × 40 Tage = 80.000 € Kapitalbedarf Umlaufvermögen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kürzere Lagerdauer",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch innerbetrieblich lässt sich Kapital freisetzen. Gelingt es, die Rohlinge statt 10 nur 6 Tage zu lagern, etwa durch genauere Bestellungen, sinkt die Bindung um 4 Tage und der Kapitalbedarf um 8.000 €. Lagerdauer ist deshalb nicht nur eine Frage des Platzes, sondern auch der Finanzierung.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Marlene Voss schlägt vor, Großkunden 60 statt 30 Tage Zahlungsziel zu geben. Sandra rechnet: Die Kapitalbindung steigt um 30 Tage, bei 2.000 € täglichen Auszahlungen braucht MAKEL 60.000 € mehr Kapital — das müsste finanziert werden.",
-        "typische_fehler": "Das Lieferantenziel addieren statt abziehen.",
         "verstaendnisfragen": [
-          "Wie berechnet sich die Kapitalbindungsdauer? Lagerdauer Rohstoffe + Fertigungsdauer + Lagerdauer Fertigerzeugnisse + Kundenziel − Lieferantenziel.",
-          "Wie lässt sich der Kapitalbedarf im Umlaufvermögen senken? Lagerzeiten verkürzen, Kundenziele verkürzen, Lieferantenziele nutzen."
-        ],
-        "pruefungsbezug": "Kapitalbedarf für das Umlaufvermögen berechnen.",
-        "merksatz": "Kapitalbedarf UV = tägliche Auszahlungen × (Lager + Fertigung + Fertiglager + Kundenziel − Lieferantenziel)."
+          {
+            "frage": "Tägliche Auszahlungen 2.000 €, Kapitalbindungsdauer 40 Tage. Das Kundenziel steigt von 30 auf 60 Tage. Wie hoch ist der neue Kapitalbedarf?",
+            "antwort": "70 Tage × 2.000 € = 140.000 €, also 60.000 € mehr als bisher.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum verringert das Lieferantenziel die Kapitalbindung?",
+            "antwort": "Weil MAKEL Studio das Material erst später bezahlt. In dieser Zeit ist kein eigenes Geld gebunden.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Zahlungen und Erfolg fallen auseinander (Kapitel 3).",
-          "Abschreibungen sind Aufwand ohne Auszahlung."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst einen Liquiditätsplan aus Anfangsbestand, Einzahlungen und Auszahlungen auf, erkennst Unterdeckungen im Voraus und grenzt Zahlungen von Aufwendungen ohne Zahlung ab.",
+        "vorwissen_kurz": "Ob ein Unternehmen zahlungsfähig bleibt, entscheidet sich nicht am Jahresende, sondern jeden Monat.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Monat für Monat planen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:liquiditaetsplan|Liquiditätsplan}} stellt für jeden Monat den erwarteten Anfangsbestand an Geld, die erwarteten Einzahlungen und Auszahlungen gegenüber. Daraus ergibt sich der Endbestand, der zum Anfangsbestand des nächsten Monats wird. Ein negativer Endbestand zeigt eine Lücke, die geschlossen werden muss. In den Plan gehören nur Zahlungen: Abschreibungen oder die Bildung von Rückstellungen sind Aufwand ohne Zahlung und haben dort nichts zu suchen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Plan für das erste Quartal",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Januar",
+              "Februar",
+              "März"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anfangsbestand",
+                  "10.000 €",
+                  "− 5.000 €",
+                  "8.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einzahlungen von Kunden",
+                  "25.000 €",
+                  "48.000 €",
+                  "52.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auszahlungen Löhne, Material, Miete",
+                  "34.000 €",
+                  "35.000 €",
+                  "36.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auszahlung Umsatzsteuer-Zahllast",
+                  "6.000 €",
+                  "—",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Auszahlung Laserstation",
+                  "—",
+                  "—",
+                  "61.285 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Endbestand",
+                  "− 5.000 €",
+                  "8.000 €",
+                  "− 37.285 €"
+                ]
+              }
+            ],
+            "fazit": "Im Januar fehlt kurzfristig Geld, weil die Händler nach dem Weihnachtsgeschäft erst im Februar zahlen. Im März entsteht durch die Laserstation eine große Lücke von gut 37.000 €.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Plan macht zwei unterschiedliche Lücken sichtbar. Die Januar-Lücke ist saisonal und kurz; sie lässt sich mit dem Kontokorrentkredit überbrücken. Die März-Lücke ist groß und entsteht durch eine langfristige Investition; sie sollte langfristig finanziert werden, etwa mit einem Investitionskredit. Ohne Plan hätte MAKEL Studio beide Probleme erst bemerkt, als das Konto im Minus war.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Der Liquiditätsplan (Finanzplan) stellt für jeden Monat oder jede Woche die erwarteten Einzahlungen und Auszahlungen gegenüber: Anfangsbestand + Einzahlungen − Auszahlungen = Endbestand, der zugleich Anfangsbestand der nächsten Periode ist. Ein negativer Endbestand zeigt eine Unterdeckung, die rechtzeitig geschlossen werden muss. Im Plan stehen nur Zahlungen — Abschreibungen, Bestandsveränderungen oder Rückstellungsbildungen gehören nicht hinein, Tilgungen, Investitionen und Steuerzahlungen dagegen schon.",
-        "beispiele": [
-          "Januar: Anfangsbestand 10.000 € + Einzahlungen 25.000 € − Auszahlungen 40.000 € = −5.000 €.",
-          "Die Abschreibung der Stickmaschine erscheint nicht im Liquiditätsplan."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Planungshorizont",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Liquiditätspläne werden meist monatlich für ein Jahr erstellt und wöchentlich oder täglich für die nächsten Wochen verfeinert. Je weiter der Horizont, desto unsicherer die Zahlen. Deshalb wird der Plan regelmäßig mit den tatsächlichen Zahlungen verglichen und fortgeschrieben.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Im Januar zahlen viele Kunden die Weihnachtsaufträge erst später, gleichzeitig sind Löhne, Miete und die Umsatzsteuer für Dezember fällig. Sandras Plan zeigt für Januar eine Unterdeckung von 5.000 €, im Februar dank hoher Kundeneingänge wieder einen Überschuss.",
-        "typische_fehler": "Aufwendungen ohne Zahlung, etwa Abschreibungen, in den Liquiditätsplan aufnehmen.",
         "verstaendnisfragen": [
-          "Wie wird der Endbestand berechnet? Anfangsbestand + Einzahlungen − Auszahlungen.",
-          "Gehören Abschreibungen in den Liquiditätsplan? Nein, sie führen nicht zu einer Auszahlung."
-        ],
-        "pruefungsbezug": "Einen Liquiditätsplan aufstellen und Unterdeckungen erkennen.",
-        "merksatz": "Liquiditätsplan: Anfangsbestand + Einzahlungen − Auszahlungen = Endbestand — nur Zahlungen, keine Abschreibungen."
+          {
+            "frage": "Gehört die Abschreibung der Stickmaschine in den Liquiditätsplan?",
+            "antwort": "Nein. Sie ist Aufwand ohne Zahlung; das Geld floss beim Kauf der Maschine.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Berechne den Endbestand im März ohne die Laserstation.",
+            "antwort": "8.000 € + 52.000 € − 36.000 € = 24.000 €.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Zahlungsunfähigkeit gefährdet das Unternehmen.",
-          "Zu viel ungenutztes Geld bringt kaum Ertrag."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für Unter- und Überdeckungen im Liquiditätsplan passende Maßnahmen, begründest ihre Folgen und erklärst die Pflichten der Geschäftsführung bei drohender Zahlungsunfähigkeit.",
+        "vorwissen_kurz": "Ein Liquiditätsplan ist nur nützlich, wenn auf seine Warnungen reagiert wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vorziehen, verschieben, beschaffen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einer **Unterdeckung** gibt es drei Richtungen: Einzahlungen vorziehen, etwa durch konsequentes Mahnen, Skontoanreize für Kunden oder Factoring; Auszahlungen verschieben, etwa durch Ausnutzen von Lieferantenzielen, Verschieben von Investitionen oder Abbau von Lagerbeständen; zusätzliche Mittel beschaffen, etwa über einen Kontokorrentkredit oder ein Darlehen. Bei einer **Überdeckung** wird überschüssiges Geld sinnvoll genutzt: Lieferantenskonto ziehen, Kredite zurückführen oder kurzfristig anlegen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Lücken im ersten Quartal schließen",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Lücke",
+              "Maßnahme",
+              "Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Januar − 5.000 €",
+                  "Kontokorrentkredit für zwei Wochen",
+                  "Zinsen von wenigen Euro"
+                ]
+              },
+              {
+                "zellen": [
+                  "Januar − 5.000 € (Alternative)",
+                  "Zahlung an Garnlieferanten innerhalb des Ziels auf Februar legen",
+                  "kein Skonto, aber keine Zinsen"
+                ]
+              },
+              {
+                "zellen": [
+                  "März − 37.285 €",
+                  "Investitionskredit über 50.000 € auf fünf Jahre",
+                  "Zinsen und Tilgung im Plan ab April"
+                ]
+              },
+              {
+                "zellen": [
+                  "März (ergänzend)",
+                  "Vorsteuer 9.785 € kommt im April zurück",
+                  "Kreditbedarf geringer, wenn die Lücke nur kurz überbrückt wird"
+                ]
+              },
+              {
+                "zellen": [
+                  "April bis Juni Überschuss",
+                  "Lieferantenrechnungen mit Skonto zahlen",
+                  "spart 2 % auf Materialeinkäufe"
+                ]
+              }
+            ],
+            "fazit": "Für jede Lücke gibt es eine passende Maßnahme. Kurzfristige Lücken werden kurzfristig, langfristige langfristig finanziert.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Wahl hat Folgen. Mit einem Investitionskredit über 50.000 € entstehen ab April neue Auszahlungen für Zins und Tilgung, die wieder in den Plan gehören. Und wer Lieferantenziele ausreizt, verzichtet auf Skonto — der entgangene Nachlass ist oft teurer als ein kurzer Kontokorrentkredit. Gute Liquiditätssteuerung vergleicht deshalb die Kosten der Möglichkeiten, statt nur die nächste Lücke zu stopfen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Bei einer absehbaren Unterdeckung kann ein Unternehmen Einzahlungen vorziehen (Forderungen anmahnen, Skonto für Kunden anbieten, Factoring), Auszahlungen verschieben (Zahlungsziele von Lieferanten ausschöpfen, Investitionen verschieben, Lagerbestände abbauen) oder zusätzliche Mittel beschaffen (Kontokorrentkredit). Bei einer Überdeckung kann es Skonto bei Lieferanten nutzen, Kredite zurückführen oder Geld kurzfristig anlegen. Kann eine GmbH ihre fälligen Zahlungen nicht mehr leisten, ist die Geschäftsführung gesetzlich verpflichtet, ohne schuldhaftes Zögern Insolvenz zu beantragen — deshalb ist der Liquiditätsplan ein Frühwarnsystem.",
-        "beispiele": [
-          "Unterdeckung Januar: Kontokorrentkredit kurzfristig nutzen, offene Forderungen gezielt anmahnen.",
-          "Überdeckung Februar: Lieferantenrechnung mit 2 % Skonto bezahlen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn der Plan dauerhaft Lücken zeigt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Zeigt der Plan über viele Monate Lücken, die sich nicht schließen lassen, droht Zahlungsunfähigkeit. Dann muss die Geschäftsführung handeln und rechtzeitig Beratung einholen; die Pflicht zum Insolvenzantrag nach § 15a InsO greift unverzüglich, spätestens nach drei Wochen bei Zahlungsunfähigkeit beziehungsweise sechs Wochen bei Überschuldung.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Für die Januarlücke von 5.000 € prüft Sandra: Zwei Agenturen sind mit 7.000 € überfällig — sie lässt Marlene anrufen. Die Bezahlung einer Stoffbestellung verschiebt sie im Rahmen des vereinbarten Zahlungsziels. Als Reserve bleibt der Kontokorrentrahmen der Hausbank.",
-        "typische_fehler": "Erst reagieren, wenn das Konto schon überzogen ist.",
         "verstaendnisfragen": [
-          "Welche drei Wege gibt es bei Unterdeckung? Einzahlungen vorziehen, Auszahlungen verschieben, zusätzliche Mittel beschaffen.",
-          "Was tun bei Überdeckung? Skonto nutzen, Kredite zurückführen oder kurzfristig anlegen."
-        ],
-        "pruefungsbezug": "Maßnahmen bei Unter- und Überdeckung begründet auswählen.",
-        "merksatz": "Unterdeckung: Einzahlungen vorziehen, Auszahlungen verschieben, Mittel beschaffen; Überdeckung: Skonto, Tilgung, Anlage."
+          {
+            "frage": "Welche Maßnahme passt zu einer kurzen saisonalen Unterdeckung?",
+            "antwort": "Eine kurzfristige: Kontokorrentkredit, Mahnungen oder das Ausnutzen von Lieferantenzielen. Ein langfristiges Darlehen wäre dafür zu teuer und unflexibel.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ist das Ausreizen des Lieferantenziels nicht immer günstig?",
+            "antwort": "Weil dabei Skonto verloren geht. 2 % Skonto für eine um 20 Tage frühere Zahlung entsprechen umgerechnet einem sehr hohen Jahreszins, der oft über dem Kontokorrentzins liegt.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

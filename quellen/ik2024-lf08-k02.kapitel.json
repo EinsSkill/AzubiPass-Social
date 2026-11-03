@@ -6,86 +6,512 @@
   "untertitel": "Kosten nach Art, Zurechenbarkeit und Mengenabhängigkeit gliedern — und immer sagen, worauf sie sich beziehen.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Kosten sind der betriebsbedingte Werteverzehr (Kapitel 1).",
-          "Kosten entstehen für Material, Personal, Maschinen, Räume."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest die Kosten eines Monats nach Kostenarten, ermittelst ihre Anteile und erklärst, warum jede weitere Einteilung ein Bezugsobjekt und einen Zeitraum braucht.",
+        "vorwissen_kurz": "Bevor man fragt, wofür Kosten entstanden sind, muss klar sein, welche Kosten überhaupt angefallen sind.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Kosten?",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:kostenartenrechnung|Kostenartenrechnung}} ist die erste Stufe der KLR. Sie erfasst die Kosten einer Periode und ordnet sie nach ihrer Art: Materialkosten, Personalkosten, Abschreibungen, Raumkosten, Energie, Dienstleistungen. Die Zahlen stammen aus der Finanzbuchhaltung, bereinigt um neutralen Aufwand und ergänzt um kalkulatorische Kosten. Ob eine Kostenart als Einzel- oder Gemeinkosten gilt, lässt sich erst sagen, wenn feststeht, worauf sie bezogen wird: auf einen Auftrag, ein Produkt oder eine Abteilung.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kosten der Veredelung im März",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kostenart",
+              "Betrag",
+              "Anteil"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Material (Rohlinge, Garn, Vlies, Farbe)",
+                  "18.000 €",
+                  "55,4 %"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Löhne",
+                  "9.000 €",
+                  "27,7 %"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Hallenmiete",
+                  "2.500 €",
+                  "7,7 %"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Abschreibungen",
+                  "1.800 €",
+                  "5,5 %"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Energie",
+                  "1.200 €",
+                  "3,7 %"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "32.500 €",
+                  "100,0 %"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Material und Löhne machen über 80 % der Kosten aus. Wer die Kosten der Veredelung senken will, schaut zuerst dort hin.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kostenarten zeigen auch Veränderungen über die Zeit. Steigen die Energiekosten im Winter deutlich, obwohl die Produktion gleich bleibt, ist das ein Hinweis auf Heizung oder Maschinen im Leerlauf. Vergleicht MAKEL Studio die Monate, werden solche Entwicklungen sichtbar, bevor sie die Kalkulation verfälschen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Kostenartenrechnung beantwortet die Frage: Welche Kosten sind entstanden? Sie gliedert nach der Art der verbrauchten Güter: Materialkosten, Personalkosten, Abschreibungen, Raumkosten, Energiekosten, Dienstleistungskosten (Versicherung, Werbung), kalkulatorische Kosten. Für jede weitere Einteilung braucht man ein Bezugsobjekt und einen Zeitraum: Kosten wofür (für ein Produkt, einen Auftrag, eine Kostenstelle) und in welchem Zeitraum (Monat, Jahr)? Ohne diese Angabe sind Aussagen wie ‚die Miete ist Gemeinkosten‘ unvollständig.",
-        "beispiele": [
-          "Materialkosten der Veredelung im März: Rohlinge, Garn, Farbe.",
-          "Personalkosten: Löhne der Stickerinnen, Gehälter in der Verwaltung, Sozialabgaben."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kostenarten und Kontenplan",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Viele Kostenarten entsprechen den Aufwandskonten der Klassen 6 und 7: Aufwendungen für Rohstoffe, Löhne, Abschreibungen, Mieten. Die KLR übernimmt sie, prüft aber, ob alles betriebsbedingt und periodengerecht ist, und ergänzt kalkulatorische Kostenarten, die in der Buchführung fehlen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Sandra Koslowski erstellt für Tobias Renner eine Übersicht der Veredelungskosten im März: Material 18.000 €, Löhne 9.000 €, Hallenmiete 2.500 €, Energie 1.200 €, Abschreibungen 1.800 €. Tobias fragt: ‚Und was davon kostet ein einzelner Hoodie?‘ — Dafür muss jede Kostenart auf das Bezugsobjekt Hoodie bezogen werden.",
-        "typische_fehler": "Kosten ohne Bezugsobjekt und Zeitraum einordnen.",
         "verstaendnisfragen": [
-          "Welche Frage beantwortet die Kostenartenrechnung? Welche Kosten sind entstanden?",
-          "Warum braucht man ein Bezugsobjekt? Weil Zurechenbarkeit und Mengenabhängigkeit davon abhängen, worauf sich die Kosten beziehen."
-        ],
-        "pruefungsbezug": "Kosten nach Arten gliedern und das Bezugsobjekt benennen.",
-        "merksatz": "Die Kostenartenrechnung fragt: Welche Kosten? Jede weitere Einteilung braucht Bezugsobjekt und Zeitraum."
+          {
+            "frage": "Wie hoch ist der Anteil der Löhne an den Gesamtkosten?",
+            "antwort": "9.000 € ÷ 32.500 € × 100 ≈ 27,7 %.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum lässt sich nicht allgemein sagen, ob die Hallenmiete Einzel- oder Gemeinkosten sind?",
+            "antwort": "Weil das vom Bezugsobjekt abhängt. Für einen einzelnen Auftrag ist sie Gemeinkosten; für die Kostenstelle Veredelung, die die Halle allein nutzt, kann sie direkt zugeordnet werden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Manche Kosten lassen sich einem Produkt direkt zuordnen, andere nicht.",
-          "Die Hallenmiete gilt für alle Produkte gemeinsam."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Einzelkosten, Sondereinzelkosten und Gemeinkosten für ein bestimmtes Bezugsobjekt und begründest, warum Gemeinkosten nur über einen Schlüssel verteilt werden können.",
+        "vorwissen_kurz": "Manche Kosten lassen sich genau einem Auftrag zuordnen, andere entstehen für viele Aufträge gemeinsam.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Direkt oder über einen Schlüssel",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:einzelkosten|Einzelkosten}} lassen sich einem Kostenträger, etwa einem Auftrag oder Produkt, direkt und genau zurechnen: das Material laut Stückliste, die Fertigungszeit laut Arbeitsplan. **Sondereinzelkosten** fallen nur für einen bestimmten Auftrag an, etwa eine eigens programmierte Stickdatei. {{begriff:gemeinkosten|Gemeinkosten}} entstehen für viele Aufträge gemeinsam, etwa Hallenmiete oder das Gehalt der Produktionsleitung. Sie werden über einen Schlüssel verteilt, zum Beispiel als Zuschlag auf die Einzelkosten.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Eventauftrag über 400 Shirts",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kosten",
+              "Einordnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "400 Rohlinge à 4,50 €",
+                  "Materialeinzelkosten",
+                  "1.800 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckfarbe laut Stückliste",
+                  "Materialeinzelkosten",
+                  "160 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckzeit 8 h à 22 € Lohn",
+                  "Fertigungseinzelkosten",
+                  "176 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Erstellung der Druckvorlage für das Eventlogo",
+                  "Sondereinzelkosten der Fertigung",
+                  "120 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Anteil an Hallenmiete, Leitung, Verwaltung",
+                  "Gemeinkosten über Zuschläge",
+                  "wird in der Kalkulation ermittelt"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Rund 2.256 € lassen sich dem Auftrag direkt zuordnen. Die Gemeinkosten kommen über Zuschlagssätze hinzu, die die Kostenstellenrechnung liefert.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Würde MAKEL Studio die Hallenmiete direkt einem Auftrag zuordnen, müsste es festlegen, wie viel Quadratmeter und Minuten der Auftrag in der Halle verbracht hat. Das ist kaum messbar und lohnt den Aufwand nicht. Deshalb werden solche Kosten über einen Schlüssel verteilt — mit dem Wissen, dass die Verteilung eine Annäherung ist.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Nach der Zurechenbarkeit auf einen Kostenträger (Produkt, Auftrag) unterscheidet man Einzelkosten und Gemeinkosten. Einzelkosten lassen sich dem Kostenträger direkt und belegbar zuordnen, etwa Materialeinzelkosten laut Stückliste (der Rohling) oder Fertigungslöhne laut Arbeitsplan. Gemeinkosten entstehen für mehrere Kostenträger gemeinsam und können nur über Schlüssel verteilt werden, etwa Hallenmiete, Gehalt der Produktionsleitung, Abschreibungen der Gebäude. Sondereinzelkosten fallen für einen bestimmten Auftrag an, ohne Material oder Lohn zu sein, etwa eine eigens erstellte Stickdatei für einen Kunden.",
-        "beispiele": [
-          "Hoodie-Rohling: Materialeinzelkosten.",
-          "Gehalt der Produktionsleitung: Gemeinkosten."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Unechte Gemeinkosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Kosten könnten einem Auftrag zugeordnet werden, aber der Aufwand der Erfassung wäre zu hoch, etwa einige Gramm Kleber oder der Strom einer Maschine ohne eigenen Zähler. Sie werden aus Vereinfachung wie Gemeinkosten behandelt und heißen unechte Gemeinkosten.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für den Eventauftrag über 400 Hoodies lassen sich direkt zuordnen: 400 Rohlinge, das Garn laut Stückliste, die Stickzeit laut Arbeitsplan und die eigens programmierte Logodatei für 120 € (Sondereinzelkosten). Die Hallenmiete und das Gehalt von Deniz Aydın lassen sich nicht direkt zuordnen — sie sind Gemeinkosten.",
-        "typische_fehler": "Gemeinkosten ‚gefühlt‘ einem Produkt zuordnen, ohne Schlüssel.",
         "verstaendnisfragen": [
-          "Was sind Einzelkosten? Kosten, die einem Kostenträger direkt und belegbar zugerechnet werden können.",
-          "Wie werden Gemeinkosten verteilt? Über Schlüssel oder Zuschlagssätze."
-        ],
-        "pruefungsbezug": "Einzel- und Gemeinkosten an Beispielen unterscheiden.",
-        "merksatz": "Einzelkosten sind dem Produkt direkt zurechenbar, Gemeinkosten nur über Schlüssel."
+          {
+            "frage": "Ist die eigens programmierte Logodatei für einen Auftrag Einzel- oder Gemeinkosten?",
+            "antwort": "Sondereinzelkosten der Fertigung. Sie fällt nur für diesen Auftrag an und wird ihm direkt zugerechnet.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum wird die Hallenmiete über einen Schlüssel verteilt?",
+            "antwort": "Weil sie für alle Aufträge gemeinsam entsteht und sich nicht genau messen lässt, welchen Anteil ein einzelner Auftrag verursacht.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Aus LF 6 kennst du fixe und variable Kosten.",
-          "Gesamtkosten = Fixkosten + variable Stückkosten × Menge."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest fixe und variable Kosten nach ihrer Mengenabhängigkeit, berechnest Gesamt- und Stückkosten für verschiedene Mengen und erklärst, welche Stückkosten sich mit der Menge ändern.",
+        "vorwissen_kurz": "Manche Kosten steigen mit jedem Stück, andere bleiben gleich, ob 100 oder 1.000 Stück produziert werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mengenabhängig oder nicht",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Variable Kosten** verändern sich mit der Produktionsmenge: Rohlinge, Garn, Farbe, Energie für die Maschinenlaufzeit. **Fixe Kosten** bleiben in einem Zeitraum gleich, unabhängig von der Menge: Miete, Abschreibungen, Gehälter. Bei steigender Menge bleiben die variablen Kosten je Stück gleich, während die fixen Kosten je Stück sinken, weil sie sich auf mehr Stücke verteilen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Druckabteilung bei verschiedenen Mengen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fixkosten der Druckabteilung 8.000 € im Monat, variable Kosten 4 € je Shirt.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Menge",
+              "Fixkosten",
+              "variable Kosten",
+              "Gesamtkosten",
+              "fix je Stück",
+              "variabel je Stück",
+              "gesamt je Stück"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1.000",
+                  "8.000 €",
+                  "4.000 €",
+                  "12.000 €",
+                  "8,00 €",
+                  "4,00 €",
+                  "12,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "2.000",
+                  "8.000 €",
+                  "8.000 €",
+                  "16.000 €",
+                  "4,00 €",
+                  "4,00 €",
+                  "8,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "4.000",
+                  "8.000 €",
+                  "16.000 €",
+                  "24.000 €",
+                  "2,00 €",
+                  "4,00 €",
+                  "6,00 €"
+                ]
+              }
+            ],
+            "fazit": "Die variablen Kosten je Stück bleiben bei 4 €. Nur der Fixkostenanteil je Stück halbiert sich bei doppelter Menge.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Diese Unterscheidung ist wichtig für Entscheidungen. Fragt ein Kunde nach 500 zusätzlichen Shirts, steigen die Kosten der Druckabteilung nur um 500 × 4 € = 2.000 €, solange die Kapazität reicht. Die Fixkosten fallen ohnehin an. Für die Frage, ob sich der Zusatzauftrag lohnt, zählen deshalb vor allem die variablen Kosten.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Nach der Abhängigkeit von der Beschäftigung (Menge) unterscheidet man fixe Kosten, die in einem Zeitraum unabhängig von der Menge anfallen, und variable Kosten, die mit der Menge steigen. Gesamtkosten = fixe Kosten + variable Stückkosten × Menge; Stückkosten = Gesamtkosten ÷ Menge. Die variablen Stückkosten bleiben bei linearem Verlauf gleich, die fixen Kosten je Stück sinken mit steigender Menge. Sprungfixe Kosten bleiben über einen Mengenbereich gleich und springen dann, etwa wenn eine zweite Schicht nötig wird.",
-        "beispiele": [
-          "Fixkosten 8.000 €, variable Stückkosten 4 €, Menge 1.000: Gesamtkosten 12.000 €, Stückkosten 12 €.",
-          "Ab 2.000 Stück im Monat braucht MAKEL eine zweite Schicht: sprungfixe Personalkosten."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Sprungfixe Kosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Reicht die Kapazität einer Presse nicht mehr, braucht MAKEL Studio eine zweite oder eine zusätzliche Schicht. Dann springen die Fixkosten auf ein höheres Niveau. Bis dahin bleiben sie konstant. Solche Kosten heißen sprungfix.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für die Shirt-Linie rechnet Sandra: 8.000 € fixe Kosten im Monat, 4 € variable Kosten je Stück. Bei 1.000 Stück: 12.000 € gesamt, 12 € je Stück. Bei 2.000 Stück: 16.000 € gesamt, 8 € je Stück. Die variablen Stückkosten bleiben bei 4 €.",
-        "typische_fehler": "Die gesamten Stückkosten bei veränderter Menge als konstant annehmen.",
         "verstaendnisfragen": [
-          "Wie verändern sich die fixen Kosten je Stück bei steigender Menge? Sie sinken.",
-          "Was sind sprungfixe Kosten? Kosten, die über einen Mengenbereich fix sind und dann sprunghaft steigen."
-        ],
-        "pruefungsbezug": "Gesamt- und Stückkosten bei gegebener Menge berechnen.",
-        "merksatz": "Fix oder variabel richtet sich nach der Menge; die variablen Stückkosten bleiben gleich, die fixen Stückkosten sinken mit der Menge."
+          {
+            "frage": "Fixkosten 8.000 €, variable Stückkosten 4 €. Wie hoch sind die variablen Stückkosten bei 2.000 statt 1.000 Stück?",
+            "antwort": "4 €. Bei linearem Verlauf bleiben die variablen Stückkosten gleich; es sinken nur die fixen Kosten je Stück.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie hoch sind die Gesamtkosten je Stück bei 1.600 Shirts?",
+            "antwort": "(8.000 € + 1.600 × 4 €) ÷ 1.600 = 14.400 € ÷ 1.600 = 9 €.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Einzel/Gemein und fix/variabel sind zwei Einteilungen.",
-          "Entscheidungen brauchen die passende Einteilung."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Kosten gleichzeitig nach Zurechenbarkeit und nach Mengenabhängigkeit ein und widerlegst die Annahme, Einzelkosten seien immer variabel und Gemeinkosten immer fix.",
+        "vorwissen_kurz": "Kosten lassen sich nach zwei Fragen einteilen. Die Antworten auf beide Fragen hängen nicht automatisch zusammen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Fragen, vier Felder",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Einteilung in Einzel- und Gemeinkosten fragt: Lässt sich die Kostenart einem Produkt direkt zurechnen? Die Einteilung in fixe und variable Kosten fragt: Ändert sie sich mit der Menge? Weil das zwei verschiedene Fragen sind, gibt es vier Kombinationen. Häufig sind Einzelkosten variabel und Gemeinkosten fix, aber eben nicht immer.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Kosten bei MAKEL Studio",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kosten",
+              "zurechenbar?",
+              "mengenabhängig?",
+              "Einordnung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohlinge für den Vereinsauftrag",
+                  "ja",
+                  "ja",
+                  "variable Einzelkosten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Leasingrate einer Stickmaschine, die nur für eine Kollektion genutzt wird",
+                  "ja (für die Kollektion)",
+                  "nein",
+                  "fixe Einzelkosten (bezogen auf die Kollektion)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Strom der Stickmaschinen ohne eigenen Zähler je Auftrag",
+                  "nein",
+                  "ja",
+                  "variable Gemeinkosten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gehalt der Produktionsleitung",
+                  "nein",
+                  "nein",
+                  "fixe Gemeinkosten"
+                ]
+              }
+            ],
+            "fazit": "Alle vier Felder sind besetzt. Wer Einzel- mit variabel gleichsetzt, ordnet die Leasingrate und den Strom falsch ein.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Unterscheidung hat Folgen. Die Zuschlagskalkulation braucht die Trennung Einzel/Gemein, um Gemeinkosten auf Aufträge zu verteilen. Die Deckungsbeitragsrechnung braucht die Trennung fix/variabel, um zu entscheiden, ob ein Zusatzauftrag sich lohnt. Je nach Frage wird deshalb die passende Einteilung verwendet.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Zurechenbarkeit (Einzel- oder Gemeinkosten) und Mengenabhängigkeit (fix oder variabel) sind unterschiedliche Kriterien. Häufig sind Einzelkosten variabel und Gemeinkosten fix — aber nicht immer. Energie für die Maschinen ist oft variabel, wird aber mangels Zähler je Auftrag als Gemeinkosten verteilt (variable Gemeinkosten). Ein fest angestellter Mitarbeiter, der nur für einen Großkunden arbeitet, kann Einzelkosten dieses Kunden sein, ist aber fix. Für Kalkulationen braucht man die Zurechenbarkeit, für kurzfristige Entscheidungen (Kapitel 6) die Mengenabhängigkeit.",
-        "beispiele": [
-          "Maschinenstrom: variabel, aber Gemeinkosten (variable Gemeinkosten).",
-          "Leasingrate einer Maschine, die nur für ein Produkt läuft: fix, aber diesem Produkt zurechenbar."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Bezugsobjekt verändert die Einordnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Leasingrate der Kollektionsmaschine ist Einzelkosten, wenn die Kollektion das Bezugsobjekt ist. Für einen einzelnen Hoodie der Kollektion ist sie Gemeinkosten, weil sie sich auf alle Hoodies der Kollektion verteilt. Deshalb wird bei jeder Einordnung das Bezugsobjekt genannt.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli behauptet: ‚Einzelkosten sind immer variabel, Gemeinkosten immer fix.‘ Sandra zeigt ihm die Stromrechnung der Veredelung: Der Verbrauch steigt mit jeder gestickten Minute, wird aber nur gesamt gemessen. Variable Gemeinkosten — Lucas Regel stimmt also nicht.",
-        "typische_fehler": "Einzel-/Gemeinkosten mit variabel/fix gleichsetzen.",
         "verstaendnisfragen": [
-          "Nenne ein Beispiel für variable Gemeinkosten. Zum Beispiel Maschinenstrom ohne Einzelzähler.",
-          "Welche Einteilung braucht man für kurzfristige Entscheidungen? Die nach fix und variabel."
-        ],
-        "pruefungsbezug": "Begründen, warum beide Einteilungen nicht deckungsgleich sind.",
-        "merksatz": "Einzel/Gemein fragt nach Zurechenbarkeit, fix/variabel nach Mengenabhängigkeit — zwei verschiedene Kriterien."
+          {
+            "frage": "Warum ist der Strom der Stickmaschinen variable Gemeinkosten?",
+            "antwort": "Variabel, weil er mit der Maschinenlaufzeit und damit mit der Menge steigt. Gemeinkosten, weil ohne eigenen Zähler nicht messbar ist, wie viel ein einzelner Auftrag verbraucht hat.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Nenne ein Beispiel für fixe Gemeinkosten.",
+            "antwort": "Das Gehalt der Produktionsleitung: Es lässt sich keinem einzelnen Auftrag zuordnen und bleibt gleich, unabhängig von der Menge.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

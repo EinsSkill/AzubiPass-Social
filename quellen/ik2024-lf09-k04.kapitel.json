@@ -6,86 +6,478 @@
   "untertitel": "Preise aus Kosten, Nachfrage und Wettbewerb ableiten, Preisstrategien wählen und die Wirkung von Rabatten auf den Deckungsbeitrag berechnen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Selbstkosten und Deckungsbeiträge kennst du aus LF 8.",
-          "Kunden vergleichen Preise mit Wettbewerbern."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst den Preisspielraum für ein Angebot aus Selbstkosten, Zahlungsbereitschaft der Zielgruppe und Wettbewerbspreisen und begründest einen Preis innerhalb dieses Spielraums.",
+        "vorwissen_kurz": "Das Event-Paket ist entwickelt. Jetzt muss MAKEL Studio entscheiden, was es kosten soll.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Richtungen bestimmen den Preis",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:preispolitik|Preispolitik}} bewegt sich in einem Spielraum. ==Kosten setzen die Untergrenze, Kunden und Wettbewerb die Obergrenze.== Die **kostenorientierte** Sicht fragt, was der Preis decken muss. Die **nachfrageorientierte** Sicht fragt, was die Zielgruppe zu zahlen bereit ist und welchen Nutzen sie erhält. Die **wettbewerbsorientierte** Sicht fragt, was vergleichbare Angebote kosten. Ein guter Preis berücksichtigt alle drei und passt zur Positionierung.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Preisspielraum für das Event-Paket",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Grenze",
+              "Wert",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "langfristige Untergrenze",
+                  "34 €",
+                  "Selbstkosten je Paket"
+                ]
+              },
+              {
+                "zellen": [
+                  "kurzfristige Untergrenze",
+                  "22 €",
+                  "variable Kosten; nur für Ausnahmen bei freier Kapazität"
+                ]
+              },
+              {
+                "zellen": [
+                  "Niedrigpreisanbieter online",
+                  "25 €",
+                  "ohne Beratung, ohne Set, ohne Vorsortierung"
+                ]
+              },
+              {
+                "zellen": [
+                  "regionale Wettbewerber",
+                  "38 bis 45 €",
+                  "mit Stickerei, teils mit Beratung"
+                ]
+              },
+              {
+                "zellen": [
+                  "gewählter Preis",
+                  "44 €",
+                  "oberes Ende der regionalen Spanne, weil Beratung und Vorsortierung enthalten sind"
+                ]
+              },
+              {
+                "zellen": [
+                  "Deckungsbeitrag je Paket",
+                  "44 € − 22 € = 22 €",
+                  ""
+                ]
+              }
+            ],
+            "fazit": "Mit 44 € liegt MAKEL Studio deutlich über dem Online-Anbieter, aber im Rahmen der regionalen Konkurrenz. Der höhere Preis ist durch zusätzliche Leistungen begründet.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Vergleich mit dem Online-Anbieter zu 25 € darf nicht dazu verleiten, den Preis zu senken. Dessen Angebot ist ein anderes Produkt: ohne Beratung, ohne Tasche, ohne Vorsortierung. Agenturen, die genau diese Leistungen brauchen, vergleichen mit den regionalen Anbietern. Wichtig ist, den Mehrwert im Angebot sichtbar zu machen, damit der Preis nachvollziehbar ist.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Ein Preis wird aus drei Richtungen bestimmt. Kostenorientiert: Die Selbstkosten plus Gewinnzuschlag ergeben den angestrebten Preis; die variablen Kosten bilden die kurzfristige Untergrenze. Nachfrageorientiert: Was ist die Zielgruppe bereit zu zahlen? Wie stark reagiert die Nachfrage auf Preisänderungen (Preiselastizität)? Konkurrenzorientiert: Welche Preise verlangen Wettbewerber für vergleichbare Leistungen? Der tatsächliche Preis liegt in dem Spielraum, den alle drei Sichtweisen zulassen.",
-        "beispiele": [
-          "Selbstkosten 26 €, Gewinnzuschlag 15 %: kostenorientiert rund 30 €.",
-          "Wettbewerber verlangen 28 bis 35 € für vergleichbare bestickte Hoodies; Agenturen zahlen für Designberatung mehr."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Preise frei, Absprachen verboten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Unternehmen setzen ihre Preise selbst. Absprachen mit Wettbewerbern über Preise sind verboten (§ 1 GWB). Auch ein informeller Austausch über geplante Preiserhöhungen kann unzulässig sein.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für das Event-Paket rechnet Sandra Koslowski Selbstkosten von 34 € je Hoodie. Online-Anbieter verlangen 25 €, regionale Druckereien 38 bis 45 €. Befragte Agenturen sind bereit, für Designberatung und Termintreue mehr zu zahlen. MAKEL setzt den Preis auf 44 € — über den Online-Anbietern, im Rahmen der regionalen Konkurrenz.",
-        "typische_fehler": "Den Preis allein aus den Kosten ableiten und Zahlungsbereitschaft und Wettbewerb ignorieren.",
         "verstaendnisfragen": [
-          "Welche drei Ausrichtungen der Preisbildung gibt es? Kosten-, nachfrage- und konkurrenzorientiert.",
-          "Was beschreibt die Preiselastizität? Wie stark die Nachfrage auf eine Preisänderung reagiert."
-        ],
-        "pruefungsbezug": "Preisentscheidungen mit Kosten, Nachfrage und Wettbewerb begründen.",
-        "merksatz": "Der Preis entsteht im Spielraum aus Kosten (Untergrenze), Zahlungsbereitschaft und Wettbewerbspreisen."
+          {
+            "frage": "Was bildet die langfristige Preisuntergrenze?",
+            "antwort": "Die Selbstkosten. Auf Dauer muss der Preis alle Kosten decken.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum orientiert sich MAKEL Studio nicht am Online-Anbieter zu 25 €?",
+            "antwort": "Weil dessen Angebot weniger Leistungen enthält und die Zielgruppe gerade die zusätzlichen Leistungen sucht.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "MAKEL positioniert sich als Qualitätsanbieter (Kapitel 3).",
-          "Neue Produkte brauchen einen Einführungspreis."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Premium-, Niedrigpreis-, Skimming-, Penetrations- und Differenzierungsstrategie, prüfst ihre Passung zur Positionierung von MAKEL Studio und gestaltest eine Mengenstaffel.",
+        "vorwissen_kurz": "Ein Preis ist mehr als eine Zahl. Er sagt etwas über das Angebot aus und muss zur Strategie passen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Strategien, die zur Positionierung passen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der **Hochpreisstrategie** wird ein hoher Preis für Qualität und Image verlangt. Die **Niedrigpreisstrategie** setzt auf große Mengen zu niedrigen Preisen. Beim **Skimming** wird ein neues Produkt teuer eingeführt und der Preis später gesenkt. Bei der **Penetration** wird niedrig eingeführt, um schnell Marktanteile zu gewinnen, und später angehoben. Die **Preisdifferenzierung** verlangt unterschiedliche Preise je nach Menge, Zeitpunkt oder Kundengruppe. Welche Strategie passt, hängt von der Positionierung ab.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Mengenstaffel für das Event-Paket",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Menge je Auftrag",
+              "Preis je Paket",
+              "Deckungsbeitrag je Paket",
+              "Deckungsbeitrag gesamt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "20 bis 49",
+                  "44,00 €",
+                  "22,00 €",
+                  "440 bis 1.078 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "50 bis 99",
+                  "41,00 €",
+                  "19,00 €",
+                  "950 bis 1.881 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "ab 100",
+                  "38,50 €",
+                  "16,50 €",
+                  "ab 1.650 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Expresszuschlag unter 7 Arbeitstagen",
+                  "+ 4,00 €",
+                  "+ 4,00 €",
+                  ""
+                ]
+              }
+            ],
+            "fazit": "Die Staffel belohnt größere Aufträge, ohne den Deckungsbeitrag je Paket zu verschenken. Der Expresszuschlag macht die zusätzliche Leistung sichtbar.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Penetrationsstrategie würde der Positionierung widersprechen. Würde MAKEL Studio das Event-Paket zu 30 € einführen, hielten Agenturen es für ein Billigprodukt, und eine spätere Preiserhöhung wäre schwer durchzusetzen. Die Preisdifferenzierung nach Menge passt dagegen gut: Größere Aufträge senken die Rüstkosten je Stück, sodass ein Teil der Ersparnis an den Kunden weitergegeben werden kann.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Preisstrategien legen die grundsätzliche Preislage fest. Hochpreisstrategie (Premium): hoher Preis für hohe Qualität und Image. Niedrigpreisstrategie: niedriger Preis für große Mengen. Abschöpfungsstrategie (Skimming): Einführung mit hohem Preis, später schrittweise senken. Durchdringungsstrategie (Penetration): Einführung mit niedrigem Preis, um schnell Marktanteile zu gewinnen, später anheben. Preisdifferenzierung: unterschiedliche Preise für dieselbe Leistung je nach Menge, Zeitpunkt, Region oder Kundengruppe. Die Strategie muss zur Positionierung passen.",
-        "beispiele": [
-          "Event-Paket zu 44 € mit Designberatung: Hochpreisstrategie, passend zur Qualitätsführerschaft.",
-          "Staffelpreise ab 50, 100, 250 Stück: mengenmäßige Preisdifferenzierung."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Skimming bei Neuheiten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für eine neue, besonders gefragte Stickerei-Technik könnte MAKEL Studio zunächst einen hohen Preis verlangen, solange es der einzige Anbieter in der Region ist. Ziehen Wettbewerber nach, wird der Preis gesenkt. So wird die anfängliche Zahlungsbereitschaft genutzt.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für die neue nachhaltige Teamwear überlegt Marlene Voss: Penetration würde schnell Kunden bringen, aber später höhere Preise schwer durchsetzbar machen und widerspricht der Premium-Positionierung. Sie wählt eine Hochpreisstrategie mit Staffelpreisen für größere Mengen.",
-        "typische_fehler": "Eine Preisstrategie wählen, die der Positionierung widerspricht.",
         "verstaendnisfragen": [
-          "Was ist eine Abschöpfungsstrategie? Einführung mit hohem Preis, der später gesenkt wird.",
-          "Nenne eine Form der Preisdifferenzierung. Zum Beispiel Staffelpreise nach Menge."
-        ],
-        "pruefungsbezug": "Preisstrategien unterscheiden und zur Positionierung passend auswählen.",
-        "merksatz": "Premium, Niedrigpreis, Skimming, Penetration und Differenzierung — die Strategie muss zur Positionierung passen."
+          {
+            "frage": "Warum passt eine Penetrationsstrategie nicht zu MAKEL Studio?",
+            "antwort": "Weil sie der Positionierung über Qualität widerspricht und spätere Preiserhöhungen schwer durchsetzbar sind.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was ist Preisdifferenzierung?",
+            "antwort": "Unterschiedliche Preise für dasselbe Produkt je nach Menge, Zeitpunkt oder Kundengruppe.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Rabatt und Skonto kennst du aus LF 3 und LF 4.",
-          "Der Deckungsbeitrag ist Preis minus variable Stückkosten."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die Wirkung eines Rabatts auf Stückdeckungsbeitrag und Gesamtdeckungsbeitrag, ermittelst die nötige Mehrmenge und prüfst, ob sie realistisch und mit der Kapazität machbar ist.",
+        "vorwissen_kurz": "Der Vertrieb schlägt 10 % Rabatt vor, um mehr Agenturen zu gewinnen. Klingt nach wenig, kostet aber viel.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Rabatt trifft den Deckungsbeitrag doppelt",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Rabatt senkt den Preis, aber nicht die variablen Kosten. Deshalb sinkt der **Deckungsbeitrag je Stück** prozentual stärker als der Preis. Um denselben **Gesamtdeckungsbeitrag** zu erreichen, muss die Menge steigen: Nötige Menge gleich bisheriger Gesamtdeckungsbeitrag geteilt durch neuen Stückdeckungsbeitrag, aufgerundet. Ob diese Mehrmenge erreichbar ist, ist eine Annahme, keine Gewissheit. Zu den Konditionen gehören außerdem Bonus, Skonto, Zahlungsziel und Lieferbedingungen; auch sie kosten Geld.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "10 % Rabatt auf das Event-Paket",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "ohne Rabatt",
+              "mit 10 % Rabatt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Preis je Paket",
+                  "44,00 €",
+                  "39,60 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "variable Kosten",
+                  "22,00 €",
+                  "22,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Deckungsbeitrag je Paket",
+                  "22,00 €",
+                  "17,60 € (− 20 %)"
+                ]
+              },
+              {
+                "zellen": [
+                  "erwarteter Absatz im Jahr",
+                  "1.000 Pakete",
+                  "?"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesamtdeckungsbeitrag",
+                  "22.000 €",
+                  "22.000 € nötig"
+                ]
+              },
+              {
+                "zellen": [
+                  "nötige Menge",
+                  "—",
+                  "22.000 ÷ 17,60 = 1.250 Pakete (+ 25 %)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kapazität Veredelung für Pakete",
+                  "1.300 pro Jahr",
+                  "knapp ausreichend"
+                ]
+              }
+            ],
+            "fazit": "Für 10 % Rabatt braucht MAKEL Studio 25 % mehr Absatz, nur um gleich viel zu verdienen. Die Kapazität würde gerade reichen; ob die Mehrmenge kommt, ist unsicher.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung zeigt, warum Rabatte gut überlegt sein wollen. Bringt der Rabatt nur 10 % mehr Absatz, sinkt der Gesamtdeckungsbeitrag auf 1.100 × 17,60 € = 19.360 €, also um 2.640 €. Dazu kommt das Risiko von Mitnahmeeffekten: Kunden, die auch ohne Rabatt bestellt hätten, zahlen nun weniger. Ein gezielter Einführungsrabatt nur für Neukunden mit fester Laufzeit begrenzt dieses Risiko.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Konditionen ergänzen den Preis: Rabatte (Mengen-, Treue-, Einführungsrabatt), Bonus (nachträglicher Nachlass bei Erreichen eines Jahresumsatzes), Skonto (Nachlass bei schneller Zahlung), Zahlungsziel, Lieferbedingungen. Jeder Nachlass mindert den Deckungsbeitrag je Stück überproportional: Bei Preis 100 €, variablen Kosten 60 € und 10 % Rabatt sinkt der Preis um 10 %, der DB aber von 40 € auf 30 €, also um 25 %. Um denselben Gesamt-DB zu erzielen, muss die Menge entsprechend steigen: bisheriger Gesamt-DB ÷ neuer Stück-DB.",
-        "beispiele": [
-          "100 Stück × 40 € DB = 4.000 €. Mit 10 % Rabatt: DB 30 €, nötig 4.000 ÷ 30 = 133,3 → mindestens 134 Stück.",
-          "Bonus 3 % ab 10.000 € Jahresumsatz: bindet Kunden, belastet aber den DB am Jahresende."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Rabatt, Bonus, Skonto",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Rabatt ist ein Preisnachlass bei Kauf. Ein Bonus wird nachträglich gewährt, etwa wenn ein Kunde im Jahr einen bestimmten Umsatz erreicht. Skonto belohnt schnelle Zahlung. Alle drei mindern den Erlös und gehören in die Kalkulation.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Agentur fordert 10 % Rabatt auf den Listenpreis von 100 € netto für ein Event-Paket. Variable Kosten 60 €. Marlene rechnet: Der DB sinkt von 40 € auf 30 €. Bei bisher 100 Paketen im Jahr müsste die Agentur mindestens 134 bestellen, damit MAKEL denselben Gesamt-DB erzielt. Sie bietet den Rabatt deshalb erst ab 150 Paketen im Jahr an.",
-        "typische_fehler": "Zehn Prozent Rabatt mit zehn Prozent weniger Gewinn gleichsetzen.",
         "verstaendnisfragen": [
-          "Warum sinkt der DB stärker als der Preis? Weil die variablen Kosten gleich bleiben und der ganze Nachlass vom DB abgeht.",
-          "Wie berechnet man die nötige Mehrmenge? Bisheriger Gesamt-DB ÷ neuer Stück-DB, aufgerundet."
-        ],
-        "pruefungsbezug": "Wirkung von Preisnachlässen auf den DB und die nötige Absatzmenge berechnen.",
-        "merksatz": "Ein Rabatt mindert den DB je Stück stärker als den Preis; nötige Menge = bisheriger Gesamt-DB ÷ neuer Stück-DB (aufrunden)."
+          {
+            "frage": "Preis 50 €, variable Kosten 30 €, bisher 200 Stück. Wie viele Stück sind mit 10 % Rabatt für denselben Gesamtdeckungsbeitrag nötig?",
+            "antwort": "Gesamt-DB 4.000 €, neuer Stück-DB 15 €; 4.000 ÷ 15 = 266,7, also 267 Stück.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum sinkt der Deckungsbeitrag prozentual stärker als der Preis?",
+            "antwort": "Weil die variablen Kosten gleich bleiben. Der Rabatt geht vollständig zulasten des Deckungsbeitrags.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Preisentscheidungen sollen Ziele erreichen.",
-          "Wirkung zeigt sich erst nach einiger Zeit."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst Konditionen nach Zielgruppe und Unternehmensziel, legst für eine Preisaktion Ziel, Laufzeit und Erfolgsmaßstab fest und wertest das Ergebnis unter Beachtung von Mitnahmeeffekten aus.",
+        "vorwissen_kurz": "Der Einführungsrabatt für Agenturen ist sechs Monate gelaufen. Hat er sich gelohnt?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ziel, Laufzeit, Kontrolle",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Preis- und Konditionsentscheidungen brauchen ein **Ziel**, etwa eine bestimmte Zahl neuer Agenturkunden, eine **Laufzeit**, nach der die Aktion endet, und einen **Erfolgsmaßstab**, der vorher festgelegt wird. Bei der Auswertung wird auch auf **Mitnahmeeffekte** geachtet: Kunden, die ohnehin gekauft hätten, erhalten den Rabatt, ohne dass mehr verkauft wird. Eine Aktion ist erfolgreich, wenn sie das Ziel erreicht und der Gesamtdeckungsbeitrag nicht sinkt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Auswertung der Einführungsaktion",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Messgröße",
+              "Ziel",
+              "Ergebnis nach 6 Monaten",
+              "Bewertung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Agenturkunden",
+                  "von 8 auf 12",
+                  "13",
+                  "Ziel übertroffen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesamtdeckungsbeitrag Agenturen",
+                  "mindestens 18.000 € halten",
+                  "19.500 €",
+                  "gestiegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestandskunden mit Rabatt ohne Mehrbestellung",
+                  "möglichst keine",
+                  "3",
+                  "Mitnahmeeffekt, ca. 900 € entgangener DB"
+                ]
+              },
+              {
+                "zellen": [
+                  "neue Kunden mit Folgebestellung ohne Rabatt",
+                  "mindestens die Hälfte",
+                  "3 von 5",
+                  "Bindung gelungen"
+                ]
+              }
+            ],
+            "fazit": "Die Aktion hat ihr Ziel erreicht und den Deckungsbeitrag gesteigert. Der Mitnahmeeffekt bei drei Bestandskunden zeigt, dass der Rabatt künftig nur Neukunden gewährt werden sollte.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Auswertung führt zu einer klaren Folgerung. Der Rabatt endet wie geplant; für neue Agenturen bleibt ein Einführungsrabatt auf den ersten Auftrag, Bestandskunden erhalten die normale Mengenstaffel. Dass drei der fünf Neukunden ohne Rabatt nachbestellt haben, spricht dafür, dass das Event-Paket selbst überzeugt und nicht nur der Preis. Ohne festgelegtes Ziel und Laufzeit wäre der Rabatt vermutlich einfach weitergelaufen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Ob eine Preis- oder Konditionsentscheidung wirkt, wird kontrolliert: Wie haben sich Absatz, Umsatz und Deckungsbeitrag entwickelt? Haben sich Neukunden gewonnen oder nur bestehende Kunden zum Rabatt bewegen lassen (Mitnahmeeffekt)? Wie haben Wettbewerber reagiert? Hat sich das Image verändert? Konditionen sollten zur Zielgruppe passen: Agenturen schätzen schnelle Lieferung und klare Staffelpreise, Vereine eher niedrige Einstiegspreise. Ohne Erfolgskontrolle bleiben Rabatte oft dauerhaft bestehen, obwohl sie nichts bringen.",
-        "beispiele": [
-          "Einführungsrabatt für Agenturen: 6 Monate befristet, Erfolgsmaßstab Zahl der Erstbestellungen.",
-          "Mitnahmeeffekt: Stammkunden bestellen wie immer, nur billiger."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Konditionen und Liquidität",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein langes Zahlungsziel kann für Agenturen attraktiv sein, belastet aber die Liquidität von MAKEL Studio. Bei Neukunden ohne Zahlungserfahrung werden Konditionen deshalb zurückhaltend gewährt, etwa mit Anzahlung beim ersten Auftrag.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Nach sechs Monaten Einführungsrabatt hat MAKEL fünf neue Agenturen gewonnen; drei Stammkunden haben den Rabatt ebenfalls erhalten, ohne mehr zu bestellen. Der Gesamt-DB ist leicht gestiegen. Tobias Renner beendet den allgemeinen Rabatt und ersetzt ihn durch einen Neukundenbonus auf die erste Bestellung.",
-        "typische_fehler": "Rabatte einführen, ohne Ziel, Laufzeit und Erfolgskontrolle festzulegen.",
         "verstaendnisfragen": [
-          "Was ist ein Mitnahmeeffekt? Kunden nutzen den Rabatt, ohne ihr Verhalten zu ändern.",
-          "Was gehört zur Erfolgskontrolle einer Preisaktion? Absatz, Umsatz, DB, Neukunden, Reaktion der Wettbewerber."
-        ],
-        "pruefungsbezug": "Konditionen hinsichtlich Zielgruppe und Unternehmensziel beurteilen.",
-        "merksatz": "Preis- und Konditionsentscheidungen brauchen Ziel, Laufzeit und Erfolgskontrolle — auf Mitnahmeeffekte achten."
+          {
+            "frage": "Was ist ein Mitnahmeeffekt?",
+            "antwort": "Kunden, die ohnehin gekauft hätten, erhalten den Rabatt, ohne dass mehr verkauft wird.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Was gehört zu einer kontrollierbaren Rabattaktion?",
+            "antwort": "Ein Ziel, eine Laufzeit und ein vorher festgelegter Erfolgsmaßstab.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

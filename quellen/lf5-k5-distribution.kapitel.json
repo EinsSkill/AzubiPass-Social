@@ -6,46 +6,258 @@
   "untertitel": "Wie die Ware zum Kunden kommt — und wer daran verdient.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "e1",
-        "vorauswissen": [
-          "Ein Produkt muss den Kunden nicht nur überzeugen, sondern auch erreichen.",
-          "Der Vertriebsweg beeinflusst Kundenkontakt, Aufwand und Marge."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst direkten und indirekten Absatz für dieselbe Zielgruppe nach Reichweite, Kosten je Verkauf und Kontrolle und begründest einen Mehrkanalvertrieb.",
+        "vorwissen_kurz": "Ein Hersteller kann selbst an Endkunden verkaufen oder Händler dazwischenschalten. Beides verursacht Kosten — nur an verschiedenen Stellen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer verkauft an die Kundin?",
+            "id": "e1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:distributionspolitik|Distributionspolitik}} legt fest, auf welchem Weg ein Produkt zur Endkundin kommt. Verkauft MAKEL selbst im Onlineshop oder im eigenen Laden, ist das **direkter Absatz**. Verkauft MAKEL an Modehändler, die weiterverkaufen, ist das **indirekter Absatz**. Beim direkten Weg behält MAKEL die ganze Spanne, trägt aber alle Kosten des Verkaufs. Beim indirekten Weg gibt MAKEL einen Teil der Spanne ab und spart dafür Aufwand und gewinnt Reichweite.",
+            "id": "e1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "e1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Hoodie, zwei Wege",
+            "id": "e1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "je verkauftem Hoodie",
+              "Eigener Onlineshop",
+              "Über Modehändler"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Erlös netto für MAKEL",
+                  "120 € brutto ÷ 1,19 = 100,84 €",
+                  "43,61 € (nach Rabatt und Skonto)"
+                ]
+              },
+              {
+                "zellen": [
+                  "variable Herstellkosten",
+                  "26,00 €",
+                  "26,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versand an die Kundin",
+                  "4,60 €",
+                  "entfällt (Lieferung gebündelt an den Laden)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlungsgebühren",
+                  "2,40 €",
+                  "entfällt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rücksendungen (anteilig)",
+                  "2,50 €",
+                  "entfällt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Werbung je Verkauf (angenommen)",
+                  "15,00 €",
+                  "entfällt (Händler wirbt selbst)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beitrag je Verkauf",
+                  "50,34 €",
+                  "17,61 €"
+                ]
+              }
+            ],
+            "fazit": "Im eigenen Shop verdient MAKEL je Stück fast dreimal so viel. Der Handel bringt dafür Stückzahlen, die MAKEL allein nicht erreichen würde — und übernimmt Laden, Beratung und Lagerrisiko.",
+            "id": "e1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "e1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL nutzt deshalb beide Wege: den Onlineshop für Stammkundinnen und neue Kollektionen, die Händler für Reichweite in Städten, in denen MAKEL nicht selbst präsent ist. Wichtig ist, dass sich die Wege nicht gegenseitig schaden. Unterbietet der eigene Shop dauerhaft die Händler, verlieren diese die Lust, MAKEL zu führen.",
+            "id": "e1-p2"
+          }
         ],
-        "erklaerung": "Distributionspolitik regelt den Weg der Ware zum Kunden. Beim direkten Absatz verkauft der Hersteller selbst: Er hat vollen Kundenkontakt und keine Handelsspanne abzugeben, trägt aber den höheren Verwaltungs- und Vertriebsaufwand. Beim indirekten Absatz werden Groß- und Einzelhandel eingeschaltet; die Reichweite steigt, der Aufwand im eigenen Betrieb sinkt, dafür wird die Marge geringer.",
-        "beispiele": [
-          "Ein Hersteller verkauft im eigenen Vertrieb direkt an den Kunden und erhält den vollständigen Kundenkontakt.",
-          "Über Groß- und Einzelhandel erreicht die Ware mehr Kunden, wird aber durch weitere Handelsstufen geführt."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Plattformen und Marktplätze",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Verkauft MAKEL über einen großen Online-Marktplatz, ist das je nach Modell direkt oder indirekt: Kauft der Marktplatz die Ware ein und verkauft sie selbst, ist er Absatzmittler. Verkauft MAKEL dort im eigenen Namen und zahlt eine Provision, bleibt es direkter Absatz mit einem Absatzhelfer. Der Unterschied liegt darin, wem die Ware gehört und wer der Vertragspartner der Kundin ist.",
+                "id": "e1-d1-p1"
+              }
+            ],
+            "id": "e1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb muss zwischen eigenem Verkauf und dem Weg über den Handel entscheiden. Beim direkten Absatz prüft er, ob er den zusätzlichen Verwaltungsaufwand leisten kann und den Kundenkontakt braucht. Beim indirekten Absatz prüft er Reichweite und geringere Marge. Die Entscheidung richtet sich damit nicht nur nach dem kürzesten Weg, sondern nach Kontakt, Aufwand und Ertrag.",
-        "typische_fehler": "Indirekter Absatz wird als schlechter bezeichnet, weil eine Handelsspanne entsteht. Außerdem wird direkter Absatz mit geringem Aufwand gleichgesetzt, obwohl der Betrieb mehr selbst organisieren muss.",
         "verstaendnisfragen": [
-          "Was ist der zentrale Unterschied? Beim direkten Absatz verkauft der Hersteller selbst; beim indirekten Absatz stehen Handelsstufen dazwischen.",
-          "Welche typische Folge hat indirekter Absatz? Größere Reichweite, weniger eigene Verwaltung, aber geringere Marge."
-        ],
-        "pruefungsbezug": "Vergleiche bei Fallaufgaben immer Kundenkontakt, Verwaltungsaufwand, Reichweite und Marge. Danach den passenden Absatzweg begründen.",
-        "merksatz": "Direkt bedeutet voller Kontakt und eigener Aufwand; indirekt bedeutet Handelsstufen und größere Reichweite."
+          {
+            "frage": "Warum ist der höhere Beitrag im eigenen Shop kein Grund, die Händler aufzugeben?",
+            "antwort": "Der Beitrag je Stück sagt nichts über die Menge. Händler verkaufen in Städten und an Kundengruppen, die MAKEL selbst nicht erreicht. Ohne sie würde der Gesamtbeitrag eher sinken, und MAKEL müsste viel mehr in Werbung investieren.",
+            "id": "e1-f1"
+          },
+          {
+            "frage": "Welche Kontrolle verliert MAKEL beim indirekten Absatz?",
+            "antwort": "Über die Präsentation im Laden, den Endpreis, die Beratung und den direkten Kontakt zur Kundin. Rückmeldungen erreichen MAKEL nur über den Händler.",
+            "id": "e1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "e2",
-        "vorauswissen": [
-          "Nicht alle Beteiligten im Vertrieb werden Eigentümer der Ware.",
-          "Eigentum und Vermittlung sind die entscheidenden Unterscheidungsmerkmale."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Absatzmittler und Absatzhelfer nach Eigentum, Risiko und Vergütung und entscheidest, wann ein Handelsvertreter oder ein eigener Außendienst passt.",
+        "vorwissen_kurz": "Zwischen Hersteller und Kundin stehen oft weitere Beteiligte. Sie übernehmen verschiedene Aufgaben und werden unterschiedlich bezahlt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eigentum entscheidet",
+            "id": "e2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:absatzmittler|Absatzmittler}} kauft die Ware, wird Eigentümer und verkauft sie in eigenem Namen weiter. Er trägt das Risiko, dass sie liegen bleibt, und verdient an der Spanne zwischen Einkaufs- und Verkaufspreis. Ein **Absatzhelfer** wird nie Eigentümer. Er vermittelt, transportiert oder berät und erhält dafür eine Provision oder ein Entgelt.",
+            "id": "e2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "e2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "MAKELs Beteiligte im Benelux-Vertrieb",
+            "id": "e2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Beteiligter",
+              "Rolle",
+              "Eigentum an der Ware",
+              "Vergütung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Modehaus in Amsterdam",
+                  "Absatzmittler (Einzelhandel)",
+                  "ja, nach Kauf",
+                  "Spanne zwischen Einkauf und Ladenpreis"
+                ]
+              },
+              {
+                "zellen": [
+                  "Handelsvertreterin für die Niederlande",
+                  "Absatzhelfer",
+                  "nein, vermittelt im Namen von MAKEL",
+                  "Provision, zum Beispiel 8 % vom Umsatz"
+                ]
+              },
+              {
+                "zellen": [
+                  "Spedition",
+                  "Absatzhelfer",
+                  "nein, transportiert nur",
+                  "Frachtentgelt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Messe Amsterdam",
+                  "Absatzhelfer",
+                  "nein, bietet die Plattform",
+                  "Standmiete"
+                ]
+              }
+            ],
+            "fazit": "Nur das Modehaus wird Eigentümer und trägt das Absatzrisiko. Die anderen helfen beim Verkauf, ohne Ware zu besitzen.",
+            "id": "e2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "e2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "e2-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Handelsvertreterin oder eigener Außendienst?",
+            "id": "e2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Niederlande vergleicht MAKEL eine selbstständige Handelsvertreterin mit 8 % Provision und eine angestellte Außendienstmitarbeiterin mit 60.000 € Kosten im Jahr. Die Kosten sind bei einem Umsatz von 750.000 € gleich hoch (8 % von 750.000 € = 60.000 €). Darunter ist die Handelsvertreterin günstiger, darüber der eigene Außendienst. Weil MAKEL in den Benelux-Ländern erst Fuß fasst und weniger Umsatz erwartet, fällt die Wahl auf die Handelsvertreterin. Zudem kennt sie die Händler vor Ort bereits.",
+            "id": "e2-p2"
+          }
         ],
-        "erklaerung": "Absatzmittler kaufen auf eigene Rechnung, werden Eigentümer und tragen das Warenrisiko. Dazu gehören Groß- und Einzelhandel. Absatzhelfer unterstützen den Vertrieb, werden aber nicht Eigentümer: Handelsvertreter, Makler und Spediteure gehören zu dieser Gruppe. Die Merksfrage lautet: Gehört die Ware unterwegs jemand anderem?",
-        "beispiele": [
-          "Ein Einzelhändler kauft die Ware auf eigene Rechnung und trägt das Risiko, sie nicht weiterzuverkaufen: Absatzmittler.",
-          "Ein Handelsvertreter vermittelt Geschäfte, ohne Eigentümer der Ware zu werden; ein Spediteur transportiert sie ebenfalls nur."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kommissionär",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Zwischenform ist der Kommissionär: Er verkauft in eigenem Namen, aber auf Rechnung des Herstellers. Die Kundin schließt den Vertrag mit ihm, das Eigentum geht aber direkt vom Hersteller auf die Kundin über, und unverkaufte Ware geht zurück. Im Modehandel kommt das zum Beispiel bei Ware auf Kommission in kleinen Läden vor.",
+                "id": "e2-d1-p1"
+              }
+            ],
+            "id": "e2-d1"
+          }
         ],
-        "fallbeispiel": "In einer Zuordnung stehen Einzelhändler, Handelsvertreter, Makler und Spediteur. Der Einzelhändler kauft auf eigene Rechnung und wird Eigentümer, daher Absatzmittler. Handelsvertreter und Makler vermitteln, der Spediteur transportiert; keiner wird Eigentümer. Sie sind Absatzhelfer.",
-        "typische_fehler": "Jede Person zwischen Hersteller und Kunde wird als Mittler bezeichnet. Entscheidend ist aber nicht die Position im Weg, sondern Eigentum, eigene Rechnung und Warenrisiko.",
         "verstaendnisfragen": [
-          "Woran erkennst du einen Absatzmittler? Er wird Eigentümer und trägt das Warenrisiko.",
-          "Welche drei Absatzhelfer nennt der Inhalt? Handelsvertreter, Makler und Spediteure."
+          {
+            "frage": "Warum erhält der Händler eine Spanne, die Handelsvertreterin aber eine Provision?",
+            "antwort": "Der Händler kauft die Ware und trägt das Risiko, sie nicht verkaufen zu können; die Spanne vergütet dieses Risiko. Die Handelsvertreterin vermittelt nur und trägt kein Warenrisiko; sie wird für ihre Vermittlung mit einer Provision bezahlt.",
+            "id": "e2-f1"
+          },
+          {
+            "frage": "Ab welchem Umsatz lohnt sich in MAKELs Beispiel der eigene Außendienst?",
+            "antwort": "Ab mehr als 750.000 € Jahresumsatz. Dort sind 8 % Provision höher als die festen Kosten von 60.000 €.",
+            "id": "e2-f2"
+          }
         ],
-        "pruefungsbezug": "Prüfe bei jeder beteiligten Person nur die Eigentumsfrage und ergänze eigene Rechnung beziehungsweise Warenrisiko.",
-        "merksatz": "Wer Eigentümer wird, ist Mittler; wer nur vermittelt oder transportiert, ist Helfer."
+        "quellen": [
+          {
+            "titel": "Handelsgesetzbuch, §§ 84, 87, 383",
+            "url": "https://www.gesetze-im-internet.de/hgb/",
+            "bezug": "Handelsvertreter, Provision, Kommissionär"
+          }
+        ]
       }
     ]
   },
@@ -184,7 +396,7 @@
             {
               "text": "Weder noch, er ist Angestellter",
               "richtig": false,
-              "echo": "Ein Handelsvertreter ist selbstständig. Ein angestellter Verkäufer wäre Teil des eigenen Vertriebs — der Handelsvertreter arbeitet auf eigene Rechnung, verkauft aber fremde Ware."
+              "echo": "Ein Handelsvertreter ist selbstständig. Ein angestellter Verkäufer wäre Teil des eigenen Vertriebs — der Handelsvertreter ist selbstständiger Unternehmer, schließt die Geschäfte aber im Namen und auf Rechnung deines Betriebs."
             }
           ]
         },

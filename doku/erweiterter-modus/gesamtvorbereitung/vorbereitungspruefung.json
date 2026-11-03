@@ -1,0 +1,52 @@
+{
+  "datum": "2026-10-28",
+  "anwendungsbasis": "f041834",
+  "ergebnis": "Vorbereitungskonsistenz bestanden",
+  "kapitel": 160,
+  "abschnitte": 567,
+  "dossiers": 26,
+  "quellhashes_und_originalbloecke": "alle 160 Kapitel stimmen überein",
+  "m01_abschnitte_ohne_absatz": 140,
+  "m01_validator_reproduktion": [
+    {
+      "abschnitt": "lf3:k1-a2",
+      "befund": "FEHLER Erweiterter Modus · quellen/lf3-k1-prozess.kapitel.json · Abschnitt a2: die Kurzfassung hat keinen Absatz, den die Vollfassung ersetzen könnte"
+    },
+    {
+      "abschnitt": "lf9:k2-b3",
+      "befund": "FEHLER Erweiterter Modus · quellen/lf9-k2-finanzierungsarten.kapitel.json · Abschnitt b3: die Kurzfassung hat keinen Absatz, den die Vollfassung ersetzen könnte"
+    }
+  ],
+  "lehrplan_arbeitsauftraege": 49,
+  "zusaetzliche_muster": [
+    {
+      "datei": "buchfuehrung-k3-c4.json",
+      "vertrag": "bestanden",
+      "alle_basis_refs_einmal": true
+    },
+    {
+      "datei": "ik2024-lf06-k03-a1.json",
+      "vertrag": "bestanden",
+      "alle_basis_refs_einmal": true
+    },
+    {
+      "datei": "lf10-k5-b1.json",
+      "vertrag": "bestanden",
+      "alle_basis_refs_einmal": true
+    },
+    {
+      "datei": "lf7-k3-c2.json",
+      "vertrag": "bestanden",
+      "alle_basis_refs_einmal": true
+    }
+  ],
+  "arithmetik": "KLR-Zahlen aus den Muster-Tabellen unabhängig nachgerechnet; Materialbedarf, Steuerschema, Werbeetat und Ergebnisüberleitung mit Decimal kontrolliert",
+  "interne_links": "aufgelöst (historische v1-Referenz ausgenommen)",
+  "grenzen": [
+    "Keine Kapitelquelle oder Anwendung geändert",
+    "Keine neue Browser-/Offlineabnahme",
+    "Keine vollständige neue RLP-Prüfung",
+    "Keine Gesamtfachfreigabe der noch zu redigierenden 564 weiteren Volltexte",
+    "Themenprofile sind heuristische Vorschläge, keine Fachklassifikation"
+  ]
+}

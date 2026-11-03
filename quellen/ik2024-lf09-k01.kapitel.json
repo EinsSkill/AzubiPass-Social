@@ -6,86 +6,455 @@
   "untertitel": "Markt und Wettbewerb beschreiben, Zielgruppen bilden, Marktforschung planen und Daten vorsichtig interpretieren.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "MAKEL verkauft an Boutiquen, Endkunden und Firmen.",
-          "Andere Anbieter konkurrieren um dieselben Kunden."
+        "darstellung": "vollfassung",
+        "ziel": "Du beschreibst einen Markt mit Marktpotenzial, Marktvolumen und Marktanteil, berechnest diese Größen und leitest aus dem Verhältnis Chancen für MAKEL Studio ab.",
+        "vorwissen_kurz": "MAKEL Studio überlegt, das Geschäft mit bedruckten Firmenhoodies auszubauen. Zuerst muss klar sein, wie groß der Markt ist und welche Rolle MAKEL darin spielt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie groß der Markt ist",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Markt ist der Ort, an dem Angebot und Nachfrage zusammentreffen. Im {{begriff:kaeufermarkt|Käufermarkt}} ist das Angebot größer als die Nachfrage, und die Kunden haben die Wahl. ==Marketing richtet das Unternehmen an ihren Bedürfnissen aus.== Das **Marktpotenzial** ist die höchstmögliche Absatzmenge, wenn alle möglichen Käufer kaufen würden. Das **Marktvolumen** ist der tatsächliche Absatz aller Anbieter. Der **Marktanteil** ist der Anteil des eigenen Absatzes am Marktvolumen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Zahlen bedeuten (regionaler Übungsmarkt)",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "Berechnung",
+              "Ergebnis",
+              "Deutung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Sättigungsgrad",
+                  "50.000 ÷ 80.000 × 100",
+                  "62,5 %",
+                  "Markt noch nicht ausgeschöpft"
+                ]
+              },
+              {
+                "zellen": [
+                  "ungenutztes Potenzial",
+                  "80.000 − 50.000",
+                  "30.000 Stück",
+                  "Raum für Wachstum aller Anbieter"
+                ]
+              },
+              {
+                "zellen": [
+                  "Marktanteil MAKEL",
+                  "2.500 ÷ 50.000 × 100",
+                  "5 %",
+                  "kleiner Anbieter neben größeren"
+                ]
+              },
+              {
+                "zellen": [
+                  "Marktanteil größter Wettbewerber",
+                  "12.500 ÷ 50.000 × 100",
+                  "25 %",
+                  "Marktführer in der Region"
+                ]
+              }
+            ],
+            "fazit": "Der Markt wächst noch, und MAKEL Studio hat einen kleinen Anteil. Wachstum ist möglich, indem MAKEL ungenutztes Potenzial erschließt oder Wettbewerbern Kunden abnimmt.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Aus den Größen folgen unterschiedliche Wege. Ist der Markt noch nicht gesättigt, kann MAKEL Studio Kunden gewinnen, die bisher gar nicht kaufen, etwa Firmen, die noch nie eigene Hoodies hatten. Ist er gesättigt, wächst MAKEL nur auf Kosten anderer Anbieter, was meist teurer ist. Die Zahlen sagen allerdings nichts darüber, warum Kunden kaufen; dafür braucht es einen Blick auf Zielgruppen und Wettbewerber.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Ein Markt ist der Ort, an dem Angebot und Nachfrage für eine Leistung zusammentreffen. Das Marktpotenzial ist die höchstmögliche Absatzmenge aller Anbieter, das Marktvolumen die tatsächlich abgesetzte Menge, der Marktanteil der Anteil eines Unternehmens am Marktvolumen. Wer einen Markt beschreibt, betrachtet Kundengruppen und ihre Bedürfnisse, Wettbewerber und ihre Stärken, Preise, Vertriebswege und Trends. In vielen Branchen herrscht ein Käufermarkt: Das Angebot ist größer als die Nachfrage, die Kunden haben die Wahl — Marketing richtet das Unternehmen deshalb konsequent auf Kundenbedürfnisse aus.",
-        "beispiele": [
-          "Markt für individuell veredelte Firmenbekleidung in NRW: Firmen, Vereine, Agenturen als Nachfrager; Druckereien und Online-Konfiguratoren als Anbieter.",
-          "Marktvolumen 50.000 Stück, MAKEL verkauft 2.500 Stück: Marktanteil 5 %."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wettbewerb beschreiben",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben der Marktgröße zählt, wer die Wettbewerber sind, was sie anbieten und wie sie sich unterscheiden. Eine einfache Übersicht nennt für jeden Wettbewerber Leistungen, Preisniveau, Stärken und Schwächen. So erkennt MAKEL, wo es sich abheben kann.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Yuki Bergmann möchte MAKEL stärker im Geschäftskundenmarkt positionieren: Firmen, die hochwertige Teamkleidung mit Logo für Events und Mitarbeitende suchen. Marlene Voss soll zunächst beschreiben, wer diese Kunden sind und wer sie heute beliefert.",
-        "typische_fehler": "Marktpotenzial und Marktvolumen gleichsetzen.",
         "verstaendnisfragen": [
-          "Was ist der Marktanteil? Der Anteil eines Unternehmens am Marktvolumen.",
-          "Was kennzeichnet einen Käufermarkt? Das Angebot übersteigt die Nachfrage, die Kunden haben die Wahl."
-        ],
-        "pruefungsbezug": "Marktgrößen unterscheiden und den Marktanteil berechnen.",
-        "merksatz": "Markt = Angebot trifft Nachfrage; Potenzial ist möglich, Volumen ist tatsächlich, Anteil ist der eigene Teil am Volumen."
+          {
+            "frage": "Was unterscheidet Marktpotenzial und Marktvolumen?",
+            "antwort": "Das Potenzial ist der höchstmögliche Absatz, das Volumen der tatsächliche Absatz aller Anbieter.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Marktvolumen 50.000 Stück, eigener Absatz 2.500 Stück. Wie hoch ist der Marktanteil?",
+            "antwort": "2.500 ÷ 50.000 × 100 = 5 %.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Kunden haben unterschiedliche Bedürfnisse.",
-          "Ein Angebot für alle passt oft keinem richtig."
+        "darstellung": "vollfassung",
+        "ziel": "Du teilst einen Geschäftskundenmarkt anhand relevanter Merkmale in Segmente, bewertest die Segmente nach Bedarf, Erreichbarkeit und Passung zu MAKEL Studio und wählst begründet eine Zielgruppe.",
+        "vorwissen_kurz": "„Alle Firmen, die Hoodies brauchen\" ist keine Zielgruppe. Erst wenn MAKEL Studio weiß, wen es ansprechen will, kann es gezielt handeln.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gruppen mit ähnlichen Bedürfnissen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der **Marktsegmentierung** wird der Markt in Gruppen geteilt, deren Mitglieder ähnliche Bedürfnisse haben. Bei Geschäftskunden eignen sich Merkmale wie Branche, Unternehmensgröße, Region, Bedarfsmenge, Bestellhäufigkeit und Entscheidungswege. Ein Segment ist nützlich, wenn es sich messbar von anderen unterscheidet, groß genug ist und mit eigenen Maßnahmen erreicht werden kann. Die **Zielgruppe** ist das Segment, das MAKEL Studio auswählt und gezielt anspricht.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Segmente bewerten",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Gewicht",
+              "Eventagenturen",
+              "Mittelstand mit Marke",
+              "Sportvereine"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bedarf und Umsatzpotenzial",
+                  "40 %",
+                  "4",
+                  "3",
+                  "2"
+                ]
+              },
+              {
+                "zellen": [
+                  "Passung zu Stärken von MAKEL",
+                  "30 %",
+                  "5",
+                  "3",
+                  "2"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erreichbarkeit",
+                  "30 %",
+                  "3",
+                  "3",
+                  "4"
+                ]
+              },
+              {
+                "zellen": [
+                  "gewichtete Summe",
+                  "",
+                  "4,0",
+                  "3,0",
+                  "2,6"
+                ]
+              }
+            ],
+            "fazit": "Eventagenturen passen am besten zu MAKEL Studio: Sie brauchen häufig hochwertige Ware mit kurzer Lieferzeit, und genau darin ist MAKEL stark.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bewertung ist eine Entscheidungshilfe, keine Wahrheit. Die Punkte beruhen auf Einschätzungen, die mit Daten belegt werden sollten: Wie viele Eventagenturen gibt es in der Region, wie oft bestellen sie, über wen laufen die Entscheidungen? Und die Wahl einer Zielgruppe heißt nicht, alle anderen abzuweisen. Sportvereine bleiben Kunden, werden aber nicht mit eigenen Kampagnen umworben.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Bei der Marktsegmentierung wird ein Gesamtmarkt in Gruppen mit ähnlichen Bedürfnissen und Merkmalen aufgeteilt. Bei Privatkunden sind typische Merkmale Alter, Einkommen, Wohnort, Lebensstil, Kaufverhalten. Bei Geschäftskunden zählen Branche, Unternehmensgröße, Region, Bedarfsmenge, Bestellhäufigkeit und Entscheidungswege (wer kauft ein, wer entscheidet). Ein Segment ist nur nützlich, wenn es messbar, erreichbar, ausreichend groß und in sich ähnlich ist. Die ausgewählte Gruppe, auf die sich das Marketing richtet, heißt Zielgruppe.",
-        "beispiele": [
-          "Segment: Agenturen für Firmenevents in NRW mit 10 bis 50 Beschäftigten und mehreren Events im Jahr.",
-          "Wenig nützlich: ‚Alle, die Kleidung tragen‘ — zu groß und zu verschieden."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Segmentierung bei Privatkunden",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei Privatkunden im Onlineshop werden andere Merkmale verwendet: Alter, Wohnort, Interessen, Kaufverhalten. Für Geschäftskunden sind diese Merkmale wenig hilfreich, weil dort Unternehmen mit eigenen Entscheidungswegen kaufen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Marlene bildet drei Segmente: Eventagenturen, mittelständische Unternehmen mit eigener Marke und Sportvereine. Sie bewertet: Agenturen bestellen oft und mit kurzer Frist, legen Wert auf Qualität und Termintreue — das passt zu MAKELs Stärken. Sie schlägt Eventagenturen als Zielgruppe vor.",
-        "typische_fehler": "Zielgruppen so breit beschreiben, dass sie keine Entscheidung mehr leiten.",
         "verstaendnisfragen": [
-          "Nenne drei Segmentierungsmerkmale für Geschäftskunden. Zum Beispiel Branche, Größe, Bedarfsmenge.",
-          "Wann ist ein Segment nützlich? Wenn es messbar, erreichbar, ausreichend groß und in sich ähnlich ist."
-        ],
-        "pruefungsbezug": "Segmente anhand relevanter Merkmale bilden und eine Zielgruppe begründet auswählen.",
-        "merksatz": "Segmentierung teilt den Markt in Gruppen mit ähnlichen Bedürfnissen; die Zielgruppe ist das ausgewählte, erreichbare Segment."
+          {
+            "frage": "Wann ist ein Marktsegment nützlich?",
+            "antwort": "Wenn es sich messbar von anderen unterscheidet, groß genug ist und gezielt erreicht werden kann.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Nenne vier Segmentierungsmerkmale für Geschäftskunden.",
+            "antwort": "Zum Beispiel Branche, Unternehmensgröße, Region, Bedarfsmenge, Bestellhäufigkeit, Entscheidungswege.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Entscheidungen brauchen Informationen.",
-          "Manche Daten gibt es schon, andere muss man erheben."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Primär- und Sekundärforschung, prüfst vorhandene Quellen auf Eignung und planst für eine verbleibende Wissenslücke eine kleine Primärerhebung mit Ziel, Methode und Stichprobe.",
+        "vorwissen_kurz": "MAKEL Studio will wissen, was Eventagenturen bei einem Textilpartner wichtig ist. Manches lässt sich nachlesen, anderes muss erfragt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst nachlesen, dann fragen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:sekundaerforschung|Sekundärforschung}} nutzt Daten, die schon vorhanden sind: eigene Verkaufsstatistiken, Branchenberichte, Statistiken von Verbänden und Ämtern. Sie ist schnell und günstig, passt aber nicht immer genau zur Frage. Die {{begriff:primaerforschung|Primärforschung}} erhebt neue Daten, etwa durch Befragung, Beobachtung oder Test. Sie ist genauer zugeschnitten, aber aufwendiger. Deshalb gilt: zuerst vorhandene Quellen prüfen, dann die Lücken mit eigener Forschung schließen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Forschungsplan zur Zielgruppe Eventagenturen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "vorhandene Quelle",
+              "Lücke",
+              "Primärforschung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wie viele Eventagenturen gibt es in NRW?",
+                  "Branchenverzeichnis, Verbandsstatistik",
+                  "gering",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie oft bestellen sie Textilien?",
+                  "eigene Verkaufsdaten der 8 Agenturkunden",
+                  "nur Bestandskunden",
+                  "Kurzbefragung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was ist ihnen bei einem Partner wichtig?",
+                  "allgemeiner Branchenbericht",
+                  "nicht textilspezifisch",
+                  "Befragung von 30 Agenturen, 6 geschlossene Fragen, 1 offene"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie reagieren sie auf ein Expressangebot?",
+                  "keine",
+                  "groß",
+                  "Testangebot an 10 Agenturen"
+                ]
+              }
+            ],
+            "fazit": "Die Anzahl der Agenturen lässt sich nachlesen. Was ihnen wichtig ist und wie sie auf ein Expressangebot reagieren, muss MAKEL Studio selbst erheben.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine gute Primärerhebung beginnt mit einer klaren Frage. „Was halten Agenturen von uns?\" ist zu ungenau; „Welche drei Kriterien entscheiden bei der Wahl eines Textilpartners?\" lässt sich beantworten. Die Stichprobe sollte nicht nur Bestandskunden enthalten, sonst fehlt die Sicht derer, die bisher woanders kaufen. Und die Fragen werden neutral formuliert, damit die Antworten nicht in eine Richtung gedrängt werden.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Marktforschung beschafft Informationen für Marketingentscheidungen. Sekundärforschung wertet vorhandene Daten aus: eigene Verkaufsstatistiken und Kundendatenbank, Branchenberichte, amtliche Statistiken, Verbandsdaten, Wettbewerberwebsites. Sie ist schnell und günstig, die Daten passen aber nicht immer genau. Primärforschung erhebt neue Daten für die eigene Frage: Befragung (schriftlich, online, telefonisch, persönlich), Beobachtung, Test (etwa Testverkauf). Sie ist passgenau, aber aufwendiger. Meist beginnt man mit Sekundärforschung und schließt Lücken mit Primärforschung.",
-        "beispiele": [
-          "Auswertung eines vorhandenen Branchenberichts über Firmenbekleidung: Sekundärforschung.",
-          "Telefonbefragung von 30 Eventagenturen: Primärforschung."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Datenschutz bei Befragungen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Werden bei einer Befragung personenbezogene Daten erhoben, etwa Name und E-Mail der Ansprechperson, gelten die Datenschutzregeln. Die Teilnehmenden werden über Zweck und Speicherdauer informiert, und es wird nur erhoben, was für die Auswertung nötig ist. Oft reicht eine anonyme Befragung.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Marlene wertet zuerst die eigene Kundendatenbank (Welche Agenturen haben schon bestellt?) und einen Branchenbericht des Textilverbands aus. Es bleibt offen, welche Lieferzeit Agenturen erwarten. Dazu befragt sie 30 Agenturen per Online-Fragebogen.",
-        "typische_fehler": "Gleich eine eigene Befragung starten, obwohl die Antwort schon in vorhandenen Daten steht.",
         "verstaendnisfragen": [
-          "Was unterscheidet Primär- und Sekundärforschung? Neue Erhebung gegenüber Auswertung vorhandener Daten.",
-          "Nenne einen Vorteil der Sekundärforschung. Sie ist schneller und günstiger."
-        ],
-        "pruefungsbezug": "Forschungsmethoden zuordnen und für eine Fragestellung begründet auswählen.",
-        "merksatz": "Sekundärforschung nutzt vorhandene Daten, Primärforschung erhebt neue — erst vorhandene Quellen prüfen, dann Lücken schließen."
+          {
+            "frage": "Was unterscheidet Primär- von Sekundärforschung?",
+            "antwort": "Sekundärforschung nutzt vorhandene Daten, Primärforschung erhebt neue.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum sollte eine Befragung nicht nur Bestandskunden umfassen?",
+            "antwort": "Weil sonst die Sicht derer fehlt, die bisher bei Wettbewerbern kaufen.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Umfragen liefern Prozentzahlen.",
-          "Nicht jede Umfrage ist repräsentativ."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst Erhebungsdaten auf Auswahl, Rücklauf, Fragestellung und Aktualität, berechnest Anteile richtig und begrenzt Schlussfolgerungen auf das, was die Stichprobe trägt.",
+        "vorwissen_kurz": "Die Befragung ist ausgewertet. Jetzt kommt der heikelste Teil: zu sagen, was die Zahlen bedeuten und was nicht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Zahlen tragen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor Ergebnisse verallgemeinert werden, wird ihre Qualität geprüft. **Wer wurde befragt?** Nur Bestandskunden oder auch Nichtkunden? **Wie viele haben geantwortet?** Ein niedriger Rücklauf kann bedeuten, dass nur besonders Interessierte antworten. **Wie waren die Fragen?** Suggestive Fragen erzeugen gewünschte Antworten. **Wie aktuell sind die Daten?** Ein Bericht von 2019 beschreibt einen anderen Markt. Prozentwerte gelten zuerst für die Befragten; ob sie für den ganzen Markt gelten, hängt davon ab, wie die Stichprobe zustande kam.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Befragung der Eventagenturen",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Wert",
+              "Folge für die Deutung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "angeschrieben",
+                  "30 Agenturen in NRW",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "geantwortet",
+                  "12",
+                  "Rücklauf 40 %; Ergebnisse vorsichtig deuten"
+                ]
+              },
+              {
+                "zellen": [
+                  "davon Bestandskunden von MAKEL",
+                  "7",
+                  "Bestandskunden überrepräsentiert"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Termintreue ist sehr wichtig\"",
+                  "10 von 12",
+                  "83 % der Antwortenden"
+                ]
+              },
+              {
+                "zellen": [
+                  "„würden Expressaufschlag zahlen\"",
+                  "5 von 12",
+                  "42 % der Antwortenden"
+                ]
+              }
+            ],
+            "fazit": "Termintreue ist den antwortenden Agenturen sehr wichtig. Weil viele Bestandskunden geantwortet haben und nur zwölf Antworten vorliegen, ist das ein deutlicher Hinweis, aber kein gesichertes Bild aller Agenturen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die saubere Formulierung trennt Zahl und Schlussfolgerung. „83 % der antwortenden Agenturen nennen Termintreue sehr wichtig\" ist richtig. „83 % aller Eventagenturen in NRW legen Wert auf Termintreue\" ist bei zwölf Antworten mit vielen Bestandskunden nicht gedeckt. Für die Entscheidung reicht der Hinweis trotzdem oft: Wenn Termintreue so wichtig ist, sollte MAKEL Studio sie in der Ansprache betonen und belegen können.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Daten werden vor der Interpretation auf Qualität geprüft: Wer wurde befragt (Grundgesamtheit und Stichprobe)? Wie wurden die Befragten ausgewählt? Wie viele haben geantwortet? Wie waren die Fragen formuliert? Wie aktuell sind die Daten? Eine kleine, freiwillige Online-Umfrage ist meist nicht repräsentativ, weil vor allem Interessierte antworten. Prozentwerte gelten zunächst für die befragte Gruppe. Für Sekundärdaten zählen Herkunft, Erhebungsmethode, Aktualität und Zweck der Quelle.",
-        "beispiele": [
-          "Von 200 Befragten nennen 60 ein Merkmal wichtig: 30 % — innerhalb dieser Befragung.",
-          "Ein Branchenbericht von 2019 sagt wenig über den Markt nach der Pandemie."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kleine Zahlen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei zwölf Antworten verändert eine einzige Antwort den Anteil um mehr als acht Prozentpunkte. Prozentwerte mit Nachkommastellen täuschen hier eine Genauigkeit vor, die es nicht gibt. Besser ist es, auch die absolute Zahl zu nennen: „10 von 12\".",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Von 30 angeschriebenen Agenturen antworten 12. Acht davon wünschen eine Lieferzeit unter zwei Wochen. Marlene schreibt nicht ‚67 % aller Agenturen‘, sondern: ‚8 von 12 antwortenden Agenturen (Rücklauf 40 %) — ein Hinweis, keine repräsentative Aussage.‘",
-        "typische_fehler": "Eine kleine freiwillige Umfrage für repräsentativ erklären.",
         "verstaendnisfragen": [
-          "Warum ist eine freiwillige Online-Umfrage oft nicht repräsentativ? Weil vor allem Interessierte antworten.",
-          "Worauf prüfst du Sekundärdaten? Herkunft, Methode, Aktualität und Zweck."
-        ],
-        "pruefungsbezug": "Erhebungsergebnisse berechnen und ihre Aussagekraft begrenzen.",
-        "merksatz": "Prozentwerte gelten zuerst für die Befragten; Auswahl, Rücklauf, Fragen und Aktualität bestimmen die Aussagekraft."
+          {
+            "frage": "Von 200 Befragten nennen 60 ein Merkmal wichtig. Wie lautet eine saubere Aussage?",
+            "antwort": "30 % der Befragten nennen das Merkmal wichtig; für den Gesamtmarkt ist das ein Hinweis, keine gesicherte Aussage.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ist ein niedriger Rücklauf problematisch?",
+            "antwort": "Weil dann oft nur besonders Interessierte antworten und das Ergebnis verzerrt sein kann.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

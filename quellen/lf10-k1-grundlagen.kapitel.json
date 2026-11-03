@@ -6,66 +6,572 @@
   "untertitel": "Die Buchführung schreibt fürs Finanzamt. Die Kostenrechnung für dich.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Buchführung erfasst den Werteverzehr einer Periode.",
-          "Kostenrechnung beantwortet innerbetriebliche Entscheidungsfragen."
+        "darstellung": "vollfassung",
+        "ziel": "Du verfolgst denselben Beleg durch Finanzbuchführung und Kostenrechnung und erklärst, welche Fragen jede Rechnung für wen beantwortet.",
+        "vorwissen_kurz": "Die Buchführung erfasst alle Geschäftsvorfälle auf Konten und schließt sie im Jahresabschluss ab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Dieselben Belege, zwei Rechnungen",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei MAKEL landet jede Rechnung zuerst in der {{begriff:doppelte-buchfuehrung|Buchführung}}. Aus ihr entsteht am Jahresende der Jahresabschluss für Finanzamt, Bank und Gesellschafterin. Tobias Renner, der kaufmännische Geschäftsführer, braucht aber schon Mitte Oktober eine Antwort auf die Frage: Was kostet uns ein Hoodie der neuen Kollektion, und lohnt sich der Auftrag eines Modehauses zu 38 € pro Stück? Dafür nutzt er die {{begriff:kostenrechnung|Kosten- und Leistungsrechnung}}. Sie verwendet dieselben Belege, ordnet sie aber anders.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Belege auf zwei Wegen",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Beleg",
+              "Buchführung",
+              "Kostenrechnung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung über Baumwollstoff, 24.000 €",
+                  "Aufwand für Rohstoffe, mindert den Jahresgewinn",
+                  "Einzelkosten der Hoodie-Kollektion, fließen direkt in die Stückkalkulation"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stromrechnung der Näherei, 3.000 €",
+                  "Aufwand für Energie",
+                  "Gemeinkosten der Kostenstelle Fertigung, über einen Zuschlag auf die Produkte verteilt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Spende an den örtlichen Sportverein, 5.000 €",
+                  "Aufwand, mindert den Jahresgewinn",
+                  "keine Kosten; hat mit der Herstellung nichts zu tun und bleibt außen vor"
+                ]
+              }
+            ],
+            "fazit": "Die Buchführung fragt, ob ein Betrag den Erfolg des Unternehmens verändert. Die Kostenrechnung fragt, ob und wofür er bei der betrieblichen Leistung anfällt.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Daraus folgen die Aufgaben der Kostenrechnung: Sie ermittelt die Selbstkosten als Grundlage für Preise und Preisuntergrenzen, sie zeigt, welche Bereiche und Produkte wirtschaftlich arbeiten, und sie liefert Zahlen für Entscheidungen wie Annahme eines Zusatzauftrags, Eigenfertigung oder Fremdbezug. Weil sie keine Vorschrift erfüllen muss, kann sie monatlich, je Auftrag oder je Stück rechnen — so oft, wie die Entscheidung es verlangt.",
+            "id": "b1-p2"
+          }
         ],
-        "erklaerung": "Die Buchführung richtet sich nach außen und ist gesetzlich geregelt. Die Kostenrechnung richtet sich nach innen und ist frei gestaltbar. Sie fragt, was ein Stück kostet, welcher Bereich sich trägt und ob ein Auftrag lohnt. Buchführungsaufwand und Kosten sind deshalb nicht automatisch identisch.",
-        "beispiele": [
-          "Materialverbrauch und Fertigungslöhne sind Zweckaufwand und zugleich Kosten, weil sie der betrieblichen Leistung dienen.",
-          "Eine Spende ist betriebsfremder neutraler Aufwand und gehört nicht in die Kalkulation."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Wenn sich eine Zuständigkeit ändert",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Übernimmt ein externes Steuerbüro die Buchführung, ändert sich für die Kostenrechnung nichts an den Fragen, wohl aber am Ablauf: MAKEL muss sicherstellen, dass Belege mit Kostenstelle und Auftrag gekennzeichnet werden, bevor sie das Haus verlassen. Sonst liegen die Zahlen zwar rechtzeitig für den Jahresabschluss vor, aber ohne die Zuordnung, die Tobias Renner für die Kalkulation braucht.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Einzelunternehmer übernimmt seine Buchführungszahlen unverändert in die Kalkulation. Zuerst wird neutraler Aufwand — betriebsfremd, außerordentlich und periodenfremd — herausgenommen. Danach werden kalkulatorische Kosten ergänzt, etwa der Unternehmerlohn. Erst dann zeigt die Rechnung den leistungsbezogenen Werteverzehr.",
-        "typische_fehler": "Aufwand und Kosten werden als Synonyme behandelt. Außerdem wird die Kostenrechnung als gesetzlich identische zweite Buchführung verstanden.",
         "verstaendnisfragen": [
-          "An wen richtet sich die Buchführung, an wen die Kostenrechnung? Buchführung nach außen, Kostenrechnung nach innen.",
-          "Was ist Zweckaufwand? Aufwand, der zugleich für die betriebliche Leistung anfällt und damit Kosten ist."
-        ],
-        "pruefungsbezug": "Ordne jeden Betrag zuerst nach seiner Beziehung zur betrieblichen Leistung ein, bevor du ihn in die Kostenrechnung übernimmst.",
-        "merksatz": "Buchführung zeigt den Aufwand nach außen; Kostenrechnung zeigt die Kosten der Leistung nach innen."
+          {
+            "frage": "Warum genügt die Buchführung nicht, um den Preis für den Modehaus-Auftrag zu beurteilen?",
+            "antwort": "Sie liefert den Gewinn des ganzen Unternehmens für ein Jahr, ordnet die Beträge aber weder Produkten noch Aufträgen zu. Sie enthält zudem Beträge, die mit der Herstellung nichts zu tun haben, etwa Spenden. Für eine Preisentscheidung braucht man die Kosten je Stück, und die liefert erst die Kostenrechnung.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Ein Mitarbeiter sagt: „Die Kostenrechnung ist doch nur eine zweite Buchführung.“ Was entgegnest du?",
+            "antwort": "Sie nutzt dieselben Belege, verfolgt aber einen anderen Zweck. Sie richtet sich nach innen, ist nicht gesetzlich geregelt, rechnet nur mit betrieblichem Werteverzehr und ergänzt Größen, die die Buchführung nicht kennt. Ihr Zeitraum ist so kurz, wie die Entscheidung es verlangt.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Nicht jeder Aufwand gehört zur betrieblichen Leistung.",
-          "Kalkulatorische Kosten ergänzen den Aufwand um wirtschaftlich nötige Kosten."
+        "darstellung": "vollfassung",
+        "ziel": "Du grenzt Aufwand und Kosten ab, ordnest Beträge als Grundkosten, neutralen Aufwand, Anderskosten oder Zusatzkosten ein und begründest die Einordnung.",
+        "vorwissen_kurz": "Aufwand ist der in der Buchführung erfasste Werteverzehr einer Periode. Kosten sind der Werteverzehr für die betriebliche Leistung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Ränder entscheiden",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der größte Teil des Aufwands ist zugleich Kosten: Stoffverbrauch, Löhne in der Näherei, Miete für die Werkstatt. Dieser **Zweckaufwand** wird als **Grundkosten** unverändert übernommen. Interessant sind die Ränder. Auf der einen Seite steht Aufwand, der keine Kosten ist. Auf der anderen Seite stehen Kosten, denen kein Aufwand in gleicher Höhe gegenübersteht.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Fünf Beträge bei MAKEL",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Betrag",
+              "Buchführung",
+              "Kostenrechnung",
+              "Einordnung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Stoffverbrauch Oktober 80.000 €",
+                  "80.000 € Aufwand",
+                  "80.000 € Kosten",
+                  "Grundkosten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Spende an einen Verein 5.000 €",
+                  "5.000 € Aufwand",
+                  "—",
+                  "neutral: betriebsfremd"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wasserschaden im Lager, nicht versichert, 12.000 €",
+                  "12.000 € Aufwand",
+                  "—",
+                  "neutral: außerordentlich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bilanzielle Abschreibung der Stickmaschinen 18.000 €, kalkulatorisch angesetzt 20.000 €",
+                  "18.000 € Aufwand",
+                  "20.000 € Kosten",
+                  "Anderskosten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kalkulatorische Zinsen auf das Eigenkapital 15.000 €",
+                  "—",
+                  "15.000 € Kosten",
+                  "Zusatzkosten"
+                ]
+              }
+            ],
+            "fazit": "Neutraler Aufwand wird ausgesondert. Anderskosten ersetzen einen Aufwand durch einen betrieblich passenderen Wert. Zusatzkosten kommen ohne Aufwand hinzu.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Warum rechnet die Kostenrechnung mit anderen Werten? Die bilanzielle Abschreibung folgt steuerlichen und handelsrechtlichen Regeln, etwa vorgegebenen Nutzungsdauern. Für die Kalkulation zählt dagegen der tatsächliche Wertverzehr, gerechnet vom Wiederbeschaffungswert. Und Eigenkapital ist nicht kostenlos, nur weil keine Zinsen gezahlt werden: Die Gesellschafterin könnte das Geld anderswo anlegen. Erst mit diesen Größen sind Betriebe mit viel und wenig Eigenkapital vergleichbar.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b4"
+          }
         ],
-        "erklaerung": "Neutraler Aufwand ist betriebsfremd, außerordentlich oder periodenfremd und wird aus der Kostenrechnung ausgesondert. Kalkulatorische Kosten haben keinen Aufwand in gleicher Höhe. Der kalkulatorische Unternehmerlohn macht Einzelunternehmen mit Betrieben anderer Rechtsform vergleichbar; auch kalkulatorische Zinsen und Wagnisse können ergänzt werden.",
-        "beispiele": [
-          "Ein Brandschaden ist außerordentlicher Aufwand und kein normaler Leistungskostenbestandteil.",
-          "Der Unternehmerlohn wird kalkulatorisch angesetzt, obwohl der Einzelunternehmer kein Gehalt wie ein Angestellter bucht."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kalkulatorischer Unternehmerlohn",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In Einzelunternehmen und Personengesellschaften arbeiten die Inhaber mit, erhalten aber kein Gehalt, das als Aufwand gebucht wird. Ihre Arbeit hat trotzdem einen Wert. Deshalb setzt die Kostenrechnung einen kalkulatorischen Unternehmerlohn als Zusatzkosten an, etwa in Höhe des Gehalts einer angestellten Führungskraft. In einer GmbH wie MAKEL ist das Gehalt der Geschäftsführung bereits Aufwand; ein kalkulatorischer Unternehmerlohn entfällt dort.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Periodenfremde Beträge",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Steuernachzahlung für ein früheres Jahr oder eine nachträgliche Gutschrift eines Lieferanten für das Vorjahr betrifft nicht die aktuelle Leistung. Sie wird als periodenfremder neutraler Aufwand oder Ertrag ausgesondert, damit die Kosten des laufenden Monats nicht zufällig steigen oder sinken.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Ein Einzelunternehmer arbeitet im Betrieb, zahlt sich aber kein Gehalt. Würde der Unternehmerlohn fehlen, erschiene das Produkt zu billig und der Betrieb wäre nicht mit einem Unternehmen vergleichbar, das für diese Arbeit ein Gehalt zahlt. Deshalb wird der kalkulatorische Unternehmerlohn als Kosten ergänzt; betriebsfremde Spenden werden dagegen ausgesondert.",
-        "typische_fehler": "Kalkulatorische Kosten werden als zusätzlicher Buchführungsaufwand verstanden. Außerdem wird jeder außergewöhnliche Betrag als Kosten angesetzt, obwohl neutraler Aufwand gerade herausgerechnet wird.",
         "verstaendnisfragen": [
-          "Welche drei Gruppen hat neutraler Aufwand? Betriebsfremd, außerordentlich und periodenfremd.",
-          "Warum wird der kalkulatorische Unternehmerlohn angesetzt? Damit die Leistung des Unternehmers als Kosten erscheint und Rechtsformen vergleichbar werden."
-        ],
-        "pruefungsbezug": "Nenne die drei Gruppen neutralen Aufwands vollständig und begründe kalkulatorische Kosten mit Vergleichbarkeit oder wirtschaftlichem Werteverzehr.",
-        "merksatz": "Neutralen Aufwand herausnehmen, kalkulatorische Kosten ergänzen — erst dann ist die Kalkulation belastbar."
+          {
+            "frage": "MAKEL verkauft eine alte Nähmaschine über ihrem Buchwert und erzielt 2.000 € Gewinn. Ist das eine Leistung?",
+            "antwort": "Nein. Der Gewinn entsteht nicht aus dem eigentlichen Betriebszweck, Textilien herzustellen und zu verkaufen, sondern aus einem gelegentlichen Anlagenverkauf. Er ist neutraler Ertrag und wird in der Kostenrechnung ausgesondert.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum setzt die Kostenrechnung kalkulatorische Zinsen auch auf das Eigenkapital an, obwohl dafür niemand Zinsen bekommt?",
+            "antwort": "Das Eigenkapital könnte anderswo Zinsen bringen. Diese entgangene Verzinsung ist ein wirtschaftlicher Wert, der in die Preise gehört. Außerdem werden Betriebe so vergleichbar: Ein mit Fremdkapital finanzierter Betrieb hätte Zinsaufwand, ein mit Eigenkapital finanzierter ohne kalkulatorische Zinsen nicht.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Kosten können nach Art, Ort und Verwendungszweck weiterverarbeitet werden.",
-          "Gemeinkosten brauchen eine Verteilung, Einzelkosten können direkt zugerechnet werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst die drei Stufen der Kostenrechnung und ordnest Arbeitsschritte und Zahlen der passenden Stufe zu.",
+        "vorwissen_kurz": "Einzelkosten lassen sich einem Produkt direkt zurechnen, Gemeinkosten nur über einen Schlüssel.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was, wo, wofür",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kostenrechnung arbeitet in drei Stufen, die aufeinander aufbauen. Die **Kostenartenrechnung** erfasst, welche Kosten in welcher Höhe angefallen sind. Die **Kostenstellenrechnung** verteilt die Gemeinkosten auf die Bereiche, in denen sie entstanden sind. Die **Kostenträgerrechnung** rechnet alle Kosten den Produkten oder Aufträgen zu.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Monat bei MAKEL in drei Stufen",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Frage",
+              "Arbeitsschritt im Oktober",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kostenartenrechnung",
+                  "Was ist angefallen?",
+                  "Grundkosten aus der Buchführung übernehmen, neutralen Aufwand aussondern, Anders- und Zusatzkosten ergänzen; Einzel- und Gemeinkosten trennen",
+                  "z. B. Fertigungsmaterial 80.000 €, Fertigungslöhne 60.000 €, Gemeinkosten 145.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kostenstellenrechnung",
+                  "Wo ist es angefallen?",
+                  "Gemeinkosten im Betriebsabrechnungsbogen auf Material, Fertigung, Verwaltung und Vertrieb verteilen",
+                  "Zuschlagssätze, z. B. Fertigungsgemeinkosten in % der Fertigungslöhne"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kostenträgerrechnung",
+                  "Wofür ist es angefallen?",
+                  "Einzelkosten direkt und Gemeinkosten über die Zuschlagssätze einem Hoodie zurechnen",
+                  "Selbstkosten je Hoodie als Grundlage für Preis und Preisuntergrenze"
+                ]
+              }
+            ],
+            "fazit": "Jede Stufe liefert das Material für die nächste. Ohne saubere Kostenarten stimmen die Zuschläge nicht, ohne Zuschläge stimmt die Stückkalkulation nicht.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b3"
+          }
         ],
-        "erklaerung": "Die Kostenartenrechnung fragt, welche Kosten in welcher Höhe angefallen sind. Die Kostenstellenrechnung fragt, wo sie angefallen sind und verteilt Gemeinkosten, etwa mit dem BAB. Die Kostenträgerrechnung fragt, wofür sie angefallen sind und ermittelt über Einzelkosten und Zuschlagssätze die Selbstkosten je Stück.",
-        "beispiele": [
-          "Material, Personal und Abschreibungen werden in der Kostenartenrechnung nach Arten erfasst.",
-          "Im BAB werden Gemeinkosten auf Material, Fertigung, Verwaltung und Vertrieb verteilt; anschließend werden sie Produkten als Kostenträger zugerechnet."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Wo die Stufen in diesem Lernfeld wiederkommen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Kostenartenrechnung mit Abschreibungen und kalkulatorischen Kosten vertieft Kapitel 2. Den Betriebsabrechnungsbogen behandelt Kapitel 3, die Zuschlagskalkulation Kapitel 4. Die Deckungsbeitragsrechnung in Kapitel 5 nutzt dieselben Kosten, trennt sie aber nach fix und variabel statt nach Einzel- und Gemeinkosten.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k2"
+                ],
+                "text": "Kostenarten und kalkulatorische Kosten",
+                "id": "b3-d1-v1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k3"
+                ],
+                "text": "Betriebsabrechnungsbogen",
+                "id": "b3-d1-v2"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Für ein Produkt werden zuerst Material- und Fertigungskosten erfasst. Danach werden Gemeinkosten im BAB den Kostenstellen zugeordnet und Zuschlagssätze ermittelt. In der Kostenträgerrechnung werden Einzelkosten direkt und Gemeinkosten über diese Sätze auf das Produkt gerechnet. Das Ergebnis sind die Selbstkosten je Stück.",
-        "typische_fehler": "Die drei Stufen werden als drei verschiedene Kostenarten verstanden oder die Reihenfolge vertauscht. Auch werden Gemeinkosten direkt einem Produkt zugerechnet, ohne einen passenden Schlüssel.",
         "verstaendnisfragen": [
-          "Welche Frage beantwortet jede Stufe? Kostenarten = was, Kostenstellen = wo, Kostenträger = wofür.",
-          "Wozu führt die Kostenträgerrechnung? Zu den Selbstkosten je Stück als Grundlage der Kalkulation."
+          {
+            "frage": "In welcher Stufe wird entschieden, ob der Wasserschaden im Lager Kosten sind?",
+            "antwort": "In der Kostenartenrechnung. Dort werden die Beträge aus der Buchführung übernommen und neutraler Aufwand wie der außerordentliche Wasserschaden ausgesondert, bevor irgendetwas auf Kostenstellen verteilt wird.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum lässt sich der Strom der Näherei nicht direkt einem Hoodie zurechnen?",
+            "antwort": "Der Stromverbrauch entsteht für alle Produkte gemeinsam, und es wird nicht gemessen, wie viel auf ein einzelnes Stück entfällt. Er ist deshalb Gemeinkosten und wird erst über die Kostenstelle Fertigung und einen Zuschlagssatz auf die Produkte verteilt.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du entwickelst eine Ergebnistabelle Schritt für Schritt, leitest vom Unternehmensergebnis zum Betriebsergebnis über und kontrollierst die Überleitung rechnerisch.",
+        "vorwissen_kurz": "Neutrale Beträge werden ausgesondert, Anders- und Zusatzkosten ergänzt. Das Ergebnis der Buchführung und das der Kostenrechnung weichen deshalb voneinander ab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum dasselbe Unternehmen zwei Ergebnisse zeigt",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Buchführung erfasst den gesamten Erfolg der Periode. Die Kostenrechnung fragt nur nach dem Ergebnis der gewöhnlichen betrieblichen Leistung. Die **Ergebnistabelle** macht den Übergang zwischen beiden sichtbar: Sie zeigt jeden Betrag einmal und entscheidet, wohin er gehört.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im vereinfachten Fall hat MAKEL in einem Monat 1.200.000 € betriebliche Umsatzerlöse und 900.000 € betriebliche Aufwendungen, die vollständig als Grundkosten übernommen werden. Zusätzlich sind 20.000 € Zinserträge aus einer ausdrücklich nicht betrieblichen Geldanlage enthalten und 30.000 € Spenden. Die Kostenrechnung setzt außerdem 40.000 € kalkulatorische Eigenkapitalzinsen an. Bestandsveränderungen gibt es in diesem Monat nicht.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Schritt für Schritt",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Ertrag Buchführung",
+              "Aufwand Buchführung",
+              "Leistung KLR",
+              "Kosten KLR",
+              "Entscheidung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Umsatzerlöse",
+                  "1.200.000 €",
+                  "–",
+                  "1.200.000 €",
+                  "–",
+                  "unverändert übernehmen"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinsertrag, nicht betrieblich",
+                  "20.000 €",
+                  "–",
+                  "–",
+                  "–",
+                  "neutraler Ertrag, aussondern"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Betriebliche Aufwendungen",
+                  "–",
+                  "900.000 €",
+                  "–",
+                  "900.000 €",
+                  "als Grundkosten übernehmen"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Spenden",
+                  "–",
+                  "30.000 €",
+                  "–",
+                  "–",
+                  "neutraler Aufwand, aussondern"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Kalkulatorische Eigenkapitalzinsen",
+                  "–",
+                  "–",
+                  "–",
+                  "40.000 €",
+                  "Zusatzkosten ergänzen"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "1.220.000 €",
+                  "930.000 €",
+                  "1.200.000 €",
+                  "940.000 €",
+                  "beide Seiten getrennt auswerten"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "fazit": "Unternehmensergebnis 1.220.000 € − 930.000 € = 290.000 €. Betriebsergebnis 1.200.000 € − 940.000 € = 260.000 €. Beide Zahlen stimmen — sie beantworten verschiedene Fragen.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Überleitung lässt sich kontrollieren. Vom Unternehmensergebnis 290.000 € ziehst du den neutralen Zinsertrag von 20.000 € ab, denn er gehört nicht zur betrieblichen Leistung. Die Spenden von 30.000 € addierst du wieder hinzu: Sie haben den Gewinn der Buchführung gemindert, sollen das Betriebsergebnis aber nicht belasten. Zuletzt ziehst du die Zusatzkosten von 40.000 € ab, die es nur in der Kostenrechnung gibt. 290.000 € − 20.000 € + 30.000 € − 40.000 € = 260.000 €.",
+            "id": "b4-p3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Form der Prüfungsaufgaben",
+            "id": "b4-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "In Prüfungen ist die Ergebnistabelle meist in vier Bereiche gegliedert: die Erfolgsrechnung der Buchführung, die neutrale (unternehmensbezogene) Abgrenzung, die kostenrechnerischen Korrekturen und die Kosten- und Leistungsrechnung. Jeder Bereich hat eine Aufwands- oder Kostenspalte und eine Ertrags- oder Leistungsspalte und ein eigenes Ergebnis.",
+            "id": "b4-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Bereich der kostenrechnerischen Korrekturen stehen links die Aufwendungen laut Buchführung, die durch einen anderen Wert ersetzt werden, und rechts die verrechneten Kosten. Zusatzkosten erscheinen dort rechts, weil sie in der Kostenrechnung Kosten sind, die Buchführung aber nicht belastet haben. Deshalb ist das Korrekturergebnis hier positiv.",
+            "id": "b4-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b4-b3"
+          }
         ],
-        "pruefungsbezug": "Merke die Fragewörter was–wo–wofür und ordne Tabellen beziehungsweise BAB-Zahlen der passenden Stufe zu.",
-        "merksatz": "Was angefallen ist, wo es anfällt und wofür es anfällt — das sind die drei Stufen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ein zweiter Durchgang mit Anderskosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Angenommen, in den 900.000 € steckt eine bilanzielle Abschreibung von 50.000 €, die Kostenrechnung setzt kalkulatorisch 60.000 € an. Dann stehen bei den kostenrechnerischen Korrekturen links 50.000 € (Aufwand laut Buchführung) und rechts 60.000 € plus 40.000 € (verrechnete Kosten); das Korrekturergebnis beträgt +50.000 €. Die Kosten steigen auf 900.000 € − 50.000 € + 60.000 € + 40.000 € = 950.000 €, das Betriebsergebnis sinkt auf 250.000 €. Probe: 250.000 € − 10.000 € (neutral) + 50.000 € (Korrekturen) = 290.000 €.",
+                "id": "b4-d1-p1"
+              }
+            ],
+            "id": "b4-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Nicht jeder Zins ist neutral",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ob ein Zinsertrag neutral ist, hängt vom Fall ab. Zinsen aus einer Geldanlage, die mit dem Betriebszweck nichts zu tun hat, werden ausgesondert. Gezahlte Zinsen für einen Betriebskredit sind dagegen Aufwand mit betrieblichem Bezug; in vielen Schemata werden sie durch kalkulatorische Zinsen auf das gesamte betriebsnotwendige Kapital ersetzt. In einer Aufgabe steht deshalb immer, wie ein Betrag einzuordnen ist — und diese Einordnung ist zu übernehmen.",
+                "id": "b4-d2-p1"
+              }
+            ],
+            "id": "b4-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum wird der neutrale Aufwand bei der Überleitung zum Betriebsergebnis addiert, obwohl Aufwand den Gewinn mindert?",
+            "antwort": "Er hat das Unternehmensergebnis bereits gemindert. Für die Kostenrechnung soll diese Belastung gerade nicht zählen. Das Addieren macht die frühere Minderung rückgängig; es entsteht dadurch kein neuer Ertrag.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Das Unternehmensergebnis beträgt 150.000 €, das neutrale Ergebnis −8.000 €, das Ergebnis der kostenrechnerischen Korrekturen +22.000 €. Wie hoch ist das Betriebsergebnis?",
+            "antwort": "Unternehmensergebnis = neutrales Ergebnis + Korrekturergebnis + Betriebsergebnis. Also 150.000 € = −8.000 € + 22.000 € + Betriebsergebnis. Das Betriebsergebnis beträgt 150.000 € + 8.000 € − 22.000 € = 136.000 €.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +590,10 @@
       "id": "lz3",
       "text": "Die drei Stufen der Kostenrechnung erklären",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Eine Ergebnistabelle vom Unternehmens- zum Betriebsergebnis überleiten"
     }
   ],
   "bloecke": [
@@ -297,6 +807,88 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Die Ergebnistabelle",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Die **Ergebnistabelle** verbindet beide Rechnungen. Sie übernimmt alle Aufwendungen und Erträge der Buchführung, sondert neutrale Beträge aus und ergänzt kostenrechnerische Korrekturen. ==Am Ende stehen zwei Ergebnisse nebeneinander: das Unternehmensergebnis der Buchführung und das Betriebsergebnis der Kostenrechnung.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Bereich",
+            "Aufwand/Kosten",
+            "Ertrag/Leistung",
+            "Ergebnis"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Unternehmensergebnis (Buchführung)",
+                "930.000 €",
+                "1.220.000 €",
+                "+290.000 €"
+              ]
+            },
+            {
+              "zellen": [
+                "Neutrale Abgrenzung",
+                "30.000 €",
+                "20.000 €",
+                "−10.000 €"
+              ],
+              "detail": "**Betriebsfremder Aufwand und Ertrag** werden aus der Betriebsbetrachtung herausgenommen. Im Beispiel eine Spende über 30.000 € und 20.000 € Zinsertrag aus einer ausdrücklich nicht betrieblichen Geldanlage."
+            },
+            {
+              "zellen": [
+                "Kostenrechnerische Korrekturen",
+                "0 €",
+                "40.000 €",
+                "+40.000 €"
+              ],
+              "detail": "**Zusatzkosten** wie kalkulatorische Zinsen auf das Eigenkapital stehen in der Kostenrechnung als Kosten, in der Buchführung gibt es keinen Aufwand dafür. Im Abgrenzungsbereich erscheinen sie deshalb als „verrechnete Kosten“ auf der Ertragsseite."
+            },
+            {
+              "zellen": [
+                "Betriebsergebnis (Kostenrechnung)",
+                "940.000 €",
+                "1.200.000 €",
+                "+260.000 €"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Unternehmensergebnis = Abgrenzungsergebnis + Betriebsergebnis.** Neutrale Beträge und kostenrechnerische Korrekturen erklären vollständig, warum die beiden Ergebnisse voneinander abweichen.",
+          "karteikarte": "Wie hängen Unternehmensergebnis, Abgrenzungsergebnis und Betriebsergebnis in der Ergebnistabelle zusammen?"
+        },
+        {
+          "typ": "check",
+          "frage": "In der Buchführung beträgt der Gewinn 290.000 €. Darin sind 30.000 € betriebsfremder Aufwand enthalten. Wie wirkt dieser Betrag auf dem Weg zum Betriebsergebnis?",
+          "optionen": [
+            {
+              "text": "Er wird abgezogen, weil Aufwand den Gewinn mindert",
+              "richtig": false,
+              "echo": "Er hat den Gewinn der Buchführung bereits gemindert. Würde man ihn noch einmal abziehen, wäre er doppelt berücksichtigt."
+            },
+            {
+              "text": "Er wird wieder hinzugerechnet, weil er das betriebliche Ergebnis nicht belasten soll",
+              "richtig": true,
+              "echo": "Richtig. Der betriebsfremde Aufwand steckt schon im Unternehmensergebnis. Für das Betriebsergebnis soll er gerade nicht zählen, deshalb wird seine Minderung durch Hinzurechnen rückgängig gemacht. Es entsteht dadurch kein neuer Ertrag."
+            },
+            {
+              "text": "Er bleibt unverändert, weil Buchführung und Kostenrechnung dieselben Zahlen verwenden",
+              "richtig": false,
+              "echo": "Genau das tun sie nicht. Die Kostenrechnung betrachtet nur den betrieblichen Werteverzehr; neutrale Beträge werden ausgesondert."
+            }
+          ]
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -307,7 +899,9 @@
     "Neutraler Aufwand ist betriebsfremd, außerordentlich oder periodenfremd.",
     "{{begriff:kalkulatorische-kosten|Kalkulatorische Kosten}} haben keinen Aufwand in gleicher Höhe.",
     "Der kalkulatorische Unternehmerlohn macht Betriebe unterschiedlicher Rechtsform vergleichbar.",
-    "Drei Stufen: Kostenarten, Kostenstellen, Kostenträger — was, wo, wofür."
+    "Drei Stufen: Kostenarten, Kostenstellen, Kostenträger — was, wo, wofür.",
+    "Die Ergebnistabelle leitet vom Unternehmensergebnis der Buchführung zum Betriebsergebnis der Kostenrechnung über.",
+    "Unternehmensergebnis = neutrales Ergebnis + Ergebnis der kostenrechnerischen Korrekturen + Betriebsergebnis."
   ],
   "selbsttest": [
     {

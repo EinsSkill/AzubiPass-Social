@@ -6,86 +6,457 @@
   "untertitel": "Kosten-, Gewinn- und Rentabilitätsvergleich sowie Amortisationsrechnung — und warum keine Kennzahl allein entscheidet.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eine Investition bindet Kapital über mehrere Jahre.",
-          "Kalkulatorische Abschreibung und Zinsen kennst du aus Kapitel 4."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst zwei Investitionsalternativen mit der Kostenvergleichsrechnung, bestimmst die kritische Menge und erkennst, wann stattdessen ein Gewinnvergleich nötig ist.",
+        "vorwissen_kurz": "Zwei Maschinen leisten dasselbe, kosten aber unterschiedlich. Welche günstiger ist, hängt oft von der Menge ab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Maschine kostet weniger?",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der **Kostenvergleichsrechnung** werden die Kosten zweier Alternativen für eine Periode verglichen: fixe Kosten wie Abschreibung, Zinsen und Wartung sowie variable Kosten wie Energie und Material je Stück. Sie eignet sich, wenn beide Alternativen dieselbe Leistung erbringen und deshalb dieselben Erlöse bringen. Die **kritische Menge** ist die Menge, bei der beide gleich teuer sind; sie ergibt sich durch Gleichsetzen der Kostenfunktionen. Unterscheiden sich die Erlöse, etwa weil eine Maschine bessere Qualität liefert, wird ein **Gewinnvergleich** nötig.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Transferdruckpressen",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio will eine zweite Druckpresse anschaffen. Presse A kostet 40.000 €, hat höhere Fixkosten, aber geringere Kosten je Druck. Presse B kostet 24.000 €.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Presse A",
+              "Presse B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fixkosten pro Jahr (Abschreibung, Zinsen, Wartung)",
+                  "9.000 €",
+                  "6.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "variable Kosten je Druck (Energie, Folie, Verschleiß)",
+                  "2,00 €",
+                  "3,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "kritische Menge",
+                  "9.000 + 2x = 6.000 + 3x → x = 3.000 Drucke",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten bei erwarteten 3.600 Drucken",
+                  "9.000 + 7.200 = 16.200 €",
+                  "6.000 + 10.800 = 16.800 €"
+                ]
+              }
+            ],
+            "fazit": "Unter 3.000 Drucken ist Presse B günstiger, darüber Presse A. Bei den erwarteten 3.600 Drucken spart A 600 € im Jahr.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Entscheidung hängt also an der Mengenschätzung. Der Vertrieb erwartet 3.600 Drucke, aber sicher ist das nicht. Fällt die Menge auf 2.500, wäre B um 500 € günstiger. Je näher die erwartete Menge an der kritischen Menge liegt, desto riskanter ist die Wahl der Maschine mit den höheren Fixkosten.",
+            "id": "a1-p3"
+          }
         ],
-        "erklaerung": "Statische Investitionsrechnungen vergleichen Alternativen anhand von Durchschnittswerten einer Periode, ohne den Zeitpunkt der Zahlungen zu berücksichtigen. Beim Kostenvergleich werden die durchschnittlichen jährlichen Kosten der Alternativen gegenübergestellt: fixe Kosten (kalkulatorische Abschreibung, kalkulatorische Zinsen, Raum, Wartung) und variable Kosten (Material, Energie, Löhne je Stück). Bei gleicher Leistung gewinnt die günstigere Alternative; bei unterschiedlicher Leistungsmenge vergleicht man die Kosten je Stück. Unterscheiden sich auch die Erlöse, braucht man den Gewinnvergleich: durchschnittlicher Gewinn = Erlöse − Kosten.",
-        "beispiele": [
-          "Maschine A: 9.000 € fix + 2 € je Stück; Maschine B: 6.000 € fix + 3 € je Stück. Bei 4.000 Stück: A 17.000 €, B 18.000 €.",
-          "Kritische Menge: 9.000 + 2x = 6.000 + 3x → x = 3.000 Stück."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wann der Gewinnvergleich gilt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Könnte Presse A zusätzlich großformatige Rückendrucke, für die Kunden mehr zahlen, wären die Erlöse nicht gleich. Dann reicht der Kostenvergleich nicht: Es wird verglichen, welche Maschine nach Abzug der Kosten mehr Gewinn bringt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL vergleicht zwei Stickmaschinen mit vergleichbarer Qualität. Maschine A ist teurer (höhere fixe Kosten), stickt aber energiesparender und schneller (niedrigere variable Kosten). Bei der geplanten Jahresmenge von 4.000 Stickereien ist A um 1.000 € günstiger; unter 3.000 Stück wäre B günstiger.",
-        "typische_fehler": "Nur die Anschaffungspreise vergleichen und laufende Kosten übersehen.",
         "verstaendnisfragen": [
-          "Wann reicht ein Kostenvergleich? Wenn die Alternativen dieselbe Leistung und dieselben Erlöse haben.",
-          "Wann braucht man einen Gewinnvergleich? Wenn sich die Erlöse der Alternativen unterscheiden."
-        ],
-        "pruefungsbezug": "Kostenvergleich mit kritischer Menge durchführen.",
-        "merksatz": "Kostenvergleich bei gleicher Leistung, Gewinnvergleich bei unterschiedlichen Erlösen; kritische Menge durch Gleichsetzen der Kosten."
+          {
+            "frage": "Maschine A: 9.000 € fix + 2 € je Stück; Maschine B: 6.000 € fix + 3 € je Stück. Wo liegt die kritische Menge?",
+            "antwort": "9.000 + 2x = 6.000 + 3x → x = 3.000 Stück.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist eine Kostenvergleichsrechnung nur bei gleicher Leistung sinnvoll?",
+            "antwort": "Weil sie die Erlöse nicht berücksichtigt. Bringt eine Alternative mehr Erlös, kann sie trotz höherer Kosten vorteilhafter sein.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Gewinn allein sagt nicht, wie viel Kapital dafür nötig war.",
-          "Bei linearer Abschreibung ist im Durchschnitt die Hälfte des Kapitals gebunden."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die Rentabilität zweier Investitionen aus durchschnittlichem Gewinn und durchschnittlichem Kapitaleinsatz und erklärst, warum die günstigere Maschine nicht automatisch die rentablere ist.",
+        "vorwissen_kurz": "Eine Maschine, die mehr Gewinn bringt, bindet vielleicht auch viel mehr Kapital. Die Rentabilität setzt beides ins Verhältnis.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gewinn im Verhältnis zum Kapital",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Rentabilitätsvergleichsrechnung** fragt, wie viel Prozent Gewinn das eingesetzte Kapital bringt. Dazu wird der durchschnittliche jährliche Gewinn durch den durchschnittlichen Kapitaleinsatz geteilt. Bei linearer Abschreibung ohne Restwert ist im Durchschnitt die Hälfte der Anschaffungskosten gebunden: Am Anfang ist alles gebunden, am Ende nichts mehr.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Presse A oder Presse B?",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beide Pressen bringen bei 3.600 Drucken dieselben Erlöse von 19.200 € im Jahr.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Presse A",
+              "Presse B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Erlöse",
+                  "19.200 €",
+                  "19.200 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "− Kosten",
+                  "16.200 €",
+                  "16.800 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Ø Gewinn",
+                  "3.000 €",
+                  "2.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ø Kapitaleinsatz",
+                  "40.000 € ÷ 2 = 20.000 €",
+                  "24.000 € ÷ 2 = 12.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rentabilität",
+                  "3.000 ÷ 20.000 × 100 = 15 %",
+                  "2.400 ÷ 12.000 × 100 = 20 %"
+                ]
+              }
+            ],
+            "fazit": "Presse A bringt 600 € mehr Gewinn, bindet aber 8.000 € mehr Kapital. Je eingesetztem Euro ist Presse B rentabler.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Was heißt das für die Entscheidung? Die zusätzlichen 16.000 € Anschaffungskosten von Presse A bringen 600 € mehr Gewinn — auf das zusätzliche durchschnittlich gebundene Kapital von 8.000 € sind das 7,5 %. Könnte MAKEL Studio diese 16.000 € anderswo zu mehr als 7,5 % einsetzen, wäre B mit der zusätzlichen Anlage besser.",
+            "id": "a2-p3"
+          }
         ],
-        "erklaerung": "Der Rentabilitätsvergleich setzt den durchschnittlichen Gewinn ins Verhältnis zum durchschnittlich eingesetzten Kapital: Rentabilität = durchschnittlicher Gewinn ÷ durchschnittlicher Kapitaleinsatz × 100. Bei linearer Abschreibung ohne Restwert beträgt der durchschnittliche Kapitaleinsatz die Hälfte der Anschaffungskosten. Wurden kalkulatorische Zinsen bereits als Kosten abgezogen, werden sie für die Rentabilität üblicherweise wieder hinzugerechnet, damit die Verzinsung des gesamten Kapitals sichtbar wird; welche Variante gilt, wird in der Aufgabe festgelegt. Die Rentabilität wird mit einer Mindestverzinsung verglichen.",
-        "beispiele": [
-          "Anschaffung 40.000 €, Ø Kapitaleinsatz 20.000 €, Ø Gewinn 3.000 €: Rentabilität 15 %.",
-          "Mindestverzinsung 8 %: Die Investition erfüllt das Ziel."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Rentabilität und Zinsen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Investition sollte mindestens so viel bringen, wie das Kapital anderswo bringen würde oder wie ein Kredit kostet. Liegt die Rentabilität einer Maschine unter dem Kreditzins, verdient MAKEL Studio mit ihr weniger, als die Finanzierung kostet.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Maschine A kostet 40.000 €, bringt im Schnitt 3.000 € Gewinn im Jahr; Maschine B kostet 24.000 € und bringt 2.400 €. Rentabilität A: 3.000 ÷ 20.000 = 15 %; B: 2.400 ÷ 12.000 = 20 %. B verzinst das eingesetzte Kapital besser, A bringt den höheren absoluten Gewinn.",
-        "typische_fehler": "Den Gewinn auf die vollen Anschaffungskosten statt auf den durchschnittlichen Kapitaleinsatz beziehen.",
         "verstaendnisfragen": [
-          "Wie berechnet man die Rentabilität einer Investition? Ø Gewinn ÷ Ø Kapitaleinsatz × 100.",
-          "Wie hoch ist der durchschnittliche Kapitaleinsatz bei linearer Abschreibung ohne Restwert? Die Hälfte der Anschaffungskosten."
-        ],
-        "pruefungsbezug": "Rentabilitäten berechnen und mit einer Mindestverzinsung vergleichen.",
-        "merksatz": "Rentabilität = Ø Gewinn ÷ Ø Kapitaleinsatz × 100; Ø Kapitaleinsatz bei linearer Abschreibung ohne Restwert = AK ÷ 2."
+          {
+            "frage": "Eine Maschine kostet 30.000 € (lineare Abschreibung, kein Restwert) und bringt Ø 2.700 € Gewinn. Wie hoch ist die Rentabilität?",
+            "antwort": "Ø Kapitaleinsatz 15.000 €; 2.700 € ÷ 15.000 € × 100 = 18 %.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ist Presse B rentabler, obwohl sie weniger Gewinn bringt?",
+            "antwort": "Weil sie deutlich weniger Kapital bindet. Rentabilität misst den Gewinn je eingesetztem Euro, nicht den absoluten Gewinn.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Abschreibungen mindern den Gewinn, sind aber keine Auszahlungen (LF 5).",
-          "Unternehmen wollen eingesetztes Geld möglichst schnell zurückhaben."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die statische Amortisationsdauer aus Anschaffungskosten und durchschnittlichem Rückfluss und vergleichst sie mit der Nutzungsdauer und dem Risiko einer Investition.",
+        "vorwissen_kurz": "Neben dem Gewinn interessiert die Geschäftsführung, wie schnell das eingesetzte Geld zurückfließt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wann das Geld zurück ist",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:amortisation|Amortisationsdauer}} gibt an, nach wie vielen Jahren die Anschaffungskosten durch die Rückflüsse aus der Investition wieder hereingekommen sind. Der Rückfluss ist mehr als der Gewinn: Die Abschreibung mindert zwar den Gewinn, führt aber zu keiner Auszahlung. Der jährliche Rückfluss ist deshalb näherungsweise Gewinn plus Abschreibung. Je kürzer die Amortisationsdauer, desto schneller ist das Risiko der Investition getragen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Amortisation der beiden Pressen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Presse A (Nutzungsdauer 8 Jahre)",
+              "Presse B (Nutzungsdauer 6 Jahre)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ø Gewinn",
+                  "3.000 €",
+                  "2.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Abschreibung",
+                  "40.000 € ÷ 8 = 5.000 €",
+                  "24.000 € ÷ 6 = 4.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "= Ø Rückfluss",
+                  "8.000 €",
+                  "6.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Amortisationsdauer",
+                  "40.000 ÷ 8.000 = 5,0 Jahre",
+                  "24.000 ÷ 6.400 = 3,75 Jahre"
+                ]
+              }
+            ],
+            "fazit": "Presse B hat ihre Anschaffung nach 3,75 Jahren wieder eingespielt, Presse A nach 5 Jahren. Beide bleiben deutlich unter ihrer Nutzungsdauer.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die kürzere Amortisation macht B weniger riskant: Sollten Druckaufträge in einigen Jahren zurückgehen, etwa weil Kunden auf Stick umsteigen, hat B sich bereits bezahlt gemacht. Presse A braucht länger und ist wegen ihrer höheren Fixkosten stärker von einer hohen Auslastung abhängig.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die statische Amortisationsrechnung fragt, wie viele Jahre es dauert, bis die Anschaffungsauszahlung durch die Rückflüsse wieder hereingekommen ist. Amortisationsdauer = Anschaffungskosten ÷ durchschnittlicher jährlicher Rückfluss. Der Rückfluss ist der Zahlungsüberschuss, nicht der Gewinn: Gewinn + Abschreibungen (vereinfacht), weil Abschreibungen den Gewinn mindern, ohne Geld abfließen zu lassen. Je kürzer die Amortisationsdauer, desto geringer das Risiko, dass sich die Investition nicht zurückzahlt; sie sollte deutlich unter der Nutzungsdauer liegen.",
-        "beispiele": [
-          "Investition 20.000 €, Ø Rückfluss 5.000 €: Amortisation 4 Jahre.",
-          "Ø Gewinn 3.000 €, Abschreibung 2.000 €: Rückfluss 5.000 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Grenzen der statischen Rechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die statischen Verfahren rechnen mit Durchschnittswerten und berücksichtigen nicht, wann Zahlungen anfallen. Ein Euro in fünf Jahren wird so behandelt wie ein Euro heute. Für größere Investitionen nutzen Betriebe deshalb zusätzlich dynamische Verfahren, die zukünftige Zahlungen abzinsen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für Maschine B (24.000 €, Nutzungsdauer 6 Jahre, Abschreibung 4.000 € im Jahr) erwartet Sandra Koslowski 2.400 € Gewinn. Rückfluss: 2.400 € + 4.000 € = 6.400 €. Amortisation: 24.000 ÷ 6.400 = 3,75 Jahre — deutlich unter der Nutzungsdauer.",
-        "typische_fehler": "Den Gewinn statt des Rückflusses in den Nenner setzen oder Abschreibung als Auszahlung behandeln.",
         "verstaendnisfragen": [
-          "Wie berechnet man die Amortisationsdauer? Anschaffungskosten ÷ Ø jährlicher Rückfluss.",
-          "Warum wird die Abschreibung zum Gewinn addiert? Weil sie den Gewinn mindert, aber kein Geld abfließt."
-        ],
-        "pruefungsbezug": "Amortisationsdauer aus Gewinn und Abschreibung berechnen.",
-        "merksatz": "Amortisationsdauer = Anschaffungskosten ÷ Ø Rückfluss; Rückfluss ≈ Gewinn + Abschreibung, nicht der Gewinn allein."
+          {
+            "frage": "Wie lange dauert die Amortisation einer Maschine für 30.000 € mit Ø 2.700 € Gewinn und 5.000 € Abschreibung pro Jahr?",
+            "antwort": "Rückfluss 7.700 €; 30.000 € ÷ 7.700 € ≈ 3,9 Jahre.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum ergibt sich mit dem Gewinn allein für Presse B eine Amortisationsdauer von 10 Jahren?",
+            "antwort": "Weil 24.000 € ÷ 2.400 € = 10. Diese Rechnung übersieht, dass die Abschreibung zwar den Gewinn mindert, aber kein Geld abfließen lässt.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Jedes Verfahren beleuchtet einen Aspekt.",
-          "Investitionen wirken über Jahre und sind unsicher."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst die Ergebnisse von Kosten-, Rentabilitäts- und Amortisationsvergleich zusammen, ergänzt qualitative Kriterien und das Mengenrisiko und gibst eine begründete Investitionsempfehlung.",
+        "vorwissen_kurz": "Jede Kennzahl beleuchtet die Investition von einer anderen Seite. Eine Entscheidung braucht alle Seiten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Keine Kennzahl entscheidet allein",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kostenvergleichsrechnung zeigt, welche Alternative bei der erwarteten Menge günstiger ist. Die Rentabilität zeigt, wie gut das Kapital verzinst wird. Die Amortisation zeigt, wie schnell das Risiko getragen ist. Oft weisen die Kennzahlen in unterschiedliche Richtungen. Hinzu kommen Kriterien, die sich nicht in Euro ausdrücken lassen: Energieverbrauch, Lärm, Bedienbarkeit, Service des Herstellers, Abhängigkeit von einer Mengenprognose.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Empfehlung zur Druckpresse",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Presse A",
+              "Presse B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kosten bei 3.600 Drucken",
+                  "16.200 €",
+                  "16.800 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rentabilität",
+                  "15 %",
+                  "20 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Amortisation",
+                  "5,0 Jahre",
+                  "3,75 Jahre"
+                ]
+              },
+              {
+                "zellen": [
+                  "Energie und Lärm",
+                  "moderner, leiser, weniger Strom je Druck",
+                  "lauter, höherer Verbrauch"
+                ]
+              },
+              {
+                "zellen": [
+                  "Risiko bei sinkender Menge",
+                  "höher (9.000 € Fixkosten)",
+                  "geringer (6.000 € Fixkosten)"
+                ]
+              }
+            ],
+            "fazit": "Presse A ist bei der erwarteten Menge günstiger und arbeitet leiser und sparsamer. Presse B ist rentabler, amortisiert sich schneller und ist bei sinkender Menge weniger riskant.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Produktionsplanung empfiehlt Presse B. Begründung: Die Mengenprognose von 3.600 Drucken liegt nur 20 % über der kritischen Menge von 3.000; schon ein moderater Rückgang macht A teurer. B bindet weniger Kapital, ist schneller bezahlt und bietet die höhere Rentabilität. Der Nachteil bei Lärm und Energie wird durch einen schallgedämmten Standort und einen Stromtarif-Vergleich abgeschwächt. Steigt die Druckmenge in zwei Jahren dauerhaft über 4.500, wird die Entscheidung neu geprüft.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Statische Verfahren sind einfach, haben aber Grenzen: Sie rechnen mit Durchschnittswerten, berücksichtigen nicht, wann Zahlungen anfallen (ein Euro heute ist mehr wert als ein Euro in fünf Jahren), und vergleichen Alternativen mit unterschiedlicher Nutzungsdauer nur eingeschränkt. Die Amortisationsrechnung sagt nichts über Rückflüsse nach dem Amortisationszeitpunkt. Deshalb werden mehrere Kennzahlen gemeinsam betrachtet und durch qualitative Kriterien ergänzt: Qualität, Flexibilität, Service und Ersatzteile, Energieverbrauch und Umweltwirkung, Arbeitsschutz, Finanzierbarkeit, Abhängigkeit vom Hersteller, Unsicherheit der Annahmen.",
-        "beispiele": [
-          "Maschine B amortisiert sich schneller, Maschine A hat die längere Nutzungsdauer und höhere Gesamtrückflüsse.",
-          "Maschine A ist leiser und braucht weniger Energie — ein Vorteil für Arbeitsschutz und Nachhaltigkeit."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Entscheidung unter Unsicherheit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Weil die Menge unsicher ist, lohnt eine einfache Szenariorechnung: Bei 2.500 Drucken kostet A 14.000 €, B 13.500 €; bei 4.500 Drucken kostet A 18.000 €, B 19.500 €. Die Spanne der möglichen Vor- und Nachteile hilft einzuschätzen, wie viel bei einer Fehlprognose auf dem Spiel steht.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner fasst zusammen: A hat den höheren Gewinn und geringere Kosten bei hoher Auslastung, B die höhere Rentabilität und kürzere Amortisation. Unsicher ist die künftige Stickmenge. Er entscheidet sich für B, weil sie das Risiko bei schwankender Nachfrage begrenzt — und vereinbart, die Entscheidung nach zwei Jahren mit den tatsächlichen Mengen zu überprüfen.",
-        "typische_fehler": "Allein nach der kürzesten Amortisationsdauer entscheiden.",
         "verstaendnisfragen": [
-          "Was berücksichtigen statische Verfahren nicht? Den Zeitpunkt der Zahlungen (Abzinsung).",
-          "Nenne zwei qualitative Kriterien einer Investitionsentscheidung. Zum Beispiel Qualität und Energieverbrauch."
-        ],
-        "pruefungsbezug": "Verfahrensgrenzen erläutern und eine Empfehlung quantitativ und qualitativ begründen.",
-        "merksatz": "Keine Kennzahl entscheidet allein: Kosten, Gewinn, Rentabilität und Amortisation zusammen sehen und qualitative Kriterien ergänzen."
+          {
+            "frage": "Warum entscheidet die Kostenvergleichsrechnung allein nicht über die Presse?",
+            "antwort": "Weil sie nur die erwartete Menge betrachtet und weder die Kapitalbindung noch das Risiko einer abweichenden Menge oder qualitative Kriterien berücksichtigt.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Bei welcher dauerhaften Menge würde Presse A deutlich attraktiver?",
+            "antwort": "Je weiter die Menge über der kritischen Menge von 3.000 Drucken liegt, desto größer wird der Kostenvorteil von A. Bei 4.500 Drucken spart A bereits 1.500 € im Jahr.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

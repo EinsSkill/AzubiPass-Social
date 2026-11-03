@@ -6,86 +6,460 @@
   "untertitel": "Zwei Lernorte, drei Ordnungsmittel, eine Prüfung in zwei Teilen — und wie du daraus deinen eigenen Lernplan machst.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eine Berufsausbildung findet in Deutschland meist an zwei Lernorten statt: im Betrieb und in der Berufsschule.",
-          "Beide Lernorte verfolgen dasselbe Ziel — die berufliche Handlungsfähigkeit —, vermitteln aber unterschiedliche Teile davon."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wie Betrieb und Berufsschule in der dualen Ausbildung zusammenarbeiten, und verbindest an einem Vorgang bei MAKEL Studio die praktische Arbeit mit dem systematischen Wissen aus dem Unterricht.",
+        "vorwissen_kurz": "Du lernst an zwei Orten. Erst wenn beide zusammenkommen, kannst du im Beruf selbstständig handeln.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Lernorte, ein Ziel",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Als Industriekaufmann oder Industriekauffrau lernst du im {{begriff:duale-ausbildung|dualen System}}: drei bis vier Tage pro Woche im Betrieb, ein bis zwei Tage in der Berufsschule oder in Unterrichtsblöcken. Bei der MAKEL Studio GmbH in Düsseldorf durchläufst du Einkauf, Musterfertigung und Veredelung, Lager und Versand, Vertrieb, Buchhaltung und Personal. Der Betrieb liefert echte Aufträge, echte Unterlagen und Ansprechpersonen. Die Schule liefert das systematische Wissen: Rechenwege, Rechtsregeln, Zusammenhänge.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beide Lernorte arbeiten auf dasselbe Ziel hin: ==Du sollst in neuen Situationen selbstständig und begründet handeln können.== Diese Fähigkeit heißt **berufliche Handlungsfähigkeit**. Sie entsteht nicht, wenn du im Betrieb nur nachmachst oder in der Schule nur auswendig lernst, sondern wenn du beides verbindest.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Vorgang, zwei Blickwinkel",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Im Betrieb bei MAKEL Studio",
+              "In der Berufsschule"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Anfrage",
+                  "Ein Sportverein fragt nach 120 bestickten Hoodies.",
+                  "Was ist rechtlich eine Anfrage, was ein Angebot?"
+                ]
+              },
+              {
+                "zellen": [
+                  "Angebot",
+                  "Du erstellst mit dem Vertrieb ein Angebot im System.",
+                  "Welche Angaben gehören hinein, wie lange ist es bindend?"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestellung",
+                  "Der Verein bestellt schriftlich.",
+                  "Wann ist ein Kaufvertrag zustande gekommen?"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferung",
+                  "Das Lager verschickt die Hoodies mit Lieferschein.",
+                  "Welche Pflichten haben Verkäufer und Käufer?"
+                ]
+              }
+            ],
+            "fazit": "Im Betrieb erlebst du, wie der Auftrag läuft. In der Schule verstehst du, warum er so laufen muss und was passiert, wenn etwas schiefgeht.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wenn du einen Vorgang im Betrieb erlebst und ihn danach in der Schule wiedererkennst, bleibt er besser hängen. Umgekehrt kannst du Fragen aus dem Unterricht in den Betrieb mitnehmen: Wie ist das bei uns geregelt? Wer entscheidet das? So wird aus zwei getrennten Lernorten ein zusammenhängender Lernweg.",
+            "id": "a1-p3"
+          }
         ],
-        "erklaerung": "Im Betrieb lernst du an echten Aufträgen: Du erfasst eine Bestellung, prüfst eine Eingangsrechnung oder planst mit, wann ein Druckauftrag in der Veredelung läuft. In der Berufsschule werden dieselben Themen systematisch erklärt — warum eine Bestellmenge so berechnet wird, welche rechtlichen Regeln für einen Kaufvertrag gelten, wie man einen Vorgang bucht. Der Betrieb liefert die Praxis, die Schule das Warum. Erst wenn beides zusammenkommt, kannst du in einer neuen Situation selbstständig handeln.",
-        "beispiele": [
-          "Bei MAKEL siehst du im Einkauf, dass Rohlinge für die Veredelung immer dann nachbestellt werden, wenn ein bestimmter Bestand erreicht ist. In der Schule lernst du in Lernfeld 4, wie dieser Meldebestand berechnet wird.",
-          "In der Schule lernst du, wie ein Kaufvertrag zustande kommt. Im Betrieb erkennst du das wieder, wenn eine Boutique eine Bestellung schickt und MAKEL sie mit einer Auftragsbestätigung annimmt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Freistellung für die Berufsschule",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Betrieb muss dich für den Berufsschulunterricht freistellen (§ 15 BBiG). Die Zeit in der Schule wird auf die Ausbildungszeit angerechnet. Du bist umgekehrt verpflichtet, am Unterricht teilzunehmen (§ 13 BBiG).",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli, Auszubildender im ersten Lehrjahr, sagt: „In der Schule machen wir gerade Kaufverträge, im Betrieb sitze ich aber im Lager. Das passt doch nicht zusammen.“ Die Antwort: Beide Lernorte müssen nicht in derselben Woche dasselbe Thema behandeln. Entscheidend ist, dass Luca die Verbindung selbst herstellt — etwa indem er im Lager nachfragt, wann eine Lieferung als ‚angenommen‘ gilt und welche Papiere dazu gehören.",
-        "typische_fehler": "Die Berufsschule wird als ‚Nebensache‘ zur Arbeit gesehen. Rechtlich ist der Berufsschulbesuch Pflicht und gehört zur Ausbildungszeit; die Berufsschulnoten fließen zwar nicht direkt in das IHK-Ergebnis ein, der Stoff aber sehr wohl in die Prüfungsaufgaben.",
         "verstaendnisfragen": [
-          "Warum reicht es nicht, nur im Betrieb mitzuarbeiten? Weil viele Prüfungsaufgaben das systematische Wissen aus der Schule verlangen, etwa Berechnungen, Rechtsregeln oder Buchungen, die man im Alltag nur in Ausschnitten sieht.",
-          "Was ist der Vorteil, ein Schulthema im Betrieb wiederzufinden? Man versteht den Zweck der Regel und kann sie in einer neuen Situation sicherer anwenden."
-        ],
-        "pruefungsbezug": "In Fallaufgaben wird oft gefragt, wer für etwas zuständig ist. Halte Betrieb, Berufsschule und zuständige Stelle sauber auseinander — sie haben verschiedene Aufgaben.",
-        "merksatz": "Der Betrieb vermittelt die Praxis am echten Auftrag, die Berufsschule das systematische Warum — zusammen ergeben sie die berufliche Handlungsfähigkeit."
+          {
+            "frage": "Warum reicht es nicht, nur im Betrieb zu lernen?",
+            "antwort": "Weil du dort oft nur einzelne Fälle erlebst. Die Schule liefert das systematische Wissen, mit dem du auch neue Situationen verstehst.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was bedeutet berufliche Handlungsfähigkeit?",
+            "antwort": "In neuen Situationen selbstständig und begründet handeln zu können.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Damit eine Ausbildung bundesweit vergleichbar ist, gibt es verbindliche Vorgaben für Betrieb und Schule.",
-          "Diese Vorgaben heißen Ordnungsmittel."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Ausbildungsordnung mit Ausbildungsrahmenplan, Rahmenlehrplan und betrieblichen Ausbildungsplan ihren Geltungsbereichen zu und nutzt sie, um zu prüfen, was du wann lernen sollst.",
+        "vorwissen_kurz": "Eine Ausbildung in Düsseldorf soll dasselbe wert sein wie eine in Dresden. Dafür gibt es verbindliche Pläne.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer festlegt, was du lernst",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Betrieb gilt die {{begriff:ausbildungsordnung|Ausbildungsordnung}}, bei dir die Industriekaufleuteausbildungsverordnung vom 12. März 2024. Sie legt die Dauer von drei Jahren fest, beschreibt das Berufsbild und enthält als Anlage den {{begriff:ausbildungsrahmenplan|Ausbildungsrahmenplan}} mit den Inhalten und ihrer zeitlichen Gliederung. Für die Schule gilt der {{begriff:rahmenlehrplan|Rahmenlehrplan}} der Kultusministerkonferenz vom 15. Dezember 2023 mit 13 Lernfeldern. Der {{begriff:ausbildungsplan|betriebliche Ausbildungsplan}} übersetzt den Ausbildungsrahmenplan in deinen Betrieb.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Dein Ausbildungsplan bei MAKEL Studio (Auszug)",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Zeitraum",
+              "Abteilung",
+              "Inhalte",
+              "passendes Lernfeld"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1.–4. Monat",
+                  "Einkauf",
+                  "Bedarf ermitteln, Angebote vergleichen, bestellen",
+                  "LF 4 Beschaffungsprozesse planen und steuern"
+                ]
+              },
+              {
+                "zellen": [
+                  "5.–8. Monat",
+                  "Lager und Versand",
+                  "Wareneingang prüfen, einlagern, versenden",
+                  "LF 7 Logistik- und Lagerprozesse"
+                ]
+              },
+              {
+                "zellen": [
+                  "9.–12. Monat",
+                  "Vertrieb",
+                  "Anfragen bearbeiten, Angebote erstellen",
+                  "LF 3 Kundenaufträge bearbeiten und überwachen"
+                ]
+              },
+              {
+                "zellen": [
+                  "13.–15. Monat",
+                  "Buchhaltung",
+                  "Belege buchen, Zahlungen überwachen",
+                  "LF 5 Wertströme buchhalterisch dokumentieren"
+                ]
+              }
+            ],
+            "fazit": "Der Ausbildungsplan zeigt, wann du in welcher Abteilung bist. Daneben siehst du, welches Lernfeld in der Schule dazu passt.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Plan ist nicht nur ein Formular, sondern ein Werkzeug für dich. Stellst du fest, dass ein Inhalt aus dem Plan in deiner Abteilung nicht vorkommt, kannst du das mit Sandra Koslowski, der Ausbildungsverantwortlichen, ansprechen. Der Betrieb ist verpflichtet, alle Inhalte des Ausbildungsrahmenplans zu vermitteln; Teil 1 der Abschlussprüfung prüft den Stoff der ersten 15 Monate.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "a2-b3"
+          }
         ],
-        "erklaerung": "Für den Betrieb gilt die Industrie\u00adkaufleute\u00adausbildungs\u00adverordnung vom 12. März 2024. Sie legt unter anderem die Dauer von drei Jahren, das Ausbildungsberufsbild und den Ausbildungsrahmenplan fest. Der Ausbildungsrahmenplan sagt, *was* der Betrieb in welchem Zeitraum vermitteln muss. Für die Berufsschule gilt der KMK-Rahmenlehrplan vom 15. Dezember 2023 mit 13 Lernfeldern. Der Betrieb übersetzt den Ausbildungsrahmenplan in einen eigenen betrieblichen Ausbildungsplan: In welcher Abteilung bist du wann, und was lernst du dort?",
-        "beispiele": [
-          "Im Ausbildungsrahmenplan steht sinngemäß, dass Beschaffungsprozesse gesteuert werden sollen. Im betrieblichen Ausbildungsplan von MAKEL steht konkret: ‚1. Lehrjahr, Monate 7 bis 9: Einkauf bei Deniz Aydın.‘",
-          "Der Rahmenlehrplan nennt Lernfeld 5 ‚Wertströme buchhalterisch dokumentieren und auswerten‘ mit 80 Unterrichtsstunden. Wann genau das im Stundenplan liegt, entscheidet die Schule."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Ausbildungsplan und Prüfung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Teil 1 der Abschlussprüfung findet im vierten Ausbildungshalbjahr statt und prüft Leistungserstellung, Logistik, Beschaffung und Buchhaltung. Liegen diese Abteilungen im Ausbildungsplan erst nach Teil 1, solltest du das früh ansprechen, damit die Inhalte rechtzeitig vermittelt werden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Zum Ausbildungsstart erhältst du zwei Papiere: den betrieblichen Ausbildungsplan und den Stundenplan der Berufsschule. Im Ausbildungsplan stehen Abteilungen und Zeiträume, im Stundenplan Lernfelder und Wochentage. Du ordnest zu: Der Ausbildungsplan beruht auf dem Ausbildungsrahmenplan der Verordnung, der Stundenplan auf dem Rahmenlehrplan der KMK. Beide sind aufeinander abgestimmt, aber nicht deckungsgleich.",
-        "typische_fehler": "Rahmenlehrplan und Ausbildungsrahmenplan werden verwechselt, weil die Namen ähnlich klingen. Merkhilfe: Der *Lehr*plan gehört in die Schule, wo gelehrt wird; der *Ausbildungs*rahmenplan gehört zur Ausbildungsordnung des Betriebs.",
         "verstaendnisfragen": [
-          "Wer erstellt den betrieblichen Ausbildungsplan? Der Ausbildungsbetrieb — auf Grundlage des Ausbildungsrahmenplans.",
-          "Warum ist der Rahmenlehrplan nicht dein persönlicher Einsatzplan im Betrieb? Weil er nur den Unterricht der Berufsschule ordnet und nichts darüber sagt, in welcher Abteilung du wann arbeitest."
-        ],
-        "pruefungsbezug": "Bei Zuordnungsaufgaben die Herkunft prüfen: Verordnung → Betrieb, KMK → Schule. Der betriebliche Ausbildungsplan ist Bestandteil des Ausbildungsvertrags.",
-        "merksatz": "Ausbildungsordnung mit Ausbildungsrahmenplan für den Betrieb, Rahmenlehrplan der KMK für die Schule, betrieblicher Ausbildungsplan als Umsetzung im eigenen Unternehmen."
+          {
+            "frage": "Welcher Plan gilt für die Berufsschule, welcher für den Betrieb?",
+            "antwort": "Für die Berufsschule der Rahmenlehrplan der KMK, für den Betrieb die Ausbildungsordnung mit dem Ausbildungsrahmenplan.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was tust du, wenn ein Inhalt aus dem Ausbildungsplan in deiner Abteilung nicht vorkommt?",
+            "antwort": "Mit der ausbildungsverantwortlichen Person sprechen, damit er nachgeholt wird. Der Betrieb muss alle Inhalte vermitteln.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Neben Betrieb und Schule gibt es eine dritte Stelle, die die Ausbildung überwacht.",
-          "Für Industriekaufleute ist das die Industrie- und Handelskammer."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest die Aufgaben von Betrieb, Berufsschule und IHK als zuständiger Stelle und wählst für ein Anliegen die richtige Ansprechperson.",
+        "vorwissen_kurz": "Wer Fragen zur Ausbildung hat, muss wissen, wer dafür zuständig ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Beteiligte, klare Aufgaben",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Neben Betrieb und Berufsschule gibt es die {{begriff:zustaendige-stelle|zuständige Stelle}}, für Industriekaufleute die Industrie- und Handelskammer. Sie trägt deinen Ausbildungsvertrag in das Verzeichnis ein, berät Betriebe und Auszubildende, überwacht die Ausbildung und nimmt die Abschlussprüfung ab. Der **Betrieb** vermittelt die Ausbildungsinhalte, stellt die Ausbildungsmittel kostenlos zur Verfügung und stellt dich für die Schule frei. Die **Berufsschule** unterrichtet nach dem Rahmenlehrplan und erteilt ein eigenes Zeugnis.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wer hilft weiter?",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Anliegen von Luca",
+              "erste Ansprechperson",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Er soll seit Wochen nur Kartons falten.",
+                  "Sandra Koslowski, Ausbildungsverantwortliche",
+                  "ausbildungsfremde Tätigkeiten sind unzulässig (§ 14 BBiG)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Er versteht die Bezugskalkulation nicht.",
+                  "Lehrkraft der Berufsschule",
+                  "Unterrichtsinhalt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gespräch im Betrieb bringt keine Lösung.",
+                  "Ausbildungsberatung der IHK",
+                  "berät und vermittelt neutral"
+                ]
+              },
+              {
+                "zellen": [
+                  "Er möchte wissen, wie Teil 1 bewertet wird.",
+                  "IHK, Informationen auch über den Betrieb",
+                  "Prüfungen gehören zu ihren Aufgaben"
+                ]
+              }
+            ],
+            "fazit": "Viele Anliegen lassen sich direkt im Betrieb klären. Die IHK ist Ansprechpartnerin, wenn das nicht gelingt oder es um die Prüfung geht.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Reihenfolge ist sinnvoll: Erst das Gespräch dort suchen, wo das Problem entsteht. Bleibt es ungelöst, berät die IHK beide Seiten. Hat der Betrieb einen Betriebsrat oder eine Jugend- und Auszubildendenvertretung, können auch sie unterstützen. Wichtig ist, Probleme früh anzusprechen und nicht erst kurz vor der Prüfung.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "a3-b4"
+          }
         ],
-        "erklaerung": "Die zuständige Stelle — hier die IHK — trägt den Ausbildungsvertrag in das Verzeichnis der Ausbildungsverhältnisse ein, berät Betriebe und Auszubildende, überwacht die Ausbildung und nimmt die Abschlussprüfung ab. Die Prüfung ist bei Industriekaufleuten gestreckt: Teil 1 soll im vierten Ausbildungshalbjahr stattfinden und prüft den Stoff der ersten 15 Monate. Teil 2 folgt am Ende der Ausbildung. Für jede Frage gibt es eine passende Ansprechperson: fachliche Arbeitsfragen im Betrieb, Unterrichtsfragen in der Schule, Prüfungs- und Vertragsfragen bei der IHK.",
-        "beispiele": [
-          "Du möchtest wissen, wann die Anmeldung zu Teil 1 der Abschlussprüfung erfolgt — zuständig ist die IHK; meist organisiert der Betrieb die Anmeldung mit dir zusammen.",
-          "Du verstehst eine Hausaufgabe zur Bezugskalkulation nicht — erste Ansprechperson ist die Lehrkraft der Berufsschule."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Schlichtung bei Streit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Streitigkeiten aus einem bestehenden Ausbildungsverhältnis kann die IHK einen Schlichtungsausschuss einrichten. Er muss in der Regel angerufen werden, bevor das Arbeitsgericht entscheidet. So lassen sich Konflikte oft lösen, ohne dass das Ausbildungsverhältnis zerbricht.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Drei Anliegen landen bei dir: (1) Du sollst in der Veredelung an der Druckmaschine eingewiesen werden. (2) Eine schulische Lernaufgabe zur Bestellmenge ist unklar. (3) Du willst wissen, wann Teil 1 der Abschlussprüfung stattfindet. Zuständig sind: (1) der Betrieb beziehungsweise die beauftragte ausbildende Person, (2) die Berufsschule, (3) die IHK als zuständige Stelle. Die Schule organisiert die Abschlussprüfung nicht.",
-        "typische_fehler": "Die Abschlussprüfung wird der Berufsschule zugeordnet. Die IHK-Prüfung ist eine Prüfung der zuständigen Stelle; die Schule stellt ein eigenes Abschlusszeugnis aus.",
         "verstaendnisfragen": [
-          "Was passiert mit einem Ausbildungsvertrag, bevor die Ausbildung beginnt? Er wird bei der zuständigen Stelle in das Verzeichnis der Ausbildungsverhältnisse eingetragen.",
-          "Wann soll Teil 1 der Abschlussprüfung stattfinden? Im vierten Ausbildungshalbjahr, also im zweiten Ausbildungsjahr."
-        ],
-        "pruefungsbezug": "Zahlen merken: drei Jahre Ausbildung, Teil 1 im vierten Ausbildungshalbjahr mit 90 Minuten Prüfungszeit und 25 Prozent Anteil am Gesamtergebnis.",
-        "merksatz": "Die IHK trägt den Vertrag ein, berät, überwacht die Ausbildung und nimmt die gestreckte Abschlussprüfung ab — Teil 1 im vierten Ausbildungshalbjahr, Teil 2 am Ende."
+          {
+            "frage": "Wer nimmt die Abschlussprüfung für Industriekaufleute ab?",
+            "antwort": "Die IHK als zuständige Stelle, nicht die Berufsschule.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Darf MAKEL Studio Luca über Wochen nur Kartons falten lassen?",
+            "antwort": "Nein. Auszubildenden dürfen nur Aufgaben übertragen werden, die dem Ausbildungszweck dienen (§ 14 BBiG).",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Der Ausbildungsnachweis dokumentiert, was du gelernt hast.",
-          "Wer gezielt lernt, verbindet Erfahrungen aus Betrieb und Schule bewusst miteinander."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst eine Lernwoche, in der Beobachten im Betrieb, Erklären in der Schule und eigenes Üben dasselbe Thema verbinden, und nutzt den Ausbildungsnachweis, um deinen Lernfortschritt festzuhalten.",
+        "vorwissen_kurz": "Viel erleben heißt noch nicht viel lernen. Es kommt darauf an, wie du Betrieb und Schule verknüpfst.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Beobachten, erklären, üben",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lernen bleibt hängen, wenn ein Thema mehrfach und auf verschiedene Weise vorkommt. Im Betrieb **beobachtest** du, wie ein Vorgang abläuft. In der Schule wird er **erklärt** und eingeordnet. Dann **übst** du selbst, mit freigegebenen Unterlagen oder Übungsfällen. Den {{begriff:berichtsheft|Ausbildungsnachweis}} führst du regelmäßig während der Ausbildungszeit. Er ist Voraussetzung für die Zulassung zur Abschlussprüfung und dein Werkzeug, die Lernwoche festzuhalten.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Lernwoche zum Wareneingang",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Tag",
+              "Schritt",
+              "Was du tust"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Montag, Betrieb",
+                  "beobachten",
+                  "Im Lager zusehen, wie eine Rohlingslieferung mit dem Lieferschein abgeglichen wird"
+                ]
+              },
+              {
+                "zellen": [
+                  "Dienstag, Schule",
+                  "erklären",
+                  "Im Unterricht die Prüfpflichten beim Wareneingang und die Rügepflicht besprechen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mittwoch, Betrieb",
+                  "üben",
+                  "Einen Lieferschein mit der Bestellung selbst vergleichen, Abweichungen notieren"
+                ]
+              },
+              {
+                "zellen": [
+                  "Freitag, Betrieb",
+                  "festhalten",
+                  "Im Ausbildungsnachweis eintragen, was du gelernt hast und was noch offen ist"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abschlussfrage",
+                  "",
+                  "Was tue ich, wenn statt 400 nur 380 Rohlinge geliefert wurden?"
+                ]
+              }
+            ],
+            "fazit": "Alle Schritte behandeln dasselbe Thema. Die Abschlussfrage zeigt dir in einer Woche, ob du es verstanden hast.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein guter Eintrag im Ausbildungsnachweis beschreibt nicht nur, was du getan hast, sondern was du dabei gelernt hast. „Wareneingang gemacht\" sagt wenig. „Lieferschein mit Bestellung verglichen, Mengenabweichung von 20 Stück festgestellt und an den Einkauf gemeldet\" zeigt, dass du den Vorgang verstanden hast. Sandra Koslowski zeichnet den Nachweis regelmäßig ab; nutze das Gespräch, um offene Fragen zu klären.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Den Ausbildungsnachweis führst du regelmäßig während der Ausbildungszeit; der Betrieb muss dir die Zeit dafür geben und ihn durchsehen. Er ist Voraussetzung für die Zulassung zur Abschlussprüfung. Darüber hinaus ist er dein Lernwerkzeug: Wer nach einer Woche notiert, was er im Betrieb beobachtet und in der Schule gelernt hat, erkennt Lücken früh. Bewährt hat sich ein einfacher Dreischritt: beobachten, erklären, üben — und am Ende eine Frage stellen, die du in einer Woche noch beantworten können willst.",
-        "beispiele": [
-          "Beobachtung im Betrieb: ‚Für den Großauftrag wurden 400 Rohlinge bestellt.‘ Erklärung aus der Schule: ‚Bestellmenge und Lagerkosten hängen zusammen.‘ Übung: eine kleine Rechnung mit eigenen Zahlen.",
-          "Abschlussfrage für die Woche: ‚Warum bestellt MAKEL nicht einfach immer 2.000 Stück auf einmal?‘"
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Form des Ausbildungsnachweises",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Ausbildungsnachweis kann schriftlich oder elektronisch geführt werden; die Form wird im Ausbildungsvertrag festgelegt. Der Betrieb muss dir ermöglichen, ihn während der Ausbildungszeit zu führen, und ihn regelmäßig durchsehen.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Du planst eine Lernwoche zum Thema Einkauf. Montag: Im Betrieb beobachtest du, wie Deniz Aydın Angebote von zwei Rohlingslieferanten vergleicht. Mittwoch: In der Schule wird die Bezugskalkulation erklärt. Donnerstag: Du rechnest die beiden Angebote mit den Zahlen nach, die Deniz dir freigegeben hat. Freitag: Du notierst im Ausbildungsnachweis die Frage ‚Welche Kosten außer dem Preis gehören in einen Angebotsvergleich?‘ und beantwortest sie in der Folgewoche.",
-        "typische_fehler": "Der Ausbildungsnachweis wird erst kurz vor der Prüfungsanmeldung nachgeschrieben. Dann fehlt nicht nur ein formales Dokument, sondern auch der Lerneffekt — und lückenhafte Nachweise können die Zulassung gefährden.",
         "verstaendnisfragen": [
-          "Wann wird der Ausbildungsnachweis geführt? Regelmäßig während der Ausbildungszeit, nicht in der Freizeit.",
-          "Woran erkennst du einen guten Lernplan für eine Woche? Betriebliche Beobachtung, schulische Erklärung und eigene Übung beziehen sich auf dasselbe Thema und enden mit einer überprüfbaren Frage."
-        ],
-        "pruefungsbezug": "Der ordnungsgemäß geführte Ausbildungsnachweis ist Zulassungsvoraussetzung. Inhaltlich hilft er dir besonders vor Teil 1, weil du den Stoff der ersten 15 Monate darin wiederfindest.",
-        "merksatz": "Den Ausbildungsnachweis regelmäßig in der Ausbildungszeit führen — er ist Zulassungsvoraussetzung und zugleich dein Werkzeug, Betrieb und Schule zu verbinden."
+          {
+            "frage": "Warum ist der Ausbildungsnachweis mehr als eine Pflicht für die Prüfungszulassung?",
+            "antwort": "Weil du damit festhältst, was du gelernt hast und was noch offen ist. So verbindest du Betrieb und Schule.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Was macht eine gute Abschlussfrage für eine Lernwoche aus?",
+            "antwort": "Sie bezieht sich auf das Thema der Woche und lässt sich nach einer Woche überprüfbar beantworten.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

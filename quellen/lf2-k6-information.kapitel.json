@@ -6,66 +6,359 @@
   "untertitel": "Die Information ist da. Die Frage ist, ob du ihr trauen kannst.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Eine Informationssuche braucht ein klares Ziel.",
-          "Interne und externe Quellen beantworten unterschiedliche Fragen."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst aus einem Auftrag eine genaue Informationsfrage und wählst dafür passende interne und externe Quellen in sinnvoller Reihenfolge.",
+        "vorwissen_kurz": "Informationen sind die Grundlage betrieblicher Entscheidungen. Je unklarer die Frage, desto unbrauchbarer die Antwort.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst die Frage, dann die Suche",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tobias Renner bittet Lea: „Finden Sie heraus, ob wir beim Paketversand sparen können.“ Bevor Lea sucht, macht sie aus dem Auftrag eine genaue {{begriff:informationsbeschaffung|Informationsfrage}}: Wie viele Pakete versendet MAKEL im Monat, was kosten sie bisher, und was würden zwei andere Paketdienste für dieselbe Menge verlangen? Erst jetzt weiß sie, welche Quellen sie braucht.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Quellenplan",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Teilfrage",
+              "Quelle",
+              "Art"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wie viele Pakete im Monat, welche Größen?",
+                  "Versandstatistik aus dem Warenwirtschaftssystem",
+                  "intern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was kostet der bisherige Dienst?",
+                  "Rechnungen der letzten drei Monate, Rahmenvertrag",
+                  "intern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Welche Kündigungsfrist hat der Vertrag?",
+                  "Vertragsakte, Rücksprache mit dem Einkauf",
+                  "intern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was bieten andere Dienste?",
+                  "Angebote auf Anfrage mit den eigenen Mengen",
+                  "extern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wie zuverlässig sind sie?",
+                  "Erfahrungen anderer Händler, Branchenverband",
+                  "extern"
+                ]
+              }
+            ],
+            "fazit": "Drei der fünf Teilfragen beantworten interne Quellen. Erst wenn die eigenen Zahlen klar sind, lohnt es sich, Angebote einzuholen — sonst vergleicht man Listenpreise, die nicht zur eigenen Menge passen.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          }
         ],
-        "erklaerung": "Vor der Suche wird geklärt: Was soll bekannt sein, wofür wird die Information benötigt und wie genau muss sie sein? Interne Quellen sind oft kostenlos, aktuell und auf den eigenen Betrieb bezogen. Für rechtliche Fragen ist der Gesetzestext die maßgebliche Quelle. Texte von KI-Werkzeugen können ein Such- oder Strukturierungshilfsmittel sein, ersetzen aber keine überprüfte Quelle.",
-        "beispiele": [
-          "Für den tatsächlichen Verbrauch von Büromaterial werden interne Auswertungen und Vorgänge herangezogen; für einen Marktvergleich werden zusätzlich externe Angebote eingeholt.",
-          "Bei einer Frage zu einer gesetzlichen Frist wird der Gesetzestext geprüft, statt eine ungeprüfte Zusammenfassung als Beleg zu verwenden."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Primäre und sekundäre Daten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Primärdaten erhebt man selbst für die eigene Frage, etwa durch eine Kundenbefragung oder eine Angebotsanfrage. Sekundärdaten liegen schon vor, weil jemand sie für einen anderen Zweck gesammelt hat, etwa Statistiken oder Marktstudien. Sekundärdaten sind schneller und günstiger, passen aber oft nicht genau zur eigenen Frage.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Die Geschäftsführung möchte wissen, ob sich ein Wechsel des Büromaterial-Lieferers lohnt. Zuerst werden Artikelgruppen, Zeitraum und Entscheidungskriterien festgelegt. Intern werden Verbrauch, gezahlte Preise und Reklamationen ermittelt. Extern werden vergleichbare Angebote mit identischen Artikeln, Mengen und Terminen eingeholt. So beantwortet die Recherche das konkrete Ziel statt wahllos Daten zu sammeln.",
-        "typische_fehler": "Die Suche beginnt ohne Ziel oder nur mit einer einzelnen Internetquelle. Eine KI-Antwort wird als Beleg übernommen, obwohl Zahlen und Paragrafen nicht anhand einer maßgeblichen Quelle geprüft wurden.",
         "verstaendnisfragen": [
-          "Welche Fragen stehen vor der Recherche? Was will ich wissen, wofür und in welcher Genauigkeit?",
-          "Welche Quelle ist bei einer Rechtsfrage maßgeblich? Der Gesetzestext."
-        ],
-        "pruefungsbezug": "Formuliere zu Beginn das Informationsziel und trenne interne Primärdaten, externe Vergleichsdaten und rechtliche Originalquellen.",
-        "merksatz": "Erst das Ziel klären, dann die passende Quelle wählen und ihren Inhalt prüfen."
+          {
+            "frage": "Warum fragt Lea nicht einfach drei Paketdienste nach ihren Preisen?",
+            "antwort": "Ohne eigene Zahlen zu Menge, Größe und Zielen bekommt sie nur Listenpreise, die mit den tatsächlichen Konditionen wenig zu tun haben. Erst mit den internen Daten kann sie vergleichbare Angebote anfordern.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Welche Quelle ist für die Kündigungsfrist des bisherigen Vertrags maßgeblich?",
+            "antwort": "Der Vertrag selbst. Erinnerungen von Kolleginnen helfen beim Finden, aber verbindlich ist nur der schriftliche Vertragstext.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Eine Quelle kann richtig, veraltet, interessengeleitet oder unbelegt sein.",
-          "Die Tragweite eines Fehlers bestimmt die Strenge der Prüfung."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst zwei sich widersprechende Quellen nach Urheber, Stand, Interesse und Bestätigung, entscheidest begründet und machst Unsicherheit sichtbar.",
+        "vorwissen_kurz": "Nicht jede Information ist richtig, und nicht jede richtige Information ist noch aktuell.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Quellen, zwei Antworten",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea soll klären, wie lange MAKEL Eingangsrechnungen aufbewahren muss. Ein Ratgeberartikel im Internet nennt zehn Jahre, ein Merkblatt ihrer IHK acht Jahre. Beides sieht seriös aus. Mit {{begriff:quellenkritik|Quellenkritik}} findet sie heraus, welcher Angabe sie folgen kann.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Prüfung",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Ratgeberartikel",
+              "IHK-Merkblatt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wer sagt das?",
+                  "Website eines Softwareanbieters, Autor nicht genannt",
+                  "Industrie- und Handelskammer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wann?",
+                  "ohne Datum; Hinweise auf Vorgänge aus 2023",
+                  "Stand 2025"
+                ]
+              },
+              {
+                "zellen": [
+                  "Warum?",
+                  "wirbt für Archivsoftware",
+                  "informiert Mitgliedsbetriebe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestätigung?",
+                  "—",
+                  "Gesetzestext (§ 147 AO, § 257 HGB) nennt acht Jahre seit 1.1.2025"
+                ]
+              }
+            ],
+            "fazit": "Der Artikel gibt den alten Rechtsstand wieder. Maßgeblich sind acht Jahre, belegt durch den Gesetzestext und bestätigt durch die IHK.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea schreibt in ihre Notiz nicht nur das Ergebnis, sondern auch die Quellen mit Abrufdatum: „Buchungsbelege: 8 Jahre seit 1.1.2025 (§ 147 Abs. 3 AO, abgerufen 9.11.2026; IHK-Merkblatt Stand 2025). Ältere Angaben mit 10 Jahren sind überholt.“ So kann jeder später nachvollziehen, worauf ihre Aussage beruht.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Quellenkritik fragt: Wer ist der Urheber? Wann wurde die Information veröffentlicht oder aktualisiert? Warum wird sie veröffentlicht und welches Interesse steht dahinter? Steht die Aussage auch in einer unabhängigen zweiten Quelle? Je größer die rechtlichen oder finanziellen Folgen, desto sorgfältiger müssen Aktualität, Zuständigkeit und Bestätigung geprüft werden.",
-        "beispiele": [
-          "Ein Artikel ohne Autor und Impressum ist bei einer finanziell wichtigen Entscheidung vorsichtig zu behandeln und durch eine zweite Quelle zu prüfen.",
-          "Ein Angebot eines Lieferers ist eine Quelle für dessen Konditionen, aber nicht automatisch ein neutraler Vergleich. Art, Menge und Termin müssen mit anderen Angeboten übereinstimmen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn sich der Widerspruch nicht auflösen lässt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manchmal lässt sich nicht klären, welche Quelle stimmt, etwa bei Schätzungen zu Lieferzeiten. Dann wird die Unsicherheit offen benannt: „Lieferant nennt vier Wochen, Branchenberichte sechs bis acht Wochen; wir planen mit sechs Wochen und fragen in drei Wochen nach.“ Eine ehrlich benannte Spanne ist mehr wert als eine scheinbar genaue Zahl.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Zahl aus dem Internet soll in eine Entscheidungsvorlage übernommen werden. Zuerst werden Urheber, Datum und Interesse geprüft. Dann wird eine unabhängige zweite Quelle gesucht. Fehlt eine Bestätigung oder ist die Angabe veraltet, wird sie nicht als gesicherte Entscheidungsgrundlage verwendet; der offene Prüfstatus wird dokumentiert.",
-        "typische_fehler": "Nur das Veröffentlichungsdatum wird geprüft oder eine bekannte Institution automatisch für fehlerfrei gehalten. Auch eine zweite Quelle ist nicht hilfreich, wenn sie dieselbe ungeprüfte Aussage nur übernimmt.",
         "verstaendnisfragen": [
-          "Welche vier Prüfsteine gehören zur Quellenkritik? Urheber, Aktualität, Interesse und Bestätigung durch eine unabhängige Quelle.",
-          "Wann muss besonders streng geprüft werden? Wenn ein Fehler rechtliche oder finanzielle Folgen haben kann."
-        ],
-        "pruefungsbezug": "Abarbeite die vier Fragen sichtbar und bewerte die Quelle nicht nur mit ‚gut‘ oder ‚schlecht‘, sondern passend zum Zweck.",
-        "merksatz": "Je folgenreicher die Aussage, desto strenger die Prüfung von Wer, Wann, Warum und Bestätigung."
+          {
+            "frage": "Warum ist das Fehlen eines Datums bei Rechtsangaben so problematisch?",
+            "antwort": "Gesetze, Fristen und Beträge ändern sich. Ohne Datum weiß man nicht, welchen Rechtsstand die Angabe wiedergibt, und kann nicht prüfen, ob sie noch gilt.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Macht das Werbeinteresse den Ratgeberartikel automatisch falsch?",
+            "antwort": "Nein. Es erklärt aber, warum Inhalte betont oder vereinfacht sein können. Ob eine Angabe stimmt, entscheidet die Prüfung an einer maßgeblichen Quelle, hier dem Gesetzestext.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Die Darstellungsform muss zur Aussage und zum Empfänger passen.",
-          "Ein Diagramm kann durch Gestaltung einen falschen Eindruck erzeugen."
+        "darstellung": "vollfassung",
+        "ziel": "Du bereitest Informationen für einen bestimmten Empfänger auf, wählst die passende Darstellungsform und schreibst eine Entscheidungsvorlage mit dem Ergebnis zuerst.",
+        "vorwissen_kurz": "Dieselbe Information muss für verschiedene Empfänger unterschiedlich dargestellt werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Für wen, wofür?",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea hat ihre Zahlen zum Paketversand beisammen. Tobias Renner braucht keine Tabelle mit 40 Zeilen, sondern eine Empfehlung, die er in zwei Minuten prüfen kann. Die Kollegin im Versand braucht dagegen die Einzelheiten, um später die Umstellung vorzubereiten. Gleiche Fakten, andere Aufbereitung.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Entscheidungsvorlage",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Empfehlung:** Wechsel zu Paketdienst B ab 1. April 2027. Ersparnis rund 7.900 € im Jahr bei gleicher Laufzeit.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Bisheriger Dienst",
+              "Dienst A",
+              "Dienst B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Preis je Paket (bis 5 kg, 2.200 Pakete im Monat)",
+                  "4,90 €",
+                  "4,70 €",
+                  "4,60 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten im Jahr",
+                  "129.360 €",
+                  "124.080 €",
+                  "121.440 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Laufzeit laut Anbieter",
+                  "1–2 Tage",
+                  "1–2 Tage",
+                  "1–2 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abholung",
+                  "täglich",
+                  "täglich",
+                  "täglich"
+                ]
+              }
+            ],
+            "fazit": "B ist am günstigsten. Die Laufzeitangaben stammen von den Anbietern selbst und sind nicht unabhängig geprüft.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Bedingungen:** Kündigung des bisherigen Vertrags spätestens am 31. Dezember 2026 zum 31. März 2027 (drei Monate zum Quartalsende). **Offene Punkte:** Probesendungen im Dezember, um die Laufzeiten zu prüfen.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Ergebnis steht im ersten Satz, die Tabelle belegt es, und die Grenzen der Information sind offen benannt. Ein Diagramm braucht es hier nicht: Drei Preise lassen sich in einer Tabelle schneller vergleichen. Wollte Lea zeigen, wie sich die Paketmengen über das Jahr entwickeln, wäre ein Liniendiagramm die richtige Wahl.",
+            "id": "b3-p4"
+          }
         ],
-        "erklaerung": "Tabellen eignen sich für genaue Vergleiche, Säulen- oder Balkendiagramme für Größen nebeneinander, Linien für Entwicklungen über die Zeit und Kreise für Anteile an einem Ganzen bei wenigen Segmenten. In Entscheidungsvorlagen steht das Ergebnis im ersten Satz. Bei Säulendiagrammen beginnt die Wertachse bei null; Einheiten und Zeitabstände müssen erkennbar sein.",
-        "beispiele": [
-          "Ein Angebotsvergleich mit mehreren Einstandspreisen wird als Tabelle dargestellt, weil konkrete Werte verglichen werden.",
-          "Die Entwicklung eines Verbrauchs über mehrere Monate passt in ein Liniendiagramm; ein Kreisdiagramm wäre nur bei wenigen Anteilen an einem Ganzen sinnvoll."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Diagramme ehrlich gestalten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Diagramme wirken stärker als Tabellen und verführen deshalb leichter. Säulen und Balken beginnen bei null, sonst sehen kleine Unterschiede riesig aus. Achsen werden beschriftet, Einheiten genannt, die Quelle angegeben. Und unterschiedliche Daten werden nicht allein durch Farben unterschieden, damit auch Menschen mit Farbfehlsichtigkeit sie lesen können.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf1:k7-g2"
+                ],
+                "text": "Quellen und Gestaltung in Präsentationen",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Die Geschäftsführung soll über einen Liefererwechsel entscheiden. Der Kurzbericht beginnt mit der Empfehlung. Darunter steht eine Tabelle mit Einstandspreisen je Anbieter und qualitativen Kriterien wie Liefertreue und Service. Auf ein Diagramm wird verzichtet, weil die Tabelle die konkreten Zahlen genauer zeigt; die zugrunde liegenden Quellen und Annahmen werden genannt.",
-        "typische_fehler": "Die Form wird nach Geschmack statt nach Aussage gewählt. Häufig fehlen Einheiten, die Zeitabstände sind ungleich oder die Wertachse beginnt nicht bei null und übertreibt dadurch kleine Unterschiede.",
         "verstaendnisfragen": [
-          "Welche Form zeigt eine Entwicklung über die Zeit? Ein Liniendiagramm.",
-          "Wo steht das Ergebnis in einer Entscheidungsvorlage? Im ersten Satz, danach folgen Begründung, Vergleich und Quellen."
-        ],
-        "pruefungsbezug": "Begründe jede Darstellungsform mit ihrer Funktion und prüfe bei Diagrammen Achse, Einheit, Zeitabstand und Lesbarkeit.",
-        "merksatz": "Die Form folgt der Frage: Tabelle vergleicht genau, Linie zeigt Verlauf, Kreis zeigt wenige Anteile."
+          {
+            "frage": "Warum steht in der Vorlage, dass die Laufzeiten nicht geprüft sind?",
+            "antwort": "Die Angaben stammen von den Anbietern, die ein Interesse daran haben, gut dazustehen. Wer die Grenze der Information nennt, ermöglicht eine ehrliche Entscheidung und zeigt, was noch zu klären ist.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Welche Darstellung wählst du, um Tobias Renner die Paketmengen der letzten zwölf Monate zu zeigen?",
+            "antwort": "Ein Liniendiagramm, weil es eine Entwicklung über die Zeit zeigt. Monate stehen in gleichen Abständen auf der waagerechten Achse.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

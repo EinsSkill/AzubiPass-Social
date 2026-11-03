@@ -6,86 +6,459 @@
   "untertitel": "Von vorgegebenen Selbstkosten zum Listenverkaufspreis — und wie daraus ein vollständiges Angebot wird.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Selbstkosten sind alle Kosten, die für ein Produkt bis zum Verkauf anfallen.",
-          "Wie sie genau entstehen, ist Thema von Lernfeld 8."
+        "darstellung": "vollfassung",
+        "ziel": "Du verwendest vorgegebene Selbstkosten als Ausgangspunkt der Verkaufskalkulation, erklärst ihre Bestandteile und begründest, warum der Preis sie dauerhaft decken muss.",
+        "vorwissen_kurz": "Bevor MAKEL Studio einen Preis nennt, muss klar sein, was ein Hoodie das Unternehmen selbst kostet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was ein Hoodie kostet",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Selbstkosten** umfassen alle Kosten, die bis zum Verkauf eines Stücks entstehen: Material wie Rohling, Druckfarbe und Verpackung, Fertigung mit Maschinen- und Arbeitszeit in der Veredelung sowie einen Anteil an Verwaltung und Vertrieb. In diesem Kapitel sind sie vorgegeben; wie sie ermittelt werden, zeigt die Kosten- und Leistungsrechnung. ==Der Verkaufspreis muss die Selbstkosten decken und einen Gewinn enthalten.== Auf die Selbstkosten werden deshalb Gewinn und die Nachlässe aufgeschlagen, die der Kunde später abziehen darf.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Selbstkosten des Logo-Hoodies (vorgegeben)",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestandteil",
+              "je Stück"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohling",
+                  "14,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckfarbe und Verpackung",
+                  "2,50 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigung in der Veredelung",
+                  "13,50 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Verwaltung und Vertrieb",
+                  "10,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Selbstkosten",
+                  "40,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Jeder Hoodie kostet MAKEL Studio 40 €. Liegt der Preis nach allen Abzügen darunter, verliert das Unternehmen mit jedem Stück Geld.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kurzfristig kann ein Preis unter den Selbstkosten sinnvoll sein, etwa wenn die Veredelung sonst leer stünde und der Preis wenigstens Material und Fertigung deckt. Das ist eine bewusste Ausnahme, die in der Kosten- und Leistungsrechnung begründet wird. Auf Dauer muss jeder Preis die vollen Selbstkosten decken, sonst fehlt das Geld für Miete, Verwaltung und Investitionen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "In diesem Kapitel sind die Selbstkosten vorgegeben. Sie umfassen Material, Fertigung sowie Verwaltung und Vertrieb — für einen bedruckten Hoodie also Rohling, Druck und den anteiligen Aufwand für Büro und Versand. Der Verkaufspreis muss die Selbstkosten decken und einen Gewinn enthalten, sonst verliert MAKEL an jedem verkauften Stück Geld. Die vollständige Herleitung der Selbstkosten über Einzel- und Gemeinkosten folgt in Lernfeld 8.",
-        "beispiele": [
-          "Vorgegebene Selbstkosten je bedrucktem Hoodie: 40,00 €.",
-          "Im Fallpaket P1 der Kostenrechnung liegen die Selbstkosten bei 30,00 € je Stück — die Zahl hängt immer vom konkreten Auftrag ab."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Woher die Selbstkosten kommen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Kosten- und Leistungsrechnung werden Einzelkosten wie Material direkt zugerechnet und Gemeinkosten wie Verwaltung über Zuschlagssätze verteilt. Ändern sich Rohstoffpreise oder Löhne, ändern sich auch die Selbstkosten, und die Preise müssen überprüft werden.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner gibt für den Agenturauftrag Selbstkosten von 40,00 € je Hoodie vor. Marlene soll daraus den Angebotspreis kalkulieren. Sie übernimmt die 40,00 € als Ausgangswert und fragt nicht nach, wie sie entstanden sind — das ist für die Verkaufskalkulation hier nicht ihre Aufgabe.",
-        "typische_fehler": "Der Verkaufspreis wird aus dem Einkaufspreis des Rohlings abgeleitet und vergisst dabei Druck, Verwaltung und Vertrieb.",
         "verstaendnisfragen": [
-          "Was enthalten die Selbstkosten? Alle Kosten bis zum Verkauf: Material, Fertigung, Verwaltung und Vertrieb.",
-          "Warum muss der Verkaufspreis über den Selbstkosten liegen? Damit ein Gewinn entsteht und die Kosten gedeckt sind."
-        ],
-        "pruefungsbezug": "Lies genau, welcher Ausgangswert gegeben ist: Selbstkosten oder Einkaufspreis? Danach richtet sich, wo die Kalkulation beginnt.",
-        "merksatz": "Die Verkaufskalkulation beginnt hier bei vorgegebenen Selbstkosten; der Preis muss sie decken und einen Gewinn enthalten."
+          {
+            "frage": "Was gehört zu den Selbstkosten eines bedruckten Hoodies?",
+            "antwort": "Material, Fertigung in der Veredelung sowie ein Anteil an Verwaltung und Vertrieb.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum muss der Verkaufspreis auf Dauer die Selbstkosten decken?",
+            "antwort": "Weil das Unternehmen sonst mit jedem Stück Verlust macht und Fixkosten und Investitionen nicht bezahlen kann.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Gewinn wird auf die Selbstkosten aufgeschlagen.",
-          "Skonto und Rabatt zieht der Kunde später vom Preis ab."
+        "darstellung": "vollfassung",
+        "ziel": "Du kalkulierst von den Selbstkosten über Gewinnzuschlag, Kundenskonto und Kundenrabatt zum Listenverkaufspreis, wählst für jede Stufe die richtige Bezugsgröße und rechnest rückwärts, wenn der Marktpreis vorgegeben ist.",
+        "vorwissen_kurz": "Der Kunde zieht Rabatt und Skonto später vom Listenpreis ab. Deshalb müssen sie vorher richtig eingerechnet werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Hundert und im Hundert",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der **Gewinn** wird vom Hundert auf die Selbstkosten aufgeschlagen: Selbstkosten mal 1,20 bei 20 % Gewinn ergeben den **Barverkaufspreis**. {{begriff:skonto|Kundenskonto}} und {{begriff:rabatt|Kundenrabatt}} werden dagegen im Hundert eingerechnet, weil der Kunde sie vom höheren Preis abzieht. Man teilt deshalb durch (1 − Satz): Barverkaufspreis durch 0,98 bei 2 % Skonto ergibt den **Zielverkaufspreis**, dieser durch 0,90 bei 10 % Rabatt den **Listenverkaufspreis**. Gerundet wird erst am Ende.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rückwärts: Der Wettbewerb verlangt 52 € Listenpreis",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Listenverkaufspreis (Markt)",
+                  "vorgegeben",
+                  "52,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "− 10 % Kundenrabatt",
+                  "52,00 × 0,90",
+                  "46,80 € Zielverkaufspreis"
+                ]
+              },
+              {
+                "zellen": [
+                  "− 2 % Kundenskonto",
+                  "46,80 × 0,98",
+                  "45,86 € Barverkaufspreis"
+                ]
+              },
+              {
+                "zellen": [
+                  "− Selbstkosten",
+                  "45,86 − 40,00",
+                  "5,86 € Gewinn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gewinn in Prozent der Selbstkosten",
+                  "5,86 ÷ 40,00 × 100",
+                  "rund 14,7 %"
+                ]
+              }
+            ],
+            "fazit": "Zum Marktpreis von 52 € erzielt MAKEL Studio statt 20 % nur rund 14,7 % Gewinnzuschlag. Ob das reicht, entscheidet der Vertrieb mit der Geschäftsführung.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rückwärtsrechnung ist im Alltag oft wichtiger als die Vorwärtsrechnung. Viele Kunden kennen die Preise der Konkurrenz, und MAKEL Studio muss wissen, ob es zu diesem Preis noch verdient. Liegt der Barverkaufspreis unter den Selbstkosten, ist der Auftrag zu diesem Preis ein Verlustgeschäft. Dann helfen nur niedrigere Kosten, ein Mehrwert, der einen höheren Preis rechtfertigt, oder der Verzicht auf den Auftrag.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Selbstkosten plus Gewinnzuschlag (vom Hundert auf die Selbstkosten) ergeben den Barverkaufspreis. Weil der Kunde später Skonto abzieht, muss der Preis vorher so erhöht werden, dass nach Abzug noch der Barverkaufspreis bleibt. Deshalb wird Skonto ‚im Hundert‘ eingerechnet: Barverkaufspreis ÷ (1 − Skontosatz) = Zielverkaufspreis. Ebenso beim Kundenrabatt: Zielverkaufspreis ÷ (1 − Rabattsatz) = Listenverkaufspreis. Gerundet wird erst am Ende.",
-        "beispiele": [
-          "Selbstkosten 40,00 € + 20 % Gewinn = 48,00 € Barverkaufspreis.",
-          "48,00 € ÷ 0,98 = 48,98 € Zielverkaufspreis; 48,9796 € ÷ 0,90 = 54,42 € Listenverkaufspreis (netto)."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Zuschlag ist nicht Marge",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "20 % Gewinnzuschlag auf 40 € ergeben 8 € Gewinn. Bezogen auf den Barverkaufspreis von 48 € sind das nur rund 16,7 %. Wer Zuschlag auf die Kosten und Anteil am Verkaufspreis verwechselt, rechnet sich den Gewinn schön.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Selbstkosten 40,00 €, Gewinnzuschlag 20 %, Kundenskonto 2 %, Kundenrabatt 10 %. Rechnung: 40,00 × 1,20 = 48,00 € (Barverkaufspreis). 48,00 ÷ 0,98 = 48,9796 € (Zielverkaufspreis). 48,9796 ÷ 0,90 = 54,4218 € ≈ 54,42 € (Listenverkaufspreis netto). Probe: 54,42 − 10 % = 48,98; 48,98 − 2 % = 48,00. Würde man stattdessen 12 % auf 48,00 € aufschlagen, käme 53,76 € heraus — zu wenig.",
-        "typische_fehler": "Skonto und Rabatt werden als Aufschlag vom Hundert gerechnet oder einfach addiert. Weil der Kunde sie vom höheren Preis abzieht, reicht ein Aufschlag in gleicher Höhe nicht.",
         "verstaendnisfragen": [
-          "Warum wird der Kundenskonto ‚im Hundert‘ eingerechnet? Weil der Kunde ihn vom Zielverkaufspreis abzieht — dieser ist also die 100 Prozent.",
-          "Ist ein Gewinnzuschlag von 20 % auf die Selbstkosten eine Gewinnmarge von 20 % des Verkaufspreises? Nein. 8 € Gewinn sind 20 % von 40 €, aber nur rund 16,7 % von 48 €."
-        ],
-        "pruefungsbezug": "Kalkulationsschema sauber mit Bezugsgrößen aufschreiben; Rundung erst am Ende; eine Probe rückwärts sichert Punkte.",
-        "merksatz": "Gewinn wird vom Hundert auf die Selbstkosten aufgeschlagen, Kundenskonto und Kundenrabatt werden im Hundert eingerechnet — durch (1 − Satz) teilen, nicht addieren."
+          {
+            "frage": "Barverkaufspreis 48 €, 2 % Skonto, 10 % Rabatt. Wie hoch ist der Listenverkaufspreis?",
+            "antwort": "48 ÷ 0,98 ÷ 0,90 = 54,42 € netto.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum werden Skonto und Rabatt nicht einfach aufgeschlagen?",
+            "antwort": "Weil der Kunde sie vom höheren Preis abzieht. Ein Aufschlag vom Hundert wäre zu niedrig, und nach den Abzügen bliebe weniger als der Barverkaufspreis.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Ein Angebot ist rechtlich ein Antrag.",
-          "Es muss so bestimmt sein, dass ein einfaches Ja genügt."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust ein vollständiges Angebot mit Listenpreis, Rabatt, Umsatzsteuer, Liefer- und Zahlungsbedingungen auf, prüfst den Zahlbetrag mit Skonto und erkennst, ob ein einfaches Ja zum Vertragsschluss genügt.",
+        "vorwissen_kurz": "Aus dem kalkulierten Preis wird jetzt ein Angebot, das die Agentur nur noch annehmen muss.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "So bestimmt, dass ein Ja genügt",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Angebot ist rechtlich ein Antrag. Es muss alle wesentlichen Punkte enthalten, damit der Kunde mit einem einfachen Ja den Vertrag schließen kann: Ware mit genauer Beschreibung, Menge, Preis netto mit ausgewiesener Umsatzsteuer, Rabatte, Liefertermin, Liefer- und Zahlungsbedingungen sowie die Bindungsfrist. Fehlt etwas Wesentliches, entstehen Rückfragen, oder es kommt ein Vertrag mit Lücken zustande, die später Streit verursachen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Angebot an Pixelwerk",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Angebotsteil",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ware",
+                  "Hoodie „Basic\", 80 % Baumwolle, schwarz, Logodruck einfarbig auf der Brust nach freigegebener Vorlage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Menge",
+                  "100 Stück, Größenverteilung laut Anfrage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Preis",
+                  "54,42 € netto je Stück, abzüglich 10 % Rabatt, zuzüglich 19 % Umsatzsteuer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Liefertermin",
+                  "KW 47, frühestens zehn Arbeitstage nach Motivfreigabe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferbedingung",
+                  "frei Haus innerhalb Deutschlands"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlungsbedingung",
+                  "50 % Anzahlung bei Auftrag, Rest 8 Tage 2 % Skonto, 30 Tage netto"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bindung",
+                  "an dieses Angebot halten wir uns bis zum 30. November"
+                ]
+              }
+            ],
+            "fazit": "Alle wesentlichen Punkte sind genannt. Bestellt Pixelwerk „wie angeboten\", ist der Vertrag ohne weitere Abstimmung geschlossen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Probe am Ende schützt vor Rechenfehlern. Zieht die Agentur Rabatt und Skonto ab, müssen netto die kalkulierten 48 € je Stück übrig bleiben; im Beispiel sind es 4.799,84 € statt 4.800 €, eine Rundungsdifferenz von 16 Cent. Weicht die Probe stärker ab, steckt ein Fehler in der Kalkulation. Die Umsatzsteuer verändert die Rechnung nicht, weil MAKEL Studio sie an das Finanzamt abführt; sie wird aber im Angebot ausgewiesen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Ein vollständiges Angebot nennt: Artikel und Ausführung (Qualität, Farbe, Druck), Menge und Größenverteilung, Preis je Stück und Gesamtpreis (netto, Umsatzsteuer, brutto), Liefertermin, Liefer- und Zahlungsbedingungen, gegebenenfalls Bindefrist und Verweis auf AGB. Mengenrabatte werden ausgewiesen, damit der Kunde den Preis nachvollziehen kann. Umsatzsteuer wird im B2B-Angebot üblicherweise netto plus Steuer angegeben.",
-        "beispiele": [
-          "100 Hoodies × 54,42 € = 5.442,00 € netto; 19 % Umsatzsteuer 1.033,98 €; brutto 6.475,98 €.",
-          "‚An dieses Angebot halten wir uns bis zum 31. März gebunden.‘"
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Freibleibende Angebote",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mit Klauseln wie „freibleibend\" oder „solange der Vorrat reicht\" schränkt MAKEL Studio die Bindung ein. Rechtlich ist ein freibleibendes Angebot dann eine Aufforderung an den Kunden, selbst einen Antrag zu stellen. Das ist sinnvoll, wenn Rohlingpreise oder Kapazitäten unsicher sind.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Marlene erstellt das Angebot an die Agentur: 100 Hoodies, Farbe schwarz, Größen laut Liste, Logo-Druck Brust einfarbig; Listenpreis 54,42 € netto je Stück; abzüglich 10 % Rabatt; zahlbar innerhalb von 8 Tagen mit 2 % Skonto oder 30 Tage netto; Lieferung frei Haus bis 15. Mai; Angebot gültig bis 31. März.",
-        "typische_fehler": "Das Angebot nennt nur einen Stückpreis ohne Angabe, ob netto oder brutto, und ohne Termin. Dann ist unklar, wozu der Kunde Ja sagt.",
         "verstaendnisfragen": [
-          "Warum wird im B2B-Angebot netto plus Umsatzsteuer angegeben? Weil Unternehmen die Vorsteuer in der Regel abziehen können und mit Nettopreisen kalkulieren.",
-          "Was bewirkt eine Bindefrist? Bis zu ihrem Ablauf kann der Kunde annehmen; danach ist MAKEL nicht mehr gebunden."
-        ],
-        "pruefungsbezug": "Bei Angebotsaufgaben die Pflichtbestandteile vollständig abhaken und Netto, Steuer und Brutto sauber trennen.",
-        "merksatz": "Ein vollständiges Angebot nennt Ware, Menge, Preis netto mit Umsatzsteuer, Termin sowie Liefer- und Zahlungsbedingungen — so bestimmt, dass ein Ja genügt."
+          {
+            "frage": "Was muss ein Angebot enthalten, damit ein einfaches Ja genügt?",
+            "antwort": "Ware, Menge, Preis mit Umsatzsteuer und Rabatten, Liefertermin, Liefer- und Zahlungsbedingungen und gegebenenfalls die Bindungsfrist.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Zielverkaufspreis 4.897,80 € netto, 2 % Skonto. Was bleibt netto nach Abzug?",
+            "antwort": "4.897,80 × 0,98 = 4.799,84 €.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Kunden vergleichen nicht nur Preise.",
-          "Bedingungen und Service können ein Angebot attraktiver machen."
+        "darstellung": "vollfassung",
+        "ziel": "Du legst Service-, Liefer- und Zahlungsbedingungen kundenorientiert fest, berechnest die Kosten eines längeren Zahlungsziels und eines kostenlosen Musters und schlägst eine ausgewogene Alternative vor.",
+        "vorwissen_kurz": "Kunden vergleichen nicht nur Preise. Service und Bedingungen entscheiden mit, aber sie kosten MAKEL Studio Geld.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was Entgegenkommen kostet",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Angebot wird nicht nur durch den Preis attraktiv, sondern auch durch Service: ein Musterteil vorab, Einzelverpackung mit Namen, kurze Lieferzeit, ein großzügiges Zahlungsziel. Jede dieser Leistungen kostet etwas. Ein Muster bindet Material und Arbeitszeit, ein längeres Zahlungsziel bedeutet, dass MAKEL Studio Material und Löhne länger vorfinanziert. Deshalb werden Zusatzleistungen entweder in den Preis einkalkuliert oder gesondert berechnet.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was der Neukunde wünscht und was es kostet",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Wunsch",
+              "Kosten für MAKEL Studio",
+              "Vorschlag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "kostenloses Musterteil",
+                  "40 € Selbstkosten plus 6 € Versand",
+                  "Muster für 46 €, bei Auftrag verrechnet"
+                ]
+              },
+              {
+                "zellen": [
+                  "60 statt 30 Tage Zahlungsziel",
+                  "4.897,80 € × 9 % × 30 ÷ 360 ≈ 37 € Zinsen für 30 Tage länger, dazu Ausfallrisiko",
+                  "Standard 30 Tage mit Skonto, Anzahlung 50 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einzelverpackung mit Namen",
+                  "0,80 € je Stück, 80 € gesamt",
+                  "als Zusatzposition anbieten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferung in KW 45 statt KW 47",
+                  "Druck müsste anderen Auftrag verdrängen",
+                  "nur mit Expresszuschlag oder Teillieferung"
+                ]
+              }
+            ],
+            "fazit": "Jeder Wunsch hat einen Preis. Der Vertrieb kann entgegenkommen, ohne die Kalkulation aufzugeben, wenn er die Kosten offen in das Angebot aufnimmt.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kundenorientiert heißt nicht, jedem Wunsch kostenlos nachzukommen. Es heißt, zu verstehen, was dem Kunden wirklich wichtig ist, und dafür eine faire Lösung anzubieten. Will die Agentur das Muster, um sicherzugehen, dass der Druck gut aussieht, ist ein verrechnetes Muster ein gutes Angebot. Will sie ein langes Ziel, weil ihre Liquidität knapp ist, ist das bei unbekannter Bonität ein Warnsignal, und MAKEL Studio bleibt bei Anzahlung und Standardziel.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Neben dem Preis entscheiden Liefertermin, Lieferbedingungen, Zahlungsbedingungen und Serviceleistungen. Serviceangebote bei MAKEL können sein: Musterteil vor der Serie, Einzelverpackung mit Namensetikett, Nachlieferung einzelner Größen, Lagerung bis zum Abruf. Jede Zusatzleistung kostet etwas und muss entweder im Preis kalkuliert oder gesondert berechnet werden. Ein großzügiges Zahlungsziel ist ebenfalls eine Leistung, weil MAKEL den Kunden länger finanziert.",
-        "beispiele": [
-          "Musterteil vor Serienstart gegen 25 € Aufpreis, der bei Bestellung verrechnet wird.",
-          "Nachlieferung einzelner Größen innerhalb von vier Wochen zum gleichen Stückpreis."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Skonto als Anreiz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Statt eines längeren Zahlungsziels kann MAKEL Studio einen Anreiz zur schnellen Zahlung setzen: 2 % Skonto bei Zahlung in 8 Tagen. Auf den vollen Nettobetrag von 4.897,80 € kostet das rund 98 €, bringt aber das Geld drei Wochen früher und senkt das Ausfallrisiko. Ob sich das lohnt, hängt von den eigenen Finanzierungskosten ab.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die Agentur möchte vor der Bestellung ein Musterteil sehen und fragt nach 60 Tagen Zahlungsziel. Marlene bietet das Muster gegen Aufpreis an, der bei Auftrag verrechnet wird. 60 Tage Ziel lehnt sie ab, weil es für einen Neukunden ohne Bonitätsauskunft nicht vorgesehen ist, und bietet die Standardbedingung mit Skonto an.",
-        "typische_fehler": "Serviceleistungen werden kostenlos zugesagt, ohne sie zu kalkulieren — der Gewinn schrumpft unbemerkt.",
         "verstaendnisfragen": [
-          "Warum ist ein langes Zahlungsziel eine Leistung an den Kunden? Weil MAKEL den Kaufpreis länger vorfinanziert.",
-          "Wie werden Serviceleistungen berücksichtigt? Im Preis einkalkuliert oder gesondert berechnet."
-        ],
-        "pruefungsbezug": "Wenn nach kundenorientierten Bedingungen gefragt ist, Nutzen für den Kunden und Folgen für MAKEL (Kosten, Risiko) gegenüberstellen.",
-        "merksatz": "Bedingungen und Service gehören zum Angebot; jede Zusatzleistung und jedes längere Zahlungsziel kostet etwas und wird kalkuliert oder berechnet."
+          {
+            "frage": "Warum kostet ein längeres Zahlungsziel MAKEL Studio Geld?",
+            "antwort": "Weil Material und Löhne länger vorfinanziert werden müssen. Das verursacht Zinsen und erhöht das Ausfallrisiko.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Wie kann der Vertrieb einem Wunsch nach einem kostenlosen Muster entgegenkommen, ohne die Kalkulation zu gefährden?",
+            "antwort": "Das Muster zu einem Preis anbieten, der bei Auftragserteilung verrechnet wird.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

@@ -6,66 +6,379 @@
   "untertitel": "Erst zerlegen, dann schätzen, dann terminieren. Nie andersherum.",
  "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Projektziel wird in Aufgaben zerlegt.",
-          "Termine gehören in einen späteren Schritt."
+        "darstellung": "vollfassung",
+        "ziel": "Du zerlegst ein Projekt in einem Projektstrukturplan in Teilaufgaben und Arbeitspakete und beschreibst jedes Arbeitspaket mit Verantwortlichem, Aufwand und überprüfbarem Ergebnis.",
+        "vorwissen_kurz": "Bevor Termine geplant werden, muss feststehen, was überhaupt zu tun ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was ist alles zu tun?",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:projektstrukturplan|Projektstrukturplan}} zerlegt das Projekt in Teilaufgaben und diese in {{begriff:arbeitspaket|Arbeitspakete}}. Er beantwortet nur die Frage, was zu tun ist — noch nicht, wann und in welcher Reihenfolge. Diese Trennung hilft, nichts zu vergessen: Wer gleichzeitig zerlegt und terminiert, denkt an das Nächstliegende und übersieht den Rest.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Strukturplan für den Messestand",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Teilaufgabe",
+              "Arbeitspaket",
+              "Verantwortlich",
+              "Aufwand",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Standbau",
+                  "Standkonzept erstellen",
+                  "Designleitung",
+                  "16 h",
+                  "freigegebene Standzeichnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Standbau",
+                  "Standbauer beauftragen",
+                  "Lea",
+                  "6 h",
+                  "unterschriebener Auftrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Werbung",
+                  "Einladungsmails an Händler",
+                  "Mira",
+                  "11 h",
+                  "Mail an 300 Händler verschickt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Werbung",
+                  "Musterstücke und Lookbook",
+                  "Designleitung",
+                  "24 h",
+                  "40 Musterstücke, Lookbook gedruckt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Personal",
+                  "Standpersonal einteilen",
+                  "Lea",
+                  "3 h",
+                  "Schichtplan an alle verschickt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Personal",
+                  "Standpersonal schulen",
+                  "Herr Okafor",
+                  "8 h",
+                  "Schulung durchgeführt, Gesprächsleitfaden verteilt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Logistik",
+                  "Transport und Reise organisieren",
+                  "Tim",
+                  "10 h",
+                  "Spedition und Reisen gebucht"
+                ]
+              }
+            ],
+            "fazit": "Vier Teilaufgaben, sieben Arbeitspakete. Jedes hat einen Verantwortlichen, einen geschätzten Aufwand und ein Ergebnis, an dem sich prüfen lässt, ob es fertig ist.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gegliedert ist der Plan nach Aufgaben: Was muss getan werden? Möglich wäre auch eine Gliederung nach Phasen — Vorbereitung, Messe, Nachbereitung. Für den Messestand ist die Aufgabengliederung übersichtlicher, weil sie zeigt, welche Bereiche beteiligt sind. Die Nachbereitung fehlt allerdings noch; Lea ergänzt die Teilaufgabe „Nachbereitung“ mit dem Arbeitspaket „Messekontakte nachfassen“.",
+            "id": "b1-p2"
+          }
         ],
-        "erklaerung": "Der Projektstrukturplan beantwortet ausschließlich, was zu tun ist. Er zerlegt das Projekt in Teilaufgaben und Arbeitspakete, gegliedert nach Aufgaben, Objekten oder Phasen. Ein Arbeitspaket hat Verantwortlichen, geschätzten Aufwand und überprüfbares Ergebnis. Reihenfolge und Termine werden erst im Terminplan festgelegt.",
-        "beispiele": [
-          "Ein Arbeitspaket ‚Einladungen versenden‘ erhält eine verantwortliche Person, einen geschätzten Aufwand und das Ergebnis ‚Einladungen sind versendet‘.",
-          "Ein Projekt kann nach Aufgaben oder Phasen gegliedert werden; die gewählte Struktur muss alle Ergebnisse abdecken."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Codierung im Strukturplan",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In größeren Projekten bekommt jedes Element eine Nummer, etwa 2 für Werbung und 2.1 für die Einladungsmails. So lässt sich jedes Arbeitspaket eindeutig bezeichnen, in Terminplan, Kostenplan und Statusbericht wiederfinden und abrechnen.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Für ein Messeprojekt wird zuerst nur der Inhalt zerlegt: Standbau, Personal, Unterlagen und Technik werden als Teilaufgaben mit Arbeitspaketen beschrieben. Für jedes Paket werden Verantwortlicher, Aufwand und Fertigkriterium festgehalten. Erst danach werden Abhängigkeiten und Termine eingetragen.",
-        "typische_fehler": "Der Strukturplan enthält schon Termine und Reihenfolge oder Arbeitspakete bleiben ohne überprüfbares Ergebnis. Auch werden Aufgaben und Objekte unsystematisch vermischt.",
         "verstaendnisfragen": [
-          "Welche Frage beantwortet der Projektstrukturplan? Was alles zu tun ist.",
-          "Welche drei Angaben braucht ein Arbeitspaket? Verantwortlicher, geschätzter Aufwand und überprüfbares Ergebnis."
-        ],
-        "pruefungsbezug": "Trenne in Planungsaufgaben Inhalt, Aufwand und Termin und prüfe die Fertigstellung jedes Arbeitspakets.",
-        "merksatz": "Der Projektstrukturplan sagt, was zu tun ist — noch nicht wann."
+          {
+            "frage": "Warum ist „Werbung machen“ kein Arbeitspaket?",
+            "antwort": "Weil es weder einen eindeutigen Verantwortlichen noch einen schätzbaren Aufwand noch ein überprüfbares Ergebnis hat. Es ist eine Teilaufgabe, die in Arbeitspakete wie „Einladungsmails verschicken“ zerlegt werden muss.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Welche Lücke hat der erste Strukturplan, und wie fällt sie auf?",
+            "antwort": "Es fehlt die Nachbereitung. Sie fällt auf, wenn man das Projekt vom Ziel her durchdenkt: Vorbestellungen und Kontakte entstehen auf der Messe, werden aber erst danach zu Aufträgen.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Aufwand ist Arbeitszeit, Dauer ist Kalenderzeit.",
-          "Nicht jede Aufgabe hat gleich viel Puffer."
+        "darstellung": "vollfassung",
+        "ziel": "Du schätzt den Aufwand von Arbeitspaketen mit Erfahrungswerten, Befragung und Drei-Werte-Schätzung, rechnest Aufwand in Dauer um und planst einen gemeinsamen Puffer.",
+        "vorwissen_kurz": "Schätzungen beschreiben oft den Idealfall. Im Alltag kommen Rückfragen, Unterbrechungen und andere Aufgaben dazu.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie lange dauert es wirklich?",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für jedes Arbeitspaket wird geschätzt, wie viel Arbeitszeit es braucht. Am verlässlichsten sind Erfahrungswerte aus früheren Projekten, vorausgesetzt, die tatsächlichen Zeiten wurden damals festgehalten. Wo das nicht geht, schätzen die, die die Arbeit ausführen. Bei unsicheren Paketen hilft die **Drei-Werte-Schätzung**: ein optimistischer, ein wahrscheinlicher und ein pessimistischer Wert, gewichtet zusammengefasst.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Einladungsmails",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mira hat noch nie eine Mailaktion an Händler gemacht. Sie schätzt drei Werte für das Arbeitspaket „Einladungsmails an Händler“.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Wert",
+              "Stunden",
+              "Annahme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "optimistisch",
+                  "6",
+                  "Händlerliste ist sauber, Text wird sofort freigegeben"
+                ]
+              },
+              {
+                "zellen": [
+                  "wahrscheinlich",
+                  "10",
+                  "eine Korrekturschleife, einige Adressen müssen nachgeprüft werden"
+                ]
+              },
+              {
+                "zellen": [
+                  "pessimistisch",
+                  "20",
+                  "Liste veraltet, zwei Korrekturschleifen, Rückfragen zur Einwilligung"
+                ]
+              },
+              {
+                "zellen": [
+                  "gewichteter Wert",
+                  "(6 + 4 × 10 + 20) ÷ 6 = 11",
+                  "der wahrscheinliche Wert zählt vierfach"
+                ]
+              }
+            ],
+            "fazit": "Mira plant 11 Stunden ein. Die Spanne von 6 bis 20 Stunden zeigt das Risiko, das in einer Einzelschätzung von 10 Stunden verborgen bliebe.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mira arbeitet neben dem Projekt im Kundenservice und hat für das Projekt drei Stunden am Tag. Aus 11 Stunden Aufwand werden damit knapp vier Arbeitstage Dauer. Diese Dauer kommt in den Balkenplan, der Aufwand in die Kostenplanung. Einen Puffer plant Lea nicht in jedes einzelne Paket ein, sondern gemeinsam am Ende des Projekts — dort bleibt er für das Paket verfügbar, das ihn tatsächlich braucht.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Der kritische Pfad ist die längste Kette von Vorgängen ohne Puffer; ihre Dauer bestimmt die Projektdauer. Verzögert sich ein Vorgang auf diesem Pfad, verschiebt sich das Projektende. Ein Meilenstein hat keine Dauer und kennzeichnet ein überprüfbares Zwischenergebnis. Puffer gehört ans Projektende und nicht automatisch in jedes Arbeitspaket.",
-        "beispiele": [
-          "Eine Aufgabe mit zehn Stunden Aufwand kann mehrere Kalendertage dauern, wenn die Person nur teilweise verfügbar ist.",
-          "Ein Meilenstein ‚Budget freigegeben‘ hat keinen Arbeitsaufwand als Dauer, sondern markiert das eingetretene Ergebnis."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Warum Schätzungen oft zu niedrig sind",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer schätzt, stellt sich meist den störungsfreien Ablauf vor. Rückfragen, Krankheit und dringende Tagesaufgaben kommen in dieser Vorstellung nicht vor. Hinzu kommt, dass niemand als langsam gelten will. Deshalb lohnt es sich, nach Projektende die tatsächlichen Zeiten mit den Schätzungen zu vergleichen — das verbessert die nächste Schätzung.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Im Messeprojekt braucht der Standbauer statt 18 nun 24 Tage. Die Personaleinteilung verzögert sich um drei Tage, läuft aber parallel und besitzt Puffer. Die sechs zusätzlichen Tage des kritischen Standbaus gefährden den Endtermin; Verkürzung, Überlappung oder Auftraggeberentscheidung werden geprüft. Der Terminplan wird danach fortgeschrieben.",
-        "typische_fehler": "Aufwand und Dauer werden gleichgesetzt oder jede Verzögerung automatisch als projektentscheidend behandelt. Der kritische Pfad wird außerdem nicht nach einer Planänderung neu geprüft.",
         "verstaendnisfragen": [
-          "Was bestimmt die Projektdauer? Die längste Kette ohne Puffer, der kritische Pfad.",
-          "Was ist ein Meilenstein? Ein überprüfbares Zwischenergebnis ohne Dauer."
-        ],
-        "pruefungsbezug": "Suche die längste pufferlose Kette und unterscheide Arbeitsstunden von Kalendertagen.",
-        "merksatz": "Auf dem kritischen Pfad zählt jede Verzögerung; Puffer außerhalb kann sie auffangen."
+          {
+            "frage": "Wie viele Arbeitstage dauert ein Paket mit 24 Stunden Aufwand, wenn die Verantwortliche täglich vier Stunden für das Projekt hat?",
+            "antwort": "24 ÷ 4 = 6 Arbeitstage.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum gehört der Puffer ans Projektende und nicht in jedes Paket?",
+            "antwort": "Puffer in einzelnen Paketen wird meist aufgebraucht, weil sich Arbeit nach der verfügbaren Zeit ausdehnt. Ein gemeinsamer Puffer am Ende bleibt für die Pakete verfügbar, die tatsächlich länger dauern.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Der Balkenplan ordnet Arbeitspakete auf einer Zeitachse.",
-          "Abhängigkeiten und Puffer müssen im Terminplan sichtbar sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du liest einen Balkenplan mit Abhängigkeiten, bestimmst den kritischen Pfad und die Puffer der übrigen Vorgänge und beurteilst, ob eine Verzögerung das Projektende verschiebt.",
+        "vorwissen_kurz": "Manche Vorgänge können erst beginnen, wenn andere abgeschlossen sind. Daraus ergibt sich, welche Verzögerungen gefährlich sind.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Abhängigkeiten auf der Zeitachse",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:balkenplan|Balkenplan}} zeigt jeden Vorgang als Balken auf einer Zeitachse. Pfeile oder Angaben wie „nach Budgetfreigabe“ zeigen, welcher Vorgang auf welchen warten muss. Die längste Kette solcher Abhängigkeiten ist der {{begriff:kritischer-pfad|kritische Pfad}}. Vorgänge auf ihm haben keinen Puffer; alle anderen können sich in gewissem Umfang verspäten, ohne das Ende zu verschieben.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der kritische Pfad des Messestands",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kette",
+              "Dauer",
+              "Puffer"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Konzept 5 → Budget 4 → Standbau 18 → Aufbau 3 → Generalprobe 1",
+                  "31 Tage",
+                  "keiner — kritischer Pfad"
+                ]
+              },
+              {
+                "zellen": [
+                  "Konzept → Budget → Werbemittel 9 → Schulung 2 → Aufbau → Generalprobe",
+                  "24 Tage",
+                  "7 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Konzept → Budget → Personal einteilen 3 → (warten auf Werbemittel) → Schulung",
+                  "—",
+                  "Personal einteilen: 13 Tage"
+                ]
+              }
+            ],
+            "fazit": "Die Vorgänge dauern zusammen 31 Tage; der Terminplan sieht 34 Tage vor. Die 3 Tage dazwischen sind der gemeinsame Puffer am Ende.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Verzögert sich der Standbau um zwei Tage, rückt das Ende auf Tag 33 — der Puffer schrumpft auf einen Tag. Verzögern sich die Werbemittel um zwei Tage, passiert nichts: Sie haben sieben Tage Puffer. Lea beobachtet deshalb den Standbauer besonders genau und vereinbart mit ihm einen Zwischentermin.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:meilenstein|Meilenstein}} ist ein Zeitpunkt, an dem ein überprüfbares Ergebnis vorliegen muss, etwa „Standzeichnung freigegeben“ oder „Standbau abgenommen“. Meilensteine haben keine Dauer. Sie zeigen ehrlich, ob das Projekt im Plan ist: Das Ergebnis liegt vor oder nicht.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Der Balkenplan zeigt Arbeitspakete, ihre Dauer, Abhängigkeiten und Meilensteine auf einer Kalenderachse. Er macht den kritischen Pfad und verfügbare Puffer sichtbar. Nach Änderungen wird der Plan aktualisiert und geprüft, ob eine andere Kette kritisch geworden ist.",
-        "beispiele": [
-          "Der Standbau wird als langer Balken eingetragen; die Personaleinteilung läuft parallel als kürzerer Balken mit Puffer.",
-          "Ein Meilenstein wird als Zeitpunkt ohne Balkendauer dargestellt, etwa die Freigabe vor dem nächsten Arbeitspaket."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Netzplan",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Balkenplan zeigt die Zeitachse anschaulich. Für größere Projekte wird zusätzlich ein Netzplan genutzt, der für jeden Vorgang frühesten und spätesten Anfang und das Ende berechnet. Die Differenz zwischen frühestem und spätestem Anfang ist der Puffer. Das Ergebnis ist dasselbe: Vorgänge ohne Puffer bilden den kritischen Pfad.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Die Verlängerung des Standbaus von 18 auf 24 Tage wird im Balkenplan nachgetragen. Die Personaleinteilung bleibt trotz drei Tagen Verzögerung innerhalb ihres Puffers. Nach der Anpassung wird geprüft, ob Aufbau und Generalprobe noch rechtzeitig folgen oder ob der Auftraggeber über eine Terminänderung entscheiden muss.",
-        "typische_fehler": "Balken werden ohne Abhängigkeiten gezeichnet oder ein Meilenstein erhält eine Dauer. Nach einer Änderung wird der ursprüngliche Plan nicht fortgeschrieben.",
         "verstaendnisfragen": [
-          "Was zeigt ein Balkenplan? Arbeitspakete, Dauer, Abhängigkeiten, Meilensteine und Puffer auf der Zeitachse.",
-          "Was ist nach einer Verzögerung zu prüfen? Endtermin, kritischer Pfad und eventuell neu kritische Ketten."
-        ],
-        "pruefungsbezug": "Lies und aktualisiere Balkenpläne über Dauer, Parallelität, Puffer und Meilensteine.",
-        "merksatz": "Der Balkenplan macht sichtbar, wann Arbeit läuft und wo eine Verzögerung wirklich trifft."
+          {
+            "frage": "Wie viel Puffer bleibt am Ende, wenn sich der Aufbau um einen Tag verlängert?",
+            "antwort": "Der Aufbau liegt auf dem kritischen Pfad. Das Ende rückt von Tag 31 auf Tag 32; bis Tag 34 bleiben noch 2 Tage Puffer.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum vereinbart Lea mit dem Standbauer einen Zwischentermin?",
+            "antwort": "Weil der Standbau auf dem kritischen Pfad liegt und 18 Tage dauert. Eine Verzögerung dort verschiebt das Projektende unmittelbar. Ein Zwischentermin zeigt früh, ob er im Plan ist.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

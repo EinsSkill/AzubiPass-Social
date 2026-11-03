@@ -6,86 +6,402 @@
   "untertitel": "Qualifizierungsbedarf ableiten, Beurteilung und Feedback sachlich gestalten, Maßnahmen planen und ihre Wirkung prüfen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Die Stellenbeschreibung nennt Anforderungen (Kapitel 1).",
-          "Neue Technik verändert Tätigkeiten."
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest aus dem Vergleich von Anforderungs- und Fähigkeitsprofil den Qualifizierungsbedarf einer Person ab, priorisierst die Lücken und formulierst daraus überprüfbare Lernziele.",
+        "vorwissen_kurz": "Mit dem neuen Lagersystem ändern sich die Aufgaben. Nicht alle im Team sind darauf vorbereitet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Soll gegen Ist",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der **Qualifizierungsbedarf** ergibt sich aus dem Vergleich zweier Profile. Das **Anforderungsprofil** beschreibt, was eine Stelle verlangt; es folgt aus der Stellenbeschreibung. Das **Fähigkeitsprofil** beschreibt, was eine Person heute kann; es stützt sich auf Beobachtungen, Gespräche und Nachweise. Wo das Ist hinter dem Soll zurückbleibt, entsteht Bedarf. Er wird danach priorisiert, wie wichtig die Anforderung für die Arbeit ist und wie groß die Lücke ist.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Bedarf zum Lernziel",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Lücke bei Kollege A",
+              "Priorität",
+              "überprüfbares Lernziel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wareneingang per Scanner buchen",
+                  "hoch, tägliche Aufgabe",
+                  "bucht einen Wareneingang mit zehn Positionen ohne Hilfe und ohne Fehler"
+                ]
+              },
+              {
+                "zellen": [
+                  "Retourengrund im System erfassen",
+                  "mittel, mehrmals pro Woche",
+                  "wählt bei fünf Übungsretouren den passenden Grund aus der Liste"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kommissionierliste lesen",
+                  "keine",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Aus jeder Lücke wird ein Lernziel, das man beobachten kann. Erst dann lässt sich später prüfen, ob die Maßnahme gewirkt hat.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein überprüfbares Lernziel beschreibt ein Verhalten, nicht ein Gefühl. „Kennt sich mit dem Scanner aus\" ist schwer zu prüfen; „bucht einen Wareneingang mit zehn Positionen ohne Fehler\" kann Jonas am Arbeitsplatz beobachten. Wichtig ist auch, Kollege A in die Analyse einzubeziehen: Wer selbst sieht, wo er steht, lernt motivierter als jemand, dem ein Defizit mitgeteilt wird.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Personalentwicklung umfasst alle Maßnahmen, mit denen Beschäftigte ihre Kompetenzen für heutige und künftige Aufgaben ausbauen. Der Bedarf ergibt sich aus einem Soll-Ist-Vergleich: Das Anforderungsprofil der Stelle (Soll) wird mit dem Fähigkeitsprofil der Person (Ist) verglichen. Lücken zeigen den Qualifizierungsbedarf — fachlich, methodisch, sozial oder persönlich. Anlässe sind neue Technik, neue Aufgaben, Qualitätsprobleme, Beförderungen oder Wünsche der Beschäftigten.",
-        "beispiele": [
-          "Neues digitales Lagerverfahren mit Handscanner: Bedarf an Systemkenntnissen.",
-          "Eine Mitarbeiterin soll Schichtleitung werden: Bedarf an Führungs- und Kommunikationskompetenz."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Beteiligung des Betriebsrats",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei der Ermittlung des Berufsbildungsbedarfs und bei betrieblichen Bildungsmaßnahmen hat der Betriebsrat Beratungs- und Mitbestimmungsrechte (§§ 96 bis 98 BetrVG). Ändern sich Tätigkeiten durch neue Technik so, dass die Kenntnisse der Beschäftigten nicht mehr ausreichen, kann er betriebliche Bildungsmaßnahmen mitbestimmen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL führt im Lager ein digitales Lagerverwaltungsverfahren ein: Buchungen per Handscanner statt Strichlisten. Jonas Weidner vergleicht für jede Person das Anforderungsprofil mit den vorhandenen Kenntnissen. Zwei Kollegen haben noch nie mit einem Scanner gearbeitet — hier ist der Bedarf am größten.",
-        "typische_fehler": "Schulungen nach Gießkannenprinzip verteilen, ohne Bedarf zu ermitteln.",
         "verstaendnisfragen": [
-          "Wie wird der Qualifizierungsbedarf ermittelt? Durch Soll-Ist-Vergleich von Anforderungs- und Fähigkeitsprofil.",
-          "Nenne zwei Anlässe für Personalentwicklung. Neue Technik, neue Aufgaben, Qualitätsprobleme, Beförderung, Wunsch der Beschäftigten."
-        ],
-        "pruefungsbezug": "Qualifizierungsbedarf aus einer Tätigkeit ableiten.",
-        "merksatz": "Qualifizierungsbedarf = Anforderungsprofil (Soll) − Fähigkeitsprofil (Ist)."
+          {
+            "frage": "Wie ermittelst du den Qualifizierungsbedarf?",
+            "antwort": "Durch den Vergleich von Anforderungsprofil (Soll) und Fähigkeitsprofil (Ist). Die Differenz ist der Bedarf.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum soll ein Lernziel ein beobachtbares Verhalten beschreiben?",
+            "antwort": "Weil sich nur dann später prüfen lässt, ob die Maßnahme gewirkt hat.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Beschäftigte möchten wissen, wie ihre Arbeit gesehen wird.",
-          "Urteile können verzerrt sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst Feedback konkret, beobachtbar und zeitnah, erkennst typische Beurteilungsfehler und bereitest ein Mitarbeitergespräch so vor, dass es zu vereinbarten Schritten führt.",
+        "vorwissen_kurz": "Wie Rückmeldungen formuliert werden, entscheidet, ob jemand daraus lernt oder sich angegriffen fühlt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Verhalten beschreiben, nicht die Person",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gutes **Feedback** beschreibt beobachtetes Verhalten, nennt seine Wirkung und formuliert einen Wunsch für die Zukunft. Es ist konkret, zeitnah und bezieht sich auf die Arbeit, nicht auf die Persönlichkeit. Die **Personalbeurteilung** geht weiter: Sie bewertet Leistung und Verhalten über einen längeren Zeitraum nach festgelegten Kriterien und ist oft Grundlage für Entwicklung, Entgelt oder Zeugnis. Beide brauchen Sachlichkeit.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Aus einem Urteil wird Feedback",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Persönlichkeitsurteil",
+              "Beobachtung",
+              "Wirkung",
+              "Wunsch"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„Du bist chaotisch.\"",
+                  "Bei drei Retouren letzte Woche fehlte der Grund im System.",
+                  "Die Buchhaltung konnte die Gutschriften nicht zuordnen.",
+                  "Trag den Grund bitte direkt beim Scannen ein."
+                ]
+              },
+              {
+                "zellen": [
+                  "„Du bist unzuverlässig.\"",
+                  "Du bist diese Woche zweimal nach Schichtbeginn gekommen.",
+                  "Die Kommissionierung startete später, der Lkw wartete.",
+                  "Gib mir bitte vorher Bescheid, wenn es knapp wird."
+                ]
+              }
+            ],
+            "fazit": "Dieselbe Kritik wird annehmbar, wenn sie Verhalten beschreibt, die Folge erklärt und einen Weg nach vorn zeigt.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beurteilungen sind anfällig für Fehler. Beim **Halo-Effekt** überstrahlt ein Merkmal alle anderen, etwa wenn jemand freundlich ist und deshalb überall gut bewertet wird. Beim **Nikolaus-Effekt** prägen die letzten Wochen vor der Beurteilung das Bild. Der **Mildefehler** bewertet alle zu gut, um Konflikte zu vermeiden. Gegen diese Fehler helfen feste Kriterien, Notizen über das ganze Jahr und der Austausch mit anderen Führungskräften.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Regelmäßige Mitarbeitergespräche und Beurteilungen geben Rückmeldung, vereinbaren Ziele und klären Entwicklungswünsche. Gutes Feedback ist konkret, beschreibt beobachtbares Verhalten statt Persönlichkeit, nennt Wirkung und Wunsch, kommt zeitnah und lässt Raum für die Sicht der anderen Person. Beurteilungen sollten nach vorher festgelegten Kriterien erfolgen und typische Fehler vermeiden: Halo-Effekt (ein Merkmal überstrahlt alles), Nikolaus-Effekt (nur die letzten Wochen zählen), Milde- oder Strenge-Tendenz, Sympathie.",
-        "beispiele": [
-          "Konkret: „Bei drei Aufträgen letzte Woche fehlte der Lieferschein im Paket.“",
-          "Persönlichkeitsurteil (vermeiden): „Du bist einfach schlampig.“"
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Aufbau eines Mitarbeitergesprächs",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Jahresgespräch beginnt mit einem Rückblick aus Sicht der Person, dann folgt die Rückmeldung der Führungskraft. Danach werden gemeinsam Ziele und Entwicklungsschritte vereinbart und schriftlich festgehalten. Beide Seiten bereiten sich vor; das Gespräch ist ein Austausch, keine Verkündung.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Im Jahresgespräch mit einem Lagerkollegen beginnt Jonas mit dem Positiven: pünktlich, hilfsbereit, gute Kommissionierquote. Dann spricht er konkret an, dass bei Retouren oft der Grund nicht erfasst wird, und fragt nach den Ursachen. Gemeinsam vereinbaren sie eine Schulung am neuen Scanner und ein Ziel für das nächste Quartal.",
-        "typische_fehler": "Beurteilung als Persönlichkeitsurteil statt als nachvollziehbares Feedback formulieren.",
         "verstaendnisfragen": [
-          "Was kennzeichnet gutes Feedback? Konkret, verhaltensbezogen, zeitnah, mit Wirkung und Wunsch.",
-          "Was ist der Halo-Effekt? Ein einzelnes Merkmal prägt das ganze Urteil."
-        ],
-        "pruefungsbezug": "Beurteilung und Feedback sachlich gestalten.",
-        "merksatz": "Feedback: konkret, beobachtbar, zeitnah, Wirkung + Wunsch — Beurteilungsfehler (Halo, Nikolaus, Milde, Sympathie) kennen und vermeiden."
+          {
+            "frage": "Formuliere „Du bist einfach chaotisch\" als sachliches Feedback.",
+            "antwort": "Zum Beispiel: „Bei drei Retouren letzte Woche fehlte der Grund im System. Dadurch konnte die Buchhaltung nicht zuordnen. Trag ihn bitte direkt beim Scannen ein.\"",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was ist der Nikolaus-Effekt?",
+            "antwort": "Ein Beurteilungsfehler, bei dem das Verhalten kurz vor der Beurteilung das Urteil über den ganzen Zeitraum bestimmt.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Lernen geht nicht nur im Seminar.",
-          "Menschen arbeiten nicht nur fürs Geld."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst Entwicklungsmaßnahmen on, near, off und along the job passend zu Lernziel und Person aus und beziehst die Zwei-Faktoren-Theorie in die Gestaltung der Arbeit ein.",
+        "vorwissen_kurz": "Nicht jede Lücke braucht ein Seminar. Oft lernt man am besten dort, wo man arbeitet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo gelernt wird",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Maßnahmen **on the job** finden am Arbeitsplatz statt: Einweisung, begleitete Schichten, Job-Rotation, neue Aufgaben. **Near the job** liegt nah am Arbeitsplatz, etwa Qualitätszirkel oder Lernstationen in der Halle. **Off the job** findet außerhalb statt: Seminare, Lehrgänge, E-Learning. **Along the job** begleitet die berufliche Entwicklung über längere Zeit, etwa Laufbahnplanung oder Mentoring. Welche Form passt, hängt vom Lernziel, von der Person und vom Aufwand ab.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Maßnahmen für Kollege A",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Lernziel",
+              "Maßnahme",
+              "Form",
+              "Aufwand"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wareneingang per Scanner buchen",
+                  "Einweisung durch Jonas, dann drei begleitete Schichten",
+                  "on the job",
+                  "4 Stunden Begleitung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Retourengrund erfassen",
+                  "Übungsfälle an der Lernstation im Lager",
+                  "near the job",
+                  "1 Stunde"
+                ]
+              },
+              {
+                "zellen": [
+                  "langfristig: Wareneingangsprüfung verantworten",
+                  "Lehrgang zur Fachkraft für Lagerlogistik in Teilzeit",
+                  "off/along the job",
+                  "mehrere Monate"
+                ]
+              }
+            ],
+            "fazit": "Für die dringenden Lücken reicht Lernen am Arbeitsplatz. Der Lehrgang ist eine Entwicklungsperspektive für später.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Motivation hängt nicht nur von der Maßnahme ab. Nach der Zwei-Faktoren-Theorie von Herzberg verhindern **Hygienefaktoren** wie Bezahlung, Arbeitsbedingungen und ein respektvolles Verhältnis zu Vorgesetzten Unzufriedenheit, schaffen aber allein keine Begeisterung. **Motivatoren** wie Anerkennung, Verantwortung und Entwicklung wirken positiv auf Leistungsbereitschaft. Für Kollege A heißt das: Ein funktionierender Scanner und eine faire Einweisung sind Voraussetzung; die Aussicht, später die Wareneingangsprüfung zu übernehmen, motiviert.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Entwicklungsmaßnahmen lassen sich nach dem Ort unterscheiden: am Arbeitsplatz (on the job: Unterweisung, Job-Rotation, Aufgabenerweiterung, Aufgabenbereicherung), nah am Arbeitsplatz (near the job: Qualitätszirkel, Lernstatt), außerhalb (off the job: Seminare, E-Learning) und laufbahnbegleitend (along the job: Laufbahnplanung, Mentoring). Motivation ist dabei zentral: Nach Herzberg verhindern Hygienefaktoren wie Bezahlung, Arbeitsbedingungen und Sicherheit Unzufriedenheit, während Motivatoren wie Anerkennung, Verantwortung, interessante Aufgaben und Entwicklung echte Zufriedenheit und Leistungsbereitschaft fördern.",
-        "beispiele": [
-          "Job-Rotation: Luca arbeitet drei Monate in der Buchhaltung, dann im Einkauf.",
-          "Job-Enrichment: Eine Lagerkraft übernimmt zusätzlich die Wareneingangsprüfung."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Grenzen der Theorie",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Zwei-Faktoren-Theorie ist ein Modell, kein Naturgesetz. Für manche Menschen ist Geld durchaus ein Motivator, und was als Hygienefaktor gilt, hängt von Situation und Person ab. Sie hilft aber, Maßnahmen zu sortieren: Wo Grundbedingungen fehlen, verpuffen Anerkennung und Entwicklungsangebote leicht.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für die Einführung des Scanners plant Jonas keine allgemeine Schulung, sondern eine Unterweisung am Arbeitsplatz: Lernziel „Wareneingang und Kommissionierung fehlerfrei buchen“, 30 Minuten Einweisung durch die Herstellerin, danach zwei begleitete Schichten mit typischen Übungsfällen und eine Patin aus dem Team.",
-        "typische_fehler": "Einen allgemeinen Seminartitel ohne Tätigkeitsbezug als Maßnahme ausgeben.",
         "verstaendnisfragen": [
-          "Was ist Job-Enrichment? Die Aufgabe wird qualitativ angereichert, etwa um Planungs- oder Kontrollaufgaben.",
-          "Was unterscheidet Hygienefaktoren und Motivatoren? Hygienefaktoren verhindern Unzufriedenheit, Motivatoren fördern Zufriedenheit."
-        ],
-        "pruefungsbezug": "Passende Entwicklungsmaßnahmen auswählen und Motivation einbeziehen.",
-        "merksatz": "Maßnahmen on/near/off/along the job; Herzberg: Hygienefaktoren verhindern Unzufriedenheit, Motivatoren schaffen Zufriedenheit."
+          {
+            "frage": "Ordne „drei begleitete Schichten mit dem neuen Scanner\" ein.",
+            "antwort": "On the job, weil am Arbeitsplatz und während der Arbeit gelernt wird.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum reicht eine Gehaltserhöhung nach Herzberg nicht, um dauerhaft zu motivieren?",
+            "antwort": "Weil Bezahlung ein Hygienefaktor ist. Sie verhindert Unzufriedenheit, schafft aber nicht automatisch Zufriedenheit.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Eine Schulung kostet Zeit und Geld.",
-          "Kennzahlen zeigen Veränderungen (LF 10)."
+        "darstellung": "vollfassung",
+        "ziel": "Du sicherst den Transfer einer Entwicklungsmaßnahme in den Arbeitsalltag, prüfst ihre Wirkung auf mehreren Ebenen und formulierst Aussagen über Ursache und Wirkung vorsichtig.",
+        "vorwissen_kurz": "Eine Schulung ist erst dann erfolgreich, wenn sich die Arbeit verändert.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Lernen zum Tun",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Transfer** heißt, dass das Gelernte im Alltag angewendet wird. Er gelingt, wenn das Ziel klar ist, direkt nach der Maßnahme geübt werden kann, die Führungskraft unterstützt und nach einiger Zeit nachfragt. Die **Wirkung** lässt sich auf mehreren Ebenen prüfen: Wie zufrieden waren die Teilnehmenden? Haben sie etwas gelernt? Verändert sich ihr Verhalten bei der Arbeit? Verbessern sich die Ergebnisse für das Unternehmen?",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Scanner-Schulung auf vier Ebenen",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ebene",
+              "Frage",
+              "Ergebnis bei MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Reaktion",
+                  "Wie fanden die Teilnehmenden die Schulung?",
+                  "überwiegend gut, Wunsch nach mehr Übungszeit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lernen",
+                  "Können sie es?",
+                  "alle buchen in der Übung einen Wareneingang fehlerfrei"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verhalten",
+                  "Tun sie es bei der Arbeit?",
+                  "nach vier Wochen buchen alle selbstständig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis",
+                  "Was ändert sich im Betrieb?",
+                  "Fehlerquote im Wareneingang von 6 % auf 2,5 %"
+                ]
+              }
+            ],
+            "fazit": "Auf allen Ebenen gibt es positive Hinweise. Die sinkende Fehlerquote ist ein starkes Zeichen, aber noch kein Beweis allein für die Schulung.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Ergebnisebene ist Vorsicht nötig. Die Fehlerquote kann auch gesunken sein, weil im gleichen Zeitraum ein Lieferant seine Lieferscheine verbessert hat oder weil weniger komplizierte Lieferungen kamen. Deshalb prüft Jonas, ob die Quote gleich definiert und über vergleichbare Zeiträume gemessen wurde und welche anderen Einflüsse es gab. Erst dann formuliert er: „Die Schulung hat wahrscheinlich wesentlich beigetragen.\"",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Damit Gelerntes in die Arbeit übergeht (Transfer), braucht es klare Lernziele, Übung mit echten Fällen, Unterstützung im Alltag und eine Kontrolle. Die Wirkung wird auf mehreren Ebenen geprüft: Zufriedenheit mit der Maßnahme, Lernerfolg, Verhalten am Arbeitsplatz, betriebliches Ergebnis. Beim Vorher-Nachher-Vergleich einer Kennzahl muss die Definition gleich bleiben, die Tätigkeiten müssen vergleichbar und der Zeitraum geeignet sein. Andere Einflüsse — Saison, neue Kolleginnen, geänderte Abläufe — können die Zahl ebenfalls verändern; eine sinkende Fehlerquote beweist deshalb allein noch nicht, dass die Schulung die Ursache war.",
-        "beispiele": [
-          "Fehlerquote Kommissionierung: vorher 6 %, nachher 2,5 % — gleiche Definition, ähnliche Saison.",
-          "Kurze Befragung: Fühlen sich die Beschäftigten sicher im Umgang mit dem Scanner?"
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn der Transfer nicht gelingt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bucht ein Kollege nach der Schulung weiter fehlerhaft, liegt das nicht unbedingt an ihm. Vielleicht fehlte Übungszeit, der Scanner funktioniert schlecht, oder im Alltag drängt die Zeit so, dass er alte Wege nutzt. Ein kurzes Gespräch klärt die Ursache und zeigt, ob Nachschulung, technische Hilfe oder eine Änderung im Ablauf nötig ist.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Nach acht Wochen vergleicht Jonas die Fehlerquote: Vorher 30 Fehler bei 500 Aufträgen (6 %), nachher 12 bei 480 (2,5 %). Er notiert aber auch: Im zweiten Zeitraum gab es weniger Sonderaufträge. Sein Fazit: Die Schulung hat wahrscheinlich geholfen — er beobachtet die Quote weiter und fragt das Team nach Rückmeldungen.",
-        "typische_fehler": "Eine sinkende Quote ohne Prüfung anderer Einflüsse allein der Schulung zuschreiben.",
         "verstaendnisfragen": [
-          "Was fördert den Transfer? Klare Lernziele, Übung mit echten Fällen, Unterstützung, Kontrolle.",
-          "Was ist beim Vorher-Nachher-Vergleich zu beachten? Gleiche Definition, vergleichbare Tätigkeiten, geeigneter Zeitraum, andere Einflüsse."
-        ],
-        "pruefungsbezug": "Wirkung von Entwicklungsmaßnahmen sachgerecht prüfen.",
-        "merksatz": "Transfer sichern (Ziel, Übung, Unterstützung, Kontrolle); Wirkung mit gleicher Definition und Blick auf andere Einflüsse prüfen — Korrelation ist nicht Kausalität."
+          {
+            "frage": "Was bedeutet Transfer bei einer Weiterbildung?",
+            "antwort": "Dass das Gelernte tatsächlich im Arbeitsalltag angewendet wird.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum beweist eine sinkende Fehlerquote nach der Schulung nicht sicher deren Wirkung?",
+            "antwort": "Weil im selben Zeitraum andere Einflüsse gewirkt haben können. Ein zeitlicher Zusammenhang ist noch kein Beweis für die Ursache.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

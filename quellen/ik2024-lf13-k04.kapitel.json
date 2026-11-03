@@ -6,86 +6,480 @@
   "untertitel": "Ergebnisse nachvollziehbar dokumentieren, Zielerreichung und Nebenfolgen prüfen, adressatengerecht präsentieren und das Vorgehen reflektieren.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Der Pilot ist abgeschlossen (Kapitel 3).",
-          "Andere sollen das Ergebnis nachvollziehen können."
+        "darstellung": "vollfassung",
+        "ziel": "Du dokumentierst Ausgangslage, Analyse, Lösung, Umsetzung und Ergebnis eines Problemlösungsprojekts so, dass Dritte jede Entscheidung mit Daten, Definitionen und Quellen nachvollziehen können.",
+        "vorwissen_kurz": "Das Pflichtfeld ist eingeführt, der Pilot ausgewertet. Jetzt wird festgehalten, was gemacht wurde und warum.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Bericht, der Fragen beantwortet",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine **Ergebnisdokumentation** erzählt nicht die Chronik des Projekts, sondern beantwortet die Fragen, die ein Leser hat: Was war das Problem? Worauf stützt sich die Analyse? Welche Lösungen wurden erwogen, nach welchen Kriterien wurde entschieden? Wie lief die Umsetzung? Was wurde erreicht, und was ist offen? Dazu gehören die **Definitionen** der Kennzahlen, die **Datenbasis** mit ihren Lücken und die **Quellen** der Recherche. So kann jemand, der nicht dabei war, jede Entscheidung nachvollziehen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Kernaussagen des Berichts",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kapitel",
+              "Kernaussage",
+              "Beleg"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ausgangslage",
+                  "20 % der Firmenaufträge im 3. Quartal verspätet",
+                  "Auswertung von 50 Aufträgen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Analyse",
+                  "Wartezeit an der Freigabe Hauptursache, daneben Überlastung und Materialmangel; Datenlücke August",
+                  "Durchlaufzeitmessung, Stichprobe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lösung",
+                  "Pflichtfeld mit fester Verantwortung zuerst, Freigabe-Link später",
+                  "Nutzwertanalyse, Wirtschaftlichkeitsvergleich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Umsetzung",
+                  "12 Tage bis Pilotende, eine Abweichung auf dem kritischen Pfad aufgefangen",
+                  "Projektprotokoll"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis",
+                  "Verspätungsquote im Pilot 10 %, Bestand + 4 %",
+                  "Pilotauswertung mit gleicher Definition"
+                ]
+              },
+              {
+                "zellen": [
+                  "offene Punkte",
+                  "Freigabe-Link, Wirkung im Herbst",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Jede Kernaussage hat einen Beleg. Die offenen Punkte stehen ausdrücklich im Bericht, statt im Kleingedruckten zu verschwinden.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Definition der Kennzahl ist zentral. „Verspätet\" heißt im Bericht: Übergabe an den Paketdienst nach dem mit dem Kunden vereinbarten Termin. Wird diese Definition im Pilot anders angewendet, etwa nur Verspätungen über zwei Tage gezählt, ist der Vergleich wertlos. Deshalb steht sie am Anfang des Berichts und wird für Ausgangslage und Ergebnis gleich verwendet.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Ergebnisdokumentation hält fest, was untersucht, entschieden und umgesetzt wurde: Ausgangsproblem und Problemfrage, Datenbasis und Definitionen, Lösungsvarianten und Bewertung, Umsetzung und Pilot, Messergebnisse, offene Punkte. Sie ist so geschrieben, dass jemand, der nicht beteiligt war, den Weg nachvollziehen kann. Quellen und Annahmen werden angegeben, Abweichungen vom Plan erklärt.",
-        "beispiele": [
-          "Anhang: Tabelle mit allen 30 Pilotaufträgen, Freigabedatum, Produktionsstart, Liefertermin.",
-          "Definition: „Verspätet“ heißt Übergabe an den Paketdienst nach dem bestätigten Liefertermin."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Anlagen statt Fließtext",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Detaillierte Tabellen, das Rechercheprotokoll und die Nutzwertanalyse gehören in die Anlagen. Der Haupttext bleibt so kurz und lesbar; wer Details prüfen will, findet sie dort.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli erstellt einen Abschlussbericht von sechs Seiten: Problem, Analyse, Varianten, Entscheidung, Pilot, Ergebnisse, Empfehlung. Im Anhang liegen die Rohdaten. Marlene Voss liest gegen und ergänzt, dass zwei Pilotaufträge wegen Materialmangels verspätet waren — ein anderer Grund als die Freigabe.",
-        "typische_fehler": "Nur das Ergebnis aufschreiben, ohne Datenbasis, Definitionen und Annahmen.",
         "verstaendnisfragen": [
-          "Was gehört in eine Ergebnisdokumentation? Problem, Datenbasis, Varianten, Bewertung, Umsetzung, Ergebnisse, offene Punkte.",
-          "Wann ist sie gut? Wenn Unbeteiligte den Weg nachvollziehen können."
-        ],
-        "pruefungsbezug": "Ergebnisse und Vorgehen nachvollziehbar dokumentieren.",
-        "merksatz": "Dokumentation = Problem → Daten → Varianten → Entscheidung → Umsetzung → Ergebnis → offene Punkte, mit Definitionen und Quellen."
+          {
+            "frage": "Wie ist eine nachvollziehbare Ergebnisdokumentation aufgebaut?",
+            "antwort": "Ausgangslage, Analyse, Lösung, Umsetzung, Ergebnis und offene Punkte, jeweils mit Belegen, Definitionen und Quellen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum steht die Definition der Kennzahl am Anfang des Berichts?",
+            "antwort": "Damit Ausgangslage und Ergebnis mit derselben Definition verglichen werden und der Vergleich aussagekräftig ist.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ziele wurden messbar formuliert (Kapitel 1).",
-          "Prozentpunkte und Prozent sind verschieden (LF 11)."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst die Zielerreichung mit gleicher Definition, beschreibst Veränderungen korrekt in Prozentpunkten und relativ und bewertest Nebenfolgen und Grenzen der Vergleichbarkeit.",
+        "vorwissen_kurz": "Die Verspätungsquote ist gesunken. Wie groß ist der Erfolg wirklich, und was hat er gekostet?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wirkung ehrlich messen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Zielerreichung** wird mit derselben Definition gemessen wie die Ausgangslage. Veränderungen von Prozentwerten werden in **Prozentpunkten** und **relativ** angegeben: Sinkt eine Quote von 20 % auf 10 %, sind das 10 Prozentpunkte oder 50 % relativ. Daneben werden **Nebenfolgen** geprüft, also Wirkungen, die nicht beabsichtigt waren, und die **Vergleichbarkeit**: Waren die Bedingungen im Pilot ähnlich wie im Alltag?",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bewertung des Piloten",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "vorher",
+              "Pilot",
+              "Bewertung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Verspätungsquote",
+                  "20 % (10 von 50)",
+                  "10 % (3 von 30)",
+                  "− 10 Prozentpunkte, − 50 % relativ; Ziel erreicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wartezeit Freigabe bis Einplanung",
+                  "4,0 Tage",
+                  "0,8 Tage",
+                  "deutlich verkürzt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lagerbestand",
+                  "Basis",
+                  "+ 4 %",
+                  "Nebenfolge, innerhalb der Grenze von 5 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfassungsaufwand im Vertrieb",
+                  "—",
+                  "+ 2 Minuten je Auftrag",
+                  "Nebenfolge, gering"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vergleichbarkeit",
+                  "3. Quartal mit Herbstspitze",
+                  "Januar, ruhige Zeit",
+                  "eingeschränkt"
+                ]
+              }
+            ],
+            "fazit": "Das Ziel ist erreicht, die Nebenfolgen sind gering. Weil der Pilot in einer ruhigen Zeit lief, ist offen, ob das Ergebnis im Herbst hält.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Einschränkung der Vergleichbarkeit gehört in die Bewertung. Im Januar gibt es weniger Eilaufträge und mehr Kapazität; ein Teil der Verbesserung könnte daran liegen. Ehrlich ist deshalb die Aussage: „Im Pilot wurde das Ziel erreicht; im Herbst wird erneut gemessen.\" Der Anstieg des Lagerbestands um 4 % wird beobachtet, weil er nahe an der Grenze liegt und mit vorsorglichen Bestellungen zusammenhängen könnte.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Zielerreichung wird mit denselben Definitionen gemessen wie vorher. Veränderungen werden korrekt beschrieben: Sinkt eine Quote von 20 % auf 10 %, ist das ein Rückgang um 10 Prozentpunkte oder um 50 % relativ. Neben dem Hauptziel werden Nebenfolgen geprüft — positive wie negative, etwa höhere Bestände, mehr Aufwand im Vertrieb oder Auswirkungen auf andere Abteilungen. Die Vergleichbarkeit der Zeiträume und andere Einflüsse (Saison, Auftragsmix) werden kritisch betrachtet.",
-        "beispiele": [
-          "Verspätungsquote 20 % → 10 %: −10 Prozentpunkte, −50 % relativ.",
-          "Nebenfolge: Vertrieb braucht pro Auftrag zwei Minuten länger für die Erfassung."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kleine Stichproben",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei 30 Aufträgen verändert ein einziger verspäteter Auftrag die Quote um mehr als drei Prozentpunkte. Ein Ergebnis von genau 10 % kann deshalb auch Zufall sein. Längere Beobachtung macht die Aussage sicherer.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Im Piloten waren 3 von 30 Aufträgen verspätet (10 %), vorher 20 %. Das Ziel ist erreicht. Gleichzeitig stieg der Lagerbestand um 4 %, weil Deniz Aydın vorsorglich mehr Rohlinge bestellte — innerhalb der erlaubten 5 %, aber ein Punkt für den Bericht. Und: Der Pilot lief im Januar, wenn weniger Eilaufträge kommen als im Herbst.",
-        "typische_fehler": "Prozentpunkte und Prozent verwechseln oder Nebenfolgen verschweigen.",
         "verstaendnisfragen": [
-          "Wie beschreibst du einen Rückgang von 20 % auf 10 %? Minus 10 Prozentpunkte bzw. minus 50 % relativ.",
-          "Warum Nebenfolgen prüfen? Weil eine Lösung an anderer Stelle Kosten oder Probleme verursachen kann."
-        ],
-        "pruefungsbezug": "Zielerreichung, Wechselwirkungen und Nebenfolgen bewerten.",
-        "merksatz": "Gleiche Definition, korrekte Veränderung (Prozentpunkte vs. relativ), Nebenfolgen und Vergleichbarkeit prüfen."
+          {
+            "frage": "Die Quote sinkt von 20 % auf 10 %. Wie beschreibst du die Veränderung korrekt?",
+            "antwort": "Rückgang um 10 Prozentpunkte beziehungsweise 50 % relativ.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ist die Vergleichbarkeit des Piloten eingeschränkt?",
+            "antwort": "Weil er in einer ruhigen Zeit mit weniger Eilaufträgen lief als der Ausgangszeitraum.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Präsentationen haben ein Publikum mit eigenen Interessen.",
-          "Rückfragen gehören dazu."
+        "darstellung": "vollfassung",
+        "ziel": "Du bereitest das Ergebnis adressatengerecht für die Geschäftsführung auf, stellst Erfolge, Kosten, Nebenfolgen und Grenzen ehrlich dar und bereitest dich auf typische Rückfragen vor.",
+        "vorwissen_kurz": "Tobias Renner und Yuki Bergmann wollen in zehn Minuten wissen, ob sich das Projekt gelohnt hat und was als Nächstes kommt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ehrlich statt Erfolgserzählung",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Präsentation für die Geschäftsführung beginnt mit dem Ergebnis und der Empfehlung, nicht mit dem Projektverlauf. Sie zeigt die wichtigsten Zahlen, die Kosten, die Nebenfolgen und die Grenzen der Aussage. Eine **Erfolgserzählung**, die nur gute Zahlen zeigt, mag kurzfristig überzeugen, führt aber zu falschen Entscheidungen, wenn Probleme später auftauchen. Wer Rückfragen vorbereitet, kann sie sachlich beantworten, statt in der Präsentation ins Schwimmen zu geraten.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Präsentation und vorbereitete Rückfragen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Teil",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kernaussage",
+                  "Verspätungen im Pilot halbiert, für unter 500 €; Empfehlung: für alle Firmenaufträge einführen, im Herbst erneut messen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Belege",
+                  "20 % → 10 %, Wartezeit 4,0 → 0,8 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nebenfolgen",
+                  "Bestand + 4 %, zwei Minuten mehr je Auftrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Grenzen",
+                  "Pilot im ruhigen Januar, 30 Aufträge"
+                ]
+              },
+              {
+                "zellen": [
+                  "nächste Schritte",
+                  "Freigabe-Link nach Datenschutzprüfung, monatliche Kontrolle"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückfrage „Brauchen wir doch neue Software?\"",
+                  "Nein, Ursache lag in der Organisation; Kosten 18.000 € wären nicht gerechtfertigt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückfrage „Warum steigt der Bestand?\"",
+                  "vorsorgliche Bestellungen bei XXL-Rohlingen; wird beobachtet"
+                ]
+              }
+            ],
+            "fazit": "Die Präsentation beantwortet die Frage der Geschäftsführung direkt und nennt offen, was noch unsicher ist. Die vorbereiteten Antworten zeigen, dass die Analyse auch kritischen Fragen standhält.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gerade die Frage nach der neuen Software vom Anfang des Projekts schließt den Kreis. Yuki Bergmann hatte sie als Lösung vorgeschlagen. Die Präsentation zeigt mit Daten, warum eine organisatorische Lösung gereicht hat, ohne die ursprüngliche Idee abzuwerten. Für die Geschäftsführung ist das wertvoll: Sie sieht, dass das Geld für die Software gespart wurde und warum.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Eine Präsentation ist adressatengerecht, wenn sie die Fragen der Zuhörenden beantwortet: Die Geschäftsführung will Ergebnis, Kosten, Risiken und eine Empfehlung; die Beteiligten wollen wissen, was sich für sie ändert. Eine klare Struktur — Ausgangslage, Ergebnis, Bewertung, Empfehlung, nächste Schritte — und wenige aussagekräftige Grafiken helfen. Zielkonflikte und Grenzen werden offen genannt; eine reine Erfolgserzählung verspielt Vertrauen. Auf Rückfragen bereitet man sich vor und antwortet sachlich, auch mit „Das wissen wir noch nicht — wir prüfen es bis …“.",
-        "beispiele": [
-          "Folie 1: „Verspätungen halbiert — bei 4 % mehr Bestand.“",
-          "Rückfrage: „Gilt das auch im Herbst?“ — „Noch offen; wir messen ab September weiter.“"
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Präsentation für das Team",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für das Vertriebsteam sähe dieselbe Präsentation anders aus. Dort zählen der Ablauf mit dem Pflichtfeld, die Ausnahmeregel und die Bitte, keine Platzhalterdaten einzutragen. Die Inhalte überschneiden sich, Auswahl und Reihenfolge richten sich nach den Zuhörenden.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Luca präsentiert vor Yuki Bergmann und Tobias Renner in zehn Minuten: Problem, Lösung, Ergebnis (10 % statt 20 %), Nebenfolge (Bestand +4 %), Kosten (unter 500 €), Grenzen (Pilot im ruhigen Januar) und die Empfehlung: Einführung für alle Firmenaufträge, Messung bis Ende Oktober. Tobias fragt nach den zwei Fällen mit Materialmangel — Luca hat die Zahlen im Anhang parat.",
-        "typische_fehler": "Nur Erfolge zeigen und Zielkonflikte verschweigen.",
         "verstaendnisfragen": [
-          "Was will die Geschäftsführung in einer Präsentation wissen? Ergebnis, Kosten, Risiken, Empfehlung.",
-          "Wie geht man mit einer offenen Frage um? Ehrlich sagen, dass es noch offen ist, und einen Prüftermin nennen."
-        ],
-        "pruefungsbezug": "Eine Lösung adressatengerecht präsentieren und Rückfragen beantworten.",
-        "merksatz": "Adressatengerecht: Ergebnis, Kosten, Risiken, Zielkonflikte, Empfehlung — ehrlich statt Erfolgserzählung."
+          {
+            "frage": "Womit beginnt eine Präsentation für die Geschäftsführung?",
+            "antwort": "Mit dem Ergebnis und der Empfehlung, nicht mit dem Projektverlauf.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum gehören Nebenfolgen und Grenzen in die Präsentation?",
+            "antwort": "Damit die Entscheidung auf einem vollständigen Bild beruht und später keine Überraschungen auftreten.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Aus Erfahrungen lernt man nur, wenn man sie auswertet.",
-          "Verbesserung hört nicht nach einem Projekt auf (PDCA)."
+        "darstellung": "vollfassung",
+        "ziel": "Du reflektierst Ergebnis und Vorgehen eines Problemlösungsprojekts, formulierst Erkenntnisse mit Ursache und Maßnahme, legst Verantwortung und Messpunkte für die weitere Verbesserung fest und überträgst die Erfahrung auf die betriebliche Fachaufgabe.",
+        "vorwissen_kurz": "Das Projekt ist abgeschlossen. Was nimmt das Team mit, und wer sorgt dafür, dass die Verbesserung bleibt?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Aus dem Projekt lernen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Ende wird nicht nur das **Ergebnis** reflektiert, sondern auch das **Vorgehen**: Was lief gut? Was würden wir beim nächsten Mal anders machen? Was hat gefehlt? Brauchbare Erkenntnisse nennen eine Ursache und eine Maßnahme, sogenannte **Lessons Learned**. Damit die Verbesserung bleibt, werden **Verantwortung** und **Messpunkte** für die Zeit nach dem Projekt festgelegt. So wird aus einem einmaligen Projekt eine kontinuierliche Verbesserung.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lessons Learned mit Ursache und Maßnahme",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Erkenntnis",
+              "Ursache",
+              "Maßnahme für künftige Projekte"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Pilotkriterien wurden erst spät festgelegt",
+                  "Team wollte schnell starten",
+                  "Kriterien gehören in den Umsetzungsauftrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeitstempel für August fehlten",
+                  "Fertigmeldungen wurden nicht immer erfasst",
+                  "Pflichtfeld auch für Fertigmeldung prüfen"
+                ]
+              },
+              {
+                "zellen": [
+                  "frühe Einbindung aller Abteilungen half",
+                  "gemeinsame Prozessaufnahme",
+                  "als Standard für Prozessprojekte übernehmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Platzhalterdaten im Pilot",
+                  "Schulung zu kurz",
+                  "Stichprobenprüfung dauerhaft, Schulung um ein Beispiel ergänzen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verantwortung nach dem Projekt",
+                  "—",
+                  "Marlene Voß prüft monatlich die Verspätungsquote, Bericht an Tobias Renner"
+                ]
+              }
+            ],
+            "fazit": "Jede Erkenntnis führt zu einer konkreten Maßnahme. Die Verantwortung für die weitere Kontrolle ist geregelt.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Erfahrung aus diesem Projekt lässt sich auf die betriebliche Fachaufgabe in Teil 2 der Abschlussprüfung übertragen: ein betriebliches Problem eingrenzen, mit Daten analysieren, Lösungen begründet auswählen, umsetzen und die Wirkung prüfen. Ein Schulprojekt ersetzt die genehmigte Fachaufgabe aber nicht; dafür gelten eigene Regeln der Kammer. Wer die Schritte hier geübt hat, weiß jedoch, worauf es ankommt: Problem vor Lösung, Daten vor Vermutung, Kriterien vor Bewertung, ehrliche Bilanz am Ende.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Zum Abschluss wird nicht nur das Ergebnis, sondern auch das Vorgehen reflektiert: Was lief gut, was würden wir anders machen? Stimmten Zeitplan, Rollen und Kommunikation? Waren die Daten ausreichend? Daraus entstehen Lessons Learned für künftige Projekte. Die Lösung selbst wird im kontinuierlichen Verbesserungsprozess weiter beobachtet — mit festen Messpunkten und klarer Verantwortung. Für Auszubildende ist ein solches Projekt zugleich Übung für betriebliche Fachaufgaben; prüfungsrechtliche Vorgaben dafür sind gesondert zu beachten.",
-        "beispiele": [
-          "Lesson Learned: Kriterien für den Piloten früher festlegen.",
-          "Verbesserung: Monatlicher Blick auf die Verspätungsquote durch Marlene."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Kontinuierliche Verbesserung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kontinuierliche Verbesserung heißt, nicht auf das nächste große Projekt zu warten, sondern Abläufe in kleinen Schritten laufend zu verbessern. Der PDCA-Zyklus gibt dafür den Takt vor: planen, umsetzen, prüfen, handeln, und dann von vorn.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "In der Abschlussrunde hält das Team fest: Die frühe Einbindung aller Abteilungen hat geholfen; die fehlenden August-Daten haben die Analyse verzögert; Pilotkriterien wurden zu spät festgelegt. Marlene übernimmt die monatliche Kontrolle der Verspätungsquote. Luca nutzt die Erfahrung, um seine eigene betriebliche Fachaufgabe vorzubereiten — und klärt mit der Ausbildungsleitung, welche Vorgaben dafür gelten.",
-        "typische_fehler": "Ein schulisches Projekt als bereits genehmigte Prüfungsfachaufgabe behandeln.",
         "verstaendnisfragen": [
-          "Was wird bei der Reflexion betrachtet? Ergebnis und Vorgehen: Zeitplan, Rollen, Kommunikation, Daten.",
-          "Wie bleibt eine Lösung wirksam? Durch fortlaufende Messung mit klarer Verantwortung (KVP)."
-        ],
-        "pruefungsbezug": "Vorgehen reflektieren und kontinuierliche Verbesserung sichern.",
-        "merksatz": "Ergebnis und Vorgehen reflektieren, Lessons Learned festhalten, Lösung mit Messpunkten und Verantwortung weiter verbessern."
+          {
+            "frage": "Was sind Lessons Learned?",
+            "antwort": "Festgehaltene Erkenntnisse aus dem Vorgehen mit Ursache und Maßnahme, die künftige Projekte verbessern.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum werden Verantwortung und Messpunkte nach dem Projekt festgelegt?",
+            "antwort": "Damit die Verbesserung dauerhaft bleibt und ein erneuter Anstieg früh erkannt wird.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

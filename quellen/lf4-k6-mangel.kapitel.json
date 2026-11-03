@@ -6,43 +6,433 @@
   "untertitel": "Erst prüfen, dann rügen — sonst gilt sie als genehmigt.",
   "minuten": 35,
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Eine mangelhafte Lieferung ist nicht automatisch ein Streitfall. Zuerst wird sachlich festgestellt, ob die Ware vom Vertrag oder von der üblichen Beschaffenheit abweicht. Danach entscheidet der Zeitpunkt der Entdeckung, ob und wie schnell gerügt werden muss. Erst auf dieser Grundlage werden die Mängelrechte in der richtigen Reihenfolge geprüft.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": ["Ein Kaufvertrag verpflichtet zur Übergabe einer mangelfreien Sache.", "Gefahrübergang bezeichnet den Zeitpunkt, ab dem das Risiko des zufälligen Untergangs auf den Käufer übergeht."],
-        "hintergrundwissen": "§ 434 BGB vergleicht die tatsächliche Ware mit mehreren Maßstäben. Die vereinbarte Beschaffenheit steht an erster Stelle; zusätzlich zählt, was Käufer bei einer vergleichbaren Sache vernünftigerweise erwarten dürfen. Deshalb kann auch eine nicht ausdrücklich vereinbarte, aber übliche Eigenschaft wichtig sein.",
-        "ablauf": ["Vertrag und Bestellung lesen: Was wurde konkret vereinbart?", "Ware bei Gefahrübergang mit Bestellung, Beschreibung und üblicher Beschaffenheit vergleichen.", "Abweichung dokumentieren: Fotos, Lieferschein, Prüfprotokoll und betroffene Menge sichern.", "Erst danach entscheiden, ob ein Sachmangel, eine Falschlieferung oder eine Zuweniglieferung vorliegt."],
-        "beispiele": ["Bestellt sind 100 Ordner mit 8 cm Rückenbreite, geliefert werden 5-cm-Ordner: vereinbarte Beschaffenheit und Menge weichen ab.", "Eine Kaffeemaschine wird als funktionsfähig verkauft, schaltet sich aber bei normaler Nutzung aus: Auch ohne besondere Zusage liegt eine Abweichung von der üblichen Verwendung vor."],
-        "fallbeispiel": "MAKEL bestellt 50 Kartons Kopierpapier einer bestimmten Grammatur. Bei der Eingangskontrolle werden zehn Kartons mit deutlich dünnerem Papier gefunden. Die richtige Prüfung lautet: Bestellung ansehen, betroffene Menge feststellen, Beweise sichern und die Abweichung dem Lieferanten konkret mitteilen. Nicht die gesamte Lieferung pauschal zurückweisen, wenn nur zehn Kartons betroffen sind.",
-        "typische_fehler": "Nicht jede Unzufriedenheit ist ein Sachmangel. Ein bloßer Geschmackswechsel oder ein später selbst verursachter Schaden reicht nicht. Umgekehrt darf eine falsche Anleitung nicht übersehen werden, wenn sie die Montage fehlerhaft macht.",
-        "verstaendnisfragen": ["Warum wird der Zeitpunkt des Gefahrübergangs geprüft? Weil der Mangel zu diesem Zeitpunkt vorgelegen haben muss.", "Warum kann eine Falschlieferung wie ein Sachmangel behandelt werden? Weil der Käufer nicht das geschuldete Kaufobjekt erhalten hat."],
-        "pruefungsbezug": "In Fällen immer zuerst die drei Maßstäbe nennen und anschließend die Abweichung am Sachverhalt belegen. Die reine Aussage ‚Ware ist schlecht‘ reicht nicht.",
-        "merksatz": "Vereinbart, üblich und richtig montiert: Diese drei Perspektiven entscheiden, ob die Ware mangelhaft ist."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst eine gelieferte Ware an den drei Maßstäben des § 434 BGB, ordnest Falsch- und Zuweniglieferung ein und dokumentierst einen Mangel so, dass er später belegbar ist.",
+        "vorwissen_kurz": "Gefahrübergang ist der Zeitpunkt, ab dem der Käufer das Risiko für die Ware trägt — meist bei Übergabe, unter Unternehmen beim Versand schon bei Übergabe an das Transportunternehmen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehr als „die Ware ist schlecht“",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Kaufvertrag verpflichtet den Verkäufer, die Ware frei von Sachmängeln zu liefern. Ob ein {{begriff:sachmangel|Sachmangel}} vorliegt, entscheidet nicht das Gefühl, sondern ein Vergleich: Wie ist die Ware tatsächlich, und wie hätte sie sein müssen? {{par:bgb-434|§ 434 BGB}} nennt dafür drei Maßstäbe, die seit 2022 nebeneinander gelten. Die Ware muss den **subjektiven** Anforderungen entsprechen, also dem, was vereinbart wurde. Sie muss den **objektiven** Anforderungen entsprechen, also dem, was man bei Ware dieser Art üblicherweise erwarten darf. Und sie muss, falls eine Montage geschuldet ist, richtig montiert oder mit einer brauchbaren Anleitung geliefert werden.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Dass die objektiven Anforderungen immer mitgelten, ist wichtig: Auch wenn im Vertrag nichts über die Laufeigenschaften von Druckerpapier steht, muss es durch einen normalen Drucker laufen. Wer davon abweichen will — etwa „B-Ware mit Farbfehlern“ —, muss das wirksam vereinbaren. Zwischen Unternehmen geht das im Vertrag. Gegenüber Verbrauchern ist es nur gültig, wenn der Kunde vor seiner Bestellung eigens darüber informiert wurde und die Abweichung ausdrücklich und gesondert vereinbart ist.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Wareneingang bei MAKEL",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL hat 50 Kartons Kopierpapier mit 80 g/m² und 20 Regale mit Montage bestellt. Beim Wareneingang zeigt sich:",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Befund",
+              "Maßstab",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "10 Kartons enthalten 70-g-Papier",
+                  "subjektiv: vereinbart waren 80 g/m²",
+                  "Sachmangel bei 10 Kartons"
+                ]
+              },
+              {
+                "zellen": [
+                  "5 Kartons Papier stauben stark und verkleben die Walze",
+                  "objektiv: übliche Eignung zum Drucken fehlt",
+                  "Sachmangel bei 5 Kartons"
+                ]
+              },
+              {
+                "zellen": [
+                  "Statt 20 wurden nur 18 Regale geliefert",
+                  "Zuweniglieferung",
+                  "wie ein Sachmangel zu behandeln"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ein Regal wackelt, weil der Monteur Schrauben vergessen hat",
+                  "Montageanforderung",
+                  "Sachmangel"
+                ]
+              }
+            ],
+            "fazit": "Jeder Befund wird einem Maßstab zugeordnet. Die restlichen 35 Kartons und 17 Regale sind in Ordnung und werden nicht pauschal zurückgewiesen.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Dokumentation entscheidet später über den Erfolg: Lieferschein und Bestellung bereitlegen, betroffene Menge zählen, Fotos machen, die mangelhafte Ware getrennt lagern und nicht weiterverarbeiten. Eine Rüge, die genau sagt, was an welcher Menge nicht stimmt, lässt dem Lieferer kaum Spielraum für Ausflüchte.",
+            "id": "b1-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Zeitpunkt zählt",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Mangel muss **bei Gefahrübergang** vorgelegen haben. Was danach passiert, fällt nicht mehr in den Verantwortungsbereich des Verkäufers. Lässt ein Lagermitarbeiter von MAKEL eine Palette fallen, ist das kein Mangel. Auch ein Schaden auf dem Transport ist bei einem Versendungskauf unter Unternehmen kein Sachmangel, wenn die Gefahr schon mit der Übergabe an das Transportunternehmen überging. Dann muss sich MAKEL an das Transportunternehmen halten.",
+            "id": "b1-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Falschlieferung oder schlechte Qualität?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bestellt sind 100 Ordner mit 8 cm Rücken, geliefert werden 100 Ordner mit 5 cm. Das ist eine Abweichung von der vereinbarten Beschaffenheit. Werden stattdessen 100 Hängeregister geliefert, ist es eine Falschlieferung — etwas ganz anderes als bestellt. Beide Fälle behandelt das Gesetz gleich: MAKEL hat die Rechte wegen eines Sachmangels. Der Unterschied ist also für die Rechtsfolgen nicht entscheidend, wohl aber für die Beschreibung in der Rüge.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Beweislast beim Verbraucher",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kauft eine Privatperson bei einem Unternehmen und zeigt sich ein Mangel innerhalb eines Jahres nach Übergabe, wird vermutet, dass er schon beim Gefahrübergang vorlag. Der Händler muss dann das Gegenteil beweisen. Unter Unternehmen gibt es diese Vermutung nicht: Dort muss MAKEL belegen, dass der Mangel schon bei Lieferung bestand — ein weiterer Grund für eine sorgfältige Eingangskontrolle.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Ein Monitor wird ohne Anschlusskabel geliefert. Im Vertrag stand nichts über Kabel. Liegt ein Mangel vor?",
+            "antwort": "Ja, wahrscheinlich. Zu den objektiven Anforderungen gehört das Zubehör, das ein Käufer bei Ware dieser Art erwarten darf. Ein Monitor ohne jedes Anschlusskabel ist in der Regel nicht wie üblich verwendbar. Hätte der Händler „ohne Kabel“ wirksam vereinbart, wäre es anders.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Eine Woche nach der Lieferung kippt ein Regal um, weil ein Mitarbeiter es überladen hat. Kann MAKEL Mängelrechte geltend machen?",
+            "antwort": "Nein. Der Schaden ist nach dem Gefahrübergang durch unsachgemäße Nutzung entstanden. Ein Sachmangel muss bei Gefahrübergang vorgelegen haben. Anders wäre es, wenn das Regal trotz normaler Beladung umgekippt wäre, etwa wegen fehlender Schrauben bei der Montage.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": "Die Rügepflicht gilt nur beim beiderseitigen Handelskauf. Sie ist von der allgemeinen Verjährungsfrist zu unterscheiden.",
-        "hintergrundwissen": "§ 377 HGB schützt den Verkäufer davor, lange nach der Lieferung mit angeblich schon vorhandenen Mängeln konfrontiert zu werden. Dafür muss der kaufmännische Käufer die Ware im ordnungsgemäßen Geschäftsgang untersuchen und erkennbare Mängel unverzüglich anzeigen.",
-        "ablauf": ["Prüfen, ob beide Parteien Kaufleute sind.", "Art der Ware und zumutbare Eingangskontrolle bestimmen.", "Offenen Mangel sofort, versteckten Mangel sofort nach Entdeckung konkret rügen.", "Rüge beweisbar dokumentieren und betroffene Ware sichern."],
-        "beispiele": ["Bei 500 Kartons Büromaterial ist eine Stichprobe regelmäßig ausreichend; eine vollständige Einzelprüfung jeder Packung ist nicht immer zumutbar.", "Ein Defekt, der erst beim ersten bestimmungsgemäßen Einsatz sichtbar wird, kann ein versteckter Mangel sein. Dann beginnt die Rügefrist mit der Entdeckung, nicht mit einer beliebig späten Sammelprüfung."],
-        "fallbeispiel": "Die Lieferung kommt Montag an, die Eingangskontrolle erkennt am Dienstag beschädigte Kartons. Eine schriftliche Rüge am Dienstag mit Menge, Schaden und gewünschter Klärung ist rechtzeitig und nachvollziehbar. Wer erst drei Wochen wartet, riskiert die Genehmigungsfiktion.",
-        "typische_fehler": "Die zweijährige Verjährung ersetzt nicht die sofortige Rüge. Ebenso ist ‚unverzüglich‘ kein starrer Zeitraum: Ware, Betriebsablauf und Erkennbarkeit des Mangels müssen berücksichtigt werden.",
-        "verstaendnisfragen": ["Warum genügt Schweigen nicht? Weil die Ware im Handelskauf sonst als genehmigt gilt.", "Was muss eine gute Rüge enthalten? Mindestens die erkennbare Abweichung, die betroffene Ware und den Bezug zur Lieferung."],
-        "pruefungsbezug": "Prüfungsfälle werden meist über Kaufmannseigenschaft, Erkennbarkeit und Zeitpunkt gelöst. Diese drei Punkte sollten sichtbar getrennt geprüft werden.",
-        "merksatz": "Im Handelskauf gilt: untersuchen, erkennen, unverzüglich und konkret rügen."
+        "darstellung": "vollfassung",
+        "ziel": "Du wendest die Untersuchungs- und Rügepflicht beim beiderseitigen Handelskauf auf einen Fall an und unterscheidest offene von versteckten Mängeln.",
+        "vorwissen_kurz": "Ein beiderseitiger Handelskauf liegt vor, wenn beide Vertragsparteien Kaufleute sind und der Kauf zu ihrem Handelsgewerbe gehört.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum Kaufleute schneller sein müssen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Unter Kaufleuten soll schnell Klarheit herrschen. Der Verkäufer soll nicht Monate nach der Lieferung mit Mängeln konfrontiert werden, deren Ursache niemand mehr klären kann. Deshalb verlangt {{par:hgb-377|§ 377 HGB}} vom kaufmännischen Käufer zweierlei: Er muss die Ware unverzüglich nach der Ablieferung untersuchen, soweit das im ordnungsgemäßen Geschäftsgang machbar ist. Und er muss einen erkennbaren Mangel unverzüglich anzeigen. Tut er das nicht, gilt die Ware als genehmigt — mit allen Mängeln, die er hätte erkennen können. Seine Mängelrechte sind dann verloren.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "„Unverzüglich“ heißt ohne schuldhaftes Zögern. Das ist kein fester Zeitraum: Frische Lebensmittel muss man am selben Tag prüfen, eine große Lieferung Büromöbel innerhalb weniger Tage. Wochen sind fast nie unverzüglich.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Fall: Papierlieferung am Montag",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Tag",
+              "Was geschieht",
+              "Bewertung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Montag",
+                  "40 Kartons Papier werden abgeliefert.",
+                  "Untersuchungspflicht beginnt."
+                ]
+              },
+              {
+                "zellen": [
+                  "Montag/Dienstag",
+                  "Stichprobe: 3 Kartons öffnen, Grammatur und Zustand prüfen.",
+                  "Zumutbare Untersuchung."
+                ]
+              },
+              {
+                "zellen": [
+                  "Dienstag",
+                  "Die Stichprobe zeigt zu dünnes Papier. Rüge per E-Mail: Lieferung, Menge, Art des Mangels.",
+                  "Rechtzeitig und konkret."
+                ]
+              },
+              {
+                "zellen": [
+                  "Drei Wochen später",
+                  "Beim Drucken zeigt sich ein Fleck im Inneren eines Rieses, der von außen nicht erkennbar war.",
+                  "Versteckter Mangel: unverzüglich nach Entdeckung rügen."
+                ]
+              }
+            ],
+            "fazit": "Offene Mängel werden mit der Eingangsprüfung gefunden und sofort gerügt. Versteckte Mängel werden gerügt, sobald sie sich zeigen.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Hätte MAKEL die Kartons nur ins Lager gestellt und erst nach einer Woche geöffnet, wäre die Rüge zu dünnen Papiers zu spät gekommen. Die Grammatur ist ein offener Mangel, den eine einfache Stichprobe zeigt. Die Ware hätte als genehmigt gegolten.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wie eine gute Rüge aussieht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Rüge braucht keine besondere Form. Sie sollte aber beweisbar sein, also schriftlich oder per E-Mail mit Nachweis. Inhaltlich muss sie so genau sein, dass der Verkäufer erkennt, was beanstandet wird: Lieferung (Datum, Lieferscheinnummer), betroffene Menge, Art des Mangels. „Ware mangelhaft“ genügt nicht. Ein Hinweis, welches Recht MAKEL geltend macht, ist sinnvoll, aber für die Rüge selbst nicht nötig.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Rügepflicht und Verjährung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Rüge entscheidet, ob MAKEL seine Rechte behält. Die Verjährung entscheidet, wie lange MAKEL sie durchsetzen kann. Beide laufen getrennt. Eine rechtzeitige Rüge verlängert die zweijährige Verjährung nicht. Wer gerügt hat und dann monatelang wartet, kann seine Ansprüche trotzdem durch Verjährung verlieren.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "MAKEL kauft für das Büro Kaffee bei einem Supermarkt-Großhandel und erst nach einem Monat fällt auf, dass die Verpackung beschädigt war. Gilt § 377 HGB?",
+            "antwort": "Ja, wenn beide Seiten Kaufleute sind und der Kauf für den Betrieb erfolgt. Eine beschädigte Verpackung ist bei der Eingangskontrolle erkennbar, also ein offener Mangel. Nach einem Monat ist die Rüge nicht mehr unverzüglich; die Ware gilt als genehmigt.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum genügt bei 500 Kartons eine Stichprobe?",
+            "antwort": "Das Gesetz verlangt nur eine Untersuchung, soweit sie im ordnungsgemäßen Geschäftsgang machbar ist. Jeden Karton zu öffnen, wäre unverhältnismäßig. Eine sinnvoll gewählte Stichprobe zeigt typische Mängel. Was sie nicht zeigen konnte, gilt als versteckter Mangel und kann später gerügt werden.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": "Mängelrechte bauen grundsätzlich aufeinander auf: Der Käufer soll zunächst eine mangelfreie Leistung ermöglichen, bevor weitere Rechte geprüft werden.",
-        "hintergrundwissen": "Die Nacherfüllung kann aus Reparatur oder Ersatzlieferung bestehen. Erst wenn sie scheitert, verweigert wird oder unzumutbar ist, kommen regelmäßig Rücktritt oder Minderung sowie gegebenenfalls Schadensersatz in Betracht.",
-        "ablauf": ["Mangel und rechtzeitige Rüge feststellen.", "Nacherfüllung verlangen und angemessene Frist setzen.", "Ergebnis dokumentieren: behoben, fehlgeschlagen, verweigert oder unzumutbar.", "Danach Rücktritt, Minderung oder Schadensersatz mit den jeweiligen Voraussetzungen prüfen."],
-        "beispiele": ["Ein Drucker wird repariert und funktioniert danach ordnungsgemäß: Der Nacherfüllungsanspruch ist erfüllt.", "Die Ersatzlieferung weist denselben Fehler erneut auf: Jetzt muss geprüft werden, ob die Nacherfüllung fehlgeschlagen ist und welches Folgerecht passt."],
-        "fallbeispiel": "MAKEL erhält einen defekten Scanner. Die erste Reaktion ist nicht sofort der Rücktritt, sondern eine konkrete Aufforderung zur Reparatur oder Ersatzlieferung. Bleibt der Lieferant trotz angemessener Möglichkeit erfolglos, wird die nächste Stufe der Rechte geprüft.",
-        "typische_fehler": "Nicht jedes Problem berechtigt sofort zur Vertragsauflösung. Auch Minderung und Rücktritt sind nicht dasselbe: Bei der Minderung bleibt der Vertrag bestehen, der Preis wird angepasst.",
-        "verstaendnisfragen": ["Warum steht Nacherfüllung am Anfang? Weil der Vertrag grundsätzlich erhalten und der Mangel zunächst behoben werden soll.", "Was unterscheidet Rücktritt und Minderung? Rücktritt löst den Vertrag rückab, Minderung reduziert den Preis bei Behalten der Sache."],
-        "pruefungsbezug": "Die Rechtekette sollte als begründete Reihenfolge dargestellt werden, nicht als ungeordnete Liste. Jede Stufe braucht einen konkreten Sachverhaltsbezug.",
-        "merksatz": "Erst Nacherfüllung, dann – bei deren Scheitern – die weiteren Rechte prüfen."
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest die Mängelrechte in der gesetzlichen Reihenfolge ab, setzt Fristen richtig und unterscheidest Rücktritt, Minderung und Schadensersatz.",
+        "vorwissen_kurz": "Nacherfüllung bedeutet: Der Verkäufer bekommt die Chance, den Mangel selbst zu beheben — durch Reparatur oder Ersatzlieferung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum die Nacherfüllung zuerst kommt",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{par:bgb-437|§ 437 BGB}} nennt die Rechte des Käufers bei einem Mangel. Sie stehen aber nicht gleichberechtigt zur Auswahl. Zuerst kommt die {{begriff:nacherfuellung|Nacherfüllung}} nach {{par:bgb-439|§ 439 BGB}}. Der Gedanke dahinter: Der Vertrag soll möglichst erhalten bleiben. Der Verkäufer kennt seine Ware, kann sie oft schnell reparieren oder austauschen, und der Käufer bekommt, was er bestellt hat. Erst wenn das nicht klappt, darf der Käufer den Vertrag auflösen oder den Preis senken.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Nacherfüllung wählt der Käufer zwischen Reparatur und Ersatzlieferung. Die Kosten für Transport, Arbeit und Material trägt der Verkäufer. Der Verkäufer darf die gewählte Art nur verweigern, wenn sie unverhältnismäßig teuer wäre.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Fall: der defekte Scanner",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Handlung",
+              "Rechtliche Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "MAKEL meldet den Defekt am Tag der Lieferung und verlangt Ersatz bis 20. März.",
+                  "Nacherfüllung mit angemessener Frist verlangt."
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Der Lieferer schickt einen Ersatzscanner, der denselben Fehler hat.",
+                  "Erster Versuch misslungen."
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "MAKEL lässt einen zweiten Versuch zu; auch die Reparatur scheitert.",
+                  "Nacherfüllung gilt in der Regel nach dem zweiten erfolglosen Versuch als fehlgeschlagen."
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "MAKEL tritt zurück und gibt den Scanner gegen Erstattung des Kaufpreises zurück.",
+                  "Rücktritt; der Mangel ist nicht unerheblich."
+                ]
+              },
+              {
+                "zellen": [
+                  "5",
+                  "Ein Ersatzgerät kostet woanders 80 € mehr.",
+                  "Schadensersatz, wenn der Lieferer den Mangel zu vertreten hat."
+                ]
+              }
+            ],
+            "fazit": "Jede Stufe öffnet die nächste. MAKEL muss nicht ewig warten, aber dem Lieferer eine echte Chance geben.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rücktritt oder Minderung?",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ist die Nacherfüllung gescheitert, wählt MAKEL zwischen Rücktritt und Minderung. Beim **Rücktritt** wird der Vertrag rückabgewickelt: Ware zurück, Geld zurück. Er ist ausgeschlossen, wenn der Mangel nur unerheblich ist. Bei der {{begriff:minderung|Minderung}} behält MAKEL die Ware und zahlt weniger. Der Preis sinkt nach {{par:bgb-441|§ 441 BGB}} im Verhältnis des mangelhaften zum mangelfreien Wert. War die Ware für 1.000 € gekauft, mangelfrei 1.000 € wert und mit Mangel 800 €, sinkt der Preis um 20 % auf 800 €. Bei geringen Mängeln an brauchbarer Ware ist das oft die sinnvolle Lösung.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Praxis einigen sich Käufer und Verkäufer häufig gleich auf einen Preisnachlass, statt erst einen Nacherfüllungsversuch abzuwarten. Das ist erlaubt, weil beide zustimmen. Einseitig verlangen kann MAKEL die Minderung aber erst, wenn die Nacherfüllung erfolglos war, verweigert wurde oder unzumutbar ist.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wie lange die Rechte halten",
+            "id": "b3-z4"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{par:bgb-438|§ 438 BGB}} begrenzt die Mängelrechte zeitlich: zwei Jahre ab Ablieferung bei beweglichen Sachen, fünf Jahre bei Bauwerken und Material, das dafür verwendet wird. Hat der Verkäufer den Mangel arglistig verschwiegen, gilt die regelmäßige {{begriff:verjaehrung|Verjährung}} von drei Jahren ab Ende des Jahres, in dem MAKEL davon erfährt.",
+            "id": "b3-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b3-b4"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wann sofort zurückgetreten werden darf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Frist zur Nacherfüllung ist entbehrlich, wenn der Verkäufer sie ernsthaft und endgültig verweigert, wenn sie fehlgeschlagen ist oder wenn sie dem Käufer nicht zuzumuten ist — etwa weil der Verkäufer den Mangel arglistig verschwiegen hat und das Vertrauen zerstört ist. Diese Ausnahmen sind eng. Im Normalfall setzt MAKEL eine Frist.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Schadensersatz neben der Leistung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Nicht jeder Schaden verlangt eine Frist. Beschädigt ein defektes Gerät beim Einsatz andere Sachen von MAKEL — ein auslaufender Wasserspender ruiniert den Teppich —, ist das ein Mangelfolgeschaden. Ihn kann MAKEL ohne Fristsetzung ersetzt verlangen, wenn der Verkäufer den Mangel zu vertreten hat. Eine Frist braucht nur der Schadensersatz statt der Leistung, der an die Stelle der mangelfreien Ware tritt.",
+                "id": "b3-d2-p1"
+              }
+            ],
+            "id": "b3-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "MAKEL entdeckt einen Kratzer an der Rückseite eines Schranks, der an der Wand steht. Kann MAKEL zurücktreten?",
+            "antwort": "Nein. Der Mangel ist unerheblich, der Rücktritt deshalb ausgeschlossen. MAKEL kann Nacherfüllung verlangen und, wenn sie scheitert, mindern. Vermutlich ist eine einvernehmliche kleine Preisminderung die vernünftigste Lösung.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "MAKEL verlangt Austausch eines defekten Druckers. Der Lieferer möchte lieber reparieren. Wer entscheidet?",
+            "antwort": "Grundsätzlich MAKEL als Käufer. Der Verkäufer kann die gewählte Art nur verweigern, wenn sie mit unverhältnismäßigen Kosten verbunden ist. Dann muss er die andere Art der Nacherfüllung anbieten.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

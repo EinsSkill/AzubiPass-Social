@@ -6,66 +6,403 @@
   "untertitel": "Drei Rechenwege, drei verschiedene Antworten auf dieselbe Frage.",
  "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Investitionen verursachen Anschaffungskosten und laufende Kosten.",
-          "Statische Verfahren arbeiten mit Durchschnittswerten."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst einen Kostenvergleich mit Abschreibung, kalkulatorischen Zinsen und Betriebskosten durch und rechnest bei unterschiedlicher Leistung auf Stückkosten um.",
+        "vorwissen_kurz": "Abschreibungen verteilen die Anschaffungskosten auf die Nutzungsdauer. Gebundenes Kapital könnte anderswo Zinsen bringen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Anlage kostet im Jahr weniger?",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL will die Stickerei ausbauen und vergleicht zwei Stickmaschinen. Anlage A kostet 80.000 €, Anlage B 110.000 €; beide halten fünf Jahre und haben keinen Restwert. B ist teurer in der Anschaffung, verbraucht aber weniger Energie und braucht weniger Bedienzeit. Der **Kostenvergleich** rechnet für jede Anlage die Kosten eines durchschnittlichen Jahres aus drei Bausteinen zusammen: Abschreibung, kalkulatorische Zinsen und Betriebskosten.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die kalkulatorischen Zinsen stehen dafür, dass das in der Maschine gebundene Geld nicht anderweitig angelegt werden kann oder als Kredit Zinsen kostet. Angesetzt wird nicht der volle Kaufpreis, sondern das durchschnittlich gebundene Kapital: Zu Beginn stecken 80.000 € in Anlage A, am Ende nichts mehr; im Durchschnitt also 40.000 €.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn die Anlagen nicht dasselbe leisten",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Vergleich der Jahreskosten ist nur fair, wenn beide Anlagen gleich viel schaffen. Stickt A im Jahr 40.000 Logos und B 50.000, muss auf Kosten je Stück umgerechnet werden.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Anlage A",
+              "Anlage B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gesamtkosten je Jahr",
+                  "52.000 €",
+                  "50.750 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Leistung je Jahr",
+                  "40.000 Stück",
+                  "50.000 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten je Stück",
+                  "52.000 € ÷ 40.000 = 1,30 €",
+                  "50.750 € ÷ 50.000 ≈ 1,02 €"
+                ]
+              }
+            ],
+            "fazit": "B ist hier doppelt im Vorteil: niedrigere Jahreskosten und mehr Leistung. Wäre B zwar günstiger im Jahr, aber langsamer, könnten die Stückkosten das Ergebnis umkehren.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Der Kostenvergleich betrachtet Abschreibung, kalkulatorische Zinsen und Betriebskosten. Die kalkulatorischen Zinsen beziehen sich auf das durchschnittlich gebundene Kapital, bei gleichmäßiger Wertminderung ohne Restwert also auf den halben Anschaffungswert. Bleibt am Ende ein Restwert R, beträgt das durchschnittlich gebundene Kapital (Anschaffungswert + R) ÷ 2. Bei unterschiedlichen Mengen werden Kosten je Stück verglichen.",
-        "beispiele": [
-          "Bei 120.000 € Anschaffung und acht Jahren Nutzungsdauer beträgt die jährliche Abschreibung 120.000 € ÷ 8 = 15.000 €.",
-          "Bei gleichmäßigem Wertverzehr wird für die kalkulatorischen Zinsen das durchschnittliche Kapital angesetzt, nicht der volle Anfangswert."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kalkulatorische Zinsen mit Restwert",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bleibt am Ende ein Restwert, sinkt das gebundene Kapital nicht auf null, sondern auf diesen Restwert. Das durchschnittlich gebundene Kapital ist dann (Anschaffung + Restwert) ÷ 2. Beispiel: 120.000 € Anschaffung, 20.000 € Restwert, acht Jahre, 5 %. Abschreibung (120.000 € − 20.000 €) ÷ 8 = 12.500 €, durchschnittliches Kapital 70.000 €, kalkulatorische Zinsen 3.500 €.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Kritische Menge",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat eine Anlage niedrigere fixe, aber höhere variable Kosten je Stück als die andere, gibt es eine Menge, bei der beide gleich viel kosten. Unterhalb dieser kritischen Menge ist die Anlage mit den niedrigeren Fixkosten günstiger, oberhalb die andere. So lässt sich zeigen, ab welcher Auslastung sich die teurere Maschine lohnt.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "Eine Anlage kostet 120.000 €, läuft acht Jahre, hat keinen Restwert, der kalkulatorische Zinssatz beträgt 5 % und die Betriebskosten betragen 41.000 € jährlich. Abschreibung: 120.000 € ÷ 8 = 15.000 €. Durchschnittlich gebundenes Kapital: 60.000 €. Zinsen: 60.000 € × 5 % = 3.000 €. Gesamtkosten: 15.000 € + 3.000 € + 41.000 € = 59.000 € pro Jahr. Gegenfall mit 20.000 € Restwert: Abschreibung (120.000 € − 20.000 €) ÷ 8 = 12.500 €; durchschnittlich gebundenes Kapital (120.000 € + 20.000 €) ÷ 2 = 70.000 €; Zinsen 3.500 €; Gesamtkosten 12.500 € + 3.500 € + 41.000 € = 57.000 €.",
-        "typische_fehler": "Die Abschreibung wird durch den falschen Zeitraum geteilt oder die Zinsen auf den vollen Anschaffungswert gerechnet. Bei verschiedenen Mengen werden Gesamtkosten statt Stückkosten verglichen.",
         "verstaendnisfragen": [
-          "Welche drei Bestandteile enthält der Kostenvergleich? Abschreibung, kalkulatorische Zinsen und Betriebskosten.",
-          "Worauf werden kalkulatorische Zinsen bei gleichmäßiger Wertminderung gerechnet? Auf das durchschnittlich gebundene Kapital: ohne Restwert die Hälfte der Anschaffung, mit Restwert (Anschaffung + Restwert) ÷ 2."
-        ],
-        "pruefungsbezug": "Schreibe die drei Kostenbestandteile hin, berechne das durchschnittliche Kapital und teile bei Mengenunterschieden auf Stück um.",
-        "merksatz": "Kostenvergleich heißt: Abschreibung plus kalkulatorische Zinsen plus Betriebskosten."
+          {
+            "frage": "Warum wird bei den kalkulatorischen Zinsen nicht der volle Anschaffungswert angesetzt?",
+            "antwort": "Durch die Abschreibung fließt das Kapital über die Verkaufspreise Jahr für Jahr zurück. Es ist also nicht die ganze Zeit voll gebunden, sondern sinkt gleichmäßig vom Anschaffungswert auf null oder den Restwert. Im Durchschnitt ist nur die Hälfte (ohne Restwert) gebunden.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Anlage C kostet 90.000 €, hält 6 Jahre, hat keinen Restwert, Zinssatz 5 %, Betriebskosten 30.000 €. Wie hoch sind die Jahreskosten?",
+            "antwort": "Abschreibung 90.000 € ÷ 6 = 15.000 €; kalkulatorische Zinsen 45.000 € × 5 % = 2.250 €; Betriebskosten 30.000 €. Zusammen 47.250 € pro Jahr.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Gewinn setzt Erlös und Kosten ins Verhältnis.",
-          "Amortisation misst Rückflusszeit, nicht automatisch Rentabilität."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest für zwei Anlagen Gewinn, Rentabilität und Amortisationsdauer und erklärst, warum die Verfahren zu verschiedenen Rangfolgen kommen können.",
+        "vorwissen_kurz": "Gewinn ist Erlös minus Kosten. Die Abschreibung ist Aufwand, dem in diesem Jahr keine Auszahlung gegenübersteht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei weitere Fragen an dieselben Anlagen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Kostenvergleich weiß nichts über Erlöse. Der **Gewinnvergleich** zieht die Jahreskosten vom Erlös ab. Der **Rentabilitätsvergleich** setzt den Gewinn ins Verhältnis zum durchschnittlich gebundenen Kapital. Die {{begriff:amortisation|Amortisationsrechnung}} fragt, nach wie vielen Jahren die Anschaffung über die Rückflüsse wieder hereingekommen ist.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Grafik kannst du den Erlös verändern; sie beginnt mit 95.000 € für Anlage A. Im folgenden Vergleich rechnet MAKEL vorsichtiger: Beide Anlagen sollen zusätzliche Stickaufträge mit einem Erlös von 60.000 € im Jahr ermöglichen.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Amortisation gilt: **Amortisationsdauer = Anschaffungswert ÷ jährlicher Rückfluss.** Der Rückfluss ist Gewinn **plus** Abschreibung, denn die Abschreibung mindert den Gewinn, ohne dass in diesem Jahr Geld abfließt. Wer nur den Gewinn ansetzt, unterschätzt den Rückfluss deutlich.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der vollständige Vergleich",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Anlage A",
+              "Anlage B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Erlös",
+                  "60.000 €",
+                  "60.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jahreskosten (aus dem Kostenvergleich)",
+                  "52.000 €",
+                  "50.750 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gewinn",
+                  "8.000 €",
+                  "9.250 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Durchschnittlich gebundenes Kapital",
+                  "40.000 €",
+                  "55.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rentabilität",
+                  "8.000 ÷ 40.000 = 20,0 %",
+                  "9.250 ÷ 55.000 ≈ 16,8 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückfluss (Gewinn + Abschreibung)",
+                  "8.000 + 16.000 = 24.000 €",
+                  "9.250 + 22.000 = 31.250 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Amortisationsdauer",
+                  "80.000 ÷ 24.000 ≈ 3,3 Jahre",
+                  "110.000 ÷ 31.250 ≈ 3,5 Jahre"
+                ]
+              }
+            ],
+            "fazit": "B bringt mehr Gewinn, A verzinst das Kapital besser und ist schneller zurückverdient. Jedes Verfahren beantwortet eine andere Frage — deshalb kann es verschiedene Sieger geben.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL muss also entscheiden, welche Frage am wichtigsten ist. Ist das Geld knapp und der Absatz unsicher, sprechen Rentabilität und kurze Amortisation für A. Ist die Nachfrage sicher und Kapital vorhanden, spricht der höhere absolute Gewinn für B.",
+            "id": "b2-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Der Gewinnvergleich stellt Erlöse und Kosten gegenüber. Der Rentabilitätsvergleich setzt den Gewinn ins Verhältnis zum gebundenen Kapital. Die Amortisationsdauer lautet Anschaffungswert ÷ Rückfluss; der Rückfluss besteht aus Gewinn plus Abschreibung. Gewinn allein würde den Kapitalrückfluss unterschätzen.",
-        "beispiele": [
-          "Bei 78.000 € Erlös und 59.000 € Kosten beträgt der Jahresgewinn 19.000 €.",
-          "Bei 19.000 € Gewinn und 15.000 € Abschreibung beträgt der Rückfluss 34.000 €; bei 120.000 € Anschaffung ergibt das 120.000 € ÷ 34.000 € ≈ 3,5 Jahre."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Unterschiedliche Formeln in Lehrbüchern",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Lehrbücher rechnen bei der Rentabilität mit Gewinn plus kalkulatorischen Zinsen, weil die Zinsen ja gerade die Verzinsung des Kapitals sind. Für A wären das (8.000 € + 2.000 €) ÷ 40.000 € = 25 %. Ebenso zählen manche zum Rückfluss auch die kalkulatorischen Zinsen. In der Prüfung gilt die Formel aus der Aufgabe; ohne Vorgabe schreibst du deine Formel dazu.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Für dieselbe Anlage werden Gewinn, Rentabilität und Amortisation berechnet. Gewinn: 78.000 € − 59.000 € = 19.000 €. Rentabilität auf 60.000 € Durchschnittskapital: 19.000 € ÷ 60.000 € ≈ 31,7 %. Rückfluss: 19.000 € + 15.000 € = 34.000 €. Amortisation: 120.000 € ÷ 34.000 € ≈ 3,5 Jahre.",
-        "typische_fehler": "Für die Amortisation wird nur der Gewinn verwendet oder die Rentabilität auf den Anschaffungswert statt auf das gebundene Kapital bezogen. Auch Gewinn und Rückfluss werden als identisch behandelt.",
         "verstaendnisfragen": [
-          "Wie lautet die Amortisationsformel? Anschaffungswert ÷ Rückfluss.",
-          "Was ist der Rückfluss? Gewinn plus Abschreibung."
-        ],
-        "pruefungsbezug": "Formel zuerst notieren, dann Gewinn, gebundenes Kapital und Rückfluss getrennt berechnen. Rundung nachvollziehbar angeben.",
-        "merksatz": "Amortisation rechnet mit dem Rückfluss — und der enthält Gewinn plus Abschreibung."
+          {
+            "frage": "Eine Anlage kostet 60.000 €, wird über 5 Jahre abgeschrieben und bringt 9.000 € Gewinn im Jahr. Wie lange dauert die Amortisation?",
+            "antwort": "Abschreibung 60.000 € ÷ 5 = 12.000 €. Rückfluss 9.000 € + 12.000 € = 21.000 €. Amortisationsdauer 60.000 € ÷ 21.000 € ≈ 2,9 Jahre.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist die kürzeste Amortisationsdauer nicht automatisch die beste Investition?",
+            "antwort": "Die Amortisationsrechnung misst nur, wie schnell das Geld zurückkommt — also das Risiko. Was nach der Amortisation passiert, bleibt unbeachtet. Eine Anlage, die sich etwas später amortisiert, aber viel länger hohe Gewinne bringt, kann insgesamt besser sein.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Statische Verfahren vereinfachen die Zeit und verwenden Durchschnittswerte.",
-          "Eine Rechnung kann nicht alle betrieblichen Entscheidungskriterien abbilden."
+        "darstellung": "vollfassung",
+        "ziel": "Du benennst die Grenzen der statischen Verfahren, prüfst die Empfindlichkeit eines Ergebnisses gegenüber geänderten Annahmen und ergänzt nicht messbare Kriterien.",
+        "vorwissen_kurz": "Statische Verfahren rechnen mit einem Durchschnittsjahr. Die Zahlen sind Schätzungen über die Zukunft.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Durchschnittsjahr ist keine Zukunft",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kosten-, Gewinn-, Rentabilitäts- und Amortisationsvergleich heißen **statisch**, weil sie mit einem einzigen, durchschnittlichen Jahr rechnen. Dass Zahlungen zu verschiedenen Zeitpunkten anfallen und Geld heute mehr wert ist als in fünf Jahren, berücksichtigen sie nicht. Für kurze Laufzeiten und gleichmäßige Rückflüsse ist das meist vertretbar.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was passiert, wenn der Erlös niedriger ausfällt?",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die 60.000 € Erlös sind eine Schätzung. MAKEL rechnet deshalb nach, was bei 10 % weniger Erlös herauskommt.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Erlös 54.000 €",
+              "Anlage A",
+              "Anlage B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gewinn",
+                  "54.000 − 52.000 = 2.000 €",
+                  "54.000 − 50.750 = 3.250 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rentabilität",
+                  "2.000 ÷ 40.000 = 5,0 %",
+                  "3.250 ÷ 55.000 ≈ 5,9 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückfluss",
+                  "2.000 + 16.000 = 18.000 €",
+                  "3.250 + 22.000 = 25.250 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Amortisationsdauer",
+                  "80.000 ÷ 18.000 ≈ 4,4 Jahre",
+                  "110.000 ÷ 25.250 ≈ 4,4 Jahre"
+                ]
+              }
+            ],
+            "fazit": "Schon 10 % weniger Erlös kehren die Rangfolge bei der Rentabilität um, und beide Anlagen amortisieren sich erst kurz vor Ende ihrer Nutzungsdauer. Die niedrigeren Betriebskosten von B machen sie robuster gegen schwächere Erlöse.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Diese Nachrechnung heißt Sensitivitätsanalyse: Man verändert eine unsichere Annahme und prüft, ob die Entscheidung stabil bleibt. Kippt das Ergebnis schon bei kleinen Änderungen, ist eine Investition riskant — egal wie gut die erste Rechnung aussah.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was keine Rechnung erfasst",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Neben den Zahlen gehören weitere Kriterien in die Entscheidung: Liefert B eine sauberere Stickqualität? Ist A von einem Hersteller, der auch in fünf Jahren noch Ersatzteile liefert? Wie laut sind die Maschinen am Arbeitsplatz, und wie viel Schulung brauchen die Beschäftigten? Solche Kriterien lassen sich mit einer Nutzwertanalyse gewichten und mit dem Rechenergebnis zusammenführen.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Statische Verfahren berücksichtigen den Zeitwert des Geldes nicht und arbeiten mit einem Durchschnittsjahr. Die Amortisation ist deshalb ein Risikomaß, kein vollständiges Rentabilitätsmaß. Zusätzlich gehören Kapazitätsreserve, Qualität, Abhängigkeit vom Lieferer und Finanzierungssicherheit in die Beurteilung.",
-        "beispiele": [
-          "Eine kleinere Anlage kann sich schneller amortisieren, obwohl eine größere Anlage den höheren absoluten Gewinn erzielt.",
-          "Bei langer Nutzungsdauer wird zusätzlich eine dynamische Rechnung erwogen, weil der Zeitwert des Geldes sonst fehlt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Ein Euro heute, ein Euro in fünf Jahren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer 783,53 € heute zu 5 % anlegt, hat nach fünf Jahren mit Zinseszins 1.000 €. Umgekehrt sind 1.000 €, die erst in fünf Jahren eingehen, heute nur 783,53 € wert (1.000 € ÷ 1,05⁵). Die Kapitalwertmethode rechnet jede künftige Zahlung so auf heute zurück. Späte Rückflüsse zählen dadurch weniger als frühe.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k3-b3"
+                ],
+                "text": "Nutzwertanalyse an einem Beschaffungsfall",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Anlage A kostet 80.000 € und amortisiert sich in 2,5 Jahren. Anlage B kostet 150.000 €, amortisiert sich in vier Jahren, bringt aber doppelt so viel Gewinn. Die Amortisation allein entscheidet nicht: A ist schneller und risikoärmer, B kann bei langer Nutzung den höheren Gewinn bringen. Deshalb werden Nutzungsdauer, Absatzprognose, Finanzierung und nicht messbare Kriterien ergänzt.",
-        "typische_fehler": "Die kürzeste Amortisationsdauer wird automatisch als beste Investition gewählt. Ebenso wird ein Rechenergebnis als vollständig angesehen, ohne Grenzen der statischen Methode zu nennen.",
         "verstaendnisfragen": [
-          "Was berücksichtigen statische Verfahren nicht? Den Zeitwert des Geldes.",
-          "Warum ist Amortisation kein Rentabilitätsmaß? Sie misst nur die Rückflussdauer und nicht den Gewinn im Verhältnis zum Kapital."
-        ],
-        "pruefungsbezug": "Nenne nach jedem statischen Ergebnis mindestens die Methodegrenze und zwei qualitative Entscheidungskriterien.",
-        "merksatz": "Zahlen ordnen die Investition; sie ersetzen nicht die Beurteilung von Risiko, Qualität und Zukunft."
+          {
+            "frage": "Warum kann eine Investition mit 3,3 Jahren Amortisationsdauer riskant sein, obwohl sie fünf Jahre läuft?",
+            "antwort": "Die 3,3 Jahre beruhen auf geschätzten Erlösen und Kosten. Fallen die Erlöse etwas niedriger aus, verlängert sich die Amortisation schnell; im Beispiel schon bei 10 % weniger Erlös auf 4,4 Jahre. Dann bleibt kaum Zeit, in der die Anlage tatsächlich Gewinn über die Anschaffung hinaus bringt.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Nenne zwei Gründe, warum statische Verfahren trotz ihrer Schwächen im Alltag verbreitet sind.",
+            "antwort": "Sie sind schnell und mit wenigen Zahlen durchführbar. Bei kurzen Laufzeiten und gleichmäßigen Rückflüssen weichen ihre Ergebnisse kaum von dynamischen Verfahren ab. Zudem sind sie leicht zu erklären und zu prüfen.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

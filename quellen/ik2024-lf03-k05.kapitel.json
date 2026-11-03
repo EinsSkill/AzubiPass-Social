@@ -6,86 +6,426 @@
   "untertitel": "Wenn die Lieferung nicht dem Vertrag entspricht: Sachverhalt sichern, Rechte prüfen, kundenorientiert antworten — und den Fehler abstellen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Eine Reklamation ist die Beanstandung einer Lieferung durch den Kunden.",
-          "Maßstab ist das, was vereinbart wurde."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst vereinbarte und gelieferte Leistung anhand von Auftragsbestätigung und Freigabe, bestimmst Art und Umfang eines Mangels und erkennst, wann keine Mangelhaftigkeit vorliegt.",
+        "vorwissen_kurz": "Die Agentur meldet sich: Auf einem Teil der Hoodies ist das alte Logo. Zuerst muss geklärt werden, ob wirklich ein Mangel vorliegt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Maßstab ist die Vereinbarung",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:sachmangel|Sachmangel}} liegt vor, wenn die Ware bei Gefahrübergang nicht der vereinbarten Beschaffenheit entspricht, sich nicht für die vorausgesetzte Verwendung eignet oder nicht die übliche Beschaffenheit hat ({{par:bgb-434|§ 434 BGB}}). Auch eine falsche Menge oder eine andere Ware als bestellt gilt als Mangel. Maßstab sind die Auftragsbestätigung und das freigegebene Muster, nicht der Geschmack des Kunden oder eine nachträgliche Idee.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Mangel oder nicht?",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Beanstandung",
+              "vereinbart",
+              "Mangel?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "15 Hoodies mit altem Logo",
+                  "neues Logo laut Freigabe vom 7. Mai",
+                  "ja, Abweichung von der vereinbarten Beschaffenheit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Logo sitzt 1 cm höher als im Muster",
+                  "Position laut Muster, Toleranz ± 1 cm",
+                  "nein, innerhalb der Toleranz"
+                ]
+              },
+              {
+                "zellen": [
+                  "Farbe wirkt „zu dunkel\"",
+                  "Schwarz laut Auftragsbestätigung, Muster freigegeben",
+                  "nein, entspricht dem Muster"
+                ]
+              },
+              {
+                "zellen": [
+                  "3 Hoodies fehlen",
+                  "100 Stück",
+                  "ja, Mindermenge"
+                ]
+              }
+            ],
+            "fazit": "Nicht jede Beanstandung ist ein Mangel. Entscheidend ist, ob die Lieferung von dem abweicht, was vereinbart und freigegeben wurde.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Mangelquote von 15 % beschreibt den Umfang, ersetzt aber nicht die Prüfung, warum es zum Fehler kam. Für die Lösung ist wichtig, wie viele Teile in welchen Größen betroffen sind, damit MAKEL Studio genau diese nachdrucken kann. Für die Ursachenanalyse ist wichtig, wie das alte Logo in die Produktion kam. Beides beginnt mit einem sauberen Vergleich von Vereinbartem und Geliefertem.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Ob ein Mangel vorliegt, ergibt sich aus dem Vergleich: Was wurde vereinbart (Auftragsbestätigung, freigegebenes Druckmuster), und was wurde geliefert? Ein Sachmangel liegt nach § 434 BGB vor, wenn die Ware bei Gefahrübergang nicht der vereinbarten Beschaffenheit, der üblichen Beschaffenheit oder den Montageanforderungen entspricht. Auch eine Falsch- oder Zuweniglieferung ist ein Sachmangel. Die Mangelquote beschreibt den Umfang, ersetzt aber nicht die Prüfung der Voraussetzungen.",
-        "beispiele": [
-          "Vereinbart: Logo in Weiß auf Schwarz. Geliefert: Logo in Grau. Abweichung von der vereinbarten Beschaffenheit.",
-          "15 von 100 Hoodies sind falsch bedruckt: Mangelquote 15 %."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Gefahrübergang",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Entscheidend ist der Zustand der Ware beim Gefahrübergang, beim Versendungskauf zwischen Unternehmen also bei Übergabe an den Transporteur. Wird ein Karton unterwegs beschädigt, ist das kein Mangel der Ware, sondern ein Transportschaden, für den andere Regeln gelten.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Die Agentur meldet: ‚Auf einem Teil der Hoodies ist das alte Logo gedruckt.‘ Marlene vergleicht: Freigegeben war das neue Logo (Druckmuster vom 7. Mai). Gezählt werden 15 falsch bedruckte von 100 Hoodies. Ergebnis der ersten Prüfung: Bei 15 Stück weicht die Ausführung von der vereinbarten Beschaffenheit ab; das ist ein Sachmangel, sofern der Fehler schon bei Gefahrübergang vorlag — wovon bei einem Druckfehler auszugehen ist.",
-        "typische_fehler": "Die Mangelquote wird als ausreichende Grundlage für jede rechtliche Entscheidung angesehen. Zuerst muss geklärt sein, was vereinbart war und was geliefert wurde.",
         "verstaendnisfragen": [
-          "Wann liegt ein Sachmangel vor? Wenn die Ware bei Gefahrübergang nicht der vereinbarten oder üblichen Beschaffenheit entspricht.",
-          "Wie berechnet man die Mangelquote? Mangelhafte Stück geteilt durch gelieferte Stück, mal 100."
-        ],
-        "pruefungsbezug": "Bei Reklamationsfällen zuerst Soll (vereinbart) und Ist (geliefert) gegenüberstellen.",
-        "merksatz": "Ein Mangel ergibt sich aus dem Vergleich von Vereinbartem und Geliefertem; die Mangelquote beschreibt den Umfang, ersetzt aber nicht die Prüfung."
+          {
+            "frage": "Die Agentur findet die Farbe zu dunkel, obwohl sie dem freigegebenen Muster entspricht. Liegt ein Mangel vor?",
+            "antwort": "Nein. Die Ware entspricht der vereinbarten Beschaffenheit laut Muster.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Woran misst man, ob eine Lieferung mangelhaft ist?",
+            "antwort": "Am Vergleich mit der vereinbarten Beschaffenheit laut Auftragsbestätigung und freigegebenem Muster.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Wer reklamiert, muss den Sachverhalt belegen können.",
-          "Unter Kaufleuten gibt es besondere Pflichten beim Wareneingang."
+        "darstellung": "vollfassung",
+        "ziel": "Du nimmst einen Reklamationsfall mit Auftrag, Abweichung, Menge, Zeitpunkten und Nachweisen auf und prüfst beim Handelskauf, ob der Kunde rechtzeitig gerügt hat.",
+        "vorwissen_kurz": "Bevor über eine Lösung gesprochen wird, muss der Sachverhalt vollständig und belegt sein.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Den Fall sichern",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine **Reklamationsaufnahme** dokumentiert, um welchen Auftrag es geht, was vereinbart war, was festgestellt wurde, wie viele Teile betroffen sind, wann geliefert und wann gerügt wurde und welche Nachweise vorliegen. Beim beiderseitigen Handelskauf kommt eine besondere Pflicht hinzu: Der Käufer muss die Ware unverzüglich nach Ablieferung untersuchen und erkennbare Mängel unverzüglich anzeigen; versteckte Mängel unverzüglich nach ihrer Entdeckung ({{begriff:ruegepflicht|Rügepflicht}}, {{par:hgb-377|§ 377 HGB}}). ==Wer zu spät rügt, verliert seine Mängelrechte.==",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "War die Rüge rechtzeitig?",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Fall",
+              "Lieferung",
+              "Rüge",
+              "Beurteilung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Agentur, altes Logo",
+                  "15. Mai",
+                  "16. Mai",
+                  "rechtzeitig, am Tag nach der Lieferung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Boutique, falsche Größe sichtbar beim Auspacken",
+                  "3. März",
+                  "2. April",
+                  "zu spät; ein offensichtlicher Mangel hätte sofort auffallen müssen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Firmenkunde, Druck löst sich nach dem ersten Waschen",
+                  "10. Juni",
+                  "28. Juni, zwei Tage nach dem ersten Waschen",
+                  "rechtzeitig, versteckter Mangel unverzüglich nach Entdeckung gerügt"
+                ]
+              }
+            ],
+            "fazit": "Offensichtliche Mängel müssen sofort gerügt werden, versteckte unverzüglich nach ihrer Entdeckung. Die Boutique hat ihre Mängelrechte verloren.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rügepflicht gilt nur, wenn der Kauf für beide Seiten ein Handelsgeschäft ist. Bei der Agentur und der Boutique ist das der Fall, bei einem Sportverein als eingetragenem Verein oft nicht; dann gelten die allgemeinen Regeln ohne strenge Rügefrist. MAKEL Studio prüft deshalb zuerst, wer der Kunde ist. Auch bei einer verspäteten Rüge kann MAKEL aus Kulanz helfen, um die Kundenbeziehung zu erhalten, muss es aber nicht.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Für die Bearbeitung werden festgehalten: Kunde und Auftrag, betroffener Artikel, vereinbarte Ausführung, festgestellte Abweichung, betroffene Menge, Liefer- und Entdeckungszeitpunkt sowie Nachweise (Fotos, Muster, Lieferschein). Beim beiderseitigen Handelskauf muss der Käufer die Ware nach § 377 HGB unverzüglich untersuchen und Mängel unverzüglich anzeigen; sonst gilt die Ware als genehmigt. Versteckte Mängel sind unverzüglich nach Entdeckung zu rügen. Ob die Agentur rechtzeitig gerügt hat, ist deshalb Teil der Prüfung.",
-        "beispiele": [
-          "Lieferung am 15. Mai, Rüge am 16. Mai mit Fotos: rechtzeitig.",
-          "Rüge eines offensichtlichen Druckfehlers erst nach sechs Wochen: Die Rüge ist beim Handelskauf wahrscheinlich verspätet."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Nachweise sichern",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Fotos von mehreren betroffenen Teilen, ein zurückgesandtes Muster und die Lieferscheinnummer helfen, den Fall schnell zu klären. Werden die Teile zurückgeschickt, sollte vereinbart werden, wer die Versandkosten trägt; bei einem berechtigten Mangel ist es der Verkäufer.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Marlene legt einen Reklamationsvorgang an: Kunde Eventagentur, Auftrag 2026-0377; Artikel Hoodie schwarz mit Logodruck; vereinbart neues Logo laut Freigabe vom 7. Mai; festgestellt altes Logo; betroffen 15 von 100; Lieferung 15. Mai, Rüge 16. Mai; Nachweise: Fotos von drei Teilen, Rücksendung eines Musters angefordert.",
-        "typische_fehler": "Die Reklamation wird nur telefonisch angenommen und nicht dokumentiert. Später ist unklar, was genau beanstandet wurde und wann.",
         "verstaendnisfragen": [
-          "Was verlangt § 377 HGB vom Käufer beim Handelskauf? Unverzügliche Untersuchung der Ware und unverzügliche Anzeige von Mängeln.",
-          "Welche Angaben gehören in die Reklamationsaufnahme? Auftrag, Artikel, vereinbarte Ausführung, Abweichung, Menge, Liefer- und Entdeckungszeitpunkt, Nachweise."
-        ],
-        "pruefungsbezug": "In B2B-Reklamationsfällen immer die Rügefrist prüfen — sie entscheidet, ob Mängelrechte überhaupt bestehen.",
-        "merksatz": "Eine Reklamation wird mit Auftrag, Abweichung, Menge, Zeitpunkten und Nachweisen dokumentiert; beim Handelskauf muss der Käufer unverzüglich prüfen und rügen."
+          {
+            "frage": "Was bedeutet „unverzüglich\" bei der Rügepflicht?",
+            "antwort": "Ohne schuldhaftes Zögern. Bei offensichtlichen Mängeln sind das in der Regel wenige Tage nach Ablieferung.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Welche Folge hat eine verspätete Rüge beim Handelskauf?",
+            "antwort": "Die Ware gilt als genehmigt, und der Käufer verliert seine Mängelrechte.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Bei einem Mangel hat der Käufer gesetzliche Rechte.",
-          "Diese Rechte haben eine Reihenfolge."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst die Mängelrechte des Käufers in der gesetzlichen Reihenfolge, schlägst eine Nacherfüllung vor und beurteilst, wann Rücktritt, Minderung oder Schadensersatz in Betracht kommen.",
+        "vorwissen_kurz": "Der Mangel ist belegt und rechtzeitig gerügt. Jetzt geht es darum, was die Agentur verlangen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst nacherfüllen, dann weiter",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einem Mangel hat der Käufer mehrere Rechte ({{par:bgb-437|§ 437 BGB}}). Vorrang hat die {{begriff:nacherfuellung|Nacherfüllung}}: Der Käufer kann nach seiner Wahl die Beseitigung des Mangels oder die Lieferung mangelfreier Ware verlangen; die Kosten trägt der Verkäufer ({{par:bgb-439|§ 439 BGB}}). Erst wenn eine angemessene Frist zur Nacherfüllung erfolglos abgelaufen ist, die Nacherfüllung fehlschlägt oder verweigert wird, kommen Rücktritt oder Minderung in Betracht. Schadensersatz setzt zusätzlich voraus, dass der Verkäufer den Mangel zu vertreten hat.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rechte im Agenturfall",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Recht",
+              "Voraussetzung",
+              "im Fall"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Nacherfüllung: 15 Hoodies neu drucken",
+                  "Mangel, rechtzeitige Rüge",
+                  "gegeben; MAKEL druckt bis 22. Mai nach"
+                ]
+              },
+              {
+                "zellen": [
+                  "Minderung",
+                  "Frist zur Nacherfüllung erfolglos",
+                  "nicht gegeben, Nachdruck läuft"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rücktritt vom ganzen Vertrag",
+                  "Frist erfolglos, Mangel nicht unerheblich",
+                  "nicht gegeben; 85 Teile sind in Ordnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Schadensersatz für Expressversand der Agentur",
+                  "Verkäufer hat Mangel zu vertreten",
+                  "möglich, wenn das alte Logo durch Fahrlässigkeit bei MAKEL in den Druck kam"
+                ]
+              }
+            ],
+            "fazit": "Die Agentur kann den Nachdruck verlangen. Weitergehende Rechte entstehen erst, wenn MAKEL Studio nicht rechtzeitig nacherfüllt; Schadensersatz hängt vom Verschulden ab.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für MAKEL Studio ist eine schnelle Nacherfüllung auch wirtschaftlich die beste Lösung. Fünfzehn Hoodies nachzudrucken kostet rund 600 € Selbstkosten; eine Minderung oder der Rücktritt vom Vertrag wäre teurer und würde die Kundenbeziehung belasten. Verlangt die Agentur sofort einen Preisnachlass, erklärt der Vertrieb freundlich, dass zunächst nachgedruckt wird, und nennt einen verbindlichen Termin.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Nach § 437 BGB kann der Käufer zunächst Nacherfüllung verlangen: nach seiner Wahl Beseitigung des Mangels oder Lieferung einer mangelfreien Sache (§ 439 BGB). Die Kosten der Nacherfüllung trägt der Verkäufer. Erst wenn die Nacherfüllung fehlschlägt, verweigert wird oder eine angemessene Frist erfolglos abläuft, kommen Rücktritt (§ 323 BGB) oder Minderung (§ 441 BGB) in Betracht; Schadensersatz setzt zusätzlich ein Vertretenmüssen voraus. Mängelansprüche bei beweglichen Sachen verjähren in der Regel in zwei Jahren ab Ablieferung (§ 438 BGB).",
-        "beispiele": [
-          "Ersatzlieferung: MAKEL druckt 15 neue Hoodies mit dem richtigen Logo und tauscht sie aus.",
-          "Minderung: Die Agentur behält die falsch bedruckten Teile, zahlt aber weniger — nur, wenn die Voraussetzungen vorliegen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Verjährung der Mängelansprüche",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mängelansprüche bei beweglichen Sachen verjähren grundsätzlich in zwei Jahren ab Ablieferung (§ 438 BGB). Zwischen Unternehmen kann die Frist vertraglich verkürzt werden, etwa in den AGB; beim Verkauf neuer Ware an Verbraucher ist das nicht möglich.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Agentur hat rechtzeitig gerügt. Sie verlangt Ersatz für die 15 falsch bedruckten Hoodies bis zum Fest am 28. Mai. MAKEL prüft: Rohlinge vorhanden, Druckzeit eine Stunde. Ersatzlieferung ist möglich und wird zugesagt; Versandkosten trägt MAKEL. Rücktritt vom ganzen Vertrag kommt nicht in Betracht, solange die Nacherfüllung nicht gescheitert ist.",
-        "typische_fehler": "Der Kunde wird sofort auf Minderung oder Rücktritt verwiesen — oder umgekehrt jede Forderung pauschal abgelehnt. Die Reihenfolge des Gesetzes ist Nacherfüllung zuerst.",
         "verstaendnisfragen": [
-          "Wer wählt zwischen Nachbesserung und Ersatzlieferung? Der Käufer.",
-          "Wann kommen Rücktritt oder Minderung in Betracht? In der Regel erst nach erfolgloser Fristsetzung zur Nacherfüllung oder wenn sie fehlschlägt oder verweigert wird."
-        ],
-        "pruefungsbezug": "Mängelrechte in der richtigen Reihenfolge prüfen und für jedes Recht die Voraussetzung nennen.",
-        "merksatz": "Bei einem Mangel gilt zuerst Nacherfüllung nach Wahl des Käufers auf Kosten des Verkäufers; Rücktritt und Minderung folgen erst, wenn sie scheitert."
+          {
+            "frage": "Welches Recht hat der Käufer bei einem Mangel zuerst?",
+            "antwort": "Die Nacherfüllung nach seiner Wahl: Beseitigung des Mangels oder Lieferung mangelfreier Ware.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Kann die Agentur wegen 15 falsch bedruckter Teile sofort vom ganzen Vertrag zurücktreten?",
+            "antwort": "Nein. Zuerst muss MAKEL Gelegenheit zur Nacherfüllung bekommen. Erst wenn sie scheitert, kommt ein Rücktritt in Betracht.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Eine Reklamation ist auch ein Beziehungsereignis.",
-          "Gut gelöste Beschwerden können die Kundenbindung stärken."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst eine erste Antwort auf eine Reklamation mit Bestätigung, Problembeschreibung, Rückfrage und Termin, ermittelst die Ursache im eigenen Ablauf und leitest eine wirksame Verbesserungsmaßnahme ab.",
+        "vorwissen_kurz": "Eine gute Reklamationsbearbeitung kann aus einem verärgerten Kunden einen treuen machen. Und sie verhindert, dass derselbe Fehler wieder passiert.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Schnell, konkret, verbindlich",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gutes {{begriff:beschwerdemanagement|Beschwerdemanagement}} beginnt mit einer schnellen ersten Antwort. Sie bestätigt den Eingang, beschreibt das Problem mit eigenen Worten, fragt nach fehlenden Angaben und nennt einen Termin für den nächsten Schritt. Sie lehnt nicht pauschal ab und verspricht keine Rechtsfolge, die noch nicht geprüft ist. Nach der Lösung sucht MAKEL Studio die Ursache im eigenen Ablauf und stellt sie ab, damit der Fehler nicht wieder auftritt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ursache und Maßnahme",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Ergebnis im Agenturfall"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Wie kam das alte Logo in den Druck?",
+                  "Im Druckordner lagen alte und neue Datei mit ähnlichem Namen."
+                ]
+              },
+              {
+                "zellen": [
+                  "Warum fiel es nicht auf?",
+                  "Die Erststückprüfung verglich nur Position und Farbe, nicht das Motiv mit der Freigabe."
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahme 1",
+                  "Alte Druckdateien nach Freigabe in einen Archivordner verschieben"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahme 2",
+                  "Erststück mit der freigegebenen Datei vergleichen und abzeichnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirksamkeitskontrolle",
+                  "in den nächsten drei Monaten Zahl der Motivfehler erfassen"
+                ]
+              }
+            ],
+            "fazit": "Die Ursache lag nicht bei einer einzelnen Person, sondern in einem Ablauf, der Verwechslungen ermöglichte. Zwei einfache Maßnahmen schließen die Lücke.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Reklamation endet nicht mit dem Nachdruck. Nach der Lieferung fragt der Vertrieb kurz nach, ob jetzt alles in Ordnung ist. Und die Erkenntnisse aus der Ursachenanalyse fließen in die Arbeitsanweisungen der Veredelung ein. Wer Reklamationen systematisch auswertet, erkennt Muster: Treten Motivfehler immer bei Eilaufträgen auf, liegt das Problem vielleicht im Zeitdruck und nicht in den Dateien.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Aktives Beschwerdemanagement heißt: Beschwerden leicht möglich machen, schnell bestätigen, sachlich klären, verbindlich lösen und aus der Ursache lernen. Die erste Antwort bestätigt den Eingang, benennt das Problem konkret, fragt nach fehlenden Angaben und nennt den nächsten Schritt mit Termin — ohne pauschal abzulehnen und ohne ungeprüft eine bestimmte Rechtsfolge zu versprechen. Danach wird die Ursache im eigenen Ablauf gesucht und abgestellt.",
-        "beispiele": [
-          "Ursache des Fehldrucks: Das alte Sieb lag noch an der Maschine; die Freigabe wurde nicht vor Druckbeginn abgeglichen.",
-          "Maßnahme: Vor jedem Druckstart wird das erste Teil mit dem freigegebenen Muster verglichen und abgezeichnet."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Kulanz und Rechtspflicht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Rechtspflicht ist, was der Kunde verlangen kann, etwa den Nachdruck. Kulanz ist ein freiwilliges Entgegenkommen darüber hinaus, etwa eine kostenlose Expresslieferung oder ein kleiner Gutschein für den nächsten Auftrag. Kulanz kostet Geld, kann aber die Kundenbeziehung stärken.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Marlene antwortet am Tag der Rüge: ‚Vielen Dank für Ihre Nachricht und die Fotos. Sie schreiben, dass auf einem Teil der Hoodies aus Auftrag 2026-0377 das alte Logo gedruckt ist. Bitte teilen Sie uns die genaue Anzahl und die betroffenen Größen mit. Wir prüfen den Fall sofort und melden uns bis morgen, 12 Uhr, mit einem Lösungsvorschlag.‘ Danach analysiert Deniz die Ursache in der Veredelung.",
-        "typische_fehler": "In der ersten Antwort wird entweder alles abgelehnt (‚Bei uns passiert so etwas nicht‘) oder vorschnell zugesagt (‚Sie bekommen selbstverständlich den vollen Preis zurück‘).",
         "verstaendnisfragen": [
-          "Was gehört in die erste Antwort auf eine Reklamation? Eingangsbestätigung, konkrete Benennung des Problems, Rückfragen zu fehlenden Angaben, nächster Schritt mit Termin.",
-          "Warum wird nach der Lösung die Ursache gesucht? Damit derselbe Fehler nicht wieder passiert."
-        ],
-        "pruefungsbezug": "Antwortschreiben auf Reklamationen werden nach Inhalt und Haltung bewertet: konkret, freundlich, verbindlich im nächsten Schritt, ohne vorschnelle Rechtsaussage.",
-        "merksatz": "Die erste Antwort bestätigt, benennt das Problem, fragt nach und nennt einen Termin; danach wird die Ursache abgestellt."
+          {
+            "frage": "Was gehört in die erste Antwort auf eine Reklamation?",
+            "antwort": "Eingangsbestätigung, Beschreibung des Problems, Rückfrage zu fehlenden Angaben und ein Termin für den nächsten Schritt.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum sucht MAKEL Studio nach der Lösung noch die Ursache?",
+            "antwort": "Damit derselbe Fehler nicht wieder passiert. Erst eine Maßnahme im Ablauf verhindert Wiederholungen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

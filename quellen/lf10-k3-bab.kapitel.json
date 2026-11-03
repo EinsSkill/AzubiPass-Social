@@ -6,66 +6,694 @@
   "untertitel": "Wo die Gemeinkosten hingehören — und wie man daraus Prozentsätze macht.",
  "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Gemeinkosten sind nicht direkt einzelnen Produkten zurechenbar.",
-          "Kostenarten und Kostenstellen werden in der inneren Rechnung verbunden."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst Aufbau und Zweck des Betriebsabrechnungsbogens und ordnest ihn zwischen Kostenarten- und Kostenträgerrechnung ein.",
+        "vorwissen_kurz": "Einzelkosten werden dem Produkt direkt zugerechnet. Gemeinkosten brauchen einen Umweg über die Kostenstellen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Umweg mit Zweck",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Den Stoff eines Hoodies kann MAKEL direkt ablesen. Für die Miete, den Strom der Näherei oder das Gehalt der Buchhaltung geht das nicht. Diese {{begriff:gemeinkosten|Gemeinkosten}} werden zuerst den Bereichen zugeordnet, in denen sie entstehen — den **Kostenstellen**. Das geschieht im {{begriff:bab|Betriebsabrechnungsbogen}} (BAB), einer Tabelle mit den Gemeinkostenarten in den Zeilen und den Kostenstellen in den Spalten.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "So sieht der BAB aus",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein einfacher BAB hat vier Hauptkostenstellen. In der **Materialstelle** fallen Einkauf, Warenannahme und Lager an, in der **Fertigungsstelle** Zuschnitt, Näherei und Stickerei, in der **Verwaltungsstelle** Geschäftsführung, Buchhaltung und Personal, in der **Vertriebsstelle** Verkauf, Versand und Marketing.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Summe",
+              "Material",
+              "Fertigung",
+              "Verwaltung",
+              "Vertrieb"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gemeinkostenarten",
+                  "Zeile für Zeile verteilt",
+                  "…",
+                  "…",
+                  "…",
+                  "…"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe Gemeinkosten",
+                  "222.000 €",
+                  "24.000 €",
+                  "126.000 €",
+                  "40.000 €",
+                  "32.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bezugsgröße",
+                  "",
+                  "Fertigungsmaterial",
+                  "Fertigungslöhne",
+                  "Herstellkosten",
+                  "Herstellkosten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zuschlagssatz",
+                  "",
+                  "15 %",
+                  "140 %",
+                  "10 %",
+                  "8 %"
+                ]
+              }
+            ],
+            "fazit": "Oben gehen Euro-Beträge hinein, unten kommen Prozentsätze heraus. Wie die Zeilen verteilt werden und wie die Prozentsätze entstehen, zeigen die nächsten beiden Abschnitte.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          }
         ],
-        "erklaerung": "Der Betriebsabrechnungsbogen verteilt Gemeinkosten auf Kostenstellen und liefert Zuschlagssätze. Er verbindet Kostenarten- und Kostenträgerrechnung. Die Kostenstelle zeigt, wo Kosten anfallen; der spätere Zuschlag führt sie auf das Produkt zurück.",
-        "beispiele": [
-          "Miete wird auf Kostenstellen nach Fläche verteilt.",
-          "Nach der Verteilung ergeben Material-, Fertigungs-, Verwaltungs- und Vertriebsstellen die Bezugsgrößen für die Kalkulation."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Hilfs- und Hauptkostenstellen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Größere Betriebe haben zusätzlich Hilfskostenstellen, etwa einen eigenen Fuhrpark oder eine Reparaturwerkstatt. Sie arbeiten nicht direkt für die Produkte, sondern für andere Stellen. Ihre Kosten werden deshalb in einem Zwischenschritt auf die Hauptkostenstellen umgelegt, bevor die Zuschlagssätze berechnet werden.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb sammelt Gemeinkosten und ordnet sie zunächst den passenden Kostenstellen zu. Erst danach werden Zuschlagssätze berechnet. Ohne BAB blieben die Gemeinkosten zwar insgesamt richtig, wären aber nicht verursachungsgerecht auf die Produkte verteilt.",
-        "typische_fehler": "Der BAB wird als bloße Buchhaltungstabelle behandelt oder Gemeinkosten werden direkt ohne Kostenstellen auf Produkte verteilt.",
         "verstaendnisfragen": [
-          "Was leistet der BAB? Verteilung von Gemeinkosten auf Kostenstellen und Berechnung von Zuschlagssätzen.",
-          "Welche Rechnungen verbindet er? Kostenartenrechnung und Kostenträgerrechnung."
-        ],
-        "pruefungsbezug": "Ordne jede BAB-Spalte einer Kostenstelle und einer Bezugsgröße zu, bevor du den Zuschlag berechnest.",
-        "merksatz": "Der BAB macht aus Gemeinkosten verursachungsgerechte Zuschlagssätze."
+          {
+            "frage": "Warum rechnet MAKEL die Miete nicht einfach durch die Zahl aller Hoodies, um sie auf ein Stück zu bekommen?",
+            "antwort": "Weil die Produkte die Bereiche sehr unterschiedlich beanspruchen. Ein aufwendig bestickter Hoodie belastet die Fertigung stärker als ein schlichtes Shirt. Über die Kostenstellen und passende Bezugsgrößen tragen Produkte die Gemeinkosten in dem Maß, in dem sie die Bereiche beanspruchen.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Was ist das eigentliche Ergebnis des BAB, mit dem die Kalkulation weiterarbeitet?",
+            "antwort": "Die Zuschlagssätze je Kostenstelle. Mit ihnen werden die Gemeinkosten in der Kostenträgerrechnung als Prozentsatz auf die Einzelkosten oder die Herstellkosten eines Produkts aufgeschlagen.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Ein Verteilungsschlüssel soll die Kostenverursachung abbilden.",
-          "Unterschiedliche Kostenarten brauchen unterschiedliche Schlüssel."
+        "darstellung": "vollfassung",
+        "ziel": "Du verteilst Gemeinkostenarten mit verursachungsgerechten Schlüsseln auf die Kostenstellen und prüfst die Summen.",
+        "vorwissen_kurz": "Ein Verteilungsschlüssel ist die Größe, nach der eine Kostenart auf die Stellen aufgeteilt wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Den passenden Schlüssel finden",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Manche Gemeinkosten lassen sich einer Stelle direkt zuordnen: Das Gehalt der Lagerleiterin gehört zur Materialstelle, das des Vertriebsleiters zum Vertrieb. Man nennt sie **Stelleneinzelkosten**. Andere fallen für mehrere Stellen gemeinsam an, etwa die Miete für das gesamte Gebäude. Diese **Stellengemeinkosten** werden nach einem Schlüssel verteilt, der abbildet, wodurch die Kosten verursacht werden.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der BAB von MAKEL für Oktober",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kostenart (Schlüssel)",
+              "Summe",
+              "Material",
+              "Fertigung",
+              "Verwaltung",
+              "Vertrieb"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gehälter, Hilfslöhne (Zugehörigkeit)",
+                  "96.000 €",
+                  "8.000 €",
+                  "50.000 €",
+                  "22.000 €",
+                  "16.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "Miete (Fläche 300 : 1.200 : 300 : 200 m²)",
+                  "30.000 €",
+                  "4.500 €",
+                  "18.000 €",
+                  "4.500 €",
+                  "3.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "Strom (Leistung 2 : 40 : 4 : 2 kW)",
+                  "24.000 €",
+                  "1.000 €",
+                  "20.000 €",
+                  "2.000 €",
+                  "1.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "Abschreibungen (Anlagenwert)",
+                  "48.000 €",
+                  "6.000 €",
+                  "30.000 €",
+                  "6.000 €",
+                  "6.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "Sonstige Gemeinkosten (Belege)",
+                  "24.000 €",
+                  "4.500 €",
+                  "8.000 €",
+                  "5.500 €",
+                  "6.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "222.000 €",
+                  "24.000 €",
+                  "126.000 €",
+                  "40.000 €",
+                  "32.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              }
+            ],
+            "fazit": "Die Summe aller Stellen muss die Summe der Kostenarten ergeben. Diese Querprobe zeigt Rechen- und Übertragungsfehler sofort.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "So entsteht eine Zeile: Die Miete von 30.000 € verteilt sich auf 2.000 m². Ein Quadratmeter trägt 30.000 € ÷ 2.000 = 15 €. Die Fertigung belegt 1.200 m² und trägt damit 1.200 × 15 € = 18.000 €. Beim Strom kostet ein installiertes Kilowatt 24.000 € ÷ 48 kW = 500 €; die Fertigung mit 40 kW trägt 20.000 €.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Miete wird nach Fläche, Strom nach Leistung oder Laufstunden, Sozialkosten nach Köpfen und Abschreibungen nach Anlagenwert verteilt. Ein unpassender Schlüssel verschiebt Kosten zwischen Stellen und verzerrt die Kalkulation dauerhaft, obwohl die Gesamtsumme unverändert bleibt.",
-        "beispiele": [
-          "Miete nach Quadratmetern verteilt die Raumkosten nach beanspruchter Fläche.",
-          "Sozialkosten nach Köpfen und Abschreibungen nach Anlagenwert ordnen die Gemeinkosten unterschiedlichen Ursachen zu."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ein unpassender Schlüssel in Zahlen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Verteilt MAKEL den Strom nach Fläche statt nach Leistung, trägt die Fertigung nur 1.200/2.000 = 60 % statt 83 %: 14.400 € statt 20.000 €. Die Verwaltung trägt dann 3.600 € statt 2.000 €. Der Fertigungszuschlag sinkt, Produkte mit viel Näh- und Stickzeit erscheinen billiger, als sie sind — und die Verwaltung wird mit Kosten belastet, die ihre Bildschirme nicht verursachen.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb legt für alle Gemeinkosten denselben Schlüssel fest. Die Miete wird dadurch nicht nach Fläche, die Maschinenenergie nicht nach Leistung und Sozialkosten nicht nach Beschäftigten verteilt. Der BAB wird mit passenden Schlüsseln neu aufgebaut, damit Produkte nicht dauerhaft zu billig oder zu teuer erscheinen.",
-        "typische_fehler": "Ein bequemer, aber unpassender Schlüssel wird gewählt, weil die Gesamtsumme stimmt. Gerade der unsichtbare Fehler bleibt in der Summe unauffällig.",
         "verstaendnisfragen": [
-          "Woran orientiert sich ein guter Schlüssel? An der Kostenverursachung.",
-          "Welcher Schlüssel passt zu Maschinenstrom? Leistung oder Laufstunden."
-        ],
-        "pruefungsbezug": "Begründe den Schlüssel nicht mit Gewohnheit, sondern mit der Ursache der jeweiligen Gemeinkosten.",
-        "merksatz": "Ein Schlüssel ist gut, wenn er die Ursache der Gemeinkosten abbildet."
+          {
+            "frage": "Die Reinigung des Gebäudes kostet 6.000 € im Monat. Wie viel trägt der Vertrieb bei den Flächen aus dem BAB?",
+            "antwort": "Die Gesamtfläche beträgt 2.000 m², der Vertrieb belegt 200 m², also 10 %. Er trägt 6.000 € × 200 ÷ 2.000 = 600 €.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist die Querprobe im BAB wichtig?",
+            "antwort": "Alle Gemeinkosten müssen vollständig auf die Stellen verteilt werden; es darf nichts verloren gehen oder doppelt erscheinen. Stimmen die Spaltensummen nicht mit der Summe der Kostenarten überein, ist beim Verteilen oder Übertragen ein Fehler passiert, der sonst in alle Zuschlagssätze und damit in jede Kalkulation wandern würde.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Zuschlagssätze setzen Gemeinkosten ins Verhältnis zu einer Bezugsgröße.",
-          "Jede Kostenstelle hat eine eigene passende Bezugsgröße."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die Zuschlagssätze aus den Stellensummen und den richtigen Bezugsgrößen, einschließlich der Herstellkosten als Basis für Verwaltung und Vertrieb.",
+        "vorwissen_kurz": "Die Summen des BAB zeigen, wie viel Gemeinkosten jede Stelle trägt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Betrag zum Prozentsatz",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Damit die Gemeinkosten in eine Stückkalkulation kommen, wird jede Stellensumme ins Verhältnis zu einer **Bezugsgröße** gesetzt, die man für jedes Produkt kennt. Der {{begriff:zuschlagssatz|Zuschlagssatz}} gibt an, wie viel Prozent Gemeinkosten auf diese Bezugsgröße aufgeschlagen werden.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für Material und Fertigung sind die Bezugsgrößen Einzelkosten: das Fertigungsmaterial und die Fertigungslöhne. Für Verwaltung und Vertrieb sind es die **Herstellkosten**, weil diese Bereiche für alle Produkte arbeiten und eine bessere Größe fehlt. Die Herstellkosten müssen deshalb zuerst berechnet werden.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Herstellkosten des Monats",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fertigungsmaterial",
+                  "160.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Materialgemeinkosten",
+                  "24.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Materialkosten",
+                  "184.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigungslöhne",
+                  "90.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Fertigungsgemeinkosten",
+                  "126.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Fertigungskosten",
+                  "216.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Herstellkosten (Material- + Fertigungskosten)",
+                  "400.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Erst mit den Herstellkosten lassen sich die Zuschlagssätze für Verwaltung und Vertrieb berechnen.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Der Zuschlagssatz lautet Gemeinkosten ÷ Bezugsgröße × 100. Materialgemeinkosten beziehen sich auf Fertigungsmaterial, Fertigungsgemeinkosten auf Fertigungslöhne. Verwaltungs- und Vertriebsgemeinkosten beziehen sich beide auf die Herstellkosten.",
-        "beispiele": [
-          "18.000 € Materialgemeinkosten ÷ 120.000 € Fertigungsmaterial × 100 = 15 %.",
-          "96.000 € Fertigungsgemeinkosten ÷ 80.000 € Fertigungslöhne × 100 = 120 %."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Herstellkosten des Umsatzes",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wurde im Monat mehr produziert als verkauft, liegt ein Teil der Herstellkosten als Bestandserhöhung im Lager. Für die Zuschläge von Verwaltung und Vertrieb verwendet man dann die Herstellkosten der verkauften Produkte: Herstellkosten der Erzeugung minus Bestandserhöhung beziehungsweise plus Bestandsminderung. In diesem Kapitel gibt es keine Bestandsveränderungen; deshalb sind beide Größen gleich.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k4"
+                ],
+                "text": "Zuschlagskalkulation eines Hoodies",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb hat 18.000 € Materialgemeinkosten bei 120.000 € Fertigungsmaterial und 96.000 € Fertigungsgemeinkosten bei 80.000 € Fertigungslöhnen. Die Sätze werden getrennt berechnet: 15 % Material und 120 % Fertigung. Erst diese Werte werden in der Kalkulation verwendet.",
-        "typische_fehler": "Verwaltung und Vertrieb werden auf Löhne statt auf Herstellkosten bezogen oder der Prozentsatz ohne ×100 angegeben. Auch werden Gemeinkosten verschiedener Stellen zusammengelegt.",
         "verstaendnisfragen": [
-          "Wie lautet die Zuschlagsformel? Gemeinkosten ÷ Bezugsgröße × 100.",
-          "Worauf beziehen sich Verwaltung und Vertrieb? Beide auf die Herstellkosten."
+          {
+            "frage": "Die Verwaltungsgemeinkosten betragen 45.000 €, die Herstellkosten 375.000 €. Wie hoch ist der Verwaltungszuschlag?",
+            "antwort": "45.000 € ÷ 375.000 € × 100 = 12 %.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum wird der Vertriebszuschlag nicht auf die Fertigungslöhne bezogen?",
+            "antwort": "Der Vertrieb arbeitet für alle Produkte, unabhängig davon, wie viel Lohn in einem Stück steckt. Die Fertigungslöhne bilden die Beanspruchung des Vertriebs nicht ab. Die Herstellkosten sind eine Größe, die alle Produkte haben und die mit ihrem Wert steigt; deshalb dienen sie als Bezugsgröße.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Normal- und Istgemeinkosten im BAB, berechnest Über- und Unterdeckung je Stelle und leitest vom Umsatzergebnis auf Normalkostenbasis zum Betriebsergebnis über.",
+        "vorwissen_kurz": "Normalzuschlagssätze sind Durchschnittswerte vergangener Perioden, mit denen laufend kalkuliert wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Kalkuliert wird vorher, abgerechnet nachher",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wenn MAKEL im Oktober einen Auftrag kalkuliert, sind die Gemeinkosten des Oktobers noch nicht bekannt. Gerechnet wird deshalb mit **Normalzuschlagssätzen**, den Durchschnittswerten der letzten Monate: Material 15 %, Fertigung 140 %, Verwaltung 10 %, Vertrieb 8 %. Am Monatsende zeigt der BAB die **Istgemeinkosten**. Der Vergleich beider Werte verrät, ob die Kalkulation die Gemeinkosten richtig getragen hat.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Oktober lagen die Einzelkosten bei 165.000 € Fertigungsmaterial und 92.000 € Fertigungslöhnen. Die Istgemeinkosten betrugen laut BAB: Material 25.500 €, Fertigung 133.200 €, Verwaltung 41.000 €, Vertrieb 33.500 €.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Vergleich Stelle für Stelle",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stelle",
+              "Normalgemeinkosten",
+              "Istgemeinkosten",
+              "Deckung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Material (15 % von 165.000 €)",
+                  "24.750 €",
+                  "25.500 €",
+                  "−750 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigung (140 % von 92.000 €)",
+                  "128.800 €",
+                  "133.200 €",
+                  "−4.400 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Verwaltung (10 % von 410.550 € Normal-Herstellkosten)",
+                  "41.055 €",
+                  "41.000 €",
+                  "+55 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrieb (8 % von 410.550 €)",
+                  "32.844 €",
+                  "33.500 €",
+                  "−656 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "227.449 €",
+                  "233.200 €",
+                  "−5.751 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Insgesamt wurden 5.751 € Gemeinkosten zu wenig verrechnet. Den größten Teil verursacht die Fertigung.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Normal-Herstellkosten ergeben sich aus 165.000 € + 24.750 € + 92.000 € + 128.800 € = 410.550 €. Die Istzuschlagssätze des Monats lassen sich zur Kontrolle berechnen: Material 25.500 € ÷ 165.000 € ≈ 15,45 %, Fertigung 133.200 € ÷ 92.000 € ≈ 144,78 %.",
+            "id": "b4-p3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Umsatzergebnis zum Betriebsergebnis",
+            "id": "b4-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL hat im Oktober alle produzierten Teile für 520.000 € verkauft. Auf Normalkostenbasis betragen die Selbstkosten 410.550 € + 41.055 € + 32.844 € = 484.449 €.",
+            "id": "b4-p4"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Umsatzerlöse",
+                  "520.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "− Selbstkosten zu Normalkosten",
+                  "484.449 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Umsatzergebnis",
+                  "35.551 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "− Kostenunterdeckung",
+                  "5.751 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Betriebsergebnis",
+                  "29.800 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Probe mit Istkosten: 520.000 € − (415.700 € + 41.000 € + 33.500 €) = 29.800 €. Die Unterdeckung erklärt genau den Unterschied.",
+            "id": "b4-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b4-b3"
+          }
         ],
-        "pruefungsbezug": "Schreibe vor jedem Satz Zähler und Bezugsgröße aus und rechne erst danach den Prozentsatz.",
-        "merksatz": "Material auf Material, Fertigung auf Löhne, Verwaltung und Vertrieb auf Herstellkosten."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Was eine dauerhafte Unterdeckung bedeutet",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine einmalige Abweichung kann Zufall sein, etwa eine große Reparatur. Zeigt die Fertigung aber Monat für Monat eine Unterdeckung, sind die Normalzuschläge zu niedrig. Dann kalkuliert MAKEL jeden Auftrag zu günstig und verschenkt Ergebnis. Die Ursache wird gesucht — gestiegene Energiepreise, mehr Ausschuss, geringere Auslastung — und der Normalzuschlag angepasst.",
+                "id": "b4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k4"
+                ],
+                "text": "Nachkalkulation eines Auftrags",
+                "id": "b4-d1-v1"
+              }
+            ],
+            "id": "b4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Die Verwaltung zeigt eine Überdeckung von 55 €. Muss MAKEL handeln?",
+            "antwort": "Kaum. Die Abweichung ist sehr klein und liegt im Rahmen normaler Schwankungen. Handlungsbedarf entsteht bei großen oder dauerhaft gleichgerichteten Abweichungen.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Warum wird die Unterdeckung vom Umsatzergebnis abgezogen?",
+            "antwort": "Das Umsatzergebnis ist mit Normalkosten gerechnet, also mit weniger Gemeinkosten, als tatsächlich angefallen sind. Die Unterdeckung ist der Teil der Istkosten, den die Normalrechnung nicht enthält. Zieht man sie ab, erhält man das tatsächliche Betriebsergebnis.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +712,10 @@
       "id": "lz3",
       "text": "Zuschlagssätze berechnen",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Normal- und Istzuschläge vergleichen und Über- oder Unterdeckung deuten"
     }
   ],
   "bloecke": [
@@ -332,6 +964,69 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Normal- und Istkosten",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Kalkuliert wird mit Zuschlagssätzen, bevor die tatsächlichen Gemeinkosten des Monats feststehen. Man verwendet deshalb **Normalzuschlagssätze** aus Durchschnittswerten vergangener Perioden. ==Am Monatsende vergleicht der BAB die damit verrechneten Normalgemeinkosten mit den tatsächlich angefallenen Istgemeinkosten.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Ergebnis",
+            "Bedeutung",
+            "Folge"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Kostenüberdeckung",
+                "Normalgemeinkosten > Istgemeinkosten",
+                "es wurde mehr verrechnet als angefallen ist"
+              ],
+              "detail": "**Die Kalkulation war vorsichtig.** Das Betriebsergebnis ist um die Überdeckung besser als das auf Normalkosten gerechnete Ergebnis."
+            },
+            {
+              "zellen": [
+                "Kostenunterdeckung",
+                "Normalgemeinkosten < Istgemeinkosten",
+                "es wurde zu wenig verrechnet"
+              ],
+              "detail": "**Die Preise haben einen Teil der Gemeinkosten nicht getragen.** Das Betriebsergebnis ist um die Unterdeckung schlechter. Hält sie über mehrere Monate an, müssen die Normalzuschläge angepasst werden."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Deckung = Normalgemeinkosten − Istgemeinkosten.** Positiv heißt Überdeckung, negativ Unterdeckung. Betriebsergebnis = Umsatzergebnis auf Normalkostenbasis + Überdeckung bzw. − Unterdeckung.",
+          "karteikarte": "Wie berechnet man Über- und Unterdeckung, und wie wirken sie auf das Betriebsergebnis?"
+        },
+        {
+          "typ": "check",
+          "frage": "In der Fertigung wurden 128.800 € Gemeinkosten zum Normalzuschlag verrechnet, tatsächlich angefallen sind 133.200 €. Was liegt vor?",
+          "optionen": [
+            {
+              "text": "Eine Überdeckung von 4.400 €",
+              "richtig": false,
+              "echo": "Die Istkosten sind höher als die verrechneten Normalkosten. Es wurde also zu wenig verrechnet, nicht zu viel."
+            },
+            {
+              "text": "Eine Unterdeckung von 4.400 €",
+              "richtig": true,
+              "echo": "Richtig. 128.800 € − 133.200 € = −4.400 €. Die Kalkulation hat 4.400 € Fertigungsgemeinkosten weniger angesetzt, als tatsächlich angefallen sind. Das Betriebsergebnis fällt um diesen Betrag schlechter aus als das auf Normalkosten gerechnete Ergebnis."
+            },
+            {
+              "text": "Keine Abweichung, weil die Fertigungslöhne gleich geblieben sind",
+              "richtig": false,
+              "echo": "Die Löhne sind nur die Bezugsgröße. Verglichen werden die verrechneten und die tatsächlichen Gemeinkosten."
+            }
+          ]
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -342,7 +1037,9 @@
     "Ein unpassender Schlüssel verzerrt die Kalkulation dauerhaft und unsichtbar.",
     "{{begriff:zuschlagssatz|Zuschlagssatz}} = Gemeinkosten ÷ Bezugsgröße × 100.",
     "Material bezieht sich auf Fertigungsmaterial, Fertigung auf Fertigungslöhne.",
-    "Verwaltung und Vertrieb beziehen sich beide auf die Herstellkosten."
+    "Verwaltung und Vertrieb beziehen sich beide auf die Herstellkosten.",
+    "Kalkuliert wird mit Normalzuschlagssätzen; am Periodenende werden sie mit den Istgemeinkosten verglichen.",
+    "Normalgemeinkosten über den Istkosten ergeben eine Überdeckung, darunter eine Unterdeckung."
   ],
   "selbsttest": [
     {

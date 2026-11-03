@@ -79,6 +79,72 @@ Paragraphen und Hervorhebungen bleiben daher anklickbar. Für Kapitel ohne eigen
 Redaktion bündelt der Build vorhandene Vertiefungen, Tabellenhinweise und
 Grafikregeln automatisch an ihrer ursprünglichen Stelle.
 
+### Erweiterter Modus (Format 2, Vollfassung)
+
+Seit 28.10.2026 kann ein Abschnitt statt eines Zusatzes eine **Vollfassung**
+bekommen. Sie ersetzt beim Aufklappen die erklärenden Absätze der Kurzfassung;
+Grafiken, Checks, Karten und Hinweise bleiben genau einmal im Dokument
+(sie werden verschoben, nicht kopiert) und behalten Kennung und Lernstand.
+Einstieg pro Abschnitt („Ausführlicher verstehen“) oder für das ganze Kapitel
+(„Ganzes Kapitel ausführlich lesen“) — beide zeigen denselben Inhalt.
+Der Zustand gilt nur für die Sitzung; es gibt keinen neuen Lernstandswert.
+
+```json
+"ausfuehrlich": {
+  "format": 2,
+  "abschnitte": [
+    {
+      "abschnitt": "b2",
+      "darstellung": "vollfassung",
+      "ziel": "Du kannst …",
+      "vorwissen_kurz": "Ein Satz Anschluss an Bekanntes (optional).",
+      "inhalt": [
+        { "typ": "zwischentitel", "text": "…" },
+        { "typ": "absatz", "text": "…" },
+        { "typ": "basis", "ref": "grafik-1" },
+        { "typ": "tabelle", "spalten": […], "zeilen": […], "fazit": "…" },
+        { "typ": "liste", "nummeriert": true, "punkte": ["…"] },
+        { "typ": "verweis", "text": "…", "ziele": ["k3-b3", "lf9:k1"] }
+      ],
+      "details": [
+        { "id": "b-frist", "kategorie": "sonderfall", "titel": "…", "inhalt": [ … ] }
+      ],
+      "verstaendnisfragen": [ { "id": "b1", "frage": "…", "antwort": "…" } ],
+      "quellen": [ { "titel": "§ 150 BGB", "url": "https://…", "bezug": "Wortlaut geprüft am …" } ]
+    }
+  ]
+}
+```
+
+Regeln (der Build prüft sie in `quellen/vertiefung.py` und bricht mit Datei und
+Abschnitt ab):
+
+- `format: 2` ist Pflicht, sobald eine Vollfassung vorkommt. Ein Abschnitt hat
+  entweder eine Vollfassung oder einen Alteintrag, nie beides.
+- `basis` übernimmt einen Block der Kurzfassung mit eigener Funktion. Schlüssel:
+  Blocktyp plus laufende Nummer innerhalb des Abschnitts (`grafik-1`, `check-1`,
+  `merke-2` …). Erlaubt: grafik, check, zuordnen, merke, tabelle, achtung,
+  praxistipp, vertiefung. Jeder Basisblock höchstens einmal.
+- Absätze der Kurzfassung werden ersetzt — die Vollfassung muss ihren Inhalt
+  daher vollständig selbst tragen. Ein Abschnitt ohne Absatz bekommt keine
+  Vollfassung.
+- Details: `kategorie` ∈ grundlagen · vergleich · sonderfall · zusammenhang;
+  `titel` Pflicht; Inhalt nur absatz, tabelle, liste, verweis.
+- Verständnisfragen brauchen eine eigene `antwort`; sie ist verborgen, bis sie
+  aufgeklappt wird, und wird nicht in die Suche aufgenommen.
+- Verweisziele: `k3`, `k3-b3` (gleiches Lernfeld) oder `lf9:k1` (gleicher
+  Beruf). Nicht auflösbare Ziele brechen den Build ab.
+- `id` von Details und Fragen: Kleinbuchstaben, Ziffern, Bindestrich; im
+  Abschnitt eindeutig.
+
+Deep Links (auch aus der Suche): `lf4.html?ansicht=ausfuehrlich#k3-b1` öffnet die
+Vollfassung, `&detail=a-ohne-skonto` zusätzlich ein Detail bzw. eine Frage. Der
+Query-Teil wird nach dem Öffnen aus der Adresse entfernt.
+
+Migration: Ein Alteintrag bleibt gültig und erscheint weiter als Zusatz „Mehr
+Erklärung“. Umgestellt wird abschnittsweise — Alteintrag entfernen, Vollfassung
+eintragen, `format: 2` setzen, Build und `erweiterter_modus_test.py` laufen lassen.
+
 `lernziele[].abschnitt` zeigt auf die `id` eines Abschnitts. Genau daran hängt die
 Fortschrittslogik: Sobald jemand den Abschnitt liest, hakt sich das Lernziel ab.
 **Jedes Lernziel braucht einen Abschnitt — sonst kann es nie erreicht werden.**

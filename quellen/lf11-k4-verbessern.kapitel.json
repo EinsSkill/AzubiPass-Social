@@ -6,66 +6,416 @@
   "untertitel": "Erst verstehen, dann ändern. Nie umgekehrt.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Kunden zahlen nicht für jede interne Tätigkeit.",
-          "Messen und Ursachenanalyse müssen vor einer Änderung stehen."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst in einem Büroprozess Warten, Doppelarbeit, übermäßiges Prüfen, Suchen, Nacharbeit und Rückfragen, unterscheidest Verschwendung von notwendigen Tätigkeiten und ordnest ein passendes Gegenmittel zu.",
+        "vorwissen_kurz": "Nicht alles, was in einem Prozess Zeit kostet, bringt den Vorgang für den Kunden voran.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was der Kunde nicht bezahlen würde",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Verschwendung ist jede Tätigkeit und jede Wartezeit, die Aufwand verursacht, ohne den Vorgang aus Kundensicht voranzubringen. Im Büro tritt sie in wiederkehrenden Formen auf. Wer sie benennen kann, findet leichter Ansatzpunkte für Verbesserungen. Wichtig ist die Unterscheidung: Manche Tätigkeiten bringen den Kunden nicht voran und sind trotzdem notwendig, etwa gesetzlich vorgeschriebene Prüfungen.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Verschwendung in der Eingangsrechnungsprüfung",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Buchhaltung von MAKEL prüft jeden Monat rund 600 Eingangsrechnungen. Die Prozessverantwortliche begleitet einen Tag lang den Ablauf.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Beobachtung",
+              "Form",
+              "Gegenmittel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnungen über 50 € warten auf die Unterschrift der Abteilungsleitung, die zwei Tage auf Dienstreise ist",
+                  "Warten",
+                  "Wertgrenze anheben, Vertretung regeln"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnungsdaten werden aus der PDF-Datei ins Buchhaltungsprogramm abgetippt",
+                  "Doppelarbeit",
+                  "E-Rechnung direkt einlesen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jede Rechnung wird von zwei Personen vollständig geprüft, auch Kleinbeträge",
+                  "übermäßiges Prüfen",
+                  "Vier-Augen-Prüfung nach Betrag und Risiko staffeln"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferscheine werden in drei verschiedenen Ordnern gesucht",
+                  "Suchen",
+                  "einheitliche digitale Ablage mit Bestellnummer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnungen mit falscher Bestellnummer gehen an den Lieferer zurück",
+                  "Nacharbeit, Rückfragen",
+                  "Bestellnummer als Pflichtangabe bei der Bestellung mitteilen"
+                ]
+              }
+            ],
+            "fazit": "Fast jede Form kommt vor. Die Vier-Augen-Prüfung bei hohen Beträgen bleibt, weil sie Zahlungsrisiken begrenzt — sie wird nur gestaffelt.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Verschwendung ist, wofür der Kunde nicht zahlen würde: Warten, Doppelarbeit, übermäßiges Prüfen, Suchen, Nacharbeit und Rückfragen. Nicht jede nicht wertschöpfende Tätigkeit ist überflüssig, weil manche vorgeschrieben ist. Vor einer Maßnahme wird der Ist-Ablauf gemessen und die Ursache gesucht.",
-        "beispiele": [
-          "Lange Wartezeit vor einer Freigabe ist Verschwendung, wenn der Vorgang dadurch ohne Bearbeitung liegt.",
-          "Eine gesetzlich vorgeschriebene Prüfung ist nicht automatisch überflüssig, auch wenn sie aus Kundensicht keinen unmittelbaren Wert schafft."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Verschwendung und Fehler",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Verschwendung ist nicht dasselbe wie ein Fehler. Ein Fehler, etwa eine falsch gebuchte Rechnung, ist ein falsches Ergebnis. Verschwendung kann auch dann vorliegen, wenn alles richtig ist — zum Beispiel, wenn eine korrekte Rechnung drei Tage auf eine Unterschrift wartet. Beides kostet Zeit, braucht aber verschiedene Gegenmittel.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Reklamationen werden erst nach elf Tagen beantwortet, obwohl die Bearbeitung 1,5 Stunden dauert. Die Differenz zeigt, dass die Liegezeit vor der Freigabe untersucht werden muss. Erst danach werden Wertgrenze, feste Freigabezeiten und Vertretung als Maßnahmen geprüft.",
-        "typische_fehler": "Jede Prüfung wird als Verschwendung gestrichen oder die Bearbeitung beschleunigt, ohne die Ursache der Liegezeit zu messen.",
         "verstaendnisfragen": [
-          "Welche Formen der Verschwendung nennt der Inhalt? Warten, Doppelarbeit, übermäßiges Prüfen, Suchen, Nacharbeit und Rückfragen.",
-          "Ist jede nicht wertschöpfende Tätigkeit überflüssig? Nein, manche ist vorgeschrieben."
-        ],
-        "pruefungsbezug": "Nenne zuerst die gemessene Zeitverteilung und unterscheide notwendige Prüfung von vermeidbarer Warte- oder Doppelarbeit.",
-        "merksatz": "Erst messen und Ursache finden, dann Verschwendung gezielt beseitigen."
+          {
+            "frage": "Warum wird die Vier-Augen-Prüfung nicht ganz abgeschafft?",
+            "antwort": "Weil sie bei hohen Beträgen vor Fehlzahlungen und Betrug schützt. Sie bringt den Vorgang nicht voran, ist aber notwendig. Verbessert wird, indem sie nach Risiko gestaffelt wird, statt jede Rechnung gleich zu behandeln.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Ein Lieferschein muss jedes Mal gesucht werden. Welche Form der Verschwendung ist das, und was hilft?",
+            "antwort": "Suchen. Es hilft eine einheitliche Ablage mit festen Regeln, etwa digital mit der Bestellnummer als Suchbegriff, sodass jeder den Beleg sofort findet.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Verbesserung ist ein wiederholbarer Lernprozess.",
-          "Ein Ziel muss messbar sein, damit eine Wirkung geprüft werden kann."
+        "darstellung": "vollfassung",
+        "ziel": "Du bearbeitest einen Prozessfehler mit dem PDCA-Zyklus als Teil des kontinuierlichen Verbesserungsprozesses, trennst Ursache, Maßnahme, Verantwortung und gemessene Wirkung und hältst das Ergebnis in einer Verfahrensanweisung mit Version und Freigabe fest.",
+        "vorwissen_kurz": "Eine Änderung ist erst dann eine Verbesserung, wenn nachgewiesen ist, dass sie wirkt, und wenn sie danach dauerhaft gilt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Verbessern als Kreislauf",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der **kontinuierliche Verbesserungsprozess (KVP)** beschreibt die Haltung, Abläufe in vielen kleinen Schritten immer wieder zu verbessern, statt auf eine große Reform zu warten. Das Werkzeug dafür ist der PDCA-Zyklus mit den Schritten **Planen, Tun, Prüfen, Handeln**. Nach dem letzten Schritt beginnt der Kreis von vorn, weil jede Verbesserung neue Ansatzpunkte zeigt.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rechnungen gehen zu spät raus",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Händler bekommen ihre Rechnung im Durchschnitt erst fünf Tage nach der Lieferung. Dadurch verschiebt sich auch der Zahlungseingang. Die Prozessverantwortliche bearbeitet das Problem mit dem PDCA-Zyklus.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Inhalt",
+              "Verantwortlich"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Planen",
+                  "Ursache: Der Versand gibt Lieferscheine gesammelt freitags an die Buchhaltung; dafür gibt es keine Regel. Ziel: Rechnung spätestens am Tag nach der Lieferung. Maßnahme: Der Lieferschein wird beim Verbuchen des Versands im System erzeugt und löst automatisch den Rechnungsentwurf aus.",
+                  "Prozessverantwortliche mit Versand und Buchhaltung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Tun",
+                  "Vier Wochen Erprobung nur für Händler aus Nordrhein-Westfalen",
+                  "Leitung Versand"
+                ]
+              },
+              {
+                "zellen": [
+                  "Prüfen",
+                  "Messung mit derselben Kennzahl wie vorher: Abstand Lieferung → Rechnung sinkt im Test von 5,0 auf 0,8 Tage; Fehlerquote der Rechnungen unverändert bei 1 %",
+                  "Controlling"
+                ]
+              },
+              {
+                "zellen": [
+                  "Handeln",
+                  "Ablauf gilt für alle Händler; Verfahrensanweisung wird angepasst und freigegeben; nach drei Monaten erneute Messung",
+                  "Prozessverantwortliche"
+                ]
+              }
+            ],
+            "fazit": "Ursache, Maßnahme, Verantwortung und gemessene Wirkung sind getrennt festgehalten. Erst die Messung im Prüfschritt zeigt, dass die Änderung wirkt und keine neuen Fehler verursacht.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Verfahrensanweisung",
+            "id": "b2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Damit der neue Ablauf nicht wieder einschläft, wird er im Handeln-Schritt verbindlich festgehalten. Eine **Verfahrensanweisung** beschreibt, wer was wann tut. Version und Freigabe zeigen, welche Fassung gilt und wer sie in Kraft gesetzt hat.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Feld",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Titel und Nummer",
+                  "VA-VT-07 Rechnungsstellung an Händler"
+                ]
+              },
+              {
+                "zellen": [
+                  "Version und Datum",
+                  "Version 2.0 vom 2. November 2026 (ersetzt Version 1.3)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Geltungsbereich",
+                  "alle Lieferungen an Händler im In- und Ausland"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zweck",
+                  "Rechnung spätestens am Arbeitstag nach der Lieferung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ablauf",
+                  "1. Versand verbucht die Sendung im System. 2. System erzeugt Lieferschein und Rechnungsentwurf. 3. Buchhaltung prüft den Entwurf bis 12 Uhr des Folgetags und verschickt ihn als E-Rechnung."
+                ]
+              },
+              {
+                "zellen": [
+                  "Zuständigkeiten",
+                  "Versand: Verbuchen am selben Tag; Buchhaltung: Prüfung und Versand; Prozessverantwortliche: monatliche Kennzahl"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachweis",
+                  "Kennzahl „Tage Lieferung → Rechnung“ im Monatsbericht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erstellt und freigegeben",
+                  "erstellt: Prozessverantwortliche; freigegeben: kaufmännischer Geschäftsführer"
+                ]
+              }
+            ],
+            "fazit": "Jede Kollegin kann nachlesen, was gilt. Ändert sich der Ablauf erneut, entsteht Version 2.1 — die alte Fassung wird als ungültig gekennzeichnet.",
+            "id": "b2-t2"
+          }
         ],
-        "erklaerung": "Der Verbesserungskreislauf lautet Planen, Tun, Prüfen, Handeln. Im Planen wird gemessen, die Ursache gesucht und eine Maßnahme mit Ziel festgelegt. Im Tun wird sie begrenzt erprobt. Im Prüfen werden dieselben Kennzahlen erneut erhoben. Im Handeln wird die Verbesserung standardisiert oder verworfen und eine neue Ursache untersucht.",
-        "beispiele": [
-          "Eine Freigabe wird drei Monate in einem Bereich mit fester Uhrzeit erprobt und danach mit der bisherigen Durchlaufzeit verglichen.",
-          "Wirkt die Maßnahme, wird sie als Arbeitsanweisung festgeschrieben; wirkt sie nicht, beginnt die Ursachenanalyse erneut."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn der Prüfschritt keine Wirkung zeigt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bleibt der Abstand trotz Maßnahme bei fünf Tagen, war die Ursache falsch bestimmt, oder die Maßnahme wurde nicht umgesetzt. Dann wird nicht die Verfahrensanweisung geändert, sondern der Kreis beginnt mit einer neuen Ursachensuche. Auch das ist ein Ergebnis des PDCA-Zyklus.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Für die Reklamationsfreigabe wird zunächst der Ist-Flussgrad gemessen. Danach wird eine Wertgrenze in einem Bereich erprobt. Nach drei Monaten werden Durchlaufzeit und Fehlerquote mit denselben Kennzahlen verglichen. Bei Erfolg wird der Ablauf dokumentiert; bei Misserfolg wird die Ursache neu geprüft.",
-        "typische_fehler": "Der Prüfschritt wird ausgelassen oder die Maßnahme sofort im ganzen Betrieb eingeführt. Ohne Handeln fällt eine gute Lösung später in alte Gewohnheiten zurück.",
         "verstaendnisfragen": [
-          "Wie heißen die vier Schritte? Planen, Tun, Prüfen, Handeln.",
-          "Warum ist Prüfen besonders wichtig? Nur die Messung zeigt, ob die Maßnahme gewirkt hat."
-        ],
-        "pruefungsbezug": "Nenne die Reihenfolge vollständig und erkläre, welche Kennzahl vor und nach der Maßnahme gleich erhoben wird.",
-        "merksatz": "Planen, tun, prüfen, handeln — Verbesserung wird erst durch Prüfen und Standardisieren dauerhaft."
+          {
+            "frage": "Warum wird die Maßnahme zuerst nur für Händler aus Nordrhein-Westfalen erprobt?",
+            "antwort": "Damit ein Fehlschlag überschaubar bleibt. Zeigt die Erprobung Probleme, betrifft das nur einen Teil der Kunden, und der Ablauf kann angepasst werden, bevor er überall gilt.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Wozu braucht die Verfahrensanweisung eine Versionsnummer und eine Freigabe?",
+            "antwort": "Damit klar ist, welche Fassung gilt und wer sie in Kraft gesetzt hat. Ohne Version könnten alte Ausdrucke weiter benutzt werden; ohne Freigabe wäre unklar, ob der Ablauf verbindlich ist.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Software bildet den vorgegebenen Ablauf ab.",
-          "Digitalisierung ist ein Mittel, kein selbstständiges Prozessziel."
+        "darstellung": "vollfassung",
+        "ziel": "Du entscheidest, ob ein Prozess vor der Einführung neuer Software überarbeitet werden muss, und begründest die Reihenfolge Prozess vor Technik mit Kennzahlen.",
+        "vorwissen_kurz": "Software kann Abläufe beschleunigen. Sie übernimmt aber auch die Umwege, die im Ablauf stecken.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst ordnen, dann digitalisieren",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Digitalisierung wird oft als Lösung für langsame Abläufe gesehen. Software kann Medienbrüche beseitigen, Daten automatisch weitergeben und Fristen überwachen. Sie arbeitet aber genau den Ablauf ab, den man ihr vorgibt. Enthält dieser überflüssige Freigaben oder unklare Zuständigkeiten, werden sie in Software gegossen — und kosten dann zusätzlich Lizenzen und Anpassungen.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein neues Warenwirtschaftssystem?",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Geschäftsführung von MAKEL überlegt, wegen der langen Bearbeitung von Händlerbestellungen ein neues Warenwirtschaftssystem einzuführen.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ist-Prozess aufnehmen",
+                  "Bahnendarstellung mit vier Übergaben, Durchlaufzeit 6,2 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeit zerlegen",
+                  "Bearbeitung 3 Stunden, Rest Liegezeit vor Kreditprüfung und Lieferscheinweitergabe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Organisatorisch verbessern",
+                  "Wertgrenze für Kreditprüfung, Lieferschein löst Rechnung aus"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erneut messen",
+                  "Durchlaufzeit 3,9 Tage, ohne neue Software"
+                ]
+              },
+              {
+                "zellen": [
+                  "Über Technik entscheiden",
+                  "Das bestehende System reicht; ergänzt wird nur der automatische Import aus dem Händlerportal"
+                ]
+              }
+            ],
+            "fazit": "Die größte Verbesserung kam aus der Organisation, nicht aus der Software. Die Technik wird gezielt dort ergänzt, wo noch ein Medienbruch übrig ist.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Ein schlechter Prozess wird durch Digitalisierung nicht automatisch gut. Überflüssige Schritte, Mehrfachfreigaben und Doppelerfassungen bleiben bestehen, wenn der Ablauf vorher nicht aufgenommen, gemessen und bereinigt wurde. Erst danach werden Anforderungen an Software klar und der spätere Nutzen messbar.",
-        "beispiele": [
-          "Ein Papierformular wird nicht dadurch sinnvoll, dass es unverändert digital nachgebaut wird.",
-          "Nach der Prozessbereinigung kann ein System gezielt verglichen werden, statt die Arbeitsweise dem Anbieter zu überlassen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Beteiligte einbinden",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Prozess, den die Beteiligten mitgestaltet haben, wird eher angenommen als einer, der ihnen mit neuer Software vorgegeben wird. Deshalb lohnt es, Lager, Versand und Buchhaltung schon bei der Aufnahme des Ist-Prozesses zu beteiligen. Ihre Kenntnis der Sonderfälle entscheidet oft darüber, ob ein neuer Ablauf im Alltag funktioniert.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb will den Reklamationsprozess sofort digitalisieren. Vorher werden tatsächlicher Ablauf, Liegezeiten, Freigaben und Doppelerfassungen aufgenommen. Überflüssige Schritte werden beseitigt, messbare Ziele festgelegt und erst dann die Softwareanforderungen formuliert. Nach der Einführung wird der Nutzen mit den Ausgangswerten verglichen.",
-        "typische_fehler": "Digitalisierung wird als Lösung ohne Ursachenanalyse verstanden. Außerdem wird Erfolg nur an Einführung oder Lizenzkauf statt an Durchlaufzeit, Qualität und Nutzen gemessen.",
         "verstaendnisfragen": [
-          "Warum muss der Prozess vor der Digitalisierung geordnet werden? Software würde sonst Umwege und Fehler nur digital festschreiben.",
-          "Woran wird der Nutzen später gemessen? An vorher festgelegten Kennzahlen und Ausgangswerten."
-        ],
-        "pruefungsbezug": "Begründe Digitalisierung immer mit Prozessaufnahme, Bereinigung, Anforderungen und späterem Vergleich.",
-        "merksatz": "Erst den Prozess verbessern, dann digitalisieren — Software repariert keinen schlechten Ablauf."
+          {
+            "frage": "Warum misst MAKEL nach der organisatorischen Verbesserung erneut, bevor über Software entschieden wird?",
+            "antwort": "Um zu sehen, welches Problem nach den einfachen Maßnahmen noch übrig ist. Erst dann lassen sich Anforderungen an Software formulieren, die wirklich gebraucht werden.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Wann ist Digitalisierung im Beispiel sinnvoll?",
+            "antwort": "Beim Import aus dem Händlerportal. Dort liegen die Daten schon digital vor und werden trotzdem abgetippt. Software beseitigt hier einen Medienbruch, den keine organisatorische Regel lösen kann.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -110,7 +460,7 @@
                 "Vorgang liegt vor einer Freigabe",
                 "Wertgrenzen, feste Freigabezeiten, Vertretung"
               ],
-              "detail": "**Der größte Block in fast jedem Büroprozess.** Oft reicht schon eine Wertgrenze: Unterhalb davon entfällt die Freigabe ganz."
+              "detail": "**Oft der größte Block im Büroprozess.** Oft reicht schon eine Wertgrenze: Unterhalb davon entfällt die Freigabe ganz."
             },
             {
               "zellen": [
@@ -169,7 +519,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Verbesserung ist kein Projekt mit Ende, sondern ein Kreislauf. ==Der bekannteste heißt nach seinen vier Schritten **Planen, Tun, Prüfen, Handeln**== — und der wichtigste davon ist der dritte."
+          "text": "Verbesserung ist kein Projekt mit Ende, sondern ein Kreislauf. ==Der bekannteste heißt nach seinen vier Schritten **Planen, Tun, Prüfen, Handeln**== — und am häufigsten übersprungen wird der dritte."
         },
         {
           "typ": "grafik",

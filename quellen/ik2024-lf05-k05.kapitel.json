@@ -6,86 +6,477 @@
   "untertitel": "Materialarten unterscheiden, Anschaffungskosten mit Rabatt und Bezugskosten bestimmen, Zugang und Verbrauch trennen, Rücksendungen korrigieren.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Ein Industriebetrieb verarbeitet eingekauftes Material zu eigenen Erzeugnissen.",
-          "Material liegt oft eine Weile im Lager, bevor es verbraucht wird."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest eingekauftes Material als Roh-, Hilfs- oder Betriebsstoff ein, wählst das passende Bestandskonto und erklärst, was die Bestandsmethode für Einkauf und Verbrauch bedeutet.",
+        "vorwissen_kurz": "Nicht alles, was ein Industriebetrieb einkauft, steckt später im fertigen Erzeugnis. Danach richtet sich die Einordnung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was im Hoodie steckt — und was nicht",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio kauft Hoodie-Rohlinge und Stoffe ein, bestickt und bedruckt sie und verkauft sie als eigene Erzeugnisse. **Rohstoffe** sind der Hauptbestandteil des Erzeugnisses, **Hilfsstoffe** gehen als Nebenbestandteil ein, etwa Stickgarn oder Etiketten. **Betriebsstoffe** werden bei der Herstellung verbraucht, sind aber im Erzeugnis nicht enthalten, etwa Maschinenöl. Jede Materialart hat im IKR ein eigenes Bestandskonto.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Einkaufstag bei MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Eingang",
+              "Materialart",
+              "Konto"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "200 Hoodie-Rohlinge aus Bio-Baumwolle",
+                  "Rohstoff",
+                  "2000 Rohstoffe"
+                ]
+              },
+              {
+                "zellen": [
+                  "40 Spulen Stickgarn",
+                  "Hilfsstoff",
+                  "2020 Hilfsstoffe"
+                ]
+              },
+              {
+                "zellen": [
+                  "500 Etiketten mit Pflegehinweisen",
+                  "Hilfsstoff",
+                  "2020 Hilfsstoffe"
+                ]
+              },
+              {
+                "zellen": [
+                  "5 Liter Maschinenöl für die Stickmaschinen",
+                  "Betriebsstoff",
+                  "2030 Betriebsstoffe"
+                ]
+              }
+            ],
+            "fazit": "Rohlinge bilden den Hoodie, Garn und Etiketten werden Teil davon, das Öl nicht. Danach richtet sich das Bestandskonto.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bestand zuerst, Aufwand beim Verbrauch",
+            "id": "a1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio bucht nach der **Bestandsmethode**: Eingekauftes Material kommt zunächst auf das Bestandskonto. Erst wenn es laut Materialentnahmeschein in die Produktion geht, wird es als Aufwand gebucht. Bei der **aufwandsorientierten Methode** wird jeder Einkauf sofort als Aufwand gebucht, und der Bestand wird erst bei der Inventur angepasst. Beide Wege führen am Jahresende zum gleichen Ergebnis; in Aufgaben steht, welcher gilt.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "erklaerung": "Im Industriebetrieb unterscheidet man Rohstoffe (Hauptbestandteil des Erzeugnisses), Hilfsstoffe (Nebenbestandteil) und Betriebsstoffe (gehen nicht ins Erzeugnis ein, werden aber für die Produktion verbraucht). Für die Buchung gibt es zwei Verfahren. Bei der Bestandsmethode wird der Einkauf zunächst auf dem Bestandskonto (zum Beispiel 2000 Rohstoffe) erfasst; der Verbrauch wird erst gebucht, wenn das Material laut Entnahmeschein in die Produktion geht. Bei der aufwandsorientierten Methode wird der Einkauf sofort als Aufwand (6000 Aufwendungen für Rohstoffe) gebucht und der Bestand am Jahresende korrigiert. In diesem Lernfeld arbeitet MAKEL ausdrücklich mit der Bestandsmethode.",
-        "beispiele": [
-          "Hoodie-Rohlinge und Baumwollstoff sind bei MAKEL Rohstoffe.",
-          "Druckfarbe, Stickgarn und Etiketten sind Hilfsstoffe; Maschinenöl und Siebreiniger sind Betriebsstoffe."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Wann welche Methode sinnvoll ist",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Bestandsmethode zeigt jederzeit den aktuellen Lagerwert und den tatsächlichen Verbrauch, braucht aber Entnahmescheine für jede Materialbewegung. Die aufwandsorientierte Methode ist einfacher, eignet sich aber vor allem für Material, das schnell verbraucht wird, etwa kleine Mengen Betriebsstoffe.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Sandra erklärt Luca: ‚Wir kaufen Rohlinge in großen Mengen ein und lagern sie. Würden wir sie beim Einkauf sofort als Aufwand buchen, sähe der Monat mit der Großbestellung viel schlechter aus als die Monate, in denen wir die Rohlinge tatsächlich bedrucken. Deshalb buchen wir erst auf Bestand und den Verbrauch über die Entnahmescheine.‘",
-        "typische_fehler": "Eingekauftes Material gleichzeitig als Bestand und noch einmal sofort als Verbrauch erfassen — dann ist der Aufwand doppelt.",
         "verstaendnisfragen": [
-          "Wodurch unterscheiden sich Hilfs- und Betriebsstoffe? Hilfsstoffe gehen als Nebenbestandteil ins Erzeugnis ein, Betriebsstoffe nicht.",
-          "Wann entsteht bei der Bestandsmethode Aufwand? Erst beim Verbrauch, also bei der Entnahme für die Produktion."
-        ],
-        "pruefungsbezug": "In Aufgaben steht, welche Methode gilt; die Buchungen unterscheiden sich vollständig. Immer zuerst die Methode lesen.",
-        "merksatz": "Roh-, Hilfs- und Betriebsstoffe unterscheiden; bei der Bestandsmethode erst Bestand, Aufwand erst beim Verbrauch."
+          {
+            "frage": "Ist Druckfarbe für die Hoodies ein Roh-, Hilfs- oder Betriebsstoff?",
+            "antwort": "Ein Hilfsstoff. Sie wird Teil des Erzeugnisses, ist aber nicht sein Hauptbestandteil.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was wird bei der Bestandsmethode gebucht, wenn Material eingekauft, aber noch nicht verbraucht wurde?",
+            "antwort": "Nur der Bestandszugang mit Vorsteuer. Aufwand entsteht erst bei der Entnahme für die Produktion.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Lieferanten gewähren Rabatte und berechnen oft Fracht oder Verpackung.",
-          "Vermögensgegenstände werden mit ihren Anschaffungskosten bewertet."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst die Anschaffungskosten eines Materialzugangs nach § 255 HGB aus Listenpreis, Rabatt und Bezugskosten und buchst den Zugang mit Vorsteuer.",
+        "vorwissen_kurz": "Der Listenpreis ist selten der Betrag, mit dem Material in den Büchern steht. Nachlässe werden abgezogen, Nebenkosten hinzugerechnet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was Material wirklich kostet",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach {{par:hgb-255|§ 255 HGB}} wird Material mit seinen Anschaffungskosten erfasst. Dazu gehören der Kaufpreis abzüglich Minderungen wie {{begriff:rabatt|Rabatt}} sowie alle Nebenkosten, die nötig sind, um das Material in den Betrieb zu bringen, die {{begriff:bezugskosten|Bezugskosten}}: Fracht, Verpackung, Transportversicherung. Die Vorsteuer gehört nicht dazu, weil MAKEL Studio sie vom Finanzamt zurückbekommt.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rohlinge mit Rabatt und Fracht",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio bestellt 200 Rohlinge zu je 8 € netto. Der Lieferant gewährt 5 % Mengenrabatt und berechnet 60 € Fracht.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Listenpreis 200 × 8 €",
+                  "1.600,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "− 5 % Rabatt",
+                  "80,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zieleinkaufspreis",
+                  "1.520,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Fracht",
+                  "60,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Anschaffungskosten (Materialzugang netto)",
+                  "1.580,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "+ 19 % Vorsteuer",
+                  "300,20 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Verbindlichkeit",
+                  "1.880,20 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Buchungssatz: 2000 Rohstoffe 1.580,00 € und 2600 Vorsteuer 300,20 € an 4400 Verbindlichkeiten LuL 1.880,20 €. Ein Rohling steht mit 7,90 € netto im Bestand.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Rabatt wird sofort abgezogen, weil er schon auf der Rechnung steht. Ein Skonto dagegen hängt davon ab, ob MAKEL Studio innerhalb der Frist zahlt; er wird erst bei der Zahlung gebucht und mindert dann nachträglich die Anschaffungskosten und die Vorsteuer.",
+            "id": "a2-p3"
+          }
         ],
-        "erklaerung": "Nach § 255 HGB gehören zu den Anschaffungskosten der Kaufpreis, die einzeln zurechenbaren Nebenkosten (Fracht, Verpackung, Transportversicherung) und Minderungen (Rabatt, Skonto, Bonus) werden abgezogen. Ein sofort auf der Rechnung gewährter Rabatt wird nicht gebucht; man bucht den bereits verminderten Betrag. Bezugskosten des Lieferanten erhöhen den Materialzugang. Die abziehbare Vorsteuer gehört nicht zu den Anschaffungskosten. Rechenweg: Listenpreis − Rabatt + Bezugskosten = Materialzugang netto; darauf die Umsatzsteuer.",
-        "beispiele": [
-          "Listenpreis 1.000 €, 10 % Rabatt, Fracht 50 €: Materialzugang 900 € + 50 € = 950 € netto.",
-          "Skonto wird erst bei Zahlung abgezogen und dann als nachträgliche Minderung erfasst."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Unterkonten für Bezugskosten und Nachlässe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Viele Betriebe buchen Bezugskosten und Nachlässe auf Unterkonten des Materialkontos, etwa 2001 Bezugskosten und 2002 Nachlässe. So bleibt sichtbar, wie viel Fracht und Rabatt im Jahr angefallen sind. Am Ende werden die Unterkonten über das Hauptkonto Rohstoffe abgeschlossen; die Anschaffungskosten sind dieselben.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Deniz bestellt Baumwollstoff: Listenpreis netto 1.000 €, 10 % Rabatt, der Lieferant berechnet 50 € Transport. Auf der Rechnung steht: 900 € + 50 € = 950 € netto, 19 % Umsatzsteuer 180,50 €, Rechnungsbetrag 1.130,50 €.",
-        "typische_fehler": "Den Rabatt als eigenen Betrag buchen oder die Fracht als sonstigen Aufwand erfassen, obwohl sie direkt zum Material gehört.",
         "verstaendnisfragen": [
-          "Gehört eine vom Lieferanten berechnete Fracht zu den Anschaffungskosten? Ja, als einzeln zurechenbare Nebenkosten.",
-          "Wird ein Sofortrabatt gebucht? Nein, gebucht wird der verminderte Preis."
-        ],
-        "pruefungsbezug": "Anschaffungskosten aus Listenpreis, Rabatt und Bezugskosten berechnen und dann mit Vorsteuer buchen.",
-        "merksatz": "Anschaffungskosten = Kaufpreis − Minderungen + zurechenbare Nebenkosten; abziehbare Vorsteuer gehört nicht dazu."
+          {
+            "frage": "Listenpreis 2.400 € netto, 10 % Rabatt, 80 € Fracht. Wie hoch sind die Anschaffungskosten?",
+            "antwort": "2.400 € − 240 € + 80 € = 2.240 € netto.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum gehört die Vorsteuer nicht zu den Anschaffungskosten?",
+            "antwort": "Weil MAKEL Studio sie als Forderung gegenüber dem Finanzamt geltend macht. Sie belastet den Betrieb nicht und erhöht deshalb nicht den Wert des Materials.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Bei der Bestandsmethode steht eingekauftes Material zunächst auf dem Bestandskonto.",
-          "Die Veredelung fordert Material mit einem Entnahmeschein an."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst Materialzugang und Materialverbrauch als getrennte Vorgänge mit eigenen Belegen und vermeidest, den Aufwand doppelt zu erfassen.",
+        "vorwissen_kurz": "Material wird eingekauft und später verbraucht. Bei der Bestandsmethode sind das zwei Buchungen zu verschiedenen Zeitpunkten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Belege, zwei Buchungen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Einkauf liegt eine Rechnung vor; gebucht wird der Zugang auf dem Bestandskonto mit Vorsteuer. Beim Verbrauch liegt ein Materialentnahmeschein vor; gebucht wird der Aufwand. Weil der Verbrauch ein interner Vorgang ist und nichts verkauft wird, fällt dabei keine Umsatzsteuer an. Der Bestand auf dem Rohstoffkonto zeigt jederzeit, was noch im Lager liegt.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Einkauf in die Veredelung",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datum",
+              "Beleg",
+              "Buchungssatz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "3. Mai",
+                  "Rechnung 200 Rohlinge, 1.580 € netto",
+                  "2000 Rohstoffe 1.580,00 € und 2600 Vorsteuer 300,20 € an 4400 Verbindlichkeiten LuL 1.880,20 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "7. Mai",
+                  "Entnahmeschein: 80 Rohlinge à 7,90 € für einen Vereinsauftrag",
+                  "6000 Aufwendungen für Rohstoffe 632,00 € an 2000 Rohstoffe 632,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "12. Mai",
+                  "Entnahmeschein: 6 Spulen Garn à 4,50 €",
+                  "6020 Aufwendungen für Hilfsstoffe 27,00 € an 2020 Hilfsstoffe 27,00 €"
+                ]
+              }
+            ],
+            "fazit": "Der Einkauf erhöht den Bestand, die Entnahmen erzeugen Aufwand. Im Lager liegen danach noch 120 Rohlinge im Wert von 948 €.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Aufwand von 632 € gehört zum Vereinsauftrag, für den die Rohlinge entnommen wurden. Deshalb ist der Entnahmeschein mit der Auftragsnummer versehen: So kann die Kostenrechnung später berechnen, was der Auftrag tatsächlich gekostet hat.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Zugang und Verbrauch sind zwei getrennte Vorgänge mit zwei Belegen. Zugang laut Eingangsrechnung: Rohstoffe und Vorsteuer an Verbindlichkeiten LuL. Verbrauch laut Materialentnahmeschein: Aufwendungen für Rohstoffe an Rohstoffe — ohne Umsatzsteuer, denn intern wird nichts verkauft. Bewertet wird der Verbrauch mit den Anschaffungskosten des entnommenen Materials. Der Bestand auf dem Konto Rohstoffe sollte dann dem tatsächlichen Lagerbestand entsprechen.",
-        "beispiele": [
-          "Entnahme von 50 Rohlingen à 8 €: Aufwendungen für Rohstoffe 400 € an Rohstoffe 400 €.",
-          "Entnahme von Druckfarbe: Aufwendungen für Hilfsstoffe an Hilfsstoffe."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Inventur und Bestandsmethode",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Am Jahresende wird der Buchbestand mit der Inventur verglichen. Fehlen Rohlinge, ohne dass ein Entnahmeschein vorliegt, etwa durch Schwund oder Fehldrucke, wird die Differenz als zusätzlicher Verbrauch gebucht. So stimmt der Bestand in der Bilanz mit dem tatsächlich Vorhandenen überein.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für einen Auftrag über 50 bedruckte Hoodies holt die Veredelung 50 Rohlinge à 8,00 € aus dem Lager; Jonas Weidner erfasst den Entnahmeschein. Sandra bucht: Aufwendungen für Rohstoffe 400 € an Rohstoffe 400 €. Jetzt entsteht der Aufwand — in dem Monat, in dem die Hoodies tatsächlich gefertigt werden.",
-        "typische_fehler": "Auf den Verbrauch Vorsteuer buchen. Die Vorsteuer wurde schon beim Einkauf erfasst; der interne Verbrauch ist kein Umsatz.",
         "verstaendnisfragen": [
-          "Welcher Beleg löst die Verbrauchsbuchung aus? Der Materialentnahmeschein.",
-          "Warum wird beim Verbrauch keine Steuer gebucht? Weil intern nichts gekauft oder verkauft wird."
-        ],
-        "pruefungsbezug": "Zugang und Verbrauch werden in Aufgaben oft hintereinander abgefragt — zwei Buchungssätze, nicht einer.",
-        "merksatz": "Zugang: Rohstoffe und Vorsteuer an Verbindlichkeiten. Verbrauch: Aufwendungen für Rohstoffe an Rohstoffe, ohne Steuer."
+          {
+            "frage": "Bilde den Buchungssatz: Entnahme von 2 Litern Maschinenöl zu je 9 € laut Entnahmeschein.",
+            "antwort": "6030 Aufwendungen für Betriebsstoffe 18 € an 2030 Betriebsstoffe 18 €.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum wird beim Verbrauch keine Vorsteuer gebucht?",
+            "antwort": "Weil die Vorsteuer schon beim Einkauf erfasst wurde und der Verbrauch kein Umsatz ist. Es wird nur der Bestand in Aufwand umgebucht.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Fehlerhafte Lieferungen werden zurückgeschickt oder es gibt einen Preisnachlass.",
-          "Der Lieferant stellt dann eine Gutschrift aus."
+        "darstellung": "vollfassung",
+        "ziel": "Du überträgst eine Rücksendung oder einen nachträglichen Nachlass auf Bestand, Verbindlichkeit und Vorsteuer und begründest, warum die Vorsteuer mit korrigiert wird.",
+        "vorwissen_kurz": "Nicht jede Lieferung ist in Ordnung. Wird Material zurückgeschickt oder nachträglich günstiger, ändert sich auch die Steuer.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Den Einkauf anteilig umkehren",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Schickt MAKEL Studio Material zurück, erhält es vom Lieferanten eine Gutschrift. Bestand und Verbindlichkeit sinken, und weil sich die Bemessungsgrundlage geändert hat, muss nach § 17 UStG auch die {{begriff:vorsteuer|Vorsteuer}} berichtigt werden. Die Buchung ist die anteilige Umkehrung des Einkaufs: Verbindlichkeit im Soll, Rohstoffe und Vorsteuer im Haben.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Falsch gefärbte Rohlinge",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Von den 200 Rohlingen sind 20 in der falschen Farbe geliefert worden. MAKEL Studio schickt sie zurück, bevor die Rechnung bezahlt ist.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "20 Rohlinge × 7,90 € (Anschaffungskosten je Stück)",
+                  "158,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Vorsteuerberichtigung 19 %",
+                  "30,02 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Gutschrift brutto",
+                  "188,02 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchungssatz",
+                  "4400 Verbindlichkeiten LuL 188,02 € an 2000 Rohstoffe 158,00 € und 2600 Vorsteuer 30,02 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Die Verbindlichkeit sinkt auf 1.692,18 €, der Bestand um 158 €, die Vorsteuer um 30,02 €. Ohne Vorsteuerkorrektur würde MAKEL Studio 30,02 € zu viel vom Finanzamt fordern.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gewährt der Lieferant statt einer Rücksendung einen nachträglichen Preisnachlass, etwa 10 % auf die gesamte Lieferung wegen leichter Farbabweichungen, wird genauso gebucht: Verbindlichkeiten brutto an Rohstoffe netto und Vorsteuer. Der Nachlass mindert die Anschaffungskosten der Rohlinge, die noch im Lager liegen.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Wird noch unbezahltes Material zurückgesendet, wird die ursprüngliche Buchung anteilig umgekehrt: Die Verbindlichkeit sinkt (Soll), der Rohstoffbestand sinkt (Haben) und auch die Vorsteuer muss berichtigt werden (Haben), weil sich die Bemessungsgrundlage verringert hat. Dasselbe Muster gilt bei der Bestandsmethode für nachträgliche Preisnachlässe wie eine Minderung wegen eines Mangels: Verbindlichkeiten an Rohstoffe und Vorsteuer. Grundlage ist die Gutschrift oder Rechnungskorrektur des Lieferanten.",
-        "beispiele": [
-          "Rücksendung von Rohstoffen netto 100 €: Verbindlichkeiten LuL 119 € an Rohstoffe 100 € und Vorsteuer 19 €.",
-          "Minderung wegen Farbabweichung, Gutschrift brutto 59,50 €: Verbindlichkeiten LuL 59,50 € an Rohstoffe 50 € und Vorsteuer 9,50 €."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Rücksendung nach Zahlung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat MAKEL Studio die Rechnung schon bezahlt, gibt es keine Verbindlichkeit mehr, die sinken könnte. Dann entsteht eine Forderung gegenüber dem Lieferanten, oder er überweist den Betrag zurück: 2800 Bank an 2000 Rohstoffe und 2600 Vorsteuer.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Aus einer noch unbezahlten Lieferung schickt Jonas zehn falsch gefärbte Rohlinge zurück (netto 100 €). Der Lieferant sendet eine Gutschrift über 100 € zuzüglich 19 € Umsatzsteuer. Sandra bucht: Verbindlichkeiten aus Lieferungen und Leistungen 119 € an Rohstoffe 100 € und Vorsteuer 19 €.",
-        "typische_fehler": "Bei der Rücksendung die Vorsteuerkorrektur vergessen — dann fordert MAKEL zu viel Vorsteuer vom Finanzamt.",
         "verstaendnisfragen": [
-          "Warum wird bei einer Rücksendung die Vorsteuer berichtigt? Weil sich das Entgelt und damit die abziehbare Steuer verringert.",
-          "Welche Konten stehen bei einer Rücksendung im Haben? Rohstoffe und Vorsteuer."
-        ],
-        "pruefungsbezug": "Rücksendungen und nachträgliche Nachlässe mit Steuerberichtigung buchen.",
-        "merksatz": "Rücksendung oder Nachlass: Verbindlichkeiten brutto an Rohstoffe netto und Vorsteuer."
+          {
+            "frage": "Noch unbezahlte Rohstoffe im Nettowert von 100 € werden zurückgeschickt. Wie lautet der Buchungssatz?",
+            "antwort": "4400 Verbindlichkeiten LuL 119 € an 2000 Rohstoffe 100 € und 2600 Vorsteuer 19 €.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum muss die Vorsteuer bei einer Rücksendung berichtigt werden?",
+            "antwort": "Weil sich das Entgelt geändert hat. MAKEL Studio hat für die zurückgeschickte Ware nichts mehr zu zahlen und darf deshalb auch die darauf entfallende Vorsteuer nicht behalten.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

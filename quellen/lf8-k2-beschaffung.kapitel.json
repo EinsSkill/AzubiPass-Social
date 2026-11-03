@@ -271,72 +271,400 @@
     },
     {
       "typ": "Fall",
-      "frage": "Eine Anzeige lautet: „Wir suchen eine engagierte Bürokraft, max. 35 Jahre, deutsche Muttersprache.“ Welche Probleme siehst du und wie formulierst du um?",
-      "loesung": "Drei AGG-Verstöße: „Bürokraft“ in weiblicher Form knüpft an das Geschlecht an, die Altersgrenze an das Alter, „deutsche Muttersprache“ mittelbar an die ethnische Herkunft. Zulässig wäre: „Kaufmännische Mitarbeit (m/w/d)“ mit der Anforderung „sehr gute Deutschkenntnisse in Wort und Schrift“, weil hier die tatsächlich benötigte Fähigkeit beschrieben wird statt eines Merkmals der Person."
+      "frage": "Eine Anzeige lautet: „Wir suchen eine engagierte Sekretärin, max. 35 Jahre, deutsche Muttersprache.“ Welche Probleme siehst du und wie formulierst du um?",
+      "loesung": "Drei AGG-Verstöße: „Sekretärin“ in weiblicher Form knüpft an das Geschlecht an, die Altersgrenze an das Alter, „deutsche Muttersprache“ mittelbar an die ethnische Herkunft. Zulässig wäre: „Kaufmännische Mitarbeit (m/w/d)“ mit der Anforderung „sehr gute Deutschkenntnisse in Wort und Schrift“, weil hier die tatsächlich benötigte Fähigkeit beschrieben wird statt eines Merkmals der Person."
     }
   ],
   "pruefungstipp": "Die Gegenüberstellung intern und extern wird fast immer als Vor- und Nachteilsaufgabe gestellt — lerne je drei Punkte pro Seite. Bei Stellenanzeigen sucht die Prüfung nach AGG-Verstößen: Alter, Geschlecht, Herkunft. Und merke dir, dass Zeitarbeitnehmer keinen Arbeitsvertrag mit dem Einsatzbetrieb haben.",
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Personalbedarf kann durch bestehende oder neue Mitarbeitende gedeckt werden.",
-          "Jeder Beschaffungsweg hat eigene Vorteile und Grenzen."
+        "darstellung": "vollfassung",
+        "ziel": "Du wägst für eine konkrete Stelle interne und externe Beschaffung anhand von Kosten, Zeit, Risiko, Folgelücke und neuen Impulsen ab.",
+        "vorwissen_kurz": "Interne Beschaffung nutzt Menschen, die schon im Betrieb arbeiten. Externe Beschaffung sucht auf dem Arbeitsmarkt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die gleiche Stelle, zwei Wege",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Teamleitung im Einkauf von MAKEL geht in Rente. Infrage kommen eine erfahrene Sachbearbeiterin aus dem eigenen Einkauf oder eine externe Bewerberin mit Führungserfahrung. Beide Wege haben Vorteile — und beide haben einen Preis, der nicht sofort sichtbar ist.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Entscheidung an Kriterien",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Intern: Sachbearbeiterin aus dem Einkauf",
+              "Extern: Bewerberin vom Markt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kosten",
+                  "gering, keine Anzeige, kurze Einarbeitung",
+                  "Anzeige, Auswahlverfahren, längere Einarbeitung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeit",
+                  "Wechsel in wenigen Wochen",
+                  "Suche und Kündigungsfrist: oft drei bis sechs Monate"
+                ]
+              },
+              {
+                "zellen": [
+                  "Risiko einer Fehlbesetzung",
+                  "gering, Leistung und Verhalten sind bekannt",
+                  "höher, das Bild entsteht aus wenigen Gesprächen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wirkung auf das Team",
+                  "motivierend: Aufstieg ist möglich",
+                  "kann Enttäuschung auslösen, wenn interne Bewerbende übergangen werden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Folgelücke",
+                  "ihre Sachbearbeitungsstelle wird frei",
+                  "keine"
+                ]
+              },
+              {
+                "zellen": [
+                  "Neue Impulse",
+                  "gering: kennt nur die bisherigen Abläufe",
+                  "Erfahrungen aus anderen Betrieben"
+                ]
+              }
+            ],
+            "fazit": "Intern ist schneller, günstiger und sicherer, verschiebt aber die Lücke. Extern schließt sie, kostet aber mehr Zeit und Risiko.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL entscheidet sich hier für die interne Lösung, weil die Sachbearbeiterin das Team und die Lieferer kennt und die Stelle schnell besetzt sein muss. Damit die Folgelücke nicht übersehen wird, plant MAKEL gleichzeitig die Nachbesetzung der Sachbearbeitung — etwa durch Übernahme eines Azubis im Sommer. Und weil Führungserfahrung fehlt, wird eine Führungskräfteschulung vereinbart.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          }
         ],
-        "erklaerung": "Interne Beschaffung nutzt Versetzung, Aufstieg, Mehrarbeit oder die Übernahme von Auszubildenden. Sie ist schnell, günstig und motivierend, weil die Person bekannt ist. Die Lücke wandert aber häufig nur weiter und neue Impulse fehlen. Externe Beschaffung nutzt Anzeigen, Arbeitsagentur, Portale, eigene Kanäle, Personalberatung oder Zeitarbeit und erweitert den Bewerberkreis.",
-        "beispiele": [
-          "Die Übernahme eines Azubis deckt eine Stelle intern und nutzt bereits bekannte Fähigkeiten.",
-          "Eine Anzeige in einem Portal erweitert den Kreis, bringt aber zusätzlichen Auswahlaufwand und weniger Vorwissen über die Person."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Wenn intern niemand passt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine interne Besetzung ist nur sinnvoll, wenn die Person das Anforderungsprofil im Wesentlichen erfüllt oder es mit vertretbarer Weiterbildung erreichen kann. Wird jemand nur befördert, weil er schon lange dabei ist, entsteht ein anderes Risiko: Die Person ist überfordert, und eine gute Fachkraft geht dem Betrieb als Sachbearbeiterin verloren. Dann ist die externe Suche die bessere Wahl.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Mitbestimmung bei interner Ausschreibung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat der Betrieb einen Betriebsrat, kann dieser verlangen, dass Stellen vor einer Besetzung innerhalb des Betriebs ausgeschrieben werden. Das gibt allen Beschäftigten die Chance, sich zu bewerben. Eine externe Suche ist dadurch nicht verboten, sie läuft dann zusätzlich.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "Eine Stelle wird frei. Der Betrieb prüft zuerst, ob Versetzung, Aufstieg oder Übernahme möglich sind. Ist intern niemand passend verfügbar, wird extern gesucht. Bei der Entscheidung werden Geschwindigkeit, Kosten, Motivation, neue Impulse und die Frage berücksichtigt, ob die ursprüngliche Lücke nur verschoben wird.",
-        "typische_fehler": "Interne Beschaffung wird nur als Vorteil und externe nur als Nachteil dargestellt. Außerdem wird vergessen, dass die interne Lösung eine neue Lücke schaffen kann.",
         "verstaendnisfragen": [
-          "Welche vier internen Wege nennt der Inhalt? Versetzung, Aufstieg, Mehrarbeit und Übernahme von Auszubildenden.",
-          "Was ist der zentrale interne Nachteil? Die Lücke wandert möglicherweise nur, und neue Impulse fehlen."
-        ],
-        "pruefungsbezug": "Nenne bei einer Vor- und Nachteilsaufgabe mindestens Geschwindigkeit, Kosten, Motivation, Lückenwirkung und neue Impulse.",
-        "merksatz": "Intern ist bekannt und schnell; extern erweitert die Auswahl, kostet aber mehr Auswahlaufwand."
+          {
+            "frage": "Ein Betrieb besetzt eine Stelle intern und ist überrascht, dass der Personalbedarf nicht sinkt. Was wurde übersehen?",
+            "antwort": "Die Folgelücke: Die Person hat ihre bisherige Stelle freigemacht. Der Bedarf ist nur verschoben worden und muss an dieser Stelle erneut gedeckt werden.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Wann spricht trotz höherer Kosten viel für eine externe Besetzung?",
+            "antwort": "Wenn intern niemand das Profil erfüllt, wenn bewusst neue Erfahrungen und Sichtweisen gesucht werden oder wenn eine Folgelücke an einer schwer besetzbaren Stelle entstünde.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Externe Personalbeschaffung kann über mehrere Kanäle erfolgen.",
-          "Vermittlung und Einsatzbetrieb sind nicht immer derselbe Arbeitgeber."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für unterschiedliche Personalbedarfe den passenden Beschaffungsweg und begründest die Wahl mit Profil, Dauer, Dringlichkeit und Kosten.",
+        "vorwissen_kurz": "Ein Beschaffungsweg ist der Kanal, über den ein Betrieb geeignete Bewerbende erreicht. Zeitarbeit ist eine Sonderform, bei der kein Arbeitsvertrag mit dem Einsatzbetrieb entsteht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Der Kanal folgt dem Bedarf",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Es gibt keinen besten Beschaffungsweg, sondern nur einen passenden. Entscheidend ist, wen MAKEL erreichen will, wie schnell und für wie lange. Wer Auszubildende sucht, erreicht sie eher über die eigene Website, Social Media, Schulen und Ausbildungsmessen als über eine Zeitungsanzeige. Wer eine seltene Spezialistin braucht, wird über eine Personalberatung oder ein Fachnetzwerk eher fündig als über ein allgemeines Portal. Und wer nur drei Monate Unterstützung braucht, sollte keine unbefristete Stelle ausschreiben.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Bedarfe bei MAKEL",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bedarf",
+              "Gewählter Weg",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ausbildungsplatz Kaufmann/-frau für Büromanagement",
+                  "eigene Website, Social Media, Ausbildungsmesse, Agentur für Arbeit",
+                  "Zielgruppe sucht online und über die Berufsberatung; geringe Kosten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sachbearbeitung Buchhaltung, unbefristet",
+                  "Onlineportal und Website, interne Ausschreibung parallel",
+                  "Standardprofil, breiter Markt, interne Chance gewahrt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Leitung IT mit Spezialkenntnissen",
+                  "Personalberatung",
+                  "wenige geeignete Personen, diskrete Ansprache, hohe Kosten vertretbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Drei Monate Vertretung im Versand",
+                  "Zeitarbeit oder befristete Einstellung",
+                  "Bedarf zeitlich begrenzt, schnelle Verfügbarkeit nötig"
+                ]
+              }
+            ],
+            "fazit": "Profil, Dauer und Dringlichkeit bestimmen den Weg — nicht die Gewohnheit, „wie wir es immer machen“.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Empfehlungen aus der Belegschaft sind ein weiterer, oft unterschätzter Weg: Wer jemanden empfiehlt, kennt den Betrieb und die Person. Allerdings neigen solche Netzwerke dazu, immer ähnliche Menschen zu bringen. Für einen vielfältigen Bewerberkreis sollte der Betrieb deshalb mehrere Kanäle kombinieren.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b2"
+          }
         ],
-        "erklaerung": "Externe Wege sind Anzeigen, Arbeitsagentur, Portale, eigene Kanäle, Personalberatung und Zeitarbeit. Bei Zeitarbeit bleibt die eingesetzte Person Arbeitnehmer des Verleihers und hat keinen Arbeitsvertrag mit dem Einsatzbetrieb. Der Weg wird nach Bedarf, Zeit, benötigtem Profil und gewünschter Dauer ausgewählt.",
-        "beispiele": [
-          "Eine Anzeige und ein Onlineportal richten sich an einen offenen Bewerbermarkt; Personalberatung kann die Suche stärker begleiten.",
-          "Bei Zeitarbeit wird die Person im Betrieb eingesetzt, bleibt aber beim Verleiher angestellt."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Zeitarbeit genauer betrachtet",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei der Zeitarbeit schließt die eingesetzte Person ihren Arbeitsvertrag mit einem Verleiher. MAKEL schließt mit dem Verleiher einen Überlassungsvertrag, gibt der Person im Einsatz die Arbeitsanweisungen und zahlt dem Verleiher eine Vergütung. Das Gesetz begrenzt die Überlassung an denselben Einsatzbetrieb grundsätzlich auf 18 Monate und verlangt nach einer gewissen Einsatzdauer die gleiche Bezahlung wie für vergleichbare Stammbeschäftigte. Zeitarbeit ist deshalb ein Werkzeug für Spitzen und Vertretungen, kein Dauerersatz für Stammpersonal.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Befristung mit oder ohne Sachgrund",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine befristete Einstellung ist möglich mit Sachgrund — etwa Vertretung während einer Elternzeit oder ein vorübergehender Mehrbedarf — oder ohne Sachgrund bis zu zwei Jahre bei einer Neueinstellung. Die Befristung muss vor Arbeitsbeginn schriftlich vereinbart sein, sonst gilt der Vertrag als unbefristet.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb benötigt kurzfristig Unterstützung, möchte aber keinen eigenen Arbeitsvertrag für diese Einsatzphase schließen. Zeitarbeit kann den kurzfristigen Einsatz ermöglichen. Für die rechtliche Zuordnung wird geprüft, wer der Arbeitgeber ist: der Verleiher, nicht der Einsatzbetrieb. Für eine dauerhafte Stelle wäre ein anderer Beschaffungsweg zu bewerten.",
-        "typische_fehler": "Zeitarbeitnehmer werden als Beschäftigte des Einsatzbetriebs bezeichnet. Außerdem wird nur der Kanal genannt, ohne Dauer, Kosten und gewünschtes Profil einzubeziehen.",
         "verstaendnisfragen": [
-          "Welche externen Wege werden genannt? Anzeige, Arbeitsagentur, Portale, eigene Kanäle, Personalberatung und Zeitarbeit.",
-          "Wer ist Arbeitgeber eines Zeitarbeitnehmers? Der Verleiher."
-        ],
-        "pruefungsbezug": "Trenne bei Fällen den Beschaffungskanal von der Arbeitgeberrolle. Begründe den Weg mit Dauer, Dringlichkeit und passendem Profil.",
-        "merksatz": "Der Einsatzort sagt bei Zeitarbeit nicht, wer der Arbeitgeber ist."
+          {
+            "frage": "Ein Betrieb sucht dringend eine Lohnbuchhalterin für eine Elternzeitvertretung von 14 Monaten. Welche Wege passen?",
+            "antwort": "Eine befristete Einstellung mit dem Sachgrund Vertretung, ausgeschrieben über Portal und Website, oder — wenn es sehr schnell gehen muss — Zeitarbeit. Eine unbefristete Stelle wäre nach der Rückkehr der Kollegin überzählig.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist Zeitarbeit für eine Daueraufgabe meist keine gute Lösung?",
+            "antwort": "Sie ist teurer als eine eigene Anstellung, die Überlassung ist zeitlich begrenzt, und die Person bleibt beim Verleiher angestellt. Wissen und Bindung bleiben deshalb nicht im Betrieb.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Eine Stellenanzeige verbindet Stelle, Aufgaben und Anforderungsprofil.",
-          "Das AGG begrenzt die zulässige Auswahlformulierung."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust eine vollständige, ansprechende und AGG-konforme Stellenanzeige aus Stellenbeschreibung und Anforderungsprofil und überarbeitest eine fehlerhafte Anzeige.",
+        "vorwissen_kurz": "Eine Stellenanzeige ist Werbung für den Betrieb und eine rechtliche Erklärung zugleich. Was sie verlangt, muss sich aus der Stelle begründen lassen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was eine gute Anzeige leisten muss",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Stellenanzeige hat zwei Aufgaben. Sie soll geeignete Menschen ansprechen und zur Bewerbung bewegen — sie ist also Werbung, und für sie gelten dieselben Grundsätze wie für jede Werbung: Aufmerksamkeit, klarer Nutzen, klarer nächster Schritt. Und sie muss rechtlich sauber sein. Nach {{par:agg-7|§ 7 AGG}} darf niemand wegen eines geschützten Merkmals benachteiligt werden; das beginnt bei der Ausschreibung.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Anzeige vorher und nachher",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ursprünglicher Entwurf: „Junges, dynamisches Team sucht belastbare Bürokauffrau (max. 30) mit deutscher Muttersprache. Bewerbungen an info@makel.example.“",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Problem",
+              "Warum",
+              "Überarbeitung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„junges Team“, „max. 30“",
+                  "knüpft an das Alter an",
+                  "streichen"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Bürokauffrau“",
+                  "knüpft an das Geschlecht an",
+                  "„Kaufmann/-frau für Büromanagement (m/w/d)“"
+                ]
+              },
+              {
+                "zellen": [
+                  "„deutsche Muttersprache“",
+                  "knüpft mittelbar an die Herkunft an",
+                  "„sehr gute Deutschkenntnisse in Wort und Schrift“"
+                ]
+              },
+              {
+                "zellen": [
+                  "keine Aufgaben, kein Angebot",
+                  "Bewerbende können nicht einschätzen, ob die Stelle passt",
+                  "drei bis fünf Aufgaben, Arbeitszeit, Entgeltrahmen, Entwicklung"
+                ]
+              },
+              {
+                "zellen": [
+                  "anonyme Kontaktadresse",
+                  "wirkt unpersönlich, keine Frist",
+                  "Ansprechperson mit Namen, Bewerbungsweg, Datum"
+                ]
+              }
+            ],
+            "fazit": "Die überarbeitete Anzeige ist nicht nur rechtssicher, sondern auch besser: Sie sagt, was die Stelle bietet und verlangt.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Überarbeiteter Text, gekürzt: „MAKEL, ein Textilstudio mit 42 Beschäftigten, sucht ab 1. März eine kaufmännische Fachkraft für Büromanagement (m/w/d), Vollzeit, unbefristet. Ihre Aufgaben: Auftragsabwicklung, Rechnungsprüfung, Terminkoordination. Sie bringen mit: abgeschlossene kaufmännische Ausbildung, sicherer Umgang mit Tabellenkalkulation, sehr gute Deutschkenntnisse. Wir bieten: Gleitzeit, Weiterbildung, Entgelt nach Haustarif. Ihre Bewerbung bis 15. Januar an Frau Yildiz, personal@makel.example.“",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b3"
+          }
         ],
-        "erklaerung": "Eine Stellenanzeige enthält Betrieb, Stelle, Aufgaben, Anforderungen, Angebot und Kontakt. Sie muss sachlich formuliert sein und darf nicht an geschützte Merkmale anknüpfen. Die Schreibweise (m/w/d) und der Verzicht auf Altersgrenzen helfen, die Anzeige offen zu formulieren; Herkunft, Geschlecht und Alter dürfen nicht ohne zulässigen Tätigkeitsgrund verlangt werden.",
-        "beispiele": [
-          "Eine gute Anzeige beschreibt Aufgabe, Anforderungen, Angebot und Kontakt statt eine gewünschte Altersgruppe zu nennen.",
-          "Die Formulierung (m/w/d) vermeidet eine Ausschreibung nur für ein Geschlecht; eine Altersgrenze wird nicht aufgenommen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Was „mittelbare Benachteiligung“ heißt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Anforderung kann neutral klingen und trotzdem eine Gruppe benachteiligen. „Deutsche Muttersprache“ betrifft nicht ausdrücklich die Herkunft, schließt aber faktisch Menschen aus, die Deutsch als zweite Sprache perfekt beherrschen — und das hängt oft mit der Herkunft zusammen. Zulässig ist eine solche Anforderung nur, wenn sie für die Tätigkeit sachlich begründet und angemessen ist. Für die Stelle reicht es, das tatsächliche Sprachniveau zu verlangen.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Werbung nach denselben Regeln wie im Marketing",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Stellenanzeige folgt der Logik eines Werbemittels: Wer ist die Zielgruppe, wo erreicht man sie, welche Botschaft spricht sie an, und woran misst man den Erfolg — etwa an der Zahl geeigneter Bewerbungen? Diese Fragen kennst du aus der Werbeplanung.",
+                "id": "b3-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf5:k6"
+                ],
+                "text": "Werbeplanung",
+                "id": "b3-d2-v1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "fallbeispiel": "Eine Anzeige enthält Betrieb und Kontakt, aber weder Aufgaben noch Anforderungen; außerdem wird eine Altersgrenze genannt. Die Überarbeitung ergänzt die fehlenden Sachinformationen und streicht die altersbezogene Formulierung. Danach wird die Anzeige auf einen sachlichen, offenen Bewerberkreis geprüft.",
-        "typische_fehler": "Nur die Rechtsformulierung wird geprüft, während Aufgaben, Angebot oder Kontakt fehlen. Umgekehrt wird eine Anzeige als korrekt angesehen, sobald (m/w/d) darin steht.",
         "verstaendnisfragen": [
-          "Welche sechs Bestandteile gehören in eine Stellenanzeige? Betrieb, Stelle, Aufgaben, Anforderungen, Angebot und Kontakt.",
-          "Welche Merkmale dürfen nicht ohne zulässigen Grund angeknüpft werden? Geschlecht, Alter, Herkunft und weitere geschützte Merkmale."
-        ],
-        "pruefungsbezug": "Prüfe Anzeigen in zwei Durchgängen: erst Vollständigkeit, dann AGG-Konformität. So werden formale und diskriminierende Fehler getrennt erkannt.",
-        "merksatz": "Eine Stellenanzeige muss vollständig, sachlich und offen für den passenden Bewerberkreis sein."
+          {
+            "frage": "Eine Anzeige verlangt „Führerschein Klasse B und eigenen Pkw“ für eine Stelle im Büro ohne Außentermine. Wie beurteilst du das?",
+            "antwort": "Die Anforderung ist sachlich nicht begründet, weil die Stelle keine Fahrten verlangt. Sie schreckt geeignete Bewerbende ab und kann mittelbar benachteiligen, etwa Menschen mit Behinderung. Sie sollte gestrichen werden.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum sollte eine Stellenanzeige auch das Angebot des Betriebs nennen?",
+            "antwort": "Weil Bewerbende zwischen mehreren Stellen wählen. Eine Anzeige, die nur fordert, wirkt unattraktiv und bringt weniger passende Bewerbungen. Angaben zu Arbeitszeit, Entgelt und Entwicklung helfen außerdem, unpassende Bewerbungen zu vermeiden.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   }

@@ -6,66 +6,482 @@
   "untertitel": "Ein vergessener Termin ist peinlich. Eine versäumte Frist kostet Geld.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Termine haben einen festen Zeitpunkt; Fristen geben einen Zeitraum bis zu einem Ende vor.",
-          "Die Verschiebbarkeit entscheidet darüber, wie viel Puffer nötig ist."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Terminarten, trägst sie in der richtigen Reihenfolge ein und planst die Vorarbeiten einer Besprechung vom Termin aus rückwärts.",
+        "vorwissen_kurz": "Ein Termin ist ein festgelegter Zeitpunkt für ein Ereignis. Manche lassen sich verschieben, andere nicht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom festen Punkt aus planen",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer Termine plant, beginnt mit dem, was sich nicht bewegen lässt. Kundenbesuche, Prüfungen und Fristen bilden das Gerüst des Kalenders; interne Arbeiten werden darum herum gelegt. Steht ein wichtiger Termin fest, plant man die Vorarbeiten von ihm aus **rückwärts**: Was muss bis wann erledigt sein, damit am Termin alles bereit ist?",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kollektionsbesprechung am 20. November",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lea organisiert die Besprechung zur Frühjahrskollektion am Freitag, 20. November 2026, 10 Uhr, mit Geschäftsführung, Design und Vertrieb.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Rückwärts gerechnet",
+              "Datum",
+              "Aufgabe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Termin",
+                  "Fr 20.11.",
+                  "Besprechung 10–12 Uhr, Raum vorbereitet, Technik getestet"
+                ]
+              },
+              {
+                "zellen": [
+                  "3 Tage vorher",
+                  "Di 17.11.",
+                  "Unterlagen und Tagesordnung an alle"
+                ]
+              },
+              {
+                "zellen": [
+                  "1 Woche vorher",
+                  "Fr 13.11.",
+                  "Zuarbeiten von Design und Vertrieb einsammeln (Wiedervorlage)"
+                ]
+              },
+              {
+                "zellen": [
+                  "2 Wochen vorher",
+                  "Fr 6.11.",
+                  "Einladung mit Ziel, Ort, Dauer verschicken; Raum buchen"
+                ]
+              },
+              {
+                "zellen": [
+                  "heute",
+                  "Mo 2.11.",
+                  "Teilnehmerkreis und Ziel mit der Geschäftsführung klären"
+                ]
+              }
+            ],
+            "fazit": "Wer rückwärts plant, sieht sofort, ob die Zeit reicht. Hätte Lea erst am 13.11. angefangen, wäre die Einladung zu spät gekommen.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Feste Termine werden zuerst in den Kalender eingetragen, bewegliche Termine danach darum herum geplant. Ein interner Besprechungstermin kann meist verlegt werden, ein Gerichtstermin nicht. Bei auswärtigen Terminen gehören Hin- und Rückweg in den Kalender. Fristen werden zusätzlich überwacht und nicht wie normale Termine behandelt.",
-        "beispiele": [
-          "Ein Termin von 14 bis 15 Uhr in einer anderen Stadt blockiert nicht nur die Besprechungsstunde, sondern auch die erforderliche Wegzeit in beide Richtungen.",
-          "Ein fester Prüfungstermin kommt zuerst in den Kalender; eine interne Besprechung wird anschließend so gelegt, dass ausreichend Puffer bleibt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Termine im digitalen Kalender",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im Gruppenkalender sehen alle, wann jemand frei ist. Lea schickt die Einladung als Kalendereintrag mit Ort, Videolink und Tagesordnung im Anhang. Serien wie die wöchentliche Teamrunde legt sie einmal als Serientermin an. Vertrauliche Termine, etwa Personalgespräche, kennzeichnet sie als privat, damit nur „belegt“ zu sehen ist.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Für einen Termin in einer anderen Stadt werden 14 bis 15 Uhr als Gesprächszeit und jeweils eine Stunde Wegzeit benötigt. Im Kalender wird daher der Zeitraum von 13 bis 16 Uhr blockiert. Erst danach werden bewegliche Aufgaben eingetragen; eine Frist mit Rechtsfolge kommt zusätzlich in die Fristenkontrolle mit Vorfrist.",
-        "typische_fehler": "Nur die eigentliche Besprechungszeit wird blockiert oder eine Frist wie ein einzelner Termin notiert. Ebenso wird ein verlegbarer interner Termin genauso starr behandelt wie ein nicht verschiebbarer Termin.",
         "verstaendnisfragen": [
-          "Welche Termine kommen zuerst in den Kalender? Feste und nicht oder nur schwer verschiebbare Termine.",
-          "Was gehört bei einem auswärtigen Termin zusätzlich hinein? Die Wegzeit für Hin- und Rückweg."
-        ],
-        "pruefungsbezug": "Begründe die Kalenderplanung mit Verschiebbarkeit, Wegzeit und Puffer. Trenne anschließend Terminplanung und Fristenkontrolle.",
-        "merksatz": "Feste Termine zuerst, bewegliche darum herum; bei auswärtigen Terminen zählt der ganze Weg."
+          {
+            "frage": "Warum wird ein Kundentermin vor der eigenen Ablagezeit in den Kalender eingetragen?",
+            "antwort": "Der Kundentermin ist fest und lässt sich nur mit Absprache verschieben. Die Ablage ist beweglich und kann um ihn herum geplant werden. Wer zuerst die beweglichen Termine einträgt, findet für die festen oft keinen Platz mehr.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Was gewinnt Lea, wenn sie rückwärts plant?",
+            "antwort": "Sie erkennt die spätesten Zeitpunkte für jede Vorarbeit und sieht sofort, ob die verbleibende Zeit reicht. Engpässe werden sichtbar, solange man noch reagieren kann.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Viele Vorgänge sind bearbeitet, aber noch nicht abgeschlossen.",
-          "Eine Erinnerung ist nicht dasselbe wie eine rechtliche Fristenkontrolle."
+        "darstellung": "vollfassung",
+        "ziel": "Du richtest eine Wiedervorlage ein, wählst sinnvolle Nachfassdaten und grenzt sie von der Fristenkontrolle ab.",
+        "vorwissen_kurz": "Viele Vorgänge sind nach dem ersten Schritt nicht abgeschlossen, weil man auf eine Antwort, Lieferung oder Zahlung wartet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nichts verschwindet im Stapel",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine {{begriff:wiedervorlage|Wiedervorlage}} sorgt dafür, dass ein wartender Vorgang zum richtigen Zeitpunkt wieder auf dem Tisch liegt. Man legt ihn nicht einfach ab, sondern unter einem Datum, an dem man nachfassen will. Ob Mappe mit Tages- und Monatsfächern oder Aufgabe im E-Mail-Programm: Das Prinzip ist dasselbe.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Wiedervorlagen im November",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Wartet auf",
+              "Wiedervorlage",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zuarbeit Design für die Besprechung",
+                  "Präsentationsentwurf",
+                  "Do 12.11.",
+                  "einen Tag vor dem spätesten Termin, damit Zeit zum Nachhaken bleibt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Angebot an einen Händler vom 2.11.",
+                  "Antwort des Händlers",
+                  "Mo 9.11.",
+                  "eine Woche ist für Händler üblich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestellung Etiketten, Liefertermin 16.11.",
+                  "Wareneingang",
+                  "Di 17.11.",
+                  "einen Tag nach dem zugesagten Termin prüfen, ob die Ware da ist"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnung an einen Kunden, fällig 27.11.",
+                  "Zahlungseingang",
+                  "Mo 30.11.",
+                  "erster Werktag nach Fälligkeit, dann Zahlungserinnerung"
+                ]
+              }
+            ],
+            "fazit": "Das Wiedervorlagedatum ist der Tag zum Nachfassen, nicht der Tag, an dem die Antwort erwartet wird. Es liegt kurz davor oder danach, je nachdem, was getan werden muss.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im E-Mail-Programm legt Lea für jeden Vorgang eine Aufgabe mit Fälligkeitsdatum an und verknüpft die zugehörige Mail. Jeden Morgen arbeitet sie die fälligen Aufgaben ab. Ist sie im Urlaub, übernimmt ihre Vertretung die Liste — eine Wiedervorlage, die nur im Kopf einer Person existiert, ist keine.",
+            "id": "b2-p2"
+          }
         ],
-        "erklaerung": "Die klassische Wiedervorlage hat 31 Tagesfächer und 12 Monatsfächer. Ein Vorgang erhält ein Wiedervorlagedatum und wird dort einsortiert. Jeden Morgen wird das Tagesfach geleert: Eingegangene Antworten werden abgeschlossen und abgelegt; ausgebliebene Antworten führen zu einem Nachfassen und einem neuen Datum. Am Monatsende wird das Monatsfach des Folgemonats auf Tagesfächer verteilt. Rechtsfristen benötigen daneben eine eigene Kontrolle mit Vorfrist.",
-        "beispiele": [
-          "Nach einer Anfrage an einen Lieferer wird der Vorgang auf ein Wiedervorlagedatum gelegt. Ist die Antwort da, wird abgelegt; fehlt sie, wird nachgefasst.",
-          "Eine Mängelrüge wird nicht nur in die Wiedervorlage gelegt, sondern zusätzlich in die Fristenkontrolle aufgenommen, weil Rechte daran hängen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Vorfrist und Fristenkalender",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Fristen mit Rechtsfolge, etwa Widerspruchs- oder Kündigungsfristen, führen Betriebe einen eigenen Fristenkalender. Jede Frist wird zweimal eingetragen: einmal mit dem letzten Tag, einmal mit einer Vorfrist einige Tage davor. So bleibt Zeit, die Handlung vorzubereiten.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Am 2. April wird eine Mängelrüge mit der Bitte um Stellungnahme binnen zehn Tagen verschickt. Am 20. April ist keine Antwort eingegangen. Organisatorisch hätte der Vorgang ein Wiedervorlagedatum mit Vorlauf sowie einen Eintrag in der Fristenkontrolle erhalten müssen. Jetzt wird sofort schriftlich nachgefasst und eine neue kurze Frist gesetzt; der Zugang sollte nachweisbar sein.",
-        "typische_fehler": "Die Wiedervorlage wird als passiver Stapel verstanden oder nur am Monatsende angesehen. Außerdem wird sie als Ersatz für eine Fristenkontrolle behandelt, obwohl sie keine rechtlichen Fristfolgen überwacht.",
         "verstaendnisfragen": [
-          "Was geschieht bei ausgebliebener Antwort? Der Vorgang wird nachgefasst und mit einem neuen Wiedervorlagedatum versehen.",
-          "Welche Schwachstelle hat das System? Es funktioniert nur, wenn das Tagesfach tatsächlich jeden Morgen bearbeitet wird."
-        ],
-        "pruefungsbezug": "Beschreibe in der richtigen Reihenfolge: Datum setzen, einsortieren, Tagesfach leeren, erledigen oder nachfassen, neu terminieren. Bei Rechtsfolgen immer die zusätzliche Fristenkontrolle nennen.",
-        "merksatz": "Wiedervorlage erinnert ans Nachfassen; die Fristenkontrolle schützt vor Rechtsverlust."
+          {
+            "frage": "Warum legt Lea die Wiedervorlage für die Design-Zuarbeit auf den 12. und nicht auf den 13. November?",
+            "antwort": "Am 13. braucht sie die Zuarbeit spätestens. Liegt sie dann nicht vor, bleibt keine Zeit mehr zum Nachhaken. Mit einem Tag Vorlauf kann sie rechtzeitig erinnern.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Was passiert mit einem Vorgang, wenn beim Nachfassen noch keine Antwort da ist?",
+            "antwort": "Lea fragt nach und legt den Vorgang mit einem neuen Wiedervorlagedatum wieder ein. Erst wenn die Antwort da ist, wird er abgeschlossen und abgelegt.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Fristen werden durch ein Ereignis ausgelöst, etwa Zugang oder Absendung.",
-          "Der Ereignistag und das Fristende müssen getrennt behandelt werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Tages-, Wochen- und Monatsfristen nach den Regeln des BGB einschließlich Monatsende und Wochenende und setzt passende Vorfristen.",
+        "vorwissen_kurz": "Eine Frist ist ein Zeitraum, nach dessen Ablauf eine Handlung nicht mehr wirksam vorgenommen werden kann oder eine Rechtsfolge eintritt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rechnen statt schätzen",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Berechnung von Fristen gibt es feste Regeln. Beginnt eine Frist mit einem Ereignis — etwa dem Zugang eines Schreibens —, zählt dieser Tag nicht mit. Wochen- und Monatsfristen enden an dem Tag, der durch seine Benennung oder Zahl dem Ereignistag entspricht. Fehlt dieser Tag im letzten Monat, endet die Frist am letzten Tag des Monats. Und fällt das Ende auf einen Samstag, Sonntag oder Feiertag am Leistungsort, tritt an seine Stelle der nächste Werktag.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Fristen bei MAKEL",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ereignis",
+              "Frist",
+              "Rechnung",
+              "Ende"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung geht am Fr 13.11.2026 zu, Zahlungsziel 14 Tage",
+                  "Tagesfrist",
+                  "Beginn 14.11., 14 Tage",
+                  "Fr 27.11.2026"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mahnbescheid wird am Fr 16.10.2026 zugestellt, Widerspruch innerhalb von zwei Wochen",
+                  "Wochenfrist",
+                  "gleicher Wochentag zwei Wochen später",
+                  "Fr 30.10.2026"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnung geht am Fr 29.1.2027 zu, zahlbar innerhalb eines Monats",
+                  "Monatsfrist",
+                  "einen 29. Februar gibt es 2027 nicht → letzter Tag des Monats, So 28.2.",
+                  "Mo 1.3.2027 (nächster Werktag)"
+                ]
+              }
+            ],
+            "fazit": "Die dritte Frist zeigt zwei Regeln auf einmal: Fehlt der Tag im Monat, zählt das Monatsende; fällt es auf einen Sonntag, verschiebt sich das Ende auf den Montag.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Widerspruch gegen den Mahnbescheid legt MAKEL eine Vorfrist auf Montag, 26.10. Bis dahin muss geklärt sein, ob die Forderung berechtigt ist. Der Widerspruch muss innerhalb der Frist beim Gericht eingehen; der Poststempel genügt nicht.",
+            "id": "b3-p2"
+          }
         ],
-        "erklaerung": "Bei der Fristberechnung zählt der Tag des Ereignisses nicht mit. Die Frist beginnt am folgenden Tag. Der letzte Tag zählt vollständig; fällt er auf Samstag, Sonntag oder Feiertag, verschiebt sich das Ende auf den nächsten Werktag. Maßgeblich ist bei Zugangssituationen der Eingang, nicht die Absendung. Eine Vorfrist schafft zusätzlich Handlungsspielraum.",
-        "beispiele": [
-          "Geht eine Rechnung am 3. Mai zu und beträgt das Zahlungsziel 30 Tage, beginnt die Frist am 4. Mai.",
-          "Geht ein Angebot am Montag, 8. September, zu und gilt zwei Wochen, endet die Bindungsfrist am Montag, 22. September, wenn dieser Tag ein Werktag ist."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Feiertage sind regional",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gesetzliche Feiertage unterscheiden sich zwischen den Bundesländern. Fronleichnam etwa ist in Nordrhein-Westfalen ein Feiertag, in Niedersachsen nicht. Maßgeblich ist der Feiertag an dem Ort, an dem die Handlung vorzunehmen ist. Wer bundesweit Fristen überwacht, braucht deshalb einen Kalender mit den Feiertagen aller betroffenen Länder.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Angebot geht am Montag, 8. September, zu und gilt zwei Wochen. Der Zugangstag wird nicht mitgezählt, also beginnt die Frist am 9. September. Zwei Wochen führen zum Montag, 22. September. Weil dieser Tag ein Werktag ist, wird nicht verschoben. Für die interne Entscheidung wird zusätzlich eine Vorfrist etwa am 18. September gesetzt.",
-        "typische_fehler": "Der Zugangstag wird mitgezählt, eine Monats- oder Wochenfrist wird pauschal in 30 Tage umgerechnet oder ein Wochenende nicht verschoben. Häufig wird außerdem die Absendung statt des Zugangs verwendet.",
         "verstaendnisfragen": [
-          "Welcher Tag zählt bei der Fristberechnung nicht mit? Der Tag des Ereignisses beziehungsweise des Zugangs.",
-          "Was passiert bei einem Fristende am Sonntag? Das Ende verschiebt sich auf den nächsten Werktag."
+          {
+            "frage": "Ein Angebot mit Bindungsfrist von einer Woche geht am Mittwoch zu. Wann endet die Frist?",
+            "antwort": "Am Mittwoch der folgenden Woche. Wochenfristen enden an dem Tag, der durch seine Benennung dem Ereignistag entspricht.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum ist der Eingangsstempel wichtiger als der Poststempel?",
+            "antwort": "Fristen hängen in der Regel vom Zugang ab, nicht von der Absendung. Der Eingangsstempel belegt, wann ein Schreiben beim Betrieb angekommen ist und eine Frist zu laufen begann.",
+            "id": "b3-f2"
+          }
         ],
-        "pruefungsbezug": "Schreibe vor jeder Rechnung drei Regeln hin: Ereignistag zählt nicht, Zugang ist maßgeblich, Wochenende oder Feiertag verschiebt. Danach erst den Kalender zählen.",
-        "merksatz": "Ereignistag nicht zählen, Zugang prüfen, Wochenenden nach hinten schieben — und eine Vorfrist setzen."
+        "quellen": [
+          {
+            "titel": "Bürgerliches Gesetzbuch, §§ 187, 188, 193",
+            "url": "https://www.gesetze-im-internet.de/bgb/",
+            "bezug": "Fristbeginn, Fristende, Sonn- und Feiertage"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du hältst dieselbe Besprechung als Ergebnis- und als Verlaufsprotokoll fest und machst Beschlüsse, Verantwortliche, Termine und offene Freigaben auffindbar.",
+        "vorwissen_kurz": "Ein Protokoll ist die schriftliche Erinnerung einer Besprechung, auf die sich alle Beteiligten beziehen können.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was nach der Besprechung bleibt",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach der Kollektionsbesprechung hat jede Person etwas anderes im Kopf. Damit klar ist, was gilt, schreibt Sara als Protokollführerin das Protokoll. Es macht Beschlüsse verbindlich, verteilt Aufgaben und dient später als Nachweis. Welche Form passt, hängt davon ab, ob nur das Ergebnis oder auch der Weg dorthin zählt.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Beispiel 1: Ergebnisprotokoll",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Kopf:** Kollektionsbesprechung Frühjahr 2027 · Fr 20.11.2026, 10:00–11:50 Uhr · Besprechungsraum 2 · Teilnehmende: Y. Bergmann, T. Renner, Design (2), Vertrieb (2), Lea · Protokoll: Sara",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "TOP",
+              "Ergebnis",
+              "Wer",
+              "Bis wann"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1 Kollektionsumfang",
+                  "14 Modelle; zwei Shirtmodelle entfallen",
+                  "Design",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "2 Stoffe",
+                  "Bio-Baumwolle für alle Hoodies; Freigabe der Mehrkosten durch T. Renner **noch offen**",
+                  "T. Renner",
+                  "27.11."
+                ]
+              },
+              {
+                "zellen": [
+                  "3 Händlervorstellung",
+                  "Termin 21.1.2027, Einladung an 40 Händler",
+                  "Lea",
+                  "4.12."
+                ]
+              },
+              {
+                "zellen": [
+                  "4 Preise",
+                  "Listenpreise werden nach Kalkulation festgelegt",
+                  "Vertrieb",
+                  "11.12."
+                ]
+              }
+            ],
+            "fazit": "Jede Zeile beantwortet Was, Wer und Bis wann. Die offene Freigabe ist markiert, damit niemand die Mehrkosten schon als beschlossen behandelt.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Beispiel 2: Verlaufsprotokoll zu TOP 2",
+            "id": "b4-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "„Frau Bergmann schlägt vor, alle Hoodies aus Bio-Baumwolle zu fertigen, weil Händler zunehmend Nachweise verlangen. Herr Renner weist auf Mehrkosten von 2,38 € je Hoodie hin und auf die Lieferzeit von sechs Wochen. Der Vertrieb hält einen Aufpreis von 5 € im Handel für durchsetzbar. Ergebnis: Umstellung für alle Hoodies, sofern Herr Renner die Mehrkosten nach Prüfung des Budgets bis 27.11. freigibt.“",
+            "id": "b4-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Verlaufsprotokoll zeigt, wer welche Argumente vorgebracht hat. Das ist sinnvoll, wenn später nachvollziehbar sein muss, warum eine Entscheidung so fiel. Für die meisten Teamrunden reicht das Ergebnisprotokoll.",
+            "id": "b4-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Sprache im Protokoll",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Protokolle sind sachlich und knapp. Wortbeiträge werden in indirekter Rede wiedergegeben („Herr Renner weist darauf hin, dass …“), Ergebnisse im Präsens. Persönliche Wertungen der Protokollführung gehören nicht hinein. Das Protokoll geht innerhalb weniger Tage an alle Teilnehmenden; Einwände werden in der nächsten Besprechung geklärt.",
+                "id": "b4-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k3-b1"
+                ],
+                "text": "Die Besprechung rückwärts planen",
+                "id": "b4-d1-v1"
+              }
+            ],
+            "id": "b4-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum steht bei TOP 2 „Freigabe noch offen“, obwohl alle zugestimmt haben?",
+            "antwort": "Die Mehrkosten darf nur der kaufmännische Geschäftsführer freigeben, und er will vorher das Budget prüfen. Ohne den Vermerk würde jemand die Bestellung vielleicht schon auslösen. Das Protokoll muss zwischen Beschluss und noch ausstehender Freigabe unterscheiden.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "Wann wählst du ein Verlaufsprotokoll statt eines Ergebnisprotokolls?",
+            "antwort": "Wenn der Weg zur Entscheidung später wichtig ist, etwa bei Verhandlungen, Gremiensitzungen oder strittigen Entscheidungen. Für gewöhnliche Teamrunden genügt das Ergebnisprotokoll.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +500,10 @@
       "id": "lz3",
       "text": "Fristen berechnen und überwachen",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Eine Besprechung als Ergebnis- und als Verlaufsprotokoll festhalten"
     }
   ],
   "bloecke": [
@@ -300,6 +720,54 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Besprechungen protokollieren",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Nach einer Besprechung muss klar sein, was beschlossen wurde, wer was bis wann erledigt und was noch freigegeben werden muss. Dafür gibt es das **Protokoll**. ==Das Ergebnisprotokoll hält nur Ergebnisse fest, das Verlaufsprotokoll zusätzlich den Weg dorthin.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "",
+            "Ergebnisprotokoll",
+            "Verlaufsprotokoll"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Inhalt",
+                "Beschlüsse, Aufgaben, Verantwortliche, Termine",
+                "zusätzlich Wortbeiträge, Argumente, Abstimmungen"
+              ]
+            },
+            {
+              "zellen": [
+                "Umfang",
+                "kurz",
+                "ausführlich"
+              ]
+            },
+            {
+              "zellen": [
+                "Wann sinnvoll",
+                "Alltag: Teamrunden, Projektbesprechungen",
+                "wenn der Weg zur Entscheidung nachvollziehbar sein muss, etwa bei Verhandlungen oder Gremiensitzungen"
+              ],
+              "detail": "**Beide Formen** brauchen einen Kopf mit Anlass, Datum, Zeit, Ort, Teilnehmenden, Protokollführung und Tagesordnung sowie am Ende Ort, Datum und Unterschrift oder Freigabe."
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "**Jede Aufgabe im Protokoll braucht Was, Wer und Bis wann.** Beschlüsse, die noch eine Freigabe benötigen, werden als solche gekennzeichnet. Das Protokoll geht zeitnah an alle Teilnehmenden.",
+          "karteikarte": "Worin unterscheiden sich Ergebnis- und Verlaufsprotokoll, und welche Angaben braucht jede Aufgabe im Protokoll?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -310,7 +778,8 @@
     "Am Monatsende wird das Monatsfach auf die Tagesfächer verteilt.",
     "Fristberechnung: Der Tag des Ereignisses zählt nicht mit.",
     "Fällt das Fristende auf Samstag, Sonntag oder Feiertag, endet sie am nächsten Werktag.",
-    "Maßgeblich ist der Zugang, nicht die Absendung — deshalb der Eingangsstempel."
+    "Maßgeblich ist der Zugang, nicht die Absendung — deshalb der Eingangsstempel.",
+    "Das Ergebnisprotokoll hält Beschlüsse und Aufgaben fest, das Verlaufsprotokoll auch den Weg dorthin; jede Aufgabe braucht Was, Wer, Bis wann."
   ],
   "selbsttest": [
     {

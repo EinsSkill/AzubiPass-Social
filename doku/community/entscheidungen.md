@@ -5,6 +5,19 @@ im Chat ausdrücklich erteilte Freigabe im Auftrag dokumentieren und muss die
 Quelle und den Umfang nennen. Claude setzt nur um, was hier freigegeben ist.
 Format: Datum · Entscheidung · betroffene Datei/Version.
 
+## Erweiterter Modus · vollständig vor Merge · 28.10.2026
+
+**Quelle:** Lukes im Chat als Korrektur des Vorschlags, nach drei Piloten und zwei technischen Korrekturen zu mergen: „ne ich will das alles durch ist vor dem merge“.
+
+**Entscheidung:** Der erweiterte Modus wird erst nach vollständiger Umsetzung und Prüfung zum Merge vorgelegt. Die drei Piloten sind eine Zwischenabnahme, kein abgeschlossener Mergeumfang. Die bisher vorgeschlagene Reihenfolge „Piloten mergen, danach übrige Kapitel“ ist damit ersetzt.
+
+**Konkretisierung aus dem bestehenden Auftrag (ChatGPT):** Alle Lernfelder beider Berufe und sämtliche zugehörigen Kapitel/Erklärabschnitte nach dem vereinbarten Modell bearbeiten; Ausgangsbestand 26 Lernfelder und 160 Kapitel. Vor Abschluss den aktuellen Quellbestand inventarisieren, da Ergänzungen die Anzahl verändern können. Pro Abschnitt zusammenhängend erklären und begründen, erforderliche Grundlagen kurz einführen, Vertiefungen optional aufklappbar machen und Beispiele, Rechenwege, Vergleiche bzw. Tabellen passend zum Thema wählen. Bestehender Inhalt darf bei der Umstellung nicht versehentlich entfallen. Reines Umverpacken des Alttextes zählt nicht als abgeschlossene Vertiefung.
+
+**Abschlussbelege:** Vollständigkeitsliste aller aktuellen Abschnitte; fachliche und didaktische Gegenprüfung; E01/E02 aus dem Pilotreview bearbeitet; notwendige Builds, Regression, Suche/Detail-Links, erhaltene Aufgaben/Lernstände, mobile Bedienung, Barrierefreiheit und echte Offline-Nutzung geprüft. Nicht durchgeführte Prüfungen bleiben offen und dürfen nicht als bestanden gelten. Kapitelweise Umsetzung und Zwischenprüfungen auf dem Arbeitsbranch sind möglich, die abschließende Mergevorlage erfolgt nach dem Gesamtabschluss.
+
+Claude bleibt Umsetzungseigner; ChatGPT unterstützt Ausarbeitung und Gegenprüfung. Dieser Auftrag ist keine Merge-/Live-Freigabe und behauptet keine bereits erfolgte Gesamtumsetzung.
+
+
 ## Passwortanmeldung · Auftrag vom 21.10.2026
 
 **Quelle:** Lukes im Chat: „Lass es uns so machen, das man sich per passwort anmelden kann, so das man nicht immer mit einer mailmarbeiten muss“.

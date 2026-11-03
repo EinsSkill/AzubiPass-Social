@@ -6,86 +6,491 @@
   "untertitel": "Die Instrumente zu einem stimmigen Marketing-Mix verbinden, Budget und Projekt planen, präsentieren und die Zielerreichung mit Daten beurteilen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Analyse, Ziele, Strategie und Instrumente kennst du aus den Kapiteln 1 bis 6.",
-          "Projektmanagement kennst du aus LF 2."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust ein Marketingkonzept aus Analyse, Ziel, Strategie, Maßnahmen, Budget, Zeitplan und Erfolgskontrolle auf, planst ein Budget mit Reserve und erkennst eine Budgetüberschreitung früh.",
+        "vorwissen_kurz": "Die einzelnen Bausteine sind erarbeitet. Jetzt werden sie zu einem Konzept zusammengeführt, das die Geschäftsführung freigeben kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Baustein zum Konzept",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein **Marketingkonzept** führt alle Entscheidungen in einer schlüssigen Reihenfolge zusammen: Die **Analyse** zeigt die Ausgangslage, das **Ziel** legt fest, was erreicht werden soll, die **Strategie** bestimmt den Weg, die **Maßnahmen** setzen ihn um. Dazu kommen ein **Budget** mit Reserve, ein **Zeitplan** und eine **Erfolgskontrolle** mit vorher festgelegten Kennzahlen. Jeder Baustein muss zum vorherigen passen; eine Maßnahme ohne Bezug zum Ziel gehört nicht ins Konzept.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Konzept auf einer Seite",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Analyse",
+                  "Stärke Stickqualität und Termintreue; Chance wachsende Eventnachfrage; Risiko Online-Konfigurator im Niedrigpreis"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ziel",
+                  "Agenturkunden von 8 auf 15 bis Ende 2027; 40 Musteranfragen im 2. Quartal"
+                ]
+              },
+              {
+                "zellen": [
+                  "Strategie",
+                  "Marktentwicklung zu Eventagenturen mit Event-Paket, Positionierung über Qualität und Beratung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahmen",
+                  "Landingpage, Suchanzeigen, Musterpakete, Messestand"
+                ]
+              },
+              {
+                "zellen": [
+                  "Budget",
+                  "5.000 € einschließlich 700 € Reserve"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeitplan",
+                  "7 Wochen bis zum Kampagnenstart, danach 3 Monate Laufzeit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfolgskontrolle",
+                  "Musteranfragen, Bestellungen, Deckungsbeitrag je Kanal"
+                ]
+              }
+            ],
+            "fazit": "Jeder Baustein baut auf dem vorherigen auf. Die Geschäftsführung sieht auf einen Blick, warum welche Maßnahme geplant ist und woran der Erfolg gemessen wird.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Reserve ist kein Luxus. Kommt während der Kampagne eine zusätzliche Ausgabe von 900 € hinzu, etwa für einen größeren Messestand, wäre das Budget um 200 € überschritten. Wer die Ausgaben laufend mit dem Plan vergleicht, erkennt das früh und kann entscheiden: an anderer Stelle sparen, die Reserve nutzen oder eine Budgeterhöhung beantragen. Wer erst am Ende abrechnet, steht vor vollendeten Tatsachen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Ein Marketingkonzept fasst alles zusammen: Ausgangslage (Analyse, SWOT), Ziele (SMART), Strategie (Zielgruppe, Positionierung), Maßnahmen im Marketing-Mix, Budget, Zeitplan und Verantwortliche sowie die Erfolgskontrolle. Das Budget wird auf Maßnahmen verteilt; eine Reserve fängt Unvorhergesehenes auf. Budgetentscheidungen orientieren sich an den Zielen (was brauchen wir, um das Ziel zu erreichen?), nicht nur am Vorjahreswert.",
-        "beispiele": [
-          "Budget 5.000 €: Gestaltung 1.500 €, Ausspielung 2.000 €, Muster 800 €, Reserve 700 €.",
-          "Eine zusätzliche Ausgabe von 900 € würde das Budget um 200 € überschreiten."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Budget nach Ziel oder nach Umsatz",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Marketingbudgets werden oft als Prozentsatz vom Umsatz festgelegt. Besser begründet ist ein Budget, das sich aus den Maßnahmen ableitet, die für das Ziel nötig sind. Beides wird in der Praxis kombiniert: Das Ziel bestimmt den Bedarf, der Umsatz die Grenze.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Marlene Voss legt das Konzept ‚MAKEL für Eventagenturen‘ vor: Ziel 15 aktive Agenturkunden bis Ende 2027, Positionierung Qualität mit Beratung, Maßnahmen von Event-Paket bis Suchanzeigen, Budget 5.000 € für das erste Halbjahr, Verantwortliche je Maßnahme und eine Auswertung nach drei und sechs Monaten.",
-        "typische_fehler": "Maßnahmen planen, ohne Budget, Zeitplan und Erfolgsmessung festzulegen.",
         "verstaendnisfragen": [
-          "Welche Bausteine hat ein Marketingkonzept? Analyse, Ziele, Strategie, Maßnahmen, Budget, Zeitplan, Verantwortliche, Erfolgskontrolle.",
-          "Wozu dient eine Budgetreserve? Um unvorhergesehene Ausgaben aufzufangen, ohne das Budget zu überschreiten."
-        ],
-        "pruefungsbezug": "Ein Marketingbudget aufteilen und Überschreitungen erkennen.",
-        "merksatz": "Ein Marketingkonzept verbindet Analyse, Ziele, Strategie, Maßnahmen, Budget, Zeitplan und Erfolgskontrolle."
+          {
+            "frage": "Welche Bausteine gehören in ein Marketingkonzept?",
+            "antwort": "Analyse, Ziel, Strategie, Maßnahmen, Budget, Zeitplan und Erfolgskontrolle.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Budget 5.000 €, geplant sind 4.300 €. Eine zusätzliche Ausgabe von 900 € kommt hinzu. Was folgt?",
+            "antwort": "Die Reserve von 700 € reicht nicht; das Budget wäre um 200 € überschritten. Es muss umgeschichtet oder eine Erhöhung beantragt werden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Produkt-, Preis-, Kommunikations- und Distributionspolitik sind die vier Instrumente.",
-          "Instrumente beeinflussen sich gegenseitig."
+        "darstellung": "vollfassung",
+        "ziel": "Du verbindest Produkt-, Preis-, Kommunikations- und Distributionspolitik zu einem Marketing-Mix, der dieselbe Positionierung trägt, und erkennst Maßnahmen, die die Positionierung schwächen.",
+        "vorwissen_kurz": "Jedes Instrument für sich ist gut durchdacht. Entscheidend ist, ob sie zusammenpassen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Mix, eine Botschaft",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:marketing-mix|Marketing-Mix}} ist die abgestimmte Kombination von Produkt-, Preis-, Kommunikations- und Distributionspolitik. ==Alle vier müssen dieselbe Positionierung tragen.== Positioniert sich MAKEL Studio über Qualität und Beratung, passen ein hochwertiges Produkt mit Service, ein Preis im oberen Bereich, eine Kommunikation mit Referenzen und Mustern und ein persönlicher Vertrieb. Ein einzelnes Instrument, das nicht passt, kann die ganze Positionierung untergraben.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Unstimmigkeiten erkennen",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorschlag aus dem Team",
+              "Instrument",
+              "passt zur Positionierung?",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Event-Paket zusätzlich auf einer Rabattplattform für 29 €",
+                  "Preis und Distribution",
+                  "nein",
+                  "signalisiert Billigangebot, untergräbt den Preis von 44 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kundenstimmen von Agenturen auf der Landingpage",
+                  "Kommunikation",
+                  "ja",
+                  "belegt Qualität und Termintreue"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferzeit auf 4 Wochen verlängern, um Kosten zu sparen",
+                  "Distribution",
+                  "nein",
+                  "widerspricht der Botschaft „pünktlich zum Event\""
+                ]
+              },
+              {
+                "zellen": [
+                  "Recycelte Baumwolle als Option",
+                  "Produkt",
+                  "ja",
+                  "stärkt Qualität und Verantwortung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Expresszuschlag für Lieferung unter 7 Tagen",
+                  "Preis",
+                  "ja",
+                  "macht Zusatzleistung sichtbar, ohne Grundpreis zu senken"
+                ]
+              }
+            ],
+            "fazit": "Zwei Vorschläge würden die Positionierung schwächen, auch wenn sie kurzfristig Umsatz oder Kosten verbessern. Die anderen stärken sie.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Unstimmigkeiten fallen Kunden schneller auf als dem eigenen Team. Eine Agentur, die das Event-Paket auf einer Rabattplattform für 29 € sieht, fragt sich, warum sie direkt 44 € zahlen soll. Eine Botschaft „pünktlich zum Event\" bei vier Wochen Lieferzeit wirkt unglaubwürdig. Deshalb wird jede neue Maßnahme daraufhin geprüft, ob sie zur Positionierung passt, bevor sie umgesetzt wird.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Der Marketing-Mix ist die abgestimmte Kombination der vier Instrumente: Produkt (was wird angeboten?), Preis (zu welchen Bedingungen?), Kommunikation (wie wird es bekannt gemacht?) und Distribution (auf welchem Weg kommt es zum Kunden?). Die Instrumente müssen zueinander und zur Positionierung passen. Ein Premiumprodukt mit Tiefstpreis und Billigwerbung wirkt widersprüchlich; eine starke Kampagne nützt wenig, wenn der Vertriebsweg die Zielgruppe nicht erreicht oder die Lieferzeit nicht stimmt.",
-        "beispiele": [
-          "Stimmig: Event-Paket mit Beratung (Produkt), 44 € mit Staffelpreisen (Preis), Fachmesse und Suchanzeigen (Kommunikation), persönlicher Vertrieb und Onlineformular (Distribution).",
-          "Unstimmig: Premium-Paket, aber 30 % Dauerrabatt auf Social Media beworben."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Vier P und mehr",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Marketing-Mix wird oft mit den vier P beschrieben: Product, Price, Promotion, Place. Für Dienstleistungen werden manchmal weitere ergänzt, etwa People für die Menschen, die die Leistung erbringen, und Process für den Ablauf. Bei MAKEL Studio ist die Designberatung ein solcher Dienstleistungsteil.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Bei der Vorstellung fragt Tobias Renner: ‚Wir werben mit Termintreue — können wir die überhaupt halten?‘ Deniz Aydın bestätigt: Mit der neuen Fertigungsinsel sind zwei Wochen Lieferzeit für Standardmotive realistisch. Erst damit passt das Kommunikationsversprechen zum Produkt.",
-        "typische_fehler": "Jedes Instrument einzeln optimieren, ohne auf den Gesamtzusammenhang zu achten.",
         "verstaendnisfragen": [
-          "Welche vier Instrumente bilden den Marketing-Mix? Produkt-, Preis-, Kommunikations- und Distributionspolitik.",
-          "Woran erkennst du einen stimmigen Mix? Alle Instrumente stützen dieselbe Positionierung und widersprechen sich nicht."
-        ],
-        "pruefungsbezug": "Instrumente zu einem konsistenten Marketing-Mix verbinden und Widersprüche erkennen.",
-        "merksatz": "Der Marketing-Mix ist stimmig, wenn Produkt, Preis, Kommunikation und Distribution dieselbe Positionierung tragen."
+          {
+            "frage": "Wann ist ein Marketing-Mix stimmig?",
+            "antwort": "Wenn Produkt, Preis, Kommunikation und Distribution dieselbe Positionierung tragen.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum passt ein dauerhafter Rabatt von 30 % nicht zu einer Positionierung über Qualität?",
+            "antwort": "Weil er ein Billigangebot signalisiert und den höheren Preis unglaubwürdig macht.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Kampagnen sind Projekte mit Ziel, Termin und Budget.",
-          "Präsentationen richten sich nach der Zielgruppe (LF 2)."
+        "darstellung": "vollfassung",
+        "ziel": "Du setzt eine Kampagne als Projekt mit Arbeitspaketen, Abhängigkeiten, Verantwortlichen und Schnittstellen um, ermittelst den kritischen Pfad und präsentierst das Konzept zielgruppengerecht.",
+        "vorwissen_kurz": "Das Konzept ist freigegeben. Jetzt müssen Landingpage, Anzeigen, Musterpakete und Messe rechtzeitig fertig werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kampagne als Projekt",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Kampagne wird wie ein Projekt umgesetzt: mit Arbeitspaketen, Verantwortlichen, Terminen und Abhängigkeiten. Manche Pakete hängen voneinander ab: Suchanzeigen dürfen erst starten, wenn die Landingpage steht, sonst bezahlt MAKEL Klicks auf eine leere Seite. Wichtig sind auch die **Schnittstellen** zu anderen Abteilungen: Die Veredelung muss die Musterpakete produzieren, der Vertrieb die Anfragen schnell bearbeiten. Am Ende wird das Konzept der Geschäftsführung präsentiert, mit Ziel, Maßnahmen, Budget, Risiken und Kennzahlen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Pakete, Verantwortung und Schnittstellen",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Arbeitspaket",
+              "Dauer",
+              "Voraussetzung",
+              "verantwortlich",
+              "Schnittstelle"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Landingpage",
+                  "3 Wochen",
+                  "—",
+                  "Marketing",
+                  "Grafik für Bilder, Vertrieb für Referenzen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Suchanzeigen",
+                  "4 Wochen Laufzeit bis Kampagnenende",
+                  "Landingpage fertig",
+                  "Marketing",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Musterpakete",
+                  "2 Wochen",
+                  "—",
+                  "Veredelung",
+                  "Lager für Rohlinge"
+                ]
+              },
+              {
+                "zellen": [
+                  "Messe vorbereiten",
+                  "3 Wochen",
+                  "Musterpakete",
+                  "Vertrieb",
+                  "Veredelung für Exponate"
+                ]
+              },
+              {
+                "zellen": [
+                  "Messetag und Nachfassen",
+                  "1 Woche",
+                  "Messe vorbereitet, Landingpage fertig",
+                  "Vertrieb",
+                  "Marketing für Formular"
+                ]
+              }
+            ],
+            "fazit": "Der kritische Pfad läuft über Landingpage und Suchanzeigen mit sieben Wochen. Musterpakete und Messe haben eine Woche Puffer; eine Verzögerung der Landingpage verschiebt dagegen das Kampagnenende.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Präsentation vor der Geschäftsführung richtet sich nach deren Fragen. Tobias Renner will wissen, was die Kampagne kostet, was sie bringen soll und wo die Risiken liegen. Deshalb beginnt die Präsentation mit Ziel und erwartetem Ergebnis, zeigt dann Maßnahmen und Budget und nennt offen die Risiken, etwa eine mögliche Verzögerung der Landingpage. Der Zeitplan mit dem kritischen Pfad macht sichtbar, wo besonders aufgepasst werden muss.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Die Umsetzung wird wie ein Projekt geplant: Arbeitspakete (Gestaltung, Landingpage, Messestand, Muster, Anzeigen), Verantwortliche, Termine und Abhängigkeiten, etwa dass die Anzeigen erst starten, wenn die Landingpage fertig ist. Vertrieb, Produktion und Einkauf werden früh eingebunden, weil eine erfolgreiche Kampagne Anfragen und Aufträge auslöst, die bearbeitet werden müssen. Die Präsentation vor der Geschäftsführung konzentriert sich auf Ziele, Maßnahmen, Budget, Risiken und Kennzahlen — nicht auf jedes Detail der Gestaltung.",
-        "beispiele": [
-          "Abhängigkeit: Musterpakete müssen vor dem Messestart gepackt sein.",
-          "Schnittstelle: Die Produktion plant Kapazität für erwartete 20 Musteraufträge ein."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kapazität in der Veredelung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Musterpakete fallen in eine Zeit, in der die Veredelung viele Aufträge hat. Damit sie nicht zu spät fertig werden, wird der Termin früh mit Deniz Aydın abgestimmt. Ohne diese Abstimmung wäre die Schnittstelle ein Risiko für den Messetermin.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Marlene plant: Landingpage bis 15. Februar (Verantwortlich: Marlene), Musterpakete bis 1. März (Jonas Weidner), Suchanzeigen ab 1. März (Marlene), Messe am 20. März (Team Vertrieb). Deniz reserviert in KW 12 bis 14 Kapazität für Musteraufträge. In der Präsentation zeigt sie fünf Folien: Ziel, Zielgruppe, Mix, Budget und Zeitplan, Kennzahlen.",
-        "typische_fehler": "Eine Kampagne starten, ohne dass Produktion und Vertrieb auf die erwarteten Anfragen vorbereitet sind.",
         "verstaendnisfragen": [
-          "Warum werden Produktion und Einkauf früh eingebunden? Weil die Kampagne Aufträge auslöst, die Material und Kapazität brauchen.",
-          "Was gehört in eine Präsentation vor der Geschäftsführung? Ziele, Maßnahmen, Budget, Risiken und Kennzahlen."
-        ],
-        "pruefungsbezug": "Marketingmaßnahmen in einem Projekt koordinieren und präsentieren.",
-        "merksatz": "Kampagnen werden als Projekt mit Paketen, Verantwortlichen, Terminen und Schnittstellen umgesetzt und zielgruppengerecht präsentiert."
+          {
+            "frage": "Warum dürfen die Suchanzeigen erst nach Fertigstellung der Landingpage starten?",
+            "antwort": "Weil MAKEL sonst Klicks bezahlt, die auf eine leere oder unfertige Seite führen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Welche Fragen sollte eine Präsentation vor der Geschäftsführung beantworten?",
+            "antwort": "Ziel und erwartetes Ergebnis, Maßnahmen, Budget, Risiken und die Kennzahlen zur Erfolgskontrolle.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Ziele sind messbar formuliert (Kapitel 3).",
-          "Kennzahlen kennst du aus Kapitel 5."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst die Zielerreichung einer Kampagne entlang der Wirkungskette von Klick bis Bestellung, findest die Stelle, an der die Kette bricht, und leitest eine gezielte Nachsteuerung ab.",
+        "vorwissen_kurz": "Drei Monate nach dem Start: Die Klickrate hat sich verdreifacht. Ist die Kampagne ein Erfolg?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Am Ziel messen, nicht an Zwischengrößen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Kampagne ist erfolgreich, wenn sie ihr Ziel erreicht. Zwischengrößen wie Klicks oder Anfragen zeigen, ob die Kette funktioniert, ersetzen aber nicht die Zielgröße. Die **Wirkungskette** reicht von der Einblendung über den Klick und die Anfrage bis zur Bestellung. Steigt eine Stufe, die nächste aber nicht, bricht die Kette an dieser Stelle. Dort wird nach der Ursache gesucht und nachgesteuert.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wo die Kette bricht",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "vorher",
+              "nach 3 Monaten",
+              "Umwandlung zur nächsten Stufe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Klickrate",
+                  "1 %",
+                  "3 %",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Musteranfragen",
+                  "10",
+                  "35",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestellungen",
+                  "4",
+                  "5",
+                  "von 40 % auf 14 % der Anfragen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ursachenprüfung",
+                  "",
+                  "",
+                  "Musterpakete kamen im Schnitt nach 9 Tagen an, kein Nachfassen durch den Vertrieb"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachsteuerung",
+                  "",
+                  "",
+                  "Musterversand in 2 Tagen, Anruf des Vertriebs eine Woche nach Versand"
+                ]
+              }
+            ],
+            "fazit": "Die Kampagne erzeugt viel mehr Interesse, aber kaum mehr Bestellungen. Die Kette bricht zwischen Anfrage und Bestellung; dort setzt die Nachsteuerung an, nicht bei den Anzeigen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ohne die Analyse der Wirkungskette hätte das Team vielleicht noch mehr Geld in Anzeigen gesteckt, weil die Klickrate so gut aussah. Die Zahlen zeigen aber, dass das Problem später liegt: Die Musterpakete kamen zu spät, und niemand fragte nach. Nach der Nachsteuerung wird mit denselben Kennzahlen erneut gemessen. Steigt die Umwandlung von Anfragen in Bestellungen wieder, war die Ursache richtig erkannt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Die Erfolgskontrolle vergleicht Ist-Werte mit den Zielen und prüft die Wirkungskette: Reichweite → Klicks → Anfragen → Bestellungen → Deckungsbeitrag. Steigen Zwischengrößen, aber das eigentliche Ziel nicht, liegt das Problem an einer anderen Stelle der Kette: Angebot, Preis, Landingpage, Reaktionszeit des Vertriebs. Ergebnisse werden zielbezogen präsentiert, Ursachen analysiert und Maßnahmen angepasst. Auch die Kosten werden bewertet: Kosten je Neukunde, Rückfluss über die Deckungsbeiträge.",
-        "beispiele": [
-          "Klickrate steigt, Bestellungen bleiben gleich: Ziel ‚mehr Bestellungen‘ nicht erreicht — Abbruchstellen prüfen.",
-          "Kosten je neuer Agentur 500 €, erwarteter DB je Agentur im Jahr 2.000 €: Kampagne lohnt sich voraussichtlich."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Lernen für das nächste Konzept",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Erkenntnisse fließen in die nächste Planung ein: Musterversand und Nachfassen werden von Anfang an als eigene Arbeitspakete mit Verantwortlichen geplant. So verbessert jedes Konzept das nächste.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Nach drei Monaten: Klickrate von 1 % auf 3 % gestiegen, Musteranfragen von 10 auf 35, Bestellungen aber nur von 4 auf 5. Marlene analysiert: Viele Agenturen fanden den Preis ohne Staffel zu hoch, und die Angebote gingen erst nach einer Woche raus. Maßnahmen: Staffelpreis im Angebot sichtbar machen, Angebote innerhalb von 48 Stunden versenden. Nächste Auswertung nach sechs Wochen.",
-        "typische_fehler": "Einen Erfolg bei Klicks als Erreichen des Ziels ‚mehr Bestellungen‘ ausgeben.",
         "verstaendnisfragen": [
-          "Was ist die Wirkungskette einer Kampagne? Reichweite, Klicks, Anfragen, Bestellungen, Deckungsbeitrag.",
-          "Was tust du, wenn Klicks steigen, Bestellungen aber nicht? Abbruchstellen in der Kette suchen, etwa Angebot, Preis oder Reaktionszeit."
-        ],
-        "pruefungsbezug": "Zielerreichung aus geeigneten Daten beurteilen und Verbesserungen ableiten.",
-        "merksatz": "Erfolg wird am Ziel gemessen, nicht an Zwischengrößen; Brüche in der Wirkungskette zeigen, wo nachgesteuert werden muss."
+          {
+            "frage": "Die Klickrate steigt, die Bestellungen bleiben fast gleich. Ist die Kampagne erfolgreich, wenn das Ziel „mehr Bestellungen\" heißt?",
+            "antwort": "Nein. Das Ziel ist nicht erreicht. Die Kette bricht zwischen Anfrage und Bestellung; dort muss nachgesteuert werden.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum wird nach einer Nachsteuerung mit denselben Kennzahlen gemessen?",
+            "antwort": "Damit sich vergleichen lässt, ob die Maßnahme an der richtigen Ursache angesetzt hat.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

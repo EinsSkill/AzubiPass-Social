@@ -6,86 +6,498 @@
   "untertitel": "Warum Lohnzuschläge maschinenintensive Fertigung verzerren und wie ein Maschinenstundensatz die Kosten genauer zuordnet.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Fertigungsgemeinkosten werden üblicherweise auf Fertigungslöhne bezogen (Kapitel 3).",
-          "In der Veredelung arbeiten teure Maschinen, oft mit wenig Personal."
+        "darstellung": "vollfassung",
+        "ziel": "Du trennst die Fertigungsgemeinkosten in maschinenabhängige Kosten und Restgemeinkosten und begründest, warum ein reiner Lohnzuschlag bei maschinenintensiver Fertigung zu falschen Auftragskosten führt.",
+        "vorwissen_kurz": "Der Fertigungsgemeinkostenzuschlag verteilt Maschinenkosten über die Löhne. Das passt nur, wenn Lohn und Maschinenzeit eng zusammenhängen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn die Maschine die Kosten treibt",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Veredelung von MAKEL Studio entstehen viele Gemeinkosten durch die Maschinen: Abschreibung, Raum, Energie, Wartung. Werden sie über die Fertigungslöhne verrechnet, bekommt ein Auftrag mit viel Handarbeit hohe Maschinenkosten, obwohl er die Maschine kaum nutzt. Ein Auftrag mit langer Stickzeit, aber wenig Handgriffen, wird zu billig gerechnet. Deshalb trennt MAKEL Studio die maschinenabhängigen Kosten ab und verrechnet sie über die Maschinenzeit. Die übrigen Fertigungsgemeinkosten, die **Restgemeinkosten**, werden weiter über die Löhne zugeschlagen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Aufträge, gleicher Lohn",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beide Aufträge haben 4 Stunden Fertigungslohn zu 20 €. Der Fertigungsgemeinkostenzuschlag beträgt 125 %.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Auftrag A: 300 Aufnäher auf Taschen nähen",
+              "Auftrag B: 60 großflächige Rückenstickereien"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fertigungslohn",
+                  "80 €",
+                  "80 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maschinenzeit Stickmaschine",
+                  "0,5 h",
+                  "9 h"
+                ]
+              },
+              {
+                "zellen": [
+                  "FGK mit Lohnzuschlag 125 %",
+                  "100 €",
+                  "100 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "tatsächlicher Maschineneinsatz",
+                  "gering",
+                  "hoch"
+                ]
+              }
+            ],
+            "fazit": "Mit dem Lohnzuschlag tragen beide Aufträge gleich viel Maschinenkosten, obwohl B die Maschine 18-mal so lange nutzt. A wird zu teuer gerechnet, B zu billig.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Folge kann teuer werden. Kalkuliert MAKEL Studio Rückenstickereien zu billig, gewinnt es vielleicht viele solche Aufträge — und verdient daran weniger, als es denkt. Taschen mit Aufnähern werden zu teuer angeboten und gehen an die Konkurrenz. Erst die Verrechnung über Maschinenstunden zeigt, was ein Auftrag die Maschine wirklich kostet.",
+            "id": "a1-p3"
+          }
         ],
-        "erklaerung": "Bei hohem Maschineneinsatz entstehen die Fertigungsgemeinkosten vor allem durch die Maschinen, nicht durch die Löhne. Ein Zuschlag auf die Fertigungslöhne verteilt sie dann ungenau: Ein Auftrag mit viel Maschinenzeit, aber wenig Handarbeit wird zu billig kalkuliert, ein handarbeitsintensiver zu teuer. Deshalb trennt man die maschinenabhängigen Fertigungsgemeinkosten heraus: kalkulatorische Abschreibung und Zinsen der Maschine, anteilige Raumkosten, Energie, Instandhaltung, Werkzeuge. Die übrigen Fertigungsgemeinkosten (Restgemeinkosten, etwa Gehalt der Produktionsleitung) werden weiter auf die Löhne bezogen.",
-        "beispiele": [
-          "Stickmaschine: Abschreibung, Strom, Wartung — maschinenabhängig.",
-          "Gehalt der Produktionsleitung — Restfertigungsgemeinkosten."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Lohnintensiv oder maschinenintensiv",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In einer Näherei mit vielen Handarbeitsplätzen und wenigen einfachen Maschinen ist der Lohnzuschlag eine brauchbare Näherung. In einer Stickerei mit teuren Mehrkopfmaschinen, die lange ohne Eingriff laufen, ist er es nicht. Je höher der Fertigungsgemeinkostenzuschlag, desto eher lohnt sich der Maschinenstundensatz.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Bei MAKEL laufen acht Stickköpfe gleichzeitig unter Aufsicht einer einzigen Mitarbeiterin. Der FGK-Zuschlag von 150 % auf die Löhne führt dazu, dass ein Stickauftrag mit drei Stunden Maschinenzeit kaum Gemeinkosten trägt. Sandra Koslowski schlägt einen Maschinenstundensatz vor.",
-        "typische_fehler": "Alle Fertigungsgemeinkosten pauschal auf die Löhne beziehen, obwohl die Maschine die Kosten treibt.",
         "verstaendnisfragen": [
-          "Warum ist ein Lohnzuschlag bei maschinenintensiver Fertigung ungenau? Weil die Gemeinkosten von der Maschinenzeit abhängen, nicht vom Lohn.",
-          "Nenne drei maschinenabhängige Kosten. Zum Beispiel Abschreibung, Energie, Instandhaltung."
-        ],
-        "pruefungsbezug": "Maschinenabhängige Kosten von Restgemeinkosten trennen.",
-        "merksatz": "Maschinenabhängige Fertigungsgemeinkosten werden über die Maschinenzeit verrechnet, die Restgemeinkosten weiter über die Löhne."
+          {
+            "frage": "Warum wird Auftrag B mit dem Lohnzuschlag zu billig gerechnet?",
+            "antwort": "Weil er die Stickmaschine 9 Stunden nutzt, aber über den Lohn nur so viele Gemeinkosten erhält wie ein Auftrag mit einer halben Stunde Maschinenzeit.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welche Fertigungsgemeinkosten bleiben beim Lohnzuschlag?",
+            "antwort": "Die Restgemeinkosten, die nicht von der Maschine abhängen, etwa Gehalt der Produktionsleitung und Hilfslöhne.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Eine Maschine läuft nicht rund um die Uhr.",
-          "Wartung und Stillstand verringern die nutzbare Zeit."
+        "darstellung": "vollfassung",
+        "ziel": "Du ermittelst die geplanten produktiven Laufstunden einer Maschine aus Betriebszeit, Wartung und erwarteter Auftragslücke und erklärst, warum Kalender- oder verfügbare Stunden als Nenner falsch sind.",
+        "vorwissen_kurz": "Der Maschinenstundensatz verteilt Kosten auf Stunden. Welche Stunden das sind, entscheidet über die Höhe des Satzes.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nur Stunden mit Aufträgen zählen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kosten einer Maschine sollen auf die Stunden verteilt werden, in denen sie tatsächlich für Aufträge läuft. Deshalb wird von der Betriebszeit ausgegangen und abgezogen, was nicht produktiv ist: geplante Wartung und Reinigung, Störungen nach Erfahrung und Zeit, in der voraussichtlich kein Auftrag vorliegt. Das Ergebnis sind die geplanten Laufstunden. Je weniger es sind, desto höher wird der Stundensatz.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Laufstunden der neuen Sechskopf-Stickmaschine",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Stunden"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Betriebszeit: 250 Arbeitstage × 8 h",
+                  "2.000"
+                ]
+              },
+              {
+                "zellen": [
+                  "− Wartung und Reinigung (laut Hersteller)",
+                  "120"
+                ]
+              },
+              {
+                "zellen": [
+                  "− Störungen und Rüsten nach Erfahrung",
+                  "280"
+                ]
+              },
+              {
+                "zellen": [
+                  "− erwartete Zeit ohne Auftrag (Sommerflaute, Wochenbeginn)",
+                  "400"
+                ]
+              },
+              {
+                "zellen": [
+                  "= geplante Laufstunden",
+                  "1.200"
+                ]
+              }
+            ],
+            "fazit": "Von 2.000 Betriebsstunden sind 1.200 geplant produktiv. Das entspricht einer Auslastung von 60 % der Betriebszeit.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob das Rüsten von den Laufstunden abgezogen wird, hängt davon ab, wie die Aufträge kalkuliert werden. MAKEL Studio rechnet die Rüstzeit in der Kalkulation getrennt als Maschinenzeit; dann darf sie nicht zusätzlich in den Laufstunden fehlen, sonst wäre der Satz doppelt belastet. Im Beispiel sind deshalb nur Störungen und unproduktives Umrüsten abgezogen. Wichtig ist, dass Laufstunden und Kalkulation dieselbe Abgrenzung verwenden.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Für den Maschinenstundensatz braucht man die geplanten produktiven Maschinenstunden (Laufzeit) einer Periode. Ausgangspunkt ist die betriebliche Arbeitszeit, etwa 250 Tage × 8 Stunden = 2.000 Stunden. Davon werden geplante Stillstände abgezogen: Wartung, Reinigung, erwartete Störungen, Leerzeiten mangels Aufträgen. Ob Rüstzeiten zur Laufzeit gezählt werden, legt das Unternehmen fest — entscheidend ist, dass Satz und Auftragsrechnung dieselbe Abgrenzung verwenden. Kalenderstunden oder bloß verfügbare Stunden sind nicht dasselbe wie geplante produktive Stunden.",
-        "beispiele": [
-          "2.000 Stunden Betriebszeit − 200 Stunden Wartung und Störungen − 600 Stunden ohne Auftrag = 1.200 Laufstunden.",
-          "Laufzeit einschließlich Rüsten: Ein Auftrag mit 0,5 h Rüsten und 2 h Sticken belegt 2,5 Maschinenstunden."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn die Auslastung steigt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gewinnt MAKEL Studio neue Großkunden und die Maschine läuft 1.500 statt 1.200 Stunden, sinkt der Stundensatz, weil sich die Kosten auf mehr Stunden verteilen. Wer mit dem alten Satz weiter kalkuliert, rechnet dann zu teuer. Deshalb wird der Satz regelmäßig mit der tatsächlichen Auslastung verglichen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für die Stickmaschine rechnet Deniz Aydın: 250 Arbeitstage × 8 Stunden = 2.000 Stunden. Abzüglich 150 Stunden Wartung und Reinigung sowie erwarteter 850 Stunden ohne Auftrag bleiben 1.000 geplante Laufstunden. Rüsten zählt bei MAKEL zur Laufzeit.",
-        "typische_fehler": "Kalenderstunden (8.760 im Jahr) oder die volle Betriebszeit statt der geplanten produktiven Stunden verwenden.",
         "verstaendnisfragen": [
-          "Was ist die Laufzeit einer Maschine? Die geplanten produktiven Stunden einer Periode.",
-          "Warum ist die Abgrenzung der Rüstzeit wichtig? Weil Stundensatz und Auftragszeit dieselbe Abgrenzung haben müssen."
-        ],
-        "pruefungsbezug": "Laufzeit aus Betriebszeit und Stillständen berechnen.",
-        "merksatz": "Der Stundensatz bezieht sich auf geplante produktive Laufstunden — nicht auf Kalender- oder bloß verfügbare Stunden."
+          {
+            "frage": "Warum sind 8.760 Kalenderstunden kein sinnvoller Nenner?",
+            "antwort": "Weil die Maschine nachts, am Wochenende und bei fehlenden Aufträgen nicht läuft. Die Kosten würden auf Stunden verteilt, in denen gar nicht produziert wird; der Satz wäre viel zu niedrig.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie viele Laufstunden ergeben sich bei 2.000 Betriebsstunden, 150 Stunden Wartung und 850 Stunden ohne Auftrag?",
+            "antwort": "2.000 − 150 − 850 = 1.000 Stunden.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Die maschinenabhängigen Kosten sind ermittelt.",
-          "Die Laufzeit ist geplant."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest einen Maschinenstundensatz aus kalkulatorischer Abschreibung, kalkulatorischen Zinsen, Raum-, Energie- und Instandhaltungskosten und erklärst den Einfluss der Auslastung.",
+        "vorwissen_kurz": "Alle Kosten, die eine Maschine im Jahr verursacht, werden auf ihre geplanten Laufstunden verteilt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Bestandteile des Satzes",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:maschinenstundensatz|Maschinenstundensatz}} umfasst alle Kosten, die durch die Maschine entstehen: die kalkulatorische Abschreibung, meist vom Wiederbeschaffungswert, die kalkulatorischen Zinsen auf das gebundene Kapital, die Raumkosten für die Stellfläche, die Energiekosten und die Instandhaltung. Die Summe wird durch die geplanten Laufstunden geteilt.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Satz der Sechskopf-Stickmaschine",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestandteil",
+              "Rechnung",
+              "Betrag pro Jahr"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kalkulatorische Abschreibung",
+                  "Wiederbeschaffungswert 54.000 € ÷ 6 Jahre",
+                  "9.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Kalkulatorische Zinsen",
+                  "Anschaffungswert 48.000 € ÷ 2 × 5 %",
+                  "1.200 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Raumkosten",
+                  "15 m² × 140 €",
+                  "2.100 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Energie",
+                  "3 kW × 1.200 h × 0,30 €",
+                  "1.080 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Instandhaltung",
+                  "laut Wartungsvertrag und Ersatzteilen",
+                  "1.620 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe maschinenabhängige Kosten",
+                  "",
+                  "15.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Maschinenstundensatz",
+                  "15.000 € ÷ 1.200 h",
+                  "12,50 € je Stunde"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Jede Laufstunde der Stickmaschine kostet 12,50 €, ohne die Bedienerin. Deren Lohn wird getrennt als Fertigungslohn erfasst.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Zinsen werden auf das durchschnittlich gebundene Kapital berechnet, also auf den halben Anschaffungswert: Am Anfang ist der volle Betrag gebunden, am Ende der Nutzungsdauer nichts mehr. Die Abschreibung vom Wiederbeschaffungswert sorgt dafür, dass über die Preise genug verdient wird, um die Maschine später zu ersetzen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Maschinenstundensatz = maschinenabhängige Fertigungsgemeinkosten der Periode ÷ geplante Laufstunden. Typische Bestandteile: kalkulatorische Abschreibung (Wiederbeschaffungswert ÷ Nutzungsdauer), kalkulatorische Zinsen (oft auf das durchschnittlich gebundene Kapital, also halber Anschaffungswert × Zinssatz), Raumkosten (Fläche × Kosten je m²), Energie (Leistung × Laufstunden × Strompreis), Instandhaltung. Fixe Bestandteile (Abschreibung, Zinsen, Raum) verteilen sich auf die Laufstunden; sinkt die Auslastung, steigt der Satz.",
-        "beispiele": [
-          "Maschinenabhängige Kosten 20.000 €, 1.000 Laufstunden: 20 € je Maschinenstunde.",
-          "Bei nur 800 Laufstunden und gleichen fixen Kosten steigt der Satz."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Fixe und variable Bestandteile",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Abschreibung, Zinsen und Raum sind fix: Sie fallen an, ob die Maschine 800 oder 1.500 Stunden läuft. Energie ist variabel. Deshalb sinkt der Stundensatz bei höherer Auslastung: Bei 1.500 Laufstunden betrüge er (13.920 € + 1.350 €) ÷ 1.500 h ≈ 10,18 €, wenn die Instandhaltung gleich bleibt.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für die Stickmaschine ermittelt Sandra: kalkulatorische Abschreibung 12.000 €, kalkulatorische Zinsen 1.800 €, Raumkosten 1.800 €, Energie 2.400 €, Instandhaltung 2.000 €, zusammen 20.000 € im Jahr. Bei 1.000 geplanten Laufstunden beträgt der Maschinenstundensatz 20 €.",
-        "typische_fehler": "Den Satz mit tatsächlichen statt geplanten Stunden berechnen und so jeden Monat einen anderen Satz erhalten.",
         "verstaendnisfragen": [
-          "Wie berechnet man den Maschinenstundensatz? Maschinenabhängige Kosten ÷ geplante Laufstunden.",
-          "Was passiert mit dem Satz, wenn die geplante Auslastung sinkt? Er steigt, weil sich fixe Kosten auf weniger Stunden verteilen."
-        ],
-        "pruefungsbezug": "Maschinenstundensatz aus gegebenen Kosten und Laufzeit berechnen.",
-        "merksatz": "Maschinenstundensatz = maschinenabhängige Kosten ÷ geplante Laufstunden; weniger Auslastung, höherer Satz."
+          {
+            "frage": "Jährlich zurechenbare Maschinenkosten 48.000 €, geplante Laufstunden 1.200. Wie hoch ist der Maschinenstundensatz?",
+            "antwort": "48.000 € ÷ 1.200 h = 40 € je Stunde.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum werden die kalkulatorischen Zinsen auf den halben Anschaffungswert berechnet?",
+            "antwort": "Weil das gebundene Kapital durch die Abschreibung von Jahr zu Jahr sinkt. Im Durchschnitt über die Nutzungsdauer ist die Hälfte gebunden.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Jeder Auftrag hat eine Maschinenzeit laut Arbeitsplan.",
-          "Rüstzeit ist Teil der Maschinenbelegung."
+        "darstellung": "vollfassung",
+        "ziel": "Du setzt Fertigungslöhne, Restgemeinkosten und Maschinenkosten in einer Auftragskalkulation an, verrechnest die Rüstzeit genau einmal und vergleichst das Ergebnis mit der reinen Zuschlagskalkulation.",
+        "vorwissen_kurz": "Mit dem Maschinenstundensatz lassen sich die Maschinenkosten eines Auftrags nach seiner tatsächlichen Laufzeit berechnen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fertigungskosten aus drei Teilen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Kalkulation mit Maschinenstundensatz setzen sich die Fertigungskosten aus drei Teilen zusammen: den **Fertigungslöhnen** laut Arbeitsplan, den **Restgemeinkosten** als Zuschlag auf diese Löhne und den **Maschinenkosten** als Maschinenzeit mal Stundensatz. Die Maschinenzeit umfasst die Laufzeit des Auftrags einschließlich der Rüstzeit, sofern sie nicht schon in den Laufstunden abgezogen wurde.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Auftrag B: 60 Rückenstickereien",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fertigungslohn 4 h × 20 €; Restgemeinkostenzuschlag 40 % auf Löhne; Maschinenzeit 8,25 h Stickzeit + 0,75 h Rüsten = 9 h; Stundensatz 12,50 €.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fertigungslöhne",
+                  "4 h × 20 €",
+                  "80,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Restgemeinkosten",
+                  "40 % von 80 €",
+                  "32,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Maschinenkosten",
+                  "9 h × 12,50 €",
+                  "112,50 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigungskosten",
+                  "",
+                  "224,50 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Mit dem reinen Lohnzuschlag von 125 % hätte Auftrag B nur 80 € + 100 € = 180 € Fertigungskosten getragen. Der Maschinenstundensatz rechnet ihm 44,50 € mehr zu, weil er die Maschine lange nutzt.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für Auftrag A mit nur 0,5 Maschinenstunden ergäbe sich: 80 € Lohn + 32 € Restgemeinkosten + 6,25 € Maschinenkosten = 118,25 €. Mit dem Lohnzuschlag wären es 180 € gewesen. Die neue Rechnung verschiebt also Kosten von A nach B — dorthin, wo die Maschine tatsächlich arbeitet. Die Angebotspreise werden entsprechend angepasst.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "In der Kalkulation eines Auftrags werden die Maschinenkosten als Maschinenzeit × Maschinenstundensatz angesetzt. Die Zeit kommt aus dem Arbeitsplan; ist die Rüstzeit darin enthalten, wird sie nicht noch einmal addiert. Dazu kommen die Fertigungslöhne und die Restfertigungsgemeinkosten als Zuschlag auf die Löhne. Grenzen: Der Satz beruht auf Planwerten; weichen Auslastung, Energiepreis oder Wartung stark ab, muss er angepasst werden. Er ersetzt keine Prüfung, ob ein Auftrag kurzfristig überhaupt zusätzliche Kosten verursacht (Kapitel 6).",
-        "beispiele": [
-          "Auftrag mit 2,5 h Maschinenzeit einschließlich Rüsten, Satz 40 €: Maschinenkosten 100 €.",
-          "Fertigungskosten = Fertigungslöhne + Restgemeinkosten + Maschinenkosten."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Rüstzeit nicht doppelt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Rüstzeit von 0,75 Stunden wird einmal als Maschinenzeit des Auftrags berechnet. Wäre sie zusätzlich im Lohn der Bedienerin als Fertigungslohn enthalten und gleichzeitig bei den Laufstunden abgezogen, würde sie doppelt verrechnet. Deshalb legt MAKEL Studio fest, wo Rüsten erfasst wird — und hält das in allen Kalkulationen gleich.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Der Eventauftrag braucht laut Arbeitsplan 21 Maschinenstunden einschließlich Rüsten und 6 Stunden Handarbeit (Einspannen, Kontrolle) zu 18 €. Fertigungslöhne 108 €, Restgemeinkosten 50 % = 54 €, Maschinenkosten 21 × 20 € = 420 €. Fertigungskosten zusammen 582 €.",
-        "typische_fehler": "Rüstzeit doppelt ansetzen, wenn sie in der Maschinenzeit bereits enthalten ist.",
         "verstaendnisfragen": [
-          "Wie berechnet man die Maschinenkosten eines Auftrags? Maschinenzeit × Maschinenstundensatz.",
-          "Woraus bestehen die Fertigungskosten bei Maschinenstundensatzrechnung? Fertigungslöhne, Restgemeinkosten, Maschinenkosten."
-        ],
-        "pruefungsbezug": "Maschinenkosten und Fertigungskosten eines Auftrags berechnen.",
-        "merksatz": "Maschinenkosten = Maschinenzeit × Stundensatz; Fertigungskosten = Löhne + Restgemeinkosten + Maschinenkosten."
+          {
+            "frage": "Wie hoch sind die Maschinenkosten eines Auftrags mit 21 Stunden Maschinenzeit bei einem Satz von 20 €?",
+            "antwort": "21 h × 20 € = 420 €.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum sinken die Fertigungskosten von Auftrag A mit dem Maschinenstundensatz?",
+            "antwort": "Weil A die Maschine nur eine halbe Stunde nutzt. Statt eines Zuschlags auf den Lohn trägt er nur die tatsächlich verursachten Maschinenkosten.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

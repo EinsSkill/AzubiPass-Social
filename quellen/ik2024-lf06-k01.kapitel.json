@@ -6,86 +6,451 @@
   "untertitel": "Was produziert wird, in welcher Menge und wann — und wie ein einzelner Auftrag auf seine Machbarkeit geprüft wird.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Kunden fragen Produkte mit bestimmten Eigenschaften, Mengen und Terminen an.",
-          "Aus LF 3 kennst du Anfrage, Angebot und Auftragsbestätigung."
+        "darstellung": "vollfassung",
+        "ziel": "Du arbeitest aus einer Kundenanfrage alle Angaben heraus, die für einen Veredelungsauftrag nötig sind, klärst fehlende Punkte vor der Bestätigung und unterscheidest Kundenauftrags- von Lagerfertigung.",
+        "vorwissen_kurz": "Ein Kunde weiß meist genau, was er will. Ob die Angaben für die Produktion reichen, ist eine andere Frage.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst klären, dann planen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Anfrage wie „150 Hoodies mit unserem Logo bis Ende des Monats“ reicht nicht, um Material zu bestellen und Maschinen einzuplanen. Für die Produktion braucht MAKEL Studio eine vollständige **Spezifikation**: Artikel, Farbe, Material, Größenverteilung, freigegebene Motivdatei, Veredelungsverfahren und Position, Verpackung, Liefertermin und Lieferort. Was hier fehlt, führt später zu Rückfragen an der Maschine, zu Fehldrucken oder zu einem geplatzten Termin.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Anfrage wird zum Auftrag",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Sportverein schreibt: „Wir brauchen 150 Hoodies mit unserem Wappen für die Saisoneröffnung am 12. September.“ Luca prüft die Anfrage.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Anfrage",
+              "Rückfrage beim Kunden",
+              "geklärt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Artikel, Farbe",
+                  "„Hoodies“",
+                  "Welches Modell, welche Farbe?",
+                  "Hoodie Basic, marineblau, Bio-Baumwolle"
+                ]
+              },
+              {
+                "zellen": [
+                  "Größen",
+                  "fehlt",
+                  "Verteilung nach Größen?",
+                  "S 20, M 45, L 50, XL 30, XXL 5"
+                ]
+              },
+              {
+                "zellen": [
+                  "Motiv",
+                  "„Wappen“",
+                  "Datei in welcher Qualität, freigegeben?",
+                  "Vektordatei, Freigabe per Mail am 18. August"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verfahren, Position",
+                  "fehlt",
+                  "Stick oder Druck, wo?",
+                  "Stick, Brust links, 9 cm breit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termin, Ort",
+                  "12. September",
+                  "Anlieferung wohin, bis wann vorher?",
+                  "Vereinsheim, spätestens 10. September"
+                ]
+              }
+            ],
+            "fazit": "Aus einer Zeile wird eine planbare Spezifikation. Erst jetzt lassen sich Material, Maschinenzeit und Termin prüfen.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Vereinsauftrag ist **Kundenauftragsfertigung**: Produziert wird erst, wenn der Auftrag vorliegt, und genau nach Kundenwunsch. Die neutralen Hoodies der eigenen Kollektion fertigt MAKEL Studio dagegen als **Lagerfertigung** auf Vorrat, damit Händler sie kurzfristig nachbestellen können. Beide Arten konkurrieren um dieselben Maschinen.",
+            "id": "a1-p3"
+          }
         ],
-        "erklaerung": "Bevor produziert wird, muss klar sein, was genau der Kunde braucht. Die Spezifikation beschreibt das Produkt so, dass Produktion und Einkauf damit arbeiten können: Artikel und Material, Farben, Größenverteilung, Motiv beziehungsweise Druck- oder Stickdatei mit Freigabestand, Veredelungsverfahren und Position, Verpackung und Kennzeichnung, Menge, Liefertermin und Lieferort. Unklare oder fehlende Angaben werden vor der Auftragsbestätigung geklärt, nicht erst an der Maschine. Man unterscheidet Kundenauftragsfertigung (es wird erst nach Auftrag produziert) und Lagerfertigung (es wird auf Vorrat für den anonymen Markt produziert).",
-        "beispiele": [
-          "Ein Firmenkunde bestellt 400 bestickte Hoodies mit Logo: Kundenauftragsfertigung.",
-          "MAKEL produziert die Basis-Kollektion in Standardgrößen auf Vorrat: Lagerfertigung."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Freigabe der Motivdatei",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Motivdatei wird vor der Produktion vom Kunden schriftlich freigegeben, möglichst mit einem Probestick oder einer maßstabsgetreuen Vorschau. Ändert der Kunde das Motiv nach der Freigabe, ist das eine Auftragsänderung mit möglichen Mehrkosten und neuem Termin.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Eventveranstalter schreibt Marlene Voss: ‚Wir brauchen 400 Hoodies mit unserem Logo bis zum 15. November.‘ Marlene prüft die Anfrage und stellt fest: Farbe, Größenverteilung, Logoposition, Stick oder Druck und die freigegebene Logodatei fehlen. Sie fragt diese Angaben nach, bevor sie die Produktion um eine Einschätzung bittet.",
-        "typische_fehler": "Einen Auftragseingang schon als gesicherte Lieferfähigkeit verstehen.",
         "verstaendnisfragen": [
-          "Nenne drei Angaben, die eine Veredelungsspezifikation enthalten muss. Zum Beispiel Artikel und Farbe, Größenverteilung, freigegebene Motivdatei.",
-          "Was unterscheidet Kundenauftrags- von Lagerfertigung? Ob erst nach einem konkreten Auftrag oder auf Vorrat produziert wird."
-        ],
-        "pruefungsbezug": "Aus einer Anfrage fehlende Auftragsangaben herausarbeiten und die Nachfrage begründen.",
-        "merksatz": "Erst die vollständige Spezifikation, dann die Planung; Kundenauftragsfertigung startet mit dem Auftrag, Lagerfertigung produziert auf Vorrat."
+          {
+            "frage": "Warum fragt Luca nach der Größenverteilung, obwohl die Gesamtmenge bekannt ist?",
+            "antwort": "Weil Rohlinge je Größe bestellt oder aus dem Lager entnommen werden. Ohne Verteilung lässt sich nicht prüfen, ob genug Material vorhanden ist.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Ist ein Hoodie aus der eigenen Kollektion, der auf Vorrat produziert wird, Kundenauftragsfertigung?",
+            "antwort": "Nein, Lagerfertigung. Er wird ohne konkreten Kundenauftrag für den späteren Verkauf hergestellt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ein Industriebetrieb stellt meist mehrere Produkte her.",
-          "Kapazitäten und Material sind begrenzt."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest das Produktionsprogramm mit Art, Menge und Zeit von einzelnen Fertigungsaufträgen und beschreibst es mit Programmbreite, Programmtiefe und Planungsebene.",
+        "vorwissen_kurz": "Einzelne Aufträge zeigen, was ein Kunde will. Das Produktionsprogramm zeigt, was der Betrieb insgesamt herstellt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was, wie viel, wann",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das {{begriff:produktionsprogramm|Produktionsprogramm}} legt fest, welche Erzeugnisse in welcher Menge in welchem Zeitraum hergestellt werden. Langfristig entscheidet es über das Sortiment, etwa ob MAKEL Studio künftig auch Taschen herstellt. Mittelfristig legt es die Mengen einer Kollektion fest, kurzfristig den Wochenplan. Ein **Fertigungsauftrag** ist dagegen ein einzelner Auftrag an die Produktion, etwa „150 Hoodies für den Sportverein, Stick Brust links“.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Programm für Kalenderwoche 36",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Erzeugnis",
+              "Herkunft",
+              "Menge",
+              "Zeitraum"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Hoodie Basic, Stick Vereinswappen",
+                  "Kundenauftrag Sportverein",
+                  "150",
+                  "Montag bis Mittwoch"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hoodie „Kyoto“, Kollektion",
+                  "Lagerfertigung nach Absatzplan",
+                  "300",
+                  "Mittwoch bis Freitag"
+                ]
+              },
+              {
+                "zellen": [
+                  "T-Shirt Basic, Druck Firmenlogo",
+                  "Kundenauftrag Werbeagentur",
+                  "400",
+                  "Donnerstag bis Freitag"
+                ]
+              }
+            ],
+            "fazit": "Das Wochenprogramm verbindet Kundenaufträge und Lagerfertigung. Jede Zeile wird zu einem oder mehreren Fertigungsaufträgen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Programm von MAKEL Studio ist eher schmal — drei Produktlinien —, aber tief: Jede Linie gibt es in vielen Farben, Größen und Veredelungen. Das macht MAKEL für Kunden attraktiv, erhöht aber den Aufwand: Jede Variante braucht eigene Rohlinge im Lager, und jeder Wechsel zwischen Varianten kostet Rüstzeit an den Maschinen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Das Produktionsprogramm legt fest, welche Erzeugnisse in welcher Menge in welchem Zeitraum hergestellt werden. Die Programmbreite beschreibt die Zahl der verschiedenen Produktlinien (zum Beispiel Hoodies, T-Shirts, Taschen), die Programmtiefe die Zahl der Varianten innerhalb einer Linie (Farben, Schnitte, Größen, Veredelungsarten). Die Programmplanung arbeitet auf drei Ebenen: langfristig (welche Produktfelder überhaupt), mittelfristig (welche Produkte mit welchen Kapazitäten) und kurzfristig (welche Mengen in den nächsten Wochen). Ein breites und tiefes Programm erfüllt viele Kundenwünsche, erhöht aber Rüstaufwand, Lagerbestände und Planungskomplexität.",
-        "beispiele": [
-          "MAKEL bietet Hoodies, T-Shirts und Taschen an: Programmbreite drei Produktlinien.",
-          "Hoodies gibt es in 6 Farben und 6 Größen: Programmtiefe 36 Varianten nur in der Grundausführung."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Absatzplan und Produktionsprogramm",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für die Lagerfertigung leitet sich das Programm aus dem Absatzplan ab: Was erwartet der Vertrieb an Bestellungen, und wie viel liegt schon im Lager? Produziert wird die Differenz plus ein Sicherheitsbestand. Für Kundenaufträge ergibt sich das Programm direkt aus den bestätigten Aufträgen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Yuki Bergmann möchte die Hoodie-Linie um vier neue Farben erweitern. Deniz Aydın rechnet vor: Bei sechs Größen sind das 24 zusätzliche Rohlingsvarianten, die beschafft, gelagert und verwaltet werden müssen. Die Geschäftsführung entscheidet, zunächst zwei Farben in einer Testauflage aufzunehmen.",
-        "typische_fehler": "Programmbreite und Programmtiefe verwechseln.",
         "verstaendnisfragen": [
-          "Was beschreibt die Programmtiefe? Die Zahl der Varianten innerhalb einer Produktlinie.",
-          "Welche Folge hat eine größere Programmtiefe in der Produktion? Mehr Rüstvorgänge, mehr Lagerbestände, aufwendigere Planung."
-        ],
-        "pruefungsbezug": "Programmbreite und -tiefe am Fall bestimmen und Vor- und Nachteile einer Erweiterung abwägen.",
-        "merksatz": "Das Produktionsprogramm legt Art, Menge und Zeit fest; Breite = Produktlinien, Tiefe = Varianten je Linie."
+          {
+            "frage": "Was ist der Unterschied zwischen Programmbreite und Programmtiefe bei MAKEL Studio?",
+            "antwort": "Die Breite ist die Zahl der Produktlinien, also Hoodies, T-Shirts und Taschen. Die Tiefe ist die Zahl der Varianten innerhalb einer Linie, also Farben, Größen und Veredelungen.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum steigt mit der Programmtiefe der Planungsaufwand?",
+            "antwort": "Weil jede Variante eigenes Material, eigene Lagerplätze und Rüstvorgänge braucht. Mehr Varianten bedeuten mehr Wechsel an den Maschinen und mehr Bestände.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Jede Maschine hat nur begrenzt Zeit zur Verfügung.",
-          "Vor jedem Auftrag muss die Maschine eingerichtet werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest den Zeitbedarf eines Fertigungsauftrags aus Rüstzeit und Stückzeit, vergleichst ihn mit der freien Kapazität und prüfst zusätzlich die Materialverfügbarkeit.",
+        "vorwissen_kurz": "Ob ein Auftrag machbar ist, hängt davon ab, ob Maschinenzeit und Material zum geplanten Zeitpunkt reichen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rüsten einmal, Stückzeit für jedes Stück",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für jeden Fertigungsauftrag muss die Maschine einmal eingerichtet werden: Motivdatei laden, Garnfarben einfädeln, Rahmen einspannen, Probestick. Diese {{begriff:ruestzeit|Rüstzeit}} fällt je Los einmal an. Danach braucht jedes Stück seine Stückzeit. Der Zeitbedarf eines Auftrags ist deshalb Rüstzeit plus Menge mal Stückzeit. Er wird mit der freien Maschinenzeit im geplanten Zeitraum verglichen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Passt der Vereinsauftrag in die Woche?",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Stickmaschine braucht für das Wappen 6 Minuten je Hoodie; das Rüsten dauert 45 Minuten. Von Montag bis Mittwoch sind 16 Maschinenstunden frei.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfung",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zeitbedarf",
+                  "150 × 6 min + 45 min = 945 min",
+                  "15,75 h"
+                ]
+              },
+              {
+                "zellen": [
+                  "freie Kapazität",
+                  "Montag bis Mittwoch",
+                  "16 h"
+                ]
+              },
+              {
+                "zellen": [
+                  "Material Rohlinge",
+                  "Bedarf je Größe mit Lagerbestand verglichen",
+                  "XXL fehlt: 5 benötigt, 2 im Lager"
+                ]
+              }
+            ],
+            "fazit": "Die Maschinenzeit reicht knapp, aber drei Rohlinge in XXL fehlen. Der Einkauf prüft, ob sie bis Dienstag beschafft werden können.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Puffer von 15 Minuten ist sehr klein. Fällt eine Nadel aus oder muss ein Stück nachgestickt werden, reicht die Zeit nicht mehr. Die Produktionsplanung schlägt deshalb vor, den Auftrag am Montagmorgen zu beginnen und die Kollektion erst am Mittwochnachmittag aufzulegen, damit der Mittwochvormittag als Reserve bleibt.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Ob ein Auftrag machbar ist, hängt von Material, Kapazität und Termin ab. Für die Kapazität rechnet man den Zeitbedarf: Rüstzeit (Einrichten der Maschine für diesen Auftrag, fällt einmal je Los an) plus Menge × Stückzeit (Ausführungszeit je Stück). Dieser Bedarf wird mit der verfügbaren Kapazität im Zeitraum verglichen, wobei bereits eingeplante Aufträge abgezogen werden. Zusätzlich prüft der Einkauf, ob Rohlinge und Garn rechtzeitig verfügbar sind.",
-        "beispiele": [
-          "400 Stück × 3 Minuten + 60 Minuten Rüstzeit = 1.260 Minuten = 21 Stunden.",
-          "Werden die 400 Stück in zwei Losen gefertigt, fällt die Rüstzeit zweimal an: 1.320 Minuten."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Rüstzeit und Losgröße",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Weil die Rüstzeit nur einmal je Los anfällt, verteilt sie sich bei großen Aufträgen auf viele Stücke und bei kleinen auf wenige. Bei einem Auftrag über 20 Hoodies machen die 45 Minuten Rüsten mehr als ein Viertel der Gesamtzeit aus. Deshalb werden kleine Aufträge mit gleichem Motiv oder gleichen Garnfarben möglichst zusammengelegt.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Deniz rechnet für die 400 Hoodies: Die Stickmaschine braucht 3 Minuten je Stück, das Einrichten für das Logo dauert 60 Minuten. Zeitbedarf 400 × 3 + 60 = 1.260 Minuten, also 21 Maschinenstunden. In den nächsten zwei Wochen sind noch 30 Stunden frei. Der Einkauf bestätigt, dass 400 schwarze Rohlinge am Lager sind.",
-        "typische_fehler": "Die Rüstzeit pro Stück rechnen oder ganz vergessen.",
         "verstaendnisfragen": [
-          "Wie oft fällt die Rüstzeit an? Einmal je Los beziehungsweise Umrüstung.",
-          "Wovon hängt die Machbarkeit eines Auftrags ab? Von Material, freier Kapazität und Termin."
-        ],
-        "pruefungsbezug": "Zeitbedarf aus Rüst- und Stückzeit berechnen und mit verfügbarer Kapazität vergleichen.",
-        "merksatz": "Zeitbedarf = Rüstzeit + Menge × Stückzeit; mit freier Kapazität und Materialverfügbarkeit vergleichen."
+          {
+            "frage": "400 Stück brauchen je 3 Minuten, das Rüsten 60 Minuten. Wie hoch ist der Zeitbedarf?",
+            "antwort": "400 × 3 + 60 = 1.260 Minuten = 21 Maschinenstunden.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum genügt es nicht, nur die Maschinenzeit zu prüfen?",
+            "antwort": "Weil ein Auftrag auch am Material scheitern kann. Fehlen Rohlinge oder Garn zum geplanten Zeitpunkt, nützt freie Maschinenzeit nichts.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Mehrere Aufträge konkurrieren um dieselbe Maschine.",
-          "Eine Lieferzusage ist für den Kunden verbindlich."
+        "darstellung": "vollfassung",
+        "ziel": "Du stimmst eine Lieferzusage mit Vertrieb, Einkauf und Produktionsplanung ab, setzt bei konkurrierenden Aufträgen begründete Prioritäten und planst einen Puffer für Kontrolle und Versand ein.",
+        "vorwissen_kurz": "Eine Lieferzusage ist ein Versprechen an den Kunden. Sie hält nur, wenn alle Beteiligten vorher geprüft haben, dass sie erfüllbar ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Prüfen, abstimmen, zusagen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor der Vertrieb einem Kunden einen Termin zusagt, müssen drei Fragen beantwortet sein: Ist die Spezifikation vollständig? Ist das Material rechtzeitig da? Ist Maschinenzeit frei? Jede Frage hat eine zuständige Stelle. Erst wenn alle drei Antworten vorliegen, wird der Termin schriftlich bestätigt — mit einem Puffer für Endkontrolle, Verpackung und Versand.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Aufträge, eine Maschine",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In Woche 36 möchte zusätzlich ein Modehaus 200 bestickte Hoodies, Lieferung ebenfalls bis Freitag. Beide Aufträge passen nicht gleichzeitig auf die Stickmaschine.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Sportverein",
+              "Modehaus"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Termin",
+                  "feste Saisoneröffnung, nicht verschiebbar",
+                  "Wunschtermin, eine Woche Spielraum laut Rückfrage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bedeutung",
+                  "Neukunde, Folgeaufträge möglich",
+                  "Stammkunde, regelmäßige Bestellungen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Deckungsbeitrag",
+                  "1.650 €",
+                  "2.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertragslage",
+                  "bereits schriftlich bestätigt",
+                  "noch nicht bestätigt"
+                ]
+              }
+            ],
+            "fazit": "Der Vereinsauftrag hat Vorrang, weil er bestätigt ist und sein Termin nicht verschoben werden kann. Dem Modehaus bietet der Vertrieb die Folgewoche an; dort ist Kapazität frei.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Entscheidung folgt Kriterien, nicht dem höheren Deckungsbeitrag allein. Eine bestätigte Zusage zu brechen, würde den Neukunden verlieren und kann vertragliche Folgen haben. Das Modehaus dagegen hat bei Rückfrage Spielraum genannt. Wäre das nicht so gewesen, hätte MAKEL Studio eine Zusatzschicht oder eine Fremdvergabe der Stickarbeiten prüfen müssen — mit den entsprechenden Kosten.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Konkurrieren Aufträge um Kapazität, legt die Produktionsplanung Prioritäten fest, etwa nach Liefertermin, Kundenbedeutung, Deckungsbeitrag oder Vertragsstrafen. Vertrieb, Produktion und Einkauf stimmen sich ab, bevor ein Termin zugesagt wird. Eine Lieferzusage wird erst gegeben, wenn Spezifikation, Material und Kapazität geprüft sind; Puffer für Prüfung, Verpackung und Versand gehören dazu. Ändert sich etwas, wird der Kunde früh informiert.",
-        "beispiele": [
-          "Zwei Aufträge brauchen gleichzeitig die Stickmaschine; der mit Vertragsstrafe bei Verspätung bekommt Vorrang.",
-          "Der Liefertermin wird mit zwei Tagen Puffer für Endkontrolle und Versand zugesagt."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Zusage unter Vorbehalt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ist eine Frage noch offen, etwa ob die fehlenden XXL-Rohlinge rechtzeitig kommen, kann der Vertrieb den Termin unter Vorbehalt bestätigen und den Vorbehalt ausdrücklich nennen: „Liefertermin 10. September, vorbehaltlich der Verfügbarkeit von fünf Rohlingen in XXL; Bestätigung bis 25. August.“ Das ist ehrlicher als eine feste Zusage, die womöglich nicht hält.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Marlene möchte dem Eventveranstalter den 15. November zusagen. Die Produktion plant den Auftrag für den 3. bis 6. November ein, die Endkontrolle für den 7. November, der Versand am 10. November. Marlene bestätigt den Termin schriftlich, nachdem der Kunde die Logodatei freigegeben hat.",
-        "typische_fehler": "Einen Termin zusagen, bevor Produktion und Einkauf ihn bestätigt haben.",
         "verstaendnisfragen": [
-          "Nach welchen Kriterien kann man Aufträge priorisieren? Liefertermin, Kundenbedeutung, Deckungsbeitrag, Vertragsstrafen.",
-          "Was gehört vor eine Lieferzusage? Die Prüfung von Spezifikation, Material und Kapazität."
-        ],
-        "pruefungsbezug": "Eine Terminzusage begründen oder ablehnen und die beteiligten Abteilungen nennen.",
-        "merksatz": "Erst prüfen und abstimmen, dann zusagen; Prioritäten nach Termin, Bedeutung und Wirtschaftlichkeit begründen."
+          {
+            "frage": "Warum entscheidet nicht allein der höhere Deckungsbeitrag über die Reihenfolge?",
+            "antwort": "Weil auch Termine, bestehende Zusagen und die Bedeutung der Kunden zählen. Eine gebrochene Zusage kann mehr kosten, als ein höherer Deckungsbeitrag bringt.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum enthält die Lieferzusage einen Puffer?",
+            "antwort": "Weil nach der Produktion noch Endkontrolle, Verpackung und Versand folgen und kleine Störungen auftreten können. Ohne Puffer würde jede Verzögerung den Termin gefährden.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

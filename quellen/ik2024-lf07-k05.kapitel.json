@@ -6,86 +6,466 @@
   "untertitel": "Lagerkennzahlen richtig berechnen, Kosten und Umweltwirkung gemeinsam bewerten und Verbesserungen mit Kontrolle umsetzen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Lagerbestände binden Kapital.",
-          "Kennzahlen brauchen eine passende Bezugsgröße."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest durchschnittlichen Lagerbestand, Umschlagshäufigkeit, durchschnittliche Lagerdauer und Reichweite mit gleich bewerteten Zähler- und Nennergrößen und deutest die Ergebnisse im Vergleich.",
+        "vorwissen_kurz": "Wie gut das Lager funktioniert, zeigen Kennzahlen. Aber nur, wenn sie richtig berechnet werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Bestand und Verbrauch ins Verhältnis setzen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der **durchschnittliche Lagerbestand** ergibt sich aus Anfangs- und Endbestand geteilt durch zwei oder genauer aus mehreren Monatswerten. Die **Umschlagshäufigkeit** zeigt, wie oft der Bestand im Jahr verbraucht und ersetzt wird: Verbrauch geteilt durch durchschnittlichen Bestand. Die **durchschnittliche Lagerdauer** ist 360 geteilt durch die Umschlagshäufigkeit. Die **Reichweite** gibt an, wie viele Tage der aktuelle Bestand beim durchschnittlichen Verbrauch noch reicht. ==Zähler und Nenner müssen gleich bewertet sein==: Verbrauch und Bestand zu Einstandspreisen, nicht Verbrauch zu Verkaufspreisen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Lagerbereiche im Vergleich",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "schwarze Rohlinge",
+              "Rohlinge in Saisonfarben"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Jahresverbrauch zu Einstandspreisen",
+                  "120.000 €",
+                  "48.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "durchschnittlicher Bestand",
+                  "20.000 €",
+                  "16.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Umschlagshäufigkeit",
+                  "6",
+                  "3"
+                ]
+              },
+              {
+                "zellen": [
+                  "durchschnittliche Lagerdauer",
+                  "60 Tage",
+                  "120 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Reichweite heute",
+                  "20 Tage",
+                  "95 Tage"
+                ]
+              }
+            ],
+            "fazit": "Die Saisonfarben liegen doppelt so lange im Lager wie die schwarzen Rohlinge, und der heutige Bestand reicht über drei Monate. Hier steckt Kapital, das schneller frei werden könnte.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kennzahlen zeigen, wo genauer hingesehen werden muss. Eine niedrige Umschlagshäufigkeit bei Saisonfarben kann bedeuten, dass zu viel bestellt wurde, oder dass bestimmte Farben kaum noch gefragt sind. Eine sehr hohe Umschlagshäufigkeit kann umgekehrt auf zu knappe Bestände hinweisen, mit dem Risiko von Engpässen. Erst im Vergleich mit Vorjahr, Ziel oder anderen Lagerbereichen wird eine Kennzahl aussagekräftig.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Lagerkennzahlen zeigen, wie wirtschaftlich gelagert wird. Der durchschnittliche Lagerbestand wird zum Beispiel als (Anfangsbestand + Endbestand) ÷ 2 oder genauer aus Monatsendbeständen berechnet. Die Umschlagshäufigkeit gibt an, wie oft der Durchschnittsbestand im Jahr verbraucht wird: Materialverbrauch ÷ durchschnittlicher Lagerbestand, beide gleich bewertet (zu Einstandspreisen). Die durchschnittliche Lagerdauer ist 360 Tage ÷ Umschlagshäufigkeit, wenn mit 360 Tagen gerechnet wird. Die Reichweite gibt an, wie viele Tage der aktuelle Bestand beim durchschnittlichen Verbrauch reicht. Wichtig: Zähler und Nenner müssen zusammenpassen — Umsatzerlöse zu Verkaufspreisen gehören nicht in eine Rechnung mit Beständen zu Einstandspreisen.",
-        "beispiele": [
-          "Materialverbrauch 120.000 €, Ø Bestand 20.000 €: Umschlagshäufigkeit 6, Ø Lagerdauer 360 ÷ 6 = 60 Tage.",
-          "Bestand 3.000 Rohlinge, Verbrauch 150 je Arbeitstag: Reichweite 20 Arbeitstage."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Reichweite bei schwankendem Verbrauch",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Reichweite nimmt einen gleichmäßigen Verbrauch an. Vor dem Weihnachtsgeschäft kann ein Bestand mit 20 Tagen Reichweite nach Durchschnitt in Wahrheit nur zehn Tage reichen. Deshalb rechnet die Disposition in Spitzenzeiten mit dem erwarteten Verbrauch statt mit dem Jahresdurchschnitt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Sandra Koslowski und Jonas Weidner prüfen das Rohstofflager: Verbrauch im Jahr 120.000 € zu Einstandspreisen, durchschnittlicher Bestand 20.000 €. Umschlag 6-mal im Jahr, Ø Lagerdauer 60 Tage. Für ein Material mit stabiler Nachfrage und kurzer Lieferzeit ist das lang — Kapital ist unnötig gebunden.",
-        "typische_fehler": "Umsatzerlöse statt Materialverbrauch einsetzen oder Bestände und Verbrauch unterschiedlich bewerten.",
         "verstaendnisfragen": [
-          "Wie berechnet man die Umschlagshäufigkeit? Materialverbrauch ÷ durchschnittlicher Lagerbestand.",
-          "Wie hängen Umschlagshäufigkeit und Lagerdauer zusammen? Lagerdauer = 360 ÷ Umschlagshäufigkeit."
-        ],
-        "pruefungsbezug": "Durchschnittsbestand, Umschlagshäufigkeit, Lagerdauer und Reichweite berechnen und deuten.",
-        "merksatz": "Umschlag = Verbrauch ÷ Ø Bestand, Lagerdauer = 360 ÷ Umschlag — Zähler und Nenner gleich bewerten."
+          {
+            "frage": "Verbrauch 120.000 €, durchschnittlicher Bestand 20.000 €. Wie hoch sind Umschlagshäufigkeit und Lagerdauer?",
+            "antwort": "Umschlag 6, Lagerdauer 360 ÷ 6 = 60 Tage.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum dürfen Umsatzerlöse nicht durch einen Bestand zu Einstandspreisen geteilt werden?",
+            "antwort": "Weil Zähler und Nenner dann unterschiedlich bewertet sind. Die Kennzahl wäre zu hoch.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Lagern kostet Geld und Ressourcen.",
-          "Transport verursacht Emissionen."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Lagerzinssatz und Zinskosten der Kapitalbindung, stellst Lager-, Transport- und Kapitalkosten zusammen und bewertest eine Maßnahme nach ihrer Gesamtwirkung auf Kosten, Ressourcen und Kunden.",
+        "vorwissen_kurz": "Ein Lager kostet nicht nur Miete. Jeder Euro im Regal ist Geld, das woanders fehlt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was ein Lager kostet",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zu den **Lagerkosten** gehören Raumkosten, Regale und Fördermittel, Personal, Energie für Licht und Heizung, Versicherung, Schwund und Veraltung. Dazu kommen die **Kosten der Kapitalbindung**: Das Geld im Bestand könnte Zinsen bringen oder einen Kredit verringern. Der **Lagerzinssatz** gibt an, wie viel Zins auf den Bestand während der durchschnittlichen Lagerdauer entfällt: Jahreszinssatz mal Lagerdauer geteilt durch 360. Maßnahmen im Lager werden danach bewertet, wie sie Kosten, Ressourcenverbrauch und Kundenservice gemeinsam beeinflussen.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lagerkosten der Saisonfarben senken",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "heute",
+              "nach Umstellung auf kleinere, häufigere Bestellungen"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "durchschnittlicher Bestand",
+                  "16.000 €",
+                  "8.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinskosten bei 6 %",
+                  "960 €",
+                  "480 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lagerfläche",
+                  "2 Palettenregale",
+                  "1 Palettenregal"
+                ]
+              },
+              {
+                "zellen": [
+                  "zusätzliche Bestellkosten (12 statt 6 Bestellungen à 50 €)",
+                  "—",
+                  "+ 300 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "zusätzliche Transporte",
+                  "—",
+                  "6 Lieferungen mehr im Jahr"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abschreibung veralteter Farben",
+                  "ca. 2.000 € im Jahr",
+                  "ca. 800 € im Jahr"
+                ]
+              }
+            ],
+            "fazit": "Die Umstellung spart Zinsen, Fläche und vor allem Abschreibungen auf veraltete Farben. Dafür entstehen mehr Bestellungen und Lieferungen; insgesamt überwiegt der Vorteil deutlich.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der größte Posten ist oft nicht der Zins, sondern die Veraltung. Rohlinge in einer Trendfarbe, die nach der Saison niemand mehr bestellt, verlieren ihren Wert. Kleinere, häufigere Bestellungen senken dieses Risiko. Die zusätzlichen Lieferungen verursachen aber mehr Transporte und Emissionen. Deshalb wird gefragt, ob sich Lieferungen mit anderen Materialien desselben Lieferanten bündeln lassen, damit der Vorteil nicht durch mehr Fahrten aufgezehrt wird.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Logistikkosten bestehen aus Lagerkosten (Raum, Personal, Energie, Versicherung, Schwund, Kapitalbindung), Transportkosten und Verwaltungskosten. Die Kapitalbindung wird oft mit dem Lagerzinssatz ausgedrückt: Jahreszinssatz × Ø Lagerdauer ÷ 360. Daneben stehen ökologische Wirkungen: Energieverbrauch für Licht, Heizung und Fördertechnik, Verpackungsmaterial, Emissionen durch Transporte. Eine Maßnahme wird deshalb nicht nur nach einer Zahl beurteilt, sondern nach ihrer Gesamtwirkung auf Kosten, Ressourcen und Kunden.",
-        "beispiele": [
-          "Zinssatz 6 %, Ø Lagerdauer 60 Tage: Lagerzinssatz 6 % × 60 ÷ 360 = 1 %.",
-          "LED-Beleuchtung mit Bewegungsmeldern im Hochregal senkt den Stromverbrauch."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Energie im Lager",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auch Energie gehört zu den Lagerkosten und zur Umweltbilanz. LED-Beleuchtung mit Bewegungsmeldern, gut gedämmte Rampentore und eine Heizung nur in den Arbeitsbereichen senken den Verbrauch, ohne die Arbeit zu erschweren.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Bei 20.000 € Durchschnittsbestand und 6 % Zinsen kostet die Kapitalbindung rund 1.200 € im Jahr (1 % je Lagerzyklus von 60 Tagen, sechsmal im Jahr). Würde die Lagerdauer auf 30 Tage sinken, halbierte sich der Durchschnittsbestand und damit auch diese Kosten — vorausgesetzt, die Versorgungssicherheit bleibt.",
-        "typische_fehler": "Nur Transportkosten senken und dabei höhere Lagerbestände oder mehr Schäden in Kauf nehmen.",
         "verstaendnisfragen": [
-          "Wie berechnet man den Lagerzinssatz? Jahreszinssatz × durchschnittliche Lagerdauer ÷ 360.",
-          "Nenne zwei ökologische Wirkungen der Logistik. Zum Beispiel Energieverbrauch und Verpackungsmaterial."
-        ],
-        "pruefungsbezug": "Lagerkosten und Kapitalbindung berechnen und ökologische Wirkungen einbeziehen.",
-        "merksatz": "Logistikkosten umfassen Lager, Transport und Kapitalbindung; Maßnahmen werden nach Gesamtwirkung auf Kosten, Umwelt und Kunden bewertet."
+          {
+            "frage": "Jahreszinssatz 6 %, Lagerdauer 60 Tage. Wie hoch ist der Lagerzinssatz?",
+            "antwort": "6 % × 60 ÷ 360 = 1 %.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum werden Lagermaßnahmen nach ihrer Gesamtwirkung bewertet?",
+            "antwort": "Weil eine Ersparnis an einer Stelle, etwa beim Bestand, an anderer Stelle Kosten oder Emissionen erhöhen kann, etwa durch mehr Lieferungen.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Im Lager fallen Verpackungen, Paletten und Reststoffe an.",
-          "Arbeitsschutz gilt auch im Lager."
+        "darstellung": "vollfassung",
+        "ziel": "Du berücksichtigst Rückflüsse, Arbeitssicherheit und Datenschutz im Lager, bestimmst die Rolle von MAKEL Studio im Verpackungsrecht für Versand- und Großhandelsverpackungen und leitest die jeweiligen Pflichten ab.",
+        "vorwissen_kurz": "Retouren, Kartons, Regale und Versandetiketten: Auch das gehört zur Logistik, und für jedes gibt es Regeln.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehr als Lagern und Transportieren",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zur Logistik gehören auch **Rückflüsse**: Retouren werden geprüft und wieder eingelagert oder aussortiert, Verpackungen und Reststoffe werden gesammelt und verwertet. **Arbeitssicherheit** heißt freie Fluchtwege, Lastschilder an Regalen und Stapler nur mit Beauftragung. **Datenschutz** gilt auch im Lager, etwa für Versandetiketten mit Namen und Adressen von Kundinnen. Für Verpackungen gilt seit dem 12. August 2026 die EU-Verpackungsverordnung, ergänzt durch das deutsche Verpackungsrecht-Durchführungsgesetz. Entscheidend ist zuerst die **Rolle**, die MAKEL Studio für eine Verpackung hat.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer eine Verpackung mit eigener Marke versieht oder selbst zusammenstellt, ist **Erzeuger** und verantwortet die Konformität; in der Regel ist er auch **Hersteller** und finanziert die Entsorgung. Als Hersteller muss MAKEL Studio sich im Verpackungsregister LUCID registrieren und die geltenden Meldepflichten erfüllen. Wer bereits verpackte Ware unverändert weiterverkauft, wird dadurch nicht automatisch Hersteller dieser Verpackung.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rolle und Pflichten je Verpackung",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Verpackung",
+              "Rolle von MAKEL Studio",
+              "Pflicht"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Versandkarton mit MAKEL-Logo an Privatkundinnen",
+                  "Erzeuger und Hersteller",
+                  "Registrierung in LUCID, Beteiligung an einem Rücknahmesystem vor dem ersten Versand"
+                ]
+              },
+              {
+                "zellen": [
+                  "Füllmaterial und Klebeband im Versandkarton",
+                  "Hersteller",
+                  "ebenfalls systembeteiligungspflichtig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kartonagen und Stretchfolie für Paletten an Boutiquen",
+                  "Hersteller",
+                  "keine Systembeteiligung; Rücknahme und nachweisliche Verwertung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Folienbeutel, in denen Rohlinge vom Lieferanten kommen",
+                  "keine Herstellerrolle für diese Verpackung",
+                  "als eigener Abfall sortiert entsorgen"
+                ]
+              }
+            ],
+            "fazit": "Dieselbe Firma hat je nach Verpackung unterschiedliche Pflichten. Versandverpackungen an Privatkundinnen müssen lizenziert werden, Großhandelsverpackungen werden zurückgenommen und verwertet.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Verpackungsrecht ist im Umbruch, und einzelne Pflichten haben Übergangsfristen. Für die Praxis heißt das: Vor dem ersten Versand mit einer neuen Verpackung klärt MAKEL Studio die Rolle, prüft die aktuelle Rechtslage und dokumentiert die Entscheidung. Die Regeln für Arbeitssicherheit und Datenschutz bleiben davon unberührt: Versandetiketten mit Kundendaten liegen nicht offen herum, fehlerhaft gedruckte Etiketten werden geschreddert statt in den Altpapiercontainer geworfen.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Zur Logistik gehört der Rückfluss: Retouren werden geprüft und wieder eingelagert, aufbereitet oder entsorgt. Verpackungen, Paletten und Reststoffe werden getrennt gesammelt, wiederverwendet oder einer Verwertung zugeführt; Wer für eine Verpackung Hersteller ist — etwa für den eigenen Versandkarton mit Logo —, registriert sich im Verpackungsregister LUCID; der bloße Weiterverkauf bereits verpackter Ware macht noch nicht zum Hersteller. Versandverpackungen an Privatkunden sind systembeteiligungspflichtig; Verpackungen im Großhandel nimmt der Hersteller zurück und führt sie nachweislich der Verwertung zu (PPWR und VerpackDG seit 12.08.2026). Sicherheit im Lager heißt: Verkehrswege frei, Regale geprüft und gekennzeichnet, Höchstlasten beachtet, Stapler nur mit Berechtigung, persönliche Schutzausrüstung. Auch Lagerdaten sind schutzwürdig: Kundendaten auf Versandetiketten und Zugriffe auf das Lagersystem werden geschützt.",
-        "beispiele": [
-          "Wiederverwendbare Transportboxen zwischen Lager und Veredelung statt Einwegkartons.",
-          "Kartons im Gang: Stolpergefahr und versperrter Fluchtweg — sofort beseitigen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Retouren als Logistikprozess",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Retouren aus dem Onlineshop verursachen Kosten für Transport, Prüfung und Wiedereinlagerung. Werden sie innerhalb von zwei Tagen geprüft, können sie schnell wieder verkauft werden. Bleiben sie liegen, veralten sie, und der Bestand im System stimmt nicht.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Bei einer Begehung findet die Fachkraft für Arbeitssicherheit Kartons im Fluchtweg und ein Regal ohne Lastschild. Jonas lässt den Gang sofort räumen, das Regal prüfen und beschildern. Außerdem führt er Mehrwegboxen für den internen Transport ein; Einwegkartons werden nur noch für den Versand an Kunden genutzt.",
-        "typische_fehler": "Weniger Verpackungsmaterial ohne Blick auf Transportschäden automatisch als nachhaltig bezeichnen.",
         "verstaendnisfragen": [
-          "Nenne zwei Sicherheitsregeln im Lager. Zum Beispiel freie Verkehrswege und beachtete Höchstlasten der Regale.",
-          "Was gehört zur Entsorgungslogistik? Retouren, Verpackungen, Paletten und Reststoffe sammeln, verwerten oder entsorgen."
-        ],
-        "pruefungsbezug": "Maßnahmen zu Sicherheit, Entsorgung und Datenschutz im Lager begründen.",
-        "merksatz": "Rückflüsse, Sicherheit und Datenschutz gehören zur Logistik; Nachhaltigkeit wird an der Gesamtwirkung gemessen."
+          {
+            "frage": "Welche Pflicht hat MAKEL Studio für Versandkartons mit eigenem Logo an Privatkundinnen?",
+            "antwort": "MAKEL ist Hersteller, muss sich in LUCID registrieren und die Verpackungen vor dem ersten Versand bei einem Rücknahmesystem beteiligen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie werden Versandetiketten mit Kundendaten im Lager behandelt?",
+            "antwort": "Sie liegen nicht offen herum; Fehldrucke werden datenschutzgerecht vernichtet.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Verbesserungen brauchen Ziel und Kontrolle (PDCA aus LF 6).",
-          "Kennzahlen machen Vorher und Nachher vergleichbar."
+        "darstellung": "vollfassung",
+        "ziel": "Du formulierst eine Logistikverbesserung mit Ausgangswert, messbarem Ziel, Maßnahme und Kontrolle, prüfst Nebenwirkungen anhand derselben Kennzahlen und entscheidest auf Grundlage der Gesamtbilanz.",
+        "vorwissen_kurz": "Kleinere Versandkartons sollen Material sparen. Ob das wirklich eine Verbesserung ist, zeigt erst die Kontrolle.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ziel, Maßnahme, Kontrolle",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Verbesserung beginnt mit dem **Ausgangswert**: Wie ist der Zustand heute? Dann wird ein **messbares Ziel** mit Termin festgelegt und eine **Maßnahme** umgesetzt. Die **Kontrolle** misst dieselben Kennzahlen wie vorher, mit gleicher Definition. Dabei werden auch **Nebenwirkungen** beobachtet: Eine Maßnahme, die eine Kennzahl verbessert, kann eine andere verschlechtern. Entschieden wird nach der Gesamtbilanz.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Bilanz des Kartontests",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "vorher, 1. Quartal",
+              "Test, 2. Quartal"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Verpackungsmaterial",
+                  "1.000 €",
+                  "850 € (− 15 %)"
+                ]
+              },
+              {
+                "zellen": [
+                  "versandte Pakete",
+                  "3.000",
+                  "3.000"
+                ]
+              },
+              {
+                "zellen": [
+                  "beschädigte Sendungen",
+                  "15 (0,5 %)",
+                  "60 (2,0 %)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten für Ersatzlieferungen, je 18 €",
+                  "270 €",
+                  "1.080 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesamtkosten Verpackung und Schäden",
+                  "1.270 €",
+                  "1.930 €"
+                ]
+              }
+            ],
+            "fazit": "Die Materialeinsparung von 150 € wird durch 810 € zusätzliche Schadenskosten mehr als aufgezehrt. Dazu kommen verärgerte Kundinnen und zusätzliche Transporte für Ersatzlieferungen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Test war trotzdem kein Fehler. Er hat gezeigt, dass die kleineren Kartons ohne bessere Polsterung nicht funktionieren. Weil Ausgangswert, Ziel und Kontrolle vorher festgelegt waren, ließ sich das nach drei Monaten eindeutig belegen. MAKEL Studio kehrt zur alten Kartongröße zurück und testet als Nächstes die kleineren Kartons mit Polsterung aus Recyclingpapier, wieder mit denselben Kennzahlen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Eine Verbesserung im Logistikkonzept folgt einem festen Ablauf: Ausgangslage mit Kennzahlen beschreiben, Ziel messbar festlegen (Zielgröße, Messzeitraum), Maßnahme umsetzen, mit derselben Kennzahl kontrollieren und Nebenwirkungen prüfen. Werden zum Beispiel Verpackungen verkleinert, wird nicht nur der Materialverbrauch gemessen, sondern auch die Schadensquote, Ersatzlieferungen und Kundenreaktionen. Erst die Gesamtbilanz zeigt, ob die Maßnahme wirklich besser ist.",
-        "beispiele": [
-          "Ziel: Ø Lagerdauer Rohlinge von 60 auf 40 Tage in sechs Monaten, Versorgungssicherheit 100 %.",
-          "Kleinere Kartons: Material −15 %, aber Schadensquote von 0,5 % auf 2 % — Gesamtwirkung negativ."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Nachhaltigkeit ganzheitlich",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Weniger Verpackung ist nur dann nachhaltig, wenn dadurch nicht mehr Schäden, Ersatztransporte und Retouren entstehen. Eine Ersatzlieferung verursacht einen zweiten Transport, eine neue Verpackung und oft einen Rücktransport der beschädigten Ware. Die Umweltbilanz kann sich dadurch verschlechtern, obwohl weniger Karton verbraucht wurde.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL testet kleinere Versandkartons. Nach drei Monaten: Verpackungsmaterial −15 %, aber die Schadensquote stieg von 0,5 % auf 2 %, mit Ersatzlieferungen und Beschwerden. Jonas wertet aus: Die Ersatztransporte und Gutschriften kosten mehr als die Einsparung. MAKEL kehrt zur alten Größe zurück, testet aber eine Polsterung aus Recyclingpapier.",
-        "typische_fehler": "Eine Maßnahme nur an der Kennzahl messen, auf die sie zielt, und Nebenwirkungen übersehen.",
         "verstaendnisfragen": [
-          "Was gehört zu einem messbaren Ziel? Zielgröße, Zielwert und Messzeitraum.",
-          "Warum werden Nebenwirkungen geprüft? Weil eine Verbesserung an einer Stelle Verschlechterungen an anderer Stelle verursachen kann."
-        ],
-        "pruefungsbezug": "Eine Verbesserung samt Ziel, Messgröße, Zeitraum und Kontrolle formulieren.",
-        "merksatz": "Verbessern heißt: Ausgangswert, messbares Ziel, Maßnahme, Kontrolle mit gleicher Kennzahl — und Nebenwirkungen prüfen."
+          {
+            "frage": "Welche vier Bausteine braucht eine Logistikverbesserung?",
+            "antwort": "Ausgangswert, messbares Ziel, Maßnahme und Kontrolle mit gleicher Kennzahl.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum wurden die kleineren Kartons trotz Materialeinsparung nicht beibehalten?",
+            "antwort": "Weil die Schadenskosten stärker gestiegen sind als die Materialkosten gesunken sind. Die Gesamtbilanz war negativ.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

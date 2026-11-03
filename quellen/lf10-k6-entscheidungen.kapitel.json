@@ -6,66 +6,426 @@
   "untertitel": "Selbst machen oder einkaufen? Die Antwort steht in der Rechnung.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Eigenfertigung und Fremdbezug verursachen unterschiedliche variable und fixe Kosten.",
-          "Nur abbaubare Fixkosten verändern den Vergleich."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Eigenfertigung und Fremdbezug mit den entscheidungsrelevanten Kosten, berechnest die kritische Menge und berücksichtigst abbaubare Fixkosten.",
+        "vorwissen_kurz": "Relevant für eine Entscheidung sind nur Kosten, die sich durch die Entscheidung verändern.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rückenprints selbst drucken oder drucken lassen?",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL lässt die großen Rückenprints bisher bei einer Druckerei fertigen. Pro Print zahlt MAKEL 17 € und 1 € anteilige Fracht, also einen Einstandspreis von 18 €. Eine eigene Siebdruckanlage würde zusätzliche Fixkosten von 18.000 € im Jahr verursachen (Leasingrate, Wartung, Schulung). Die variablen Kosten eines selbst gedruckten Prints lägen bei 12 € für Farbe, Siebe und Arbeitszeit.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Entscheidend ist, welche Kosten durch die Entscheidung tatsächlich entstehen oder wegfallen. Die Miete der Werkstatt fällt in beiden Fällen an und gehört deshalb nicht in den Vergleich. Die 18.000 € für die Siebdruckanlage entstehen nur bei Eigenfertigung und gehören hinein.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die kritische Menge",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jeder selbst gedruckte Print spart 18 € − 12 € = 6 € gegenüber dem Einkauf. Diese Ersparnis muss die zusätzlichen 18.000 € Fixkosten decken: 18.000 € ÷ 6 € = 3.000 Prints im Jahr.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prints im Jahr",
+              "Fremdbezug",
+              "Eigenfertigung",
+              "Vorteil Eigenfertigung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "2.000",
+                  "36.000 €",
+                  "18.000 € + 24.000 € = 42.000 €",
+                  "−6.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "3.000",
+                  "54.000 €",
+                  "18.000 € + 36.000 € = 54.000 €",
+                  "0 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "5.000",
+                  "90.000 €",
+                  "18.000 € + 60.000 € = 78.000 €",
+                  "+12.000 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Unter 3.000 Prints ist der Einkauf günstiger, darüber die eigene Anlage. MAKEL plant 5.000 Prints und spart damit rechnerisch 12.000 € im Jahr.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Beim Make-or-buy-Vergleich werden variable Eigenfertigungskosten dem Einstandspreis des Fremdbezugs gegenübergestellt. Nicht abbaubare Fixkosten bleiben außen vor; abbaubare Fixkosten zählen mit. Die kritische Menge lautet zusätzliche Fixkosten ÷ (Einkaufspreis − variable Stückkosten).",
-        "beispiele": [
-          "Bei 22 € Einkaufspreis und 14 € variablen Eigenkosten beträgt die Ersparnis 8 € je Stück.",
-          "Bei 24.000 € zusätzlichen Fixkosten ergibt sich 24.000 € ÷ 8 € = 3.000 Stück als kritische Menge."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Abbaubare Fixkosten im umgekehrten Fall",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Druckt ein Betrieb bereits selbst und überlegt, die Fertigung aufzugeben, zählen auch Fixkosten mit, die dann wegfallen: Die Leasingrate kann gekündigt, eine Stelle abgebaut werden. Bleiben sie dagegen bestehen, etwa weil die Anlage gekauft ist und sich nicht verkaufen lässt, sind sie für die Entscheidung nicht relevant. Sie fallen in beiden Fällen an.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Freie Kapazität",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat MAKEL bereits eine Siebdruckanlage, die nicht ausgelastet ist, entstehen keine zusätzlichen Fixkosten. Dann vergleicht man nur variable Kosten (12 €) und Einstandspreis (18 €): Eigenfertigung lohnt sich ab dem ersten Print. Ist die Anlage dagegen voll, verdrängt jeder zusätzliche eigene Print andere Arbeit, und deren entgangener Deckungsbeitrag kommt hinzu.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "Bis 3.000 Stück wird der Fremdbezug verglichen, weil die Ersparnis von 8 € je Eigenfertigungsstück die zusätzlichen Fixkosten noch nicht deckt. Ab 3.000 Stück deckt die Ersparnis die 24.000 €; darüber ist Eigenfertigung rechnerisch günstiger. Vor der Entscheidung werden Einstandspreis inklusive Bezugskosten und Abbaubarkeit der Fixkosten geprüft.",
-        "typische_fehler": "Alle Fixkosten werden als vermeidbar behandelt oder der Einkaufspreis ohne Fracht und Verpackung angesetzt. Auch die kritische Menge wird mit dem falschen Differenzbetrag berechnet.",
         "verstaendnisfragen": [
-          "Welche Fixkosten gehören in den Vergleich? Nur die abbaubaren beziehungsweise zusätzlichen Fixkosten.",
-          "Wie lautet die kritische-Menge-Formel? Zusätzliche Fixkosten ÷ (Einkaufspreis − variable Stückkosten)."
-        ],
-        "pruefungsbezug": "Markiere in jeder Make-or-buy-Aufgabe variable Kosten, Einstandspreis und abbaubare Fixkosten getrennt.",
-        "merksatz": "Verglichen werden relevante Kosten — nicht die vollständige Kostenrechnung."
+          {
+            "frage": "Ein Bauteil kostet im Einkauf 22 € einschließlich Bezugskosten. Eigenfertigung verursacht 14 € variable Kosten und 24.000 € zusätzliche Fixkosten. Ab welcher Menge lohnt Eigenfertigung?",
+            "antwort": "Ersparnis je Stück 22 € − 14 € = 8 €. Kritische Menge 24.000 € ÷ 8 € = 3.000 Stück. Ab 3.001 Stück ist Eigenfertigung günstiger.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum wird die Werkstattmiete nicht in den Vergleich einbezogen?",
+            "antwort": "Sie fällt an, egal ob MAKEL selbst druckt oder drucken lässt. Kosten, die sich durch die Entscheidung nicht ändern, beeinflussen das Ergebnis nicht. Würde man sie einrechnen, sähe die Eigenfertigung teurer aus, als sie im Vergleich tatsächlich ist.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Ein Engpass begrenzt die nutzbare Produktionszeit.",
-          "Der absolute Deckungsbeitrag je Stück reicht bei Engpässen nicht aus."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst bei einem Kapazitätsengpass die Produktionsreihenfolge nach dem relativen Deckungsbeitrag, erstellst ein optimales Programm und vergleichst es mit der Reihenfolge nach absolutem Deckungsbeitrag.",
+        "vorwissen_kurz": "Ohne Engpass steigert jedes Stück mit positivem Deckungsbeitrag das Ergebnis.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Maschine, drei Produkte",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Stickmaschine von MAKEL läuft im Monat höchstens 160 Stunden, also 9.600 Minuten. Drei bestickte Produkte konkurrieren um diese Zeit. Würde MAKEL alle Nachfrage bedienen, bräuchte es 4.000 + 4.000 + 4.000 = 12.000 Minuten. Die Maschine ist der **Engpass**.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das optimale Programm",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Produkt",
+              "Absetzbare Menge",
+              "Minuten je Stück",
+              "Benötigte Minuten",
+              "Eingeplant",
+              "DB gesamt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "B (Rang 1)",
+                  "1.000",
+                  "4",
+                  "4.000",
+                  "1.000 Stück, 4.000 min",
+                  "20.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "C (Rang 2)",
+                  "800",
+                  "5",
+                  "4.000",
+                  "800 Stück, 4.000 min",
+                  "14.400 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "A (Rang 3)",
+                  "400",
+                  "10",
+                  "4.000",
+                  "Rest 1.600 min = 160 Stück",
+                  "4.800 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "",
+                  "",
+                  "12.000",
+                  "9.600 min",
+                  "39.200 €"
+                ]
+              }
+            ],
+            "fazit": "Zuerst wird B voll gefertigt, dann C, und die restliche Zeit geht an A. Mehr Deckungsbeitrag ist mit 9.600 Minuten nicht möglich.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zum Vergleich: Würde MAKEL nach dem höchsten Deckungsbeitrag je Stück vorgehen, käme zuerst A mit 400 Stück (4.000 min, 12.000 €), dann B mit 1.000 Stück (4.000 min, 20.000 €), und für C blieben nur 1.600 Minuten, also 320 Stück (5.760 €). Zusammen wären das 37.760 € — 1.440 € weniger bei voller Auslastung.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b4"
+          }
         ],
-        "erklaerung": "Ohne Engpass entscheidet der absolute Deckungsbeitrag. Bei einer knappen Maschine oder anderen Engpasseinheit wird der Deckungsbeitrag je Engpasseinheit berechnet. Die Rangfolge richtet sich nach dem relativen Beitrag, weil jede knappe Minute möglichst viel Ergebnis bringen soll.",
-        "beispiele": [
-          "Produkt A: 45 € DB bei 9 Minuten = 5 € je Minute.",
-          "Produkt B: 28 € bei 4 Minuten = 7 € je Minute; Produkt C: 36 € bei 6 Minuten = 6 € je Minute. Reihenfolge B, C, A."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wenn es keinen Engpass gibt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Reicht die Kapazität für alle absetzbaren Mengen, ist keine Reihenfolge nötig: MAKEL fertigt alles, was einen positiven Deckungsbeitrag hat. Der relative Deckungsbeitrag wird erst wichtig, wenn eine Ressource knapp ist — Maschinenzeit, Facharbeiterstunden, Lagerfläche oder ein knappes Material.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Lieferzusagen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat MAKEL einem Stammkunden eine feste Menge von Produkt A zugesagt, wird diese Menge zuerst eingeplant, auch wenn A den niedrigsten relativen Deckungsbeitrag hat. Die Rangfolge gilt dann nur für die verbleibende Kapazität. Rechnerisch optimal ist nicht immer betrieblich richtig.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Die Maschine ist der Engpass. A bringt 45 ÷ 9 = 5 € je Minute, B 28 ÷ 4 = 7 €, C 36 ÷ 6 = 6 €. Deshalb wird B zuerst, dann C, dann A gefertigt, soweit der Absatz reicht. A hat zwar den höchsten DB je Stück, nutzt die knappe Maschinenzeit aber am schlechtesten.",
-        "typische_fehler": "Der höchste Stück-DB wird bei Engpass zuerst gewählt oder durch Stückzahl statt Engpasseinheit geteilt.",
         "verstaendnisfragen": [
-          "Was zählt bei Engpass? Deckungsbeitrag je Engpasseinheit.",
-          "Welches Produkt wird im Beispiel zuerst gefertigt? B mit 7 € je Maschinenminute."
-        ],
-        "pruefungsbezug": "Teile jeden Stück-DB durch die knappe Einheit und bilde erst danach die Rangfolge.",
-        "merksatz": "Bei Engpass gewinnt nicht das beste Stück, sondern die beste knappe Einheit."
+          {
+            "frage": "Die Maschine hat nur 8.000 Minuten. Wie sieht das Programm aus?",
+            "antwort": "Rang 1: B mit 1.000 Stück, 4.000 Minuten. Rang 2: C mit 800 Stück, 4.000 Minuten. Für A bleibt keine Zeit. Deckungsbeitrag 20.000 € + 14.400 € = 34.400 €.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Welcher Deckungsbeitrag geht verloren, wenn MAKEL eine Minute Maschinenzeit für A statt für C verwendet?",
+            "antwort": "C bringt 3,60 € je Minute, A 3,00 €. Jede Minute für A statt C kostet 0,60 € Deckungsbeitrag.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Zahlenmodelle beruhen auf Annahmen.",
-          "Qualität, Wissen, Abhängigkeit und Beschäftigung können nicht vollständig in der Rechnung stehen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ergänzt eine rechnerische Entscheidung um qualitative Gesichtspunkte und ein ungünstiges Szenario und formulierst eine begründete Empfehlung mit Bedingungen.",
+        "vorwissen_kurz": "Eine Rechnung beruht auf Annahmen über Mengen, Preise und Kosten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rechnung ist ein Anfang",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung spricht für eine eigene Siebdruckanlage: 12.000 € Vorteil bei 5.000 Prints. Bevor Tobias Renner unterschreibt, prüft er, was die Zahl nicht zeigt.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Szenarien",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Annahme",
+              "Erwartet",
+              "Ungünstig"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Prints im Jahr",
+                  "5.000",
+                  "3.500"
+                ]
+              },
+              {
+                "zellen": [
+                  "Variable Kosten je Print",
+                  "12 €",
+                  "13 € (mehr Fehldrucke in der Einarbeitung)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einstandspreis Druckerei",
+                  "18 €",
+                  "18 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vorteil Eigenfertigung",
+                  "5.000 × 6 € − 18.000 € = 12.000 €",
+                  "3.500 × 5 € − 18.000 € = −500 €"
+                ]
+              }
+            ],
+            "fazit": "Schon eine schwächere Saison und eine holprige Einarbeitung kehren den Vorteil um. Die Entscheidung ist nur so sicher wie die Absatzmenge.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was nicht in der Tabelle steht",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die eigene Anlage spricht: MAKEL kann kurzfristig nachdrucken, kleine Auflagen für Kollaborationen schneller umsetzen und die Druckqualität selbst kontrollieren. Dagegen spricht: Die Leasingbindung läuft fünf Jahre, Siebdruck-Wissen muss erst aufgebaut werden, und die bisherige Druckerei ist ein verlässlicher Partner, den MAKEL bei Spitzen weiterhin braucht.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine gute Empfehlung verbindet beides: „Eigene Siebdruckanlage, wenn die Absatzplanung mindestens 4.000 Prints im Jahr trägt; Großaufträge und Spitzen weiter an die Druckerei; nach zwölf Monaten Kosten und Fehldruckquote überprüfen.“",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Eine Kostenrechnung zeigt einen Ausschnitt. Vor der Entscheidung werden Einstandspreis, abbaubare Fixkosten und die Nutzung frei werdender Kapazität geprüft. Zusätzlich gehören Abhängigkeit vom Lieferer, Qualität, Termintreue, Fachwissen und Beschäftigung in die Beurteilung. Szenarien mit ungünstigeren Annahmen machen die Entscheidung belastbarer.",
-        "beispiele": [
-          "Ein günstiger Fremdbezug kann bei einer späteren Preiserhöhung kippen; die Abhängigkeit vom Lieferer wird deshalb zusätzlich geprüft.",
-          "Eine aufgelöste Eigenfertigung kann Fachwissen und Qualitätskontrolle verlieren, obwohl die Rechnung zunächst spart."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Beteiligung der Beschäftigten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wird eine bisher eigene Fertigung an Fremdfirmen vergeben, können Arbeitsplätze wegfallen. In Betrieben mit Betriebsrat können dann Beteiligungsrechte bestehen, bei größeren Betriebsänderungen auch Verhandlungen über einen Interessenausgleich und einen Sozialplan. Zeitplan und Kosten der Entscheidung ändern sich dadurch.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf4:k3-b3"
+                ],
+                "text": "Nutzwertanalyse für qualitative Kriterien",
+                "id": "b3-d1-v1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf9:k6-b3"
+                ],
+                "text": "Sensitivität bei Investitionen",
+                "id": "b3-d1-v2"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Fremdbezug spart rechnerisch 12.000 € jährlich. Bevor die Fertigung aufgelöst wird, werden Einstandspreis inklusive Fracht, wirklich abbaubare Fixkosten und die alternative Nutzung der Kapazität geprüft. Danach werden Liefererabhängigkeit, Qualität, Termintreue und Beschäftigung bewertet. Ein zweites Szenario mit 10 % Lieferer-Preiserhöhung zeigt, ob der Vorteil stabil bleibt.",
-        "typische_fehler": "Das Rechenergebnis wird als alleinige Entscheidung behandelt. Nicht rechenbare Risiken und ein alternatives Szenario werden nicht dokumentiert.",
         "verstaendnisfragen": [
-          "Welche drei Zahlenfragen müssen vor der Entscheidung geprüft werden? Einstandspreis, abbaubare Fixkosten und Nutzung der frei werdenden Kapazität.",
-          "Welche nicht rechenbaren Kriterien nennt der Inhalt? Abhängigkeit, Qualität, Wissen und Beschäftigung."
-        ],
-        "pruefungsbezug": "Ergänze jede Zahlenentscheidung um mindestens zwei qualitative Kriterien und eine Sensitivitäts- oder Szenarioprüfung.",
-        "merksatz": "Die Rechnung entscheidet nicht allein; sie macht Annahmen sichtbar, die fachlich bewertet werden müssen."
+          {
+            "frage": "Warum prüft man ein ungünstiges Szenario, obwohl man mit den erwarteten Werten plant?",
+            "antwort": "Die erwarteten Werte sind Schätzungen. Das ungünstige Szenario zeigt, ob die Entscheidung auch bei realistischen Abweichungen noch trägt. Kippt das Ergebnis schon bei kleinen Änderungen, ist das Risiko hoch, und die Empfehlung braucht Bedingungen oder eine Absicherung.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Nenne zwei Gründe, die trotz Kostenvorteil gegen die Eigenfertigung sprechen können.",
+            "antwort": "Zum Beispiel eine lange vertragliche Bindung an die Anlage, die bei sinkendem Absatz zur Last wird, und fehlendes Fachwissen, das zu Qualitätsproblemen führt. Auch die Abhängigkeit von wenigen geschulten Beschäftigten oder der Verlust eines bewährten Lieferanten für Spitzenzeiten können dagegen sprechen.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

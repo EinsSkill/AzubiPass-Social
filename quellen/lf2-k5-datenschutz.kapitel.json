@@ -6,66 +6,398 @@
   "untertitel": "Zwei verschiedene Dinge — und beide gehen dich an.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Daten können sich auf Menschen oder auf rein sachliche Dinge beziehen.",
-          "Datenschutz und Datensicherheit verfolgen unterschiedliche Schutzziele."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst personenbezogene Daten, prüfst für eine Verarbeitung die Rechtsgrundlage und wendest Zweckbindung, Datenminimierung und Speicherbegrenzung an.",
+        "vorwissen_kurz": "Die Datenschutz-Grundverordnung (DSGVO) gilt in der gesamten EU für die Verarbeitung personenbezogener Daten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer geschützt wird",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Datenschutz schützt Menschen: Jede Person soll selbst bestimmen können, wer was über sie weiß und damit tut. Geschützt sind deshalb {{begriff:personenbezogene-daten|personenbezogene Daten}}, also Angaben zu einer bestimmten oder bestimmbaren natürlichen Person. Datensicherheit dagegen schützt alle Daten, auch Geschäftszahlen, vor Verlust, Manipulation und unbefugtem Zugriff. Im Büro braucht man beides.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ist das ein personenbezogenes Datum?",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Angabe bei MAKEL",
+              "Personenbezogen?",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Umsatz der Herbstkollektion",
+                  "nein",
+                  "Unternehmensdaten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferanschrift einer Onlinekundin",
+                  "ja",
+                  "gehört zu einer bestimmten Person"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kundennummer 104 377",
+                  "ja",
+                  "über das System einer Person zuzuordnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Firmenanschrift des Modehauses Becker GmbH",
+                  "nein",
+                  "Angabe zu einem Unternehmen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Name und Durchwahl der Einkäuferin dort",
+                  "ja",
+                  "Angaben zu einer Person"
+                ]
+              },
+              {
+                "zellen": [
+                  "Krankmeldung eines Mitarbeiters",
+                  "ja, besonders geschützt",
+                  "Gesundheitsdaten"
+                ]
+              }
+            ],
+            "fazit": "Entscheidend ist, ob sich eine Angabe — allein oder mit anderen Informationen — einer natürlichen Person zuordnen lässt.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Rechtsgrundlage und Zweck",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL speichert die Adresse einer Onlinekundin, um die Bestellung zu liefern. Rechtsgrundlage ist die Erfüllung des Vertrags. Will MAKEL ihr danach Werbe-E-Mails schicken, ist das ein neuer Zweck: Dafür braucht es eine Einwilligung oder die engen Voraussetzungen, unter denen Bestandskunden Werbung für ähnliche Produkte erhalten dürfen, einschließlich eines Hinweises, dass sie widersprechen können. Und wenn die Kundin ihr Kundenkonto löscht, wird die Adresse gelöscht — außer in den Rechnungen, die aufbewahrt werden müssen.",
+            "id": "b1-p2"
+          }
         ],
-        "erklaerung": "Datenschutz schützt Menschen und ihr Recht, über die Verwendung personenbezogener Daten mitzubestimmen. Datensicherheit schützt Daten vor Verlust, Veränderung, Zerstörung und unbefugtem Zugriff, unabhängig davon, ob sie personenbezogen sind. Personenbezogene Daten beziehen sich auf bestimmte oder bestimmbare natürliche Personen; Beschäftigtendaten fallen darunter, reine Unternehmensdaten nicht. Jede Verarbeitung braucht nach Art. 6 DSGVO eine Rechtsgrundlage.",
-        "beispiele": [
-          "Die Frage, ob eine Bestelladresse überhaupt für Werbung genutzt werden darf, ist Datenschutz. Die verschlüsselte Festplatte schützt die gespeicherten Daten und gehört zur Datensicherheit.",
-          "Eine getrennt aufbewahrte Datensicherung schützt vor Datenverlust; Zweckbindung und Datenminimierung regeln dagegen, wofür personenbezogene Daten verarbeitet werden."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Besondere Kategorien",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gesundheitsdaten, Angaben zur Religion, zur ethnischen Herkunft, zur sexuellen Orientierung, zur Gewerkschaftszugehörigkeit und einige weitere gelten als besonders schutzbedürftig. Ihre Verarbeitung ist grundsätzlich verboten und nur in engen Ausnahmen erlaubt, etwa wenn das Arbeitsrecht sie verlangt. Krankmeldungen gehören deshalb nicht in die normale Personalakte, sondern getrennt und mit eingeschränktem Zugriff.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Kollegin verschickt eine Einladung an 80 Kunden und setzt alle Adressen in das An-Feld. Jede Empfängerin und jeder Empfänger sieht die Adressen der anderen. Das ist eine Datenschutzverletzung, weil personenbezogene Kontaktdaten gegenüber Dritten offengelegt wurden. Der Vorfall wird unverzüglich intern gemeldet, dokumentiert und auf erforderliche weitere Maßnahmen geprüft; korrekt wäre das Blindkopie-Feld oder ein Einzelversand gewesen.",
-        "typische_fehler": "Datenschutz wird mit einem Passwort oder einer Sicherungskopie gleichgesetzt. Umgekehrt wird Datensicherheit nur bei Personendaten gesehen. Außerdem wird angenommen, jede Verarbeitung sei erlaubt, sobald die Daten im Betrieb vorhanden sind.",
         "verstaendnisfragen": [
-          "Was ist der Kernunterschied? Datenschutz entscheidet, ob und wozu Daten verarbeitet werden dürfen; Datensicherheit schützt die Daten vor Beeinträchtigungen.",
-          "Was bedeutet Verbot mit Erlaubnisvorbehalt? Ohne Rechtsgrundlage nach Art. 6 DSGVO darf die Verarbeitung nicht stattfinden."
+          {
+            "frage": "Ist die E-Mail-Adresse info@modehaus-becker.de personenbezogen?",
+            "antwort": "In der Regel nicht, weil sie keiner bestimmten Person zugeordnet ist, sondern dem Unternehmen. Eine Adresse wie anna.becker@modehaus-becker.de ist dagegen personenbezogen.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum darf MAKEL für einen Newsletter nicht das Geburtsdatum verlangen?",
+            "antwort": "Für den Versand eines Newsletters ist das Geburtsdatum nicht erforderlich. Der Grundsatz der Datenminimierung erlaubt nur die Daten, die für den Zweck nötig sind — hier die E-Mail-Adresse.",
+            "id": "b1-f2"
+          }
         ],
-        "pruefungsbezug": "Nenne in einer Antwort immer je zwei Beispiele für Datenschutz und Datensicherheit. Prüfe danach Rechtsgrundlage, Zweck und Schutzmaßnahmen getrennt.",
-        "merksatz": "Datenschutz schützt den Menschen hinter den Daten; Datensicherheit schützt die Daten selbst."
+        "quellen": [
+          {
+            "titel": "Datenschutz-Grundverordnung, Art. 4, 5, 6, 9",
+            "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=de",
+            "bezug": "Begriffe, Grundsätze, Rechtsgrundlagen, besondere Kategorien"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Betroffene Personen können Einfluss auf die Verarbeitung ihrer Daten nehmen.",
-          "Das Löschrecht steht nicht isoliert neben gesetzlichen Aufbewahrungspflichten."
+        "darstellung": "vollfassung",
+        "ziel": "Du bearbeitest eine Betroffenenanfrage vom Eingang bis zur Antwort, prüfst Identität, Umfang und Frist und erkennst, wann Löschung durch Sperrung ersetzt wird.",
+        "vorwissen_kurz": "Betroffene Personen haben Rechte gegenüber dem Unternehmen, das ihre Daten verarbeitet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rechte, die Fristen auslösen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer wissen will, welche Daten ein Unternehmen über ihn hat, oder sie löschen lassen möchte, kann das verlangen. Die DSGVO regelt diese Rechte genau — und sie setzt Fristen. Im Betrieb ist meist die oder der Datenschutzbeauftragte zuständig. Wer eine solche Anfrage annimmt, leitet sie deshalb sofort weiter und notiert das Eingangsdatum.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Anfrage bei MAKEL",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Montag, 9. November 2026, schreibt Herr Kaya per E-Mail: „Teilen Sie mir bitte mit, welche Daten Sie über mich gespeichert haben, und löschen Sie danach alles.“",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Was passiert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1 Eingang",
+                  "Tim leitet die Mail sofort an die Datenschutzbeauftragte weiter; Eingang 9.11. notiert, Frist: ein Monat, also bis 9.12."
+                ]
+              },
+              {
+                "zellen": [
+                  "2 Identität",
+                  "Die Mail kommt von der Adresse aus dem Kundenkonto; die Identität gilt als hinreichend belegt. Bei Zweifeln würde nachgefragt."
+                ]
+              },
+              {
+                "zellen": [
+                  "3 Suchen",
+                  "Kundenkonto, Bestellungen, Rechnungen, Newsletterliste, Kundenservice-Postfach"
+                ]
+              },
+              {
+                "zellen": [
+                  "4 Auskunft",
+                  "Daten, Zwecke, Empfänger (Paketdienst, Zahlungsdienst), Speicherdauer, Herkunft, Rechte; dazu eine Kopie der Daten"
+                ]
+              },
+              {
+                "zellen": [
+                  "5 Löschung",
+                  "Newsletter und Kundenkonto löschen; Rechnungen aus 2025 sperren und nach Ablauf der acht Jahre löschen"
+                ]
+              },
+              {
+                "zellen": [
+                  "6 Antwort",
+                  "am 24.11. an Herrn Kaya, mit Hinweis auf die Sperrung und ihren Grund"
+                ]
+              }
+            ],
+            "fazit": "Die Anfrage ist innerhalb eines Monats erledigt. Herr Kaya erfährt, was gelöscht und was nur gesperrt wurde — und warum.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Zu den Betroffenenrechten gehören Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Bei einer Auskunft geht es auch um Zweck, Speicherdauer und Empfänger. Das Löschrecht entfällt, soweit eine gesetzliche Aufbewahrungspflicht entgegensteht; dann werden die Daten für die weitere Verwendung gesperrt und erst nach Ablauf der Frist gelöscht.",
-        "beispiele": [
-          "Eine Person kann Auskunft darüber verlangen, ob und welche Daten verarbeitet werden, zu welchem Zweck und wie lange.",
-          "Eine unrichtige Adresse wird berichtigt. Eine Rechnung darf dagegen wegen der Aufbewahrungspflicht nicht einfach gelöscht werden; sie wird gesperrt und später gelöscht."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kostenlos und formlos",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Betroffene müssen ihre Anfrage weder begründen noch ein bestimmtes Formular nutzen. Die erste Auskunft ist kostenlos. Nur bei offenkundig unbegründeten oder exzessiven Anfragen darf ein Unternehmen ein angemessenes Entgelt verlangen oder ablehnen — und muss das begründen.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Kundin verlangt die sofortige Löschung aller Daten, der Betrieb muss eine Rechnung aber noch aufbewahren. Zuerst werden die Datenarten getrennt betrachtet. Die Rechnung bleibt wegen der Aufbewahrungspflicht gespeichert, wird für andere Verwendungen gesperrt und nach Ablauf der Frist gelöscht. Für Daten ohne entgegenstehende Pflicht wird das Löschbegehren separat geprüft.",
-        "typische_fehler": "Alle Rechte werden als gleichbedeutend mit Löschung verstanden. Ebenso wird die Aufbewahrungspflicht als Erlaubnis für jede weitere Nutzung missverstanden; Sperrung und Zweckbindung bleiben bestehen.",
         "verstaendnisfragen": [
-          "Welche Rechte gehören zum Grundkatalog? Auskunft, Berichtigung, Löschung, Einschränkung, Übertragbarkeit und Widerspruch.",
-          "Was geschieht bei entgegenstehender Aufbewahrungspflicht? Die Daten werden nicht sofort gelöscht, sondern für die weitere Verwendung gesperrt."
+          {
+            "frage": "Herr Kaya ruft an und will seine Daten am Telefon hören. Was tust du?",
+            "antwort": "Ich gebe am Telefon keine Daten heraus, weil ich nicht sicher weiß, wer anruft. Ich nehme die Anfrage auf und leite sie an die Datenschutzbeauftragte weiter, die die Auskunft auf sicherem Weg erteilt.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum werden die Rechnungen nicht gelöscht, obwohl Herr Kaya das verlangt?",
+            "antwort": "Für Rechnungen gelten gesetzliche Aufbewahrungsfristen. Das Löschrecht tritt dahinter zurück. Die Rechnungen werden gesperrt, also für jeden anderen Zweck unzugänglich gemacht, und nach Fristablauf gelöscht.",
+            "id": "b2-f2"
+          }
         ],
-        "pruefungsbezug": "Ordne ein Betroffenenbegehren zuerst dem verlangten Recht zu und prüfe danach Ausnahmen, besonders die Aufbewahrungspflicht beim Löschrecht.",
-        "merksatz": "Löschen ist ein Recht, aber Aufbewahrungspflichten können es zeitweise durch Sperrung begrenzen."
+        "quellen": [
+          {
+            "titel": "Datenschutz-Grundverordnung, Art. 12, 15–21",
+            "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=de",
+            "bezug": "Fristen und Betroffenenrechte"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Schutz entsteht aus technischen und organisatorischen Maßnahmen gemeinsam.",
-          "Viele Alltagsfehler entstehen durch falsche Empfänger oder zu weitgehende Zugriffe."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest technische und organisatorische Maßnahmen, ordnest sie Risiken im Büro zu und weißt, was bei einer Datenpanne zu tun ist.",
+        "vorwissen_kurz": "Datenschutz verlangt nicht nur Regeln, sondern auch Schutz: Daten müssen vor unbefugtem Zugriff, Verlust und Veränderung gesichert sein.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Technik und Verhalten",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die DSGVO verlangt {{begriff:tom|technische und organisatorische Maßnahmen}}, die dem Risiko angemessen sind. Technische Maßnahmen setzt die IT um, etwa Verschlüsselung oder Zugriffsrechte. Organisatorische Maßnahmen regeln das Verhalten, etwa Schulungen, Schließregeln oder Vertretungsregelungen. Eine Maßnahme allein reicht selten: Die beste Verschlüsselung hilft nichts, wenn das Passwort am Bildschirm klebt.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Risiken im Büro und passende Maßnahmen",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Risiko",
+              "Technische Maßnahme",
+              "Organisatorische Maßnahme"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Laptop wird im Zug gestohlen",
+                  "Festplattenverschlüsselung, Fernsperre",
+                  "Laptops nie unbeaufsichtigt lassen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Besucher liest Personalunterlagen am Schreibtisch",
+                  "automatische Bildschirmsperre",
+                  "Clean Desk, Besucher begleiten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rundmail an 200 Kunden mit allen Adressen sichtbar",
+                  "Newsletter-System statt E-Mail-Programm",
+                  "Regel: Verteiler nur in Blindkopie"
+                ]
+              },
+              {
+                "zellen": [
+                  "Phishing-Mail mit gefälschtem Absender",
+                  "Spamfilter, Zwei-Faktor-Anmeldung",
+                  "Schulung, Rückfrage über bekannte Nummer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Festplatte des Servers fällt aus",
+                  "tägliche Sicherung an getrenntem Ort",
+                  "Rücksicherung regelmäßig testen"
+                ]
+              }
+            ],
+            "fazit": "Zu jedem Risiko gehören beide Arten von Maßnahmen. Die Technik fängt Fehler ab, die Organisation verhindert, dass sie überhaupt passieren.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn doch etwas passiert",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tim schickt versehentlich eine Gehaltsliste an eine externe Adresse. Das ist eine Datenpanne. Er meldet sie sofort der Vorgesetzten und der Datenschutzbeauftragten, versucht, die Nachricht zurückzurufen, und bittet den Empfänger, sie zu löschen. Das Unternehmen muss eine Panne, die ein Risiko für die Betroffenen bedeutet, innerhalb von 72 Stunden der Aufsichtsbehörde melden; bei hohem Risiko werden auch die Betroffenen informiert. Verschweigen macht es schlimmer, nicht besser.",
+            "id": "b3-p2"
+          }
         ],
-        "erklaerung": "Technische Maßnahmen wie Verschlüsselung, Zugriffsschutz und Datensicherung wirken nur zusammen mit organisatorischen Regeln wie Unterweisung, Zuständigkeiten und dokumentierten Abläufen. Im Alltag werden Adressfelder, Freigaben, Aufbewahrung und Zugriffsrechte bewusst geprüft. Ein Vorfall wird unverzüglich gemeldet und intern dokumentiert; danach wird das Risiko für weitere Melde- oder Informationspflichten bewertet.",
-        "beispiele": [
-          "Beim Versand an viele Empfänger wird BCC oder ein Einzelversand genutzt, damit die Adressen nicht offengelegt werden.",
-          "Eine getrennte Datensicherung hilft bei Verlust; eine Unterweisung zum Serienversand verhindert, dass der Fehler wiederholt wird."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Schutzziele der Datensicherheit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Informationssicherheit spricht man von drei Schutzzielen. Vertraulichkeit: Nur Befugte sehen die Daten. Integrität: Daten bleiben vollständig und unverändert. Verfügbarkeit: Daten sind da, wenn man sie braucht. Jede Maßnahme lässt sich einem oder mehreren Schutzzielen zuordnen.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Nach dem Versand einer offenen Kundenliste wird der Vorfall intern gemeldet. Die zuständige Datenschutzstelle prüft, welche Daten sichtbar waren, dokumentiert den Vorgang und bewertet das Risiko. Anschließend werden die Mitarbeitenden zum Serienversand unterwiesen und — soweit möglich — technische Begrenzungen für das An-Feld eingerichtet.",
-        "typische_fehler": "Nur technische Mittel werden angeschafft, ohne Regeln und Schulung zu ändern. Oder ein Vorfall wird still korrigiert, ohne Meldung, Dokumentation und Risikoprüfung.",
         "verstaendnisfragen": [
-          "Warum müssen technische und organisatorische Maßnahmen zusammenwirken? Technik kann einen Regel- oder Bedienfehler nicht allein verhindern; Organisation legt Zuständigkeit und Verhalten fest.",
-          "Was ist nach einer versehentlichen Offenlegung der erste organisatorische Schritt? Unverzüglich intern melden und den Vorfall dokumentieren."
+          {
+            "frage": "Ist eine Rundmail mit offenem Verteiler eine Datenpanne?",
+            "antwort": "Ja, wenn dadurch E-Mail-Adressen von Privatpersonen für alle Empfänger sichtbar werden. Die Adressen werden ohne Rechtsgrundlage an Dritte weitergegeben. Sie muss gemeldet und bewertet werden.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum gehört zur Datensicherung ein regelmäßiger Rücksicherungstest?",
+            "antwort": "Erst die Rücksicherung zeigt, ob die Sicherung vollständig und lesbar ist. Viele Betriebe merken erst im Ernstfall, dass ihre Sicherung fehlerhaft war.",
+            "id": "b3-f2"
+          }
         ],
-        "pruefungsbezug": "Nenne bei einem Alltagsfall konkrete technische und organisatorische Maßnahmen und beschreibe die Reihenfolge Meldung, Dokumentation, Risikoprüfung und Nachbesserung.",
-        "merksatz": "Sichere Daten brauchen Technik, Regeln und aufmerksames Verhalten."
+        "quellen": [
+          {
+            "titel": "Datenschutz-Grundverordnung, Art. 32–34",
+            "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=de",
+            "bezug": "Sicherheit der Verarbeitung, Meldung von Datenpannen"
+          }
+        ]
       }
     ]
   },

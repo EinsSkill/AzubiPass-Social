@@ -6,86 +6,462 @@
   "untertitel": "Vom Lieferanten bis zum Kunden als ein System denken — Push und Pull, Informationsaustausch und Reaktion auf Störungen.",
   "minuten": 20,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "MAKEL ist nur ein Glied zwischen Lieferanten und Kunden.",
-          "Störungen bei einem Partner wirken auf alle anderen."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst Abhängigkeiten entlang der Lieferkette vom Rohstoff bis zum Endkunden, erklärst den Peitscheneffekt mit Zahlen und begründest, warum geteilte Bedarfsdaten Bestände und Engpässe verringern.",
+        "vorwissen_kurz": "Eine Boutique bestellt etwas mehr Hoodies. Drei Stufen weiter produziert ein Lieferant plötzlich viel zu viel.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Lieferkette als ein System",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Lieferkette umfasst alle Beteiligten vom Rohstoff bis zum Endkunden: Baumwollproduzent, Stoff- und Rohlinghersteller, MAKEL Studio, Boutiquen, Endkundinnen. **Supply-Chain-Management** stimmt die Material-, Informations- und Geldflüsse über alle Partner ab, statt dass jede Stufe nur für sich plant. Ohne Abstimmung entsteht der **Peitscheneffekt**: Kleine Schwankungen beim Endkunden schaukeln sich über die Stufen auf, weil jede Stufe nur die Bestellungen der nächsten sieht und vorsichtshalber mehr bestellt.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Peitscheneffekt in Zahlen",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "normale Menge pro Monat",
+              "sieht",
+              "bestellt",
+              "Veränderung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Endkundinnen",
+                  "500 Hoodies",
+                  "—",
+                  "kaufen 550",
+                  "+ 10 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Boutiquen",
+                  "500",
+                  "Verkauf + 10 %",
+                  "600",
+                  "+ 20 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "MAKEL Studio",
+                  "500 Rohlinge",
+                  "Bestellungen + 20 %",
+                  "700",
+                  "+ 40 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohlinglieferant",
+                  "500",
+                  "Bestellung + 40 %",
+                  "produziert 800",
+                  "+ 60 %"
+                ]
+              }
+            ],
+            "fazit": "Aus 10 % mehr Nachfrage werden beim Lieferanten 60 % mehr Produktion. Sinkt die Nachfrage danach wieder, bleiben auf jeder Stufe Überbestände.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gegen den Peitscheneffekt helfen geteilte Informationen. Teilen die Boutiquen ihre Verkaufszahlen mit MAKEL Studio und MAKEL seinen Bedarf mit dem Lieferanten, sieht jede Stufe den echten Endkundenbedarf statt nur die Bestellung der nächsten Stufe. Dazu kommen kürzere Lieferzeiten und kleinere, häufigere Bestellungen, weil dann weniger Sicherheitszuschläge nötig sind. Voraussetzung ist Vertrauen zwischen den Partnern, denn Absatzdaten sind sensible Informationen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Eine Lieferkette (Supply Chain) umfasst alle Unternehmen und Schritte vom Rohstoff bis zum Endkunden: Baumwollproduzent, Textilhersteller, Rohlingslieferant, MAKEL, Paketdienst, Boutique, Endkunde. Supply-Chain-Management (SCM) heißt, Material-, Informations- und Geldflüsse über diese Unternehmen hinweg abzustimmen, statt dass jeder nur für sich optimiert. Ein bekanntes Problem ist der Peitscheneffekt (Bullwhip-Effekt): Kleine Nachfrageschwankungen beim Endkunden schaukeln sich über jede Stufe auf, weil jede Stufe mit Sicherheitszuschlägen bestellt. Gemeinsame Bedarfsdaten dämpfen ihn.",
-        "beispiele": [
-          "Eine Boutique bestellt wegen eines Trends 20 % mehr; MAKEL bestellt vorsichtshalber 40 % mehr Rohlinge; der Rohlingslieferant erhöht seine Produktion um 60 %.",
-          "MAKEL teilt seine Absatzprognose mit dem Rohlingslieferanten, der damit besser planen kann."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Abhängigkeiten sichtbar machen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wer seine Lieferkette kennt, erkennt Risiken früher. Hängt MAKEL Studio für schwarze Rohlinge an einem Hersteller, der seinerseits Stoff nur aus einer Weberei bezieht, kann ein Ausfall dort die Veredelung in Düsseldorf stoppen. Eine Übersicht über die Vorstufen der wichtigsten Materialien zeigt solche Abhängigkeiten.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Im Frühjahr waren schwarze Hoodies plötzlich gefragt. Boutiquen bestellten mehr, MAKEL bestellte noch mehr Rohlinge, der Lieferant fuhr Sonderschichten. Zwei Monate später lagen überall zu viele schwarze Rohlinge. Deniz Aydın vereinbart mit dem Lieferanten, künftig monatlich Verkaufsdaten und Prognosen auszutauschen.",
-        "typische_fehler": "Eine lokale Optimierung (etwa möglichst wenig Lager bei MAKEL) beurteilen, ohne die Wirkung auf die ganze Lieferkette zu betrachten.",
         "verstaendnisfragen": [
-          "Was ist Supply-Chain-Management? Die Abstimmung von Material-, Informations- und Geldflüssen über alle Unternehmen einer Lieferkette.",
-          "Wie entsteht der Peitscheneffekt? Nachfrageschwankungen schaukeln sich über die Stufen auf, weil jede mit Sicherheitszuschlägen bestellt."
-        ],
-        "pruefungsbezug": "Wirkungen einer Entscheidung auf vor- und nachgelagerte Partner beschreiben.",
-        "merksatz": "SCM stimmt Flüsse über alle Partner ab; geteilte Bedarfsdaten dämpfen den Peitscheneffekt."
+          {
+            "frage": "Was ist der Peitscheneffekt?",
+            "antwort": "Kleine Nachfrageschwankungen beim Endkunden verstärken sich über jede Stufe der Lieferkette, weil jede Stufe mit Sicherheitszuschlag bestellt.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was hilft gegen den Peitscheneffekt?",
+            "antwort": "Geteilte Bedarfs- und Bestandsdaten, damit jede Stufe den echten Endkundenbedarf sieht, sowie kürzere Lieferzeiten.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Man kann auf Vorrat oder auf tatsächlichen Bedarf hin produzieren und liefern.",
-          "Aus Kapitel 1 von LF 6 kennst du Lager- und Kundenauftragsfertigung."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Push- und Pull-Prinzip nach Auslöser, Bestand und Risiko, erklärst Kanban als Pull-Verfahren und begründest, welches Prinzip für welche Leistungen von MAKEL Studio passt.",
+        "vorwissen_kurz": "Manches stellt MAKEL Studio auf Vorrat her, anderes erst, wenn ein Kunde bestellt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nach Prognose oder nach Bedarf",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim **Push-Prinzip** wird nach Prognose produziert und beschafft: Die Ware wird in die Kette „gedrückt\", bevor ein konkreter Auftrag vorliegt. Das sichert Lieferfähigkeit, erzeugt aber höhere Bestände und das Risiko von Restposten. Beim **Pull-Prinzip** löst der tatsächliche Bedarf die Produktion oder Nachlieferung aus: Die Ware wird „gezogen\". Das senkt Bestände, verlangt aber kurze und verlässliche Wiederbeschaffungszeiten. Ein bekanntes Pull-Verfahren ist **Kanban**: Ein leerer Behälter oder eine Karte löst die Nachlieferung einer festen Menge aus.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Push und Pull bei MAKEL Studio",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Leistung",
+              "Prinzip",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kollektion für den Onlineshop",
+                  "Push",
+                  "Kundinnen erwarten sofortige Lieferung, Serie beim Lohnfertiger braucht Wochen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vereins- und Firmendrucke",
+                  "Pull",
+                  "Motiv und Menge stehen erst mit dem Auftrag fest"
+                ]
+              },
+              {
+                "zellen": [
+                  "schwarze Rohlinge",
+                  "Push mit Meldebestand",
+                  "regelmäßiger Bedarf, Lieferzeit von einer Woche"
+                ]
+              },
+              {
+                "zellen": [
+                  "Etiketten an der Veredelung",
+                  "Pull mit Kanban, zwei Behälter",
+                  "ist ein Behälter leer, wird aus dem Lager nachgefüllt"
+                ]
+              }
+            ],
+            "fazit": "MAKEL Studio kombiniert beide Prinzipien. Was Kunden sofort erwarten oder lange Vorlauf braucht, wird nach Prognose bereitgestellt; was individuell ist, erst nach Auftrag.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kombination ist typisch. Reines Pull würde bedeuten, dass eine Onlinekundin wochenlang auf ihren Hoodie wartet, weil er erst nach ihrer Bestellung beim Lohnfertiger genäht wird. Reines Push würde bedeuten, dass MAKEL Vereinshoodies mit Logos auf Vorrat druckt, die niemand bestellt hat. Die Kunst liegt darin, den Punkt in der Kette richtig zu setzen, ab dem auftragsbezogen gearbeitet wird: bei MAKEL meist die Veredelung.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Beim Push-Prinzip wird auf Basis einer Prognose produziert und in Richtung Kunde ‚gedrückt‘: Ware liegt bereit, wenn der Kunde bestellt, aber Fehlprognosen führen zu Restbeständen. Beim Pull-Prinzip löst erst der tatsächliche Verbrauch oder Auftrag den Nachschub aus — Ware wird ‚gezogen‘. Das senkt Bestände, verlangt aber kurze, verlässliche Lieferzeiten. Ein Beispiel für Pull ist Kanban: Ist ein Behälter leer, wird die Karte zum Nachfüllauftrag. In der Praxis gibt es Mischformen, etwa Basisartikel auf Vorrat (Push) und Veredelung erst nach Auftrag (Pull).",
-        "beispiele": [
-          "Basis-Rohlinge werden nach Jahresprognose beschafft: Push.",
-          "Ein leeres Fach mit Etikettenrollen löst über eine Karte automatisch die Nachbestellung aus: Pull (Kanban)."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Zwei-Behälter-Kanban",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei Etiketten stehen an der Veredelung zwei Behälter. Ist der erste leer, wird er ins Lager gebracht und aufgefüllt, während aus dem zweiten weitergearbeitet wird. Die Behältergröße muss den Verbrauch während der Nachfüllzeit decken, sonst steht die Veredelung.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL kombiniert beide Prinzipien: Schwarze und weiße Rohlinge in Standardgrößen werden nach Prognose eingekauft (Push). Bedruckt oder bestickt wird erst, wenn ein Kundenauftrag eingeht (Pull). So hat MAKEL kurze Lieferzeiten, ohne fertig veredelte Ware auf Vorrat zu riskieren.",
-        "typische_fehler": "Push und Pull als ausschließliche Alternativen sehen, statt Mischformen zu erkennen.",
         "verstaendnisfragen": [
-          "Was löst beim Pull-Prinzip den Nachschub aus? Der tatsächliche Verbrauch oder Auftrag.",
-          "Welches Risiko hat das Push-Prinzip? Restbestände bei falschen Prognosen."
-        ],
-        "pruefungsbezug": "Push und Pull begründet zuordnen und Mischformen erkennen.",
-        "merksatz": "Push produziert nach Prognose, Pull nach tatsächlichem Bedarf; oft sinnvoll kombiniert."
+          {
+            "frage": "Was löst beim Pull-Prinzip die Produktion oder Nachlieferung aus?",
+            "antwort": "Der tatsächliche Bedarf, etwa ein Kundenauftrag oder ein leerer Kanban-Behälter.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum produziert MAKEL Studio die Kollektion für den Onlineshop nach dem Push-Prinzip?",
+            "antwort": "Weil Kundinnen sofortige Lieferung erwarten und die Serienfertigung beim Lohnfertiger Wochen dauert.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Jede Lieferung braucht Dokumente.",
-          "Daten können elektronisch ausgetauscht werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du benennst die Informationen und Begleitdokumente einer nationalen und einer internationalen Lieferkette, ordnest ihnen ihren Zweck zu und erkennst, wann Ware physisch vorhanden, aber nicht verfügbar ist.",
+        "vorwissen_kurz": "Ein Container mit Rohlingen ist im Hafen angekommen. Trotzdem kann die Veredelung noch nicht drucken.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ohne Information keine Ware",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Lieferketten laufen auf Informationen. **Bestellung und Auftragsbestätigung** halten die Vereinbarung fest. **Lieferavis und Sendungsstatus** kündigen die Ankunft an. **Lieferschein und Packliste** beschreiben den Inhalt. Der **Frachtbrief** dokumentiert den Beförderungsvertrag und die Übergabe. Bei Einfuhren aus Ländern außerhalb der EU kommen **Handelsrechnung und Zollunterlagen** hinzu. Viele dieser Daten werden heute elektronisch ausgetauscht, etwa per EDI, damit sie ohne Abtippen in die Systeme der Partner gelangen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Container aus Südasien",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Station",
+              "Dokument oder Information",
+              "Ware vorhanden?",
+              "verfügbar?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ankunft im Hafen Rotterdam",
+                  "Seefrachtbrief, Ankunftsmeldung des Spediteurs",
+                  "ja, im Hafen",
+                  "nein, nicht verzollt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zollabfertigung",
+                  "Handelsrechnung, Packliste, Ursprungsnachweis, Zollanmeldung",
+                  "ja",
+                  "nach Freigabe und Zahlung der Abgaben"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lkw nach Düsseldorf",
+                  "Frachtbrief, Lieferavis an das Lager",
+                  "unterwegs",
+                  "nein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wareneingang",
+                  "Lieferschein, Prüfung, Buchung",
+                  "ja, im Lager",
+                  "erst nach Buchung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualitätsprüfung",
+                  "Prüfprotokoll Stichprobe",
+                  "ja",
+                  "nach Freigabe"
+                ]
+              }
+            ],
+            "fazit": "Zwischen Ankunft im Hafen und Verfügbarkeit für die Veredelung liegen mehrere Freigaben. Fehlt ein Dokument, bleibt die Ware blockiert, obwohl sie physisch da ist.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Planung heißt das: Der Liefertermin des Lieferanten ist nicht der Tag, an dem die Veredelung drucken kann. MAKEL Studio plant deshalb Zeit für Zollabfertigung, Transport, Wareneingang und Prüfung ein. Und der Einkauf sorgt dafür, dass alle Dokumente vollständig und rechtzeitig vorliegen. Fehlt etwa der Ursprungsnachweis, kann ein Zollvorteil verloren gehen oder die Abfertigung sich verzögern.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Abgestimmte Lieferketten brauchen verlässliche, frühe Informationen: Bestellungen und Auftragsbestätigungen, Lieferavis, Sendungsstatus, Bestands- und Prognosedaten. Elektronischer Datenaustausch (EDI) überträgt solche Nachrichten in festen Formaten direkt zwischen den Systemen — ohne Abtippen. Begleitdokumente sichern die Abwicklung: Lieferschein, Frachtbrief (im grenzüberschreitenden Straßenverkehr oft der CMR-Frachtbrief), Packliste und bei Lieferungen aus Drittländern außerhalb der EU Handelsrechnung und Zollunterlagen. Fehlen Dokumente oder stimmen Daten nicht, steht die Ware — auch wenn sie physisch da ist.",
-        "beispiele": [
-          "Container aus einem Drittland: Ohne vollständige Zollunterlagen wird die Ware nicht freigegeben.",
-          "Der Rohlingslieferant sendet Lieferavis per EDI; das Lager sieht die Ankunft im System."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Einfuhr aus Drittländern",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei der Einfuhr aus Ländern außerhalb der EU werden Zoll und Einfuhrumsatzsteuer fällig. Unternehmen brauchen dafür eine EORI-Nummer zur Identifikation beim Zoll. Viele überlassen die Zollanmeldung einem Spediteur, der als Vertreter auftritt.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Containerlieferung Rohlinge aus Asien steht im Hafen fest, weil in der Handelsrechnung das Gewicht falsch angegeben ist. Deniz lässt sie vom Lieferanten korrigieren; die Ware kommt drei Tage später. MAKEL nimmt die Prüfung der Dokumente vor Abfahrt in die Lieferantenvereinbarung auf.",
-        "typische_fehler": "Davon ausgehen, dass physisch vorhandene Ware auch verfügbar ist, obwohl Dokumente oder Buchungen fehlen.",
         "verstaendnisfragen": [
-          "Was leistet EDI? Den direkten elektronischen Austausch von Geschäftsnachrichten in festen Formaten zwischen Systemen.",
-          "Welche Dokumente sind bei Lieferungen aus Drittländern zusätzlich nötig? Unter anderem Handelsrechnung und Zollunterlagen."
-        ],
-        "pruefungsbezug": "Notwendige Informationen und Begleitdokumente einer Lieferung benennen.",
-        "merksatz": "Lieferketten laufen auf Informationen: früh, elektronisch, vollständig — sonst steht die Ware."
+          {
+            "frage": "Warum ist Ware im Hafen noch nicht verfügbar?",
+            "antwort": "Weil sie erst verzollt, transportiert, eingebucht und geprüft werden muss.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Welche Dokumente braucht eine Einfuhr aus einem Land außerhalb der EU zusätzlich?",
+            "antwort": "Handelsrechnung, Packliste und Zollunterlagen, gegebenenfalls einen Ursprungsnachweis.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Lieferverzug eines Lieferanten gefährdet Kundenaufträge.",
-          "Mehrere Abteilungen sind betroffen."
+        "darstellung": "vollfassung",
+        "ziel": "Du koordinierst bei einer Lieferstörung die betroffenen Bereiche in einer festen Reihenfolge, triffst Entscheidungen auf Grundlage belastbarer Daten und informierst Kunden zuständig und mit realistischen Terminen.",
+        "vorwissen_kurz": "Der Rohlinglieferant meldet fünf Tage Verzug. Drei Kundenaufträge könnten betroffen sein.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst prüfen, dann zusagen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einer Störung wird zuerst die Wirkung entlang der Kette geprüft: Wie lange reicht der vorhandene Bestand? Welche Aufträge sind betroffen, welche haben Vorrang? Dann werden Maßnahmen festgelegt, etwa ein Ersatzlieferant, Teilmengen oder eine Umplanung der Veredelung. Erst danach informiert der Vertrieb die Kunden mit einem bestätigten neuen Termin. Am Ende wird die Störung für die Lieferantenbewertung dokumentiert. Grundlage aller Entscheidungen sind belastbare Daten aus dem System, nicht Vermutungen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Aufträge, eine Störung",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Auftrag",
+              "benötigte Rohlinge",
+              "aus Bestand gedeckt?",
+              "Maßnahme",
+              "Kundeninformation"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Verein, Termin Freitag",
+                  "400",
+                  "ja, 450 im Lager",
+                  "wie geplant drucken",
+                  "keine nötig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Boutique Nordlicht, Termin Mittwoch nächster Woche",
+                  "200",
+                  "nein, nach Verein nur 50 übrig",
+                  "150 beim Zweitlieferanten, Lieferung Montag",
+                  "Termin bestätigt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Agentur Pixelwerk, Termin in drei Wochen",
+                  "120",
+                  "nein",
+                  "Verzug von fünf Tagen unkritisch",
+                  "keine nötig"
+                ]
+              }
+            ],
+            "fazit": "Nur ein Auftrag war wirklich gefährdet, und auch er lässt sich mit dem Zweitlieferanten halten. Eine vorschnelle Kundeninformation hätte drei Kunden unnötig beunruhigt.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Beispiel zeigt, warum die Reihenfolge wichtig ist. Hätte der Vertrieb sofort allen Kunden fünf Tage Verzug gemeldet, wären drei Kunden verärgert gewesen, obwohl zwei Aufträge gar nicht betroffen waren. Umgekehrt hätte Abwarten beim Auftrag der Boutique die Lieferung gefährdet. Mit einem gemeinsamen, aktuellen Status im System können Einkauf, Produktion und Vertrieb schnell sehen, was betroffen ist, und abgestimmt handeln.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Kommt es zu einer Störung, wird die Wirkung entlang der Kette geprüft: Welche Bestände reichen noch? Welche Produktionsaufträge sind betroffen? Welche Kundentermine sind gefährdet? Dann werden Einkauf, Produktionsplanung, Lager und Vertrieb mit belastbaren Statusdaten koordiniert. Mögliche Maßnahmen: Teilmengen vorziehen, Ersatzlieferanten nutzen, Prioritäten in der Produktion ändern, Kunden frühzeitig informieren. Die Kundeninformation gibt die zuständige Stelle frei — mit einem realistischen neuen Termin, nicht mit Vermutungen. Alles wird dokumentiert, damit das Lieferantenmanagement daraus lernen kann.",
-        "beispiele": [
-          "Lieferverzug Rohlinge 5 Tage: Bestand reicht für 3 Tage; zwei Aufträge verschieben, Eventauftrag mit Vorrat priorisieren.",
-          "Vertrieb informiert die betroffene Boutique mit neuem Termin, freigegeben nach Rücksprache mit der Produktion."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Lieferantenbewertung nach der Störung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Störung fließt in die Bewertung des Lieferanten ein: Wie früh hat er informiert? Wie lang war der Verzug? Wie gut war die Zusammenarbeit bei der Lösung? Ein Lieferant, der früh und offen informiert, ist oft wertvoller als einer, der nie Probleme meldet, bis die Ware ausbleibt.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Der Rohlingslieferant meldet fünf Tage Verzug. Deniz prüft mit Jonas den Bestand (reicht drei Tage) und mit der Produktionsplanung die Aufträge. Der Eventauftrag mit Vertragsstrafe wird aus Lagerbestand gefertigt, zwei Boutiqueaufträge rutschen um vier Tage. Marlene Voss informiert die Boutiquen mit dem bestätigten neuen Termin. Deniz dokumentiert den Verzug für die Lieferantenbewertung.",
-        "typische_fehler": "Kunden einen Termin nennen, bevor Bestand und Produktion geprüft sind.",
         "verstaendnisfragen": [
-          "Was wird bei einer Lieferstörung zuerst geprüft? Die Auswirkung auf Bestand, Produktion und Kundentermine.",
-          "Wer informiert den Kunden? Die zuständige Stelle, meist der Vertrieb, nach Abstimmung mit Produktion und Einkauf."
-        ],
-        "pruefungsbezug": "Eine Informationskette bei Lieferverzug planen und begründen.",
-        "merksatz": "Bei Störungen Wirkung entlang der Kette prüfen, Bereiche mit belastbaren Daten koordinieren, Kunden zuständig und realistisch informieren."
+          {
+            "frage": "Was wird bei einer Lieferstörung zuerst geprüft?",
+            "antwort": "Wie lange der Bestand reicht und welche Aufträge tatsächlich betroffen sind.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum informiert der Vertrieb die Kunden erst nach der Prüfung?",
+            "antwort": "Damit er einen realistischen, bestätigten Termin nennen kann und nicht unnötig Kunden beunruhigt, deren Aufträge gar nicht betroffen sind.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

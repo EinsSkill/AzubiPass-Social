@@ -8,6 +8,16 @@
   var eur = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 2 });
   var geld = function (n) { return eur.format(Math.round(n * 100) / 100) + " €"; };
 
+  /* Sichtbare Beschriftung und Eingabefeld der Fachgrafiken gehören zusammen
+     (for/id, WCAG H44). Die Nummer zählt seitenweit weiter, auch beim
+     Zurücksetzen einer Grafik — so entstehen nie doppelte IDs. */
+  var feldNummer = 0;
+  function verbinde(label, input) {
+    var id = "ap-feld-" + (++feldNummer);
+    input.id = id;
+    label.htmlFor = id;
+  }
+
   var LERNFELD = document.body.dataset.lernfeld || "seite";
   /* Wer eine Lernzettelseite eines Berufs öffnet (auch per direktem Link),
      arbeitet in diesem Beruf: Zurück zur App zeigt dann dessen Lernfelder.
@@ -63,6 +73,7 @@
 
     lesezeichenStellen(id, nr);
     starteKapitel(aktuell);
+    if (stelle) stelle = tiefeAnwenden(aktuell, stelle);
     aktualisieren();
 
     if (stelle) {
@@ -280,27 +291,194 @@
     sec.querySelectorAll(".rein").forEach(function (x) { seher.observe(x); });
   }
 
+  /* ================================================== Erweiterter Modus
+
+     Jeder Abschnitt mit Vertiefung hat einen eigenen Schalter; der Kapitel-
+     schalter öffnet oder schließt alle auf einmal. Zwei Arten von Vertiefung:
+
+       Vollfassung (.vollfassung)  ersetzt beim Öffnen die erklärenden Absätze
+                                   (.kurztext). Grafiken und Checks, auf die sie
+                                   verweist, werden in sie hinein verschoben –
+                                   dasselbe Element, also derselbe Zustand – und
+                                   beim Schließen zurückgestellt.
+       Altzusatz (.detail-zusatz)  steht wie bisher zusätzlich unter dem Text.
+
+     Der Zustand lebt nur im Dokument: Kapitelwechsel innerhalb der Seite
+     behalten ihn, ein Neuladen beginnt kompakt. Kein Lernstand, kein Sync. */
+
+  var vertiefungen = new WeakMap();
+
   function langfassung(sec) {
     var knopf = sec.querySelector(".detail-schalter");
-    var zusatz = [].slice.call(sec.querySelectorAll(".detail-zusatz"));
-    if (!knopf || !zusatz.length) {
-      if (knopf) knopf.hidden = true;
-      return;
+    var standText = sec.querySelector(".vertiefung-stand");
+    var schalter = [].slice.call(sec.querySelectorAll(".abschnitt-schalter:not(.abschnitt-schalter-ende)"));
+    var eintraege = schalter.map(function (s) {
+      var ziel = document.getElementById(s.getAttribute("aria-controls"));
+      return ziel ? { ab: s.dataset.abschnitt, start: s, ziel: ziel,
+                      voll: ziel.classList.contains("vollfassung"),
+                      ende: ziel.querySelector(".abschnitt-schalter-ende") } : null;
+    }).filter(Boolean);
+
+    if (!eintraege.length) { if (knopf) knopf.hidden = true; return; }
+
+    function kurztexte(e) {
+      /* Die Absätze dieses Abschnitts: alles zwischen seiner Überschrift und
+         der nächsten. Nur die als ersetzbar markierten. */
+      var raus = [], n = e.start.nextElementSibling;
+      while (n && n.tagName !== "H3" && !n.classList.contains("zus")) {
+        if (n.classList.contains("kurztext")) raus.push(n);
+        n = n.nextElementSibling;
+      }
+      return raus;
     }
 
-    function setze(offen) {
-      sec.classList.toggle("detailreich", offen);
-      zusatz.forEach(function (x) { x.hidden = !offen; });
-      knopf.setAttribute("aria-expanded", offen ? "true" : "false");
-      knopf.textContent = offen
-        ? "Kompakte Ansicht anzeigen"
-        : "Ausführlich erweitern";
+    function basisVerschieben(e, offen) {
+      e.ziel.querySelectorAll(".vf-basis").forEach(function (platz) {
+        var block = sec.querySelector('.basis-block[data-abschnitt="' + e.ab +
+                                      '"][data-basis="' + platz.dataset.basis + '"]');
+        if (!block) return;
+        if (offen && block.parentNode !== platz) {
+          var heimat = document.createComment("basis " + platz.dataset.basis);
+          block.parentNode.insertBefore(heimat, block);
+          block._heimat = heimat;
+          platz.appendChild(block);
+          platz.classList.add("belegt");
+        } else if (!offen && block._heimat) {
+          block._heimat.parentNode.insertBefore(block, block._heimat);
+          block._heimat.parentNode.removeChild(block._heimat);
+          block._heimat = null;
+          platz.classList.remove("belegt");
+        }
+      });
     }
 
-    setze(false);
-    knopf.addEventListener("click", function () {
-      setze(!sec.classList.contains("detailreich"));
+    function setzeAbschnitt(e, offen, still) {
+      var war = !e.ziel.hidden;
+      if (war === offen) return;
+      var titel = e.start.previousElementSibling;   // die h3
+
+      if (!offen) {
+        // Wer das Ziel eines Direktlinks bewusst schließt, will kompakt weiter.
+        if (!still && tiefeAktiv && tiefeAktiv.ab === e.ab) tiefeParameterEntfernen();
+        // Fokus nie in verborgenem Inhalt zurücklassen.
+        if (e.ziel.contains(document.activeElement)) e.start.focus({ preventScroll: true });
+        e.ziel.querySelectorAll("details[open]").forEach(function (d) { d.open = false; });
+      }
+      if (e.voll) {
+        kurztexte(e).forEach(function (p) { p.hidden = offen; });
+        basisVerschieben(e, offen);
+      }
+      e.ziel.hidden = !offen;
+      [e.start, e.ende].forEach(function (s) {
+        if (!s) return;
+        s.setAttribute("aria-expanded", offen ? "true" : "false");
+        s.textContent = offen ? "Kompakt anzeigen" : "Ausführlicher verstehen";
+      });
+      if (e.ende) e.ende.textContent = "Kompakt anzeigen";
+
+      /* Beim Schließen aus einem langen Text heraus: zur Überschrift, nicht
+         zum Kapitelanfang. Nur wenn sie aus dem Blick geraten ist. */
+      if (!offen && !still && titel && titel.getBoundingClientRect().top < 60) {
+        titel.scrollIntoView({ block: "start", behavior: "auto" });
+        window.scrollBy(0, -80);
+      }
+      stand();
+    }
+
+    function stand() {
+      var offen = eintraege.filter(function (e) { return !e.ziel.hidden; }).length;
+      var alle = offen === eintraege.length;
+      sec.classList.toggle("detailreich", offen > 0);
+      if (knopf) {
+        knopf.setAttribute("aria-expanded", alle ? "true" : "false");
+        knopf.textContent = alle ? "Ganzes Kapitel kompakt lesen" : "Ganzes Kapitel ausführlich lesen";
+      }
+      if (standText) {
+        standText.textContent = offen && !alle
+          ? offen + " von " + eintraege.length + " Abschnitten ausführlich geöffnet" : "";
+      }
+    }
+
+    eintraege.forEach(function (e) {
+      [e.start, e.ende].forEach(function (s) {
+        if (s) s.addEventListener("click", function () {
+          var aus = !e.ziel.hidden;
+          setzeAbschnitt(e, !aus);
+          if (aus && s === e.ende) e.start.focus({ preventScroll: true });
+        });
+      });
     });
+
+    if (knopf) {
+      knopf.addEventListener("click", function () {
+        var alle = eintraege.every(function (e) { return !e.ziel.hidden; });
+        // Nur die Haupttexte – Details und Antworten bleiben, wie sie sind.
+        if (alle) tiefeParameterEntfernen();
+        eintraege.forEach(function (e) { setzeAbschnitt(e, !alle, true); });
+      });
+    }
+
+    // Antworten zu Verständnisfragen: Beschriftung folgt dem Zustand.
+    sec.querySelectorAll(".vf-antwort").forEach(function (d) {
+      d.addEventListener("toggle", function () {
+        d.querySelector("summary").textContent = d.open ? "Antwort ausblenden" : "Antwort anzeigen";
+      });
+    });
+
+    vertiefungen.set(sec, {
+      oeffne: function (ab) {
+        var e = eintraege.filter(function (x) { return x.ab === ab; })[0];
+        if (e) setzeAbschnitt(e, true, true);
+        return e || null;
+      }
+    });
+    stand();
+  }
+
+  /* Ein Suchtreffer kann verlangen, dass eine Vertiefung offen ist:
+     lf4.html?ansicht=ausfuehrlich&detail=d1#k3-b1. Die Parameter bleiben in
+     der Adresse (Review E02): Kopieren oder Neuladen öffnet dasselbe Ziel.
+     Sie verschwinden erst, wenn man diesen Abschnitt bewusst schließt oder an
+     eine andere Stelle springt — ein normaler Aufruf ohne sie bleibt kompakt.
+     Andere Suchparameter bleiben unberührt. Unbekannte Details öffnen nur den
+     Abschnitt. */
+  var tiefeVerlangt = (function () {
+    try {
+      var p = new URLSearchParams(location.search);
+      if (p.get("ansicht") !== "ausfuehrlich") return null;
+      return { detail: p.get("detail") || "", hash: location.hash, ab: null };
+    } catch (e) { return null; }
+  })();
+  var tiefeAktiv = tiefeVerlangt;
+
+  function tiefeParameterEntfernen() {
+    if (!tiefeAktiv) return;
+    tiefeAktiv = null;
+    try {
+      var p = new URLSearchParams(location.search);
+      p.delete("ansicht"); p.delete("detail");
+      var rest = p.toString();
+      history.replaceState(history.state, "", location.pathname + (rest ? "?" + rest : "") + location.hash);
+    } catch (e) {}
+  }
+  window.addEventListener("hashchange", function () {
+    if (tiefeAktiv && location.hash !== tiefeAktiv.hash) tiefeParameterEntfernen();
+  });
+
+  function tiefeAnwenden(sec, stelle) {
+    if (!tiefeVerlangt || !stelle || !/^H3$/.test(stelle.tagName)) return stelle;
+    if (location.hash !== tiefeVerlangt.hash) return stelle;
+    var wunsch = tiefeVerlangt;
+    tiefeVerlangt = null;
+    var steuerung = vertiefungen.get(sec);
+    var ab = stelle.id.split("-").slice(1).join("-");
+    var e = steuerung && steuerung.oeffne(ab);
+    if (tiefeAktiv) tiefeAktiv.ab = e ? ab : null;
+    if (!e || !wunsch.detail) return stelle;
+    var ziel = e.ziel.querySelector('[data-detail="' + CSS.escape(wunsch.detail) + '"]');
+    if (!ziel) return stelle;
+    if (ziel.tagName === "DETAILS") ziel.open = true;
+    return ziel;
   }
 
   /* Wo im Kapitel man gerade steht.
@@ -709,7 +887,10 @@
       "liquiditaet": gLiquiditaet,
       "breakeven": gBreakeven,
       "durchlauf": gDurchlauf,
-      "balkenplan": gBalkenplan
+      "balkenplan": gBalkenplan,
+      "epk": gEpk,
+      "pauschale": gPauschale,
+      "bestellmenge": gBestellmenge
     }[daten.variante];
     if (bauer) bauer(buehne, daten);
     else buehne.appendChild(mkEl("p", "echo", "Bauteil „" + daten.variante + "“ ist noch nicht gebaut."));
@@ -797,10 +978,11 @@
     var felder = {};
     s.eingaben.forEach(function (e) {
       var f = el("div", "feld");
-      f.appendChild(el("label", null, e.label));
+      var lab = f.appendChild(el("label", null, e.label));
       var i = document.createElement("input");
       AP.kommafeld(i); i.step = "5000"; i.min = "0"; i.value = e.start;
       f.appendChild(i);
+      verbinde(lab, i);
       felder[e.id] = { input: i, seite: e.seite };
       regler.appendChild(f);
     });
@@ -1041,8 +1223,8 @@
       var rechts = el("div");
       var k = el("button", "kkopf");
       k.type = "button";
-      k.appendChild(el("span", "ktitel", s.titel));
-      k.appendChild(el("span", "ksatz", s.satz));
+      k.appendChild(mkEl("span", "ktitel", s.titel));
+      k.appendChild(mkEl("span", "ksatz", s.satz));
       var text = mkEl("div", "ktext", s.text);
       text.id = "ap-auf-" + (++aufNr);
       text.setAttribute("aria-hidden", "true");
@@ -1092,6 +1274,7 @@
     var wStart = el("div", "lz-wert");
     startInput = document.createElement("input");
     AP.kommafeld(startInput); startInput.value = d.start.wert;
+    startInput.setAttribute("aria-label", d.start.name);
     wStart.appendChild(startInput);
     zStart.appendChild(wStart);
     leiter.appendChild(zStart);
@@ -1222,12 +1405,13 @@
     ["verbrauch", "lieferzeit", "mindest", "menge"].forEach(function (schl) {
       if (!e[schl]) return;
       var f = el("div", "feld");
-      f.appendChild(el("label", null, e[schl].label));
+      var lab = f.appendChild(el("label", null, e[schl].label));
       var i = document.createElement("input");
       AP.kommafeld(i);
       i.min = e[schl].min; i.max = e[schl].max; i.step = e[schl].schritt || 1;
       i.value = e[schl].start;
       f.appendChild(i);
+      verbinde(lab, i);
       regler.appendChild(f);
       felder[schl] = i;
     });
@@ -1477,12 +1661,13 @@
     [["start", d.eingaben.start], ["ziel", d.eingaben.ziel]].forEach(function (paar) {
       if (!paar[1]) return;
       var f = el("div", "feld");
-      f.appendChild(el("label", null, paar[1].label));
+      var lab = f.appendChild(el("label", null, paar[1].label));
       var i = document.createElement("input");
       AP.kommafeld(i);
       i.min = paar[1].min; i.max = paar[1].max; i.step = paar[1].schritt || 1;
       i.value = paar[1].start;
       f.appendChild(i);
+      verbinde(lab, i);
       regler.appendChild(f);
       felder[paar[0]] = i;
     });
@@ -1618,13 +1803,14 @@
     ["fix", "var", "preis"].forEach(function (schl) {
       if (!d.eingaben[schl]) return;
       var f = el("div", "feld");
-      f.appendChild(el("label", null, d.eingaben[schl].label));
+      var lab = f.appendChild(el("label", null, d.eingaben[schl].label));
       var i = document.createElement("input");
       AP.kommafeld(i);
       i.min = d.eingaben[schl].min; i.max = d.eingaben[schl].max;
       i.step = d.eingaben[schl].schritt || 1;
       i.value = d.eingaben[schl].start;
       f.appendChild(i);
+      verbinde(lab, i);
       regler.appendChild(f);
       felder[schl] = i;
     });
@@ -1750,11 +1936,12 @@
     var felder = [];
     d.abschnitte.forEach(function (a, i) {
       var f = el("div", "feld");
-      f.appendChild(el("label", null, a.name + " (" + d.einheit + ")"));
+      var lab = f.appendChild(el("label", null, a.name + " (" + d.einheit + ")"));
       var inp = document.createElement("input");
       AP.kommafeld(inp); inp.min = "0";
       inp.value = a.wert;
       f.appendChild(inp);
+      verbinde(lab, inp);
       regler.appendChild(f);
       felder.push(inp);
     });
@@ -1814,6 +2001,260 @@
     }
 
     felder.forEach(function (i) { i.addEventListener("input", zeichne); });
+    zeichne();
+  }
+
+  /* ---------- 17 · Ereignisgesteuerte Prozesskette ----------
+     Ereignisse als Sechsecke, Funktionen als abgerundete Rechtecke,
+     Konnektoren als Kreise; Organisationseinheit optional als Oval an der
+     Funktion. Ein Zweig teilt sich nach einem Konnektor in nebeneinander
+     liegende Wege. Jedes Element erklärt sich auf Klick; der Ablauf steht
+     zusätzlich als Text für Bildschirmleser bereit.                        */
+
+  function gEpk(buehne, d) {
+    var ARTNAME = { ereignis: "Ereignis", funktion: "Funktion", xor: "Konnektor XOR",
+                    und: "Konnektor UND", oder: "Konnektor ODER" };
+    var KSYM = { xor: "XOR", und: "∧", oder: "∨" };
+    var info = el("div", "epk-info");
+    info.setAttribute("aria-live", "polite");
+    var alle = [];
+    function knoten(e) {
+      var konn = KSYM[e.art];
+      var b = el("button", "epk-k epk-" + e.art);
+      b.type = "button";
+      if (konn) {
+        b.appendChild(el("span", "epk-sym", KSYM[e.art]));
+        b.setAttribute("aria-label", ARTNAME[e.art]);
+      } else {
+        b.appendChild(mkEl("span", "epk-text", e.text));
+      }
+      var zeile = el("div", "epk-zeile");
+      zeile.appendChild(b);
+      if (e.stelle) {
+        zeile.appendChild(el("span", "epk-stelle", e.stelle));
+      }
+      b.addEventListener("click", function () {
+        alle.forEach(function (x) { x.classList.remove("an"); x.setAttribute("aria-pressed", "false"); });
+        b.classList.add("an"); b.setAttribute("aria-pressed", "true");
+        info.innerHTML = "";
+        info.appendChild(el("span", "epk-info-art", ARTNAME[e.art]));
+        info.appendChild(mkEl("p", null, e.erklaerung || e.text || ""));
+      });
+      b.setAttribute("aria-pressed", "false");
+      alle.push(b);
+      return zeile;
+    }
+    function spalte(liste, kl) {
+      var s = el("div", "epk-spalte" + (kl ? " " + kl : ""));
+      liste.forEach(function (e) { s.appendChild(knoten(e)); });
+      return s;
+    }
+    var bild = el("div", "epk");
+    bild.appendChild(spalte(d.folge));
+    if (d.zweige && d.zweige.length) {
+      var z = el("div", "epk-zweige");
+      z.style.setProperty("--epk-n", d.zweige.length);
+      d.zweige.forEach(function (w, i) {
+        var sp = spalte(w, "epk-weg");
+        sp.setAttribute("role", "group");
+        sp.setAttribute("aria-label", (d.wegnamen && d.wegnamen[i]) || "Weg " + (i + 1));
+        z.appendChild(sp);
+      });
+      bild.appendChild(z);
+    }
+    buehne.appendChild(bild);
+    var leg = el("div", "epk-legende");
+    [["ereignis", "Ereignis: Zustand"], ["funktion", "Funktion: Tätigkeit"],
+     ["xor", "Konnektor"], ["stelle", "Organisationseinheit"]].forEach(function (p) {
+      var l = el("span", "epk-leg");
+      l.appendChild(el("span", "epk-mini epk-mini-" + p[0]));
+      l.appendChild(el("span", null, p[1]));
+      leg.appendChild(l);
+    });
+    buehne.appendChild(leg);
+    info.appendChild(mkEl("p", "epk-hinweis", d.hinweis || "Element anklicken, um es zu erklären."));
+    buehne.appendChild(info);
+    if (d.konvention) buehne.appendChild(mkEl("p", "epk-konvention", d.konvention));
+  }
+
+  /* ---------- 18 · Verpflegungspauschale mit Mahlzeitenkürzung ----------
+     Tagesart wählen, gestellte Mahlzeiten anhaken. Gekürzt wird immer
+     mit festen Anteilen des vollen Tagessatzes; die Pauschale wird nie
+     negativ. Beträge kommen aus den Daten (Stand im Text belegt).          */
+
+  /* ---------- Optimale Bestellmenge ----------
+     Drei Kurven über der Bestellmenge: Bestellkosten fallen, Lagerkosten
+     steigen, die Summe hat ein flaches Minimum. Achsen mit Einheiten, die
+     Modellannahmen stehen sichtbar daneben — das Ergebnis ist ein Richtwert. */
+
+  function gBestellmenge(buehne, d) {
+    var NSB3 = "http://www.w3.org/2000/svg";
+    var regler = el("div", "staffel-regler");
+    var felder = {};
+    ["bedarf", "bestellkosten", "lagerkosten"].forEach(function (schl) {
+      if (!d.eingaben[schl]) return;
+      var f = el("div", "feld");
+      var lab = f.appendChild(el("label", null, d.eingaben[schl].label));
+      var i = document.createElement("input");
+      AP.kommafeld(i);
+      i.min = d.eingaben[schl].min; i.max = d.eingaben[schl].max;
+      i.step = d.eingaben[schl].schritt || 1;
+      i.value = d.eingaben[schl].start;
+      f.appendChild(i);
+      verbinde(lab, i);
+      regler.appendChild(f);
+      felder[schl] = i;
+    });
+    buehne.appendChild(regler);
+
+    var huelle = el("div", "be-buehne weit");
+    buehne.appendChild(huelle);
+    var ergebnis = el("div", "be-ergebnis");
+    ergebnis.setAttribute("aria-live", "polite");
+    buehne.appendChild(ergebnis);
+    if (d.annahmen && d.annahmen.length) {
+      var box = el("div", "bm-annahmen");
+      box.appendChild(el("p", "bm-annahmen-kopf", "Modellannahmen"));
+      var ul = document.createElement("ul");
+      d.annahmen.forEach(function (a) { ul.appendChild(mkEl("li", null, a)); });
+      box.appendChild(ul);
+      buehne.appendChild(box);
+    }
+
+    var B = 620, H = 280, LI = 70, RE = 16, OB = 18, UN = 46;
+    function zahlText(n) { return Math.round(n).toLocaleString("de-DE"); }
+
+    function zeichne() {
+      var J = Math.max(0, AP.zahl(felder.bedarf, 0));
+      var K = Math.max(0, AP.zahl(felder.bestellkosten, 0));
+      var L = Math.max(0, AP.zahl(felder.lagerkosten, 0));
+      huelle.innerHTML = ""; ergebnis.innerHTML = "";
+      if (!(J > 0 && K > 0 && L > 0)) {
+        ergebnis.appendChild(mkEl("p", "be-warnung",
+          "Alle drei Werte müssen größer als null sein — sonst gibt es keinen Ausgleich zwischen Bestell- und Lagerkosten."));
+        return;
+      }
+      var qs = Math.sqrt(2 * J * K / L);
+      var maxQ = Math.max(qs * 2.6, 10);
+      function bestell(q) { return J / q * K; }
+      function lager(q) { return q / 2 * L; }
+      var maxWert = Math.max(lager(maxQ) + bestell(maxQ), bestell(qs) * 2) * 1.6;
+      // Kurven erst dort beginnen lassen, wo sie ins Bild passen — kein Abschneiden am oberen Rand
+      var minQ = Math.max(maxQ / 40, J * K / (maxWert * 0.98));
+      function x(q) { return LI + (q / maxQ) * (B - LI - RE); }
+      function y(w) { return OB + (1 - Math.min(w, maxWert) / maxWert) * (H - OB - UN); }
+
+      var svg = document.createElementNS(NSB3, "svg");
+      svg.setAttribute("viewBox", "0 0 " + B + " " + H);
+      svg.setAttribute("class", "be-svg");
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", "Kostenkurven über der Bestellmenge. Die Gesamtkosten sind bei etwa " +
+        zahlText(qs) + " Stück am niedrigsten; dort sind Bestell- und Lagerkosten gleich hoch.");
+
+      function pfad(fn, klasse) {
+        var d2 = "", n = 120;
+        for (var k = 0; k <= n; k++) {
+          var q = minQ + (maxQ - minQ) * k / n;
+          if (fn(q) > maxWert) continue;
+          d2 += (d2 ? "L" : "M") + x(q).toFixed(1) + " " + y(fn(q)).toFixed(1);
+        }
+        var p2 = document.createElementNS(NSB3, "path");
+        p2.setAttribute("d", d2); p2.setAttribute("class", klasse);
+        svg.appendChild(p2);
+      }
+      function schrift(px, py, text, klasse, anker) {
+        var t = document.createElementNS(NSB3, "text");
+        t.setAttribute("x", px); t.setAttribute("y", py);
+        if (anker) t.setAttribute("text-anchor", anker);
+        t.setAttribute("class", klasse);
+        t.textContent = text;
+        svg.appendChild(t);
+      }
+      var achse = document.createElementNS(NSB3, "path");
+      achse.setAttribute("d", "M" + LI + " " + OB + "V" + y(0) + "H" + (B - RE));
+      achse.setAttribute("class", "be-achse");
+      svg.appendChild(achse);
+      schrift(LI - 8, OB + 4, "€/Jahr", "be-fixschrift", "end");
+      schrift(B - RE, H - 8, "Bestellmenge in Stück", "be-fixschrift", "end");
+      schrift(LI, y(0) + 16, "0", "be-fixschrift", "middle");
+
+      var lagerStart = minQ; minQ = maxQ / 200;
+      pfad(lager, "bm-lager");
+      minQ = lagerStart;
+      pfad(bestell, "bm-bestell");
+      pfad(function (q) { return bestell(q) + lager(q); }, "be-kosten");
+      schrift(x(maxQ) - 4, y(lager(maxQ)) + 18, "Lagerkosten", "bm-lagerschrift", "end");
+      schrift(x(maxQ) - 4, y(bestell(maxQ)) - 8, "Bestellkosten", "bm-bestellschrift", "end");
+      schrift(x(maxQ) - 4, y(lager(maxQ) + bestell(maxQ)) - 8, "Gesamtkosten", "be-kostenschrift", "end");
+
+      var lot = document.createElementNS(NSB3, "line");
+      lot.setAttribute("x1", x(qs)); lot.setAttribute("x2", x(qs));
+      lot.setAttribute("y1", y(bestell(qs) + lager(qs))); lot.setAttribute("y2", y(0));
+      lot.setAttribute("class", "be-lot");
+      svg.appendChild(lot);
+      var punkt = document.createElementNS(NSB3, "circle");
+      punkt.setAttribute("cx", x(qs)); punkt.setAttribute("cy", y(bestell(qs) + lager(qs)));
+      punkt.setAttribute("r", 5); punkt.setAttribute("class", "be-punkt");
+      svg.appendChild(punkt);
+      schrift(x(qs), y(0) + 16, zahlText(qs), "be-punktschrift", "middle");
+      huelle.appendChild(svg);
+
+      var gesamt = bestell(qs) + lager(qs);
+      var zeile = el("div", "be-rechnung");
+      zeile.innerHTML = "q* = √(2 × " + zahlText(J) + " × " + geld(K) + " ÷ " + geld(L) + ") ≈ <b>" +
+        zahlText(qs) + " Stück</b> · Gesamtkosten dort ≈ " + geld(gesamt) + " pro Jahr";
+      ergebnis.appendChild(zeile);
+      var q2 = qs * 1.4;
+      ergebnis.appendChild(mkEl("p", "be-hinweis",
+        "Im Optimum sind Bestell- und Lagerkosten gleich hoch (je " + geld(gesamt / 2) + "). " +
+        "Wer 40 % mehr bestellt (" + zahlText(q2) + " Stück), zahlt nur " +
+        geld(bestell(q2) + lager(q2) - gesamt) + " mehr — das Minimum ist flach."));
+    }
+
+    Object.keys(felder).forEach(function (k) { felder[k].addEventListener("input", zeichne); });
+    zeichne();
+  }
+
+  function gPauschale(buehne, d) {
+    function eur(x) { return x.toFixed(2).replace(".", ",") + " €"; }
+    var voll = d.voller_satz;
+    var tagIdx = 0;
+    wahlLeiste(buehne, d.tagesarten.map(function (t) { return t.name + " · " + eur(t.satz); }), function (i) {
+      tagIdx = i; zeichne();
+    }).querySelector("button").classList.add("an");
+    var feld = el("div", "pa-mahlzeiten");
+    var boxen = d.mahlzeiten.map(function (m) {
+      var lab = el("label", "pa-mahl");
+      var cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.addEventListener("change", zeichne);
+      lab.appendChild(cb);
+      lab.appendChild(el("span", null, m.name + " gestellt (− " + m.anteil + " % von " + eur(voll) + ")"));
+      feld.appendChild(lab);
+      return cb;
+    });
+    buehne.appendChild(feld);
+    var aus = el("div", "pa-ergebnis");
+    aus.setAttribute("aria-live", "polite");
+    buehne.appendChild(aus);
+    function zeichne() {
+      var satz = d.tagesarten[tagIdx].satz;
+      var abzug = 0, teile = [];
+      d.mahlzeiten.forEach(function (m, i) {
+        if (boxen[i].checked) {
+          var b = Math.round(voll * m.anteil) / 100;
+          abzug += b; teile.push(m.name + " " + eur(b));
+        }
+      });
+      var rest = Math.max(0, satz - abzug);
+      aus.innerHTML = "";
+      var z = el("div", "dl-rechnung");
+      z.innerHTML = eur(satz) + (teile.length ? " − " + teile.join(" − ") : "") +
+        " = <b>" + eur(rest) + "</b>";
+      aus.appendChild(z);
+      if (satz - abzug < 0)
+        aus.appendChild(mkEl("p", "dl-hinweis", "Die Kürzungen übersteigen den Tagessatz. Die Pauschale sinkt auf **0 €**, nicht darunter."));
+    }
     zeichne();
   }
 
@@ -1916,16 +2357,18 @@
       if (gewaehlt) {
         var v = d.vorgaenge.filter(function (x) { return x.id === gewaehlt; })[0];
         var f = el("div", "feld");
-        f.appendChild(el("label", null, v.name + " verzögert sich um (" + d.einheit + ")"));
+        var lab = f.appendChild(el("label", null, v.name + " verzögert sich um (" + d.einheit + ")"));
         var inp = document.createElement("input");
         inp.type = "number"; inp.min = "0"; inp.max = "30"; inp.step = "1";
         inp.value = verzug[gewaehlt] || 0;
+        inp.setAttribute("aria-label", v.name + " verzögert sich um (" + d.einheit + ")");
         inp.addEventListener("input", function () {
           verzug[gewaehlt] = Math.max(0, parseInt(inp.value, 10) || 0);
           zeichne();
           inp.focus();
         });
         f.appendChild(inp);
+        verbinde(lab, inp);
         steuer.appendChild(f);
 
         notiz.innerHTML = "";
@@ -1971,20 +2414,24 @@
     var regler = el("div", "staffel-regler");
 
     var fJahre = el("div", "feld");
-    fJahre.appendChild(el("label", null, d.eingaben.jahre.label));
+    var labJahre = fJahre.appendChild(el("label", null, d.eingaben.jahre.label));
     var iJahre = document.createElement("input");
     iJahre.type = "number"; iJahre.min = "0"; iJahre.max = "50"; iJahre.step = "1";
     iJahre.value = d.eingaben.jahre.start;
+    iJahre.setAttribute("aria-label", d.eingaben.jahre.label);
     fJahre.appendChild(iJahre);
+    verbinde(labJahre, iJahre);
     regler.appendChild(fJahre);
 
     var iDatum = null;
     if (d.eingaben.datum) {
       var fDatum = el("div", "feld");
-      fDatum.appendChild(el("label", null, d.eingaben.datum.label));
+      var labDatum = fDatum.appendChild(el("label", null, d.eingaben.datum.label));
       iDatum = document.createElement("input");
       iDatum.type = "date"; iDatum.value = d.eingaben.datum.start;
+      iDatum.setAttribute("aria-label", d.eingaben.datum.label);
       fDatum.appendChild(iDatum);
+      verbinde(labDatum, iDatum);
       regler.appendChild(fDatum);
     }
     buehne.appendChild(regler);

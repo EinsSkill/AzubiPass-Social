@@ -6,86 +6,456 @@
   "untertitel": "Wann ein Vertrag zustande kommt, was er regelt, welche Bedingungen gelten — und warum Besitz nicht Eigentum ist.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Ein Vertrag entsteht durch zwei übereinstimmende Willenserklärungen: Antrag und Annahme.",
-          "Im Alltag heißt der Antrag oft ‚Angebot‘."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst in einem Unternehmenskauf, ob Antrag und Annahme übereinstimmen und rechtzeitig sind, und bestimmst bei Abweichungen, ob und mit welchem Inhalt ein Vertrag zustande gekommen ist.",
+        "vorwissen_kurz": "Ob MAKEL Studio liefern muss und der Kunde zahlen muss, hängt davon ab, ob überhaupt ein Vertrag besteht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Erklärungen, die zusammenpassen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Vertrag entsteht durch zwei übereinstimmende Willenserklärungen: {{begriff:antrag|Antrag}} und {{begriff:annahme|Annahme}}. Wer ein {{begriff:angebot|Angebot}} abgibt, ist daran gebunden ({{par:bgb-145|§ 145 BGB}}), es sei denn, er hat die Bindung ausgeschlossen, etwa mit „freibleibend\". Die Annahme muss rechtzeitig kommen: unter Anwesenden sofort, unter Abwesenden innerhalb der Zeit, in der eine Antwort regelmäßig zu erwarten ist, oder bis zu einer gesetzten Frist ({{par:bgb-147|§ 147 BGB}}).",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "==Eine Annahme mit Änderungen ist keine Annahme.== Sie gilt als Ablehnung, verbunden mit einem neuen Antrag ({{par:bgb-150|§ 150 BGB}}). Dasselbe gilt für eine verspätete Annahme.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Antworten auf ein Angebot",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Antwort der Agentur auf das bindende Angebot über 100 Hoodies, Frist 14 Tage",
+              "Vertrag?",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "nach 5 Tagen: „Wir bestellen wie angeboten.\"",
+                  "ja",
+                  "100 Hoodies zu den Angebotsbedingungen"
+                ]
+              },
+              {
+                "zellen": [
+                  "nach 5 Tagen: „Wir bestellen 120 Stück zu diesen Bedingungen.\"",
+                  "nein, neuer Antrag",
+                  "erst mit Annahme durch MAKEL über 120 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "nach 20 Tagen: „Wir bestellen wie angeboten.\"",
+                  "nein, verspätet und damit neuer Antrag",
+                  "erst mit Annahme durch MAKEL"
+                ]
+              },
+              {
+                "zellen": [
+                  "nach 5 Tagen: „Wir bestellen, aber mit 60 Tagen Zahlungsziel.\"",
+                  "nein, neuer Antrag",
+                  "MAKEL kann annehmen oder ablehnen"
+                ]
+              }
+            ],
+            "fazit": "Nur die unveränderte und rechtzeitige Bestellung schließt den Vertrag. In allen anderen Fällen liegt der Ball wieder bei MAKEL Studio.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Vertrieb heißt das: Abweichende Bestellungen nicht einfach bearbeiten, sondern bewusst entscheiden. Kann MAKEL Studio 120 Stück zum selben Preis liefern, bestätigt der Vertrieb den neuen Antrag schriftlich; dann besteht ein Vertrag über 120 Stück. Will MAKEL das längere Zahlungsziel nicht gewähren, lehnt es ab oder macht ein Gegenangebot. Wer dagegen kommentarlos liefert, nimmt den neuen Antrag durch schlüssiges Handeln an, mit allen geänderten Bedingungen.",
+            "id": "a1-p3"
+          }
         ],
-        "erklaerung": "Wer ein Angebot abgibt, ist nach § 145 BGB daran gebunden, sofern er die Bindung nicht ausgeschlossen hat (etwa mit ‚freibleibend‘). Ein Angebot an einen Abwesenden kann nur so lange angenommen werden, wie unter regelmäßigen Umständen eine Antwort zu erwarten ist (§ 147 BGB), wenn keine Frist gesetzt wurde. Die Annahme muss dem Angebot vollständig entsprechen. Eine Annahme unter Erweiterungen, Einschränkungen oder sonstigen Änderungen gilt nach § 150 Abs. 2 BGB als Ablehnung, verbunden mit einem neuen Antrag. Eine verspätete Annahme gilt ebenfalls als neuer Antrag (§ 150 Abs. 1 BGB).",
-        "beispiele": [
-          "MAKEL bietet 100 Hoodies zu 48 € netto je Stück an, die Agentur bestellt genau so: Der Vertrag ist geschlossen.",
-          "Die Agentur antwortet: ‚Wir bestellen zu diesen Bedingungen 120 Stück.‘ Das ist keine unveränderte Annahme, sondern ein neuer Antrag über 120 Stück, den MAKEL annehmen oder ablehnen kann."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Schweigen im Handelsverkehr",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Schweigen gilt grundsätzlich nicht als Annahme. Unter Kaufleuten gibt es Ausnahmen, etwa das kaufmännische Bestätigungsschreiben: Bestätigt eine Seite nach mündlichen Verhandlungen den Vertragsinhalt schriftlich und widerspricht die andere nicht unverzüglich, gilt der bestätigte Inhalt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL schickt ein bindendes Angebot über 100 bedruckte Hoodies. Die Agentur bestellt 120 Stück ‚zu diesen Bedingungen‘. Ergebnis: Ein Vertrag über 100 Stück besteht nicht, weil die Agentur das Angebot nicht unverändert angenommen hat; ein Vertrag über 120 Stück besteht auch noch nicht, weil MAKEL diesen neuen Antrag erst annehmen muss. Marlene prüft Rohlinge und Kapazität und bestätigt dann 120 Stück — erst damit ist der Vertrag geschlossen.",
-        "typische_fehler": "Bei einer Mengenabweichung wird einfach ein Vertrag über die ursprüngliche oder die neue Menge angenommen. Rechtlich liegt zunächst ein neuer Antrag vor, der angenommen werden muss.",
         "verstaendnisfragen": [
-          "Was bewirkt eine Annahme mit Änderungen? Sie gilt als Ablehnung des ursprünglichen Angebots und zugleich als neuer Antrag.",
-          "Wie kann ein Verkäufer die Bindung an sein Angebot ausschließen? Durch eine Freizeichnungsklausel wie ‚freibleibend‘ oder ‚unverbindlich‘."
-        ],
-        "pruefungsbezug": "Bei Vertragsschlussfällen jede Erklärung einordnen: Antrag, Annahme, neuer Antrag? Und prüfen, ob sie rechtzeitig und unverändert war.",
-        "merksatz": "Ein Vertrag entsteht durch Antrag und unveränderte, rechtzeitige Annahme; eine Annahme mit Änderungen ist eine Ablehnung verbunden mit einem neuen Antrag."
+          {
+            "frage": "Die Agentur nimmt ein bindendes Angebot nach Ablauf der Frist an. Ist ein Vertrag zustande gekommen?",
+            "antwort": "Nein. Die verspätete Annahme gilt als neuer Antrag, den MAKEL Studio annehmen kann.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was passiert, wenn MAKEL Studio auf eine abweichende Bestellung einfach liefert?",
+            "antwort": "MAKEL nimmt den neuen Antrag durch schlüssiges Handeln an; es gilt der geänderte Inhalt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Der Kaufvertrag verpflichtet beide Seiten.",
-          "Die Pflichten stehen in § 433 BGB."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest die Pflichten aus dem Kaufvertrag Verkäufer und Käufer zu, erkennst, dass Kaufvertrag und Eigentumsübertragung getrennte Vorgänge sind, und prüfst, ob einem Unternehmenskunden ein Widerrufsrecht zusteht.",
+        "vorwissen_kurz": "Mit dem Vertrag entstehen Pflichten auf beiden Seiten. Welche genau, regelt das Gesetz.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer was schuldet",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:kaufvertrag|Kaufvertrag}} verpflichtet den Verkäufer, die Ware zu übergeben, dem Käufer das Eigentum zu verschaffen und sie frei von Sach- und Rechtsmängeln zu liefern. Der Käufer muss den Kaufpreis zahlen und die Ware abnehmen ({{par:bgb-433|§ 433 BGB}}). Der Kaufvertrag selbst begründet nur diese Pflichten; das Eigentum geht erst mit einem eigenen Vorgang über, nämlich Einigung und Übergabe. Beides fällt im Alltag oft zusammen, rechtlich sind es zwei Schritte.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Pflichten im Vereinsauftrag",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Pflicht",
+              "Wer?",
+              "Wann erfüllt?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "400 bedruckte Hoodies übergeben",
+                  "MAKEL Studio",
+                  "bei Ablieferung an den Verein"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigentum verschaffen",
+                  "MAKEL Studio",
+                  "mit Einigung und Übergabe; bei Eigentumsvorbehalt erst mit Zahlung"
+                ]
+              },
+              {
+                "zellen": [
+                  "mangelfrei liefern",
+                  "MAKEL Studio",
+                  "Druck und Größen entsprechen der Vereinbarung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kaufpreis zahlen",
+                  "Verein",
+                  "innerhalb des vereinbarten Ziels"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ware abnehmen",
+                  "Verein",
+                  "bei Anlieferung"
+                ]
+              }
+            ],
+            "fazit": "Beide Seiten haben Haupt- und Nebenpflichten. Verletzt eine Seite sie, entstehen Rechte für die andere, etwa bei Mängeln oder Zahlungsverzug.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Abnahmepflicht wird oft übersehen. Will ein Unternehmenskunde bestellte Ware nicht mehr, weil sein Fest abgesagt wurde, ändert das nichts am Vertrag. Ein gesetzliches Widerrufsrecht hat er nicht; das schützt nur Verbraucher bei Fernabsatzgeschäften. MAKEL Studio kann aus Kulanz eine Lösung anbieten, etwa eine Lieferung zu einem späteren Termin, muss es aber nicht.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Der Verkäufer muss die Ware übergeben und das Eigentum verschaffen, frei von Sach- und Rechtsmängeln. Der Käufer muss den Kaufpreis zahlen und die Ware abnehmen. Was im Einzelnen gilt, bestimmt der Vertragsinhalt: Art, Güte und Menge der Ware, Preis, Liefer- und Zahlungsbedingungen, Erfüllungsort und Gerichtsstand. Fehlt eine Vereinbarung, greifen die gesetzlichen Regeln. Für Kaufleute gelten ergänzend Regeln des HGB, etwa die Rügepflicht beim beiderseitigen Handelskauf.",
-        "beispiele": [
-          "Pflicht von MAKEL: 100 Hoodies in vereinbarter Ausführung liefern und das Eigentum übertragen.",
-          "Pflicht der Agentur: den Preis zahlen und die Hoodies abnehmen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Rügepflicht unter Kaufleuten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ist der Kauf für beide Seiten ein Handelsgeschäft, muss der Käufer die Ware unverzüglich nach Ablieferung untersuchen und erkennbare Mängel unverzüglich rügen (§ 377 HGB). Versäumt er das, gilt die Ware als genehmigt. Das lernst du bei Reklamationen genauer.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Agentur hat bestellt, will die Lieferung aber nicht annehmen, weil das Sommerfest abgesagt wurde. Der Vertrag ist geschlossen; die Agentur ist zur Abnahme und Zahlung verpflichtet. Eine Absage des Fests ist ihr eigenes Risiko — es sei denn, im Vertrag wurde ein Rücktrittsrecht vereinbart. Ein gesetzliches Widerrufsrecht wie für Verbraucher im Fernabsatz hat die Agentur als Unternehmen nicht.",
-        "typische_fehler": "Bei jedem Kauf wird ein 14-tägiges Widerrufsrecht unterstellt. Das gesetzliche Widerrufsrecht im Fernabsatz gilt für Verbraucher, nicht für Unternehmen untereinander.",
         "verstaendnisfragen": [
-          "Welche Hauptpflichten hat der Käufer? Kaufpreis zahlen und die Ware abnehmen.",
-          "Hat ein Unternehmen beim Online-Kauf ein gesetzliches Widerrufsrecht? Nein, das Widerrufsrecht im Fernabsatz schützt Verbraucher."
-        ],
-        "pruefungsbezug": "Bei Pflichtverletzungen zuerst die Pflichten aus § 433 BGB den Parteien zuordnen.",
-        "merksatz": "Der Verkäufer schuldet Übergabe und Eigentumsverschaffung mangelfreier Ware, der Käufer Zahlung und Abnahme; Unternehmen haben untereinander kein gesetzliches Fernabsatz-Widerrufsrecht."
+          {
+            "frage": "Welche Pflichten hat der Käufer aus dem Kaufvertrag?",
+            "antwort": "Den Kaufpreis zu zahlen und die Ware abzunehmen.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Hat eine Agentur, die bei MAKEL Studio bestellt hat, ein gesetzliches Widerrufsrecht?",
+            "antwort": "Nein. Das Widerrufsrecht im Fernabsatz gilt nur für Verbraucher, es sei denn, es wurde vertraglich vereinbart.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Liefer- und Zahlungsbedingungen regeln, wer was wann und wo leistet.",
-          "Viele Unternehmen verwenden dafür Allgemeine Geschäftsbedingungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Liefer- und Zahlungsbedingungen nach Transportkosten, Transportrisiko, Zahlungsziel und Skonto zu, berechnest einen Skontoabzug und prüfst, ob Allgemeine Geschäftsbedingungen wirksam einbezogen wurden.",
+        "vorwissen_kurz": "Neben Ware und Preis regelt ein Vertrag, wer den Transport bezahlt, wer das Risiko trägt und wann gezahlt wird.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Kosten, Risiko, Zahlung",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:lieferbedingungen|Lieferbedingungen}} beantworten zwei Fragen: Wer trägt die **Transportkosten**? Und wer trägt das **Transportrisiko**, also den Schaden, wenn die Ware unterwegs beschädigt wird oder verloren geht? Beim Versendungskauf zwischen Unternehmen geht das Risiko ohne andere Abrede mit Übergabe an den Transporteur auf den Käufer über. {{begriff:zahlungsbedingungen|Zahlungsbedingungen}} regeln Zahlungsziel, {{begriff:skonto|Skonto}} und Zahlungsweise. {{begriff:agb|AGB}} sind vorformulierte Bedingungen; sie gelten nur, wenn sie wirksam in den Vertrag einbezogen wurden ({{par:bgb-305|§ 305 BGB}}).",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rechnung an Pixelwerk mit Skonto",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "100 Hoodies mit Logodruck zu 24,00 €",
+                  "2.400,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Umsatzsteuer 19 %",
+                  "456,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Rechnungsbetrag",
+                  "2.856,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "− 3 % Skonto bei Zahlung binnen 8 Tagen",
+                  "85,68 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= Zahlbetrag mit Skonto",
+                  "2.770,32 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Zahlt Pixelwerk innerhalb von 8 Tagen, überweist sie 2.770,32 €. Nach 30 Tagen ist der volle Betrag von 2.856,00 € fällig.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Unter Unternehmen ist die Einbeziehung von AGB leichter als gegenüber Verbrauchern: Ein Hinweis im Angebot oder eine laufende Geschäftsbeziehung kann genügen. Verwenden beide Seiten eigene AGB, die sich widersprechen, gelten die übereinstimmenden Regeln; wo sie sich widersprechen, gilt das Gesetz. Deshalb lohnt sich ein Blick in die AGB des Kunden, bevor MAKEL Studio einen größeren Auftrag bestätigt.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Lieferbedingungen beantworten drei getrennte Fragen: Wer trägt die Transportkosten? Wo ist der Leistungsort? Wann geht die Gefahr (das Risiko von Verlust oder Beschädigung) über? Klauseln wie ‚ab Werk‘ (Käufer zahlt den Transport ab Verkäufer) oder ‚frei Haus‘ (Verkäufer zahlt den Transport bis zum Käufer) regeln zunächst nur die Kosten. Allein aus der Kostenübernahme folgt kein anderer Leistungsort (§ 269 Abs. 3 BGB). Ohne weitere Vereinbarung ist der Leistungsort für die Ware der Sitz des Verkäufers; beim Versendungskauf unter Unternehmen geht die Gefahr mit Übergabe an das Transportunternehmen auf den Käufer über (§ 447 BGB) — auch bei ‚frei Haus‘. Soll der Verkäufer das Risiko bis zur Ablieferung tragen, muss das ausdrücklich vereinbart werden (etwa ‚Lieferung frei Haus, Gefahrübergang bei Ablieferung‘). Incoterms wie EXW oder DAP sind eigene, genau definierte Klauseln und nur anwendbar, wenn sie ausdrücklich vereinbart werden. Zahlungsbedingungen regeln Zahlungsziel, Skonto und Zahlungsweise, etwa ‚8 Tage 3 % Skonto, 30 Tage netto‘. AGB sind vorformulierte Bedingungen für viele Verträge. Gegenüber Unternehmen werden sie leichter Vertragsbestandteil als gegenüber Verbrauchern, unterliegen aber weiterhin einer Inhaltskontrolle.",
-        "beispiele": [
-          "MAKELs Standard für Wholesale: ‚8 Tage 3 % Skonto, 30 Tage netto‘.",
-          "‚Frei Haus‘: MAKEL zahlt den Versand; das Transportrisiko trägt ohne weitere Abrede beim Versendungskauf unter Unternehmen die Boutique ab Übergabe an den Paketdienst."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Incoterms im Auslandsgeschäft",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Im internationalen Handel werden Kosten und Risiko oft mit den Incoterms der Internationalen Handelskammer geregelt, etwa EXW für ab Werk oder DAP für geliefert benannter Ort. Sie legen genau fest, an welchem Punkt Kosten und Risiko übergehen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Agentur fragt, wer zahlt, wenn das Paket beim Transport beschädigt wird. Vereinbart ist ‚ab Werk, Versand durch Paketdienst auf Kosten des Käufers‘. Unter Unternehmen geht die Gefahr beim Versendungskauf mit Übergabe an den Paketdienst auf die Agentur über; sie müsste sich an den Paketdienst halten. Hätte MAKEL nur ‚frei Haus‘ zugesagt, hätte MAKEL die Versandkosten getragen — am Gefahrübergang hätte das allein nichts geändert. Erst eine ausdrückliche Abrede ‚Gefahrübergang bei Ablieferung‘ legt das Risiko bis zur Boutique auf MAKEL.",
-        "typische_fehler": "Skonto und Rabatt werden verwechselt. Rabatt ist ein sofortiger Nachlass, Skonto ein Nachlass für schnelle Zahlung.",
         "verstaendnisfragen": [
-          "Was bedeutet ‚frei Haus‘? Der Verkäufer trägt die Transportkosten bis zum Käufer; die Gefahrtragung muss gesondert vereinbart werden, sonst gilt beim Versendungskauf § 447 BGB.",
-          "Was bedeutet ‚10 Tage 2 % Skonto, 30 Tage netto‘? Wer innerhalb von 10 Tagen zahlt, darf 2 Prozent abziehen; spätestens nach 30 Tagen ist der volle Betrag fällig."
-        ],
-        "pruefungsbezug": "Lieferklauseln immer nach zwei Fragen auflösen: Wer zahlt den Transport? Wer trägt das Risiko?",
-        "merksatz": "Lieferbedingungen regeln Kosten und Risiko des Transports, Zahlungsbedingungen Ziel, Skonto und Zahlungsweise; AGB gelten nur bei wirksamer Einbeziehung."
+          {
+            "frage": "Wer trägt beim Versendungskauf zwischen Unternehmen ohne besondere Abrede das Transportrisiko?",
+            "antwort": "Der Käufer, ab Übergabe der Ware an das Transportunternehmen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Rechnungsbetrag 2.856 €, 3 % Skonto. Wie viel wird bei Zahlung in der Skontofrist überwiesen?",
+            "antwort": "2.856 € − 85,68 € = 2.770,32 €.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Wer eine Sache hat, ist nicht unbedingt ihr Eigentümer.",
-          "Besitz und Eigentum sind zwei verschiedene Rechtsbegriffe."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Besitz und Eigentum, erklärst, wie der Eigentumsvorbehalt MAKEL Studio bei Lieferung auf Rechnung sichert, und erkennst seine Grenzen.",
+        "vorwissen_kurz": "Wer eine Ware in der Hand hält, ist nicht unbedingt ihr Eigentümer.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Tatsächliche und rechtliche Herrschaft",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:besitz|Besitz}} ist die tatsächliche Herrschaft über eine Sache: Wer sie hat und nutzt, ist Besitzer. {{begriff:eigentum|Eigentum}} ist die rechtliche Herrschaft: Der Eigentümer darf mit der Sache nach Belieben verfahren und sie von jedem herausverlangen, der kein Recht zum Besitz hat. Beim {{begriff:eigentumsvorbehalt|Eigentumsvorbehalt}} übergibt MAKEL Studio die Ware, bleibt aber Eigentümer, bis der Kaufpreis vollständig bezahlt ist ({{par:bgb-449|§ 449 BGB}}). Er muss vereinbart werden, meist in den AGB.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was der Eigentumsvorbehalt bewirkt",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Situation",
+              "ohne Eigentumsvorbehalt",
+              "mit Eigentumsvorbehalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Boutique hat die Hoodies erhalten, noch nicht bezahlt",
+                  "Boutique ist Eigentümerin",
+                  "MAKEL Studio bleibt Eigentümer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Boutique zahlt nicht, MAKEL tritt vom Vertrag zurück",
+                  "nur Anspruch auf Geld",
+                  "MAKEL kann die Ware herausverlangen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Boutique wird insolvent",
+                  "MAKEL ist einfacher Gläubiger",
+                  "MAKEL kann die eigene Ware aussondern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Boutique hat die Hoodies an Kunden verkauft",
+                  "—",
+                  "Eigentum ist an die Endkunden übergegangen; Vorbehalt erloschen"
+                ]
+              }
+            ],
+            "fazit": "Der Eigentumsvorbehalt schützt, solange die Ware beim Käufer liegt. Verkauft der Wiederverkäufer sie weiter, verliert MAKEL Studio das Eigentum.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gerade bei Wiederverkäufern ist diese Grenze wichtig. Eine Boutique soll die Hoodies ja verkaufen; ihre Kunden erwerben das Eigentum, auch wenn die Boutique MAKEL noch nicht bezahlt hat. Deshalb vereinbaren Lieferanten oft einen **verlängerten Eigentumsvorbehalt**: Die Boutique tritt die Forderungen aus dem Weiterverkauf im Voraus an MAKEL Studio ab. So bleibt MAKEL gesichert, auch wenn die Ware weg ist.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Besitz ist die tatsächliche Herrschaft über eine Sache — wer sie hat und benutzt. Eigentum ist die rechtliche Herrschaft — wem sie gehört. Beim Kauf beweglicher Sachen geht das Eigentum durch Einigung und Übergabe über. Mit einem Eigentumsvorbehalt (§ 449 BGB) behält der Verkäufer das Eigentum bis zur vollständigen Zahlung, obwohl der Käufer die Ware schon besitzt. Das ist eine wichtige Sicherheit bei Lieferung auf Rechnung.",
-        "beispiele": [
-          "Dein dienstlicher Scanner: Du bist Besitzer (du nutzt ihn), Eigentümerin ist die MAKEL Studio GmbH.",
-          "MAKEL liefert auf Rechnung unter Eigentumsvorbehalt: Die Agentur besitzt die Hoodies, Eigentümer bleibt MAKEL bis zur Zahlung."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Bedruckte Ware",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei individuell bedruckter Ware nützt der Eigentumsvorbehalt weniger, weil MAKEL Studio Hoodies mit dem Logo eines Vereins kaum anderweitig verkaufen kann. Hier schützen eher eine Anzahlung oder eine sorgfältige Bonitätsprüfung.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Die Agentur hat die Hoodies erhalten, aber noch nicht bezahlt, und meldet Zahlungsschwierigkeiten. Weil MAKEL unter Eigentumsvorbehalt geliefert hat, gehören die Hoodies noch MAKEL. Herausverlangen kann MAKEL sie aufgrund des Vorbehalts allerdings erst, wenn MAKEL vom Vertrag zurückgetreten ist.",
-        "typische_fehler": "Wer etwas in den Händen hält, wird für den Eigentümer gehalten. Besitz und Eigentum fallen oft, aber nicht immer zusammen.",
         "verstaendnisfragen": [
-          "Was ist Besitz? Die tatsächliche Herrschaft über eine Sache.",
-          "Wozu dient ein Eigentumsvorbehalt? Der Verkäufer bleibt bis zur vollständigen Zahlung Eigentümer und ist so gegen Zahlungsausfall gesichert."
-        ],
-        "pruefungsbezug": "In Besitz-Eigentum-Fällen für jede Person beide Fragen getrennt beantworten: Hat sie die Sache? Gehört sie ihr?",
-        "merksatz": "Besitz ist tatsächliche, Eigentum rechtliche Herrschaft; beim Eigentumsvorbehalt besitzt der Käufer die Ware, Eigentümer bleibt der Verkäufer bis zur Zahlung."
+          {
+            "frage": "Du nutzt einen Scanner von MAKEL Studio. Bist du Besitzer oder Eigentümer?",
+            "antwort": "Besitzer, weil du die tatsächliche Herrschaft hast. Eigentümerin bleibt die GmbH.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum endet der einfache Eigentumsvorbehalt, wenn eine Boutique die Ware an ihre Kunden verkauft?",
+            "antwort": "Weil die Kunden das Eigentum erwerben. Dagegen hilft ein verlängerter Eigentumsvorbehalt mit Abtretung der Weiterverkaufsforderungen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

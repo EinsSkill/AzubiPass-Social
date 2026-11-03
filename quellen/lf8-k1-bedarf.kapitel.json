@@ -6,66 +6,499 @@
   "untertitel": "Wie viele — und mit welchen Fähigkeiten.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Personalplanung betrifft nicht nur die Zahl, sondern auch die passende Person.",
-          "Arbeitsmenge, Fähigkeiten, Zeit und Ort können den Bedarf beeinflussen."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst für eine konkrete Personallücke Zahl, Profil, Zeitraum und Ort und begründest, warum alle vier Fragen zusammengehören.",
+        "vorwissen_kurz": "Personalbedarf ist die Zahl und Art der Arbeitskräfte, die ein Betrieb braucht, um seine Aufgaben zu erledigen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "„Wir brauchen mehr Leute“ ist noch kein Bedarf",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Teamleiterin im Versand von MAKEL sagt: „Wir brauchen dringend mehr Leute.“ Für die Personalabteilung ist das ein Anfang, aber noch kein Auftrag. Bevor eine Stelle ausgeschrieben werden kann, muss der {{begriff:personalbedarf|Personalbedarf}} in vier Richtungen geklärt sein. **Quantitativ:** Wie viele Arbeitskräfte fehlen, gemessen in Personen oder Vollzeitstellen? **Qualitativ:** Welche Kenntnisse, Erfahrungen und Fähigkeiten brauchen sie? **Zeitlich:** Ab wann und wie lange? **Örtlich:** An welchem Standort oder in welcher Abteilung?",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die vier Fragen hängen zusammen. Wer nur die Zahl kennt, stellt womöglich Menschen ein, die die Arbeit nicht können. Wer nur das Profil kennt, weiß nicht, ob eine Teilzeitkraft reicht. Und wer den Zeitpunkt übersieht, hat das Personal im Januar, obwohl die Spitze im Dezember war.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Bedarf im Versand, vollständig beschrieben",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Dimension",
+              "Ergebnis der Klärung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Quantitativ",
+                  "1,5 Vollzeitstellen zusätzlich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualitativ",
+                  "Erfahrung mit Versandsoftware und Paketdiensten, sorgfältige Kontrolle, Staplerschein erwünscht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeitlich",
+                  "eine Stelle dauerhaft ab März, eine halbe Stelle befristet für Oktober bis Dezember"
+                ]
+              },
+              {
+                "zellen": [
+                  "Örtlich",
+                  "Lager Tor 2 am Hauptstandort"
+                ]
+              }
+            ],
+            "fazit": "Aus „mehr Leute“ werden zwei unterschiedliche Beschaffungsaufträge: eine unbefristete Vollzeitstelle und eine befristete Teilzeitstelle für die Saison.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die zeitliche Klärung verändert hier das Ergebnis am stärksten. Eine dauerhafte Vollzeitstelle für eine Spitze, die nur drei Monate dauert, wäre neun Monate im Jahr nicht ausgelastet. Deshalb lohnt sich bei Saisonspitzen der Blick auf Befristung, Teilzeit, Zeitarbeit oder Mehrarbeit des vorhandenen Teams.",
+            "id": "a1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          }
         ],
-        "erklaerung": "Personalbedarf hat vier Dimensionen: quantitativ, qualitativ, zeitlich und örtlich. Quantitativ wird gefragt, wie viele Kräfte benötigt werden; qualitativ, welche Fähigkeiten nötig sind. Zeitlich und örtlich wird ergänzt, wann und wo die Arbeit anfällt. Eine Zahl ohne Anforderungsprofil kann deshalb zu einer falschen Einstellung führen.",
-        "beispiele": [
-          "Drei zusätzliche Kräfte können quantitativ richtig sein, aber qualitativ falsch, wenn die benötigten Fähigkeiten nicht im Profil stehen.",
-          "Ein Bedarf kann nur für eine bestimmte Zeit oder an einem bestimmten Ort bestehen; Zahl, Profil, Zeitraum und Einsatzort werden getrennt geprüft."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Zahl ohne Profil",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hätte MAKEL einfach „1,5 Lagerhelfer“ gesucht, wären Bewerbungen von Menschen ohne Versanderfahrung gekommen. Die Einarbeitung hätte Wochen gedauert — genau in der Zeit, in der der Versand am meisten zu tun hat. Ein Profil ohne Zahl ist ebenso unbrauchbar: Man weiß dann, wen man sucht, aber nicht, ob eine oder drei Personen nötig sind.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb stellt fest, dass die Arbeitsmenge steigt, möchte aber nur ‚mehr Personal‘ ausschreiben. Die Bedarfsermittlung ergänzt die fehlenden Fragen: Wie viele Kräfte sind nötig? Welche Fähigkeiten müssen sie mitbringen? Zu welchem Zeitpunkt und an welchem Ort werden sie gebraucht? Erst die vier Antworten bilden eine brauchbare Grundlage für die Beschaffung.",
-        "typische_fehler": "Quantitativer und qualitativer Bedarf werden gleichgesetzt. Außerdem wird ein dauerhaftes Vollzeitprofil angenommen, obwohl der Bedarf zeitlich oder örtlich begrenzt sein kann.",
         "verstaendnisfragen": [
-          "Welche vier Dimensionen hat Personalbedarf? Quantitativ, qualitativ, zeitlich und örtlich.",
-          "Warum reicht die Frage ‚Wie viele?‘ nicht aus? Weil ohne Qualifikationsprofil die falschen Personen eingestellt werden können."
-        ],
-        "pruefungsbezug": "Beginne jede Fallaufgabe mit den vier Dimensionen. So werden Zahl und Profil nicht vermischt und zeitliche oder örtliche Besonderheiten nicht übersehen.",
-        "merksatz": "Personalbedarf fragt gleichzeitig: wie viele, welche Fähigkeiten, wann und wo."
+          {
+            "frage": "Ein Betrieb braucht im Sommer drei Monate lang eine zusätzliche Kraft für die Urlaubsvertretung in der Buchhaltung. Welche Dimension entscheidet hier über die passende Lösung?",
+            "antwort": "Vor allem die zeitliche: Der Bedarf ist auf drei Monate begrenzt. Eine Festanstellung wäre danach nicht ausgelastet. Passend sind etwa eine befristete Einstellung oder Zeitarbeit. Qualitativ muss die Kraft trotzdem Buchhaltungskenntnisse mitbringen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist der qualitative Bedarf für die spätere Stellenanzeige wichtiger als der quantitative?",
+            "antwort": "Die Anzeige muss Bewerbende ansprechen, die die Aufgaben erfüllen können. Dafür braucht sie das Anforderungsprofil. Die Zahl bestimmt nur, wie viele Personen eingestellt werden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Der Bruttobedarf beschreibt den theoretischen Gesamtbedarf.",
-          "Bestand, Zu- und Abgänge verändern den tatsächlichen Einstellungsbedarf."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest den Brutto- und Nettopersonalbedarf aus Arbeitsmenge, tatsächlicher Arbeitszeit sowie Bestand, Zu- und Abgängen und deutest das Ergebnis.",
+        "vorwissen_kurz": "Tatsächliche Arbeitszeit ist die Zeit, in der eine Person wirklich arbeitet — vertragliche Zeit minus Urlaub, Krankheit und Fortbildung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst den Bedarf, dann die Lücke",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die quantitative Rechnung hat zwei Schritte. Der **Bruttopersonalbedarf** sagt, wie viele Kräfte die Arbeit insgesamt braucht. Er ergibt sich aus der Arbeitsmenge und dem, was eine Kraft schaffen kann. Der **Nettopersonalbedarf** sagt, wie viele Kräfte tatsächlich eingestellt oder abgebaut werden müssen. Dafür wird der Bruttobedarf mit dem vorhandenen Personal und den bereits feststehenden Veränderungen verglichen.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Schritt 1: Bruttobedarf aus der Arbeitsmenge",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Buchhaltung von MAKEL bearbeitet 12.000 Vorgänge im Jahr. Eine Kraft schafft im Durchschnitt 2,5 Vorgänge pro Stunde. Die vertragliche Jahresarbeitszeit beträgt 1.700 Stunden; nach Urlaub, Krankheit und Fortbildung bleiben tatsächlich 1.360 Stunden.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Leistung je Kraft und Jahr",
+                  "2,5 Vorgänge × 1.360 Std.",
+                  "3.400 Vorgänge"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Bruttobedarf",
+                  "12.000 ÷ 3.400",
+                  "3,53 Kräfte"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "zum Vergleich mit Vertragszeit",
+                  "12.000 ÷ (2,5 × 1.700)",
+                  "2,82 Kräfte"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Mit der Vertragszeit gerechnet, fehlte fast eine ganze Stelle. Deshalb wird mit der tatsächlichen Arbeitszeit gerechnet.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Schritt 2: vom Brutto zum Netto",
+            "id": "a2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Formel lautet: Nettopersonalbedarf = Bruttobedarf − Bestand + erwartete Abgänge − feststehende Zugänge. Abgänge erhöhen den Bedarf, weil Menschen gehen, deren Arbeit trotzdem erledigt werden muss. Zugänge senken ihn, weil schon feststeht, dass jemand kommt — etwa ein übernommener Azubi.",
+            "id": "a2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit den Startwerten der Grafik: 48 − 42 + 5 − 3 = 8 Personen. Die reine Differenz zwischen Bedarf und Bestand ergäbe nur 6. Erst die fünf erwarteten Abgänge und drei sicheren Zugänge machen daraus den echten Einstellungsbedarf.",
+            "id": "a2-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b3"
+          }
         ],
-        "erklaerung": "Der Bruttobedarf wird aus der Arbeitsmenge und der Leistung je Kraft abgeleitet. Beispiel aus dem Kapitel: 12.000 Vorgänge geteilt durch 500 Vorgänge je Kraft ergeben 24 Kräfte. Danach wird der vorhandene Bestand berücksichtigt. Die Nettobedarfsformel lautet: Bruttobedarf − Bestand + Abgänge − Zugänge. Abgänge erhöhen den Bedarf, Zugänge senken ihn. Die Leistung bezieht sich auf die tatsächliche Arbeitszeit nach Urlaub, Krankheit und Fortbildung.",
-        "beispiele": [
-          "Bei 12.000 Vorgängen und 500 Vorgängen je Kraft lautet der Bruttobedarf 12.000 ÷ 500 = 24 Kräfte.",
-          "Ein erwarteter Zugang senkt den Nettobedarf, ein erwarteter Abgang erhöht ihn; ein negatives Ergebnis bedeutet Überdeckung und damit Freisetzung."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Negativer Nettobedarf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ergibt die Rechnung eine negative Zahl, hat der Betrieb mehr Personal, als er braucht. Dann geht es nicht um Beschaffung, sondern um Freisetzung. Das muss nicht Kündigung heißen: Oft reichen natürliche Fluktuation, nicht nachbesetzte Abgänge, Abbau von Überstunden, Versetzung in andere Abteilungen oder Teilzeitvereinbarungen. Kündigungen sind das letzte Mittel und an strenge Voraussetzungen gebunden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          },
+          {
+            "kategorie": "grundlagen",
+            "titel": "Woher die Werte kommen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Bestand stammt aus der Personalstatistik. Abgänge werden aus Rentenbeginn, bekannten Kündigungen, Befristungsenden und Erfahrungswerten zur Fluktuation geschätzt. Zugänge sind nur sichere Ereignisse: unterschriebene Verträge, zugesagte Übernahmen, Rückkehr aus der Elternzeit. Eine Bewerbung, die gerade läuft, ist noch kein Zugang.",
+                "id": "a2-d2-p1"
+              }
+            ],
+            "id": "a2-d2"
+          }
         ],
-        "fallbeispiel": "Zuerst wird mit 12.000 ÷ 500 der Bruttobedarf von 24 Kräften berechnet. Danach werden Bestand sowie erwartete Zu- und Abgänge eingesetzt: Bruttobedarf minus Bestand plus Abgänge minus Zugänge. Erst dieses Ergebnis sagt, wie viele Personen tatsächlich eingestellt oder abgebaut werden müssen. Würde ein negativer Nettobedarf entstehen, läge eine Überdeckung vor.",
-        "typische_fehler": "Der Bestand wird zum Bruttobedarf addiert oder Abgänge werden abgezogen. Ebenso wird mit der vertraglichen statt der tatsächlichen Arbeitszeit gerechnet.",
         "verstaendnisfragen": [
-          "Wie lautet die Nettobedarfsformel? Bruttobedarf − Bestand + Abgänge − Zugänge.",
-          "Was bedeutet ein negativer Nettobedarf? Überdeckung; der Betrieb hat mehr Kräfte als benötigt und muss Freisetzung prüfen."
-        ],
-        "pruefungsbezug": "Schreibe die Formel vor dem Einsetzen vollständig hin und kontrolliere jedes Vorzeichen. Bei der Bruttorechnung tatsächliche Leistung statt bloßer Vertragszeit verwenden.",
-        "merksatz": "Brutto ist der theoretische Bedarf; netto bleibt nach Bestand, Zu- und Abgängen übrig."
+          {
+            "frage": "Die Arbeitsmenge steigt von 12.000 auf 15.000 Vorgänge, sonst bleibt alles gleich. Wie verändert sich der Bruttobedarf?",
+            "antwort": "15.000 ÷ 3.400 = 4,41 Kräfte statt 3,53. Der Bedarf steigt um knapp eine Kraft.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum werden Abgänge im Nettobedarf addiert und nicht abgezogen?",
+            "antwort": "Wer geht, steht dem Betrieb nicht mehr zur Verfügung, die Arbeit bleibt aber. Die Lücke wird also größer. Abziehen würde man sie nur, wenn man sie fälschlich als Entlastung betrachtete.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Eine Stelle und eine Person werden in unterschiedlichen Dokumenten beschrieben.",
-          "Anforderungen müssen mit dem AGG vereinbar sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du entwickelst aus einer Stellenbeschreibung ein Anforderungsprofil mit Muss- und Kann-Anforderungen und prüfst Formulierungen auf Vereinbarkeit mit dem AGG.",
+        "vorwissen_kurz": "Das AGG schützt vor Benachteiligung wegen Herkunft, Geschlecht, Religion oder Weltanschauung, Behinderung, Alter und sexueller Identität — auch schon bei der Stellenausschreibung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Dokumente, zwei Blickwinkel",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:stellenbeschreibung|Stellenbeschreibung}} beschreibt die Stelle: Wozu gibt es sie, welche Aufgaben hat sie, welche Befugnisse, wem ist sie unterstellt, wen vertritt sie? Sie gilt unabhängig davon, wer die Stelle gerade besetzt. Das {{begriff:anforderungsprofil|Anforderungsprofil}} leitet daraus ab, was eine Person mitbringen muss, um diese Aufgaben zu erfüllen: Ausbildung, Erfahrung, Kenntnisse und persönliche Eignung.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Reihenfolge ist wichtig. Erst wenn die Aufgaben klar sind, kann man begründen, welche Anforderungen wirklich nötig sind. Wer das Profil ohne Stellenbeschreibung schreibt, sammelt Wünsche — und schließt geeignete Menschen aus.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Aufgabenbereich zur Anforderung",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aufgabe laut Stellenbeschreibung",
+              "Anforderung",
+              "Muss oder Kann"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Eingangsrechnungen prüfen und buchen",
+                  "abgeschlossene kaufmännische Ausbildung mit Buchführungskenntnissen",
+                  "Muss"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kreditorenstammdaten pflegen",
+                  "sicherer Umgang mit der Buchhaltungssoftware",
+                  "Muss (Einarbeitung möglich)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlungsvorschläge vorbereiten",
+                  "Sorgfalt, Verständnis für Skonto und Fristen",
+                  "Muss"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rückfragen mit ausländischen Lieferern klären",
+                  "Englisch für einfache E-Mails",
+                  "Kann"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertretung der Debitorenbuchhaltung",
+                  "Erfahrung im Mahnwesen",
+                  "Kann"
+                ]
+              }
+            ],
+            "fazit": "Drei bis fünf echte Muss-Anforderungen reichen. Alles andere ist wünschenswert und darf Bewerbende nicht abschrecken.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was im Profil nichts zu suchen hat",
+            "id": "a3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Anforderungen dürfen nicht an die Merkmale des {{par:agg-1|§ 1 AGG}} anknüpfen, also etwa an Alter, Geschlecht oder Herkunft. Eine Ausnahme gilt nur, wenn ein Merkmal wegen der Art der Tätigkeit eine wesentliche und entscheidende berufliche Anforderung ist — das ist im Büro so gut wie nie der Fall. Auch scheinbar harmlose Formulierungen können gefährlich sein: „junges Team“, „Muttersprache Deutsch“ oder „Berufseinsteiger bis 30“ deuten auf eine Benachteiligung hin. Verlangt werden kann stattdessen, was die Aufgabe tatsächlich braucht, etwa „sehr gute Deutschkenntnisse in Wort und Schrift“.",
+            "id": "a3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b3"
+          }
         ],
-        "erklaerung": "Die Stellenbeschreibung beschreibt die Stelle: Aufgaben, Einordnung und Anforderungen der Funktion. Das Anforderungsprofil beschreibt die Person, die diese Stelle ausfüllen soll. Die Stellenbeschreibung überlebt den Stelleninhaber und kann später Grundlage für das Zeugnis sein. Anforderungen an Alter, Geschlecht, Herkunft oder Nationalität sind nach dem vorhandenen AGG-Bezug unzulässig, solange sie nicht ausnahmsweise für die Tätigkeit wesentlich sind.",
-        "beispiele": [
-          "Die Stellenbeschreibung erklärt, welche Aufgaben zu erledigen sind; das Anforderungsprofil nennt die dafür benötigten Fähigkeiten.",
-          "‚Junges, dynamisches Team‘ kann auf eine Altersbenachteiligung hindeuten und muss bei einer Anzeige kritisch geprüft werden."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Folgen einer benachteiligenden Anzeige",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wird jemand wegen eines geschützten Merkmals nicht eingestellt, kann er eine Entschädigung verlangen, bei Nichteinstellung bis zu drei Monatsgehälter, wenn er auch bei benachteiligungsfreier Auswahl nicht eingestellt worden wäre. Eine benachteiligende Formulierung in der Anzeige kann im Streit als Indiz dienen; dann muss der Betrieb beweisen, dass er nicht benachteiligt hat. Ansprüche müssen innerhalb von zwei Monaten schriftlich geltend gemacht werden.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Anzeige sucht eine ‚junge deutsche Mitarbeiterin‘. Zuerst werden die Formulierungen von den tatsächlichen Aufgaben getrennt. Alter, Nationalität und Geschlecht knüpfen an geschützte Merkmale an und sind ohne wesentlichen Tätigkeitsgrund nicht zulässig. Die Anzeige wird stattdessen aus der Stellenbeschreibung und einem sachlichen Anforderungsprofil formuliert.",
-        "typische_fehler": "Stellenbeschreibung und Anforderungsprofil werden als dasselbe Dokument behandelt. Außerdem wird eine scheinbar freundliche Altersformulierung nicht als möglicher AGG-Verstoß erkannt.",
         "verstaendnisfragen": [
-          "Was beschreibt die Stellenbeschreibung? Die Stelle und ihre Aufgaben, nicht die konkrete Person.",
-          "Woran prüfst du eine Anforderung nach AGG? Ob sie an Alter, Geschlecht, Herkunft oder ein ähnliches geschütztes Merkmal anknüpft und für die Tätigkeit wesentlich ist."
+          {
+            "frage": "Eine Anforderung lautet: „Führerschein Klasse B“. Ist das zulässig?",
+            "antwort": "Ja, wenn die Stelle tatsächlich Fahrten erfordert, etwa Botengänge oder Kundenbesuche mit dem Firmenwagen. Steht in der Stellenbeschreibung keine Fahrtätigkeit, ist die Anforderung unnötig und kann geeignete Bewerbende ausschließen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum überlebt die Stellenbeschreibung den Stelleninhaber?",
+            "antwort": "Sie beschreibt die Funktion im Betrieb, nicht die Person. Wechselt der Inhaber, bleiben Aufgaben, Befugnisse und Einordnung gleich. Deshalb ist sie Grundlage für Nachbesetzung, Eingruppierung und Zeugnis.",
+            "id": "a3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "a4",
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wie demografischer Wandel, Zuwanderung und Inklusion den künftigen Personalbedarf beeinflussen, und leitest aus einem Kompetenzbedarf zugängliche Maßnahmen ab.",
+        "vorwissen_kurz": "Personalplanung blickt mehrere Jahre voraus. Entscheidend ist, welche Fähigkeiten dann gebraucht werden und wer sie mitbringen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum die Zukunft schon heute geplant wird",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei MAKEL arbeiten 42 Menschen. Eine Auswertung der Altersstruktur zeigt: Sieben von ihnen erreichen in den nächsten fünf Jahren das Rentenalter, darunter beide Mitarbeiterinnen, die die Zollabwicklung beherrschen. Gleichzeitig bewerben sich auf Ausbildungsplätze weniger junge Menschen als früher. Das ist der **demografische Wandel** im Kleinen: Erfahrene gehen, und es rücken weniger nach. Wer erst reagiert, wenn die Abschiedsfeier stattfindet, hat das Wissen verloren.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Kompetenzbedarf zur Maßnahme",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kompetenzbedarf",
+              "Barriere",
+              "Maßnahme",
+              "Wirkung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zollwissen nach zwei Renteneintritten",
+                  "Wissen steckt in zwei Köpfen",
+                  "zwei Jahre Wissenstransfer mit Tandem, Abläufe dokumentieren",
+                  "Wissen bleibt im Betrieb"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versandkräfte mit Erfahrung",
+                  "Bewerbende aus dem Ausland, Abschluss unklar",
+                  "Anerkennung des Abschlusses begleiten, Sprachkurs, feste Ansprechperson",
+                  "Stelle wird besetzt, Einarbeitung planbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sachbearbeitung Kundenservice",
+                  "Bewerber im Rollstuhl, Büro nur über Treppe erreichbar",
+                  "Arbeitsplatz im Erdgeschoss, technische Hilfen, Fördermittel prüfen",
+                  "geeignete Person kann arbeiten"
+                ]
+              }
+            ],
+            "fazit": "Jede Maßnahme beginnt beim Bedarf des Betriebs und bei einer konkreten Barriere — nicht bei Annahmen über eine ganze Gruppe.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Zuwanderung gilt: Wer im Ausland einen Abschluss erworben hat, kann ihn in Deutschland anerkennen lassen; Beratungsstellen helfen dabei. Ob eine Person arbeiten darf, hängt von ihrem Aufenthaltsstatus ab und muss vor Arbeitsbeginn geklärt werden. Für die Inklusion gilt: Arbeitgeber mit mindestens 20 Arbeitsplätzen müssen auf mindestens 5 % davon schwerbehinderte Menschen beschäftigen; sonst zahlen sie eine Ausgleichsabgabe. Für die Anpassung von Arbeitsplätzen gibt es Unterstützung, etwa über das Integrationsamt.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          }
         ],
-        "pruefungsbezug": "Trenne in Anzeigenfällen Aufgabe, Anforderung und unzulässiges persönliches Merkmal. Nutze die Stellenbeschreibung als dauerhafte Funktionsgrundlage.",
-        "merksatz": "Die Stelle beschreibt die Arbeit, das Profil die passende Person — und das AGG begrenzt die Auswahlmerkmale."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Maßnahme oder Stereotyp?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "„Ältere sind nicht mehr lernfähig, also schulen wir sie nicht mehr“ ist ein Stereotyp und widerspricht der Erfahrung. Eine sachliche Maßnahme fragt dagegen, welche Schulung für welche Aufgabe nötig ist, und bietet sie allen an, die sie brauchen. Ebenso ist „Menschen mit Behinderung können das nicht“ kein Planungsargument. Entscheidend ist, ob die Aufgabe mit angepasstem Arbeitsplatz erledigt werden kann. Gute Planung prüft Anforderungen und Barrieren, nicht Gruppenzugehörigkeit.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Ausbildung als Antwort",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der eigene Nachwuchs ist eine der wirksamsten Antworten auf den demografischen Wandel. Übernommene Auszubildende kennen den Betrieb und senken den Nettobedarf. Dafür muss die Ausbildung aber rechtzeitig geplant werden — wer 2030 Ersatz braucht, muss spätestens 2027 ausbilden.",
+                "id": "a4-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k2"
+                ],
+                "text": "Personal beschaffen: intern oder extern",
+                "id": "a4-d2-v1"
+              }
+            ],
+            "id": "a4-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Sieben von 42 Beschäftigten gehen in fünf Jahren in Rente. Warum reicht es nicht, die Stellen erst bei Renteneintritt auszuschreiben?",
+            "antwort": "Die Besetzung kann Monate dauern, und das Erfahrungswissen der Ausscheidenden ginge ohne Übergabe verloren. Besser ist es, Nachfolge, Wissenstransfer und gegebenenfalls Ausbildung frühzeitig zu planen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Ein Bewerber mit ausländischem kaufmännischem Abschluss erfüllt alle Muss-Anforderungen außer einem deutschen Abschlusszeugnis. Wie geht MAKEL vor?",
+            "antwort": "MAKEL prüft, ob die Kenntnisse tatsächlich vorliegen, etwa im Gespräch oder mit einer Arbeitsprobe, und unterstützt die Anerkennung des Abschlusses. Die Arbeitserlaubnis wird vor Arbeitsbeginn geklärt. Ein Abschluss aus dem Ausland ist kein Ausschlussgrund, wenn die Qualifikation gleichwertig ist.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
@@ -84,6 +517,10 @@
       "id": "lz3",
       "text": "Stellenbeschreibung und Anforderungsprofil erstellen",
       "abschnitt": "a3"
+    },
+    {
+      "abschnitt": "a4",
+      "text": "Demografie, Zuwanderung und Inklusion als Bedingungen der Personalplanung einordnen und passende Maßnahmen ableiten"
     }
   ],
   "bloecke": [
@@ -286,6 +723,53 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "a4",
+      "titel": "Wer künftig fehlt: Demografie, Zuwanderung und Inklusion",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Personalplanung schaut nicht nur auf das nächste Quartal. ==Wer in den nächsten Jahren in Rente geht, wer nachkommt und wer bisher übersehen wird, entscheidet mit darüber, ob Stellen besetzt werden können.== Drei Entwicklungen prägen das: der **demografische Wandel**, die **Zuwanderung** von Fachkräften und die **Inklusion** von Menschen mit Behinderung."
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Bedingung",
+            "Was sie für die Planung bedeutet",
+            "Mögliche Maßnahme"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Demografischer Wandel",
+                "Viele Erfahrene gehen in den nächsten Jahren in Rente, weniger Junge rücken nach.",
+                "Altersstruktur auswerten, Wissen rechtzeitig übergeben, eigene Ausbildung"
+              ]
+            },
+            {
+              "zellen": [
+                "Zuwanderung",
+                "Ausländische Fachkräfte können Lücken schließen; Abschlüsse und Arbeitserlaubnis sind zu klären.",
+                "Anerkennung von Abschlüssen begleiten, Sprachförderung, Einarbeitung planen"
+              ]
+            },
+            {
+              "zellen": [
+                "Inklusion",
+                "Menschen mit Behinderung sind oft gut qualifiziert, werden aber durch Barrieren ausgeschlossen.",
+                "Arbeitsplatz anpassen, Förderung nutzen, Anforderungsprofil auf echte Anforderungen prüfen"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Gute Personalplanung fragt nicht nur „Wie viele fehlen?“, sondern auch „**Wer fehlt künftig, und wen erreichen wir bisher nicht?**“ Maßnahmen richten sich nach Kompetenzbedarf und Barrieren — nicht nach Vorurteilen über Gruppen.",
+          "karteikarte": "Welche drei gesellschaftlichen Entwicklungen beeinflussen die Personalplanung, und wie kann ein Betrieb darauf reagieren?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -295,7 +779,8 @@
     "Ein negativer Nettobedarf bedeutet Überdeckung und damit Freisetzung.",
     "Die Stellenbeschreibung beschreibt die Stelle, das Anforderungsprofil die Person.",
     "Die Stellenbeschreibung überlebt den Stelleninhaber und liefert später die Grundlage fürs Zeugnis.",
-    "{{par:agg-1|AGG}}: Anforderungen dürfen nicht an Alter, Geschlecht, Herkunft oder ähnliche Merkmale anknüpfen."
+    "{{par:agg-1|AGG}}: Anforderungen dürfen nicht an Alter, Geschlecht, Herkunft oder ähnliche Merkmale anknüpfen.",
+    "Demografischer Wandel, Zuwanderung und Inklusion verändern, wer künftig für Stellen zur Verfügung steht."
   ],
   "selbsttest": [
     {

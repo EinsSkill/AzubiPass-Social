@@ -6,66 +6,427 @@
   "untertitel": "Nicht alles, was man braucht, muss einem gehören.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Kauf führt zu Eigentum, Leasing zunächst nur zur Nutzung.",
-          "Liquidität und Gesamtkosten können in unterschiedliche Richtungen wirken."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Kauf und Leasing vollständig über Zahlungen, Restwert und Liquidität und benennst die Vertragsbedingungen, die das Ergebnis verändern.",
+        "vorwissen_kurz": "Beim Kauf wird der Betrieb Eigentümer. Wer nur nutzt, zahlt für die Nutzung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nutzen statt besitzen",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim {{begriff:leasing|Leasing}} überlässt ein Leasinggeber dem Betrieb einen Gegenstand für eine feste Zeit (Grundmietzeit) gegen regelmäßige Raten. Eigentümer bleibt der Leasinggeber. Der Betrieb nutzt die Sache, trägt aber meist Wartung, Versicherung und das Risiko von Beschädigung oder Untergang selbst. Am Ende gibt er den Gegenstand zurück, kauft ihn zum vereinbarten Restwert oder schließt einen neuen Vertrag.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Transporter: Kauf oder Leasing?",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL braucht einen Transporter für Auslieferungen an Händler. Kaufpreis 60.000 € netto. Alle Konditionen sind Annahmen für diesen Vergleich.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Kauf mit Ratendarlehen",
+              "Leasing"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Vertrag",
+                  "Darlehen 60.000 €, 4 Jahre, 5 %",
+                  "48 Monate, Rate 1.250 € netto, keine Sonderzahlung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlung im ersten Jahr",
+                  "15.000 € Tilgung + 3.000 € Zins = 18.000 €",
+                  "12 × 1.250 € = 15.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlungen in vier Jahren",
+                  "60.000 € + 7.500 € Zinsen = 67.500 €",
+                  "48 × 1.250 € = 60.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nach vier Jahren",
+                  "Transporter gehört MAKEL, angenommener Wert 15.000 €",
+                  "Rückgabe; Kauf zum Restwert von 12.000 € möglich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten nach Abzug des Restwerts",
+                  "67.500 € − 15.000 € = 52.500 €",
+                  "60.000 €"
+                ]
+              }
+            ],
+            "fazit": "Über vier Jahre ist der Kauf um 7.500 € günstiger, belastet aber die Liquidität im ersten Jahr um 3.000 € stärker — und ganz erheblich mehr, wenn er aus eigenen Mitteln bezahlt wird.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Ergebnis hängt an Annahmen: Wäre der Transporter nach vier Jahren nur noch 8.000 € wert, schrumpfte der Vorteil des Kaufs auf 500 €. Würde MAKEL ihn sechs Jahre fahren, spräche noch mehr für den Kauf. Muss MAKEL wegen Abgasvorschriften oder neuer Technik nach drei Jahren wechseln, spricht mehr für Leasing.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Beim Kauf erwirbt der Betrieb den Gegenstand, bindet aber sofort Kapital und belastet die Liquidität. Beim Leasing nutzt er ihn gegen regelmäßige Raten, bleibt aber ohne Eigentümerstellung. Leasing schont die Liquidität und ist planbar, über die Laufzeit aber meist teurer als der Kauf. Schnell veraltende Güter sprechen eher für Leasing, langlebige eher für Kauf.",
-        "beispiele": [
-          "Fahrzeuge, die nach kurzer Zeit technisch ersetzt werden, können wegen Planbarkeit und Aktualität geleast werden.",
-          "Ein langlebiger Gegenstand kann über die Nutzungsdauer gekauft werden, weil keine Leasingmarge anfällt und Eigentum sowie Sicherungswert bleiben."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wem wird der Gegenstand bilanziell zugerechnet?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim üblichen Finanzierungsleasing in Deutschland wird der Gegenstand in der Regel beim Leasinggeber bilanziert, wenn die Grundmietzeit zwischen 40 % und 90 % der betriebsgewöhnlichen Nutzungsdauer liegt. Der Leasingnehmer bucht dann nur die Raten als Aufwand. Die Bilanzsumme steigt nicht, und die Eigenkapitalquote bleibt unverändert. Liegt die Laufzeit außerhalb dieses Rahmens oder ist der Vertrag auf den Leasingnehmer zugeschnitten, muss er den Gegenstand selbst bilanzieren.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Operating- und Finanzierungsleasing",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim Operating-Leasing ist die Laufzeit kurz oder jederzeit kündbar; der Leasinggeber trägt das Risiko, dass sich der Gegenstand nicht erneut vermieten lässt, und übernimmt oft auch den Service. Typisch sind Computer oder Kopierer. Beim Finanzierungsleasing ist eine feste Grundmietzeit unkündbar vereinbart; der Leasingnehmer trägt das Investitionsrisiko weitgehend selbst. Es ersetzt wirtschaftlich einen kreditfinanzierten Kauf.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb vergleicht Leasing und Kauf. Beim Leasing werden alle Raten und der Restwert betrachtet; beim Kauf Kaufpreis, Finanzierungskosten und erwarteter Restwert. Danach werden Liquidität, Eigentum, Sicherheiten und Nutzungsdauer ergänzt. Die Entscheidung fällt nicht allein wegen der niedrigeren Monatsrate.",
-        "typische_fehler": "Leasingrate und Kaufpreis werden direkt verglichen, ohne Laufzeit, Restwert und Finanzierungskosten einzubeziehen. Auch die fehlende Eigentümerstellung beim Leasing wird vergessen.",
         "verstaendnisfragen": [
-          "Welche Hauptvorteile hat Leasing? Liquiditätsschonung, Planbarkeit und oft einfacherer Zugang.",
-          "Welche Hauptnachteile hat Leasing? Höhere Gesamtkosten und kein Eigentum beziehungsweise kein eigener Sicherungswert."
-        ],
-        "pruefungsbezug": "Rechne beide Wege vollständig und bewerte anschließend Liquidität, Nutzungsdauer, Sicherheiten und Eigentum.",
-        "merksatz": "Leasing schont heute die Liquidität; Kauf kann über die gesamte Nutzungsdauer günstiger sein."
+          {
+            "frage": "Ein Verkäufer sagt: „Die Leasingrate von 1.250 € ist doch viel weniger als der Kaufpreis von 60.000 €.“ Was ist an diesem Vergleich falsch?",
+            "antwort": "Er vergleicht eine Monatsrate mit einem Gesamtbetrag. Richtig ist, alle Zahlungen über dieselbe Laufzeit zu addieren, die Finanzierungskosten beim Kauf einzubeziehen und den Restwert am Ende abzuziehen. Erst dann sind beide Wege vergleichbar.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum kann ein geleaster Gegenstand nicht als Kreditsicherheit für die Bank dienen?",
+            "antwort": "Er gehört dem Leasinggeber. Der Betrieb kann ihn deshalb weder sicherungsübereignen noch verpfänden. Wer viele Gegenstände least, hat weniger eigene Sicherheiten für spätere Kredite.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Factoring verkauft oder überträgt Forderungen an einen Factor.",
-          "Finanzierung, Ausfallrisiko und Debitorenarbeit sind getrennte Funktionen."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst Ablauf und Funktionen des Factorings, unterscheidest echtes und unechtes Factoring und berechnest die Kosten einer Factoringfinanzierung.",
+        "vorwissen_kurz": "Eine Forderung ist ein Anspruch auf künftige Zahlung. Bis der Kunde zahlt, ist Kapital gebunden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Forderungen verkaufen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim {{begriff:factoring|Factoring}} verkauft der Betrieb seine Kundenforderungen laufend an ein Factoringunternehmen (den Factor). Der Factor zahlt sofort einen großen Teil aus und behält einen Sicherheitseinbehalt für Abzüge des Kunden, etwa wegen Mängelrügen oder Skonto. Wenn der Kunde gezahlt hat, rechnet der Factor den Einbehalt ab.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was das kostet",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL verkauft die Forderungen eines Monats an Handelskunden über 595.000 € brutto mit 60 Tagen Zahlungsziel. Angenommene Bedingungen: 10 % Sicherheitseinbehalt, 1 % Factoringgebühr auf den Forderungsbetrag, 6 % Zinsen pro Jahr auf den ausgezahlten Betrag bis zur Zahlung des Kunden.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Rechnung",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Forderungsbetrag",
+                  "",
+                  "595.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Sicherheitseinbehalt",
+                  "10 % von 595.000 €",
+                  "59.500 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Sofortige Auszahlung",
+                  "595.000 € − 59.500 €",
+                  "535.500 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Factoringgebühr",
+                  "1 % von 595.000 €",
+                  "5.950 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinsen für 60 Tage",
+                  "535.500 € × 6 % × 60 ÷ 360",
+                  "5.355 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten zusammen",
+                  "5.950 € + 5.355 €",
+                  "11.305 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "MAKEL zahlt rund 1,9 % des Forderungsbetrags dafür, sofort über 535.500 € zu verfügen und — bei echtem Factoring — kein Ausfallrisiko mehr zu tragen. Ob sich das lohnt, zeigt der Vergleich mit dem, was MAKEL dadurch spart.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auf der anderen Seite stehen Einsparungen: weniger Kontokorrentzinsen, keine Forderungsausfälle (bei echtem Factoring) und weniger Aufwand für Debitorenbuchhaltung und Mahnwesen. Zudem kann MAKEL mit dem frühen Geld eigene Lieferantenrechnungen mit Skonto bezahlen. Rechnet sich eine dieser Einsparungen allein schon höher als 11.305 €, ist das Factoring günstig.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Factoring hat drei Funktionen: Finanzierung durch sofortige Auszahlung, Ausfallschutz durch Übernahme des Risikos und Dienstleistung durch Debitorenbuchhaltung, Mahnwesen und Inkasso. Beim echten Factoring übernimmt der Factor das Ausfallrisiko; beim unechten verbleibt es beim Betrieb. Der Factor prüft die Bonität und kauft nicht jede Forderung an.",
-        "beispiele": [
-          "Aus einer Forderung mit langem Zahlungsziel wird durch den Factor sofort Liquidität, abzüglich Gebühr und Sicherheitseinbehalt.",
-          "Beim unechten Factoring muss der Betrieb bei Ausfall zurückzahlen; beim echten trägt der Factor das Risiko."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Offenes und stilles Factoring",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim offenen Factoring erfahren die Kunden von der Abtretung und zahlen direkt an den Factor. Beim stillen Factoring bleibt der Verkauf verborgen; die Kunden zahlen weiter an den Betrieb, der das Geld weiterleitet. Die stille Form schont die Kundenbeziehung, ist für den Factor aber riskanter und deshalb seltener.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Factoring und Eigentumsvorbehalt der Lieferer",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat MAKEL Forderungen bereits über einen verlängerten Eigentumsvorbehalt an Lieferanten abgetreten, kann es sie nicht noch einmal verkaufen. Factoringverträge regeln deshalb, wie solche Vorausabtretungen behandelt werden — oft zahlt der Factor den Lieferanten direkt aus.",
+                "id": "b2-d2-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "k4-b3"
+                ],
+                "text": "Eigentumsvorbehalt als Sicherheit des Lieferers",
+                "id": "b2-d2-v1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb hat offene Forderungen und benötigt Liquidität. Der Factor prüft die Kundenbonität, zahlt den Rechnungsbetrag abzüglich Gebühr und Sicherheitseinbehalt aus und übernimmt je nach Vertrag Mahnwesen und Ausfallrisiko. Erst die Unterscheidung echt oder unecht zeigt, ob der Betrieb bei Nichtzahlung endgültig entlastet ist.",
-        "typische_fehler": "Factoring wird nur als Kredit oder nur als Inkasso verstanden. Außerdem wird echtes und unechtes Factoring über die Gebühren statt über das Ausfallrisiko unterschieden.",
         "verstaendnisfragen": [
-          "Welche drei Funktionen hat Factoring? Finanzierung, Ausfallschutz und Dienstleistung.",
-          "Wer trägt beim unechten Factoring den Ausfall? Der Betrieb."
-        ],
-        "pruefungsbezug": "Nenne zuerst die drei Funktionen und prüfe dann, wer das Ausfallrisiko trägt. Bonität und Gebühren ergänzen die Entscheidung.",
-        "merksatz": "Factoring kann Geld, Risiko und Arbeit abnehmen — echt oder unecht entscheidet über das Risiko."
+          {
+            "frage": "Ein Kunde zahlt eine angekaufte Forderung nicht, weil er zahlungsunfähig ist. Wer trägt den Verlust beim echten und wer beim unechten Factoring?",
+            "antwort": "Beim echten Factoring trägt der Factor den Ausfall; er hat die Forderung mit dem Risiko gekauft. Beim unechten Factoring belastet der Factor den Betrieb zurück, der den Betrag zurückzahlen muss. Unechtes Factoring ist deshalb wirtschaftlich eher ein Kredit mit Forderungen als Sicherheit.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Wozu dient der Sicherheitseinbehalt, und wann bekommt MAKEL ihn?",
+            "antwort": "Er deckt Abzüge, die der Kunde berechtigt vornimmt, etwa wegen einer Mängelrüge, einer Gutschrift oder Skonto. Hat der Kunde gezahlt, rechnet der Factor ab und zahlt den nicht verbrauchten Rest an MAKEL aus.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Finanzierungsentscheidungen verbinden Kosten, Liquidität und Nutzung.",
-          "Zahlungsziele, Lager und Mahnwesen können vor einer Finanzierung verbessert werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für einen konkreten Bedarf eine Finanzierungsform aus, begründest sie mit Rechnung und qualitativen Kriterien und nennst die Annahmen, unter denen die Empfehlung gilt.",
+        "vorwissen_kurz": "Darlehen, Leasing, Factoring und Kontokorrent lösen verschiedene Probleme.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst die Ursache, dann das Werkzeug",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor ein Betrieb über Finanzierungsformen nachdenkt, prüft er, ob er überhaupt zusätzliches Geld braucht. Zu lange Zahlungsziele, zu hohe Lagerbestände und ein nachlässiges Mahnwesen binden Geld, das sich ohne Zinsen freisetzen lässt. Erst wenn danach noch ein Bedarf bleibt, wird die passende Form gewählt. Vier Fragen führen fast immer zur richtigen Richtung.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Entscheidungsvorlage für die Geschäftsführung",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tobias Renner, kaufmännischer Geschäftsführer, bittet um eine Empfehlung für die zehn Firmenwagen des Außendienstes. Eine gute Vorlage ist knapp und vollständig.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Inhalt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ausgangslage",
+                  "10 Firmenwagen, Tausch alle drei Jahre wegen Kilometerleistung und Außenwirkung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Alternativen",
+                  "Kauf mit Darlehen, Finanzierungsleasing 36 Monate, Kauf aus eigenen Mitteln"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnung",
+                  "Zahlungen über drei Jahre, Finanzierungskosten, erwarteter Restwert je Alternative"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualitative Kriterien",
+                  "Liquidität, Planbarkeit, Aufwand bei Rückgabe, Sicherheiten für spätere Kredite"
+                ]
+              },
+              {
+                "zellen": [
+                  "Empfehlung",
+                  "Leasing: kurze Nutzung, planbare Raten, Liquidität bleibt für die Veredelungsanlage frei"
+                ]
+              },
+              {
+                "zellen": [
+                  "Annahmen und Grenzen",
+                  "gilt bei höchstens 30.000 km pro Jahr und Fahrzeug; Restwerte geschätzt; vor Unterschrift Rückgabebedingungen prüfen"
+                ]
+              }
+            ],
+            "fazit": "Die Empfehlung ist nur so gut wie ihre Annahmen. Wer sie ausdrücklich nennt, zeigt, wann die Entscheidung neu getroffen werden muss.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Vor jeder Finanzierung wird geprüft, ob das Problem in den eigenen Abläufen liegt: Zahlungsziele, Lagerbestand und Mahnwesen können Liquidität beeinflussen. Danach werden Kauf, Leasing oder Factoring nach Kosten, Risiko, Laufzeit und Bedarf verglichen. Die Begründung muss den konkreten Zweck und nicht nur ein einzelnes Vorteilskriterium nennen.",
-        "beispiele": [
-          "Bei schnell veraltenden Fahrzeugen wird Leasing mit der Nutzungsdauer und der Liquidität begründet, bei langlebigen Gütern Kauf mit Gesamtkosten und Eigentum.",
-          "Bei offenen Forderungen wird erst Mahnwesen und Zahlungsziel geprüft, bevor Factoringgebühren akzeptiert werden."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Mehrere Formen kombinieren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Praxis finanziert ein Betrieb selten alles auf einem Weg. MAKEL finanziert die Veredelungsanlage mit einem Darlehen, least die Firmenwagen, hält eine Kontokorrentlinie für saisonale Spitzen bereit und prüft Factoring für die Forderungen an große Handelsketten. Jede Form deckt den Bedarf, für den sie gemacht ist.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb braucht acht Transporter. Werden sie nach drei bis vier Jahren getauscht, sprechen Aktualität und planbare Raten für Leasing. Bei acht bis zehn Jahren Nutzung spricht die geringere Gesamtkostenbelastung eher für Kauf. Zusätzlich werden Liquidität, Sicherheiten und Vertragsbedingungen wie Restwert und Rückgabe geprüft.",
-        "typische_fehler": "Die Entscheidung wird nur mit der Monatsrate oder dem Ticketpreis begründet. Auch Vertragsdetails wie Restwert, Kilometerbegrenzung oder Nachforderungen werden übersehen.",
         "verstaendnisfragen": [
-          "Welche Reihenfolge ist sinnvoll? Erst eigene Abläufe verbessern, dann Finanzierungsalternativen vergleichen.",
-          "Welche zwei Nutzungssituationen nennt die Faustregel? Schnell veraltende Güter eher leasen, langlebige eher kaufen."
-        ],
-        "pruefungsbezug": "Formuliere eine Entscheidung mit Kosten, Liquidität, Nutzungsdauer, Risiko und Vertragsbedingungen; mindestens zwei nicht rein rechnerische Kriterien nennen.",
-        "merksatz": "Eine Finanzierungsform ist nur passend, wenn Kosten, Liquidität und Nutzung zusammenpassen."
+          {
+            "frage": "Ein Betrieb hat ständig Liquiditätsengpässe. Die Kunden zahlen im Schnitt nach 75 Tagen, vereinbart sind 30. Was prüfst du zuerst?",
+            "antwort": "Das Mahnwesen. Die Kunden zahlen 45 Tage später als vereinbart; das bindet Geld, das sich ohne Zinsen freisetzen lässt. Erst wenn konsequentes Mahnen, Skonto für schnelle Zahler und kürzere Ziele nicht reichen, kommen Factoring oder eine Kreditlinie in Frage.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum gehört in eine Entscheidungsvorlage der Abschnitt „Annahmen und Grenzen“?",
+            "antwort": "Jede Rechnung beruht auf Schätzungen, etwa zu Restwert, Laufleistung oder Zinsen. Ändert sich eine Annahme, kann die Entscheidung kippen. Wer die Annahmen nennt, macht die Empfehlung überprüfbar und zeigt, wann sie neu bewertet werden muss.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

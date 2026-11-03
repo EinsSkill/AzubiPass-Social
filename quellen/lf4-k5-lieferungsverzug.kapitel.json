@@ -7,73 +7,411 @@
   "minuten": 25,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Bei einer verspäteten Lieferung darf nicht sofort die Rechtsfolge gewählt werden. Zuerst muss sauber geprüft werden, ob überhaupt Lieferungsverzug vorliegt. Erst danach lässt sich entscheiden, ob Lieferung, Nachfrist, Rücktritt oder Schadensersatz verlangt werden kann.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Verzug setzt eine fällige Leistung voraus.",
-          "Unmöglichkeit und Verzögerung sind unterschiedliche Störungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst an einem Sachverhalt der Reihe nach, ob Lieferungsverzug vorliegt, und begründest jeden Prüfschritt.",
+        "vorwissen_kurz": "Fällig heißt: Der Käufer darf die Leistung jetzt verlangen. Vor dem vereinbarten Termin ist sie es nicht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum „zu spät“ noch kein Verzug ist",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wenn bestellte Ware nicht kommt, ist der Ärger groß, und der erste Impuls lautet: zurücktreten und woanders kaufen. Rechtlich ist das aber erst der letzte Schritt. Zuerst muss feststehen, dass der Lieferer im {{begriff:lieferungsverzug|Lieferungsverzug}} ist. Das Gesetz knüpft die Rechte des Käufers an diese Voraussetzung, damit nicht jede kleine Verspätung einen Vertrag sprengt.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Prüfung folgt vier Fragen in fester Reihenfolge. Fällt eine weg, liegt kein Verzug vor — dann musst du nicht weiterprüfen, sondern überlegen, welcher andere Fall vorliegt.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Fall: Bürostühle für den Umzug",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL hat 200 Bürostühle bestellt, Lieferung vereinbart „bis 1. Juni“. Am 8. Juni sind sie nicht da. Der Lieferer hat noch genug Stühle im Lager, aber Aufträge anderer Kunden vorgezogen.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfschritt",
+              "Frage",
+              "Im Fall"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. Fälligkeit",
+                  "Ist der Termin erreicht?",
+                  "Ja, seit 1. Juni ist die Lieferung fällig."
+                ]
+              },
+              {
+                "zellen": [
+                  "2. Nichtleistung trotz Möglichkeit",
+                  "Fehlt die Ware, obwohl Liefern möglich wäre?",
+                  "Ja, Stühle sind vorhanden, es wurde nicht geliefert."
+                ]
+              },
+              {
+                "zellen": [
+                  "3. Mahnung",
+                  "Wurde gemahnt oder ist die Mahnung entbehrlich?",
+                  "Entbehrlich: Der Termin ist kalendermäßig bestimmt."
+                ]
+              },
+              {
+                "zellen": [
+                  "4. Vertretenmüssen",
+                  "Hat der Lieferer die Verzögerung zu verantworten?",
+                  "Ja, er hat andere Aufträge bewusst vorgezogen."
+                ]
+              }
+            ],
+            "fazit": "Alle vier Voraussetzungen liegen vor. Der Lieferer ist seit dem 2. Juni im Verzug.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Vertretenmüssen hilft dem Käufer das Gesetz: Es wird vermutet. Nicht MAKEL muss beweisen, dass der Lieferer schuld ist; der Lieferer muss sich entlasten, etwa mit einem Unwetter, das sein Lager unzugänglich gemacht hat. Gelingt ihm das nicht, ist er verantwortlich.",
+            "id": "b1-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn eine Voraussetzung fehlt",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jeder Prüfschritt hat seinen Sinn. Vor dem 1. Juni darf MAKEL zwar unruhig werden, aber keine Rechte aus Verzug ableiten — auch eine Mahnung am 25. Mai wäre wirkungslos, weil noch nichts fällig war. Ist die Ware nicht mehr lieferbar, weil das einzige bestellte Ausstellungsstück verbrannt ist, liegt kein Verzug vor, sondern Unmöglichkeit; dann gelten andere Regeln. Und war ein Hochwasser schuld, das der Lieferer nicht verhindern konnte, fehlt das Vertretenmüssen.",
+            "id": "b1-p5"
+          }
         ],
-        "ablauf": [
-          "Prüfen, ob der Liefertermin beziehungsweise die Leistung fällig ist.",
-          "Prüfen, ob der Lieferer trotz Möglichkeit nicht leistet.",
-          "Prüfen, ob eine Mahnung erforderlich und erfolgt ist.",
-          "Prüfen, ob der Lieferer die Verzögerung zu vertreten hat."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Verzug ohne Verschulden — was dann noch geht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Fehlt nur das Vertretenmüssen, liegt kein Verzug vor, und MAKEL kann keinen Verzögerungsschaden verlangen. Trotzdem ist MAKEL nicht schutzlos: Für den Rücktritt nach § 323 BGB kommt es auf Verschulden nicht an. Setzt MAKEL eine angemessene Frist und liefert der Lieferer auch dann nicht, kann MAKEL zurücktreten. Nur Schadensersatz setzt voraus, dass der Lieferer die Störung zu vertreten hat.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Unmöglichkeit bei Gattungsware",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bestellt MAKEL 200 Stühle eines Serienmodells, ist das Gattungsware: Es kommt nicht auf bestimmte Stühle an. Brennt ein Teil des Lagers ab, muss der Lieferer andere Stühle derselben Art liefern, solange es sie gibt. Unmöglich wird die Leistung bei Gattungsware erst, wenn es keine passenden Stücke mehr gibt oder die Ware schon für MAKEL ausgesondert und angeboten war. Bei einem Einzelstück wie einem Ausstellungsstück ist das anders.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "erklaerung": "Eine verspätete Lieferung allein reicht nicht. Vor dem Termin kann kein Verzug eintreten. Ist die Leistung dauerhaft unmöglich, liegt ebenfalls kein Verzug vor, sondern ein anderer Fall. Die vier Fragen werden deshalb in einer festen Reihenfolge geprüft: fällig, nicht geliefert, gemahnt und verschuldet.",
-        "beispiele": [
-          "Eine Lieferung am 1. Juni, die am 2. Juni fehlt, ist fällig und nicht erbracht; bei einem kalendermäßig bestimmten Termin kann die Mahnung entbehrlich sein.",
-          "Verbrennt das einzige bestellte Einzelstück vor der Lieferung, ist die Leistung dauerhaft unmöglich und nicht lediglich verspätet."
-        ],
-        "fallbeispiel": "Bestellt wird eine Ware zum 1. Juni. Am 8. Juni fehlt sie noch. Der Termin ist fällig, die Ware wurde trotz möglicher Lieferung nicht erbracht. Weil der Termin kalendermäßig bestimmt ist, ist eine Mahnung nicht zwingend. Danach muss noch geprüft werden, ob der Lieferer die Verzögerung zu vertreten hat. Erst wenn alle vier Punkte bejaht werden, liegt Lieferungsverzug vor.",
-        "typische_fehler": "Direkt aus der Verspätung auf Rücktritt geschlossen oder eine Mahnung vor der Fälligkeit berücksichtigt. Auch Unmöglichkeit wird fälschlich als Verzug bezeichnet.",
         "verstaendnisfragen": [
-          "Warum ist eine Mahnung vor dem Liefertermin unwirksam? Weil die Leistung noch nicht fällig ist.",
-          "Was unterscheidet Unmöglichkeit vom Verzug? Bei Unmöglichkeit kann die Leistung dauerhaft nicht mehr erbracht werden; beim Verzug wäre sie noch möglich."
-        ],
-        "pruefungsbezug": "Die vier Prüfschritte ausdrücklich hinschreiben: fällig, nicht geliefert, Mahnung, Vertretenmüssen. Erst danach Rechtsfolgen ableiten.",
-        "merksatz": "Fällig, nicht geliefert, gemahnt, verschuldet — erst dann beginnt Lieferungsverzug."
+          {
+            "frage": "Am 25. Mai schreibt MAKEL dem Lieferer: „Bitte liefern Sie umgehend.“ Der Termin war der 1. Juni. Hat diese Mahnung eine Wirkung?",
+            "antwort": "Nein. Eine Mahnung wirkt nur, wenn die Leistung schon fällig ist. Am 25. Mai war sie es nicht. MAKEL kann das Schreiben nach Fälligkeit wiederholen, braucht es hier aber nicht, weil der Termin kalendermäßig bestimmt war.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Der Lieferer erklärt, ein Zulieferer habe ihn im Stich gelassen. Entlastet ihn das?",
+            "antwort": "In der Regel nicht. Die Beschaffung der Ware gehört zu seinem Risiko; Probleme mit seinen Zulieferern muss er sich meist zurechnen lassen. Entlasten würde ihn nur ein Ereignis, das er weder vorhersehen noch abwenden konnte. Er muss das darlegen, weil sein Vertretenmüssen vermutet wird.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Eine Mahnung ist eine eindeutige Aufforderung nach Eintritt der Fälligkeit.",
-          "§ 286 BGB nennt Fälle, in denen der Kalender oder die endgültige Weigerung die Mahnung ersetzt."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst an der Formulierung des Liefertermins, ob eine Mahnung nötig ist, und begründest die gesetzlichen Ausnahmen.",
+        "vorwissen_kurz": "Eine Mahnung ist die eindeutige Aufforderung an den Lieferer, jetzt zu liefern. Sie wirkt erst nach Eintritt der Fälligkeit.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum es überhaupt eine Mahnung braucht",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Mahnung soll dem Lieferer klarmachen: Jetzt wird es ernst, die Geduld des Käufers ist zu Ende. Erst danach treffen ihn die Folgen des Verzugs. Bei einem festen Termin wäre diese Warnung aber überflüssig. Der Lieferer kennt das Datum, er hat es selbst zugesagt. Deshalb sagt {{par:bgb-286|§ 286 BGB}}: Steht der Termin nach dem Kalender fest, „mahnt der Kalender“. Gleiches gilt, wenn sich der Termin von einem Ereignis aus nach dem Kalender berechnen lässt, oder wenn der Lieferer ernsthaft und endgültig erklärt, er werde nicht liefern.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Formulierungen richtig lesen",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Entscheidend ist, ob man aus dem Vertrag einen bestimmten Tag ablesen kann. „Am 15. Oktober“, „bis 30. April“ und „in der 42. Kalenderwoche“ ergeben feste Termine: Am Tag nach dem Termin bzw. nach dem Ende der Kalenderwoche tritt Verzug ein, sofern die anderen Voraussetzungen vorliegen. „14 Tage nach Auftragseingang“ ist ebenfalls berechenbar: Ging der Auftrag am 3. März ein, ist der 17. März der letzte Tag. „Schnellstmöglich“, „zeitnah“ oder „baldmöglichst“ ergeben dagegen kein Datum. Hier muss MAKEL nach angemessener Zeit mahnen.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vertragstext",
+              "Fälligkeit",
+              "Mahnung",
+              "Verzug ab"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„Lieferung am 15. Oktober“",
+                  "15. Oktober",
+                  "entbehrlich",
+                  "16. Oktober"
+                ]
+              },
+              {
+                "zellen": [
+                  "„14 Tage nach Auftragseingang“, Auftrag am 3. März",
+                  "17. März",
+                  "entbehrlich",
+                  "18. März"
+                ]
+              },
+              {
+                "zellen": [
+                  "„schnellstmöglich“; MAKEL mahnt am 10. Mai",
+                  "nach angemessener Zeit",
+                  "nötig",
+                  "Zugang der Mahnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Wir liefern nicht“, Schreiben am 2. Mai",
+                  "—",
+                  "entbehrlich",
+                  "sofort mit der Erklärung"
+                ]
+              }
+            ],
+            "fazit": "Wer schreibt, muss das Datum nicht aufschreiben, das der Vertrag schon hergibt — wer „schnellstmöglich“ vereinbart, muss mahnen.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Steht der Liefertermin kalendermäßig fest, tritt der Verzug nach Ablauf des Termins ohne zusätzliche Mahnung ein. Das gilt auch, wenn der Termin aus einem Ereignis und einer festen Frist berechnet werden kann, zum Beispiel 14 Tage nach Auftragseingang. Bei unbestimmten Formulierungen wie ‚schnellstmöglich‘ muss dagegen grundsätzlich gemahnt werden.",
-        "beispiele": [
-          "‚Lieferung am 15. Oktober‘: Ab dem Folgetag kann Verzug ohne Mahnung vorliegen.",
-          "‚Lieferung 14 Tage nach Auftragseingang‘ ist berechenbar; ‚Lieferung schnellstmöglich‘ ist dagegen kein bestimmter Termin."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Was in eine Mahnung gehört",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Mahnung braucht keine bestimmte Form, sollte aber aus Beweisgründen schriftlich oder per E-Mail mit Nachweis erfolgen. Sie muss eindeutig sein: Es muss klar werden, dass MAKEL die Leistung jetzt verlangt. Eine freundliche Nachfrage („Wann dürfen wir mit der Ware rechnen?“) ist keine Mahnung. Eine Frist muss die Mahnung nicht enthalten — wer aber später zurücktreten will, verbindet sie sinnvollerweise gleich mit einer angemessenen Nachfrist.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kalenderwoche und Wochenende",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ist „Lieferung bis Freitag, 14. Juni“ vereinbart, ist der Lieferer ab Samstag im Verzug, sofern nichts anderes vereinbart ist. Fällt der letzte Tag einer Frist auf einen Samstag, Sonntag oder Feiertag, verschiebt er sich für die Abgabe von Erklärungen und die Bewirkung von Leistungen auf den nächsten Werktag. Bei Lieferterminen in Prüfungsaufgaben wird diese Feinheit selten gefragt; im Betrieb lohnt der Blick in den Kalender.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "fallbeispiel": "Ein Vertrag bestimmt die Lieferung am 15. Oktober. Am 16. Oktober ist die Ware nicht da. Der Termin war kalendermäßig bestimmt, deshalb ist die Mahnung nach § 286 BGB entbehrlich. Anders wäre es bei ‚schnellstmöglich‘: Dann müsste der Käufer nach Fälligkeit eine eindeutige Aufforderung zur Lieferung senden.",
-        "typische_fehler": "Jede verspätete Lieferung zwingend mit einer Mahnung verbinden oder eine unbestimmte Zusage wie ‚baldmöglichst‘ als kalendermäßige Bestimmung behandeln. Auch ein einseitig genannter, nicht vereinbarter Termin darf nicht automatisch als Vertragsinhalt gelten.",
         "verstaendnisfragen": [
-          "Welche Formulierung lässt den Kalender mahnen? Ein kalendermäßig bestimmter oder bestimmbarer Liefertermin.",
-          "Wann bleibt die Mahnung nötig? Bei einem unbestimmten Termin oder wenn kein anderer gesetzlicher Ausnahmefall greift."
-        ],
-        "pruefungsbezug": "Markiere im Sachverhalt jedes Datum und jede Frist. Wörter wie ‚am‘, ‚bis‘ oder ‚14 Tage nach‘ sprechen für Bestimmbarkeit; ‚schnellstmöglich‘ nicht.",
-        "merksatz": "Fester Termin = Mahnung entbehrlich; unbestimmter Termin = nach Fälligkeit mahnen."
+          {
+            "frage": "Im Vertrag steht „Lieferung Anfang Mai“. Ist eine Mahnung nötig?",
+            "antwort": "Ja, in der Regel. „Anfang Mai“ ergibt keinen bestimmten Tag, an dem die Leistung spätestens erbracht sein muss. MAKEL sollte nach angemessener Zeit mahnen und dabei am besten ein festes Datum nennen.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Ein Lieferer schreibt nach Vertragsschluss: „Wir liefern am 20. Juni.“ Im Vertrag stand „schnellstmöglich“. Mahnt jetzt der Kalender?",
+            "antwort": "Nicht sicher. Der Termin ist einseitig mitgeteilt und nicht vertraglich vereinbart worden. Um sicherzugehen, sollte MAKEL nach Ablauf des 20. Juni mahnen oder den Termin ausdrücklich bestätigen, damit er Vertragsinhalt wird.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Verzug und Rücktritt sind nicht dasselbe.",
-          "Rücktritt und Schadensersatz statt der Leistung setzen grundsätzlich eine erfolglose angemessene Frist voraus."
+        "darstellung": "vollfassung",
+        "ziel": "Du leitest aus einem festgestellten Verzug die möglichen Rechte des Käufers ab, ordnest jedem Recht seine Voraussetzung zu und wählst begründet aus.",
+        "vorwissen_kurz": "Ein Schaden durch die Verspätung (Verzögerungsschaden) ist etwas anderes als der Schaden, der entsteht, weil die Leistung ganz ausbleibt (Schaden statt der Leistung).",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Weiter auf Lieferung bestehen oder sich lösen?",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Steht der Verzug fest, muss MAKEL zuerst entscheiden, ob es die Ware noch haben will. Braucht MAKEL sie weiter, bleibt der Vertrag bestehen. MAKEL besteht auf Lieferung und verlangt zusätzlich den Schaden, den die Verspätung verursacht hat. Will MAKEL die Ware nicht mehr, weil sie anderswo schneller zu bekommen ist, führt der Weg über eine **angemessene Nachfrist**: Erst wenn sie erfolglos verstreicht, kann MAKEL zurücktreten oder Schadensersatz statt der Leistung verlangen. Diese Frist gibt dem Lieferer eine letzte Chance und verhindert, dass ein Vertrag wegen eines Tages Verspätung platzt.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Fall: Stühle für den Umzug am 20. Juni",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Stühle waren bis 1. Juni bestellt, der Umzug ist am 20. Juni. Am 8. Juni ist der Lieferer im Verzug.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Datum",
+              "Handlung von MAKEL",
+              "Rechtliche Wirkung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "8. Juni",
+                  "Schreiben: „Liefern Sie bis spätestens 15. Juni.“",
+                  "Angemessene Nachfrist gesetzt."
+                ]
+              },
+              {
+                "zellen": [
+                  "9. Juni",
+                  "Miete von 50 Leihstühlen für eine Schulung: 300 €",
+                  "Verzögerungsschaden, ersatzfähig neben der Lieferung."
+                ]
+              },
+              {
+                "zellen": [
+                  "16. Juni",
+                  "Frist erfolglos verstrichen",
+                  "Rücktritt und Schadensersatz statt der Leistung möglich."
+                ]
+              },
+              {
+                "zellen": [
+                  "17. Juni",
+                  "Kauf bei einem anderen Händler: 200 × 95 € statt 200 × 85 €",
+                  "Deckungskauf: Mehrpreis von 2.000 € als Schadensersatz."
+                ]
+              }
+            ],
+            "fazit": "MAKEL hat zuerst an der Lieferung festgehalten und den Verspätungsschaden gesichert, dann mit Frist den Weg zum Deckungskauf eröffnet.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit dem Rücktritt allein wäre MAKEL vom Vertrag frei, bekäme aber kein Geld für den Mehrpreis. Den Mehrpreis gibt es über den Schadensersatz statt der Leistung. Beides lässt sich verbinden. Der Rücktritt verlangt kein Verschulden, der Schadensersatz schon — im Fall hat der Lieferer die Verzögerung zu vertreten.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Fixgeschäft: wenn der Termin alles ist",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Manchmal ist eine spätere Lieferung nutzlos: Die Weihnachtsdekoration für den 1. Dezember oder das Catering für eine Messe am 12. Mai. Wird im Vertrag deutlich, dass das Geschäft mit der Einhaltung des Termins stehen und fallen soll, ist es ein **Fixgeschäft**. Dann darf MAKEL ohne Nachfrist zurücktreten. Beim beiderseitigen Handelskauf regelt {{par:hgb-376|§ 376 HGB}} zusätzlich: Will der Käufer trotz Terminüberschreitung noch die Lieferung, muss er das sofort nach Ablauf des Termins anzeigen.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Bei bestehendem Verzug kann der Käufer zunächst weiter auf Lieferung bestehen und einen Verzögerungsschaden verlangen. Will er sich vom Vertrag lösen oder die Ware anderweitig beschaffen und den Mehrpreis verlangen, braucht er grundsätzlich eine angemessene Nachfrist. Das Fixgeschäft bildet im vorhandenen Stoff eine besondere Ausnahme.",
-        "beispiele": [
-          "Der Käufer besteht weiter auf Lieferung und verlangt zusätzlich die Kosten einer notwendigen Ersatzanmietung als Verzögerungsschaden.",
-          "Bei einem Deckungskauf für 1.200 € statt ursprünglich 1.000 € beträgt der geltend gemachte Mehrpreis 200 €, sofern die weiteren Voraussetzungen vorliegen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wann die Nachfrist entbehrlich ist",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Außer beim Fixgeschäft braucht MAKEL keine Nachfrist, wenn der Lieferer ernsthaft und endgültig erklärt, er werde nicht liefern. Eine Frist wäre dann reine Förmlichkeit. Auch besondere Umstände, bei denen der sofortige Rücktritt unter Abwägung beider Interessen gerechtfertigt ist, können die Frist entbehrlich machen — diese Ausnahme ist aber eng.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Was „angemessen“ heißt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Nachfrist muss nicht so lang sein, dass der Lieferer erst jetzt mit der Herstellung beginnen könnte. Sie soll ihm ermöglichen, eine im Wesentlichen vorbereitete Leistung abzuschließen. Bei Ware, die vorrätig sein sollte, können wenige Tage bis eine Woche angemessen sein; bei einer Sonderanfertigung mehr. Setzt MAKEL eine zu kurze Frist, ist sie nicht wirkungslos — es läuft dann eine angemessene Frist.",
+                "id": "b3-d2-p1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "fallbeispiel": "200 Bürostühle sollten bis zum 1. Juni geliefert werden und werden für einen Umzug am 20. Juni benötigt. Am 8. Juni fehlt die Lieferung. Weil die Stühle noch gebraucht werden, wird zunächst eine angemessene Nachfrist bis zum 15. Juni gesetzt. Zusätzlich kann ein bereits entstandener Verzögerungsschaden verlangt werden. Läuft die Frist erfolglos ab, kommen Rücktritt oder Schadensersatz statt der Leistung und damit ein Deckungskauf in Betracht.",
-        "typische_fehler": "Sofortiger Rücktritt allein wegen des abgelaufenen Termins oder Verwechslung von Verzögerungsschaden und Schadensersatz statt der Leistung. Die Nachfrist wird nur beim Fixgeschäft entbehrlich.",
         "verstaendnisfragen": [
-          "Was darf der Käufer sofort bei Verzug? Weiter auf Lieferung bestehen und Verzögerungsschaden verlangen.",
-          "Was muss vor dem Rücktritt grundsätzlich geschehen? Eine angemessene Frist zur Leistung muss erfolglos verstreichen."
-        ],
-        "pruefungsbezug": "Rechtsfolge immer an die Voraussetzung knüpfen: Lieferung plus Verzögerungsschaden bei Verzug; Rücktritt oder Deckungskauf grundsätzlich erst nach Nachfrist.",
-        "merksatz": "Verzug eröffnet Rechte, aber Rücktritt und Ersatzlieferung brauchen grundsätzlich eine erfolglose Nachfrist."
+          {
+            "frage": "MAKEL setzt eine Nachfrist und kauft schon am nächsten Tag, vor Fristablauf, woanders ein. Kann es den Mehrpreis verlangen?",
+            "antwort": "Nein. Schadensersatz statt der Leistung setzt grundsätzlich voraus, dass die angemessene Frist erfolglos abgelaufen ist. Wer vorher woanders kauft, trägt den Mehrpreis selbst, es sei denn, eine Ausnahme wie ein Fixgeschäft oder eine endgültige Leistungsverweigerung lag vor.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Die Weihnachtsdekoration war fest zum 1. Dezember bestellt, mit dem Vermerk „Liefertermin fix“. Sie kommt am 5. Dezember. Was kann MAKEL tun?",
+            "antwort": "Es liegt ein Fixgeschäft vor. MAKEL kann ohne Nachfrist zurücktreten und die verspätete Ware zurückweisen. Will es die Dekoration dennoch haben, muss es das beim beiderseitigen Handelskauf dem Lieferer sofort nach Ablauf des Termins mitteilen; sonst kann es keine Lieferung mehr verlangen.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -140,7 +478,7 @@
         },
         {
           "typ": "merke",
-          "text": "Verspätung allein reicht nicht. **Verzug beginnt frühestens mit der Mahnung** — und die kann erst nach Fälligkeit wirksam ausgesprochen werden.",
+          "text": "Verspätung allein reicht nicht. **Verzug beginnt mit der Mahnung nach Fälligkeit** — ohne Mahnung nur, wenn das Gesetz sie für entbehrlich erklärt, etwa bei einem kalendermäßig bestimmten Termin.",
           "karteikarte": "Welche vier Voraussetzungen müssen für Lieferungsverzug vorliegen?"
         }
       ]
@@ -261,7 +599,7 @@
         },
         {
           "typ": "achtung",
-          "text": "Beim handelsrechtlichen Fixgeschäft dreht sich die Pflicht um: Will der Käufer **trotzdem** die Lieferung haben, muss er das dem Verkäufer **unverzüglich** anzeigen. Schweigt er, gilt der Vertrag als aufgehoben — Schweigen ist hier ausnahmsweise eine Erklärung."
+          "text": "Beim handelsrechtlichen Fixgeschäft ({{par:hgb-376|§ 376 HGB}}) dreht sich die Pflicht um: Will der Käufer **trotzdem** die Lieferung haben, muss er das dem Verkäufer **sofort** nach Ablauf des Termins anzeigen. Schweigt er, kann er keine Lieferung mehr verlangen."
         },
         {
           "typ": "check",
@@ -321,7 +659,7 @@
     "Bei ernsthafter, endgültiger Leistungsverweigerung ist die Mahnung ebenfalls entbehrlich.",
     "Auf Lieferung bestehen geht sofort; Verzögerungsschaden kommt hinzu.",
     "{{par:bgb-323|§ 323 BGB}}: Rücktritt erst nach erfolglos verstrichener angemessener Frist.",
-    "Beim handelsrechtlichen Fixgeschäft muss der Käufer die gewünschte Erfüllung unverzüglich anzeigen."
+    "Beim handelsrechtlichen Fixgeschäft muss der Käufer die gewünschte Erfüllung sofort nach Ablauf des Termins anzeigen."
   ],
   "selbsttest": [
     {
@@ -332,7 +670,7 @@
     {
       "typ": "Wissen",
       "frage": "Welche Rechte hat der Käufer bei Lieferungsverzug, und welche Voraussetzung haben sie jeweils?",
-      "loesung": "Erstens kann er weiterhin auf Lieferung bestehen und zusätzlich Ersatz des Verzögerungsschadens verlangen; dafür genügt der Verzug selbst. Zweitens kann er nach § 323 BGB vom Vertrag zurücktreten, allerdings erst nachdem er dem Lieferer erfolglos eine angemessene Frist zur Leistung gesetzt hat. Drittens kann er Schadensersatz statt der Leistung verlangen, ebenfalls nach erfolglosem Fristablauf; praktisch bedeutet das den Deckungskauf, bei dem er die Ware anderweitig beschafft und den Mehrpreis ersetzt verlangt. Beim Fixgeschäft im beiderseitigen Handelskauf entfällt die Fristsetzung, dafür muss der Käufer unverzüglich anzeigen, wenn er trotzdem Erfüllung will."
+      "loesung": "Erstens kann er weiterhin auf Lieferung bestehen und zusätzlich Ersatz des Verzögerungsschadens verlangen; dafür genügt der Verzug selbst. Zweitens kann er nach § 323 BGB vom Vertrag zurücktreten, allerdings erst nachdem er dem Lieferer erfolglos eine angemessene Frist zur Leistung gesetzt hat. Drittens kann er Schadensersatz statt der Leistung verlangen, ebenfalls nach erfolglosem Fristablauf; praktisch bedeutet das den Deckungskauf, bei dem er die Ware anderweitig beschafft und den Mehrpreis ersetzt verlangt. Beim Fixgeschäft im beiderseitigen Handelskauf entfällt die Fristsetzung, dafür muss der Käufer sofort nach Ablauf des Termins anzeigen, wenn er trotzdem Erfüllung will."
     },
     {
       "typ": "Fall",

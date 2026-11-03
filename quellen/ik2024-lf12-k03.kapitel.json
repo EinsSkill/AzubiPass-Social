@@ -6,86 +6,483 @@
   "untertitel": "Ein nachvollziehbares Auswahlverfahren planen, Individual- und Kollektivarbeitsrecht unterscheiden und die Einstellung sauber abschließen.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Die Ausschreibung nennt Muss- und Kann-Anforderungen (Kapitel 2).",
-          "Eine Nutzwertanalyse gewichtet Kriterien (LF 2)."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst ein Auswahlverfahren mit vorher festgelegten, gewichteten Kriterien, wertest Bewerbungen mit einer Entscheidungsmatrix aus und erkennst die Grenzen dieser Auswertung.",
+        "vorwissen_kurz": "Auf die Lagerstelle haben sich mehrere Personen beworben. MAKEL Studio muss fair und nachvollziehbar auswählen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Kriterien vor den Bewerbungen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein faires Auswahlverfahren legt die Kriterien fest, **bevor** die erste Bewerbung gelesen wird. Sie ergeben sich aus dem Anforderungsprofil der Stellenbeschreibung. Jedes Kriterium erhält ein Gewicht, das ausdrückt, wie wichtig es für die Tätigkeit ist. Dann wird jede Bewerbung nach denselben Maßstäben bewertet. Typische Stufen sind die Sichtung der Unterlagen, ein strukturiertes Gespräch und gegebenenfalls ein Probearbeitstag.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Kriterien statt zwei",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Gewicht",
+              "A",
+              "B",
+              "C"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fachkompetenz Lager und Scanner",
+                  "50 %",
+                  "4",
+                  "3",
+                  "4"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfahrung in vergleichbarer Tätigkeit",
+                  "30 %",
+                  "3",
+                  "5",
+                  "2"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Sorgfalt im Probearbeitstag",
+                  "20 %",
+                  "5",
+                  "3",
+                  "5"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "gewichtete Summe",
+                  "",
+                  "3,9",
+                  "3,6",
+                  "3,6"
+                ],
+                "mono": [
+                  4
+                ]
+              }
+            ],
+            "fazit": "Mit dem dritten Kriterium aus dem Probearbeitstag liegt A vorn. Mit nur zwei Kriterien wie in der Tabelle oben lag B vorn.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Beispiel zeigt Stärke und Grenze der Matrix zugleich. Sie macht die Entscheidung nachvollziehbar und zwingt dazu, alle gleich zu behandeln. Aber das Ergebnis hängt an den gewählten Kriterien und Gewichten. Ein Unterschied von 0,3 Punkten ist kein Beweis, dass A besser ist. Die Matrix ist deshalb eine Entscheidungshilfe; die Entscheidung selbst treffen Menschen, und sie begründen sie.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Ein nachvollziehbares Auswahlverfahren legt die Kriterien vorher fest und wendet sie auf alle Bewerbungen gleich an. Zuerst werden die Unterlagen auf Muss-Kriterien geprüft (Vorauswahl). Dann folgen ein oder mehrere Verfahren: strukturiertes Interview, Arbeitsprobe, Probearbeiten, bei manchen Stellen Tests oder Assessment-Center. Eine Bewertungsmatrix gewichtet die Kriterien und vergibt Punkte; die gewichtete Summe ist eine Entscheidungshilfe, ersetzt aber nicht das Nachdenken über die Ergebnisse.",
-        "beispiele": [
-          "Fachkompetenz 60 %, passende Erfahrung 40 %; Skala 1–5, höher ist besser.",
-          "Bewerberin A: 4 und 3 Punkte → 0,6 × 4 + 0,4 × 3 = 3,6."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Personalfragebogen und Auswahlrichtlinien",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Verwendet MAKEL Studio einen einheitlichen Personalfragebogen oder allgemeine Auswahlrichtlinien, braucht es dafür die Zustimmung des Betriebsrats (§§ 94, 95 BetrVG). Das sichert, dass die Kriterien für alle gleich und sachlich sind.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Für die Stelle in Lager und Versand sind zwei Bewerbungen in der engeren Wahl. Jonas Weidner und die Personalabteilung haben vorher festgelegt: Fachkompetenz 60 %, Erfahrung 40 %. A erhält 4 und 3 Punkte (3,6), B 3 und 5 Punkte (3,8). Vor der Entscheidung prüfen sie, ob die Punkte gut begründet sind.",
-        "typische_fehler": "Kriterien nachträglich so ändern, dass die bevorzugte Person vorne liegt.",
         "verstaendnisfragen": [
-          "Warum werden Kriterien vorher festgelegt? Damit alle gleich behandelt werden und die Entscheidung nachvollziehbar ist.",
-          "Wie wird der gewichtete Punktwert berechnet? Summe aus Gewicht × Punkte je Kriterium."
-        ],
-        "pruefungsbezug": "Ein Auswahlverfahren mit gewichteter Bewertung planen und rechnen.",
-        "merksatz": "Kriterien vorher festlegen, für alle gleich anwenden; gewichtete Matrix = Entscheidungshilfe, kein Automatismus."
+          {
+            "frage": "Warum werden die Kriterien vor der Sichtung der Bewerbungen festgelegt?",
+            "antwort": "Damit sie nicht nachträglich so gewählt werden, dass eine bevorzugte Person vorne liegt. Alle werden an denselben Maßstäben gemessen.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Berechne die gewichtete Summe für B: 3, 5 und 3 Punkte bei 50 %, 30 % und 20 %.",
+            "antwort": "1,5 + 1,5 + 0,6 = 3,6.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Das AGG schützt auch im Auswahlverfahren (Kapitel 2).",
-          "Bewerbungsunterlagen sind personenbezogene Daten."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst ein strukturiertes Vorstellungsgespräch mit tätigkeitsbezogenen Fragen, unterscheidest zulässige von unzulässigen Fragen und dokumentierst die Entscheidung datensparsam.",
+        "vorwissen_kurz": "Im Gespräch zeigt sich, wie jemand denkt und arbeitet. Es darf aber nicht in die Privatsphäre eindringen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fragen, die zur Arbeit gehören",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein **strukturiertes Interview** stellt allen Bewerbenden dieselben Fragen in derselben Reihenfolge und bewertet die Antworten nach vorher festgelegten Maßstäben. Besonders aussagekräftig sind Fragen nach konkreten Situationen: „Wie sind Sie vorgegangen, als …?\" Zulässig sind Fragen, an denen der Arbeitgeber ein berechtigtes Interesse für die konkrete Tätigkeit hat. Fragen nach Schwangerschaft, Religion, Gewerkschaftsmitgliedschaft, Familienplanung oder sexueller Identität sind unzulässig.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leitfaden für die Lagerstelle",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Phase",
+              "Frage oder Inhalt",
+              "Bewertungsmaßstab"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einstieg",
+                  "Vorstellung von MAKEL Studio und der Stelle",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Erfahrung",
+                  "Welche Lagertätigkeiten haben Sie bisher ausgeführt?",
+                  "konkrete Beispiele, passende Systeme"
+                ]
+              },
+              {
+                "zellen": [
+                  "Situation",
+                  "Ware und Lieferschein stimmen nicht überein. Was tun Sie?",
+                  "Prüfen, dokumentieren, melden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Arbeitsweise",
+                  "Wie behalten Sie bei vielen Aufträgen den Überblick?",
+                  "nachvollziehbare Methode"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fragen der Person",
+                  "Was möchten Sie über uns wissen?",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abschluss",
+                  "nächster Schritt und Zeitrahmen",
+                  "—"
+                ]
+              }
+            ],
+            "fazit": "Alle Bewerbenden durchlaufen dieselben Phasen. So lassen sich Antworten vergleichen, statt sich nur auf einen Gesamteindruck zu verlassen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wird eine unzulässige Frage gestellt, muss die Person sie nicht wahrheitsgemäß beantworten; eine falsche Antwort hat keine Folgen für den späteren Vertrag. Nach dem Gespräch dokumentieren die Beteiligten ihre Bewertung kurz und sachlich, bezogen auf die Kriterien. Bewerbungsunterlagen abgelehnter Personen werden nach Ablauf der Fristen gelöscht, in denen Ansprüche nach dem AGG geltend gemacht werden können; üblich sind rund sechs Monate. Länger aufbewahrt werden dürfen sie nur mit Einwilligung, etwa für einen Talentpool.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Im strukturierten Interview stellen alle Bewerbenden dieselben, tätigkeitsbezogenen Fragen; die Antworten werden nach vorher festgelegten Maßstäben bewertet. Unzulässig sind Fragen, die das AGG oder das Persönlichkeitsrecht verletzen, etwa nach Schwangerschaft oder Familienplanung, Religion, Gewerkschaftszugehörigkeit oder sexueller Identität. Die Entscheidung wird dokumentiert. Bewerbungsunterlagen werden vertraulich behandelt und nach Abschluss des Verfahrens und Ablauf der Fristen für mögliche Ansprüche gelöscht oder zurückgegeben.",
-        "beispiele": [
-          "Zulässig: „Wie gehen Sie vor, wenn der Lieferschein nicht zur Ware passt?“",
-          "Unzulässig: „Planen Sie, in den nächsten Jahren Kinder zu bekommen?“"
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Frage nach der Schwerbehinderung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Vor der Einstellung ist die allgemeine Frage nach einer Schwerbehinderung grundsätzlich unzulässig, weil sie zu einer Benachteiligung führen kann. Zulässig ist die Frage, ob gesundheitliche Einschränkungen bestehen, die die konkrete Tätigkeit unmöglich machen, etwa schweres Heben, wenn es zwingend zur Stelle gehört.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Im Gespräch mit Bewerberin B fragt Luca Petrelli spontan nach ihren Kinderwunsch-Plänen. Jonas unterbricht freundlich und kehrt zu den vorbereiteten Fragen zurück. Nach dem Gespräch erklärt er Luca, warum diese Frage unzulässig ist und in der Bewertung keine Rolle spielen darf.",
-        "typische_fehler": "Unzulässige persönliche Fragen stellen oder Bewerbungsdaten unbegrenzt aufbewahren.",
         "verstaendnisfragen": [
-          "Was kennzeichnet ein strukturiertes Interview? Gleiche, tätigkeitsbezogene Fragen und vorher festgelegte Bewertungsmaßstäbe.",
-          "Nenne eine unzulässige Frage. Zum Beispiel nach Schwangerschaft, Religion oder Gewerkschaftszugehörigkeit."
-        ],
-        "pruefungsbezug": "Gespräche fair gestalten und Entscheidungen dokumentieren.",
-        "merksatz": "Strukturiert fragen, tätigkeitsbezogen bewerten, dokumentieren — keine Fragen zu geschützten Merkmalen; Daten nach Fristablauf löschen."
+          {
+            "frage": "Ist die Frage „Planen Sie in den nächsten Jahren Kinder?\" zulässig?",
+            "antwort": "Nein. Sie betrifft die Familienplanung und kann zu einer Benachteiligung wegen des Geschlechts führen.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie lange werden Unterlagen abgelehnter Bewerbender üblicherweise aufbewahrt?",
+            "antwort": "Rund sechs Monate, damit der Arbeitgeber sich gegen mögliche AGG-Ansprüche verteidigen kann. Länger nur mit Einwilligung.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Gesetze gelten für alle.",
-          "Gewerkschaften verhandeln mit Arbeitgebern."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Individual- und Kollektivarbeitsrecht, ordnest Gesetz, Tarifvertrag, Betriebsvereinbarung und Arbeitsvertrag in ihre Rangfolge ein und wendest das Günstigkeitsprinzip an.",
+        "vorwissen_kurz": "Was im Arbeitsvertrag steht, gilt nicht unbedingt. Es kommt darauf an, was Gesetz und Tarif vorgeben.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer was regelt",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das **Individualarbeitsrecht** regelt das Verhältnis zwischen Arbeitgeber und einzelnem Beschäftigten: Arbeitsvertrag, Urlaub, Kündigung, Entgeltfortzahlung. Das **Kollektivarbeitsrecht** regelt das Verhältnis zwischen Arbeitgebern und Gruppen von Beschäftigten: Tarifverträge zwischen Gewerkschaften und Arbeitgebern oder ihren Verbänden, Betriebsvereinbarungen zwischen Betriebsrat und Arbeitgeber, die Mitbestimmung nach dem Betriebsverfassungsgesetz. Beide Ebenen greifen ineinander.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Regel gilt im Einzelfall?",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Sachverhalt",
+              "höhere Ebene",
+              "Arbeitsvertrag",
+              "gilt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Urlaub",
+                  "Gesetz: 20 Tage bei 5-Tage-Woche (BUrlG)",
+                  "28 Tage",
+                  "28 Tage, weil günstiger"
+                ]
+              },
+              {
+                "zellen": [
+                  "Urlaub (Variante)",
+                  "Gesetz: 20 Tage",
+                  "18 Tage",
+                  "20 Tage; die Vertragsklausel ist insoweit unwirksam"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stundenlohn",
+                  "Gesetz: Mindestlohn",
+                  "unter dem Mindestlohn",
+                  "Mindestlohn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wochenarbeitszeit",
+                  "Tarifvertrag: 38 Stunden, bei Tarifbindung",
+                  "40 Stunden ohne Ausgleich",
+                  "38 Stunden"
+                ]
+              }
+            ],
+            "fazit": "Der Arbeitsvertrag kann bessere Bedingungen vereinbaren, aber keine schlechteren als Gesetz oder geltender Tarifvertrag.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob ein Tarifvertrag gilt, muss konkret geprüft werden. Er gilt, wenn beide Seiten tarifgebunden sind, wenn er für allgemeinverbindlich erklärt wurde oder wenn der Arbeitsvertrag auf ihn verweist. Viele Unternehmen orientieren sich am Tarif, ohne gebunden zu sein; dann gilt, was im Vertrag steht, solange das Gesetz eingehalten ist. Für die Höhe des Mindestlohns gilt immer der aktuelle gesetzliche Wert.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Das Individualarbeitsrecht regelt das Verhältnis zwischen einzelner Person und Arbeitgeber: Arbeitsvertrag, Kündigungsschutz, Urlaub, Arbeitszeit, Entgeltfortzahlung. Das Kollektivarbeitsrecht regelt Beziehungen zwischen Gruppen: Tarifverträge zwischen Gewerkschaften und Arbeitgeberverbänden oder einzelnen Arbeitgebern, Betriebsvereinbarungen zwischen Betriebsrat und Arbeitgeber, die Mitbestimmung. Es gilt eine Rangfolge: Gesetz, Tarifvertrag, Betriebsvereinbarung, Arbeitsvertrag. Eine niedrigere Ebene darf in der Regel nur zugunsten der Beschäftigten abweichen (Günstigkeitsprinzip). Ein Tarifvertrag gilt nur, wenn er anwendbar ist — etwa durch Tarifbindung beider Seiten, Allgemeinverbindlichkeit oder Bezugnahme im Arbeitsvertrag. Besteht ein Betriebsrat, wirkt er bei Einstellungen mit.",
-        "beispiele": [
-          "Gesetzlicher Mindesturlaub, im Arbeitsvertrag mehr Tage: zulässig (günstiger).",
-          "Der Arbeitsvertrag verweist auf einen Tarifvertrag: dessen Regeln gelten für das Arbeitsverhältnis."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Betriebsvereinbarung und Tarifvertrag",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Arbeitsentgelte und sonstige Arbeitsbedingungen, die durch Tarifvertrag geregelt sind oder üblicherweise geregelt werden, können nicht Gegenstand einer Betriebsvereinbarung sein, es sei denn, der Tarifvertrag lässt das ausdrücklich zu (§ 77 Abs. 3 BetrVG). Das schützt die Tarifautonomie.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Luca fragt, ob für die neue Lagerkraft „automatisch der Tarifvertrag“ gilt. Ayla Brandt erklärt: Das hängt davon ab, ob MAKEL tarifgebunden ist oder der Arbeitsvertrag auf einen Tarifvertrag verweist. Gesetzliche Mindeststandards gelten dagegen immer; der Arbeitsvertrag darf nur zugunsten der Beschäftigten davon abweichen.",
-        "typische_fehler": "Jede Tarifregel automatisch für jedes Arbeitsverhältnis voraussetzen.",
         "verstaendnisfragen": [
-          "Was regelt das Kollektivarbeitsrecht? Beziehungen zwischen Gruppen: Tarifverträge, Betriebsvereinbarungen, Mitbestimmung.",
-          "Was besagt das Günstigkeitsprinzip? Eine niedrigere Regelungsebene darf zugunsten der Beschäftigten abweichen."
-        ],
-        "pruefungsbezug": "Individual- und Kollektivarbeitsrecht unterscheiden und Regelungsebenen ordnen.",
-        "merksatz": "Rangfolge: Gesetz → Tarifvertrag → Betriebsvereinbarung → Arbeitsvertrag; Abweichung nach unten nur zugunsten der Beschäftigten."
+          {
+            "frage": "Der Vertrag sieht 18 Urlaubstage bei einer 5-Tage-Woche vor. Was gilt?",
+            "antwort": "Der gesetzliche Mindesturlaub von 20 Tagen. Eine schlechtere Vereinbarung ist insoweit unwirksam.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Was besagt das Günstigkeitsprinzip?",
+            "antwort": "Eine niedrigere Ebene darf von einer höheren abweichen, wenn das für die Beschäftigten günstiger ist.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Verträge können mündlich geschlossen werden.",
-          "Lohnabrechnung braucht Steuer- und Sozialversicherungsdaten."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst die Bestandteile von Arbeitsvertrag, Nachweis und Einstellungsunterlagen zusammen, beachtest Fristen und Formvorschriften zu Probezeit, Befristung und Nachweis und schließt eine Einstellung vollständig ab.",
+        "vorwissen_kurz": "Die Entscheidung ist gefallen. Jetzt muss die Einstellung rechtlich und organisatorisch sauber abgeschlossen werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Handschlag zum vollständigen Vorgang",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Arbeitsvertrag ist grundsätzlich formfrei, kann also auch mündlich geschlossen werden. Die wesentlichen Bedingungen muss der Arbeitgeber aber nach dem Nachweisgesetz schriftlich oder in Textform festhalten und aushändigen. Eine **Befristung** ist nur wirksam, wenn sie schriftlich vereinbart wurde, bevor die Arbeit beginnt (§ 14 Abs. 4 TzBfG). Eine **Probezeit** kann bis zu sechs Monate dauern; in dieser Zeit beträgt die gesetzliche Kündigungsfrist zwei Wochen ({{par:bgb-622|§ 622 Abs. 3 BGB}}).",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Checkliste Einstellung der Lagerkraft",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Inhalt",
+              "Zeitpunkt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Betriebsrat beteiligen",
+                  "Unterrichtung und Zustimmung zur Einstellung (§ 99 BetrVG)",
+                  "vor der Einstellung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrag",
+                  "Tätigkeit, Beginn, Entgelt, Arbeitszeit, Probezeit 6 Monate, unbefristet",
+                  "vor Arbeitsbeginn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Nachweis",
+                  "Entgelt und Arbeitszeit, weitere Angaben in den gesetzlichen Fristen",
+                  "ab dem ersten Arbeitstag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Unterlagen der Person",
+                  "Steuer-Identifikationsnummer, Sozialversicherungsnummer, Krankenkasse, Bankverbindung",
+                  "vor der ersten Abrechnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anmeldung",
+                  "Meldung an die Krankenkasse",
+                  "mit der ersten Entgeltabrechnung, spätestens sechs Wochen nach Beginn"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einarbeitung",
+                  "Arbeitsplatz, Zugänge, Pate im Team, Unterweisung Arbeitsschutz",
+                  "erster Arbeitstag"
+                ]
+              }
+            ],
+            "fazit": "Eine Einstellung ist erst abgeschlossen, wenn Vertrag, Nachweis, Meldungen und Einarbeitung erledigt sind.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die organisatorische Seite wird oft unterschätzt. Wer am ersten Tag keinen Arbeitsplatz, keine Zugangsdaten und keine Ansprechperson hat, zweifelt schnell an seiner Entscheidung. MAKEL Studio plant deshalb einen Einarbeitungsplan für die ersten Wochen und führt vor Ende der Probezeit ein Gespräch, in dem beide Seiten Bilanz ziehen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Der Arbeitsvertrag ist grundsätzlich formfrei, doch der Arbeitgeber muss die wesentlichen Vertragsbedingungen nach dem Nachweisgesetz schriftlich festhalten und aushändigen (seit 2025 unter bestimmten Voraussetzungen auch elektronisch in Textform; gestaffelte Fristen vom ersten Arbeitstag bis einen Monat nach Beginn). Dazu gehören etwa Beginn, Arbeitsort, Tätigkeit, Arbeitszeit, Entgelt, Urlaub, Probezeit und Kündigungsfristen. Während einer vereinbarten Probezeit kann mit einer verkürzten Frist von zwei Wochen gekündigt werden — diese gesetzliche Verkürzung gilt längstens für sechs Monate (§ 622 Abs. 3 BGB); Tarifverträge können abweichen. Bei befristeten Verträgen muss die Probezeit im Verhältnis zur Dauer und Tätigkeit stehen. Davon zu trennen sind die sechsmonatige Wartezeit des Kündigungsschutzgesetzes und die Probezeit in der Ausbildung (ein bis vier Monate nach BBiG). Eine Befristung muss schriftlich vereinbart werden. Für die Einstellung braucht MAKEL Unterlagen wie Steuer-Identifikationsnummer, Sozialversicherungsnummer, Krankenkasse und Bankverbindung, gegebenenfalls Nachweise zur Arbeitserlaubnis, und meldet die Person bei der Sozialversicherung an.",
-        "beispiele": [
-          "Arbeitsvertrag mit sechs Monaten Probezeit; in dieser Zeit Kündigungsfrist zwei Wochen.",
-          "Personalbogen: Steuer-ID, Sozialversicherungsnummer, Krankenkasse, IBAN."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Probezeit bei Befristung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei einem befristeten Vertrag muss die Probezeit im Verhältnis zur Dauer der Befristung und zur Art der Tätigkeit stehen (§ 15 Abs. 3 TzBfG). Eine sechsmonatige Probezeit in einem Vertrag über sieben Monate wäre in der Regel unverhältnismäßig.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Bewerberin B erhält die Zusage. Die Personalabteilung erstellt den Arbeitsvertrag, legt den Nachweis der wesentlichen Arbeitsbedingungen bei, fordert die Unterlagen für Lohnabrechnung und Sozialversicherung an und plant mit Jonas den ersten Arbeitstag: Begrüßung, Sicherheitsunterweisung, Patenschaft.",
-        "typische_fehler": "Wesentliche Bedingungen nur mündlich vereinbaren oder die Befristung nicht schriftlich festhalten.",
         "verstaendnisfragen": [
-          "Was verlangt das Nachweisgesetz? Die wesentlichen Arbeitsbedingungen schriftlich (unter Voraussetzungen in Textform) festzuhalten und auszuhändigen.",
-          "Wie lange gilt die verkürzte gesetzliche Kündigungsfrist in der Probezeit? Zwei Wochen Frist, längstens für sechs Monate (§ 622 Abs. 3 BGB)."
-        ],
-        "pruefungsbezug": "Vertrags- und Einstellungsunterlagen einordnen.",
-        "merksatz": "Arbeitsvertrag formfrei, wesentliche Bedingungen nachweisen; 2-Wochen-Frist in der Probezeit längstens 6 Monate; Befristung schriftlich; Unterlagen für Steuer und Sozialversicherung."
+          {
+            "frage": "Ist ein mündlich geschlossener unbefristeter Arbeitsvertrag wirksam?",
+            "antwort": "Ja. Der Arbeitgeber muss die wesentlichen Bedingungen aber nach dem Nachweisgesetz festhalten und aushändigen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Was gilt, wenn eine Befristung erst nach Arbeitsbeginn schriftlich vereinbart wird?",
+            "antwort": "Die Befristung ist unwirksam; der Vertrag gilt als unbefristet geschlossen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

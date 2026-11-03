@@ -6,66 +6,375 @@
   "untertitel": "Ein Projekt ist erst fertig, wenn jemand es abgenommen hat.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Ein Projekt ist erst mit Abnahme formal beendet.",
-          "Das Ergebnis wird gegen den Projektauftrag geprüft."
+        "darstellung": "vollfassung",
+        "ziel": "Du schließt ein Projekt ab, indem du das Ergebnis am Projektauftrag prüfst, die schriftliche Abnahme einholst, Restpunkte mit Termin festhältst und die Verantwortung an den laufenden Betrieb übergibst.",
+        "vorwissen_kurz": "Ein Projekt hört nicht einfach auf. Es endet, wenn der Auftraggeber das Ergebnis abgenommen hat.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Prüfen, abnehmen, übergeben",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Am Ende eines Projekts wird das Ergebnis mit dem Projektauftrag verglichen. Hier zeigt sich, warum das Ziel messbar formuliert sein musste: Nur so lässt sich sachlich feststellen, was erreicht wurde. Danach nimmt der Auftraggeber das Ergebnis schriftlich ab. Was offen bleibt, wird mit Termin und Verantwortlichem festgehalten, und alles, was dauerhaft weiterlaufen soll, geht an eine zuständige Stelle im Betrieb.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Abnahmeprotokoll des Messestands",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Punkt",
+              "Soll laut Projektauftrag",
+              "Ist",
+              "Bewertung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gespräche mit neuen Händlern",
+                  "mindestens 25",
+                  "31",
+                  "erreicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vorbestellungen auf der Messe",
+                  "mindestens 8",
+                  "7",
+                  "knapp verfehlt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Budget",
+                  "24.000 € plus genehmigte Änderung 1.150 €",
+                  "24.870 €",
+                  "eingehalten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Termin",
+                  "Stand am 10. Februar 2027 geöffnet",
+                  "geöffnet",
+                  "erreicht"
+                ]
+              },
+              {
+                "zellen": [
+                  "Restpunkte",
+                  "—",
+                  "Nachfassen bei 24 Händlern ohne Bestellung bis 5. März (Herr Okafor); Standelemente einlagern bis 19. Februar (Tim)",
+                  "mit Termin festgehalten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Übergabe",
+                  "—",
+                  "Messekontakte im Kundenbeziehungsmanagement; Checkliste „Messeauftritt“ an den Vertrieb",
+                  "übergeben"
+                ]
+              }
+            ],
+            "fazit": "Das Ergebnis wird gemessen, nicht gefühlt: zwei Ziele erreicht, eines knapp verfehlt. Tobias Renner nimmt das Projekt am 19. Februar 2027 mit diesem Vermerk schriftlich ab.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit der Abnahme endet Leas Verantwortung als Projektleiterin. Das Nachfassen bei den Händlern ist jetzt Aufgabe des Vertriebs. Die Checkliste und die Lieferantenkontakte liegen im geteilten Ordner, damit der nächste Messeauftritt nicht wieder bei null beginnt. Aus den wiederkehrenden Teilen des Projekts wird so ein Prozess.",
+            "id": "b1-p2"
+          }
         ],
-        "erklaerung": "Der Abschluss folgt der Reihenfolge prüfen, abnehmen, Restpunkte festhalten, übergeben, ablegen und das Team entlasten. Die Abnahme erfolgt schriftlich durch den Auftraggeber. Offene Punkte erhalten Termin und Verantwortlichen. Erst mit der Übergabe wird aus dem Projektergebnis ein betreuter Prozess.",
-        "beispiele": [
-          "Das Ergebnis wird am messbaren Ziel des Projektauftrags geprüft und anschließend schriftlich abgenommen.",
-          "Restpunkte werden mit Termin und Verantwortlicher Person dokumentiert, bevor das Projektteam aufgelöst wird."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Abnahme mit Vorbehalt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ist ein Ergebnis im Wesentlichen erreicht, aber ein Punkt noch offen, kann der Auftraggeber mit Vorbehalt abnehmen: Das Projekt gilt als abgeschlossen, der offene Punkt wird mit Termin nachgeliefert. Wichtig ist, dass der Vorbehalt schriftlich festgehalten wird, damit später kein Streit darüber entsteht, was geschuldet war.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Das Projekt ist inhaltlich fertig, der Auftraggeber hat aber drei Wochen keine Zeit. Das Team dokumentiert Ergebnis, Ziele, Budget, Termine und Restpunkte, bittet schriftlich um Abnahme und klärt einen begrenzten Aufwand für Rückfragen. Die Übergabe an den Betrieb wird vorbereitet, aber das Projekt gilt formal erst mit der schriftlichen Abnahme als beendet.",
-        "typische_fehler": "Die letzte Tätigkeit wird als Projektende behandelt oder mündliche Zustimmung als Abnahme verwendet. Restpunkte und Übergabe werden nicht gesichert.",
         "verstaendnisfragen": [
-          "Was beendet das Projekt formal? Die schriftliche Abnahme durch den Auftraggeber.",
-          "Was brauchen offene Restpunkte? Termin und verantwortliche Person."
-        ],
-        "pruefungsbezug": "Nenne die Abschlussreihenfolge und unterscheide inhaltliche Fertigstellung von formaler Abnahme.",
-        "merksatz": "Fertig ist nicht abgeschlossen: Erst prüfen und schriftlich abnehmen, dann übergeben."
+          {
+            "frage": "Warum wird das verfehlte Ziel im Abnahmeprotokoll nicht beschönigt?",
+            "antwort": "Weil das Protokoll das Ergebnis am vereinbarten Maßstab festhält. Ein beschönigtes Protokoll würde die Auswertung verfälschen und das Vertrauen des Auftraggebers kosten.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum endet das Projekt nicht mit dem Abbau des Stands?",
+            "antwort": "Weil erst die Abnahme festhält, dass das Ergebnis den Auftrag erfüllt, und die Verantwortung übergibt. Ohne sie bliebe Lea für Nachforderungen zuständig, für die keine Zeit mehr eingeplant ist.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Erfahrungen sind nur nützlich, wenn sie auffindbar und konkret sind.",
-          "Die Projektbeteiligten kennen Ursachen und Folgen der Entscheidungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst im Team eine Projektauswertung mit den Fragen „Was lief gut, was schlecht, woran lag es, was machen wir anders?“ durch und formulierst konkrete, auffindbare Erkenntnisse.",
+        "vorwissen_kurz": "Das nächste Projekt kann nur von diesem lernen, wenn die Erfahrungen festgehalten werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Lernen ohne Schuldsuche",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach dem Projekt setzt sich das Team zusammen und wertet aus, wie das Vorgehen funktioniert hat. Dabei geht es nicht darum, wer Fehler gemacht hat, sondern was den Ablauf leicht oder schwer gemacht hat. Die Erkenntnisse werden so konkret formuliert, dass das nächste Projektteam etwas damit anfangen kann, und dort abgelegt, wo es sie findet.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Auswertung des Messestands",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Was lief gut?",
+                  "Terminvereinbarungen vorab per Mail brachten 19 der 31 Gespräche; das Logo-Sticken hielt Händler im Schnitt deutlich länger am Stand"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was lief schlecht?",
+                  "Standbau verpasste den Zwischentermin; Musterstücke waren knapp"
+                ]
+              },
+              {
+                "zellen": [
+                  "Woran lag es?",
+                  "Standbauer hatte gleichzeitig drei Messen; Musterstücke wurden spät freigegeben, weil die Designleitung im Dezember im Urlaub war"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was machen wir anders?",
+                  "Standbau zwei Wochen früher beauftragen und Zwischentermine vertraglich vereinbaren; Freigabe der Musterstücke vor die Urlaubszeit legen; Vertretung für Freigaben benennen"
+                ]
+              }
+            ],
+            "fazit": "Jede Erkenntnis ist eine konkrete Handlung für das nächste Mal. „Bessere Kommunikation“ oder „früher anfangen“ stehen nicht in der Liste, weil niemand weiß, was genau zu tun wäre.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Getrennt davon bewertet das Team das **Ergebnis**: Die Vorbestellungen wurden knapp verfehlt, obwohl mehr Gespräche geführt wurden als geplant. Die Auswertung zeigt, dass viele neue Händler erst nach Rücksprache im eigenen Laden bestellen wollten. Das ist keine Schwäche des Vorgehens, sondern eine Erkenntnis über die Zielgruppe — und ein Hinweis, das Ziel beim nächsten Mal auf „Bestellungen bis drei Wochen nach der Messe“ zu legen.",
+            "id": "b2-p2"
+          }
         ],
-        "erklaerung": "Die Auswertung fragt, was gut und schlecht lief, woran es lag und was künftig geändert werden soll. Ergebnisse werden konkret formuliert und nach den betrieblichen Ablageregeln auffindbar gespeichert. So werden Erfahrungen in spätere Prozesse und Projekte übernommen.",
-        "beispiele": [
-          "Eine verspätete Freigabe wird mit Ursache und künftiger Vertretungsregel dokumentiert.",
-          "Eine erfolgreiche Rückfallebene wird als konkrete Empfehlung abgelegt, nicht nur als allgemeines Lob."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Ergebnis und Vorgehen trennen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Projekt kann ein gutes Ergebnis mit schlechtem Vorgehen erreichen, etwa durch viele Überstunden, oder ein schwächeres Ergebnis trotz gutem Vorgehen, weil sich der Markt anders verhält als erwartet. Wer beides vermischt, zieht falsche Schlüsse. Deshalb fragt die Auswertung getrennt: Was haben wir erreicht? Und wie gut war der Weg dorthin?",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Nach einer Veranstaltung oder Projektübergabe sammelt das Team Erfahrungen. Für jede Abweichung werden Ursache, Wirkung und konkrete Änderung festgehalten. Die Auswertung wird gemeinsam mit den Projektunterlagen abgelegt, damit ein späteres Team sie wiederfindet und nicht dieselben Fehler wiederholt.",
-        "typische_fehler": "Die Auswertung beschränkt sich auf ‚gut‘ oder ‚schlecht‘ oder wird erst nach dem Auflösen des Teams versucht. Ablageort und Verantwortlichkeit fehlen.",
         "verstaendnisfragen": [
-          "Welche Fragen stellt die Auswertung? Was lief gut, was schlecht, woran lag es und was ändern wir?",
-          "Was macht eine Erfahrung nutzbar? Konkrete Formulierung und auffindbare Ablage."
-        ],
-        "pruefungsbezug": "Formuliere Lessons Learned als Ursache plus konkrete künftige Maßnahme und ordne sie in die Ablage ein.",
-        "merksatz": "Erfahrung wird erst zur Verbesserung, wenn Ursache, Änderung und Ablage klar sind."
+          {
+            "frage": "Warum beginnt die Auswertung mit der Frage „Was lief gut?“",
+            "antwort": "Damit die Runde nicht sofort zur Fehlersuche wird und Bewährtes ausdrücklich festgehalten wird. Was gut funktioniert hat, soll im nächsten Projekt wiederholt werden.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum ist „Wir müssen früher anfangen“ keine gute Erkenntnis?",
+            "antwort": "Weil sie nicht sagt, was genau früher geschehen soll. „Standbau zwei Wochen früher beauftragen“ ist konkret und lässt sich im nächsten Projekt umsetzen und prüfen.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Eine Abschlusspräsentation richtet sich an Auftraggeber und andere Empfänger.",
-          "Ziel, Ergebnis und Ausblick sind wichtiger als eine Tätigkeitschronik."
+        "darstellung": "vollfassung",
+        "ziel": "Du präsentierst ein Projektergebnis adressatengerecht mit dem Ergebnis zuerst, gemessen am Ziel, benennst Abweichungen offen und gibst einen Ausblick mit Restpunkten und Empfehlung.",
+        "vorwissen_kurz": "Die Zuhörenden wollen wissen, was herausgekommen ist — nicht, was alles getan wurde.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ergebnis vor Chronik",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Abschlusspräsentation beantwortet drei Fragen: Was war das Ziel? Was ist herausgekommen? Wie geht es weiter? Das Ergebnis steht am Anfang und wird am Ziel gemessen. Abweichungen werden von der Projektleitung selbst benannt und begründet. Der Ablauf des Projekts interessiert nur, soweit er Ergebnis oder Abweichung erklärt.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Leas Präsentation vor der Geschäftsführung",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Teil",
+              "Inhalt",
+              "Dauer"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ergebnis",
+                  "„Wir haben auf der Messe 31 neue Händler gesprochen, sechs mehr als geplant. Vorbestellungen: 7 statt 8. Das Budget wurde eingehalten.“",
+                  "1 Minute"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ziel und Ausgangslage",
+                  "erster eigener Messestand, Ziel neue Händler",
+                  "30 Sekunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis im Detail",
+                  "Gespräche nach Herkunft, Wirkung der Terminvereinbarung, Kosten je Gespräch",
+                  "4 Minuten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Abweichung",
+                  "knapp verfehlte Vorbestellungen; Ursache: Händler bestellen nach Rücksprache im Laden; bis heute 3 Nachbestellungen",
+                  "2 Minuten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausblick",
+                  "Nachfassen bis 5. März; Empfehlung: wieder ausstellen, Standbau früher beauftragen, Ziel auf drei Wochen nach der Messe legen",
+                  "2 Minuten"
+                ]
+              }
+            ],
+            "fazit": "In der ersten Minute weiß die Geschäftsführung, was herausgekommen ist. Die Abweichung kommt von Lea selbst, nicht erst in der Fragerunde.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kosten je Gespräch rechnet Lea vor: 24.870 € ÷ 31 Gespräche ≈ 802 € je Gespräch mit einem neuen Händler. Das klingt hoch. Lea setzt es deshalb ins Verhältnis: Ein neuer Händler bestellt bei MAKEL im ersten Jahr erfahrungsgemäß für mehrere Tausend Euro. Schon wenige dauerhaft gewonnene Händler tragen die Kosten.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b5"
+          }
         ],
-        "erklaerung": "Die Präsentation beantwortet Ziel, Ergebnis und Ausblick. Das Ergebnis steht im ersten Satz, wird am ursprünglichen Ziel gemessen und mit Zahlen belegt. Abweichungen bei Termin, Budget oder Umfang werden offen mit Ursache und Konsequenz benannt. Der Ausblick enthält Restpunkte, Übergabe und Empfehlung; die Details richten sich nach den Zuhörenden.",
-        "beispiele": [
-          "Die Geschäftsführung erhält Ergebnis und Empfehlung zuerst; eine Fachabteilung bekommt zusätzlich Einzelheiten des künftigen Ablaufs.",
-          "Eine Terminabweichung wird nicht kaschiert, sondern mit Ursache und Folge erklärt."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ergebnisbericht und Tätigkeitsbericht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Tätigkeitsbericht erzählt, was getan wurde: „Wir haben einen Standbauer beauftragt, Mails verschickt, Musterstücke gefertigt.“ Ein Ergebnisbericht sagt, was jetzt anders ist: „31 neue Kontakte, 7 Vorbestellungen, Checkliste für die nächste Messe.“ Die Geschäftsführung braucht den Ergebnisbericht; die Tätigkeiten stehen bei Bedarf im Anhang.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf1:k7-g2"
+                ],
+                "text": "Präsentieren: Aussageüberschriften und Zielgruppe",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Die Abschlusspräsentation beginnt mit dem Ergebnis und vergleicht es mit dem Projektziel. Danach werden Abweichungen, Restpunkte und Übergabe erläutert. Die Empfehlung für den nächsten Schritt steht im Ausblick. Der Vortrag berichtet nicht nur, was das Team getan hat, sondern was für den Betrieb jetzt anders ist.",
-        "typische_fehler": "Die Präsentation startet mit einer langen Tätigkeitschronik oder verschweigt Abweichungen. Ergebnis und Empfehlung erscheinen erst am Ende.",
         "verstaendnisfragen": [
-          "Welche drei Fragen beantwortet die Präsentation? Was war das Ziel, was ist herausgekommen und wie geht es weiter.",
-          "Wie werden Abweichungen behandelt? Offen, mit Ursache und Konsequenz, ohne sie zu kaschieren."
-        ],
-        "pruefungsbezug": "Baue Präsentationen mit Ergebnis zuerst, Zielvergleich, Abweichungen, Restpunkten, Übergabe und Empfehlung auf.",
-        "merksatz": "Im Abschluss zählt das Ergebnis am Ziel gemessen — offen, belegt und mit einem nächsten Schritt."
+          {
+            "frage": "Warum beginnt Lea mit dem Ergebnis und nicht mit der Ausgangslage?",
+            "antwort": "Weil die Zuhörenden die Ausgangslage kennen und vor allem wissen wollen, was herausgekommen ist. Wer das Ergebnis zuerst nennt, gibt allem Weiteren einen Rahmen.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Rechne nach: Was hätte ein Gespräch gekostet, wenn genau 25 Gespräche geführt worden wären?",
+            "antwort": "24.870 € ÷ 25 ≈ 995 € je Gespräch.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -133,7 +442,7 @@
                 "wer betreut es künftig?",
                 "aus dem Projekt wird ein Prozess"
               ],
-              "detail": "**Der häufigste Bruch:** Das System läuft, aber niemand ist zuständig. Betrieb, Pflege und Schulung neuer Beschäftigter gehören ausdrücklich übergeben."
+              "detail": "**Ein typischer Bruch:** Das System läuft, aber niemand ist zuständig. Betrieb, Pflege und Schulung neuer Beschäftigter gehören ausdrücklich übergeben."
             },
             {
               "zellen": [
@@ -169,7 +478,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Die Auswertung am Ende ist der Teil, der am häufigsten ausfällt — ==und der einzige, von dem das nächste Projekt etwas hat.== Sie kostet zwei Stunden und spart im nächsten Projekt Wochen."
+          "text": "Die Auswertung am Ende ist der Teil, der am häufigsten ausfällt — ==und gerade der, von dem das nächste Projekt am meisten hat.== Sie kostet wenige Stunden und kann im nächsten Projekt viel Zeit sparen."
         },
         {
           "typ": "grafik",
@@ -255,7 +564,7 @@
                 "was anders lief, offen benannt",
                 "kurz und ehrlich"
               ],
-              "detail": "**Verschweigen fällt auf und kostet Glaubwürdigkeit.** Wer Abweichungen selbst benennt und begründet, wirkt souverän — wer sie kaschiert, wird in der Fragerunde zerlegt."
+              "detail": "**Verschweigen fällt auf und kostet Glaubwürdigkeit.** Wer Abweichungen selbst benennt und begründet, wirkt souverän — wer sie kaschiert, gerät in der Fragerunde in Erklärungsnot."
             },
             {
               "zellen": [

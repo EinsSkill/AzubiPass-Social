@@ -6,66 +6,530 @@
   "untertitel": "Kurzfristiger Bedarf, kurzfristiger Kredit. Alles andere wird teuer.",
  "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Anlage- und Umlaufvermögen binden Kapital unterschiedlich lange.",
-          "Die Finanzierungslaufzeit muss zur Nutzungsdauer passen."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für einen Finanzierungsbedarf die passende Kreditart nach Fristigkeit und Zweck und erkennst Verstöße gegen die Fristenkongruenz.",
+        "vorwissen_kurz": "Anlagevermögen bleibt lange im Betrieb, Umlaufvermögen wird schnell wieder zu Geld.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Laufzeit folgt dem Zweck",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Kredit ist dann richtig gewählt, wenn er genau so lange läuft, wie das finanzierte Vermögen Geld bindet. Eine Maschine bringt über zehn Jahre Erträge; aus diesen Erträgen wird der Kredit Stück für Stück getilgt. Ware dagegen ist nach wenigen Wochen verkauft; der Verkaufserlös kann den Kredit sofort ablösen. Diese Regel heißt **Fristenkongruenz**.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Bedarfe bei MAKEL",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bedarf",
+              "Bindungsdauer",
+              "Passende Finanzierung",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Veredelungsanlage, 10 Jahre Nutzung",
+                  "lang",
+                  "Darlehen über 8–10 Jahre, ggf. Förderdarlehen",
+                  "Tilgung aus den laufenden Erträgen der Anlage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stoffvorrat für die Herbstkollektion",
+                  "wenige Wochen",
+                  "Lieferantenkredit oder Kontokorrent",
+                  "Erlöse aus dem Verkauf lösen den Kredit ab"
+                ]
+              },
+              {
+                "zellen": [
+                  "Steuerzahlung und Löhne treffen in einem Monat zusammen",
+                  "Tage bis Wochen",
+                  "Kontokorrent",
+                  "einmalige Spitze, danach wieder ausgeglichen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferwagen, 5 Jahre Nutzung",
+                  "mittel",
+                  "Darlehen über 5 Jahre oder Leasing",
+                  "Laufzeit deckt sich mit der Nutzung"
+                ]
+              }
+            ],
+            "fazit": "Zuerst die Bindungsdauer bestimmen, dann die Kreditart wählen — nicht umgekehrt nach dem, was gerade schnell verfügbar ist.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Finanziert MAKEL eine Stickmaschine für 100.000 € über den Kontokorrent, entstehen zwei Probleme. Erstens ist der Zinssatz deutlich höher: Bei angenommenen 11 % statt 5 % kosten 100.000 € im ersten Jahr 11.000 € statt 5.000 € Zinsen. Zweitens kann die Bank die Kreditlinie kürzen oder kündigen, während die Maschine noch Jahre gebraucht wird. Dann fehlt das Geld genau in dem Moment, in dem es nicht kurzfristig ersetzt werden kann.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was der Lieferantenkredit wirklich kostet",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Lieferer bietet: „Zahlbar innerhalb von 10 Tagen mit 2 % Skonto oder innerhalb von 30 Tagen netto.“ Wer erst am 30. Tag zahlt, nutzt das Geld 20 Tage länger und verzichtet dafür auf 2 % Skonto.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zusätzliche Kreditdauer",
+                  "30 Tage − 10 Tage",
+                  "20 Tage"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kosten für 20 Tage",
+                  "2 % Skonto auf 98 % Zahlbetrag",
+                  "2,04 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufs Jahr hochgerechnet",
+                  "2,04 % × 360 ÷ 20",
+                  "36,7 %"
+                ]
+              }
+            ],
+            "fazit": "Selbst ein teurer Kontokorrent ist billiger. Skonto ziehen lohnt sich fast immer, notfalls über die Kreditlinie.",
+            "id": "b1-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Fristenkongruenz bedeutet: langfristig gebundenes Vermögen wird langfristig finanziert, kurzfristiger Bedarf kurzfristig. Eine Maschine mit Kontokorrent zu finanzieren ist gefährlich, weil der kurzfristige und teure Kredit dauerhaft gebraucht wird und gekündigt werden kann. Der Lieferantenkredit wirkt zinsfrei, kostet aber das entgangene Skonto.",
-        "beispiele": [
-          "Eine Maschine wird mit einem langfristigen Darlehen finanziert; Vorräte können kurzfristig finanziert werden.",
-          "Wer ein Skonto ziehen kann, vergleicht den Vorteil mit den Kosten eines kurzfristigen Kredits, statt den Lieferantenkredit automatisch als kostenlos anzusehen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Kontokorrentkredit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim Kontokorrent räumt die Bank eine Kreditlinie auf dem Geschäftskonto ein, zum Beispiel 50.000 €. Der Betrieb darf das Konto bis zu diesem Betrag überziehen und zahlt nur für den tatsächlich genutzten Betrag und die Tage der Nutzung Zinsen. Wird die Linie überschritten, verlangt die Bank meist einen deutlich höheren Überziehungszins.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Förderdarlehen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Öffentliche Förderbanken wie die KfW oder Landesförderinstitute vergeben Darlehen für Gründungen, Investitionen oder Energieeinsparung. Sie bieten oft günstige Zinsen und tilgungsfreie Anlaufjahre. Beantragt werden sie in der Regel über die Hausbank, und zwar vor Beginn des Vorhabens — wer zuerst kauft und dann beantragt, geht meist leer aus.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb möchte eine langfristig genutzte Maschine über den Kontokorrent bezahlen. Die Prüfung ergibt einen Fristenverstoß: Laufzeit und Nutzungsdauer passen nicht zusammen, der Zinssatz ist teuer und die Kreditlinie kann entfallen. Die Finanzierung wird auf ein langfristiges Darlehen umgestellt; der Kontokorrent bleibt für kurzfristige Spitzen.",
-        "typische_fehler": "Der niedrigere Nominalzins oder die schnelle Verfügbarkeit wird betrachtet, ohne Laufzeit und Kündigungsrisiko einzubeziehen. Lieferantenkredit wird wegen fehlender Zinszeile für kostenlos gehalten.",
         "verstaendnisfragen": [
-          "Was fordert Fristenkongruenz? Dass Kreditlaufzeit und Nutzungsdauer des finanzierten Vermögens zusammenpassen.",
-          "Was kostet der scheinbar kostenlose Lieferantenkredit? Das entgangene Skonto."
-        ],
-        "pruefungsbezug": "Ordne zuerst Vermögen und Bindungsdauer zu, dann die passende Kreditlaufzeit. Beim Lieferantenkredit immer den Skontoverzicht prüfen.",
-        "merksatz": "Langfristige Dinge brauchen langfristiges Geld; kurzfristige Kredite sind keine Dauerlösung."
+          {
+            "frage": "Ein Betrieb hat eine Kreditlinie von 50.000 €, nutzt sie aber das ganze Jahr zu 45.000 €. Was ist daran problematisch?",
+            "antwort": "Der Kontokorrent ist für kurzfristige Spitzen gedacht. Wird er dauerhaft beansprucht, finanziert der Betrieb langfristigen Bedarf kurzfristig und teuer. Außerdem bleibt kaum Reserve für echte Engpässe. Der Dauersockel sollte in ein Darlehen umgeschuldet werden.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum wird der Skontosatz durch 98 und nicht durch 100 geteilt?",
+            "antwort": "Wer Skonto zieht, zahlt nur 98 % des Rechnungsbetrags. Die 2 % Skonto sind also die Kosten für einen Kredit über 98 %, nicht über 100 %. Für eine schnelle Abschätzung reicht oft 2 % × 360 ÷ 20 = 36 %.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Tilgung reduziert die Restschuld.",
-          "Zinsen werden auf die Restschuld zu Beginn der Periode berechnet."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst für Raten- und Annuitätendarlehen einen Tilgungsplan auf und vergleichst Belastung und Gesamtzinsen.",
+        "vorwissen_kurz": "Die Tilgung verringert die Restschuld. Zinsen werden auf die Restschuld zu Beginn des Jahres gerechnet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gleicher Betrag, verschiedene Belastung",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL nimmt für die Stickmaschine 100.000 € für fünf Jahre zu 5 % auf. Die Bank bietet zwei Tilgungsformen an. Beim **Ratendarlehen** wird jedes Jahr derselbe Betrag getilgt; die Zinsen sinken mit der Restschuld, also sinkt auch die Rate. Beim **Annuitätendarlehen** bleibt die Rate jedes Jahr gleich; weil der Zinsanteil sinkt, steigt der Tilgungsanteil.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ratendarlehen",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Annuitätendarlehen",
+            "id": "b2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die gleichbleibende Rate (Annuität) berechnet man mit dem Annuitätenfaktor. Für 5 Jahre und 5 % beträgt er gerundet 0,230975. Die jährliche Rate ist also 100.000 € × 0,230975 = 23.097,48 €.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Jahr",
+              "Restschuld Jahresbeginn",
+              "Zins 5 %",
+              "Tilgung",
+              "Rate"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "100.000,00 €",
+                  "5.000,00 €",
+                  "18.097,48 €",
+                  "23.097,48 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "81.902,52 €",
+                  "4.095,13 €",
+                  "19.002,35 €",
+                  "23.097,48 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "62.900,17 €",
+                  "3.145,01 €",
+                  "19.952,47 €",
+                  "23.097,48 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "4",
+                  "42.947,70 €",
+                  "2.147,39 €",
+                  "20.950,09 €",
+                  "23.097,48 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "5",
+                  "21.997,61 €",
+                  "1.099,88 €",
+                  "21.997,61 €",
+                  "23.097,49 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "",
+                  "15.487,41 €",
+                  "100.000,00 €",
+                  "115.487,41 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "fazit": "Die letzte Rate weicht durch Rundung um einen Cent ab. Insgesamt zahlt MAKEL 487,41 € mehr Zinsen als beim Ratendarlehen (15.000 €).",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was spricht wofür?",
+            "id": "b2-z4"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Ratendarlehen",
+              "Annuitätendarlehen"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Belastung im ersten Jahr",
+                  "25.000 €",
+                  "23.097,48 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Belastung im letzten Jahr",
+                  "21.000 €",
+                  "23.097,49 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinsen insgesamt",
+                  "15.000,00 €",
+                  "15.487,41 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Planbarkeit",
+                  "Rate ändert sich jährlich",
+                  "jedes Jahr gleiche Rate"
+                ]
+              }
+            ],
+            "fazit": "Das Ratendarlehen ist insgesamt günstiger, weil schneller getilgt wird. Die Annuität entlastet die ersten Jahre — wichtig, wenn eine neue Anlage ihre Erträge erst nach und nach bringt.",
+            "id": "b2-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          }
         ],
-        "erklaerung": "Beim Ratendarlehen bleibt die Tilgung gleich und die Rate sinkt, weil die Zinsen auf die sinkende Restschuld berechnet werden. Beim Annuitätendarlehen bleibt die Rate gleich; der Tilgungsanteil steigt im Zeitverlauf. Für jeden Tilgungsplan werden Restschuld, Zins, Tilgung und Rate getrennt notiert.",
-        "beispiele": [
-          "Beim Ratendarlehen sinkt die Rate von Periode zu Periode, obwohl die Tilgung gleich bleibt.",
-          "Bei der Annuität bleibt die Rate gleich, während der Zinsanteil sinkt und der Tilgungsanteil steigt."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Fälligkeitsdarlehen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beim Fälligkeitsdarlehen (endfälliges Darlehen) wird während der Laufzeit nur der Zins gezahlt und die gesamte Summe am Ende auf einmal getilgt. Bei 100.000 €, 5 % und fünf Jahren sind das jedes Jahr 5.000 € Zinsen, zusammen 25.000 €, und am Ende 100.000 € Tilgung. Die laufende Belastung ist am niedrigsten, die Zinskosten sind am höchsten, und der Betrieb muss die Rückzahlung am Ende sicher bereithalten.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Ratendarlehen über 60.000 € läuft vier Jahre bei 6 %. Die jährliche Tilgung beträgt 60.000 € ÷ 4 = 15.000 €. Jahr 1: Zins 6 % von 60.000 € = 3.600 €, Rate 15.000 € + 3.600 € = 18.600 €. Restschuld 45.000 €. Jahr 2: Zins 6 % von 45.000 € = 2.700 €, Rate 15.000 € + 2.700 € = 17.700 €. Die Rate sinkt um 900 €.",
-        "typische_fehler": "Der Zins wird auf den ursprünglichen Kredit statt auf die Restschuld zu Periodenbeginn gerechnet. Außerdem werden Ratentilgung und Annuität verwechselt.",
         "verstaendnisfragen": [
-          "Was bleibt beim Ratendarlehen gleich? Die Tilgung.",
-          "Wie setzt sich die Rate zusammen? Aus Tilgung plus Zins der jeweiligen Periode."
-        ],
-        "pruefungsbezug": "Lege die vier Spalten Restschuld, Zins, Tilgung und Rate an und rechne jede Periode einzeln.",
-        "merksatz": "Ratendarlehen = gleiche Tilgung, sinkende Rate; Annuität = gleiche Rate, steigende Tilgung."
+          {
+            "frage": "Im dritten Jahr der Annuität beträgt der Zins 3.145,01 €. Wie hoch ist die Tilgung, und wie rechnest du sie?",
+            "antwort": "Tilgung = Rate − Zins = 23.097,48 € − 3.145,01 € = 19.952,47 €. Der Zins wird auf die Restschuld zu Jahresbeginn gerechnet: 62.900,17 € × 5 % = 3.145,01 €.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum sind die Gesamtzinsen beim Annuitätendarlehen höher, obwohl Betrag, Zinssatz und Laufzeit gleich sind?",
+            "antwort": "In den ersten Jahren wird bei der Annuität weniger getilgt als beim Ratendarlehen (18.097,48 € statt 20.000 €). Die Restschuld bleibt dadurch länger höher, und auf diese höhere Restschuld fallen Zinsen an.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Nominalzins und Gesamtkosten sind nicht identisch.",
-          "Gebühren und Disagio beeinflussen den tatsächlichen Kreditpreis."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Kreditangebote über alle Kostenbestandteile, schätzt den Effektivzins ab und beziehst den tatsächlichen Auszahlungsbedarf ein.",
+        "vorwissen_kurz": "Der Nominalzins ist der vertraglich genannte Zinssatz auf den Kreditbetrag.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehr als ein Zinssatz",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Nominalzins zeigt nur einen Teil des Preises. Bearbeitungsgebühren, ein Disagio, Bereitstellungszinsen und die Kosten der Sicherheiten kommen hinzu. Erst wenn alle Kosten auf die Laufzeit und den tatsächlich ausgezahlten Betrag bezogen werden, sind zwei Angebote vergleichbar. Diese Größe heißt **Effektivzins**.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Angebote für 200.000 €",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL braucht 200.000 € für fünf Jahre; der Kredit wird am Ende in einer Summe zurückgezahlt. Bank A bietet 4,2 % Nominalzins bei 98 % Auszahlung (2 % Disagio). Bank B bietet 4,6 % bei voller Auszahlung. Eine gängige Näherung für den Effektivzins verteilt das Disagio auf die Laufzeit und bezieht alles auf den Auszahlungsbetrag.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Bank A",
+              "Bank B"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Nominalzins pro Jahr",
+                  "4,2 %",
+                  "4,6 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Disagio, verteilt auf 5 Jahre",
+                  "2 % ÷ 5 = 0,4 %",
+                  "0 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jährliche Kosten auf den Nennbetrag",
+                  "4,6 %",
+                  "4,6 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bezogen auf die Auszahlung",
+                  "4,6 % ÷ 0,98 ≈ 4,69 %",
+                  "4,6 % ÷ 1,00 = 4,6 %"
+                ]
+              }
+            ],
+            "fazit": "Trotz des niedrigeren Nominalzinses ist Bank A teurer. Die Näherung genügt für den Vergleich; die Bank errechnet den genauen Wert finanzmathematisch.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Hinzu kommt der tatsächliche Bedarf. Braucht MAKEL wirklich 200.000 € auf dem Konto, reicht bei Bank A ein Kredit über 200.000 € nicht: Ausgezahlt würden nur 196.000 €. Damit 200.000 € ankommen, müsste MAKEL rund 204.082 € aufnehmen (200.000 € ÷ 0,98) — und diesen höheren Betrag verzinsen und zurückzahlen.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Bearbeitungsgebühren, Bereitstellungszinsen, Sicherheitenkosten und ein Disagio gehören zu den Kreditkosten. Deshalb sind Angebote nur über den Effektivzins vergleichbar. Der Nominalzins allein zeigt nicht, wie viel Geld ausgezahlt und wie viel zurückgezahlt wird.",
-        "beispiele": [
-          "Bei einem Disagio wird weniger ausgezahlt, obwohl der volle Nennbetrag verzinst und zurückgezahlt wird.",
-          "Zwei Angebote mit unterschiedlichem Nominalzins werden erst nach Einbeziehung von Gebühren und Disagio über den Effektivzins verglichen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Effektivzins bei Firmen- und Verbraucherkrediten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gegenüber Verbrauchern müssen Banken den effektiven Jahreszins nach der Preisangabenverordnung angeben. Bei Krediten an Unternehmen besteht diese Pflicht nicht. Ein Betrieb muss deshalb selbst nachfragen oder alle Kosten zusammenstellen und vergleichen.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Bereitstellungszinsen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wird ein Darlehen zugesagt, aber erst später abgerufen — etwa in Teilbeträgen beim Bau einer Halle —, hält die Bank das Geld bereit. Dafür verlangt sie nach einer vereinbarten Frist Bereitstellungszinsen, zum Beispiel 0,25 % pro Monat auf den noch nicht abgerufenen Betrag. Bei 150.000 € offenen Mitteln sind das 375 € im Monat. Wer den Abruf gut plant, spart diese Kosten.",
+                "id": "b3-d2-p1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "fallbeispiel": "Für 200.000 € bietet Bank A 4,2 % Nominalzins und 2 % Disagio, Bank B 4,6 % ohne Disagio. Bei A werden nur 196.000 € ausgezahlt, aber 200.000 € verzinst und zurückgezahlt. Deshalb reicht der niedrigere Nominalzins nicht; der Effektivzins und die weiteren Kosten entscheiden. Benötigt der Betrieb tatsächlich 200.000 €, verschärft das Disagio den Nachteil von A.",
-        "typische_fehler": "Der niedrigere Nominalzins wird automatisch gewählt oder das Disagio nur als einmaligen Rabatt behandelt. Auch Sicherheiten- und Bereitstellungskosten werden vergessen.",
         "verstaendnisfragen": [
-          "Warum ist der Effektivzins entscheidend? Er macht die Angebote einschließlich weiterer Kosten vergleichbar.",
-          "Was bedeutet 2 % Disagio bei 200.000 €? Es werden 196.000 € ausgezahlt, der Nennbetrag 200.000 € bleibt aber zu verzinsen und zurückzuzahlen."
-        ],
-        "pruefungsbezug": "Vergleiche Kredite immer über Auszahlung, Rückzahlung, Gebühren, Disagio und Effektivzins; der Nominalzins ist nur ein Teil.",
-        "merksatz": "Der Kreditpreis ist das, was die Finanzierung insgesamt kostet — nicht nur die Zahl neben ‚Zins‘."
+          {
+            "frage": "Bank C bietet 4,4 % Nominalzins, 100 % Auszahlung und eine einmalige Bearbeitungsgebühr von 1 % bei fünf Jahren Laufzeit. Wie schätzt du den Effektivzins?",
+            "antwort": "Die Gebühr wird wie ein Disagio auf die Laufzeit verteilt: 1 % ÷ 5 = 0,2 %. Zusammen mit dem Nominalzins ergeben sich rund 4,6 % pro Jahr. Damit liegt Bank C etwa gleichauf mit Bank B und günstiger als Bank A.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum gehören Notar- und Grundbuchkosten in den Kreditvergleich, obwohl die Bank sie nicht erhält?",
+            "antwort": "Sie entstehen nur, weil der Kredit aufgenommen und besichert wird. Für MAKEL sind sie Teil der Finanzierungskosten. Verlangt eine Bank eine Grundschuld und die andere nicht, kann das den Vergleich umkehren.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

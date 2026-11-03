@@ -6,66 +6,466 @@
   "untertitel": "Quellen prüfen, Inhalt aufbauen, Regeln einhalten — und die eigene Präsentation bewerten.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "g1",
-        "vorauswissen": [
-          "Eine Präsentation braucht nachvollziehbare und passende Informationen.",
-          "Eine Quelle kann sachlich nützlich und zugleich interessengeleitet sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst Informationsquellen für eine Betriebspräsentation mit vier Prüffragen, wählst passende Quellen aus und belegst sie nachvollziehbar.",
+        "vorwissen_kurz": "Informationen sind unterschiedlich verlässlich. Wer sie weitergibt, übernimmt Verantwortung für ihre Richtigkeit.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Präsentationen, ein Betrieb",
+            "id": "g1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tim soll MAKEL zweimal vorstellen: neuen Auszubildenden am Einführungstag und einem möglichen neuen Stofflieferanten. Bevor er eine Folie baut, sammelt er Informationen — und prüft, wie belastbar sie sind. Diese {{begriff:quellenkritik|Quellenkritik}} beruht auf vier Fragen.",
+            "id": "g1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "g1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Tims Quellen im Check",
+            "id": "g1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Quelle",
+              "Wer, woher, wann, wem nützt es?",
+              "Verwendung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Unternehmenswebsite, Seite „Über uns“",
+                  "MAKEL selbst, aktuell, Eigenwerbung",
+                  "gut für Selbstverständnis und Sortiment; Werbeaussagen als solche kennzeichnen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jahresabschluss im Unternehmensregister",
+                  "Pflichtveröffentlichung, geprüft, Vorjahr",
+                  "belastbare Zahlen zu Umsatz und Bilanzsumme"
+                ]
+              },
+              {
+                "zellen": [
+                  "Organigramm aus dem Intranet",
+                  "Personalabteilung, Stand dieses Monats",
+                  "Aufbau des Betriebs; Namen nur mit Einverständnis zeigen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gespräch mit der Fertigungsleiterin",
+                  "Augenzeugin, heute, kein Eigeninteresse erkennbar",
+                  "Anschauliche Abläufe; als Gesprächsnotiz mit Datum belegen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Forumsbeitrag „MAKEL zahlt angeblich schlecht“",
+                  "anonym, ohne Beleg, Datum unklar",
+                  "nicht verwenden"
+                ]
+              }
+            ],
+            "fazit": "Die beste Quelle hängt vom Zweck ab. Für Zahlen zählt der geprüfte Abschluss, für Abläufe das Gespräch, für das Selbstbild die Website.",
+            "id": "g1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "g1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede verwendete Information belegt Tim: auf der Folie knapp, etwa „Quelle: Jahresabschluss 2025“, und am Ende vollständig mit Titel, Herausgeber, Datum und bei Internetquellen mit Adresse und Abrufdatum. So kann jeder nachprüfen, woher eine Aussage stammt.",
+            "id": "g1-p2"
+          }
         ],
-        "erklaerung": "Quellenkritik prüft nicht nur, ob ein Text professionell aussieht. Vier Fragen helfen: Wer sagt es? Woher weiß die Person oder Institution es? Wann wurde es veröffentlicht? Wem nützt die Aussage? Autor, Impressum, Erhebungsmethode und Veröffentlichungszeitpunkt zeigen die Einordnung; Werbung und Lobbymaterial können nützlich sein, sind aber nicht automatisch neutral.",
-        "beispiele": [
-          "Die eigene Firmenwebsite kann aktuelle Unternehmensdaten liefern. Weil das Unternehmen selbst von der Darstellung profitiert, muss die Quelle als interessengeleitet eingeordnet werden.",
-          "Bei Gesetzen, Zahlen und Preisen wird das Veröffentlichungsdatum besonders wichtig. Eine alte Angabe darf nicht ungeprüft als aktuelle Information verwendet werden."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Primär- und Sekundärquellen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Primärquelle stammt direkt vom Ursprung: der Gesetzestext, die Studie, das Interview. Eine Sekundärquelle berichtet darüber, etwa ein Zeitungsartikel über eine Studie. Wer kann, greift auf die Primärquelle zurück — Sekundärquellen können verkürzen, veralten oder falsch zitieren.",
+                "id": "g1-d1-p1"
+              }
+            ],
+            "id": "g1-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Texte von KI-Werkzeugen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Antworten eines KI-Chats klingen sicher, können aber Fakten, Zahlen und sogar Quellenangaben erfinden. Sie ersetzen keine Quelle. Wer sie nutzt, prüft jede übernommene Aussage an einer verlässlichen Quelle und gibt diese an.",
+                "id": "g1-d2-p1"
+              }
+            ],
+            "id": "g1-d2"
+          }
         ],
-        "fallbeispiel": "Für eine Präsentation liegen ein Werbetext ohne Autor und eine Seite mit Institution, Impressum, Erhebungsmethode und Datum vor. Zuerst werden die vier Fragen auf beide Quellen angewendet. Der Werbetext kann als Unternehmenssicht verwendet werden, aber nicht als neutrale Bestätigung. Die zweite Quelle ist wegen nachvollziehbarer Herkunft, Methode und Zeitangabe besser prüfbar.",
-        "typische_fehler": "Eine Quelle wird wegen eines professionellen Layouts für valide gehalten. Umgekehrt wird eine Firmenwebsite pauschal verworfen. Richtig ist, Herkunft und Interesse offenzulegen und die Quelle passend zur Aussage zu bewerten.",
         "verstaendnisfragen": [
-          "Welche vier Fragen bilden die Quellenkritik? Wer, woher, wann und wem nützt die Aussage?",
-          "Warum ist das Datum bei Preis- oder Rechtsangaben wichtig? Weil sich solche Angaben ändern können und eine alte Quelle den aktuellen Stand nicht belegt."
-        ],
-        "pruefungsbezug": "Notiere zu jeder verwendeten Quelle Autor oder Institution, Herkunft der Information, Datum und mögliches Interesse. So wird die Recherche im Vortrag nachvollziehbar.",
-        "merksatz": "Wer, woher, wann, wem nützt — diese vier Fragen machen Quellen prüfbar."
+          {
+            "frage": "Darf Tim die Umsatzzahl aus dem Jahresabschluss in der Präsentation für Azubis zeigen?",
+            "antwort": "Ja. Der Jahresabschluss einer Kapitalgesellschaft wird veröffentlicht und ist öffentlich zugänglich. Er nennt die Quelle und das Geschäftsjahr. Interne Zahlen, die nicht veröffentlicht sind, zeigt er dagegen nur mit Freigabe.",
+            "id": "g1-f1"
+          },
+          {
+            "frage": "Warum ist die eigene Website trotz Eigeninteresse eine geeignete Quelle?",
+            "antwort": "Für die Frage, wie sich das Unternehmen selbst sieht und was es anbietet, ist sie die direkteste Quelle. Tim muss nur Werbeaussagen wie „das beste Label der Stadt“ als Selbstdarstellung kennzeichnen und nicht als geprüfte Tatsache übernehmen.",
+            "id": "g1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "g2",
-        "vorauswissen": [
-          "Eine Präsentation richtet sich an eine bestimmte Zielgruppe.",
-          "Folien unterstützen den Vortrag, ersetzen ihn aber nicht."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust Präsentationen zielgruppengerecht auf, formulierst Aussageüberschriften und wendest Gestaltungsregeln für Folien und Diagramme an.",
+        "vorwissen_kurz": "Eine Präsentation soll beim Publikum etwas bewirken: Wissen vermitteln, überzeugen oder eine Entscheidung vorbereiten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst das Publikum, dann die Folien",
+            "id": "g2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor Tim eine Folie gestaltet, klärt er: Wer hört zu, was weiß die Person schon, und was soll sie danach wissen oder tun? Aus diesen Antworten ergibt sich, welche Informationen hineingehören und welche nicht. Der Ablauf ist bei jeder Präsentation gleich; der Inhalt ändert sich mit dem Publikum.",
+            "id": "g2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "g2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Gleicher Betrieb, andere Auswahl",
+            "id": "g2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "",
+              "Neue Auszubildende",
+              "Stofflieferant"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ziel",
+                  "sich zurechtfinden und wohlfühlen",
+                  "MAKEL als verlässlichen Kunden einschätzen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einstieg",
+                  "Foto des Teams am Zuschnitttisch",
+                  "„Wir brauchen 40.000 Meter Baumwolle im Jahr.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kernaussagen",
+                  "Abteilungen und Ansprechpartner, Ablauf der Ausbildung, Regeln im Alltag",
+                  "Sortiment und Mengen, Qualitätsanforderungen, Zahlungsverhalten, Entwicklung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Weglassen",
+                  "Bilanzzahlen",
+                  "Kantinenzeiten und Urlaubsregeln"
+                ]
+              },
+              {
+                "zellen": [
+                  "Schluss",
+                  "„Euer erster Ansprechpartner ist …“",
+                  "konkrete Bitte um ein Angebot bis zu einem Termin"
+                ]
+              }
+            ],
+            "fazit": "Dieselbe Information kann für eine Zielgruppe wichtig und für die andere überflüssig sein. Weglassen ist eine Entscheidung, kein Versäumnis.",
+            "id": "g2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "g2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine gute Folienüberschrift formuliert die Aussage, nicht das Thema. Statt „Umsatzentwicklung“ schreibt Tim „Der Umsatz ist in drei Jahren um 40 % gestiegen“. So weiß das Publikum sofort, worauf es achten soll, und das Diagramm darunter liefert den Beleg. Bei Balkendiagrammen beginnt die Achse bei null, damit die Längen den Werten entsprechen.",
+            "id": "g2-p2"
+          }
         ],
-        "erklaerung": "Ein klarer Präsentationsaufbau führt von Zielgruppe und Ziel über Einstieg und Hauptteil zum Schluss und zur Reflexion. Eine Folie sollte jeweils eine Aussage unterstützen. Diagramme müssen verständlich beschriftet werden; bei Diagrammachsen beginnt die Darstellung bei null. Lesbarkeit, ein roter Faden und ein passendes Verhältnis von Text und Vortrag sind wichtiger als möglichst viele Gestaltungseffekte.",
-        "beispiele": [
-          "Vor der Auswahl der Schrift und Farben wird geklärt, ob die Klasse einen Überblick oder eine Entscheidungshilfe braucht. Davon hängen Detailgrad und Fachsprache ab.",
-          "Ein Diagramm mit einer Aussage pro Folie und einer bei null beginnenden Achse lässt Unterschiede nachvollziehbar erkennen. Die erklärenden Details gehören in den Vortrag."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Corporate Design",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Präsentationen nach außen folgen dem Corporate Design des Unternehmens: Logo, Farben, Schriften und Vorlagen sind festgelegt. Das wirkt einheitlich und professionell und erspart Gestaltungsentscheidungen. Tim nutzt die MAKEL-Vorlage, statt eigene Farben zu wählen.",
+                "id": "g2-d1-p1"
+              }
+            ],
+            "id": "g2-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Barrierearm präsentieren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ausreichende Schriftgröße, starke Kontraste und Diagramme, die nicht nur über Farben unterscheiden, helfen allen — auch Menschen mit Sehschwäche oder Farbfehlsichtigkeit. Wer Folien verschickt, ergänzt bei Bildern kurze Beschreibungen und nutzt echte Überschriften statt formatierter Textfelder.",
+                "id": "g2-d2-p1"
+              }
+            ],
+            "id": "g2-d2"
+          }
         ],
-        "fallbeispiel": "Eine Folie enthält fünf Aussagen, ein Diagramm mit abgeschnittener Achse und den vollständigen Vortragstext. Die Überarbeitung trennt die Aussagen auf passende Folien, setzt die Achse bei null an und kürzt den Text auf Stichwörter. Im Vortrag werden die Zusammenhänge erklärt; die Folie bleibt Orientierung statt Manuskript.",
-        "typische_fehler": "Die Zielgruppe wird erst nach der Gestaltung berücksichtigt. Häufig sind Folien außerdem überfüllt oder Diagramme verzerren durch eine abgeschnittene Achse den Eindruck.",
         "verstaendnisfragen": [
-          "Was ist vor dem Gestalten zu klären? Zielgruppe, Ziel und die zentrale Aussage der Präsentation.",
-          "Warum soll eine Diagrammachse bei null beginnen? Damit Größenverhältnisse nicht optisch übertrieben oder verkürzt werden."
-        ],
-        "pruefungsbezug": "Prüfe Entwürfe in der Reihenfolge Zielgruppe, roter Faden, eine Aussage je Folie, Lesbarkeit und korrekte Diagrammdarstellung.",
-        "merksatz": "Die Folie gibt Orientierung; der Vortrag erklärt die Aussage."
+          {
+            "frage": "Warum gehören Bilanzzahlen nicht in die Präsentation für neue Auszubildende?",
+            "antwort": "Sie helfen ihnen nicht bei ihrem Ziel, sich im Betrieb zurechtzufinden, und lenken von den wichtigen Informationen ab. Für einen Lieferanten, der die Zahlungsfähigkeit einschätzen will, können sie dagegen wichtig sein.",
+            "id": "g2-f1"
+          },
+          {
+            "frage": "Formuliere eine Aussageüberschrift für eine Folie mit dem Organigramm.",
+            "antwort": "Zum Beispiel: „Drei Abteilungen, kurze Wege: Bei Fragen hilft zuerst die Ausbilderin in der Verwaltung.“ Die Überschrift sagt, was das Organigramm für das Publikum bedeutet.",
+            "id": "g2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "g3",
-        "vorauswissen": [
-          "Texte, Bilder, Grafiken, Musik und Videos können geschützt sein.",
-          "Namen, Fotos und andere Angaben können personenbezogene Daten sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst Präsentationsinhalte auf Urheberrecht und Datenschutz, entwickelst vorab einen Kriterienkatalog und bewertest eine Präsentation damit.",
+        "vorwissen_kurz": "Fremde Werke sind geschützt, auch wenn sie frei im Internet zu finden sind. Personenbezogene Daten dürfen nur mit Rechtsgrundlage verwendet werden.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Rechtsfragen zu jeder Folie",
+            "id": "g3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für jedes Bild und jede Information stellt Tim zwei Fragen. Darf ich das Material verwenden? Das regelt das {{begriff:urheberrecht|Urheberrecht}}. Darf ich etwas über diese Person zeigen? Das regelt der Datenschutz. Beide Fragen sind unabhängig voneinander: Ein eigenes Foto ist urheberrechtlich unproblematisch, zeigt aber vielleicht Kolleginnen, die nicht einverstanden sind.",
+            "id": "g3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "g3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Tims Folien im Rechtscheck",
+            "id": "g3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Inhalt",
+              "Urheberrecht",
+              "Datenschutz",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Foto eines Hoodies aus der Google-Bildersuche",
+                  "Rechte beim Fotografen, keine Lizenz",
+                  "—",
+                  "ersetzen durch eigenes Produktfoto"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigenes Foto der Näherei mit drei Beschäftigten",
+                  "eigenes Werk",
+                  "Einwilligung der Abgebildeten nötig",
+                  "nachfragen oder ohne Personen fotografieren"
+                ]
+              },
+              {
+                "zellen": [
+                  "Organigramm mit Namen der Abteilungsleitungen",
+                  "Material des Betriebs",
+                  "dienstliche Angaben, intern üblich",
+                  "für Azubis intern ja, nach außen nur mit Freigabe"
+                ]
+              },
+              {
+                "zellen": [
+                  "Grafik aus einer Fachzeitschrift",
+                  "geschützt",
+                  "—",
+                  "nur mit Erlaubnis oder als Zitat mit Quelle und eigenem Bezug"
+                ]
+              },
+              {
+                "zellen": [
+                  "MAKEL-Logo",
+                  "eigenes Zeichen",
+                  "—",
+                  "nach Corporate-Design-Vorgaben verwenden"
+                ]
+              }
+            ],
+            "fazit": "Die Quelle anzugeben ist Pflicht, ersetzt aber nicht die Erlaubnis. Und eine Einwilligung zur Veröffentlichung eines Fotos muss vorher eingeholt werden.",
+            "id": "g3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "g3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Unterricht erlaubt das Urheberrecht eng begrenzte Nutzungen, etwa kleine Teile eines Werks oder einzelne Abbildungen zur Veranschaulichung in der Klasse. Sobald die Präsentation im Betrieb gezeigt, verschickt oder online gestellt wird, gelten diese Ausnahmen nicht mehr.",
+            "id": "g3-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Bewerten mit einem Kriterienkatalog",
+            "id": "g3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Damit eine Präsentation fair bewertet werden kann, legt die Klasse die Kriterien vorher fest und gewichtet sie. Nach dem Vortrag bewertet jede Person jedes Kriterium mit 1 bis 5 Punkten.",
+            "id": "g3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "g3-b3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Gewicht",
+              "Punkte für Tim",
+              "Gewichtet"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Inhalt",
+                  "30 %",
+                  "4",
+                  "1,20"
+                ]
+              },
+              {
+                "zellen": [
+                  "Struktur",
+                  "20 %",
+                  "5",
+                  "1,00"
+                ]
+              },
+              {
+                "zellen": [
+                  "Medieneinsatz",
+                  "15 %",
+                  "3",
+                  "0,45"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vortrag",
+                  "20 %",
+                  "4",
+                  "0,80"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zeit",
+                  "5 %",
+                  "2",
+                  "0,10"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechtliches",
+                  "10 %",
+                  "5",
+                  "0,50"
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "100 %",
+                  "",
+                  "4,05 von 5"
+                ]
+              }
+            ],
+            "fazit": "Die Gewichtung zeigt, was wichtig ist: Inhalt zählt sechsmal so viel wie die Zeit. Tims Schwachpunkte sind Folien mit zu viel Text und eine Überziehung um vier Minuten — beides nimmt er in seine nächste Präsentation mit.",
+            "id": "g3-t2"
+          }
         ],
-        "erklaerung": "Urheberrecht und Datenschutz beantworten unterschiedliche Fragen. Das Urheberrecht schützt Werke und klärt, ob ein Material genutzt werden darf; eine Quellenangabe ersetzt keine Nutzungserlaubnis. Der Datenschutz schützt Personen und ihre Daten. Fotos von Kolleginnen und Kollegen benötigen eine Einwilligung, und echte Personaldaten gehören nicht ungeprüft in Beispiele. Für die Bewertung wird der Kriterienkatalog vor der Präsentation festgelegt.",
-        "beispiele": [
-          "Ein Bild aus dem Internet wird nicht allein durch einen Bildnachweis frei nutzbar; die Nutzungserlaubnis muss zusätzlich geprüft werden.",
-          "Im Organigramm kann statt des Namens die Funktionsbezeichnung ‚Leitung Einkauf‘ verwendet werden. So werden weniger personenbezogene Daten gezeigt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Feedback geben und nehmen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Rückmeldungen beziehen sich auf beobachtbares Verhalten und nennen ein Beispiel: „Auf Folie 4 standen sechs Sätze; ich habe aufgehört zuzuhören.“ Wer Feedback erhält, hört zu, fragt nach und rechtfertigt sich nicht sofort. Ziel ist, die nächste Präsentation zu verbessern, nicht die vergangene zu verteidigen.",
+                "id": "g3-d1-p1"
+              }
+            ],
+            "id": "g3-d1"
+          }
         ],
-        "fallbeispiel": "Eine Präsentation soll Namen aller Abteilungsleitungen und Umsatzzahlen des letzten Jahres zeigen. Namen sind personenbezogene Daten; aus Gründen der Datensparsamkeit werden zunächst nur Funktionen verwendet. Umsatzzahlen können Betriebsgeheimnisse sein und dürfen nur mit Freigabe oder aus einer ohnehin veröffentlichten Quelle aufgenommen werden. Zusätzlich wird für jedes Bild die Nutzungserlaubnis geprüft.",
-        "typische_fehler": "Quellenangabe und Nutzungserlaubnis werden gleichgesetzt. Außerdem werden Datenschutz und Urheberrecht vermischt oder Kriterien erst nach dem Vortrag so gewählt, dass das Ergebnis besser aussieht.",
         "verstaendnisfragen": [
-          "Was schützt das Urheberrecht, was der Datenschutz? Das Urheberrecht schützt Werke; der Datenschutz schützt Personen und zuordenbare Angaben.",
-          "Wann wird der Kriterienkatalog erstellt? Vor der Präsentation, damit die Bewertung nachvollziehbar und nicht nachträglich angepasst wird."
+          {
+            "frage": "Warum legt man die Kriterien vor der Präsentation fest?",
+            "antwort": "Damit alle wissen, worauf es ankommt, und die Bewertung nicht nach dem Gesamteindruck erfolgt. Vorher festgelegte Kriterien machen Bewertungen vergleichbar und nachvollziehbar.",
+            "id": "g3-f1"
+          },
+          {
+            "frage": "Ein Mitschüler darf eine Grafik unter einer freien Lizenz verwenden, die „Namensnennung“ verlangt. Was muss er tun?",
+            "antwort": "Er nennt den Urheber und die Lizenz, wie es die Lizenzbedingungen vorgeben, und hält eventuelle weitere Bedingungen ein. Ohne diese Angaben verletzt er die Lizenz, obwohl das Werk frei nutzbar ist.",
+            "id": "g3-f2"
+          }
         ],
-        "pruefungsbezug": "Trenne bei jedem Material die Prüfungen: Darf ich dieses Werk nutzen? Und: Darf ich diese Person beziehungsweise dieses Datum zeigen? Danach Kriterienkatalog und Freigaben dokumentieren.",
-        "merksatz": "Urheberrecht schützt Werke, Datenschutz schützt Personen; der Kriterienkatalog steht vor der Bewertung."
+        "quellen": [
+          {
+            "titel": "Urheberrechtsgesetz, §§ 51, 60a",
+            "url": "https://www.gesetze-im-internet.de/urhg/",
+            "bezug": "Zitat, Unterricht und Lehre"
+          },
+          {
+            "titel": "Kunsturhebergesetz, § 22",
+            "url": "https://www.gesetze-im-internet.de/kunsturhg/",
+            "bezug": "Recht am eigenen Bild"
+          }
+        ]
       }
     ]
   },

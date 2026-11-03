@@ -7,79 +7,838 @@
   "minuten": 30,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Beschaffung beginnt nicht mit der Bestellung, sondern mit einer belastbaren Bedarfsermittlung. Erst wenn Menge, Wert und Zeitpunkt bekannt sind, lassen sich die passende Planungsmethode und der richtige Bestellzeitpunkt bestimmen.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Bedarf bedeutet, welche Menge eines Materials zu welchem Zeitpunkt benötigt wird.",
-          "Die Planungsmethode soll zum Wert und zur Vorhersagbarkeit des Materials passen."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst an der vorhandenen Information, ob ein Bedarf gerechnet, aus Verbrauchsdaten hochgerechnet oder geschätzt werden muss, und begründest den Aufwand.",
+        "vorwissen_kurz": "Bedarf heißt: welche Menge eines Materials zu welchem Zeitpunkt gebraucht wird. Beschaffung beginnt nicht mit der Bestellung, sondern mit dieser Frage.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Die Frage hinter jeder Bestellung",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor jemand ein Angebot einholt, muss feststehen, was gebraucht wird, wie viel davon und bis wann. Diese Vorarbeit heißt {{begriff:bedarfsermittlung|Bedarfsermittlung}}. Wird sie übersprungen, entstehen zwei teure Fehler: Kommt die Ware zu spät, steht ein Auftrag oder die Produktion still. Kommt sie zu früh oder in zu großer Menge, liegt Geld im Regal, das an anderer Stelle fehlt.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Welche Methode passt, entscheidest du nicht nach dem Namen, sondern nach zwei Fragen: Welche Information liegt vor — ein konkreter Auftrag, Verbrauchszahlen aus der Vergangenheit oder gar nichts davon? Und wie viel ist das Material wert? Ein genaues Verfahren kostet Arbeitszeit. Es lohnt sich dort, wo ein Fehler viel Geld kostet.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Lager, drei Materialien, drei Wege",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL plant für den nächsten Monat drei Dinge. Für einen Kundenauftrag über 300 bedruckte Ordner werden Rückenschilder gebraucht. Kopierpapier geht laufend weg. Außerdem soll erstmals ein neues Notizbuch ins Sortiment, für das es weder Aufträge noch Verbrauchszahlen gibt.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Material",
+              "Was liegt vor?",
+              "Verfahren",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rückenschilder",
+                  "Auftrag über 300 Ordner, je Ordner ein Schild",
+                  "deterministisch",
+                  "genau 300 Stück, gerechnet"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kopierpapier",
+                  "Verbrauch der letzten drei Monate: 70, 80, 75 Pakete",
+                  "stochastisch",
+                  "rund 75 Pakete, aus dem Durchschnitt hochgerechnet"
+                ]
+              },
+              {
+                "zellen": [
+                  "Neues Notizbuch",
+                  "keine Aufträge, keine Vergangenheitswerte",
+                  "subjektiv",
+                  "Schätzung der zuständigen Person, z. B. 50 Stück für den Anfang"
+                ]
+              }
+            ],
+            "fazit": "Nicht das Material selbst bestimmt das Verfahren, sondern die Information, die für die Planung zur Verfügung steht.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rückenschilder musst du nicht schätzen: Der Auftrag legt die Menge fest. Das ist **deterministische** Bedarfsermittlung — der Bedarf wird aus einem bekannten Auftrag oder einer Stückliste errechnet. Beim Kopierpapier gibt es keinen einzelnen Auftrag, aber verlässliche Verbrauchsdaten. Aus (70 + 80 + 75) ÷ 3 = 75 Paketen ergibt sich eine **stochastische** Planung: Die Vergangenheit wird in die Zukunft fortgeschrieben. Beim Notizbuch fehlt beides. Dann bleibt nur die **subjektive** Schätzung aus Erfahrung. Sie ist die unsicherste Methode und wird ersetzt, sobald echte Verbrauchszahlen vorliegen.",
+            "id": "b1-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Warum der Wert über den Aufwand entscheidet",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Rückenschilder ist die genaue Rechnung billig, weil der Auftrag die Zahl schon liefert. Bei teuren Teilen lohnt sich genaues Rechnen auch dann, wenn es aufwendig ist: Jede zu viel gekaufte Einheit bindet viel Geld. Bei billigem Verbrauchsmaterial wäre eine Stückliste für jeden Notizblock dagegen teurer als der mögliche Fehler. Dort genügt die Hochrechnung aus dem Verbrauch. Diese Abwägung zwischen Genauigkeit und Planungsaufwand führt direkt zur ABC-Analyse im nächsten Abschnitt.",
+            "id": "b1-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "hinweis": "Die Faustregel „teuer heißt rechnen, billig heißt schätzen“ ist eine Merkhilfe. Entscheidend bleibt, welche Information vorliegt: Auch ein billiges Teil wird gerechnet, wenn ein Auftrag die Menge exakt vorgibt.",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Die deterministische Bedarfsermittlung rechnet aus einem konkreten Auftrag oder einer Stückliste. Die stochastische Bedarfsermittlung nutzt den Verbrauch der Vergangenheit. Die subjektive Bedarfsermittlung greift auf Erfahrung und Schätzung zurück, wenn noch keine belastbaren Verbrauchsdaten vorhanden sind. Die Wahl ist deshalb eine Abwägung zwischen Genauigkeit und Planungsaufwand.",
-        "beispiele": [
-          "Für 300 bestellte Ordner werden 300 Rückenschilder benötigt: Der Bedarf ist aus dem Auftrag ableitbar und damit deterministisch.",
-          "Kopierpapier wird anhand des Verbrauchs im letzten Quartal geplant; bei einem neuen Produkt ohne Vergangenheitswerte bleibt zunächst nur eine subjektive Schätzung."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Stochastisch ist nicht dasselbe wie subjektiv",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Beide Verfahren liefern keinen exakt gerechneten Wert, deshalb werden sie oft verwechselt. Der Unterschied liegt in der Grundlage: Die stochastische Planung stützt sich auf gemessene Verbrauchszahlen. Ändert sich nichts Wesentliches, ist sie meist recht zuverlässig. Die subjektive Schätzung stützt sich nur auf Erfahrung und Einschätzung einer Person. Sie ist eine Übergangslösung für Neues.",
+                "id": "b1-d1-p1"
+              },
+              {
+                "typ": "absatz",
+                "text": "Ändert sich die Lage, kann auch eine stochastische Planung danebenliegen. Wenn MAKEL ab nächstem Monat doppelt so viele Mitarbeitende im Büro hat, sagt der alte Papierverbrauch wenig über den neuen. Dann musst du die Vergangenheitswerte anpassen und die Annahme dazu offen nennen.",
+                "id": "b1-d1-p2"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn ein Auftrag und Verbrauchsdaten gleichzeitig vorliegen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Materialien werden teils für feste Aufträge und teils laufend gebraucht, etwa Versandkartons. Dann kannst du beide Verfahren kombinieren: den Auftragsbedarf rechnen und den allgemeinen Verbrauch aus der Vergangenheit hochrechnen. Wichtig ist, dass du denselben Bedarf nicht doppelt zählst — Kartons, die schon im Auftrag stecken, gehören nicht noch einmal in den Durchschnittsverbrauch.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb plant drei Materialien: Rückenschilder für einen konkreten Auftrag werden aus der Stückzahl berechnet. Kopierpapier wird aus vergangenen Verbrauchswerten hochgerechnet. Für ein völlig neues Produkt ohne Auftrag und Verbrauchsdaten wird zunächst die Erfahrung der zuständigen Person genutzt. Sobald echte Verbrauchsdaten vorliegen, kann die Schätzung durch eine stochastische Planung ersetzt werden.",
-        "typische_fehler": "Stochastisch und subjektiv werden gleichgesetzt, obwohl die stochastische Methode auf Vergangenheitsdaten beruht. Umgekehrt wird für billiges Verbrauchsmaterial eine unnötig genaue Stückliste erstellt, obwohl der Aufwand den Wert übersteigt.",
         "verstaendnisfragen": [
-          "Was ist der Kernunterschied zwischen deterministisch und stochastisch? Deterministisch wird aus einem konkreten Bedarf gerechnet; stochastisch wird aus vergangenen Verbräuchen geschätzt.",
-          "Wann ist subjektive Bedarfsermittlung nachvollziehbar? Wenn keine geeigneten Auftrags- oder Verbrauchsdaten vorhanden sind."
-        ],
-        "pruefungsbezug": "In Zuordnungsaufgaben zuerst die Informationsquelle markieren: konkreter Auftrag = deterministisch, Vergangenheit = stochastisch, Erfahrung ohne Daten = subjektiv.",
-        "merksatz": "Deterministisch heißt gerechnet, stochastisch heißt aus Verbrauchsdaten geschätzt, subjektiv heißt erfahrungsbasiert geschätzt."
+          {
+            "frage": "Woran erkennst du in einer Aufgabe am schnellsten, ob deterministisch oder stochastisch geplant wird?",
+            "antwort": "An der Informationsquelle: Steht ein konkreter Auftrag oder eine Stückliste im Sachverhalt, wird der Bedarf daraus gerechnet (deterministisch). Gibt es nur Verbrauchszahlen der Vergangenheit, wird hochgerechnet (stochastisch). Fehlen beide, bleibt die subjektive Schätzung.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Für ein neues Produkt liegen nach drei Monaten Verkaufszahlen vor. Sollte MAKEL bei der subjektiven Schätzung bleiben?",
+            "antwort": "Nein. Sobald belastbare Verbrauchsdaten vorliegen, sind sie die bessere Grundlage. Die Planung kann dann auf die stochastische Hochrechnung umgestellt werden. Die Schätzung war nur nötig, weil anfangs keine Daten vorhanden waren.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Der Wert eines Materials ergibt sich aus Jahresverbrauch mal Preis.",
-          "Die ABC-Analyse ordnet Materialien nach ihrem Jahreswert, nicht nach ihrer Stückzahl."
+        "darstellung": "vollfassung",
+        "ziel": "Du führst eine ABC-Analyse vollständig durch, von Jahreswert und Sortierung bis zum kumulierten Anteil, und leitest daraus ab, wo sich Planungsaufwand lohnt.",
+        "vorwissen_kurz": "Der Jahreswert eines Materials ist Jahresverbrauch mal Preis. Ein Anteil in Prozent ist Teilwert geteilt durch Gesamtwert mal 100.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum wenige Materialien das meiste Geld binden",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In fast jedem Lager zeigt sich dasselbe Bild: Einige wenige Materialarten machen den Großteil des Einkaufswerts aus, sehr viele andere fast nichts. Wer alle Materialien gleich sorgfältig plant, verschwendet Arbeitszeit bei den billigen und ist bei den teuren womöglich zu nachlässig. Die {{begriff:abc-analyse|ABC-Analyse}} macht das Muster sichtbar und teilt die Materialien in Klassen ein, damit der Aufwand dort landet, wo das Geld liegt.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Analyse Schritt für Schritt",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gerechnet wird immer in derselben Reihenfolge:",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "liste",
+            "punkte": [
+              "Für jedes Material Jahresverbrauch und Preis zusammentragen.",
+              "Den Jahreswert berechnen: Menge × Preis.",
+              "Die Materialien nach Jahreswert absteigend sortieren — nicht nach Menge.",
+              "Den Anteil jedes Materials am Gesamtwert berechnen und von oben nach unten aufsummieren (kumulieren).",
+              "Klassengrenzen festlegen und die Materialien zuordnen."
+            ],
+            "nummeriert": true,
+            "id": "b2-l1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Werte stehen in der vorhandenen Tabelle. Ihr Gesamtwert beträgt 21.600 + 5.040 + 3.060 + 1.050 + 810 = 31.560 €. Damit lassen sich die Anteile berechnen:",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Material",
+              "Jahreswert",
+              "Anteil",
+              "kumuliert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kopierer-Toner",
+                  "21.600,00 €",
+                  "68,4 %",
+                  "68,4 %"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Aktenordner",
+                  "5.040,00 €",
+                  "16,0 %",
+                  "84,4 %"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Kopierpapier",
+                  "3.060,00 €",
+                  "9,7 %",
+                  "94,1 %"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Kugelschreiber",
+                  "1.050,00 €",
+                  "3,3 %",
+                  "97,4 %"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Haftnotizen",
+                  "810,00 €",
+                  "2,6 %",
+                  "100,0 %"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Ein Material von fünf trägt gut zwei Drittel des Werts. Die Anteile sind auf eine Nachkommastelle gerundet.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Toner allein macht 68,4 % aus. Er ist das typische **A-Gut**: wenige Stück, hoher Wert. Ordner und Papier bringen zusammen weitere rund 26 % und liegen in der Mitte (**B**). Kugelschreiber und Haftnotizen sind die beiden größten Mengen im Lager, tragen aber zusammen nur knapp 6 % — sie sind **C-Güter**. Wo genau die Grenzen liegen, legt der Betrieb fest. Die Richtwerte in der Grafik sind Faustwerte, keine festen Regeln. Bei nur fünf Materialien wäre ein Toneranteil von 68 % auch dann klar A, wenn die A-Grenze bei 75 % gezogen wird.",
+            "id": "b2-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was aus der Einteilung folgt",
+            "id": "b2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Klassen sind kein Selbstzweck. Für den Toner lohnt es sich, den Bedarf genau zu planen, Angebote mehrerer Lieferer zu vergleichen und eher kleinere Mengen häufiger zu bestellen, damit nicht unnötig viel Geld im Lager liegt. Für Haftnotizen dagegen genügt eine einfache Lösung: ein fester Lieferer, Sammelbestellungen, Bestellung nach Verbrauch. Ein Prozent Ersparnis beim Toner bringt 216 € im Jahr; dieselbe Ersparnis bei den Haftnotizen gut 8 €.",
+            "id": "b2-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b4"
+          }
         ],
-        "ablauf": [
-          "Für jedes Material Jahresverbrauch und Preis zusammentragen.",
-          "Jahreswert mit Menge mal Preis berechnen.",
-          "Materialien nach Jahreswert absteigend sortieren.",
-          "Kumulierte Werte bilden und daraus A-, B- und C-Güter ableiten."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Prozentanteil und kumulierter Anteil",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Anteil zeigt, welchen Teil des Gesamtwerts ein einzelnes Material ausmacht: Teilwert ÷ Gesamtwert × 100. Für die Ordner: 5.040 ÷ 31.560 × 100 ≈ 16,0 %. Kumuliert heißt aufsummiert: Zum Anteil der Ordner kommt der Anteil aller Materialien davor hinzu, also 68,4 % + 16,0 % = 84,4 %. Die letzte Zeile muss immer 100 % ergeben — das ist eine gute Kontrolle für die eigene Rechnung.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Gleicher Eurobetrag, andere Klasse",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Jahreswert von 38.000 € ist in einem kleinen Betrieb mit 50.000 € Gesamtwert ein A-Gut (76 %). In einem Industriebetrieb mit 38 Millionen € Gesamtwert macht er nur 0,1 % aus und wäre ein C-Gut. Die Klasse ergibt sich deshalb nie aus dem Eurobetrag allein, sondern immer aus dem Anteil am Gesamtwert.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "erklaerung": "Die ABC-Analyse konzentriert den Planungsaufwand auf die Materialien, bei denen finanziell am meisten auf dem Spiel steht. A-Güter haben einen hohen Jahreswert und werden deshalb sorgfältig geplant. C-Güter haben einen kleinen Wert; dort ist eine vereinfachte Beschaffung sinnvoll. B-Güter liegen dazwischen.",
-        "beispiele": [
-          "120 Toner zu 180 € ergeben 21.600 € Jahreswert und gehören in der vorhandenen Tabelle zu A.",
-          "3.000 Kugelschreiber zu 0,35 € ergeben nur 1.050 € Jahreswert und sind trotz der hohen Stückzahl C-Güter."
-        ],
-        "fallbeispiel": "Ein Material wird 40-mal pro Jahr zu 950 € benötigt. Jahreswert: 40 × 950 € = 38.000 €. Der gesamte Materialverbrauch liegt bei 50.000 €, das Material macht also 76 % des Werts aus. Die Menge ist klein, der Wertanteil aber sehr hoch. Deshalb wird es als A-Gut behandelt: Bedarf möglichst genau bestimmen, Angebote sorgfältig vergleichen und den Bestand nicht unnötig groß machen.",
-        "typische_fehler": "Die Klasse wird nach Menge statt nach Wert vergeben — oder nach einem absoluten Eurobetrag ohne Vergleich: 38.000 € sind bei 50.000 € Gesamtwert 76 %, bei 38 Mio. € nur 0,1 %. Auch die Richtwerte der ABC-Analyse werden als starre gesetzliche Grenzen behandelt, obwohl die vorhandene Grafik sie ausdrücklich als Faustwerte bezeichnet.",
         "verstaendnisfragen": [
-          "Warum können wenige Stück A-Güter sein? Weil der Preis je Stück den Jahreswert stark erhöhen kann.",
-          "Warum werden C-Güter vereinfacht beschafft? Weil eine sehr genaue Planung bei geringem Jahreswert mehr Aufwand verursachen kann, als sie einspart."
-        ],
-        "pruefungsbezug": "Immer zuerst den Jahreswert berechnen und die Materialien danach sortieren. Erst die kumulierte Wertbetrachtung entscheidet über die Klasse.",
-        "merksatz": "ABC richtet sich nach dem Jahreswert: Menge mal Preis, nicht nach der Menge allein."
+          {
+            "frage": "Kugelschreiber sind mengenmäßig der zweitgrößte Posten. Warum gehören sie trotzdem zu den C-Gütern?",
+            "antwort": "Die ABC-Analyse bewertet den Wert, nicht die Menge. 3.000 Stück zu 0,35 € ergeben nur 1.050 € oder 3,3 % des Gesamtwerts. Eine aufwendige Planung würde mehr kosten, als sie hier einsparen könnte.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Der Tonerpreis halbiert sich, alle anderen Werte bleiben gleich. Muss die Einteilung neu geprüft werden?",
+            "antwort": "Ja. Der Toner hätte dann 10.800 € Jahreswert, der Gesamtwert sänke auf 20.760 €. Sein Anteil fiele auf rund 52 %. Er bliebe zwar das wertvollste Material, aber die Abstände und damit auch die Klassengrenzen verschieben sich. Die ABC-Analyse ist eine Momentaufnahme und muss bei veränderten Preisen oder Mengen wiederholt werden.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Der Meldebestand löst die Bestellung aus.",
-          "Der Mindestbestand ist ein Puffer, der normalerweise nicht angetastet werden soll."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest den Meldebestand, erklärst jede seiner Größen und begründest, wie viel auf einmal bestellt werden sollte.",
+        "vorwissen_kurz": "Während eine Bestellung unterwegs ist, wird weiter verbraucht. Der Meldebestand muss diese Wartezeit überbrücken.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Nicht wie viel, sondern wann",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der {{begriff:meldebestand|Meldebestand}} beantwortet eine einzige Frage: Ab welchem Bestand muss bestellt werden, damit die neue Lieferung rechtzeitig eintrifft? Er ist so bemessen, dass der Vorrat genau bis zur Ankunft der Lieferung reicht — und dann immer noch ein Puffer übrig ist.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Dieser Puffer ist der {{begriff:mindestbestand|Mindestbestand}}, oft eiserner Bestand genannt. Er ist für den Ausnahmefall da: Der Lieferer braucht zwei Tage länger, oder der Verbrauch steigt unerwartet. Im Normalbetrieb wird er nicht angetastet.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Meldebestand an einem vollständigen Fall",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der Grafik verbraucht MAKEL 50 Stück am Tag, die Lieferzeit beträgt 6 Tage und der Mindestbestand 200 Stück. Gesucht ist der Bestand, bei dem bestellt werden muss.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Rechnung",
+              "Bedeutung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Verbrauch während der Lieferzeit",
+                  "50 Stück/Tag × 6 Tage = 300 Stück",
+                  "So viel geht weg, bis die Lieferung da ist."
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Mindestbestand dazu",
+                  "300 + 200 = 500 Stück",
+                  "Der Puffer soll auch danach noch da sein."
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestand bei Ankunft",
+                  "500 − 300 = 200 Stück",
+                  "Rechnerisch genau der Mindestbestand."
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestand nach Wareneingang",
+                  "200 + 1.200 = 1.400 Stück",
+                  "Mit einer Bestellmenge von 1.200 Stück."
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Meldebestand = Tagesverbrauch × Lieferzeit + Mindestbestand = 500 Stück.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Achte auf die Einheiten: Stück pro Tag mal Tage ergibt Stück. Die Bestellmenge kommt in der Formel des Meldebestands nicht vor. Sie bestimmt erst, wie hoch der Bestand nach dem Wareneingang ist. Liegt dieser Wert über dem {{begriff:hoechstbestand|Höchstbestand}}, passt die Ware nicht ins Lager oder bindet mehr Geld als geplant.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Verlängert sich die Lieferzeit, muss früher bestellt werden, obwohl sich am Verbrauch nichts ändert. Bei 12 statt 6 Tagen Lieferzeit liegt der Meldebestand bei 50 × 12 + 200 = 800 Stück. Probier es in der Grafik aus: Die Meldelinie wandert nach oben.",
+            "id": "b3-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wie viel auf einmal? Die optimale Bestellmenge",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob MAKEL einmal im Jahr eine große Menge oder jeden Monat eine kleine bestellt, ist eine zweite Entscheidung. Zwei Kosten laufen gegeneinander: Jede Bestellung verursacht feste **Bestellkosten** (Angebote prüfen, Bestellung schreiben, Wareneingang, Rechnung). Je größer die Menge, desto seltener fallen sie an. Gleichzeitig liegt bei großen Mengen im Durchschnitt mehr Ware im Lager. Dann steigen die **Lagerhaltungskosten** für Raum, Versicherung, Schwund und vor allem das gebundene Kapital.",
+            "id": "b3-p6"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Rechenbeispiel mit angenommenen Werten: Jahresbedarf 2.400 Stück, Bestellkosten 30 € je Bestellung, Einstandspreis 10 € je Stück, Lagerhaltungskostensatz 20 % pro Jahr. Der durchschnittliche Lagerbestand ist die halbe Bestellmenge, weil der Bestand von der vollen Menge gleichmäßig auf null sinkt (den Mindestbestand lassen wir hier weg).",
+            "id": "b3-p7"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Bestellmenge",
+              "Bestellungen pro Jahr",
+              "Bestellkosten",
+              "Ø Bestand (Wert)",
+              "Lagerkosten 20 %",
+              "Summe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "200 Stück",
+                  "12",
+                  "360 €",
+                  "100 Stück = 1.000 €",
+                  "200 €",
+                  "560 €"
+                ],
+                "mono": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "240 Stück",
+                  "10",
+                  "300 €",
+                  "120 Stück = 1.200 €",
+                  "240 €",
+                  "540 €"
+                ],
+                "mono": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "300 Stück",
+                  "8",
+                  "240 €",
+                  "150 Stück = 1.500 €",
+                  "300 €",
+                  "540 €"
+                ],
+                "mono": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "zellen": [
+                  "400 Stück",
+                  "6",
+                  "180 €",
+                  "200 Stück = 2.000 €",
+                  "400 €",
+                  "580 €"
+                ],
+                "mono": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              }
+            ],
+            "fazit": "Die Gesamtkosten sind dort am niedrigsten, wo Bestell- und Lagerkosten etwa gleich hoch sind — hier zwischen 240 und 300 Stück.",
+            "id": "b3-t2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Formel von Andler liefert den genauen Punkt: √(200 × Jahresbedarf × Bestellkosten ÷ (Einstandspreis × Lagerhaltungskostensatz)) = √(200 × 2.400 × 30 ÷ (10 × 20)) = √72.000 ≈ 268 Stück. Dort betragen beide Kostenarten je rund 268 €. In der Praxis wird gerundet, etwa auf 240 Stück und 10 Bestellungen im Jahr. Das kostet kaum mehr als das rechnerische Optimum, weil die Gesamtkostenkurve rund um den Tiefpunkt flach verläuft.",
+            "id": "b3-p8"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "b3-b5"
+          }
         ],
-        "ablauf": [
-          "Tagesverbrauch feststellen.",
-          "Tagesverbrauch mit der Lieferzeit multiplizieren.",
-          "Mindestbestand addieren.",
-          "Bei Erreichen des Meldebestands bestellen und die Bestellmenge berücksichtigen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wo das Bestellmengenmodell nicht passt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Das Modell setzt voraus, dass der Verbrauch gleichmäßig ist, der Preis unabhängig von der Menge gleich bleibt, jederzeit geliefert werden kann und das Lager unbegrenzt Platz hat. Das ist selten genau so. Gibt der Lieferer ab 500 Stück 5 % Mengenrabatt, kann die größere Menge trotz höherer Lagerkosten günstiger sein — dann musst du die Rabattersparnis in den Vergleich einrechnen. Ebenso begrenzen Verpackungseinheiten, Mindestbestellmengen, Haltbarkeit oder Lagerfläche die Wahl. Das Ergebnis ist deshalb ein Orientierungswert, keine Vorschrift.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Mehr Puffer oder kürzere Lieferzeit?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Wird der Lieferer unzuverlässig, kann MAKEL den Mindestbestand erhöhen. Das senkt das Risiko eines Stillstands, bindet aber dauerhaft mehr Kapital: Bei 300 statt 200 Stück Mindestbestand liegen ständig 100 Stück mehr im Lager. Alternativ kann MAKEL einen schnelleren oder zweiten Lieferer suchen. Welche Lösung besser ist, hängt davon ab, wie teuer ein Ausfall wäre und wie viel der zusätzliche Bestand kostet.",
+                "id": "b3-d2-p1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "erklaerung": "Der Meldebestand beschreibt nicht die gewünschte Bestellmenge, sondern den Zeitpunkt der Bestellung. Während der Lieferzeit wird weiter verbraucht; der Bestand muss deshalb noch für diese Tage reichen. Der Mindestbestand schützt zusätzlich vor Lieferverzögerungen oder unerwartet höherem Verbrauch.",
-        "beispiele": [
-          "Bei 50 Stück Tagesverbrauch, sechs Tagen Lieferzeit und 200 Stück Mindestbestand liegt der Meldebestand bei 50 × 6 + 200 = 500 Stück.",
-          "Verlängert sich die Lieferzeit, steigt der Meldebestand, weil während des Wartens mehr Stück verbraucht werden."
-        ],
-        "fallbeispiel": "Setze die Werte der Lagergrafik ein: Tagesverbrauch 50 Stück, Lieferzeit sechs Tage, Mindestbestand 200 Stück. Rechnung: 50 × 6 = 300 Stück Verbrauch während der Lieferzeit; 300 + 200 = 500 Stück Meldebestand. Wird bei 500 bestellt und beträgt die Bestellmenge 1.200 Stück, liegt der Bestand nach dem Wareneingang rechnerisch bei 1.400 Stück, sofern der Mindestbestand nicht verändert wurde.",
-        "typische_fehler": "Meldebestand und Mindestbestand werden verwechselt. Außerdem wird die Bestellmenge in die Formel des Meldebestands eingesetzt, obwohl sie erst für den Bestand nach dem Wareneingang relevant ist.",
         "verstaendnisfragen": [
-          "Was passiert mit dem Meldebestand bei längerer Lieferzeit? Er steigt, weil mehr Verbrauch überbrückt werden muss.",
-          "Warum wird der Mindestbestand addiert? Er soll als Puffer auch nach dem Verbrauch während der Lieferzeit noch vorhanden sein."
+          {
+            "frage": "Der Meldebestand liegt bei 500 Stück. Warum ist es falsch, die Bestellmenge von 1.200 Stück in diese Rechnung einzusetzen?",
+            "antwort": "Der Meldebestand sagt, wann bestellt wird. Er hängt nur davon ab, wie viel während der Lieferzeit verbraucht wird, plus Puffer. Die Bestellmenge sagt, wie viel bestellt wird, und wirkt erst nach dem Wareneingang auf den Bestand.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "In der Tabelle zur Bestellmenge sind die Gesamtkosten bei 240 und 300 Stück gleich. Wie entscheidest du dich?",
+            "antwort": "Rein nach Kosten ist es gleichgültig. Dann entscheiden andere Gründe: Bei 240 Stück ist weniger Kapital gebunden und weniger Lagerfläche belegt, bei 300 Stück wird seltener bestellt und die Gefahr eines Engpasses durch eine verspätete Bestellung sinkt. Passt eine Verpackungseinheit besser zu einer der beiden Mengen, spricht auch das für sie.",
+            "id": "b3-f2"
+          }
+        ]
+      },
+      {
+        "abschnitt": "b4",
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Eigen- und Fremdlager an denselben Zahlen und berechnest und deutest die wichtigsten Lagerkennzahlen.",
+        "vorwissen_kurz": "Ein Lager bindet Kapital: Ware, die im Regal liegt, ist bezahlt, bringt aber noch kein Geld zurück. Jahreszinssatz bedeutet Zinsen für ein ganzes Jahr.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was eine Kennzahl über das Lager verrät",
+            "id": "b4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob ein Lager gut arbeitet, sieht man nicht am Bestand allein. 12.000 € Bestand sind viel, wenn im Jahr nur Ware für 20.000 € verbraucht wird, und wenig bei 200.000 €. Lagerkennzahlen setzen deshalb den Bestand ins Verhältnis zum Verbrauch. MAKEL hatte am Jahresanfang Ware für 10.000 € auf Lager, am Jahresende für 14.000 €. Der Wareneinsatz, also der Verbrauch zu Einstandspreisen, betrug 72.000 €. Der Marktzinssatz liegt bei angenommenen 6 % pro Jahr.",
+            "id": "b4-p1"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kennzahl",
+              "Rechnung",
+              "Ergebnis",
+              "Deutung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ø Lagerbestand",
+                  "(10.000 € + 14.000 €) ÷ 2",
+                  "12.000 €",
+                  "So viel Kapital liegt im Mittel im Lager."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Umschlagshäufigkeit",
+                  "72.000 € ÷ 12.000 €",
+                  "6",
+                  "Der Durchschnittsbestand wird sechsmal im Jahr verbraucht und ersetzt."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Ø Lagerdauer",
+                  "360 Tage ÷ 6",
+                  "60 Tage",
+                  "Ein Artikel liegt im Mittel zwei Monate."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Lagerzinssatz",
+                  "6 % × 60 ÷ 360",
+                  "1 %",
+                  "Zinskosten des gebundenen Kapitals bezogen auf den Wareneinsatz."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Lagerzinsen",
+                  "12.000 € × 6 %",
+                  "720 €",
+                  "Kontrolle: 1 % von 72.000 € sind ebenfalls 720 €."
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Höhere Umschlagshäufigkeit bedeutet kürzere Lagerdauer und weniger gebundenes Kapital — bei gleicher Lieferfähigkeit.",
+            "id": "b4-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung nutzt das kaufmännische Jahr mit 360 Tagen. Der Durchschnittsbestand aus zwei Stichtagen ist eine Vereinfachung. Genauer wird er, wenn du zum Anfangsbestand die zwölf Monatsendbestände addierst und durch 13 teilst; schwankt der Bestand im Jahr stark, kann das Ergebnis deutlich anders ausfallen.",
+            "id": "b4-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Könnte MAKEL die Umschlagshäufigkeit auf 8 steigern, sänke die Lagerdauer auf 45 Tage. Der Durchschnittsbestand läge dann bei 72.000 € ÷ 8 = 9.000 €. 3.000 € Kapital würden frei, und die Lagerzinsen fielen auf 540 €. Zu weit darf man das nicht treiben: Ein sehr knapper Bestand erhöht die Gefahr, nicht liefern zu können.",
+            "id": "b4-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Selbst lagern oder lagern lassen",
+            "id": "b4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein **Eigenlager** betreibt der Betrieb selbst: eigene oder gemietete Fläche, eigenes Personal, eigene Ausstattung. Ein **Fremdlager** stellt ein Logistikdienstleister zur Verfügung, der nach genutzter Fläche und Bewegungen abrechnet. Für einen Vergleich brauchst du dieselben Mengen auf beiden Seiten. MAKEL rechnet mit angenommenen Zahlen: im Durchschnitt 40 belegte Palettenplätze und 600 Ein- und Auslagerungen im Jahr.",
+            "id": "b4-p4"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kostenart",
+              "Eigenlager",
+              "Fremdlager"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fläche und Personalanteil (fix)",
+                  "9.000 €",
+                  "–"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Palettenplätze 40 × 9 € × 12 Monate",
+                  "–",
+                  "4.320 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Bewegungen 600 × 1 € bzw. 600 × 4 €",
+                  "600 €",
+                  "2.400 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe pro Jahr",
+                  "9.600 €",
+                  "6.720 €"
+                ],
+                "mono": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "fazit": "Bei 40 Palettenplätzen ist das Fremdlager im Jahr 2.880 € günstiger.",
+            "id": "b4-t2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Rechnung hängt an der Menge. Beim Eigenlager bleiben 9.000 € fix, egal wie viele Plätze belegt sind. Beim Fremdlager kostet jeder Platz 108 € im Jahr. Gleich teuer sind beide bei 9.600 € = 108 € × Plätze + 2.400 €, also bei rund 67 Palettenplätzen. Darüber wird das Eigenlager günstiger, darunter das Fremdlager. Diese Grenze heißt **kritische Lagermenge**.",
+            "id": "b4-p5"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kosten sind nicht alles. Ein Eigenlager gibt mehr Kontrolle über Abläufe und Zugriff, bindet aber Kapital und Personal auch in ruhigen Monaten. Ein Fremdlager passt sich schwankenden Mengen an und bringt Fachwissen mit, macht aber abhängig vom Dienstleister und verlangt klare Vereinbarungen über Haftung, Zugriffszeiten und Datenaustausch.",
+            "id": "b4-p6"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b4-b2"
+          }
         ],
-        "pruefungsbezug": "Die Formel zuerst vollständig hinschreiben: Tagesverbrauch × Lieferzeit + Mindestbestand. Danach Einheiten und Ergebnis auf Plausibilität prüfen.",
-        "merksatz": "Meldebestand = Tagesverbrauch × Lieferzeit + Mindestbestand."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn die Menge stark schwankt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Braucht MAKEL im Weihnachtsgeschäft drei Monate lang 90 Plätze und sonst 30, hilft der Jahresdurchschnitt von 45 Plätzen allein nicht weiter. Ein Eigenlager müsste für die Spitze ausgelegt sein und stünde den Rest des Jahres halb leer. Dann kann eine Mischung sinnvoll sein: ein kleines Eigenlager für den Grundbestand und ein Fremdlager für die Spitzen.",
+                "id": "b4-d1-p1"
+              }
+            ],
+            "id": "b4-d1"
+          },
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Kennzahlen und ABC-Analyse",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Umschlagshäufigkeit über das ganze Lager verdeckt Unterschiede. A-Güter sollten schnell umschlagen, weil dort am meisten Geld gebunden ist. Bei C-Gütern ist eine niedrigere Umschlagshäufigkeit oft hinnehmbar, weil große, seltene Bestellungen Bestellkosten sparen. Sinnvoll ist deshalb, die Kennzahlen getrennt nach Klassen zu betrachten.",
+                "id": "b4-d2-p1"
+              }
+            ],
+            "id": "b4-d2"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Die Umschlagshäufigkeit sinkt von 6 auf 4, der Wareneinsatz bleibt gleich. Was ist passiert, und was folgt daraus?",
+            "antwort": "Der Durchschnittsbestand ist gestiegen, von 12.000 € auf 18.000 €. Die Ware liegt im Mittel 90 statt 60 Tage. Es ist mehr Kapital gebunden, Lagerzinsen und Lagerkosten steigen. MAKEL sollte prüfen, ob zu groß oder zu früh bestellt wird oder ob Ware liegen bleibt, die kaum noch gebraucht wird.",
+            "id": "b4-f1"
+          },
+          {
+            "frage": "MAKEL erwartet, dass der Platzbedarf dauerhaft auf 80 Palettenplätze steigt. Spricht das eher für ein Eigen- oder ein Fremdlager?",
+            "antwort": "Rein nach Kosten für ein Eigenlager, weil 80 Plätze über der kritischen Lagermenge von rund 67 liegen — vorausgesetzt, die angenommenen Kosten bleiben gleich und das Eigenlager hat genug Fläche. Vor der Entscheidung sind die qualitativen Punkte zu prüfen: Kapitalbindung, Personal, Flexibilität und Abhängigkeit.",
+            "id": "b4-f2"
+          }
+        ]
       }
     ]
   },
@@ -98,6 +857,10 @@
       "id": "lz3",
       "text": "Meldebestand berechnen und Bestandsgrößen erklären",
       "abschnitt": "b3"
+    },
+    {
+      "abschnitt": "b4",
+      "text": "Lagerkennzahlen berechnen und deuten, Eigen- und Fremdlager vergleichen"
     }
   ],
   "bloecke": [
@@ -454,6 +1217,60 @@
           ]
         }
       ]
+    },
+    {
+      "typ": "abschnitt",
+      "id": "b4",
+      "titel": "Selbst lagern oder lagern lassen — und wie gut das Lager arbeitet",
+      "inhalt": [
+        {
+          "typ": "absatz",
+          "text": "Ein Lager kostet Fläche, Personal und gebundenes Kapital. Ein Betrieb kann selbst lagern (**Eigenlager**) oder die Ware einem Logistikdienstleister übergeben (**Fremdlager**). Ob das Lager wirtschaftlich arbeitet, zeigen ==Lagerkennzahlen: Sie setzen den durchschnittlichen Bestand ins Verhältnis zum Verbrauch.=="
+        },
+        {
+          "typ": "tabelle",
+          "spalten": [
+            "Kennzahl",
+            "Formel",
+            "Aussage"
+          ],
+          "zeilen": [
+            {
+              "zellen": [
+                "Ø Lagerbestand",
+                "(Anfangsbestand + Endbestand) ÷ 2",
+                "wie viel Wert im Mittel im Lager liegt"
+              ]
+            },
+            {
+              "zellen": [
+                "Umschlagshäufigkeit",
+                "Wareneinsatz ÷ Ø Lagerbestand",
+                "wie oft der Bestand im Jahr erneuert wird"
+              ]
+            },
+            {
+              "zellen": [
+                "Ø Lagerdauer",
+                "360 Tage ÷ Umschlagshäufigkeit",
+                "wie lange Ware im Mittel liegt"
+              ]
+            },
+            {
+              "zellen": [
+                "Lagerzinssatz",
+                "Jahreszinssatz × Ø Lagerdauer ÷ 360",
+                "Zinskosten des gebundenen Kapitals je Umschlag"
+              ]
+            }
+          ]
+        },
+        {
+          "typ": "merke",
+          "text": "Hohe **Umschlagshäufigkeit** heißt kurze Lagerdauer und wenig gebundenes Kapital. Ein **Eigenlager** lohnt sich eher bei großer, gleichmäßiger Lagermenge, ein **Fremdlager** bei kleiner oder schwankender Menge.",
+          "karteikarte": "Wie berechnest du Umschlagshäufigkeit und durchschnittliche Lagerdauer, und was bedeutet eine steigende Umschlagshäufigkeit?"
+        }
+      ]
     }
   ],
   "zusammenfassung": [
@@ -464,7 +1281,9 @@
     "C-Güter sind viele Arten mit geringem Wert — vereinfacht beschaffen.",
     "{{begriff:mindestbestand|Mindestbestand}} ist der Puffer, {{begriff:hoechstbestand|Höchstbestand}} die Obergrenze.",
     "Meldebestand = Tagesverbrauch × Lieferzeit + Mindestbestand.",
-    "Längere Lieferzeit hebt den Meldebestand, auch wenn der Verbrauch gleich bleibt."
+    "Längere Lieferzeit hebt den Meldebestand, auch wenn der Verbrauch gleich bleibt.",
+    "Umschlagshäufigkeit = Wareneinsatz ÷ Ø Lagerbestand; Ø Lagerdauer = 360 ÷ Umschlagshäufigkeit.",
+    "Eigen- oder Fremdlager: Kosten bei derselben Menge vergleichen und die kritische Lagermenge beachten."
   ],
   "selbsttest": [
     {

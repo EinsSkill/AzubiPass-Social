@@ -23,6 +23,60 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-11-02 · Claude → Lukes (Mergevorlage) / ChatGPT (Kenntnis)
+
+**Vorgänger:** ChatGPT-Fortschrittsprüfung [5380a00](review/2026-11-02-erweiterter-modus-5380a00.md) (von Lukes als Paket übergeben, hier mit Belegen abgelegt). **Rolle:** Umsetzung und Gesamtabnahme. **Basis:** `main` @ `d0cfb8a`, unverändert. **Geprüfter Anwendungsstand:** `d7e4a18` auf `erweiterter-modus-2026-10-28`; dieser Abschnitt ist Dokumentation. **Bericht:** [Gesamtabnahme G01–G14 und N01–N03](../erweiterter-modus/umsetzung/abnahme.md).
+
+- **Umfang:** 26 Lernfelder, 161 Kapitel, 602/602 Abschnitte im erweiterten Modus (567 aus dem Plan, 35 neu). L01–L30 und K01–K19 umgesetzt: 32 „neu ergänzt“, 17 „erweitert“, je mit Ziel, Beleg und Commit in [`ergaenzungen.csv`](../erweiterter-modus/gesamtvorbereitung/ergaenzungen.csv).
+- **N01:** § 164 HGB (MoPeG) an der Primärquelle geprüft; Zustimmung der Kommanditistin bei außergewöhnlichen Geschäften statt Widerspruch, Haftung nach §§ 171/172 in Kapitel und Aufgaben präzisiert; Gegenfälle Farben/Werkstatt, 40.000 €/25.000 € geprüft.
+- **N02:** Alle Grafik-Eingabefelder per `for`/`id` beschriftet (neun Stellen, nicht nur Bestellmenge). Browser über 26 Seiten: 80 Felder, 0 ohne Namen (main: 43 auf 12 Seiten); Label-Klick, Reset und Rechnung geprüft.
+- **N03:** Urlaubsbeispiel mit ausdrücklicher Vertragsannahme im gleichen Berechnungsregime (6 Tage), zweiter Fall mit eigener Vertragsregel (5,5 Tage) im Detail.
+- **Tests am Stand `d7e4a18`:** `funktionstest.py` 269/269, `industriekaufleute_test.py` 9.219/0, `lernkern_audit_test.py` und `lernstand_sync_test.py` grün, `erweiterter_modus_test.py` mit axe 163 OK/0 FEHL. Offline (SW, 75 Dateien) und mobil 375 px am korrigierten Stand geprüft.
+- **Grenzen:** Fachprüfung ist Claudes eigene plus ChatGPT-Stichproben, keine unabhängige Lesung aller 602 Abschnitte. Keine Druckregeln (vorbestehend). Liste der Punkte zur Kenntnis/Entscheidung im Bericht, Abschnitt „Für Lukes“.
+- **Nächster erlaubter Schritt:** Lukes entscheidet über den Merge. Kein Merge, kein Deployment ohne seine ausdrückliche Freigabe.
+
+## 2026-10-28 · ChatGPT → Claude / Lukes (Gesamtvorbereitung Erweiterter Modus)
+
+**Vorgänger:** Pilotanwendung `f041834`, Claude-Übergabe `22c84b8`, ChatGPT-Review `e3f1b05`, Gesamtabschlussentscheidung `d3de2fa`. **Nutzerauftrag:** „okay dann lass uns alles vorbereiten und claude setzt dann um“. **Rolle:** vollständige Redaktionsvorbereitung. Remote erneut gelesen: `22c84b8`. Keine Änderung an Anwendung, Kapitelquellen, Buildoutput oder Datenbank.
+
+**Einstieg:** [CLAUDE_START.md](../erweiterter-modus/gesamtvorbereitung/CLAUDE_START.md), [Dateiübersicht](../erweiterter-modus/gesamtvorbereitung/README.md).
+
+- 26 Lernfelddossiers mit originalem Grund-/Altlangtext, 160 kapitelspezifische Fallaufträge und 567 Abschnittseinträge mit Lernzielen, Profilvorschlägen, konkreten Erhaltungsreferenzen und Redaktionskriterien. Profile sind heuristisch, vor Redaktion prüfen. Hashes verhindern Übernahme veralteter Auszüge.
+- Vier neue ausformulierte Format-2-Muster (Buchführung, KLR, Kommunikation, industrielle Stückliste), gegen Originalvalidator auch in echten Mischkapiteln geprüft. Drei zusätzliche ausgearbeitete Lehrplanfälle: Werbeplan, Ergebnistabelle, EPK. Noch nicht eingebaut und keine Gesamtfachfreigabe.
+- Alle 30 L-/19 K-Altbefunde mit Platzierung, Anwendungsauftrag und Abnahme vorbereitet; am aktuellen Stand entscheiden, nicht pauschal als weiterhin fehlend behaupten. Alte v1-Spec samt Begleitdateien als historische Referenz vollständig mitgegeben.
+- **Neues Migrationshindernis M01:** 140 Originalabschnitte ohne `absatz` werden vom derzeitigen Validator als Vollfassung abgelehnt. An einem Tabellen-/Checkfall und einem Grafik-/Aufgabenfall mit Originalfunktion reproduziert. Absatzvoraussetzung fachgerecht auflösen, keine Dummyabsätze. E01/E02 aus dem Review bleiben zusätzlich offen.
+- **Eigene Prüfung:** vollständige Registry-/CSV-/Originalblock-/Hashzuordnung; 49 IDs vollständig; vier Musterverträge und Basiselemente geprüft; Zahlen der neuen Fälle unabhängig nachgerechnet; lokale Dokumentlinks geprüft. Beleg: `vorbereitungspruefung.json`. Keine neue Browser-/Offlineabnahme oder vollständige neue RLP-Prüfung.
+- **Wahrheitsgrenze:** Alle Redaktionsunterlagen vorbereitet; die übrigen neuen Volltexte sind noch von Claude zu schreiben, zu prüfen und einzubauen. Kein automatisches Umverpacken der Acht-Felder-Texte als Erledigung. Gesamtabschluss vor Merge bleibt verbindlich.
+- **Nächster Schritt:** Claude beginnt mit Technik E01/E02/M01, prüft die Muster und redigiert danach kapitelweise beide Berufe anhand der Dossiers. Neue Lehrplanabschnitte nachtragen; Gesamtbelege vor Mergevorlage. Lukes entscheidet nach dem Gesamtabschluss. Dokumentation lokal, kein Merge/Deployment.
+
+## 2026-10-28 · Lukes → Claude / ChatGPT (Gesamtabschluss vor Merge)
+
+**Quelle:** Lukes: „ne ich will das alles durch ist vor dem merge“. **Rolle ChatGPT:** ausdrückliche Umfangs-/Reihenfolgeentscheidung dokumentieren. **Basis:** Pilotanwendung `f041834`, Review `e3f1b05`; keine neue Anwendungsprüfung.
+
+Die vorherige Empfehlung „E01/E02 korrigieren, dann Piloten mergen, danach übrige Kapitel“ ist ersetzt. **Zuerst den erweiterten Modus über alle Lernfelder/Kapitel beider Berufe vollständig ausarbeiten, umsetzen und prüfen; erst danach Mergevorlage.** Kapitelweise Chargen und Zwischenprüfungen bleiben sinnvoll, sind aber keine Teilmerge-Freigaben. Ausgangsbestand 26 Lernfelder/160 Kapitel; aktueller Umfang ist vor Abschluss am Quellbestand zu belegen.
+
+Details und Abschlusskriterien: [Entscheidung vom 28.10.2026](entscheidungen.md). E01/E02 und bisherige Testgrenzen bleiben offen, bis konkrete Korrektur-/Testbelege vorliegen. Anwendung unverändert; keine Behauptung, dass alle Abschnitte bereits ausgearbeitet sind. Claude setzt um, ChatGPT arbeitet Inhalte/Review zu; Lukes entscheidet nach Gesamtabschluss über den Merge.
+
+## 2026-10-28 · ChatGPT → Claude / Lukes (Review Erweiterter Modus)
+
+**Vorgänger:** Claude, Anwendung `f041834`, Übergabe `22c84b8`. **Rolle:** Gegenprüfung der drei Piloten und gezielte technische Prüfung. **Geprüfter Anwendungsstand:** `f041834` auf `erweiterter-modus-2026-10-28`; Review nur Dokumentation und reproduzierbare Belege. **Bericht:** [Gegenprüfung mit Abnahmefällen](../audit/review-2026-10-28-erweiterter-modus-chatgpt.md).
+
+- **Pilottexte A–C:** im dargestellten Grundumfang fachlich tragfähig. Rechenwege unabhängig geprüft, BGB-Primärquellen gelesen. Tabellen und zusätzlicher Pareto-Absatz sind sinnvolle Umsetzungen. Keine komplette Neuredaktion empfohlen.
+- **E01 mittel:** Ein absichtlich eingesetzter Tippfehler `darstellung: "vollfasung"` wird bei allen drei Piloten ohne Fehler als Legacy akzeptiert; neue Erklärung fehlt, Frage-/Antwortobjekte erscheinen als Rohtext. Formatkennzeichen vor dem Filtern validieren; echtes gemischtes Altformat weiter zulassen. Kein solcher Tippfehler in den gültigen Piloten behauptet.
+- **E02 niedrig:** `tiefeAnwenden` entfernt Ansicht/Detail aus der URL. Suchziel öffnet initial, bleibt nach Kopieren/Reload aber nicht reproduzierbar. Explizite Parameter erhalten oder bewusst abweichendes Produktverhalten entscheiden und dokumentieren.
+- **Eigene Belege:** originale statische/Vertragstests ohne Fehler, IK 8.271/0, E01 mit Originalfunktionen und E02 mit Original-JavaScript in Node-VM reproduziert. Browser/axe hier nicht wiederholt: Chromium-Download scheiterte. A23 belegt Aufklappen ohne Nachladen, keine vollständige Service-Worker-Offlineabnahme.
+- **Nächster Schritt:** Claude bessert E01 eng nach, passt E02 an bzw. legt die Abweichung zur Entscheidung vor; danach entscheidet Lukes über Merge. Keine Anwendung geändert, kein Merge, nichts live. Review liegt zunächst lokal auf `review/erweiterter-modus-2026-10-28`.
+
+## 2026-10-28 · Claude → ChatGPT / Lukes (Erweiterter Modus · Piloten A–C)
+
+**Vorgänger:** ChatGPT, Spec „Erweiterter Modus · Umsetzungsgrundlage“ (`CLAUDE_UEBERGABE.md`, von Lukes übergeben). **Rolle:** Umsetzung. **Basis:** `main` @ `d0cfb8a`. **Geprüfter Anwendungsstand:** `f041834` auf `erweiterter-modus-2026-10-28`; dieser Abschnitt ist nur Dokumentation. **Bericht:** [Umsetzungsbericht](../audit/2026-10-28-erweiterter-modus.md).
+
+- Modell 3 umgesetzt: Abschnittseinstieg „Ausführlicher verstehen“ und „Ganzes Kapitel ausführlich lesen“, gleicher Inhalt. Format 2 „Vollfassung“ ersetzt die Erklärabsätze; interaktive Blöcke werden verschoben, Kennungen und Lernstand bleiben. Details (4 Kategorien), Verständnisfragen mit verborgener Antwort, Suche mit Deep Link, Zustand nur pro Sitzung. Vertrag und Migration in `doku/kapitel-format.md`.
+- Piloten: A = LF4 K3 b1, B = LF3 K2 b2, C = LF2 K2 b2.
+- Abweichungen: Begleitdateien der Spec lagen nicht im Repo; `rechenweg`/`fallvergleich` als `tabelle`; Pareto in Pilot C als Detail erhalten. Details im Bericht.
+- **Tests:** `erweiterter_modus_test.py` A01–A26 inkl. axe alles in Ordnung; `funktionstest.py` 269/269; übrige Suiten und `pruefe.py --schnell` lf1–lf4 ohne Fehler.
+- **Nächster Schritt:** fachliche Prüfung der drei Pilottexte durch ChatGPT/Lukes, dann **Lukes entscheidet über den Merge**. Kein Merge, nichts live. Danach redaktionelle Chargen.
+
 ## 2026-10-28 · Claude → ChatGPT / Lukes (Restkorrekturen K01, K02, K04)
 
 **Vorgänger:** ChatGPT, [Schlussprüfung](../audit/review-2026-10-28-schlusspruefung-chatgpt.md) @ `a82187a`. **Rolle:** Umsetzung. **Geprüfter Anwendungsstand:** `c86788b` auf `inhalt-korrekturen-2026-10-27`; dieser Abschnitt ist nur Dokumentation.

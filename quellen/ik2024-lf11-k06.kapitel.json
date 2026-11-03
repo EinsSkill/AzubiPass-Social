@@ -6,86 +6,449 @@
   "untertitel": "Wie die EZB über Zinsen auf Preise wirkt, was Zins- und Wechselkursänderungen für MAKEL bedeuten und welche Aufgaben EU, WTO und IWF haben.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Inflation bedeutet steigendes Preisniveau (Kapitel 5).",
-          "Banken leihen sich Geld auch bei der Zentralbank."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst das Ziel der EZB-Geldpolitik und verfolgst die Wirkung einer Leitzinsänderung über Banken, Unternehmen und Haushalte bis zu den Preisen, einschließlich des Zeitverzugs.",
+        "vorwissen_kurz": "In den Nachrichten heißt es, die Europäische Zentralbank habe die Leitzinsen verändert. Was hat das mit MAKEL Studio zu tun?",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Leitzins zum Preis",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:ezb|Europäische Zentralbank}} hat das vorrangige Ziel, die Preise im Euroraum stabil zu halten; mittelfristig strebt sie eine Inflationsrate von 2 % an. Ihr wichtigstes Instrument sind die {{begriff:leitzins|Leitzinsen}}, zu denen sich Geschäftsbanken bei ihr Geld leihen oder anlegen. Ändert die EZB diese Zinsen, geben die Banken die Änderung schrittweise an ihre Kunden weiter. Das beeinflusst Kredite, Investitionen, Konsum und am Ende die Preise. Dieser Weg heißt **Transmission**; er wirkt verzögert, oft über Monate.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Zinserhöhung erreicht MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Was passiert",
+              "bei MAKEL Studio"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "EZB erhöht Leitzinsen",
+                  "Banken refinanzieren sich teurer",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Banken erhöhen Kreditzinsen",
+                  "neue und variable Kredite werden teurer",
+                  "Kontokorrentkredit wird sofort teurer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Investitionen werden geprüft",
+                  "Projekte lohnen sich weniger",
+                  "Laserstation-Kredit wäre teurer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kunden halten sich zurück",
+                  "Agenturen und Firmen sparen",
+                  "weniger Aufträge für Merchandise"
+                ]
+              },
+              {
+                "zellen": [
+                  "Preisauftrieb lässt nach",
+                  "Lieferanten erhöhen Preise langsamer",
+                  "Rohlingpreise steigen weniger stark"
+                ]
+              }
+            ],
+            "fazit": "Die Zinserhöhung belastet MAKEL Studio über teurere Kredite und schwächere Nachfrage. Gleichzeitig dämpft sie den Anstieg der Einkaufspreise.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nicht alle Kredite reagieren gleich. Ein Darlehen mit festem Zins ändert sich erst bei der Anschlussfinanzierung, ein Kontokorrentkredit mit variablem Zins sofort. Deshalb ist es für MAKEL Studio wichtig zu wissen, welche Kredite wann angepasst werden. Die Wirkung auf die Nachfrage ist unsicherer: Ob Agenturen tatsächlich weniger bestellen, hängt auch von anderen Faktoren ab, etwa ihrer eigenen Auftragslage.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Europäische Zentralbank (EZB) ist für die Geldpolitik im Euroraum zuständig. Ihr vorrangiges Ziel ist Preisstabilität; sie strebt mittelfristig eine Inflationsrate von 2 % an. Ihr wichtigstes Mittel sind die Leitzinsen, zu denen sich Geschäftsbanken bei ihr Geld leihen oder Geld anlegen können; dazu gehören Offenmarktgeschäfte und Einlagemöglichkeiten. Die Wirkung läuft über eine Kette (Transmission): Steigen die Leitzinsen, verteuern Banken ihre Kredite; Unternehmen und Haushalte leihen und investieren weniger; die Nachfrage sinkt; der Preisauftrieb lässt nach. Die Wirkung tritt verzögert und nicht für alle Kredite gleich ein.",
-        "beispiele": [
-          "Leitzinserhöhung: neue Kredite werden teurer, Festzinskredite bleiben bis zur Zinsbindung unverändert.",
-          "Leitzinssenkung: Finanzierungen werden günstiger, Investitionen attraktiver."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Unabhängigkeit der Zentralbank",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die EZB ist politisch unabhängig. Regierungen dürfen ihr keine Weisungen geben. Damit soll verhindert werden, dass Geldpolitik kurzfristigen politischen Zielen dient und die Preisstabilität gefährdet.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner liest, dass die EZB die Leitzinsen erhöht hat. Er prüft MAKELs Kredite: Das Darlehen für die Stickmaschine hat einen festen Zins — unverändert. Der Kontokorrentkredit ist variabel und wird teurer. Die geplante Laserstation würde jetzt zu einem höheren Zins finanziert.",
-        "typische_fehler": "Eine Leitzinsänderung als sofortige, gleich große Änderung aller Kundenkredite behandeln.",
         "verstaendnisfragen": [
-          "Was ist das vorrangige Ziel der EZB? Preisstabilität im Euroraum, mittelfristig 2 % Inflation.",
-          "Wie wirkt eine Leitzinserhöhung? Kredite werden teurer, Nachfrage sinkt, Preisauftrieb lässt nach — verzögert."
-        ],
-        "pruefungsbezug": "Die Grundidee der EZB-Geldpolitik und ihre Übertragung erklären.",
-        "merksatz": "EZB: Ziel Preisstabilität (2 % mittelfristig); Leitzins ↑ → Kredite teurer → Nachfrage ↓ → Preisauftrieb ↓ — verzögert und nicht für alle Kredite gleich."
+          {
+            "frage": "Welches Ziel verfolgt die EZB vorrangig?",
+            "antwort": "Preisstabilität im Euroraum, mittelfristig eine Inflationsrate von 2 %.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum wirkt eine Leitzinserhöhung nicht sofort auf alle Kredite?",
+            "antwort": "Weil Kredite mit festem Zins erst bei einer neuen Vereinbarung angepasst werden.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Zinsen sind Aufwand (LF 10).",
-          "Fremdwährungen werden in Euro umgerechnet (LF 4)."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest die Wirkung einer Zinsänderung in Prozentpunkten und einer Wechselkursänderung in Mengennotierung auf Kosten und Erlöse von MAKEL Studio und erklärst, wie eine Euro-Aufwertung Import und Export beeinflusst.",
+        "vorwissen_kurz": "Der Zins für einen Kredit steigt, und der Dollar wird schwächer. Beides verändert die Zahlen von MAKEL Studio.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Prozentpunkte und Kurse richtig rechnen",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Steigt ein Zins von 3 % auf 5 %, ist das ein Anstieg um zwei **Prozentpunkte**; die Zinsbelastung steigt dabei um zwei Drittel. Auf einen Kredit über 100.000 € sind das 2.000 € mehr pro Jahr. Bei Wechselkursen in **Mengennotierung** gibt der Kurs an, wie viel Fremdwährung ein Euro kostet. Ein Dollarbetrag wird in Euro umgerechnet, indem man ihn durch den Kurs teilt. Steigt der Kurs von 1,10 auf 1,25 USD je Euro, hat der Euro **aufgewertet**: Importe aus dem Dollarraum werden billiger, Exporte dorthin teurer.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wirkung auf Einkauf und Verkauf",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang",
+              "Kurs 1,10 USD/€",
+              "Kurs 1,25 USD/€",
+              "Wirkung für MAKEL"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einkauf Rohlinge aus den USA, 10.000 USD",
+                  "9.090,91 €",
+                  "8.000,00 €",
+                  "1.090,91 € günstiger"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verkauf Hoodies an US-Kunden, Preis 8.000 €",
+                  "Kunde zahlt 8.800 USD",
+                  "Kunde zahlt 10.000 USD",
+                  "für den Kunden 13,6 % teurer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kontokorrentkredit 100.000 €, Zins 3 % → 5 %",
+                  "3.000 €",
+                  "5.000 €",
+                  "2.000 € mehr pro Jahr"
+                ]
+              }
+            ],
+            "fazit": "Die Euro-Aufwertung senkt die Kosten für Rohlinge aus den USA, macht MAKEL-Produkte für US-Kunden aber teurer. Der Zinsanstieg belastet unabhängig davon.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob eine Euro-Aufwertung für MAKEL Studio insgesamt gut oder schlecht ist, hängt vom Verhältnis ab. MAKEL kauft deutlich mehr im Ausland ein, als es außerhalb des Euroraums verkauft; die Aufwertung entlastet also eher. Für ein exportstarkes Unternehmen wäre es umgekehrt. Wichtig ist, solche Rechnungen mit vorgegebenen oder aktuellen Kursen zu machen und Kursänderungen bis zur Zahlung als Risiko einzuplanen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Zinsänderungen wirken auf MAKEL direkt über Finanzierungskosten und indirekt über die Nachfrage der Kunden, die selbst weniger investieren. Beim Rechnen ist zwischen Prozentpunkten und Prozent zu unterscheiden: Steigt ein Zins von 3 % auf 5 %, sind das 2 Prozentpunkte. Wechselkurse wirken auf Einkauf und Verkauf außerhalb des Euroraums: Wird der Euro gegenüber dem US-Dollar stärker (Aufwertung), werden Einkäufe in Dollar günstiger und Exporte in den Dollarraum teurer für die Kunden; bei einer Abwertung umgekehrt.",
-        "beispiele": [
-          "Kredit 100.000 €, Zins von 3 % auf 5 %: Mehrbelastung 2.000 € pro Jahr.",
-          "Rechnung 10.000 USD: bei 1,10 USD/€ rund 9.090,91 €, bei 1,25 USD/€ 8.000,00 €."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Prozent und Prozentpunkte",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Anstieg von 3 % auf 5 % sind zwei Prozentpunkte, aber rund 67 % mehr Zinsen. Wer „der Zins ist um 2 % gestiegen\" sagt, meint meist Prozentpunkte. In Rechnungen und Berichten wird deshalb genau unterschieden.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL kauft Spezialgarn bei einem Lieferanten in den USA für 10.000 USD. Im Frühjahr stand der Kurs bei 1,10 USD je Euro, im Herbst bei 1,25. Deniz Aydın rechnet: Die gleiche Bestellung kostet im Herbst 8.000 € statt rund 9.091 € — ein Vorteil, der aber jederzeit wieder kippen kann.",
-        "typische_fehler": "Prozentpunkte und Prozent verwechseln oder den Wechselkurs falsch herum anwenden.",
         "verstaendnisfragen": [
-          "Wie hoch ist die Mehrbelastung, wenn der Zins für 100.000 € von 3 % auf 5 % steigt? 2.000 € pro Jahr (2 Prozentpunkte).",
-          "Was bewirkt eine Euro-Aufwertung für Importe in Dollar? Sie werden in Euro günstiger."
-        ],
-        "pruefungsbezug": "Zins- und Wechselkurseinflüsse berechnen und erläutern.",
-        "merksatz": "Zins: Prozentpunkte ≠ Prozent; Mengennotierung USD/€: Euro-Betrag = USD-Betrag ÷ Kurs — Aufwertung macht Importe billiger, Exporte teurer."
+          {
+            "frage": "Der Zins für 100.000 € steigt von 3 % auf 5 %. Wie hoch ist die jährliche Mehrbelastung?",
+            "antwort": "2 Prozentpunkte von 100.000 € = 2.000 €.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie wirkt eine Euro-Aufwertung auf Importe aus dem Dollarraum?",
+            "antwort": "Sie werden in Euro billiger.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "MAKEL kauft und verkauft auch im Ausland (Kapitel 1).",
-          "Handel braucht verlässliche Regeln."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest EU, WTO, IWF und Weltbank nach ihren Aufgaben ein und erklärst an Beispielen aus dem Alltag von MAKEL Studio, wie ihre Regeln Beschaffung und Absatz beeinflussen.",
+        "vorwissen_kurz": "Rohlinge aus Portugal kommen zollfrei, Rohlinge aus Südasien nicht. Dahinter stehen internationale Regeln und Organisationen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer welche Regeln setzt",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Europäische Union** schafft den Binnenmarkt, in dem Waren, Dienstleistungen, Kapital und Personen frei verkehren, und bildet eine Zollunion mit gemeinsamem Außenzoll. Die **Welthandelsorganisation** vereinbart Regeln für den internationalen Handel und schlichtet Streitigkeiten zwischen Staaten. Der **Internationale Währungsfonds** soll die Stabilität des internationalen Währungssystems sichern und hilft Staaten in Zahlungsbilanzkrisen. Die **Weltbank** finanziert Entwicklungsprojekte in ärmeren Ländern.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Organisationen im Alltag von MAKEL Studio",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Vorgang bei MAKEL",
+              "Organisation",
+              "Wirkung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rohlinge aus Portugal ohne Zoll und Zollanmeldung",
+                  "EU, Binnenmarkt",
+                  "einfache, schnelle Beschaffung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zoll auf Rohlinge aus Südasien nach gemeinsamem Außenzoll",
+                  "EU, Zollunion",
+                  "gleicher Zollsatz in allen EU-Ländern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zollsenkungen für Entwicklungsländer",
+                  "EU-Präferenzen im Rahmen der WTO-Regeln",
+                  "günstigere Einfuhr aus bestimmten Ländern"
+                ]
+              },
+              {
+                "zellen": [
+                  "Währungskrise in einem Lieferland",
+                  "IWF kann helfen",
+                  "stabilere Bedingungen für Lieferanten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausbau von Häfen in einem Lieferland",
+                  "Weltbank-Finanzierung möglich",
+                  "langfristig verlässlichere Lieferwege"
+                ]
+              }
+            ],
+            "fazit": "Viele Bedingungen, unter denen MAKEL Studio einkauft und verkauft, werden auf internationaler Ebene gesetzt. Am direktesten wirkt die EU.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für MAKEL Studio ist die EU der wichtigste Rahmen. Der Binnenmarkt macht Lieferungen nach Österreich so einfach wie nach München und Einkäufe in Portugal so einfach wie in Bayern. Für Einfuhren aus Drittländern gelten gemeinsame Zölle und Vorschriften. WTO, IWF und Weltbank wirken eher indirekt: Sie beeinflussen, wie stabil und offen die Märkte sind, in denen Lieferanten und Kunden tätig sind.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Globalisierung bedeutet zunehmende internationale Verflechtung von Handel, Produktion und Kapital. Internationale Organisationen setzen dafür Regeln: Die Europäische Union bildet einen Binnenmarkt mit freiem Verkehr von Waren, Dienstleistungen, Personen und Kapital sowie eine Zollunion mit gemeinsamem Außenzoll. Die Welthandelsorganisation (WTO) vereinbart Regeln für den internationalen Handel und schlichtet Handelsstreitigkeiten. Der Internationale Währungsfonds (IWF) überwacht die Stabilität des internationalen Währungssystems und unterstützt Staaten in Zahlungsbilanzkrisen mit Krediten. Die Weltbank finanziert Entwicklungsprojekte.",
-        "beispiele": [
-          "Lieferung von Rohlingen aus Portugal: keine Zölle, keine Zollanmeldung (EU-Binnenmarkt).",
-          "Garn aus den USA: Einfuhr in die Zollunion mit Zollanmeldung und gegebenenfalls Zoll."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Handelskonflikte",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Erheben Staaten Strafzölle gegeneinander, können sich Preise und Lieferwege schnell ändern. Die WTO soll solche Konflikte durch Regeln und Schlichtung begrenzen. Ihre Streitschlichtung ist allerdings seit einigen Jahren eingeschränkt, weil das Berufungsgremium nicht besetzt ist.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Luca wundert sich, warum die Rohlinge aus Portugal ohne Zollformalitäten ankommen, das Garn aus den USA aber nicht. Deniz erklärt den Unterschied zwischen EU-Binnenmarkt und Einfuhr aus einem Drittland — und dass die Zollsätze Ergebnis internationaler Handelsregeln und -politik sind.",
-        "typische_fehler": "Die Aufgaben von EU, WTO und IWF vermischen.",
         "verstaendnisfragen": [
-          "Was kennzeichnet den EU-Binnenmarkt? Freier Verkehr von Waren, Dienstleistungen, Personen und Kapital.",
-          "Welche Aufgabe hat der IWF? Stabilität des internationalen Währungssystems sichern, Staaten in Zahlungsbilanzkrisen unterstützen."
-        ],
-        "pruefungsbezug": "Internationale Organisationen anhand ihrer Aufgaben einordnen.",
-        "merksatz": "EU: Binnenmarkt und Zollunion; WTO: Handelsregeln und Streitschlichtung; IWF: Währungsstabilität und Krisenhilfe; Weltbank: Entwicklungsfinanzierung."
+          {
+            "frage": "Welche Organisation schafft den zollfreien Warenverkehr zwischen Deutschland und Portugal?",
+            "antwort": "Die Europäische Union mit ihrem Binnenmarkt.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Welche Aufgabe hat der IWF?",
+            "antwort": "Er soll die Stabilität des internationalen Währungssystems sichern und hilft Staaten in Zahlungsbilanzkrisen.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Risiken lassen sich nicht ganz vermeiden.",
-          "Entscheidungen müssen präsentiert werden."
+        "darstellung": "vollfassung",
+        "ziel": "Du passt Geschäftsprozesse von MAKEL Studio an Zins-, Wechselkurs- und Lieferrisiken an, stellst jeder Maßnahme ihre Kosten gegenüber und präsentierst eine begründete Empfehlung.",
+        "vorwissen_kurz": "Steigende Zinsen, ein schwankender Dollar und unsichere Lieferketten: Die Geschäftsführung bittet um eine Empfehlung, wie MAKEL Studio damit umgehen soll.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Risiko, Maßnahme, Kosten, Ziel",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Empfehlung zum Umgang mit Risiken folgt einem klaren Aufbau: Welches **Risiko** besteht? Welche **Maßnahme** begrenzt es? Was **kostet** die Maßnahme, und welchen Nachteil hat sie? Welches **Ziel** wird damit erreicht? Jede Absicherung hat ihren Preis. Ein fester Zins schützt vor steigenden Zinsen, nimmt aber den Vorteil sinkender Zinsen. Ein zweiter Lieferant senkt das Ausfallrisiko, kostet aber Aufwand. Die Empfehlung wägt ab, statt jedes Risiko um jeden Preis auszuschalten.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Empfehlung an die Geschäftsführung",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Risiko",
+              "Maßnahme",
+              "Kosten oder Nachteil",
+              "Ziel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Zinsanstieg beim Kontokorrent",
+                  "Laserstation über Festzinsdarlehen finanzieren, Kontokorrent nur für Saisonspitzen",
+                  "Festzins etwas höher als aktueller variabler Zins",
+                  "planbarer Kapitaldienst"
+                ]
+              },
+              {
+                "zellen": [
+                  "schwankender Dollar bei US-Rohlingen",
+                  "Euro-Lieferant aus Portugal als Hauptquelle, US-Rohlinge nur für Spezialqualitäten",
+                  "Grundpreis 0,50 € höher je Stück",
+                  "Kosten in Euro planbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lieferausfall in Südasien",
+                  "Sicherheitsbestand für schwarze Rohlinge, zweite Quelle in der EU",
+                  "Kapitalbindung ca. 10.000 €",
+                  "Lieferfähigkeit im Weihnachtsgeschäft"
+                ]
+              },
+              {
+                "zellen": [
+                  "sinkende Nachfrage bei Zinsanstieg",
+                  "Marketing für Agenturen, Angebote für kleinere Budgets",
+                  "Marketingbudget",
+                  "Umsatz stabilisieren"
+                ]
+              }
+            ],
+            "fazit": "Jede Maßnahme kostet etwas, macht aber die Planung sicherer. Zusammen verringern sie die Abhängigkeit von Zinsen, Kursen und einzelnen Lieferländern.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der Präsentation stellt Luca die Empfehlung so dar, wie es die Geschäftsführung braucht: zuerst das Ziel, dann die wichtigsten Risiken mit ihren Folgen in Euro, dann die Maßnahmen mit ihren Kosten. Er nennt offen, welche Annahmen unsicher sind, etwa die Entwicklung des Dollarkurses, und schlägt vor, die Empfehlung nach sechs Monaten zu überprüfen. Eine solche Präsentation ermöglicht eine Entscheidung, statt nur Risiken aufzuzählen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Schwankende Zinsen, Wechselkurse und Beschaffungspreise sind Risiken, auf die ein Unternehmen seine Geschäftsprozesse ausrichten kann: Festzinsvereinbarungen statt variabler Kredite, Einkauf in Euro oder vertragliche Preisgleitklauseln, mehrere Bezugsquellen (auch in der EU), Sicherheitsbestände für kritische Materialien und Liquiditätsreserven. Jede Maßnahme hat Kosten. Eine Empfehlung an die Geschäftsführung nennt deshalb Risiko, Maßnahme, Kosten und Ziel — und präsentiert sie verständlich.",
-        "beispiele": [
-          "Festzins für die Laserstation: planbare Raten, aber kein Vorteil, wenn Zinsen sinken.",
-          "Zweite Bezugsquelle in Polen: weniger Wechselkursrisiko, aber Abstimmungsaufwand."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Risikomanagement als Daueraufgabe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Risiken verändern sich. Was heute eine gute Absicherung ist, kann in einem Jahr überflüssig oder unzureichend sein. Deshalb gehört eine regelmäßige Überprüfung von Zinsbindungen, Lieferantenstruktur und Währungsanteilen zum Geschäftsalltag.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Deniz bereitet eine Präsentation vor: Das US-Garn macht 12 % der Materialkosten aus und schwankt mit dem Dollar. Sie schlägt vor, einen zweiten Lieferanten im Euroraum zu testen und für den Rest Preise für ein halbes Jahr fest zu vereinbaren. Yuki Bergmann stimmt zu — unter der Bedingung, dass die Qualität gleich bleibt.",
-        "typische_fehler": "Ein Risiko benennen, aber keine Kosten und Ziele der Gegenmaßnahme nennen.",
         "verstaendnisfragen": [
-          "Wie lässt sich ein Wechselkursrisiko im Einkauf begrenzen? Einkauf in Euro, alternative Bezugsquellen, feste Preisvereinbarungen.",
-          "Was gehört in eine Empfehlung? Risiko, Maßnahme, Kosten, Ziel."
-        ],
-        "pruefungsbezug": "Geschäftsprozesse an veränderte Rahmenbedingungen anpassen und präsentieren.",
-        "merksatz": "Risiko → Maßnahme → Kosten → Ziel: Festzins, Euro-Einkauf, zweite Bezugsquelle, Reserve — jede Absicherung hat ihren Preis."
+          {
+            "frage": "Welche vier Bausteine hat eine Empfehlung zum Umgang mit Risiken?",
+            "antwort": "Risiko, Maßnahme, Kosten oder Nachteil und Ziel.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Welchen Nachteil hat ein Festzinsdarlehen?",
+            "antwort": "Sinkende Zinsen kommen MAKEL nicht zugute, solange die Zinsbindung läuft.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

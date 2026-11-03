@@ -6,31 +6,331 @@
   "untertitel": "Vier Botschaften auf einmal — und fünf Regeln, die immer gelten.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Das Vier-Seiten-Modell hilft dir, eine Nachricht genauer zu hören. Es erklärt nicht, dass jede Aussage vier getrennte Sätze enthält, sondern dass dieselben Worte gleichzeitig Sachinformation, Selbstoffenbarung, Beziehung und Appell transportieren können.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "titel": "Die vier Seiten unterscheiden",
-        "erklaerung": "Der Sachinhalt beschreibt, worüber gesprochen wird. Die Selbstoffenbarung zeigt etwas über die sprechende Person. Die Beziehungsseite signalisiert, wie der Sender den Empfänger sieht. Der Appell enthält den Wunsch, dass der Empfänger etwas tut, lässt oder versteht.",
-        "beispiel": "Bei „Die Rechnung ist noch nicht raus“ lautet der Sachinhalt: Die Rechnung wurde nicht versendet. Als Selbstoffenbarung kann mitschwingen, dass die Person unter Zeitdruck steht. Auf der Beziehungsebene kann der Satz als Vorwurf gehört werden; als Appell bedeutet er möglicherweise: Bitte kümmere dich darum.",
-        "typische_fehler": "Nur die Sachebene zu hören und die Reaktion des Gegenübers deshalb als übertrieben abzutun. Umgekehrt ist es genauso problematisch, eine vermutete Beziehungsaussage als sichere Absicht zu behandeln.",
-        "merksatz": "Eine Nachricht hat mehrere Seiten; welche Seite ankommt, entscheidet der Empfänger mit."
+        "darstellung": "vollfassung",
+        "ziel": "Du untersuchst eine Äußerung auf Sachinhalt, Selbstoffenbarung, Beziehung und Appell und kennzeichnest, welche Deutungen sicher sind und welche nur möglich.",
+        "vorwissen_kurz": "Dieselben Worte können gleichzeitig informieren, etwas über den Sprecher verraten, die Beziehung zeigen und zu etwas auffordern.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Satz, vier Seiten",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Psychologe Friedemann Schulz von Thun beschreibt eine Nachricht als etwas mit vier Seiten. Sie enthält einen **Sachinhalt**, also eine Information. Sie verrät etwas über den Sprecher, die **Selbstoffenbarung**. Sie zeigt, wie der Sprecher zum Gegenüber steht, die **Beziehung**. Und sie will oft etwas bewirken, den **Appell**. Das Modell behauptet nicht, dass jeder Satz vier getrennte Botschaften enthält. Es hilft, genauer hinzuhören, welche Seiten in einer Situation mitschwingen könnten.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was sicher ist und was nicht",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Versand sagt Lea zu Tim: „Die Kartons für Amsterdam stehen immer noch da.“",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Seite",
+              "Mögliche Botschaft",
+              "Wie sicher?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Sachinhalt",
+                  "Die Kartons für Amsterdam sind noch nicht abgeholt.",
+                  "sicher, überprüfbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Selbstoffenbarung",
+                  "Lea ist beunruhigt, weil die Abholung drängt — oder ihr fällt es nur auf.",
+                  "offen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beziehung",
+                  "Lea erwartet, dass Tim sich kümmert — oder sie stellt nur fest, ohne Tim zu meinen.",
+                  "offen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Appell",
+                  "Kümmere dich bitte um die Abholung — oder: Sag mir, ob du Bescheid weißt.",
+                  "wahrscheinlich, aber unausgesprochen"
+                ]
+              }
+            ],
+            "fazit": "Nur der Sachinhalt ist sicher. Alle anderen Seiten sind Deutungen, die Tim aus Ton, Situation und Erfahrung ableitet. Ob sie stimmen, weiß nur Lea.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Modell ist deshalb kein Werkzeug, um herauszufinden, was jemand „wirklich“ meint. Es hilft, die eigenen Deutungen zu erkennen — und sie zu prüfen. Tim fragt: „Soll ich die Spedition anrufen, oder läuft das schon?“ Damit klärt er den Appell, ohne Lea einen Vorwurf zu unterstellen oder sich selbst angegriffen zu fühlen.",
+            "id": "b1-p3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Vier Schnäbel, vier Ohren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Schulz von Thun beschreibt die Seiten auch aus Sicht des Empfängers: Er kann mit dem Sachohr, dem Selbstoffenbarungsohr, dem Beziehungsohr oder dem Appellohr hören. Welche Seite er betont, hängt von seiner Erfahrung, seiner Stimmung und der Beziehung zum Sprecher ab — nicht nur davon, was der Sprecher gemeint hat.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum ist der Sachinhalt die einzige sichere Seite?",
+            "antwort": "Weil er sich prüfen lässt: Stehen die Kartons noch da oder nicht? Selbstoffenbarung, Beziehung und Appell werden aus Ton, Situation und Vorwissen erschlossen und können anders gemeint sein.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Was ist an der Rückfrage „Soll ich die Spedition anrufen, oder läuft das schon?“ geschickt?",
+            "antwort": "Sie klärt den möglichen Appell, ohne eine Absicht zu unterstellen. Lea kann einfach sagen, was sie braucht, und keiner muss sich verteidigen.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "titel": "Missverständnisse Schritt für Schritt klären",
-        "erklaerung": "Wenn Sender und Empfänger verschiedene Seiten betonen, entsteht ein Missverständnis. Eine gute Klärung trennt deshalb Beobachtung und Deutung: Erst wird wiederholt, was tatsächlich gehört wurde. Danach wird gefragt, was gemeint war, und erst dann wird über eine Lösung gesprochen.",
-        "beispiel": "Eine Ausbilderin sagt: „Das ist heute aber spät.“ Statt sofort zu widersprechen, kann der Azubi fragen: „Meinst du, dass die Aufgabe heute noch fertig werden soll?“ So wird aus einer vermuteten Kritik ein klärbarer Arbeitsauftrag.",
-        "typische_fehler": "Ironie oder Tonfall als Beweis für die Absicht des anderen zu nehmen. Ein weiterer Fehler ist, sofort die eigene Verteidigung zu starten, bevor die konkrete Erwartung geklärt ist.",
-        "merksatz": "Beobachtung wiederholen, Bedeutung erfragen, Auftrag vereinbaren."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst ein Missverständnis damit, dass Sender und Empfänger verschiedene Seiten betonen, und formulierst eine Rückfrage, die die Deutung prüft, statt sie zu unterstellen.",
+        "vorwissen_kurz": "Wer auf dem Beziehungsohr hört, versteht schnell einen Vorwurf, auch wenn nur eine Information gemeint war.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Gesendet und gehört",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Missverständnis entsteht oft, weil Sender und Empfänger unterschiedliche Seiten betonen. Der Sender meint eine Information, der Empfänger hört eine Bewertung. Oder der Sender äußert einen Wunsch, der Empfänger hört nur die Sachaussage und tut nichts. Beide sind ehrlich, und trotzdem reden sie aneinander vorbei.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Missverständnis wird geklärt",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ausbilder Herr Brandt sagt im Vorbeigehen zu Tim: „Die Rechnung an Studio Noord ist noch nicht raus.“ Tim antwortet gereizt: „Ich hatte gestern Berufsschule, das konnte ich gar nicht machen.“",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Was geschieht"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gesendet",
+                  "Herr Brandt meint eine Information mit Appell: Die Rechnung muss heute raus, wer kann sie übernehmen?"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gehört",
+                  "Tim hört auf dem Beziehungsohr: „Du hast deine Arbeit nicht gemacht.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Reaktion",
+                  "Tim verteidigt sich gegen einen Vorwurf, der nicht ausgesprochen wurde."
+                ]
+              },
+              {
+                "zellen": [
+                  "Klärung",
+                  "Herr Brandt: „Das war kein Vorwurf. Ich wollte nur wissen, ob du sie heute schreiben kannst.“ Tim: „Ja, bis 11 Uhr.“"
+                ]
+              }
+            ],
+            "fazit": "Die Klärung trennt das Gehörte vom Gemeinten. Erst danach geht es um die Lösung.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Tim hätte das Missverständnis auch selbst auflösen können, bevor er sich verteidigt. Eine Rückfrage gibt die eigene Deutung als Deutung zu erkennen: „Soll ich die Rechnung heute schreiben?“ oder „Klingt das gerade nach einem Vorwurf — oder habe ich das falsch verstanden?“ Wer so fragt, unterstellt nichts und lädt das Gegenüber ein, seine Absicht zu nennen.",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b2-b2"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn ein Ohr ständig überwiegt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Menschen hören fast alles auf einem Ohr. Wer überwiegend auf dem Appellohr hört, erledigt ständig Dinge, um die niemand gebeten hat, und überlastet sich. Wer vor allem auf dem Beziehungsohr hört, fühlt sich häufig kritisiert. Das ist keine Charakterschwäche, sondern ein Muster, das sich ändern lässt — vor allem durch Nachfragen, bevor man reagiert.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Warum hilft die Frage „Soll ich die Rechnung heute schreiben?“ mehr als eine Rechtfertigung?",
+            "antwort": "Sie greift den möglichen Appell auf und führt zur Lösung. Eine Rechtfertigung reagiert auf einen Vorwurf, der vielleicht gar nicht gemeint war, und macht das Gespräch unnötig angespannt.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Kann ein Sender verhindern, dass auf dem Beziehungsohr gehört wird?",
+            "antwort": "Nicht sicher, aber er kann es unwahrscheinlicher machen: den Appell ausdrücklich formulieren, freundlich und ohne Unterton sprechen und bei heiklen Themen die Beziehungsebene direkt ansprechen, etwa „Das ist kein Vorwurf, ich brauche nur …“.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "titel": "Das Modell praktisch nutzen",
-        "erklaerung": "Das Modell ist kein Etikett, mit dem man Menschen dauerhaft auf ein bestimmtes Ohr festlegt. Es ist eine Gesprächshilfe. In schwierigen Situationen kannst du bewusst auf allen vier Seiten prüfen und anschließend eine klare Ich-Botschaft mit einer konkreten Bitte formulieren.",
-        "beispiel": "Statt „Du hörst mir nie zu“ ist hilfreicher: „Als ich gerade unterbrochen wurde, habe ich den Eindruck bekommen, dass mein Punkt noch nicht angekommen ist. Kann ich den Gedanken kurz zu Ende erklären?“ Die Beobachtung bleibt überprüfbar und der Appell ist verständlich.",
-        "typische_fehler": "Das Modell als Diagnose für den Charakter des Gegenübers zu verwenden oder vier Begriffe aufzuzählen, ohne die Situation zu klären. In der Prüfung zählt die Anwendung auf den konkreten Satz.",
-        "merksatz": "Das Modell soll ein Gespräch öffnen, nicht den anderen festlegen."
+        "darstellung": "vollfassung",
+        "ziel": "Du beziehst die fünf Grundannahmen von Watzlawick auf Gesprächssituationen im Betrieb und erklärst damit, warum auch Schweigen wirkt und wie ein Teufelskreis entsteht.",
+        "vorwissen_kurz": "Paul Watzlawick hat fünf Grundannahmen über menschliche Kommunikation formuliert. Sie heißen Axiome.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fünf Grundannahmen",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Kommunikationswissenschaftler Paul Watzlawick hat beschrieben, was in jeder Kommunikation gilt. Seine fünf {{begriff:watzlawick|Axiome}} sind keine Regeln, die man befolgen soll, sondern Beobachtungen darüber, wie Kommunikation abläuft. Am bekanntesten ist das erste: Man kann nicht nicht kommunizieren. Auch wer schweigt oder nicht antwortet, sendet etwas, das gedeutet wird.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Axiome im Betrieb",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Axiom",
+              "Situation bei MAKEL"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Man kann nicht nicht kommunizieren",
+                  "Ein Händler bekommt auf seine Anfrage drei Tage keine Antwort und schließt daraus, MAKEL sei an ihm nicht interessiert."
+                ]
+              },
+              {
+                "zellen": [
+                  "Inhalts- und Beziehungsaspekt",
+                  "„Bitte prüf das noch mal“ kommt von der vertrauten Kollegin anders an als von einem Kollegen, mit dem es gerade Streit gab."
+                ]
+              },
+              {
+                "zellen": [
+                  "Interpunktion",
+                  "Lea: „Ich frage Tim nicht mehr, weil er immer Nein sagt.“ Tim: „Ich sage Nein, weil Lea mich nur fragt, wenn es schon zu spät ist.“"
+                ]
+              },
+              {
+                "zellen": [
+                  "Digital und analog",
+                  "Die Mail sagt „Termin bestätigt“, der knappe Ton am Telefon davor ließ an der Zusage zweifeln."
+                ]
+              },
+              {
+                "zellen": [
+                  "Symmetrisch und komplementär",
+                  "Zwei Azubis besprechen sich auf Augenhöhe; im Gespräch mit dem Geschäftsführer gibt es ein Gefälle."
+                ]
+              }
+            ],
+            "fazit": "Die Axiome erklären keine Schuld, sondern Abläufe. Gerade der Teufelskreis bei der Interpunktion löst sich nicht, solange jeder den anderen als Auslöser sieht.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Praxis folgt daraus: Auch eine ausbleibende Antwort ist eine Nachricht. Kann MAKEL eine Händleranfrage nicht sofort beantworten, schickt es eine kurze Eingangsbestätigung mit Termin. Und wenn sich zwei Kolleginnen gegenseitig für den Anfang eines Streits halten, hilft es, auf die Schuldfrage zu verzichten und zu besprechen, wie es ab jetzt laufen soll.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b3"
+          }
+        ],
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Zwei Modelle, zwei Blickwinkel",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Schulz von Thun schaut auf die einzelne Nachricht und ihre Seiten. Watzlawick beschreibt Grundmuster, die jede Kommunikation prägen. Beide sind Denkhilfen: Sie helfen, ein Gespräch genauer zu betrachten, verraten aber nicht sicher, was im Kopf des anderen vorgeht. Das klärt nur die Rückfrage.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
+        ],
+        "verstaendnisfragen": [
+          {
+            "frage": "Was teilt MAKEL einem Händler mit, der drei Tage keine Antwort bekommt?",
+            "antwort": "Ungewollt etwas wie „Sie sind uns nicht wichtig“ oder „Wir sind überlastet“. Nach dem ersten Axiom wird auch das Ausbleiben einer Antwort gedeutet. Eine kurze Eingangsbestätigung verhindert diese Deutung.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Wie lässt sich der Teufelskreis zwischen Lea und Tim durchbrechen?",
+            "antwort": "Indem beide aufhören zu klären, wer angefangen hat. Stattdessen vereinbaren sie, wie es künftig läuft, etwa: Lea fragt rechtzeitig, Tim sagt zu oder nennt einen anderen Zeitpunkt.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -179,7 +479,7 @@
                 "erledigt sofort alles, auch Ungefragtes",
                 "klar sagen, ob etwas zu tun ist"
               ],
-              "detail": "**Der freundliche Dauerstress.** Wer alles als Auftrag hört, arbeitet ständig Dinge ab, um die niemand gebeten hat — und ist irgendwein überlastet, ohne dass jemand es bemerkt hat."
+              "detail": "**Der freundliche Dauerstress.** Wer alles als Auftrag hört, arbeitet ständig Dinge ab, um die niemand gebeten hat — und ist irgendwann überlastet, ohne dass jemand es bemerkt hat."
             }
           ]
         },
@@ -213,7 +513,7 @@
       "inhalt": [
         {
           "typ": "absatz",
-          "text": "Paul Watzlawick hat fünf Grundannahmen formuliert, die {{begriff:watzlawick|Axiome}} heißen — also Sätze, die nicht bewiesen werden, sondern vorausgesetzt. Für die Prüfung zählt vor allem das erste."
+          "text": "Paul Watzlawick hat fünf Grundannahmen formuliert, die {{begriff:watzlawick|Axiome}} heißen — also Sätze, die nicht bewiesen werden, sondern vorausgesetzt. Am bekanntesten ist das erste."
         },
         {
           "typ": "tabelle",
@@ -229,7 +529,7 @@
                 "Auch Schweigen ist eine Botschaft",
                 "Wer eine Mail nicht beantwortet, sagt damit etwas"
               ],
-              "detail": "**Das bekannteste und prüfungsrelevanteste Axiom.** Es bedeutet: Es gibt kein Verhalten, das keine Mitteilung wäre. Wegsehen, Schweigen, den Raum verlassen — alles wird gedeutet, ob man will oder nicht."
+              "detail": "**Das bekannteste Axiom.** Es bedeutet: Es gibt kein Verhalten, das keine Mitteilung wäre. Wegsehen, Schweigen, den Raum verlassen — alles wird gedeutet, ob man will oder nicht."
             },
             {
               "zellen": [
@@ -249,7 +549,7 @@
             {
               "zellen": [
                 "Kommunikation ist digital und analog",
-                "Worte sind eindeutig, Körpersprache ist deutungsoffen",
+                "Worte folgen festen Bedeutungsregeln, Körpersprache ist deutungsoffener",
                 "Ein Lächeln kann vieles heißen"
               ]
             },

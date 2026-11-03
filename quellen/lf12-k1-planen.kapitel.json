@@ -6,66 +6,434 @@
   "untertitel": "Erst das Ziel, dann der Raum. Nie umgekehrt.",
  "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Eine Veranstaltung braucht ein Ziel und eine Zielgruppe.",
-          "Ort und Budget hängen vom Konzept ab."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst ein Veranstaltungskonzept aus Ziel, Zielgruppe, Inhalt, Termin, Ort und Budget auf und wählst begründet zwischen Präsenz-, digitaler und hybrider Form.",
+        "vorwissen_kurz": "Eine Veranstaltung kostet Geld und Arbeitszeit. Ob sie sich lohnt, lässt sich nur sagen, wenn vorher feststeht, was sie erreichen soll.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Erst das Ziel",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:veranstaltungskonzept|Veranstaltungskonzept}} klärt die wichtigsten Fragen, bevor etwas gebucht wird: warum, für wen, was, wann, wo und womit. Am Anfang steht das Ziel, und zwar so formuliert, dass sich hinterher prüfen lässt, ob es erreicht wurde. Aus dem Ziel folgt die Zielgruppe, aus der Zielgruppe folgen Form, Termin, Ort und Ansprache.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Händlertag zur Frühjahrskollektion",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL stellt jedes Jahr die neue Frühjahrskollektion vor. Bisher lief das als Messestand. In diesem Jahr plant Lea einen eigenen Händlertag.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Festlegung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Warum?",
+                  "Mindestens 40 Händler bestellen vor bis 15. Februar; mindestens 5 neue Händler aus den Benelux-Ländern nehmen teil."
+                ]
+              },
+              {
+                "zellen": [
+                  "Für wen?",
+                  "180 Bestandshändler und ausgewählte Interessenten; erwartet werden 60 Gäste vor Ort und 30 online"
+                ]
+              },
+              {
+                "zellen": [
+                  "Was?",
+                  "Begrüßung, Präsentation der Kollektion, Anprobe an Musterständern, Vorbestellung mit Einführungsrabatt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wann?",
+                  "Dienstag, 19. Januar 2027, 10 bis 15 Uhr — nach dem Weihnachtsgeschäft, vor den Ordern für das Frühjahr, außerhalb der großen Modemessen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wo?",
+                  "Showroom in Düsseldorf, gut mit Bahn und Auto erreichbar, ebenerdig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Womit?",
+                  "Budget bis 8.000 €"
+                ]
+              }
+            ],
+            "fazit": "Das Ziel ist messbar und bestimmt alles Weitere. Der Termin richtet sich nach dem Bestellrhythmus der Händler, nicht nach freien Räumen.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Präsenz, digital oder hybrid?",
+            "id": "b1-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Form folgt aus Ziel und Interaktion. Eine **Präsenzveranstaltung** ermöglicht direkte Begegnung: Händler fühlen den Stoff, probieren Passformen an und kommen ins Gespräch. Eine **digitale Veranstaltung** spart Anreise und erreicht Gäste, die weit entfernt sind, bietet aber weniger Begegnung. Eine **hybride Veranstaltung** verbindet beides — mit dem höchsten Aufwand, weil zwei Publikumsgruppen gleichzeitig betreut werden müssen.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Form",
+              "Spricht dafür",
+              "Spricht dagegen"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Präsenz",
+                  "Ware anfassen und anprobieren, persönliche Bindung",
+                  "weite Anreise für Benelux-Händler"
+                ]
+              },
+              {
+                "zellen": [
+                  "Digital",
+                  "keine Reisekosten, große Reichweite",
+                  "Stoffqualität und Passform kaum vermittelbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hybrid",
+                  "Benelux-Händler online, Bestandshändler vor Ort",
+                  "doppelte Betreuung, mehr Technik, höheres Ausfallrisiko"
+                ]
+              }
+            ],
+            "fazit": "Lea wählt die hybride Form: Das Anprobieren spricht für Präsenz, das Ziel neuer Benelux-Händler für eine Online-Teilnahme. Den höheren Aufwand plant sie bewusst ein.",
+            "id": "b1-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Das Veranstaltungskonzept beantwortet in fester Reihenfolge warum, für wen, was, wann, wo und womit. Das Ziel wird messbar formuliert. Die Zielgruppe bestimmt Ort, Termin, Ansprache und Verpflegung. Der Raum wird erst nach Programm und Zielgruppe gebucht.",
-        "beispiele": [
-          "Eine Kundenveranstaltung wird zunächst nach Ziel, Zielgruppe und erwarteter Teilnehmerzahl beschrieben, bevor ein Raum gesucht wird.",
-          "Pausen und Ablauf gehören zum Was; Budget und Puffer zum Womit."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Barrierefreiheit von Anfang an mitdenken",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ob eine Veranstaltung für alle zugänglich ist, entscheidet sich früh: bei der Wahl des Ortes (stufenloser Zugang, barrierefreie Toilette), beim Termin und bei der Form. Online-Teilnahme kann Menschen einbeziehen, die nicht reisen können — wenn Ton gut verständlich ist, Folien vorgelesen werden und Untertitel möglich sind. Wer das erst kurz vorher prüft, findet oft keine Lösung mehr.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          }
         ],
-        "fallbeispiel": "Die Geschäftsführung plant in sechs Wochen eine Kundenveranstaltung mit externem Fachreferenten und 80 Gästen. Zuerst wird rückwärts geprüft, ob Referentensuche, Programm, Einladungsfrist und Druck noch in den Termin passen. Der Raum wird erst nach Zielgruppe und Ablauf ausgewählt; die Entscheidung über Verschieben oder Alternativen wird mit dem Zeitplan begründet.",
-        "typische_fehler": "Der Raum wird zuerst gebucht und bestimmt danach das Programm. Außerdem wird ein Ziel ohne Messgröße oder die Zielgruppe erst nach der Einladung festgelegt.",
         "verstaendnisfragen": [
-          "Welche sechs Fragen beantwortet das Konzept? Warum, für wen, was, wann, wo und womit.",
-          "Warum wird der Raum zuletzt gebucht? Damit Zielgruppe und Programm nicht an eine voreilige Raumwahl angepasst werden."
-        ],
-        "pruefungsbezug": "Nenne die sechs Fragen in Reihenfolge und formuliere das Ziel mit einem später prüfbaren Maßstab.",
-        "merksatz": "Warum, für wen, was, wann, wo, womit — diese Kette trägt jedes Veranstaltungskonzept."
+          {
+            "frage": "Warum ist „Wir wollen unseren Händlern die Kollektion zeigen“ kein ausreichendes Ziel?",
+            "antwort": "Es ist nicht messbar. Hinterher lässt sich nicht sagen, ob der Händlertag erfolgreich war. Ein Ziel wie „mindestens 40 Vorbestellungen bis 15. Februar“ macht den Erfolg überprüfbar.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "Warum wählt Lea keine rein digitale Veranstaltung, obwohl sie günstiger wäre?",
+            "antwort": "Weil ein wichtiger Teil des Ziels das Anprobieren und Fühlen der Ware ist. Das lässt sich digital kaum vermitteln. Die digitale Teilnahme ergänzt sie nur für Gäste, für die die Anreise zu weit wäre.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Aufgaben hängen zeitlich voneinander ab.",
-          "Der Veranstaltungstag steht häufig als fixer Endtermin fest."
+        "darstellung": "vollfassung",
+        "ziel": "Du erstellst einen Zeitplan rückwärts vom Veranstaltungstag, erkennst die Vorgänge auf dem kritischen Pfad und prüfst, ob der Termin noch erreichbar ist.",
+        "vorwissen_kurz": "Manche Vorbereitungen brauchen Wochen und lassen sich nicht beschleunigen. Sie bestimmen, wie früh mit der Planung begonnen werden muss.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Rückwärts planen",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Veranstaltung hat einen festen Termin. Deshalb wird vom Veranstaltungstag aus rückwärts geplant: Was muss wann fertig sein, damit der nächste Schritt rechtzeitig beginnen kann? Dabei zeigt sich, welche Vorgänge nacheinander ablaufen müssen und welche Puffer haben. Die längste Kette ohne Puffer ist der **kritische Pfad** — jede Verzögerung dort verschiebt den Termin.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Vorlauf für den Händlertag",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Balkenplan bilden Konzept, Budget, Termin und Ort, Referentin, Einladung, Anmeldefrist, Druck der Unterlagen und Aufbau den kritischen Pfad. Zusammen dauern sie 5 + 5 + 7 + 21 + 3 + 14 + 6 + 1 = 62 Tage. Stehen bis zum Termin nur 60 Tage zur Verfügung, reicht die Zeit nicht.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Möglichkeit",
+              "Wirkung",
+              "Bewertung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bewirtung früher beauftragen",
+                  "keine, sie liegt nicht auf dem kritischen Pfad",
+                  "bringt nichts"
+                ]
+              },
+              {
+                "zellen": [
+                  "Referentin aus dem eigenen Haus statt externer Gastrednerin",
+                  "spart einen großen Teil der 21 Tage",
+                  "möglich, wenn die Designleitung präsentiert"
+                ]
+              },
+              {
+                "zellen": [
+                  "Anmeldefrist von 14 auf 10 Tage verkürzen",
+                  "spart 4 Tage",
+                  "möglich, aber weniger Rücklauf"
+                ]
+              },
+              {
+                "zellen": [
+                  "Unterlagen digital statt gedruckt",
+                  "Druckzeit entfällt",
+                  "möglich, Musterkarten trotzdem drucken"
+                ]
+              }
+            ],
+            "fazit": "Nur Änderungen auf dem kritischen Pfad verschieben das Ende. Lea lässt die Designleiterin präsentieren und verkürzt die Anmeldefrist — damit ist der Termin wieder erreichbar.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für eine hybride Veranstaltung kommen eigene Vorgänge hinzu: Streaming-Dienstleister beauftragen, Zugangslinks verschicken, eine Generalprobe mit der Technik am Vortag. Auch sie gehören in den Zeitplan, denn ohne Generalprobe merkt niemand vorher, dass der Ton im Showroom hallt.",
+            "id": "b2-p3"
+          }
         ],
-        "erklaerung": "Veranstaltungen werden rückwärts vom Veranstaltungstag geplant. Referentensuche, Druck und Einladungsfrist haben langen Vorlauf und können den frühestmöglichen Termin bestimmen. Stornofristen gehören ebenfalls in den Zeitplan.",
-        "beispiele": [
-          "Ein externer Referent muss vor dem Druck und vor der Einladung feststehen; seine Verfügbarkeit kann den Termin begrenzen.",
-          "Die Einladung braucht eine Anmeldefrist; erst danach werden Teilnehmerzahl und Bewirtung belastbarer."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Fristen als Vorgänge",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Stornofristen für Raum und Bewirtung, Druckschluss und Anmeldeschluss sind Termine mit Kostenfolge. Sie gehören in den Zeitplan wie jeder andere Vorgang, am besten mit einer Wiedervorlage einige Tage vorher.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          }
         ],
-        "fallbeispiel": "Sechs Wochen reichen für eine Veranstaltung mit externem Fachreferenten und 80 Gästen möglicherweise nicht. Rückwärts werden Referentensuche, Programm, Einladung, Anmeldefrist, Druck und Bewirtung eingezeichnet. Ist die Kette länger als sechs Wochen, werden Terminverschiebung, interner Beitrag oder verkürzte Einladung als Alternativen vorgelegt.",
-        "typische_fehler": "Von heute vorwärts geplant und der fehlende Vorlauf erst spät erkannt. Stornofristen und Anmeldezeit werden nicht als Aufgaben mit Termin behandelt.",
         "verstaendnisfragen": [
-          "Warum wird rückwärts geplant? Damit die Erreichbarkeit des fixen Veranstaltungstermins früh sichtbar wird.",
-          "Welche Aufgaben bestimmen oft den frühestmöglichen Termin? Referentensuche, Einladungsfrist und Druckproduktion."
-        ],
-        "pruefungsbezug": "Beginne mit dem Veranstaltungstag und arbeite entlang der Abhängigkeiten rückwärts; markiere den längsten Vorlauf.",
-        "merksatz": "Der Endtermin steht fest — die Planung läuft rückwärts bis zum heutigen Tag."
+          {
+            "frage": "Warum hilft es nicht, die Bewirtung früher zu beauftragen?",
+            "antwort": "Weil sie nicht auf dem kritischen Pfad liegt. Sie hat Puffer und verschiebt das Ende nicht. Früher zu buchen, würde nur das Risiko erhöhen, eine falsche Personenzahl zu bestellen.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Was passiert, wenn sich die Referentensuche um eine Woche verzögert?",
+            "antwort": "Der Termin verschiebt sich um eine Woche, weil die Referentensuche auf dem kritischen Pfad liegt. Gegensteuern lässt sich nur mit anderen Vorgängen auf diesem Pfad.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Ein Veranstaltungsbudget enthält fixe und mengenabhängige Posten.",
-          "Unvorhergesehenes braucht einen Puffer."
+        "darstellung": "vollfassung",
+        "ziel": "Du kalkulierst ein Veranstaltungsbudget aus fixen und mengenabhängigen Posten mit Puffer und überwachst Stornofristen, damit Kosten nicht für nicht gekommene Gäste anfallen.",
+        "vorwissen_kurz": "Manche Kosten bleiben gleich, egal wie viele Gäste kommen. Andere steigen mit jeder Person.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fix und je Person",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Veranstaltungsbudget besteht aus **fixen Posten**, die unabhängig von der Teilnehmerzahl anfallen, und **mengenabhängigen Posten**, die je Person berechnet werden. Dazu kommt ein Puffer für Unvorhergesehenes. Die Unterscheidung zeigt, welche Kosten sich durch die Teilnehmerzahl beeinflussen lassen und wo das Risiko liegt.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Budget für den Händlertag",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Art",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Showroom-Miete inklusive Reinigung",
+                  "fix",
+                  "1.200,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Technik mit Streaming für die Online-Gäste",
+                  "fix",
+                  "1.800,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Technikbetreuung vor Ort",
+                  "fix",
+                  "600,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Moderation",
+                  "fix",
+                  "900,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bewirtung, 60 Personen × 38 €",
+                  "je Person",
+                  "2.280,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Mappen und Musterkarten, 60 × 6 €",
+                  "je Person",
+                  "360,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zwischensumme",
+                  "",
+                  "7.140,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Puffer 8 %",
+                  "",
+                  "571,20 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Budget gesamt",
+                  "",
+                  "7.711,20 €"
+                ]
+              }
+            ],
+            "fazit": "Das Budget bleibt unter der Grenze von 8.000 €. Fast zwei Drittel der Kosten sind fix — sie fallen auch an, wenn weniger Gäste kommen.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Caterer verlangt eine Mindestabnahme von 50 Personen und eine endgültige Zahl fünf Werktage vorher. Lea trägt diese Frist in den Zeitplan ein. Am Stichtag haben sich 54 Gäste für die Präsenz angemeldet. Sie meldet 58 Personen — vier mehr für kurzfristige Anmeldungen und das eigene Team. Die Bewirtung kostet dann 58 × 38 € = 2.204 € statt 2.280 €.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b4"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b5"
+          }
         ],
-        "erklaerung": "Das Budget wird aus fixen Posten, mengenabhängigen Posten und einem Puffer von 5 bis 10 Prozent aufgebaut. Fixe Kosten ändern sich nicht mit der Teilnehmerzahl, mengenabhängige Kosten schon. Stornofristen und mögliche Nachkosten werden bei der Planung berücksichtigt.",
-        "beispiele": [
-          "Raummiete oder Technik können fixe Posten sein; Bewirtung und Druckmenge hängen von der Teilnehmerzahl ab.",
-          "Ein Puffer von 5 bis 10 Prozent wird zusätzlich zur errechneten Summe vorgesehen."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kosten der Online-Teilnahme",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Online-Gäste verursachen keine Bewirtungskosten, aber sie sind nicht kostenlos: Streaming-Technik und Betreuung sind fix und fallen an, sobald die hybride Form gewählt ist. Ob sich das lohnt, zeigt erst der Vergleich mit dem Ziel — hier die Gewinnung neuer Benelux-Händler.",
+                "id": "b3-d1-p1"
+              }
+            ],
+            "id": "b3-d1"
+          }
         ],
-        "fallbeispiel": "Für 80 Gäste werden feste Technik- und Raumkosten sowie mengenabhängige Bewirtung und Druckkosten getrennt erfasst. Auf die Summe wird ein Puffer von 5 bis 10 Prozent aufgeschlagen. Stornofristen werden neben den Beträgen notiert, damit eine spätere Änderung nicht unbemerkt Zusatzkosten auslöst.",
-        "typische_fehler": "Alle Kosten werden als gleichartig behandelt oder der Puffer wird erst nach einer Überschreitung gesucht. Auch Teilnehmerzahl und Druckmenge werden nicht als variable Größen erkannt.",
         "verstaendnisfragen": [
-          "Welche drei Bestandteile hat das Budget? Fixe Posten, mengenabhängige Posten und Puffer.",
-          "Wie hoch ist der vorgesehene Puffer? 5 bis 10 Prozent."
-        ],
-        "pruefungsbezug": "Trenne im Budget fixe und mengenabhängige Kosten und nenne Puffer sowie Stornofristen ausdrücklich.",
-        "merksatz": "Budget = fixe Kosten plus Mengenposten plus Puffer — mit Stornofristen im Zeitplan."
+          {
+            "frage": "Wie hoch wäre das Budget ohne die hybride Technik, wenn die normale Präsentationstechnik 500 € kostete?",
+            "antwort": "Die Zwischensumme sinkt um 1.300 € auf 5.840 €. Mit 8 % Puffer (467,20 €) ergibt sich ein Budget von 6.307,20 €.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Warum meldet Lea dem Caterer nicht genau 54 Personen?",
+            "antwort": "Weil erfahrungsgemäß noch kurzfristige Anmeldungen kommen und das eigene Team mitessen muss. Ein kleiner Aufschlag ist günstiger, als am Tag selbst zu wenig Essen zu haben. Er liegt aber deutlich unter der ursprünglich bestellten Zahl.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },
@@ -158,7 +526,7 @@
         },
         {
           "typ": "achtung",
-          "text": "Der Raum wird **zuletzt** gebucht, nicht zuerst. Wer mit dem Raum beginnt, passt danach das Programm an die Räumlichkeit an — statt umgekehrt. Und ein früh gebuchter Raum, der nicht passt, kostet Stornogebühren."
+          "text": "Der Raum wird **erst nach Ziel, Zielgruppe, Programm und Budget** gebucht, nicht zuerst. Wer mit dem Raum beginnt, passt danach das Programm an die Räumlichkeit an — statt umgekehrt. Und ein früh gebuchter Raum, der nicht passt, kostet Stornogebühren."
         }
       ]
     },
@@ -393,7 +761,7 @@
     "Das {{begriff:veranstaltungskonzept|Konzept}} klärt: warum, für wen, was, wann, wo, womit.",
     "Das Ziel wird messbar formuliert, sonst ist der Erfolg nicht beurteilbar.",
     "Die Zielgruppe bestimmt Ort, Termin, Ansprache und Verpflegung.",
-    "Der Raum wird zuletzt gebucht, nicht zuerst.",
+    "Der Raum wird erst nach Konzept und Budget gebucht, nicht zuerst.",
     "Geplant wird rückwärts vom Veranstaltungstag.",
     "Referentensuche, Druck und Einladungsfrist haben langen Vorlauf.",
     "Das Budget besteht aus fixen und mengenabhängigen Posten plus 5 bis 10 Prozent Puffer.",

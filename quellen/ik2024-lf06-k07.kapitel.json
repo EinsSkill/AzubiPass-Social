@@ -6,86 +6,473 @@
   "untertitel": "Rationalisieren mit Kennzahlen, fixe und variable Kosten unterscheiden, die Gewinnschwelle bestimmen und Eigenfertigung mit Fremdbezug vergleichen.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Produktivität = Ausbringung ÷ Einsatz (LF 1).",
-          "Verbesserungen sollen messbar sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du misst den Erfolg von Rationalisierungsmaßnahmen mit Kennzahlen wie Rüstzeit, Produktivität und Ausschussquote, berechnest die Veränderung in Prozent und prüfst Nebenwirkungen auf Qualität und Arbeitsbedingungen.",
+        "vorwissen_kurz": "Rationalisieren heißt, mit gleichem Einsatz mehr zu erreichen oder dasselbe mit weniger Einsatz. Ob das gelingt, zeigen Zahlen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mehr Ergebnis je Einsatz",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Rationalisierung verbessert das Verhältnis von Ergebnis zu Einsatz. Das kann eine kürzere Rüstzeit sein, mehr Stück je Stunde, weniger Ausschuss oder weniger Material je Erzeugnis. Gemessen wird mit Kennzahlen vor und nach der Maßnahme — sonst bleibt der Erfolg eine Behauptung. Zugleich wird geprüft, ob die Maßnahme Qualität oder Arbeitsbedingungen verschlechtert.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Maßnahmen bei MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Maßnahme",
+              "Kennzahl",
+              "vorher",
+              "nachher",
+              "Veränderung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Schnellspannrahmen an der Stickmaschine",
+                  "Rüstzeit je Los",
+                  "45 min",
+                  "20 min",
+                  "− 55,6 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fester Trockenplatz neben der Presse",
+                  "Shirts je Stunde",
+                  "8",
+                  "9",
+                  "+ 12,5 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Versionsabgleich vor Druckstart",
+                  "Motivfehler je 25 Aufträge",
+                  "3",
+                  "0",
+                  "− 100 %"
+                ]
+              }
+            ],
+            "fazit": "Alle drei Maßnahmen verbessern messbar das Verhältnis von Ergebnis zu Einsatz. Die Schnellspannrahmen kosten 1.200 €; bei 4 Rüstvorgängen pro Woche sparen sie 100 Minuten Maschinenzeit.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nicht jede schnellere Lösung ist eine Verbesserung. Hätte MAKEL Studio die Presse einfach schneller laufen lassen und dabei mehr Fehldrucke in Kauf genommen, stiege die Stückzahl je Stunde, aber auch die Ausschussquote. Deshalb wird die Produktivität immer zusammen mit einer Qualitätskennzahl betrachtet. Auch die Belastung der Mitarbeitenden gehört zur Bewertung: Ein höheres Tempo, das nur mit Hetze erreichbar ist, rächt sich durch Fehler und Krankheit.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Rationalisierung heißt, die Leistungserstellung so zu verbessern, dass mit gleichem Einsatz mehr oder mit weniger Einsatz das Gleiche erreicht wird — nach dem ökonomischen Prinzip. Ansatzpunkte sind kürzere Rüst- und Liegezeiten, weniger Ausschuss, bessere Maschinenauslastung, Standardisierung (gleiche Rohlinge für mehrere Produkte), Automatisierung und bessere Organisation. Gemessen wird mit Kennzahlen wie Arbeitsproduktivität (Stück je Stunde), Ausschussquote, Auslastung, Durchlaufzeit und Kosten je Stück. Rationalisierung muss auch Arbeitsbedingungen und Qualität im Blick behalten.",
-        "beispiele": [
-          "Ein Schnellspannrahmen senkt die Rüstzeit an der Stickmaschine von 45 auf 20 Minuten.",
-          "Gleiche Rohlinge für drei Kollektionen: weniger Varianten im Lager, größere Bestellmengen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Wann sich eine Investition rechnet",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Schnellspannrahmen sparen 100 Minuten Maschinenzeit je Woche. Bei einem Maschinenstundensatz von 88 € sind das rund 147 € pro Woche. Die Investition von 1.200 € ist damit nach etwa acht Wochen wieder eingespielt — vorausgesetzt, die gewonnene Zeit wird tatsächlich für weitere Aufträge genutzt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Deniz Aydın vergleicht zwei Wochen: Vorher 240 Shirts in 30 Stunden (8 je Stunde), nach Einführung eines festen Trockenplatzes 270 Shirts in 30 Stunden (9 je Stunde). Die Arbeitsproduktivität ist um 12,5 % gestiegen. Die Ausschussquote blieb gleich — die Verbesserung ging nicht zulasten der Qualität.",
-        "typische_fehler": "Rationalisierung mit Personalabbau gleichsetzen.",
         "verstaendnisfragen": [
-          "Nenne zwei Ansatzpunkte der Rationalisierung. Zum Beispiel Rüstzeiten senken und Ausschuss verringern.",
-          "Warum prüft man bei Rationalisierung auch die Qualität? Damit eine höhere Menge nicht durch mehr Fehler erkauft wird."
-        ],
-        "pruefungsbezug": "Rationalisierungsmaßnahmen mit passenden Kennzahlen beurteilen.",
-        "merksatz": "Rationalisierung verbessert das Verhältnis von Ergebnis zu Einsatz — gemessen mit Kennzahlen, ohne Qualität und Arbeitsbedingungen zu vergessen."
+          {
+            "frage": "Um wie viel Prozent sinkt die Rüstzeit, wenn sie von 45 auf 20 Minuten fällt?",
+            "antwort": "(45 − 20) ÷ 45 × 100 ≈ 55,6 %.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum wird die Produktivität zusammen mit einer Qualitätskennzahl betrachtet?",
+            "antwort": "Weil mehr Stück je Stunde nichts nützen, wenn zugleich mehr Ausschuss entsteht. Erst beide Kennzahlen zusammen zeigen, ob sich der Ablauf wirklich verbessert hat.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Manche Kosten hängen von der Menge ab, andere nicht.",
-          "Kostenrechnung wird in LF 8 vertieft."
+        "darstellung": "vollfassung",
+        "ziel": "Du trennst fixe und variable Kosten, berechnest Gesamt- und Stückkosten für verschiedene Mengen und erklärst die Fixkostendegression und ihre Grenzen.",
+        "vorwissen_kurz": "Manche Kosten fallen an, ob produziert wird oder nicht. Andere entstehen mit jedem Stück.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fix und variabel",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:fixkosten|Fixe Kosten}} bleiben in einem Zeitraum gleich, unabhängig von der produzierten Menge: Hallenmiete, Abschreibung der Maschinen, Gehälter der Verwaltung. {{begriff:variable-kosten|Variable Kosten}} steigen mit der Menge: Rohlinge, Garn, Verpackung, Energie für die Maschinenlaufzeit. Die Gesamtkosten sind Fixkosten plus variable Stückkosten mal Menge. Weil sich die Fixkosten auf mehr Stücke verteilen, sinken die Stückkosten mit steigender Menge — das ist die **Fixkostendegression**.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine neue Hoodie-Linie",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für eine neue Linie fallen monatlich 2.000 € Fixkosten an (Musterentwicklung, Fotografie, anteilige Miete); die variablen Kosten betragen 20 € je Hoodie.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Menge im Monat",
+              "Fixkosten",
+              "variable Kosten",
+              "Gesamtkosten",
+              "Stückkosten"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "50",
+                  "2.000 €",
+                  "1.000 €",
+                  "3.000 €",
+                  "60,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "100",
+                  "2.000 €",
+                  "2.000 €",
+                  "4.000 €",
+                  "40,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "250",
+                  "2.000 €",
+                  "5.000 €",
+                  "7.000 €",
+                  "28,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "500",
+                  "2.000 €",
+                  "10.000 €",
+                  "12.000 €",
+                  "24,00 €"
+                ]
+              }
+            ],
+            "fazit": "Bei zehnfacher Menge sinken die Stückkosten von 60 € auf 24 €. Sie nähern sich den variablen Kosten von 20 € an, unterschreiten sie aber nie.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Fixkostendegression hat Grenzen. Ab einer bestimmten Menge reicht die Kapazität nicht mehr; dann braucht MAKEL Studio eine zweite Maschine oder eine zusätzliche Schicht, und die Fixkosten springen auf ein höheres Niveau. Außerdem nützt die Degression nur, wenn die größere Menge auch verkauft wird. Hoodies auf Lager senken zwar die Stückkosten in der Rechnung, bringen aber keinen Erlös.",
+            "id": "a2-p3"
+          }
         ],
-        "erklaerung": "Fixe Kosten fallen in einem Zeitraum unabhängig von der produzierten Menge an, etwa Miete der Halle, Abschreibung der Maschinen, Gehälter, Versicherungen. Variable Kosten steigen mit der Menge, etwa Rohlinge, Garn, Farbe, Verpackung, Stücklöhne, Energie der Maschinen. Gesamtkosten = fixe Kosten + variable Kosten je Stück × Menge. Je mehr produziert wird, desto stärker verteilen sich die Fixkosten (Fixkostendegression), die Stückkosten sinken. Ob fixe Kosten kurzfristig abbaubar sind, ist eine eigene Frage: Eine Hallenmiete läuft weiter, auch wenn die Maschine stillsteht.",
-        "beispiele": [
-          "Fixkosten 2.000 € im Monat, variable Kosten 20 € je Stück: bei 100 Stück Gesamtkosten 4.000 €, Stückkosten 40 €; bei 200 Stück 6.000 €, Stückkosten 30 €.",
-          "Der Rohling ist variabel, die Leasingrate der Stickmaschine fix."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Sprungfixe Kosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kosten, die über einen Mengenbereich gleich bleiben und dann auf einen höheren Wert springen, heißen sprungfixe Kosten. Ein Beispiel ist eine zweite Stickmaschine: Bis 500 Hoodies im Monat reicht eine, darüber hinaus wird eine weitere gebraucht, deren Abschreibung und Bedienung zusätzlich anfallen.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Sandra Koslowski zerlegt die Kosten der Veredelung: Miete, Leasing und Gehälter ergeben 2.000 € im Monat fix; Rohling, Garn und Verpackung kosten 20 € je Hoodie. Bei 100 Hoodies kostet jeder 40 €, bei 200 Hoodies nur noch 30 €.",
-        "typische_fehler": "Verrechnete fixe Kosten automatisch als kurzfristig vermeidbar ansehen.",
         "verstaendnisfragen": [
-          "Was ist Fixkostendegression? Die fixen Kosten je Stück sinken, weil sie sich auf mehr Stück verteilen.",
-          "Ist die Abschreibung der Stickmaschine fix oder variabel? Fix, sie fällt unabhängig von der Menge an."
-        ],
-        "pruefungsbezug": "Kosten in fix und variabel einteilen und Gesamt- sowie Stückkosten berechnen.",
-        "merksatz": "Gesamtkosten = Fixkosten + variable Stückkosten × Menge; mit steigender Menge sinken die Stückkosten."
+          {
+            "frage": "Wie hoch sind die Stückkosten bei 400 Hoodies?",
+            "antwort": "Gesamtkosten 2.000 € + 400 × 20 € = 10.000 €; Stückkosten 10.000 € ÷ 400 = 25 €.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum sinken die Stückkosten nie unter 20 €?",
+            "antwort": "Weil jedes Stück mindestens seine variablen Kosten von 20 € verursacht. Nur der Fixkostenanteil je Stück wird mit steigender Menge kleiner.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Erlöse = Preis × Menge.",
-          "Gewinn = Erlöse − Kosten."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest den Deckungsbeitrag je Stück und die Gewinnschwelle, liest sie im Diagramm ab und zeigst, wie Preis- und Kostenänderungen sie verschieben.",
+        "vorwissen_kurz": "Ein Erzeugnis lohnt sich erst, wenn die Erlöse alle Kosten decken. Ab welcher Menge das der Fall ist, zeigt die Gewinnschwelle.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wann die Fixkosten gedeckt sind",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jedes verkaufte Stück bringt einen {{begriff:deckungsbeitrag|Deckungsbeitrag}}: Verkaufspreis minus variable Stückkosten. Dieser Betrag steht zur Deckung der Fixkosten zur Verfügung. Die {{begriff:break-even|Gewinnschwelle}} ist erreicht, wenn die Summe der Deckungsbeiträge genau die Fixkosten deckt. Darunter macht die Linie Verlust, darüber Gewinn.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die neue Linie im Händlergeschäft",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Verkaufspreis an Händler 30 € netto, variable Kosten 20 €, Fixkosten 2.000 € im Monat.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Größe",
+              "Rechnung",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Deckungsbeitrag je Stück",
+                  "30 € − 20 €",
+                  "10 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gewinnschwelle",
+                  "2.000 € ÷ 10 €",
+                  "200 Stück"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis bei 150 Stück",
+                  "150 × 10 € − 2.000 €",
+                  "− 500 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis bei 280 Stück",
+                  "280 × 10 € − 2.000 €",
+                  "+ 800 €"
+                ]
+              }
+            ],
+            "fazit": "Ab 200 Hoodies im Monat trägt sich die Linie. Jedes weitere Stück bringt 10 € Gewinn.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Vertrieb schlägt vor, den Preis auf 32 € zu erhöhen. Der Deckungsbeitrag steigt auf 12 €, die Gewinnschwelle sinkt auf 2.000 € ÷ 12 € ≈ 167 Stück. Die Produktion schlägt stattdessen ein günstigeres Garn vor, das die variablen Kosten auf 18 € senkt — mit demselben Effekt. Welcher Weg besser ist, hängt davon ab, ob Händler den höheren Preis akzeptieren und ob das Garn die Qualität hält.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Die Gewinnschwelle (Break-even-Point) ist die Menge, bei der Erlöse und Gesamtkosten gleich sind — der Gewinn ist null. Jedes verkaufte Stück bringt einen Deckungsbeitrag: Preis − variable Kosten je Stück. Dieser deckt zuerst die Fixkosten. Gewinnschwelle = Fixkosten ÷ Deckungsbeitrag je Stück. Darüber entsteht Gewinn, darunter Verlust. Die Rechnung gilt unter Annahmen: lineare Kosten, fester Preis, jede produzierte Menge wird verkauft.",
-        "beispiele": [
-          "Fixkosten 2.000 €, Preis 30 €, variable Kosten 20 €: Deckungsbeitrag 10 €, Gewinnschwelle 200 Stück.",
-          "Bei 250 Stück: Gewinn 50 × 10 € = 500 €."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Gewinnschwelle und Kapazität",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Gewinnschwelle sagt nur, ab welcher Menge die Linie Gewinn bringt. Ob MAKEL Studio diese Menge produzieren kann, zeigt die Kapazitätsplanung. Liegt die Gewinnschwelle über der möglichen Monatsproduktion, lohnt sich die Linie nur mit mehr Kapazität — und damit höheren Fixkosten.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für eine neue Hoodie-Linie rechnet Tobias Renner: Fixkosten 2.000 € im Monat, Verkaufspreis netto 30 €, variable Kosten 20 €. Jedes Stück bringt 10 € Deckungsbeitrag. Ab 200 Stück im Monat trägt sich die Linie. Marlene schätzt den Absatz auf 260 Stück — rechnerisch 600 € Gewinn.",
-        "typische_fehler": "Die Gewinnschwelle mit dem Preis statt mit dem Deckungsbeitrag berechnen.",
         "verstaendnisfragen": [
-          "Was ist der Deckungsbeitrag je Stück? Preis minus variable Kosten je Stück.",
-          "Was gilt genau an der Gewinnschwelle? Erlöse = Gesamtkosten, Gewinn = 0."
-        ],
-        "pruefungsbezug": "Gewinnschwelle und Gewinn bei gegebener Menge unter linearen Annahmen berechnen.",
-        "merksatz": "Gewinnschwelle = Fixkosten ÷ (Preis − variable Stückkosten); darüber Gewinn, darunter Verlust."
+          {
+            "frage": "Fixkosten 3.000 €, Preis 45 €, variable Kosten 25 €. Wo liegt die Gewinnschwelle?",
+            "antwort": "3.000 € ÷ (45 € − 25 €) = 150 Stück.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum senken ein Euro mehr Preis und ein Euro weniger variable Kosten die Gewinnschwelle gleich stark?",
+            "antwort": "Weil beide den Deckungsbeitrag je Stück um einen Euro erhöhen, und die Gewinnschwelle hängt nur vom Deckungsbeitrag und den Fixkosten ab.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Nicht alles muss selbst hergestellt werden.",
-          "Aus LF 1 kennst du Lohnfertiger und Fertigungstiefe."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest bei einer Make-or-buy-Entscheidung die kritische Menge, ergänzt die Rechnung um Qualität, Abhängigkeit, Kapazität und die Nachhaltigkeit der Material- und Transportflüsse und begründest eine Empfehlung.",
+        "vorwissen_kurz": "Manches kann MAKEL Studio selbst herstellen oder bei einem anderen Betrieb einkaufen. Die günstigere Lösung hängt von der Menge ab — und nicht nur von den Kosten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Selbst machen oder zukaufen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei einer Make-or-buy-Entscheidung werden die Kosten der Eigenfertigung mit dem Fremdbezug verglichen. Die Eigenfertigung hat meist Fixkosten, etwa für eine Maschine, dafür niedrigere variable Kosten. Der Fremdbezug hat keine Fixkosten, aber einen höheren Stückpreis. Die **kritische Menge** ist die Menge, bei der beide gleich teuer sind: Fixkosten geteilt durch die Differenz der Stückkosten. Darüber lohnt sich rechnerisch die Eigenfertigung. Zur Entscheidung gehören aber auch Qualität, Liefertreue, Abhängigkeit, freie Kapazität und die Folgen für Umwelt und Material.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Gewebte Etiketten: selbst oder zugekauft?",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio bezieht gewebte Markenetiketten bisher von einem Hersteller in Portugal für 0,32 € je Stück. Eine eigene kleine Etikettenmaschine würde 1.800 € im Jahr kosten (Abschreibung, Wartung), die variablen Kosten lägen bei 0,08 € je Etikett. Der Jahresbedarf beträgt 9.000 Etiketten.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Eigenfertigung",
+              "Fremdbezug"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kosten bei 9.000 Stück",
+                  "1.800 € + 9.000 × 0,08 € = 2.520 €",
+                  "9.000 × 0,32 € = 2.880 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "kritische Menge",
+                  "1.800 € ÷ (0,32 € − 0,08 €) = 7.500 Stück",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Transport",
+                  "Garnspulen kommen mit den übrigen Lieferungen aus Deutschland",
+                  "vier Sendungen im Jahr aus Portugal, je rund 2.000 km"
+                ]
+              },
+              {
+                "zellen": [
+                  "Material und Ausschuss",
+                  "Fehldrucke sofort sichtbar; Garnreste aus dem Stickraum teilweise verwendbar",
+                  "Mindestmenge 2.500 je Motiv; bei Motivwechsel bleiben Restposten übrig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Qualität und Abhängigkeit",
+                  "eigene Kontrolle, aber neues Know-how nötig",
+                  "bewährte Qualität, ein einziger Lieferant"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kapazität",
+                  "Maschine braucht 0,5 Stunden Bedienung je Woche",
+                  "keine eigene Kapazität nötig"
+                ]
+              }
+            ],
+            "fazit": "Bei 9.000 Etiketten ist die Eigenfertigung um 360 € günstiger. Kurze Wege, weniger Restposten und die eigene Kontrolle sprechen zusätzlich dafür; das fehlende Know-how und die Bedienzeit dagegen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Produktionsplanung empfiehlt die Eigenfertigung, aber mit einer Bedingung: Sinkt der Bedarf unter 7.500 Etiketten im Jahr, etwa weil weniger Motive gebraucht werden, ist der Fremdbezug wieder günstiger. Außerdem wird der portugiesische Hersteller als Ersatzlieferant gehalten, falls die Maschine ausfällt. Die Umweltwirkung wird nicht mit einer geschätzten Emissionszahl begründet, sondern mit den konkreten Flüssen: weniger Einzelsendungen über lange Strecken und weniger Restposten.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Bei der Make-or-buy-Entscheidung wird verglichen, ob eine Leistung selbst erstellt oder fremd bezogen wird. Quantitativ: Bei Eigenfertigung fallen fixe Kosten (Maschine, Raum) plus variable Kosten je Stück an, beim Fremdbezug meist nur ein Preis je Stück. Die kritische Menge, ab der Eigenfertigung günstiger wird: Fixkosten ÷ (Fremdbezugspreis − variable Kosten der Eigenfertigung). Verglichen wird nur bei gleicher Leistung (Qualität, Menge, Termin). Qualitativ zählen Qualitätskontrolle, Know-how, Abhängigkeit vom Lieferanten, Flexibilität, freie Kapazität und Risiko. Die Empfehlung verbindet beide Seiten.",
-        "beispiele": [
-          "Eigenfertigung 1.000 € fix + 8 € je Stück, Fremdbezug 12 € je Stück: kritische Menge 1.000 ÷ 4 = 250 Stück.",
-          "Bei 400 Stück: Eigenfertigung 4.200 €, Fremdbezug 4.800 €."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn die Kapazität fehlt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Make or buy hängt auch davon ab, ob die eigene Kapazität frei ist. Ist die Stickabteilung im Herbst ausgelastet, kann es sinnvoll sein, einen Teil der Stickaufträge an einen Fremdveredler zu geben, obwohl die Eigenfertigung rechnerisch günstiger wäre. Die Entscheidung kann deshalb je nach Saison unterschiedlich ausfallen.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL lässt Stickereien bisher bei einem Lohnsticker für 12 € je Stück fertigen. Eine eigene zweite Stickmaschine würde 1.000 € im Monat fix kosten, variable Kosten 8 € je Stück. Ab 250 Stück im Monat ist die Eigenfertigung günstiger. Erwartet werden 400 Stück. Tobias Renner prüft zusätzlich: Haben wir Personal? Wie zuverlässig ist der Lohnsticker? Bleibt die Menge stabil?",
-        "typische_fehler": "Nur die Stückkosten vergleichen und Fixkosten, Qualität und Risiko ausblenden.",
         "verstaendnisfragen": [
-          "Wie berechnet man die kritische Menge? Fixkosten der Eigenfertigung ÷ (Fremdbezugspreis − variable Kosten der Eigenfertigung).",
-          "Nenne zwei qualitative Kriterien. Zum Beispiel Qualitätskontrolle und Abhängigkeit vom Lieferanten."
-        ],
-        "pruefungsbezug": "Kritische Menge berechnen und eine Make-or-buy-Empfehlung quantitativ und qualitativ begründen.",
-        "merksatz": "Make or buy: kritische Menge = Fixkosten ÷ (Fremdpreis − variable Eigenkosten); dazu Qualität, Abhängigkeit und Kapazität abwägen."
+          {
+            "frage": "Eigenfertigung 1.000 € fix plus 8 € je Stück, Fremdbezug 12 € je Stück. Ab welcher Menge ist die Eigenfertigung günstiger?",
+            "antwort": "1.000 € ÷ (12 € − 8 €) = 250 Stück. Ab mehr als 250 Stück ist die Eigenfertigung günstiger.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum begründet MAKEL Studio die Umweltwirkung mit Sendungen und Restposten statt mit einer Emissionszahl?",
+            "antwort": "Weil die konkreten Material- und Transportflüsse bekannt und überprüfbar sind. Eine geschätzte Emissionszahl ohne verlässliche Grundlage wäre eine Scheingenauigkeit.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

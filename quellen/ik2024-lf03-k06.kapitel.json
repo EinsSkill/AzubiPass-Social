@@ -6,86 +6,481 @@
   "untertitel": "Fälligkeit, Verzug, Mahnung, Zinsen und Verjährung — fünf Begriffe, die man sauber auseinanderhalten muss.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Mit der Rechnung fordert MAKEL den vereinbarten Preis.",
-          "Wann gezahlt werden muss, regeln die Zahlungsbedingungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du bestimmst aus Rechnungsdatum und Zahlungsbedingungen Skontofrist und Fälligkeit, wertest eine Offene-Posten-Liste aus und erkennst, welche Posten überfällig sind und die Liquidität belasten.",
+        "vorwissen_kurz": "Jede Rechnung, die MAKEL Studio schreibt, ist erst dann Geld auf dem Konto, wenn der Kunde zahlt. Bis dahin ist sie ein offener Posten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wann bezahlt werden muss",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Fälligkeit** ist der Zeitpunkt, ab dem der Kunde zahlen muss. Sie ergibt sich aus den Zahlungsbedingungen: Bei „30 Tage netto\" ist eine Rechnung vom 2. Juni am 2. Juli fällig. Bis zum Ende der Skontofrist darf der Kunde den Skonto abziehen. Ist ein Kalenderdatum vereinbart, etwa „zahlbar bis 30. Juni\", steht die Fälligkeit genau fest. ==Fälligkeit ist Voraussetzung für Verzug, aber nicht dasselbe.== Die Buchhaltung führt eine **Offene-Posten-Liste**, in der alle noch nicht bezahlten Rechnungen mit ihren Fälligkeiten stehen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Offene Posten am 20. Juli",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kunde",
+              "Rechnung vom",
+              "Bedingung",
+              "fällig am",
+              "Betrag",
+              "Stand am 20. Juli"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Boutique Nordlicht",
+                  "2. Juni",
+                  "30 Tage netto",
+                  "2. Juli",
+                  "2.856,00 €",
+                  "18 Tage überfällig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Agentur Pixelwerk",
+                  "25. Juni",
+                  "30 Tage netto",
+                  "25. Juli",
+                  "5.828,38 €",
+                  "noch nicht fällig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sportverein",
+                  "10. Juni",
+                  "zahlbar bis 30. Juni",
+                  "30. Juni",
+                  "1.190,00 €",
+                  "20 Tage überfällig"
+                ]
+              },
+              {
+                "zellen": [
+                  "Concept Store Lux",
+                  "15. Juli",
+                  "8 Tage 2 % Skonto, 30 Tage netto",
+                  "14. August",
+                  "952,00 €",
+                  "Skontofrist bis 23. Juli"
+                ]
+              }
+            ],
+            "fazit": "Zwei Posten über zusammen 4.046 € sind überfällig. Dieses Geld fehlt MAKEL Studio für eigene Zahlungen an Lieferanten und Beschäftigte.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Überfällige Forderungen sind nicht nur ein Ärgernis, sondern ein Liquiditätsproblem. MAKEL Studio hat Material und Löhne für die Hoodies längst bezahlt; solange die Kunden nicht zahlen, finanziert MAKEL sie vor. Steigen die überfälligen Posten, muss vielleicht der Kontokorrentkredit genutzt werden, und das kostet Zinsen. Deshalb prüft die Buchhaltung die Offene-Posten-Liste regelmäßig und stößt das Mahnwesen an.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Fällig ist eine Forderung, sobald der Kunde zahlen muss — bei ‚30 Tage netto‘ am 30. Tag nach Rechnungsdatum beziehungsweise nach dem vereinbarten Bezugspunkt. Vor der Fälligkeit kann MAKEL nichts verlangen. Die Offene-Posten-Liste zeigt alle unbezahlten Rechnungen mit Fälligkeit; der Vertrieb oder die Buchhaltung prüft sie regelmäßig. Ein Zahlungseingang wird mit der Rechnung abgeglichen: Ist der Betrag vollständig? Wurde Skonto berechtigt abgezogen?",
-        "beispiele": [
-          "Rechnung vom 2. Juni, ‚30 Tage netto‘: fällig am 2. Juli.",
-          "Zahlung am 9. Juni mit 3 % Skonto bei ‚8 Tage 3 % Skonto‘: berechtigt, wenn die acht Tage ab Rechnungsdatum gerechnet werden."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Forderungsbestand im Blick",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die durchschnittliche Zeit, bis Kunden zahlen, heißt Kundenziel oder Debitorenlaufzeit. Steigt sie, bindet MAKEL Studio mehr Kapital im Umlaufvermögen. Ein konsequentes Mahnwesen verkürzt sie.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "In der Offenen-Posten-Liste steht eine Rechnung an eine Boutique über 3.570,00 € vom 2. Juni, Bedingung ‚8 Tage 3 % Skonto, 30 Tage netto‘. Am 10. Juli ist noch nichts eingegangen. Die Forderung ist seit dem 2. Juli fällig. Ob die Boutique schon in Verzug ist, ist eine weitere Frage.",
-        "typische_fehler": "Fälligkeit wird mit Verzug gleichgesetzt. Fälligkeit heißt: Der Kunde muss jetzt zahlen. Verzug ist eine Pflichtverletzung mit weiteren Voraussetzungen.",
         "verstaendnisfragen": [
-          "Wann ist eine Rechnung mit ‚30 Tage netto‘ fällig? 30 Tage nach dem vereinbarten Bezugspunkt, meist dem Rechnungsdatum.",
-          "Was zeigt die Offene-Posten-Liste? Alle noch nicht bezahlten Rechnungen mit Betrag und Fälligkeit."
-        ],
-        "pruefungsbezug": "Bei Zahlungsfällen zuerst die Fälligkeit bestimmen — sie ist die Voraussetzung für alles Weitere.",
-        "merksatz": "Fälligkeit heißt, der Kunde muss jetzt zahlen; sie ist Voraussetzung für Verzug, aber nicht dasselbe."
+          {
+            "frage": "Rechnung vom 2. Juni, „30 Tage netto\". Wann ist sie fällig?",
+            "antwort": "Am 2. Juli.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum belasten überfällige Forderungen die Liquidität?",
+            "antwort": "Weil MAKEL Studio Material und Löhne schon bezahlt hat, das Geld vom Kunden aber noch fehlt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Zahlungsverzug ist eine Pflichtverletzung des Käufers.",
-          "Die Voraussetzungen stehen in § 286 BGB."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst die Voraussetzungen des Zahlungsverzugs nach § 286 BGB, bestimmst den Verzugsbeginn in verschiedenen Fällen und unterscheidest dabei Unternehmens- und Verbraucherkunden.",
+        "vorwissen_kurz": "Erst wenn ein Kunde in Verzug ist, kann MAKEL Studio Zinsen und Kosten verlangen. Deshalb kommt es auf den genauen Zeitpunkt an.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wann Verzug beginnt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{begriff:zahlungsverzug|Zahlungsverzug}} setzt voraus, dass die Forderung fällig ist, der Kunde trotz {{begriff:mahnung|Mahnung}} nicht zahlt und er die Verzögerung zu vertreten hat; bei Geldschulden wird Letzteres fast immer angenommen ({{par:bgb-286|§ 286 BGB}}). Ohne Mahnung tritt Verzug ein, wenn ein Zahlungstermin nach dem Kalender bestimmt ist. Bei Entgeltforderungen gerät ein Unternehmen außerdem spätestens 30 Tage nach Fälligkeit und Zugang der Rechnung in Verzug. Gegenüber Verbrauchern gilt diese 30-Tage-Regel nur, wenn die Rechnung ausdrücklich darauf hinweist.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Verzugsbeginn bei drei offenen Posten",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kunde",
+              "Situation",
+              "Verzug ab"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Sportverein",
+                  "„zahlbar bis 30. Juni\", nicht gezahlt",
+                  "1. Juli, ohne Mahnung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Boutique Nordlicht",
+                  "fällig 2. Juli, Mahnung am 15. Juli zugegangen",
+                  "15. Juli mit Zugang der Mahnung, Zinsen ab 16. Juli"
+                ]
+              },
+              {
+                "zellen": [
+                  "Agentur Pixelwerk",
+                  "fällig 25. Juli, keine Mahnung, Rechnung am 26. Juni zugegangen",
+                  "spätestens 24. August, 30 Tage nach Fälligkeit"
+                ]
+              }
+            ],
+            "fazit": "Der Verzugsbeginn hängt davon ab, ob ein Kalenderdatum vereinbart ist und ob gemahnt wurde. Eine frühe Mahnung kann den Verzug vorziehen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für die Praxis heißt das: Ein Kalenderdatum in der Zahlungsbedingung macht die Mahnung für den Verzug entbehrlich. Bei „30 Tage netto\" lohnt sich eine Mahnung bald nach der Fälligkeit, weil sie den Verzug sofort auslöst; ohne sie müsste MAKEL Studio weitere 30 Tage warten. Wer mahnt, sollte den Zugang belegen können, etwa durch E-Mail mit Lesebestätigung, Einschreiben oder einen Vermerk über ein Telefonat.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Verzug tritt ein, wenn der Schuldner trotz Fälligkeit nicht zahlt und gemahnt wurde. Die Mahnung ist entbehrlich, wenn der Zahlungstermin nach dem Kalender bestimmt ist (etwa ‚zahlbar bis 30. Juni‘) oder sich nach einem Ereignis kalendermäßig berechnen lässt. Bei Entgeltforderungen tritt Verzug außerdem spätestens 30 Tage nach Fälligkeit und Zugang der Rechnung ein; gegenüber Verbrauchern nur, wenn die Rechnung darauf hinweist. Verzug setzt voraus, dass der Schuldner die Verspätung zu vertreten hat — bei Geldschulden ist das praktisch immer der Fall.",
-        "beispiele": [
-          "‚Zahlbar bis 30. Juni‘: Verzug ab 1. Juli ohne Mahnung.",
-          "‚30 Tage netto‘ ohne Datum: Verzug nach Mahnung — oder spätestens 30 Tage nach Fälligkeit und Zugang der Rechnung."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn der Kunde einen Mangel geltend macht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat der Kunde berechtigt einen Mangel gerügt, darf er einen Teil des Kaufpreises zurückhalten, bis nacherfüllt ist. Dann ist er mit diesem Teil nicht in Verzug. Bevor MAKEL Studio mahnt, prüft der Vertrieb deshalb, ob eine offene Reklamation besteht.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Boutique hat die Rechnung vom 2. Juni am 3. Juni erhalten, fällig am 2. Juli. Ein Kalenderdatum war nicht genannt. Am 10. Juli schickt MAKEL eine Mahnung, die am 11. Juli zugeht. Verzug tritt mit Zugang der Mahnung ein. Ohne Mahnung wäre die Boutique als Unternehmen spätestens 30 Tage nach Fälligkeit und Zugang der Rechnung in Verzug geraten.",
-        "typische_fehler": "Es wird angenommen, man brauche immer drei Mahnungen, bevor der Kunde in Verzug ist. Rechtlich genügt eine Mahnung — oder sie ist ganz entbehrlich.",
         "verstaendnisfragen": [
-          "Wann ist eine Mahnung entbehrlich? Wenn für die Zahlung eine Zeit nach dem Kalender bestimmt ist oder sie sich danach berechnen lässt.",
-          "Wann tritt bei Entgeltforderungen gegenüber Unternehmen spätestens Verzug ein? 30 Tage nach Fälligkeit und Zugang der Rechnung."
-        ],
-        "pruefungsbezug": "Verzugsprüfung: Fälligkeit, Mahnung oder Ausnahme, Vertretenmüssen. ‚Rechnung offen‘ allein reicht als Begründung nicht.",
-        "merksatz": "Verzug setzt Fälligkeit und Mahnung voraus — außer bei kalendermäßig bestimmtem Termin oder nach Ablauf von 30 Tagen nach Fälligkeit und Rechnungszugang; eine Mahnung genügt."
+          {
+            "frage": "Eine Rechnung lautet „zahlbar bis 30. Juni\". Muss MAKEL Studio mahnen, damit der Kunde in Verzug kommt?",
+            "antwort": "Nein. Bei einem kalendermäßig bestimmten Termin tritt Verzug ohne Mahnung am Folgetag ein.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie viele Mahnungen braucht es rechtlich für den Verzug?",
+            "antwort": "Eine Mahnung nach Fälligkeit genügt. Mehrere Stufen sind kaufmännische Praxis.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Betriebe gehen bei unbezahlten Rechnungen in Stufen vor.",
-          "Jeder Schritt wird dokumentiert."
+        "darstellung": "vollfassung",
+        "ziel": "Du planst eine abgestufte außergerichtliche Mahnfolge, formulierst eine Mahnung mit allen nötigen Angaben, dokumentierst jeden Schritt und entscheidest, wann das gerichtliche Mahnverfahren eingeleitet wird.",
+        "vorwissen_kurz": "Die Boutique Nordlicht hat nicht gezahlt. MAKEL Studio will das Geld, aber auch die Kundin behalten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Freundlich, klar, dokumentiert",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wie viele Stufen ein Betrieb mahnt, ist eine kaufmännische Entscheidung. Üblich sind eine freundliche Zahlungserinnerung, eine eindeutige Mahnung und eine letzte Mahnung mit Frist und Ankündigung weiterer Schritte. Jede Mahnung nennt Rechnung, Betrag, Fälligkeit und eine Frist. Jeder Schritt wird mit Datum im Kundenvorgang dokumentiert. Bleibt das außergerichtliche Verfahren erfolglos, kann MAKEL Studio beim zuständigen Amtsgericht einen {{begriff:mahnbescheid|Mahnbescheid}} beantragen.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die erste Mahnung an Nordlicht",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Formulierung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Bezug",
+                  "Rechnung Nr. 2026-0533 vom 2. Juni 2026 über 2.856,00 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Feststellung",
+                  "Die Rechnung war am 2. Juli fällig; ein Zahlungseingang liegt uns nicht vor."
+                ]
+              },
+              {
+                "zellen": [
+                  "Aufforderung",
+                  "Bitte überweisen Sie den offenen Betrag umgehend."
+                ]
+              },
+              {
+                "zellen": [
+                  "Hinweis",
+                  "Sollten Sie inzwischen gezahlt haben, betrachten Sie dieses Schreiben als gegenstandslos."
+                ]
+              },
+              {
+                "zellen": [
+                  "Kontakt",
+                  "Bei Fragen erreichen Sie Marlene Voß unter der Durchwahl 214."
+                ]
+              }
+            ],
+            "fazit": "Die Mahnung ist sachlich und eindeutig. Mit ihrem Zugang am 15. Juli ist die Boutique in Verzug. Setzt eine Mahnung dagegen eine Zahlungsfrist, beginnt der Verzug in der Regel erst nach deren Ablauf.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Ton passt sich der Stufe an. Die Zahlungserinnerung geht davon aus, dass die Rechnung übersehen wurde. Die letzte Mahnung kündigt klar an, dass nach Fristablauf das gerichtliche Mahnverfahren eingeleitet wird. Bei einer langjährigen Kundin wie Nordlicht kann vorher ein Anruf klären, ob es ein Problem gibt, etwa eine verlorene Rechnung oder einen Liquiditätsengpass, für den eine Ratenzahlung sinnvoller ist als ein Gerichtsverfahren.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Das außergerichtliche Mahnverfahren ist eine kaufmännische Entscheidung: Wie viele Stufen, welche Fristen, welcher Ton? Bei MAKEL sieht der Standard vor: Zahlungserinnerung zehn Tage nach Fälligkeit, erste Mahnung zehn Tage später, zweite Mahnung mit Fristsetzung zehn Tage danach, dann gerichtliches Mahnverfahren. Bei Stammkunden kann ein Anruf mehr bewirken als ein Schreiben. Jeder Schritt wird mit Datum und Inhalt festgehalten, weil Zugang und Zeitpunkte später wichtig werden. Bleibt das außergerichtliche Verfahren erfolglos, folgt das gerichtliche Mahnverfahren mit dem Mahnbescheid.",
-        "beispiele": [
-          "Freundliche Zahlungserinnerung: ‚Sicher ist es Ihrer Aufmerksamkeit entgangen …‘",
-          "Zweite Mahnung: ‚Bitte überweisen Sie den Betrag bis zum 31. Juli. Danach werden wir ohne weitere Ankündigung das gerichtliche Mahnverfahren einleiten.‘"
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Das gerichtliche Mahnverfahren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Der Antrag auf einen Mahnbescheid wird online beim zentralen Mahngericht des Landes gestellt. Das Gericht prüft nicht, ob die Forderung berechtigt ist. Widerspricht der Kunde nicht innerhalb von zwei Wochen, kann ein Vollstreckungsbescheid beantragt werden, mit dem MAKEL Studio die Forderung durchsetzen kann.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Boutique ist eine langjährige Kundin. Marlene ruft vor der ersten Mahnung an und erfährt, dass die Rechnung versehentlich nicht gebucht wurde. Die Boutique zahlt am nächsten Tag. Marlene notiert Anruf, Gesprächspartnerin und Zusage im Kundenvorgang.",
-        "typische_fehler": "Mahnungen werden nicht dokumentiert. Später lässt sich nicht nachweisen, wann der Verzug begann.",
         "verstaendnisfragen": [
-          "Ist die Zahl der Mahnstufen gesetzlich vorgeschrieben? Nein, sie ist eine kaufmännische Entscheidung; rechtlich genügt eine Mahnung.",
-          "Was folgt, wenn das außergerichtliche Mahnverfahren erfolglos bleibt? Das gerichtliche Mahnverfahren mit dem Mahnbescheid oder eine Klage."
-        ],
-        "pruefungsbezug": "Bei Fragen zum Mahnwesen rechtliche Mindestanforderung (eine Mahnung oder Ausnahme) und kaufmännische Praxis (Stufen, Ton, Kundenbeziehung) trennen.",
-        "merksatz": "Das außergerichtliche Mahnverfahren ist eine kaufmännische Stufenfolge; jeder Schritt wird mit Datum dokumentiert, danach folgt notfalls das gerichtliche Mahnverfahren."
+          {
+            "frage": "Welche Angaben gehören in eine Mahnung?",
+            "antwort": "Rechnung mit Nummer und Datum, Betrag, Fälligkeit, Zahlungsfrist und eine Kontaktmöglichkeit.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum wird jeder Mahnschritt mit Datum dokumentiert?",
+            "antwort": "Um Verzugsbeginn und Verlauf belegen zu können, etwa im gerichtlichen Mahnverfahren.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Wer in Verzug ist, muss Zinsen zahlen.",
-          "Ansprüche können verjähren."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest Verzugszinsen mit dem gesetzlichen Zinssatz und vorgegebenen Parametern, ergänzt die Verzugspauschale und bestimmst den Verjährungszeitpunkt einer Forderung.",
+        "vorwissen_kurz": "Die Boutique zahlt schließlich am 15. August. MAKEL Studio darf für die Verzögerung Zinsen verlangen und muss im Blick behalten, wann eine Forderung verjährt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zinsen, Pauschale, Verjährung",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Eine Geldschuld ist während des Verzugs zu verzinsen ({{par:bgb-288|§ 288 BGB}}). Zwischen Unternehmen beträgt der Verzugszins neun Prozentpunkte über dem Basiszinssatz, gegenüber Verbrauchern fünf Prozentpunkte. Gegenüber Unternehmen kann der Gläubiger zusätzlich eine Pauschale von 40 € verlangen. Die {{begriff:verjaehrung|Verjährung}} ist eine getrennte Frage: Die regelmäßige Frist beträgt drei Jahre ({{par:bgb-195|§ 195 BGB}}) und beginnt am Ende des Jahres, in dem der Anspruch entstanden ist ({{par:bgb-199|§ 199 BGB}}).",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Verzugszinsen der Boutique (Stand zweites Halbjahr 2026)",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Wert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Forderung",
+                  "2.856,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Basiszinssatz ab 1. Juli 2026",
+                  "1,52 %"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Verzugszins zwischen Unternehmen",
+                  "1,52 % + 9 Prozentpunkte = 10,52 %"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Verzugszeitraum",
+                  "16. Juli bis 15. August = 31 Tage"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Zinsen = 2.856,00 × 10,52 % × 31 ÷ 365",
+                  "25,52 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Verzugspauschale",
+                  "40,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Forderung insgesamt",
+                  "2.921,52 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Für einen Monat Verzug kann MAKEL Studio gut 65 € zusätzlich verlangen. Ob es das tut, ist auch eine Frage der Kundenbeziehung.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Viele Unternehmen verzichten bei guten Kunden auf Zinsen und Pauschale, um die Beziehung nicht zu belasten. Das ist eine bewusste Entscheidung, keine Pflicht. Die Verjährung darf MAKEL Studio dagegen nie aus dem Blick verlieren: Die Forderung aus der Rechnung vom Juni 2026 verjährt mit Ablauf des 31. Dezember 2029. Danach kann die Boutique die Zahlung verweigern. Ein Mahnbescheid hemmt die Verjährung; eine einfache Mahnung tut das nicht.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Während des Verzugs ist eine Geldschuld zu verzinsen (§ 288 BGB). Ist kein Verbraucher beteiligt, beträgt der Verzugszins neun Prozentpunkte über dem Basiszinssatz; bei Entgeltforderungen kommt eine Pauschale von 40 Euro hinzu. Der Basiszinssatz ändert sich halbjährlich und muss für jede echte Berechnung nachgeschlagen werden. Verjährung ist eine eigene Frage: Die regelmäßige Verjährungsfrist beträgt drei Jahre und beginnt mit dem Schluss des Jahres, in dem der Anspruch entstanden ist und der Gläubiger davon Kenntnis hatte. Danach kann der Schuldner die Zahlung verweigern.",
-        "beispiele": [
-          "Rechenübung mit vorgegebenen Werten: 2.000 € × 10 % × 30 Tage ÷ 360 = 16,67 € Zinsen.",
-          "Rechnung aus dem Jahr 2026: regelmäßige Verjährung mit Ablauf des 31. Dezember 2029."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Zinstage im Unterricht und in der Praxis",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In Übungsaufgaben wird oft mit 30 Tagen je Monat und 360 Tagen im Jahr gerechnet, weil das einfacher ist. Für gesetzliche Verzugszinsen wird in der Praxis meist mit den tatsächlichen Kalendertagen und 365 Tagen gerechnet. Beide Rechnungen ergeben nur kleine Unterschiede, sollten aber nicht vermischt werden.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Eine Forderung über 2.000 € ist 30 Tage im Verzug. Für die Übung sind 10 % Jahreszins und die kaufmännische Zinsrechnung mit 30 Tagen je Monat und 360 Tagen je Jahr vorgegeben. Zinsen: 2.000 × 10 × 30 ÷ (100 × 360) = 16,67 €. Der angenommene Zinssatz ist eine Übungsvorgabe, keine Aussage über den aktuell geltenden gesetzlichen Verzugszins.",
-        "typische_fehler": "Verzugsfolgen und Verjährung werden vermischt — oder ein Basiszinssatz aus dem Gedächtnis verwendet.",
         "verstaendnisfragen": [
-          "Wie hoch ist der gesetzliche Verzugszins zwischen Unternehmen? Neun Prozentpunkte über dem jeweils geltenden Basiszinssatz.",
-          "Wann verjährt eine Kaufpreisforderung aus dem Jahr 2026 regelmäßig? Mit Ablauf des 31. Dezember 2029."
-        ],
-        "pruefungsbezug": "Zinsaufgaben nennen Zinssatz und Zinstage; rechne damit und runde erst das Ergebnis. Verjährungsfragen: Jahresende plus drei Jahre.",
-        "merksatz": "Verzugszinsen zwischen Unternehmen: neun Prozentpunkte über dem Basiszinssatz plus 40 € Pauschale; Verjährung: drei Jahre ab Jahresende."
+          {
+            "frage": "Wie hoch ist der Verzugszins zwischen Unternehmen?",
+            "antwort": "Neun Prozentpunkte über dem jeweils geltenden Basiszinssatz; ab 1. Juli 2026 also 10,52 %.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Eine Forderung entsteht im Juni 2026. Wann verjährt sie regelmäßig?",
+            "antwort": "Mit Ablauf des 31. Dezember 2029, drei Jahre nach Ende des Entstehungsjahres.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

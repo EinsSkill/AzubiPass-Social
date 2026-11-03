@@ -6,86 +6,439 @@
   "untertitel": "Angebot und Nachfrage, Gleichgewichtspreis, Marktformen und die Frage, wie viel Preisspielraum MAKEL wirklich hat.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "MAKEL kauft Rohlinge und verkauft fertige Textilien.",
-          "Preise ändern sich."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest die Rollen von MAKEL Studio als Anbieter und Nachfrager, bestimmst den Gleichgewichtspreis aus Angebots- und Nachfragemengen und erklärst, wie Verschiebungen von Angebot oder Nachfrage den Preis verändern.",
+        "vorwissen_kurz": "Auf dem Markt für Rohlinge kauft MAKEL Studio ein, auf dem Markt für Teamshirts verkauft es. In beiden Fällen bilden sich Preise aus Angebot und Nachfrage.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wo sich Angebot und Nachfrage treffen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auf jedem Markt gibt es Anbieter und Nachfrager. MAKEL Studio ist **Nachfrager** auf dem Markt für Rohlinge und **Anbieter** auf dem Markt für bedruckte Textilien. Je höher der Preis, desto mehr wollen Anbieter verkaufen und desto weniger wollen Nachfrager kaufen. Der {{begriff:gleichgewichtspreis|Gleichgewichtspreis}} ist der Preis, bei dem angebotene und nachgefragte Menge gleich sind; er räumt den Markt. Liegt der Preis darüber, entsteht ein Angebotsüberhang; liegt er darunter, ein Nachfrageüberhang.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Was passiert, wenn sich etwas verschiebt?",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Ereignis auf dem Rohlingmarkt",
+              "Verschiebung",
+              "Wirkung auf den Preis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Baumwollernte fällt schlecht aus",
+                  "Angebot sinkt",
+                  "Preis steigt"
+                ]
+              },
+              {
+                "zellen": [
+                  "neue Fabrik in Portugal nimmt Produktion auf",
+                  "Angebot steigt",
+                  "Preis sinkt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Trend zu bedruckter Teamkleidung",
+                  "Nachfrage steigt",
+                  "Preis steigt"
+                ]
+              },
+              {
+                "zellen": [
+                  "viele Firmen kürzen Eventbudgets",
+                  "Nachfrage sinkt",
+                  "Preis sinkt"
+                ]
+              }
+            ],
+            "fazit": "Jedes Ereignis verschiebt Angebot oder Nachfrage. Der Preis bewegt sich dann zu einem neuen Gleichgewicht.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für MAKEL Studio ist dieses Modell hilfreich, um Preisentwicklungen zu verstehen. Steigen die Rohlingpreise, lohnt die Frage, ob das Angebot knapper geworden ist oder die Nachfrage gestiegen ist. Im ersten Fall sinkt der Preis vielleicht wieder, wenn die nächste Ernte besser ausfällt. Im zweiten Fall bleibt er eher hoch. Gleichzeitig gilt: Eine Preisänderung kann auch andere Gründe haben, etwa höhere Transportkosten oder Wechselkurse. Deshalb prüft MAKEL mehrere Erklärungen.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Auf einem Markt treffen Angebot und Nachfrage zusammen. Die Nachfrage sinkt in der Regel mit steigendem Preis, das Angebot steigt mit steigendem Preis. Beim Gleichgewichtspreis stimmen angebotene und nachgefragte Menge überein; der Markt wird geräumt. Liegt der Preis darüber, entsteht ein Angebotsüberhang, liegt er darunter, ein Nachfrageüberhang. Ein Unternehmen ist dabei je nach Markt Anbieter oder Nachfrager: MAKEL fragt Rohlinge nach und bietet bedruckte Textilien an.",
-        "beispiele": [
-          "Bei 12 € je Rohling werden 500 Stück angeboten und nachgefragt: Gleichgewicht.",
-          "Bei 15 € wollen Lieferanten mehr verkaufen, als Käufer abnehmen: Angebotsüberhang."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Bewegung auf und Verschiebung der Kurve",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ändert sich nur der Preis, bewegt man sich auf der Angebots- oder Nachfragekurve. Ändert sich ein anderer Einflussfaktor, etwa Einkommen oder Produktionskosten, verschiebt sich die ganze Kurve. Diese Unterscheidung hilft, Ursachen und Wirkungen auseinanderzuhalten.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Deniz Aydın beobachtet, dass Bio-Baumwollrohlinge teurer werden, weil mehr Textilfirmen sie nachfragen. Gleichzeitig kämpft Marlene Voss im Verkauf mit vielen Online-Anbietern um Aufträge für Teamshirts. MAKEL steht also auf zwei Märkten in unterschiedlichen Rollen.",
-        "typische_fehler": "Annehmen, ein Unternehmen sei immer nur Anbieter.",
         "verstaendnisfragen": [
-          "Was ist der Gleichgewichtspreis? Der Preis, bei dem angebotene und nachgefragte Menge übereinstimmen.",
-          "Was entsteht bei einem Preis über dem Gleichgewicht? Ein Angebotsüberhang."
-        ],
-        "pruefungsbezug": "Gleichgewichtspreis und Marktüberhänge bestimmen.",
-        "merksatz": "Gleichgewicht: Angebot = Nachfrage; darüber Angebotsüberhang, darunter Nachfrageüberhang."
+          {
+            "frage": "Was passiert, wenn der Preis über dem Gleichgewichtspreis liegt?",
+            "antwort": "Es entsteht ein Angebotsüberhang: Es wird mehr angeboten als nachgefragt.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Die Baumwollernte fällt schlecht aus. Wie wirkt das auf den Rohlingpreis?",
+            "antwort": "Das Angebot sinkt, der Preis steigt.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Wettbewerb hängt von der Zahl der Marktteilnehmer ab.",
-          "Wenige große Anbieter haben mehr Einfluss."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Märkte, auf denen MAKEL Studio tätig ist, nach Zahl der Anbieter und Nachfrager einer Marktform zu, grenzt dabei den relevanten Markt ab und leitest die Marktmacht der Beteiligten ab.",
+        "vorwissen_kurz": "Bei Teamshirts hat MAKEL Studio viele Konkurrenten. Bei Lasergravurstationen gibt es nur drei Hersteller. Das macht einen großen Unterschied.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wie viele Anbieter, wie viele Nachfrager?",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Marktformen werden nach der Zahl der Anbieter und Nachfrager unterschieden. Im **Polypol** gibt es viele Anbieter und viele Nachfrager; keiner kann den Preis allein bestimmen. Im **Angebotsoligopol** gibt es wenige Anbieter, die sich gegenseitig beobachten. Im **Angebotsmonopol** gibt es nur einen Anbieter, der großen Einfluss auf den Preis hat. Entscheidend ist der **relevante Markt**: Welche Produkte sind aus Sicht der Kunden austauschbar, und in welchem Gebiet?",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Märkte von MAKEL Studio und ihre Marktmacht",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Markt",
+              "relevante Abgrenzung",
+              "Marktform",
+              "Marktmacht von MAKEL"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Teamshirts für Unternehmen",
+                  "NRW, viele Druckereien und Online-Anbieter",
+                  "Polypol",
+                  "gering, Preis weitgehend vorgegeben"
+                ]
+              },
+              {
+                "zellen": [
+                  "bestickte Event-Hoodies mit Beratung und 7-Tage-Lieferung",
+                  "Region Düsseldorf, wenige spezialisierte Anbieter",
+                  "eher Angebotsoligopol",
+                  "mittel, Spielraum durch Besonderheit"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lasergravurstationen (MAKEL als Käufer)",
+                  "drei Hersteller europaweit",
+                  "Angebotsoligopol",
+                  "gering als Käufer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Stromnetz am Standort",
+                  "ein Netzbetreiber",
+                  "Angebotsmonopol, staatlich reguliert",
+                  "keine"
+                ]
+              }
+            ],
+            "fazit": "Wo MAKEL Studio Standardware anbietet, hat es kaum Preisspielraum. Wo es sich durch Besonderheiten abhebt, wird der relevante Markt kleiner und der Spielraum größer.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Abgrenzung des relevanten Marktes entscheidet über das Ergebnis. Betrachtet man „Kleidung\" allgemein, ist MAKEL ein winziger Anbieter unter Tausenden. Betrachtet man „bestickte Event-Hoodies mit Beratung in der Region\", gibt es nur wenige Anbieter. Deshalb lohnt es sich für MAKEL, sich durch besondere Leistungen abzuheben: Je weniger austauschbar das Angebot, desto mehr Einfluss auf den Preis.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Marktformen werden nach der Zahl der Anbieter und Nachfrager unterschieden. Viele kleine Anbieter und viele Nachfrager: Polypol — der Einzelne hat kaum Einfluss auf den Preis. Wenige große Anbieter, viele Nachfrager: Angebotsoligopol — die Anbieter beobachten sich gegenseitig, Preisänderungen eines Anbieters lösen Reaktionen aus. Ein Anbieter, viele Nachfrager: Angebotsmonopol — großer Preisspielraum, begrenzt durch die Nachfrage. Entsprechend gibt es Nachfrageoligopole und -monopole. Wichtig ist, den relevanten Markt richtig abzugrenzen: nach Produkt, Region und Kundengruppe.",
-        "beispiele": [
-          "Werbetextilien für Firmen: viele Anbieter, viele Kunden — eher Polypol.",
-          "Spezielle Lasermaschinen: wenige Hersteller — Angebotsoligopol."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Regulierte Monopole",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Monopole sind natürlich, weil sich ein zweites Netz nicht lohnen würde, etwa beim Strom- oder Wassernetz. Damit der Monopolist seine Macht nicht ausnutzt, werden seine Preise staatlich überwacht, beim Stromnetz durch die Bundesnetzagentur.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für die Laserstation findet Deniz nur drei ernsthafte Hersteller; alle verlangen ähnliche Preise. Beim Verkauf von Teamshirts dagegen konkurriert MAKEL mit Dutzenden Druckereien und Online-Shops. Entsprechend unterschiedlich ist MAKELs Verhandlungsmacht.",
-        "typische_fehler": "Die Marktform allein aus der Zahl der Filialen eines Unternehmens ableiten.",
         "verstaendnisfragen": [
-          "Was kennzeichnet ein Angebotsoligopol? Wenige große Anbieter stehen vielen Nachfragern gegenüber.",
-          "Warum muss der relevante Markt abgegrenzt werden? Weil Marktmacht vom konkreten Produkt, der Region und den Kunden abhängt."
-        ],
-        "pruefungsbezug": "Marktformen anhand von Merkmalen bestimmen.",
-        "merksatz": "Polypol: viele/viele; Angebotsoligopol: wenige Anbieter; Angebotsmonopol: ein Anbieter — immer bezogen auf den relevanten Markt."
+          {
+            "frage": "Was kennzeichnet ein Angebotsoligopol?",
+            "antwort": "Wenige Anbieter stehen vielen Nachfragern gegenüber und beobachten sich gegenseitig.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ist die Abgrenzung des relevanten Marktes wichtig?",
+            "antwort": "Weil sich je nach Abgrenzung eine andere Marktform und damit eine andere Marktmacht ergibt.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "MAKEL kalkuliert Preise (LF 8).",
-          "Kunden vergleichen Angebote."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst den Preisspielraum von MAKEL Studio für verschiedene Produkte anhand von Marktform, Ersatzangeboten und Nachfragereaktion und begründest, wo gestiegene Kosten weitergegeben werden können.",
+        "vorwissen_kurz": "Die Rohlingpreise steigen um 8 %. MAKEL Studio möchte die Mehrkosten weitergeben, aber nicht überall wird das gelingen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Kosten setzen keinen Preis durch",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ob ein Unternehmen höhere Preise durchsetzen kann, hängt nicht von seinen Kosten ab, sondern davon, wie die Kunden reagieren. Gibt es viele gleichwertige **Ersatzangebote**, wechseln Kunden bei einer Preiserhöhung schnell. Ist das Angebot **einzigartig** oder schwer ersetzbar, reagieren sie weniger empfindlich. Die **Marktform** bestimmt, wie viele Ausweichmöglichkeiten es gibt. Deshalb kann MAKEL Studio Kostensteigerungen bei manchen Produkten weitergeben und bei anderen nicht.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wo die 8 % weitergegeben werden können",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Produkt",
+              "Ersatzangebote",
+              "Reaktion der Kunden",
+              "Entscheidung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Standard-Shirts mit einfarbigem Druck",
+                  "viele Online-Anbieter",
+                  "stark preisempfindlich",
+                  "Preis halten, Kosten anders senken"
+                ]
+              },
+              {
+                "zellen": [
+                  "Event-Paket mit Beratung",
+                  "wenige Anbieter mit vergleichbarer Leistung",
+                  "weniger preisempfindlich",
+                  "Preis um 2 € erhöhen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Premium-Stickerei mit 5-Tage-Lieferung",
+                  "kaum Ersatz in der Region",
+                  "wenig preisempfindlich",
+                  "Preis um 8 % erhöhen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kollektion im Onlineshop",
+                  "viele Marken",
+                  "mittel",
+                  "Erhöhung bei neuer Saison"
+                ]
+              }
+            ],
+            "fazit": "Die Mehrkosten werden dort weitergegeben, wo MAKEL Studio sich abhebt. Bei Standardware werden sie aufgefangen, etwa durch effizientere Abläufe oder günstigere Einkaufskonditionen.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wie stark Kunden tatsächlich reagieren, lässt sich ohne Daten nicht genau sagen. MAKEL Studio kann aber Hinweise sammeln: Wie oft verliert der Vertrieb Angebote wegen des Preises? Was verlangen Wettbewerber? Wie haben Kunden auf frühere Preiserhöhungen reagiert? Eine Preiserhöhung bei einem ausgewählten Produkt kann wie ein Test wirken. Wichtig ist, sie zu begründen, etwa mit gestiegenen Materialkosten, und den Mehrwert sichtbar zu machen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Wie viel Preisspielraum ein Unternehmen hat, hängt ab von der Marktform, der Reaktion der Nachfrage (Preiselastizität), Ersatzprodukten, der Einzigartigkeit des eigenen Angebots und den Konditionen der Wettbewerber. Im Polypol ist der Spielraum gering: Wer teurer ist, verliert Kunden. Ein Unternehmen kann ihn vergrößern, indem es sich unterscheidet — durch Qualität, Service, Lieferzeit, Nachhaltigkeit oder Marke. Steigende Einkaufskosten lassen sich deshalb nicht automatisch vollständig an die Kunden weitergeben.",
-        "beispiele": [
-          "Standard-Shirts: Kunden wechseln bei 1 € Preisunterschied den Anbieter.",
-          "Stick mit Expressservice: Kunden zahlen für die Lieferzeit einen Aufschlag."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Preiselastizität",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Preiselastizität der Nachfrage misst, um wie viel Prozent die Nachfrage sinkt, wenn der Preis um ein Prozent steigt. Ist sie hoch, reagieren Kunden stark; ist sie niedrig, kaum. Für Standardware ist sie meist hoch, für besondere Angebote niedriger.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Die Rohlingpreise steigen um 8 %. Tobias Renner will die Verkaufspreise entsprechend erhöhen. Marlene wendet ein: Bei Standard-Shirts würden Kunden abwandern; beim Premium-Stick mit 5-Tage-Lieferung sei eine Erhöhung dagegen durchsetzbar. MAKEL erhöht gezielt dort, wo sie sich vom Wettbewerb abhebt.",
-        "typische_fehler": "Gestiegene Kosten als automatisch durchsetzbare Preiserhöhung betrachten.",
         "verstaendnisfragen": [
-          "Wovon hängt der Preisspielraum ab? Marktform, Reaktion der Nachfrage, Ersatzprodukte, Einzigartigkeit, Konkurrenz.",
-          "Wie lässt er sich vergrößern? Durch Abgrenzung vom Wettbewerb, etwa über Qualität, Service oder Marke."
-        ],
-        "pruefungsbezug": "Preisentscheidungen unter Wettbewerbsbedingungen beurteilen.",
-        "merksatz": "Preisspielraum = f(Marktform, Nachfragereaktion, Ersatzprodukte, Einzigartigkeit) — Kosten allein setzen keinen Preis durch."
+          {
+            "frage": "Warum kann MAKEL Studio gestiegene Kosten nicht automatisch an Kunden weitergeben?",
+            "antwort": "Weil Kunden bei vielen Ersatzangeboten zu anderen Anbietern wechseln. Die Nachfragereaktion begrenzt den Spielraum.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wo ist der Preisspielraum am größten?",
+            "antwort": "Bei Angeboten, die kaum ersetzbar sind, etwa der Premium-Stickerei mit kurzer Lieferzeit.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Modelle vereinfachen die Wirklichkeit.",
-          "Kunden entscheiden nicht nur nach dem Preis."
+        "darstellung": "vollfassung",
+        "ziel": "Du nennst die Annahmen des vollkommenen Marktes, prüfst sie an Märkten von MAKEL Studio und erklärst, warum es auf realen Märkten trotz vieler Anbieter Preisunterschiede und Spielräume gibt.",
+        "vorwissen_kurz": "Im Modell gibt es auf einem Markt mit vielen Anbietern nur einen Preis. In der Wirklichkeit verlangen Druckereien sehr unterschiedliche Preise für ähnliche Shirts.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Modell mit strengen Annahmen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der **vollkommene Markt** ist ein Modell mit strengen Annahmen: Alle Güter sind gleichartig, alle Beteiligten haben vollständige Information über Preise und Qualität, es gibt keine Vorlieben für bestimmte Anbieter, und alle reagieren sofort. Unter diesen Bedingungen gäbe es nur einen einzigen Preis. Reale Märkte erfüllen diese Annahmen fast nie; sie sind **unvollkommen**. Genau deshalb gibt es Preisunterschiede und Spielräume.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Annahmen geprüft am Markt für Teamshirts",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Annahme des vollkommenen Marktes",
+              "Wirklichkeit bei Teamshirts in NRW"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "gleichartige Güter",
+                  "Qualität von Rohling, Druck und Stick unterscheidet sich deutlich"
+                ]
+              },
+              {
+                "zellen": [
+                  "vollständige Information",
+                  "Kunden kennen nur wenige Anbieter und Preise"
+                ]
+              },
+              {
+                "zellen": [
+                  "keine Vorlieben",
+                  "Agenturen bleiben gern bei bewährten Partnern"
+                ]
+              },
+              {
+                "zellen": [
+                  "sofortige Reaktion",
+                  "Lieferantenwechsel braucht Zeit und Abstimmung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ergebnis",
+                  "Preise zwischen 9 € und 18 € je Shirt für scheinbar dasselbe Produkt"
+                ]
+              }
+            ],
+            "fazit": "Keine Annahme ist voll erfüllt. Deshalb kann MAKEL Studio trotz vieler Wettbewerber einen höheren Preis verlangen, wenn Kunden Qualität, Beratung oder Verlässlichkeit schätzen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Modell ist trotzdem nützlich. Es zeigt, wohin sich ein Markt bewegt, wenn Information besser und Güter austauschbarer werden. Online-Konfiguratoren mit transparenten Preisen machen den Markt für Standard-Shirts vollkommener; der Preisspielraum für Standardware schrumpft. Für MAKEL Studio folgt daraus, sich bewusst dort zu positionieren, wo der Markt unvollkommen bleibt: bei Beratung, Qualität und persönlichem Kontakt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Das Marktmodell setzt vereinfachende Annahmen voraus, etwa vollständige Information, gleichartige Güter und sofortige Reaktion (vollkommener Markt). In der Wirklichkeit gibt es persönliche Vorlieben, räumliche Unterschiede, unvollständige Information und Gewohnheiten — der Markt ist unvollkommen. Deshalb gibt es auch im Polypol unterschiedliche Preise für ähnliche Produkte. Für betriebliche Entscheidungen ist das Modell ein Denkrahmen, aber keine exakte Vorhersage; genaue Wirkungen lassen sich nur mit Daten abschätzen.",
-        "beispiele": [
-          "Ein Stammkunde bleibt trotz kleinem Preisvorteil der Konkurrenz bei MAKEL.",
-          "Kunden in Düsseldorf schätzen die Abholung im Store."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Wettbewerbspolitik",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Weil reale Märkte unvollkommen sind, können Unternehmen Marktmacht gewinnen. Die Wettbewerbspolitik achtet darauf, dass diese Macht nicht missbraucht wird, etwa durch Absprachen oder durch Ausnutzen einer beherrschenden Stellung.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Luca fragt, warum MAKEL teurer sein kann als ein Online-Shop, obwohl es „ein Polypol ist“. Marlene erklärt: Viele Kunden kennen MAKEL, schätzen die Beratung und holen im Store ab — der Markt ist eben nicht vollkommen.",
-        "typische_fehler": "Das Modell des vollkommenen Marktes als Beschreibung der Realität verstehen.",
         "verstaendnisfragen": [
-          "Was ist ein vollkommener Markt? Ein Modellmarkt mit gleichartigen Gütern, vollständiger Information und ohne Vorlieben.",
-          "Warum gibt es in der Realität unterschiedliche Preise? Wegen Vorlieben, Standort, unvollständiger Information und Gewohnheiten."
-        ],
-        "pruefungsbezug": "Modellannahmen kritisch auf betriebliche Situationen beziehen.",
-        "merksatz": "Vollkommener Markt = Modell; reale Märkte sind unvollkommen — deshalb gibt es Preisspielräume trotz Wettbewerb."
+          {
+            "frage": "Nenne zwei Annahmen des vollkommenen Marktes.",
+            "antwort": "Zum Beispiel gleichartige Güter und vollständige Information aller Beteiligten.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum gibt es auf realen Märkten trotz vieler Anbieter unterschiedliche Preise?",
+            "antwort": "Weil die Märkte unvollkommen sind: Güter unterscheiden sich, Information ist unvollständig und Kunden haben Vorlieben.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

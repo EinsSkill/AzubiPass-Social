@@ -7,73 +7,426 @@
   "minuten": 25,
 
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Eine gute Beschaffung beginnt mit der richtigen Auswahl möglicher Lieferer. Interne Informationen zeigen, was sich in der Vergangenheit bewährt hat; eine sauber formulierte Anfrage sorgt anschließend dafür, dass externe Angebote wirklich vergleichbar sind.",
     "abschnitte": [
       {
         "abschnitt": "b1",
-        "vorauswissen": [
-          "Bezugsquellen können innerhalb oder außerhalb des eigenen Betriebs liegen.",
-          "Eine Lieferantenbewertung verbindet vergangene Erfahrungen mit der nächsten Beschaffungsentscheidung."
+        "darstellung": "vollfassung",
+        "ziel": "Du wählst für einen konkreten Bedarf geeignete Bezugsquellen aus und bewertest Lieferer nach mehreren Kriterien, darunter Nachhaltigkeit.",
+        "vorwissen_kurz": "Eine Bezugsquelle ist jede Stelle, über die du mögliche Lieferer findest — die eigene Kartei ebenso wie eine Messe.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum die Suche im eigenen Haus beginnt",
+            "id": "b1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bevor MAKEL eine Anfrage verschickt, muss feststehen, wen sie erreichen soll. Die erste Adresse ist fast immer die eigene Lieferantenkartei mit alten Bestellungen und Rechnungen. Dort steht nicht nur ein Preis, sondern Erfahrung: Wer hat pünktlich geliefert, wer hat Reklamationen ordentlich bearbeitet, wer war bei Eilaufträgen erreichbar? Diese Information kostet nichts und steht in keinem Katalog.",
+            "id": "b1-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Reichen die bekannten Lieferer nicht — weil ein neues Material gebraucht wird, die Preise veraltet sind oder MAKEL von einem einzigen Lieferer abhängt —, kommen externe Quellen dazu. Sie erweitern den Überblick, liefern aber zunächst nur Namen. Ob ein neuer Anbieter zuverlässig ist, zeigt sich erst durch Prüfung oder Erfahrung.",
+            "id": "b1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lieferer mit mehr als einem Kriterium bewerten",
+            "id": "b1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:lieferantenbewertung|Lieferantenbewertung}} hält fest, wie sich bekannte Lieferer geschlagen haben. Typische Kriterien sind Preis, Qualität, Termintreue und Service. Viele Betriebe bewerten heute zusätzlich Nachhaltigkeit: kurze Transportwege, Mehrweg- oder sparsame Verpackung, nachprüfbare Umwelt- oder Sozialstandards. Wichtig ist das Wort nachprüfbar. Ein Werbeversprechen wie „klimafreundlich“ ist kein Nachweis; ein anerkanntes Zertifikat, ein Prüfbericht oder eine konkrete Angabe zum Recyclinganteil schon eher.",
+            "id": "b1-p3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL sucht einen Lieferer für bedruckte Versandkartons, ein Material mit hohem Jahreswert (A-Gut). In der Kartei stehen zwei Lieferer, ein dritter wurde auf einem Branchenportal gefunden.",
+            "id": "b1-p4"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Lieferer",
+              "Herkunft der Information",
+              "Erfahrung",
+              "Nachhaltigkeitsangabe"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Nordpack",
+                  "Kartei, 3 Jahre Lieferbeziehung",
+                  "immer pünktlich, eine Reklamation schnell gelöst",
+                  "Recyclingkarton mit Zertifikat"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kartonwerk Süd",
+                  "Kartei, 1 Bestellung",
+                  "zweimal verspätet",
+                  "keine Angabe"
+                ]
+              },
+              {
+                "zellen": [
+                  "BoxDirekt",
+                  "Branchenportal",
+                  "noch keine Erfahrung",
+                  "„umweltfreundlich“ ohne Nachweis"
+                ]
+              }
+            ],
+            "fazit": "Nur bei Nordpack sind Zuverlässigkeit und Nachhaltigkeitsangabe belegt. Die beiden anderen sind deshalb nicht ausgeschlossen, aber genauer zu prüfen.",
+            "id": "b1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für ein A-Gut fragt MAKEL nicht nur einen Lieferer an. Nordpack ist gesetzt. Kartonwerk Süd bekommt trotz der Verspätungen eine Anfrage, weil eine einzige Bestellung wenig aussagt und MAKEL einen zweiten Lieferer braucht. BoxDirekt wird angefragt und gebeten, seine Umweltangabe zu belegen. So entstehen drei vergleichbare Angebote — und ein Ausweg, falls Nordpack einmal ausfällt.",
+            "id": "b1-p5"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "b1-b3"
+          }
         ],
-        "erklaerung": "Die interne Lieferantenkartei und alte Rechnungen sind oft der erste sinnvolle Anlaufpunkt, weil dort bereits Preise, Qualität, Termintreue und Reklamationserfahrungen vorliegen. Externe Quellen wie Branchenverzeichnisse, Onlineportale, Messen, IHK und Fachverbände erweitern den Marktüberblick. Die Suche soll nicht nur einen Preis liefern, sondern zuverlässige Alternativen sichtbar machen.",
-        "beispiele": [
-          "Die Lieferantenkartei zeigt, welcher bekannte Lieferer bisher pünktlich geliefert und Reklamationen gut bearbeitet hat.",
-          "Auf einer Fachmesse kann die Verarbeitung eines erklärungsbedürftigen Produkts direkt geprüft werden; ein Onlineportal liefert dagegen schnell eine breite Übersicht möglicher Anbieter."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ein Lieferer oder zwei?",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mit nur einem Lieferer ist die Abstimmung einfach, und oft gibt es bessere Konditionen, weil die ganze Menge bei ihm bestellt wird. Fällt er aber aus — durch Insolvenz, Streik oder einen Brand im Werk —, steht die Beschaffung. Mit zwei Lieferern ist der Aufwand höher und der Preis manchmal etwas schlechter, dafür sinkt das Ausfallrisiko. Bei C-Gütern, die man im Notfall überall bekommt, ist ein einziger Lieferer meist vertretbar. Bei wichtigen A-Gütern spricht viel für eine zweite Quelle.",
+                "id": "b1-d1-p1"
+              }
+            ],
+            "id": "b1-d1"
+          },
+          {
+            "kategorie": "grundlagen",
+            "titel": "Was eine Messe leistet, was ein Portal leistet",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Auf einer Messe siehst du Ware, Verarbeitung und Menschen. Das lohnt sich bei erklärungsbedürftigen oder teuren Gütern, kostet aber Reisezeit. Ein Onlineportal liefert in Minuten viele Namen, sagt aber wenig über Qualität und Zuverlässigkeit. IHK und Fachverbände nennen geprüfte Adressen und sind neutral, weil sie nichts verkaufen. Welche Quelle passt, hängt also davon ab, ob du einen Überblick brauchst oder schon die Qualität prüfen willst.",
+                "id": "b1-d2-p1"
+              }
+            ],
+            "id": "b1-d2"
+          }
         ],
-        "fallbeispiel": "Für einen wichtigen A-Artikel wird zuerst die interne Kartei ausgewertet. Zwei bekannte Lieferer werden anhand von Preis, Qualität, Termintreue und Service verglichen. Weil ein einzelner Lieferer abhängig machen kann, werden zusätzlich zwei externe Quellen geprüft. So entsteht eine Entscheidung aus vorhandener Erfahrung und aktuellem Marktvergleich.",
-        "typische_fehler": "Nur nach dem niedrigsten Preis gesucht oder ausschließlich einen bequemen bekannten Lieferer verwendet. Eine Bezugsquelle ist aber auch dann ungeeignet, wenn sie billig, unzuverlässig oder bei Ausfall nicht ersetzbar ist.",
         "verstaendnisfragen": [
-          "Warum wird zuerst intern gesucht? Die Kartei enthält bereits Erfahrungen und verursacht keinen zusätzlichen Suchaufwand.",
-          "Warum kann ein zweiter Lieferer sinnvoll sein? Er verringert die Abhängigkeit, wenn der bisherige Lieferer ausfällt."
-        ],
-        "pruefungsbezug": "Interne und externe Quellen unterscheiden und anschließend begründen, welche Quelle für den konkreten Artikel geeignet ist. Bei A-Gütern ist ein intensiverer Vergleich plausibler als bei C-Gütern.",
-        "merksatz": "Erst intern nach Erfahrung suchen, dann extern den Markt erweitern; nicht nur den Preis bewerten."
+          {
+            "frage": "Kartonwerk Süd hat zweimal verspätet geliefert. Warum ist es trotzdem vertretbar, dort anzufragen?",
+            "antwort": "Eine einzelne Bestellung ist eine schmale Erfahrungsgrundlage, und MAKEL braucht für ein wichtiges Material einen zweiten Lieferer. Die Anfrage verpflichtet zu nichts. Die Verspätungen gehören aber in die Bewertung: Im Angebot sollte MAKEL feste Liefertermine verlangen und die Termintreue künftig genau verfolgen.",
+            "id": "b1-f1"
+          },
+          {
+            "frage": "BoxDirekt nennt sich „umweltfreundlich“. Reicht das, um im Kriterium Nachhaltigkeit volle Punkte zu geben?",
+            "antwort": "Nein. Eine allgemeine Werbeaussage ist kein Nachweis. MAKEL sollte konkrete, überprüfbare Angaben verlangen, etwa ein anerkanntes Zertifikat oder Angaben zum Recyclinganteil. Bis dahin ist das Kriterium offen und nicht erfüllt.",
+            "id": "b1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b2",
-        "vorauswissen": [
-          "Eine Anfrage bittet um ein Angebot und ist rechtlich unverbindlich.",
-          "Angebote sind nur vergleichbar, wenn sie dieselbe Leistung beschreiben."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust eine Anfrage so auf, dass die Angebote vergleichbar werden, und grenzt sie rechtlich von der Bestellung ab.",
+        "vorwissen_kurz": "Ein Vertrag braucht einen Antrag und eine Annahme. Die Anfrage steht noch davor.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Unverbindlich, aber nicht unwichtig",
+            "id": "b2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit einer {{begriff:anfrage|Anfrage}} bittet MAKEL einen Lieferer um ein Angebot. Sie ist rechtlich **unverbindlich**: Sie ist kein Antrag im Sinne von {{par:bgb-145|§ 145 BGB}}, und MAKEL verpflichtet sich zu nichts. Man kann also bei mehreren Lieferern gleichzeitig anfragen, ohne am Ende bei allen kaufen zu müssen.",
+            "id": "b2-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Trotzdem entscheidet die Anfrage über die Qualität des ganzen Vergleichs. Was in ihr fehlt, ergänzt jeder Lieferer nach eigenem Geschmack — und am Ende liegen drei Angebote auf dem Tisch, die drei verschiedene Dinge beschreiben.",
+            "id": "b2-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "b2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine vollständige Anfrage für 500 Ordner",
+            "id": "b2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL braucht 500 Ordner für den eigenen Bedarf und fragt bei drei Lieferern an. Jeder bekommt denselben Text:",
+            "id": "b2-p3"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Baustein",
+              "Inhalt der Anfrage",
+              "Warum er nötig ist"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Art und Güte",
+                  "Ordner DIN A4, Rückenbreite 8 cm, Hebelmechanik, Karton mit Recyclinganteil, Farbe Blau",
+                  "Sonst werden unterschiedliche Qualitäten angeboten."
+                ]
+              },
+              {
+                "zellen": [
+                  "Menge",
+                  "500 Stück",
+                  "Mengenrabatte hängen davon ab."
+                ]
+              },
+              {
+                "zellen": [
+                  "Termin und Ort",
+                  "Lieferung bis 15. November frei Haus an MAKEL, Lager Tor 2",
+                  "Spätere Lieferung wäre wertlos; der Ort bestimmt die Fracht."
+                ]
+              },
+              {
+                "zellen": [
+                  "Bedingungen",
+                  "Bitte um Angabe von Preis je Stück, Rabatt, Zahlungsziel, Skonto, Lieferkosten und Verpackung",
+                  "Ohne diese Angaben ist der tatsächliche Einstandspreis nicht vergleichbar."
+                ]
+              }
+            ],
+            "fazit": "Alle drei Lieferer bekommen dieselbe Beschreibung. Nur dann vergleicht man Preise statt Leistungen.",
+            "id": "b2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Anfrage ist höflich und knapp, nennt einen Ansprechpartner und eine Frist für die Antwort, etwa „bis 30. Oktober“. Sie enthält bewusst kein „Hiermit bestellen wir“. Dieser Satz würde aus der Bitte eine bindende Erklärung machen.",
+            "id": "b2-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "b2-b2"
+          }
         ],
-        "ablauf": [
-          "Art und Güte der Ware möglichst genau beschreiben.",
-          "Menge und Einheit angeben.",
-          "Liefertermin und Lieferort nennen.",
-          "Gewünschte Zahlungs- und Lieferbedingungen abfragen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Allgemeine und bestimmte Anfrage",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine allgemeine Anfrage bittet um einen Katalog, eine Preisliste oder einen Vertreterbesuch. Sie dient dazu, einen Lieferer erst einmal kennenzulernen. Eine bestimmte Anfrage nennt dagegen genau, welche Ware in welcher Menge zu welchem Termin gebraucht wird. Nur sie führt zu Angeboten, die sich direkt vergleichen lassen. Für den konkreten Bedarf von 500 Ordnern ist deshalb die bestimmte Anfrage richtig.",
+                "id": "b2-d1-p1"
+              }
+            ],
+            "id": "b2-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn ein Lieferer etwas anderes anbietet",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Lieferer antwortet: „500 Ordner mit 5 cm Rücken zu 1,90 €.“ Der Preis wirkt günstiger, aber die Ware entspricht nicht der Anfrage. Für den Vergleich musst du klären, ob die 5-cm-Ordner für den Zweck genügen. Wenn nicht, ist das Angebot ungeeignet. Wenn doch, solltest du die anderen Lieferer ebenfalls nach dieser Variante fragen — sonst vergleichst du wieder Ungleiches.",
+                "id": "b2-d2-p1"
+              }
+            ],
+            "id": "b2-d2"
+          }
         ],
-        "erklaerung": "Die Anfrage ist noch keine Bestellung und verpflichtet den Betrieb zu nichts. Ihre Qualität entscheidet aber über die spätere Vergleichbarkeit. Wenn einer der vier Bereiche fehlt, kann ein Lieferer eine andere Qualität, Menge, Frist oder Kostenverteilung anbieten; der scheinbar günstigere Preis wäre dann kein fairer Vergleich.",
-        "beispiele": [
-          "Eine Anfrage über 500 Ordner muss neben der Menge auch die gewünschte Qualität, den Liefertermin und den Lieferort nennen.",
-          "Wer Fracht, Verpackung, Skonto und Zahlungsziel nicht abfragt, kennt später den tatsächlichen Vergleichswert der Angebote nicht."
-        ],
-        "fallbeispiel": "Formuliere die Anfrage für 500 Ordner: Art und Güte der Ordner beschreiben, 500 Stück als Menge nennen, den gewünschten Liefertermin und Lieferort angeben und nach Preis, Lieferbedingungen, Zahlungsziel und Skonto fragen. Dieselben Angaben werden an alle angefragten Lieferer gesendet. Erst dann lassen sich die Antworten sinnvoll vergleichen.",
-        "typische_fehler": "Eine ungenaue Anfrage wird mit einer Bestellung verwechselt. Besonders riskant sind fehlende Mengenangaben und ein fehlender Liefertermin: Dann sind Mengenrabatt und zeitliche Eignung der Angebote nicht vergleichbar.",
         "verstaendnisfragen": [
-          "Warum ist die Anfrage rechtlich unverbindlich? Sie fordert nur zur Abgabe eines Angebots auf und ist selbst kein Antrag nach § 145 BGB.",
-          "Welche vier Angaben bilden den Kern einer Anfrage? Art und Güte, Menge, Liefertermin und Lieferort sowie die gewünschten Bedingungen."
-        ],
-        "pruefungsbezug": "Bei einer Schreib- oder Zuordnungsaufgabe die vier Angaben systematisch abhaken. Danach ausdrücklich sagen, dass die Anfrage noch keine Bestellung ist.",
-        "merksatz": "Eine Anfrage bindet nicht; sie muss Ware, Menge, Termin, Ort und Bedingungen so genau nennen, dass Angebote vergleichbar werden."
+          {
+            "frage": "MAKEL schreibt in die Anfrage nur „Bitte bieten Sie uns Ordner an.“ Welche Folgen hat das für den späteren Vergleich?",
+            "antwort": "Jeder Lieferer wählt Qualität, Menge, Termin und Bedingungen selbst. Die Angebote beschreiben dann unterschiedliche Leistungen, und der niedrigste Preis sagt nichts darüber, welches Angebot wirklich günstiger ist. Rechtlich passiert nichts, wirtschaftlich ist die Anfrage aber kaum brauchbar.",
+            "id": "b2-f1"
+          },
+          {
+            "frage": "Warum darf MAKEL bei drei Lieferern gleichzeitig anfragen, aber nicht bei dreien gleichzeitig bestellen, wenn nur 500 Ordner gebraucht werden?",
+            "antwort": "Die Anfrage ist unverbindlich und begründet keine Pflicht. Eine Bestellung ist ein Antrag nach § 145 BGB. Nehmen alle drei Lieferer an, entstehen drei Kaufverträge, und MAKEL müsste 1.500 Ordner abnehmen und bezahlen.",
+            "id": "b2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "b3",
-        "vorauswissen": [
-          "Ein Vertrag entsteht durch Antrag und Annahme.",
-          "Eine Freizeichnungsklausel kann die Bindungswirkung eines Angebots einschränken."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst anhand des Wortlauts, ob und wie weit ein Angebot bindet, und bestimmst, wer den Antrag und wer die Annahme erklärt.",
+        "vorwissen_kurz": "Ein Antrag bindet den, der ihn abgibt. Die Annahme muss mit dem Antrag übereinstimmen und rechtzeitig erfolgen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Warum ein Angebot den Lieferer festlegt",
+            "id": "b3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:angebot|Angebot}} auf eine bestimmte Anfrage ist rechtlich ein Antrag. Nach {{par:bgb-145|§ 145 BGB}} ist der Lieferer daran gebunden, es sei denn, er hat die Bindung ausgeschlossen. Er kann sein Angebot also nicht zurückziehen, nur weil ihm der Preis nach einer Woche zu niedrig erscheint. Nimmt MAKEL rechtzeitig und unverändert an, ist der Vertrag geschlossen. Eine Bestellung ist dann die Annahme.",
+            "id": "b3-p1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wie lange „rechtzeitig“ ist, regelt {{par:bgb-147|§ 147 BGB}}: Unter Anwesenden und am Telefon nur sofort, unter Abwesenden so lange, wie man unter regelmäßigen Umständen eine Antwort erwarten darf — bei Brief oder E-Mail also eine angemessene Zeit für Prüfung und Antwort. Setzt der Lieferer selbst eine Frist, etwa „gültig bis 30.09.“, gilt diese.",
+            "id": "b3-p2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Weil eine solche Bindung für den Lieferer ein Risiko ist, schränken viele sie mit einer {{begriff:freizeichnungsklausel|Freizeichnungsklausel}} ein. Dann kommt es genau auf den Wortlaut an.",
+            "id": "b3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "b3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Angebote, zwei verschiedene Wege zum Vertrag",
+            "id": "b3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL hat zwei Angebote über 500 Ordner zu je 2,10 € erhalten. Angebot A enthält keinen Zusatz. Angebot B trägt den Vermerk „freibleibend“. MAKEL bestellt bei beiden genau diese 500 Ordner.",
+            "id": "b3-p4"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Angebot A (ohne Zusatz)",
+              "Angebot B („freibleibend“)"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Schreiben des Lieferers",
+                  "bindender Antrag",
+                  "nur Aufforderung, selbst einen Antrag zu stellen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestellung von MAKEL",
+                  "Annahme",
+                  "Antrag"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vertrag entsteht",
+                  "mit Zugang der Bestellung",
+                  "erst mit Annahme durch den Lieferer, meist per Auftragsbestätigung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Risiko für MAKEL",
+                  "keins, wenn rechtzeitig bestellt",
+                  "Lieferer kann ablehnen oder neu kalkulieren"
+                ]
+              }
+            ],
+            "fazit": "Der Text der Bestellung ist in beiden Fällen gleich. Den Unterschied macht allein der Zusatz im Angebot.",
+            "id": "b3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei Angebot B sitzt MAKEL also nicht am längeren Hebel. Ist die Ware dringend, sollte MAKEL deshalb eine schnelle Auftragsbestätigung verlangen oder den Lieferer bitten, das Angebot verbindlich zu machen.",
+            "id": "b3-p5"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Teilweise Freizeichnung",
+            "id": "b3-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nicht jede Klausel hebt die Bindung ganz auf. „Preise freibleibend“ lässt Ware, Menge und Termin verbindlich, nur der Preis kann sich bis zur Lieferung ändern. „Solange Vorrat reicht“ bindet den Lieferer nur, soweit er die Ware noch hat. Ist der Vorrat erschöpft, muss er nicht liefern. Wer eine bestimmte Menge sicher braucht, lässt sie sich deshalb vorab zusichern. In Zuordnungsaufgaben wird diese Klausel meist als „nicht bindend“ eingeordnet, weil die Menge nicht garantiert ist.",
+            "id": "b3-p6"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "b3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "b3-b3"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "b3-b4"
+          }
         ],
-        "erklaerung": "Ein Angebot ohne Zusatz ist ein bindender Antrag. Der Lieferer kann es innerhalb der geltenden Frist nicht einfach zurücknehmen. Wörter wie ‚freibleibend‘ oder ‚unverbindlich‘ schließen diese Bindung dagegen aus. Dann ist das Schreiben nur eine Aufforderung; die Bestellung des Käufers wird zum Antrag und die Auftragsbestätigung zur Annahme.",
-        "beispiele": [
-          "‚Wir bieten 200 Ordner zu 2,30 € an‘ ist ohne Einschränkung bindend, sofern die übrigen Vertragsangaben bestimmt sind.",
-          "Bei ‚Angebot freibleibend‘ entsteht der Vertrag erst, wenn der Lieferer die Bestellung annimmt; eine Bestellung allein reicht nicht."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Annahme nach Fristablauf",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "MAKEL bestellt bei Angebot A erst am 5. Oktober, obwohl es „gültig bis 30.09.“ war. Der Antrag ist mit Fristablauf erloschen. Die späte Bestellung ist deshalb keine Annahme mehr, sondern ein neuer Antrag. Der Lieferer kann ihn annehmen — dann entsteht der Vertrag mit seiner Annahme — oder ablehnen, etwa weil er inzwischen teurer einkauft.",
+                "id": "b3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf3:k2-b2"
+                ],
+                "text": "Mehr zu verspäteter und abändernder Annahme",
+                "id": "b3-d1-v1"
+              }
+            ],
+            "id": "b3-d1"
+          },
+          {
+            "kategorie": "vergleich",
+            "titel": "Angebot und Werbung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Katalog, ein Prospekt oder eine Anzeige im Internet richtet sich an viele Menschen. Der Anbieter will sich damit nicht gegenüber jedem binden, der „ja“ sagt, sonst müsste er unter Umständen mehr liefern, als er hat. Solche Darstellungen gelten deshalb in der Regel nicht als Antrag, sondern als Aufforderung, selbst ein Angebot abzugeben. Ein Angebot, das MAKEL auf eine bestimmte Anfrage persönlich erhält, ist dagegen grundsätzlich bindend.",
+                "id": "b3-d2-p1"
+              }
+            ],
+            "id": "b3-d2"
+          }
         ],
-        "fallbeispiel": "Ein Lieferer bietet 500 Ordner zu 2,10 € mit dem Zusatz ‚freibleibend‘ an. Der Käufer bestellt genau diese Menge. Die Bestellung ist jetzt der bindende Antrag des Käufers. Der Vertrag entsteht erst, wenn der Lieferer die Bestellung annimmt, etwa durch eine Auftragsbestätigung. Die bloße Übereinstimmung mit dem Text des freibleibenden Schreibens genügt nicht.",
-        "typische_fehler": "‚Unverbindlich‘ wird so verstanden, als könne überhaupt kein Vertrag entstehen. Tatsächlich fehlt nur die Bindung des ursprünglichen Schreibens. Umgekehrt wird eine Bestellung bei freibleibendem Angebot fälschlich als Annahme bezeichnet.",
         "verstaendnisfragen": [
-          "Wer gibt bei einem freibleibenden Angebot den Antrag ab? Der Käufer mit seiner Bestellung.",
-          "Was bewirkt eine ausdrücklich gesetzte Angebotsfrist? Sie bestimmt, wie lange der Antrag angenommen werden kann; danach ist eine spätere Reaktion grundsätzlich ein neuer Antrag."
-        ],
-        "pruefungsbezug": "Formulierungen wie ‚freibleibend‘, ‚unverbindlich‘, ‚solange Vorrat reicht‘ und ein Gültigkeitsdatum markieren. Dann Antrag und Annahme in der richtigen Reihenfolge benennen.",
-        "merksatz": "Ohne Freizeichnung bindet das Angebot; bei ‚freibleibend‘ bindet erst die Bestellung des Käufers."
+          {
+            "frage": "Der Lieferer von Angebot B hat die Bestellung von MAKEL nach einer Woche noch nicht bestätigt. Ist MAKEL an seine Bestellung gebunden?",
+            "antwort": "Ja, für eine angemessene Zeit. Die Bestellung ist der Antrag von MAKEL, und an einen Antrag ist man nach § 145 BGB gebunden, bis die Annahmefrist nach § 147 BGB abgelaufen ist. Wer nicht so lange warten will, setzt in der Bestellung selbst eine Frist für die Bestätigung.",
+            "id": "b3-f1"
+          },
+          {
+            "frage": "Ein Angebot lautet: „Preise freibleibend, Lieferung binnen 10 Tagen.“ MAKEL bestellt. Was ist sicher vereinbart, was nicht?",
+            "antwort": "Sicher sind Ware, Menge und die Lieferzeit von 10 Tagen, denn nur der Preis ist freigezeichnet. Der Preis kann sich bis zur Lieferung ändern. Bei großer Unsicherheit sollte MAKEL einen festen Preis oder eine Obergrenze verlangen.",
+            "id": "b3-f2"
+          }
+        ]
       }
     ]
   },

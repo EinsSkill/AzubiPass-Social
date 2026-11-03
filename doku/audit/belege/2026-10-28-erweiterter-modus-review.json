@@ -1,0 +1,58 @@
+{
+  "reviewed_application": "f041834",
+  "handover_checkout": "22c84b81e98818a0cd34495f0336fc9e7249dcde",
+  "static_original_suite_errors": [],
+  "static_original_suite_log": "Statisch · Ausgabe, Kennungen, Index\n  OK   A05 Kapitelschalter genau dann, wenn ein Abschnitt vertiefbar ist (160 Kapitel)  0\n  OK   lf2.html: keine doppelte DOM-ID  []\n  OK   lf3.html: keine doppelte DOM-ID  []\n  OK   lf4.html: keine doppelte DOM-ID  []\n  OK   lf2.html: Kennungen von Checks, Karten, Zuordnungen, Fragen unverändert  61 Stück\n  OK   lf2.html: Antwort-Kennungen unverändert\n  OK   lf3.html: Kennungen von Checks, Karten, Zuordnungen, Fragen unverändert  53 Stück\n  OK   lf3.html: Antwort-Kennungen unverändert\n  OK   lf4.html: Kennungen von Checks, Karten, Zuordnungen, Fragen unverändert  75 Stück\n  OK   lf4.html: Antwort-Kennungen unverändert\n  OK   A26 Suchindex und HTML synchron (22 Ziele)  []\n  OK   A13 Antworten stehen nicht im Suchindex (6 Antworten)  []\n  OK   A25 Pilot A: 922 / 930 / 940 / Fehlrechnung 920 enthalten\n  OK   A25 Pilot B: abändernde Annahme = Ablehnung + neuer Antrag\n  OK   A25 Pilot C: Befugnisgrenze und situationsabhängiger Gegenfall\n  OK   Pilot C: Pareto-Absatz der Kurzfassung bleibt in der Vollfassung erreichbar\nA24 · Vertrag bricht den Build mit Fundstelle ab\n  OK   Gültiger Pilot wird angenommen\n  OK   Fehlender Abschnitt  verweist auf keinen bestehenden Abschnitt\n  OK   Doppelte id  Haupttext: id „a-warum-1“ ist im Kapitel doppelt\n  OK   Unbekannte Blockart  Haupttext, Block 12: unbekannte oder hier nicht erlaubte Art „html“\n  OK   basis-Verweis ins Leere  basis-Verweis „grafik-7“ gibt es in der Kurzfassung nicht (möglich: ac\n  OK   basis-Verweis doppelt  basis-Verweis „grafik-1“ steht doppelt — ein Block lebt nur einmal\n  OK   format 2 fehlt  Vollfassungen verlangen \"format\": 2 unter ausfuehrlich\n  OK   Frage ohne getrennte Antwort  Verständnisfrage a1: frage und antwort sind getrennt Pflicht\n  OK   Unbekannte Detailkategorie  Detail a-grundwert: kategorie muss eine von grundlagen, vergleich, son\n  OK   Verweis auf unbekanntes Lernfeld  Verweisziel „lf99:k1“: Lernfeld lf99 gibt es nicht\n  OK   Verweis in fremden Beruf  Verweisziel „ik2024-lf04:k01“ liegt in einem anderen Beruf\n  OK   Vollfassung und Alteintrag für denselben Abschnitt  hat zusätzlich einen Alteintrag — beide schließen sich aus\n",
+  "E01_contract_typo_reproduction": [
+    {
+      "chapter": "lf4-k3-angebotsvergleich",
+      "mutation": "darstellung = \"vollfasung\"",
+      "validator_returned": [],
+      "expected": "Build error with file and section",
+      "observed": "No error; legacy fallback instead of full rendering",
+      "raw_question_objects": true,
+      "goal_survives": false,
+      "legacy_excerpt": "<div class=\"detail-zusatz\" hidden><div class=\"detail-marke\">Mehr Erklärung</div><h4>Einordnung</h4><p>Ein Angebotsvergleich beginnt erst dann sinnvoll, wenn alle Angebote auf dieselbe wirtschaftliche Größe gebracht wurden. Danach ergänzt die Nutzwertanalyse den Preis um qualitative Kriterien wie Lieferzuverlässigkeit, Qualität und Service.</p><h4>Verständnisfragen</h4><p>{'id': 'a1', 'frage': 'Warum beziehen sich die 2 % Skonto auf 900 € und nicht auf 1.000 €?', 'antwort': 'Weil der Rabatt den Warenpreis schon auf 900 € reduziert hat und dieser Zieleinkaufspreis laut Fall die Skontobasis ist. Die nicht skontierbare Fracht wird erst danach addiert.'}</p><p>{'id': 'a2', 'frage': 'Welche Änderung lässt B in unserem Vergleich günstiger werden?', 'antwort': 'Wenn MAKEL A nicht innerhalb der Skontofrist bezahlt, steigt dessen Bezugspreis auf 940 €. B kostet unverändert 930 € und ist dann 10 € "
+    },
+    {
+      "chapter": "lf3-k2-vertrag",
+      "mutation": "darstellung = \"vollfasung\"",
+      "validator_returned": [],
+      "expected": "Build error with file and section",
+      "observed": "No error; legacy fallback instead of full rendering",
+      "raw_question_objects": true,
+      "goal_survives": false,
+      "legacy_excerpt": "<div class=\"detail-zusatz\" hidden><div class=\"detail-marke\">Mehr Erklärung</div><h4>Verständnisfragen</h4><p>{'id': 'b1', 'frage': 'Warum führt „120 statt 100“ nicht automatisch zu einem Vertrag über 120 Stück?', 'antwort': 'Weil MAKEL nur 100 Stück angeboten hat. Die abweichende Antwort ist eine Ablehnung, verbunden mit einem neuen Antrag. MAKEL muss diesen erst annehmen; die bloße Ähnlichkeit der Bedingungen ersetzt die Zustimmung nicht.'}</p><p>{'id': 'b2', 'frage': 'Welche drei Punkte prüfst du, bevor du ein Ergebnis nennst?', 'antwort': 'Den ursprünglichen Antrag, die inhaltliche Übereinstimmung der Antwort und die Rechtzeitigkeit nach der gesetzten oder der regelmäßigen Annahmefrist. Die im Grundfall vorausgesetzte Wirksamkeit und Vertretungsmacht bleiben als Voraussetzung im Blick.'}</p></div>"
+    },
+    {
+      "chapter": "lf2-k2-zeitmanagement",
+      "mutation": "darstellung = \"vollfasung\"",
+      "validator_returned": [],
+      "expected": "Build error with file and section",
+      "observed": "No error; legacy fallback instead of full rendering",
+      "raw_question_objects": true,
+      "goal_survives": false,
+      "legacy_excerpt": "<div class=\"detail-zusatz\" hidden><div class=\"detail-marke\">Mehr Erklärung</div><h4>Verständnisfragen</h4><p>{'id': 'c1', 'frage': 'Warum darf die Präsentation nicht warten, bis sie dringend wird?', 'antwort': 'Weil die Angaben aus anderen Abteilungen und die eigene Bearbeitung Zeit brauchen. Die Aufgabe ist bereits wichtig; frühes Terminieren und Anfordern der Angaben verhindert vermeidbaren Zeitdruck.'}</p><p>{'id': 'c2', 'frage': 'Ist ein leerer Toner immer „dringend, aber unwichtig“?', 'antwort': 'Nein. Fällt ohne Drucker ein wichtiger Versand aus, hat die Behebung wesentliche Folgen und kann wichtig und dringend sein. Die Einordnung hängt vom Fall ab, nicht vom Wort „Toner“.'}</p></div>"
+    }
+  ],
+  "E02_link_reproduction": {
+    "original_function": true,
+    "environment": "Node VM, minimal DOM stubs; not a browser test",
+    "opened_detail": true,
+    "address_after_opening": "/lf4.html#k3-b1",
+    "retains_view_parameter": false,
+    "retains_detail_parameter": false
+  },
+  "pilot_A_independent_decimal_calculation": {
+    "target_price": "900.00",
+    "cash_price": "882.0000",
+    "purchase_price": "922.0000",
+    "alternative": "930.00",
+    "without_skonto": "940.00",
+    "wrong_added_percentages": "920.00"
+  },
+  "limitations": [
+    "No independently executed browser or axe scan",
+    "No live or PWA offline test"
+  ]
+}

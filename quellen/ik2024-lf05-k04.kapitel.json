@@ -6,86 +6,463 @@
   "untertitel": "Netto, Steuer und brutto auseinanderhalten, Vorsteuer und Umsatzsteuer richtig buchen und die Zahllast ermitteln.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Auf fast jeder Rechnung steht ein Nettobetrag, ein Steuerbetrag und ein Bruttobetrag.",
-          "Der Regelsteuersatz beträgt 19 Prozent, der ermäßigte 7 Prozent."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest aus Netto-, Brutto- oder Steuerbetrag die beiden fehlenden Größen und vermeidest den Fehler, 19 % vom Bruttobetrag abzuziehen.",
+        "vorwissen_kurz": "Auf Rechnungen stehen drei Beträge: netto, Umsatzsteuer und brutto. Oft ist nur einer davon bekannt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Netto aus rechnen",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:umsatzsteuer|Umsatzsteuer}} beträgt nach {{par:ustg-12|§ 12 UStG}} in der Regel 19 % und wird auf den Nettobetrag aufgeschlagen. Der Nettobetrag ist deshalb immer 100 %, der Bruttobetrag 119 %. Wer vom Bruttobetrag zurückrechnen will, teilt durch 1,19. Wer stattdessen 19 % vom Bruttobetrag abzieht, rechnet mit der falschen Grundlage und erhält einen zu niedrigen Nettobetrag.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Belege bei MAKEL Studio",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Beleg",
+              "gegeben",
+              "Rechnung",
+              "netto",
+              "Steuer",
+              "brutto"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung für Stickgarn",
+                  "netto 640 €",
+                  "640 € × 0,19",
+                  "640,00 €",
+                  "121,60 €",
+                  "761,60 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Quittung Werkzeug",
+                  "brutto 89,25 €",
+                  "89,25 € ÷ 1,19",
+                  "75,00 €",
+                  "14,25 €",
+                  "89,25 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Gutschrift eines Lieferanten",
+                  "Steuer 95 €",
+                  "95 € ÷ 0,19",
+                  "500,00 €",
+                  "95,00 €",
+                  "595,00 €"
+                ]
+              }
+            ],
+            "fazit": "Jeder fehlende Betrag lässt sich aus einem bekannten berechnen. Die Steuer ist immer 19 % vom Netto, nicht vom Brutto.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein ermäßigter Steuersatz von 7 % gilt etwa für Lebensmittel und Bücher. Für die Erzeugnisse von MAKEL Studio, Kleidung, gilt der Regelsatz. Kauft MAKEL Studio Fachbücher für die Ausbildung, steht auf der Rechnung 7 %; dann wird entsprechend mit 1,07 und 0,07 gerechnet.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Umsatzsteuer wird auf das Entgelt, also den Nettobetrag, aufgeschlagen: Netto × 19 % = Steuer, Netto + Steuer = Brutto, also Brutto = Netto × 1,19. Ist nur der Bruttobetrag bekannt, rechnet man zurück: Netto = Brutto ÷ 1,19, Steuer = Brutto − Netto. Ein häufiger Fehler ist, 19 Prozent vom Bruttobetrag abzuziehen — das ergibt einen zu niedrigen Nettobetrag, weil die 19 Prozent sich auf den Nettobetrag beziehen. Für die Übungen dieses Kapitels gilt: inländischer, normal steuerpflichtiger Fall mit 19 Prozent und vollem Vorsteuerabzug.",
-        "beispiele": [
-          "Netto 1.000 € → Steuer 190 € → Brutto 1.190 €.",
-          "Brutto 2.380 € → Netto 2.380 € ÷ 1,19 = 2.000 € → Steuer 380 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Wer die Umsatzsteuer trägt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Umsatzsteuer wird auf jeder Stufe der Lieferkette berechnet, aber jedes Unternehmen kann die gezahlte Vorsteuer abziehen. Wirtschaftlich trägt sie deshalb die Endverbraucherin, die einen Hoodie im Laden kauft. Für Unternehmen ist sie ein durchlaufender Posten — sie erscheint weder als Aufwand noch als Ertrag.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Luca rechnet bei einer Bruttorechnung über 2.380 € ‚2.380 € minus 19 Prozent‘ und erhält 1.927,80 €. Sandra lässt ihn nachrechnen: 1.927,80 € × 1,19 = 2.294,08 € — das passt nicht zum Rechnungsbetrag. Richtig ist 2.380 € ÷ 1,19 = 2.000 €.",
-        "typische_fehler": "19 Prozent vom Bruttobetrag abziehen, statt durch 1,19 zu teilen.",
         "verstaendnisfragen": [
-          "Wie berechnest du aus brutto 1.190 € den Nettobetrag? 1.190 € ÷ 1,19 = 1.000 €.",
-          "Worauf beziehen sich die 19 Prozent Umsatzsteuer? Auf den Nettobetrag."
-        ],
-        "pruefungsbezug": "Rückrechnung vom Brutto auf Netto ist eine der häufigsten Rechenaufgaben.",
-        "merksatz": "Brutto = Netto × 1,19; Netto = Brutto ÷ 1,19 — nie 19 Prozent vom Bruttobetrag abziehen."
+          {
+            "frage": "Eine Rechnung lautet über 4.165 € brutto. Wie hoch sind Netto und Steuer?",
+            "antwort": "Netto 4.165 € ÷ 1,19 = 3.500 €, Steuer 665 €.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum ist 4.165 € − 19 % = 3.373,65 € falsch?",
+            "antwort": "Weil die 19 % sich auf den Nettobetrag beziehen. Vom Bruttobetrag zu rechnen ergibt einen zu niedrigen Nettobetrag; richtig ist die Division durch 1,19.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "MAKEL kauft Material bei Lieferanten, die Umsatzsteuer berechnen.",
-          "Ein Unternehmer darf diese Steuer unter Voraussetzungen vom Finanzamt zurückfordern."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst eine Eingangsrechnung mit Vorsteuer, prüfst vorher die Pflichtangaben nach § 14 UStG und erklärst, warum die Vorsteuer eine Forderung gegenüber dem Finanzamt ist.",
+        "vorwissen_kurz": "Wenn MAKEL Studio einkauft, zahlt es Umsatzsteuer an den Lieferanten. Diese Steuer bekommt es vom Finanzamt zurück.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vorsteuer als Forderung",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Umsatzsteuer auf Eingangsrechnungen heißt für den Käufer {{begriff:vorsteuer|Vorsteuer}}. Nach {{par:ustg-15|§ 15 UStG}} darf ein Unternehmen sie vom Finanzamt zurückverlangen, wenn es die Leistung für sein Unternehmen bezogen hat und eine ordnungsgemäße Rechnung nach {{par:ustg-14|§ 14 UStG}} besitzt. Bis zur Verrechnung ist die Vorsteuer deshalb eine Forderung und wird auf einem Aktivkonto im Soll gebucht.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Stoffrechnung prüfen und buchen",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio erhält eine Rechnung über 400 m Bio-Baumwollstoff zu 10 € je Meter netto. Vor der Buchung prüft Luca die Pflichtangaben.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Prüfpunkt",
+              "Befund"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Name und Anschrift von Lieferant und MAKEL Studio",
+                  "vorhanden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Steuernummer oder USt-IdNr. des Lieferanten",
+                  "vorhanden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnungsdatum und fortlaufende Rechnungsnummer",
+                  "vorhanden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Menge und Art der Ware, Zeitpunkt der Lieferung",
+                  "vorhanden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Entgelt, Steuersatz, Steuerbetrag",
+                  "4.000 € netto, 19 %, 760 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchungssatz",
+                  "2000 Rohstoffe 4.000 € und 2600 Vorsteuer 760 € an 4400 Verbindlichkeiten LuL 4.760 €"
+                ]
+              }
+            ],
+            "fazit": "Die Rechnung ist vollständig, die Vorsteuer kann abgezogen werden. Material und Vorsteuer stehen im Soll, die Verbindlichkeit in voller Höhe im Haben.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Fehlt etwa die Rechnungsnummer, bucht Luca die Rechnung nicht mit Vorsteuer, sondern fordert eine berichtigte Rechnung an. Erst wenn sie vorliegt, wird die Vorsteuer geltend gemacht. Seit 2025 müssen Unternehmen außerdem elektronische Rechnungen im strukturierten Format empfangen können; die Prüfung der Pflichtangaben bleibt dieselbe.",
+            "id": "a2-p3"
+          }
         ],
-        "erklaerung": "Die Umsatzsteuer auf Eingangsrechnungen heißt aus Sicht von MAKEL Vorsteuer. MAKEL darf sie vom Finanzamt zurückfordern (Vorsteuerabzug, § 15 UStG), wenn eine ordnungsgemäße Rechnung mit den Pflichtangaben nach § 14 UStG vorliegt und die Leistung für das Unternehmen bezogen wurde. Die Vorsteuer ist deshalb eine Forderung gegenüber dem Finanzamt und wird auf dem Aktivkonto 2600 Vorsteuer im Soll gebucht. Das Material selbst wird mit dem Nettobetrag erfasst; die Verbindlichkeit beim Lieferanten mit dem Bruttobetrag.",
-        "beispiele": [
-          "Rohstoffeinkauf netto 1.000 € auf Ziel: Rohstoffe 1.000 €, Vorsteuer 190 € an Verbindlichkeiten LuL 1.190 €.",
-          "Fehlt auf der Rechnung die Steuernummer oder USt-IdNr. des Lieferanten, wird eine korrigierte Rechnung angefordert, bevor die Vorsteuer geltend gemacht wird."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kleinbetragsrechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei Rechnungen bis 250 € brutto genügen weniger Angaben: Name und Anschrift des Lieferanten, Datum, Menge und Art der Ware, Bruttobetrag und Steuersatz. Der Name von MAKEL Studio muss darauf nicht stehen. Die Vorsteuer wird dann aus dem Bruttobetrag herausgerechnet.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Deniz Aydın gibt eine Rechnung über Baumwoll-Rohlinge frei: netto 1.000 €, 19 % Umsatzsteuer 190 €, Rechnungsbetrag 1.190 €. Sandra prüft die Pflichtangaben und bucht nach der bei MAKEL gewählten Bestandsmethode: Rohstoffe 1.000 € und Vorsteuer 190 € an Verbindlichkeiten aus Lieferungen und Leistungen 1.190 €.",
-        "typische_fehler": "Die Vorsteuer als Teil der Materialkosten buchen. Bei vollem Vorsteuerabzug gehört sie auf das Vorsteuerkonto.",
         "verstaendnisfragen": [
-          "Warum ist die Vorsteuer ein Aktivkonto? Weil MAKEL sie vom Finanzamt zurückfordern kann — sie ist eine Forderung.",
-          "Mit welchem Betrag steht das Material im Konto Rohstoffe? Mit dem Nettobetrag."
-        ],
-        "pruefungsbezug": "Eingangsrechnungen werden fast immer als zusammengesetzter Buchungssatz mit Vorsteuer abgefragt.",
-        "merksatz": "Eingangsrechnung: Material netto und Vorsteuer im Soll, Verbindlichkeit brutto im Haben."
+          {
+            "frage": "Bilde den Buchungssatz: Kauf von Hilfsstoffen (Garne) auf Ziel, 640 € netto zuzüglich 19 % Umsatzsteuer.",
+            "antwort": "2020 Hilfsstoffe 640,00 € und 2600 Vorsteuer 121,60 € an 4400 Verbindlichkeiten LuL 761,60 €.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum wird die Verbindlichkeit brutto gebucht?",
+            "antwort": "Weil MAKEL Studio dem Lieferanten den vollen Rechnungsbetrag einschließlich Steuer schuldet. Die Steuer holt es sich anschließend vom Finanzamt zurück.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "MAKEL verkauft veredelte Textilien an Boutiquen und Endkunden.",
-          "Auf Ausgangsrechnungen berechnet MAKEL selbst Umsatzsteuer."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst eine Ausgangsrechnung über eigene Erzeugnisse mit Umsatzsteuer und erklärst, warum die Umsatzsteuer eine Verbindlichkeit gegenüber dem Finanzamt ist.",
+        "vorwissen_kurz": "Wenn MAKEL Studio verkauft, stellt es dem Kunden Umsatzsteuer in Rechnung. Dieses Geld gehört nicht MAKEL, sondern dem Finanzamt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Umsatzsteuer als Schuld",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Auf jeder Ausgangsrechnung weist MAKEL Studio Umsatzsteuer aus und kassiert sie vom Kunden. Diese Steuer muss es an das Finanzamt abführen. Bis dahin ist sie eine Verbindlichkeit und wird auf dem Passivkonto Umsatzsteuer im Haben gebucht. Der Umsatzerlös wird netto erfasst, die Forderung gegenüber dem Kunden brutto.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Händlerrechnung",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio liefert 80 Hoodies „Kyoto“ zu je 45 € netto an ein Modehaus in Köln.",
+            "id": "a3-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "80 Hoodies × 45 €",
+                  "3.600,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "19 % Umsatzsteuer",
+                  "684,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Rechnungsbetrag",
+                  "4.284,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Buchungssatz",
+                  "2400 Forderungen LuL 4.284,00 € an 5000 Umsatzerlöse für eigene Erzeugnisse 3.600,00 € und 4800 Umsatzsteuer 684,00 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Der Ertrag beträgt 3.600 €. Die 684 € Umsatzsteuer sind kein Ertrag, sondern eine Schuld gegenüber dem Finanzamt.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zahlt das Modehaus später, bucht MAKEL Studio 2800 Bank an 2400 Forderungen LuL 4.284 €. Die Umsatzsteuer ist davon nicht berührt; sie wurde bereits mit der Rechnung erfasst und wird mit der nächsten Voranmeldung abgerechnet — unabhängig davon, ob der Kunde schon gezahlt hat.",
+            "id": "a3-p3"
+          }
         ],
-        "erklaerung": "Auf Ausgangsrechnungen stellt MAKEL dem Kunden Umsatzsteuer in Rechnung. Diesen Betrag schuldet MAKEL dem Finanzamt; er ist eine Verbindlichkeit und wird auf dem Passivkonto 4800 Umsatzsteuer im Haben gebucht. Der Umsatzerlös wird netto erfasst, die Forderung gegenüber dem Kunden brutto. Vorsteuer (Einkauf) und Umsatzsteuer (Verkauf) laufen über getrennte Konten — beide heißen umgangssprachlich ‚Mehrwertsteuer‘, sind buchhalterisch aber Forderung und Schuld.",
-        "beispiele": [
-          "Verkauf eigener Erzeugnisse netto 2.000 € auf Ziel: Forderungen LuL 2.380 € an Umsatzerlöse 2.000 € und Umsatzsteuer 380 €.",
-          "Barverkauf im Store, brutto 119 €: Kasse 119 € an Umsatzerlöse 100 € und Umsatzsteuer 19 €."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Lieferung in ein anderes EU-Land",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Liefert MAKEL Studio an einen Händler in den Niederlanden, der eine gültige Umsatzsteuer-Identifikationsnummer hat, ist die Lieferung in Deutschland in der Regel steuerfrei. Der Händler versteuert den Erwerb in seinem Land. Auf der Rechnung steht dann keine deutsche Umsatzsteuer, aber ein Hinweis auf die Steuerbefreiung und beide Identifikationsnummern.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Marlene Voss schreibt eine Rechnung an die Boutique ‚Faden & Form‘ über bedruckte Hoodies: netto 2.000 €, Umsatzsteuer 380 €, brutto 2.380 €. Sandra bucht: Forderungen aus Lieferungen und Leistungen 2.380 € an Umsatzerlöse für eigene Erzeugnisse 2.000 € und Umsatzsteuer 380 €.",
-        "typische_fehler": "Beim Verkauf das Vorsteuerkonto verwenden. Verkauf → Umsatzsteuer (Haben), Einkauf → Vorsteuer (Soll).",
         "verstaendnisfragen": [
-          "Warum ist die Umsatzsteuer ein Passivkonto? Weil MAKEL sie an das Finanzamt abführen muss — sie ist eine Schuld.",
-          "Mit welchem Betrag wird der Umsatzerlös gebucht? Mit dem Nettobetrag."
-        ],
-        "pruefungsbezug": "Ausgangsrechnungen mit Umsatzsteuer buchen und Vorsteuer und Umsatzsteuer sicher trennen.",
-        "merksatz": "Ausgangsrechnung: Forderung brutto im Soll, Umsatzerlös netto und Umsatzsteuer im Haben."
+          {
+            "frage": "Bilde den Buchungssatz für eine Ausgangsrechnung über 2.000 € netto zuzüglich 19 % Umsatzsteuer, Verkauf auf Ziel.",
+            "antwort": "2400 Forderungen LuL 2.380 € an 5000 Umsatzerlöse 2.000 € und 4800 Umsatzsteuer 380 €.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Muss MAKEL Studio die Umsatzsteuer auch abführen, wenn der Kunde noch nicht gezahlt hat?",
+            "antwort": "In der Regel ja. Bei der üblichen Sollversteuerung entsteht die Steuer mit der Leistung, nicht mit der Zahlung.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Auf dem Vorsteuerkonto sammeln sich Forderungen gegen das Finanzamt, auf dem Umsatzsteuerkonto Schulden.",
-          "Unternehmen geben regelmäßig eine Umsatzsteuer-Voranmeldung ab."
+        "darstellung": "vollfassung",
+        "ziel": "Du ermittelst die Zahllast aus Umsatzsteuer und Vorsteuer, buchst Verrechnung und Zahlung und erkennst, wann ein Vorsteuerüberhang zu einer Erstattung führt.",
+        "vorwissen_kurz": "Vorsteuer und Umsatzsteuer stehen auf getrennten Konten. Ans Finanzamt gezahlt wird nur die Differenz.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Verrechnen, melden, zahlen",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:zahllast|Zahllast}} ist die Umsatzsteuer eines Zeitraums abzüglich der Vorsteuer desselben Zeitraums. MAKEL Studio meldet sie monatlich mit der Umsatzsteuer-Voranmeldung beim Finanzamt an, bis zum 10. Tag des Folgemonats, und überweist sie. In der Buchhaltung wird zuerst das Vorsteuerkonto über das Umsatzsteuerkonto abgeschlossen, dann wird der Saldo bezahlt.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Voranmeldung für März",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Buchung oder Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Umsatzsteuer aus Ausgangsrechnungen",
+                  "2.850 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Vorsteuer aus Eingangsrechnungen",
+                  "1.140 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verrechnung",
+                  "4800 Umsatzsteuer 1.140 € an 2600 Vorsteuer 1.140 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahllast",
+                  "2.850 € − 1.140 € = 1.710 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zahlung bis 10. April",
+                  "4800 Umsatzsteuer 1.710 € an 2800 Bank 1.710 €"
+                ]
+              }
+            ],
+            "fazit": "Nach der Zahlung stehen beide Steuerkonten auf null. Gezahlt wurde nur die Differenz.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "In einem Monat mit hohen Investitionen kann es umgekehrt sein: Kauft MAKEL Studio im Juni eine Stickmaschine für 30.000 € netto, entsteht 5.700 € Vorsteuer. Ist die Umsatzsteuer des Monats nur 3.200 €, ergibt sich ein Vorsteuerüberhang von 2.500 €, den das Finanzamt erstattet. Gebucht wird dann 2800 Bank an 2600 Vorsteuer.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Zum Ende des Voranmeldungszeitraums (monatlich oder vierteljährlich) werden Vorsteuer und Umsatzsteuer verrechnet. Die Differenz heißt Zahllast: Umsatzsteuer − Vorsteuer. Ist sie positiv, überweist MAKEL sie ans Finanzamt; ist sie negativ, entsteht ein Erstattungsanspruch. Gebucht wird zuerst die Verrechnung (Umsatzsteuer an Vorsteuer), dann die Zahlung (Umsatzsteuer an Bank). Vor jeder Buchung steht die Belegkontrolle: Pflichtangaben, Rechenweg, Steuersatz und Zuordnung zur richtigen Seite.",
-        "beispiele": [
-          "Umsatzsteuer 380 €, Vorsteuer 190 €: Zahllast 190 €.",
-          "Umsatzsteuer 500 €, Vorsteuer 800 €: Erstattungsanspruch 300 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Bilanzausweis am Jahresende",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ist die Zahllast für Dezember am Bilanzstichtag noch nicht bezahlt, erscheint sie als sonstige Verbindlichkeit in der Bilanz. Ein Vorsteuerüberhang erscheint entsprechend als sonstiger Vermögensgegenstand.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Am Monatsende stehen bei MAKEL 380 € Umsatzsteuer und 190 € Vorsteuer auf den Konten. Sandra bucht: Umsatzsteuer 190 € an Vorsteuer 190 € (Verrechnung), dann Umsatzsteuer 190 € an Guthaben bei Kreditinstituten 190 € (Zahlung). Beide Steuerkonten stehen danach auf null.",
-        "typische_fehler": "Die Umsatzsteuer als Ertrag oder die Vorsteuer als Aufwand betrachten. Für MAKEL ist die Umsatzsteuer im Regelfall erfolgsneutral — sie wird nur durchgereicht.",
         "verstaendnisfragen": [
-          "Wie berechnet sich die Zahllast? Umsatzsteuer minus Vorsteuer.",
-          "Was passiert, wenn die Vorsteuer höher ist als die Umsatzsteuer? Das Finanzamt erstattet die Differenz."
-        ],
-        "pruefungsbezug": "Zahllast berechnen und die Verrechnung samt Zahlung buchen.",
-        "merksatz": "Zahllast = Umsatzsteuer − Vorsteuer; erst verrechnen (USt an VSt), dann zahlen (USt an Bank)."
+          {
+            "frage": "Umsatzsteuer 3.420 €, Vorsteuer 1.900 €. Wie hoch ist die Zahllast, und wie lauten die Buchungen?",
+            "antwort": "1.520 €. Verrechnung: 4800 Umsatzsteuer 1.900 € an 2600 Vorsteuer 1.900 €. Zahlung: 4800 Umsatzsteuer 1.520 € an 2800 Bank 1.520 €.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum fordert Luca bei einer unvollständigen Eingangsrechnung zuerst eine Berichtigung an?",
+            "antwort": "Weil der Vorsteuerabzug eine ordnungsgemäße Rechnung voraussetzt. Ohne sie könnte das Finanzamt die Vorsteuer bei einer Prüfung zurückfordern.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

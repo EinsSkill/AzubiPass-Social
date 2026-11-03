@@ -6,86 +6,466 @@
   "untertitel": "Innerbetriebliche Fördermittel, Verkehrsträger und Dienstleister vergleichen — nach Leistung, Kosten, Sicherheit und Umwelt.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Auch innerhalb des Betriebs wird transportiert.",
-          "Transport ist eine logistische Grundaufgabe (Kapitel 1)."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Stetig- und Unstetigförderer sowie automatisierte Transportsysteme, ordnest sie innerbetrieblichen Transportaufgaben zu und prüfst, ob die Voraussetzungen für eine Automatisierung erfüllt sind.",
+        "vorwissen_kurz": "Zwischen Wareneingang, Lager, Veredelung und Versand werden bei MAKEL Studio täglich viele Kartons bewegt. Womit, ist eine Frage der Aufgabe.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Fördermittel nach Aufgabe",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Innerbetriebliche Fördermittel bewegen Material zwischen den Bereichen. **Stetigförderer** wie Rollenbahnen und Förderbänder transportieren gleichmäßig und ununterbrochen auf einem festen Weg. **Unstetigförderer** wie Hubwagen, Gabelstapler und Kommissionierwagen bewegen Ladungen einzeln und flexibel, brauchen aber Personal. **Fahrerlose Transportsysteme** fahren automatisch wiederkehrende Strecken; sie lohnen sich bei vielen gleichen Fahrten, freien Wegen und ausreichender Investitionsbereitschaft.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welches Fördermittel für welchen Weg?",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Transportaufgabe",
+              "Häufigkeit",
+              "Fördermittel",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Packtisch → Versandrampe",
+                  "über 100 Pakete täglich, fester Weg",
+                  "Rollenbahn",
+                  "gleichmäßiger Fluss, keine Laufwege"
+                ]
+              },
+              {
+                "zellen": [
+                  "Wareneingang → Palettenregal",
+                  "wenige Paletten pro Woche",
+                  "Hubwagen, Stapler für obere Ebenen",
+                  "flexibel, selten"
+                ]
+              },
+              {
+                "zellen": [
+                  "Lager → Veredelung",
+                  "10 bis 20 Fahrten täglich, wechselnde Mengen",
+                  "Kommissionierwagen",
+                  "flexibel, passt zu wechselnden Aufträgen"
+                ]
+              },
+              {
+                "zellen": [
+                  "fahrerloses Transportsystem",
+                  "—",
+                  "derzeit nicht",
+                  "zu wenige gleiche Fahrten, enge Wege, hohe Investition"
+                ]
+              }
+            ],
+            "fazit": "Bei MAKEL Studio passen einfache Lösungen: eine Rollenbahn für den gleichmäßigen Paketfluss, sonst flexible Unstetigförderer.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Automatisierung ist kein Ziel an sich. Ein fahrerloses Transportsystem braucht freie, markierte Wege, wiederkehrende Strecken und genug Fahrten, damit sich die Investition lohnt. Bei MAKEL Studio mit 92 Beschäftigten und wechselnden Aufträgen wäre es überdimensioniert. Sinnvoll ist dagegen, die Wege zu prüfen: Eine Rollenbahn vom Packtisch zur Rampe spart täglich viele Laufmeter.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Innerbetriebliche Fördermittel bewegen Material zwischen Wareneingang, Lager, Produktion und Versand. Stetigförderer arbeiten kontinuierlich auf festem Weg, etwa Rollenbahn oder Förderband — gut bei gleichmäßigem Fluss, aber unflexibel. Unstetigförderer bewegen Ladungen einzeln und flexibel, etwa Hubwagen, Gabelstapler, Kommissionierwagen. Fahrerlose Transportsysteme und autonome mobile Roboter fahren selbstständig nach Vorgaben aus dem System; sie entlasten bei wiederkehrenden Wegen, brauchen aber Investition, freie Wege und Sicherheitskonzepte. Für Stapler gilt: nur mit Unterweisung und schriftlicher Beauftragung fahren.",
-        "beispiele": [
-          "Hubwagen für Kartons von der Rampe ins Regal: Unstetigförderer.",
-          "Rollenbahn vom Packtisch zur Versandzone: Stetigförderer."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Stapler und Sicherheit",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gabelstapler dürfen nur von unterwiesenen und schriftlich beauftragten Personen gefahren werden; in der Regel ist dafür ein Staplerschein nötig. Fußgängerwege und Fahrwege werden getrennt markiert, weil Staplerunfälle zu den häufigsten Arbeitsunfällen im Lager gehören.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Bei MAKEL schiebt das Lager Kartons per Hubwagen in die Veredelung — täglich dieselbe Strecke, rund 40-mal. Ein Anbieter schlägt ein autonomes Transportsystem vor. Jonas Weidner prüft: Die Gänge sind oft durch Kartons verstellt, und die Investition müsste sich über eingesparte Arbeitszeit rechnen.",
-        "typische_fehler": "Automatisierung vorschlagen, ohne Voraussetzungen wie freie Wege und Auslastung zu prüfen.",
         "verstaendnisfragen": [
-          "Was unterscheidet Stetig- von Unstetigförderern? Stetigförderer arbeiten kontinuierlich auf festem Weg, Unstetigförderer bewegen einzelne Ladungen flexibel.",
-          "Welche Voraussetzung braucht ein fahrerloses Transportsystem? Unter anderem freie, definierte Wege und ein Sicherheitskonzept."
-        ],
-        "pruefungsbezug": "Innerbetriebliche Fördermittel für einen Materialfluss auswählen und begründen.",
-        "merksatz": "Stetigförderer für gleichmäßigen Fluss, Unstetigförderer für Flexibilität; Automatisierung nur mit passenden Voraussetzungen."
+          {
+            "frage": "Was unterscheidet Stetigförderer von Unstetigförderern?",
+            "antwort": "Stetigförderer transportieren gleichmäßig auf festem Weg, Unstetigförderer bewegen einzelne Ladungen flexibel.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum lohnt sich ein fahrerloses Transportsystem bei MAKEL Studio derzeit nicht?",
+            "antwort": "Weil es zu wenige gleiche Fahrten gibt, die Wege eng sind und die Investition hoch wäre.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Sendungen unterscheiden sich in Größe, Gewicht, Wert und Eile.",
-          "Rohlinge kommen teils aus dem Ausland."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Straße, Schiene, Wasser und Luft nach Geschwindigkeit, Menge, Kosten und Umweltwirkung, wählst für Sendungen von MAKEL Studio einen passenden Verkehrsträger und unterscheidest Spediteur und Frachtführer.",
+        "vorwissen_kurz": "Rohlinge aus Portugal, Pakete an Boutiquen in Deutschland, eine Eilsendung zu einer Messe in New York: Jede Sendung stellt andere Anforderungen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Verkehrsträger",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Straße** ist flexibel und ermöglicht Haus-zu-Haus-Lieferungen, verursacht aber je Tonne vergleichsweise viele Emissionen und steht im Stau. Die **Schiene** eignet sich für große Mengen über weite Strecken und ist umweltfreundlicher, braucht aber Gleisanschluss oder Umschlag. Das **Schiff** transportiert sehr große Mengen günstig, ist aber langsam. Das **Flugzeug** ist sehr schnell, aber teuer und mit hohen Emissionen verbunden. Im **multimodalen** Verkehr werden Verkehrsträger kombiniert, etwa Container per Schiff, Bahn und Lkw.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Verkehrsträger je Sendung",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Sendung",
+              "Anforderung",
+              "Verkehrsträger",
+              "beauftragt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "20 Paletten Rohlinge aus Portugal",
+                  "Menge, Kosten, 1 bis 2 Wochen Zeit",
+                  "Lkw oder kombiniert Lkw–Bahn",
+                  "Spediteur organisiert"
+                ]
+              },
+              {
+                "zellen": [
+                  "30 Pakete an Boutiquen in Deutschland",
+                  "schnell, Haus-zu-Haus",
+                  "Straße, Paketdienst",
+                  "Paketdienst als Frachtführer"
+                ]
+              },
+              {
+                "zellen": [
+                  "3 Kartons Muster zur Messe in New York in 4 Tagen",
+                  "Zeit entscheidend",
+                  "Luftfracht",
+                  "Spediteur mit Luftfrachtabteilung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Container Rohlinge aus Südasien",
+                  "sehr große Menge, Zeit unkritisch",
+                  "Seefracht, dann Bahn und Lkw",
+                  "Spediteur organisiert die ganze Kette"
+                ]
+              }
+            ],
+            "fazit": "Jede Sendung hat ihren passenden Verkehrsträger. Bei langen, mehrteiligen Wegen organisiert ein Spediteur die Kette, den Transport selbst führen Frachtführer aus.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Unterscheidung von Spediteur und Frachtführer hat praktische Folgen. Der Frachtführer befördert die Ware selbst und haftet für Schäden auf seinem Transport. Der Spediteur organisiert die Versendung, wählt Frachtführer aus und kümmert sich um Papiere und Umschläge, ohne zwingend selbst zu fahren. Für MAKEL Studio ist ein Spediteur vor allem bei internationalen Sendungen hilfreich, wo Zoll und mehrere Verkehrsträger zusammenkommen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Für externe Transporte stehen Straße (Lkw, flexibel, Haus-zu-Haus), Schiene (große Mengen, umweltfreundlich, aber an Gleise gebunden), Wasser (sehr große Mengen, günstig, langsam) und Luft (schnell, teuer, für eilige oder wertvolle Güter) zur Verfügung. Multimodaler oder kombinierter Verkehr verbindet mehrere Verkehrsträger, etwa Container per Schiff, Bahn und Lkw. Nach Sendungsgröße unterscheidet man Paket, Stückgut (einzelne Paletten), Teilladung und Komplettladung. Dienstleister sind unter anderem der Frachtführer, der die Beförderung selbst durchführt, und der Spediteur, der die Versendung organisiert und dafür Frachtführer beauftragt; dazu kommen Paketdienste und Logistikdienstleister.",
-        "beispiele": [
-          "Containerware Rohlinge aus Asien: Seeschiff, Bahn bis zum Binnenterminal, Lkw bis MAKEL.",
-          "Eilige Mustersendung an eine Boutique in Mailand: Express-Paketdienst."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Paketdienst und Spedition",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Paketdienste transportieren standardisierte Pakete bis etwa 31,5 kg mit festen Tarifen und Sendungsverfolgung. Größere Sendungen auf Paletten gehen als Stückgut über eine Spedition. Die Grenze entscheidet über Preis, Laufzeit und Verpackung.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für 6 Paletten Hoodies an einen Großkunden in München holt Jonas Angebote ein: Stückgut per Spedition, Lieferzeit 2 Tage, oder Express-Teilladung am nächsten Tag. Der Kunde braucht die Ware erst in 4 Tagen — die Spedition reicht.",
-        "typische_fehler": "Immer den schnellsten Weg wählen, ohne zu prüfen, welche Lieferzeit tatsächlich gebraucht wird.",
         "verstaendnisfragen": [
-          "Welcher Verkehrsträger eignet sich für sehr große Mengen über weite Strecken ohne Eile? Das Seeschiff.",
-          "Was unterscheidet Spediteur und Frachtführer? Der Frachtführer befördert selbst, der Spediteur organisiert die Versendung."
-        ],
-        "pruefungsbezug": "Verkehrsträger und Dienstleister für eine Sendung auswählen und begründen.",
-        "merksatz": "Straße flexibel, Schiene und Schiff für Masse, Luft für Eile; Spediteur organisiert, Frachtführer befördert."
+          {
+            "frage": "Welcher Verkehrsträger passt für eine eilige Mustersendung nach New York?",
+            "antwort": "Die Luftfracht, weil die Zeit entscheidet und die Menge klein ist.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Was unterscheidet einen Spediteur von einem Frachtführer?",
+            "antwort": "Der Spediteur organisiert die Versendung, der Frachtführer befördert die Ware selbst.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Angebote unterscheiden sich in Preisstruktur und Leistung.",
-          "Aus LF 4 kennst du den Angebotsvergleich."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Transportangebote auf gleicher Leistungsbasis, berechnest die kritische Menge, ab der ein Angebot günstiger wird, und ergänzt den Preisvergleich um Termintreue, Schäden und Umweltwirkung.",
+        "vorwissen_kurz": "Zwei Dienstleister bieten den Versand an Boutiquen an: einer mit hohem Grundpreis und niedrigem Stückpreis, einer umgekehrt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wann welches Angebot günstiger ist",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Transportangebote werden nur auf gleicher Leistungsbasis verglichen: gleiche Sendungen, gleiche Laufzeit, gleicher Versicherungsschutz. Haben die Angebote einen Grundpreis und einen Preis je Packstück, hängt das günstigere von der Menge ab. Die **kritische Menge** ist die Zahl der Packstücke, bei der beide gleich viel kosten. Sie ergibt sich, wenn man die Kostenfunktionen gleichsetzt. Neben dem Preis zählen Termintreue, Schadensquote und Umweltwirkung.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Kritische Menge und weitere Kriterien",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Rechnung oder Angabe",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kosten gleichsetzen",
+                  "200 + 2x = 50 + 4x",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "auflösen",
+                  "150 = 2x",
+                  "x = 75 Packstücke"
+                ]
+              },
+              {
+                "zellen": [
+                  "unter 75 Packstücken",
+                  "B günstiger",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "über 75 Packstücken",
+                  "A günstiger",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Termintreue im letzten Halbjahr",
+                  "A 97 %, B 88 %",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Schadensquote",
+                  "A 0,4 %, B 1,2 %",
+                  ""
+                ]
+              },
+              {
+                "zellen": [
+                  "Durchschnitt bei MAKEL",
+                  "rund 90 Packstücke je Woche",
+                  "A günstiger und zuverlässiger"
+                ]
+              }
+            ],
+            "fazit": "Bei rund 90 Packstücken pro Woche ist A günstiger, termintreuer und verursacht weniger Schäden. Die Entscheidung fällt eindeutig aus.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die kritische Menge hilft auch bei schwankenden Mengen. Liegen die Wochenmengen meist über 75, lohnt sich A; liegen sie im Sommer darunter, wäre B in diesen Wochen günstiger. Ein Wechsel lohnt sich aber selten, weil Abläufe, Etiketten und Abholzeiten angepasst werden müssten. Deshalb entscheidet MAKEL Studio nach der üblichen Menge und bewertet die Qualität mit, denn jede beschädigte Sendung kostet zusätzlich Zeit, Ersatz und Kundenvertrauen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Transportangebote werden auf gleicher Basis verglichen: gleiche Menge, gleicher Leistungsumfang (Abholung, Zustellung, Versicherung, Lieferzeit). Viele Tarife bestehen aus einem Grundpreis und einem Preis je Packstück, Palette oder Kilogramm. Bei unterschiedlicher Struktur gibt es eine Menge, ab der sich der Vorteil umkehrt. Neben dem Preis zählen Termintreue, Schadensquote, Sendungsverfolgung, Erreichbarkeit und Nachhaltigkeit — sinnvoll ist eine Nutzwertanalyse wie in LF 4.",
-        "beispiele": [
-          "A: 200 € + 2 € je Packstück, B: 50 € + 4 € je Packstück. Bei 100 Packstücken: A 400 €, B 450 €.",
-          "Gleich teuer bei 75 Packstücken: 200 + 2x = 50 + 4x → x = 75."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Versteckte Zusatzkosten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Tarife enthalten Zuschläge, etwa für Treibstoff, Sperrgut, Zustellung an Privatadressen oder Inselzustellung. Ein fairer Vergleich rechnet sie für die typischen Sendungen mit ein, sonst wirkt ein Angebot günstiger, als es ist.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Für den wöchentlichen Versand an Boutiquen (meist rund 100 Packstücke) vergleicht Jonas zwei Dienstleister. A ist bei 100 Packstücken 50 € günstiger. B hatte im letzten Quartal jedoch eine bessere Termintreue (98 % gegen 91 %). Jonas bewertet beide mit einer Nutzwertanalyse, bevor er entscheidet.",
-        "typische_fehler": "Angebote mit unterschiedlichem Leistungsumfang direkt über den Preis vergleichen.",
         "verstaendnisfragen": [
-          "Was muss vor dem Preisvergleich gleich sein? Menge und Leistungsumfang.",
-          "Wie bestimmt man die Menge, bei der zwei Tarife gleich teuer sind? Beide Kostenfunktionen gleichsetzen und nach der Menge auflösen."
-        ],
-        "pruefungsbezug": "Transportkosten vergleichen, kritische Menge berechnen und weitere Kriterien einbeziehen.",
-        "merksatz": "Transportangebote auf gleicher Leistungsbasis vergleichen; Preis plus Termintreue, Schäden und Nachhaltigkeit bewerten."
+          {
+            "frage": "A: 200 € + 2 € je Packstück, B: 50 € + 4 € je Packstück. Bei welcher Menge kosten beide gleich viel?",
+            "antwort": "200 + 2x = 50 + 4x, also x = 75 Packstücke.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum reicht der Preis allein nicht für die Wahl eines Transportdienstleisters?",
+            "antwort": "Weil Termintreue, Schadensquote und Umweltwirkung ebenfalls Kosten und Kundenzufriedenheit beeinflussen.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Ungesicherte Ladung gefährdet Menschen und Ware.",
-          "Transporte verursachen Emissionen."
+        "darstellung": "vollfassung",
+        "ziel": "Du berücksichtigst Ladungssicherung, Gefahrgutvorschriften und Umweltwirkung bei der Transportentscheidung und schlägst Maßnahmen vor, mit denen Transporte gebündelt und besser ausgelastet werden.",
+        "vorwissen_kurz": "Ein Transport ist nicht nur eine Frage von Preis und Zeit. Er muss sicher sein und soll möglichst wenig Ressourcen verbrauchen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Sicher und ressourcenschonend",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ladung muss so gesichert sein, dass sie bei normaler Fahrt und bei Vollbremsung nicht verrutscht. Verantwortlich sind nicht nur der Fahrer, sondern auch der Verlader und der Halter des Fahrzeugs. Druckfarben und Reinigungsmittel können **Gefahrgut** sein; sie werden anhand des Sicherheitsdatenblatts und der jeweils geltenden Vorschriften für den Straßentransport eingestuft. Welche Pflichten gelten, hängt vom Stoff und der Menge ab. Zur **Nachhaltigkeit** tragen vor allem Bündelung, gute Auslastung und die Wahl des Verkehrsträgers bei.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Maßnahmen für sichere und sparsame Transporte",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Maßnahme",
+              "Wirkung",
+              "Grenze"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Pakete an Boutiquen zweimal wöchentlich gebündelt statt täglich",
+                  "weniger Fahrten, bessere Auslastung",
+                  "längere Lieferzeit für Kunden"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kartongrößen passend zum Inhalt",
+                  "weniger Luft, weniger Füllmaterial, mehr Pakete je Fahrt",
+                  "mehr Kartonsorten im Lager"
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohlinge aus Portugal kombiniert Lkw–Bahn",
+                  "weniger Emissionen auf der Langstrecke",
+                  "zwei bis drei Tage länger"
+                ]
+              },
+              {
+                "zellen": [
+                  "Druckfarben nur über Dienstleister mit Gefahrgutfreigabe",
+                  "Sicherheit und Rechtskonformität",
+                  "weniger Auswahl, teils höhere Preise"
+                ]
+              },
+              {
+                "zellen": [
+                  "Palettenladung mit Spanngurten und Antirutschmatten",
+                  "Ware kommt unbeschädigt an",
+                  "Material und Zeit beim Verladen"
+                ]
+              }
+            ],
+            "fazit": "Viele Maßnahmen sparen zugleich Kosten und Emissionen. Wo sie den Service verschlechtern, etwa durch längere Lieferzeiten, muss MAKEL Studio abwägen.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nachhaltigkeit bei Transporten beginnt mit der Frage, ob eine Fahrt nötig ist. Eine halbleere Lieferung jeden Tag verursacht mehr Emissionen als eine volle zweimal pro Woche. Für Boutiquen, die ihre Ware nicht am nächsten Tag brauchen, ist die Bündelung ein guter Kompromiss. Für Eilaufträge bleibt die schnelle Lieferung möglich, wird aber bewusst gewählt. Und bei Gefahrgut hat die Sicherheit immer Vorrang vor dem Preis.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Ladung muss so gesichert werden, dass sie auch bei Vollbremsung und Ausweichmanövern nicht verrutscht; verantwortlich sind neben Fahrer und Halter auch der Verlader. Gefährliche Güter, etwa bestimmte Druckfarben, Lösemittel oder Reinigungsmittel, unterliegen besonderen Vorschriften zu Klassifizierung, Verpackung, Kennzeichnung und Begleitpapieren; ob und wie sie gelten, wird anhand des Sicherheitsdatenblatts und der aktuellen Gefahrgutvorschriften geprüft, nicht aus dem Preis abgeleitet. Ressourcenschonend wird Transport durch gute Auslastung, Bündelung von Sendungen, passende Verkehrsträger und kurze Wege. Vernetzte Systeme (Sendungsverfolgung, digitale Frachtpapiere) verbessern Planung und Transparenz.",
-        "beispiele": [
-          "Paletten im Lkw mit Spanngurten und Antirutschmatten sichern.",
-          "Drei Teilsendungen an denselben Kunden zu einer Lieferung bündeln: weniger Fahrten, weniger Emissionen."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Gefahrgut richtig einstufen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ob ein Stoff als Gefahrgut gilt, ergibt sich aus seiner Einstufung im Sicherheitsdatenblatt. Für den Straßentransport gelten internationale Regeln, die regelmäßig überarbeitet werden. Deshalb wird nie aus dem Gedächtnis entschieden, sondern anhand der aktuellen Fassung und gegebenenfalls mit einem Gefahrgutbeauftragten.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Ein Lieferant soll Druckfarben mit lösemittelhaltigen Komponenten liefern. Deniz Aydın fragt nach dem Sicherheitsdatenblatt und klärt mit dem Lieferanten, ob die Sendung als Gefahrgut zu befördern ist und ob der Dienstleister dafür zugelassen ist. Erst dann wird bestellt.",
-        "typische_fehler": "Bei Gefahrstoffen nur auf den Preis schauen oder selbst eine Einstufung raten.",
         "verstaendnisfragen": [
-          "Wer ist neben dem Fahrer für die Ladungssicherung verantwortlich? Unter anderem der Verlader und der Halter.",
-          "Nenne zwei Wege zu ressourcenschonendem Transport. Zum Beispiel Sendungen bündeln und Fahrzeuge gut auslasten."
-        ],
-        "pruefungsbezug": "Sicherheits- und Nachhaltigkeitskriterien in eine Transportentscheidung einbeziehen.",
-        "merksatz": "Ladung sichern, Gefahrgut anhand aktueller Vorschriften prüfen, Transporte bündeln und auslasten."
+          {
+            "frage": "Wer ist für die Ladungssicherung verantwortlich?",
+            "antwort": "Neben dem Fahrer auch der Verlader und der Halter des Fahrzeugs.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Wie lassen sich Transporte nachhaltiger gestalten?",
+            "antwort": "Durch Bündelung, bessere Auslastung, passende Kartongrößen und die Wahl umweltfreundlicherer Verkehrsträger.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

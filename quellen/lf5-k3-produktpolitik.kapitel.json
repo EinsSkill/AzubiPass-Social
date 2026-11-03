@@ -6,66 +6,339 @@
   "untertitel": "Vom Ziel zur Maßnahme — und was mit dem Produkt selbst geschieht.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "c1",
-        "vorauswissen": [
-          "Marketingmaßnahmen sollen einen konkreten Zweck erfüllen.",
-          "Ein Ziel muss später überprüfbar sein."
+        "darstellung": "vollfassung",
+        "ziel": "Du baust eine Marketingkonzeption von einem überprüfbaren Ziel über die Strategie bis zu konkreten Maßnahmen auf und begründest jede Stufe aus der vorherigen.",
+        "vorwissen_kurz": "Marketing richtet das ganze Unternehmen an den Bedürfnissen des Marktes aus, nicht nur die Werbung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Wunsch zum Plan",
+            "id": "c1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "„Wir wollen in den Niederlanden bekannter werden“ ist ein Wunsch, kein Ziel. Eine **Marketingkonzeption** macht daraus einen Plan: Zuerst wird festgelegt, was bis wann erreicht werden soll. Dann wird der grundsätzliche Weg gewählt. Erst danach folgen die einzelnen Maßnahmen. So lässt sich später prüfen, ob die Maßnahmen gewirkt haben.",
+            "id": "c1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "MAKELs Konzeption für die Benelux-Länder",
+            "id": "c1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Inhalt",
+              "Begründung aus der Stufe davor"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Ausgangslage",
+                  "3 % des Umsatzes mit Händlern in den Benelux-Ländern; Anfragen von dort steigen",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ziel",
+                  "Händlerumsatz in den Benelux-Ländern bis Ende 2027 von 480.000 € auf 800.000 € steigern",
+                  "messbar, mit Zeitraum"
+                ]
+              },
+              {
+                "zellen": [
+                  "Zielgruppe",
+                  "inhabergeführte Streetwear-Läden in Großstädten",
+                  "passen zu Preisniveau und Stil"
+                ]
+              },
+              {
+                "zellen": [
+                  "Strategie",
+                  "Händlergeschäft statt eigener Läden; Abgrenzung über Design und Nachhaltigkeit statt über Preis",
+                  "eigene Läden wären zu teuer und riskant"
+                ]
+              },
+              {
+                "zellen": [
+                  "Maßnahmen",
+                  "Messeauftritt in Amsterdam, englische Händlerunterlagen, Mindestbestellmenge für Neukunden senken, Lieferung DAP",
+                  "jede Maßnahme dient der Gewinnung von Händlern"
+                ]
+              }
+            ],
+            "fazit": "Jede Stufe beantwortet eine Frage, die die vorherige offen ließ. Wer mit dem Messeauftritt angefangen hätte, wüsste nicht, ob er sich lohnt.",
+            "id": "c1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "c1-b2"
+          }
         ],
-        "erklaerung": "Die Marketingkonzeption folgt der Reihenfolge Ziel, Strategie, Maßnahme. Ein Marketingziel braucht eine Größe, eine Zielhöhe und eine Frist. Erst wenn klar ist, was bis wann erreicht werden soll, lässt sich eine passende Strategie wählen und eine konkrete Maßnahme beurteilen.",
-        "beispiele": [
-          "‚Bekannter werden‘ ist zu unbestimmt; ein Ziel mit Größe, Höhe und Frist kann später an einer konkreten Entwicklung geprüft werden.",
-          "Eine Maßnahme wie eine Werbeaktion wird erst sinnvoll, wenn sie aus einer zuvor festgelegten Strategie und einem überprüfbaren Ziel folgt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Situationsanalyse vor dem Ziel",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bevor ein Ziel festgelegt wird, braucht es eine Analyse: Wo stehen wir, was können wir gut, was weniger, welche Chancen und Risiken bietet der Markt? Dafür wird oft eine SWOT-Analyse genutzt, die Stärken, Schwächen, Chancen und Gefahren gegenüberstellt. Die Marktforschung liefert die Daten dafür.",
+                "id": "c1-d1-p1"
+              }
+            ],
+            "id": "c1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Team möchte den Absatz erhöhen und schlägt sofort eine Anzeige vor. Zuerst wird das Ziel mit Größe, Höhe und Frist formuliert. Dann wird die Strategie festgelegt und erst anschließend die Anzeige als Maßnahme ausgewählt. Am Ende wird geprüft, ob die Zielgröße im vorgesehenen Zeitraum erreicht wurde.",
-        "typische_fehler": "Eine Maßnahme wird ohne Ziel gestartet oder der Erfolg nur mit ‚war sichtbar‘ bewertet. Außerdem werden Strategie und Maßnahme als Synonyme behandelt.",
         "verstaendnisfragen": [
-          "Welche drei Bestandteile braucht ein Marketingziel? Größe, Höhe und Frist.",
-          "Was kommt in der Konzeption zuerst? Das Ziel, danach Strategie und Maßnahme."
-        ],
-        "pruefungsbezug": "Prüfe Zielaufgaben mit der Dreierfrage: Was wird gemessen, welcher Wert soll erreicht werden und bis wann?",
-        "merksatz": "Erst das überprüfbare Ziel, dann die Strategie, dann die Maßnahme."
+          {
+            "frage": "Warum ist „mehr Händler in den Niederlanden gewinnen“ kein gutes Marketingziel?",
+            "antwort": "Es fehlen Ausmaß und Zeitraum. Niemand kann prüfen, ob das Ziel erreicht wurde. Ein gutes Ziel nennt eine messbare Größe, etwa Umsatz oder Zahl der Händler, und einen Termin.",
+            "id": "c1-f1"
+          },
+          {
+            "frage": "Wie hängen Strategie und Maßnahmen zusammen?",
+            "antwort": "Die Strategie legt den grundsätzlichen Weg fest, die Maßnahmen setzen ihn um. Entscheidet sich MAKEL für Händlergeschäft statt eigener Läden, sind Messeauftritt und Händlerunterlagen passende Maßnahmen, die Anmietung einer Ladenfläche dagegen nicht.",
+            "id": "c1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "c2",
-        "vorauswissen": [
-          "Marketing besteht aus mehreren aufeinander abgestimmten Instrumenten.",
-          "Produkt, Preis, Weg und Kommunikation beeinflussen sich gegenseitig."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Maßnahmen den vier Instrumenten des Marketing-Mix zu und stimmst sie so aufeinander ab, dass sie dasselbe Ziel unterstützen.",
+        "vorwissen_kurz": "Kunden entscheiden über Produkt, Preis, Erreichbarkeit und Information zugleich. Passt eines nicht, wirkt der Rest schwächer.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Werkzeuge, ein Ziel",
+            "id": "c2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Maßnahmen einer Marketingkonzeption stammen aus vier Bereichen, dem {{begriff:marketing-mix|Marketing-Mix}}. Die **Produktpolitik** gestaltet das Angebot, die **Preispolitik** Preise und Konditionen, die **Distributionspolitik** den Weg zum Kunden, die **Kommunikationspolitik** die Information und Ansprache. Entscheidend ist, dass alle vier zueinander passen.",
+            "id": "c2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Mix für die Benelux-Händler",
+            "id": "c2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Instrument",
+              "Maßnahme",
+              "Passt zum Ziel, weil …"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Produkt",
+                  "eigene Benelux-Kapsel mit fünf Modellen in Größen nach europäischer Passform",
+                  "die Händler eine überschaubare, gut verkäufliche Auswahl wünschen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Preis",
+                  "Händlerpreise mit Staffelrabatt ab 200 Stück; Zahlungsziel 30 Tage",
+                  "kleine Läden mit geringer Erstbestellung einsteigen können"
+                ]
+              },
+              {
+                "zellen": [
+                  "Distribution",
+                  "Lieferung DAP an den Laden, Versand über einen Spediteur aus Düsseldorf",
+                  "Händler keine eigene Logistik organisieren müssen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kommunikation",
+                  "Messeauftritt, englische Lookbooks, Besuche des Außendienstes",
+                  "Händler MAKEL persönlich kennenlernen"
+                ]
+              }
+            ],
+            "fazit": "Ein hochwertiges Produkt zu einem Billigpreis über einen Discounter zu bewerben, würde sich selbst widersprechen. Alle vier Instrumente erzählen hier dieselbe Geschichte: hochwertige Streetwear für kleine, stilbewusste Läden.",
+            "id": "c2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "c2-b2"
+          }
         ],
-        "erklaerung": "Der Marketing-Mix besteht aus Produkt-, Preis-, Distributions- und Kommunikationspolitik, den vier P. Produktpolitik gestaltet das Angebot, Preispolitik die Konditionen, Distributionspolitik den Weg zum Kunden und Kommunikationspolitik die Ansprache. Eine Maßnahme in einem Bereich kann die anderen Bereiche beeinflussen.",
-        "beispiele": [
-          "Eine Produktvariante braucht eine Preisentscheidung, einen passenden Vertriebsweg und eine Information der Kunden.",
-          "Ein günstiger Preis hilft wenig, wenn das Produkt nicht erreichbar ist oder die Kommunikation die Zielgruppe nicht erreicht."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Händler und Endkunden",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Für Endkunden im Onlineshop sieht der Mix anders aus: Produkt mit Größenberatung, Preis inklusive Umsatzsteuer, Lieferung nach Hause mit Rückgabemöglichkeit, Kommunikation über eigene Kanäle und Newsletter. Dasselbe Unternehmen braucht für verschiedene Zielgruppen verschiedene Mischungen.",
+                "id": "c2-d1-p1"
+              }
+            ],
+            "id": "c2-d1"
+          }
         ],
-        "fallbeispiel": "Für ein neues Produkt werden vier Fragen gestellt: Was wird angeboten? Zu welchem Preis? Über welchen Weg erreicht es den Kunden? Wie wird darüber informiert? Die Antworten ordnen Produkt-, Preis-, Distributions- und Kommunikationspolitik zu. Erst das Zusammenspiel ergibt den Marketing-Mix.",
-        "typische_fehler": "Marketing wird nur mit Werbung gleichgesetzt oder die vier P werden als unabhängige Einzelentscheidungen behandelt. Außerdem wird Distribution mit Kommunikation verwechselt.",
         "verstaendnisfragen": [
-          "Welche vier Instrumente gehören zum Marketing-Mix? Produkt, Preis, Distribution und Kommunikation.",
-          "Welche Frage beantwortet die Distributionspolitik? Wie das Angebot zum Kunden gelangt."
-        ],
-        "pruefungsbezug": "Ordne Fallmaßnahmen nach dem Gegenstand zu: Angebot, Preis, Weg oder Ansprache. Begründe bei einer Konzeption das Zusammenspiel.",
-        "merksatz": "Die vier P decken ab, was angeboten, bezahlt, verteilt und kommuniziert wird."
+          {
+            "frage": "Ein Staffelrabatt ab 200 Stück — zu welchem Instrument gehört er?",
+            "antwort": "Zur Preispolitik, genauer zur Konditionenpolitik. Er verändert, was der Händler je Stück bezahlt.",
+            "id": "c2-f1"
+          },
+          {
+            "frage": "Warum reicht ein gutes Produkt allein nicht?",
+            "antwort": "Kunden müssen es kennen, es zu einem passenden Preis bekommen und es dort kaufen können, wo sie einkaufen. Fehlt eines davon, verkauft sich auch ein gutes Produkt schlecht.",
+            "id": "c2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "c3",
-        "vorauswissen": [
-          "Ein Produkt kann sich im Zeitverlauf verändern.",
-          "Sortimente bestehen aus Warengruppen und Varianten."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Innovation, Variation, Differenzierung und Elimination, ordnest Produkte im Lebenszyklus ein, leitest passende Maßnahmen ab und beschreibst ein Sortiment nach Breite und Tiefe.",
+        "vorwissen_kurz": "Produkte haben ein Leben: Sie werden eingeführt, wachsen, verdienen Geld und verlieren irgendwann an Bedeutung.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was mit dem Angebot geschieht",
+            "id": "c3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:produktpolitik|Produktpolitik}} entscheidet, welche Produkte ein Unternehmen anbietet und wie es sie verändert. Neue Produkte kommen hinzu, bestehende werden verbessert, Varianten ergänzt, und schwache Produkte werden aus dem Sortiment genommen. Welche Maßnahme passt, hängt davon ab, wo ein Produkt in seinem Lebenszyklus steht.",
+            "id": "c3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "c3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Vier Entscheidungen bei MAKEL",
+            "id": "c3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Entscheidung",
+              "Maßnahme",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Erstmals Taschen aus Reststoffen ins Sortiment",
+                  "Innovation",
+                  "neue Produktgruppe, nutzt Stoffreste aus der Näherei"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hoodie „Kyoto“ künftig nur noch aus Bio-Baumwolle, die alte Ausführung entfällt",
+                  "Variation",
+                  "ein verändertes Produkt ersetzt das bisherige"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Kyoto“ zusätzlich als Oversize-Schnitt neben dem normalen",
+                  "Differenzierung",
+                  "eine Variante tritt neben das bestehende Produkt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hemden werden aus dem Sortiment genommen",
+                  "Elimination",
+                  "Umsatz seit zwei Jahren rückläufig, Deckungsbeitrag gering"
+                ]
+              }
+            ],
+            "fazit": "Variation und Differenzierung unterscheiden sich am Ergebnis: danach ein Produkt oder zwei.",
+            "id": "c3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wann welche Maßnahme sinnvoll ist, zeigt der {{begriff:produktlebenszyklus|Produktlebenszyklus}}.",
+            "id": "c3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "c3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für MAKEL heißt das: Die Taschen sind in der Einführungsphase und brauchen Werbung. Der Hoodie „Kyoto“ ist in der Reife und verdient das Geld, mit dem Neues finanziert wird. Die Hemden sind im Rückgang; MAKEL hat sich gegen einen Relaunch entschieden. So entsteht ein ausgewogenes Sortiment, in dem nicht alle Produkte gleichzeitig altern.",
+            "id": "c3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "c3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKELs Sortiment umfasst fünf Warengruppen — Hoodies, Shirts, Hosen, Hemden und Accessoires —, ist also eher schmal. Innerhalb der Hoodies gibt es viele Modelle, Farben und Größen; das Sortiment ist dort tief. Das passt zu einem spezialisierten Label: Kundinnen finden nicht alles, aber im Kernbereich eine große Auswahl.",
+            "id": "c3-p4"
+          }
         ],
-        "erklaerung": "Produktpolitik umfasst Innovation, Variation, Differenzierung und Elimination. Bei der Variation wird das alte Produkt ersetzt; bei der Differenzierung steht eine Variante daneben. Der Produktlebenszyklus führt von Einführung über Wachstum und Reife zu Sättigung und Rückgang. Sortimentsbreite meint die Zahl der Warengruppen, Sortimentstiefe die Varianten je Gruppe.",
-        "beispiele": [
-          "Wird eine bisherige Produktversion durch eine neue ersetzt, liegt Variation vor; bleibt sie bestehen und kommt eine Variante hinzu, liegt Differenzierung vor.",
-          "Ein Sortiment mit vielen Warengruppen ist breit; viele Varianten innerhalb einer Warengruppe machen es tief."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Lebenszyklus und Preis",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "In der Einführung sind die Kosten hoch und die Mengen klein; in der Reife sinken die Stückkosten durch größere Mengen. Deshalb verbindet die Produktpolitik ihre Entscheidungen eng mit der Preispolitik: Ein Produkt im Rückgang mit sinkendem Deckungsbeitrag ist ein Kandidat für die Elimination.",
+                "id": "c3-d1-p1"
+              },
+              {
+                "typ": "verweis",
+                "ziele": [
+                  "lf10:k5-b1"
+                ],
+                "text": "Deckungsbeitrag als Entscheidungsgrundlage",
+                "id": "c3-d1-v1"
+              }
+            ],
+            "id": "c3-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb ersetzt sein bisheriges Produkt vollständig durch eine neue Version. Das ist Variation, nicht Differenzierung. Wird zusätzlich zur bisherigen Version eine weitere Ausführung angeboten, wäre es Differenzierung. Für die Lebenszyklusplanung wird anschließend geprüft, ob sich das Produkt in Einführung, Wachstum, Reife, Sättigung oder Rückgang befindet.",
-        "typische_fehler": "Variation und Differenzierung werden vertauscht. Ebenso wird angenommen, der Gewinn sei in der Sättigung am höchsten; der vorhandene Inhalt ordnet den höchsten Gewinn der Reife zu.",
         "verstaendnisfragen": [
-          "Was ist der Prüfstein zwischen Variation und Differenzierung? Wird das alte Produkt ersetzt oder bleibt es neben einer Variante bestehen?",
-          "Was beschreibt Sortimentsbreite und -tiefe? Breite = Zahl der Warengruppen, Tiefe = Zahl der Varianten je Gruppe."
-        ],
-        "pruefungsbezug": "Ordne Produktmaßnahmen über die Frage ‚ein Produkt oder zwei?‘ und Lebenszyklusaufgaben über die fünf Phasen zu.",
-        "merksatz": "Variation ersetzt, Differenzierung ergänzt; Breite zählt Gruppen, Tiefe zählt Varianten."
+          {
+            "frage": "Ein neuer Hoodie ersetzt das Vorgängermodell vollständig. Welche Maßnahme ist das?",
+            "antwort": "Eine Produktvariation, weil das veränderte Produkt das alte ablöst und danach nur eines im Sortiment ist.",
+            "id": "c3-f1"
+          },
+          {
+            "frage": "Warum ist die Reifephase für ein Unternehmen so wichtig?",
+            "antwort": "In ihr ist der Gewinn am höchsten: Das Produkt ist bekannt, die Mengen sind groß, Werbe- und Einführungskosten sind gesunken. Mit diesem Geld werden neue Produkte entwickelt und eingeführt.",
+            "id": "c3-f2"
+          }
+        ]
       }
     ]
   },

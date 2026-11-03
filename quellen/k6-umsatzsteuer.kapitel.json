@@ -6,94 +6,540 @@
   "untertitel": "Durchlaufprinzip, Vorsteuer, Zahllast — und warum der Betrieb nur Kassierer ist.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "einleitung": "Die Umsatzsteuer lässt sich auf zwei Ebenen verstehen: wirtschaftlich trägt sie am Ende der private Verbrauch, buchhalterisch wird sie zwischen Einkauf, Verkauf und Finanzamt weitergeleitet. Wer Vorsteuer und Umsatzsteuer als Konten einordnet, kann auch die Zahllast sicher herleiten.",
     "abschnitte": [
       {
         "abschnitt": "f1",
-        "vorauswissen": [
-          "Ein Betrieb kauft Waren ein und verkauft sie weiter.",
-          "Aufwendungen und Erträge werden von durchlaufenden Beträgen unterschieden."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst an einer Lieferkette, wie die Umsatzsteuer durchläuft, wer sie wirtschaftlich trägt und warum sie für den Betrieb kein Aufwand ist.",
+        "vorwissen_kurz": "Wertschöpfung ist der Wert, den ein Betrieb einer Ware durch seine eigene Arbeit hinzufügt: Verkaufspreis netto minus Einkaufspreis netto.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eine Steuer, die durchläuft",
+            "id": "f1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Umsatzsteuer soll wirtschaftlich der Endverbraucher tragen. Erhoben wird sie aber auf jeder Stufe einer Lieferkette. Jeder Unternehmer stellt seinem Kunden Umsatzsteuer in Rechnung und führt sie an das Finanzamt ab. Gleichzeitig darf er die Steuer, die ihm seine Lieferer berechnet haben, als {{begriff:vorsteuer|Vorsteuer}} abziehen. Am Ende zahlt jeder Betrieb nur die Steuer auf seine eigene Wertschöpfung. Die volle Steuer auf den Endpreis trägt der Privatkunde, weil er keine Vorsteuer abziehen kann.",
+            "id": "f1-p1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Lieferkette eines Hoodies",
+            "id": "f1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Verkauf netto",
+              "Umsatzsteuer 19 %",
+              "Vorsteuer",
+              "An das Finanzamt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Stoffhersteller an MAKEL",
+                  "1.000 €",
+                  "190 €",
+                  "0 €",
+                  "190 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "MAKEL an Händler",
+                  "2.000 €",
+                  "380 €",
+                  "190 €",
+                  "190 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Händler an Privatkunden",
+                  "3.000 €",
+                  "570 €",
+                  "380 €",
+                  "190 €"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "**Summe**",
+                  "",
+                  "",
+                  "",
+                  "**570 €**"
+                ],
+                "mono": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "fazit": "Das Finanzamt erhält insgesamt 570 € — genau 19 % des Endpreises von 3.000 € netto. Diese 570 € hat am Ende der Privatkunde bezahlt.",
+            "id": "f1-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jede Stufe hat 1.000 € Wert hinzugefügt und dafür 190 € abgeführt. Für MAKEL selbst ist die Steuer neutral: Es hat 380 € vom Händler bekommen, 190 € an den Stoffhersteller gezahlt und 190 € an das Finanzamt abgeführt. Weder Gewinn noch Verlust ist dadurch entstanden. Deshalb ist die Umsatzsteuer für den Betrieb kein Aufwand und kein Ertrag, sondern ein durchlaufender Posten. Sie wird über Bestandskonten gebucht, nicht über die GuV.",
+            "id": "f1-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "f1-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "vertiefung-1",
+            "id": "f1-b2"
+          }
         ],
-        "erklaerung": "Bei einem umsatzsteuerpflichtigen Betrieb gehört die Umsatzsteuer wirtschaftlich nicht zum eigenen Ergebnis. Beim Verkauf wird sie vom Kunden vereinnahmt und später an das Finanzamt weitergeleitet. Beim Einkauf gezahlte Vorsteuer wird als Anspruch gegenüber dem Finanzamt berücksichtigt. Dadurch bleibt im Betrieb nur die Steuer auf dem eigenen Wertschöpfungsanteil hängen, während der Endverbraucher keine Vorsteuer zurückholen kann.",
-        "beispiele": [
-          "Beim Einkauf von Waren für 1.000 € netto und 190 € Vorsteuer schuldet der Betrieb dem Lieferanten 1.190 €, kann die 190 € aber als Vorsteuer berücksichtigen.",
-          "Beim Verkauf für 2.000 € netto kommen 380 € Umsatzsteuer hinzu. Der Kunde zahlt 2.380 €, aber nur 2.000 € sind Umsatzerlös des Betriebs."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn die Kette reißt",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Kauft ein Unternehmer etwas, das er nicht für sein Unternehmen nutzt, darf er die Vorsteuer nicht abziehen. Gleiches gilt für Kleinunternehmer und für steuerfreie Umsätze wie die Leistungen eines Arztes: Wer selbst keine Umsatzsteuer berechnet, kann in der Regel auch keine Vorsteuer abziehen. Für diese Betriebe wird die gezahlte Steuer zu einem echten Kostenbestandteil.",
+                "id": "f1-d1-p1"
+              }
+            ],
+            "id": "f1-d1"
+          }
         ],
-        "fallbeispiel": "Ein Betrieb nimmt 2.380 € ein und gibt beim Einkauf 1.190 € aus. Für das Ergebnis zählt der Nettobetrag: 2.000 € Verkauf minus 1.000 € Einkauf = 1.000 € Wertschöpfung. Die 380 € Umsatzsteuer und 190 € Vorsteuer laufen über eigene Konten; die Differenz von 190 € wird an das Finanzamt abgeführt.",
-        "typische_fehler": "Der Bruttobetrag wird als Umsatz oder Aufwand behandelt. Ebenso wird angenommen, dass Umsatzsteuer über die GuV läuft. Im beschriebenen System gehören die Steuerbeträge auf Bestandskonten, weil sie Forderung oder Verbindlichkeit gegenüber dem Finanzamt darstellen.",
         "verstaendnisfragen": [
-          "Warum ist Umsatzsteuer für den Betrieb kein Aufwand? Weil sie vom Kunden vereinnahmt und als Betrag gegenüber dem Finanzamt weitergeleitet wird.",
-          "Wer trägt die Steuer am Ende der Lieferkette wirtschaftlich? Der Endverbraucher, der keine Vorsteuer zurückholen kann."
-        ],
-        "pruefungsbezug": "Bei Sachverhalten Brutto, Netto, Vorsteuer und Umsatzsteuer sprachlich sauber trennen. Die Leitfrage lautet: Gehört der Betrag zum eigenen Ergebnis oder wird er nur für das Finanzamt durchgeleitet?",
-        "merksatz": "Für den Betrieb ist Umsatzsteuer ein durchlaufender Posten; der eigene Erfolg wird netto betrachtet."
+          {
+            "frage": "Der Händler hat 3.570 € vom Kunden eingenommen und 2.380 € an MAKEL gezahlt. Wie hoch ist sein Ergebnis aus diesem Geschäft?",
+            "antwort": "3.000 € − 2.000 € = 1.000 € Rohertrag. Die Umsatzsteuer von 570 € und die Vorsteuer von 380 € beeinflussen das Ergebnis nicht; die Differenz von 190 € leitet er an das Finanzamt weiter.",
+            "id": "f1-f1"
+          },
+          {
+            "frage": "Warum trägt der Privatkunde die gesamte Steuer, obwohl jede Stufe nur einen Teil abführt?",
+            "antwort": "Er zahlt den Bruttopreis von 3.570 € und kann keine Vorsteuer abziehen. Die 570 € Steuer darin sind die Summe aller Teilbeträge, die die Betriebe abgeführt haben.",
+            "id": "f1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "f2",
-        "vorauswissen": [
-          "Aktivkonten wachsen im Soll, Passivkonten im Haben.",
-          "Der Bruttobetrag enthält Nettobetrag und Steuer."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest Vorsteuer und Umsatzsteuer als Forderung bzw. Verbindlichkeit gegenüber dem Finanzamt ein, rechnest zwischen Netto und Brutto um und wendest den richtigen Steuersatz an.",
+        "vorwissen_kurz": "Der Steuersatz bezieht sich immer auf den Nettobetrag. Brutto ist Netto plus Steuer.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zwei Konten, zwei Richtungen",
+            "id": "f2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Beim Einkauf zahlt MAKEL dem Lieferer die Umsatzsteuer mit, darf sie aber vom Finanzamt zurückverlangen. Für MAKEL ist sie deshalb eine **Forderung** gegenüber dem Finanzamt: Konto Vorsteuer, ein Aktivkonto, Zugänge im Soll. Beim Verkauf kassiert MAKEL die Umsatzsteuer vom Kunden, muss sie aber an das Finanzamt weiterleiten. Für MAKEL ist sie eine **Verbindlichkeit**: Konto Umsatzsteuer, ein Passivkonto, Zugänge im Haben. Das ist keine Sonderregel, sondern die bekannte Logik von Aktiv- und Passivkonten.",
+            "id": "f2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Netto und Brutto sicher umrechnen",
+            "id": "f2-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Bruttobetrag ist 119 % des Nettobetrags (bei 19 %). Deshalb rechnest du:",
+            "id": "f2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Gegeben",
+              "Gesucht",
+              "Rechnung",
+              "Beispiel"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Netto",
+                  "Steuer",
+                  "Netto × 0,19",
+                  "1.000 € × 0,19 = 190 €"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Netto",
+                  "Brutto",
+                  "Netto × 1,19",
+                  "1.000 € × 1,19 = 1.190 €"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Brutto",
+                  "Netto",
+                  "Brutto ÷ 1,19",
+                  "1.190 € ÷ 1,19 = 1.000 €"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Brutto",
+                  "Steuer",
+                  "Brutto ÷ 1,19 × 0,19",
+                  "1.190 € ÷ 1,19 × 0,19 = 190 €"
+                ],
+                "mono": [
+                  2,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Bei 7 % gilt dasselbe mit 1,07. Vom Bruttobetrag werden nie einfach 19 % abgezogen.",
+            "id": "f2-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Warum nicht 19 % vom Brutto? Die 19 % beziehen sich auf den Nettobetrag. 19 % von 1.190 € sind 226,10 €, und 1.190 − 226,10 = 963,90 € wäre ein falscher Nettobetrag. Die Steuer wäre um 36,10 € zu hoch angesetzt.",
+            "id": "f2-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "f2-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welcher Steuersatz gilt?",
+            "id": "f2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Regelsatz beträgt 19 %. Für bestimmte Güter gilt der ermäßigte Satz von 7 %, etwa für die meisten Lebensmittel, Bücher und Zeitungen, den öffentlichen Nahverkehr und seit 1. Januar 2026 für Speisen in der Gastronomie (Getränke dort weiterhin 19 %). Manche Umsätze sind steuerfrei, zum Beispiel die Ausfuhr in Länder außerhalb der EU, ärztliche Heilbehandlungen oder die Vermietung von Wohnraum. Steuerfrei heißt: Es wird keine Umsatzsteuer berechnet — meist darf der Unternehmer dann aber auch die zugehörige Vorsteuer nicht abziehen. Die Ausfuhr ist eine Ausnahme: Hier bleibt der Vorsteuerabzug erhalten.",
+            "id": "f2-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-2",
+            "id": "f2-b3"
+          }
         ],
-        "erklaerung": "Vorsteuer und Umsatzsteuer sind keine zwei Namen für dasselbe Konto. Vorsteuer entsteht beim Einkauf und stellt eine Forderung gegenüber dem Finanzamt dar; sie steht daher auf der Aktivseite und nimmt im Soll zu. Umsatzsteuer entsteht beim Verkauf und ist eine Verbindlichkeit; sie steht auf der Passivseite und nimmt im Haben zu.",
-        "beispiele": [
-          "Bei 1.190 € brutto und 19 % Steuer wird der Nettobetrag durch 1,19 berechnet: 1.190 € ÷ 1,19 = 1.000 €; die Steuer beträgt 190 €.",
-          "Bei einem steuerpflichtigen Nettoverkauf von 2.000 € mit 19 % entstehen 380 € Umsatzsteuer und damit 2.380 € Forderung oder Zahlungseingang."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Rechnungen mit zwei Steuersätzen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Verkauft MAKEL auf einer Rechnung ein Buch (7 %) und einen Hoodie (19 %), wird die Steuer getrennt nach Sätzen ausgewiesen. Buch 20 € netto → 1,40 € Steuer; Hoodie 50 € netto → 9,50 € Steuer. Rechnungsbetrag 70 € netto + 10,90 € Steuer = 80,90 €. Eine Rechnung muss die Steuer je Steuersatz getrennt ausweisen, damit der Empfänger die Vorsteuer richtig abziehen kann.",
+                "id": "f2-d1-p1"
+              }
+            ],
+            "id": "f2-d1"
+          }
         ],
-        "fallbeispiel": "Ein Bruttobetrag von 1.190 € enthält 19 % Umsatzsteuer. Brutto sind 119 % des Nettobetrags. Daher: 1.190 € ÷ 1,19 = 1.000 € netto. Die enthaltene Umsatzsteuer beträgt 1.190 € − 1.000 € = 190 €. Der Weg über Division ist notwendig, weil sich die 19 % auf den Nettobetrag beziehen.",
-        "typische_fehler": "19 % werden direkt vom Bruttobetrag abgezogen oder mit 0,81 multipliziert. Das würde die Steuer auf den falschen Grundwert beziehen. Außerdem wird Vorsteuer auf die Passivseite eingeordnet, obwohl sie eine Forderung ist.",
         "verstaendnisfragen": [
-          "Warum steht Vorsteuer im Soll? Sie ist ein Aktivkonto und damit eine Forderung gegenüber dem Finanzamt.",
-          "Warum wird bei der Bruttorechnung durch 1,19 geteilt? Weil der Bruttobetrag 119 % des Nettobetrags entspricht."
+          {
+            "frage": "Ein Kassenbon zeigt 53,50 € brutto für Bücher zu 7 %. Wie hoch sind Nettobetrag und Steuer?",
+            "antwort": "53,50 € ÷ 1,07 = 50,00 € netto; die Steuer beträgt 3,50 €.",
+            "id": "f2-f1"
+          },
+          {
+            "frage": "Warum steht die Vorsteuer auf der Aktivseite der Bilanz?",
+            "antwort": "Sie ist ein Anspruch gegenüber dem Finanzamt: MAKEL bekommt sie mit der nächsten Voranmeldung verrechnet oder erstattet. Ansprüche sind Vermögen und stehen deshalb auf der Aktivseite.",
+            "id": "f2-f2"
+          }
         ],
-        "pruefungsbezug": "Bei Brutto-Netto-Aufgaben zuerst den Steuersatz erkennen und die Bezugsgröße bestimmen. Bei 19 % durch 1,19, bei 7 % durch 1,07 teilen; die Differenz ist die enthaltene Steuer.",
-        "merksatz": "Vorsteuer: Einkauf, Aktivseite, Soll. Umsatzsteuer: Verkauf, Passivseite, Haben."
+        "quellen": [
+          {
+            "titel": "IHK Darmstadt: Reduzierter Mehrwertsteuersatz in der Gastronomie",
+            "url": "https://www.ihk.de/darmstadt/produktmarken/beraten-und-informieren/branchen/tourismus-in-suedhessen/informationen-fuer-gastronomie-und-hotellerie/reduzierter-mehrwertsteuersatz-6933470",
+            "bezug": "7 % auf Speisen ab 1.1.2026, Getränke 19 %; gelesen am 28.10.2026"
+          }
+        ]
       },
       {
         "abschnitt": "f3",
-        "vorauswissen": [
-          "Wareneinkäufe und Warenverkäufe werden netto auf Aufwand und Ertrag gebucht.",
-          "Die Steuerbeträge laufen über Vorsteuer und Umsatzsteuer."
+        "darstellung": "vollfassung",
+        "ziel": "Du buchst Einkauf, Verkauf und Zahllast mit Umsatzsteuer und berichtigst die Steuer bei Skonto, Rücksendung und Preisnachlass.",
+        "vorwissen_kurz": "Ändert sich das Entgelt nachträglich, ändert sich auch die Steuer darauf (§ 17 UStG).",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Ein vollständiger Steuerzyklus",
+            "id": "f3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Waren und Erlöse werden immer netto gebucht. Die Steuer bekommt ihr eigenes Konto. Am Ende des Voranmeldungszeitraums — meist ein Monat oder ein Quartal — werden Umsatzsteuer und Vorsteuer verrechnet. Die Differenz ist die {{begriff:zahllast|Zahllast}}. Sie wird bis zum 10. Tag nach Ende des Zeitraums an das Finanzamt angemeldet und gezahlt; mit einer Dauerfristverlängerung einen Monat später.",
+            "id": "f3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "f3-b1"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Nr.",
+              "Vorgang",
+              "Buchungssatz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1",
+                  "Wareneinkauf auf Ziel, 1.000 € netto",
+                  "Wareneinkauf 1.000 € und Vorsteuer 190 € an Verbindlichkeiten 1.190 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "2",
+                  "Warenverkauf auf Ziel, 2.000 € netto",
+                  "Forderungen 2.380 € an Umsatzerlöse 2.000 € und Umsatzsteuer 380 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "3",
+                  "Verrechnung und Zahlung der Zahllast",
+                  "Umsatzsteuer 380 € an Vorsteuer 190 € und Bank 190 €"
+                ]
+              }
+            ],
+            "fazit": "Zahllast = Umsatzsteuer − Vorsteuer = 380 € − 190 € = 190 €. Danach stehen beide Steuerkonten auf null.",
+            "id": "f3-t1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ist die Vorsteuer in einem Monat höher als die Umsatzsteuer — etwa weil MAKEL eine teure Maschine gekauft hat —, entsteht ein Vorsteuerüberhang. Dann erstattet das Finanzamt die Differenz. Am Jahresende wird eine Zahllast, die noch nicht bezahlt ist, als Verbindlichkeit in die Bilanz übernommen, ein Erstattungsanspruch als Forderung.",
+            "id": "f3-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "f3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn sich der Betrag nachträglich ändert",
+            "id": "f3-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Steuer folgt dem Entgelt. Zahlt MAKEL weniger, weil es Skonto zieht, darf es auch nur weniger Vorsteuer abziehen. Bekommt MAKEL weniger, weil ein Kunde Skonto zieht, schuldet es dem Finanzamt auch weniger Umsatzsteuer. Deshalb wird bei jeder nachträglichen Minderung die Steuer mitberichtigt.",
+            "id": "f3-p3"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Rechenweg beim Skonto: Erst den Skonto vom Bruttobetrag berechnen (2 % von 1.190 € = 23,80 €), dann in Netto und Steuer aufteilen (23,80 ÷ 1,19 = 20,00 € netto; 3,80 € Steuer). Kontrolle: Nach der Berichtigung stehen auf dem Vorsteuerkonto 190 − 3,80 = 186,20 €. Das sind genau 19 % des tatsächlich gezahlten Nettobetrags von 980 €.",
+            "id": "f3-p4"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "f3-b4"
+          }
         ],
-        "ablauf": [
-          "Beim Einkauf Nettowert und Vorsteuer im Soll, Bruttoschuld im Haben buchen.",
-          "Beim Verkauf Bruttoforderung im Soll, Nettoerlös und Umsatzsteuer im Haben buchen.",
-          "Umsatzsteuer mit Vorsteuer verrechnen.",
-          "Eine positive Differenz als Zahllast an das Finanzamt überweisen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Preisnachlass wegen eines Mangels",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Gewährt ein Lieferer wegen beschädigter Ware nachträglich 10 % Nachlass auf eine Rechnung über 500 € netto, sinkt das Entgelt um 50 € und die Vorsteuer um 9,50 €. Buchung: Verbindlichkeiten 59,50 € an Nachlässe 50,00 € und Vorsteuer 9,50 €. Wie beim Skonto wird nicht nur der Aufwand, sondern auch die Steuer korrigiert.",
+                "id": "f3-d1-p1"
+              }
+            ],
+            "id": "f3-d1"
+          },
+          {
+            "kategorie": "sonderfall",
+            "titel": "Vorsteuerabzug braucht eine ordnungsgemäße Rechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Vorsteuer darf MAKEL nur abziehen, wenn eine Rechnung mit den gesetzlichen Pflichtangaben vorliegt — etwa Name und Anschrift beider Seiten, Steuernummer, Rechnungsnummer, Leistungsdatum, Entgelt und Steuer getrennt nach Steuersätzen. Fehlt etwas Wesentliches, muss MAKEL eine berichtigte Rechnung anfordern. Für Kleinbetragsrechnungen bis 250 € brutto gelten erleichterte Anforderungen.",
+                "id": "f3-d2-p1"
+              }
+            ],
+            "id": "f3-d2"
+          }
         ],
-        "erklaerung": "Die Zahllast ist keine zusätzliche Steuer neben den bereits gebuchten Beträgen. Sie ist der Saldo aus Umsatzsteuer und Vorsteuer: Zahllast = Umsatzsteuer − Vorsteuer. Ist der Wert positiv, muss der Betrieb zahlen; ist er negativ, ergibt sich eine Erstattung.",
-        "beispiele": [
-          "Der Einkauf von 1.000 € netto erzeugt 190 € Vorsteuer und eine Verbindlichkeit von 1.190 €.",
-          "Der Verkauf von 2.000 € netto erzeugt 380 € Umsatzsteuer und eine Forderung von 2.380 €.",
-          "Zahlt der Betrieb eine Rechnung über 1.190 € mit 2 % Skonto, berichtigt er die Vorsteuer um 3,80 €: Skonto 23,80 € brutto = 20,00 € Nachlass + 3,80 € Vorsteuerkorrektur."
-        ],
-        "fallbeispiel": "Bilde den vollständigen Zyklus aus der Grafik: 1. Wareneinkauf 1.000 € + Vorsteuer 190 € an Verbindlichkeiten 1.190 €. 2. Forderungen 2.380 € an Umsatzerlöse 2.000 € + Umsatzsteuer 380 €. 3. Umsatzsteuer 380 € an Vorsteuer 190 € + Bank 190 €. Die Zahllast beträgt 380 € − 190 € = 190 €. Nach der Verrechnung stehen beide Steuerkonten auf null.",
-        "typische_fehler": "Die Umsatzsteuer wird auf den Warenaufwand aufgeschlagen oder die Vorsteuer als Aufwand behandelt. Auch die vollständige Forderung beziehungsweise Verbindlichkeit wird manchmal nicht ausgebucht. Bei Skonto, Rücksendung und Mängelnachlass wird außerdem häufig vergessen, die Steuer mitzuberichtigen: Ändert sich der Nettobetrag, ändert sich auch die Vorsteuer oder Umsatzsteuer.",
         "verstaendnisfragen": [
-          "Was bedeutet eine negative Zahllast? Die Vorsteuer ist höher als die Umsatzsteuer; gegenüber dem Finanzamt ergibt sich eine Erstattung.",
-          "Warum wird beim Verkauf die Forderung mit dem Bruttobetrag gebucht? Weil der Kunde Nettoerlös und Umsatzsteuer zusammen schuldet."
-        ],
-        "pruefungsbezug": "Buchungssätze immer in Netto, Steuer und Brutto zerlegen. Danach Zahllast mit der Formel prüfen und kontrollieren, ob die Soll- und Habenbeträge ausgeglichen sind.",
-        "merksatz": "Zahllast = Umsatzsteuer − Vorsteuer; gezahlt wird nur die Differenz."
+          {
+            "frage": "Ein Kunde zahlt eine Rechnung über 3.570 € brutto (19 %) unter Abzug von 2 % Skonto. Wie lautet die Buchung?",
+            "antwort": "Skonto 2 % von 3.570 € = 71,40 €, davon 60,00 € netto und 11,40 € Steuer. Zahlungseingang 3.498,60 €. Buchung: 2800 Bank 3.498,60 € und 5001 Erlösberichtigungen 60,00 € und 4800 Umsatzsteuer 11,40 € an 2400 Forderungen 3.570,00 €.",
+            "id": "f3-f1"
+          },
+          {
+            "frage": "Warum wird die Vorsteuer bei einer Einkaufsrücksendung im Haben gebucht?",
+            "antwort": "Beim Einkauf stand die Vorsteuer im Soll, weil ein Anspruch gegenüber dem Finanzamt entstand. Mit der Rücksendung entfällt dieser Anspruch in Höhe der zurückgeschickten Ware. Die Minderung eines Aktivkontos steht im Haben.",
+            "id": "f3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "f4",
-        "vorauswissen": [
-          "Die Kleinunternehmerregelung ist eine Ausnahme von der Regelbesteuerung.",
-          "Wer keine Umsatzsteuer ausweist, kann im Gegenzug keine Vorsteuer abziehen."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst, ob die Kleinunternehmerregelung nach § 19 UStG in der seit 2025 geltenden Fassung anwendbar ist, und wägst ab, ob sie sich lohnt.",
+        "vorwissen_kurz": "Ohne Umsatzsteuer auf den eigenen Rechnungen gibt es im Gegenzug auch keine Vorsteuer aus den Einkäufen zurück.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Weniger Bürokratie für kleine Betriebe",
+            "id": "f4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer nur geringe Umsätze hat, muss nach {{par:ustg-19|§ 19 UStG}} keine Umsatzsteuer berechnen. Seit 2025 gelten zwei Grenzen: Der Gesamtumsatz des Vorjahres darf 25.000 € nicht überschritten haben, und im laufenden Jahr darf er 100.000 € nicht überschreiten. Die Umsätze eines {{begriff:kleinunternehmer|Kleinunternehmers}} sind dann steuerfrei. Er stellt Rechnungen ohne Umsatzsteuer aus, gibt keine Umsatzsteuer-Voranmeldungen ab — und darf im Gegenzug keine Vorsteuer abziehen.",
+            "id": "f4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "f4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Fälle mit den neuen Grenzen",
+            "id": "f4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Betrieb",
+              "Vorjahr",
+              "Laufendes Jahr",
+              "Ergebnis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Grafikerin A",
+                  "22.000 €",
+                  "erwartet 30.000 €",
+                  "Kleinunternehmerin; ab dem Folgejahr nicht mehr, weil dann der Vorjahresumsatz über 25.000 € liegt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Fotograf B",
+                  "28.000 €",
+                  "erwartet 20.000 €",
+                  "Keine Kleinunternehmerregelung: Vorjahresumsatz über 25.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Shop C",
+                  "20.000 €",
+                  "bis Oktober 95.000 €, dann ein Auftrag über 8.000 €",
+                  "Bis 95.000 € steuerfrei; schon der Umsatz von 8.000 €, mit dem die 100.000 € überschritten werden, unterliegt der Regelbesteuerung"
+                ]
+              }
+            ],
+            "fazit": "Die 25.000 € beziehen sich auf das Vorjahr, die 100.000 € auf das laufende Jahr. Überschreiten der 100.000 € wirkt sofort.",
+            "id": "f4-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Lohnt sich die Regelung?",
+            "id": "f4-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Kleinunternehmer hat weniger Aufwand und kann Privatkunden einen günstigeren Endpreis bieten, weil keine 19 % auf den Preis kommen. Dafür bleibt die Vorsteuer aus seinen Einkäufen als Kosten bei ihm hängen. Verkauft er überwiegend an andere Unternehmen, bringt ihm die Regelung kaum etwas: Diese können die Vorsteuer ohnehin abziehen, der Bruttopreis ist ihnen egal. Und wer viel investiert, etwa in teure Geräte, verliert durch den fehlenden Vorsteuerabzug viel Geld. Er kann deshalb auf die Regelung verzichten (Option zur Regelbesteuerung) und ist dann für mindestens fünf Jahre daran gebunden.",
+            "id": "f4-p2"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "f4-b2"
+          }
         ],
-        "erklaerung": "Die vorhandene Gegenüberstellung zeigt den Zielkonflikt: Die Kleinunternehmerregelung reduziert Bürokratie und kann bei Privatkunden einen günstigeren Rechnungsbetrag ermöglichen. Dafür wird beim Einkauf die enthaltene Vorsteuer nicht erstattet, sodass sie als Teil der Einkaufskosten beim Betrieb bleibt. Bei der Regelbesteuerung werden Umsatzsteuer und Vorsteuer dagegen getrennt ausgewiesen und verrechnet.",
-        "beispiele": [
-          "Ein Kleinunternehmer weist auf seiner Rechnung keine Umsatzsteuer aus und erhält die beim Einkauf gezahlte Vorsteuer nicht zurück.",
-          "Ein regelbesteuerter Betrieb weist Umsatzsteuer aus, führt sie ab und kann die Vorsteuer aus betrieblichen Einkäufen berücksichtigen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Ein Rechenbeispiel zur Entscheidung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Grafikerin kauft im Jahr einen Rechner für 2.380 € brutto und verkauft Leistungen für 20.000 € an Privatkunden. Als Kleinunternehmerin verlangt sie 20.000 € und trägt den Rechner mit 2.380 €. Bei Regelbesteuerung müsste sie, um gleich günstig zu bleiben, 20.000 € brutto verlangen — dann bleiben ihr nur 16.806,72 € netto, sie bekommt aber 380 € Vorsteuer zurück. Bei Privatkunden ist die Kleinunternehmerregelung hier deutlich günstiger. Hätte sie nur Geschäftskunden, könnte sie 20.000 € netto plus Steuer verlangen, und die Regelbesteuerung wäre besser.",
+                "id": "f4-d1-p1"
+              }
+            ],
+            "id": "f4-d1"
+          }
         ],
-        "fallbeispiel": "Prüfe die beiden Grenzen aus dem Kapitel: Maßgeblich sind 25.000 € Vorjahresumsatz und 100.000 € im laufenden Jahr. Wer die Regelung nutzt, darf keine Umsatzsteuer auf Rechnungen ausweisen und hat keinen Vorsteuerabzug. Überschreitet der Sachverhalt die Voraussetzungen, muss die Regelbesteuerung geprüft werden. In einer Aufgabe sind deshalb Umsatzjahr, Umsatzhöhe und Rechnungsangabe getrennt zu lesen.",
-        "typische_fehler": "Kleinunternehmerstatus wird mit ‚keine Steuer auf der Rechnung, aber Vorsteuerabzug‘ verwechselt. Ebenso falsch ist, trotz Regelung Umsatzsteuer auszuweisen; der ausgewiesene Betrag wird dadurch nicht zu einem zulässigen Vorsteuerabzug.",
         "verstaendnisfragen": [
-          "Welcher zentrale Vorteil steht welchem Nachteil gegenüber? Weniger Bürokratie und ein günstigerer Bruttopreis stehen dem fehlenden Vorsteuerabzug gegenüber.",
-          "Welche Angaben müssen bei einer Aufgabe zuerst geprüft werden? Vorjahresumsatz, laufender Umsatz und ob Umsatzsteuer auf der Rechnung ausgewiesen wird."
+          {
+            "frage": "Ein Kleinunternehmer schreibt versehentlich „zzgl. 19 % USt“ auf seine Rechnung. Welche Folge hat das?",
+            "antwort": "Er schuldet den ausgewiesenen Steuerbetrag dem Finanzamt, obwohl er Kleinunternehmer ist. Einen Vorsteuerabzug erhält er dafür nicht. Er muss die Rechnung berichtigen, um die Steuerschuld wieder loszuwerden.",
+            "id": "f4-f1"
+          },
+          {
+            "frage": "Warum wirkt die Grenze von 100.000 € seit 2025 „sofort“?",
+            "antwort": "Früher wurde der Umsatz des laufenden Jahres nur geschätzt. Seit 2025 gilt der tatsächliche Umsatz: Wird die Grenze im Laufe des Jahres überschritten, unterliegt bereits der Umsatz, mit dem sie überschritten wird, der Regelbesteuerung — nicht erst das nächste Jahr.",
+            "id": "f4-f2"
+          }
         ],
-        "pruefungsbezug": "Die Kleinunternehmerregelung wird am sichersten über eine Vergleichstabelle gelöst: Umsatzgrenzen, Ausweis auf der Rechnung, Vorsteuerabzug, Vorteil und Nachteil nacheinander prüfen.",
-        "merksatz": "Keine Umsatzsteuer auf der Rechnung bedeutet bei der Kleinunternehmerregelung auch keinen Vorsteuerabzug."
+        "quellen": [
+          {
+            "titel": "§ 19 UStG",
+            "url": "https://www.gesetze-im-internet.de/ustg_1980/__19.html",
+            "bezug": "Kleinunternehmer: 25.000 € Vorjahr, 100.000 € laufendes Jahr, Fassung ab 1.1.2025"
+          }
+        ]
       }
     ]
   },
@@ -410,7 +856,7 @@
               "zellen": [
                 "Einkauf: Zahlung mit 2 % Skonto",
                 "Rechnung 1.190 € brutto · Skonto 23,80 € = 20,00 € netto + 3,80 € Steuer",
-                "4400 Verbindlichkeiten 1.190,00 € an 2800 Bank 1.166,20 € + 6001 Nachlässe 20,00 € + 2600 Vorsteuer 3,80 €"
+                "4400 Verbindlichkeiten 1.190,00 € an 2800 Bank 1.166,20 € + 6002 Nachlässe 20,00 € + 2600 Vorsteuer 3,80 €"
               ],
               "mono": [
                 2

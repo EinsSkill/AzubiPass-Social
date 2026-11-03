@@ -1,0 +1,161 @@
+{
+  "status": "Testplan, keine bestandenen Implementierungstests",
+  "faelle": [
+    {
+      "id": "A01",
+      "ausfuehrung": "Unverändertes Legacy-Kapitel aufrufen und ausführlich schalten",
+      "erwartung": "Alte Zusatzinhalte bleiben erreichbar; nichts wird durch ein neues Vollfassungsflag verschluckt.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A02",
+      "ausfuehrung": "Nur Pilot A öffnen",
+      "erwartung": "Nur der betreffende Abschnitt vertieft, andere bleiben kompakt.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A03",
+      "ausfuehrung": "Alle Hauptvertiefungen öffnen",
+      "erwartung": "Alle verfügbaren Haupttexte offen, Details/Antworten weiter geschlossen.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A04",
+      "ausfuehrung": "Einen von mehreren offenen Abschnitten schließen",
+      "erwartung": "Gemischter Zustand und Kapiteltext stimmen; andere bleiben unverändert.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A05",
+      "ausfuehrung": "Kapitel ohne Vertiefung öffnen",
+      "erwartung": "Kein wirkungsloser Schalter und keine Fehlermeldung.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A06",
+      "ausfuehrung": "Detail öffnen und Hauptabschnitt schließen/erneut öffnen",
+      "erwartung": "Detail wird geschlossen, Fokus bleibt sichtbar, Erklärung wieder lesbar.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A07",
+      "ausfuehrung": "Verständnisfrage lesen",
+      "erwartung": "Antwort zunächst verborgen, bewusst aufklappbar, keine neue Punktzahl.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A08",
+      "ausfuehrung": "In gemeinsamer Grafik Werte ändern und Ansicht wechseln",
+      "erwartung": "Werte und Grafikinstanz bleiben erhalten.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A09",
+      "ausfuehrung": "Vorhandenen Check beantworten und Ansicht mehrfach wechseln",
+      "erwartung": "Antwort/Punktzahl/IDs unverändert, keine doppelte Karte.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A10",
+      "ausfuehrung": "Bestehenden Lernstand mit Lesezeichen/Antworten laden",
+      "erwartung": "Kein Reset und keine unzulässige Migration allein wegen Ansichtsänderung.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A11",
+      "ausfuehrung": "Suchbegriff nur in Hauptvertiefung suchen",
+      "erwartung": "Treffer erscheint und öffnet sichtbaren passenden Abschnitt.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A12",
+      "ausfuehrung": "Begriff nur im optionalen Gegenfall suchen",
+      "erwartung": "Abschnitt und genau dieses Detail werden geöffnet.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A13",
+      "ausfuehrung": "Frage-Treffer öffnen",
+      "erwartung": "Frage sichtbar, Antwort weiter verborgen.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A14",
+      "ausfuehrung": "Alten Abschnittslink öffnen",
+      "erwartung": "Existierender Fragmentlink bleibt gültig.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A15",
+      "ausfuehrung": "Ungültige Detailkennung mit gültigem Abschnitt öffnen",
+      "erwartung": "Gültiger Abschnitt erreichbar, kein Absturz oder fremder Treffer.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A16",
+      "ausfuehrung": "Zwischen KfB und IK mit ähnlichen Kennungen wechseln",
+      "erwartung": "Inhalt und Zustand berufsrichtig, keine Vermischung.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A17",
+      "ausfuehrung": "Kapitel A/B wechseln und innerhalb der Seite zurückkehren",
+      "erwartung": "Sitzung erhält Öffnungen wie beschrieben, keine neue Cloudspeicherung.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A18",
+      "ausfuehrung": "Seite vollständig neu laden",
+      "erwartung": "Regulär kompakt; gezielter Deep-Link öffnet nur geforderte Ebenen.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A19",
+      "ausfuehrung": "In langer Vertiefung zurückschalten",
+      "erwartung": "Keine Orientierung am Seitenanfang und kein Fokus in verstecktem Inhalt.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A20",
+      "ausfuehrung": "Nur Tastatur/Screenreader verwenden",
+      "erwartung": "Alle Schalter erreichbar, Zustand/Name korrekt, Lesereihenfolge logisch.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A21",
+      "ausfuehrung": "320/375 px breite Ansicht und große Textdarstellung",
+      "erwartung": "Kein Seitenüberlauf; Tabelle separat bedienbar und Inhalt verständlich.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A22",
+      "ausfuehrung": "Bewegung reduzieren",
+      "erwartung": "Keine erzwungene Animation; Bedienung unverändert.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A23",
+      "ausfuehrung": "Nach gecachtem Erstaufruf offline gehen",
+      "erwartung": "Erklärungen, Tabellen und Details vollständig verfügbar.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A24",
+      "ausfuehrung": "Neues ungültiges Schema / doppelte ID / fehlender Abschnitt",
+      "erwartung": "Build bricht mit Datei/Abschnitt und verständlichem Fehler ab.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A25",
+      "ausfuehrung": "Alle drei Muster mit Voraussetzungen nachrechnen/prüfen",
+      "erwartung": "A: 922/930, ohne Skonto 940; B: passende Annahme vs. neuer Antrag; C: zuständigkeits- und situationsabhängige Einordnung.",
+      "status": "nicht_ausgefuehrt"
+    },
+    {
+      "id": "A26",
+      "ausfuehrung": "HTML/Index/Cache nach normalem Build vergleichen",
+      "erwartung": "Neue Inhalte und Suchziele synchron, kein veralteter Mischstand.",
+      "status": "nicht_ausgefuehrt"
+    }
+  ]
+}

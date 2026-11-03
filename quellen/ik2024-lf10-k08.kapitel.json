@@ -6,86 +6,457 @@
   "untertitel": "Kreditwürdigkeit nachweisen, Personal- und Realsicherheiten unterscheiden und die Haftung nach Rechtsform einbeziehen.",
   "minuten": 35,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Kennzahlen zeigen Struktur, Liquidität und Rentabilität (Kapitel 5).",
-          "Ein Liquiditätsplan zeigt künftige Zahlungen (Kapitel 6)."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst die Unterlagen für eine Kreditwürdigkeitsprüfung zusammen, erklärst, was die Bank daraus über Verlässlichkeit und Kapitaldienstfähigkeit ableitet, und begründest, wie gute Unterlagen die Konditionen beeinflussen.",
+        "vorwissen_kurz": "Bevor die Bank das Darlehen für die Laserstation zusagt, will sie wissen, ob MAKEL Studio es zurückzahlen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Bank wissen will",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die **Kreditwürdigkeit** hat zwei Seiten. Die persönliche fragt, ob die Geschäftsführung verlässlich und fachlich in der Lage ist, das Unternehmen zu führen. Die wirtschaftliche fragt, ob das Unternehmen Zins und Tilgung aus seinen laufenden Einnahmen tragen kann; das nennt man **Kapitaldienstfähigkeit**. Dazu kommen die Sicherheiten, auf die die Bank zurückgreifen kann, wenn es doch schiefgeht. Aus allem bildet die Bank ein Rating, das über Zusage und Zinssatz entscheidet.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kapitaldienstfähigkeit bei der Laserstation",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Planposten für das 1. Jahr",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "zusätzlicher Deckungsbeitrag aus gravierten Patches",
+                  "22.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "− zusätzliche Fixkosten: Wartung, Energie, Versicherung",
+                  "4.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "= verfügbarer Betrag für den Kapitaldienst",
+                  "18.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Kapitaldienst Ratendarlehen im 1. Jahr",
+                  "12.500 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Überdeckung",
+                  "5.500 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "Nach dieser Planung kann die Station ihren eigenen Kapitaldienst tragen und lässt noch einen Puffer. Die Bank prüft, ob die Planannahmen realistisch sind.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Bank glaubt nicht jeder Planzahl. Sie vergleicht den Plan mit den Jahresabschlüssen der letzten Jahre, fragt nach Aufträgen, die die Annahmen stützen, und rechnet mit Abschlägen. Tobias Renner bereitet deshalb eine vollständige Mappe vor: Abschlüsse, aktuelle betriebswirtschaftliche Auswertung, Liquiditätsplan und die Investitionsrechnung zur Laserstation. Je klarer das Bild, desto geringer das Risiko für die Bank — und desto günstiger der Zinssatz.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Bevor eine Bank einen Kredit gewährt, prüft sie die Kreditwürdigkeit (Bonität). Persönlich: Zuverlässigkeit, fachliche Qualifikation und unternehmerische Erfahrung der Geschäftsführung. Wirtschaftlich: Jahresabschlüsse der letzten Jahre, aktuelle betriebswirtschaftliche Auswertungen, Finanz- und Investitionsplan, Auftragslage, Sicherheiten. Daraus bildet sie ein internes Rating. Ein schlechteres Rating führt zu höheren Zinsen, zusätzlichen Sicherheiten oder einer Ablehnung. Wer vollständige, nachvollziehbare Unterlagen vorlegt, verhandelt besser.",
-        "beispiele": [
-          "MAKEL legt die Abschlüsse der letzten zwei Jahre, eine aktuelle Auswertung und den Liquiditätsplan für 12 Monate vor.",
-          "Ein Investitionsplan zeigt, wie die Laserstation zusätzliche Deckungsbeiträge erzielt."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Auskünfte von außen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben den eigenen Unterlagen holt die Bank Auskünfte ein, etwa bei Wirtschaftsauskunfteien, und wertet das bisherige Zahlungsverhalten auf den Konten von MAKEL Studio aus. Rücklastschriften oder dauerhaft ausgeschöpfte Kreditlinien verschlechtern das Bild.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner bereitet das Bankgespräch vor. Sandra Koslowski stellt eine Mappe zusammen: Jahresabschluss mit Kennzahlen, Liquiditätsplan, Angebote für die Laserstation und eine Rechnung, ab welcher Auftragsmenge sich die Investition trägt. Yuki Bergmann ergänzt, welche Großkunden Gravuren bereits angefragt haben.",
-        "typische_fehler": "Ohne Unterlagen ins Bankgespräch gehen und sich auf die gute Kundenbeziehung verlassen.",
         "verstaendnisfragen": [
-          "Was prüft eine Bank bei der Kreditwürdigkeit? Persönliche Eignung der Geschäftsführung und wirtschaftliche Lage anhand von Abschlüssen, Plänen und Sicherheiten.",
-          "Welche Folgen hat ein schlechtes Rating? Höhere Zinsen, mehr Sicherheiten oder Ablehnung."
-        ],
-        "pruefungsbezug": "Unterlagen für eine Kreditwürdigkeitsprüfung zusammenstellen.",
-        "merksatz": "Kreditwürdigkeit = persönlich (Geschäftsführung) + wirtschaftlich (Abschluss, Pläne, Sicherheiten) — gute Unterlagen, bessere Konditionen."
+          {
+            "frage": "Was bedeutet Kapitaldienstfähigkeit?",
+            "antwort": "Dass das Unternehmen Zins und Tilgung aus seinen laufenden Einnahmen bezahlen kann.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Warum verbessern vollständige Unterlagen die Konditionen?",
+            "antwort": "Weil die Bank das Risiko besser einschätzen kann. Ein geringeres Risiko führt zu einem besseren Rating und einem niedrigeren Zinssatz.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Ein Kredit ist ein Vertrag mit Rückzahlungspflicht (§ 488 BGB).",
-          "Bei Zahlungsausfall will der Gläubiger auf etwas zugreifen können."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest gewöhnliche, selbstschuldnerische und Ausfallbürgschaft nach dem Zeitpunkt, zu dem der Bürge zahlen muss, und erklärst Form und Folgen einer Bürgschaft für die Gesellschafterin.",
+        "vorwissen_kurz": "Eine GmbH haftet nur mit ihrem Vermögen. Deshalb verlangen Banken oft, dass zusätzlich eine Person einsteht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer einsteht, wenn MAKEL Studio nicht zahlt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Mit einer {{begriff:buergschaft|Bürgschaft}} verpflichtet sich eine weitere Person, für die Schuld eines anderen einzustehen ({{par:bgb-765|§ 765 BGB}}). Sie ist eine **Personalsicherheit**: Die Bank kann auf das Vermögen des Bürgen zugreifen. Die Arten unterscheiden sich danach, wann der Bürge zahlen muss. Bei der gewöhnlichen Bürgschaft kann er verlangen, dass die Bank zuerst erfolglos gegen den Schuldner vollstreckt, die sogenannte Einrede der Vorausklage ({{par:bgb-771|§ 771 BGB}}). Bei der selbstschuldnerischen Bürgschaft ist diese Einrede ausgeschlossen. Bei der Ausfallbürgschaft haftet der Bürge nur für den Betrag, den die Bank nachweislich nicht vom Schuldner erhält.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die drei Arten im Vergleich",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Art",
+              "Wann muss der Bürge zahlen?",
+              "Bedeutung für die Bank"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "gewöhnliche Bürgschaft",
+                  "erst nach erfolgloser Zwangsvollstreckung beim Schuldner",
+                  "langsam, deshalb bei Banken selten"
+                ]
+              },
+              {
+                "zellen": [
+                  "selbstschuldnerische Bürgschaft",
+                  "sobald der Schuldner nicht zahlt",
+                  "schneller Zugriff, bei Banken üblich"
+                ]
+              },
+              {
+                "zellen": [
+                  "Ausfallbürgschaft",
+                  "nur für den nachgewiesenen Ausfall",
+                  "schwächste Form, oft bei Förderbanken"
+                ]
+              }
+            ],
+            "fazit": "Banken verlangen in der Regel die selbstschuldnerische Bürgschaft, weil sie sich dann sofort an den Bürgen wenden können.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für Yuki Bergmann hat die Bürgschaft eine große Folge: Als Gesellschafterin der GmbH haftet sie normalerweise nur mit ihrer Einlage. Mit der Bürgschaft haftet sie für den verbürgten Kredit mit ihrem Privatvermögen. Eine Privatperson muss die Bürgschaft schriftlich erklären ({{par:bgb-766|§ 766 BGB}}). Für Kaufleute, für die die Bürgschaft ein Handelsgeschäft ist, gilt diese Form nicht ({{par:hgb-350|§ 350 HGB}}), und die Einrede der Vorausklage ist für sie ausgeschlossen.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Kreditsicherheiten geben der Bank einen zusätzlichen Zugriff, falls der Kreditnehmer nicht zahlt. Bei Personalsicherheiten haftet eine weitere Person. Die wichtigste ist die Bürgschaft (§ 765 BGB): Der Bürge verpflichtet sich, für die Schuld einzustehen. Bei der gewöhnlichen Bürgschaft kann der Bürge die Zahlung verweigern, solange der Gläubiger nicht erfolglos gegen den Schuldner vollstreckt hat (Einrede der Vorausklage, § 771 BGB). Bei der selbstschuldnerischen Bürgschaft ist diese Einrede ausgeschlossen; der Gläubiger kann sich sofort an den Bürgen wenden. Ist die Bürgschaft für den Bürgen ein Handelsgeschäft, entfällt die Einrede kraft Gesetzes (§ 349 HGB), und die Schriftform ist nicht nötig (§ 350 HGB); sonst braucht die Bürgschaftserklärung die Schriftform (§ 766 BGB). Eine Gesellschafterin wie Yuki Bergmann, die privat für die GmbH bürgt, ist dabei selbst nicht Kauffrau — für sie gelten die Regeln des BGB, die Bank verlangt deshalb ausdrücklich den Verzicht auf die Einrede. Davon zu unterscheiden ist die Ausfallbürgschaft: eine vertragliche Sonderform, bei der der Bürge nur für einen nachgewiesenen endgültigen Ausfall des Gläubigers haftet.",
-        "beispiele": [
-          "Yuki Bergmann bürgt selbstschuldnerisch für das Darlehen der MAKEL Studio GmbH.",
-          "Eine Ausfallbürgschaft greift erst nach erfolgloser Vollstreckung beim Schuldner."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Höchstbetragsbürgschaft",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Bürgschaft kann auf einen Höchstbetrag begrenzt werden, etwa 30.000 € statt des ganzen Darlehens. Damit weiß die Bürgin von Anfang an, wie viel sie im schlimmsten Fall zahlen muss. Für Gesellschafter ist das eine wichtige Verhandlungsposition.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Die Bank verlangt für das Darlehen über 50.000 € eine selbstschuldnerische Bürgschaft von Yuki Bergmann. Tobias Renner erklärt Luca: Damit haftet Yuki im Ernstfall mit ihrem privaten Vermögen — obwohl sie als Gesellschafterin der GmbH sonst nur mit ihrer Einlage haftet.",
-        "typische_fehler": "Gewöhnliche Bürgschaft, selbstschuldnerische Bürgschaft und Ausfallbürgschaft verwechseln.",
         "verstaendnisfragen": [
-          "Was unterscheidet die selbstschuldnerische von der gewöhnlichen Bürgschaft? Bei der selbstschuldnerischen ist die Einrede der Vorausklage ausgeschlossen; der Gläubiger kann sofort auf den Bürgen zugreifen.",
-          "Was ist eine Personalsicherheit? Eine weitere Person haftet neben dem Schuldner."
-        ],
-        "pruefungsbezug": "Bürgschaftsarten unterscheiden und ihre Folgen erklären.",
-        "merksatz": "Bürgschaft = Personalsicherheit; gewöhnlich = mit Einrede der Vorausklage; selbstschuldnerisch = ohne Einrede, Gläubiger greift sofort zu; Ausfallbürgschaft = Haftung erst für den nachgewiesenen Ausfall."
+          {
+            "frage": "Was ist die Einrede der Vorausklage?",
+            "antwort": "Das Recht des Bürgen, die Zahlung zu verweigern, bis der Gläubiger erfolglos gegen den Hauptschuldner vollstreckt hat.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum ändert die Bürgschaft die Haftung von Yuki Bergmann?",
+            "antwort": "Weil sie damit persönlich für die Schuld der GmbH einsteht. Die beschränkte Haftung als Gesellschafterin schützt sie dann nicht mehr.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Eigentum und Besitz sind verschiedene Dinge (LF 4).",
-          "Ein Lieferant kann sich das Eigentum vorbehalten."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Sicherungsübereignung, Verpfändung, Grundschuld, Forderungsabtretung und Eigentumsvorbehalt nach Eigentum, Besitz und Gegenstand und wählst eine passende Sicherheit für einen Kredit aus.",
+        "vorwissen_kurz": "Statt einer Person kann auch ein Vermögensgegenstand den Kredit absichern.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Sicherheit durch Gegenstände",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Realsicherheiten** geben dem Gläubiger ein Recht an einem Vermögensgegenstand. Bei der {{begriff:sicherungsuebereignung|Sicherungsübereignung}} wird die Bank Eigentümerin der Laserstation, MAKEL Studio behält sie aber und arbeitet damit weiter. Bei der **Verpfändung** muss die Sache dem Gläubiger übergeben werden; das passt zu Wertpapieren oder Guthaben, nicht zu Maschinen. Die {{begriff:grundschuld|Grundschuld}} belastet ein Grundstück und wird im Grundbuch eingetragen. Bei der **Abtretung** von Forderungen erhält die Bank das Recht, Zahlungen von Kunden einzuziehen. Der {{begriff:eigentumsvorbehalt|Eigentumsvorbehalt}} ({{par:bgb-449|§ 449 BGB}}) sichert dagegen den Lieferanten: Er bleibt Eigentümer, bis bezahlt ist.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Welche Sicherheit passt wozu?",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Sicherheit",
+              "Gegenstand",
+              "Eigentum",
+              "Besitz"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Sicherungsübereignung",
+                  "Maschinen, Fahrzeuge, Lager",
+                  "Bank",
+                  "MAKEL Studio"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verpfändung",
+                  "Wertpapiere, Guthaben",
+                  "MAKEL Studio",
+                  "Bank"
+                ]
+              },
+              {
+                "zellen": [
+                  "Grundschuld",
+                  "Grundstücke und Gebäude",
+                  "Eigentümer des Grundstücks",
+                  "Eigentümer des Grundstücks"
+                ]
+              },
+              {
+                "zellen": [
+                  "Forderungsabtretung",
+                  "Forderungen gegen Kunden",
+                  "Bank als neue Gläubigerin",
+                  "—"
+                ]
+              },
+              {
+                "zellen": [
+                  "Eigentumsvorbehalt",
+                  "gelieferte Ware",
+                  "Lieferant",
+                  "Käufer"
+                ]
+              }
+            ],
+            "fazit": "Für die Laserstation passt die Sicherungsübereignung, weil MAKEL Studio die Station zum Arbeiten braucht.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Banken rechnen Sicherheiten nicht mit dem vollen Kaufpreis an. Eine gebrauchte Spezialmaschine bringt bei einem Notverkauf deutlich weniger, als sie gekostet hat. Bewertet die Bank die Laserstation beispielsweise mit der Hälfte des Kaufpreises, sichert sie nur rund 25.750 € des Darlehens über 50.000 € ab. Für den Rest verlangt sie eine weitere Sicherheit, etwa eine Bürgschaft.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Bei Realsicherheiten haftet ein Vermögensgegenstand. Bei der Sicherungsübereignung überträgt der Kreditnehmer der Bank das Eigentum an einer beweglichen Sache, behält sie aber im Besitz und arbeitet weiter damit. Bei der Verpfändung geht der Besitz auf den Gläubiger über — für Maschinen im Betrieb daher ungeeignet. Grundstücke werden über eine Grundschuld im Grundbuch belastet. Forderungen können zur Sicherheit abgetreten werden (Zession). Der Eigentumsvorbehalt (§ 449 BGB) sichert den Lieferanten: Er bleibt Eigentümer, bis vollständig bezahlt ist.",
-        "beispiele": [
-          "Die Laserstation wird der Bank zur Sicherheit übereignet; MAKEL graviert weiter damit.",
-          "Ein Festgeldkonto wird an die Bank verpfändet."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn zwei Sicherheiten kollidieren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Hat der Hersteller die Laserstation unter Eigentumsvorbehalt geliefert und ist noch nicht vollständig bezahlt, kann MAKEL Studio sie der Bank nicht wirksam als Eigentum übertragen. Die Bank erhält dann nur das Anwartschaftsrecht. Deshalb fragt sie vor der Sicherungsübereignung, ob die Station bezahlt ist.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Da MAKEL kein eigenes Grundstück besitzt, schlägt die Bank zusätzlich die Sicherungsübereignung der Laserstation vor. Sandra notiert: Die Station bleibt im Betrieb, wird aber Eigentum der Bank, bis das Darlehen getilgt ist. MAKEL darf sie nicht verkaufen und muss sie versichern.",
-        "typische_fehler": "Bei der Sicherungsübereignung annehmen, die Maschine werde abgeholt.",
         "verstaendnisfragen": [
-          "Was unterscheidet Sicherungsübereignung und Verpfändung? Bei der Sicherungsübereignung bleibt der Besitz beim Schuldner, bei der Verpfändung geht er an den Gläubiger.",
-          "Womit werden Grundstücke gesichert? Mit einer Grundschuld im Grundbuch."
-        ],
-        "pruefungsbezug": "Realsicherheiten unterscheiden und passend auswählen.",
-        "merksatz": "Sicherungsübereignung: Eigentum an die Bank, Besitz bleibt; Verpfändung: Besitz an den Gläubiger; Grundschuld: Grundstück; Eigentumsvorbehalt: Lieferant."
+          {
+            "frage": "Warum ist die Verpfändung für die Laserstation ungeeignet?",
+            "antwort": "Weil die Station dafür an die Bank übergeben werden müsste. MAKEL Studio könnte nicht mehr damit arbeiten.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wer ist bei der Sicherungsübereignung Eigentümer, wer Besitzer?",
+            "antwort": "Die Bank ist Sicherungseigentümerin, MAKEL Studio bleibt Besitzer und nutzt die Sache weiter.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Die MAKEL Studio GmbH ist eine Kapitalgesellschaft (LF 1).",
-          "Bei Personengesellschaften haften Gesellschafter persönlich."
+        "darstellung": "vollfassung",
+        "ziel": "Du beziehst die Haftung nach Rechtsform in die Finanzierungsentscheidung ein und beurteilst eine Finanzierung im Gesamtbild aus Kosten, Laufzeit, Liquidität, Sicherheiten und Risiko.",
+        "vorwissen_kurz": "Wie viel eine Finanzierung die Eigentümer kosten kann, hängt auch von der Rechtsform ab.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer im schlimmsten Fall zahlt",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Bei der GmbH haftet für Schulden nur das Gesellschaftsvermögen (§ 13 Abs. 2 GmbHG); die Gesellschafter riskieren grundsätzlich nur ihre Einlage. Bei der OHG haften alle Gesellschafter zusätzlich mit ihrem Privatvermögen, und zwar unbeschränkt, unmittelbar und gesamtschuldnerisch. Bei der KG haften die Komplementäre ebenso, die Kommanditisten nur bis zur Höhe ihrer Einlage. Banken wissen das und verlangen bei einer GmbH deshalb häufiger persönliche Sicherheiten.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "zuordnen-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Gesamturteil zur Finanzierung der Laserstation",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Kriterium",
+              "Ratendarlehen mit Sicherheiten",
+              "Beurteilung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kosten",
+                  "7.500 € Zinsen in fünf Jahren",
+                  "günstiger als Leasing über die Nutzungsdauer"
+                ]
+              },
+              {
+                "zellen": [
+                  "Laufzeit",
+                  "fünf Jahre, entspricht der Nutzungsdauer",
+                  "passt zur goldenen Bilanzregel"
+                ]
+              },
+              {
+                "zellen": [
+                  "Liquidität",
+                  "Kapitaldienst 12.500 € im 1. Jahr, gedeckt durch 18.000 €",
+                  "tragbar, wenn die Planung hält"
+                ]
+              },
+              {
+                "zellen": [
+                  "Sicherheiten",
+                  "Sicherungsübereignung der Station, Höchstbetragsbürgschaft 30.000 €",
+                  "Yuki Bergmann haftet begrenzt privat"
+                ]
+              },
+              {
+                "zellen": [
+                  "Risiko",
+                  "bleibt der Mehrumsatz aus, belastet der Kapitaldienst das übrige Geschäft",
+                  "Planannahmen vorsichtig prüfen"
+                ]
+              }
+            ],
+            "fazit": "Das Ratendarlehen ist eine vertretbare Lösung. Entscheidend ist, ob die Gesellschafterin das Bürgschaftsrisiko tragen will und ob der Mehrumsatz realistisch ist.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Gesamturteil wägt ab, statt nur den Zinssatz zu vergleichen. Das günstigste Angebot kann ungeeignet sein, wenn es zu kurz läuft oder hohe private Sicherheiten verlangt. Für eine Prüfung heißt das: jede Finanzierung an Kosten, Laufzeit, Liquidität, Sicherheiten und Risiko messen und am Ende eine Entscheidung mit Begründung treffen.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Die Rechtsform bestimmt, worauf Gläubiger zugreifen können. Eine GmbH haftet mit ihrem Gesellschaftsvermögen; die Gesellschafter riskieren grundsätzlich nur ihre Einlage. Banken verlangen deshalb von kleinen GmbHs häufig persönliche Bürgschaften der Gesellschafter. Bei einer OHG haften alle Gesellschafter unbeschränkt, unmittelbar und gesamtschuldnerisch mit ihrem Privatvermögen; bei der KG gilt das für die Komplementäre, Kommanditisten haften nur bis zur Höhe ihrer Einlage. Eine Finanzierungsentscheidung wird am Ende im Gesamtbild beurteilt: Kosten, Laufzeit passend zur Nutzung, Liquiditätswirkung, Sicherheiten, Abhängigkeit vom Geldgeber und Risiko für die Beteiligten.",
-        "beispiele": [
-          "GmbH: Gläubiger greifen auf das Gesellschaftsvermögen zu, nicht auf Yukis Privatvermögen — außer sie bürgt.",
-          "OHG: Jeder Gesellschafter haftet auch privat für alle Schulden der Gesellschaft."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Bürgschaft bei GmbH und OHG",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Bei einer OHG wäre eine Bürgschaft der Gesellschafter wenig wert, weil sie ohnehin mit ihrem Privatvermögen haften. Bei einer GmbH schafft erst die Bürgschaft diesen Zugriff. Deshalb ist die persönliche Bürgschaft bei kleinen und mittleren GmbHs so verbreitet.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Yuki Bergmann zögert mit der Bürgschaft. Tobias schlägt vor, die Höhe der Bürgschaft auf 25.000 € zu begrenzen und zusätzlich die Laserstation zu übereignen. Die Bank stimmt zu, weil die Eigenkapitalquote und der Cashflow solide sind. Das zeigt: Gute Kennzahlen verbessern die Verhandlungsposition.",
-        "typische_fehler": "Annehmen, Gesellschafter einer GmbH könnten nie privat haften.",
         "verstaendnisfragen": [
-          "Womit haftet eine GmbH? Mit ihrem Gesellschaftsvermögen; die Gesellschafter grundsätzlich nur mit ihrer Einlage.",
-          "Warum verlangen Banken oft Bürgschaften von GmbH-Gesellschaftern? Weil sonst nur das oft geringe Gesellschaftsvermögen haftet."
-        ],
-        "pruefungsbezug": "Haftung nach Rechtsform erklären und eine Finanzierung im Gesamtbild beurteilen.",
-        "merksatz": "GmbH haftet mit Gesellschaftsvermögen, Gesellschafter mit Einlage — persönliche Bürgschaft hebt das auf; OHG: alle haften privat."
+          {
+            "frage": "Was ändert eine selbstschuldnerische Bürgschaft der Gesellschafterin bei einer GmbH?",
+            "antwort": "Sie haftet für den verbürgten Kredit persönlich mit ihrem Privatvermögen, obwohl sie als Gesellschafterin sonst nur mit ihrer Einlage haftet.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Nenne die fünf Kriterien eines Gesamturteils über eine Finanzierung.",
+            "antwort": "Kosten, Laufzeit, Liquidität, Sicherheiten und Risiko.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

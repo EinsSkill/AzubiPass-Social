@@ -6,86 +6,597 @@
   "untertitel": "Wozu Buchführung da ist, wer sie verlangt und wie aus gezählten Beständen eine Bilanz wird.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "In einem Industriebetrieb fließen Güter (Material, Erzeugnisse) und Geld in entgegengesetzte Richtungen.",
-          "Jede Lieferung, jede Rechnung und jede Zahlung hinterlässt einen Beleg."
+        "darstellung": "vollfassung",
+        "ziel": "Du verfolgst einen Geschäftsfall vom Beleg bis zur Information, die Geschäftsführung, Kostenrechnung, Bank, Finanzamt und Gesellschafter daraus gewinnen, und unterscheidest Pflicht und Nutzen der Buchführung.",
+        "vorwissen_kurz": "In einem Industriebetrieb fließen Material, Erzeugnisse und Geld ständig in verschiedene Richtungen. Ohne Aufzeichnung verliert man den Überblick.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Vom Beleg zur Information",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Jeden Tag entstehen bei MAKEL Studio Geschäftsfälle: Stoff wird eingekauft, Hoodies werden genäht und bestickt, Händler bezahlen Rechnungen, Löhne werden überwiesen. Die {{begriff:doppelte-buchfuehrung|Buchführung}} hält jeden {{begriff:geschaeftsvorfall|Geschäftsfall}} anhand eines Belegs fest, vollständig und in zeitlicher Reihenfolge. Aus diesen Aufzeichnungen lassen sich später Fragen beantworten, die ohne sie niemand zuverlässig beantworten könnte: Wie viel Vermögen hat der Betrieb? Hat er Gewinn gemacht? Kann er seine Rechnungen bezahlen?",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Stoffeinkauf und wer daraus etwas erfährt",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio kauft 400 m Bio-Baumwollstoff für 4.000 € netto auf Ziel. Der Lieferant schickt eine Rechnung.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Wer",
+              "Was er aus der Buchung erfährt"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Geschäftsführung",
+                  "Die Verbindlichkeiten steigen um 4.760 €; in 30 Tagen fließt Geld ab."
+                ]
+              },
+              {
+                "zellen": [
+                  "Kostenrechnung",
+                  "Der Stoff kostet 10 € je Meter netto; das geht in die Kalkulation der Hoodies ein."
+                ]
+              },
+              {
+                "zellen": [
+                  "Bank",
+                  "Im Jahresabschluss zeigt sich, wie hoch die Verbindlichkeiten im Verhältnis zum Eigenkapital sind."
+                ]
+              },
+              {
+                "zellen": [
+                  "Finanzamt",
+                  "760 € Vorsteuer mindern die Umsatzsteuerzahllast."
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesellschafter",
+                  "Über die Bilanz sehen sie, wie sich Vermögen und Schulden entwickeln."
+                ]
+              }
+            ],
+            "fazit": "Ein einziger Beleg liefert Informationen für fünf verschiedene Nutzer. Voraussetzung ist, dass er vollständig und richtig gebucht wird.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Buchführung ist gesetzlich vorgeschrieben, aber sie ist mehr als eine Pflicht. Ohne sie wüsste die Geschäftsführung nicht, ob sich ein neues Produkt lohnt, und die Bank würde keinen Kredit geben. Die Pflicht sorgt dafür, dass die Zahlen nach festen Regeln entstehen und deshalb auch für Außenstehende verlässlich sind.",
+            "id": "a1-p3"
+          }
         ],
-        "erklaerung": "Die Buchführung hält alle Geschäftsfälle lückenlos, zeitlich geordnet und belegt fest. Daraus entstehen Informationen für verschiedene Nutzer: Die Geschäftsführung sieht, ob das Unternehmen Gewinn macht und zahlungsfähig ist. Die Kostenrechnung bekommt die Zahlen für Kalkulationen. Banken prüfen vor einem Kredit die Lage des Unternehmens, das Finanzamt ermittelt die Steuern, Gesellschafter wollen wissen, wie sich ihr Kapital entwickelt. Außerdem ist die Buchführung ein Beweismittel, etwa wenn ein Kunde behauptet, eine Rechnung schon bezahlt zu haben.",
-        "beispiele": [
-          "Tobias Renner will wissen, ob die neue Hoodie-Kollektion Gewinn gebracht hat — er braucht die gebuchten Erlöse und Aufwendungen.",
-          "Die Hausbank verlangt vor einem Darlehen für eine Stickmaschine den letzten Jahresabschluss."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Finanzbuchhaltung und Kostenrechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Finanzbuchhaltung erfasst alle Geschäftsfälle des Unternehmens und liefert den Jahresabschluss für Außenstehende. Die Kostenrechnung nutzt einen Teil dieser Zahlen für interne Fragen, etwa was ein Hoodie kostet. Beide arbeiten mit denselben Belegen, aber für unterschiedliche Zwecke.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Sandra Koslowski zeigt dir am ersten Tag in der Buchhaltung einen Stapel Belege vom Vortag: eine Lieferantenrechnung für Rohlinge, einen Kontoauszug, zwei Ausgangsrechnungen an Boutiquen und einen Materialentnahmeschein aus der Veredelung. ‚Jeder davon ändert etwas an unserem Vermögen oder Erfolg. Unsere Aufgabe ist, das nachvollziehbar festzuhalten.‘",
-        "typische_fehler": "Buchführung nur als Pflicht fürs Finanzamt sehen. Sie ist vor allem das Informationssystem des Unternehmens selbst.",
         "verstaendnisfragen": [
-          "Nenne drei Nutzer der Buchführungszahlen. Zum Beispiel Geschäftsführung, Banken, Finanzamt, Gesellschafter, Kostenrechnung.",
-          "Warum ist die Buchführung auch ein Beweismittel? Weil sie belegt, welche Geschäftsfälle wann stattgefunden haben, etwa eine Zahlung."
-        ],
-        "pruefungsbezug": "Aufgaben und Adressaten der Buchführung werden gern als Einstieg in Rechnungswesen-Aufgaben abgefragt.",
-        "merksatz": "Die Buchführung hält alle Geschäftsfälle belegt und geordnet fest und liefert Informationen für Unternehmen, Banken, Finanzamt und Gesellschafter."
+          {
+            "frage": "Warum braucht die Kostenrechnung die Buchführung?",
+            "antwort": "Weil sie mit den gebuchten Aufwendungen arbeitet, etwa für Stoff, Löhne und Maschinen. Ohne vollständige Buchung fehlen ihr die Grundlagen für die Kalkulation.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was erfährt das Finanzamt aus der Buchung des Stoffeinkaufs?",
+            "antwort": "Dass MAKEL Studio 760 € Vorsteuer gezahlt hat, die von der Umsatzsteuer abgezogen werden kann. Außerdem fließen alle Buchungen in die Gewinnermittlung für die Steuern ein.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Die MAKEL Studio GmbH ist als Kapitalgesellschaft Kaufmann kraft Rechtsform.",
-          "Jeder Geschäftsfall hat einen Beleg."
+        "darstellung": "vollfassung",
+        "ziel": "Du ordnest die Buchführungspflicht nach § 238 HGB und die GoB ein, unterscheidest Fremd- und Eigenbelege und bestimmst für einen Beleg die Aufbewahrungsfrist bis zu ihrem Ende.",
+        "vorwissen_kurz": "Buchführung folgt festen Regeln. Die wichtigste lautet: Was nicht belegt ist, wird nicht gebucht.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Keine Buchung ohne Beleg",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "{{par:hgb-238|§ 238 HGB}} verpflichtet jeden Kaufmann, Bücher zu führen und darin seine Geschäfte nach den Grundsätzen ordnungsmäßiger Buchführung (GoB) ersichtlich zu machen. Die Buchführung muss so beschaffen sein, dass ein sachverständiger Dritter sich in angemessener Zeit einen Überblick verschaffen kann. Dafür braucht jede Buchung einen {{begriff:beleg|Beleg}}, der den Geschäftsfall nachweist.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Belege bei MAKEL Studio",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Beleg",
+              "Art",
+              "Begründung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung des Stofflieferanten",
+                  "Fremdbeleg",
+                  "kommt von außen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kontoauszug der Bank",
+                  "Fremdbeleg",
+                  "kommt von außen"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kopie der Ausgangsrechnung an einen Händler",
+                  "Eigenbeleg",
+                  "im Unternehmen erstellt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Materialentnahmeschein der Näherei",
+                  "Eigenbeleg",
+                  "dokumentiert internen Verbrauch"
+                ]
+              },
+              {
+                "zellen": [
+                  "Quittung für Parkgebühr verloren, Ersatzbeleg mit Datum, Betrag, Zweck und Unterschrift",
+                  "Eigenbeleg",
+                  "ersetzt den fehlenden Fremdbeleg"
+                ]
+              }
+            ],
+            "fazit": "Fremdbelege sind am verlässlichsten, weil sie von einer unabhängigen Stelle stammen. Eigenbelege sind nötig für interne Vorgänge und als Notlösung bei verlorenen Belegen.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wie lange aufbewahren?",
+            "id": "a2-z3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Nach {{par:hgb-257|§ 257 HGB}} und {{par:ao-147|§ 147 AO}} sind Buchungsbelege acht Jahre aufzubewahren, Bücher, Inventare und Jahresabschlüsse zehn Jahre. Die {{begriff:aufbewahrungsfrist|Frist}} beginnt mit dem Schluss des Kalenderjahres, in dem der Beleg entstanden ist; beim Jahresabschluss mit dem Schluss des Jahres, in dem er festgestellt wurde.",
+            "id": "a2-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Unterlage",
+              "Entstanden",
+              "Frist",
+              "aufbewahren bis"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Rechnung des Stofflieferanten",
+                  "14. März 2026",
+                  "8 Jahre",
+                  "31. Dezember 2034"
+                ]
+              },
+              {
+                "zellen": [
+                  "Jahresabschluss 2025",
+                  "festgestellt im Mai 2026",
+                  "10 Jahre",
+                  "31. Dezember 2036"
+                ]
+              }
+            ],
+            "fazit": "Die Frist läuft nicht ab dem Datum des Belegs, sondern ab dem Jahresende. Die März-Rechnung darf erst ab dem 1. Januar 2035 vernichtet werden.",
+            "id": "a2-t2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          }
         ],
-        "erklaerung": "Jeder Kaufmann ist nach § 238 HGB verpflichtet, Bücher nach den Grundsätzen ordnungsmäßiger Buchführung (GoB) zu führen. Ein sachverständiger Dritter muss sich in angemessener Zeit einen Überblick verschaffen können. Daraus folgen Grundregeln: keine Buchung ohne Beleg, vollständige, richtige, zeitgerechte und geordnete Erfassung, keine nachträgliche unkenntliche Änderung. Belege werden geordnet aufbewahrt: Buchungsbelege acht Jahre, Handelsbücher, Inventare und Jahresabschlüsse zehn Jahre (§ 257 HGB, § 147 AO). Die Frist beginnt mit dem Ende des Kalenderjahres, in dem der Beleg entstanden ist. Man unterscheidet Fremdbelege (Eingangsrechnung, Kontoauszug) und Eigenbelege (Kopie der Ausgangsrechnung, Materialentnahmeschein).",
-        "beispiele": [
-          "Eine Eingangsrechnung von einem Rohlingslieferanten ist ein Fremdbeleg.",
-          "Der Materialentnahmeschein, mit dem die Veredelung Rohlinge aus dem Lager holt, ist ein Eigenbeleg."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Wenn Fristen länger laufen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Läuft eine Betriebsprüfung oder ist die Steuerfestsetzung noch nicht abgeschlossen, dürfen betroffene Unterlagen auch nach Ablauf der Frist nicht vernichtet werden. Deshalb prüft die Buchhaltung vor jeder Aussonderung, ob eine solche Ausnahme vorliegt.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Luca Petrelli will eine kleine Barzahlung ohne Quittung buchen, ‚weil es nur 12 Euro waren‘. Sandra stoppt ihn: Ohne Beleg keine Buchung. Er erstellt einen Eigenbeleg mit Datum, Betrag, Zweck und Unterschrift und heftet ihn ab.",
-        "typische_fehler": "Die Aufbewahrungsfrist ab dem Belegdatum rechnen. Sie beginnt erst mit dem Schluss des Kalenderjahres.",
         "verstaendnisfragen": [
-          "Was bedeutet ‚keine Buchung ohne Beleg‘? Jeder gebuchte Betrag muss durch einen Nachweis belegt sein, notfalls durch einen Eigenbeleg.",
-          "Ist ein Materialentnahmeschein ein Fremd- oder Eigenbeleg? Ein Eigenbeleg, denn er entsteht im eigenen Unternehmen."
-        ],
-        "pruefungsbezug": "Fremd- und Eigenbelege unterscheiden sowie die GoB-Grundregel ‚keine Buchung ohne Beleg‘ anwenden.",
-        "merksatz": "Kaufleute müssen Bücher nach den GoB führen; keine Buchung ohne Beleg, Belege geordnet und fristgerecht aufbewahren."
+          {
+            "frage": "Luca möchte eine Barzahlung ohne Quittung buchen. Was sagst du ihm?",
+            "antwort": "Keine Buchung ohne Beleg. Fehlt ein Fremdbeleg, wird ein Eigenbeleg mit Datum, Betrag, Zweck und Unterschrift erstellt. So bleibt der Geschäftsfall nachvollziehbar.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Bis wann muss eine Ausgangsrechnung vom 2. Januar 2026 aufbewahrt werden?",
+            "antwort": "Acht Jahre ab Schluss des Jahres 2026, also bis zum 31. Dezember 2034.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Vor einer Bilanz muss man wissen, was tatsächlich vorhanden ist.",
-          "Vermögen sind die Dinge und Ansprüche des Unternehmens, Schulden sind seine Verpflichtungen."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Inventur als Vorgang, Inventar als ausführliches Verzeichnis und Bilanz als verdichtete Gegenüberstellung und leitest aus dem Inventar das Reinvermögen ab.",
+        "vorwissen_kurz": "Bevor eine Bilanz aufgestellt werden kann, muss feststehen, was tatsächlich vorhanden ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Zählen, verzeichnen, verdichten",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zum Jahresende verlangt {{par:hgb-240|§ 240 HGB}} ein Verzeichnis aller Vermögensgegenstände und Schulden. Dafür wird zunächst gezählt, gemessen und anhand von Unterlagen festgestellt, was vorhanden ist: die **Inventur**. Ihr Ergebnis ist das **Inventar**, ein ausführliches Verzeichnis mit Mengen und Werten. Aus dem Inventar wird nach {{par:hgb-242|§ 242 HGB}} die **Bilanz** aufgestellt, eine verdichtete Gegenüberstellung von Vermögen und Kapital.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Inventar von MAKEL Studio (Übungsausschnitt)",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Teil",
+              "Posten",
+              "Wert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "I. Vermögen",
+                  "Maschinen und Ausstattung",
+                  "60.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "Rohstoffe",
+                  "9.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "Fertige Erzeugnisse",
+                  "6.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "Forderungen",
+                  "7.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "Bank und Kasse",
+                  "16.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "Summe Vermögen",
+                  "98.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "II. Schulden",
+                  "Bankdarlehen",
+                  "30.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "Verbindlichkeiten aus Lieferungen und Leistungen",
+                  "8.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "",
+                  "Summe Schulden",
+                  "38.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "III. Reinvermögen",
+                  "Vermögen − Schulden",
+                  "60.000 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Das Reinvermögen von 60.000 € erscheint in der Bilanz als Eigenkapital. Die Bilanz zeigt dieselben Werte, nur zusammengefasst und in zwei Spalten.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Gezählt werden bei MAKEL Studio Stoffballen, Garne, fertige Hoodies und die Kasse. Bankguthaben, Forderungen und Schulden lassen sich nicht zählen; sie werden anhand von Kontoauszügen, Saldenlisten und Verträgen festgestellt. Die erste Art heißt körperliche Inventur, die zweite Buchinventur.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Zum Geschäftsjahresende (und bei Gründung) muss der Kaufmann alle Vermögensgegenstände und Schulden genau erfassen (§ 240 HGB). Der Vorgang heißt Inventur: Körperliche Gegenstände wie Rohstoffe oder Erzeugnisse werden gezählt, gemessen oder gewogen, Forderungen, Bankguthaben und Schulden werden anhand von Unterlagen (Buchinventur) festgestellt. Das Ergebnis ist das Inventar, ein ausführliches Verzeichnis mit Mengen und Werten in der Gliederung Vermögen, Schulden, Reinvermögen. Aus dem Inventar entsteht die Bilanz (§ 242 HGB): eine kurz gefasste Gegenüberstellung in Kontenform mit Aktiva (Mittelverwendung) und Passiva (Mittelherkunft).",
-        "beispiele": [
-          "Jonas Weidner zählt im Lager 1.150 Hoodie-Rohlinge — das ist Inventur.",
-          "Das Bankguthaben wird nicht gezählt, sondern mit dem Kontoauszug zum Stichtag belegt — Buchinventur."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Inventurverfahren",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Neben der Stichtagsinventur zum 31. Dezember gibt es die zeitlich verlegte Inventur, bei der bis zu drei Monate vor oder zwei Monate nach dem Stichtag gezählt und auf den Stichtag fortgeschrieben wird, und die permanente Inventur, bei der die Bestände laufend über die Lagerbuchführung erfasst und mindestens einmal im Jahr körperlich überprüft werden.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "Zum 31. Dezember zählen Jonas und Luca die Rohstoffe, Hilfsstoffe und fertigen Erzeugnisse; Sandra stimmt Bank, Forderungen und Verbindlichkeiten mit Kontoauszügen und offenen Posten ab. Die Ergebnisse fließen in das Inventar mit Einzelpositionen. Daraus erstellt Sandra die Bilanz, in der zum Beispiel alle Rohstoffe zu einer Zeile zusammengefasst sind.",
-        "typische_fehler": "Inventur und Inventar verwechseln: Die Inventur ist die Tätigkeit, das Inventar das Ergebnis-Verzeichnis.",
         "verstaendnisfragen": [
-          "Worin unterscheiden sich Inventar und Bilanz? Das Inventar ist ausführlich und untereinander gegliedert, die Bilanz verdichtet und in Kontenform.",
-          "Wie wird ein Bankguthaben inventarisiert? Durch Buchinventur anhand des Kontoauszugs zum Stichtag."
-        ],
-        "pruefungsbezug": "Die Folge Inventur → Inventar → Bilanz und die Unterscheidung körperliche Inventur / Buchinventur sind Standardwissen.",
-        "merksatz": "Inventur ist das Erfassen, das Inventar das ausführliche Verzeichnis, die Bilanz die verdichtete Gegenüberstellung."
+          {
+            "frage": "Warum ist die Inventur Voraussetzung für die Bilanz?",
+            "antwort": "Weil die Bilanz nur dann stimmt, wenn die Bestände tatsächlich vorhanden sind. Die Inventur prüft das Buchwerk an der Wirklichkeit, etwa ob die Stoffballen im Lager mit der Buchung übereinstimmen.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie heißt die Inventur für das Bankguthaben, und womit wird sie durchgeführt?",
+            "antwort": "Buchinventur; sie wird anhand des Kontoauszugs zum Stichtag durchgeführt.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Die Bilanz hat zwei Seiten: Aktiva und Passiva.",
-          "Eigenkapital ist das, was nach Abzug der Schulden vom Vermögen übrig bleibt."
+        "darstellung": "vollfassung",
+        "ziel": "Du wendest die Bilanzgleichung an, berechnest das Eigenkapital als Differenz aus Vermögen und Schulden und erklärst, warum beide Bilanzseiten immer gleich hoch sind.",
+        "vorwissen_kurz": "Die Bilanz zeigt dasselbe Kapital von zwei Seiten: woher es kommt und wo es steckt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Mittelverwendung und Mittelherkunft",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die linke Seite der Bilanz, die Aktiva, zeigt, wo das Kapital steckt: im {{begriff:anlagevermoegen|Anlagevermögen}}, das dem Betrieb dauerhaft dient, und im {{begriff:umlaufvermoegen|Umlaufvermögen}}, das sich ständig verändert. Die rechte Seite, die Passiva, zeigt, woher das Kapital stammt: aus {{begriff:eigenkapital|Eigenkapital}} der Gesellschafter oder aus {{begriff:fremdkapital|Fremdkapital}} von Banken und Lieferanten. Weil das Eigenkapital die Differenz aus Vermögen und Schulden ist, sind beide Seiten immer gleich hoch.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Bilanz von MAKEL Studio (Übungsausschnitt)",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aktiva",
+              "Wert",
+              "Passiva",
+              "Wert"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Maschinen und Ausstattung",
+                  "60.000 €",
+                  "Eigenkapital",
+                  "60.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Rohstoffe",
+                  "9.000 €",
+                  "Bankdarlehen",
+                  "30.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertige Erzeugnisse",
+                  "6.000 €",
+                  "Verbindlichkeiten LuL",
+                  "8.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Forderungen",
+                  "7.000 €",
+                  "",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Bank und Kasse",
+                  "16.000 €",
+                  "",
+                  ""
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "zellen": [
+                  "Summe",
+                  "98.000 €",
+                  "Summe",
+                  "98.000 €"
+                ],
+                "mono": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "fazit": "Vermögen 98.000 € = Eigenkapital 60.000 € + Fremdkapital 38.000 €. Ändert sich ein Wert auf einer Seite, ändert sich mindestens ein anderer mit.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Kauft MAKEL Studio eine Stickmaschine für 12.000 € auf Ziel, steigt das Anlagevermögen um 12.000 €, und die Verbindlichkeiten steigen ebenfalls um 12.000 €. Die Bilanzsumme wächst auf 110.000 €, das Eigenkapital bleibt gleich. Bezahlt MAKEL die Maschine später per Überweisung, sinken Bank und Verbindlichkeiten um je 12.000 € — die Bilanzsumme geht auf 98.000 € zurück.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Auf der Aktivseite steht das Vermögen, gegliedert in Anlagevermögen (dauerhaft genutzt, etwa Maschinen) und Umlaufvermögen (kurzfristig im Umlauf, etwa Rohstoffe, Erzeugnisse, Forderungen, Bank). Auf der Passivseite steht die Herkunft der Mittel: Eigenkapital und Fremdkapital (Schulden). Daraus folgt die Bilanzgleichung Vermögen = Eigenkapital + Fremdkapital. Beide Seiten sind immer gleich hoch, weil das Eigenkapital genau als Differenz zwischen Vermögen und Schulden definiert ist.",
-        "beispiele": [
-          "Vermögen 5.000 €, Schulden 2.000 € → Eigenkapital 3.000 €; Bilanzsumme auf beiden Seiten 5.000 €.",
-          "Eine Stickmaschine gehört zum Anlagevermögen, die Rohlinge im Lager zum Umlaufvermögen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Eigenkapital ist kein Bargeld",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Das Eigenkapital zeigt, wie viel vom Vermögen den Gesellschaftern zusteht. Es liegt nicht in einer Kasse bereit, sondern steckt in Maschinen, Vorräten, Forderungen und Bankguthaben. Ein hohes Eigenkapital bedeutet deshalb nicht automatisch viel verfügbares Geld.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "In einem vereinfachten Ausschnitt hat MAKEL Rohstoffe für 500 € und ein Bankguthaben von 4.500 €, aber 2.000 € Schulden bei Lieferanten. Luca rechnet: Vermögen 5.000 €, Eigenkapital 5.000 € − 2.000 € = 3.000 €. Aktiva 5.000 € = Passiva 3.000 € + 2.000 €.",
-        "typische_fehler": "Das Eigenkapital als Geld in der Kasse verstehen. Es ist ein Rechenwert auf der Passivseite, kein Bargeld.",
         "verstaendnisfragen": [
-          "Warum sind beide Bilanzseiten immer gleich groß? Weil das Eigenkapital als Differenz von Vermögen und Schulden definiert ist.",
-          "Gehören Forderungen zum Anlage- oder Umlaufvermögen? Zum Umlaufvermögen, sie werden kurzfristig zu Geld."
-        ],
-        "pruefungsbezug": "Eigenkapital aus gegebenen Bilanzposten berechnen und Posten Anlage- oder Umlaufvermögen zuordnen.",
-        "merksatz": "Vermögen = Eigenkapital + Fremdkapital; das Eigenkapital ist die Differenz aus Vermögen und Schulden."
+          {
+            "frage": "Wie hoch ist das Eigenkapital, wenn das Vermögen 150.000 € und die Schulden 95.000 € betragen?",
+            "antwort": "150.000 € − 95.000 € = 55.000 €.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Warum ändert der Kauf der Stickmaschine auf Ziel das Eigenkapital nicht?",
+            "antwort": "Weil Vermögen und Schulden um denselben Betrag steigen. Die Differenz, also das Eigenkapital, bleibt gleich.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

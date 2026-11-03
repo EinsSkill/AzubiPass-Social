@@ -6,86 +6,435 @@
   "untertitel": "Warum MAKEL eine GmbH ist, wem das Unternehmen gehört, wer was von ihm will — und was passiert, wenn Ziele sich widersprechen.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Die Rechtsform bestimmt, wer haftet, wer entscheidet und wie viel Kapital nötig ist.",
-          "MAKEL ist eine Gesellschaft mit beschränkter Haftung (GmbH)."
+        "darstellung": "vollfassung",
+        "ziel": "Du vergleichst Haftung, Kapital und Leitung der GmbH mit Einzelunternehmen, OHG, KG, UG und AG und beantwortest die Frage eines Gläubigers, wer für die Schulden von MAKEL Studio haftet.",
+        "vorwissen_kurz": "Wer mit MAKEL Studio Geschäfte macht, will wissen, auf welches Vermögen er im Notfall zugreifen kann.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer für die Schulden einsteht",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die MAKEL Studio GmbH ist eine {{begriff:kapitalgesellschaft|Kapitalgesellschaft}} und eine juristische Person: Sie kann selbst Verträge schließen, Eigentum haben und verklagt werden. Den Gläubigern haftet nur das Gesellschaftsvermögen ({{par:gmbhg-13|§ 13 GmbHG}}). Das Mindeststammkapital beträgt 25.000 Euro ({{par:gmbhg-5|§ 5 GmbHG}}); MAKEL Studio hat 100.000 Euro. Bei Einzelunternehmen und Personengesellschaften ist das anders: Dort haften Menschen mit ihrem Privatvermögen.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "grafik-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Lieferant fragt nach",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Rechtsform des Kunden",
+              "Wer haftet, wenn eine Rechnung über 20.000 € offen bleibt?"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einzelunternehmen",
+                  "der Inhaber, auch mit seinem Privatvermögen"
+                ]
+              },
+              {
+                "zellen": [
+                  "OHG mit zwei Gesellschaftern",
+                  "die OHG und jeder Gesellschafter persönlich für die ganze Summe"
+                ]
+              },
+              {
+                "zellen": [
+                  "KG",
+                  "die KG, die Komplementäre unbeschränkt, Kommanditisten nur bis zu ihrer noch nicht geleisteten Einlage"
+                ]
+              },
+              {
+                "zellen": [
+                  "GmbH wie MAKEL Studio",
+                  "nur die GmbH mit ihrem Vermögen"
+                ]
+              },
+              {
+                "zellen": [
+                  "GmbH mit Bürgschaft der Gesellschafterin",
+                  "die GmbH und zusätzlich die Gesellschafterin aus der Bürgschaft"
+                ]
+              }
+            ],
+            "fazit": "Bei der GmbH ist der Zugriff auf das Gesellschaftsvermögen begrenzt. Lieferanten und Banken verlangen deshalb manchmal zusätzliche Sicherheiten.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die beschränkte Haftung ist ein Grund, warum viele Gründer eine GmbH wählen: Das private Vermögen ist geschützt, wenn das Geschäft scheitert. Dafür verlangt das Gesetz mehr Formalitäten. Der Gesellschaftsvertrag muss notariell beurkundet werden, die GmbH entsteht erst mit der Eintragung ins Handelsregister, und der Jahresabschluss muss offengelegt werden.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die GmbH ist eine Kapitalgesellschaft und eine eigene juristische Person: Sie schließt Verträge im eigenen Namen, und für ihre Schulden haftet den Gläubigern nur das Gesellschaftsvermögen (§ 13 GmbHG). Das Mindeststammkapital beträgt 25.000 Euro; MAKEL hat 100.000 Euro. Die GmbH wird ins Handelsregister eingetragen und ist kraft Rechtsform Kaufmann. Bei Einzelunternehmen und der OHG haften die Inhaber dagegen unbeschränkt mit ihrem Privatvermögen; bei der KG haften die Komplementäre unbeschränkt, die Kommanditisten nur bis zur Höhe ihrer Einlage.",
-        "beispiele": [
-          "Kann MAKEL eine Lieferantenrechnung nicht bezahlen, kann der Lieferant auf das Vermögen der GmbH zugreifen, nicht aber auf das private Vermögen der Gesellschafter.",
-          "Eine Schreinerei als Einzelunternehmen: Der Inhaber haftet für Betriebsschulden auch mit seinem Privatvermögen."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "UG als Einstieg",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Unternehmergesellschaft (haftungsbeschränkt) ist eine GmbH-Variante, die schon mit sehr geringem Stammkapital gegründet werden kann. Sie muss jedes Jahr ein Viertel ihres Jahresüberschusses zurücklegen, bis das Kapital einer GmbH erreicht ist. Für Geschäftspartner ist das geringe Kapital ein Risiko, das sie bei Zahlungszielen berücksichtigen.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Eine Mitauszubildende meint, Yuki Bergmann hafte als Gründerin persönlich für alle Schulden von MAKEL. Du korrigierst: MAKEL ist eine GmbH, gegenüber den Gläubigern haftet nur das Gesellschaftsvermögen. Die Gesellschafter riskieren ihre Einlage — eine persönliche Haftung entsteht nur in Sonderfällen, etwa wenn ein Gesellschafter selbst eine Bürgschaft übernimmt.",
-        "typische_fehler": "‚Beschränkte Haftung‘ wird so verstanden, als hafte die GmbH selbst nur beschränkt. Die GmbH haftet mit ihrem ganzen Vermögen; beschränkt ist die Haftung der Gesellschafter.",
         "verstaendnisfragen": [
-          "Wie hoch ist das Mindeststammkapital einer GmbH? 25.000 Euro.",
-          "Wer haftet in einer OHG für die Schulden? Alle Gesellschafter unbeschränkt, auch mit ihrem Privatvermögen."
-        ],
-        "pruefungsbezug": "Rechtsformvergleiche werden über drei Merkmale gefragt: Haftung, Kapitalaufbringung, Geschäftsführung und Vertretung.",
-        "merksatz": "In der GmbH haftet gegenüber Gläubigern nur das Gesellschaftsvermögen; das Mindeststammkapital beträgt 25.000 Euro."
+          {
+            "frage": "Kann ein Lieferant bei Zahlungsausfall von MAKEL Studio auf das Privatvermögen der Gesellschafterin zugreifen?",
+            "antwort": "Grundsätzlich nein. Nach § 13 GmbHG haftet nur das Gesellschaftsvermögen. Anders ist es, wenn sie persönlich eine Bürgschaft übernommen hat.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Wie haften die Gesellschafter einer OHG?",
+            "antwort": "Persönlich, unbeschränkt, unmittelbar und gesamtschuldnerisch, also jeder für die ganze Schuld.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Eigentum an einem Unternehmen und seine Leitung können in verschiedenen Händen liegen.",
-          "In der GmbH gibt es Gesellschafter und Geschäftsführer."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest in der GmbH die Rollen von Gesellschafterversammlung und Geschäftsführung, ordnest Entscheidungen dem zuständigen Organ zu und erklärst, wo du die Eigentümer nachprüfen kannst.",
+        "vorwissen_kurz": "Wer MAKEL Studio leitet und wem es gehört, sind zwei verschiedene Fragen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Eigentum und Leitung getrennt",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "In der GmbH gibt es zwei Organe mit unterschiedlichen Aufgaben. Die **Gesellschafterversammlung** besteht aus den Eigentümern; sie trifft Grundsatzentscheidungen, beschließt über den Gewinn und bestellt die Geschäftsführung. Die Stimmen richten sich nach den Geschäftsanteilen. Die **Geschäftsführung** leitet das Unternehmen im Alltag und vertritt es nach außen ({{par:gmbhg-35|§ 35 GmbHG}}). Bei MAKEL Studio sind das Yuki Bergmann und Tobias Renner. Geschäftsführer müssen nicht zugleich Gesellschafter sein.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Wer entscheidet was?",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Entscheidung",
+              "zuständiges Organ"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Einkauf von 400 Rohlingen für einen Vereinsauftrag",
+                  "Geschäftsführung, im Alltag delegiert an den Einkauf"
+                ]
+              },
+              {
+                "zellen": [
+                  "Einstellung einer Lagerkraft",
+                  "Geschäftsführung, delegiert an Personal und Abteilungsleitung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verwendung des Jahresgewinns: ausschütten oder einbehalten",
+                  "Gesellschafterversammlung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Bestellung einer neuen Geschäftsführerin",
+                  "Gesellschafterversammlung"
+                ]
+              },
+              {
+                "zellen": [
+                  "Änderung des Gesellschaftsvertrags",
+                  "Gesellschafterversammlung, notariell beurkundet"
+                ]
+              }
+            ],
+            "fazit": "Der Alltag liegt bei der Geschäftsführung. Was das Unternehmen grundlegend verändert oder den Gewinn betrifft, entscheiden die Eigentümer.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Wer wissen will, wem eine GmbH gehört, findet die Gesellschafterliste beim Handelsregister; dort sind auch die Geschäftsführer eingetragen. Das hilft, wenn ein neuer Großkunde geprüft werden soll. Für MAKEL Studio bedeutet die Trennung: Tobias Renner kann als kaufmännischer Geschäftsführer über Investitionen im Rahmen des Geschäftsbetriebs entscheiden; ob der Gewinn eines Jahres für die Laserstation einbehalten wird, entscheidet die Gesellschafterversammlung.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Die Gesellschafter sind die Eigentümer der GmbH. Sie bringen das Stammkapital auf, entscheiden in der Gesellschafterversammlung über grundlegende Fragen, etwa die Verwendung des Gewinns, und bestellen die Geschäftsführung. Die Geschäftsführer leiten das Unternehmen im Alltag und vertreten es nach außen (§ 35 GmbHG). Geschäftsführer müssen keine Gesellschafter sein — man spricht dann von Fremdgeschäftsführern. Bei MAKEL führen Yuki Bergmann und Tobias Renner die Geschäfte.",
-        "beispiele": [
-          "Über die Ausschüttung des Jahresgewinns entscheidet die Gesellschafterversammlung, nicht die Geschäftsführung allein.",
-          "Den Kaufvertrag über eine neue Druckmaschine unterschreibt die Geschäftsführung im Namen der GmbH."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Vertretung nach außen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Geschäftsführer vertreten die GmbH gerichtlich und außergerichtlich. Beschränkungen im Innenverhältnis, etwa dass Investitionen über 50.000 € die Zustimmung der Gesellschafter brauchen, gelten gegenüber Dritten nicht. Ein Vertrag, den eine Geschäftsführerin trotzdem schließt, ist wirksam; sie kann aber der Gesellschaft gegenüber haften.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Eine Geschäftspartnerin fragt, ob Tobias Renner als kaufmännischer Geschäftsführer zugleich Eigentümer von MAKEL ist. Antwort: Aus der Funktion allein lässt sich das nicht ableiten. Geschäftsführung und Gesellschafterstellung sind in der GmbH getrennt; ob jemand Anteile hält, steht in der Gesellschafterliste beim Handelsregister.",
-        "typische_fehler": "Geschäftsführer werden automatisch für Eigentümer gehalten. In der GmbH ist das oft so, aber nicht zwingend.",
         "verstaendnisfragen": [
-          "Wer vertritt die GmbH nach außen? Die Geschäftsführer.",
-          "Wer entscheidet über die Verwendung des Jahresgewinns? Die Gesellschafter in der Gesellschafterversammlung."
-        ],
-        "pruefungsbezug": "Bei Fragen nach Zuständigkeiten in der GmbH Gesellschafter (Eigentum, Grundsatzentscheidungen) und Geschäftsführer (Leitung, Vertretung) sauber trennen.",
-        "merksatz": "Gesellschafter sind die Eigentümer und entscheiden grundsätzlich; Geschäftsführer leiten und vertreten die GmbH — beide Rollen können, müssen aber nicht zusammenfallen."
+          {
+            "frage": "Wer entscheidet in der GmbH über die Verwendung des Jahresgewinns?",
+            "antwort": "Die Gesellschafterversammlung.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Muss ein Geschäftsführer zugleich Gesellschafter sein?",
+            "antwort": "Nein. Geschäftsführer können auch angestellte Fachleute ohne Anteile sein.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Unternehmen verfolgen mehrere Ziele gleichzeitig.",
-          "Verschiedene Gruppen haben unterschiedliche Erwartungen an ein Unternehmen."
+        "darstellung": "vollfassung",
+        "ziel": "Du benennst die Interessen der Anspruchsgruppen von MAKEL Studio, ordnest Unternehmensziele den Bereichen wirtschaftlich, sozial, ökologisch und ethisch zu und erklärst Zielharmonie, Zielkonflikt und Zielneutralität an einer konkreten Entscheidung.",
+        "vorwissen_kurz": "Jede Entscheidung bei MAKEL Studio berührt Menschen mit unterschiedlichen Erwartungen.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wer was erwartet",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "MAKEL Studio verfolgt **wirtschaftliche** Ziele wie Gewinn und Liquidität, **soziale** wie sichere Arbeitsplätze und gute Arbeitsbedingungen, **ökologische** wie Ressourcenschonung und **ethische** wie faire Lieferketten. Die {{begriff:anspruchsgruppen|Anspruchsgruppen}} erwarten jeweils etwas anderes: Gesellschafter Gewinn und Wertsteigerung, Beschäftigte faire Bezahlung und sichere Arbeitsplätze, Kunden Qualität zu angemessenen Preisen, Lieferanten pünktliche Zahlung, Staat Steuern und Einhaltung von Gesetzen, Öffentlichkeit verantwortungsvolles Handeln.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Entscheidung: zertifizierter Bio-Rohling",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Anspruchsgruppe",
+              "Erwartung",
+              "Wirkung des zertifizierten Rohlings"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Gesellschafterin",
+                  "Marge sichern",
+                  "Einkaufspreis steigt, Marge sinkt, wenn der Preis nicht erhöht wird"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kunden",
+                  "Qualität und nachvollziehbare Herkunft",
+                  "Zertifikat belegt Herkunft"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beschäftigte in der Veredelung",
+                  "gute Verarbeitbarkeit",
+                  "unverändert, wenn Qualität gleich bleibt"
+                ]
+              },
+              {
+                "zellen": [
+                  "Öffentlichkeit",
+                  "verantwortungsvolles Handeln",
+                  "glaubwürdiger, wenn belegt"
+                ]
+              }
+            ],
+            "fazit": "Zwischen dem ethischen Ziel der transparenten Lieferkette und dem wirtschaftlichen Ziel der Marge besteht ein Zielkonflikt. Er muss abgewogen werden.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zielkonflikte lassen sich selten auflösen, aber gestalten. MAKEL Studio könnte den zertifizierten Rohling zunächst nur in der Kollektion einsetzen, wo Kunden bereit sind, mehr zu zahlen, und bei Vereinsdrucken beim bisherigen bleiben. Oder es erhöht den Preis leicht und erklärt, wofür. Wichtig ist, den Konflikt offen zu benennen, statt so zu tun, als gäbe es keinen.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Wirtschaftliche Ziele betreffen Gewinn, Umsatz, Marktanteil und Liquidität. Soziale Ziele betreffen die Beschäftigten, etwa sichere Arbeitsplätze und gute Arbeitsbedingungen. Ökologische Ziele zielen auf schonenden Umgang mit Ressourcen und weniger Emissionen, ethische Ziele auf faires Verhalten gegenüber Lieferanten und Gesellschaft. Ziele können sich gegenseitig fördern (Zielharmonie), behindern (Zielkonflikt) oder nicht berühren (Zielneutralität). Hinter den Zielen stehen Anspruchsgruppen: Gesellschafter wollen Rendite, Beschäftigte faire Bezahlung, Kunden Qualität zu einem guten Preis, Lieferanten pünktliche Zahlung, der Staat Steuern und die Einhaltung von Gesetzen.",
-        "beispiele": [
-          "Ein neues Druckverfahren spart Farbe und senkt die Kosten: Zielharmonie zwischen ökologischem und wirtschaftlichem Ziel.",
-          "Bessere Schutzausstattung für das Druckteam erhöht die Kosten: Zielkonflikt zwischen sozialem Ziel und kurzfristigem Kostenminimum."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Ziele messbar machen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Damit Ziele steuerbar werden, braucht es Inhalt, Ausmaß und Zeitbezug: nicht „nachhaltiger werden\", sondern „bis Jahresende 50 % der Kollektionsrohlinge mit anerkanntem Zertifikat\". So lässt sich später prüfen, ob das Ziel erreicht ist.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL kann zwischen zwei Rohlingen wählen: A kostet 18 Euro, Herkunft und Arbeitsbedingungen sind nicht dokumentiert. B kostet 21 Euro, ist zertifiziert, und der Hersteller legt seine Lieferkette offen. Beschäftigte in der Veredelung achten auf gleichbleibende Qualität, Kunden zunehmend auf Herkunft und Preis, die Gesellschafter auf die Marge. Die Entscheidung für B stärkt ökologische und ethische Ziele, mindert aber die Marge — ein Zielkonflikt, der offen abgewogen werden muss.",
-        "typische_fehler": "Allen Beteiligten wird nur ein einziges Interesse unterstellt, etwa ‚Kunden wollen nur billig‘. In der Praxis haben Anspruchsgruppen mehrere, teils widersprüchliche Interessen.",
         "verstaendnisfragen": [
-          "Was ist eine Zielharmonie? Die Verfolgung eines Ziels fördert zugleich ein anderes Ziel.",
-          "Nenne ein Interesse von Lieferanten an MAKEL. Zum Beispiel pünktliche Zahlung, verlässliche Bestellmengen oder eine langfristige Geschäftsbeziehung."
-        ],
-        "pruefungsbezug": "In Zielbeziehungsaufgaben immer beide betroffenen Ziele benennen und die Wirkung im konkreten Fall begründen.",
-        "merksatz": "Unternehmensziele können harmonieren, konkurrieren oder neutral zueinander stehen; hinter ihnen stehen Anspruchsgruppen mit eigenen Interessen."
+          {
+            "frage": "Eine Maßnahme verbessert die Arbeitsbedingungen, erhöht aber die Kosten. Welche Zielbeziehung liegt vor?",
+            "antwort": "Ein Zielkonflikt zwischen einem sozialen und einem wirtschaftlichen Ziel.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Was erwarten Lieferanten von MAKEL Studio?",
+            "antwort": "Vor allem pünktliche Zahlung, verlässliche Bestellungen und eine dauerhafte Geschäftsbeziehung.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Ein Unternehmen beschreibt sein Selbstverständnis oft in einem Leitbild.",
-          "Viele Unternehmen sind über Lieferketten und Absatzmärkte international verflochten."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Leitbild, Unternehmenskultur und belegte Zielerreichung, beurteilst Chancen und Risiken internationaler Beziehungen und prüfst Nachhaltigkeitsaussagen auf Belege.",
+        "vorwissen_kurz": "Viele Unternehmen schreiben schöne Sätze über sich. Entscheidend ist, was davon stimmt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Anspruch, Verhalten, Beleg",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:leitbild|Leitbild}} beschreibt, wofür ein Unternehmen stehen will: Werte, Ziele, Umgang mit Kunden und Beschäftigten. Die **Unternehmenskultur** ist das, was im Alltag tatsächlich gelebt wird. ==Ein Leitbild ist ein Anspruch, kein Nachweis.== Ob er eingelöst wird, zeigen Entscheidungen und messbare Ergebnisse. Das gilt besonders für internationale Beziehungen, etwa bei Material aus dem Ausland oder Lohnfertigung in anderen Ländern.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Aussagen prüfen",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Aussage auf der Website von MAKEL Studio",
+              "Beleg vorhanden?",
+              "Bewertung"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "„Wir lieben faire Mode.\"",
+                  "nein",
+                  "Absicht, kein Nachweis"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Unser Lohnfertiger ist nach einem anerkannten Sozialstandard auditiert, Bericht auf Anfrage.\"",
+                  "ja, Auditbericht",
+                  "überprüfbar"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Klimaneutrale Kollektion\"",
+                  "unklar, ob durch Reduktion oder nur Kompensation",
+                  "irreführend, wenn nicht erklärt"
+                ]
+              },
+              {
+                "zellen": [
+                  "„Ausschuss in der Veredelung seit 2025 um 30 % gesenkt\"",
+                  "ja, eigene Messung",
+                  "überprüfbar, wenn Messweise offen"
+                ]
+              }
+            ],
+            "fazit": "Nur Aussagen mit nachprüfbarem Beleg sind mehr als Werbung. Allgemeine Umweltaussagen ohne Beleg können sogar unzulässig sein.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "praxistipp-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Internationale Beziehungen machen die Prüfung schwieriger. Arbeitsbedingungen bei einem Lohnfertiger im Ausland lassen sich aus Düsseldorf nicht täglich beobachten. Deshalb arbeiten Unternehmen mit Audits, Zertifikaten und vertraglichen Zusagen. Für Werbung mit Umweltaussagen gelten strenge Regeln: Wer mit allgemeinen Begriffen wie „umweltfreundlich\" oder „klimaneutral\" wirbt, muss sie belegen können, sonst drohen Abmahnungen wegen Irreführung.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Das Leitbild formuliert, wofür ein Unternehmen stehen will: Werte, Ziele, Umgang mit Kunden, Beschäftigten und Umwelt. Die Unternehmenskultur ist das, was tatsächlich gelebt wird — wie Entscheidungen getroffen werden, wie man miteinander spricht. Ein Leitbild ist ein Anspruch, kein Nachweis. Ob er eingelöst wird, zeigt sich an Entscheidungen und messbaren Ergebnissen. Internationale Verflechtungen entstehen, wenn Material aus dem Ausland bezogen, im Ausland gefertigt oder dorthin verkauft wird; sie bringen Chancen (Kosten, Märkte) und Risiken (Lieferzeiten, Wechselkurse, Arbeitsbedingungen bei Lieferanten).",
-        "beispiele": [
-          "MAKELs Positionierung — japanisch geprägte Wabi-Sabi-Streetwear mit Preisniveau leicht über dem Marktschnitt — gehört zum Markenkern, den das Leitbild aufgreift.",
-          "Ein Leitbildsatz ‚Wir achten auf faire Arbeitsbedingungen in der Lieferkette‘ bleibt leer, solange niemand die Bedingungen bei Lieferanten prüft."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Kultur, die dem Leitbild widerspricht",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Steht im Leitbild „Wir sprechen Probleme offen an\", werden aber Fehler im Alltag verschwiegen, weil Schuldige gesucht werden, ist die gelebte Kultur eine andere. Beschäftigte merken das schnell. Ein Leitbild wirkt nur, wenn Führungskräfte es vorleben.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "In einer Präsentation steht: ‚Laut Leitbild ist MAKEL nachhaltig.‘ Du ergänzt: Das Leitbild beschreibt den Anspruch. Belegen lässt er sich etwa durch dokumentierte Lieferketten, zertifiziertes Material oder messbar weniger Ausschuss in der Veredelung. Ohne solche Belege ist die Aussage eine Absicht, kein Ergebnis.",
-        "typische_fehler": "Ein Leitbild wird mit nachgewiesener Zielerreichung gleichgesetzt.",
         "verstaendnisfragen": [
-          "Was ist der Unterschied zwischen Leitbild und Unternehmenskultur? Das Leitbild ist der formulierte Anspruch, die Kultur das tatsächlich gelebte Verhalten.",
-          "Welches Risiko bringt eine Lieferkette mit ausländischen Lieferanten? Zum Beispiel längere und unsichere Lieferzeiten, Wechselkursschwankungen oder schwer überprüfbare Arbeitsbedingungen."
-        ],
-        "pruefungsbezug": "Wenn eine Aufgabe fragt, ob ein Ziel erreicht ist, nach Belegen suchen — Leitbildtexte allein genügen nicht.",
-        "merksatz": "Ein Leitbild beschreibt den Anspruch, die Unternehmenskultur das gelebte Verhalten; ob Ziele erreicht sind, zeigen nur Entscheidungen und Belege."
+          {
+            "frage": "Warum belegt ein Leitbild allein nicht, dass ein Unternehmen nachhaltig handelt?",
+            "antwort": "Weil es nur einen Anspruch beschreibt. Ob er eingelöst wird, zeigen Entscheidungen und messbare Belege.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Nenne ein Risiko der Lohnfertigung im Ausland.",
+            "antwort": "Qualität, Termine und Arbeitsbedingungen lassen sich aus der Ferne schwer steuern und prüfen.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

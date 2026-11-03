@@ -6,86 +6,483 @@
   "untertitel": "Wenn die Maschinenzeit knapp ist, zählt der Deckungsbeitrag je Engpasseinheit — und die Rechnung braucht eine Prüfung gegen Lieferpflichten und Ziele.",
   "minuten": 25,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Deckungsbeiträge kennst du aus Kapitel 6.",
-          "Kapazitäten sind begrenzt (LF 6)."
+        "darstellung": "vollfassung",
+        "ziel": "Du erkennst, ob ein Engpass vorliegt, und ordnest Kapazitäts-, Absatz-, Mindestmengen- und Materialrestriktionen einem Planungsproblem zu.",
+        "vorwissen_kurz": "Solange genug Kapazität vorhanden ist, wird jedes Produkt mit positivem Deckungsbeitrag hergestellt. Erst ein Engpass zwingt zur Auswahl.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wenn nicht alles geht",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein {{begriff:engpass|Engpass}} liegt vor, wenn eine Ressource nicht ausreicht, um alle nachgefragten Mengen herzustellen. Dann muss entschieden werden, welche Produkte in welcher Menge gefertigt werden. Neben dem Engpass gibt es weitere **Restriktionen**: Höchstmengen, die sich verkaufen lassen, Mindestmengen aus Verträgen und begrenzte Materialvorräte. Sie alle grenzen ein, was gefertigt werden kann.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Stickmaschine im Dezember",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Für den Dezember liegen mehr Anfragen vor, als die Stickmaschine schaffen kann.",
+            "id": "a1-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Produkt",
+              "DB je Stück",
+              "Stickzeit je Stück",
+              "Nachfrage",
+              "Restriktion"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Hoodie mit Rückenstick",
+                  "12,00 €",
+                  "6 min",
+                  "500 Stück",
+                  "davon 100 aus Rahmenvertrag (Mindestmenge)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Cap mit Frontstick",
+                  "10,00 €",
+                  "2 min",
+                  "300 Stück",
+                  "Höchstabsatz 300"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beanie mit Logo",
+                  "6,00 €",
+                  "2,5 min",
+                  "200 Stück",
+                  "Höchstabsatz 200"
+                ]
+              },
+              {
+                "zellen": [
+                  "freie Stickzeit",
+                  "",
+                  "",
+                  "",
+                  "2.400 min (40 h)"
+                ]
+              }
+            ],
+            "fazit": "Alle Anfragen zusammen bräuchten 500 × 6 + 300 × 2 + 200 × 2,5 = 4.100 Minuten. Frei sind 2.400. Die Stickmaschine ist der Engpass.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ohne den Engpass wäre die Entscheidung einfach: Alle drei Produkte haben einen positiven Deckungsbeitrag, also würde MAKEL Studio alle nachgefragten Mengen herstellen. Mit dem Engpass muss jede Minute dorthin, wo sie am meisten bringt.",
+            "id": "a1-p3"
+          }
         ],
-        "erklaerung": "Ein Engpass ist eine Ressource, die nicht ausreicht, um alle nachgefragten Mengen herzustellen: Maschinenzeit, Fachpersonal, Material, Lagerfläche. Solange keine Ressource knapp ist, wird jedes Produkt mit positivem Deckungsbeitrag hergestellt, so weit die Nachfrage reicht. Ist eine Ressource knapp, muss entschieden werden, welche Produkte sie bekommen. Daneben gibt es weitere Restriktionen: Höchstabsatzmengen, Mindestmengen aus Lieferverträgen, Materialverfügbarkeit.",
-        "beispiele": [
-          "Die Stickmaschine hat in KW 47 nur noch 60 freie Minuten, die Nachfrage braucht 120.",
-          "Ein Rahmenvertrag verpflichtet MAKEL, monatlich mindestens 50 Hoodies an eine Boutique zu liefern."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Engpässe verschieben sich",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Ein Engpass ist nicht dauerhaft. Im Sommer ist die Stickmaschine oft nicht ausgelastet, und es gibt keinen Engpass. Im Dezember ist sie es. Wird eine zweite Maschine angeschafft, kann der Engpass in die Endkontrolle oder den Versand wandern. Deshalb wird die Engpassfrage für jeden Planungszeitraum neu gestellt.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Vor Weihnachten ist die Stickmaschine der Engpass: Sowohl bestickte Hoodies als auch bestickte Caps sind gefragt, aber die Maschinenzeit reicht nicht für beide. Tobias Renner fragt: ‚Was bringt uns am meisten?‘",
-        "typische_fehler": "Ohne Engpass mit relativen Deckungsbeiträgen rechnen — dann wird einfach alles mit positivem DB gefertigt.",
         "verstaendnisfragen": [
-          "Was ist ein Engpass? Eine Ressource, die nicht für alle nachgefragten Mengen ausreicht.",
-          "Nenne zwei weitere Restriktionen. Zum Beispiel Höchstabsatzmengen und vertragliche Mindestmengen."
-        ],
-        "pruefungsbezug": "Engpass und Restriktionen in einem Fall erkennen.",
-        "merksatz": "Ohne Engpass wird alles mit positivem DB gefertigt; mit Engpass muss die knappe Ressource gezielt verteilt werden."
+          {
+            "frage": "Woran erkennst du im Beispiel den Engpass?",
+            "antwort": "Die Stickzeit, die alle Anfragen bräuchten (4.100 Minuten), ist größer als die freie Stickzeit (2.400 Minuten).",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Welche Art von Restriktion ist der Rahmenvertrag über 100 Hoodies?",
+            "antwort": "Eine Mindestmenge. Sie muss erfüllt werden, bevor die übrige Kapazität verteilt wird.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "Der absolute DB je Stück sagt nichts über den Ressourcenverbrauch.",
-          "Produkte belegen die Maschine unterschiedlich lange."
+        "darstellung": "vollfassung",
+        "ziel": "Du berechnest den relativen Deckungsbeitrag je Engpasseinheit, bildest daraus die Rangfolge der Produkte und erklärst, warum der absolute Deckungsbeitrag bei Engpass in die Irre führt.",
+        "vorwissen_kurz": "Bei einem Engpass zählt nicht, wie viel ein Stück einbringt, sondern wie viel es je Minute der knappen Ressource einbringt.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Deckungsbeitrag je Minute",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der **relative Deckungsbeitrag** ist der Deckungsbeitrag je Stück geteilt durch den Bedarf an der Engpassressource je Stück. Bei der Stickmaschine ist das der Deckungsbeitrag je Stickminute. Er zeigt, wie viel eine Minute Maschinenzeit einbringt, wenn sie für dieses Produkt genutzt wird. Die Rangfolge der Produkte richtet sich nach diesem Wert, nicht nach dem Deckungsbeitrag je Stück.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Rangfolge im Dezember",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Produkt",
+              "DB je Stück",
+              "Stickzeit",
+              "DB je Minute",
+              "Rang"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Cap",
+                  "10,00 €",
+                  "2 min",
+                  "5,00 €",
+                  "1"
+                ]
+              },
+              {
+                "zellen": [
+                  "Beanie",
+                  "6,00 €",
+                  "2,5 min",
+                  "2,40 €",
+                  "2"
+                ]
+              },
+              {
+                "zellen": [
+                  "Hoodie",
+                  "12,00 €",
+                  "6 min",
+                  "2,00 €",
+                  "3"
+                ]
+              }
+            ],
+            "fazit": "Der Hoodie hat den höchsten Deckungsbeitrag je Stück, aber den niedrigsten je Minute. Bei knapper Stickzeit hat das Cap Vorrang.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Der Unterschied ist erheblich. Nutzt MAKEL Studio 60 Minuten für Hoodies, entstehen 10 Hoodies mit 120 € Deckungsbeitrag. Nutzt es dieselben 60 Minuten für Caps, entstehen 30 Caps mit 300 €. Wer nach dem Stück-Deckungsbeitrag entscheidet, verschenkt bei Engpass Ergebnis.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Bei einem Engpass entscheidet nicht der absolute Deckungsbeitrag je Stück, sondern der relative Deckungsbeitrag: DB je Stück ÷ Inanspruchnahme der Engpassressource je Stück, etwa DB je Maschinenminute. Er zeigt, wie viel Deckungsbeitrag eine Einheit der knappen Ressource bringt. Rangfolge: Das Produkt mit dem höchsten relativen DB wird zuerst gefertigt, dann das nächste, bis die Kapazität verbraucht ist.",
-        "beispiele": [
-          "Hoodie A: DB 12 €, 6 Minuten → 2 €/min. Cap B: DB 10 €, 2 Minuten → 5 €/min.",
-          "Rangfolge: zuerst B, dann A — obwohl A den höheren Stück-DB hat."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Mehrere Engpässe",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Sind zwei Ressourcen gleichzeitig knapp, etwa Stickzeit und Endkontrolle, lässt sich die Rangfolge nicht mehr mit einem einzigen relativen Deckungsbeitrag bestimmen. Dann werden Verfahren der linearen Optimierung genutzt. In der Praxis wird meist zuerst geprüft, welche Ressource tatsächlich begrenzt.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Sandra Koslowski rechnet: Der bestickte Hoodie bringt 12 € DB, braucht aber 6 Minuten Stickzeit; die bestickte Cap bringt 10 € DB bei 2 Minuten. Je Maschinenminute bringt die Cap 5 €, der Hoodie nur 2 €. Bei knapper Maschinenzeit hat die Cap Vorrang.",
-        "typische_fehler": "Nach absolutem Stück-DB priorisieren, obwohl Maschinenzeit knapp ist.",
         "verstaendnisfragen": [
-          "Wie berechnet man den relativen Deckungsbeitrag? DB je Stück ÷ Engpasszeit je Stück.",
-          "Warum ist der absolute DB bei Engpässen irreführend? Weil er den Verbrauch der knappen Ressource nicht berücksichtigt."
-        ],
-        "pruefungsbezug": "Relative Deckungsbeiträge berechnen und eine Rangfolge bilden.",
-        "merksatz": "Relativer DB = DB je Stück ÷ Engpassbedarf je Stück; die Rangfolge richtet sich danach, nicht nach dem Stück-DB."
+          {
+            "frage": "Produkt X: DB 15 €, 5 Minuten. Produkt Y: DB 8 €, 2 Minuten. Welches hat bei Engpass Vorrang?",
+            "antwort": "Y. Es bringt 4 € je Minute, X nur 3 € je Minute.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Warum hat das Cap Vorrang vor dem Hoodie, obwohl es weniger je Stück einbringt?",
+            "antwort": "Weil es die knappe Stickzeit besser nutzt: 5 € je Minute gegenüber 2 € beim Hoodie.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Die Rangfolge steht fest.",
-          "Die Nachfrage je Produkt ist begrenzt."
+        "darstellung": "vollfassung",
+        "ziel": "Du stellst das optimale Produktionsprogramm bei einem Engpass schrittweise auf, berücksichtigst zuerst Mindestmengen, dann die Rangfolge mit Höchstmengen, und berechnest den Gesamtdeckungsbeitrag.",
+        "vorwissen_kurz": "Mit der Rangfolge lässt sich die knappe Zeit verteilen. Dabei werden die übrigen Restriktionen der Reihe nach beachtet.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Schritt für Schritt füllen",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zuerst werden Mindestmengen eingeplant, weil sie verbindlich sind. Danach wird die verbleibende Engpasszeit nach der Rangfolge verteilt: Das Produkt mit dem höchsten relativen Deckungsbeitrag bekommt so viel Zeit, wie es bis zu seiner Höchstmenge braucht, dann das nächste und so weiter, bis die Zeit verbraucht ist. Am Ende wird der Gesamtdeckungsbeitrag berechnet.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das Dezemberprogramm",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Schritt",
+              "Menge",
+              "Minuten",
+              "Rest",
+              "DB"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "1. Mindestmenge Hoodies (Rahmenvertrag)",
+                  "100",
+                  "600",
+                  "1.800",
+                  "1.200 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "2. Caps bis zur Höchstmenge",
+                  "300",
+                  "600",
+                  "1.200",
+                  "3.000 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "3. Beanies bis zur Höchstmenge",
+                  "200",
+                  "500",
+                  "700",
+                  "1.200 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "4. weitere Hoodies mit der Restzeit",
+                  "116",
+                  "696",
+                  "4",
+                  "1.392 €"
+                ],
+                "mono": [
+                  4
+                ]
+              },
+              {
+                "zellen": [
+                  "Gesamt",
+                  "716 Stück",
+                  "2.396",
+                  "4 frei",
+                  "6.792 €"
+                ],
+                "mono": [
+                  4
+                ]
+              }
+            ],
+            "fazit": "Gefertigt werden 216 Hoodies, 300 Caps und 200 Beanies. Der Gesamtdeckungsbeitrag beträgt 6.792 €; 284 Hoodie-Anfragen können im Dezember nicht bedient werden.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Zum Vergleich: Hätte MAKEL Studio nach dem Stück-Deckungsbeitrag geplant und nach dem Rahmenvertrag die ganze Zeit für Hoodies verwendet, wären 400 Hoodies entstanden — 100 aus dem Vertrag und 300 weitere — mit 4.800 € Deckungsbeitrag. Das sind fast 2.000 € weniger als mit der Rangfolge nach Minuten.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Das optimale Produktionsprogramm entsteht schrittweise: Zuerst wird das Produkt mit dem höchsten relativen DB bis zu seiner Höchstabsatzmenge eingeplant, dann das nächste mit der verbleibenden Kapazität, und so weiter. Vertragliche Mindestmengen werden vorab eingeplant. Bei ganzzahligen Produkten kann Restkapazität übrig bleiben. Zum Schluss wird der Gesamt-DB berechnet und mit Alternativen verglichen.",
-        "beispiele": [
-          "60 Minuten frei, höchstens 20 Caps: 20 × 2 min = 40 min; Rest 20 min für Hoodies: 3 × 6 min = 18 min; 2 min frei.",
-          "Gesamt-DB: 20 × 10 € + 3 × 12 € = 236 €."
+        "details": [
+          {
+            "kategorie": "grundlagen",
+            "titel": "Ganzzahlige Mengen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Mit 700 Minuten Restzeit lassen sich 116,67 Hoodies rechnen, aber nur 116 sticken. Die übrigen 4 Minuten reichen für kein weiteres Stück. In Aufgaben werden Mengen deshalb abgerundet, und die Restzeit wird ausgewiesen.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "In KW 47 hat die Stickmaschine noch 60 freie Minuten. Caps lassen sich höchstens 20 verkaufen, Hoodies sind ausreichend nachgefragt. Deniz Aydın plant: 20 Caps (40 Minuten), dann 3 Hoodies (18 Minuten). 2 Minuten bleiben frei. Gesamt-DB 236 €. Hätte er nur Hoodies gefertigt: 10 × 12 € = 120 €.",
-        "typische_fehler": "Höchstabsatzmengen ignorieren und die gesamte Kapazität dem besten Produkt geben.",
         "verstaendnisfragen": [
-          "In welcher Reihenfolge wird das Programm gefüllt? Nach fallendem relativem DB, jeweils bis zur Höchstmenge.",
-          "Was passiert mit vertraglichen Mindestmengen? Sie werden vorab eingeplant."
-        ],
-        "pruefungsbezug": "Ein Produktionsprogramm bei einem Engpass schrittweise ableiten und den Gesamt-DB berechnen.",
-        "merksatz": "Programm schrittweise nach relativem DB füllen, Höchst- und Mindestmengen beachten, Gesamt-DB berechnen."
+          {
+            "frage": "Warum werden die 100 Hoodies aus dem Rahmenvertrag zuerst eingeplant, obwohl der Hoodie den niedrigsten relativen DB hat?",
+            "antwort": "Weil der Rahmenvertrag verbindlich ist. Mindestmengen gehen der Optimierung voraus.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Wie hoch wäre der Gesamtdeckungsbeitrag, wenn nur 250 Caps verkauft werden könnten?",
+            "antwort": "Caps 250 × 10 € = 2.500 € (500 min); Restzeit nach Beanies 800 min → 133 Hoodies (798 min) = 1.596 €; Gesamt 1.200 € + 2.500 € + 1.200 € + 1.596 € = 6.496 €.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Unternehmen verfolgen mehrere Ziele.",
-          "Rechenergebnisse beruhen auf Annahmen."
+        "darstellung": "vollfassung",
+        "ziel": "Du prüfst ein rechnerisch optimales Programm gegen Lieferpflichten, Verbundkäufe, Robustheit der Rangfolge und Möglichkeiten der Engpasserweiterung und gibst eine begründete Empfehlung.",
+        "vorwissen_kurz": "Das rechnerische Optimum ist ein starkes Argument. Es berücksichtigt aber nicht alles, was für den Betrieb wichtig ist.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Was die Rechnung nicht sieht",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Das Programm nach relativem Deckungsbeitrag maximiert den Deckungsbeitrag dieses Monats. Es weiß nichts von Stammkunden, die verärgert sind, wenn ihre Hoodies nicht kommen, von Händlern, die Caps nur zusammen mit Hoodies bestellen, oder von kleinen Änderungen bei Preisen und Zeiten, die die Rangfolge umkehren könnten. Und es fragt nicht, ob sich der Engpass mit vertretbaren Kosten erweitern ließe. Diese Fragen werden zusätzlich geprüft.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Prüfung des Dezemberprogramms",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Frage",
+              "Befund",
+              "Folge"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Lieferpflichten?",
+                  "Ein Stammhändler hat 150 Hoodies angefragt, die nach dem Programm nicht gefertigt würden",
+                  "mit dem Händler sprechen: Lieferung im Januar oder Teilmenge"
+                ]
+              },
+              {
+                "zellen": [
+                  "Verbund?",
+                  "Zwei Händler bestellen Caps nur, wenn sie auch Hoodies bekommen",
+                  "Cap-Absatz hängt teilweise an Hoodies"
+                ]
+              },
+              {
+                "zellen": [
+                  "Robustheit?",
+                  "Sinkt der Cap-DB auf 4,50 €, bleibt er mit 2,25 € je Minute vor dem Hoodie",
+                  "Rangfolge ist stabil"
+                ]
+              },
+              {
+                "zellen": [
+                  "Engpass erweitern?",
+                  "Samstagsschicht: 8 h = 480 min zusätzlich, Mehrkosten 420 €",
+                  "480 min für Hoodies = 80 × 12 € = 960 € Zusatz-DB"
+                ]
+              }
+            ],
+            "fazit": "Die Samstagsschicht lohnt sich: 960 € Zusatz-DB gegenüber 420 € Mehrkosten. Mit ihr können 80 weitere Hoodies für den Stammhändler gestickt werden.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Empfehlung an die Geschäftsführung lautet deshalb: das Programm nach relativem Deckungsbeitrag umsetzen, eine Samstagsschicht einplanen und die frei werdenden 80 Hoodies dem Stammhändler zusagen; die restlichen 70 seiner Hoodies im Januar liefern. So bleibt das Ergebnis nahe am rechnerischen Optimum, und die wichtige Kundenbeziehung wird geschützt.",
+            "id": "a4-p2"
+          }
         ],
-        "erklaerung": "Das rechnerisch optimale Programm wird gegen weitere Ziele geprüft: Lieferpflichten und Kundenbeziehungen (ein wichtiger Stammkunde wartet auf Hoodies), Sortimentswirkung (Kunden kaufen Hoodies und Caps zusammen), Marke und Qualität, Mitarbeiterauslastung, Nachhaltigkeit. Außerdem prüft man die Robustheit: Ändert sich die Rangfolge, wenn Preise oder Zeiten leicht abweichen? Gibt es Möglichkeiten, den Engpass zu erweitern (Zusatzschicht, Fremdvergabe), deren Kosten unter dem zusätzlichen DB liegen?",
-        "beispiele": [
-          "Eine Zusatzschicht kostet 150 € und schafft 120 Minuten: Lohnt sich, wenn diese Minuten mehr als 150 € DB bringen.",
-          "Ein Stammkunde mit Rahmenvertrag bekommt seine Hoodies, auch wenn Caps je Minute mehr bringen."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Engpasserweiterung bewerten",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Erweiterung des Engpasses lohnt sich, wenn der zusätzliche Deckungsbeitrag die zusätzlichen Kosten übersteigt. Der zusätzliche Deckungsbeitrag ergibt sich aus dem Produkt, das mit der neuen Zeit gefertigt würde — hier dem Hoodie als nächstem in der Rangfolge.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Marlene Voss wendet ein: ‚Die Boutique Faden & Form bestellt jedes Jahr 50 Hoodies zu Weihnachten. Wenn wir sie jetzt vertrösten, verlieren wir sie.‘ Tobias entscheidet: Die 50 Hoodies werden vorab eingeplant, für den Rest gilt die Rangfolge. Zusätzlich prüft Deniz eine Samstagsschicht.",
-        "typische_fehler": "Das rechnerische Optimum ohne Prüfung von Kundenbeziehungen und Lieferpflichten umsetzen.",
         "verstaendnisfragen": [
-          "Nenne zwei Ziele, die gegen das rechnerische Optimum sprechen können. Zum Beispiel Stammkundenbindung und Sortimentswirkung.",
-          "Wann lohnt sich eine Engpasserweiterung? Wenn ihr zusätzlicher DB höher ist als ihre Kosten."
-        ],
-        "pruefungsbezug": "Quantitative Ergebnisse mit qualitativen Zielen abwägen.",
-        "merksatz": "Das rechnerische Optimum wird gegen Lieferpflichten, Kunden und weitere Ziele geprüft; Engpasserweiterung lohnt, wenn Zusatz-DB > Zusatzkosten."
+          {
+            "frage": "Warum wird der Stammhändler trotz des rechnerischen Optimums berücksichtigt?",
+            "antwort": "Weil eine verlorene Kundenbeziehung künftige Deckungsbeiträge kosten kann, die in der Monatsrechnung nicht erscheinen.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Lohnt sich die Samstagsschicht, wenn sie 1.100 € Mehrkosten verursacht?",
+            "antwort": "Nein. Der Zusatz-DB von 960 € wäre kleiner als die Mehrkosten.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },

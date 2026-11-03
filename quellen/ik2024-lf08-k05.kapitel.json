@@ -6,86 +6,542 @@
   "untertitel": "Mit dem Kalkulationsschema von den Einzelkosten über die Herstellkosten zu den Selbstkosten — und Ist-, Normal- und Plankosten unterscheiden.",
   "minuten": 30,
   "ausfuehrlich": {
+    "format": 2,
     "abschnitte": [
       {
         "abschnitt": "a1",
-        "vorauswissen": [
-          "Kostenarten, Kostenstellen und Zuschlagssätze kennst du aus den Kapiteln 1 bis 4.",
-          "Kostenträger sind Produkte oder Aufträge."
+        "darstellung": "vollfassung",
+        "ziel": "Du erklärst, wie Kostenarten-, Kostenstellen- und Kostenträgerrechnung zusammenhängen, und ordnest jeder Stufe ihre Frage und ihr Ergebnis zu.",
+        "vorwissen_kurz": "Die Kalkulation eines Auftrags ist das Ziel der Kostenrechnung. Sie baut auf den beiden Stufen davor auf.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Wofür die Kosten entstanden sind",
+            "id": "a1-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:kostentraegerrechnung|Kostenträgerrechnung}} ist die dritte Stufe der KLR. Sie beantwortet, wofür Kosten entstanden sind: für einen Auftrag, ein Produkt, eine Serie. Dazu verbindet sie zwei Ergebnisse der vorherigen Stufen: die **Einzelkosten**, die die Kostenartenrechnung direkt dem Auftrag zuordnet, und die **Zuschlagssätze**, die die Kostenstellenrechnung im BAB ermittelt hat. Das Ergebnis sind die Selbstkosten je Kostenträger.",
+            "id": "a1-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a1-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Der Weg der Zahlen zum Vereinsauftrag",
+            "id": "a1-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Stufe",
+              "Was für den Vereinsauftrag geliefert wird"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Kostenartenrechnung",
+                  "Materialeinzelkosten 1.500 € (Rohlinge, Garn, Vlies), Fertigungslöhne 240 € (12 h × 20 €), Sondereinzelkosten 90 € (Stickdatei Vereinswappen)"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kostenstellenrechnung",
+                  "Zuschlagssätze aus dem BAB: MGK 10 %, FGK 125 %, VwGK 7,5 %, VtGK 3,6 %"
+                ]
+              },
+              {
+                "zellen": [
+                  "Kostenträgerrechnung",
+                  "Selbstkosten des Auftrags und je Hoodie"
+                ]
+              }
+            ],
+            "fazit": "Ohne die beiden ersten Stufen gäbe es für die Kalkulation weder die Einzelkosten noch die Zuschlagssätze.",
+            "id": "a1-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a1-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Kostenträgerrechnung gibt es in zwei Formen. Die **Kostenträgerstückrechnung** kalkuliert einen einzelnen Auftrag oder ein einzelnes Produkt, etwa die Vereinshoodies. Die **Kostenträgerzeitrechnung** stellt für einen ganzen Zeitraum die Kosten und Leistungen aller Produkte gegenüber und ermittelt das Betriebsergebnis, etwa je Produktlinie für das Quartal.",
+            "id": "a1-p2"
+          }
         ],
-        "erklaerung": "Die Kostenträgerrechnung fragt: Wofür sind die Kosten entstanden? Sie verbindet die drei Stufen der Kostenrechnung: Aus der Kostenartenrechnung kommen die Einzelkosten, aus der Kostenstellenrechnung die Zuschlagssätze für die Gemeinkosten. In der Zuschlagskalkulation werden die Gemeinkosten über diese Sätze auf den Kostenträger verrechnet. Das Kalkulationsschema legt die Reihenfolge fest: Materialkosten, Fertigungskosten, Herstellkosten, Verwaltungs- und Vertriebsgemeinkosten, Selbstkosten.",
-        "beispiele": [
-          "Kostenträger: ein Auftrag über 400 bestickte Hoodies.",
-          "Kostenträger: ein einzelnes Basis-Shirt aus der Serienfertigung."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Woher die Zuschlagssätze kommen",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Zuschlagssätze im Beispiel stammen aus dem BAB für Oktober. Sie gelten nur, solange sich die Kostenstruktur nicht wesentlich ändert. Kommt eine neue Maschine hinzu oder steigen die Mieten, ändern sich die Gemeinkosten der Stellen und damit die Sätze.",
+                "id": "a1-d1-p1"
+              }
+            ],
+            "id": "a1-d1"
+          }
         ],
-        "fallbeispiel": "Marlene Voss braucht für ein Angebot die Selbstkosten des Eventauftrags. Sandra Koslowski holt die Einzelkosten aus Stückliste und Arbeitsplan und die Zuschlagssätze aus dem BAB des Vorquartals.",
-        "typische_fehler": "Zuschlagssätze ohne die passende Grundlage aus dem Kalkulationsschema anwenden.",
         "verstaendnisfragen": [
-          "Welche Frage beantwortet die Kostenträgerrechnung? Wofür sind die Kosten entstanden?",
-          "Woher kommen die Zuschlagssätze? Aus dem Betriebsabrechnungsbogen."
-        ],
-        "pruefungsbezug": "Die drei Stufen der Kostenrechnung verbinden.",
-        "merksatz": "Kostenarten liefern Einzelkosten, Kostenstellen liefern Zuschlagssätze, die Kostenträgerrechnung verbindet beides im Kalkulationsschema."
+          {
+            "frage": "Welche Stufe liefert die Zuschlagssätze für die Kalkulation?",
+            "antwort": "Die Kostenstellenrechnung mit dem BAB.",
+            "id": "a1-f1"
+          },
+          {
+            "frage": "Was ist der Unterschied zwischen Kostenträgerstück- und Kostenträgerzeitrechnung?",
+            "antwort": "Die Stückrechnung kalkuliert einen Auftrag oder ein Produkt; die Zeitrechnung stellt Kosten und Leistungen aller Produkte für einen Zeitraum gegenüber.",
+            "id": "a1-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a2",
-        "vorauswissen": [
-          "MGK werden auf Materialeinzelkosten, FGK auf Fertigungslöhne bezogen.",
-          "Verwaltung und Vertrieb werden auf die Herstellkosten bezogen."
+        "darstellung": "vollfassung",
+        "ziel": "Du kalkulierst die Herstell- und Selbstkosten eines Auftrags mit dem Zuschlagsschema einschließlich Sondereinzelkosten und rechnest das Ergebnis auf das einzelne Stück um.",
+        "vorwissen_kurz": "Das Kalkulationsschema führt in festen Schritten von den Einzelkosten über die Herstellkosten zu den Selbstkosten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Schritt für Schritt zu den Selbstkosten",
+            "id": "a2-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Im Zuschlagsschema werden zuerst die Materialkosten berechnet: Materialeinzelkosten plus Materialgemeinkosten. Dann die Fertigungskosten: Fertigungslöhne plus Fertigungsgemeinkosten plus Sondereinzelkosten der Fertigung. Beide zusammen ergeben die **Herstellkosten**. Darauf kommen die Verwaltungs- und Vertriebsgemeinkosten, gegebenenfalls Sondereinzelkosten des Vertriebs. Das Ergebnis sind die **Selbstkosten**: alle Kosten, die der Auftrag verursacht — noch ohne Gewinn.",
+            "id": "a2-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a2-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Die Kalkulation des Vereinsauftrags",
+            "id": "a2-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Position",
+              "Basis",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Materialeinzelkosten",
+                  "",
+                  "1.500,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Materialgemeinkosten 10 %",
+                  "auf MEK",
+                  "150,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Materialkosten",
+                  "",
+                  "1.650,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Fertigungslöhne",
+                  "",
+                  "240,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Fertigungsgemeinkosten 125 %",
+                  "auf FL",
+                  "300,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Sondereinzelkosten der Fertigung",
+                  "Stickdatei",
+                  "90,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Fertigungskosten",
+                  "",
+                  "630,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Herstellkosten",
+                  "MK + FK",
+                  "2.280,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Verwaltungsgemeinkosten 7,5 %",
+                  "auf HK",
+                  "171,00 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "+ Vertriebsgemeinkosten 3,6 %",
+                  "auf HK",
+                  "82,08 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "= Selbstkosten",
+                  "",
+                  "2.533,08 €"
+                ],
+                "mono": [
+                  2
+                ]
+              },
+              {
+                "zellen": [
+                  "Selbstkosten je Hoodie",
+                  "÷ 150",
+                  "16,89 €"
+                ],
+                "mono": [
+                  2
+                ]
+              }
+            ],
+            "fazit": "Jeder Vereinshoodie kostet MAKEL Studio rund 16,89 €. Darauf kommt im Angebot noch der Gewinnzuschlag.",
+            "id": "a2-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "check-1",
+            "id": "a2-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a2-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Stickdatei von 90 € gehört nur zu diesem Auftrag. Bestellt der Verein im nächsten Jahr nach, fällt sie nicht noch einmal an — der Nachauftrag wird einschließlich der Zuschläge um rund 0,67 € je Hoodie günstiger. Solche Unterschiede werden nur sichtbar, wenn Sondereinzelkosten getrennt ausgewiesen werden.",
+            "id": "a2-p2"
+          }
         ],
-        "erklaerung": "Das Schema der Zuschlagskalkulation: Materialeinzelkosten (MEK) + Materialgemeinkosten (MGK, % auf MEK) = Materialkosten. Fertigungslöhne (FL) + Fertigungsgemeinkosten (FGK, % auf FL; ggf. zusätzlich Maschinenkosten) + Sondereinzelkosten der Fertigung = Fertigungskosten. Materialkosten + Fertigungskosten = Herstellkosten. Herstellkosten + Verwaltungsgemeinkosten (% auf HK) + Vertriebsgemeinkosten (% auf HK) + Sondereinzelkosten des Vertriebs = Selbstkosten. Die Selbstkosten enthalten noch keinen Gewinn; der Verkaufspreis folgt in der Verkaufskalkulation (LF 3).",
-        "beispiele": [
-          "MEK 100 € + 10 % MGK = 110 €; FL 80 € + 50 % FGK = 120 €; HK 230 €; + 10 % VwVt = 23 €; Selbstkosten 253 €.",
-          "Sondereinzelkosten des Vertriebs: eine eigens für den Kunden angefertigte Verpackung."
+        "details": [
+          {
+            "kategorie": "sonderfall",
+            "titel": "Verwaltung und Vertrieb getrennt oder gemeinsam",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Manche Betriebe rechnen einen gemeinsamen Zuschlag für Verwaltung und Vertrieb, etwa 11,1 %, statt zwei getrennter Sätze. Das Ergebnis ist dasselbe, solange beide auf die Herstellkosten bezogen werden. Getrennte Sätze zeigen aber genauer, welcher Bereich wie viel kostet.",
+                "id": "a2-d1-p1"
+              }
+            ],
+            "id": "a2-d1"
+          }
         ],
-        "fallbeispiel": "Für einen kleinen Veredelungsauftrag ermittelt Sandra: MEK 100 €, MGK 10 % = 10 €, Fertigungslöhne 80 €, FGK 50 % = 40 €. Herstellkosten 230 €. Verwaltung und Vertrieb zusammen 10 % auf die Herstellkosten = 23 €. Selbstkosten 253 € — darin ist noch kein Gewinn enthalten.",
-        "typische_fehler": "Den VwVt-Zuschlag auf die Materialkosten statt auf die Herstellkosten beziehen.",
         "verstaendnisfragen": [
-          "Woraus bestehen die Herstellkosten? Aus Materialkosten und Fertigungskosten.",
-          "Enthalten die Selbstkosten einen Gewinn? Nein."
-        ],
-        "pruefungsbezug": "Selbstkosten nach dem Zuschlagsschema berechnen.",
-        "merksatz": "MEK + MGK + FL + FGK = Herstellkosten; + VwGK + VtGK = Selbstkosten — ohne Gewinn."
+          {
+            "frage": "MEK 200 €, MGK 10 %, Fertigungslöhne 100 €, FGK 120 %, VwVt-GK 15 % auf die Herstellkosten. Wie hoch sind die Selbstkosten?",
+            "antwort": "MK 220 € + FK 220 € = HK 440 €; + 15 % = 66 €; Selbstkosten 506 €.",
+            "id": "a2-f1"
+          },
+          {
+            "frage": "Wie hoch wären die Selbstkosten je Hoodie bei einer Nachbestellung ohne Stickdatei?",
+            "antwort": "HK 2.190 €; + 7,5 % = 164,25 € und + 3,6 % = 78,84 €; Selbstkosten 2.433,09 € ÷ 150 ≈ 16,22 €.",
+            "id": "a2-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a3",
-        "vorauswissen": [
-          "Zuschlagssätze stammen aus vergangenen Perioden oder aus Planungen.",
-          "Tatsächliche Kosten stehen erst nach der Periode fest."
+        "darstellung": "vollfassung",
+        "ziel": "Du unterscheidest Ist-, Normal- und Plankosten nach Zeitbezug und Verwendung und ermittelst aus verrechneten und tatsächlichen Gemeinkosten eine Über- oder Unterdeckung.",
+        "vorwissen_kurz": "Bei der Angebotskalkulation sind die tatsächlichen Gemeinkosten der laufenden Periode noch nicht bekannt. Gerechnet wird deshalb mit Erfahrungswerten.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Drei Kostenbegriffe",
+            "id": "a3-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "**Istkosten** sind die tatsächlich angefallenen Kosten einer abgelaufenen Periode. **Normalkosten** sind Durchschnittswerte vergangener Perioden; mit ihnen werden laufend Angebote kalkuliert, weil die Istkosten erst später feststehen. **Plankosten** sind Vorgaben für eine künftige Periode, die aus Planung und Zielen abgeleitet werden. Am Ende einer Periode werden die mit Normalsätzen verrechneten Gemeinkosten mit den Ist-Gemeinkosten verglichen. Sind die verrechneten höher, liegt eine **Überdeckung** vor, sind sie niedriger, eine **Unterdeckung**.",
+            "id": "a3-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-1",
+            "id": "a3-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Das vierte Quartal in der Fertigung",
+            "id": "a3-z2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Posten",
+              "Betrag"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Fertigungslöhne im Quartal",
+                  "60.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "verrechnete FGK mit Normalsatz 125 %",
+                  "75.000 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Ist-FGK laut BAB",
+                  "78.600 €"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Ist-Zuschlagssatz",
+                  "78.600 ÷ 60.000 × 100 = 131 %"
+                ],
+                "mono": [
+                  1
+                ]
+              },
+              {
+                "zellen": [
+                  "Unterdeckung",
+                  "3.600 €"
+                ],
+                "mono": [
+                  1
+                ]
+              }
+            ],
+            "fazit": "In der Kalkulation wurden 3.600 € zu wenig Fertigungsgemeinkosten verrechnet. Die Aufträge des Quartals waren in Wirklichkeit etwas teurer als angeboten.",
+            "id": "a3-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "tabelle-2",
+            "id": "a3-b2"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a3-b3"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Ursache der Unterdeckung liegt bei den Energiekosten: Der Strompreis ist im Herbst gestiegen, die Normalsätze stammen aus dem Vorjahr. Bleibt der höhere Preis, muss MAKEL Studio den Normalsatz anpassen, sonst kalkuliert es dauerhaft zu niedrig. Eine einmalige Abweichung, etwa durch eine große Reparatur, ist dagegen kein Grund, den Satz zu ändern.",
+            "id": "a3-p2"
+          }
         ],
-        "erklaerung": "Für Angebote braucht man Zuschlagssätze, bevor die tatsächlichen Kosten bekannt sind. Istkosten sind die tatsächlich angefallenen Kosten einer abgelaufenen Periode. Normalkosten sind Durchschnittswerte vergangener Perioden; mit ihnen wird laufend kalkuliert, damit Preise nicht von Monat zu Monat schwanken. Plankosten werden für die Zukunft vorgegeben, zum Beispiel auf Grundlage geplanter Mengen und Preise. Nach der Periode vergleicht man die mit Normalzuschlägen verrechneten Gemeinkosten mit den Istgemeinkosten: Sind die verrechneten höher, liegt eine Überdeckung vor, sind sie niedriger, eine Unterdeckung.",
-        "beispiele": [
-          "Normal-MGK-Satz 10 % auf MEK 30.000 € = 3.000 € verrechnet; Ist-MGK 3.300 €: Unterdeckung 300 €.",
-          "Plankosten für das nächste Jahr berücksichtigen die angekündigte Mieterhöhung."
+        "details": [
+          {
+            "kategorie": "zusammenhang",
+            "titel": "Wirkung auf das Betriebsergebnis",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Eine Unterdeckung mindert das Betriebsergebnis, weil die tatsächlichen Kosten höher waren als in den Preisen eingerechnet. Eine Überdeckung erhöht es. Deshalb wird in der Kostenträgerzeitrechnung die Über- oder Unterdeckung ausgewiesen, damit das Betriebsergebnis stimmt.",
+                "id": "a3-d1-p1"
+              }
+            ],
+            "id": "a3-d1"
+          }
         ],
-        "fallbeispiel": "MAKEL kalkuliert mit Normalzuschlägen aus dem Vorjahr. Nach dem Quartal zeigt der Ist-BAB: Die Fertigung hat 19.500 € Gemeinkosten verursacht, verrechnet wurden mit dem Normalsatz 18.000 €. Unterdeckung 1.500 € — die Angebote waren etwas zu günstig kalkuliert.",
-        "typische_fehler": "Gegebene Normalzuschläge kommentarlos als tatsächlich entstandene Istkosten bezeichnen.",
         "verstaendnisfragen": [
-          "Was sind Normalkosten? Durchschnittswerte vergangener Perioden, mit denen laufend kalkuliert wird.",
-          "Was bedeutet eine Unterdeckung? Die verrechneten Gemeinkosten sind niedriger als die tatsächlich angefallenen."
-        ],
-        "pruefungsbezug": "Ist-, Normal- und Plankosten unterscheiden und Über- oder Unterdeckung ermitteln.",
-        "merksatz": "Istkosten sind tatsächlich, Normalkosten durchschnittlich, Plankosten vorgegeben; verrechnet minus Ist ergibt Über- oder Unterdeckung."
+          {
+            "frage": "Verrechnete FGK 18.000 €, Ist-FGK 19.500 €. Was liegt vor?",
+            "antwort": "Eine Unterdeckung von 1.500 €. Es wurden weniger Gemeinkosten verrechnet als tatsächlich angefallen sind.",
+            "id": "a3-f1"
+          },
+          {
+            "frage": "Warum wird für Angebote nicht mit Istkosten kalkuliert?",
+            "antwort": "Weil die Istkosten der laufenden Periode erst nach ihrem Ende feststehen. Angebote müssen aber sofort kalkuliert werden.",
+            "id": "a3-f2"
+          }
+        ]
       },
       {
         "abschnitt": "a4",
-        "vorauswissen": [
-          "Kalkulationen beruhen auf Annahmen.",
-          "Gemeinkosten werden über Schlüssel verteilt."
+        "darstellung": "vollfassung",
+        "ziel": "Du beurteilst, wofür die Vollkostenkalkulation geeignet ist und wo sie für kurzfristige Entscheidungen zu falschen Schlüssen führt, und begründest das an einem Sonderauftrag.",
+        "vorwissen_kurz": "Die Selbstkosten enthalten alle Kosten, auch die fixen. Für manche Entscheidungen ist genau das ein Problem.",
+        "inhalt": [
+          {
+            "typ": "zwischentitel",
+            "text": "Langfristig richtig, kurzfristig irreführend",
+            "id": "a4-z1"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die {{begriff:vollkostenrechnung|Vollkostenrechnung}} verteilt alle Kosten auf die Aufträge, auch fixe Gemeinkosten wie Miete und Abschreibung. Das ist richtig für die Frage, welchen Preis ein Produkt langfristig erzielen muss, damit alle Kosten gedeckt sind. Für kurzfristige Entscheidungen ist es irreführend: Die fixen Kosten fallen ohnehin an, ob ein zusätzlicher Auftrag angenommen wird oder nicht. Lehnt MAKEL Studio einen Auftrag ab, weil sein Preis unter den Vollkosten liegt, kann es sich schlechter stellen.",
+            "id": "a4-p1"
+          },
+          {
+            "typ": "basis",
+            "ref": "achtung-1",
+            "id": "a4-b1"
+          },
+          {
+            "typ": "zwischentitel",
+            "text": "Ein Händler bietet 15 € je Hoodie",
+            "id": "a4-z2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Ein Händler möchte im Januar, wenn die Stickmaschine wenig ausgelastet ist, 400 Vereinshoodies ohne Wappen zu 15 € netto je Stück. Die Selbstkosten nach Vollkosten liegen bei 16,22 €.",
+            "id": "a4-p2"
+          },
+          {
+            "typ": "tabelle",
+            "spalten": [
+              "Rechnung",
+              "je Hoodie",
+              "400 Hoodies"
+            ],
+            "zeilen": [
+              {
+                "zellen": [
+                  "Preis",
+                  "15,00 €",
+                  "6.000 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Selbstkosten (Vollkosten)",
+                  "16,22 €",
+                  "6.488 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "scheinbarer Verlust",
+                  "− 1,22 €",
+                  "− 488 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "variable Kosten (Material, Lohn, Energie)",
+                  "11,30 €",
+                  "4.520 €"
+                ]
+              },
+              {
+                "zellen": [
+                  "Deckungsbeitrag",
+                  "3,70 €",
+                  "1.480 €"
+                ]
+              }
+            ],
+            "fazit": "Nach Vollkosten sieht der Auftrag nach Verlust aus. Weil die fixen Kosten im Januar ohnehin anfallen, trägt er aber 1.480 € zu ihrer Deckung bei.",
+            "id": "a4-t1"
+          },
+          {
+            "typ": "basis",
+            "ref": "merke-1",
+            "id": "a4-b2"
+          },
+          {
+            "typ": "absatz",
+            "text": "Die Annahme hat Bedingungen: Die Kapazität muss frei sein, und der niedrige Preis darf andere Kunden nicht dazu bringen, ebenfalls weniger zu zahlen. Wäre die Maschine ausgelastet, würde der Händlerauftrag andere, besser bezahlte Aufträge verdrängen. Langfristig muss jedes Produkt im Durchschnitt seine Vollkosten decken, sonst verliert MAKEL Studio Geld. Die Deckungsbeitragsrechnung im nächsten Kapitel ergänzt deshalb die Vollkostenrechnung, statt sie zu ersetzen.",
+            "id": "a4-p3"
+          }
         ],
-        "erklaerung": "Die Vollkostenkalkulation verteilt alle Kosten auf die Produkte — auch fixe Gemeinkosten, die kurzfristig nicht vom einzelnen Auftrag abhängen. Das ist sinnvoll für langfristige Preisuntergrenzen und für die Frage, ob ein Produkt auf Dauer alle Kosten deckt. Es hat aber Grenzen: Die Zuschlagssätze unterstellen eine proportionale Beziehung zwischen Gemeinkosten und Zuschlagsgrundlage, die nicht immer besteht; schwankt die Beschäftigung, verändern sich die Stückkosten. Für kurzfristige Entscheidungen bei freier Kapazität ist die Teilkostenrechnung (Kapitel 6) besser geeignet. Abweichungen zwischen Normal- und Istkosten werden analysiert, nicht einfach ignoriert.",
-        "beispiele": [
-          "Sinkt die Auslastung, steigen die tatsächlichen Gemeinkosten je Stück — die Vollkostenkalkulation mit alten Sätzen unterschätzt sie.",
-          "Ein Zusatzauftrag kann unter Vollkosten liegen und trotzdem das Ergebnis verbessern (Kapitel 6)."
+        "details": [
+          {
+            "kategorie": "vergleich",
+            "titel": "Voll- und Teilkostenrechnung",
+            "inhalt": [
+              {
+                "typ": "absatz",
+                "text": "Die Vollkostenrechnung beantwortet: Welchen Preis brauchen wir langfristig? Die Teilkostenrechnung beantwortet: Lohnt sich dieser Auftrag jetzt, bei freier Kapazität? Beide nutzen dieselben Daten, ordnen die fixen Kosten aber unterschiedlich zu.",
+                "id": "a4-d1-p1"
+              }
+            ],
+            "id": "a4-d1"
+          }
         ],
-        "fallbeispiel": "Tobias Renner will einen Auftrag ablehnen, weil der angebotene Preis 5 € unter den Vollkosten liegt. Sandra fragt zurück: ‚Haben wir gerade freie Kapazität? Dann zahlen wir die fixen Gemeinkosten sowieso.‘ Die Vollkosten allein beantworten diese Frage nicht.",
-        "typische_fehler": "Vollkosten als einzige Entscheidungsgrundlage für kurzfristige Zusatzaufträge verwenden.",
         "verstaendnisfragen": [
-          "Wofür eignet sich die Vollkostenkalkulation? Für langfristige Preisuntergrenzen und die Frage, ob ein Produkt alle Kosten deckt.",
-          "Welche Annahme steckt in einem Zuschlagssatz? Dass Gemeinkosten proportional zur Zuschlagsgrundlage entstehen."
-        ],
-        "pruefungsbezug": "Aussagegrenzen der Vollkostenrechnung erläutern.",
-        "merksatz": "Vollkosten zeigen, ob ein Produkt langfristig alle Kosten deckt; für kurzfristige Entscheidungen reichen sie nicht."
+          {
+            "frage": "Warum ist ein Preis unter den Selbstkosten nicht automatisch ein Verlustgeschäft?",
+            "antwort": "Weil die fixen Kosten auch ohne den Auftrag anfallen. Liegt der Preis über den variablen Kosten und ist Kapazität frei, verbessert der Auftrag das Ergebnis.",
+            "id": "a4-f1"
+          },
+          {
+            "frage": "Unter welcher Bedingung sollte MAKEL Studio den Händlerauftrag ablehnen?",
+            "antwort": "Wenn die Kapazität ausgelastet ist und der Auftrag besser bezahlte Aufträge verdrängen würde, oder wenn der niedrige Preis andere Kunden zu Preisforderungen veranlassen würde.",
+            "id": "a4-f2"
+          }
+        ]
       }
     ]
   },
