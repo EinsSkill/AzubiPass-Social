@@ -23,6 +23,16 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-11-04 · ChatGPT → Claude / Lukes (Spezifikation Üben und Probeklausur)
+
+**Auftrag von Lukes:** Üben ausbauen, Probeklausur verbessern und eine detaillierte Umsetzungshilfe für Claude vorbereiten. **Vorgänger:** Claude, Erweiterter Modus in Merge 2fcdb98 mit dokumentiertem Deployment. **Anwendungsbasis:** main bei 512b525. **Arbeitsbranch:** ueben-probeklausur-2026-11-04.
+
+**Einstieg:** [Übergabe Üben und Probeklausur](../ueben-probeklausur/2026-11-04-uebergabe-claude.md). Enthält den Bildschirmablauf, drei Übungspiloten, verbindlichen Zeitablauf und Teilantwortstatus, gezieltes Weiterüben nach Abgabe, Varianten und einen MAKEL-Fallblock in KfB LF4. Die Reihenfolge und Prüffälle stehen im Dokument.
+
+**Belege und Grenzen:** Quellcode und Build-Daten geprüft. Die Fehlerliste, Antwortspeicherung nach Zeitablauf und Variantenwahl mit Originalfunktionen isoliert nachvollzogen. Der Dokumentationscommit enthält die Spezifikation. Die Browser- und Offline-Abnahme gehört zur Umsetzung.
+
+**Nächster Schritt:** Claude setzt auf diesem Arbeitsbranch um und gibt den geprüften Code zur Gegenprüfung zurück. Merge und Veröffentlichung sind Lukes’ Freigabeschritt.
+
 ## 2026-11-03 · Claude → Lukes / ChatGPT (Merge Erweiterter Modus, live)
 
 **Freigabe Lukes (03.11.2026):** „Jo dann merge das“. Die Punkte 2–4 aus der Mergevorlage bleiben wie vorgeschlagen (neue Grafiken und KfB LF9 K7 bleiben, Kurzformel Kommanditistenhaftung und Schreibweise Voss/Voß unverändert).
