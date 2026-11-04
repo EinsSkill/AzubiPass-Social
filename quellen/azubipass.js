@@ -693,6 +693,7 @@
           waehle(opt);
           gemerkt.o = opt.dataset.optionId || opt.textContent;
           gemerkt.r = !!opt.dataset.richtig;
+          gemerkt.t = Date.now();
           delete gemerkt.w;
           binden(sec, f, "checks", box, gemerkt);
           AP.heuteGelernt();
@@ -748,6 +749,7 @@
             if (!gemerkt.w) gemerkt.w = {};
             gemerkt.w[j] = k;
             gemerkt.f = (gemerkt.f || 0) + (btn.dataset.w === loesung ? 0 : 1);
+            gemerkt.t = Date.now();
             binden(sec, f, "zuordnen", box, gemerkt);
             AP.heuteGelernt();
             sichern();
@@ -814,6 +816,7 @@
       neben.addEventListener("click", function () {
         alsLuecke();
         gemerkt.z = "luecke";
+        gemerkt.t = Date.now();
         merken();
       });
 

@@ -286,46 +286,84 @@
     return { text: pruefungsname() + " · " + rest, kurz: rest, handeln: false };
   }
 
-  /* Was saß nicht? Drei Quellen, die es längst gibt und die nie jemand
-     ausgewertet hat: falsch angeklickte Checks im Kapitel, falsch beantwortete
-     Übungsfragen und jedes „Weiß ich nicht" im Selbsttest. */
+  /* Was ist gerade offen? Je Aufgabe zählt das jüngste aussagekräftige Ereignis
+     aus Kapitel, Übung und Klausur. Dieselbe Aufgabe trägt in Kapitel und Übung
+     dieselbe Kennung und erscheint deshalb nur einmal.
+
+     Ein neuer eigenständiger Versuch löst den alten Fehler ab. Eine Lösung mit
+     Hilfe zählt als Erfolg, bleibt aber für eine eigenständige Wiederholung
+     stehen. Einträge aus älteren Fassungen tragen keine Zeit: Ihre Reihenfolge
+     ist unbekannt, deshalb bleibt ein alter Fehler sichtbar und wird benannt. */
   function schwachstellen() {
-    var raus = [];
     var nachId = {};
     inhalt.quiz.forEach(function (q) { nachId[q.id] = q; });
     inhalt.tests.forEach(function (t) { nachId[t.id] = t; });
+    var quiz = stand.quiz || {};
+    var offen = {}, reihe = [], gut = {};
+
+    function fehler(id, grund, t) {
+      if (!nachId[id]) return;
+      t = Number(t) || 0;
+      if (!offen[id]) { offen[id] = { id: id, grund: grund, t: t }; reihe.push(offen[id]); }
+      else if (t >= offen[id].t) { offen[id].grund = grund; offen[id].t = t; }
+    }
 
     Object.keys(stand.fortschritt).forEach(function (schluessel) {
       var f = stand.fortschritt[schluessel];
       Object.keys(f.checks || {}).forEach(function (id) {
-        if (f.checks[id].r === false && nachId[id]) {
-          raus.push({ q: nachId[id], grund: "falsch beantwortet" });
-        }
+        var c = f.checks[id];
+        if (c.r === false) fehler(id, "im Kapitel falsch beantwortet", c.t);
+        else if (c.r === true && c.t) gut[id] = Math.max(gut[id] || 0, c.t);
       });
       Object.keys(f.zuordnen || {}).forEach(function (id) {
-        if (f.zuordnen[id].f > 0 && nachId[id]) {
-          raus.push({ q: nachId[id], grund: f.zuordnen[id].f + "× daneben" });
-        }
+        if (f.zuordnen[id].f > 0) fehler(id, f.zuordnen[id].f + "× daneben", f.zuordnen[id].t);
       });
       Object.keys(f.test || {}).forEach(function (id) {
-        if (f.test[id].z === "luecke" && nachId[id]) {
-          raus.push({ q: nachId[id], grund: "als Lücke gemerkt" });
-        }
+        if (f.test[id].z === "luecke") fehler(id, "als Lücke gemerkt", f.test[id].t);
       });
     });
+    Object.keys(quiz).forEach(function (id) {
+      if (quiz[id].r === false) fehler(id, "im Üben daneben", quiz[id].t);
+      else if (quiz[id].s === "hilfe") fehler(id, "mit Hilfe gelöst", quiz[id].t);
+    });
 
-    Object.keys(stand.quiz || {}).forEach(function (id) {
-      if (stand.quiz[id].r === false && nachId[id]) {
-        raus.push({ q: nachId[id], grund: "im Üben daneben" });
+    var GRUND = { hilfe: "mit Hilfe gelöst", loesung: "Lösung angesehen", offen: "noch offen" };
+    var raus = [];
+    reihe.forEach(function (o) {
+      var e = quiz[o.id];
+      if (gut[o.id] && gut[o.id] > o.t) return;
+      if (e && e.t && e.t >= o.t) {
+        if (e.s === "selbst") return;
+        if (GRUND[e.s]) o.grund = GRUND[e.s];
+      } else if (e && !e.t && e.r === true) {
+        o.grund += " · älterer Stand";
       }
+      var q = nachId[o.id];
+      raus.push({ id: o.id, q: q, titel: AP.mk(q.frage).replace(/<[^>]+>/g, ""),
+                  quelle: q.lernfeldTitel + " · " + q.kapitel, grund: o.grund, zu: q.zu });
     });
 
-    var gesehen = {};
-    return raus.filter(function (e) {
-      if (gesehen[e.q.id]) return false;
-      gesehen[e.q.id] = true;
-      return true;
+    /* Bausteine stehen nicht in inhalt.json. Ihre Einträge tragen deshalb selbst
+       Kapitel, Beruf und Bezeichnung. Ein noch unbewerteter Text kommt gar nicht
+       erst hierher: Solange er offen ist, gibt es kein Signal. */
+    var KLAUSUR = { falsch: "in der Klausur falsch", teil: "in der Klausur teilweise richtig",
+                    leer: "in der Klausur nicht bearbeitet" };
+    Object.keys(quiz).forEach(function (id) {
+      var e = quiz[id];
+      if (nachId[id] || !e.k || e.b !== inhalt.beruf.kurz) return;
+      var grund = e.s === "klausur" ? KLAUSUR[e.a] : GRUND[e.s];
+      if (!grund) return;
+      raus.push({ id: id, titel: e.l || e.k, quelle: kapitelQuelle(e.k), grund: grund,
+                  zu: e.k.replace(":", ".html#"), kapitel: e.k });
     });
+    return raus;
+  }
+
+  function kapitelQuelle(schluessel) {
+    var t = String(schluessel).split(":");
+    var lf = inhalt.lernfelder.filter(function (x) { return x.id === t[0]; })[0];
+    var k = lf && lf.kapitel.filter(function (x) { return x.id === t[1]; })[0];
+    return lf && k ? lf.kurz + " · K" + k.nummer + " · " + k.titel : schluessel;
   }
 
   function wochentage() {
@@ -626,6 +664,7 @@
   /* Kapitelkennung aus der Adresse. Wird an die Probeklausur durchgereicht und
      danach vergessen — sonst käme sie beim nächsten Öffnen wieder hoch. */
   var pkVorwahl = null;
+  var uebenFelder = {};
 
   function zeigeUeben(s) {
     s.innerHTML = "";
@@ -633,6 +672,10 @@
     if (uebenAnsicht === "quiz") return uebenQuiz(s);
     if (uebenAnsicht === "schwach") return uebenSchwach(s);
     if (uebenAnsicht === "vokabeln") return uebenVokabeln(s);
+    if (uebenAnsicht === "thema" || uebenAnsicht === "runde") {
+      if (window.APT) return window.APT.zeige(s, uebenAnsicht, uebenFelder);
+      uebenAnsicht = "start";
+    }
     /* Eine laufende Klausur wird nicht mehr ungefragt geöffnet. Der Üben-
        Bereich bleibt eine Übersicht; weiter unten erscheint ein eigener,
        eindeutiger Fortsetzen-Eingang. So bleibt die Klausur sicher gespeichert,
@@ -666,20 +709,39 @@
     }
 
     if (window.APK && window.APK.hatLaufende && window.APK.hatLaufende()) {
+      var vorbei = window.APK.hatAbgelaufene && window.APK.hatAbgelaufene();
       var fortsetzen = el("a", "pk-eingang pk-fortsetzen");
       fortsetzen.href = "#ueben/probeklausur";
       fortsetzen.appendChild(el("span", "pk-eingang-braue", "Laufende Probeklausur"));
       fortsetzen.appendChild(el("strong", "pk-eingang-titel",
-        "Weiter an deiner Klausur."));
-      fortsetzen.appendChild(el("span", "pk-eingang-text",
-        "Deine Antworten und die Restzeit sind gespeichert. Du kannst sie jetzt "
-        + "fortsetzen oder darunter eine andere Übung auswählen."));
+        vorbei ? "Die Zeit ist abgelaufen." : "Weiter an deiner Klausur."));
+      fortsetzen.appendChild(el("span", "pk-eingang-text", vorbei
+        ? "Deine Antworten sind gesichert. Du kannst sie ansehen und abgeben."
+        : "Deine Antworten sind gespeichert. Die Zeit läuft weiter, auch wenn du "
+          + "gerade etwas anderes übst."));
       var fortsetzenWeg = el("span", "pk-eingang-weg");
-      fortsetzenWeg.appendChild(el("span", null, "Klausur fortsetzen"));
+      fortsetzenWeg.appendChild(el("span", null, vorbei ? "Ansehen und abgeben" : "Klausur fortsetzen"));
       fortsetzenWeg.insertAdjacentHTML("beforeend", PFEIL);
       fortsetzen.appendChild(fortsetzenWeg);
       fortsetzen.addEventListener("click", hin("probeklausur"));
       s.appendChild(fortsetzen);
+    }
+
+    /* Die zwei kurzen Wege zuerst. Die Runde selbst sagt, was sie enthält. */
+    if (window.APT) {
+      var kurzwege = el("div", "ue-wege");
+      [["runde?art=tages", "5 Minuten üben", "Fällige Karten, offene Fehler und dein Thema. "
+        + "Keine Uhr, fünf Minuten sind nur eine Schätzung."],
+       ["thema", "Thema üben", "Lernfeld oder Kapitel wählen und eine kurze Runde lösen."]
+      ].forEach(function (w) {
+        var a = el("a", "ue-weg");
+        a.href = "#ueben/" + w[0];
+        a.appendChild(el("strong", "ue-weg-titel", w[1]));
+        a.appendChild(el("span", "ue-weg-text", w[2]));
+        a.addEventListener("click", hin(w[0]));
+        kurzwege.appendChild(a);
+      });
+      s.appendChild(kurzwege);
     }
 
     /* Die Probeklausur ist der wichtigste Prüfungsweg und steht deshalb als
@@ -710,7 +772,7 @@
     }, 0);
     [["karten", kartenTitel, kartenWert],
      ["quiz", "Übungsfragen", inhalt.quiz.length + " Fragen"],
-     ["schwach", "Deine Schwachstellen", schwach.length
+     ["schwach", "Meine Fehler", schwach.length
         ? schwach.length + " offen" : "nichts offen"],
      ["vokabeln", "Englisch-Vokabeltrainer",
         vokabelGesamt ? vokabelGesamt + " Vokabeln" : "noch nicht angelegt"]
@@ -1128,11 +1190,7 @@
     }
 
     function merke(id, richtig) {
-      var e = stand.quiz[id] || { n: 0 };
-      e.n++; e.r = richtig;
-      stand.quiz[id] = e;
-      AP.heuteGelernt();
-      sichern();
+      AP.versuchMerken(id, richtig ? "selbst" : "offen");
     }
 
     function frageCheck(kasten, q, fertig) {
@@ -1206,31 +1264,45 @@
   function uebenSchwach(s) {
     s.appendChild(zurueckZuUeben(s));
     var liste = schwachstellen();
-    s.appendChild(kopfzeile("Deine Schwachstellen",
-      liste.length ? "Was du falsch hattest oder nicht wusstest — aus Kapiteln, "
-                     + "Übungen und Selbsttests zusammengetragen."
+    s.appendChild(kopfzeile("Meine Fehler",
+      liste.length ? "Was gerade offen ist, aus Kapiteln, Übungen, Selbsttests und "
+                     + "Probeklausuren zusammengetragen."
                    : null));
 
     if (!liste.length) {
       s.appendChild(leerkasten(
-        "Noch nichts daneben — oder noch nichts beantwortet. Sobald du eine "
-        + "Übungsfrage falsch hast oder im Selbsttest „Weiß ich nicht" + "“"
+        "Gerade ist nichts offen. Sobald du eine Übungsfrage falsch hast oder im "
+        + "Selbsttest „Weiß ich nicht" + "“"
         + " drückst, steht sie hier.",
         "Übungsfragen starten",
         function () { location.hash = "#ueben/quiz"; }));
       return;
     }
 
+    if (window.APT) {
+      var alle = el("div", "knopfreihe");
+      var startAlle = el("button", "kn-haupt", "Fehler nochmal üben");
+      startAlle.addEventListener("click", function () { location.hash = "#ueben/runde?art=fehler"; });
+      alle.appendChild(startAlle);
+      s.appendChild(alle);
+    }
+
     var ul = el("ul", "liste-schlicht");
     liste.forEach(function (e) {
-      var li = el("li");
-      li.appendChild(reihe(e.q.zu, function (a) {
+      var li = el("li", "ue-fehler");
+      li.appendChild(reihe(e.zu, function (a) {
         var oben = el("div", "reihe-oben");
-        oben.appendChild(el("span", "reihe-titel", AP.mk(e.q.frage).replace(/<[^>]+>/g, "")));
+        oben.appendChild(el("span", "reihe-titel", e.titel));
         a.appendChild(oben);
-        a.appendChild(el("div", "reihe-quelle",
-          e.q.lernfeldTitel + " · " + e.q.kapitel + " · " + e.grund));
+        a.appendChild(el("div", "reihe-quelle", e.quelle + " · " + e.grund));
       }));
+      if (window.APT) {
+        var neu = el("a", "kn-neben ue-nochmal");
+        neu.href = "#ueben/runde?aufgabe=" + encodeURIComponent(e.id);
+        neu.textContent = "Jetzt nochmal üben";
+        neu.setAttribute("aria-label", "Jetzt nochmal üben: " + e.titel);
+        li.appendChild(neu);
+      }
       ul.appendChild(li);
     });
     s.appendChild(ul);
@@ -1471,6 +1543,17 @@
         ? e.kapitel.length + " Kapitel" : "";
       var details = [datumText, status, kapitel, aufgaben].filter(Boolean).join(" · ");
       zeile.appendChild(el("div", "reihe-quelle", details));
+      /* Die Antworten bleiben auf dem Gerät der Klausur. Überall sonst genügen
+         die Kapitelwerte für den Weg ins Training. */
+      var schwaechstes = (e && Array.isArray(e.kapitelErgebnisse) ? e.kapitelErgebnisse : [])
+        .filter(function (k) { return k && k.moeglich && k.erreicht / k.moeglich < 0.6; })
+        .sort(function (a, b) { return a.erreicht / a.moeglich - b.erreicht / b.moeglich; })[0];
+      if (schwaechstes && window.APT) {
+        var ueb = el("a", "kn-neben");
+        ueb.href = "#ueben/thema?kapitel=" + encodeURIComponent(schwaechstes.schluessel);
+        ueb.textContent = "Dieses Kapitel üben: " + kapitelQuelle(schwaechstes.schluessel);
+        zeile.appendChild(ueb);
+      }
       li.appendChild(zeile);
       liste.appendChild(li);
     });
@@ -1955,8 +2038,9 @@
       uebenAnsicht = "probeklausur";
       pkVorwahl = teile.felder.kapitel || null;
     } else if (id === "ueben" &&
-               ["karten", "quiz", "schwach", "vokabeln"].indexOf(teile.unter) >= 0) {
+               ["karten", "quiz", "schwach", "vokabeln", "thema", "runde"].indexOf(teile.unter) >= 0) {
       uebenAnsicht = teile.unter;
+      uebenFelder = teile.felder;
       pkVorwahl = null;
       if (window.APK) window.APK.verlassen();
     } else {
@@ -1975,6 +2059,16 @@
        (community-beitraege.js) und bekommt wie bisher den
        Büromanagement-Bestand – unabhängig vom gewählten Lernberuf. */
     if (hatCommunity) AP.communityAnsicht.init(sichtFuer("kfb"));
+    if (window.APT) {
+      window.APT.init({
+        inhalt: function () { return inhalt; },
+        alles: function () { return alles; },
+        schwachstellen: schwachstellen,
+        faelligeKarten: faelligeKarten,
+        berufWechseln: berufWechseln,
+        kopfzeile: kopfzeile
+      });
+    }
     verteiler = AP.verteiler(zeige, "heute");
     erneuerung();
   }

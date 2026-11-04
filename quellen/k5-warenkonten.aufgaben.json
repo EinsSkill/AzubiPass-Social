@@ -84,6 +84,20 @@
 
     {
       "id": "buchfuehrung-k5-03",
+      "uebung": {
+        "kompetenz": "Zahlung mit Skonto buchen",
+        "hinweise": [
+          "Trenne die drei Beträge: Was wird ausgebucht, was fließt ab, was ist der Nachlass?",
+          "Die Verbindlichkeit geht mit {brutto} € im Soll aus. Bank im Haben: {zahlbetrag} €. Es bleiben {skonto_brutto} € für das Nachlasskonto."
+        ],
+        "schritte": [
+          "Konto 4400 Verbindlichkeiten, Seite Soll, Betrag {brutto} €: Die Schuld erlischt in voller Höhe.",
+          "Konto 2800 Bank, Seite Haben, Betrag {zahlbetrag} €: Das ist der tatsächlich überwiesene Betrag.",
+          "Konto 6002 Nachlässe, Seite Haben, Betrag {skonto_brutto} €: Der Nachlass mindert den Einkaufsaufwand.",
+          "Umsatzsteuer: Sie bleibt in dieser Aufgabe ausdrücklich außer Betracht, deshalb gibt es keine Berichtigung der Vorsteuer. Die Berichtigung übst du im Kapitel zur Umsatzsteuer."
+        ],
+        "typischer_fehler": "Nur den Zahlbetrag aus den Verbindlichkeiten ausbuchen. Dann bleibt der Skontobetrag als Schuld stehen, obwohl nichts mehr zu zahlen ist."
+      },
       "operator": "Bilden Sie den Buchungssatz",
       "anforderungsbereich": 2,
       "punkte": 5,
@@ -195,6 +209,96 @@
         ]
       },
       "erklaerung": "Prüfungsklassiker. Die Formel lautet: Skontosatz × 360 ÷ (Zahlungsziel − Skontofrist).",
+      "quelle": "k5, Abschnitt e3"
+    }
+  ],
+
+  "uebungen": [
+    {
+      "id": "buchfuehrung-k5-u1",
+      "operator": "Bilden Sie den Buchungssatz",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [
+        "vorgang:stoffeinkauf"
+      ],
+      "variablen": {
+        "brutto": {
+          "von": 2000,
+          "bis": 8000,
+          "schritt": 100
+        }
+      },
+      "abgeleitet": {
+        "skonto_brutto": "runde(brutto * 0.02, 2)",
+        "zahlbetrag": "brutto - skonto_brutto"
+      },
+      "uebung": {
+        "kompetenz": "Zahlung mit Skonto aus dem Kontoauszug buchen",
+        "hinweise": [
+          "Trenne die drei Beträge: Was wird ausgebucht, was fließt ab, was ist der Nachlass?",
+          "Die Verbindlichkeit geht mit {brutto} € im Soll aus. Bank im Haben: {zahlbetrag} €. Es bleiben {skonto_brutto} € für das Nachlasskonto."
+        ],
+        "schritte": [
+          "Konto 4400 Verbindlichkeiten, Seite Soll, Betrag {brutto} €: Die Schuld erlischt in voller Höhe.",
+          "Konto 2800 Bank, Seite Haben, Betrag {zahlbetrag} €: Das ist der tatsächlich überwiesene Betrag.",
+          "Konto 6002 Nachlässe, Seite Haben, Betrag {skonto_brutto} €: Der Nachlass mindert den Einkaufsaufwand.",
+          "Umsatzsteuer: Sie bleibt in dieser Aufgabe ausdrücklich außer Betracht, deshalb gibt es keine Berichtigung der Vorsteuer. Die Berichtigung übst du im Kapitel zur Umsatzsteuer."
+        ],
+        "typischer_fehler": "Nur den Zahlbetrag aus den Verbindlichkeiten ausbuchen. Dann bleibt der Skontobetrag als Schuld stehen, obwohl nichts mehr zu zahlen ist."
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die Verbindlichkeit aus der Stofflieferung steht mit {brutto} € in den Büchern. Die MAKEL Studio GmbH zahlt innerhalb der Skontofrist unter Abzug von 2 % Skonto. Werten Sie den Kontoauszug aus. Die Umsatzsteuer bleibt in dieser Aufgabe außer Betracht."
+        },
+        {
+          "block": "anlage",
+          "titel": "Anlage 1: Kontoauszug",
+          "zugeklappt": false,
+          "beleg": "kontoauszug",
+          "daten": {
+            "auszug_nr": "151",
+            "buchungen": [
+              {
+                "text": "Überweisung Stofflieferung, abzüglich 2 % Skonto",
+                "betrag": "{zahlbetrag}",
+                "art": "soll"
+              }
+            ]
+          }
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "buchungssatz",
+          "zeilen": 3,
+          "loesung": [
+            {
+              "soll": "4400",
+              "haben": null,
+              "betrag": "brutto"
+            },
+            {
+              "soll": null,
+              "haben": "2800",
+              "betrag": "zahlbetrag"
+            },
+            {
+              "soll": null,
+              "haben": "6002",
+              "betrag": "skonto_brutto"
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 5
+      },
+      "erklaerung": "Der Kontoauszug zeigt nur den Zahlbetrag. Die Verbindlichkeit wird trotzdem in voller Höhe ausgebucht.",
       "quelle": "k5, Abschnitt e3"
     }
   ]

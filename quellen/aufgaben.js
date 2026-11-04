@@ -350,22 +350,38 @@ window.APK = (function () {
     return raus;
   }
 
-  function bausteineZu(kapitel) {
+  function bausteineZu(kapitel, ausschluss) {
     var gewaehlt = {};
     kapitel.forEach(function (k) { gewaehlt[k] = true; });
     return (vorrat ? vorrat.bausteine : []).filter(function (b) {
-      return gewaehlt[kapitelSchluessel(b)];
+      return gewaehlt[kapitelSchluessel(b)] && !(ausschluss && ausschluss[b.id]);
     });
+  }
+
+  /* Zusammenhängende Fälle (doku/AzubiPass_Aufgabenbausteine.md): Ein Fall ist
+     ein gemeinsamer Belegsatz mit mehreren Teilaufgaben und kommt nur ganz oder
+     gar nicht vor. */
+  function faelleZu(kapitel, beruf, ausschluss) {
+    return ((vorrat && vorrat.faelle) || []).filter(function (f) {
+      return (!beruf || (f.beruf || "kfb") === beruf) &&
+        f.kapitel.every(function (k) { return kapitel.indexOf(k) !== -1; }) &&
+        !f.schritte.some(function (s) { return ausschluss && ausschluss[s.id]; });
+    });
+  }
+
+  function fallZu(b) {
+    if (!b || !b.fall || !vorrat) return null;
+    return (vorrat.faelle || []).filter(function (f) { return f.id === b.fall; })[0] || null;
   }
 
   /* Wie lange dauert eine Klausur mindestens, wenn jedes gewählte Kapitel
      vorkommen soll? Die kürzeste Aufgabe je Kapitel, aufsummiert. Darunter
      lässt sich die Auswahl nicht ehrlich abdecken — und dann wird das gesagt
      statt still ein Kapitel weggelassen. */
-  function mindestdauer(kapitel) {
+  function mindestdauer(kapitel, ausschluss) {
     var summe = 0;
     kapitel.forEach(function (k) {
-      var kandidaten = bausteineZu([k]);
+      var kandidaten = bausteineZu([k], ausschluss);
       if (!kandidaten.length) return;
       summe += Math.min.apply(null, kandidaten.map(function (b) { return b.dauer_min; }));
     });
@@ -378,13 +394,14 @@ window.APK = (function () {
     var seed = wahl.seed || neuerSeed();
     var vorher = {};
     (wahl.vorher || []).forEach(function (id) { vorher[id] = true; });
+    var ausschluss = wahl.ausschluss || null;
 
-    var kandidaten = bausteineZu(kapitel);
+    var kandidaten = bausteineZu(kapitel, ausschluss);
     if (!kapitel.length || !kandidaten.length) {
       return { fehler: "leer", kapitel: kapitel, seed: seed, dauer: dauer, aufgaben: [] };
     }
 
-    var noetig = mindestdauer(kapitel);
+    var noetig = mindestdauer(kapitel, ausschluss);
     if (noetig > dauer) {
       return { fehler: "zu_kurz", mindestdauer: noetig, kapitel: kapitel,
                seed: seed, dauer: dauer, aufgaben: [] };
@@ -407,7 +424,9 @@ window.APK = (function () {
       typen(b).forEach(function (t) { s += typZahl[t] ? -2.2 : 2.4; });
       s -= (afbZahl[b.anforderungsbereich] || 0) * 1.6;
       if (!nurAbdeckung) s -= (kapZahl[kapitelSchluessel(b)] || 0) * 1.3;
-      if (vorher[b.id]) s -= 2.6;
+      /* Stärker als Aufgabenart und Niveau zusammen: Wo es bei gleicher Abdeckung
+         und Zeit eine andere Aufgabe gibt, soll die neue Variante sie nehmen. */
+      if (vorher[b.id]) s -= 7;
       // Zeit ausnutzen, aber schwach gewichtet: Sonst gewinnen immer die
       // langen offenen Aufgaben, und die Klausur besteht aus Aufsätzen.
       s += (b.dauer_min / Math.max(restzeit, 1)) * 0.4;
@@ -433,6 +452,25 @@ window.APK = (function () {
       return bestwert === -Infinity ? null : best;
     }
 
+    /* Schritt 0 — ein passender Fall, wenn er ganz hineinpasst und die Abdeckung
+       der übrigen Kapitel erhalten bleibt. Sonst decken Einzelaufgaben ab. */
+    var fall = null;
+    var moegliche = faelleZu(kapitel, kandidaten[0].beruf || "kfb", ausschluss)
+      .map(function (f) {
+        var neu = !f.schritte.some(function (b) { return vorher[b.id]; });
+        return { f: f, rang: (neu ? 1 : 0) + wuerfel(seed + "|fall|" + f.id)() / 2 };
+      }).sort(function (a, b) { return b.rang - a.rang; });
+    moegliche.some(function (m) {
+      var reserve = 0;
+      kapitel.forEach(function (k) {
+        if (m.f.kapitel.indexOf(k) === -1) reserve += mindestdauer([k], ausschluss);
+      });
+      if (m.f.minuten + reserve > dauer) return false;
+      fall = m.f;
+      m.f.schritte.forEach(nimm);
+      return true;
+    });
+
     // Schritt 1 — jedes gewählte Kapitel einmal, in gewürfelter, aber
     // reproduzierbarer Reihenfolge. Sonst käme K1 immer zuerst dran und
     // bekäme bei knapper Zeit systematisch die besten Plätze.
@@ -444,13 +482,14 @@ window.APK = (function () {
        Sonst nimmt K1 eine Sieben-Minuten-Aufgabe und für K9 ist nichts mehr da
        — genau die stille Auslassung, die es nicht geben soll. */
     reihenfolge.forEach(function (k, pos) {
+      if (kapZahl[k]) return;                 // schon über den Fall abgedeckt
       var reserve = 0;
       reihenfolge.slice(pos + 1).forEach(function (rest) {
-        reserve += mindestdauer([rest]);
+        if (!kapZahl[rest]) reserve += mindestdauer([rest], ausschluss);
       });
       var frei = dauer - verbraucht - reserve;
       var b = null, bestwert = -Infinity;
-      bausteineZu([k]).forEach(function (kandidat) {
+      bausteineZu([k], ausschluss).forEach(function (kandidat) {
         var wert = bewerte(kandidat, frei, true);
         if (wert > bestwert) { bestwert = wert; b = kandidat; }
       });
@@ -471,6 +510,10 @@ window.APK = (function () {
     gewaehlt.sort(function (a, b) {
       var d = (kapPos[kapitelSchluessel(a)] || 0) - (kapPos[kapitelSchluessel(b)] || 0);
       if (d) return d;
+      // Schritte eines Falles stehen direkt hintereinander, am Ende des Kapitels.
+      d = (a.fall ? 1 : 0) - (b.fall ? 1 : 0);
+      if (d) return d;
+      if (a.fall) return a.schritt - b.schritt;
       d = a.anforderungsbereich - b.anforderungsbereich;
       return d || (a.id < b.id ? -1 : 1);
     });
@@ -480,15 +523,57 @@ window.APK = (function () {
       aufgaben: gewaehlt.map(function (b) { return b.id; }),
       minuten: verbraucht,
       punkte: gewaehlt.reduce(function (s, b) { return s + b.punkte; }, 0),
-      abgedeckt: Object.keys(kapZahl).length
+      abgedeckt: Object.keys(kapZahl).length,
+      fall: fall ? fall.id : null
     };
+  }
+
+  /* Vorschau und Bogen sind dieselbe Klausur: Die Werte werden hier gezogen und
+     unverändert gestartet. Lässt sich eine Aufgabe nicht ziehen, kommt eine
+     geprüfte Alternative oder ein ehrlicher Hinweis statt einer stillen Lücke. */
+  function vorbereiten(wahl) {
+    var ausschluss = {};
+    for (var runde = 0; runde < 12; runde++) {
+      var v = stelleZusammen({ kapitel: wahl.kapitel, dauer: wahl.dauer, seed: wahl.seed,
+                               vorher: wahl.vorher, ausschluss: ausschluss });
+      if (v.fehler) {
+        if (Object.keys(ausschluss).length) { v.fehler = "ungueltig"; v.aufgaben = []; }
+        return v;
+      }
+      var werte = {}, kaputt = [];
+      v.aufgaben.forEach(function (id) {
+        try { werte[id] = werteZiehen(baustein(id), v.seed); } catch (e) { kaputt.push(id); }
+      });
+      if (!kaputt.length) { v.werte = werte; return v; }
+      kaputt.forEach(function (id) { ausschluss[id] = true; });
+    }
+    return { fehler: "ungueltig", seed: wahl.seed, dauer: wahl.dauer, kapitel: wahl.kapitel,
+             aufgaben: [] };
+  }
+
+  /* Was sich gegenüber der letzten Klausur wirklich wiederholt. */
+  function ueberschneidung(v, alt) {
+    var raus = { gleich: 0, neueWerte: 0 };
+    if (!alt || !v.aufgaben) return raus;
+    v.aufgaben.forEach(function (id) {
+      if ((alt.aufgaben || []).indexOf(id) === -1) return;
+      var a = (alt.werte || {})[id] || {}, n = (v.werte || {})[id] || {};
+      if (JSON.stringify(a) !== JSON.stringify(n)) raus.neueWerte++;
+      else raus.gleich++;
+    });
+    return raus;
   }
 
   function baustein(id) {
     if (!vorrat) return null;
     if (!vorrat._nachId) {
       vorrat._nachId = {};
-      vorrat.bausteine.forEach(function (b) { vorrat._nachId[b.id] = b; });
+      vorrat.bausteine.concat(vorrat.uebungen || []).forEach(function (b) {
+        vorrat._nachId[b.id] = b;
+      });
+      (vorrat.faelle || []).forEach(function (f) {
+        f.schritte.forEach(function (b) { vorrat._nachId[b.id] = b; });
+      });
     }
     return vorrat._nachId[id] || null;
   }
@@ -539,13 +624,46 @@ window.APK = (function () {
       if (!z.aufgaben.length) return null;
     }
     if (z.aktuell >= z.aufgaben.length) z.aktuell = 0;
+    /* Ältere Fassungen schrieben die Reihenfolge schon beim Anzeigen. Ein so
+       entstandener, unberührter Stand ist keine Antwort. Nur laufende, noch
+       nicht abgelaufene Bögen: Gesicherte Abgaben bleiben, wie sie sind. */
+    if (vorrat && z.rf !== 1 && !z.abgegeben && !z.abgelaufen &&
+        !(z.ende && Date.now() >= z.ende)) {
+      z.aufgaben.forEach(function (id) {
+        var a = z.antworten[id], b = baustein(id);
+        if (!a || !b) return;
+        (b.eingabe || []).forEach(function (e, i) {
+          if (e.block !== "reihenfolge" || !Array.isArray(a[i])) return;
+          if (a[i].every(function (x, platz) { return x === platz; })) delete a[i];
+        });
+      });
+      z.rf = 1;
+    }
     return z;
   }
 
   function zustandSichern() {
     if (!zustand) return;
+    if (fremdeAbgabeUebernehmen()) return;
     try { localStorage.setItem(schluesselFuer(zustand.beruf || "kfb"), JSON.stringify(zustand)); }
     catch (e) { /* Speicher voll oder gesperrt — die Klausur läuft trotzdem */ }
+  }
+
+  /* Zwei Tabs mit demselben Bogen: Eine Abgabe im anderen Tab ist endgültig.
+     Dieser Tab darf sie nicht mit seinem älteren Stand zurückdrehen. */
+  function fremdeAbgabeUebernehmen() {
+    if (!zustand || zustand.abgegeben) return false;
+    var roh = null;
+    try { roh = JSON.parse(localStorage.getItem(schluesselFuer(zustand.beruf || "kfb"))); }
+    catch (e) {}
+    if (!roh || roh.id !== zustand.id || !roh.abgegeben) return false;
+    zustand = roh;
+    if (ansicht === "klausur") {
+      ansicht = "auswertung";
+      if (buehne) buehne.classList.remove("pk--imbogen");
+      neuZeichnen();
+    }
+    return true;
   }
 
   /* Nur den Klausurschlüssel entfernen. localStorage.clear() würde den
@@ -557,17 +675,23 @@ window.APK = (function () {
 
   /* ================================================== Bewertung */
 
+  /* Bewertung und Eingabefelder arbeiten auf dem Klausurbogen oder, in einer
+     Übungsrunde, auf einem eigenen Stand. Die Übung reicht dafür eine Kopie des
+     Bausteins mit `_stand` herein; einen zweiten Renderer gibt es nicht, und der
+     Klausurbogen bleibt von der Übung unberührt. */
+  function standVon(b) { return (b && b._stand) || zustand; }
+
   function blockPunkte(b, e) {
     if (typeof e.punkte === "number") return e.punkte;
     return b.punkte;
   }
 
   function antwortVon(b, i) {
-    var a = zustand.antworten[b.id];
+    var a = standVon(b).antworten[b.id];
     return a ? a[i] : undefined;
   }
 
-  function werteVon(b) { return zustand.werte[b.id] || {}; }
+  function werteVon(b) { return standVon(b).werte[b.id] || {}; }
 
   /* Sollwert eines Zahlenfelds: entweder eine Größe der Aufgabe oder eine
      feste Zahl in der Lösung. */
@@ -719,7 +843,7 @@ window.APK = (function () {
      Er hakt einzelne Kriterien ab, und nur die zählen. Nicht angesehen heißt
      null Punkte, nicht „wird schon gestimmt haben". */
   function bewerteSelbst(b) {
-    var haken = zustand.selbst[b.id] || [];
+    var haken = standVon(b).selbst[b.id] || [];
     var raster = (b.bewertung.raster || []);
     var p = 0;
     var angehakt = 0;
@@ -920,11 +1044,39 @@ window.APK = (function () {
     return rahmen;
   }
 
-  function antwortSetzen(b, i, wert) {
-    if (!zustand.antworten[b.id]) zustand.antworten[b.id] = {};
-    zustand.antworten[b.id][i] = wert;
-    zustandSichern();
+  /* Die Endzeit ist absolut. Timer laufen im Hintergrund verspätet, deshalb
+     entscheidet hier jede einzelne Änderung selbst und nicht die Uhr im Kopf. */
+  function bogenGesperrt() {
+    return !!(zustand && (zustand.abgegeben || zustand.abgelaufen ||
+                          (zustand.ende && Date.now() >= zustand.ende)));
   }
+
+  function ablaufAnwenden() {
+    if (!zustand || zustand.abgegeben || zustand.abgelaufen || !bogenGesperrt()) return false;
+    zustand.abgelaufen = true;
+    zustandSichern();
+    if (ansicht === "klausur" && buehne && !buehne.hidden) neuZeichnen();
+    return true;
+  }
+
+  function antwortSetzen(b, i, wert) {
+    var z = standVon(b);
+    if (z === zustand) {
+      fremdeAbgabeUebernehmen();
+      if (z !== zustand || bogenGesperrt()) { ablaufAnwenden(); return false; }
+    } else if (z.gesperrt) {
+      return false;
+    }
+    if (!z.antworten[b.id]) z.antworten[b.id] = {};
+    z.antworten[b.id][i] = wert;
+    if (z === zustand) { zustand.rf = 1; zustandSichern(); }
+    else if (z.sichern) z.sichern();
+    return true;
+  }
+
+  /* Eingaben arbeiten auf einer Kopie: Eine abgelehnte Änderung darf den
+     gespeicherten Stand auch im Arbeitsspeicher nicht berühren. */
+  function kopie(w) { return w === undefined ? w : JSON.parse(JSON.stringify(w)); }
 
   function eingabeBlock(b, e, i) {
     if (e.block === "zahl") return feldZahl(b, e, i);
@@ -1013,7 +1165,7 @@ window.APK = (function () {
     if (e.lead) box.appendChild(mkEl("p", "pk--frage", e.lead));
 
     var gewaehltesEl = null;
-    var stand = antwortVon(b, i) || {};
+    var stand = kopie(antwortVon(b, i)) || {};
     var melder = el("p", "pk--status");
     melder.setAttribute("role", "status");
     melder.setAttribute("aria-live", "polite");
@@ -1056,7 +1208,7 @@ window.APK = (function () {
         kopf.addEventListener("click", function () {
           if (gewaehltesEl === null) { melder.textContent = "Erst ein Element antippen."; return; }
           stand[gewaehltesEl] = z;
-          antwortSetzen(b, i, stand);
+          if (!antwortSetzen(b, i, kopie(stand))) return;
           melder.textContent = "Zugeordnet zu " + z + ".";
           gewaehltesEl = null;
           zeichnen();
@@ -1071,7 +1223,7 @@ window.APK = (function () {
           raus.appendChild(el("span", "pk--zu-weg", "zurücklegen"));
           raus.addEventListener("click", function () {
             delete stand[xi];
-            antwortSetzen(b, i, stand);
+            if (!antwortSetzen(b, i, kopie(stand))) return;
             melder.textContent = "Zurückgelegt.";
             zeichnen();
           });
@@ -1096,6 +1248,14 @@ window.APK = (function () {
     if (!stand || stand.length !== e.elemente.length) {
       stand = e.elemente.map(function (_, xi) { return xi; });
     }
+    /* Die Ausgangsreihenfolge ist keine Antwort. Gespeichert wird erst nach einer
+       Verschiebung oder einer ausdrücklichen Bestätigung. */
+    var bestaetigen = knopf("kn-neben pk--rf-bestaetigen", "Reihenfolge so übernehmen", function () {
+      if (!antwortSetzen(b, i, stand.slice())) return;
+      melder.textContent = "Reihenfolge übernommen.";
+      bestaetigen.hidden = true;
+    });
+    bestaetigen.hidden = Array.isArray(antwortVon(b, i));
     var liste = el("ol", "pk--rf-liste");
     var melder = el("p", "pk--status");
     melder.setAttribute("role", "status");
@@ -1129,15 +1289,18 @@ window.APK = (function () {
     function schieben(platz, richtung) {
       var neu = platz + richtung;
       if (neu < 0 || neu >= stand.length) return;
-      var t = stand[platz]; stand[platz] = stand[neu]; stand[neu] = t;
-      antwortSetzen(b, i, stand);
+      var kandidat = stand.slice();
+      var t = kandidat[platz]; kandidat[platz] = kandidat[neu]; kandidat[neu] = t;
+      if (!antwortSetzen(b, i, kandidat.slice())) return;
+      stand = kandidat;
+      bestaetigen.hidden = true;
       melder.textContent = "Auf Platz " + (neu + 1) + " von " + stand.length + ".";
       zeichnen(neu);
     }
 
-    antwortSetzen(b, i, stand);
     zeichnen(null);
     box.appendChild(liste);
+    box.appendChild(bestaetigen);
     box.appendChild(melder);
     return box;
   }
@@ -1152,7 +1315,8 @@ window.APK = (function () {
     var box = el("div", "pk--buchungssatz");
     if (e.label) box.appendChild(el("p", "pk--titelchen", e.label));
     var zahlZeilen = e.zeilen || (e.loesung ? e.loesung.length : 2);
-    var stand = Array.isArray(antwortVon(b, i)) ? antwortVon(b, i).slice() : [];
+    var stand = Array.isArray(antwortVon(b, i)) ? kopie(antwortVon(b, i)) : [];
+    function sichernZeilen() { return antwortSetzen(b, i, kopie(stand)); }
     // Keine Seite vorbelegt: Soll oder Haben ist Teil der Antwort, nicht der
     // Aufgabenstellung. Ein voreingestelltes „Soll" wäre eine halbe Lösung.
     while (stand.length < zahlZeilen) stand.push({ seite: "", konto: "", betrag: "" });
@@ -1171,8 +1335,9 @@ window.APK = (function () {
       seiten.setAttribute("aria-label", "Zeile " + (zi + 1) + ": Seite");
       [["soll", "Soll"], ["haben", "Haben"]].forEach(function (s) {
         var k = knopf("pk--bs-seitenknopf" + (z.seite === s[0] ? " an" : ""), s[1], function () {
+          var vorher = z.seite;
           z.seite = s[0];
-          antwortSetzen(b, i, stand);
+          if (!sichernZeilen()) { z.seite = vorher; return; }
           seiten.querySelectorAll(".pk--bs-seitenknopf").forEach(function (x) {
             x.classList.toggle("an", x.dataset.seite === z.seite);
             x.setAttribute("aria-pressed", x.dataset.seite === z.seite ? "true" : "false");
@@ -1193,7 +1358,7 @@ window.APK = (function () {
       kontoFeld.value = z.konto || "";
       kontoFeld.addEventListener("input", function () {
         z.konto = kontoFeld.value;
-        antwortSetzen(b, i, stand);
+        sichernZeilen();
       });
       zeile.appendChild(kontoFeld);
 
@@ -1204,13 +1369,12 @@ window.APK = (function () {
       betrag.value = z.betrag || "";
       betrag.addEventListener("input", function () {
         z.betrag = betrag.value;
-        antwortSetzen(b, i, stand);
+        sichernZeilen();
       });
       zeile.appendChild(betrag);
       box.appendChild(zeile);
     });
 
-    antwortSetzen(b, i, stand);
     if (e.punkte != null) {
       box.appendChild(el("p", "pk--leise", punkteText(e.punkte) + " Punkte"));
     }
@@ -1235,20 +1399,48 @@ window.APK = (function () {
     return box;
   }
 
-  function beantwortet(b) {
-    var a = zustand.antworten[b.id];
-    if (!a) return false;
-    return b.eingabe.some(function (e, i) {
-      var v = a[i];
-      if (v === undefined || v === null || v === "") return false;
-      if (e.block === "zuordnung") return Object.keys(v).length > 0;
-      if (e.block === "reihenfolge") return true;
-      if (e.block === "buchungssatz") {
-        return v.some(function (z) { return (z.konto || "").trim() || (z.betrag || "").trim(); });
-      }
-      if (Array.isArray(v)) return v.length > 0;
-      return String(v).trim() !== "";
+  /* Bearbeitungsstand: offen, teilweise oder vollständig. Er sagt nur, ob alles
+     Geforderte ausgefüllt ist, nie ob es stimmt. Mehrfachauswahl gilt deshalb
+     mit dem ersten Kreuz als bearbeitet: Sonst verriete der Stand die Zahl der
+     richtigen Optionen. */
+  function blockStand(e, v) {
+    if (v === undefined || v === null || v === "") return "offen";
+    if (e.block === "zuordnung") {
+      var n = Object.keys(v).length;
+      return !n ? "offen" : n >= e.elemente.length ? "vollstaendig" : "teilweise";
+    }
+    if (e.block === "reihenfolge") {
+      return Array.isArray(v) && v.length === e.elemente.length ? "vollstaendig" : "offen";
+    }
+    if (e.block === "buchungssatz") {
+      var voll = 0, angefangen = 0;
+      (Array.isArray(v) ? v : []).forEach(function (z) {
+        var teile = [z.seite, String(z.konto || "").trim(), String(z.betrag || "").trim()]
+          .filter(Boolean).length;
+        if (teile === 3) voll++;
+        else if (teile) angefangen++;
+      });
+      if (!voll && !angefangen) return "offen";
+      return voll >= (e.loesung || []).length && !angefangen ? "vollstaendig" : "teilweise";
+    }
+    if (Array.isArray(v)) return v.length ? "vollstaendig" : "offen";
+    return String(v).trim() !== "" ? "vollstaendig" : "offen";
+  }
+
+  function bearbeitungsstand(b) {
+    var a = standVon(b).antworten[b.id] || {};
+    var staende = (b.eingabe || []).map(function (e, i) { return blockStand(e, a[i]); });
+    if (staende.every(function (x) { return x === "vollstaendig"; })) return "vollstaendig";
+    return staende.every(function (x) { return x === "offen"; }) ? "offen" : "teilweise";
+  }
+
+  function staendeZaehlen() {
+    var raus = { offen: [], teilweise: [], vollstaendig: [] };
+    zustand.aufgaben.forEach(function (id, n) {
+      var b = baustein(id);
+      if (b) raus[bearbeitungsstand(b)].push(n + 1);
     });
+    return raus;
   }
 
   /* ================================================== Oberfläche */
@@ -1378,11 +1570,14 @@ window.APK = (function () {
   function fortsetzkasten(laufend) {
     var k = el("div", "pk--hinweis pk--laufend");
     var rest = Math.max(0, Math.round((laufend.ende - Date.now()) / 60000));
-    k.appendChild(el("p", null,
-      "Du hast eine begonnene Probeklausur: " + laufend.aufgaben.length + " Aufgaben, "
-      + (laufend.ende ? "noch etwa " + rest + " Min." : "ohne Restzeit") + "."));
+    var vorbei = laufend.abgelaufen || (laufend.ende && Date.now() >= laufend.ende);
+    k.appendChild(el("p", null, vorbei
+      ? "Bei deiner Probeklausur ist die Zeit abgelaufen. Deine Antworten sind "
+        + "gesichert. Du kannst sie ansehen und abgeben."
+      : "Du hast eine begonnene Probeklausur: " + laufend.aufgaben.length + " Aufgaben, "
+        + (laufend.ende ? "noch etwa " + rest + " Min. Die Zeit läuft weiter." : "ohne Restzeit.")));
     var reihe = el("div", "knopfreihe");
-    reihe.appendChild(knopf("kn-haupt", "Weiterschreiben", function () {
+    reihe.appendChild(knopf("kn-haupt", vorbei ? "Ansehen und abgeben" : "Weiterschreiben", function () {
       zustand = laufend;
       ansicht = "klausur";
       neuZeichnen();
@@ -1468,7 +1663,10 @@ window.APK = (function () {
     oben.appendChild(el("span", "pk--kapiteltitel", k.titel));
     text.appendChild(oben);
     text.appendChild(el("span", "pk--kapitelmeta",
-      k.bausteine + " Aufgaben · " + k.punkte + " Punkte"));
+      k.bausteine + " Aufgaben · " + k.punkte + " Punkte"
+      + (((vorrat && vorrat.faelle) || []).some(function (f) {
+          return f.kapitel.indexOf(k.schluessel) !== -1;
+        }) ? " · mit Fallblock" : "")));
     lab.appendChild(text);
     return lab;
   }
@@ -1576,7 +1774,17 @@ window.APK = (function () {
     zoneKnopf.disabled = !gewaehlt.length;
 
     var noetig = gewaehlt.length ? mindestdauer(gewaehlt) : 0;
-    if (gewaehlt.length && noetig > wahlDauer) {
+    /* Wie viel Abwechslung die Auswahl hergibt, steht vor dem Start. */
+    if (gewaehlt.length && noetig <= wahlDauer) {
+      var verfuegbar = bausteineZu(gewaehlt).length;
+      var schaetzung = aufgabenSchaetzung(gewaehlt);
+      zoneWarnung.textContent = verfuegbar <= schaetzung
+        ? "Zu dieser Auswahl gibt es nur " + verfuegbar + " Aufgaben. Sie wiederholen "
+          + "sich bei jeder Variante, nur Zahlen können sich ändern. Mehr Kapitel "
+          + "bringen mehr Abwechslung."
+        : verfuegbar + " Aufgaben stehen zur Auswahl.";
+      zoneWarnung.hidden = false;
+    } else if (gewaehlt.length && noetig > wahlDauer) {
       zoneWarnung.textContent = "Für " + gewaehlt.length + " Kapitel brauchst du "
         + "mindestens " + noetig + " Minuten — sonst bliebe ein Kapitel außen vor.";
       zoneWarnung.hidden = false;
@@ -1593,9 +1801,10 @@ window.APK = (function () {
 
   function ansichtZusammenfassung() {
     var gewaehlt = gewaehlteKapitel();
-    vorschau = stelleZusammen({
+    var altBogen = zustandLaden();
+    vorschau = vorbereiten({
       kapitel: gewaehlt, dauer: wahlDauer, seed: neuerSeed(),
-      vorher: letzteAufgaben()
+      vorher: altBogen ? altBogen.aufgaben || [] : []
     });
 
     buehne.appendChild(zurueckKnopf("‹ Auswahl ändern", function () {
@@ -1610,6 +1819,14 @@ window.APK = (function () {
         + vorschau.mindestdauer + " Minuten. Gewählt sind " + wahlDauer
         + ". Nimm mehr Zeit oder weniger Kapitel — still ein Kapitel wegzulassen "
         + "wäre die schlechtere Lösung.",
+        "Zurück zur Auswahl", function () { ansicht = "auswahl"; neuZeichnen(); }));
+      return;
+    }
+    if (vorschau.fehler === "ungueltig") {
+      buehne.appendChild(hinweiskasten(
+        "Für diese Auswahl lässt sich gerade keine vollständige Klausur vorbereiten, "
+        + "weil eine Aufgabe nicht erstellt werden konnte. Nimm weitere Kapitel dazu "
+        + "oder wähle eine andere Dauer.",
         "Zurück zur Auswahl", function () { ansicht = "auswahl"; neuZeichnen(); }));
       return;
     }
@@ -1630,6 +1847,20 @@ window.APK = (function () {
     zeile("Aufgaben", String(vorschau.aufgaben.length));
     zeile("Erreichbare Punkte", String(vorschau.punkte));
     zeile("Geschätzte Bearbeitungszeit", minutenText(vorschau.minuten));
+    if (altBogen) {
+      var gleich = ueberschneidung(vorschau, altBogen);
+      zeile("Aus der letzten Klausur", gleich.gleich + gleich.neueWerte
+        ? (gleich.gleich + gleich.neueWerte) + " von " + vorschau.aufgaben.length
+          + " Aufgaben wiederholt"
+          + (gleich.neueWerte ? ", davon " + gleich.neueWerte + " mit neuen Zahlen" : "")
+        : "keine Wiederholung");
+    }
+    if (vorschau.fall) {
+      var derFall = ((vorrat && vorrat.faelle) || []).filter(function (f) {
+        return f.id === vorschau.fall;
+      })[0];
+      if (derFall) zeile("Zusammenhängender Fall", derFall.titel);
+    }
     buehne.appendChild(liste);
 
     var kap = el("ul", "pk--kapitelchips");
@@ -1657,11 +1888,6 @@ window.APK = (function () {
     buehne.appendChild(zone);
   }
 
-  function letzteAufgaben() {
-    var alt = zustandLaden();
-    return alt ? (alt.aufgaben || []) : [];
-  }
-
   function starten() {
     var alt = zustandLaden();
     var vorher = alt ? alt.aufgaben : [];
@@ -1673,22 +1899,13 @@ window.APK = (function () {
     zustand.aufgaben = vorschau.aufgaben;
     zustand.vorher = vorher;
     zustand.gestartet = true;
+    zustand.rf = 1;
     // Absolute Endzeit, kein Herunterzählen: Wer die App schließt, verliert
     // Zeit — genau wie in einer echten Klausur. Und ein Neuladen setzt nichts
     // zurück.
     zustand.ende = Date.now() + vorschau.dauer * 60000;
-    zustand.werte = {};
-    var fehler = [];
-    zustand.aufgaben.forEach(function (id) {
-      var b = baustein(id);
-      try { zustand.werte[id] = werteZiehen(b, zustand.seed); }
-      catch (e) { fehler.push(id); zustand.werte[id] = {}; }
-    });
-    if (fehler.length) {
-      zustand.aufgaben = zustand.aufgaben.filter(function (id) {
-        return fehler.indexOf(id) === -1;
-      });
-    }
+    // Dieselben Werte wie in der Vorschau, nichts wird neu gezogen.
+    zustand.werte = vorschau.werte || {};
     zustandSichern();
     ansicht = "klausur";
     neuZeichnen();
@@ -1714,6 +1931,13 @@ window.APK = (function () {
     var b = baustein(zustand.aufgaben[zustand.aktuell]);
     if (!b) { zustand.aktuell = 0; b = baustein(zustand.aufgaben[0]); }
 
+    /* Beim Öffnen eines abgelaufenen Bogens gibt es keinen einzigen Moment mit
+       offenen Feldern: Der Stand wird vor dem ersten Zeichnen festgeschrieben. */
+    if (!zustand.abgelaufen && bogenGesperrt()) {
+      zustand.abgelaufen = true;
+      zustandSichern();
+    }
+
     buehne.classList.add("pk--imbogen");
     buehne.appendChild(klausurkopf());
     if (zustand.abgelaufen) buehne.appendChild(ablaufmeldung());
@@ -1725,6 +1949,12 @@ window.APK = (function () {
     kopf.appendChild(el("span", "pk--aufgabenmeta",
       b.punkte + " Punkte · ca. " + b.dauer_min + " Min."));
     bogen.appendChild(kopf);
+    var fall = fallZu(b);
+    if (fall) {
+      bogen.appendChild(el("p", "pk--fallzeile", "Fall: " + fall.titel + " · Teil "
+        + b.schritt + " von " + fall.schritte.length));
+      bogen.appendChild(fallUnterlagen(fall));
+    }
     bogen.appendChild(el("p", "pk--operator", b.operator));
 
     var w = werteVon(b);
@@ -1736,12 +1966,32 @@ window.APK = (function () {
     (b.eingabe || []).forEach(function (e, i) {
       eingaben.appendChild(eingabeBlock(b, e, i));
     });
+    if (zustand.abgelaufen) {
+      eingaben.setAttribute("aria-disabled", "true");
+      eingaben.querySelectorAll("input,textarea,select,button").forEach(function (x) {
+        x.disabled = true;
+      });
+    }
     bogen.appendChild(eingaben);
     buehne.appendChild(bogen);
 
     buehne.appendChild(kontenliste());
     buehne.appendChild(navigation(b));
     starteUhr();
+  }
+
+  /* Die gemeinsamen Unterlagen eines Falles, in jedem Teil griffbereit. */
+  function fallUnterlagen(fall) {
+    var d = el("details", "pk--anlage pk--fallunterlagen");
+    d.open = true;
+    d.appendChild(el("summary", null, "Fallunterlagen: " + fall.titel));
+    var innen = el("div", "pk--anlage-inhalt");
+    (fall.anzeige || []).forEach(function (a) {
+      var teil = anzeigeBlock(a, {});
+      if (teil) innen.appendChild(teil);
+    });
+    d.appendChild(innen);
+    return d;
   }
 
   function klausurkopf() {
@@ -1767,6 +2017,14 @@ window.APK = (function () {
     balken.setAttribute("aria-label", "Fortschritt in der Klausur");
     kopf.appendChild(balken);
 
+    /* Position und Arbeitsstand sind zwei Angaben. „Aufgabe 8 von 8" heißt nicht,
+       dass acht Aufgaben bearbeitet sind. */
+    var staende = staendeZaehlen();
+    var arbeit = el("p", "pk--arbeitsstand");
+    arbeit.id = "pk-arbeitsstand";
+    arbeit.textContent = arbeitsstandText(staende);
+    kopf.appendChild(arbeit);
+
     var werkzeuge = el("div", "pk--werkzeuge");
     werkzeuge.appendChild(knopf("pk--wz", "Übersicht", uebersichtOeffnen));
     werkzeuge.appendChild(knopf("pk--wz", "Kontenplan", kontenplanOeffnen));
@@ -1774,7 +2032,7 @@ window.APK = (function () {
     var merk = knopf("pk--wz pk--merk", "", markieren);
     merk.id = "pk-merk";
     werkzeuge.appendChild(merk);
-    werkzeuge.appendChild(knopf("pk--wz pk--verlassen", "Später weiter", function () {
+    werkzeuge.appendChild(knopf("pk--wz pk--verlassen", "Verlassen · Zeit läuft weiter", function () {
       zustandSichern();
       ansicht = "auswahl";
       buehne.classList.remove("pk--imbogen");
@@ -1787,17 +2045,24 @@ window.APK = (function () {
     return kopf;
   }
 
+  function arbeitsstandText(staende) {
+    return "Aufgabe " + (zustand.aktuell + 1) + " von " + zustand.aufgaben.length + " · "
+      + staende.vollstaendig.length + " von " + zustand.aufgaben.length
+      + " vollständig bearbeitet";
+  }
+
   function ablaufmeldung() {
     var k = el("div", "pk--hinweis pk--abgelaufen");
     k.setAttribute("role", "alert");
     k.appendChild(el("p", null,
-      "Die Zeit ist abgelaufen. Deine Antworten sind gesichert — du kannst sie "
-      + "noch ansehen und dann abgeben."));
+      "Die Zeit ist abgelaufen. Deine Antworten sind gesichert und lassen sich "
+      + "nicht mehr ändern. Du kannst sie noch ansehen und dann abgeben."));
     k.appendChild(knopf("kn-haupt", "Jetzt abgeben", abgeben));
     return k;
   }
 
   function markieren() {
+    if (bogenGesperrt()) { ablaufAnwenden(); return; }
     var id = zustand.aufgaben[zustand.aktuell];
     var pos = zustand.markiert.indexOf(id);
     if (pos === -1) zustand.markiert.push(id); else zustand.markiert.splice(pos, 1);
@@ -1812,6 +2077,7 @@ window.APK = (function () {
     b.textContent = an ? "★ Gemerkt" : "☆ Später ansehen";
     b.classList.toggle("an", an);
     b.setAttribute("aria-pressed", an ? "true" : "false");
+    b.disabled = !!zustand.abgelaufen;
   }
 
   function navigation(b) {
@@ -1848,11 +2114,9 @@ window.APK = (function () {
         : "Restzeit " + Math.floor(s / 60) + " Minuten"
           + (s <= 300 ? ", weniger als fünf Minuten" : ""));
       feld.dataset.knapp = s != null && s <= 300 ? "wenig Zeit" : "";
-      if (s === 0 && !zustand.abgelaufen) {
-        zustand.abgelaufen = true;
-        zustandSichern();
-        neuZeichnen();
-      }
+      var stand = document.getElementById("pk-arbeitsstand");
+      if (stand) stand.textContent = arbeitsstandText(staendeZaehlen());
+      if (s === 0) ablaufAnwenden();
     }
     tick();
     uhr = setInterval(tick, 1000);
@@ -1892,9 +2156,12 @@ window.APK = (function () {
   function uebersichtOeffnen() {
     blatt("Aufgabenübersicht", function (koerper, zu) {
       var gitter = el("div", "pk--uebersicht");
+      var STANDTEXT = { offen: "offen", teilweise: "teilweise bearbeitet",
+                        vollstaendig: "vollständig bearbeitet" };
       zustand.aufgaben.forEach(function (id, n) {
         var b = baustein(id);
-        var fertig = beantwortet(b);
+        var bearbeitung = bearbeitungsstand(b);
+        var fertig = bearbeitung === "vollstaendig";
         var gemerkt = zustand.markiert.indexOf(id) !== -1;
         var k = knopf("pk--ue-feld", String(n + 1), function () {
           zustand.aktuell = n;
@@ -1903,22 +2170,23 @@ window.APK = (function () {
           neuZeichnen();
         });
         k.classList.toggle("fertig", fertig);
+        k.classList.toggle("teilweise", bearbeitung === "teilweise");
         k.classList.toggle("gemerkt", gemerkt);
         k.classList.toggle("hier", n === zustand.aktuell);
         k.setAttribute("aria-label", "Aufgabe " + (n + 1) + ": "
-          + (fertig ? "beantwortet" : "offen") + (gemerkt ? ", gemerkt" : "")
+          + STANDTEXT[bearbeitung] + (gemerkt ? ", gemerkt" : "")
           + (n === zustand.aktuell ? ", aktuell" : ""));
         if (gemerkt) k.appendChild(el("span", "pk--ue-stern", "★"));
         gitter.appendChild(k);
       });
       koerper.appendChild(gitter);
-      var offen = zustand.aufgaben.filter(function (id) {
-        return !beantwortet(baustein(id));
-      }).length;
+      var staende = staendeZaehlen();
       koerper.appendChild(el("p", "pk--leise",
-        offen ? offen + " Aufgaben noch ohne Antwort." : "Alle Aufgaben beantwortet."));
+        staende.vollstaendig.length + " vollständig · " + staende.teilweise.length
+        + " teilweise · " + staende.offen.length + " offen."));
       koerper.appendChild(el("p", "pk--leise",
-        "Ausgefüllt = beantwortet, ★ = später noch einmal ansehen."));
+        "Ausgefüllt = vollständig, Rand = teilweise, ★ = später noch einmal ansehen."));
+      koerper.appendChild(knopf("kn-neben", "Abgeben", function () { zu(); abgeben(); }));
     });
   }
 
@@ -1989,12 +2257,20 @@ window.APK = (function () {
   /* ---------------------------------------- Abgabe */
 
   function abgeben() {
-    var offen = zustand.aufgaben.filter(function (id) {
-      return !beantwortet(baustein(id));
-    });
-    if (offen.length && !zustand.abgelaufen) {
-      if (!window.confirm(offen.length + " Aufgabe" + (offen.length === 1 ? " ist" : "n sind")
-          + " noch ohne Antwort. Trotzdem abgeben?")) return;
+    if (fremdeAbgabeUebernehmen() || !zustand || zustand.abgegeben) return;
+    if (!zustand.abgelaufen && bogenGesperrt()) { ablaufAnwenden(); return; }
+    var staende = staendeZaehlen();
+    if ((staende.offen.length || staende.teilweise.length) && !zustand.abgelaufen) {
+      var teile = [];
+      if (staende.offen.length) {
+        teile.push(staende.offen.length + " offen (Aufgabe " + staende.offen.join(", ") + ")");
+      }
+      if (staende.teilweise.length) {
+        teile.push(staende.teilweise.length + " teilweise (Aufgabe "
+          + staende.teilweise.join(", ") + ")");
+      }
+      if (!window.confirm("Noch nicht vollständig bearbeitet: " + teile.join(" und ")
+          + ". Trotzdem abgeben?")) return;
     }
     zustand.abgegeben = true;
     if (!zustand.beendetAm) zustand.beendetAm = new Date().toISOString();
@@ -2016,6 +2292,10 @@ window.APK = (function () {
 
     buehne.appendChild(kopfzeile("Auswertung", null));
 
+    var summe = el("div", "pk--summe");
+    summe.id = "pk-summe";
+    buehne.appendChild(summe);
+
     if (offeneAufgaben.length) {
       buehne.appendChild(el("h2", "abschnittstitel", "Offene Antworten selbst bewerten"));
       buehne.appendChild(el("p", "pk--leise",
@@ -2027,9 +2307,9 @@ window.APK = (function () {
       });
     }
 
-    var summe = el("div", "pk--summe");
-    summe.id = "pk-summe";
-    buehne.appendChild(summe);
+    var weiter = el("div");
+    weiter.id = "pk-weiter";
+    buehne.appendChild(weiter);
     summeZeichnen();
 
     buehne.appendChild(el("h2", "abschnittstitel", "Ergebnis je Kapitel"));
@@ -2069,6 +2349,8 @@ window.APK = (function () {
   function summeZeichnen() {
     var e = ergebnis();
     probeklausurZusammenfassung(e);
+    signaleSchreiben();
+    weiterZeichnen();
     var kasten = document.getElementById("pk-summe");
     if (!kasten) return;
     kasten.innerHTML = "";
@@ -2086,6 +2368,103 @@ window.APK = (function () {
     }
     kasten.appendChild(el("p", "pk--leise",
       "Keine Note: Notenschlüssel unterscheiden sich von Schule zu Schule."));
+  }
+
+  /* Was eine Aufgabe in dieser Klausur ergeben hat. Unbearbeitet, falsch und
+     offene Selbstbewertung sind verschiedene Dinge und werden nie vermischt.
+     Ein anerkannter Folgefehler kostet keine Punkte: Er steht als Hinweis da und
+     zählt nicht als eigene Fehlstelle. */
+  function aufgabenLage(b) {
+    var e = bewerteBaustein(b);
+    var folge = false;
+    (b.eingabe || []).forEach(function (blk, i) {
+      if (blk.block === "zahl" && bewerteZahl(b, blk, i).folgefehler) folge = true;
+    });
+    var art;
+    if (bearbeitungsstand(b) === "offen") art = "leer";
+    else if (e.selbst && e.offen) art = "zu_bewerten";
+    else if (e.punkte >= e.moeglich - 1e-9) art = "ok";
+    else if (e.selbst ? e.punkte >= e.moeglich * 0.75 : false) art = "ok";
+    else if (e.punkte <= 1e-9) art = "falsch";
+    else art = "teil";
+    return { art: art, folgefehler: folge, punkte: e.punkte, moeglich: e.moeglich };
+  }
+
+  var LAGETEXT = { leer: "nicht bearbeitet", zu_bewerten: "noch selbst zu bewerten",
+                   ok: "richtig", falsch: "falsch", teil: "teilweise richtig" };
+
+  function aufgabenName(b) {
+    return (b.uebung && b.uebung.kompetenz) || kapitelName(kapitelSchluessel(b));
+  }
+
+  /* Erst nach der Abgabe. Der Bogen selbst bleibt unberührt, ins Konto geht nur
+     die Einstufung. */
+  function signaleSchreiben() {
+    if (!zustand || !zustand.abgegeben || !zustand.id || !AP.klausurSignal) return;
+    var zeit = Date.parse(zustand.beendetAm || "") || Date.now();
+    zustand.aufgaben.forEach(function (id) {
+      var b = baustein(id);
+      if (!b) return;
+      var lage = aufgabenLage(b);
+      if (lage.art === "zu_bewerten") return;
+      AP.klausurSignal(id, { a: lage.art, k: kapitelSchluessel(b), b: b.beruf || "kfb",
+                             l: aufgabenName(b) }, zustand.id, zeit);
+    });
+  }
+
+  /* Bis zu drei Folgeübungen, je Kapitel eine, die größte Schwäche zuerst. */
+  function folgeuebungen() {
+    var RANG = { falsch: 3, teil: 2, leer: 1 };
+    var je = {};
+    zustand.aufgaben.forEach(function (id) {
+      var b = baustein(id);
+      if (!b) return;
+      var lage = aufgabenLage(b);
+      if (!RANG[lage.art]) return;
+      var k = kapitelSchluessel(b);
+      var verlust = lage.moeglich - lage.punkte;
+      if (!je[k] || RANG[lage.art] > RANG[je[k].lage.art] ||
+          (RANG[lage.art] === RANG[je[k].lage.art] && verlust > je[k].verlust)) {
+        je[k] = { b: b, lage: lage, verlust: verlust, kapitel: k };
+      }
+    });
+    return Object.keys(je).map(function (k) { return je[k]; }).sort(function (x, y) {
+      return (RANG[y.lage.art] - RANG[x.lage.art]) || (y.verlust - x.verlust);
+    }).slice(0, 3);
+  }
+
+  function weiterZeichnen() {
+    var kasten = document.getElementById("pk-weiter");
+    if (!kasten) return;
+    kasten.innerHTML = "";
+    var liste = folgeuebungen();
+    var offen = zustand.aufgaben.map(baustein).filter(function (b) {
+      return b && aufgabenLage(b).art === "zu_bewerten";
+    }).length;
+    if (!liste.length && !offen) return;
+    kasten.appendChild(el("h2", "abschnittstitel", "Gezielt weiterüben"));
+    if (liste.length) {
+      var ul = el("ul", "liste-schlicht");
+      liste.forEach(function (f) {
+        var li = el("li");
+        var a = el("a", "reihe pk--folge");
+        a.href = "#ueben/thema?kapitel=" + encodeURIComponent(f.kapitel)
+          + "&fokus=" + encodeURIComponent(f.b.id);
+        var oben = el("div", "reihe-oben");
+        oben.appendChild(el("span", "reihe-titel", aufgabenName(f.b)));
+        oben.appendChild(el("span", "reihe-meta", LAGETEXT[f.lage.art]));
+        a.appendChild(oben);
+        a.appendChild(el("div", "reihe-quelle", kapitelName(f.kapitel) + " · jetzt üben"));
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      kasten.appendChild(ul);
+    }
+    if (offen) {
+      kasten.appendChild(el("p", "pk--leise", offen === 1
+        ? "Eine offene Antwort ist noch zu bewerten. Danach kann sie hier erscheinen."
+        : offen + " offene Antworten sind noch zu bewerten. Danach können sie hier erscheinen."));
+    }
   }
 
   function kapitelZeichnen() {
@@ -2133,6 +2512,8 @@ window.APK = (function () {
     var box = el("section", "pk--selbst");
     box.appendChild(el("h3", "pk--selbst-titel", b.operator));
     var w = werteVon(b);
+    var fallS = fallZu(b);
+    if (fallS) box.appendChild(fallUnterlagen(fallS));
     (b.anzeige || []).forEach(function (a) {
       var teil = anzeigeBlock(a, w);
       if (teil) box.appendChild(teil);
@@ -2150,7 +2531,7 @@ window.APK = (function () {
     var muster = el("details", "pk--anlage");
     muster.appendChild(el("summary", null, "Musterlösung"));
     var mi = el("div", "pk--anlage-inhalt");
-    mi.appendChild(mkEl("p", null, b.bewertung.musterloesung || ""));
+    mi.appendChild(mkEl("p", null, fuellen(b.bewertung.musterloesung || "", w)));
     muster.appendChild(mi);
     box.appendChild(muster);
 
@@ -2192,11 +2573,18 @@ window.APK = (function () {
       punkteText(e.punkte) + " von " + e.moeglich + " Punkten"));
     box.appendChild(kopf);
     box.appendChild(el("p", "pk--operator", b.operator));
+    var lage = aufgabenLage(b);
+    var lageZeile = el("p", "pk--lage pk--lage-" + lage.art, LAGETEXT[lage.art]
+      + (lage.folgefehler ? " · Folgefehler anerkannt" : ""));
+    lageZeile.dataset.lage = lage.art;
+    box.appendChild(lageZeile);
 
     var w = werteVon(b);
     var d = el("details", "pk--anlage");
     d.appendChild(el("summary", null, "Aufgabe und Lösung ansehen"));
     var innen = el("div", "pk--anlage-inhalt");
+    var fallL = fallZu(b);
+    if (fallL) innen.appendChild(fallUnterlagen(fallL));
     (b.anzeige || []).forEach(function (a) {
       var teil = anzeigeBlock(a, w);
       if (teil) innen.appendChild(teil);
@@ -2325,9 +2713,83 @@ window.APK = (function () {
     if (laedt) return laedt;
     laedt = fetch("mittel/aufgaben.json")
       .then(function (a) { return a.json(); })
-      .then(function (d) { vorrat = d; kontenIndex = null; return d; });
+      .then(function (d) { vorrat = d; kontenIndex = null; return d; })
+      .catch(function (fehler) { laedt = null; throw fehler; });
     return laedt;
   }
+
+  /* ================================================== Für die Übungsrunden
+
+     training.js fragt hier nach, statt Renderer und Bewertung zu verdoppeln.
+     `nebenstand(b, stand)` bindet einen Baustein an den Rundenstand; dadurch
+     schreibt keine einzige Eingabe in den Klausurbogen. */
+  function nebenstand(b, st) {
+    var kopieB = Object.create(b);
+    kopieB._stand = st;
+    return kopieB;
+  }
+
+  function uebungAnsicht(b, huelle) {
+    var w = werteVon(b);
+    huelle.appendChild(el("p", "pk--operator", b.operator));
+    (b.anzeige || []).forEach(function (a) {
+      var teil = anzeigeBlock(a, w);
+      if (teil) huelle.appendChild(teil);
+    });
+    var eingaben = el("div", "pk--eingaben");
+    (b.eingabe || []).forEach(function (e, i) { eingaben.appendChild(eingabeBlock(b, e, i)); });
+    huelle.appendChild(eingaben);
+    if (b.eingabe.some(function (e) { return e.block === "buchungssatz"; })) {
+      huelle.appendChild(kontenliste());
+    }
+    return eingaben;
+  }
+
+  function uebungLoesung(b, huelle) {
+    var w = werteVon(b);
+    b.eingabe.forEach(function (blk, i) { huelle.appendChild(loesungZuBlock(b, blk, i, w)); });
+  }
+
+  function uebungRaster(b, huelle, geaendert) {
+    var st = standVon(b), w = werteVon(b);
+    huelle.appendChild(el("p", "pk--titelchen", "Musterlösung"));
+    huelle.appendChild(mkEl("p", null, fuellen(b.bewertung.musterloesung || "", w)));
+    huelle.appendChild(el("p", "pk--titelchen", "Was steht wirklich in deiner Antwort?"));
+    var raster = el("div", "pk--raster");
+    (b.bewertung.raster || []).forEach(function (k, ki) {
+      var lab = el("label", "pk--kriterium");
+      var box = el("input");
+      box.type = "checkbox";
+      box.checked = !!(st.selbst[b.id] || [])[ki];
+      box.addEventListener("change", function () {
+        var neu = (st.selbst[b.id] || []).slice();
+        neu[ki] = box.checked;
+        st.selbst[b.id] = neu;
+        if (st.sichern) st.sichern();
+        if (geaendert) geaendert();
+      });
+      lab.appendChild(box);
+      lab.appendChild(el("span", "pk--kriteriumtext", k.kriterium));
+      lab.appendChild(el("span", "pk--kriteriumpunkte", punkteText(k.punkte) + " P."));
+      raster.appendChild(lab);
+    });
+    huelle.appendChild(raster);
+  }
+
+  var uebung = {
+    nebenstand: nebenstand, ansicht: uebungAnsicht, loesung: uebungLoesung,
+    raster: uebungRaster, bewerte: function (b) { return bewerteBaustein(b); },
+    bearbeitung: function (b) { return bearbeitungsstand(b); },
+    werteZiehen: werteZiehen, fuellen: fuellen, baustein: baustein,
+    bausteineZu: function (k) {
+      var raus = bausteineZu([k]);
+      return raus.concat(((vorrat && vorrat.uebungen) || []).filter(function (b) {
+        return kapitelSchluessel(b) === k;
+      }));
+    },
+    kapitelSchluessel: kapitelSchluessel,
+    vorrat: function () { return vorrat; }
+  };
 
   /* Von app.js aufgerufen. Alles Weitere passiert hier drin.
 
@@ -2400,10 +2862,30 @@ window.APK = (function () {
     return !!(z && z.gestartet && !z.abgegeben);
   }
 
+  function hatAbgelaufene() {
+    var z = zustandLaden();
+    return !!(z && z.gestartet && !z.abgegeben && (z.abgelaufen || (z.ende && Date.now() >= z.ende)));
+  }
+
   function verlassen() {
     if (uhr) { clearInterval(uhr); uhr = null; }
     if (buehne) buehne.classList.remove("pk--imbogen");
+    ansichtVerlassen();
   }
+
+  function ansichtVerlassen() { if (ansicht === "klausur") ansicht = "auswahl"; }
+
+  /* Ein Tab im Hintergrund lässt seine Uhr verspätet laufen. Beim Zurückkommen
+     zählt die Endzeit sofort, nicht erst der nächste Timerschritt. */
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden && zustand && ansicht === "klausur") ablaufAnwenden();
+  });
+  window.addEventListener("focus", function () {
+    if (zustand && ansicht === "klausur") ablaufAnwenden();
+  });
+  window.addEventListener("storage", function (ev) {
+    if (zustand && ev.key === schluesselFuer(zustand.beruf || "kfb")) fremdeAbgabeUebernehmen();
+  });
 
   /* ================================================== Prüfstand
 
@@ -2417,6 +2899,9 @@ window.APK = (function () {
     rechne: rechne,
     werteZiehen: werteZiehen,
     stelleZusammen: stelleZusammen,
+    vorbereiten: vorbereiten,
+    ueberschneidung: ueberschneidung,
+    staende: function () { zustand = zustandLaden(); return staendeZaehlen(); },
     konto: konto,
     zahlLesen: zahlLesen,
     vorrat: function () { return vorrat; },
@@ -2430,7 +2915,7 @@ window.APK = (function () {
 
   return {
     zeige: zeige, verlassen: verlassen, laden: laden, laeuft: laeuft,
-    hatLaufende: hatLaufende,
+    hatLaufende: hatLaufende, hatAbgelaufene: hatAbgelaufene, uebung: uebung,
     SCHLUESSEL: SCHLUESSEL, pruefstand: pruefstand
   };
 })();

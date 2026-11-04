@@ -130,7 +130,14 @@ window.AP = (function () {
     fortschritt: {},      // "lf10-k4" → { ziele, checks, zuordnen, test, fertig }
     karten: {},           // "lf10-k4-b2-m1" → { fach, faellig, fehler }
     vokabeln: {},         // "grund-buero-appointment" → { fach, faellig, fehler }
-    quiz: {},             // Übungsteil: "lf10-k4-b2-c1" → { r: richtig?, n: Versuche }
+    /* Übungsteil, Themenrunden und Klausursignale, je Aufgabe genau ein Eintrag:
+       "lf10-k4-b2-c1" → { r, n, t, s, f, v } — richtig?, Versuche, Zeitpunkt,
+       Zustand (selbst, hilfe, offen, loesung, klausur), Fehlversuche und die
+       Kennung des Versuchs. Einträge ohne t stammen aus älteren Fassungen und
+       haben keine verlässliche Zeitordnung. Bausteine tragen zusätzlich
+       k (Kapitel), b (Beruf) und l (Bezeichnung); Klausursignale pk und a.
+       Rohantworten stehen hier nie. */
+    quiz: {},
     lesezeichen: [],      // { zu, titel, lernfeld }
     aktivitaet: [],       // Tage, an denen etwas gelernt wurde
     zuletzt: null,        // { zu, lernfeld, kapitel, titel }
@@ -468,6 +475,27 @@ window.AP = (function () {
     return raus;
   }
 
+  /* Der jüngere Versuch gilt je Aufgabe, nicht die jüngere Sicherung als
+     Ganzes: Auf zwei Geräten oder in zwei Tabs darf ein älterer Stand keinen
+     neueren Versuch zurückdrehen. Ohne Zeitstempel bleibt die bisherige Regel. */
+  function quizZusammenfuehren(lokal, fremd, fremdIstNeuer) {
+    var raus = werteZusammenfuehren(lokal, {}, false), neu = objekt(fremd);
+    Object.keys(neu).forEach(function (id) {
+      var a = raus[id], b = neu[id];
+      if (!a) { raus[id] = b; return; }
+      if (!istObjekt(a) || !istObjekt(b)) { if (fremdIstNeuer) raus[id] = b; return; }
+      var ta = Number(a.t) || 0, tb = Number(b.t) || 0;
+      var sieger = (ta || tb) ? (tb > ta ? b : a) : (fremdIstNeuer ? b : a);
+      var kopie = {};
+      Object.keys(sieger).forEach(function (k) { kopie[k] = sieger[k]; });
+      kopie.n = Math.max(Number(a.n) || 0, Number(b.n) || 0);
+      var f = Math.max(Number(a.f) || 0, Number(b.f) || 0);
+      if (f) kopie.f = f;
+      raus[id] = kopie;
+    });
+    return raus;
+  }
+
   function fortschrittZusammenfuehren(lokal, fremd, fremdIstNeuer) {
     var alt = objekt(lokal), neu = objekt(fremd);
     var raus = {
@@ -515,7 +543,7 @@ window.AP = (function () {
         stand.vokabeln[id] = neu.vokabeln[id];
       }
     });
-    stand.quiz = werteZusammenfuehren(stand.quiz, neu.quiz, fremdeSicherungIstNeuer);
+    stand.quiz = quizZusammenfuehren(stand.quiz, neu.quiz, fremdeSicherungIstNeuer);
     (neu.aktivitaet || []).forEach(function (t) {
       if (stand.aktivitaet.indexOf(t) === -1) stand.aktivitaet.push(t);
     });
@@ -797,6 +825,47 @@ window.AP = (function () {
     return true;
   }
 
+  /* Ein Übungsversuch. `vid` kennzeichnet genau einen Versuch: Doppelklick,
+     Neuladen oder ein zweiter Tab derselben Runde zählen ihn nicht noch einmal.
+     `zusatz` trägt bei Bausteinen Kapitel, Beruf und Bezeichnung. */
+  function versuchMerken(id, zustandText, vid, zusatz) {
+    if (!id) return null;
+    kontoAuffrischen();
+    var alt = stand.quiz[id];
+    if (vid && alt && alt.v === vid) return alt;
+    var e = { n: ((alt && alt.n) || 0) + 1, t: Date.now(), s: zustandText,
+              r: zustandText === "selbst" || zustandText === "hilfe" };
+    var f = (alt && alt.f) || 0;
+    if (zustandText === "offen") f++;
+    if (f) e.f = f;
+    if (vid) e.v = vid;
+    Object.keys(zusatz || {}).forEach(function (k) { e[k] = zusatz[k]; });
+    stand.quiz[id] = e;
+    heuteGelernt();
+    sichern();
+    return e;
+  }
+
+  /* Ein Klausurergebnis als kompaktes Signal: nur Einstufung und Bezeichnung,
+     nie die Antwort. Wiederholtes Aufrufen derselben Auswertung ändert nichts,
+     und ein jüngerer Übungsversuch wird nicht überschrieben. `daten` ohne a
+     bzw. mit a "ok" bedeutet: In dieser Klausur war hier nichts offen. */
+  function klausurSignal(id, daten, pk, zeit) {
+    if (!id || !pk) return false;
+    kontoAuffrischen();
+    var alt = stand.quiz[id];
+    var art = daten && daten.a ? daten.a : "ok";
+    if (alt && alt.pk !== pk && (Number(alt.t) || 0) > zeit) return false;
+    if (art === "ok" && (!alt || alt.pk !== pk)) return false;
+    if (alt && alt.pk === pk && alt.a === art) return false;
+    var e = { n: alt ? alt.n || 0 : 0, t: zeit, s: "klausur", r: art === "ok", a: art, pk: pk };
+    if (alt && alt.f) e.f = alt.f;
+    Object.keys(daten || {}).forEach(function (k) { if (k !== "a") e[k] = daten[k]; });
+    stand.quiz[id] = e;
+    sichern();
+    return true;
+  }
+
   /* Jeder Beruf hat seinen eigenen laufenden Klausurbogen. Büromanagement
      behält den bisherigen Schlüssel, damit ein laufender Bogen das Update
      übersteht; eine begonnene Klausur wird beim Berufswechsel weder
@@ -808,6 +877,11 @@ window.AP = (function () {
     return PROBEKLAUSUR_SCHLUESSEL_BERUF[b] || PROBEKLAUSUR_SCHLUESSEL;
   }
 
+  /* Die laufende Übungsrunde liegt wie der Klausurbogen außerhalb des Kontos.
+     Bewusst ohne Doppelpunkt: Alles mit „azubipass:“ hält kern.js für alten
+     Lernstand. */
+  function rundenSchluessel(b) { return "azubipass-runde-" + (b || aktiverBeruf()); }
+
   /* Zurücksetzen erfasst die Bögen aller Berufe. */
   function probeklausurZuruecksetzen() {
     try {
@@ -815,6 +889,7 @@ window.AP = (function () {
       Object.keys(PROBEKLAUSUR_SCHLUESSEL_BERUF).forEach(function (b) {
         localStorage.removeItem(PROBEKLAUSUR_SCHLUESSEL_BERUF[b]);
       });
+      BERUFE.forEach(function (b) { localStorage.removeItem(rundenSchluessel(b)); });
     } catch (e) {}
   }
 
@@ -1158,6 +1233,7 @@ window.AP = (function () {
     pruefungstermin: pruefungstermin, pruefungsterminSetzen: pruefungsterminSetzen,
     probeklausurErgebnisSpeichern: probeklausurErgebnisSpeichern,
     probeklausurZuruecksetzen: probeklausurZuruecksetzen,
+    versuchMerken: versuchMerken, klausurSignal: klausurSignal, rundenSchluessel: rundenSchluessel,
     FASSUNG: FASSUNG,
     kartenstand: kartenstand, istFaellig: istFaellig, kartewerten: kartewerten,
     WARTEN: WARTEN, FAECHER: FAECHER, trainer: trainer,

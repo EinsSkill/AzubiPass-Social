@@ -106,6 +106,7 @@ def quiz_sammeln(lf, kapitel_daten):
                     "lernfeld": lf["id"], "lernfeldTitel": lf["titel"],
                     "kapitel": f'K{ch["nummer"]} · {ch["titel"]}',
                     "zu": f'{lf["id"]}.html#{ch["id"]}',
+                    "abschnitt": a["id"],
                 }
                 if b["typ"] == "check":
                     zahl["c"] += 1
@@ -392,6 +393,17 @@ def beleg_fuellen(anlage, steuer, wo):
     return {"werte": {k: str(v) for k, v in werte.items()}, "zeilen": zeilen}
 
 
+def abschnitte_von(kapitel):
+    """Die Abschnittskennungen eines Kapitels, für verlässliche Lernlinks."""
+    return {b.get("id") for b in kapitel.get("bloecke", []) if b.get("id")}
+
+
+def abschnitt_aus_quelle(quelle):
+    """„lf4-k6, Abschnitt b3" → „b3". Ohne Treffer bleibt nur das Kapitel."""
+    m = re.search(r"Abschnitt\s+([a-z]\d+)", str(quelle or ""))
+    return m.group(1) if m else None
+
+
 def aufgaben_sammeln(lf, kapitel_daten, konten_index, vorlagen, steuer):
     """Alle *.aufgaben.json eines Lernfelds prüfen und einsammeln."""
     kapitel_info = {k["id"]: k for k in kapitel_daten}
@@ -399,7 +411,7 @@ def aufgaben_sammeln(lf, kapitel_daten, konten_index, vorlagen, steuer):
     paragraphen = set(lf.get("paragraphen", {}))
     verweis = re.compile(r"\{\{(begriff|par):([a-z0-9-]+)\|")
 
-    kapitel_raus, bausteine_raus = [], []
+    kapitel_raus, bausteine_raus, uebungen_raus, faelle_raus = [], [], [], []
     for pfad in sorted(HIER.glob("*.aufgaben.json")):
         datei = json.loads(pfad.read_text(encoding="utf-8"))
         if datei.get("lernfeld") != lf["id"]:
@@ -409,8 +421,7 @@ def aufgaben_sammeln(lf, kapitel_daten, konten_index, vorlagen, steuer):
             raise Aufgabenfehler(
                 f"{pfad.name}: Kapitel „{kap}“ steht nicht in {lf['id']}.lernfeld.json")
 
-        eigene = []
-        for b in datei.get("bausteine", []):
+        def pruefen(b, abschnitte=abschnitte_von(kapitel_info[kap])):
             wo = f"{pfad.name} · {b.get('id', '?')}"
             for feld in ("id", "operator", "anforderungsbereich", "punkte",
                          "dauer_min", "eingabe", "bewertung"):
@@ -463,8 +474,31 @@ def aufgaben_sammeln(lf, kapitel_daten, konten_index, vorlagen, steuer):
                     raise Aufgabenfehler(
                         f"{wo}: Verweis {art}:{kennung} steht nicht in {lf['id']}.lernfeld.json")
 
-            eigene.append(dict(b, lernfeld=lf["id"], kapitel=kap, beruf=lf["beruf"],
-                               konten_als=datei.get("konten_als", "nummer")))
+            uebung = b.get("uebung") or {}
+            if uebung.get("zweitfall") and not uebung["zweitfall"].strip():
+                raise Aufgabenfehler(f"{wo}: zweitfall ist leer")
+            fertig = dict(b, lernfeld=lf["id"], kapitel=kap, beruf=lf["beruf"],
+                          konten_als=datei.get("konten_als", "nummer"))
+            abschnitt = abschnitt_aus_quelle(b.get("quelle"))
+            if abschnitt in abschnitte:
+                fertig["abschnitt"] = abschnitt
+            return fertig
+
+        eigene = [pruefen(b) for b in datei.get("bausteine", [])]
+        uebungen_raus += [pruefen(b) for b in datei.get("uebungen", [])]
+        for fall in datei.get("faelle", []):
+            for feld in ("id", "titel", "anzeige", "schritte"):
+                if not fall.get(feld):
+                    raise Aufgabenfehler(f"{pfad.name}: Fall ohne Feld „{feld}“")
+            schritte = []
+            for nr, schritt in enumerate(fall["schritte"], 1):
+                schritte.append(dict(pruefen(schritt), fall=fall["id"], schritt=nr))
+            faelle_raus.append({
+                "id": fall["id"], "titel": fall["titel"], "beruf": lf["beruf"],
+                "kapitel": [f'{lf["id"]}:{kap}'], "anzeige": fall["anzeige"],
+                "schritte": schritte,
+                "minuten": sum(s["dauer_min"] for s in schritte),
+            })
 
         if not eigene:
             continue
@@ -480,11 +514,12 @@ def aufgaben_sammeln(lf, kapitel_daten, konten_index, vorlagen, steuer):
             "minuten": sum(b["dauer_min"] for b in eigene),
         })
         bausteine_raus += eigene
-    return kapitel_raus, bausteine_raus
+    return kapitel_raus, bausteine_raus, uebungen_raus, faelle_raus
 
 
-def aufgaben_schreiben(kapitel, bausteine, konten, vorlagen):
-    kennungen = [b["id"] for b in bausteine]
+def aufgaben_schreiben(kapitel, bausteine, konten, vorlagen, uebungen=(), faelle=()):
+    kennungen = [b["id"] for b in bausteine] + [b["id"] for b in uebungen] + [
+        s["id"] for f in faelle for s in f["schritte"]]
     doppelt = {k for k in kennungen if kennungen.count(k) > 1}
     if doppelt:
         raise Aufgabenfehler("Doppelte Baustein-Kennungen: " + ", ".join(sorted(doppelt)))
@@ -492,6 +527,8 @@ def aufgaben_schreiben(kapitel, bausteine, konten, vorlagen):
         "gebaut": datetime.now().isoformat(timespec="seconds"),
         "kapitel": kapitel,
         "bausteine": bausteine,
+        "uebungen": list(uebungen),
+        "faelle": list(faelle),
         "kontenplan": konten,
         "belege": vorlagen,
     }
@@ -929,7 +966,7 @@ def datenschutz_ohne_konten(r, fehlt):
 
 # ---------------------------------------------------------------- App-Seite
 
-def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs):
+def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs, trainingjs):
     """Die Schale. Der Inhalt der fünf Schirme entsteht im Browser aus
     inhalt.json — hier steht nur das Gerüst, damit die Seite auch ohne
     JavaScript etwas Sinnvolles zeigt."""
@@ -942,7 +979,7 @@ def app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtj
 <head>
 {kopf("Lernen", "Alle Lernfelder für Kaufleute für Büromanagement — Fortschritt, "
       "Karteikarten und Suche, auch ohne Netz.", stile=[stil],
-      skripte=[kernel, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, aufgabenjs, appjs, syncjs])}
+      skripte=[kernel, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, aufgabenjs, trainingjs, appjs, syncjs])}
 </head>
 <body data-bereich="heute">
 <a class="sprung" href="#inhalt">Zum Inhalt springen</a>
@@ -1049,8 +1086,8 @@ def baue():
         print("ACHTUNG: mittel/schriften.css fehlt — erst schriften.py laufen lassen.\n")
 
     MITTEL.mkdir(parents=True, exist_ok=True)
-    stil, kernel, appjs, aufgabenjs, verhalten, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs, _ = veroeffentliche(
-        "azubipass.css", "kern.js", "app.js", "aufgaben.js", "azubipass.js",
+    stil, kernel, appjs, aufgabenjs, trainingjs, verhalten, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs, _ = veroeffentliche(
+        "azubipass.css", "kern.js", "app.js", "aufgaben.js", "training.js", "azubipass.js",
         # supabase.js wird nicht eingebunden, sondern erst bei Bedarf von
         # community.js nachgeladen – liegt aber im Zwischenspeicher bereit.
         "community.js", "community-ansicht.js", "community-beitraege.js", "community-moderation.js", "community-gruppen.js", "lernstand-sync.js", "supabase.js")
@@ -1059,7 +1096,7 @@ def baue():
     belege, belege_steuer = belegvorlagen()
 
     lernfelder, karten, quiz, tests, suche, begriffe = [], [], [], [], [], {}
-    pk_kapitel, pk_bausteine = [], []
+    pk_kapitel, pk_bausteine, pk_uebungen, pk_faelle = [], [], [], []
     cfg = json.loads((HIER / "landing.config.json").read_text(encoding="utf-8"))
     vokabelbloecke = vokabeln_lesen()
 
@@ -1072,7 +1109,9 @@ def baue():
             print(f"  übersprungen (nicht gebaut): {lf['id']}")
             continue
 
-        k, b = aufgaben_sammeln(lf, kapitel_daten, konten_index, belege, belege_steuer)
+        k, b, ue, fa = aufgaben_sammeln(lf, kapitel_daten, konten_index, belege, belege_steuer)
+        pk_uebungen += ue
+        pk_faelle += fa
         pk_kapitel += k
         pk_bausteine += b
         nummer = next((x["nr"] for x in cfg["lernfelder"]
@@ -1138,13 +1177,13 @@ def baue():
     (MITTEL / "suche.json").write_text(
         json.dumps(suche, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
-    aufgaben_schreiben(pk_kapitel, pk_bausteine, konten, belege)
+    aufgaben_schreiben(pk_kapitel, pk_bausteine, konten, belege, pk_uebungen, pk_faelle)
 
     symbole()
     (AUSGABE / "manifest.webmanifest").write_text(manifest(), encoding="utf-8")
     # Direkt im Home-Menü starten, auch an der Wurzel der Projektseite.
     # app.html bleibt für bestehende Links und installierte Apps erhalten.
-    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs)
+    app = app_seite(stil, kernel, appjs, aufgabenjs, lernfelder, communityjs, ansichtjs, beitraegejs, moderationjs, gruppenjs, syncjs, trainingjs)
     for name in ("index.html", "app.html"):
         (AUSGABE / name).write_text(app, encoding="utf-8")
 

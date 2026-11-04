@@ -244,7 +244,10 @@ def probeklausur_aktion(ch, lf, hat_aufgaben):
     if not hat_aufgaben:
         return ""
     kennung = f'{lf["id"]}:{ch["id"]}'
-    return (f'<a class="kn-neben weiter-pk" '
+    return (f'<a class="kn-neben weiter-uebung" '
+            f'href="app.html#ueben/thema?kapitel={html.escape(kennung)}">'
+            f'Dieses Thema üben</a>'
+            f'<a class="kn-neben weiter-pk" '
             f'href="app.html#ueben/probeklausur?kapitel={html.escape(kennung)}">'
             f'Dieses Kapitel als Probeklausur üben</a>')
 

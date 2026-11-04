@@ -965,7 +965,7 @@ def probeklausur_klausur(b, w):
     pg.reload(wait_until="networkidle")
     pg.wait_for_timeout(1300)
     pg.evaluate("() => { window.confirm = () => true; }")
-    pg.get_by_role("button", name="Später weiter").click()
+    pg.get_by_role("button", name="Verlassen · Zeit läuft weiter").click()
     pg.wait_for_timeout(500)
     pg.get_by_role("button", name="Verwerfen").click()
     pg.wait_for_timeout(600)

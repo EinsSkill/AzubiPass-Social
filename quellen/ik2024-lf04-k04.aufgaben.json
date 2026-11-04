@@ -5,6 +5,19 @@
   "bausteine": [
     {
       "id": "ik2024-lf04-k04-01",
+      "uebung": {
+        "kompetenz": "Ziel- und Bezugspreis berechnen",
+        "hinweise": [
+          "Geh die Stufen der Reihe nach: Rabatt, Skonto, Bezugskosten. Jede Stufe rechnet mit dem Ergebnis der vorigen.",
+          "Der Rabatt gilt auf den Listenpreis, das Skonto auf den Zieleinkaufspreis von {zep} €. Die Fracht von {fracht} € kommt erst danach dazu."
+        ],
+        "schritte": [
+          "Zieleinkaufspreis: {lep} € Listenpreis abzüglich Rabatt ergibt {zep} €.",
+          "Bareinkaufspreis: {zep} € abzüglich Skonto ergibt {bar} €.",
+          "Bezugspreis: {bar} € plus {fracht} € Fracht ergibt {bezug} €."
+        ],
+        "typischer_fehler": "Die Fracht vor dem Skonto addieren. Das ergäbe {falsch_fracht} € statt {bezug} €, denn dann würde auch die Fracht skontiert. Bezugsgröße des Skontos ist nur der Zieleinkaufspreis."
+      },
       "operator": "Berechnen Sie",
       "anforderungsbereich": 2,
       "punkte": 4,
@@ -35,7 +48,7 @@
       },
       "abgeleitet": {
         "zep": "lep * (1 - rabatt / 100)",
-        "bezug": "runde(zep * (1 - skonto / 100) + fracht, 2)"
+        "bezug": "runde(zep * (1 - skonto / 100) + fracht, 2)", "falsch_fracht": "runde((zep + fracht) * (1 - skonto / 100), 2)", "bar": "runde(zep * (1 - skonto / 100), 2)"
       },
       "anzeige": [
         {

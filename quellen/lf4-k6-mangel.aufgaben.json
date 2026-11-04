@@ -6,6 +6,13 @@
   "bausteine": [
     {
       "id": "lf4-k6-01",
+      "uebung": {
+        "kompetenz": "Arten der Vertragswidrigkeit unterscheiden",
+        "hinweise": [
+          "Frag bei jeder Beanstandung: Stimmt der Zustand, die Art oder die Menge nicht?",
+          "Vereinbart heißt: Es steht so in der Bestellung. Üblich heißt: Es gilt auch ohne Absprache."
+        ]
+      },
       "operator": "Ordnen Sie zu",
       "anforderungsbereich": 1,
       "punkte": 4,
@@ -29,10 +36,10 @@
             "Zuweniglieferung"
           ],
           "elemente": [
-            { "text": "Bestellt war Schwarz, geliefert wurde Dunkelgrau", "loesung": "Abweichung von der vereinbarten Beschaffenheit" },
-            { "text": "Mehrere Stoffbahnen sind eingerissen und dadurch nicht verarbeitbar", "loesung": "Abweichung von der üblichen Beschaffenheit" },
-            { "text": "Geliefert wurde ein völlig anderer Stofftyp als bestellt", "loesung": "Falschlieferung" },
-            { "text": "Statt 100 Rollen enthält die Sendung nur 80 Rollen", "loesung": "Zuweniglieferung" }
+            { "text": "Bestellt war Schwarz, geliefert wurde Dunkelgrau", "loesung": "Abweichung von der vereinbarten Beschaffenheit", "warum": "Die Farbe war ausdrücklich vereinbart. Maßstab ist also der Vertrag." },
+            { "text": "Mehrere Stoffbahnen sind eingerissen und dadurch nicht verarbeitbar", "loesung": "Abweichung von der üblichen Beschaffenheit", "warum": "Eingerissene Bahnen taugen nicht zur gewöhnlichen Verwendung. Das gilt auch, wenn im Vertrag nichts dazu steht." },
+            { "text": "Geliefert wurde ein völlig anderer Stofftyp als bestellt", "loesung": "Falschlieferung", "warum": "Es kam eine andere Ware, nicht die bestellte Ware mit einem Fehler." },
+            { "text": "Statt 100 Rollen enthält die Sendung nur 80 Rollen", "loesung": "Zuweniglieferung", "warum": "Der Zustand der Ware ist nicht das Problem, sondern die Menge." }
           ]
         }
       ],
@@ -43,6 +50,9 @@
 
     {
       "id": "lf4-k6-02",
+      "uebung": {
+        "kompetenz": "Mängelrechte in der richtigen Stufe nennen"
+      },
       "operator": "Kreuzen Sie an",
       "anforderungsbereich": 2,
       "punkte": 3,
@@ -77,6 +87,9 @@
 
     {
       "id": "lf4-k6-03",
+      "uebung": {
+        "kompetenz": "Stufenfolge der Mängelrechte begründen"
+      },
       "operator": "Begründen Sie",
       "anforderungsbereich": 3,
       "punkte": 4,
@@ -109,6 +122,677 @@
       },
       "erklaerung": "Die Stufenfolge schützt beide Seiten: Der Käufer bekommt am Ende einwandfreie Ware oder sein Geld, der Verkäufer bekommt eine faire Chance, den Fehler zu beheben.",
       "quelle": "lf4-k6, Abschnitt b3"
+    }
+  ],
+
+  "uebungen": [
+    {
+      "id": "lf4-k6-u1",
+      "operator": "Prüfen und entscheiden",
+      "anforderungsbereich": 2,
+      "punkte": 5,
+      "dauer_min": 5,
+      "schwierigkeit": 2,
+      "passt_zu": [
+        "vorgang:stoffbeschaffung-winterkollektion"
+      ],
+      "variablen": null,
+      "uebung": {
+        "kompetenz": "Stofflieferung prüfen und den nächsten Schritt wählen",
+        "zweitfall": "lf4-k6-u3",
+        "hinweise": [
+          "Prüfe zuerst, ob beide Seiten Kaufleute sind. Davon hängt ab, wie schnell gerügt werden muss.",
+          "Beide sind Kaufleute, also gilt § 377 HGB. Der Mangel war sofort erkennbar und wurde am selben Tag angezeigt. Damit bleiben die Mängelrechte erhalten."
+        ],
+        "schritte": [
+          "Entscheidend ist hier der Zeitpunkt der Rüge: Am Tag der Anlieferung ist sie unverzüglich. Deshalb bleiben die Mängelrechte erhalten, und die Nacherfüllung steht an erster Stelle."
+        ],
+        "typischer_fehler": "Gleich Minderung oder Rücktritt wählen. Beide kommen erst in Betracht, wenn die Nacherfüllung gescheitert ist oder eine gesetzte Frist erfolglos ablief."
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH bestellt bei einem Textilgroßhändler 100 Rollen Stoff. Beide Vertragspartner sind Kaufleute. Jonas Weidner prüft die Lieferung am Tag der Anlieferung: 20 Rollen sind sichtbar durchnässt. Er vermerkt das auf dem Lieferschein, und der Einkauf zeigt den Mangel noch am selben Tag beim Lieferer an."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "zuordnung",
+          "lead": "Ordnen Sie die Angaben aus dem Sachverhalt ein.",
+          "punkte": 2,
+          "ziele": [
+            "Art des Mangels",
+            "Rechtzeitigkeit der Rüge"
+          ],
+          "elemente": [
+            {
+              "text": "20 Rollen sind sichtbar durchnässt",
+              "loesung": "Art des Mangels",
+              "warum": "Der Schaden war bei der Prüfung erkennbar. Es ist ein offener Mangel."
+            },
+            {
+              "text": "Anzeige beim Lieferer noch am Tag der Anlieferung",
+              "loesung": "Rechtzeitigkeit der Rüge",
+              "warum": "Wer am selben Tag anzeigt, rügt unverzüglich."
+            }
+          ]
+        },
+        {
+          "block": "auswahl",
+          "frage": "Was ist der nächste Schritt?",
+          "mehrfach": false,
+          "punkte": 3,
+          "optionen": [
+            {
+              "text": "Nacherfüllung verlangen, also Nachbesserung oder Lieferung mangelfreier Rollen.",
+              "richtig": true,
+              "echo": "Richtig. Die Rüge kam rechtzeitig, und die Nacherfüllung hat Vorrang."
+            },
+            {
+              "text": "Die Rechnung sofort um den Wert der 20 Rollen kürzen.",
+              "richtig": false,
+              "echo": "Die Minderung ist erst ein Recht der zweiten Stufe. Zuerst bekommt der Lieferer die Gelegenheit zur Nacherfüllung."
+            },
+            {
+              "text": "Nichts unternehmen, denn die Ware gilt als genehmigt.",
+              "richtig": false,
+              "echo": "Als genehmigt gilt die Ware nur, wenn nicht rechtzeitig gerügt wurde. Hier wurde am selben Tag gerügt."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 5
+      },
+      "erklaerung": "{{par:hgb-377|§ 377 HGB}}: Beim beiderseitigen Handelskauf wird unverzüglich untersucht und gerügt. {{par:bgb-437|§ 437 BGB}}: Nacherfüllung zuerst.",
+      "quelle": "lf4-k6, Abschnitt b2"
+    },
+    {
+      "id": "lf4-k6-u2",
+      "operator": "Begründen Sie",
+      "anforderungsbereich": 3,
+      "punkte": 4,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [
+        "vorgang:stoffbeschaffung-winterkollektion"
+      ],
+      "variablen": null,
+      "uebung": {
+        "kompetenz": "Den nächsten Schritt nach einer Mängelrüge begründen",
+        "hinweise": [
+          "Nenne erst den Beleg, dann die Regel, dann die Folge.",
+          "Beleg: Vermerk auf dem Lieferschein. Regel: Rüge unverzüglich, Nacherfüllung zuerst. Folge: Der Einkauf setzt dem Lieferer eine Frist."
+        ]
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Von 100 gelieferten Rollen Stoff sind 20 sichtbar durchnässt. Der Wareneingang hat das am Tag der Anlieferung auf dem Lieferschein vermerkt, und der Einkauf hat den Mangel noch am selben Tag angezeigt. Beide Vertragspartner sind Kaufleute."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "textfeld",
+          "frage": "Begründen Sie in drei bis vier Sätzen, wie die MAKEL Studio GmbH jetzt vorgehen sollte.",
+          "zeilen": 6
+        }
+      ],
+      "bewertung": {
+        "art": "selbstbewertung",
+        "musterloesung": "Der Lieferschein belegt, dass 20 Rollen durchnässt angekommen sind. Weil beide Seiten Kaufleute sind, galt die Rügepflicht nach § 377 HGB; sie ist mit der Anzeige am selben Tag erfüllt, die Mängelrechte bleiben also erhalten. Vorrang hat die Nacherfüllung: Der Lieferer bekommt die Gelegenheit, mangelfreie Rollen zu liefern oder nachzubessern. Der Einkauf sollte dafür eine angemessene Frist setzen. Rücktritt oder Minderung kommen erst danach in Betracht.",
+        "raster": [
+          {
+            "kriterium": "Lieferschein oder Wareneingangsvermerk als Beleg genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Rechtzeitige Rüge nach § 377 HGB erklärt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Nacherfüllung als nächster Schritt genannt",
+            "punkte": 1
+          },
+          {
+            "kriterium": "Fristsetzung und nachrangige Rechte genannt",
+            "punkte": 1
+          }
+        ]
+      },
+      "erklaerung": "Eine gute Begründung führt vom Beleg über die Regel zur Folge.",
+      "quelle": "lf4-k6, Abschnitt b3"
+    },
+    {
+      "id": "lf4-k6-u3",
+      "operator": "Prüfen und entscheiden",
+      "anforderungsbereich": 3,
+      "punkte": 5,
+      "dauer_min": 5,
+      "schwierigkeit": 3,
+      "passt_zu": [
+        "vorgang:stoffbeschaffung-winterkollektion"
+      ],
+      "variablen": null,
+      "uebung": {
+        "kompetenz": "Die verspätete Rüge von der rechtzeitigen unterscheiden",
+        "hinweise": [
+          "Vergleiche mit dem ersten Fall: Es ist derselbe Schaden. Was ist anders?",
+          "Der Schaden war bei der Anlieferung erkennbar, angezeigt wurde aber erst drei Wochen später."
+        ],
+        "schritte": [
+          "Entscheidend ist hier die eine geänderte Angabe: Die Rüge kam drei Wochen später, obwohl der Schaden sofort erkennbar war. Ein offener Mangel muss unverzüglich gerügt werden, sonst gilt die Ware beim beiderseitigen Handelskauf als genehmigt. Im ersten Fall war die Rüge rechtzeitig, deshalb kam dort die Nacherfüllung in Frage."
+        ],
+        "typischer_fehler": "Die zweijährige Verjährung mit der Rügefrist verwechseln. Die Verjährung hilft nicht, wenn die Rügefrist schon versäumt ist."
+      },
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Dieselbe Lieferung: 100 Rollen Stoff, beide Vertragspartner sind Kaufleute, 20 Rollen sind sichtbar durchnässt. Diesmal stellt der Wareneingang die Lieferung ungeprüft ins Lager. Der Schaden fällt erst drei Wochen später beim Zuschnitt auf, und erst dann zeigt der Einkauf ihn beim Lieferer an."
+        }
+      ],
+      "eingabe": [
+        {
+          "block": "auswahl",
+          "frage": "Wie ist die Rechtslage?",
+          "mehrfach": false,
+          "punkte": 3,
+          "optionen": [
+            {
+              "text": "Die Ware gilt als genehmigt, die Mängelrechte für den erkennbaren Schaden sind verloren.",
+              "richtig": true,
+              "echo": "Richtig. Der Schaden war bei einer Prüfung erkennbar, die Rüge kam nicht mehr unverzüglich."
+            },
+            {
+              "text": "Die Nacherfüllung bleibt möglich, weil zwei Jahre Verjährungsfrist laufen.",
+              "richtig": false,
+              "echo": "Die Verjährung setzt voraus, dass Rechte entstanden sind. Mit der versäumten Rüge sind sie hier verloren."
+            },
+            {
+              "text": "Es handelt sich um einen versteckten Mangel, die Rüge ist rechtzeitig.",
+              "richtig": false,
+              "echo": "Versteckt ist ein Mangel nur, wenn er bei zumutbarer Prüfung nicht erkennbar war. Sichtbar nasse Rollen sind erkennbar."
+            }
+          ]
+        },
+        {
+          "block": "zuordnung",
+          "lead": "Welche Angabe entscheidet den Fall?",
+          "punkte": 2,
+          "ziele": [
+            "entscheidend",
+            "nicht entscheidend"
+          ],
+          "elemente": [
+            {
+              "text": "Anzeige erst drei Wochen nach der Anlieferung",
+              "loesung": "entscheidend",
+              "warum": "Das ist der Unterschied zum ersten Fall."
+            },
+            {
+              "text": "Der Stoff ist für die Winterkollektion bestimmt",
+              "loesung": "nicht entscheidend",
+              "warum": "Der Verwendungszweck ändert die Rügepflicht hier nicht."
+            }
+          ]
+        }
+      ],
+      "bewertung": {
+        "art": "automatisch",
+        "punkte_gesamt": 5
+      },
+      "erklaerung": "{{par:hgb-377|§ 377 HGB}}: Offene Mängel unverzüglich rügen, sonst gilt die Ware als genehmigt.",
+      "quelle": "lf4-k6, Abschnitt b2"
+    }
+  ],
+
+  "faelle": [
+    {
+      "id": "stofflieferung-winterkollektion-a",
+      "titel": "Stofflieferung für die Winterkollektion",
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH hat für die Winterkollektion Stoff bestellt. Beide Vertragspartner sind Kaufleute, es gilt § 377 HGB. Interne Anweisung: Rechnungen werden bei einem dokumentierten Mangel zur Klärung an den Einkauf gegeben."
+        },
+        {
+          "block": "anlage",
+          "titel": "Bestellung B-2026-118-P",
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Inhalt"
+            ],
+            "zeilen": [
+              [
+                "Ware",
+                "100 Rollen Stoff"
+              ],
+              [
+                "Einzelpreis",
+                "48,00 € netto"
+              ],
+              [
+                "Liefertermin",
+                "16.11."
+              ]
+            ]
+          }
+        },
+        {
+          "block": "anlage",
+          "titel": "Lieferschein L-2026-331-P",
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Inhalt"
+            ],
+            "zeilen": [
+              [
+                "Anlieferung",
+                "16.11."
+              ],
+              [
+                "Menge",
+                "100 Rollen"
+              ],
+              [
+                "Vermerk Wareneingang",
+                "20 Rollen mit Feuchtigkeitsschäden"
+              ]
+            ]
+          }
+        },
+        {
+          "block": "anlage",
+          "titel": "Rechnung R-2026-444-P",
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Inhalt"
+            ],
+            "zeilen": [
+              [
+                "Ware",
+                "100 Rollen Stoff"
+              ],
+              [
+                "Einzelpreis",
+                "48,00 € netto"
+              ]
+            ]
+          }
+        }
+      ],
+      "schritte": [
+        {
+          "id": "lf4-fall-a-1",
+          "operator": "Prüfen Sie",
+          "anforderungsbereich": 1,
+          "punkte": 3,
+          "dauer_min": 3,
+          "schwierigkeit": 1,
+          "passt_zu": [
+            "vorgang:stoffbeschaffung-winterkollektion"
+          ],
+          "variablen": null,
+          "uebung": {
+            "kompetenz": "Bestellung, Lieferschein und Rechnung abgleichen"
+          },
+          "anzeige": [
+            {
+              "block": "text",
+              "inhalt": "Gleichen Sie Bestellung, Lieferschein und Rechnung miteinander ab."
+            }
+          ],
+          "eingabe": [
+            {
+              "block": "auswahl",
+              "frage": "Welche Auffälligkeit ergibt der Abgleich?",
+              "mehrfach": false,
+              "optionen": [
+                {
+                  "text": "Der Zustand von 20 Rollen ist beanstandet.",
+                  "richtig": true,
+                  "echo": "Richtig. Der Vermerk steht auf dem Lieferschein."
+                },
+                {
+                  "text": "Die Lieferung kam nach dem vereinbarten Termin.",
+                  "richtig": false,
+                  "echo": "Vereinbart und geliefert wurde am 16.11."
+                },
+                {
+                  "text": "Es wurden weniger Rollen geliefert als bestellt.",
+                  "richtig": false,
+                  "echo": "Bestellt und geliefert wurden jeweils 100 Rollen."
+                },
+                {
+                  "text": "Die Rechnung nennt einen höheren Einzelpreis als die Bestellung.",
+                  "richtig": false,
+                  "echo": "Beide Belege nennen 48,00 € netto."
+                }
+              ]
+            }
+          ],
+          "bewertung": {
+            "art": "automatisch",
+            "punkte_gesamt": 3
+          },
+          "erklaerung": "Termin, Menge und Preis stimmen überein. Auffällig ist allein der Vermerk zum Zustand von 20 Rollen.",
+          "quelle": "lf4-k6, Abschnitt b1"
+        },
+        {
+          "id": "lf4-fall-a-2",
+          "operator": "Berechnen Sie",
+          "anforderungsbereich": 2,
+          "punkte": 3,
+          "dauer_min": 3,
+          "schwierigkeit": 2,
+          "passt_zu": [
+            "vorgang:stoffbeschaffung-winterkollektion"
+          ],
+          "variablen": null,
+          "uebung": {
+            "kompetenz": "Warenwert einer beanstandeten Position berechnen"
+          },
+          "anzeige": [
+            {
+              "block": "text",
+              "inhalt": "Berechnen Sie den Warenwert der betroffenen Rollen. Gemeint ist der Warenwert dieser Position, nicht ein automatischer Abzug vom Rechnungsbetrag."
+            }
+          ],
+          "eingabe": [
+            {
+              "block": "zahl",
+              "label": "Warenwert der betroffenen Rollen, netto",
+              "einheit": "€",
+              "loesung": 960,
+              "toleranz": 0.01
+            }
+          ],
+          "bewertung": {
+            "art": "automatisch",
+            "punkte_gesamt": 3
+          },
+          "erklaerung": "20 × 48,00 € = 960,00 € netto. Der Betrag zeigt, worum es geht. Ob und wie viel die Rechnung am Ende mindert, hängt vom weiteren Vorgehen ab.",
+          "quelle": "lf4-k6, Abschnitt b1"
+        },
+        {
+          "id": "lf4-fall-a-3",
+          "operator": "Formulieren und begründen Sie",
+          "anforderungsbereich": 3,
+          "punkte": 6,
+          "dauer_min": 7,
+          "schwierigkeit": 3,
+          "passt_zu": [
+            "vorgang:stoffbeschaffung-winterkollektion"
+          ],
+          "variablen": null,
+          "uebung": {
+            "kompetenz": "Einen Mangel belegt an den Einkauf weitergeben"
+          },
+          "anzeige": [
+            {
+              "block": "text",
+              "inhalt": "Schreiben Sie dem Einkauf eine kurze Nachricht. Nennen Sie den Beleg, den nächsten Schritt und die Begründung."
+            }
+          ],
+          "eingabe": [
+            {
+              "block": "textfeld",
+              "frage": "Ihre Nachricht an den Einkauf:",
+              "zeilen": 6
+            }
+          ],
+          "bewertung": {
+            "art": "selbstbewertung",
+            "musterloesung": "Zur Rechnung R-2026-444-P: Laut Wareneingangsvermerk auf dem Lieferschein L-2026-331-P haben 20 von 100 Rollen Feuchtigkeitsschäden, Warenwert 960,00 € netto. Nach unserer Anweisung gebe ich die Rechnung zur Klärung an Sie. Bitte prüfen Sie den Mangel und zeigen Sie ihn unverzüglich beim Lieferer an, denn beim beiderseitigen Handelskauf gehen die Mängelrechte sonst verloren. Dabei sollte zuerst Nacherfüllung verlangt werden. Die Rechnung kürzen wir nicht eigenmächtig.",
+            "raster": [
+              {
+                "kriterium": "Belegbezug: Lieferschein oder Vermerk und die 20 Rollen genannt",
+                "punkte": 2
+              },
+              {
+                "kriterium": "Nächster Schritt: Rechnung an den Einkauf, Mangel prüfen und unverzüglich rügen",
+                "punkte": 2
+              },
+              {
+                "kriterium": "Nachvollziehbare Begründung: Rügepflicht oder Vorrang der Nacherfüllung",
+                "punkte": 2
+              }
+            ]
+          },
+          "erklaerung": "Der Beleg trägt die Nachricht. Die Entscheidung über Abzüge trifft nicht der Rechnungseingang allein.",
+          "quelle": "lf4-k6, Abschnitt b2"
+        }
+      ]
+    },
+    {
+      "id": "stofflieferung-winterkollektion-b",
+      "titel": "Stofflieferung für die Winterkollektion, zweite Lieferung",
+      "anzeige": [
+        {
+          "block": "text",
+          "inhalt": "Die MAKEL Studio GmbH hat Stoff nachbestellt. Beide Vertragspartner sind Kaufleute, es gilt § 377 HGB. Interne Anweisung: Rechnungen werden bei einer dokumentierten Abweichung zur Klärung an den Einkauf gegeben."
+        },
+        {
+          "block": "anlage",
+          "titel": "Bestellung B-2026-127-P",
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Inhalt"
+            ],
+            "zeilen": [
+              [
+                "Ware",
+                "150 Rollen Stoff"
+              ],
+              [
+                "Einzelpreis",
+                "42,00 € netto"
+              ],
+              [
+                "Liefertermin",
+                "23.11."
+              ]
+            ]
+          }
+        },
+        {
+          "block": "anlage",
+          "titel": "Lieferschein L-2026-352-P",
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Inhalt"
+            ],
+            "zeilen": [
+              [
+                "Anlieferung",
+                "23.11."
+              ],
+              [
+                "Menge",
+                "120 Rollen"
+              ],
+              [
+                "Vermerk Wareneingang",
+                "Zustand ohne Beanstandung"
+              ]
+            ]
+          }
+        },
+        {
+          "block": "anlage",
+          "titel": "Rechnung R-2026-461-P",
+          "inhalt": {
+            "block": "tabelle",
+            "spalten": [
+              "Angabe",
+              "Inhalt"
+            ],
+            "zeilen": [
+              [
+                "Ware",
+                "150 Rollen Stoff"
+              ],
+              [
+                "Einzelpreis",
+                "42,00 € netto"
+              ]
+            ]
+          }
+        }
+      ],
+      "schritte": [
+        {
+          "id": "lf4-fall-b-1",
+          "operator": "Prüfen Sie",
+          "anforderungsbereich": 1,
+          "punkte": 3,
+          "dauer_min": 3,
+          "schwierigkeit": 1,
+          "passt_zu": [
+            "vorgang:stoffbeschaffung-winterkollektion"
+          ],
+          "variablen": null,
+          "uebung": {
+            "kompetenz": "Bestellung, Lieferschein und Rechnung abgleichen"
+          },
+          "anzeige": [
+            {
+              "block": "text",
+              "inhalt": "Gleichen Sie Bestellung, Lieferschein und Rechnung miteinander ab."
+            }
+          ],
+          "eingabe": [
+            {
+              "block": "auswahl",
+              "frage": "Welche Auffälligkeit ergibt der Abgleich?",
+              "mehrfach": false,
+              "optionen": [
+                {
+                  "text": "Geliefert wurden 120 Rollen, berechnet werden 150 Rollen.",
+                  "richtig": true,
+                  "echo": "Richtig. Lieferschein und Rechnung passen in der Menge nicht zusammen."
+                },
+                {
+                  "text": "Der Zustand der Rollen ist beanstandet.",
+                  "richtig": false,
+                  "echo": "Der Vermerk lautet: Zustand ohne Beanstandung."
+                },
+                {
+                  "text": "Die Lieferung kam nach dem vereinbarten Termin.",
+                  "richtig": false,
+                  "echo": "Vereinbart und geliefert wurde am 23.11."
+                },
+                {
+                  "text": "Die Rechnung nennt einen höheren Einzelpreis als die Bestellung.",
+                  "richtig": false,
+                  "echo": "Beide Belege nennen 42,00 € netto."
+                }
+              ]
+            }
+          ],
+          "bewertung": {
+            "art": "automatisch",
+            "punkte_gesamt": 3
+          },
+          "erklaerung": "Termin, Zustand und Preis stimmen. Die Abweichung liegt in der Menge: 30 Rollen fehlen, sind aber berechnet.",
+          "quelle": "lf4-k6, Abschnitt b1"
+        },
+        {
+          "id": "lf4-fall-b-2",
+          "operator": "Berechnen Sie",
+          "anforderungsbereich": 2,
+          "punkte": 3,
+          "dauer_min": 3,
+          "schwierigkeit": 2,
+          "passt_zu": [
+            "vorgang:stoffbeschaffung-winterkollektion"
+          ],
+          "variablen": null,
+          "uebung": {
+            "kompetenz": "Warenwert einer Fehlmenge berechnen"
+          },
+          "anzeige": [
+            {
+              "block": "text",
+              "inhalt": "Berechnen Sie den Warenwert der berechneten, aber nicht gelieferten Rollen."
+            }
+          ],
+          "eingabe": [
+            {
+              "block": "zahl",
+              "label": "Warenwert der fehlenden Rollen, netto",
+              "einheit": "€",
+              "loesung": 1260,
+              "toleranz": 0.01
+            }
+          ],
+          "bewertung": {
+            "art": "automatisch",
+            "punkte_gesamt": 3
+          },
+          "erklaerung": "150 − 120 = 30 Rollen. 30 × 42,00 € = 1.260,00 € netto.",
+          "quelle": "lf4-k6, Abschnitt b1"
+        },
+        {
+          "id": "lf4-fall-b-3",
+          "operator": "Formulieren und begründen Sie",
+          "anforderungsbereich": 3,
+          "punkte": 6,
+          "dauer_min": 7,
+          "schwierigkeit": 3,
+          "passt_zu": [
+            "vorgang:stoffbeschaffung-winterkollektion"
+          ],
+          "variablen": null,
+          "uebung": {
+            "kompetenz": "Eine Fehlmenge belegt an den Einkauf weitergeben"
+          },
+          "anzeige": [
+            {
+              "block": "text",
+              "inhalt": "Schreiben Sie dem Einkauf eine kurze Nachricht. Nennen Sie den Beleg, den nächsten Schritt und die Begründung."
+            }
+          ],
+          "eingabe": [
+            {
+              "block": "textfeld",
+              "frage": "Ihre Nachricht an den Einkauf:",
+              "zeilen": 6
+            }
+          ],
+          "bewertung": {
+            "art": "selbstbewertung",
+            "musterloesung": "Zur Rechnung R-2026-461-P: Laut Lieferschein L-2026-352-P kamen 120 Rollen an, die Rechnung berechnet 150 Rollen. 30 Rollen fehlen, Warenwert 1.260,00 € netto. Nach unserer Anweisung gebe ich die Rechnung zur Klärung an Sie. Bitte zeigen Sie die Zuweniglieferung unverzüglich beim Lieferer an und klären Sie, ob die fehlenden Rollen nachgeliefert werden. Die Qualität der gelieferten Rollen ist nicht beanstandet, es geht allein um die Menge.",
+            "raster": [
+              {
+                "kriterium": "Belegbezug: Lieferschein und Rechnung mit 120 und 150 Rollen genannt",
+                "punkte": 2
+              },
+              {
+                "kriterium": "Nächster Schritt: Rechnung an den Einkauf, Zuweniglieferung unverzüglich anzeigen",
+                "punkte": 2
+              },
+              {
+                "kriterium": "Nachvollziehbare Begründung: Es geht um die Menge, nicht um den Zustand",
+                "punkte": 2
+              }
+            ]
+          },
+          "erklaerung": "Im Unterschied zur ersten Lieferung ist nicht der Zustand betroffen, sondern die Menge.",
+          "quelle": "lf4-k6, Abschnitt b2"
+        }
+      ]
     }
   ]
 }

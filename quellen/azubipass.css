@@ -2349,3 +2349,50 @@ input[type=file].cm-eingabe{padding:10px 14px;min-height:48px;}
 .pa-mahl{display:flex;align-items:center;gap:10px;min-height:44px;font:500 14px var(--sans);color:rgba(245,245,240,.85);cursor:pointer;}
 .pa-mahl input{width:20px;height:20px;accent-color:var(--gold);}
 .pa-ergebnis{padding-top:4px;}
+
+/* ================================================== Üben · Runden und Klausurstand */
+
+.ue-wege{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:22px;}
+.ue-weg{display:block;min-height:44px;padding:18px 20px;text-decoration:none;color:inherit;
+  border:1px solid var(--hm-gold);background:rgba(201,162,39,.06);}
+.ue-weg:hover{background:rgba(201,162,39,.12);}
+.ue-weg-titel{display:block;font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:6px;}
+.ue-weg-text{display:block;font-family:var(--sans);font-size:14.5px;line-height:1.5;color:var(--hm-matt);}
+.ue-fehler{padding-bottom:12px;}
+.ue-nochmal{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;}
+
+.tr-wahl{display:grid;gap:14px;margin:18px 0;}
+.tr-feld{display:grid;gap:6px;font-family:var(--sans);font-size:14px;}
+.tr-feld select{min-height:44px;width:100%;padding:8px 10px;font:inherit;font-size:16px;
+  color:var(--text);background:var(--feld);border:1px solid var(--rand-sanft);}
+.tr-info{font-family:var(--sans);font-size:14.5px;line-height:1.5;}
+.tr-position{font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin:0 0 12px;}
+.tr-steuer{margin-top:16px;}
+.tr-aufgabe .opt.gewaehlt,.tr-aufgabe .zu-btn.gewaehlt{outline:2px solid var(--gold);outline-offset:1px;}
+.tr-status{font-family:var(--sans);font-size:14.5px;font-weight:600;margin:14px 0 6px;}
+.tr-status-selbst{color:var(--gut);}
+.tr-status-hilfe{color:var(--gold-text);}
+.tr-status-offen,.tr-status-loesung{color:var(--warn);}
+.tr-hinweise:empty{display:none;}
+.tr-hinweise{margin-top:12px;}
+.tr-hinweis{font-family:var(--sans);font-size:14.5px;line-height:1.55;padding:10px 12px;margin:8px 0;
+  background:var(--karte-grund);color:var(--text);border-left:3px solid var(--gold);}
+.tr-feedback{margin-top:16px;padding-top:14px;border-top:1px solid var(--linie);}
+.tr-punkte{font-family:var(--sans);font-size:14.5px;}
+.tr-warum{font-family:var(--sans);font-size:14px;line-height:1.5;margin:8px 0;}
+.tr-zahlen{list-style:none;margin:18px 0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;}
+.tr-zahlen li{border:1px solid var(--hm-linie);padding:12px 14px;}
+.tr-zahlen b{display:block;font-family:var(--serif);font-size:28px;font-weight:600;}
+.tr-zahlen span{font-family:var(--sans);font-size:13px;}
+.tr-ergebnis{padding:12px 0;border-top:1px solid var(--hm-linie);}
+.weiter-uebung{margin-right:10px;}
+
+.pk--arbeitsstand{font-family:var(--mono);font-size:11.5px;margin:8px 0 0;}
+.pk--ue-feld.teilweise{box-shadow:inset 0 0 0 2px var(--gold);}
+.pk--rf-bestaetigen{margin-top:10px;}
+.pk--fallzeile{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;margin:0 0 8px;}
+.pk--lage{font-family:var(--sans);font-size:13.5px;font-weight:600;margin:4px 0 8px;}
+.pk--lage-ok{color:var(--gut);}
+.pk--lage-falsch,.pk--lage-teil{color:var(--warn);}
+.pk--lage-leer,.pk--lage-zu_bewerten{color:var(--gold-text);}
