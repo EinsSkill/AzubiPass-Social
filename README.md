@@ -61,6 +61,12 @@ python funktionstest.py
 python lernkern_audit_test.py   # Korrekturen zum Gesamtaudit (A01–A11)
 ```
 
+Üben und Probeklausur (Abnahme U01–U04, K01–K05, R01):
+
+```bash
+AXE_PFAD=…/axe.min.js python ueben_probeklausur_test.py
+```
+
 Community (AzubiPass Social, braucht Internet und die Demo-Konten – Zugangsdaten
 nicht im Repo, siehe `supabase/README.md`):
 

@@ -165,6 +165,35 @@ Stattdessen steht dort ein eigener Eingang „Laufende Probeklausur“ mit
 Vokabeln direkt erreichbar, während der gespeicherte Klausurbogen jederzeit
 bewusst fortgesetzt werden kann.
 
+## Pilot November 2026 · Zeit, Bearbeitungsstand, Varianten, Fallblock
+
+Stand 04.11.2026, Arbeitsbranch `ueben-probeklausur-2026-11-04`. Abnahme in
+`quellen/ueben_probeklausur_test.py`.
+
+- **Zeitablauf.** Die absolute Endzeit gilt bei jeder einzelnen Änderung, nicht
+  erst beim nächsten Timerschritt. Nach Ablauf bleibt der Stand eingefroren,
+  Navigation und Sichtprüfung bleiben möglich, „Jetzt abgeben“ führt einmalig zur
+  Auswertung. Eine Abgabe in einem zweiten Tab wird nicht zurückgedreht.
+- **Bearbeitungsstand.** Position und Stand stehen getrennt. Offen, teilweise und
+  vollständig sagen nichts über die Richtigkeit. Mehrfachauswahl gilt mit dem
+  ersten Kreuz als bearbeitet, damit die Zahl richtiger Optionen geheim bleibt.
+- **Reihenfolge.** Die Ausgangsreihenfolge ist keine Antwort mehr. Sie wurde
+  früher beim Anzeigen gespeichert und bekam dadurch Punkte. Jetzt zählt erst eine
+  Verschiebung oder „Reihenfolge so übernehmen“. Bereits abgegebene oder
+  abgelaufene Bögen bleiben unverändert.
+- **Varianten.** Vorschau und Bogen teilen dieselben gezogenen Werte. Eine nicht
+  ziehbare Aufgabe wird durch eine geprüfte Alternative ersetzt, sonst verhindert
+  ein Hinweis den Start. Die Vorschau nennt, wie viele Aufgaben sich gegenüber der
+  letzten Klausur wiederholen und wie viele davon neue Zahlen haben.
+- **Fallblock.** Ein Fall (`faelle` in der Aufgabendatei) kommt nur ganz vor, wenn
+  sein Kapitel gewählt ist, er zeitlich passt und die Abdeckung der übrigen Kapitel
+  erhalten bleibt. Sonst bleibt es bei Einzelaufgaben. Die neue Variante nimmt den
+  anderen Fall.
+- **Auswertung.** Falsch, teilweise, nicht bearbeitet, noch zu bewerten und
+  anerkannter Folgefehler sind getrennt ausgewiesen. „Gezielt weiterüben“ nennt bis
+  zu drei Folgeübungen. Ins Konto gehen nur kompakte Signale ohne Antworten, und
+  zwar erst nach der Abgabe.
+
 ## Was ausdrücklich noch nicht gebaut ist
 
 - offizielle AP1-/AP2-Simulation und feste IHK-Prüfungsblöcke

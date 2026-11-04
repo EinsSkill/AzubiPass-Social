@@ -1953,7 +1953,9 @@ window.APK = (function () {
     if (fall) {
       bogen.appendChild(el("p", "pk--fallzeile", "Fall: " + fall.titel + " · Teil "
         + b.schritt + " von " + fall.schritte.length));
-      bogen.appendChild(fallUnterlagen(fall));
+      // Im ersten Teil offen, danach einen Tipp entfernt: Sonst schiebt der Belegsatz
+      // in jedem Teil die eigentliche Aufgabe aus dem Bild.
+      bogen.appendChild(fallUnterlagen(fall, b.schritt === 1));
     }
     bogen.appendChild(el("p", "pk--operator", b.operator));
 
@@ -1981,9 +1983,9 @@ window.APK = (function () {
   }
 
   /* Die gemeinsamen Unterlagen eines Falles, in jedem Teil griffbereit. */
-  function fallUnterlagen(fall) {
+  function fallUnterlagen(fall, offen) {
     var d = el("details", "pk--anlage pk--fallunterlagen");
-    d.open = true;
+    d.open = !!offen;
     d.appendChild(el("summary", null, "Fallunterlagen: " + fall.titel));
     var innen = el("div", "pk--anlage-inhalt");
     (fall.anzeige || []).forEach(function (a) {
@@ -2513,7 +2515,7 @@ window.APK = (function () {
     box.appendChild(el("h3", "pk--selbst-titel", b.operator));
     var w = werteVon(b);
     var fallS = fallZu(b);
-    if (fallS) box.appendChild(fallUnterlagen(fallS));
+    if (fallS) box.appendChild(fallUnterlagen(fallS, false));
     (b.anzeige || []).forEach(function (a) {
       var teil = anzeigeBlock(a, w);
       if (teil) box.appendChild(teil);
@@ -2584,7 +2586,7 @@ window.APK = (function () {
     d.appendChild(el("summary", null, "Aufgabe und Lösung ansehen"));
     var innen = el("div", "pk--anlage-inhalt");
     var fallL = fallZu(b);
-    if (fallL) innen.appendChild(fallUnterlagen(fallL));
+    if (fallL) innen.appendChild(fallUnterlagen(fallL, false));
     (b.anzeige || []).forEach(function (a) {
       var teil = anzeigeBlock(a, w);
       if (teil) innen.appendChild(teil);

@@ -186,7 +186,8 @@ window.APT = (function () {
     if (testZu(id)) return { id: id, typ: "test" };
     if (karteZu(id)) return { id: id, typ: "karte" };
     var u = uebung();
-    if (u && u.vorrat() && u.baustein(id)) return { id: id, typ: "baustein" };
+    var b = u && u.vorrat() ? u.baustein(id) : null;
+    if (b && (b.beruf || "kfb") === helfer.inhalt().beruf.kurz) return { id: id, typ: "baustein" };
     return null;
   }
 
@@ -499,7 +500,10 @@ window.APT = (function () {
       ablegen();
       return zeichnen();
     }
-    window.scrollTo(0, 0);
+    /* Nach dem Prüfen steht die Rückmeldung im Blick, nicht wieder die Frage. */
+    var echo = slot.geprueft && buehne.querySelector(".tr-status");
+    if (echo && echo.scrollIntoView) echo.scrollIntoView({ block: "center" });
+    else window.scrollTo(0, 0);
   }
 
   function positionskopf() {
@@ -536,7 +540,10 @@ window.APT = (function () {
     var roh = u && u.baustein(slot.id);
     if (!roh) return false;
     try {
-      if (!slot.werte[slot.id]) slot.werte[slot.id] = u.werteZiehen(roh, slot.seed);
+      if (!slot.werte[slot.id]) {
+        slot.werte[slot.id] = u.werteZiehen(roh, slot.seed);
+        ablegen();
+      }
     } catch (e) { return false; }
     positionskopf();
     aufgabeBaustein(slot, roh);
@@ -619,7 +626,10 @@ window.APT = (function () {
     var opts = el("div", "optionen");
     opts.setAttribute("role", "group");
     opts.setAttribute("aria-label", "Antwortmöglichkeiten");
-    if (!slot.reihe) { slot.reihe = mischen(q.optionen.map(function (_, i) { return i; })); }
+    if (!slot.reihe) {
+      slot.reihe = mischen(q.optionen.map(function (_, i) { return i; }));
+      ablegen();
+    }
     var pruefen = knopf("kn-haupt", "Antwort prüfen", function () {
       if (schonEntschieden()) return;
       var o = q.optionen[slot.gewaehlt];

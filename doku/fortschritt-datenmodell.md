@@ -6,6 +6,15 @@ Dieses Dokument ist die verbindliche Grundlage für Lernstand, Wiederholung,
 Sicherungen und spätere Probeklausur-Ergebnisse. Es beschreibt das Konto, das
 die App im Browser unter `azubipass:konto` speichert.
 
+> **Ergänzung 04.11.2026 (Üben und Probeklausur).** `quiz` führt je Aufgabe genau
+> einen Eintrag: `r`, `n`, dazu `t` (Zeit), `s` (`selbst`, `hilfe`, `offen`, `loesung`,
+> `klausur`), `f` (Fehlversuche) und `v` (Versuchskennung gegen Doppelzählung).
+> Bausteine tragen `k`, `b`, `l`, Klausursignale `pk` und `a`. Rohantworten stehen hier
+> nie. Einträge ohne `t` sind Altstand ohne Zeitordnung. Beim Zusammenführen gewinnt
+> je Aufgabe der jüngere Versuch. Kapitelchecks, Zuordnungen und Selbsttest-Lücken
+> tragen neu ebenfalls `t`. Die laufende Runde liegt außerhalb des Kontos unter
+> `azubipass-runde-<beruf>` und wird bei Kontowechsel und Zurücksetzen entfernt.
+
 ## Grundsatz
 
 Der Schlüssel `azubipass:konto` bleibt bestehen. Die Bedeutung der Daten wird

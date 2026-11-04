@@ -23,6 +23,7 @@ Kapiteldateien ohnehin enthalten.
 import base64
 import html
 import json
+import os
 import re
 import sys
 from datetime import date, datetime
@@ -391,6 +392,12 @@ def beleg_fuellen(anlage, steuer, wo):
     werte = dict(s.get("vorgaben") or {})
     werte.update(daten)
     return {"werte": {k: str(v) for k, v in werte.items()}, "zeilen": zeilen}
+
+
+def rechtsstand():
+    """Das „Stand“-Datum der Rechtstexte. Ein Bau ohne inhaltliche Änderung setzt
+    es über AZUBIPASS_RECHTSSTAND fest, statt ein neues Datum zu behaupten."""
+    return os.environ.get("AZUBIPASS_RECHTSSTAND") or date.today().strftime("%d.%m.%Y")
 
 
 def abschnitte_von(kapitel):
@@ -877,7 +884,7 @@ def datenschutz(r, fehlt):
      automatisierten Entscheidungen mit rechtlicher oder vergleichbar erheblicher
      Wirkung. Die Schriften werden lokal bereitgestellt.</p>
 
-  <p class="stand">Stand: {date.today().strftime("%d.%m.%Y")}</p>
+  <p class="stand">Stand: {rechtsstand()}</p>
 '''
 
 
@@ -960,7 +967,7 @@ def datenschutz_ohne_konten(r, fehlt):
      (<a href="{html.escape(auf.get("web", ""))}" rel="noopener noreferrer"
       target="_blank">{html.escape(auf.get("web", ""))}</a>).</p>
 
-  <p class="stand">Stand: {date.today().strftime("%d.%m.%Y")}</p>
+  <p class="stand">Stand: {rechtsstand()}</p>
 '''
 
 

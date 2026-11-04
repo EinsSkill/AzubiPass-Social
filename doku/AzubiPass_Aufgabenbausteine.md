@@ -288,6 +288,22 @@ quellen/
 
 ---
 
+### Felder für Übungsrunden und Fälle (Pilot November 2026)
+
+Alles optional. Der Klausurmodus ignoriert diese Felder.
+
+- `uebung.kompetenz`: Fachliche Bezeichnung für Fehlerliste und „Gezielt weiterüben“.
+- `uebung.hinweise`: Höchstens zwei Texte, erst Denkanstoß, dann Zwischenschritt.
+  Platzhalter wie `{zep}` werden gefüllt.
+- `uebung.schritte`, `uebung.typischer_fehler`: Rückmeldung nach dem Prüfen.
+- `uebung.zweitfall`: Kennung eines Zweitfalls. Er erscheint nur als Folgeaktion.
+- `warum` an einem Zuordnungselement: Begründung in der Rückmeldung.
+- `uebungen` (neben `bausteine`): Aufgaben nur für Runden, nie in Klausuren. Sie
+  zählen nicht zu den Klausurbausteinen eines Kapitels.
+- `faelle` (neben `bausteine`): `{ id, titel, anzeige, schritte }`. `anzeige` ist der
+  gemeinsame Belegsatz, `schritte` sind Bausteine. Der Build ergänzt `fall`,
+  `schritt`, `minuten` und das Kapitel. Schritte müssen eigenständig lösbar sein.
+
 ## 10. Wie die 300 Bausteine entstehen
 
 Der Engpass ist nicht die Technik, sondern das Schreiben. Ein Weg, der sich

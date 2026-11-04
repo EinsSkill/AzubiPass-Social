@@ -11,12 +11,12 @@
    Bewusst ohne skipWaiting: Eine neue Fassung übernimmt nicht mitten im Lesen,
    sondern meldet sich in der App und wartet, bis jemand sie anfordert. */
 
-var SPEICHER = "azubipass-18c68ac187072a05";
+var SPEICHER = "azubipass-863405d005f8ba60";
 var VORRAT = {
   "./": "ababbe2b791f4382e3af13a7d2e0d742b6fc1c212b4a410a3714dd1e0ef533a1",
   "app.html": "ababbe2b791f4382e3af13a7d2e0d742b6fc1c212b4a410a3714dd1e0ef533a1",
   "buchfuehrung.html": "3eb24111980fbccd59499aa263caef2910a0f0ef34049c8bfd8edfbeaef8043f",
-  "datenschutz.html": "246d0894edfa66f1725721d4c224f8853cb6bb6894bd3fe7004c72a02b2923e0",
+  "datenschutz.html": "a8d08f21769436967fe55ac5a594f338c8b060bac3555778c3f7b34dac5354a5",
   "ik2024-lf01.html": "82c2f85cd0ecdd0309ed7ef33417b8ca2e8f547b8c8af4bf337c6ef4c9fa708e",
   "ik2024-lf02.html": "6e0a6a6a338437c13b2bf7aaf0300db85765b3ba1e131ca74663e5baa782b5db",
   "ik2024-lf03.html": "5af24950acf7ec5b24911b213b98bc668408b458b264a6ff55fd84a36ee425d3",
@@ -32,7 +32,7 @@ var VORRAT = {
   "ik2024-lf13.html": "00a90ad29f608c791f3326c8e83f4d416327389fb54380dd772b1552d39f96d8",
   "impressum.html": "5c7dddb5aae1ce5ee624d064dd310364d8c59549bb94bf84e0cc551cb8cc0548",
   "index.html": "ababbe2b791f4382e3af13a7d2e0d742b6fc1c212b4a410a3714dd1e0ef533a1",
-  "landing.html": "ae2f8488c7c19fd7a482c984bdc3c72eabe8eb61c1329bb9b5adb72d357a1a93",
+  "landing.html": "583302e0c981fd46111feddf9d6ac090c4edef78a8b1f42811e2d77982bae9fe",
   "lf1.html": "c9bda3c913cf1087d125cb47083bd2181b4ae61b7744954759e6dbdd3eb84674",
   "lf10.html": "432725bcdb9bb5d0db5221cb14c5f0f1605a02c6a7c5b31342cdcfaf1b536eb8",
   "lf11.html": "9205cd5d3eace7a8465301cbbda13915a55fde91f40c94b1f47b2f7e201a59e3",
@@ -47,11 +47,11 @@ var VORRAT = {
   "lf9.html": "58c0198830f8057f673415f3ea48d6ffdd16efba3ded5a1b5f73f9dc5a285573",
   "manifest.webmanifest": "2494f22d045fc9647f6b1ae68a6b9cf0c029572ab26dc09f90778f9e42d7ca0a",
   "mittel/app.js": "82a3d850e4974460f4185b2971090858462008429ce5ca3f2e0144613b71f12b",
-  "mittel/aufgaben.js": "7e2db1b7678489727b0d78d3cb61fc82784553e34449bcbcfbbf45bbfd4becb2",
-  "mittel/aufgaben.json": "f8b556dec0f11cda1bf089ba0c12dc6564cf93a78c6fcfd360801e8663b185b3",
+  "mittel/aufgaben.js": "2fb0b5801f3b9845185afab22f9296959d61f2a571b2ee8620352029bcbb1a08",
+  "mittel/aufgaben.json": "85d2bb6775a21addffcd030eaf0dcce47a3ffdf22903cbfb3b98b6bead1be9f7",
   "mittel/azubipass-logo.png": "6fbfaa65da67de20b628b6d5415a8a46c95ceeaa5c6638492e2860e7d6e98973",
   "mittel/azubipass-symbol.png": "82cddbb695cbba0a09d3b933eb4b178e221463e015b962d8013cdff580d4a692",
-  "mittel/azubipass.css": "a3693f88b7c65a00e549bc8f187f13392290fd416fdbda5407839795b909e573",
+  "mittel/azubipass.css": "98b72d5df57ae956c3afe1394ff3ca8a85780d9a96ab13b89e68ef1e071df3ef",
   "mittel/azubipass.js": "2fbfe245fcb0a2e317f067c5bf85c26038af453f76e69ab211e599584eeba59f",
   "mittel/community-ansicht.js": "00e3cbae412cc79188537f71b3edbc4ff78741ea60c17e2358157f65ea98a781",
   "mittel/community-beitraege.js": "3b5e08ef5991386cc473798cb3d53c86d37a9e19375d87ec948924e7b06f15ab",
@@ -68,7 +68,7 @@ var VORRAT = {
   "mittel/ibm-plex-sans-500-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
   "mittel/ibm-plex-sans-600-latin-ext.woff2": "d160e20920ae4d6556518d352d3af27a74e9b0de3d8fe17b1c1044fc75aa2f81",
   "mittel/ibm-plex-sans-600-latin.woff2": "e2291e842cf5af167122a22881a740c7f2dda7716f1e8cd76680264f4a859470",
-  "mittel/inhalt.json": "c3be9f5e38061e3d02347880a0c2536f6ec48e7548aacb1b06e1d28d635a862f",
+  "mittel/inhalt.json": "afa0ff77db3c6f1eb994aeffcef63fa6d9574a33c6c7c9e36059dfa5a8e4fac0",
   "mittel/kern.js": "00826d2faa0618a08da8e250be1883f64d06fc9399eaaa76ec6d2f1d7bbd3b57",
   "mittel/landing.css": "c1d299ad11bd6a3fd4b8515d08334b45741b6616da271a4899acf51353596f45",
   "mittel/landing.js": "d5a83cc74c9e6b6f398dca81c807891a96a1547bae6da083e01828081c0d724d",
@@ -88,7 +88,7 @@ var VORRAT = {
   "mittel/symbol-v1-192.png": "e0b355299d9fce7756c6e251095869599ad87706b7d8f4bbb6abdde89493f63e",
   "mittel/symbol-v1-32.png": "3d3c534fed31bcc2a086ec56f744bb0a5a2defd0246c8f6bd81ba6f9b82e6998",
   "mittel/symbol-v1-512.png": "689d35e853287622462aa23a4a4153ac9a1c7a2e0a72ab179956dbe56959896c",
-  "mittel/training.js": "4770e17484421911a5a66c69e1bfbf746f967a95cf84d69655f0608347bd2e9c"
+  "mittel/training.js": "c5019a5fbd01ff23fedb2f03d10ad40c0f43aaed93dc8fc1f5bdeb2c1ca752c5"
 };
 
 function hex(puffer) {
