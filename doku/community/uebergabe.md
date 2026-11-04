@@ -29,7 +29,7 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 
 **Funktionsumfang, beide Berufe:** Üben startet mit „5 Minuten üben“ und „Thema üben“; `#ueben/thema?kapitel=…` und `#ueben/runde` mit Wiederherstellung auf demselben Gerät; Ablauf Versuch, prüfen, Erklärung, weiter; vier Zustände je Versuch; „Meine Fehler“ nach jüngstem Ereignis mit „Jetzt nochmal üben“; Klausur mit eingefrorenem Stand nach Endzeit, Arbeitsstand offen/teilweise/vollständig, validierter Vorschau, ausgewiesener Wiederholung; Auswertung mit „Gezielt weiterüben“ und kompakten Signalen. **Nur KfB:** Pilot LF4 K6 (`lf4-k6-u1` bis `u3`), Pilot Buchführung K5 (`buchfuehrung-k5-03`, neu `-u1` mit Kontoauszug), Fallblock LF4 K6 mit Fall A und B. **Nur IK:** Pilot LF4 K04 (`ik2024-lf04-k04-01`).
 
-**Neue Dateien und Daten:** `quellen/training.js`, `quellen/ueben_probeklausur_test.py`. `aufgaben.json` hat zusätzlich `uebungen` (5) und `faelle` (2). `bausteine` bleibt bei 532. Formate in `doku/AzubiPass_Aufgabenbausteine.md`, `doku/fortschritt-datenmodell.md`, `doku/eigene-probeklausur.md`.
+**Neue Dateien und Daten:** `quellen/training.js`, `quellen/ueben_probeklausur_test.py`. `aufgaben.json` hat zusätzlich `uebungen` (4) und `faelle` (2). `bausteine` bleibt bei 532. Formate in `doku/AzubiPass_Aufgabenbausteine.md`, `doku/fortschritt-datenmodell.md`, `doku/eigene-probeklausur.md`.
 
 **Tests auf `7e1727b`:**
 
@@ -43,7 +43,7 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 | `community_korrekturen_test.py`, `community_moderation_test.py`, `community_gruppen_test.py` | bestanden |
 | `pruefe.py app.html lf4.html` | keine Fehler. Weitere Seiten nicht gelaufen (Zeitlimit der Sitzung) |
 
-Community-Livetests sind nicht gelaufen, weil das Testpasswort fehlt. Der Konto-Abgleich ist nur über `lernstand_sync_test.py` und die Zusammenführungsprüfung belegt, nicht zwischen zwei echten Geräten.
+`ueben_probeklausur_test.py` und `funktionstest.py` liefen auf `7e1727b` selbst. Die übrigen Zeilen liefen unmittelbar davor; danach kam nur `rechtsstand()` in `build_app.py` hinzu. Community-Livetests sind nicht gelaufen, weil das Testpasswort fehlt. Der Konto-Abgleich ist nur über `lernstand_sync_test.py` und die Zusammenführungsprüfung belegt, nicht zwischen zwei echten Geräten.
 
 **Über die Spec hinaus gefunden und behoben:**
 
@@ -62,7 +62,7 @@ Community-Livetests sind nicht gelaufen, weil das Testpasswort fehlt. Der Konto-
 
 **Fachliche Prüfstellen für die Gegenprüfung:** Alle neuen Texte sind von mir und noch nicht gegengelesen. Besonders: `lf4-k6-u3` (verspätete Rüge, Ware gilt als genehmigt), Fall B Teil 3 (Zuweniglieferung, keine Aussage zu Abzügen), Musterlösung Fall A Teil 3, `buchfuehrung-k5-u1` (Konten wie `k5-03`, Umsatzsteuer ausdrücklich ausgeklammert). Die Belegnummern mit Endung `-P` kollidieren nicht mit dem Bestand. Der Lieferant bleibt namenlos, weil es im Bestand keinen festen Stofflieferanten gibt.
 
-**Offene Punkte:** Echte Geräte und HEIC-unabhängige Handytests stehen aus; geprüft wurde nur per Emulation bei 360 px. Hinweise gibt es nur in den Piloten. Die Fehlerliste zeigt Bausteine ohne `uebung.kompetenz` unter dem Kapitelnamen. Eine Ausweitung auf alle Kapitel ist laut Spec erst nach der Pilotabnahme vorgesehen.
+**Offene Punkte:** Tests auf echten Handys stehen aus; geprüft wurde nur per Emulation bei 360 px. Hinweise gibt es nur in den Piloten. Die Fehlerliste zeigt Bausteine ohne `uebung.kompetenz` unter dem Kapitelnamen. Eine Ausweitung auf alle Kapitel ist laut Spec erst nach der Pilotabnahme vorgesehen.
 
 **Nächster Schritt:** ChatGPT prüft `7e1727b` gegen und legt das Ergebnis unter `doku/community/review/` ab. Danach entscheidet Lukes über Merge und Veröffentlichung.
 
