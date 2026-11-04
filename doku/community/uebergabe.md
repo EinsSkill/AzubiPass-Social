@@ -23,6 +23,49 @@ Ablauf pro Bildschirm: `IDEE → SPEC (ChatGPT) → FREIGEGEBEN (Lukes) → UMSE
 - Nur eine KI schreibt zurzeit. Vor jedem Schreiben Branchstand prüfen und fremde Änderungen erhalten. Für reine Übergaben bleiben Anwendungscode, Datenbank und `main` unberührt.
 - GitHub übergibt die Dateien. Es startet keine andere KI automatisch; Lukes stößt die nächste Phase mit dem Link an.
 
+## 2026-11-04 · Claude → ChatGPT / Lukes (Üben und Probeklausur umgesetzt)
+
+**Vorgänger:** ChatGPT, Spezifikation `3de2fd8`. **Geprüfter Code-Commit:** `7e1727b` auf `ueben-probeklausur-2026-11-04`. Nicht gemergt, nicht live, keine Datenbankänderung. Alle drei Stufen der Übergabe sind umgesetzt.
+
+**Funktionsumfang, beide Berufe:** Üben startet mit „5 Minuten üben“ und „Thema üben“; `#ueben/thema?kapitel=…` und `#ueben/runde` mit Wiederherstellung auf demselben Gerät; Ablauf Versuch, prüfen, Erklärung, weiter; vier Zustände je Versuch; „Meine Fehler“ nach jüngstem Ereignis mit „Jetzt nochmal üben“; Klausur mit eingefrorenem Stand nach Endzeit, Arbeitsstand offen/teilweise/vollständig, validierter Vorschau, ausgewiesener Wiederholung; Auswertung mit „Gezielt weiterüben“ und kompakten Signalen. **Nur KfB:** Pilot LF4 K6 (`lf4-k6-u1` bis `u3`), Pilot Buchführung K5 (`buchfuehrung-k5-03`, neu `-u1` mit Kontoauszug), Fallblock LF4 K6 mit Fall A und B. **Nur IK:** Pilot LF4 K04 (`ik2024-lf04-k04-01`).
+
+**Neue Dateien und Daten:** `quellen/training.js`, `quellen/ueben_probeklausur_test.py`. `aufgaben.json` hat zusätzlich `uebungen` (5) und `faelle` (2). `bausteine` bleibt bei 532. Formate in `doku/AzubiPass_Aufgabenbausteine.md`, `doku/fortschritt-datenmodell.md`, `doku/eigene-probeklausur.md`.
+
+**Tests auf `7e1727b`:**
+
+| Prüfung | Ergebnis |
+|---|---|
+| `ueben_probeklausur_test.py` (U01–U04, K01–K05, R01, mit axe 4.10.2) | 124/124 |
+| `funktionstest.py` | 269/269 |
+| `lernkern_audit_test.py`, `lernstand_sync_test.py` | bestanden |
+| `industriekaufleute_test.py` | 9.219 Prüfungen, 0 Fehler |
+| `erweiterter_modus_test.py` mit axe | 163 OK. Im Parallellauf einmal Kontrastbefund in `lf2.html` an `.mx-kopf`, im Einzellauf nicht wiederholbar, CSS dazu unverändert |
+| `community_korrekturen_test.py`, `community_moderation_test.py`, `community_gruppen_test.py` | bestanden |
+| `pruefe.py app.html lf4.html` | keine Fehler. Weitere Seiten nicht gelaufen (Zeitlimit der Sitzung) |
+
+Community-Livetests sind nicht gelaufen, weil das Testpasswort fehlt. Der Konto-Abgleich ist nur über `lernstand_sync_test.py` und die Zusammenführungsprüfung belegt, nicht zwischen zwei echten Geräten.
+
+**Über die Spec hinaus gefunden und behoben:**
+
+1. Reihenfolge-Aufgaben speicherten die Ausgangsreihenfolge schon beim Anzeigen und bekamen dadurch Punkte, ohne dass jemand etwas getan hatte. Jetzt zählt erst eine Aktion oder „Reihenfolge so übernehmen“. Laufende alte Entwürfe werden einmalig bereinigt, abgegebene und abgelaufene bleiben unverändert. **Das ändert Punktzahlen gegenüber heute.**
+2. Zuordnung und Buchungssatz veränderten den gespeicherten Stand im Arbeitsspeicher, bevor die Sperre griff. Sie arbeiten jetzt auf Kopien.
+3. Ein zweiter Tab konnte eine Abgabe zurückdrehen. Das ist jetzt ausgeschlossen.
+
+**Abweichungen vom Pilot:**
+
+- Die Rundengröße 5 und die Mischung 3 kurze, dann Bausteine sind wie vorgegeben. Offene Antworten gelten ab 75 % der Rasterpunkte als gelöst; dieser Wert ist meine Setzung.
+- „Thema üben“ zeigt vor dem Start die Auswahl mit Umfang. Direkt ohne Auswahl starten nur Folgeübungen mit `fokus`.
+- Der Strafwert für Aufgaben der letzten Klausur steigt von 2,6 auf 7. Bei LF4 K5–K7 und 30 Minuten bleibt die Überschneidung wegen der Aufgabenzahl bestehen und wird nun ausgewiesen.
+- Der Fall verlangt nur `lf4:k6`, weil er ausschließlich Stoff dieses Kapitels prüft.
+- Bei Buchungen mit Reservezeile (IK, drei Felder, zwei Lösungszeilen) wird der Stand nach zwei vollen Zeilen vollständig. Das verrät die Zeilenzahl der Lösung. Die Spec verlangt „die nötigen Zeilen“; ein Ausweg wäre, Reservezeilen wegzulassen.
+- `build_app.py` nimmt das Stand-Datum der Rechtstexte aus `AZUBIPASS_RECHTSSTAND`. Dieser Stand ist mit 30.10.2026 gebaut, der Text ist unverändert.
+
+**Fachliche Prüfstellen für die Gegenprüfung:** Alle neuen Texte sind von mir und noch nicht gegengelesen. Besonders: `lf4-k6-u3` (verspätete Rüge, Ware gilt als genehmigt), Fall B Teil 3 (Zuweniglieferung, keine Aussage zu Abzügen), Musterlösung Fall A Teil 3, `buchfuehrung-k5-u1` (Konten wie `k5-03`, Umsatzsteuer ausdrücklich ausgeklammert). Die Belegnummern mit Endung `-P` kollidieren nicht mit dem Bestand. Der Lieferant bleibt namenlos, weil es im Bestand keinen festen Stofflieferanten gibt.
+
+**Offene Punkte:** Echte Geräte und HEIC-unabhängige Handytests stehen aus; geprüft wurde nur per Emulation bei 360 px. Hinweise gibt es nur in den Piloten. Die Fehlerliste zeigt Bausteine ohne `uebung.kompetenz` unter dem Kapitelnamen. Eine Ausweitung auf alle Kapitel ist laut Spec erst nach der Pilotabnahme vorgesehen.
+
+**Nächster Schritt:** ChatGPT prüft `7e1727b` gegen und legt das Ergebnis unter `doku/community/review/` ab. Danach entscheidet Lukes über Merge und Veröffentlichung.
+
 ## 2026-11-04 · ChatGPT → Claude / Lukes (Spezifikation Üben und Probeklausur)
 
 **Auftrag von Lukes:** Üben ausbauen, Probeklausur verbessern und eine detaillierte Umsetzungshilfe für Claude vorbereiten. **Vorgänger:** Claude, Erweiterter Modus in Merge 2fcdb98 mit dokumentiertem Deployment. **Anwendungsbasis:** main bei 512b525. **Arbeitsbranch:** ueben-probeklausur-2026-11-04.
